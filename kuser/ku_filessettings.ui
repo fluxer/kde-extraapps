@@ -1,0 +1,134 @@
+<ui version="4.0" >
+ <class>KU_FilesSettings</class>
+ <widget class="QWidget" name="KU_FilesSettings" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>437</width>
+    <height>367</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>5</hsizetype>
+    <vsizetype>5</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>User/group database locations</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="4" column="0" colspan="2" >
+       <widget class="QCheckBox" name="kcfg_md5shadow" >
+        <property name="text" >
+         <string>MD5 shadow passwords</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="KLineEdit" name="kcfg_gshadowsrc" />
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="textLabel6_3" >
+        <property name="text" >
+         <string>Shadow group file:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_gshadowsrc</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="KLineEdit" name="kcfg_shadowsrc" />
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="textLabel5_3" >
+        <property name="text" >
+         <string>Shadow password file:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_shadowsrc</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="KLineEdit" name="kcfg_groupsrc" />
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="textLabel4_3" >
+        <property name="text" >
+         <string>Group file:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_groupsrc</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="textLabel3_3" >
+        <property name="text" >
+         <string>Password file:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_passwdsrc</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="KLineEdit" name="kcfg_passwdsrc" />
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends></extends>
+   <header>klineedit.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>kcfg_passwdsrc</tabstop>
+  <tabstop>kcfg_groupsrc</tabstop>
+  <tabstop>kcfg_shadowsrc</tabstop>
+  <tabstop>kcfg_gshadowsrc</tabstop>
+  <tabstop>kcfg_md5shadow</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

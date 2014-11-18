@@ -1,0 +1,457 @@
+<ui version="4.0" >
+ <class>KU_LdapSamba</class>
+ <widget class="QWidget" name="KU_LdapSamba" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>465</width>
+    <height>281</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>5</hsizetype>
+    <vsizetype>5</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Samba</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>11</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QCheckBox" name="kcfg_ldapsam" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="text" >
+      <string>Manage Samba user accounts/groups</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item row="0" column="1" >
+      <widget class="KLineEdit" name="kcfg_samloginscript" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" >
+      <widget class="QLabel" name="textLabel2_2_2" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="text" >
+        <string>Default login script:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_samloginscript</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="textLabel4_2_2" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="text" >
+        <string>Home drive:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_samhomedrive</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="textLabel3_2_2" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="text" >
+        <string>Profile path template:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_samprofilepath</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" >
+      <widget class="QLabel" name="textLabel5_2_2" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="acceptDrops" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>Home path template:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_samhomepath</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" >
+      <widget class="KLineEdit" name="kcfg_samhomepath" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="KLineEdit" name="kcfg_samprofilepath" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" >
+      <widget class="KLineEdit" name="kcfg_samhomedrive" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="kcfg_lanmanhash" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>Store LanManager hashed password</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="textLabel1_2" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="text" >
+        <string>Domain name:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_samdomain</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KLineEdit" name="kcfg_samdomain" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KPushButton" name="domQuery" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>&amp;Query Server</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="textLabel1" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="text" >
+      <string>Domain SID (you can obtain with 'net getlocalsid domain_name'):</string>
+     </property>
+     <property name="buddy" >
+      <cstring>kcfg_samdomsid</cstring>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="KLineEdit" name="kcfg_samdomsid" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maxLength" >
+      <number>41</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="textLabel1_3" >
+       <property name="text" >
+        <string>Algorithmic RID base:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_samridbase</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KIntSpinBox" name="kcfg_samridbase" >
+       <property name="maximum" >
+        <number>65000</number>
+       </property>
+       <property name="minimum" >
+        <number>500</number>
+       </property>
+       <property name="value" >
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends></extends>
+   <header>klineedit.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends></extends>
+   <header>kpushbutton.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends></extends>
+   <header>knuminput.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>kcfg_ldapsam</tabstop>
+  <tabstop>kcfg_samloginscript</tabstop>
+  <tabstop>kcfg_samprofilepath</tabstop>
+  <tabstop>kcfg_samhomedrive</tabstop>
+  <tabstop>kcfg_samhomepath</tabstop>
+  <tabstop>kcfg_lanmanhash</tabstop>
+  <tabstop>kcfg_samdomain</tabstop>
+  <tabstop>kcfg_samdomsid</tabstop>
+  <tabstop>domQuery</tabstop>
+ </tabstops>
+ <includes>
+  <include location="global" >knuminput.h</include>
+ </includes>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samloginscript</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>292</x>
+     <y>47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samprofilepath</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>292</x>
+     <y>68</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samhomedrive</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>292</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samhomepath</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>292</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_lanmanhash</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>232</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samdomain</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>226</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>domQuery</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>406</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samdomsid</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>232</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_ldapsam</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kcfg_samridbase</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>232</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>160</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

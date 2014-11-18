@@ -1,0 +1,29 @@
+Must do soon (these are very easy):
+- Implement UID->SID like in ldapsam (Requires introducing the algorithmic RID base). - Ready
+- Newer samba schema support (new attributes in sambaSamAccount in Samba>=3.0.6). - Ready
+- Support LDAP entries with more objectclasses than we handle (part of #95366). - Ready for users (lazy to do for groups)
+
+Other:
+- Add Kerberos support - Native kerberos protocols or LDAP backed?
+  I prefer to add it to the LDAP backend, but first I need to find an 
+  LDAP-backed KDC. I heard that Heimdal can do this.
+- Filtering users and groups, and implement it in backends, so it would
+  be possible to use server-side filtering (mainly in LDAP)
+- Find next available UID and RID using LDAP sorting control - need an
+  ldap server which implements this control. Also I don't know is this a 
+  good idea or not.
+- Proper cross-check between user and group SIDs.
+- Issue a warning if Unix/Samba account settings are not consistent with
+  each other (e.g the group of primary group ID != group of primary group SID).
+- Other consistency checks (unique user/group IDs, unique SIDs, etc...).
+- Copy data between backends.
+- Update docs
+
+And some TODOs from the past which are still unsolved:
+- Add 'Help' button to user and group properties dialogs.
+- Add right mouse popup
+- Replace call of rm with own procedure.
+- Use QFile for file operations.
+- How about having group name(s) next to the Full name of a user in the upper
+  panel, and similarly user names for a group in the lower pannel -- in a
+  separate column?

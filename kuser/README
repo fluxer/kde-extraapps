@@ -1,0 +1,19 @@
+This version of KUser is based on the work of:
+Denis Perchine <dyp@perchine.com>
+
+Original README:
+----------------------
+KUser is rewritten XUser which was written in XForms.
+It supports:
+Solaris
+Linux
+Irix
+FreeBSD
+HPUX
+
+ATTENTION: BACKUP ALL OF YOUR DATA. THIS PROGRAM MAY DESTROY
+IT. BE CAREFUL.
+----------------------
+
+If you found a bug please post a bug report to the KDE bug database:
+http://bugs.kde.org
