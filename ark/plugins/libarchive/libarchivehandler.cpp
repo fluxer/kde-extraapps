@@ -50,7 +50,7 @@ struct LibArchiveInterface::ArchiveReadCustomDeleter
     static inline void cleanup(struct archive *a)
     {
         if (a) {
-            archive_read_finish(a);
+            archive_read_free(a);
         }
     }
 };
@@ -60,7 +60,7 @@ struct LibArchiveInterface::ArchiveWriteCustomDeleter
     static inline void cleanup(struct archive *a)
     {
         if (a) {
-            archive_write_finish(a);
+            archive_write_free(a);
         }
     }
 };
@@ -91,7 +91,7 @@ bool LibArchiveInterface::list()
         return false;
     }
 
-    if (archive_read_support_compression_all(arch_reader.data()) != ARCHIVE_OK) {
+    if (archive_read_support_filter_all(arch_reader.data()) != ARCHIVE_OK) {
         return false;
     }
 
@@ -109,7 +109,7 @@ bool LibArchiveInterface::list()
     m_extractedFilesSize = 0;
 
     struct archive_entry *aentry;
-    int result;
+    int result = ARCHIVE_EOF;
 
     while (!m_abortOperation && (result = archive_read_next_header(arch_reader.data(), &aentry)) == ARCHIVE_OK) {
         if (!m_emitNoEntries) {
@@ -157,7 +157,7 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString& de
         return false;
     }
 
-    if (archive_read_support_compression_all(arch.data()) != ARCHIVE_OK) {
+    if (archive_read_support_filter_all(arch.data()) != ARCHIVE_OK) {
         return false;
     }
 
@@ -356,7 +356,7 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
             return false;
         }
 
-        if (archive_read_support_compression_all(arch_reader.data()) != ARCHIVE_OK) {
+        if (archive_read_support_filter_all(arch_reader.data()) != ARCHIVE_OK) {
             return false;
         }
 
@@ -383,26 +383,26 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
     if (creatingNewFile) {
         if (filename().right(2).toUpper() == QLatin1String( "GZ" )) {
             kDebug() << "Detected gzip compression for new file";
-            ret = archive_write_set_compression_gzip(arch_writer.data());
+            ret = archive_write_add_filter_gzip(arch_writer.data());
         } else if (filename().right(3).toUpper() == QLatin1String( "BZ2" )) {
             kDebug() << "Detected bzip2 compression for new file";
-            ret = archive_write_set_compression_bzip2(arch_writer.data());
+            ret = archive_write_add_filter_bzip2(arch_writer.data());
 #ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
         } else if (filename().right(2).toUpper() == QLatin1String( "XZ" )) {
             kDebug() << "Detected xz compression for new file";
-            ret = archive_write_set_compression_xz(arch_writer.data());
+            ret = archive_write_add_filter_xz(arch_writer.data());
 #endif
 #ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
         } else if (filename().right(4).toUpper() == QLatin1String( "LZMA" )) {
             kDebug() << "Detected lzma compression for new file";
-            ret = archive_write_set_compression_lzma(arch_writer.data());
+            ret = archive_write_add_filter_lzma(arch_writer.data());
 #endif
         } else if (filename().right(3).toUpper() == QLatin1String( "TAR" )) {
             kDebug() << "Detected no compression for new file (pure tar)";
-            ret = archive_write_set_compression_none(arch_writer.data());
+            ret = archive_write_add_filter_none(arch_writer.data());
         } else {
             kDebug() << "Falling back to gzip";
-            ret = archive_write_set_compression_gzip(arch_writer.data());
+            ret = archive_write_add_filter_gzip(arch_writer.data());
         }
 
         if (ret != ARCHIVE_OK) {
@@ -412,28 +412,28 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
             return false;
         }
     } else {
-        switch (archive_compression(arch_reader.data())) {
+        switch (archive_filter_code(arch_reader.data(), 0)) {
         case ARCHIVE_COMPRESSION_GZIP:
-            ret = archive_write_set_compression_gzip(arch_writer.data());
+            ret = archive_write_add_filter_gzip(arch_writer.data());
             break;
         case ARCHIVE_COMPRESSION_BZIP2:
-            ret = archive_write_set_compression_bzip2(arch_writer.data());
+            ret = archive_write_add_filter_bzip2(arch_writer.data());
             break;
 #ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
         case ARCHIVE_COMPRESSION_XZ:
-            ret = archive_write_set_compression_xz(arch_writer.data());
+            ret = archive_write_add_filter_xz(arch_writer.data());
             break;
 #endif
 #ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
         case ARCHIVE_COMPRESSION_LZMA:
-            ret = archive_write_set_compression_lzma(arch_writer.data());
+            ret = archive_write_add_filter_lzma(arch_writer.data());
             break;
 #endif
         case ARCHIVE_COMPRESSION_NONE:
-            ret = archive_write_set_compression_none(arch_writer.data());
+            ret = archive_write_add_filter_none(arch_writer.data());
             break;
         default:
-            emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_compression_name(arch_reader.data()))));
+            emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_filter_name(arch_reader.data(), 0))));
             return false;
         }
 
@@ -534,7 +534,7 @@ bool LibArchiveInterface::deleteFiles(const QVariantList& files)
         return false;
     }
 
-    if (archive_read_support_compression_all(arch_reader.data()) != ARCHIVE_OK) {
+    if (archive_read_support_filter_all(arch_reader.data()) != ARCHIVE_OK) {
         return false;
     }
 
@@ -557,28 +557,28 @@ bool LibArchiveInterface::deleteFiles(const QVariantList& files)
     archive_write_set_format_pax_restricted(arch_writer.data());
 
     int ret;
-    switch (archive_compression(arch_reader.data())) {
+    switch (archive_filter_code(arch_reader.data(), 0)) {
     case ARCHIVE_COMPRESSION_GZIP:
-        ret = archive_write_set_compression_gzip(arch_writer.data());
+        ret = archive_write_add_filter_gzip(arch_writer.data());
         break;
     case ARCHIVE_COMPRESSION_BZIP2:
-        ret = archive_write_set_compression_bzip2(arch_writer.data());
+        ret = archive_write_add_filter_bzip2(arch_writer.data());
         break;
 #ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
     case ARCHIVE_COMPRESSION_XZ:
-        ret = archive_write_set_compression_xz(arch_writer.data());
+        ret = archive_write_add_filter_xz(arch_writer.data());
         break;
 #endif
 #ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
     case ARCHIVE_COMPRESSION_LZMA:
-        ret = archive_write_set_compression_lzma(arch_writer.data());
+        ret = archive_write_add_filter_lzma(arch_writer.data());
         break;
 #endif
     case ARCHIVE_COMPRESSION_NONE:
-        ret = archive_write_set_compression_none(arch_writer.data());
+        ret = archive_write_add_filter_none(arch_writer.data());
         break;
     default:
-        emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_compression_name(arch_reader.data()))));
+        emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_filter_name(arch_reader.data(), 0))));
         return false;
     }
 
