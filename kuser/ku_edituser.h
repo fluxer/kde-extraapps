@@ -55,7 +55,6 @@ protected slots:
   void setpwd();
   void changed(); // Change to misc settings
   void cbposixChanged(); // Change to diaable POSIX account info
-  void cbsambaChanged(); // Change to diaable POSIX account info
   void gchanged(); // Change to group settings
   void setpgroup(); // Change in primary group
 
@@ -121,7 +120,6 @@ protected:
 
   QCheckBox   *cbdisabled;
   QCheckBox   *cbposix;
-  QCheckBox   *cbsamba;
   QLabel      *leprigr;
   QPushButton *pbprigr;
 
@@ -133,15 +131,6 @@ protected:
   KDateTimeWidget  *lesexpire;
   QCheckBox *cbexpire;
 
-//samba specific:
-  KLineEdit   *lerid;
-  KLineEdit   *leliscript;
-  KLineEdit   *leprofile;
-  KLineEdit   *lehomedrive;
-  KLineEdit   *lehomepath;
-  KLineEdit   *leworkstations;
-  KLineEdit   *ledomain;
-  KLineEdit   *ledomsid;
 private:
   QList<int> mSelected;
   KU_User mUser;

@@ -219,7 +219,6 @@ void KU_EditUser::initDlg()
   }
 
   if ( KU_Global::users()->getCaps() & KU_Users::Cap_Shadow ||
-       KU_Global::users()->getCaps() & KU_Users::Cap_Samba ||
        KU_Global::users()->getCaps() & KU_Users::Cap_BSD ) {
 
   // Tab 2 : Password Management
@@ -244,13 +243,7 @@ void KU_EditUser::initDlg()
       layout->addWidget(new KSeparator(Qt::Horizontal, frame), row, 0, 1, 4);
       row++;
     }
-    /*
-    if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-      layout->addWidget( new QLabel( i18n("SAMBA parameters:"), frame ), row++, 0 );
-      layout->addMultiCellWidget(new KSeparator(Qt::Horizontal, frame), row, row, 0, 3);
-      row++;
-    }
-    */
+
     QLabel *label = new QLabel( i18n("&Account will expire on:"), frame );
     layout->addWidget( label, row, 0 );
     lesexpire = new KDateTimeWidget( frame );
@@ -263,60 +256,6 @@ void KU_EditUser::initDlg()
     connect( lesexpire, SIGNAL(valueChanged(QDateTime)), this, SLOT(changed()) );
     connect( cbexpire, SIGNAL(stateChanged(int)), this, SLOT(changed()) );
     connect( cbexpire, SIGNAL(toggled(bool)), lesexpire, SLOT(setDisabled(bool)) );
-  }
-
-  // Tab 3: Samba
-  if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-    QFrame *frame = new QFrame();
-    addPage(frame, i18n("Samba"));
-    QGridLayout *layout = new QGridLayout( frame );
-    int row = 0;
-
-    lerid = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Rid");
-    lerid->setValidator(new QIntValidator(frame));
-    addRow(frame, layout, row++, lerid, i18n("RID:"), whatstr);
-    connect(lerid, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    leliscript = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, leliscript, i18n("Login script:"), whatstr);
-    connect(leliscript, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    leprofile = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, leprofile, i18n("Profile path:"), whatstr);
-    connect(leprofile, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    lehomedrive = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, lehomedrive, i18n("Home drive:"), whatstr);
-    connect(lehomedrive, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    lehomepath = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, lehomepath, i18n("Home path:"), whatstr);
-    connect(lehomepath, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    leworkstations = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, leworkstations, i18n("User workstations:"), whatstr);
-    connect(leworkstations, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    ledomain = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, ledomain, i18n("Domain name:"), whatstr);
-    connect(ledomain, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    ledomsid = new KLineEdit(frame);
-//  whatstr = i18n("WHAT IS THIS: Login script");
-    addRow(frame, layout, row++, ledomsid, i18n("Domain SID:"), whatstr);
-    connect(ledomsid, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-
-    cbsamba = new QCheckBox(frame);
-    connect(cbsamba, SIGNAL(stateChanged(int)), this, SLOT(changed()));
-    connect(cbsamba, SIGNAL(stateChanged(int)), this, SLOT(cbsambaChanged()));
-    addRow(frame, layout, row++, cbsamba, i18n("Disable &Samba account information"), whatstr);
   }
 
   // Tab 4: Groups
@@ -404,19 +343,6 @@ void KU_EditUser::cbposixChanged()
   }
 }
 
-void KU_EditUser::cbsambaChanged()
-{
-  bool samba = !( cbsamba->checkState() == Qt::Checked );
-  lerid->setEnabled( samba && mSelected.isEmpty() );
-  leliscript->setEnabled( samba );
-  leprofile->setEnabled( samba );
-  lehomedrive->setEnabled( samba );
-  lehomepath->setEnabled( samba );
-  leworkstations->setEnabled( samba );
-  ledomain->setEnabled( samba );
-  ledomsid->setEnabled( samba );
-}
-
 void KU_EditUser::setLE( KLineEdit *le, const QString &val, bool first )
 {
   if ( first ) {
@@ -478,7 +404,6 @@ void KU_EditUser::selectuser()
   QDateTime datetime;
   datetime.setTime_t( lstchg );
   if ( KU_Global::users()->getCaps() & KU_Users::Cap_Shadow ||
-       KU_Global::users()->getCaps() & KU_Users::Cap_Samba ||
        KU_Global::users()->getCaps() & KU_Users::Cap_BSD ) {
 
     leslstchg->setText( KGlobal::locale()->formatDateTime( datetime, KLocale::LongDate ) );
@@ -488,15 +413,8 @@ void KU_EditUser::selectuser()
     lbuser->setText( user.getName() );
     leid->setText( QString::number( user.getUID() ) );
     if ( ro ) leid->setReadOnly( true );
-    if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-      lerid->setText( QString::number( user.getSID().getRID() ) );
-      if ( ro ) lerid->setReadOnly( true );
-    }
   } else {
     leid->setEnabled( false );
-    if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-      lerid->setEnabled( false );
-    }
   }
   if ( ro ) leshell->setEditable( false );
 
@@ -540,24 +458,7 @@ void KU_EditUser::selectuser()
       setCB( cbposix, !(user.getCaps() & KU_User::Cap_POSIX), first );
     }
 
-    if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-      setLE( leliscript, user.getLoginScript(), first );
-      QString profile;
-      profile = user.getProfilePath();
-      if ( !one ) profile.replace( user.getName(), QLatin1String( "%U" ), Qt::CaseInsensitive );
-      setLE( leprofile, profile, first );
-      setLE( lehomedrive, user.getHomeDrive(), first );
-      home = user.getHomePath();
-      if ( !one ) home.replace( user.getName(), QLatin1String( "%U" ), Qt::CaseInsensitive );
-      setLE( lehomepath, home, first );
-      setLE( leworkstations, user.getWorkstations(), first );
-      setLE( ledomain, user.getDomain(), first );
-      setLE( ledomsid, user.getSID().getDOM(), first );
-      setCB( cbsamba, !(user.getCaps() & KU_User::Cap_Samba), first );
-    }
-
     if ( KU_Global::users()->getCaps() & KU_Users::Cap_Shadow ||
-         KU_Global::users()->getCaps() & KU_Users::Cap_Samba ||
          KU_Global::users()->getCaps() & KU_Users::Cap_BSD ) {
 
       if ( user.getLastChange() != lstchg ) {
@@ -727,7 +628,7 @@ void KU_EditUser::mergeUser( const KU_User &user, KU_User &newuser )
   QDateTime epoch ;
   epoch.setTime_t(0);
   bool one = mSelected.isEmpty();
-  bool posix, samba = false;
+  bool posix = false;
 
   newuser = user;
 
@@ -748,35 +649,6 @@ void KU_EditUser::mergeUser( const KU_User &user, KU_User &newuser )
     newuser.setLastChange( lstchg );
   }
   newuser.setFullName( mergeLE( lefname, user.getFullName(), one ) );
-  if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-    if ( cbsamba->checkState() != Qt::PartiallyChecked ) {
-      if ( cbsamba->isChecked() )
-        newuser.setCaps( newuser.getCaps() & ~KU_User::Cap_Samba );
-      else
-        newuser.setCaps( newuser.getCaps() | KU_User::Cap_Samba );
-    }
-    samba = newuser.getCaps() & KU_User::Cap_Samba;
-    kDebug() << "user : " << newuser.getName() << " caps: " << newuser.getCaps() << " samba: " << samba;
-
-    SID sid;
-    if ( samba ) {
-      sid.setRID( one ? lerid->text().toUInt() : user.getSID().getRID() );
-      sid.setDOM( mergeLE( ledomsid, user.getSID().getDOM(), one ) );
-    }
-    newuser.setSID( sid );
-    newuser.setLoginScript( samba ?
-      mergeLE( leliscript, user.getLoginScript(), one ) : QString() );
-    newuser.setProfilePath( samba ?
-      mergeLE( leprofile, user.getProfilePath(), one ).replace( QLatin1String( "%U" ), newuser.getName(), Qt::CaseInsensitive ) : QString() );
-    newuser.setHomeDrive( samba ?
-      mergeLE( lehomedrive, user.getHomeDrive(), one ) : QString() );
-    newuser.setHomePath( samba ?
-      mergeLE( lehomepath, user.getHomePath(), one ).replace( QLatin1String( "%U" ), newuser.getName(), Qt::CaseInsensitive ) : QString() );
-    newuser.setWorkstations( samba ?
-      mergeLE( leworkstations, user.getWorkstations(), one ) : QString() );
-    newuser.setDomain( samba ?
-      mergeLE( ledomain, user.getDomain(), one ) : QString() );
-  }
 
   if ( KU_Global::users()->getCaps() & KU_Users::Cap_BSD ) {
     newuser.setOffice( mergeLE( leoffice, user.getOffice(), one ) );
@@ -822,7 +694,6 @@ void KU_EditUser::mergeUser( const KU_User &user, KU_User &newuser )
   }
 
   if ( ( (KU_Global::users()->getCaps() & KU_Users::Cap_Shadow) && posix ) ||
-       ( (KU_Global::users()->getCaps() & KU_Users::Cap_Samba) && samba ) ||
        ( (KU_Global::users()->getCaps() & KU_Users::Cap_BSD) && posix ) ) {
 
     switch ( cbexpire->checkState() ) {
@@ -846,9 +717,6 @@ void KU_EditUser::mergeUser( const KU_User &user, KU_User &newuser )
     if ( index != -1 ) {
       KU_Group group = KU_Global::groups()->at( index );
       newuser.setGID( group.getGID() );
-      if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-        newuser.setPGSID( group.getSID() );
-      }
     }
   }
 }
@@ -923,13 +791,6 @@ bool KU_EditUser::check()
     }
   }
 
-  if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) {
-    if ( one && lerid->text().isEmpty() && !( cbsamba->isChecked() ) ) {
-      KMessageBox::sorry( 0, i18n("You need to specify a samba RID.") );
-      return false;
-    }
-  }
-
   return true;
 }
 
@@ -944,7 +805,6 @@ void KU_EditUser::setpwd()
     QDateTime datetime;
     datetime.setTime_t( lstchg );
     if ( KU_Global::users()->getCaps() & KU_Users::Cap_Shadow ||
-        KU_Global::users()->getCaps() & KU_Users::Cap_Samba ||
         KU_Global::users()->getCaps() & KU_Users::Cap_BSD ) {
 
         leslstchg->setText( KGlobal::locale()->formatDateTime( datetime, KLocale::LongDate ) );
@@ -972,17 +832,6 @@ void KU_EditUser::accept()
       KMessageBox::sorry( 0,
         i18n("User with UID %1 already exists", newuid) );
       return;
-    }
-  }
-
-  if ( one && ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) && !cbsamba->isChecked() ) {
-    uint newrid = lerid->text().toInt();
-    if ( oldrid != newrid ) {
-      if ( KU_Global::users()->lookup_sam(newrid) != -1 ) {
-        KMessageBox::sorry( 0,
-          i18n("User with RID %1 already exists", newrid) );
-        return;
-      }
     }
   }
 
