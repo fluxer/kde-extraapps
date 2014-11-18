@@ -61,7 +61,6 @@ private:
   KLineEdit   *legrpname;
   KLineEdit   *legid;
   KComboBox   *lerid;
-  KLineEdit   *ledom;
   KLineEdit   *ledispname;
   KLineEdit   *ledesc;
   KLineEdit   *ledomsid;

@@ -38,7 +38,6 @@ public:
   KU_ConfigDlg( KConfigSkeleton *config, QWidget* parent, const char * name = 0 );
   ~KU_ConfigDlg();
 private:
-  QProgressDialog *mProg;
   Ui_KU_FilesSettings *fileui;
   QString mErrorMsg;
 };
