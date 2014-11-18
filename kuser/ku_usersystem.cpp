@@ -37,10 +37,6 @@ KU_UserSystem::KU_UserSystem(KU_PrefsBase *cfg) : KU_Users( cfg )
 #ifdef HAVE_SHADOW_H
   if ( !mCfg->shadowsrc().isEmpty() ) caps |= Cap_Shadow;
 #endif
-#if defined(__FreeBSD__) || defined(__bsdi__)
-  caps |= Cap_BSD;
-#endif
-
 }
 
 KU_UserSystem::~KU_UserSystem()
@@ -83,11 +79,6 @@ bool KU_UserSystem::loadpwd()
     user.setPwd( tmp );
     user.setHomeDir(QString::fromLocal8Bit(p->pw_dir));
     user.setShell(QString::fromLocal8Bit(p->pw_shell));
-#if defined(__FreeBSD__) || defined(__bsdi__)
-    user.setClass(QString::fromLatin1(p->pw_class));
-    user.setLastChange(p->pw_change);
-    user.setExpire(p->pw_expire);
-#endif
 
     if ((p->pw_gecos != 0) && (p->pw_gecos[0] != 0))
       fillGecos(user, p->pw_gecos);

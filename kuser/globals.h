@@ -49,23 +49,13 @@
   #define MAIL_SPOOL_DIR "/var/spool/mail"
 #endif
 
-#if defined(__FreeBSD__) || defined(__bsdi__)
-  #include <pwd.h>
-  #define PASSWORD_FILE _PATH_MASTERPASSWD
-  #define PASSWORD_FILE_MASK S_IRUSR | S_IWUSR
-  #define PWMKDB _PATH_PWD_MKDB" -p "PASSWORD_FILE
-  #define SKELDIR "/usr/share/skel"
-  #define SKEL_FILE_PREFIX "dot"
-  #define CRONTAB_DIR "/var/cron/tabs"
-#else
-  #define PASSWORD_FILE "/etc/passwd"
-  #define PASSWORD_FILE_MASK S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
-  #define PWMKDB "cd /var/yp; make 2>&1 >> /var/log/kuser"
-  #define GRMKDB "cd /var/yp; make 2>&1 >> /var/log/kuser"
-  #define SKELDIR "/etc/skel"
-  #define SKEL_FILE_PREFIX ""
-  #define CRONTAB_DIR "/var/spool/cron"
-#endif
+#define PASSWORD_FILE "/etc/passwd"
+#define PASSWORD_FILE_MASK S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
+#define PWMKDB "cd /var/yp; make 2>&1 >> /var/log/kuser"
+#define GRMKDB "cd /var/yp; make 2>&1 >> /var/log/kuser"
+#define SKELDIR "/etc/skel"
+#define SKEL_FILE_PREFIX ""
+#define CRONTAB_DIR "/var/spool/cron"
 
 #define GROUP_FILE "/etc/group"
 #define GROUP_FILE_MASK S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH

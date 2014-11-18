@@ -4,12 +4,7 @@ Denis Perchine <dyp@perchine.com>
 Original README:
 ----------------------
 KUser is rewritten XUser which was written in XForms.
-It supports:
-Solaris
-Linux
-Irix
-FreeBSD
-HPUX
+It supports only Linux.
 
 ATTENTION: BACKUP ALL OF YOUR DATA. THIS PROGRAM MAY DESTROY
 IT. BE CAREFUL.

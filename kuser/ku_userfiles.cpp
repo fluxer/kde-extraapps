@@ -62,9 +62,6 @@ KU_UserFiles::KU_UserFiles(KU_PrefsBase *cfg) : KU_Users( cfg )
 #ifdef HAVE_SHADOW_H
   if ( !mCfg->shadowsrc().isEmpty() ) caps |= Cap_Shadow;
 #endif
-#if defined(__FreeBSD__) || defined(__bsdi__)
-  caps |= Cap_BSD;
-#endif
 }
 
 KU_UserFiles::~KU_UserFiles()
@@ -145,11 +142,6 @@ bool KU_UserFiles::loadpwd()
     user.setPwd( tmp );
     user.setHomeDir(QString::fromLocal8Bit(p->pw_dir));
     user.setShell(QString::fromLocal8Bit(p->pw_shell));
-#if defined(__FreeBSD__) || defined(__bsdi__)
-    user.setClass(QString::fromLatin1(p->pw_class));
-    user.setLastChange(p->pw_change);
-    user.setExpire(p->pw_expire);
-#endif
 
     if ((p->pw_gecos != 0) && (p->pw_gecos[0] != 0))
       fillGecos(user, p->pw_gecos);
@@ -343,26 +335,6 @@ bool KU_UserFiles::savepwd()
     escstr( Shell );
     escstr( Name );
     escstr( FullName );
-#if defined(__FreeBSD__) || defined(__bsdi__)
-    escstr( Class );
-    escstr( Office );
-    escstr( WorkPhone );
-    escstr( HomePhone );
-    s =
-      user.getName() + QLatin1Char( ':' ) +
-      tmp + QLatin1Char( ':' ) +
-      QString::number( user.getUID() ) + QLatin1Char( ':' ) +
-      QString::number( user.getGID() ) + QLatin1Char( ':' ) +
-      user.getClass() + QLatin1Char( ':' ) +
-      QString::number( user.getLastChange() ) + QLatin1Char( ':' ) +
-      QString::number( user.getExpire() ) + QLatin1Char( ':' );
-
-    s1 =
-      user.getFullName() + QLatin1Char( ',' ) +
-      user.getOffice() + QLatin1Char( ',' ) +
-      user.getWorkPhone() + QLatin1Char( ',' ) +
-      user.getHomePhone();
-#else
     escstr( Office1 );
     escstr( Office2 );
     escstr( Address );
@@ -378,7 +350,6 @@ bool KU_UserFiles::savepwd()
       user.getOffice2() + QLatin1Char( ',' ) +
       user.getAddress();
 
-#endif
     for (int j=(s1.length()-1); j>=0; j--) {
       if (s1[j] != QLatin1Char( ',' ))
         break;
@@ -432,15 +403,6 @@ bool KU_UserFiles::savepwd()
 #ifdef HAVE_SHADOW_H
   ::free(spwd.sp_namp);
   ::free(spwd.sp_pwdp);
-#endif
-
-  // need to run a utility program to build /etc/passwd, /etc/pwd.db
-  // and /etc/spwd.db from /etc/master.passwd
-#if defined(__FreeBSD__) || defined(__bsdi__)
-  if (system(PWMKDB) != 0) {
-    mErrorString = i18n("Unable to build password database.");
-    return false;
-  }
 #endif
 
   return true;
