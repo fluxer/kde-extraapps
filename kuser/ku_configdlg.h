@@ -26,20 +26,11 @@
 #include <QProgressDialog>
 
 #include <kconfigdialog.h>
-#include <kldap/ldif.h>
 #include <kprogressdialog.h>
 #include <kio/job.h>
 
-class Ui_KU_LdapSamba;
-class Ui_KU_LdapSettings;
 class Ui_KU_FilesSettings;
-namespace KLDAP { class LdapConfigWidget; }
 namespace KIO { class Job; }
-struct KU_SambaDomain {
-  QString name;
-  QString sid;
-  uint ridbase;
-};
 
 class KU_ConfigDlg : public KConfigDialog {
   Q_OBJECT
@@ -48,18 +39,8 @@ public:
   ~KU_ConfigDlg();
 private:
   QProgressDialog *mProg;
-  Ui_KU_LdapSamba *sambaui;
-  Ui_KU_LdapSettings *ldapui;
   Ui_KU_FilesSettings *fileui;
-  KLDAP::LdapConfigWidget *ldconf;
-  KLDAP::Ldif mLdif;
   QString mErrorMsg;
-  QList<KU_SambaDomain> mResult;
-  KU_SambaDomain mDomain;
-private slots:
-  void slotQueryClicked();
-  void loadData( KIO::Job*, const QByteArray& d );
-  void loadResult( KJob* job);
 };
 
 #endif // _KU_CONFIGDLG_H_

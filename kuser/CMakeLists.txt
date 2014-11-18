@@ -12,8 +12,6 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 include_directories (${QDBUS_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
-find_package(KdepimLibs REQUIRED)
-
 include(CheckFunctionExists)
 include(CheckLibraryExists)
 
@@ -73,8 +71,6 @@ set(kuser_SRCS
 	sid.cpp
 	ku_userfiles.cpp
 	ku_groupfiles.cpp
-	ku_userldap.cpp
-	ku_groupldap.cpp
 	ku_usersystem.cpp
 	ku_groupsystem.cpp
 	ku_selectconn.cpp
@@ -82,7 +78,7 @@ set(kuser_SRCS
 
 kde4_add_kcfg_files(kuser_SRCS ku_prefs.kcfgc)
 
-kde4_add_ui_files(kuser_SRCS ku_filessettings.ui ku_generalsettings.ui ku_ldapsettings.ui ku_ldapsamba.ui ku_passwordpolicy.ui)
+kde4_add_ui_files(kuser_SRCS ku_filessettings.ui ku_generalsettings.ui ku_passwordpolicy.ui)
 
 kde4_add_executable(kuser ${kuser_SRCS})
 

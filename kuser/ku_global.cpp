@@ -25,8 +25,6 @@
 #include "ku_global.h"
 #include "ku_userfiles.h"
 #include "ku_groupfiles.h"
-#include "ku_userldap.h"
-#include "ku_groupldap.h"
 #include "ku_usersystem.h"
 #include "ku_groupsystem.h"
 
@@ -68,10 +66,6 @@ void KU_Global::init()
     case KU_PrefsBase::EnumSource::Files:
       mUsers = new KU_UserFiles( mCfg );
       mGroups = new KU_GroupFiles( mCfg );
-      break;
-    case KU_PrefsBase::EnumSource::LDAP:
-      mUsers = new KU_UserLDAP( mCfg );
-      mGroups = new KU_GroupLDAP( mCfg );
       break;
     case KU_PrefsBase::EnumSource::System:
       mUsers = new KU_UserSystem( mCfg );
