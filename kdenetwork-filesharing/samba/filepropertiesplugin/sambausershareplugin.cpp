@@ -73,13 +73,6 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
 
         vLayout->addWidget(new QLabel(i18n("Samba is not installed on your system."), widget));
 
-#ifdef SAMBA_INSTALL
-        KPushButton *btn = new KPushButton(i18n("Install Samba..."), widget);
-        btn->setDefault(false);
-        vLayout->addWidget(btn);
-        connect(btn, SIGNAL(clicked()), SLOT(installSamba()));
-#endif
-
         // align items on top
         vLayout->addStretch();
 
@@ -113,23 +106,6 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
 
 SambaUserSharePlugin::~SambaUserSharePlugin()
 {
-}
-
-void SambaUserSharePlugin::installSamba()
-{
-    unsigned int xid = 0;
-    QStringList packages;
-    packages << SAMBA_PACKAGE_NAME;
-    QString interaction("show-confirm-install,show-progress");
-
-    QDBusInterface device("org.freedesktop.PackageKit", "/org/freedesktop/PackageKit",
-                          "org.freedesktop.PackageKit.Modify");
-    if (!device.isValid()) {
-        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
-                i18n("<qt><strong>Samba could not be installed.</strong><br />Please, check if kpackagekit is properly installed</qt>"));
-        return;
-    }
-    QDBusReply<int> reply = device.call("InstallPackageNames", xid, packages, interaction);
 }
 
 void SambaUserSharePlugin::setupModel()

@@ -26,18 +26,6 @@ if(NOT INSIDE_KDENETWORK)
     include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 endif(NOT INSIDE_KDENETWORK)
 
-option(SAMBA_INSTALL "Offer to install Samba for file sharing with PackageKit if it is not already installed, use -DSAMBA_INSTALL=off to disable, use -DSAMBA_PACKAGE_NAME= to set package name." ON)
-if(NOT SAMBA_PACKAGE_NAME)
-    set(SAMBA_PACKAGE_NAME \\\"samba\\\")
-endif(NOT SAMBA_PACKAGE_NAME)
-if(SAMBA_INSTALL)
-    message(STATUS "Samba install feature will be enabled.")
-    add_definitions(-DSAMBA_INSTALL)
-    add_definitions(-DSAMBA_PACKAGE_NAME=${SAMBA_PACKAGE_NAME})
-else(SAMBA_INSTALL)
-    message(STATUS "Samba install feature will NOT be enabled.")
-endif(SAMBA_INSTALL)
-
 add_subdirectory(samba)
 
 if(NOT INSIDE_KDENETWORK)
