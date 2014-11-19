@@ -16,7 +16,7 @@
 #include <QLayout>
 #include <QCheckBox>
 #include <QPalette>
-#include <QColorGroup>
+#include <QPalette>
 #include <QPainter>
 #include <QEvent>
 #include <QHBoxLayout>
