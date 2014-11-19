@@ -41,9 +41,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KLineEdit>
 #include <KLocale>
 #include <KUrl>
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-#include <kratingpainter.h>
-#endif
 
 // Local
 #include "archiveutils.h"
@@ -53,9 +50,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include "thumbnailview.h"
 #include "timeutils.h"
 #include "tooltipwidget.h"
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-#include "../semanticinfo/semanticinfodirmodel.h"
-#endif
 
 // Define this to be able to fine tune the rendering of the selection
 // background through a config file
@@ -126,9 +120,6 @@ struct PreviewItemDelegatePrivate
     QToolButton* mFullScreenButton;
     QToolButton* mRotateLeftButton;
     QToolButton* mRotateRightButton;
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-    KRatingPainter mRatingPainter;
-#endif
 
     QPersistentModelIndex mIndexUnderCursor;
     QSize mThumbnailSize;
@@ -229,29 +220,10 @@ struct PreviewItemDelegatePrivate
                    ratingRowHeight());
     }
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-    int ratingFromCursorPosition(const QRect& ratingRect) const
-    {
-        const QPoint pos = mView->viewport()->mapFromGlobal(QCursor::pos());
-        return mRatingPainter.ratingFromPosition(ratingRect, pos);
-    }
-#endif
 
     bool mouseButtonEventFilter(QEvent::Type type)
     {
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-        const QRect rect = ratingRectFromIndexRect(mView->visualRect(mIndexUnderCursor));
-        const int rating = ratingFromCursorPosition(rect);
-        if (rating == -1) {
-            return false;
-        }
-        if (type == QEvent::MouseButtonRelease) {
-            q->setDocumentRatingRequested(urlForIndex(mIndexUnderCursor) , rating);
-        }
-        return true;
-#else
         return false;
-#endif
     }
 
     QPoint saveButtonPosition(const QRect& itemRect) const
@@ -358,12 +330,6 @@ struct PreviewItemDelegatePrivate
 
     void drawRating(QPainter* painter, const QRect& rect, const QVariant& value)
     {
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-        const int rating = value.toInt();
-        const QRect ratingRect = ratingRectFromIndexRect(rect);
-        const int hoverRating = ratingFromCursorPosition(ratingRect);
-        mRatingPainter.paint(painter, ratingRect, rating, hoverRating);
-#endif
     }
 
     bool isTextElided(const QString& text) const
@@ -495,9 +461,6 @@ struct PreviewItemDelegatePrivate
 
     int ratingRowHeight() const
     {
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-        return qMax(mView->fontMetrics().ascent(), int(KIconLoader::SizeSmall));
-#endif
         return 0;
     }
 
@@ -596,11 +559,6 @@ PreviewItemDelegate::PreviewItemDelegate(ThumbnailView* view)
     connect(view, SIGNAL(rowsInsertedSignal(QModelIndex,int,int)),
             SLOT(slotRowsChanged()));
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-    d->mRatingPainter.setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
-    d->mRatingPainter.setLayoutDirection(view->layoutDirection());
-    d->mRatingPainter.setMaxRating(10);
-#endif
 
     connect(view, SIGNAL(thumbnailSizeChanged(QSize)),
             SLOT(setThumbnailSize(QSize)));
@@ -815,9 +773,6 @@ void PreviewItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
     }
 
     if (!isDirOrArchive && (d->mDetails & PreviewItemDelegate::RatingDetail)) {
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-        d->drawRating(painter, rect, index.data(SemanticInfoDirModel::RatingRole));
-#endif
     }
 
 #ifdef DEBUG_DRAW_CURRENT

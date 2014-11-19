@@ -30,12 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Local
 #include <lib/archiveutils.h>
 #include <lib/timeutils.h>
-#ifdef GWENVIEW_SEMANTICINFO_BACKEND_NONE
 #include <KDirModel>
-#else
-#include "abstractsemanticinfobackend.h"
-#include "semanticinfodirmodel.h"
-#endif
 
 namespace Gwenview
 {
@@ -58,11 +53,7 @@ AbstractSortedDirModelFilter::~AbstractSortedDirModelFilter()
 
 struct SortedDirModelPrivate
 {
-#ifdef GWENVIEW_SEMANTICINFO_BACKEND_NONE
     KDirModel* mSourceModel;
-#else
-    SemanticInfoDirModel* mSourceModel;
-#endif
     QStringList mBlackListedExtensions;
     QList<AbstractSortedDirModelFilter*> mFilters;
     QTimer mDelayedApplyFiltersTimer;
@@ -73,11 +64,7 @@ SortedDirModel::SortedDirModel(QObject* parent)
 : KDirSortFilterProxyModel(parent)
 , d(new SortedDirModelPrivate)
 {
-#ifdef GWENVIEW_SEMANTICINFO_BACKEND_NONE
     d->mSourceModel = new KDirModel(this);
-#else
-    d->mSourceModel = new SemanticInfoDirModel(this);
-#endif
     setSourceModel(d->mSourceModel);
     d->mDelayedApplyFiltersTimer.setInterval(0);
     d->mDelayedApplyFiltersTimer.setSingleShot(true);
@@ -133,9 +120,6 @@ KDirLister* SortedDirModel::dirLister() const
 
 void SortedDirModel::reload()
 {
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-    d->mSourceModel->clearSemanticInfoCache();
-#endif
     dirLister()->updateDirectory(dirLister()->url());
 }
 
@@ -205,19 +189,6 @@ bool SortedDirModel::filterAcceptsRow(int row, const QModelIndex& parent) const
                 return false;
             }
         }
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-        if (!d->mSourceModel->semanticInfoAvailableForIndex(index)) {
-            Q_FOREACH(const AbstractSortedDirModelFilter * filter, d->mFilters) {
-                // Make sure we have semanticinfo, otherwise retrieve it and
-                // return false, we will be called again later when it is
-                // there.
-                if (filter->needsSemanticInfo()) {
-                    d->mSourceModel->retrieveSemanticInfoForIndex(index);
-                    return false;
-                }
-            }
-        }
-#endif
 
         Q_FOREACH(const AbstractSortedDirModelFilter * filter, d->mFilters) {
             if (!filter->acceptsIndex(index)) {
@@ -230,19 +201,9 @@ bool SortedDirModel::filterAcceptsRow(int row, const QModelIndex& parent) const
 
 AbstractSemanticInfoBackEnd* SortedDirModel::semanticInfoBackEnd() const
 {
-#ifdef GWENVIEW_SEMANTICINFO_BACKEND_NONE
     return 0;
-#else
-    return d->mSourceModel->semanticInfoBackEnd();
-#endif
 }
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-SemanticInfo SortedDirModel::semanticInfoForSourceIndex(const QModelIndex& sourceIndex) const
-{
-    return d->mSourceModel->semanticInfoForIndex(sourceIndex);
-}
-#endif
 
 void SortedDirModel::applyFilters()
 {

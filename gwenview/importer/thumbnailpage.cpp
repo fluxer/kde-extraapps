@@ -39,7 +39,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/kindproxymodel.h>
 #include <lib/gwenviewconfig.h>
 #include <lib/recursivedirmodel.h>
-#include <lib/semanticinfo/sorteddirmodel.h>
+#include <lib/sorteddirmodel.h>
 #include <lib/thumbnailview/abstractthumbnailviewhelper.h>
 #include <lib/thumbnailview/previewitemdelegate.h>
 #include <documentdirfinder.h>

@@ -123,7 +123,6 @@ set(gwenviewlib_SRCS
     iodevicejpegsourcemanager.cpp
     jpegcontent.cpp
     kindproxymodel.cpp
-    semanticinfo/sorteddirmodel.cpp
     memoryutils.cpp
     mimetypeutils.cpp
     paintutils.cpp
@@ -159,33 +158,9 @@ set(gwenviewlib_SRCS
     widgetfloater.cpp
     zoomslider.cpp
     zoomwidget.cpp
+    sorteddirmodel.cpp
     ${GV_JPEG_DIR}/transupp.c
     )
-
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    set(gwenviewlib_SRCS
-        ${gwenviewlib_SRCS}
-        semanticinfo/abstractsemanticinfobackend.cpp
-        semanticinfo/semanticinfodirmodel.cpp
-        semanticinfo/tagitemdelegate.cpp
-        semanticinfo/tagmodel.cpp
-        semanticinfo/tagwidget.cpp
-        )
-endif()
-
-if (GWENVIEW_SEMANTICINFO_BACKEND_FAKE)
-    set(gwenviewlib_SRCS
-        ${gwenviewlib_SRCS}
-        semanticinfo/fakesemanticinfobackend.cpp
-        )
-endif()
-
-if (GWENVIEW_SEMANTICINFO_BACKEND_BALOO)
-    set(gwenviewlib_SRCS
-        ${gwenviewlib_SRCS}
-        semanticinfo/baloosemanticinfobackend.cpp
-        )
-endif()
 
 set_source_files_properties(
     exiv2imageloader.cpp
@@ -227,12 +202,6 @@ target_link_libraries(gwenviewlib
     )
 if (WIN32)
     target_link_libraries(gwenviewlib ${EXPAT_LIBRARIES})
-endif()
-
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    target_link_libraries(gwenviewlib
-        ${BALOO_LIBRARIES}
-        )
 endif()
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})

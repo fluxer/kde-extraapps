@@ -39,13 +39,6 @@ set(gwenview_SRCS
     browsemainpage.cpp
     )
 
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    set (gwenview_SRCS
-        ${gwenview_SRCS}
-        semanticinfocontextmanageritem.cpp
-        )
-endif()
-
 if (KIPI_FOUND)
     set (gwenview_SRCS
         ${gwenview_SRCS}
@@ -61,16 +54,9 @@ kde4_add_ui_files(gwenview_SRCS
     fullscreenconfigwidget.ui
     generalconfigpage.ui
     imageviewconfigpage.ui
-    semanticinfodialog.ui
     startmainpage.ui
     browsemainpage.ui
     )
-
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    kde4_add_ui_files(gwenview_SRCS
-        semanticinfosidebaritem.ui
-        )
-endif()
 
 kde4_add_app_icon(gwenview_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-gwenview.png")
 

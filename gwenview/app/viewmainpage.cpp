@@ -52,7 +52,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <lib/gvdebug.h>
 #include <lib/gwenviewconfig.h>
 #include <lib/paintutils.h>
-#include <lib/semanticinfo/sorteddirmodel.h>
+#include <lib/sorteddirmodel.h>
 #include <lib/slidecontainer.h>
 #include <lib/slideshow.h>
 #include <lib/statusbartoolbutton.h>

@@ -46,17 +46,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/datewidget.h>
 #include <lib/flowlayout.h>
 #include <lib/paintutils.h>
-#include <lib/semanticinfo/sorteddirmodel.h>
+#include <lib/sorteddirmodel.h>
 #include <lib/timeutils.h>
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-// KDE
-#include <kratingwidget.h>
-
-// Local
-#include <lib/semanticinfo/abstractsemanticinfobackend.h>
-#include <lib/semanticinfo/tagmodel.h>
-#endif
 
 namespace Gwenview
 {
@@ -263,220 +255,6 @@ void DateFilterWidget::applyDateFilter()
     d->mFilter->setDate(d->mDateWidget->date());
 }
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-/**
- * An AbstractSortedDirModelFilter which filters on file ratings
- */
-class RatingFilter : public AbstractSortedDirModelFilter
-{
-public:
-    enum Mode {
-        GreaterOrEqual,
-        Equal,
-        LessOrEqual
-    };
-
-    RatingFilter(SortedDirModel* model)
-        : AbstractSortedDirModelFilter(model)
-        , mRating(0)
-        , mMode(GreaterOrEqual) {}
-
-    virtual bool needsSemanticInfo() const
-    {
-        return true;
-    }
-
-    virtual bool acceptsIndex(const QModelIndex& index) const
-    {
-        SemanticInfo info = model()->semanticInfoForSourceIndex(index);
-        switch (mMode) {
-        case GreaterOrEqual:
-            return info.mRating >= mRating;
-        case Equal:
-            return info.mRating == mRating;
-        default: /* LessOrEqual */
-            return info.mRating <= mRating;
-        }
-    }
-
-    void setRating(int value)
-    {
-        mRating = value;
-        model()->applyFilters();
-    }
-
-    void setMode(Mode mode)
-    {
-        mMode = mode;
-        model()->applyFilters();
-    }
-
-private:
-    int mRating;
-    Mode mMode;
-};
-
-struct RatingWidgetPrivate
-{
-    KComboBox* mModeComboBox;
-    KRatingWidget* mRatingWidget;
-    QPointer<RatingFilter> mFilter;
-};
-
-RatingFilterWidget::RatingFilterWidget(SortedDirModel* model)
-: d(new RatingWidgetPrivate)
-{
-    d->mModeComboBox = new KComboBox;
-    d->mModeComboBox->addItem(i18n("Rating >="), RatingFilter::GreaterOrEqual);
-    d->mModeComboBox->addItem(i18n("Rating =") , RatingFilter::Equal);
-    d->mModeComboBox->addItem(i18n("Rating <="), RatingFilter::LessOrEqual);
-
-    d->mRatingWidget = new KRatingWidget;
-    d->mRatingWidget->setHalfStepsEnabled(true);
-    d->mRatingWidget->setMaxRating(10);
-
-    QHBoxLayout* layout = new QHBoxLayout(this);
-    layout->setMargin(0);
-    layout->addWidget(d->mModeComboBox);
-    layout->addWidget(d->mRatingWidget);
-
-    d->mFilter = new RatingFilter(model);
-
-    QObject::connect(d->mModeComboBox, SIGNAL(currentIndexChanged(int)),
-                     SLOT(updateFilterMode()));
-
-    QObject::connect(d->mRatingWidget, SIGNAL(ratingChanged(int)),
-                     SLOT(slotRatingChanged(int)));
-
-    updateFilterMode();
-}
-
-RatingFilterWidget::~RatingFilterWidget()
-{
-    delete d->mFilter;
-    delete d;
-}
-
-void RatingFilterWidget::slotRatingChanged(int value)
-{
-    d->mFilter->setRating(value);
-}
-
-void RatingFilterWidget::updateFilterMode()
-{
-    QVariant data = d->mModeComboBox->itemData(d->mModeComboBox->currentIndex());
-    d->mFilter->setMode(RatingFilter::Mode(data.toInt()));
-}
-
-/**
- * An AbstractSortedDirModelFilter which filters on associated tags
- */
-class TagFilter : public AbstractSortedDirModelFilter
-{
-public:
-    TagFilter(SortedDirModel* model)
-        : AbstractSortedDirModelFilter(model)
-        , mWantMatchingTag(true)
-    {}
-
-    virtual bool needsSemanticInfo() const
-    {
-        return true;
-    }
-
-    virtual bool acceptsIndex(const QModelIndex& index) const
-    {
-        if (mTag.isEmpty()) {
-            return true;
-        }
-        SemanticInfo info = model()->semanticInfoForSourceIndex(index);
-        if (mWantMatchingTag) {
-            return info.mTags.contains(mTag);
-        } else {
-            return !info.mTags.contains(mTag);
-        }
-    }
-
-    void setTag(const SemanticInfoTag& tag)
-    {
-        mTag = tag;
-        model()->applyFilters();
-    }
-
-    void setWantMatchingTag(bool value)
-    {
-        mWantMatchingTag = value;
-        model()->applyFilters();
-    }
-
-private:
-    SemanticInfoTag mTag;
-    bool mWantMatchingTag;
-};
-
-struct TagFilterWidgetPrivate
-{
-    KComboBox* mModeComboBox;
-    QComboBox* mTagComboBox;
-    QPointer<TagFilter> mFilter;
-};
-
-TagFilterWidget::TagFilterWidget(SortedDirModel* model)
-: d(new TagFilterWidgetPrivate)
-{
-    d->mFilter = new TagFilter(model);
-
-    d->mModeComboBox = new KComboBox;
-    d->mModeComboBox->addItem(i18n("Tagged"), QVariant(true));
-    d->mModeComboBox->addItem(i18n("Not Tagged"), QVariant(false));
-
-    d->mTagComboBox = new QComboBox;
-
-    QHBoxLayout* layout = new QHBoxLayout(this);
-    layout->setMargin(0);
-    layout->addWidget(d->mModeComboBox);
-    layout->addWidget(d->mTagComboBox);
-
-    AbstractSemanticInfoBackEnd* backEnd = model->semanticInfoBackEnd();
-    backEnd->refreshAllTags();
-    TagModel* tagModel = TagModel::createAllTagsModel(this, backEnd);
-
-    QCompleter* completer = new QCompleter(d->mTagComboBox);
-    completer->setCaseSensitivity(Qt::CaseInsensitive);
-    completer->setModel(tagModel);
-    d->mTagComboBox->setCompleter(completer);
-    d->mTagComboBox->setInsertPolicy(QComboBox::NoInsert);
-    d->mTagComboBox->setEditable(true);
-    d->mTagComboBox->setModel(tagModel);
-    d->mTagComboBox->setCurrentIndex(-1);
-
-    connect(d->mTagComboBox, SIGNAL(currentIndexChanged(int)), SLOT(updateTagSetFilter()));
-
-    connect(d->mModeComboBox, SIGNAL(currentIndexChanged(int)), SLOT(updateTagSetFilter()));
-
-    QTimer::singleShot(0, d->mTagComboBox, SLOT(setFocus()));
-}
-
-TagFilterWidget::~TagFilterWidget()
-{
-    delete d->mFilter;
-    delete d;
-}
-
-void TagFilterWidget::updateTagSetFilter()
-{
-    QModelIndex index = d->mTagComboBox->model()->index(d->mTagComboBox->currentIndex(), 0);
-    if (!index.isValid()) {
-        kWarning() << "Invalid index";
-        return;
-    }
-    SemanticInfoTag tag = index.data(TagModel::TagRole).toString();
-    d->mFilter->setTag(tag);
-
-    bool wantMatchingTag = d->mModeComboBox->itemData(d->mModeComboBox->currentIndex()).toBool();
-    d->mFilter->setWantMatchingTag(wantMatchingTag);
-}
-#endif
 
 /**
  * A container for all filter widgets. It features a close button on the right.
@@ -566,10 +344,6 @@ FilterController::FilterController(QFrame* frame, SortedDirModel* dirModel)
 
     d->addAction(i18nc("@action:inmenu", "Filter by Name"), SLOT(addFilterByName()));
     d->addAction(i18nc("@action:inmenu", "Filter by Date"), SLOT(addFilterByDate()));
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-    d->addAction(i18nc("@action:inmenu", "Filter by Rating"), SLOT(addFilterByRating()));
-    d->addAction(i18nc("@action:inmenu", "Filter by Tag"), SLOT(addFilterByTag()));
-#endif
 }
 
 FilterController::~FilterController()
@@ -592,17 +366,6 @@ void FilterController::addFilterByDate()
     d->addFilter(new DateFilterWidget(d->mDirModel));
 }
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-void FilterController::addFilterByRating()
-{
-    d->addFilter(new RatingFilterWidget(d->mDirModel));
-}
-
-void FilterController::addFilterByTag()
-{
-    d->addFilter(new TagFilterWidget(d->mDirModel));
-}
-#endif
 
 void FilterController::slotFilterWidgetClosed()
 {

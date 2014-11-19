@@ -49,9 +49,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/document/documentfactory.h>
 #include <lib/gvdebug.h>
 #include <lib/gwenviewconfig.h>
-#include <lib/semanticinfo/abstractsemanticinfobackend.h>
-#include <lib/semanticinfo/sorteddirmodel.h>
-#include <lib/semanticinfo/tagmodel.h>
+#include <lib/sorteddirmodel.h>
 #include <lib/sorting.h>
 #include <lib/archiveutils.h>
 #include <lib/thumbnailview/previewitemdelegate.h>
@@ -148,9 +146,6 @@ struct BrowseMainPagePrivate : public Ui_BrowseMainPage
         addAction(i18nc("@action:inmenu", "Date"), PreviewItemDelegate::DateDetail);
         addAction(i18nc("@action:inmenu", "Image Size"), PreviewItemDelegate::ImageSizeDetail);
         addAction(i18nc("@action:inmenu", "File Size"), PreviewItemDelegate::FileSizeDetail);
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-        addAction(i18nc("@action:inmenu", "Rating"), PreviewItemDelegate::RatingDetail);
-#endif
 #undef addAction
 
         KActionCategory* file = new KActionCategory(i18nc("@title actions category", "File"), actionCollection);

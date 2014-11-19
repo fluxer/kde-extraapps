@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KFilePlacesModel>
 
 // Local
-#include <lib/semanticinfo/sorteddirmodel.h>
+#include <lib/sorteddirmodel.h>
 
 namespace Gwenview
 {

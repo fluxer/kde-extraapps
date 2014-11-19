@@ -45,8 +45,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/historymodel.h>
 #include <lib/hud/hudmessagebubble.h>
 #include <lib/mimetypeutils.h>
-#include <lib/semanticinfo/semanticinfodirmodel.h>
-#include <lib/semanticinfo/sorteddirmodel.h>
+#include <lib/sorteddirmodel.h>
 #include <lib/transformimageoperation.h>
 #include <mainwindow.h>
 #include <saveallhelper.h>
@@ -339,16 +338,6 @@ void GvCore::rotateLeft(const KUrl& url)
 void GvCore::rotateRight(const KUrl& url)
 {
     applyTransform(url, ROT_90);
-}
-
-void GvCore::setRating(const KUrl& url, int rating)
-{
-    QModelIndex index = d->mDirModel->indexForUrl(url);
-    if (!index.isValid()) {
-        kWarning() << "invalid index!";
-        return;
-    }
-    d->mDirModel->setData(index, rating, SemanticInfoDirModel::RatingRole);
 }
 
 static void clearModel(QAbstractItemModel* model)

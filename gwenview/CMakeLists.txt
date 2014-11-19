@@ -9,22 +9,6 @@ include(MacroOptionalAddSubdirectory)
 
 KDE4_NO_ENABLE_FINAL(gwenview)
 
-## CMake options
-set(GWENVIEW_SEMANTICINFO_BACKEND_NONE OFF)
-set(GWENVIEW_SEMANTICINFO_BACKEND_FAKE OFF)
-set(GWENVIEW_SEMANTICINFO_BACKEND_BALOO OFF)
-
-set(GWENVIEW_SEMANTICINFO_BACKEND "Baloo" CACHE STRING "Semantic info backend for Gwenview (Baloo/Fake/None)")
-
-# Init GWENVIEW_SEMANTICINFO_BACKEND_* vars
-if (GWENVIEW_SEMANTICINFO_BACKEND STREQUAL "None")
-    set(GWENVIEW_SEMANTICINFO_BACKEND_NONE ON)
-elseif (GWENVIEW_SEMANTICINFO_BACKEND STREQUAL "Fake")
-    set(GWENVIEW_SEMANTICINFO_BACKEND_FAKE ON)
-else()
-    set(GWENVIEW_SEMANTICINFO_BACKEND_BALOO ON)
-endif()
-
 ## Dependencies
 find_package(JPEG)
 macro_log_feature(JPEG_FOUND "libjpeg" "JPEG image manipulation support" "http://libjpeg.sourceforge.net/" TRUE)
@@ -40,15 +24,6 @@ macro_log_feature(KIPI_FOUND "libkipi" "Provides various image manipulation and 
 
 find_package(LCMS2)
 macro_log_feature(LCMS2_FOUND "LittleCMS" "Color management engine" "http://www.littlecms.com" TRUE "2.0")
-
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    # We need Baloo for all backends but "None"
-    find_package(Baloo)
-    macro_log_feature(Baloo_FOUND "Baloo Core Libraries" "Desktop-wide semantic information support" "https://projects.kde.org/projects/kde/kdelibs/baloo" TRUE)
-
-    find_package(KFileMetaData CONFIG)
-    macro_log_feature(KFileMetaData_FOUND "KFileMetaData Library" "A library for extracting file metadata" "https://projects.kde.org/kfilemetadata" TRUE)
-endif()
 
 find_package(LibKonq)
 macro_log_feature(LIBKONQ_FOUND "libkonq" "Standard file management features" "http://www.kde.org" TRUE)

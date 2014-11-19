@@ -72,7 +72,6 @@ public Q_SLOTS:
     void saveAs(const KUrl&);
     void rotateLeft(const KUrl&);
     void rotateRight(const KUrl&);
-    void setRating(const KUrl&, int);
 
 private Q_SLOTS:
     void slotConfigChanged();

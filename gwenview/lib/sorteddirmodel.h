@@ -42,9 +42,6 @@ namespace Gwenview
 class AbstractSemanticInfoBackEnd;
 struct SortedDirModelPrivate;
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-struct SemanticInfo;
-#endif
 
 class SortedDirModel;
 class GWENVIEWLIB_EXPORT AbstractSortedDirModelFilter : public QObject
@@ -107,9 +104,6 @@ public:
 
     AbstractSemanticInfoBackEnd* semanticInfoBackEnd() const;
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-    SemanticInfo semanticInfoForSourceIndex(const QModelIndex& sourceIndex) const;
-#endif
 
     bool hasDocuments() const;
 

@@ -43,9 +43,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/thumbnailview/abstractthumbnailviewhelper.h>
 #include <lib/thumbnailview/previewitemdelegate.h>
 
-#ifndef GWENVIEW_SEMANTICINFO_BACKEND_NONE
-#include <lib/semanticinfo/tagmodel.h>
-#endif
 
 namespace Gwenview
 {
@@ -101,14 +98,8 @@ struct StartMainPagePrivate : public Ui_StartMainPage
 
     void setupSearchUi()
     {
-#ifdef GWENVIEW_SEMANTICINFO_BACKEND_BALOO
-        mTagView->setModel(TagModel::createAllTagsModel(mTagView, mGvCore->semanticInfoBackEnd()));
-        mTagView->show();
-        mTagLabel->hide();
-#else
         mTagView->hide();
         mTagLabel->hide();
-#endif
     }
 
     void updateHistoryTab()
@@ -208,14 +199,6 @@ StartMainPage::~StartMainPage()
 
 void StartMainPage::slotTagViewClicked(const QModelIndex& index)
 {
-#ifdef GWENVIEW_SEMANTICINFO_BACKEND_BALOO
-    if (!index.isValid()) {
-        return;
-    }
-    // FIXME: Check label encoding
-    const QString tag = index.data().toString();
-    emit urlSelected(KUrl("tags:/" + tag));
-#endif
 }
 
 void StartMainPage::applyPalette(const QPalette& newPalette)
