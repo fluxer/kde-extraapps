@@ -1,0 +1,4078 @@
+# translation of ktorrent.po to Bulgarian
+# translation of ktorrent.po to
+#
+# Златко Попов <zlatkopopov@fsa-bg.org>, 2005.
+# Zlatko Popov <zlatkopopov@fsa-bg.org>, 2005, 2006, 2007.
+# Yasen Pramatarov <yasen@lindeas.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktorrent\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-12-18 16:46+0100\n"
+"PO-Revision-Date: 2009-09-22 21:25+0300\n"
+"Last-Translator: Yasen Pramatarov <yasen@lindeas.com>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: examples/ktcli/main.cpp:60
+#, fuzzy
+msgid "Torrent to open"
+msgstr "Документ за отваряне"
+
+#: examples/ktcli/main.cpp:61 examples/ktcli/main.cpp:62
+#, fuzzy
+msgid "Port to use"
+msgstr "Бележка"
+
+#: examples/ktcli/main.cpp:63
+#, fuzzy
+msgid "Whether or not to enable encryption"
+msgstr "Шифроване на протоколите"
+
+#: examples/ktcli/main.cpp:64
+#, fuzzy
+msgid "Whether or not to enable peer exchange"
+msgstr "Показване на изскачащи съобщения в системния панел"
+
+#: examples/ktcli/main.cpp:65
+#, fuzzy
+msgid "Whether or not to use utp"
+msgstr "Показване на изскачащи съобщения в системния панел"
+
+#: examples/ktcli/main.cpp:67
+msgid "ktcli"
+msgstr ""
+
+#: src/bcodec/bdecoder.cpp:71
+#, kde-format
+msgid "Illegal token: %1"
+msgstr "Невалиден символ: %1"
+
+#: src/bcodec/bdecoder.cpp:133 src/bcodec/bdecoder.cpp:141
+msgid "Decode error"
+msgstr "Грешка при декодиране"
+
+#: src/bcodec/bdecoder.cpp:201 src/bcodec/bdecoder.cpp:246
+msgid "Unexpected end of input"
+msgstr "Неочакван край на въвеждането"
+
+#: src/bcodec/bdecoder.cpp:221 src/bcodec/bdecoder.cpp:255
+#, kde-format
+msgid "Cannot convert %1 to an int"
+msgstr "%1 не може да се преобразува в цяло число"
+
+#: src/bcodec/bdecoder.cpp:260
+#, fuzzy
+msgid "Torrent is incomplete."
+msgstr "Торентът е незавършен!"
+
+#: src/datachecker/datacheckerjob.cpp:82
+msgid "Waiting for other data checks to finish"
+msgstr ""
+
+#: src/datachecker/datacheckerjob.cpp:88 src/torrent/torrentstats.cpp:93
+msgid "Checking data"
+msgstr "Проверка на данните"
+
+#: src/datachecker/datacheckerjob.cpp:141
+#, fuzzy
+msgid "Checking Data"
+msgstr "Проверка на данните"
+
+#: src/datachecker/multidatachecker.cpp:209
+#: src/datachecker/singledatachecker.cpp:49 src/diskio/multifilecache.cpp:706
+#: src/diskio/multifilecache.cpp:745 src/torrent/torrentcreator.cpp:124
+#: src/torrent/torrentcreator.cpp:255 src/torrent/torrentcreator.cpp:292
+#, kde-format
+msgid "Cannot open file %1: %2"
+msgstr "Не може да бъде отворен файл %1: %2"
+
+#: src/diskio/cache.cpp:170 src/diskio/multifilecache.cpp:118
+#: src/diskio/singlefilecache.cpp:85
+#, fuzzy, kde-format
+msgid "Failed to create %1: %2"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/diskio/cachefile.cpp:94 src/util/fileops.cpp:361
+#: src/util/fileops.cpp:406
+#, fuzzy, kde-format
+msgid "Cannot open %1: %2"
+msgstr "Не може да бъде отворен %1: %2"
+
+#: src/diskio/cachefile.cpp:122 src/diskio/cachefile.cpp:250
+#: src/diskio/cachefile.cpp:414 src/diskio/cachefile.cpp:482
+#, fuzzy, kde-format
+msgid "Cannot open %1 for writing: readonly filesystem"
+msgstr "%1 не може да бъде отворен за запис - файлът е само за четене"
+
+#: src/diskio/cachefile.cpp:129 src/diskio/cachefile.cpp:420
+#, kde-format
+msgid "Attempting to write beyond the maximum size of %1"
+msgstr ""
+
+#: src/diskio/cachefile.cpp:257
+#, kde-format
+msgid ""
+"Cannot expand file %1: attempting to grow the file beyond the maximum size"
+msgstr ""
+
+#: src/diskio/cachefile.cpp:261
+#, fuzzy, kde-format
+msgid "Cannot expand file %1: %2"
+msgstr "Файл %1 не може да бъде разширен: %2"
+
+#: src/diskio/cachefile.cpp:380
+#, fuzzy, kde-format
+msgid "Error: Reading past the end of the file %1"
+msgstr "Грешка : Четене на край на файла %1"
+
+#: src/diskio/cachefile.cpp:385 src/diskio/cachefile.cpp:432
+#, fuzzy, kde-format
+msgid "Failed to seek file %1: %2"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/diskio/cachefile.cpp:393
+#, kde-format
+msgid "Error reading from %1"
+msgstr "Грешка при четене от %1"
+
+#: src/diskio/cachefile.cpp:436
+#, fuzzy, kde-format
+msgid "Failed to write to file %1: %2"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/diskio/cachefile.cpp:503
+#, fuzzy, kde-format
+msgid "Cannot preallocate diskspace: %1"
+msgstr "Невъзможно преразпределяне на дисковото пространство : %1"
+
+#: src/diskio/chunkmanager.cpp:936 src/diskio/chunkmanager.cpp:962
+#, fuzzy, kde-format
+msgid "Cannot open index file %1: %2"
+msgstr "Не може да бъде отворен кеш файл %1 : %2"
+
+#: src/diskio/dndfile.cpp:89
+#, fuzzy, kde-format
+msgid "Cannot create file %1: %2"
+msgstr "Не може да бъде създаден файл %1: %2"
+
+#: src/diskio/dndfile.cpp:137
+#, fuzzy, kde-format
+msgid "Failed to write first chunk to DND file: %1"
+msgstr "Неуспешен запис на първото парче в DND файл : %1"
+
+#: src/diskio/dndfile.cpp:155
+#, fuzzy, kde-format
+msgid "Failed to write last chunk to DND file: %1"
+msgstr "Неуспешен запис на последното парче в DND файл : %1"
+
+#: src/diskio/movedatafilesjob.cpp:140
+msgid "Waiting for other move jobs to finish"
+msgstr ""
+
+#: src/diskio/movedatafilesjob.cpp:141 src/diskio/movedatafilesjob.cpp:181
+#, fuzzy
+msgctxt "The source of a file operation"
+msgid "Source"
+msgstr "Точки"
+
+#: src/diskio/movedatafilesjob.cpp:142 src/diskio/movedatafilesjob.cpp:182
+#, fuzzy
+msgctxt "The destination of a file operation"
+msgid "Destination"
+msgstr "Описание"
+
+#: src/diskio/movedatafilesjob.cpp:180
+#, fuzzy
+msgctxt "@title job"
+msgid "Moving"
+msgstr "Средно преместване"
+
+#: src/diskio/multifilecache.cpp:91 src/diskio/singlefilecache.cpp:74
+#, fuzzy, kde-format
+msgid "Failed to open %1: %2"
+msgstr "Не може да бъде отворен %1: %2"
+
+#: src/diskio/piecedata.cpp:69 src/diskio/piecedata.cpp:108
+msgid "Unable to write to a piece mapped read only"
+msgstr ""
+
+#: src/download/chunkdownload.cpp:383
+#, fuzzy, kde-format
+msgid "1 peer"
+msgid_plural "%1 peers"
+msgstr[0] "Потребители"
+msgstr[1] "Потребители"
+
+#: src/download/downloader.cpp:808
+msgid "Disabled because webseed does not match torrent"
+msgstr ""
+
+#: src/download/httpconnection.cpp:44 src/download/webseed.cpp:52
+#: src/download/webseed.cpp:99
+#, fuzzy
+msgid "Not connected"
+msgstr "Качващи"
+
+#: src/download/httpconnection.cpp:115
+#, kde-format
+msgid "Resolving proxy %1:%2"
+msgstr ""
+
+#: src/download/httpconnection.cpp:121 src/download/httpconnection.cpp:139
+#, fuzzy
+msgid "Not enough system resources available"
+msgstr "Няма достатъчно свободно дисково пространство."
+
+#: src/download/httpconnection.cpp:133
+#, fuzzy, kde-format
+msgid "Resolving hostname %1"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/download/httpconnection.cpp:153 src/download/webseed.cpp:348
+#, fuzzy
+msgid "Connection closed"
+msgstr "Връзки"
+
+#: src/download/httpconnection.cpp:160
+#, kde-format
+msgid "Error: request failed: %1"
+msgstr ""
+
+#: src/download/httpconnection.cpp:188 src/download/httpconnection.cpp:222
+#, fuzzy
+msgid "Connected"
+msgstr "Връзки"
+
+#: src/download/httpconnection.cpp:199
+msgid "Error: Failed to connect to webseed"
+msgstr ""
+
+#: src/download/httpconnection.cpp:229
+#, fuzzy
+msgid "Connecting"
+msgstr "Връзки"
+
+#: src/download/httpconnection.cpp:240
+msgid "Failed to connect to webseed"
+msgstr ""
+
+#: src/download/httpconnection.cpp:247
+#, fuzzy
+msgid "Failed to resolve hostname of webseed"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/download/httpconnection.cpp:325
+msgid "Error: failed to connect, server not responding"
+msgstr ""
+
+#: src/download/httpconnection.cpp:336
+msgid "Error: request timed out"
+msgstr ""
+
+#: src/download/httpconnection.cpp:401
+msgid "Redirected without a new location."
+msgstr ""
+
+#: src/download/webseed.cpp:558
+#, kde-format
+msgid "Unused for %1 seconds (Too many connection failures)"
+msgstr ""
+
+#: src/interfaces/trackerinterface.cpp:58
+#, fuzzy
+msgid "OK"
+msgstr "О&К"
+
+#: src/interfaces/trackerinterface.cpp:58
+#, kde-format
+msgid "Warning: %1"
+msgstr ""
+
+#: src/interfaces/trackerinterface.cpp:59
+msgid "Announcing"
+msgstr "Съобщаване"
+
+#: src/interfaces/trackerinterface.cpp:60 src/torrent/torrentstats.cpp:87
+#, fuzzy, kde-format
+msgid "Error: %1"
+msgstr "Грешка: "
+
+#: src/migrate/migrate.cpp:45
+#, kde-format
+msgid "The directory %1 does not exist"
+msgstr "Директория %1 не съществува"
+
+#: src/peer/peerid.cpp:228
+msgid "Unknown client"
+msgstr "Непознат клиент"
+
+#: src/torrent/torrent.cpp:100 src/torrent/torrent.cpp:174
+#: src/torrent/torrent.cpp:202 src/torrent/torrent.cpp:209
+#: src/torrent/torrent.cpp:217 src/torrent/torrent.cpp:221
+#: src/torrent/torrent.cpp:242 src/torrent/torrent.cpp:313
+#, fuzzy
+msgid "Corrupted torrent."
+msgstr "Повреден торент!"
+
+#: src/torrent/torrent.cpp:165
+#, fuzzy, kde-format
+msgid "Unable to open torrent file %1: %2"
+msgstr " Не може да бъде отворен торент файл %1 : %2"
+
+#: src/torrent/torrentcontrol.cpp:300
+msgid "Error writing to disk, do you have enough diskspace?"
+msgstr ""
+
+#: src/torrent/torrentcontrol.cpp:546
+#, fuzzy, kde-format
+msgid ""
+"An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/>The "
+"torrent is probably corrupt or is not a valid torrent file."
+msgstr ""
+"Възникна грешка при зареждането на торент файла. Вероятно торента е повреден "
+"или това въобще не е торент файл."
+
+#: src/torrent/torrentcontrol.cpp:576
+#, kde-format
+msgid "An error occurred while loading <b>%1</b>:<br/><b>%2</b>"
+msgstr ""
+
+#: src/torrent/torrentcontrol.cpp:587
+#, fuzzy, kde-format
+msgid "Unable to create %1: %2"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/torrent/torrentcontrol.cpp:602
+#, fuzzy, kde-format
+msgid ""
+"You are already downloading the torrent <b>%1</b>. The tracker lists from "
+"both torrents have been merged."
+msgstr ""
+"Вие вече сваляте торент %1. Списъците с координиращи сървъри на двата "
+"торента бяха обединени."
+
+#: src/torrent/torrentcontrol.cpp:607
+#, fuzzy, kde-format
+msgid "You are already downloading the torrent <b>%1</b>."
+msgstr "Вече сваляте торент %1"
+
+#: src/torrent/torrentcreator.cpp:361
+#, kde-format
+msgid "Cannot create index file: %1"
+msgstr "Не може да бъде създаден индексиращ файл: %1"
+
+#: src/torrent/torrentstats.cpp:73
+msgid "Not started"
+msgstr "Не е стартиран"
+
+#: src/torrent/torrentstats.cpp:75
+msgid "Download completed"
+msgstr "Свалянето завършено"
+
+#: src/torrent/torrentstats.cpp:77
+msgid "Seeding completed"
+msgstr "Качването завършено"
+
+#: src/torrent/torrentstats.cpp:79
+#, fuzzy
+msgctxt "Status of a torrent file"
+msgid "Seeding"
+msgstr "Качване"
+
+#: src/torrent/torrentstats.cpp:81
+msgid "Downloading"
+msgstr "Сваляне"
+
+#: src/torrent/torrentstats.cpp:83
+msgid "Stalled"
+msgstr "Застой"
+
+#: src/torrent/torrentstats.cpp:85
+msgid "Stopped"
+msgstr "Спрян"
+
+#: src/torrent/torrentstats.cpp:89
+msgid "Allocating diskspace"
+msgstr "Преразпределяне на дисково пространство"
+
+#: src/torrent/torrentstats.cpp:91
+#, fuzzy
+msgid "Queued for seeding"
+msgstr "В момента се свалят:"
+
+#: src/torrent/torrentstats.cpp:91
+#, fuzzy
+msgid "Queued for downloading"
+msgstr "В момента се свалят:"
+
+#: src/torrent/torrentstats.cpp:95
+msgid "Stopped. No space left on device."
+msgstr "Спрян. Няма свободно място."
+
+#: src/torrent/torrentstats.cpp:97
+msgid "Paused"
+msgstr ""
+
+#: src/torrent/torrentstats.cpp:99
+#, fuzzy
+msgid "Superseeding"
+msgstr "Качване"
+
+#: src/tracker/httpannouncejob.cpp:144
+msgid "Redirect without a redirect location"
+msgstr ""
+
+#: src/tracker/httptracker.cpp:285 src/tracker/httptracker.cpp:305
+#: src/tracker/httptracker.cpp:461
+msgid "Invalid response from tracker"
+msgstr "Невалиден отговор от координиращия сървър"
+
+#: src/tracker/httptracker.cpp:298
+msgid "Invalid data from tracker"
+msgstr "Невалидни данни от координиращия сървър"
+
+#: src/tracker/httptracker.cpp:478
+msgid "Invalid tracker URL"
+msgstr "Невалиден адрес на координиращия сървър"
+
+#: src/tracker/httptracker.cpp:556 src/tracker/udptracker.cpp:364
+#: src/tracker/udptracker.cpp:374
+#, kde-format
+msgid "Timeout contacting tracker %1"
+msgstr ""
+
+#: src/tracker/udptracker.cpp:401
+#, fuzzy, kde-format
+msgid "Unable to resolve hostname %1"
+msgstr "Невъзможно създаване на %1 : %2"
+
+#: src/upnp/httprequest.cpp:96
+#, fuzzy
+msgid "Connection closed unexpectedly"
+msgstr "Връзки"
+
+#: src/upnp/httprequest.cpp:155
+msgid "Operation timed out"
+msgstr ""
+
+#: src/upnp/upnprouter.cpp:167
+#, fuzzy, kde-format
+msgid "Failed to download %1: %2"
+msgstr "Не може да бъде отворен %1: %2"
+
+#: src/upnp/upnprouter.cpp:178
+msgid "Error parsing router description."
+msgstr ""
+
+#: src/upnp/upnprouter.cpp:216
+msgid ""
+"Forwarding failed:\n"
+"Device does not have a WANIPConnection or WANPPPConnection."
+msgstr ""
+
+#: src/upnp/upnprouter.cpp:314
+#, fuzzy
+msgid "Cannot find port forwarding service in the device's description."
+msgstr "В списъка не може да бъде открито пренасочващо портовете устройство!"
+
+#: src/util/file.cpp:84
+#, fuzzy, kde-format
+msgid "Cannot write to %1: %2"
+msgstr "Невъзможен запис в %1 : %2"
+
+#: src/util/file.cpp:98
+#, kde-format
+msgid "Cannot read from %1"
+msgstr "Не може да се чете от %1"
+
+#: src/util/fileops.cpp:101
+#, fuzzy, kde-format
+msgid "Cannot create directory %1"
+msgstr "Не може да се създаде директория %1: %2"
+
+#: src/util/fileops.cpp:168
+#, kde-format
+msgid "Cannot symlink %1 to %2: %3"
+msgstr "Не може да се създаде препратка на %1 в %2: %3"
+
+#: src/util/fileops.cpp:185
+#, kde-format
+msgid "Cannot move %1 to %2: %3"
+msgstr "Не може да се премести %1 в %2: %3"
+
+#: src/util/fileops.cpp:201 src/util/fileops.cpp:217
+#, kde-format
+msgid "Cannot copy %1 to %2: %3"
+msgstr "Не може да се копира %1 в %2: %3"
+
+#: src/util/fileops.cpp:282
+#, kde-format
+msgid "Cannot delete %1: %2"
+msgstr "Не може да се изтрие %1: %2"
+
+#: src/util/fileops.cpp:300
+#, kde-format
+msgid "Cannot create %1: %2"
+msgstr "Не може да бъде създаден %1: %2"
+
+#: src/util/fileops.cpp:318
+#, kde-format
+msgid "Cannot calculate the filesize of %1: %2"
+msgstr "Размерът на файла %1 не може да бъде изчислен: %2"
+
+#: src/util/fileops.cpp:334
+#, fuzzy, kde-format
+msgid "Cannot calculate the filesize: %1"
+msgstr "Размерът на файла не може да бъде изчислен : %2"
+
+#: src/util/fileops.cpp:382 src/util/fileops.cpp:388 src/util/fileops.cpp:391
+#: src/util/fileops.cpp:394 src/util/fileops.cpp:397
+#, fuzzy, kde-format
+msgid "Cannot expand file: %1"
+msgstr "Файл %1 не може да бъде разширен"
+
+#: src/util/fileops.cpp:427
+#, fuzzy, kde-format
+msgid "Cannot seek in file: %1"
+msgstr "Не може да се търси във файл: %1"
+
+#: src/util/functions.cpp:234
+#, fuzzy, kde-format
+msgid "%1/s"
+msgstr "%1 кБ/сек"
+
+#: src/util/functions.cpp:245
+#, fuzzy, kde-format
+msgid "1 day "
+msgid_plural "%1 days "
+msgstr[0] "Данни:"
+msgstr[1] "Данни:"
+
+#: src/util/logsystemmanager.cpp:33
+msgid "General"
+msgstr "Общи"
+
+#: src/util/logsystemmanager.cpp:34
+msgid "Connections"
+msgstr "Връзки"
+
+#: src/util/logsystemmanager.cpp:35
+#, fuzzy
+msgid "Tracker"
+msgstr "Координиращи сървъри"
+
+#: src/util/logsystemmanager.cpp:36
+msgid "DHT"
+msgstr "DHT (протокол за размяна между децентрализирани потребители)"
+
+#: src/util/logsystemmanager.cpp:37
+#, fuzzy
+msgid "Disk Input/Output"
+msgstr "Диск - вх/изх:"
+
+#: src/util/logsystemmanager.cpp:38
+msgid "µTP"
+msgstr ""
+
+#: src/util/signalcatcher.cpp:80
+#, fuzzy
+msgid "Error when writing to disk"
+msgstr "Грешка при четене от %1"
+
+#: src/util/signalcatcher.cpp:80
+#, fuzzy
+msgid "Error when reading from disk"
+msgstr "Грешка при четене от %1"
+
+#~ msgid "Parse Error"
+#~ msgstr "Грешка при обработка"
+
+#, fuzzy
+#~ msgid "Not in use"
+#~ msgstr "Бележка"
+
+#, fuzzy
+#~ msgid "Not enough diskspace"
+#~ msgstr "Недостатъчно дисково пространство за %1"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "Не може да бъде отворен файл %1 : %2"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "Не може да бъде отворен файл : %1: %2"
+
+#, fuzzy
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "Възникна грешка при зареждането на торент файла. Вероятно торента е "
+#~ "повреден или това въобще не е торент файл."
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "Не може да бъде отворен журнален файл %1 : %2"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "Няма връзка с UDP порт %1 или следващите 10 порта."
+
+#, fuzzy
+#~ msgctxt "plugin name"
+#~ msgid "Scan Folder"
+#~ msgstr "Директории за сканиране"
+
+#~ msgid "loaded"
+#~ msgstr "качени"
+
+#~ msgid "Device"
+#~ msgstr "Устройство"
+
+#, fuzzy
+#~ msgid "Port Forwarded"
+#~ msgstr "Портовете са пренасочени"
+
+#~ msgid "WAN Connection"
+#~ msgstr "WAN връзки"
+
+#, fuzzy
+#~ msgid ""
+#~ "Model Name: <b>%1</b><br/>Manufacturer: <b>%2</b><br/>Model Description: "
+#~ "<b>%3</b><br/>"
+#~ msgstr "%1<br>Състояние: <b>%2</b><br>Автор: %3"
+
+#~ msgid "UPnP"
+#~ msgstr "UPnP"
+
+#, fuzzy
+#~ msgid ""
+#~ "%2\n"
+#~ "1 active filter"
+#~ msgid_plural ""
+#~ "%2\n"
+#~ "%1 active filters"
+#~ msgstr[0] "Приемане на филтри"
+#~ msgstr[1] "Приемане на филтри"
+
+#, fuzzy
+#~ msgid "Syndication"
+#~ msgstr "Приложение за KPart в KDE"
+
+#, fuzzy
+#~ msgid "Please enter the URL of the RSS or Atom feed."
+#~ msgstr "Моля, въведете името на новата група."
+
+#, fuzzy
+#~ msgid "Failed to load feed %1."
+#~ msgstr "Не може да бъде отворен %1: %2"
+
+#, fuzzy
+#~ msgid "Failed to create directory for feed %1 : %2"
+#~ msgstr "Невъзможно създаване на %1 : %2"
+
+#, fuzzy
+#~ msgid "New Filter"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid "Add New Filter"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid "Add Feed"
+#~ msgstr "Качващи"
+
+#, fuzzy
+#~ msgid "Remove Feed"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Show Feed"
+#~ msgstr "RSS източници"
+
+#, fuzzy
+#~ msgid "Add/Remove Filters"
+#~ msgstr "Изтриване на изтегляне"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "Потребител:"
+
+#, fuzzy
+#~ msgid "Add Filter"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid "Remove Filter"
+#~ msgstr "Изтриване на изтегляне"
+
+#, fuzzy
+#~ msgid "Edit Filter"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid "Feed: <b>%1</b>"
+#~ msgstr "Сканиране на данните за <b>%1</b> :"
+
+#, fuzzy
+#~ msgid "<b>OK</b>"
+#~ msgstr "Сканиране на данните за <b>%1</b> :"
+
+#, fuzzy
+#~ msgid "<b>Download Failed</b>"
+#~ msgstr "Свалени"
+
+#, fuzzy
+#~ msgid "<b>Downloading</b>"
+#~ msgstr "Сваляне"
+
+#, fuzzy
+#~ msgid "Could not find a valid link to a torrent on %1"
+#~ msgstr "Намирането и свалянето на валиден торент за %1 беше неуспешно"
+
+#~ msgid "Title"
+#~ msgstr "Заглавие"
+
+#~ msgid "Torrent"
+#~ msgstr "Торент"
+
+#, fuzzy
+#~ msgid "ZeroConf"
+#~ msgstr "Zeroconf"
+
+#, fuzzy
+#~ msgid "Available"
+#~ msgstr "Наличен"
+
+#, fuzzy
+#~ msgid "Pending"
+#~ msgstr "Изчакване"
+
+#, fuzzy
+#~ msgid "Artist"
+#~ msgstr "Статии"
+
+#, fuzzy
+#~ msgid "Length"
+#~ msgstr "Оставащи:"
+
+#, fuzzy
+#~ msgid "Year"
+#~ msgstr "&Изчистване"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Възел:"
+
+#, fuzzy
+#~ msgid "Single File"
+#~ msgstr "Всички файлове"
+
+#~ msgid "Remove"
+#~ msgstr "Премахване"
+
+#, fuzzy
+#~ msgid "Add Media"
+#~ msgstr "Качващи"
+
+#, fuzzy
+#~ msgid "Title: <b>%1</b><br/>Artist: <b>%2</b><br/>Album: <b>%3</b>"
+#~ msgstr "%1<br>Състояние: <b>%2</b><br>Автор: %3"
+
+#, fuzzy
+#~ msgid "Playing: <b>%1</b>"
+#~ msgstr "Сканиране на данните за <b>%1</b> :"
+
+#, fuzzy
+#~ msgid "Play List"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgid "Stop"
+#~ msgstr "Спрян"
+
+#, fuzzy
+#~ msgid "Previous"
+#~ msgstr "Преглед"
+
+#, fuzzy
+#~ msgid "Movie player"
+#~ msgstr "Торент файлове"
+
+#, fuzzy
+#~ msgid "Collection:"
+#~ msgstr "Връзки:"
+
+#, fuzzy
+#~ msgid "KTorrent is playing a video."
+#~ msgstr "Торентът е незавършен!"
+
+#, fuzzy
+#~ msgid "Cannot find web interface skins."
+#~ msgstr "Приставка за уеб-интерфейса"
+
+#~ msgid "Web Interface"
+#~ msgstr "Уеб-интерфейс"
+
+#, fuzzy
+#~ msgid "Invalid data received"
+#~ msgstr "Невалиден адрес на координиращия сървър"
+
+#, fuzzy
+#~ msgid "Failed to open temporary file"
+#~ msgstr "Папка за временните файлове"
+
+#, fuzzy
+#~ msgid "Unknown"
+#~ msgstr "Непознат клиент"
+
+#, fuzzy
+#~ msgid "Rescale"
+#~ msgstr "Ново сканиране"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "&Изтриване на всички"
+
+#, fuzzy
+#~ msgid "KiB/s"
+#~ msgstr "%1 кБ/сек"
+
+#~ msgid "Statistics"
+#~ msgstr "Статистика"
+
+#, fuzzy
+#~ msgid "(= %1 ms)"
+#~ msgstr "%1 кБ/сек"
+
+#~ msgid "Leechers connected"
+#~ msgstr "Свалящи"
+
+#~ msgid "Leechers in swarms"
+#~ msgstr "Свалящи в множеството"
+
+#, fuzzy
+#~ msgid "Seeds connected"
+#~ msgstr "Качващи"
+
+#, fuzzy
+#~ msgid "Seeds in swarms"
+#~ msgstr "Качващи в множеството"
+
+#, fuzzy
+#~ msgid "Average leechers connected per torrent"
+#~ msgstr "Средно качващи за торент"
+
+#, fuzzy
+#~ msgid "Average seeds connected per torrent"
+#~ msgstr "Средно качващи за торент"
+
+#, fuzzy
+#~ msgid "Average leechers connected per running torrent"
+#~ msgstr "Средно качващи за торент"
+
+#, fuzzy
+#~ msgid "Average seeds connected per running torrent"
+#~ msgstr "Среден брой качващи за текущия торент"
+
+#~ msgid "Nodes"
+#~ msgstr "Възли"
+
+#~ msgid "Tasks"
+#~ msgstr "Задачи"
+
+#, fuzzy
+#~ msgid "Current speed"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid "Average speed"
+#~ msgstr "Средна скорост на качване:"
+
+#, fuzzy
+#~ msgid "Speed limit"
+#~ msgstr "Ограничение на скоростта"
+
+#, fuzzy
+#~ msgid "Average from leechers"
+#~ msgstr "Средно от свалящ"
+
+#, fuzzy
+#~ msgid "Average to leechers"
+#~ msgstr "Средно към свалящ"
+
+#, fuzzy
+#~ msgid "Average from seeds"
+#~ msgstr "Средно от качващ"
+
+#~ msgid "From leechers"
+#~ msgstr "От свалящи"
+
+#, fuzzy
+#~ msgid "From seeds"
+#~ msgstr "От качващи"
+
+#, fuzzy
+#~ msgid "Speed charts"
+#~ msgstr "Ограничение на скоростта"
+
+#, fuzzy
+#~ msgid "Connections charts"
+#~ msgstr "Връзки"
+
+#, fuzzy
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "Без"
+
+#, fuzzy
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "Без"
+
+#, fuzzy
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "Без"
+
+#, fuzzy
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "Без"
+
+#, fuzzy
+#~ msgid "Address"
+#~ msgstr "IP адрес на потребител"
+
+#~ msgid "Country"
+#~ msgstr "Страна"
+
+#~ msgid "Client"
+#~ msgstr "Клиент"
+
+#~ msgid "Down Speed"
+#~ msgstr "Скорост на сваляне"
+
+#~ msgid "Up Speed"
+#~ msgstr "Скорост на качване"
+
+#~ msgid "Choked"
+#~ msgstr "Раздробен"
+
+#~ msgid "Snubbed"
+#~ msgstr "Спрян"
+
+#~ msgid "Availability"
+#~ msgstr "Наличност"
+
+#~ msgid "Upload Slot"
+#~ msgstr "Изключване на всички"
+
+#~ msgid "Requests"
+#~ msgstr "Заявки"
+
+#~ msgid "Downloaded"
+#~ msgstr "Свалени"
+
+#~ msgid "Uploaded"
+#~ msgstr "Качени"
+
+#, fuzzy
+#~ msgid "IP address of the peer"
+#~ msgstr "IP, което да бъде изпратено на координиращия сървър"
+
+#, fuzzy
+#~ msgid "Download speed"
+#~ msgstr "Свалени"
+
+#, fuzzy
+#~ msgid "Upload speed"
+#~ msgstr "Качени"
+
+#, fuzzy
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "Сваляне или запис на торента?"
+
+#, fuzzy
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "Сваляне или запис на торента?"
+
+#~ msgid "No limit"
+#~ msgstr "Без ограничение"
+
+#~ msgid "Info Widget"
+#~ msgstr "Информация"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Status"
+#~ msgstr "Състояние"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Files"
+#~ msgstr "Филтри"
+
+#, fuzzy
+#~ msgid "Shows all the files in a torrent"
+#~ msgstr "Изберете файл за записване на торент"
+
+#~ msgid "Bandwidth Scheduler"
+#~ msgstr "График за лента"
+
+#~ msgid "Peers"
+#~ msgstr "Потребители"
+
+#~ msgid "Chunks"
+#~ msgstr "Парчета"
+
+#~ msgid "Trackers"
+#~ msgstr "Координиращи сървъри"
+
+#, fuzzy
+#~ msgid "Webseeds"
+#~ msgstr "Качващи"
+
+#~ msgid "Chunk"
+#~ msgstr "Парче"
+
+#~ msgid "Progress"
+#~ msgstr "Завършено"
+
+#~ msgid "Peer"
+#~ msgstr "Потребител"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Филтри"
+
+#, fuzzy
+#~ msgid "Number of the chunk"
+#~ msgstr "Големина на всяко парче:"
+
+#, fuzzy
+#~ msgid "Download progress of the chunk"
+#~ msgstr "Брояч на свалянията"
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "Свалени:"
+
+#~ msgid "URL"
+#~ msgstr "Адрес (URL)"
+
+#, fuzzy
+#~ msgid "Speed"
+#~ msgstr "Скорост на качване"
+
+#~ msgid "Status"
+#~ msgstr "Състояние"
+
+#, fuzzy
+#~ msgid "Kick Peer"
+#~ msgstr "Потребител"
+
+#, fuzzy
+#~ msgid "Ban Peer"
+#~ msgstr "Блокирани потребители"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "Отваряне на подпрозорец"
+
+#, fuzzy
+#~ msgid "Download first"
+#~ msgstr "Сваляне първо"
+
+#, fuzzy
+#~ msgid "Download normally"
+#~ msgstr "Свалянето нормално"
+
+#, fuzzy
+#~ msgid "Download last"
+#~ msgstr "Сваляне последно"
+
+#~ msgid "Do Not Download"
+#~ msgstr "Без сваляне"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "Изтриване на файла(овете)"
+
+#, fuzzy
+#~ msgid "Move File"
+#~ msgstr "Торент файлове"
+
+#, fuzzy
+#~ msgid "Expand Folder Tree"
+#~ msgstr "Директории за сканиране"
+
+#, fuzzy
+#~ msgid "File Tree"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgid "File List"
+#~ msgstr "Файлът съществува"
+
+#, fuzzy
+#~ msgid "Show Filter"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] ""
+#~ "Ще загубите всички свалени данни. Сигурни ли сте, че искате да го "
+#~ "направите?"
+#~ msgstr[1] ""
+#~ "Ще загубите всички свалени данни. Сигурни ли сте, че искате да го "
+#~ "направите?"
+
+#, fuzzy
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "Файлът или папката, която искате да направите торент:"
+
+#~ msgid "Seeders"
+#~ msgstr "Качващи"
+
+#~ msgid "Leechers"
+#~ msgstr "Свалящи"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "Време на свалените"
+
+#, fuzzy
+#~ msgid "Next Update"
+#~ msgstr "Следващо обновяване след:"
+
+#, fuzzy
+#~ msgid "Priority"
+#~ msgstr "Порт"
+
+#, fuzzy
+#~ msgctxt "@title:column"
+#~ msgid "Preview"
+#~ msgstr "Преглед"
+
+#, fuzzy
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "Завършено"
+
+#, fuzzy
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "Да, първо"
+
+#, fuzzy
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "Да, последно"
+
+#, fuzzy
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "&Нормално"
+
+#, fuzzy
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "Наличен"
+
+#, fuzzy
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "Изчакване"
+
+#, fuzzy
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "Без"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "Наличен"
+
+#, fuzzy
+#~ msgid "Add Trackers"
+#~ msgstr "&Добавяне"
+
+#, fuzzy
+#~ msgid "Enter the URL's of the trackers, one per line:"
+#~ msgstr "Дали потребителското IP да се изпраща на координиращия сървър"
+
+#~ msgid ""
+#~ "<img src=\"available_color\">&nbsp; - Available Chunks<br><img src="
+#~ "\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src="
+#~ "\"excluded_color\">&nbsp; - Excluded Chunks"
+#~ msgstr ""
+#~ "<img src=\"available_color\">&nbsp; - Налични парчета<br><img src="
+#~ "\"unavailable_color\">&nbsp; - Недостъпни парчета<br><img src="
+#~ "\"excluded_color\">&nbsp; - Изключени парчета"
+
+#, fuzzy
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "&Нормално"
+
+#, fuzzy
+#~ msgid "Scripts"
+#~ msgstr "Точки"
+
+#, fuzzy
+#~ msgid "Add Script"
+#~ msgstr "&Добавяне"
+
+#, fuzzy
+#~ msgid "Remove Script"
+#~ msgstr "Премахване на група"
+
+#, fuzzy
+#~ msgid "Run Script"
+#~ msgstr "Точки"
+
+#, fuzzy
+#~ msgid "Stop Script"
+#~ msgstr "&Добавяне"
+
+#, fuzzy
+#~ msgid "Edit Script"
+#~ msgstr "&Добавяне"
+
+#, fuzzy
+#~ msgid "Properties"
+#~ msgstr "Завършено"
+
+#, fuzzy
+#~ msgid "Scripting"
+#~ msgstr "Точки"
+
+#, fuzzy
+#~ msgid "KTorrent Script Packages"
+#~ msgstr "Черен списък на KTorrent"
+
+#~ msgid "All files"
+#~ msgstr "Всички файлове"
+
+#, fuzzy
+#~ msgid ""
+#~ "Removing these scripts will fully delete them from your disk. Are you "
+#~ "sure you want to do this ?"
+#~ msgstr ""
+#~ "Ще загубите всички свалени данни. Сигурни ли сте, че искате да го "
+#~ "направите?"
+
+#, fuzzy
+#~ msgid "Invalid archive."
+#~ msgstr "Невалиден адрес на координиращия сървър"
+
+#~ msgid "System"
+#~ msgstr "Система"
+
+#, fuzzy
+#~ msgid "Log Level"
+#~ msgstr "Дневник"
+
+#~ msgid "Debug"
+#~ msgstr "Отстраняване на грешки"
+
+#~ msgid "Notice"
+#~ msgstr "Бележка"
+
+#~ msgid "Important"
+#~ msgstr "Важно"
+
+#~ msgid "All"
+#~ msgstr "Всички"
+
+#~ msgid "None"
+#~ msgstr "Без"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Малко"
+
+#, fuzzy
+#~ msgid "View the logging output generated by KTorrent"
+#~ msgstr "Показване на изходните данни на KTorrent"
+
+#~ msgid "Log Viewer"
+#~ msgstr "Дневник"
+
+#, fuzzy
+#~ msgid "File Download Order"
+#~ msgstr "Време на свалените"
+
+#, fuzzy
+#~ msgid "File download order for <b>%1</b>:"
+#~ msgstr "Ограничение на скоростта за <b>%1</b>:"
+
+#, fuzzy
+#~ msgid " Engine:"
+#~ msgstr " Търсачки: "
+
+#, fuzzy
+#~ msgid "Open in New Tab"
+#~ msgstr "Отваряне на подпрозорец"
+
+#, fuzzy
+#~ msgid "Copy URL"
+#~ msgstr "Създаване на торент"
+
+#~ msgid "Searching for %1..."
+#~ msgstr "Търсене на %1..."
+
+#~ msgid "torrent files"
+#~ msgstr "торент файлове"
+
+#~ msgid "Search finished"
+#~ msgstr "Търсенето завърши"
+
+#, fuzzy
+#~ msgctxt "plugin name"
+#~ msgid "Search"
+#~ msgstr "Търсене"
+
+#, fuzzy
+#~ msgid "Add a Search Engine"
+#~ msgstr "Търсачки"
+
+#, fuzzy
+#~ msgid "Search for %1"
+#~ msgstr "Търсене на %1..."
+
+#~ msgid "Search"
+#~ msgstr "Търсене"
+
+#~ msgid "KTorrent"
+#~ msgstr "KTorrent"
+
+#, fuzzy
+#~ msgid "Search the web for torrents."
+#~ msgstr "Папка за съхранение на временните файлове:"
+
+#, fuzzy
+#~ msgid "Failed to parse %1"
+#~ msgstr "Не може да бъде отворен %1: %2"
+
+#, fuzzy
+#~ msgid "Url: <b>%1</b>"
+#~ msgstr "Сканиране на данните за <b>%1</b> :"
+
+#, fuzzy
+#~ msgid "Search Text"
+#~ msgstr "Търсене"
+
+#, fuzzy
+#~ msgid "Search Engine"
+#~ msgstr "Търсачки"
+
+#, fuzzy
+#~ msgid "Search Engine Label"
+#~ msgstr "Име на търсачката:"
+
+#~ msgid " Engine: "
+#~ msgstr " Търсачки: "
+
+#, fuzzy
+#~ msgid "Do you want to download this magnet link?"
+#~ msgstr "Сваляне или запис на торента?"
+
+#~ msgid "Do you want to download or save the torrent?"
+#~ msgstr "Сваляне или запис на торента?"
+
+#~ msgid "Download Torrent"
+#~ msgstr "Сваляне на торент"
+
+#~ msgid "Download"
+#~ msgstr "Сваляне"
+
+#, fuzzy
+#~ msgid "Add an item"
+#~ msgstr "Редактиране на името"
+
+#, fuzzy
+#~ msgid ""
+#~ "Bandwidth\n"
+#~ "Schedule"
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgid "Edit the bandwidth schedule"
+#~ msgstr "Включване на графика за лентата?"
+
+#, fuzzy
+#~ msgid "Load Schedule"
+#~ msgstr "График"
+
+#, fuzzy
+#~ msgid "Save Schedule"
+#~ msgstr "График"
+
+#, fuzzy
+#~ msgid "Remove Item"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Edit Item"
+#~ msgstr "Редактиране на името"
+
+#, fuzzy
+#~ msgid "Clear Schedule"
+#~ msgstr "График"
+
+#, fuzzy
+#~ msgid "Scheduler Active"
+#~ msgstr "Настройка на приставките"
+
+#, fuzzy
+#~ msgid "Activate or deactivate the scheduler"
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgid "KTorrent scheduler files"
+#~ msgstr "Торент файлове"
+
+#, fuzzy
+#~ msgid "Current schedule: suspended"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid "Current schedule: %1/s download, %2/s upload"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid "Current schedule: %1/s download, unlimited upload"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid " (scheduler disabled)"
+#~ msgstr "Торент файлове"
+
+#, fuzzy
+#~ msgid "Current schedule:"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid "Edit an item"
+#~ msgstr "Редактиране на името"
+
+#, fuzzy
+#~ msgid "Suspended"
+#~ msgstr "Скорост на качване"
+
+#~ msgid "Unlimited"
+#~ msgstr "Неограничена"
+
+#, fuzzy
+#~ msgid "When all torrents finish downloading"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid "Downloading finishes"
+#~ msgstr "Сваляне"
+
+#, fuzzy
+#~ msgid "Seeding finishes"
+#~ msgstr "Търсенето завърши"
+
+#~ msgid "Loading txt file..."
+#~ msgstr "Зареждане на txt файл..."
+
+#~ msgid "Converting..."
+#~ msgstr "Конвертиране..."
+
+#, fuzzy
+#~ msgid "Cannot open zip file %1."
+#~ msgstr "Не може да бъде отворен файл %1: %2"
+
+#, fuzzy
+#~ msgid "Cannot find blocklist in zip file %1."
+#~ msgstr "Не могат да бъдат размаркирани липсващи файлове: %1"
+
+#~ msgid ""
+#~ "Filter file (level1.dat) already exists, do you want to convert it again?"
+#~ msgstr ""
+#~ "Вече има такъв файл на филтъра (ниво1.dat). Искате ли пак да го "
+#~ "конвертирате?"
+
+#~ msgid "File Exists"
+#~ msgstr "Файлът съществува"
+
+#~ msgid "IP Filter"
+#~ msgstr "IP-филтър"
+
+#~ msgid "Status: Loaded and running."
+#~ msgstr "Състояние: включена и работи."
+
+#~ msgid "Status: Not loaded."
+#~ msgstr "Състояние: не е включена."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Уеб сървър"
+
+#, fuzzy
+#~ msgid "Copy Magnet URI"
+#~ msgstr "Създаване на торент"
+
+#~ msgid "KTUPnPTest"
+#~ msgstr "KTUPnPTest"
+
+#, fuzzy
+#~ msgid "KTMagnetDownloader"
+#~ msgstr "Време на свалените"
+
+#, fuzzy
+#~ msgid "(C) 2009 Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#, fuzzy
+#~ msgid "Proxy"
+#~ msgstr "Порт"
+
+#, fuzzy
+#~ msgid "Network"
+#~ msgstr "Мрежа"
+
+#, fuzzy
+#~ msgid "All interfaces"
+#~ msgstr "Кожа на интерфейса"
+
+#~ msgid "BitTorrent"
+#~ msgstr "BitTorrent"
+
+#~ msgid " corrupted chunk"
+#~ msgid_plural " corrupted chunks"
+#~ msgstr[0] " повредено парче"
+#~ msgstr[1] " повредени парчета"
+
+#~ msgid " corrupted chunks"
+#~ msgstr " повредени парчета"
+
+#~ msgid "Advanced"
+#~ msgstr "Разширени"
+
+#, fuzzy
+#~ msgid "Application"
+#~ msgstr "Приложение за KPart в KDE"
+
+#~ msgid "Queue Manager"
+#~ msgstr "Мениджър на опашката"
+
+#, fuzzy
+#~ msgid "Calculate Recommended Settings"
+#~ msgstr "(Препоръчително за по-бавни компютри)"
+
+#, fuzzy
+#~ msgid "(= %1/s)"
+#~ msgstr "%1 кБ/сек"
+
+#, fuzzy
+#~ msgid "Name"
+#~ msgstr "Редактиране на името"
+
+#, fuzzy
+#~ msgid "Time Stalled"
+#~ msgstr "Застой"
+
+#~ msgid "Queued"
+#~ msgstr "На опашката"
+
+#, fuzzy
+#~ msgid "Not queued"
+#~ msgstr "На опашката"
+
+#, fuzzy
+#~ msgid "%1"
+#~ msgstr "%1 %"
+
+#, fuzzy
+#~ msgid "Show Search"
+#~ msgstr "Търсене"
+
+#, fuzzy
+#~ msgid "Move Top"
+#~ msgstr "П&реместване нагоре"
+
+#, fuzzy
+#~ msgid "Move Up"
+#~ msgstr "П&реместване нагоре"
+
+#, fuzzy
+#~ msgid "Move Down"
+#~ msgstr "Преместване на&долу"
+
+#, fuzzy
+#~ msgid "Move Bottom"
+#~ msgstr "Съхранение"
+
+#, fuzzy
+#~ msgid "Start Magnet"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Remove Magnet"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgctxt "@action Start all selected torrents in the current tab"
+#~ msgid "Start"
+#~ msgstr "Състояние"
+
+#, fuzzy
+#~ msgid "Start all selected torrents in the current tab"
+#~ msgstr "&Качване на торента"
+
+#, fuzzy
+#~ msgctxt "@action Stop all selected torrents in the current tab"
+#~ msgid "Stop"
+#~ msgstr "Спрян"
+
+#, fuzzy
+#~ msgid "Pause all selected torrents in the current tab"
+#~ msgstr "&Качване на торента"
+
+#, fuzzy
+#~ msgctxt "@action Remove all selected torrents in the current tab"
+#~ msgid "Remove"
+#~ msgstr "Премахване"
+
+#, fuzzy
+#~ msgctxt "@action Start all torrents in the current tab"
+#~ msgid "Start All"
+#~ msgstr "Застой"
+
+#, fuzzy
+#~ msgid "Start all torrents in the current tab"
+#~ msgstr "&Качване на торента"
+
+#, fuzzy
+#~ msgctxt "@action Stop all torrents in the current tab"
+#~ msgid "Stop All"
+#~ msgstr "Маркиране на &всички"
+
+#, fuzzy
+#~ msgid "Stop all torrents in the current tab"
+#~ msgstr "Стартиране на торента"
+
+#~ msgid "Remove Torrent and Data"
+#~ msgstr "Премахване на торента и данните"
+
+#~ msgid "Rename Torrent"
+#~ msgstr "Преименуване на торент"
+
+#~ msgid "Add Peers"
+#~ msgstr "Добавяне на потребители"
+
+#~ msgid "Peer Exchange"
+#~ msgstr "Размяна между потребители"
+
+#~ msgid "Manual Announce"
+#~ msgstr "Ръчно известяване"
+
+#, fuzzy
+#~ msgid "Scrape"
+#~ msgstr "Точки"
+
+#~ msgid "Preview"
+#~ msgstr "Преглед"
+
+#~ msgid "Data Directory"
+#~ msgstr "Директория с данни"
+
+#~ msgid "Temporary Directory"
+#~ msgstr "Временна директория"
+
+#, fuzzy
+#~ msgid "Move Data"
+#~ msgstr "Съхранение"
+
+#, fuzzy
+#~ msgid "Remove from Group"
+#~ msgstr "Премахване от групата"
+
+#~ msgid "New Group"
+#~ msgstr "Нова група"
+
+#, fuzzy
+#~ msgid "Check Data"
+#~ msgstr "Проверка на данните"
+
+#, fuzzy
+#~ msgid "Check all the data of a torrent"
+#~ msgstr "Сканиране данните на торент :"
+
+#~ msgid "Open Directory"
+#~ msgstr "Отваряне на директория"
+
+#~ msgid "Add to Group"
+#~ msgstr "Добавяне към групата"
+
+#, fuzzy
+#~ msgid "Copy Torrent URL"
+#~ msgstr "Създаване на торент"
+
+#, fuzzy
+#~ msgid "Export Torrent"
+#~ msgstr "Премахване на торент"
+
+#~ msgid "Speed Limits"
+#~ msgstr "Ограничение на скоростта"
+
+#, fuzzy
+#~ msgid "Set the speed limits of individual torrents"
+#~ msgstr "Задаване ограничения на скоростта за торент"
+
+#, fuzzy
+#~ msgid "Torrents (*.torrent)"
+#~ msgstr "Торент файлове (*.torrent)"
+
+#, fuzzy
+#~ msgid "Columns"
+#~ msgstr "Коментари:"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent <b>%1</b> has not finished downloading, do you want to delete "
+#~ "the incomplete data, too?"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#~ msgid "Remove Download"
+#~ msgstr "Изтриване на изтегляне"
+
+#~ msgid "Delete Data"
+#~ msgstr "Изтриване"
+
+#~ msgid "Keep Data"
+#~ msgstr "Съхранение"
+
+#~ msgid ""
+#~ "You will lose all the downloaded data. Are you sure you want to do this?"
+#~ msgstr ""
+#~ "Ще загубите всички свалени данни. Сигурни ли сте, че искате да го "
+#~ "направите?"
+
+#~ msgid "Remove Torrent"
+#~ msgstr "Премахване на торент"
+
+#~ msgid "Size"
+#~ msgstr "Размер"
+
+#~ msgid "Time Left"
+#~ msgstr "Оставащо време"
+
+#~ msgid "% Complete"
+#~ msgstr "Завършено"
+
+#~ msgid "Share Ratio"
+#~ msgstr "Коеф. сп."
+
+#~ msgid "Time Downloaded"
+#~ msgstr "Време на свалените"
+
+#~ msgid "Time Seeded"
+#~ msgstr "Време на качените"
+
+#, fuzzy
+#~ msgid "Location"
+#~ msgstr "Отваряне на местоположение"
+
+#, fuzzy
+#~ msgid "Added"
+#~ msgstr "Качващи"
+
+#, fuzzy
+#~ msgid "How much data we have downloaded of the torrent"
+#~ msgstr "Сваляне или запис на торента?"
+
+#, fuzzy
+#~ msgid "Current download speed"
+#~ msgstr "Максимална скорост на сваляне"
+
+#, fuzzy
+#~ msgid "Current upload speed"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid ""
+#~ "How much time is left before the torrent is finished or before the "
+#~ "maximum share ratio is reached, if that is enabled"
+#~ msgstr "Показване на изскачащо съобщение когато торентът е готов."
+
+#, fuzzy
+#~ msgid "How long we have been downloading the torrent"
+#~ msgstr "Вече сваляте торент %1"
+
+#, fuzzy
+#~ msgid "How long we have been seeding the torrent"
+#~ msgstr "&Качване на торента"
+
+#, fuzzy
+#~ msgid "When this torrent was added"
+#~ msgstr "Не е включена"
+
+#, fuzzy
+#~ msgid "%1<br>Url: <b>%2</b>"
+#~ msgstr "Сканиране на данните за <b>%1</b> :"
+
+#~ msgid "Custom Groups"
+#~ msgstr "Потребителски групи"
+
+#~ msgid "Edit Name"
+#~ msgstr "Редактиране на името"
+
+#~ msgid "Remove Group"
+#~ msgstr "Премахване на група"
+
+#~ msgid "Open Tab"
+#~ msgstr "Отваряне на подпрозорец"
+
+#~ msgid "Group Policy"
+#~ msgstr "Групова политика"
+
+#~ msgid "Please enter the group name."
+#~ msgstr "Моля, въведете името на групата."
+
+#~ msgid "The group %1 already exists."
+#~ msgstr "Вече има група %1."
+
+#, fuzzy
+#~ msgid "Download Limit"
+#~ msgstr "Сваляне последно"
+
+#, fuzzy
+#~ msgid "Upload Limit"
+#~ msgstr "Изключване на всички"
+
+#, fuzzy
+#~ msgid "Assured Download Speed"
+#~ msgstr "Свалянето завършено"
+
+#, fuzzy
+#~ msgid "Assured Upload Speed"
+#~ msgstr "Максимална скорост на качване"
+
+#, fuzzy
+#~ msgid "No assured speed"
+#~ msgstr "Текуща скорост"
+
+#, fuzzy
+#~ msgid "Create A Torrent"
+#~ msgstr "Създаване на торент"
+
+#~ msgid "All Torrents"
+#~ msgstr "Всички торенти"
+
+#, fuzzy
+#~ msgid "Invalid url %1"
+#~ msgstr "Невалиден адрес на координиращия сървър"
+
+#~ msgid "You must select a file or a folder."
+#~ msgstr "Трябва да изберете файл или папка."
+
+#~ msgid ""
+#~ "You have not added a tracker, are you sure you want to create this "
+#~ "torrent ?"
+#~ msgstr ""
+#~ "Не сте добавили координиращ сървър. Сигурни ли сте, че искате да "
+#~ "създадете торента?"
+
+#~ msgid "You must add at least one node."
+#~ msgstr "Трябва да добавите поне един възел."
+
+#~ msgid "Torrent Files (*.torrent)"
+#~ msgstr "Торент файлове (*.torrent)"
+
+#, fuzzy
+#~ msgid "Choose a file to save the torrent"
+#~ msgstr "Изберете файл за записване на торент"
+
+#, fuzzy
+#~ msgid "Show a file tree"
+#~ msgstr "Изберете файл за записване на торент"
+
+#, fuzzy
+#~ msgid "Show a file list"
+#~ msgstr "Изберете файл"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some files of this torrent have been found in the completed downloads "
+#~ "directory. Do you want to import these files and use the completed "
+#~ "downloads directory as the location?"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid ""
+#~ "All files of this torrent have been found in the completed downloads "
+#~ "directory. Do you want to import these files and use the completed "
+#~ "downloads directory as the location?"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file <b>%1</b> was found in the completed downloads directory. Do you "
+#~ "want to import this file?"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid "The directory %1 does not exist, do you want to create it?"
+#~ msgstr "Директория %1 не съществува"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have deselected the following existing files. You will lose all data "
+#~ "in these files, are you sure you want to do this?"
+#~ msgstr ""
+#~ "Размаркирахте следните файлове. Ще загубите всички данни в тях. Сигурни "
+#~ "ли сте, че искате да го направите?"
+
+#~ msgid "Yes, delete the files"
+#~ msgstr "Да, изтриване на файловете"
+
+#~ msgid "No, keep the files"
+#~ msgstr "Не, запазване на файловете"
+
+#, fuzzy
+#~ msgctxt "We are %1 bytes short of what we need"
+#~ msgid "%1 short"
+#~ msgstr " не достигат!"
+
+#, fuzzy
+#~ msgid "Select the directory where the data now is."
+#~ msgstr "Файлът или папката, която искате да направите торент:"
+
+#~ msgid "Importing 1 torrent ..."
+#~ msgid_plural "Importing %1 torrents ..."
+#~ msgstr[0] "Внасяне на 1 торент..."
+#~ msgstr[1] "Внасяне на %1 торента..."
+
+#~ msgid "Importing <b>%1</b> ..."
+#~ msgstr "Внасяне на <b>%1</b>..."
+
+#~ msgid "Failed to load <b>%1</b>"
+#~ msgstr "Грешка при зареждане на <b>%1</b>"
+
+#~ msgid "Failed to import <b>%1</b> : %2"
+#~ msgstr "Грешка при внасяне на <b>%1</b> : %2"
+
+#~ msgid "Torrent files"
+#~ msgstr "Торент файлове"
+
+#~ msgid "Cannot verify data : %1"
+#~ msgstr "Данните не могат да бъдат сверени : %1"
+
+#~ msgid "Cannot load the torrent file : %1"
+#~ msgstr "Грешка при зареждане на торент: %1"
+
+#~ msgid "Open an URL"
+#~ msgstr "Отваряне на адрес"
+
+#, fuzzy
+#~ msgid "Invalid URL: %1"
+#~ msgstr "Невалиден адрес на координиращия сървър"
+
+#~ msgid "Speed down: %1 / up: %2"
+#~ msgstr "Скорост на сваляне: %1 / качване: %2"
+
+#~ msgid "Transferred down: %1 / up: %2"
+#~ msgstr "Прехвърлени при сваляне: %1 / качване: %2"
+
+#~ msgid "DHT: off"
+#~ msgstr "DHT: изкл."
+
+#~ msgid "DHT: %1 nodes, %2 tasks"
+#~ msgstr "DHT: %1 възела, %2 задачи"
+
+#, fuzzy
+#~ msgid "IP Filter List"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgid ""
+#~ "Invalid IP address <b>%1</b>. IP addresses must be in the format 'XXX.XXX."
+#~ "XXX.XXX'.<br/><br/>You can also use wildcards like '127.0.0.*' or specify "
+#~ "ranges like '200.10.10.0-200.10.10.40'."
+#~ msgstr ""
+#~ "Трябва да въведете IP във формат \"XXX.XXX.XXX.XXX\". Можете също да "
+#~ "използвате заместител като \"127.0.0.*\"."
+
+#~ msgid "Choose a file"
+#~ msgstr "Изберете файл"
+
+#~ msgid "Choose a filename to save under"
+#~ msgstr "Изберете име с което искате да запишете файла"
+
+#, fuzzy
+#~ msgid "Bittorrent client for KDE"
+#~ msgstr "Бит Торент клиент за KDE"
+
+#, fuzzy
+#~ msgid "(C) 2005 - 2010 Joris Guisson and Ivan Vasic"
+#~ msgstr "(C) 2005 - 2008 Joris Guisson и Ivan Vasic"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "Ivan Vasic"
+#~ msgstr "Ivan Vasic"
+
+#~ msgid "Alan Jones"
+#~ msgstr "Alan Jones"
+
+#~ msgid "BitFinder Plugin"
+#~ msgstr "Приставка BitFinder"
+
+#~ msgid "Diego R. Brogna"
+#~ msgstr "Diego R. Brogna"
+
+#~ msgid "Webinterface Plugin"
+#~ msgstr "Приставка за уеб-интерфейса"
+
+#~ msgid "Krzysztof Kundzicz"
+#~ msgstr "Krzysztof Kundzicz"
+
+#~ msgid "Statistics Plugin"
+#~ msgstr "Приставка за статистика"
+
+#~ msgid "Mladen Babic"
+#~ msgstr "Mladen Babic"
+
+#~ msgid "Application icon and a couple of others"
+#~ msgstr "Икона за програмата  и някои други"
+
+#~ msgid "Adam Treat"
+#~ msgstr "Adam Treat"
+
+#~ msgid "Danny Allen"
+#~ msgstr "Danny Allen"
+
+#~ msgid "1.0 application icon"
+#~ msgstr "Икона за версия 1.0"
+
+#~ msgid "Vincent Wagelaar"
+#~ msgstr "Vincent Wagelaar"
+
+#~ msgid "Knut Morten Johansson"
+#~ msgstr "Knut Morten Johansson"
+
+#~ msgid "Felix Berger"
+#~ msgstr "Felix Berger"
+
+#~ msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
+#~ msgstr "Подсказки за ChunkBar и сортиране IWFileTreeItem"
+
+#~ msgid "Andreas Kling"
+#~ msgstr "Andreas Kling"
+
+#~ msgid "Felipe Sateler"
+#~ msgstr "Felipe Sateler"
+
+#~ msgid "Adam Forsyth"
+#~ msgstr "Adam Forsyth"
+
+#~ msgid "Thomas Bernard"
+#~ msgstr "Thomas Bernard"
+
+#~ msgid "Miniupnp was used as an example for our own UPnP implementation"
+#~ msgstr "Miniupnp беше използван като пример за изпълнението на нашия UPnP"
+
+#~ msgid "Diego Rosario Brogna"
+#~ msgstr "Diego Rosario Brogna"
+
+#~ msgid "Global max share ratio patch"
+#~ msgstr "Глобален макс. коефициент за споделяне"
+
+#~ msgid "Lesly Weyts"
+#~ msgstr "Lesly Weyts"
+
+#~ msgid "Zeroconf enhancements"
+#~ msgstr "Подобрения - Zeroconf"
+
+#~ msgid "Kevin Andre"
+#~ msgstr "Kevin Andre"
+
+#~ msgid "Dagur Valberg Johannsson"
+#~ msgstr "Dagur Valberg Johannsson"
+
+#, fuzzy
+#~ msgid "Coldmilk webgui"
+#~ msgstr "ГПИ \"студено мляко\""
+
+#~ msgid "Alexander Dymo"
+#~ msgstr "Alexander Dymo"
+
+#~ msgid "IDEAl code from KDevelop"
+#~ msgstr "IDEAl код от KDevelop"
+
+#~ msgid "Scott Wolchok"
+#~ msgstr "Scott Wolchok"
+
+#~ msgid "Conversion speed improvement in ipfilter plugin"
+#~ msgstr "Подобрения в скоростта на приставката ipfilter"
+
+#~ msgid "Bryan Burns of Juniper Networks"
+#~ msgstr "Bryan Burns от Juniper Networks"
+
+#~ msgid "Discovered 2 security vulnerabilities (both are fixed)"
+#~ msgstr "Откриване на 2 уязвимости (и двете са поправени)"
+
+#~ msgid "Goten Xiao"
+#~ msgstr "Goten Xiao"
+
+#~ msgid "Patch to load silently with a save location"
+#~ msgstr "Кръпка за тихо зареждане"
+
+#~ msgid "Fixes in PHP code of webinterface"
+#~ msgstr "Кръпки в PHP кода на уеб интерфейса"
+
+#~ msgid "XFS specific disk preallocation"
+#~ msgstr "XFS прехвърляния"
+
+#~ msgid "Patch to not show very low speeds"
+#~ msgstr "Не показване на много ниски скорости"
+
+#~ msgid "Patch to show potentially firewalled status"
+#~ msgstr "Показване на състояние потенциално зад защитна стена"
+
+#~ msgid "Several patches"
+#~ msgstr "Няколко кръпки"
+
+#, fuzzy
+#~ msgid "Patch to hide menu bar"
+#~ msgstr "Кръпка за скриване на лентата с менюто"
+
+#, fuzzy
+#~ msgid "Patch to change file priorities in the webgui"
+#~ msgstr "Кръпка за промяна на приоритета на ГПИ"
+
+#~ msgid "Several webgui patches"
+#~ msgstr "Няколко кръпки"
+
+#, fuzzy
+#~ msgid "Patch to load torrents silently from the command line"
+#~ msgstr "Кръпка за тихо зареждане"
+
+#, fuzzy
+#~ msgid "Feature which adds the date a torrent was added"
+#~ msgstr "Не е включена"
+
+#, fuzzy
+#~ msgid "Silently open torrent given on URL"
+#~ msgstr " Не може да бъде отворен торент файл %1 : %2"
+
+#~ msgid "Torrent Files"
+#~ msgstr "Торент файлове"
+
+#~ msgid "All Files"
+#~ msgstr "Всички файлове"
+
+#~ msgid "Open Location"
+#~ msgstr "Отваряне на местоположение"
+
+#, fuzzy
+#~ msgid "Create a new torrent"
+#~ msgstr "Създаване на торент"
+
+#, fuzzy
+#~ msgid "Open a torrent"
+#~ msgstr "Създаване на торент"
+
+#, fuzzy
+#~ msgid "Open Silently"
+#~ msgstr "Отваряне на торентите &тихо"
+
+#, fuzzy
+#~ msgid "Start All"
+#~ msgstr "Застой"
+
+#, fuzzy
+#~ msgid "Start all torrents"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Stop All"
+#~ msgstr "Маркиране на &всички"
+
+#, fuzzy
+#~ msgid "Stop all torrents"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Open URL"
+#~ msgstr "Отваряне на подпрозорец"
+
+#, fuzzy
+#~ msgid "Suspend KTorrent"
+#~ msgstr "Неактивни торенти"
+
+#, fuzzy
+#~ msgid "Suspend all running torrents"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Show the list of blocked IP addresses"
+#~ msgstr "Показване на списъка с координиращи сървъри"
+
+#, fuzzy
+#~ msgid "Import Torrent"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Import a torrent"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Import KDE3 Torrents"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Show/Hide KTorrent"
+#~ msgstr "Сваляне на торент"
+
+#, fuzzy
+#~ msgid "Torrents"
+#~ msgstr "Торент"
+
+#, fuzzy
+#~ msgid "Invalid IP address %1"
+#~ msgstr "Невалиден адрес на координиращия сървър"
+
+#, fuzzy
+#~ msgid "Duplicate IP address %1"
+#~ msgstr "Невалиден адрес на координиращия сървър"
+
+#, fuzzy
+#~ msgid "Set max upload speed"
+#~ msgstr "Максимална скорост на качване"
+
+#, fuzzy
+#~ msgid "Set max download speed"
+#~ msgstr "Максимална скорост на сваляне"
+
+#~ msgid ""
+#~ "<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</"
+#~ "b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></"
+#~ "td><td>Upload: <font color='#990000'>%2</font></td></"
+#~ "tr><tr><td><b>Transfer:</b></td><td></td></tr><tr><td>Download: <font "
+#~ "color='#1c9a1c'>%3</font></td><td>Upload: <font color='#990000'>%4</"
+#~ "font></td></tr></table>"
+#~ msgstr ""
+#~ "<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Скорост:"
+#~ "</b></td><td></td></tr><tr><td>Сваляне: <font color=\"#1c9a1c\">%1</"
+#~ "font></td><td>Качване: <font color=\"#990000\">%2</font></td></"
+#~ "tr><tr><td><b>Прехвърлени:</b></td><td></td></tr><tr><td>Сваляне: <font "
+#~ "color=\"#1c9a1c\">%3</font></td><td>Качване: <font color=\"#990000\">%4</"
+#~ "font></td></tr></table>"
+
+#~ msgid ""
+#~ "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
+#~ msgstr ""
+#~ "Завърши свалянето на <b>%1</b>. <br>Средна скорост: %2 сваляне / %3 "
+#~ "качване."
+
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+#~ "<br>Uploaded %3 at an average speed of %4."
+#~ msgstr ""
+#~ "<b>%1</b> достигна максималният си коефициент %2 и беше спрян.<br>Качени "
+#~ "са %3 със средна скорост %4."
+
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum seed time of %2 hours and has been "
+#~ "stopped.<br>Uploaded %3 at an average speed of %4."
+#~ msgstr ""
+#~ "<b>%1</b> достигна максималното време за качване от %2 часа и беше спрян. "
+#~ "<br>Качени са %3 със средна скорост %4."
+
+#~ msgid "<b>%1</b> has been stopped with the following error: <br>%2"
+#~ msgstr "<b>%1</b> беше спряно поради следната грешка: <br>%2"
+
+#~ msgid ""
+#~ "Corrupted data has been found in the torrent <b>%1</b><br>It would be a "
+#~ "good idea to do a data integrity check on the torrent."
+#~ msgstr ""
+#~ "Намерени са повредени данни в торент <b>%1</b><br>Добра идея е да "
+#~ "направите проверка на цялостта на данните на торента."
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum share ratio of %2 and cannot be "
+#~ "enqueued. <br>Remove the limit manually if you want to continue seeding."
+#~ msgstr ""
+#~ "<b>%1</b> достигна максималният си коефициент за %2 и беше спрян. "
+#~ "Премахнете ръчно ограничението, ако искате да продължите качването."
+
+#, fuzzy
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum seed time of %2 hours and cannot be "
+#~ "enqueued. <br>Remove the limit manually if you want to continue seeding."
+#~ msgstr ""
+#~ "<b>%1</b> достигна максималното време за качване от %2 часа и беше спрян. "
+#~ "Премахнете ръчно ограничението, ако искате да продължите качването."
+
+#~ msgid "Cannot start <b>%1</b> : <br>"
+#~ msgstr "Невъзможно стартиране на <b>%1</b> : <br>"
+
+#, fuzzy
+#~ msgid "Cannot seed more than 1 torrent. <br>"
+#~ msgid_plural "Cannot seed more than %1 torrents. <br>"
+#~ msgstr[0] ""
+#~ "Не можете да качвате повече от 1 торент. <br>\n"
+#~ "Не можете да качвате повече от %n торента. <br>"
+#~ msgstr[1] ""
+#~ "Не можете да качвате повече от 1 торент. <br>\n"
+#~ "Не можете да качвате повече от %n торента. <br>"
+
+#, fuzzy
+#~ msgid "Cannot download more than 1 torrent. <br>"
+#~ msgid_plural "Cannot download more than %1 torrents. <br>"
+#~ msgstr[0] "Сваляне или запис на торента?"
+#~ msgstr[1] "Сваляне или запис на торента?"
+
+#~ msgid ""
+#~ "Go to Settings -> Configure KTorrent, if you want to change the limits."
+#~ msgstr ""
+#~ "Ако искате да промените ограничението, отидете в \"Настройки->Настройване "
+#~ "на KTorrent\"."
+
+#~ msgid ""
+#~ "Your disk is running out of space.<br /><b>%1</b> is being downloaded to "
+#~ "'%2'."
+#~ msgstr "Мястото на диска ви се изчерпва.<br /><b>%1</b> се сваля в \"%2\"."
+
+#~ msgid "Torrent has been stopped.<br />"
+#~ msgstr "Торентът е спрян.<br />"
+
+#, fuzzy
+#~ msgid "Speed limit in KiB/s"
+#~ msgstr "Ограничение на скоростта в кБ/сек"
+
+#, fuzzy
+#~ msgid ""
+#~ "KTorrent is unable to accept connections because the TCP ports %1 is "
+#~ "already in use by another program."
+#~ msgstr ""
+#~ "KTorrent не може да приеме връзки, защото портовете %1 и %2 вече се "
+#~ "използват от друга програма."
+
+#, fuzzy
+#~ msgid ""
+#~ "KTorrent is unable to accept connections because the UDP port %1 is "
+#~ "already in use by another program."
+#~ msgstr ""
+#~ "KTorrent не може да приеме връзки, защото портовете %1 и %2 вече се "
+#~ "използват от друга програма."
+
+#, fuzzy
+#~ msgid "KTorrent is running one or more torrents"
+#~ msgstr "Торентът няма попълнени съобщения или възли"
+
+#~ msgid "Cannot create torrent: %1"
+#~ msgstr "Грешка при създаване на торент: %1"
+
+#, fuzzy
+#~ msgid ""
+#~ "Several data files of the torrent \"%1\" are missing. \n"
+#~ "Do you want to recreate them, or do you want to not download them?"
+#~ msgstr ""
+#~ "Няколко файла с данни на торент \"%1\" липсват. Искате ли да ги "
+#~ "възстановите или не искате да ги сваляте?"
+
+#~ msgid "Data files are missing"
+#~ msgstr "Липсват файловете с данни"
+
+#~ msgid "Cannot deselect missing files: %1"
+#~ msgstr "Не могат да бъдат размаркирани липсващи файлове: %1"
+
+#~ msgid "Cannot recreate missing files: %1"
+#~ msgstr "Не могат да бъдат наново създадени липсващите файлове: %1"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file where the data is saved of the torrent \"%1\" is missing. \n"
+#~ "Do you want to recreate it?"
+#~ msgstr ""
+#~ "Файлът, съхраняващ информацията за торент \"%1\", липсва. Искате ли да го "
+#~ "създадете отново?"
+
+#~ msgid "Data file is missing"
+#~ msgstr "Файлът с данни липсва"
+
+#~ msgid "Cannot recreate data file: %1"
+#~ msgstr "Не може да бъде създаден файл с данни: %1"
+
+#, fuzzy
+#~ msgid "KTorrent is not running."
+#~ msgstr "Торентът е незавършен!"
+
+#, fuzzy
+#~ msgid "No torrents loaded."
+#~ msgstr "Не е включена"
+
+#, fuzzy
+#~ msgid "Selected torrent is unavailable."
+#~ msgstr "Налични части от файла:"
+
+#, fuzzy
+#~ msgid "Ungrouped Torrents"
+#~ msgstr "Повреден торент!"
+
+#~ msgid "Uploads"
+#~ msgstr "Качвания"
+
+#, fuzzy
+#~ msgid "Running Uploads"
+#~ msgstr "Качвания"
+
+#~ msgid "Downloads"
+#~ msgstr "Сваляния"
+
+#, fuzzy
+#~ msgid "Running Downloads"
+#~ msgstr "Сваляния"
+
+#, fuzzy
+#~ msgid "Not Running Downloads"
+#~ msgstr "Без сваляне"
+
+#, fuzzy
+#~ msgid "Active Torrents"
+#~ msgstr "Активни торенти"
+
+#, fuzzy
+#~ msgid "Active Downloads"
+#~ msgstr "Активни сваляния"
+
+#, fuzzy
+#~ msgid "Active Uploads"
+#~ msgstr "Активни качвания"
+
+#, fuzzy
+#~ msgid "Passive Torrents"
+#~ msgstr "Неактивни торенти"
+
+#, fuzzy
+#~ msgid "Passive Downloads"
+#~ msgstr "Неактивни сваляния"
+
+#, fuzzy
+#~ msgid "Passive Uploads"
+#~ msgstr "Неактивни качвания"
+
+#, fuzzy
+#~ msgid "Normal icons"
+#~ msgstr "&Нормално"
+
+#, fuzzy
+#~ msgid "Left"
+#~ msgstr "Оставащи:"
+
+#, fuzzy
+#~ msgid "Right"
+#~ msgstr "Много"
+
+#, fuzzy
+#~ msgid "Maximum share ratio reached."
+#~ msgstr "Достигнато е ограничението на коефициента за споделяне."
+
+#, fuzzy
+#~ msgid "Maximum seed time reached."
+#~ msgstr "Макс. време на качване:"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Филтри"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent \"%1\" has reached its maximum share ratio and its maximum "
+#~ "seed time. Ignore the limit and start seeding anyway?"
+#~ msgstr ""
+#~ "Торентът \"%1\" достигна максималния коефициент на споделяне. Искате ли "
+#~ "да игнорирате ограничението и да започнете качване?"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent \"%1\" has reached its maximum share ratio. Ignore the limit "
+#~ "and start seeding anyway?"
+#~ msgstr ""
+#~ "Торентът \"%1\" достигна максималния коефициент на споделяне. Искате ли "
+#~ "да игнорирате ограничението и да започнете качване?"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent \"%1\" has reached its maximum seed time. Ignore the limit "
+#~ "and start seeding anyway?"
+#~ msgstr ""
+#~ "Торентът \"%1\" достигна максималния коефициент на споделяне. Искате ли "
+#~ "да игнорирате ограничението и да започнете качване?"
+
+#~ msgid ""
+#~ "You don't have enough disk space to download this torrent. Are you sure "
+#~ "you want to continue?"
+#~ msgstr ""
+#~ "Нямате достатъчно свободно място на диска. Сигурни ли сте, че искате да "
+#~ "продължите?"
+
+#~ msgid "Insufficient disk space for %1"
+#~ msgstr "Недостатъчно дисково пространство за %1"
+
+#, fuzzy
+#~ msgid ""
+#~ "Not enough disk space for the following torrents. Do you want to start "
+#~ "them anyway ?"
+#~ msgstr ""
+#~ "Нямате достатъчно свободно място на диска. Сигурни ли сте, че искате да "
+#~ "продължите?"
+
+#, fuzzy
+#~ msgid ""
+#~ "The following torrents have reached their maximum seed time. Do you want "
+#~ "to start them anyway ?"
+#~ msgstr ""
+#~ "Торентът \"%1\" достигна максималния коефициент на споделяне. Искате ли "
+#~ "да игнорирате ограничението и да започнете качване?"
+
+#, fuzzy
+#~ msgid ""
+#~ "The following torrents have reached their maximum share ratio. Do you "
+#~ "want to start them anyway ?"
+#~ msgstr ""
+#~ "Торентът \"%1\" достигна максималния коефициент на споделяне. Искате ли "
+#~ "да игнорирате ограничението и да започнете качване?"
+
+#~ msgid "Error starting torrent %1 : %2"
+#~ msgstr "Грешка при стартиране на торент %1 : %2"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Грешка: "
+
+#~ msgid "Error stopping torrent %1 : %2"
+#~ msgstr "Грешка при спиране на торент %1 : %2"
+
+#~ msgid ""
+#~ "<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img src="
+#~ "\"unavailable_color\">&nbsp; - Chunks to Download<br><img src="
+#~ "\"excluded_color\">&nbsp; - Excluded Chunks"
+#~ msgstr ""
+#~ "<img src=\"available_color\">&nbsp; - Свалени парчета<br><img src="
+#~ "\"unavailable_color\">&nbsp; - Парчета за сваляне<br><img src="
+#~ "\"excluded_color\">&nbsp; - Изключени парчета"
+
+#, fuzzy
+#~ msgid "Cannot write beyond end of the mmap buffer."
+#~ msgstr "Не може да бъде записвано след края на mmap буфер!"
+
+#~ msgid "Plugins"
+#~ msgstr "Приставки"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "потребител"
+
+#, fuzzy
+#~ msgid "Folders to scan for torrents:"
+#~ msgstr "Папка за съхранение на временните файлове:"
+
+#, fuzzy
+#~ msgid "Add a new folder to be scanned."
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgid "Add Folder"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid "Remove a folder from the list."
+#~ msgstr "Премахване на маркирания потребител от черния списък"
+
+#, fuzzy
+#~ msgid "Remove Folder"
+#~ msgstr "Изтриване на изтегляне"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Настройки на файл"
+
+#, fuzzy
+#~ msgid "Open silently"
+#~ msgstr "Отваряне на торентите &тихо"
+
+#, fuzzy
+#~ msgid "Scan subfolders"
+#~ msgstr "Директории за сканиране"
+
+#, fuzzy
+#~ msgid "Remove torrent file after loading"
+#~ msgstr "Изтрива торентите след свалянето им"
+
+#, fuzzy
+#~ msgid "Move torrent file to loaded directory"
+#~ msgstr "Преместване на торента в директория \"свалени\" след свалянето"
+
+#, fuzzy
+#~ msgid "Add torrent to group:"
+#~ msgstr "Добавяне към групата"
+
+#, fuzzy
+#~ msgid "Group to add torrents to."
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Whether to open torrent silently or not."
+#~ msgstr "Дали торентът да бъде отворен тихо или не."
+
+#, fuzzy
+#~ msgid "Delete action checked."
+#~ msgstr "Преместването е отметнато."
+
+#~ msgid "Move action checked."
+#~ msgstr "Преместването е отметнато."
+
+#, fuzzy
+#~ msgid "Forward"
+#~ msgstr "Пренасочване на порт"
+
+#, fuzzy
+#~ msgid "Undo Forward"
+#~ msgstr "Отмяна на пренасочване към портове"
+
+#~ msgid "Rescan"
+#~ msgstr "Ново сканиране"
+
+#~ msgid "Default UPnP device to use"
+#~ msgstr "UPnP устройство по подразбиране"
+
+#, fuzzy
+#~ msgid "Syndication Toolbar"
+#~ msgstr "Лента с инструменти за сваляне"
+
+#, fuzzy
+#~ msgid "Name:"
+#~ msgstr "Редактиране на името"
+
+#, fuzzy
+#~ msgid "Case sensitive matching"
+#~ msgstr "Чувствителен регистър"
+
+#, fuzzy
+#~ msgid "Seasons && Episodes"
+#~ msgstr "Макс. епизод"
+
+#, fuzzy
+#~ msgid "Seasons: "
+#~ msgstr "Сезон"
+
+#, fuzzy
+#~ msgid "Episodes:"
+#~ msgstr "Епизод"
+
+#, fuzzy
+#~ msgid "Download torrents of matching items"
+#~ msgstr "Брояч на свалянията"
+
+#, fuzzy
+#~ msgid "Add to group:"
+#~ msgstr "Добавяне към групата"
+
+#~ msgid "Download to:"
+#~ msgstr "Сваляне в:"
+
+#, fuzzy
+#~ msgid "Open torrents silently"
+#~ msgstr "Дали торентът да бъде отворен тихо или не."
+
+#~ msgid "Test"
+#~ msgstr "Тест"
+
+#, fuzzy
+#~ msgid "filter on feed:"
+#~ msgstr "Файл за IP-филтриране:"
+
+#~ msgid "URL:"
+#~ msgstr "Адрес (URL):"
+
+#~ msgid "Status:"
+#~ msgstr "Състояние:"
+
+#, fuzzy
+#~ msgid "Refresh every:"
+#~ msgstr "Презареждане"
+
+#, fuzzy
+#~ msgid " minutes"
+#~ msgstr "Филтри"
+
+#~ msgid "Refresh"
+#~ msgstr "Презареждане"
+
+#, fuzzy
+#~ msgid "Filters"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgid "Manage Filters"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgid "Feed:"
+#~ msgstr "Източници"
+
+#, fuzzy
+#~ msgid "Active filters:"
+#~ msgstr "Приемане на филтри"
+
+#, fuzzy
+#~ msgid "Add"
+#~ msgstr "&Добавяне"
+
+#, fuzzy
+#~ msgid "Available filters:"
+#~ msgstr "Наличен"
+
+#, fuzzy
+#~ msgid "Remove All"
+#~ msgstr "&Изтриване на всички"
+
+#, fuzzy
+#~ msgid "Media Player Toolbar"
+#~ msgstr "Лента с инструменти за сваляне"
+
+#~ msgid "Search Preferences"
+#~ msgstr "Настройки на търсенето"
+
+#, fuzzy
+#~ msgid "Web interface skin:"
+#~ msgstr "Приставка за уеб-интерфейса"
+
+#, fuzzy
+#~ msgid "Which interface to use."
+#~ msgstr "Настройки на уеб-интерфейса"
+
+#, fuzzy
+#~ msgid "Login required"
+#~ msgstr "Необходимо дисково пространство:"
+
+#~ msgid "Username:"
+#~ msgstr "Потребител:"
+
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "парола"
+
+#, fuzzy
+#~ msgid "Web Server"
+#~ msgstr "Качващи"
+
+#~ msgid "Port:"
+#~ msgstr "Порт:"
+
+#~ msgid "Forward port"
+#~ msgstr "Пренасочване на порт"
+
+#, fuzzy
+#~ msgid "Session TTL:"
+#~ msgstr "TTL на сесия (в сек.):"
+
+#~ msgid "Port number"
+#~ msgstr "Порт номер"
+
+#~ msgid "forward Port"
+#~ msgstr "пренасочване на порт"
+
+#~ msgid "Session time to live"
+#~ msgstr "Време на сесия"
+
+#, fuzzy
+#~ msgid "interface skin"
+#~ msgstr "Приставка за уеб-интерфейса"
+
+#, fuzzy
+#~ msgid "username"
+#~ msgstr "Потребител:"
+
+#, fuzzy
+#~ msgid "password"
+#~ msgstr "парола"
+
+#, fuzzy
+#~ msgid "Update charts every n gui updates"
+#~ msgstr "Обновяване на всеки"
+
+#, fuzzy
+#~ msgid "Whether to show seeds in swarms"
+#~ msgstr "Показване на качващите като множество"
+
+#, fuzzy
+#~ msgid "Whether to show leachers in swarms"
+#~ msgstr "Показване на свалящите като множество"
+
+#, fuzzy
+#~ msgid "Color of the connected leechers on connections chart"
+#~ msgstr "Среден брой свалящи за текущия торент"
+
+#, fuzzy
+#~ msgid "Color of the avg connected leecher per torrent on connections chart"
+#~ msgstr "Средно свалящи за торент"
+
+#, fuzzy
+#~ msgid ""
+#~ "Color of the avg connected leechers per running torrent on connections "
+#~ "chart"
+#~ msgstr "Среден брой свалящи за текущия торент"
+
+#, fuzzy
+#~ msgid ""
+#~ "Color of the avg connected seeds per running torrent on connections chart"
+#~ msgstr "Среден брой свалящи за текущия торент"
+
+#, fuzzy
+#~ msgid "Color of the nodes on DHT chart"
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Speed"
+#~ msgstr "Скорост на качване"
+
+#~ msgid "Upload"
+#~ msgstr "Качване"
+
+#, fuzzy
+#~ msgid "Colors"
+#~ msgstr "Директории"
+
+#~ msgid "Average"
+#~ msgstr "Средно"
+
+#~ msgid "Limit"
+#~ msgstr "Ограничение"
+
+#, fuzzy
+#~ msgid "Seeds  in swarms"
+#~ msgstr "Качващи в множеството"
+
+#, fuzzy
+#~ msgid "Avg. leechers connected per running torr."
+#~ msgstr "Среден брой качващи за текущия торент"
+
+#, fuzzy
+#~ msgid "Avg. seeds connected per running torrent"
+#~ msgstr "Среден брой качващи за текущия торент"
+
+#, fuzzy
+#~ msgid "Widget type:"
+#~ msgstr "Информация:"
+
+#, fuzzy
+#~ msgid "Native"
+#~ msgstr "Бележка"
+
+#, fuzzy
+#~ msgid "Settings"
+#~ msgstr "Качване"
+
+#~ msgid "Update"
+#~ msgstr "Обновяване"
+
+#~ msgid "Update charts every"
+#~ msgstr "Обновяване на всеки"
+
+#~ msgid "GUI updates"
+#~ msgstr "Обновяване на ГПИ"
+
+#~ msgid "Gather data every"
+#~ msgstr "Събиране на данни на всеки"
+
+#, fuzzy
+#~ msgid "milliseconds"
+#~ msgstr "милисек."
+
+#, fuzzy
+#~ msgid "Measurements counts"
+#~ msgstr "Брояч"
+
+#~ msgid "Maximum"
+#~ msgstr "Максимално"
+
+#, fuzzy
+#~ msgid "Maximum speed scale mode: "
+#~ msgstr "Максимална скорост:"
+
+#~ msgid "Exact"
+#~ msgstr "Точна"
+
+#~ msgid "Peers connections"
+#~ msgstr "Връзки"
+
+#, fuzzy
+#~ msgid "Show seeds in swarms"
+#~ msgstr "Показване на качващите като множество"
+
+#~ msgid "Show leechers in swarms"
+#~ msgstr "Показване на свалящите като множество"
+
+#~ msgid "Show peer view tab in main window"
+#~ msgstr "Показване на подпрозорец за потребителя в главния прозорец"
+
+#~ msgid "Show chunk download view tab in main window"
+#~ msgstr "Показване на подпрозорец за сваляне в главния прозорец"
+
+#~ msgid "Show trackers view tab in main window"
+#~ msgstr "Показване на подпрозорец за координиращия сървър в главния прозорец"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "Премахване"
+
+#, fuzzy
+#~ msgid "Change Tracker"
+#~ msgstr "&Промяна"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "&Обновяване"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "По подразбиране"
+
+#~ msgid "Info"
+#~ msgstr "Информация"
+
+#, fuzzy
+#~ msgid "Average down speed:"
+#~ msgstr "Средна скорост на сваляне:"
+
+#, fuzzy
+#~ msgid "Average up speed:"
+#~ msgstr "Средна скорост на качване:"
+
+#~ msgid "Comments:"
+#~ msgstr "Коментари:"
+
+#, fuzzy
+#~ msgid "Downloaded chunks:"
+#~ msgstr "Свалени:"
+
+#, fuzzy
+#~ msgid "Available chunks:"
+#~ msgstr "Наличен"
+
+#~ msgid "Sharing"
+#~ msgstr "Споделяне"
+
+#~ msgid "Share ratio:"
+#~ msgstr "Коефициент на споделяне:"
+
+#~ msgid "Ratio limit:"
+#~ msgstr "Ограничение на коефициента:"
+
+#, fuzzy
+#~ msgid "Time limit:"
+#~ msgstr "&Ограничение на времето:"
+
+#, fuzzy
+#~ msgid " Hours"
+#~ msgstr "часа"
+
+#, fuzzy
+#~ msgid "Add Webseed"
+#~ msgstr "Качващи"
+
+#, fuzzy
+#~ msgid "Remove Webseed"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Enable All"
+#~ msgstr "Включване на &всички"
+
+#, fuzzy
+#~ msgid "Tabs"
+#~ msgstr "Задачи"
+
+#~ msgid "Show list of peers"
+#~ msgstr "Показване на списъка с потребители"
+
+#, fuzzy
+#~ msgid "Show list of chunks currently downloading"
+#~ msgstr "Показване на списъка с текущо сваляните па&рчета"
+
+#~ msgid "Show list of trackers"
+#~ msgstr "Показване на списъка с координиращи сървъри"
+
+#, fuzzy
+#~ msgid "Show list of webseeds"
+#~ msgstr "Показване на списъка с потребители"
+
+#, fuzzy
+#~ msgid "File Priority Colors"
+#~ msgstr "Приоритет на файл"
+
+#, fuzzy
+#~ msgid "First priority:"
+#~ msgstr "Порт"
+
+#, fuzzy
+#~ msgid "Last priority:"
+#~ msgstr "Порт"
+
+#~ msgid "Total:"
+#~ msgstr "Общо:"
+
+#~ msgid "Currently downloading:"
+#~ msgstr "В момента се свалят:"
+
+#~ msgid "Downloaded:"
+#~ msgstr "Свалени:"
+
+#~ msgid "Excluded:"
+#~ msgstr "Изключени:"
+
+#~ msgid "Left:"
+#~ msgstr "Оставащи:"
+
+#~ msgid "Size:"
+#~ msgstr "Размер:"
+
+#, fuzzy
+#~ msgid "EMail Settings"
+#~ msgstr "Качване"
+
+#, fuzzy
+#~ msgid "SMTP Server"
+#~ msgstr "Уеб сървър"
+
+#, fuzzy
+#~ msgid "SMTP server:"
+#~ msgstr "Уеб сървър"
+
+#, fuzzy
+#~ msgid "Use SSL/TLS encryption"
+#~ msgstr "Шифроване на протоколите"
+
+#, fuzzy
+#~ msgid "Add CC:"
+#~ msgstr "Добавяне на потребител:"
+
+#, fuzzy
+#~ msgid "Auto remove a torrent when:"
+#~ msgstr "Създаване на торент"
+
+#, fuzzy
+#~ msgid "The torrent finishes downloading"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid "The torrent finishes seeding"
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid " hours"
+#~ msgstr "часа"
+
+#, fuzzy
+#~ msgid " seconds"
+#~ msgstr "милисек."
+
+#, fuzzy
+#~ msgid "Description:"
+#~ msgstr "Описание"
+
+#, fuzzy
+#~ msgid "Website:"
+#~ msgstr "Уеб-интерфейс"
+
+#~ msgid "Use rich log text"
+#~ msgstr "Използване на богато оформление"
+
+#, fuzzy
+#~ msgid "Use rich text for logging output"
+#~ msgstr "Използване на &богато оформление"
+
+#, fuzzy
+#~ msgid "Torrent activity"
+#~ msgstr "Торент файлове"
+
+#, fuzzy
+#~ msgid "File download order for:"
+#~ msgstr "Не може да бъде отворен %1: %2"
+
+#, fuzzy
+#~ msgid "Search Toolbar"
+#~ msgstr "Лента с инструменти за сваляне"
+
+#, fuzzy
+#~ msgid "Current search engine"
+#~ msgstr "Търсачка:"
+
+#~ msgid "Use default browser"
+#~ msgstr "Използване на браузъра по подразбиране"
+
+#, fuzzy
+#~ msgid "Use custom browser"
+#~ msgstr "Използване на потребителски браузър"
+
+#~ msgid "Custom browser executable path"
+#~ msgstr "Изпълним път на браузъра"
+
+#, fuzzy
+#~ msgid "Clear the search history combo boxes."
+#~ msgstr "Изчистване на списъка"
+
+#, fuzzy
+#~ msgid "Clear Search History"
+#~ msgstr "Изчистване на списъка"
+
+#, fuzzy
+#~ msgid "Whether or not to open searches in an external browser."
+#~ msgstr "Отваряне на резултатите от търсенето във външен браузър"
+
+#~ msgid "Open searches in external browser"
+#~ msgstr "Отваряне на резултатите от търсенето във външен браузър"
+
+#, fuzzy
+#~ msgid "Use a custom browser."
+#~ msgstr "Използване на потребителски браузър"
+
+#~ msgid "Custom browser path:"
+#~ msgstr "Път до потребителски браузър:"
+
+#, fuzzy
+#~ msgid "Path of the custom browser."
+#~ msgstr "Използване на потребителски браузър"
+
+#~ msgid "Search Engines"
+#~ msgstr "Търсачки"
+
+#, fuzzy
+#~ msgid "Add a new search engine."
+#~ msgstr "Търсачки"
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "&Изтриване на всички"
+
+#, fuzzy
+#~ msgid "Remove all search engines."
+#~ msgstr "Използвана търсачка"
+
+#~ msgid "R&emove All"
+#~ msgstr "&Изтриване на всички"
+
+#, fuzzy
+#~ msgid "Add all default search engines."
+#~ msgstr "Търсачки"
+
+#~ msgid "Add Defau&lt"
+#~ msgstr "&Добавяне по подразбиране"
+
+#, fuzzy
+#~ msgid "Special Limits"
+#~ msgstr "Ограничение на скоростта"
+
+#, fuzzy
+#~ msgid "Maximum upload speed:"
+#~ msgstr "Максимална скорост на качване:"
+
+#, fuzzy
+#~ msgid "Maximum download speed:"
+#~ msgstr "Максимално сваляния:"
+
+#, fuzzy
+#~ msgid "Schedule line color:"
+#~ msgstr "Настройка на приставките"
+
+#, fuzzy
+#~ msgid "Color of all lines on the schedule."
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgid "Schedule Item color:"
+#~ msgstr "График:"
+
+#, fuzzy
+#~ msgid "Color of each normal item on the schedule."
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgid "Suspended schedule item color:"
+#~ msgstr "График:"
+
+#, fuzzy
+#~ msgid "Color of each suspended item on the schedule."
+#~ msgstr "График за лента"
+
+#~ msgid "Time"
+#~ msgstr "Време"
+
+#, fuzzy
+#~ msgid "To:"
+#~ msgstr "Общо:"
+
+#, fuzzy
+#~ msgid "Day:"
+#~ msgstr "Данни:"
+
+#, fuzzy
+#~ msgid "Limits"
+#~ msgstr "Ограничение"
+
+#, fuzzy
+#~ msgid "Download limit:"
+#~ msgstr "Сваляне в:"
+
+#, fuzzy
+#~ msgid "Upload limit:"
+#~ msgstr "Изключване на всички"
+
+#, fuzzy
+#~ msgid "Connection Limits"
+#~ msgstr "Ограничение на глобалната връзка:"
+
+#, fuzzy
+#~ msgid "Set connection limits"
+#~ msgstr "Ограничение на глобалната връзка:"
+
+#~ msgid "Maximum connections per torrent:"
+#~ msgstr "Максимално връзки за торент:"
+
+#~ msgid "Global connection limit:"
+#~ msgstr "Ограничение на глобалната връзка:"
+
+#, fuzzy
+#~ msgid "Add a new item to the schedule"
+#~ msgstr "График за лента"
+
+#, fuzzy
+#~ msgid "Days:"
+#~ msgstr "Данни:"
+
+#, fuzzy
+#~ msgid "Weekend"
+#~ msgstr "Качващи"
+
+#, fuzzy
+#~ msgid "Shutdown Toolbar"
+#~ msgstr "Лента с инструменти за сваляне"
+
+#, fuzzy
+#~ msgid "Shutdown Settings"
+#~ msgstr "Качване"
+
+#, fuzzy
+#~ msgid "Execute action when:"
+#~ msgstr "Изтриването е отметнато."
+
+#~ msgid "Level1 filter url"
+#~ msgstr "Адрес на филтър за ниво 1"
+
+#~ msgid "Use level1 filter?"
+#~ msgstr "Използване на филтър за ниво 1?"
+
+#~ msgid "IPBlocking Preferences"
+#~ msgstr "Настройки на IP-блокировката"
+
+#, fuzzy
+#~ msgid "PeerGuardian Filter File "
+#~ msgstr "Изберете файл за филтъра PeerGuardian"
+
+#, fuzzy
+#~ msgid "Use PeerGuardian filter"
+#~ msgstr "Използване на филтъра PeerGuardian?"
+
+#~ msgid "IP filter file:"
+#~ msgstr "Файл за IP-филтриране:"
+
+#~ msgid "Dow&nload/Convert"
+#~ msgstr "Свал&яне/Конвертиране"
+
+#~ msgid ""
+#~ "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
+#~ "NOTE: ZIP file from bluetack.co.uk is supported."
+#~ msgstr ""
+#~ "Сваляне на филтъра PeerGuardian от bluetack.co.uk или blocklist.org.\n"
+#~ "ЗАБЕЛЕЖКА: bluetack.co.uk поддържа ZIP файлове."
+
+#, fuzzy
+#~ msgid "Update file every:"
+#~ msgstr "обновяване на всеки"
+
+#, fuzzy
+#~ msgid "Update interval in days."
+#~ msgstr "Интервал за обновяване на ГПИ"
+
+#, fuzzy
+#~ msgid "Last updated:"
+#~ msgstr "Следващо обновяване след:"
+
+#, fuzzy
+#~ msgid "Next update:"
+#~ msgstr "Следващо обновяване след:"
+
+#~ msgid "C&ancel"
+#~ msgstr "&Отмяна"
+
+#, fuzzy
+#~ msgid "Magnet Generator Preferences"
+#~ msgstr "Настройки на търсенето"
+
+#, fuzzy
+#~ msgid "Add tracker"
+#~ msgstr "&Добавяне"
+
+#, fuzzy
+#~ msgid "Tracker:"
+#~ msgstr "Координиращи сървъри"
+
+#, fuzzy
+#~ msgid "Add name"
+#~ msgstr "Редактиране на името"
+
+#, fuzzy
+#~ msgid "Toggles tracker"
+#~ msgstr "Координиращи сървъри"
+
+#, fuzzy
+#~ msgid "The default tracker"
+#~ msgstr "Използване на браузъра по подразбиране"
+
+#, fuzzy
+#~ msgid "Show dn"
+#~ msgstr "RSS източници"
+
+#, fuzzy
+#~ msgid "UPnP Test Application"
+#~ msgstr "Приложение за KPart в KDE"
+
+#, fuzzy
+#~ msgid "No routers found."
+#~ msgstr "Файлът не е намерен."
+
+#, fuzzy
+#~ msgid "Find Routers"
+#~ msgstr "Филтри"
+
+#, fuzzy
+#~ msgid "Verbose mode"
+#~ msgstr "Режим на отстраняване на грешки"
+
+#~ msgid "UDP tracker port:"
+#~ msgstr "Порт на UDP координиращ сървър:"
+
+#, fuzzy
+#~ msgid "The maximum number of connections allowed per torrent."
+#~ msgstr "Максимално връзки за торент (0 = без ограничение)"
+
+#, fuzzy
+#~ msgid "The global connection limit for all torrents combined."
+#~ msgstr "Обща скорост на всички торенти"
+
+#, fuzzy
+#~ msgid "The maximum download speed in KiB/s."
+#~ msgstr "Максимална скорост на сваляне в кБ/сек (0 = без ограничение)"
+
+#, fuzzy
+#~ msgid "The maximum upload speed in KiB/s"
+#~ msgstr "Максимална скорост на качване в кБ/сек (0 = без ограничение)"
+
+#, fuzzy
+#~ msgid "DSCP value for IP packets:"
+#~ msgstr "DSCP за IP пакети:"
+
+#~ msgid "Maximum number of connection setups:"
+#~ msgstr "Максимално връзки за торент:"
+
+#, fuzzy
+#~ msgid "Network interface:"
+#~ msgstr "Маркиране на интерфейс:"
+
+#, fuzzy
+#~ msgid "Recommended Settings..."
+#~ msgstr "(Препоръчително за по-бавни компютри)"
+
+#, fuzzy
+#~ msgid "Features"
+#~ msgstr "Категории"
+
+#, fuzzy
+#~ msgid "Use DHT to get additional peers"
+#~ msgstr "&Използване на DHT за намиране на потребители"
+
+#, fuzzy
+#~ msgid "UDP port for DHT communications:"
+#~ msgstr "UDP порт за комуникация с DHT:"
+
+#, fuzzy
+#~ msgid "Use peer exchange"
+#~ msgstr "Размяна между потребители"
+
+#, fuzzy
+#~ msgid "Use webseeds"
+#~ msgstr "Качващи"
+
+#~ msgid "Encryption"
+#~ msgstr "Шифроване"
+
+#~ msgid "Allow unencrypted connections"
+#~ msgstr "Нешифровани връзки"
+
+#, fuzzy
+#~ msgid "Send the tracker a custom IP address or hostname"
+#~ msgstr ""
+#~ "&Изпращане на потребителското IP или името на хоста на координиращ сървър"
+
+#~ msgid "Custom IP address or hostname:"
+#~ msgstr "Потребителско IP или име на хост:"
+
+#~ msgid "Data Checking"
+#~ msgstr "Проверка на данните"
+
+#, fuzzy
+#~ msgid "Do not recheck when chunks are bigger than"
+#~ msgstr ""
+#~ "По време на качване да &не се проверяват наново парчета по-големи от"
+
+#, fuzzy
+#~ msgid " KiB"
+#~ msgstr "кБ"
+
+#, fuzzy
+#~ msgid "Do a full data check after "
+#~ msgstr "Проверка инте&гритета на данните след"
+
+#, fuzzy
+#~ msgid ""
+#~ "When a torrent has finished downloading, do a full data check on the "
+#~ "torrent."
+#~ msgstr ""
+#~ "Свалянето на торент %1 не е завършено. Искате ли да изтриете непълната "
+#~ "информация?"
+
+#, fuzzy
+#~ msgid "Check data when download is finished"
+#~ msgstr "&Продължаване на качването след като свалянето завърши"
+
+#, fuzzy
+#~ msgid "Fully reserve disk space (avoids fragmentation)"
+#~ msgstr ""
+#~ "Пълно преразпределяне на &дисковото пространство (избягва фрагментацията)"
+
+#~ msgid "Performance"
+#~ msgstr "Натоварване"
+
+#~ msgid "GUI update interval:"
+#~ msgstr "Интервал за обновяване на ГПИ:"
+
+#, fuzzy
+#~ msgid "Time estimation algorithm:"
+#~ msgstr "ЕТА алгоритъм:"
+
+#~ msgid "Window of X"
+#~ msgstr "Х"
+
+#, fuzzy
+#~ msgid "Do not use KIO for tracker announces"
+#~ msgstr ""
+#~ "Без използване &проксито на KDE за връзки към HTTP координиращ сървър"
+
+#~ msgid "Folders"
+#~ msgstr "Директории"
+
+#, fuzzy
+#~ msgid "Folder to store torrent information:"
+#~ msgstr "Папка за съхранение на временните файлове:"
+
+#, fuzzy
+#~ msgid "Default save location:"
+#~ msgstr "Изтриване след &сваляне"
+
+#~ msgid "Move completed downloads to:"
+#~ msgstr "Преместване на свалените в:"
+
+#, fuzzy
+#~ msgid "Copy torrent files to:"
+#~ msgstr "Копиране на .torrent файловете в:"
+
+#~ msgid "System Tray Icon"
+#~ msgstr "Икона в системния панел"
+
+#, fuzzy
+#~ msgid "Show system tray icon"
+#~ msgstr "Показване на &икона в системния панел"
+
+#, fuzzy
+#~ msgid "Whether or not to show system tray popup messages."
+#~ msgstr "Показване на изскачащи съобщения в системния панел"
+
+#~ msgid "Show system tray popup messages"
+#~ msgstr "Показване на изскачащи съобщения в системния панел"
+
+#, fuzzy
+#~ msgid "Open multiple torrents silently"
+#~ msgstr "Дали торентът да бъде отворен тихо или не."
+
+#~ msgid "Maximum downloads:"
+#~ msgstr "Максимално сваляния:"
+
+#~ msgid "Maximum seeds:"
+#~ msgstr "Максимално качвания:"
+
+#, fuzzy
+#~ msgid "Don't start torrents"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Ask if torrents can be started"
+#~ msgstr "Торентът не може да бъде стартиран"
+
+#, fuzzy
+#~ msgid "Start torrents"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid " MiB"
+#~ msgstr "МБ"
+
+#, fuzzy
+#~ msgid "Stalled timer:"
+#~ msgstr "Застой"
+
+#, fuzzy
+#~ msgid " Minutes"
+#~ msgstr "Филтри"
+
+#, fuzzy
+#~ msgctxt "@title:group Options regarging Seeding"
+#~ msgid "Seeding"
+#~ msgstr "Качване"
+
+#, fuzzy
+#~ msgid "Keep seeding after download is finished"
+#~ msgstr "&Продължаване на качването след като свалянето завърши"
+
+#~ msgid "Number of upload slots:"
+#~ msgstr "Брой слотове при качване:"
+
+#, fuzzy
+#~ msgid "Default maximum share ratio:"
+#~ msgstr "Макс. коефициент на споделяне:"
+
+#, fuzzy
+#~ msgid "Default maximum seed time:"
+#~ msgstr "Макс. време на качване:"
+
+#, fuzzy
+#~ msgid "Available upload bandwidth:"
+#~ msgstr "Скорост на качване (в кБ/сек):"
+
+#, fuzzy
+#~ msgid " Kbps"
+#~ msgstr "%1 кБ/сек"
+
+#, fuzzy
+#~ msgid " kb/s"
+#~ msgstr "%1 кБ/сек"
+
+#, fuzzy
+#~ msgid "Available download bandwidth:"
+#~ msgstr "Скорост на сваляне (в кБ/сек):"
+
+#, fuzzy
+#~ msgid "(= 32 KiB/s)"
+#~ msgstr "%1 кБ/сек"
+
+#, fuzzy
+#~ msgid "(= 500 KiB/s)"
+#~ msgstr "%1 кБ/сек"
+
+#~ msgid "Preferences"
+#~ msgstr "Настройки"
+
+#, fuzzy
+#~ msgid "Average speed per slot:"
+#~ msgstr "Средна скорост на качване:"
+
+#, fuzzy
+#~ msgid "Slots per torrent:"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Recommended settings:"
+#~ msgstr "(Препоръчително за по-бавни компютри)"
+
+#, fuzzy
+#~ msgid "Proxy:"
+#~ msgstr "Порт"
+
+#, fuzzy
+#~ msgid "Whether or not to use the HTTP proxy for webseed connections."
+#~ msgstr ""
+#~ "Без използване &проксито на KDE за връзки към HTTP координиращ сървър"
+
+#, fuzzy
+#~ msgid "Use proxy for webseed connections"
+#~ msgstr ""
+#~ "Без използване &проксито на KDE за връзки към HTTP координиращ сървър"
+
+#, fuzzy
+#~ msgid "Use proxy for tracker connections"
+#~ msgstr ""
+#~ "Без използване &проксито на KDE за връзки към HTTP координиращ сървър"
+
+#, fuzzy
+#~ msgid "Server:"
+#~ msgstr "Уеб сървър"
+
+#, fuzzy
+#~ msgid "Version:"
+#~ msgstr "TTL на сесия (в сек.):"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#, fuzzy
+#~ msgid "Failed:"
+#~ msgstr "Филтри"
+
+#, fuzzy
+#~ msgid "Not downloaded:"
+#~ msgstr "Свалени:"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "&Отмяна"
+
+#, fuzzy
+#~ msgid "Torrent Limits"
+#~ msgstr "Торент файлове"
+
+#~ msgid "Maximum download rate:"
+#~ msgstr "Максимална скорост на сваляне:"
+
+#, fuzzy
+#~ msgid "Maximum upload rate:"
+#~ msgstr "Макс. скорост на качване:"
+
+#, fuzzy
+#~ msgid "Maximum seed time:"
+#~ msgstr "Макс. време на качване:"
+
+#, fuzzy
+#~ msgid "Maximum share ratio:"
+#~ msgstr "Макс. коефициент на споделяне:"
+
+#, fuzzy
+#~ msgid "Create a torrent"
+#~ msgstr "Създаване на торент"
+
+#, fuzzy
+#~ msgid "File or directory to create torrent from:"
+#~ msgstr "Файлът или папката, която искате да направите торент:"
+
+#~ msgid "Size of each chunk:"
+#~ msgstr "Големина на всяко парче:"
+
+#, fuzzy
+#~ msgid "32 KiB"
+#~ msgstr "%1 кБ"
+
+#, fuzzy
+#~ msgid "64 KiB"
+#~ msgstr "%1 кБ"
+
+#, fuzzy
+#~ msgid "128 KiB"
+#~ msgstr "%1 кБ"
+
+#, fuzzy
+#~ msgid "256 KiB"
+#~ msgstr "256"
+
+#, fuzzy
+#~ msgid "512 KiB"
+#~ msgstr "%1 кБ"
+
+#, fuzzy
+#~ msgid "1 MiB"
+#~ msgstr "%1 МБ"
+
+#, fuzzy
+#~ msgid "2 MiB"
+#~ msgstr "МБ"
+
+#, fuzzy
+#~ msgid "4 MiB"
+#~ msgstr "МБ"
+
+#, fuzzy
+#~ msgid "8 MiB"
+#~ msgstr "МБ"
+
+#, fuzzy
+#~ msgid "Start seeding"
+#~ msgstr "Качване"
+
+#~ msgid "Private torrent (DHT not allowed)"
+#~ msgstr "Частен торент (DHT не е разрешен)"
+
+#, fuzzy
+#~ msgid "Decentralized (DHT only)"
+#~ msgstr "&Децентрализирано (само DHT)"
+
+#, fuzzy
+#~ msgid "DHT Nodes"
+#~ msgstr "DHT възли"
+
+#~ msgid "Node:"
+#~ msgstr "Възел:"
+
+#, fuzzy
+#~ msgid "IP or Hostname"
+#~ msgstr "IP или име на хост"
+
+#~ msgid "Port"
+#~ msgstr "Порт"
+
+#, fuzzy
+#~ msgid "Web Seeds"
+#~ msgstr "Качващи"
+
+#~ msgid "Select Which Files You Want to Download"
+#~ msgstr "Изберете файлове за сваляне"
+
+#~ msgid "Select &All"
+#~ msgstr "Маркиране на &всички"
+
+#~ msgid "Select &None"
+#~ msgstr "&Размаркиране на всички"
+
+#~ msgid "Invert Selection"
+#~ msgstr "Обръщане на маркировката"
+
+#, fuzzy
+#~ msgid "Collapse All"
+#~ msgstr "Маркиране на &всички"
+
+#, fuzzy
+#~ msgid "Expand All"
+#~ msgstr "Включване на &всички"
+
+#~ msgid "Group:"
+#~ msgstr "Група:"
+
+#~ msgid "Start torrent"
+#~ msgstr "Стартиране на торента"
+
+#, fuzzy
+#~ msgid "Disk Space"
+#~ msgstr "Дисково пространство"
+
+#, fuzzy
+#~ msgid "Required:"
+#~ msgstr "Необходимо дисково пространство:"
+
+#, fuzzy
+#~ msgid "Available:"
+#~ msgstr "Наличен"
+
+#~ msgid "After download:"
+#~ msgstr "След сваляне:"
+
+#, fuzzy
+#~ msgid "Speed limits for individual torrents (double click to edit):"
+#~ msgstr "Задаване ограничения на скоростта за торент"
+
+#, fuzzy
+#~ msgid "Filter:"
+#~ msgstr "IP-филтър"
+
+#, fuzzy
+#~ msgid "Peer:"
+#~ msgstr "Потребител"
+
+#~ msgid "127.0.0.1"
+#~ msgstr "127.0.0.1"
+
+#, fuzzy
+#~ msgid "Files are missing"
+#~ msgstr "Липсват файловете с данни"
+
+#, fuzzy
+#~ msgid "The following files are missing:"
+#~ msgstr "Липсват файловете с данни"
+
+#~ msgid "Recreate"
+#~ msgstr "Ново създаване"
+
+#, fuzzy
+#~ msgid "Select New Location"
+#~ msgstr "Настройване директорията на сваляне"
+
+#, fuzzy
+#~ msgid "Importing ..."
+#~ msgstr "Конвертиране..."
+
+#, fuzzy
+#~ msgid "Import an existing torrent"
+#~ msgstr "Импортиране на съществуващо сваляне"
+
+#~ msgid "Torrent:"
+#~ msgstr "Торент:"
+
+#~ msgid "Data:"
+#~ msgstr "Данни:"
+
+#~ msgid "&Import"
+#~ msgstr "&Импортиране"
+
+#~ msgid "Ca&ncel"
+#~ msgstr "&Отмяна"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&Заглавие"
+
+#, fuzzy
+#~ msgid "&View"
+#~ msgstr "&Нов"
+
+#, fuzzy
+#~ msgid "GroupsMenu"
+#~ msgstr "Групи"
+
+#~ msgid "Additional Peer Sources"
+#~ msgstr "Допълнителни потребители"
+
+#~ msgid "Download Toolbar"
+#~ msgstr "Лента с инструменти за сваляне"
+
+#, fuzzy
+#~ msgid "KTorrent Blacklisted Peers"
+#~ msgstr "Черен списък на KTorrent"
+
+#~ msgid "Add peer:"
+#~ msgstr "Добавяне на потребител:"
+
+#, fuzzy
+#~ msgid ""
+#~ "IP addresses must be in the format 'XXX.XXX.XXX.XXX'.\n"
+#~ "                                        \n"
+#~ "You can also use wildcards like '127.0.0.*' or specify ranges like "
+#~ "'200.10.10.0-200.10.10.40'."
+#~ msgstr ""
+#~ "Трябва да въведете IP във формат \"XXX.XXX.XXX.XXX\". Можете също да "
+#~ "използвате заместител като \"127.0.0.*\"."
+
+#, fuzzy
+#~ msgid "Clear"
+#~ msgstr "&Изчистване"
+
+#, fuzzy
+#~ msgid "Save As..."
+#~ msgstr "Запис &като..."
+
+#, fuzzy
+#~ msgid "Torrent to display:"
+#~ msgstr "Торент файлове"
+
+#~ msgid "Maximum number of downloads (0 = no limit)"
+#~ msgstr "Максимално сваляния (0 = без ограничение)"
+
+#~ msgid "Maximum number of seeds (0 = no limit)"
+#~ msgstr "Максимално качвания (0 = без ограничение)"
+
+#~ msgid "Start downloads on low disk space?"
+#~ msgstr "Започване на сваляне при малко дисково пространство?"
+
+#, fuzzy
+#~ msgid "Maximum number of connections per torrent (0 = no limit)"
+#~ msgstr "Максимално връзки за всички торенти (0 = без ограничение)"
+
+#~ msgid "Maximum number of connections for all torrents (0 = no limit) "
+#~ msgstr "Максимално връзки за всички торенти (0 = без ограничение)"
+
+#, fuzzy
+#~ msgid "Maximum upload speed in KiB/sec (0 = no limit)"
+#~ msgstr "Максимално качвания (0 = без ограничение)"
+
+#, fuzzy
+#~ msgid "Maximum download speed in KiB/sec (0 = no limit)"
+#~ msgstr "Максимално качвания (0 = без ограничение)"
+
+#, fuzzy
+#~ msgid "Maximum share ratio (0 = no limit)"
+#~ msgstr "Максимален коефициент за споделяне (0 = без ограничение)"
+
+#~ msgid "Show a system tray icon"
+#~ msgstr "Показване на икона в системния панел"
+
+#, fuzzy
+#~ msgid "Show speed bar in tray icon"
+#~ msgstr "Показване на &лента за скоростта в системния панел"
+
+#, fuzzy
+#~ msgid "Download bandwidth (in kb/s):"
+#~ msgstr "Лента на сваляне (в кБ/сек):"
+
+#, fuzzy
+#~ msgid "Upload bandwidth (in kb/s):"
+#~ msgstr "Лента на качване (в кБ/сек):"
+
+#~ msgid "Keep seeding after download has finished"
+#~ msgstr "Продължаване на качването след като свалянето завърши"
+
+#~ msgid "Folder to store temporary files"
+#~ msgstr "Папка за временните файлове"
+
+#~ msgid "Whether to automatically save downloads to saveDir"
+#~ msgstr "Дали свалянията автоматично да се записват в saveDir"
+
+#~ msgid "Folder to store downloaded files"
+#~ msgstr "Папка за свалените файлове"
+
+#~ msgid "Whether to automatically copy .torrent files to torrentCopyDir"
+#~ msgstr "Дали свалянията автоматично да се записват в директорията"
+
+#~ msgid "Folder to copy .torrent files to"
+#~ msgstr "Папка за копиране на .torrent файловете"
+
+#~ msgid "Whether to use a custom IP to pass to the tracker"
+#~ msgstr "Дали потребителското IP да се изпраща на координиращия сървър"
+
+#~ msgid "Directory which was used as the last save directory"
+#~ msgstr "Директория, използвана като последната директория за сваляне"
+
+#, fuzzy
+#~ msgid "IP to pass to the tracker"
+#~ msgstr "Дали потребителското IP да се изпраща на координиращия сървър"
+
+#, fuzzy
+#~ msgid "GUI update interval"
+#~ msgstr "Интервал за обновяване на ГПИ:"
+
+#~ msgid "Support for DHT"
+#~ msgstr "Поддръжка за DHT"
+
+#~ msgid "DHT port"
+#~ msgstr "DHT порт"
+
+#~ msgid "Number of upload slots"
+#~ msgstr "Брой слотове за качване"
+
+#~ msgid "Columns shown in KTorrentView"
+#~ msgstr "Видими колони в KTorrent"
+
+#, fuzzy
+#~ msgid ""
+#~ "When there is no space left to complete download, and the available disk "
+#~ "space is less than this value, the torrent will be stopped."
+#~ msgstr ""
+#~ "Когато няма останало място за свалянето на торента или е по-малко от "
+#~ "минимално зададеното, свалянето ще бъде спряно."
+
+#~ msgid "Whether to automatically move completed downloads to completedDir"
+#~ msgstr "Дали свалянията автоматично да се записват в completedDir"
+
+#~ msgid "Folder to move completed downloaded files to"
+#~ msgstr "Папка за свалените файлове"
+
+#~ msgid "Maximum seed time in hours (0 = no limit)"
+#~ msgstr "Максимално време за качване (0 = без ограничение)"
+
+#~ msgid "Maximum share ratio limit reached."
+#~ msgstr "Достигнато е ограничението на коефициента за споделяне."
+
+#~ msgid ""
+#~ "Specified port (%1) is unavailable or in use by another application. "
+#~ "KTorrent is now using port %2."
+#~ msgstr ""
+#~ "Зададеният порт (%1) е невалиден или се използва от друга програма. "
+#~ "KTorrent ще използва порт %2."
+
+#, fuzzy
+#~ msgid "Resume KTorrent"
+#~ msgstr "Премахване на торент"
+
+#, fuzzy
+#~ msgid "Resume suspended torrents"
+#~ msgstr "Създаване на торент"
+
+#, fuzzy
+#~ msgid "KSqueezedTextLabel"
+#~ msgstr "textLabel2"
+
+#, fuzzy
+#~ msgid "Creating Torrent"
+#~ msgstr "Създаване на торент"
+
+#~ msgid "Creating %1..."
+#~ msgstr "Създаване %1..."
+
+#~ msgid "Checking Data ..."
+#~ msgstr "Проверка на данните..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "Грешка при сканиране на данни: %1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "Сканиране на данните за <b>%1</b> :"
+
+#, fuzzy
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "Сканиране данните на торент :"
+
+#, fuzzy
+#~ msgid "Chunks found:"
+#~ msgstr "Брой парчета намерени :"
+
+#, fuzzy
+#~ msgid "Chunks failed:"
+#~ msgstr "Парчета"
+
+#, fuzzy
+#~ msgid "Chunks not downloaded:"
+#~ msgstr "Брой парчета ненамерени / несвалени :"
+
+#, fuzzy
+#~ msgid "Chunks downloaded:"
+#~ msgstr "Свалени:"
+
+#~ msgid "Invalid URL: "
+#~ msgstr "Неправилен адрес: "
+
+#~ msgid "Malformed URL."
+#~ msgstr "Неправилен адрес (URL)."

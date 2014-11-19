@@ -1,0 +1,5978 @@
+# translation of ktorrent.po to 简体中文
+# Copyright (C) 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# sejishikong <sejishikong@263.net>, 2005.
+# QAed by Funda Wang <fundawang@linux.net.cn>, 2005-09-23.
+# Hu Wei <contact@chaostone.com>, 2007, 2008.
+# Ni Hui <shuizhuyuanluo@126.com>, 2008, 2009, 2011.
+# Lie Ex <lilith.ex@gmail.com>, 2010.
+# Weng Xuetian <wengxt@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktorrent\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-12-18 16:46+0100\n"
+"PO-Revision-Date: 2013-01-12 12:07-0500\n"
+"Last-Translator: Weng Xuetian <wengxt@gmail.com>\n"
+"Language-Team: Chinese Simplified <kde-china@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: examples/ktcli/main.cpp:60
+msgid "Torrent to open"
+msgstr "要打开的种子"
+
+#: examples/ktcli/main.cpp:61 examples/ktcli/main.cpp:62
+msgid "Port to use"
+msgstr "要使用的端口"
+
+#: examples/ktcli/main.cpp:63
+msgid "Whether or not to enable encryption"
+msgstr "是否启用加密"
+
+#: examples/ktcli/main.cpp:64
+msgid "Whether or not to enable peer exchange"
+msgstr "是否启用对等点交换"
+
+#: examples/ktcli/main.cpp:65
+msgid "Whether or not to use utp"
+msgstr "是否启用 utp"
+
+#: examples/ktcli/main.cpp:67
+msgid "ktcli"
+msgstr "ktcli"
+
+#: src/bcodec/bdecoder.cpp:71
+#, kde-format
+msgid "Illegal token: %1"
+msgstr "非法标记：%1"
+
+#: src/bcodec/bdecoder.cpp:133 src/bcodec/bdecoder.cpp:141
+msgid "Decode error"
+msgstr "解码错误"
+
+#: src/bcodec/bdecoder.cpp:201 src/bcodec/bdecoder.cpp:246
+msgid "Unexpected end of input"
+msgstr "意外的输入结尾"
+
+#: src/bcodec/bdecoder.cpp:221 src/bcodec/bdecoder.cpp:255
+#, kde-format
+msgid "Cannot convert %1 to an int"
+msgstr "无法将 %1 转换为整型"
+
+#: src/bcodec/bdecoder.cpp:260
+msgid "Torrent is incomplete."
+msgstr "种子数据不完整。"
+
+#: src/datachecker/datacheckerjob.cpp:82
+msgid "Waiting for other data checks to finish"
+msgstr "正在等待其它数据块完成"
+
+#: src/datachecker/datacheckerjob.cpp:88 src/torrent/torrentstats.cpp:93
+msgid "Checking data"
+msgstr "正在检查数据"
+
+#: src/datachecker/datacheckerjob.cpp:141
+msgid "Checking Data"
+msgstr "正在检查数据"
+
+#: src/datachecker/multidatachecker.cpp:209
+#: src/datachecker/singledatachecker.cpp:49 src/diskio/multifilecache.cpp:706
+#: src/diskio/multifilecache.cpp:745 src/torrent/torrentcreator.cpp:124
+#: src/torrent/torrentcreator.cpp:255 src/torrent/torrentcreator.cpp:292
+#, kde-format
+msgid "Cannot open file %1: %2"
+msgstr "无法打开文件 %1：%2"
+
+#: src/diskio/cache.cpp:170 src/diskio/multifilecache.cpp:118
+#: src/diskio/singlefilecache.cpp:85
+#, kde-format
+msgid "Failed to create %1: %2"
+msgstr "创建 %1 失败：%2"
+
+#: src/diskio/cachefile.cpp:94 src/util/fileops.cpp:361
+#: src/util/fileops.cpp:406
+#, kde-format
+msgid "Cannot open %1: %2"
+msgstr "无法打开 %1：%2"
+
+#: src/diskio/cachefile.cpp:122 src/diskio/cachefile.cpp:250
+#: src/diskio/cachefile.cpp:414 src/diskio/cachefile.cpp:482
+#, kde-format
+msgid "Cannot open %1 for writing: readonly filesystem"
+msgstr "无法打开 %1 写入：只读文件系统"
+
+#: src/diskio/cachefile.cpp:129 src/diskio/cachefile.cpp:420
+#, kde-format
+msgid "Attempting to write beyond the maximum size of %1"
+msgstr "正在尝试写入超过最大允许尺寸 %1 的数据"
+
+#: src/diskio/cachefile.cpp:257
+#, kde-format
+msgid ""
+"Cannot expand file %1: attempting to grow the file beyond the maximum size"
+msgstr "无法展开文件 %1：试图展开的文件超过了最大大小"
+
+#: src/diskio/cachefile.cpp:261
+#, kde-format
+msgid "Cannot expand file %1: %2"
+msgstr "无法展开文件 %1：%2"
+
+#: src/diskio/cachefile.cpp:380
+#, kde-format
+msgid "Error: Reading past the end of the file %1"
+msgstr "错误：读取超越文件结尾 %1"
+
+#: src/diskio/cachefile.cpp:385 src/diskio/cachefile.cpp:432
+#, kde-format
+msgid "Failed to seek file %1: %2"
+msgstr "在文件 %1 中定位失败：%2"
+
+#: src/diskio/cachefile.cpp:393
+#, kde-format
+msgid "Error reading from %1"
+msgstr "无法从 %1 读取"
+
+#: src/diskio/cachefile.cpp:436
+#, kde-format
+msgid "Failed to write to file %1: %2"
+msgstr "写入文件 %1 失败：%2"
+
+#: src/diskio/cachefile.cpp:503
+#, kde-format
+msgid "Cannot preallocate diskspace: %1"
+msgstr "无法预先分配磁盘空间：%1"
+
+#: src/diskio/chunkmanager.cpp:936 src/diskio/chunkmanager.cpp:962
+#, kde-format
+msgid "Cannot open index file %1: %2"
+msgstr "无法打开索引文件 %1：%2"
+
+#: src/diskio/dndfile.cpp:89
+#, kde-format
+msgid "Cannot create file %1: %2"
+msgstr "无法创建文件 %1：%2"
+
+#: src/diskio/dndfile.cpp:137
+#, kde-format
+msgid "Failed to write first chunk to DND file: %1"
+msgstr "将第一个块写入到 DND 文件失败：%1"
+
+#: src/diskio/dndfile.cpp:155
+#, kde-format
+msgid "Failed to write last chunk to DND file: %1"
+msgstr "将最后一个块写入到 DND 文件失败：%1"
+
+#: src/diskio/movedatafilesjob.cpp:140
+msgid "Waiting for other move jobs to finish"
+msgstr "正在等待其它移动任务完成"
+
+#: src/diskio/movedatafilesjob.cpp:141 src/diskio/movedatafilesjob.cpp:181
+msgctxt "The source of a file operation"
+msgid "Source"
+msgstr "来源"
+
+#: src/diskio/movedatafilesjob.cpp:142 src/diskio/movedatafilesjob.cpp:182
+msgctxt "The destination of a file operation"
+msgid "Destination"
+msgstr "目的"
+
+#: src/diskio/movedatafilesjob.cpp:180
+msgctxt "@title job"
+msgid "Moving"
+msgstr "移动"
+
+#: src/diskio/multifilecache.cpp:91 src/diskio/singlefilecache.cpp:74
+#, kde-format
+msgid "Failed to open %1: %2"
+msgstr "打开 %1 失败：%2"
+
+#: src/diskio/piecedata.cpp:69 src/diskio/piecedata.cpp:108
+msgid "Unable to write to a piece mapped read only"
+msgstr "无法写入只读映射的块"
+
+#: src/download/chunkdownload.cpp:383
+#, kde-format
+msgid "1 peer"
+msgid_plural "%1 peers"
+msgstr[0] "%1 个对等点"
+
+#: src/download/downloader.cpp:808
+msgid "Disabled because webseed does not match torrent"
+msgstr "因为网络种子不匹配种子文件而禁用"
+
+#: src/download/httpconnection.cpp:44 src/download/webseed.cpp:52
+#: src/download/webseed.cpp:99
+msgid "Not connected"
+msgstr "未连接"
+
+#: src/download/httpconnection.cpp:115
+#, kde-format
+msgid "Resolving proxy %1:%2"
+msgstr "正在解析代理 %1：%2"
+
+#: src/download/httpconnection.cpp:121 src/download/httpconnection.cpp:139
+msgid "Not enough system resources available"
+msgstr "系统资源不足"
+
+#: src/download/httpconnection.cpp:133
+#, kde-format
+msgid "Resolving hostname %1"
+msgstr "正在解析主机名 %1"
+
+#: src/download/httpconnection.cpp:153 src/download/webseed.cpp:348
+msgid "Connection closed"
+msgstr "连接关闭"
+
+#: src/download/httpconnection.cpp:160
+#, kde-format
+msgid "Error: request failed: %1"
+msgstr "错误：请求失败：%1"
+
+#: src/download/httpconnection.cpp:188 src/download/httpconnection.cpp:222
+msgid "Connected"
+msgstr "已连接"
+
+#: src/download/httpconnection.cpp:199
+msgid "Error: Failed to connect to webseed"
+msgstr "错误：连接到网络种子失败"
+
+#: src/download/httpconnection.cpp:229
+msgid "Connecting"
+msgstr "正在连接"
+
+#: src/download/httpconnection.cpp:240
+msgid "Failed to connect to webseed"
+msgstr "连接到网络种子失败"
+
+#: src/download/httpconnection.cpp:247
+msgid "Failed to resolve hostname of webseed"
+msgstr "解析网络种子主机名失败"
+
+#: src/download/httpconnection.cpp:325
+msgid "Error: failed to connect, server not responding"
+msgstr "错误：连接失败，服务器没有响应"
+
+#: src/download/httpconnection.cpp:336
+msgid "Error: request timed out"
+msgstr "错误：请求超时"
+
+#: src/download/httpconnection.cpp:401
+msgid "Redirected without a new location."
+msgstr "重定向没有新位置。"
+
+#: src/download/webseed.cpp:558
+#, kde-format
+msgid "Unused for %1 seconds (Too many connection failures)"
+msgstr "不使用 %1 秒(连接失败次数太多)"
+
+#: src/interfaces/trackerinterface.cpp:58
+msgid "OK"
+msgstr "确定"
+
+#: src/interfaces/trackerinterface.cpp:58
+#, kde-format
+msgid "Warning: %1"
+msgstr "警告：%1"
+
+#: src/interfaces/trackerinterface.cpp:59
+msgid "Announcing"
+msgstr "正在宣告"
+
+#: src/interfaces/trackerinterface.cpp:60 src/torrent/torrentstats.cpp:87
+#, kde-format
+msgid "Error: %1"
+msgstr "错误：%1"
+
+#: src/migrate/migrate.cpp:45
+#, kde-format
+msgid "The directory %1 does not exist"
+msgstr "目录 %1 不存在"
+
+#: src/peer/peerid.cpp:228
+msgid "Unknown client"
+msgstr "未知客户端"
+
+#: src/torrent/torrent.cpp:100 src/torrent/torrent.cpp:174
+#: src/torrent/torrent.cpp:202 src/torrent/torrent.cpp:209
+#: src/torrent/torrent.cpp:217 src/torrent/torrent.cpp:221
+#: src/torrent/torrent.cpp:242 src/torrent/torrent.cpp:313
+msgid "Corrupted torrent."
+msgstr "损坏的种子。"
+
+#: src/torrent/torrent.cpp:165
+#, kde-format
+msgid "Unable to open torrent file %1: %2"
+msgstr "无法打开种子文件 %1：%2"
+
+#: src/torrent/torrentcontrol.cpp:300
+msgid "Error writing to disk, do you have enough diskspace?"
+msgstr "写入磁盘出错，是否有足够的磁盘空间？"
+
+#: src/torrent/torrentcontrol.cpp:546
+#, kde-format
+msgid ""
+"An error occurred while loading the torrent <b>%1</b>:<br/><b>%2</b><br/>The "
+"torrent is probably corrupt or is not a valid torrent file."
+msgstr ""
+"装入种子 <b>%1</b> 出错：<br/><b>%2</b><br/>种子文件可能已经损坏，或者根本就"
+"不是一个种子文件。"
+
+#: src/torrent/torrentcontrol.cpp:576
+#, kde-format
+msgid "An error occurred while loading <b>%1</b>:<br/><b>%2</b>"
+msgstr "载入 <b>%1</b> 时出错：<br/><b>%2</b>"
+
+#: src/torrent/torrentcontrol.cpp:587
+#, kde-format
+msgid "Unable to create %1: %2"
+msgstr "无法创建 %1：%2"
+
+#: src/torrent/torrentcontrol.cpp:602
+#, kde-format
+msgid ""
+"You are already downloading the torrent <b>%1</b>. The tracker lists from "
+"both torrents have been merged."
+msgstr "您已经下载过这个种子 <b>%1</b>。两个种子的 trackers 列表已经被合并。"
+
+#: src/torrent/torrentcontrol.cpp:607
+#, kde-format
+msgid "You are already downloading the torrent <b>%1</b>."
+msgstr "您已经下载过这个种子 <b>%1</b>。"
+
+#: src/torrent/torrentcreator.cpp:361
+#, kde-format
+msgid "Cannot create index file: %1"
+msgstr "无法创建索引文件：%1"
+
+#: src/torrent/torrentstats.cpp:73
+msgid "Not started"
+msgstr "没有开始"
+
+#: src/torrent/torrentstats.cpp:75
+msgid "Download completed"
+msgstr "下载完成"
+
+#: src/torrent/torrentstats.cpp:77
+msgid "Seeding completed"
+msgstr "做种完成"
+
+#: src/torrent/torrentstats.cpp:79
+msgctxt "Status of a torrent file"
+msgid "Seeding"
+msgstr "做种中"
+
+#: src/torrent/torrentstats.cpp:81
+msgid "Downloading"
+msgstr "下载中"
+
+#: src/torrent/torrentstats.cpp:83
+msgid "Stalled"
+msgstr "已延迟"
+
+#: src/torrent/torrentstats.cpp:85
+msgid "Stopped"
+msgstr "已停止"
+
+#: src/torrent/torrentstats.cpp:89
+msgid "Allocating diskspace"
+msgstr "正在分配磁盘空间"
+
+#: src/torrent/torrentstats.cpp:91
+msgid "Queued for seeding"
+msgstr "正在排队做种"
+
+#: src/torrent/torrentstats.cpp:91
+msgid "Queued for downloading"
+msgstr "正在排队下载"
+
+#: src/torrent/torrentstats.cpp:95
+msgid "Stopped. No space left on device."
+msgstr "已停止。设备上已经没有空间。"
+
+#: src/torrent/torrentstats.cpp:97
+msgid "Paused"
+msgstr "已暂停"
+
+#: src/torrent/torrentstats.cpp:99
+msgid "Superseeding"
+msgstr "超级种子"
+
+#: src/tracker/httpannouncejob.cpp:144
+msgid "Redirect without a redirect location"
+msgstr "重定向没有新位置"
+
+#: src/tracker/httptracker.cpp:285 src/tracker/httptracker.cpp:305
+#: src/tracker/httptracker.cpp:461
+msgid "Invalid response from tracker"
+msgstr "无效的 tracker 响应"
+
+#: src/tracker/httptracker.cpp:298
+msgid "Invalid data from tracker"
+msgstr "无效的 tracker 数据"
+
+#: src/tracker/httptracker.cpp:478
+msgid "Invalid tracker URL"
+msgstr "无效的 tracker URL"
+
+#: src/tracker/httptracker.cpp:556 src/tracker/udptracker.cpp:364
+#: src/tracker/udptracker.cpp:374
+#, kde-format
+msgid "Timeout contacting tracker %1"
+msgstr "连接 tracker 服务器 %1 超时"
+
+#: src/tracker/udptracker.cpp:401
+#, kde-format
+msgid "Unable to resolve hostname %1"
+msgstr "无法解析主机名 %1"
+
+#: src/upnp/httprequest.cpp:96
+msgid "Connection closed unexpectedly"
+msgstr "未预料的连接关闭"
+
+#: src/upnp/httprequest.cpp:155
+msgid "Operation timed out"
+msgstr "操作超时"
+
+#: src/upnp/upnprouter.cpp:167
+#, kde-format
+msgid "Failed to download %1: %2"
+msgstr "下载 %1 失败：%2"
+
+#: src/upnp/upnprouter.cpp:178
+msgid "Error parsing router description."
+msgstr "解析路由描述出错。"
+
+#: src/upnp/upnprouter.cpp:216
+msgid ""
+"Forwarding failed:\n"
+"Device does not have a WANIPConnection or WANPPPConnection."
+msgstr ""
+"转发失败：\n"
+"设备没有 WANIP 连接或 WANPPP 连接。"
+
+#: src/upnp/upnprouter.cpp:314
+msgid "Cannot find port forwarding service in the device's description."
+msgstr "无法在设备描述中找到端口转发服务。"
+
+#: src/util/file.cpp:84
+#, kde-format
+msgid "Cannot write to %1: %2"
+msgstr "无法写入 %1：%2"
+
+#: src/util/file.cpp:98
+#, kde-format
+msgid "Cannot read from %1"
+msgstr "无法从 %1 读取"
+
+#: src/util/fileops.cpp:101
+#, kde-format
+msgid "Cannot create directory %1"
+msgstr "无法创建目录 %1"
+
+#: src/util/fileops.cpp:168
+#, kde-format
+msgid "Cannot symlink %1 to %2: %3"
+msgstr "无法创建符号链接 %1 到 %2：%3"
+
+#: src/util/fileops.cpp:185
+#, kde-format
+msgid "Cannot move %1 to %2: %3"
+msgstr "无法移动 %1 到 %2：%3"
+
+#: src/util/fileops.cpp:201 src/util/fileops.cpp:217
+#, kde-format
+msgid "Cannot copy %1 to %2: %3"
+msgstr "无法复制 %1 到 %2：%3"
+
+#: src/util/fileops.cpp:282
+#, kde-format
+msgid "Cannot delete %1: %2"
+msgstr "无法删除 %1：%2"
+
+#: src/util/fileops.cpp:300
+#, kde-format
+msgid "Cannot create %1: %2"
+msgstr "无法创建 %1：%2"
+
+#: src/util/fileops.cpp:318
+#, kde-format
+msgid "Cannot calculate the filesize of %1: %2"
+msgstr "无法计算 %1 的文件大小：%2"
+
+#: src/util/fileops.cpp:334
+#, kde-format
+msgid "Cannot calculate the filesize: %1"
+msgstr "无法计算文件大小：%1"
+
+#: src/util/fileops.cpp:382 src/util/fileops.cpp:388 src/util/fileops.cpp:391
+#: src/util/fileops.cpp:394 src/util/fileops.cpp:397
+#, kde-format
+msgid "Cannot expand file: %1"
+msgstr "无法展开文件：%1"
+
+#: src/util/fileops.cpp:427
+#, kde-format
+msgid "Cannot seek in file: %1"
+msgstr "无法在文件中定位：%1"
+
+#: src/util/functions.cpp:234
+#, kde-format
+msgid "%1/s"
+msgstr "%1/秒"
+
+#: src/util/functions.cpp:245
+#, kde-format
+msgid "1 day "
+msgid_plural "%1 days "
+msgstr[0] "%1 天"
+
+#: src/util/logsystemmanager.cpp:33
+msgid "General"
+msgstr "常规"
+
+#: src/util/logsystemmanager.cpp:34
+msgid "Connections"
+msgstr "连接"
+
+#: src/util/logsystemmanager.cpp:35
+msgid "Tracker"
+msgstr "Tracker 服务器"
+
+#: src/util/logsystemmanager.cpp:36
+msgid "DHT"
+msgstr "DHT"
+
+#: src/util/logsystemmanager.cpp:37
+msgid "Disk Input/Output"
+msgstr "磁盘输入/输出"
+
+#: src/util/logsystemmanager.cpp:38
+msgid "µTP"
+msgstr "µTP"
+
+#: src/util/signalcatcher.cpp:80
+msgid "Error when writing to disk"
+msgstr "写入磁盘出错"
+
+#: src/util/signalcatcher.cpp:80
+msgid "Error when reading from disk"
+msgstr "从磁盘读取出错"
+
+#~ msgid "Parse Error"
+#~ msgstr "语法错误"
+
+#~ msgid "Not in use"
+#~ msgstr "未使用"
+
+#, fuzzy
+#~ msgid "Not enough diskspace"
+#~ msgstr "可供 %1 使用的磁盘空间不足"
+
+#~ msgid "Cannot open file %1 : %2"
+#~ msgstr "无法打开文件 %1：%2"
+
+#~ msgid "Cannot open file : %1 : %2"
+#~ msgstr "无法打开文件：%1：%2"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent:<br/><b>%1</b><br/>The "
+#~ "torrent is probably corrupt or is not a valid torrent file."
+#~ msgstr ""
+#~ "装入种子时出错：<br/><b>%1</b><br/>种子文件可能已经损坏，或者根本就不是一"
+#~ "个种子文件。"
+
+#~ msgid "Cannot open log file %1 : %2"
+#~ msgstr "无法打开日志文件 %1：%2"
+
+#~ msgid "Timeout occurred"
+#~ msgstr "发生超时"
+
+#, fuzzy
+#~ msgid "UTP"
+#~ msgstr "UDP"
+
+#~ msgid "Cannot bind to udp port %1 or the 10 following ports."
+#~ msgstr "无法绑定 UDP 端口 %1 或其顺延的 10 个端口。"
+
+#, fuzzy
+#~ msgctxt "plugin name"
+#~ msgid "Scan Folder"
+#~ msgstr "扫描文件夹"
+
+#~ msgid "loaded"
+#~ msgstr "已装入"
+
+#~ msgid "Device"
+#~ msgstr "设备"
+
+#~ msgid "Port Forwarded"
+#~ msgstr "转发的端口"
+
+#~ msgid "WAN Connection"
+#~ msgstr "广域网连接"
+
+#~ msgid ""
+#~ "Model Name: <b>%1</b><br/>Manufacturer: <b>%2</b><br/>Model Description: "
+#~ "<b>%3</b><br/>"
+#~ msgstr ""
+#~ "型号名称：<b>%1</b><br/>制造商：<b>%2</b><br/>型号描述：<b>%3</b><br/>"
+
+#~ msgid "UPnP"
+#~ msgstr "UPnP"
+
+#~ msgid "Shows the status of the UPnP plugin"
+#~ msgstr "显示 UPnP 插件的状态"
+
+#~ msgid ""
+#~ "%2\n"
+#~ "1 active filter"
+#~ msgid_plural ""
+#~ "%2\n"
+#~ "%1 active filters"
+#~ msgstr[0] ""
+#~ "%2\n"
+#~ "%1 个活动过滤"
+
+#~ msgid "<b>%1</b><br/><br/>%2"
+#~ msgstr "<b>%1</b><br/><br/>%2"
+
+#~ msgid "Syndication"
+#~ msgstr "同步"
+
+#, fuzzy
+#~ msgid "Manages RSS and Atom feeds"
+#~ msgstr "管理 RSS 和 Atom 种子的部件"
+
+#~ msgid "Enter the URL"
+#~ msgstr "输入 URL"
+
+#~ msgid "Please enter the URL of the RSS or Atom feed."
+#~ msgstr "请输入 RSS 或 Atom 种子的 URL。"
+
+#, fuzzy
+#~ msgid "Failed to load feed %1."
+#~ msgstr "装入种子失败：%1！"
+
+#~ msgid "Failed to create directory for feed %1 : %2"
+#~ msgstr "为种子 %1 创建目录失败：%2"
+
+#~ msgid "New Filter"
+#~ msgstr "新建过滤"
+
+#~ msgid "Add New Filter"
+#~ msgstr "添加新过滤"
+
+#~ msgid "Add Feed"
+#~ msgstr "添加种子"
+
+#~ msgid "Remove Feed"
+#~ msgstr "删除种子"
+
+#~ msgid "Show Feed"
+#~ msgstr "显示种子"
+
+#~ msgid "Add/Remove Filters"
+#~ msgstr "添加/删除过滤"
+
+#, fuzzy
+#~ msgid "Rename"
+#~ msgstr "用户名："
+
+#~ msgid "Add Filter"
+#~ msgstr "添加过滤"
+
+#~ msgid "Remove Filter"
+#~ msgstr "删除过滤"
+
+#~ msgid "Edit Filter"
+#~ msgstr "编辑过滤"
+
+#~ msgid "Feed: <b>%1</b>"
+#~ msgstr "种子：<b>%1</b>"
+
+#~ msgid "<b>OK</b>"
+#~ msgstr "<b>确定</b>"
+
+#~ msgid "<b>Not Loaded</b>"
+#~ msgstr "<b>未装入</b>"
+
+#~ msgid "<b>Download Failed</b>"
+#~ msgstr "<b>下载失败</b>"
+
+#~ msgid "<b>Downloading</b>"
+#~ msgstr "<b>下载中</b>"
+
+#~ msgid "Title"
+#~ msgstr "标题"
+
+#~ msgid "Date Published"
+#~ msgstr "发行日期"
+
+#~ msgid "Torrent"
+#~ msgstr "种子"
+
+#, fuzzy
+#~ msgid "There already is a filter named %1, filter names must be unique."
+#~ msgstr "已存在名为 %1 的过滤，过滤名称必须唯一！"
+
+#~ msgid "ZeroConf"
+#~ msgstr "Zeroconf"
+
+#~ msgid "Available"
+#~ msgstr "可用"
+
+#~ msgid "Pending"
+#~ msgstr "待定中"
+
+#~ msgid "<b>%1</b><br/>Preview: %2<br/>Downloaded: %3 %"
+#~ msgstr "<b>%1</b><br/>预览：%2<br/>已下载：%3 %"
+
+#, fuzzy
+#~ msgid "Length"
+#~ msgstr "剩余："
+
+#, fuzzy
+#~ msgid "Year"
+#~ msgstr "清除"
+
+#~ msgid "Ready to play"
+#~ msgstr "准备播放"
+
+#~ msgid "Mode:"
+#~ msgstr "模式："
+
+#~ msgid "Single File"
+#~ msgstr "单一文件"
+
+#, fuzzy
+#~ msgid "Playlist"
+#~ msgstr "播放"
+
+#, fuzzy
+#~ msgid "Random"
+#~ msgstr "随机文件"
+
+#~ msgid "Remove"
+#~ msgstr "删除"
+
+#, fuzzy
+#~ msgid "Add Media"
+#~ msgstr "添加种子"
+
+#~ msgid "Title: <b>%1</b><br/>Artist: <b>%2</b><br/>Album: <b>%3</b>"
+#~ msgstr "标题：<b>%1</b><br/>艺人：<b>%2</b><br/>专辑：<b>%3</b>"
+
+#~ msgid ""
+#~ "Playing: <b>%1</b><br/>\n"
+#~ "%2"
+#~ msgstr ""
+#~ "正在播放：<b>%1</b><br/>\n"
+#~ "%2"
+
+#~ msgid "Title: <b>%1</b><br/>Artist: <b>%2</b>"
+#~ msgstr "标题：<b>%1</b><br/>艺人：<b>%2</b>"
+
+#~ msgid "Title: <b>%1</b>"
+#~ msgstr "标题：<b>%1</b>"
+
+#~ msgid "Playing: <b>%1</b>"
+#~ msgstr "正在播放：<b>%1</b>"
+
+#~ msgid "Media Player"
+#~ msgstr "媒体播放器"
+
+#, fuzzy
+#~ msgid "Play List"
+#~ msgstr "播放"
+
+#~ msgid "Play"
+#~ msgstr "播放"
+
+#~ msgid "Pause"
+#~ msgstr "暂停"
+
+#~ msgid "Stop"
+#~ msgstr "停止"
+
+#~ msgid "Previous"
+#~ msgstr "上一个"
+
+#~ msgid "Next"
+#~ msgstr "下一个"
+
+#~ msgid "Show Video"
+#~ msgstr "显示视频"
+
+#~ msgid "Movie player"
+#~ msgstr "电影播放器"
+
+#, fuzzy
+#~ msgid "Collection:"
+#~ msgstr "连接"
+
+#~ msgid "Toggle Fullscreen"
+#~ msgstr "切换全屏"
+
+#, fuzzy
+#~ msgid "KTorrent is playing a video."
+#~ msgstr "KTorrent 没有运行！"
+
+#, fuzzy
+#~ msgid "Cannot find web interface skins."
+#~ msgstr "Web 界面皮肤："
+
+#~ msgid "Web Interface"
+#~ msgstr "Web 界面"
+
+#, fuzzy
+#~ msgid "Invalid data received"
+#~ msgstr "无效的 tracker URL"
+
+#, fuzzy
+#~ msgid "Failed to open temporary file"
+#~ msgstr "保存种子文件信息的文件夹："
+
+#, fuzzy
+#~ msgid "Unknown"
+#~ msgstr "未知客户端"
+
+#, fuzzy
+#~ msgid "Rescale"
+#~ msgstr "重新扫描"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "测试"
+
+#, fuzzy
+#~ msgid "KiB/s"
+#~ msgstr " KiB/秒"
+
+#, fuzzy
+#~ msgid "Statistics"
+#~ msgstr "状态统计插件"
+
+#, fuzzy
+#~ msgid "(= %1 ms)"
+#~ msgstr "(= %1/秒)"
+
+#~ msgid "Leechers connected"
+#~ msgstr "已连接的吸血虫"
+
+#~ msgid "Leechers in swarms"
+#~ msgstr "群集中的吸血虫"
+
+#~ msgid "Seeds connected"
+#~ msgstr "已连接种子"
+
+#, fuzzy
+#~ msgid "Seeds in swarms"
+#~ msgstr "群集中的种子"
+
+#~ msgid "Average leechers connected per torrent"
+#~ msgstr "每个种子平均连接的吸血虫数量"
+
+#~ msgid "Average seeds connected per torrent"
+#~ msgstr "每个任务平均连接的种子数"
+
+#, fuzzy
+#~ msgid "Average leechers connected per running torrent"
+#~ msgstr "每个种子平均连接的吸血虫数量"
+
+#, fuzzy
+#~ msgid "Average seeds connected per running torrent"
+#~ msgstr "正在运行的任务平均连接的种子数量"
+
+#~ msgid "Nodes"
+#~ msgstr "节点"
+
+#~ msgid "Tasks"
+#~ msgstr "任务"
+
+#~ msgid "Current speed"
+#~ msgstr "当前速度"
+
+#~ msgid "Average speed"
+#~ msgstr "平均速度"
+
+#, fuzzy
+#~ msgid "Speed limit"
+#~ msgstr "速度限制"
+
+#~ msgid "Average from leechers"
+#~ msgstr "来自吸血虫的平均值"
+
+#~ msgid "Average to leechers"
+#~ msgstr "到吸血虫的平均值"
+
+#~ msgid "Average from seeds"
+#~ msgstr "来自种子的平均值"
+
+#~ msgid "From leechers"
+#~ msgstr "来自吸血虫"
+
+#~ msgid "From seeds"
+#~ msgstr "来自种子"
+
+#, fuzzy
+#~ msgid "Speed charts"
+#~ msgstr "速度限制"
+
+#, fuzzy
+#~ msgid "Displays charts about download and upload speed"
+#~ msgstr "下载和上传请求数"
+
+#, fuzzy
+#~ msgid "Connections charts"
+#~ msgstr "连接"
+
+#~ msgid "Display"
+#~ msgstr "显示"
+
+#~ msgctxt "Choked"
+#~ msgid "Yes"
+#~ msgstr "是"
+
+#~ msgctxt "Not choked"
+#~ msgid "No"
+#~ msgstr "否"
+
+#~ msgctxt "Snubbed"
+#~ msgid "Yes"
+#~ msgstr "是"
+
+#~ msgctxt "Not snubbed"
+#~ msgid "No"
+#~ msgstr "否"
+
+#~ msgctxt "Interested"
+#~ msgid "Yes"
+#~ msgstr "是"
+
+#~ msgctxt "Not Interested"
+#~ msgid "No"
+#~ msgstr "否"
+
+#~ msgctxt "Interesting"
+#~ msgid "Yes"
+#~ msgstr "是"
+
+#~ msgctxt "Not Interesting"
+#~ msgid "No"
+#~ msgstr "否"
+
+#, fuzzy
+#~ msgid "Address"
+#~ msgstr "IP 地址"
+
+#~ msgid "Country"
+#~ msgstr "国家"
+
+#~ msgid "Client"
+#~ msgstr "客户端"
+
+#~ msgid "Down Speed"
+#~ msgstr "下载速度"
+
+#~ msgid "Up Speed"
+#~ msgstr "上传速度"
+
+#~ msgid "Choked"
+#~ msgstr "已屏蔽"
+
+#~ msgid "Snubbed"
+#~ msgstr "已降级"
+
+#~ msgid "Availability"
+#~ msgstr "可用性"
+
+#~ msgid "Upload Slot"
+#~ msgstr "上传通道"
+
+#~ msgid "Requests"
+#~ msgstr "请求"
+
+#~ msgid "Downloaded"
+#~ msgstr "已下载"
+
+#~ msgid "Uploaded"
+#~ msgstr "已上传"
+
+#~ msgid "IP address of the peer"
+#~ msgstr "对等点的 IP 地址"
+
+#~ msgid "Country the peer is in"
+#~ msgstr "对等点所在国家"
+
+#~ msgid "Which client the peer is using"
+#~ msgstr "对等点所用客户端"
+
+#~ msgid "Download speed"
+#~ msgstr "下载速度"
+
+#~ msgid "Upload speed"
+#~ msgstr "上传速度"
+
+#~ msgid "How much data the peer has of the torrent"
+#~ msgstr "对等点所拥有的种子数据量"
+
+#~ msgid "Whether or not the peer has DHT enabled"
+#~ msgstr "对等点是否启用 DHT"
+
+#~ msgid ""
+#~ "The score of the peer, KTorrent uses this to determine who to upload to"
+#~ msgstr "对等点的得分，KTorrent 使用此数值决定上传给谁"
+
+#~ msgid "The number of download and upload requests"
+#~ msgstr "下载和上传请求数"
+
+#, fuzzy
+#~ msgid "How much data we have downloaded from this peer"
+#~ msgstr "我们从此对等点下载的数据量"
+
+#, fuzzy
+#~ msgid "How much data we have uploaded to this peer"
+#~ msgstr "我们上传给此对等点的数据量"
+
+#~ msgid "No limit"
+#~ msgstr "无限制"
+
+#~ msgid "Info Widget"
+#~ msgstr "信息部件"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Status"
+#~ msgstr "状态"
+
+#~ msgid "Displays status information about a torrent"
+#~ msgstr "显示关于种子的状态信息"
+
+#, fuzzy
+#~ msgctxt "@title:tab"
+#~ msgid "Files"
+#~ msgstr "文件"
+
+#~ msgid "Shows all the files in a torrent"
+#~ msgstr "显示种子中的全部文件"
+
+#~ msgid "Bandwidth Scheduler"
+#~ msgstr "带宽调度"
+
+#~ msgid "Peers"
+#~ msgstr "对等点"
+
+#~ msgid "Chunks"
+#~ msgstr "块"
+
+#~ msgid "Trackers"
+#~ msgstr "Tracker 服务器"
+
+#, fuzzy
+#~ msgid "Displays information about all the trackers of a torrent"
+#~ msgstr "用于保存现在所有在 KTorrent 中打开的种子文件的目录。"
+
+#~ msgid "Webseeds"
+#~ msgstr "网络种子"
+
+#~ msgid "Chunk"
+#~ msgstr "块"
+
+#~ msgid "Progress"
+#~ msgstr "进度"
+
+#~ msgid "Peer"
+#~ msgstr "对等点"
+
+#~ msgid "Files"
+#~ msgstr "文件"
+
+#~ msgid "Number of the chunk"
+#~ msgstr "块数"
+
+#, fuzzy
+#~ msgid "Download progress of the chunk"
+#~ msgstr "已下载块："
+
+#, fuzzy
+#~ msgid "Download speed of the chunk"
+#~ msgstr "已下载块："
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Speed"
+#~ msgstr "速度"
+
+#~ msgid "Status"
+#~ msgstr "状态"
+
+#~ msgid "Kick Peer"
+#~ msgstr "断开对等点"
+
+#~ msgid "Ban Peer"
+#~ msgstr "屏蔽对等点"
+
+#~ msgid ""
+#~ "Cannot add the webseed %1, it is already part of the list of webseeds."
+#~ msgstr "无法添加网络种子 %1，它已经是网络种子列表中的一部分。"
+
+#~ msgid "Cannot remove webseed %1, it is part of the torrent."
+#~ msgstr "无法删除网络种子 %1，它是种子的一部分。"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "过滤"
+
+#~ msgctxt "Open file"
+#~ msgid "Open"
+#~ msgstr "打开"
+
+#~ msgid "Download first"
+#~ msgstr "最先下载"
+
+#~ msgid "Download normally"
+#~ msgstr "正常下载"
+
+#~ msgid "Download last"
+#~ msgstr "最后下载"
+
+#~ msgid "Do Not Download"
+#~ msgstr "不下载"
+
+#~ msgid "Delete File(s)"
+#~ msgstr "删除文件"
+
+#~ msgid "Move File"
+#~ msgstr "移动文件"
+
+#~ msgid "Collapse Folder Tree"
+#~ msgstr "折叠文件夹树形列表"
+
+#~ msgid "Expand Folder Tree"
+#~ msgstr "展开文件夹树形列表"
+
+#, fuzzy
+#~ msgid "File Tree"
+#~ msgstr "过滤"
+
+#, fuzzy
+#~ msgid "File List"
+#~ msgstr "文件已存在"
+
+#, fuzzy
+#~ msgid "Show Filter"
+#~ msgstr "新建过滤"
+
+#, fuzzy
+#~ msgid ""
+#~ "You will lose all data in this file, are you sure you want to do this?"
+#~ msgid_plural ""
+#~ "You will lose all data in these files, are you sure you want to do this?"
+#~ msgstr[0] "您将失去这个文件的全部数据。您确定要这样做？"
+
+#~ msgid "Select a directory to move the data to."
+#~ msgstr "请选择用于移动数据的目标文件夹。"
+
+#~ msgid "Seeders"
+#~ msgstr "种子来源"
+
+#~ msgid "Leechers"
+#~ msgstr "吸血虫"
+
+#, fuzzy
+#~ msgid "Times Downloaded"
+#~ msgstr "下载用时："
+
+#, fuzzy
+#~ msgid "Next Update"
+#~ msgstr "下次更新于："
+
+#~ msgid "Priority"
+#~ msgstr "优先级"
+
+#, fuzzy
+#~ msgctxt "@title:column"
+#~ msgid "Preview"
+#~ msgstr "预览"
+
+#~ msgctxt "Percent of File Downloaded"
+#~ msgid "% Complete"
+#~ msgstr "完成百分比"
+
+#~ msgctxt "Download first"
+#~ msgid "First"
+#~ msgstr "起始"
+
+#~ msgctxt "Download last"
+#~ msgid "Last"
+#~ msgstr "最后"
+
+#~ msgctxt "Download normally(not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "正常"
+
+#~ msgctxt "preview available"
+#~ msgid "Available"
+#~ msgstr "可用"
+
+#~ msgctxt "Preview pending"
+#~ msgid "Pending"
+#~ msgstr "等待中"
+
+#~ msgctxt "No preview available"
+#~ msgid "No"
+#~ msgstr "否"
+
+#~ msgid "%1 %"
+#~ msgstr "%1 %"
+
+#~ msgctxt "Preview available"
+#~ msgid "Available"
+#~ msgstr "可用"
+
+#, fuzzy
+#~ msgid "Add Trackers"
+#~ msgstr "添加 Tracker"
+
+#, fuzzy
+#~ msgid "Enter the URL's of the trackers, one per line:"
+#~ msgstr "对等点的 IP 地址"
+
+#, fuzzy
+#~ msgid "There already is a tracker named <b>%1</b>."
+#~ msgstr "已存在名为 <b>%1</b> 的 tracker！"
+
+#~ msgid ""
+#~ "<img src=\"available_color\">&nbsp; - Available Chunks<br><img src="
+#~ "\"unavailable_color\">&nbsp; - Unavailable Chunks<br><img src="
+#~ "\"excluded_color\">&nbsp; - Excluded Chunks"
+#~ msgstr ""
+#~ "<img src=\"available_color\">&nbsp; - 可用的块<br><img src="
+#~ "\"unavailable_color\">&nbsp; - 不可用的块<br><img src=\"excludec_color"
+#~ "\">&nbsp; - 排除的块"
+
+#~ msgctxt "Download Normal (not as first or last)"
+#~ msgid "Normal"
+#~ msgstr "正常"
+
+#~ msgid "Scripts"
+#~ msgstr "脚本"
+
+#~ msgid "Widget to start, stop and manage scripts"
+#~ msgstr "启动、停止和管理脚本的部件"
+
+#~ msgid "Add Script"
+#~ msgstr "添加脚本"
+
+#~ msgid "Remove Script"
+#~ msgstr "删除脚本"
+
+#~ msgid "Run Script"
+#~ msgstr "运行脚本"
+
+#~ msgid "Stop Script"
+#~ msgstr "停止脚本"
+
+#~ msgid "Edit Script"
+#~ msgstr "编辑脚本"
+
+#~ msgid "Properties"
+#~ msgstr "属性"
+
+#~ msgid "Configure"
+#~ msgstr "配置"
+
+#~ msgid "Scripting"
+#~ msgstr "脚本"
+
+#, fuzzy
+#~ msgid "KTorrent Script Packages"
+#~ msgstr "KTorrent 对等点黑名单"
+
+#~ msgid "All files"
+#~ msgstr "全部文件"
+
+#, fuzzy
+#~ msgid ""
+#~ "Removing these scripts will fully delete them from your disk. Are you "
+#~ "sure you want to do this ?"
+#~ msgstr "您将失去已经下载的全部数据。您确定想要这么做吗？"
+
+#~ msgid "Script Properties"
+#~ msgstr "脚本属性"
+
+#, fuzzy
+#~ msgid "Invalid archive."
+#~ msgstr "无效的 tracker URL"
+
+#, fuzzy
+#~ msgid "There is already a script package named %1 installed."
+#~ msgstr "已存在名为 <b>%1</b> 的 tracker！"
+
+#~ msgid "System"
+#~ msgstr "系统"
+
+#~ msgid "Log Level"
+#~ msgstr "日志级别"
+
+#~ msgid "Debug"
+#~ msgstr "调试"
+
+#~ msgid "Notice"
+#~ msgstr "注意"
+
+#~ msgid "Important"
+#~ msgstr "重要"
+
+#~ msgid "All"
+#~ msgstr "全部"
+
+#~ msgid "None"
+#~ msgstr "无"
+
+#, fuzzy
+#~ msgid "View the logging output generated by KTorrent"
+#~ msgstr "显示 KTorrent 生成的日志输出"
+
+#~ msgid "Log Viewer"
+#~ msgstr "日志查看器"
+
+#~ msgid "File Download Order"
+#~ msgstr "文件下载顺序"
+
+#~ msgid "File download order for <b>%1</b>:"
+#~ msgstr "<b>%1</b> 的文件下载顺序："
+
+#~ msgid " Engine:"
+#~ msgstr " 引擎："
+
+#~ msgid "Open in New Tab"
+#~ msgstr "在新标签打开"
+
+#, fuzzy
+#~ msgid "Copy URL"
+#~ msgstr "复制种子 URL"
+
+#~ msgid "Searching for %1..."
+#~ msgstr "正在搜索 %1..."
+
+#~ msgid "torrent files"
+#~ msgstr "种子文件"
+
+#~ msgid "Search finished"
+#~ msgstr "搜索已完成"
+
+#, fuzzy
+#~ msgctxt "plugin name"
+#~ msgid "Search"
+#~ msgstr "搜索"
+
+#~ msgid "Add a Search Engine"
+#~ msgstr "添加搜索引擎"
+
+#~ msgid ""
+#~ "Enter the hostname of the search engine (for example www.google.com) :"
+#~ msgstr "输入搜索引擎的主机名(例如 www.google.com)："
+
+#, fuzzy
+#~ msgid "The URL %1 does not contain {searchTerms}."
+#~ msgstr "URL %s 不包含 {searchTerms}！"
+
+#~ msgid "Search for %1"
+#~ msgstr "搜索 %1"
+
+#~ msgid "Search"
+#~ msgstr "搜索"
+
+#~ msgid "KTorrent"
+#~ msgstr "KTorrent"
+
+#, fuzzy
+#~ msgid "Search the web for torrents."
+#~ msgstr "扫描种子的文件夹："
+
+#~ msgid "Failed to parse %1"
+#~ msgstr "解析 %1 失败"
+
+#~ msgid "Url: <b>%1</b>"
+#~ msgstr "Url：<b>%1</b>"
+
+#~ msgid "Search Text"
+#~ msgstr "搜索文本"
+
+#~ msgid "Search Engine"
+#~ msgstr "搜索引擎"
+
+#~ msgid "Search Engine Label"
+#~ msgstr "搜索引擎标签"
+
+#~ msgid " Engine: "
+#~ msgstr " 引擎："
+
+#, fuzzy
+#~ msgid "Do you want to download this magnet link?"
+#~ msgstr "您是想要下载还是保存种子？"
+
+#~ msgid "Do you want to download or save the torrent?"
+#~ msgstr "您是想要下载还是保存种子？"
+
+#~ msgid "Download Torrent"
+#~ msgstr "下载种子"
+
+#~ msgid "Download"
+#~ msgstr "下载"
+
+#~ msgid "Add an item"
+#~ msgstr "添加一个项目"
+
+#, fuzzy
+#~ msgid "No day has been selected."
+#~ msgstr "未选中任何一天！"
+
+#, fuzzy
+#~ msgid ""
+#~ "Failed to add item, because it conflicts with another item on the "
+#~ "schedule."
+#~ msgstr "该项目与调度队列中的其他项目冲突，无法增加！"
+
+#, fuzzy
+#~ msgid ""
+#~ "This item could not be added to all selected days, because it conflicts "
+#~ "with another item on the schedule."
+#~ msgstr "该项目与调度队列中的其他项目冲突，无法增加！"
+
+#, fuzzy
+#~ msgid ""
+#~ "Bandwidth\n"
+#~ "Schedule"
+#~ msgstr "带宽调度"
+
+#, fuzzy
+#~ msgid "Edit the bandwidth schedule"
+#~ msgstr "编辑带宽调度的标签"
+
+#~ msgid "Load Schedule"
+#~ msgstr "装入调度"
+
+#~ msgid "Save Schedule"
+#~ msgstr "保存调度"
+
+#~ msgid "New Item"
+#~ msgstr "新建项目"
+
+#~ msgid "Remove Item"
+#~ msgstr "删除项目"
+
+#~ msgid "Edit Item"
+#~ msgstr "编辑项目"
+
+#~ msgid "Clear Schedule"
+#~ msgstr "清理调度"
+
+#, fuzzy
+#~ msgid "Scheduler Active"
+#~ msgstr "调度线条颜色："
+
+#, fuzzy
+#~ msgid "Activate or deactivate the scheduler"
+#~ msgstr "向调度增加新项目"
+
+#~ msgid "KTorrent scheduler files"
+#~ msgstr "KTorrent 调度文件"
+
+#, fuzzy
+#~ msgid ""
+#~ "This item conflicts with another item in the schedule, we cannot change "
+#~ "it."
+#~ msgstr "该项目与调度队列中的其他项目冲突，无法更改！"
+
+#, fuzzy
+#~ msgid "Current schedule: suspended"
+#~ msgstr "当前调度：已暂停"
+
+#, fuzzy
+#~ msgid "Current schedule: %1/s download, %2/s upload"
+#~ msgstr "当前调度：%1 KiB/秒 下载，%2 KiB/秒 上传"
+
+#, fuzzy
+#~ msgid "Current schedule: unlimited download, %1/s upload"
+#~ msgstr "当前调度：无限制下载，%1 KiB/秒 上传"
+
+#, fuzzy
+#~ msgid "Current schedule: %1/s download, unlimited upload"
+#~ msgstr "当前调度：%1 KiB/秒 下载，无限制上传"
+
+#~ msgid "Current schedule: unlimited upload and download"
+#~ msgstr "当前调度：无限制下载，无限制上传"
+
+#, fuzzy
+#~ msgid " (scheduler disabled)"
+#~ msgstr "KTorrent 调度文件"
+
+#~ msgid "Current schedule:"
+#~ msgstr "当前调度："
+
+#~ msgid "Edit an item"
+#~ msgstr "编辑一个项目"
+
+#, fuzzy
+#~ msgid "The file %1 is corrupted or not a proper KTorrent schedule file."
+#~ msgstr "文件 %1 不正确，或者不是一个 KTorrent 调度文件！"
+
+#, fuzzy
+#~ msgid "Suspended"
+#~ msgstr "速度"
+
+#~ msgid "Unlimited"
+#~ msgstr "无限制"
+
+#~ msgid ""
+#~ "%1 Down\n"
+#~ "%2 Up"
+#~ msgstr ""
+#~ "%1 下载\n"
+#~ "%2 上传"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Configure Shutdown"
+#~ msgstr "配置栏"
+
+#, fuzzy
+#~ msgid "Lock"
+#~ msgstr "Lucke"
+
+#, fuzzy
+#~ msgid "When all torrents finish downloading"
+#~ msgstr "用于种子文件下载完成后迁移数据的目录。"
+
+#, fuzzy
+#~ msgid "Configure Shutdown"
+#~ msgstr "配置栏"
+
+#, fuzzy
+#~ msgid "Downloading finishes"
+#~ msgstr "下载中"
+
+#, fuzzy
+#~ msgid "Seeding finishes"
+#~ msgstr "搜索已完成"
+
+#~ msgid "Loading txt file..."
+#~ msgstr "正在装入文本文件..."
+
+#~ msgid "There are no IP addresses to convert in %1"
+#~ msgstr "%1 中没有要转换的 IP 地址"
+
+#~ msgid "Converting..."
+#~ msgstr "正在转换..."
+
+#, fuzzy
+#~ msgid "Cannot open zip file %1."
+#~ msgstr "无法打开文件 %1：%2"
+
+#, fuzzy
+#~ msgid "Cannot find blocklist in zip file %1."
+#~ msgstr "无法反选已缺失的文件：%1"
+
+#~ msgid ""
+#~ "Filter file (level1.dat) already exists, do you want to convert it again?"
+#~ msgstr "过滤文件(level1.dat)已经存在，您确定要再次将它转换吗？"
+
+#~ msgid "File Exists"
+#~ msgstr "文件已存在"
+
+#~ msgid "IP Filter"
+#~ msgstr "IP 过滤"
+
+#~ msgid "Status: Loaded and running."
+#~ msgstr "状态：已装入且正运行。"
+
+#~ msgid "Status: Not loaded."
+#~ msgstr "状态：未装入。"
+
+#~ msgid "Status: Downloading and converting new block list..."
+#~ msgstr "状态：正在下载和转换新屏蔽列表..."
+
+#, fuzzy
+#~ msgid "No update done yet."
+#~ msgstr "还没有完成更新！"
+
+#, fuzzy
+#~ msgid "%1 (Last update attempt failed.)"
+#~ msgstr "%1 (上次更新操作失败！)"
+
+#~ msgid "Never"
+#~ msgstr "从不"
+
+#, fuzzy
+#~ msgid "Copy Magnet URI"
+#~ msgstr "复制种子 URL"
+
+#~ msgid "KTUPnPTest"
+#~ msgstr "KTUPnPTest"
+
+#~ msgid "KTorrent's UPnP test application"
+#~ msgstr "KTorrent 的 UPnP 测试程序"
+
+#~ msgid "(C) 2005 - 2007 Joris Guisson and Ivan Vasic"
+#~ msgstr "(C) 2005 - 2007 Joris Guisson 和 Ivan Vasic"
+
+#, fuzzy
+#~ msgid "KTMagnetDownloader"
+#~ msgstr "下载用时"
+
+#, fuzzy
+#~ msgid "(C) 2009 Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "Proxy"
+#~ msgstr "代理"
+
+#~ msgid "Network"
+#~ msgstr "网络"
+
+#~ msgid "All interfaces"
+#~ msgstr "所有接口"
+
+#~ msgid "BitTorrent"
+#~ msgstr "BitTorrent"
+
+#, fuzzy
+#~ msgid " corrupted chunk"
+#~ msgid_plural " corrupted chunks"
+#~ msgstr[0] " 错误的块"
+
+#~ msgid " corrupted chunks"
+#~ msgstr " 错误的块"
+
+#~ msgid "Advanced"
+#~ msgstr "高级"
+
+#~ msgid "Application"
+#~ msgstr "应用程序"
+
+#~ msgid "Queue Manager"
+#~ msgstr "队列管理器"
+
+#~ msgid "Calculate Recommended Settings"
+#~ msgstr "计算推荐的设置"
+
+#~ msgid "(= %1/s)"
+#~ msgstr "(= %1/秒)"
+
+#~ msgid "Order"
+#~ msgstr "顺序"
+
+#~ msgid "Name"
+#~ msgstr "名称"
+
+#~ msgid "Time Stalled"
+#~ msgstr "时间已停顿"
+
+#~ msgid "Running"
+#~ msgstr "正在运行"
+
+#~ msgid "Queued"
+#~ msgstr "已排队"
+
+#~ msgid "Not queued"
+#~ msgstr "未排队"
+
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgid ""
+#~ "Order of a torrent in the queue.\n"
+#~ "Use drag and drop or the move up and down buttons on the right to change "
+#~ "the order."
+#~ msgstr ""
+#~ "队列中种子的顺序。\n"
+#~ "使用拖放或右侧的上移和下移按钮来更改顺序。"
+
+#, fuzzy
+#~ msgid "Show Search"
+#~ msgstr "搜索"
+
+#, fuzzy
+#~ msgid "Move Top"
+#~ msgstr "上移"
+
+#~ msgid "Move a torrent to the top of the queue"
+#~ msgstr "将队列中的种子移到顶端"
+
+#~ msgid "Move Up"
+#~ msgstr "上移"
+
+#~ msgid "Move a torrent up in the queue"
+#~ msgstr "将队列中的种子上移"
+
+#~ msgid "Move Down"
+#~ msgstr "下移"
+
+#~ msgid "Move a torrent down in the queue"
+#~ msgstr "将队列中的种子下移"
+
+#, fuzzy
+#~ msgid "Move Bottom"
+#~ msgstr "移动数据"
+
+#~ msgid "Move a torrent to the bottom of the queue"
+#~ msgstr "将队列中的种子移到底端"
+
+#, fuzzy
+#~ msgid "Start Magnet"
+#~ msgstr "启动种子"
+
+#, fuzzy
+#~ msgid "Remove Magnet"
+#~ msgstr "删除种子"
+
+#, fuzzy
+#~ msgctxt "@action Start all selected torrents in the current tab"
+#~ msgid "Start"
+#~ msgstr "启动"
+
+#~ msgid "Start all selected torrents in the current tab"
+#~ msgstr "启动当前标签页中全部所选种子"
+
+#, fuzzy
+#~ msgctxt "@action Stop all selected torrents in the current tab"
+#~ msgid "Stop"
+#~ msgstr "停止"
+
+#~ msgid "Stop all selected torrents in the current tab"
+#~ msgstr "停止当前标签页中全部所选种子"
+
+#, fuzzy
+#~ msgctxt "@action Pause all selected torrents in the current tab"
+#~ msgid "Pause"
+#~ msgstr "暂停"
+
+#, fuzzy
+#~ msgid "Pause all selected torrents in the current tab"
+#~ msgstr "启动当前标签页中全部所选种子"
+
+#, fuzzy
+#~ msgctxt "@action Remove all selected torrents in the current tab"
+#~ msgid "Remove"
+#~ msgstr "删除"
+
+#~ msgid "Remove all selected torrents in the current tab"
+#~ msgstr "删除当前标签页中全部所选种子"
+
+#, fuzzy
+#~ msgctxt "@action Start all torrents in the current tab"
+#~ msgid "Start All"
+#~ msgstr "全部开始"
+
+#~ msgid "Start all torrents in the current tab"
+#~ msgstr "启动当前标签页中全部种子"
+
+#, fuzzy
+#~ msgctxt "@action Stop all torrents in the current tab"
+#~ msgid "Stop All"
+#~ msgstr "全部停止"
+
+#~ msgid "Stop all torrents in the current tab"
+#~ msgstr "停止当前标签页中全部种子"
+
+#~ msgid "Remove Torrent and Data"
+#~ msgstr "删除种子和数据"
+
+#~ msgid "Rename Torrent"
+#~ msgstr "重命名种子"
+
+#~ msgid "Add Peers"
+#~ msgstr "增加对等点"
+
+#~ msgid "Peer Exchange"
+#~ msgstr "对等连接交换"
+
+#~ msgid "Manual Announce"
+#~ msgstr "手动通告"
+
+#~ msgid "Scrape"
+#~ msgstr "批量请求"
+
+#~ msgid "Preview"
+#~ msgstr "预览"
+
+#~ msgid "Data Directory"
+#~ msgstr "数据目录"
+
+#~ msgid "Temporary Directory"
+#~ msgstr "临时目录"
+
+#~ msgid "Move Data"
+#~ msgstr "移动数据"
+
+#~ msgid "Remove from Group"
+#~ msgstr "从组中删除"
+
+#~ msgid "New Group"
+#~ msgstr "新建组"
+
+#~ msgid "Check Data"
+#~ msgstr "检查数据"
+
+#~ msgid "Check all the data of a torrent"
+#~ msgstr "检查种子的全部数据"
+
+#~ msgid "Open Directory"
+#~ msgstr "打开目录"
+
+#~ msgid "Add to Group"
+#~ msgstr "添加到组"
+
+#~ msgid "Copy Torrent URL"
+#~ msgstr "复制种子 URL"
+
+#, fuzzy
+#~ msgid "Export Torrent"
+#~ msgstr "导入种子"
+
+#~ msgid "Speed Limits"
+#~ msgstr "速度限制"
+
+#~ msgid "Set the speed limits of individual torrents"
+#~ msgstr "为单个种子设定速度限制"
+
+#, fuzzy
+#~ msgid "Torrents (*.torrent)"
+#~ msgstr "种子文件(*.torrent)"
+
+#~ msgid "Columns"
+#~ msgstr "列"
+
+#~ msgid ""
+#~ "The torrent <b>%1</b> has not finished downloading, do you want to delete "
+#~ "the incomplete data, too?"
+#~ msgstr "种子 <b>%1</b> 尚未完成下载，您是否想要同时删除未完成的数据？"
+
+#~ msgid "Remove Download"
+#~ msgstr "删除下载"
+
+#~ msgid "Delete Data"
+#~ msgstr "删除数据"
+
+#~ msgid "Keep Data"
+#~ msgstr "保留数据"
+
+#~ msgid ""
+#~ "You will lose all the downloaded data. Are you sure you want to do this?"
+#~ msgstr "您将失去已经下载的全部数据。您确定想要这么做吗？"
+
+#~ msgid "Remove Torrent"
+#~ msgstr "删除种子"
+
+#~ msgid "Size"
+#~ msgstr "大小"
+
+#~ msgid "Time Left"
+#~ msgstr "剩余时间"
+
+#~ msgid "% Complete"
+#~ msgstr "完成百分比"
+
+#~ msgid "Share Ratio"
+#~ msgstr "共享率"
+
+#~ msgid "Time Downloaded"
+#~ msgstr "下载用时"
+
+#~ msgid "Time Seeded"
+#~ msgstr "做种用时"
+
+#~ msgid "Location"
+#~ msgstr "位置"
+
+#, fuzzy
+#~ msgid "Added"
+#~ msgstr "添加种子"
+
+#~ msgid "How much data we have downloaded of the torrent"
+#~ msgstr "种子已下载部分的数据量"
+
+#~ msgid "Total size of the torrent, excluded files are not included"
+#~ msgstr "种子的总大小，不包括已排除的文件"
+
+#~ msgid "How much data we have uploaded"
+#~ msgstr "已上传的数据量"
+
+#~ msgid "Current download speed"
+#~ msgstr "当前下载速度"
+
+#~ msgid "Current upload speed"
+#~ msgstr "当前上传速度"
+
+#~ msgid ""
+#~ "The percentage of data we have of the whole torrent, not including "
+#~ "excluded files"
+#~ msgstr "整个种子中已有数据的数据百分比，不包括已排除的文件"
+
+#~ msgid ""
+#~ "Share ratio is the number of bytes uploaded divided by the number of "
+#~ "bytes downloaded"
+#~ msgstr "共享率是上传量除以下载量得出的数字"
+
+#~ msgid "How long we have been downloading the torrent"
+#~ msgstr "下载用时"
+
+#~ msgid "How long we have been seeding the torrent"
+#~ msgstr "做种用时"
+
+#~ msgid "The location of the torrent's data on disk"
+#~ msgstr "磁盘上种子数据的位置"
+
+#, fuzzy
+#~ msgid "When this torrent was added"
+#~ msgstr "没有装入种子！"
+
+#~ msgid "%1<br>Url: <b>%2</b>"
+#~ msgstr "%1<br>Url：<b>%2</b>"
+
+#~ msgid "Policy for the %1 group"
+#~ msgstr "%1 组的策略"
+
+#~ msgid "Custom Groups"
+#~ msgstr "自定义组"
+
+#~ msgid "Edit Name"
+#~ msgstr "编辑名称"
+
+#~ msgid "Remove Group"
+#~ msgstr "删除组"
+
+#~ msgid "Open Tab"
+#~ msgstr "打开标签"
+
+#~ msgid "Group Policy"
+#~ msgstr "组策略"
+
+#~ msgid "Please enter the group name."
+#~ msgstr "请输入组名称。"
+
+#~ msgid "The group %1 already exists."
+#~ msgstr "组 %1 已经存在。"
+
+#~ msgid "Download Limit"
+#~ msgstr "下载限制"
+
+#~ msgid "Upload Limit"
+#~ msgstr "上传限制"
+
+#~ msgid "Assured Download Speed"
+#~ msgstr "额定的下载速度"
+
+#~ msgid "Assured Upload Speed"
+#~ msgstr "额定的上传速度"
+
+#~ msgid "No assured speed"
+#~ msgstr "无确定速度"
+
+#~ msgid "Create A Torrent"
+#~ msgstr "创建一个种子"
+
+#~ msgid "All Torrents"
+#~ msgstr "全部种子"
+
+#~ msgid "Invalid url %1"
+#~ msgstr "无效的 URL %1"
+
+#, fuzzy
+#~ msgid "Only HTTP is supported for webseeding."
+#~ msgstr "仅支持 HTTP 的网络种子！"
+
+#~ msgid "You must select a file or a folder."
+#~ msgstr "您必须选择一个文件或文件夹。"
+
+#~ msgid ""
+#~ "You have not added a tracker, are you sure you want to create this "
+#~ "torrent ?"
+#~ msgstr "您还没有添加 tracker 服务器，您确定您要创建这个种子吗？"
+
+#~ msgid "You must add at least one node."
+#~ msgstr "您必须至少添加一个节点。"
+
+#~ msgid "Torrent Files (*.torrent)"
+#~ msgstr "种子文件(*.torrent)"
+
+#~ msgid "Choose a file to save the torrent"
+#~ msgstr "选择保存种子的文件"
+
+#, fuzzy
+#~ msgid "Show a file tree"
+#~ msgstr "显示种子中的全部文件"
+
+#, fuzzy
+#~ msgid "Show a file list"
+#~ msgstr "选择文件"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some files of this torrent have been found in the completed downloads "
+#~ "directory. Do you want to import these files and use the completed "
+#~ "downloads directory as the location?"
+#~ msgstr "种子 <b>%1</b> 尚未完成下载，您是否想要同时删除未完成的数据？"
+
+#, fuzzy
+#~ msgid ""
+#~ "All files of this torrent have been found in the completed downloads "
+#~ "directory. Do you want to import these files and use the completed "
+#~ "downloads directory as the location?"
+#~ msgstr "种子 <b>%1</b> 尚未完成下载，您是否想要同时删除未完成的数据？"
+
+#, fuzzy
+#~ msgid ""
+#~ "The file <b>%1</b> was found in the completed downloads directory. Do you "
+#~ "want to import this file?"
+#~ msgstr "种子 <b>%1</b> 尚未完成下载，您是否想要同时删除未完成的数据？"
+
+#, fuzzy
+#~ msgid "The directory %1 does not exist, do you want to create it?"
+#~ msgstr "目录 %1 不存在，您想要创建吗？"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have deselected the following existing files. You will lose all data "
+#~ "in these files, are you sure you want to do this?"
+#~ msgstr ""
+#~ "您已经取消了下列已有文件。您将丢失这些文件中的全部数据，您确定想要这么做"
+#~ "吗？"
+
+#~ msgid "Yes, delete the files"
+#~ msgstr "是，删除文件"
+
+#~ msgid "No, keep the files"
+#~ msgstr "否，保留文件"
+
+#, fuzzy
+#~ msgctxt "We are %1 bytes short of what we need"
+#~ msgid "%1 short"
+#~ msgstr "%1 缺失！"
+
+#, fuzzy
+#~ msgid "Existing files: <b>None</b>"
+#~ msgstr "标题：<b>%1</b>"
+
+#, fuzzy
+#~ msgid "Existing files: <b>All</b>"
+#~ msgstr "标题：<b>%1</b>"
+
+#, fuzzy
+#~ msgid "Existing files: <b>%1</b> of <b>%2</b>"
+#~ msgstr "标题：<b>%1</b><br/>艺人：<b>%2</b>"
+
+#, fuzzy
+#~ msgid "Existing file: <b>No</b>"
+#~ msgstr "标题：<b>%1</b>"
+
+#, fuzzy
+#~ msgid "Existing file: <b>Yes</b>"
+#~ msgstr "标题：<b>%1</b>"
+
+#~ msgid " KiB/s"
+#~ msgstr " KiB/秒"
+
+#~ msgid "Select the directory where the data now is."
+#~ msgstr "请选择数据文件所在的目录。"
+
+#, fuzzy
+#~ msgid ""
+#~ "The data files are not present in the location you selected. Do you want "
+#~ "to create all the files in the selected directory?"
+#~ msgstr ""
+#~ "您所选择的位置不存在这些数据文件！您想要创建在所选目录中的全部文件吗？"
+
+#, fuzzy
+#~ msgid ""
+#~ "Not all files were found in the new location; some are still missing. Do "
+#~ "you want to create the missing files in the selected directory?"
+#~ msgstr ""
+#~ "新的位置并没有找到所有的文件，有些文件仍然丢失！您想要创建在所选目录中丢失"
+#~ "的文件吗？"
+
+#, fuzzy
+#~ msgid ""
+#~ "The data file is not present in the location you selected. Do you want to "
+#~ "create the file in the selected directory?"
+#~ msgstr "您所选择的位置不存在这个数据文件！您想要创建在所选目录中的文件吗？"
+
+#~ msgid "Importing 1 torrent ..."
+#~ msgid_plural "Importing %1 torrents ..."
+#~ msgstr[0] "正在导入 %1 个种子..."
+
+#~ msgid "Importing <b>%1</b> ..."
+#~ msgstr "正在扫描 <b>%1</b>..."
+
+#, fuzzy
+#~ msgid "Finished import."
+#~ msgstr "导入完成！"
+
+#, fuzzy
+#~ msgid "Torrent <b>%1</b> already loaded."
+#~ msgstr "种子 <b>%1</b> 已装入！"
+
+#~ msgid "Failed to load <b>%1</b>"
+#~ msgstr "装入 <b>%1</b> 失败"
+
+#~ msgid "Failed to import <b>%1</b> : %2"
+#~ msgstr "导入 <b>%1</b> 失败：%2"
+
+#~ msgid "Imported <b>%1</b>"
+#~ msgstr "已导入 <b>%1</b>"
+
+#~ msgid "Torrent files"
+#~ msgstr "种子文件"
+
+#~ msgid "Cannot verify data : %1"
+#~ msgstr "无法验证数据：%1"
+
+#~ msgid "Cannot load the torrent file : %1"
+#~ msgstr "无法装入种子文件：%1"
+
+#~ msgid "Open an URL"
+#~ msgstr "打开 URL"
+
+#~ msgid "Invalid URL: %1"
+#~ msgstr "无效的 URL：%1"
+
+#~ msgid "Speed down: %1 / up: %2"
+#~ msgstr "速度 下载：%1/上传：%2"
+
+#~ msgid "Transferred down: %1 / up: %2"
+#~ msgstr "传输量 下载：%1/上传：%2"
+
+#~ msgid "DHT: off"
+#~ msgstr "DHT：关闭"
+
+#~ msgid "DHT: %1 nodes, %2 tasks"
+#~ msgstr "DHT：%1 个节点，%2 个任务"
+
+#~ msgid "IP Filter List"
+#~ msgstr "IP 过滤列表"
+
+#, fuzzy
+#~ msgid ""
+#~ "Invalid IP address <b>%1</b>. IP addresses must be in the format 'XXX.XXX."
+#~ "XXX.XXX'.<br/><br/>You can also use wildcards like '127.0.0.*' or specify "
+#~ "ranges like '200.10.10.0-200.10.10.40'."
+#~ msgstr ""
+#~ "无效的 IP 地址 %1。您必须按照“XXX.XXX.XXX.XXX”的格式输入 IP，您还可以使用"
+#~ "通配符表示范围，如“127.0.0.*”。"
+
+#~ msgid "Choose a file"
+#~ msgstr "选择文件"
+
+#~ msgid "Choose a filename to save under"
+#~ msgstr "选择用来保存的文件名"
+
+#~ msgid "Bittorrent client for KDE"
+#~ msgstr "KDE 下的 BitTorrent 客户端"
+
+#, fuzzy
+#~ msgid "(C) 2005 - 2010 Joris Guisson and Ivan Vasic"
+#~ msgstr "(C) 2005 - 2007 Joris Guisson 和 Ivan Vasic"
+
+#~ msgid "Joris Guisson"
+#~ msgstr "Joris Guisson"
+
+#~ msgid "Ivan Vasic"
+#~ msgstr "Ivan Vasic"
+
+#~ msgid "Alan Jones"
+#~ msgstr "Alan Jones"
+
+#~ msgid "BitFinder Plugin"
+#~ msgstr "节点查询插件"
+
+#~ msgid "Diego R. Brogna"
+#~ msgstr "Diego R. Brogna"
+
+#~ msgid "Webinterface Plugin"
+#~ msgstr "Web 界面插件"
+
+#~ msgid "Krzysztof Kundzicz"
+#~ msgstr "Krzysztof Kundzicz"
+
+#~ msgid "Statistics Plugin"
+#~ msgstr "状态统计插件"
+
+#~ msgid "Mladen Babic"
+#~ msgstr "Mladen Babic"
+
+#~ msgid "Application icon and a couple of others"
+#~ msgstr "应用程序图标及其它"
+
+#~ msgid "Adam Treat"
+#~ msgstr "Adam Treat"
+
+#~ msgid "Danny Allen"
+#~ msgstr "Danny Allen"
+
+#~ msgid "1.0 application icon"
+#~ msgstr "1.0 应用程序图标"
+
+#~ msgid "Vincent Wagelaar"
+#~ msgstr "Vincent Wagelaar"
+
+#~ msgid "Knut Morten Johansson"
+#~ msgstr "Knut Morten Johansson"
+
+#~ msgid "Felix Berger"
+#~ msgstr "Felix Berge"
+
+#~ msgid "ChunkBar's tooltip and IWFileTreeItem sorting"
+#~ msgstr "下载块栏的工具提示和文件树排序"
+
+#~ msgid "Andreas Kling"
+#~ msgstr "Andreas Kling"
+
+#~ msgid "Felipe Sateler"
+#~ msgstr "Felipe Sateler"
+
+#~ msgid "Maxmind"
+#~ msgstr "Maxmind"
+
+#~ msgid ""
+#~ "Country locator for InfoWidget plugin. Flags are taken from http://flags."
+#~ "blogpotato.de/ so thanks to them too."
+#~ msgstr ""
+#~ "InfoWidget 插件的国家定位。国旗由 http://flags.blogpotato.de/ 荣誉提供。"
+
+#~ msgid "Adam Forsyth"
+#~ msgstr "Adam Forsyth"
+
+#~ msgid "File prioritization and some other patches"
+#~ msgstr "文件优先级特性和一些其它补丁"
+
+#~ msgid "Thomas Bernard"
+#~ msgstr "Thomas Bernard"
+
+#~ msgid "Miniupnp was used as an example for our own UPnP implementation"
+#~ msgstr "Miniupnp 是用于我们自己的 UPnP 实现的一个范例"
+
+#~ msgid "Diego Rosario Brogna"
+#~ msgstr "Diego Rosario Brogna"
+
+#~ msgid "Global max share ratio patch"
+#~ msgstr "全局最大共享率补丁"
+
+#~ msgid "Lesly Weyts"
+#~ msgstr "Lesly Weyts"
+
+#~ msgid "Zeroconf enhancements"
+#~ msgstr "Zeroconf 增强"
+
+#~ msgid "Kevin Andre"
+#~ msgstr "Kevin Andre"
+
+#~ msgid "Dagur Valberg Johannsson"
+#~ msgstr "Dagur Valberg Johannsson"
+
+#~ msgid "Coldmilk webgui"
+#~ msgstr "Coldmilk Web 界面"
+
+#~ msgid "Alexander Dymo"
+#~ msgstr "Alexander Dymo"
+
+#~ msgid "IDEAl code from KDevelop"
+#~ msgstr "IDEAI 代码来自 KDevelop"
+
+#~ msgid "Scott Wolchok"
+#~ msgstr "Scott Wolchok"
+
+#~ msgid "Conversion speed improvement in ipfilter plugin"
+#~ msgstr "IP 过滤插件的交互速度改善"
+
+#~ msgid "Bryan Burns of Juniper Networks"
+#~ msgstr "Juniper Networks 的 Bryan Burns"
+
+#~ msgid "Discovered 2 security vulnerabilities (both are fixed)"
+#~ msgstr "发现了两个安全问题(都已经被修复)"
+
+#~ msgid "Goten Xiao"
+#~ msgstr "Goten Xiao"
+
+#~ msgid "Patch to load silently with a save location"
+#~ msgstr "静默装入保存位置的补丁"
+
+#~ msgid "Rapsys"
+#~ msgstr "Rapsys"
+
+#~ msgid "Fixes in PHP code of webinterface"
+#~ msgstr "修复了 Web 界面的 PHP 代码"
+
+#~ msgid "Athantor"
+#~ msgstr "Athantor"
+
+#~ msgid "XFS specific disk preallocation"
+#~ msgstr "XFS 特有的磁盘预分配"
+
+#~ msgid "twisted_fall"
+#~ msgstr "twisted_fall"
+
+#~ msgid "Patch to not show very low speeds"
+#~ msgstr "修补了无法显示极低速率的问题"
+
+#~ msgid "Lucke"
+#~ msgstr "Lucke"
+
+#~ msgid "Patch to show potentially firewalled status"
+#~ msgstr "显示潜在防火墙状态的补丁"
+
+#~ msgid "Modestas Vainius"
+#~ msgstr "Modestas Vainius"
+
+#~ msgid "Several patches"
+#~ msgstr "一些补丁"
+
+#~ msgid "Stefan Monov"
+#~ msgstr "Stefan Monov"
+
+#~ msgid "Patch to hide menu bar"
+#~ msgstr "隐藏菜单条的补丁"
+
+#~ msgid "The_Kernel"
+#~ msgstr "核心"
+
+#~ msgid "Patch to change file priorities in the webgui"
+#~ msgstr "在 Web 界面上改变文件优先级的补丁"
+
+#~ msgid "Rafał Miłecki"
+#~ msgstr "Rafał Miłecki"
+
+#~ msgid "Several webgui patches"
+#~ msgstr "一些 Web 界面补丁"
+
+#~ msgid "Ozzi"
+#~ msgstr "Ozzi"
+
+#~ msgid "Fixes for several warnings"
+#~ msgstr "一些警告信息的修复"
+
+#~ msgid "Markus Brueffer"
+#~ msgstr "Markus Brueffer"
+
+#~ msgid "Patch to fix free diskspace calculation on FreeBSD"
+#~ msgstr "用于修补在 FreeBSD 上磁盘空间计算问题的补丁"
+
+#~ msgid "Lukas Appelhans"
+#~ msgstr "Lukas Appelhans"
+
+#~ msgid "Patch to fix a crash in ChunkDownloadView"
+#~ msgstr "用于修补 ChunkDownloadView 宕机问题的补丁"
+
+#~ msgid "Rickard Närström"
+#~ msgstr "Rickard Närström"
+
+#~ msgid "A couple of bugfixes"
+#~ msgstr "一些 bug 修正"
+
+#~ msgid "caruccio"
+#~ msgstr "caruccio"
+
+#~ msgid "Patch to load torrents silently from the command line"
+#~ msgstr "从命令行静默装入种子的补丁"
+
+#~ msgid "Lee Olson"
+#~ msgstr "Lee Olson"
+
+#~ msgid "New set of icons"
+#~ msgstr "新图标集"
+
+#~ msgid "Aaron J. Seigo"
+#~ msgstr "Aaron J. Seigo"
+
+#~ msgid "Drag and drop support for plasma applet"
+#~ msgstr "plasma 小程序拖放支持"
+
+#~ msgid "Ian Higginson"
+#~ msgstr "Ian Higginson"
+
+#~ msgid "Patch to cleanup the plugin list"
+#~ msgstr "清理插件列表的补丁"
+
+#, fuzzy
+#~ msgid "Feature which adds the date a torrent was added"
+#~ msgstr "没有装入种子！"
+
+#~ msgid "Silently open torrent given on URL"
+#~ msgstr "静默打开 URL 给出的种子"
+
+#~ msgid "Torrent Files"
+#~ msgstr "种子文件"
+
+#~ msgid "All Files"
+#~ msgstr "全部文件"
+
+#~ msgid "Open Location"
+#~ msgstr "打开位置"
+
+#~ msgid "Create a new torrent"
+#~ msgstr "创建新种子"
+
+#~ msgid "Open a torrent"
+#~ msgstr "打开种子"
+
+#~ msgid "Open Silently"
+#~ msgstr "以静默方式打开"
+
+#~ msgid "Open a torrent without asking any questions"
+#~ msgstr "不加询问打开种子"
+
+#~ msgid "Start All"
+#~ msgstr "全部开始"
+
+#, fuzzy
+#~ msgid "Start all torrents"
+#~ msgstr "启动种子"
+
+#~ msgid "Stop All"
+#~ msgstr "全部停止"
+
+#~ msgid "Stop all torrents"
+#~ msgstr "停止所有种子"
+
+#~ msgid "Open URL"
+#~ msgstr "打开 URL"
+
+#, fuzzy
+#~ msgid "Open a URL which points to a torrent, magnet links are supported"
+#~ msgstr "打开指向种子的 URL"
+
+#, fuzzy
+#~ msgid "Suspend KTorrent"
+#~ msgstr "暂停 KTorrent"
+
+#, fuzzy
+#~ msgid "Suspend all running torrents"
+#~ msgstr "暂停所有运行中的种子"
+
+#~ msgid "Show the list of blocked IP addresses"
+#~ msgstr "显示已屏蔽 IP 地址的列表"
+
+#~ msgid "Import Torrent"
+#~ msgstr "导入种子"
+
+#~ msgid "Import a torrent"
+#~ msgstr "导入种子"
+
+#~ msgid "Import KDE3 Torrents"
+#~ msgstr "导入 KDE3 种子"
+
+#~ msgid "Import all torrents from the KDE3 version of KTorrent"
+#~ msgstr "从 KDE3 版本的 KTorrent 导入种子"
+
+#~ msgid "Show/Hide KTorrent"
+#~ msgstr "显示/隐藏 KTorrent"
+
+#, fuzzy
+#~ msgid "Torrents"
+#~ msgstr "种子"
+
+#~ msgid "Widget to manage the torrent queue"
+#~ msgstr "管理种子队列的部件"
+
+#, fuzzy
+#~ msgid "Invalid IP address %1"
+#~ msgstr "无效的 IP 地址 %1！"
+
+#, fuzzy
+#~ msgid "Duplicate IP address %1"
+#~ msgstr "重复的 IP 地址 %1！"
+
+#~ msgid "Set max upload speed"
+#~ msgstr "设定最大上传速率"
+
+#~ msgid "Set max download speed"
+#~ msgstr "设定最大下载速率"
+
+#~ msgid ""
+#~ "<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>Speed:</"
+#~ "b></td><td></td></tr><tr><td>Download: <font color='#1c9a1c'>%1</font></"
+#~ "td><td>Upload: <font color='#990000'>%2</font></td></"
+#~ "tr><tr><td><b>Transfer:</b></td><td></td></tr><tr><td>Download: <font "
+#~ "color='#1c9a1c'>%3</font></td><td>Upload: <font color='#990000'>%4</"
+#~ "font></td></tr></table>"
+#~ msgstr ""
+#~ "<table cellpadding='2' cellspacing='2' align='center'><tr><td><b>速度：</"
+#~ "b></td><td></td></tr><tr><td>下载：<font color='#1c9a1c'>%1</font></"
+#~ "td><td>上传：<font color='#990000'>%2</font></td></tr><tr><td><b>传输：</"
+#~ "b></td><td></td></tr><tr><td>下载：<font color='#1c9a1c'>%3</font></"
+#~ "td><td>上传：<font color='#990000'>%4</font></td></tr></table>"
+
+#~ msgid ""
+#~ "<b>%1</b> has completed downloading.<br>Average speed: %2 DL / %3 UL."
+#~ msgstr "<b>%1</b> 已经完成下载。<br>平均速度：%2 下载/%3 上传。"
+
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum share ratio of %2 and has been stopped."
+#~ "<br>Uploaded %3 at an average speed of %4."
+#~ msgstr ""
+#~ "<b>%1</b>已达到最大共享比率 %2，任务已停止。<br>共上传了 %3 数据，平均速"
+#~ "率 %4。"
+
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum seed time of %2 hours and has been "
+#~ "stopped.<br>Uploaded %3 at an average speed of %4."
+#~ msgstr ""
+#~ "<b>%1</b> 已达到最大种子时间 %2 小时，因此停止。<br>上传 %3 平均速率 %4。"
+
+#~ msgid "<b>%1</b> has been stopped with the following error: <br>%2"
+#~ msgstr "<b>%1</b> 已经停止，因为下面的错误：<br>%2"
+
+#~ msgid ""
+#~ "Corrupted data has been found in the torrent <b>%1</b><br>It would be a "
+#~ "good idea to do a data integrity check on the torrent."
+#~ msgstr ""
+#~ "种子 <b>%1</b><br> 里发现错误数据，建议对该种子进行数据完整性检查。 "
+
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum share ratio of %2 and cannot be "
+#~ "enqueued. <br>Remove the limit manually if you want to continue seeding."
+#~ msgstr ""
+#~ "<b>%1</b> 已达到最大共享比率 %2 ，因此无法进入队列。<br>如果您想继续做种，"
+#~ "请手工去除限制。"
+
+#~ msgid ""
+#~ "<b>%1</b> has reached its maximum seed time of %2 hours and cannot be "
+#~ "enqueued. <br>Remove the limit manually if you want to continue seeding."
+#~ msgstr ""
+#~ "<b>%1</b> 已经达到最大做种时间 %2 小时，因此无法进入队列。<br>如果您想继续"
+#~ "做种，请手工去除限制。"
+
+#~ msgid "Cannot start <b>%1</b> : <br>"
+#~ msgstr "无法开始 <b>%1</b>：<br>"
+
+#~ msgid "Cannot seed more than 1 torrent. <br>"
+#~ msgid_plural "Cannot seed more than %1 torrents. <br>"
+#~ msgstr[0] "无法为超过 %1 个种子做种。"
+
+#~ msgid "Cannot download more than 1 torrent. <br>"
+#~ msgid_plural "Cannot download more than %1 torrents. <br>"
+#~ msgstr[0] "无法下载超过 %1 个种子。<br>"
+
+#~ msgid ""
+#~ "Go to Settings -> Configure KTorrent, if you want to change the limits."
+#~ msgstr "如果您想要更改限制，请转到设置 -> 配置 KTorrent。"
+
+#~ msgid ""
+#~ "Your disk is running out of space.<br /><b>%1</b> is being downloaded to "
+#~ "'%2'."
+#~ msgstr "您的磁盘空间不足。<br /><b>%1</b> 将被下载至“%2”。"
+
+#~ msgid "Torrent has been stopped.<br />"
+#~ msgstr "种子已停止。<br />"
+
+#~ msgid "Speed limit in KiB/s"
+#~ msgstr "速度限制(KiB/秒)"
+
+#, fuzzy
+#~ msgid ""
+#~ "KTorrent is unable to accept connections because the TCP ports %1 is "
+#~ "already in use by another program."
+#~ msgstr "KTorrent 无法接受连接，因为从 %1 到 %2 的端口都被其他程序占用。"
+
+#, fuzzy
+#~ msgid ""
+#~ "KTorrent is unable to accept connections because the UDP port %1 is "
+#~ "already in use by another program."
+#~ msgstr "KTorrent 无法接受连接，因为从 %1 到 %2 的端口都被其他程序占用。"
+
+#~ msgid "KTorrent is running one or more torrents"
+#~ msgstr "KTorrent 正在以一个或多个种子运行"
+
+#~ msgid "Cannot create torrent: %1"
+#~ msgstr "无法创建种子：%1"
+
+#~ msgid ""
+#~ "Several data files of the torrent \"%1\" are missing. \n"
+#~ "Do you want to recreate them, or do you want to not download them?"
+#~ msgstr ""
+#~ "种子“%1”相关的一些数据文件缺失。\n"
+#~ "您希望重新创建它们吗，或者您不想再下载它们？"
+
+#~ msgid "Data files are missing"
+#~ msgstr "数据文件缺失"
+
+#~ msgid "Cannot deselect missing files: %1"
+#~ msgstr "无法反选已缺失的文件：%1"
+
+#~ msgid "Cannot recreate missing files: %1"
+#~ msgstr "无法重建缺失的文件：%1"
+
+#~ msgid ""
+#~ "The file where the data is saved of the torrent \"%1\" is missing. \n"
+#~ "Do you want to recreate it?"
+#~ msgstr ""
+#~ "种子“%1”保存的数据文件已丢失。\n"
+#~ "您希望重新创建它们吗？"
+
+#~ msgid "Data file is missing"
+#~ msgstr "缺少数据文件"
+
+#~ msgid "Cannot recreate data file: %1"
+#~ msgstr "无法重建数据文件：%1"
+
+#, fuzzy
+#~ msgid ""
+#~ "KTorrent has found a torrent from the KDE3 version of KTorrent, do you "
+#~ "want to import it?"
+#~ msgid_plural ""
+#~ "KTorrent has found %1 torrents from the KDE3 version of KTorrent, do you "
+#~ "want to import them?"
+#~ msgstr[0] ""
+#~ "KTorrent 从 KDE3 版本的 KTorrent 中找到了 %1 个种子，您想要导入它们吗？"
+
+#, fuzzy
+#~ msgid "No torrents from the KDE3 version were found."
+#~ msgstr "未找到 KDE3 版本的种子！"
+
+#, fuzzy
+#~ msgid "Applet"
+#~ msgstr "应用"
+
+#, fuzzy
+#~ msgid ""
+#~ "<table>\t\t\t\t<tr><td>Download Speed:</td><td>%5 </td><td>Seeders: </"
+#~ "td><td>%1 (%2)</td></tr>\t\t\t\t<tr><td>Upload Speed:</td><td>%6 </"
+#~ "td><td>Leechers: </td><td>%3 (%4)</td></tr>"
+#~ msgstr ""
+#~ "<table>\t\t\t\t<tr><td>下载速度：</td><td>%5 </td><td>Seeders: </td><td>"
+#~ "%1 (%2)</td></tr>\t\t\t\t<tr><td>Upload Speed:</td><td>%6 </"
+#~ "td><td>Leechers: </td><td>%3 (%4)</td></tr>\t\t\t\t<tr><td>Downloaded:</"
+#~ "td><td>%7 / %8 </td><td>Uploaded: </td><td>%9</td></tr>\t\t\t\t</table>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<tr><td>Downloaded:</td><td>%1 </td><td>Size: </td><td>%2</td></tr>\t\t\t"
+#~ "\t<tr><td>Uploaded:</td><td>%3 </td><td>Complete: </td><td>%4 %</td></tr>"
+#~ "\t\t\t\t</table>"
+#~ msgstr ""
+#~ "<table>\t\t\t\t<tr><td>下载速度：</td><td>%5 </td><td>Seeders: </td><td>"
+#~ "%1 (%2)</td></tr>\t\t\t\t<tr><td>Upload Speed:</td><td>%6 </"
+#~ "td><td>Leechers: </td><td>%3 (%4)</td></tr>\t\t\t\t<tr><td>Downloaded:</"
+#~ "td><td>%7 / %8 </td><td>Uploaded: </td><td>%9</td></tr>\t\t\t\t</table>"
+
+#~ msgid "<b>%1</b><br/>%2 (Share Ratio: <font color=\"%4\">%3</font>)"
+#~ msgstr "<b>%1</b><br/>%2 (共享率：<font color=\"%4\">%3</font>)"
+
+#, fuzzy
+#~ msgid "KTorrent is not running."
+#~ msgstr "KTorrent 没有运行！"
+
+#, fuzzy
+#~ msgid "No torrents loaded."
+#~ msgstr "没有装入种子！"
+
+#~ msgid "Ungrouped Torrents"
+#~ msgstr "未分组种子"
+
+#~ msgid "Uploads"
+#~ msgstr "上传"
+
+#~ msgid "Running Uploads"
+#~ msgstr "正运行上传"
+
+#~ msgid "Not Running Uploads"
+#~ msgstr "未运行上传"
+
+#~ msgid "Downloads"
+#~ msgstr "下载"
+
+#~ msgid "Running Downloads"
+#~ msgstr "正运行下载"
+
+#~ msgid "Not Running Downloads"
+#~ msgstr "未运行下载"
+
+#~ msgid "Active Torrents"
+#~ msgstr "活动种子"
+
+#~ msgid "Active Downloads"
+#~ msgstr "活动下载"
+
+#~ msgid "Active Uploads"
+#~ msgstr "活动上传"
+
+#~ msgid "Passive Torrents"
+#~ msgstr "被动种子"
+
+#~ msgid "Passive Downloads"
+#~ msgstr "被动下载"
+
+#~ msgid "Passive Uploads"
+#~ msgstr "被动上传"
+
+#, fuzzy
+#~ msgid "Normal icons"
+#~ msgstr "正常"
+
+#, fuzzy
+#~ msgid "Text only"
+#~ msgstr "文本编码："
+
+#, fuzzy
+#~ msgid "Left"
+#~ msgstr "剩余："
+
+#~ msgid "Top"
+#~ msgstr "顶部"
+
+#, fuzzy
+#~ msgid "Maximum share ratio reached."
+#~ msgstr "已经达到最大共享率限制！"
+
+#, fuzzy
+#~ msgid "Maximum seed time reached."
+#~ msgstr "已经达到最大做种时间！"
+
+#~ msgid "File"
+#~ msgstr "文件"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent \"%1\" has reached its maximum share ratio and its maximum "
+#~ "seed time. Ignore the limit and start seeding anyway?"
+#~ msgstr "种子“%1”已达到最大共享率和最大做种时间。要忽略限制并开始做种吗？"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent \"%1\" has reached its maximum share ratio. Ignore the limit "
+#~ "and start seeding anyway?"
+#~ msgstr "种子“%1”已达到最大共享率。要忽略限制并开始做种吗？"
+
+#, fuzzy
+#~ msgid ""
+#~ "The torrent \"%1\" has reached its maximum seed time. Ignore the limit "
+#~ "and start seeding anyway?"
+#~ msgstr "种子“%1”已达到最大做种时间。要忽略限制并开始做种吗？"
+
+#~ msgid ""
+#~ "You don't have enough disk space to download this torrent. Are you sure "
+#~ "you want to continue?"
+#~ msgstr "您的磁盘空间不足以下载这个种子。您确定想要继续吗？"
+
+#~ msgid "Insufficient disk space for %1"
+#~ msgstr "可供 %1 使用的磁盘空间不足"
+
+#~ msgid ""
+#~ "Not enough disk space for the following torrents. Do you want to start "
+#~ "them anyway ?"
+#~ msgstr "您的磁盘空间不足以下载以下种子。您仍然想要启动吗？"
+
+#~ msgid ""
+#~ "The following torrents have reached their maximum seed time. Do you want "
+#~ "to start them anyway ?"
+#~ msgstr "以下种子已达到最大做种时间。您仍然想要启动它们吗？"
+
+#~ msgid ""
+#~ "The following torrents have reached their maximum share ratio. Do you "
+#~ "want to start them anyway ?"
+#~ msgstr "以下种子已达到最大共享率。您仍然想要启动它们吗？"
+
+#~ msgid "Error starting torrent %1 : %2"
+#~ msgstr "启动种子 %1 出错：%2"
+
+#~ msgid "Error"
+#~ msgstr "错误"
+
+#~ msgid "Error stopping torrent %1 : %2"
+#~ msgstr "停止种子 %1 出错：%2"
+
+#~ msgid ""
+#~ "<img src=\"available_color\">&nbsp; - Downloaded Chunks<br><img src="
+#~ "\"unavailable_color\">&nbsp; - Chunks to Download<br><img src="
+#~ "\"excluded_color\">&nbsp; - Excluded Chunks"
+#~ msgstr ""
+#~ "<img src=\"available_color\">&nbsp; - 下载块<br><img src="
+#~ "\"unavailable_color\">&nbsp; - 要下载的块<br><img src=\"excluded_color"
+#~ "\">&nbsp; - 排除的块"
+
+#, fuzzy
+#~ msgid "Cannot write beyond end of the mmap buffer."
+#~ msgstr "无法在 mmap 缓冲结束后写入！"
+
+#~ msgid "Plugins"
+#~ msgstr "插件"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "KDE 中国,胡炜"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde-china@kde.org,contact@huwei.name"
+
+#~ msgid "Folders to scan for torrents:"
+#~ msgstr "扫描种子的文件夹："
+
+#~ msgid "List of folders which will be scanned for torrents by this plugin."
+#~ msgstr "此插件将扫描种子的文件夹列表。"
+
+#~ msgid "Add a new folder to be scanned."
+#~ msgstr "添加要扫描的新文件夹。"
+
+#~ msgid "Add Folder"
+#~ msgstr "添加文件夹"
+
+#~ msgid "Remove a folder from the list."
+#~ msgstr "从列表中删除文件夹。"
+
+#~ msgid "Remove Folder"
+#~ msgstr "删除文件夹"
+
+#~ msgid "Options"
+#~ msgstr "选项"
+
+#~ msgid "Open the torrents without asking any questions."
+#~ msgstr "不加询问打开种子。"
+
+#~ msgid "Open silently"
+#~ msgstr "以静默方式打开"
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Scan the folder "
+#~ "recursively for torrents.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\">Note: "
+#~ "<span style=\" font-weight:400;\">This will not be done for any folder "
+#~ "named loaded.</span></p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#~ msgid "Scan subfolders"
+#~ msgstr "扫描子文件夹"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When a torrent file has "
+#~ "been found and loaded, delete it.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;"
+#~ "\">Warning:<span style=\" font-weight:400;\"> you will permanently lose "
+#~ "this file.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">当找到并装入一个种子文件"
+#~ "后，请您将其删除。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\">警告："
+#~ "<span style=\" font-weight:400;\">您将永久性丢失这个文件。</span></p></"
+#~ "body></html>"
+
+#~ msgid "Remove torrent file after loading"
+#~ msgstr "装入后删除种子文件"
+
+#~ msgid ""
+#~ "When a torrent file is loaded, move it to a subdirectory named loaded. If "
+#~ "the folder does not exist, it will be created."
+#~ msgstr ""
+#~ "当一个种子文件被装入时，将它移动到名为 loaded 的子目录。如果文件夹不存在。"
+#~ "则自动创建。"
+
+#~ msgid "Move torrent file to loaded directory"
+#~ msgstr "移动种子文件到 loaded 目录"
+
+#~ msgid "Add torrents opened with this plugin to a group."
+#~ msgstr "向分组添加由此插件打开的种子。"
+
+#~ msgid "Add torrent to group:"
+#~ msgstr "将种子添加到组："
+
+#~ msgid "Group to add torrents to."
+#~ msgstr "要将种子添加到的分组。"
+
+#, fuzzy
+#~ msgid "Whether to open torrent silently or not."
+#~ msgstr "静默打开种子"
+
+#~ msgid "Forward"
+#~ msgstr "转发"
+
+#~ msgid "Undo Forward"
+#~ msgstr "撤消转发"
+
+#~ msgid "Rescan"
+#~ msgstr "重新扫描"
+
+#~ msgid "Syndication Toolbar"
+#~ msgstr "同步工具栏"
+
+#~ msgid "Name:"
+#~ msgstr "名称："
+
+#~ msgid "String Matching"
+#~ msgstr "字符串匹配"
+
+#~ msgid "Strings are regular expressions"
+#~ msgstr "字符串为正则表达式"
+
+#~ msgid "Item must match all strings"
+#~ msgstr "项目必须匹配全部字符串"
+
+#~ msgid "Case sensitive matching"
+#~ msgstr "区分大小写"
+
+#~ msgid "Add to group:"
+#~ msgstr "添加到组："
+
+#~ msgid "Download to:"
+#~ msgstr "下载到："
+
+#~ msgid "Open torrents silently"
+#~ msgstr "静默打开种子"
+
+#~ msgid "Test"
+#~ msgstr "测试"
+
+#~ msgid "filter on feed:"
+#~ msgstr "种子过滤："
+
+#~ msgid "URL:"
+#~ msgstr "URL："
+
+#~ msgid "Status:"
+#~ msgstr "状态："
+
+#, fuzzy
+#~ msgid "Refresh every:"
+#~ msgstr "刷新"
+
+#~ msgid " minutes"
+#~ msgstr " 分钟"
+
+#~ msgid "Refresh"
+#~ msgstr "刷新"
+
+#~ msgid "Filters"
+#~ msgstr "过滤"
+
+#~ msgid "Manage Filters"
+#~ msgstr "管理过滤"
+
+#~ msgid "Feed:"
+#~ msgstr "种子："
+
+#~ msgid "Active filters:"
+#~ msgstr "活动过滤："
+
+#~ msgid "Add"
+#~ msgstr "添加"
+
+#~ msgid "Available filters:"
+#~ msgstr "可用过滤："
+
+#~ msgid "Remove All"
+#~ msgstr "全部删除"
+
+#~ msgid "Media Player Menu"
+#~ msgstr "媒体播放器菜单"
+
+#~ msgid "Media Player Toolbar"
+#~ msgstr "媒体播放器工具栏"
+
+#~ msgid "Search Preferences"
+#~ msgstr "搜索首选项"
+
+#~ msgid "Web interface skin:"
+#~ msgstr "Web 界面皮肤："
+
+#~ msgid "Which interface to use."
+#~ msgstr "使用的接口。"
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">If login required is "
+#~ "enabled, you need to enter a username and a password.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Attention: </span>You should not disable this when the "
+#~ "webinterface is accessible from the internet. It will allow anybody "
+#~ "access to it.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#, fuzzy
+#~ msgid "Login required"
+#~ msgstr "需要的磁盘空间："
+
+#~ msgid "Username:"
+#~ msgstr "用户名："
+
+#~ msgid "Username you need to use in the login page of the webinterface."
+#~ msgstr "登录 Web 界面时使用的用户名。"
+
+#~ msgid "Password:"
+#~ msgstr "密码："
+
+#~ msgid ""
+#~ "The password for the webinterface login page. By default this is set to "
+#~ "ktorrent."
+#~ msgstr "登录 Web 界面时的密码，默认是 ktorrent。"
+
+#~ msgid "Web Server"
+#~ msgstr "Web 服务器"
+
+#~ msgid "Port:"
+#~ msgstr "端口："
+
+#~ msgid "The port the webinterface listens on."
+#~ msgstr "Web 界面监听的端口。"
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">If you are behind a "
+#~ "router and you want to access the webinterface from somewhere on the "
+#~ "Internet you need to forward the correct port.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">This checkbox will "
+#~ "ensure that the UPnP plugin automatically forwards the port. The UPnP "
+#~ "plugin needs to be loaded for this to work.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">如果您在一台路由器之后，"
+#~ "而您又想通过互联网上某处访问到 web 界面，您必须转发正确的端口。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">这个选框将确保 UPnP 插件"
+#~ "能自动转发端口。 UPnP 插件需要为此被装载。</p></body></html>"
+
+#~ msgid "Forward port"
+#~ msgstr "转发端口"
+
+#~ msgid "Session TTL:"
+#~ msgstr "会话 TTL："
+
+#~ msgid "How long a session is valid (in seconds)."
+#~ msgstr "会话合法的时间(以秒计)。"
+
+#~ msgid " secs"
+#~ msgstr " 秒"
+
+#, fuzzy
+#~ msgid "forward Port"
+#~ msgstr "转发端口"
+
+#, fuzzy
+#~ msgid "interface skin"
+#~ msgstr "Web 界面皮肤："
+
+#, fuzzy
+#~ msgid "username"
+#~ msgstr "用户名："
+
+#, fuzzy
+#~ msgid "password"
+#~ msgstr "密码："
+
+#, fuzzy
+#~ msgid "Update charts every n gui updates"
+#~ msgstr "图表更新间隔"
+
+#, fuzzy
+#~ msgid "Whether to show seeds in swarms"
+#~ msgstr "显示群集中的种子"
+
+#, fuzzy
+#~ msgid "Whether to show leachers in swarms"
+#~ msgstr "显示群集中的吸血虫"
+
+#, fuzzy
+#~ msgid "Color of the speed on dl chart"
+#~ msgstr "调度背景的颜色。"
+
+#, fuzzy
+#~ msgid "Color of the seeds on peers chart"
+#~ msgstr "调度背景的颜色。"
+
+#, fuzzy
+#~ msgid "Color of the speed on upload chart"
+#~ msgstr "调度背景的颜色。"
+
+#, fuzzy
+#~ msgid "Color of the nodes on DHT chart"
+#~ msgstr "调度线条的颜色。"
+
+#, fuzzy
+#~ msgid "Use anti aliasing on charts?"
+#~ msgstr "使用抗锯齿"
+
+#, fuzzy
+#~ msgid "Draw ugly grey background grid?"
+#~ msgstr "绘制背景网格"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Speed"
+#~ msgstr "速度"
+
+#~ msgid "Upload"
+#~ msgstr "上传"
+
+#~ msgid "Colors"
+#~ msgstr "颜色"
+
+#~ msgid "Average"
+#~ msgstr "平均"
+
+#~ msgid "Limit"
+#~ msgstr "限制"
+
+#~ msgid "Seeds  in swarms"
+#~ msgstr "群集中的种子"
+
+#~ msgid "Avg. leechers connected per running torr."
+#~ msgstr "正在运行的种子平均连接的吸血虫数量。"
+
+#~ msgid "Avg. seeds connected per running torrent"
+#~ msgstr "正在运行的任务平均连接的种子数量"
+
+#~ msgid "Use anti-aliasing"
+#~ msgstr "使用抗锯齿"
+
+#~ msgid "Draw background grid"
+#~ msgstr "绘制背景网格"
+
+#~ msgid "Widget type:"
+#~ msgstr "部件类型："
+
+#~ msgid "Native"
+#~ msgstr "原生"
+
+#~ msgid "KDE"
+#~ msgstr "KDE"
+
+#~ msgid "(plugin reload is needed after change)"
+#~ msgstr "(插件更改后需要被重新装入)"
+
+#~ msgid "Settings"
+#~ msgstr "配置"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Update charts every"
+#~ msgstr "图表更新间隔"
+
+#~ msgid "GUI updates"
+#~ msgstr "图形界面更新"
+
+#~ msgid "Gather data every"
+#~ msgstr "数据采集间隔"
+
+#~ msgid "milliseconds"
+#~ msgstr "毫秒"
+
+#~ msgid "Measurements counts"
+#~ msgstr "测量计数"
+
+#~ msgid "Maximum"
+#~ msgstr "最大"
+
+#~ msgid "Maximum speed scale mode: "
+#~ msgstr "最大速度范围模式："
+
+#~ msgid "Exact"
+#~ msgstr "精确的"
+
+#~ msgid "Peers connections"
+#~ msgstr "对等连接"
+
+#~ msgid "Show seeds in swarms"
+#~ msgstr "显示群集中的种子"
+
+#~ msgid "Show leechers in swarms"
+#~ msgstr "显示群集中的吸血虫"
+
+#~ msgid "Remove Tracker"
+#~ msgstr "删除 Tracker"
+
+#~ msgid "Change Tracker"
+#~ msgstr "更改 Tracker"
+
+#, fuzzy
+#~ msgid "Update Trackers"
+#~ msgstr "Tracker 服务器"
+
+#~ msgid "Restore Defaults"
+#~ msgstr "恢复默认值"
+
+#~ msgid "Info"
+#~ msgstr "信息"
+
+#~ msgid "Average down speed:"
+#~ msgstr "平均下载速度："
+
+#~ msgid "Average up speed:"
+#~ msgstr "平均上传速度："
+
+#~ msgid "Comments:"
+#~ msgstr "注释："
+
+#~ msgid "Downloaded chunks:"
+#~ msgstr "已下载块："
+
+#~ msgid "Available chunks:"
+#~ msgstr "可用块："
+
+#~ msgid "Sharing"
+#~ msgstr "共享"
+
+#~ msgid "Share ratio:"
+#~ msgstr "共享率："
+
+#~ msgid "Ratio limit:"
+#~ msgstr "比率限制："
+
+#~ msgid "Time limit:"
+#~ msgstr "时间限制："
+
+#~ msgid " Hours"
+#~ msgstr " 小时"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Webseed to add to the "
+#~ "torrent.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Only http webseeds are supported.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#~ msgid "Add Webseed"
+#~ msgstr "添加网络种子"
+
+#~ msgid "Remove Webseed"
+#~ msgstr "删除网络种子"
+
+#~ msgid "Enable All"
+#~ msgstr "全部启用"
+
+#~ msgid "Disable All"
+#~ msgstr "全部禁用"
+
+#~ msgid "Tabs"
+#~ msgstr "标签"
+
+#~ msgid "Whether or not to show the peers tab in the bottom of the window."
+#~ msgstr "是否在窗口底部显示对等点标签。"
+
+#~ msgid "Show list of peers"
+#~ msgstr "显示对等点列表"
+
+#~ msgid "Whether or not to show the chunks tab in the bottom of the window."
+#~ msgstr "是否在窗口底部显示块标签。"
+
+#~ msgid "Show list of chunks currently downloading"
+#~ msgstr "显示当前正在下载的块列表"
+
+#~ msgid "Whether or not to show the trackers tab in the bottom of the window."
+#~ msgstr "是否在窗口底部显示 trackers 标签。"
+
+#~ msgid "Show list of trackers"
+#~ msgstr "显示 tracker 列表"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Whether or not to show "
+#~ "the webseeds tab at the bottom of the window.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">是否在窗口底部显示网络种"
+#~ "子标签。</p></body></html>"
+
+#~ msgid "Show list of webseeds"
+#~ msgstr "显示网络种子列表"
+
+#~ msgid "File Priority Colors"
+#~ msgstr "文件优先级着色"
+
+#~ msgid "First priority:"
+#~ msgstr "最高优先级："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Color to use for first "
+#~ "priority files.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">用于最高优先级文件的颜"
+#~ "色。</p></body></html>"
+
+#~ msgid "Last priority:"
+#~ msgstr "最低优先级："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Color to use for last "
+#~ "priority files.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">用于最低优先级文件的颜"
+#~ "色。</p></body></html>"
+
+#~ msgid "Total:"
+#~ msgstr "总共："
+
+#~ msgid "Currently downloading:"
+#~ msgstr "正在下载："
+
+#~ msgid "Downloaded:"
+#~ msgstr "已下载："
+
+#~ msgid "Excluded:"
+#~ msgstr "已排除："
+
+#~ msgid "Left:"
+#~ msgstr "剩余："
+
+#~ msgid "Size:"
+#~ msgstr "大小："
+
+#~ msgid "EMail Settings"
+#~ msgstr "电子邮件配置"
+
+#~ msgid "SMTP Server"
+#~ msgstr "SMTP 服务器"
+
+#~ msgid "SMTP server:"
+#~ msgstr "SMTP 服务器："
+
+#~ msgid "Use SSL/TLS encryption"
+#~ msgstr "使用 SSL/TLS 加密"
+
+#~ msgid "Send mails to:"
+#~ msgstr "发送邮件到："
+
+#~ msgid "Add CC:"
+#~ msgstr "添加抄送："
+
+#~ msgid "Add BCC:"
+#~ msgstr "添加密送："
+
+#~ msgid "Auto Resume Settings"
+#~ msgstr "自动还原设置"
+
+#, fuzzy
+#~ msgid "Auto remove a torrent when:"
+#~ msgstr "自动还原"
+
+#, fuzzy
+#~ msgid "The torrent finishes downloading"
+#~ msgstr "用于种子文件下载完成后迁移数据的目录。"
+
+#, fuzzy
+#~ msgid "The torrent finishes seeding"
+#~ msgstr "用于种子文件下载完成后迁移数据的目录。"
+
+#, fuzzy
+#~ msgid "Auto resume after:"
+#~ msgstr "自动还原"
+
+#~ msgid " hours"
+#~ msgstr " 小时"
+
+#~ msgid " seconds"
+#~ msgstr " 秒"
+
+#~ msgid "Description:"
+#~ msgstr "描述："
+
+#~ msgid "License:"
+#~ msgstr "许可证："
+
+#~ msgid "Author:"
+#~ msgstr "作者："
+
+#~ msgid "E-Mail:"
+#~ msgstr "电子邮件："
+
+#~ msgid "Website:"
+#~ msgstr "网站："
+
+#, fuzzy
+#~ msgid "Use rich log text"
+#~ msgstr "日志输出时使用富文本"
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Double click on the log "
+#~ "level to alter it. The possible levels are :</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">All: </span>All messages are shown</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Important: </span>Only important messages are shown</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Notice: </span>Only notice and important messages are "
+#~ "shown</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Debug: </span>Debug, notice and important messages are "
+#~ "shown</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">None:</span> No messages are shown</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">为每个成员指定 日志级"
+#~ "别。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">全部：</span>显示所有消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">调试：</span>显示调试、提醒和重要的消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提醒：</span>显示提醒和重要的消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">重要：</span>仅显示重要消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">没有：</span>不显示消息</p></body></html>"
+
+#~ msgid ""
+#~ "Whether or not to use rich text or just plain text, for the logging "
+#~ "output shown in the logviewer."
+#~ msgstr "在向日志查看器输出日志时，是用富文本还是纯文本格式。"
+
+#~ msgid "Use rich text for logging output"
+#~ msgstr "日志输出时使用富文本"
+
+#, fuzzy
+#~ msgid "Torrent activity"
+#~ msgstr "种子限制"
+
+#~ msgid "Custom file download order enabled"
+#~ msgstr "自定义文件下载顺序已启用"
+
+#~ msgid "Search Toolbar"
+#~ msgstr "搜索工具栏"
+
+#, fuzzy
+#~ msgid "Current search engine"
+#~ msgstr "当前调度："
+
+#~ msgid "Use default browser"
+#~ msgstr "使用默认浏览器"
+
+#, fuzzy
+#~ msgid "Use custom browser"
+#~ msgstr "使用自定义浏览器。"
+
+#, fuzzy
+#~ msgid "Custom browser executable path"
+#~ msgstr "自定义浏览器路径："
+
+#~ msgid "Clear the search history combo boxes."
+#~ msgstr "清除搜索历史下拉框。"
+
+#~ msgid "Clear Search History"
+#~ msgstr "清除搜索历史"
+
+#~ msgid "Whether or not to open searches in an external browser."
+#~ msgstr "是否在外部浏览器中打开搜索结果。"
+
+#~ msgid "Open searches in external browser"
+#~ msgstr "在外部浏览器中打开搜索结果"
+
+#~ msgid "Use the default browser configured in the system settings."
+#~ msgstr "使用系统设置中所配置的默认浏览器。"
+
+#~ msgid "Use a custom browser."
+#~ msgstr "使用自定义浏览器。"
+
+#~ msgid "Custom browser path:"
+#~ msgstr "自定义浏览器路径："
+
+#~ msgid "Path of the custom browser."
+#~ msgstr "自定义浏览器路径。"
+
+#~ msgid "Search Engines"
+#~ msgstr "搜索引擎"
+
+#~ msgid "Add a new search engine."
+#~ msgstr "添加新搜索引擎。"
+
+#~ msgid "Remove all selected search engines."
+#~ msgstr "删除全部选中的搜索引擎。"
+
+#~ msgid "&Remove"
+#~ msgstr "删除(&R)"
+
+#~ msgid "Remove all search engines."
+#~ msgstr "删除全部搜索引擎。"
+
+#~ msgid "R&emove All"
+#~ msgstr "全部删除(&E)"
+
+#~ msgid "Add all default search engines."
+#~ msgstr "添加全部默认搜索引擎。"
+
+#~ msgid "Add Defau&lt"
+#~ msgstr "添加默认(&L)"
+
+#, fuzzy
+#~ msgid "Special Limits"
+#~ msgstr "速度限制"
+
+#~ msgid "Maximum upload speed:"
+#~ msgstr "最大上传速度："
+
+#~ msgid "Maximum download speed:"
+#~ msgstr "最大下载速度："
+
+#~ msgid "Schedule background color:"
+#~ msgstr "调度背景颜色："
+
+#~ msgid "Color of the schedule background."
+#~ msgstr "调度背景的颜色。"
+
+#~ msgid "Schedule line color:"
+#~ msgstr "调度线条颜色："
+
+#~ msgid "Color of all lines on the schedule."
+#~ msgstr "调度线条的颜色。"
+
+#~ msgid "Schedule Item color:"
+#~ msgstr "调度项目颜色："
+
+#~ msgid "Color of each normal item on the schedule."
+#~ msgstr "调度项目的颜色。"
+
+#, fuzzy
+#~ msgid "Suspended schedule item color:"
+#~ msgstr "已暂停调度项目颜色："
+
+#, fuzzy
+#~ msgid "Color of each suspended item on the schedule."
+#~ msgstr "已暂停调度项目的颜色。"
+
+#~ msgid "Time"
+#~ msgstr "时间"
+
+#~ msgid "From:"
+#~ msgstr "从："
+
+#~ msgid "hh:mm"
+#~ msgstr "hh:mm"
+
+#~ msgid "To:"
+#~ msgstr "到："
+
+#~ msgid "Day:"
+#~ msgstr "天数："
+
+#~ msgid "Limits"
+#~ msgstr "限制"
+
+#~ msgid "Download limit:"
+#~ msgstr "下载限制："
+
+#~ msgid "Upload limit:"
+#~ msgstr "上传限制："
+
+#, fuzzy
+#~ msgid "Connection Limits"
+#~ msgstr "设定连接限制"
+
+#~ msgid "Set connection limits"
+#~ msgstr "设定连接限制"
+
+#~ msgid "Maximum connections per torrent:"
+#~ msgstr "每个种子的最大连接数："
+
+#~ msgid "Global connection limit:"
+#~ msgstr "全局连接限制："
+
+#~ msgid "Add a new item to the schedule"
+#~ msgstr "向调度增加新项目"
+
+#~ msgid "Days:"
+#~ msgstr "天数："
+
+#~ msgid "Entire Week"
+#~ msgstr "整周"
+
+#~ msgid "Weekdays Only"
+#~ msgstr "仅工作日"
+
+#~ msgid "Weekend"
+#~ msgstr "周末"
+
+#, fuzzy
+#~ msgid "Shutdown Toolbar"
+#~ msgstr "下载工具栏"
+
+#, fuzzy
+#~ msgid "Shutdown Settings"
+#~ msgstr "自动还原设置"
+
+#, fuzzy
+#~ msgid "Level1 filter url"
+#~ msgstr "删除过滤"
+
+#, fuzzy
+#~ msgid "Use level1 filter?"
+#~ msgstr "使用 PeerGuardian 过滤"
+
+#~ msgid "IPBlocking Preferences"
+#~ msgstr "IP 屏蔽首选项"
+
+#~ msgid "PeerGuardian Filter File "
+#~ msgstr "PeerGuardian 过滤文件 "
+
+#~ msgid "Enable this if you want the IP filter plugin to work."
+#~ msgstr "启用可使 IP 过滤插件工作。"
+
+#~ msgid "Use PeerGuardian filter"
+#~ msgstr "使用 PeerGuardian 过滤"
+
+#~ msgid "IP filter file:"
+#~ msgstr "IP 过滤文件："
+
+#~ msgid "Filter file to use, this can be a local file or a remote file."
+#~ msgstr "要使用的过滤文件，可以是本地文件或远程文件。"
+
+#~ msgid "Download and convert the IP filter file."
+#~ msgstr "下载并转换 IP 过滤文件。"
+
+#~ msgid "Dow&nload/Convert"
+#~ msgstr "下载/转换(&N)"
+
+#~ msgid ""
+#~ "Download PeerGuardian filter from bluetack.co.uk or blocklist.org.\n"
+#~ "NOTE: ZIP file from bluetack.co.uk is supported."
+#~ msgstr ""
+#~ "从 bluetack.co.uk 或 blocklist.oeg 下载 PeerGuardian 过滤器。\n"
+#~ "提示：bluetack.co.uk 支持 ZIP 文件。"
+
+#~ msgid "Automatic Update"
+#~ msgstr "自动更新"
+
+#~ msgid "Enable this if you want to automatically update the filter file."
+#~ msgstr "启用可使过滤文件自动更新。"
+
+#~ msgid "Update file every:"
+#~ msgstr "更新文件每隔："
+
+#~ msgid "Update interval in days."
+#~ msgstr "更新间隔天数。"
+
+#~ msgid " days"
+#~ msgstr " 天"
+
+#~ msgid "Last updated:"
+#~ msgstr "上次更新于："
+
+#~ msgid "Next update:"
+#~ msgstr "下次更新于："
+
+#~ msgid "Converting block list to KTorrent format. This might take some time."
+#~ msgstr "将块列表转换成 KTorrent 格式，这可能需要一点时间。"
+
+#~ msgid "C&ancel"
+#~ msgstr "取消(&A)"
+
+#, fuzzy
+#~ msgid "Magnet Generator Preferences"
+#~ msgstr "搜索首选项"
+
+#, fuzzy
+#~ msgid "Add tracker"
+#~ msgstr "添加 Tracker"
+
+#, fuzzy
+#~ msgid "Tracker:"
+#~ msgstr "Tracker 服务器"
+
+#, fuzzy
+#~ msgid "Add the torrent name in the URI"
+#~ msgstr "将队列中的种子下移"
+
+#, fuzzy
+#~ msgid "Add name"
+#~ msgstr "添加一个项目"
+
+#, fuzzy
+#~ msgid "Show popup"
+#~ msgstr "显示视频"
+
+#, fuzzy
+#~ msgid "Toggles tracker"
+#~ msgstr "Tracker 服务器"
+
+#, fuzzy
+#~ msgid "The default tracker"
+#~ msgstr "使用默认浏览器"
+
+#, fuzzy
+#~ msgid "Show dn"
+#~ msgstr "显示种子"
+
+#~ msgid "UPnP Test Application"
+#~ msgstr "UPnP 测试程序"
+
+#~ msgid "Router:"
+#~ msgstr "路由器："
+
+#, fuzzy
+#~ msgid "No routers found."
+#~ msgstr "没有找到路由器！"
+
+#~ msgid "Find Routers"
+#~ msgstr "寻找路由器"
+
+#~ msgid "Protocol:"
+#~ msgstr "协议："
+
+#~ msgid "UDP"
+#~ msgstr "UDP"
+
+#~ msgid "TCP"
+#~ msgstr "TCP"
+
+#~ msgid "Verbose mode"
+#~ msgstr "详述模式"
+
+#~ msgid "Ports && Limits"
+#~ msgstr "端口和限制"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol'; "
+#~ "font-size:9pt;\"><span style=\" font-size:8pt;\">Port used for the "
+#~ "bittorrent protocol.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\"><span style=\" font-weight:600;\">Attention:</span> If you are behind "
+#~ "a router, this port needs to be forwarded to accept incoming connections. "
+#~ "The UPnP plugin can do this for you.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol'; "
+#~ "font-size:9pt;\"><span style=\" font-size:8pt;\">用于 bittorrent 协议的端"
+#~ "口。</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\"><span style=\" font-weight:600;\">注意：</span>如果您在一个路由器之后，"
+#~ "这个端口需要被转发，用于接受进入的连接。UPnP 可以为您做到这点。</p></"
+#~ "body></html>"
+
+#~ msgid "UDP tracker port:"
+#~ msgstr "UDP Tracker 端口："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol'; "
+#~ "font-size:9pt;\"><span style=\" font-size:8pt;\">Port used for the UDP "
+#~ "tracker protocol.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\"><span style=\" font-weight:600;\">Attention:</span> If you are behind "
+#~ "a router, this port needs to be forwarded. The UPnP plugin can do this "
+#~ "for you.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol'; "
+#~ "font-size:9pt;\"><span style=\" font-size:8pt;\">用于 UDP tracker 协议的端"
+#~ "口。</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\"><span style=\" font-weight:600;\">注意：</span>如果您在一个路由器之后，"
+#~ "这个端口需要被转发。UPnP 可以为您做到这点。</p></body></html>"
+
+#~ msgid "The maximum number of connections allowed per torrent."
+#~ msgstr "每个种子允许的最大连接数。"
+
+#~ msgid "The global connection limit for all torrents combined."
+#~ msgstr "对所有种子适用的全局连接限制。"
+
+#~ msgid "The maximum download speed in KiB/s."
+#~ msgstr "最大下载速度(KiB/秒)。"
+
+#~ msgid "The maximum upload speed in KiB/s"
+#~ msgstr "最大上传速度(KiB/秒)"
+
+#~ msgid "DSCP value for IP packets:"
+#~ msgstr "IP 包的 DSCP 值："
+
+#~ msgid "Maximum number of connection setups:"
+#~ msgstr "最大连接数的设置："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The maximum number of "
+#~ "outgoing connections ktorrent will try to setup simultaneously.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\">If you are having trouble with ktorrent blocking other internet "
+#~ "traffic, try setting this number a bit lower.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Ktorrent 同时尝试设置的"
+#~ "对外最大并发连接数量。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\">如果您遇到 Ktorrent 阻塞了其他互联网流量的麻烦，请将该值略微设低一点。"
+#~ "</p></body></html>"
+
+#~ msgid "Network interface:"
+#~ msgstr "网络接口："
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Which network interface "
+#~ "to use for all network traffic.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\"><span style=\" font-weight:600;\">Note: </span>Requires a restart to "
+#~ "take effect.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">将哪个接口用于所有网络流"
+#~ "量。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'OpenSymbol';\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'OpenSymbol';"
+#~ "\"><span style=\" font-weight:600;\">提示：</span>需要重启使其生效！</p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "Let KTorrent calculate the recommended settings based upon the bandwidth "
+#~ "you have available."
+#~ msgstr "让 KTorrent 按照您可用的带宽计算推荐设置。"
+
+#, fuzzy
+#~ msgid "Recommended Settings..."
+#~ msgstr "推荐的设置"
+
+#~ msgid "Features"
+#~ msgstr "特性"
+
+#~ msgid ""
+#~ "DHT is a trackerless protocol to find peers sharing the same torrents as "
+#~ "you do."
+#~ msgstr ""
+#~ "DHT 是一种免 tracker 服务器的协议，用于搜寻和你共享同一种子的对等点。"
+
+#~ msgid "Use DHT to get additional peers"
+#~ msgstr "使用 DHT 获得额外的对等点"
+
+#~ msgid "UDP port for DHT communications:"
+#~ msgstr "DHT 通讯的 UDP 端口："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;  font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">UDP port to use for the DHT protocol.</span></"
+#~ "p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; \"><span style=\" font-"
+#~ "weight:600;\">Attention:</span> If you are behind a router, this port "
+#~ "needs to be forwarded to accept incoming DHT requests. The UPnP plugin "
+#~ "can do this for you.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;  font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">为 DHT 协议使用的 UDP 端口。</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; \"><span style=\" font-"
+#~ "weight:600;\">注意：</span>如果您在一个路由器之后，这些端口需要被转发，用"
+#~ "以接受进入的 DHT 请求。UPnP 插件能为您做到这点。</p></body></html>"
+
+#~ msgid "Use peer exchange"
+#~ msgstr "使用对等连接交换"
+
+#~ msgid ""
+#~ "Enable or disable the use of webseeds when they are present in a torrent."
+#~ msgstr "启用或禁用使用种子文件中的网络种子。"
+
+#~ msgid "Use webseeds"
+#~ msgstr "使用网络种子"
+
+#~ msgid "Encryption"
+#~ msgstr "加密"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Protocol encryption is "
+#~ "useful when your ISP is slowing down bittorrent connections. </p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The encryption will "
+#~ "prevent your bittorrent traffic to be flagged as bittorrent traffic, and "
+#~ "so the ISP will not slow it down.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">协议加密是很有用的，特别"
+#~ "是当您的 ISP 限制 BitTorrent 连接时。</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">加密能够防止您的 "
+#~ "BitTorrent 流量被标记，使 ISP 无法降低其速度。</p></body></html>"
+
+#~ msgid "Use protocol encryption"
+#~ msgstr "使用协议加密"
+
+#~ msgid ""
+#~ "Not all clients support encryption, and some people have encryption "
+#~ "disabled. If you want to connect to those peers, you need to have this "
+#~ "option enabled."
+#~ msgstr ""
+#~ "不是所有的客户端都支持加密，而且有的人会屏蔽加密。如果您想要连接到这些对等"
+#~ "方，需要启用此选项。"
+
+#~ msgid "Allow unencrypted connections"
+#~ msgstr "允许不加密的连接"
+
+#~ msgid "Send the tracker a custom IP address or hostname"
+#~ msgstr "向 tracker 发送自定义 IP 地址或主机名"
+
+#~ msgid "Custom IP address or hostname:"
+#~ msgstr "自定义 IP 地址或主机名："
+
+#~ msgid "Data Checking"
+#~ msgstr "正在检查数据"
+
+#~ msgid ""
+#~ "During uploading when a chunk is loaded into memory automatically recheck "
+#~ "this chunk, to see if it still is OK."
+#~ msgstr "在一个块被装入内存并上传时自动检测这个块，以确定数据是否正常。"
+
+#~ msgid "Recheck chunks during uploading"
+#~ msgstr "上传时重新检查块"
+
+#~ msgid ""
+#~ "Because rechecking big chunks can take a lot of time, the recheck can be "
+#~ "disabled when the chunks are bigger then a certain size."
+#~ msgstr ""
+#~ "因为重新检查大数据块会花费很长时间，当块大于特定尺寸时重新检查可以被禁止。"
+
+#, fuzzy
+#~ msgid "Do not recheck when chunks are bigger than"
+#~ msgstr "不要重新检查当块数大于"
+
+#~ msgid "The maximum size a chunk can be for rechecking during uploading."
+#~ msgstr "上传时重新检查允许的最大块尺寸。"
+
+#~ msgid " KiB"
+#~ msgstr " KiB"
+
+#~ msgid ""
+#~ "Automatically do a full data check when we find to many corrupted chunks."
+#~ msgstr "当发现很多错误的块时自动进行全面数据检查。"
+
+#~ msgid "Do a full data check after "
+#~ msgstr "全面数据检查前的错误块数 "
+
+#~ msgid "The number of corrupted chunks before a full data check is done"
+#~ msgstr "进行全面数据检查结束前的错误块数"
+
+#~ msgid ""
+#~ "When a torrent has finished downloading, do a full data check on the "
+#~ "torrent."
+#~ msgstr "当种子完成下载后，对种子进行完整数据检查。"
+
+#~ msgid "Check data when download is finished"
+#~ msgstr "下载完成后检查数据"
+
+#~ msgid ""
+#~ "Whether or not diskspace should be reserved before starting to download a "
+#~ "torrent."
+#~ msgstr "下载一个种子前是否预分配磁盘空间。"
+
+#~ msgid "Reserve disk space before starting a torrent"
+#~ msgstr "启动一个种子前预留磁盘空间"
+
+#~ msgid ""
+#~ "Instead of doing a quick reservation, do a full reservation. This is "
+#~ "slower than the quick way, but avoids fragmentation on the disk."
+#~ msgstr ""
+#~ "使用整体预分配方式替代快速预分配。它比快速预分配慢，但是可以防止磁盘碎片。"
+
+#~ msgid "Fully reserve disk space (avoids fragmentation)"
+#~ msgstr "整体预分配磁盘空间(避免碎片)"
+
+#~ msgid "Performance"
+#~ msgstr "性能"
+
+#~ msgid "GUI update interval:"
+#~ msgstr "界面更新间隔："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">The interval in milliseconds between GUI "
+#~ "updates.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>Increasing this will decrease CPU usage.</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">以毫秒为单位的图形界面更新间隔。</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>提高该值将会降低 CPU 利用率。</p></body></html>"
+
+#~ msgid " ms"
+#~ msgstr " 毫秒"
+
+#~ msgid "Network sleep interval:"
+#~ msgstr "网络休眠间隔："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">Amount of time the network threads will sleep "
+#~ "when they are speed limited. This has absolutely no effect when there are "
+#~ "no speed limits.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note:</span> The lower this is the more CPU is used. "
+#~ "Setting it high can lead to lower speeds in high bandwith situations. </"
+#~ "p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">For example on an 100 "
+#~ "Mbit LAN, if you set a limit of 3000 KiB/s, you might not actually reach "
+#~ "this speed when this value is too high. Without a limit you can easily "
+#~ "get above 3000 KiB/s on a LAN.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">当速率被限制时，网络线程的休眠时间。如果没有速率"
+#~ "限制此配置将不会产生作用。</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>该值越低则 CPU 利用越高。在高带宽情况下将其设高"
+#~ "可能会导致降低速率。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">例如在 100 Mbit 的局域网"
+#~ "里，如果您设定一个 3000 KiB/秒 的速度限制，当这个值过高时，您可能无法达到"
+#~ "这个速率， 如果在局域网内没有限制您可以轻松超过 3000 KiB/秒 的速度。</p></"
+#~ "body></html>"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "杂项"
+
+#~ msgid "Time estimation algorithm:"
+#~ msgstr "时间估测算法："
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><span "
+#~ "style=\" font-size:8pt;\">Select which algorithm to use for estimating "
+#~ "the time left :</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">KTorrent:</span> Mix of other algorithms, we use the one "
+#~ "which fits best in the current situation.</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Current speed:</span> Bytes left to download / current "
+#~ "speed</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Average speed: </span>Bytes left to download / average "
+#~ "speed</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Window of X:</span> Average of the last X samples (X = 20)</"
+#~ "p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Moving average:</span>  Moving average of the last 20 "
+#~ "samples</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">为每个成员指定 日志级"
+#~ "别。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">全部： </span>显示所有消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">调试：</span> 显示调试、提醒和重要的消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提醒： </span>显示提醒和重要的消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">重要： </span>仅显示重要消息</p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">没有： </span>不显示消息</p></body></html>"
+
+#~ msgid "Window of X"
+#~ msgstr "X 的窗口"
+
+#~ msgid "Preview size for audio files:"
+#~ msgstr "音频文件的预览大小："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The amount of data at "
+#~ "the beginning and end of an audio file, which will be prioritized for "
+#~ "previewing.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">音频文件开头和末尾的数据"
+#~ "量，用于预览而提高优先级。</p></body></html>"
+
+#~ msgid "Preview size for video files:"
+#~ msgstr "视频文件的预览大小："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The amount of data at "
+#~ "the beginning and end of a video file, which will be prioritized for "
+#~ "previewing.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">视频文件开头和末尾的数据"
+#~ "量，用于预览而提高优先级。</p></body></html>"
+
+#, fuzzy
+#~ msgid "Do not use KIO for tracker announces"
+#~ msgstr "连接 tracker 时使用代理"
+
+#, fuzzy
+#~ msgid "Resolve hostnames of peers"
+#~ msgstr "正在解析主机名 %1"
+
+#~ msgid "Folders"
+#~ msgstr "文件夹"
+
+#~ msgid "Folder to store torrent information:"
+#~ msgstr "保存种子文件信息的文件夹："
+
+#~ msgid ""
+#~ "Directory to store information about all torrents currently opened in "
+#~ "KTorrent."
+#~ msgstr "用于保存现在所有在 KTorrent 中打开的种子文件的目录。"
+
+#~ msgid "Directory to use as a default save location for all data."
+#~ msgstr "用于默认保存所有数据的目录。"
+
+#~ msgid "Default save location:"
+#~ msgstr "默认保存位置："
+
+#~ msgid "Directory to move data to when a torrent has finished downloading."
+#~ msgstr "用于种子文件下载完成后迁移数据的目录。"
+
+#~ msgid "Move completed downloads to:"
+#~ msgstr "将完成的下载移动到："
+
+#~ msgid ""
+#~ "Directory to copy all torrent files in, which are opened by KTorrent."
+#~ msgstr "用于复制所有 KTorrent 打开的种子文件的目录。"
+
+#~ msgid "Copy torrent files to:"
+#~ msgstr "复制种子文件到："
+
+#~ msgid "System Tray Icon"
+#~ msgstr "系统托盘图标"
+
+#~ msgid "Whether or not to show an icon in the system tray."
+#~ msgstr "是否在系统托盘里面显示图标。"
+
+#~ msgid "Show system tray icon"
+#~ msgstr "显示系统托盘图标"
+
+#, fuzzy
+#~ msgid "Whether or not to show system tray popup messages."
+#~ msgstr "显示系统托盘弹出消息"
+
+#~ msgid "Show system tray popup messages"
+#~ msgstr "显示系统托盘弹出消息"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When you select "
+#~ "multiple torrents to be opened at the same time, open them silently.</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">当您同时选择多个种子以打"
+#~ "开时，使用静默模式打开。</p></body></html>"
+
+#~ msgid "Open multiple torrents silently"
+#~ msgstr "静默打开多个种子"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Prevent computer from "
+#~ "going into a sleep state when torrents are running.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">防止计算机在种子运行的时"
+#~ "候进入睡眠状态。</p></body></html>"
+
+#~ msgid "Suppress sleep when torrents are running"
+#~ msgstr "种子运行时禁止睡眠"
+
+#~ msgid ""
+#~ "When enabled, the queue manager will be totally disabled, allowing you to "
+#~ "fully control all torrents manually."
+#~ msgstr ""
+#~ "启用时，队列管理器会被完全禁用，以便让您对全部种子有完全的手动控制权。"
+
+#~ msgid "Control torrents manually"
+#~ msgstr "手动控制种子"
+
+#~ msgid "Maximum downloads:"
+#~ msgstr "最大下载任务数："
+
+#~ msgid ""
+#~ "The maximum number of simultaneous downloads the queue manager will run."
+#~ msgstr "队列管理器最大同时运行的下载任务数。"
+
+#~ msgid "Maximum seeds:"
+#~ msgstr "最大种子数："
+
+#~ msgid "The maximum number of simultaneous seeds the queue manager will run."
+#~ msgstr "队列管理器最大同时做种数。"
+
+#~ msgid "When diskspace is running low:"
+#~ msgstr "当磁盘空间紧张时："
+
+#~ msgid ""
+#~ "What to do when the diskspace is running low and the queue manager wants "
+#~ "to start a torrent."
+#~ msgstr "当磁盘空间紧张，而队列管理器又要启动下载一个种子时如何操做。"
+
+#~ msgid "Don't start torrents"
+#~ msgstr "不要启动种子"
+
+#~ msgid "Ask if torrents can be started"
+#~ msgstr "询问是否能够启动种子"
+
+#~ msgid "Start torrents"
+#~ msgstr "启动种子"
+
+#~ msgid "Stop torrents when free disk space is lower than:"
+#~ msgstr "停止种子，当空闲磁盘空间低于："
+
+#~ msgid ""
+#~ "When the free diskspace drops below this value, stop all torrents "
+#~ "downloading."
+#~ msgstr "当空闲磁盘空间低于这个值的时候，停止所有的种子下载。"
+
+#~ msgid " MiB"
+#~ msgstr " MiB"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-size:8pt; font-weight:400; font-style:"
+#~ "normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">With this enabled, the "
+#~ "queue manager will decrease the priority of a torrent which has been "
+#~ "stalled for too long. </p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">This will allow the "
+#~ "queue manager to run other torrents, when a torrent is doing nothing.</"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#, fuzzy
+#~ msgid "Stalled timer:"
+#~ msgstr "已延迟"
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Bitstream "
+#~ "Vera Sans';\">Time used for the stall timer. When a torrent is stalled "
+#~ "longer than this, its priority will be decreased.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">当一个种子下载完成后，应"
+#~ "该对它进行全面数据检查。</p></body></html>"
+
+#~ msgid " Minutes"
+#~ msgstr " 分钟"
+
+#, fuzzy
+#~ msgctxt "@title:group Options regarging Seeding"
+#~ msgid "Seeding"
+#~ msgstr "做种中"
+
+#~ msgid ""
+#~ "When a download is finished, continue seeding it. If this is disabled, "
+#~ "the torrent will be stopped."
+#~ msgstr "下载完成后继续做种。禁用时，种子即停止做种。"
+
+#~ msgid "Keep seeding after download is finished"
+#~ msgstr "下载完成后保持做种"
+
+#~ msgid "Number of upload slots:"
+#~ msgstr "上传通道数："
+
+#~ msgid ""
+#~ "The number of upload slots, this determines the number of peers you can "
+#~ "upload to simultaneously for one torrent."
+#~ msgstr "上传通道数，它决定了您的每个种子能够同时向多少个对等点进行上传。"
+
+#, fuzzy
+#~ msgid "Default maximum share ratio:"
+#~ msgstr "最大共享率："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">The maximum share ratio, if this value is "
+#~ "reached seeding will be stopped. This is only applied to newly opened "
+#~ "torrents, existing torrents will not be affected by changing this.</"
+#~ "span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Attention: </span>This is not used when downloading, only "
+#~ "when seeding.</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">最大共享率，达到这个数值后，做种将会停止。这只会"
+#~ "对新打开的种子起作用，已存在的种子不受影响。</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">注意：</span>下载时此项不适用，只有做种时才有用。</p></"
+#~ "body></html>"
+
+#, fuzzy
+#~ msgid "Default maximum seed time:"
+#~ msgstr "最大做种时间："
+
+#~ msgid ""
+#~ "The maximum seed time in hours. Once you reach this time, the torrent "
+#~ "will be stopped. This is only applied to newly opened torrents, existing "
+#~ "torrents will not be affected by changing this."
+#~ msgstr ""
+#~ "以小时为单位计算的做种时间。当做种达到这个时间，将会停止。这只会对新打开的"
+#~ "种子起作用，已存在的种子不受影响。"
+
+#~ msgid "Recommended Settings"
+#~ msgstr "推荐的设置"
+
+#~ msgid "Available upload bandwidth:"
+#~ msgstr "可用上传带宽："
+
+#~ msgid " Kbps"
+#~ msgstr " Kbps"
+
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
+
+#~ msgid "Available download bandwidth:"
+#~ msgstr "可用下载带宽："
+
+#~ msgid "(= 32 KiB/s)"
+#~ msgstr "(= 32 KiB/秒)"
+
+#~ msgid "(= 500 KiB/s)"
+#~ msgstr "(= 500 KiB/秒)"
+
+#~ msgid "Calculate"
+#~ msgstr "计算"
+
+#~ msgid "Preferences"
+#~ msgstr "首选项"
+
+#~ msgid "Average speed per slot:"
+#~ msgstr "单个通道的平均速度："
+
+#~ msgid "Number of torrents you usually download simultaneously:"
+#~ msgstr "您通常同时下载的种子数量："
+
+#~ msgid "Slots per torrent:"
+#~ msgstr "每个种子的通道："
+
+#~ msgid "Recommended settings:"
+#~ msgstr "推荐的设置："
+
+#~ msgid "HTTP"
+#~ msgstr "HTTP"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">Use the HTTP proxy settings configured in the "
+#~ "settings of KDE.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">使用 KDE 系统设置中所配置的代理设置。</span></"
+#~ "p></body></html>"
+
+#~ msgid "Use KDE proxy settings"
+#~ msgstr "使用 KDE 代理设置"
+
+#~ msgid "Proxy:"
+#~ msgstr "代理："
+
+#~ msgid "IP address or hostname of the HTTP proxy to use. "
+#~ msgstr "用作 HTTP 代理的 IP 地址或主机名。"
+
+#~ msgid "Port of the HTTP proxy."
+#~ msgstr "HTTP 代理的端口。"
+
+#~ msgid "Whether or not to use the HTTP proxy for webseed connections."
+#~ msgstr "对网络种子连接是否使用代理。"
+
+#~ msgid "Use proxy for webseed connections"
+#~ msgstr "对网络种子连接使用代理"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Whether or not to use "
+#~ "the HTTP proxy for tracker connections.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">是否在连接 tracker 时使"
+#~ "用 HTTP 代理。</p></body></html>"
+
+#~ msgid "Use proxy for tracker connections"
+#~ msgstr "连接 tracker 时使用代理"
+
+#~ msgid "SOCKS"
+#~ msgstr "SOCKS"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">Use a SOCKS proxy server for bittorrent "
+#~ "connections.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" font-family:'OpenSymbol'; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-weight:600;\">Note: </span>This is not used for "
+#~ "tracker connections</p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">为 bittorrent 连接使用 SOCKS 代理服务器。</"
+#~ "span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" font-family:'OpenSymbol'; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"><span style=\" font-weight:600;\">提示：</span>不是用于与 tracker 连"
+#~ "接。</p></body></html>"
+
+#~ msgid "Use a SOCKS proxy server:"
+#~ msgstr "使用 SOCKS 代理服务器："
+
+#~ msgid "Server:"
+#~ msgstr "服务器："
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">IP address or hostname of the SOCKS server</"
+#~ "span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">SOCKS 服务器的 IP 地址或主机名</span></p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">Port used by the SOCKS server</span></p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\"><span "
+#~ "style=\" font-size:8pt;\">用于 SOCKS 服务器的端口</span></p></body></html>"
+
+#~ msgid "Version:"
+#~ msgstr "版本："
+
+#~ msgid "Username and password required"
+#~ msgstr "需要的用户名和密码"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><span "
+#~ "style=\" font-size:8pt;\">Username for the SOCKS proxy server.</span></"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><span "
+#~ "style=\" font-size:8pt;\">SOCKS 代理服务器的用户名。</span></p></body></"
+#~ "html>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><span "
+#~ "style=\" font-size:8pt;\">Password for the SOCKS proxy server.</span></"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;\"><span "
+#~ "style=\" font-size:8pt;\">SOCKS 代理服务器的密码。</span></p></body></"
+#~ "html>"
+
+#, fuzzy
+#~ msgid "..."
+#~ msgstr "打开..."
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The number of chunks "
+#~ "which were not downloaded but have been found anyway.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">未下载却找到的块数量。</"
+#~ "p></body></html>"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#, fuzzy
+#~ msgid "Failed:"
+#~ msgstr "文件"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The number of chunks "
+#~ "which have been downloaded, and which are not OK.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">已下载却不完好的块数量。"
+#~ "</p></body></html>"
+
+#, fuzzy
+#~ msgid "Not downloaded:"
+#~ msgstr "已下载："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The number of chunks "
+#~ "which have not been downloaded.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">未下载的块数量。</p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The number of chunks "
+#~ "which have been downloaded, and which are OK.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">已下载并完好的块数量。</"
+#~ "p></body></html>"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Close"
+#~ msgstr "关闭"
+
+#~ msgid "Dialog"
+#~ msgstr "对话框"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Default save location "
+#~ "for torrents from this group. </p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note:</span> This is only used in the file selection "
+#~ "dialog, when you change the group, the download location in the dialog "
+#~ "will be set to this. You can still override it, if you want to. </p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Default save location "
+#~ "for torrents from this group. </p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>This is only used in the file selection "
+#~ "dialog, when you change the group, the download location in the dialog "
+#~ "will be set to this. You can still override it, if you want to.</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Default settings for "
+#~ "torrents which are added to the group.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">添加到分组中的种子的默认"
+#~ "设置。</p></body></html>"
+
+#~ msgid "Torrent Limits"
+#~ msgstr "种子限制"
+
+#~ msgid "Maximum download rate:"
+#~ msgstr "最大下载率："
+
+#~ msgid "Maximum upload rate:"
+#~ msgstr "最大上传率："
+
+#~ msgid "Maximum seed time:"
+#~ msgstr "最大做种时间："
+
+#~ msgid "Maximum share ratio:"
+#~ msgstr "最大共享率："
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When this is enabled, "
+#~ "these settings will only be applied when a torrent is added to the group "
+#~ "in the file selection dialog or the torrent creation dialog.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">If this is not enabled, "
+#~ "the settings will always be applied when you add a torrent to this group. "
+#~ "</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">递归扫描文件夹以寻找种"
+#~ "子。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">提示：</span>对任何名为 loaded 的文件夹将不会执行这一操作。"
+#~ "</p></body></html>"
+
+#~ msgid "Apply settings only for newly opened or created torrents"
+#~ msgstr "仅对新打开或创建的种子应用设置"
+
+#~ msgid "Create a torrent"
+#~ msgstr "创建一个种子"
+
+#~ msgid "File or directory to create torrent from:"
+#~ msgstr "创建种子的来源文件或文件夹："
+
+#~ msgid "Size of each chunk:"
+#~ msgstr "每块的大小："
+
+#~ msgid "32 KiB"
+#~ msgstr "32 KiB"
+
+#~ msgid "64 KiB"
+#~ msgstr "64 KiB"
+
+#~ msgid "128 KiB"
+#~ msgstr "128 KiB"
+
+#~ msgid "256 KiB"
+#~ msgstr "256 KiB"
+
+#~ msgid "512 KiB"
+#~ msgstr "512 KiB"
+
+#~ msgid "1 MiB"
+#~ msgstr "1 MiB"
+
+#~ msgid "2 MiB"
+#~ msgstr "2 MiB"
+
+#~ msgid "4 MiB"
+#~ msgstr "4 MiB"
+
+#~ msgid "8 MiB"
+#~ msgstr "8 MiB"
+
+#~ msgid "Start seeding"
+#~ msgstr "开始做种"
+
+#~ msgid "Private torrent (DHT not allowed)"
+#~ msgstr "私有种子(不允许 DHT)"
+
+#~ msgid "Decentralized (DHT only)"
+#~ msgstr "非集中化(只允许 DHT)"
+
+#~ msgid "DHT Nodes"
+#~ msgstr "DHT 结点"
+
+#~ msgid "Node:"
+#~ msgstr "节点："
+
+#~ msgid "IP or Hostname"
+#~ msgstr "IP 或主机名"
+
+#~ msgid "Port"
+#~ msgstr "端口"
+
+#~ msgid "Web Seeds"
+#~ msgstr "网络种子"
+
+#~ msgid "Select Which Files You Want to Download"
+#~ msgstr "选择您想要下载的文件"
+
+#~ msgid "Text encoding:"
+#~ msgstr "文本编码："
+
+#~ msgid ""
+#~ "All files in the torrent, you can change them by double clicking on them."
+#~ msgstr "种子中的全部文件，您可以通过在上面双击来更改它们。"
+
+#~ msgid "Select &All"
+#~ msgstr "全部选中(&A)"
+
+#~ msgid "Select &None"
+#~ msgstr "全部不选(&N)"
+
+#~ msgid "Invert Selection"
+#~ msgstr "反向选择"
+
+#~ msgid "Collapse All"
+#~ msgstr "全部折叠"
+
+#~ msgid "Expand All"
+#~ msgstr "全部展开"
+
+#, fuzzy
+#~ msgid "No existing files are found"
+#~ msgstr "如果找到已存在的文件，则跳过数据检查"
+
+#~ msgid "Group:"
+#~ msgstr "组："
+
+#~ msgid "Start torrent"
+#~ msgstr "启动种子"
+
+#, fuzzy
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">When existing files "
+#~ "have been found, skip the data check and assume that the files are fully "
+#~ "downloaded.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note: </span>only do this when you are absolutely sure.</"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">当找到已存在的文件时，跳"
+#~ "过数据检查并假定这些文件已下载。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">注意：</span>仅在您非常确定的时候才这么做！</p></body></"
+#~ "html>"
+
+#~ msgid "Skip data check if existing files are found"
+#~ msgstr "如果找到已存在的文件，则跳过数据检查"
+
+#, fuzzy
+#~ msgid "Disk Space"
+#~ msgstr "磁盘空间"
+
+#, fuzzy
+#~ msgid "Required:"
+#~ msgstr "需要的磁盘空间："
+
+#, fuzzy
+#~ msgid "Available:"
+#~ msgstr "可用"
+
+#~ msgid "After download:"
+#~ msgstr "下载后："
+
+#, fuzzy
+#~ msgid "Speed limits for individual torrents (double click to edit):"
+#~ msgstr "对所有种子的速度限制(双击编辑)："
+
+#, fuzzy
+#~ msgid "Filter:"
+#~ msgstr "过滤"
+
+#~ msgid "Global Limits"
+#~ msgstr "全局限制"
+
+#~ msgid ""
+#~ "Enter the IP address or hostname and port number of the peer you wish to "
+#~ "add:"
+#~ msgstr "请输入您希望增加的对等点的 IP 地址或者主机名和端口号："
+
+#~ msgid "Peer:"
+#~ msgstr "对等点："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The IP address or "
+#~ "hostname of the peer you want to connect to, should be put here.</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Note:</span> We accept both IPv4 and IPv6 addresses</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">在此输入您希望连接的对等"
+#~ "点的 IP 地址或主机名。</p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">注意：</span>我们可以接受 IPv4 和 IPv6 地址</p></body></"
+#~ "html>"
+
+#~ msgid "127.0.0.1"
+#~ msgstr "127.0.0.1"
+
+#~ msgid "Files are missing"
+#~ msgstr "文件缺失"
+
+#~ msgid "The following files are missing:"
+#~ msgstr "如下文件缺失："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">They are no longer "
+#~ "there, recreate them.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">它们已不存在，请重建它"
+#~ "们。</p></body></html>"
+
+#~ msgid "Recreate"
+#~ msgstr "重建"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Do not download the "
+#~ "missing files.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">不要下载那些缺失的文件。"
+#~ "</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">The files have been "
+#~ "moved to another location, select the new location.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">这些文件已经被转移到一个"
+#~ "新的位置，请选择新位置。</p></body></html>"
+
+#~ msgid "Select New Location"
+#~ msgstr "选择新位置"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Cancel, do not start "
+#~ "the torrent.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">取消，不要启动种子。</"
+#~ "p></body></html>"
+
+#~ msgid "Importing ..."
+#~ msgstr "正在导入..."
+
+#~ msgid "Importing torrents from KDE3 version:"
+#~ msgstr "从 KDE3 版本导入种子："
+
+#~ msgid "Import an existing torrent"
+#~ msgstr "导入已有的下载"
+
+#~ msgid "Torrent:"
+#~ msgstr "种子："
+
+#~ msgid "Data:"
+#~ msgstr "数据："
+
+#~ msgid "Select the torrent file and the data which belongs with it."
+#~ msgstr "选择种子文件和属于它的数据。"
+
+#~ msgid "&Import"
+#~ msgstr "导入(&I)"
+
+#~ msgid "Ca&ncel"
+#~ msgstr "取消(&N)"
+
+#~ msgid "&File"
+#~ msgstr "文件(&F)"
+
+#, fuzzy
+#~ msgid "&View"
+#~ msgstr "查看菜单"
+
+#~ msgid "GroupsMenu"
+#~ msgstr "组菜单"
+
+#~ msgid "ViewMenu"
+#~ msgstr "查看菜单"
+
+#~ msgid "Additional Peer Sources"
+#~ msgstr "更多的对等连接资源"
+
+#~ msgid "Configure Columns"
+#~ msgstr "配置栏"
+
+#~ msgid "Download Toolbar"
+#~ msgstr "下载工具栏"
+
+#~ msgid "KTorrent Blacklisted Peers"
+#~ msgstr "KTorrent 对等点黑名单"
+
+#~ msgid "Add peer:"
+#~ msgstr "添加对等点："
+
+#, fuzzy
+#~ msgid ""
+#~ "IP addresses must be in the format 'XXX.XXX.XXX.XXX'.\n"
+#~ "                                        \n"
+#~ "You can also use wildcards like '127.0.0.*' or specify ranges like "
+#~ "'200.10.10.0-200.10.10.40'."
+#~ msgstr ""
+#~ "无效的 IP 地址 %1。您必须按照“XXX.XXX.XXX.XXX”的格式输入 IP，您还可以使用"
+#~ "通配符表示范围，如“127.0.0.*”。"
+
+#~ msgid "Clear"
+#~ msgstr "清除"
+
+#~ msgid "Open..."
+#~ msgstr "打开..."
+
+#~ msgid "Save As..."
+#~ msgstr "另存为..."
+
+#~ msgid "Torrent to display:"
+#~ msgstr "要显示的种子："
+
+#, fuzzy
+#~ msgid "Maximum number of downloads (0 = no limit)"
+#~ msgstr "最大连接数的设置："
+
+#, fuzzy
+#~ msgid "Maximum number of connections per torrent (0 = no limit)"
+#~ msgstr "每个种子允许的最大连接数。"
+
+#, fuzzy
+#~ msgid "Maximum number of connections for all torrents (0 = no limit) "
+#~ msgstr "每个种子允许的最大连接数。"
+
+#, fuzzy
+#~ msgid "Maximum upload speed in KiB/sec (0 = no limit)"
+#~ msgstr "最大上传速度(KiB/秒)"
+
+#, fuzzy
+#~ msgid "Maximum download speed in KiB/sec (0 = no limit)"
+#~ msgstr "最大下载速度(KiB/秒)。"
+
+#, fuzzy
+#~ msgid "Maximum share ratio (0 = no limit)"
+#~ msgstr "已经达到最大共享率限制。"
+
+#, fuzzy
+#~ msgid "Show a system tray icon"
+#~ msgstr "显示系统托盘图标"
+
+#, fuzzy
+#~ msgid "Show speed bar in tray icon"
+#~ msgstr "显示系统托盘图标"
+
+#, fuzzy
+#~ msgid "Download bandwidth (in kb/s):"
+#~ msgstr "可用下载带宽："
+
+#, fuzzy
+#~ msgid "Keep seeding after download has finished"
+#~ msgstr "下载完成后保持做种"
+
+#, fuzzy
+#~ msgid "Folder to store temporary files"
+#~ msgstr "保存种子文件信息的文件夹："
+
+#, fuzzy
+#~ msgid "Folder to store downloaded files"
+#~ msgstr "保存种子文件信息的文件夹："
+
+#, fuzzy
+#~ msgid "Folder to copy .torrent files to"
+#~ msgstr "复制种子文件到："
+
+#, fuzzy
+#~ msgid "Whether to use a custom IP to pass to the tracker"
+#~ msgstr "向 tracker 发送自定义 IP 地址或主机名"
+
+#, fuzzy
+#~ msgid "IP to pass to the tracker"
+#~ msgstr "对等点的 IP 地址"
+
+#, fuzzy
+#~ msgid "GUI update interval"
+#~ msgstr "界面更新间隔："
+
+#, fuzzy
+#~ msgid "DHT port"
+#~ msgstr "DHT：关闭"
+
+#, fuzzy
+#~ msgid "Number of upload slots"
+#~ msgstr "上传通道数："
+
+#, fuzzy
+#~ msgid "Algorithm to estimate the time when a torrent is finished"
+#~ msgstr "用于种子文件下载完成后迁移数据的目录。"
+
+#, fuzzy
+#~ msgid "Folder to move completed downloaded files to"
+#~ msgstr "将完成的下载移动到："
+
+#~ msgid "Maximum share ratio limit reached."
+#~ msgstr "已经达到最大共享率限制。"
+
+#~ msgid "(C) 2005 - 2008 Joris Guisson and Ivan Vasic"
+#~ msgstr "(C) 2005 - 2008 Joris Guisson 和 Ivan Vasic"
+
+#~ msgid ""
+#~ "Specified port (%1) is unavailable or in use by another application. "
+#~ "KTorrent is now using port %2."
+#~ msgstr ""
+#~ "指定的端口(%1)不可用，或者已经被其它应用程序使用。 KTorrent 现在使用端口 "
+#~ "%2。"
+
+#~ msgid "Resume KTorrent"
+#~ msgstr "恢复 KTorrent"
+
+#, fuzzy
+#~ msgid "Resume suspended torrents"
+#~ msgstr "续传已暂停的种子"
+
+#~ msgid "Creating Torrent"
+#~ msgstr "创建种子"
+
+#~ msgid "Creating %1..."
+#~ msgstr "正在创建 %1..."
+
+#~ msgid "Checking Data ..."
+#~ msgstr "正在检查数据..."
+
+#~ msgid "Error scanning data: %1"
+#~ msgstr "扫描数据出错：%1"
+
+#~ msgid "Scanning data of <b>%1</b> :"
+#~ msgstr "正在扫描 <b>%1</b> 的数据："
+
+#~ msgid "Scanning data of torrent:"
+#~ msgstr "扫描种子数据："
+
+#~ msgid "Chunks found:"
+#~ msgstr "找到的块："
+
+#~ msgid "Chunks failed:"
+#~ msgstr "失败的块："
+
+#~ msgid "Chunks not downloaded:"
+#~ msgstr "未下载的块："
+
+#~ msgid "Chunks downloaded:"
+#~ msgstr "已下载的块："
+
+#~ msgid "Invalid URL: "
+#~ msgstr "无效的 URL："
+
+#~ msgid "Normal priority:"
+#~ msgstr "普通优先级："
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Color to use for normal "
+#~ "priority files.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">用于普通优先级文件的颜"
+#~ "色。</p></body></html>"
+
+#~ msgid "Malformed URL."
+#~ msgstr "错误的 URL。"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Quit KTorrent</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'OpenSymbol'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">退出 KTorrent</p></"
+#~ "body></html>"
+
+#~ msgid "Quit"
+#~ msgstr "退出"
+
+#~ msgid "Free disk space:"
+#~ msgstr "空闲的磁盘空间："
+
+#~ msgid ""
+#~ "You will lose all data in these files, are you sure you want to do this ?"
+#~ msgstr "您将失去这些文件的全部数据。您确定要这样做？"
+
+#, fuzzy
+#~ msgid "Form"
+#~ msgstr "从："
+
+#~ msgid "Cannot expand file : %1"
+#~ msgstr "无法展开文件：%1"
+
+#~ msgid "Cannot add a tracker to a private torrent."
+#~ msgstr "不能将 tracker 增加到私有种子。"
+
+#~ msgid "Checking Data Integrity"
+#~ msgstr "正在检查数据完整性"
+
+#~ msgid "Cannot migrate %1 : %2"
+#~ msgstr "无法迁移 %1：%2"
+
+#~ msgid ""
+#~ "The torrent %1 was started with a previous version of KTorrent. To make "
+#~ "sure this torrent still works with this version of KTorrent, we will "
+#~ "migrate this torrent. You will be asked for a location to save the "
+#~ "torrent to. If you press cancel, we will select your home directory."
+#~ msgstr ""
+#~ "种子 %1 是用 KTorrent 的早期版本启动的。如果要确定 该种子在当前版本的 "
+#~ "KTorrent 上仍然能够工作，需要迁移这个种子。您需要提供一个存放这个种子的位"
+#~ "置。 如果您单击取消，将使用您的 home 目录。"
+
+#~ msgid "Select Folder to Save To"
+#~ msgstr "选择保存目的文件夹"
+
+#~ msgid "Error: "
+#~ msgstr "错误："
+
+#~ msgid "Apply"
+#~ msgstr "应用"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Instead of using a tree "
+#~ "of files to display the contents of a torrent, use a flat list of files.</"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+#~ "size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">使用平板列表而不是树型列"
+#~ "表方式显示一个种子文件的内容。</p></body></html>"
+
+#~ msgid "Use a list of files when displaying the files of a torrent"
+#~ msgstr "当显示一个种子的文件是使用文件列表"
+
+#, fuzzy
+#~ msgid "Torrent has no announce or nodes field."
+#~ msgstr "种子没有宣告或者结点字段"
+
+#~ msgid ""
+#~ "An error occurred while loading the torrent.\n"
+#~ "The torrent is probably corrupt or is not a torrent file."
+#~ msgstr ""
+#~ "装入种子出错。\n"
+#~ "种子文件可能已经损坏，或者根本就不是一个种子文件。"
+
+#~ msgid "Disk space reservation method:"
+#~ msgstr "磁盘空间预分配方法："
+
+#~ msgid "Basic"
+#~ msgstr "基本"
+
+#~ msgid "Filesystem Specific"
+#~ msgstr "文件系统特定"
+
+#~ msgid "There is a problem with the tracker: <br><b>%1</b>"
+#~ msgstr "Tracker 有个问题：<br><b>%1</b>"
+
+#~ msgid "Current Tracker"
+#~ msgstr "当前s Tracker"
+
+#~ msgid "Seeders:"
+#~ msgstr "种子来源："
+
+#~ msgid "Leechers:"
+#~ msgstr "吸血虫："
+
+#~ msgid "Next Update In:"
+#~ msgstr "下次更新于："
+
+#~ msgid "Available Trackers"
+#~ msgstr "可用 Tracker"
+
+#~ msgid "Tracker status:"
+#~ msgstr "Tracker 状态："
+
+#~ msgid "Next update in:"
+#~ msgstr "下次更新于："
+
+#~ msgid "Cannot remove torrent default tracker."
+#~ msgstr "无法删除种子的默认 tracker。"
+
+#~ msgid "You cannot add trackers to a private torrent"
+#~ msgstr "您不能将 trackers 增加到私有种子"
+
+#~ msgid "KTorrent Plasma Applet"
+#~ msgstr "KTorrent Plasma 小程序"
+
+#~ msgid "The media player allows you to play music and movies inside KTorrent"
+#~ msgstr "媒体播放器运行您在 KTorrent 内部播放音乐和电影"
+
+#~ msgid "Skip incomplete files"
+#~ msgstr "跳过未完成文件"
+
+#~ msgid "Groups"
+#~ msgstr "组"
+
+#~ msgid "Widget to manage torrent groups"
+#~ msgstr "管理种子分组的部件"
+
+#~ msgid "Feed %1"
+#~ msgstr "种子 %1"

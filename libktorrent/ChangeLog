@@ -1,0 +1,185 @@
+Changes in 1.3.1:
+- Add workaround for broken handling of btrfs subvolumes by solid (306825)
+- Fix crash when preallocating diskspace when a file is enabled during the download of a torrent (307178) 
+- Make sure stats get updated properly during data check (308707)
+- Bind peer sockets to preferred interface for outbound connections
+- Fix bug causing UDP connections not to get established on FreeBSD because FIONREAD returns the size of the data and the peer address (Review: 108076)
+
+Changes in 1.3:
+- Do not pass link local IPv6 addresses to ip parameter of tracker (305187)
+
+Changes in 1.3rc1:
+- Implement BEP 32, IPv6 DHT (295194)
+- Revamp DHT code and follow spec more closely on routing table
+- Revamp SingleFileCache, MultiFileCache and data preallocation
+- Webseeds now follow connection limits (184941)
+- Add new SignalCatcher class to handle UNIX signals (296835)
+- Make TimeEstimator return sortable values (298542)
+- Keep track of partitions files of torrents are on
+- Add methods to check if storage is mounted
+- Make sure all trackers are used of a magnet link (302997, 303269)
+- Fix warning message about locale being recreated
+- Fix crash in DHT code caused by infinite recursion (300974)
+
+Changes in 1.2.1:
+- Fix deadlock in webseeding code (295719)
+- Fix individual torrent download limit not working
+- Fix build on FreeBSD
+- Fix crash due to attempting to call pop_front on an empty list (299536)
+
+Changes in 1.2:
+- Fix large file preallocation when not using quick preallocation in some cases (293279)
+- Disable current open file checking, it causes performance issues in some situations
+- Don't use the gcrypt version macro in it's version check (294866)
+
+Changes in 1.2rc1:
+- Make it possible to check data on chunk ranges instead of the entire torrent
+- Move data file jobs are now done one after the other (212614)
+- Implement partial seeding extension (256263)
+- Add support for IPv6 traffic class field
+- Make sure a torrent is restarted when it was auto stopped and more files are selected for downloading (179945)
+- Emit finished signal when torrent is found completely downloaded in data check
+- Seeders and leechers shown in view is now the maximum of all trackers and not the sum
+- Do not add trackers with unsupported protocols (278352)
+- Improve SIGBUS handling, fixes a crash (276777)
+- Remove usage of several deprecated KDE3 networking classes
+- Remove obsolete functions of data check during upload
+- Simplify blocklist interface
+- Revamp networking code
+- Remove thread from DHT code
+- Prevent file descriptor exhaustion from happening (251120, 282873, 274544)
+- Do not count non piece data in upload speed calculation (283170)
+- Fix IPv6 address parsing bug
+- Improve performance of µTP code
+- Fix crash in DHT packet receive code (284627)
+- Fill ip parameter of tracker announce with current IPv6 address if not filled in by user in settings (267551)
+- Fix crash in PeerManager (287967)
+- Fix crash at exit when datachecker job is running (289153)
+- Fix crash due to bug in smaller then operator of net::Address (288444)
+- Fix crash due to race condition in logging initialization (286597)
+
+Changes in 1.1.3:
+- Fix bug causing UPnP not to work properly if there is a question mark in the controlurl
+- Fix crash in webseed code (281605)
+
+Changes in 1.1.2:
+- Fix bug causing time left calculation to return something when a torrent is paused (272182)
+- Improve performance of UTP delay window algorithm
+- Fix files not getting downloaded when they change from only seed to some other priority
+- Fix crash when cleaning up mse::StreamSocket (277076)
+
+Changes in 1.1.1:
+- Fix deadlock in utp::OutputQueue when packet sending fails
+- Fix bug causing scrape not to be done after first announce 
+- Fix crash in DHT code caused by invalid addresses (269657)
+- Fix crash in DHT code caused by unsynchronized access to a QSet (270127)
+- Fix bug causing running time to be wrong when pausing torrents (271521)
+
+Changes in 1.1:
+- Improve performance of chunk selection code when there are many chunks
+- Fix crash in peer authentication cleanup (266622)
+- Fix crash due to SIGBUS handler being overwritten by KDE's crash dialog system (266842)
+- Be more lenient towards torrents with wrong announce-list field (268145)
+- Fix root cause of SHA1HashGen crashes in 1.0 series (268162)
+
+Changes in 1.1rc1:
+- Fix bug in UPnP so that it works properly with D-Link DIR 635 routers
+- Fix crash due to manipulating timers in the wrong thread (261903)
+- Fix compiler warning in TimeEstimator (262618)
+- Fix crash due to cleaning up timer in the wrong thread (260712)
+- Fix crash due to not properly cleaning up Peers and everything related when switching to superseeding mode (261529)
+- Fix invalid read in utp timer cleanup code (263800)
+- Fix crashes at exit (264378, 256639)
+
+Changes in 1.1beta1:
+- Use UTF-8 as default codec in bt::Value::toString
+- Make sure that SIGBUS signals caused by failed mmapped IO are dealt with properly (241598)
+- Move UPnP library from ktorrent/libktupnp to libktorrent
+- Add support for superseeding (171661)
+- Add command line example ktcli showing how to use libktorrent
+- Add TransportProtocol field to Peer::Stats
+- Fix crash due to missing reset of Poll object in DHT listening thread (243603)
+- Ensure that libktorrent works properly with bindv6only flag on (238688)
+- Ensure that torrent names are not interpreted as directories (244418)
+- Fix crash when cleaning up PeerConnectors (245796)
+- Fix crash on exit when cleaning up UPnP requests
+- UPnPRouter now retrieves the external IP of the router
+- Fix bug causing error message not to show rich text (247680)
+- Use libgcrypt for RC4 implementation
+- Use smart pointers for mse::StreamSocket (246693)
+- Make sure that data checking fails if files cannot be opened when the maximum file limit is reached
+- Add methods to get the current upload and download rate limit
+- Fix deadlock in µTP code caused by interlocking mutexes
+- Make sure MoveDataFilesJob properly emits signals so ktorrent can show a progress dialog (255369)
+- Revamp PieceData management, fixes a crash (247984)
+- Add support for warning message parameter in tracker replies
+- Make sure connection setup slots are distributed fairly to avoid starvation
+- Use weak pointers in PeerConnector and Authenticate (257126)
+- When a webseed has 3 connection failures, wait 30 seconds and try again instead of not using it anymore (258210)
+- Fix crash in PeerConnector cleanup (258878)
+- Queue data checks so that they run one after the other (215711)
+- Revamp UTP code with smart pointers
+- Disable webseeds if they send data which does not match (261449)
+- Fix uninitialized value bug in UDP tracker
+
+Changes in 1.0.5:
+- Update PeerID client identifications
+- Backport fix for bug which causes some chunks not to get unmapped properly
+- Make sure UTPServer is running when setting up a connection with a UTPSocket (254334)
+- Increase maximum packet size to fix a bug causing peers to be dropped when they shouldn't (255264)
+- Simplify PeerConnector cleanup code
+- Fix bug causing file selecting to fail after a torrent was loaded from data (258138)
+- Fix crash due to not checking for 0 pointer in multimedia file check (258967)
+- Fix a bug with sequence number wrap around being handled badly in UTP
+- Make sure that UTP write notifiers are only accessed in µTP thread
+
+Changes in 1.0.4:
+- Fix race condition causing timers not to be removed in the µTP code, resulting in a crash (251117)
+- Fix deadlock in µTP code caused by keeping a mutex lock longer then necessary
+
+Changes in 1.0.3:
+- Fix crash in HTTPAnnounceJob due to abort call (244198)
+- Show KDE progress dialogs when moving files (244023)
+- Fix crash when µTP binding fails (244935)
+- Backport PeerConnector crash fixes (245796)
+- Decrease authentication timeout to 5 seconds
+- Fix crash due to double delete in µTP code
+- Don't throw error when log file cannot be opened, prevents crash (246757)
+- Fix bug causing wrong download running time to be saved when a torrent is running (247384)
+- Fix crash due to monitor not being notified of a chunk download being removed (246483)
+- Fix potential dangling pointer problem in µTP code
+- Fix bug causing timer to be started from wrong thread in µTP code
+- Fix floating point inaccuracy bug causing seeding to hit the max share ratio a little bit to soon
+- Use 2 digit precision when displaying byte sizes
+
+Changes in 1.0.2:
+- Fix subtle bug causing some connections to be dropped prematurely
+- Fix bug causing tracker replies with only IPv6 addresses to be misinterpreted as an invalid reply
+- Fix bug with sequence number wrapping around in µTP causing bad_alloc's (242042)
+- Fix deadlock in µTP code
+- Fix crash in DecompressFileJob (243243)
+
+Changes in 1.0.1:
+- Make sure that KT binds correctly on systems with net.ipv6.bindv6only set to 1 (238688)
+- Fix bug causing seeding of readonly files to fail with no free disk space errors (239023)
+- Fix crashes caused by ServerInterface::newConnection being called in µTP thread (240003, 239944)
+- Fix crash caused by uncaught exception when saving DHT table (240294)
+- Fix bug causing lots of diskspace activity (241339)
+- Fix bug causing imported bytes to be counted as downloaded bytes in tracker announces
+
+Changes in 1.0:
+- Fix crash at shutdown in when UTP is running (236741)
+- Remove some logging messages in UTP code
+- Log errors being thrown to better debug uncaught exception bugs
+
+Changes in 1.0rc1:
+- Add support for base32 magnet links
+- Update torrent status properly when torrent is in seeding complete state and a new file is selected for downloading (232278)
+- Fix crash in PeerConnector destruction (233775)
+- Make move on completion a per torrent feature
+- Make sure that during loading of the stats, they are not saved again
+- Fix crash caused by dangling pointer to PollPipe
+- Add method to calculate the average download speed since the last unchoke of a peer
+- Add doxygen api docs generation with cmake
+- Remove all KMessageBox's, the client application needs to handle these errors
+- Fix crash due to uncaught exception in UTP code
