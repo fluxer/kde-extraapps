@@ -1,0 +1,457 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&kmix;">
+  <!ENTITY package "kdemultimedia">
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kmix" lang="&language;">
+
+<bookinfo>
+<title>The &kmix; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Gaurav</firstname>
+<surname>Chaturvedi</surname>
+<address><email>gaurav.p.chaturvedi@gmail.com</email></address>
+</author>
+
+<othercredit role="developer">
+<firstname>Christian</firstname>
+<surname>Esken</surname>
+<affiliation><address><email>esken@kde.org</email></address></affiliation>
+<contrib>Developer</contrib>
+</othercredit>
+
+<othercredit role="developer">
+<firstname>Helio</firstname>
+<surname>Chissini de Castro</surname>
+<affiliation><address><email>helio@kde.org</email></address></affiliation>
+<contrib>Developer</contrib>
+</othercredit>
+
+
+<othercredit role="developer">
+<firstname>Brian</firstname>
+<surname>Hanson</surname>
+<affiliation><address><email>bhanson@hotmail.com</email></address></affiliation>
+<contrib>Developer</contrib>
+</othercredit>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<copyright>
+<year>1996</year><year>2005</year>
+<holder>Christian Esken &amp; &Matt.Johnston;</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2013-12-21</date>
+<releaseinfo>4.5 (&kde; 4.13)</releaseinfo>
+
+<abstract>
+<para>&kmix; is an application that allows you to change the volume of your sound card.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KMix</keyword>
+<keyword>kdemultimedia</keyword>
+<keyword>sound</keyword>
+<keyword>volume</keyword>
+<keyword>mixer</keyword>
+
+</keywordset>
+
+</bookinfo>
+<!-- FIXME
+http://kmix5.wordpress.com/2012/06/26/kmixs-top-secret-features-part-1-volume-presets/
+  -->
+<chapter id="introduction">
+<title>Introduction</title>
+
+<!--<para>&kmix; is &kde;'s soundcard mixer program. Though small, it is
+full-featured. The program should give controls for each of your
+soundcards.</para>-->
+
+<para>&kmix; supports several platforms and sound drivers.</para>
+
+<!--<itemizedlist>
+<listitem><para> The ALSA soundcard driver.</para></listitem>
+<listitem><para> All Open Sound System platforms. Explicitly tested are &Linux;, FreeBSD, NetBSD and BSDI.</para></listitem>
+<listitem><para> &Solaris; based machines.</para></listitem>
+<listitem><para> &HP-UX; based machines.</para></listitem>
+</itemizedlist>-->
+
+<para>If you have both ALSA and Open Sound System drivers installed, &kmix; will use the ALSA driver.</para>
+
+<para>
+<screenshot>
+  <screeninfo>Screenshot of &kmix;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Screenshot of &kmix;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+
+
+</chapter>
+
+<chapter id="Main_Window">
+<title>Main Window</title>
+
+<para>Overview of &kmix; Main Window</para>
+<screenshot>
+  <screeninfo>Screenshot of &kmix;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Screenshot of &kmix;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<sect1 id='File_Options'>
+<title>File Options</title>
+<screenshot>
+  <screeninfo>&kmix; File options</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-file.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>&kmix; File options</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Esc;</keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Hide Mixer Window</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Hide Mixer Window</action></para></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id='Settings'>
+<title>Settings</title>
+
+<screenshot>
+  <screeninfo>&kmix; Settings</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-options.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>&kmix; Settings</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Audio Setup</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Open <ulink url="help:/kcontrol/phonon">&phonon; &systemsettings; module</ulink></action> to configure the sound and video device preference and the backends used by &kde; multimedia API, &phonon;.</para></listitem>
+</varlistentry>
+</variablelist>
+
+
+<!-- Unavailable for standard PulseAudio configuration
+<sect2 id='Channels'>
+<title>Configure &kmix; Channels</title>
+<screenshot>
+  <screeninfo>&kmix; Channels</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-channels.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>&kmix; Channels</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+<para>Select the &kmix; channels you want to be used for output or input audio information.</para>
+</sect2>
+-->
+
+<sect2 id='Master_Channels'>
+<title>Select Master Channel</title>
+<screenshot>
+  <screeninfo>&kmix; Master Channel</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-master.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>&kmix; Master Channel</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+<para>Select your &kmix; master channel.</para>
+</sect2>
+
+<sect2 id='Configure'>
+<title>Configure &kmix;</title>
+<sect3 id="configure-general">
+  <title>
+    General configuration
+  </title>
+  <screenshot>
+  <screeninfo>General configuration of &kmix;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-configure-general.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>General configuration of &kmix;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+<para>Configure general &kmix; parameters.</para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Behavior</guimenu>
+<guimenuitem>Volume Feedback</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this box to enable audible feedback on volume change.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Behavior</guimenu>
+<guimenuitem>Volume Overdrive</guimenuitem>
+</menuchoice></term>
+<listitem><para>Check this box to allow volume to be more than recommended value (sometimes PulseAudio maximal volume exceeds the normal value). &kmix; restart is needed for this setting to take effect.</para>
+  <warning>
+    <para>
+      Uncheck this item if there are audible sound distortions at the maximal volume.
+    </para>
+  </warning>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Visual</guimenu>
+<guimenuitem>Show tickmarks</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this box to show tickmarks on controls.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Visual</guimenu>
+<guimenuitem>Show labels</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this box to show labels of controls.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Visual</guimenu>
+<guimenuitem>Show On Screen Display (OSD)</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this box to enable OSD show on hovering &kmix; tray widget.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Slider orientation</guimenu>
+<guimenuitem>Horizontal</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this radio button to orientate the control slider horizontally.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Slider orientation</guimenu>
+<guimenuitem>Vertical</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this radio button to orientate the control slider vertically.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Slider orientation (System tray volume control)</guimenu>
+<guimenuitem>Horizontal/Vertical</guimenuitem>
+</menuchoice></term>
+<listitem><para>Same as the previous two radio buttons but for the system tray volume control (the panel that is shown after &LMB; click on &kmix; tray icon).</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="configure-start">
+  <title>
+    Start configuration
+  </title>
+  <screenshot>
+  <screeninfo>Start configuration of &kmix;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-configure-start.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Start configuration of &kmix;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+<para>This page allows you to configure various &kmix; start parameters.</para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Startup</guimenu>
+<guimenuitem>Restore volumes on login</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this box to enable volume restoration on login.</action></para>
+  <warning>
+    <para>
+      Dynamic controls from PulseAudio and MPRIS2 will not be restored.
+    </para>
+  </warning>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Startup</guimenu>
+<guimenuitem>Autostart</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Check this box to enable &kmix; autostart with desktop environment.</action></para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="configure-sound-menu">
+  <title>
+    Sound menu configuration
+  </title>
+  <screenshot>
+  <screeninfo>Sound menu configuration of &kmix;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="kmix-configure-sound-menu.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase>Sound menu configuration of &kmix;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+<para>This page allows you to configure various &kmix; sound menu parameters.</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Dock in system tray</guilabel>
+</term>
+<listitem><para><action>Check this box to dock &kmix; in system tray.</action></para></listitem>
+</varlistentry>
+</variablelist>
+
+<para>
+  It is possible to select mixers that will be shown in the sound menu using the corresponding list on this page.
+</para>
+</sect3>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="advanced">
+<title>Advanced usage</title>
+<sect1>
+<title>Remote controlling and scripting via &DBus;</title>
+<para>
+You can control &kmix; via &DBus;. This is for advanced users who want to achieve special tasks, like muting the PC every day at 10 pm, or for any other scripting task.
+</para>
+
+<para>
+List all &kmix; related &DBus; methods and properties
+<programlisting>qdbus org.kde.kmix</programlisting>
+</para>
+
+<para>
+Getting volume level (0-100%):
+<programlisting>qdbus org.kde.kmix /Mixers/0/Master_0 org.freedesktop.DBus.Properties.Get org.kde.KMix.Control volume</programlisting>
+</para>
+
+<para>
+Setting volume level (0-100%):
+<programlisting>qdbus org.kde.kmix /Mixers/0/Master_0 org.freedesktop.DBus.Properties.Set org.kde.KMix.Control volume 70</programlisting>
+</para>
+
+</sect1>
+</chapter>
+
+<chapter id="credits">
+<title>Credits and License</title>
+
+<para>
+&kmix;
+</para>
+
+<para>Documentation copyright &copy; 2010 Gaurav Chaturvedi <email>gaurav.p.chaturvedi@gmail.com </email> </para>
+<para>Thanks to:</para>
+<para>&Matt.Johnston; &Matt.Johnston.mail; (copy and pasted a lot of things from his old &kmix; documentation) </para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+&underFDL;
+&underGPL;
+
+</chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<sect1 id="getting-Kmix">
+<title>How to obtain &kmix;</title>
+
+&install.intro.documentation;
+
+</sect1>
+
+<sect1 id="compilation">
+<title>Compilation and installation</title>
+
+&install.compile.documentation;
+
+</sect1>
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet:noai
+-->

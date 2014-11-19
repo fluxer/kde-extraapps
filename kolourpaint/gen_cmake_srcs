@@ -1,0 +1,7 @@
+#!/bin/bash
+# Recalculates the KolourPaint-specific part of CMakeLists.txt's "set(kolourpaint_SRCS"
+
+for f in `find -name \*.cpp | cut -c3- | sort`
+do
+	echo '${CMAKE_CURRENT_SOURCE_DIR}/'$f
+done

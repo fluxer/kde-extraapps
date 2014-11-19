@@ -1,0 +1,38 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="dragonplayer" version="4">
+<MenuBar>
+   <Menu name="file" noMerge="1"><text>&amp;Play</text>
+      <Action name="file_open"/>
+      <Separator/>
+      <Action name="play"/>
+      <Action name="stop"/>
+      <Separator/>
+      <Action name="prev_chapter"/>
+      <Action name="next_chapter"/>
+      <Separator/>
+      <Action name="file_quit"/>
+   </Menu>
+   <Menu name="settings" noMerge="1"><text>&amp;Settings</text>
+      <Action name="fullscreen"/>
+      <Action name="aspect_ratio_menu"/>
+      <Action name="subtitle_channels_menu"/>
+      <Action name="audio_channels_menu"/>
+      <Action name="toggle_dvd_menu"/>
+      <Separator/>
+      <Action name="video_settings"/>
+      <Separator/>
+      <Action name="options_configure_keybinding"/>
+      <Action name="options_configure_toolbars"/>
+      <Action name="options_show_menubar"/>
+      <Action name="unique"/>
+   </Menu>
+</MenuBar>
+
+<ToolBar name="mainToolBar"><text>Main Toolbar</text>
+   <Action name="play"/>
+   <Action name="position_slider"/>
+   <Action name="volume" />
+   <Action name="fullscreen"/>
+</ToolBar>
+
+</kpartgui>

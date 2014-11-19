@@ -1,0 +1,1091 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# A S Alam <aalam@users.sf.net>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-12-21 01:22+0000\n"
+"PO-Revision-Date: 2011-12-19 22:09+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.2\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ (A S Alam)"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aalam@users.sf.net"
+
+#: daemon/helpers/authorize/authorize.cpp:43
+#, kde-format
+msgctxt ""
+"Show a notification asking to authorize or deny access to this computer from "
+"Bluetooth. The %1 is the name of the bluetooth device"
+msgid "%1 is requesting access to this computer"
+msgstr "%1 ਇਸ ਕੰਪਿਊਟਰ ਲਈ ਵਰਤੋਂ ਦੀ ਮੰਗ ਕਰ ਰਿਹਾ ਹੈ"
+
+#: daemon/helpers/authorize/authorize.cpp:47
+msgctxt "Button to trust a bluetooth remote device and authorize it to connect"
+msgid "Trust and Authorize"
+msgstr "ਭਰੋਸਾ ਅਤੇ ਪਰਮਾਣਕਿਤਾ"
+
+#: daemon/helpers/authorize/authorize.cpp:48
+msgctxt "Button to authorize a bluetooth remote device to connect "
+msgid "Authorize Only"
+msgstr "ਕੇਵਲ ਪਰਮਾਣਿਤ"
+
+#: daemon/helpers/authorize/authorize.cpp:49
+msgctxt "Deny access to a remote bluetooth device"
+msgid "Deny"
+msgstr "ਪਾਬੰਦੀ"
+
+#: daemon/helpers/authorize/main.cpp:32
+#: daemon/helpers/confirmmodechange/main.cpp:31
+#: daemon/helpers/requestconfirmation/main.cpp:30
+#: daemon/helpers/requestpin/main.cpp:30
+msgid "KDE Bluetooth System"
+msgstr "KDE ਬਲਿਊਟੁੱਥ ਸਿਸਟਮ"
+
+#: daemon/helpers/confirmmodechange/confirmmodechange.cpp:41
+#, kde-format
+msgctxt ""
+"Showed in a notification when the Bluetooth mode is going to be changed (for "
+"example to flight mode), the %1 is the name of the mode"
+msgid "Change Bluetooth mode to '%1'?"
+msgstr "ਬਲਿਊਟੁੱਥ ਮੋਡ '%1' ਲਈ ਬਦਲਣਾ ਹੈ?"
+
+#: daemon/helpers/confirmmodechange/confirmmodechange.cpp:45
+msgctxt "Confirm the bluetooth mode change, shown in a notification button"
+msgid "Confirm"
+msgstr "ਪੁਸ਼ਟੀ"
+
+#: daemon/helpers/confirmmodechange/confirmmodechange.cpp:46
+msgctxt "Deny the bluetooth mdoe change, shown in a notification"
+msgid "Deny"
+msgstr "ਪਾਬੰਦੀ"
+
+#: daemon/helpers/requestconfirmation/requestconfirmation.cpp:39
+#, kde-format
+msgctxt ""
+"The text is shown in a notification to know if the PIN is correct, %1 is the "
+"remote bluetooth device and %2 is the pin"
+msgid "%1 is asking if the PIN is correct: %2"
+msgstr "%1 ਪੁੱਛ ਰਿਹਾ ਹੈ ਕਿ ਕੀ ਪਿੰਨ ਠੀਕ ਹੈ: %2"
+
+#: daemon/helpers/requestconfirmation/requestconfirmation.cpp:43
+msgctxt "Notification button to know if the pin is correct or not"
+msgid "PIN correct"
+msgstr "PIN ਠੀਕ ਹੈ"
+
+#: daemon/helpers/requestconfirmation/requestconfirmation.cpp:44
+msgctxt "Notification button to say that the PIN is wrong"
+msgid "PIN incorrect"
+msgstr "PIN ਗਲਤ ਹੈ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: daemon/helpers/requestpin/dialogWidget.ui:39
+msgid "PIN:"
+msgstr "ਪਿੰਨ:"
+
+#: daemon/helpers/requestpin/requestpin.cpp:45
+#, kde-format
+msgctxt ""
+"Shown in a notification to announce that a PIN is needed to accomplish a "
+"pair action, %1 is the name of the bluetooth device"
+msgid "PIN needed to pair with %1"
+msgstr "%1 ਨਾਲ ਪੇਅਰ ਕਰਨ ਲਈ ਪਿੰਨ ਦੀ ਲੋੜ ਹੈ"
+
+#: daemon/helpers/requestpin/requestpin.cpp:51
+msgctxt ""
+"Notification button which once clicked, a dialog to introduce the PIN will "
+"be shown"
+msgid "Introduce PIN"
+msgstr "ਪਿੰਨ ਪਛਾਣ"
+
+#: daemon/helpers/requestpin/requestpin.cpp:78
+#, kde-format
+msgctxt ""
+"Shown in a dialog which asks to introduce a PIN that will be used to pair a "
+"Bluetooth device, %1 is the name of the Bluetooth device"
+msgid ""
+"In order to pair this computer with %1, you have to enter a PIN. Please do "
+"it below."
+msgstr ""
+"ਇਹ ਕੰਪਿਊਟਰ ਨਾਲ %1 ਨੂੰ ਜੋੜਨ (ਪੇਅਰ ਕਰਨ) ਲਈ ਤੁਹਾਨੂੰ ਪਿੰਨ (PIN) ਦੇਣਾ ਪਵੇਗਾ। ਹੇਠਾਂ ਦਿਉ ਜੀ।"
+
+#: daemon/helpers/requestpin/requestpin.cpp:88
+msgctxt "Shown in the caption of a dialog where the user introduce the PIN"
+msgid "Introduce PIN"
+msgstr "ਪਿੰਨ ਪਛਾਣ"
+
+#: daemon/kded/BlueDevilDaemon.cpp:89 daemon/kded/BlueDevilDaemon.cpp:91
+msgid "Bluetooth Daemon"
+msgstr "ਬਲਿਊਟੁੱਥ ਡੈਮਨ"
+
+#: daemon/kded/BlueDevilDaemon.cpp:93 kio/obexftp/daemon/ObexFtpDaemon.cpp:67
+#: monolithic/main.cpp:29 sendfile/main.cpp:33 wizard/main.cpp:31
+msgid "(c) 2010, UFO Coders"
+msgstr "(c) 2010, UFO Coders"
+
+#: daemon/kded/BlueDevilDaemon.cpp:96 kio/obexftp/daemon/ObexFtpDaemon.cpp:70
+#: monolithic/main.cpp:31 sendfile/main.cpp:35 wizard/main.cpp:33
+msgid "Alejandro Fiestas Olivares"
+msgstr "Alejandro Fiestas Olivares"
+
+#: daemon/kded/BlueDevilDaemon.cpp:96 daemon/kded/BlueDevilDaemon.cpp:99
+#: kio/obexftp/daemon/ObexFtpDaemon.cpp:70 monolithic/main.cpp:31
+#: sendfile/main.cpp:35 wizard/main.cpp:33
+msgid "Maintainer"
+msgstr "ਪਰਬੰਧਕ"
+
+#: daemon/kded/BlueDevilDaemon.cpp:99
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: daemon/kded/bluezagent.cpp:192
+#, fuzzy
+#| msgid "Bluetooth Devices"
+msgctxt ""
+"User will see this as: Bluetooth device is asking if the pin is "
+"correct        It is mostly a fallback"
+msgid "Bluetooth device"
+msgstr "ਬਲਿਊਟੁੱਥ ਜੰਤਰ"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:119
+#, kde-format
+msgctxt ""
+"Show a notification asking to authorize or deny an incoming file transfer to "
+"this computer from a Bluetooth device."
+msgid "%1 is sending you the file %2"
+msgstr "%1 ਤੁਹਾਨੂੰ %2 ਫਾਇਲ ਭੇਜ ਰਿਹਾ ਹੈ"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:123
+msgctxt ""
+"Button to accept the incoming file transfer and download it in the default "
+"download directory"
+msgid "Accept"
+msgstr "ਮਨਜ਼ੂਰ"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:124
+msgctxt "Deny the incoming file transfer"
+msgid "Cancel"
+msgstr "ਰੱਦ ਕਰੋ"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:195
+msgid "Receiving file over Bluetooth"
+msgstr "ਬਲਿਊਟੁੱਥ ਉੱਤੇ ਫਾਇਲ ਭੇਜੀ ਜਾ ਰਹੀ ਹੈ"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:196
+#: sendfile/sendfilesjob.cpp:74 sendfile/sendfilesjob.cpp:177
+msgctxt "File transfer origin"
+msgid "From"
+msgstr "ਤੋਂ"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:198
+#: sendfile/sendfilesjob.cpp:74 sendfile/sendfilesjob.cpp:177
+msgctxt "File transfer destination"
+msgid "To"
+msgstr "ਵੱਲ"
+
+#: fileitemactionplugin/sendfileitemaction.cpp:62
+msgid "Send via Bluetooth"
+msgstr "ਬਲਿਊਟੁੱਥ ਰਾਹੀਂ ਭੇਜੋ"
+
+#: fileitemactionplugin/sendfileitemaction.cpp:81
+msgctxt "Find Bluetooth device"
+msgid "Find Device..."
+msgstr "...ਜੰਤਰ ਲੱਭੋ"
+
+#: fileitemactionplugin/sendfileitemaction.cpp:84
+msgctxt "Other Bluetooth device"
+msgid "Other..."
+msgstr "ਹੋਰ..."
+
+#: kcmodule/bluedeviladapters.cpp:51
+msgctxt "Radio widget to set if we want the adapter to be hidden"
+msgid "Hidden"
+msgstr "ਲੁਕਵਾਂ"
+
+#: kcmodule/bluedeviladapters.cpp:52
+msgctxt "Radio widget to set if we want the adapter to be always visible"
+msgid "Always visible"
+msgstr "ਹਮੇਸ਼ਾ ਵੇਖਾਉ"
+
+#: kcmodule/bluedeviladapters.cpp:53
+msgctxt "Radio widget to set if we want the adapter to be temporarily visible"
+msgid "Temporarily visible"
+msgstr "ਆਰਜ਼ੀ ਤੌਰ ਉੱਤੇ ਵੇਖਾਉ"
+
+#: kcmodule/bluedeviladapters.cpp:93
+#, kde-format
+msgctxt "Discover time for the adapter"
+msgid "1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "੧ ਮਿੰਟ"
+msgstr[1] "%1 ਮਿੰਟ"
+
+#: kcmodule/bluedeviladapters.cpp:99
+msgctxt "Name of the adapter"
+msgid "Name"
+msgstr "ਨਾਂ"
+
+#: kcmodule/bluedeviladapters.cpp:100
+msgctxt "Whether the adapter is powered or not"
+msgid "Powered"
+msgstr "ਪਾਵਰ"
+
+#: kcmodule/bluedeviladapters.cpp:101
+msgctxt "Whether the adapter is visible or not"
+msgid "Visibility"
+msgstr "ਦਿੱਖ"
+
+#: kcmodule/bluedeviladapters.cpp:104
+msgctxt "How long the adapter will be discoverable"
+msgid "Discover Time"
+msgstr "ਖੋਜ ਸਮਾਂ"
+
+#: kcmodule/bluedeviladapters.cpp:121 kcmodule/bluedeviladapters.cpp:207
+#, kde-format
+msgid "Default adapter: %1 (%2)"
+msgstr "ਡਿਫਾਲਟ ਐਡਪਟਰ: %1 (%2)"
+
+#: kcmodule/bluedeviladapters.cpp:123 kcmodule/bluedeviladapters.cpp:209
+#, kde-format
+msgid "Adapter: %1 (%2)"
+msgstr "ਐਡਪਟਰ: %1 (%2)"
+
+#: kcmodule/bluedeviladapters.cpp:205 kcmodule/bluedeviladapters.cpp:230
+#, kde-format
+msgid "1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "੧ ਮਿੰਟ"
+msgstr[1] "%1 ਮਿੰਟ"
+
+#: kcmodule/bluedeviladapters.cpp:242
+msgid "Bluetooth Adapters"
+msgstr "ਬਲਿਊਟੁੱਥ ਐਡਪਟਰ"
+
+#: kcmodule/bluedeviladapters.cpp:243
+msgid "Bluetooth Adapters Control Panel Module"
+msgstr "ਬਲਿਊਟੁੱਥ ਟਰਾਂਸਫਰ ਕੰਟਰੋਲ ਪੈਨਲ ਮੋਡੀਊਲ"
+
+#: kcmodule/bluedeviladapters.cpp:244 kcmodule/bluedevildevices.cpp:327
+#: kcmodule/bluedeviltransfer.cpp:54
+msgid "(c) 2010 Rafael Fernández López"
+msgstr "(c) 2010 Rafael Fernández López"
+
+#: kcmodule/bluedeviladapters.cpp:246 kcmodule/bluedevildevices.cpp:329
+#: kcmodule/bluedeviltransfer.cpp:56 monolithic/main.cpp:32
+msgid "Rafael Fernández López"
+msgstr "Rafael Fernández López"
+
+#: kcmodule/bluedeviladapters.cpp:246 kcmodule/bluedevildevices.cpp:329
+#: kcmodule/bluedeviltransfer.cpp:56
+msgid "Developer and Maintainer"
+msgstr "ਡਿਵੈਲਪਰ ਤੇ ਪਰਬੰਧਕ"
+
+#: kcmodule/bluedeviladapters.cpp:323
+msgid "No adapters found. Please connect one."
+msgstr "ਕੋਈ ਐਡਪਟਰ ਨਹੀਂ ਲੱਭਾ। ਪਹਿਲਾਂ ਇੱਕ ਕੁਨੈਕਟ ਕਰੋ।"
+
+#: kcmodule/bluedevildevices.cpp:320
+msgid "Enable KDE Bluetooth Integration"
+msgstr "KDE ਬਲਿਊਟੁੱਥ ਐਟੀਗਰੇਸ਼ਨ ਯੋਗ ਕਰੋ"
+
+#: kcmodule/bluedevildevices.cpp:325
+msgid "Bluetooth Devices"
+msgstr "ਬਲਿਊਟੁੱਥ ਜੰਤਰ"
+
+#: kcmodule/bluedevildevices.cpp:326
+msgid "Bluetooth Devices Control Panel Module"
+msgstr "ਬਲਿਊਟੁੱਥ ਜੰਤਰ ਕੰਟਰੋਲ ਪੈਨਲ ਮੋਡੀਊਲ"
+
+#: kcmodule/bluedevildevices.cpp:361
+msgctxt "Details of the device"
+msgid "Details"
+msgstr "ਵੇਰਵਾ"
+
+#: kcmodule/bluedevildevices.cpp:363
+msgctxt "Remove a device from the list of known devices"
+msgid "Remove"
+msgstr "ਹਟਾਓ"
+
+#: kcmodule/bluedevildevices.cpp:365 kcmodule/bluedevildevices.cpp:448
+#, fuzzy
+#| msgctxt "Action"
+#| msgid "Connect"
+msgid "Connect"
+msgstr "ਕੁਨੈਕਟ ਕਰੋ"
+
+#: kcmodule/bluedevildevices.cpp:367
+msgid "Disconnect"
+msgstr "ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
+
+#: kcmodule/bluedevildevices.cpp:369
+msgid "Add Device..."
+msgstr "...ਜੰਤਰ ਸ਼ਾਮਲ"
+
+#: kcmodule/bluedevildevices.cpp:446
+#, fuzzy
+#| msgctxt "Action"
+#| msgid "Connect"
+msgid "Re-connect"
+msgstr "ਕੁਨੈਕਟ ਕਰੋ"
+
+#: kcmodule/bluedevildevices.cpp:483
+#, kde-format
+msgid "Pick a new alias for %1"
+msgstr "%1 ਲਈ ਨਵਾਂ ਨਾਂ ਚੁਣੋ"
+
+#: kcmodule/bluedevildevices.cpp:507
+#, kde-format
+msgid ""
+"Are you sure that you want to remove device \"%1\" from the list of known "
+"devices?"
+msgstr "ਕੀ ਤੁਸੀਂ ਜਾਣ ਜੰਤਰਾਂ ਦੀ ਲਿਸਟ ਵਿੱਚੋਂ \"%1\" ਜੰਤਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#: kcmodule/bluedevildevices.cpp:508
+msgctxt "Title of window that asks for confirmation when removing a device"
+msgid "Device removal"
+msgstr "ਜੰਤਰ ਹਟਾਉਣਾ"
+
+#: kcmodule/bluedevildevices.cpp:577
+msgid "No remote devices have been added"
+msgstr "ਕੋਈ ਰਿਮੋਟ ਜੰਤਰ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤਾ ਗਿਆ"
+
+#: kcmodule/bluedevildevices.cpp:579
+msgid "Click here to add a remote device"
+msgstr "ਰਿਮੋਟ ਜੰਤਰ ਜੋੜਨ ਲਈ ਇੱਥੇ ਕਲਿੱਕ ਕਰੋ"
+
+#: kcmodule/bluedevildevices.cpp:618 kcmodule/bluedevildevices.cpp:660
+msgctxt "Type of device: could not be determined"
+msgid "Unknown"
+msgstr "ਅਣਜਾਣ"
+
+#: kcmodule/bluedevildevices.cpp:621
+msgctxt "This device is a Phone"
+msgid "Phone"
+msgstr "ਫੋਨ"
+
+#: kcmodule/bluedevildevices.cpp:624
+msgctxt "This device is a Modem"
+msgid "Modem"
+msgstr "ਮਾਡਮ"
+
+#: kcmodule/bluedevildevices.cpp:627
+msgctxt "This device is a Computer"
+msgid "Computer"
+msgstr "ਕੰਪਿਊਟਰ"
+
+#: kcmodule/bluedevildevices.cpp:630
+msgctxt "This device is of type Network"
+msgid "Network"
+msgstr "ਨੈੱਟਵਰਕ"
+
+#: kcmodule/bluedevildevices.cpp:633
+msgctxt "This device is a Headset"
+msgid "Headset"
+msgstr "ਹੈੱਡਸੈੱਟ"
+
+#: kcmodule/bluedevildevices.cpp:636
+msgctxt "This device are Headphones"
+msgid "Headphones"
+msgstr "ਹੈੱਡਫੋਨ"
+
+#: kcmodule/bluedevildevices.cpp:639
+msgctxt "This device is of type Audio"
+msgid "Audio"
+msgstr "ਆਡੀਓ"
+
+#: kcmodule/bluedevildevices.cpp:642
+msgctxt "This device is a Keyboard"
+msgid "Keyboard"
+msgstr "ਕੀਬੋਰਡ"
+
+#: kcmodule/bluedevildevices.cpp:645
+msgctxt "This device is a Mouse"
+msgid "Mouse"
+msgstr "ਮਾਊਸ"
+
+#: kcmodule/bluedevildevices.cpp:648
+msgctxt "This device is a Camera"
+msgid "Camera"
+msgstr "ਕੈਮਰਾ"
+
+#: kcmodule/bluedevildevices.cpp:651
+msgctxt "This device is a Printer"
+msgid "Printer"
+msgstr "ਪਰਿੰਟਰ"
+
+#: kcmodule/bluedevildevices.cpp:654
+msgctxt "This device is a Joypad"
+msgid "Joypad"
+msgstr "ਜਾਏਪੈਡ"
+
+#: kcmodule/bluedevildevices.cpp:657
+msgctxt "This device is a Tablet"
+msgid "Tablet"
+msgstr "ਟੈਬਲੇਟ"
+
+#: kcmodule/bluedevildevices.cpp:663
+#, kde-format
+msgctxt "Type of remote device (e.g. Camera, Mouse, Headset...)"
+msgid "Type: %1"
+msgstr "ਕਿਸਮ: %1"
+
+#: kcmodule/bluedeviltransfer.cpp:52
+msgid "Bluetooth Transfer"
+msgstr "ਬਲਿਊਟੁੱਥ ਟਰਾਂਸਫਰ"
+
+#: kcmodule/bluedeviltransfer.cpp:53
+msgid "Bluetooth Transfer Control Panel Module"
+msgstr "ਬਲਿਊਟੁੱਥ ਟਰਾਂਸਫਰ ਕੰਟਰੋਲ ਪੈਨਲ ਮੋਡੀਊਲ"
+
+#: kcmodule/bluedeviltransfer.cpp:74
+msgctxt "'Auto accept' option value"
+msgid "Never"
+msgstr "ਕਦੇ ਨਹੀਂ"
+
+#: kcmodule/bluedeviltransfer.cpp:75
+msgctxt "'Auto accept' option value"
+msgid "Trusted devices"
+msgstr "ਭਰੋਸੇਯੋਗ ਜੰਤਰ"
+
+#: kcmodule/bluedeviltransfer.cpp:76
+msgctxt "'Auto accept' option value"
+msgid "All devices"
+msgstr "ਸਭ ਜੰਤਰ"
+
+#: kcmodule/bluedeviltransfer.cpp:78
+msgctxt "'Require PIN' option value"
+msgid "Never"
+msgstr "ਕਦੇ ਨਹੀਂ"
+
+#: kcmodule/bluedeviltransfer.cpp:79
+msgctxt "'Require PIN' option value"
+msgid "Always"
+msgstr "ਹਮੇਸ਼ਾਂ"
+
+#: kcmodule/bluedeviltransfer.cpp:81
+msgctxt "'Permissions' option value"
+msgid "Read Only"
+msgstr "ਕੇਵਲ ਪੜ੍ਹਨ"
+
+#: kcmodule/bluedeviltransfer.cpp:82
+msgctxt "'Permissions' option value"
+msgid "Modify and Read"
+msgstr "ਸੋਧ ਤੇ ਪੜ੍ਹਨ"
+
+#: kcmodule/devicedetails.cpp:44
+msgctxt "Name of the device"
+msgid "Name"
+msgstr "ਨਾਂ"
+
+#: kcmodule/devicedetails.cpp:45
+msgctxt "Alias of the device"
+msgid "Alias"
+msgstr "ਏਲੀਆਸ"
+
+#: kcmodule/devicedetails.cpp:49
+msgctxt "Physical address of the device"
+msgid "Address"
+msgstr "ਐਡਰੈੱਸ"
+
+#: kcmodule/devicedetails.cpp:52
+msgctxt "Device is paired"
+msgid "Paired"
+msgstr "ਪੇਅਰ ਕੀਤੇ"
+
+#: kcmodule/devicedetails.cpp:54
+msgctxt "Device is blocked"
+msgid "Blocked"
+msgstr "ਪਾਬੰਦੀਸ਼ੁਦਾ"
+
+#: kcmodule/devicedetails.cpp:56
+msgctxt "Device is trusted"
+msgid "Trusted"
+msgstr "ਟਰੱਸਟ ਕੀਤੇ"
+
+#: kcmodule/systemcheck.cpp:156 kio/bluetooth/kiobluetooth.cpp:81
+#: kio/bluetooth/kiobluetooth.cpp:190
+msgid "No Bluetooth adapters have been found."
+msgstr "ਕੋਈ ਬਲਿਊਟੁੱਥ ਐਡਪਟਰ ਨਹੀਂ ਲੱਭਾ।"
+
+#: kcmodule/systemcheck.cpp:164 kcmodule/systemcheck.cpp:171
+#: kcmodule/systemcheck.cpp:184 kcmodule/systemcheck.cpp:191
+#: kcmodule/systemcheck.cpp:204 kcmodule/systemcheck.cpp:211
+msgctxt "Action to fix a problem"
+msgid "Fix it"
+msgstr "ਠੀਕ ਕਰੋ"
+
+#: kcmodule/systemcheck.cpp:175
+msgid "Your default Bluetooth adapter is not visible for remote devices."
+msgstr "ਰਿਮੋਟ ਜੰਤਰਾਂ ਲਈ ਤੁਹਾਡਾ ਡਿਫਾਲਟ ਬਲਿਊਟੁੱਥ ਐਡਪਟਰ ਨਹੀਂ ਲੱਭਾ।"
+
+#: kcmodule/systemcheck.cpp:195
+msgid "Interaction with Bluetooth system is not optimal."
+msgstr "ਬਲਿਊਟੁੱਥ ਸਿਸਟਮ ਨਾਲ ਜੋੜਨਾ (ਐਂਟੀਗਰੇਸ਼ਨ) ਚੋਣਵਾਂ ਨਹੀਂ ਹੈ।"
+
+#: kcmodule/systemcheck.cpp:215
+msgid "Bluetooth is not completely enabled."
+msgstr "ਬਲਿਊਟੁੱਥ ਪੂਰੀ ਤਰ੍ਹਾਂ ਚਾਲੂ ਨਹੀਂ ਹੈ।"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kcmodule/transfer.ui:17
+msgid "<b>Receiving</b>"
+msgstr "<b>ਪ੍ਰਾਪਤੀ</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: kcmodule/transfer.ui:36
+msgid "Save files in:"
+msgstr "ਫਾਇਲਾਂ ਸੰਭਾਲੋ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: kcmodule/transfer.ui:71
+msgid "Accept automatically:"
+msgstr "ਆਟੋਮੈਟਿਕ ਮਨਜ਼ੂਰ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kcmodule/transfer.ui:91
+msgid "Receive files:"
+msgstr "ਪ੍ਰਾਪਤ ਫਾਇਲਾਂ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: kcmodule/transfer.ui:107
+msgid "<b>Sharing</b>"
+msgstr "<b>ਸਾਂਝ</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: kcmodule/transfer.ui:120
+msgid "Share Files:"
+msgstr "ਫਾਇਲਾਂ ਸਾਂਝੀਆਂ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: kcmodule/transfer.ui:140
+msgid "Require PIN:"
+msgstr "PIN ਚਾਹੀਦਾ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kcmodule/transfer.ui:153
+msgid "Permissions:"
+msgstr "ਅਧਿਕਾਰ:"
+
+#. i18n: ectx: property (text), widget (KPushButton, sharedFiles)
+#: kcmodule/transfer.ui:184
+msgid "Shared Files"
+msgstr "ਸਾਂਝੀਆਂ ਕੀਤੀਆਂ ਫਾਇਲਾਂ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: kcmodule/transfer.ui:212
+#, fuzzy
+#| msgid "Shared Folder"
+msgid "Shared Folder:"
+msgstr "ਸਾਂਝਾ ਕੀਤਾ ਫੋਲਡਰ"
+
+#: kio/bluetooth/kiobluetooth.cpp:44
+msgid "kiobluetooth"
+msgstr "kiobluetooth"
+
+#: kio/bluetooth/kiobluetooth.cpp:68 monolithic/monolithic.cpp:140
+msgid "Send File"
+msgstr "ਫਾਇਲ ਭੇਜੋ"
+
+#: kio/bluetooth/kiobluetooth.cpp:73
+msgid "Browse Files"
+msgstr "ਫਾਇਲਾਂ ਦੀ ਝਲਕ ਵੇਖੋ"
+
+#: kio/bluetooth/kiobluetooth.cpp:104
+msgid "Retrieving services..."
+msgstr "...ਸਰਵਿਸਾਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਲਈ ਜਾ ਰਹੀ ਹੈ"
+
+#: kio/bluetooth/kiobluetooth.cpp:154
+msgid "Scanning for new devices..."
+msgstr "...ਨਵੇਂ ਜੰਤਰਾਂ ਵਾਸਤੇ ਸਕੈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: kio/obexftp/daemon/ObexFtpDaemon.cpp:63
+#: kio/obexftp/daemon/ObexFtpDaemon.cpp:65
+msgid "ObexFtp Daemon"
+msgstr "ObexFtp ਡੈਮਨ"
+
+#: kio/obexftp/kio_obexftp.cpp:40
+msgid "kioobexftp"
+msgstr "kioobexftp"
+
+#: kio/obexftp/kio_obexftp.cpp:97
+msgid "Retrieving information from remote device..."
+msgstr "...ਰਿਮੋਟ ਜੰਤਰ ਤੋਂ ਜਾਣਕਾਰੀ ਲਈ ਜਾ ਰਹੀ ਹੈ"
+
+#: kio/obexftp/kio_obexftp.cpp:176
+msgid "Connecting to the device"
+msgstr "ਜੰਤਰ ਨਾਲ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: monolithic/main.cpp:28
+msgid "Bluetooth"
+msgstr "ਬਲਿਊਟੁੱਥ"
+
+#: monolithic/main.cpp:32
+msgid "Developer"
+msgstr "ਡਿਵੈਲਪਰ"
+
+#: monolithic/monolithic.cpp:42
+#, fuzzy
+#| msgid "Browse devices"
+msgid "Browse device"
+msgstr "ਜੰਤਰ ਝਲਕ ਵੇਖੋ"
+
+#: monolithic/monolithic.cpp:43 sendfile/sendfilewizard.cpp:62
+msgid "Send Files"
+msgstr "ਫਾਇਲਾਂ ਭੇਜੋ"
+
+#: monolithic/monolithic.cpp:128
+msgid "Bluetooth is Off"
+msgstr "ਬਲਿਊਟੁੱਥ ਬੰਦ ਹੈ"
+
+#: monolithic/monolithic.cpp:134
+msgid "Turn Bluetooth On"
+msgstr "ਬਲਿਊਟੁੱਥ ਚਾਲੂ ਹੈ"
+
+#: monolithic/monolithic.cpp:144
+msgid "Browse devices"
+msgstr "ਜੰਤਰ ਝਲਕ ਵੇਖੋ"
+
+#: monolithic/monolithic.cpp:151
+msgid "Known Devices"
+msgstr "ਜਾਣੇ ਜੰਤਰ"
+
+#: monolithic/monolithic.cpp:161
+msgid "Add Device"
+msgstr "ਜੰਤਰ ਸ਼ਾਮਲ"
+
+#: monolithic/monolithic.cpp:165
+msgid "Configure Bluetooth"
+msgstr "ਬਲਿਊਟੁੱਲ ਸੰਰਚਨਾ"
+
+#: monolithic/monolithic.cpp:172
+msgid "Discoverable"
+msgstr "ਖੋਜ ਹੋਣ ਯੋਗ"
+
+#: monolithic/monolithic.cpp:178
+msgid "Turn Bluetooth Off"
+msgstr "ਬਲਿਊਟੁੱਥ ਬੰਦ ਕਰੋ"
+
+#: monolithic/monolithic.cpp:200
+#, kde-format
+msgctxt "Number of Bluetooth connected devices"
+msgid "%1 connected device"
+msgid_plural "%1 connected devices"
+msgstr[0] "%1 ਕੁਨੈਕਟ ਹੋਇਆ ਜੰਤਰ"
+msgstr[1] "%1 ਕੁਨੈਕਟ ਹੋਏ ਜੰਤਰ"
+
+#: monolithic/monolithic.cpp:359
+msgid "No adapters found"
+msgstr "ਕੋਈ ਐਡਪਟਰ ਨਹੀਂ ਲੱਭਾ"
+
+#: monolithic/monolithic.cpp:389
+msgctxt "When the bluetooth is enabled and powered"
+msgid "Bluetooth is On"
+msgstr "ਬਲਿਊਟੁੱਥ ਚਾਲੂ ਹੈ"
+
+#: monolithic/monolithic.cpp:391
+msgctxt "When the bluetooth is disabled or not powered"
+msgid "Bluetooth is Off"
+msgstr "ਬਲਿਊਟੁੱਥ ਬੰਦ ਹੈ"
+
+#: monolithic/monolithic.cpp:441
+#, fuzzy
+#| msgctxt "Action"
+#| msgid "Connect"
+msgctxt "Connect to a bluetooth device"
+msgid "Connect"
+msgstr "ਕੁਨੈਕਟ ਕਰੋ"
+
+#: sendfile/main.cpp:32
+msgid "Bluetooth Send File Helper"
+msgstr "ਬਲਿਊਟੁੱਥ ਫਾਇਲ ਭੇਜਣ ਸਹਾਇਕ"
+
+#: sendfile/main.cpp:42 sendfile/main.cpp:43
+msgid "Device UUID where the files will be sent"
+msgstr "ਜੰਤਰ UUID, ਜਿਸ ਨੂੰ ਫਾਇਲਾਂ ਭੇਜੀਆਂ ਜਾਣੀਆਂ ਹਨ"
+
+#: sendfile/main.cpp:44
+msgid "Files that will be sent"
+msgstr "ਫਾਇਲਾਂ, ਜੋ ਭੇਜੀਆਂ ਜਾਣਗੀਆਂ"
+
+#. i18n: ectx: property (text), widget (QLabel, connLabel)
+#: sendfile/pages/connecting.ui:17
+#, no-c-format, kde-format
+msgid "Connecting to: %1"
+msgstr "ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ: %1"
+
+#: sendfile/pages/connectingpage.cpp:41
+#, kde-format
+msgctxt "Connecting to a Bluetooth device"
+msgid "Connecting to %1..."
+msgstr "%1 ਨਾਲ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...."
+
+#. i18n: ectx: property (text), widget (QLabel, selectLbl)
+#: sendfile/pages/selectdeviceandfilespage.cpp:87
+#: sendfile/pages/selectfilediscover.ui:112
+msgid "Select one or more files:"
+msgstr "ਇੱਕ ਜਾਂ ਵੱਧ ਫਾਇਲਾਂ ਚੁਣੋ:"
+
+#: sendfile/pages/selectdeviceandfilespage.cpp:89
+#, kde-format
+msgid "Selected files: <b>%1</b>"
+msgstr "ਫਾਇਲਾਂ ਚੁਣੋ: <b>%1</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: sendfile/pages/selectfilediscover.ui:29
+msgid "Select a device from the list:"
+msgstr "ਲਿਸਟ ਵਿੱਚੋਂ ਇੱਕ ਜੰਤਰ ਚੁਣੋ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: sendfile/pages/selectfilediscover.ui:92
+msgid "Scanning"
+msgstr "ਸਕੈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: sendfile/sendfilesjob.cpp:74 sendfile/sendfilesjob.cpp:177
+msgid "Sending file over Bluetooth"
+msgstr "ਬਲਿਊਟੁੱਥ ਰਾਹੀਂ ਫਾਇਲਾਂ ਭੇਜੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
+
+#: sendfile/sendfilewizard.cpp:60
+msgid "Bluetooth Send Files"
+msgstr "ਬਲਿਊਟੁੱਥ ਫਾਇਲਾਂ ਭੇਜੋ"
+
+#. i18n: ectx: label, entry (enabled), group (General)
+#: settings/filereceiver.kcfg:21
+msgid "Enable or disable receiving files"
+msgstr "ਫਾਇਲਾਂ ਪ੍ਰਾਪਤ ਕਰਨਾ ਯੋਗ ਜਾਂ ਬੰਦ"
+
+#. i18n: ectx: label, entry (saveUrl), group (General)
+#: settings/filereceiver.kcfg:25
+msgid "Save received files to:"
+msgstr "ਪ੍ਰਾਪਤ ਕੀਤੀਆਂ ਫਾਇਲਾਂ ਸੰਭਾਲੋ:"
+
+#. i18n: ectx: label, entry (autoAccept), group (General)
+#: settings/filereceiver.kcfg:29
+msgid "Whether allow to modify shared files"
+msgstr "ਕੀ ਸਾਂਝੀਆਂ ਕੀਤੀਆਂ ਫਾਇਲਾਂ ਸੋਧਣਾ ਮਨਜ਼ੂਰ"
+
+#. i18n: ectx: label, entry (shareEnabled), group (General)
+#: settings/filereceiver.kcfg:34
+msgid "Enable or disable file sharing"
+msgstr "ਫਾਇਲ ਸ਼ੇਅਰਿੰਗ ਯੋਗ ਜਾਂ ਆਯੋਗ ਕਰੋ"
+
+#. i18n: ectx: label, entry (requirePin), group (General)
+#: settings/filereceiver.kcfg:38
+msgid "Whether require the PIN"
+msgstr "ਕੀ ਪਿੰਨ (PIN) ਚਾਹੀਦਾ ਹੈ"
+
+#. i18n: ectx: label, entry (allowWrite), group (General)
+#: settings/filereceiver.kcfg:42
+msgid "Allow external devices to modify the shared files"
+msgstr "ਬਾਹਰੀ ਜੰਤਰਾਂ ਨੂੰ ਸਾਂਝੀਆਂ ਕੀਤੀਆਂ ਫਾਇਲਾਂ ਸੋਧਣ ਦਿਉ"
+
+#. i18n: ectx: label, entry (enableGlobalBluetooth), group (General)
+#: settings/global.kcfg:10
+msgid "Enable or disable the global KDE Bluetooth integration"
+msgstr "ਗਲੋਬਲ KDE ਬਲਿਊਟੁੱਥ ਐਂਟੀਗਰੇਸ਼ਨ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰੋ"
+
+#: wizard/bluewizard.cpp:41
+msgid "Bluetooth Device Wizard"
+msgstr "ਬਲਿਊਟੁੱਥ ਜੰਤਰ ਸਹਾਇਕ"
+
+#: wizard/bluewizard.cpp:68
+msgctxt "Action to go to the next page on the wizard"
+msgid "Next"
+msgstr "ਅੱਗੇ"
+
+#: wizard/bluewizard.cpp:69
+msgctxt "Action to finish the wizard"
+msgid "Finish"
+msgstr "ਮੁਕੰਮਲ"
+
+#: wizard/main.cpp:30
+msgid "Bluetooth Wizard"
+msgstr "ਬਲਿਊਟੁੱਥ ਸਹਾਇਕ"
+
+#: wizard/main.cpp:39
+msgid "Device to pair with"
+msgstr "ਜੰਤਰ ਨਾਲ ਪੇਅਰ ਕਰੋ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: wizard/pages/discover.ui:63
+msgid "Scanning..."
+msgstr "...ਸਕੈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: wizard/pages/discover.ui:83
+msgid "Manual PIN:"
+msgstr "ਖੁਦ ਦਿੱਤਾ PIN:"
+
+#. i18n: ectx: property (inputMask), widget (QLineEdit, pinText)
+#: wizard/pages/discover.ui:118
+msgid "999999999; "
+msgstr "999999999; "
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pinText)
+#: wizard/pages/discover.ui:124
+msgid "0000"
+msgstr "0000"
+
+#: wizard/pages/discoverpage.cpp:39
+msgid "Select a device"
+msgstr "ਜੰਤਰ ਚੁਣੋ"
+
+#: wizard/pages/fail.cpp:46
+msgctxt ""
+"Button offered when the wizard fail. This button will restart the wizard"
+msgid "Restart the wizard"
+msgstr "ਸਹਾਇਕ ਮੁੜ-ਚਾਲੂ ਕਰੋ"
+
+#: wizard/pages/fail.cpp:50
+msgctxt "Button that closes the wizard"
+msgid "Close"
+msgstr "ਬੰਦ ਕਰੋ"
+
+#: wizard/pages/fail.cpp:61
+msgctxt "This string is shown when the wizard fail"
+msgid "The setup of the device has failed"
+msgstr "ਜੰਤਰ ਲਈ ਸੈਟਅੱਪ ਫੇਲ੍ਹ ਹੋਇਆ"
+
+#. i18n: ectx: property (text), widget (QLabel, failLbl)
+#: wizard/pages/fail.ui:35
+#, no-c-format, kde-format
+msgid "The setup of %1 has failed"
+msgstr "%1 ਲਈ ਸੈਟਅੱਪ ਫੇਲ੍ਹ ਹੋਇਆ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: wizard/pages/keyboardpairing.ui:108
+msgid ""
+"Please introduce the PIN in your keyboard when it appears and press Enter"
+msgstr "ਜਦੋਂ ਵੀ ਪਿੰਨ ਵੇਖਾਈ ਦੇਵੇ ਤਾਂ ਉਸ ਨੂੰ ਆਪਣੇ ਕੀਬੋਰਡ ਉਤੇ ਦਿਉ ਅਤੇ ਐਂਟਰ ਦੱਬੋ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: wizard/pages/legacypairing.ui:108 wizard/pages/ssppairing.cpp:98
+msgid "Please introduce the PIN in your device when it appears"
+msgstr "ਜਦੋਂ ਵੀ ਪਿੰਨ (PIN) ਵੇਖਾਈ ਦੇਵੇ ਤਾਂ ਆਪਣੇ ਜੰਤਰ ਵਿੱਚ ਇਹ ਦਿਉ"
+
+#: wizard/pages/legacypairingdatabase.cpp:48 wizard/pages/ssppairing.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "Connecting to a Bluetooth device"
+#| msgid "Connecting to %1..."
+msgid "Connecting to %1..."
+msgstr "%1 ਨਾਲ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...."
+
+#. i18n: ectx: property (text), widget (QLabel, connecting)
+#: wizard/pages/nopairing.ui:51
+#, fuzzy
+#| msgid "Connecting to: %1"
+msgid "Connecting to:"
+msgstr "ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ: %1"
+
+#: wizard/pages/ssppairing.cpp:75
+msgid "Matches"
+msgstr "ਮੇਲ"
+
+#: wizard/pages/ssppairing.cpp:77
+msgid "Does not match"
+msgstr "ਨਹੀਂ ਮਿਲਦਾ"
+
+#: wizard/pages/ssppairing.cpp:90
+#, kde-format
+msgid ""
+"Please, confirm that the PIN displayed on \"%1\" matches the wizard one."
+msgstr "ਯਕੀਨੀ ਬਣਾਉ ਕਿ \"%1\" ਉੱਤੇ ਵੇਖਾਇਆ PIN ਸਹਾਇਕ ਨਾਲ ਮਿਲਦਾ ਹੈ।"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy

@@ -1,0 +1,918 @@
+# Lithuanian translations for l package.
+# Copyright (C) 2010 This_file_is_part_of_KDE
+# This file is distributed under the same license as the l package.
+#
+# Andrius Štikonas <stikonas@gmail.com>, 2010.
+# Donatas G. <dgvirtual@akl.lt>, 2010.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: bluedevil\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-12-21 01:22+0000\n"
+"PO-Revision-Date: 2011-10-31 15:26+0000\n"
+"Last-Translator: Liudas Ališauskas <liudas.alisauskas@gmail.com>\n"
+"Language-Team: Lithuanian <kde-i18n-doc@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.2\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrius Štikonas, Liudas Ališauskas"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stikonas@gmail.com, liudas@akmc.lt"
+
+#: daemon/helpers/authorize/authorize.cpp:43
+#, kde-format
+msgctxt ""
+"Show a notification asking to authorize or deny access to this computer from "
+"Bluetooth. The %1 is the name of the bluetooth device"
+msgid "%1 is requesting access to this computer"
+msgstr "%1: prašo prieigos prie šio kompiuterio"
+
+#: daemon/helpers/authorize/authorize.cpp:47
+msgctxt "Button to trust a bluetooth remote device and authorize it to connect"
+msgid "Trust and Authorize"
+msgstr "Pasitikėti ir autorizuoti"
+
+#: daemon/helpers/authorize/authorize.cpp:48
+msgctxt "Button to authorize a bluetooth remote device to connect "
+msgid "Authorize Only"
+msgstr "Tik autorizuoti"
+
+#: daemon/helpers/authorize/authorize.cpp:49
+msgctxt "Deny access to a remote bluetooth device"
+msgid "Deny"
+msgstr "Atmesti"
+
+#: daemon/helpers/authorize/main.cpp:32
+#: daemon/helpers/confirmmodechange/main.cpp:31
+#: daemon/helpers/requestconfirmation/main.cpp:30
+#: daemon/helpers/requestpin/main.cpp:30
+msgid "KDE Bluetooth System"
+msgstr "KDE Bluetooth sistema"
+
+#: daemon/helpers/confirmmodechange/confirmmodechange.cpp:41
+#, kde-format
+msgctxt ""
+"Showed in a notification when the Bluetooth mode is going to be changed (for "
+"example to flight mode), the %1 is the name of the mode"
+msgid "Change Bluetooth mode to '%1'?"
+msgstr "Pakeisti Bluetooth veikseną į „%1“?"
+
+#: daemon/helpers/confirmmodechange/confirmmodechange.cpp:45
+msgctxt "Confirm the bluetooth mode change, shown in a notification button"
+msgid "Confirm"
+msgstr "Patvirtinti"
+
+#: daemon/helpers/confirmmodechange/confirmmodechange.cpp:46
+msgctxt "Deny the bluetooth mdoe change, shown in a notification"
+msgid "Deny"
+msgstr "Atmesti"
+
+#: daemon/helpers/requestconfirmation/requestconfirmation.cpp:39
+#, kde-format
+msgctxt ""
+"The text is shown in a notification to know if the PIN is correct, %1 is the "
+"remote bluetooth device and %2 is the pin"
+msgid "%1 is asking if the PIN is correct: %2"
+msgstr "%1 klausia, ar PIN yra teisingas: %2"
+
+#: daemon/helpers/requestconfirmation/requestconfirmation.cpp:43
+msgctxt "Notification button to know if the pin is correct or not"
+msgid "PIN correct"
+msgstr "PIN teisingas"
+
+#: daemon/helpers/requestconfirmation/requestconfirmation.cpp:44
+msgctxt "Notification button to say that the PIN is wrong"
+msgid "PIN incorrect"
+msgstr "PIN neteisingas"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: daemon/helpers/requestpin/dialogWidget.ui:39
+msgid "PIN:"
+msgstr "PIN:"
+
+#: daemon/helpers/requestpin/requestpin.cpp:45
+#, kde-format
+msgctxt ""
+"Shown in a notification to announce that a PIN is needed to accomplish a "
+"pair action, %1 is the name of the bluetooth device"
+msgid "PIN needed to pair with %1"
+msgstr "PIN, kuris reikalingas poravimui su %1"
+
+#: daemon/helpers/requestpin/requestpin.cpp:51
+msgctxt ""
+"Notification button which once clicked, a dialog to introduce the PIN will "
+"be shown"
+msgid "Introduce PIN"
+msgstr "Įveskite PIN"
+
+#: daemon/helpers/requestpin/requestpin.cpp:78
+#, kde-format
+msgctxt ""
+"Shown in a dialog which asks to introduce a PIN that will be used to pair a "
+"Bluetooth device, %1 is the name of the Bluetooth device"
+msgid ""
+"In order to pair this computer with %1, you have to enter a PIN. Please do "
+"it below."
+msgstr ""
+"Norėdami suporuoti šį kompiuterį su %1 turite įvesti PIN. Padarykite tai "
+"žemiau."
+
+#: daemon/helpers/requestpin/requestpin.cpp:88
+msgctxt "Shown in the caption of a dialog where the user introduce the PIN"
+msgid "Introduce PIN"
+msgstr "Įveskite PIN"
+
+#: daemon/kded/BlueDevilDaemon.cpp:89 daemon/kded/BlueDevilDaemon.cpp:91
+msgid "Bluetooth Daemon"
+msgstr "Bluetooth tarnyba"
+
+#: daemon/kded/BlueDevilDaemon.cpp:93 kio/obexftp/daemon/ObexFtpDaemon.cpp:67
+#: monolithic/main.cpp:29 sendfile/main.cpp:33 wizard/main.cpp:31
+msgid "(c) 2010, UFO Coders"
+msgstr "(c) 2010, UFO programuotojai"
+
+#: daemon/kded/BlueDevilDaemon.cpp:96 kio/obexftp/daemon/ObexFtpDaemon.cpp:70
+#: monolithic/main.cpp:31 sendfile/main.cpp:35 wizard/main.cpp:33
+msgid "Alejandro Fiestas Olivares"
+msgstr "Alejandro Fiestas Olivares"
+
+#: daemon/kded/BlueDevilDaemon.cpp:96 daemon/kded/BlueDevilDaemon.cpp:99
+#: kio/obexftp/daemon/ObexFtpDaemon.cpp:70 monolithic/main.cpp:31
+#: sendfile/main.cpp:35 wizard/main.cpp:33
+msgid "Maintainer"
+msgstr "Prižiūrėtojas"
+
+#: daemon/kded/BlueDevilDaemon.cpp:99
+msgid "Eduardo Robles Elvira"
+msgstr "Eduardo Robles Elvira"
+
+#: daemon/kded/bluezagent.cpp:192
+#, fuzzy
+#| msgid "Bluetooth Devices"
+msgctxt ""
+"User will see this as: Bluetooth device is asking if the pin is "
+"correct        It is mostly a fallback"
+msgid "Bluetooth device"
+msgstr "Bluetooth įrenginiai"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:119
+#, kde-format
+msgctxt ""
+"Show a notification asking to authorize or deny an incoming file transfer to "
+"this computer from a Bluetooth device."
+msgid "%1 is sending you the file %2"
+msgstr "%1 siunčia jums failą %2"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:123
+msgctxt ""
+"Button to accept the incoming file transfer and download it in the default "
+"download directory"
+msgid "Accept"
+msgstr "Priimti"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:124
+msgctxt "Deny the incoming file transfer"
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:195
+msgid "Receiving file over Bluetooth"
+msgstr "Gaunami failai per Bluetooth"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:196
+#: sendfile/sendfilesjob.cpp:74 sendfile/sendfilesjob.cpp:177
+msgctxt "File transfer origin"
+msgid "From"
+msgstr "Iš"
+
+#: daemon/kded/filereceiver/receivefilejob.cpp:198
+#: sendfile/sendfilesjob.cpp:74 sendfile/sendfilesjob.cpp:177
+msgctxt "File transfer destination"
+msgid "To"
+msgstr "Į"
+
+#: fileitemactionplugin/sendfileitemaction.cpp:62
+msgid "Send via Bluetooth"
+msgstr "Išsiųsti per Bluetooth"
+
+#: fileitemactionplugin/sendfileitemaction.cpp:81
+msgctxt "Find Bluetooth device"
+msgid "Find Device..."
+msgstr "Ieškoti įrenginių..."
+
+#: fileitemactionplugin/sendfileitemaction.cpp:84
+msgctxt "Other Bluetooth device"
+msgid "Other..."
+msgstr "Kita..."
+
+#: kcmodule/bluedeviladapters.cpp:51
+msgctxt "Radio widget to set if we want the adapter to be hidden"
+msgid "Hidden"
+msgstr "Paslėptas"
+
+#: kcmodule/bluedeviladapters.cpp:52
+msgctxt "Radio widget to set if we want the adapter to be always visible"
+msgid "Always visible"
+msgstr "Visuomet matomas"
+
+#: kcmodule/bluedeviladapters.cpp:53
+msgctxt "Radio widget to set if we want the adapter to be temporarily visible"
+msgid "Temporarily visible"
+msgstr "Laikinai matomas"
+
+#: kcmodule/bluedeviladapters.cpp:93
+#, kde-format
+msgctxt "Discover time for the adapter"
+msgid "1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minutė"
+msgstr[1] "%1 minutės"
+msgstr[2] "%1 minučių"
+msgstr[3] "%1 minutė"
+
+#: kcmodule/bluedeviladapters.cpp:99
+msgctxt "Name of the adapter"
+msgid "Name"
+msgstr "Vardas"
+
+#: kcmodule/bluedeviladapters.cpp:100
+msgctxt "Whether the adapter is powered or not"
+msgid "Powered"
+msgstr "Įgalintas"
+
+#: kcmodule/bluedeviladapters.cpp:101
+msgctxt "Whether the adapter is visible or not"
+msgid "Visibility"
+msgstr "Matomumas"
+
+#: kcmodule/bluedeviladapters.cpp:104
+msgctxt "How long the adapter will be discoverable"
+msgid "Discover Time"
+msgstr "Aptikimo laikas"
+
+#: kcmodule/bluedeviladapters.cpp:121 kcmodule/bluedeviladapters.cpp:207
+#, kde-format
+msgid "Default adapter: %1 (%2)"
+msgstr "Numatytasis adapteris: %1 (%2)"
+
+#: kcmodule/bluedeviladapters.cpp:123 kcmodule/bluedeviladapters.cpp:209
+#, kde-format
+msgid "Adapter: %1 (%2)"
+msgstr "Adapteris: %1 (%2)"
+
+#: kcmodule/bluedeviladapters.cpp:205 kcmodule/bluedeviladapters.cpp:230
+#, kde-format
+msgid "1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minutė"
+msgstr[1] "%1 minutės"
+msgstr[2] "%1 minučių"
+msgstr[3] "%1 minutė"
+
+#: kcmodule/bluedeviladapters.cpp:242
+msgid "Bluetooth Adapters"
+msgstr "Bluetooth adapteris"
+
+#: kcmodule/bluedeviladapters.cpp:243
+msgid "Bluetooth Adapters Control Panel Module"
+msgstr "Bluetooth adapterio valdymo pulto modulis"
+
+#: kcmodule/bluedeviladapters.cpp:244 kcmodule/bluedevildevices.cpp:327
+#: kcmodule/bluedeviltransfer.cpp:54
+msgid "(c) 2010 Rafael Fernández López"
+msgstr "(c) 2010 Rafael Fernández López"
+
+#: kcmodule/bluedeviladapters.cpp:246 kcmodule/bluedevildevices.cpp:329
+#: kcmodule/bluedeviltransfer.cpp:56 monolithic/main.cpp:32
+msgid "Rafael Fernández López"
+msgstr "Rafael Fernández López"
+
+#: kcmodule/bluedeviladapters.cpp:246 kcmodule/bluedevildevices.cpp:329
+#: kcmodule/bluedeviltransfer.cpp:56
+msgid "Developer and Maintainer"
+msgstr "Programuotojas ir palaikytojas"
+
+#: kcmodule/bluedeviladapters.cpp:323
+msgid "No adapters found. Please connect one."
+msgstr "Adapterio rasti nepavyko. Prašome prijungti."
+
+#: kcmodule/bluedevildevices.cpp:320
+msgid "Enable KDE Bluetooth Integration"
+msgstr "Įgalinti KDE Bluetooth integravimą"
+
+#: kcmodule/bluedevildevices.cpp:325
+msgid "Bluetooth Devices"
+msgstr "Bluetooth įrenginiai"
+
+#: kcmodule/bluedevildevices.cpp:326
+msgid "Bluetooth Devices Control Panel Module"
+msgstr "Bluetooth įrenginių valdymo pulto modulis"
+
+#: kcmodule/bluedevildevices.cpp:361
+msgctxt "Details of the device"
+msgid "Details"
+msgstr "Išsamiau"
+
+#: kcmodule/bluedevildevices.cpp:363
+msgctxt "Remove a device from the list of known devices"
+msgid "Remove"
+msgstr "Pašalinti"
+
+#: kcmodule/bluedevildevices.cpp:365 kcmodule/bluedevildevices.cpp:448
+#, fuzzy
+#| msgctxt "Action"
+#| msgid "Connect"
+msgid "Connect"
+msgstr "Prisijungti"
+
+#: kcmodule/bluedevildevices.cpp:367
+msgid "Disconnect"
+msgstr "Atsijungti"
+
+#: kcmodule/bluedevildevices.cpp:369
+msgid "Add Device..."
+msgstr "Pridėti įrenginį..."
+
+#: kcmodule/bluedevildevices.cpp:446
+#, fuzzy
+#| msgctxt "Action"
+#| msgid "Connect"
+msgid "Re-connect"
+msgstr "Prisijungti"
+
+#: kcmodule/bluedevildevices.cpp:483
+#, kde-format
+msgid "Pick a new alias for %1"
+msgstr "Parinkite naują slapyvardį %1"
+
+#: kcmodule/bluedevildevices.cpp:507
+#, kde-format
+msgid ""
+"Are you sure that you want to remove device \"%1\" from the list of known "
+"devices?"
+msgstr "Ar tikrai norite pašalinti įrenginį „%1“ iš žinomų įrenginių sąrašo?"
+
+#: kcmodule/bluedevildevices.cpp:508
+msgctxt "Title of window that asks for confirmation when removing a device"
+msgid "Device removal"
+msgstr "Įrenginio šalinimas"
+
+#: kcmodule/bluedevildevices.cpp:577
+msgid "No remote devices have been added"
+msgstr "Nepridėta jokių išorinių įrenginių"
+
+#: kcmodule/bluedevildevices.cpp:579
+msgid "Click here to add a remote device"
+msgstr "Spragtelėkite čia norėdami pridėti įrenginį"
+
+#: kcmodule/bluedevildevices.cpp:618 kcmodule/bluedevildevices.cpp:660
+msgctxt "Type of device: could not be determined"
+msgid "Unknown"
+msgstr "Nežinomas"
+
+#: kcmodule/bluedevildevices.cpp:621
+msgctxt "This device is a Phone"
+msgid "Phone"
+msgstr "Telefonas"
+
+#: kcmodule/bluedevildevices.cpp:624
+msgctxt "This device is a Modem"
+msgid "Modem"
+msgstr "Modemas"
+
+#: kcmodule/bluedevildevices.cpp:627
+msgctxt "This device is a Computer"
+msgid "Computer"
+msgstr "Kompiuteris"
+
+#: kcmodule/bluedevildevices.cpp:630
+msgctxt "This device is of type Network"
+msgid "Network"
+msgstr "Tinklas"
+
+#: kcmodule/bluedevildevices.cpp:633
+msgctxt "This device is a Headset"
+msgid "Headset"
+msgstr "Ausinės"
+
+#: kcmodule/bluedevildevices.cpp:636
+msgctxt "This device are Headphones"
+msgid "Headphones"
+msgstr "Ausinės su mikrofonu"
+
+#: kcmodule/bluedevildevices.cpp:639
+msgctxt "This device is of type Audio"
+msgid "Audio"
+msgstr "Audio"
+
+#: kcmodule/bluedevildevices.cpp:642
+msgctxt "This device is a Keyboard"
+msgid "Keyboard"
+msgstr "Klaviatūra"
+
+#: kcmodule/bluedevildevices.cpp:645
+msgctxt "This device is a Mouse"
+msgid "Mouse"
+msgstr "Pelė"
+
+#: kcmodule/bluedevildevices.cpp:648
+msgctxt "This device is a Camera"
+msgid "Camera"
+msgstr "Kamera"
+
+#: kcmodule/bluedevildevices.cpp:651
+msgctxt "This device is a Printer"
+msgid "Printer"
+msgstr "Spausdintuvas"
+
+#: kcmodule/bluedevildevices.cpp:654
+msgctxt "This device is a Joypad"
+msgid "Joypad"
+msgstr "Žaidimų pultas"
+
+#: kcmodule/bluedevildevices.cpp:657
+msgctxt "This device is a Tablet"
+msgid "Tablet"
+msgstr "Bloknotas"
+
+#: kcmodule/bluedevildevices.cpp:663
+#, kde-format
+msgctxt "Type of remote device (e.g. Camera, Mouse, Headset...)"
+msgid "Type: %1"
+msgstr "Tipas: %1"
+
+#: kcmodule/bluedeviltransfer.cpp:52
+msgid "Bluetooth Transfer"
+msgstr "Bluetooth failų persiuntimas"
+
+#: kcmodule/bluedeviltransfer.cpp:53
+msgid "Bluetooth Transfer Control Panel Module"
+msgstr "Bluetooth failų persiuntimo valdymo pulto modulis"
+
+#: kcmodule/bluedeviltransfer.cpp:74
+msgctxt "'Auto accept' option value"
+msgid "Never"
+msgstr "Niekada"
+
+#: kcmodule/bluedeviltransfer.cpp:75
+msgctxt "'Auto accept' option value"
+msgid "Trusted devices"
+msgstr "Patikimi įrenginiai"
+
+#: kcmodule/bluedeviltransfer.cpp:76
+msgctxt "'Auto accept' option value"
+msgid "All devices"
+msgstr "Visi įrenginiai"
+
+#: kcmodule/bluedeviltransfer.cpp:78
+msgctxt "'Require PIN' option value"
+msgid "Never"
+msgstr "Niekada"
+
+#: kcmodule/bluedeviltransfer.cpp:79
+msgctxt "'Require PIN' option value"
+msgid "Always"
+msgstr "Visada"
+
+#: kcmodule/bluedeviltransfer.cpp:81
+msgctxt "'Permissions' option value"
+msgid "Read Only"
+msgstr "Tik skaityti"
+
+#: kcmodule/bluedeviltransfer.cpp:82
+msgctxt "'Permissions' option value"
+msgid "Modify and Read"
+msgstr "Skaityti ir rašyti"
+
+#: kcmodule/devicedetails.cpp:44
+msgctxt "Name of the device"
+msgid "Name"
+msgstr "Vardas"
+
+#: kcmodule/devicedetails.cpp:45
+msgctxt "Alias of the device"
+msgid "Alias"
+msgstr "Alternatyvusis vardas"
+
+#: kcmodule/devicedetails.cpp:49
+msgctxt "Physical address of the device"
+msgid "Address"
+msgstr "Adresas"
+
+#: kcmodule/devicedetails.cpp:52
+msgctxt "Device is paired"
+msgid "Paired"
+msgstr "Suporuotas"
+
+#: kcmodule/devicedetails.cpp:54
+msgctxt "Device is blocked"
+msgid "Blocked"
+msgstr "Užblokuotas"
+
+#: kcmodule/devicedetails.cpp:56
+msgctxt "Device is trusted"
+msgid "Trusted"
+msgstr "Patikimi"
+
+#: kcmodule/systemcheck.cpp:156 kio/bluetooth/kiobluetooth.cpp:81
+#: kio/bluetooth/kiobluetooth.cpp:190
+msgid "No Bluetooth adapters have been found."
+msgstr "Nerasta Bluetooth adapterių"
+
+#: kcmodule/systemcheck.cpp:164 kcmodule/systemcheck.cpp:171
+#: kcmodule/systemcheck.cpp:184 kcmodule/systemcheck.cpp:191
+#: kcmodule/systemcheck.cpp:204 kcmodule/systemcheck.cpp:211
+msgctxt "Action to fix a problem"
+msgid "Fix it"
+msgstr "Sutaisyti"
+
+#: kcmodule/systemcheck.cpp:175
+msgid "Your default Bluetooth adapter is not visible for remote devices."
+msgstr "Numatytasis Bluetooth adapteris nėra matomas nutolusiems įrenginiams."
+
+#: kcmodule/systemcheck.cpp:195
+msgid "Interaction with Bluetooth system is not optimal."
+msgstr "Sąveika su Bluetooth sistema nėra optimali."
+
+#: kcmodule/systemcheck.cpp:215
+msgid "Bluetooth is not completely enabled."
+msgstr "Bluetooth nėra pilnai įjungtas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kcmodule/transfer.ui:17
+msgid "<b>Receiving</b>"
+msgstr "<b>Gaunama</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: kcmodule/transfer.ui:36
+msgid "Save files in:"
+msgstr "Išsaugoti failus į:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: kcmodule/transfer.ui:71
+msgid "Accept automatically:"
+msgstr "Priimti automatiškai:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kcmodule/transfer.ui:91
+msgid "Receive files:"
+msgstr "Failų gavimas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: kcmodule/transfer.ui:107
+msgid "<b>Sharing</b>"
+msgstr "<b>Bendrinimas</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: kcmodule/transfer.ui:120
+msgid "Share Files:"
+msgstr "Bendrinti failus:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: kcmodule/transfer.ui:140
+msgid "Require PIN:"
+msgstr "Reikalauti PIN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kcmodule/transfer.ui:153
+msgid "Permissions:"
+msgstr "Teisės:"
+
+#. i18n: ectx: property (text), widget (KPushButton, sharedFiles)
+#: kcmodule/transfer.ui:184
+msgid "Shared Files"
+msgstr "Bendrieji failai"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: kcmodule/transfer.ui:212
+#, fuzzy
+#| msgid "Shared Folder"
+msgid "Shared Folder:"
+msgstr "Bendrintas aplankas"
+
+#: kio/bluetooth/kiobluetooth.cpp:44
+msgid "kiobluetooth"
+msgstr "kiobluetooth"
+
+#: kio/bluetooth/kiobluetooth.cpp:68 monolithic/monolithic.cpp:140
+msgid "Send File"
+msgstr "Siųsti failą"
+
+#: kio/bluetooth/kiobluetooth.cpp:73
+msgid "Browse Files"
+msgstr "Naršyti failus"
+
+#: kio/bluetooth/kiobluetooth.cpp:104
+msgid "Retrieving services..."
+msgstr "Gaunamas tarnybų sąrašas..."
+
+#: kio/bluetooth/kiobluetooth.cpp:154
+msgid "Scanning for new devices..."
+msgstr "Ieškoma naujų įrenginių..."
+
+#: kio/obexftp/daemon/ObexFtpDaemon.cpp:63
+#: kio/obexftp/daemon/ObexFtpDaemon.cpp:65
+msgid "ObexFtp Daemon"
+msgstr "ObexFtp tarnyba"
+
+#: kio/obexftp/kio_obexftp.cpp:40
+msgid "kioobexftp"
+msgstr "kioobexftp"
+
+#: kio/obexftp/kio_obexftp.cpp:97
+msgid "Retrieving information from remote device..."
+msgstr "Gaunama informacija iš nutolusio įrenginio..."
+
+#: kio/obexftp/kio_obexftp.cpp:176
+msgid "Connecting to the device"
+msgstr "Jungiamasi prie įrenginio"
+
+#: monolithic/main.cpp:28
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: monolithic/main.cpp:32
+msgid "Developer"
+msgstr "Programuotojas"
+
+#: monolithic/monolithic.cpp:42
+#, fuzzy
+#| msgid "Browse devices"
+msgid "Browse device"
+msgstr "Naršyti įrenginių"
+
+#: monolithic/monolithic.cpp:43 sendfile/sendfilewizard.cpp:62
+msgid "Send Files"
+msgstr "Siųsti failus"
+
+#: monolithic/monolithic.cpp:128
+msgid "Bluetooth is Off"
+msgstr "Bluetooth išjungtas"
+
+#: monolithic/monolithic.cpp:134
+msgid "Turn Bluetooth On"
+msgstr "Įjungti Bluetooth"
+
+#: monolithic/monolithic.cpp:144
+msgid "Browse devices"
+msgstr "Naršyti įrenginių"
+
+#: monolithic/monolithic.cpp:151
+msgid "Known Devices"
+msgstr "Žinomi įrenginiai"
+
+#: monolithic/monolithic.cpp:161
+msgid "Add Device"
+msgstr "Pridėti įrenginį"
+
+#: monolithic/monolithic.cpp:165
+msgid "Configure Bluetooth"
+msgstr "Konfigūruoti Bluetooth"
+
+#: monolithic/monolithic.cpp:172
+msgid "Discoverable"
+msgstr "Aptinkamas"
+
+#: monolithic/monolithic.cpp:178
+msgid "Turn Bluetooth Off"
+msgstr "Išjungti Bluetooth"
+
+#: monolithic/monolithic.cpp:200
+#, kde-format
+msgctxt "Number of Bluetooth connected devices"
+msgid "%1 connected device"
+msgid_plural "%1 connected devices"
+msgstr[0] "%1 prijungtas įrenginys"
+msgstr[1] "%1 prijungti įrenginiai"
+msgstr[2] "%1 prijungtų įrenginių"
+msgstr[3] "%1 prijungtas įrenginys"
+
+#: monolithic/monolithic.cpp:359
+msgid "No adapters found"
+msgstr "Nepavyko rasti adapterio"
+
+#: monolithic/monolithic.cpp:389
+msgctxt "When the bluetooth is enabled and powered"
+msgid "Bluetooth is On"
+msgstr "Bluetooth įjungtas"
+
+#: monolithic/monolithic.cpp:391
+msgctxt "When the bluetooth is disabled or not powered"
+msgid "Bluetooth is Off"
+msgstr "Bluetooth išjungtas"
+
+#: monolithic/monolithic.cpp:441
+#, fuzzy
+#| msgctxt "Action"
+#| msgid "Connect"
+msgctxt "Connect to a bluetooth device"
+msgid "Connect"
+msgstr "Prisijungti"
+
+#: sendfile/main.cpp:32
+msgid "Bluetooth Send File Helper"
+msgstr "Bluetooth failų persiuntimo pagelbiklis"
+
+#: sendfile/main.cpp:42 sendfile/main.cpp:43
+msgid "Device UUID where the files will be sent"
+msgstr "Įrenginio UUID kur bus siunčiami failai"
+
+#: sendfile/main.cpp:44
+msgid "Files that will be sent"
+msgstr "Failai kurie bus išsiųsti"
+
+#. i18n: ectx: property (text), widget (QLabel, connLabel)
+#: sendfile/pages/connecting.ui:17
+#, no-c-format, kde-format
+msgid "Connecting to: %1"
+msgstr "Jungiamasi prie %1"
+
+#: sendfile/pages/connectingpage.cpp:41
+#, kde-format
+msgctxt "Connecting to a Bluetooth device"
+msgid "Connecting to %1..."
+msgstr "Prisijungiama prie %1..."
+
+#. i18n: ectx: property (text), widget (QLabel, selectLbl)
+#: sendfile/pages/selectdeviceandfilespage.cpp:87
+#: sendfile/pages/selectfilediscover.ui:112
+msgid "Select one or more files:"
+msgstr "Pasirinkite vieną ar daugiau failų:"
+
+#: sendfile/pages/selectdeviceandfilespage.cpp:89
+#, kde-format
+msgid "Selected files: <b>%1</b>"
+msgstr "Pasirinkite failus: <b>%1</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: sendfile/pages/selectfilediscover.ui:29
+msgid "Select a device from the list:"
+msgstr "Pasirinkite įrenginį iš sąrašo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: sendfile/pages/selectfilediscover.ui:92
+msgid "Scanning"
+msgstr "Ieškoma"
+
+#: sendfile/sendfilesjob.cpp:74 sendfile/sendfilesjob.cpp:177
+msgid "Sending file over Bluetooth"
+msgstr "Failai siunčiami per Bluetooth"
+
+#: sendfile/sendfilewizard.cpp:60
+msgid "Bluetooth Send Files"
+msgstr "Bluetooth failų siuntimas"
+
+#. i18n: ectx: label, entry (enabled), group (General)
+#: settings/filereceiver.kcfg:21
+msgid "Enable or disable receiving files"
+msgstr "Failų gavimo įjungimas arba išjungimas"
+
+#. i18n: ectx: label, entry (saveUrl), group (General)
+#: settings/filereceiver.kcfg:25
+msgid "Save received files to:"
+msgstr "Išsaugoti gautus failus į:"
+
+#. i18n: ectx: label, entry (autoAccept), group (General)
+#: settings/filereceiver.kcfg:29
+msgid "Whether allow to modify shared files"
+msgstr "Ar leisti modifikuoti bendrintus failus"
+
+#. i18n: ectx: label, entry (shareEnabled), group (General)
+#: settings/filereceiver.kcfg:34
+msgid "Enable or disable file sharing"
+msgstr "Failų bendrinimo įjungimas arba išjungimas"
+
+#. i18n: ectx: label, entry (requirePin), group (General)
+#: settings/filereceiver.kcfg:38
+msgid "Whether require the PIN"
+msgstr "Ar reikalauti PIN kodo"
+
+#. i18n: ectx: label, entry (allowWrite), group (General)
+#: settings/filereceiver.kcfg:42
+msgid "Allow external devices to modify the shared files"
+msgstr "Leisti išoriniams įrenginiams modifikuoti bendrintus failus"
+
+#. i18n: ectx: label, entry (enableGlobalBluetooth), group (General)
+#: settings/global.kcfg:10
+msgid "Enable or disable the global KDE Bluetooth integration"
+msgstr "Įgalinti arba išjungti globalųjį KDE Bluetooth integravimą"
+
+#: wizard/bluewizard.cpp:41
+msgid "Bluetooth Device Wizard"
+msgstr "Bluetooth įrenginio vediklis"
+
+#: wizard/bluewizard.cpp:68
+msgctxt "Action to go to the next page on the wizard"
+msgid "Next"
+msgstr "Kitas"
+
+#: wizard/bluewizard.cpp:69
+msgctxt "Action to finish the wizard"
+msgid "Finish"
+msgstr "Baigti"
+
+#: wizard/main.cpp:30
+msgid "Bluetooth Wizard"
+msgstr "Bluetooth vediklis"
+
+#: wizard/main.cpp:39
+msgid "Device to pair with"
+msgstr "Įrenginys, su kuriuo poruoti"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: wizard/pages/discover.ui:63
+msgid "Scanning..."
+msgstr "Ieškoma..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: wizard/pages/discover.ui:83
+msgid "Manual PIN:"
+msgstr "Rankinis PIN:"
+
+#. i18n: ectx: property (inputMask), widget (QLineEdit, pinText)
+#: wizard/pages/discover.ui:118
+msgid "999999999; "
+msgstr "999999999; "
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pinText)
+#: wizard/pages/discover.ui:124
+msgid "0000"
+msgstr "0000"
+
+#: wizard/pages/discoverpage.cpp:39
+msgid "Select a device"
+msgstr "Pasirinkite įrenginį"
+
+#: wizard/pages/fail.cpp:46
+msgctxt ""
+"Button offered when the wizard fail. This button will restart the wizard"
+msgid "Restart the wizard"
+msgstr "Perkrauti vediklį"
+
+#: wizard/pages/fail.cpp:50
+msgctxt "Button that closes the wizard"
+msgid "Close"
+msgstr "Užverti"
+
+#: wizard/pages/fail.cpp:61
+msgctxt "This string is shown when the wizard fail"
+msgid "The setup of the device has failed"
+msgstr "Įrenginio diegimas nepavyko"
+
+#. i18n: ectx: property (text), widget (QLabel, failLbl)
+#: wizard/pages/fail.ui:35
+#, no-c-format, kde-format
+msgid "The setup of %1 has failed"
+msgstr "%1 diegimas nepavyko"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: wizard/pages/keyboardpairing.ui:108
+msgid ""
+"Please introduce the PIN in your keyboard when it appears and press Enter"
+msgstr ""
+"Surinkite PIN kodą klaviatūroje, kai jo bus pareikalauta ir spauskite Enter"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: wizard/pages/legacypairing.ui:108 wizard/pages/ssppairing.cpp:98
+msgid "Please introduce the PIN in your device when it appears"
+msgstr "Įveskite PIN kodą, kai jis pasirodys ekrane"
+
+#: wizard/pages/legacypairingdatabase.cpp:48 wizard/pages/ssppairing.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "Connecting to a Bluetooth device"
+#| msgid "Connecting to %1..."
+msgid "Connecting to %1..."
+msgstr "Prisijungiama prie %1..."
+
+#. i18n: ectx: property (text), widget (QLabel, connecting)
+#: wizard/pages/nopairing.ui:51
+#, fuzzy
+#| msgid "Connecting to: %1"
+msgid "Connecting to:"
+msgstr "Jungiamasi prie %1"
+
+#: wizard/pages/ssppairing.cpp:75
+msgid "Matches"
+msgstr "Atitinka"
+
+#: wizard/pages/ssppairing.cpp:77
+msgid "Does not match"
+msgstr "Neatitinka"
+
+#: wizard/pages/ssppairing.cpp:90
+#, kde-format
+msgid ""
+"Please, confirm that the PIN displayed on \"%1\" matches the wizard one."
+msgstr ""
+"Patvirtinkite PIN kodą rodomą \"%1\" kad jis atitinką vediklyje įvestą."

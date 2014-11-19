@@ -1,0 +1,687 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&ksnapshot;">
+  <!ENTITY package "kdegraphics">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<book id="ksnapshot" lang="&language;">
+
+<bookinfo>
+<title>The &ksnapshot; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Richard</firstname>
+<othername>J.</othername>
+<surname>Moore</surname>
+<affiliation>
+<address>&Richard.J.Moore.mail;</address>
+</affiliation>
+</author>
+
+<author>
+<firstname>Robert</firstname>
+<othername>L.</othername>
+<surname>McCormick</surname>
+<affiliation>
+<address>&Robert.L.McCormick.mail;</address>
+</affiliation>
+</author>
+
+<author>
+<firstname>Brad</firstname>
+<surname>Hards</surname>
+<affiliation>
+<address>&Brad.Hards.mail;</address>
+</affiliation>
+</author>
+
+<othercredit role="reviewer">
+<firstname>Lauri</firstname>
+<surname>Watts</surname>
+<affiliation>
+<address>&Lauri.Watts.mail;</address>
+</affiliation>
+<contrib>Reviewer</contrib>
+</othercredit>
+
+<othercredit role="developer">
+<firstname>Richard</firstname>
+<othername>J</othername>
+<surname>Moore</surname>
+<affiliation>
+<address>&Richard.J.Moore.mail;</address>
+</affiliation>
+<contrib>Developer</contrib>
+</othercredit>
+
+<othercredit role="developer">
+<firstname>Matthias</firstname>
+<surname>Ettrich</surname>
+<affiliation>
+<address>&Matthias.Ettrich.mail;</address>
+</affiliation>
+<contrib>Developer</contrib>
+</othercredit>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<copyright>
+<year>1997-2000</year>
+<holder>&Richard.J.Moore;</holder>
+</copyright>
+
+<copyright>
+<year>2000</year>
+<holder>&Matthias.Ettrich;</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2013-05-22</date>
+<releaseinfo>0.8.2 (&kde; 4.11)</releaseinfo>
+
+<abstract>
+<para>&ksnapshot; is a simple application for taking screenshots. It is capable
+of capturing images of the whole desktop, a single window, a section of a window, a selected
+rectangular region or a freehand region.  The images can then be saved in a variety of formats.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KSnapshot</keyword>
+<keyword>kdegraphics</keyword>
+<keyword>screen capture</keyword>
+<keyword>screen grab</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>&ksnapshot; is a simple application for taking screenshots. It is capable
+of capturing images of the whole desktop, a single window, a section of a window, a selected
+rectangular region or a freehand region. The images can then be saved in a variety of formats.</para>
+
+<para>Please report any problems or feature requests to the <ulink
+url="http://bugs.kde.org/">&kde; Bug Tracking System</ulink>.</para>
+
+</chapter>
+
+<chapter id="using-ksapshot">
+<title>Using &ksnapshot;</title>
+
+<para>This chapter describes the use of &ksnapshot; for capturing screen
+images.</para>
+
+<sect1 id="starting">
+<title>Starting &ksnapshot;</title>
+
+<para>&ksnapshot; may be started by one of several ways as described
+below.</para>
+
+<itemizedlist>
+<listitem>
+<para>You may start &ksnapshot; by selecting it from the application launcher menu
+<menuchoice>
+<guisubmenu>Applications</guisubmenu><guisubmenu>Graphics</guisubmenu>
+<guimenuitem>Screen Capture Program &ksnapshot;</guimenuitem></menuchoice>.
+</para></listitem>
+<listitem>
+<para>You may start &ksnapshot; by entering the following at the command
+prompt:</para>
+<screen width="40">
+<prompt>%</prompt> <command>ksnapshot &amp;</command>
+</screen>
+</listitem>
+<listitem><para>The mini command line &krunner; (invoked with
+<keycombo action="simul">&Alt;<keycap>F2</keycap></keycombo>) may
+also be used to start &ksnapshot;.</para></listitem>
+</itemizedlist>
+
+<para>Once &ksnapshot; starts, you will see a window like the following:
+<mediaobject>
+<imageobject>
+<imagedata fileref="window.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>&ksnapshot; Preview Window</phrase>
+</textobject>
+</mediaobject>
+</para>
+
+</sect1>
+
+<sect1 id="taking-snapshot">
+<title>Taking A Snapshot</title>
+
+<para> &ksnapshot; grabs an image of your entire desktop immediately after it is
+started, but before it displays itself on screen. This allows you to quickly
+create full-desktop screenshot images.</para>
+
+<para>The snapshot taken by &ksnapshot; is displayed in the preview window,
+which is located on top of the &ksnapshot; application window.
+Below is an example of the preview window from &ksnapshot;. Your preview
+will differ depending on what you have displayed on the desktop.</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="preview.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>&ksnapshot; Preview Window</phrase>
+</textobject>
+</mediaobject>
+
+<para>The snapshot can be saved by clicking on the <guibutton>Save 
+As...</guibutton> (<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>) 
+button. This opens the standard &kde; save dialog,
+where you can choose the filename, the folder location, and the format that your snapshot
+will be saved in. If multiple snapshots are taken, the
+filename is automatically incremented to prevent you from overwriting previous
+snapshots. You may however edit the filename to anything you wish, including the name
+of a previously saved snapshot. </para>
+
+<para>To take a snapshot of a single window, select the <guilabel>Window
+Under Cursor</guilabel> combo box entry (next to the <guilabel>Capture mode</guilabel>
+label), and then click on the <guibutton>Take a New Snapshot</guibutton> 
+(<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>) button.</para>
+
+<para>Depending on your <guilabel>Snapshot delay</guilabel> settings you
+get either a cross as the mouse pointer (for <guilabel>No delay</guilabel>),
+or a standard mouse cursor which you can use to work with a program until
+the delay is over and a snapshot is taken.</para>
+
+<para>With <guilabel>No delay</guilabel>, the snapshot is taken immediately when you
+click into a window.</para>
+
+<para>&ksnapshot; will display the new snapshot in the preview
+area, at which time you can choose to save the new image (by pressing
+<guibutton>Save As...</guibutton>)
+or to grab a new one, by pressing the
+<guibutton>Take a New Snapshot</guibutton> button.</para>
+
+<para>To take a new snapshot of the entire desktop, select the
+<guilabel>Full Screen</guilabel> combo box entry and then click on the 
+<guibutton>Take a New Snapshot</guibutton> button.
+&ksnapshot; will now capture the entire desktop if you press
+<guibutton>Take a New Snapshot</guibutton>.</para>
+
+<para>Similarly, to take a snapshot of a rectangular region, select the 
+<guilabel>Rectangular Region</guilabel> combo box entry and set the 
+<guilabel>Snapshot delay</guilabel> to <guilabel>No delay</guilabel>,
+and then click on the <guibutton>Take a New Snapshot</guibutton> button. The
+mouse cursor will then change into a cross, and you can then use the 
+mouse to select the region you want to capture. 
+To take the snapshot press the &Enter; key or double click. Press &Esc; to quit.</para>
+
+<para>You might want to take a snapshot of a non rectangular region. You can do so by selecting
+the <guilabel>Freehand Region</guilabel> combo box entry and set the 
+<guilabel>Snapshot delay</guilabel> to <guilabel>No delay</guilabel>,
+and then click on the <guibutton>Take a New Snapshot</guibutton> button. The
+mouse cursor will then change into a cross, and you can then use the 
+mouse to draw the region you want to capture. 
+To take the snapshot press the &Enter; key or double click. Press &Esc; to quit.</para>
+
+<para>To take a new snapshot of a section of a window, select the
+<guilabel>Section of Window</guilabel> combo box entry and then click on the 
+<guibutton>Take a New Snapshot</guibutton> button. With <guilabel>No delay</guilabel>
+you get a cross as the mouse pointer and you have to click once with the &LMB; into 
+the window. The section of the window under the mouse cursor is now highlighted 
+with a red border. Move the mouse to the wanted section and click the &LMB; 
+to capture the screenshot.
+</para>
+
+<para>If you have multiple screens, <guilabel>Current Screen</guilabel> captures
+the screen containing the mouse cursor when the screenshot is taken.</para>
+
+<para>When keeping &ksnapshot; open to take several snapshots using <guibutton>
+Rectangular Region</guibutton> or <guibutton>Freehand Region</guibutton>,
+the subsequent snapshots will be initialized with the last shape used with this
+function (since you launched &ksnapshot;). You have then the possibility to adjust the
+handles of the rectangular shape, to move the freehand region, or to completely replace the
+shape by starting to draw a new one at a different place of the screen.</para>
+</sect1>
+
+<sect1 id="additional-features">
+<title>Additional Features</title>
+
+<sect2 id="delay">
+<title>Snapshot Delay</title>
+
+<para>The <guilabel>Snapshot delay</guilabel> box allows you to enter an
+arbitrary time delay, in seconds, between the time that you press the
+<guibutton>Take a New Snapshot</guibutton> button and the time that the snapshot is
+taken.</para>
+
+<para>When a delay time has been set, you do not have to click the mouse
+button to capture a screenshot.  This enables you to open a drop down menu,
+and take a picture of it.</para>
+
+</sect2>
+
+<sect2 id="window-decoration">
+<title>Exclude Window decorations</title>
+
+<para><guilabel>Include window decorations</guilabel> is enabled by default in 
+<guilabel>Window Under Cursor</guilabel> mode.</para>
+
+<para>When you only want to capture the application itself without the surrounding
+window decoration, disable this option and take a new snapshot.</para>
+
+</sect2>
+
+<sect2 id="mouse-pointer">
+<title>Include mouse pointer</title>
+
+<para><guilabel>Include mouse pointer</guilabel> is disabled by default. This setting is not 
+available in <guilabel>Rectangular Region</guilabel> and <guilabel>Freehand Region</guilabel> 
+modes.</para>
+
+<para>When you want to include the mouse pointer in your snapshot, enable this option and take 
+a new snapshot.</para>
+
+</sect2>
+
+<!-- not in 4.1
+<sect2 id="print-snapshot">
+<title>Print</title>
+
+<para>When you want to print your snapshot from the preview, just click
+<guibutton>Print...</guibutton> and you get the standard &kde; Print dialog, from
+where you can directly print your snapshot.</para>
+</sect2>
+-->
+
+
+<sect2 id="bottom-buttons">
+<title>Buttons</title>
+
+<para>There are four buttons located at the bottom of the
+&ksnapshot; window. Their function is described below.</para>
+
+<variablelist>
+<varlistentry>
+<term><guibutton>Help</guibutton></term>
+<listitem><para>Gives you a menu where you can open the
+<guimenuitem>&ksnapshot; Handbook</guimenuitem>, report a bug,
+switch the language for &ksnapshot; or
+get some more information <guimenuitem>About &ksnapshot;</guimenuitem>
+and <guimenuitem>About &kde;</guimenuitem>.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>Send To...</guibutton></term>
+<listitem><para>This will allow to directly open the snapshot with all programs
+that are associated with your PNG (Portable Network Graphics) MIME type. Depending on what programs are installed, you
+will be able to open and edit the snapshot in your graphics applications or viewers.</para>
+<para>Furthermore, if you have the <application>KIPI plugins</application> installed you will be able to print your snapshots,
+e-mail them and export directly to some social networks and websites, as shown on the screenshot below.</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="send-to-menu.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>&ksnapshot; Send To... menu with kipi-plugins installed</phrase>
+</textobject>
+</mediaobject>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>Copy</guibutton></term>
+<listitem><para>When you want to edit your snapshot in a graphics application without saving 
+the snapshot, just click <guibutton>Copy</guibutton> 
+(<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>) and insert the image 
+into a viewer or graphics application.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guibutton>Save As...</guibutton></term>
+<listitem><para>Saves the screenshot to a file in the selected format.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="drag-and-drop">
+<title>Drag and Drop</title>
+<para>A captured image can be dragged to another application or document. If the application is able 
+to handle images, a copy of the full image is inserted there. 
+</para>
+<para>If you drag a screenshot into a file manager window, a dialog pops up where you can edit the filename
+and select the image format and the file will be inserted into the actual folder.
+</para>
+<para>If you drag the screenshot to a text box, the path to the temporary saved file is inserted. This is useful
+for example to upload a screenshot through web forms or to attach screenshots into bug reports
+on the <ulink url="https://bugs.kde.org/">&kde; bugtracker</ulink>.
+</para>
+<para>This works with all clients that do not pick up the image data, but only look for a &URL; 
+in the dragged mimedata.
+</para>
+ </sect2>
+ 
+</sect1>
+</chapter>
+
+<chapter id="dcop">
+
+<title>&DBus; Interface</title>
+
+<para>&ksnapshot; can be scripted using its &DBus; interface.</para>
+
+<para>There are two ways to use the &DBus; interface: &Qt;'s &GUI;
+<application>qdbusviewer</application>
+and the command line
+<application>qdbus</application>.
+</para>
+
+<para>
+Examples:
+<itemizedlist mark='opencircle'>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+will display all services available.
+</para></listitem>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+<option>org.kde.ksnapshot-`pidof -s ksnapshot`</option>
+will display the &DBus; interface for &ksnapshot;.
+</para></listitem>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+<option>org.kde.ksnapshot-`pidof -s ksnapshot` /KSnapshot</option>
+will display methods for controlling &ksnapshot;.
+</para></listitem>
+
+</itemizedlist>
+</para>
+
+<para>
+For more information, please visit
+<ulink url="http://techbase.kde.org/Development/Tutorials/D-Bus/Introduction">&DBus; tutorial</ulink>.
+</para>
+
+<!--
+kdedev@rebutia:~/svn$ qdbus org.kde.ksnapshot-10484
+/
+/KDebug
+/KSnapshot
+/MainApplication
+kdedev@rebutia:~/svn$ qdbus org.kde.ksnapshot-10484 /
+method QString org.freedesktop.DBus.Introspectable.Introspect()
+
+kdedev@rebutia:~/svn$ qdbus org.kde.ksnapshot-10484 /KSnapshot
+method void org.kde.ksnapshot.slotGrab()
+method void org.kde.ksnapshot.slotOpen(QString application)
+method void org.kde.ksnapshot.slotSave()
+method QDBusVariant org.freedesktop.DBus.Properties.Get(QString interface_name, QString property_name)
+method void org.freedesktop.DBus.Properties.Set(QString interface_name, QString property_name, QDBusVariant value)
+method QString org.freedesktop.DBus.Introspectable.Introspect()
+
+kdedev@rebutia:~/svn$ qdbus org.kde.ksnapshot-10484 /MainApplication
+method void org.kde.KApplication.quit()
+method void org.kde.KApplication.reparseConfiguration()
+method void org.kde.KApplication.updateUserTimestamp()
+method void org.kde.KApplication.updateUserTimestamp(int time)
+property readwrite int com.trolltech.Qt.QApplication.cursorFlashTime
+property readwrite int com.trolltech.Qt.QApplication.doubleClickInterval
+property readwrite QSize com.trolltech.Qt.QApplication.globalStrut
+property readwrite int com.trolltech.Qt.QApplication.keyboardInputInterval
+property readwrite bool com.trolltech.Qt.QApplication.quitOnLastWindowClosed
+property readwrite int com.trolltech.Qt.QApplication.startDragDistance
+property readwrite int com.trolltech.Qt.QApplication.startDragTime
+property readwrite QString com.trolltech.Qt.QApplication.styleSheet
+property readwrite int com.trolltech.Qt.QApplication.wheelScrollLines
+property readwrite QString com.trolltech.Qt.QCoreApplication.applicationName
+property readwrite QString com.trolltech.Qt.QCoreApplication.applicationVersion
+property readwrite QString com.trolltech.Qt.QCoreApplication.organizationDomain
+property readwrite QString com.trolltech.Qt.QCoreApplication.organizationName
+method QDBusVariant org.freedesktop.DBus.Properties.Get(QString interface_name, QString property_name)
+method void org.freedesktop.DBus.Properties.Set(QString interface_name, QString property_name, QDBusVariant value)
+method QString org.freedesktop.DBus.Introspectable.Introspect()
+
+kdedev@rebutia:~/svn$ qdbus org.kde.ksnapshot-10484 /KDebug
+method void org.kde.KDebug.notifyKDebugConfigChanged()
+method void org.kde.KDebug.printBacktrace()
+method QDBusVariant org.freedesktop.DBus.Properties.Get(QString interface_name, QString property_name)
+method void org.freedesktop.DBus.Properties.Set(QString interface_name, QString property_name, QDBusVariant value)
+method QString org.freedesktop.DBus.Introspectable.Introspect()
+-->
+<!-- dbus-launch ksnapshot-->
+<!-- ksnapshot qdbus org.kde.ksnapshot-20985-->
+<!--
+<para>To start &ksnapshot; and obtain the right argument, use
+<command>dcopstart ksnapshot</command>, which returns the 
+argument (such as <computeroutput>ksnapshot-20594</computeroutput>) on
+standard output.</para>
+
+<para>You can get a list of the available &DCOP; interfaces, use
+the right arguments, as shown in this example:
+<screen width="60">
+<prompt>$</prompt> <command>dcop `dcopstart ksnapshot` interface</command><computeroutput>
+QCStringList interfaces()
+QCStringList functions()
+QString url()
+void slotGrab()
+void slotPrint()
+void slotSave()
+bool save(QString filename)
+void slotSaveAs()
+void slotCopy()
+void setTime(int newTime)
+int timeout()
+void setURL(QString newURL)
+void setGrabMode(int grab)
+int grabMode()
+void slotMovePointer(int x,int y)
+void exit()
+</computeroutput>
+</screen>
+</para>
+
+<para>
+In the examples following, the process is always
+<computeroutput>ksnapshot-23151</computeroutput>.
+</para>
+
+<sect1 id="dcop-settings">
+
+<title>&DCOP; Access to Settings</title>
+
+<para>For each of the settings that you can control with the
+&GUI;, you can both obtain the current status of that setting,
+and modify the setting, using &DCOP;.
+</para>
+
+<para>You can obtain the current capture mode using 
+<literal>grabMode</literal>, as shown below:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface grabMode</command>
+</screen>
+This will return <computeroutput>0</computeroutput> for full-screen capture,
+<computeroutput>1</computeroutput> for window capture, and <computeroutput>2</computeroutput>
+for region capture.
+</para>
+
+<para>You can set the capture mode using <literal>setGrabMode</literal>,
+which requires an argument to identify the mode required (as for <literal>grabMode</literal>).
+So you can set window capture mode (<command>1</command>), using:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface setGrabMode 1</command>
+</screen>
+</para>
+
+<para>You can obtain the current timeout setting (the <guilabel>Snapshot delay:</guilabel>
+&GUI; item) using <literal>timeout</literal>, as shown below:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface timeout</command>
+</screen>
+This will return the timeout setting in seconds, or zero if there is no delay
+(capture on click).
+</para>
+
+<para>You can set the timeout using <literal>setTime</literal>,
+which requires an argument to identify the timeout duration. So you can
+set a delay of 4 seconds using:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface setTime 4</command>
+</screen>
+</para>
+
+<para>You can obtain the path that the snapshot will be saved to using 
+<literal>url</literal>, as shown below:
+<screen width="60">
+<prompt>$</prompt><command>dcop ksnapshot-23151 interface url</command>
+</screen>
+This will return the filename, as a &URL; (eg as 
+<computeroutput>file:///home/bradh/test2.png</computeroutput>).
+</para>
+
+<para>You can set the path using <literal>setURL</literal>,
+which requires a string argument to identify the new path. So you can
+set the path to <literal>file:///home/bradh/snapshot.jpg</literal>
+using:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface setURL file:///home/bradh/snapshot.jpg</command>
+</screen>
+</para>
+
+</sect1>
+
+<sect1 id="dcop-snapshot">
+<title>Taking Screenshots with &DCOP;</title>
+
+<para>
+The key to taking screenshots with &DCOP; is use of <literal>slotGrab</literal>,
+as shown below:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface slotGrab</command>
+</screen>
+</para>
+
+<para>
+This will take a snapshot using the current snapshot mode and timeout settings
+(as described above). If you want to save the snapshot image, there are a
+number of calls you can use. If you just want to save the image to the current
+path (as returned by <literal>url</literal> or changed by
+<literal>setURL</literal>), you can use <literal>slotSave</literal>, as shown
+below:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface slotSave</command>
+</screen>
+</para>
+
+<para>
+If you want the user to be able to specify a filename (and path), you can use
+<literal>slotSaveAs</literal>, which will bring up a standard &kde; file
+save dialog.</para>
+
+<para>
+If you want to save the image to a different name (or path) without
+changing the path with <literal>setURL</literal>, you can use
+<literal>save</literal>, providing the &URL; to save to as an argument. So if you
+want to save the snapshot to <filename>file:///tmp/tempshot.png</filename>, you
+can do the following:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface save file:///tmp/tempshot.png</command>
+</screen>
+Note that this will return true if the snapshot was successfully saved, and false
+otherwise. Also, you should be aware that if the file already exists, the user
+will get a standard &kde; dialog that requires the user to decide whether to overwrite
+or not.
+</para>
+
+<para>
+In addition to saving the snapshot, you can also copy it to the clipboard, using 
+<literal>slotCopy</literal>, as shown below:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface slotCopy</command>
+</screen>
+</para>
+
+<para>
+If you need to select a window that may not be under the mouse cursor, you
+can use <literal>slotMovePointer</literal>, passing the x position
+(in screen pixels) and the y position (also in screen pixels) as arguments.
+So to move the mouse to the top left hand corner of the screen (0,0), you
+can do the following:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface slotMoveMouse 0 0</command>
+</screen>
+</para>
+</sect1>
+
+<sect1 id="dcop-print">
+<title>Printing Screenshots with &DCOP;</title>
+
+<para>
+You can print the current screenshot (which may or may not have been saved)
+using <literal>printSlot</literal>, as shown below:
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface slotPrint</command>
+</screen>
+</para>
+
+<para>
+Note that this will bring up the normal &kde; print dialog, which may require
+user interaction.
+</para>
+
+</sect1>
+
+<sect1 id="dcop-exit">
+<title>&DCOP; Application control</title>
+
+<para>
+You can cause &ksnapshot; to exit by using <literal>exit</literal>,
+as shown below.
+<screen width="60">
+<prompt>$</prompt> <command>dcop ksnapshot-23151 interface exit</command>
+</screen>
+</para>
+
+</sect1>
+-->
+</chapter>
+
+<chapter id="credits">
+
+<title>Credits and License</title>
+
+<para>Program copyright</para>
+<itemizedlist>
+<listitem><para>1997-2000 &Richard.J.Moore; &Richard.J.Moore.mail;</para></listitem>
+<listitem><para>2000 &Matthias.Ettrich; &Matthias.Ettrich.mail;</para></listitem>
+</itemizedlist>
+
+<para>Documentation based on the original, copyright 1997-2000 &Richard.J.Moore;
+&Richard.J.Moore.mail;</para>
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;
+&underGPL;
+
+</chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+End:
+-->
+
+
+
+

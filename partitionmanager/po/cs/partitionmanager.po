@@ -1,0 +1,5091 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014.
+# Tomáš Chvátal <tomas.chvatal@gmail.com>, 2010, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-07 01:48+0000\n"
+"PO-Revision-Date: 2014-07-07 10:52+0200\n"
+"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Vít Pelčák, Tomáš Chvátal"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "vit@pelcak.org, tomas.chvatal@gmail.com"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: config.kcfg:38
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Spouštíte správce diskových oddílů pro KDE poprvé?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: config.kcfg:42
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Skrýt zprávy záznamu níže"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: config.kcfg:46
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Zarovnání sektorů oddílu"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: config.kcfg:50
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Použít zarovnání podle ploten (Windows XP kompatibilní)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: config.kcfg:54
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Výchozí zarovnání oddílů"
+
+#. i18n: ectx: label, entry (allowApplyOperationsAsNonRoot), group (KDE Partition Manager)
+#: config.kcfg:58
+msgctxt "@label"
+msgid "Allow applying operations without administrator privileges"
+msgstr "Povolit provedení operací bez administrátorských oprávnění"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:62
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Barvy souborového systému"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:92
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Zobrazit pruh s nabídkou"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:96
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Modul podpůrné vrstvy"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:103
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Preferovaná jednotka:"
+
+#: config/configureoptionsdialog.cpp:54
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Obecné"
+
+#: config/configureoptionsdialog.cpp:54 config/configureoptionsdialog.cpp:101
+msgid "General Settings"
+msgstr "Obecná nastavení"
+
+#: config/configureoptionsdialog.cpp:59
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Barvy souborového systému"
+
+#: config/configureoptionsdialog.cpp:59
+msgid "File System Color Settings"
+msgstr "Nastavení barev souborového systému"
+
+#: config/configureoptionsdialog.cpp:64
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#: config/configureoptionsdialog.cpp:64
+msgid "Advanced Settings"
+msgstr "Pokročilá nastavení"
+
+#: config/configureoptionsdialog.cpp:151
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Opravdu si přejete změnit podpůrnou vrstvu?</para><para><warning>Tato "
+"změna povede k novému skenování zařízení a vyčištění fronty operací.</"
+"warning></para>"
+
+#: config/configureoptionsdialog.cpp:153
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Opravdu změnit podpůrnou vrstvu?"
+
+#: config/configureoptionsdialog.cpp:154
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Změnit podpůrnou vrstvu"
+
+#: config/configureoptionsdialog.cpp:155
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Neměnit podpůrnou vrstvu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: config/configurepageadvanced.ui:23
+msgid "Permissions"
+msgstr "Oprávnění"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_allowApplyOperationsAsNonRoot)
+#: config/configurepageadvanced.ui:35
+msgid "Allow applying operations without administrator privileges"
+msgstr "Povolit provedení operací bez administrátorských oprávnění"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:51
+msgid "Backend"
+msgstr "Podpůrná vrstva"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:57
+msgid "Active backend:"
+msgstr "Aktivní podpůrná vrstva:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:79
+msgid "Units"
+msgstr "Jednotky"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:85
+msgid "Preferred unit:"
+msgstr "Preferovaná jednotka:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:96
+msgid "Byte"
+msgstr "Byte"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:101
+msgid "KiB"
+msgstr "KiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:106
+msgid "MiB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:111
+msgid "GiB"
+msgstr "GiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:116
+msgid "TiB"
+msgstr "TiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:121
+msgid "PiB"
+msgstr "PiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:126
+msgid "EiB"
+msgstr "EiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:23
+#: config/configurepagegeneral.ui:139
+msgid "File Systems"
+msgstr "Souborové systémy"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:29
+msgid "luks:"
+msgstr "luks:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:45
+msgid "ntfs:"
+msgstr "ntfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:58
+msgid "ext2:"
+msgstr "ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:87
+msgid "ext3:"
+msgstr "ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:116
+msgid "ext4:"
+msgstr "ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:132
+msgid "btrfs:"
+msgstr "btrfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:174
+msgid "linuxswap:"
+msgstr "linuxswap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:190
+msgid "fat16:"
+msgstr "fat16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:219
+msgid "fat32:"
+msgstr "fat32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:248
+msgid "zfs:"
+msgstr "zfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:264
+msgid "reiserfs:"
+msgstr "reiserfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:293
+msgid "reiser4:"
+msgstr "reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+msgid "hpfs:"
+msgstr "hpfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:338
+msgid "jfs"
+msgstr "jfs"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:367
+msgid "hfs:"
+msgstr "hfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:396
+msgid "hfsplus:"
+msgstr "hfsplus:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:412
+msgid "ufs:"
+msgstr "ufs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:441
+msgid "xfs:"
+msgstr "xfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:470
+msgid "ocfs2:"
+msgstr "ocfs2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:489
+msgid "extended:"
+msgstr "rozšířený:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:518
+msgid "unformatted:"
+msgstr "neformátovaný:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:547
+msgid "unknown:"
+msgstr "neznámý:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:570
+msgid "exfat:"
+msgstr "exfat:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:583
+msgid "nilfs2:"
+msgstr "nilfs2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:622
+msgid "lvm2 pv:"
+msgstr "lvm2 pv:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:23
+msgid "Partition Alignment"
+msgstr "Zarovnání oddílu"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:29
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Použít zarovnání podle ploten (Windows XP kompatibilní)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:42
+msgid "Sector alignment:"
+msgstr "Zarovnání sektorů:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:55
+msgid " sectors"
+msgstr " sektory"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:71
+msgid "Align partitions per default"
+msgstr ";"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:90
+msgid "Logging"
+msgstr "Záznamy"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:96
+msgid "Hide messages below:"
+msgstr "Skrýt zprávy níže:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:107
+msgid "Debug"
+msgstr "Ladit"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+msgid "Information"
+msgstr "Informace"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+msgid "Warning"
+msgstr "Upozornění"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+msgid "Error"
+msgstr "Chyba"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:145
+msgid "Default file system:"
+msgstr "Výchozí souborový systém:"
+
+#. i18n: ectx: property (title), widget (KButtonGroup, kcfg_shredSource)
+#: config/configurepagegeneral.ui:167
+msgid "Shredding"
+msgstr "Ničení"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:173
+msgid "Overwrite with:"
+msgstr "Přepsat pomocí:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:180
+msgid "Random data"
+msgstr "Náhodná data"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:187
+msgid "Zeros"
+msgstr "Nuly"
+
+#: core/device.cpp:90
+msgid "Unknown Device"
+msgstr "Neznámé zařízení"
+
+#: core/operationstack.cpp:112
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just created: Undoing the operation to create the "
+"partition."
+msgstr ""
+"Mažu čerstvě vytvořený oddíl: místo toho ruším operaci pro vytvoření oddílu."
+
+#: core/operationstack.cpp:131
+msgctxt "@info/plain"
+msgid ""
+"Resizing a partition just created: Updating start and end in existing "
+"operation."
+msgstr ""
+"Změna velikosti právě vytvořeného oddílu: Aktualizace začátku a konce v "
+"existující operaci."
+
+#: core/operationstack.cpp:152
+msgctxt "@info/plain"
+msgid "Copying a new partition: Creating a new partition instead."
+msgstr ""
+
+#: core/operationstack.cpp:170
+msgctxt "@info/plain"
+msgid "Changing label for a new partition: No new operation required."
+msgstr "Změna popisku pro nový oddíl: Není vyžadována nová operace."
+
+#: core/operationstack.cpp:184
+msgctxt "@info/plain"
+msgid "Changing file system for a new partition: No new operation required."
+msgstr ""
+"Změna souborového systému pro nový oddíl: Není vyžadovaná nová operace."
+
+#: core/operationstack.cpp:202
+msgctxt "@info/plain"
+msgid ""
+"Checking file systems is automatically done when creating them: No new "
+"operation required."
+msgstr ""
+
+#: core/operationstack.cpp:251
+msgctxt "@info/plain"
+msgid "Deleting a partition just copied: Removing the copy."
+msgstr "Mazání kopírovaného oddílu: Maže se kopie."
+
+#: core/operationstack.cpp:258
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just copied over an existing partition: Removing the "
+"copy and deleting the existing partition."
+msgstr ""
+"Mazání právě zkopírovaného oddílu přes existující oddíl: Odstraňuje se kopie "
+"a existující oddíl."
+
+#: core/operationstack.cpp:272
+msgctxt "@info/plain"
+msgid ""
+"Copying a partition that is itself a copy: Copying the original source "
+"partition instead."
+msgstr ""
+"Kopírování oddílu, který je sám kopií: Kopíruji místo toho původní zdrojový "
+"oddíl."
+
+#: core/operationstack.cpp:303
+msgctxt "@info/plain"
+msgid "Deleting a partition just restored: Removing the restore operation."
+msgstr "Mazání právě obnoveného oddílu: Odstraňuji operaci obnovení."
+
+#: core/operationstack.cpp:310
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just restored to an existing partition: Removing the "
+"restore operation and deleting the existing partition."
+msgstr ""
+"Mazání právě obnoveného oddílu: odstraňuji operaci obnovení a mažu "
+"existující oddíl."
+
+#: core/operationstack.cpp:344
+msgctxt "@info/plain"
+msgid "Changing flags again for the same partition: Removing old operation."
+msgstr ""
+
+#: core/operationstack.cpp:376
+msgctxt "@info/plain"
+msgid "Changing label again for the same partition: Removing old operation."
+msgstr ""
+
+#: core/operationstack.cpp:403
+msgctxt "@info/plain"
+msgid "Creating new partition table, discarding previous operation on device."
+msgstr ""
+"Vytvořit novou tabulku diskových oddílů. Zahodit předchozí operace na "
+"zařízení."
+
+#: core/operationstack.cpp:454
+#, kde-format
+msgctxt "@info/plain"
+msgid "Add operation: %1"
+msgstr "Přidat operaci: %1"
+
+#: core/partition.cpp:161
+msgctxt "@item partition name"
+msgid "unallocated"
+msgstr "nealokované"
+
+#: core/partition.cpp:164
+msgctxt "@item partition name"
+msgid "New Partition"
+msgstr "Nový oddíl"
+
+#: core/partition.cpp:167
+msgctxt "@item partition name"
+msgid "Restored Partition"
+msgstr "Obnovený oddíl"
+
+#: core/partition.cpp:170
+#, kde-format
+msgctxt "@item partition name"
+msgid "Copy of %1"
+msgstr "Kopie %1"
+
+#: core/partitionalignment.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> is not properly aligned (first sector: %2, "
+"modulo: %3)."
+msgstr ""
+"Oddíl <filename>%1</filename> není správně zarovnána (první sektor: %2, "
+"modulo: %3)."
+
+#: core/partitionalignment.cpp:92
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> is not properly aligned (last sector: %2, "
+"modulo: %3)."
+msgstr ""
+
+#: core/partitionrole.cpp:29
+msgctxt "@item partition role"
+msgid "unallocated"
+msgstr "nealokovaný"
+
+#: core/partitionrole.cpp:32
+msgctxt "@item partition role"
+msgid "logical"
+msgstr "logický"
+
+#: core/partitionrole.cpp:35
+msgctxt "@item partition role"
+msgid "extended"
+msgstr "rozšířený"
+
+#: core/partitionrole.cpp:38
+msgctxt "@item partition role"
+msgid "primary"
+msgstr "primární"
+
+#: core/partitionrole.cpp:40
+msgctxt "@item partition role"
+msgid "none"
+msgstr "žádná"
+
+#: core/partitiontable.cpp:158
+msgctxt "@item partition flag"
+msgid "boot"
+msgstr "boot"
+
+#: core/partitiontable.cpp:159
+msgctxt "@item partition flag"
+msgid "root"
+msgstr "root"
+
+#: core/partitiontable.cpp:160
+msgctxt "@item partition flag"
+msgid "swap"
+msgstr "swap"
+
+#: core/partitiontable.cpp:161
+msgctxt "@item partition flag"
+msgid "hidden"
+msgstr "skrytý"
+
+#: core/partitiontable.cpp:162
+msgctxt "@item partition flag"
+msgid "raid"
+msgstr "raid"
+
+#: core/partitiontable.cpp:163
+msgctxt "@item partition flag"
+msgid "lvm"
+msgstr "lvm"
+
+#: core/partitiontable.cpp:164
+msgctxt "@item partition flag"
+msgid "lba"
+msgstr "lba"
+
+#: core/partitiontable.cpp:165
+msgctxt "@item partition flag"
+msgid "hpservice"
+msgstr "hpservice"
+
+#: core/partitiontable.cpp:166
+msgctxt "@item partition flag"
+msgid "palo"
+msgstr ""
+
+#: core/partitiontable.cpp:167
+msgctxt "@item partition flag"
+msgid "prep"
+msgstr ""
+
+#: core/partitiontable.cpp:168
+msgctxt "@item partition flag"
+msgid "msft-reserved"
+msgstr ""
+
+#: core/partitiontable.cpp:404
+msgctxt "@item/plain partition table name"
+msgid "unknown"
+msgstr "neznámý"
+
+#: core/smartattribute.cpp:55
+msgctxt "@item:intable"
+msgid "failing"
+msgstr "selhává"
+
+#: core/smartattribute.cpp:58
+msgctxt "@item:intable"
+msgid "has failed"
+msgstr "selhalo"
+
+#: core/smartattribute.cpp:61
+msgctxt "@item:intable"
+msgid "warning"
+msgstr "varování"
+
+#: core/smartattribute.cpp:64
+msgctxt "@item:intable"
+msgid "good"
+msgstr "dobrý"
+
+#: core/smartattribute.cpp:68 core/smartattribute.cpp:96
+msgctxt "@item:intable not applicable"
+msgid "N/A"
+msgstr "Nedostupné"
+
+#: core/smartattribute.cpp:83
+#, kde-format
+msgctxt "@item:intable"
+msgid "%1 sector"
+msgid_plural "%1 sectors"
+msgstr[0] "%1 sektor"
+msgstr[1] "%1 sektory"
+msgstr[2] "%1 sektorů"
+
+#: core/smartattribute.cpp:114
+msgctxt "SMART attr name"
+msgid "Read Error Rate"
+msgstr "Počet chyb při čtení"
+
+#: core/smartattribute.cpp:114
+msgctxt "SMART attr description"
+msgid "Rate of hardware read errors while reading data from the disk surface."
+msgstr ""
+
+#: core/smartattribute.cpp:115
+msgctxt "SMART attr name"
+msgid "Throughput Performance"
+msgstr "Propustnost"
+
+#: core/smartattribute.cpp:115
+msgctxt "SMART attr description"
+msgid ""
+"Overall (general) throughput performance of a hard disk drive. If the value "
+"of this attribute is decreasing there is a high probability that there is a "
+"problem with the disk."
+msgstr ""
+
+#: core/smartattribute.cpp:116
+msgctxt "SMART attr name"
+msgid "Spin-Up Time"
+msgstr ""
+
+#: core/smartattribute.cpp:116
+msgctxt "SMART attr description"
+msgid "Average time of spindle spin up from zero RPM to fully operational."
+msgstr ""
+
+#: core/smartattribute.cpp:117
+msgctxt "SMART attr name"
+msgid "Start/Stop Count"
+msgstr "Počet spuštění/zastavení"
+
+#: core/smartattribute.cpp:117
+msgctxt "SMART attr description"
+msgid "A tally of spindle start/stop cycles."
+msgstr ""
+
+#: core/smartattribute.cpp:118
+msgctxt "SMART attr name"
+msgid "Reallocated Sectors Count"
+msgstr ""
+
+#: core/smartattribute.cpp:118
+msgctxt "SMART attr description"
+msgid ""
+"Count of reallocated sectors. When the hard drive finds a read/write/"
+"verification error, it marks this sector as &quot;reallocated&quot; and "
+"transfers data to a special reserved area (spare area)."
+msgstr ""
+
+#: core/smartattribute.cpp:119
+msgctxt "SMART attr name"
+msgid "Read Channel Margin"
+msgstr ""
+
+#: core/smartattribute.cpp:119
+msgctxt "SMART attr description"
+msgid ""
+"Margin of a channel while reading data. The function of this attribute is "
+"not specified."
+msgstr ""
+
+#: core/smartattribute.cpp:120
+msgctxt "SMART attr name"
+msgid "Seek Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:120
+msgctxt "SMART attr description"
+msgid ""
+"Rate of seek errors of the magnetic heads. If there is a partial failure in "
+"the mechanical positioning system, then seek errors will arise."
+msgstr ""
+
+#: core/smartattribute.cpp:121
+msgctxt "SMART attr name"
+msgid "Seek Time Performance"
+msgstr ""
+
+#: core/smartattribute.cpp:121
+msgctxt "SMART attr description"
+msgid ""
+"Average performance of seek operations of the magnetic heads. If this "
+"attribute is decreasing, it is a sign of problems in the mechanical "
+"subsystem."
+msgstr ""
+
+#: core/smartattribute.cpp:122
+msgctxt "SMART attr name"
+msgid "Power-On Hours"
+msgstr "Počet hodin v zapnutém stavu"
+
+#: core/smartattribute.cpp:122
+msgctxt "SMART attr description"
+msgid "Count of hours in power-on state."
+msgstr "Počet hodin v zapnutém stavu."
+
+#: core/smartattribute.cpp:123
+msgctxt "SMART attr name"
+msgid "Spin Retry Count"
+msgstr ""
+
+#: core/smartattribute.cpp:123
+msgctxt "SMART attr description"
+msgid ""
+"Count of retry of spin start attempts if the first attempt was unsuccessful. "
+"An increase of this attribute value is a sign of problems in the hard disk "
+"mechanical subsystem."
+msgstr ""
+
+#: core/smartattribute.cpp:124
+msgctxt "SMART attr name"
+msgid "Recalibration Retries"
+msgstr ""
+
+#: core/smartattribute.cpp:124
+msgctxt "SMART attr description"
+msgid ""
+"Count of recalibrations requested if the first attempt was unsuccessful. An "
+"increase of this attribute value is a sign of problems in the hard disk "
+"mechanical subsystem."
+msgstr ""
+
+#: core/smartattribute.cpp:125
+msgctxt "SMART attr name"
+msgid "Power Cycle Count"
+msgstr ""
+
+#: core/smartattribute.cpp:125
+msgctxt "SMART attr description"
+msgid "Count of full hard disk power on/off cycles."
+msgstr ""
+
+#: core/smartattribute.cpp:126 core/smartattribute.cpp:145
+msgctxt "SMART attr name"
+msgid "Soft Read Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:126
+msgctxt "SMART attr description"
+msgid "Uncorrected read errors reported to the operating system."
+msgstr ""
+
+#: core/smartattribute.cpp:127
+msgctxt "SMART attr name"
+msgid "SATA Downshift Error Count"
+msgstr ""
+
+#: core/smartattribute.cpp:127
+msgctxt "SMART attr description"
+msgid "Western Digital and Samsung attribute."
+msgstr "Atributy Western Digital a Samsung."
+
+#: core/smartattribute.cpp:128
+msgctxt "SMART attr name"
+msgid "End-to-End Error"
+msgstr ""
+
+#: core/smartattribute.cpp:128
+msgctxt "SMART attr description"
+msgid ""
+"Part of HP's SMART IV technology: After transferring through the cache RAM "
+"data buffer the parity data between the host and the hard drive did not "
+"match."
+msgstr ""
+
+#: core/smartattribute.cpp:129
+msgctxt "SMART attr name"
+msgid "Head Stability"
+msgstr "Stabilita hlavy"
+
+#: core/smartattribute.cpp:129 core/smartattribute.cpp:130
+msgctxt "SMART attr description"
+msgid "Western Digital attribute."
+msgstr "Atribut Western Digital."
+
+#: core/smartattribute.cpp:130
+msgctxt "SMART attr name"
+msgid "Induced Op-Vibration Detection"
+msgstr ""
+
+#: core/smartattribute.cpp:131
+msgctxt "SMART attr name"
+msgid "Reported Uncorrectable Errors"
+msgstr "Zaznamenané neopravitelné chyby"
+
+#: core/smartattribute.cpp:131
+msgctxt "SMART attr description"
+msgid "Count of errors that could not be recovered using hardware ECC."
+msgstr ""
+
+#: core/smartattribute.cpp:132
+msgctxt "SMART attr name"
+msgid "Command Timeout"
+msgstr ""
+
+#: core/smartattribute.cpp:132
+msgctxt "SMART attr description"
+msgid "Count of aborted operations due to HDD timeout."
+msgstr ""
+"Počet přerušených operací z důvodu vypršení časového limitu pevného disku."
+
+#: core/smartattribute.cpp:133
+msgctxt "SMART attr name"
+msgid "High Fly Writes"
+msgstr "Zápisy High Fly"
+
+#: core/smartattribute.cpp:133
+msgctxt "SMART attr description"
+msgid "Count of fly height errors detected."
+msgstr ""
+
+#: core/smartattribute.cpp:134
+msgctxt "SMART attr name"
+msgid "Temperature Difference From 100"
+msgstr ""
+
+#: core/smartattribute.cpp:134
+msgctxt "SMART attr description"
+msgid ""
+"Value is equal to (100 &ndash; temp. °C), allowing manufacturer to set a "
+"minimum threshold which corresponds to a maximum temperature."
+msgstr ""
+
+#: core/smartattribute.cpp:135
+msgctxt "SMART attr name"
+msgid "G-sense Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:135
+msgctxt "SMART attr description"
+msgid "Count of errors resulting from externally-induced shock and vibration."
+msgstr ""
+
+#: core/smartattribute.cpp:136
+msgctxt "SMART attr name"
+msgid "Power Off Retract Count"
+msgstr ""
+
+#: core/smartattribute.cpp:136
+msgctxt "SMART attr description"
+msgid "Count of power-off or emergency retract cycles"
+msgstr ""
+
+#: core/smartattribute.cpp:137
+msgctxt "SMART attr name"
+msgid "Load Cycle Count"
+msgstr ""
+
+#: core/smartattribute.cpp:137
+msgctxt "SMART attr description"
+msgid "Count of load/unload cycles into head landing zone position."
+msgstr ""
+
+#: core/smartattribute.cpp:138 core/smartattribute.cpp:166
+msgctxt "SMART attr name"
+msgid "Temperature"
+msgstr "Teplota"
+
+#: core/smartattribute.cpp:138
+msgctxt "SMART attr description"
+msgid "Current internal temperature."
+msgstr "Aktuální vnitřní teplota"
+
+#: core/smartattribute.cpp:139
+msgctxt "SMART attr name"
+msgid "Hardware ECC Recovered"
+msgstr ""
+
+#: core/smartattribute.cpp:139
+msgctxt "SMART attr description"
+msgid "Count of errors that could be recovered using hardware ECC."
+msgstr ""
+
+#: core/smartattribute.cpp:140
+msgctxt "SMART attr name"
+msgid "Reallocation Event Count"
+msgstr ""
+
+#: core/smartattribute.cpp:140
+msgctxt "SMART attr description"
+msgid ""
+"Count of remap operations. The raw value of this attribute shows the total "
+"number of attempts to transfer data from reallocated sectors to a spare area."
+msgstr ""
+
+#: core/smartattribute.cpp:141
+msgctxt "SMART attr name"
+msgid "Current Pending Sector Count"
+msgstr ""
+
+#: core/smartattribute.cpp:141
+msgctxt "SMART attr description"
+msgid ""
+"Number of &quot;unstable&quot; sectors (waiting to be remapped, because of "
+"read errors)."
+msgstr ""
+
+#: core/smartattribute.cpp:142
+msgctxt "SMART attr name"
+msgid "Uncorrectable Sector Count"
+msgstr ""
+
+#: core/smartattribute.cpp:142
+msgctxt "SMART attr description"
+msgid "Count of uncorrectable errors when reading/writing a sector."
+msgstr ""
+
+#: core/smartattribute.cpp:143
+msgctxt "SMART attr name"
+msgid "UltraDMA CRC Error Count"
+msgstr ""
+
+#: core/smartattribute.cpp:143
+msgctxt "SMART attr description"
+msgid ""
+"Count of errors in data transfer via the interface cable as determined by "
+"ICRC."
+msgstr ""
+
+#: core/smartattribute.cpp:144
+msgctxt "SMART attr name"
+msgid "Multi-Zone Error Rate<br/>Write Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:144
+msgctxt "SMART attr description"
+msgid "The total number of errors when writing a sector."
+msgstr "Celkový počet chyb při psaní na sektor."
+
+#: core/smartattribute.cpp:145
+msgctxt "SMART attr description"
+msgid "Number of off-track errors."
+msgstr ""
+
+#: core/smartattribute.cpp:146
+msgctxt "SMART attr name"
+msgid "Data Address Mark Errors"
+msgstr ""
+
+#: core/smartattribute.cpp:146
+msgctxt "SMART attr description"
+msgid "Number of Data Address Mark errors (or vendor-specific)."
+msgstr ""
+
+#: core/smartattribute.cpp:147
+msgctxt "SMART attr name"
+msgid "Run Out Cancel"
+msgstr ""
+
+#: core/smartattribute.cpp:147
+msgctxt "SMART attr description"
+msgid "Number of ECC errors"
+msgstr "Počet chyb ECC"
+
+#: core/smartattribute.cpp:148
+msgctxt "SMART attr name"
+msgid "Soft ECC Correction"
+msgstr "ECC soft korekce"
+
+#: core/smartattribute.cpp:148
+msgctxt "SMART attr description"
+msgid "Number of errors corrected by software ECC"
+msgstr "Počet chyb opravených softwarem ECC"
+
+#: core/smartattribute.cpp:149
+msgctxt "SMART attr name"
+msgid "Thermal Asperity Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:149
+msgctxt "SMART attr description"
+msgid "Number of errors due to high temperature."
+msgstr "Počet chyb z důvodu vysoké teploty."
+
+#: core/smartattribute.cpp:150
+msgctxt "SMART attr name"
+msgid "Flying Height"
+msgstr ""
+
+#: core/smartattribute.cpp:150
+msgctxt "SMART attr description"
+msgid ""
+"Height of heads above the disk surface. A flying height that is too low "
+"increases the chances of a head crash while a flying height that is too high "
+"increases the chances of a read/write error."
+msgstr ""
+
+#: core/smartattribute.cpp:151
+msgctxt "SMART attr name"
+msgid "Spin High Current"
+msgstr ""
+
+#: core/smartattribute.cpp:151
+msgctxt "SMART attr description"
+msgid "Amount of surge current used to spin up the drive."
+msgstr ""
+
+#: core/smartattribute.cpp:152
+msgctxt "SMART attr name"
+msgid "Spin Buzz"
+msgstr ""
+
+#: core/smartattribute.cpp:152
+msgctxt "SMART attr description"
+msgid ""
+"Number of buzz routines needed to spin up the drive due to insufficient "
+"power."
+msgstr ""
+
+#: core/smartattribute.cpp:153
+msgctxt "SMART attr name"
+msgid "Offline Seek Performance"
+msgstr ""
+
+#: core/smartattribute.cpp:153
+msgctxt "SMART attr description"
+msgid "Drive's seek performance during its internal tests."
+msgstr ""
+
+#: core/smartattribute.cpp:154
+msgctxt "SMART attr name"
+msgid "Vibration During Write"
+msgstr "Vibrace během zápisu"
+
+#: core/smartattribute.cpp:154
+msgctxt "SMART attr description"
+msgid "Vibration During Write"
+msgstr "Vibrace během zápisu"
+
+#: core/smartattribute.cpp:155
+msgctxt "SMART attr name"
+msgid "Shock During Write"
+msgstr "Náraz během zápisu"
+
+#: core/smartattribute.cpp:155
+msgctxt "SMART attr description"
+msgid "Shock During Write"
+msgstr "Náraz během zápisu"
+
+#: core/smartattribute.cpp:156
+msgctxt "SMART attr name"
+msgid "Disk Shift"
+msgstr "Posun disku"
+
+#: core/smartattribute.cpp:156
+msgctxt "SMART attr description"
+msgid ""
+"Distance the disk has shifted relative to the spindle (usually due to shock "
+"or temperature)."
+msgstr ""
+
+#: core/smartattribute.cpp:157
+msgctxt "SMART attr name"
+msgid "G-Sense Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:157
+msgctxt "SMART attr description"
+msgid ""
+"The number of errors resulting from externally-induced shock and vibration."
+msgstr ""
+
+#: core/smartattribute.cpp:158
+msgctxt "SMART attr name"
+msgid "Loaded Hours"
+msgstr ""
+
+#: core/smartattribute.cpp:158
+msgctxt "SMART attr description"
+msgid "Time spent operating under data load."
+msgstr "Doba běhu pod zatížením."
+
+#: core/smartattribute.cpp:159
+msgctxt "SMART attr name"
+msgid "Load/Unload Retry Count"
+msgstr ""
+
+#: core/smartattribute.cpp:159
+msgctxt "SMART attr description"
+msgid "Number of times head changes position."
+msgstr ""
+
+#: core/smartattribute.cpp:160
+msgctxt "SMART attr name"
+msgid "Load Friction"
+msgstr ""
+
+#: core/smartattribute.cpp:160
+msgctxt "SMART attr description"
+msgid "Resistance caused by friction in mechanical parts while operating."
+msgstr ""
+
+#: core/smartattribute.cpp:161
+msgctxt "SMART attr name"
+msgid "Load/Unload Cycle Count"
+msgstr ""
+
+#: core/smartattribute.cpp:161
+msgctxt "SMART attr description"
+msgid "Total number of load cycles."
+msgstr ""
+
+#: core/smartattribute.cpp:162
+msgctxt "SMART attr name"
+msgid "Load-In Time"
+msgstr ""
+
+#: core/smartattribute.cpp:162
+msgctxt "SMART attr description"
+msgid ""
+"Total time of loading on the magnetic heads actuator (time not spent in "
+"parking area)."
+msgstr ""
+
+#: core/smartattribute.cpp:163
+msgctxt "SMART attr name"
+msgid "Torque Amplification Count"
+msgstr ""
+
+#: core/smartattribute.cpp:163
+msgctxt "SMART attr description"
+msgid "Number of attempts to compensate for platter speed variations."
+msgstr ""
+
+#: core/smartattribute.cpp:164
+msgctxt "SMART attr name"
+msgid "Power-Off Retract Cycle"
+msgstr ""
+
+#: core/smartattribute.cpp:164
+msgctxt "SMART attr description"
+msgid ""
+"The number of times the magnetic armature was retracted automatically as a "
+"result of cutting power."
+msgstr ""
+
+#: core/smartattribute.cpp:165
+msgctxt "SMART attr name"
+msgid "GMR Head Amplitude"
+msgstr ""
+
+#: core/smartattribute.cpp:165
+msgctxt "SMART attr description"
+msgid ""
+"Amplitude of &quot;thrashing&quot; (distance of repetitive forward/reverse "
+"head motion)"
+msgstr ""
+
+#: core/smartattribute.cpp:166
+msgctxt "SMART attr description"
+msgid "Drive Temperature"
+msgstr "Teplota disku"
+
+#: core/smartattribute.cpp:167
+msgctxt "SMART attr name"
+msgid "Endurance Remaining"
+msgstr ""
+
+#: core/smartattribute.cpp:167
+msgctxt "SMART attr description"
+msgid ""
+"Count of physical erase cycles completed on the drive as a percentage of the "
+"maximum physical erase cycles the drive supports"
+msgstr ""
+
+#: core/smartattribute.cpp:168
+msgctxt "SMART attr name"
+msgid "Power-On Seconds"
+msgstr ""
+
+#: core/smartattribute.cpp:168
+msgctxt "SMART attr description"
+msgid "Time elapsed in the power-on state"
+msgstr "Čas v zapnutém stavu"
+
+#: core/smartattribute.cpp:169
+msgctxt "SMART attr name"
+msgid "Unrecoverable ECC Count"
+msgstr "Počet neobnovitelných ECC"
+
+#: core/smartattribute.cpp:169
+msgctxt "SMART attr description"
+msgid "Count of unrecoverable ECC errors"
+msgstr "Počet neobnovitelných chyb ECC"
+
+#: core/smartattribute.cpp:170
+msgctxt "SMART attr name"
+msgid "Good Block Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:170
+msgctxt "SMART attr description"
+msgid ""
+"Count of available reserved blocks as percentage of the total number of "
+"reserved blocks"
+msgstr ""
+
+#: core/smartattribute.cpp:171
+msgctxt "SMART attr name"
+msgid "Head Flying Hours<br/>or Transfer Error Rate (Fujitsu)"
+msgstr ""
+
+#: core/smartattribute.cpp:171
+msgctxt "SMART attr description"
+msgid ""
+"Time while head is positioning<br/>or counts the number of times the link is "
+"reset during a data transfer."
+msgstr ""
+
+#: core/smartattribute.cpp:172
+msgctxt "SMART attr name"
+msgid "Total LBAs Written"
+msgstr ""
+
+#: core/smartattribute.cpp:172
+msgctxt "SMART attr description"
+msgid "Total LBAs Written"
+msgstr ""
+
+#: core/smartattribute.cpp:173
+msgctxt "SMART attr name"
+msgid "Total LBAs Read"
+msgstr ""
+
+#: core/smartattribute.cpp:173
+msgctxt "SMART attr description"
+msgid "Total LBAs Read"
+msgstr ""
+
+#: core/smartattribute.cpp:174
+msgctxt "SMART attr name"
+msgid "Read Error Retry Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:174
+msgctxt "SMART attr description"
+msgid "Number of errors while reading from a disk"
+msgstr "Počet chyb při čtení z disku"
+
+#: core/smartattribute.cpp:175
+msgctxt "SMART attr name"
+msgid "Free Fall Protection"
+msgstr ""
+
+#: core/smartattribute.cpp:175
+msgctxt "SMART attr description"
+msgid "Number of &quot;Free Fall Events&quot; detected"
+msgstr ""
+
+#: core/smartstatus.cpp:209
+#, kde-format
+msgctxt "@item:intable degrees in Celsius and Fahrenheit"
+msgid "%1° C / %2° F"
+msgstr "%1° C / %2° F"
+
+#: core/smartstatus.cpp:217
+msgctxt "@item"
+msgid "Aborted"
+msgstr "Přerušeno"
+
+#: core/smartstatus.cpp:220
+msgctxt "@item"
+msgid "Interrupted"
+msgstr "Přerušeno"
+
+#: core/smartstatus.cpp:223
+msgctxt "@item"
+msgid "Fatal error"
+msgstr "Fatální chyba"
+
+#: core/smartstatus.cpp:226
+msgctxt "@item"
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+
+#: core/smartstatus.cpp:229
+msgctxt "@item"
+msgid "Electrical error"
+msgstr "Elektrická chyba"
+
+#: core/smartstatus.cpp:232
+msgctxt "@item"
+msgid "Servo error"
+msgstr "Chyba serva"
+
+#: core/smartstatus.cpp:235
+msgctxt "@item"
+msgid "Read error"
+msgstr "Chyba při čtení"
+
+#: core/smartstatus.cpp:238
+msgctxt "@item"
+msgid "Handling error"
+msgstr ""
+
+#: core/smartstatus.cpp:241
+msgctxt "@item"
+msgid "Self test in progress"
+msgstr ""
+
+#: core/smartstatus.cpp:245
+msgctxt "@item"
+msgid "Success"
+msgstr "Úspěch"
+
+#: core/smartstatus.cpp:255
+msgctxt "@item"
+msgid "Healthy"
+msgstr "Zdravý"
+
+#: core/smartstatus.cpp:258
+msgctxt "@item"
+msgid "Has been used outside of its design parameters in the past."
+msgstr ""
+
+#: core/smartstatus.cpp:261
+msgctxt "@item"
+msgid "Has some bad sectors."
+msgstr "Obsahuje několik vadných sektorů."
+
+#: core/smartstatus.cpp:264
+msgctxt "@item"
+msgid "Is being used outside of its design parameters right now."
+msgstr ""
+
+#: core/smartstatus.cpp:267
+msgctxt "@item"
+msgid "Has many bad sectors."
+msgstr "Obsahuje spoustu vadných sektorů."
+
+#: core/smartstatus.cpp:271
+msgctxt "@item"
+msgid "Disk failure is imminent. Backup all data!"
+msgstr "Hrozí selhání disku. Zálohujte všechna data."
+
+#: fs/btrfs.cpp:140
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"Could not create temp dir."
+msgstr ""
+"Nezdařila se změna velikosti souborového systému Btrfs na oddílu <filename>"
+"%1</filename>: Nelze vytvořit dočasný adresář."
+
+#: fs/btrfs.cpp:155
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"btrfs file system resize failed."
+msgstr ""
+
+#: fs/btrfs.cpp:160
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému Btrfs na oddílu <filename>%1</"
+"filename>: Nelze odpojit oddíl."
+
+#: fs/btrfs.cpp:163
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému Btrfs na oddílu <filename>%1</"
+"filename>: Nelze připojit oddíl."
+
+#: fs/fat16.cpp:137
+#, kde-format
+msgctxt "@info/plain"
+msgid "Setting label for partition <filename>%1</filename> to %2"
+msgstr "Nastavit popisek oddílu <filename>%1</filename> na %2"
+
+#: fs/filesystem.cpp:272
+msgctxt "@item/plain filesystem name"
+msgid "unknown"
+msgstr "neznámý"
+
+#: fs/filesystem.cpp:273
+msgctxt "@item/plain filesystem name"
+msgid "extended"
+msgstr "rozšířený"
+
+#: fs/filesystem.cpp:275
+msgctxt "@item/plain filesystem name"
+msgid "ext2"
+msgstr "ext2"
+
+#: fs/filesystem.cpp:276
+msgctxt "@item/plain filesystem name"
+msgid "ext3"
+msgstr "ext3"
+
+#: fs/filesystem.cpp:277
+msgctxt "@item/plain filesystem name"
+msgid "ext4"
+msgstr "ext4"
+
+#: fs/filesystem.cpp:278
+msgctxt "@item/plain filesystem name"
+msgid "linuxswap"
+msgstr "linuxswap"
+
+#: fs/filesystem.cpp:279
+msgctxt "@item/plain filesystem name"
+msgid "fat16"
+msgstr "fat16"
+
+#: fs/filesystem.cpp:280
+msgctxt "@item/plain filesystem name"
+msgid "fat32"
+msgstr "fat32"
+
+#: fs/filesystem.cpp:281
+msgctxt "@item/plain filesystem name"
+msgid "ntfs"
+msgstr "ntfs"
+
+#: fs/filesystem.cpp:282
+msgctxt "@item/plain filesystem name"
+msgid "reiser"
+msgstr "reiser"
+
+#: fs/filesystem.cpp:283
+msgctxt "@item/plain filesystem name"
+msgid "reiser4"
+msgstr "reiser4"
+
+#: fs/filesystem.cpp:284
+msgctxt "@item/plain filesystem name"
+msgid "xfs"
+msgstr "xfs"
+
+#: fs/filesystem.cpp:285
+msgctxt "@item/plain filesystem name"
+msgid "jfs"
+msgstr "jfs"
+
+#: fs/filesystem.cpp:286
+msgctxt "@item/plain filesystem name"
+msgid "hfs"
+msgstr "hfs"
+
+#: fs/filesystem.cpp:287
+msgctxt "@item/plain filesystem name"
+msgid "hfsplus"
+msgstr "hfsplus"
+
+#: fs/filesystem.cpp:288
+msgctxt "@item/plain filesystem name"
+msgid "ufs"
+msgstr "ufs"
+
+#: fs/filesystem.cpp:289
+msgctxt "@item/plain filesystem name"
+msgid "unformatted"
+msgstr "neformátovaný"
+
+#: fs/filesystem.cpp:290
+msgctxt "@item/plain filesystem name"
+msgid "btrfs"
+msgstr "btrfs"
+
+#: fs/filesystem.cpp:291
+msgctxt "@item/plain filesystem name"
+msgid "hpfs"
+msgstr "hpfs"
+
+#: fs/filesystem.cpp:292
+msgctxt "@item/plain filesystem name"
+msgid "luks"
+msgstr "luks"
+
+#: fs/filesystem.cpp:293
+msgctxt "@item/plain filesystem name"
+msgid "ocfs2"
+msgstr "ocfs2"
+
+#: fs/filesystem.cpp:294
+msgctxt "@item/plain filesystem name"
+msgid "zfs"
+msgstr "zfs"
+
+#: fs/filesystem.cpp:295
+msgctxt "@item/plain filesystem name"
+msgid "exfat"
+msgstr ""
+
+#: fs/filesystem.cpp:296
+msgctxt "@item/plain filesystem name"
+msgid "nilfs2"
+msgstr ""
+
+#: fs/filesystem.cpp:297
+msgctxt "@item/plain filesystem name"
+msgid "lvm2 pv"
+msgstr ""
+
+#: fs/filesystem.cpp:341
+msgctxt "@title:menu"
+msgid "Mount"
+msgstr "Připojit"
+
+#: fs/filesystem.cpp:347
+msgctxt "@title:menu"
+msgid "Unmount"
+msgstr "Odpojit"
+
+#: fs/jfs.cpp:162
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Nezdařila se změna velikosti souborového systému JFS na oddílu <filename>%1</"
+"filename>: Nelze vytvořit dočasný adresář."
+
+#: fs/jfs.cpp:177
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Remount failed."
+msgstr ""
+"Nezdařila se změna velikosti souborového systému JFS na oddílu <filename>%1</"
+"filename>: Nelze opakované přpojení."
+
+#: fs/jfs.cpp:182
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému JFS na oddílu <filename>%1</"
+"filename>: Nelze odpojit oddíl."
+
+#: fs/jfs.cpp:185
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému JFS na oddílu <filename>%1</"
+"filename>: Nelze připojit oddíl."
+
+#: fs/linuxswap.cpp:127
+msgctxt "@title:menu"
+msgid "Activate swap"
+msgstr "Aktivovat swap"
+
+#: fs/linuxswap.cpp:132
+msgctxt "@title:menu"
+msgid "Deactivate swap"
+msgstr "Deaktivovat swap"
+
+#: fs/luks.cpp:91
+msgctxt "@title:menu"
+msgid "Decrypt"
+msgstr ""
+
+#: fs/luks.cpp:96
+msgctxt "@title:menu"
+msgid "Deactivate"
+msgstr "Deaktivovat"
+
+#: fs/nilfs2.cpp:144
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"Could not create temp dir."
+msgstr ""
+"Nezdařila se změna velikosti souborového systému NILFS2 na oddílu <filename>"
+"%1</filename>: Nelze vytvořit dočasný adresář."
+
+#: fs/nilfs2.cpp:159
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"NILFS2 file system resize failed."
+msgstr ""
+
+#: fs/nilfs2.cpp:164
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing NILFS2 file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému NILFS2 na oddílu <filename>%1</"
+"filename>: Nelze odpojit oddíl."
+
+#: fs/nilfs2.cpp:167
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Změna velikosti souborového systému NILFS2 na oddílu <filename>%1</filename> "
+"selhala: Nelze připojit oddíl."
+
+#: fs/ntfs.cpp:198
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Updating boot sector for NTFS file system on partition <filename>%1</"
+"filename>."
+msgstr "Aktualizace zaváděcího sektoru NTFS na oddílu <filename>%1</filename>."
+
+#: fs/ntfs.cpp:211
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> for writing when trying to "
+"update the NTFS boot sector."
+msgstr ""
+
+#: fs/ntfs.cpp:217
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not seek to position 0x1c on partition <filename>%1</filename> when "
+"trying to update the NTFS boot sector."
+msgstr ""
+
+#: fs/ntfs.cpp:223
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not write new start sector to partition <filename>%1</filename> when "
+"trying to update the NTFS boot sector."
+msgstr ""
+
+#: fs/ntfs.cpp:227
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Updated NTFS boot sector for partition <filename>%1</filename> successfully."
+msgstr ""
+
+#: fs/xfs.cpp:170
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Nezdařila se změna velikosti souborového systému XFS na oddílu <filename>%1</"
+"filename>: Nelze vytvořit dočasný adresář."
+
+#: fs/xfs.cpp:185
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"xfs_growfs failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému XFS na oddílu <filename>%1</"
+"filename>: Selhal xfs_growfs."
+
+#: fs/xfs.cpp:190
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Varování: Změna velikosti souborového systému XFS na oddíle <filename>%1</"
+"filename>: Nelze odpojit oddíl."
+
+#: fs/xfs.cpp:193
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Změna velikosti souborového systému XFS na oddílu <filename>%1</filename> "
+"selhala: Nelze připojit oddíl."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:37
+msgid "Save"
+msgstr "Uložit"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:44
+msgid "Open in External Browser"
+msgstr "Otevřít v externím prohlížeči"
+
+#: gui/applyprogressdialog.cpp:119
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Nastavuji..."
+
+#: gui/applyprogressdialog.cpp:177
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Čekám na dokončení operace..."
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Přejete si opravdu přerušit?"
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Zrušit běžící operace"
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Ano, zrušit operace"
+
+#: gui/applyprogressdialog.cpp:205
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Všechny operace byly úspěšně dokončeny."
+
+#: gui/applyprogressdialog.cpp:210
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Operace zrušeny."
+
+#: gui/applyprogressdialog.cpp:215
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Při provádění operací došlo k chybám. Přerušeno."
+
+#: gui/applyprogressdialog.cpp:326
+#, kde-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:362
+#, kde-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Celkový čas: %1"
+
+#: gui/applyprogressdialog.cpp:412 gui/mainwindow.cpp:920
+#: gui/smartdialog.cpp:239
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Nelze vytvořit dočasný soubor při pokusu o uložení souboru <filename>%1</"
+"filename>."
+
+#: gui/applyprogressdialog.cpp:412
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Nelze uložit hlášení."
+
+#: gui/applyprogressdialog.cpp:438
+msgctxt "@info"
+msgid ""
+"The configured external browser could not be run. Please check your settings."
+msgstr ""
+"Nemohl být spuštěn předvolený prohlížeč. Prosím, zkontrolujte své nastavení."
+
+#: gui/applyprogressdialog.cpp:438 gui/applyprogressdialog.cpp:441
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Nelze spustit prohlížeč."
+
+#: gui/applyprogressdialog.cpp:441
+#, kde-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr "Nelze vytvořit dočasný soubor <filename>%1</filename> pro zápis."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:33
+msgid "Operations and Jobs"
+msgstr "Operace a úlohy"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:38
+msgid "Time Elapsed"
+msgstr "Uplynulý čas"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:64
+msgid "Total Time: 00:00:00"
+msgstr "Celkový čas: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:81
+#, no-c-format
+msgid "Operation: %p%"
+msgstr "Operace: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:91
+msgid "Status"
+msgstr "Stav"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:107
+#, no-c-format
+msgid "Total: %p%"
+msgstr "Celkem: %p%"
+
+#: gui/createpartitiontabledialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Vytvořit novou tabulku diskových oddílů na <filename>%1</filename>"
+
+#: gui/createpartitiontabledialog.cpp:38
+msgctxt "@action:button"
+msgid "&Create New Partition Table"
+msgstr "Vy&tvořit novou tabulku diskových oddílů"
+
+#: gui/createpartitiontabledialog.cpp:60
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+
+#: gui/createpartitiontabledialog.cpp:62
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "Opravu vytvořit tabulku diskových oddílů typu MS-DOS?"
+
+#: gui/createpartitiontabledialog.cpp:63
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:20
+msgid "Choose the type of partition table you want to create:"
+msgstr "Zvolte typ tabulky oddílů disku který si přejete vytvořit:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:29
+msgid "GPT"
+msgstr "MS-DOS"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:39
+msgid "MS-Dos"
+msgstr "MS-Dos"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:66
+msgid "(icon)"
+msgstr "(ikona)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:79
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr ""
+
+#: gui/decryptluksdialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Decrypt LUKS partition on <filename>%1</filename>"
+msgstr "Dešifrovat oddíl LUKS na <filename>%1</filename>"
+
+#: gui/decryptluksdialog.cpp:38
+msgctxt "@action:button"
+msgid "&Decrypt"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_Name)
+#: gui/decryptluksdialogwidgetbase.ui:22
+msgid "&Name:"
+msgstr "&Název:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_Pass)
+#: gui/decryptluksdialogwidgetbase.ui:35
+msgid "&Passphrase:"
+msgstr "&Heslo:"
+
+#: gui/devicepropsdialog.cpp:52
+#, kde-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Vlastnosti zařízení: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:79 gui/infopane.cpp:162
+#, kde-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (pouze ke čtení)"
+
+#: gui/devicepropsdialog.cpp:107 gui/infopane.cpp:175
+#, kde-format
+msgctxt "@label"
+msgid "1 Sector"
+msgid_plural "%1 Sectors"
+msgstr[0] "1 Sektor"
+msgstr[1] "%1 Sektory"
+msgstr[2] "%1 Sektorů"
+
+#: gui/devicepropsdialog.cpp:118 gui/smartdialog.cpp:88
+#: gui/smartdialog.cpp:155
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "dobrý"
+
+#: gui/devicepropsdialog.cpp:123 gui/smartdialog.cpp:93
+#: gui/smartdialog.cpp:157
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "ŠPATNÝ"
+
+#: gui/devicepropsdialog.cpp:129 gui/smartdialog.cpp:138
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(neznámý)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:58
+msgid "Partition table:"
+msgstr "Tabulka diskových oddílů:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:77
+msgid "Cylinder alignment"
+msgstr "Zarovnání plotny:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:84
+msgid "Sector based alignment"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:113
+msgid "Capacity:"
+msgstr "Kapacita:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:130
+msgid "Total sectors:"
+msgstr "Celkem sektorů:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCHS)
+#: gui/devicepropswidgetbase.ui:160
+msgid "Cylinders/Heads/Sectors:"
+msgstr "Plotny/Hlavičky/Sektory"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:183
+msgid "Logical sector size:"
+msgstr "Velikost logického sektoru:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:200
+msgid "Physical sector size:"
+msgstr "Velikost fyzického sektoru:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCylinderSize)
+#: gui/devicepropswidgetbase.ui:217
+msgid "Cylinder size:"
+msgstr "Velikost plotny:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:241
+msgid "Primaries/Max:"
+msgstr "Primárních/Max:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:265 gui/smartdialog.cpp:155
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:23
+msgid "SMART status:"
+msgstr "Stav SMARTu:"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:303 gui/editmountpointdialogwidgetbase.ui:142
+msgid "More..."
+msgstr "Více..."
+
+#: gui/editmountoptionsdialog.cpp:33
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Upravit další možnosti připojení"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:14
+msgid "Edit Mount Options"
+msgstr "Upravit možnosti připojení"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:20
+msgid "Edit the mount options for this file system:"
+msgstr ""
+
+#: gui/editmountpointdialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Úprava bodu připojení pro <filename>%1</filename>"
+
+#: gui/editmountpointdialog.cpp:51
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <strong>can not be "
+"undone</strong>.</warning></para>"
+msgstr ""
+
+#: gui/editmountpointdialog.cpp:53
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Opravdu uložit změny?"
+
+#: gui/editmountpointdialog.cpp:54
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Uložit změny"
+
+#: gui/editmountpointdialogwidget.cpp:181
+#, kde-format
+msgctxt "@info"
+msgid "Could not open mount point file <filename>%1</filename>."
+msgstr "Nelze otevřít soubor bodu připojení <filename>%1</filename>."
+
+#: gui/editmountpointdialogwidget.cpp:182
+msgctxt "@title:window"
+msgid "Error while reading mount points"
+msgstr "Chyba při čtení bodů připojení"
+
+#: gui/editmountpointdialogwidget.cpp:301
+#, kde-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>%1</filename>."
+msgstr "Nelze uložit body připojení do souboru <filename>%1</filename>."
+
+#: gui/editmountpointdialogwidget.cpp:302
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Chyba při ukládání bodů připojení"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:17
+msgid "Path:"
+msgstr "Cesta:"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:46
+msgid "Select..."
+msgstr "Vybrat..."
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:53
+msgid "Type:"
+msgstr "Typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:63
+msgid "Options:"
+msgstr "Možnosti:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:73
+msgid "Read-only"
+msgstr "Pouze čtení"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:80
+msgid "Users can mount and unmount"
+msgstr "Uživatelé mohou připojovat a odpojovat"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:87
+msgid "No automatic mount"
+msgstr "Žádné automatické připojení"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:94
+msgid "No update of file access times"
+msgstr "Neaktualizovat přístupový čas souborů"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:101
+msgid "Synchronous access"
+msgstr "Synchronní přístup"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:108
+msgid "No update of directory access times"
+msgstr "Neaktualizovat přístupový čas adresářů"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:115
+msgid "No binary execution"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:122
+msgid "Update access times relative to modification"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:149
+msgid "Dump Frequency:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:178
+msgid "Pass Number:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:285
+msgid "Device Node"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/partitionmanagerwidgetbase.ui:90
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:302
+#: gui/partitionmanagerwidgetbase.ui:85
+msgid "Label"
+msgstr "Popisek"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:309
+msgid "Identify by:"
+msgstr "Identifikovat podle:"
+
+#: gui/filesystemsupportdialog.cpp:39
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Podpora souborových systémů"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:18
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:65
+msgid "File System"
+msgstr "Souborový systém"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+msgid "Create"
+msgstr "Vytvořit"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+msgid "Grow"
+msgstr "Zvětšit"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+msgid "Shrink"
+msgstr "Zmenšit"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+msgid "Move"
+msgstr "Přesunout"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+msgid "Copy"
+msgstr "Kopírovat"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+msgid "Check"
+msgstr "Kontrola"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+msgid "Read Label"
+msgstr "Přečíst popisek"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+msgid "Write Label"
+msgstr "Zapsat popisek"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+msgid "Read Usage"
+msgstr "Přečíst využití"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+msgid "Backup"
+msgstr "Zálohovat"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+msgid "Restore"
+msgstr "Obnovit"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+msgid "Support Tools"
+msgstr "Podpůrné nástroje"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:135
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Znovu načíst podporu"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:53 gui/mainwindowbase.ui:49
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Informace"
+
+#: gui/infopane.cpp:113
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Informace o oddílech disků"
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:133
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Souborový systém:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:134
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Kapacita:"
+
+#: gui/infopane.cpp:122
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr ""
+
+#: gui/infopane.cpp:123
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr ""
+
+#: gui/infopane.cpp:124
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr ""
+
+#: gui/infopane.cpp:125
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Velikost klíče:"
+
+#: gui/infopane.cpp:126
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr ""
+
+#: gui/infopane.cpp:127 gui/infopane.cpp:137
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "První sektor:"
+
+#: gui/infopane.cpp:128 gui/infopane.cpp:138
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Poslední sektor:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:139
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Počet sektorů:"
+
+#: gui/infopane.cpp:135
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Dostupné:"
+
+#: gui/infopane.cpp:136
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Použité:"
+
+#: gui/infopane.cpp:150
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Informace o zařízení"
+
+#: gui/infopane.cpp:154
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Cesta:"
+
+#: gui/infopane.cpp:167
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Typ:"
+
+#: gui/infopane.cpp:168
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Kapacita:"
+
+#: gui/infopane.cpp:169
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Celkem sektorů:"
+
+#: gui/infopane.cpp:170
+msgctxt "@label device"
+msgid "Heads:"
+msgstr "Hlav:"
+
+#: gui/infopane.cpp:171
+msgctxt "@label device"
+msgid "Cylinders:"
+msgstr "Ploten:"
+
+#: gui/infopane.cpp:172
+msgctxt "@label device"
+msgid "Sectors:"
+msgstr "Sektorů:"
+
+#: gui/infopane.cpp:173
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Velikost logického sektoru:"
+
+#: gui/infopane.cpp:174
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Velikost fyzického sektoru:"
+
+#: gui/infopane.cpp:175
+msgctxt "@label device"
+msgid "Cylinder size:"
+msgstr "Velikost plotny:"
+
+#: gui/infopane.cpp:176
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Primárních/Max:"
+
+#: gui/insertdialog.cpp:43
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Vložit oddíl"
+
+#: gui/mainwindow.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: gui/mainwindow.cpp:144
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Zahodit připravené operace a ukončit?"
+
+#: gui/mainwindow.cpp:145
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "Ukončit <application>%1</application>"
+
+#: gui/mainwindow.cpp:188
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Zpět"
+
+#: gui/mainwindow.cpp:189
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Vrátit poslední operaci"
+
+#: gui/mainwindow.cpp:190
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Odstranit poslední operaci ze seznamu."
+
+#: gui/mainwindow.cpp:196
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Vyprázdnit"
+
+#: gui/mainwindow.cpp:197
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Vymazat všechny operace"
+
+#: gui/mainwindow.cpp:198
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Vymazat frontu připravených operací."
+
+#: gui/mainwindow.cpp:203
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Provést"
+
+#: gui/mainwindow.cpp:204
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Provést všechny operace"
+
+#: gui/mainwindow.cpp:205
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Provést připravené operace."
+
+#: gui/mainwindow.cpp:210
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Obnovit zařízení"
+
+#: gui/mainwindow.cpp:211
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Obnovit všechna zařízení"
+
+#: gui/mainwindow.cpp:212
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Obnovit seznam zařízení."
+
+#: gui/mainwindow.cpp:218
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Nová tabulka diskových oddílů"
+
+#: gui/mainwindow.cpp:219
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Vytvořit novou tabulku diskových oddílů"
+
+#: gui/mainwindow.cpp:220
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Vytvořit novou a prázdnou tabulku diskových oddílů na zařízení."
+
+#: gui/mainwindow.cpp:226
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Exportovat tabulku oddílů"
+
+#: gui/mainwindow.cpp:227
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Exportovat tabulku oddílů"
+
+#: gui/mainwindow.cpp:228
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Exportovat tabulku oddílů zařízení do textového souboru."
+
+#: gui/mainwindow.cpp:233
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Importovat tabulku diskových oddílů"
+
+#: gui/mainwindow.cpp:234
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Importovat tabulku diskových oddílů"
+
+#: gui/mainwindow.cpp:235
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Importovat tabulku diskových oddílů ze souboru."
+
+#: gui/mainwindow.cpp:240
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "Stav SMARTu"
+
+#: gui/mainwindow.cpp:241
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "Zobrazit stav SMARTu"
+
+#: gui/mainwindow.cpp:242
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Zobrazit stav SMART zařízení, pokud je podporován"
+
+#: gui/mainwindow.cpp:246 gui/mainwindow.cpp:321
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: gui/mainwindow.cpp:247
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Otevřít dialog vlastností zařízení"
+
+#: gui/mainwindow.cpp:248
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Zobrazit a upravit vlastnosti zařízení"
+
+#: gui/mainwindow.cpp:254
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Nový"
+
+#: gui/mainwindow.cpp:255
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Nový oddíl"
+
+#: gui/mainwindow.cpp:256
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Vytvořit nový oddíl."
+
+#: gui/mainwindow.cpp:262
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Změnit velikost/Přesunout"
+
+#: gui/mainwindow.cpp:263
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Změnit velikost nebo přesunout oddíl"
+
+#: gui/mainwindow.cpp:264
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Zmenšit, zvětšit nebo přesunout existující oddíl."
+
+#: gui/mainwindow.cpp:270
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Smazat"
+
+#: gui/mainwindow.cpp:271
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Smazat oddíl"
+
+#: gui/mainwindow.cpp:272
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Smaže oddíl."
+
+#: gui/mainwindow.cpp:278
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Zničit"
+
+#: gui/mainwindow.cpp:279
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Zničit oddíl"
+
+#: gui/mainwindow.cpp:280
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr "Zničí oddíl tak, aby jeho obsah nemohl být obnoven."
+
+#: gui/mainwindow.cpp:286
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: gui/mainwindow.cpp:287
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Kopírovat oddíl"
+
+#: gui/mainwindow.cpp:288
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Zkopírovat existující diskový oddíl."
+
+#: gui/mainwindow.cpp:294
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Vložit"
+
+#: gui/mainwindow.cpp:295
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Vložit oddíl"
+
+#: gui/mainwindow.cpp:296
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Vložit zkopírovaný oddíl."
+
+#: gui/mainwindow.cpp:302
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Upravit přípojný bod"
+
+#: gui/mainwindow.cpp:303
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Upravit přípojný bod"
+
+#: gui/mainwindow.cpp:304
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Upraví přípojný bod a možnosti oddílu."
+
+#: gui/mainwindow.cpp:308
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Připojit"
+
+#: gui/mainwindow.cpp:309
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Připojit nebo odpojit oddíl"
+
+#: gui/mainwindow.cpp:310
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Připojí nebo odpojí oddíl."
+
+#: gui/mainwindow.cpp:314
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Ověřit"
+
+#: gui/mainwindow.cpp:315
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Zkontrolovat oddíl"
+
+#: gui/mainwindow.cpp:316
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Zkontrolovat, zda oddíl nebo souborový systém neobsahuje chyby."
+
+#: gui/mainwindow.cpp:322
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Otevřít dialog vlastností oddílu"
+
+#: gui/mainwindow.cpp:323
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr "Zobrazí a modifikuje vlastnosti oddílu (popisek, příznaky oddílu, aj.)"
+
+#: gui/mainwindow.cpp:328
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Záloha"
+
+#: gui/mainwindow.cpp:329
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Zálohovat oddíl"
+
+#: gui/mainwindow.cpp:330
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Zazálohovat oddíl do souboru obrazu."
+
+#: gui/mainwindow.cpp:335
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Obnovit"
+
+#: gui/mainwindow.cpp:336
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Obnovit oddíl"
+
+#: gui/mainwindow.cpp:337
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Obnovit oddíl ze souboru obrazu."
+
+#: gui/mainwindow.cpp:342
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Podpora souborových systémů"
+
+#: gui/mainwindow.cpp:343
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Prohlédnout informace o podpoře souborových systémů"
+
+#: gui/mainwindow.cpp:344
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Zobrazit informace o podporovaných souborových systémech."
+
+#: gui/mainwindow.cpp:356
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Vyprázdnit záznam"
+
+#: gui/mainwindow.cpp:357
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Vyprázdnit záznam"
+
+#: gui/mainwindow.cpp:358
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr ""
+
+#: gui/mainwindow.cpp:362
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Uložit záznam"
+
+#: gui/mainwindow.cpp:363
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Uložit záznam"
+
+#: gui/mainwindow.cpp:364
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Uložit záznam do souboru."
+
+#: gui/mainwindow.cpp:448
+#, kde-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "Jedna operace ve frontě"
+msgstr[1] "%1 operace ve frontě"
+msgstr[2] "%1 operací ve frontě"
+
+#: gui/mainwindow.cpp:547
+#, kde-format
+msgctxt "@info/plain"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Používám modul podpůrné vrstvy: %1 (%2)"
+
+#: gui/mainwindow.cpp:551
+msgctxt "@info/plain"
+msgid "Scanning devices..."
+msgstr "Znovu načítám zařízení..."
+
+#: gui/mainwindow.cpp:583
+msgctxt "@info/plain"
+msgid "Scan finished."
+msgstr "Zkoumání dokončeno."
+
+#: gui/mainwindow.cpp:639
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+
+#: gui/mainwindow.cpp:641
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Opravdu znovu načíst zařízení?"
+
+#: gui/mainwindow.cpp:642
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Znovu načíst zařízení"
+
+#: gui/mainwindow.cpp:658
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+
+#: gui/mainwindow.cpp:660
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Provést připravené operace?"
+
+#: gui/mainwindow.cpp:661
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Provést připravené operace"
+
+#: gui/mainwindow.cpp:664
+msgctxt "@info/plain"
+msgid "Applying operations..."
+msgstr "Provádím operace..."
+
+#: gui/mainwindow.cpp:690
+#, kde-format
+msgctxt "@info/plain"
+msgid "Undoing operation: %1"
+msgstr "Vracím operaci: %1"
+
+#: gui/mainwindow.cpp:706
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Opravdu si přejete smazat celou frontu připravených operací?"
+
+#: gui/mainwindow.cpp:707
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Vymazat připravené operace?"
+
+#: gui/mainwindow.cpp:708
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Vymazat připravené operace"
+
+#: gui/mainwindow.cpp:711
+msgctxt "@info/plain"
+msgid "Clearing the list of pending operations."
+msgstr "Mažu frontu připravených operací."
+
+#: gui/mainwindow.cpp:749
+#, kde-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr "Nelze otevřít vstupní soubor <filename>%1</filename> pro import: %2"
+
+#: gui/mainwindow.cpp:749 gui/mainwindow.cpp:757
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Chyba importování tabulky diskových oddílů"
+
+#: gui/mainwindow.cpp:757
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Zálohovat souborový systém na oddílu <filename>%1</filename> do <filename>"
+"%2</filename>"
+
+#: gui/mainwindow.cpp:783
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+
+#: gui/mainwindow.cpp:783 gui/mainwindow.cpp:796 gui/mainwindow.cpp:804
+#: gui/mainwindow.cpp:810 gui/mainwindow.cpp:825 gui/mainwindow.cpp:839
+#: gui/mainwindow.cpp:845 gui/mainwindow.cpp:867 gui/mainwindow.cpp:873
+#: gui/mainwindow.cpp:879 gui/mainwindow.cpp:887
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Chyba při importování tabulky diskových oddílů"
+
+#: gui/mainwindow.cpp:796
+#, kde-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr ""
+
+#: gui/mainwindow.cpp:804
+#, kde-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr "Typ tabulky oddílů \"%1\" je neznámý (řádek %2)."
+
+#: gui/mainwindow.cpp:810
+#, kde-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr "Typ tabulky oddílů \"%1\" není podporován pro import (řádek %2)."
+
+#: gui/mainwindow.cpp:825
+#, kde-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr "Nalezen oddíl, ale žádný typ tabulky oddílů (řádek %1)."
+
+#: gui/mainwindow.cpp:839
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:845
+#, kde-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:867
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr ""
+
+#: gui/mainwindow.cpp:873
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:879
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:887
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr "Nelze vytvořit souborový systém \"%1\" pro oddíl %2 (řádek %3)."
+
+#: gui/mainwindow.cpp:899
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr ""
+
+#: gui/mainwindow.cpp:920
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Chyba při exportování tabulky diskových oddílů"
+
+#: gui/mainwindow.cpp:1062
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+
+#: gui/mainwindow.cpp:1075
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Chybějící balíčky s podporou souborových systémů"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#: gui/mainwindowbase.ui:14 gui/partitionmanagerwidgetbase.ui:14
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "Správce diskových oddílů pro KDE"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:24
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Zařízení"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Připravené operace"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:63
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Zaznamenat výstup"
+
+#: gui/newdialog.cpp:47
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Vytvořit nový oddíl"
+
+#. i18n: ectx: ToolBar (editToolBar)
+#: gui/partitionmanagerui.rc:5
+msgctxt "@title:menu turn on and off edit toolbar"
+msgid "Edit Toolbar"
+msgstr "Upravit nástrojovou lištu"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:11
+msgctxt "@title:menu"
+msgid "Partition Toolbar"
+msgstr "Lišta oddílů"
+
+#. i18n: ectx: ToolBar (deviceToolBar)
+#: gui/partitionmanagerui.rc:18
+msgctxt "@title:menu"
+msgid "Device Toolbar"
+msgstr "Lišta zařízení"
+
+#. i18n: ectx: Menu (view)
+#: gui/partitionmanagerui.rc:30
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Pohled"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:40
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Zařízení"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:42
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr ""
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:54
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Diskový oddíl"
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Souborový systém na oddílu <filename>%1</filename> nemohl být připojen."
+
+#: gui/partitionmanagerwidget.cpp:406
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Souborový systém nelze připojit."
+
+#: gui/partitionmanagerwidget.cpp:411
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr "Nelze odpojit souborový systém na oddílu <filename>%1</filename>."
+
+#: gui/partitionmanagerwidget.cpp:411
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Souborový systém nelze odpojit."
+
+#: gui/partitionmanagerwidget.cpp:453
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: gui/partitionmanagerwidget.cpp:457
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "Příliž mnoho primárních oddílů."
+
+#: gui/partitionmanagerwidget.cpp:522
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:525
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Oddíl nelze smazat."
+
+#: gui/partitionmanagerwidget.cpp:535
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:537
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Opravdu smazat oddíl ve schránce?"
+
+#: gui/partitionmanagerwidget.cpp:538
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Smazat"
+
+#: gui/partitionmanagerwidget.cpp:584
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Oddíl <filename>%1</filename> má stejnou pozici a velikost po úpravách "
+"velikosti/přesunu. Operace ignorována."
+
+#: gui/partitionmanagerwidget.cpp:614
+#, kde-format
+msgctxt "@info/plain"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "Oddíl <filename>%1</filename> byl zkopírován do schránky."
+
+#: gui/partitionmanagerwidget.cpp:683
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:691
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Opravdu přepsat existující oddíl?"
+
+#: gui/partitionmanagerwidget.cpp:692
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Přepsat oddíl"
+
+#: gui/partitionmanagerwidget.cpp:701
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:702
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Cíl nemá dostatečnou velikost"
+
+#: gui/partitionmanagerwidget.cpp:705
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:708
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Nelze vytvořit cílový oddíl."
+
+#: gui/partitionmanagerwidget.cpp:746
+#, kde-format
+msgctxt "@info"
+msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+msgstr "Přejete si přepsat esistující soubor <filename>%1</filename>?"
+
+#: gui/partitionmanagerwidget.cpp:746
+msgctxt "@title:window"
+msgid "Overwrite Existing File?"
+msgstr "Přepsat existující soubor?"
+
+#: gui/partitionmanagerwidget.cpp:746
+msgctxt "@action:button"
+msgid "Overwrite File"
+msgstr "Přepsat soubor"
+
+#: gui/partitionmanagerwidget.cpp:773
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:773
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Nedostatek místa pro obnovení souborového systému."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:70
+msgid "Partition"
+msgstr "Diskový oddíl"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:75
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:80
+msgid "Mount Point"
+msgstr "Přípojný bod"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:95
+msgid "Size"
+msgstr "Velikost"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:100
+msgid "Used"
+msgstr "Použito"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:105
+msgid "Available"
+msgstr "Dostupné"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:110
+msgid "First Sector"
+msgstr "První sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:115
+msgid "Last Sector"
+msgstr "Poslední sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:120
+msgid "Number of Sectors"
+msgstr "Počet sektorů"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:125
+msgid "Flags"
+msgstr "Příznaky"
+
+#: gui/partpropsdialog.cpp:54
+#, kde-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Vlastnosti diskového oddílu: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:102
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(nic nebylo nalezeno)"
+
+#: gui/partpropsdialog.cpp:108
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "nečinný"
+
+#: gui/partpropsdialog.cpp:112
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Je připojen alespoň jeden logický diskový oddíl."
+
+#: gui/partpropsdialog.cpp:114
+#, kde-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "připojen na <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:116
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "připojený"
+
+#: gui/partpropsdialog.cpp:120
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(žádná)"
+
+#: gui/partpropsdialog.cpp:327
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:329
+#, kde-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr "Opravdu znovu vytvořit souborový systém %2 na <filename>%1</filename>?"
+
+#: gui/partpropsdialog.cpp:330
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Změnit souborový systém"
+
+#: gui/partpropsdialog.cpp:331
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Neměnit souborový systém"
+
+#: gui/partpropsdialog.cpp:352
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filename>%1</filename> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:354
+#, kde-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "Opravdu znovu vytvořit souborový systém na <filename>%1</filename>?"
+
+#: gui/partpropsdialog.cpp:355
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Znovu vytvořit souborový systém"
+
+#: gui/partpropsdialog.cpp:356
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Souborový systém znovu nevytvářet"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:49 gui/sizedialogwidgetbase.ui:99
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Souborový systém:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:65 gui/sizedialogwidgetbase.ui:115
+msgctxt "@label"
+msgid "Label:"
+msgstr "Popisek:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:82 gui/sizedialogwidgetbase.ui:134
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Tento systém nepodporuje nastavení popisky."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:92
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Znovu vytvořit souborový systém:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:106
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Bod připojení:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:123
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Typ diskového oddílu:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:140
+msgctxt "@label"
+msgid "Status:"
+msgstr "Stav:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:157
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:187
+msgctxt "@label"
+msgid "Size:"
+msgstr "Velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:210
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Dostupné:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:227
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Použito:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:251
+msgctxt "@label"
+msgid "First sector:"
+msgstr "První sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:268
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Poslední sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:285
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Počet sektorů:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:309
+msgctxt "@label"
+msgid "Flags:"
+msgstr "Příznaky:"
+
+#: gui/parttablewidget.cpp:36
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Zvolte prosím zařízení."
+
+#: gui/parttablewidget.cpp:63
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "Na zařízení nenalezena žádná tabulka diskových oddílů."
+
+#: gui/resizedialog.cpp:48
+#, kde-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Změnit velikost/přesunout: <filename>%1</filename>"
+
+#: gui/scanprogressdialog.cpp:27
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Zkoumám zařízení..."
+
+#: gui/scanprogressdialog.cpp:36
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Zkoumám..."
+
+#: gui/scanprogressdialog.cpp:38
+#, kde-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Zkoumám zařízení: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:62
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "První sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:97
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Poslední sektor:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:120
+msgid "Align partition"
+msgstr "Zarovnat oddíl"
+
+#: gui/sizedialogbase.cpp:57
+msgctxt "@item:button advanced settings button"
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:55
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Typ oddílu:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:70
+msgid "Primary"
+msgstr "Primární"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:77
+msgid "Extended"
+msgstr "Rozšířený"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:84
+msgid "Logical"
+msgstr "Logický"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:152
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Minimální velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:175
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Maximální velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/sizedialogwidgetbase.ui:198
+msgctxt "@label:listbox"
+msgid "Free space before:"
+msgstr "Volný prostor před:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:233
+msgctxt "@label:listbox"
+msgid "Size:"
+msgstr "Velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/sizedialogwidgetbase.ui:262
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Volný prostor po:"
+
+#: gui/smartdialog.cpp:64
+#, kde-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "Vlastnosti SMART: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:66
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "Uložit hlášení SMART"
+
+#: gui/smartdialog.cpp:104 gui/smartdialog.cpp:161
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "žádná"
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:191
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr ""
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:191
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr ""
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:192
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Online"
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:192
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Offline"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:63
+msgid "Model:"
+msgstr "Model:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:164 gui/smartdialogwidgetbase.ui:92
+msgid "Serial number:"
+msgstr "Sériové číslo:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:165 gui/smartdialogwidgetbase.ui:121
+msgid "Firmware revision:"
+msgstr "Revize firmware:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:166 gui/smartdialogwidgetbase.ui:150
+msgid "Temperature:"
+msgstr "Teplota:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:167 gui/smartdialogwidgetbase.ui:179
+msgid "Bad sectors:"
+msgstr "Vadných sektorů:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:168 gui/smartdialogwidgetbase.ui:208
+msgid "Powered on for:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:169 gui/smartdialogwidgetbase.ui:237
+msgid "Power cycles:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:170 gui/smartdialogwidgetbase.ui:414
+msgid "Self tests:"
+msgstr "Samokontrola:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:171 gui/smartdialogwidgetbase.ui:385
+msgid "Overall assessment:"
+msgstr "Celkový odhad:"
+
+#: gui/smartdialog.cpp:239
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Nelze uložit hlášení SMART."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:289
+msgid "Id"
+msgstr "Id"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+msgid "Attribute"
+msgstr "Atribut"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+msgid "Failure Type"
+msgstr "Typ selhání"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+msgid "Update Type"
+msgstr "Typ aktualizace"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+msgid "Worst"
+msgstr "Nejhorší"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+msgid "Current"
+msgstr "Současný"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+msgid "Threshold"
+msgstr "Práh"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+msgid "Raw"
+msgstr "Raw"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+msgid "Assessment"
+msgstr "Hodnocení"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+msgid "Value"
+msgstr "Hodnota"
+
+#: gui/treelog.cpp:131
+#, kde-format
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr "Nelze vytvořit výstupní soubor <filename>%1</filename>."
+
+#: gui/treelog.cpp:131
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Chyba při ukládání souboru záznamu"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:54
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:57
+msgid "Severity"
+msgstr "Závažnost"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Čas"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "Zpráva"
+
+#: jobs/backupfilesystemjob.cpp:65
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"backup."
+msgstr ""
+
+#: jobs/backupfilesystemjob.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not create backup file <filename>%1</filename>."
+msgstr "Nelze vytvořit záložní soubor <filename>%1</filename>."
+
+#: jobs/backupfilesystemjob.cpp:79
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Back up file system on partition <filename>%1</filename> to <filename>%2</"
+"filename>"
+msgstr ""
+"Zálohovat souborový systém na oddílu <filename>%1</filename> do <filename>"
+"%2</filename>"
+
+#: jobs/checkfilesystemjob.cpp:56
+#, kde-format
+msgctxt "@info/plain"
+msgid "Check file system on partition <filename>%1</filename>"
+msgstr "Zkontrolovat souborový systém na oddílu <filename>%1</filename>"
+
+#: jobs/copyfilesystemjob.cpp:61
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Cannot copy file system: File system on target partition <filename>%1</"
+"filename> is smaller than the file system on source partition <filename>%2</"
+"filename>."
+msgstr ""
+
+#: jobs/copyfilesystemjob.cpp:70
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+
+#: jobs/copyfilesystemjob.cpp:72
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on target partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+
+#: jobs/copyfilesystemjob.cpp:76
+msgctxt "@info/plain"
+msgid ""
+"Closing device. This may take a while, especially on slow devices like "
+"Memory Sticks."
+msgstr ""
+"Uzavírám zařízení. To může chvíli trvat, obzvláště na zařízeních jako jsou "
+"paměťové karty."
+
+#: jobs/copyfilesystemjob.cpp:105
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy file system on partition <filename>%1</filename> to partition <filename>"
+"%2</filename>"
+msgstr ""
+
+#: jobs/createfilesystemjob.cpp:70
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to set the system type for the file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Nastavení typu systému pro souborový systém na oddílu <filename>%1</"
+"filename> selhalo."
+
+#: jobs/createfilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to set the "
+"system type for partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/createfilesystemjob.cpp:80
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set the system type for "
+"partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/createfilesystemjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create file system %1 on partition <filename>%2</filename>"
+msgstr "Vytvořit souborový systém %1 na oddílu <filename>%2</filename>"
+
+#: jobs/createpartitionjob.cpp:71
+#: plugins/libparted/libpartedpartitiontable.cpp:196
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to add partition <filename>%1</filename> to device <filename>%2</"
+"filename>."
+msgstr ""
+"Selhalo přidání oddílu <filename>%1</filename> na zařízení <filename>%2</"
+"filename>."
+
+#: jobs/createpartitionjob.cpp:76
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to create "
+"new partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/createpartitionjob.cpp:81
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to create new partition "
+"<filename>%2</filename>."
+msgstr ""
+
+#: jobs/createpartitionjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition <filename>%1</filename>"
+msgstr ""
+
+#: jobs/createpartitionjob.cpp:93
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition on device <filename>%1</filename>"
+msgstr ""
+
+#: jobs/createpartitiontablejob.cpp:59
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open device <filename>%1</"
+"filename>."
+msgstr ""
+
+#: jobs/createpartitiontablejob.cpp:68
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition table on device <filename>%1</filename>"
+msgstr ""
+
+#: jobs/deletefilesystemjob.cpp:81
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not delete file system on <filename>%1</filename>."
+msgstr ""
+
+#: jobs/deletefilesystemjob.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to delete "
+"file system on <filename>%2</filename>."
+msgstr ""
+
+#: jobs/deletefilesystemjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system signature for partition <filename>%1</"
+"filename>: Failed to open device <filename>%2</filename>."
+msgstr ""
+
+#: jobs/deletefilesystemjob.cpp:104
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete file system on <filename>%1</filename>"
+msgstr ""
+
+#: jobs/deletepartitionjob.cpp:71
+#: plugins/libparted/libpartedpartitiontable.cpp:218
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not delete partition <filename>%1</filename>."
+msgstr ""
+
+#: jobs/deletepartitionjob.cpp:79
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to delete "
+"partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/deletepartitionjob.cpp:84
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Could not open device <filename>%1</filename>."
+msgstr ""
+"Smazání oddílu selhalo: nelze otevřít zařízení <filename>%1</filename>."
+
+#: jobs/deletepartitionjob.cpp:93
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete the partition <filename>%1</filename>"
+msgstr "Smazat oddíl <filename>%1</filename>"
+
+#: jobs/job.cpp:48
+msgctxt "@info/plain"
+msgid ""
+"The logical sector sizes in the source and target for copying are not the "
+"same. This is currently unsupported."
+msgstr ""
+
+#: jobs/job.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+msgstr ""
+
+#: jobs/job.cpp:92
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying %1 MiB/second, estimated time left: %2"
+msgstr ""
+
+#: jobs/job.cpp:111
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying remainder of block size %1 from  %2 to %3."
+msgstr ""
+
+#: jobs/job.cpp:124
+#, kde-format
+msgid "1 sector"
+msgid_plural "%1 sectors"
+msgstr[0] "1 sektor"
+msgstr[1] "%1 sektory"
+msgstr[2] "%1 sektorů"
+
+#: jobs/job.cpp:124
+#, kde-format
+msgctxt ""
+"@info/plain argument 2 is a string such as 7 sectors (localized accordingly)"
+msgid "Copying 1 block (%2) finished."
+msgid_plural "Copying %1 blocks (%2) finished."
+msgstr[0] "Kopíruji 1 blok (%2) dokončeno."
+msgstr[1] "Kopíruji %1 bloky (%2) dokončeno."
+msgstr[2] "Kopíruji %1 blok; (%2) dokončeno."
+
+#: jobs/job.cpp:133
+msgctxt "@info/plain"
+msgid "Source and target for copying do not overlap: Rollback is not required."
+msgstr ""
+
+#: jobs/job.cpp:159
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback from: First sector: %1, last sector: %2."
+msgstr ""
+
+#: jobs/job.cpp:160
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback to: First sector: %1, last sector: %2."
+msgstr ""
+
+#: jobs/job.cpp:165 jobs/job.cpp:172
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open device <filename>%1</filename> to rollback copying."
+msgstr ""
+
+#: jobs/job.cpp:180
+msgctxt "@info/plain"
+msgid "Rollback failed: Source or target are not devices."
+msgstr ""
+
+#: jobs/job.cpp:195
+#, kde-format
+msgctxt "@info/plain"
+msgid "Job: %1"
+msgstr "Úloha: %1"
+
+#: jobs/job.cpp:204
+#, kde-format
+msgctxt "@info/plain job status (error, warning, ...)"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: jobs/job.cpp:230
+msgctxt "@info:progress job"
+msgid "Pending"
+msgstr "Čekající"
+
+#: jobs/job.cpp:231
+msgctxt "@info:progress job"
+msgid "Success"
+msgstr "Úspěch"
+
+#: jobs/job.cpp:232
+msgctxt "@info:progress job"
+msgid "Error"
+msgstr "Chyba"
+
+#: jobs/movefilesystemjob.cpp:64
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on partition <filename>%1</filename> for moving."
+msgstr ""
+
+#: jobs/movefilesystemjob.cpp:66
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not create target for moving file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+
+#: jobs/movefilesystemjob.cpp:78
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback for file system on partition <filename>%1</filename> failed."
+msgstr ""
+
+#: jobs/movefilesystemjob.cpp:80 jobs/restorefilesystemjob.cpp:105
+#: jobs/shredfilesystemjob.cpp:77
+msgctxt "@info/plain"
+msgid "Closing device. This may take a few seconds."
+msgstr "Uzavírám zařízení. To může pár sekund trvat."
+
+#: jobs/movefilesystemjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid "Move the file system on partition <filename>%1</filename> to sector %2"
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%2</filename> already has the "
+"requested length of 1 sector."
+msgid_plural ""
+"The file system on partition <filename>%2</filename> already has the "
+"requested length of %1 sectors."
+msgstr[0] ""
+msgstr[1] ""
+"Souborový systém na oddíle <filename>%1</filename> nemohl být připojen."
+msgstr[2] ""
+"Souborový systém na oddíle <filename>%1</filename> nemohl být připojen."
+
+#: jobs/resizefilesystemjob.cpp:80
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing file system from %1 to %2 sectors."
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing a %1 file system using internal backend functions."
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:102
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%1</filename> cannot be resized "
+"because there is no support for it."
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:133
+msgctxt "@info/plain"
+msgid "Successfully resized file system using internal backend functions."
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:140
+#: plugins/libparted/libpartedpartitiontable.cpp:318
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize the "
+"file system."
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:145
+#: plugins/libparted/libpartedpartitiontable.cpp:321
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not read geometry for partition <filename>%1</filename> while trying "
+"to resize the file system."
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:153
+#, kde-format
+msgctxt "@info/plain"
+msgid "Maximize file system on <filename>%1</filename> to fill the partition"
+msgstr ""
+
+#: jobs/resizefilesystemjob.cpp:155
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
+msgid_plural ""
+"Resize file system on partition <filename>%2</filename> to %1 sectors"
+msgstr[0] ""
+msgstr[1] "Vytvořit souborový systém %1 na oddíle <filename>%2</filename>"
+msgstr[2] "Vytvořit souborový systém %1 na oddíle <filename>%2</filename>"
+
+#: jobs/restorefilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open backup file <filename>%1</filename> to restore from."
+msgstr ""
+
+#: jobs/restorefilesystemjob.cpp:77 jobs/shredfilesystemjob.cpp:73
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open target partition <filename>%1</filename> to restore to."
+msgstr ""
+
+#: jobs/restorefilesystemjob.cpp:116
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore the file system from file <filename>%1</filename> to partition "
+"<filename>%2</filename>"
+msgstr ""
+
+#: jobs/setfilesystemlabeljob.cpp:51
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"File system on partition <filename>%1</filename> does not support setting "
+"labels. Job ignored."
+msgstr ""
+
+#: jobs/setfilesystemlabeljob.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Set the file system label on partition <filename>%1</filename> to \"%2\""
+msgstr ""
+
+#: jobs/setpartflagsjob.cpp:85
+msgctxt "@info/plain flag turned on, active"
+msgid "on"
+msgstr "zapnuto"
+
+#: jobs/setpartflagsjob.cpp:85
+msgctxt "@info/plain flag turned off, inactive"
+msgid "off"
+msgstr "vypnuto"
+
+#: jobs/setpartflagsjob.cpp:85
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"There was an error setting flag %1 for partition <filename>%2</filename> to "
+"state %3."
+msgstr ""
+
+#: jobs/setpartflagsjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not find partition <filename>%1</filename> on device <filename>%2</"
+"filename> to set partition flags."
+msgstr ""
+
+#: jobs/setpartflagsjob.cpp:102
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to set "
+"partition flags for partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/setpartflagsjob.cpp:107
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set partition flags for "
+"partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/setpartflagsjob.cpp:120 ops/setpartflagsoperation.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid "Clear flags for partition <filename>%1</filename>"
+msgstr "Vymazat příznaky pro oddíl <filename>%1</filename>"
+
+#: jobs/setpartflagsjob.cpp:122
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+msgstr ""
+
+#: jobs/setpartgeometryjob.cpp:82
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> while trying to resize/move "
+"partition <filename>%2</filename>."
+msgstr ""
+
+#: jobs/setpartgeometryjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Set geometry of partition <filename>%1</filename>: Start sector: %2, length: "
+"%3"
+msgstr ""
+
+#: jobs/shredfilesystemjob.cpp:71
+msgctxt "@info/plain"
+msgid "Could not open random data source to overwrite file system."
+msgstr ""
+
+#: jobs/shredfilesystemjob.cpp:88
+#, kde-format
+msgctxt "@info/plain"
+msgid "Shred the file system on <filename>%1</filename>"
+msgstr ""
+
+#: main.cpp:38
+msgctxt "@info:shell"
+msgid "Do not try to gain super user privileges"
+msgstr ""
+
+#: main.cpp:39
+msgctxt "@info:shell"
+msgid "Show advanced tab in configuration dialog"
+msgstr ""
+
+#: main.cpp:40
+msgctxt "@info:shell"
+msgid "Device(s) to manage"
+msgstr ""
+
+#: ops/backupoperation.cpp:51
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</filename>"
+msgstr ""
+"Zálohovat oddíl <filename>%1</filename> (%2, %3) do <filename>%4</filename>"
+
+#: ops/checkoperation.cpp:62
+#, kde-format
+msgctxt "@info/plain"
+msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+msgstr ""
+
+#: ops/copyoperation.cpp:165 ops/restoreoperation.cpp:144
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Maximizing file system on target partition <filename>%1</filename> "
+"to the size of the partition failed."
+msgstr ""
+
+#: ops/copyoperation.cpp:170
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking target partition <filename>%1</filename> after copy failed."
+msgstr "Kontroluji cílový oddíl <filename>%1</filename> po selhání kopírování."
+
+#: ops/copyoperation.cpp:180
+msgctxt "@info/plain"
+msgid "Copying source to target partition failed."
+msgstr "Kopírování zdroje do cílového oddílu selhalo."
+
+#: ops/copyoperation.cpp:184
+msgctxt "@info/plain"
+msgid "Creating target partition for copying failed."
+msgstr ""
+
+#: ops/copyoperation.cpp:187
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking source partition <filename>%1</filename> failed."
+msgstr "Kontrola zdrojového oddílu <filename>%1</filename> selhala."
+
+#: ops/copyoperation.cpp:194 ops/operation.cpp:178 ops/resizeoperation.cpp:186
+#: ops/restoreoperation.cpp:165
+#, kde-format
+msgctxt "@info/plain status (success, error, warning...) of operation"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: ops/copyoperation.cpp:204
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> "
+"(%5, %6)"
+msgstr ""
+
+#: ops/copyoperation.cpp:213
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> "
+"(%5, %6) and grow it to %7"
+msgstr ""
+
+#: ops/copyoperation.cpp:225
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename>"
+msgstr ""
+
+#: ops/copyoperation.cpp:233
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename> and grow it to %6"
+msgstr ""
+
+#: ops/createfilesystemoperation.cpp:97
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create filesystem %1 on partition <filename>%2</filename>"
+msgstr "Vytvořit souborový systém %1 na oddílu <filename>%2</filename>"
+
+#: ops/createpartitiontableoperation.cpp:103
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
+msgstr ""
+"Vytvořit novou tabulku diskových oddílů (typ: %1) na <filename>%2</filename>"
+
+#: ops/deleteoperation.cpp:86
+#, kde-format
+msgctxt "@info/plain"
+msgid "Shred partition <filename>%1</filename> (%2, %3)"
+msgstr "Zničit oddíl <filename>%1</filename> (%2, %3)"
+
+#: ops/deleteoperation.cpp:88
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete partition <filename>%1</filename> (%2, %3)"
+msgstr "Vymazat oddíl <filename>%1</filename> (%2, %3)"
+
+#: ops/newoperation.cpp:113
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+msgstr "Vytvořit nový oddíl (%1, %2) na <filename>%3</filename>"
+
+#: ops/operation.cpp:75
+msgctxt "@info:progress operation"
+msgid "None"
+msgstr "Žádná"
+
+#: ops/operation.cpp:76
+msgctxt "@info:progress operation"
+msgid "Pending"
+msgstr "Čekající"
+
+#: ops/operation.cpp:77
+msgctxt "@info:progress operation"
+msgid "Running"
+msgstr "V činnosti"
+
+#: ops/operation.cpp:78
+msgctxt "@info:progress operation"
+msgid "Success"
+msgstr "Úspěch"
+
+#: ops/operation.cpp:79
+msgctxt "@info:progress operation"
+msgid "Warning"
+msgstr "Upozornění"
+
+#: ops/operation.cpp:80
+msgctxt "@info:progress operation"
+msgid "Error"
+msgstr "Chyba"
+
+#: ops/resizeoperation.cpp:165
+#, kde-format
+msgctxt "@info/plain"
+msgid "Moving extended partition <filename>%1</filename> failed."
+msgstr "Přesun rozšířeného oddílu <filename>%1</filename> selhal."
+
+#: ops/resizeoperation.cpp:175
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> after resize/move failed."
+msgstr ""
+"Kontroluji oddíl <filename>%1</filename> po selhání přesunu-změny velikosti."
+
+#: ops/resizeoperation.cpp:178
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing/moving partition <filename>%1</filename> failed."
+msgstr "Změna velikosti/přesunutí oddílu <filename>%1</filename> selhalo."
+
+#: ops/resizeoperation.cpp:182
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> before resize/move failed."
+msgstr ""
+"Kontroluji oddíl <filename>%1</filename> před přesunem/změnou velikosti."
+
+#: ops/resizeoperation.cpp:213
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the left by %2"
+msgstr "Přesunout oddíl <filename>%1</filename> vlevo o  %2"
+
+#: ops/resizeoperation.cpp:216
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the right by %2"
+msgstr "Přesunout oddíl <filename>%1</filename> vpravo o %2"
+
+#: ops/resizeoperation.cpp:219
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Grow partition <filename>%1</filename> from %2 to %3"
+msgstr "Zvětšit oddíl <filename>%1</filename> z %2 na %3"
+
+#: ops/resizeoperation.cpp:222
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+msgstr ""
+
+#: ops/resizeoperation.cpp:225
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and grow it from %3 "
+"to %4"
+msgstr ""
+
+#: ops/resizeoperation.cpp:228
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and grow it from "
+"%3 to %4"
+msgstr ""
+
+#: ops/resizeoperation.cpp:231
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+
+#: ops/resizeoperation.cpp:234
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+
+#: ops/resizeoperation.cpp:241
+msgctxt "@info/plain describe resize/move action"
+msgid "Unknown resize/move action."
+msgstr ""
+
+#: ops/resizeoperation.cpp:271
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize file system to shrink partition "
+"<filename>%1</filename>."
+msgstr ""
+
+#: ops/resizeoperation.cpp:277
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+msgstr ""
+
+#: ops/resizeoperation.cpp:297
+#, kde-format
+msgctxt "@info/plain"
+msgid "Moving partition <filename>%1</filename> failed."
+msgstr ""
+
+#: ops/resizeoperation.cpp:303
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Moving the filesystem for partition <filename>%1</filename> failed. Rolling "
+"back."
+msgstr ""
+"Přesun souborového systému na oddíl <filename>%1</filename> selhal. Vracím "
+"se zpět."
+
+#: ops/resizeoperation.cpp:307
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Moving back partition <filename>%1</filename> to its original position "
+"failed."
+msgstr ""
+
+#: ops/resizeoperation.cpp:321
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not grow partition <filename>%1</filename>."
+msgstr ""
+
+#: ops/resizeoperation.cpp:327
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize the file system on partition <filename>"
+"%1</filename>"
+msgstr ""
+
+#: ops/resizeoperation.cpp:330
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not restore old partition size for partition <filename>%1</filename>."
+msgstr ""
+
+#: ops/restoreoperation.cpp:147
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Checking target file system on partition <filename>%1</filename> after the "
+"restore failed."
+msgstr ""
+
+#: ops/restoreoperation.cpp:154
+msgctxt "@info/plain"
+msgid "Restoring file system failed."
+msgstr ""
+
+#: ops/restoreoperation.cpp:158
+msgctxt "@info/plain"
+msgid "Creating the destination partition to restore to failed."
+msgstr ""
+
+#: ops/restoreoperation.cpp:173
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+msgstr ""
+
+#: ops/restoreoperation.cpp:175
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+"filename>"
+msgstr ""
+
+#: ops/setfilesystemlabeloperation.cpp:71
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> to \"%2\""
+msgstr ""
+
+#: ops/setfilesystemlabeloperation.cpp:73
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+msgstr ""
+
+#: ops/setpartflagsoperation.cpp:77
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+msgstr ""
+
+#: plugins/dummy/dummybackend.cpp:47
+msgctxt "@title"
+msgid "Dummy Backend Plugin"
+msgstr "Modul umělé podpůrné vrstvy"
+
+#: plugins/dummy/dummybackend.cpp:49
+msgid "KDE Partition Manager dummy backend."
+msgstr "Umělá podpůrná vrstva Správce diskových oddílů pro KDE."
+
+#: plugins/dummy/dummybackend.cpp:51
+msgid "Copyright 2010 Volker Lanz"
+msgstr "Copyright 2010 Volker Lanz"
+
+#: plugins/dummy/dummybackend.cpp:53 plugins/libparted/libpartedbackend.cpp:74
+#: util/helpers.cpp:130
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: plugins/libparted/libpartedbackend.cpp:68
+msgctxt "@title"
+msgid "LibParted Backend Plugin"
+msgstr "Modul podpůrné vrstvy LibParted"
+
+#: plugins/libparted/libpartedbackend.cpp:70
+msgid "KDE Partition Manager backend for libparted."
+msgstr "Podpůrná vrstva Správce diskových oddílů pro KDE pro libparted."
+
+#: plugins/libparted/libpartedbackend.cpp:72
+msgid "Copyright 2008,2009,2010 Volker Lanz"
+msgstr "Copyright 2008,2009,2010 Volker Lanz"
+
+#: plugins/libparted/libpartedbackend.cpp:107
+#, kde-format
+msgctxt "@info/plain"
+msgid "LibParted Exception: %1"
+msgstr "Výjimka LibParted: %1"
+
+#: plugins/libparted/libpartedbackend.cpp:422
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not access device <filename>%1</filename>"
+msgstr "Nelze přistupovat k zařízení <filename>%1</filename>"
+
+#: plugins/libparted/libpartedbackend.cpp:426
+#, kde-format
+msgctxt "@info/plain"
+msgid "Device found: %1"
+msgstr "Nalezené zařízení : %1"
+
+#: plugins/libparted/libparteddevice.cpp:100
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not retrieve partition table type "
+"\"%1\" for <filename>%2</filename>."
+msgstr ""
+
+#: plugins/libparted/libparteddevice.cpp:108
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open backend device <filename>%1</"
+"filename>."
+msgstr ""
+
+#: plugins/libparted/libparteddevice.cpp:116
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not create a new partition table in "
+"the backend for device <filename>%1</filename>."
+msgstr ""
+
+#: plugins/libparted/libpartedpartition.cpp:43
+#, kde-format
+msgctxt "@info/plain"
+msgid "The flag \"%1\" is not available on the partition's partition table."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:167
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Unknown partition role for new partition <filename>%1</filename> (roles: %2)"
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:177
+#, kde-format
+msgctxt "@info/plain"
+msgid "Failed to create new partition <filename>%1</filename>."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:189
+msgctxt "@info/plain"
+msgid ""
+"Failed to create a new partition: could not get geometry for constraint."
+msgstr "Selhalo vytvoření nového oddílu: nelze získat geometrii pro omezení."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:221
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Partition to delete (<filename>%1</filename>) not "
+"found on disk."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:245
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not set geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:248
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get constraint for partition <filename>%1</filename> while trying "
+"to resize/move it."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:251
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:254
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize/move "
+"it."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:273
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to erase filesystem signature on partition <filename>%1</filename>."
+msgstr ""
+"Selhalo smazání podpisu souborového systému na oddílu <filename>%1</"
+"filename>."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:282
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system on partition <filename>%1</filename>: Failed to "
+"get partition."
+msgstr ""
+"Nelze smazat souborový systém na oddílu <filename>%1</filename>: Nelze "
+"získat oddíl."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:310
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not resize file system on partition <filename>%1</filename>."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:313
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for resized partition <filename>%1</filename> while "
+"trying to resize the file system."
+msgstr ""
+
+#: plugins/libparted/libpartedpartitiontable.cpp:340
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not determine file system of partition at sector %1 on device "
+"<filename>%2</filename>."
+msgstr ""
+"Nelze zjistit souborový systém oddílu na sektoru %1 zařízení <filename>%2</"
+"filename>."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:353
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not update the system type for partition <filename>%1</filename>."
+msgstr "Nelze aktualizovat typ systému na oddílu <filename>%1</filename>"
+
+#: util/capacity.cpp:117
+msgctxt "@info/plain unit"
+msgid "Byte"
+msgid_plural "Bytes"
+msgstr[0] "Byte"
+msgstr[1] "Bajt"
+msgstr[2] "Bajt"
+
+#: util/capacity.cpp:118
+msgctxt "@info/plain unit"
+msgid "KiB"
+msgstr "KiB"
+
+#: util/capacity.cpp:119
+msgctxt "@info/plain unit"
+msgid "MiB"
+msgstr "MiB"
+
+#: util/capacity.cpp:120
+msgctxt "@info/plain unit"
+msgid "GiB"
+msgstr "GiB"
+
+#: util/capacity.cpp:121
+msgctxt "@info/plain unit"
+msgid "TiB"
+msgstr "TiB"
+
+#: util/capacity.cpp:122
+msgctxt "@info/plain unit"
+msgid "PiB"
+msgstr "PiB"
+
+#: util/capacity.cpp:123
+msgctxt "@info/plain unit"
+msgid "EiB"
+msgstr "EiB"
+
+#: util/capacity.cpp:124
+msgctxt "@info/plain unit"
+msgid "ZiB"
+msgstr "ZiB"
+
+#: util/capacity.cpp:125
+msgctxt "@info/plain unit"
+msgid "YiB"
+msgstr "YiB"
+
+#: util/capacity.cpp:129
+msgctxt "@info/plain unit"
+msgid "(unknown unit)"
+msgstr "(neznámá jednotka)"
+
+#: util/externalcommand.cpp:126
+#, kde-format
+msgctxt "@info/plain"
+msgid "Command: %1"
+msgstr "Příkaz: %1"
+
+#: util/externalcommand.cpp:134
+#, kde-format
+msgctxt "@info/plain"
+msgid "(Command timeout while starting \"%1\")"
+msgstr "(Při spouštění \"%1\" vypršel časový limit)"
+
+#: util/externalcommand.cpp:156
+#, kde-format
+msgctxt "@info/plain"
+msgid "(Command timeout while running \"%1\")"
+msgstr "(Při běhu \"%1\" vypršel časový limit)"
+
+#: util/helpers.cpp:104
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You do not have administrative privileges.</warning></"
+"para><para>It is possible to run <application>%1</application> without these "
+"privileges. You will, however, <emphasis>not</emphasis> be allowed to apply "
+"operations.</para><para>Do you want to continue running <application>%1</"
+"application>?</para>"
+msgstr ""
+"<para><warning>Nemáte práva administrátora.</warning></para><para>Aplikace "
+"<application>%1</application> bez nich může běžet. Avšak <emphasis>nebude</"
+"emphasis> možno provádět žádné operace.</para><para>Přejete si pokračovat "
+"spuštěním <application>%1</application>?</para>"
+
+#: util/helpers.cpp:109
+msgctxt "@title:window"
+msgid "No administrative privileges"
+msgstr "Bez práv administrátora"
+
+#: util/helpers.cpp:110
+msgctxt "@action:button"
+msgid "Run without administrative privileges"
+msgstr "Spustit bez práv administrátora"
+
+#: util/helpers.cpp:123
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>Správce diskových oddílů KDE</application>"
+
+#: util/helpers.cpp:125
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Spravujte disky, oddíly a souborové systémy"
+
+#: util/helpers.cpp:127
+msgctxt "@info:credit"
+msgid "© 2008-2013 Volker Lanz"
+msgstr "© 2008-2013 Volker Lanz"
+
+#: util/helpers.cpp:130
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr ""
+
+#: util/helpers.cpp:133
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: util/helpers.cpp:133
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr ""
+
+#: util/helpers.cpp:134
+msgid "Andrius Štikonas"
+msgstr "Andrius Štikonas"
+
+#: util/helpers.cpp:134
+msgctxt "@info:credit"
+msgid "Btrfs support"
+msgstr "Podpora btrfs"
+
+#: util/helpers.cpp:165
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Sloupce"
+
+#: util/helpers.cpp:199
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+
+#: util/helpers.cpp:202 util/helpers.cpp:211
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr ""
+
+#: util/helpers.cpp:208
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+
+#: util/helpers.cpp:224
+msgctxt "@info"
+msgid ""
+"<para>No usable devices could be found.</para><para>Make sure you have "
+"sufficient privileges to access block devices on your system.</para>"
+msgstr ""
+
+#: util/helpers.cpp:226
+msgctxt "@title:window"
+msgid "Error: No Usable Devices Found"
+msgstr "Chyba: Nebylo nalezeno použitelné zařízení"
+
+#: util/htmlreport.cpp:65 util/htmlreport.cpp:72
+#, kde-format
+msgid "%1: SMART Status Report"
+msgstr "%1: Hlášení stavu SMART"
+
+#: util/htmlreport.cpp:80
+msgid "Date:"
+msgstr "Datum:"
+
+#: util/htmlreport.cpp:81
+msgid "Program version:"
+msgstr "Verze programu:"
+
+#: util/htmlreport.cpp:82
+msgid "Backend:"
+msgstr "Podpůrná vrstva:"
+
+#: util/htmlreport.cpp:83
+msgid "KDE version:"
+msgstr "Verze KDE:"
+
+#: util/htmlreport.cpp:84
+msgid "Machine:"
+msgstr "Stroj:"

@@ -1,0 +1,5467 @@
+# translation of partitionmanager.po to Ukrainian
+# Copyright (C) 2008-2013 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-07 01:48+0000\n"
+"PO-Revision-Date: 2014-07-07 07:52+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: config.kcfg:38
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Ви запустили Керування розділами KDE вперше?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: config.kcfg:42
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Приховати наведені нижче повідомлення"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: config.kcfg:46
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Вирівнювання секторів розділу"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: config.kcfg:50
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr ""
+"Використовувати засноване на циліндрах вирівнювання (сумісне з Windows XP)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: config.kcfg:54
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Типово вирівнювати розділи"
+
+#. i18n: ectx: label, entry (allowApplyOperationsAsNonRoot), group (KDE Partition Manager)
+#: config.kcfg:58
+msgctxt "@label"
+msgid "Allow applying operations without administrator privileges"
+msgstr "Дозволити виконання дій без адміністративних прав доступу"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:62
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Кольори файлових систем"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:92
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Показувати смужку меню програми"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:96
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Додаток сервера"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:103
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Бажана одиниця:"
+
+#: config/configureoptionsdialog.cpp:54
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Загальне"
+
+#: config/configureoptionsdialog.cpp:54 config/configureoptionsdialog.cpp:101
+msgid "General Settings"
+msgstr "Загальні параметри"
+
+#: config/configureoptionsdialog.cpp:59
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Кольори файлових систем"
+
+#: config/configureoptionsdialog.cpp:59
+msgid "File System Color Settings"
+msgstr "Параметри розфарбування файлових систем"
+
+#: config/configureoptionsdialog.cpp:64
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Додатково"
+
+#: config/configureoptionsdialog.cpp:64
+msgid "Advanced Settings"
+msgstr "Додаткові параметри"
+
+#: config/configureoptionsdialog.cpp:151
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Ви справді бажаєте змінити сервер?</para><para><warning>Така зміна "
+"призведе до повторного сканування пристроїв та спорожнення черги дій.</"
+"warning></para>"
+
+#: config/configureoptionsdialog.cpp:153
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Бажаєте змінити сервер?"
+
+#: config/configureoptionsdialog.cpp:154
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Змінити сервер"
+
+#: config/configureoptionsdialog.cpp:155
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Не змінювати сервер"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: config/configurepageadvanced.ui:23
+msgid "Permissions"
+msgstr "Права доступу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_allowApplyOperationsAsNonRoot)
+#: config/configurepageadvanced.ui:35
+msgid "Allow applying operations without administrator privileges"
+msgstr "Дозволити виконання дій без адміністративних привілеїв"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:51
+msgid "Backend"
+msgstr "Сервер"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:57
+msgid "Active backend:"
+msgstr "Активний сервер:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:79
+msgid "Units"
+msgstr "Одиниці"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:85
+msgid "Preferred unit:"
+msgstr "Бажана одиниця:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:96
+msgid "Byte"
+msgstr "Байт"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:101
+msgid "KiB"
+msgstr "КіБ"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:106
+msgid "MiB"
+msgstr "МіБ"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:111
+msgid "GiB"
+msgstr "ГіБ"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:116
+msgid "TiB"
+msgstr "ТіБ"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:121
+msgid "PiB"
+msgstr "ПіБ"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:126
+msgid "EiB"
+msgstr "ЕіБ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:23
+#: config/configurepagegeneral.ui:139
+msgid "File Systems"
+msgstr "Файлові системи"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:29
+msgid "luks:"
+msgstr "luks:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:45
+msgid "ntfs:"
+msgstr "ntfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:58
+msgid "ext2:"
+msgstr "ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:87
+msgid "ext3:"
+msgstr "ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:116
+msgid "ext4:"
+msgstr "ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:132
+msgid "btrfs:"
+msgstr "btrfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:174
+msgid "linuxswap:"
+msgstr "linuxswap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:190
+msgid "fat16:"
+msgstr "fat16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:219
+msgid "fat32:"
+msgstr "fat32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:248
+msgid "zfs:"
+msgstr "zfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:264
+msgid "reiserfs:"
+msgstr "reiserfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:293
+msgid "reiser4:"
+msgstr "reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+msgid "hpfs:"
+msgstr "hpfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:338
+msgid "jfs"
+msgstr "jfs"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:367
+msgid "hfs:"
+msgstr "hfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:396
+msgid "hfsplus:"
+msgstr "hfsplus:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:412
+msgid "ufs:"
+msgstr "ufs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:441
+msgid "xfs:"
+msgstr "xfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:470
+msgid "ocfs2:"
+msgstr "ocfs2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:489
+msgid "extended:"
+msgstr "розширених:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:518
+msgid "unformatted:"
+msgstr "неформатованих:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:547
+msgid "unknown:"
+msgstr "невідомих:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:570
+msgid "exfat:"
+msgstr "exfat:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:583
+msgid "nilfs2:"
+msgstr "nilfs2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:622
+msgid "lvm2 pv:"
+msgstr "lvm2 pv:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:23
+msgid "Partition Alignment"
+msgstr "Вирівнювання розділу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:29
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr ""
+"Використовувати засноване на циліндрах вирівнювання (сумісне з Windows XP)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:42
+msgid "Sector alignment:"
+msgstr "Вирівнювання секторів:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:55
+msgid " sectors"
+msgstr " секторів"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:71
+msgid "Align partitions per default"
+msgstr "Типово вирівнювати розділи"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:90
+msgid "Logging"
+msgstr "Журналювання"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:96
+msgid "Hide messages below:"
+msgstr "Приховати такі повідомлення:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:107
+msgid "Debug"
+msgstr "Налагодження"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+msgid "Information"
+msgstr "Інформація"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+msgid "Warning"
+msgstr "Попередження"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+msgid "Error"
+msgstr "Помилка"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:145
+msgid "Default file system:"
+msgstr "Типова файлова система:"
+
+#. i18n: ectx: property (title), widget (KButtonGroup, kcfg_shredSource)
+#: config/configurepagegeneral.ui:167
+msgid "Shredding"
+msgstr "Витирання"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:173
+msgid "Overwrite with:"
+msgstr "Перезаписати:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:180
+msgid "Random data"
+msgstr "Випадковими даними"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:187
+msgid "Zeros"
+msgstr "Нулями"
+
+#: core/device.cpp:90
+msgid "Unknown Device"
+msgstr "Невідомий пристрій"
+
+#: core/operationstack.cpp:112
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just created: Undoing the operation to create the "
+"partition."
+msgstr ""
+"Тільки-но створено дію з вилучення розділу: скасування дії зі створення "
+"розділу."
+
+#: core/operationstack.cpp:131
+msgctxt "@info/plain"
+msgid ""
+"Resizing a partition just created: Updating start and end in existing "
+"operation."
+msgstr ""
+"Тільки-но створено дію зі зміни розміру розділу: оновлення початку і "
+"завершення поточної дії."
+
+#: core/operationstack.cpp:152
+msgctxt "@info/plain"
+msgid "Copying a new partition: Creating a new partition instead."
+msgstr "Копіювання нового розділу: заміщення створенням нового розділу."
+
+#: core/operationstack.cpp:170
+msgctxt "@info/plain"
+msgid "Changing label for a new partition: No new operation required."
+msgstr "Зміна мітки нового розділу: непотрібна дія."
+
+#: core/operationstack.cpp:184
+msgctxt "@info/plain"
+msgid "Changing file system for a new partition: No new operation required."
+msgstr "Зміна файлової системи на новому розділі: непотрібна дія."
+
+#: core/operationstack.cpp:202
+msgctxt "@info/plain"
+msgid ""
+"Checking file systems is automatically done when creating them: No new "
+"operation required."
+msgstr ""
+"Перевірка файлових системи виконується автоматично під час їхнього "
+"створення: ніяких нових дій не потрібно."
+
+#: core/operationstack.cpp:251
+msgctxt "@info/plain"
+msgid "Deleting a partition just copied: Removing the copy."
+msgstr "Вилучення тільки-но скопійованого розділу: вилучення копіювання."
+
+#: core/operationstack.cpp:258
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just copied over an existing partition: Removing the "
+"copy and deleting the existing partition."
+msgstr ""
+"Вилучення розділу, який тільки-но скопійовано на існуючий розділ: вилучено "
+"копіювання і вилучення існуючого розділу."
+
+#: core/operationstack.cpp:272
+msgctxt "@info/plain"
+msgid ""
+"Copying a partition that is itself a copy: Copying the original source "
+"partition instead."
+msgstr ""
+"Копіювання розділу, який сам є копією: замінено на копіювання з початкового "
+"джерела."
+
+#: core/operationstack.cpp:303
+msgctxt "@info/plain"
+msgid "Deleting a partition just restored: Removing the restore operation."
+msgstr "Вилучення тільки-но відновленого розділу: вилучено дію з відновлення."
+
+#: core/operationstack.cpp:310
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just restored to an existing partition: Removing the "
+"restore operation and deleting the existing partition."
+msgstr ""
+"Вилучення розділу, який тільки-но відновлено на існуючому розділі: вилучено "
+"дію з відновлення і вилучення існуючого розділу."
+
+#: core/operationstack.cpp:344
+msgctxt "@info/plain"
+msgid "Changing flags again for the same partition: Removing old operation."
+msgstr "Повторна зміна прапорців для одного розділу: вилучено стару дію."
+
+#: core/operationstack.cpp:376
+msgctxt "@info/plain"
+msgid "Changing label again for the same partition: Removing old operation."
+msgstr "Повторна зміна мітки для одного розділу: вилучено стару дію."
+
+#: core/operationstack.cpp:403
+msgctxt "@info/plain"
+msgid "Creating new partition table, discarding previous operation on device."
+msgstr ""
+"Створення порожньої таблиці розділів, відкинути попередні дії над пристроєм."
+
+#: core/operationstack.cpp:454
+#, kde-format
+msgctxt "@info/plain"
+msgid "Add operation: %1"
+msgstr "Додавання дії: %1"
+
+#: core/partition.cpp:161
+msgctxt "@item partition name"
+msgid "unallocated"
+msgstr "вільний"
+
+#: core/partition.cpp:164
+msgctxt "@item partition name"
+msgid "New Partition"
+msgstr "Новий розділ"
+
+#: core/partition.cpp:167
+msgctxt "@item partition name"
+msgid "Restored Partition"
+msgstr "Відновлений розділ"
+
+#: core/partition.cpp:170
+#, kde-format
+msgctxt "@item partition name"
+msgid "Copy of %1"
+msgstr "Копія з %1"
+
+#: core/partitionalignment.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> is not properly aligned (first sector: %2, "
+"modulo: %3)."
+msgstr ""
+"Розділ <filename>%1</filename> вирівняно не зовсім правильно (перший сектор: "
+"%2, за модулем: %3)."
+
+#: core/partitionalignment.cpp:92
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> is not properly aligned (last sector: %2, "
+"modulo: %3)."
+msgstr ""
+"Розділ <filename>%1</filename> вирівняно не зовсім правильно (останній "
+"сектор: %2, за модулем: %3)."
+
+#: core/partitionrole.cpp:29
+msgctxt "@item partition role"
+msgid "unallocated"
+msgstr "вільний"
+
+#: core/partitionrole.cpp:32
+msgctxt "@item partition role"
+msgid "logical"
+msgstr "логічний"
+
+#: core/partitionrole.cpp:35
+msgctxt "@item partition role"
+msgid "extended"
+msgstr "розширений"
+
+#: core/partitionrole.cpp:38
+msgctxt "@item partition role"
+msgid "primary"
+msgstr "головний"
+
+#: core/partitionrole.cpp:40
+msgctxt "@item partition role"
+msgid "none"
+msgstr "немає"
+
+#: core/partitiontable.cpp:158
+msgctxt "@item partition flag"
+msgid "boot"
+msgstr "boot"
+
+#: core/partitiontable.cpp:159
+msgctxt "@item partition flag"
+msgid "root"
+msgstr "root"
+
+#: core/partitiontable.cpp:160
+msgctxt "@item partition flag"
+msgid "swap"
+msgstr "swap"
+
+#: core/partitiontable.cpp:161
+msgctxt "@item partition flag"
+msgid "hidden"
+msgstr "hidden"
+
+#: core/partitiontable.cpp:162
+msgctxt "@item partition flag"
+msgid "raid"
+msgstr "raid"
+
+#: core/partitiontable.cpp:163
+msgctxt "@item partition flag"
+msgid "lvm"
+msgstr "lvm"
+
+#: core/partitiontable.cpp:164
+msgctxt "@item partition flag"
+msgid "lba"
+msgstr "lba"
+
+#: core/partitiontable.cpp:165
+msgctxt "@item partition flag"
+msgid "hpservice"
+msgstr "hpservice"
+
+#: core/partitiontable.cpp:166
+msgctxt "@item partition flag"
+msgid "palo"
+msgstr "palo"
+
+#: core/partitiontable.cpp:167
+msgctxt "@item partition flag"
+msgid "prep"
+msgstr "prep"
+
+#: core/partitiontable.cpp:168
+msgctxt "@item partition flag"
+msgid "msft-reserved"
+msgstr "msft-reserved"
+
+#: core/partitiontable.cpp:404
+msgctxt "@item/plain partition table name"
+msgid "unknown"
+msgstr "невідомо"
+
+#: core/smartattribute.cpp:55
+msgctxt "@item:intable"
+msgid "failing"
+msgstr "у стані відмови"
+
+#: core/smartattribute.cpp:58
+msgctxt "@item:intable"
+msgid "has failed"
+msgstr "відмовив"
+
+#: core/smartattribute.cpp:61
+msgctxt "@item:intable"
+msgid "warning"
+msgstr "попередження"
+
+#: core/smartattribute.cpp:64
+msgctxt "@item:intable"
+msgid "good"
+msgstr "справний"
+
+#: core/smartattribute.cpp:68 core/smartattribute.cpp:96
+msgctxt "@item:intable not applicable"
+msgid "N/A"
+msgstr "н/д"
+
+#: core/smartattribute.cpp:83
+#, kde-format
+msgctxt "@item:intable"
+msgid "%1 sector"
+msgid_plural "%1 sectors"
+msgstr[0] "%1 сектор"
+msgstr[1] "%1 сектори"
+msgstr[2] "%1 секторів"
+msgstr[3] "%1 сектор"
+
+#: core/smartattribute.cpp:114
+msgctxt "SMART attr name"
+msgid "Read Error Rate"
+msgstr "Частота помилок читання"
+
+#: core/smartattribute.cpp:114
+msgctxt "SMART attr description"
+msgid "Rate of hardware read errors while reading data from the disk surface."
+msgstr "Частота апаратних помилок читання даних з поверхні диска."
+
+#: core/smartattribute.cpp:115
+msgctxt "SMART attr name"
+msgid "Throughput Performance"
+msgstr "Ефективна швидкодія"
+
+#: core/smartattribute.cpp:115
+msgctxt "SMART attr description"
+msgid ""
+"Overall (general) throughput performance of a hard disk drive. If the value "
+"of this attribute is decreasing there is a high probability that there is a "
+"problem with the disk."
+msgstr ""
+"Загальна ефективна швидкодія жорсткого диска. Якщо значення цього параметра "
+"зменшується, ймовірно, з диском можуть виникнути проблеми."
+
+#: core/smartattribute.cpp:116
+msgctxt "SMART attr name"
+msgid "Spin-Up Time"
+msgstr "Час розкручування"
+
+#: core/smartattribute.cpp:116
+msgctxt "SMART attr description"
+msgid "Average time of spindle spin up from zero RPM to fully operational."
+msgstr ""
+"Середній час розкручування шпинделя зі стану спокою до робочої кутової "
+"швидкості."
+
+#: core/smartattribute.cpp:117
+msgctxt "SMART attr name"
+msgid "Start/Stop Count"
+msgstr "Кількість розкр./зупинок"
+
+#: core/smartattribute.cpp:117
+msgctxt "SMART attr description"
+msgid "A tally of spindle start/stop cycles."
+msgstr "Кількість циклів розкручування/зупинки шпинделя."
+
+#: core/smartattribute.cpp:118
+msgctxt "SMART attr name"
+msgid "Reallocated Sectors Count"
+msgstr "Кількість пересунутих секторів"
+
+#: core/smartattribute.cpp:118
+msgctxt "SMART attr description"
+msgid ""
+"Count of reallocated sectors. When the hard drive finds a read/write/"
+"verification error, it marks this sector as &quot;reallocated&quot; and "
+"transfers data to a special reserved area (spare area)."
+msgstr ""
+"Кількість пересунутих секторів. У разі виявлення мікропрограмою диска "
+"помилки читання, запису або перевірки даних вона позначає сектор як такий, "
+"що потребує «пересування», і пересуває дані до особливої резервної області "
+"зберігання даних."
+
+#: core/smartattribute.cpp:119
+msgctxt "SMART attr name"
+msgid "Read Channel Margin"
+msgstr "Резерв каналу читання"
+
+#: core/smartattribute.cpp:119
+msgctxt "SMART attr description"
+msgid ""
+"Margin of a channel while reading data. The function of this attribute is "
+"not specified."
+msgstr ""
+"Резерв каналу обміну даних під час читання даних. Призначення цього "
+"параметра не визначено."
+
+#: core/smartattribute.cpp:120
+msgctxt "SMART attr name"
+msgid "Seek Error Rate"
+msgstr "Помилок позиціювання"
+
+#: core/smartattribute.cpp:120
+msgctxt "SMART attr description"
+msgid ""
+"Rate of seek errors of the magnetic heads. If there is a partial failure in "
+"the mechanical positioning system, then seek errors will arise."
+msgstr ""
+"Частота помилок позиціювання магнітних голівок. Такі помилки реєструються у "
+"разі часткової відмови у механічній системі позиціювання."
+
+#: core/smartattribute.cpp:121
+msgctxt "SMART attr name"
+msgid "Seek Time Performance"
+msgstr "Швидкодія позиціювання"
+
+#: core/smartattribute.cpp:121
+msgctxt "SMART attr description"
+msgid ""
+"Average performance of seek operations of the magnetic heads. If this "
+"attribute is decreasing, it is a sign of problems in the mechanical "
+"subsystem."
+msgstr ""
+"Середня швидкодія дій з позиціювання магнітних голівок. Зменшення значення "
+"цього параметра є ознакою проблем, що виникають у механічній підсистемі."
+
+#: core/smartattribute.cpp:122
+msgctxt "SMART attr name"
+msgid "Power-On Hours"
+msgstr "Тривалість роботи (у годинах)"
+
+#: core/smartattribute.cpp:122
+msgctxt "SMART attr description"
+msgid "Count of hours in power-on state."
+msgstr "Кількість годин роботи в увімкненому стані."
+
+#: core/smartattribute.cpp:123
+msgctxt "SMART attr name"
+msgid "Spin Retry Count"
+msgstr "К-ть повторних розкручувань"
+
+#: core/smartattribute.cpp:123
+msgctxt "SMART attr description"
+msgid ""
+"Count of retry of spin start attempts if the first attempt was unsuccessful. "
+"An increase of this attribute value is a sign of problems in the hard disk "
+"mechanical subsystem."
+msgstr ""
+"Кількість повторних спроб розкручування зі стану спокою у разі помилки під "
+"час першої спроби розкручування. Збільшення значення цього параметра є "
+"ознакою проблем з механічною підсистемою диска."
+
+#: core/smartattribute.cpp:124
+msgctxt "SMART attr name"
+msgid "Recalibration Retries"
+msgstr "Повторних спроб калібрування"
+
+#: core/smartattribute.cpp:124
+msgctxt "SMART attr description"
+msgid ""
+"Count of recalibrations requested if the first attempt was unsuccessful. An "
+"increase of this attribute value is a sign of problems in the hard disk "
+"mechanical subsystem."
+msgstr ""
+"Кількість запитів на повторне калібрування у разі помилки під час першої "
+"спроби. Збільшення значення цього параметра є ознакою проблем з механічною "
+"підсистемою диска."
+
+#: core/smartattribute.cpp:125
+msgctxt "SMART attr name"
+msgid "Power Cycle Count"
+msgstr "Кількість циклів вмикання"
+
+#: core/smartattribute.cpp:125
+msgctxt "SMART attr description"
+msgid "Count of full hard disk power on/off cycles."
+msgstr "Загальна кількість циклів з вмикання-вимикання живлення диска."
+
+#: core/smartattribute.cpp:126 core/smartattribute.cpp:145
+msgctxt "SMART attr name"
+msgid "Soft Read Error Rate"
+msgstr "Програмних помилок читання"
+
+#: core/smartattribute.cpp:126
+msgctxt "SMART attr description"
+msgid "Uncorrected read errors reported to the operating system."
+msgstr ""
+"Кількість невиправних помилок читання, повідомлена операційною системою."
+
+#: core/smartattribute.cpp:127
+msgctxt "SMART attr name"
+msgid "SATA Downshift Error Count"
+msgstr "Кількість помилок сповільнення передавання SATA"
+
+#: core/smartattribute.cpp:127
+msgctxt "SMART attr description"
+msgid "Western Digital and Samsung attribute."
+msgstr "Параметр дисків Western Digital і Samsung."
+
+#: core/smartattribute.cpp:128
+msgctxt "SMART attr name"
+msgid "End-to-End Error"
+msgstr "Помилка передавання"
+
+#: core/smartattribute.cpp:128
+msgctxt "SMART attr description"
+msgid ""
+"Part of HP's SMART IV technology: After transferring through the cache RAM "
+"data buffer the parity data between the host and the hard drive did not "
+"match."
+msgstr ""
+"Частина технології SMART IV  HP: після передавання через буфер даних "
+"кешування у оперативній пам’яті дані щодо парності даних у місці призначення "
+"та на жорсткому диску не збігаються."
+
+#: core/smartattribute.cpp:129
+msgctxt "SMART attr name"
+msgid "Head Stability"
+msgstr "Стабільність голівок"
+
+#: core/smartattribute.cpp:129 core/smartattribute.cpp:130
+msgctxt "SMART attr description"
+msgid "Western Digital attribute."
+msgstr "Параметр дисків Western Digital."
+
+#: core/smartattribute.cpp:130
+msgctxt "SMART attr name"
+msgid "Induced Op-Vibration Detection"
+msgstr "Виявлення сторонньої вібрації"
+
+#: core/smartattribute.cpp:131
+msgctxt "SMART attr name"
+msgid "Reported Uncorrectable Errors"
+msgstr "Кількість невиправних помилок"
+
+#: core/smartattribute.cpp:131
+msgctxt "SMART attr description"
+msgid "Count of errors that could not be recovered using hardware ECC."
+msgstr ""
+"Кількість помилок, які не вдалося виправити за допомогою апаратного механізм "
+"виправлення цілісності даних (ECC)."
+
+#: core/smartattribute.cpp:132
+msgctxt "SMART attr name"
+msgid "Command Timeout"
+msgstr "Задовге виконання команди"
+
+#: core/smartattribute.cpp:132
+msgctxt "SMART attr description"
+msgid "Count of aborted operations due to HDD timeout."
+msgstr ""
+"Кількість дій, перерваних через перевищення часу очікування на дані з "
+"жорсткого диска."
+
+#: core/smartattribute.cpp:133
+msgctxt "SMART attr name"
+msgid "High Fly Writes"
+msgstr "«Високих» записів"
+
+#: core/smartattribute.cpp:133
+msgctxt "SMART attr description"
+msgid "Count of fly height errors detected."
+msgstr ""
+"Кількість виявлених помилок занадто високого розташування голівок під час "
+"запису."
+
+#: core/smartattribute.cpp:134
+msgctxt "SMART attr name"
+msgid "Temperature Difference From 100"
+msgstr "Відмінність температури від 100"
+
+#: core/smartattribute.cpp:134
+msgctxt "SMART attr description"
+msgid ""
+"Value is equal to (100 &ndash; temp. °C), allowing manufacturer to set a "
+"minimum threshold which corresponds to a maximum temperature."
+msgstr ""
+"Значення рівне (100 &ndash; значення температури у °C), за допомогою якого "
+"виробники встановлюють мінімальне порогове значення, що відповідає "
+"максимальній температурі експлуатації."
+
+#: core/smartattribute.cpp:135
+msgctxt "SMART attr name"
+msgid "G-sense Error Rate"
+msgstr "Відмов ударостійкості"
+
+#: core/smartattribute.cpp:135
+msgctxt "SMART attr description"
+msgid "Count of errors resulting from externally-induced shock and vibration."
+msgstr "Кількість помилок, спричинених зовнішніми ударами або вібрацією."
+
+#: core/smartattribute.cpp:136
+msgctxt "SMART attr name"
+msgid "Power Off Retract Count"
+msgstr "Паркувань через вимикання живлення"
+
+#: core/smartattribute.cpp:136
+msgctxt "SMART attr description"
+msgid "Count of power-off or emergency retract cycles"
+msgstr ""
+"Кількість циклів паркування через вимикання живлення або інші аварійні "
+"ситуації."
+
+#: core/smartattribute.cpp:137
+msgctxt "SMART attr name"
+msgid "Load Cycle Count"
+msgstr "Кількість завантажень"
+
+#: core/smartattribute.cpp:137
+msgctxt "SMART attr description"
+msgid "Count of load/unload cycles into head landing zone position."
+msgstr ""
+"Кількість циклів завантаження-вивантаження у позиції паркування голівок."
+
+#: core/smartattribute.cpp:138 core/smartattribute.cpp:166
+msgctxt "SMART attr name"
+msgid "Temperature"
+msgstr "Температура"
+
+#: core/smartattribute.cpp:138
+msgctxt "SMART attr description"
+msgid "Current internal temperature."
+msgstr "Поточна внутрішня температура."
+
+#: core/smartattribute.cpp:139
+msgctxt "SMART attr name"
+msgid "Hardware ECC Recovered"
+msgstr "Апаратних виправлень"
+
+#: core/smartattribute.cpp:139
+msgctxt "SMART attr description"
+msgid "Count of errors that could be recovered using hardware ECC."
+msgstr ""
+"Кількість помилок, які не вдалося виправити за допомогою апаратного "
+"механізму контролю і виправлення даних (ECC)."
+
+#: core/smartattribute.cpp:140
+msgctxt "SMART attr name"
+msgid "Reallocation Event Count"
+msgstr "Кількість подій перевизначення"
+
+#: core/smartattribute.cpp:140
+msgctxt "SMART attr description"
+msgid ""
+"Count of remap operations. The raw value of this attribute shows the total "
+"number of attempts to transfer data from reallocated sectors to a spare area."
+msgstr ""
+"Кількість дій з перевизначення пошкоджених секторів. Необроблене значення "
+"цього параметра відповідає загальній кількості спроб пересування даних з "
+"пошкоджених секторів у резервні."
+
+#: core/smartattribute.cpp:141
+msgctxt "SMART attr name"
+msgid "Current Pending Sector Count"
+msgstr "Кількість секторів у черзі перевизначення"
+
+#: core/smartattribute.cpp:141
+msgctxt "SMART attr description"
+msgid ""
+"Number of &quot;unstable&quot; sectors (waiting to be remapped, because of "
+"read errors)."
+msgstr ""
+"Кількість «нестабільних» секторів (секторів, які очікують на перевизначення "
+"через помилки читання)."
+
+#: core/smartattribute.cpp:142
+msgctxt "SMART attr name"
+msgid "Uncorrectable Sector Count"
+msgstr "Кількість пошкоджених секторів"
+
+#: core/smartattribute.cpp:142
+msgctxt "SMART attr description"
+msgid "Count of uncorrectable errors when reading/writing a sector."
+msgstr ""
+"Кількість секторів з помилками читання або запису даних, які не вдалося "
+"виправити"
+
+#: core/smartattribute.cpp:143
+msgctxt "SMART attr name"
+msgid "UltraDMA CRC Error Count"
+msgstr "Кількість помилок CRC UltraDMA"
+
+#: core/smartattribute.cpp:143
+msgctxt "SMART attr description"
+msgid ""
+"Count of errors in data transfer via the interface cable as determined by "
+"ICRC."
+msgstr ""
+"Кількість помилок передавання даних за допомогою інтерфейсного кабелю, "
+"визначена за допомогою ICRC."
+
+#: core/smartattribute.cpp:144
+msgctxt "SMART attr name"
+msgid "Multi-Zone Error Rate<br/>Write Error Rate"
+msgstr "Помилок багатозональності<br/>Помилок запису"
+
+#: core/smartattribute.cpp:144
+msgctxt "SMART attr description"
+msgid "The total number of errors when writing a sector."
+msgstr "Загальна кількість помилок під час запису сектора."
+
+#: core/smartattribute.cpp:145
+msgctxt "SMART attr description"
+msgid "Number of off-track errors."
+msgstr "Кількість помилок виходу за доріжку."
+
+#: core/smartattribute.cpp:146
+msgctxt "SMART attr name"
+msgid "Data Address Mark Errors"
+msgstr "Помилок позначення адрес даних"
+
+#: core/smartattribute.cpp:146
+msgctxt "SMART attr description"
+msgid "Number of Data Address Mark errors (or vendor-specific)."
+msgstr ""
+"Кількість помилок позначення адрес даних (або специфічні для виробника дані)."
+
+#: core/smartattribute.cpp:147
+msgctxt "SMART attr name"
+msgid "Run Out Cancel"
+msgstr "Скасувань розкручування"
+
+#: core/smartattribute.cpp:147
+msgctxt "SMART attr description"
+msgid "Number of ECC errors"
+msgstr "Кількість виправлень на основі ECC"
+
+#: core/smartattribute.cpp:148
+msgctxt "SMART attr name"
+msgid "Soft ECC Correction"
+msgstr "Програмних виправлень ECC"
+
+#: core/smartattribute.cpp:148
+msgctxt "SMART attr description"
+msgid "Number of errors corrected by software ECC"
+msgstr "Кількість помилок, виправлених програмним ECC"
+
+#: core/smartattribute.cpp:149
+msgctxt "SMART attr name"
+msgid "Thermal Asperity Rate"
+msgstr "Кількість перегрівів"
+
+#: core/smartattribute.cpp:149
+msgctxt "SMART attr description"
+msgid "Number of errors due to high temperature."
+msgstr "Кількість помилок через перевищення температури."
+
+#: core/smartattribute.cpp:150
+msgctxt "SMART attr name"
+msgid "Flying Height"
+msgstr "Висота голівок"
+
+#: core/smartattribute.cpp:150
+msgctxt "SMART attr description"
+msgid ""
+"Height of heads above the disk surface. A flying height that is too low "
+"increases the chances of a head crash while a flying height that is too high "
+"increases the chances of a read/write error."
+msgstr ""
+"Відстань між голівками та поверхнею диска. Занадто мале значення цього "
+"параметра збільшує ймовірність удару голівок по поверхні диска, а занадто "
+"велике значення — ймовірність помилок читання-запису."
+
+#: core/smartattribute.cpp:151
+msgctxt "SMART attr name"
+msgid "Spin High Current"
+msgstr "Імпульс розкручування"
+
+#: core/smartattribute.cpp:151
+msgctxt "SMART attr description"
+msgid "Amount of surge current used to spin up the drive."
+msgstr ""
+"Величина імпульсного струму, що використовується для розкручування диска."
+
+#: core/smartattribute.cpp:152
+msgctxt "SMART attr name"
+msgid "Spin Buzz"
+msgstr "Додаткове розкручування"
+
+#: core/smartattribute.cpp:152
+msgctxt "SMART attr description"
+msgid ""
+"Number of buzz routines needed to spin up the drive due to insufficient "
+"power."
+msgstr ""
+"Кількість додаткових процедур, потрібних для розкручування диска через "
+"недостатнє живлення."
+
+#: core/smartattribute.cpp:153
+msgctxt "SMART attr name"
+msgid "Offline Seek Performance"
+msgstr "Автономне позиціювання"
+
+#: core/smartattribute.cpp:153
+msgctxt "SMART attr description"
+msgid "Drive's seek performance during its internal tests."
+msgstr "Швидкодія позиціювання диска під час виконання внутрішніх перевірок."
+
+#: core/smartattribute.cpp:154
+msgctxt "SMART attr name"
+msgid "Vibration During Write"
+msgstr "Вібрація під час запису"
+
+#: core/smartattribute.cpp:154
+msgctxt "SMART attr description"
+msgid "Vibration During Write"
+msgstr "Вібрація під час запису"
+
+#: core/smartattribute.cpp:155
+msgctxt "SMART attr name"
+msgid "Shock During Write"
+msgstr "Удар під час запису"
+
+#: core/smartattribute.cpp:155
+msgctxt "SMART attr description"
+msgid "Shock During Write"
+msgstr "Удар під час запису"
+
+#: core/smartattribute.cpp:156
+msgctxt "SMART attr name"
+msgid "Disk Shift"
+msgstr "Зсув диска"
+
+#: core/smartattribute.cpp:156
+msgctxt "SMART attr description"
+msgid ""
+"Distance the disk has shifted relative to the spindle (usually due to shock "
+"or temperature)."
+msgstr ""
+"Зсув диска відносно шпинделя (зазвичай, через удар або температурне "
+"навантаження)."
+
+#: core/smartattribute.cpp:157
+msgctxt "SMART attr name"
+msgid "G-Sense Error Rate"
+msgstr "Відмов ударостійкості"
+
+#: core/smartattribute.cpp:157
+msgctxt "SMART attr description"
+msgid ""
+"The number of errors resulting from externally-induced shock and vibration."
+msgstr "Кількість помилок, спричинених зовнішніми ударами або вібрацією."
+
+#: core/smartattribute.cpp:158
+msgctxt "SMART attr name"
+msgid "Loaded Hours"
+msgstr "Годин під навантаженням"
+
+#: core/smartattribute.cpp:158
+msgctxt "SMART attr description"
+msgid "Time spent operating under data load."
+msgstr "Час, протягом якого диск працював у режимі обміну даними."
+
+#: core/smartattribute.cpp:159
+msgctxt "SMART attr name"
+msgid "Load/Unload Retry Count"
+msgstr "Спроб завантаження-вивантаження"
+
+#: core/smartattribute.cpp:159
+msgctxt "SMART attr description"
+msgid "Number of times head changes position."
+msgstr "Кількість змін позиції голівкою."
+
+#: core/smartattribute.cpp:160
+msgctxt "SMART attr name"
+msgid "Load Friction"
+msgstr "Тертя навантаження"
+
+#: core/smartattribute.cpp:160
+msgctxt "SMART attr description"
+msgid "Resistance caused by friction in mechanical parts while operating."
+msgstr "Опір, спричинений тертям у механічних частинах під час роботи диска."
+
+#: core/smartattribute.cpp:161
+msgctxt "SMART attr name"
+msgid "Load/Unload Cycle Count"
+msgstr "Циклів завантаження-вивантаження"
+
+#: core/smartattribute.cpp:161
+msgctxt "SMART attr description"
+msgid "Total number of load cycles."
+msgstr "Загальна кількість циклів завантаження."
+
+#: core/smartattribute.cpp:162
+msgctxt "SMART attr name"
+msgid "Load-In Time"
+msgstr "Час завантаження"
+
+#: core/smartattribute.cpp:162
+msgctxt "SMART attr description"
+msgid ""
+"Total time of loading on the magnetic heads actuator (time not spent in "
+"parking area)."
+msgstr ""
+"Загальний час завантаження приводу магнітних голівок (час, проведений у "
+"області паркування)."
+
+#: core/smartattribute.cpp:163
+msgctxt "SMART attr name"
+msgid "Torque Amplification Count"
+msgstr "Підсилення крутного моменту"
+
+#: core/smartattribute.cpp:163
+msgctxt "SMART attr description"
+msgid "Number of attempts to compensate for platter speed variations."
+msgstr "Кількість спроб компенсувати зміну швидкості у площині диска."
+
+#: core/smartattribute.cpp:164
+msgctxt "SMART attr name"
+msgid "Power-Off Retract Cycle"
+msgstr "Циклів вимикання з паркуванням"
+
+#: core/smartattribute.cpp:164
+msgctxt "SMART attr description"
+msgid ""
+"The number of times the magnetic armature was retracted automatically as a "
+"result of cutting power."
+msgstr ""
+"Кількість автоматичних відведень приводу магнітних голівок через вимикання "
+"живлення."
+
+#: core/smartattribute.cpp:165
+msgctxt "SMART attr name"
+msgid "GMR Head Amplitude"
+msgstr "Амплітуда голівки GMR"
+
+#: core/smartattribute.cpp:165
+msgctxt "SMART attr description"
+msgid ""
+"Amplitude of &quot;thrashing&quot; (distance of repetitive forward/reverse "
+"head motion)"
+msgstr ""
+"Амплітуда «биття» (відстань між послідовними позиціями рухів голівки вперед-"
+"назад)"
+
+#: core/smartattribute.cpp:166
+msgctxt "SMART attr description"
+msgid "Drive Temperature"
+msgstr "Температура диска"
+
+#: core/smartattribute.cpp:167
+msgctxt "SMART attr name"
+msgid "Endurance Remaining"
+msgstr "Експлуатаційний резерв"
+
+#: core/smartattribute.cpp:167
+msgctxt "SMART attr description"
+msgid ""
+"Count of physical erase cycles completed on the drive as a percentage of the "
+"maximum physical erase cycles the drive supports"
+msgstr ""
+"Кількість циклів фізичного витирання даних на диску відносно максимальної "
+"підтримуваної кількості фізичних витирань диска у відсотках."
+
+#: core/smartattribute.cpp:168
+msgctxt "SMART attr name"
+msgid "Power-On Seconds"
+msgstr "Увімкнено (у секундах)"
+
+#: core/smartattribute.cpp:168
+msgctxt "SMART attr description"
+msgid "Time elapsed in the power-on state"
+msgstr "Час, проведений у стані «увімкнено»"
+
+#: core/smartattribute.cpp:169
+msgctxt "SMART attr name"
+msgid "Unrecoverable ECC Count"
+msgstr "Невиправних помилок ECC"
+
+#: core/smartattribute.cpp:169
+msgctxt "SMART attr description"
+msgid "Count of unrecoverable ECC errors"
+msgstr ""
+"Кількість помилок, які не вдалося виправити відновленням цілісності даних "
+"(ECC)."
+
+#: core/smartattribute.cpp:170
+msgctxt "SMART attr name"
+msgid "Good Block Rate"
+msgstr "Частка справних блоків"
+
+#: core/smartattribute.cpp:170
+msgctxt "SMART attr description"
+msgid ""
+"Count of available reserved blocks as percentage of the total number of "
+"reserved blocks"
+msgstr ""
+"Відношення кількості доступних резервних блоків до загальної кількості "
+"резервних блоків у відсотках."
+
+#: core/smartattribute.cpp:171
+msgctxt "SMART attr name"
+msgid "Head Flying Hours<br/>or Transfer Error Rate (Fujitsu)"
+msgstr "Пересування голівки (у годинах)<br/>або Помилок передавання (Fujitsu)"
+
+#: core/smartattribute.cpp:171
+msgctxt "SMART attr description"
+msgid ""
+"Time while head is positioning<br/>or counts the number of times the link is "
+"reset during a data transfer."
+msgstr ""
+"Час, витрачений на позиціювання голівки<br/>або кількість повернень до "
+"початкової позиції посилання під час передавання даних."
+
+#: core/smartattribute.cpp:172
+msgctxt "SMART attr name"
+msgid "Total LBAs Written"
+msgstr "Загалом записано LBA"
+
+#: core/smartattribute.cpp:172
+msgctxt "SMART attr description"
+msgid "Total LBAs Written"
+msgstr "Загалом записано LBA"
+
+#: core/smartattribute.cpp:173
+msgctxt "SMART attr name"
+msgid "Total LBAs Read"
+msgstr "Загалом прочитано LBA"
+
+#: core/smartattribute.cpp:173
+msgctxt "SMART attr description"
+msgid "Total LBAs Read"
+msgstr "Загалом прочитано LBA"
+
+#: core/smartattribute.cpp:174
+msgctxt "SMART attr name"
+msgid "Read Error Retry Rate"
+msgstr "Спроб повторного читання"
+
+#: core/smartattribute.cpp:174
+msgctxt "SMART attr description"
+msgid "Number of errors while reading from a disk"
+msgstr "Кількість помилок під час читання даних з диска"
+
+#: core/smartattribute.cpp:175
+msgctxt "SMART attr name"
+msgid "Free Fall Protection"
+msgstr "Захист від вільного падіння"
+
+#: core/smartattribute.cpp:175
+msgctxt "SMART attr description"
+msgid "Number of &quot;Free Fall Events&quot; detected"
+msgstr "Кількість виявлених подій вільного падіння диска"
+
+#: core/smartstatus.cpp:209
+#, kde-format
+msgctxt "@item:intable degrees in Celsius and Fahrenheit"
+msgid "%1° C / %2° F"
+msgstr "%1°C / %2°F"
+
+#: core/smartstatus.cpp:217
+msgctxt "@item"
+msgid "Aborted"
+msgstr "Перервано"
+
+#: core/smartstatus.cpp:220
+msgctxt "@item"
+msgid "Interrupted"
+msgstr "Призупинено"
+
+#: core/smartstatus.cpp:223
+msgctxt "@item"
+msgid "Fatal error"
+msgstr "Критична помилка"
+
+#: core/smartstatus.cpp:226
+msgctxt "@item"
+msgid "Unknown error"
+msgstr "Невідома помилка"
+
+#: core/smartstatus.cpp:229
+msgctxt "@item"
+msgid "Electrical error"
+msgstr "Помилка електроніки"
+
+#: core/smartstatus.cpp:232
+msgctxt "@item"
+msgid "Servo error"
+msgstr "Механічна помилка"
+
+#: core/smartstatus.cpp:235
+msgctxt "@item"
+msgid "Read error"
+msgstr "Помилка читання"
+
+#: core/smartstatus.cpp:238
+msgctxt "@item"
+msgid "Handling error"
+msgstr "Помилка обробки"
+
+#: core/smartstatus.cpp:241
+msgctxt "@item"
+msgid "Self test in progress"
+msgstr "Виконується самоперевірка"
+
+#: core/smartstatus.cpp:245
+msgctxt "@item"
+msgid "Success"
+msgstr "Успіх"
+
+#: core/smartstatus.cpp:255
+msgctxt "@item"
+msgid "Healthy"
+msgstr "Справний"
+
+#: core/smartstatus.cpp:258
+msgctxt "@item"
+msgid "Has been used outside of its design parameters in the past."
+msgstr ""
+"У минулому використовувався поза межами передбачених параметрів експлуатації."
+
+#: core/smartstatus.cpp:261
+msgctxt "@item"
+msgid "Has some bad sectors."
+msgstr "Містить дефектні сектори."
+
+#: core/smartstatus.cpp:264
+msgctxt "@item"
+msgid "Is being used outside of its design parameters right now."
+msgstr "Використовується поза межами передбачених параметрів експлуатації."
+
+#: core/smartstatus.cpp:267
+msgctxt "@item"
+msgid "Has many bad sectors."
+msgstr "Містить багато дефектних секторів."
+
+#: core/smartstatus.cpp:271
+msgctxt "@item"
+msgid "Disk failure is imminent. Backup all data!"
+msgstr "Відмова неминуча. Негайно створіть резервні копії ваших даних!"
+
+#: fs/btrfs.cpp:140
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"Could not create temp dir."
+msgstr ""
+"Спроба зміни розміру файлової системи Btrfs на розділі диска <filename>%1</"
+"filename> зазнала невдачі: не вдалося створити тимчасовий каталог."
+
+#: fs/btrfs.cpp:155
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"btrfs file system resize failed."
+msgstr ""
+"Спроба зміни розміру файлової системи Btrfs на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба виконання зміни розмірів btrfs."
+
+#: fs/btrfs.cpp:160
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Попередження: зміна розміру файлової системи Btrfs на розділі диска "
+"<filename>%1</filename>: невдала спроба демонтування."
+
+#: fs/btrfs.cpp:163
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Спроба зміни розміру файлової системи Btrfs на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба початкового монтування."
+
+#: fs/fat16.cpp:137
+#, kde-format
+msgctxt "@info/plain"
+msgid "Setting label for partition <filename>%1</filename> to %2"
+msgstr "Встановлення мітки для розділу <filename>%1</filename> у значення %2"
+
+#: fs/filesystem.cpp:272
+msgctxt "@item/plain filesystem name"
+msgid "unknown"
+msgstr "невідома"
+
+#: fs/filesystem.cpp:273
+msgctxt "@item/plain filesystem name"
+msgid "extended"
+msgstr "розширена"
+
+#: fs/filesystem.cpp:275
+msgctxt "@item/plain filesystem name"
+msgid "ext2"
+msgstr "ext2"
+
+#: fs/filesystem.cpp:276
+msgctxt "@item/plain filesystem name"
+msgid "ext3"
+msgstr "ext3"
+
+#: fs/filesystem.cpp:277
+msgctxt "@item/plain filesystem name"
+msgid "ext4"
+msgstr "ext4"
+
+#: fs/filesystem.cpp:278
+msgctxt "@item/plain filesystem name"
+msgid "linuxswap"
+msgstr "linuxswap"
+
+#: fs/filesystem.cpp:279
+msgctxt "@item/plain filesystem name"
+msgid "fat16"
+msgstr "fat16"
+
+#: fs/filesystem.cpp:280
+msgctxt "@item/plain filesystem name"
+msgid "fat32"
+msgstr "fat32"
+
+#: fs/filesystem.cpp:281
+msgctxt "@item/plain filesystem name"
+msgid "ntfs"
+msgstr "ntfs"
+
+#: fs/filesystem.cpp:282
+msgctxt "@item/plain filesystem name"
+msgid "reiser"
+msgstr "reiser"
+
+#: fs/filesystem.cpp:283
+msgctxt "@item/plain filesystem name"
+msgid "reiser4"
+msgstr "reiser4"
+
+#: fs/filesystem.cpp:284
+msgctxt "@item/plain filesystem name"
+msgid "xfs"
+msgstr "xfs"
+
+#: fs/filesystem.cpp:285
+msgctxt "@item/plain filesystem name"
+msgid "jfs"
+msgstr "jfs"
+
+#: fs/filesystem.cpp:286
+msgctxt "@item/plain filesystem name"
+msgid "hfs"
+msgstr "hfs"
+
+#: fs/filesystem.cpp:287
+msgctxt "@item/plain filesystem name"
+msgid "hfsplus"
+msgstr "hfsplus"
+
+#: fs/filesystem.cpp:288
+msgctxt "@item/plain filesystem name"
+msgid "ufs"
+msgstr "ufs"
+
+#: fs/filesystem.cpp:289
+msgctxt "@item/plain filesystem name"
+msgid "unformatted"
+msgstr "неформатована"
+
+#: fs/filesystem.cpp:290
+msgctxt "@item/plain filesystem name"
+msgid "btrfs"
+msgstr "btrfs"
+
+#: fs/filesystem.cpp:291
+msgctxt "@item/plain filesystem name"
+msgid "hpfs"
+msgstr "hpfs"
+
+#: fs/filesystem.cpp:292
+msgctxt "@item/plain filesystem name"
+msgid "luks"
+msgstr "luks"
+
+#: fs/filesystem.cpp:293
+msgctxt "@item/plain filesystem name"
+msgid "ocfs2"
+msgstr "ocfs2"
+
+#: fs/filesystem.cpp:294
+msgctxt "@item/plain filesystem name"
+msgid "zfs"
+msgstr "zfs"
+
+#: fs/filesystem.cpp:295
+msgctxt "@item/plain filesystem name"
+msgid "exfat"
+msgstr "exfat"
+
+#: fs/filesystem.cpp:296
+msgctxt "@item/plain filesystem name"
+msgid "nilfs2"
+msgstr "nilfs2"
+
+#: fs/filesystem.cpp:297
+msgctxt "@item/plain filesystem name"
+msgid "lvm2 pv"
+msgstr "lvm2 pv"
+
+#: fs/filesystem.cpp:341
+msgctxt "@title:menu"
+msgid "Mount"
+msgstr "Змонтувати"
+
+#: fs/filesystem.cpp:347
+msgctxt "@title:menu"
+msgid "Unmount"
+msgstr "Демонтувати"
+
+#: fs/jfs.cpp:162
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Спроба зміни розміру файлової системи JFS на розділі диска <filename>%1</"
+"filename> зазнала невдачі: не вдалося створити тимчасовий каталог."
+
+#: fs/jfs.cpp:177
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Remount failed."
+msgstr ""
+"Спроба зміни розміру файлової системи JFS на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба перемонтування."
+
+#: fs/jfs.cpp:182
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Попередження: зміна розміру файлової системи JFS на розділі диска <filename>"
+"%1</filename>: невдала спроба демонтування."
+
+#: fs/jfs.cpp:185
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Спроба зміни розміру файлової системи JFS на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба початкового монтування."
+
+#: fs/linuxswap.cpp:127
+msgctxt "@title:menu"
+msgid "Activate swap"
+msgstr "Задіяти свопінг"
+
+#: fs/linuxswap.cpp:132
+msgctxt "@title:menu"
+msgid "Deactivate swap"
+msgstr "Вимкнути свопінг"
+
+#: fs/luks.cpp:91
+msgctxt "@title:menu"
+msgid "Decrypt"
+msgstr "Розшифрувати"
+
+#: fs/luks.cpp:96
+msgctxt "@title:menu"
+msgid "Deactivate"
+msgstr "Вимкнути"
+
+#: fs/nilfs2.cpp:144
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"Could not create temp dir."
+msgstr ""
+"Спроба зміни розміру файлової системи NILFS2 на розділі диска <filename>%1</"
+"filename> зазнала невдачі: не вдалося створити тимчасовий каталог."
+
+#: fs/nilfs2.cpp:159
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"NILFS2 file system resize failed."
+msgstr ""
+"Спроба зміни розміру файлової системи NILFS2 на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба виконання зміни розмірів NILFS2."
+
+#: fs/nilfs2.cpp:164
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing NILFS2 file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Попередження: зміна розміру файлової системи NILFS2 на розділі диска "
+"<filename>%1</filename>: невдала спроба демонтування."
+
+#: fs/nilfs2.cpp:167
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Спроба зміни розміру файлової системи NILFS2 на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба початкового монтування."
+
+#: fs/ntfs.cpp:198
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Updating boot sector for NTFS file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Оновлення сектора завантаження для файлової системи NTFS на розділі "
+"<filename>%1</filename>."
+
+#: fs/ntfs.cpp:211
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> for writing when trying to "
+"update the NTFS boot sector."
+msgstr ""
+"Під час спроби запису для оновлення сектора завантаження NTFS не вдалося "
+"відкрити розділ <filename>%1</filename>."
+
+#: fs/ntfs.cpp:217
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not seek to position 0x1c on partition <filename>%1</filename> when "
+"trying to update the NTFS boot sector."
+msgstr ""
+"Не вдалося пересунути голівку у позицію 0x1c на розділі <filename>%1</"
+"filename> під час спроби оновлення сектора завантаження NTFS."
+
+#: fs/ntfs.cpp:223
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not write new start sector to partition <filename>%1</filename> when "
+"trying to update the NTFS boot sector."
+msgstr ""
+"Не вдалося записати новий початковий сектор на розділ <filename>%1</"
+"filename> під час спроби оновлення сектора завантаження NTFS."
+
+#: fs/ntfs.cpp:227
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Updated NTFS boot sector for partition <filename>%1</filename> successfully."
+msgstr ""
+"Успішно оновлено сектор завантаження NTFS для розділу <filename>%1</"
+"filename>."
+
+#: fs/xfs.cpp:170
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Спроба зміни розміру файлової системи XFS на розділі диска <filename>%1</"
+"filename> зазнала невдачі: не вдалося створити тимчасовий каталог."
+
+#: fs/xfs.cpp:185
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"xfs_growfs failed."
+msgstr ""
+"Спроба зміни розміру файлової системи XFS на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба виконання xfs_growfs."
+
+#: fs/xfs.cpp:190
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Попередження: зміна розміру файлової системи XFS на розділі диска <filename>"
+"%1</filename>: невдала спроба демонтування."
+
+#: fs/xfs.cpp:193
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Спроба зміни розміру файлової системи XFS на розділі диска <filename>%1</"
+"filename> зазнала невдачі: невдала спроба початкового монтування."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:37
+msgid "Save"
+msgstr "Зберегти"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:44
+msgid "Open in External Browser"
+msgstr "Відкрити у зовнішньому переглядачі"
+
+#: gui/applyprogressdialog.cpp:119
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Налаштування..."
+
+#: gui/applyprogressdialog.cpp:177
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Очікування на завершення дії..."
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Ви дійсно хочете скасувати?"
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Скасування запущених дій"
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Так, скасувати дії"
+
+#: gui/applyprogressdialog.cpp:205
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Всі дії було успішно завершено."
+
+#: gui/applyprogressdialog.cpp:210
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Дії скасовано."
+
+#: gui/applyprogressdialog.cpp:215
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Під час виконання дій сталися помилки. Аварійне завершення дій."
+
+#: gui/applyprogressdialog.cpp:326
+#, kde-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:362
+#, kde-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Загалом часу: %1"
+
+#: gui/applyprogressdialog.cpp:412 gui/mainwindow.cpp:920
+#: gui/smartdialog.cpp:239
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Не вдалося створити тимчасовий файл під час спроби збереження до <filename>"
+"%1</filename>."
+
+#: gui/applyprogressdialog.cpp:412
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Не вдалося зберегти звіт."
+
+#: gui/applyprogressdialog.cpp:438
+msgctxt "@info"
+msgid ""
+"The configured external browser could not be run. Please check your settings."
+msgstr ""
+"Вказаний вами зовнішній переглядач не вдалося запустити. Будь ласка, "
+"перевірте встановлені параметри."
+
+#: gui/applyprogressdialog.cpp:438 gui/applyprogressdialog.cpp:441
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Невдала спроба запустити переглядач."
+
+#: gui/applyprogressdialog.cpp:441
+#, kde-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr ""
+"Не вдалося створити тимчасовий файл <filename>%1</filename> для запису."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:33
+msgid "Operations and Jobs"
+msgstr "Дії і завдання"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:38
+msgid "Time Elapsed"
+msgstr "Пройшло часу"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:64
+msgid "Total Time: 00:00:00"
+msgstr "Загальний час: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:81
+#, no-c-format
+msgid "Operation: %p%"
+msgstr "Дія: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:91
+msgid "Status"
+msgstr "Стан"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:107
+#, no-c-format
+msgid "Total: %p%"
+msgstr "Загалом: %p%"
+
+#: gui/createpartitiontabledialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Створення таблиці розділів на <filename>%1</filename>"
+
+#: gui/createpartitiontabledialog.cpp:38
+msgctxt "@action:button"
+msgid "&Create New Partition Table"
+msgstr "С&творити таблицю розділів"
+
+#: gui/createpartitiontabledialog.cpp:60
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+"<para>Ви справді бажаєте створити таблицю розділів типу MS-DOS на <filename>"
+"%1</filename>?</para><para>Кількість секторів на цьому пристрої перевищує "
+"2^32. У таблицях розділів типу MS-DOS не передбачено підтримки такої "
+"кількості секторів, отже ви не зможете повністю скористатися місткістю "
+"пристрою.</para>"
+
+#: gui/createpartitiontabledialog.cpp:62
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "Ви справді бажаєте створити таблицю типу MS-DOS?"
+
+#: gui/createpartitiontabledialog.cpp:63
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "Створити таблицю типу MS-DOS"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:20
+msgid "Choose the type of partition table you want to create:"
+msgstr "Вкажіть тип таблиці розділів, яку ви бажаєте створити:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:29
+msgid "GPT"
+msgstr "GPT"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:39
+msgid "MS-Dos"
+msgstr "MS-DOS"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:66
+msgid "(icon)"
+msgstr "(піктограма)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:79
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr ""
+"<b>Попередження:</b> виконання цієї дії призведе до знищення всіх даних на "
+"пристрої!"
+
+#: gui/decryptluksdialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Decrypt LUKS partition on <filename>%1</filename>"
+msgstr "Розшифрувати розділ LUKS на <filename>%1</filename>"
+
+#: gui/decryptluksdialog.cpp:38
+msgctxt "@action:button"
+msgid "&Decrypt"
+msgstr "&Розшифрувати"
+
+#. i18n: ectx: property (text), widget (QLabel, label_Name)
+#: gui/decryptluksdialogwidgetbase.ui:22
+msgid "&Name:"
+msgstr "&Назва:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_Pass)
+#: gui/decryptluksdialogwidgetbase.ui:35
+msgid "&Passphrase:"
+msgstr "&Пароль:"
+
+#: gui/devicepropsdialog.cpp:52
+#, kde-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Властивості пристрою: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:79 gui/infopane.cpp:162
+#, kde-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (лише читання)"
+
+#: gui/devicepropsdialog.cpp:107 gui/infopane.cpp:175
+#, kde-format
+msgctxt "@label"
+msgid "1 Sector"
+msgid_plural "%1 Sectors"
+msgstr[0] "%1 сектор"
+msgstr[1] "%1 сектори"
+msgstr[2] "%1 секторів"
+msgstr[3] "%1 сектор"
+
+#: gui/devicepropsdialog.cpp:118 gui/smartdialog.cpp:88
+#: gui/smartdialog.cpp:155
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "добрий"
+
+#: gui/devicepropsdialog.cpp:123 gui/smartdialog.cpp:93
+#: gui/smartdialog.cpp:157
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "ПОГАНИЙ"
+
+#: gui/devicepropsdialog.cpp:129 gui/smartdialog.cpp:138
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(невідомий)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:58
+msgid "Partition table:"
+msgstr "Таблиця розділів:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:77
+msgid "Cylinder alignment"
+msgstr "Вирівнювання за циліндрами"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:84
+msgid "Sector based alignment"
+msgstr "Вирівнювання за секторами"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:113
+msgid "Capacity:"
+msgstr "Місткість:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:130
+msgid "Total sectors:"
+msgstr "Загалом секторів:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCHS)
+#: gui/devicepropswidgetbase.ui:160
+msgid "Cylinders/Heads/Sectors:"
+msgstr "Циліндри/Голівки/Сектори:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:183
+msgid "Logical sector size:"
+msgstr "Розмір логічного сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:200
+msgid "Physical sector size:"
+msgstr "Розмір фізичного сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCylinderSize)
+#: gui/devicepropswidgetbase.ui:217
+msgid "Cylinder size:"
+msgstr "Розмір циліндра:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:241
+msgid "Primaries/Max:"
+msgstr "Основний/Макс.:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:265 gui/smartdialog.cpp:155
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:23
+msgid "SMART status:"
+msgstr "Стан за SMART:"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:303 gui/editmountpointdialogwidgetbase.ui:142
+msgid "More..."
+msgstr "Більше..."
+
+#: gui/editmountoptionsdialog.cpp:33
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Зміна додаткових параметрів монтування"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:14
+msgid "Edit Mount Options"
+msgstr "Редагування параметрів монтування"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:20
+msgid "Edit the mount options for this file system:"
+msgstr "Змініть параметри монтування цієї файлової системи:"
+
+#: gui/editmountpointdialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Зміна точки монтування <filename>%1</filename>"
+
+#: gui/editmountpointdialog.cpp:51
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <strong>can not be "
+"undone</strong>.</warning></para>"
+msgstr ""
+"<para>Ви справді бажаєте зберегти зміни, внесені до файла таблиці файлових "
+"систем <filename>/etc/fstab</filename>?</para><para><warning>Виконання цієї "
+"дії призведе до перезапису поточного файла на вашому жорсткому диску. "
+"Наслідки цієї дії <strong>неможливо скасувати</strong>.</warning></para>"
+
+#: gui/editmountpointdialog.cpp:53
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Бажаєте зберегти зміни?"
+
+#: gui/editmountpointdialog.cpp:54
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Зберегти зміни"
+
+#: gui/editmountpointdialogwidget.cpp:181
+#, kde-format
+msgctxt "@info"
+msgid "Could not open mount point file <filename>%1</filename>."
+msgstr ""
+"Не вдалося відкрити файл записів точок монтування <filename>%1</filename>."
+
+#: gui/editmountpointdialogwidget.cpp:182
+msgctxt "@title:window"
+msgid "Error while reading mount points"
+msgstr "Помилка під час читання записів точок монтування"
+
+#: gui/editmountpointdialogwidget.cpp:301
+#, kde-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>%1</filename>."
+msgstr ""
+"Не вдалося зберегти записи точок монтування до файла <filename>%1</filename>."
+
+#: gui/editmountpointdialogwidget.cpp:302
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Помилка під час збереження точок монтування"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:17
+msgid "Path:"
+msgstr "Шлях:"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:46
+msgid "Select..."
+msgstr "Вибрати..."
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:53
+msgid "Type:"
+msgstr "Тип:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:63
+msgid "Options:"
+msgstr "Параметри:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:73
+msgid "Read-only"
+msgstr "Лише читання"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:80
+msgid "Users can mount and unmount"
+msgstr "Користувачі можуть монтувати і демонтувати"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:87
+msgid "No automatic mount"
+msgstr "Без автоматичного монтування"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:94
+msgid "No update of file access times"
+msgstr "Без оновлення часу доступу до файлів"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:101
+msgid "Synchronous access"
+msgstr "Синхронний доступ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:108
+msgid "No update of directory access times"
+msgstr "Без оновлення часу доступу до каталогів"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:115
+msgid "No binary execution"
+msgstr "Вимкнути можливість виконання програм"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:122
+msgid "Update access times relative to modification"
+msgstr "Оновити час доступу відносно до зміни"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:149
+msgid "Dump Frequency:"
+msgstr "Частота створення дампів:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:178
+msgid "Pass Number:"
+msgstr "Номер проходження:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:285
+msgid "Device Node"
+msgstr "Вузлом пристрою"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/partitionmanagerwidgetbase.ui:90
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:302
+#: gui/partitionmanagerwidgetbase.ui:85
+msgid "Label"
+msgstr "Мітка"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:309
+msgid "Identify by:"
+msgstr "Ідентифікувати за:"
+
+#: gui/filesystemsupportdialog.cpp:39
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Підтримка файлових систем"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:18
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"У цій таблиці показано файлові системи, що підтримуються програмою, та "
+"специфічні дії над ними, які програма може виконувати.\n"
+"Для підтримки деяких з файлових систем слід встановити певні зовнішні "
+"програмні інструменти. Але не всі дії можуть виконуватися на всіх файлових "
+"системах, навіть якщо встановлено потрібні програмні інструменти. Щоб "
+"отримати докладнішу інформацію, будь ласка, прочитайте документацію. "
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:65
+msgid "File System"
+msgstr "Файлова система"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+msgid "Create"
+msgstr "Створити"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+msgid "Grow"
+msgstr "Збільшити"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+msgid "Shrink"
+msgstr "Зменшити"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+msgid "Move"
+msgstr "Пересунути"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+msgid "Copy"
+msgstr "Копіювати"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+msgid "Check"
+msgstr "Перевірити"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+msgid "Read Label"
+msgstr "Мітка читання"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+msgid "Write Label"
+msgstr "Мітка запису"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+msgid "Read Usage"
+msgstr "Використання для читання"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+msgid "Backup"
+msgstr "Резервування"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+msgid "Restore"
+msgstr "Відновити"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+msgid "Support Tools"
+msgstr "Допоміжні інструменти"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:135
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Повторно визначити"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:53 gui/mainwindowbase.ui:49
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Інформація"
+
+#: gui/infopane.cpp:113
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Інформація про розділи дисків"
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:133
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Файлова система:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:134
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Місткість:"
+
+#: gui/infopane.cpp:122
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr "Назва шифру:"
+
+#: gui/infopane.cpp:123
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr "Режим шифрування:"
+
+#: gui/infopane.cpp:124
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr "Хеш:"
+
+#: gui/infopane.cpp:125
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Розмір сектора:"
+
+#: gui/infopane.cpp:126
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr "Відступ даних:"
+
+#: gui/infopane.cpp:127 gui/infopane.cpp:137
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Перший сектор:"
+
+#: gui/infopane.cpp:128 gui/infopane.cpp:138
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Останній сектор:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:139
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Кількість секторів:"
+
+#: gui/infopane.cpp:135
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Доступний:"
+
+#: gui/infopane.cpp:136
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Використано:"
+
+#: gui/infopane.cpp:150
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Інформація про пристрій"
+
+#: gui/infopane.cpp:154
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Шлях:"
+
+#: gui/infopane.cpp:167
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Тип:"
+
+#: gui/infopane.cpp:168
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Місткість:"
+
+#: gui/infopane.cpp:169
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Загалом секторів:"
+
+#: gui/infopane.cpp:170
+msgctxt "@label device"
+msgid "Heads:"
+msgstr "Голівок:"
+
+#: gui/infopane.cpp:171
+msgctxt "@label device"
+msgid "Cylinders:"
+msgstr "Циліндрів:"
+
+#: gui/infopane.cpp:172
+msgctxt "@label device"
+msgid "Sectors:"
+msgstr "Сектори:"
+
+#: gui/infopane.cpp:173
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Розмір логічного сектора:"
+
+#: gui/infopane.cpp:174
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Розмір фізичного сектора:"
+
+#: gui/infopane.cpp:175
+msgctxt "@label device"
+msgid "Cylinder size:"
+msgstr "Розмір циліндра:"
+
+#: gui/infopane.cpp:176
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Основний/Макс.:"
+
+#: gui/insertdialog.cpp:43
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Введення розділу"
+
+#: gui/mainwindow.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Ви справді бажаєте вийти з програми?</para><para>У черзі дій все ще "
+"лишається %1 дія.</para>"
+msgstr[1] ""
+"<para>Ви справді бажаєте вийти з програми?</para><para>У черзі дій все ще "
+"лишається %1 дії.</para>"
+msgstr[2] ""
+"<para>Ви справді бажаєте вийти з програми?</para><para>У черзі дій все ще "
+"лишається %1 дій.</para>"
+msgstr[3] ""
+"<para>Ви справді бажаєте вийти з програми?</para><para>У черзі дій все ще "
+"лишається %1 дія.</para>"
+
+#: gui/mainwindow.cpp:144
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Скасувати дію з черги і вийти?"
+
+#: gui/mainwindow.cpp:145
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "Вийти з <application>%1</application>"
+
+#: gui/mainwindow.cpp:188
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Вернути"
+
+#: gui/mainwindow.cpp:189
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Вертає стан перед останньою операцією"
+
+#: gui/mainwindow.cpp:190
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Вилучення останньої дії зі списку."
+
+#: gui/mainwindow.cpp:196
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Очистити"
+
+#: gui/mainwindow.cpp:197
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Спорожнити список дій"
+
+#: gui/mainwindow.cpp:198
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Спорожнення списку дій."
+
+#: gui/mainwindow.cpp:203
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Застосувати"
+
+#: gui/mainwindow.cpp:204
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Застосувати всі дії"
+
+#: gui/mainwindow.cpp:205
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Застосування всіх дій зі списку."
+
+#: gui/mainwindow.cpp:210
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Оновити список пристроїв"
+
+#: gui/mainwindow.cpp:211
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Оновлює список всіх пристроїв"
+
+#: gui/mainwindow.cpp:212
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Оновлення списку пристроїв."
+
+#: gui/mainwindow.cpp:218
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Створити таблицю розділів"
+
+#: gui/mainwindow.cpp:219
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Створити таблицю розділів"
+
+#: gui/mainwindow.cpp:220
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Створення порожньої таблиці розділів на пристрої."
+
+#: gui/mainwindow.cpp:226
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Експортувати таблицю розділів"
+
+#: gui/mainwindow.cpp:227
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Експортувати таблицю розділів"
+
+#: gui/mainwindow.cpp:228
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Експортувати таблицю розділів пристрою до текстового файла."
+
+#: gui/mainwindow.cpp:233
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Імпортувати таблицю розділів"
+
+#: gui/mainwindow.cpp:234
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Імпортувати таблицю розділів"
+
+#: gui/mainwindow.cpp:235
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Імпортувати таблицю розділів з текстового файла."
+
+#: gui/mainwindow.cpp:240
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "Стан за SMART"
+
+#: gui/mainwindow.cpp:241
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "Показати стан за SMART"
+
+#: gui/mainwindow.cpp:242
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Показувати стан пристрою відповідно до SMART у разі підтримки"
+
+#: gui/mainwindow.cpp:246 gui/mainwindow.cpp:321
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Властивості"
+
+#: gui/mainwindow.cpp:247
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Показати діалогове вікно властивостей пристрою"
+
+#: gui/mainwindow.cpp:248
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Перегляд та зміна властивостей пристрою"
+
+#: gui/mainwindow.cpp:254
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Створити"
+
+#: gui/mainwindow.cpp:255
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Створити розділ"
+
+#: gui/mainwindow.cpp:256
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Створення розділу."
+
+#: gui/mainwindow.cpp:262
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Змінити розмір/Пересунути"
+
+#: gui/mainwindow.cpp:263
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Змінити розмір або пересунути розділ"
+
+#: gui/mainwindow.cpp:264
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Зменшення, збільшення або пересування існуючого розділу."
+
+#: gui/mainwindow.cpp:270
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Вилучити"
+
+#: gui/mainwindow.cpp:271
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Вилучити розділ"
+
+#: gui/mainwindow.cpp:272
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Вилучення розділу."
+
+#: gui/mainwindow.cpp:278
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Витерти"
+
+#: gui/mainwindow.cpp:279
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Витерти розділ"
+
+#: gui/mainwindow.cpp:280
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr "Витерти розділ так, щоб дані на ньому не можна було відновити."
+
+#: gui/mainwindow.cpp:286
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Копіювати"
+
+#: gui/mainwindow.cpp:287
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Копіювати розділ"
+
+#: gui/mainwindow.cpp:288
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Копіювання існуючого розділу."
+
+#: gui/mainwindow.cpp:294
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Вставити"
+
+#: gui/mainwindow.cpp:295
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Вставити розділ"
+
+#: gui/mainwindow.cpp:296
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Вставлення скопійованого розділу."
+
+#: gui/mainwindow.cpp:302
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Змінити точку монтування"
+
+#: gui/mainwindow.cpp:303
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Змінити точку монтування"
+
+#: gui/mainwindow.cpp:304
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Зміна точки монтування та параметрів монтування розділу."
+
+#: gui/mainwindow.cpp:308
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Змонтувати"
+
+#: gui/mainwindow.cpp:309
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Змонтувати або демонтувати розділ"
+
+#: gui/mainwindow.cpp:310
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Монтування або демонтування розділу."
+
+#: gui/mainwindow.cpp:314
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Перевірити"
+
+#: gui/mainwindow.cpp:315
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Перевірити розділ"
+
+#: gui/mainwindow.cpp:316
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Перевірка на наявність помилок у файловій системі на розділі."
+
+#: gui/mainwindow.cpp:322
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Показати діалогове вікно властивостей розділу"
+
+#: gui/mainwindow.cpp:323
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr "Перегляд і зміна властивостей розділу (мітки, прапорців розділу тощо)"
+
+#: gui/mainwindow.cpp:328
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Резервування"
+
+#: gui/mainwindow.cpp:329
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Створити резервну копію розділу"
+
+#: gui/mainwindow.cpp:330
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Створення файла образу розділу."
+
+#: gui/mainwindow.cpp:335
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Відновити"
+
+#: gui/mainwindow.cpp:336
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Відновити розділ"
+
+#: gui/mainwindow.cpp:337
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Відновлення розділу з файла образу."
+
+#: gui/mainwindow.cpp:342
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Підтримка файлових систем"
+
+#: gui/mainwindow.cpp:343
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Переглянути відомості щодо підтримки файлових систем"
+
+#: gui/mainwindow.cpp:344
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Показ відомостей щодо підтримуваних файлових систем."
+
+#: gui/mainwindow.cpp:356
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Спорожнити журнал"
+
+#: gui/mainwindow.cpp:357
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Спорожнити дані журналу"
+
+#: gui/mainwindow.cpp:358
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr "Спорожнити вміст панелі виведення журналу."
+
+#: gui/mainwindow.cpp:362
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Зберегти журнал"
+
+#: gui/mainwindow.cpp:363
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Зберегти журнал"
+
+#: gui/mainwindow.cpp:364
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Зберегти повідомлення журналу до файла."
+
+#: gui/mainwindow.cpp:448
+#, kde-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "%1 дія у черзі"
+msgstr[1] "%1 дії у черзі"
+msgstr[2] "%1 дій у черзі"
+msgstr[3] "%1 дія у черзі"
+
+#: gui/mainwindow.cpp:547
+#, kde-format
+msgctxt "@info/plain"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Використовується модуль обробки: %1 (%2)"
+
+#: gui/mainwindow.cpp:551
+msgctxt "@info/plain"
+msgid "Scanning devices..."
+msgstr "Сканування пристроїв..."
+
+#: gui/mainwindow.cpp:583
+msgctxt "@info/plain"
+msgid "Scan finished."
+msgstr "Сканування завершено."
+
+#: gui/mainwindow.cpp:639
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Ви справді бажаєте пересканувати ці пристрої?</para><para><warning>Ця "
+"дія призведе до спорожнення списку дій.</warning></para>"
+
+#: gui/mainwindow.cpp:641
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Чи бажаєте ви пересканувати пристрої?"
+
+#: gui/mainwindow.cpp:642
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Пересканувати пристрої"
+
+#: gui/mainwindow.cpp:658
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Ви справді бажаєте застосувати перелічені у списку дії?</"
+"para><para><warning>Застосування дій остаточно змінить дані на ваших дисках."
+"</warning></para>"
+
+#: gui/mainwindow.cpp:660
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Застосувати дії зі списку?"
+
+#: gui/mainwindow.cpp:661
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Застосувати дії зі списку"
+
+#: gui/mainwindow.cpp:664
+msgctxt "@info/plain"
+msgid "Applying operations..."
+msgstr "Застосування дій..."
+
+#: gui/mainwindow.cpp:690
+#, kde-format
+msgctxt "@info/plain"
+msgid "Undoing operation: %1"
+msgstr "Скасування дії: %1"
+
+#: gui/mainwindow.cpp:706
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Ви справді бажаєте спорожнити список дій, що очікують на свій початок?"
+
+#: gui/mainwindow.cpp:707
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Спорожнити список дій?"
+
+#: gui/mainwindow.cpp:708
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Спорожнити список дій"
+
+#: gui/mainwindow.cpp:711
+msgctxt "@info/plain"
+msgid "Clearing the list of pending operations."
+msgstr "Спорожнення списку дій"
+
+#: gui/mainwindow.cpp:749
+#, kde-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr ""
+"Не вдалося знайти файл вхідних даних <filename>%1</filename> для "
+"імпортування: %2"
+
+#: gui/mainwindow.cpp:749 gui/mainwindow.cpp:757
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Помилка імпортування таблиці розділів"
+
+#: gui/mainwindow.cpp:757
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Під час спроби імпортування з <filename>%2</filename> не вдалося відкрити "
+"тимчасовий файл <filename>%1</filename>."
+
+#: gui/mainwindow.cpp:783
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+"Імпортований файл <filename>%1</filename> не містить коректної таблиці "
+"розділів."
+
+#: gui/mainwindow.cpp:783 gui/mainwindow.cpp:796 gui/mainwindow.cpp:804
+#: gui/mainwindow.cpp:810 gui/mainwindow.cpp:825 gui/mainwindow.cpp:839
+#: gui/mainwindow.cpp:845 gui/mainwindow.cpp:867 gui/mainwindow.cpp:873
+#: gui/mainwindow.cpp:879 gui/mainwindow.cpp:887
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Помилка під час спроби імпортування таблиці розділів"
+
+#: gui/mainwindow.cpp:796
+#, kde-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr ""
+"У імпортованому файлі виявлено декілька типів таблиць розділів (рядок %1)."
+
+#: gui/mainwindow.cpp:804
+#, kde-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr "Невідомий тип таблиці розділів «%1» (рядок %2)."
+
+#: gui/mainwindow.cpp:810
+#, kde-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr ""
+"Імпортування типу таблиці розділів «%1» не підтримується програмою (рядок "
+"%2)."
+
+#: gui/mainwindow.cpp:825
+#, kde-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr "Виявлено розділ, але без запису типу таблиці розділів (рядок %1)."
+
+#: gui/mainwindow.cpp:839
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr "Розділ %1 перебуватиме за межами місткості пристрою (рядок %2)."
+
+#: gui/mainwindow.cpp:845
+#, kde-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr "Розділ %1 завершується до початкового сектора (рядок %2)."
+
+#: gui/mainwindow.cpp:867
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr "Не вдалося визначити роль розділу «%1» для розділу %2 (рядок %3)."
+
+#: gui/mainwindow.cpp:873
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+"Для розділу %1 не виявлено ні батьківського розділу, ні таблиці розділів "
+"(рядок %2)."
+
+#: gui/mainwindow.cpp:879
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+"У типі таблиць розділів «%1» не передбачено підтримки розширених розділів, "
+"але у записах виявлено такий розділ (рядок %2)."
+
+#: gui/mainwindow.cpp:887
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr "Не вдалося створити файлову систему «%1» на розділі %2 (рядок %3)."
+
+#: gui/mainwindow.cpp:899
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr ""
+"Не вдалося обробити рядок %1 з імпортованого файла. Рядок буде пропущено."
+
+#: gui/mainwindow.cpp:920
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Помилка експортування таблиці розділів"
+
+#: gui/mainwindow.cpp:1062
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+"<para>У файлових системах дисків цього комп’ютера не знайдено допоміжних "
+"програм:</para><table style='margin-top:12px'><tr><td style='font-weight:"
+"bold;padding-right:12px;white-space:nowrap;'>Розділ</td><td style='font-"
+"weight:bold;padding-right:12px;white-space:nowrap;'>Файлова система</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Допоміжні "
+"програми</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Адреса</td></tr>%1</table><para>Оскільки допоміжні програми для "
+"роботи з цими файловими системами не встановлено, ви не зможете вносити "
+"зміни до їхніх параметрів.</para><para>Встановити пакунки з допоміжними "
+"інструментами можна за допомогою програми для керування пакунками вашого "
+"дистрибутива.</para>"
+
+#: gui/mainwindow.cpp:1075
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Не встановлено пакунків з допоміжними інструментами"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#: gui/mainwindowbase.ui:14 gui/partitionmanagerwidgetbase.ui:14
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "Керування розділами диска KDE"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:24
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Пристрої"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Дії у стані очікування"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:63
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Вивід до журналу"
+
+#: gui/newdialog.cpp:47
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Створити новий розділ"
+
+#. i18n: ectx: ToolBar (editToolBar)
+#: gui/partitionmanagerui.rc:5
+msgctxt "@title:menu turn on and off edit toolbar"
+msgid "Edit Toolbar"
+msgstr "Панель редагування"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:11
+msgctxt "@title:menu"
+msgid "Partition Toolbar"
+msgstr "Панель розділів"
+
+#. i18n: ectx: ToolBar (deviceToolBar)
+#: gui/partitionmanagerui.rc:18
+msgctxt "@title:menu"
+msgid "Device Toolbar"
+msgstr "Панель пристроїв"
+
+#. i18n: ectx: Menu (view)
+#: gui/partitionmanagerui.rc:30
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Перегляд"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:40
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Пристрій"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:42
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr "Вибрати поточний пристрій"
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:54
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Розділ диска"
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Файлову систему на розділі <filename>%1</filename> не вдалося змонтувати."
+
+#: gui/partitionmanagerwidget.cpp:406
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Невдала спроба монтування файлової системи."
+
+#: gui/partitionmanagerwidget.cpp:411
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Файлову систему на розділі <filename>%1</filename> не вдалося демонтувати."
+
+#: gui/partitionmanagerwidget.cpp:411
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Невдала спроба демонтування файлової системи."
+
+#: gui/partitionmanagerwidget.cpp:453
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>На цьому пристрої вже є %1 головний розділ. Це максимальна кількість, "
+"з якою може працювати його тип таблиці розділів.</para><para>Ви не зможете "
+"створити, вставити або відновити головний розділ на цьому пристрої до того, "
+"як вилучите якийсь з існуючих головних розділів.</para>"
+msgstr[1] ""
+"<para>На цьому пристрої вже є %1 головних розділи. Це максимальна кількість, "
+"з якою може працювати його тип таблиці розділів.</para><para>Ви не зможете "
+"створити, вставити або відновити головний розділ на цьому пристрої до того, "
+"як вилучите якийсь з існуючих головних розділів.</para>"
+msgstr[2] ""
+"<para>На цьому пристрої вже є %1 головних розділів. Це максимальна "
+"кількість, з якою може працювати його тип таблиці розділів.</para><para>Ви "
+"не зможете створити, вставити або відновити головний розділ на цьому "
+"пристрої до того, як вилучите якийсь з існуючих головних розділів.</para>"
+msgstr[3] ""
+"<para>На цьому пристрої вже є %1 головний розділ. Це максимальна кількість, "
+"з якою може працювати його тип таблиці розділів.</para><para>Ви не зможете "
+"створити, вставити або відновити головний розділ на цьому пристрої до того, "
+"як вилучите якийсь з існуючих головних розділів.</para>"
+
+#: gui/partitionmanagerwidget.cpp:457
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "Забагато головних розділів."
+
+#: gui/partitionmanagerwidget.cpp:522
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para>Зараз розділ <filename>%1</filename> вилучити неможливо, оскільки "
+"залишаються змонтованими один або декілька розділів з більшими логічними "
+"номерами.</para><para>Будь ласка, спочатку демонтуйте всі розділи з "
+"логічними номерами вищими за %2.</para>"
+
+#: gui/partitionmanagerwidget.cpp:525
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Невдала спроба вилучення розділу."
+
+#: gui/partitionmanagerwidget.cpp:535
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Ви справді бажаєте вилучити розділ, який зараз знаходиться у буфері обміну "
+"інформацією? Після вилучення цього розділу ви вже не зможете його вставити."
+
+#: gui/partitionmanagerwidget.cpp:537
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Чи бажаєте ви вилучення розділу у буфері обміну?"
+
+#: gui/partitionmanagerwidget.cpp:538
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Вилучити його"
+
+#: gui/partitionmanagerwidget.cpp:584
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Після зміни розміру/пересування розділ <filename>%1</filename> має те саме "
+"розташування і розмір, що і раніше. Дію проігноровано."
+
+#: gui/partitionmanagerwidget.cpp:614
+#, kde-format
+msgctxt "@info/plain"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "Розділ <filename>%1</filename> було скопійовано до буфера обміну."
+
+#: gui/partitionmanagerwidget.cpp:683
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning>Зараз ви можете втратити всі дані з розділу <filename>%1</"
+"filename>.</warning></para><para>Перезапис одного розділу іншим (або файлом "
+"образу розділу) призведе до втрати всього його вмісту.</para><para>Якщо ви "
+"зараз продовжите і застосуєте остаточну дію у головному вікні, всі дані з "
+"<filename>%1</filename> буде остаточно втрачено.</para>"
+
+#: gui/partitionmanagerwidget.cpp:691
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Перезаписати поточний розділ?"
+
+#: gui/partitionmanagerwidget.cpp:692
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Перезаписати розділ"
+
+#: gui/partitionmanagerwidget.cpp:701
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Вибраний розділ замалий для того, щоб у ньому міг розміститися "
+"вихідний розділ або файл резервної копії.</para><para>Оберіть інше "
+"призначення або змініть розмір поточного розділу так, щоб у ньому могла "
+"розміститися вся інформація.</para>"
+
+#: gui/partitionmanagerwidget.cpp:702
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Область призначення недостатньо велика"
+
+#: gui/partitionmanagerwidget.cpp:705
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+"<para>Створення розділу призначення з достатнім розміром є неможливим.</"
+"para><para>Це може трапитися, якщо не всі розділи на пристрої правильно "
+"вирівняно, або під час копіювання головного розділу на розширений розділ.</"
+"para>"
+
+#: gui/partitionmanagerwidget.cpp:708
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Не вдалося створити розділ призначення."
+
+#: gui/partitionmanagerwidget.cpp:746
+#, kde-format
+msgctxt "@info"
+msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+msgstr "Чи бажаєте ви перезаписати існуючий файл <filename>%1</filename>?"
+
+#: gui/partitionmanagerwidget.cpp:746
+msgctxt "@title:window"
+msgid "Overwrite Existing File?"
+msgstr "Перезаписати існуючий файл?"
+
+#: gui/partitionmanagerwidget.cpp:746
+msgctxt "@action:button"
+msgid "Overwrite File"
+msgstr "Перезаписати файл"
+
+#: gui/partitionmanagerwidget.cpp:773
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Файлова система у файлі образу <filename>%1</filename> завелика для того, "
+"щоб її можна було відновити на вибраному розділі."
+
+#: gui/partitionmanagerwidget.cpp:773
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Недостатньо місця для відновлення файлової системи."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:70
+msgid "Partition"
+msgstr "Розділ диска"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:75
+msgid "Type"
+msgstr "Тип"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:80
+msgid "Mount Point"
+msgstr "Точка монтування"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:95
+msgid "Size"
+msgstr "Розмір"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:100
+msgid "Used"
+msgstr "Використано"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:105
+msgid "Available"
+msgstr "Вільні"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:110
+msgid "First Sector"
+msgstr "Перший сектор"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:115
+msgid "Last Sector"
+msgstr "Останній сектор"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:120
+msgid "Number of Sectors"
+msgstr "Кількість секторів"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:125
+msgid "Flags"
+msgstr "Прапорці"
+
+#: gui/partpropsdialog.cpp:54
+#, kde-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Властивості розділу: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:102
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(не знайдено)"
+
+#: gui/partpropsdialog.cpp:108
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "бездіяльний"
+
+#: gui/partpropsdialog.cpp:112
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Змонтовано принаймні один логічний розділ."
+
+#: gui/partpropsdialog.cpp:114
+#, kde-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "змонтовано до <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:116
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "змонтовано"
+
+#: gui/partpropsdialog.cpp:120
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(немає)"
+
+#: gui/partpropsdialog.cpp:327
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Зараз ви можете втратити всі дані з розділу <filename>%1</"
+"filename>.</warning></para><para>Зміна файлової системи на диску призведе до "
+"втрати всього його вмісту. Якщо ви зараз продовжите і застосуєте остаточну "
+"дію у головному вікні, всі дані з <filename>%1</filename> буде остаточно "
+"втрачено.</para>"
+
+#: gui/partpropsdialog.cpp:329
+#, kde-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr ""
+"Справді повторно створити <filename>%1</filename> з файловою системою %2?"
+
+#: gui/partpropsdialog.cpp:330
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Змінити файлову систему"
+
+#: gui/partpropsdialog.cpp:331
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Не змінювати файлову систему"
+
+#: gui/partpropsdialog.cpp:352
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filename>%1</filename> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Зараз ви можете втратити всі дані з розділу <filename>%1</"
+"filename>.</warning></para><para>Повторне створення файлової системи на "
+"диску призведе до втрати всього його вмісту. Якщо ви зараз продовжите і "
+"застосуєте остаточну дію у головному вікні, всі дані з <filename>%1</"
+"filename> буде остаточно втрачено.</para>"
+
+#: gui/partpropsdialog.cpp:354
+#, kde-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "Справді повторно створити файлову систему на <filename>%1</filename>?"
+
+#: gui/partpropsdialog.cpp:355
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Повторно створити файлову систему"
+
+#: gui/partpropsdialog.cpp:356
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Не створювати файлової системи повторно"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:49 gui/sizedialogwidgetbase.ui:99
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Файлова система:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:65 gui/sizedialogwidgetbase.ui:115
+msgctxt "@label"
+msgid "Label:"
+msgstr "Мітка:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:82 gui/sizedialogwidgetbase.ui:134
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Ця файлова система не підтримує встановлення міток."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:92
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Повторно створити існуючу файлову систему"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:106
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Точка монтування:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:123
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Тип розділу:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:140
+msgctxt "@label"
+msgid "Status:"
+msgstr "Стан:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:157
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:187
+msgctxt "@label"
+msgid "Size:"
+msgstr "Розмір:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:210
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Доступний:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:227
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Використано:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:251
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Перший сектор:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:268
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Останній сектор:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:285
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Кількість секторів:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:309
+msgctxt "@label"
+msgid "Flags:"
+msgstr "Прапорці:"
+
+#: gui/parttablewidget.cpp:36
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Будь ласка, оберіть пристрій."
+
+#: gui/parttablewidget.cpp:63
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "На цьому пристрої не було знайдено коректної таблиці розділів."
+
+#: gui/resizedialog.cpp:48
+#, kde-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Зміна розміру/Пересування розділу: <filename>%1</filename>"
+
+#: gui/scanprogressdialog.cpp:27
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Сканування пристроїв..."
+
+#: gui/scanprogressdialog.cpp:36
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Сканування..."
+
+#: gui/scanprogressdialog.cpp:38
+#, kde-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Сканування пристрою: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:62
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Перший сектор:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:97
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Останній сектор:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:120
+msgid "Align partition"
+msgstr "Вирівняти розділ"
+
+#: gui/sizedialogbase.cpp:57
+msgctxt "@item:button advanced settings button"
+msgid "Advanced"
+msgstr "Додатково"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:55
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Тип розділу:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:70
+msgid "Primary"
+msgstr "Основний"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:77
+msgid "Extended"
+msgstr "Розширений"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:84
+msgid "Logical"
+msgstr "Логічний"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:152
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Мінімальний розмір:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:175
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Максимальний розмір:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/sizedialogwidgetbase.ui:198
+msgctxt "@label:listbox"
+msgid "Free space before:"
+msgstr "Початкове вільне місце:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:233
+msgctxt "@label:listbox"
+msgid "Size:"
+msgstr "Розмір:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/sizedialogwidgetbase.ui:262
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Остаточне вільне місце:"
+
+#: gui/smartdialog.cpp:64
+#, kde-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "Властивості згідно SMART: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:66
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "Зберегти звіт SMART"
+
+#: gui/smartdialog.cpp:104 gui/smartdialog.cpp:161
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "немає"
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:191
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr "У критичному стані"
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:191
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr "Зношений"
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:192
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Увімкнено"
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:192
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Не увімкнено"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:63
+msgid "Model:"
+msgstr "Модель:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:164 gui/smartdialogwidgetbase.ui:92
+msgid "Serial number:"
+msgstr "Серійний номер:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:165 gui/smartdialogwidgetbase.ui:121
+msgid "Firmware revision:"
+msgstr "Модифікація мікропрограми:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:166 gui/smartdialogwidgetbase.ui:150
+msgid "Temperature:"
+msgstr "Температура:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:167 gui/smartdialogwidgetbase.ui:179
+msgid "Bad sectors:"
+msgstr "Дефектних секторів:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:168 gui/smartdialogwidgetbase.ui:208
+msgid "Powered on for:"
+msgstr "Увімкнено протягом:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:169 gui/smartdialogwidgetbase.ui:237
+msgid "Power cycles:"
+msgstr "Циклів вмикання:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:170 gui/smartdialogwidgetbase.ui:414
+msgid "Self tests:"
+msgstr "Самоперевірки:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:171 gui/smartdialogwidgetbase.ui:385
+msgid "Overall assessment:"
+msgstr "Загальна оцінка:"
+
+#: gui/smartdialog.cpp:239
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Не вдалося зберегти звіт SMART."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:289
+msgid "Id"
+msgstr "Ідентифікатор"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+msgid "Attribute"
+msgstr "Атрибут"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+msgid "Failure Type"
+msgstr "Тип помилки"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+msgid "Update Type"
+msgstr "Тип оновлення"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+msgid "Worst"
+msgstr "Найгірше значення"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+msgid "Current"
+msgstr "Поточне значення"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+msgid "Threshold"
+msgstr "Порогове значення"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+msgid "Raw"
+msgstr "Без обробки"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+msgid "Assessment"
+msgstr "Оцінка"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+msgid "Value"
+msgstr "Значення"
+
+#: gui/treelog.cpp:131
+#, kde-format
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr ""
+"Не вдалося створити тимчасовий файл вихідних даних для збереження <filename>"
+"%1</filename>."
+
+#: gui/treelog.cpp:131
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Помилка під час спроби зберегти файл журналу"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:54
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr "Важл."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:57
+msgid "Severity"
+msgstr "Важливість"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Час"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "Повідомлення"
+
+#: jobs/backupfilesystemjob.cpp:65
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"backup."
+msgstr ""
+"Не вдалося відкрити файлову систему на вихідному розділі <filename>%1</"
+"filename> для створення резервної копії."
+
+#: jobs/backupfilesystemjob.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not create backup file <filename>%1</filename>."
+msgstr "Не вдалося створити файл резервної копії <filename>%1</filename>."
+
+#: jobs/backupfilesystemjob.cpp:79
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Back up file system on partition <filename>%1</filename> to <filename>%2</"
+"filename>"
+msgstr ""
+"Створення резервної копії файлової системи на розділі <filename>%1</"
+"filename> у <filename>%2</filename>"
+
+#: jobs/checkfilesystemjob.cpp:56
+#, kde-format
+msgctxt "@info/plain"
+msgid "Check file system on partition <filename>%1</filename>"
+msgstr "Перевірка файлової системи на розділі <filename>%1</filename>"
+
+#: jobs/copyfilesystemjob.cpp:61
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Cannot copy file system: File system on target partition <filename>%1</"
+"filename> is smaller than the file system on source partition <filename>%2</"
+"filename>."
+msgstr ""
+"Не вдалося скопіювати файлову систему: файлова система на розділі "
+"призначення <filename>%1</filename> менша за файлову систему на вихідному "
+"розділі <filename>%2</filename>."
+
+#: jobs/copyfilesystemjob.cpp:70
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+"Не вдалося відкрити файлову систему на вихідному розділі <filename>%1</"
+"filename> для копіювання."
+
+#: jobs/copyfilesystemjob.cpp:72
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on target partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+"Не вдалося відкрити файлову систему на розділі призначення <filename>%1</"
+"filename> для копіювання."
+
+#: jobs/copyfilesystemjob.cpp:76
+msgctxt "@info/plain"
+msgid ""
+"Closing device. This may take a while, especially on slow devices like "
+"Memory Sticks."
+msgstr ""
+"Закриття пристрою. Ця дія може тривати декілька секунд, особливо якщо "
+"виконується обробка повільних пристроїв, зокрема карток пам’яті."
+
+#: jobs/copyfilesystemjob.cpp:105
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy file system on partition <filename>%1</filename> to partition <filename>"
+"%2</filename>"
+msgstr ""
+"Копіювання файлової системи з розділу <filename>%1</filename> на розділ "
+"<filename>%2</filename>"
+
+#: jobs/createfilesystemjob.cpp:70
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to set the system type for the file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Спроба встановити тип файлової системи на розділі <filename>%1</filename> "
+"зазнала невдачі."
+
+#: jobs/createfilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to set the "
+"system type for partition <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити таблицю розділів на пристрої <filename>%1</filename> для "
+"встановлення типу системи на розділі <filename>%2</filename>."
+
+#: jobs/createfilesystemjob.cpp:80
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set the system type for "
+"partition <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити пристрій <filename>%1</filename> для встановлення типу "
+"системи на розділі <filename>%2</filename>."
+
+#: jobs/createfilesystemjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create file system %1 on partition <filename>%2</filename>"
+msgstr "Створення файлової системи %1 на розділі <filename>%2</filename>"
+
+#: jobs/createpartitionjob.cpp:71
+#: plugins/libparted/libpartedpartitiontable.cpp:196
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to add partition <filename>%1</filename> to device <filename>%2</"
+"filename>."
+msgstr ""
+"Спроба додавання розділу <filename>%1</filename> на пристрій <filename>%2</"
+"filename> зазнала невдачі."
+
+#: jobs/createpartitionjob.cpp:76
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to create "
+"new partition <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити таблицю розділів на пристрої <filename>%1</filename> для "
+"створення розділу <filename>%2</filename>."
+
+#: jobs/createpartitionjob.cpp:81
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to create new partition "
+"<filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити пристрій <filename>%1</filename> для створення розділу "
+"<filename>%2</filename>."
+
+#: jobs/createpartitionjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition <filename>%1</filename>"
+msgstr "Створення розділу <filename>%1</filename>"
+
+#: jobs/createpartitionjob.cpp:93
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition on device <filename>%1</filename>"
+msgstr "Створення розділу на пристрої <filename>%1</filename>"
+
+#: jobs/createpartitiontablejob.cpp:59
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open device <filename>%1</"
+"filename>."
+msgstr ""
+"Спроба створення таблиці розділів зазнала невдачі: не вдалося відкрити "
+"пристрій <filename>%1</filename>."
+
+#: jobs/createpartitiontablejob.cpp:68
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition table on device <filename>%1</filename>"
+msgstr "Створення таблиці розділів на пристрої <filename>%1</filename>"
+
+#: jobs/deletefilesystemjob.cpp:81
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not delete file system on <filename>%1</filename>."
+msgstr "Не вдалося вилучити файлову систему на <filename>%1</filename>."
+
+#: jobs/deletefilesystemjob.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to delete "
+"file system on <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити таблицю розділів на пристрої <filename>%1</filename> для "
+"вилучення файлової системи на <filename>%2</filename>."
+
+#: jobs/deletefilesystemjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system signature for partition <filename>%1</"
+"filename>: Failed to open device <filename>%2</filename>."
+msgstr ""
+"Не вдалося вилучити підпис файлової системи з розділу <filename>%1</"
+"filename>: спроба відкриття пристрою <filename>%2</filename> завершилася "
+"невдало."
+
+#: jobs/deletefilesystemjob.cpp:104
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete file system on <filename>%1</filename>"
+msgstr "Вилучення файлової системи на <filename>%1</filename>"
+
+#: jobs/deletepartitionjob.cpp:71
+#: plugins/libparted/libpartedpartitiontable.cpp:218
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not delete partition <filename>%1</filename>."
+msgstr "Не вдалося вилучити розділ <filename>%1</filename>."
+
+#: jobs/deletepartitionjob.cpp:79
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to delete "
+"partition <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити таблицю розділів на пристрої <filename>%1</filename> для "
+"вилучення розділу <filename>%2</filename>."
+
+#: jobs/deletepartitionjob.cpp:84
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Could not open device <filename>%1</filename>."
+msgstr ""
+"Спроба вилучення розділу зазнала невдачі: не вдалося відкрити пристрій "
+"<filename>%1</filename>."
+
+#: jobs/deletepartitionjob.cpp:93
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete the partition <filename>%1</filename>"
+msgstr "Вилучення розділу <filename>%1</filename>"
+
+#: jobs/job.cpp:48
+msgctxt "@info/plain"
+msgid ""
+"The logical sector sizes in the source and target for copying are not the "
+"same. This is currently unsupported."
+msgstr ""
+"Розмір логічного сектора на джерелі копіювання і призначення не збігаються. "
+"Зміна розмірів секторів у цій версії програми ще не підтримується."
+
+#: jobs/job.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+msgstr "Копіювання %1 блоків (%2 секторів) з %3 у %4, напрямок: %5."
+
+#: jobs/job.cpp:92
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying %1 MiB/second, estimated time left: %2"
+msgstr "Копіювання %1 МіБ/секунду, оцінка залишкового часу: %2"
+
+#: jobs/job.cpp:111
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying remainder of block size %1 from  %2 to %3."
+msgstr "Копіювання залишку розміру блоків %1 з %2 до %3."
+
+#: jobs/job.cpp:124
+#, kde-format
+msgid "1 sector"
+msgid_plural "%1 sectors"
+msgstr[0] "%1 сектор"
+msgstr[1] "%1 сектори"
+msgstr[2] "%1 секторів"
+msgstr[3] "%1 сектор"
+
+#: jobs/job.cpp:124
+#, kde-format
+msgctxt ""
+"@info/plain argument 2 is a string such as 7 sectors (localized accordingly)"
+msgid "Copying 1 block (%2) finished."
+msgid_plural "Copying %1 blocks (%2) finished."
+msgstr[0] "Копіювання %1 блоку (%2) завершено."
+msgstr[1] "Копіювання %1 блоків (%2) завершено."
+msgstr[2] "Копіювання %1 блоків (%2) завершено."
+msgstr[3] "Копіювання одного блоку (%2) завершено."
+
+#: jobs/job.cpp:133
+msgctxt "@info/plain"
+msgid "Source and target for copying do not overlap: Rollback is not required."
+msgstr ""
+"Джерело і призначення дії копіювання не перекриваються: повернення до "
+"початкового стану непотрібне."
+
+#: jobs/job.cpp:159
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback from: First sector: %1, last sector: %2."
+msgstr "Повернення з: перший сектор: %1, останній сектор: %2."
+
+#: jobs/job.cpp:160
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback to: First sector: %1, last sector: %2."
+msgstr "Повернення у: перший сектор: %1, останній сектор: %2."
+
+#: jobs/job.cpp:165 jobs/job.cpp:172
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open device <filename>%1</filename> to rollback copying."
+msgstr ""
+"Не вдалося відкрити пристрій <filename>%1</filename> для зворотного "
+"копіювання."
+
+#: jobs/job.cpp:180
+msgctxt "@info/plain"
+msgid "Rollback failed: Source or target are not devices."
+msgstr ""
+"Спроба повернення зазнала невдачі: джерело або призначення не є пристроями."
+
+#: jobs/job.cpp:195
+#, kde-format
+msgctxt "@info/plain"
+msgid "Job: %1"
+msgstr "Завдання: %1"
+
+#: jobs/job.cpp:204
+#, kde-format
+msgctxt "@info/plain job status (error, warning, ...)"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: jobs/job.cpp:230
+msgctxt "@info:progress job"
+msgid "Pending"
+msgstr "Очікування"
+
+#: jobs/job.cpp:231
+msgctxt "@info:progress job"
+msgid "Success"
+msgstr "Успіх"
+
+#: jobs/job.cpp:232
+msgctxt "@info:progress job"
+msgid "Error"
+msgstr "Помилка"
+
+#: jobs/movefilesystemjob.cpp:64
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on partition <filename>%1</filename> for moving."
+msgstr ""
+"Не вдалося відкрити файлову систему на розділі <filename>%1</filename> для "
+"пересування."
+
+#: jobs/movefilesystemjob.cpp:66
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not create target for moving file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Не вдалося створити призначення для пересування файлової системи на розділ "
+"<filename>%1</filename>."
+
+#: jobs/movefilesystemjob.cpp:78
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback for file system on partition <filename>%1</filename> failed."
+msgstr ""
+"Спроба повернення файлової системи на розділі <filename>%1</filename> "
+"зазнала невдачі."
+
+#: jobs/movefilesystemjob.cpp:80 jobs/restorefilesystemjob.cpp:105
+#: jobs/shredfilesystemjob.cpp:77
+msgctxt "@info/plain"
+msgid "Closing device. This may take a few seconds."
+msgstr "Закриття пристрою. Ця дія може тривати декілька секунд."
+
+#: jobs/movefilesystemjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid "Move the file system on partition <filename>%1</filename> to sector %2"
+msgstr ""
+"Пересування файлової системи на розділі <filename>%1</filename> до сектора %2"
+
+#: jobs/resizefilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%2</filename> already has the "
+"requested length of 1 sector."
+msgid_plural ""
+"The file system on partition <filename>%2</filename> already has the "
+"requested length of %1 sectors."
+msgstr[0] ""
+"Файлова система на розділі <filename>%2</filename> вже має потрібну довжину "
+"у %1 сектор."
+msgstr[1] ""
+"Файлова система на розділі <filename>%2</filename> вже має потрібну довжину "
+"у %1 сектори."
+msgstr[2] ""
+"Файлова система на розділі <filename>%2</filename> вже має потрібну довжину "
+"у %1 секторів."
+msgstr[3] ""
+"Файлова система на розділі <filename>%2</filename> вже має потрібну довжину "
+"у %1 сектор."
+
+#: jobs/resizefilesystemjob.cpp:80
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing file system from %1 to %2 sectors."
+msgstr "Зміна розміну файлової системи з %1 до %2 секторів."
+
+#: jobs/resizefilesystemjob.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing a %1 file system using internal backend functions."
+msgstr ""
+"Зміна розміру файлової системи %1 за допомогою вбудованих функцій сервера."
+
+#: jobs/resizefilesystemjob.cpp:102
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%1</filename> cannot be resized "
+"because there is no support for it."
+msgstr ""
+"Файлова система на розділі <filename>%1</filename> не підлягає зміні "
+"розміру, оскільки така дія не передбачена для цієї файлової системи."
+
+#: jobs/resizefilesystemjob.cpp:133
+msgctxt "@info/plain"
+msgid "Successfully resized file system using internal backend functions."
+msgstr ""
+"Розмір файлової системи успішно змінено за допомогою вбудованих функцій "
+"сервера."
+
+#: jobs/resizefilesystemjob.cpp:140
+#: plugins/libparted/libpartedpartitiontable.cpp:318
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize the "
+"file system."
+msgstr ""
+"Під час спроби змінити розмір файлової системи не вдалося відкрити розділ "
+"<filename>%1</filename>."
+
+#: jobs/resizefilesystemjob.cpp:145
+#: plugins/libparted/libpartedpartitiontable.cpp:321
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not read geometry for partition <filename>%1</filename> while trying "
+"to resize the file system."
+msgstr ""
+"Під час спроби змінити розмір файлової системи не вдалося прочитати дані про "
+"геометрію розділу <filename>%1</filename>."
+
+#: jobs/resizefilesystemjob.cpp:153
+#, kde-format
+msgctxt "@info/plain"
+msgid "Maximize file system on <filename>%1</filename> to fill the partition"
+msgstr ""
+"Збільшення розміру файлової системи на <filename>%1</filename> до "
+"максимального дозволеного розділом"
+
+#: jobs/resizefilesystemjob.cpp:155
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
+msgid_plural ""
+"Resize file system on partition <filename>%2</filename> to %1 sectors"
+msgstr[0] ""
+"Зміна розміру файлової системи на розділі <filename>%2</filename> до %1 "
+"сектор"
+msgstr[1] ""
+"Зміна розміру файлової системи на розділі <filename>%2</filename> до %1 "
+"сектори"
+msgstr[2] ""
+"Зміна розміру файлової системи на розділі <filename>%2</filename> до %1 "
+"секторів"
+msgstr[3] ""
+"Зміна розміру файлової системи на розділі <filename>%2</filename> до %1 "
+"сектор"
+
+#: jobs/restorefilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open backup file <filename>%1</filename> to restore from."
+msgstr ""
+"Не вдалося відкрити файл резервної копії <filename>%1</filename> для "
+"відновлення розділу."
+
+#: jobs/restorefilesystemjob.cpp:77 jobs/shredfilesystemjob.cpp:73
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open target partition <filename>%1</filename> to restore to."
+msgstr ""
+"Не вдалося відкрити розділ призначення <filename>%1</filename> для "
+"відновлення розділу."
+
+#: jobs/restorefilesystemjob.cpp:116
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore the file system from file <filename>%1</filename> to partition "
+"<filename>%2</filename>"
+msgstr ""
+"Відновлення файлової системи з файла <filename>%1</filename> на розділ "
+"<filename>%2</filename>"
+
+#: jobs/setfilesystemlabeljob.cpp:51
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"File system on partition <filename>%1</filename> does not support setting "
+"labels. Job ignored."
+msgstr ""
+"Файлова система на розділі <filename>%1</filename> не підтримує встановлення "
+"міток. Завдання скасовано."
+
+#: jobs/setfilesystemlabeljob.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Set the file system label on partition <filename>%1</filename> to \"%2\""
+msgstr ""
+"Встановлення мітки файлової системи на розділі <filename>%1</filename> у "
+"значення «%2»"
+
+#: jobs/setpartflagsjob.cpp:85
+msgctxt "@info/plain flag turned on, active"
+msgid "on"
+msgstr "увімкнено"
+
+#: jobs/setpartflagsjob.cpp:85
+msgctxt "@info/plain flag turned off, inactive"
+msgid "off"
+msgstr "вимкнено"
+
+#: jobs/setpartflagsjob.cpp:85
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"There was an error setting flag %1 for partition <filename>%2</filename> to "
+"state %3."
+msgstr ""
+"Було встановлено помилкове значення %3 прапорця %1 для розділу <filename>%2</"
+"filename>."
+
+#: jobs/setpartflagsjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not find partition <filename>%1</filename> on device <filename>%2</"
+"filename> to set partition flags."
+msgstr ""
+"Не вдалося знайти розділ <filename>%1</filename> на пристрої <filename>%2</"
+"filename> для встановлення прапорців розділу."
+
+#: jobs/setpartflagsjob.cpp:102
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to set "
+"partition flags for partition <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити таблицю розділів на пристрої <filename>%1</filename> для "
+"встановлення прапорців розділу <filename>%2</filename>."
+
+#: jobs/setpartflagsjob.cpp:107
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set partition flags for "
+"partition <filename>%2</filename>."
+msgstr ""
+"Не вдалося відкрити пристрій <filename>%1</filename> для встановлення "
+"прапорців для розділу <filename>%2</filename>."
+
+#: jobs/setpartflagsjob.cpp:120 ops/setpartflagsoperation.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid "Clear flags for partition <filename>%1</filename>"
+msgstr "Зняття прапорців для розділу <filename>%1</filename>"
+
+#: jobs/setpartflagsjob.cpp:122
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+msgstr ""
+"Встановлення значень прапорців «%2» для розділу <filename>%1</filename>"
+
+#: jobs/setpartgeometryjob.cpp:82
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> while trying to resize/move "
+"partition <filename>%2</filename>."
+msgstr ""
+"Під час спроби зміни розміру/пересування розділу <filename>%2</filename> не "
+"вдалося відкрити пристрій <filename>%1</filename>."
+
+#: jobs/setpartgeometryjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Set geometry of partition <filename>%1</filename>: Start sector: %2, length: "
+"%3"
+msgstr ""
+"Встановлення геометрії розділу <filename>%1</filename>: початковий сектор: "
+"%2, довжина: %3"
+
+#: jobs/shredfilesystemjob.cpp:71
+msgctxt "@info/plain"
+msgid "Could not open random data source to overwrite file system."
+msgstr ""
+"Не вдалося відкрити джерело випадкових даних для перезапису файлової системи."
+
+#: jobs/shredfilesystemjob.cpp:88
+#, kde-format
+msgctxt "@info/plain"
+msgid "Shred the file system on <filename>%1</filename>"
+msgstr "Витерти файлову систему на <filename>%1</filename>"
+
+#: main.cpp:38
+msgctxt "@info:shell"
+msgid "Do not try to gain super user privileges"
+msgstr "Без спроб отримати права доступу суперкористувача"
+
+#: main.cpp:39
+msgctxt "@info:shell"
+msgid "Show advanced tab in configuration dialog"
+msgstr "Показувати вкладку додаткових параметрів вікна налаштування"
+
+#: main.cpp:40
+msgctxt "@info:shell"
+msgid "Device(s) to manage"
+msgstr "Керовані пристрої"
+
+#: ops/backupoperation.cpp:51
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</filename>"
+msgstr ""
+"Резервне копіювання розділу <filename>%1</filename> (%2, %3) на <filename>"
+"%4</filename>"
+
+#: ops/checkoperation.cpp:62
+#, kde-format
+msgctxt "@info/plain"
+msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+msgstr "Перевірка і відновлення розділу <filename>%1</filename> (%2, %3)"
+
+#: ops/copyoperation.cpp:165 ops/restoreoperation.cpp:144
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Maximizing file system on target partition <filename>%1</filename> "
+"to the size of the partition failed."
+msgstr ""
+"Попередження: спроба встановлення максимального розміру файлової системи на "
+"розділі призначення <filename>%1</filename> зазнала невдачі."
+
+#: ops/copyoperation.cpp:170
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking target partition <filename>%1</filename> after copy failed."
+msgstr ""
+"Перевірка розділу призначення <filename>%1</filename> після невдалої спроби "
+"копіювання."
+
+#: ops/copyoperation.cpp:180
+msgctxt "@info/plain"
+msgid "Copying source to target partition failed."
+msgstr "Спроба копіювання на розділ призначення зазнала невдачі."
+
+#: ops/copyoperation.cpp:184
+msgctxt "@info/plain"
+msgid "Creating target partition for copying failed."
+msgstr "Спроба створення розділу призначення для копіювання зазнала невдачі."
+
+#: ops/copyoperation.cpp:187
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking source partition <filename>%1</filename> failed."
+msgstr ""
+"Спроба перевірки вихідного розділу <filename>%1</filename> зазнала невдачі."
+
+#: ops/copyoperation.cpp:194 ops/operation.cpp:178 ops/resizeoperation.cpp:186
+#: ops/restoreoperation.cpp:165
+#, kde-format
+msgctxt "@info/plain status (success, error, warning...) of operation"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: ops/copyoperation.cpp:204
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> "
+"(%5, %6)"
+msgstr ""
+"Копіювання розділу <filename>%1</filename> (%2, %3) на <filename>%4</"
+"filename> (%5, %6)"
+
+#: ops/copyoperation.cpp:213
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> "
+"(%5, %6) and grow it to %7"
+msgstr ""
+"Копіювання розділу <filename>%1</filename> (%2, %3) на <filename>%4</"
+"filename> (%5, %6) з його збільшенням до %7"
+
+#: ops/copyoperation.cpp:225
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename>"
+msgstr ""
+"Копіювання розділу <filename>%1</filename> (%2, %3) на вільне місце "
+"(починаючи з %4) на <filename>%5</filename>"
+
+#: ops/copyoperation.cpp:233
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename> and grow it to %6"
+msgstr ""
+"Копіювання розділу <filename>%1</filename> (%2, %3) на вільне місце "
+"(починаючи з %4) на <filename>%5</filename> зі збільшенням до %6"
+
+#: ops/createfilesystemoperation.cpp:97
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create filesystem %1 on partition <filename>%2</filename>"
+msgstr "Створення файлової системи %1 на розділі <filename>%2</filename>"
+
+#: ops/createpartitiontableoperation.cpp:103
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
+msgstr "Створення таблиці розділів (тип: %1) на <filename>%2</filename>"
+
+#: ops/deleteoperation.cpp:86
+#, kde-format
+msgctxt "@info/plain"
+msgid "Shred partition <filename>%1</filename> (%2, %3)"
+msgstr "Витирання розділу <filename>%1</filename> (%2, %3)"
+
+#: ops/deleteoperation.cpp:88
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete partition <filename>%1</filename> (%2, %3)"
+msgstr "Вилучення розділу <filename>%1</filename> (%2, %3)"
+
+#: ops/newoperation.cpp:113
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+msgstr "Створення розділу (%1, %2) на <filename>%3</filename>"
+
+#: ops/operation.cpp:75
+msgctxt "@info:progress operation"
+msgid "None"
+msgstr "Немає"
+
+#: ops/operation.cpp:76
+msgctxt "@info:progress operation"
+msgid "Pending"
+msgstr "Очікування"
+
+#: ops/operation.cpp:77
+msgctxt "@info:progress operation"
+msgid "Running"
+msgstr "Виконання дії"
+
+#: ops/operation.cpp:78
+msgctxt "@info:progress operation"
+msgid "Success"
+msgstr "Успіх"
+
+#: ops/operation.cpp:79
+msgctxt "@info:progress operation"
+msgid "Warning"
+msgstr "Попередження"
+
+#: ops/operation.cpp:80
+msgctxt "@info:progress operation"
+msgid "Error"
+msgstr "Помилка"
+
+#: ops/resizeoperation.cpp:165
+#, kde-format
+msgctxt "@info/plain"
+msgid "Moving extended partition <filename>%1</filename> failed."
+msgstr ""
+"Спроба пересування розширеного розділу <filename>%1</filename> зазнала "
+"невдачі."
+
+#: ops/resizeoperation.cpp:175
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> after resize/move failed."
+msgstr ""
+"Спроба перевірки розділу <filename>%1</filename> після зміни розміру/"
+"пересування зазнала невдачі."
+
+#: ops/resizeoperation.cpp:178
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing/moving partition <filename>%1</filename> failed."
+msgstr ""
+"Спроба зміни розміру/пересування розділу <filename>%1</filename> зазнала "
+"невдачі."
+
+#: ops/resizeoperation.cpp:182
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> before resize/move failed."
+msgstr ""
+"Спроба перевірки розділу <filename>%1</filename> перед зміною розміру/"
+"пересуванням зазнала невдачі."
+
+#: ops/resizeoperation.cpp:213
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the left by %2"
+msgstr "Пересування розділу <filename>%1</filename> ліворуч за допомогою %2"
+
+#: ops/resizeoperation.cpp:216
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the right by %2"
+msgstr "Пересування розділу <filename>%1</filename> праворуч за допомогою %2"
+
+#: ops/resizeoperation.cpp:219
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Grow partition <filename>%1</filename> from %2 to %3"
+msgstr "Збільшення розміру розділу <filename>%1</filename> з %2 до %3"
+
+#: ops/resizeoperation.cpp:222
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+msgstr "Зменшення розміру розділу <filename>%1</filename> з %2 до %3"
+
+#: ops/resizeoperation.cpp:225
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and grow it from %3 "
+"to %4"
+msgstr ""
+"Пересування розділу <filename>%1</filename> ліворуч за допомогою %2 і "
+"збільшення його розміру з %3 до %4"
+
+#: ops/resizeoperation.cpp:228
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and grow it from "
+"%3 to %4"
+msgstr ""
+"Пересування розділу <filename>%1</filename> праворуч за допомогою %2 і "
+"збільшення його розміру з %3 до %4"
+
+#: ops/resizeoperation.cpp:231
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+"Пересування розділу <filename>%1</filename> ліворуч за допомогою %2 і "
+"зменшення його розміру з %3 до %4"
+
+#: ops/resizeoperation.cpp:234
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+"Пересування розділу <filename>%1</filename> праворуч за допомогою %2 і "
+"зменшення його розміру з %3 до %4"
+
+#: ops/resizeoperation.cpp:241
+msgctxt "@info/plain describe resize/move action"
+msgid "Unknown resize/move action."
+msgstr "Невідома дія зі зміни розміру/пересування"
+
+#: ops/resizeoperation.cpp:271
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize file system to shrink partition "
+"<filename>%1</filename>."
+msgstr ""
+"Спроба зміни розміру/пересування зазнала невдачі: не вдалося змінити розмір "
+"файлової системи для зменшення розділу <filename>%1</filename>."
+
+#: ops/resizeoperation.cpp:277
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+msgstr ""
+"Спроба зміни розміру/пересування зазнала невдачі: не вдалося зменшити розділ "
+"<filename>%1</filename>."
+
+#: ops/resizeoperation.cpp:297
+#, kde-format
+msgctxt "@info/plain"
+msgid "Moving partition <filename>%1</filename> failed."
+msgstr ""
+"Спроба пересування розділу <filename>%1</filename> завершилася невдало."
+
+#: ops/resizeoperation.cpp:303
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Moving the filesystem for partition <filename>%1</filename> failed. Rolling "
+"back."
+msgstr ""
+"Спроба пересування файлової системи розділу <filename>%1</filename> зазнала "
+"невдачі. Буде повернуто початкові параметри."
+
+#: ops/resizeoperation.cpp:307
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Moving back partition <filename>%1</filename> to its original position "
+"failed."
+msgstr ""
+"Спроба повернення на початкове місце розділу <filename>%1</filename> зазнала "
+"невдачі."
+
+#: ops/resizeoperation.cpp:321
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not grow partition <filename>%1</filename>."
+msgstr ""
+"Спроба зміни розміру/пересування зазнала невдачі: не вдалося збільшити "
+"розділ <filename>%1</filename>."
+
+#: ops/resizeoperation.cpp:327
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize the file system on partition <filename>"
+"%1</filename>"
+msgstr ""
+"Спроба зміни розміру/пересування зазнала невдачі: не вдалося змінити розмір "
+"розділу <filename>%1</filename>."
+
+#: ops/resizeoperation.cpp:330
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not restore old partition size for partition <filename>%1</filename>."
+msgstr ""
+"Не вдалося відновити попередній розмір розділу <filename>%1</filename>."
+
+#: ops/restoreoperation.cpp:147
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Checking target file system on partition <filename>%1</filename> after the "
+"restore failed."
+msgstr ""
+"Спроба перевірки файлової системи призначення на розділі <filename>%1</"
+"filename> після відновлення завершилася невдало."
+
+#: ops/restoreoperation.cpp:154
+msgctxt "@info/plain"
+msgid "Restoring file system failed."
+msgstr "Спроба відновлення файлової системи зазнала невдачі."
+
+#: ops/restoreoperation.cpp:158
+msgctxt "@info/plain"
+msgid "Creating the destination partition to restore to failed."
+msgstr "Спроба створення розділу призначення для відновлення зазнала невдачі."
+
+#: ops/restoreoperation.cpp:173
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+msgstr ""
+"Відновлення розділу з <filename>%1</filename> у <filename>%2</filename>"
+
+#: ops/restoreoperation.cpp:175
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+"filename>"
+msgstr ""
+"Відновлення розділу на <filename>%1</filename> у %2 з <filename>%3</filename>"
+
+#: ops/setfilesystemlabeloperation.cpp:71
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> to \"%2\""
+msgstr "Встановлення мітки для розділу <filename>%1</filename> у значення «%2»"
+
+#: ops/setfilesystemlabeloperation.cpp:73
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+msgstr "Зміна мітки для розділу <filename>%1</filename> з «%2» на «%3»"
+
+#: ops/setpartflagsoperation.cpp:77
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+msgstr "Встановлення прапорців для розділу <filename>%1</filename> to «%2»"
+
+#: plugins/dummy/dummybackend.cpp:47
+msgctxt "@title"
+msgid "Dummy Backend Plugin"
+msgstr "Тестовий додаток сервера"
+
+#: plugins/dummy/dummybackend.cpp:49
+msgid "KDE Partition Manager dummy backend."
+msgstr "Тестовий додаток сервера Керування розділами KDE."
+
+#: plugins/dummy/dummybackend.cpp:51
+msgid "Copyright 2010 Volker Lanz"
+msgstr "© Volker Lanz, 2010"
+
+#: plugins/dummy/dummybackend.cpp:53 plugins/libparted/libpartedbackend.cpp:74
+#: util/helpers.cpp:130
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: plugins/libparted/libpartedbackend.cpp:68
+msgctxt "@title"
+msgid "LibParted Backend Plugin"
+msgstr "Додаток сервера LibParted"
+
+#: plugins/libparted/libpartedbackend.cpp:70
+msgid "KDE Partition Manager backend for libparted."
+msgstr "Додаток сервера libparted Керування розділами KDE."
+
+#: plugins/libparted/libpartedbackend.cpp:72
+msgid "Copyright 2008,2009,2010 Volker Lanz"
+msgstr "© Volker Lanz, 2008–2010"
+
+#: plugins/libparted/libpartedbackend.cpp:107
+#, kde-format
+msgctxt "@info/plain"
+msgid "LibParted Exception: %1"
+msgstr "Виключення LibParted: %1"
+
+#: plugins/libparted/libpartedbackend.cpp:422
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not access device <filename>%1</filename>"
+msgstr "Не вдалося отримати доступ до пристрою <filename>%1</filename>."
+
+#: plugins/libparted/libpartedbackend.cpp:426
+#, kde-format
+msgctxt "@info/plain"
+msgid "Device found: %1"
+msgstr "Знайдено пристрій: %1"
+
+#: plugins/libparted/libparteddevice.cpp:100
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not retrieve partition table type "
+"\"%1\" for <filename>%2</filename>."
+msgstr ""
+"Спроба створення таблиці розділів зазнала невдачі: не вдалося отримати тип "
+"таблиці розділу «%1» для <filename>%2</filename>."
+
+#: plugins/libparted/libparteddevice.cpp:108
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open backend device <filename>%1</"
+"filename>."
+msgstr ""
+"Спроба створення таблиці розділів зазнала невдачі: не вдалося відкрити "
+"пристрій сервера <filename>%1</filename>."
+
+#: plugins/libparted/libparteddevice.cpp:116
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not create a new partition table in "
+"the backend for device <filename>%1</filename>."
+msgstr ""
+"Спроба створення таблиці розділів зазнала невдачі: не вдалося створити "
+"таблицю розділів за допомогою сервера для пристрою <filename>%1</filename>."
+
+#: plugins/libparted/libpartedpartition.cpp:43
+#, kde-format
+msgctxt "@info/plain"
+msgid "The flag \"%1\" is not available on the partition's partition table."
+msgstr "Прапорець «%1» не можна встановлювати у таблиці розділів розділу."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:167
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Unknown partition role for new partition <filename>%1</filename> (roles: %2)"
+msgstr ""
+"Невідоме призначення нового розділу <filename>%1</filename> (призначення: %2)"
+
+#: plugins/libparted/libpartedpartitiontable.cpp:177
+#, kde-format
+msgctxt "@info/plain"
+msgid "Failed to create new partition <filename>%1</filename>."
+msgstr "Спроба створення розділу <filename>%1</filename> зазнала невдачі."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:189
+msgctxt "@info/plain"
+msgid ""
+"Failed to create a new partition: could not get geometry for constraint."
+msgstr ""
+"Спроба створення розділу зазнала невдачі: не вдалося отримати дані про "
+"геометрію для встановлення обмежень."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:221
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Partition to delete (<filename>%1</filename>) not "
+"found on disk."
+msgstr ""
+"Спроба вилучення розділу зазнала невдачі: розділ, який слід було вилучити, "
+"(<filename>%1</filename>) не знайдено на диску."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:245
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not set geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+"Під час спроби зміни розміру/пересування розділу <filename>%1</filename> не "
+"вдалося встановити дані про геометрію цього розділу."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:248
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get constraint for partition <filename>%1</filename> while trying "
+"to resize/move it."
+msgstr ""
+"Під час спроби зміни розміру/пересування розділу <filename>%1</filename> не "
+"вдалося встановити обмеження для цього розділу."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:251
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+"Під час спроби зміни розміру/пересування розділу <filename>%1</filename> не "
+"вдалося отримати дані про геометрію цього розділу."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:254
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize/move "
+"it."
+msgstr ""
+"Під час спроби зміни розміру/пересування розділу <filename>%1</filename> не "
+"вдалося відкрити цей розділ."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:273
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to erase filesystem signature on partition <filename>%1</filename>."
+msgstr ""
+"Спроба вилучення підпису файлової системи на розділі <filename>%1</filename> "
+"зазнала невдачі."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:282
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system on partition <filename>%1</filename>: Failed to "
+"get partition."
+msgstr ""
+"Не вдалося вилучити файлову систему на розділі <filename>%1</filename>: "
+"спроба отримати розділ зазнала невдачі."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:310
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not resize file system on partition <filename>%1</filename>."
+msgstr ""
+"Не вдалося змінити розмір файлової системи на розділі <filename>%1</"
+"filename>."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:313
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for resized partition <filename>%1</filename> while "
+"trying to resize the file system."
+msgstr ""
+"Під час спроби змінити розмір файлової системи не вдалося отримати дані про "
+"геометрію розділу <filename>%1</filename>."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:340
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not determine file system of partition at sector %1 on device "
+"<filename>%2</filename>."
+msgstr ""
+"Не вдалося визначити файлову систему розділу у секторі %1 на пристрої "
+"<filename>%2</filename>."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:353
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not update the system type for partition <filename>%1</filename>."
+msgstr "Не вдалося оновити тип системи на розділі <filename>%1</filename>."
+
+#: util/capacity.cpp:117
+msgctxt "@info/plain unit"
+msgid "Byte"
+msgid_plural "Bytes"
+msgstr[0] "Байт"
+msgstr[1] "Байти"
+msgstr[2] "Байтів"
+msgstr[3] "Байт"
+
+#: util/capacity.cpp:118
+msgctxt "@info/plain unit"
+msgid "KiB"
+msgstr "КіБ"
+
+#: util/capacity.cpp:119
+msgctxt "@info/plain unit"
+msgid "MiB"
+msgstr "МіБ"
+
+#: util/capacity.cpp:120
+msgctxt "@info/plain unit"
+msgid "GiB"
+msgstr "ГіБ"
+
+#: util/capacity.cpp:121
+msgctxt "@info/plain unit"
+msgid "TiB"
+msgstr "ТіБ"
+
+#: util/capacity.cpp:122
+msgctxt "@info/plain unit"
+msgid "PiB"
+msgstr "ПіБ"
+
+#: util/capacity.cpp:123
+msgctxt "@info/plain unit"
+msgid "EiB"
+msgstr "ЕіБ"
+
+#: util/capacity.cpp:124
+msgctxt "@info/plain unit"
+msgid "ZiB"
+msgstr "ЗіБ"
+
+#: util/capacity.cpp:125
+msgctxt "@info/plain unit"
+msgid "YiB"
+msgstr "ЙіБ"
+
+#: util/capacity.cpp:129
+msgctxt "@info/plain unit"
+msgid "(unknown unit)"
+msgstr "(невідома одиниця)"
+
+#: util/externalcommand.cpp:126
+#, kde-format
+msgctxt "@info/plain"
+msgid "Command: %1"
+msgstr "Команда: %1"
+
+#: util/externalcommand.cpp:134
+#, kde-format
+msgctxt "@info/plain"
+msgid "(Command timeout while starting \"%1\")"
+msgstr "(Час очікування на початок виконання команди «%1»)"
+
+#: util/externalcommand.cpp:156
+#, kde-format
+msgctxt "@info/plain"
+msgid "(Command timeout while running \"%1\")"
+msgstr "(Час очікування на завершення виконання команди «%1»)"
+
+#: util/helpers.cpp:104
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You do not have administrative privileges.</warning></"
+"para><para>It is possible to run <application>%1</application> without these "
+"privileges. You will, however, <emphasis>not</emphasis> be allowed to apply "
+"operations.</para><para>Do you want to continue running <application>%1</"
+"application>?</para>"
+msgstr ""
+"<para><warning>Ви не маєте адміністративних привілеїв.</warning></"
+"para><para>Програму <application>%1</application> можна запускати і без цих "
+"привілеїв, але, у такому разі, ви <emphasis>не</emphasis> зможете "
+"застосовувати дії.</para><para>Бажаєте продовжити роботу з <application>%1</"
+"application>?</para>"
+
+#: util/helpers.cpp:109
+msgctxt "@title:window"
+msgid "No administrative privileges"
+msgstr "Без адміністративних привілеїв"
+
+#: util/helpers.cpp:110
+msgctxt "@action:button"
+msgid "Run without administrative privileges"
+msgstr "Запустити без адміністративних привілеїв"
+
+#: util/helpers.cpp:123
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>Керування розділами KDE</application>"
+
+#: util/helpers.cpp:125
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Керуйте вашими дисками, розділами і файловими системами"
+
+#: util/helpers.cpp:127
+msgctxt "@info:credit"
+msgid "© 2008-2013 Volker Lanz"
+msgstr "© Volker Lanz, 2008–2013"
+
+#: util/helpers.cpp:130
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr "Колишній супровідник"
+
+#: util/helpers.cpp:133
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: util/helpers.cpp:133
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Компонування віджета розділів"
+
+#: util/helpers.cpp:134
+msgid "Andrius Štikonas"
+msgstr "Andrius Štikonas"
+
+#: util/helpers.cpp:134
+msgctxt "@info:credit"
+msgid "Btrfs support"
+msgstr "Підтримка Btrfs"
+
+#: util/helpers.cpp:165
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Стовпчики"
+
+#: util/helpers.cpp:199
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+"<para>Не вдалося завантажити вказаний у налаштуваннях додаток «%1».</"
+"para><para>Замість нього буде завантажено типовий додаток сервера «%2».</"
+"para>"
+
+#: util/helpers.cpp:202 util/helpers.cpp:211
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr "Помилка: не вдалося завантажити додаток сервера"
+
+#: util/helpers.cpp:208
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"<para>Не вдалося завантажити ні вказаний у налаштуваннях («%1»), ні типовий "
+"сервер («%2»).</para><para>Будь ласка, перевірте, чи встановлено відповідні "
+"пакунки.</para>"
+
+#: util/helpers.cpp:224
+msgctxt "@info"
+msgid ""
+"<para>No usable devices could be found.</para><para>Make sure you have "
+"sufficient privileges to access block devices on your system.</para>"
+msgstr ""
+"<para>Не вдалося виявити придатних до роботи пристроїв.</"
+"para><para>Переконайтеся, що у вас є достатні права доступу до блокових "
+"пристроїв вашої системи.</para>"
+
+#: util/helpers.cpp:226
+msgctxt "@title:window"
+msgid "Error: No Usable Devices Found"
+msgstr "Помилка: не знайдено придатних до роботи пристроїв"
+
+#: util/htmlreport.cpp:65 util/htmlreport.cpp:72
+#, kde-format
+msgid "%1: SMART Status Report"
+msgstr "%1: звіт щодо стану за SMART"
+
+#: util/htmlreport.cpp:80
+msgid "Date:"
+msgstr "Дата:"
+
+#: util/htmlreport.cpp:81
+msgid "Program version:"
+msgstr "Версія програми:"
+
+#: util/htmlreport.cpp:82
+msgid "Backend:"
+msgstr "Сервер:"
+
+#: util/htmlreport.cpp:83
+msgid "KDE version:"
+msgstr "Версія KDE:"
+
+#: util/htmlreport.cpp:84
+msgid "Machine:"
+msgstr "Комп’ютер:"

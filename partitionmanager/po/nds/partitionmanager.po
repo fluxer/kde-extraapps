@@ -1,0 +1,5844 @@
+# Translation of partitionmanager.po to Low Saxon
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sönke Dibbern <s_dibbern@web.de>, 2008, 2009, 2014.
+# Manfred Wiese <m.j.wiese@web.de>, 2008, 2009, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-07 01:48+0000\n"
+"PO-Revision-Date: 2014-03-12 23:25+0100\n"
+"Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sönke Dibbern, Manfred Wiese"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "s_dibbern@web.de, m.j.wiese@web.de"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: config.kcfg:38
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Is dit dat eerste Maal, dat de KDE-Partitschonenpleger löppt?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: config.kcfg:42
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr ""
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: config.kcfg:46
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Partitschoon-Typ:"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: config.kcfg:50
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr ""
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: config.kcfg:54
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "New partition"
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Nieg Partitschoon"
+
+#. i18n: ectx: label, entry (allowApplyOperationsAsNonRoot), group (KDE Partition Manager)
+#: config.kcfg:58
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "Run without administrative privileges"
+msgctxt "@label"
+msgid "Allow applying operations without administrator privileges"
+msgstr "Ahn Plegerverlöven opropen"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:62
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Dateisysteemklören"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:92
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Programm-Menübalken wiesen"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:96
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Hülpprogramm-Moduul"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: config.kcfg:103
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Vörtrocken Eenheit:"
+
+#: config/configureoptionsdialog.cpp:54
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Allgemeen"
+
+#: config/configureoptionsdialog.cpp:54 config/configureoptionsdialog.cpp:101
+msgid "General Settings"
+msgstr "Allgemeen Instellen"
+
+#: config/configureoptionsdialog.cpp:59
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Dateisysteemklören"
+
+#: config/configureoptionsdialog.cpp:59
+msgid "File System Color Settings"
+msgstr "Dateisysteemklöör instellen"
+
+#: config/configureoptionsdialog.cpp:64
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Verwiedert"
+
+#: config/configureoptionsdialog.cpp:64
+msgid "Advanced Settings"
+msgstr "Verwiedert Instellen"
+
+#: config/configureoptionsdialog.cpp:151
+#, fuzzy
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>Do you really want to rescan the devices?</para><para><warning>This "
+#| "will also clear the list of pending operations.</warning></para>"
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Wullt Du de Reedschappen redig nieg dörkieken?</para><para><warning>Bi "
+"disse Akschoon kaamt all utstahn Akschonen weg.</warning></para>"
+
+#: config/configureoptionsdialog.cpp:153
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Hülpprogramm redig ännern?"
+
+#: config/configureoptionsdialog.cpp:154
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Hülpprogramm ännern"
+
+#: config/configureoptionsdialog.cpp:155
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Hülpprogramm nich ännern"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: config/configurepageadvanced.ui:23
+msgid "Permissions"
+msgstr "Verlöven"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_allowApplyOperationsAsNonRoot)
+#: config/configurepageadvanced.ui:35
+msgid "Allow applying operations without administrator privileges"
+msgstr "Övernehmen vun Akschonen ahn Plegerverlöven tolaten"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:51
+msgid "Backend"
+msgstr "Hülpprogramm"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:57
+msgid "Active backend:"
+msgstr "Aktiev Hülpprogramm"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:79
+msgid "Units"
+msgstr "Eenheiten"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:85
+msgid "Preferred unit:"
+msgstr "Vörtrocken Eenheit:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:96
+msgid "Byte"
+msgstr "Bytes"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:101
+msgid "KiB"
+msgstr "KiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:106
+msgid "MiB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:111
+msgid "GiB"
+msgstr "GiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:116
+msgid "TiB"
+msgstr "TiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:121
+msgid "PiB"
+msgstr "PiB"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:126
+msgid "EiB"
+msgstr "EiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:23
+#: config/configurepagegeneral.ui:139
+msgid "File Systems"
+msgstr "Dateisystemen"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:29
+msgid "luks:"
+msgstr "LUKS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:45
+msgid "ntfs:"
+msgstr "NTFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:58
+msgid "ext2:"
+msgstr "Ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:87
+msgid "ext3:"
+msgstr "Ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:116
+msgid "ext4:"
+msgstr "Ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:132
+msgid "btrfs:"
+msgstr "BTRFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:174
+msgid "linuxswap:"
+msgstr "Linux-Swap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:190
+msgid "fat16:"
+msgstr "FAT16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:219
+msgid "fat32:"
+msgstr "FAT32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:248
+msgid "zfs:"
+msgstr "ZFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:264
+msgid "reiserfs:"
+msgstr "Reiser:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:293
+msgid "reiser4:"
+msgstr "Reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+msgid "hpfs:"
+msgstr "HPFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:338
+msgid "jfs"
+msgstr "JFS"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:367
+msgid "hfs:"
+msgstr "HFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:396
+msgid "hfsplus:"
+msgstr "HFS-Plus:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:412
+msgid "ufs:"
+msgstr "UFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:441
+msgid "xfs:"
+msgstr "XFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:470
+msgid "ocfs2:"
+msgstr "OCFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:489
+msgid "extended:"
+msgstr "verwiedert:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:518
+msgid "unformatted:"
+msgstr "nich formateert:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:547
+msgid "unknown:"
+msgstr "nich begäng:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:570
+msgid "exfat:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:583
+#, fuzzy
+#| msgid "ocfs2:"
+msgid "nilfs2:"
+msgstr "OCFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:622
+msgid "lvm2 pv:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:23
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgid "Partition Alignment"
+msgstr "Partitschoon-Typ:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:29
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:42
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgid "Sector alignment:"
+msgstr "Partitschoon-Typ:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:55
+msgid " sectors"
+msgstr " Sektoren"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:71
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "New partition"
+msgid "Align partitions per default"
+msgstr "Nieg Partitschoon"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:90
+msgid "Logging"
+msgstr "Logbook"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:96
+msgid "Hide messages below:"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:107
+msgid "Debug"
+msgstr "Fehlersöök"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+msgid "Information"
+msgstr "Informatschonen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+msgid "Warning"
+msgstr "Wohrschoen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+msgid "Error"
+msgstr "Fehler"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:145
+msgid "Default file system:"
+msgstr "Standard-Dateisysteem:"
+
+#. i18n: ectx: property (title), widget (KButtonGroup, kcfg_shredSource)
+#: config/configurepagegeneral.ui:167
+msgid "Shredding"
+msgstr "Duerhaftig wegdoon"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:173
+msgid "Overwrite with:"
+msgstr "Överschrieven mit:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:180
+msgid "Random data"
+msgstr "Tofällig Daten"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:187
+msgid "Zeros"
+msgstr "Nullen"
+
+#: core/device.cpp:90
+#, fuzzy
+#| msgctxt "@item"
+#| msgid "Unknown error"
+msgid "Unknown Device"
+msgstr "Nich begäng Fehler"
+
+#: core/operationstack.cpp:112
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just created: Undoing the operation to create the "
+"partition."
+msgstr ""
+"En jüst opstellt Partitschoon warrt wegdaan: De Opstellakschoon warrt "
+"torüchdreiht."
+
+#: core/operationstack.cpp:131
+msgctxt "@info/plain"
+msgid ""
+"Resizing a partition just created: Updating start and end in existing "
+"operation."
+msgstr ""
+"De Grött vun en jüst opstellt Partitschoon warrt ännert: Anfang un Enn "
+"binnen en vörhannen Akschoon warrt opfrischt."
+
+#: core/operationstack.cpp:152
+msgctxt "@info/plain"
+msgid "Copying a new partition: Creating a new partition instead."
+msgstr ""
+"En nieg Partitschoon warrt kopeert: Ansteed warrt en nieg Partitschoon "
+"opstellt."
+
+#: core/operationstack.cpp:170
+msgctxt "@info/plain"
+msgid "Changing label for a new partition: No new operation required."
+msgstr ""
+"De Beteker vun en nieg Partitschoon warrt ännert: Keen nieg Akschoon nödig."
+
+#: core/operationstack.cpp:184
+msgctxt "@info/plain"
+msgid "Changing file system for a new partition: No new operation required."
+msgstr ""
+"Dat Dateisysteem för en nieg Partitschoon warrt ännert. Keen nieg Akschoon "
+"nödig."
+
+#: core/operationstack.cpp:202
+#, fuzzy
+#| msgctxt "@info/plain"
+#| msgid "Changing file system for a new partition: No new operation required."
+msgctxt "@info/plain"
+msgid ""
+"Checking file systems is automatically done when creating them: No new "
+"operation required."
+msgstr ""
+"Dat Dateisysteem för en nieg Partitschoon warrt ännert. Keen nieg Akschoon "
+"nödig."
+
+#: core/operationstack.cpp:251
+msgctxt "@info/plain"
+msgid "Deleting a partition just copied: Removing the copy."
+msgstr "En jüst kopeert Partitschoon warrt wegdaan: De Kopie warrt wegmaakt."
+
+#: core/operationstack.cpp:258
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just copied over an existing partition: Removing the "
+"copy and deleting the existing partition."
+msgstr ""
+"En jüst över en vörhannen Partitschoon kopeert Partitschoon warrt wegdaan: "
+"De Kopie warrt wegmaakt un de vörhannen Partitschoon wegdaan."
+
+#: core/operationstack.cpp:272
+msgctxt "@info/plain"
+msgid ""
+"Copying a partition that is itself a copy: Copying the original source "
+"partition instead."
+msgstr ""
+"En Partitschoon, de al en Kopie is, warrt kopeert. Ansteed warrt de Orginaal-"
+"Bornpartitschoon kopeert."
+
+#: core/operationstack.cpp:303
+msgctxt "@info/plain"
+msgid "Deleting a partition just restored: Removing the restore operation."
+msgstr ""
+"En jüst wedderherstellt Partitschoon warrt wegdaan: De Wedderherstell-"
+"Akschoon warrt wegmaakt."
+
+#: core/operationstack.cpp:310
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just restored to an existing partition: Removing the "
+"restore operation and deleting the existing partition."
+msgstr ""
+"En jüst op en vörhannen Partitschoon wedderherstellt Partitschoon warrt "
+"wegdaan: De Wedderherstell-Akschoon warrt wegmaakt un de vörhannen "
+"Partitschoon wegdaan."
+
+#: core/operationstack.cpp:344
+msgctxt "@info/plain"
+msgid "Changing flags again for the same partition: Removing old operation."
+msgstr ""
+"Marken för de sülve Partitschoon warrt nochmaal ännert. De ole Akschoon "
+"warrt wegmaakt."
+
+#: core/operationstack.cpp:376
+msgctxt "@info/plain"
+msgid "Changing label again for the same partition: Removing old operation."
+msgstr ""
+"Beteker för de sülve Partitschoon warrt nochmaal ännert. De ole Akschoon "
+"warrt wegmaakt."
+
+#: core/operationstack.cpp:403
+#, fuzzy
+#| msgctxt "@info:status"
+#| msgid "Create a new and empty partition table on a device."
+msgctxt "@info/plain"
+msgid "Creating new partition table, discarding previous operation on device."
+msgstr "En nieg, leddig Partitschonentabell op en Reedschap opstellen"
+
+#: core/operationstack.cpp:454
+#, kde-format
+msgctxt "@info/plain"
+msgid "Add operation: %1"
+msgstr "Akschoon tofögen: %1"
+
+#: core/partition.cpp:161
+msgctxt "@item partition name"
+msgid "unallocated"
+msgstr "nich towiest"
+
+#: core/partition.cpp:164
+msgctxt "@item partition name"
+msgid "New Partition"
+msgstr "Nieg Partitschoon"
+
+#: core/partition.cpp:167
+msgctxt "@item partition name"
+msgid "Restored Partition"
+msgstr "Wedderherstellt Partitschoon"
+
+#: core/partition.cpp:170
+#, kde-format
+msgctxt "@item partition name"
+msgid "Copy of %1"
+msgstr "Kopie vun %1"
+
+#: core/partitionalignment.cpp:89
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> is not properly aligned (first sector: %2, "
+"modulo: %3)."
+msgstr ""
+"Partitschoon <filename>%1</filename> is nich propper towiest (eerst Sektor: "
+"%2, Modulo: %3)."
+
+#: core/partitionalignment.cpp:92
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> is not properly aligned (last sector: %2, "
+"modulo: %3)."
+msgstr ""
+"Partitschoon <filename>%1</filename> is nich propper towiest (lest Sektor: "
+"%2, Modulo: %3)."
+
+#: core/partitionrole.cpp:29
+msgctxt "@item partition role"
+msgid "unallocated"
+msgstr "nich towiest"
+
+#: core/partitionrole.cpp:32
+msgctxt "@item partition role"
+msgid "logical"
+msgstr "logisch"
+
+#: core/partitionrole.cpp:35
+msgctxt "@item partition role"
+msgid "extended"
+msgstr "verwiedert"
+
+#: core/partitionrole.cpp:38
+msgctxt "@item partition role"
+msgid "primary"
+msgstr "primeer"
+
+#: core/partitionrole.cpp:40
+msgctxt "@item partition role"
+msgid "none"
+msgstr "keen"
+
+#: core/partitiontable.cpp:158
+msgctxt "@item partition flag"
+msgid "boot"
+msgstr "Boot"
+
+#: core/partitiontable.cpp:159
+msgctxt "@item partition flag"
+msgid "root"
+msgstr "Wörtel"
+
+#: core/partitiontable.cpp:160
+msgctxt "@item partition flag"
+msgid "swap"
+msgstr "Utlager"
+
+#: core/partitiontable.cpp:161
+msgctxt "@item partition flag"
+msgid "hidden"
+msgstr "versteken"
+
+#: core/partitiontable.cpp:162
+msgctxt "@item partition flag"
+msgid "raid"
+msgstr "Raid"
+
+#: core/partitiontable.cpp:163
+msgctxt "@item partition flag"
+msgid "lvm"
+msgstr "Lvm"
+
+#: core/partitiontable.cpp:164
+msgctxt "@item partition flag"
+msgid "lba"
+msgstr "Lba"
+
+#: core/partitiontable.cpp:165
+msgctxt "@item partition flag"
+msgid "hpservice"
+msgstr "HPService"
+
+#: core/partitiontable.cpp:166
+msgctxt "@item partition flag"
+msgid "palo"
+msgstr "Palo"
+
+#: core/partitiontable.cpp:167
+msgctxt "@item partition flag"
+msgid "prep"
+msgstr "torechtm."
+
+#: core/partitiontable.cpp:168
+msgctxt "@item partition flag"
+msgid "msft-reserved"
+msgstr "Msft-reserveert"
+
+#: core/partitiontable.cpp:404
+msgctxt "@item/plain partition table name"
+msgid "unknown"
+msgstr "nich begäng"
+
+#: core/smartattribute.cpp:55
+msgctxt "@item:intable"
+msgid "failing"
+msgstr "fehlslaan"
+
+#: core/smartattribute.cpp:58
+msgctxt "@item:intable"
+msgid "has failed"
+msgstr "is fehlslaan"
+
+#: core/smartattribute.cpp:61
+msgctxt "@item:intable"
+msgid "warning"
+msgstr "Wohrschoen"
+
+#: core/smartattribute.cpp:64
+msgctxt "@item:intable"
+msgid "good"
+msgstr ""
+
+#: core/smartattribute.cpp:68 core/smartattribute.cpp:96
+msgctxt "@item:intable not applicable"
+msgid "N/A"
+msgstr "k.A."
+
+#: core/smartattribute.cpp:83
+#, kde-format
+msgctxt "@item:intable"
+msgid "%1 sector"
+msgid_plural "%1 sectors"
+msgstr[0] "%1 Sektor"
+msgstr[1] "%1 Sektoren"
+
+#: core/smartattribute.cpp:114
+msgctxt "SMART attr name"
+msgid "Read Error Rate"
+msgstr "Leesfehlertall"
+
+#: core/smartattribute.cpp:114
+msgctxt "SMART attr description"
+msgid "Rate of hardware read errors while reading data from the disk surface."
+msgstr ""
+
+#: core/smartattribute.cpp:115
+msgctxt "SMART attr name"
+msgid "Throughput Performance"
+msgstr ""
+
+#: core/smartattribute.cpp:115
+msgctxt "SMART attr description"
+msgid ""
+"Overall (general) throughput performance of a hard disk drive. If the value "
+"of this attribute is decreasing there is a high probability that there is a "
+"problem with the disk."
+msgstr ""
+
+#: core/smartattribute.cpp:116
+msgctxt "SMART attr name"
+msgid "Spin-Up Time"
+msgstr ""
+
+#: core/smartattribute.cpp:116
+msgctxt "SMART attr description"
+msgid "Average time of spindle spin up from zero RPM to fully operational."
+msgstr ""
+
+#: core/smartattribute.cpp:117
+msgctxt "SMART attr name"
+msgid "Start/Stop Count"
+msgstr ""
+
+#: core/smartattribute.cpp:117
+msgctxt "SMART attr description"
+msgid "A tally of spindle start/stop cycles."
+msgstr ""
+
+#: core/smartattribute.cpp:118
+msgctxt "SMART attr name"
+msgid "Reallocated Sectors Count"
+msgstr ""
+
+#: core/smartattribute.cpp:118
+msgctxt "SMART attr description"
+msgid ""
+"Count of reallocated sectors. When the hard drive finds a read/write/"
+"verification error, it marks this sector as &quot;reallocated&quot; and "
+"transfers data to a special reserved area (spare area)."
+msgstr ""
+
+#: core/smartattribute.cpp:119
+msgctxt "SMART attr name"
+msgid "Read Channel Margin"
+msgstr ""
+
+#: core/smartattribute.cpp:119
+msgctxt "SMART attr description"
+msgid ""
+"Margin of a channel while reading data. The function of this attribute is "
+"not specified."
+msgstr ""
+
+#: core/smartattribute.cpp:120
+msgctxt "SMART attr name"
+msgid "Seek Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:120
+msgctxt "SMART attr description"
+msgid ""
+"Rate of seek errors of the magnetic heads. If there is a partial failure in "
+"the mechanical positioning system, then seek errors will arise."
+msgstr ""
+
+#: core/smartattribute.cpp:121
+msgctxt "SMART attr name"
+msgid "Seek Time Performance"
+msgstr ""
+
+#: core/smartattribute.cpp:121
+msgctxt "SMART attr description"
+msgid ""
+"Average performance of seek operations of the magnetic heads. If this "
+"attribute is decreasing, it is a sign of problems in the mechanical "
+"subsystem."
+msgstr ""
+
+#: core/smartattribute.cpp:122
+msgctxt "SMART attr name"
+msgid "Power-On Hours"
+msgstr ""
+
+#: core/smartattribute.cpp:122
+msgctxt "SMART attr description"
+msgid "Count of hours in power-on state."
+msgstr ""
+
+#: core/smartattribute.cpp:123
+msgctxt "SMART attr name"
+msgid "Spin Retry Count"
+msgstr ""
+
+#: core/smartattribute.cpp:123
+msgctxt "SMART attr description"
+msgid ""
+"Count of retry of spin start attempts if the first attempt was unsuccessful. "
+"An increase of this attribute value is a sign of problems in the hard disk "
+"mechanical subsystem."
+msgstr ""
+
+#: core/smartattribute.cpp:124
+msgctxt "SMART attr name"
+msgid "Recalibration Retries"
+msgstr ""
+
+#: core/smartattribute.cpp:124
+msgctxt "SMART attr description"
+msgid ""
+"Count of recalibrations requested if the first attempt was unsuccessful. An "
+"increase of this attribute value is a sign of problems in the hard disk "
+"mechanical subsystem."
+msgstr ""
+
+#: core/smartattribute.cpp:125
+msgctxt "SMART attr name"
+msgid "Power Cycle Count"
+msgstr ""
+
+#: core/smartattribute.cpp:125
+msgctxt "SMART attr description"
+msgid "Count of full hard disk power on/off cycles."
+msgstr ""
+
+#: core/smartattribute.cpp:126 core/smartattribute.cpp:145
+msgctxt "SMART attr name"
+msgid "Soft Read Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:126
+msgctxt "SMART attr description"
+msgid "Uncorrected read errors reported to the operating system."
+msgstr ""
+
+#: core/smartattribute.cpp:127
+msgctxt "SMART attr name"
+msgid "SATA Downshift Error Count"
+msgstr ""
+
+#: core/smartattribute.cpp:127
+msgctxt "SMART attr description"
+msgid "Western Digital and Samsung attribute."
+msgstr ""
+
+#: core/smartattribute.cpp:128
+msgctxt "SMART attr name"
+msgid "End-to-End Error"
+msgstr ""
+
+#: core/smartattribute.cpp:128
+msgctxt "SMART attr description"
+msgid ""
+"Part of HP's SMART IV technology: After transferring through the cache RAM "
+"data buffer the parity data between the host and the hard drive did not "
+"match."
+msgstr ""
+
+#: core/smartattribute.cpp:129
+msgctxt "SMART attr name"
+msgid "Head Stability"
+msgstr ""
+
+#: core/smartattribute.cpp:129 core/smartattribute.cpp:130
+msgctxt "SMART attr description"
+msgid "Western Digital attribute."
+msgstr ""
+
+#: core/smartattribute.cpp:130
+msgctxt "SMART attr name"
+msgid "Induced Op-Vibration Detection"
+msgstr ""
+
+#: core/smartattribute.cpp:131
+msgctxt "SMART attr name"
+msgid "Reported Uncorrectable Errors"
+msgstr ""
+
+#: core/smartattribute.cpp:131
+msgctxt "SMART attr description"
+msgid "Count of errors that could not be recovered using hardware ECC."
+msgstr ""
+
+#: core/smartattribute.cpp:132
+#, fuzzy
+#| msgctxt "@info/plain"
+#| msgid "(Command timeout while running)"
+msgctxt "SMART attr name"
+msgid "Command Timeout"
+msgstr "(Befehl-Tiet bi't Lopen aflopen)"
+
+#: core/smartattribute.cpp:132
+msgctxt "SMART attr description"
+msgid "Count of aborted operations due to HDD timeout."
+msgstr ""
+
+#: core/smartattribute.cpp:133
+msgctxt "SMART attr name"
+msgid "High Fly Writes"
+msgstr ""
+
+#: core/smartattribute.cpp:133
+msgctxt "SMART attr description"
+msgid "Count of fly height errors detected."
+msgstr ""
+
+#: core/smartattribute.cpp:134
+msgctxt "SMART attr name"
+msgid "Temperature Difference From 100"
+msgstr ""
+
+#: core/smartattribute.cpp:134
+msgctxt "SMART attr description"
+msgid ""
+"Value is equal to (100 &ndash; temp. °C), allowing manufacturer to set a "
+"minimum threshold which corresponds to a maximum temperature."
+msgstr ""
+
+#: core/smartattribute.cpp:135
+msgctxt "SMART attr name"
+msgid "G-sense Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:135
+msgctxt "SMART attr description"
+msgid "Count of errors resulting from externally-induced shock and vibration."
+msgstr ""
+
+#: core/smartattribute.cpp:136
+msgctxt "SMART attr name"
+msgid "Power Off Retract Count"
+msgstr ""
+
+#: core/smartattribute.cpp:136
+msgctxt "SMART attr description"
+msgid "Count of power-off or emergency retract cycles"
+msgstr ""
+
+#: core/smartattribute.cpp:137
+msgctxt "SMART attr name"
+msgid "Load Cycle Count"
+msgstr ""
+
+#: core/smartattribute.cpp:137
+msgctxt "SMART attr description"
+msgid "Count of load/unload cycles into head landing zone position."
+msgstr ""
+
+#: core/smartattribute.cpp:138 core/smartattribute.cpp:166
+msgctxt "SMART attr name"
+msgid "Temperature"
+msgstr "Temperatuur"
+
+#: core/smartattribute.cpp:138
+msgctxt "SMART attr description"
+msgid "Current internal temperature."
+msgstr ""
+
+#: core/smartattribute.cpp:139
+msgctxt "SMART attr name"
+msgid "Hardware ECC Recovered"
+msgstr ""
+
+#: core/smartattribute.cpp:139
+msgctxt "SMART attr description"
+msgid "Count of errors that could be recovered using hardware ECC."
+msgstr ""
+
+#: core/smartattribute.cpp:140
+msgctxt "SMART attr name"
+msgid "Reallocation Event Count"
+msgstr ""
+
+#: core/smartattribute.cpp:140
+msgctxt "SMART attr description"
+msgid ""
+"Count of remap operations. The raw value of this attribute shows the total "
+"number of attempts to transfer data from reallocated sectors to a spare area."
+msgstr ""
+
+#: core/smartattribute.cpp:141
+msgctxt "SMART attr name"
+msgid "Current Pending Sector Count"
+msgstr ""
+
+#: core/smartattribute.cpp:141
+msgctxt "SMART attr description"
+msgid ""
+"Number of &quot;unstable&quot; sectors (waiting to be remapped, because of "
+"read errors)."
+msgstr ""
+
+#: core/smartattribute.cpp:142
+msgctxt "SMART attr name"
+msgid "Uncorrectable Sector Count"
+msgstr ""
+
+#: core/smartattribute.cpp:142
+msgctxt "SMART attr description"
+msgid "Count of uncorrectable errors when reading/writing a sector."
+msgstr ""
+
+#: core/smartattribute.cpp:143
+msgctxt "SMART attr name"
+msgid "UltraDMA CRC Error Count"
+msgstr ""
+
+#: core/smartattribute.cpp:143
+msgctxt "SMART attr description"
+msgid ""
+"Count of errors in data transfer via the interface cable as determined by "
+"ICRC."
+msgstr ""
+
+#: core/smartattribute.cpp:144
+msgctxt "SMART attr name"
+msgid "Multi-Zone Error Rate<br/>Write Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:144
+msgctxt "SMART attr description"
+msgid "The total number of errors when writing a sector."
+msgstr ""
+
+#: core/smartattribute.cpp:145
+#, fuzzy
+#| msgid "Number of Sectors"
+msgctxt "SMART attr description"
+msgid "Number of off-track errors."
+msgstr "Tall vun Sektoren"
+
+#: core/smartattribute.cpp:146
+msgctxt "SMART attr name"
+msgid "Data Address Mark Errors"
+msgstr ""
+
+#: core/smartattribute.cpp:146
+msgctxt "SMART attr description"
+msgid "Number of Data Address Mark errors (or vendor-specific)."
+msgstr ""
+
+#: core/smartattribute.cpp:147
+msgctxt "SMART attr name"
+msgid "Run Out Cancel"
+msgstr ""
+
+#: core/smartattribute.cpp:147
+#, fuzzy
+#| msgid "Number of Sectors"
+msgctxt "SMART attr description"
+msgid "Number of ECC errors"
+msgstr "Tall vun Sektoren"
+
+#: core/smartattribute.cpp:148
+msgctxt "SMART attr name"
+msgid "Soft ECC Correction"
+msgstr ""
+
+#: core/smartattribute.cpp:148
+msgctxt "SMART attr description"
+msgid "Number of errors corrected by software ECC"
+msgstr ""
+
+#: core/smartattribute.cpp:149
+msgctxt "SMART attr name"
+msgid "Thermal Asperity Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:149
+msgctxt "SMART attr description"
+msgid "Number of errors due to high temperature."
+msgstr ""
+
+#: core/smartattribute.cpp:150
+msgctxt "SMART attr name"
+msgid "Flying Height"
+msgstr ""
+
+#: core/smartattribute.cpp:150
+msgctxt "SMART attr description"
+msgid ""
+"Height of heads above the disk surface. A flying height that is too low "
+"increases the chances of a head crash while a flying height that is too high "
+"increases the chances of a read/write error."
+msgstr ""
+
+#: core/smartattribute.cpp:151
+msgctxt "SMART attr name"
+msgid "Spin High Current"
+msgstr ""
+
+#: core/smartattribute.cpp:151
+msgctxt "SMART attr description"
+msgid "Amount of surge current used to spin up the drive."
+msgstr ""
+
+#: core/smartattribute.cpp:152
+msgctxt "SMART attr name"
+msgid "Spin Buzz"
+msgstr ""
+
+#: core/smartattribute.cpp:152
+msgctxt "SMART attr description"
+msgid ""
+"Number of buzz routines needed to spin up the drive due to insufficient "
+"power."
+msgstr ""
+
+#: core/smartattribute.cpp:153
+msgctxt "SMART attr name"
+msgid "Offline Seek Performance"
+msgstr ""
+
+#: core/smartattribute.cpp:153
+msgctxt "SMART attr description"
+msgid "Drive's seek performance during its internal tests."
+msgstr ""
+
+#: core/smartattribute.cpp:154
+msgctxt "SMART attr name"
+msgid "Vibration During Write"
+msgstr ""
+
+#: core/smartattribute.cpp:154
+msgctxt "SMART attr description"
+msgid "Vibration During Write"
+msgstr ""
+
+#: core/smartattribute.cpp:155
+msgctxt "SMART attr name"
+msgid "Shock During Write"
+msgstr ""
+
+#: core/smartattribute.cpp:155
+msgctxt "SMART attr description"
+msgid "Shock During Write"
+msgstr ""
+
+#: core/smartattribute.cpp:156
+msgctxt "SMART attr name"
+msgid "Disk Shift"
+msgstr ""
+
+#: core/smartattribute.cpp:156
+msgctxt "SMART attr description"
+msgid ""
+"Distance the disk has shifted relative to the spindle (usually due to shock "
+"or temperature)."
+msgstr ""
+
+#: core/smartattribute.cpp:157
+msgctxt "SMART attr name"
+msgid "G-Sense Error Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:157
+msgctxt "SMART attr description"
+msgid ""
+"The number of errors resulting from externally-induced shock and vibration."
+msgstr ""
+
+#: core/smartattribute.cpp:158
+msgctxt "SMART attr name"
+msgid "Loaded Hours"
+msgstr ""
+
+#: core/smartattribute.cpp:158
+msgctxt "SMART attr description"
+msgid "Time spent operating under data load."
+msgstr ""
+
+#: core/smartattribute.cpp:159
+msgctxt "SMART attr name"
+msgid "Load/Unload Retry Count"
+msgstr ""
+
+#: core/smartattribute.cpp:159
+msgctxt "SMART attr description"
+msgid "Number of times head changes position."
+msgstr ""
+
+#: core/smartattribute.cpp:160
+#, fuzzy
+#| msgid "Partition"
+msgctxt "SMART attr name"
+msgid "Load Friction"
+msgstr "Partitschoon"
+
+#: core/smartattribute.cpp:160
+msgctxt "SMART attr description"
+msgid "Resistance caused by friction in mechanical parts while operating."
+msgstr ""
+
+#: core/smartattribute.cpp:161
+msgctxt "SMART attr name"
+msgid "Load/Unload Cycle Count"
+msgstr ""
+
+#: core/smartattribute.cpp:161
+msgctxt "SMART attr description"
+msgid "Total number of load cycles."
+msgstr ""
+
+#: core/smartattribute.cpp:162
+msgctxt "SMART attr name"
+msgid "Load-In Time"
+msgstr ""
+
+#: core/smartattribute.cpp:162
+msgctxt "SMART attr description"
+msgid ""
+"Total time of loading on the magnetic heads actuator (time not spent in "
+"parking area)."
+msgstr ""
+
+#: core/smartattribute.cpp:163
+msgctxt "SMART attr name"
+msgid "Torque Amplification Count"
+msgstr ""
+
+#: core/smartattribute.cpp:163
+msgctxt "SMART attr description"
+msgid "Number of attempts to compensate for platter speed variations."
+msgstr ""
+
+#: core/smartattribute.cpp:164
+msgctxt "SMART attr name"
+msgid "Power-Off Retract Cycle"
+msgstr ""
+
+#: core/smartattribute.cpp:164
+msgctxt "SMART attr description"
+msgid ""
+"The number of times the magnetic armature was retracted automatically as a "
+"result of cutting power."
+msgstr ""
+
+#: core/smartattribute.cpp:165
+msgctxt "SMART attr name"
+msgid "GMR Head Amplitude"
+msgstr ""
+
+#: core/smartattribute.cpp:165
+msgctxt "SMART attr description"
+msgid ""
+"Amplitude of &quot;thrashing&quot; (distance of repetitive forward/reverse "
+"head motion)"
+msgstr ""
+
+#: core/smartattribute.cpp:166
+msgctxt "SMART attr description"
+msgid "Drive Temperature"
+msgstr ""
+
+#: core/smartattribute.cpp:167
+msgctxt "SMART attr name"
+msgid "Endurance Remaining"
+msgstr ""
+
+#: core/smartattribute.cpp:167
+msgctxt "SMART attr description"
+msgid ""
+"Count of physical erase cycles completed on the drive as a percentage of the "
+"maximum physical erase cycles the drive supports"
+msgstr ""
+
+#: core/smartattribute.cpp:168
+msgctxt "SMART attr name"
+msgid "Power-On Seconds"
+msgstr ""
+
+#: core/smartattribute.cpp:168
+msgctxt "SMART attr description"
+msgid "Time elapsed in the power-on state"
+msgstr ""
+
+#: core/smartattribute.cpp:169
+msgctxt "SMART attr name"
+msgid "Unrecoverable ECC Count"
+msgstr ""
+
+#: core/smartattribute.cpp:169
+msgctxt "SMART attr description"
+msgid "Count of unrecoverable ECC errors"
+msgstr ""
+
+#: core/smartattribute.cpp:170
+msgctxt "SMART attr name"
+msgid "Good Block Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:170
+msgctxt "SMART attr description"
+msgid ""
+"Count of available reserved blocks as percentage of the total number of "
+"reserved blocks"
+msgstr ""
+
+#: core/smartattribute.cpp:171
+msgctxt "SMART attr name"
+msgid "Head Flying Hours<br/>or Transfer Error Rate (Fujitsu)"
+msgstr ""
+
+#: core/smartattribute.cpp:171
+msgctxt "SMART attr description"
+msgid ""
+"Time while head is positioning<br/>or counts the number of times the link is "
+"reset during a data transfer."
+msgstr ""
+
+#: core/smartattribute.cpp:172
+msgctxt "SMART attr name"
+msgid "Total LBAs Written"
+msgstr ""
+
+#: core/smartattribute.cpp:172
+msgctxt "SMART attr description"
+msgid "Total LBAs Written"
+msgstr ""
+
+#: core/smartattribute.cpp:173
+msgctxt "SMART attr name"
+msgid "Total LBAs Read"
+msgstr ""
+
+#: core/smartattribute.cpp:173
+msgctxt "SMART attr description"
+msgid "Total LBAs Read"
+msgstr ""
+
+#: core/smartattribute.cpp:174
+msgctxt "SMART attr name"
+msgid "Read Error Retry Rate"
+msgstr ""
+
+#: core/smartattribute.cpp:174
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Error while reading mount points"
+msgctxt "SMART attr description"
+msgid "Number of errors while reading from a disk"
+msgstr "Inhangsteden laat sik nich lesen"
+
+#: core/smartattribute.cpp:175
+msgctxt "SMART attr name"
+msgid "Free Fall Protection"
+msgstr ""
+
+#: core/smartattribute.cpp:175
+msgctxt "SMART attr description"
+msgid "Number of &quot;Free Fall Events&quot; detected"
+msgstr ""
+
+#: core/smartstatus.cpp:209
+#, kde-format
+msgctxt "@item:intable degrees in Celsius and Fahrenheit"
+msgid "%1° C / %2° F"
+msgstr "%1° C / %2° F"
+
+#: core/smartstatus.cpp:217
+msgctxt "@item"
+msgid "Aborted"
+msgstr "Afbraken"
+
+#: core/smartstatus.cpp:220
+msgctxt "@item"
+msgid "Interrupted"
+msgstr "Ünnerbraken"
+
+#: core/smartstatus.cpp:223
+msgctxt "@item"
+msgid "Fatal error"
+msgstr "Swoor Fehler"
+
+#: core/smartstatus.cpp:226
+msgctxt "@item"
+msgid "Unknown error"
+msgstr "Nich begäng Fehler"
+
+#: core/smartstatus.cpp:229
+#, fuzzy
+#| msgid "Read Label"
+msgctxt "@item"
+msgid "Electrical error"
+msgstr "Beteker utlesen"
+
+#: core/smartstatus.cpp:232
+msgctxt "@item"
+msgid "Servo error"
+msgstr ""
+
+#: core/smartstatus.cpp:235
+msgctxt "@item"
+msgid "Read error"
+msgstr "Fehler bi't Lesen"
+
+#: core/smartstatus.cpp:238
+msgctxt "@item"
+msgid "Handling error"
+msgstr ""
+
+#: core/smartstatus.cpp:241
+msgctxt "@item"
+msgid "Self test in progress"
+msgstr ""
+
+#: core/smartstatus.cpp:245
+msgctxt "@item"
+msgid "Success"
+msgstr "Spood"
+
+#: core/smartstatus.cpp:255
+msgctxt "@item"
+msgid "Healthy"
+msgstr ""
+
+#: core/smartstatus.cpp:258
+msgctxt "@item"
+msgid "Has been used outside of its design parameters in the past."
+msgstr ""
+
+#: core/smartstatus.cpp:261
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Total sectors:"
+msgctxt "@item"
+msgid "Has some bad sectors."
+msgstr "Sektoren tosamen:"
+
+#: core/smartstatus.cpp:264
+msgctxt "@item"
+msgid "Is being used outside of its design parameters right now."
+msgstr ""
+
+#: core/smartstatus.cpp:267
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Total sectors:"
+msgctxt "@item"
+msgid "Has many bad sectors."
+msgstr "Sektoren tosamen:"
+
+#: core/smartstatus.cpp:271
+msgctxt "@item"
+msgid "Disk failure is imminent. Backup all data!"
+msgstr ""
+
+#: fs/btrfs.cpp:140
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#| "Could not create temp dir."
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"Could not create temp dir."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Temporeerorner lett sik nich opstellen."
+
+#: fs/btrfs.cpp:155
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#| "xfs_growfs failed."
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"btrfs file system resize failed."
+msgstr ""
+"Ännern vun de Grött vun't XFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. \"xfs_growfs\" hett en Fehler hatt."
+
+#: fs/btrfs.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+#| "Unmount failed."
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Wohrschoen: Bi't Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon "
+"<filename>%1</filename>: Afhangen is fehlslaan."
+
+#: fs/btrfs.cpp:163
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#| "Initial mount failed."
+msgctxt "@info/plain"
+msgid ""
+"Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Eerst Inhangen fehlslaan."
+
+#: fs/fat16.cpp:137
+#, kde-format
+msgctxt "@info/plain"
+msgid "Setting label for partition <filename>%1</filename> to %2"
+msgstr ""
+"Beteker för Partitschoon <filename>%1</filename> warrt op \"%2\" fastsett."
+
+#: fs/filesystem.cpp:272
+msgctxt "@item/plain filesystem name"
+msgid "unknown"
+msgstr "nich begäng"
+
+#: fs/filesystem.cpp:273
+msgctxt "@item/plain filesystem name"
+msgid "extended"
+msgstr "verwiedert"
+
+#: fs/filesystem.cpp:275
+msgctxt "@item/plain filesystem name"
+msgid "ext2"
+msgstr "Ext2"
+
+#: fs/filesystem.cpp:276
+msgctxt "@item/plain filesystem name"
+msgid "ext3"
+msgstr "Ext3"
+
+#: fs/filesystem.cpp:277
+msgctxt "@item/plain filesystem name"
+msgid "ext4"
+msgstr "Ext4"
+
+#: fs/filesystem.cpp:278
+msgctxt "@item/plain filesystem name"
+msgid "linuxswap"
+msgstr "Linux-Swap"
+
+#: fs/filesystem.cpp:279
+msgctxt "@item/plain filesystem name"
+msgid "fat16"
+msgstr "FAT16"
+
+#: fs/filesystem.cpp:280
+msgctxt "@item/plain filesystem name"
+msgid "fat32"
+msgstr "FAT32"
+
+#: fs/filesystem.cpp:281
+msgctxt "@item/plain filesystem name"
+msgid "ntfs"
+msgstr "NTFS"
+
+#: fs/filesystem.cpp:282
+msgctxt "@item/plain filesystem name"
+msgid "reiser"
+msgstr "Reiser"
+
+#: fs/filesystem.cpp:283
+msgctxt "@item/plain filesystem name"
+msgid "reiser4"
+msgstr "Reiser4"
+
+#: fs/filesystem.cpp:284
+msgctxt "@item/plain filesystem name"
+msgid "xfs"
+msgstr "XFS"
+
+#: fs/filesystem.cpp:285
+msgctxt "@item/plain filesystem name"
+msgid "jfs"
+msgstr "JFS"
+
+#: fs/filesystem.cpp:286
+msgctxt "@item/plain filesystem name"
+msgid "hfs"
+msgstr "HFS"
+
+#: fs/filesystem.cpp:287
+msgctxt "@item/plain filesystem name"
+msgid "hfsplus"
+msgstr "HFSPlus"
+
+#: fs/filesystem.cpp:288
+msgctxt "@item/plain filesystem name"
+msgid "ufs"
+msgstr "UFS"
+
+#: fs/filesystem.cpp:289
+msgctxt "@item/plain filesystem name"
+msgid "unformatted"
+msgstr "nich formateert"
+
+#: fs/filesystem.cpp:290
+msgctxt "@item/plain filesystem name"
+msgid "btrfs"
+msgstr "BTRFS"
+
+#: fs/filesystem.cpp:291
+msgctxt "@item/plain filesystem name"
+msgid "hpfs"
+msgstr "HPFS"
+
+#: fs/filesystem.cpp:292
+msgctxt "@item/plain filesystem name"
+msgid "luks"
+msgstr "LUKS"
+
+#: fs/filesystem.cpp:293
+msgctxt "@item/plain filesystem name"
+msgid "ocfs2"
+msgstr "OCFS2"
+
+#: fs/filesystem.cpp:294
+msgctxt "@item/plain filesystem name"
+msgid "zfs"
+msgstr "ZFS"
+
+#: fs/filesystem.cpp:295
+msgctxt "@item/plain filesystem name"
+msgid "exfat"
+msgstr ""
+
+#: fs/filesystem.cpp:296
+msgctxt "@item/plain filesystem name"
+msgid "nilfs2"
+msgstr ""
+
+#: fs/filesystem.cpp:297
+msgctxt "@item/plain filesystem name"
+msgid "lvm2 pv"
+msgstr ""
+
+#: fs/filesystem.cpp:341
+msgctxt "@title:menu"
+msgid "Mount"
+msgstr "Inhangen"
+
+#: fs/filesystem.cpp:347
+msgctxt "@title:menu"
+msgid "Unmount"
+msgstr "Afhangen"
+
+#: fs/jfs.cpp:162
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Temporeerorner lett sik nich opstellen."
+
+#: fs/jfs.cpp:177
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Remount failed."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Wedderinhangen fehlslaan."
+
+#: fs/jfs.cpp:182
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Wohrschoen: Bi't Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon "
+"<filename>%1</filename>: Afhangen is fehlslaan."
+
+#: fs/jfs.cpp:185
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Eerst Inhangen fehlslaan."
+
+#: fs/linuxswap.cpp:127
+msgctxt "@title:menu"
+msgid "Activate swap"
+msgstr "Utlagerpartitschoon anmaken"
+
+#: fs/linuxswap.cpp:132
+msgctxt "@title:menu"
+msgid "Deactivate swap"
+msgstr "Utlagerpartitschoon utmaken"
+
+#: fs/luks.cpp:91
+msgctxt "@title:menu"
+msgid "Decrypt"
+msgstr ""
+
+#: fs/luks.cpp:96
+#, fuzzy
+#| msgctxt "@title:menu"
+#| msgid "Deactivate swap"
+msgctxt "@title:menu"
+msgid "Deactivate"
+msgstr "Utlagerpartitschoon utmaken"
+
+#: fs/nilfs2.cpp:144
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#| "Could not create temp dir."
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"Could not create temp dir."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Temporeerorner lett sik nich opstellen."
+
+#: fs/nilfs2.cpp:159
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#| "xfs_growfs failed."
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"NILFS2 file system resize failed."
+msgstr ""
+"Ännern vun de Grött vun't XFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. \"xfs_growfs\" hett en Fehler hatt."
+
+#: fs/nilfs2.cpp:164
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+#| "Unmount failed."
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing NILFS2 file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Wohrschoen: Bi't Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon "
+"<filename>%1</filename>: Afhangen is fehlslaan."
+
+#: fs/nilfs2.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#| "Initial mount failed."
+msgctxt "@info/plain"
+msgid ""
+"Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Ännern vun de Grött vun't JFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Eerst Inhangen fehlslaan."
+
+#: fs/ntfs.cpp:198
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Updating boot sector for NTFS file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Bootsektor för NTFS-Dateisysteem op Partitschoon <filename>%1</filename> "
+"warrt opfrischt."
+
+#: fs/ntfs.cpp:211
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> for writing when trying to "
+"update the NTFS boot sector."
+msgstr ""
+"Partitschoon <filename>%1</filename> lett sik bi't Opfrischen vun den NTFS-"
+"Bootsektor nich för't Schrieven opmaken."
+
+#: fs/ntfs.cpp:217
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not seek to position 0x1c on partition <filename>%1</filename> when "
+"trying to update the NTFS boot sector."
+msgstr ""
+"Steed 0x1c op Partitschoon <filename>%1</filename> lett sik bi't Opfrischen "
+"vun den NTFS-Bootsektor nich anstüern."
+
+#: fs/ntfs.cpp:223
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not write new start sector to partition <filename>%1</filename> when "
+"trying to update the NTFS boot sector."
+msgstr ""
+"Nieg Startsektor lett sik op Partitschoon <filename>%1</filename> bi't "
+"Opfrischen vun den NTFS-Bootsektor nich schrieven."
+
+#: fs/ntfs.cpp:227
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Updated NTFS boot sector for partition <filename>%1</filename> successfully."
+msgstr ""
+"NTFS-Bootsektor op Partitschoon <filename>%1</filename> mit Spood opfrischt."
+
+#: fs/xfs.cpp:170
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Ännern vun de Grött vun't XFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Temporeerorner lett sik nich opstellen."
+
+#: fs/xfs.cpp:185
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"xfs_growfs failed."
+msgstr ""
+"Ännern vun de Grött vun't XFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. \"xfs_growfs\" hett en Fehler hatt."
+
+#: fs/xfs.cpp:190
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Wohrschoen: Bi't Ännern vun de Grött vun't XFS-Dateisysteem op Partitschoon "
+"<filename>%1</filename>: Afhangen is fehlslaan."
+
+#: fs/xfs.cpp:193
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Ännern vun de Grött vun't XFS-Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan. Eerst Inhangen is fehlslaan."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:37
+msgid "Save"
+msgstr "Sekern"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:44
+msgid "Open in External Browser"
+msgstr "Mit extern Kieker opmaken"
+
+#: gui/applyprogressdialog.cpp:119
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Bi to inrichten..."
+
+#: gui/applyprogressdialog.cpp:177
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Bi to töven, dat de Akschoon afslaten warrt..."
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Wullt Du redig afbreken?"
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Lopen Akschonen afbreken"
+
+#: gui/applyprogressdialog.cpp:188
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Jo, Akschonen afbreken"
+
+#: gui/applyprogressdialog.cpp:205
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "All Akschonen mit Spood afslaten."
+
+#: gui/applyprogressdialog.cpp:210
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Akschonen afbraken."
+
+#: gui/applyprogressdialog.cpp:215
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Bi't Utföhren vun de Akschonen geev dat Fehlers. Afbraken."
+
+#: gui/applyprogressdialog.cpp:326
+#, kde-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:362
+#, kde-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Heel Tiet: %1"
+
+#: gui/applyprogressdialog.cpp:412 gui/mainwindow.cpp:920
+#: gui/smartdialog.cpp:239
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Temporeerdatei <filename>%1</filename> lett sik för't Schrieven nich "
+"opstellen."
+
+#: gui/applyprogressdialog.cpp:412
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Bericht lett sik nich sekern."
+
+#: gui/applyprogressdialog.cpp:438
+msgctxt "@info"
+msgid ""
+"The configured external browser could not be run. Please check your settings."
+msgstr ""
+"De instellte externe Kieker lett sik nich opropen. Prööv bitte Dien "
+"Instellen."
+
+#: gui/applyprogressdialog.cpp:438 gui/applyprogressdialog.cpp:441
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Kieker lett sik nich starten"
+
+#: gui/applyprogressdialog.cpp:441
+#, kde-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr ""
+"Temporeerdatei <filename>%1</filename> lett sik för't Schrieven nich "
+"opstellen."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:33
+msgid "Operations and Jobs"
+msgstr "Akschonen un Opgaven"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:38
+msgid "Time Elapsed"
+msgstr "Aflopen Tiet"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:64
+msgid "Total Time: 00:00:00"
+msgstr "Heel Tiet: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:81
+#, no-c-format
+msgid "Operation: %p%"
+msgstr "Akschoon: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:91
+msgid "Status"
+msgstr "Status"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:107
+#, no-c-format
+msgid "Total: %p%"
+msgstr "Tosamen: %p%"
+
+#: gui/createpartitiontabledialog.cpp:37
+#, kde-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Nieg Partitschonentabell op <filename>%1</filename> opstellen"
+
+#: gui/createpartitiontabledialog.cpp:38
+msgctxt "@action:button"
+msgid "&Create New Partition Table"
+msgstr "Nieg Partitschonentabell &opstellen"
+
+#: gui/createpartitiontabledialog.cpp:60
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+
+#: gui/createpartitiontabledialog.cpp:62
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "Create New Partition Table"
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "En nieg Partitschonentabell opstellen"
+
+#: gui/createpartitiontabledialog.cpp:63
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "\"MS-DOS\"-Typ opstellen"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:20
+msgid "Choose the type of partition table you want to create:"
+msgstr ""
+"Söök bitte den Typ vun de niege Partitschoontabell ut, de Du opstellen wullt:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:29
+msgid "GPT"
+msgstr "GPT"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:39
+msgid "MS-Dos"
+msgstr "MS-DOS"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:66
+msgid "(icon)"
+msgstr "(Lüttbild)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:79
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr "<b>Wohrschoen:</b> Dit deit all Daten duerhaftig vun de Reedschap weg!"
+
+#: gui/decryptluksdialog.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Delete the partition <filename>%1</filename>"
+msgctxt "@title:window"
+msgid "Decrypt LUKS partition on <filename>%1</filename>"
+msgstr "De Partitschoon <filename>%1</filename> wegdoon"
+
+#: gui/decryptluksdialog.cpp:38
+msgctxt "@action:button"
+msgid "&Decrypt"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_Name)
+#: gui/decryptluksdialogwidgetbase.ui:22
+#, fuzzy
+#| msgid "Date:"
+msgid "&Name:"
+msgstr "Datum:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_Pass)
+#: gui/decryptluksdialogwidgetbase.ui:35
+msgid "&Passphrase:"
+msgstr ""
+
+#: gui/devicepropsdialog.cpp:52
+#, kde-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Reedschap-Egenschappen: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:79 gui/infopane.cpp:162
+#, kde-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (bloots-leesbor)"
+
+#: gui/devicepropsdialog.cpp:107 gui/infopane.cpp:175
+#, kde-format
+msgctxt "@label"
+msgid "1 Sector"
+msgid_plural "%1 Sectors"
+msgstr[0] "1 Sektor"
+msgstr[1] "%1 Sektoren"
+
+#: gui/devicepropsdialog.cpp:118 gui/smartdialog.cpp:88
+#: gui/smartdialog.cpp:155
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "Goot"
+
+#: gui/devicepropsdialog.cpp:123 gui/smartdialog.cpp:93
+#: gui/smartdialog.cpp:157
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "Leeg"
+
+#: gui/devicepropsdialog.cpp:129 gui/smartdialog.cpp:138
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(nich begäng)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:58
+msgid "Partition table:"
+msgstr "Partitschonentabell:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:77
+#, fuzzy
+#| msgid "Cylinder Size:"
+msgid "Cylinder alignment"
+msgstr "Zylinnergrött:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:84
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgid "Sector based alignment"
+msgstr "Partitschoon-Typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:113
+msgid "Capacity:"
+msgstr "Grött:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:130
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Total sectors:"
+msgid "Total sectors:"
+msgstr "Sektoren tosamen:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCHS)
+#: gui/devicepropswidgetbase.ui:160
+msgid "Cylinders/Heads/Sectors:"
+msgstr "Zylinners/Köpp/Sektoren:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:183
+#, fuzzy
+#| msgid "Logical Sector Size:"
+msgid "Logical sector size:"
+msgstr "Logisch Sektorgrött:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:200
+#, fuzzy
+#| msgid "Logical Sector Size:"
+msgid "Physical sector size:"
+msgstr "Logisch Sektorgrött:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCylinderSize)
+#: gui/devicepropswidgetbase.ui:217
+msgid "Cylinder size:"
+msgstr "Zylinnergrött:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:241
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Primaries/Max:"
+msgid "Primaries/Max:"
+msgstr "Hööft/Tohööchst:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:265 gui/smartdialog.cpp:155
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:23
+msgid "SMART status:"
+msgstr "SMART-Status:"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:303 gui/editmountpointdialogwidgetbase.ui:142
+msgid "More..."
+msgstr "Mehr..."
+
+#: gui/editmountoptionsdialog.cpp:33
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Anner Inhangoptschonen bewerken"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:14
+msgid "Edit Mount Options"
+msgstr "Inhangoptschonen bewerken"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:20
+msgid "Edit the mount options for this file system:"
+msgstr "Inhangoptschonen för dit Dateisysteem bewerken:"
+
+#: gui/editmountpointdialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Inhangsteed för <filename>%1</filename> bewerken"
+
+#: gui/editmountpointdialog.cpp:51
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <strong>can not be "
+"undone</strong>.</warning></para>"
+msgstr ""
+"<para>Wullt Du Dien Ännern redig na de Systeemtabellendatei <filename>/etc/"
+"fstab</filename> sekern?</para><para><warning>Dit warrt Dien al vörhannen "
+"Datei op de Plaat överschrieven. Dit lett sik <strong>nich torüchdreihen</"
+"strong>!</warning></para>"
+
+#: gui/editmountpointdialog.cpp:53
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Ännern redig sekern?"
+
+#: gui/editmountpointdialog.cpp:54
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Ännern sekern"
+
+#: gui/editmountpointdialogwidget.cpp:181
+#, kde-format
+msgctxt "@info"
+msgid "Could not open mount point file <filename>%1</filename>."
+msgstr ""
+"Inhangsteden-Sekerheitkopie <filename>%1</filename> lett sik nich opmaken."
+
+#: gui/editmountpointdialogwidget.cpp:182
+msgctxt "@title:window"
+msgid "Error while reading mount points"
+msgstr "Inhangsteden laat sik nich lesen"
+
+#: gui/editmountpointdialogwidget.cpp:301
+#, kde-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>%1</filename>."
+msgstr ""
+"Inhangsteden-Sekerheitkopie <filename>%1</filename> lett sik nich sekern."
+
+#: gui/editmountpointdialogwidget.cpp:302
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Error while saving mount points"
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Inhangsteden laat sik nich sekern"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:17
+msgid "Path:"
+msgstr "Padd:"
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:46
+msgid "Select..."
+msgstr "Utsöken..."
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:53
+msgid "Type:"
+msgstr "Typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:63
+msgid "Options:"
+msgstr "Optschonen:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:73
+msgid "Read-only"
+msgstr "Bloots leesbor"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:80
+msgid "Users can mount and unmount"
+msgstr "Brukers köönt in- un afhangen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:87
+msgid "No automatic mount"
+msgstr "Nich automaatsch inhangen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:94
+msgid "No update of file access times"
+msgstr "Dateitogrieptieden nich opfrischen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:101
+msgid "Synchronous access"
+msgstr "Synkroontogriep"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:108
+msgid "No update of directory access times"
+msgstr "Orner-Togrieptieden nich opfrischen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:115
+msgid "No binary execution"
+msgstr "Keen bineer Utföhren"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:122
+msgid "Update access times relative to modification"
+msgstr "Togrieptieden relatiev to Ännern opfrischen"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:149
+msgid "Dump Frequency:"
+msgstr "Utgaavperiood:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:178
+msgid "Pass Number:"
+msgstr "Tall vun Dörgäng:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:285
+msgid "Device Node"
+msgstr "Reedschapknütt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/partitionmanagerwidgetbase.ui:90
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:302
+#: gui/partitionmanagerwidgetbase.ui:85
+msgid "Label"
+msgstr "Beteker"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:309
+msgid "Identify by:"
+msgstr "Wiesen na:"
+
+#: gui/filesystemsupportdialog.cpp:39
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Dateisysteem-Ünnerstütten"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:18
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"Disse Tabell wiest de Dateisystemen, för de dat Ünnerstütten gifft, un de "
+"Akschonen, de sik dor mit maken laat.\n"
+"Bi en Reeg Dateisystemen muttst Du extern Warktüüch installeren, wenn Du dor "
+"Ünnerstütten för bruukst. Man ok wenn all Warktüüch installeert sünd, laat "
+"sik nich mit all Dateisystemen all Akschonen utföhren. Kiek Di bitte de "
+"Dokmentatschoon an, wenn Du mehr weten wullt. "
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:65
+msgid "File System"
+msgstr "Dateisysteem"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+msgid "Create"
+msgstr "Opstellen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+msgid "Grow"
+msgstr "Utdehnen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+msgid "Shrink"
+msgstr "Schrimpen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+msgid "Move"
+msgstr "Verschuven"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+msgid "Copy"
+msgstr "Koperen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+msgid "Check"
+msgstr "Pröven"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+msgid "Read Label"
+msgstr "Beteker utlesen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+msgid "Write Label"
+msgstr "Beteker schrieven"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+msgid "Read Usage"
+msgstr "Bruuk utlesen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+msgid "Backup"
+msgstr "Sekerheitkopie"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+msgid "Restore"
+msgstr "Wedderherstellen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+msgid "Support Tools"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (KPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:135
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Rescan Support"
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Ünnerstütten nieg dö&rkieken"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:53 gui/mainwindowbase.ui:49
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Informatschonen"
+
+#: gui/infopane.cpp:113
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Partitschoon-Informatschonen"
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:133
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Dateisysteem:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:134
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Grött:"
+
+#: gui/infopane.cpp:122
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr ""
+
+#: gui/infopane.cpp:123
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr ""
+
+#: gui/infopane.cpp:124
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr ""
+
+#: gui/infopane.cpp:125
+#, fuzzy
+#| msgctxt "@label device"
+#| msgid "Sector size:"
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Sektorgrött:"
+
+#: gui/infopane.cpp:126
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr ""
+
+#: gui/infopane.cpp:127 gui/infopane.cpp:137
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Eerst Sektor:"
+
+#: gui/infopane.cpp:128 gui/infopane.cpp:138
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Lest Sektor:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:139
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Tall vun Sektoren:"
+
+#: gui/infopane.cpp:135
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Verföögbor:"
+
+#: gui/infopane.cpp:136
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Bruukt:"
+
+#: gui/infopane.cpp:150
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Reedschap-Informatschonen"
+
+#: gui/infopane.cpp:154
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Padd:"
+
+#: gui/infopane.cpp:167
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Typ:"
+
+#: gui/infopane.cpp:168
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Grött:"
+
+#: gui/infopane.cpp:169
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Sektoren tosamen:"
+
+#: gui/infopane.cpp:170
+msgctxt "@label device"
+msgid "Heads:"
+msgstr "Leesköpp:"
+
+#: gui/infopane.cpp:171
+msgctxt "@label device"
+msgid "Cylinders:"
+msgstr "Zylinners:"
+
+#: gui/infopane.cpp:172
+msgctxt "@label device"
+msgid "Sectors:"
+msgstr "Sektoren:"
+
+#: gui/infopane.cpp:173
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Logisch Sektorgrött:"
+
+#: gui/infopane.cpp:174
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Physikaalsch Sektorgrött:"
+
+#: gui/infopane.cpp:175
+msgctxt "@label device"
+msgid "Cylinder size:"
+msgstr "Zylinnergrött:"
+
+#: gui/infopane.cpp:176
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Hööft/Tohööchst:"
+
+#: gui/insertdialog.cpp:43
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Partitschoon infögen"
+
+#: gui/mainwindow.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Wullt Du dat Programm redig utmaken?</para><para>Dor steiht noch en "
+"Akschoon ut.</para>"
+msgstr[1] ""
+"<para>Wullt Du dat Programm redig utmaken?</para><para>Dor steiht noch %1 "
+"Akschonen ut.</para>"
+
+#: gui/mainwindow.cpp:144
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Utstahn Akschonen wegsmieten un utmaken?"
+
+#: gui/mainwindow.cpp:145
+#, kde-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "<application>%1</application> utmaken"
+
+#: gui/mainwindow.cpp:188
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Torüchnehmen"
+
+#: gui/mainwindow.cpp:189
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Verleden Akschoon torüchnehmen"
+
+#: gui/mainwindow.cpp:190
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Lest Akschoon vun de List wegmaken"
+
+#: gui/mainwindow.cpp:196
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Leddig maken"
+
+#: gui/mainwindow.cpp:197
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "All Akschonen wegmaken"
+
+#: gui/mainwindow.cpp:198
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "De List mit utstahn Akschonen leddig maken"
+
+#: gui/mainwindow.cpp:203
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Utföhren"
+
+#: gui/mainwindow.cpp:204
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "All Akschonen utföhren"
+
+#: gui/mainwindow.cpp:205
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "De utstahn Akschonen op de List utföhren"
+
+#: gui/mainwindow.cpp:210
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Reedschappen opfrischen"
+
+#: gui/mainwindow.cpp:211
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "All Reedschappen opfrischen"
+
+#: gui/mainwindow.cpp:212
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "De Reedschappenlist nieg laden"
+
+#: gui/mainwindow.cpp:218
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Nieg Partitschonentabell"
+
+#: gui/mainwindow.cpp:219
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "En Partitschonentabell nieg opstellen"
+
+#: gui/mainwindow.cpp:220
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "En nieg, leddig Partitschonentabell op en Reedschap opstellen"
+
+#: gui/mainwindow.cpp:226
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Partitschonentabell exporteren"
+
+#: gui/mainwindow.cpp:227
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "En Partitschonentabell exporteren"
+
+#: gui/mainwindow.cpp:228
+#, fuzzy
+#| msgctxt "@info:status"
+#| msgid "Create a new and empty partition table on a device."
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "En nieg, leddig Partitschonentabell op en Reedschap opstellen"
+
+#: gui/mainwindow.cpp:233
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Partitschonentabell importeren"
+
+#: gui/mainwindow.cpp:234
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "En Partitschonentabell importeren"
+
+#: gui/mainwindow.cpp:235
+#, fuzzy
+#| msgctxt "@info:status"
+#| msgid "Restore a partition from an image file."
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "En Partitschoon ut en Afbild wedderherstellen"
+
+#: gui/mainwindow.cpp:240
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "SMART-Status"
+
+#: gui/mainwindow.cpp:241
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "SMART-Status wiesen"
+
+#: gui/mainwindow.cpp:242
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr ""
+
+#: gui/mainwindow.cpp:246 gui/mainwindow.cpp:321
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Egenschappen"
+
+#: gui/mainwindow.cpp:247
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "Show properties dialog"
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Egenschappendialoog wiesen"
+
+#: gui/mainwindow.cpp:248
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Reedschap-Egenschappen bekieken un ännern"
+
+#: gui/mainwindow.cpp:254
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Nieg"
+
+#: gui/mainwindow.cpp:255
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Nieg Partitschoon"
+
+#: gui/mainwindow.cpp:256
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "En nieg Partitschoon opstellen"
+
+#: gui/mainwindow.cpp:262
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Grött ännern/Verschuven"
+
+#: gui/mainwindow.cpp:263
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Partitschoongrött ännern oder Partitschoon verschuven"
+
+#: gui/mainwindow.cpp:264
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "En vörhannen Partitschoon utdehnen, schrimpen oder verschuven"
+
+#: gui/mainwindow.cpp:270
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Wegdoon"
+
+#: gui/mainwindow.cpp:271
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Partitschoon wegdoon"
+
+#: gui/mainwindow.cpp:272
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "En Partitschoon wegdoon"
+
+#: gui/mainwindow.cpp:278
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Duerhaftig wegdoon"
+
+#: gui/mainwindow.cpp:279
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Partitschoon wegdoon"
+
+#: gui/mainwindow.cpp:280
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr ""
+"En Partitschoon so wegdoon, dat sik ehr Daten nich wedderherstellen laat."
+
+#: gui/mainwindow.cpp:286
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Koperen"
+
+#: gui/mainwindow.cpp:287
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Partitschoon koperen"
+
+#: gui/mainwindow.cpp:288
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "En vörhannen Partitschoon koperen"
+
+#: gui/mainwindow.cpp:294
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Infögen"
+
+#: gui/mainwindow.cpp:295
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Partitschoon infögen"
+
+#: gui/mainwindow.cpp:296
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "En kopeert Partitschoon infögen"
+
+#: gui/mainwindow.cpp:302
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Inhangsteed bewerken"
+
+#: gui/mainwindow.cpp:303
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Inhangsteed  bewerken"
+
+#: gui/mainwindow.cpp:304
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "En Partitschoon ehr Inhangsteed un Optschonen bewerken"
+
+#: gui/mainwindow.cpp:308
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Inhangen"
+
+#: gui/mainwindow.cpp:309
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Partitschoon in- oder afhangen"
+
+#: gui/mainwindow.cpp:310
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "En Partitschoon in- oder afhangen"
+
+#: gui/mainwindow.cpp:314
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Pröven"
+
+#: gui/mainwindow.cpp:315
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Partitschoon pröven"
+
+#: gui/mainwindow.cpp:316
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "En Dateisysteem op en Partitschoon op Fehlers dörkieken"
+
+#: gui/mainwindow.cpp:322
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "Show properties dialog"
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Egenschappendialoog wiesen"
+
+#: gui/mainwindow.cpp:323
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr ""
+"Egenschappen vun Partitschonen bekieken un topassen (Beteker, Marken, usw.)"
+
+#: gui/mainwindow.cpp:328
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Sekerheitkopie"
+
+#: gui/mainwindow.cpp:329
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Sekerheitkopie opstellen"
+
+#: gui/mainwindow.cpp:330
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Afbilddatei as Sekerheitkopie vun en Partitschoon opstellen"
+
+#: gui/mainwindow.cpp:335
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Wedderherstellen"
+
+#: gui/mainwindow.cpp:336
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Partitschoon wedderherstellen"
+
+#: gui/mainwindow.cpp:337
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "En Partitschoon ut en Afbild wedderherstellen"
+
+#: gui/mainwindow.cpp:342
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Dateisysteem-Ünnerstütten"
+
+#: gui/mainwindow.cpp:343
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Informatschonen över de Dateisysteem-Ünnerstütten ankieken"
+
+#: gui/mainwindow.cpp:344
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Informatschonen över ünnerstütt Dateisystemen wiesen"
+
+#: gui/mainwindow.cpp:356
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Logbook leddigmaken"
+
+#: gui/mainwindow.cpp:357
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Logbook-Utgaav leddigmaken"
+
+#: gui/mainwindow.cpp:358
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr ""
+
+#: gui/mainwindow.cpp:362
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Logbook sekern"
+
+#: gui/mainwindow.cpp:363
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Logbook-Utgaav sekern"
+
+#: gui/mainwindow.cpp:364
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Logbook-Utgaav as Datei sekern."
+
+#: gui/mainwindow.cpp:448
+#, kde-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "Een utstahn Akschoon"
+msgstr[1] "%1 utstahn Akschonen"
+
+#: gui/mainwindow.cpp:547
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Backend plugin"
+msgctxt "@info/plain"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Hülpprogramm-Moduul"
+
+#: gui/mainwindow.cpp:551
+msgctxt "@info/plain"
+msgid "Scanning devices..."
+msgstr "Reedschappen warrt dörkeken..."
+
+#: gui/mainwindow.cpp:583
+msgctxt "@info/plain"
+msgid "Scan finished."
+msgstr "Dörkieken afslaten."
+
+#: gui/mainwindow.cpp:639
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Wullt Du de Reedschappen redig nieg dörkieken?</para><para><warning>Bi "
+"disse Akschoon kaamt all utstahn Akschonen weg.</warning></para>"
+
+#: gui/mainwindow.cpp:641
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Reedschappen redig nieg dörkieken?"
+
+#: gui/mainwindow.cpp:642
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Rescan Devices"
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Nieg &dörkieken"
+
+#: gui/mainwindow.cpp:658
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Wullt Du de List mit utstahn Akschonen nerrn redig utföhren?</"
+"para><para><warning>Dit ännert Dien Fastplaten duerhaftig.</warning></para>"
+
+#: gui/mainwindow.cpp:660
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Utstahn Akschonen utföhren?"
+
+#: gui/mainwindow.cpp:661
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Utstahn Akschonen utföhren"
+
+#: gui/mainwindow.cpp:664
+msgctxt "@info/plain"
+msgid "Applying operations..."
+msgstr "Akschonen warrt utföhrt..."
+
+#: gui/mainwindow.cpp:690
+#, kde-format
+msgctxt "@info/plain"
+msgid "Undoing operation: %1"
+msgstr "Akschoon warrt torüchnahmen: %1"
+
+#: gui/mainwindow.cpp:706
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Wullt Du de List mit utstahn Akschonen redig leddig maken?"
+
+#: gui/mainwindow.cpp:707
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Utstahn Akschonen wegdoon?"
+
+#: gui/mainwindow.cpp:708
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Clear Pending Operations"
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Utstahn Akschonen &wegdoon"
+
+#: gui/mainwindow.cpp:711
+msgctxt "@info/plain"
+msgid "Clearing the list of pending operations."
+msgstr "De List mit utstahn Akschonen warrt leddig maakt."
+
+#: gui/mainwindow.cpp:749
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not open mount point file <filename>%1</filename>."
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr ""
+"Inhangsteden-Sekerheitkopie <filename>%1</filename> lett sik nich opmaken."
+
+#: gui/mainwindow.cpp:749 gui/mainwindow.cpp:757
+#, fuzzy
+#| msgctxt "@action:inmenu"
+#| msgid "New Partition Table"
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Nieg Partitschonentabell"
+
+#: gui/mainwindow.cpp:757
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> while trying to resize/move "
+#| "partition <filename>%2</filename>."
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich opmaken, bides de Grött vun "
+"Partitschoon <filename>%2</filename> ännert oder se verschaven warrt."
+
+#: gui/mainwindow.cpp:783
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Opstellen vun de niege "
+"Partitschoon <filename>%2</filename> opmaken."
+
+#: gui/mainwindow.cpp:783 gui/mainwindow.cpp:796 gui/mainwindow.cpp:804
+#: gui/mainwindow.cpp:810 gui/mainwindow.cpp:825 gui/mainwindow.cpp:839
+#: gui/mainwindow.cpp:845 gui/mainwindow.cpp:867 gui/mainwindow.cpp:873
+#: gui/mainwindow.cpp:879 gui/mainwindow.cpp:887
+#, fuzzy
+#| msgctxt "@action:inmenu"
+#| msgid "New Partition Table"
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Nieg Partitschonentabell"
+
+#: gui/mainwindow.cpp:796
+#, kde-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr ""
+
+#: gui/mainwindow.cpp:804
+#, kde-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:810
+#, kde-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:825
+#, kde-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr ""
+
+#: gui/mainwindow.cpp:839
+#, kde-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:845
+#, kde-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:867
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Unknown partition role for new partition <filename>%1</filename> (roles: "
+#| "%2)"
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr ""
+"Nich begäng Partitschoontyp för nieg Partitschoon <filename>%1</filename> "
+"(Typen: %2)"
+
+#: gui/mainwindow.cpp:873
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Unknown partition role for new partition <filename>%1</filename> (roles: "
+#| "%2)"
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+"Nich begäng Partitschoontyp för nieg Partitschoon <filename>%1</filename> "
+"(Typen: %2)"
+
+#: gui/mainwindow.cpp:879
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:887
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Could not resize file system on partition <filename>%1</filename>."
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr ""
+"De Grött vun't Dateisysteem op Partitschoon <filename>%1</filename> lett sik "
+"nich ännern."
+
+#: gui/mainwindow.cpp:899
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr ""
+
+#: gui/mainwindow.cpp:920
+#, fuzzy
+#| msgctxt "@action:inmenu"
+#| msgid "New Partition Table"
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Nieg Partitschonentabell"
+
+#: gui/mainwindow.cpp:1062
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+
+#: gui/mainwindow.cpp:1075
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "File System Support"
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Dateisysteem-Ünnerstütten"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#: gui/mainwindowbase.ui:14 gui/partitionmanagerwidgetbase.ui:14
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "KDE-Partitschonenpleger"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:24
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Reedschappen"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Utstahn Akschonen"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:63
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Logbook-Utgaav"
+
+#: gui/newdialog.cpp:47
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Nieg Partitschoon opstellen"
+
+#. i18n: ectx: ToolBar (editToolBar)
+#: gui/partitionmanagerui.rc:5
+msgctxt "@title:menu turn on and off edit toolbar"
+msgid "Edit Toolbar"
+msgstr "Bewerken-Warktüüchbalken"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:11
+msgctxt "@title:menu"
+msgid "Partition Toolbar"
+msgstr "Partitschoon-Warktüüchbalken"
+
+#. i18n: ectx: ToolBar (deviceToolBar)
+#: gui/partitionmanagerui.rc:18
+msgctxt "@title:menu"
+msgid "Device Toolbar"
+msgstr "Reedschap-Warktüüchbalken"
+
+#. i18n: ectx: Menu (view)
+#: gui/partitionmanagerui.rc:30
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Ansicht"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:40
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Reedschap"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:42
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr ""
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:54
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Partitschoon"
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Dat Dateisysteem op Partitschoon <filename>%1</filename> lett sik nich "
+"inhangen."
+
+#: gui/partitionmanagerwidget.cpp:406
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Dateisysteem lett sik nich inhangen"
+
+#: gui/partitionmanagerwidget.cpp:411
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Dat Dateisysteem op Partitschoon <filename>%1</filename> lett sik nich "
+"afhangen."
+
+#: gui/partitionmanagerwidget.cpp:411
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Dateisysteem lett sik nich afhangen"
+
+#: gui/partitionmanagerwidget.cpp:453
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>There is already 1 primary partition on this device. This is the "
+#| "maximum number its partition table can handle.</para><para>You cannot "
+#| "create, paste or restore a primary partition on it before you delete an "
+#| "existing one.</para>"
+#| msgid_plural ""
+#| "<para>There are already %1 primary partitions on this device. This is the "
+#| "maximum number its partition table can handle.</para><para>You cannot "
+#| "create, paste or restore a primary partition on it before you delete an "
+#| "existing one.</para>"
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>Op disse Reedschap gifft dat al 1 Hööftpartitschoon. Mit mehr dor vun "
+"kann de Reedschap ehr Partitschonentabell nich üm.</para><para>Du kannst "
+"keen Hööftpartitschoon opstellen, infögen oder wedderherstellen, ehr Du nich "
+"een wegdaan hest.</para>"
+msgstr[1] ""
+"<para>Op disse Reedschap gifft dat al %1 Hööftpartitschonen. Mit mehr dor "
+"vun kann de Reedschap ehr Partitschonentabell nich üm.</para><para>Du kannst "
+"keen Hööftpartitschoon opstellen, infögen oder wedderherstellen, ehr Du nich "
+"een wegdaan hest.</para>"
+
+#: gui/partitionmanagerwidget.cpp:457
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "To vele Hööftpartitschonen"
+
+#: gui/partitionmanagerwidget.cpp:522
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para>De Partitschoon <filename>%1</filename> lett sik opstunns nich "
+"wegdoon, een oder mehr Partitschonen mit en höger logische Nummer sünd noch "
+"inhangt:</para><para>Bitte hang eerst all Partitschonen af, de en höger "
+"logische Nummer as %2 hebbt.</para>"
+
+#: gui/partitionmanagerwidget.cpp:525
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Partitschoon lett sik nich wegdoon"
+
+#: gui/partitionmanagerwidget.cpp:535
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Wullt Du de Partitschoon binnen de Twischenaflaag redig wegdoon? Du kannst "
+"ehr na't Wegdoon narms mehr infögen."
+
+#: gui/partitionmanagerwidget.cpp:537
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Partitschoon binnen Twischenaflaag redig wegdoon?"
+
+#: gui/partitionmanagerwidget.cpp:538
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Delete It"
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "&Wegdoon"
+
+#: gui/partitionmanagerwidget.cpp:584
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"De Partitschoon <filename>%1</filename> hett na de Gröttännern/ na't "
+"Verschuven de sülve Grött un liggt an de sülve Steed. Akschoon warrt "
+"övergahn."
+
+#: gui/partitionmanagerwidget.cpp:614
+#, kde-format
+msgctxt "@info/plain"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr ""
+"De Partitschoon <filename>%1</filename> wöör na de Twischenaflaag kopeert."
+
+#: gui/partitionmanagerwidget.cpp:683
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para><warning>You are about to lose all data on partition <filename>%1</"
+#| "filename>.</warning></para><para>Recreating a file system will erase all "
+#| "its contents. If you continue now and apply the resulting operation in "
+#| "the main window, all data on <filename>%1</filename> will unrecoverably "
+#| "be lost.</para>"
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning>Di kaamt nößen all Daten op Partitschoon <filename>%1</"
+"filename> weg.</warning></para><para>Dat Niegopstellen vun en Dateisysteem "
+"maakt sien Inholt heel un deel weg. Maakst Du wieder un föhrst de Akschoon "
+"binnen dat Hööftfinster ut, kaamt all Daten op <filename>%1</filename> "
+"duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
+
+#: gui/partitionmanagerwidget.cpp:691
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Overwrite Existing File?"
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Vörhannen Datei överschrieven?"
+
+#: gui/partitionmanagerwidget.cpp:692
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Partitschoon överschrieven"
+
+#: gui/partitionmanagerwidget.cpp:701
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para> De utsöchte Partitschoon is nich groot noog, se kann de "
+"Bornpartitschoon oder de Sekerheitkopie nich opnehmen.</para><para>Söök en "
+"anner Teel ut oder pass disse Partitschoon ehr Grött na de vun de "
+"Bornpartitschoon to.</para>"
+
+#: gui/partitionmanagerwidget.cpp:702
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Teel nich groot noog"
+
+#: gui/partitionmanagerwidget.cpp:705
+#, fuzzy
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>It is not possible to create the target partition large enough to "
+#| "hold the source.</para><para>This may happen if not all partitions on a "
+#| "device start and end on cylinder boundaries or when copying a primary "
+#| "partition into an extended partition.</para>"
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+"<para>De Teelpartitschoon lett sik nich so groot maken, dat se den Born "
+"opnehmen kann.</para><para>Dat kann vörkamen, wenn nich all Partitschonen op "
+"en Zylinnergrenz anfang un ophöört, oder wenn Een en Hööftpartitschoon na en "
+"verwiedert Partitschoon koperen will.</para>"
+
+#: gui/partitionmanagerwidget.cpp:708
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Teelpartitschoon lett sik nich opstellen"
+
+#: gui/partitionmanagerwidget.cpp:746
+#, kde-format
+msgctxt "@info"
+msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+msgstr "Wullt Du de vörhannen Datei <filename>%1</filename> överschrieven?"
+
+#: gui/partitionmanagerwidget.cpp:746
+msgctxt "@title:window"
+msgid "Overwrite Existing File?"
+msgstr "Vörhannen Datei överschrieven?"
+
+#: gui/partitionmanagerwidget.cpp:746
+msgctxt "@action:button"
+msgid "Overwrite File"
+msgstr "Datei överschrieven"
+
+#: gui/partitionmanagerwidget.cpp:773
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Dat Datisysteem binnen de Afbilddatei <filename>%1</filename> is to groot, "
+"as dat se sik binnen de utsöchte Partitschoon wedderherstellen lett."
+
+#: gui/partitionmanagerwidget.cpp:773
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Nich noog Freeruum för't Wedderherstellen vun't Dateisysteem."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:70
+msgid "Partition"
+msgstr "Partitschoon"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:75
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:80
+msgid "Mount Point"
+msgstr "Inhangsteed"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:95
+msgid "Size"
+msgstr "Grött"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:100
+msgid "Used"
+msgstr "Bruukt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:105
+msgid "Available"
+msgstr "Verföögbor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:110
+msgid "First Sector"
+msgstr "Eerst Sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:115
+msgid "Last Sector"
+msgstr "Lest Sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:120
+msgid "Number of Sectors"
+msgstr "Tall vun Sektoren"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:125
+msgid "Flags"
+msgstr "Marken"
+
+#: gui/partpropsdialog.cpp:54
+#, kde-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Partitschoon-Egenschappen: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:102
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(keen funnen)"
+
+#: gui/partpropsdialog.cpp:108
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "töövt"
+
+#: gui/partpropsdialog.cpp:112
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Tominnst een logisch Partitschoon is inhangt."
+
+#: gui/partpropsdialog.cpp:114
+#, kde-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "inhangt op <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:116
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "inhangt"
+
+#: gui/partpropsdialog.cpp:120
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(keen)"
+
+#: gui/partpropsdialog.cpp:327
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Di kaamt nößen all Daten op Partitschoon <filename>%1</"
+"filename> weg.</warning></para><para>Dat Ännern vun en Dateisysteem, dat al "
+"op de Plaat is, maakt sien Inholt heel un deel weg. Maakst Du wieder un "
+"föhrst de Akschoon binnen dat Hööftfinster ut, kaamt all Daten op  <filename>"
+"%1</filename> duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
+
+#: gui/partpropsdialog.cpp:329
+#, kde-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr "<filename>%1</filename> redig mit %2-Dateisysteem nieg opstellen?"
+
+#: gui/partpropsdialog.cpp:330
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Change the File System"
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Dateisysteem ä&nnern"
+
+#: gui/partpropsdialog.cpp:331
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Do Not Change the File System"
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "&Dateisysteem nich ännern"
+
+#: gui/partpropsdialog.cpp:352
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filename>%1</filename> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Di kaamt nößen all Daten op Partitschoon <filename>%1</"
+"filename> weg.</warning></para><para>Dat Niegopstellen vun en Dateisysteem "
+"maakt sien Inholt heel un deel weg. Maakst Du wieder un föhrst de Akschoon "
+"binnen dat Hööftfinster ut, kaamt all Daten op <filename>%1</filename> "
+"duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
+
+#: gui/partpropsdialog.cpp:354
+#, kde-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "Dateisysteem op <filename>%1</filename> redig nieg opstellen?"
+
+#: gui/partpropsdialog.cpp:355
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Recreate the File System"
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Dateisysteem &nieg opstellen"
+
+#: gui/partpropsdialog.cpp:356
+#, fuzzy
+#| msgctxt "@action:button"
+#| msgid "&Do Not Recreate the File System"
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "&Dateisysteem nich nieg opstellen"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:49 gui/sizedialogwidgetbase.ui:99
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Dateisysteem:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:65 gui/sizedialogwidgetbase.ui:115
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "&Label:"
+msgctxt "@label"
+msgid "Label:"
+msgstr "&Beteker:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:82 gui/sizedialogwidgetbase.ui:134
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Bi dit Dateisysteem lett sik keen Beteker fastleggen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:92
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Vörhannen Dateisysteem nieg opstellen"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:106
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Inhangsteed:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:123
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Partitschoon-Typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:140
+msgctxt "@label"
+msgid "Status:"
+msgstr "Status:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:157
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:187
+msgctxt "@label"
+msgid "Size:"
+msgstr "Grött:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:210
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Verföögbor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:227
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Bruukt:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:251
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Eerst Sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:268
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Lest Sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:285
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Tall vun Sektoren:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:309
+msgctxt "@label"
+msgid "Flags:"
+msgstr "Marken:"
+
+#: gui/parttablewidget.cpp:36
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Bitte de Reedschap utsöken."
+
+#: gui/parttablewidget.cpp:63
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "Op disse Reedschap lett sik keen gellen Partitschonentabell finnen."
+
+#: gui/resizedialog.cpp:48
+#, kde-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Grött ännern/verschuven vun Partitschoon: <filename>%1</filename>"
+
+#: gui/scanprogressdialog.cpp:27
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Reedschappen warrt dörkeken..."
+
+#: gui/scanprogressdialog.cpp:36
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Scanning devices..."
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Reedschappen warrt dörkeken..."
+
+#: gui/scanprogressdialog.cpp:38
+#, kde-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Reedschap warrt dörkeken: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:62
+#, fuzzy
+#| msgctxt "@label partition"
+#| msgid "First sector:"
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Eerst Sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:97
+#, fuzzy
+#| msgctxt "@label partition"
+#| msgid "Last sector:"
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Lest Sektor:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:120
+#, fuzzy
+#| msgctxt "@info:tooltip"
+#| msgid "New partition"
+msgid "Align partition"
+msgstr "Nieg Partitschoon"
+
+#: gui/sizedialogbase.cpp:57
+msgctxt "@item:button advanced settings button"
+msgid "Advanced"
+msgstr "Verwiedert"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:55
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Partitschoon-Typ:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:70
+#, fuzzy
+#| msgid "&Primary"
+msgid "Primary"
+msgstr "&Hööft"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:77
+msgid "Extended"
+msgstr "Verwiedert"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:84
+msgid "Logical"
+msgstr "Logisch"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:152
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Lüttst Grött:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:175
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Hööchst Grött:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/sizedialogwidgetbase.ui:198
+#, fuzzy
+#| msgctxt "@label:listbox"
+#| msgid "Free space &before:"
+msgctxt "@label:listbox"
+msgid "Free space before:"
+msgstr "Free Ruum &vörher:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:233
+msgctxt "@label:listbox"
+msgid "Size:"
+msgstr "Grött:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/sizedialogwidgetbase.ui:262
+#, fuzzy
+#| msgctxt "@label:listbox"
+#| msgid "Free space &after:"
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Free Ruum &achteran:"
+
+#: gui/smartdialog.cpp:64
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Device properties: <filename>%1</filename>"
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "Reedschap-Egenschappen: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:66
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr ""
+
+#: gui/smartdialog.cpp:104 gui/smartdialog.cpp:161
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "keen"
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:191
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr ""
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:191
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr ""
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:192
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Tokoppelt"
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:192
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Afkoppelt"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:63
+msgid "Model:"
+msgstr "Modell:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:164 gui/smartdialogwidgetbase.ui:92
+msgid "Serial number:"
+msgstr "Reegnummer:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:165 gui/smartdialogwidgetbase.ui:121
+msgid "Firmware revision:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:166 gui/smartdialogwidgetbase.ui:150
+msgid "Temperature:"
+msgstr "Temperatuur:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:167 gui/smartdialogwidgetbase.ui:179
+msgid "Bad sectors:"
+msgstr "Leeg Sektoren:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:168 gui/smartdialogwidgetbase.ui:208
+msgid "Powered on for:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:169 gui/smartdialogwidgetbase.ui:237
+msgid "Power cycles:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:170 gui/smartdialogwidgetbase.ui:414
+msgid "Self tests:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:171 gui/smartdialogwidgetbase.ui:385
+msgid "Overall assessment:"
+msgstr ""
+
+#: gui/smartdialog.cpp:239
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Could Not Save Report."
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Bericht lett sik nich sekern."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:289
+msgid "Id"
+msgstr "ID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+msgid "Attribute"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+#, fuzzy
+#| msgid "File System"
+msgid "Failure Type"
+msgstr "Dateisysteem"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+msgid "Update Type"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+msgid "Worst"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+#, fuzzy
+#| msgid "Create"
+msgid "Current"
+msgstr "Opstellen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+msgid "Threshold"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+msgid "Raw"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+msgid "Assessment"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+msgid "Value"
+msgstr ""
+
+#: gui/treelog.cpp:131
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Could not create backup file <filename>%1</filename>."
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr "Sekerheitkopie <filename>%1</filename> lett sik nich opstellen."
+
+#: gui/treelog.cpp:131
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:54
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:57
+msgid "Severity"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Tiet"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "Mellen"
+
+#: jobs/backupfilesystemjob.cpp:65
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"backup."
+msgstr ""
+"Dateisysteem op Partitschoon <filename>%1</filename> lett sik för de "
+"Sekerheitkopie nich opmaken."
+
+#: jobs/backupfilesystemjob.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not create backup file <filename>%1</filename>."
+msgstr "Sekerheitkopie <filename>%1</filename> lett sik nich opstellen."
+
+#: jobs/backupfilesystemjob.cpp:79
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Back up file system on partition <filename>%1</filename> to <filename>%2</"
+"filename>"
+msgstr ""
+"Sekerheitkopie vun Dateisysteem op Partitschoon <filename>%1</filename> as "
+"<filename>%2</filename> opstellen"
+
+#: jobs/checkfilesystemjob.cpp:56
+#, kde-format
+msgctxt "@info/plain"
+msgid "Check file system on partition <filename>%1</filename>"
+msgstr "Dateisysteem op Partitschoon <filename>%1</filename> pröven"
+
+#: jobs/copyfilesystemjob.cpp:61
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Cannot copy file system: File system on target partition <filename>%1</"
+"filename> is smaller than the file system on source partition <filename>%2</"
+"filename>."
+msgstr ""
+"Dateisysteem lett sik nich koperen. Dat Dateisysteem op de Teelpartitschoon "
+"<filename>%1</filename> is lütter as dat op de Bornpartitschoon <filename>"
+"%2</filename>."
+
+#: jobs/copyfilesystemjob.cpp:70
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+"Dateisysteem op Bornpartitschoon <filename>%1</filename> lett sik för't "
+"Koperen nich opmaken."
+
+#: jobs/copyfilesystemjob.cpp:72
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on target partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+"Dateisysteem op Teelpartitschoon <filename>%1</filename> lett sik för't "
+"Koperen nich opmaken."
+
+#: jobs/copyfilesystemjob.cpp:76
+#, fuzzy
+#| msgctxt "@info/plain"
+#| msgid "Closing device. This may take a few seconds."
+msgctxt "@info/plain"
+msgid ""
+"Closing device. This may take a while, especially on slow devices like "
+"Memory Sticks."
+msgstr "Reedschap warrt tomaakt. Dat mag en poor Sekunnen bruken."
+
+#: jobs/copyfilesystemjob.cpp:105
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy file system on partition <filename>%1</filename> to partition <filename>"
+"%2</filename>"
+msgstr ""
+"Dateisysteem op Partitschoon <filename>%1</filename> na Partitschoon "
+"<filename>%2</filename> koperen"
+
+#: jobs/createfilesystemjob.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Failed to clobber file system on partition <filename>%1</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Failed to set the system type for the file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Dateisysteem op Partitschoon <filename>%1</filename> lett sik nich "
+"överschrieven."
+
+#: jobs/createfilesystemjob.cpp:75
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to set the "
+"system type for partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Opstellen vun de niege "
+"Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/createfilesystemjob.cpp:80
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to set partition flags for "
+#| "partition <filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set the system type for "
+"partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Setten vun "
+"Partitschoonmarken för Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/createfilesystemjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create file system %1 on partition <filename>%2</filename>"
+msgstr "%1-Dateisystem op Partitschoon <filename>%2</filename> opstellen"
+
+#: jobs/createpartitionjob.cpp:71
+#: plugins/libparted/libpartedpartitiontable.cpp:196
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Failed to add partition <filename>%1</filename> to device <filename>%2</"
+"filename>."
+msgstr ""
+"Partitschoon <filename>%1</filename> lett sik de Reedschap <filename>%2</"
+"filename> nich tofögen."
+
+#: jobs/createpartitionjob.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to create "
+"new partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Opstellen vun de niege "
+"Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/createpartitionjob.cpp:81
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to create new partition "
+"<filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Opstellen vun de niege "
+"Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/createpartitionjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition <filename>%1</filename>"
+msgstr "Nieg Partitschoon <filename>%1</filename> opstellen"
+
+#: jobs/createpartitionjob.cpp:93
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition on device <filename>%1</filename>"
+msgstr "Nieg Partitschoon op Reedschap <filename>%1</filename> opstellen"
+
+#: jobs/createpartitiontablejob.cpp:59
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open device <filename>%1</"
+"filename>."
+msgstr ""
+"Opstellen vun de Partitschonentabell fehlslaan: Reedschap <filename>%1</"
+"filename> lett sik nich opmaken."
+
+#: jobs/createpartitiontablejob.cpp:68
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create new partition table on device <filename>%1</filename>"
+msgstr ""
+"Nieg Partitschonentabell op Reedschap <filename>%1</filename> opstellen"
+
+#: jobs/deletefilesystemjob.cpp:81
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Delete file system on <filename>%1</filename>"
+msgctxt "@info/plain"
+msgid "Could not delete file system on <filename>%1</filename>."
+msgstr "Dateisysteem op <filename>%1</filename> wegdoon"
+
+#: jobs/deletefilesystemjob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to delete "
+"file system on <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Opstellen vun de niege "
+"Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/deletefilesystemjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system signature for partition <filename>%1</"
+"filename>: Failed to open device <filename>%2</filename>."
+msgstr ""
+"Dateisysteem-Signatuur op Partitschoon <filename>%1</filename> lett sik nich "
+"wegdoon: Reedschap <filename>%2</filename> lett sik nich opmaken."
+
+#: jobs/deletefilesystemjob.cpp:104
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete file system on <filename>%1</filename>"
+msgstr "Dateisysteem op <filename>%1</filename> wegdoon"
+
+#: jobs/deletepartitionjob.cpp:71
+#: plugins/libparted/libpartedpartitiontable.cpp:218
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not delete partition <filename>%1</filename>."
+msgstr "Partitschoon <filename>%1</filename> lett sik nich wegdoon."
+
+#: jobs/deletepartitionjob.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to delete "
+"partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Opstellen vun de niege "
+"Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/deletepartitionjob.cpp:84
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Could not open device <filename>%1</filename>."
+msgstr ""
+"Dat Wegdoon vun de Partitschoon is fehlslaan. Reedschap <filename>%1</"
+"filename> lett sik nich opmaken."
+
+#: jobs/deletepartitionjob.cpp:93
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete the partition <filename>%1</filename>"
+msgstr "De Partitschoon <filename>%1</filename> wegdoon"
+
+#: jobs/job.cpp:48
+#, fuzzy
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "The sector size in the source and target for copying are not the same. "
+#| "This is currently unsupported."
+msgctxt "@info/plain"
+msgid ""
+"The logical sector sizes in the source and target for copying are not the "
+"same. This is currently unsupported."
+msgstr ""
+"De Sektorgrött vun Kopeerborn un -teel sünd nich liek. Opstunns warrt dat "
+"nich ünnerstütt."
+
+#: jobs/job.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+msgstr ""
+"%1 Blöck (%2 Sektoren) warrt vun %3 na %4 kopeert, Richt: "
+"%5.                         %1"
+
+#: jobs/job.cpp:92
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying %1 MiB/second, estimated time left: %2"
+msgstr "%1 MiB/s warrt kopeert, estemeert nablieven Tiet: %2"
+
+#: jobs/job.cpp:111
+#, kde-format
+msgctxt "@info/plain"
+msgid "Copying remainder of block size %1 from  %2 to %3."
+msgstr "Överblevels mit Blockgrött %1 warrt vun %2 na %3 kopeert."
+
+#: jobs/job.cpp:124
+#, kde-format
+msgid "1 sector"
+msgid_plural "%1 sectors"
+msgstr[0] "1 Sektor"
+msgstr[1] "%1 Sektoren"
+
+#: jobs/job.cpp:124
+#, kde-format
+msgctxt ""
+"@info/plain argument 2 is a string such as 7 sectors (localized accordingly)"
+msgid "Copying 1 block (%2) finished."
+msgid_plural "Copying %1 blocks (%2) finished."
+msgstr[0] "Koperen vun 1 Block (%2) afslaten."
+msgstr[1] "Koperen vun %1 Blöck (%2) afslaten."
+
+#: jobs/job.cpp:133
+msgctxt "@info/plain"
+msgid "Source and target for copying do not overlap: Rollback is not required."
+msgstr "Kopeerborn un -teel överlappt nich, Torüchdreihen deit nich noot."
+
+#: jobs/job.cpp:159
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback from: First sector: %1, last sector: %2."
+msgstr "Torüchdreihen vun: Eerst Sekor: %1, lest Sektor: %2."
+
+#: jobs/job.cpp:160
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback to: First sector: %1, last sector: %2."
+msgstr "Torüchdreihen na: Eerst Sektor %1, lest Sektor: %2."
+
+#: jobs/job.cpp:165 jobs/job.cpp:172
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open device <filename>%1</filename> to rollback copying."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Torüchdreihen opmaken"
+
+#: jobs/job.cpp:180
+msgctxt "@info/plain"
+msgid "Rollback failed: Source or target are not devices."
+msgstr "Torüchdreihen is fehlslaan. Born oder Teel is keen Reedschap."
+
+#: jobs/job.cpp:195
+#, kde-format
+msgctxt "@info/plain"
+msgid "Job: %1"
+msgstr "Opgaav: %1"
+
+#: jobs/job.cpp:204
+#, kde-format
+msgctxt "@info/plain job status (error, warning, ...)"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: jobs/job.cpp:230
+msgctxt "@info:progress job"
+msgid "Pending"
+msgstr "Utstahn"
+
+#: jobs/job.cpp:231
+msgctxt "@info:progress job"
+msgid "Success"
+msgstr "Spood"
+
+#: jobs/job.cpp:232
+msgctxt "@info:progress job"
+msgid "Error"
+msgstr "Fehler"
+
+#: jobs/movefilesystemjob.cpp:64
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on partition <filename>%1</filename> for moving."
+msgstr ""
+"Dat Dateisysteem op Partitschoon <filename>%1</filename> lett sik nich för't "
+"Verschuven opmaken."
+
+#: jobs/movefilesystemjob.cpp:66
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not create target for moving file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Dat Teel för't Verschuven vun't Dateisysteem op Partitschoon <filename>%1</"
+"filename> lett sik nich opstellen."
+
+#: jobs/movefilesystemjob.cpp:78
+#, kde-format
+msgctxt "@info/plain"
+msgid "Rollback for file system on partition <filename>%1</filename> failed."
+msgstr ""
+"Dat Torüchdreihen is för't Dateisysteem op Partitschoon <filename>%1</"
+"filename> fehlslaan."
+
+#: jobs/movefilesystemjob.cpp:80 jobs/restorefilesystemjob.cpp:105
+#: jobs/shredfilesystemjob.cpp:77
+msgctxt "@info/plain"
+msgid "Closing device. This may take a few seconds."
+msgstr "Reedschap warrt tomaakt. Dat mag en poor Sekunnen bruken."
+
+#: jobs/movefilesystemjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid "Move the file system on partition <filename>%1</filename> to sector %2"
+msgstr ""
+"Dat Dateisysteem op Partitschoon <filename>%1</filename> na Sektor %2 "
+"verschuven"
+
+#: jobs/resizefilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%2</filename> already has the "
+"requested length of 1 sector."
+msgid_plural ""
+"The file system on partition <filename>%2</filename> already has the "
+"requested length of %1 sectors."
+msgstr[0] ""
+"Dat Dateisysteem op Partitschoon <filename>%2</filename> hett al de anfraagt "
+"Längde vun 1 Sektor."
+msgstr[1] ""
+"Dat Dateisysteem op Partitschoon <filename>%2</filename> hett al de anfraagt "
+"Längde vun %1 Sektoren."
+
+#: jobs/resizefilesystemjob.cpp:80
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing file system from %1 to %2 sectors."
+msgstr "De Grött vun't Dateisysteem warrt vun %1 op %2 Sektoren ännert."
+
+#: jobs/resizefilesystemjob.cpp:89
+#, fuzzy, kde-format
+msgctxt "@info/plain"
+msgid "Resizing a %1 file system using internal backend functions."
+msgstr ""
+"De Grött vun en %1-Dateisysteem warrt mit intern LibParted-Funkschonen "
+"ännert."
+
+#: jobs/resizefilesystemjob.cpp:102
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%1</filename> cannot be resized "
+"because there is no support for it."
+msgstr ""
+"De Grött vun't Dateisysteem op Partitschoon <filename>%1</filename> lett sik "
+"nich ännern, dor gifft dat keen Ünnerstütten för."
+
+#: jobs/resizefilesystemjob.cpp:133
+#, fuzzy
+msgctxt "@info/plain"
+msgid "Successfully resized file system using internal backend functions."
+msgstr "Grött vun't Dateisysteem mit Spood mit LibParted ännert."
+
+#: jobs/resizefilesystemjob.cpp:140
+#: plugins/libparted/libpartedpartitiontable.cpp:318
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize the "
+"file system."
+msgstr ""
+"Partitschoon <filename>%1</filename> lett sik nich opmaken, bides de Grött "
+"vun't Dateisysteem ännert warrt."
+
+#: jobs/resizefilesystemjob.cpp:145
+#: plugins/libparted/libpartedpartitiontable.cpp:321
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not read geometry for partition <filename>%1</filename> while trying "
+"to resize the file system."
+msgstr ""
+"Geometrie för Partitschoon <filename>%1</filename> lett sik nich lesen, "
+"bides de Grött vun't Dateisysteem ännert warrt."
+
+#: jobs/resizefilesystemjob.cpp:153
+#, kde-format
+msgctxt "@info/plain"
+msgid "Maximize file system on <filename>%1</filename> to fill the partition"
+msgstr ""
+"Dateisysteem op <filename>%1</filename> so utwiedern, dat de Partitschoon "
+"vull warrt"
+
+#: jobs/resizefilesystemjob.cpp:155
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
+msgid_plural ""
+"Resize file system on partition <filename>%2</filename> to %1 sectors"
+msgstr[0] ""
+"Grött vun't Dateisysteem op Partitschoon <filename>%2</filename> op 1 Sektor "
+"ännern"
+msgstr[1] ""
+"Grött vun't Dateisysteem op Partitschoon <filename>%2</filename> op %1 "
+"Sektoren ännern"
+
+#: jobs/restorefilesystemjob.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open backup file <filename>%1</filename> to restore from."
+msgstr ""
+"Sekerheitkopie <filename>%1</filename> för't Wedderherstellen lett sik nich "
+"opmaken."
+
+#: jobs/restorefilesystemjob.cpp:77 jobs/shredfilesystemjob.cpp:73
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not open target partition <filename>%1</filename> to restore to."
+msgstr ""
+"De Teelpartitschoon <filename>%1</filename>, na de Du wedderherstellen "
+"wullst, lett sik nich opmaken."
+
+#: jobs/restorefilesystemjob.cpp:116
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore the file system from file <filename>%1</filename> to partition "
+"<filename>%2</filename>"
+msgstr ""
+"Dateisysteem ut Datei<filename>%1</filename> op Partitschoon <filename>%2</"
+"filename> wedderherstellen"
+
+#: jobs/setfilesystemlabeljob.cpp:51
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"File system on partition <filename>%1</filename> does not support setting "
+"labels. Job ignored."
+msgstr ""
+"Bi't Dateisysteem op Partitschoon <filename>%1</filename> laat sik keen "
+"Betekers fastleggen. Opgaav övergahn."
+
+#: jobs/setfilesystemlabeljob.cpp:67
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Set the file system label on partition <filename>%1</filename> to \"%2\""
+msgstr ""
+"Dateisyteembeteker op Partitschoon <filename>%1</filename> op \"%2\" setten"
+
+#: jobs/setpartflagsjob.cpp:85
+msgctxt "@info/plain flag turned on, active"
+msgid "on"
+msgstr "An"
+
+#: jobs/setpartflagsjob.cpp:85
+msgctxt "@info/plain flag turned off, inactive"
+msgid "off"
+msgstr "Ut"
+
+#: jobs/setpartflagsjob.cpp:85
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"There was an error setting flag %1 for partition <filename>%2</filename> to "
+"state %3."
+msgstr ""
+"Dat geev en Fehler bi't Setten vun de Partitschoon <filename>%2</filename> "
+"ehr %1-Mark op \"%3\""
+
+#: jobs/setpartflagsjob.cpp:94
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not find partition <filename>%1</filename> on device <filename>%2</"
+"filename> to set partition flags."
+msgstr ""
+"Partitschoon <filename>%1</filename> op Reedschap <filename>%2</filename> "
+"lett sik nich för't Setten vun Partitschoonmarken finnen."
+
+#: jobs/setpartflagsjob.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to set partition flags for "
+#| "partition <filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition table on device <filename>%1</filename> to set "
+"partition flags for partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Setten vun "
+"Partitschoonmarken för Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/setpartflagsjob.cpp:107
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set partition flags for "
+"partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich för't Setten vun "
+"Partitschoonmarken för Partitschoon <filename>%2</filename> opmaken."
+
+#: jobs/setpartflagsjob.cpp:120 ops/setpartflagsoperation.cpp:75
+#, kde-format
+msgctxt "@info/plain"
+msgid "Clear flags for partition <filename>%1</filename>"
+msgstr "Marken för Partitschoon <filename>%1</filename> torüchsetten"
+
+#: jobs/setpartflagsjob.cpp:122
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+msgstr "De Marken för Partitschoon <filename>%1</filename> op \"%2\" setten"
+
+#: jobs/setpartgeometryjob.cpp:82
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> while trying to resize/move "
+"partition <filename>%2</filename>."
+msgstr ""
+"Reedschap <filename>%1</filename> lett sik nich opmaken, bides de Grött vun "
+"Partitschoon <filename>%2</filename> ännert oder se verschaven warrt."
+
+#: jobs/setpartgeometryjob.cpp:91
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Set geometry of partition <filename>%1</filename>: Start sector: %2, length: "
+"%3"
+msgstr ""
+"Geometrie vun Partitschoon <filename>%1</filename> fastleggen: Eerst Sektor: "
+"%2, Längde: %3"
+
+#: jobs/shredfilesystemjob.cpp:71
+msgctxt "@info/plain"
+msgid "Could not open random data source to overwrite file system."
+msgstr ""
+"Tofällig Datenborn för't Överschrieven vun Dateisysteem lett sik nich "
+"opmaken."
+
+#: jobs/shredfilesystemjob.cpp:88
+#, kde-format
+msgctxt "@info/plain"
+msgid "Shred the file system on <filename>%1</filename>"
+msgstr "Dateisysteem op <filename>%1</filename> wegdoon"
+
+#: main.cpp:38
+msgctxt "@info:shell"
+msgid "Do not try to gain super user privileges"
+msgstr "Ahn Systeempleger-Verlöven lopen"
+
+#: main.cpp:39
+msgctxt "@info:shell"
+msgid "Show advanced tab in configuration dialog"
+msgstr ""
+
+#: main.cpp:40
+#, fuzzy
+#| msgid "Device Node"
+msgctxt "@info:shell"
+msgid "Device(s) to manage"
+msgstr "Reedschapknütt"
+
+#: ops/backupoperation.cpp:51
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</filename>"
+msgstr ""
+"Sekerheitkopie vun Partitischoon <filename>%1</filename> (%2, %3) as "
+"<filename>%4</filename> opstellen"
+
+#: ops/checkoperation.cpp:62
+#, kde-format
+msgctxt "@info/plain"
+msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+msgstr "Partitschoon <filename>%1</filename> (%2, %3) pröven un richten"
+
+#: ops/copyoperation.cpp:165 ops/restoreoperation.cpp:144
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Warning: Maximizing file system on target partition <filename>%1</filename> "
+"to the size of the partition failed."
+msgstr ""
+"Wohrschoen: Utwiederen vun't Dateisysteem op Teelpartitschoon <filename>%1</"
+"filename> op de Partitschoon ehr Grött is fehlslaan."
+
+#: ops/copyoperation.cpp:170
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking target partition <filename>%1</filename> after copy failed."
+msgstr ""
+"Na't Fehlslaan vun't Koperen warrt de Teelpartitschoon <filename>%1</"
+"filename> pröövt."
+
+#: ops/copyoperation.cpp:180
+msgctxt "@info/plain"
+msgid "Copying source to target partition failed."
+msgstr "Koperen vun Born- na Teelpartitschoon fehlslaan."
+
+#: ops/copyoperation.cpp:184
+msgctxt "@info/plain"
+msgid "Creating target partition for copying failed."
+msgstr "Opstellen vun de Teelpartitschoon för't Koperen fehlslaan."
+
+#: ops/copyoperation.cpp:187
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking source partition <filename>%1</filename> failed."
+msgstr "Pröven vun de Bornpartitschoon <filename>%1</filename> fehlslaan."
+
+#: ops/copyoperation.cpp:194 ops/operation.cpp:178 ops/resizeoperation.cpp:186
+#: ops/restoreoperation.cpp:165
+#, kde-format
+msgctxt "@info/plain status (success, error, warning...) of operation"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: ops/copyoperation.cpp:204
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> "
+"(%5, %6)"
+msgstr ""
+"Partitschoon <filename>%1</filename> (%2, %3) na <filename>%4</filename> "
+"(%5, %6) koperen"
+
+#: ops/copyoperation.cpp:213
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> "
+"(%5, %6) and grow it to %7"
+msgstr ""
+"Partitschoon <filename>%1</filename> (%2, %3) na <filename>%4</filename> "
+"(%5, %6) koperen un op %7 utwiedern"
+
+#: ops/copyoperation.cpp:225
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename>"
+msgstr ""
+"Partitschoon <filename>%1</filename> (%2, %3) na nicht towiest Freeruum op "
+"<filename>%5</filename> koperen (fangt bi %4 an)"
+
+#: ops/copyoperation.cpp:233
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename> and grow it to %6"
+msgstr ""
+"Partitschoon <filename>%1</filename> (%2, %3) na nicht towiest Freeruum op "
+"<filename>%5</filename> koperen (fangt bi %4 an) un op %6 utwiedern"
+
+#: ops/createfilesystemoperation.cpp:97
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create filesystem %1 on partition <filename>%2</filename>"
+msgstr "%1-Dateisysteem op Partitschoon <filename>%2</filename> opstellen"
+
+#: ops/createpartitiontableoperation.cpp:103
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
+msgstr "Nieg Partitschonentabell (Typ %1) op <filename>%2</filename> opstellen"
+
+#: ops/deleteoperation.cpp:86
+#, kde-format
+msgctxt "@info/plain"
+msgid "Shred partition <filename>%1</filename> (%2, %3)"
+msgstr "Partitschoon <filename>%1</filename> (%2, %3) wegdoon"
+
+#: ops/deleteoperation.cpp:88
+#, kde-format
+msgctxt "@info/plain"
+msgid "Delete partition <filename>%1</filename> (%2, %3)"
+msgstr "Partitschoon <filename>%1</filename> (%2, %3) wegdoon"
+
+#: ops/newoperation.cpp:113
+#, kde-format
+msgctxt "@info/plain"
+msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+msgstr "Nieg Partitschoon (%1, %2) op <filename>%3</filename> opstellen"
+
+#: ops/operation.cpp:75
+msgctxt "@info:progress operation"
+msgid "None"
+msgstr "Keen"
+
+#: ops/operation.cpp:76
+msgctxt "@info:progress operation"
+msgid "Pending"
+msgstr "Steiht an"
+
+#: ops/operation.cpp:77
+msgctxt "@info:progress operation"
+msgid "Running"
+msgstr "Löppt"
+
+#: ops/operation.cpp:78
+msgctxt "@info:progress operation"
+msgid "Success"
+msgstr "Spood"
+
+#: ops/operation.cpp:79
+msgctxt "@info:progress operation"
+msgid "Warning"
+msgstr "Wohrschoen"
+
+#: ops/operation.cpp:80
+msgctxt "@info:progress operation"
+msgid "Error"
+msgstr "Fehler"
+
+#: ops/resizeoperation.cpp:165
+#, kde-format
+msgctxt "@info/plain"
+msgid "Moving extended partition <filename>%1</filename> failed."
+msgstr ""
+"Verschuven vun de verwiederte Partitschoon <filename>%1</filename> fehlslaan."
+
+#: ops/resizeoperation.cpp:175
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> after resize/move failed."
+msgstr ""
+"Pröven vun Partitschoon <filename>%1</filename> na't Ännern vun de Grött/"
+"Verschuven is fehlslaan."
+
+#: ops/resizeoperation.cpp:178
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resizing/moving partition <filename>%1</filename> failed."
+msgstr ""
+"Grött ännern/Verschuven vun Partitschoon <filename>%1</filename> fehlslaan."
+
+#: ops/resizeoperation.cpp:182
+#, kde-format
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> before resize/move failed."
+msgstr ""
+"Pröven vun Partitschoon <filename>%1</filename> ehr't Ännern vun de Grött/"
+"Verschuven is fehlslaan."
+
+#: ops/resizeoperation.cpp:213
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the left by %2"
+msgstr "Partitschoon <filename>%1</filename> üm %2 na links verschuven"
+
+#: ops/resizeoperation.cpp:216
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the right by %2"
+msgstr "Partitschoon <filename>%1</filename> üm %2 na rechts verschuven"
+
+#: ops/resizeoperation.cpp:219
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Grow partition <filename>%1</filename> from %2 to %3"
+msgstr "Partitschoon <filename>%1</filename> vun %2 op %3 utwiedern"
+
+#: ops/resizeoperation.cpp:222
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+msgstr "Partitschoon <filename>%1</filename> vun %2 op %3 schrimpen"
+
+#: ops/resizeoperation.cpp:225
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and grow it from %3 "
+"to %4"
+msgstr ""
+"Partitschoon <filename>%1</filename> üm %2 na links verschuven un vun %3 op "
+"%4 utwiedern"
+
+#: ops/resizeoperation.cpp:228
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and grow it from "
+"%3 to %4"
+msgstr ""
+"Partitschoon <filename>%1</filename> üm %2 na rechts verschuven un vun %3 op "
+"%4 utwiedern"
+
+#: ops/resizeoperation.cpp:231
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+"Partitschoon <filename>%1</filename> üm %2 na links verschuven un vun %3 op "
+"%4 schrimpen"
+
+#: ops/resizeoperation.cpp:234
+#, kde-format
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+"Partitschoon <filename>%1</filename> üm %2 na rechts verschuven un vun %3 op "
+"%4 schrimpen"
+
+#: ops/resizeoperation.cpp:241
+msgctxt "@info/plain describe resize/move action"
+msgid "Unknown resize/move action."
+msgstr "Nich begäng Gröttanner/Verschuuv-Akschoon."
+
+#: ops/resizeoperation.cpp:271
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize file system to shrink partition "
+"<filename>%1</filename>."
+msgstr ""
+"Grött ännern/Verschuven fehlslaan. De Grött vun't Dateisysteem lett sik nich "
+"ännern, wat nödig weer, dormit sik Partitschoon <filename>%1</filename> "
+"schrimpen lett."
+
+#: ops/resizeoperation.cpp:277
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+msgstr ""
+"Grött ännern/Verschuven fehlslaan. Partitschoon <filename>%1</filename> lett "
+"sik nich schrimpen."
+
+#: ops/resizeoperation.cpp:297
+#, kde-format
+msgctxt "@info/plain"
+msgid "Moving partition <filename>%1</filename> failed."
+msgstr "Verschuven vun Partitschoon <filename>%1</filename> fehlslaan."
+
+#: ops/resizeoperation.cpp:303
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Moving the filesystem for partition <filename>%1</filename> failed. Rolling "
+"back."
+msgstr ""
+"Verschuven vun't Dateisysteem för Partitschoon <filename>%1</filename> "
+"fehlslaan. Warrt torüchdreiht."
+
+#: ops/resizeoperation.cpp:307
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Moving back partition <filename>%1</filename> to its original position "
+"failed."
+msgstr ""
+"Torüchverschuven vun Partitschoon <filename>%1</filename> na ehr "
+"Orginaalsteed fehlslaan."
+
+#: ops/resizeoperation.cpp:321
+#, kde-format
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not grow partition <filename>%1</filename>."
+msgstr ""
+"Grött ännern/Verschuven fehlslaan. Partitschoon <filename>%1</filename> lett "
+"sik nich utwiedern."
+
+#: ops/resizeoperation.cpp:327
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize the file system on partition <filename>"
+"%1</filename>"
+msgstr ""
+"Grött ännern/Verschuven fehlslaan. Grött vun't Dateisysteem op Partitschoon "
+"<filename>%1</filename> lett sik nich ännern."
+
+#: ops/resizeoperation.cpp:330
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not restore old partition size for partition <filename>%1</filename>."
+msgstr ""
+"Ole Partitschoongrött för Partitschoon <filename>%1</filename> lett sik nich "
+"wedderherstellen."
+
+#: ops/restoreoperation.cpp:147
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Checking target file system on partition <filename>%1</filename> after the "
+"restore failed."
+msgstr ""
+"Pröven vun't Teel-Dateisysteem op Partitschoon <filename>%1</filename> na't "
+"Wedderherstellen fehlslaan."
+
+#: ops/restoreoperation.cpp:154
+msgctxt "@info/plain"
+msgid "Restoring file system failed."
+msgstr "Wedderherstellen vun't Dateisysteem fehlslaan."
+
+#: ops/restoreoperation.cpp:158
+msgctxt "@info/plain"
+msgid "Creating the destination partition to restore to failed."
+msgstr ""
+"Opstellen vun de Teelpartitschoon, na de Du wedderherstellen wullst, is "
+"fehlslaan."
+
+#: ops/restoreoperation.cpp:173
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+msgstr ""
+"Partitschoon ut <filename>%1</filename> na <filename>%2</filename> "
+"wedderherstellen"
+
+#: ops/restoreoperation.cpp:175
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+"filename>"
+msgstr ""
+"Partitschoon op <filename>%1</filename> bi %2 ut <filename>%3</filename> "
+"wedderherstellen"
+
+#: ops/setfilesystemlabeloperation.cpp:71
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> to \"%2\""
+msgstr "Beteker för Partitschoon <filename>%1</filename> op \"%2\" setten"
+
+#: ops/setfilesystemlabeloperation.cpp:73
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+msgstr ""
+"Beteker för Partitschoon <filename>%1</filename> vun \"%2\" op \"%3\" setten"
+
+#: ops/setpartflagsoperation.cpp:77
+#, kde-format
+msgctxt "@info/plain"
+msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+msgstr "Marken för Partitschoon <filename>%1</filename> op \"%2\" setten"
+
+#: plugins/dummy/dummybackend.cpp:47
+msgctxt "@title"
+msgid "Dummy Backend Plugin"
+msgstr ""
+
+#: plugins/dummy/dummybackend.cpp:49
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "KDE Partition Manager"
+msgid "KDE Partition Manager dummy backend."
+msgstr "KDE-Partitschonenpleger"
+
+#: plugins/dummy/dummybackend.cpp:51
+msgid "Copyright 2010 Volker Lanz"
+msgstr "Copyright © 2010: Volker Lanz"
+
+#: plugins/dummy/dummybackend.cpp:53 plugins/libparted/libpartedbackend.cpp:74
+#: util/helpers.cpp:130
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: plugins/libparted/libpartedbackend.cpp:68
+#, fuzzy
+msgctxt "@title"
+msgid "LibParted Backend Plugin"
+msgstr "LibParted-Verschoon:"
+
+#: plugins/libparted/libpartedbackend.cpp:70
+#, fuzzy
+#| msgid "KDE Partition Manager KPart"
+msgid "KDE Partition Manager backend for libparted."
+msgstr "KDE-Partitschonenpleger-Komponent"
+
+#: plugins/libparted/libpartedbackend.cpp:72
+msgid "Copyright 2008,2009,2010 Volker Lanz"
+msgstr "Copyright © 2008, 2009, 2010: Volker Lanz"
+
+#: plugins/libparted/libpartedbackend.cpp:107
+#, kde-format
+msgctxt "@info/plain"
+msgid "LibParted Exception: %1"
+msgstr "Utnahm binnen \"libparted\": %1"
+
+#: plugins/libparted/libpartedbackend.cpp:422
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not access device <filename>%1</filename>"
+msgstr "Keen Togriep op Reedschap <filename>%1</filename>"
+
+#: plugins/libparted/libpartedbackend.cpp:426
+#, kde-format
+msgctxt "@info/plain"
+msgid "Device found: %1"
+msgstr "Reedschap funnen: %1"
+
+#: plugins/libparted/libparteddevice.cpp:100
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not retrieve partition table type "
+"\"%1\" for <filename>%2</filename>."
+msgstr ""
+"Opstellen vun de Partitschonentabell fehlslaan: Tabelltyp \"%1\" lett sik "
+"för <filename>%2</filename> nich bruken."
+
+#: plugins/libparted/libparteddevice.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Creating partition table failed: Could not open device <filename>%1</"
+#| "filename>."
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open backend device <filename>%1</"
+"filename>."
+msgstr ""
+"Opstellen vun de Partitschonentabell fehlslaan: Reedschap <filename>%1</"
+"filename> lett sik nich opmaken."
+
+#: plugins/libparted/libparteddevice.cpp:116
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Creating partition table failed: Could not retrieve partition table type "
+#| "\"%1\" for <filename>%2</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not create a new partition table in "
+"the backend for device <filename>%1</filename>."
+msgstr ""
+"Opstellen vun de Partitschonentabell fehlslaan: Tabelltyp \"%1\" lett sik "
+"för <filename>%2</filename> nich bruken."
+
+#: plugins/libparted/libpartedpartition.cpp:43
+#, kde-format
+msgctxt "@info/plain"
+msgid "The flag \"%1\" is not available on the partition's partition table."
+msgstr ""
+"De Mark \"%1\" gifft dat för de Partitschoon ehr Partitschonentabell nich."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:167
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Unknown partition role for new partition <filename>%1</filename> (roles: %2)"
+msgstr ""
+"Nich begäng Partitschoontyp för nieg Partitschoon <filename>%1</filename> "
+"(Typen: %2)"
+
+#: plugins/libparted/libpartedpartitiontable.cpp:177
+#, kde-format
+msgctxt "@info/plain"
+msgid "Failed to create new partition <filename>%1</filename>."
+msgstr "De niege Partitschoon <filename>%1</filename> lett sik nich opstellen."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:189
+msgctxt "@info/plain"
+msgid ""
+"Failed to create a new partition: could not get geometry for constraint."
+msgstr ""
+"En nieg Partitschoon lett sik nich opstellen: Geometrie lett sik nich utreken"
+
+#: plugins/libparted/libpartedpartitiontable.cpp:221
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Partition to delete (<filename>%1</filename>) not "
+"found on disk."
+msgstr ""
+"Dat Wegdoon vun de Partitschoon is fehlslaan. De Partitschoon (<filename>%1</"
+"filename>) lett sik op de Fastplaat nich finnen."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:245
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not set geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+"Geometrie för Partitschoon <filename>%1</filename> lett sik nich fastleggen, "
+"bides ehr Grött ännert oder se verschaven warrt."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:248
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get constraint for partition <filename>%1</filename> while trying "
+"to resize/move it."
+msgstr ""
+"Grenzen för Partitschoon <filename>%1</filename> laat sik nich halen, bides "
+"ehr Grött ännert oder se verschaven warrt."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:251
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+"Geometrie för Partitschoon <filename>%1</filename> lett sik nich halen, "
+"bides ehr Grött ännert oder se verschaven warrt."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:254
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize/move "
+"it."
+msgstr ""
+"Partitschoon <filename>%1</filename> lett sik nich opmaken, bides ehr Grött "
+"ännert oder se verschaven warrt."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:273
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Failed to erase reiser4 signature on partition <filename>%1</filename>."
+msgctxt "@info/plain"
+msgid ""
+"Failed to erase filesystem signature on partition <filename>%1</filename>."
+msgstr ""
+"De Reiser4-Signatuur lett sik nich vun Partitschoon <filename>%1</filename> "
+"wegmaken."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:282
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system on partition <filename>%1</filename>: Failed to "
+"get partition."
+msgstr ""
+"Dateisysteem op Partitschoon <filename>%1</filename> lett sik nich wegdoon: "
+"Partitschoon lett sik nich faatkriegen."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:310
+#, kde-format
+msgctxt "@info/plain"
+msgid "Could not resize file system on partition <filename>%1</filename>."
+msgstr ""
+"De Grött vun't Dateisysteem op Partitschoon <filename>%1</filename> lett sik "
+"nich ännern."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:313
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for resized partition <filename>%1</filename> while "
+"trying to resize the file system."
+msgstr ""
+"De Geometrie för de in de Grött ännerte Partitschoon <filename>%1</filename> "
+"lett sik nich halen, bides de Grött vun't Dateisysteem ännert warrt."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:340
+#, kde-format
+msgctxt "@info/plain"
+msgid ""
+"Could not determine file system of partition at sector %1 on device "
+"<filename>%2</filename>."
+msgstr ""
+"Dateisysteem vun de Partitschoon op Sektor %1 vun de Reedschap <filename>%2</"
+"filename> lett sik nich fastslaan."
+
+#: plugins/libparted/libpartedpartitiontable.cpp:353
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Could not resize file system on partition <filename>%1</filename>."
+msgctxt "@info/plain"
+msgid "Could not update the system type for partition <filename>%1</filename>."
+msgstr ""
+"De Grött vun't Dateisysteem op Partitschoon <filename>%1</filename> lett sik "
+"nich ännern."
+
+#: util/capacity.cpp:117
+msgctxt "@info/plain unit"
+msgid "Byte"
+msgid_plural "Bytes"
+msgstr[0] "Byte"
+msgstr[1] "Bytes"
+
+#: util/capacity.cpp:118
+msgctxt "@info/plain unit"
+msgid "KiB"
+msgstr "KiB"
+
+#: util/capacity.cpp:119
+msgctxt "@info/plain unit"
+msgid "MiB"
+msgstr "MiB"
+
+#: util/capacity.cpp:120
+msgctxt "@info/plain unit"
+msgid "GiB"
+msgstr "GiB"
+
+#: util/capacity.cpp:121
+msgctxt "@info/plain unit"
+msgid "TiB"
+msgstr "TiB"
+
+#: util/capacity.cpp:122
+msgctxt "@info/plain unit"
+msgid "PiB"
+msgstr "PiB"
+
+#: util/capacity.cpp:123
+msgctxt "@info/plain unit"
+msgid "EiB"
+msgstr "EiB"
+
+#: util/capacity.cpp:124
+msgctxt "@info/plain unit"
+msgid "ZiB"
+msgstr "ZiB"
+
+#: util/capacity.cpp:125
+msgctxt "@info/plain unit"
+msgid "YiB"
+msgstr "YiB"
+
+#: util/capacity.cpp:129
+msgctxt "@info/plain unit"
+msgid "(unknown unit)"
+msgstr "(nich begäng Eenheit)"
+
+#: util/externalcommand.cpp:126
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "Command: %1 %2"
+msgctxt "@info/plain"
+msgid "Command: %1"
+msgstr "Befehl: %1 %2"
+
+#: util/externalcommand.cpp:134
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "(Command timeout while starting)"
+msgctxt "@info/plain"
+msgid "(Command timeout while starting \"%1\")"
+msgstr "(Befehl-Tiet bi't Opropen aflopen)"
+
+#: util/externalcommand.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "@info/plain"
+#| msgid "(Command timeout while running)"
+msgctxt "@info/plain"
+msgid "(Command timeout while running \"%1\")"
+msgstr "(Befehl-Tiet bi't Lopen aflopen)"
+
+#: util/helpers.cpp:104
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You do not have administrative privileges.</warning></"
+"para><para>It is possible to run <application>%1</application> without these "
+"privileges. You will, however, <emphasis>not</emphasis> be allowed to apply "
+"operations.</para><para>Do you want to continue running <application>%1</"
+"application>?</para>"
+msgstr ""
+"<para><warning>Du hest keen Systeempleger-Verlöven</warning></para><para>Du "
+"kannst <application>%1</application> ahn disse Verlöven opropen, man du "
+"kannst denn <emphasis> keen</emphasis> Akschonen utföhren</para><para>Wullt "
+"Du <application>%1</application> liekers opropen?</para>"
+
+#: util/helpers.cpp:109
+msgctxt "@title:window"
+msgid "No administrative privileges"
+msgstr "Keen Systeempleger-Verlöven"
+
+#: util/helpers.cpp:110
+msgctxt "@action:button"
+msgid "Run without administrative privileges"
+msgstr "Ahn Plegerverlöven opropen"
+
+#: util/helpers.cpp:123
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>KDE-Partischonenpleger</application>"
+
+#: util/helpers.cpp:125
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Fastplaten, Partitschonen un Dateisystemen plegen"
+
+#: util/helpers.cpp:127
+#, fuzzy
+#| msgid "Copyright 2008,2009,2010 Volker Lanz"
+msgctxt "@info:credit"
+msgid "© 2008-2013 Volker Lanz"
+msgstr "Copyright © 2008, 2009, 2010: Volker Lanz"
+
+#: util/helpers.cpp:130
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr ""
+
+#: util/helpers.cpp:133
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: util/helpers.cpp:133
+#, fuzzy
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Partitschoon-Typ:"
+
+#: util/helpers.cpp:134
+msgid "Andrius Štikonas"
+msgstr ""
+
+#: util/helpers.cpp:134
+msgctxt "@info:credit"
+msgid "Btrfs support"
+msgstr ""
+
+#: util/helpers.cpp:165
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Striepen"
+
+#: util/helpers.cpp:199
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+
+#: util/helpers.cpp:202 util/helpers.cpp:211
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr ""
+
+#: util/helpers.cpp:208
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The configured external browser could not be run. Please check your "
+#| "settings."
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"De instellte externe Kieker lett sik nich opropen. Prööv bitte Dien "
+"Instellen."
+
+#: util/helpers.cpp:224
+msgctxt "@info"
+msgid ""
+"<para>No usable devices could be found.</para><para>Make sure you have "
+"sufficient privileges to access block devices on your system.</para>"
+msgstr ""
+
+#: util/helpers.cpp:226
+msgctxt "@title:window"
+msgid "Error: No Usable Devices Found"
+msgstr ""
+
+#: util/htmlreport.cpp:65 util/htmlreport.cpp:72
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Status:"
+msgid "%1: SMART Status Report"
+msgstr "Status:"
+
+#: util/htmlreport.cpp:80
+msgid "Date:"
+msgstr "Datum:"
+
+#: util/htmlreport.cpp:81
+msgid "Program version:"
+msgstr "Programmverschoon:"
+
+#: util/htmlreport.cpp:82
+msgid "Backend:"
+msgstr "Hülpprogramm:"
+
+#: util/htmlreport.cpp:83
+msgid "KDE version:"
+msgstr "KDE-Verschoon:"
+
+#: util/htmlreport.cpp:84
+msgid "Machine:"
+msgstr "Reekner:"
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy

@@ -1,0 +1,206 @@
+<appendix id="installation">
+	<title
+>Installation</title>
+
+	<sect1 id="obtaining">
+		<title
+>Wie Sie &partman; erhalten</title>
+
+		<para
+>Die Haupt-Webseite für &partman; ist <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Hier finden Sie auch immer die aktuelle Version von &partman;. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Voraussetzungen</title>
+
+		<para
+>Um &partman; erfolgreich ausführen zu können, benötigen Sie &kde; 4.2 oder neuer und &Qt; 4.4.0 oder neuer. Sie müssen jedoch nicht angemeldet sein: &partman; funktioniert auch unter anderen Arbeitsumgebungen, wenn die Standardbibliotheken von &kde; installiert sind. </para>
+
+		<para
+>Für den Großteil der Basisfunktionen verwendet &partman; <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+>. Um UUIDs für kopierte Dateisysteme zu erstellen, wird libuuid verwendet, welches Bestandteil von <ulink url="http://e2fsprogs.sourceforge.net"
+>e2fsprogs</ulink
+> ist. Des Weiteren wird die <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>Bibliothek libblkid des util-linux-ng Projekts verwendet</ulink
+>, um Informationen über Partitionen und Dateisysteme abzurufen. Alle genannten Bibliotheken werden benötigt, um &partman; zu kompilieren und auszuführen. </para>
+
+		<para
+>&partman; verwendet viele externe Dienstprogramme, um eine große Anzahl an Dateisystemen zu unterstützen. Spezielle Dienstprogramme werden nur benötigt, wenn die Unterstützung für eine Operation auf einem bestimmten Dateisystem benötigt wird. Wenn Sie beispielsweise die Größe eines NTFS-Dateisystems ändern möchten, muss <quote
+>ntfsresize</quote
+> installiert sein. Um &partman; aus den Quellen zu kompilieren, werden jedoch keine dieser Dienstprogramme benötigt. </para>
+
+		<para
+>Hier ist eine Liste aller von &partman; benutzten externen Programme: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: Liest Informationen über die Speicherplatzbelegung und Bezeichnungen für das Dateisystem <quote
+>reiser4</quote
+>. Teile der Dienstprogramme <quote
+>reiser4progs</quote
+> können unter <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: Liest Informationen über die Speicherplatzbelegung und Bezeichnungen für das Dateisystem reiserfs. Teile der Dienstprogramme reiserfsprogs können unter <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: Liest Information für ext2/ext3/ext4-Dateisysteme. Teile der e2fsprogs-Dienstprogramme können unter <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: Liest und schreibt Beschreibungen für ext2/ext3/ext4-Dateisysteme. Teile der e2fsprogs Dienstprogramme können unter <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: Liest Informationen über die Speicherplatzbelegung und überprüft FAT16- und FAT32-Dateisysteme. Teile der Dienstprogramme <quote
+>dosfstools</quote
+> können unter <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: Liest Beschreibungen und überprüft HFS-Dateisysteme. Teile der Dienstprogramme <quote
+>hfsutils</quote
+> können unter <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: Überprüft das Dateisystem HFS+. Teile der Dienstprogramme <quote
+>hfsplusutils </quote
+>können unter <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: Liest Informationen über die Speicherplatzbelegung für das JFS-Dateisystem. Teile der Dienstprogramme <quote
+>jfsutils</quote
+> können unter <ulink url="http://jfs.sourceforge.net/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: Liest und schreibt Bezeichnungen für JFS-Dateisysteme. Teile der Dienstprogramme jfsutils können unter <ulink url="http://jfs.sourceforge.net/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: Liest und schreibt Bezeichnungen für NTFS-Dateisysteme. Teile der Dienstprogramme ntfsprogs können unter <ulink url="http://www.linux-ntfs.org/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: Liest Informationen über die Speicherplatzbelegung, überprüft NTFS-Dateisysteme und ändert deren Größe. Teile der Dienstprogramme <quote
+>ntfsprogs</quote
+> können unter <ulink url="http://www.linux-ntfs.org/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: Deaktiviert swap-Dateisysteme. Teile der Dienstprogramme util-linux-ng können unter <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: Aktiviert swap-Dateisysteme. Teile der Dienstprogramme util-linux-ng können unter <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: Liest Bezeichnungen für linuxswap-Dateisysteme. Teile von udev können unter <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: Liest Informationen über die Speicherplatzbelegung, liest und schreibt Bezeichnungen für das XFS-Dateisystem. Teile der Dienstprogramme xfsprogs können unter <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+> heruntergeladen werden. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Kompilierung und Installation</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Weiterführende Lektüre</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+><ulink url="http://www.linfo.org/"
+>The Linux Information Project</ulink
+> stellt viele Informationen über verschiedenste Bereiche in Linux bereit. Der dort verfügbare Artikel über <ulink url="http://www.linfo.org/partition.html"
+>Partitionen</ulink
+> ist sehr informativ. Des Weiteren gibt es Artikel über <ulink url="http://www.linfo.org/partition_table.html"
+>Partitionstabellen</ulink
+>, <ulink url="http://www.linfo.org/hdd.html"
+>Festplattengeräte</ulink
+> und <ulink url="http://www.linfo.org/filesystem.html"
+>Dateisysteme</ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>Das <ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> gibt einen grundlegenden Überblick über das Arbeiten mit und Partitionieren von Festplatten-Geräten auf Linux und Linux-Dateisystemen. Swap-Partitionen werden ebenfalls behandelt. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>Auf der <ulink url="http://www.wikipedia.org"
+>Wikipedia</ulink
+> gibt es einen Eintrag über <ulink url="http://de.wikipedia.org/wiki/Partition_(Informatik)"
+>Partition (Informatik)</ulink
+>. </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

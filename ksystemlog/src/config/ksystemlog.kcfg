@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg	xmlns="http://www.kde.org/standards/kcfg/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+	http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+
+	<kcfgfile name="ksystemlogrc" />
+	
+	<include>klocale.h</include>
+	
+	<group name="KSystemLogGeneral">
+		<entry name="StartupLogMode" type="String">
+			<label>Load this log mode at startup.</label>
+			<default>systemLogMode</default>
+		</entry>
+
+		<entry name="MaxLines" type="Int">
+			<label>The log view line count limit.</label>
+			<default>1000</default>
+		</entry>
+		
+		<entry name="DeleteDuplicatedLines" type="Bool">
+			<label>Option is true if the user wants to delete repeated log lines.</label>
+			<default>false</default>
+		</entry>
+		
+		<entry name="DeleteProcessIdentifier" type="Bool">
+			<label>Option is true if the PID in the process column of the SystemLog is to be omitted.</label>
+			<default>false</default>
+		</entry>
+		
+		<entry name="ColorizeLogLines" type="Bool">
+			<label>Option is true if the log lines are to be colored depending on their log level.</label>
+			<default>true</default>
+		</entry>
+
+
+		<entry name="TooltipEnabled" type="Bool">
+			<label>Whether the tooltips are enabled.</label>
+			<default>true</default>
+		</entry>
+		
+		<entry name="NewLinesDisplayed" type="Bool">
+			<label>Whether new lines are displayed.</label>
+			<default>true</default>
+		</entry>
+		
+		<entry name="ToggleFilterBar" type="Bool">
+			<label>Whether the filter bar is shown.</label>
+			<default>true</default>
+		</entry>
+		
+		<entry name="DateFormat" type="Enum">
+			<label>The date format of log lines.</label>
+			<default>KLocale::ShortDate</default>
+			<!--
+			<choices>
+				<choice name="KLocale::ShortDate"/>
+				<choice name="KLocale::LongDate"/>
+				<choice name="KLocale::FancyShortDate"/>
+				<choice name="KLocale::FancyLongDate"/>
+			</choices>
+			-->
+		</entry>
+		
+		<!--
+
+		Samba config entries
+		<entry name="SambaPaths" type="StringList">
+			<label>The Samba log file paths.</label>
+			<default>/var/log/samba/log.nmbd,/var/log/samba/log.smbd</default>
+		</entry>
+		
+		-->
+		
+	</group>
+	
+</kcfg>

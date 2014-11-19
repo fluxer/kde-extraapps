@@ -1,0 +1,192 @@
+<appendix id="installation">
+	<title
+>Встановлення</title>
+
+	<sect1 id="obtaining">
+		<title
+>Як отримати &partman;</title>
+
+		<para
+>Головний вебсайт &partman; знаходиться за адресою <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Найсвіжішу версію програми можна знайти саме там. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Вимоги</title>
+
+		<para
+>Для того, щоб користуватися &partman;, вам слід встановити &kde; 4.2 або пізнішу версію і &Qt; 4.4.0 або пізнішу версію. Для користування програмою вам не обов’язково використовувати саме стільничне середовище &kde;: &partman; добре працює і у інших стільничних середовищах, якщо встановлено базові бібліотеки &kde;. </para>
+
+		<para
+>Основні функціональні можливості &partman; реалізуються за допомогою бібліотеки <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+>. Для створення UUID для копій файлових систем програма використовує бібліотеку libuuid, яка є частиною пакунка <ulink url="http://sourceforge.net/projects/e2fsprogs"
+>e2fsprogs</ulink
+>. Крім того, програма використовує <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>бібліотеку libblkid з проекту util-linux-ng</ulink
+> для отримання даних щодо розділів та файлових систем. Всі ці бібліотеки потрібні для збирання і запуску &partman;. </para>
+
+		<para
+>З метою підтримки різних файлових систем &partman; інтенсивно використовує зовнішні інструменти. Кожен з цих інструментів буде потрібен лише у випадку, якщо вам потрібна підтримка дій з певною файловою системою, з якою працює цей інструмент. Наприклад, якщо вам не знадобиться зміна розміру файлової системи NTFS, вам не потрібно встановлювати <quote
+>ntfsresize</quote
+>. Жоден з цих інструментів не потрібен для збирання &partman; з початкових кодів. </para>
+
+		<para
+>Ось список зовнішніх інструментів, які може використовувати &partman;: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: читання інформації про використання і міток файлової системи reiser4. Є частиною набору програм reiser4progs, який можна звантажити за адресою <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: читання інформації про використання і міток файлової системи reiserfs. Є частиною набору програм reiserfsprogs, який можна звантажити за адресою <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: читання інформації про використання для файлових систем ext2, ext3 та ext4. Є частиною набору програм e2fsprogs, який можна звантажити за адресою <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: читання та запис міток для файлових систем ext2, ext3 та ext4. Є частиною набору програм e2fsprogs, який можна звантажити за адресою <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: читання інформації про використання і перевірка для файлових систем FAT16 і FAT32. Є частиною набору програм dosfstools, який можна звантажити за <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+>цією</ulink
+> адресою. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: читання міток і перевірка для файлової системи HFS. Є частиною набору програм hfsutils, який можна звантажити за адресою <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: перевірка файлових систем HFS+. Є частиною набору програм hfsplusutils, який можна звантажити за адресою <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: читання інформації про використання для файлових систем JFS. Є частиною набору програм jfsutils, який можна звантажити за адресою <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: читання і запис міток файлової системи JFS. Є частиною набору програм jfsutils, який можна звантажити за адресою <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: читання і запис міток файлової системи NTFS. Є частиною набору програм ntfsprogs, який можна звантажити за адресою <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: читання інформації про використання, перевірка і зміна розмірів файлової системи NTFS. Є частиною набору програм ntfsprogs, який можна звантажити за адресою <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: дезактивація файлових систем swap. Є частиною набору програм util-linux-ng, який можна звантажити за адресою <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: активація файлових систем swap. Є частиною набору програм util-linux-ng, який можна звантажити за адресою <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: читання міток файлової системи linuxswap. Є частиною пакунка udev, який можна звантажити за адресою <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: читання інформації про використання, читання і запис міток файлової системи XFS. Є частиною набору програм xfsprogs, який можна звантажити за адресою <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+>. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Збирання і встановлення</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Інформація для подальшого ознайомлення</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>Сторінки <ulink url="http://www.linfo.org/"
+>Інформаційного проекту Linux</ulink
+> містять безліч відомостей щодо багатьох аспектів Linux. Стаття щодо <ulink url="http://www.linfo.org/partition.html"
+>розділів</ulink
+>, розміщена у рамках цього проекту, дуже корисна. Крім того, ви можете переглянути записи щодо <ulink url="http://www.linfo.org/partition_table.html"
+>таблиць розділів</ulink
+>, <ulink url="http://www.linfo.org/hdd.html"
+>пристроїв жорстких дисків</ulink
+> і <ulink url="http://www.linfo.org/filesystem.html"
+>файлових систем</ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>На сторінці <ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> подано базовий огляд роботи і розподілу між розділами дискових пристроїв у Linux, а також про рідні для linux файлові системи. Крім того, там описано і розділи для свопінгу. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>У <ulink url="http://www.wikipedia.org"
+>Вікіпедії</ulink
+> також є запис щодо <ulink url="http://en.wikipedia.org/wiki/Disk_partitioning"
+>розбиття дисків на розділи</ulink
+>. </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

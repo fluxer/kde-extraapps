@@ -1,0 +1,69 @@
+nicolas.ternisien@gmail.com February 27, 1999
+ Major rewrite of KCron.
+ 
+gary@meyer.net September 6, 1999
+
+  Fixed bug.  Program didn't exit after editing.  KDE2 only.
+  Fixed bug.  Variable editor didn't update icon.  KDE2 only.
+  Changed default sorting.  Alphabetical with System Crontab on top.
+  Removed -lkfm from Makefile.
+  Change kcron.kdelnk to kcron.desktop.
+
+gary@meyer.net September 7, 1999
+
+  cttask.h, cttash.cpp, kttask.cpp
+  Fixed bug.  New syscron task didn't let user enter "run as" field.
+
+gary@meyer.net September 10, 1999
+
+  Initial implementation of cut/copy/paste.
+
+gary@meyer.net September 17, 1999
+
+  Work around for Qt 2.0 ~QListViewItem bug.
+
+gary@meyer.net November 1, 1999
+
+  Released 0.5.
+
+gary@meyer.net November 7, 1999
+
+  Added KCron handbook.  Various bug fixes.
+
+gary@meyer.net November 15, 1999
+
+  Fixed bug for supporting strftime (in CTTask::describe()) on different
+  platforms.
+
+gary@meyer.net November 19, 1999
+
+  Code clean up effort.
+
+gary@meyer.net November 29, 1999
+
+  Removed dependency on langinfo.h for internationalization of days of week
+  and months.  Not broadly supported across platforms/distributions.
+
+gary@meyer.net December 2, 1999
+
+  Removed CTDebug, don't really need anymore.
+  Addeed note for translators so they'll look at README.translators.
+  Cleaned up CTUnit: moved implementation to cpp file, removed macro,
+  added support for "sun, Mon" and "jan, FEB" in crontab file.
+
+code@jamesots.com January 27, 2004
+
+  * Fixed bug. If only one hour wasn't checked '*' was still being used.
+  * Fixed bug. Removed autoWrap from KTVariable, as text is wrapped
+    in the line edit box anyway. Changed to use QTextEdit instead of the 
+    deprecated QMultiLineEdit.
+  * Fixed bug. Strip  out newlines from variable comments, because we
+    only read one line of comment from crontab for each entry.
+  * Fixed bug. System Crontab uses correct icon.
+  * Using standard icons for everything now.
+  * Added Set/Clear All buttons.
+  * Added New, Modify and Delete buttons on toolbar. (Bug 54399 and
+    part of bug 55684. Note about 55684: Use Ctrl-X as shortcut to delete
+    item.)
+  * Enabled New action when variables and tasks are selected, instead of
+    only when the containing label is selected.

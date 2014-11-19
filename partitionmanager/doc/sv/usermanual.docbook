@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Använda &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>Huvudfönstret</title>
+
+		<para
+>Förutom huvudvyn som visar enheten som för närvarande är vald i en grafisk vy och trädvy, använder &partman; &Qt;:s <quote
+>grafiska dockningskomponenter</quote
+> eller rutor för att visa viss information och tillåta markeringar. Se följande skärmbild för en översikt av &partman;s huvudfönster. </para>
+		
+		<para>
+			<screenshot>
+				<screeninfo
+>Huvudfönstret i &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Huvudfönster</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Menyrad: Menyraden visar några egna och några icke-standardiserade menyer för att välja åtgärder att utföra. Alla kommandon beskrivs i detalj i <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Verktygsrad: &partman;s verktygsrad är en vanlig verktygsrad i &kde; 4. Den kan anpassas fullständigt. För detaljerad information, se<xref linkend="menu-settings"/>. </para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Enhetsrutan: Den här rutan listar alla <glossterm linkend="glossary-device"
+>enheter</glossterm
+> som finns på datorn och som &partman; kan hantera. Markera en enhet i rutan för att visa eller ändra den i den grafiska enhetsvyn eller i enhetsträdvyn.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Grafisk enhetsvy: I den här vyn visar &partman; en grafisk representation av enheten som för närvarande är vald. Var och en av enhetens <glossterm linkend="glossary-partition"
+>partitioner</glossterm
+> har sin egen ruta med enhetens nodnamn (<quote
+>sda1</quote
+> för den första partitionen på skärmbilden ovan) och användningsinformation (det mörka violetta området på skärmbilden). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Utökade partitioner</glossterm
+> är visuellt utmärkta av sina extra omgivande kanter (ljusgröna på skärmbilden ovan). </para>
+					<para
+>Du kan välja en partition genom att klicka på den i den grafiska enhetsvyn. Ett dubbelklick öppnar <link linkend="menu-partition-properties"
+>partitionens egenskapsdialogruta</link
+>. Ett högerklick visar partitionens sammanhangsberoende meny. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Enhetens trädvy: Enhetens trädvy visar utökad information om varje enhet på den valda enheten. Partitionen som för närvarande är vald är markerad. Ett dubbelklick på en partition öppnar <link linkend="menu-partition-properties"
+>partitionens egenskapsdialogruta</link
+>. Ett högerklick visar partitionens sammanhangsberoende meny. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Informationsrutan: Informationsrutan visar viss detaljinformation om enheten eller partitionen som för närvarande är vald. Den är inte normalt aktiverad.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Rutan med väntande åtgärder: Den här rutan listar alla åtgärder som kommer att utföras när du väl väljer <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>På skärmbilden ovan väntar en åtgärd: Om användaren verkställer åtgärder nu, kommer <glossterm linkend="glossary-filesystem"
+>filsystemet</glossterm
+> på /dev/sdb3 felkontrolleras, och om det behövs, repareras. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Statusrad: Statusraden visar hur många åtgärder som för närvarande väntar. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Loggutmatningsrutan: Den här rutan visar logginformation. Den är bara av sekundär betydelse för andra än avancerade användare, och är normalt inte aktiverad.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1>
+&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

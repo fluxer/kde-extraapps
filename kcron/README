@@ -1,0 +1,12 @@
+KCron
+
+KDE Task Scheduler
+
+GUI crontab editor
+
+Requires:
+
+  Unix POSIX libraries for localized dates and times (glibc)
+  Cron (vixie-cron)
+  Crontab (crontabs)
+
