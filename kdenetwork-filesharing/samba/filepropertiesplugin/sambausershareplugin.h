@@ -42,7 +42,6 @@ public:
 private Q_SLOTS:
     void load();
     void toggleShareStatus(bool checked);
-    void installSamba();
     void checkShareName(const QString &name);
 
 private:
