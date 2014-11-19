@@ -73,7 +73,6 @@
 #include "page.h"
 #include "page_p.h"
 #include "pagecontroller_p.h"
-#include "scripter.h"
 #include "settings_core.h"
 #include "sourcereference.h"
 #include "sourcereference_p.h"
@@ -2319,16 +2318,6 @@ Document::OpenResult Document::openDocument( const QString & docFile, const KUrl
     AudioPlayer::instance()->d->m_currentDocument = isstdin ? KUrl() : d->m_url;
     d->m_docSize = document_size;
 
-    const QStringList docScripts = d->m_generator->metaData( "DocumentScripts", "JavaScript" ).toStringList();
-    if ( !docScripts.isEmpty() )
-    {
-        d->m_scripter = new Scripter( d );
-        Q_FOREACH ( const QString &docscript, docScripts )
-        {
-            d->m_scripter->execute( JavaScript, docscript );
-        }
-    }
-
     return OpenSuccess;
 }
 
@@ -2352,9 +2341,6 @@ void Document::closeDocument()
 
     delete d->m_pageController;
     d->m_pageController = 0;
-
-    delete d->m_scripter;
-    d->m_scripter = 0;
 
      // remove requests left in queue
     d->m_pixmapRequestsMutex.lock();
@@ -3750,28 +3736,12 @@ void Document::processAction( const Action * action )
             AudioPlayer::instance()->playSound( linksound->sound(), linksound );
             } break;
 
-        case Action::Script: {
-            const ScriptAction * linkscript = static_cast< const ScriptAction * >( action );
-            if ( !d->m_scripter )
-                d->m_scripter = new Scripter( d );
-            d->m_scripter->execute( linkscript->scriptType(), linkscript->script() );
-            } break;
-
         case Action::Movie:
             emit processMovieAction( static_cast< const MovieAction * >( action ) );
             break;
         case Action::Rendition: {
             const RenditionAction * linkrendition = static_cast< const RenditionAction * >( action );
-            if ( !linkrendition->script().isEmpty() )
-            {
-                if ( !d->m_scripter )
-                    d->m_scripter = new Scripter( d );
-                d->m_scripter->execute( linkrendition->scriptType(), linkrendition->script() );
-            }
-            else
-            {
-                emit processRenditionAction( static_cast< const RenditionAction * >( action ) );
-            }
+            emit processRenditionAction( static_cast< const RenditionAction * >( action ) );
             } break;
     }
 }

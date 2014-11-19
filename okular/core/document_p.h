@@ -41,7 +41,6 @@ namespace Okular {
 class ConfigInterface;
 class PageController;
 class SaveInterface;
-class Scripter;
 class View;
 }
 
@@ -93,7 +92,6 @@ class DocumentPrivate
             m_generatorsLoaded( false ),
             m_pageController( 0 ),
             m_closingLoop( 0 ),
-            m_scripter( 0 ),
             m_archiveData( 0 ),
             m_fontsCached( false ),
             m_documentInfo( 0 ),
@@ -250,8 +248,6 @@ class DocumentPrivate
 
         PageController *m_pageController;
         QEventLoop *m_closingLoop;
-
-        Scripter *m_scripter;
 
         ArchiveData *m_archiveData;
         QString m_archivedFileName;

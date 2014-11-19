@@ -61,7 +61,6 @@ set(okularcore_SRCS
    core/pagesize.cpp
    core/pagetransition.cpp
    core/rotationjob.cpp
-   core/scripter.cpp
    core/sound.cpp
    core/sourcereference.cpp
    core/textdocumentgenerator.cpp
@@ -71,15 +70,6 @@ set(okularcore_SRCS
    core/utils.cpp
    core/view.cpp
    core/fileprinter.cpp
-   core/script/executor_kjs.cpp
-   core/script/kjs_app.cpp
-   core/script/kjs_console.cpp
-   core/script/kjs_data.cpp
-   core/script/kjs_document.cpp
-   core/script/kjs_fullscreen.cpp
-   core/script/kjs_field.cpp
-   core/script/kjs_spell.cpp
-   core/script/kjs_util.cpp
 )
 
 kde4_add_ui_files(okularcore_SRCS
@@ -128,12 +118,7 @@ kde4_add_kcfg_files(okularcore_SRCS conf/settings_core.kcfgc )
 
 kde4_add_library(okularcore SHARED ${okularcore_SRCS})
 
-# Special handling for linking okularcore on OSX/Apple
-IF(APPLE)
-    SET(OKULAR_IOKIT "-framework IOKit" CACHE STRING "Apple IOKit framework")
-ENDIF(APPLE)
-
-target_link_libraries(okularcore  ${OKULAR_IOKIT} ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBRARY} ${KDE4_KJSAPI_LIBRARY} ${MATH_LIB} ${KDE4_THREADWEAVER_LIBRARY} )
+target_link_libraries(okularcore ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBRARY} ${MATH_LIB} ${KDE4_THREADWEAVER_LIBRARY} )
 
 if(LibKScreen_FOUND)
     target_link_libraries(okularcore ${LibKScreen_LIBRARY})
