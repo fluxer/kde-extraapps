@@ -11,9 +11,6 @@ macro_log_feature(LIBSPECTRE_FOUND "libspectre" "A PostScript rendering library"
 macro_optional_find_package(Kexiv2)
 macro_log_feature(KEXIV2_FOUND "LibKExiv2" "Wrapper around Exiv2 library" "http://www.digikam.org/sharedlibs" FALSE "" "Support for image files")
 
-macro_optional_find_package(CHM)
-macro_log_feature(CHM_FOUND "CHM" "A library for dealing with Microsoft ITSS/CHM format files" "http://www.jedrea.com/chmlib" FALSE "" "Support CHM files in okular.")
-
 macro_optional_find_package(DjVuLibre)
 macro_log_feature(DJVULIBRE_FOUND "DjVuLibre" "A library for dealing with DjVu formatted files" "http://djvulibre.djvuzone.org" FALSE "3.5.17" "Support for DjVu files in okular.")
 
@@ -47,10 +44,6 @@ endif(LIBSPECTRE_FOUND)
 if(KEXIV2_FOUND)
   add_subdirectory( kimgio )
 endif(KEXIV2_FOUND)
-
-if(CHM_FOUND)
-  add_subdirectory( chm )
-endif(CHM_FOUND)
 
 if(DJVULIBRE_FOUND)
   add_subdirectory(djvu)
