@@ -218,7 +218,6 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
     const Poppler::LinkBrowse *popplerLinkBrowse;
     const Poppler::LinkAction *popplerLinkAction;
     const Poppler::LinkSound *popplerLinkSound;
-    const Poppler::LinkJavaScript *popplerLinkJS;
 #ifdef HAVE_POPPLER_0_20
     const Poppler::LinkMovie *popplerLinkMovie;
 #endif
@@ -272,13 +271,6 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
             Poppler::SoundObject *popplerSound = popplerLinkSound->sound();
             Okular::Sound *sound = createSoundFromPopplerSound( popplerSound );
             link = new Okular::SoundAction( popplerLinkSound->volume(), popplerLinkSound->synchronous(), popplerLinkSound->repeat(), popplerLinkSound->mix(), sound );
-        }
-        break;
-
-        case Poppler::Link::JavaScript:
-        {
-            popplerLinkJS = static_cast<const Poppler::LinkJavaScript *>(popplerLink);
-            link = new Okular::ScriptAction( Okular::JavaScript, popplerLinkJS->script() );
         }
         break;
 

@@ -24,7 +24,6 @@ class ExecuteActionPrivate;
 class BrowseActionPrivate;
 class DocumentActionPrivate;
 class SoundActionPrivate;
-class ScriptActionPrivate;
 class MovieActionPrivate;
 class RenditionActionPrivate;
 class MovieAnnotation;
@@ -53,7 +52,6 @@ class OKULAR_EXPORT Action
             DocAction,  ///< Start a custom action
             Sound,      ///< Play a sound
             Movie,      ///< Play a movie
-            Script,     ///< Executes a Script code
             Rendition   ///< Play a movie and/or execute a Script code @since 0.16 (KDE 4.10)
         };
 
@@ -377,51 +375,6 @@ class OKULAR_EXPORT SoundAction : public Action
     private:
         Q_DECLARE_PRIVATE( SoundAction )
         Q_DISABLE_COPY( SoundAction )
-};
-
-/**
- * The Script action executes a Script code.
- *
- * @since 0.7 (KDE 4.1)
- */
-class OKULAR_EXPORT ScriptAction : public Action
-{
-    public:
-        /**
-         * Creates a new Script action.
-         *
-         * @param script The code to execute.
-         */
-        ScriptAction( enum ScriptType type, const QString &script );
-
-        /**
-         * Destroys the browse action.
-         */
-        virtual ~ScriptAction();
-
-        /**
-         * Returns the action type.
-         */
-        ActionType actionType() const;
-
-        /**
-         * Returns the action tip.
-         */
-        QString actionTip() const;
-
-        /**
-         * Returns the type of action.
-         */
-        ScriptType scriptType() const;
-
-        /**
-         * Returns the code.
-         */
-        QString script() const;
-
-    private:
-        Q_DECLARE_PRIVATE( ScriptAction )
-        Q_DISABLE_COPY( ScriptAction )
 };
 
 /**
