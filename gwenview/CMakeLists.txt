@@ -1,6 +1,6 @@
 project(gwenview)
 
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake )
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake )
 
 find_package(KDE4 4.6.41 REQUIRED)
 include(KDE4Defaults)
@@ -72,5 +72,3 @@ add_subdirectory(color-schemes)
 add_subdirectory(doc)
 
 configure_file(config-gwenview.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-gwenview.h)
-
-macro_display_feature_log()
