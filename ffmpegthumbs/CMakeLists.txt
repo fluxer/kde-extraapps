@@ -1,8 +1,10 @@
+project(ffmpegthumbs)
+
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 find_package(FFmpeg COMPONENTS AVCODEC AVFORMAT SWSCALE)
 

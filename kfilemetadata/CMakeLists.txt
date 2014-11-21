@@ -1,11 +1,11 @@
 project(kfilemetadata)
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
 
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules" ${CMAKE_MODULE_PATH})
 
 find_package(PopplerQt4 0.12.1)
 set_package_properties(PopplerQt4 PROPERTIES DESCRIPTION "A PDF rendering library"
@@ -40,8 +40,8 @@ set_package_properties(QMobipocket PROPERTIES DESCRIPTION "Mobipocket epub reade
 include_directories(
   ${QT_INCLUDES}
   ${KDE4_INCLUDES}
-  ${CMAKE_SOURCE_DIR}
-  ${CMAKE_SOURCE_DIR}/src
+  ${PROJECT_SOURCE_DIR}
+  ${PROJECT_SOURCE_DIR}/src
 )
 
 add_subdirectory(src)
@@ -52,6 +52,3 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/KFileMetaDataConfig.cmake.in
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/KFileMetaDataConfig.cmake
         DESTINATION ${LIB_INSTALL_DIR}/cmake/KFileMetaData)
-
-macro_display_feature_log()
-

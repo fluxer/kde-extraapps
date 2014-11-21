@@ -74,6 +74,7 @@ if(FFMPEG_FOUND)
         kfilemetadata
         ${KDE4_KIO_LIBS}
         ${FFMPEG_LIBRARIES}
+        ${AVUTIL_LIBRARIES}
     )
 
     install(
