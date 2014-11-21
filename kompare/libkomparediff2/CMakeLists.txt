@@ -5,7 +5,7 @@ project(LibKompareDiff2)
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+include_directories (${PROJECT_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
 set(komparediff2_SRCS
 	kompareprocess.cpp 
@@ -50,7 +50,7 @@ install(FILES
 )
 
 # Config.cmake file.
-configure_file( "${CMAKE_SOURCE_DIR}/LibKompareDiff2Config.cmake.in" "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake" @ONLY )
+configure_file( "${PROJECT_SOURCE_DIR}/LibKompareDiff2Config.cmake.in" "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake" @ONLY )
 
 if(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
     set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/libkomparediff2")

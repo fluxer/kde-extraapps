@@ -1,5 +1,3 @@
-project(okular)
-
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}
@@ -10,15 +8,15 @@ include_directories(
 
 set(okular_SRCS
     okularplugin.cpp
-    ${CMAKE_SOURCE_DIR}/ui/pagepainter.cpp
-    ${CMAKE_SOURCE_DIR}/ui/guiutils.cpp
-    ${CMAKE_SOURCE_DIR}/ui/tocmodel.cpp
+    ${PROJECT_SOURCE_DIR}/ui/pagepainter.cpp
+    ${PROJECT_SOURCE_DIR}/ui/guiutils.cpp
+    ${PROJECT_SOURCE_DIR}/ui/tocmodel.cpp
     pageitem.cpp
     documentitem.cpp
     thumbnailitem.cpp
     )
     
-kde4_add_kcfg_files(okular_SRCS ${CMAKE_SOURCE_DIR}/conf/settings.kcfgc )
+kde4_add_kcfg_files(okular_SRCS ${PROJECT_SOURCE_DIR}/conf/settings.kcfgc )
 
 qt4_automoc(${okular_SRCS})
 
