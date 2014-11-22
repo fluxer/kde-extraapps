@@ -1,6 +1,6 @@
 project(okular)
 
-find_package(KDE4 4.6.0 REQUIRED)
+find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 include(MacroOptionalAddSubdirectory)

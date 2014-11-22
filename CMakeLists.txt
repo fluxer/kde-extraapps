@@ -2,7 +2,8 @@
 project (kde-extraapps)
 
 #search packages used by KDE
-find_package(KDE4 4.10.60 REQUIRED)
+set(QT_MIN_VERSION "4.8.2")
+find_package(KDE4 4.14.3 REQUIRED)
 include (KDE4Defaults)
 
 # shared libs

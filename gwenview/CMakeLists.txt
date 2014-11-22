@@ -2,7 +2,7 @@ project(gwenview)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake )
 
-find_package(KDE4 4.6.41 REQUIRED)
+find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 include(MacroOptionalAddSubdirectory)
