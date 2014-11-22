@@ -68,7 +68,7 @@ target_link_libraries(gwenview
     ${KDE4_KIO_LIBS}
     ${LIBKONQ_LIBRARY}
     ${QT_QTCORE_LIBRARY}
-    ${KACTIVITIES_LIBRARY}
+    ${KACTIVITIES_LIBRARIES}
     )
 
 target_link_libraries(gwenview LINK_INTERFACE_LIBRARIES ${KDE4_KIO_LIBS} ${QT_QTCORE_LIBRARY})
