@@ -1,0 +1,124 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antonis Geralis <gaantonio@civil.auth.gr>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-10-15 01:35+0000\n"
+"PO-Revision-Date: 2014-02-03 03:00+0200\n"
+"Last-Translator: Antonis Geralis <gaantonio@civil.auth.gr>\n"
+"Language-Team: Greek <kde-i18n-doc@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Αντώνης"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "capoiosct@gmail.com"
+
+#: LSBRelease.cpp:33
+msgctxt "@label Unknown distribution name (e.g. MyDistro)"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: LSBRelease.cpp:34
+msgctxt "@label Unknown distribution version (e.g. 1.0)"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: LSBRelease.cpp:35
+msgctxt ""
+"@label Unknown distribution codename (e.g. for Kubuntu this would be "
+"'raring' or 'saucy')"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: LSBRelease.cpp:36
+msgctxt ""
+"@label Unknown distribution description (this often is a combination of name "
+"and version, such as 'MyDistro 1.0'"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: Module.cpp:65
+msgid "About Distribution"
+msgstr "Σχετικά με τη διανομή"
+
+#: Module.cpp:69
+msgid "Copyright 2012 Harald Sitter"
+msgstr "Πνευματικά δικαιώματα 2012 Harald Sitter"
+
+#: Module.cpp:73
+msgid "Harald Sitter"
+msgstr "Harald Sitter"
+
+#: Module.cpp:73
+msgid "Author"
+msgstr "Συγγραφέας"
+
+#: Module.cpp:135
+#, kde-format
+msgctxt "@label %1 is the CPU bit width (e.g. 32 or 64)"
+msgid "<numid>%1</numid>-bit"
+msgstr "<numid>%1</numid>-bit"
+
+#: Module.cpp:138
+msgid "Processor:"
+msgid_plural "Processors:"
+msgstr[0] "Επεξεργαστής"
+msgstr[1] "Επεξεργαστές:"
+
+#: Module.cpp:170
+#, kde-format
+msgctxt "@label %1 is the formatted amount of system memory (e.g. 7,7 GiB)"
+msgid "%1 of RAM"
+msgstr "%1 RAM"
+
+#: Module.cpp:171
+msgctxt "Unknown amount of RAM"
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#. i18n: ectx: property (text), widget (QLabel, qt)
+#: Module.ui:17
+msgid "Qt Version:"
+msgstr "Έκδοση Qt:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Module.ui:33
+msgid "Software"
+msgstr "Λογισμικό"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: Module.ui:63
+msgid "OS Type:"
+msgstr "Τύπος ΛΣ:"
+
+#. i18n: ectx: property (text), widget (QLabel, memory)
+#: Module.ui:120
+msgid "Memory:"
+msgstr "Μνήμη:"
+
+#. i18n: ectx: property (text), widget (QLabel, kernel)
+#: Module.ui:147
+msgid "Kernel Version:"
+msgstr "Έκδοση Πυρήνα:"
+
+#. i18n: ectx: property (text), widget (QLabel, kde)
+#: Module.ui:164
+msgid "KDELibs Version:"
+msgstr "Έκδοση KDELibs:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Module.ui:281
+msgid "Hardware"
+msgstr "Υλικό"

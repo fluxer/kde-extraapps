@@ -1,0 +1,128 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+# Joëlle Cornavin <jcorn@free.fr>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-10-15 01:35+0000\n"
+"PO-Revision-Date: 2013-07-28 15:37+0200\n"
+"Last-Translator: Joëlle Cornavin <jcorn@free.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr"
+
+#: LSBRelease.cpp:33
+msgctxt "@label Unknown distribution name (e.g. MyDistro)"
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: LSBRelease.cpp:34
+msgctxt "@label Unknown distribution version (e.g. 1.0)"
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: LSBRelease.cpp:35
+msgctxt ""
+"@label Unknown distribution codename (e.g. for Kubuntu this would be "
+"'raring' or 'saucy')"
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: LSBRelease.cpp:36
+msgctxt ""
+"@label Unknown distribution description (this often is a combination of name "
+"and version, such as 'MyDistro 1.0'"
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: Module.cpp:65
+msgid "About Distribution"
+msgstr "A propos de la distribution"
+
+#: Module.cpp:69
+msgid "Copyright 2012 Harald Sitter"
+msgstr "Copyright pour 2012 par Harald Sitter"
+
+#: Module.cpp:73
+msgid "Harald Sitter"
+msgstr "Harald Sitter"
+
+#: Module.cpp:73
+msgid "Author"
+msgstr "Auteur"
+
+#: Module.cpp:135
+#, kde-format
+msgctxt "@label %1 is the CPU bit width (e.g. 32 or 64)"
+msgid "<numid>%1</numid>-bit"
+msgstr "<numid>%1</numid> bit"
+
+#: Module.cpp:138
+msgid "Processor:"
+msgid_plural "Processors:"
+msgstr[0] "Processeur :"
+msgstr[1] "Processeurs :"
+
+#: Module.cpp:170
+#, kde-format
+msgctxt "@label %1 is the formatted amount of system memory (e.g. 7,7 GiB)"
+msgid "%1 of RAM"
+msgstr "%1 de mémoire vive"
+
+#: Module.cpp:171
+msgctxt "Unknown amount of RAM"
+msgid "Unknown"
+msgstr "Inconnu"
+
+#. i18n: ectx: property (text), widget (QLabel, qt)
+#: Module.ui:17
+msgid "Qt Version:"
+msgstr "Version de Qt :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: Module.ui:33
+msgid "Software"
+msgstr "Logiciels"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: Module.ui:63
+msgid "OS Type:"
+msgstr "Type de système d'exploitation :"
+
+#. i18n: ectx: property (text), widget (QLabel, memory)
+#: Module.ui:120
+msgid "Memory:"
+msgstr "Mémoire :"
+
+#. i18n: ectx: property (text), widget (QLabel, kernel)
+#: Module.ui:147
+msgid "Kernel Version:"
+msgstr "Version de noyau :"
+
+#. i18n: ectx: property (text), widget (QLabel, kde)
+#: Module.ui:164
+msgid "KDELibs Version:"
+msgstr "Version de « kdelibs » :"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: Module.ui:281
+msgid "Hardware"
+msgstr "Matériel"
