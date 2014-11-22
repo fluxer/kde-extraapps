@@ -7,7 +7,6 @@ include(KDE4Defaults)
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory( libkomparediff2 )
-add_subdirectory( doc )
 add_subdirectory( interfaces )
 add_subdirectory( libdialogpages )
 add_subdirectory( komparenavtreepart )

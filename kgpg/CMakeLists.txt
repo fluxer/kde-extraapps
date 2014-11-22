@@ -20,7 +20,6 @@ find_package( KdepimLibs REQUIRED )
 find_package( Gpgme REQUIRED )
 
 add_subdirectory( icons )
-add_subdirectory( doc )
 include_directories( ${KDE4_INCLUDES} ${KDEPIMLIBS_INCLUDE_DIR} ${GPGME_INCLUDES} )
 
 option(KGPG_DEBUG_TRANSACTIONS "show commands and results of gpg calls in debug log" Off)

@@ -28,7 +28,6 @@ add_subdirectory( ui )
 add_subdirectory( shell )
 add_subdirectory( generators )
 add_subdirectory( tests )
-macro_optional_add_subdirectory(doc)
 
 include(OkularConfigureChecks.cmake)
 include(MacroWriteBasicCMakeVersionFile)

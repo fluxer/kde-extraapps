@@ -20,7 +20,6 @@ include(TestBigEndian)
 add_subdirectory(pics)
 add_subdirectory(toolbar)
 add_subdirectory(icon)
-add_subdirectory(doc)
 
 # use the project-specific _SOURCE_DIR variable (set by the project() call above), Alex
 include_directories(${kuser_SOURCE_DIR} ${KDEPIMLIBS_INCLUDE_DIR})

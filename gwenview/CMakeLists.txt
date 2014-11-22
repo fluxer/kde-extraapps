@@ -69,6 +69,5 @@ add_subdirectory(icons)
 add_subdirectory(images)
 add_subdirectory(cursors)
 add_subdirectory(color-schemes)
-add_subdirectory(doc)
 
 configure_file(config-gwenview.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-gwenview.h)

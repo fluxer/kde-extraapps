@@ -67,5 +67,3 @@ add_subdirectory(src/modes/samba)
 add_subdirectory(src/modes/cups)
 
 add_subdirectory(tests) 
-
-add_subdirectory(doc)

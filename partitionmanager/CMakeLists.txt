@@ -58,13 +58,6 @@ add_subdirectory(icons)
 
 message(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
 
-add_custom_target(docs
-	COMMAND doxygen Doxyfile
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-)
-
 include(MacroOptionalAddSubdirectory)
 macro_optional_add_subdirectory( po )
 
-include(MacroOptionalAddSubdirectory)
-macro_optional_add_subdirectory( doc )

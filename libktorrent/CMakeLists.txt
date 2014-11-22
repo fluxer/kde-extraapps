@@ -63,8 +63,6 @@ add_subdirectory(src)
 add_subdirectory(testlib)
 add_subdirectory(examples)
 add_subdirectory(cmake)
-add_subdirectory(doc)
-
 
 find_package(Msgfmt REQUIRED)
 find_package(Gettext REQUIRED)
