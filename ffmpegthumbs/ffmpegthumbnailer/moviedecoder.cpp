@@ -67,7 +67,7 @@ void MovieDecoder::initialize(const QString& filename)
     }
 
     initializeVideo();
-    m_pFrame = avcodec_alloc_frame();
+    m_pFrame = av_frame_alloc();
 
     if (m_pFrame) {
         m_initialized=true;
@@ -239,7 +239,7 @@ bool MovieDecoder::decodeVideoPacket()
         return false;
     }
 
-    avcodec_get_frame_defaults(m_pFrame);
+    av_frame_unref(m_pFrame);
 
     int frameFinished = 0;
 
@@ -357,7 +357,7 @@ void MovieDecoder::calculateDimensions(int squareSize, bool maintainAspectRatio,
 
 void MovieDecoder::createAVFrame(AVFrame** avFrame, quint8** frameBuffer, int width, int height, PixelFormat format)
 {
-    *avFrame = avcodec_alloc_frame();
+    *avFrame = av_frame_alloc();
 
     int numBytes = avpicture_get_size(format, width, height);
     *frameBuffer = reinterpret_cast<quint8*>(av_malloc(numBytes));
