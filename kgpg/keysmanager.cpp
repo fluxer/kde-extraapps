@@ -56,9 +56,6 @@
 #include "transactions/kgpgsignuid.h"
 #include "transactions/kgpgtransactionjob.h"
 
-#include <akonadi/contact/contacteditor.h>
-#include <akonadi/contact/contacteditordialog.h>
-#include <akonadi/contact/contactsearchjob.h>
 #include <KAction>
 #include <KActionCollection>
 #include <KDebug>
@@ -107,8 +104,6 @@
 #include <QTextStream>
 #include <QWidget>
 #include <QtDBus/QtDBus>
-#include <kabc/addresseelist.h>
-// #include <kabc/key.h> TODO
 #include <kio/global.h>
 #include <kjobtrackerinterface.h>
 #include <ktip.h>
@@ -998,50 +993,6 @@ void KeysManager::slotSetPhotoSize(int size)
 		iproxy->setPreviewSize(0);
 		break;
 	}
-}
-
-void KeysManager::addToKAB()
-{
-	KGpgNode *nd = iview->selectedNode();
-	if (nd == NULL)
-		return;
-
-	Akonadi::ContactSearchJob * const job = new Akonadi::ContactSearchJob();
-	job->setLimit(1);
-	job->setQuery(Akonadi::ContactSearchJob::Email, nd->getEmail());
-	connect(job, SIGNAL(result(KJob*)), this, SLOT(slotAddressbookSearchResult(KJob*)));
-
-	m_addIds[job] = nd;
-}
-
-void KeysManager::slotAddressbookSearchResult(KJob *job)
-{
-	KGpgNode * const nd = m_addIds.value(job, 0);
-
-	if (!nd)
-		return;
-
-	Akonadi::ContactSearchJob *searchJob = qobject_cast<Akonadi::ContactSearchJob*>(job);
-	Q_ASSERT(searchJob);
-	const KABC::Addressee::List addresseeList = searchJob->contacts();
-
-	m_addIds.take(job);
-
-	Akonadi::ContactEditorDialog *dlg;
-// 	KABC::Key key; TODO
-	if (!addresseeList.isEmpty()) {
-		dlg = new Akonadi::ContactEditorDialog(Akonadi::ContactEditorDialog::EditMode, this);
-		dlg->setContact(searchJob->items().first());
-	} else {
-		KABC::Addressee addressee;
-		addressee.setNameFromString(nd->getName());
-		addressee.setEmails(QStringList(nd->getEmail()));
-		dlg = new Akonadi::ContactEditorDialog(Akonadi::ContactEditorDialog::CreateMode, this);
-		dlg->editor()->setContactTemplate(addressee);
-	}
-
-	connect(dlg, SIGNAL(finished()), dlg, SLOT(deleteLater()));
-	dlg->show();
 }
 
 void KeysManager::slotManpage()

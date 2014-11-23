@@ -13,11 +13,11 @@
 
 #include "kgpggeneratekey.h"
 
+#include "misc.h"
 #include "gpgproc.h"
 
 #include <KLocale>
 #include <KMessageBox>
-#include <kpimutils/email.h>
 #include <QApplication>
 
 KGpgGenerateKey::KGpgGenerateKey(QObject *parent, const QString &name, const QString &email, const QString &comment,

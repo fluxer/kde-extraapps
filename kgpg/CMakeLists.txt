@@ -1,5 +1,7 @@
 project(kgpg)
 
+set (CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" ${CMAKE_SOURCE_DIR}/cmake/modules)
+
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     find_package(KDE4)
     include( KDE4Defaults )
@@ -15,7 +17,6 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     set( CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS} )
 endif()
 
-find_package( KdepimLibs REQUIRED )
 # only headers are used
 find_package( Gpgme REQUIRED )
 
@@ -120,6 +121,7 @@ set(kgpg_SRCS ${core_SRCS} ${kgpg_editor_SRCS} ${kgpg_model_SRCS} ${kgpg_transac
    selectexpirydate.cpp
    caff.cpp
    foldercompressjob.cpp
+   misc.cpp
 )
 
 qt4_add_dbus_adaptor( kgpg_SRCS org.kde.kgpg.Key.xml keysmanager.h KeysManager)

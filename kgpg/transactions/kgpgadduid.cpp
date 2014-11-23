@@ -12,8 +12,7 @@
  ***************************************************************************/
 
 #include "kgpgadduid.h"
-
-#include <kpimutils/email.h>
+#include "misc.h"
 
 KGpgAddUid::KGpgAddUid(QObject *parent, const QString &keyid, const QString &name, const QString &email, const QString &comment)
 	: KGpgEditKeyTransaction(parent, keyid, QLatin1String("adduid"), false, true)
