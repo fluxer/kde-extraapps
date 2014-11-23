@@ -288,18 +288,6 @@ class KGET_EXPORT Transfer : public Job
          */
         virtual Signature * signature(const KUrl &file) {Q_UNUSED(file) return 0;}
 
-#ifdef HAVE_NEPOMUK
-        /**
-         * Sets the NepomukHandler for the transfer
-         * @param handler the new NepomukHandler
-         */
-        void setNepomukHandler(NepomukHandler *handler);
-
-        /**
-         * @returns a pointer to the NepomukHandler of this transfer
-         */
-        NepomukHandler * nepomukHandler() {return m_nepomukHandler;}
-#endif
 
         /**
          * Saves this transfer to the given QDomNode
@@ -382,9 +370,6 @@ class KGET_EXPORT Transfer : public Job
 
         TransferHandler * m_handler;
         TransferFactory * m_factory;
-#ifdef HAVE_NEPOMUK
-        NepomukHandler * m_nepomukHandler;
-#endif
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(Transfer::Capabilities)

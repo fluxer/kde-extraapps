@@ -17,22 +17,12 @@ if(NOT INSIDE_KDENETWORK)
     include(CheckTypeSize)
 
     set(CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS})
-    if(WIN32)
-       set(CMAKE_REQUIRED_LIBRARIES ${KDEWIN32_LIBRARIES})
-       set(CMAKE_REQUIRED_INCLUDES  ${KDEWIN32_INCLUDES})
-    endif(WIN32)
     add_definitions(${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS})
     add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
     include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 endif(NOT INSIDE_KDENETWORK)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
-
-macro_optional_find_package(NepomukCore)
-macro_log_feature(NepomukCore_FOUND "NepomukCore" "Semantic Desktop" "http://nepomuk.kde.org" FALSE "" "Nepomuk is needed for the integration into KGet")
-
-macro_optional_find_package(NepomukWidgets)
-macro_log_feature(NepomukWidgets_FOUND "NepomukWidgets" "Semantic Desktop" "http://nepomuk.kde.org" FALSE "" "Nepomuk is needed for the integration into KGet")
 
 macro_optional_find_package(Sqlite)
 macro_log_feature(SQLITE_FOUND "SQLite" "SQLite is a Binary-Database" "" FALSE "" "Needed for the SQLite-Backend of the KGet-History and the Kopete-Statistic-Plugin")
@@ -62,22 +52,6 @@ add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5001)
 if(CMAKE_BUILD_TYPE MATCHES debugfull)
      add_definitions(-DDEBUG)
 endif(CMAKE_BUILD_TYPE MATCHES debugfull)
-
-if (NepomukCore_FOUND AND NepomukWidgets_FOUND)
-    find_package(Soprano)
-    find_package(SharedDesktopOntologies 0.4)
-endif (NepomukCore_FOUND AND NepomukWidgets_FOUND)
-if(SharedDesktopOntologies_FOUND)
-    set(HAVE_NEPOMUK SharedDesktopOntologies_FOUND)
-    include_directories(
-        ${SOPRANO_INCLUDE_DIR}
-        ${NEPOMUK_CORE_INCLUDE_DIR}
-        ${NEPOMUK_WIDGETS_INCLUDE_DIR}
-    )
-    add_definitions(-DHAVE_NEPOMUK)
-    add_definitions(-DDISABLE_NEPOMUK_LEGACY)
-    include(NepomukAddOntologyClasses)
-endif(SharedDesktopOntologies_FOUND)
 
 if(QCA2_FOUND)
     add_definitions(-DHAVE_QCA2)
@@ -168,20 +142,6 @@ set(kgetcore_SRCS
    core/filedeleter.cpp
 )
 
-if(HAVE_NEPOMUK)
-    set(kgetcore_SRCS
-       ${kgetcore_SRCS}
-       core/nepomukhandler.cpp
-       core/nepomukcontroller.cpp
-    )
-
-    NEPOMUK2_ADD_ONTOLOGY_CLASSES(
-        kgetcore_SRCS
-        ONTOLOGIES
-        ${CMAKE_CURRENT_SOURCE_DIR}/kget_history.trig
-    )
-endif (HAVE_NEPOMUK)
-
 kde4_add_kcfg_files(kgetcore_SRCS conf/settings.kcfgc)
 
 qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.transfer.xml dbus/dbustransferwrapper.h DBusTransferWrapper)
@@ -195,10 +155,6 @@ target_link_libraries(kgetcore ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS})
 if (KDE4WORKSPACE_FOUND)
     target_link_libraries(kgetcore ${KDE4WORKSPACE_KWORKSPACE_LIBS})
 endif (KDE4WORKSPACE_FOUND)
-
-if (HAVE_NEPOMUK)
-  target_link_libraries(kgetcore ${SOPRANO_LIBRARIES} ${NEPOMUK_CORE_LIBRARY} ${NEPOMUK_WIDGETS_LIBRARY})
-endif (HAVE_NEPOMUK)
 
 if (SQLITE_FOUND)
   target_link_libraries(kgetcore ${QT_QTSQL_LIBRARY})
@@ -304,21 +260,11 @@ if(QCA2_FOUND)
   target_link_libraries(kget ${QCA2_LIBRARIES})
 endif(QCA2_FOUND)
 
-
-if (HAVE_NEPOMUK)
-  target_link_libraries(kget ${SOPRANO_LIBRARIES} ${NEPOMUK_CORE_LIBRARY} ${NEPOMUK_WIDGETS_LIBRARY})
-endif (HAVE_NEPOMUK)
-
 if (QGPGME_FOUND)
   target_link_libraries(kget ${QGPGME_LIBRARIES})
 endif(QGPGME_FOUND)
 
 install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-if (HAVE_NEPOMUK)
-    configure_file(kget_history.ontology.in ${CMAKE_CURRENT_BINARY_DIR}/kget_history.ontology)
-    install(FILES kget_history.trig ${CMAKE_CURRENT_BINARY_DIR}/kget_history.ontology DESTINATION ${CMAKE_INSTALL_PREFIX}/share/ontology/kde)
-endif (HAVE_NEPOMUK)
 
 if (NOT INSIDE_KDENETWORK)
     macro_display_feature_log()

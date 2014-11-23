@@ -52,10 +52,6 @@
 #include <QAbstractItemView>
 #include <QTimer>
 
-#ifdef HAVE_NEPOMUK
-    #include <Nepomuk2/ResourceManager>
-    #include "nepomukcontroller.h"
-#endif
 
 #ifdef HAVE_KWORKSPACE
     #include <QDBusConnection>
@@ -494,16 +490,6 @@ TransferTreeSelectionModel * KGet::selectionModel()
     return m_selectionModel;
 }
 
-#ifdef HAVE_NEPOMUK
-NepomukController *KGet::nepomukController()
-{
-    if (!m_nepomukController) {
-        m_nepomukController = new NepomukController;
-    }
-
-    return m_nepomukController;
-}
-#endif
 
 void KGet::load( QString filename ) // krazy:exclude=passbyvalue
 {
@@ -809,16 +795,10 @@ MainWindow * KGet::m_mainWindow = 0;
 KUiServerJobs * KGet::m_jobManager = 0;
 TransferHistoryStore * KGet::m_store = 0;
 bool KGet::m_hasConnection = true;
-#ifdef HAVE_NEPOMUK
-    NepomukController *KGet::m_nepomukController = 0;
-#endif
 
 // ------ PRIVATE FUNCTIONS ------
 KGet::KGet()
 {
-#ifdef HAVE_NEPOMUK
-    Nepomuk2::ResourceManager::instance()->init();
-#endif
 
     m_scheduler = new TransferGroupScheduler();
     m_transferTreeModel = new TransferTreeModel(m_scheduler);
@@ -847,9 +827,6 @@ KGet::~KGet()
     delete m_scheduler;
     delete m_store;
 
-#ifdef HAVE_NEPOMUK
-    delete m_nepomukController;
-#endif
 }
 
 TransferHandler * KGet::createTransfer(const KUrl &src, const KUrl &dest, const QString& groupName, 

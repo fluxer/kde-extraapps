@@ -30,12 +30,6 @@
 #include <QtCore/QString>
 #include <QtCore/QObject>
 
-#ifdef HAVE_NEPOMUK
-namespace Nepomuk2
-{
-    class Variant;
-}
-#endif //HAVE_NEPOMUK
 
 /**
  * The following classes try to resemble the structure of a Metalink-document, they partially support
@@ -100,12 +94,6 @@ class CommonData
 
         void clear();
 
-#ifdef HAVE_NEPOMUK
-        /**
-         * Return Nepomuk-properties that can be extracted
-         */
-        QList<QPair<QUrl, Nepomuk2::Variant> > properties() const;
-#endif //HAVE_NEPOMUK
 
         QString identity;
         QString version;
@@ -258,12 +246,6 @@ class File
          */
         bool isValidNameAttribute() const;
 
-#ifdef HAVE_NEPOMUK
-        /**
-         * Return Nepomuk-properties that can be extracted of file, only including data
-         */
-        QList<QPair<QUrl, Nepomuk2::Variant> > properties() const;
-#endif //HAVE_NEPOMUK
 
         QString name;
         Verification verification;
@@ -407,13 +389,6 @@ class HandleMetalink
          */
         static bool save(const KUrl &destination, Metalink *metalink);
 
-#ifdef HAVE_NEPOMUK
-        /**
-         * Convenience method to add Strings to the data
-         */
-        static void addProperty(QList<QPair<QUrl, Nepomuk2::Variant> > *data, const QByteArray &uriBa, const QString &value);
-        static void addProperty(QList<QPair<QUrl, Nepomuk2::Variant> > *data, const QUrl &uri, const QString &value);
-#endif //HAVE_NEPOMUK
 };
 
 class MetalinkHttpParser : public QObject

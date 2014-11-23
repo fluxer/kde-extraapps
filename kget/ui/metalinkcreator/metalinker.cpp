@@ -29,16 +29,6 @@
 #include <KLocale>
 #include <KSystemTimeZone>
 
-#ifdef HAVE_NEPOMUK
-    #include <Nepomuk2/Variant>
-    #include <Nepomuk2/Vocabulary/NCO>
-    #include <Nepomuk2/Vocabulary/NIE>
-    #include <Nepomuk2/Vocabulary/NFO>
-    #include <Soprano/Vocabulary/NAO>
-
-using namespace Nepomuk2::Vocabulary;
-using namespace Soprano::Vocabulary;
-#endif //HAVE_NEPOMUK
 
 const QString KGetMetalink::Metalink::KGET_DESCRIPTION = QString(QString("KGet/") + "2." + QString::number(KDE_VERSION_MINOR) + '.' + QString::number(KDE_VERSION_RELEASE));
 const uint KGetMetalink::Metalink::MAX_URL_PRIORITY = 999999;
@@ -249,56 +239,6 @@ void KGetMetalink::CommonData::clear()
     copyright.clear();
 }
 
-#ifdef HAVE_NEPOMUK
-QList<QPair<QUrl, Nepomuk2::Variant> > KGetMetalink::CommonData::properties() const
-{
-    //TODO what to do with identity?
-    QList<QPair<QUrl, Nepomuk2::Variant> > data;
-
-    HandleMetalink::addProperty(&data, NIE::version(), version);
-    HandleMetalink::addProperty(&data, NIE::description(), description);
-
-    QList<Nepomuk2::Resource> osResources;
-    foreach (const QString &os, oses) {
-        Nepomuk2::Resource osRes(os, NFO::OperatingSystem());
-        osRes.setProperty(NIE::title(), os);
-        osResources << osRes;
-    }
-    if (!osResources.isEmpty()) {
-        data << qMakePair(NAO::isRelated(), Nepomuk2::Variant(osResources));
-    }
-
-    if (!logo.isEmpty()) {
-        Nepomuk2::Resource logoRes(logo, NFO::RemoteDataObject());
-        logoRes.addType(NAO::Symbol());
-        data << qMakePair(NAO::hasSymbol(), Nepomuk2::Variant(logoRes));
-    }
-
-    QList<Nepomuk2::Variant> langVariants;
-    foreach (const QString &language, languages) {
-        langVariants << language;
-    }
-    if (langVariants.count()) {
-        data << qMakePair(NIE::language(), Nepomuk2::Variant(langVariants));
-    }
-
-    if (!publisher.name.isEmpty()) {
-        Nepomuk2::Resource res(publisher.name, NCO::OrganizationContact());
-        res.setLabel(publisher.name);
-        res.addProperty(NCO::fullname(), publisher.name);
-        if (!publisher.url.isEmpty()) {
-            Nepomuk2::Resource website(publisher.url, NFO::Website());
-            website.addProperty(NIE::url(), publisher.url);
-            res.addProperty(NCO::websiteUrl(), website);
-        }
-        data << qMakePair(NCO::publisher(), Nepomuk2::Variant(res));
-    }
-
-    HandleMetalink::addProperty(&data, NIE::copyright(), copyright);
-
-    return data;
-}
-#endif //HAVE_NEPOMUK
 
 
 bool KGetMetalink::Metaurl::operator<(const KGetMetalink::Metaurl &other) const
@@ -623,12 +563,6 @@ bool KGetMetalink::File::isValidNameAttribute() const
     return true;
 }
 
-#ifdef HAVE_NEPOMUK
-QList<QPair<QUrl, Nepomuk2::Variant> > KGetMetalink::File::properties() const
-{
-    return data.properties();
-}
-#endif //HAVE_NEPOMUK
 
 bool KGetMetalink::Files::isValid() const
 {
@@ -1320,21 +1254,6 @@ bool KGetMetalink::HandleMetalink::save(const KUrl &destination, KGetMetalink::M
     return true;
 }
 
-#ifdef HAVE_NEPOMUK
-void KGetMetalink::HandleMetalink::addProperty(QList<QPair<QUrl, Nepomuk2::Variant> > *data, const QByteArray &uriBa, const QString &value)
-{
-    if (!uriBa.isEmpty()) {
-        addProperty(data, QUrl::fromEncoded(uriBa, QUrl::StrictMode), value);
-    }
-}
-
-void KGetMetalink::HandleMetalink::addProperty(QList<QPair<QUrl, Nepomuk2::Variant> > *data, const QUrl &uri, const QString &value)
-{
-    if (data && !uri.isEmpty() && !value.isEmpty()) {
-        (*data) << qMakePair(uri, Nepomuk2::Variant(value));
-    }
-}
-#endif //HAVE_NEPOMUK
 
 
 KGetMetalink::MetalinkHttpParser::~MetalinkHttpParser()

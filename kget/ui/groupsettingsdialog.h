@@ -15,11 +15,6 @@
 
 #include <KDialog>
 
-#ifdef HAVE_NEPOMUK
-namespace Nepomuk2 {
-    class TagWidget;
-}
-#endif
 
 class TransferGroupHandler;
 
@@ -36,17 +31,11 @@ class GroupSettingsDialog : public KGetSaveSizeDialog
         void save();
 
     private:
-#ifdef HAVE_NEPOMUK
-        void updateUsedTagsLineEdit();
-#endif //HAVE_NEPOMUK
 
     private:
         TransferGroupHandler* m_group;
         Ui::GroupSettingsDialog ui;
 
-#ifdef HAVE_NEPOMUK
-        Nepomuk2::TagWidget *m_tagWidget;
-#endif //HAVE_NEPOMUK
 };
 
 #endif

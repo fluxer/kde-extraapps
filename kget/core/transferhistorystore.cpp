@@ -28,16 +28,6 @@
     #include <QSqlRecord>
 #endif
 
-#ifdef HAVE_NEPOMUK
-    #include <core/transferhistorystore_nepomuk_p.h>
-    #include <historyitem.h>
-
-    #include <Soprano/Vocabulary/RDF>
-    #include <Nepomuk2/Variant>
-    #include <Nepomuk2/Query/QueryServiceClient>
-    #include <Nepomuk2/Query/ResourceTypeTerm>
-    #include <Nepomuk2/Query/Result>
-#endif
 
 #include <KDebug>
 #include <kio/global.h>
@@ -157,10 +147,6 @@ TransferHistoryStore *TransferHistoryStore::getStore()
             break;
 #endif
         case TransferHistoryStore::Nepomuk:
-#ifdef HAVE_NEPOMUK
-            return new NepomukStore(QString());
-            break;
-#endif
         case TransferHistoryStore::Xml:
         default:
             return new XmlStore(KStandardDirs::locateLocal("appdata", "transferhistory.kgt"));
@@ -538,80 +524,9 @@ void SQLiteStore::createTables()
 }
 #endif
 
-#ifdef HAVE_NEPOMUK
-NepomukStore::NepomukStore(const QString &database)
-  : TransferHistoryStore()
-{
-    Q_UNUSED(database)
-}
-
-NepomukStore::~NepomukStore()
-{
-}
-
-void NepomukStore::load()
-{
-    Nepomuk2::Query::QueryServiceClient * queryService = new Nepomuk2::Query::QueryServiceClient(this);
-    Nepomuk2::Query::ResourceTypeTerm historyTypeTerm((Nepomuk2::Types::Class(Nepomuk2::HistoryItem::resourceTypeUri())));
-    Nepomuk2::Query::Query historyQuery(historyTypeTerm);
-
-    connect(queryService, SIGNAL(newEntries(const QList<Nepomuk2::Query::Result>&)), this, SLOT(loadResult(const QList<Nepomuk2::Query::Result>&)));
-    connect(queryService, SIGNAL(finishedListing()), this, SIGNAL(loadFinished()));
-    queryService->query(historyQuery);
-}
-
-void NepomukStore::loadResult(const QList<Nepomuk2::Query::Result>& entries)
-{
-    int newItemsCount = m_items.count() + entries.count();
-
-    for (int i = 0; i != entries.count(); i++) {
-        Nepomuk2::HistoryItem current = entries.at(i).resource();
-        TransferHistoryItem item;
-
-        item.setDest(current.destination());
-        item.setSource(current.source());
-        item.setState(current.state());
-        item.setDateTime(current.dateTime());
-        item.setSize(current.size());
-        m_items << item;
-
-        emit elementLoaded(m_items.count(), newItemsCount, item);
-    }
-}
-
-void NepomukStore::clear()
-{
-    for(int i = 0; i < m_items.count(); i++) {
-        deleteItem(m_items.at(i));
-    }
-
-    m_items.clear();
-}
-
-void NepomukStore::saveItem(const TransferHistoryItem &item)
-{
-    Nepomuk2::HistoryItem historyItem(item.source());
-
-    historyItem.addType(Nepomuk2::HistoryItem::resourceTypeUri());
-    historyItem.setDestination(item.dest());
-    historyItem.setSource(item.source());
-    historyItem.setState(item.state());
-    historyItem.setSize(item.size());
-    historyItem.setDateTime(item.dateTime());
-}
-
-void NepomukStore::deleteItem(const TransferHistoryItem &item)
-{
-    Nepomuk2::HistoryItem historyItem(item.source());
-    historyItem.remove();
-}
-#endif
 
 #include "transferhistorystore.moc"
 #include "transferhistorystore_xml_p.moc"
 #ifdef HAVE_SQLITE
     #include "transferhistorystore_sqlite_p.moc"
-#endif
-#ifdef HAVE_NEPOMUK
-    #include "transferhistorystore_nepomuk_p.moc"
 #endif
