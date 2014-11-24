@@ -1,5 +1,8 @@
 project(kget)
 
+# boost headers are bundled
+include_directories(${PROJECT_SOURCE_DIR}/miniboost)
+
 if(NOT INSIDE_KDENETWORK)
     message("Not building inside KDENetwork, loading KDE CMake Macros.")
 
@@ -55,18 +58,12 @@ endif(CMAKE_BUILD_TYPE MATCHES debugfull)
 
 if(QCA2_FOUND)
     add_definitions(-DHAVE_QCA2)
-    include_directories(
-        ${QCA2_INCLUDE_DIR}
-    )
+    include_directories(${QCA2_INCLUDE_DIR})
 endif(QCA2_FOUND)
 
 if(QGPGME_FOUND)
-    find_package(Boost REQUIRED)
     add_definitions(-DHAVE_QGPGME)
-    include_directories(
-        ${Boost_INCLUDE_DIRS}
-        ${QGPGME_INCLUDE_DIR}
-    )
+    include_directories(${QGPGME_INCLUDE_DIR})
 endif(QGPGME_FOUND)
 
 add_subdirectory(conf)
