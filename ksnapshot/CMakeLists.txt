@@ -89,5 +89,3 @@ install(TARGETS kbackgroundsnapshot ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS ksnapshot.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES org.kde.ksnapshot.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 kde4_install_icons(${ICON_INSTALL_DIR} )
-
-macro_display_feature_log()

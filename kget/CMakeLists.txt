@@ -262,7 +262,3 @@ if (QGPGME_FOUND)
 endif(QGPGME_FOUND)
 
 install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-if (NOT INSIDE_KDENETWORK)
-    macro_display_feature_log()
-endif ()

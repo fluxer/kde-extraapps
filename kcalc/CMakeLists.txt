@@ -28,14 +28,6 @@ add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 find_package(GMP)
 macro_log_feature( GMP_FOUND "GMP" "The GNU Multiple Precision Arithmetic Library" "http://gmplib.org/" ${GMP_REQUIRED} "" "Required for building KCalc.")
 
-if(NOT GMP_FOUND)
-    if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-        macro_display_feature_log()
-    else()
-        return()
-    endif()
-endif(NOT GMP_FOUND)
-
 include(CheckTypeSize)
 include(CheckIncludeFiles)
 

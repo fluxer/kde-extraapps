@@ -45,5 +45,4 @@ add_subdirectory(app)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     message(STATUS "Supported MIME types: ${SUPPORTED_ARK_MIMETYPES}")
-    macro_display_feature_log()
 endif(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})

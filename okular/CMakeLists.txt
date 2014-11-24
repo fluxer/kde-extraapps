@@ -220,5 +220,3 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/OkularConfig.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/OkularConfigVersion.cmake
         DESTINATION ${LIB_INSTALL_DIR}/cmake/Okular )
 
-macro_display_feature_log()
-
