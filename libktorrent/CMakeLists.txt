@@ -1,9 +1,11 @@
 project(LIBKTORRENT)
 
+# boost headers are bundled
+include_directories(${PROJECT_SOURCE_DIR}/miniboost)
+
 find_package(KDE4 REQUIRED)
 find_package(KDE4Internal REQUIRED)
 find_package(GMP REQUIRED)
-find_package(Boost REQUIRED)
 find_package(QCA2 REQUIRED)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules;${CMAKE_MODULE_PATH}")
@@ -27,7 +29,7 @@ include(CheckTypeSize) #XFS
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
 add_definitions( ${KDE4_DEFINITIONS} )
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-include_directories(${KDE4_INCLUDES} ${LIBKTORRENT_BINARY_DIR}	${LIBKTORRENT_SOURCE_DIR} ${GMP_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
+include_directories(${KDE4_INCLUDES} ${LIBKTORRENT_BINARY_DIR}	${LIBKTORRENT_SOURCE_DIR} ${GMP_INCLUDE_DIR})
 
 set(LIBKTORRENT_VERSION "1.1dev")
 
