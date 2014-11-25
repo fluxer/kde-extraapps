@@ -1,7 +1,7 @@
 project(kget)
 
 # boost headers are bundled
-include_directories(${PROJECT_SOURCE_DIR}/miniboost)
+include_directories(${PROJECT_SOURCE_DIR}/../miniboost)
 
 if(NOT INSIDE_KDENETWORK)
     message("Not building inside KDENetwork, loading KDE CMake Macros.")

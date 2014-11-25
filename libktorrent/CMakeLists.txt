@@ -1,7 +1,7 @@
 project(LIBKTORRENT)
 
 # boost headers are bundled
-include_directories(${PROJECT_SOURCE_DIR}/miniboost)
+include_directories(${PROJECT_SOURCE_DIR}/../miniboost)
 
 find_package(KDE4 REQUIRED)
 find_package(KDE4Internal REQUIRED)

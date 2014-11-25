@@ -17,4 +17,6 @@ fi
 rm -vrf miniboost/
 mkdir -vp miniboost/
 
-bcp --boost="$boost" boost/bind miniboost/
+bcp --boost="$boost" boost/shared_array.hpp boost/concept_check.hpp \
+    boost/scoped_ptr.hpp boost/circular_buffer.hpp boost/bind \
+    miniboost/
