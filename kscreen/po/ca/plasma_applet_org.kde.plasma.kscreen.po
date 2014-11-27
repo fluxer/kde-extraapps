@@ -1,0 +1,64 @@
+# Translation of plasma_applet_org.kde.plasma.kscreen.po to Catalan
+# Copyright (C) 2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.plasma.kscreen\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-07-09 21:21+0000\n"
+"PO-Revision-Date: 2013-09-01 09:42+0200\n"
+"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.4\n"
+"X-Accelerator-Marker: &\n"
+
+#: kscreenapplet.cpp:82
+msgid "Failed to connect to KScreen daemon"
+msgstr "Ha fallat en connectar-se al dimoni KScreen"
+
+#: kscreenapplet.cpp:96
+msgid "Failed to load root object"
+msgstr "Ha fallat en carregar l'objecte arrel"
+
+#: package/contents/ui/main.qml:47
+#, kde-format
+msgctxt "%1 is name of the newly connected display"
+msgid "A new display %1 has been detected"
+msgstr "S'ha detectat una pantalla nova %1"
+
+#: package/contents/ui/main.qml:91
+msgctxt "Places the newly connected screen right of the existing one"
+msgid "Extend to Right"
+msgstr "Estén a la dreta"
+
+#: package/contents/ui/main.qml:101
+msgctxt "Places the newly connected screen left of the existing one"
+msgid "Extend to Left"
+msgstr "Estén a l'esquerra"
+
+#: package/contents/ui/main.qml:111
+msgctxt "Makes the newly conencted screen a clone of the primary one"
+msgid "Clone Primary Output"
+msgstr "Clona la sortida primària"
+
+#: package/contents/ui/main.qml:121
+msgctxt "Disables the newly connected screen"
+msgid "Disable"
+msgstr "Desactiva"
+
+#: package/contents/ui/main.qml:131
+msgid "No Action"
+msgstr "Cap acció"
+
+#: package/contents/ui/main.qml:141
+msgctxt "Opens KScreen KCM"
+msgid "Advanced Configuration"
+msgstr "Configuració avançada"

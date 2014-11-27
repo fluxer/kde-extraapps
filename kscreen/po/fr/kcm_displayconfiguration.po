@@ -1,0 +1,107 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Joëlle Cornavin <jcorn@free.fr>, 2013.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-15 01:33+0000\n"
+"PO-Revision-Date: 2013-07-09 11:06+0200\n"
+"Last-Translator: xavier <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr"
+
+#: qml/main.qml:117
+msgid "Tip: Hold Ctrl while dragging a display to disable snapping"
+msgstr ""
+"Astuce : maintenez enfoncée la touche « Ctrl » en faisant glisser un "
+"affichage pour désactiver le sautillement"
+
+#: qml/main.qml:125
+msgid "Warning: There are no active outputs!"
+msgstr "Attention : il n'existe aucune sortie active !"
+
+#: qml/main.qml:142
+msgid "Identify outputs"
+msgstr "Identifier les sorties"
+
+#: qml/OutputControls.qml:222
+msgid "Rotate output 90° counterclockwise"
+msgstr "Faire pivoter de 90° dans le sens antihoraire"
+
+#: qml/OutputControls.qml:260
+msgid "Toggle primary output"
+msgstr "Activer / Désactiver la sortie primaire"
+
+#: qml/OutputControls.qml:280
+msgid "Show list of available display resolutions"
+msgstr "Afficher une liste des résolutions d'affichage disponibles"
+
+#: src/kcm_kscreen.cpp:63
+msgid "Display Configuration"
+msgstr "Configuration de l'écran"
+
+#: src/kcm_kscreen.cpp:64
+msgid "Configuration for displays"
+msgstr "Configuration des écrans"
+
+#: src/kcm_kscreen.cpp:65
+msgid "(c), 2012 Dan Vrátil"
+msgstr "(c), 2012 Dan Vrátil"
+
+#: src/kcm_kscreen.cpp:67
+msgid "Dan Vrátil"
+msgstr "Dan Vrátil"
+
+#: src/kcm_kscreen.cpp:67
+msgid "Maintainer"
+msgstr "Mainteneur"
+
+#: src/kcm_kscreen.cpp:108
+msgid "No supported X Window System extension found"
+msgstr "Aucune extension de système « X Window » n'a été trouvée"
+
+#: src/kcm_kscreen.cpp:203
+msgid "Are you sure you want to disable all outputs?"
+msgstr "Voulez-vous vraiment désactiver toutes les sorties ?"
+
+#: src/kcm_kscreen.cpp:204
+msgid "Disable all outputs?"
+msgstr "Désactiver toutes les sorties ?"
+
+#: src/kcm_kscreen.cpp:205
+msgid "&Disable All Outputs"
+msgstr "&Désactiver toutes les sorties"
+
+#: src/kcm_kscreen.cpp:206
+msgid "&Reconfigure"
+msgstr "&Reconfigurer"
+
+#: src/kcm_testapp.cpp:30
+msgid "KCM Test App"
+msgstr "Application de tests de KCM"
+
+#: src/modesproxymodel.cpp:66
+msgctxt "As in automatic"
+msgid "Auto"
+msgstr "Auto"
+
+#, fuzzy

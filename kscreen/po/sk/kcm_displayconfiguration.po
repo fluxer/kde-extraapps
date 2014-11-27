@@ -1,0 +1,97 @@
+# translation of kcm_displayconfiguration.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcm_displayconfiguration\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-15 01:33+0000\n"
+"PO-Revision-Date: 2013-05-06 20:55+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: qml/main.qml:117
+msgid "Tip: Hold Ctrl while dragging a display to disable snapping"
+msgstr "Tip: Podržte Ctrl počas presunu obrazovky na zakázanie priťahovania"
+
+#: qml/main.qml:125
+msgid "Warning: There are no active outputs!"
+msgstr "Upozornenie: Nie sú žiadne aktívne výstupy!"
+
+#: qml/main.qml:142
+msgid "Identify outputs"
+msgstr "Identifikovať výstupy"
+
+#: qml/OutputControls.qml:222
+msgid "Rotate output 90° counterclockwise"
+msgstr "Otočiť výstup o 90° proti smeru hodinových ručičiek"
+
+#: qml/OutputControls.qml:260
+msgid "Toggle primary output"
+msgstr "Prepnúť primárny výstup"
+
+#: qml/OutputControls.qml:280
+msgid "Show list of available display resolutions"
+msgstr "Zobraziť zoznam dostupných rozlíšení obrazovky"
+
+#: src/kcm_kscreen.cpp:63
+msgid "Display Configuration"
+msgstr "Nastavenia obrazovky"
+
+#: src/kcm_kscreen.cpp:64
+msgid "Configuration for displays"
+msgstr "Nastavenie pre obrazovky"
+
+#: src/kcm_kscreen.cpp:65
+msgid "(c), 2012 Dan Vrátil"
+msgstr "(c), 2012 Dan Vrátil"
+
+#: src/kcm_kscreen.cpp:67
+msgid "Dan Vrátil"
+msgstr "Dan Vrátil"
+
+#: src/kcm_kscreen.cpp:67
+msgid "Maintainer"
+msgstr "Správca"
+
+#: src/kcm_kscreen.cpp:108
+msgid "No supported X Window System extension found"
+msgstr "Nenašli sa žiadne podporované rozšírenia systému X Window"
+
+#: src/kcm_kscreen.cpp:203
+msgid "Are you sure you want to disable all outputs?"
+msgstr "Určite chcete zakázať všetky výstupy?"
+
+#: src/kcm_kscreen.cpp:204
+msgid "Disable all outputs?"
+msgstr "Zakázať všetky výstupy?"
+
+#: src/kcm_kscreen.cpp:205
+msgid "&Disable All Outputs"
+msgstr "Zakázať všetky výstupy"
+
+#: src/kcm_kscreen.cpp:206
+msgid "&Reconfigure"
+msgstr "Znovu nastaviť"
+
+#: src/kcm_testapp.cpp:30
+msgid "KCM Test App"
+msgstr "Testovacia aplikácia KCM"
+
+#: src/modesproxymodel.cpp:66
+msgctxt "As in automatic"
+msgid "Auto"
+msgstr "Auto"

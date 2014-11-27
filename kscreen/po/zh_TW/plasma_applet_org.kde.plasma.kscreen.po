@@ -1,0 +1,61 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-07-09 21:21+0000\n"
+"PO-Revision-Date: 2013-07-16 17:51+0800\n"
+"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: kscreenapplet.cpp:82
+msgid "Failed to connect to KScreen daemon"
+msgstr "連線到 KScreen 伺服程式失敗"
+
+#: kscreenapplet.cpp:96
+msgid "Failed to load root object"
+msgstr "載入根物件失敗"
+
+#: package/contents/ui/main.qml:47
+#, kde-format
+msgctxt "%1 is name of the newly connected display"
+msgid "A new display %1 has been detected"
+msgstr "偵測到新的顯示 %1"
+
+#: package/contents/ui/main.qml:91
+msgctxt "Places the newly connected screen right of the existing one"
+msgid "Extend to Right"
+msgstr "延展到右"
+
+#: package/contents/ui/main.qml:101
+msgctxt "Places the newly connected screen left of the existing one"
+msgid "Extend to Left"
+msgstr "延展到左"
+
+#: package/contents/ui/main.qml:111
+msgctxt "Makes the newly conencted screen a clone of the primary one"
+msgid "Clone Primary Output"
+msgstr "複製主要輸出"
+
+#: package/contents/ui/main.qml:121
+msgctxt "Disables the newly connected screen"
+msgid "Disable"
+msgstr "關閉"
+
+#: package/contents/ui/main.qml:131
+msgid "No Action"
+msgstr "沒有動作"
+
+#: package/contents/ui/main.qml:141
+msgctxt "Opens KScreen KCM"
+msgid "Advanced Configuration"
+msgstr "進階設定"

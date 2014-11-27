@@ -1,0 +1,59 @@
+# translation of plasma_applet_org.kde.plasma.kscreen.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.plasma.kscreen\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-07-09 21:21+0000\n"
+"PO-Revision-Date: 2013-07-11 19:48+0200\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: kscreenapplet.cpp:82
+msgid "Failed to connect to KScreen daemon"
+msgstr "Nepodarilo sa pripojiť na démon KScreen"
+
+#: kscreenapplet.cpp:96
+msgid "Failed to load root object"
+msgstr "Zlyhalo načítanie koreňového objektu"
+
+#: package/contents/ui/main.qml:47
+#, kde-format
+msgctxt "%1 is name of the newly connected display"
+msgid "A new display %1 has been detected"
+msgstr "Nová obrazovka %1 sa zistila"
+
+#: package/contents/ui/main.qml:91
+msgctxt "Places the newly connected screen right of the existing one"
+msgid "Extend to Right"
+msgstr "Rozšíriť doprava"
+
+#: package/contents/ui/main.qml:101
+msgctxt "Places the newly connected screen left of the existing one"
+msgid "Extend to Left"
+msgstr "Rozšíriť doľava"
+
+#: package/contents/ui/main.qml:111
+msgctxt "Makes the newly conencted screen a clone of the primary one"
+msgid "Clone Primary Output"
+msgstr "Klonovať primárny výstup"
+
+#: package/contents/ui/main.qml:121
+msgctxt "Disables the newly connected screen"
+msgid "Disable"
+msgstr "Zakázať"
+
+#: package/contents/ui/main.qml:131
+msgid "No Action"
+msgstr "Žiadna akcia"
+
+#: package/contents/ui/main.qml:141
+msgctxt "Opens KScreen KCM"
+msgid "Advanced Configuration"
+msgstr "Pokročilé nastavenie"

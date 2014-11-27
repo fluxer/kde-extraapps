@@ -1,0 +1,101 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-15 01:33+0000\n"
+"PO-Revision-Date: 2013-07-13 19:26+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Úr Balázs"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "urbalazs@gmail.com"
+
+#: qml/main.qml:117
+msgid "Tip: Hold Ctrl while dragging a display to disable snapping"
+msgstr ""
+"Tipp: Tartsa nyomva a Ctrl billentyűt a megjelenítő húzása közben az elkapás "
+"tiltásához"
+
+#: qml/main.qml:125
+msgid "Warning: There are no active outputs!"
+msgstr "Figyelem: Nincsenek aktív kimenetek!"
+
+#: qml/main.qml:142
+msgid "Identify outputs"
+msgstr "Kimenetek azonosítása"
+
+#: qml/OutputControls.qml:222
+msgid "Rotate output 90° counterclockwise"
+msgstr "Kimenet forgatása 90°-kal balra"
+
+#: qml/OutputControls.qml:260
+msgid "Toggle primary output"
+msgstr "Elsődleges kimenet váltása"
+
+#: qml/OutputControls.qml:280
+msgid "Show list of available display resolutions"
+msgstr "Elérhető megjelenítő felbontások listájának megjelenítése"
+
+#: src/kcm_kscreen.cpp:63
+msgid "Display Configuration"
+msgstr "Megjelenítési beállítások"
+
+#: src/kcm_kscreen.cpp:64
+msgid "Configuration for displays"
+msgstr "Beállítás a megjelenítőkhöz"
+
+#: src/kcm_kscreen.cpp:65
+msgid "(c), 2012 Dan Vrátil"
+msgstr "© Dan Vrátil, 2012."
+
+#: src/kcm_kscreen.cpp:67
+msgid "Dan Vrátil"
+msgstr "Dan Vrátil"
+
+#: src/kcm_kscreen.cpp:67
+msgid "Maintainer"
+msgstr "Karbantartó"
+
+#: src/kcm_kscreen.cpp:108
+msgid "No supported X Window System extension found"
+msgstr "Nem található támogatott X ablakkezelő kiterjesztés"
+
+#: src/kcm_kscreen.cpp:203
+msgid "Are you sure you want to disable all outputs?"
+msgstr "Biztosan le szeretne tiltani minden kimenetet?"
+
+#: src/kcm_kscreen.cpp:204
+msgid "Disable all outputs?"
+msgstr "Minden kimenet letiltása?"
+
+#: src/kcm_kscreen.cpp:205
+msgid "&Disable All Outputs"
+msgstr "&Minden kimenet letiltása"
+
+#: src/kcm_kscreen.cpp:206
+msgid "&Reconfigure"
+msgstr "Újra &beállítás"
+
+#: src/kcm_testapp.cpp:30
+msgid "KCM Test App"
+msgstr "KCM teszt alkalmazás"
+
+#: src/modesproxymodel.cpp:66
+msgctxt "As in automatic"
+msgid "Auto"
+msgstr "Automatikus"
