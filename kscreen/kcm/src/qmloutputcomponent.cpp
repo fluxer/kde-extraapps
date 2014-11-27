@@ -27,7 +27,7 @@
 #include <KDebug>
 #include <KUrl>
 
-#include <kscreen/output.h>
+#include <libkscreen/src/output.h>
 
 Q_DECLARE_METATYPE(KScreen::Output*)
 

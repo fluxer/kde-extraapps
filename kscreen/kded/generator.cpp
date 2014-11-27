@@ -24,7 +24,7 @@
 #include <QDBusConnection>
 
 #include <kdebug.h>
-#include <kscreen/config.h>
+#include <libkscreen/src/config.h>
 
 Generator* Generator::instance = 0;
 

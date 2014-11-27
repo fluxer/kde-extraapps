@@ -18,6 +18,7 @@ include_directories(
    ${KDE4_INCLUDES}
    ${QIMAGEBLITZ_INCLUDES}
    ${CMAKE_SOURCE_DIR}/libkscreen
+   ${CMAKE_SOURCE_DIR}
 )
 
 add_subdirectory( active )

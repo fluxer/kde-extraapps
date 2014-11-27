@@ -30,9 +30,9 @@
 
 #include <kdebug.h>
 
-#include <kscreen/config.h>
-#include <kscreen/output.h>
-#include <kscreen/edid.h>
+#include <libkscreen/src/config.h>
+#include <libkscreen/src/output.h>
+#include <libkscreen/src/edid.h>
 #include <KStandardDirs>
 
 QString Serializer::currentId()

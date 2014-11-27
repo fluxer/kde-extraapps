@@ -20,7 +20,7 @@
 #define LOOP2
 
 #include <QObject>
-#include <kscreen/output.h>
+#include <libkscreen/src/output.h>
 
 namespace KScreen
 {

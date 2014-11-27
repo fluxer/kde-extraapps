@@ -32,10 +32,10 @@
 #include <Plasma/DeclarativeWidget>
 #include <KToolInvocation>
 
-#include <kscreen/config.h>
-#include <kscreen/output.h>
-#include <kscreen/edid.h>
-#include <kscreen/configmonitor.h>
+#include <libkscreen/src/config.h>
+#include <libkscreen/src/output.h>
+#include <libkscreen/src/edid.h>
+#include <libkscreen/src/configmonitor.h>
 
 bool leftPos(KScreen::Output* output1, KScreen::Output* output2) {
     return (output1->pos().x() < output2->pos().x());

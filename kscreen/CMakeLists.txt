@@ -21,6 +21,7 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${QJSON_INCLUDE_DIR}
     ${CMAKE_SOURCE_DIR}/libkscreen
+    ${CMAKE_SOURCE_DIR}
 )
 
 add_subdirectory(icons)

@@ -19,10 +19,8 @@
 
 #ifdef Q_WS_X11
   #include "config-okular.h"
-  #if HAVE_LIBKSCREEN
-   #include <kscreen/config.h>
-   #include <kscreen/edid.h>
-  #endif
+  #include <libkscreen/src/config.h>
+  #include <libkscreen/src/edid.h>
   #include <QX11Info>
 #endif
 
@@ -101,7 +99,6 @@ QSizeF Utils::realDpi(QWidget* widgetOnScreen)
     if (widgetOnScreen)
     {
         // Firstly try to retrieve DPI via LibKScreen
-#if HAVE_LIBKSCREEN
         KScreen::Config* config = KScreen::Config::current();
         if (config) {
             KScreen::OutputList outputs = config->outputs();
@@ -166,7 +163,6 @@ QSizeF Utils::realDpi(QWidget* widgetOnScreen)
         {
             kDebug() << "Didn't find a KScreen config to calculate DPI. Falling back";
         }
-#endif
     }
     // this is also fallback for LibKScreen branch if KScreen::Output
     // for particular widget was not found

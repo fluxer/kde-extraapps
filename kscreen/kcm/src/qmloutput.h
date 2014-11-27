@@ -21,7 +21,7 @@
 #define QMLOUTPUT_H
 
 #include <QDeclarativeItem>
-#include <kscreen/mode.h>
+#include <libkscreen/src/mode.h>
 
 class QStandardItemModel;
 class QAbstractItemModel;

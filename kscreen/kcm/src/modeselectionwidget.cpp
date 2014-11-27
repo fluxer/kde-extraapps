@@ -22,7 +22,7 @@
 #include <QGridLayout>
 #include <QPainter>
 #include <QGraphicsProxyWidget>
-#include <kscreen/output.h>
+#include <libkscreen/src/output.h>
 #include <KDebug>
 #include <QRectF>
 #include <sys/socket.h>

@@ -31,8 +31,8 @@
 #include <KActionCollection>
 #include <KPluginFactory>
 
-#include <kscreen/config.h>
-#include <kscreen/configmonitor.h>
+#include <libkscreen/src/config.h>
+#include <libkscreen/src/configmonitor.h>
 
 K_PLUGIN_FACTORY(KScreenDaemonFactory, registerPlugin<KScreenDaemon>();)
 K_EXPORT_PLUGIN(KScreenDaemonFactory("kscreen", "kscreen"))

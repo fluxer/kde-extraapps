@@ -18,7 +18,7 @@
 
 
 #include "qmloutput.h"
-#include <kscreen/output.h>
+#include <libkscreen/src/output.h>
 #include <KDebug>
 
 #include <QStandardItem>

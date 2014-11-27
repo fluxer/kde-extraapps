@@ -1,4 +1,4 @@
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${QT_INCLUDES})
+include_directories(${PROJECT_SOURCE_DIR}  ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${QT_INCLUDES})
 
 set(libkscreen_SRCS
     backendloader.cpp

@@ -38,9 +38,9 @@
 #include <QDeclarativeView>
 #include <QDeclarativeContext>
 
-#include <kscreen/config.h>
-#include <kscreen/edid.h>
-#include <kscreen/configmonitor.h>
+#include <libkscreen/src/config.h>
+#include <libkscreen/src/edid.h>
+#include <libkscreen/src/configmonitor.h>
 
 K_PLUGIN_FACTORY(KCMDisplayConfigurationFactory, registerPlugin<KCMKScreen>();)
 K_EXPORT_PLUGIN(KCMDisplayConfigurationFactory ("kcm_kscreen" /* kcm name */,

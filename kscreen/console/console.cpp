@@ -27,11 +27,11 @@
 #include <qjson/parser.h>
 #include <qjson/serializer.h>
 
-#include <kscreen/config.h>
-#include <kscreen/output.h>
-#include <kscreen/mode.h>
-#include <kscreen/configmonitor.h>
-#include <kscreen/edid.h>
+#include <libkscreen/src/config.h>
+#include <libkscreen/src/output.h>
+#include <libkscreen/src/mode.h>
+#include <libkscreen/src/configmonitor.h>
+#include <libkscreen/src/edid.h>
 
 #include <KStandardDirs>
 

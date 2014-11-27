@@ -22,8 +22,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include <kscreen/output.h>
-#include <kscreen/mode.h>
+#include <libkscreen/src/output.h>
+#include <libkscreen/src/mode.h>
 
 namespace KScreen
 {

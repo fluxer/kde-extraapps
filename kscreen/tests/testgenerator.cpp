@@ -21,7 +21,7 @@
 #include <QtTest>
 #include <QtCore/QObject>
 
-#include <kscreen/config.h>
+#include <libkscreen/src/config.h>
 
 using namespace KScreen;
 

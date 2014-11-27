@@ -23,7 +23,7 @@
 
 #include <kdedmodule.h>
 
-#include <kscreen/config.h>
+#include <libkscreen/src/config.h>
 
 class QTimer;
 
