@@ -14,7 +14,7 @@ include(MacroOptionalAddSubdirectory)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 find_package(SharedMimeInfo REQUIRED)
 
-include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} libbluedevil/bluedevil)
+include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} libbluedevil)
 
 add_subdirectory(src)
 
