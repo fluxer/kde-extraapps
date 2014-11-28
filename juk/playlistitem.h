@@ -17,7 +17,6 @@
 #ifndef PLAYLISTITEM_H
 #define PLAYLISTITEM_H
 
-#include <k3listview.h>
 #include <ksharedptr.h>
 #include <kdebug.h>
 
@@ -43,7 +42,7 @@ typedef QList<PlaylistItem *> PlaylistItemList;
  * Playlist::clearItem().
  */
 
-class PlaylistItem : public K3ListViewItem
+class PlaylistItem : public QListView
 {
     friend class Playlist;
     friend class SearchPlaylist;
@@ -145,12 +144,12 @@ public:
     /**
      * Returns properly casted item below this one.
      */
-    PlaylistItem *itemBelow() { return static_cast<PlaylistItem *>(K3ListViewItem::itemBelow()); }
+    PlaylistItem *itemBelow() { return static_cast<PlaylistItem *>(QListView::itemBelow()); }
 
     /**
      * Returns properly casted item above this one.
      */
-    PlaylistItem *itemAbove() { return static_cast<PlaylistItem *>(K3ListViewItem::itemAbove()); }
+    PlaylistItem *itemAbove() { return static_cast<PlaylistItem *>(QListView::itemAbove()); }
 
     /**
      * Returns a reference to the list of the currnetly playing items, with the
@@ -165,7 +164,7 @@ protected:
      * subclass or friend class.
      */
     PlaylistItem(CollectionListItem *item, Playlist *parent);
-    PlaylistItem(CollectionListItem *item, Playlist *parent, Q3ListViewItem *after);
+    PlaylistItem(CollectionListItem *item, Playlist *parent, QListView *after);
 
     /**
      * This is the constructor that shold be used by subclasses.
@@ -178,10 +177,10 @@ protected:
      */
     virtual ~PlaylistItem();
 
-    virtual void paintCell(QPainter *p, const QColorGroup &cg, int column, int width, int align);
-    virtual void paintFocus(QPainter *, const QColorGroup &, const QRect &) {}
+    virtual void paintCell(QPainter *p, const QPalette &cg, int column, int width, int align);
+    virtual void paintFocus(QPainter *, const QPalette &, const QRect &) {}
 
-    virtual int compare(Q3ListViewItem *item, int column, bool ascending) const;
+    virtual int compare(QListView *item, int column, bool ascending) const;
     int compare(const PlaylistItem *firstItem, const PlaylistItem *secondItem, int column, bool ascending) const;
 
     bool isValid() const;
@@ -209,7 +208,7 @@ private:
     KSharedPtr<Data> d;
 
     void setup(CollectionListItem *item);
-    using Q3ListViewItem::setup; // Avoid warning about hidden function.
+    using QListView::setup; // Avoid warning about hidden function.
 
     CollectionListItem *m_collectionItem;
     quint32 m_trackId;
