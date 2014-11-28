@@ -1,0 +1,117 @@
+<ui version="4.0" >
+ <class>CoverDialogBase</class>
+ <widget class="QWidget" name="CoverDialogBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>685</width>
+    <height>554</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Cover Manager</string>
+  </property>
+  <layout class="QHBoxLayout" >
+   <property name="margin" >
+    <number>11</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="KListWidget" name="m_artists" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>5</hsizetype>
+       <vsizetype>7</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize" >
+      <size>
+       <width>164</width>
+       <height>0</height>
+      </size>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Artist</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="KLineEdit" native="1" name="m_searchLine" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>0</vsizetype>
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="CoverIconView" native="1" name="m_covers" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>7</hsizetype>
+         <vsizetype>7</vsizetype>
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KListWidget</class>
+   <extends>QListWidget</extends>
+   <header>klistwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QWidget</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CoverIconView</class>
+   <extends>QWidget</extends>
+   <header>covericonview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <includes>
+  <include location="local" >k3listview.h</include>
+  <include location="local" >klineedit.h</include>
+  <include location="local" >covericonview.h</include>
+ </includes>
+ <resources/>
+ <connections>
+ </connections>
+</ui>
