@@ -32,6 +32,8 @@ macro_optional_add_subdirectory (kfilemetadata)
 macro_optional_add_subdirectory (libkscreen)
 # FIXME: make kget find libktorrent
 macro_optional_add_subdirectory (libktorrent)
+macro_optional_add_subdirectory (kcharselect)
+macro_optional_add_subdirectory (kcolorchooser)
 macro_optional_add_subdirectory (kfloppy)
 macro_optional_add_subdirectory (kget)
 macro_optional_add_subdirectory (kgpg)
