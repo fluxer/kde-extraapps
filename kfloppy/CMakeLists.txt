@@ -38,5 +38,3 @@ install( PROGRAMS KFloppy.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 #install( FILES floppy_format.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
-
-add_subdirectory(doc)
