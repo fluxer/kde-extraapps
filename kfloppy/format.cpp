@@ -27,9 +27,10 @@
 
 #include <QTimer>
 #include <QRegExp>
+#include <QProcess>
 
 #include <klocale.h>
-#include <k3process.h>
+#include <kprocess.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
 
@@ -321,7 +322,7 @@ bool FloppyAction::configureDevice(int drive,int density)
 	return true;
 }
 
-void FloppyAction::processDone(K3Process *p)
+void FloppyAction::processDone(KProcess *p)
 {
 	DEBUGSETUP;
 
@@ -331,7 +332,7 @@ void FloppyAction::processDone(K3Process *p)
 		return;
 	}
 
-	if (p->normalExit())
+	if (p->state() == QProcess::NotRunning)
 	{
 	        if (p->exitStatus() == 0)
 	        {
@@ -351,32 +352,33 @@ void FloppyAction::processDone(K3Process *p)
 	}
 }
 
-void FloppyAction::processStdOut(K3Process *, char *b, int l)
+void FloppyAction::processStdOut(KProcess *, char *b, int l)
 {
 	Q_UNUSED(b);
 	Q_UNUSED(l);
 	kDebug(KFAREA) << "stdout:" << QString::fromLatin1(b,l) ;
 }
 
-void FloppyAction::processStdErr(K3Process *p, char *b, int l)
+void FloppyAction::processStdErr(KProcess *p, char *b, int l)
 {
 	processStdOut(p,b,l);
 }
 
-bool FloppyAction::startProcess()
+int FloppyAction::startProcess()
 {
 	DEBUGSETUP;
 
-	connect(theProcess,SIGNAL(processExited(K3Process*)),
-		this,SLOT(processDone(K3Process*)));
-	connect(theProcess,SIGNAL(receivedStdout(K3Process*,char*,int)),
-		this,SLOT(processStdOut(K3Process*,char*,int)));
-	connect(theProcess,SIGNAL(receivedStderr(K3Process*,char*,int)),
-		this,SLOT(processStdErr(K3Process*,char*,int)));
+	connect(theProcess,SIGNAL(processExited(KProcess*)),
+		this,SLOT(processDone(KProcess*)));
+	connect(theProcess,SIGNAL(receivedStdout(KProcess*,char*,int)),
+		this,SLOT(processStdOut(KProcess*,char*,int)));
+	connect(theProcess,SIGNAL(receivedStderr(KProcess*,char*,int)),
+		this,SLOT(processStdErr(KProcess*,char*,int)));
 
-        theProcess->setEnvironment( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) ); // We need the untranslated output of the tool
-	return theProcess->start(K3Process::NotifyOnExit,
-		K3Process::AllOutput);
+	 // We need the untranslated output of the tool
+	theProcess->setEnv( QLatin1String( "LC_ALL" ), QLatin1String( "C" ) );
+	theProcess->setOutputChannelMode(KProcess::MergedChannels);
+	return theProcess->execute();
 }
 
 
@@ -422,7 +424,7 @@ bool FDFormat::configure(bool v)
 	}
 
 	delete theProcess;
-	theProcess = new K3Process;
+	theProcess = new KProcess;
 
 	formatTrackCount=0;
 
@@ -461,7 +463,7 @@ bool FDFormat::configure(bool v)
 // need, since the messages can be standardized across OSsen.
 //
 //
-void FDFormat::processStdOut(K3Process *, char *b, int l)
+void FDFormat::processStdOut(KProcess *, char *b, int l)
 {
 	DEBUGSETUP;
 	QString s;
@@ -583,7 +585,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
     }
 
     delete theProcess;
-    theProcess = new K3Process;
+    theProcess = new KProcess;
 
     *theProcess << m_ddName ;
 
@@ -598,7 +600,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 }
 
-void DDZeroOut::processDone(K3Process *p)
+void DDZeroOut::processDone(KProcess *p)
 {
     kDebug(KFAREA) << k_funcinfo ;
 
@@ -680,7 +682,7 @@ void FATFilesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs_fat;
 #ifdef ANY_BSD
@@ -710,7 +712,7 @@ void FATFilesystem::exec()
 	}
 }
 
-void FATFilesystem::processStdOut(K3Process *, char *b, int l)
+void FATFilesystem::processStdOut(KProcess *, char *b, int l)
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
@@ -779,7 +781,7 @@ void UFSFilesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
 
@@ -857,7 +859,7 @@ void Ext2Filesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
 	*p << "-q";
@@ -873,7 +875,7 @@ void Ext2Filesystem::exec()
 	}
 }
 
-void Ext2Filesystem::processStdOut(K3Process *, char *b, int l)
+void Ext2Filesystem::processStdOut(KProcess *, char *b, int l)
 {
 #ifdef ANY_BSD
     // ### TODO: do some checks
@@ -951,7 +953,7 @@ void MinixFilesystem::exec()
 	}
 
 	delete theProcess;
-	K3Process *p = theProcess = new K3Process;
+	KProcess *p = theProcess = new KProcess;
 
 	*p << newfs;
 
@@ -967,7 +969,7 @@ void MinixFilesystem::exec()
 	}
 }
 
-void MinixFilesystem::processStdOut(K3Process *, char *b, int l)
+void MinixFilesystem::processStdOut(KProcess *, char *b, int l)
 {
     QString s ( QString::fromLatin1( b, l ) );
     kDebug(KFAREA) << s ;
