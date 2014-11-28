@@ -1,0 +1,322 @@
+/****************************************************************************************
+ * Copyright (c) 2008 Nikolaj Hald Nielsen <nhn@kde.org>                                *
+ * Copyright (c) 2008 Bart Cerneels <bart.cerneels@kde.org>                             *
+ *                                                                                      *
+ * This program is free software; you can redistribute it and/or modify it under        *
+ * the terms of the GNU General Public License as published by the Free Software        *
+ * Foundation; either version 2 of the License, or (at your option) any later           *
+ * version.                                                                             *
+ *                                                                                      *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY      *
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A      *
+ * PARTICULAR PURPOSE. See the GNU General Public License for more details.             *
+ *                                                                                      *
+ * You should have received a copy of the GNU General Public License along with         *
+ * this program.  If not, see <http://www.gnu.org/licenses/>.                           *
+ ****************************************************************************************/
+
+#include "SqlUserPlaylistProvider.h"
+
+#include "SvgHandler.h"
+#include "browsers/playlistbrowser/UserPlaylistModel.h"
+#include "core/collections/support/SqlStorage.h"
+#include "core/playlists/PlaylistFormat.h"
+#include "core/support/Amarok.h"
+#include "core/support/Debug.h"
+#include "core-impl/collections/support/CollectionManager.h"
+#include "core-impl/playlists/types/file/m3u/M3UPlaylist.h"
+#include "core-impl/playlists/types/file/pls/PLSPlaylist.h"
+#include "core-impl/playlists/types/file/xspf/XSPFPlaylist.h"
+#include "core-impl/playlists/types/file/PlaylistFileSupport.h"
+
+#include <KDialog>
+#include <KGlobal>
+#include <KIcon>
+#include <KInputDialog>
+#include <KLocale>
+#include <KMessageBox>
+#include <KUrl>
+
+#include <QAction>
+#include <QLabel>
+#include <QMap>
+
+static const int USERPLAYLIST_DB_VERSION = 3;
+// a database updater has been added in checkTables(). Use that when updating db version
+static const QString key("AMAROK_USERPLAYLIST");
+
+namespace Playlists {
+
+SqlUserPlaylistProvider::SqlUserPlaylistProvider( bool debug )
+    : UserPlaylistProvider()
+    , m_debug( debug )
+{
+    checkTables();
+    m_root = Playlists::SqlPlaylistGroupPtr( new Playlists::SqlPlaylistGroup( QString(),
+            Playlists::SqlPlaylistGroupPtr(), this ) );
+}
+
+SqlUserPlaylistProvider::~SqlUserPlaylistProvider()
+{
+}
+
+int
+SqlUserPlaylistProvider::playlistCount() const
+{
+    return m_root->childSqlPlaylists().count();
+}
+
+Playlists::PlaylistList
+SqlUserPlaylistProvider::playlists()
+{
+    Playlists::PlaylistList playlists;
+    foreach( Playlists::SqlPlaylistPtr sqlPlaylist, m_root->allChildPlaylists() )
+    {
+        playlists << Playlists::PlaylistPtr::staticCast( sqlPlaylist );
+    }
+    return playlists;
+}
+
+void
+SqlUserPlaylistProvider::renamePlaylist( Playlists::PlaylistPtr playlist, const QString &newName )
+{
+    playlist->setName( newName.trimmed() );
+}
+
+bool
+SqlUserPlaylistProvider::isWritable()
+{
+    return true;
+}
+
+bool
+SqlUserPlaylistProvider::deletePlaylists( const Playlists::PlaylistList &playlistList )
+{
+    Playlists::SqlPlaylistList sqlPlaylists;
+    foreach( Playlists::PlaylistPtr playlist, playlistList )
+    {
+        Playlists::SqlPlaylistPtr sqlPlaylist =
+            Playlists::SqlPlaylistPtr::dynamicCast( playlist );
+        if( !sqlPlaylist.isNull() )
+            sqlPlaylists << sqlPlaylist;
+    }
+    return deleteSqlPlaylists( sqlPlaylists );
+}
+
+bool
+SqlUserPlaylistProvider::deleteSqlPlaylists( Playlists::SqlPlaylistList playlistList )
+{
+    //this delete is not confirmed, has to be done by the slot connected to the delete action.
+    foreach( Playlists::SqlPlaylistPtr sqlPlaylist, playlistList )
+    {
+        if( sqlPlaylist )
+        {
+            debug() << "deleting " << sqlPlaylist->name();
+            m_root->m_childPlaylists.removeAll( sqlPlaylist );
+            emit playlistRemoved( Playlists::PlaylistPtr::dynamicCast( sqlPlaylist ) );
+            sqlPlaylist->removeFromDb();
+        }
+    }
+
+    return true;
+}
+
+Playlists::PlaylistPtr
+SqlUserPlaylistProvider::save( const Meta::TrackList &tracks )
+{
+    DEBUG_BLOCK
+    QString name = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(), KLocale::LongDate, true );
+    return save( tracks, name );
+}
+
+Playlists::PlaylistPtr
+SqlUserPlaylistProvider::save( const Meta::TrackList &tracks, const QString& name )
+{
+    DEBUG_BLOCK
+    debug() << "saving " << tracks.count() << " tracks to db with name" << name;
+    Playlists::SqlPlaylistPtr sqlPlaylist = Playlists::SqlPlaylistPtr(
+            new Playlists::SqlPlaylist( name, tracks,
+                Playlists::SqlPlaylistGroupPtr(),
+                this )
+            );
+    m_root->m_childPlaylists << sqlPlaylist;
+    Playlists::PlaylistPtr playlist( sqlPlaylist.data() );
+
+    emit playlistAdded( playlist );
+    return playlist; // assumes insertion in db was successful!
+}
+
+void
+SqlUserPlaylistProvider::reloadFromDb()
+{
+    DEBUG_BLOCK;
+    m_root->clear();
+    emit updated();
+}
+
+Playlists::SqlPlaylistGroupPtr
+SqlUserPlaylistProvider::group( const QString &name )
+{
+    DEBUG_BLOCK
+    Playlists::SqlPlaylistGroupPtr group;
+
+    if( name.isEmpty() )
+        return m_root;
+
+    //clear the root first to force a reload.
+    m_root->clear();
+
+    foreach( const Playlists::SqlPlaylistGroupPtr &group, m_root->allChildGroups() )
+    {
+        debug() << group->name();
+        if( group->name() == name )
+        {
+            debug() << "match";
+            return group;
+        }
+    }
+
+    debug() << "Creating a new group " << name;
+    group = new Playlists::SqlPlaylistGroup( name, m_root, this );
+    group->save();
+
+    return group;
+}
+
+void
+SqlUserPlaylistProvider::createTables()
+{
+    DEBUG_BLOCK
+
+    SqlStorage *sqlStorage = CollectionManager::instance()->sqlStorage();
+    if( !sqlStorage )
+    {
+        debug() << "No SQL Storage available!";
+        return;
+    }
+    sqlStorage->query( QString( "CREATE TABLE playlist_groups ("
+            " id " + sqlStorage->idType() +
+            ", parent_id INTEGER"
+            ", name " + sqlStorage->textColumnType() +
+            ", description " + sqlStorage->textColumnType() + " ) ENGINE = MyISAM;" ) );
+    sqlStorage->query( "CREATE INDEX parent_podchannel ON playlist_groups( parent_id );" );
+
+
+    sqlStorage->query( QString( "CREATE TABLE playlists ("
+            " id " + sqlStorage->idType() +
+            ", parent_id INTEGER"
+            ", name " + sqlStorage->textColumnType() +
+            ", urlid " + sqlStorage->exactTextColumnType() + " ) ENGINE = MyISAM;" ) );
+    sqlStorage->query( "CREATE INDEX parent_playlist ON playlists( parent_id );" );
+
+    sqlStorage->query( QString( "CREATE TABLE playlist_tracks ("
+            " id " + sqlStorage->idType() +
+            ", playlist_id INTEGER "
+            ", track_num INTEGER "
+            ", url " + sqlStorage->exactTextColumnType() +
+            ", title " + sqlStorage->textColumnType() +
+            ", album " + sqlStorage->textColumnType() +
+            ", artist " + sqlStorage->textColumnType() +
+            ", length INTEGER "
+            ", uniqueid " + sqlStorage->textColumnType(128) + ") ENGINE = MyISAM;" ) );
+
+    sqlStorage->query( "CREATE INDEX parent_playlist_tracks ON playlist_tracks( playlist_id );" );
+    sqlStorage->query( "CREATE INDEX playlist_tracks_uniqueid ON playlist_tracks( uniqueid );" );
+}
+
+void
+SqlUserPlaylistProvider::deleteTables()
+{
+    DEBUG_BLOCK
+
+    SqlStorage *sqlStorage = CollectionManager::instance()->sqlStorage();
+
+    if( !sqlStorage )
+    {
+        debug() << "No SQL Storage available!";
+        return;
+    }
+
+    sqlStorage->query( "DROP INDEX parent_podchannel ON playlist_groups;" );
+    sqlStorage->query( "DROP INDEX parent_playlist ON playlists;" );
+    sqlStorage->query( "DROP INDEX parent_playlist_tracks ON playlist_tracks;" );
+    sqlStorage->query( "DROP INDEX playlist_tracks_uniqueid ON playlist_tracks;" );
+
+    sqlStorage->query( "DROP TABLE IF EXISTS playlist_groups;" );
+    sqlStorage->query( "DROP TABLE IF EXISTS playlists;" );
+    sqlStorage->query( "DROP TABLE IF EXISTS playlist_tracks;" );
+
+}
+
+void
+SqlUserPlaylistProvider::checkTables()
+{
+    DEBUG_BLOCK
+
+    SqlStorage *sqlStorage = CollectionManager::instance()->sqlStorage();
+    QStringList values;
+
+    //Prevents amarok from crashing on bad DB
+    if ( !sqlStorage )
+	    return;
+
+    values = sqlStorage->query( QString("SELECT version FROM admin WHERE component = '%1';").arg(sqlStorage->escape( key ) ) );
+    
+    if( values.isEmpty() )
+    {
+        //debug() << "creating Playlist Tables";
+        createTables();
+
+        sqlStorage->query( "INSERT INTO admin(component,version) "
+                "VALUES('" + key + "'," + QString::number( USERPLAYLIST_DB_VERSION ) + ");" );
+    }
+    else
+    {
+        int dbVersion = values.at( 0 ).toInt();
+        switch ( dbVersion )
+        {
+            case 2:
+                upgradeVersion2to3();
+                sqlStorage->query( "UPDATE admin SET version = '" + QString::number( USERPLAYLIST_DB_VERSION )  + "' WHERE component = '" + key + "';" );
+            case 3: // current version
+               break;
+            default:
+                KMessageBox::sorry(
+                    0, // QWidget *parent
+                    i18n( "Version %1 of playlist database schema encountered, however this "
+                        "Amarok version only supports version %2 (and previous versions "
+                        "starting with %2). Playlists saved in the Amarok Database probably "
+                        "will not work and any write operations with them may result in losing "
+                        "them. Perhaps you have started an older version of Amarok with a "
+                        "database written by newer version?", dbVersion, USERPLAYLIST_DB_VERSION ),
+                    i18nc( "the user's 'database version' is newer and unsupported by this software version",
+                           "Future version of Playlist Database?" ) );
+         }
+     }
+ }
+
+void
+SqlUserPlaylistProvider::upgradeVersion2to3()
+{
+    DEBUG_BLOCK
+    SqlStorage *sqlStorage = CollectionManager::instance()->sqlStorage();
+    sqlStorage->query( "ALTER TABLE playlists DROP COLUMN description" );
+}
+
+Playlists::SqlPlaylistList
+SqlUserPlaylistProvider::toSqlPlaylists( Playlists::PlaylistList playlists )
+{
+    Playlists::SqlPlaylistList sqlPlaylists;
+    foreach( Playlists::PlaylistPtr playlist, playlists )
+    {
+        Playlists::SqlPlaylistPtr sqlPlaylist =
+            Playlists::SqlPlaylistPtr::dynamicCast( playlist );
+        if( !sqlPlaylist.isNull() )
+            sqlPlaylists << sqlPlaylist;
+    }
+    return sqlPlaylists;
+}
+
+} //namespace Playlists
+
+#include "SqlUserPlaylistProvider.moc"

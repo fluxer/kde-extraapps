@@ -1,0 +1,23 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.amarok.Mp3tunesHarmonyDaemon">
+    <method name="pin">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="email">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="error">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="daemonConnected">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="breakConnection">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="makeConnection">
+      <arg type="s" direction="out"/>
+    </method>
+  </interface>
+</node>

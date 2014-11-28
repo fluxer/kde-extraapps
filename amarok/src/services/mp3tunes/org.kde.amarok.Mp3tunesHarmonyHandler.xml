@@ -1,0 +1,25 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="local.Mp3tunesHarmonyHandler">
+    <method name="emitError">
+      <arg name="error" type="s" direction="in"/>
+    </method>
+    <method name="emitWaitingForEmail">
+      <arg name="pin" type="s" direction="in"/>
+    </method>
+    <method name="emitWaitingForPin">
+    </method>
+    <method name="emitConnected">
+    </method>
+    <method name="emitDisconnected">
+    </method>
+    <method name="emitDownloadReady">
+      <arg name="download" type="a{sv}" direction="in"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+    <method name="emitDownloadPending">
+      <arg name="download" type="a{sv}" direction="in"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+  </interface>
+</node>

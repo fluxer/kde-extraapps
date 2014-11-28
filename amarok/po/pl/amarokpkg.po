@@ -1,0 +1,121 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Maciej Wikło <maciej.wiklo@wp.pl>, 2009.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-08-02 04:52+0200\n"
+"PO-Revision-Date: 2011-06-29 09:00+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Maciej Wikło"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "maciej.wiklo@wp.pl"
+
+#: amarokpkg.cpp:40
+msgid "Install, list, remove Amarok applets"
+msgstr "Instaluj, wyświetlaj i usuwaj aplety Amaroka"
+
+#: amarokpkg.cpp:76
+msgid "Amarok Applet Manager"
+msgstr "Menedżer apletów Amaroka"
+
+#: amarokpkg.cpp:78
+msgid "(C) 2008, Aaron Seigo, (C) 2009, Leo Franchi"
+msgstr "(C) 2008, Aaron Seigo, (C) 2009, Leo Franchi"
+
+#: amarokpkg.cpp:79
+msgid "Aaron Seigo"
+msgstr "Aaron Seigo"
+
+#: amarokpkg.cpp:80
+msgid "Original author"
+msgstr "Autor oryginału"
+
+#: amarokpkg.cpp:82
+msgid "Leo Franchi"
+msgstr "Leo Franchi"
+
+#: amarokpkg.cpp:83
+msgid "Developer"
+msgstr "Programista"
+
+#: amarokpkg.cpp:92
+msgid "For install or remove, operates on applets installed for all users."
+msgstr ""
+"Do instalacji lub usuwania, operuje na apletach zainstalowanych dla "
+"wszystkich użytkowników."
+
+#: amarokpkg.cpp:95
+msgctxt "Do not translate <path>"
+msgid "Install the applet at <path>"
+msgstr "Zainstaluj aplet w <path>"
+
+#: amarokpkg.cpp:97
+msgctxt "Do not translate <path>"
+msgid "Upgrade the applet at <path>"
+msgstr "Uaktualnij aplet w <path>"
+
+#: amarokpkg.cpp:99
+msgid "List installed applets"
+msgstr "Wyświetl zainstalowane aplety"
+
+#: amarokpkg.cpp:101
+msgctxt "Do not translate <name>"
+msgid "Remove the applet named <name>"
+msgstr "Usuń aplet <name>"
+
+#: amarokpkg.cpp:103
+msgid ""
+"Absolute path to the package root. If not supplied, then the standard data "
+"directories for this KDE session will be searched instead."
+msgstr ""
+"Ścieżka bezwzględna do głównego pakietu. Jeśli jej nie podasz, standardowe "
+"katalogi danych sesji KDE zostaną przeszukane jako pierwsze."
+
+#: amarokpkg.cpp:162
+#, kde-format
+msgid "Successfully removed %1"
+msgstr "Pomyślnie usunięto %1"
+
+#: amarokpkg.cpp:164
+#, kde-format
+msgid "Removal of %1 failed."
+msgstr "Nie powiodło się usuwanie %1."
+
+#: amarokpkg.cpp:169
+#, kde-format
+msgid "Plugin %1 is not installed."
+msgstr "Wtyczka %1 nie jest zainstalowana."
+
+#: amarokpkg.cpp:174
+#, kde-format
+msgid "Successfully installed %1"
+msgstr "Pomyślnie zainstalowano %1"
+
+#: amarokpkg.cpp:177
+#, kde-format
+msgid "Installation of %1 failed."
+msgstr "Nie powiodła się instalacja %1."
+
+#: amarokpkg.cpp:183
+msgctxt ""
+"No option was given, this is the error message telling the user he needs at "
+"least one, do not translate install, remove, upgrade nor list"
+msgid "One of install, remove, upgrade or list is required."
+msgstr "Wymagana jest instalacja, usuwanie, aktualizacja lub wyświetlanie."

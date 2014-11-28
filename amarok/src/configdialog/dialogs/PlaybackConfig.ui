@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlaybackConfig</class>
+ <widget class="QWidget" name="PlaybackConfig">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>404</width>
+    <height>412</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>General</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="kcfg_ResumePlayback">
+        <property name="toolTip">
+         <string>If checked, Amarok will&lt;br&gt;resume playback from where you left it the previous session -- just like a tape-player.</string>
+        </property>
+        <property name="whatsThis">
+         <string>If checked, Amarok will&lt;br&gt;resume playback from where you left it the previous session -- just like a tape-player.</string>
+        </property>
+        <property name="text">
+         <string>&amp;Resume playback on start</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="kcfg_StartPlayingOnAdd">
+        <property name="toolTip">
+         <string>&lt;html&gt;Enable this option to start playing whenever a track or more are added to the playlist using mouse, pressing Enter or when the playlist is replaced. Does nothing if something is already playing.&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;Enable this option to start playing whenever a track or more are added to the playlist using mouse, pressing Enter or when the playlist is replaced. Does nothing if something is already playing.&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Start playing when tracks are added to playlist</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Volume Fading</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="kcfg_FadeoutOnStop">
+        <property name="text">
+         <string>Fadeout on stop</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="kcfg_FadeoutOnPause">
+        <property name="text">
+         <string>Fadeout on pause</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Minimum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>30</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="fadeoutLengthLabel">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>&amp;Duration:</string>
+            </property>
+            <property name="buddy">
+             <cstring>kcfg_FadeoutLength</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="kcfg_FadeoutLength">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="toolTip">
+             <string>The length of the fadeout, in milliseconds.</string>
+            </property>
+            <property name="whatsThis">
+             <string>The length of the fadeout, in milliseconds.</string>
+            </property>
+            <property name="suffix">
+             <string> ms</string>
+            </property>
+            <property name="minimum">
+             <number>100</number>
+            </property>
+            <property name="maximum">
+             <number>99999999</number>
+            </property>
+            <property name="singleStep">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>System Suspend Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="kcfg_InhibitSuspend">
+        <property name="toolTip">
+         <string>If enabled, Amarok will prevent the system from automatically suspending if it is playing a track</string>
+        </property>
+        <property name="whatsThis">
+         <string>If enabled, Amarok will prevent the system from automatically suspending if it is playing a track</string>
+        </property>
+        <property name="text">
+         <string>&amp;Inhibit automatic suspend if playing</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="kcfg_PauseOnSuspend">
+        <property name="toolTip">
+         <string>If enabled, Amarok will pause the currently playing track on suspend</string>
+        </property>
+        <property name="whatsThis">
+         <string>If enabled, Amarok will pause the currently playing track on suspend</string>
+        </property>
+        <property name="text">
+         <string>&amp;Pause playback on suspend</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Sound System Configuration</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>165</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonPhonon">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>Phonon is the audio system used by Amarok.</string>
+            </property>
+            <property name="whatsThis">
+             <string>Phonon is the audio system used by Amarok.</string>
+            </property>
+            <property name="text">
+             <string>Configure Phonon</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>165</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>kcfg_FadeoutLength</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
