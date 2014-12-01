@@ -30,7 +30,7 @@
 #include <syndication/rdf/node.h>
 #include <syndication/rdf/property.h>
 #include <syndication/rdf/sequence.h>
-#include <boost/shared_ptr.hpp>
+#include <boost/smart_ptr/shared_ptr.hpp>
 #include <syndication/ksyndication_export.h>
 
 #include <QtCore/QString>

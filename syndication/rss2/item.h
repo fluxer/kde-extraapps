@@ -25,7 +25,7 @@
 
 #include <syndication/rss2/document.h>
 #include <syndication/elementwrapper.h>
-#include <boost/shared_ptr.hpp>
+#include <boost/smart_ptr/shared_ptr.hpp>
 #include <syndication/specificitem.h>
 
 #include <ctime>
