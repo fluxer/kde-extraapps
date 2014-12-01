@@ -5,6 +5,7 @@ project (kde-extraapps)
 set(QT_MIN_VERSION "4.8.2")
 find_package(KDE4 4.14.3 REQUIRED)
 include (KDE4Defaults)
+include(GenerateExportHeader)
 
 # shared libs
 set (LIBRARY_TYPE SHARED)
@@ -17,9 +18,12 @@ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DKTEXTEDITOR_NO_DEPRECATED)
 
 # global include directories
-include_directories (${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES})
+include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES})
+include_directories (  ${CMAKE_CURRENT_BINARY_DIR}/syndication )
 
 macro_optional_add_subdirectory (about-distro)
+macro_optional_add_subdirectory (akregator)
+macro_optional_add_subdirectory (syndication)
 macro_optional_add_subdirectory (ark)
 macro_optional_add_subdirectory (bluedevil)
 macro_optional_add_subdirectory (dragon)
