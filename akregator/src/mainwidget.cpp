@@ -690,7 +690,6 @@ void Akregator::MainWidget::slotArticleSelected(const Akregator::Article& articl
     assert( maai );
     maai->setChecked( article.keep() );
 
-    m_articleViewer->showArticle( article );
     if (m_selectionController->selectedArticles().count() == 0) {
         m_articleListView->setCurrentIndex(m_selectionController->currentArticleIndex());
     }

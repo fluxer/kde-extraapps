@@ -245,7 +245,6 @@ class AKREGATORPART_EXPORT MainWidget : public QWidget
         SubscriptionListView* m_feedListView;
         ArticleListView* m_articleListView;
 
-        ArticleViewer *m_articleViewer;
         TabWidget* m_tabWidget;
 
         QWidget *m_mainTab;
