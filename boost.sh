@@ -20,4 +20,4 @@ mkdir -vp miniboost/
 bcp --boost="$boost" boost/shared_array.hpp boost/concept_check.hpp \
     boost/scoped_ptr.hpp boost/circular_buffer.hpp boost/scoped_array.hpp \
     boost/shared_ptr.hpp boost/enable_shared_from_this.hpp boost/weak_ptr.hpp \
-    boost/bind miniboost/
+    boost/bind.hpp miniboost/
