@@ -24,7 +24,7 @@
 
 #include <QtCore/QString>
 #include <syndication/ksyndication_export.h>
-#include <boost/smart_ptr/shared_ptr.hpp>
+#include <boost/shared_ptr.hpp>
 
 namespace Syndication {
 namespace RDF {

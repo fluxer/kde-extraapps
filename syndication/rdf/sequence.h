@@ -25,7 +25,7 @@
 #include <syndication/ksyndication_export.h>
 #include <syndication/rdf/resource.h>
 
-#include <boost/smart_ptr/shared_ptr.hpp>
+#include <boost/shared_ptr.hpp>
 
 template <class T> class QList;
 

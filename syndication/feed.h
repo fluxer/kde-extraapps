@@ -23,7 +23,7 @@
 #ifndef SYNDICATION_FEED_H
 #define SYNDICATION_FEED_H
 
-#include <boost/smart_ptr/shared_ptr.hpp>
+#include <boost/shared_ptr.hpp>
 
 #include "ksyndication_export.h"
 

@@ -24,7 +24,7 @@
 #define SYNDICATION_ITEM_H
 
 #include <QtCore/QString>
-#include <boost/smart_ptr/shared_ptr.hpp>
+#include <boost/shared_ptr.hpp>
 
 #include "ksyndication_export.h"
 
