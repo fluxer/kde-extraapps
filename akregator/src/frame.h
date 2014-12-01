@@ -27,6 +27,7 @@
 
 #include <QString>
 #include <QWidget>
+#include <QProgressBar>
 
 #include <kparts/browserextension.h>
 #include <kconfiggroup.h>
@@ -133,7 +134,6 @@ class AKREGATOR_EXPORT Frame : public QWidget
         void slotSetCompleted();
         void slotSetState(State);
         void slotSetProgress(int);
-        void slotSetCaption(const QString&);
         void slotSetTitle(const QString&);
         void slotSetStatusText(const QString&);
 
@@ -163,8 +163,7 @@ class AKREGATOR_EXPORT Frame : public QWidget
         State m_state;
         int m_progress;
         QString m_statusText;
-        QString m_progressId;
-        KPIM::ProgressItem* m_progressItem;
+        QProgressBar *m_progressItem;
         bool m_isRemovable;
         bool m_loading;
         int m_id;

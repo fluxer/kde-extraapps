@@ -38,15 +38,11 @@
 #include "utils.h"
 #include "openurlrequest.h"
 
-#include "kdepim-version.h"
-
-#include <kpimutils/kfileio.h>
-
+#include <kdeversion.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kfiledialog.h>
-#include <khtmlview.h>
 #include <kicon.h>
 #include <kiconloader.h>
 #include <klocale.h>
@@ -59,11 +55,14 @@
 #include <ktoolinvocation.h>
 #include <kurl.h>
 #include <kglobalsettings.h>
+#include <kparts/part.h>
 #include <kparts/browserextension.h>
 #include <kparts/browserrun.h>
+#include <kmimetypetrader.h>
 
 #include <QClipboard>
 #include <QGridLayout>
+#include <QWidget>
 
 #include <boost/bind.hpp>
 
@@ -84,27 +83,13 @@ ArticleViewer::ArticleViewer(QWidget *parent)
       m_imageDir( KUrl::fromPath( KGlobal::dirs()->saveLocation("cache", "akregator/Media/" ) ) ),
       m_node(0),
       m_viewMode(NormalView),
-      m_part( new ArticleViewerPart( this ) ),
-      m_normalViewFormatter( new DefaultNormalViewFormatter( m_imageDir, m_part->view() ) ),
-      m_combinedViewFormatter( new DefaultCombinedViewFormatter( m_imageDir, m_part->view() ) )
+      m_part( new ArticleViewerPart( this ) )
 {
     QGridLayout* layout = new QGridLayout(this);
     layout->setMargin(0);
     layout->addWidget(m_part->widget(), 0, 0);
 
     setFocusProxy( m_part->widget() );
-
-    m_part->setFontScaleFactor(100);
-    m_part->setZoomFactor(100);
-    m_part->setJScriptEnabled(false);
-    m_part->setJavaEnabled(false);
-    m_part->setMetaRefreshEnabled(false);
-    m_part->setPluginsEnabled(false);
-    m_part->setDNDEnabled(true);
-    m_part->setAutoloadImages(true);
-    m_part->setStatusMessagesEnabled(false);
-    m_part->view()->setAttribute(Qt::WA_InputMethodEnabled, true); //workaround to fix 216878
-    m_part->view()->setFrameStyle( QFrame::StyledPanel|QFrame::Sunken );
 
     // change the cursor when loading stuff...
     connect( m_part, SIGNAL(started(KIO::Job*)),
@@ -140,10 +125,6 @@ ArticleViewer::ArticleViewer(QWidget *parent)
     action->setText(i18n("&Save Link As..."));
     connect(action, SIGNAL(triggered(bool)), SLOT(slotSaveLinkAs()));
 
-    updateCss();
-
-    connect(this, SIGNAL(selectionChanged()), this, SLOT(slotSelectionChanged()));
-
     connect(KGlobalSettings::self(), SIGNAL(kdisplayPaletteChanged()), this, SLOT(slotPaletteOrFontChanged()) );
     connect(KGlobalSettings::self(), SIGNAL(kdisplayFontChanged()), this, SLOT(slotPaletteOrFontChanged()) );
 
@@ -157,11 +138,6 @@ ArticleViewer::~ArticleViewer()
 KParts::ReadOnlyPart* ArticleViewer::part() const
 {
     return m_part;
-}
-
-int ArticleViewer::pointsToPixel(int pointSize) const
-{
-    return ( pointSize * m_part->view()->logicalDpiY() + 36 ) / 72 ;
 }
 
 void ArticleViewer::slotOpenUrlRequestDelayed(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
@@ -257,16 +233,6 @@ void ArticleViewer::slotPopupMenu(const QPoint& p, const KUrl& kurl, mode_t, con
     popup.exec(p);
 }
 
-// taken from KDevelop
-void ArticleViewer::slotCopy()
-{
-    QString text = m_part->selectedText();
-    text.replace( QChar( 0xa0 ), ' ' );
-    QClipboard* const cb = QApplication::clipboard();
-    assert( cb );
-    cb->setText( text, QClipboard::Clipboard );
-}
-
 void ArticleViewer::slotCopyLinkAddress()
 {
     if(m_url.isEmpty()) return;
@@ -276,11 +242,6 @@ void ArticleViewer::slotCopyLinkAddress()
     // which spec? Nobody seems to care (tested Firefox (3.5.10) Konqueror,and KMail (4.2.3)), so I re-enable the following line unless someone gives
     // a good reason to remove it again (bug 183022) --Frank
     cb->setText(m_url.prettyUrl(), QClipboard::Selection);
-}
-
-void ArticleViewer::slotSelectionChanged()
-{
-    ActionManager::getInstance()->action("viewer_copy")->setEnabled(!m_part->selectedText().isEmpty());
 }
 
 void ArticleViewer::slotOpenLinkInternal()
@@ -331,55 +292,6 @@ void ArticleViewer::slotCompleted()
     emit completed();
 }
 
-void ArticleViewer::slotZoomIn(int id)
-{
-    if (id != 0)
-        return;
-
-    int zf = m_part->fontScaleFactor();
-    if (zf < 100)
-    {
-        zf = zf - (zf % 20) + 20;
-        m_part->setFontScaleFactor(zf);
-    }
-    else
-    {
-        zf = zf - (zf % 50) + 50;
-        m_part->setFontScaleFactor(zf < 300 ? zf : 300);
-    }
-}
-
-void ArticleViewer::slotZoomOut(int id)
-{
-    if (id != 0)
-        return;
-
-    int zf = m_part->fontScaleFactor();
-    if (zf <= 100)
-    {
-        zf = zf - (zf % 20) - 20;
-        m_part->setFontScaleFactor(zf > 20 ? zf : 20);
-    }
-    else
-    {
-        zf = zf - (zf % 50) - 50;
-        m_part->setFontScaleFactor(zf);
-    }
-}
-
-void ArticleViewer::slotSetZoomFactor(int percent)
-{
-    m_part->setFontScaleFactor(percent);
-}
-
-// some code taken from KDevelop (lib/widgets/kdevhtmlpart.cpp)
-void ArticleViewer::slotPrint( )
-{
-    m_part->view()->print();
-}
-
-
-
 void ArticleViewer::connectToNode(TreeNode* node)
 {
     if (node)
@@ -391,8 +303,6 @@ void ArticleViewer::connectToNode(TreeNode* node)
             connect( node, SIGNAL(signalArticlesRemoved(Akregator::TreeNode*,QList<Akregator::Article>)), this, SLOT(slotArticlesRemoved(Akregator::TreeNode*,QList<Akregator::Article>)));
             connect( node, SIGNAL(signalArticlesUpdated(Akregator::TreeNode*,QList<Akregator::Article>)), this, SLOT(slotArticlesUpdated(Akregator::TreeNode*,QList<Akregator::Article>)));
         }
-        if (m_viewMode == SummaryView)
-            connect( node, SIGNAL(signalChanged(Akregator::TreeNode*)), this, SLOT(slotShowSummary(Akregator::TreeNode*)) );
 
         connect( node, SIGNAL(signalDestroyed(Akregator::TreeNode*)), this, SLOT(slotClear()) );
     }
@@ -402,71 +312,6 @@ void ArticleViewer::disconnectFromNode(TreeNode* node)
 {
     if (node)
         node->disconnect( this );
-}
-
-void ArticleViewer::renderContent(const QString& text)
-{
-    m_part->closeUrl();
-    m_currentText = text;
-    beginWriting();
-    //kDebug() << text;
-    m_part->write(text);
-    endWriting();
-}
-
-void ArticleViewer::beginWriting()
-{
-    QString head = QString("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n <html><head><title>.</title>");
-
-    if (m_viewMode == CombinedView)
-        head += m_combinedModeCSS;
-    else
-        head += m_normalModeCSS;
-
-    head += "</style></head><body>";
-    m_part->view()->setContentsPos(0,0);
-
-    //pass link to the KHTMLPart to make relative links work
-    //add a bogus query item to distinguish from m_link
-    //fixes the Complete Story link if the url has an anchor (e.g. #reqRSS) in it
-    //See bug 177754
-
-    KUrl url(m_link);
-    url.addQueryItem("akregatorPreviewMode", "true");
-    m_part->begin(url);
-    m_part->write(head);
-}
-
-void ArticleViewer::endWriting()
-{
-    m_part->write(m_htmlFooter);
-    //kDebug() << m_htmlFooter;
-    m_part->end();
-}
-
-
-void ArticleViewer::slotShowSummary(TreeNode* node)
-{
-    m_viewMode = SummaryView;
-
-    if (!node)
-    {
-        slotClear();
-        return;
-    }
-
-    if (node != m_node)
-    {
-        disconnectFromNode(m_node);
-        connectToNode(node);
-        m_node = node;
-    }
-
-    QString summary = m_normalViewFormatter->formatSummary(node);
-    m_link.clear();
-    renderContent(summary);
-
-    setArticleActionsEnabled(false);
 }
 
 void ArticleViewer::showArticle( const Akregator::Article& article )
@@ -486,10 +331,6 @@ void ArticleViewer::showArticle( const Akregator::Article& article )
     {
         openUrl(article.link());
     }
-    else
-    {
-        renderContent( m_normalViewFormatter->formatArticle(article, ArticleFormatter::ShowIcon) );
-    }
 
     setArticleActionsEnabled(true);
 }
@@ -499,10 +340,7 @@ bool ArticleViewer::openUrl(const KUrl& url)
     if (!m_article.isNull() && m_article.feed()->loadLinkedWebsite())
     {
         return m_part->openUrl(url);
-    }
-    else
-    {
-        reload();
+    } else {
         return true;
     }
 }
@@ -529,8 +367,6 @@ void ArticleViewer::slotUpdateCombinedView()
    QString text;
 
    int num = 0;
-   QTime spent;
-   spent.start();
 
    const std::vector< shared_ptr<const AbstractMatcher> >::const_iterator filterEnd = m_filters.end();
 
@@ -545,10 +381,6 @@ void ArticleViewer::slotUpdateCombinedView()
        text += "<p><div class=\"article\">"+m_combinedViewFormatter->formatArticle( i, ArticleFormatter::NoIcon)+"</div><p>";
        ++num;
    }
-
-   kDebug() <<"Combined view rendering: (" << num <<" articles):" <<"generating HTML:" << spent.elapsed() <<"ms";
-   renderContent(text);
-   kDebug() <<"HTML rendering:" << spent.elapsed() <<"ms";
 }
 
 void ArticleViewer::slotArticlesUpdated(TreeNode* /*node*/, const QList<Article>& /*list*/)
@@ -585,8 +417,6 @@ void ArticleViewer::slotClear()
     m_node = 0;
     m_article = Article();
     m_articles.clear();
-
-    renderContent(QString());
 }
 
 void ArticleViewer::showNode(TreeNode* node)
@@ -644,19 +474,6 @@ void ArticleViewer::keyPressEvent(QKeyEvent* e)
     e->ignore();
 }
 
-void ArticleViewer::slotPaletteOrFontChanged()
-{
-    updateCss();
-    reload();
-}
-
-void ArticleViewer::reload()
-{
-    beginWriting();
-    m_part->write(m_currentText);
-    endWriting();
-}
-
 QSize ArticleViewer::sizeHint() const
 {
     // Increase height a bit so that we can (roughly) read 25 lines of text
@@ -665,44 +482,7 @@ QSize ArticleViewer::sizeHint() const
     return sh;
 }
 
-void ArticleViewer::displayAboutPage()
-{
-    QString location = KStandardDirs::locate("data", "akregator/about/main.html");
-
-    m_part->begin(KUrl::fromPath( location ));
-    QString info =
-            i18nc("%1: Akregator version; %2: homepage URL; "
-            "--- end of comment ---",
-    "<h2 style='margin-top: 0px;'>Welcome to Akregator %1</h2>"
-            "<p>Akregator is a KDE news feed reader. "
-            "Feed readers provide a convenient way to browse different kinds of "
-            "content, including news, blogs, and other content from online sites. "
-            "Instead of checking all your favorite web sites manually for updates, "
-            "Akregator collects the content for you.</p>"
-            "<p>For more information about using Akregator, check the "
-            "<a href=\"%2\">Akregator website</a>. If you do not want to see this page "
-            "anymore, <a href=\"config:/disable_introduction\">click here</a>.</p>"
-            "<p>We hope that you will enjoy Akregator.</p>\n"
-            "<p>Thank you,</p>\n"
-            "<p style='margin-bottom: 0px'>&nbsp; &nbsp; The Akregator Team</p>\n",
-    KDEPIM_VERSION,
-    "http://akregator.kde.org/"); // Akregator homepage URL
-
-    QString fontSize = QString::number( pointsToPixel( Settings::mediumFontSize() ));
-    QString appTitle = i18n("Akregator");
-    QString catchPhrase = ""; //not enough space for a catch phrase at default window size i18n("Part of the Kontact Suite");
-    QString quickDescription = i18n("A KDE news feed reader.");
-
-    QString content = KPIMUtils::kFileToByteArray(location);
-
-    QString infocss = KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" );
-    QString rtl = kapp->isRightToLeft() ? QString("@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" )) : QString();
-
-    m_part->write( content.arg( infocss, rtl, fontSize, appTitle, catchPhrase, quickDescription, info ) );
-    m_part->end();
-}
-
-ArticleViewerPart::ArticleViewerPart(QWidget* parent) : KHTMLPart(parent),
+ArticleViewerPart::ArticleViewerPart(QWidget* parent) : KParts::ReadOnlyPart(parent),
      m_button(-1)
 {
     setXMLFile(KStandardDirs::locate("data", "akregator/articleviewer.rc"), true);
@@ -717,7 +497,7 @@ bool ArticleViewerPart::closeUrl()
 {
     emit browserExtension()->loadingProgress(-1);
     emit canceled(QString());
-    return KHTMLPart::closeUrl();
+    return KParts::ReadOnlyPart::closeUrl();
 }
 
 bool ArticleViewerPart::urlSelected(const QString &url, int button, int state, const QString &_target,
@@ -741,28 +521,9 @@ bool ArticleViewerPart::urlSelected(const QString &url, int button, int state, c
 
         return false;
     }
-    else
-        return KHTMLPart::urlSelected(url,button,state,_target,args,browserArgs);
-}
-
-void ArticleViewer::updateCss()
-{
-    m_normalModeCSS =  m_normalViewFormatter->getCss();
-    m_combinedModeCSS = m_combinedViewFormatter->getCss();
-}
-
-void ArticleViewer::setNormalViewFormatter( const shared_ptr<ArticleFormatter>& formatter )
-{
-    assert( formatter );
-    m_normalViewFormatter = formatter;
-    m_normalViewFormatter->setPaintDevice(m_part->view());
-}
-
-void ArticleViewer::setCombinedViewFormatter( const shared_ptr<ArticleFormatter>& formatter )
-{
-    assert( formatter );
-    m_combinedViewFormatter = formatter;
-    m_combinedViewFormatter->setPaintDevice(m_part->view());
+    // else
+    //    return KParts::ReadOnlyPart::urlSelected(url,button,state,_target,args,browserArgs);
+    return false;
 }
 
 void ArticleViewer::setArticleActionsEnabled(bool enabled)

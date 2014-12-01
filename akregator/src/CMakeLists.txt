@@ -7,7 +7,6 @@ include_directories(
   ${Boost_INCLUDE_DIR}
   ${CMAKE_SOURCE_DIR}/akregator/interfaces
   ${CMAKE_BINARY_DIR}/akregator/interfaces
-  ${CMAKE_SOURCE_DIR}/libkdepim/
 )
 
 ########### next target ###############
@@ -20,8 +19,6 @@ kde4_add_executable(akregator ${akregator_SRCS})
 
 target_link_libraries(akregator
   ${KDE4_KPARTS_LIBS}
-  ${KDEPIMLIBS_KONTACTINTERFACE_LIBS}
-  kdepim
   akregatorprivate
   akregatorinterfaces
 )
@@ -51,18 +48,16 @@ set(akregatorprivate_LIB_SRCS
   browserrun.cpp
   openurlrequest.cpp
   actionmanager.cpp
-  browserframe.cpp
-  browserframe_p.cpp
   actions.cpp
 )
 
 kde4_add_library(akregatorprivate ${LIBRARY_TYPE} ${akregatorprivate_LIB_SRCS})
 
 target_link_libraries(akregatorprivate
-  kdepim
-  ${KDE4_KHTML_LIBS}
-  ${KDEPIMLIBS_SYNDICATION_LIBS}
+  ${KDE4_KDEUI_LIBS}
+  ${KDE4_KPARTS_LIBS}
   akregatorinterfaces
+  syndication
 )
 target_link_libraries(akregatorprivate LINK_INTERFACE_LIBRARIES ${KDE4_KHTML_LIBS})
 
@@ -101,7 +96,6 @@ set(akregatorpart_PART_SRCS
   importfeedlistcommand.cpp
   feedpropertiesdialog.cpp
   tabwidget.cpp
-  progressmanager.cpp
   akregator_part.cpp
   mainwidget.cpp
   subscriptionlistview.cpp
@@ -128,9 +122,8 @@ target_link_libraries(akregatorpart
   ${KDE4_KCMUTILS_LIBS}
   ${KDE4_KNOTIFYCONFIG_LIBS}
   ${KDE4_SOLID_LIBRARY}
-  kdepim
-  ${KDEPIMLIBS_SYNDICATION_LIBS}
-  ${KDEPIMLIBS_KPIMUTILS_LIBS}
+  ${KDE4_KPARTS_LIBS}
+  syndication
 )
 
 install(TARGETS akregatorpart DESTINATION ${PLUGIN_INSTALL_DIR})

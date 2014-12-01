@@ -26,6 +26,7 @@
 
 #include <QGridLayout>
 #include <QRegExp>
+#include <QProgressBar>
 
 #include <kactioncollection.h>
 #include <kdebug.h>
@@ -33,8 +34,6 @@
 #include <kurl.h>
 #include <kparts/browserextension.h>
 #include <kparts/part.h>
-
-#include <libkdepim/progresswidget/progressmanager.h>
 
 namespace Akregator {
 
@@ -53,13 +52,6 @@ bool Frame::isLoading() const
     return m_loading;
 }
 
-void Frame::slotSetCaption(const QString &s)
-{
-    if(m_progressItem) m_progressItem->setLabel(s);
-    m_caption=s;
-    emit signalCaptionChanged(this, s);
-}
-
 void Frame::slotSetStatusText(const QString &s)
 {
     m_statusText=s;
@@ -69,9 +61,7 @@ void Frame::slotSetStatusText(const QString &s)
 
 void Frame::slotSetProgress(int a)
 {
-    if(m_progressItem) {
-        m_progressItem->setProgress((int)a);
-    }
+    m_progressItem->setValue((int)a);
     m_progress=a;
     emit signalLoadingProgress(this, a);
 }
@@ -101,7 +91,6 @@ Frame::Frame(QWidget* parent)
     m_title = i18n("Untitled");
     m_state=Idle;
     m_progress=-1;
-    m_progressItem=0;
     m_isRemovable = true;
     m_loading = false; 
     m_id = m_idCounter++;
@@ -126,10 +115,6 @@ bool Frame::isRemovable() const
 
 Frame::~Frame()
 {
-    if(m_progressItem)
-    {
-        m_progressItem->setComplete();
-    }
 }
 
 
@@ -156,9 +141,7 @@ QString Frame::statusText() const
 void Frame::slotSetStarted()
 {
     m_loading = true;
-    if(m_progressId.isNull() || m_progressId.isEmpty()) m_progressId = KPIM::ProgressManager::getUniqueID();
-    m_progressItem = KPIM::ProgressManager::createProgressItem(m_progressId, title(), QString(), false);
-    m_progressItem->setStatus(i18n("Loading..."));
+    m_progressItem->setFormat(i18n("Loading..."));
     //connect(m_progressItem, SIGNAL(progressItemCanceled(KPIM::ProgressItem*)), SLOT(slotAbortFetch()));
     m_state=Started;
     emit signalStarted(this);
@@ -177,12 +160,8 @@ void Frame::slotStop()
 void Frame::slotSetCanceled(const QString &s)
 {
     m_loading = false;
-    if(m_progressItem) 
-    {
-        m_progressItem->setStatus(i18n("Loading canceled"));
-        m_progressItem->setComplete();
-        m_progressItem = 0;
-    }
+    m_progressItem->setFormat(i18n("Loading canceled"));
+    m_progressItem->setValue(0);
     m_state=Canceled;
     emit signalCanceled(this, s);
     emit signalIsLoadingToggled(this, m_loading);
@@ -191,12 +170,8 @@ void Frame::slotSetCanceled(const QString &s)
 void Frame::slotSetCompleted()
 {
     m_loading = false; 
-    if(m_progressItem)
-    {
-        m_progressItem->setStatus(i18n("Loading completed"));
-        m_progressItem->setComplete();
-        m_progressItem = 0;
-    }
+    m_progressItem->setFormat(i18n("Loading completed"));
+    m_progressItem->setValue(0);
     m_state=Completed;
     emit signalCompleted(this);
     emit signalIsLoadingToggled(this, m_loading);

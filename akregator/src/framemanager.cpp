@@ -27,7 +27,6 @@
 #include "frame.h"
 #include "actionmanager.h"
 #include "browserrun.h"
-#include "browserframe.h"
 #include "openurlrequest.h"
 
 #include <kaction.h>
@@ -376,18 +375,6 @@ void FrameManager::saveProperties(KConfigGroup & config)
     QStringList strlst;
     QString newPrefix;
     QHash<int, Frame*>::const_iterator i;
-    for (i = m_frames.constBegin(); i != m_frames.constEnd(); ++i)
-    {
-        // No need to save the main frame
-        if(i.value() && qobject_cast<BrowserFrame *>(i.value()))
-        {
-
-            newPrefix = QLatin1Char('T') + QString::number(i.key());
-            strlst.append( newPrefix );
-            newPrefix.append( QLatin1Char( '_' ) );
-            i.value()->saveConfig( config, newPrefix );
-        }
-    }
 
     config.writeEntry( QString::fromLatin1( "Children" ), strlst );
     config.writeEntry( QString::fromLatin1( "activeChildIndex" ),

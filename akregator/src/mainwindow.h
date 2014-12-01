@@ -67,13 +67,6 @@ public:
     ~MainWindow();
 
     /**
-     * Creates the progress widget in the status bar and the ProgressDialog
-     * and connects them.
-     */
-    void setupProgressWidgets();
-
-
-    /**
      Loads the part
      @return Whether the part has been successfully created or not.
      */

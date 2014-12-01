@@ -13,7 +13,7 @@ kde4_add_executable(akregatorstorageexporter NOGUI ${akregatorstorageexporter_SR
 
 target_link_libraries(akregatorstorageexporter
   ${KDE4_KDECORE_LIBS}
-  ${KDEPIMLIBS_SYNDICATION_LIBS}
+  syndication
   akregatorinterfaces
 )
 

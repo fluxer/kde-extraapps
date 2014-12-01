@@ -28,9 +28,11 @@
 #include "article.h"
 #include "akregator_export.h"
 
-#include <khtml_part.h>
+#include <kparts/part.h>
+#include <kparts/browserextension.h>
 
 #include <QPointer>
+#include <QWidget>
 
 #include <boost/shared_ptr.hpp>
 #include <vector>
@@ -58,17 +60,7 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
         explicit ArticleViewer(QWidget* parent);
         ~ArticleViewer();
 
-
-        /** Repaints the view. */
-        void reload();
-
-        void displayAboutPage();
-
         KParts::ReadOnlyPart* part() const;
-
-        void setNormalViewFormatter(const boost::shared_ptr<ArticleFormatter>& formatter);
-
-        void setCombinedViewFormatter(const boost::shared_ptr<ArticleFormatter>& formatter);
 
         void showArticle( const Article& article );
 
@@ -81,12 +73,6 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
         QSize sizeHint() const;
 
     public slots:
-
-        void slotZoomIn(int);
-        void slotZoomOut(int);
-        void slotSetZoomFactor(int percent);
-        void slotPrint();
-
         /** Set filters which will be used if the viewer is in combined view mode
          */
         void setFilters( const std::vector< boost::shared_ptr<const Akregator::Filters::AbstractMatcher> >& filters );
@@ -102,22 +88,15 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
          */
         void slotClear();
 
-        void slotShowSummary(Akregator::TreeNode *node);
-
-        void slotPaletteOrFontChanged();
-
     signals:
 
         /** This gets emitted when url gets clicked */
         void signalOpenUrlRequest(Akregator::OpenUrlRequest&);
 
         void started(KIO::Job*);
-        void selectionChanged();
         void completed();
 
     protected: // methods
-        int pointsToPixel(int points) const;
-
         bool openUrl(const KUrl &url);
 
     protected slots:
@@ -134,9 +113,6 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
 
         /** Copies current link to clipboard. */
         void slotCopyLinkAddress();
-
-        /** Copies currently selected text to clipboard */
-        void slotCopy();
 
         /** Opens @c m_url inside this viewer */
         void slotOpenLinkInternal();
@@ -158,8 +134,6 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
         /** This reverts cursor back to normal one */
         void slotCompleted();
 
-        void slotSelectionChanged();
-
         void slotArticlesListed(KJob* job);
 
         void slotArticlesUpdated(Akregator::TreeNode* node, const QList<Akregator::Article>& list);
@@ -175,15 +149,6 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
         /** renders @c body. Use this method whereever possible.
          *  @param body html to render, without header and footer */
         void renderContent(const QString& body);
-
-        /** Resets the canvas and adds writes the HTML header to it.
-            */
-        void beginWriting();
-
-        /** Finishes writing to the canvas and completes the HTML (by adding closing tags) */
-        void endWriting();
-
-        void updateCss();
 
         void connectToNode(TreeNode* node);
         void disconnectFromNode(TreeNode* node);
@@ -210,7 +175,7 @@ class AKREGATORPART_EXPORT ArticleViewer : public QWidget
         boost::shared_ptr<ArticleFormatter> m_combinedViewFormatter;
 };
 
-class ArticleViewerPart : public KHTMLPart
+class ArticleViewerPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 

@@ -113,13 +113,6 @@ class AKREGATORPART_EXPORT MainWidget : public QWidget
 
         //Returns true if networking is available
         bool isNetworkAvailable();
-        
-        enum ViewMode { NormalView=0,
-                        WidescreenView,
-                        CombinedView };
-
-        ViewMode viewMode() const { return m_viewMode; }
-
 
     signals:
         /** emitted when the unread count of "All Feeds" was changed */
@@ -154,8 +147,6 @@ class AKREGATORPART_EXPORT MainWidget : public QWidget
         /** copies the link of current article to clipboard
         */
         void slotCopyLinkAddress();
-
-        void slotRequestNewFrame(int& frameId);
 
         /** called when URLs are dropped into the tree view */
         void slotFeedUrlDropped (KUrl::List &urls, Akregator::TreeNode* after, Akregator::Folder *parent);
@@ -201,12 +192,6 @@ class AKREGATORPART_EXPORT MainWidget : public QWidget
         /** reads the currently selected articles using KTTSD */
         void slotTextToSpeechRequest();
 
-        /** switches view mode to normal view */
-        void slotNormalView();
-        /** switches view mode to widescreen view */
-        void slotWidescreenView();
-        /** switches view mode to combined view */
-        void slotCombinedView();
         /** toggles the visibility of the filter bar */
         void slotToggleShowQuickFilter();
 
@@ -272,7 +257,6 @@ class AKREGATORPART_EXPORT MainWidget : public QWidget
         QSplitter *m_horizontalSplitter;
 
         Akregator::Part *m_part;
-        ViewMode m_viewMode;
 
         QTimer *m_fetchTimer;
         QTimer* m_expiryTimer;

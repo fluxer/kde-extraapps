@@ -169,7 +169,6 @@ class Part : public KParts::ReadOnlyPart
 
         void slotOnShutdown();
         void slotSettingsChanged();
-        void slotSetStatusText( const QString &statusText );
 
         void feedListLoaded( const boost::shared_ptr<Akregator::FeedList>& list );
 

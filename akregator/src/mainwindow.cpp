@@ -27,10 +27,6 @@
 #include "akregatorconfig.h"
 #include "trayicon.h"
 
-#include "libkdepim/misc/broadcaststatus.h"
-#include "libkdepim/progresswidget/progressstatusbarwidget.h"
-#include "libkdepim/progresswidget/statusbarprogresswidget.h"
-
 #include <KAction>
 #include <KActionCollection>
 #include <KApplication>
@@ -86,9 +82,6 @@ MainWindow::MainWindow( QWidget* parent, Qt::WindowFlags f )
     setStandardToolBarMenuEnabled(true);
     createStandardStatusBarAction();
 
-    connect( KPIM::BroadcastStatus::instance(), SIGNAL(statusMsg(QString)),
-             this, SLOT(slotSetStatusBarText(QString)) );
-
     connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slotOnShutdown()));
 }
 
@@ -120,12 +113,6 @@ bool MainWindow::loadPart()
     browserExtension(m_part)->setBrowserInterface(m_browserIface);
     setAutoSaveSettings();
     return true;
-}
-
-void MainWindow::setupProgressWidgets()
-{
-    KPIM::ProgressStatusBarWidget * progressStatusBarWidget = new KPIM::ProgressStatusBarWidget(statusBar(), this);
-    statusBar()->addPermanentWidget( progressStatusBarWidget->littleProgress(), 0 );
 }
 
 MainWindow::~MainWindow()

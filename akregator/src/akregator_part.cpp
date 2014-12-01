@@ -43,9 +43,7 @@
 #include "trayicon.h"
 #include "dummystorage/storagefactorydummyimpl.h"
 
-#include <libkdepim/misc/broadcaststatus.h>
-#include "kdepim-version.h"
-
+#include <kdeversion.h>
 #include <knotifyconfigwidget.h>
 #include <kaboutdata.h>
 #include <kapplication.h>
@@ -134,11 +132,6 @@ namespace {
         planetkde.setAttribute("text",i18n("Planet KDE"));
         planetkde.setAttribute("xmlUrl","http://planetkde.org/rss20.xml");
         mainFolder.appendChild(planetkde);
-
-        QDomElement planetkdepim = doc.createElement( "outline" );
-        planetkdepim.setAttribute("text",i18n("Planet KDE PIM"));
-        planetkdepim.setAttribute("xmlUrl","http://pim.planetkde.org/rss20.xml");
-        mainFolder.appendChild(planetkdepim);
 
         QDomElement apps = doc.createElement( "outline" );
         apps.setAttribute("text",i18n("KDE Apps"));
@@ -285,7 +278,7 @@ Part::Part( QWidget *parentWidget, QObject *parent, const QVariantList& )
     connect(m_autosaveTimer, SIGNAL(timeout()), this, SLOT(slotSaveFeedList()));
     m_autosaveTimer->start(5*60*1000); // 5 minutes
 
-    QString useragent = QString( "Akregator/%1; syndication" ).arg( KDEPIM_VERSION );
+    QString useragent = QString( "Akregator/%1; syndication" ).arg( KDE_VERSION_STRING );
 
     if( !Settings::customUserAgent().isEmpty() )
         useragent = Settings::customUserAgent();
@@ -375,11 +368,6 @@ void Part::slotSettingsChanged()
         Settings::setMediumFontSize(Settings::minimumFontSize());
     saveSettings();
     emit signalSettingsChanged();
-}
-
-void Part::slotSetStatusText( const QString& statusText )
-{
-  KPIM::BroadcastStatus::instance()->setStatusMsg( statusText );
 }
 
 void Part::saveSettings()

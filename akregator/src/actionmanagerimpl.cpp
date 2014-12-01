@@ -241,25 +241,6 @@ void ActionManagerImpl::initMainWidget(MainWidget* mainWidget)
     connect(action, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotFeedModify()));
     action->setShortcuts(KShortcut( "F2" ));
 
-    // toolbar / View
-    action = coll->addAction("normal_view");
-    action->setIcon(KIcon("view-split-top-bottom"));
-    action->setText(i18n("&Normal View"));
-    connect(action, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotNormalView()));
-    action->setShortcuts(KShortcut( "Ctrl+Shift+1" ));
-
-    action = coll->addAction("widescreen_view");
-    action->setIcon(KIcon("view-split-left-right"));
-    action->setText(i18n("&Widescreen View"));
-    connect(action, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotWidescreenView()));
-    action->setShortcuts(KShortcut( "Ctrl+Shift+2" ));
-
-    action = coll->addAction("combined_view");
-    action->setIcon(KIcon("view-list-text"));
-    action->setText(i18n("C&ombined View"));
-    connect(action, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotCombinedView()));
-    action->setShortcuts(KShortcut( "Ctrl+Shift+3" ));
-
     // toolbar / feed menu
     action = coll->addAction("feed_fetch");
     action->setIcon(KIcon("go-down"));
@@ -430,18 +411,6 @@ void ActionManagerImpl::initArticleViewer(ArticleViewer* articleViewer)
         return;
     else
         d->articleViewer = articleViewer;
-
-    KActionCollection* coll = actionCollection();
-    KAction* action = 0;
-
-    action = KStandardAction::print(articleViewer, SLOT(slotPrint()), actionCollection());
-    coll->addAction("viewer_print", action);
-
-    action = KStandardAction::copy(articleViewer, SLOT(slotCopy()), coll);
-    coll->addAction("viewer_copy", action);
-
-    connect(d->tabWidget, SIGNAL(signalZoomInFrame(int)), d->articleViewer, SLOT(slotZoomIn(int)));
-    connect(d->tabWidget, SIGNAL(signalZoomOutFrame(int)), d->articleViewer, SLOT(slotZoomOut(int)));
 }
 
 void ActionManagerImpl::initArticleListView(ArticleListView* articleList)
@@ -557,18 +526,6 @@ void ActionManagerImpl::initTabWidget(TabWidget* tabWidget)
     action->setText(i18n("Close Tab"));
     connect(action, SIGNAL(triggered(bool)), d->tabWidget, SLOT(slotCloseTab()));
     action->setShortcuts(KStandardShortcut::close());
-
-    action = coll->addAction("inc_font_sizes");
-    action->setIcon(KIcon("format-font-size-more"));
-    action->setText(i18n("Enlarge Font"));
-    connect(action, SIGNAL(triggered(bool)), d->tabWidget, SLOT(slotFrameZoomIn()));
-    action->setShortcut( QKeySequence::ZoomIn );
-
-    action = coll->addAction("dec_font_sizes");
-    action->setIcon(KIcon("format-font-size-less"));
-    action->setText(i18n("Shrink Font"));
-    connect(action, SIGNAL(triggered(bool)), d->tabWidget, SLOT(slotFrameZoomOut()));
-    action->setShortcut( QKeySequence::ZoomOut );
 
     QString actionname;
     for (int i=1;i<10;++i) {

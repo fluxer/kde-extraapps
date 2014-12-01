@@ -32,7 +32,6 @@
 #include "articlejobs.h"
 #include "akregatorconfig.h"
 #include "akregator_part.h"
-#include "browserframe.h"
 #include "createfeedcommand.h"
 #include "createfoldercommand.h"
 #include "deletesubscriptioncommand.h"
@@ -44,11 +43,11 @@
 #include "feedpropertiesdialog.h"
 #include "fetchqueue.h"
 #include "folder.h"
+#include "frame.h"
 #include "framemanager.h"
 #include "kernel.h"
 #include "notificationmanager.h"
 #include "openurlrequest.h"
-#include "progressmanager.h"
 #include "searchbar.h"
 #include "selectioncontroller.h"
 #include "speechclient.h"
@@ -103,7 +102,6 @@ Akregator::MainWidget::~MainWidget()
 Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImpl* actionManager, const char *name)
      : QWidget(parent),
      m_feedList(),
-     m_viewMode(NormalView),
      m_actionManager(actionManager),
      m_feedListManagementInterface( new FeedListManagementImpl )
 {
@@ -167,9 +165,6 @@ Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImp
 
     connect( Kernel::self()->frameManager(), SIGNAL(signalFrameRemoved(int)),
              m_tabWidget, SLOT(slotRemoveFrame(int)));
-
-    connect( Kernel::self()->frameManager(), SIGNAL(signalRequestNewFrame(int&)),
-             this, SLOT(slotRequestNewFrame(int&)) );
 
     connect( Kernel::self()->frameManager(), SIGNAL(signalFrameAdded(Akregator::Frame*)),
              this, SLOT(slotFramesChanged()));
@@ -246,7 +241,7 @@ Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImp
     connect(m_searchBar, SIGNAL(signalSearch(std::vector<boost::shared_ptr<const Akregator::Filters::AbstractMatcher> >)),
             m_articleViewer, SLOT(setFilters(std::vector<boost::shared_ptr<const Akregator::Filters::AbstractMatcher> >)) );
 
-    m_articleViewer->part()->widget()->setWhatsThis( i18n("Browsing area."));
+    // m_articleViewer->part()->widget()->setWhatsThis( i18n("Browsing area."));
 
     mainTabLayout->addWidget( m_articleSplitter );
 
@@ -262,14 +257,6 @@ Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImp
         m_articleSplitter->setSizes( sp2sizes );
 
     KConfigGroup conf(Settings::self()->config(), "General");
-    if(!conf.readEntry("Disable Introduction", false))
-    {
-        m_articleListView->hide();
-        m_searchBar->hide();
-        m_articleViewer->displayAboutPage();
-        m_mainFrame->slotSetTitle(i18n("About"));
-        m_displayingAboutPage = true;
-    }
 
     m_fetchTimer = new QTimer(this);
     connect( m_fetchTimer, SIGNAL(timeout()),
@@ -287,18 +274,6 @@ Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImp
     connect(m_markReadTimer, SIGNAL(timeout()), this, SLOT(slotSetCurrentArticleReadDelayed()) );
 
     setFeedList( shared_ptr<FeedList>( new FeedList( Kernel::self()->storage() ) ) );
-
-    switch (Settings::viewMode())
-    {
-        case CombinedView:
-            slotCombinedView();
-            break;
-        case WidescreenView:
-            slotWidescreenView();
-            break;
-        default:
-            slotNormalView();
-    }
 
     if ( !Settings::resetQuickFilterOnNodeChange() )
     {
@@ -347,22 +322,7 @@ void Akregator::MainWidget::saveSettings()
     const QList<int> spl2 = m_articleSplitter->sizes();
     if ( std::count( spl2.begin(), spl2.end(), 0 ) == 0 )
         Settings::setSplitter2Sizes( spl2 );
-    Settings::setViewMode( m_viewMode );
     Settings::self()->writeConfig();
-}
-
-
-void Akregator::MainWidget::slotRequestNewFrame(int& frameId)
-{
-    BrowserFrame* frame = new BrowserFrame(m_tabWidget);
-
-    connect( m_part, SIGNAL(signalSettingsChanged()), frame, SLOT(slotPaletteOrFontChanged()));
-    connect( m_tabWidget, SIGNAL(signalZoomInFrame(int)), frame, SLOT(slotZoomIn(int)));
-    connect( m_tabWidget, SIGNAL(signalZoomOutFrame(int)), frame, SLOT(slotZoomOut(int)));
-
-    Kernel::self()->frameManager()->slotAddFrame(frame);
-
-    frameId = frame->id();
 }
 
 void Akregator::MainWidget::sendArticle(bool attach)
@@ -436,7 +396,6 @@ void Akregator::MainWidget::setFeedList( const shared_ptr<FeedList>& list )
 
     m_feedListManagementInterface->setFeedList( m_feedList );
     Kernel::self()->setFeedList( m_feedList );
-    ProgressManager::self()->setFeedList( m_feedList );
     m_selectionController->setFeedList( m_feedList );
 
     if ( oldList )
@@ -491,64 +450,6 @@ void Akregator::MainWidget::addFeedToGroup(const QString& url, const QString& gr
 
     // Invoke the Add Feed dialog with url filled in.
     addFeed(url, 0, group, true);
-}
-
-void Akregator::MainWidget::slotNormalView()
-{
-    if (m_viewMode == NormalView)
-        return;
-
-    if (m_viewMode == CombinedView)
-    {
-        m_articleListView->show();
-
-        const Article article =  m_selectionController->currentArticle();
-
-        if (!article.isNull())
-            m_articleViewer->showArticle(article);
-        else
-            m_articleViewer->slotShowSummary( m_selectionController->selectedSubscription() );
-    }
-
-    m_articleSplitter->setOrientation(Qt::Vertical);
-    m_viewMode = NormalView;
-
-    Settings::setViewMode( m_viewMode );
-}
-
-void Akregator::MainWidget::slotWidescreenView()
-{
-    if (m_viewMode == WidescreenView)
-        return;
-
-    if (m_viewMode == CombinedView)
-    {
-        m_articleListView->show();
-
-        Article article =  m_selectionController->currentArticle();
-
-        if (!article.isNull())
-            m_articleViewer->showArticle(article);
-        else
-            m_articleViewer->slotShowSummary( m_selectionController->selectedSubscription() );
-    }
-
-    m_articleSplitter->setOrientation(Qt::Horizontal);
-    m_viewMode = WidescreenView;
-
-    Settings::setViewMode( m_viewMode );
-}
-
-void Akregator::MainWidget::slotCombinedView()
-{
-    if (m_viewMode == CombinedView)
-        return;
-
-    m_articleListView->slotClear();
-    m_articleListView->hide();
-    m_viewMode = CombinedView;
-
-    Settings::setViewMode( m_viewMode );
 }
 
 void Akregator::MainWidget::slotMoveCurrentNodeUp()
@@ -620,8 +521,6 @@ void Akregator::MainWidget::slotNodeSelected(TreeNode* node)
     if (m_displayingAboutPage)
     {
         m_mainFrame->slotSetTitle(i18n("Articles"));
-        if (m_viewMode != CombinedView)
-            m_articleListView->show();
         if (Settings::showQuickFilter())
             m_searchBar->show();
         m_displayingAboutPage = false;
@@ -630,15 +529,6 @@ void Akregator::MainWidget::slotNodeSelected(TreeNode* node)
     m_tabWidget->setCurrentWidget( m_mainFrame );
     if ( Settings::resetQuickFilterOnNodeChange() )
         m_searchBar->slotClearSearch();
-
-    if (m_viewMode == CombinedView)
-    {
-        m_articleViewer->showNode(node);
-    }
-    else
-    {
-        m_articleViewer->slotShowSummary(node);
-    }
 
     if (node)
        m_mainFrame->setWindowTitle(node->title());
@@ -717,11 +607,7 @@ void Akregator::MainWidget::slotFeedModify()
 void Akregator::MainWidget::slotNextUnreadArticle()
 {
     ensureArticleTabVisible();
-    if (m_viewMode == CombinedView)
-    {
-        m_feedListView->slotNextUnreadFeed();
-        return;
-    }
+    
     TreeNode* sel = m_selectionController->selectedSubscription();
     if (sel && sel->unread() > 0)
         m_articleListView->slotNextUnreadArticle();
@@ -732,11 +618,7 @@ void Akregator::MainWidget::slotNextUnreadArticle()
 void Akregator::MainWidget::slotPrevUnreadArticle()
 {
     ensureArticleTabVisible();
-    if (m_viewMode == CombinedView)
-    {
-        m_feedListView->slotPrevUnreadFeed();
-        return;
-    }
+
     TreeNode* sel = m_selectionController->selectedSubscription();
     if (sel && sel->unread() > 0)
         m_articleListView->slotPreviousUnreadArticle();
@@ -813,9 +695,6 @@ void Akregator::MainWidget::slotFetchingStopped()
 
 void Akregator::MainWidget::slotArticleSelected(const Akregator::Article& article)
 {
-    if (m_viewMode == CombinedView)
-        return;
-
     m_markReadTimer->stop();
 
     assert( article.isNull() || article.feed() );
@@ -981,10 +860,6 @@ void Akregator::MainWidget::slotToggleShowQuickFilter()
 
 void Akregator::MainWidget::slotArticleDelete()
 {
-
-    if ( m_viewMode == CombinedView )
-        return;
-
     const QList<Article> articles = m_selectionController->selectedArticles();
 
     QString msg;
@@ -1087,19 +962,9 @@ void Akregator::MainWidget::slotTextToSpeechRequest()
 
     if (Kernel::self()->frameManager()->currentFrame() == m_mainFrame)
     {
-        if (m_viewMode != CombinedView)
-        {
-            // in non-combined view, read selected articles
-            SpeechClient::self()->slotSpeak(m_selectionController->selectedArticles());
-            // TODO: if article viewer has a selection, read only the selected text?
-        }
-        else
-        {
-            if (m_selectionController->selectedSubscription())
-            {
-                //TODO: read articles in current node, respecting quick filter!
-            }
-        }
+        // in non-combined view, read selected articles
+        SpeechClient::self()->slotSpeak(m_selectionController->selectedArticles());
+        // TODO: if article viewer has a selection, read only the selected text?
     }
     else
     {
@@ -1146,18 +1011,6 @@ void Akregator::MainWidget::readProperties(const KConfigGroup &config)
     // Reopen tabs
     QStringList childList = config.readEntry( QString::fromLatin1( "Children" ),
         QStringList() );
-    Q_FOREACH( const QString& framePrefix, childList )
-    {
-        BrowserFrame* const frame = new BrowserFrame(m_tabWidget);
-        frame->loadConfig( config, framePrefix + QLatin1Char( '_' ) );
-
-        connect( m_part, SIGNAL(signalSettingsChanged()), frame, SLOT(slotPaletteOrFontChanged()));
-        connect( m_tabWidget, SIGNAL(signalZoomInFrame(int)), frame, SLOT(slotZoomIn(int)));
-        connect( m_tabWidget, SIGNAL(signalZoomOutFrame(int)), frame, SLOT(slotZoomOut(int)));
-
-        Kernel::self()->frameManager()->slotAddFrame(frame);
-
-    }
 }
 
 void Akregator::MainWidget::saveProperties(KConfigGroup & config)

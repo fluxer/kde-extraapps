@@ -12,11 +12,6 @@
     <Merge/>
   </Menu>
 
-  <Menu noMerge="1" name="view">
-    <text>&amp;View</text>
-    <Merge/>
-  </Menu>
-
   <Menu noMerge="1" name="go">
     <text>&amp;Go</text>
     <Merge/>
@@ -47,9 +42,6 @@
 <ToolBar noMerge="1" name="mainToolBar"><text>Main Toolbar</text>
   <Merge/>
   <Action name="stop"/>
-</ToolBar>
-<ToolBar noMerge="1" name="browserToolBar"><text>Browser Toolbar</text>
-  <Merge/>
 </ToolBar>
 <ToolBar hidden="true" noMerge="1" name="textToSpeechToolBar"><text>Speech Toolbar</text>
 	<Merge/>

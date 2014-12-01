@@ -29,12 +29,12 @@
 #include <kcmdlineargs.h>
 #include <KDebug>
 #include <klocale.h>
-#include <kontactinterface/pimuniqueapplication.h>
+#include <kuniqueapplication.h>
 #include <QtDBus/QtDBus>
 
 namespace Akregator {
 
-class Application : public KontactInterface::PimUniqueApplication {
+class Application : public KUniqueApplication {
   public:
     Application() : mMainWindow(0) {}
     ~Application() {}
@@ -56,7 +56,6 @@ int Application::newInstance()
     if ( !mMainWindow ) {
       mMainWindow = new Akregator::MainWindow();
       mMainWindow->loadPart();
-      mMainWindow->setupProgressWidgets();
       if (!args->isSet("hide-mainwindow"))
         mMainWindow->show();
       akr.call( QLatin1String("openStandardFeedList"));

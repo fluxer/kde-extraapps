@@ -17,16 +17,6 @@
       <Separator/>
     </Menu>
 
-    <Menu name="view">
-      <text>&amp;View</text>
-      <Action name="normal_view"/>
-      <Action name="widescreen_view"/>
-      <Action name="combined_view"/>
-      <Separator/>
-      <Action name="inc_font_sizes"/>
-      <Action name="dec_font_sizes"/>
-    </Menu>
-
     <Menu name="go">
       <text>&amp;Go</text>
       <Action name="go_previous_article"/>
@@ -89,14 +79,6 @@
     <Action name="feed_mark_all_as_read"/>
     <Action name="article_tagmenu"/>
     <DefineGroup name="pageviewer_operations" />
-    <Merge/>
-  </ToolBar>
-
-  <ToolBar name="browserToolBar"><text>Browser Toolbar</text>
-    <Action name="browser_back"/>
-    <Action name="browser_forward"/>
-    <Action name="browser_reload"/>
-    <Action name="browser_stop"/>
     <Merge/>
   </ToolBar>
 
