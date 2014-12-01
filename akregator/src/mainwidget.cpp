@@ -227,22 +227,6 @@ Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImp
              m_articleListView, SLOT(slotPaletteOrFontChanged()));
 */
 
-    m_articleViewer = new ArticleViewer(m_articleSplitter);
-    m_actionManager->initArticleViewer(m_articleViewer);
-    m_articleListView->setFocusProxy(m_articleViewer);
-    setFocusProxy( m_articleViewer );
-
-    connect( m_articleViewer, SIGNAL(signalOpenUrlRequest(Akregator::OpenUrlRequest&)),
-             Kernel::self()->frameManager(), SLOT(slotOpenUrlRequest(Akregator::OpenUrlRequest&)) );
-    connect( m_articleViewer->part()->browserExtension(), SIGNAL(mouseOverInfo(KFileItem)),
-             this, SLOT(slotMouseOverInfo(KFileItem)) );
-    connect( m_part, SIGNAL(signalSettingsChanged()),
-             m_articleViewer, SLOT(slotPaletteOrFontChanged()));
-    connect(m_searchBar, SIGNAL(signalSearch(std::vector<boost::shared_ptr<const Akregator::Filters::AbstractMatcher> >)),
-            m_articleViewer, SLOT(setFilters(std::vector<boost::shared_ptr<const Akregator::Filters::AbstractMatcher> >)) );
-
-    // m_articleViewer->part()->widget()->setWhatsThis( i18n("Browsing area."));
-
     mainTabLayout->addWidget( m_articleSplitter );
 
     m_mainFrame = new MainFrame( this, m_part, m_mainTab );
