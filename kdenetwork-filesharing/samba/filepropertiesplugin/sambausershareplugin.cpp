@@ -31,6 +31,7 @@
 #include <ksambashare.h>
 #include <ksambasharedata.h>
 #include <kmessagebox.h>
+#include <kstandarddirs.h>
 #include <KDE/KPluginFactory>
 #include <KDE/KPluginLoader>
 
@@ -62,8 +63,7 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
     properties->addPage(vbox, i18n("&Share"));
     properties->setFileSharingPage(vbox);
 
-    if (!QFile::exists("/sbin/smbd")
-        && !QFile::exists("/local/sbin/smbd")) {
+    if (!KStandardDirs::findExe("smbd").isEmpty()) {
 
         QWidget *widget = new QWidget(vbox);
         QVBoxLayout *vLayout = new QVBoxLayout(widget);
@@ -158,6 +158,12 @@ void SambaUserSharePlugin::applyChanges()
         result = shareData.save();
     } else if (KSambaShare::instance()->isDirectoryShared(url)) {
         result = shareData.remove();
+    }
+
+#warning "Improve error reporting"
+    if (!result == KSambaShareData::UserShareOk) {
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The action did not successed.</qt>"));
     }
 }
 
