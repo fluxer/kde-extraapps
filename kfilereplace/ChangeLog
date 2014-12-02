@@ -1,0 +1,211 @@
+2005-02-20: Andras Mantia <amantia@kde.org>
+  *  Added the possibility to select the encoding of the files and a warning about
+     the possible damaged result if the wrong encoding is chosen
+     
+2005-02-16: Andras Mantia <amantia@kde.org>
+  *  Accept paths as command line arguments
+
+2005-01-29 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Cleaning up.
+
+2005-01-23 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Some clean up.
+  *  Now the text 'captured text "blabla" at line...' etc. is substituted with
+     'Line:xyz, Col:abc "blabla"'
+  *  Fixed a bug in the string view, that cause KFR to crash if the string list is empty
+     and the user click on it with the mouse.
+
+2005-01-17 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Now it should be possible to handle other characters encoding, like japanese.
+  *  Added, but still buggy, a "replace confirmation" option.
+  *  Now when open KFilereplace as standalone application it uses 
+     this "*.c*;*.h*;*.sh;*.txt*;*.p*;*.java;*.log" string as default filter.
+
+2005-01-14 Andras Mantia <amantia@kde.org>
+  *  Don't show the cannot open file dialogs for directories
+  *  Don't create a backup for every scanned file, only for those that were modified
+  *  Don't update the timestap for every scanned file
+  *  Fix installation of the icons (they go to the part's data dir now)
+
+2005-01-13 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I added some other infos to the docbook manual, I hope to complete it as soon as possible.
+  *  I added a new command: [$mathexp:some_expression$]. It uses the bc calculator to 
+     compute the result of an expression.
+
+2005-01-11 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Fixed a bug in KAddStringDlg: now when we want edit a string the search-only mode and search-replace mode 
+     don't merge.
+  *  Modified KFR file format: I added the tag '<mode search=""/>' just after the root <kfr> to allows 
+     kfilereplace to recognize if the list to load is a list of only search strings. I added some lines of code
+     to permit users to load files that don't have this new tag.
+  *  I'm writing docbook manual. 
+
+2005-01-10 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  The KFilereplaceView widget has been modified. Now it change the layout of kfilereplace depending of the 
+     value of m_option->m_searchOnlyMode.
+  *  I fixed a bug in the backup file option.
+
+2004-12-13 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I modified the way we can open files in quanta. Now we can select one or more entries
+     in the QListView that store the results, and open several files, at the same time.
+     For selecting more than one file, we must press CTRL button while clicking with mouse
+     on the entry we want open.
+
+2004-11-10 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I added a graphical file counter.
+  *  I added a semaphore to notify user about the state of the search.
+  *  I improved a little the speed.
+  *  I made some cleanup.
+
+2004-09-27 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I fixed a bug that affect some strings in case of translation.
+  *  I fixed a bug that affect "Create backup" option, I think that now this feature should work
+     properly.
+
+2004-09-26 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I did some cleanup.
+
+2004-09-11 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I added the class ResultViewEntry in configurationclasses.(h,cpp) to make the replace algorithm more clean.
+  *  I make multiline text searching more useable.
+  *  Now the file entries in the result view are shown with descriptive icons.
+  *  I'm trying to write some documentation, in the meanwhile a tutorial is present.
+
+2004-08-13 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I added CommandEngine class and Report class.
+     In fact I moved the code that do the report document and the 
+     code that do commands feature from KFileREplaceLib to these two classes.
+
+2004-08-09 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I fixed a bug that affected the method "void KFileReplaceView::slotStringsClear()" in kfilereplaceview.cpp file.
+     This bug caused the list of strings not to be correctly erased.
+
+2004-08-07 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I modified the save-results system(thanks Luciano for the idea of using xml/css tecnology). 
+     Now KFR creates a directory with name "NAME" that contains a xml file "NAME.xml" 
+     and a css file "NAME.css". These two files are the new "report document" 
+     that substitutes the xhtml file. To try it choose "Search/Replace|Results|Create Report File" menu option.
+  *  I fixed a bug that causes Quanta to crash when we push Cancel button in new project
+     dialog.
+  *  I finished the tutorial.
+
+2004-08-01 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  The line "if(::access(directory.local8Bit(), R_OK | X_OK) == -1)" has been removed, 
+     and subtitued with "QFileInfo dirInfo(directory);                          "
+                        "if(not(dirInfo.isReadable() and dirInfo.isExecutable())" 
+                        "   or                                                  "
+                        "   not(dirInfo.isWritable()))                          " 
+     in kfilereplacepart.cpp
+
+2004-07-30 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  The icons have been fixed!!! What a miracle!!!
+
+2004-07-24 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I added a little feature. When KFR matches a string, it shows the row and the column
+     where that match is, by using a message like this:
+     /my/path/file
+     |
+     |__ string "xyz" found at line:40, column:2
+     |__ string "xyz" found at line:18, column:57
+     |__.............
+     Now if you use "Edit with Quanta" popup menu option, say, on the line:
+                    "string "xyz" found at line:40, column:2"
+     of the result view, Quanta will open the file /my/path/file  at row 40, column 2.
+
+2004-07-20 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I fixed a bug that affects the generation of extension of 
+     the backup files.
+
+2004-07-17 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I fixed the bug that causes quanta to crash when KFR is active.
+  *  I fixed (I hope!) the simulation feature.
+  *  I reorganize the KOptionsDlg UI.
+  *  I Added some tool tips.
+  *  I' m tired and I go on bed ;-)
+
+2004-07-16 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  The KNewProjectDlg was modified, adding quick search/replace line edit objects
+  *  A option in KOptionDlg was added, so that the files that don't
+     contain the strings we are searching for, will not be shown.
+  *  Some code clean-up
+  *  A bug with KAddStringDlg was fixed.
+  *  I found a bug that makes quanta to crash when we close quanta with the x button... 
+     I'm trying to fix it.
+
+2004-05-30 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Well, KFR has been entirely (more or less :-)) rewrote.
+     the files:
+     apistruct.h
+     kernel.(cpp,h)
+     kexpression.(cpp,h)
+     kfilereplacedoc.(cpp,h)
+     kfilereplacepref.(cpp,h)
+
+    were removed and these files are added:
+
+    configurationclasses.h
+
+  . the internal architecture was redesigned, to use QT/KDE tecnologies in particular:
+    . C-like code were removed (where possible).
+    . some system dependent functions were substituted with more portable code.
+    . the apistructs.h file were substituted with one class in configurationclasses.h.
+  . the UIs were modified in particular:
+    . new "add string" dialog were added.
+    . project dialog were modified. 
+  . some new features were added in particular:
+    . the variable replace mechanism were modified.
+    . the result view shows the line and column where the string has been found.
+    . now the mechanism of search/replace with wildcards inherits from QT regular expression engine.
+
+  * I wrote a little tutorial(TUTOR.txt), but a more exhaustive tutorial will be released soon.
+    Note: there some bugs to fix and some feature to implement, in particular:
+        . Simulation is not yet implemented.
+        . Some options are presents but disabled.
+        . I want to add more KFR variable commands.
+
+
+2004-03-26 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Added a feature. Now we can open a file from the result view of KFR in Quanta(thanks Andras).
+
+2004-03-14 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Replaced two QLineEdit with two QSpinbox in knewprojectdlg.ui
+  *  Fixed a bug in the new kfr (XML-based) file format.
+
+2004-03-12 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Removed KresultView(.h,.cpp). Now KFileReplaceView is a QWidget that contains results and 
+     strings view.
+  *  Added whatthis.h that contains the "what's this" strings.
+  *  Fixed a bug that generate a wrong XHTML result file.
+
+2004-03-06 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  Added kconfirmdlgs.ui.
+  *  Fixed a bug in KOptionDlg, now when we select a option, the selection is shown correctly.
+  *  Fixed a bug KNewProjectDlg. 
+
+2004-02-26 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  I added a method 'editStrings' that fixes tha behaviour when a user 
+     chooses edit string option instead of add string option.
+  *  I modified the property textFormat of the QTextEdit widgets of
+     KAddstringDlg, from the value 'AutoText' to the value 'PlainText',
+     so the QTextEdit widgets will not try to render a string containing
+     html code.
+
+2004-02-24 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  kfilereplacepref.(h,cpp) were removed.
+  *  kernel.(h,cpp) now are a singleton class.
+  *  Some macros in kernel.h were replaced with integer constants.
+  *  Methods in kernel.h file were renamed.
+  *  Some superflous #include lines were removed.
+  *  The filelib.(h,cpp) were subtituted with KFilereplaceLib singleton class.
+  *  Now kfilereplace logo and icons in the result view appear.
+
+2004-02-18 Emiliano Gulmini <emi_barbarossa@yahoo.it>
+  *  The icons in toolbar directory were redrawn.
+  *  Deleted the KFRHeader struct from  apistruct.h.
+  *  The mechanism of saving the string rules has been modified: now we can save the rules in a
+     file like this "a_file_name.kfr" that is an XML file.
+  *  The file containing the results of the operations  is now a XHTML file.
+  *  Two new files UI added: now KOptionDlg inherits from KOptionDlgS and KAddstringDlg inherits  
+     from KAddstringDlgS.
+  *  The klistviewstring.(h,cpp) were removed.
+  *  A lot of clean up has been made in all files.

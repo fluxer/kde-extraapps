@@ -1,0 +1,75 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="kfilereplace" version="6">
+<MenuBar>
+    <Menu name="kfilerepace"><text>Search/&amp;Replace</text>
+        <Action name="new_project"/>
+        <Action name="search"/>
+        <Action name="file_simulate"/>
+        <Action name="replace"/>
+        <Action name="stop"/>
+        <Separator/>
+        <Menu name="strings"><text>&amp;Strings</text>
+            <Action name="strings_add"/>
+            <Action name="strings_del"/>
+            <Action name="strings_empty"/>
+            <Action name="strings_edit"/>
+            <Separator/>
+            <Action name="strings_save"/>
+            <Action name="strings_load"/>
+            <Action name="strings_load_recent"/>
+            <Separator/>
+            <Action name="strings_invert"/>
+            <Action name="strings_invert_all"/>
+        </Menu>
+        <Menu name="results"><text>&amp;Results</text>
+            <Action name="results_openfile"/>
+            <Action name="results_opendir"/>
+            <Action name="results_editfile"/>
+            <Action name="results_delete"/>
+            <Action name="results_infos"/>
+            <Separator/>
+            <Action name="save_results"/>
+            <Separator/>
+            <Action name="results_treeexpand"/>
+            <Action name="results_treereduce"/>
+        </Menu>
+        <Menu name="options"><text>&amp;Options</text>
+            <Action name="options_recursive"/>
+            <Action name="options_backup"/>
+            <Action name="options_case"/>
+            <Action name="options_var"/>
+	    <Action name="options_regularexpressions"/>
+        </Menu>
+    </Menu>
+    <Menu name="settings"><text>&amp;Settings</text>
+        <Action name="configure_kfilereplace"/>
+    </Menu>
+    <Menu name="help"><text>&amp;Help</text>
+	<Separator/>
+	<Action name="help_kfilereplace" />
+	<Action name="report_bug" />
+	<Action name="help_about_kfilereplace" />
+    </Menu>
+</MenuBar>
+<ToolBar noMerge="1" name="mainToolBar">
+<text>KFileReplace Main Toolbar</text>
+	<Action name="new_project" />
+	<Action name="search"/>
+	<Action name="file_simulate"/>
+	<Action name="replace"/>
+	<Action name="stop"/>
+	<Separator/>
+	<Action name="strings_add"/>
+	<Action name="strings_del"/>
+	<Action name="strings_edit"/>
+        <Action name="strings_empty"/>
+        <Action name="strings_invert"/>
+        <Action name="strings_load"/>
+	<Separator/>
+	<Action name="options_recursive"/>
+	<Action name="options_backup"/>
+	<Action name="options_case"/>
+	<Action name="options_var"/>
+	<Action name="options_regularexpressions"/>
+</ToolBar>
+</kpartgui>

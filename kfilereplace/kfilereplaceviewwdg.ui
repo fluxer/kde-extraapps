@@ -1,0 +1,549 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>KFileReplaceViewWdg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>KFileReplaceViewWdg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>635</width>
+            <height>370</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QSplitter" row="0" column="0">
+            <property name="name">
+                <cstring>splitter3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QWidgetStack">
+                <property name="name">
+                    <cstring>m_stackResults</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>7</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>WStackPage</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>0</number>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="K3ListView" row="0" column="0">
+                            <column>
+                                <property name="text">
+                                    <string>Name</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Folder</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Old Size</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>New Size</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Replaced Strings</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Owner User</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Owner Group</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <property name="name">
+                                <cstring>m_lvResults</cstring>
+                            </property>
+                            <property name="selectionMode" stdset="0">
+                                <enum>Extended</enum>
+                            </property>
+                            <property name="allColumnsShowFocus">
+                                <bool>true</bool>
+                            </property>
+                            <property name="showSortIndicator">
+                                <bool>true</bool>
+                            </property>
+                            <property name="rootIsDecorated">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>LastColumn</enum>
+                            </property>
+                            <property name="itemsMovable">
+                                <bool>false</bool>
+                            </property>
+                            <property name="alternateBackground">
+                                <color>
+                                    <red>238</red>
+                                    <green>246</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>WStackPage</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>1</number>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="K3ListView" row="0" column="0">
+                            <column>
+                                <property name="text">
+                                    <string>Name</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Folder</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Size</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Found Strings</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Owner User</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Owner Group</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <property name="name">
+                                <cstring>m_lvResults_2</cstring>
+                            </property>
+                            <property name="selectionMode" stdset="0">
+                                <enum>Extended</enum>
+                            </property>
+                            <property name="allColumnsShowFocus">
+                                <bool>true</bool>
+                            </property>
+                            <property name="showSortIndicator">
+                                <bool>true</bool>
+                            </property>
+                            <property name="rootIsDecorated">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>LastColumn</enum>
+                            </property>
+                            <property name="itemsMovable">
+                                <bool>false</bool>
+                            </property>
+                            <property name="alternateBackground">
+                                <color>
+                                    <red>238</red>
+                                    <green>246</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </widget>
+            <widget class="QWidgetStack">
+                <property name="name">
+                    <cstring>m_stackStrings</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>7</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>WStackPage</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>0</number>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="K3ListView" row="0" column="0">
+                            <column>
+                                <property name="text">
+                                    <string>Search For</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Replace With</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <property name="name">
+                                <cstring>m_lvStrings</cstring>
+                            </property>
+                            <property name="allColumnsShowFocus">
+                                <bool>true</bool>
+                            </property>
+                            <property name="rootIsDecorated">
+                                <bool>false</bool>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>AllColumns</enum>
+                            </property>
+                            <property name="itemsMovable">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>WStackPage</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>1</number>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="K3ListView" row="0" column="0">
+                            <column>
+                                <property name="text">
+                                    <string>Search For</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <property name="name">
+                                <cstring>m_lvStrings_2</cstring>
+                            </property>
+                            <property name="allColumnsShowFocus">
+                                <bool>true</bool>
+                            </property>
+                            <property name="rootIsDecorated">
+                                <bool>false</bool>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>AllColumns</enum>
+                            </property>
+                            <property name="itemsMovable">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </widget>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout6</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KLed">
+                            <property name="name">
+                                <cstring>m_ledGo</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                            <property name="state">
+                                <enum>On</enum>
+                            </property>
+                            <property name="color">
+                                <color>
+                                    <red>170</red>
+                                    <green>255</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Green means ready</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Ready</string>
+                            </property>
+                        </widget>
+                        <widget class="KLed">
+                            <property name="name">
+                                <cstring>m_ledWait</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                            <property name="state">
+                                <enum>On</enum>
+                            </property>
+                            <property name="color">
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Yellow means wait while sorting list</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Please wait while sorting list</string>
+                            </property>
+                        </widget>
+                        <widget class="KLed">
+                            <property name="name">
+                                <cstring>m_ledStop</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                            <property name="color">
+                                <color>
+                                    <red>255</red>
+                                    <green>0</green>
+                                    <blue>0</blue>
+                                </color>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Red means scanning files</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>354</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout1</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>m_tlFilesNumber</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Scanned files:</string>
+                            </property>
+                        </widget>
+                        <widget class="QLCDNumber">
+                            <property name="name">
+                                <cstring>m_lcdFilesNumber</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                            <property name="numDigits">
+                                <number>7</number>
+                            </property>
+                            <property name="mode">
+                                <enum>Dec</enum>
+                            </property>
+                            <property name="segmentStyle">
+                                <enum>Flat</enum>
+                            </property>
+                            <property name="intValue" stdset="0">
+                                <number>0</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<includehints>
+    <includehint>k3listview.h</includehint>
+    <includehint>kled.h</includehint>
+</includehints>
+</UI>
