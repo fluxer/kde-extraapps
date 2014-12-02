@@ -20,13 +20,14 @@
 
 //QT
 #include <qlcdnumber.h>
+#include <QListView>
 
 //KDE
 class KMenu;
-class K3ListView;
+class QListView;
 
 //local
-#include "kfilereplaceviewwdg.h"
+#include "ui_kfilereplaceviewwdg.h"
 #include "configurationclasses.h"
 
 class coord

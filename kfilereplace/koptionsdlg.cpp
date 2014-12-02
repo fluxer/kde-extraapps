@@ -35,7 +35,7 @@
 
 // local
 #include "whatthis.h"
-#include "koptionsdlg.h"
+#include "ui_koptionsdlg.h"
 
 
 using namespace whatthisNameSpace;

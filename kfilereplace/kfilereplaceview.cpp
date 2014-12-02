@@ -19,11 +19,9 @@
 
 #include <qmap.h>
 #include <qfileinfo.h>
-//Added by qt3to4:
 #include <QTextStream>
 
 // KDE
-#include <k3listview.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kmenu.h>
@@ -102,7 +100,7 @@ void KFileReplaceView::stringsInvert(bool invertAll)
 {
   Q3ListViewItem* lviCurItem,
   * lviFirst;
-  K3ListView* sv = getStringsView();
+  QListView* sv = getStringsView();
 
   if(invertAll)
     lviCurItem = lviFirst = sv->firstChild();
@@ -152,7 +150,7 @@ void KFileReplaceView::changeView(bool searchingOnlyMode)
     }
 }
 
-K3ListView* KFileReplaceView::getResultsView()
+QListView* KFileReplaceView::getResultsView()
 {
   if(m_option->m_searchingOnlyMode)
     m_rv = m_lvResults_2;
@@ -162,7 +160,7 @@ K3ListView* KFileReplaceView::getResultsView()
   return m_rv;
 }
 
-K3ListView* KFileReplaceView::getStringsView()
+QListView* KFileReplaceView::getStringsView()
 {
   if(m_option->m_searchingOnlyMode)
     m_sv = m_lvStrings_2;
@@ -180,7 +178,7 @@ void KFileReplaceView::slotMouseButtonClicked (int button, Q3ListViewItem *lvi, 
   // RIGHT BUTTON
   if (button == Qt::RightButton)
     {
-      m_lviCurrent = static_cast<K3ListViewItem*>(lvi);
+      m_lviCurrent = static_cast<QListViewItem*>(lvi);
       m_menuResult->popup(pos);
     }
 }
@@ -404,7 +402,7 @@ void KFileReplaceView::slotStringsEdit()
 void KFileReplaceView::slotStringsSave()
 {
   // Check there are strings in the list
-  K3ListView* sv = getStringsView();
+  QListView* sv = getStringsView();
 
   if (sv->firstChild() == 0)
   {
@@ -447,7 +445,7 @@ void KFileReplaceView::slotStringsSave()
     KMessageBox::error(0, i18n("File %1 cannot be saved.", fileName));
     return ;
   }
-  QTextStream oTStream( &file );
+  Q3TextStream oTStream( &file );
   oTStream.setCodec(QTextCodec::codecForName("UTF-8"));
   oTStream << header
       << body

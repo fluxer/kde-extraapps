@@ -20,7 +20,6 @@
 
 // KDE
 #include <kparts/part.h>
-#include <k3listview.h>
 
 class KAboutApplicationDialog;
 class KAboutData;
@@ -136,7 +135,7 @@ class KFileReplacePart: public KParts::ReadOnlyPart
     void recursiveFileReplace(const QString& dirName, int& filesNumber);
     void replaceAndBackup(const QString& currentDir, const QString& oldFileName);
     void replaceAndOverwrite(const QString& currentDir, const QString& oldFileName);
-    void replacingLoop(QString& line, K3ListViewItem** item, bool& atLeastOneStringFound, int& occur, bool regularExpression, bool& askConfirmReplace);
+    void replacingLoop(QString& line, QListView** item, bool& atLeastOneStringFound, int& occur, bool regularExpression, bool& askConfirmReplace);
 
     /**
      * Searching methods

@@ -1,328 +1,283 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>KOptionsDlgS</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>KOptionsDlgS</cstring>
-    </property>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0" stdsetdef="1">
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>KOptionsDlgS</class>
+  <widget class="QDialog" name="KOptionsDlgS">
     <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>572</width>
-            <height>420</height>
-        </rect>
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>572</width>
+        <height>420</height>
+      </rect>
     </property>
-    <property name="caption">
-        <string>Options</string>
+    <property name="windowTitle">
+      <string>Options</string>
     </property>
     <property name="sizeGripEnabled">
-        <bool>true</bool>
+      <bool>true</bool>
     </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QTabWidget" row="0" column="0" rowspan="1" colspan="5">
-            <property name="name">
-                <cstring>tabWidget2</cstring>
-            </property>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>tab1</cstring>
-                </property>
-                <attribute name="title">
-                    <string>General</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QGroupBox" row="0" column="0">
-                        <property name="name">
-                            <cstring>groupBox7</cstring>
+    <layout class="QGridLayout">
+      <item row="0" column="0" rowspan="1" colspan="5">
+        <widget class="QTabWidget" name="tabWidget2">
+          <widget class="QWidget" name="tab1">
+            <attribute name="title">
+              <string>General</string>
+            </attribute>
+            <layout class="QGridLayout">
+              <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox7">
+                  <property name="title">
+                    <string>General Options</string>
+                  </property>
+                  <layout class="QGridLayout">
+                    <item row="4" column="0" rowspan="1" colspan="3">
+                      <widget class="QCheckBox" name="m_chbVariables">
+                        <property name="text">
+                          <string>Enable commands in replace strings</string>
                         </property>
-                        <property name="title">
-                            <string>General Options</string>
+                        <property name="shortcut">
+                          <string/>
                         </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
+                      </widget>
+                    </item>
+                    <item row="7" column="0">
+                      <widget class="QLabel" name="m_tlBackup">
+                        <property name="text">
+                          <string>Backup copy suffix:</string>
+                        </property>
+                        <property name="wordWrap">
+                          <bool>false</bool>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="7" column="1" rowspan="1" colspan="2">
+                      <widget class="QLineEdit" name="m_leBackup">
+                        <property name="text">
+                          <string/>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="5" column="0" rowspan="1" colspan="3">
+                      <widget class="QCheckBox" name="m_chbNotifyOnErrors">
+                        <property name="text">
+                          <string>Notif&amp;y on errors</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="1" column="0" rowspan="1" colspan="3">
+                      <widget class="QCheckBox" name="m_chbCaseSensitive">
+                        <property name="text">
+                          <string>Case sensitive</string>
+                        </property>
+                        <property name="shortcut">
+                          <string/>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="2" column="0" rowspan="1" colspan="3">
+                      <widget class="QCheckBox" name="m_chbRecursive">
+                        <property name="text">
+                          <string>Recursive (search/replace in all sub folders)</string>
+                        </property>
+                        <property name="shortcut">
+                          <string/>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="3" column="0" rowspan="1" colspan="3">
+                      <widget class="QCheckBox" name="m_chbRegularExpressions">
+                        <property name="enabled">
+                          <bool>true</bool>
+                        </property>
+                        <property name="text">
+                          <string>Enable regular e&amp;xpressions</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="6" column="0" rowspan="1" colspan="3">
+                      <widget class="QCheckBox" name="m_chbBackup">
+                        <property name="text">
+                          <string>Do &amp;backup copy</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="0" column="0" rowspan="1" colspan="2">
+                      <widget class="QLabel" name="textLabel1">
+                        <property name="text">
+                          <string>Encoding of the files:</string>
+                        </property>
+                        <property name="wordWrap">
+                          <bool>false</bool>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="0" column="2">
+                      <widget class="KComboBox" name="m_cbEncoding">
+                        <property name="sizePolicy">
+                          <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                          </sizepolicy>
+                        </property>
+                      </widget>
+                    </item>
+                  </layout>
+                </widget>
+              </item>
+            </layout>
+          </widget>
+          <widget class="QWidget" name="Tab3">
+            <attribute name="title">
+              <string>&amp;Advanced</string>
+            </attribute>
+            <layout class="QGridLayout">
+              <item row="0" column="0">
+                <widget class="QGroupBox" name="gbxConfirm">
+                  <property name="title">
+                    <string>Advanced Options</string>
+                  </property>
+                  <layout class="QGridLayout">
+                    <item row="5" column="0">
+                      <widget class="QCheckBox" name="m_chbIgnoreHidden">
+                        <property name="text">
+                          <string>Ignore hidden files and folders</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="4" column="0">
+                      <widget class="QCheckBox" name="m_chbFollowSymLinks">
+                        <property name="text">
+                          <string>Follow s&amp;ymbolic links</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="3" column="0">
+                      <widget class="QCheckBox" name="m_chbHaltOnFirstOccurrence">
+                        <property name="text">
+                          <string>When searching, stop on first string found (faster but no details)</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="2" column="0">
+                      <widget class="QCheckBox" name="m_chbIgnoreFiles">
+                        <property name="enabled">
+                          <bool>true</bool>
+                        </property>
+                        <property name="text">
+                          <string>Do not show file if no strings are found or replaced</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item row="1" column="0">
+                      <layout class="QHBoxLayout">
+                        <item>
+                          <spacer name="spacer2">
+                            <property name="sizeHint">
+                              <size>
+                                <width>16</width>
+                                <height>20</height>
+                              </size>
                             </property>
-                            <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>m_chbVariables</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Enable commands in replace strings</string>
-                                </property>
-                                <property name="accel">
-                                    <string></string>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="7" column="0">
-                                <property name="name">
-                                    <cstring>m_tlBackup</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Backup copy suffix:</string>
-                                </property>
-                            </widget>
-                            <widget class="QLineEdit" row="7" column="1" rowspan="1" colspan="2">
-                                <property name="name">
-                                    <cstring>m_leBackup</cstring>
-                                </property>
-                                <property name="text">
-                                    <string></string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="5" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>m_chbNotifyOnErrors</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Notif&amp;y on errors</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>m_chbCaseSensitive</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Case sensitive</string>
-                                </property>
-                                <property name="accel">
-                                    <string></string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>m_chbRecursive</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Recursive (search/replace in all sub folders)</string>
-                                </property>
-                                <property name="accel">
-                                    <string></string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="3" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>m_chbRegularExpressions</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Enable regular e&amp;xpressions</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="6" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>m_chbBackup</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Do &amp;backup copy</string>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-                                <property name="name">
-                                    <cstring>textLabel1</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Encoding of the files:</string>
-                                </property>
-                            </widget>
-                            <widget class="KComboBox" row="0" column="2">
-                                <property name="name">
-                                    <cstring>m_cbEncoding</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>3</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                            </widget>
-                        </grid>
-                    </widget>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>Tab3</cstring>
-                </property>
-                <attribute name="title">
-                    <string>&amp;Advanced</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QGroupBox" row="0" column="0">
-                        <property name="name">
-                            <cstring>gbxConfirm</cstring>
-                        </property>
-                        <property name="title">
-                            <string>Advanced Options</string>
-                        </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
+                            <property name="sizeType">
+                              <enum>QSizePolicy::Fixed</enum>
                             </property>
-                            <widget class="QCheckBox" row="5" column="0">
-                                <property name="name">
-                                    <cstring>m_chbIgnoreHidden</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Ignore hidden files and folders</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="4" column="0">
-                                <property name="name">
-                                    <cstring>m_chbFollowSymLinks</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Follow s&amp;ymbolic links</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="3" column="0">
-                                <property name="name">
-                                    <cstring>m_chbHaltOnFirstOccurrence</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>When searching, stop on first string found (faster but no details)</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="2" column="0">
-                                <property name="name">
-                                    <cstring>m_chbIgnoreFiles</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Do not show file if no strings are found or replaced</string>
-                                </property>
-                            </widget>
-                            <widget class="QLayoutWidget" row="1" column="0">
-                                <property name="name">
-                                    <cstring>layout9</cstring>
-                                </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <spacer>
-                                        <property name="name">
-                                            <cstring>spacer2</cstring>
-                                        </property>
-                                        <property name="orientation">
-                                            <enum>Qt::Horizontal</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Fixed</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>16</width>
-                                                <height>20</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                    <widget class="QCheckBox">
-                                        <property name="name">
-                                            <cstring>m_chbShowConfirmDialog</cstring>
-                                        </property>
-                                        <property name="enabled">
-                                            <bool>false</bool>
-                                        </property>
-                                        <property name="text">
-                                            <string>Show confirmation dialog</string>
-                                        </property>
-                                    </widget>
-                                </hbox>
-                            </widget>
-                            <widget class="QCheckBox" row="0" column="0">
-                                <property name="name">
-                                    <cstring>m_chbConfirmStrings</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Confirm before replace each string</string>
-                                </property>
-                            </widget>
-                        </grid>
-                    </widget>
-                </grid>
-            </widget>
+                            <property name="orientation">
+                              <enum>Qt::Qt::Horizontal</enum>
+                            </property>
+                          </spacer>
+                        </item>
+                        <item>
+                          <widget class="QCheckBox" name="m_chbShowConfirmDialog">
+                            <property name="enabled">
+                              <bool>false</bool>
+                            </property>
+                            <property name="text">
+                              <string>Show confirmation dialog</string>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                    <item row="0" column="0">
+                      <widget class="QCheckBox" name="m_chbConfirmStrings">
+                        <property name="enabled">
+                          <bool>false</bool>
+                        </property>
+                        <property name="text">
+                          <string>Confirm before replace each string</string>
+                        </property>
+                      </widget>
+                    </item>
+                  </layout>
+                </widget>
+              </item>
+            </layout>
+          </widget>
         </widget>
-        <widget class="QPushButton" row="1" column="0">
-            <property name="name">
-                <cstring>m_pbHelp</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="text">
-                <string>&amp;Help</string>
-            </property>
+      </item>
+      <item row="1" column="0">
+        <widget class="QPushButton" name="m_pbHelp">
+          <property name="enabled">
+            <bool>true</bool>
+          </property>
+          <property name="text">
+            <string>&amp;Help</string>
+          </property>
         </widget>
-        <spacer row="1" column="1">
-            <property name="name">
-                <cstring>spacer1</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>202</width>
-                    <height>20</height>
-                </size>
-            </property>
+      </item>
+      <item row="1" column="1">
+        <spacer name="spacer1">
+          <property name="sizeHint">
+            <size>
+              <width>202</width>
+              <height>20</height>
+            </size>
+          </property>
+          <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation">
+            <enum>Qt::Qt::Horizontal</enum>
+          </property>
         </spacer>
-        <widget class="QPushButton" row="1" column="2">
-            <property name="name">
-                <cstring>m_pbDefault</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Default Values</string>
-            </property>
+      </item>
+      <item row="1" column="2">
+        <widget class="QPushButton" name="m_pbDefault">
+          <property name="text">
+            <string>&amp;Default Values</string>
+          </property>
         </widget>
-        <widget class="QPushButton" row="1" column="3">
-            <property name="name">
-                <cstring>m_pbOK</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;OK</string>
-            </property>
+      </item>
+      <item row="1" column="3">
+        <widget class="QPushButton" name="m_pbOK">
+          <property name="text">
+            <string>&amp;OK</string>
+          </property>
         </widget>
-        <widget class="QPushButton" row="1" column="4">
-            <property name="name">
-                <cstring>m_pbCancel</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Cancel</string>
-            </property>
+      </item>
+      <item row="1" column="4">
+        <widget class="QPushButton" name="m_pbCancel">
+          <property name="text">
+            <string>&amp;Cancel</string>
+          </property>
         </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>m_pbCancel</sender>
-        <signal>clicked()</signal>
-        <receiver>KOptionsDlgS</receiver>
-        <slot>reject()</slot>
-    </connection>
-</connections>
-<tabstops>
+      </item>
+    </layout>
+  </widget>
+  <pixmapfunction></pixmapfunction>
+  <customwidgets>
+    <customwidget>
+      <class>KComboBox</class>
+      <extends>QComboBox</extends>
+      <header location="global">kcombobox.h</header>
+    </customwidget>
+  </customwidgets>
+  <tabstops>
     <tabstop>tabWidget2</tabstop>
     <tabstop>m_cbEncoding</tabstop>
     <tabstop>m_chbCaseSensitive</tabstop>
@@ -342,5 +297,13 @@
     <tabstop>m_chbHaltOnFirstOccurrence</tabstop>
     <tabstop>m_chbFollowSymLinks</tabstop>
     <tabstop>m_chbIgnoreHidden</tabstop>
-</tabstops>
-</UI>
+  </tabstops>
+  <connections>
+    <connection>
+      <sender>m_pbCancel</sender>
+      <signal>clicked()</signal>
+      <receiver>KOptionsDlgS</receiver>
+      <slot>reject()</slot>
+    </connection>
+  </connections>
+</ui>

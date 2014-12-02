@@ -22,7 +22,7 @@
 //KDE
 
 //local
-#include "knewprojectdlgs.h"
+#include "ui_knewprojectdlgs.h"
 #include "configurationclasses.h"
 #include "ktoolinvocation.h"
 

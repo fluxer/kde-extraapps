@@ -24,7 +24,7 @@ class KConfig;
 
 //local
 #include "configurationclasses.h"
-#include "koptionsdlgs.h"
+#include "ui_koptionsdlgs.h"
 #include <ktoolinvocation.h>
 
 /**

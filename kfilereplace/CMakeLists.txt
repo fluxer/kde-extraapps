@@ -1,7 +1,5 @@
 project(kfilereplace)
 
-add_definitions(-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
-
 add_subdirectory( toolbar )
 
 ########### next target ###############
@@ -20,7 +18,7 @@ set(kfilereplacepart_PART_SRCS
 qt4_add_dbus_adaptor( kfilereplacepart_PART_SRCS org.kde.kfilereplace.xml kfilereplacepart.h KFileReplacePart )
 
 
-kde4_add_ui3_files(kfilereplacepart_PART_SRCS 
+kde4_add_ui_files(kfilereplacepart_PART_SRCS 
    kfilereplaceviewwdg.ui 
    kaddstringdlgs.ui 
    knewprojectdlgs.ui 
@@ -30,7 +28,7 @@ kde4_add_plugin(kfilereplacepart WITH_PREFIX ${kfilereplacepart_PART_SRCS})
 
 
 
-target_link_libraries(kfilereplacepart  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KPARTS_LIBS} )
+target_link_libraries(kfilereplacepart  ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} )
 
 install(TARGETS kfilereplacepart  DESTINATION ${PLUGIN_INSTALL_DIR})
 

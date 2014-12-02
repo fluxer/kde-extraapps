@@ -29,7 +29,6 @@
 #include <kaboutapplicationdialog.h>
 #include <kapplication.h>
 #include <kaction.h>
-#include <kbugreport.h>
 #include <kconfig.h>
 #include <kfiledialog.h>
 #include <kcomponentdata.h>
@@ -40,7 +39,6 @@
 #include <kiconloader.h>
 #include <kglobal.h>
 #include <kiconeffect.h>
-#include <k3listview.h>
 #include <kuser.h>
 #include <kcombobox.h>
 #include <kguiitem.h>
@@ -115,7 +113,7 @@ void KFileReplacePart::slotSearchingOperation()
   if(!checkBeforeOperation())
     return;
 
-  K3ListView* rv = m_view->getResultsView();
+  QListView* rv = m_view->getResultsView();
 
   rv->clear();
 
@@ -174,7 +172,7 @@ void KFileReplacePart::slotReplacingOperation()
   if(!checkBeforeOperation())
     return;
 
-  K3ListView* rv = m_view->getResultsView();
+  QListView* rv = m_view->getResultsView();
 
   if(m_option->m_simulation)
     {
@@ -247,7 +245,7 @@ void KFileReplacePart::slotStop()
 void KFileReplacePart::slotCreateReport()
 {
   // Check there are results
-  K3ListView* rv = m_view->getResultsView(),
+  QListView* rv = m_view->getResultsView(),
            * sv = m_view->getStringsView();
 
   if(rv->firstChild() == 0)
@@ -464,7 +462,7 @@ void KFileReplacePart::reportBug()
 
 void KFileReplacePart::resetActions()
 {
-  K3ListView* rv = m_view->getResultsView(),
+  QListView* rv = m_view->getResultsView(),
            * sv = m_view->getStringsView();
 
   bool hasItems = (sv->firstChild() != 0),
@@ -1105,7 +1103,7 @@ void KFileReplacePart::replaceAndBackup(const QString& currentDir, const QString
   QString backupExtension = m_option->m_backupExtension;
 
   bool atLeastOneStringFound = false;
-  K3ListViewItem *item = 0;
+  QListViewItem *item = 0;
   int occurrence = 0;
 
   replacingLoop(line, &item, atLeastOneStringFound, occurrence, m_option->m_regularExpressions, m_option->m_askConfirmReplace);
@@ -1181,7 +1179,7 @@ void KFileReplacePart::replaceAndOverwrite(const QString& currentDir, const QStr
     }
 
   QString fileSizeBeforeReplacing =  KFileReplaceLib::formatFileSize(oldFileInfo.size());
-  K3ListViewItem *item = 0;
+  QListViewItem *item = 0;
 
   QTextStream oldStream( &oldFile );
   if (m_option->m_encoding == "utf8")
@@ -1242,11 +1240,11 @@ void KFileReplacePart::replaceAndOverwrite(const QString& currentDir, const QStr
     }
 }
 
-void KFileReplacePart::replacingLoop(QString& line, K3ListViewItem** item, bool& atLeastOneStringFound, int& occur, bool regularExpression, bool& askConfirmReplace)
+void KFileReplacePart::replacingLoop(QString& line, QListViewItem** item, bool& atLeastOneStringFound, int& occur, bool regularExpression, bool& askConfirmReplace)
 {
   KeyValueMap tempMap = m_replacementMap;
   KeyValueMap::Iterator it;
-  K3ListView* rv = m_view->getResultsView();
+  QListView* rv = m_view->getResultsView();
 
   for(it = tempMap.begin(); it != tempMap.end(); ++it)
     {
@@ -1275,8 +1273,8 @@ void KFileReplacePart::replacingLoop(QString& line, K3ListViewItem** item, bool&
 					      entry.columnNumber(line));
 
 		  if(!*item)
-		    *item =  new K3ListViewItem(rv);
-		  K3ListViewItem* tempItem = new K3ListViewItem(*item);
+		    *item =  new QListViewItem(rv);
+		  QListViewItem* tempItem = new QListViewItem(*item);
 		  tempItem->setMultiLinesEnabled(true);
 		  tempItem->setText(0,msg);
 		  occur ++;
@@ -1297,8 +1295,8 @@ void KFileReplacePart::replacingLoop(QString& line, K3ListViewItem** item, bool&
 					   entry.columnNumber(line));
 
 	       if(!*item)
-		 *item =  new K3ListViewItem(rv);
-	       K3ListViewItem* tempItem = new K3ListViewItem(*item);
+		 *item =  new QListViewItem(rv);
+	       QListViewItem* tempItem = new QListViewItem(*item);
 	       tempItem->setMultiLinesEnabled(true);
 	       tempItem->setText(0,msg);
 	       occur ++;
@@ -1410,7 +1408,7 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
 
   QFileInfo fileInfo(currentDir+'/'+fileName);
 
-  K3ListViewItem *item = 0;
+  QListViewItem *item = 0;
 
   //Counts occurrences
   int occurrence = 0;
@@ -1422,7 +1420,7 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
 
   KeyValueMap::Iterator it = tempMap.begin();
 
-  K3ListView* rv = m_view->getResultsView();
+  QListView* rv = m_view->getResultsView();
 
   while(it != tempMap.end())
     {
@@ -1456,9 +1454,9 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
               int columnNumber = pos - line.lastIndexOf('\n',pos);
 
               if (!item)
-                item = new K3ListViewItem(rv);
+                item = new QListViewItem(rv);
 
-              K3ListViewItem* tempItem= new K3ListViewItem(item);
+              QListViewItem* tempItem= new QListViewItem(item);
               QString msg,
                       capturedText;
 
@@ -1510,8 +1508,8 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
               msg = i18n(" Line:%2, Col:%3 - \"%1\"", capturedText, lineNumber, columnNumber);
 
               if(!item)
-                 item = new K3ListViewItem(rv);
-              K3ListViewItem* tempItem = new K3ListViewItem(item);
+                 item = new QListViewItem(rv);
+              QListViewItem* tempItem = new QListViewItem(item);
               tempItem->setMultiLinesEnabled(true);
               tempItem->setText(0,msg);
               occurrence++;
@@ -1569,7 +1567,7 @@ void KFileReplacePart::loadRulesFile(const QString& fileName)
   *  creates a xml document and browses it*/
   QDomDocument doc("mydocument");
   QFile file(fileName);
-  K3ListView* sv = m_view->getStringsView();
+  QListView* sv = m_view->getStringsView();
 
   if(!file.open(QIODevice::ReadOnly))
     {
@@ -1685,7 +1683,7 @@ void KFileReplacePart::setOptionMask()
 bool KFileReplacePart::checkBeforeOperation()
 {
   loadViewContent();
-  K3ListView* sv = m_view->getStringsView();
+  QListView* sv = m_view->getStringsView();
 
   // Checks if there are strings to replace (not need in search operation)
   if (sv->childCount() == 0)
