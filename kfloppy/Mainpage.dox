@@ -1,8 +1,0 @@
-/** @mainpage kfloppy
-
-The kfloppy application
-
-*/
-
-// DOXYGEN_REFERENCES = kdecore
-// DOXYGEN_SET_PROJECT_NAME = kfloppy

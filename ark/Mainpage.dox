@@ -1,8 +1,0 @@
-/** @mainpage ark
-
-The ark application
-
-*/
-
-// DOXYGEN_REFERENCES = kdecore
-// DOXYGEN_SET_PROJECT_NAME = ark

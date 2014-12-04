@@ -1,8 +1,0 @@
-/** @mainpage ktimer
-
-The ktimer application
-
-*/
-
-// DOXYGEN_REFERENCES = kdecore
-// DOXYGEN_SET_PROJECT_NAME = ktimer

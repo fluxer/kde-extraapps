@@ -1,8 +1,0 @@
-/** @mainpage kcharselect
-
-The kcharselect application
-
-*/
-
-// DOXYGEN_REFERENCES = kdecore
-// DOXYGEN_SET_PROJECT_NAME = kcharselect
