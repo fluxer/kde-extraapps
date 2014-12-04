@@ -45,10 +45,16 @@ add_definitions(${KDE4_ENABLE_EXCEPTIONS})
 include(KDE4Defaults)
 include(MacroLibrary)
 
-option(ENABLE_UDISKS2 "Use UDisks2 backend." OFF)
-if (ENABLE_UDISKS2)
-	add_definitions(-DENABLE_UDISKS2)
-endif (ENABLE_UDISKS2)
+############### prefer udisks2 over udisks
+macro_optional_find_package( UDisks2 )
+set_package_properties(UDisks2 PROPERTIES DESCRIPTION "UDisks2 support"
+                       URL "http://www.freedesktop.org/wiki/Software/udisks/"
+                       TYPE OPTIONAL
+                      )
+if ( UDISKS2_FOUND )
+    message(STATUS "Building Partition Manager with UDisks2 support enabled")
+    add_definitions(-DENABLE_UDISKS2)
+endif()
 
 include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
@@ -56,8 +62,5 @@ add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)
 
-message(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
-
 include(MacroOptionalAddSubdirectory)
 macro_optional_add_subdirectory( po )
-
