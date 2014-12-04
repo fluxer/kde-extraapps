@@ -3739,9 +3739,6 @@ void Document::processAction( const Action * action )
         case Action::Movie:
             emit processMovieAction( static_cast< const MovieAction * >( action ) );
             break;
-        case Action::Rendition: {
-            emit processRenditionAction( static_cast< const RenditionAction * >( action ) );
-            } break;
     }
 }
 

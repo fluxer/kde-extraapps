@@ -397,7 +397,6 @@ PageView::PageView( QWidget *parent, Okular::Document *document )
     document->addObserver(d->magnifierView);
 
     connect(document, SIGNAL(processMovieAction(const Okular::MovieAction*)), this, SLOT(slotProcessMovieAction(const Okular::MovieAction*)));
-    connect(document, SIGNAL(processRenditionAction(const Okular::RenditionAction*)), this, SLOT(slotProcessRenditionAction(const Okular::RenditionAction*)));
 
     // schedule the welcome message
     QMetaObject::invokeMethod(this, "slotShowWelcome", Qt::QueuedConnection);
@@ -939,17 +938,6 @@ void PageView::notifySetup( const QVector< Okular::Page * > & pageSet, int setup
                 VideoWidget * vw = new VideoWidget( movieAnn, movieAnn->movie(), d->document, viewport() );
                 item->videoWidgets().insert( movieAnn->movie(), vw );
                 vw->pageInitialized();
-            }
-            else if ( a->subType() == Okular::Annotation::AScreen )
-            {
-                const Okular::ScreenAnnotation * screenAnn = static_cast< Okular::ScreenAnnotation * >( a );
-                Okular::Movie *movie = GuiUtils::renditionMovieFromScreenAnnotation( screenAnn );
-                if ( movie )
-                {
-                    VideoWidget * vw = new VideoWidget( screenAnn, movie, d->document, viewport() );
-                    item->videoWidgets().insert( movie, vw );
-                    vw->pageInitialized();
-                }
             }
         }
     }
@@ -2385,10 +2373,6 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                             VideoWidget *vw = pageItem->videoWidgets().value( static_cast<Okular::MovieAnnotation*>( ann )->movie() );
                             vw->show();
                             vw->play();
-                        }
-                        else if ( ann->subType() == Okular::Annotation::AScreen )
-                        {
-                            d->document->processAction( static_cast<Okular::ScreenAnnotation*>( ann )->action() );
                         }
                     }
 #if 0
@@ -3857,14 +3841,6 @@ void PageView::updateCursor( const QPoint &p )
                         d->mouseOnRect = true;
                         setCursor( Qt::PointingHandCursor );
                     }
-                    else if ( annotation->subType() == Okular::Annotation::AScreen )
-                    {
-                        if ( GuiUtils::renditionMovieFromScreenAnnotation( static_cast< const Okular::ScreenAnnotation * >( annotation ) ) != 0 )
-                        {
-                            d->mouseOnRect = true;
-                            setCursor( Qt::PointingHandCursor );
-                        }
-                    }
                     else
                     {
                         setCursor( Qt::OpenHandCursor );
@@ -4997,45 +4973,6 @@ void PageView::slotProcessMovieAction( const Okular::MovieAction *action )
             vw->pause();
             break;
         case Okular::MovieAction::Resume:
-            vw->play();
-            break;
-    };
-}
-
-void PageView::slotProcessRenditionAction( const Okular::RenditionAction *action )
-{
-    Okular::Movie *movie = action->movie();
-    if ( !movie )
-        return;
-
-    const int currentPage = d->document->viewport().pageNumber;
-
-    PageViewItem *item = d->items.at( currentPage );
-    if ( !item )
-        return;
-
-    VideoWidget *vw = item->videoWidgets().value( movie );
-    if ( !vw )
-        return;
-
-    if ( action->operation() == Okular::RenditionAction::None )
-        return;
-
-    vw->show();
-
-    switch ( action->operation() )
-    {
-        case Okular::RenditionAction::Play:
-            vw->stop();
-            vw->play();
-            break;
-        case Okular::RenditionAction::Stop:
-            vw->stop();
-            break;
-        case Okular::RenditionAction::Pause:
-            vw->pause();
-            break;
-        case Okular::RenditionAction::Resume:
             vw->play();
             break;
     };

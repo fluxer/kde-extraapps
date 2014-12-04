@@ -52,7 +52,6 @@ class Action;
 class MovieAction;
 class Page;
 class PixmapRequest;
-class RenditionAction;
 class SourceReference;
 class View;
 class VisiblePageRect;
@@ -927,13 +926,6 @@ class OKULAR_EXPORT Document : public QObject
          * @since 0.17 (KDE 4.11)
          */
         void canRedoChanged( bool redoAvailable );
-
-        /**
-         * This signal is emitted whenever an rendition action is triggered and the UI should process it.
-         *
-         * @since 0.16 (KDE 4.10)
-         */
-        void processRenditionAction( const Okular::RenditionAction *action );
 
         /**
          * This signal is emmitted whenever the contents of the given @p annotation are changed by an undo

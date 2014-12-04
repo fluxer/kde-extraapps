@@ -25,9 +25,6 @@ Q_DECLARE_METATYPE( Poppler::Annotation* )
 
 extern Okular::Sound* createSoundFromPopplerSound( const Poppler::SoundObject *popplerSound );
 extern Okular::Movie* createMovieFromPopplerMovie( const Poppler::MovieObject *popplerMovie );
-#ifdef HAVE_POPPLER_0_20
-extern Okular::Movie* createMovieFromPopplerScreen( const Poppler::LinkRendition *popplerScreen );
-#endif
 
 
 static void disposeAnnotation( const Okular::Annotation *ann )

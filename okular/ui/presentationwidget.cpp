@@ -234,7 +234,6 @@ PresentationWidget::PresentationWidget( QWidget * parent, Okular::Document * doc
     connect( m_nextPageTimer, SIGNAL(timeout()), this, SLOT(slotNextPage()) ); 
 
     connect( m_document, SIGNAL(processMovieAction(const Okular::MovieAction*)), this, SLOT(slotProcessMovieAction(const Okular::MovieAction*)) );
-    connect( m_document, SIGNAL(processRenditionAction(const Okular::RenditionAction*)), this, SLOT(slotProcessRenditionAction(const Okular::RenditionAction*)) );
 
     // handle cursor appearance as specified in configuration
     if ( Okular::Settings::slidesCursor() == Okular::Settings::EnumSlidesCursor::HiddenDelay )
@@ -333,17 +332,6 @@ void PresentationWidget::notifySetup( const QVector< Okular::Page * > & pageSet,
                 VideoWidget * vw = new VideoWidget( movieAnn, movieAnn->movie(), m_document, this );
                 frame->videoWidgets.insert( movieAnn->movie(), vw );
                 vw->pageInitialized();
-            }
-            else if ( a->subType() == Okular::Annotation::AScreen )
-            {
-                const Okular::ScreenAnnotation * screenAnn = static_cast< Okular::ScreenAnnotation * >( a );
-                Okular::Movie *movie = GuiUtils::renditionMovieFromScreenAnnotation( screenAnn );
-                if ( movie )
-                {
-                    VideoWidget * vw = new VideoWidget( screenAnn, movie, m_document, this );
-                    frame->videoWidgets.insert( movie, vw );
-                    vw->pageInitialized();
-                }
             }
         }
         frame->recalcGeometry( m_width, m_height, screenRatio );
@@ -894,8 +882,7 @@ void PresentationWidget::testCursorOnLink( int x, int y )
     const Okular::Annotation *annotation = getAnnotation( x, y, 0 );
 
     const bool needsHandCursor = ( ( link != 0 ) ||
-                                 ( ( annotation != 0 ) && ( annotation->subType() == Okular::Annotation::AMovie ) ) ||
-                                 ( ( annotation != 0 ) && ( annotation->subType() == Okular::Annotation::AScreen ) && ( GuiUtils::renditionMovieFromScreenAnnotation( static_cast< const Okular::ScreenAnnotation * >( annotation ) ) != 0 ) ) );
+                                 ( ( annotation != 0 ) && ( annotation->subType() == Okular::Annotation::AMovie ) ));
 
     // only react on changes (in/out from a link)
     if ( ( needsHandCursor && !m_handCursor ) || ( !needsHandCursor && m_handCursor ) )
@@ -2153,39 +2140,6 @@ void PresentationWidget::slotProcessMovieAction( const Okular::MovieAction *acti
             vw->pause();
             break;
         case Okular::MovieAction::Resume:
-            vw->play();
-            break;
-    };
-}
-
-void PresentationWidget::slotProcessRenditionAction( const Okular::RenditionAction *action )
-{
-    Okular::Movie *movie = action->movie();
-    if ( !movie )
-        return;
-
-    VideoWidget *vw = m_frames[ m_frameIndex ]->videoWidgets.value( movie );
-    if ( !vw )
-        return;
-
-    if ( action->operation() == Okular::RenditionAction::None )
-        return;
-
-    vw->show();
-
-    switch ( action->operation() )
-    {
-        case Okular::RenditionAction::Play:
-            vw->stop();
-            vw->play();
-            break;
-        case Okular::RenditionAction::Stop:
-            vw->stop();
-            break;
-        case Okular::RenditionAction::Pause:
-            vw->pause();
-            break;
-        case Okular::RenditionAction::Resume:
             vw->play();
             break;
     };

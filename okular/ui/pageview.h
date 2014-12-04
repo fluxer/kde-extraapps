@@ -37,7 +37,6 @@ class Document;
 class DocumentViewport;
 class Annotation;
 class MovieAction;
-class RenditionAction;
 }
 
 class FormWidgetIface;
@@ -247,7 +246,6 @@ Q_OBJECT
         void externalKeyPressEvent( QKeyEvent *e );
         void slotAnnotationWindowDestroyed( QObject *window );
         void slotProcessMovieAction( const Okular::MovieAction *action );
-        void slotProcessRenditionAction( const Okular::RenditionAction *action );
         void slotToggleChangeColors();
 };
 

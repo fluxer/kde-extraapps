@@ -61,9 +61,6 @@ Q_DECLARE_METATYPE(Poppler::FontInfo)
 #ifdef HAVE_POPPLER_0_20
 Q_DECLARE_METATYPE(const Poppler::LinkMovie*)
 #endif
-#ifdef HAVE_POPPLER_0_22
-Q_DECLARE_METATYPE(const Poppler::LinkRendition*)
-#endif
 
 static const int defaultPageWidth = 595;
 static const int defaultPageHeight = 842;
@@ -190,23 +187,6 @@ Okular::Movie* createMovieFromPopplerMovie( const Poppler::MovieObject *popplerM
     return movie;
 }
 
-#ifdef HAVE_POPPLER_0_20
-Okular::Movie* createMovieFromPopplerScreen( const Poppler::LinkRendition *popplerScreen )
-{
-    Poppler::MediaRendition *rendition = popplerScreen->rendition();
-    Okular::Movie *movie = 0;
-    if ( rendition->isEmbedded() )
-        movie = new Okular::Movie( rendition->fileName(), rendition->data() );
-    else
-        movie = new Okular::Movie( rendition->fileName() );
-    movie->setSize( rendition->size() );
-    movie->setShowControls( rendition->showControls() );
-    movie->setPlayMode( Okular::Movie::PlayOnce );
-    movie->setAutoPlay( rendition->autoPlay() );
-    return movie;
-}
-#endif
-
 /**
  * Note: the function will take ownership of the popplerLink object.
  */
@@ -220,9 +200,6 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
     const Poppler::LinkSound *popplerLinkSound;
 #ifdef HAVE_POPPLER_0_20
     const Poppler::LinkMovie *popplerLinkMovie;
-#endif
-#ifdef HAVE_POPPLER_0_22
-    const Poppler::LinkRendition *popplerLinkRendition;
 #endif
     Okular::DocumentViewport viewport;
 
@@ -273,44 +250,6 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
             link = new Okular::SoundAction( popplerLinkSound->volume(), popplerLinkSound->synchronous(), popplerLinkSound->repeat(), popplerLinkSound->mix(), sound );
         }
         break;
-
-#ifdef HAVE_POPPLER_0_22
-        case Poppler::Link::Rendition:
-        {
-            deletePopplerLink = false; // we'll delete it inside resolveMediaLinkReferences() after we have resolved all references
-
-            popplerLinkRendition = static_cast<const Poppler::LinkRendition *>( popplerLink );
-
-            Okular::RenditionAction::OperationType operation = Okular::RenditionAction::None;
-            switch ( popplerLinkRendition->action() )
-            {
-                case Poppler::LinkRendition::NoRendition:
-                    operation = Okular::RenditionAction::None;
-                    break;
-                case Poppler::LinkRendition::PlayRendition:
-                    operation = Okular::RenditionAction::Play;
-                    break;
-                case Poppler::LinkRendition::StopRendition:
-                    operation = Okular::RenditionAction::Stop;
-                    break;
-                case Poppler::LinkRendition::PauseRendition:
-                    operation = Okular::RenditionAction::Pause;
-                    break;
-                case Poppler::LinkRendition::ResumeRendition:
-                    operation = Okular::RenditionAction::Resume;
-                    break;
-            };
-
-            Okular::Movie *movie = 0;
-            if ( popplerLinkRendition->rendition() )
-                movie = createMovieFromPopplerScreen( popplerLinkRendition );
-
-            Okular::RenditionAction *renditionAction = new Okular::RenditionAction( operation, movie, Okular::JavaScript, popplerLinkRendition->script() );
-            renditionAction->setNativeId( QVariant::fromValue( popplerLinkRendition ) );
-            link = renditionAction;
-        }
-        break;
-#endif
 
 #ifdef HAVE_POPPLER_0_20
         case Poppler::Link::Movie:
@@ -927,18 +866,10 @@ void PDFGenerator::resolveMediaLinkReference( Okular::Action *action )
     if ( !action )
         return;
 
-#ifdef HAVE_POPPLER_0_22
-    if ( (action->actionType() != Okular::Action::Movie) && (action->actionType() != Okular::Action::Rendition) )
-        return;
-
-    resolveMediaLinks<Poppler::LinkMovie, Okular::MovieAction, Poppler::MovieAnnotation, Okular::MovieAnnotation>( action, Okular::Annotation::AMovie, annotationsHash );
-    resolveMediaLinks<Poppler::LinkRendition, Okular::RenditionAction, Poppler::ScreenAnnotation, Okular::ScreenAnnotation>( action, Okular::Annotation::AScreen, annotationsHash );
-#else
     if ( action->actionType() != Okular::Action::Movie )
         return;
 
     resolveMediaLinks<Poppler::LinkMovie, Okular::MovieAction, Poppler::MovieAnnotation, Okular::MovieAnnotation>( action, Okular::Annotation::AMovie, annotationsHash );
-#endif
 
 #endif
 }
@@ -1187,11 +1118,6 @@ QVariant PDFGenerator::metaData( const QString & key, const QVariant & option ) 
         QMutexLocker ml(userMutex());
         if ( pdfdoc->pageMode() == Poppler::Document::UseOutlines )
             return true;
-    }
-    else if ( key == "DocumentScripts" && option.toString() == "JavaScript" )
-    {
-        QMutexLocker ml(userMutex());
-        return pdfdoc->scripts();
     }
     else if ( key == "HasUnsupportedXfaForm" )
     {

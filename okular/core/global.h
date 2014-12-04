@@ -70,14 +70,6 @@ enum MergeSide
     MergeAll = 4   ///< Merge if the areas intersects, no matter which side(s).
 };
 
-/**
- * Describes the possible script types.
- */
-enum ScriptType
-{
-    JavaScript = 0           ///< JavaScript code
-};
-
 }
 
 #endif

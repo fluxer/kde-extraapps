@@ -33,7 +33,6 @@ class Annotation;
 class Document;
 class MovieAction;
 class Page;
-class RenditionAction;
 }
 
 /**
@@ -152,7 +151,6 @@ class PresentationWidget : public QWidget, public Okular::DocumentObserver
         void chooseScreen( QAction * );
         void toggleBlackScreenMode( bool );
         void slotProcessMovieAction( const Okular::MovieAction *action );
-        void slotProcessRenditionAction( const Okular::RenditionAction *action );
         void slotTogglePlayPause();
 };
 

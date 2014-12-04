@@ -46,13 +46,6 @@ namespace GuiUtils
 
     void saveEmbeddedFile( Okular::EmbeddedFile *ef, QWidget *parent );
 
-    /**
-     * Returns the movie object that is referenced by a rendition action of the passed screen @p annotation
-     * or @c 0 if the screen annotation has no rendition action set or the rendition action does not contain
-     * a media rendition.
-     */
-    Okular::Movie* renditionMovieFromScreenAnnotation( const Okular::ScreenAnnotation * annotation );
-
     // colorize a gray image to the given color
     void colorizeImage( QImage & image, const QColor & color, unsigned int alpha = 255 );
 }
