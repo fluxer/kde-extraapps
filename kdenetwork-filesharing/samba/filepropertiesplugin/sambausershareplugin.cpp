@@ -63,7 +63,7 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
     properties->addPage(vbox, i18n("&Share"));
     properties->setFileSharingPage(vbox);
 
-    if (!KStandardDirs::findExe("smbd").isEmpty()) {
+    if (KStandardDirs::findExe("smbd").isEmpty()) {
 
         QWidget *widget = new QWidget(vbox);
         QVBoxLayout *vLayout = new QVBoxLayout(widget);
