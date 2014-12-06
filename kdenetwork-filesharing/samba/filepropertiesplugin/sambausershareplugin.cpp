@@ -63,7 +63,9 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
     properties->addPage(vbox, i18n("&Share"));
     properties->setFileSharingPage(vbox);
 
-    if (KStandardDirs::findExe("smbd").isEmpty()) {
+    // smbd is usually found as /usr/sbin/smbd
+    QString exePath = "/usr/sbin:/usr/bin:/sbin:/bin";
+    if (KStandardDirs::findExe("smbd", exePath).isEmpty()) {
 
         QWidget *widget = new QWidget(vbox);
         QVBoxLayout *vLayout = new QVBoxLayout(widget);
@@ -160,10 +162,60 @@ void SambaUserSharePlugin::applyChanges()
         result = shareData.remove();
     }
 
-#warning "Improve error reporting"
-    if (!result == KSambaShareData::UserShareOk) {
+#warning "the error reporting could use some love"
+    // Some error types that do not apply but may in the future:
+    // UserSharePathNotDirectory
+    if (result == KSambaShareData::UserShareExceedMaxShares) {
         KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
-            i18n("<qt>The action did not successed.</qt>"));
+            i18n("<qt>Maximum shared exceeded.</qt>"));
+    } else if (result == KSambaShareData::UserShareNameInvalid) {
+        // Is that even supposed to happend?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The username for sharing is invalid.</qt>"));
+    } else if (result == KSambaShareData::UserShareNameInUse) {
+        // Is that even supposed to happend?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The username for sharing is already in use.</qt>"));
+    } else if (result == KSambaShareData::UserSharePathInvalid) {
+        // Is that even supposed to happend?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The path chosen is invalid.</qt>"));
+    } else if (result == KSambaShareData::UserSharePathNotExists) {
+        // The path can be gone all of a sudden
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The path chosen does not exists.</qt>"));
+    } else if (result == KSambaShareData::UserSharePathNotAbsolute) {
+        // Is that even supposed to happend?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The path chosen is not absolute.</qt>"));
+    } else if (result == KSambaShareData::UserSharePathNotAllowed) {
+        // Not allowed, ok
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>The path chosen is not allowed.</qt>"));
+    } else if (result == KSambaShareData::UserShareAclInvalid) {
+        // Invalid ACL?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>Invalid Advanced Control List (ACL).</qt>"));
+    } else if (result == KSambaShareData::UserShareAclUserNotValid) {
+        // Invalid ACL?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>Invalid user in Advanced Control List (ACL).</qt>"));
+    } else if (result == KSambaShareData::UserShareGuestsInvalid) {
+        // Invalid ACL?
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>Invalid guest user.</qt>"));
+    } else if (result == KSambaShareData::UserShareGuestsNotAllowed) {
+        // Guest not allowed, ok
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>Guest user not allowed.</qt>"));
+    } else if (result == KSambaShareData::UserShareSystemError) {
+        // Something strange happened, Bob
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>System error.</qt>"));
+    } else if (!result == KSambaShareData::UserShareOk) {
+        // Something strange happened, Bob
+        KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
+            i18n("<qt>Unexpected error occurred.</qt>"));
     }
 }
 
