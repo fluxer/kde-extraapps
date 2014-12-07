@@ -35,6 +35,7 @@ macro_optional_add_subdirectory (kcron)
 macro_optional_add_subdirectory (kdenetwork-filesharing)
 macro_optional_add_subdirectory (kfilemetadata)
 # macro_optional_add_subdirectory (kfilereplace)
+macro_optional_add_subdirectory (lokalize)
 macro_optional_add_subdirectory (libkscreen)
 # FIXME: make kget find libktorrent
 macro_optional_add_subdirectory (libktorrent)
