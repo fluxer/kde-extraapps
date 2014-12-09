@@ -441,7 +441,7 @@ Comment[zh_CN]=下载已完成
 Comment[zh_HK]=下載已完成
 Comment[zh_TW]=下載已完成
 Sound=KDE-K3B-Finish-Success.ogg
-Action=None
+Action=Popup
 
 [Event/finishedall]
 Name=All Downloads Finished
@@ -570,7 +570,7 @@ Comment[zh_CN]=所有下载都已完成
 Comment[zh_HK]=所有下載已完成
 Comment[zh_TW]=所有下載均已完成
 Sound=KDE-K3B-Finish-Success.ogg
-Action=None
+Action=Popup
 
 [Event/error]
 Name=Error Occurred
