@@ -1,4 +1,4 @@
-cccccccc/***************************************************************************
+/***************************************************************************
  *   Copyright (C) 2002 by Wilco Greven <greven@kde.org>                   *
  *   Copyright (C) 2003 by Benjamin Meyer <benjamin@csh.rit.edu>           *
  *   Copyright (C) 2003 by Laurent Montel <montel@kde.org>                 *
