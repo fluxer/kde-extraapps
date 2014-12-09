@@ -1,4 +1,4 @@
-/***************************************************************************
+cccccccc/***************************************************************************
  *   Copyright (C) 2002 by Wilco Greven <greven@kde.org>                   *
  *   Copyright (C) 2003 by Benjamin Meyer <benjamin@csh.rit.edu>           *
  *   Copyright (C) 2003 by Laurent Montel <montel@kde.org>                 *
@@ -28,10 +28,6 @@ class KPluginFactory;
 
 class KDocumentViewer;
 class Part;
-
-#ifdef KActivities_FOUND
-namespace KActivities { class ResourceInstance; }
-#endif
 
 /**
  * This is the application "Shell".  It has a menubar and a toolbar
@@ -159,9 +155,6 @@ private:
   KAction* m_nextTabAction;
   KAction* m_prevTabAction;
 
-#ifdef KActivities_FOUND
-  KActivities::ResourceInstance* m_activityResource;
-#endif
   bool m_isValid;
 };
 

@@ -30,11 +30,7 @@ add_subdirectory( tests )
 include(OkularConfigureChecks.cmake)
 include(MacroWriteBasicCMakeVersionFile)
 
-if(NOT WIN32)
- set(MATH_LIB m)
-else(NOT WIN32)
- set(MATH_LIB)
-endif(NOT WIN32)
+set(MATH_LIB m)
 
 # okularcore
 
