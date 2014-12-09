@@ -23,5 +23,3 @@ include_directories(${KDE4_INCLUDES} ${QT_INCLUDES})
 
 add_subdirectory(src)
 
-include(MacroOptionalAddSubdirectory)
-macro_optional_add_subdirectory( po )
