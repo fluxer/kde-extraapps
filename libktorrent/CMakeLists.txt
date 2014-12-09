@@ -63,6 +63,3 @@ add_subdirectory(testlib)
 add_subdirectory(examples)
 add_subdirectory(cmake)
 
-find_package(Msgfmt REQUIRED)
-find_package(Gettext REQUIRED)
-add_subdirectory( po )
