@@ -28,9 +28,6 @@ macro_log_feature(LCMS2_FOUND "LittleCMS" "Color management engine" "http://www.
 find_package(LibKonq)
 macro_log_feature(LIBKONQ_FOUND "libkonq" "Standard file management features" "http://www.kde.org" TRUE)
 
-find_package(KActivities 6.1.0)
-macro_log_feature(KActivities_FOUND "KActivities" "Activities interface library" "https://projects.kde.org/projects/kde/kdelibs/kactivities" TRUE "6.1.0")
-
 find_package(Kdcraw 2.4.2)
 macro_log_feature(KDCRAW_FOUND "libkdcraw" "KDE Dcraw library" "http://www.kde.org" TRUE "2.4.2")
 

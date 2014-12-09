@@ -37,7 +37,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KMessageBox>
 #include <KModelIndexProxyMapper>
 #include <KToggleAction>
-#include <KActivities/ResourceInstance>
 
 // Local
 #include "fileoperations.h"
@@ -155,10 +154,7 @@ struct ViewMainPagePrivate
     KToggleAction* mSynchronizeAction;
     QCheckBox* mSynchronizeCheckBox;
 
-    // Activity Resource events reporting needs to be above KPart,
-    // in the shell itself, to avoid problems with other MDI applications
-    // that use this KPart
-    QHash<DocumentView*, KActivities::ResourceInstance*> mActivityResources;
+    QHash<DocumentView*;
 
     bool mFullScreenMode;
     bool mCompareMode;
@@ -270,7 +266,6 @@ struct ViewMainPagePrivate
                          mSlideShow, SLOT(resumeAndGoToNextUrl()));
 
         mDocumentViews << view;
-        mActivityResources.insert(view, new KActivities::ResourceInstance(q->window()->winId(), view));
 
         return view;
     }
@@ -289,7 +284,6 @@ struct ViewMainPagePrivate
         QObject::disconnect(view, 0, mSlideShow, 0);
 
         mDocumentViews.removeOne(view);
-        mActivityResources.remove(view);
         mDocumentViewContainer->deleteView(view);
     }
 
@@ -354,8 +348,6 @@ struct ViewMainPagePrivate
         }
         if (oldView) {
             oldView->setCurrent(false);
-            Q_ASSERT(mActivityResources.contains(oldView));
-            mActivityResources.value(oldView)->notifyFocusedOut();
         }
         view->setCurrent(true);
         mDocumentViewController->setView(view);
@@ -368,9 +360,6 @@ struct ViewMainPagePrivate
             // *before* listing /foo (because it matters less to the user)
             mThumbnailBar->selectionModel()->setCurrentIndex(index, QItemSelectionModel::Current);
         }
-
-        Q_ASSERT(mActivityResources.contains(view));
-        mActivityResources.value(view)->notifyFocusedIn();
     }
 
     QModelIndex indexForView(DocumentView* view) const
@@ -688,7 +677,6 @@ void ViewMainPage::openUrls(const KUrl::List& allUrls, const KUrl& currentUrl)
         DocumentView* view = it.value();
         DocumentView::Setup savedSetup = d->mDocumentViewContainer->savedSetup(url);
         view->openUrl(url, savedSetup.valid ? savedSetup : setup);
-        d->mActivityResources.value(view)->setUri(url);
     }
 
     // Init views
