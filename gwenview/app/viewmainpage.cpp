@@ -154,7 +154,7 @@ struct ViewMainPagePrivate
     KToggleAction* mSynchronizeAction;
     QCheckBox* mSynchronizeCheckBox;
 
-    QHash<DocumentView*, QWidget*>;
+    QHash<DocumentView*, QWidget*> mView;
 
     bool mFullScreenMode;
     bool mCompareMode;
