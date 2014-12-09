@@ -18,6 +18,4 @@ include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} libbluedevil)
 
 add_subdirectory(src)
 
-include(MacroOptionalAddSubdirectory)
 add_subdirectory( libbluedevil )
-macro_optional_add_subdirectory( po )
