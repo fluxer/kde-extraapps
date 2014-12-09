@@ -3,7 +3,7 @@ set(libkscreen_VERSION_MAJOR 1)
 set(libkscreen_VERSION_MINOR 0)
 set(libkscreen_VERSION_RELEASE 4)
 set(libkscreen_VERSION "${libkscreen_VERSION_MAJOR}.${libkscreen_VERSION_MINOR}.${libkscreen_VERSION_RELEASE}")
-add_definitions("-DLIBKSCREEN_VERSION=\\\"${libkscreen_VERSION}\\\"")
+add_definitions(-DLIBKSCREEN_VERSION="${libkscreen_VERSION}")
 
 cmake_minimum_required(VERSION 2.8.0)
 
@@ -81,27 +81,3 @@ install(EXPORT kscreenLibraryTargets
         DESTINATION ${LIB_INSTALL_DIR}/cmake/LibKScreen
         FILE LibKScreenTargetsWithPrefix.cmake)
 
-
-
-############################################ apidox ############################################
-
-option(LIBKSCREEN_BUILD_API_DOCS "Build libkscreen API documentation")
-
-if(LIBKSCREEN_BUILD_API_DOCS)
-  find_package(Doxygen)
-
-  if(DOXYGEN_EXECUTABLE)
-    configure_file(${libkscreen_SOURCE_DIR}/.Doxyfile.cmake ${libkscreen_BINARY_DIR}/Doxyfile)
-
-    if(EXISTS ${QT_DOC_DIR}/html)
-      set(QTDOCS "${QT_DOC_DIR}/html")
-    else(EXISTS ${QT_DOC_DIR}/html)
-      set(QTDOCS "http://doc.qt.nokia.com/latest/")
-    endif(EXISTS ${QT_DOC_DIR}/html)
-
-    add_custom_target(
-      apidox ALL
-      COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile
-      COMMAND doc/html/installdox -l qt4.tag@${QTDOCS} doc/html/*.html)
-  endif(DOXYGEN_EXECUTABLE)
-endif(LIBKSCREEN_BUILD_API_DOCS)
