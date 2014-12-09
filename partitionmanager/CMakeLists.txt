@@ -62,5 +62,3 @@ add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)
 
-include(MacroOptionalAddSubdirectory)
-macro_optional_add_subdirectory( po )
