@@ -127,8 +127,6 @@ Adapter::Adapter(const QString &adapterPath, QObject *parent)
 
     connect(d->m_dbusPropertiesInterface, SIGNAL(PropertiesChanged(QString,QVariantMap,QStringList)),
             this, SLOT(_k_propertyChanged(QString,QVariantMap,QStringList)));
-
-    setPowered(true); // TODO: remember powered setting.
 }
 
 Adapter::~Adapter()
@@ -144,6 +142,11 @@ QString Adapter::address() const
 QString Adapter::name() const
 {
     return d->m_bluezAdapterInterface->name();
+}
+
+QString Adapter::alias() const
+{
+    return d->m_bluezAdapterInterface->alias();
 }
 
 quint32 Adapter::adapterClass() const
@@ -209,6 +212,11 @@ QStringList Adapter::UUIDs()
       UUIDs[i] = UUIDs.value(i).toUpper();
     }
     return UUIDs;
+}
+
+void Adapter::setAlias(const QString& alias)
+{
+    d->m_bluezAdapterInterface->setAlias(alias);
 }
 
 void Adapter::setPowered(bool powered)
