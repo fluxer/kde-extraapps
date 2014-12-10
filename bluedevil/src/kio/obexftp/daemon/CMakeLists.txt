@@ -18,7 +18,7 @@ target_link_libraries(kded_obexftpdaemon
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KFILE_LIBS}
-    ${LibBlueDevil_LIBRARIES}
+    bluedevil
 )
 
 install(TARGETS kded_obexftpdaemon DESTINATION ${PLUGIN_INSTALL_DIR})
