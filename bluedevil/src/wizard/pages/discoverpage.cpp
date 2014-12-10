@@ -26,6 +26,7 @@
 #include <QListView>
 #include <QLabel>
 #include <QTimer>
+#include <QRegExpValidator>
 
 #include <KDebug>
 #include <kpixmapsequenceoverlaypainter.h>
@@ -61,6 +62,10 @@ void DiscoverPage::initializePage()
     list << QWizard::CancelButton;
     m_wizard->setButtonLayout(list);
 
+    QRegExp rx("[0-9]{0,9}");
+    QRegExpValidator *validator = new QRegExpValidator(rx);
+    pinText->setValidator(validator);
+
     connect(Manager::self()->usableAdapter(), SIGNAL(unpairedDeviceFound(Device*)), this,
         SLOT(deviceFound(Device*)));
     connect(manualPin, SIGNAL(toggled(bool)), pinText, SLOT(setEnabled(bool)));
@@ -73,7 +78,7 @@ void DiscoverPage::initializePage()
 
 bool DiscoverPage::isComplete() const
 {
-    if (m_wizard->deviceAddress().isEmpty()) {
+    if (m_wizard->deviceAddress().isEmpty() || !m_wizard->device()) {
         return false;
     }
     if (manualPin->isChecked() && pinText->text().isEmpty()) {
@@ -190,11 +195,15 @@ int DiscoverPage::nextId() const
         return BlueWizard::Discover;
     }
 
-    if (m_wizard->deviceAddress().isEmpty()) {
+    if (m_wizard->deviceAddress().isEmpty() || !m_wizard->device()) {
         return BlueWizard::Discover;
     }
 
     kDebug() << "Stopping scanning";
+
+    if (!Manager::self()->usableAdapter()) {
+        return BlueWizard::Fail;
+    }
 
     Manager::self()->usableAdapter()->stopDiscovery();
     Device *device = m_wizard->device();

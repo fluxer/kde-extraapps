@@ -39,7 +39,7 @@ BluezAgent::BluezAgent(QObject *parent)
         return;
     }
 
-    BlueDevil::Manager::self()->registerAgent(AGENT_PATH,BlueDevil::Manager::DisplayYesNo);
+    BlueDevil::Manager::self()->registerAgent(AGENT_PATH, BlueDevil::Manager::DisplayYesNo);
     BlueDevil::Manager::self()->requestDefaultAgent(AGENT_PATH);
 
     m_process = new QProcess(this);
@@ -99,6 +99,8 @@ quint32 BluezAgent::RequestPasskey(const QDBusObjectPath &device, const QDBusMes
     m_msg.setDelayedReply(true);
 
     QStringList list(deviceName(device.path()));
+    list << QLatin1String("numeric");
+
     connect(m_process, SIGNAL(finished(int)), this, SLOT(processClosedPasskey(int)));
     m_process->start(KStandardDirs::findExe("bluedevil-requestpin"), list);
 

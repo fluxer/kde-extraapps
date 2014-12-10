@@ -143,6 +143,7 @@ void ReceiveFileJob::slotAccept()
     KIO::getJobTracker()->registerJob(this);
     KGlobal::setActiveComponent(data);
 
+    m_originalFileName = m_transfer->name();
     m_tempPath = createTempPath(m_transfer->name());
     kDebug(dblue()) << m_tempPath;
     QDBusMessage msg = m_msg.createReply(m_tempPath);
@@ -189,7 +190,7 @@ void ReceiveFileJob::statusChanged(const QVariant& value)
 
     FileReceiverSettings::self()->readConfig();
     KUrl savePath = FileReceiverSettings::self()->saveUrl();
-    savePath.setFileName(m_transfer->name());
+    savePath.addPath(m_originalFileName);
 
     if (status == QLatin1String("active")) {
         emit description(this, i18n("Receiving file over Bluetooth"),
@@ -252,7 +253,7 @@ void ReceiveFileJob::moveFinished(KJob* job)
 
 QString ReceiveFileJob::createTempPath(const QString &fileName) const
 {
-    QString xdgCacheHome = QLatin1String(qgetenv("XDG_CACHE_HOME"));
+    QString xdgCacheHome = QFile::decodeName(qgetenv("XDG_CACHE_HOME"));
     if (xdgCacheHome.isEmpty()) {
             xdgCacheHome = QDir::homePath() + QLatin1String("/.cache");
     }

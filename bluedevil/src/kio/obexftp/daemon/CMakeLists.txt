@@ -3,7 +3,7 @@ set(kded_obexftp_SRCS
     createsessionjob.cpp
 )
 
-set(SENDER_PLUGIN_PATH ../../../sendfile/)
+set(SENDER_PLUGIN_PATH ${CMAKE_SOURCE_DIR}/src/sendfile/)
 qt4_add_dbus_interface(kded_obexftp_SRCS ${SENDER_PLUGIN_PATH}org.bluez.obex.Client1.xml obexd_client)
 
 set(OBJECT_MANAGER_FILE org.freedesktop.DBus.ObjectManager.xml)
@@ -18,7 +18,7 @@ target_link_libraries(kded_obexftpdaemon
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KFILE_LIBS}
-    bluedevil
+    ${LibBlueDevil_LIBRARIES}
 )
 
 install(TARGETS kded_obexftpdaemon DESTINATION ${PLUGIN_INSTALL_DIR})

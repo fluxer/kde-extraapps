@@ -82,6 +82,7 @@ void BlueWizard::done(int result)
     kDebug() << "Wizard done: " << result;
 
     QWizard::done(result);
+    qApp->exit(result);
 }
 
 Device* BlueWizard::device() const
@@ -97,6 +98,11 @@ BlueWizard::~BlueWizard()
 void BlueWizard::setDeviceAddress(const QByteArray& address)
 {
     kDebug() << "Device Address: " << address;
+    if (!Manager::self()->usableAdapter()) {
+        kDebug() << "No usable adapter available";
+        return;
+    }
+
     m_deviceAddress = address;
     m_device = Manager::self()->usableAdapter()->deviceForAddress(m_deviceAddress);
 }

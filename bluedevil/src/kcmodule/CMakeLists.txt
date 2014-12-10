@@ -4,12 +4,9 @@ set(kcm_bluedeviltransfer_PART_SRCS
     bluedeviltransfer.cpp
     systemcheck.cpp
     kded.cpp
-    columnresizer.cpp
-    sharedfilesdialog/sharedfilesdialog.cpp
-    sharedfilesdialog/linkproxymodel.cpp
 )
 
-kde4_add_ui_files(kcm_bluedeviltransfer_PART_SRCS_UI transfer.ui sharedfilesdialog/sharedfiles.ui)
+kde4_add_ui_files(kcm_bluedeviltransfer_PART_SRCS_UI transfer.ui)
 
 kde4_add_kcfg_files(kcm_bluedeviltransfer_PART_SRCS
                     ../settings/filereceiversettings.kcfgc
@@ -31,9 +28,9 @@ qt4_automoc(${kcm_bluedevildevices}
             ${kcm_bluedeviladapters}
             ${kcm_bluedeviltransfer})
 
-target_link_libraries(kcm_bluedevildevices ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} bluedevil)
-target_link_libraries(kcm_bluedeviladapters ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} bluedevil)
-target_link_libraries(kcm_bluedeviltransfer ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} bluedevil)
+target_link_libraries(kcm_bluedevildevices ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} ${LibBlueDevil_LIBRARIES})
+target_link_libraries(kcm_bluedeviladapters ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} ${LibBlueDevil_LIBRARIES})
+target_link_libraries(kcm_bluedeviltransfer ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} ${LibBlueDevil_LIBRARIES})
 
 install(TARGETS kcm_bluedevildevices
                 kcm_bluedeviladapters

@@ -62,14 +62,16 @@ quint32 WizardAgent::RequestPasskey(const QDBusObjectPath& device, const QDBusMe
     Q_UNUSED(device);
     Q_UNUSED(msg);
     kDebug() << "AGENT-RequestPasskey " << device.path();
-    return 0;
+    emit pinRequested(m_pin);
+    return m_pin.toUInt();
 }
 
-void WizardAgent::DisplayPasskey(const QDBusObjectPath& device, quint32 passkey)
+void WizardAgent::DisplayPasskey(const QDBusObjectPath& device, quint32 passkey, quint8 entered)
 {
     Q_UNUSED(device);
-    Q_UNUSED(passkey);
+    Q_UNUSED(entered);
     kDebug() << "AGENT-DisplayPasskey " << device.path() << ", " << QString::number(passkey);
+    emit pinRequested(QString("%1").arg(passkey, 6, 10, QLatin1Char('0')));
 }
 
 void WizardAgent::DisplayPinCode(const QDBusObjectPath& device, const QString& pincode)
