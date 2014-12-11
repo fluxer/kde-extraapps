@@ -10,6 +10,10 @@ if(HAVE_LIBARCHIVE_CAB_SUPPORT)
   set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/vnd.ms-cab-compressed;")
 endif(HAVE_LIBARCHIVE_CAB_SUPPORT)
 
+# zip and 7z
+set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-java-archive;application/zip;")
+set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-7z-compressed;")
+
 # This MIME type was originally set in ark.desktop but is not mentioned anywhere else.
 # Assuming that, if it were supported, it would be here.
 set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/x-servicepack;")
