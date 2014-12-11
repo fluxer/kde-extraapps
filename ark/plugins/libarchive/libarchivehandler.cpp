@@ -400,6 +400,12 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
         } else if (filename().right(3).toUpper() == QLatin1String( "TAR" )) {
             kDebug() << "Detected no compression for new file (pure tar)";
             ret = archive_write_add_filter_none(arch_writer.data());
+        } else if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
+            kDebug() << "Detected zip compression for new file";
+            ret = archive_write_set_format_zip(arch_writer.data());
+        } else if (filename().right(2).toUpper() == QLatin1String( "7Z" )) {
+            kDebug() << "Detected 7z compression for new file";
+            ret = archive_write_set_format_7zip(arch_writer.data());
         } else {
             kDebug() << "Falling back to gzip";
             ret = archive_write_add_filter_gzip(arch_writer.data());
@@ -413,24 +419,30 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
         }
     } else {
         switch (archive_filter_code(arch_reader.data(), 0)) {
-        case ARCHIVE_COMPRESSION_GZIP:
+        case ARCHIVE_FILTER_GZIP:
             ret = archive_write_add_filter_gzip(arch_writer.data());
             break;
-        case ARCHIVE_COMPRESSION_BZIP2:
+        case ARCHIVE_FILTER_BZIP2:
             ret = archive_write_add_filter_bzip2(arch_writer.data());
             break;
 #ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
-        case ARCHIVE_COMPRESSION_XZ:
+        case ARCHIVE_FILTER_XZ:
             ret = archive_write_add_filter_xz(arch_writer.data());
             break;
 #endif
 #ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
-        case ARCHIVE_COMPRESSION_LZMA:
+        case ARCHIVE_FILTER_LZMA:
             ret = archive_write_add_filter_lzma(arch_writer.data());
             break;
 #endif
-        case ARCHIVE_COMPRESSION_NONE:
-            ret = archive_write_add_filter_none(arch_writer.data());
+        case ARCHIVE_FILTER_NONE:
+            if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
+                ret = archive_write_set_format_zip(arch_writer.data());
+            } else if (filename().right(2).toUpper() == QLatin1String( "7Z" )) {
+                ret = archive_write_set_format_7zip(arch_writer.data());
+            } else {
+                ret = archive_write_add_filter_none(arch_writer.data());
+            }
             break;
         default:
             emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_filter_name(arch_reader.data(), 0))));
@@ -558,24 +570,30 @@ bool LibArchiveInterface::deleteFiles(const QVariantList& files)
 
     int ret;
     switch (archive_filter_code(arch_reader.data(), 0)) {
-    case ARCHIVE_COMPRESSION_GZIP:
+    case ARCHIVE_FILTER_GZIP:
         ret = archive_write_add_filter_gzip(arch_writer.data());
         break;
-    case ARCHIVE_COMPRESSION_BZIP2:
+    case ARCHIVE_FILTER_BZIP2:
         ret = archive_write_add_filter_bzip2(arch_writer.data());
         break;
 #ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
-    case ARCHIVE_COMPRESSION_XZ:
+    case ARCHIVE_FILTER_XZ:
         ret = archive_write_add_filter_xz(arch_writer.data());
         break;
 #endif
 #ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
-    case ARCHIVE_COMPRESSION_LZMA:
+    case ARCHIVE_FILTER_LZMA:
         ret = archive_write_add_filter_lzma(arch_writer.data());
         break;
 #endif
-    case ARCHIVE_COMPRESSION_NONE:
-        ret = archive_write_add_filter_none(arch_writer.data());
+    case ARCHIVE_FILTER_NONE:
+        if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
+            ret = archive_write_set_format_zip(arch_writer.data());
+        } else if (filename().right(2).toUpper() == QLatin1String( "7Z" )) {
+            ret = archive_write_set_format_7zip(arch_writer.data());
+        } else {
+            ret = archive_write_add_filter_none(arch_writer.data());
+        }
         break;
     default:
         emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_filter_name(arch_reader.data(), 0))));
