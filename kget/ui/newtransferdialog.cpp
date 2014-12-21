@@ -423,7 +423,7 @@ void NewTransferDialog::dialogAccepted()
         //sourceUrl is valid, has been checked before
         const KUrl sourceUrl = KUrl(ui.urlRequester->text().trimmed());
         kDebug(5001) << "Downloading" << sourceUrl << "to" << m_destination;
-        data << KGet::TransferData(sourceUrl, m_destination, group);
+        data << KGet::TransferData(sourceUrl, m_destination, group, true);
     } else {
         KUrl::List list;
         for (int i = 0; i != ui.listWidget->count(); ++i) {
@@ -444,7 +444,7 @@ void NewTransferDialog::dialogAccepted()
                     FileDeleter::deleteFile(destUrl);
                 }
 
-                data << KGet::TransferData(sourceUrl, destUrl, group);
+                data << KGet::TransferData(sourceUrl, destUrl, group, true);
             }
         }
     }
