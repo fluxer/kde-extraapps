@@ -31,7 +31,7 @@ set(INSTALL_TARGETS_DEFAULT_ARGS  RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
                                   ARCHIVE DESTINATION "${LIB_INSTALL_DIR}" COMPONENT Devel )
 
 
-set(GENERIC_LIB_VERSION "2.0")
+set(GENERIC_LIB_VERSION "2.1")
 set(GENERIC_LIB_SOVERSION "2")
 set(VERSION ${GENERIC_LIB_VERSION})
 
@@ -44,17 +44,15 @@ if(LIBBLUEDEVIL_BUILD_API_DOCS)
   find_package(Doxygen)
 
   if(DOXYGEN_EXECUTABLE)
-    configure_file(${libbluedevil_SOURCE_DIR}/.Doxyfile.cmake ${libbluedevil_BINARY_DIR}/Doxyfile)
+    if(EXISTS "${QT_DOC_DIR}/html/qt.tags")
+      set(QT_TAG_STRING "${QT_DOC_DIR}/html/qt.tags=${QT_DOC_DIR}/html")
+    endif()
 
-    if(EXISTS ${QT_DOC_DIR}/html)
-      set(QTDOCS "${QT_DOC_DIR}/html")
-    else(EXISTS ${QT_DOC_DIR}/html)
-      set(QTDOCS "http://doc.qt.nokia.com/latest/")
-    endif(EXISTS ${QT_DOC_DIR}/html)
+    configure_file(${libbluedevil_SOURCE_DIR}/.Doxyfile.cmake ${libbluedevil_BINARY_DIR}/Doxyfile)
 
     add_custom_target(
       apidox ALL
       COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile
-      COMMAND doc/html/installdox -l qt4.tag@${QTDOCS} doc/html/*.html)
+    )
   endif(DOXYGEN_EXECUTABLE)
 endif(LIBBLUEDEVIL_BUILD_API_DOCS)
