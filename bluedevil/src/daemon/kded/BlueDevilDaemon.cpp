@@ -36,6 +36,7 @@
 #include <KPluginFactory>
 #include <kfileplacesmodel.h>
 #include <kdirnotify.h>
+#include <ksharedconfig.h>
 
 #include <bluedevil/bluedevilmanager.h>
 #include <bluedevil/bluedeviladapter.h>
@@ -62,10 +63,9 @@ struct BlueDevilDaemon::Private
     Adapter                         *m_adapter;
     QDBusServiceWatcher             *m_monolithicWatcher;
     FileReceiver                    *m_fileReceiver;
-    QList <DeviceInfo>                m_discovered;
-    QTimer                           m_timer;
+    QTimer                          m_timer;
     KComponentData                  m_componentData;
-    QHash<QString, bool>            m_adapterPoweredHash;
+    KSharedConfig::Ptr              m_config;
 };
 
 BlueDevilDaemon::BlueDevilDaemon(QObject *parent, const QList<QVariant>&)
@@ -81,8 +81,8 @@ BlueDevilDaemon::BlueDevilDaemon(QObject *parent, const QList<QVariant>&)
     d->m_fileReceiver = 0;
     d->m_monolithicWatcher = new QDBusServiceWatcher("org.kde.bluedevilmonolithic"
             , QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForUnregistration, this);
-    d->m_timer.setInterval(20000);
     d->m_timer.setSingleShot(true);
+    d->m_config = KSharedConfig::openConfig("bluedevilglobalrc");
 
     KAboutData aboutData(
         "bluedevildaemon",
@@ -102,10 +102,15 @@ BlueDevilDaemon::BlueDevilDaemon(QObject *parent, const QList<QVariant>&)
 
     aboutData.setProgramIconName("preferences-system-bluetooth");
     d->m_componentData = KComponentData(aboutData);
-    connect(d->m_monolithicWatcher, SIGNAL(serviceUnregistered(const QString &)), SLOT(monolithicFinished(const QString &)));
+    connect(d->m_monolithicWatcher, SIGNAL(serviceUnregistered(QString)), SLOT(monolithicFinished(QString)));
+    connect(&d->m_timer, SIGNAL(timeout()), SLOT(stopDiscovering()));
 
     connect(Manager::self(), SIGNAL(usableAdapterChanged(Adapter*)),
             this, SLOT(usableAdapterChanged(Adapter*)));
+    connect(Manager::self(), SIGNAL(adapterAdded(Adapter*)),
+            this, SLOT(adapterAdded(Adapter*)));
+    connect(Manager::self(), SIGNAL(adapterRemoved(Adapter*)),
+            this, SLOT(adapterRemoved(Adapter*)));
 
     // Catch suspend/resume events
     QDBusConnection::systemBus().connect("org.freedesktop.login1",
@@ -117,6 +122,8 @@ BlueDevilDaemon::BlueDevilDaemon(QObject *parent, const QList<QVariant>&)
                                          );
 
     d->m_status = Private::Offline;
+
+    restoreAdaptersState();
     usableAdapterChanged(Manager::self()->usableAdapter());
 
     if (!Manager::self()->adapters().isEmpty()) {
@@ -126,6 +133,8 @@ BlueDevilDaemon::BlueDevilDaemon(QObject *parent, const QList<QVariant>&)
 
 BlueDevilDaemon::~BlueDevilDaemon()
 {
+    saveAdaptersState();
+
     if (d->m_status == Private::Online) {
         offlineMode();
     }
@@ -147,23 +156,10 @@ void BlueDevilDaemon::login1PrepareForSleep(bool active)
 {
     if (active) {
         kDebug(dblue()) << "About to suspend";
-        d->m_adapterPoweredHash.clear();
-        Q_FOREACH (Adapter *adapter, Manager::self()->adapters()) {
-            kDebug(dblue()) << "Saving" << adapter->address() << adapter->isPowered();
-            d->m_adapterPoweredHash.insert(adapter->address(), adapter->isPowered());
-        }
+        saveAdaptersState();
     } else {
         kDebug(dblue()) << "About to resume";
-        QHashIterator<QString, bool> it(d->m_adapterPoweredHash);
-        while (it.hasNext()) {
-            it.next();
-            Adapter *adapter = adapterForAddress(it.key());
-            if (adapter) {
-                kDebug(dblue()) << "Restoring" << adapter->address() << it.value();
-                adapter->setPowered(it.value());
-            }
-        }
-        d->m_adapterPoweredHash.clear();
+        restoreAdaptersState();
     }
 }
 
@@ -175,41 +171,55 @@ bool BlueDevilDaemon::isOnline()
     return true;
 }
 
-QMapDeviceInfo BlueDevilDaemon::knownDevices()
+QMapDeviceInfo BlueDevilDaemon::allDevices()
 {
     QMapDeviceInfo devices;
+    QList<Device*> list = Manager::self()->usableAdapter()->devices();
 
-    QList <Device* > list = Manager::self()->usableAdapter()->devices();
-    kDebug(dblue()) << "List: " << list.length();
-    DeviceInfo info;
-    Q_FOREACH(Device *const device, list) {
-        info["name"] = device->friendlyName();
-        info["icon"] = device->icon();
-        info["address"] = device->address();
-        info["UUIDs"] = device->UUIDs().join(",");
-        devices[device->address()] = info;
+    Q_FOREACH (Device *const device, list) {
+        devices[device->address()] = deviceToInfo(device);
     }
 
-    if (!d->m_timer.isActive()) {
-        kDebug(dblue()) << "Start Discovery";
-        Manager::self()->usableAdapter()->startStableDiscovery();
-        d->m_discovered.clear();
-        d->m_timer.start();
-    }
+    return devices;
+}
 
-    Q_FOREACH(const DeviceInfo& info, d->m_discovered) {
-        if (!devices.contains(info["address"])) {
-            devices[info["address"]] = info;
+DeviceInfo BlueDevilDaemon::device(const QString &address)
+{
+    Q_FOREACH (Device *const device, Manager::self()->devices()) {
+        if (device->address() == address) {
+            return deviceToInfo(device);
         }
     }
-    return devices;
+
+    return DeviceInfo();
+}
+
+void BlueDevilDaemon::startDiscovering(quint32 timeout)
+{
+    if (!d->m_adapter) {
+        return;
+    }
+
+    kDebug(dblue()) << "Start discovering for" << timeout << "ms";
+
+    d->m_adapter->startDiscovery();
+
+    if (timeout > 0) {
+        d->m_timer.start(timeout);
+    }
 }
 
 void BlueDevilDaemon::stopDiscovering()
 {
-    kDebug(dblue()) << "Stopping discovering";
-    d->m_timer.stop();
-    Manager::self()->usableAdapter()->stopDiscovery();
+    if (!d->m_adapter) {
+        return;
+    }
+
+    kDebug(dblue()) << "Stop discovering";
+
+    if (d->m_adapter->isDiscovering()) {
+        d->m_adapter->stopDiscovery();
+    }
 }
 
 void BlueDevilDaemon::executeMonolithic()
@@ -246,9 +256,7 @@ void BlueDevilDaemon::onlineMode()
 
     d->m_bluezAgent = new BluezAgent(new QObject());
     connect(d->m_bluezAgent, SIGNAL(agentReleased()), this, SLOT(agentReleased()));
-
     connect(d->m_adapter, SIGNAL(deviceFound(Device*)), this, SLOT(deviceFound(Device*)));
-    connect(&d->m_timer, SIGNAL(timeout()), d->m_adapter, SLOT(stopDiscovery()));
 
     FileReceiverSettings::self()->readConfig();
     if (!d->m_fileReceiver && FileReceiverSettings::self()->enabled()) {
@@ -314,9 +322,6 @@ void BlueDevilDaemon::offlineMode()
         d->m_placesModel->removePlace(index);
     }
 
-    if (BlueDevil::Manager::self()->adapters().isEmpty()) {
-        killMonolithic();
-    }
     d->m_status = Private::Offline;
 }
 
@@ -344,10 +349,23 @@ void BlueDevilDaemon::usableAdapterChanged(Adapter *adapter)
     }
 }
 
+void BlueDevilDaemon::adapterAdded(Adapter *adapter)
+{
+    restoreAdapterState(adapter);
+}
+
+void BlueDevilDaemon::adapterRemoved(Adapter *adapter)
+{
+    Q_UNUSED(adapter)
+
+    if (BlueDevil::Manager::self()->adapters().isEmpty()) {
+        killMonolithic();
+    }
+}
+
 void BlueDevilDaemon::deviceFound(Device *device)
 {
     kDebug(dblue()) << "DeviceFound: " << device->name();
-    d->m_discovered.append(deviceToInfo(device));
     org::kde::KDirNotify::emitFilesAdded("bluetooth:/");
 }
 
@@ -361,15 +379,55 @@ void BlueDevilDaemon::monolithicQuit(QDBusPendingCallWatcher* watcher)
     }
 }
 
+void BlueDevilDaemon::saveAdaptersState()
+{
+    Manager *manager = Manager::self();
+    if (!manager) {
+        return;
+    }
+
+    KConfigGroup adaptersGroup = d->m_config->group("Adapters");
+
+    Q_FOREACH (Adapter *adapter, manager->adapters()) {
+        const QString key = QString("%1_powered").arg(adapter->address());
+        adaptersGroup.writeEntry<bool>(key, adapter->isPowered());
+    }
+
+    d->m_config->sync();
+}
+
+// New adapters are automatically powered on
+void BlueDevilDaemon::restoreAdaptersState()
+{
+    Manager *manager = Manager::self();
+    if (!manager) {
+        return;
+    }
+
+    KConfigGroup adaptersGroup = d->m_config->group("Adapters");
+
+    Q_FOREACH (Adapter *adapter, manager->adapters()) {
+        const QString key = QString("%1_powered").arg(adapter->address());
+        adapter->setPowered(adaptersGroup.readEntry<bool>(key, true));
+    }
+}
+
+void BlueDevilDaemon::restoreAdapterState(Adapter *adapter)
+{
+    KConfigGroup adaptersGroup = d->m_config->group("Adapters");
+
+    const QString key = QString("%1_powered").arg(adapter->address());
+    adapter->setPowered(adaptersGroup.readEntry<bool>(key, true));
+}
+
 DeviceInfo BlueDevilDaemon::deviceToInfo(Device *const device) const
 {
     DeviceInfo info;
     info["name"] = device->friendlyName();
     info["icon"] = device->icon();
     info["address"] = device->address();
-    info["discovered"] = "true";
+    info["UBI"] = device->UBI();
     info["UUIDs"] = device->UUIDs().join(",");
-
     return info;
 }
 

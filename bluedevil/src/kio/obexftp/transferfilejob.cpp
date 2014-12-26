@@ -34,7 +34,6 @@ TransferFileJob::TransferFileJob(const QString& path, KioFtp* parent)
     , m_speedBytes(0)
     , m_parent(parent)
 {
-
 }
 
 TransferFileJob::~TransferFileJob()
@@ -50,16 +49,7 @@ void TransferFileJob::start()
 
 bool TransferFileJob::doKill()
 {
-    QDBusPendingReply <void > reply = m_transfer->Cancel();
-    reply.waitForFinished();
-
-    return !reply.isError();
-}
-
-void TransferFileJob::setSize(int size)
-{
-    kDebug() << size;
-    m_parent->totalSize(size);
+    return m_parent->cancelTransfer(m_path);
 }
 
 void TransferFileJob::createObjects()
@@ -97,7 +87,6 @@ void TransferFileJob::statusChanged(const QVariant& value)
         m_time = QTime::currentTime();
         return;
     } else if (status == QLatin1String("complete")) {
-        m_parent->finished();
         emitResult();
         return;
     } else if (status == QLatin1String("error")) {
@@ -114,7 +103,7 @@ void TransferFileJob::transferChanged(const QVariant& value)
     kDebug() << "Transferred: " << value;
     if (m_parent->wasKilled()) {
         kDebug() << "Kio was killed, aborting task";
-        m_transfer->Cancel().waitForFinished();
+        doKill();
         emitResult();
         return;
     }
