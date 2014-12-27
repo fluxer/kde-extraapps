@@ -61,7 +61,6 @@ add_subdirectory(vnc)
 add_subdirectory(nx)
 add_subdirectory(rdp)
 add_subdirectory(test)
-add_subdirectory(doc)
 
 if(TelepathyQt4_FOUND)
     add_subdirectory(krdc_approver)
