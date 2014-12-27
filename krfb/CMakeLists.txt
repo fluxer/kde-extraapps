@@ -57,6 +57,3 @@ endif(Q_WS_X11)
 add_subdirectory(krfb)
 add_subdirectory(framebuffers)
 
-if (NOT INSIDE_KDENETWORK)
-    macro_display_feature_log()
-endif ()

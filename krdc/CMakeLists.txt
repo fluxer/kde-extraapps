@@ -126,6 +126,3 @@ if(TelepathyQt4_FOUND)
     install(FILES krdc_rfb_handler.client DESTINATION ${SHARE_INSTALL_PREFIX}/telepathy/clients/)
 endif()
 
-if(NOT INSIDE_KDENETWORK)
-    macro_display_feature_log()
-endif(NOT INSIDE_KDENETWORK)
