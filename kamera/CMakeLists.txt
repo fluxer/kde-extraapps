@@ -32,7 +32,6 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES} ${GPHOTO2_INCL
 
 add_subdirectory( kcontrol ) 
 add_subdirectory( kioslave ) 
-add_subdirectory( doc )
 
 install(FILES
   solid_camera.desktop
