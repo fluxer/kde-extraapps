@@ -19,7 +19,6 @@
 
 #include <QHash>
 #include <QVector>
-#include <QListView>
 
 #include "playlist.h"
 #include "playlistitem.h"
@@ -114,7 +113,7 @@ public:
     CollectionListItem *lookup(const QString &file) const;
 
     virtual CollectionListItem *createItem(const FileHandle &file,
-                                     QListView * = 0,
+                                     Q3ListViewItem * = 0,
                                      bool = false);
 
     void emitVisibleColumnsChanged() { emit signalVisibleColumnsChanged(); }

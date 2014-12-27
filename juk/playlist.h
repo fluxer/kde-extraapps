@@ -18,14 +18,13 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
 
+#include <k3listview.h>
 #include <kglobalsettings.h>
 #include <kdebug.h>
 
 #include <QVector>
 #include <QEvent>
 #include <QList>
-#include <QMimeData>
-#include <QTableWidget>
 
 #include "covermanager.h"
 #include "stringhash.h"
@@ -50,7 +49,7 @@ class CollectionListItem;
 
 typedef QList<PlaylistItem *> PlaylistItemList;
 
-class Playlist : public QTableWidget, public PlaylistInterface
+class Playlist : public K3ListView, public PlaylistInterface
 {
     Q_OBJECT
 
@@ -171,7 +170,7 @@ public:
      * both PlaylistItems and CollectionListItems.
      */
     virtual PlaylistItem *createItem(const FileHandle &file,
-                                     QListView *after = 0,
+                                     Q3ListViewItem *after = 0,
                                      bool emitChanged = true);
 
     /**
@@ -180,7 +179,7 @@ public:
      */
     template <class ItemType>
     ItemType *createItem(const FileHandle &file,
-                         QListView *after = 0,
+                         Q3ListViewItem *after = 0,
                          bool emitChanged = true);
 
     virtual void createItems(const PlaylistItemList &siblings, PlaylistItem *after = 0);
@@ -358,7 +357,7 @@ public slots:
      * @see clearItems()
      */
     virtual void clear();
-    virtual void selectAll() { QTableWidget::selectAll(true); }
+    virtual void selectAll() { K3ListView::selectAll(true); }
 
     /**
      * Refreshes the tags of the selection from disk, or all of the files in the
@@ -425,8 +424,8 @@ protected:
 
     virtual bool eventFilter(QObject *watched, QEvent *e);
     virtual void keyPressEvent(QKeyEvent *e);
-    virtual QDrag *dragObject(QWidget *parent);
-    virtual QDrag *dragObject() { return dragObject(this); }
+    virtual Q3DragObject *dragObject(QWidget *parent);
+    virtual Q3DragObject *dragObject() { return dragObject(this); }
     virtual void decode(const QMimeData *s, PlaylistItem *item = 0);
     virtual void contentsDropEvent(QDropEvent *e);
     virtual void contentsMouseDoubleClickEvent(QMouseEvent *e);
@@ -436,13 +435,13 @@ protected:
     virtual void viewportPaintEvent(QPaintEvent *pe);
     virtual void viewportResizeEvent(QResizeEvent *re);
 
-    virtual void insertItem(QListView *item);
-    virtual void takeItem(QListView *item);
+    virtual void insertItem(Q3ListViewItem *item);
+    virtual void takeItem(Q3ListViewItem *item);
 
     virtual bool hasItem(const QString &file) const { return m_members.contains(file); }
 
-    virtual int insertColumn(const QString &label, int width = -1);
-    using QTableWidget::insertColumn;
+    virtual int addColumn(const QString &label, int width = -1);
+    using K3ListView::addColumn;
 
     /**
      * Do some finial initialization of created items.  Notably ensure that they
@@ -530,7 +529,7 @@ private:
      * \see visibleItems()
      * \see selectedItems()
      */
-    PlaylistItemList items(QListViewIterator::IteratorFlag flags);
+    PlaylistItemList items(Q3ListViewItemIterator::IteratorFlag flags);
 
     /**
      * Build the column "weights" for the weighted width mode.
@@ -574,7 +573,7 @@ private:
      */
     class SharedSettings;
 
-    using QTableWidget::selectAll; // Avoid warning about hiding this function.
+    using K3ListView::selectAll; // Avoid warning about hiding this function.
 
 private slots:
 
@@ -583,7 +582,7 @@ private slots:
      * don't need to happen in the ctor, such as setting up the columns,
      * initializing the RMB menu, and setting up signal/slot connections.
      *
-     * Used to be a subclass of QListView::polish() but the timing of the
+     * Used to be a subclass of K3ListView::polish() but the timing of the
      * call is not consistent and therefore lead to crashes.
      */
     void slotInitialize();
@@ -596,7 +595,7 @@ private slots:
      * Show the RMB menu.  Matches the signature for the signal
      * QListView::contextMenuRequested().
      */
-    void slotShowRMBMenu(QListView *item, const QPoint &point, int column);
+    void slotShowRMBMenu(Q3ListViewItem *item, const QPoint &point, int column);
 
     /**
      * This slot is called when the inline tag editor has completed its editing
@@ -604,7 +603,7 @@ private slots:
      *
      * \see editTag()
      */
-    void slotInlineEditDone(QListView *, const QString &, int column);
+    void slotInlineEditDone(Q3ListViewItem *, const QString &, int column);
 
     /**
      * This starts the renaming process by displaying a line edit if the mouse is in
@@ -741,7 +740,7 @@ QDataStream &operator>>(QDataStream &s, Playlist &p);
 // template method implementations
 
 template <class ItemType>
-ItemType *Playlist::createItem(const FileHandle &file, QListView *after,
+ItemType *Playlist::createItem(const FileHandle &file, Q3ListViewItem *after,
                                bool emitChanged)
 {
     CollectionListItem *item = collectionListItem(file);
