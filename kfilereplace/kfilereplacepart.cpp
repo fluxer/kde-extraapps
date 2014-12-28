@@ -113,7 +113,7 @@ void KFileReplacePart::slotSearchingOperation()
   if(!checkBeforeOperation())
     return;
 
-  QListView* rv = m_view->getResultsView();
+  QListWidget* rv = m_view->getResultsView();
 
   rv->clear();
 
@@ -172,7 +172,7 @@ void KFileReplacePart::slotReplacingOperation()
   if(!checkBeforeOperation())
     return;
 
-  QListView* rv = m_view->getResultsView();
+  QListWidget* rv = m_view->getResultsView();
 
   if(m_option->m_simulation)
     {
@@ -245,7 +245,7 @@ void KFileReplacePart::slotStop()
 void KFileReplacePart::slotCreateReport()
 {
   // Check there are results
-  QListView* rv = m_view->getResultsView(),
+  QListWidget* rv = m_view->getResultsView(),
            * sv = m_view->getStringsView();
 
   if(rv->firstChild() == 0)
@@ -462,7 +462,7 @@ void KFileReplacePart::reportBug()
 
 void KFileReplacePart::resetActions()
 {
-  QListView* rv = m_view->getResultsView(),
+  QListWidget* rv = m_view->getResultsView(),
            * sv = m_view->getStringsView();
 
   bool hasItems = (sv->firstChild() != 0),
@@ -1103,7 +1103,7 @@ void KFileReplacePart::replaceAndBackup(const QString& currentDir, const QString
   QString backupExtension = m_option->m_backupExtension;
 
   bool atLeastOneStringFound = false;
-  QListViewItem *item = 0;
+  QListWidgetItem *item = 0;
   int occurrence = 0;
 
   replacingLoop(line, &item, atLeastOneStringFound, occurrence, m_option->m_regularExpressions, m_option->m_askConfirmReplace);
@@ -1179,7 +1179,7 @@ void KFileReplacePart::replaceAndOverwrite(const QString& currentDir, const QStr
     }
 
   QString fileSizeBeforeReplacing =  KFileReplaceLib::formatFileSize(oldFileInfo.size());
-  QListViewItem *item = 0;
+  QListWidgetItem *item = 0;
 
   QTextStream oldStream( &oldFile );
   if (m_option->m_encoding == "utf8")
@@ -1240,11 +1240,11 @@ void KFileReplacePart::replaceAndOverwrite(const QString& currentDir, const QStr
     }
 }
 
-void KFileReplacePart::replacingLoop(QString& line, QListViewItem** item, bool& atLeastOneStringFound, int& occur, bool regularExpression, bool& askConfirmReplace)
+void KFileReplacePart::replacingLoop(QString& line, QListWidgetItem** item, bool& atLeastOneStringFound, int& occur, bool regularExpression, bool& askConfirmReplace)
 {
   KeyValueMap tempMap = m_replacementMap;
   KeyValueMap::Iterator it;
-  QListView* rv = m_view->getResultsView();
+  QListWidget* rv = m_view->getResultsView();
 
   for(it = tempMap.begin(); it != tempMap.end(); ++it)
     {
@@ -1273,8 +1273,8 @@ void KFileReplacePart::replacingLoop(QString& line, QListViewItem** item, bool& 
 					      entry.columnNumber(line));
 
 		  if(!*item)
-		    *item =  new QListViewItem(rv);
-		  QListViewItem* tempItem = new QListViewItem(*item);
+		    *item =  new QListWidgetItem(rv);
+		  QListWidgetItem* tempItem = new QListWidgetItem(*item);
 		  tempItem->setMultiLinesEnabled(true);
 		  tempItem->setText(0,msg);
 		  occur ++;
@@ -1295,8 +1295,8 @@ void KFileReplacePart::replacingLoop(QString& line, QListViewItem** item, bool& 
 					   entry.columnNumber(line));
 
 	       if(!*item)
-		 *item =  new QListViewItem(rv);
-	       QListViewItem* tempItem = new QListViewItem(*item);
+		 *item =  new QListWidgetItem(rv);
+	       QListWidgetItem* tempItem = new QListWidgetItem(*item);
 	       tempItem->setMultiLinesEnabled(true);
 	       tempItem->setText(0,msg);
 	       occur ++;
@@ -1408,7 +1408,7 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
 
   QFileInfo fileInfo(currentDir+'/'+fileName);
 
-  QListViewItem *item = 0;
+  QListWidgetItem *item = 0;
 
   //Counts occurrences
   int occurrence = 0;
@@ -1420,7 +1420,7 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
 
   KeyValueMap::Iterator it = tempMap.begin();
 
-  QListView* rv = m_view->getResultsView();
+  QListWidget* rv = m_view->getResultsView();
 
   while(it != tempMap.end())
     {
@@ -1454,9 +1454,9 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
               int columnNumber = pos - line.lastIndexOf('\n',pos);
 
               if (!item)
-                item = new QListViewItem(rv);
+                item = new QListWidgetItem(rv);
 
-              QListViewItem* tempItem= new QListViewItem(item);
+              QListWidgetItem* tempItem= new QListWidgetItem(item);
               QString msg,
                       capturedText;
 
@@ -1508,8 +1508,8 @@ void KFileReplacePart::search(const QString& currentDir, const QString& fileName
               msg = i18n(" Line:%2, Col:%3 - \"%1\"", capturedText, lineNumber, columnNumber);
 
               if(!item)
-                 item = new QListViewItem(rv);
-              QListViewItem* tempItem = new QListViewItem(item);
+                 item = new QListWidgetItem(rv);
+              QListWidgetItem* tempItem = new QListWidgetItem(item);
               tempItem->setMultiLinesEnabled(true);
               tempItem->setText(0,msg);
               occurrence++;
@@ -1548,10 +1548,10 @@ void KFileReplacePart::loadViewContent()
   KeyValueMap tempMap;
   CommandEngine command;
 
-  Q3ListViewItemIterator itlv(m_view->getStringsView());
+  QListWidgetItemIterator itlv(m_view->getStringsView());
   while(itlv.current())
     {
-      Q3ListViewItem *item = itlv.current();
+      QListWidgetItem *item = itlv.current();
       if(m_option->m_variables)
         tempMap[item->text(0)] = command.variableValue(item->text(1));
       else
@@ -1567,7 +1567,7 @@ void KFileReplacePart::loadRulesFile(const QString& fileName)
   *  creates a xml document and browses it*/
   QDomDocument doc("mydocument");
   QFile file(fileName);
-  QListView* sv = m_view->getStringsView();
+  QListWidget* sv = m_view->getStringsView();
 
   if(!file.open(QIODevice::ReadOnly))
     {
@@ -1683,7 +1683,7 @@ void KFileReplacePart::setOptionMask()
 bool KFileReplacePart::checkBeforeOperation()
 {
   loadViewContent();
-  QListView* sv = m_view->getStringsView();
+  QListWidget* sv = m_view->getStringsView();
 
   // Checks if there are strings to replace (not need in search operation)
   if (sv->childCount() == 0)

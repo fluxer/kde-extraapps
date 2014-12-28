@@ -20,11 +20,11 @@
 
 //QT
 #include <qlcdnumber.h>
-#include <QListView>
+#include <QListWidget>
 
 //KDE
 class KMenu;
-class QListView;
+class QListWidget;
 
 //local
 #include "ui_kfilereplaceviewwdg.h"
@@ -55,8 +55,8 @@ class KFileReplaceView : public KFileReplaceViewWdg
   private:
     KMenu* m_menuResult;
     RCOptions* m_option;
-    K3ListViewItem* m_lviCurrent;
-    K3ListView* m_rv,
+    QListWidgetItem* m_lviCurrent;
+    QListWidget* m_rv,
              * m_sv;
 
   public://Constructors
@@ -68,8 +68,8 @@ class KFileReplaceView : public KFileReplaceViewWdg
     void displayScannedFiles(int filesNumber) { m_lcdFilesNumber->display(QString::number(filesNumber,10)); }
     void stringsInvert(bool invertAll);
     void changeView(bool searchingOnlyMode);
-    K3ListView* getResultsView();
-    K3ListView* getStringsView();
+    QListWidget* getResultsView();
+    QListWidget* getStringsView();
     void updateOptions(RCOptions* info) { m_option = info; }
     void loadMap(KeyValueMap extMap){ loadMapIntoView(extMap); }
     KeyValueMap getStringsViewMap()const { return m_option->m_mapStringsView;}
@@ -77,7 +77,7 @@ class KFileReplaceView : public KFileReplaceViewWdg
     //void emitSearchingOnlyMode(bool b) { emit searchingOnlyMode(b); }
 
   public slots:
-    void slotMouseButtonClicked (int button, Q3ListViewItem *lvi, const QPoint &pos);
+    void slotMouseButtonClicked (int button, QListWidgetItem *lvi, const QPoint &pos);
     void slotResultProperties();
     void slotResultOpen();
     void slotResultOpenWith();
@@ -97,8 +97,8 @@ class KFileReplaceView : public KFileReplaceViewWdg
     void initGUI();
     void raiseStringsView();
     void raiseResultsView();
-    coord extractWordCoordinates(Q3ListViewItem* lvi);
-    void expand(Q3ListViewItem *lviCurrent, bool b);
+    coord extractWordCoordinates(QListWidgetItem* lvi);
+    void expand(QListWidgetItem *lviCurrent, bool b);
     void setMap();
     void loadMapIntoView(KeyValueMap map);
     void whatsThis();

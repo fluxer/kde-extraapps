@@ -23,7 +23,7 @@
 #include <qspinbox.h>
 #include <qlabel.h>
 #include <qradiobutton.h>
-#include <q3listview.h>
+#include <qlistview.h>
 //Added by qt3to4:
 #include <QPixmap>
 
@@ -491,9 +491,9 @@ void KNewProjectDlg::setDatas(const QString& directoryString, const QString& fil
     m_cbFilter->setEditText(filterString);
 }
 
-bool KNewProjectDlg::contains(Q3ListView* lv,const QString& s, int column)
+bool KNewProjectDlg::contains(QListWidget* lv,const QString& s, int column)
 {
-  Q3ListViewItem* i = lv->firstChild();
+  QListWidgetItem* i = lv->firstChild();
   while (i != 0)
     {
       if(i->text(column) == s)

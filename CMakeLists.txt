@@ -1,6 +1,8 @@
 # Kate project
 project (kde-extraapps)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
+
 #search packages used by KDE
 set(QT_MIN_VERSION "4.8.2")
 find_package(KDE4 4.14.3 REQUIRED)

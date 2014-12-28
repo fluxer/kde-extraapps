@@ -22,14 +22,13 @@
 //QT
 #include <qstringlist.h>
 #include <qwidget.h>
-#include <q3listview.h>
+#include <qlistview.h>
 #include <qfileinfo.h>
 #include <qpixmap.h>
 
 //KDE
 #include <kdebug.h>
 #include <kmessagebox.h>
-#include <k3listview.h>
 #include <kiconloader.h>
 
 //needed for malloc/free
@@ -101,7 +100,7 @@ QString KFileReplaceLib::formatFileSize(double size)
   return stringSize;
 }
 
-void KFileReplaceLib::convertOldToNewKFRFormat(const QString& fileName, K3ListView* stringView)
+void KFileReplaceLib::convertOldToNewKFRFormat(const QString& fileName, QListWidget* stringView)
 {
  //this method convert old format in new XML-based format
  typedef struct

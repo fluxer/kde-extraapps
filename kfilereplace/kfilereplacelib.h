@@ -21,6 +21,8 @@
 #ifndef KFILEREPLACELIB_H
 #define KFILEREPLACELIB_H
 
+#include <QListWidget>
+
 // KDE
 #include <klocale.h>
 
@@ -52,13 +54,13 @@ class KFileReplaceLib
     /**
     converts the old kfr format file in the new xml-based format.
     */
-    static void convertOldToNewKFRFormat(const QString& fileName, K3ListView* stringView);
+    static void convertOldToNewKFRFormat(const QString& fileName, QListWidget* stringView);
     /**
     Verifies that files, which we are scanning, respect some
     conditions
     */
     static bool isAnAccessibleFile(const QString& filePath, const QString& fileName, RCOptions* info);
 
-    static void setIconForFileEntry(Q3ListViewItem* item, const QString &path);
+    static void setIconForFileEntry(QListWidgetItem* item, const QString &path);
 };
 #endif // KFILEREPLACEFILELIB_H

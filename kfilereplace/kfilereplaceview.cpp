@@ -51,20 +51,20 @@ KFileReplaceView::KFileReplaceView(RCOptions* info, QWidget *parent,const char *
   initGUI();
 
   // connect events
-  connect(m_lvResults, SIGNAL(mouseButtonClicked(int, Q3ListViewItem *, const QPoint &, int)), this, SLOT(slotMouseButtonClicked(int, Q3ListViewItem *, const QPoint &)));
-  connect(m_lvResults_2, SIGNAL(mouseButtonClicked(int, Q3ListViewItem *, const QPoint &, int)), this, SLOT(slotMouseButtonClicked(int, Q3ListViewItem *, const QPoint &)));
-  connect(m_lvStrings, SIGNAL(doubleClicked(Q3ListViewItem *)), this, SLOT(slotStringsEdit()));
-  connect(m_lvStrings_2, SIGNAL(doubleClicked(Q3ListViewItem *)), this, SLOT(slotStringsEdit()));
+  connect(m_lvResults, SIGNAL(mouseButtonClicked(int, QListWidgetItem *, const QPoint &, int)), this, SLOT(slotMouseButtonClicked(int, QListWidgetItem *, const QPoint &)));
+  connect(m_lvResults_2, SIGNAL(mouseButtonClicked(int, QListWidgetItem *, const QPoint &, int)), this, SLOT(slotMouseButtonClicked(int, QListWidgetItem *, const QPoint &)));
+  connect(m_lvStrings, SIGNAL(doubleClicked(QListWidgetItem *)), this, SLOT(slotStringsEdit()));
+  connect(m_lvStrings_2, SIGNAL(doubleClicked(QListWidgetItem *)), this, SLOT(slotStringsEdit()));
 
   whatsThis();
 }
 
 QString KFileReplaceView::currentPath()
 {
-  Q3ListViewItem *lvi;
+  QListWidgetItem *lvi;
 
   if(! m_lviCurrent) lvi = m_rv->currentItem();
-  else lvi = (Q3ListViewItem*) m_lviCurrent;
+  else lvi = (QListWidgetItem*) m_lviCurrent;
 
   while (lvi->parent())
     lvi = lvi->parent();
@@ -98,7 +98,7 @@ void KFileReplaceView::showSemaphore(const QString &s)
 
 void KFileReplaceView::stringsInvert(bool invertAll)
 {
-  Q3ListViewItem* lviCurItem,
+  QListWidgetItem* lviCurItem,
   * lviFirst;
   QListView* sv = getStringsView();
 
@@ -170,7 +170,7 @@ QListView* KFileReplaceView::getStringsView()
 }
 
 //PUBLIC SLOTS
-void KFileReplaceView::slotMouseButtonClicked (int button, Q3ListViewItem *lvi, const QPoint &pos)
+void KFileReplaceView::slotMouseButtonClicked (int button, QListWidgetItem *lvi, const QPoint &pos)
 {
   if (lvi == 0) // No item selected
     return;
@@ -236,14 +236,14 @@ void KFileReplaceView::slotResultEdit()
 #endif
   //FIXME: Port to DBUS
 /*
-  Q3ListViewItem *lvi = m_rv->firstChild();
+  QListWidgetItem *lvi = m_rv->firstChild();
 
   while (lvi)
     {
       DCOPClient *client = kapp->dcopClient();
       DCOPRef quanta(client->appId(),"WindowManagerIf");
       QString path = QString(lvi->text(1)+'/'+lvi->text(0));
-      Q3ListViewItem *lviChild = lvi;
+      QListWidgetItem *lviChild = lvi;
 
       while(lviChild)
         {
@@ -302,7 +302,7 @@ void KFileReplaceView::slotResultDelete()
 
 void KFileReplaceView::slotResultTreeExpand()
 {
-  Q3ListViewItem *lviRoot = getResultsView()->firstChild();
+  QListWidgetItem *lviRoot = getResultsView()->firstChild();
 
   if(lviRoot)
     expand(lviRoot, true);
@@ -310,7 +310,7 @@ void KFileReplaceView::slotResultTreeExpand()
 
 void KFileReplaceView::slotResultTreeReduce()
 {
-  Q3ListViewItem *lviRoot = getResultsView()->firstChild();
+  QListWidgetItem *lviRoot = getResultsView()->firstChild();
 
   if(lviRoot)
     expand(lviRoot, false);
@@ -418,7 +418,7 @@ void KFileReplaceView::slotStringsSave()
   else
     header += "\n\t<mode search=\"false\"/>";
 
-  Q3ListViewItem*  lvi = sv->firstChild();
+  QListWidgetItem*  lvi = sv->firstChild();
 
   while( lvi )
   {
@@ -455,7 +455,7 @@ void KFileReplaceView::slotStringsSave()
 
 void KFileReplaceView::slotStringsDeleteItem()
 {
-  Q3ListViewItem* item = m_sv->currentItem();
+  QListWidgetItem* item = m_sv->currentItem();
   if(item != 0)
   {
     KeyValueMap m = m_option->m_mapStringsView;
@@ -467,10 +467,10 @@ void KFileReplaceView::slotStringsDeleteItem()
 
 void KFileReplaceView::slotStringsEmpty()
 {
-  Q3ListViewItem * myChild = m_sv->firstChild();
+  QListWidgetItem * myChild = m_sv->firstChild();
   while( myChild )
   {
-    Q3ListViewItem* item = myChild;
+    QListWidgetItem* item = myChild;
     myChild = myChild->nextSibling();
     delete item;
   }
@@ -563,7 +563,7 @@ void KFileReplaceView::raiseResultsView()
   m_stackResults->raiseWidget(m_rv);
 }
 
-coord KFileReplaceView::extractWordCoordinates(Q3ListViewItem* lvi)
+coord KFileReplaceView::extractWordCoordinates(QListWidgetItem* lvi)
 {
   //get coordinates of the first string of the current selected file
   coord c;
@@ -627,7 +627,7 @@ coord KFileReplaceView::extractWordCoordinates(Q3ListViewItem* lvi)
   return c;
 }
 
-void KFileReplaceView::expand(Q3ListViewItem *lviCurrent, bool b)
+void KFileReplaceView::expand(QListWidgetItem *lviCurrent, bool b)
 {
   // current item
   lviCurrent->setOpen(b);
@@ -645,7 +645,7 @@ void KFileReplaceView::expand(Q3ListViewItem *lviCurrent, bool b)
 void KFileReplaceView::setMap()
 {
   KeyValueMap map;
-  Q3ListViewItem* i = m_sv->firstChild();
+  QListWidgetItem* i = m_sv->firstChild();
   while(i != 0)
   {
     if(m_option->m_searchingOnlyMode)
@@ -664,7 +664,7 @@ void KFileReplaceView::loadMapIntoView(KeyValueMap map)
 
   for(itMap = map.begin(); itMap != map.end(); ++itMap)
     {
-      Q3ListViewItem* lvi = new Q3ListViewItem(m_sv);
+      QListWidgetItem* lvi = new QListWidgetItem(m_sv);
       lvi->setMultiLinesEnabled(true);
       lvi->setText(0,itMap.key());
       if(!m_option->m_searchingOnlyMode)

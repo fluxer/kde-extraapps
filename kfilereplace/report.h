@@ -25,7 +25,7 @@ class QString;
 // KDE
 #include <klocale.h>
 #include "configurationclasses.h"
-class K3ListView;
+class QListWidget;
 
 /** Report class is used to create a pair of files (a xml and a css file) which are
   * a short statistical report of the operations.
@@ -34,14 +34,14 @@ class K3ListView;
 class Report
 {
   private:
-    K3ListView* m_stringsView,
+    QListWidget* m_stringsView,
              * m_resultsView;
     QString m_docPath;
     bool m_isSearchFlag;
     RCOptions* m_option;
 
   public:
-    Report(RCOptions* info, K3ListView* rv, K3ListView* sv) { m_option = info;
+    Report(RCOptions* info, QListWidget* rv, QListWidget* sv) { m_option = info;
                                                             m_resultsView = rv;
                                                             m_stringsView = sv;
                                                             m_isSearchFlag = m_option->m_searchingOnlyMode;

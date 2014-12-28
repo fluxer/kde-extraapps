@@ -20,9 +20,9 @@
 #include <qfile.h>
 //Added by qt3to4:
 #include <QTextStream>
+#include <QListWidget>
 
 // KDE
-#include <k3listview.h>
 #include <kmessagebox.h>
 #include <kuser.h>
 
