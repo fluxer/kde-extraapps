@@ -101,10 +101,6 @@
   #include "indicatornotificationbackend.h"
 #endif
 
-#ifdef HAVE_NOTIFICATION_CENTER
-  #include "osxnotificationbackend.h"
-#endif
-
 #ifdef HAVE_DBUS
   #include "dockmanagernotificationbackend.h"
 #endif
@@ -198,10 +194,6 @@ void MainWin::init()
 
 #ifdef HAVE_INDICATEQT
     QtUi::registerNotificationBackend(new IndicatorNotificationBackend(this));
-#endif
-
-#ifdef HAVE_NOTIFICATION_CENTER
-    QtUi::registerNotificationBackend(new OSXNotificationBackend(this));
 #endif
 
 #ifdef HAVE_DBUS

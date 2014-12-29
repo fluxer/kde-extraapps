@@ -76,10 +76,10 @@ else()
     set(SOURCES ${SOURCES} logbacktrace_unix.cpp)
 endif()
 
-qt_add_resources(SOURCES ${COMMON_RCS})
+qt4_add_resources(SOURCES ${COMMON_RCS})
 
 add_library(mod_common STATIC ${SOURCES})
-qt_use_modules(mod_common Core Network)
+qt4_use_modules(mod_common Core Network)
 
 if(APPLE)
   target_link_libraries(mod_common "-framework CoreServices" "-framework CoreFoundation")

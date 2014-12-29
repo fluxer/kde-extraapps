@@ -46,14 +46,6 @@ endif()
 # For this, the feature info is added after we know if QtWebkit is installed
 option(WITH_WEBKIT "WebKit support (for link previews)" ON)
 
-if (APPLE)
-    # Notification Center is only available in > 10.8, which is Darwin v12
-    if (CMAKE_SYSTEM_VERSION VERSION_GREATER "11.9.9")
-        option(WITH_NOTIFICATION_CENTER "OS X Notification Center support" ON)
-        add_feature_info(WITH_NOTIFICATION_CENTER WITH_NOTIFICATION_CENTER "Use the OS X Notification Center")
-    endif()
-endif()
-
 # Handle with care
 set(QT_PATH "" CACHE PATH "Path to a Qt4 installation to use instead of the system Qt (e.g. for static builds)")
 
@@ -220,23 +212,10 @@ if(INDICATEQT_FOUND)
   add_definitions(-DXDG_APPS_INSTALL_DIR=${XDG_APPS_INSTALL_DIR})
 endif()
 
-if(NOT WIN32)
-  check_function_exists(umask HAVE_UMASK)
-  if(HAVE_UMASK)
+check_function_exists(umask HAVE_UMASK)
+if(HAVE_UMASK)
     add_definitions(-DHAVE_UMASK)
-  endif(HAVE_UMASK)
-endif(NOT WIN32)
-
-# Generate version information from Git
-include(GetGitRevisionDescription)
-get_git_head_revision(GIT_REFSPEC GIT_HEAD)
-git_describe(GIT_DESCRIBE --long)
-
-# Sanitize things if we're not in a Git repo
-if(NOT GIT_HEAD OR NOT GIT_DESCRIBE)
-    set(GIT_HEAD "")
-    set(GIT_DESCRIBE "")
-endif()
+endif(HAVE_UMASK)
 
 configure_file(version.h.in ${CMAKE_BINARY_DIR}/version.h @ONLY)
 

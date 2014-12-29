@@ -53,11 +53,6 @@ int main(int argc, char **argv)
     Q_INIT_RESOURCE(sql);
     Q_INIT_RESOURCE(pics);
 
-#ifdef EMBED_DATA
-    Q_INIT_RESOURCE(i18n);
-    Q_INIT_RESOURCE(data);
-#endif
-
     AbstractCliParser *cliParser;
 
     // We need to init KCmdLineArgs first
