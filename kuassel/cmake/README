@@ -1,0 +1,5 @@
+We bundle some CMake scripts that are not part of CMake itself, for convenience
+on platforms that do not have a standard location for packages to put their
+CMake support into. Most of those scripts originate from the KDE community;
+some are from other sources. Please see the files themselves for copyright
+and license statements.

@@ -1,0 +1,66 @@
+#!/usr/bin/env perl
+
+##########################################################################
+#  Copyright (C) 2009 by Sebastian Goth                                  #
+#   seezer@roath.org                                                     #
+#                                                                        #
+#  This program is free software; you can redistribute it and/or modify  #
+#  it under the terms of the GNU General Public License as published by  #
+#  the Free Software Foundation; either version 2 of the License, or     #
+#  (at your option) version 3.                                           #
+#                                                                        #
+#  This program is distributed in the hope that it will be useful,       #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+#  GNU General Public License for more details.                          #
+#                                                                        #
+#  You should have received a copy of the GNU General Public License     #
+#  along with this program; if not, write to the                         #
+#  Free Software Foundation, Inc.,                                       #
+#  59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
+##########################################################################
+
+# Simple script to read metadata from mpris compatible mediaplayers via dbus.
+#
+# Run it like this:
+# mpris amarok
+#
+# The script fills all fields exported by the player's dbusinterface.
+# They are defined here: http://wiki.xmms2.xmms.se/wiki/MPRIS_Metadata
+#
+# To see which fields are actually available from your player,
+# call something like this from a terminal:
+#
+# qdbus org.mpris.amarok /Player GetMetadata
+# or
+# qdbus org.mpris.vlc /Player GetMetadata
+# etc.
+# 
+# Every field is available in the data hash 'd' via
+# $d{"NAME_OF_FIELD"}
+# To edit the output just change the marked line accordingly.
+
+use strict;
+my %d;
+
+if($#ARGV < 0) {
+ print STDERR "Usage: $0 playername\n";
+ exit 1;
+}
+
+die "Please don't use any special characters in playername." if($ARGV[0] =~ /[^\w\d_-]/);
+
+open(IN,"qdbus org.mpris.".$ARGV[0]." /Player GetMetadata|") or die "Couldn't get dbus result.";
+while(<IN>) {
+	$d{$1} = $2 if(/^([^:]+):\s+([^\n]+)/);
+}
+close IN;
+
+if(keys(%d)) {
+
+## change the following line to fit your needs ##
+print "/me is listening to ".$d{"title"}." by ".$d{"artist"};
+#################################################
+
+print "\n";
+}

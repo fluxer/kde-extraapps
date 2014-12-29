@@ -1,0 +1,266 @@
+# Main CMake file for building Quassel IRC
+#
+# See INSTALL for possible CMake options (or read the code, Luke)
+#####################################################################
+
+# General setup
+#####################################################################
+
+cmake_minimum_required(VERSION 2.8.9)
+project(QuasselIRC)
+
+# Versions
+set(QUASSEL_MAJOR  0)
+set(QUASSEL_MINOR 12)
+set(QUASSEL_PATCH  0)
+set(QUASSEL_VERSION_STRING "0.12-pre")
+
+# Tell CMake about or own modules
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+
+# General conveniences
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# Include various CMake modules...
+include(CMakePushCheckState)
+include(CheckFunctionExists)
+include(CheckIncludeFile)
+include(CheckCXXSourceCompiles)
+include(CMakeDependentOption)
+include(FeatureSummary)
+
+# ... and our own stuff
+include(QuasselCompileSettings)
+include(QuasselMacros)
+
+# Setting COMPILE_DEFINITIONS_<CONFIG> is deprecated since CMake 3.0 in favor of generator expressions.
+# These have existed since CMake 2.8.10; until we depend on that, we have to explicitly enable the old policy.
+if (CMAKE_MAJOR_VERSION GREATER 2)
+    cmake_policy(SET CMP0043 OLD)
+endif()
+
+# Options and variables that can be set on the command line
+#####################################################################
+
+# For this, the feature info is added after we know if QtWebkit is installed
+option(WITH_WEBKIT "WebKit support (for link previews)" ON)
+
+if (APPLE)
+    # Notification Center is only available in > 10.8, which is Darwin v12
+    if (CMAKE_SYSTEM_VERSION VERSION_GREATER "11.9.9")
+        option(WITH_NOTIFICATION_CENTER "OS X Notification Center support" ON)
+        add_feature_info(WITH_NOTIFICATION_CENTER WITH_NOTIFICATION_CENTER "Use the OS X Notification Center")
+    endif()
+endif()
+
+# Handle with care
+set(QT_PATH "" CACHE PATH "Path to a Qt4 installation to use instead of the system Qt (e.g. for static builds)")
+
+# For static builds, arbitrary extra libs might need to be linked
+# Define a comma-separated list here
+# e.g. for pgsql, we need -DLINK_EXTRA=pq;crypt
+set(LINK_EXTRA "" CACHE STRING "Semicolon-separated list of libraries to be linked")
+if (LINK_EXTRA)
+    string(REPLACE "," ";" LINK_EXTRA ${LINK_EXTRA})
+    link_libraries(${LINK_EXTRA})
+endif()
+
+# Set up Qt
+#####################################################################
+
+message(STATUS "Building for Qt4...")
+set(QT_MIN_VERSION "4.6.0")
+
+# Select a Qt installation here, if you don't want to use system Qt
+if(QT_PATH)
+    # FindQt4 will look for the qmake binary in $PATH, so we just prepend QT_PATH
+    set(ENV{PATH} ${QT_PATH}/bin:$ENV{PATH})
+endif()
+
+# Find package dependencies
+#
+# Note that you can forcefully disable optional packages
+# using -DCMAKE_DISABLE_FIND_PACKAGE_<PkgName>=TRUE
+#####################################################################
+
+find_package(Qt4 ${QT_MIN_VERSION} QUIET REQUIRED)
+
+add_feature_info("QtDBus module" QT_QTDBUS_FOUND "Needed for supporting D-Bus-based notifications and tray icon, used by most modern desktop environments")
+if (QT_QTDBUS_FOUND)
+    find_package(dbusmenu-qt QUIET CONFIG)
+    set_package_properties(dbusmenu-qt PROPERTIES TYPE RECOMMENDED
+	URL "https://launchpad.net/libdbusmenu-qt"
+	DESCRIPTION "a library implementing the DBusMenu specification"
+	PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
+    )
+endif()
+
+if (WITH_WEBKIT AND QT_QTWEBKIT_FOUND)
+    set(HAVE_WEBKIT true)
+endif()
+add_feature_info("WITH_WEBKIT and QtWebKit module" HAVE_WEBKIT "Support showing previews for URLs in chat")
+
+find_package(KDE4 4.4 QUIET REQUIRED)
+set_package_properties(KDE4 PROPERTIES TYPE REQUIRED
+    URL "http://www.kde.org"
+    DESCRIPTION "a world-class desktop environment"
+    PURPOSE "Enables various bits for improving integration with KDE"
+)
+
+find_package(IndicateQt QUIET)
+set_package_properties(IndicateQt PROPERTIES TYPE OPTIONAL
+    URL "https://launchpad.net/libindicate-qt/"
+    DESCRIPTION "a library to raise flags on DBus for other components of the desktop to pick up and visualize"
+    PURPOSE     "Provides integration into the Ayatana notification system used by e.g. Ubuntu"
+)
+
+find_package(QCA2 QUIET)
+set_package_properties(QCA2 PROPERTIES TYPE RECOMMENDED
+    URL "https://projects.kde.org/projects/kdesupport/qca"
+    DESCRIPTION "Qt Cryptographic Architecture"
+    PURPOSE     "Required for encryption support"
+)
+
+# Qt4 does not consider lconvert relevant, so they don't support finding it...
+# Rather than shipping hacked buildsys files, let's just infer the path from lrelease
+if (QT_LRELEASE_EXECUTABLE)
+    get_filename_component(_lrelease_path ${QT_LRELEASE_EXECUTABLE} PATH)
+    find_program(QT_LCONVERT_EXECUTABLE NAMES lconvert-qt4 lconvert PATHS ${_lrelease_path} NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
+endif()
+
+
+# Non-Qt-based packages
+
+# zlib for compression, however we can always fall back to miniz
+find_package(ZLIB QUIET REQUIRED)
+set_package_properties(ZLIB PROPERTIES TYPE RECOMMENDED
+    URL "http://www.zlib.net"
+    DESCRIPTION "a popular compression library"
+    PURPOSE     "Use the most common library for protocol compression, instead of the bundled miniz implementation"
+)
+
+
+# Execinfo is needed for generating backtraces
+find_package(ExecInfo QUIET)
+set_package_properties(ExecInfo PROPERTIES TYPE OPTIONAL
+    DESCRIPTION "a library for inspecting backtraces"
+    PURPOSE "Used for generating backtraces in case of a crash"
+)
+
+
+# Various checks
+#####################################################################
+
+add_definitions(-DHAVE_KDE ${KDE4_DEFINITIONS})
+
+# Check for SSL support in Qt
+# As there's no easy way to get Qt's configuration in particular for Qt5, let's just compile
+# a small test program checking the defines. This works for both Qt4 and Qt5.
+cmake_push_check_state(RESET)
+if (Qt5_POSITION_INDEPENDENT_CODE)
+    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+endif()
+set(CMAKE_REQUIRED_INCLUDES ${QT_INCLUDES} ${Qt5Core_INCLUDE_DIRS})
+check_cxx_source_compiles("
+    #include \"qglobal.h\"
+    #if defined QT_NO_OPENSSL || defined QT_NO_SSL
+    #  error \"No SSL support\"
+    #endif
+    int main() {}"
+    HAVE_SSL)
+cmake_pop_check_state()
+
+if (HAVE_SSL)
+    add_definitions(-DHAVE_SSL)
+endif()
+add_feature_info("SSL support in Qt" HAVE_SSL "Use secure network connections")
+
+# Check for syslog support
+check_include_file(syslog.h HAVE_SYSLOG)
+add_feature_info("syslog.h" HAVE_SYSLOG "Provide support for logging to the syslog")
+
+add_feature_info("Qt Linguist Tools" QT_LCONVERT_EXECUTABLE "Translation support for Quassel")
+
+# Various settings
+##################
+
+# RPATH needs to be set correctly
+# Do this down here, since otherwise KDE wants to handle it itself, and fails
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH 1)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH 1)
+
+# Set global buildflags
+# This is very much non-portable, so don't use -DSTATIC until you know what
+# you do.
+if(STATIC AND CMAKE_COMPILER_IS_GNUCXX)
+  set(CMAKE_CXX_FLAGS "-static-libgcc ${CMAKE_CXX_FLAGS}")
+  link_directories(${CMAKE_BINARY_DIR}/staticlibs) # override dynamic libs
+  if(HAVE_SSL)
+    set(QUASSEL_SSL_LIBRARIES ssl crypto)  # these miss in static builds
+  endif(HAVE_SSL)
+endif(STATIC AND CMAKE_COMPILER_IS_GNUCXX)
+
+if(WIN32)
+  link_libraries(imm32 winmm dbghelp Secur32)  # missing by default :/
+  if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /DNOMINMAX")
+    set(CMAKE_EXE_LINKER_FLAGS_RELWITHDEBUGINFO "/debug /INCREMENTAL:YES /NODEFAULTLIB:libcmt /DEFAULTLIB:msvcrt")
+    set(CMAKE_EXE_LINKER_FLAGS_DEBUG "/debug /INCREMENTAL:YES /NODEFAULTLIB:libcmt")
+    set(CMAKE_EXE_LINKER_FLAGS_DEBUGFULL "${CMAKE_EXE_LINKER_FLAGS_DEBUG}")
+    link_libraries(Version dwmapi shlwapi)
+  endif(MSVC)
+  if(HAVE_SSL AND STATIC)
+     find_package(OpenSSL REQUIRED)
+     link_libraries(${OPENSSL_LIBRARIES} ${OPENSSL_EAY_LIBRARIES})
+  endif(HAVE_SSL AND STATIC)
+endif(WIN32)
+
+if(INDICATEQT_FOUND)
+  add_definitions(-DXDG_APPS_INSTALL_DIR=${XDG_APPS_INSTALL_DIR})
+endif()
+
+if(NOT WIN32)
+  check_function_exists(umask HAVE_UMASK)
+  if(HAVE_UMASK)
+    add_definitions(-DHAVE_UMASK)
+  endif(HAVE_UMASK)
+endif(NOT WIN32)
+
+# Generate version information from Git
+include(GetGitRevisionDescription)
+get_git_head_revision(GIT_REFSPEC GIT_HEAD)
+git_describe(GIT_DESCRIBE --long)
+
+# Sanitize things if we're not in a Git repo
+if(NOT GIT_HEAD OR NOT GIT_DESCRIBE)
+    set(GIT_HEAD "")
+    set(GIT_DESCRIBE "")
+endif()
+
+configure_file(version.h.in ${CMAKE_BINARY_DIR}/version.h @ONLY)
+
+# These variables will be added to the main targets (CORE, QTCLIENT, MONO)
+set(COMMON_DEPS ${RC_WIN32})
+set(CORE_DEPS )
+set(CLIENT_DEPS )
+
+# Add needed subdirs - the order is important, since src needs some vars set by other dirs
+add_subdirectory(data)
+add_subdirectory(pics)
+add_subdirectory(po)
+
+# Set up and display feature summary
+#####################################################################
+
+feature_summary(WHAT ALL
+                INCLUDE_QUIET_PACKAGES
+                FATAL_ON_MISSING_REQUIRED_PACKAGES
+)
+
+# Finally, compile the sources
+# We want this after displaying the feature summary to avoid ugly
+# CMake backtraces in case a required Qt5 modules misses
+#####################################################################
+
+add_subdirectory(src)

@@ -1,0 +1,341 @@
+ChangeLog for Quassel IRC
+=========================
+This is not a full ChangeLog, but rather an end-user FeatureLog that is supposed
+to provide a list of new features between Quassel versions. As such, it only
+contains end-user visible, mostly major new features. It does not contain (most)
+bugfixes, nor is it guaranteed to be complete or up-to-date at all. Also, it does
+start at 0.3.0 only, since this was the first version widely available.
+
+Please have a look at <http://bugs.quassel-irc.org/projects/quassel-irc/roadmap> for a
+list of closed bug/feature reports (which still does not cover bugs we have
+fixed but which were never reported, of course), and for a full list of
+changes, the git history at <http://git.quassel-irc.org> is your friend.
+
+Without further ado, let's start:
+
+Version 0.11.0 (2014-09-23)
+===========================
+
+* New build requirements:
+  - C++11 capable compiler (gcc 4.7+, clang 3.3+, MSVC 2013+)
+  - cmake 2.8.9+
+* Full support for Qt 5.2+ in addition to Qt 4.6+
+* Completely revamp the build system, making use of "new" CMake features
+
+Version 0.10.1 (2014-09-23)
+===========================
+
+* Fix buffer hotlist sorting
+* Split CTCP messages if they're too long
+* Make database problems more obvious
+* Fix backlog loading for QuasselDroid
+* Properly save the toolbar state on Mac OSX
+* Fix a crash with KDE's network detection
+* Various other fixes
+
+Version 0.10.0 (2014-03-25)
+===========================
+
+* Refactor lots of the protocol and connection code
+* Introduce connection probing for reliably negotiating protocol features
+* Introduce the new DataStream protocol with streaming compression
+* Option for forcing the core to only accept SSL connections
+* Support for the Snore notification backend
+* Allow searching the web for selected text
+* Connection-related fixes
+* Allow for hiding inactive networks
+* Enable line wrap in the input field
+* Show backlog messages in the Chat Monitor
+* Remove SSL protocol selection, always use auto-negotiation for best results
+* Highlight rules are now case-insensitive by default
+* New and updated translations
+* Bump inxi version (for /sysinfo)
+* Use the raster rendering engine by default on OSX (should improve performance)
+
+Version 0.9.3 (2014-03-25)
+==========================
+
+* Notification fixes
+* Improve reliability of SSL connections
+* Save toolbar state properly on Mac
+* Prevent user interaction with the web preview
+* Fix fullscreen mode
+* Fix spurious crash caused by shaky ircd connections
+* Fix adding an unneeded colon to custom commands
+* Avoid Qt's DNS cache to properly handle round-robin DNS records
+
+Version 0.9.2 (2013-11-26)
+==========================
+
+* Don't crash if /topic contains newlines
+* Fix SSL-related issues
+* Fix Phonon notifications not playing sound
+* Pingout if connection drops during SASL auth phase
+* Prevent messages from being sent to status buffers
+* Make sure manipulated/buggy clients cannot access backlog of other core users
+* Fix context menu issues
+
+Version 0.9.1 (2013-10-11)
+==========================
+
+* Fix security issue with Qt 4.8.5 and PostgreSQL
+* Phonon notifications for Mac OS X
+* Convert tabs in messages into 8 spaces
+* Silence superfluous QCA warnings
+* Various key- and encryption-related fixes
+* Ignore formatting in clickables
+* Enable warnings when compiling with Clang
+* Updated translations
+* Various other small fixes and improvements
+
+Version 0.9.0 (2013-04-16)
+==========================
+
+* Halfop support
+* Channel-specific highlights
+* Support for intermediate CA certificates
+* Support the DockManager interface
+* OSX Notification Center support
+* DH1080 key exchange
+* SASL EXTERNAL support
+* Improvements for Retina displays on OSX
+* Supporting to start minimized to tray
+* Rudimentary support for Qt5 (obsolete again because upstream changed too much)
+* Refactor of SignalProxy, network and protocol code
+* First pieces of the coming protocol abstraction
+* Build system improvements
+* Various bugfixes
+* New and updated translations
+* Reformatted ALL the source code
+
+Version 0.8.0 (2012-03-20)
+==========================
+
+* Make tab completion key configurable
+* Syslog support for the core
+* Make the core more robust against random invalid input
+* oidentd support
+* Build system improvements
+* Many new and updated translations
+* Various bugfixes
+
+Version 0.7.4 (2012-03-20)
+--------------------------
+
+* Improve keyboard navigation
+* Bump Oxygen icons
+* Conform with icon naming spec
+* Remove JS support from webpreview
+* Fix support for Qt 4.8
+* Several bugfixes and cleanups
+
+Version 0.7.3 (2011-09-08)
+--------------------------
+
+* Fix a core crash
+
+Version 0.7.2 (2011-03-24)
+--------------------------
+
+* PostgreSQL improvements
+* Various bugfixes
+
+Version 0.7.1 (2010-09-21)
+--------------------------
+
+* Critical fixes for CTCP and connection handshake
+
+Version 0.7.0 (2010-09-14)
+==========================
+
+* Improved DE integration, support for dbusmenu
+* Bump Qt dependency: we need Qt 4.6 for client and monolithic now
+* Fullscreen mode (F11)
+* CTCP CLIENTINFO support
+* Shortcuts for navigation between chats (Alt+Left/Right/Up/Down) 
+* Add blowfish encryption (/setkey and /delkey; needs QCA2)
+* Shortcut editing for all platforms (!KDE)
+* Improved handling of invites
+* New tray icon for highlights
+* Global away
+* Emacs-style keybindings for the input line
+* Improved markerline behavior
+  - Allow manual setting (Ctrl+R)
+  - Provide shortcut for jumping to the markerline (Ctrl+K)
+* New languages: el, gl, ja
+* Many bugfixes
+
+Version 0.6.1 (2010-04-16)
+--------------------------
+
+* Critical bugfixes
+
+Version 0.6.0 (2010-04-14)
+==========================
+
+* New languages: en_GB, es, nl, oc, pt, pt_BR, sq, sv, uk, zh_CN
+* Updated existing languages
+* Restore last selected buffer on restart
+* Optional per-chat history
+* SASL authentication support (e.g. supported by Freenode)
+* Allow inputting formatted (colored/bold/...) text in the inputline
+* Support the StatusNotifierItem DBus spec
+  - Replace old-style tray icon where supported (currently KDE >= 4.4)
+  - Integrate freedesktop notifications support (libnotify or knotify)
+* Systemtray refactoring
+  - Replace animation by blinking icon
+  - Properly handle notifications and mainwindow toggle
+* Improved URL detection
+* Sender column is now clickable (double click opens query)
+* Improved notification handling
+* ChatView performance improvements
+* Many buildsystem fixes
+  - Improved handling of icons
+  - Updated cmake macros
+  - Support building with MinGW
+  - Support KDE on non-X11 platforms
+  - Better handling of SSL libraries
+* Solid network state detection support (with KDE)
+* Settingspage refactoring
+* Improved handling of SSL certificates
+* Completely reworked the client/core connection
+  - New settingspage for managing core accounts
+  - Streamlined login/sync process
+  - Configurable timeout
+  - Automatic reconnect to core
+* Send unknown commands to server
+* New stylesheets
+* Use gettext for translations
+
+Version 0.5.2 (2010-01-18)
+--------------------------
+
+* CTCP ignore
+* Buildsystem fixes
+
+Version 0.5.1 (2009-11-21)
+--------------------------
+
+* Many Bugfixes
+* Updated translations
+* Fix issues with Qt >= 4.6
+
+Version 0.5.0 (2009-10-14)
+==========================
+
+* Tons of bugfixes
+* Many translation updates
+* Use DrKonqi/Apport to provide backtraces in case of a crash
+* Support for Ayatana's Message Indicator (libindicate; *buntu specific feature for now)
+* Fix wordwrap issues
+* Improved notification behavior (highlighted channels can now be cycled)
+* Improved icon packaging (don't install them if KDE is available and current enough)
+* Menubar can now be hidden (Ctrl+M to toggle)
+* Ignore list support
+* Vast performance improvements in the handling of synced objects
+  - Core startup/shutdown now almost instant
+  - Joining/leaving large channels much more efficient
+* Netsplit detection
+* New topic widget dynamically resizes to show all of the topic
+* Usability tweaks
+  - Reworked configuration dialogs
+  - Renamed "Buffer" to "Chat" throughout in all user-visible strings
+* Introduce stylesheet-based (QSS) styling for ChatView and the whole application
+* Allow configuration of ping timeouts and auto-WHO
+* Make toolbars configurable in KDE
+* Alt+A shortcut for jumping to cycle through active buffers
+* Properly remember the mainwindow state on shutdown/restart
+* Multiline input support
+* Improved systray notifications
+* Lazy backlog fetching for hidden buffers
+* Improved flood control
+* Spell check support (requires KDE integration)
+* /exec support for executing external scripts/programs
+* CLI interface for managing core users with quasselcore rather than a script
+* Improved ping timeout detection
+* PostgreSQL database backend support
+* Smart nickname completion (most recently active)
+
+Version 0.4.3 (2009-08-26)
+--------------------------
+
+* Bugfixes and translation updates
+
+Version 0.4.2 (2009-05-20)
+--------------------------
+
+* Bugfixes and translation updates
+
+Version 0.4.1 (2009-03-18)
+--------------------------
+
+* Bugfixes and translation updates
+
+Version 0.4.0 (2009-02-17)
+==========================
+
+* Buffer view font can now be changed
+* Colored nicknames
+* Wizard for setting up identity and networks on first run
+* Paste protection warns if you try to paste many lines
+* Use login name and real name for default identity
+* Add toolbar to main window
+* Away log window showing highlighted messages while you're away
+* Settings dialog streamlining
+* Animated system tray icon
+* Shiny new Oxygen icons all over the place, including our new app icon
+* Build system improvements
+* Put all config and data files in one location and make that configurable
+* Allow presetting networks and a list of channels to join on first start
+* Change and improve CLI argument handling
+* All buffer views are now customizable
+* Streamlined monolithic client
+* Many usability improvements
+* Method for easily hiding and unhiding buffers in buffer views
+* Renaming and merging of query buffers
+* Improved SSL certificate handling
+* Optional support for KDE4
+  - KNotify support
+  - KDE icon and color theme support
+  - Editable shortcuts
+* Core now supports a proxy for connections to IRC
+* Core supports SSL certs and keys for IRC connections 
+* Chat Monitor configuration dialog
+* Audio notifications
+* Clickable channel names in ChatView
+* Context menus in ChatView and BufferViews
+* Respect the separate clipboards (Ctrl+C / X11 selection) on X11
+* Improved mouse handling:
+  - Double/triple click selections
+  - Drag'n'Drop
+
+Version 0.3.1 (2008-11-20)
+--------------------------
+
+* Nick changes and day change messages can now be hidden
+* Web previews and status icons can be disabled
+* Icons for Online/Away/Offline status of queries
+* Load Qt's default translations
+* Add new settings for proper message redirection
+* Add context menu to links
+* Automatic backtraces on Windows
+* Add russian translation
+* Cut off the sender column on the left in ChatView
+* Enable away on detach
+* Backlog amount (initial and dynamic) can now be configured
+* Shift Up/Down scrolls the ChatView
+* Page Up/Down scrolls the ChatView
+* ChatView Zoom with Ctrl + / Ctrl -
+* Join/Part/Quit... events can now be hidden in ChatView
+* Monolithic build features zero configuration: Click'n'Run
+* Monolithic build now uses a proper (socket-less) internal connection
+* Ctrl+L focuses input line
+* Improve notification handling, use proper D-Bus notifications
+* Day change messages in ChatView
+* Web Preview on hovering over a link (requires QtWebkit)
+* Allow icons to be installed externally, optionally use system Oxygen theme
+* Improve URL handling in ChatView (underline, single-click invocation)
+
+Version 0.3.0 (2008-08-27)
+==========================
+The first widely available release of Quassel IRC.
