@@ -128,11 +128,11 @@ foreach(FRM ${SP_FORMS})
   set(SPFRM ${SPFRM} settingspages/${FRM})
 endforeach(FRM ${SP_FORMS})
 
-include_directories(${CMAKE_SOURCE_DIR}/src/common
-                    ${CMAKE_SOURCE_DIR}/src/client
-                    ${CMAKE_SOURCE_DIR}/src/qtui
-                    ${CMAKE_SOURCE_DIR}/src/qtui/settingspages
-                    ${CMAKE_SOURCE_DIR}/src/uisupport
+include_directories(${PROJECT_SOURCE_DIR}/src/common
+                    ${PROJECT_SOURCE_DIR}/src/client
+                    ${PROJECT_SOURCE_DIR}/src/qtui
+                    ${PROJECT_SOURCE_DIR}/src/qtui/settingspages
+                    ${PROJECT_SOURCE_DIR}/src/uisupport
 
 )
 
