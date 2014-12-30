@@ -7,7 +7,7 @@
 #####################################################################
 
 cmake_minimum_required(VERSION 2.8.9)
-project(QuasselIRC)
+project(KuasselIRC)
 
 # Versions
 set(QUASSEL_MAJOR  0)
@@ -205,7 +205,7 @@ if(HAVE_UMASK)
     add_definitions(-DHAVE_UMASK)
 endif(HAVE_UMASK)
 
-configure_file(version.h.in ${CMAKE_BINARY_DIR}/version.h @ONLY)
+configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/version.h @ONLY)
 
 # These variables will be added to the main targets (CORE, QTCLIENT, MONO)
 set(COMMON_DEPS ${RC_WIN32})

@@ -38,8 +38,8 @@ include_directories(${KDE4_INCLUDES})
 add_definitions(${KDE4_DEFINITIONS})
 set(SOURCES ${SOURCES} kcmdlinewrapper.cpp)
 
-include_directories(${CMAKE_SOURCE_DIR}/src/common
-                    ${CMAKE_SOURCE_DIR}/src/client
+include_directories(${PROJECT_SOURCE_DIR}/src/common
+                    ${PROJECT_SOURCE_DIR}/src/client
 )
 
 add_library(mod_uisupport STATIC ${SOURCES})
