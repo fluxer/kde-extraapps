@@ -16,7 +16,7 @@ set(QUASSEL_PATCH  0)
 set(QUASSEL_VERSION_STRING "0.12-pre")
 
 # Tell CMake about or own modules
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # General conveniences
 set(CMAKE_AUTOMOC ON)
