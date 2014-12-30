@@ -19,9 +19,10 @@
  ***************************************************************************/
 
 #include <QHeaderView>
-#include <QIcon>
 #include <QMessageBox>
 #include <QTextCodec>
+
+#include <KIcon>
 
 #include "networkssettingspage.h"
 
@@ -52,21 +53,21 @@ NetworksSettingsPage::NetworksSettingsPage(QWidget *parent)
 #endif
 
     // set up icons
-    ui.renameNetwork->setIcon(QIcon::fromTheme("edit-rename"));
-    ui.addNetwork->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteNetwork->setIcon(QIcon::fromTheme("edit-delete"));
-    ui.addServer->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteServer->setIcon(QIcon::fromTheme("edit-delete"));
-    ui.editServer->setIcon(QIcon::fromTheme("configure"));
-    ui.upServer->setIcon(QIcon::fromTheme("go-up"));
-    ui.downServer->setIcon(QIcon::fromTheme("go-down"));
-    ui.editIdentities->setIcon(QIcon::fromTheme("configure"));
+    ui.renameNetwork->setIcon(KIcon("edit-rename"));
+    ui.addNetwork->setIcon(KIcon("list-add"));
+    ui.deleteNetwork->setIcon(KIcon("edit-delete"));
+    ui.addServer->setIcon(KIcon("list-add"));
+    ui.deleteServer->setIcon(KIcon("edit-delete"));
+    ui.editServer->setIcon(KIcon("configure"));
+    ui.upServer->setIcon(KIcon("go-up"));
+    ui.downServer->setIcon(KIcon("go-down"));
+    ui.editIdentities->setIcon(KIcon("configure"));
 
     _ignoreWidgetChanges = false;
 
-    connectedIcon = QIcon::fromTheme("network-connect");
-    connectingIcon = QIcon::fromTheme("network-wired"); // FIXME network-connecting
-    disconnectedIcon = QIcon::fromTheme("network-disconnect");
+    connectedIcon = KIcon("network-connect");
+    connectingIcon = KIcon("network-wired"); // FIXME network-connecting
+    disconnectedIcon = KIcon("network-disconnect");
 
     foreach(int mib, QTextCodec::availableMibs()) {
         QByteArray codec = QTextCodec::codecForMib(mib)->name();
@@ -497,7 +498,7 @@ void NetworksSettingsPage::displayNetwork(NetworkId id)
         foreach(Network::Server server, info.serverList) {
             QListWidgetItem *item = new QListWidgetItem(QString("%1:%2").arg(server.host).arg(server.port));
             if (server.useSsl)
-                item->setIcon(QIcon::fromTheme("document-encrypt"));
+                item->setIcon(KIcon("document-encrypt"));
             ui.serverList->addItem(item);
         }
         //setItemState(id);
@@ -784,7 +785,7 @@ IdentityId NetworksSettingsPage::defaultIdentity() const
 NetworkAddDlg::NetworkAddDlg(const QStringList &exist, QWidget *parent) : QDialog(parent), existing(exist)
 {
     ui.setupUi(this);
-    ui.useSSL->setIcon(QIcon::fromTheme("document-encrypt"));
+    ui.useSSL->setIcon(KIcon("document-encrypt"));
 
     // read preset networks
     QStringList networks = PresetNetworks::names();
@@ -863,7 +864,7 @@ void NetworkEditDlg::on_networkEdit_textChanged(const QString &text)
 ServerEditDlg::ServerEditDlg(const Network::Server &server, QWidget *parent) : QDialog(parent)
 {
     ui.setupUi(this);
-    ui.useSSL->setIcon(QIcon::fromTheme("document-encrypt"));
+    ui.useSSL->setIcon(KIcon("document-encrypt"));
     ui.host->setText(server.host);
     ui.port->setValue(server.port);
     ui.password->setText(server.password);

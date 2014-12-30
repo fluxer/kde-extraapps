@@ -21,11 +21,11 @@
 #include <QApplication>
 #include <QCheckBox>
 #include <QGroupBox>
-#include <QIcon>
 #include <QHBoxLayout>
 
-#include "systraynotificationbackend.h"
+#include <KIcon>
 
+#include "systraynotificationbackend.h"
 #include "client.h"
 #include "clientsettings.h"
 #include "mainwin.h"
@@ -137,7 +137,7 @@ void SystrayNotificationBackend::animateChanged(const QVariant &v)
 
 void SystrayNotificationBackend::updateToolTip()
 {
-    QtUi::mainWindow()->systemTray()->setToolTip("Quassel IRC",
+    QtUi::mainWindow()->systemTray()->setToolTip("Kuassel",
         _notifications.count() ? tr("%n pending highlight(s)", "", _notifications.count()) : QString());
 }
 
@@ -153,7 +153,7 @@ SettingsPage *SystrayNotificationBackend::createConfigWidget() const
 SystrayNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : SettingsPage("Internal", "SystrayNotification", parent)
 {
     _showBubbleBox = new QCheckBox(tr("Show a message in a popup"));
-    _showBubbleBox->setIcon(QIcon::fromTheme("dialog-information"));
+    _showBubbleBox->setIcon(KIcon("dialog-information"));
     connect(_showBubbleBox, SIGNAL(toggled(bool)), this, SLOT(widgetChanged()));
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(_showBubbleBox);

@@ -29,10 +29,8 @@ ChatViewSettingsPage::ChatViewSettingsPage(QWidget *parent)
 {
     ui.setupUi(this);
 
-#ifndef HAVE_WEBKIT
     ui.showWebPreview->hide();
     ui.showWebPreview->setEnabled(false);
-#endif
 
     // FIXME remove with protocol v11
     if (!(Client::coreFeatures() & Quassel::SynchronizedMarkerLine)) {

@@ -37,9 +37,10 @@ SystemTray::SystemTray(QWidget *parent)
     _mode(Invalid),
     _state(Passive),
     _shouldBeVisible(true),
-    _passiveIcon(QIcon::fromTheme("quassel-inactive", QIcon(":/icons/quassel-inactive.png"))),
-    _activeIcon(QIcon::fromTheme("quassel", QIcon(":/icons/quassel.png"))),
-    _needsAttentionIcon(QIcon::fromTheme("quassel-message", QIcon(":/icons/quassel-message.png"))),
+    // XXX: re-use kuassel icon with a state?
+    _passiveIcon(KIcon("kuassel-inactive")),
+    _activeIcon(KIcon("kuassel")),
+    _needsAttentionIcon(KIcon("message")),
     _trayMenu(0),
     _associatedWidget(parent)
 {
@@ -66,9 +67,9 @@ void SystemTray::init()
 
     KMenu *kmenu;
     _trayMenu = kmenu = new KMenu();
-    kmenu->addTitle(_activeIcon, "Quassel IRC");
+    kmenu->addTitle(_activeIcon, "Kuassel");
 
-    _trayMenu->setTitle("Quassel IRC");
+    _trayMenu->setTitle("Kuassel");
 
 
     _trayMenu->addAction(coll->action("ConnectCore"));

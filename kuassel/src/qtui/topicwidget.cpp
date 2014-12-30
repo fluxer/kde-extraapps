@@ -18,10 +18,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <KIcon>
+
+
 #include "topicwidget.h"
-
-#include <QIcon>
-
 #include "client.h"
 #include "networkmodel.h"
 #include "uisettings.h"
@@ -32,7 +32,7 @@ TopicWidget::TopicWidget(QWidget *parent)
     : AbstractItemView(parent)
 {
     ui.setupUi(this);
-    ui.topicEditButton->setIcon(QIcon::fromTheme("edit-rename"));
+    ui.topicEditButton->setIcon(KIcon("edit-rename"));
     ui.topicLineEdit->setLineWrapEnabled(true);
     ui.topicLineEdit->installEventFilter(this);
 

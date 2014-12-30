@@ -18,10 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <KIcon>
+
 #include "coreconnectionstatuswidget.h"
-
-#include <QIcon>
-
 #include "client.h"
 #include "signalproxy.h"
 
@@ -80,11 +79,11 @@ void CoreConnectionStatusWidget::connectionStateChanged(CoreConnection::Connecti
 {
     if (state >= CoreConnection::Connected) {
         if (coreConnection()->isEncrypted()) {
-            ui.sslLabel->setPixmap(QIcon::fromTheme("security-high").pixmap(16));
+            ui.sslLabel->setPixmap(KIcon("security-high").pixmap(16));
             ui.sslLabel->setToolTip(tr("The connection to your core is encrypted with SSL."));
         }
         else {
-            ui.sslLabel->setPixmap(QIcon::fromTheme("security-low").pixmap(16));
+            ui.sslLabel->setPixmap(KIcon("security-low").pixmap(16));
             ui.sslLabel->setToolTip(tr("The connection to your core is not encrypted."));
         }
         ui.sslLabel->show();

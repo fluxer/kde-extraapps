@@ -18,10 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QVariant>
+
+#include <KIcon>
+
 #include "chatmonitorsettingspage.h"
-
-#include <QIcon>
-
 #include "client.h"
 #include "networkmodel.h"
 #include "bufferviewconfig.h"
@@ -30,15 +31,13 @@
 #include "bufferviewfilter.h"
 #include "chatviewsettings.h"
 
-#include <QVariant>
-
 ChatMonitorSettingsPage::ChatMonitorSettingsPage(QWidget *parent)
     : SettingsPage(tr("Interface"), tr("Chat Monitor"), parent)
 {
     ui.setupUi(this);
 
-    ui.activateBuffer->setIcon(QIcon::fromTheme("go-next"));
-    ui.deactivateBuffer->setIcon(QIcon::fromTheme("go-previous"));
+    ui.activateBuffer->setIcon(KIcon("go-next"));
+    ui.deactivateBuffer->setIcon(KIcon("go-previous"));
 
     // setup available buffers config (for the bufferview on the left)
     _configAvailable = new BufferViewConfig(-667, this);

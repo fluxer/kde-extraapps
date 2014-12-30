@@ -77,9 +77,3 @@ else()
     message(WARNING "Unknown or unsupported compiler. Make sure to enable C++11 support. Good luck.")
 endif()
 
-# Mac build stuff
-if (APPLE AND DEPLOY)
-    set(CMAKE_OSX_ARCHITECTURES "x86_64")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmacosx-version-min=10.8")
-    set(CMAKE_OSX_SYSROOT "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk")
-endif()

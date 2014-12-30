@@ -57,7 +57,7 @@ void TitleSetter::changeWindowTitle(const QModelIndex &index)
         title = index.data().toString();
     else
         title = QString("%1 (%2)").arg(index.data().toString(), Client::networkModel()->networkName(id));
-    QString newTitle = QString("%1 - %2").arg("Quassel IRC").arg(title);
+    QString newTitle = QString("%1 - %2").arg("Kuassel").arg(title);
 
     _mainWin->setWindowTitle(newTitle);
     _mainWin->setWindowIconText(newTitle);

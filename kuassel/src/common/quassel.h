@@ -41,22 +41,9 @@ public:
     };
 
     struct BuildInfo {
-        QString fancyVersionString; // clickable rev
-        QString plainVersionString; // no <a> tag
-
         QString baseVersion;
-        QString generatedVersion;
-        QString commitHash;
-        uint commitDate;
-        QString buildDate;
-
-        uint protocolVersion; // deprecated
-
         QString applicationName;
-        QString coreApplicationName;
-        QString clientApplicationName;
-        QString organizationName;
-        QString organizationDomain;
+        QString plainVersionString; // no <a> tag
     };
 
     //! A list of features that are optional in core and/or client, but need runtime checking
@@ -144,11 +131,9 @@ protected:
 
     inline void setRunMode(RunMode mode);
     inline void setDataDirPaths(const QStringList &paths);
-    QStringList findDataDirPaths() const;
     inline void disableCrashhandler();
 
 private:
-    void setupEnvironment();
     void registerMetaTypes();
 
     static void handleSignal(int signal);

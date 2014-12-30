@@ -18,12 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "identitiessettingspage.h"
-
-#include <QIcon>
 #include <QInputDialog>
 #include <QMessageBox>
 
+#include <KIcon>
+
+#include "identitiessettingspage.h"
 #include "client.h"
 #include "signalproxy.h"
 
@@ -32,9 +32,9 @@ IdentitiesSettingsPage::IdentitiesSettingsPage(QWidget *parent)
     _editSsl(false)
 {
     ui.setupUi(this);
-    ui.renameIdentity->setIcon(QIcon::fromTheme("edit-rename"));
-    ui.addIdentity->setIcon(QIcon::fromTheme("list-add-user"));
-    ui.deleteIdentity->setIcon(QIcon::fromTheme("list-remove-user"));
+    ui.renameIdentity->setIcon(KIcon("edit-rename"));
+    ui.addIdentity->setIcon(KIcon("list-add-user"));
+    ui.deleteIdentity->setIcon(KIcon("list-remove-user"));
 
     coreConnectionStateChanged(Client::isConnected()); // need a core connection!
     connect(Client::instance(), SIGNAL(coreConnectionStateChanged(bool)), this, SLOT(coreConnectionStateChanged(bool)));
@@ -417,7 +417,7 @@ SaveIdentitiesDlg::SaveIdentitiesDlg(const QList<CertIdentity *> &toCreate, cons
     : QDialog(parent)
 {
     ui.setupUi(this);
-    ui.abort->setIcon(QIcon::fromTheme("dialog-cancel"));
+    ui.abort->setIcon(KIcon("dialog-cancel"));
 
     numevents = toCreate.count() + toUpdate.count() + toRemove.count();
     rcvevents = 0;

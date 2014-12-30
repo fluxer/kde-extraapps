@@ -21,9 +21,10 @@
 #include "chatmonitorview.h"
 
 #include <QAction>
-#include <QIcon>
 #include <QMenu>
 #include <QContextMenuEvent>
+
+#include <KIcon>
 
 #include "chatmonitorfilter.h"
 #include "chatlinemodel.h"
@@ -70,7 +71,7 @@ void ChatMonitorView::addActionsToMenu(QMenu *menu, const QPointF &pos)
     }
 
     menu->addSeparator();
-    menu->addAction(QIcon::fromTheme("configure"), tr("Configure..."), this, SLOT(showSettingsPage()));
+    menu->addAction(KIcon("configure"), tr("Configure..."), this, SLOT(showSettingsPage()));
 }
 
 

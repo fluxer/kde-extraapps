@@ -20,15 +20,16 @@
 
 #include "clearablelineedit.h"
 
-#include <QIcon>
 #include <QToolButton>
 #include <QStyle>
+
+#include <KIcon>
 
 ClearableLineEdit::ClearableLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
     clearButton = new QToolButton(this);
-    clearButton->setIcon(QIcon::fromTheme("edit-clear-locationbar-rtl", QIcon::fromTheme("edit-clear")));
+    clearButton->setIcon(KIcon("edit-clear-locationbar-rtl"));
 #ifndef Q_WS_QWS
     clearButton->setCursor(Qt::ArrowCursor);
 #endif

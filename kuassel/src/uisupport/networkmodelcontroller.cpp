@@ -526,7 +526,7 @@ void NetworkModelController::handleNickAction(ActionType type, QAction *action)
 
 NetworkModelController::JoinDlg::JoinDlg(const QModelIndex &index, QWidget *parent) : QDialog(parent)
 {
-    setWindowIcon(QIcon::fromTheme("irc-join-channel"));
+    setWindowIcon(KIcon("irc-join-channel"));
     setWindowTitle(tr("Join Channel"));
 
     QGridLayout *layout = new QGridLayout(this);

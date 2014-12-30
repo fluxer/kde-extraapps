@@ -1,7 +1,6 @@
 # Builds the qtui module
 
 set(SOURCES
-    aboutdlg.cpp
     awaylogfilter.cpp
     awaylogview.cpp
     bufferwidget.cpp
@@ -49,11 +48,9 @@ set(SOURCES
     titlesetter.cpp
     topicwidget.cpp
     verticaldock.cpp
-    webpreviewitem.cpp
 )
 
 set(FORMS
-    aboutdlg.ui
     bufferviewwidget.ui
     bufferwidget.ui
     channellistdlg.ui
@@ -81,18 +78,10 @@ set(FORMS
 set(LIBS )
 set(QT_MODULES )
 
-add_definitions(-DHAVE_KDE ${KDE4_DEFINITIONS})
+add_definitions(${KDE4_DEFINITIONS})
 include_directories(${KDE4_INCLUDES})
 list(APPEND SOURCES knotificationbackend.cpp)
 list(APPEND LIBS ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBRARY} ${KDE4_KNOTIFYCONFIG_LIBRARY})
-
-if (PHONON_FOUND OR Phonon4Qt5_FOUND)
-    add_definitions(-DHAVE_PHONON)
-    include_directories(${PHONON_INCLUDES})
-    set(SOURCES ${SOURCES} phononnotificationbackend.cpp)
-    set(FORMS ${FORMS}     phononnotificationconfigwidget.ui)
-    list(APPEND LIBS ${PHONON_LIBS})  # PHONON_LIBRARIES only exists in config mode, it's not set by the legacy FindPhonon.cmake
-endif()
 
 if (QT_QTDBUS_FOUND)
     add_definitions(-DHAVE_DBUS)
@@ -103,15 +92,10 @@ if (QT_QTDBUS_FOUND)
         list(APPEND LIBS dbusmenu-qt)
     endif()
 
-    list(APPEND SOURCES statusnotifieritem.cpp statusnotifieritemdbus.cpp dockmanagernotificationbackend.cpp)
+    list(APPEND SOURCES statusnotifieritem.cpp statusnotifieritemdbus.cpp)
     qt4_add_dbus_interface(SOURCES ../../interfaces/org.kde.StatusNotifierWatcher.xml statusnotifierwatcher)
     qt4_add_dbus_interface(SOURCES ../../interfaces/org.freedesktop.Notifications.xml notificationsclient)
     qt4_add_dbus_adaptor  (SOURCES ../../interfaces/org.kde.StatusNotifierItem.xml statusnotifieritemdbus.h StatusNotifierItemDBus)
-endif()
-
-if (QT_QTWEBKIT_FOUND)
-    add_definitions(-DHAVE_WEBKIT)
-    list(APPEND QT_MODULES WebKit)
 endif()
 
 if(HAVE_SSL)

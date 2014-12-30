@@ -21,7 +21,7 @@
 #ifndef QTUIAPPLICATION_H_
 #define QTUIAPPLICATION_H_
 
-#  include <KApplication>
+#include <KUniqueApplication>
 
 #include <QSessionManager>
 
@@ -30,7 +30,7 @@
 
 class QtUi;
 
-class QtUiApplication : public KApplication, public Quassel
+class QtUiApplication : public KUniqueApplication, public Quassel
 {
 
     Q_OBJECT

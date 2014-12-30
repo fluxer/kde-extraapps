@@ -452,10 +452,9 @@ bool Core::startListening()
                 case QAbstractSocket::IPv6Protocol:
                     if (_v6server.listen(addr, port)) {
                         quInfo() << qPrintable(
-                            tr("Listening for GUI clients on IPv6 %1 port %2 using protocol version %3")
+                            tr("Listening for GUI clients on IPv6 %1 port %2")
                             .arg(addr.toString())
                             .arg(_v6server.serverPort())
-                            .arg(Quassel::buildInfo().protocolVersion)
                             );
                         success = true;
                     }
@@ -469,10 +468,9 @@ bool Core::startListening()
                 case QAbstractSocket::IPv4Protocol:
                     if (_server.listen(addr, port)) {
                         quInfo() << qPrintable(
-                            tr("Listening for GUI clients on IPv4 %1 port %2 using protocol version %3")
+                            tr("Listening for GUI clients on IPv4 %1 port %2")
                             .arg(addr.toString())
                             .arg(_server.serverPort())
-                            .arg(Quassel::buildInfo().protocolVersion)
                             );
                         success = true;
                     }

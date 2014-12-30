@@ -18,10 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <KIcon>
+
 #include "coreaccountsettingspage.h"
-
-#include <QIcon>
-
 #include "client.h"
 #include "clientsettings.h"
 #include "coreaccountmodel.h"
@@ -34,9 +33,9 @@ CoreAccountSettingsPage::CoreAccountSettingsPage(QWidget *parent)
 {
     ui.setupUi(this);
     initAutoWidgets();
-    ui.addAccountButton->setIcon(QIcon::fromTheme("list-add"));
-    ui.editAccountButton->setIcon(QIcon::fromTheme("document-edit"));
-    ui.deleteAccountButton->setIcon(QIcon::fromTheme("edit-delete"));
+    ui.addAccountButton->setIcon(KIcon("list-add"));
+    ui.editAccountButton->setIcon(KIcon("document-edit"));
+    ui.deleteAccountButton->setIcon(KIcon("edit-delete"));
 
     _model = new CoreAccountModel(Client::coreAccountModel(), this);
     _filteredModel = new FilteredCoreAccountModel(_model, this);

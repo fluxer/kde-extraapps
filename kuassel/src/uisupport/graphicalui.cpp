@@ -148,23 +148,7 @@ bool GraphicalUi::eventFilter(QObject *obj, QEvent *event)
 
 bool GraphicalUi::checkMainWidgetVisibility(bool perform)
 {
-#ifdef Q_OS_WIN
-    // the problem is that we lose focus when the systray icon is activated
-    // and we don't know the former active window
-    // therefore we watch for activation event and use our stopwatch :)
-    if (GetTickCount() - _dwTickCount < 300) {
-        // we were active in the last 300ms -> hide it
-        if (perform)
-            minimizeRestore(false);
-        return false;
-    }
-    else {
-        if (perform)
-            minimizeRestore(true);
-        return true;
-    }
-
-#elif defined(HAVE_KDE) && defined(Q_WS_X11)
+#if defined(Q_WS_X11)
     KWindowInfo info1 = KWindowSystem::windowInfo(mainWidget()->winId(), NET::XAWMState | NET::WMState | NET::WMDesktop);
     // mapped = visible (but possibly obscured)
     bool mapped = (info1.mappingState() == NET::Visible) && !info1.isMinimized();
@@ -284,7 +268,7 @@ void GraphicalUi::activateMainWidget()
 
 void GraphicalUi::hideMainWidget()
 {
-#if defined(HAVE_KDE) && defined(Q_WS_X11)
+#if defined(Q_WS_X11)
     KWindowInfo info = KWindowSystem::windowInfo(mainWidget()->winId(), NET::WMDesktop | NET::WMFrameExtents);
     _onAllDesktops = info.onAllDesktops();
 #endif

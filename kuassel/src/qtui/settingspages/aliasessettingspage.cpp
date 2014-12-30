@@ -18,18 +18,19 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "aliasessettingspage.h"
-
 #include <QHeaderView>
-#include <QIcon>
 #include <QItemSelectionModel>
+
+#include <KIcon>
+
+#include "aliasessettingspage.h"
 
 AliasesSettingsPage::AliasesSettingsPage(QWidget *parent)
     : SettingsPage(tr("IRC"), tr("Aliases"), parent)
 {
     ui.setupUi(this);
-    ui.newAliasButton->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteAliasButton->setIcon(QIcon::fromTheme("edit-delete"));
+    ui.newAliasButton->setIcon(KIcon("list-add"));
+    ui.deleteAliasButton->setIcon(KIcon("edit-delete"));
 
     ui.aliasesView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui.aliasesView->setSelectionMode(QAbstractItemView::SingleSelection);

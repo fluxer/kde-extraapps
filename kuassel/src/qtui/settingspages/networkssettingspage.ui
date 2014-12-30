@@ -360,7 +360,7 @@
             </property>
             <property name="toolTip">
              <string>Specify a list of IRC commands to be executed upon connect.
-Note that Quassel IRC automatically rejoins channels, so /join will rarely be needed here!</string>
+Note that Kuassel automatically rejoins channels, so /join will rarely be needed here!</string>
             </property>
             <property name="lineWrapMode">
              <enum>QTextEdit::NoWrap</enum>

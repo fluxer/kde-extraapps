@@ -18,14 +18,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <KNotification>
-#include <KNotifyConfigWidget>
-#include <QIcon>
 #include <QTextDocument>
 #include <QVBoxLayout>
 
-#include "knotificationbackend.h"
+#include <KNotification>
+#include <KNotifyConfigWidget>
+#include <KIcon>
 
+#include "knotificationbackend.h"
 #include "client.h"
 #include "mainwin.h"
 #include "networkmodel.h"
@@ -60,7 +60,7 @@ void KNotificationBackend::notify(const Notification &n)
 #else
     QString message = QString("<b>&lt;%1&gt;</b> %2").arg(n.sender, n.message.toHtmlEscaped());
 #endif
-    KNotification *notification = KNotification::event(type, message, QIcon::fromTheme("dialog-information").pixmap(48), QtUi::mainWindow(),
+    KNotification *notification = KNotification::event(type, message, KIcon("dialog-information").pixmap(48), QtUi::mainWindow(),
         KNotification::RaiseWidgetOnActivation
         |KNotification::CloseWhenWidgetActivated
         |KNotification::CloseOnTimeout);
@@ -129,7 +129,7 @@ void KNotificationBackend::notificationActivated(uint notificationId)
 
 void KNotificationBackend::updateToolTip()
 {
-    QtUi::mainWindow()->systemTray()->setToolTip("Quassel IRC",
+    QtUi::mainWindow()->systemTray()->setToolTip("Kuassel",
         _notifications.count() ? tr("%n pending highlight(s)", "", _notifications.count()) : QString());
 }
 
@@ -145,7 +145,7 @@ SettingsPage *KNotificationBackend::createConfigWidget() const
 KNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : SettingsPage("Internal", "KNotification", parent)
 {
     _widget = new KNotifyConfigWidget(this);
-    _widget->setApplication("quassel");
+    _widget->setApplication("kuassel");
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(_widget);

@@ -144,7 +144,7 @@ QString Identity::defaultNick()
 
 QString Identity::defaultRealName()
 {
-    QString generalDefault = tr("Quassel IRC User");
+    QString generalDefault = tr("Kuassel User");
 
 #ifdef Q_OS_MAC
     return CFStringToQString(CSCopyUserName(false));

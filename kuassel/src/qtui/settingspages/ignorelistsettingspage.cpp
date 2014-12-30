@@ -18,10 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "ignorelistsettingspage.h"
-
 #include <QHeaderView>
-#include <QIcon>
 #include <QItemSelectionModel>
 #include <QModelIndex>
 #include <QPainter>
@@ -30,14 +27,18 @@
 #include <QEvent>
 #include <QDebug>
 
+#include <KIcon>
+
+#include "ignorelistsettingspage.h"
+
 IgnoreListSettingsPage::IgnoreListSettingsPage(QWidget *parent)
     : SettingsPage(tr("IRC"), tr("Ignore List"), parent)
 {
     ui.setupUi(this);
     _delegate = new IgnoreListDelegate(ui.ignoreListView);
-    ui.newIgnoreRuleButton->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteIgnoreRuleButton->setIcon(QIcon::fromTheme("edit-delete"));
-    ui.editIgnoreRuleButton->setIcon(QIcon::fromTheme("configure"));
+    ui.newIgnoreRuleButton->setIcon(KIcon("list-add"));
+    ui.deleteIgnoreRuleButton->setIcon(KIcon("edit-delete"));
+    ui.editIgnoreRuleButton->setIcon(KIcon("configure"));
 
     ui.ignoreListView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui.ignoreListView->setSelectionMode(QAbstractItemView::SingleSelection);

@@ -798,7 +798,7 @@ void ContentsChatItem::addActionsToMenu(QMenu *menu, const QPointF &pos)
         switch (click.type()) {
         case Clickable::Url:
             privateData()->activeClickable = click;
-            menu->addAction(QIcon::fromTheme("edit-copy"), tr("Copy Link Address"),
+            menu->addAction(KIcon("edit-copy"), tr("Copy Link Address"),
                 &_actionProxy, SLOT(copyLinkToClipboard()))->setData(QVariant::fromValue<void *>(this));
             break;
         case Clickable::Channel:
@@ -836,32 +836,12 @@ void ContentsChatItem::copyLinkToClipboard()
 
 void ContentsChatItem::showWebPreview(const Clickable &click)
 {
-#ifndef HAVE_WEBKIT
     Q_UNUSED(click);
-#else
-    QTextLine line = layout()->lineForTextPosition(click.start());
-    qreal x = line.cursorToX(click.start());
-    qreal width = line.cursorToX(click.start() + click.length()) - x;
-    qreal height = line.height();
-    qreal y = height * line.lineNumber();
-
-    QPointF topLeft = mapToScene(pos()) + QPointF(x, y);
-    QRectF urlRect = QRectF(topLeft.x(), topLeft.y(), width, height);
-
-    QString urlstr = data(ChatLineModel::DisplayRole).toString().mid(click.start(), click.length());
-    if (!urlstr.contains("://"))
-        urlstr = "http://" + urlstr;
-    QUrl url = QUrl::fromEncoded(urlstr.toUtf8(), QUrl::TolerantMode);
-    chatScene()->loadWebPreview(this, url, urlRect);
-#endif
 }
 
 
 void ContentsChatItem::clearWebPreview()
 {
-#ifdef HAVE_WEBKIT
-    chatScene()->clearWebPreview(this);
-#endif
 }
 
 

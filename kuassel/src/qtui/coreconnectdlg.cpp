@@ -19,11 +19,11 @@
  ***************************************************************************/
 
 #include <QDialogButtonBox>
-#include <QIcon>
 #include <QVBoxLayout>
 
-#include "coreconnectdlg.h"
+#include <KIcon>
 
+#include "coreconnectdlg.h"
 #include "clientsettings.h"
 #include "coreaccountsettingspage.h"
 
@@ -39,7 +39,7 @@ CoreConnectDlg::CoreConnectDlg(QWidget *parent) : QDialog(parent)
         _settingsPage->setSelectedAccount(lastAccount);
 
     setWindowTitle(tr("Connect to Core"));
-    setWindowIcon(QIcon::fromTheme("network-disconnect"));
+    setWindowIcon(KIcon("network-disconnect"));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(_settingsPage);

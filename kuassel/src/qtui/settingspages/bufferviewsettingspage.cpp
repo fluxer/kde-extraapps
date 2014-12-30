@@ -18,11 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "bufferviewsettingspage.h"
-
-#include <QIcon>
 #include <QMessageBox>
 
+#include <KIcon>
+
+#include "bufferviewsettingspage.h"
 #include "client.h"
 #include "network.h"
 #include "bufferviewconfig.h"
@@ -43,9 +43,9 @@ BufferViewSettingsPage::BufferViewSettingsPage(QWidget *parent)
     if (!(Client::coreFeatures() & Quassel::HideInactiveNetworks))
         ui.hideInactiveNetworks->hide();
 
-    ui.renameBufferView->setIcon(QIcon::fromTheme("edit-rename"));
-    ui.addBufferView->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteBufferView->setIcon(QIcon::fromTheme("edit-delete"));
+    ui.renameBufferView->setIcon(KIcon("edit-rename"));
+    ui.addBufferView->setIcon(KIcon("list-add"));
+    ui.deleteBufferView->setIcon(KIcon("edit-delete"));
 
     reset();
 

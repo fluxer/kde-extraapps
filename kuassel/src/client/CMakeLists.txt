@@ -39,7 +39,7 @@ set(SOURCES
 )
 
 include_directories(${KDE4_INCLUDES})
-add_definitions(-DHAVE_KDE ${KDE4_DEFINITIONS})
+add_definitions(${KDE4_DEFINITIONS})
 
 qt4_add_resources(SOURCES ${CLIENT_RCS})
 

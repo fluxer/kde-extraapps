@@ -32,9 +32,6 @@
 
 #  include <KMenuBar>
 
-#ifdef HAVE_WEBKIT
-#  include <QWebView>
-#endif
 
 #include "chatitem.h"
 #include "chatline.h"
@@ -51,7 +48,6 @@
 #include "qtui.h"
 #include "qtuistyle.h"
 #include "chatviewsettings.h"
-#include "webpreviewitem.h"
 
 const qreal minContentsWidth = 200;
 
@@ -118,10 +114,6 @@ ChatScene::ChatScene(QAbstractItemModel *model, const QString &idString, qreal w
         this, SLOT(rowsRemoved()));
     connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)), SLOT(dataChanged(QModelIndex, QModelIndex)));
 
-#ifdef HAVE_WEBKIT
-    webPreview.timer.setSingleShot(true);
-    connect(&webPreview.timer, SIGNAL(timeout()), this, SLOT(webPreviewNextStep()));
-#endif
     _showWebPreview = defaultSettings.showWebPreview();
     defaultSettings.notify("ShowWebPreview", this, SLOT(showWebPreviewChanged()));
 
@@ -819,7 +811,7 @@ void ChatScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     // If we have text selected, insert the Copy Selection as first item
     if (isPosOverSelection(pos)) {
         QAction *sep = menu.insertSeparator(menu.actions().first());
-        QAction *act = new Action(QIcon::fromTheme("edit-copy"), tr("Copy Selection"), &menu, this,
+        QAction *act = new Action(KIcon("edit-copy"), tr("Copy Selection"), &menu, this,
             SLOT(selectionToClipboard()), QKeySequence::Copy);
         menu.insertAction(sep, act);
 
@@ -828,7 +820,7 @@ void ChatScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
             searchSelectionText = searchSelectionText.left(_webSearchSelectionTextMaxVisible).append(QString::fromUtf8("…"));
         searchSelectionText = tr("Search '%1'").arg(searchSelectionText);
 
-        menu.addAction(QIcon::fromTheme("edit-find"), searchSelectionText, this, SLOT(webSearchOnSelection()));
+        menu.addAction(KIcon("edit-find"), searchSelectionText, this, SLOT(webSearchOnSelection()));
     }
 
     if (QtUi::mainWindow()->menuBar()->isHidden())
@@ -1168,130 +1160,6 @@ void ChatScene::updateSceneRect(const QRectF &rect)
 // ========================================
 //  Webkit Only stuff
 // ========================================
-#ifdef HAVE_WEBKIT
-void ChatScene::loadWebPreview(ChatItem *parentItem, const QUrl &url, const QRectF &urlRect)
-{
-    if (!_showWebPreview)
-        return;
-
-    if (webPreview.urlRect != urlRect)
-        webPreview.urlRect = urlRect;
-
-    if (webPreview.parentItem != parentItem)
-        webPreview.parentItem = parentItem;
-
-    if (webPreview.url != url) {
-        webPreview.url = url;
-        // prepare to load a different URL
-        if (webPreview.previewItem) {
-            if (webPreview.previewItem->scene())
-                removeItem(webPreview.previewItem);
-            delete webPreview.previewItem;
-            webPreview.previewItem = 0;
-        }
-        webPreview.previewState = WebPreview::NoPreview;
-    }
-
-    if (webPreview.url.isEmpty())
-        return;
-
-    // qDebug() << Q_FUNC_INFO << webPreview.previewState;
-    switch (webPreview.previewState) {
-    case WebPreview::NoPreview:
-        webPreview.previewState = WebPreview::NewPreview;
-        webPreview.timer.start(500);
-        break;
-    case WebPreview::NewPreview:
-    case WebPreview::DelayPreview:
-    case WebPreview::ShowPreview:
-        // we're already waiting for the next step or showing the preview
-        break;
-    case WebPreview::HidePreview:
-        // we still have a valid preview
-        webPreview.previewState = WebPreview::DelayPreview;
-        webPreview.timer.start(1000);
-        break;
-    }
-    // qDebug() << "  new State:" << webPreview.previewState << webPreview.timer.isActive();
-}
-
-
-void ChatScene::webPreviewNextStep()
-{
-    // qDebug() << Q_FUNC_INFO << webPreview.previewState;
-    switch (webPreview.previewState) {
-    case WebPreview::NoPreview:
-        break;
-    case WebPreview::NewPreview:
-        Q_ASSERT(!webPreview.previewItem);
-        webPreview.previewItem = new WebPreviewItem(webPreview.url);
-        webPreview.previewState = WebPreview::DelayPreview;
-        webPreview.timer.start(1000);
-        break;
-    case WebPreview::DelayPreview:
-        Q_ASSERT(webPreview.previewItem);
-        // calc position and show
-        {
-            qreal previewY = webPreview.urlRect.bottom();
-            qreal previewX = webPreview.urlRect.x();
-            if (previewY + webPreview.previewItem->boundingRect().height() > sceneRect().bottom())
-                previewY = webPreview.urlRect.y() - webPreview.previewItem->boundingRect().height();
-
-            if (previewX + webPreview.previewItem->boundingRect().width() > sceneRect().width())
-                previewX = sceneRect().right() - webPreview.previewItem->boundingRect().width();
-
-            webPreview.previewItem->setPos(previewX, previewY);
-        }
-        addItem(webPreview.previewItem);
-        webPreview.previewState = WebPreview::ShowPreview;
-        break;
-    case WebPreview::ShowPreview:
-        qWarning() << "ChatScene::webPreviewNextStep() called while in ShowPreview Step!";
-        qWarning() << "removing preview";
-        if (webPreview.previewItem && webPreview.previewItem->scene())
-            removeItem(webPreview.previewItem);
-    // Fall through to deletion!
-    case WebPreview::HidePreview:
-        if (webPreview.previewItem) {
-            delete webPreview.previewItem;
-            webPreview.previewItem = 0;
-        }
-        webPreview.parentItem = 0;
-        webPreview.url = QUrl();
-        webPreview.urlRect = QRectF();
-        webPreview.previewState = WebPreview::NoPreview;
-    }
-    // qDebug() << "  new State:" << webPreview.previewState << webPreview.timer.isActive();
-}
-
-
-void ChatScene::clearWebPreview(ChatItem *parentItem)
-{
-    // qDebug() << Q_FUNC_INFO << webPreview.previewState;
-    switch (webPreview.previewState) {
-    case WebPreview::NewPreview:
-        webPreview.previewState = WebPreview::NoPreview; // we haven't loaded anything yet
-        break;
-    case WebPreview::ShowPreview:
-        if (parentItem == 0 || webPreview.parentItem == parentItem) {
-            if (webPreview.previewItem && webPreview.previewItem->scene())
-                removeItem(webPreview.previewItem);
-        }
-    // fall through into to set hidden state
-    case WebPreview::DelayPreview:
-        // we're just loading, so haven't shown the preview yet.
-        webPreview.previewState = WebPreview::HidePreview;
-        webPreview.timer.start(5000);
-        break;
-    case WebPreview::NoPreview:
-    case WebPreview::HidePreview:
-        break;
-    }
-    // qDebug() << "  new State:" << webPreview.previewState << webPreview.timer.isActive();
-}
-
-
-#endif
 
 // ========================================
 //  end of webkit only

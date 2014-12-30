@@ -21,11 +21,11 @@
 #include <QApplication>
 #include <QCheckBox>
 #include <QHBoxLayout>
-#include <QIcon>
 #include <QSpinBox>
 
-#include "taskbarnotificationbackend.h"
+#include <KIcon>
 
+#include "taskbarnotificationbackend.h"
 #include "clientsettings.h"
 #include "mainwin.h"
 #include "qtui.h"
@@ -84,7 +84,7 @@ TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : Settin
 #else
     layout->addWidget(enabledBox = new QCheckBox(tr("Mark taskbar entry, timeout:"), this));
 #endif
-    enabledBox->setIcon(QIcon::fromTheme("flag-blue"));
+    enabledBox->setIcon(KIcon("flag-blue"));
     enabledBox->setEnabled(true);
 
     timeoutBox = new QSpinBox(this);

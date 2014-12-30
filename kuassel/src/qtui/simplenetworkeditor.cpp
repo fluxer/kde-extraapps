@@ -18,10 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <KIcon>
+
 #include "simplenetworkeditor.h"
-
-#include <QIcon>
-
 #include "networkssettingspage.h"
 
 SimpleNetworkEditor::SimpleNetworkEditor(QWidget *parent)
@@ -29,11 +28,11 @@ SimpleNetworkEditor::SimpleNetworkEditor(QWidget *parent)
 {
     ui.setupUi(this);
 
-    ui.addServer->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteServer->setIcon(QIcon::fromTheme("edit-delete"));
-    ui.editServer->setIcon(QIcon::fromTheme("configure"));
-    ui.upServer->setIcon(QIcon::fromTheme("go-up"));
-    ui.downServer->setIcon(QIcon::fromTheme("go-down"));
+    ui.addServer->setIcon(KIcon("list-add"));
+    ui.deleteServer->setIcon(KIcon("edit-delete"));
+    ui.editServer->setIcon(KIcon("configure"));
+    ui.upServer->setIcon(KIcon("go-up"));
+    ui.downServer->setIcon(KIcon("go-down"));
 
     connect(ui.networkNameEdit, SIGNAL(textEdited(const QString &)), this, SIGNAL(widgetHasChanged()));
     connect(ui.channelList, SIGNAL(textChanged()), this, SIGNAL(widgetHasChanged()));
@@ -65,7 +64,7 @@ void SimpleNetworkEditor::displayNetworkInfo(const NetworkInfo &networkInfo)
     foreach(Network::Server server, _networkInfo.serverList) {
         QListWidgetItem *item = new QListWidgetItem(QString("%1:%2").arg(server.host).arg(server.port));
         if (server.useSsl)
-            item->setIcon(QIcon::fromTheme("document-encrypt"));
+            item->setIcon(KIcon("document-encrypt"));
         ui.serverList->addItem(item);
     }
 

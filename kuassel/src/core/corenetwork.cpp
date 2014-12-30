@@ -478,7 +478,7 @@ void CoreNetwork::socketInitialized()
     }
     QString nick;
     if (identity->nicks().isEmpty()) {
-        nick = "quassel";
+        nick = "kuassel";
         qWarning() << "CoreNetwork::socketInitialized(): no nicks supplied for identity Id" << identity->id();
     }
     else {

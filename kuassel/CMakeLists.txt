@@ -32,7 +32,6 @@ include(FeatureSummary)
 
 # ... and our own stuff
 include(QuasselCompileSettings)
-include(QuasselMacros)
 
 # Setting COMPILE_DEFINITIONS_<CONFIG> is deprecated since CMake 3.0 in favor of generator expressions.
 # These have existed since CMake 2.8.10; until we depend on that, we have to explicitly enable the old policy.
@@ -42,9 +41,6 @@ endif()
 
 # Options and variables that can be set on the command line
 #####################################################################
-
-# For this, the feature info is added after we know if QtWebkit is installed
-option(WITH_WEBKIT "WebKit support (for link previews)" ON)
 
 # Handle with care
 set(QT_PATH "" CACHE PATH "Path to a Qt4 installation to use instead of the system Qt (e.g. for static builds)")
@@ -87,11 +83,6 @@ if (QT_QTDBUS_FOUND)
 	PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
     )
 endif()
-
-if (WITH_WEBKIT AND QT_QTWEBKIT_FOUND)
-    set(HAVE_WEBKIT true)
-endif()
-add_feature_info("WITH_WEBKIT and QtWebKit module" HAVE_WEBKIT "Support showing previews for URLs in chat")
 
 find_package(KDE4 4.4 QUIET REQUIRED)
 set_package_properties(KDE4 PROPERTIES TYPE REQUIRED
@@ -144,16 +135,13 @@ set_package_properties(ExecInfo PROPERTIES TYPE OPTIONAL
 # Various checks
 #####################################################################
 
-add_definitions(-DHAVE_KDE ${KDE4_DEFINITIONS})
+add_definitions(${KDE4_DEFINITIONS})
 
 # Check for SSL support in Qt
 # As there's no easy way to get Qt's configuration in particular for Qt5, let's just compile
 # a small test program checking the defines. This works for both Qt4 and Qt5.
 cmake_push_check_state(RESET)
-if (Qt5_POSITION_INDEPENDENT_CODE)
-    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-endif()
-set(CMAKE_REQUIRED_INCLUDES ${QT_INCLUDES} ${Qt5Core_INCLUDE_DIRS})
+set(CMAKE_REQUIRED_INCLUDES ${QT_INCLUDES})
 check_cxx_source_compiles("
     #include \"qglobal.h\"
     #if defined QT_NO_OPENSSL || defined QT_NO_SSL
@@ -227,7 +215,6 @@ set(CLIENT_DEPS )
 # Add needed subdirs - the order is important, since src needs some vars set by other dirs
 add_subdirectory(data)
 add_subdirectory(pics)
-add_subdirectory(po)
 
 # Set up and display feature summary
 #####################################################################

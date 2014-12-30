@@ -18,9 +18,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QIcon>
 #include <QMessageBox>
 #include <QPushButton>
+
+#include <KIcon>
 
 #include "settingspagedlg.h"
 
@@ -36,7 +37,7 @@ SettingsPageDlg::SettingsPageDlg(SettingsPage *page, QWidget *parent)
 
     ui.pageTitle->setText(page->title());
     setWindowTitle(tr("Configure %1").arg(page->title()));
-    setWindowIcon(QIcon::fromTheme("configure"));
+    setWindowIcon(KIcon("configure"));
 
     // make the scrollarea behave sanely
     ui.settingsFrame->setWidgetResizable(true);

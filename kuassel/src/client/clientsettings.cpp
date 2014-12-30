@@ -30,7 +30,7 @@
 #include "client.h"
 #include "quassel.h"
 
-ClientSettings::ClientSettings(QString g) : Settings(g, Quassel::buildInfo().clientApplicationName)
+ClientSettings::ClientSettings(QString g) : Settings(g, Quassel::buildInfo().applicationName)
 {
 }
 

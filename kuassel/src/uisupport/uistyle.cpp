@@ -21,6 +21,8 @@
 #include <QApplication>
 #include <QIcon>
 
+#include <KIcon>
+
 #include "buffersettings.h"
 #include "qssparser.h"
 #include "quassel.h"
@@ -33,13 +35,13 @@ QString UiStyle::_timestampFormatString;
 
 UiStyle::UiStyle(QObject *parent)
     : QObject(parent),
-    _channelJoinedIcon(QIcon::fromTheme("irc-channel-joined", QIcon(":/icons/irc-channel-joined.png"))),
-    _channelPartedIcon(QIcon::fromTheme("irc-channel-parted", QIcon(":/icons/irc-channel-parted.png"))),
-    _userOfflineIcon(QIcon::fromTheme("im-user-offline", QIcon::fromTheme("user-offline", QIcon(":/icons/im-user-offline.png")))),
-    _userOnlineIcon(QIcon::fromTheme("im-user", QIcon::fromTheme("user-available", QIcon(":/icons/im-user.png")))), // im-user-* are non-standard oxygen extensions
-    _userAwayIcon(QIcon::fromTheme("im-user-away", QIcon::fromTheme("user-away", QIcon(":/icons/im-user-away.png")))),
-    _categoryOpIcon(QIcon::fromTheme("irc-operator")),
-    _categoryVoiceIcon(QIcon::fromTheme("irc-voice")),
+    _channelJoinedIcon(KIcon("irc-channel-joined")),
+    _channelPartedIcon(KIcon("irc-channel-parted")),
+    _userOfflineIcon(KIcon("im-user-offline")), // "user-offline"
+    _userOnlineIcon(KIcon("im-user")), // "user-available"
+    _userAwayIcon(KIcon("im-user-away")), // "user-away"
+    _categoryOpIcon(KIcon("irc-operator")),
+    _categoryVoiceIcon(KIcon("irc-voice")),
     _opIconLimit(UserCategoryItem::categoryFromModes("o")),
     _voiceIconLimit(UserCategoryItem::categoryFromModes("v"))
 {

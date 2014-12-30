@@ -26,21 +26,21 @@
 #include <QStatusBar>
 #include <QToolBar>
 
-#  include <KAction>
-#  include <KActionCollection>
-#  include <KHelpMenu>
-#  include <KMenuBar>
-#  include <KShortcutsDialog>
-#  include <KStatusBar>
-#  include <KToggleFullScreenAction>
-#  include <KToolBar>
-#  include <KWindowSystem>
+#include <KAction>
+#include <KActionCollection>
+#include <KHelpMenu>
+#include <KMenuBar>
+#include <KShortcutsDialog>
+#include <KStatusBar>
+#include <KToggleFullScreenAction>
+#include <KToolBar>
+#include <KWindowSystem>
+#include <KAboutApplicationDialog>
 
 #ifdef Q_WS_X11
 #  include <QX11Info>
 #endif
 
-#include "aboutdlg.h"
 #include "awaylogfilter.h"
 #include "awaylogview.h"
 #include "action.h"
@@ -90,8 +90,7 @@
 #include "toolbaractionprovider.h"
 #include "topicwidget.h"
 #include "verticaldock.h"
-
-#  include "knotificationbackend.h"
+#include "knotificationbackend.h"
 
 #ifdef HAVE_SSL
 #  include "sslinfodlg.h"
@@ -99,10 +98,6 @@
 
 #ifdef HAVE_INDICATEQT
   #include "indicatornotificationbackend.h"
-#endif
-
-#ifdef HAVE_DBUS
-  #include "dockmanagernotificationbackend.h"
 #endif
 
 #include "settingspages/aliasessettingspage.h"
@@ -144,9 +139,9 @@ MainWin::MainWin(QWidget *parent)
 
     QApplication::setQuitOnLastWindowClosed(false);
 
-    setWindowTitle("Quassel IRC");
-    setWindowIconText("Quassel IRC");
-    updateIcon();
+    setWindowTitle("Kuassel IRC");
+    setWindowIconText("Kuassel IRC");
+    qApp->setWindowIcon(KIcon("kuassel"));
 }
 
 
@@ -196,10 +191,6 @@ void MainWin::init()
     QtUi::registerNotificationBackend(new IndicatorNotificationBackend(this));
 #endif
 
-#ifdef HAVE_DBUS
-    QtUi::registerNotificationBackend(new DockManagerNotificationBackend(this));
-#endif
-
     // we assume that at this point, all configurable actions are defined!
     QtUi::loadShortcuts();
 
@@ -221,6 +212,12 @@ void MainWin::init()
         // No autoconnect selected (or no accounts)
         showCoreConnectionDlg();
     }
+
+    if (Quassel::isOptionSet("url")) {
+        // FIXME: connect to channel upon request from external KDE application
+        qWarning() << "non-interactive connection not yet implemented:" << Quassel::optionValue("url");
+    }
+
 }
 
 
@@ -275,33 +272,20 @@ void MainWin::restoreStateFromSettings(UiSettings &s)
         show();
 }
 
-
-void MainWin::updateIcon()
-{
-    QIcon icon;
-    if (Client::isConnected())
-        icon = QIcon::fromTheme("quassel", QIcon(":/icons/quassel-128.png"));
-    else
-        icon = QIcon::fromTheme("quassel-inactive", QIcon(":/icons/quassel-128.png"));
-    setWindowIcon(icon);
-    qApp->setWindowIcon(icon);
-}
-
-
 void MainWin::setupActions()
 {
     ActionCollection *coll = QtUi::actionCollection("General", tr("General"));
     // File
-    coll->addAction("ConnectCore", new Action(QIcon::fromTheme("network-connect"), tr("&Connect to Core..."), coll,
+    coll->addAction("ConnectCore", new Action(KIcon("network-connect"), tr("&Connect to Core..."), coll,
             this, SLOT(showCoreConnectionDlg())));
-    coll->addAction("DisconnectCore", new Action(QIcon::fromTheme("network-disconnect"), tr("&Disconnect from Core"), coll,
+    coll->addAction("DisconnectCore", new Action(KIcon("network-disconnect"), tr("&Disconnect from Core"), coll,
             Client::instance(), SLOT(disconnectFromCore())));
-    coll->addAction("CoreInfo", new Action(QIcon::fromTheme("help-about"), tr("Core &Info..."), coll,
+    coll->addAction("CoreInfo", new Action(KIcon("help-about"), tr("Core &Info..."), coll,
             this, SLOT(showCoreInfoDlg())));
-    coll->addAction("ConfigureNetworks", new Action(QIcon::fromTheme("configure"), tr("Configure &Networks..."), coll,
+    coll->addAction("ConfigureNetworks", new Action(KIcon("configure"), tr("Configure &Networks..."), coll,
             this, SLOT(on_actionConfigureNetworks_triggered())));
     // FIXME: use QKeySequence::Quit once we depend on Qt 4.6
-    coll->addAction("Quit", new Action(QIcon::fromTheme("application-exit"), tr("&Quit"), coll,
+    coll->addAction("Quit", new Action(KIcon("application-exit"), tr("&Quit"), coll,
             this, SLOT(quit()), Qt::CTRL + Qt::Key_Q));
 
     // View
@@ -312,11 +296,11 @@ void MainWin::setupActions()
     lockAct->setCheckable(true);
     connect(lockAct, SIGNAL(toggled(bool)), SLOT(on_actionLockLayout_toggled(bool)));
 
-    coll->addAction("ToggleSearchBar", new Action(QIcon::fromTheme("edit-find"), tr("Show &Search Bar"), coll,
+    coll->addAction("ToggleSearchBar", new Action(KIcon("edit-find"), tr("Show &Search Bar"), coll,
             0, 0, QKeySequence::Find))->setCheckable(true);
     coll->addAction("ShowAwayLog", new Action(tr("Show Away Log"), coll,
             this, SLOT(showAwayLog())));
-    coll->addAction("ToggleMenuBar", new Action(QIcon::fromTheme("show-menu"), tr("Show &Menubar"), coll,
+    coll->addAction("ToggleMenuBar", new Action(KIcon("show-menu"), tr("Show &Menubar"), coll,
             0, 0, QKeySequence(Qt::CTRL + Qt::Key_M)))->setCheckable(true);
 
     coll->addAction("ToggleStatusBar", new Action(tr("Show Status &Bar"), coll,
@@ -326,46 +310,37 @@ void MainWin::setupActions()
     coll->addAction("ToggleFullScreen", fullScreenAct);
 
     // Settings
-    QAction *configureShortcutsAct = new Action(QIcon::fromTheme("configure-shortcuts"), tr("Configure &Shortcuts..."), coll,
+    QAction *configureShortcutsAct = new Action(KIcon("configure-shortcuts"), tr("Configure &Shortcuts..."), coll,
         this, SLOT(showShortcutsDlg()));
     configureShortcutsAct->setMenuRole(QAction::NoRole);
     coll->addAction("ConfigureShortcuts", configureShortcutsAct);
 
-  #ifdef Q_OS_MAC
-    QAction *configureQuasselAct = new Action(QIcon::fromTheme("configure"), tr("&Configure Quassel..."), coll,
-        this, SLOT(showSettingsDlg()));
-    configureQuasselAct->setMenuRole(QAction::PreferencesRole);
-  #else
-    QAction *configureQuasselAct = new Action(QIcon::fromTheme("configure"), tr("&Configure Quassel..."), coll,
+    QAction *configureQuasselAct = new Action(KIcon("configure"), tr("&Configure Kuassel..."), coll,
         this, SLOT(showSettingsDlg()), QKeySequence(Qt::Key_F7));
-  #endif
     coll->addAction("ConfigureQuassel", configureQuasselAct);
 
+    // Tools
+    coll->addAction("DebugNetworkModel", new Action(KIcon("tools-report-bug"), tr("Debug &NetworkModel"), coll,
+            this, SLOT(on_actionDebugNetworkModel_triggered())));
+    coll->addAction("DebugBufferViewOverlay", new Action(KIcon("tools-report-bug"), tr("Debug &BufferViewOverlay"), coll,
+            this, SLOT(on_actionDebugBufferViewOverlay_triggered())));
+    coll->addAction("DebugMessageModel", new Action(KIcon("tools-report-bug"), tr("Debug &MessageModel"), coll,
+            this, SLOT(on_actionDebugMessageModel_triggered())));
+    coll->addAction("DebugHotList", new Action(KIcon("tools-report-bug"), tr("Debug &HotList"), coll,
+            this, SLOT(on_actionDebugHotList_triggered())));
+    coll->addAction("DebugLog", new Action(KIcon("tools-report-bug"), tr("Debug &Log"), coll,
+            this, SLOT(on_actionDebugLog_triggered())));
+    coll->addAction("ReloadStyle", new Action(KIcon("view-refresh"), tr("Reload Stylesheet"), coll,
+            QtUi::style(), SLOT(reload()), QKeySequence::Refresh));
+    
+    coll->addAction("HideCurrentBuffer", new Action(tr("Hide Current Buffer"), coll,
+            this, SLOT(hideCurrentBuffer()), QKeySequence::Close));
+
     // Help
-    QAction *aboutQuasselAct = new Action(QIcon(":/icons/quassel.png"), tr("&About Quassel"), coll,
+    QAction *aboutQuasselAct = new Action(KIcon("kuassel"), tr("&About Kuassel"), coll,
         this, SLOT(showAboutDlg()));
     aboutQuasselAct->setMenuRole(QAction::AboutRole);
     coll->addAction("AboutQuassel", aboutQuasselAct);
-
-    QAction *aboutQtAct = new Action(QIcon(":/pics/qt-logo.png"), tr("About &Qt"), coll,
-        qApp, SLOT(aboutQt()));
-    aboutQtAct->setMenuRole(QAction::AboutQtRole);
-    coll->addAction("AboutQt", aboutQtAct);
-    coll->addAction("DebugNetworkModel", new Action(QIcon::fromTheme("tools-report-bug"), tr("Debug &NetworkModel"), coll,
-            this, SLOT(on_actionDebugNetworkModel_triggered())));
-    coll->addAction("DebugBufferViewOverlay", new Action(QIcon::fromTheme("tools-report-bug"), tr("Debug &BufferViewOverlay"), coll,
-            this, SLOT(on_actionDebugBufferViewOverlay_triggered())));
-    coll->addAction("DebugMessageModel", new Action(QIcon::fromTheme("tools-report-bug"), tr("Debug &MessageModel"), coll,
-            this, SLOT(on_actionDebugMessageModel_triggered())));
-    coll->addAction("DebugHotList", new Action(QIcon::fromTheme("tools-report-bug"), tr("Debug &HotList"), coll,
-            this, SLOT(on_actionDebugHotList_triggered())));
-    coll->addAction("DebugLog", new Action(QIcon::fromTheme("tools-report-bug"), tr("Debug &Log"), coll,
-            this, SLOT(on_actionDebugLog_triggered())));
-    coll->addAction("ReloadStyle", new Action(QIcon::fromTheme("view-refresh"), tr("Reload Stylesheet"), coll,
-            QtUi::style(), SLOT(reload()), QKeySequence::Refresh));
-
-    coll->addAction("HideCurrentBuffer", new Action(tr("Hide Current Buffer"), coll,
-            this, SLOT(hideCurrentBuffer()), QKeySequence::Close));
 
     // Navigation
     coll = QtUi::actionCollection("Navigation", tr("Navigation"));
@@ -425,13 +400,13 @@ void MainWin::setupActions()
             QKeySequence(jumpModifier + Qt::Key_9)))->setProperty("Index", 9);
 
     // Buffer navigation
-    coll->addAction("NextBufferView", new Action(QIcon::fromTheme("go-next-view"), tr("Activate Next Chat List"), coll,
+    coll->addAction("NextBufferView", new Action(KIcon("go-next-view"), tr("Activate Next Chat List"), coll,
             this, SLOT(nextBufferView()), QKeySequence(QKeySequence::Forward)));
-    coll->addAction("PreviousBufferView", new Action(QIcon::fromTheme("go-previous-view"), tr("Activate Previous Chat List"), coll,
+    coll->addAction("PreviousBufferView", new Action(KIcon("go-previous-view"), tr("Activate Previous Chat List"), coll,
             this, SLOT(previousBufferView()), QKeySequence::Back));
-    coll->addAction("NextBuffer", new Action(QIcon::fromTheme("go-down"), tr("Go to Next Chat"), coll,
+    coll->addAction("NextBuffer", new Action(KIcon("go-down"), tr("Go to Next Chat"), coll,
             this, SLOT(nextBuffer()), QKeySequence(Qt::ALT + Qt::Key_Down)));
-    coll->addAction("PreviousBuffer", new Action(QIcon::fromTheme("go-up"), tr("Go to Previous Chat"), coll,
+    coll->addAction("PreviousBuffer", new Action(KIcon("go-up"), tr("Go to Previous Chat"), coll,
             this, SLOT(previousBuffer()), QKeySequence(Qt::ALT + Qt::Key_Up)));
 }
 
@@ -481,11 +456,7 @@ void MainWin::setupMenus()
     _settingsMenu->addAction(KStandardAction::keyBindings(this, SLOT(showShortcutsDlg()), this));
     _settingsMenu->addAction(coll->action("ConfigureQuassel"));
 
-    _helpMenu = menuBar()->addMenu(tr("&Help"));
-    _helpMenu->addAction(coll->action("AboutQuassel"));
-    _helpMenu->addAction(KStandardAction::aboutKDE(_kHelpMenu, SLOT(aboutKDE()), this));
-    _helpMenu->addSeparator();
-    _helpDebugMenu = _helpMenu->addMenu(QIcon::fromTheme("tools-report-bug"), tr("Debug"));
+    _helpDebugMenu = menuBar()->addMenu(tr("&Tools"));
     _helpDebugMenu->addAction(coll->action("DebugNetworkModel"));
     _helpDebugMenu->addAction(coll->action("DebugBufferViewOverlay"));
     _helpDebugMenu->addAction(coll->action("DebugMessageModel"));
@@ -493,6 +464,11 @@ void MainWin::setupMenus()
     _helpDebugMenu->addAction(coll->action("DebugLog"));
     _helpDebugMenu->addSeparator();
     _helpDebugMenu->addAction(coll->action("ReloadStyle"));
+
+    _helpMenu = menuBar()->addMenu(tr("&Help"));
+    _helpMenu->addAction(coll->action("AboutQuassel"));
+    _helpMenu->addAction(KStandardAction::aboutKDE(_kHelpMenu, SLOT(aboutKDE()), this));
+    _helpMenu->addSeparator();
 
     // Toggle visibility
     QAction *showMenuBar = QtUi::actionCollection("General")->action("ToggleMenuBar");
@@ -994,7 +970,6 @@ void MainWin::setConnectedState()
         statusBar()->clearMessage();
 
     _coreConnectionStatusWidget->setVisible(!Client::internalCore());
-    updateIcon();
     systemTray()->setState(SystemTray::Active);
 
     if (Client::networkIds().isEmpty()) {
@@ -1091,7 +1066,6 @@ void MainWin::setDisconnectedState()
     statusBar()->showMessage(tr("Not connected to core."));
     if (_msgProcessorStatusWidget)
         _msgProcessorStatusWidget->setProgress(0, 0);
-    updateIcon();
     systemTray()->setState(SystemTray::Passive);
 }
 
@@ -1279,7 +1253,8 @@ void MainWin::showSettingsDlg()
 
 void MainWin::showAboutDlg()
 {
-    AboutDlg(this).exec();
+    KAboutApplicationDialog ad(KGlobal::mainComponent().aboutData(),this);
+    ad.exec();
 }
 
 
@@ -1468,7 +1443,7 @@ void MainWin::clientNetworkUpdated()
 
     switch (net->connectionState()) {
     case Network::Initialized:
-        action->setIcon(QIcon::fromTheme("network-connect"));
+        action->setIcon(KIcon("network-connect"));
         // if we have no currently selected buffer, jump to the first connecting statusbuffer
         if (!bufferWidget()->currentBuffer().isValid()) {
             QModelIndex idx = Client::networkModel()->networkIndex(net->networkId());
@@ -1479,10 +1454,10 @@ void MainWin::clientNetworkUpdated()
         }
         break;
     case Network::Disconnected:
-        action->setIcon(QIcon::fromTheme("network-disconnect"));
+        action->setIcon(KIcon("network-disconnect"));
         break;
     default:
-        action->setIcon(QIcon::fromTheme("network-wired"));
+        action->setIcon(KIcon("network-wired"));
     }
 }
 

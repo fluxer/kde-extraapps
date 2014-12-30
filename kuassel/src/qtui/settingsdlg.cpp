@@ -18,12 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QIcon>
 #include <QMessageBox>
 #include <QPushButton>
 
-#include "settingsdlg.h"
+#include <KIcon>
 
+#include "settingsdlg.h"
 #include "client.h"
 
 SettingsDlg::SettingsDlg(QWidget *parent)
@@ -33,7 +33,7 @@ SettingsDlg::SettingsDlg(QWidget *parent)
     ui.setupUi(this);
     setModal(true);
     setAttribute(Qt::WA_DeleteOnClose, true);
-    setWindowIcon(QIcon::fromTheme("configure"));
+    setWindowIcon(KIcon("configure"));
 
     updateGeometry();
 

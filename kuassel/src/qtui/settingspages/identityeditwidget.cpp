@@ -18,22 +18,17 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "identityeditwidget.h"
-
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QFileDialog>
-#include <QIcon>
 #include <QMimeData>
 #include <QUrl>
 #include <QMessageBox>
+#include <QDesktopServices>
 
-#if QT_VERSION < 0x050000
-#  include <QDesktopServices>
-#else
-#  include <QStandardPaths>
-#endif
+#include <KIcon>
 
+#include "identityeditwidget.h"
 #include "client.h"
 
 IdentityEditWidget::IdentityEditWidget(QWidget *parent)
@@ -41,11 +36,11 @@ IdentityEditWidget::IdentityEditWidget(QWidget *parent)
 {
     ui.setupUi(this);
 
-    ui.addNick->setIcon(QIcon::fromTheme("list-add"));
-    ui.deleteNick->setIcon(QIcon::fromTheme("edit-delete"));
-    ui.renameNick->setIcon(QIcon::fromTheme("edit-rename"));
-    ui.nickUp->setIcon(QIcon::fromTheme("go-up"));
-    ui.nickDown->setIcon(QIcon::fromTheme("go-down"));
+    ui.addNick->setIcon(KIcon("list-add"));
+    ui.deleteNick->setIcon(KIcon("edit-delete"));
+    ui.renameNick->setIcon(KIcon("edit-rename"));
+    ui.nickUp->setIcon(KIcon("go-up"));
+    ui.nickDown->setIcon(KIcon("go-down"));
 
     // We need to know whenever the state of input widgets changes...
     connect(ui.realName, SIGNAL(textEdited(const QString &)), this, SIGNAL(widgetHasChanged()));
@@ -325,11 +320,7 @@ void IdentityEditWidget::on_clearOrLoadKeyButton_clicked()
 
     if (ui.keyTypeLabel->property("sslKey").toByteArray().isEmpty())
         key = keyByFilename(QFileDialog::getOpenFileName(this, tr("Load a Key"),
-#if QT_VERSION < 0x050000
                                                          QDesktopServices::storageLocation(QDesktopServices::HomeLocation)));
-#else
-                                                         QStandardPaths::writableLocation(QStandardPaths::HomeLocation)));
-#endif
 
     showKeyState(key);
     emit widgetHasChanged();
@@ -388,11 +379,7 @@ void IdentityEditWidget::on_clearOrLoadCertButton_clicked()
 
     if (ui.certOrgLabel->property("sslCert").toByteArray().isEmpty())
         cert = certByFilename(QFileDialog::getOpenFileName(this, tr("Load a Certificate"),
-#if QT_VERSION < 0x050000
                                                            QDesktopServices::storageLocation(QDesktopServices::HomeLocation)));
-#else
-                                                           QStandardPaths::writableLocation(QStandardPaths::HomeLocation)));
-#endif
     showCertState(cert);
     emit widgetHasChanged();
 }
@@ -423,13 +410,8 @@ void IdentityEditWidget::showCertState(const QSslCertificate &cert)
         ui.clearOrLoadCertButton->setText(tr("Load"));
     }
     else {
-#if QT_VERSION < 0x050000
         ui.certOrgLabel->setText(cert.subjectInfo(QSslCertificate::Organization));
         ui.certCNameLabel->setText(cert.subjectInfo(QSslCertificate::CommonName));
-#else
-        ui.certOrgLabel->setText(cert.subjectInfo(QSslCertificate::Organization).join(", "));
-        ui.certCNameLabel->setText(cert.subjectInfo(QSslCertificate::CommonName).join(", "));
-#endif
         ui.clearOrLoadCertButton->setText(tr("Clear"));
     }
     ui.certOrgLabel->setProperty("sslCert", cert.toPem());

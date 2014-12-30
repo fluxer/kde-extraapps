@@ -51,42 +51,22 @@ if (QCA2_FOUND)
     set(SOURCES ${SOURCES} keyevent.cpp)
 endif()
 
-if (ZLIB_FOUND)
-    add_definitions(-DHAVE_ZLIB)
-    include_directories(${ZLIB_INCLUDE_DIRS})
-else()
-    set(SOURCES ${SOURCES} ../../3rdparty/miniz/miniz.c)
-endif()
+include_directories(${ZLIB_INCLUDE_DIRS})
 
 if (HAVE_SYSLOG)
     add_definitions(-DHAVE_SYSLOG)
 endif()
 
-if(APPLE)
-  set(SOURCES ${SOURCES} mac_utils.cpp)
-endif(APPLE)
-
-if (WIN32)
-    set(SOURCES ${SOURCES} logbacktrace_win.cpp)
-else()
-    if (EXECINFO_FOUND)
-        add_definitions(-DHAVE_EXECINFO)
-        include_directories(${EXECINFO_INCLUDES})
-    endif()
-    set(SOURCES ${SOURCES} logbacktrace_unix.cpp)
+if (EXECINFO_FOUND)
+    add_definitions(-DHAVE_EXECINFO)
+    include_directories(${EXECINFO_INCLUDES})
 endif()
+set(SOURCES ${SOURCES} logbacktrace_unix.cpp)
 
 qt4_add_resources(SOURCES ${COMMON_RCS})
 
 add_library(mod_common STATIC ${SOURCES})
 qt4_use_modules(mod_common Core Network)
 
-if(APPLE)
-  target_link_libraries(mod_common "-framework CoreServices" "-framework CoreFoundation")
-endif(APPLE)
-
 target_link_libraries(mod_common ${CMAKE_DL_LIBS} ${EXECINFO_LIBRARIES} ${ZLIB_LIBRARIES})
 
-# This is needed so translations are generated before trying to build the qrc.
-# Should probably find a nicer solution with proper dependencies between the involved files, though...
-add_dependencies(mod_common po)

@@ -58,13 +58,7 @@ it later in the same build directory, you don't need to specify them again.
 
 Quassel supports several options to enable or disable features, and can make
 use of several optional dependencies if installed. CMake will give a nice
-summary of all that after its run, so we'll just mention the most important
-options here:
-
--DWITH_WEBKIT=OFF
-    Use Webkit for showing previews of webpages linked in the chat. Requires
-    the QtWebkit module to be available, and increases the client's RAM usage
-    by *a lot* if enabled at runtime.
+summary of all that after its run.
 
 You can find the list of optional packages for additional features in CMake's
 feature summary; install missing packages for enabling the functionality listed

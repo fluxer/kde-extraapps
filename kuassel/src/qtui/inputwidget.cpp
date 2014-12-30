@@ -61,11 +61,11 @@ InputWidget::InputWidget(QWidget *parent)
     ui.inputEdit->setMode(MultiLineEdit::MultiLine);
     ui.inputEdit->setPasteProtectionEnabled(true);
 
-    ui.boldButton->setIcon(QIcon::fromTheme("format-text-bold"));
-    ui.italicButton->setIcon(QIcon::fromTheme("format-text-italic"));
-    ui.underlineButton->setIcon(QIcon::fromTheme("format-text-underline"));
-    ui.textcolorButton->setIcon(QIcon::fromTheme("format-text-color"));
-    ui.highlightcolorButton->setIcon(QIcon::fromTheme("format-fill-color"));
+    ui.boldButton->setIcon(KIcon("format-text-bold"));
+    ui.italicButton->setIcon(KIcon("format-text-italic"));
+    ui.underlineButton->setIcon(KIcon("format-text-underline"));
+    ui.textcolorButton->setIcon(KIcon("format-text-color"));
+    ui.highlightcolorButton->setIcon(KIcon("format-fill-color"));
     ui.encryptionIconLabel->hide();
 
     _colorMenu = new QMenu();
@@ -469,7 +469,7 @@ void InputWidget::updateNickSelector() const
     ui.ownNick->addItems(nicks);
 
     if (me && me->isAway())
-        ui.ownNick->setItemData(nickIdx, QIcon::fromTheme("user-away"), Qt::DecorationRole);
+        ui.ownNick->setItemData(nickIdx, KIcon("user-away"), Qt::DecorationRole);
 
     ui.ownNick->setCurrentIndex(nickIdx);
 }
@@ -586,7 +586,7 @@ void InputWidget::colorChosen(QAction *action)
         mergeFormatOnSelection(fmt);
     }
     ui.textcolorButton->setDefaultAction(action);
-    ui.textcolorButton->setIcon(createColorToolButtonIcon(QIcon::fromTheme("format-text-color"), color));
+    ui.textcolorButton->setIcon(createColorToolButtonIcon(KIcon("format-text-color"), color));
 }
 
 
@@ -606,7 +606,7 @@ void InputWidget::colorHighlightChosen(QAction *action)
         mergeFormatOnSelection(fmt);
     }
     ui.highlightcolorButton->setDefaultAction(action);
-    ui.highlightcolorButton->setIcon(createColorToolButtonIcon(QIcon::fromTheme("format-fill-color"), color));
+    ui.highlightcolorButton->setIcon(createColorToolButtonIcon(KIcon("format-fill-color"), color));
 }
 
 

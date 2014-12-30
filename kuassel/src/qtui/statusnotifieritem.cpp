@@ -242,7 +242,7 @@ void StatusNotifierItem::setVisible(bool visible)
 
 QString StatusNotifierItem::title() const
 {
-    return QString("Quassel IRC");
+    return QString("Kuassel");
 }
 
 
