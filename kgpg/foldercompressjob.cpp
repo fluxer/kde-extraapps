@@ -152,15 +152,15 @@ FolderCompressJob::extensionForArchive(const int archive)
 {
 	switch (archive) {
 	case 0:
-		return QLatin1String(".zip");
-	case 1:
 		return QLatin1String(".tar.gz");
-	case 2:
+	case 1:
 		return QLatin1String(".tar.bz2");
-	case 3:
+	case 2:
 		return QLatin1String(".tar");
-	case 4:
+	case 3:
 		return QLatin1String(".tar.xz");
+	case 4:
+		return QLatin1String(".zip");
 	default:
 		Q_ASSERT(archive <= archiveNames().count());
 		Q_ASSERT(archive >= 0);
@@ -172,11 +172,11 @@ const QStringList &
 FolderCompressJob::archiveNames()
 {
 	static const QStringList archives =
-			QStringList(i18n("Zip")) <<
-					i18n("Tar/Gzip") <<
+			QStringList(i18n("Tar/Gzip")) <<
 					i18n("Tar/Bzip2") <<
 					i18n("Tar") <<
-					i18n("Tar/XZ");
+					i18n("Tar/XZ") <<
+					i18n("Zip");
 
 	return archives;
 }
