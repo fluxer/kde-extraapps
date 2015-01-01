@@ -40,10 +40,8 @@ macro_optional_add_subdirectory (kdenetwork-filesharing)
 macro_optional_add_subdirectory (kfilemetadata)
 # macro_optional_add_subdirectory (kfilereplace)
 macro_optional_add_subdirectory (lokalize)
-# FIXME: make skanlite and ksaneplugin find libksane
 macro_optional_add_subdirectory (libksane)
 macro_optional_add_subdirectory (libkscreen)
-# FIXME: make kget find libktorrent
 macro_optional_add_subdirectory (libktorrent)
 macro_optional_add_subdirectory (kcharselect)
 macro_optional_add_subdirectory (kcolorchooser)
