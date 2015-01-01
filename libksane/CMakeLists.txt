@@ -9,10 +9,8 @@ IF(NOT KDE4_FOUND)
 ENDIF(NOT KDE4_FOUND)
 
 # Check if sane API is available.
-IF (NOT WIN32)
-    FIND_PACKAGE(Sane)
-    macro_log_feature(SANE_FOUND "SANE development toolkit" "Scanner Access Now Easy (SANE) development package" "http://www.sane-project.org" TRUE "" "Needed by libksane")
-ENDIF (NOT WIN32)
+FIND_PACKAGE(Sane)
+macro_log_feature(SANE_FOUND "SANE development toolkit" "Scanner Access Now Easy (SANE) development package" "http://www.sane-project.org" TRUE "" "Needed by libksane")
 
 ADD_DEFINITIONS (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 INCLUDE_DIRECTORIES (${CMAKE_SOURCE_DIR}
