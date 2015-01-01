@@ -2,7 +2,7 @@
 
 set -e
 boost=""
-for dir in "/include" "/usr/include" "/usr/local";do
+for dir in "/include" "/usr/include" "/usr/local/include";do
     if [ -d "$dir/boost" ];then
         boost="$dir"
     fi
