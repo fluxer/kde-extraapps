@@ -33,9 +33,6 @@ macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delt
 macro_optional_find_package(QGpgme)
 macro_log_feature(QGPGME_FOUND "QGpgME" "The QGpgME library" "http://www.kde.org" FALSE "" "QGpgME is required to have signature verifying support in KGet.")
 
-macro_optional_find_package(KTorrent)
-macro_log_feature(LIBKTORRENT_FOUND "libktorrent" "Backend Library of KTorrent" "http://ktorrent.org" FALSE "" "Needed to build KGet bittorrent support.")
-
 macro_optional_find_package(LibMms)
 macro_log_feature(LIBMMS_FOUND "libmms" "Library to read mms streams" "http://libmms.sourceforge.net" FALSE "" "Needed to build KGet mms support.")
 

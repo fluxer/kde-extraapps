@@ -5,7 +5,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
 
 include_directories(
     ../../
-    ${LIBKTORRENT_INCLUDE_DIR}
+    ${CMAKE_SOURCE_DIR}/libktorrent
 )
 set(kget_bittorrentfactory_PART_SRCS
     bttransfer.cpp
@@ -45,7 +45,7 @@ kde4_add_ui_files(kget_bittorrentfactory_PART_SRCS
 kde4_add_kcfg_files(kget_bittorrentfactory_PART_SRCS bittorrentsettings.kcfgc)
 kde4_add_plugin(kget_bittorrentfactory ${kget_bittorrentfactory_PART_SRCS})
 
-target_link_libraries(kget_bittorrentfactory ${KDE4_KIO_LIBS} ${LIBKTORRENT_LIBRARIES} kgetcore)
+target_link_libraries(kget_bittorrentfactory ${KDE4_KIO_LIBS} ktorrent kgetcore)
 install(TARGETS kget_bittorrentfactory DESTINATION  ${PLUGIN_INSTALL_DIR})
 install(FILES kget_bittorrentfactory.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
