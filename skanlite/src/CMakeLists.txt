@@ -1,4 +1,4 @@
-include_directories(${CMAKE_SOURCE_DIR}/libksane/libksane)
+include_directories(${CMAKE_SOURCE_DIR}/libksane)
 
 set(skanlite_SRCS main.cpp skanlite.cpp ImageViewer.cpp KSaneImageSaver.cpp SaveLocation.cpp)
 

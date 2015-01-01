@@ -7,7 +7,6 @@ find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include_directories (${KDE4_INCLUDES})
 
-find_package(KSane REQUIRED)
 find_package(PNG REQUIRED)
 
 set(SKANLITE_VERSION_MAJOR "1")
