@@ -9,7 +9,7 @@ IF(NOT KDE4_FOUND)
 ENDIF(NOT KDE4_FOUND)
 
 # Check if sane API is available.
-FIND_PACKAGE(Sane)
+FIND_PACKAGE(Sane REQUIRED)
 macro_log_feature(SANE_FOUND "SANE development toolkit" "Scanner Access Now Easy (SANE) development package" "http://www.sane-project.org" TRUE "" "Needed by libksane")
 
 ADD_DEFINITIONS (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
@@ -63,19 +63,4 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libksane/version.h.cmake.in ${CMAKE_C
 
 # =======================================================
 
-# To prevent warnings from M$ compiler
-IF(WIN32 AND MSVC)
-    ADD_DEFINITIONS(-D_CRT_SECURE_NO_WARNINGS)
-    ADD_DEFINITIONS(-D_ATL_SECURE_NO_WARNINGS)
-    ADD_DEFINITIONS(-D_AFX_SECURE_NO_WARNINGS)
-ENDIF(WIN32 AND MSVC)
-
-# =======================================================
-
-IF (SANE_FOUND)
-    ADD_SUBDIRECTORY(libksane)
-ELSE (SANE_FOUND)
-    ADD_SUBDIRECTORY(ksanetwain)
-ENDIF (SANE_FOUND)
-
-macro_display_feature_log()
+ADD_SUBDIRECTORY(libksane)
