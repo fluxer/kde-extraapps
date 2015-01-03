@@ -14,11 +14,13 @@
 
 #include <QtGui/QImage>
 
+#include <KUrl>
+
 SnapshotTaker::SnapshotTaker( const QString &url, QObject *parent )
     : QObject( parent )
     , m_player( new Phonon::VideoPlayer( Phonon::NoCategory, 0 ) )
 {
-    m_player->load( url );
+    m_player->load( KUrl(url) );
     m_player->hide();
 
     connect(m_player->mediaObject(), SIGNAL(stateChanged(Phonon::State, Phonon::State)),
