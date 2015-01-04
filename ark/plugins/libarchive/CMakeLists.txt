@@ -1,4 +1,4 @@
-include_directories(${LIBARCHIVE_INCLUDE_DIR})
+include_directories(${LibArchive_INCLUDE_DIRS})
 
 ########### next target ###############
 set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "application/x-deb;application/x-cd-image;application/x-bcpio;application/x-cpio;application/x-cpio-compressed;application/x-sv4cpio;application/x-sv4crc;application/x-rpm;application/x-source-rpm;application/vnd.ms-cab-compressed;application/x-servicepack;")
@@ -18,7 +18,7 @@ set(kerfuffle_libarchive_SRCS libarchivehandler.cpp)
 
 kde4_add_plugin(kerfuffle_libarchive ${kerfuffle_libarchive_SRCS})
 
-target_link_libraries(kerfuffle_libarchive  ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${LIBARCHIVE_LIBRARY} kerfuffle )
+target_link_libraries(kerfuffle_libarchive  ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${LibArchive_LIBRARIES} kerfuffle )
 
 install(TARGETS kerfuffle_libarchive  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
