@@ -387,16 +387,12 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
         } else if (filename().right(3).toUpper() == QLatin1String( "BZ2" )) {
             kDebug() << "Detected bzip2 compression for new file";
             ret = archive_write_add_filter_bzip2(arch_writer.data());
-#ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
         } else if (filename().right(2).toUpper() == QLatin1String( "XZ" )) {
             kDebug() << "Detected xz compression for new file";
             ret = archive_write_add_filter_xz(arch_writer.data());
-#endif
-#ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
         } else if (filename().right(4).toUpper() == QLatin1String( "LZMA" )) {
             kDebug() << "Detected lzma compression for new file";
             ret = archive_write_add_filter_lzma(arch_writer.data());
-#endif
         } else if (filename().right(3).toUpper() == QLatin1String( "TAR" )) {
             kDebug() << "Detected no compression for new file (pure tar)";
             ret = archive_write_add_filter_none(arch_writer.data());
@@ -425,16 +421,12 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
         case ARCHIVE_FILTER_BZIP2:
             ret = archive_write_add_filter_bzip2(arch_writer.data());
             break;
-#ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
         case ARCHIVE_FILTER_XZ:
             ret = archive_write_add_filter_xz(arch_writer.data());
             break;
-#endif
-#ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
         case ARCHIVE_FILTER_LZMA:
             ret = archive_write_add_filter_lzma(arch_writer.data());
             break;
-#endif
         case ARCHIVE_FILTER_NONE:
             if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
                 ret = archive_write_set_format_zip(arch_writer.data());
@@ -576,16 +568,12 @@ bool LibArchiveInterface::deleteFiles(const QVariantList& files)
     case ARCHIVE_FILTER_BZIP2:
         ret = archive_write_add_filter_bzip2(arch_writer.data());
         break;
-#ifdef HAVE_LIBARCHIVE_XZ_SUPPORT
     case ARCHIVE_FILTER_XZ:
         ret = archive_write_add_filter_xz(arch_writer.data());
         break;
-#endif
-#ifdef HAVE_LIBARCHIVE_LZMA_SUPPORT
     case ARCHIVE_FILTER_LZMA:
         ret = archive_write_add_filter_lzma(arch_writer.data());
         break;
-#endif
     case ARCHIVE_FILTER_NONE:
         if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
             ret = archive_write_set_format_zip(arch_writer.data());
@@ -648,11 +636,7 @@ void LibArchiveInterface::emitEntryFromArchiveEntry(struct archive_entry *aentry
 {
     ArchiveEntry e;
 
-#ifdef _MSC_VER
-    e[FileName] = QDir::fromNativeSeparators(QString::fromUtf16((ushort*)archive_entry_pathname_w(aentry)));
-#else
     e[FileName] = QDir::fromNativeSeparators(QString::fromWCharArray(archive_entry_pathname_w(aentry)));
-#endif
     e[InternalID] = e[FileName];
 
     const QString owner = QString::fromAscii(archive_entry_uname(aentry));
