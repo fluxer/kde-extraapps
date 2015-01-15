@@ -29,7 +29,6 @@
 // KDE includes
 #include <KFileDialog>
 #include <KLocalizedString>
-#include <KNS3/DownloadDialog>
 #include <KPushButton>
 #include <KStandardDirs>
 #include <Plasma/Animator>
@@ -54,7 +53,6 @@ WeatherWallpaper::WeatherWallpaper(QObject * parent, const QVariantList & args )
     , m_fadeValue(0)
     , m_animation(0)
     , m_model(0)
-    , m_newStuffDialog(0)
 {
     connect(this, SIGNAL(renderCompleted(QImage)), this, SLOT(updateBackground(QImage)));
 }
@@ -329,27 +327,10 @@ void WeatherWallpaper::showAdvancedDialog()
         m_advancedUi.m_color->setColor(m_color);
         m_advancedUi.m_newStuff->setIcon(KIcon(QLatin1String( "get-hot-new-stuff" )));
         connect(m_advancedUi.m_color, SIGNAL(changed(QColor)), this, SLOT(colorChanged(QColor)));
-        connect(m_advancedUi.m_newStuff, SIGNAL(clicked()), this, SLOT(getNewWallpaper()));
     }
     KDialog::centerOnScreen(m_advancedDialog);
     connect(m_advancedDialog, SIGNAL(destroyed(QObject*)), this, SLOT(advancedDialogDestroyed()));
     m_advancedDialog->show();
-}
-
-void WeatherWallpaper::getNewWallpaper()
-{
-    if (!m_newStuffDialog) {
-        m_newStuffDialog = new KNS3::DownloadDialog( QLatin1String( "wallpaper.knsrc" ), m_configWidget );
-        connect(m_newStuffDialog, SIGNAL(accepted()), SLOT(newStuffFinished()));
-    }
-    m_newStuffDialog->show();
-}
-
-void WeatherWallpaper::newStuffFinished()
-{
-    if (m_model && m_newStuffDialog->changedEntries().size() > 0) {
-        m_model->reload();
-    }
 }
 
 void WeatherWallpaper::colorChanged(const QColor& color)

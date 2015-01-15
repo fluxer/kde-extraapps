@@ -18,7 +18,6 @@
 #include <KDebug>
 #include <KDirWatch>
 #include <KFileDialog>
-#include <KNS3/DownloadDialog>
 #include <KStandardDirs>
 
 #include <Plasma/Theme>
@@ -263,15 +262,6 @@ void Virus::setSingleImage()
 
     if (!m_size.isEmpty()) {
         renderWallpaper(img);
-    }
-}
-
-void Virus::getNewWallpaper()
-{
-    KNS3::DownloadDialog dialog("virus_wallpaper.knsrc", m_configWidget);
-    dialog.exec();
-    if (dialog.changedEntries().size() > 0 && m_model) {
-        m_model->reload();
     }
 }
 

@@ -41,7 +41,6 @@ class Virus : public Plasma::Wallpaper
         void settingsChanged(bool);
     protected slots:
         void positioningChanged(int index);
-        void getNewWallpaper();
         void colorChanged(const QColor& color);
         void pictureChanged(QModelIndex index);
         void browse();

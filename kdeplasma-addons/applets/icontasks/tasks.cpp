@@ -87,7 +87,6 @@ public:
           m_applet(applet) {
         setGroupingStrategy(GroupManager::ProgramGrouping);
         setSortingStrategy(GroupManager::ManualSorting);
-        setShowOnlyCurrentActivity(true);
         setShowOnlyCurrentDesktop(true);
         setShowOnlyCurrentScreen(false);
         setShowOnlyMinimized(false);
@@ -208,12 +207,6 @@ void Tasks::configChanged()
     const bool showOnlyCurrentDesktop = cg.readEntry("showOnlyCurrentDesktop", m_groupManager->showOnlyCurrentDesktop());
     if (showOnlyCurrentDesktop != m_groupManager->showOnlyCurrentDesktop()) {
         m_groupManager->setShowOnlyCurrentDesktop(showOnlyCurrentDesktop);
-        changed = true;
-    }
-
-    const bool showOnlyCurrentActivity = cg.readEntry("showOnlyCurrentActivity", m_groupManager->showOnlyCurrentActivity());
-    if (showOnlyCurrentActivity != m_groupManager->showOnlyCurrentActivity()) {
-        m_groupManager->setShowOnlyCurrentActivity(showOnlyCurrentActivity);
         changed = true;
     }
 
@@ -604,7 +597,6 @@ void Tasks::createConfigurationInterface(KConfigDialog *parent)
     m_appUi.iconScale->setValue(m_iconScale);
     m_appUi.iconScale->setSpecialValueText(i18n("Automatic"));
     m_behaviourUi.showOnlyCurrentDesktop->setChecked(m_groupManager->showOnlyCurrentDesktop());
-    m_behaviourUi.showOnlyCurrentActivity->setChecked(m_groupManager->showOnlyCurrentActivity());
     m_behaviourUi.showOnlyCurrentScreen->setChecked(m_groupManager->showOnlyCurrentScreen());
 
     m_appUi.sortingStrategy->addItem(i18n("Manually"), QVariant(TaskManager::GroupManager::ManualSorting));
@@ -633,7 +625,6 @@ void Tasks::createConfigurationInterface(KConfigDialog *parent)
     connect(m_appUi.sortingStrategy, SIGNAL(currentIndexChanged(int)), SLOT(updateShowSeparator()));
     connect(m_behaviourUi.showOnlyCurrentScreen, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     connect(m_behaviourUi.showOnlyCurrentDesktop, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
-    connect(m_behaviourUi.showOnlyCurrentActivity, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     m_appUi.launcherIcons_label->setToolTip(m_appUi.launcherIcons->toolTip());
     m_behaviourUi.groupClick_label->setToolTip(m_behaviourUi.groupClick->toolTip());
     m_appUi.rotate_label->setToolTip(m_appUi.rotate->toolTip());
@@ -663,7 +654,6 @@ void Tasks::configAccepted()
     KConfigGroup cg = config();
 
     cg.writeEntry("showOnlyCurrentDesktop", m_behaviourUi.showOnlyCurrentDesktop->isChecked());
-    cg.writeEntry("showOnlyCurrentActivity", m_behaviourUi.showOnlyCurrentActivity->isChecked());
     cg.writeEntry("showOnlyCurrentScreen", m_behaviourUi.showOnlyCurrentScreen->isChecked());
     cg.writeEntry("sortingStrategy", m_appUi.sortingStrategy->itemData(m_appUi.sortingStrategy->currentIndex()).toInt());
     cg.writeEntry("maxRows", m_appUi.maxRows->value());

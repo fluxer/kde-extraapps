@@ -28,7 +28,6 @@
 #include <QtGui/QWidget>
 #include <QTime>
 
-#include <KNS3/Entry>
 #include <Plasma/DataEngine>
 
 class ComicModel;
@@ -36,11 +35,6 @@ class KConfigDialog;
 class QCheckBox;
 class QComboBox;
 class QSortFilterProxyModel;
-
-namespace KNS3 {
-    class DownloadDialog;
-    class DownloadManager;
-}
 
 namespace Plasma {
     class DataEngine;
@@ -62,19 +56,7 @@ class ComicUpdater : public QObject
         void save();
         void applyConfig( ConfigWidget *widget );
 
-    private slots:
-         /**
-          * Will check if an update is needed, if so will search
-          * for updates and do them automatically
-          */
-        void checkForUpdate();
-        void slotUpdatesFound( const KNS3::Entry::List &entries );
-
     private:
-        KNS3::DownloadManager *downloadManager();
-
-    private:
-        KNS3::DownloadManager *mDownloadManager;
         KConfigGroup mGroup;
         int mUpdateIntervall;
         QDateTime mLastUpdate;
@@ -133,7 +115,6 @@ class ConfigWidget : public QWidget
         Plasma::DataEngine *mEngine;
         ComicModel *mModel;
         QSortFilterProxyModel *mProxyModel;
-        KNS3::DownloadDialog* mNewStuffDialog;
 };
 
 #endif

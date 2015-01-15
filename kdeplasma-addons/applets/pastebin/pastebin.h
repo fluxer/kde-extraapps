@@ -46,10 +46,6 @@ namespace Plasma
     class Service;
 }
 
-namespace KNS3 {
-    class DownloadDialog;
-}
-
 class Pastebin : public Plasma::Applet
 {
     Q_OBJECT
@@ -119,8 +115,6 @@ private slots:
     void resetActionState();
     void copyToClipboard(const QString &url);
     void postingFinished(KJob *job);
-    void getNewStuff();
-    void newStuffFinished();
     void refreshConfigDialog();
 
 private:
@@ -172,7 +166,6 @@ private:
     Plasma::DataEngine *m_engine;
     Plasma::Service *m_postingService;
     Ui::pastebinConfig uiConfig;
-    KNS3::DownloadDialog* m_newStuffDialog;
 
     QClipboard::Mode lastMode;
 };

@@ -25,12 +25,9 @@
 #include <QtGui/QSortFilterProxyModel>
 
 #include <KConfigDialog>
-#include <KNS3/DownloadDialog>
-#include <knewstuff3/downloadmanager.h>
 
 ComicUpdater::ComicUpdater( QObject *parent )
   : QObject( parent ),
-    mDownloadManager( 0 ),
     mUpdateIntervall( 3 ),
     m_updateTimer( 0 )
 {
@@ -49,10 +46,6 @@ void ComicUpdater::load()
 {
     //check when the last update happened and update if necessary
     mUpdateIntervall = mGroup.readEntry( "updateIntervall", 3 );
-    if ( mUpdateIntervall ) {
-        mLastUpdate = mGroup.readEntry( "lastUpdate", QDateTime() );
-        checkForUpdate();
-    }
 }
 
 void ComicUpdater::save()
@@ -65,41 +58,8 @@ void ComicUpdater::applyConfig( ConfigWidget *widget )
     mUpdateIntervall = widget->updateIntervall();
 }
 
-void ComicUpdater::checkForUpdate()
-{
-    //start a timer to check each hour, if KNS3 should look for updates
-    if ( !m_updateTimer ) {
-        m_updateTimer = new QTimer(this);
-        connect(m_updateTimer, SIGNAL(timeout()), this, SLOT(checkForUpdate()));
-        m_updateTimer->start( 1 * 60 * 60 * 1000 );
-    }
-
-    if ( !mLastUpdate.isValid() || ( mLastUpdate.addDays( mUpdateIntervall ) < QDateTime::currentDateTime() ) ) {
-        mGroup.writeEntry( "lastUpdate", QDateTime::currentDateTime() );
-        downloadManager()->checkForUpdates();
-    }
-}
-
-void ComicUpdater::slotUpdatesFound( const KNS3::Entry::List &entries )
-{
-    for ( int i = 0; i < entries.count(); ++i ) {
-        downloadManager()->installEntry( entries[ i ] );
-    }
-}
-
-KNS3::DownloadManager *ComicUpdater::downloadManager()
-{
-    if ( !mDownloadManager ) {
-        mDownloadManager = new KNS3::DownloadManager( "comic.knsrc", this );
-        connect(mDownloadManager, SIGNAL(searchResult(KNS3::Entry::List)), this, SLOT(slotUpdatesFound(KNS3::Entry::List)));
-    }
-
-    return mDownloadManager;
-}
-
-
 ConfigWidget::ConfigWidget( Plasma::DataEngine *engine, ComicModel *model, QSortFilterProxyModel *proxy, KConfigDialog *parent )
-    : QWidget( parent ), mEngine( engine ), mModel( model ), mProxyModel( proxy ), mNewStuffDialog( 0 )
+    : QWidget( parent ), mEngine( engine ), mModel( model ), mProxyModel( proxy )
 {
     comicSettings = new QWidget( this );
     comicUi.setupUi( comicSettings );
@@ -141,10 +101,6 @@ ConfigWidget::~ConfigWidget()
 
 void ConfigWidget::getNewStuff()
 {
-    if (!mNewStuffDialog) {
-        mNewStuffDialog = new KNS3::DownloadDialog( "comic.knsrc", this );
-    }
-    mNewStuffDialog->show();
 }
 
 void ConfigWidget::dataUpdated(const QString &name, const Plasma::DataEngine::Data &data)

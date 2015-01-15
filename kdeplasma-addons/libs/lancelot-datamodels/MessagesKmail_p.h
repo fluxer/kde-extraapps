@@ -24,14 +24,6 @@
 
 #include "config-lancelot-datamodels.h"
 
-#ifdef LANCELOT_DATAMODELS_HAS_PIMLIBS
-#include <Akonadi/Entity>
-#include <Akonadi/Monitor>
-#include <Akonadi/Collection>
-#include <Akonadi/CollectionFetchJob>
-#include <Akonadi/CollectionFetchScope>
-#include <Akonadi/ServerManager>
-#endif
 
 namespace Lancelot {
 namespace Models {
@@ -42,17 +34,6 @@ class MessagesKmail::Private: public QObject {
 public:
     Private(MessagesKmail * parent);
 
-#ifdef LANCELOT_DATAMODELS_HAS_PIMLIBS
-    QHash < KJob *, Akonadi::Collection > collectionJobs;
-    Akonadi::Monitor * monitor;
-    int unread;
-
-    KIcon entityIcon(const Akonadi::Collection & collection) const;
-
-public Q_SLOTS:
-    void fetchEmailCollectionsDone(KJob * job);
-
-#endif
 
 private:
     MessagesKmail * const q;
