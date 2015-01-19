@@ -90,6 +90,5 @@ install( PROGRAMS kcalc.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
 install( FILES kcalc.kcfg  DESTINATION ${KCFG_INSTALL_DIR})
 install( FILES kcalcui.rc  DESTINATION ${DATA_INSTALL_DIR}/kcalc)
 install( FILES scienceconstants.xml  DESTINATION ${DATA_INSTALL_DIR}/kcalc)
-install( FILES kcalcrc.upd  DESTINATION ${DATA_INSTALL_DIR}/kconf_update)
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
