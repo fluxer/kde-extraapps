@@ -3,7 +3,7 @@ project(kcharselect)
 ########### next target ###############
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4)
+    find_package(KDE4 4.14.3 REQUIRED)
     include( KDE4Defaults )
     include_directories(${KDE4_INCLUDES})
 

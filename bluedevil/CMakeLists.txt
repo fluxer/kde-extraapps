@@ -1,6 +1,6 @@
 project(bluedevil)
 
-find_package(KDE4 REQUIRED)
+find_package(KDE4 4.14.3 REQUIRED)
 
 set(CMAKE_BLUEDEVIL_VERSION_MAJOR 2)
 set(CMAKE_BLUEDEVIL_VERSION_MINOR 1)

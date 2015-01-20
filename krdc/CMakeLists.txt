@@ -3,7 +3,7 @@ project(krdc)
 if(NOT INSIDE_KDENETWORK)
     message("Not building inside KDENetwork, loading KDE CMake Macros.")
 
-    find_package(KDE4 REQUIRED)
+    find_package(KDE4 4.14.3 REQUIRED)
 
     include(KDE4Defaults)
     include(MacroLibrary)

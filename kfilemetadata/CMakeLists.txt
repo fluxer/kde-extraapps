@@ -2,7 +2,7 @@ project(kfilemetadata)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
 
-find_package(KDE4 REQUIRED)
+find_package(KDE4 4.14.3 REQUIRED)
 include(KDE4Defaults)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules" ${CMAKE_MODULE_PATH})

@@ -1,7 +1,7 @@
 project(kcolorchooser)
 
 # search packages used by KDE
-find_package(KDE4 REQUIRED)
+find_package(KDE4 4.14.3 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 include(MacroOptionalAddSubdirectory)

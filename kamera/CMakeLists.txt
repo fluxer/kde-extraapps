@@ -1,6 +1,6 @@
 project(kamera)
 
-find_package(KDE4 REQUIRED)
+find_package(KDE4 4.14.3 REQUIRED)
 include(CMakePushCheckState)
 include(CheckSymbolExists)
 include(KDE4Defaults)

@@ -84,7 +84,7 @@ if (QT_QTDBUS_FOUND)
     )
 endif()
 
-find_package(KDE4 4.4 QUIET REQUIRED)
+find_package(KDE4 4.14.3 QUIET REQUIRED)
 set_package_properties(KDE4 PROPERTIES TYPE REQUIRED
     URL "http://www.kde.org"
     DESCRIPTION "a world-class desktop environment"
