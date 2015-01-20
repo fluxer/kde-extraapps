@@ -5,8 +5,8 @@ add_subdirectory(icons)
 
 include_directories(
   ${Boost_INCLUDE_DIR}
-  ${CMAKE_SOURCE_DIR}/akregator/interfaces
-  ${CMAKE_BINARY_DIR}/akregator/interfaces
+  ${PROJECT_SOURCE_DIR}/interfaces
+  ${PROJECT_BINARY_DIR}/interfaces
 )
 
 ########### next target ###############

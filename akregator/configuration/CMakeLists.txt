@@ -1,7 +1,7 @@
 
 include_directories(
-  ${CMAKE_BINARY_DIR}/akregator/interfaces
-  ${CMAKE_SOURCE_DIR}/akregator/interfaces
+  ${PROJECT_BINARY_DIR}/interfaces
+  ${PROJECT_SOURCE_DIR}/interfaces
 )
 
 ########### next target ###############
