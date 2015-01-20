@@ -19,10 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Self
 #include <about.h>
 
-// Local
-#include <version.h>
-
 // KDE
+#include <kdeversion.h>
 #include <KAboutData>
 #include <KLocalizedString>
 
@@ -33,7 +31,7 @@ namespace Gwenview
 
 KAboutData* createAboutData(const QByteArray& appName, const QByteArray& catalogName, const KLocalizedString& programName)
 {
-    KAboutData* data = new KAboutData(appName, catalogName, programName, GWENVIEW_VERSION);
+    KAboutData* data = new KAboutData(appName, catalogName, programName, KDE_VERSION_STRING);
     data->setLicense(KAboutData::License_GPL);
     data->setCopyrightStatement(ki18n("Copyright 2000-2013 Gwenview authors"));
     data->addAuthor(
