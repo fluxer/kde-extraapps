@@ -298,6 +298,7 @@ void ActionManagerImpl::initMainWidget(MainWidget* mainWidget)
     action->setShortcuts(KShortcut( "Ctrl+Shift+Return" ));
 
     action = coll->addAction("article_copy_link_address" );
+    action->setIcon(KIcon("edit-copy"));
     action->setText(i18n("Copy Link Address"));
     connect(action, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotCopyLinkAddress()));
 
