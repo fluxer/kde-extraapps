@@ -72,14 +72,6 @@ public:
     virtual QAbstractItemView* itemView() = 0;
 };
 
-class SingleArticleDisplay
-{
-public:
-    virtual ~SingleArticleDisplay() {}
-
-    virtual void showArticle( const Akregator::Article & article ) = 0;
-};
-
 class SubscriptionLister
 {
 public:
@@ -104,8 +96,6 @@ public:
     virtual void setArticleLister( Akregator::ArticleLister* lister ) = 0;
 
     virtual void setFolderExpansionHandler( Akregator::FolderExpansionHandler* handler ) = 0;
-
-    virtual void setSingleArticleDisplay( Akregator::SingleArticleDisplay* display ) = 0;
 
     virtual Akregator::Article currentArticle() const = 0;
 

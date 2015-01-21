@@ -79,7 +79,6 @@ Akregator::SelectionController::SelectionController( QObject* parent )
     m_feedList(),
     m_feedSelector(),
     m_articleLister( 0 ),
-    m_singleDisplay( 0 ),
     m_subscriptionModel ( new SubscriptionListModel( shared_ptr<FeedList>(), this ) ),
     m_folderExpansionHandler( 0 ),
     m_articleModel( 0 ),
@@ -134,11 +133,6 @@ void Akregator::SelectionController::setArticleLister( Akregator::ArticleLister*
     if ( m_articleLister && m_articleLister->itemView() )
         connect( m_articleLister->itemView(), SIGNAL(doubleClicked(QModelIndex)),
                  this, SLOT(articleIndexDoubleClicked(QModelIndex))  );
-}
-
-void Akregator::SelectionController::setSingleArticleDisplay( Akregator::SingleArticleDisplay* display )
-{
-    m_singleDisplay = display;
 }
 
 Akregator::Article Akregator::SelectionController::currentArticle() const
@@ -249,6 +243,7 @@ void Akregator::SelectionController::selectedSubscriptionChanged( const QModelIn
         m_selectedSubscription->setListViewScrollBarPositions( m_articleLister->scrollBarPositions() );
 
     m_selectedSubscription = selectedSubscription();
+    ActionManager::getInstance()->setArticleActionsEnabled(false);
     emit currentSubscriptionChanged( m_selectedSubscription );
 
     // using a timer here internally to simulate async data fetching (which is still synchronous),
@@ -267,7 +262,6 @@ void Akregator::SelectionController::selectedSubscriptionChanged( const QModelIn
              this, SLOT(articleHeadersAvailable(KJob*)) );
     m_listJob = job;
     m_listJob->start();
-
 }
 
 void Akregator::SelectionController::subscriptionContextMenuRequested( const QPoint& point )
@@ -289,8 +283,8 @@ void Akregator::SelectionController::subscriptionContextMenuRequested( const QPo
 void Akregator::SelectionController::articleSelectionChanged()
 {
     const Akregator::Article article = currentArticle();
-    if ( m_singleDisplay )
-        m_singleDisplay->showArticle( article );
+    // m_selectedSubscription | selectedSubscription() ??
+    ActionManager::getInstance()->setArticleActionsEnabled(m_articleLister->articleSelectionModel()->hasSelection());
     emit currentArticleChanged( article );
 }
 

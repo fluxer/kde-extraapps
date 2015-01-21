@@ -62,9 +62,6 @@ public:
     QList<Akregator::Article> selectedArticles() const;
 
     //impl
-    void setSingleArticleDisplay( Akregator::SingleArticleDisplay* display );
-
-    //impl
     Akregator::TreeNode* selectedSubscription() const;
 
     //impl
@@ -94,7 +91,6 @@ private:
     boost::shared_ptr<FeedList> m_feedList;
     QPointer<QAbstractItemView> m_feedSelector;
     Akregator::ArticleLister* m_articleLister;
-    Akregator::SingleArticleDisplay* m_singleDisplay;
     Akregator::SubscriptionListModel* m_subscriptionModel;
     Akregator::FolderExpansionHandler* m_folderExpansionHandler;
     Akregator::ArticleModel* m_articleModel;
