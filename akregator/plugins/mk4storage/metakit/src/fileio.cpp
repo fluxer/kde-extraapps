@@ -1,4 +1,5 @@
 // fileio.cpp --
+// $Id: fileio.cpp 1258 2007-03-09 16:48:38Z jcw $
 // This is part of Metakit, see http://www.equi4.com/metakit.html
 
 /** @file
@@ -260,9 +261,11 @@ void c4_FileStrategy::ResetFileMapping() {
       FlushFileBuffers((HANDLE)_get_osfhandle(_fileno(_file)));
       HANDLE h = ::CreateFileMapping((HANDLE)_get_osfhandle(_fileno(_file)), 0,
         PAGE_READONLY, 0, len, 0);
+      d4_assert(h); // check for errors, but can continue without mapping
 
       if (h) {
         _mapStart = (t4_byte*)::MapViewOfFile(h, FILE_MAP_READ, 0, 0, len);
+        d4_assert(_mapStart != 0);
 
         if (_mapStart != 0) {
           _mapStart += _baseOffset;

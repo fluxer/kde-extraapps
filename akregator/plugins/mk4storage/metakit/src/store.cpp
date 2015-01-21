@@ -1,4 +1,5 @@
 // store.cpp --
+// $Id: store.cpp 1258 2007-03-09 16:48:38Z jcw $
 // This is part of Metakit, the homepage is http://www.equi4.com/metakit.html
 
 /** @file
@@ -165,7 +166,7 @@ void c4_Notifier::Notify() {
  *
  *  The data storage mechanism implementation provides fail-safe operation:
  *  if anything prevents Commit from completing its task, the last
- *  successfully committed version of the saved data will be recovered on
+ *  succesfully committed version of the saved data will be recovered on
  *  the next open. This also includes changes made to the table structure. 
  *
  *  The following code creates a view with 1 row and stores it on file:

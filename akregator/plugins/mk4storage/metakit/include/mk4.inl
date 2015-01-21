@@ -1,5 +1,6 @@
 // mk4.inl --
-// This is part of Metakit, the homepage is http://www.equi4.com/metakit/
+// $Id: mk4.inl 1258 2007-03-09 16:48:38Z jcw $
+// This is part of Metakit, the homepage is http://www.equi4.com/metakit.html
 
 /** @file
  * Public definitions which are usually inlined
@@ -30,7 +31,7 @@ d4_inline int c4_Property::GetId() const
 
 //////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(q4_LONG64) && !defined (LONG_LONG) && !defined(HAVE_LONG_LONG)
+#if !q4_LONG64 && !defined (LONG_LONG) && !HAVE_LONG_LONG
 
 d4_inline bool operator== (const t4_i64 a_, const t4_i64 b_)
 {
@@ -283,7 +284,7 @@ d4_inline bool operator!= (c4_Cursor a_, c4_Cursor b_)
 d4_inline bool operator< (c4_Cursor a_, c4_Cursor b_)
 {
   return a_._seq < b_._seq ||
-	( a_._seq == b_._seq && a_._index < b_._index );
+	  a_._seq == b_._seq && a_._index < b_._index;
 }
 
 d4_inline bool operator> (c4_Cursor a_, c4_Cursor b_)
@@ -439,7 +440,7 @@ d4_inline c4_IntRef::c4_IntRef (const c4_Reference& value_)
 }
 
 /////////////////////////////////////////////////////////////////////////////
-#if !defined(q4_TINY)
+#if !q4_TINY
 /////////////////////////////////////////////////////////////////////////////
 // c4_LongRef
 
@@ -556,7 +557,7 @@ d4_inline c4_Row c4_IntProp::operator[] (t4_i32 value_) const
 }
     
 /////////////////////////////////////////////////////////////////////////////
-#if !defined(q4_TINY)
+#if !q4_TINY
 /////////////////////////////////////////////////////////////////////////////
 // c4_LongProp
 

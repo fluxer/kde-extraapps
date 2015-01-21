@@ -1,4 +1,5 @@
 // viewx.cpp --
+// $Id: viewx.cpp 1258 2007-03-09 16:48:38Z jcw $
 // This is part of Metakit, see http://www.equi4.com/metakit.html
 
 /** @file
@@ -12,7 +13,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-c4_Sequence::c4_Sequence(): _refCount(0), _dependencies(0), _propertyLimit(0), _propertyMap(0),
+c4_Sequence::c4_Sequence(): _refCount(0), _dependencies(0), _propertyLimit(0),
   _tempBuf(0){}
 
 c4_Sequence::~c4_Sequence() {

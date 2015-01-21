@@ -1,4 +1,5 @@
 // win.h --
+// $Id: win.h 1258 2007-03-09 16:48:38Z jcw $
 // This is part of Metakit, the homepage is http://www.equi4.com/metakit.html
 
 /** @file
@@ -17,7 +18,7 @@
 #define q4_WIN32 1
 #endif 
 
-#if defined (_WIN32_WCE)        // check for Win CE
+#if defined (_WIN32_WCE)	// check for Win CE
 #define q4_WINCE 1
 #define q4_WIN32 1
 #endif 

@@ -1,3 +1,94 @@
+2006-11-15    ############################################    MK 2.4.9.6
+
+    Please upgrade, this consolidates a year with various fixes.
+    
+    Added some notes to the README about building the Python and
+    Tcl extensions using various approaches.
+    
+    Bumped hardwired Python version number to 2.5 in unix/configure.
+
+2006-11-11    More precise file head/tail marker checks
+
+    The tests for valid head / tail file markers have been relaxed a
+    tiny bit, to allow for future file format changes.  This has no 
+    effect on current uses of MK, the file format remains the same.
+
+2006-11-11    Reformatted all C++ source files
+
+    To get rid of some tab/indent problems accumulated over the last
+    few years, I've run all C++ sources through a pretty-print app
+    (SourceFormatX, a shareware Windows app).  These sources are all
+    being checked-in, so the list of affected files is quite large.
+
+    No semantic changes whatsoever to MK.  All tests pass, as before.
+
+2006-10-31    Fixes for the Python binding
+
+    Fix 64-bit compile with Python 2.5 by Ralf Schmitt, see
+    http://www.equi4.com/pipermail/metakit/2006-October/002236.html
+    
+    Memory leak fix in PWOMapping.h, by Brian Warner, see
+    http://www.equi4.com/pipermail/metakit/2006-October/002229.html
+    
+    Fix 64-bit ptr -> int conversions in {PyRowRef,PyView}.cpp, see
+    http://systemexit.de/repo/metakit?cs=f8f1ef2f6099
+    
+2006-10-31    Fix int overflow in mapped file check
+
+    As reported by Max Kaehn, there is a test in column.cpp which is
+    sensitive to integer overflow when two pointers are > 2 Gb apart.
+    This may have been an old problem for anyone who uses the default
+    memory-mapping files enabled.  Embarassing that this was not caught
+    or resolved before, but I was never able to reliably reproduce it.
+    
+    This is a potentially serious problem, upgrading is recommended.
+    
+2006-10-31    Bring this change log up to date from CVStrac timeline
+
+    I've decided to not adopt the CVStrac system for this change log,
+    because having this log inside the source tree is more convenient.
+    
+    (08-01) persist.cpp: maintain stable-storage space usage on re-open
+    (05-08) view.cpp: fix resource leak in view.cpp
+    (01-26) PyStorage.cpp: fix metakit.py pathnames are required to
+            be of type str & support unicode filenames in storage()
+    (01-25) mk4tcl.cpp: fix crash in mk::select with -keyword search
+    (01-24) fileio.cpp: fix compile error in fileio.cpp with mingw
+    (01-13) configure.in: tweaks to configure.in to use Tcl stubs when
+            compiling a dynamic Mk4tcl on macosx/darwin
+    
+2006-01-12    Don't call _open on WinNT, make commit fail on > 2 Gb
+
+    Fixes for the Dec 5 patch to still always support Win98, thx Matt.
+
+    Fix ticket #2, return false on commit if files would exceed 2 Gb.
+
+2006-01-12    Started using CVStrac for this project, makefile tweak
+
+    CVStrac is a CVS browser, bug tracking system, and more.  All files
+    have gone through a dummy check-in to complete the transition.  The
+    CVS repository is not affected by this change, but this does mean
+    that CVStrac only really started tracking changes from here on.
+
+    If it works out well, this CHANGES file will probably be abandoned
+    in favor of the "timeline" feature in CVStrac which offers the same
+    functionality and *much* more (lots of cross-/hyper-links for one).
+
+    Tweaked Makefile so "make test" does not complain about CVS dir.
+
+2005-12-05    Fix the broken hpux change of 2005-09-06
+
+    It turns out that the 2005-09-06 change, which was rolled back on
+    2005-10-01, was simply incomplete.  Now that it works, it has been
+    adopted on all platforms because it is more portable and equivalent.
+    Thx again Matt.
+
+2005-12-05    Better support for UTF-8 file & property names
+
+    Patch submitted by Matt Newman.  Fixes handling of property names
+    in a description string to support UTF-8 and %'s in names.  Also
+    fix file name handling (convert UTF-8 to native before open).
+
 2005-11-22    ############################################    MK 2.4.9.5
 
     Main reason for this release is the 11-18 disk-full handling fix.
@@ -1324,7 +1415,7 @@
     Bug in on-the-fly conversion of bytes properties ('B') in pre-2.0
     datafiles (i.e. 1.8.6 and earlier) resolved.
 
-    Unfortunately, this bug cannot be 100% unambiguously fixed.  The
+    Unfortunately, this bug can not be 100% unambiguously fixed.  The
     new code *will* properly detect most cases, and convert both 1.8.6
     and 2.0 datafiles on the fly, but especially for views with only a
     few rows and at most a few bytes of data per row - the conversion
@@ -1501,7 +1592,7 @@
 2000-05-28    Better file mark scanning
 
     Added c4_Strategy::EndOfData, to determine the logical end of a
-    Metakit.valuefile.  This call can be used to check whether a file
+    Metakit datafile.  This call can be used to check whether a file
     contains any data, and whether a commit-extend has been performed.
     Old-style scripted documents (with preamble) can now be opened.
     Changed strategy class, DataSeek has been merged with read/write.

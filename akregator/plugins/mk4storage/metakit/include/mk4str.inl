@@ -1,5 +1,6 @@
 // mk4str.inl --
-// This is part of Metakit, the homepage is http://www.equi4.com/metakit/
+// $Id: mk4str.inl 1258 2007-03-09 16:48:38Z jcw $
+// This is part of Metakit, the homepage is http://www.equi4.com/metakit.html
 
 /** @file
  * Members of the string package which are usually inlined
@@ -8,9 +9,9 @@
 /////////////////////////////////////////////////////////////////////////////
 // c4_String
 
-#if defined(q4_MFC)                      // Microsoft Foundation Classes
+#if q4_MFC                      // Microsoft Foundation Classes
     
-#elif defined(q4_STD)                    // STL and standard strings
+#elif q4_STD                    // STL and standard strings
 
 /// Construct empty string
 d4_inline c4_String::c4_String ()

@@ -1,4 +1,5 @@
 // column.cpp --
+// $Id: column.cpp 1258 2007-03-09 16:48:38Z jcw $
 // This is part of Metakit, the homepage is http://www.equi4.com/metakit.html
 
 /** @file
@@ -98,10 +99,9 @@ bool c4_Column::IsMapped()const {
 
 bool c4_Column::UsesMap(const t4_byte *ptr_)const {
   // the most common falsifying case is checked first
-  return _persist != 0 &&
-    ptr_ >= Strategy()._mapStart &&
-    Strategy()._dataSize != 0 &&
-    ptr_ < Strategy()._mapStart + Strategy()._dataSize;
+  return _persist != 0 && ptr_ >= Strategy()._mapStart && Strategy()._dataSize
+    != 0 &&  // added  2003-05-08, thx V DeMarco
+  ptr_ < Strategy()._mapStart + Strategy()._dataSize;
 }
 
 bool c4_Column::RequiresMap()const {

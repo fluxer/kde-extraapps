@@ -1,4 +1,4 @@
-The Metakit Library 2.4.9.5                                           Nov 2005
+The Metakit Library 2.4.9.6                                           Nov 2006
 ==============================================================================
 
 
@@ -51,24 +51,77 @@ ACKNOWLEDGEMENTS - Thanks to everyone who has helped shape and extend Metakit,
 INSTALLATION
 ============
 
-(NOTE to Python users: you could also do "cd python; python setup.py ...")
-
 All platform builds and language bindings are designed to work from a single
 common "builds/" directory.  Where possible, that is - it turns out to be
 impossible to keep build side-effects limited to *just* this directory
 (CodeWarrior can't be told where to place its temp data, and Visual C++ still
 alters a few files next to the project ".dsw" file, to name two offenders).
 
+PYTHON - Nov 2006
+
+    There is a --with-python option in unix/configure, but it does not always
+    seem to work.  One problem is python version numbers being hard-wired into
+    the configure/make files (2.5 right now).  This worked for me on Mac OS X:
+        cd builds
+        ../unix/configure \
+          --with-python=/Library/Frameworks/Python.framework/Versions/2.5
+        ln -s Mk4py.dylib Mk4py.so
+    Note that the arg to --with-python is the path *upto* include/python2.5
+    
+    There is also a python/setup.py script which should simplify building for
+    Python.  Unfortunately, it does things in a somewhat tricky way in that
+    it uses MK's .o files from the builds/ directory.  This in turn means 
+    that on Mac OS X, you'll need to hack things a bit to make these .o's end
+    up as "fat" (ppc+i386) binaries since setup.py needs them that way.
+    
+    Here's how a non-macosx build should work:
+        cd builds
+        sh ../unix/configure
+        make test
+        cd ../python
+        python setup.py clean build
+    The result will be left in ../builds/lib.*/{Mk4py.so,metakit.py}
+    
+    For Mac OS X, you need to hack ../builds/Makefile after running configure:
+        * change "CXXFLAGS = $(CXX_FLAGS)" to "CXXFLAGS = $(CXX_FLAGS) \
+            -arch ppc -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk"
+        * change "SHLIB_LD = g++" to "SHLIB_LD = g++ -dynamiclib \
+            -flat_namespace -undefined suppress -arch ppc -arch"
+    Then do the rest, using "make" i.s.o. "make test" because the changes to
+    the flags don't seem to create proper executables.  That's ok though, the
+    .o files are fat, which is all setup.py needs.
+
+TCL - Nov 2006
+
+    The unix/configure works better for Tcl than for Python, due to the stubs
+    interface.  In many cases, adding --with-tcl or --with-tcl=<dir-of-tcl.h>
+    will produce a Mk4tcl.so (or a Mk4tcl.dylib on Mac OS X).
+    
+    Alternately, you could use the TEA3-based tcl/configure script.  It needs
+    a few preliminary steps to get a proper config.h file in the right spot:
+        cd builds
+        sh ../unix/configure
+        cd ../tcl
+        ln -s ../builds/config.h
+        sh configure
+        make
+    There are still some issues, the above generates a lot of warning errors.    
+    Note that this does not depend on .o files in ../builds, just config.h
+    
+    Note: for Windows CE, the tcl.configure script has been successfully used
+    using EVC3.  One trick is that in tcl/configure.in, "TEA_ADD_CFLAGS([])"
+    has to be changed to "TEA_ADD_CFLAGS([-Dq4_WINCE])".
+    
 UNIX (ALSO MAC OS X)
 
     It is no longer advised to build the Unix code in the "unix/" directory.
     Instead, you should perform the following steps:
-        % cd builds
-        % ../unix/configure
-        % make
-        % make test
+        cd builds
+        sh ../unix/configure
+        make
+        make test
     And optionally (this only installs the core lib, not script extensions):
-        % make install
+        make install
 
     By switching to the "builds/" directory, you will keep the distribution
     directory tree 100% unaltered.  All changes are made in this subdir, and
@@ -77,12 +130,12 @@ UNIX (ALSO MAC OS X)
     To build with STL containers and strings, you can do the following:
         make CXXFLAGS='-Dq4_STD' test   # add -O3 etc, as needed
 
-    To build the Mk4tcl extension on Unix, change the configure to:
-        % ../unix/configure --with-tcl=<dir-where-tcl.h-is>
-    To build the Mk4py extension on Unix, change the configure to:
-        % ../unix/configure --with-python=<dir-where-include/-is>
+    OLD: to build the Mk4tcl extension on Unix, change the configure to:
+        ../unix/configure --with-tcl=<dir-where-tcl.h-is>
+    OLD: to build the Mk4py extension on Unix, change the configure to:
+        ../unix/configure --with-python=<dir-where-include/-is>
     E.g.
-        % ../unix/configure --with-tcl=/usr/include --with-python=/usr
+        ../unix/configure --with-tcl=/usr/include --with-python=/usr
 
     Use "../unix/configure --help" to find out about other variants, when the
     include & lib dirs are completely different, and for other build options.
@@ -135,7 +188,7 @@ MACINTOSH CLASSIC
 LICENSE AND COPYRIGHT STATEMENT
 ===============================
 
-Copyright (c) 1996-2005 Jean-Claude Wippler
+Copyright (c) 1996-2006 Jean-Claude Wippler
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
