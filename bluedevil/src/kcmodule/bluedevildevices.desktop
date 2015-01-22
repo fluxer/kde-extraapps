@@ -8,7 +8,7 @@ X-KDE-ServiceTypes=KCModule
 X-KDE-Library=kcm_bluedevildevices
 X-KDE-ParentApp=kcontrol
 
-X-KDE-System-Settings-Parent-Category=bluetooth
+X-KDE-System-Settings-Parent-Category=hardware
 X-KDE-Weight=50
 
 Name=Devices

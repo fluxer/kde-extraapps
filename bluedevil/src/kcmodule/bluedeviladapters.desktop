@@ -8,7 +8,7 @@ X-KDE-ServiceTypes=KCModule
 X-KDE-Library=kcm_bluedeviladapters
 X-KDE-ParentApp=kcontrol
 
-X-KDE-System-Settings-Parent-Category=bluetooth
+X-KDE-System-Settings-Parent-Category=hardware
 X-KDE-Weight=100
 
 Name=Adapters
