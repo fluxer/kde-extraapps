@@ -38,8 +38,8 @@ namespace Filelight
 // You need to use a single DirLister.
 // One per folder breaks KIO (seemingly) and also uses un-godly amounts of memory!
 
-struct Store {
-
+class Store {
+public:
     typedef QLinkedList<Store*> List;
 
     /// location of the folder
