@@ -24,7 +24,8 @@
 namespace ffmpegthumbnailer
 {
 
-struct VideoFrame {
+class VideoFrame {
+public:
     VideoFrame()
             : width(0), height(0), lineSize(0) {}
 
