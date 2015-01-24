@@ -124,27 +124,36 @@
       <string>Allowed Users</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="preventRB">
-        <property name="text">
-         <string>Prevent these users from printing </string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
-       <widget class="KEditListBox" name="usersELB">
-        <property name="enabled">
-         <bool>false</bool>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string/>
         </property>
-        <property name="buttons">
-         <set>KEditListBox::Add|KEditListBox::Remove</set>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="KEditListWidget" name="usersELB">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="buttons">
+            <set>KEditListWidget::Add|KEditListWidget::Remove</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item row="0" column="0">
        <widget class="QRadioButton" name="allowRB">
         <property name="text">
          <string>Allow these users to print</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="preventRB">
+        <property name="text">
+         <string>Prevent these users from printing </string>
         </property>
        </widget>
       </item>
@@ -155,9 +164,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KEditListBox</class>
-   <extends>QGroupBox</extends>
-   <header>keditlistbox.h</header>
+   <class>KEditListWidget</class>
+   <extends>QWidget</extends>
+   <header>keditlistwidget.h</header>
   </customwidget>
   <customwidget>
    <class>KComboBox</class>
