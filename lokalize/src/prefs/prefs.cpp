@@ -37,7 +37,6 @@
 #include "ui_prefs_project_advanced.h"
 #include "ui_prefs_project_local.h"
 
-
 #include <kconfigdialog.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
@@ -45,15 +44,15 @@
 #include <kicon.h>
 #include <kstatusbar.h>
 #include <kdebug.h>
-
+#include <keditlistwidget.h>
 #include <kurl.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
-
 #include <kross/core/manager.h>
 #include <kross/core/actioncollection.h>
 #include <kross/ui/model.h>
 #include <threadweaver/ThreadWeaver.h>
+
 #include <QBoxLayout>
 #include <QDragEnterEvent>
 #include <QDropEvent>
