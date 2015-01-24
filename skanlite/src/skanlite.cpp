@@ -356,7 +356,7 @@ void Skanlite::saveImage()
             }
         }
         else {
-            if (!KIO::NetAccess::exists(fileUrl, true, this)) {
+            if (!KIO::NetAccess::exists(fileUrl, KIO::NetAccess::SourceSide, this)) {
                 break;
             }
         }
@@ -373,7 +373,7 @@ void Skanlite::saveImage()
             fileUrl = m_saveDialog->selectedUrl();
             //kDebug() << "-----Save-----" << fname;
 
-            if (KIO::NetAccess::exists(fileUrl, true, this)) {
+            if (KIO::NetAccess::exists(fileUrl, KIO::NetAccess::DestinationSide, this)) {
                 if (KMessageBox::warningContinueCancel(this,
                     i18n("Do you want to overwrite \"%1\"?", fileUrl.fileName()),
                      QString(),
