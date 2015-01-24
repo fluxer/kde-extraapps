@@ -116,7 +116,7 @@ target_link_libraries(okularcore ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBRARY} ${MATH_
 
 target_link_libraries(okularcore kscreen)
 
-set_target_properties(okularcore PROPERTIES VERSION 5.0.0 SOVERSION 5 )
+set_target_properties(okularcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
 
 install(TARGETS okularcore ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

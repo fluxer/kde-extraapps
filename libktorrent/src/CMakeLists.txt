@@ -28,6 +28,7 @@ set(libktorrent_SRC
 	util/circularbuffer.cpp
 	util/resourcemanager.cpp
 	util/bufferpool.cpp
+	util/signalcatcher.cpp
 	
 	bcodec/bdecoder.cpp  
 	bcodec/bencoder.cpp  
@@ -214,26 +215,13 @@ set(libktorrent_SRC
 	version.cpp
 )
 
-if(NOT WIN32)
-# Add signalcatcher.cpp for all builds except WIN32
-set(libktorrent_SRC ${libktorrent_SRC} util/signalcatcher.cpp)
-endif(NOT WIN32)
-
-if(WIN32)
-# Compile stuff for windows
-set(libktorrent_SRC ${libktorrent_SRC} util/win32.cpp)
-endif(WIN32)
-
-
 # kde4_add_ui_files(libktorrent_SRC ${libktorrent_UI})
 # kde4_add_kcfg_files(libktorrent_SRC settings.kcfgc)
 kde4_add_library(ktorrent SHARED ${libktorrent_SRC})
 
 target_link_libraries(ktorrent ${KDE4_KIO_LIBS} ${GMP_LIBRARIES} ${KDE4_SOLID_LIBS} ${LIBGCRYPT_LIBRARIES} ${QCA2_LIBRARIES})
-if(WIN32)
-target_link_libraries(ktorrent ws2_32)
-endif(WIN32)
-set_target_properties(ktorrent PROPERTIES VERSION 5.0.1 SOVERSION 5 LINK_INTERFACE_LIBRARIES ${KDE4_KDEUI_LIBS})
+set_target_properties(ktorrent PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+set_target_properties(ktorrent PROPERTIES LINK_INTERFACE_LIBRARIES ${KDE4_KDEUI_LIBS})
 install(TARGETS ktorrent  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
