@@ -21,6 +21,7 @@
 #include <QCoreApplication>
 
 #include <KLocale>
+#include <KGlobal>
 
 #include "core.h"
 #include "coreauthhandler.h"
@@ -91,6 +92,8 @@ Core::Core()
     umask(S_IRWXG | S_IRWXO);
 #endif
     _startTime = QDateTime::currentDateTime().toUTC(); // for uptime :)
+
+    KGlobal::locale()->insertCatalog("kuassel");
 
     // FIXME: MIGRATION 0.3 -> 0.4: Move database and core config to new location
     // Move settings, note this does not delete the old files

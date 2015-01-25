@@ -51,6 +51,7 @@ QtUi::QtUi() : GraphicalUi()
     _instance = this;
 
     QtUiSettings uiSettings;
+    KGlobal::locale()->insertCatalog("kuassel");
 
     setContextMenuActionProvider(new ContextMenuActionProvider(this));
     setToolBarActionProvider(new ToolBarActionProvider(this));
