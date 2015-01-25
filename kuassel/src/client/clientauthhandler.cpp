@@ -283,7 +283,7 @@ void ClientAuthHandler::startRegistration()
     useSsl = _account.useSsl();
 #endif
 
-    _peer->dispatch(RegisterClient(Quassel::buildInfo().plainVersionString, useSsl));
+    _peer->dispatch(RegisterClient(QString("v%1").arg(Quassel::buildInfo().baseVersion), useSsl));
 }
 
 

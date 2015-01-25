@@ -118,7 +118,7 @@ bool Quassel::init()
     }
 
     if (isOptionSet("version")) {
-        std::cout << qPrintable("Kuassel IRC: " + Quassel::buildInfo().plainVersionString) << std::endl;
+        std::cout << qPrintable("Kuassel IRC: " + Quassel::buildInfo().baseVersion) << std::endl;
         return false;
     }
 
@@ -208,7 +208,6 @@ void Quassel::setupBuildInfo()
 {
     _buildInfo.applicationName = "kuassel";
     _buildInfo.baseVersion = QUASSEL_VERSION_STRING;
-    _buildInfo.plainVersionString = QString("v%1").arg(_buildInfo.baseVersion);
 }
 
 

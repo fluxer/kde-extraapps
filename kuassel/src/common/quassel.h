@@ -44,7 +44,6 @@ public:
     struct BuildInfo {
         QString baseVersion;
         QString applicationName;
-        QString plainVersionString; // no <a> tag
     };
 
     //! A list of features that are optional in core and/or client, but need runtime checking

@@ -9,11 +9,12 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(KuasselIRC)
 
-# Versions
-set(QUASSEL_MAJOR  0)
-set(QUASSEL_MINOR 12)
-set(QUASSEL_PATCH  0)
+# Version
 set(QUASSEL_VERSION_STRING "0.12")
+
+# General conveniences
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Tell CMake about or own modules
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -154,17 +155,6 @@ add_feature_info("syslog.h" HAVE_SYSLOG "Provide support for logging to the sysl
 # Do this down here, since otherwise KDE wants to handle it itself, and fails
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH 1)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH 1)
-
-# Set global buildflags
-# This is very much non-portable, so don't use -DSTATIC until you know what
-# you do.
-if(STATIC AND CMAKE_COMPILER_IS_GNUCXX)
-  set(CMAKE_CXX_FLAGS "-static-libgcc ${CMAKE_CXX_FLAGS}")
-  link_directories(${CMAKE_BINARY_DIR}/staticlibs) # override dynamic libs
-  if(HAVE_SSL)
-    set(QUASSEL_SSL_LIBRARIES ssl crypto)  # these miss in static builds
-  endif(HAVE_SSL)
-endif(STATIC AND CMAKE_COMPILER_IS_GNUCXX)
 
 if(INDICATEQT_FOUND)
   add_definitions(-DXDG_APPS_INSTALL_DIR=${XDG_APPS_INSTALL_DIR})
