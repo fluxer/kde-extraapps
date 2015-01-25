@@ -20,6 +20,8 @@
 
 #include <QCoreApplication>
 
+#include <KLocale>
+
 #include "core.h"
 #include "coreauthhandler.h"
 #include "coresession.h"
@@ -89,8 +91,6 @@ Core::Core()
     umask(S_IRWXG | S_IRWXO);
 #endif
     _startTime = QDateTime::currentDateTime().toUTC(); // for uptime :)
-
-    Quassel::loadTranslation(QLocale::system());
 
     // FIXME: MIGRATION 0.3 -> 0.4: Move database and core config to new location
     // Move settings, note this does not delete the old files
@@ -188,8 +188,8 @@ void Core::init()
 
     if (!_configured) {
         if (!_storageBackends.count()) {
-            qWarning() << qPrintable(tr("Could not initialize any storage backend! Exiting..."));
-            qWarning() << qPrintable(tr("Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
+            qWarning() << qPrintable(i18n("Could not initialize any storage backend! Exiting..."));
+            qWarning() << qPrintable(i18n("Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
                                         "Qt library with the sqlite or postgres plugin enabled in order for quasselcore\n"
                                         "to work."));
             exit(1); // TODO make this less brutal (especially for mono client -> popup)
@@ -244,18 +244,18 @@ void Core::saveState()
 void Core::restoreState()
 {
     if (!instance()->_configured) {
-        // qWarning() << qPrintable(tr("Cannot restore a state for an unconfigured core!"));
+        // qWarning() << qPrintable(i18n("Cannot restore a state for an unconfigured core!"));
         return;
     }
     if (instance()->sessions.count()) {
-        qWarning() << qPrintable(tr("Calling restoreState() even though active sessions exist!"));
+        qWarning() << qPrintable(i18n("Calling restoreState() even though active sessions exist!"));
         return;
     }
     CoreSettings s;
     /* We don't check, since we are at the first version since switching to Git
     uint statever = s.coreState().toMap()["CoreStateVersion"].toUInt();
     if(statever < 1) {
-      qWarning() << qPrintable(tr("Core state too old, ignoring..."));
+      qWarning() << qPrintable(i18n("Core state too old, ignoring..."));
       return;
     }
     */
@@ -282,18 +282,18 @@ QString Core::setup(const QString &adminUser, const QString &adminPassword, cons
 QString Core::setupCore(const QString &adminUser, const QString &adminPassword, const QString &backend, const QVariantMap &setupData)
 {
     if (_configured)
-        return tr("Core is already configured! Not configuring again...");
+        return i18n("Core is already configured! Not configuring again...");
 
     if (adminUser.isEmpty() || adminPassword.isEmpty()) {
-        return tr("Admin user or password not set.");
+        return i18n("Admin user or password not set.");
     }
     if (!(_configured = initStorage(backend, setupData, true))) {
-        return tr("Could not setup storage!");
+        return i18n("Could not setup storage!");
     }
 
     saveBackendSettings(backend, setupData);
 
-    quInfo() << qPrintable(tr("Creating admin user..."));
+    quInfo() << qPrintable(i18n("Creating admin user..."));
     _storage->addUser(adminUser, adminPassword);
     startListening(); // TODO check when we need this
     return QString();
@@ -443,7 +443,7 @@ bool Core::startListening()
             QHostAddress addr;
             if (!addr.setAddress(listen_term)) {
                 qCritical() << qPrintable(
-                    tr("Invalid listen address %1")
+                    i18n("Invalid listen address %1")
                     .arg(listen_term)
                     );
             }
@@ -452,7 +452,7 @@ bool Core::startListening()
                 case QAbstractSocket::IPv6Protocol:
                     if (_v6server.listen(addr, port)) {
                         quInfo() << qPrintable(
-                            tr("Listening for GUI clients on IPv6 %1 port %2")
+                            i18n("Listening for GUI clients on IPv6 %1 port %2")
                             .arg(addr.toString())
                             .arg(_v6server.serverPort())
                             );
@@ -460,7 +460,7 @@ bool Core::startListening()
                     }
                     else
                         quWarning() << qPrintable(
-                            tr("Could not open IPv6 interface %1:%2: %3")
+                            i18n("Could not open IPv6 interface %1:%2: %3")
                             .arg(addr.toString())
                             .arg(port)
                             .arg(_v6server.errorString()));
@@ -468,7 +468,7 @@ bool Core::startListening()
                 case QAbstractSocket::IPv4Protocol:
                     if (_server.listen(addr, port)) {
                         quInfo() << qPrintable(
-                            tr("Listening for GUI clients on IPv4 %1 port %2")
+                            i18n("Listening for GUI clients on IPv4 %1 port %2")
                             .arg(addr.toString())
                             .arg(_server.serverPort())
                             );
@@ -478,7 +478,7 @@ bool Core::startListening()
                         // if v6 succeeded on Any, the port will be already in use - don't display the error then
                         if (!success || _server.serverError() != QAbstractSocket::AddressInUseError)
                             quWarning() << qPrintable(
-                                tr("Could not open IPv4 interface %1:%2: %3")
+                                i18n("Could not open IPv4 interface %1:%2: %3")
                                 .arg(addr.toString())
                                 .arg(port)
                                 .arg(_server.errorString()));
@@ -486,7 +486,7 @@ bool Core::startListening()
                     break;
                 default:
                     qCritical() << qPrintable(
-                        tr("Invalid listen address %1, unknown network protocol")
+                        i18n("Invalid listen address %1, unknown network protocol")
                         .arg(listen_term)
                         );
                     break;
@@ -495,7 +495,7 @@ bool Core::startListening()
         }
     }
     if (!success)
-        quError() << qPrintable(tr("Could not open any network interfaces to listen on!"));
+        quError() << qPrintable(i18n("Could not open any network interfaces to listen on!"));
 
     return success;
 }
@@ -535,10 +535,10 @@ void Core::incomingConnection()
         connect(handler, SIGNAL(socketError(QAbstractSocket::SocketError,QString)), SLOT(socketError(QAbstractSocket::SocketError,QString)));
         connect(handler, SIGNAL(handshakeComplete(RemotePeer*,UserId)), SLOT(setupClientSession(RemotePeer*,UserId)));
 
-        quInfo() << qPrintable(tr("Client connected from"))  << qPrintable(socket->peerAddress().toString());
+        quInfo() << qPrintable(i18n("Client connected from"))  << qPrintable(socket->peerAddress().toString());
 
         if (!_configured) {
-            stopListening(tr("Closing server for basic setup."));
+            stopListening(i18n("Closing server for basic setup."));
         }
     }
 }
@@ -550,7 +550,7 @@ void Core::clientDisconnected()
     CoreAuthHandler *handler = qobject_cast<CoreAuthHandler *>(sender());
     Q_ASSERT(handler);
 
-    quInfo() << qPrintable(tr("Non-authed client disconnected:")) << qPrintable(handler->socket()->peerAddress().toString());
+    quInfo() << qPrintable(i18n("Non-authed client disconnected:")) << qPrintable(handler->socket()->peerAddress().toString());
     _connectingClients.remove(handler);
     handler->deleteLater();
 
@@ -582,7 +582,7 @@ void Core::setupClientSession(RemotePeer *peer, UserId uid)
     else {
         session = createSession(uid);
         if (!session) {
-            qWarning() << qPrintable(tr("Could not initialize session for client:")) << qPrintable(peer->description());
+            qWarning() << qPrintable(i18n("Could not initialize session for client:")) << qPrintable(peer->description());
             peer->close();
             peer->deleteLater();
             return;
@@ -609,7 +609,7 @@ void Core::addClientHelper(RemotePeer *peer, UserId uid)
 {
     // Find or create session for validated user
     if (!sessions.contains(uid)) {
-        qWarning() << qPrintable(tr("Could not find a session for client:")) << qPrintable(peer->description());
+        qWarning() << qPrintable(i18n("Could not find a session for client:")) << qPrintable(peer->description());
         peer->close();
         peer->deleteLater();
         return;

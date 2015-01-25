@@ -38,7 +38,7 @@ CoreConnectDlg::CoreConnectDlg(QWidget *parent) : QDialog(parent)
     if (lastAccount.isValid())
         _settingsPage->setSelectedAccount(lastAccount);
 
-    setWindowTitle(tr("Connect to Core"));
+    setWindowTitle(i18n("Connect to Core"));
     setWindowIcon(KIcon("network-disconnect"));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
@@ -78,7 +78,7 @@ CoreConnectAuthDlg::CoreConnectAuthDlg(CoreAccount *account, QWidget *parent)
     connect(ui.user, SIGNAL(textChanged(QString)), SLOT(setButtonStates()));
     connect(ui.password, SIGNAL(textChanged(QString)), SLOT(setButtonStates()));
 
-    ui.label->setText(tr("Please enter your credentials for %1:").arg(account->accountName()));
+    ui.label->setText(i18n("Please enter your credentials for %1:").arg(account->accountName()));
     ui.user->setText(account->user());
     ui.password->setText(account->password());
     ui.rememberPasswd->setChecked(account->storePassword());

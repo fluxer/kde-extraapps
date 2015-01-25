@@ -19,9 +19,10 @@
  ***************************************************************************/
 
 #include <QtEndian>
-
 #include <QCoreApplication>
 #include <QTcpSocket>
+
+#include <KLocale>
 
 #include "coretransfer.h"
 
@@ -55,7 +56,7 @@ void CoreTransfer::cleanUp()
 void CoreTransfer::onSocketDisconnected()
 {
     if (state() == Connecting || state() == Transferring) {
-        setError(tr("Socket closed while still transferring!"));
+        setError(i18n("Socket closed while still transferring!"));
     }
     else
         cleanUp();
@@ -67,7 +68,7 @@ void CoreTransfer::onSocketError(QAbstractSocket::SocketError error)
     Q_UNUSED(error)
 
     if (state() == Connecting || state() == Transferring) {
-        setError(tr("DCC connection error: %1").arg(_socket->errorString()));
+        setError(i18n("DCC connection error: %1").arg(_socket->errorString()));
     }
 }
 
@@ -111,7 +112,7 @@ void CoreTransfer::start()
 void CoreTransfer::setupConnectionForReceive()
 {
     if (port() == 0) {
-        setError(tr("Reverse DCC not supported yet!"));
+        setError(i18n("Reverse DCC not supported yet!"));
         return;
     }
 
@@ -157,7 +158,7 @@ void CoreTransfer::onDataReceived()
 
     if (_pos > fileSize()) {
         qWarning() << "DCC Receive: Got more data than expected!";
-        setError(tr("DCC Receive: Got more data than expected!"));
+        setError(i18n("DCC Receive: Got more data than expected!"));
     }
     else if (_pos == fileSize()) {
         qDebug() << "DCC Receive: Transfer finished";
@@ -173,7 +174,7 @@ bool CoreTransfer::relayData(const QByteArray &data, bool requireChunkSize)
 {
     // safeguard against a disconnecting quasselclient
     if (!_peer) {
-        setError(tr("DCC Receive: Quassel Client disconnected during transfer!"));
+        setError(i18n("DCC Receive: Quassel Client disconnected during transfer!"));
         return false;
     }
     _buffer.append(data);

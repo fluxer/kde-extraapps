@@ -798,7 +798,7 @@ void ContentsChatItem::addActionsToMenu(QMenu *menu, const QPointF &pos)
         switch (click.type()) {
         case Clickable::Url:
             privateData()->activeClickable = click;
-            menu->addAction(KIcon("edit-copy"), tr("Copy Link Address"),
+            menu->addAction(KIcon("edit-copy"), i18n("Copy Link Address"),
                 &_actionProxy, SLOT(copyLinkToClipboard()))->setData(QVariant::fromValue<void *>(this));
             break;
         case Clickable::Channel:

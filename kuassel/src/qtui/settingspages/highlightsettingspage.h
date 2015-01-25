@@ -24,6 +24,8 @@
 #include <QVariantList>
 #include <QTableWidgetItem>
 
+#include <KLocale>
+
 #include "settingspage.h"
 #include "ui_highlightsettingspage.h"
 
@@ -43,7 +45,7 @@ public slots:
 
 private slots:
     void widgetHasChanged();
-    void addNewRow(QString name = tr("highlight rule"), bool regex = false, bool cs = false, bool enable = true, QString chanName = "", bool self = false);
+    void addNewRow(QString name = i18n("highlight rule"), bool regex = false, bool cs = false, bool enable = true, QString chanName = "", bool self = false);
     void removeSelectedRows();
     void selectRow(QTableWidgetItem *item);
     void tableChanged(QTableWidgetItem *item);

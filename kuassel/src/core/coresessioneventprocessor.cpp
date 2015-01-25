@@ -75,7 +75,7 @@ void CoreSessionEventProcessor::tryNextNick(NetworkEvent *e, const QString &errn
         if (erroneus) {
             // FIXME Make this an ErrorEvent or something like that, so it's translated in the client
             MessageEvent *msgEvent = new MessageEvent(Message::Error, e->network(),
-                tr("No free and valid nicks in nicklist found. use: /nick <othernick> to continue"),
+                i18n("No free and valid nicks in nicklist found. use: /nick <othernick> to continue"),
                 QString(), QString(), Message::None, e->timestamp());
             emit newEvent(msgEvent);
             return;
@@ -447,7 +447,7 @@ void CoreSessionEventProcessor::processIrcEventTopic(IrcEvent *e)
 void CoreSessionEventProcessor::processKeyEvent(KeyEvent *e)
 {
     if (!Cipher::neededFeaturesAvailable()) {
-        emit newEvent(new MessageEvent(Message::Error, e->network(), tr("Unable to perform key exchange, missing qca-ossl plugin."), e->prefix(), e->target(), Message::None, e->timestamp()));
+        emit newEvent(new MessageEvent(Message::Error, e->network(), i18n("Unable to perform key exchange, missing qca-ossl plugin."), e->prefix(), e->target(), Message::None, e->timestamp()));
         return;
     }
     CoreNetwork *net = qobject_cast<CoreNetwork*>(e->network());
@@ -458,11 +458,11 @@ void CoreSessionEventProcessor::processKeyEvent(KeyEvent *e)
     if (e->exchangeType() == KeyEvent::Init) {
         QByteArray pubKey = c->parseInitKeyX(e->key());
         if (pubKey.isEmpty()) {
-            emit newEvent(new MessageEvent(Message::Error, e->network(), tr("Unable to parse the DH1080_INIT. Key exchange failed."), e->prefix(), e->target(), Message::None, e->timestamp()));
+            emit newEvent(new MessageEvent(Message::Error, e->network(), i18n("Unable to parse the DH1080_INIT. Key exchange failed."), e->prefix(), e->target(), Message::None, e->timestamp()));
             return;
         } else {
             net->setCipherKey(e->target(), c->key());
-            emit newEvent(new MessageEvent(Message::Info, e->network(), tr("Your key is set and messages will be encrypted."), e->prefix(), e->target(), Message::None, e->timestamp()));
+            emit newEvent(new MessageEvent(Message::Info, e->network(), i18n("Your key is set and messages will be encrypted."), e->prefix(), e->target(), Message::None, e->timestamp()));
             QList<QByteArray> p;
             p << net->serverEncode(e->target()) << net->serverEncode("DH1080_FINISH ")+pubKey;
             net->putCmd("NOTICE", p);
@@ -470,9 +470,9 @@ void CoreSessionEventProcessor::processKeyEvent(KeyEvent *e)
     } else {
         if (c->parseFinishKeyX(e->key())) {
             net->setCipherKey(e->target(), c->key());
-            emit newEvent(new MessageEvent(Message::Info, e->network(), tr("Your key is set and messages will be encrypted."), e->prefix(), e->target(), Message::None, e->timestamp()));
+            emit newEvent(new MessageEvent(Message::Info, e->network(), i18n("Your key is set and messages will be encrypted."), e->prefix(), e->target(), Message::None, e->timestamp()));
         } else {
-            emit newEvent(new MessageEvent(Message::Info, e->network(), tr("Failed to parse DH1080_FINISH. Key exchange failed."), e->prefix(), e->target(), Message::None, e->timestamp()));
+            emit newEvent(new MessageEvent(Message::Info, e->network(), i18n("Failed to parse DH1080_FINISH. Key exchange failed."), e->prefix(), e->target(), Message::None, e->timestamp()));
         }
     }
 }
@@ -1049,7 +1049,7 @@ void CoreSessionEventProcessor::handleCtcpDcc(CtcpEvent *e)
             }
 
             if (port == 0) { // Reverse DCC is indicated by a 0 port
-                emit newEvent(new MessageEvent(Message::Error, e->network(), tr("Reverse DCC SEND not supported"), e->prefix(), e->target(), Message::None, e->timestamp()));
+                emit newEvent(new MessageEvent(Message::Error, e->network(), i18n("Reverse DCC SEND not supported"), e->prefix(), e->target(), Message::None, e->timestamp()));
                 return;
             }
             if (port < 1024) {
@@ -1067,7 +1067,7 @@ void CoreSessionEventProcessor::handleCtcpDcc(CtcpEvent *e)
             coreSession()->transferManager()->addTransfer(transfer);
         }
         else {
-            emit newEvent(new MessageEvent(Message::Error, e->network(), tr("DCC %1 not supported").arg(cmd), e->prefix(), e->target(), Message::None, e->timestamp()));
+            emit newEvent(new MessageEvent(Message::Error, e->network(), i18n("DCC %1 not supported").arg(cmd), e->prefix(), e->target(), Message::None, e->timestamp()));
             return;
         }
     }

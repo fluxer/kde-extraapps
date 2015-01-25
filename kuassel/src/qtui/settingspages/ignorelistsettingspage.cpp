@@ -28,11 +28,12 @@
 #include <QDebug>
 
 #include <KIcon>
+#include <KLocale>
 
 #include "ignorelistsettingspage.h"
 
 IgnoreListSettingsPage::IgnoreListSettingsPage(QWidget *parent)
-    : SettingsPage(tr("IRC"), tr("Ignore List"), parent)
+    : SettingsPage(i18n("IRC"), i18n("Ignore List"), parent)
 {
     ui.setupUi(this);
     _delegate = new IgnoreListDelegate(ui.ignoreListView);
@@ -142,8 +143,8 @@ void IgnoreListSettingsPage::newIgnoreRule(QString rule)
     while (dlg->exec() == QDialog::Accepted) {
         if (!_ignoreListModel.newIgnoreRule(dlg->ignoreListItem())) {
             if (QMessageBox::warning(this,
-                    tr("Rule already exists"),
-                    tr("There is already a rule\n\"%1\"\nPlease choose another rule.")
+                    i18n("Rule already exists"),
+                    i18n("There is already a rule\n\"%1\"\nPlease choose another rule.")
                     .arg(dlg->ignoreListItem().ignoreRule),
                     QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok)
                 == QMessageBox::Cancel)

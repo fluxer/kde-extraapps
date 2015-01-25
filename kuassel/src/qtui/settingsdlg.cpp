@@ -22,6 +22,7 @@
 #include <QPushButton>
 
 #include <KIcon>
+#include <KLocale>
 
 #include "settingsdlg.h"
 #include "client.h"
@@ -108,7 +109,7 @@ void SettingsDlg::selectPage(SettingsPage *sp)
     if (!sp) {
         _currentPage = 0;
         ui.settingsStack->setCurrentIndex(0);
-        ui.pageTitle->setText(tr("Settings"));
+        ui.pageTitle->setText(i18n("Settings"));
         return;
     }
 
@@ -118,8 +119,8 @@ void SettingsDlg::selectPage(SettingsPage *sp)
     }
 
     if (sp != currentPage() && currentPage() != 0 && currentPage()->hasChanged()) {
-        int ret = QMessageBox::warning(this, tr("Save changes"),
-            tr("There are unsaved changes on the current configuration page. Would you like to apply your changes now?"),
+        int ret = QMessageBox::warning(this, i18n("Save changes"),
+            i18n("There are unsaved changes on the current configuration page. Would you like to apply your changes now?"),
             QMessageBox::Discard|QMessageBox::Save|QMessageBox::Cancel, QMessageBox::Cancel);
         if (ret == QMessageBox::Save) {
             if (!applyChanges()) sp = currentPage();
@@ -133,11 +134,11 @@ void SettingsDlg::selectPage(SettingsPage *sp)
     if (sp != currentPage()) {
         if (sp->title().isEmpty()) {
             ui.pageTitle->setText(sp->category());
-            setWindowTitle(tr("Configure %1").arg(sp->category()));
+            setWindowTitle(i18n("Configure %1").arg(sp->category()));
         }
         else {
             ui.pageTitle->setText(sp->title());
-            setWindowTitle(tr("Configure %1").arg(sp->title()));
+            setWindowTitle(i18n("Configure %1").arg(sp->title()));
         }
 
         ui.settingsStack->setCurrentWidget(sp);
@@ -217,7 +218,7 @@ void SettingsDlg::undoChanges()
 void SettingsDlg::reload()
 {
     if (!currentPage()) return;
-    int ret = QMessageBox::question(this, tr("Reload Settings"), tr("Do you like to reload the settings, undoing your changes on this page?"),
+    int ret = QMessageBox::question(this, i18n("Reload Settings"), i18n("Do you like to reload the settings, undoing your changes on this page?"),
         QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
     if (ret == QMessageBox::Yes) {
         currentPage()->load();
@@ -228,7 +229,7 @@ void SettingsDlg::reload()
 void SettingsDlg::loadDefaults()
 {
     if (!currentPage()) return;
-    int ret = QMessageBox::question(this, tr("Restore Defaults"), tr("Do you like to restore the default values for this page?"),
+    int ret = QMessageBox::question(this, i18n("Restore Defaults"), i18n("Do you like to restore the default values for this page?"),
         QMessageBox::RestoreDefaults|QMessageBox::Cancel, QMessageBox::Cancel);
     if (ret == QMessageBox::RestoreDefaults) {
         currentPage()->defaults();

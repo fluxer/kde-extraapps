@@ -24,12 +24,14 @@
 #include <QLabel>
 #include <QPushButton>
 
+#include <KLocale>
+
 #include "fontselector.h"
 
 FontSelector::FontSelector(QWidget *parent) : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    QPushButton *chooseButton = new QPushButton(tr("Choose..."), this);
+    QPushButton *chooseButton = new QPushButton(i18n("Choose..."), this);
     connect(chooseButton, SIGNAL(clicked()), SLOT(chooseFont()));
 
     layout->addWidget(_demo = new QLabel("Font"));

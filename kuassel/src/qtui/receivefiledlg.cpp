@@ -21,6 +21,8 @@
 #include <QDir>
 #include <QFileDialog>
 
+#include <KLocale>
+
 #include "receivefiledlg.h"
 
 #include "transfer.h"
@@ -32,7 +34,7 @@ ReceiveFileDlg::ReceiveFileDlg(const Transfer *transfer, QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     ui.setupUi(this);
 
-    QString label = tr("<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)").arg(transfer->nick(), transfer->fileName()).arg(transfer->fileSize());
+    QString label = i18n("<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)").arg(transfer->nick(), transfer->fileName()).arg(transfer->fileSize());
     ui.infoText->setText(label);
 }
 

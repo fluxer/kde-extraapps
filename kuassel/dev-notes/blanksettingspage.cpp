@@ -25,7 +25,7 @@
 
 
 BlankSettingsPage::BlankSettingsPage(QWidget *parent)
-  : SettingsPage(tr("Behaviour"), tr("Blank"), parent) {
+  : SettingsPage(i18n("Behaviour"), i18n("Blank"), parent) {
   ui.setupUi(this);
 
   connect(ui.exampleCheckbox, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));

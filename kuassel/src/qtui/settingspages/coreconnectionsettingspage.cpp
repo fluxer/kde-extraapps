@@ -21,7 +21,7 @@
 #include "coreconnectionsettingspage.h"
 
 CoreConnectionSettingsPage::CoreConnectionSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Remote Cores"), tr("Connection"), parent)
+    : SettingsPage(i18n("Remote Cores"), i18n("Connection"), parent)
 {
     ui.setupUi(this);
 

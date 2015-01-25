@@ -63,8 +63,8 @@ void CoreConnectionStatusWidget::update()
 void CoreConnectionStatusWidget::updateLag(int msecs)
 {
     if (msecs >= 0) {
-        QString unit = msecs >= 100 ? tr("s", "seconds") : tr("ms", "milliseconds");
-        ui.lagLabel->setText(tr("(Lag: %1 %2)").arg(msecs >= 100 ? msecs / 1000. : msecs, 0, 'f', (int)(msecs >= 100)).arg(unit));
+        QString unit = msecs >= 100 ? i18n("s", "seconds") : i18n("ms", "milliseconds");
+        ui.lagLabel->setText(i18n("(Lag: %1 %2)").arg(msecs >= 100 ? msecs / 1000. : msecs, 0, 'f', (int)(msecs >= 100)).arg(unit));
         if (!ui.lagLabel->isVisible())
             ui.lagLabel->show();
     }
@@ -80,11 +80,11 @@ void CoreConnectionStatusWidget::connectionStateChanged(CoreConnection::Connecti
     if (state >= CoreConnection::Connected) {
         if (coreConnection()->isEncrypted()) {
             ui.sslLabel->setPixmap(KIcon("security-high").pixmap(16));
-            ui.sslLabel->setToolTip(tr("The connection to your core is encrypted with SSL."));
+            ui.sslLabel->setToolTip(i18n("The connection to your core is encrypted with SSL."));
         }
         else {
             ui.sslLabel->setPixmap(KIcon("security-low").pixmap(16));
-            ui.sslLabel->setToolTip(tr("The connection to your core is not encrypted."));
+            ui.sslLabel->setToolTip(i18n("The connection to your core is not encrypted."));
         }
         ui.sslLabel->show();
     }

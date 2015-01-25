@@ -36,7 +36,7 @@
 #include "settingspages/identitiessettingspage.h"
 
 NetworksSettingsPage::NetworksSettingsPage(QWidget *parent)
-    : SettingsPage(tr("IRC"), tr("Networks"), parent)
+    : SettingsPage(i18n("IRC"), i18n("Networks"), parent)
 #ifdef HAVE_SSL
       , _cid(0)
 #endif
@@ -183,10 +183,10 @@ bool NetworksSettingsPage::aboutToSave()
         if (!info.serverList.count()) errors.append(1);
     }
     if (!errors.count()) return true;
-    QString error(tr("<b>The following problems need to be corrected before your changes can be applied:</b><ul>"));
-    if (errors.contains(1)) error += tr("<li>All networks need at least one server defined</li>");
-    error += tr("</ul>");
-    QMessageBox::warning(this, tr("Invalid Network Settings"), error);
+    QString error(i18n("<b>The following problems need to be corrected before your changes can be applied:</b><ul>"));
+    if (errors.contains(1)) error += i18n("<li>All networks need at least one server defined</li>");
+    error += i18n("</ul>");
+    QMessageBox::warning(this, i18n("Invalid Network Settings"), error);
     return false;
 }
 
@@ -230,14 +230,14 @@ void NetworksSettingsPage::setWidgetStates()
         if(net) {
           if(net->connectionState() == Network::Disconnected) {
             ui.connectNow->setIcon(connectedIcon);
-            ui.connectNow->setText(tr("Connect"));
+            ui.connectNow->setText(i18n("Connect"));
           } else {
             ui.connectNow->setIcon(disconnectedIcon);
-            ui.connectNow->setText(tr("Disconnect"));
+            ui.connectNow->setText(i18n("Disconnect"));
           }
         } else {
           ui.connectNow->setIcon(QIcon());
-          ui.connectNow->setText(tr("Apply first!"));
+          ui.connectNow->setText(i18n("Apply first!"));
         } */
     }
     else {
@@ -649,8 +649,8 @@ void NetworksSettingsPage::on_deleteNetwork_clicked()
 {
     if (ui.networkList->selectedItems().count()) {
         NetworkId netid = ui.networkList->selectedItems()[0]->data(Qt::UserRole).value<NetworkId>();
-        int ret = QMessageBox::question(this, tr("Delete Network?"),
-            tr("Do you really want to delete the network \"%1\" and all related settings, including the backlog?").arg(networkInfos[netid].networkName),
+        int ret = QMessageBox::question(this, i18n("Delete Network?"),
+            i18n("Do you really want to delete the network \"%1\" and all related settings, including the backlog?").arg(networkInfos[netid].networkName),
             QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
         if (ret == QMessageBox::Yes) {
             currentId = 0;
@@ -839,7 +839,7 @@ NetworkEditDlg::NetworkEditDlg(const QString &old, const QStringList &exist, QWi
 
     if (old.isEmpty()) {
         // new network
-        setWindowTitle(tr("Add Network"));
+        setWindowTitle(i18n("Add Network"));
         on_networkEdit_textChanged(""); // disable ok button
     }
     else ui.networkEdit->setText(old);

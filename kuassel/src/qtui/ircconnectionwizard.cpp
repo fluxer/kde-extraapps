@@ -47,7 +47,7 @@ IrcConnectionWizard::IrcConnectionWizard(QWidget *parent, Qt::WindowFlags flags)
     setOption(QWizard::NoCancelButton, false);
 
     connect(button(QWizard::FinishButton), SIGNAL(clicked()), this, SLOT(finishClicked()));
-    setButtonText(QWizard::FinishButton, tr("Save && Connect"));
+    setButtonText(QWizard::FinishButton, i18n("Save && Connect"));
 }
 
 
@@ -113,12 +113,12 @@ IdentityPage::IdentityPage(QWidget *parent)
     _identityEditWidget(new IdentityEditWidget(this)),
     _identity(0)
 {
-    setTitle(tr("Setup Identity"));
+    setTitle(i18n("Setup Identity"));
 
     if (Client::identityIds().isEmpty()) {
         _identity = new CertIdentity(-1, this);
         _identity->setToDefaults();
-        _identity->setIdentityName(tr("Default Identity"));
+        _identity->setIdentityName(i18n("Default Identity"));
     }
     else {
         _identity = new CertIdentity(*Client::identity(Client::identityIds().first()), this);
@@ -156,7 +156,7 @@ NetworkPage::NetworkPage(QWidget *parent)
     _networkEditor->displayNetworkInfo(_networkInfo);
     _networkEditor->setDefaultChannels(_channelList);
 
-    setTitle(tr("Setup Network Connection"));
+    setTitle(i18n("Setup Network Connection"));
 
     QVBoxLayout *layout = new QVBoxLayout;
     layout->addWidget(_networkEditor);

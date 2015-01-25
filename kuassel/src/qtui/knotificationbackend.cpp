@@ -130,7 +130,7 @@ void KNotificationBackend::notificationActivated(uint notificationId)
 void KNotificationBackend::updateToolTip()
 {
     QtUi::mainWindow()->systemTray()->setToolTip("Kuassel",
-        _notifications.count() ? tr("%n pending highlight(s)", "", _notifications.count()) : QString());
+        _notifications.count() ? i18n("%n pending highlight(s)", "", _notifications.count()) : QString());
 }
 
 

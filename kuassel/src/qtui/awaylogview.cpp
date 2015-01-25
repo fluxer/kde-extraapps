@@ -30,7 +30,7 @@
 AwayLogView::AwayLogView(AwayLogFilter *filter, QWidget *parent)
     : ChatMonitorView(filter, parent)
 {
-    setWindowTitle(tr("Away Log"));
+    setWindowTitle(i18n("Away Log"));
 }
 
 
@@ -43,12 +43,12 @@ void AwayLogView::addActionsToMenu(QMenu *menu, const QPointF &pos)
     if (scene()->columnByScenePos(pos) == ChatLineModel::SenderColumn) {
         menu->addSeparator();
 
-        QAction *showNetworkAction = menu->addAction(tr("Show Network Name"), this, SLOT(showFieldsChanged(bool)));
+        QAction *showNetworkAction = menu->addAction(i18n("Show Network Name"), this, SLOT(showFieldsChanged(bool)));
         showNetworkAction->setCheckable(true);
         showNetworkAction->setChecked(filter()->showFields() & ChatMonitorFilter::NetworkField);
         showNetworkAction->setData(ChatMonitorFilter::NetworkField);
 
-        QAction *showBufferAction = menu->addAction(tr("Show Buffer Name"), this, SLOT(showFieldsChanged(bool)));
+        QAction *showBufferAction = menu->addAction(i18n("Show Buffer Name"), this, SLOT(showFieldsChanged(bool)));
         showBufferAction->setCheckable(true);
         showBufferAction->setChecked(filter()->showFields() & ChatMonitorFilter::BufferField);
         showBufferAction->setData(ChatMonitorFilter::BufferField);

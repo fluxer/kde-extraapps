@@ -25,8 +25,10 @@
 
 #include <QHeaderView>
 
+#include <KLocale>
+
 HighlightSettingsPage::HighlightSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Highlight"), parent)
+    : SettingsPage(i18n("Interface"), i18n("Highlight"), parent)
 {
     ui.setupUi(this);
     ui.highlightTable->verticalHeader()->hide();
@@ -189,7 +191,7 @@ void HighlightSettingsPage::tableChanged(QTableWidgetItem *item)
     {
     case HighlightSettingsPage::NameColumn:
         if (item->text() == "")
-            item->setText(tr("this shouldn't be empty"));
+            item->setText(i18n("this shouldn't be empty"));
         highlightRule["Name"] = item->text();
         break;
     case HighlightSettingsPage::RegExColumn:

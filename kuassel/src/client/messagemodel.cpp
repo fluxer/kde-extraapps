@@ -401,7 +401,7 @@ void MessageModel::requestBacklog(BufferId bufferId)
     for (int i = 0; i < messageCount(); i++) {
         if (messageItemAt(i)->bufferId() == bufferId) {
             _messagesWaiting[bufferId] = requestCount;
-            Client::backlogManager()->emitMessagesRequested(tr("Requesting %1 messages from backlog for buffer %2:%3")
+            Client::backlogManager()->emitMessagesRequested(i18n("Requesting %1 messages from backlog for buffer %2:%3")
                 .arg(requestCount)
                 .arg(Client::networkModel()->networkName(bufferId))
                 .arg(Client::networkModel()->bufferName(bufferId)));

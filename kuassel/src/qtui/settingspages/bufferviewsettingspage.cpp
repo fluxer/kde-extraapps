@@ -33,7 +33,7 @@
 #include "util.h"
 
 BufferViewSettingsPage::BufferViewSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Custom Chat Lists"), parent),
+    : SettingsPage(i18n("Interface"), i18n("Custom Chat Lists"), parent),
     _ignoreWidgetChanges(false),
     _useBufferViewHint(false),
     _bufferViewHint(0)
@@ -125,7 +125,7 @@ void BufferViewSettingsPage::load()
     _ignoreWidgetChanges = true;
     // load network selector
     ui.networkSelector->clear();
-    ui.networkSelector->addItem(tr("All"));
+    ui.networkSelector->addItem(i18n("All"));
     ui.networkSelector->setItemData(0, qVariantFromValue<NetworkId>(NetworkId()));
     const Network *net;
     foreach(NetworkId netId, Client::networkIds()) {
@@ -380,8 +380,8 @@ void BufferViewSettingsPage::on_deleteBufferView_clicked()
     QListWidgetItem *currentItem = ui.bufferViewList->item(ui.bufferViewList->currentRow());
     QString viewName = currentItem->text();
     int viewId = bufferView(ui.bufferViewList->currentRow())->bufferViewId();
-    int ret = QMessageBox::question(this, tr("Delete Chat List?"),
-        tr("Do you really want to delete the chat list \"%1\"?").arg(viewName),
+    int ret = QMessageBox::question(this, i18n("Delete Chat List?"),
+        i18n("Do you really want to delete the chat list \"%1\"?").arg(viewName),
         QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 
     if (ret == QMessageBox::Yes) {
@@ -579,7 +579,7 @@ BufferViewEditDlg::BufferViewEditDlg(const QString &old, const QStringList &exis
 
     if (old.isEmpty()) {
         // new buffer
-        setWindowTitle(tr("Add Chat List"));
+        setWindowTitle(i18n("Add Chat List"));
         on_bufferViewEdit_textChanged(""); // disable ok button
     }
     else {

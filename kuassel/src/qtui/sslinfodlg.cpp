@@ -23,6 +23,8 @@
 #include <QSslCipher>
 #include <QSslSocket>
 
+#include <KLocale>
+
 #include "sslinfodlg.h"
 #include "util.h"
 
@@ -68,16 +70,16 @@ void SslInfoDlg::setCurrentCert(int index)
     ui.issuerCity->setText(issuerInfo(cert, QSslCertificate::LocalityName));
 
     if (socket()->sslErrors().isEmpty())
-        ui.trusted->setText(tr("Yes"));
+        ui.trusted->setText(i18n("Yes"));
     else {
-        QString errorString = tr("No, for the following reasons:<ul>");
+        QString errorString = i18n("No, for the following reasons:<ul>");
         foreach(const QSslError &error, socket()->sslErrors())
         errorString += "<li>" + error.errorString() + "</li>";
         errorString += "</ul>";
         ui.trusted->setText(errorString);
     }
 
-    ui.validity->setText(tr("%1 to %2").arg(cert.effectiveDate().date().toString(Qt::ISODate), cert.expiryDate().date().toString(Qt::ISODate)));
+    ui.validity->setText(i18n("%1 to %2").arg(cert.effectiveDate().date().toString(Qt::ISODate), cert.expiryDate().date().toString(Qt::ISODate)));
     ui.md5Digest->setText(prettyDigest(cert.digest(QCryptographicHash::Md5)));
     ui.sha1Digest->setText(prettyDigest(cert.digest(QCryptographicHash::Sha1)));
 }

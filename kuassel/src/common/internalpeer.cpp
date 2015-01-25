@@ -21,6 +21,8 @@
 #include <QCoreApplication>
 #include <QThread>
 
+#include <KLocale>
+
 #include "internalpeer.h"
 
 using namespace Protocol;
@@ -55,7 +57,7 @@ InternalPeer::~InternalPeer()
 
 QString InternalPeer::description() const
 {
-    return tr("internal connection");
+    return i18n("internal connection");
 }
 
 

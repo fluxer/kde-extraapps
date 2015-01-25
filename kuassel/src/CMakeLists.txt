@@ -21,8 +21,17 @@ endif()
 include_directories(${KDE4_INCLUDES})
 
 add_executable(kuassel WIN32 common/main.cpp qtui/monoapplication.cpp ${CLIENT_DEPS} ${CORE_DEPS} ${COMMON_DEPS})
-qt4_use_modules(kuassel Core Gui Network ${CLIENT_QT_MODULES} ${CORE_QT_MODULES})
+# qt4_use_modules(kuassel Core Gui Network ${CLIENT_QT_MODULES} ${CORE_QT_MODULES})
 set_target_properties(kuassel PROPERTIES
-			      OUTPUT_NAME ../kuassel)
-target_link_libraries(kuassel mod_qtui mod_uisupport mod_client mod_core mod_common ${COMMON_LIBRARIES} ${CLIENT_LIBRARIES} ${QUASSEL_SSL_LIBRARIES} ${QT_QTMAIN_LIBRARY})
+                              OUTPUT_NAME ../kuassel)
+target_link_libraries(kuassel
+    mod_qtui
+    mod_uisupport
+    mod_client
+    mod_core
+    mod_common
+    ${COMMON_LIBRARIES}
+    ${CLIENT_LIBRARIES}
+    ${QUASSEL_SSL_LIBRARIES}
+    ${QT_QTMAIN_LIBRARY})
 install(TARGETS kuassel RUNTIME DESTINATION ${BIN_INSTALL_DIR})

@@ -26,19 +26,19 @@
 #include "qtuistyle.h"
 
 ItemViewSettingsPage::ItemViewSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Chat & Nick Lists"), parent),
+    : SettingsPage(i18n("Interface"), i18n("Chat & Nick Lists"), parent),
     _mapper(new QSignalMapper(this))
 {
     ui.setupUi(this);
 
-    _networkItem = new QTreeWidgetItem(ui.bufferViewPreview, QStringList(tr("Network")));
+    _networkItem = new QTreeWidgetItem(ui.bufferViewPreview, QStringList(i18n("Network")));
     _networkItem->setFlags(Qt::NoItemFlags);
 
-    _inactiveBufferItem = new QTreeWidgetItem(_networkItem, QStringList(tr("Inactive")));
-    _defaultBufferItem = new QTreeWidgetItem(_networkItem, QStringList(tr("Normal")));
-    _unreadBufferItem = new QTreeWidgetItem(_networkItem, QStringList(tr("Unread messages")));
-    _highlightedBufferItem = new QTreeWidgetItem(_networkItem, QStringList(tr("Highlight")));
-    _activeBufferItem = new QTreeWidgetItem(_networkItem, QStringList(tr("Other activity")));
+    _inactiveBufferItem = new QTreeWidgetItem(_networkItem, QStringList(i18n("Inactive")));
+    _defaultBufferItem = new QTreeWidgetItem(_networkItem, QStringList(i18n("Normal")));
+    _unreadBufferItem = new QTreeWidgetItem(_networkItem, QStringList(i18n("Unread messages")));
+    _highlightedBufferItem = new QTreeWidgetItem(_networkItem, QStringList(i18n("Highlight")));
+    _activeBufferItem = new QTreeWidgetItem(_networkItem, QStringList(i18n("Other activity")));
 
     ui.bufferViewPreview->expandAll();
 

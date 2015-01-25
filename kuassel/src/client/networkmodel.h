@@ -148,7 +148,7 @@ public:
     StatusBufferItem(const BufferInfo &bufferInfo, NetworkItem *parent);
 
     virtual QString toolTip(int column) const;
-    virtual inline QString bufferName() const { return tr("Status Buffer"); }
+    virtual inline QString bufferName() const { return i18n("Status Buffer"); }
 };
 
 

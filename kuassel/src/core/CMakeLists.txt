@@ -60,10 +60,13 @@ set(CORE_RCS ${CORE_RCS} ${CMAKE_CURRENT_SOURCE_DIR}/sql.qrc)
 qt4_add_resources(SOURCES ${CORE_RCS})
 
 add_library(mod_core STATIC ${SOURCES})
-qt4_use_modules(mod_core Core Network Script Sql)
 
 add_dependencies(mod_core mod_common)
 
-if (LIBS)
-    target_link_libraries(mod_core ${LIBS})
-endif()
+target_link_libraries(mod_core
+    ${LIBS}
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+    ${QT_QTSCRIPT_LIBRARY}
+    ${QT_QTSQL_LIBRARY}
+)

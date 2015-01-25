@@ -30,43 +30,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>Language:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="languageComboBox">
-       <property name="toolTip">
-        <string>Set the application language. Requires restart!</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>&lt;Untranslated&gt;</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>&lt;System Default&gt;</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
     </layout>
    </item>
    <item>
@@ -377,7 +340,6 @@
  </widget>
  <tabstops>
   <tabstop>styleComboBox</tabstop>
-  <tabstop>languageComboBox</tabstop>
   <tabstop>useCustomStyleSheet</tabstop>
   <tabstop>customStyleSheetPath</tabstop>
   <tabstop>chooseStyleSheet</tabstop>

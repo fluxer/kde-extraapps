@@ -65,7 +65,7 @@ void CoreAccountModel::load()
         // Make sure we have an internal account in monolithic mode
         CoreAccount intAcc;
         intAcc.setInternal(true);
-        intAcc.setAccountName(tr("Internal Core"));
+        intAcc.setAccountName(i18n("Internal Core"));
         _internalAccount = createOrUpdateAccount(intAcc);
     }
 }

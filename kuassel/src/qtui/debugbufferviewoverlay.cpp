@@ -47,17 +47,17 @@ DebugBufferViewOverlay::DebugBufferViewOverlay(QWidget *parent)
     ui.bufferView->show();
 
     QFormLayout *layout = new QFormLayout(ui.overlayProperties);
-    layout->addRow(tr("BufferViews:"), _bufferViews = new QLineEdit(this));
-    layout->addRow(tr("All Networks:"), _allNetworks = new QLabel(this));
-    layout->addRow(tr("Networks:"), _networks = new QLineEdit(this));
-    layout->addRow(tr("Buffers:"), _bufferIds = new QTextEdit(this));
-    layout->addRow(tr("Removed buffers:"), _removedBufferIds = new QTextEdit(this));
-    layout->addRow(tr("Temp. removed buffers:"), _tempRemovedBufferIds = new QTextEdit(this));
+    layout->addRow(i18n("BufferViews:"), _bufferViews = new QLineEdit(this));
+    layout->addRow(i18n("All Networks:"), _allNetworks = new QLabel(this));
+    layout->addRow(i18n("Networks:"), _networks = new QLineEdit(this));
+    layout->addRow(i18n("Buffers:"), _bufferIds = new QTextEdit(this));
+    layout->addRow(i18n("Removed buffers:"), _removedBufferIds = new QTextEdit(this));
+    layout->addRow(i18n("Temp. removed buffers:"), _tempRemovedBufferIds = new QTextEdit(this));
 
-    layout->addRow(tr("Allowed buffer types:"), _allowedBufferTypes = new QLabel(this));
-    layout->addRow(tr("Minimum activity:"), _minimumActivity = new QLabel(this));
+    layout->addRow(i18n("Allowed buffer types:"), _allowedBufferTypes = new QLabel(this));
+    layout->addRow(i18n("Minimum activity:"), _minimumActivity = new QLabel(this));
 
-    layout->addRow(tr("Is initialized:"), _isInitialized = new QLabel(this));
+    layout->addRow(i18n("Is initialized:"), _isInitialized = new QLabel(this));
 
     update();
     connect(Client::bufferViewOverlay(), SIGNAL(hasChanged()), this, SLOT(update()));

@@ -269,8 +269,8 @@ void BufferView::dropEvent(QDropEvent *event)
     if (bufferId1 == bufferId2)
         return QTreeView::dropEvent(event);
 
-    int res = QMessageBox::question(0, tr("Merge buffers permanently?"),
-        tr("Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n This cannot be reversed!").arg(Client::networkModel()->bufferName(bufferId2)).arg(Client::networkModel()->bufferName(bufferId1)),
+    int res = QMessageBox::question(0, i18n("Merge buffers permanently?"),
+        i18n("Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n This cannot be reversed!").arg(Client::networkModel()->bufferName(bufferId2)).arg(Client::networkModel()->bufferName(bufferId1)),
         QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
     if (res == QMessageBox::Yes) {
         Client::mergeBuffersPermanently(bufferId1, bufferId2);

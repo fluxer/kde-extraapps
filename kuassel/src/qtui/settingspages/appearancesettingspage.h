@@ -23,7 +23,6 @@
 
 #include <QHash>
 #include <QList>
-#include <QLocale>
 #include <QTextCharFormat>
 
 #include "settings.h"
@@ -52,12 +51,9 @@ private slots:
 private:
     bool testHasChanged();
     void initStyleComboBox();
-    void initLanguageComboBox();
-    QLocale selectedLocale() const;
 
     Ui::AppearanceSettingsPage ui;
     QHash<QString, QVariant> settings;
-    QMap<QString, QLocale> _locales;
 
     inline QString settingsKey() const { return QString("QtUi"); }
 };

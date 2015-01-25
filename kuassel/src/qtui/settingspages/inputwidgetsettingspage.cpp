@@ -18,10 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <KLocale>
+
 #include "inputwidgetsettingspage.h"
 
 InputWidgetSettingsPage::InputWidgetSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Input Widget"), parent)
+    : SettingsPage(i18n("Interface"), i18n("Input Widget"), parent)
 {
     ui.setupUi(this);
 

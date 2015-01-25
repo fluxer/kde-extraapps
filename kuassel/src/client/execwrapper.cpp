@@ -46,7 +46,7 @@ void ExecWrapper::start(const BufferInfo &info, const QString &command)
 
     QRegExp rx("^\\s*(\\S+)(\\s+(.*))?$");
     if (!rx.exactMatch(command)) {
-        emit error(tr("Invalid command string for /exec: %1").arg(command));
+        emit error(i18n("Invalid command string for /exec: %1").arg(command));
     }
     else {
         _scriptName = rx.cap(1);
@@ -55,7 +55,7 @@ void ExecWrapper::start(const BufferInfo &info, const QString &command)
 
     // Make sure we don't execute something outside a script dir
     if (_scriptName.contains("../") || _scriptName.contains("..\\"))
-        emit error(tr("Name \"%1\" is invalid: ../ or ..\\ are not allowed!").arg(_scriptName));
+        emit error(i18n("Name \"%1\" is invalid: ../ or ..\\ are not allowed!").arg(_scriptName));
 
     else {
         foreach(QString scriptDir, Quassel::scriptDirPaths()) {
@@ -66,7 +66,7 @@ void ExecWrapper::start(const BufferInfo &info, const QString &command)
             _process.start('"' + fileName + "\" " + params);
             return;
         }
-        emit error(tr("Could not find script \"%1\"").arg(_scriptName));
+        emit error(i18n("Could not find script \"%1\"").arg(_scriptName));
     }
 
     deleteLater(); // self-destruct
@@ -90,7 +90,7 @@ void ExecWrapper::postStderr(const QString &msg)
 void ExecWrapper::processFinished(int exitCode, QProcess::ExitStatus status)
 {
     if (status == QProcess::CrashExit) {
-        emit error(tr("Script \"%1\" crashed with exit code %2.").arg(_scriptName).arg(exitCode));
+        emit error(i18n("Script \"%1\" crashed with exit code %2.").arg(_scriptName).arg(exitCode));
     }
 
     // empty buffers
@@ -108,9 +108,9 @@ void ExecWrapper::processFinished(int exitCode, QProcess::ExitStatus status)
 void ExecWrapper::processError(QProcess::ProcessError err)
 {
     if (err == QProcess::FailedToStart)
-        emit error(tr("Script \"%1\" could not start.").arg(_scriptName));
+        emit error(i18n("Script \"%1\" could not start.").arg(_scriptName));
     else
-        emit error(tr("Script \"%1\" caused error %2.").arg(_scriptName).arg(err));
+        emit error(i18n("Script \"%1\" caused error %2.").arg(_scriptName).arg(err));
 
     if (_process.state() != QProcess::Running)
         deleteLater();

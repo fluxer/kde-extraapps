@@ -69,7 +69,7 @@ QString PostgreSqlStorage::displayName() const
 QString PostgreSqlStorage::description() const
 {
     // FIXME: proper description
-    return tr("PostgreSQL Turbo Bomber HD!");
+    return i18n("PostgreSQL Turbo Bomber HD!");
 }
 
 

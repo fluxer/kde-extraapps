@@ -57,7 +57,7 @@ void ClientBufferViewManager::setInitialized()
 {
     if (bufferViewConfigs().isEmpty()) {
         BufferViewConfig config(-1);
-        config.setBufferViewName(tr("All Chats"));
+        config.setBufferViewName(i18n("All Chats"));
         config.initSetBufferList(Client::networkModel()->allBufferIdsSorted());
         requestCreateBufferView(config.toVariantMap());
     }

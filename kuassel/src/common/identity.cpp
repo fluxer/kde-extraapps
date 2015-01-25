@@ -24,6 +24,8 @@
 #include <QVariantMap>
 #include <QString>
 
+#include <KLocale>
+
 #ifdef Q_OS_MAC
 #  include <CoreServices/CoreServices.h>
 #  include "mac_utils.h"
@@ -144,7 +146,7 @@ QString Identity::defaultNick()
 
 QString Identity::defaultRealName()
 {
-    QString generalDefault = tr("Kuassel User");
+    QString generalDefault = i18n("Kuassel User");
 
 #ifdef Q_OS_MAC
     return CFStringToQString(CSCopyUserName(false));
@@ -174,25 +176,25 @@ QString Identity::defaultRealName()
 
 void Identity::setToDefaults()
 {
-    setIdentityName(tr("<empty>"));
+    setIdentityName(i18n("<empty>"));
     setRealName(defaultRealName());
     QStringList n = QStringList() << defaultNick();
     setNicks(n);
     setAwayNick("");
     setAwayNickEnabled(false);
-    setAwayReason(tr("Gone fishing."));
+    setAwayReason(i18n("Gone fishing."));
     setAwayReasonEnabled(true);
     setAutoAwayEnabled(false);
     setAutoAwayTime(10);
-    setAutoAwayReason(tr("Not here. No, really. not here!"));
+    setAutoAwayReason(i18n("Not here. No, really. not here!"));
     setAutoAwayReasonEnabled(false);
     setDetachAwayEnabled(false);
-    setDetachAwayReason(tr("All Quassel clients vanished from the face of the earth..."));
+    setDetachAwayReason(i18n("All Quassel clients vanished from the face of the earth..."));
     setDetachAwayReasonEnabled(false);
     setIdent("quassel");
-    setKickReason(tr("Kindergarten is elsewhere!"));
-    setPartReason(tr("http://quassel-irc.org - Chat comfortably. Anywhere."));
-    setQuitReason(tr("http://quassel-irc.org - Chat comfortably. Anywhere."));
+    setKickReason(i18n("Kindergarten is elsewhere!"));
+    setPartReason(i18n("http://quassel-irc.org - Chat comfortably. Anywhere."));
+    setQuitReason(i18n("http://quassel-irc.org - Chat comfortably. Anywhere."));
 }
 
 

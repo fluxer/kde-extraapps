@@ -28,6 +28,8 @@
     #include <QSslSocket>
 #endif
 
+#include <KLocale>
+
 #include "signalproxy.h"
 
 #include "peer.h"
@@ -772,7 +774,7 @@ void SignalProxy::disconnectDevice(QIODevice *dev, const QString &reason)
         qWarning() << qPrintable(reason);
     QAbstractSocket *sock  = qobject_cast<QAbstractSocket *>(dev);
     if (sock)
-        qWarning() << qPrintable(tr("Disconnecting")) << qPrintable(sock->peerAddress().toString());
+        qWarning() << qPrintable(i18n("Disconnecting")) << qPrintable(sock->peerAddress().toString());
     dev->close();
 }
 

@@ -129,8 +129,8 @@ void CoreAuthHandler::setPeer(RemotePeer *peer)
 // only in compat mode
 void CoreAuthHandler::onProtocolVersionMismatch(int actual, int expected)
 {
-    qWarning() << qPrintable(tr("Client")) << _peer->description() << qPrintable(tr("too old, rejecting."));
-    QString errorString = tr("<b>Your Quassel Client is too old!</b><br>"
+    qWarning() << qPrintable(i18n("Client")) << _peer->description() << qPrintable(i18n("too old, rejecting."));
+    QString errorString = i18n("<b>Your Quassel Client is too old!</b><br>"
                              "This core needs at least client/core protocol version %1 (got: %2).<br>"
                              "Please consider upgrading your client.").arg(expected, actual);
     _peer->dispatch(ClientDenied(errorString));
@@ -141,8 +141,8 @@ void CoreAuthHandler::onProtocolVersionMismatch(int actual, int expected)
 bool CoreAuthHandler::checkClientRegistered()
 {
     if (!_clientRegistered) {
-        qWarning() << qPrintable(tr("Client")) << qPrintable(socket()->peerAddress().toString()) << qPrintable(tr("did not send a registration message before trying to login, rejecting."));
-        _peer->dispatch(ClientDenied(tr("<b>Client not initialized!</b><br>You need to send a registration message before trying to login.")));
+        qWarning() << qPrintable(i18n("Client")) << qPrintable(socket()->peerAddress().toString()) << qPrintable(i18n("did not send a registration message before trying to login, rejecting."));
+        _peer->dispatch(ClientDenied(i18n("<b>Client not initialized!</b><br>You need to send a registration message before trying to login.")));
         _peer->close();
         return false;
     }
@@ -159,7 +159,7 @@ void CoreAuthHandler::handle(const RegisterClient &msg)
         useSsl = _connectionFeatures & Protocol::Encryption;
 
     if (Quassel::isOptionSet("require-ssl") && !useSsl) {
-        _peer->dispatch(ClientDenied(tr("<b>SSL is required!</b><br>You need to use SSL in order to connect to this core.")));
+        _peer->dispatch(ClientDenied(i18n("<b>SSL is required!</b><br>You need to use SSL in order to connect to this core.")));
         _peer->close();
         return;
     }
@@ -173,7 +173,7 @@ void CoreAuthHandler::handle(const RegisterClient &msg)
     int updays = uptime / 86400; uptime %= 86400;
     int uphours = uptime / 3600; uptime %= 3600;
     int upmins = uptime / 60;
-    QString coreInfo = tr("<b>Quassel Core Version %1</b><br>"
+    QString coreInfo = i18n("<b>Quassel Core Version %1</b><br>"
                           "Up %3d%4h%5m (since %6)").arg(Quassel::buildInfo().baseVersion)
                           .arg(updays).arg(uphours, 2, 10, QChar('0')).arg(upmins, 2, 10, QChar('0')).arg(Core::instance()->startTime().toString(Qt::TextDate));
 
@@ -207,12 +207,12 @@ void CoreAuthHandler::handle(const Login &msg)
 
     UserId uid = Core::validateUser(msg.user, msg.password);
     if (uid == 0) {
-        _peer->dispatch(LoginFailed(tr("<b>Invalid username or password!</b><br>The username/password combination you supplied could not be found in the database.")));
+        _peer->dispatch(LoginFailed(i18n("<b>Invalid username or password!</b><br>The username/password combination you supplied could not be found in the database.")));
         return;
     }
     _peer->dispatch(LoginSuccess());
 
-    quInfo() << qPrintable(tr("Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3).").arg(socket()->peerAddress().toString(), msg.user, QString::number(uid.toInt())));
+    quInfo() << qPrintable(i18n("Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3).").arg(socket()->peerAddress().toString(), msg.user, QString::number(uid.toInt())));
 
     disconnect(socket(), 0, this, 0);
     disconnect(_peer, 0, this, 0);
@@ -231,7 +231,7 @@ void CoreAuthHandler::startSsl()
     QSslSocket *sslSocket = qobject_cast<QSslSocket *>(socket());
     Q_ASSERT(sslSocket);
 
-    qDebug() << qPrintable(tr("Starting encryption for Client:"))  << _peer->description();
+    qDebug() << qPrintable(i18n("Starting encryption for Client:"))  << _peer->description();
     connect(sslSocket, SIGNAL(sslErrors(const QList<QSslError> &)), SLOT(onSslErrors()));
     sslSocket->flush(); // ensure that the write cache is flushed before we switch to ssl (bug 682)
     sslSocket->startServerEncryption();

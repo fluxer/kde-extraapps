@@ -52,26 +52,26 @@ void ChatMonitorView::addActionsToMenu(QMenu *menu, const QPointF &pos)
 {
     ChatView::addActionsToMenu(menu, pos);
     menu->addSeparator();
-    QAction *showOwnNicksAction = menu->addAction(tr("Show Own Messages"), _filter, SLOT(setShowOwnMessages(bool)));
+    QAction *showOwnNicksAction = menu->addAction(i18n("Show Own Messages"), _filter, SLOT(setShowOwnMessages(bool)));
     showOwnNicksAction->setCheckable(true);
     showOwnNicksAction->setChecked(_filter->showOwnMessages());
 
     if (scene()->columnByScenePos(pos) == ChatLineModel::SenderColumn) {
         menu->addSeparator();
 
-        QAction *showNetworkAction = menu->addAction(tr("Show Network Name"), this, SLOT(showFieldsChanged(bool)));
+        QAction *showNetworkAction = menu->addAction(i18n("Show Network Name"), this, SLOT(showFieldsChanged(bool)));
         showNetworkAction->setCheckable(true);
         showNetworkAction->setChecked(_filter->showFields() & ChatMonitorFilter::NetworkField);
         showNetworkAction->setData(ChatMonitorFilter::NetworkField);
 
-        QAction *showBufferAction = menu->addAction(tr("Show Buffer Name"), this, SLOT(showFieldsChanged(bool)));
+        QAction *showBufferAction = menu->addAction(i18n("Show Buffer Name"), this, SLOT(showFieldsChanged(bool)));
         showBufferAction->setCheckable(true);
         showBufferAction->setChecked(_filter->showFields() & ChatMonitorFilter::BufferField);
         showBufferAction->setData(ChatMonitorFilter::BufferField);
     }
 
     menu->addSeparator();
-    menu->addAction(KIcon("configure"), tr("Configure..."), this, SLOT(showSettingsPage()));
+    menu->addAction(KIcon("configure"), i18n("Configure..."), this, SLOT(showSettingsPage()));
 }
 
 

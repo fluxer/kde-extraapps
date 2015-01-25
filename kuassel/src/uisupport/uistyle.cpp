@@ -675,25 +675,25 @@ void UiStyle::StyledMessage::style() const
         break;
     case Message::Nick:
         //: Nick Message
-        if (nick == contents()) t = tr("You are now known as %DN%1%DN").arg(txt);
-        else t = tr("%DN%1%DN is now known as %DN%2%DN").arg(nick, txt);
+        if (nick == contents()) t = i18n("You are now known as %DN%1%DN").arg(txt);
+        else t = i18n("%DN%1%DN is now known as %DN%2%DN").arg(nick, txt);
         break;
     case Message::Mode:
         //: Mode Message
-        if (nick.isEmpty()) t = tr("User mode: %DM%1%DM").arg(txt);
-        else t = tr("Mode %DM%1%DM by %DN%2%DN").arg(txt, nick);
+        if (nick.isEmpty()) t = i18n("User mode: %DM%1%DM").arg(txt);
+        else t = i18n("Mode %DM%1%DM by %DN%2%DN").arg(txt, nick);
         break;
     case Message::Join:
         //: Join Message
-        t = tr("%DN%1%DN %DH(%2@%3)%DH has joined %DC%4%DC").arg(nick, user, host, bufferName); break;
+        t = i18n("%DN%1%DN %DH(%2@%3)%DH has joined %DC%4%DC").arg(nick, user, host, bufferName); break;
     case Message::Part:
         //: Part Message
-        t = tr("%DN%1%DN %DH(%2@%3)%DH has left %DC%4%DC").arg(nick, user, host, bufferName);
+        t = i18n("%DN%1%DN %DH(%2@%3)%DH has left %DC%4%DC").arg(nick, user, host, bufferName);
         if (!txt.isEmpty()) t = QString("%1 (%2)").arg(t).arg(txt);
         break;
     case Message::Quit:
         //: Quit Message
-        t = tr("%DN%1%DN %DH(%2@%3)%DH has quit").arg(nick, user, host);
+        t = i18n("%DN%1%DN %DH(%2@%3)%DH has quit").arg(nick, user, host);
         if (!txt.isEmpty()) t = QString("%1 (%2)").arg(t).arg(txt);
         break;
     case Message::Kick:
@@ -701,7 +701,7 @@ void UiStyle::StyledMessage::style() const
         QString victim = txt.section(" ", 0, 0);
         QString kickmsg = txt.section(" ", 1);
         //: Kick Message
-        t = tr("%DN%1%DN has kicked %DN%2%DN from %DC%3%DC").arg(nick).arg(victim).arg(bufferName);
+        t = i18n("%DN%1%DN has kicked %DN%2%DN from %DC%3%DC").arg(nick).arg(victim).arg(bufferName);
         if (!kickmsg.isEmpty()) t = QString("%1 (%2)").arg(t).arg(kickmsg);
     }
     break;
@@ -716,7 +716,7 @@ void UiStyle::StyledMessage::style() const
     case Message::DayChange:
     {
         //: Day Change Message
-        t = tr("{Day changed to %1}").arg(timestamp().date().toString(Qt::DefaultLocaleLongDate));
+        t = i18n("{Day changed to %1}").arg(timestamp().date().toString(Qt::DefaultLocaleLongDate));
     }
         break;
     case Message::Topic:
@@ -729,11 +729,11 @@ void UiStyle::StyledMessage::style() const
         for (int i = 0; i < users.count() && i < maxNetsplitNicks; i++)
             users[i] = nickFromMask(users.at(i));
 
-        t = tr("Netsplit between %DH%1%DH and %DH%2%DH ended. Users joined: ").arg(servers.at(0), servers.at(1));
+        t = i18n("Netsplit between %DH%1%DH and %DH%2%DH ended. Users joined: ").arg(servers.at(0), servers.at(1));
         if (users.count() <= maxNetsplitNicks)
             t.append(QString("%DN%1%DN").arg(users.join(", ")));
         else
-            t.append(tr("%DN%1%DN (%2 more)").arg(static_cast<QStringList>(users.mid(0, maxNetsplitNicks)).join(", ")).arg(users.count() - maxNetsplitNicks));
+            t.append(i18n("%DN%1%DN (%2 more)").arg(static_cast<QStringList>(users.mid(0, maxNetsplitNicks)).join(", ")).arg(users.count() - maxNetsplitNicks));
     }
     break;
     case Message::NetsplitQuit:
@@ -744,12 +744,12 @@ void UiStyle::StyledMessage::style() const
         for (int i = 0; i < users.count() && i < maxNetsplitNicks; i++)
             users[i] = nickFromMask(users.at(i));
 
-        t = tr("Netsplit between %DH%1%DH and %DH%2%DH. Users quit: ").arg(servers.at(0), servers.at(1));
+        t = i18n("Netsplit between %DH%1%DH and %DH%2%DH. Users quit: ").arg(servers.at(0), servers.at(1));
 
         if (users.count() <= maxNetsplitNicks)
             t.append(QString("%DN%1%DN").arg(users.join(", ")));
         else
-            t.append(tr("%DN%1%DN (%2 more)").arg(static_cast<QStringList>(users.mid(0, maxNetsplitNicks)).join(", ")).arg(users.count() - maxNetsplitNicks));
+            t.append(i18n("%DN%1%DN (%2 more)").arg(static_cast<QStringList>(users.mid(0, maxNetsplitNicks)).join(", ")).arg(users.count() - maxNetsplitNicks));
     }
     break;
     case Message::Invite:

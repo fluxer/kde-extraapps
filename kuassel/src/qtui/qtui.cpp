@@ -51,7 +51,6 @@ QtUi::QtUi() : GraphicalUi()
     _instance = this;
 
     QtUiSettings uiSettings;
-    Quassel::loadTranslation(uiSettings.value("Locale", QLocale::system()).value<QLocale>());
 
     setContextMenuActionProvider(new ContextMenuActionProvider(this));
     setToolBarActionProvider(new ToolBarActionProvider(this));

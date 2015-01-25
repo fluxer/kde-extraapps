@@ -138,7 +138,7 @@ void SystrayNotificationBackend::animateChanged(const QVariant &v)
 void SystrayNotificationBackend::updateToolTip()
 {
     QtUi::mainWindow()->systemTray()->setToolTip("Kuassel",
-        _notifications.count() ? tr("%n pending highlight(s)", "", _notifications.count()) : QString());
+        _notifications.count() ? i18n("%n pending highlight(s)", "", _notifications.count()) : QString());
 }
 
 
@@ -152,7 +152,7 @@ SettingsPage *SystrayNotificationBackend::createConfigWidget() const
 
 SystrayNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : SettingsPage("Internal", "SystrayNotification", parent)
 {
-    _showBubbleBox = new QCheckBox(tr("Show a message in a popup"));
+    _showBubbleBox = new QCheckBox(i18n("Show a message in a popup"));
     _showBubbleBox->setIcon(KIcon("dialog-information"));
     connect(_showBubbleBox, SIGNAL(toggled(bool)), this, SLOT(widgetChanged()));
     QHBoxLayout *layout = new QHBoxLayout(this);

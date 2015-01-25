@@ -77,8 +77,8 @@ void KeySequenceButton::keyPressEvent(QKeyEvent *e)
         // We cannot do anything useful with those (several keys have -1, indistinguishable)
         // and QKeySequence.toString() will also yield a garbage string.
         QMessageBox::information(this,
-            tr("The key you just pressed is not supported by Qt."),
-            tr("Unsupported Key"));
+            i18n("The key you just pressed is not supported by Qt."),
+            i18n("Unsupported Key"));
         return d->cancelRecording();
     }
 
@@ -173,7 +173,7 @@ KeySequenceWidget::KeySequenceWidget(QWidget *parent)
     _keyButton = new KeySequenceButton(this, this);
     _keyButton->setFocusPolicy(Qt::StrongFocus);
     _keyButton->setIcon(KIcon("configure"));
-    _keyButton->setToolTip(tr("Click on the button, then enter the shortcut like you would in the program.\nExample for Ctrl+a: hold the Ctrl key and press a."));
+    _keyButton->setToolTip(i18n("Click on the button, then enter the shortcut like you would in the program.\nExample for Ctrl+a: hold the Ctrl key and press a."));
     layout->addWidget(_keyButton);
 
     _clearButton = new QToolButton(this);
@@ -271,21 +271,21 @@ void KeySequenceWidget::updateShortcutDisplay()
             if (_modifierKeys & Qt::SHIFT) s += QChar(kShiftUnicode);
             if (_modifierKeys & Qt::CTRL) s += QChar(kCommandUnicode);
 #else
-            if (_modifierKeys & Qt::META) s += tr("Meta", "Meta key") + '+';
-            if (_modifierKeys & Qt::CTRL) s += tr("Ctrl", "Ctrl key") + '+';
-            if (_modifierKeys & Qt::ALT) s += tr("Alt", "Alt key") + '+';
-            if (_modifierKeys & Qt::SHIFT) s += tr("Shift", "Shift key") + '+';
+            if (_modifierKeys & Qt::META) s += i18n("Meta", "Meta key") + '+';
+            if (_modifierKeys & Qt::CTRL) s += i18n("Ctrl", "Ctrl key") + '+';
+            if (_modifierKeys & Qt::ALT) s += i18n("Alt", "Alt key") + '+';
+            if (_modifierKeys & Qt::SHIFT) s += i18n("Shift", "Shift key") + '+';
 #endif
         }
         else {
-            s = tr("Input", "What the user inputs now will be taken as the new shortcut");
+            s = i18n("Input", "What the user inputs now will be taken as the new shortcut");
         }
         // make it clear that input is still going on
         s.append(" ...");
     }
 
     if (s.isEmpty()) {
-        s = tr("None", "No shortcut defined");
+        s = i18n("None", "No shortcut defined");
     }
 
     s.prepend(' ');
@@ -380,19 +380,19 @@ bool KeySequenceWidget::isKeySequenceAvailable(const QKeySequence &seq)
                 continue;
 
             if (!actIdx.data(ShortcutsModel::IsConfigurableRole).toBool()) {
-                QMessageBox::warning(this, tr("Shortcut Conflict"),
-                    tr("The \"%1\" shortcut is already in use, and cannot be configured.\nPlease choose another one.").arg(seq.toString(QKeySequence::NativeText)),
+                QMessageBox::warning(this, i18n("Shortcut Conflict"),
+                    i18n("The \"%1\" shortcut is already in use, and cannot be configured.\nPlease choose another one.").arg(seq.toString(QKeySequence::NativeText)),
                     QMessageBox::Ok);
                 return false;
             }
 
-            QMessageBox box(QMessageBox::Warning, tr("Shortcut Conflict"),
-                (tr("The \"%1\" shortcut is ambiguous with the shortcut for the following action:")
+            QMessageBox box(QMessageBox::Warning, i18n("Shortcut Conflict"),
+                (i18n("The \"%1\" shortcut is ambiguous with the shortcut for the following action:")
                  + "<br><ul><li>%2</li></ul><br>"
-                 + tr("Do you want to reassign this shortcut to the selected action?")
+                 + i18n("Do you want to reassign this shortcut to the selected action?")
                 ).arg(seq.toString(QKeySequence::NativeText), actIdx.data().toString()),
                 QMessageBox::Cancel, this);
-            box.addButton(tr("Reassign"), QMessageBox::AcceptRole);
+            box.addButton(i18n("Reassign"), QMessageBox::AcceptRole);
             if (box.exec() == QMessageBox::Cancel)
                 return false;
 

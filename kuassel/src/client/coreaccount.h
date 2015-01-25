@@ -26,6 +26,8 @@
 #include <QUuid>
 #include <QVariantMap>
 
+#include <KLocale>
+
 #include "types.h"
 class CoreAccount
 {
@@ -37,7 +39,7 @@ public:
 
     inline bool isValid() const { return accountId().isValid(); }
     inline AccountId accountId() const { return _accountId; }
-    inline QString accountName() const { return isInternal() ? tr("Internal Core") : _accountName; }
+    inline QString accountName() const { return isInternal() ? i18n("Internal Core") : _accountName; }
     inline QUuid uuid() const { return _uuid; }
     inline bool isInternal() const { return _internal; }
 

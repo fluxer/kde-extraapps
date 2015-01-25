@@ -62,7 +62,7 @@ bool ShortcutsFilter::filterAcceptsRow(int source_row, const QModelIndex &source
 /****************************************************************************/
 
 ShortcutsSettingsPage::ShortcutsSettingsPage(const QHash<QString, ActionCollection *> &actionCollections, QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Shortcuts"), parent),
+    : SettingsPage(i18n("Interface"), i18n("Shortcuts"), parent),
     _shortcutsModel(new ShortcutsModel(actionCollections, this)),
     _shortcutsFilter(new ShortcutsFilter(this))
 {
@@ -96,7 +96,7 @@ void ShortcutsSettingsPage::setWidgetStates()
     if (ui.shortcutsView->currentIndex().isValid() && ui.shortcutsView->currentIndex().parent().isValid()) {
         QKeySequence active = ui.shortcutsView->currentIndex().data(ShortcutsModel::ActiveShortcutRole).value<QKeySequence>();
         QKeySequence def = ui.shortcutsView->currentIndex().data(ShortcutsModel::DefaultShortcutRole).value<QKeySequence>();
-        ui.defaultShortcut->setText(def.isEmpty() ? tr("None") : def.toString(QKeySequence::NativeText));
+        ui.defaultShortcut->setText(def.isEmpty() ? i18n("None") : def.toString(QKeySequence::NativeText));
         ui.actionBox->setEnabled(true);
         if (active == def) {
             ui.useDefault->setChecked(true);
@@ -108,7 +108,7 @@ void ShortcutsSettingsPage::setWidgetStates()
         }
     }
     else {
-        ui.defaultShortcut->setText(tr("None"));
+        ui.defaultShortcut->setText(i18n("None"));
         ui.actionBox->setEnabled(false);
         ui.useDefault->setChecked(true);
         ui.keySequenceWidget->setKeySequence(QKeySequence());

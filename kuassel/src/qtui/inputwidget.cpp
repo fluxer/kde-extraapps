@@ -72,8 +72,8 @@ InputWidget::InputWidget(QWidget *parent)
     _colorFillMenu = new QMenu();
 
     QStringList names;
-    names << tr("White") << tr("Black") << tr("Dark blue") << tr("Dark green") << tr("Red") << tr("Dark red") << tr("Dark magenta")  << tr("Orange")
-          << tr("Yellow") << tr("Green") << tr("Dark cyan") << tr("Cyan") << tr("Blue") << tr("Magenta") << tr("Dark gray") << tr("Light gray");
+    names << i18n("White") << i18n("Black") << i18n("Dark blue") << i18n("Dark green") << i18n("Red") << i18n("Dark red") << i18n("Dark magenta")  << i18n("Orange")
+          << i18n("Yellow") << i18n("Green") << i18n("Dark cyan") << i18n("Cyan") << i18n("Blue") << i18n("Magenta") << i18n("Dark gray") << i18n("Light gray");
 
     QPixmap pix(16, 16);
     for (int i = 0; i < inputLine()->mircColorMap().count(); i++) {
@@ -83,8 +83,8 @@ InputWidget::InputWidget(QWidget *parent)
     }
 
     pix.fill(Qt::transparent);
-    _colorMenu->addAction(pix, tr("Clear Color"))->setData("");
-    _colorFillMenu->addAction(pix, tr("Clear Color"))->setData("");
+    _colorMenu->addAction(pix, i18n("Clear Color"))->setData("");
+    _colorFillMenu->addAction(pix, i18n("Clear Color"))->setData("");
 
     ui.textcolorButton->setMenu(_colorMenu);
     connect(_colorMenu, SIGNAL(triggered(QAction *)), this, SLOT(colorChosen(QAction *)));
@@ -132,7 +132,7 @@ InputWidget::InputWidget(QWidget *parent)
 
     Action *activateInputline = coll->add<Action>("FocusInputLine");
     connect(activateInputline, SIGNAL(triggered()), SLOT(setFocus()));
-    activateInputline->setText(tr("Focus Input Line"));
+    activateInputline->setText(i18n("Focus Input Line"));
     activateInputline->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
 
     connect(inputLine(), SIGNAL(textEntered(QString)), SLOT(onTextEntered(QString)), Qt::QueuedConnection); // make sure the line is already reset, bug #984

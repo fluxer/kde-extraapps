@@ -36,7 +36,7 @@ SettingsPageDlg::SettingsPageDlg(SettingsPage *page, QWidget *parent)
     setWindowFlags(Qt::Sheet);
 
     ui.pageTitle->setText(page->title());
-    setWindowTitle(tr("Configure %1").arg(page->title()));
+    setWindowTitle(i18n("Configure %1").arg(page->title()));
     setWindowIcon(KIcon("configure"));
 
     // make the scrollarea behave sanely
@@ -117,7 +117,7 @@ void SettingsPageDlg::undoChanges()
 void SettingsPageDlg::reload()
 {
     if (!currentPage()) return;
-    int ret = QMessageBox::question(this, tr("Reload Settings"), tr("Do you like to reload the settings, undoing your changes on this page?"),
+    int ret = QMessageBox::question(this, i18n("Reload Settings"), i18n("Do you like to reload the settings, undoing your changes on this page?"),
         QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
     if (ret == QMessageBox::Yes) {
         currentPage()->load();
@@ -128,7 +128,7 @@ void SettingsPageDlg::reload()
 void SettingsPageDlg::loadDefaults()
 {
     if (!currentPage()) return;
-    int ret = QMessageBox::question(this, tr("Restore Defaults"), tr("Do you like to restore the default values for this page?"),
+    int ret = QMessageBox::question(this, i18n("Restore Defaults"), i18n("Do you like to restore the default values for this page?"),
         QMessageBox::RestoreDefaults|QMessageBox::Cancel, QMessageBox::Cancel);
     if (ret == QMessageBox::RestoreDefaults) {
         currentPage()->defaults();

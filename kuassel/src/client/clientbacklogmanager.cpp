@@ -175,7 +175,7 @@ void ClientBacklogManager::dispatchMessages(const MessageList &messages, bool so
     Client::messageProcessor()->process(msgs);
     clock_t end_t = clock();
 
-    emit messagesProcessed(tr("Processed %1 messages in %2 seconds.").arg(messages.count()).arg((float)(end_t - start_t) / CLOCKS_PER_SEC));
+    emit messagesProcessed(i18n("Processed %1 messages in %2 seconds.").arg(messages.count()).arg((float)(end_t - start_t) / CLOCKS_PER_SEC));
 }
 
 

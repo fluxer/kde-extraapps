@@ -185,7 +185,7 @@ void CoreConnection::solidNetworkStatusChanged(Solid::Networking::Status status)
     case Solid::Networking::Disconnecting:
     case Solid::Networking::Unconnected:
         if (state() != Disconnected && !isLocalConnection())
-            disconnectFromCore(tr("Network is down"), true);
+            disconnectFromCore(i18n("Network is down"), true);
         break;
     default:
         break;
@@ -269,7 +269,7 @@ void CoreConnection::disconnectFromCore(const QString &errorString, bool wantRec
         _peer->close();
 
     if (errorString.isEmpty())
-        emit connectionError(tr("Disconnected"));
+        emit connectionError(i18n("Disconnected"));
     else
         emit connectionError(errorString);
 }
@@ -304,7 +304,7 @@ void CoreConnection::resetConnection(bool wantReconnect)
     setState(Disconnected);
     emit lagUpdated(-1);
 
-    emit connectionMsg(tr("Disconnected from core."));
+    emit connectionMsg(i18n("Disconnected from core."));
     emit encrypted(false);
     setState(Disconnected);
 
@@ -442,9 +442,9 @@ void CoreConnection::onLoginSuccessful(const CoreAccount &account)
 
     _reconnectTimer.stop();
 
-    setProgressText(tr("Receiving session state"));
+    setProgressText(i18n("Receiving session state"));
     setState(Synchronizing);
-    emit connectionMsg(tr("Synchronizing to %1...").arg(account.accountName()));
+    emit connectionMsg(i18n("Synchronizing to %1...").arg(account.accountName()));
 }
 
 
@@ -480,7 +480,7 @@ void CoreConnection::internalSessionStateReceived(const Protocol::SessionState &
 
 void CoreConnection::syncToCore(const Protocol::SessionState &sessionState)
 {
-    setProgressText(tr("Receiving network states"));
+    setProgressText(i18n("Receiving network states"));
     updateProgress(0, 100);
 
     // create identities
@@ -531,7 +531,7 @@ void CoreConnection::checkSyncState()
 {
     if (_netsToSync.isEmpty() && state() >= Synchronizing) {
         setState(Synchronized);
-        setProgressText(tr("Synchronized to %1").arg(currentAccount().accountName()));
+        setProgressText(i18n("Synchronized to %1").arg(currentAccount().accountName()));
         setProgressMaximum(-1);
         emit synchronized();
     }

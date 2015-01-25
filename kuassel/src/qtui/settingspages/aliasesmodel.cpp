@@ -54,11 +54,11 @@ QVariant AliasesModel::data(const QModelIndex &index, int role) const
     case Qt::ToolTipRole:
         switch (index.column()) {
         case 0:
-            return tr("<b>The shortcut for the alias</b><br />"
+            return i18n("<b>The shortcut for the alias</b><br />"
                       "It can be used as a regular slash command.<br /><br />"
                       "<b>Example:</b> \"foo\" can be used per /foo");
         case 1:
-            return tr("<b>The string the shortcut will be expanded to</b><br />"
+            return i18n("<b>The string the shortcut will be expanded to</b><br />"
                       "<b>special variables:</b><br />"
                       " - <b>$i</b> represents the i'th parameter.<br />"
                       " - <b>$i..j</b> represents the i'th to j'th parameter separated by spaces.<br />"
@@ -182,8 +182,8 @@ Qt::ItemFlags AliasesModel::flags(const QModelIndex &index) const
 QVariant AliasesModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     QStringList header;
-    header << tr("Alias")
-           << tr("Expansion");
+    header << i18n("Alias")
+           << i18n("Expansion");
 
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
         return header[section];

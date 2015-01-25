@@ -95,7 +95,7 @@ void ClientUserInputHandler::handleExec(const BufferInfo &bufferInfo, const QStr
 void ClientUserInputHandler::handleJoin(const BufferInfo &bufferInfo, const QString &text)
 {
     if (text.isEmpty()) {
-        Client::messageModel()->insertErrorMessage(bufferInfo, tr("/JOIN expects a channel"));
+        Client::messageModel()->insertErrorMessage(bufferInfo, i18n("/JOIN expects a channel"));
         return;
     }
     switchBuffer(bufferInfo.networkId(), text.section(' ', 0, 0));
@@ -107,7 +107,7 @@ void ClientUserInputHandler::handleJoin(const BufferInfo &bufferInfo, const QStr
 void ClientUserInputHandler::handleQuery(const BufferInfo &bufferInfo, const QString &text)
 {
     if (text.isEmpty()) {
-        Client::messageModel()->insertErrorMessage(bufferInfo, tr("/QUERY expects at least a nick"));
+        Client::messageModel()->insertErrorMessage(bufferInfo, i18n("/QUERY expects at least a nick"));
         return;
     }
     switchBuffer(bufferInfo.networkId(), text.section(' ', 0, 0));

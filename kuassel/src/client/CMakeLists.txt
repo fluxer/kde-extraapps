@@ -44,7 +44,12 @@ add_definitions(${KDE4_DEFINITIONS})
 qt4_add_resources(SOURCES ${CLIENT_RCS})
 
 add_library(mod_client STATIC ${SOURCES})
-qt4_use_modules(mod_client Network Core Gui ${qt_modules})
-target_link_libraries(mod_client ${KDE4_SOLID_LIBS})
+target_link_libraries(mod_client
+    ${CMAKE_DL_LIBS}
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+    ${KDE4_SOLID_LIBS}
+)
 
 add_dependencies(mod_client mod_common)

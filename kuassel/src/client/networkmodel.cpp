@@ -213,15 +213,15 @@ QString NetworkItem::toolTip(int column) const
 
 #if QT_VERSION < 0x050000
     QStringList toolTip(QString("<b>%1</b>").arg(Qt::escape(networkName())));
-    toolTip.append(tr("Server: %1").arg(Qt::escape(currentServer())));
+    toolTip.append(i18n("Server: %1").arg(Qt::escape(currentServer())));
 #else
     QStringList toolTip(QString("<b>%1</b>").arg(networkName().toHtmlEscaped()));
-    toolTip.append(tr("Server: %1").arg(currentServer().toHtmlEscaped()));
+    toolTip.append(i18n("Server: %1").arg(currentServer().toHtmlEscaped()));
 #endif
-    toolTip.append(tr("Users: %1").arg(nickCount()));
+    toolTip.append(i18n("Users: %1").arg(nickCount()));
 
     if (_network) {
-        toolTip.append(tr("Lag: %1 msecs").arg(_network->latency()));
+        toolTip.append(i18n("Lag: %1 msecs").arg(_network->latency()));
     }
 
     return QString("<p> %1 </p>").arg(toolTip.join("<br />"));
@@ -398,7 +398,7 @@ bool BufferItem::isCurrentBuffer() const
 QString BufferItem::toolTip(int column) const
 {
     Q_UNUSED(column);
-    return tr("<p> %1 - %2 </p>").arg(bufferInfo().bufferId().toInt()).arg(bufferName());
+    return i18n("<p> %1 - %2 </p>").arg(bufferInfo().bufferId().toInt()).arg(bufferName());
 }
 
 
@@ -494,7 +494,7 @@ QString QueryBufferItem::toolTip(int column) const
     Q_UNUSED(column);
     QStringList toolTip;
 
-    toolTip.append(tr("<b>Query with %1</b>").arg(bufferName()));
+    toolTip.append(i18n("<b>Query with %1</b>").arg(bufferName()));
 
     if (_ircUser) {
         if (_ircUser->userModes() != "") toolTip[0].append(QString(" (+%1)").arg(_ircUser->userModes()));
@@ -512,13 +512,13 @@ QString QueryBufferItem::toolTip(int column) const
             QDateTime now = QDateTime::currentDateTime();
             QDateTime idle = _ircUser->idleTime();
             int idleTime = idle.secsTo(now);
-            toolTip.append(tr("idling since %1").arg(secondsToString(idleTime)));
+            toolTip.append(i18n("idling since %1").arg(secondsToString(idleTime)));
         }
         if (_ircUser->loginTime().isValid()) {
-            toolTip.append(tr("login time: %1").arg(_ircUser->loginTime().toString()));
+            toolTip.append(i18n("login time: %1").arg(_ircUser->loginTime().toString()));
         }
 
-        if (!_ircUser->server().isEmpty()) toolTip.append(tr("server: %1").arg(_ircUser->server()));
+        if (!_ircUser->server().isEmpty()) toolTip.append(i18n("server: %1").arg(_ircUser->server()));
     }
 
     return QString("<p> %1 </p>").arg(toolTip.join("<br />"));
@@ -580,17 +580,17 @@ QString ChannelBufferItem::toolTip(int column) const
     QStringList toolTip;
 
 #if QT_VERSION < 0x050000
-    toolTip.append(tr("<b>Channel %1</b>").arg(Qt::escape(bufferName())));
+    toolTip.append(i18n("<b>Channel %1</b>").arg(Qt::escape(bufferName())));
 #else
-    toolTip.append(tr("<b>Channel %1</b>").arg(bufferName().toHtmlEscaped()));
+    toolTip.append(i18n("<b>Channel %1</b>").arg(bufferName().toHtmlEscaped()));
 #endif
     if (isActive()) {
         //TODO: add channel modes
-        toolTip.append(tr("<b>Users:</b> %1").arg(nickCount()));
+        toolTip.append(i18n("<b>Users:</b> %1").arg(nickCount()));
         if (_ircChannel) {
             QString channelMode = _ircChannel->channelModeString(); // channelModeString is compiled on the fly -> thus cache the result
             if (!channelMode.isEmpty())
-                toolTip.append(tr("<b>Mode:</b> %1").arg(channelMode));
+                toolTip.append(i18n("<b>Mode:</b> %1").arg(channelMode));
         }
 
         ItemViewSettings s;
@@ -605,15 +605,15 @@ QString ChannelBufferItem::toolTip(int column) const
                 _topic = _topic.toHtmlEscaped();
 #endif
                 toolTip.append(QString("<font size='-2'>&nbsp;</font>"));
-                toolTip.append(tr("<b>Topic:</b> %1").arg(_topic));
+                toolTip.append(i18n("<b>Topic:</b> %1").arg(_topic));
             }
         }
     }
     else {
-        toolTip.append(tr("Not active <br /> Double-click to join"));
+        toolTip.append(i18n("Not active <br /> Double-click to join"));
     }
 
-    return tr("<p> %1 </p>").arg(toolTip.join("<br />"));
+    return i18n("<p> %1 </p>").arg(toolTip.join("<br />"));
 }
 
 
@@ -822,17 +822,17 @@ QString UserCategoryItem::categoryName() const
     int n = childCount();
     switch (_category) {
     case 0:
-        return tr("%n Owner(s)", 0, n);
+        return i18n("%n Owner(s)", 0, n);
     case 1:
-        return tr("%n Admin(s)", 0, n);
+        return i18n("%n Admin(s)", 0, n);
     case 2:
-        return tr("%n Operator(s)", 0, n);
+        return i18n("%n Operator(s)", 0, n);
     case 3:
-        return tr("%n Half-Op(s)", 0, n);
+        return i18n("%n Half-Op(s)", 0, n);
     case 4:
-        return tr("%n Voiced", 0, n);
+        return i18n("%n Voiced", 0, n);
     default:
-        return tr("%n User(s)", 0, n);
+        return i18n("%n User(s)", 0, n);
     }
 }
 
@@ -950,7 +950,7 @@ QString IrcUserItem::toolTip(int column) const
     QStringList toolTip(QString("<b>%1</b>").arg(nickName()));
     if (_ircUser->userModes() != "") toolTip[0].append(QString(" (%1)").arg(_ircUser->userModes()));
     if (_ircUser->isAway()) {
-        toolTip[0].append(tr(" is away"));
+        toolTip[0].append(i18n(" is away"));
         if (!_ircUser->awayMessage().isEmpty())
             toolTip[0].append(QString(" (%1)").arg(_ircUser->awayMessage()));
     }
@@ -965,13 +965,13 @@ QString IrcUserItem::toolTip(int column) const
         QDateTime now = QDateTime::currentDateTime();
         QDateTime idle = _ircUser->idleTime();
         int idleTime = idle.secsTo(now);
-        toolTip.append(tr("idling since %1").arg(secondsToString(idleTime)));
+        toolTip.append(i18n("idling since %1").arg(secondsToString(idleTime)));
     }
     if (_ircUser->loginTime().isValid()) {
-        toolTip.append(tr("login time: %1").arg(_ircUser->loginTime().toString()));
+        toolTip.append(i18n("login time: %1").arg(_ircUser->loginTime().toString()));
     }
 
-    if (!_ircUser->server().isEmpty()) toolTip.append(tr("server: %1").arg(_ircUser->server()));
+    if (!_ircUser->server().isEmpty()) toolTip.append(i18n("server: %1").arg(_ircUser->server()));
 
     return QString("<p> %1 </p>").arg(toolTip.join("<br />"));
 }
@@ -999,7 +999,7 @@ NetworkModel::NetworkModel(QObject *parent)
 QList<QVariant> NetworkModel::defaultHeader()
 {
     QList<QVariant> data;
-    data << tr("Chat") << tr("Topic") << tr("Nick Count");
+    data << i18n("Chat") << i18n("Topic") << i18n("Nick Count");
     return data;
 }
 

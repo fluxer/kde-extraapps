@@ -22,6 +22,19 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.14.3 REQUIRED)
+    include( KDE4Defaults )
+    include_directories (
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_BINARY_DIR}
+        ${KDE4_INCLUDES}
+    )
+
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+endif()
+
 # Include various CMake modules...
 include(CMakePushCheckState)
 include(CheckFunctionExists)
@@ -84,13 +97,6 @@ if (QT_QTDBUS_FOUND)
     )
 endif()
 
-find_package(KDE4 4.14.3 QUIET REQUIRED)
-set_package_properties(KDE4 PROPERTIES TYPE REQUIRED
-    URL "http://www.kde.org"
-    DESCRIPTION "a world-class desktop environment"
-    PURPOSE "Enables various bits for improving integration with KDE"
-)
-
 find_package(IndicateQt QUIET)
 set_package_properties(IndicateQt PROPERTIES TYPE OPTIONAL
     URL "https://launchpad.net/libindicate-qt/"
@@ -104,14 +110,6 @@ set_package_properties(QCA2 PROPERTIES TYPE RECOMMENDED
     DESCRIPTION "Qt Cryptographic Architecture"
     PURPOSE     "Required for encryption support"
 )
-
-# Qt4 does not consider lconvert relevant, so they don't support finding it...
-# Rather than shipping hacked buildsys files, let's just infer the path from lrelease
-if (QT_LRELEASE_EXECUTABLE)
-    get_filename_component(_lrelease_path ${QT_LRELEASE_EXECUTABLE} PATH)
-    find_program(QT_LCONVERT_EXECUTABLE NAMES lconvert-qt4 lconvert PATHS ${_lrelease_path} NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
-endif()
-
 
 # Non-Qt-based packages
 
@@ -159,8 +157,6 @@ add_feature_info("SSL support in Qt" HAVE_SSL "Use secure network connections")
 # Check for syslog support
 check_include_file(syslog.h HAVE_SYSLOG)
 add_feature_info("syslog.h" HAVE_SYSLOG "Provide support for logging to the syslog")
-
-add_feature_info("Qt Linguist Tools" QT_LCONVERT_EXECUTABLE "Translation support for Quassel")
 
 # Various settings
 ##################

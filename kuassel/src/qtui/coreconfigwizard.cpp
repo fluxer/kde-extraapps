@@ -67,7 +67,7 @@ CoreConfigWizard::CoreConfigWizard(CoreConnection *connection, const QList<QVari
 
     setModal(true);
 
-    setWindowTitle(tr("Core Configuration Wizard"));
+    setWindowTitle(i18n("Core Configuration Wizard"));
     setPixmap(QWizard::LogoPixmap, KIcon("kuassel").pixmap(48));
 
     connect(connection, SIGNAL(coreSetupSuccess()), SLOT(coreSetupSuccess()));
@@ -96,7 +96,7 @@ void CoreConfigWizard::prepareCoreSetup(const QString &backend, const QVariantMa
 
 void CoreConfigWizard::coreSetupSuccess()
 {
-    syncPage->setStatus(tr("Your core has been successfully configured. Logging you in..."));
+    syncPage->setStatus(i18n("Your core has been successfully configured. Logging you in..."));
     syncPage->setError(false);
     syncRelayPage->setMode(CoreConfigWizardPages::SyncRelayPage::Error);
     coreConnection()->loginToCore(field("adminUser.user").toString(), field("adminUser.password").toString(), field("adminUser.rememberPasswd").toBool());
@@ -105,7 +105,7 @@ void CoreConfigWizard::coreSetupSuccess()
 
 void CoreConfigWizard::coreSetupFailed(const QString &error)
 {
-    syncPage->setStatus(tr("Core configuration failed:<br><b>%1</b><br>Press <em>Next</em> to start over.").arg(error));
+    syncPage->setStatus(i18n("Core configuration failed:<br><b>%1</b><br>Press <em>Next</em> to start over.").arg(error));
     syncPage->setError(true);
     syncRelayPage->setMode(CoreConfigWizardPages::SyncRelayPage::Error);
     //foreach(int idx, visitedPages()) page(idx)->setEnabled(true);
@@ -124,7 +124,7 @@ void CoreConfigWizard::startOver()
 
 void CoreConfigWizard::loginSuccess()
 {
-    syncPage->setStatus(tr("Your are now logged into your freshly configured Quassel Core!<br>"
+    syncPage->setStatus(i18n("Your are now logged into your freshly configured Quassel Core!<br>"
                            "Please remember to configure your identities and networks now."));
     syncPage->setComplete(true);
     syncPage->setFinalPage(true);
@@ -143,8 +143,8 @@ namespace CoreConfigWizardPages {
 IntroPage::IntroPage(QWidget *parent) : QWizardPage(parent)
 {
     ui.setupUi(this);
-    setTitle(tr("Introduction"));
-    //setSubTitle(tr("foobar"));
+    setTitle(i18n("Introduction"));
+    //setSubTitle(i18n("foobar"));
     //setPixmap(QWizard::WatermarkPixmap, QPixmap(":icons/quassel-icon.png"));
 }
 
@@ -160,8 +160,8 @@ int IntroPage::nextId() const
 AdminUserPage::AdminUserPage(QWidget *parent) : QWizardPage(parent)
 {
     ui.setupUi(this);
-    setTitle(tr("Create Admin User"));
-    setSubTitle(tr("First, we will create a user on the core. This first user will have administrator privileges."));
+    setTitle(i18n("Create Admin User"));
+    setSubTitle(i18n("First, we will create a user on the core. This first user will have administrator privileges."));
 
     registerField("adminUser.user*", ui.user);
     registerField("adminUser.password*", ui.password);
@@ -196,8 +196,8 @@ StorageSelectionPage::StorageSelectionPage(const QHash<QString, QVariant> &backe
 {
     ui.setupUi(this);
 
-    setTitle(tr("Select Storage Backend"));
-    setSubTitle(tr("Please select a database backend for the Quassel Core storage to store the backlog and other data in."));
+    setTitle(i18n("Select Storage Backend"));
+    setSubTitle(i18n("Please select a database backend for the Quassel Core storage to store the backlog and other data in."));
     setCommitPage(true);
 
     registerField("storage.backend", ui.backendList);
@@ -298,7 +298,7 @@ void StorageSelectionPage::on_backendList_currentIndexChanged()
     if (!setupKeys.isEmpty()) {
         QVariantMap defaults = _backends[backend].toMap()["SetupDefaults"].toMap();
         QGroupBox *propertyBox = new QGroupBox(this);
-        propertyBox->setTitle(tr("Connection Properties"));
+        propertyBox->setTitle(i18n("Connection Properties"));
         QFormLayout *formlayout = new QFormLayout;
 
         foreach(QString key, setupKeys) {
@@ -340,8 +340,8 @@ void StorageSelectionPage::on_backendList_currentIndexChanged()
 SyncPage::SyncPage(QWidget *parent) : QWizardPage(parent)
 {
     ui.setupUi(this);
-    setTitle(tr("Storing Your Settings"));
-    setSubTitle(tr("Your settings are now stored in the core, and you will be logged in automatically."));
+    setTitle(i18n("Storing Your Settings"));
+    setSubTitle(i18n("Your settings are now stored in the core, and you will be logged in automatically."));
 }
 
 

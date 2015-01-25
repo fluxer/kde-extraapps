@@ -23,6 +23,8 @@
 
 #include <QDialog>
 
+#include <KLocale>
+
 #include "ui_settingspagedlg.h"
 
 #include "settingspage.h"

@@ -29,6 +29,8 @@
 #  include <QTcpSocket>
 #endif
 
+#include <KLocale>
+
 #include "remotepeer.h"
 
 using namespace Protocol;
@@ -66,7 +68,7 @@ RemotePeer::RemotePeer(::AuthHandler *authHandler, QTcpSocket *socket, Compresso
 void RemotePeer::onSocketStateChanged(QAbstractSocket::SocketState state)
 {
     if (state == QAbstractSocket::ClosingState) {
-        emit statusMessage(tr("Disconnecting..."));
+        emit statusMessage(i18n("Disconnecting..."));
     }
 }
 

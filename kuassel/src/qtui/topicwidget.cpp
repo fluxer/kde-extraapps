@@ -119,14 +119,14 @@ void TopicWidget::setTopic(const QModelIndex &index)
                 newtopic = QString("%1 (%2) | %3 | %4")
                            .arg(Qt::escape(network->networkName()))
                            .arg(Qt::escape(network->currentServer()))
-                           .arg(tr("Users: %1").arg(network->ircUsers().count()))
-                           .arg(tr("Lag: %1 msecs").arg(network->latency()));
+                           .arg(i18n("Users: %1").arg(network->ircUsers().count()))
+                           .arg(i18n("Lag: %1 msecs").arg(network->latency()));
 #else
                 newtopic = QString("%1 (%2) | %3 | %4")
                            .arg(network->networkName().toHtmlEscaped())
                            .arg(network->currentServer().toHtmlEscaped())
-                           .arg(tr("Users: %1").arg(network->ircUsers().count()))
-                           .arg(tr("Lag: %1 msecs").arg(network->latency()));
+                           .arg(i18n("Users: %1").arg(network->ircUsers().count()))
+                           .arg(i18n("Lag: %1 msecs").arg(network->latency()));
 #endif
             }
             else {

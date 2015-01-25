@@ -32,7 +32,6 @@
 #include <QHostAddress>
 #include <QLibraryInfo>
 #include <QSettings>
-#include <QTranslator>
 #include <QUuid>
 
 #include <kstandarddirs.h>
@@ -52,7 +51,6 @@ Quassel::BuildInfo Quassel::_buildInfo;
 AbstractCliParser *Quassel::_cliParser = 0;
 Quassel::RunMode Quassel::_runMode;
 QString Quassel::_configDirPath;
-QString Quassel::_translationDirPath;
 QStringList Quassel::_dataDirPaths;
 bool Quassel::_initialized = false;
 bool Quassel::DEBUG = false;
@@ -318,56 +316,3 @@ QStringList Quassel::scriptDirPaths()
     return res;
 }
 
-
-QString Quassel::translationDirPath()
-{
-    if (_translationDirPath.isEmpty()) {
-        // We support only one translation dir; fallback mechanisms wouldn't work else.
-        // This means that if we have a $data/translations dir, the internal :/i18n resource won't be considered.
-        foreach(const QString &dir, dataDirPaths()) {
-            if (QFile::exists(dir + "translations/")) {
-                _translationDirPath = dir + "translations/";
-                break;
-            }
-        }
-        if (_translationDirPath.isEmpty())
-            _translationDirPath = ":/i18n/";
-    }
-    return _translationDirPath;
-}
-
-
-void Quassel::loadTranslation(const QLocale &locale)
-{
-    QTranslator *qtTranslator = QCoreApplication::instance()->findChild<QTranslator *>("QtTr");
-    QTranslator *quasselTranslator = QCoreApplication::instance()->findChild<QTranslator *>("QuasselTr");
-
-    if (qtTranslator)
-        qApp->removeTranslator(qtTranslator);
-    if (quasselTranslator)
-        qApp->removeTranslator(quasselTranslator);
-
-    // We use QLocale::C to indicate that we don't want a translation
-    if (locale.language() == QLocale::C)
-        return;
-
-    qtTranslator = new QTranslator(qApp);
-    qtTranslator->setObjectName("QtTr");
-    qApp->installTranslator(qtTranslator);
-
-    quasselTranslator = new QTranslator(qApp);
-    quasselTranslator->setObjectName("QuasselTr");
-    qApp->installTranslator(quasselTranslator);
-
-#if QT_VERSION >= 0x040800 && !defined Q_OS_MAC
-    bool success = qtTranslator->load(locale, QString("qt_"), translationDirPath());
-    if (!success)
-        qtTranslator->load(locale, QString("qt_"), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    quasselTranslator->load(locale, QString(""), translationDirPath());
-#else
-    bool success = qtTranslator->load(QString("qt_%1").arg(locale.name()), translationDirPath());
-    if (!success)
-        qtTranslator->load(QString("qt_%1").arg(locale.name()), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    quasselTranslator->load(QString("%1").arg(locale.name()), translationDirPath());
-#endif
-}

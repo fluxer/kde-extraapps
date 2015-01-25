@@ -236,7 +236,7 @@ void IdentityEditWidget::showAdvanced(bool advanced)
     if (advanced) {
         if (idx != -1)
             return;  // already added
-        ui.tabWidget->addTab(ui.advancedTab, tr("Advanced"));
+        ui.tabWidget->addTab(ui.advancedTab, i18n("Advanced"));
     }
     else {
         if (idx == -1)
@@ -319,7 +319,7 @@ void IdentityEditWidget::on_clearOrLoadKeyButton_clicked()
     QSslKey key;
 
     if (ui.keyTypeLabel->property("sslKey").toByteArray().isEmpty())
-        key = keyByFilename(QFileDialog::getOpenFileName(this, tr("Load a Key"),
+        key = keyByFilename(QFileDialog::getOpenFileName(this, i18n("Load a Key"),
                                                          QDesktopServices::storageLocation(QDesktopServices::HomeLocation)));
 
     showKeyState(key);
@@ -343,7 +343,7 @@ QSslKey IdentityEditWidget::keyByFilename(const QString &filename)
                 goto returnKey;
         }
     }
-    QMessageBox::information(this, tr("Failed to read key"), tr("Failed to read the key file. It is either incompatible or invalid. Note that the key file must not have a passphrase."));
+    QMessageBox::information(this, i18n("Failed to read key"), i18n("Failed to read the key file. It is either incompatible or invalid. Note that the key file must not have a passphrase."));
 returnKey:
     return key;
 }
@@ -352,21 +352,21 @@ returnKey:
 void IdentityEditWidget::showKeyState(const QSslKey &key)
 {
     if (key.isNull()) {
-        ui.keyTypeLabel->setText(tr("No Key loaded"));
-        ui.clearOrLoadKeyButton->setText(tr("Load"));
+        ui.keyTypeLabel->setText(i18n("No Key loaded"));
+        ui.clearOrLoadKeyButton->setText(i18n("Load"));
     }
     else {
         switch (key.algorithm()) {
         case QSsl::Rsa:
-            ui.keyTypeLabel->setText(tr("RSA"));
+            ui.keyTypeLabel->setText(i18n("RSA"));
             break;
         case QSsl::Dsa:
-            ui.keyTypeLabel->setText(tr("DSA"));
+            ui.keyTypeLabel->setText(i18n("DSA"));
             break;
         default:
-            ui.keyTypeLabel->setText(tr("No Key loaded"));
+            ui.keyTypeLabel->setText(i18n("No Key loaded"));
         }
-        ui.clearOrLoadKeyButton->setText(tr("Clear"));
+        ui.clearOrLoadKeyButton->setText(i18n("Clear"));
     }
     ui.keyTypeLabel->setProperty("sslKey", key.toPem());
     ui.keyTypeLabel->setProperty("sslKeyType", (int)key.algorithm());
@@ -378,7 +378,7 @@ void IdentityEditWidget::on_clearOrLoadCertButton_clicked()
     QSslCertificate cert;
 
     if (ui.certOrgLabel->property("sslCert").toByteArray().isEmpty())
-        cert = certByFilename(QFileDialog::getOpenFileName(this, tr("Load a Certificate"),
+        cert = certByFilename(QFileDialog::getOpenFileName(this, i18n("Load a Certificate"),
                                                            QDesktopServices::storageLocation(QDesktopServices::HomeLocation)));
     showCertState(cert);
     emit widgetHasChanged();
@@ -405,14 +405,14 @@ QSslCertificate IdentityEditWidget::certByFilename(const QString &filename)
 void IdentityEditWidget::showCertState(const QSslCertificate &cert)
 {
     if (cert.isNull()) {
-        ui.certOrgLabel->setText(tr("No Certificate loaded"));
-        ui.certCNameLabel->setText(tr("No Certificate loaded"));
-        ui.clearOrLoadCertButton->setText(tr("Load"));
+        ui.certOrgLabel->setText(i18n("No Certificate loaded"));
+        ui.certCNameLabel->setText(i18n("No Certificate loaded"));
+        ui.clearOrLoadCertButton->setText(i18n("Load"));
     }
     else {
         ui.certOrgLabel->setText(cert.subjectInfo(QSslCertificate::Organization));
         ui.certCNameLabel->setText(cert.subjectInfo(QSslCertificate::CommonName));
-        ui.clearOrLoadCertButton->setText(tr("Clear"));
+        ui.clearOrLoadCertButton->setText(i18n("Clear"));
     }
     ui.certOrgLabel->setProperty("sslCert", cert.toPem());
 }

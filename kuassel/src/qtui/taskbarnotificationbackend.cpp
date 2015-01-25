@@ -80,9 +80,9 @@ TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : Settin
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
 #ifdef Q_OS_MAC
-    layout->addWidget(enabledBox = new QCheckBox(tr("Activate dock entry, timeout:"), this));
+    layout->addWidget(enabledBox = new QCheckBox(i18n("Activate dock entry, timeout:"), this));
 #else
-    layout->addWidget(enabledBox = new QCheckBox(tr("Mark taskbar entry, timeout:"), this));
+    layout->addWidget(enabledBox = new QCheckBox(i18n("Mark taskbar entry, timeout:"), this));
 #endif
     enabledBox->setIcon(KIcon("flag-blue"));
     enabledBox->setEnabled(true);
@@ -90,8 +90,8 @@ TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : Settin
     timeoutBox = new QSpinBox(this);
     timeoutBox->setMinimum(0);
     timeoutBox->setMaximum(99);
-    timeoutBox->setSpecialValueText(tr("Unlimited"));
-    timeoutBox->setSuffix(tr(" seconds"));
+    timeoutBox->setSpecialValueText(i18n("Unlimited"));
+    timeoutBox->setSuffix(i18n(" seconds"));
     layout->addWidget(timeoutBox);
     layout->addStretch(20);
 

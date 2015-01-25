@@ -705,7 +705,7 @@ void MultiLineEdit::on_textChanged()
             clear();
 
             if (lines.count() >= 4) {
-                QString msg = tr("Do you really want to paste %n line(s)?", "", lines.count());
+                QString msg = i18n("Do you really want to paste %n line(s)?", "", lines.count());
                 msg += "<p>";
                 for (int i = 0; i < 4; i++) {
 #if QT_VERSION < 0x050000
@@ -718,7 +718,7 @@ void MultiLineEdit::on_textChanged()
                     msg += "<br />";
                 }
                 msg += "...</p>";
-                QMessageBox question(QMessageBox::NoIcon, tr("Paste Protection"), msg, QMessageBox::Yes|QMessageBox::No);
+                QMessageBox question(QMessageBox::NoIcon, i18n("Paste Protection"), msg, QMessageBox::Yes|QMessageBox::No);
                 question.setDefaultButton(QMessageBox::No);
 #ifdef Q_OS_MAC
                 question.setWindowFlags(question.windowFlags() | Qt::Sheet);

@@ -18,10 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <KLocale>
+
 #include "topicwidgetsettingspage.h"
 
 TopicWidgetSettingsPage::TopicWidgetSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Topic Widget"), parent)
+    : SettingsPage(i18n("Interface"), i18n("Topic Widget"), parent)
 {
     ui.setupUi(this);
 

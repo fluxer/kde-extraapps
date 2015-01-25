@@ -227,7 +227,7 @@ void CoreSession::removeClient(Peer *peer)
 {
     RemotePeer *p = qobject_cast<RemotePeer *>(peer);
     if (p)
-        quInfo() << qPrintable(tr("Client")) << p->description() << qPrintable(tr("disconnected (UserId: %1).").arg(user().toInt()));
+        quInfo() << qPrintable(i18n("Client")) << p->description() << qPrintable(i18n("disconnected (UserId: %1).").arg(user().toInt()));
 }
 
 
@@ -475,7 +475,7 @@ void CoreSession::createNetwork(const NetworkInfo &info_, const QStringList &per
         Core::createNetwork(user(), info);
 
     if (!info.networkId.isValid()) {
-        qWarning() << qPrintable(tr("CoreSession::createNetwork(): Got invalid networkId from Core when trying to create network %1!").arg(info.networkName));
+        qWarning() << qPrintable(i18n("CoreSession::createNetwork(): Got invalid networkId from Core when trying to create network %1!").arg(info.networkName));
         return;
     }
 
@@ -507,7 +507,7 @@ void CoreSession::createNetwork(const NetworkInfo &info_, const QStringList &per
         emit networkCreated(id);
     }
     else {
-        qWarning() << qPrintable(tr("CoreSession::createNetwork(): Trying to create a network that already exists, updating instead!"));
+        qWarning() << qPrintable(i18n("CoreSession::createNetwork(): Trying to create a network that already exists, updating instead!"));
         _networks[info.networkId]->requestSetNetworkInfo(info);
     }
 }

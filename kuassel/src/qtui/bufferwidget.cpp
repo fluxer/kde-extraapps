@@ -76,26 +76,26 @@ BufferWidget::BufferWidget(QWidget *parent)
     ActionCollection *coll = QtUi::actionCollection();
 
     Action *zoomInChatview = coll->add<Action>("ZoomInChatView", this, SLOT(zoomIn()));
-    zoomInChatview->setText(tr("Zoom In"));
+    zoomInChatview->setText(i18n("Zoom In"));
     zoomInChatview->setIcon(KIcon("zoom-in"));
     zoomInChatview->setShortcut(QKeySequence::ZoomIn);
 
     Action *zoomOutChatview = coll->add<Action>("ZoomOutChatView", this, SLOT(zoomOut()));
     zoomOutChatview->setIcon(KIcon("zoom-out"));
-    zoomOutChatview->setText(tr("Zoom Out"));
+    zoomOutChatview->setText(i18n("Zoom Out"));
     zoomOutChatview->setShortcut(QKeySequence::ZoomOut);
 
     Action *zoomOriginalChatview = coll->add<Action>("ZoomOriginalChatView", this, SLOT(zoomOriginal()));
     zoomOriginalChatview->setIcon(KIcon("zoom-original"));
-    zoomOriginalChatview->setText(tr("Actual Size"));
+    zoomOriginalChatview->setText(i18n("Actual Size"));
     //zoomOriginalChatview->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_0)); // used for RTS switching
 
     Action *setMarkerLine = coll->add<Action>("SetMarkerLineToBottom", this, SLOT(setMarkerLine()));
-    setMarkerLine->setText(tr("Set Marker Line"));
+    setMarkerLine->setText(i18n("Set Marker Line"));
     setMarkerLine->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
 
     Action *jumpToMarkerLine = QtUi::actionCollection("Navigation")->add<Action>("JumpToMarkerLine", this, SLOT(jumpToMarkerLine()));
-    jumpToMarkerLine->setText(tr("Go to Marker Line"));
+    jumpToMarkerLine->setText(i18n("Go to Marker Line"));
     jumpToMarkerLine->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
 
     ChatViewSettings s;

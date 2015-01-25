@@ -181,7 +181,7 @@ DockManagerNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent)
     : SettingsPage("Internal", "DockManagerNotification", parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->addWidget(enabledBox = new QCheckBox(tr("Mark dockmanager entry"), this));
+    layout->addWidget(enabledBox = new QCheckBox(i18n("Mark dockmanager entry"), this));
     enabledBox->setEnabled(true);
 
     connect(enabledBox, SIGNAL(toggled(bool)), SLOT(widgetChanged()));

@@ -174,7 +174,7 @@ void NetworkModelController::removeBuffers(const QModelIndexList &indexList)
     }
     QString msg;
     if (inactive.count()) {
-        msg = tr("Do you want to delete the following buffer(s) permanently?", 0, inactive.count());
+        msg = i18n("Do you want to delete the following buffer(s) permanently?", 0, inactive.count());
         msg += "<ul>";
         int count = 0;
         foreach(BufferInfo info, inactive) {
@@ -187,12 +187,12 @@ void NetworkModelController::removeBuffers(const QModelIndexList &indexList)
         }
         msg += "</ul>";
         if (count > 9 && inactive.size() - count != 0)
-            msg += tr("...and <b>%1</b> more<br><br>").arg(inactive.size() - count);
-        msg += tr("<b>Note:</b> This will delete all related data, including all backlog data, from the core's database and cannot be undone.");
+            msg += i18n("...and <b>%1</b> more<br><br>").arg(inactive.size() - count);
+        msg += i18n("<b>Note:</b> This will delete all related data, including all backlog data, from the core's database and cannot be undone.");
         if (inactive.count() != indexList.count())
-            msg += tr("<br>Active channel buffers cannot be deleted, please part the channel first.");
+            msg += i18n("<br>Active channel buffers cannot be deleted, please part the channel first.");
 
-        if (QMessageBox::question(0, tr("Remove buffers permanently?"), msg, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
+        if (QMessageBox::question(0, i18n("Remove buffers permanently?"), msg, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
             foreach(BufferInfo info, inactive)
             Client::removeBuffer(info.bufferId());
         }
@@ -527,14 +527,14 @@ void NetworkModelController::handleNickAction(ActionType type, QAction *action)
 NetworkModelController::JoinDlg::JoinDlg(const QModelIndex &index, QWidget *parent) : QDialog(parent)
 {
     setWindowIcon(KIcon("irc-join-channel"));
-    setWindowTitle(tr("Join Channel"));
+    setWindowTitle(i18n("Join Channel"));
 
     QGridLayout *layout = new QGridLayout(this);
-    layout->addWidget(new QLabel(tr("Network:")), 0, 0);
+    layout->addWidget(new QLabel(i18n("Network:")), 0, 0);
     layout->addWidget(networks = new QComboBox, 0, 1);
-    layout->addWidget(new QLabel(tr("Channel:")), 1, 0);
+    layout->addWidget(new QLabel(i18n("Channel:")), 1, 0);
     layout->addWidget(channel = new QLineEdit, 1, 1);
-    layout->addWidget(new QLabel(tr("Password:")), 2, 0);
+    layout->addWidget(new QLabel(i18n("Password:")), 2, 0);
     layout->addWidget(password = new QLineEdit, 2, 1);
     layout->addWidget(buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel), 3, 0, 1, 2);
     setLayout(layout);

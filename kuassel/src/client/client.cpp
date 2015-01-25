@@ -317,7 +317,7 @@ void Client::coreIdentityCreated(const Identity &other)
         emit identityCreated(other.id());
     }
     else {
-        qWarning() << tr("Identity already exists in client!");
+        qWarning() << i18n("Identity already exists in client!");
     }
 }
 

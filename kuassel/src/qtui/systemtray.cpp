@@ -63,7 +63,7 @@ QWidget *SystemTray::associatedWidget() const
 void SystemTray::init()
 {
     ActionCollection *coll = QtUi::actionCollection("General");
-    _minimizeRestoreAction = new Action(tr("&Minimize"), this, this, SLOT(minimizeRestore()));
+    _minimizeRestoreAction = new Action(i18n("&Minimize"), this, this, SLOT(minimizeRestore()));
 
     KMenu *kmenu;
     _trayMenu = kmenu = new KMenu();
@@ -89,9 +89,9 @@ void SystemTray::init()
 void SystemTray::trayMenuAboutToShow()
 {
     if (GraphicalUi::isMainWidgetVisible())
-        _minimizeRestoreAction->setText(tr("&Minimize"));
+        _minimizeRestoreAction->setText(i18n("&Minimize"));
     else
-        _minimizeRestoreAction->setText(tr("&Restore"));
+        _minimizeRestoreAction->setText(i18n("&Restore"));
 }
 
 

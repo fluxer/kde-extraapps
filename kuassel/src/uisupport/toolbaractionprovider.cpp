@@ -27,34 +27,34 @@
 ToolBarActionProvider::ToolBarActionProvider(QObject *parent)
     : NetworkModelController(parent)
 {
-    registerAction(NetworkConnectAll, KIcon("network-connect"), tr("Connect"))->setToolTip(tr("Connect to IRC"));
-    registerAction(NetworkDisconnectAll, KIcon("network-disconnect"), tr("Disconnect"))->setToolTip(tr("Disconnect from IRC"));
+    registerAction(NetworkConnectAll, KIcon("network-connect"), i18n("Connect"))->setToolTip(i18n("Connect to IRC"));
+    registerAction(NetworkDisconnectAll, KIcon("network-disconnect"), i18n("Disconnect"))->setToolTip(i18n("Disconnect from IRC"));
 
-    registerAction(BufferPart, KIcon("irc-close-channel"), tr("Part"))->setToolTip(tr("Leave currently selected channel"));
-    registerAction(JoinChannel, KIcon("irc-join-channel"), tr("Join"))->setToolTip(tr("Join a channel"));
+    registerAction(BufferPart, KIcon("irc-close-channel"), i18n("Part"))->setToolTip(i18n("Leave currently selected channel"));
+    registerAction(JoinChannel, KIcon("irc-join-channel"), i18n("Join"))->setToolTip(i18n("Join a channel"));
 
-    registerAction(NickQuery, KIcon("mail-message-new"), tr("Query"))->setToolTip(tr("Start a private conversation")); // fix icon
-    registerAction(NickWhois, KIcon("im-user"), tr("Whois"))->setToolTip(tr("Request user information")); // fix icon
+    registerAction(NickQuery, KIcon("mail-message-new"), i18n("Query"))->setToolTip(i18n("Start a private conversation")); // fix icon
+    registerAction(NickWhois, KIcon("im-user"), i18n("Whois"))->setToolTip(i18n("Request user information")); // fix icon
 
-    registerAction(NickOp, KIcon("irc-operator"), tr("Op"))->setToolTip(tr("Give operator privileges to user"));
-    registerAction(NickDeop, KIcon("irc-remove-operator"), tr("Deop"))->setToolTip(tr("Take operator privileges from user"));
-    registerAction(NickVoice, KIcon("irc-voice"), tr("Voice"))->setToolTip(tr("Give voice to user"));
-    registerAction(NickDevoice, KIcon("irc-unvoice"), tr("Devoice"))->setToolTip(tr("Take voice from user"));
-    registerAction(NickKick, KIcon("im-kick-user"), tr("Kick"))->setToolTip(tr("Remove user from channel"));
-    registerAction(NickBan, KIcon("im-ban-user"), tr("Ban"))->setToolTip(tr("Ban user from channel"));
-    registerAction(NickKickBan, KIcon("im-ban-kick-user"), tr("Kick/Ban"))->setToolTip(tr("Remove and ban user from channel"));
+    registerAction(NickOp, KIcon("irc-operator"), i18n("Op"))->setToolTip(i18n("Give operator privileges to user"));
+    registerAction(NickDeop, KIcon("irc-remove-operator"), i18n("Deop"))->setToolTip(i18n("Take operator privileges from user"));
+    registerAction(NickVoice, KIcon("irc-voice"), i18n("Voice"))->setToolTip(i18n("Give voice to user"));
+    registerAction(NickDevoice, KIcon("irc-unvoice"), i18n("Devoice"))->setToolTip(i18n("Take voice from user"));
+    registerAction(NickKick, KIcon("im-kick-user"), i18n("Kick"))->setToolTip(i18n("Remove user from channel"));
+    registerAction(NickBan, KIcon("im-ban-user"), i18n("Ban"))->setToolTip(i18n("Ban user from channel"));
+    registerAction(NickKickBan, KIcon("im-ban-kick-user"), i18n("Kick/Ban"))->setToolTip(i18n("Remove and ban user from channel"));
 
     _networksConnectMenu = new QMenu();
     _networksConnectMenu->setSeparatorsCollapsible(false);
     _networksConnectMenu->addSeparator();
-    _networksConnectMenu->addAction(tr("Connect to all"));
+    _networksConnectMenu->addAction(i18n("Connect to all"));
     action(NetworkConnectAll)->setMenu(_networksConnectMenu);
     action(NetworkConnectAll)->setEnabled(false);
 
     _networksDisconnectMenu = new QMenu();
     _networksDisconnectMenu->setSeparatorsCollapsible(false);
     _networksDisconnectMenu->addSeparator();
-    _networksDisconnectMenu->addAction(tr("Disconnect from all"));
+    _networksDisconnectMenu->addAction(i18n("Disconnect from all"));
     action(NetworkDisconnectAll)->setMenu(_networksDisconnectMenu);
     action(NetworkDisconnectAll)->setEnabled(false);
 

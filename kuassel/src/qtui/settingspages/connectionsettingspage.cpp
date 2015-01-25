@@ -24,7 +24,7 @@
 #include "networkconfig.h"
 
 ConnectionSettingsPage::ConnectionSettingsPage(QWidget *parent)
-    : SettingsPage(tr("IRC"), QString(), parent)
+    : SettingsPage(i18n("IRC"), QString(), parent)
 {
     ui.setupUi(this);
     initAutoWidgets();

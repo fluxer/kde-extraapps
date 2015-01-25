@@ -22,11 +22,12 @@
 #include <QItemSelectionModel>
 
 #include <KIcon>
+#include <KLocale>
 
 #include "aliasessettingspage.h"
 
 AliasesSettingsPage::AliasesSettingsPage(QWidget *parent)
-    : SettingsPage(tr("IRC"), tr("Aliases"), parent)
+    : SettingsPage(i18n("IRC"), i18n("Aliases"), parent)
 {
     ui.setupUi(this);
     ui.newAliasButton->setIcon(KIcon("list-add"));

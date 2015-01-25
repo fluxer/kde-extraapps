@@ -68,11 +68,11 @@ QVariant IgnoreListModel::data(const QModelIndex &index, int role) const
            "Messages are never stored or shown anywhere.";
     */
         case 0:
-            return tr("<b>Enable / Disable:</b><br />"
+            return i18n("<b>Enable / Disable:</b><br />"
                       "Only enabled rules are filtered.<br />"
                       "For dynamic rules, disabling actually shows the filtered messages again");
         case 2:
-            return tr("<b>Ignore rule:</b><br />"
+            return i18n("<b>Ignore rule:</b><br />"
                       "Depending on the type of the rule, the text is matched against either:<br /><br />"
                       "- <u>the message content:</u><br />"
                       "<i>Example:<i><br />"
@@ -88,9 +88,9 @@ QVariant IgnoreListModel::data(const QModelIndex &index, int role) const
         switch (index.column()) {
         case 1:
             if (ignoreListManager()[index.row()].type == IgnoreListManager::SenderIgnore)
-                return tr("By Sender");
+                return i18n("By Sender");
             else
-                return tr("By Message");
+                return i18n("By Message");
         }
     case Qt::EditRole:
         switch (index.column()) {
@@ -205,9 +205,9 @@ Qt::ItemFlags IgnoreListModel::flags(const QModelIndex &index) const
 QVariant IgnoreListModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     QStringList header;
-    header << tr("Enabled")
-           << tr("Type")
-           << tr("Ignore Rule");
+    header << i18n("Enabled")
+           << i18n("Type")
+           << i18n("Ignore Rule");
 
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
         return header[section];

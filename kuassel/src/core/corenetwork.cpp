@@ -165,7 +165,7 @@ void CoreNetwork::connectToIrc(bool reconnecting)
     }
     else if (_previousConnectionAttemptFailed) {
         // cycle to next server if previous connection attempt failed
-        displayMsg(Message::Server, BufferInfo::StatusBuffer, "", tr("Connection failed. Cycling to next Server"));
+        displayMsg(Message::Server, BufferInfo::StatusBuffer, "", i18n("Connection failed. Cycling to next Server"));
         if (++_lastUsedServerIndex >= serverList().size()) {
             _lastUsedServerIndex = 0;
         }
@@ -173,8 +173,8 @@ void CoreNetwork::connectToIrc(bool reconnecting)
     _previousConnectionAttemptFailed = false;
 
     Server server = usedServer();
-    displayStatusMsg(tr("Connecting to %1:%2...").arg(server.host).arg(server.port));
-    displayMsg(Message::Server, BufferInfo::StatusBuffer, "", tr("Connecting to %1:%2...").arg(server.host).arg(server.port));
+    displayStatusMsg(i18n("Connecting to %1:%2...").arg(server.host).arg(server.port));
+    displayMsg(Message::Server, BufferInfo::StatusBuffer, "", i18n("Connecting to %1:%2...").arg(server.host).arg(server.port));
 
     if (server.useProxy) {
         QNetworkProxy proxy((QNetworkProxy::ProxyType)server.proxyType, server.proxyHost, server.proxyPort, server.proxyUser, server.proxyPass);
@@ -231,7 +231,7 @@ void CoreNetwork::disconnectFromIrc(bool requested, const QString &reason, bool 
     else
         _quitReason = reason;
 
-    displayMsg(Message::Server, BufferInfo::StatusBuffer, "", tr("Disconnecting. (%1)").arg((!requested && !withReconnect) ? tr("Core Shutdown") : _quitReason));
+    displayMsg(Message::Server, BufferInfo::StatusBuffer, "", i18n("Disconnecting. (%1)").arg((!requested && !withReconnect) ? i18n("Core Shutdown") : _quitReason));
     switch (socket.state()) {
     case QAbstractSocket::ConnectedState:
         userInputHandler()->issueQuit(_quitReason);
@@ -432,9 +432,9 @@ void CoreNetwork::socketError(QAbstractSocket::SocketError error)
         return;
 
     _previousConnectionAttemptFailed = true;
-    qWarning() << qPrintable(tr("Could not connect to %1 (%2)").arg(networkName(), socket.errorString()));
+    qWarning() << qPrintable(i18n("Could not connect to %1 (%2)").arg(networkName(), socket.errorString()));
     emit connectionError(socket.errorString());
-    displayMsg(Message::Error, BufferInfo::StatusBuffer, "", tr("Connection failure: %1").arg(socket.errorString()));
+    displayMsg(Message::Error, BufferInfo::StatusBuffer, "", i18n("Connection failure: %1").arg(socket.errorString()));
     emitConnectionError(socket.errorString());
     if (socket.state() < QAbstractSocket::ConnectedState) {
         socketDisconnected();

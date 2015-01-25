@@ -118,9 +118,9 @@ QVariant ShortcutsModel::headerData(int section, Qt::Orientation orientation, in
         return QVariant();
     switch (section) {
     case 0:
-        return tr("Action");
+        return i18n("Action");
     case 1:
-        return tr("Shortcut");
+        return i18n("Shortcut");
     default:
         return QVariant();
     }

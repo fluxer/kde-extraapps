@@ -26,7 +26,7 @@
 #include "coreaccountmodel.h"
 
 CoreAccountSettingsPage::CoreAccountSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Remote Cores"), QString(), parent),
+    : SettingsPage(i18n("Remote Cores"), QString(), parent),
     _lastAccountId(0),
     _lastAutoConnectId(0),
     _standalone(false)
@@ -257,9 +257,9 @@ CoreAccountEditDlg::CoreAccountEditDlg(const CoreAccount &acct, QWidget *parent)
     ui.proxyPassword->setText(acct.proxyPassword());
 
     if (acct.accountId().isValid())
-        setWindowTitle(tr("Edit Core Account"));
+        setWindowTitle(i18n("Edit Core Account"));
     else
-        setWindowTitle(tr("Add Core Account"));
+        setWindowTitle(i18n("Add Core Account"));
 }
 
 

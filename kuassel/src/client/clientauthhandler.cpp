@@ -62,7 +62,7 @@ void ClientAuthHandler::connectToCore()
             bool accepted = false;
             emit handleNoSslInClient(&accepted);
             if (!accepted) {
-                emit errorMessage(tr("Unencrypted connection canceled"));
+                emit errorMessage(i18n("Unencrypted connection canceled"));
                 return;
             }
             s.setAccountValue("ShowNoClientSslWarning", false);
@@ -84,7 +84,7 @@ void ClientAuthHandler::connectToCore()
     connect(socket, SIGNAL(readyRead()), SLOT(onReadyRead()));
     connect(socket, SIGNAL(connected()), SLOT(onSocketConnected()));
 
-    emit statusMessage(tr("Connecting to %1...").arg(_account.accountName()));
+    emit statusMessage(i18n("Connecting to %1...").arg(_account.accountName()));
     socket->connectToHost(_account.hostName(), _account.port());
 }
 
@@ -96,22 +96,22 @@ void ClientAuthHandler::onSocketStateChanged(QAbstractSocket::SocketState socket
     switch(socketState) {
         case QAbstractSocket::HostLookupState:
             if (!_legacy)
-                text = tr("Looking up %1...").arg(_account.hostName());
+                text = i18n("Looking up %1...").arg(_account.hostName());
             break;
         case QAbstractSocket::ConnectingState:
             if (!_legacy)
-                text = tr("Connecting to %1...").arg(_account.hostName());
+                text = i18n("Connecting to %1...").arg(_account.hostName());
             break;
         case QAbstractSocket::ConnectedState:
-            text = tr("Connected to %1").arg(_account.hostName());
+            text = i18n("Connected to %1").arg(_account.hostName());
             break;
         case QAbstractSocket::ClosingState:
             if (!_probing)
-                text = tr("Disconnecting from %1...").arg(_account.hostName());
+                text = i18n("Disconnecting from %1...").arg(_account.hostName());
             break;
         case QAbstractSocket::UnconnectedState:
             if (!_probing) {
-                text = tr("Disconnected");
+                text = i18n("Disconnected");
                 // Ensure the disconnected() signal is sent even if we haven't reached the Connected state yet.
                 // The baseclass implementation will make sure to only send the signal once.
                 // However, we do want to prefer a potential socket error signal that may be on route already, so
@@ -146,7 +146,7 @@ void ClientAuthHandler::onSocketDisconnected()
         // Remote host has closed the connection while probing
         _probing = false;
         disconnect(socket(), SIGNAL(readyRead()), this, SLOT(onReadyRead()));
-        emit statusMessage(tr("Reconnecting in compatibility mode..."));
+        emit statusMessage(i18n("Reconnecting in compatibility mode..."));
         socket()->connectToHost(_account.hostName(), _account.port());
         return;
     }
@@ -233,10 +233,10 @@ void ClientAuthHandler::onReadyRead()
     RemotePeer *peer = PeerFactory::createPeer(PeerFactory::ProtoDescriptor(type, protoFeatures), this, socket(), level, this);
     if (!peer) {
         qWarning() << "No valid protocol supported for this core!";
-        emit errorPopup(tr("<b>Incompatible Quassel Core!</b><br>"
+        emit errorPopup(i18n("<b>Incompatible Quassel Core!</b><br>"
                            "None of the protocols this client speaks are supported by the core you are trying to connect to."));
 
-        requestDisconnect(tr("Core speaks none of the protocols we support"));
+        requestDisconnect(i18n("Core speaks none of the protocols we support"));
         return;
     }
 
@@ -251,9 +251,9 @@ void ClientAuthHandler::onReadyRead()
 
 void ClientAuthHandler::onProtocolVersionMismatch(int actual, int expected)
 {
-    emit errorPopup(tr("<b>The Quassel Core you are trying to connect to is too old!</b><br>"
+    emit errorPopup(i18n("<b>The Quassel Core you are trying to connect to is too old!</b><br>"
            "We need at least protocol v%1, but the core speaks v%2 only.").arg(expected, actual));
-    requestDisconnect(tr("Incompatible protocol version, connection to core refused"));
+    requestDisconnect(i18n("Incompatible protocol version, connection to core refused"));
 }
 
 
@@ -275,7 +275,7 @@ void ClientAuthHandler::setPeer(RemotePeer *peer)
 
 void ClientAuthHandler::startRegistration()
 {
-    emit statusMessage(tr("Synchronizing to core..."));
+    emit statusMessage(i18n("Synchronizing to core..."));
 
     // useSsl will be ignored by non-legacy peers
     bool useSsl = false;
@@ -290,7 +290,7 @@ void ClientAuthHandler::startRegistration()
 void ClientAuthHandler::handle(const ClientDenied &msg)
 {
     emit errorPopup(msg.errorString);
-    requestDisconnect(tr("The core refused connection from this client"));
+    requestDisconnect(i18n("The core refused connection from this client"));
 }
 
 
@@ -312,7 +312,7 @@ void ClientAuthHandler::handle(const ClientRegistered &msg)
 void ClientAuthHandler::onConnectionReady()
 {
     emit connectionReady();
-    emit statusMessage(tr("Connected to %1").arg(_account.accountName()));
+    emit statusMessage(i18n("Connected to %1").arg(_account.accountName()));
 
     if (!_coreConfigured) {
         // start wizard
@@ -354,12 +354,12 @@ void ClientAuthHandler::login(const QString &user, const QString &password, bool
 
 void ClientAuthHandler::login(const QString &previousError)
 {
-    emit statusMessage(tr("Logging in..."));
+    emit statusMessage(i18n("Logging in..."));
     if (_account.user().isEmpty() || _account.password().isEmpty() || !previousError.isEmpty()) {
         bool valid = false;
         emit userAuthenticationRequired(&_account, &valid, previousError); // *must* be a synchronous call
         if (!valid || _account.user().isEmpty() || _account.password().isEmpty()) {
-            requestDisconnect(tr("Login canceled"));
+            requestDisconnect(i18n("Login canceled"));
             return;
         }
     }
@@ -417,7 +417,7 @@ void ClientAuthHandler::checkAndEnableSsl(bool coreSupportsSsl)
             bool accepted = false;
             emit handleNoSslInCore(&accepted);
             if (!accepted) {
-                requestDisconnect(tr("Unencrypted connection cancelled"));
+                requestDisconnect(i18n("Unencrypted connection cancelled"));
                 return;
             }
             s.setAccountValue("ShowNoCoreSslWarning", false);
@@ -468,7 +468,7 @@ void ClientAuthHandler::onSslErrors()
         emit handleSslErrors(socket, &accepted, &permanently);
 
         if (!accepted) {
-            requestDisconnect(tr("Unencrypted connection canceled"));
+            requestDisconnect(i18n("Unencrypted connection canceled"));
             return;
         }
 

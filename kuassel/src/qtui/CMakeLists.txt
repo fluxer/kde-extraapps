@@ -140,10 +140,12 @@ qt4_wrap_ui(UI ${FORMPATH} ${SPFRM})
 
 
 add_library(mod_qtui STATIC ${SOURCES} ${SPSRC} ${UI})
-qt4_use_modules(mod_qtui Core Gui Network ${QT_MODULES})
 
-if (LIBS)
-    target_link_libraries(mod_qtui ${LIBS})
-endif()
+target_link_libraries(mod_qtui
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+    ${LIBS}
+)
 
 add_dependencies(mod_qtui mod_common mod_client mod_uisupport)

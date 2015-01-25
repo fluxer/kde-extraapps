@@ -32,7 +32,7 @@
 #include "chatviewsettings.h"
 
 ChatMonitorSettingsPage::ChatMonitorSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Chat Monitor"), parent)
+    : SettingsPage(i18n("Interface"), i18n("Chat Monitor"), parent)
 {
     ui.setupUi(this);
 
@@ -56,8 +56,8 @@ ChatMonitorSettingsPage::ChatMonitorSettingsPage(QWidget *parent)
     _configActive->setInitialized();
 
     // fill combobox with operation modes
-    ui.operationMode->addItem(tr("Opt In"), ChatViewSettings::OptIn);
-    ui.operationMode->addItem(tr("Opt Out"), ChatViewSettings::OptOut);
+    ui.operationMode->addItem(i18n("Opt In"), ChatViewSettings::OptIn);
+    ui.operationMode->addItem(i18n("Opt Out"), ChatViewSettings::OptOut);
 
     // connect slots
     connect(ui.operationMode, SIGNAL(currentIndexChanged(int)), SLOT(switchOperationMode(int)));
@@ -269,10 +269,10 @@ void ChatMonitorSettingsPage::switchOperationMode(int idx)
 {
     ChatViewSettings::OperationMode mode = (ChatViewSettings::OperationMode)(idx + 1);
     if (mode == ChatViewSettings::OptIn) {
-        ui.labelActiveBuffers->setText(tr("Show:"));
+        ui.labelActiveBuffers->setText(i18n("Show:"));
     }
     else if (mode == ChatViewSettings::OptOut) {
-        ui.labelActiveBuffers->setText(tr("Ignore:"));
+        ui.labelActiveBuffers->setText(i18n("Ignore:"));
     }
     widgetHasChanged();
 }

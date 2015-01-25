@@ -28,7 +28,7 @@
 #include "signalproxy.h"
 
 IdentitiesSettingsPage::IdentitiesSettingsPage(QWidget *parent)
-    : SettingsPage(tr("IRC"), tr("Identities"), parent),
+    : SettingsPage(i18n("IRC"), i18n("Identities"), parent),
     _editSsl(false)
 {
     ui.setupUi(this);
@@ -202,13 +202,13 @@ bool IdentitiesSettingsPage::aboutToSave()
         if (id->ident().isEmpty()) errors.append(4);
     }
     if (!errors.count()) return true;
-    QString error(tr("<b>The following problems need to be corrected before your changes can be applied:</b><ul>"));
-    if (errors.contains(1)) error += tr("<li>All identities need an identity name set</li>");
-    if (errors.contains(2)) error += tr("<li>Every identity needs at least one nickname defined</li>");
-    if (errors.contains(3)) error += tr("<li>You need to specify a real name for every identity</li>");
-    if (errors.contains(4)) error += tr("<li>You need to specify an ident for every identity</li>");
-    error += tr("</ul>");
-    QMessageBox::warning(this, tr("One or more identities are invalid"), error);
+    QString error(i18n("<b>The following problems need to be corrected before your changes can be applied:</b><ul>"));
+    if (errors.contains(1)) error += i18n("<li>All identities need an identity name set</li>");
+    if (errors.contains(2)) error += i18n("<li>Every identity needs at least one nickname defined</li>");
+    if (errors.contains(3)) error += i18n("<li>You need to specify a real name for every identity</li>");
+    if (errors.contains(4)) error += i18n("<li>You need to specify an ident for every identity</li>");
+    error += i18n("</ul>");
+    QMessageBox::warning(this, i18n("One or more identities are invalid"), error);
     return false;
 }
 
@@ -353,8 +353,8 @@ void IdentitiesSettingsPage::on_addIdentity_clicked()
 void IdentitiesSettingsPage::on_deleteIdentity_clicked()
 {
     Identity *id = identities[currentId];
-    int ret = QMessageBox::question(this, tr("Delete Identity?"),
-        tr("Do you really want to delete identity \"%1\"?").arg(id->identityName()),
+    int ret = QMessageBox::question(this, i18n("Delete Identity?"),
+        i18n("Do you really want to delete identity \"%1\"?").arg(id->identityName()),
         QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
     if (ret != QMessageBox::Yes) return;
     if (id->id() > 0) deletedIdentities.append(id->id());
@@ -367,8 +367,8 @@ void IdentitiesSettingsPage::on_renameIdentity_clicked()
 {
     QString oldName = identities[currentId]->identityName();
     bool ok = false;
-    QString name = QInputDialog::getText(this, tr("Rename Identity"),
-        tr("Please enter a new name for the identity \"%1\"!").arg(oldName),
+    QString name = QInputDialog::getText(this, i18n("Rename Identity"),
+        i18n("Please enter a new name for the identity \"%1\"!").arg(oldName),
         QLineEdit::Normal, oldName, &ok);
     if (ok && !name.isEmpty()) {
         renameIdentity(currentId, name);
@@ -477,7 +477,7 @@ NickEditDlg::NickEditDlg(const QString &old, const QStringList &exist, QWidget *
     ui.nickEdit->setValidator(new QRegExpValidator(rx, ui.nickEdit));
     if (old.isEmpty()) {
         // new nick
-        setWindowTitle(tr("Add Nickname"));
+        setWindowTitle(i18n("Add Nickname"));
         on_nickEdit_textChanged(""); // disable ok button
     }
     else ui.nickEdit->setText(old);

@@ -22,6 +22,8 @@
 #include <QDataStream>
 #include <QTcpSocket>
 
+#include <KLocale>
+
 #include "legacypeer.h"
 
 /* version.inc is no longer used for this */
@@ -133,7 +135,7 @@ void LegacyPeer::handleHandshakeMessage(const QVariant &msg)
 
     QString msgType = m["MsgType"].toString();
     if (msgType.isEmpty()) {
-        emit protocolError(tr("Invalid handshake message!"));
+        emit protocolError(i18n("Invalid handshake message!"));
         return;
     }
 
@@ -204,7 +206,7 @@ void LegacyPeer::handleHandshakeMessage(const QVariant &msg)
     }
 
     else {
-        emit protocolError(tr("Unknown protocol message of type %1").arg(msgType));
+        emit protocolError(i18n("Unknown protocol message of type %1").arg(msgType));
     }
 }
 

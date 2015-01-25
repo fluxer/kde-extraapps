@@ -36,35 +36,35 @@
 
 ContextMenuActionProvider::ContextMenuActionProvider(QObject *parent) : NetworkModelController(parent)
 {
-    registerAction(NetworkConnect, KIcon("network-connect"), tr("Connect"));
-    registerAction(NetworkDisconnect, KIcon("network-disconnect"), tr("Disconnect"));
+    registerAction(NetworkConnect, KIcon("network-connect"), i18n("Connect"));
+    registerAction(NetworkDisconnect, KIcon("network-disconnect"), i18n("Disconnect"));
 
-    registerAction(BufferJoin, KIcon("irc-join-channel"), tr("Join"));
-    registerAction(BufferPart, KIcon("irc-close-channel"), tr("Part"));
-    registerAction(BufferRemove, tr("Delete Chat(s)..."));
-    registerAction(BufferSwitchTo, tr("Go to Chat"));
+    registerAction(BufferJoin, KIcon("irc-join-channel"), i18n("Join"));
+    registerAction(BufferPart, KIcon("irc-close-channel"), i18n("Part"));
+    registerAction(BufferRemove, i18n("Delete Chat(s)..."));
+    registerAction(BufferSwitchTo, i18n("Go to Chat"));
 
-    registerAction(HideJoin, tr("Joins"), true);
-    registerAction(HidePart, tr("Parts"), true);
-    registerAction(HideQuit, tr("Quits"), true);
-    registerAction(HideNick, tr("Nick Changes"), true);
-    registerAction(HideMode, tr("Mode Changes"), true);
-    registerAction(HideDayChange, tr("Day Changes"), true);
-    registerAction(HideTopic, tr("Topic Changes"), true);
-    registerAction(HideApplyToAll, tr("Set as Default..."));
-    registerAction(HideUseDefaults, tr("Use Defaults..."));
+    registerAction(HideJoin, i18n("Joins"), true);
+    registerAction(HidePart, i18n("Parts"), true);
+    registerAction(HideQuit, i18n("Quits"), true);
+    registerAction(HideNick, i18n("Nick Changes"), true);
+    registerAction(HideMode, i18n("Mode Changes"), true);
+    registerAction(HideDayChange, i18n("Day Changes"), true);
+    registerAction(HideTopic, i18n("Topic Changes"), true);
+    registerAction(HideApplyToAll, i18n("Set as Default..."));
+    registerAction(HideUseDefaults, i18n("Use Defaults..."));
 
-    registerAction(JoinChannel, KIcon("irc-join-channel"), tr("Join Channel..."));
+    registerAction(JoinChannel, KIcon("irc-join-channel"), i18n("Join Channel..."));
 
-    registerAction(NickQuery, tr("Start Query"));
-    registerAction(NickSwitchTo, tr("Show Query"));
-    registerAction(NickWhois, tr("Whois"));
+    registerAction(NickQuery, i18n("Start Query"));
+    registerAction(NickSwitchTo, i18n("Show Query"));
+    registerAction(NickWhois, i18n("Whois"));
 
-    registerAction(NickCtcpVersion, tr("Version"));
-    registerAction(NickCtcpTime, tr("Time"));
-    registerAction(NickCtcpPing, tr("Ping"));
-    registerAction(NickCtcpClientinfo, tr("Client info"));
-    registerAction(NickIgnoreCustom, tr("Custom..."));
+    registerAction(NickCtcpVersion, i18n("Version"));
+    registerAction(NickCtcpTime, i18n("Time"));
+    registerAction(NickCtcpPing, i18n("Ping"));
+    registerAction(NickCtcpClientinfo, i18n("Client info"));
+    registerAction(NickIgnoreCustom, i18n("Custom..."));
 
     // these texts are only dummies! don't think about tr() here!
     registerAction(NickIgnoreUser, "*!ident@host.domain.tld");
@@ -76,20 +76,20 @@ ContextMenuActionProvider::ContextMenuActionProvider(QObject *parent) : NetworkM
     registerAction(NickIgnoreToggleEnabled3, "Enable", true);
     registerAction(NickIgnoreToggleEnabled4, "Enable", true);
 
-    registerAction(NickOp, KIcon("irc-operator"), tr("Give Operator Status"));
-    registerAction(NickDeop, KIcon("irc-remove-operator"), tr("Take Operator Status"));
-    registerAction(NickHalfop, KIcon("irc-voice"), tr("Give Half-Operator Status"));
-    registerAction(NickDehalfop, KIcon("irc-unvoice"), tr("Take Half-Operator Status"));
-    registerAction(NickVoice, KIcon("irc-voice"), tr("Give Voice"));
-    registerAction(NickDevoice, KIcon("irc-unvoice"), tr("Take Voice"));
-    registerAction(NickKick, KIcon("im-kick-user"), tr("Kick From Channel"));
-    registerAction(NickBan, KIcon("im-ban-user"), tr("Ban From Channel"));
-    registerAction(NickKickBan, KIcon("im-ban-kick-user"), tr("Kick && Ban"));
+    registerAction(NickOp, KIcon("irc-operator"), i18n("Give Operator Status"));
+    registerAction(NickDeop, KIcon("irc-remove-operator"), i18n("Take Operator Status"));
+    registerAction(NickHalfop, KIcon("irc-voice"), i18n("Give Half-Operator Status"));
+    registerAction(NickDehalfop, KIcon("irc-unvoice"), i18n("Take Half-Operator Status"));
+    registerAction(NickVoice, KIcon("irc-voice"), i18n("Give Voice"));
+    registerAction(NickDevoice, KIcon("irc-unvoice"), i18n("Take Voice"));
+    registerAction(NickKick, KIcon("im-kick-user"), i18n("Kick From Channel"));
+    registerAction(NickBan, KIcon("im-ban-user"), i18n("Ban From Channel"));
+    registerAction(NickKickBan, KIcon("im-ban-kick-user"), i18n("Kick && Ban"));
 
-    registerAction(HideBufferTemporarily, tr("Hide Chat(s) Temporarily"));
-    registerAction(HideBufferPermanently, tr("Hide Chat(s) Permanently"));
-    registerAction(ShowChannelList, tr("Show Channel List"));
-    registerAction(ShowIgnoreList, tr("Show Ignore List"));
+    registerAction(HideBufferTemporarily, i18n("Hide Chat(s) Temporarily"));
+    registerAction(HideBufferPermanently, i18n("Hide Chat(s) Permanently"));
+    registerAction(ShowChannelList, i18n("Show Channel List"));
+    registerAction(ShowIgnoreList, i18n("Show Ignore List"));
 
     QMenu *hideEventsMenu = new QMenu();
     hideEventsMenu->addAction(action(HideJoin));
@@ -102,7 +102,7 @@ ContextMenuActionProvider::ContextMenuActionProvider(QObject *parent) : NetworkM
     hideEventsMenu->addSeparator();
     hideEventsMenu->addAction(action(HideApplyToAll));
     hideEventsMenu->addAction(action(HideUseDefaults));
-    _hideEventsMenuAction = new Action(tr("Hide Events"), 0);
+    _hideEventsMenuAction = new Action(i18n("Hide Events"), 0);
     _hideEventsMenuAction->setMenu(hideEventsMenu);
 
     QMenu *nickCtcpMenu = new QMenu();
@@ -110,7 +110,7 @@ ContextMenuActionProvider::ContextMenuActionProvider(QObject *parent) : NetworkM
     nickCtcpMenu->addAction(action(NickCtcpVersion));
     nickCtcpMenu->addAction(action(NickCtcpTime));
     nickCtcpMenu->addAction(action(NickCtcpClientinfo));
-    _nickCtcpMenuAction = new Action(tr("CTCP"), 0);
+    _nickCtcpMenuAction = new Action(i18n("CTCP"), 0);
     _nickCtcpMenuAction->setMenu(nickCtcpMenu);
 
     QMenu *nickModeMenu = new QMenu();
@@ -125,17 +125,17 @@ ContextMenuActionProvider::ContextMenuActionProvider(QObject *parent) : NetworkM
     nickModeMenu->addAction(action(NickKick));
     nickModeMenu->addAction(action(NickBan));
     nickModeMenu->addAction(action(NickKickBan));
-    _nickModeMenuAction = new Action(tr("Actions"), 0);
+    _nickModeMenuAction = new Action(i18n("Actions"), 0);
     _nickModeMenuAction->setMenu(nickModeMenu);
 
     QMenu *ignoreMenu = new QMenu();
-    _nickIgnoreMenuAction = new Action(tr("Ignore"), 0);
+    _nickIgnoreMenuAction = new Action(i18n("Ignore"), 0);
     _nickIgnoreMenuAction->setMenu(ignoreMenu);
 
     // These are disabled actions used as descriptions
     // They don't need any of the Action fancyness so we use plain QActions
-    _ignoreDescriptions << new QAction(tr("Add Ignore Rule"), this);
-    _ignoreDescriptions << new QAction(tr("Existing Rules"), this);
+    _ignoreDescriptions << new QAction(i18n("Add Ignore Rule"), this);
+    _ignoreDescriptions << new QAction(i18n("Existing Rules"), this);
     foreach(QAction *act, _ignoreDescriptions)
     act->setEnabled(false);
 }

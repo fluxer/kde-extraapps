@@ -22,6 +22,8 @@
 
 #include <QStringList>
 
+#include <KLocale>
+
 IrcListModel::IrcListModel(QObject *parent)
     : QAbstractItemModel(parent)
 {
@@ -62,9 +64,9 @@ Qt::ItemFlags IrcListModel::flags(const QModelIndex &index) const
 QVariant IrcListModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     QStringList header;
-    header << tr("Channel")
-           << tr("Users")
-           << tr("Topic");
+    header << i18n("Channel")
+           << i18n("Users")
+           << i18n("Topic");
 
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
         return header[section];

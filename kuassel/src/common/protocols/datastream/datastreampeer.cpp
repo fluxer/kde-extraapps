@@ -23,6 +23,8 @@
 #include <QHostAddress>
 #include <QTcpSocket>
 
+#include <KLocale>
+
 #include "datastreampeer.h"
 
 using namespace Protocol;
@@ -111,7 +113,7 @@ void DataStreamPeer::handleHandshakeMessage(const QVariantList &mapData)
 
     QString msgType = m["MsgType"].toString();
     if (msgType.isEmpty()) {
-        emit protocolError(tr("Invalid handshake message!"));
+        emit protocolError(i18n("Invalid handshake message!"));
         return;
     }
 
@@ -158,7 +160,7 @@ void DataStreamPeer::handleHandshakeMessage(const QVariantList &mapData)
     }
 
     else {
-        emit protocolError(tr("Unknown protocol message of type %1").arg(msgType));
+        emit protocolError(i18n("Unknown protocol message of type %1").arg(msgType));
     }
 }
 
