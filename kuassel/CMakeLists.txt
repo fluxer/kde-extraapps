@@ -13,7 +13,7 @@ project(KuasselIRC)
 set(QUASSEL_MAJOR  0)
 set(QUASSEL_MINOR 12)
 set(QUASSEL_PATCH  0)
-set(QUASSEL_VERSION_STRING "0.12-pre")
+set(QUASSEL_VERSION_STRING "0.12")
 
 # Tell CMake about or own modules
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -25,15 +25,13 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     find_package(KDE4 4.14.3 REQUIRED)
     include( KDE4Defaults )
-    include_directories (
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        ${CMAKE_CURRENT_BINARY_DIR}
-        ${KDE4_INCLUDES}
-    )
+    include_directories (${KDE4_INCLUDES})
 
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
     add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 endif()
+
+include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
 # Include various CMake modules...
 include(CMakePushCheckState)
@@ -90,10 +88,11 @@ find_package(Qt4 ${QT_MIN_VERSION} QUIET REQUIRED)
 add_feature_info("QtDBus module" QT_QTDBUS_FOUND "Needed for supporting D-Bus-based notifications and tray icon, used by most modern desktop environments")
 if (QT_QTDBUS_FOUND)
     find_package(dbusmenu-qt QUIET CONFIG)
-    set_package_properties(dbusmenu-qt PROPERTIES TYPE RECOMMENDED
-	URL "https://launchpad.net/libdbusmenu-qt"
-	DESCRIPTION "a library implementing the DBusMenu specification"
-	PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
+    set_package_properties(dbusmenu-qt PROPERTIES
+        TYPE RECOMMENDED
+        URL "https://launchpad.net/libdbusmenu-qt"
+        DESCRIPTION "a library implementing the DBusMenu specification"
+        PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
     )
 endif()
 
@@ -132,8 +131,6 @@ set_package_properties(ExecInfo PROPERTIES TYPE OPTIONAL
 
 # Various checks
 #####################################################################
-
-add_definitions(${KDE4_DEFINITIONS})
 
 # Check for SSL support in Qt
 # As there's no easy way to get Qt's configuration in particular for Qt5, let's just compile
@@ -176,21 +173,6 @@ if(STATIC AND CMAKE_COMPILER_IS_GNUCXX)
     set(QUASSEL_SSL_LIBRARIES ssl crypto)  # these miss in static builds
   endif(HAVE_SSL)
 endif(STATIC AND CMAKE_COMPILER_IS_GNUCXX)
-
-if(WIN32)
-  link_libraries(imm32 winmm dbghelp Secur32)  # missing by default :/
-  if(MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /DNOMINMAX")
-    set(CMAKE_EXE_LINKER_FLAGS_RELWITHDEBUGINFO "/debug /INCREMENTAL:YES /NODEFAULTLIB:libcmt /DEFAULTLIB:msvcrt")
-    set(CMAKE_EXE_LINKER_FLAGS_DEBUG "/debug /INCREMENTAL:YES /NODEFAULTLIB:libcmt")
-    set(CMAKE_EXE_LINKER_FLAGS_DEBUGFULL "${CMAKE_EXE_LINKER_FLAGS_DEBUG}")
-    link_libraries(Version dwmapi shlwapi)
-  endif(MSVC)
-  if(HAVE_SSL AND STATIC)
-     find_package(OpenSSL REQUIRED)
-     link_libraries(${OPENSSL_LIBRARIES} ${OPENSSL_EAY_LIBRARIES})
-  endif(HAVE_SSL AND STATIC)
-endif(WIN32)
 
 if(INDICATEQT_FOUND)
   add_definitions(-DXDG_APPS_INSTALL_DIR=${XDG_APPS_INSTALL_DIR})
