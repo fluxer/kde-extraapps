@@ -808,10 +808,10 @@ void ChatScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         // no item -> default scene actions
         GraphicalUi::contextMenuActionProvider()->addActions(&menu, filter(), BufferId());
 
-    // If we have text selected, insert the Copy Selection as first item
+    // If we have text selected, insert the Copy as first item
     if (isPosOverSelection(pos)) {
         QAction *sep = menu.insertSeparator(menu.actions().first());
-        QAction *act = new Action(KIcon("edit-copy"), i18n("Copy Selection"), &menu, this,
+        QAction *act = new Action(KIcon("edit-copy"), i18n("Copy"), &menu, this,
             SLOT(selectionToClipboard()), QKeySequence::Copy);
         menu.insertAction(sep, act);
 

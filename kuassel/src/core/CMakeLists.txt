@@ -61,9 +61,8 @@ qt4_add_resources(SOURCES ${CORE_RCS})
 
 add_library(mod_core STATIC ${SOURCES})
 
-add_dependencies(mod_core mod_common)
-
 target_link_libraries(mod_core
+    mod_common
     ${LIBS}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}

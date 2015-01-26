@@ -138,14 +138,14 @@ include_directories(${PROJECT_SOURCE_DIR}/src/common
 
 qt4_wrap_ui(UI ${FORMPATH} ${SPFRM})
 
-
 add_library(mod_qtui STATIC ${SOURCES} ${SPSRC} ${UI})
 
 target_link_libraries(mod_qtui
+    mod_common
+    mod_client
+    mod_uisupport
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${LIBS}
 )
-
-add_dependencies(mod_qtui mod_common mod_client mod_uisupport)

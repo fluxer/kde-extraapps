@@ -45,11 +45,10 @@ qt4_add_resources(SOURCES ${CLIENT_RCS})
 
 add_library(mod_client STATIC ${SOURCES})
 target_link_libraries(mod_client
+    mod_common
     ${CMAKE_DL_LIBS}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${KDE4_SOLID_LIBS}
 )
-
-add_dependencies(mod_client mod_common)

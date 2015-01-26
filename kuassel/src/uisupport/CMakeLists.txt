@@ -44,11 +44,11 @@ include_directories(${PROJECT_SOURCE_DIR}/src/common
 
 add_library(mod_uisupport STATIC ${SOURCES})
 target_link_libraries(mod_uisupport
+    mod_common
+    mod_client
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
 )
-
-add_dependencies(mod_uisupport mod_common mod_client)
