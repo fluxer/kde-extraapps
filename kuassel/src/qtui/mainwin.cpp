@@ -466,7 +466,7 @@ void MainWin::setupMenus()
     _helpDebugMenu->addAction(coll->action("ReloadStyle"));
 
     _helpMenu = menuBar()->addMenu(i18n("&Help"));
-    _helpMenu->addAction(KStandardAction::whatsThis(_kHelpMenu, SLOT(whatsThis()), this));
+    _helpMenu->addAction(KStandardAction::whatsThis(_kHelpMenu, SLOT(contextHelpActivated()), this));
     _helpMenu->addSeparator();
     _helpMenu->addAction(KStandardAction::reportBug(_kHelpMenu, SLOT(reportBug()), this));
     _helpMenu->addSeparator();
