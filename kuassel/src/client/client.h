@@ -142,13 +142,6 @@ public:
     static void mergeBuffersPermanently(BufferId bufferId1, BufferId bufferId2);
     static void purgeKnownBufferIds();
 
-#if QT_VERSION < 0x050000
-    static void logMessage(QtMsgType type, const char *msg);
-#else
-    static void logMessage(QtMsgType, const QMessageLogContext&, const QString&);
-#endif
-    static inline const QString &debugLog() { return instance()->_debugLogBuffer; }
-
 signals:
     void requestNetworkStates();
 
@@ -256,9 +249,6 @@ private:
 
     bool _connected;
     static Quassel::Features _coreFeatures;
-
-    QString _debugLogBuffer;
-    QTextStream _debugLog;
 
     QList<QPair<BufferInfo, QString> > _userInputBuffer;
 

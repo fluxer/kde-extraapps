@@ -71,7 +71,6 @@
 #include "coreinfodlg.h"
 #include "contextmenuactionprovider.h"
 #include "debugbufferviewoverlay.h"
-#include "debuglogwidget.h"
 #include "debugmessagemodelfilter.h"
 #include "flatproxymodel.h"
 #include "inputwidget.h"
@@ -332,11 +331,8 @@ void MainWin::setupActions()
             this, SLOT(on_actionDebugMessageModel_triggered())));
     coll->addAction("DebugHotList", new Action(KIcon("tools-report-bug"), i18n("Debug &HotList"), coll,
             this, SLOT(on_actionDebugHotList_triggered())));
-    coll->addAction("DebugLog", new Action(KIcon("tools-report-bug"), i18n("Debug &Log"), coll,
-            this, SLOT(on_actionDebugLog_triggered())));
     coll->addAction("ReloadStyle", new Action(KIcon("view-refresh"), i18n("Reload Stylesheet"), coll,
             QtUi::style(), SLOT(reload()), QKeySequence::Refresh));
-    
     coll->addAction("HideCurrentBuffer", new Action(i18n("Hide Current Buffer"), coll,
             this, SLOT(hideCurrentBuffer()), QKeySequence::Close));
 
@@ -460,7 +456,6 @@ void MainWin::setupMenus()
     _helpDebugMenu->addAction(coll->action("DebugBufferViewOverlay"));
     _helpDebugMenu->addAction(coll->action("DebugMessageModel"));
     _helpDebugMenu->addAction(coll->action("DebugHotList"));
-    _helpDebugMenu->addAction(coll->action("DebugLog"));
     _helpDebugMenu->addSeparator();
     _helpDebugMenu->addAction(coll->action("ReloadStyle"));
 
@@ -1560,13 +1555,6 @@ void MainWin::on_actionDebugMessageModel_triggered()
     view->verticalHeader()->hide();
     view->horizontalHeader()->setStretchLastSection(true);
     view->show();
-}
-
-
-void MainWin::on_actionDebugLog_triggered()
-{
-    DebugLogWidget *logWidget = new DebugLogWidget(0);
-    logWidget->show();
 }
 
 

@@ -133,7 +133,6 @@ private slots:
     void on_actionDebugBufferViewOverlay_triggered();
     void on_actionDebugMessageModel_triggered();
     void on_actionDebugHotList_triggered();
-    void on_actionDebugLog_triggered();
 
     void bindJumpKey();
     void onJumpKey();

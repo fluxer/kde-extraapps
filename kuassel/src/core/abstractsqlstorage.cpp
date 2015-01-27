@@ -105,8 +105,6 @@ Storage::State AbstractSqlStorage::init(const QVariantMap &settings)
 {
     setConnectionProperties(settings);
 
-    _debug = Quassel::isOptionSet("debug");
-
     QSqlDatabase db = logDb();
     if (!db.isValid() || !db.isOpen())
         return NotAvailable;
@@ -252,7 +250,7 @@ int AbstractSqlStorage::schemaVersion()
 bool AbstractSqlStorage::watchQuery(QSqlQuery &query)
 {
     bool queryError = query.lastError().isValid();
-    if (queryError || _debug) {
+    if (queryError) {
         if (queryError)
             qCritical() << "unhandled Error in QSqlQuery!";
         qCritical() << "                  last Query:\n" << qPrintable(query.lastQuery());

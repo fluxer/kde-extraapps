@@ -47,12 +47,6 @@ QtUiApplication::QtUiApplication(int &argc, char **argv)
 
     disableCrashhandler();
     setRunMode(Quassel::ClientOnly);
-
-#if QT_VERSION < 0x050000
-    qInstallMsgHandler(Client::logMessage);
-#else
-    qInstallMessageHandler(Client::logMessage);
-#endif
 }
 
 
