@@ -121,9 +121,6 @@ void CoreAccountSettings::storeAccountData(AccountId id, const QVariantMap &data
     foreach(const QString &key, data.keys()) {
         setLocalValue(base + "/" + key, data.value(key));
     }
-
-    // FIXME Migration from 0.5 -> 0.6
-    removeLocalKey(QString("%1/Connection").arg(base));
 }
 
 
@@ -133,28 +130,6 @@ QVariantMap CoreAccountSettings::retrieveAccountData(AccountId id)
     QString base = QString::number(id.toInt());
     foreach(const QString &key, localChildKeys(base)) {
         map[key] = localValue(base + "/" + key);
-    }
-
-    // FIXME Migration from 0.5 -> 0.6
-    if (!map.contains("Uuid") && map.contains("Connection")) {
-        QVariantMap oldmap = map.value("Connection").toMap();
-        map["AccountName"] = oldmap.value("AccountName");
-        map["HostName"] = oldmap.value("Host");
-        map["Port"] = oldmap.value("Port");
-        map["User"] = oldmap.value("User");
-        map["Password"] = oldmap.value("Password");
-        map["StorePassword"] = oldmap.value("RememberPasswd");
-        map["UseSSL"] = oldmap.value("useSsl");
-        map["UseProxy"] = oldmap.value("useProxy");
-        map["ProxyHostName"] = oldmap.value("proxyHost");
-        map["ProxyPort"] = oldmap.value("proxyPort");
-        map["ProxyUser"] = oldmap.value("proxyUser");
-        map["ProxyPassword"] = oldmap.value("proxyPassword");
-        map["ProxyType"] = oldmap.value("proxyType");
-        map["Internal"] = oldmap.value("InternalAccount");
-
-        map["AccountId"] = id.toInt();
-        map["Uuid"] = QUuid::createUuid().toString();
     }
 
     return map;

@@ -32,8 +32,6 @@ public:
     void setStorageSettings(const QVariant &data);
     QVariant storageSettings(const QVariant &def = QVariant());
 
-    QVariant oldDbSettings();  // FIXME remove
-
     void setCoreState(const QVariant &data);
     QVariant coreState(const QVariant &def = QVariant());
 };

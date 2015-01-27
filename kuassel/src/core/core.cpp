@@ -91,53 +91,6 @@ Core::Core()
 
     KGlobal::locale()->insertCatalog("kuassel");
 
-    // FIXME: MIGRATION 0.3 -> 0.4: Move database and core config to new location
-    // Move settings, note this does not delete the old files
-
-    QSettings::Format format = QSettings::NativeFormat;
-    QString newFilePath = Quassel::configDirPath() + "quasselcore"
-                          + ((format == QSettings::NativeFormat) ? QLatin1String(".conf") : QLatin1String(".ini"));
-    QSettings newSettings(newFilePath, format);
-
-    if (newSettings.value("Config/Version").toUInt() == 0) {
-        QString org = "Quassel Project";
-        QSettings oldSettings(org, "Quassel Core");
-        if (oldSettings.allKeys().count()) {
-            qWarning() << "\n\n*** IMPORTANT: Config and data file locations have changed. Attempting to auto-migrate your core settings...";
-            foreach(QString key, oldSettings.allKeys())
-            newSettings.setValue(key, oldSettings.value(key));
-            newSettings.setValue("Config/Version", 1);
-            qWarning() << "*   Your core settings have been migrated to" << newSettings.fileName();
-
-            QString quasselDir = QDir::homePath() + "/.quassel/";
-
-            QFileInfo info(Quassel::configDirPath() + "quassel-storage.sqlite");
-            if (!info.exists()) {
-                // move database, if we found it
-                QFile oldDb(quasselDir + "quassel-storage.sqlite");
-                if (oldDb.exists()) {
-                    bool success = oldDb.rename(Quassel::configDirPath() + "quassel-storage.sqlite");
-                    if (success)
-                        qWarning() << "*   Your database has been moved to" << Quassel::configDirPath() + "quassel-storage.sqlite";
-                    else
-                        qWarning() << "!!! Moving your database has failed. Please move it manually into" << Quassel::configDirPath();
-                }
-            }
-            // move certificate
-            QFileInfo certInfo(quasselDir + "quasselCert.pem");
-            if (certInfo.exists()) {
-                QFile cert(quasselDir + "quasselCert.pem");
-                bool success = cert.rename(Quassel::configDirPath() + "quasselCert.pem");
-                if (success)
-                    qWarning() << "*   Your certificate has been moved to" << Quassel::configDirPath() + "quasselCert.pem";
-                else
-                    qWarning() << "!!! Moving your certificate has failed. Please move it manually into" << Quassel::configDirPath();
-            }
-            qWarning() << "*** Migration completed.\n\n";
-        }
-    }
-    // MIGRATION end
-
     // check settings version
     // so far, we only have 1
     CoreSettings s;

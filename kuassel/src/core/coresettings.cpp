@@ -44,13 +44,6 @@ QVariant CoreSettings::storageSettings(const QVariant &def)
 }
 
 
-// FIXME remove
-QVariant CoreSettings::oldDbSettings()
-{
-    return localValue("DatabaseSettings");
-}
-
-
 void CoreSettings::setCoreState(const QVariant &data)
 {
     setLocalValue("CoreState", data);
