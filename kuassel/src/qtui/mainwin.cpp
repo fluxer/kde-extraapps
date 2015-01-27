@@ -349,13 +349,8 @@ void MainWin::setupActions()
             this, SLOT(on_jumpHotBuffer_triggered()), QKeySequence(Qt::META + Qt::Key_A)));
 
     // Jump keys
-#ifdef Q_OS_MAC
-    const int bindModifier = Qt::ControlModifier | Qt::AltModifier;
-    const int jumpModifier = Qt::ControlModifier;
-#else
     const int bindModifier = Qt::ControlModifier;
     const int jumpModifier = Qt::AltModifier;
-#endif
 
     coll->addAction("BindJumpKey0", new Action(i18n("Set Quick Access #0"), coll, this, SLOT(bindJumpKey()),
             QKeySequence(bindModifier + Qt::Key_0)))->setProperty("Index", 0);
@@ -903,9 +898,6 @@ void MainWin::setupToolBars()
     connect(_nickListWidget, SIGNAL(nickSelectionChanged(QModelIndexList)),
         QtUi::toolBarActionProvider(), SLOT(nickSelectionChanged(QModelIndexList)));
 
-#ifdef Q_OS_MAC
-    setUnifiedTitleAndToolBarOnMac(true);
-#endif
 
     _mainToolBar = new KToolBar("MainToolBar", this, Qt::TopToolBarArea, false, true, true);
     _mainToolBar->setWindowTitle(i18n("Main Toolbar"));
@@ -914,23 +906,11 @@ void MainWin::setupToolBars()
     QtUi::toolBarActionProvider()->addActions(_mainToolBar, ToolBarActionProvider::MainToolBar);
     _toolbarMenu->addAction(_mainToolBar->toggleViewAction());
 
-#ifdef Q_OS_MAC
-    QtUiSettings uiSettings;
-
-    bool visible = uiSettings.value("ShowMainToolBar", QVariant(true)).toBool();
-    _mainToolBar->setVisible(visible);
-    connect(_mainToolBar, SIGNAL(visibilityChanged(bool)), this, SLOT(saveMainToolBarStatus(bool)));
-#endif
 }
 
 void MainWin::saveMainToolBarStatus(bool enabled)
 {
-#ifdef Q_OS_MAC
-    QtUiSettings uiSettings;
-    uiSettings.setValue("ShowMainToolBar", enabled);
-#else
     Q_UNUSED(enabled);
-#endif
 }
 
 

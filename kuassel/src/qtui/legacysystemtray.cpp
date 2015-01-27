@@ -33,10 +33,8 @@ LegacySystemTray::LegacySystemTray(QWidget *parent)
     // We don't want to trigger a minimize if a highlight is pending, so we brutally remove the internal connection for that
     disconnect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
         _trayIcon, SLOT(activateOrHide(QSystemTrayIcon::ActivationReason)));
-#ifndef Q_OS_MAC
     connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
         SLOT(on_activated(QSystemTrayIcon::ActivationReason)));
-#endif
     connect(_trayIcon, SIGNAL(messageClicked()),
         SLOT(on_messageClicked()));
 

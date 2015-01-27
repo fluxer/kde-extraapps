@@ -37,12 +37,8 @@
 
 // migration related
 #include <QFile>
-#ifdef Q_OS_WIN
-#  include <windows.h>
-#else
 #  include <unistd.h>
 #  include <termios.h>
-#endif /* Q_OS_WIN */
 
 #ifdef HAVE_UMASK
 #  include <sys/types.h>
@@ -97,26 +93,14 @@ Core::Core()
 
     // FIXME: MIGRATION 0.3 -> 0.4: Move database and core config to new location
     // Move settings, note this does not delete the old files
-#ifdef Q_OS_MAC
-    QSettings newSettings("quassel-irc.org", "quasselcore");
-#else
 
-# ifdef Q_OS_WIN
-    QSettings::Format format = QSettings::IniFormat;
-# else
     QSettings::Format format = QSettings::NativeFormat;
-# endif
     QString newFilePath = Quassel::configDirPath() + "quasselcore"
                           + ((format == QSettings::NativeFormat) ? QLatin1String(".conf") : QLatin1String(".ini"));
     QSettings newSettings(newFilePath, format);
-#endif /* Q_OS_MAC */
 
     if (newSettings.value("Config/Version").toUInt() == 0) {
-#   ifdef Q_OS_MAC
-        QString org = "quassel-irc.org";
-#   else
         QString org = "Quassel Project";
-#   endif
         QSettings oldSettings(org, "Quassel Core");
         if (oldSettings.allKeys().count()) {
             qWarning() << "\n\n*** IMPORTANT: Config and data file locations have changed. Attempting to auto-migrate your core settings...";
@@ -125,14 +109,7 @@ Core::Core()
             newSettings.setValue("Config/Version", 1);
             qWarning() << "*   Your core settings have been migrated to" << newSettings.fileName();
 
-#ifndef Q_OS_MAC /* we don't need to move the db and cert for mac */
-#ifdef Q_OS_WIN
-            QString quasselDir = qgetenv("APPDATA") + "/quassel/";
-#elif defined Q_OS_MAC
-            QString quasselDir = QDir::homePath() + "/Library/Application Support/Quassel/";
-#else
             QString quasselDir = QDir::homePath() + "/.quassel/";
-#endif
 
             QFileInfo info(Quassel::configDirPath() + "quassel-storage.sqlite");
             if (!info.exists()) {
@@ -156,7 +133,6 @@ Core::Core()
                 else
                     qWarning() << "!!! Moving your certificate has failed. Please move it manually into" << Quassel::configDirPath();
             }
-#endif /* !Q_OS_MAC */
             qWarning() << "*** Migration completed.\n\n";
         }
     }
@@ -933,21 +909,6 @@ QVariantMap Core::promptForSettings(const Storage *storage)
 }
 
 
-#ifdef Q_OS_WIN
-void Core::stdInEcho(bool on)
-{
-    HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
-    DWORD mode = 0;
-    GetConsoleMode(hStdin, &mode);
-    if (on)
-        mode |= ENABLE_ECHO_INPUT;
-    else
-        mode &= ~ENABLE_ECHO_INPUT;
-    SetConsoleMode(hStdin, mode);
-}
-
-
-#else
 void Core::stdInEcho(bool on)
 {
     termios t;
@@ -960,4 +921,3 @@ void Core::stdInEcho(bool on)
 }
 
 
-#endif /* Q_OS_WIN */

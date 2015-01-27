@@ -47,17 +47,11 @@ GraphicalUi::GraphicalUi(QObject *parent) : AbstractUi(parent)
     Q_ASSERT(!_instance);
     _instance = this;
 
-#ifdef Q_OS_WIN
-    _dwTickCount = 0;
-#endif
 }
 
 
 void GraphicalUi::init()
 {
-#ifdef Q_OS_WIN
-    mainWidget()->installEventFilter(this);
-#endif
 }
 
 
@@ -135,11 +129,6 @@ void GraphicalUi::disconnectedFromCore()
 
 bool GraphicalUi::eventFilter(QObject *obj, QEvent *event)
 {
-#ifdef Q_OS_WIN
-    if (obj == mainWidget() && event->type() == QEvent::ActivationChange) {
-        _dwTickCount = GetTickCount();
-    }
-#endif
     return AbstractUi::eventFilter(obj, event);
 }
 

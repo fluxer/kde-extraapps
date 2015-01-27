@@ -53,9 +53,7 @@ CoreConfigWizard::CoreConfigWizard(CoreConnection *connection, const QList<QVari
     setStartId(IntroPage);
     //setStartId(StorageSelectionPage);
 
-#ifndef Q_OS_MAC
     setWizardStyle(ModernStyle);
-#endif
 
     setOption(HaveHelpButton, false);
     setOption(NoBackButtonOnStartPage, true);

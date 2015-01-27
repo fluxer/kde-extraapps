@@ -26,10 +26,6 @@
 
 #include <KLocale>
 
-#ifdef Q_OS_MAC
-#  include <CoreServices/CoreServices.h>
-#  include "mac_utils.h"
-#endif
 
 #ifdef Q_OS_UNIX
 #  include <sys/types.h>
@@ -37,12 +33,6 @@
 #  include <unistd.h>
 #endif
 
-#ifdef Q_OS_WIN
-#  include <windows.h>
-#  include <Winbase.h>
-#  define SECURITY_WIN32
-#  include <Security.h>
-#endif
 
 INIT_SYNCABLE_OBJECT(Identity)
 Identity::Identity(IdentityId id, QObject *parent)
@@ -80,24 +70,6 @@ Identity::Identity(const Identity &other, QObject *parent)
 }
 
 
-#ifdef Q_OS_WIN
-#ifdef UNICODE
-QString tcharToQString(TCHAR *tchar)
-{
-    return QString::fromUtf16(reinterpret_cast<ushort *>(tchar));
-}
-
-
-#else
-QString tcharToQString(TCHAR *tchar)
-{
-    return QString::fromLocal8Bit(tchar);
-}
-
-
-#endif
-
-#endif
 void Identity::init()
 {
     setObjectName(QString::number(id().toInt()));
@@ -109,12 +81,7 @@ QString Identity::defaultNick()
 {
     QString nick = QString("quassel%1").arg(qrand() & 0xff); // FIXME provide more sensible default nicks
 
-#ifdef Q_OS_MAC
-    QString shortUserName = CFStringToQString(CSCopyUserName(true));
-    if (!shortUserName.isEmpty())
-        nick = shortUserName;
-
-#elif defined(Q_OS_UNIX)
+#if   defined(Q_OS_UNIX)
     QString userName;
     struct passwd *pwd = getpwuid(getuid());
     if (pwd)
@@ -122,19 +89,6 @@ QString Identity::defaultNick()
     if (!userName.isEmpty())
         nick = userName;
 
-#elif defined(Q_OS_WIN)
-    TCHAR infoBuf[128];
-    DWORD bufCharCount = 128;
-    //if(GetUserNameEx(/* NameSamCompatible */ 1, infoBuf, &bufCharCount))
-    if (GetUserNameEx(NameSamCompatible, infoBuf, &bufCharCount)) {
-        QString nickName(tcharToQString(infoBuf));
-        int lastBs = nickName.lastIndexOf('\\');
-        if (lastBs != -1) {
-            nickName = nickName.mid(lastBs + 1);
-        }
-        if (!nickName.isEmpty())
-            nick = nickName;
-    }
 #endif
 
     // cleaning forbidden characters from nick
@@ -148,10 +102,7 @@ QString Identity::defaultRealName()
 {
     QString generalDefault = i18n("Kuassel User");
 
-#ifdef Q_OS_MAC
-    return CFStringToQString(CSCopyUserName(false));
-
-#elif defined(Q_OS_UNIX)
+#if   defined(Q_OS_UNIX)
     QString realName;
     struct passwd *pwd = getpwuid(getuid());
     if (pwd)
@@ -161,13 +112,6 @@ QString Identity::defaultRealName()
     else
         return generalDefault;
 
-#elif defined(Q_OS_WIN)
-    TCHAR infoBuf[128];
-    DWORD bufCharCount = 128;
-    if (GetUserName(infoBuf, &bufCharCount))
-        return tcharToQString(infoBuf);
-    else
-        return generalDefault;
 #else
     return generalDefault;
 #endif

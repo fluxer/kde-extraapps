@@ -79,11 +79,7 @@ SettingsPage *TaskbarNotificationBackend::createConfigWidget() const
 TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : SettingsPage("Internal", "TaskbarNotification", parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-#ifdef Q_OS_MAC
-    layout->addWidget(enabledBox = new QCheckBox(i18n("Activate dock entry, timeout:"), this));
-#else
     layout->addWidget(enabledBox = new QCheckBox(i18n("Mark taskbar entry, timeout:"), this));
-#endif
     enabledBox->setIcon(KIcon("flag-blue"));
     enabledBox->setEnabled(true);
 
