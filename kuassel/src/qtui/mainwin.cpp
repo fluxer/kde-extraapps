@@ -36,6 +36,7 @@
 #include <KToolBar>
 #include <KWindowSystem>
 #include <KAboutApplicationDialog>
+#include <KTipDialog>
 
 #ifdef Q_WS_X11
 #  include <QX11Info>
@@ -212,6 +213,9 @@ void MainWin::init()
         // No autoconnect selected (or no accounts)
         showCoreConnectionDlg();
     }
+
+    // show the nice tips
+    KTipDialog::showTip();
 
     if (Quassel::isOptionSet("url")) {
         // FIXME: connect to channel upon request from external KDE application
@@ -463,6 +467,9 @@ void MainWin::setupMenus()
     _helpMenu = menuBar()->addMenu(i18n("&Help"));
     _helpMenu->addAction(KStandardAction::whatsThis(_kHelpMenu, SLOT(contextHelpActivated()), this));
     _helpMenu->addSeparator();
+#warning "implement tips-of-day action from help menu"
+    // _helpMenu->addAction(KStandardAction::tipOfDay(_kHelpMenu, SLOT(tipOfDay()), this));
+    // _helpMenu->addSeparator();
     _helpMenu->addAction(KStandardAction::reportBug(_kHelpMenu, SLOT(reportBug()), this));
     _helpMenu->addSeparator();
     _helpMenu->addAction(KStandardAction::switchApplicationLanguage(_kHelpMenu, SLOT(switchApplicationLanguage()), this));

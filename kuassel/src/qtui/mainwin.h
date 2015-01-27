@@ -21,7 +21,7 @@
 #ifndef MAINWIN_H_
 #define MAINWIN_H_
 
-#  include <KMainWindow>
+#include <KMainWindow>
 
 #include "qtui.h"
 #include "titlesetter.h"
@@ -47,7 +47,6 @@ class TopicWidget;
 class QMenu;
 class QLabel;
 class QToolBar;
-
 class KHelpMenu;
 
 //!\brief The main window of Quassel's QtUi.
