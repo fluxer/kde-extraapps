@@ -42,7 +42,7 @@ IrcParser::IrcParser(CoreSession *session) :
 bool IrcParser::checkParamCount(const QString &cmd, const QList<QByteArray> &params, int minParams)
 {
     if (params.count() < minParams) {
-        qWarning() << "Expected" << minParams << "params for IRC command" << cmd << ", got:" << params;
+        kWarning(300000) << "Expected" << minParams << "params for IRC command" << cmd << ", got:" << params;
         return false;
     }
     return true;
@@ -78,7 +78,7 @@ void IrcParser::processNetworkIncoming(NetworkDataEvent *e)
 {
     CoreNetwork *net = qobject_cast<CoreNetwork *>(e->network());
     if (!net) {
-        qWarning() << "Received network event without valid network pointer!";
+        kWarning(300000) << "Received network event without valid network pointer!";
         return;
     }
 
@@ -87,7 +87,7 @@ void IrcParser::processNetworkIncoming(NetworkDataEvent *e)
 
     QByteArray msg = e->data();
     if (msg.isEmpty()) {
-        qWarning() << "Received empty string from server!";
+        kWarning(300000) << "Received empty string from server!";
         return;
     }
 
@@ -120,7 +120,7 @@ void IrcParser::processNetworkIncoming(NetworkDataEvent *e)
     if (!trailing.isEmpty())
         params << trailing;
     if (params.count() < 1) {
-        qWarning() << "Received invalid string from server!";
+        kWarning(300000) << "Received invalid string from server!";
         return;
     }
 
@@ -131,7 +131,7 @@ void IrcParser::processNetworkIncoming(NetworkDataEvent *e)
         foo.remove(0, 1);
         prefix = foo;
         if (params.count() < 1) {
-            qWarning() << "Received invalid string from server!";
+            kWarning(300000) << "Received invalid string from server!";
             return;
         }
         foo = net->serverDecode(params.takeFirst());
@@ -147,7 +147,7 @@ void IrcParser::processNetworkIncoming(NetworkDataEvent *e)
     if (num > 0) {
         // numeric reply
         if (params.count() == 0) {
-            qWarning() << "Message received from server violates RFC and is ignored!" << msg;
+            kWarning(300000) << "Message received from server violates RFC and is ignored!" << msg;
             return;
         }
         // numeric replies have the target as first param (RFC 2812 - 2.4). this is usually our own nick. Remove this!

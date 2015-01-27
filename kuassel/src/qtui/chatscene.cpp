@@ -316,19 +316,19 @@ void ChatScene::rowsInserted(const QModelIndex &index, int start, int end)
 
 //   QModelIndex sidx = model()->index(start, 2);
 //   QModelIndex eidx = model()->index(end, 2);
-//   qDebug() << "rowsInserted:";
+//   kDebug(300000) << "rowsInserted:";
 //   if(start > 0) {
 //     QModelIndex ssidx = model()->index(start - 1, 2);
-//     qDebug() << "Start--:" << start - 1 << ssidx.data(MessageModel::MsgIdRole).value<MsgId>()
+//     kDebug(300000) << "Start--:" << start - 1 << ssidx.data(MessageModel::MsgIdRole).value<MsgId>()
 //           << ssidx.data(Qt::DisplayRole).toString();
 //   }
-//   qDebug() << "Start:" << start << sidx.data(MessageModel::MsgIdRole).value<MsgId>()
+//   kDebug(300000) << "Start:" << start << sidx.data(MessageModel::MsgIdRole).value<MsgId>()
 //         << sidx.data(Qt::DisplayRole).toString();
-//   qDebug() << "End:" << end << eidx.data(MessageModel::MsgIdRole).value<MsgId>()
+//   kDebug(300000) << "End:" << end << eidx.data(MessageModel::MsgIdRole).value<MsgId>()
 //         << eidx.data(Qt::DisplayRole).toString();
 //   if(end + 1 < model()->rowCount()) {
 //     QModelIndex eeidx = model()->index(end + 1, 2);
-//     qDebug() << "End++:" << end + 1 << eeidx.data(MessageModel::MsgIdRole).value<MsgId>()
+//     kDebug(300000) << "End++:" << end + 1 << eeidx.data(MessageModel::MsgIdRole).value<MsgId>()
 //           << eeidx.data(Qt::DisplayRole).toString();
 //   }
 
@@ -412,20 +412,20 @@ void ChatScene::rowsInserted(const QModelIndex &index, int start, int end)
     Q_ASSERT(start == 0 || _lines.at(start - 1)->pos().y() + _lines.at(start - 1)->height() == _lines.at(start)->pos().y());
 //   if(start != 0) {
 //     if(_lines.at(start - 1)->pos().y() + _lines.at(start - 1)->height() != _lines.at(start)->pos().y()) {
-//       qDebug() << "lines:" << _lines.count() << "start:" << start << "end:" << end;
-//       qDebug() << "line[start - 1]:" << _lines.at(start - 1)->pos().y() << "+" << _lines.at(start - 1)->height() << "=" << _lines.at(start - 1)->pos().y() + _lines.at(start - 1)->height();
-//       qDebug() << "line[start]" << _lines.at(start)->pos().y();
-//       qDebug() << "needed moving:" << !(atTop || atBottom) << moveTop << moveStart << moveEnd << offset;
+//       kDebug(300000) << "lines:" << _lines.count() << "start:" << start << "end:" << end;
+//       kDebug(300000) << "line[start - 1]:" << _lines.at(start - 1)->pos().y() << "+" << _lines.at(start - 1)->height() << "=" << _lines.at(start - 1)->pos().y() + _lines.at(start - 1)->height();
+//       kDebug(300000) << "line[start]" << _lines.at(start)->pos().y();
+//       kDebug(300000) << "needed moving:" << !(atTop || atBottom) << moveTop << moveStart << moveEnd << offset;
 //       Q_ASSERT(false)
 //     }
 //   }
     Q_ASSERT(end + 1 == _lines.count() || _lines.at(end)->pos().y() + _lines.at(end)->height() == _lines.at(end + 1)->pos().y());
 //   if(end + 1 < _lines.count()) {
 //     if(_lines.at(end)->pos().y() + _lines.at(end)->height() != _lines.at(end + 1)->pos().y()) {
-//       qDebug() << "lines:" << _lines.count() << "start:" << start << "end:" << end;
-//       qDebug() << "line[end]:" << _lines.at(end)->pos().y() << "+" << _lines.at(end)->height() << "=" << _lines.at(end)->pos().y() + _lines.at(end)->height();
-//       qDebug() << "line[end+1]" << _lines.at(end + 1)->pos().y();
-//       qDebug() << "needed moving:" << !(atTop || atBottom) << moveTop << moveStart << moveEnd << offset;
+//       kDebug(300000) << "lines:" << _lines.count() << "start:" << start << "end:" << end;
+//       kDebug(300000) << "line[end]:" << _lines.at(end)->pos().y() << "+" << _lines.at(end)->height() << "=" << _lines.at(end)->pos().y() + _lines.at(end)->height();
+//       kDebug(300000) << "line[end+1]" << _lines.at(end + 1)->pos().y();
+//       kDebug(300000) << "needed moving:" << !(atTop || atBottom) << moveTop << moveStart << moveEnd << offset;
 //       Q_ASSERT(false);
 //     }
 //   }
@@ -611,7 +611,7 @@ void ChatScene::layout(int start, int end, qreal width)
     emit layoutChanged();
 
 //   clock_t endT = clock();
-//   qDebug() << "resized" << _lines.count() << "in" << (float)(endT - startT) / CLOCKS_PER_SEC << "sec";
+//   kDebug(300000) << "resized" << _lines.count() << "in" << (float)(endT - startT) / CLOCKS_PER_SEC << "sec";
 }
 
 
@@ -647,7 +647,7 @@ void ChatScene::firstHandlePositionChanged(qreal xpos)
     setHandleXLimits();
 
 //   clock_t endT = clock();
-//   qDebug() << "resized" << _lines.count() << "in" << (float)(endT - startT) / CLOCKS_PER_SEC << "sec";
+//   kDebug(300000) << "resized" << _lines.count() << "in" << (float)(endT - startT) / CLOCKS_PER_SEC << "sec";
 }
 
 
@@ -685,7 +685,7 @@ void ChatScene::secondHandlePositionChanged(qreal xpos)
     emit layoutChanged();
 
 //   clock_t endT = clock();
-//   qDebug() << "resized" << _lines.count() << "in" << (float)(endT - startT) / CLOCKS_PER_SEC << "sec";
+//   kDebug(300000) << "resized" << _lines.count() << "in" << (float)(endT - startT) / CLOCKS_PER_SEC << "sec";
 }
 
 
@@ -1004,7 +1004,7 @@ QString ChatScene::selection() const
         int start = qMin(_selectionStart, _selectionEnd);
         int end = qMax(_selectionStart, _selectionEnd);
         if (start < 0 || end >= _lines.count()) {
-            qDebug() << "Invalid selection range:" << start << end;
+            kDebug(300000) << "Invalid selection range:" << start << end;
             return QString();
         }
         QString result;

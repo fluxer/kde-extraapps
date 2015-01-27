@@ -83,7 +83,7 @@ void BufferViewOverlay::addView(int viewId)
 
     BufferViewConfig *config = Client::bufferViewManager()->bufferViewConfig(viewId);
     if (!config) {
-        qDebug() << "BufferViewOverlay::addView(): no such buffer view:" << viewId;
+        kDebug(300000) << "BufferViewOverlay::addView(): no such buffer view:" << viewId;
         return;
     }
 
@@ -158,7 +158,7 @@ void BufferViewOverlay::removeView(int viewId)
 void BufferViewOverlay::viewInitialized(BufferViewConfig *config)
 {
     if (!config) {
-        qWarning() << "BufferViewOverlay::viewInitialized() received invalid view!";
+        kWarning(300000) << "BufferViewOverlay::viewInitialized() received invalid view!";
         return;
     }
     disconnect(config, SIGNAL(initDone()), this, SLOT(viewInitialized()));

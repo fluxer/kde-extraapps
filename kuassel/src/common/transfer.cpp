@@ -175,7 +175,7 @@ void Transfer::setNick(const QString &nick)
 
 void Transfer::setError(const QString &errorString)
 {
-    qWarning() << Q_FUNC_INFO << errorString;
+    kWarning(300000) << Q_FUNC_INFO << errorString;
     emit error(errorString);
     setState(Failed);
     cleanUp();

@@ -26,7 +26,7 @@
 #include "ircchannel.h"
 
 #include <QTextCodec>
-#include <QDebug>
+#include <KDebug>
 
 INIT_SYNCABLE_OBJECT(IrcUser)
 IrcUser::IrcUser(const QString &hostmask, Network *network) : SyncableObject(network),
@@ -309,7 +309,7 @@ void IrcUser::partChannel(const QString &channelname)
 {
     IrcChannel *channel = network()->ircChannel(channelname);
     if (channel == 0) {
-        qWarning() << "IrcUser::partChannel(): received part for unknown Channel" << channelname;
+        kWarning(300000) << "IrcUser::partChannel(): received part for unknown Channel" << channelname;
     }
     else {
         partChannel(channel);

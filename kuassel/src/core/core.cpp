@@ -27,7 +27,6 @@
 #include "coreauthhandler.h"
 #include "coresession.h"
 #include "coresettings.h"
-#include "logger.h"
 #include "internalpeer.h"
 #include "network.h"
 #include "postgresqlstorage.h"
@@ -120,13 +119,13 @@ void Core::init()
 
     if (!_configured) {
         if (!_storageBackends.count()) {
-            qWarning() << qPrintable(i18n("Could not initialize any storage backend! Exiting..."));
-            qWarning() << qPrintable(i18n("Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
+            kWarning(300000) << qPrintable(i18n("Could not initialize any storage backend! Exiting..."));
+            kWarning(300000) << qPrintable(i18n("Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
                                         "Qt library with the sqlite or postgres plugin enabled in order for quasselcore\n"
                                         "to work."));
             exit(1); // TODO make this less brutal (especially for mono client -> popup)
         }
-        qWarning() << "Core is currently not configured! Please connect with a Quassel Client for basic setup.";
+        kWarning(300000) << "Core is currently not configured! Please connect with a Quassel Client for basic setup.";
     }
 
     if (Quassel::isOptionSet("add-user")) {
@@ -176,25 +175,25 @@ void Core::saveState()
 void Core::restoreState()
 {
     if (!instance()->_configured) {
-        // qWarning() << qPrintable(i18n("Cannot restore a state for an unconfigured core!"));
+        // kWarning(300000) << qPrintable(i18n("Cannot restore a state for an unconfigured core!"));
         return;
     }
     if (instance()->sessions.count()) {
-        qWarning() << qPrintable(i18n("Calling restoreState() even though active sessions exist!"));
+        kWarning(300000) << qPrintable(i18n("Calling restoreState() even though active sessions exist!"));
         return;
     }
     CoreSettings s;
     /* We don't check, since we are at the first version since switching to Git
     uint statever = s.coreState().toMap()["CoreStateVersion"].toUInt();
     if(statever < 1) {
-      qWarning() << qPrintable(i18n("Core state too old, ignoring..."));
+      kWarning(300000) << qPrintable(i18n("Core state too old, ignoring..."));
       return;
     }
     */
 
     QVariantList activeSessions = s.coreState().toMap()["ActiveSessions"].toList();
     if (activeSessions.count() > 0) {
-        quInfo() << "Restoring previous core state...";
+        kDebug(30000) << "Restoring previous core state...";
         foreach(QVariant v, activeSessions) {
             UserId user = v.value<UserId>();
             instance()->createSession(user, true);
@@ -225,7 +224,7 @@ QString Core::setupCore(const QString &adminUser, const QString &adminPassword, 
 
     saveBackendSettings(backend, setupData);
 
-    quInfo() << qPrintable(i18n("Creating admin user..."));
+    kDebug(30000) << qPrintable(i18n("Creating admin user..."));
     _storage->addUser(adminUser, adminPassword);
     startListening(); // TODO check when we need this
     return QString();
@@ -383,7 +382,7 @@ bool Core::startListening()
                 switch (addr.protocol()) {
                 case QAbstractSocket::IPv6Protocol:
                     if (_v6server.listen(addr, port)) {
-                        quInfo() << qPrintable(
+                        kDebug(30000) << qPrintable(
                             i18n("Listening for GUI clients on IPv6 %1 port %2")
                             .arg(addr.toString())
                             .arg(_v6server.serverPort())
@@ -391,7 +390,7 @@ bool Core::startListening()
                         success = true;
                     }
                     else
-                        quWarning() << qPrintable(
+                        kWarning(30000) << qPrintable(
                             i18n("Could not open IPv6 interface %1:%2: %3")
                             .arg(addr.toString())
                             .arg(port)
@@ -399,7 +398,7 @@ bool Core::startListening()
                     break;
                 case QAbstractSocket::IPv4Protocol:
                     if (_server.listen(addr, port)) {
-                        quInfo() << qPrintable(
+                        kDebug(30000) << qPrintable(
                             i18n("Listening for GUI clients on IPv4 %1 port %2")
                             .arg(addr.toString())
                             .arg(_server.serverPort())
@@ -409,7 +408,7 @@ bool Core::startListening()
                     else {
                         // if v6 succeeded on Any, the port will be already in use - don't display the error then
                         if (!success || _server.serverError() != QAbstractSocket::AddressInUseError)
-                            quWarning() << qPrintable(
+                            kWarning(30000) << qPrintable(
                                 i18n("Could not open IPv4 interface %1:%2: %3")
                                 .arg(addr.toString())
                                 .arg(port)
@@ -427,7 +426,7 @@ bool Core::startListening()
         }
     }
     if (!success)
-        quError() << qPrintable(i18n("Could not open any network interfaces to listen on!"));
+        kError(30000) << qPrintable(i18n("Could not open any network interfaces to listen on!"));
 
     return success;
 }
@@ -446,9 +445,9 @@ void Core::stopListening(const QString &reason)
     }
     if (wasListening) {
         if (reason.isEmpty())
-            quInfo() << "No longer listening for GUI clients.";
+            kDebug(30000) << "No longer listening for GUI clients.";
         else
-            quInfo() << qPrintable(reason);
+            kDebug(30000) << qPrintable(reason);
     }
 }
 
@@ -467,7 +466,7 @@ void Core::incomingConnection()
         connect(handler, SIGNAL(socketError(QAbstractSocket::SocketError,QString)), SLOT(socketError(QAbstractSocket::SocketError,QString)));
         connect(handler, SIGNAL(handshakeComplete(RemotePeer*,UserId)), SLOT(setupClientSession(RemotePeer*,UserId)));
 
-        quInfo() << qPrintable(i18n("Client connected from"))  << qPrintable(socket->peerAddress().toString());
+        kDebug(30000) << qPrintable(i18n("Client connected from"))  << qPrintable(socket->peerAddress().toString());
 
         if (!_configured) {
             stopListening(i18n("Closing server for basic setup."));
@@ -482,7 +481,7 @@ void Core::clientDisconnected()
     CoreAuthHandler *handler = qobject_cast<CoreAuthHandler *>(sender());
     Q_ASSERT(handler);
 
-    quInfo() << qPrintable(i18n("Non-authed client disconnected:")) << qPrintable(handler->socket()->peerAddress().toString());
+    kDebug(30000) << qPrintable(i18n("Non-authed client disconnected:")) << qPrintable(handler->socket()->peerAddress().toString());
     _connectingClients.remove(handler);
     handler->deleteLater();
 
@@ -514,7 +513,7 @@ void Core::setupClientSession(RemotePeer *peer, UserId uid)
     else {
         session = createSession(uid);
         if (!session) {
-            qWarning() << qPrintable(i18n("Could not initialize session for client:")) << qPrintable(peer->description());
+            kWarning(300000) << qPrintable(i18n("Could not initialize session for client:")) << qPrintable(peer->description());
             peer->close();
             peer->deleteLater();
             return;
@@ -541,7 +540,7 @@ void Core::addClientHelper(RemotePeer *peer, UserId uid)
 {
     // Find or create session for validated user
     if (!sessions.contains(uid)) {
-        qWarning() << qPrintable(i18n("Could not find a session for client:")) << qPrintable(peer->description());
+        kWarning(300000) << qPrintable(i18n("Could not find a session for client:")) << qPrintable(peer->description());
         peer->close();
         peer->deleteLater();
         return;
@@ -564,7 +563,7 @@ void Core::setupInternalClientSession(InternalPeer *clientPeer)
         uid = _storage->internalUser();
     }
     else {
-        qWarning() << "Core::setupInternalClientSession(): You're trying to run monolithic Quassel with an unusable Backend! Go fix it!";
+        kWarning(300000) << "Core::setupInternalClientSession(): You're trying to run monolithic Quassel with an unusable Backend! Go fix it!";
         return;
     }
 
@@ -586,7 +585,7 @@ void Core::setupInternalClientSession(InternalPeer *clientPeer)
 SessionThread *Core::createSession(UserId uid, bool restore)
 {
     if (sessions.contains(uid)) {
-        qWarning() << "Calling createSession() when a session for the user already exists!";
+        kWarning(300000) << "Calling createSession() when a session for the user already exists!";
         return 0;
     }
     SessionThread *sess = new SessionThread(uid, restore, this);
@@ -598,7 +597,7 @@ SessionThread *Core::createSession(UserId uid, bool restore)
 
 void Core::socketError(QAbstractSocket::SocketError err, const QString &errorString)
 {
-    qWarning() << QString("Socket error %1: %2").arg(err).arg(errorString);
+    kWarning(300000) << QString("Socket error %1: %2").arg(err).arg(errorString);
 }
 
 
@@ -623,8 +622,8 @@ bool Core::selectBackend(const QString &backend)
     // reregister all storage backends
     registerStorageBackends();
     if (!_storageBackends.contains(backend)) {
-        qWarning() << qPrintable(QString("Core::selectBackend(): unsupported backend: %1").arg(backend));
-        qWarning() << "    supported backends are:" << qPrintable(QStringList(_storageBackends.keys()).join(", "));
+        kWarning(300000) << qPrintable(QString("Core::selectBackend(): unsupported backend: %1").arg(backend));
+        kWarning(300000) << "    supported backends are:" << qPrintable(QStringList(_storageBackends.keys()).join(", "));
         return false;
     }
 
@@ -635,25 +634,25 @@ bool Core::selectBackend(const QString &backend)
     switch (storageState) {
     case Storage::IsReady:
         saveBackendSettings(backend, settings);
-        qWarning() << "Switched backend to:" << qPrintable(backend);
-        qWarning() << "Backend already initialized. Skipping Migration";
+        kWarning(300000) << "Switched backend to:" << qPrintable(backend);
+        kWarning(300000) << "Backend already initialized. Skipping Migration";
         return true;
     case Storage::NotAvailable:
         qCritical() << "Backend is not available:" << qPrintable(backend);
         return false;
     case Storage::NeedsSetup:
         if (!storage->setup(settings)) {
-            qWarning() << qPrintable(QString("Core::selectBackend(): unable to setup backend: %1").arg(backend));
+            kWarning(300000) << qPrintable(QString("Core::selectBackend(): unable to setup backend: %1").arg(backend));
             return false;
         }
 
         if (storage->init(settings) != Storage::IsReady) {
-            qWarning() << qPrintable(QString("Core::migrateBackend(): unable to initialize backend: %1").arg(backend));
+            kWarning(300000) << qPrintable(QString("Core::migrateBackend(): unable to initialize backend: %1").arg(backend));
             return false;
         }
 
         saveBackendSettings(backend, settings);
-        qWarning() << "Switched backend to:" << qPrintable(backend);
+        kWarning(300000) << "Switched backend to:" << qPrintable(backend);
         break;
     }
 
@@ -661,29 +660,29 @@ bool Core::selectBackend(const QString &backend)
     AbstractSqlMigrationReader *reader = getMigrationReader(_storage);
     AbstractSqlMigrationWriter *writer = getMigrationWriter(storage);
     if (reader && writer) {
-        qDebug() << qPrintable(QString("Migrating Storage backend %1 to %2...").arg(_storage->displayName(), storage->displayName()));
+        kDebug(300000) << qPrintable(QString("Migrating Storage backend %1 to %2...").arg(_storage->displayName(), storage->displayName()));
         delete _storage;
         _storage = 0;
         delete storage;
         storage = 0;
         if (reader->migrateTo(writer)) {
-            qDebug() << "Migration finished!";
+            kDebug(300000) << "Migration finished!";
             saveBackendSettings(backend, settings);
             return true;
         }
         return false;
-        qWarning() << qPrintable(QString("Core::migrateDb(): unable to migrate storage backend! (No migration writer for %1)").arg(backend));
+        kWarning(300000) << qPrintable(QString("Core::migrateDb(): unable to migrate storage backend! (No migration writer for %1)").arg(backend));
     }
 
     // inform the user why we cannot merge
     if (!_storage) {
-        qWarning() << "No currently active backend. Skipping migration.";
+        kWarning(300000) << "No currently active backend. Skipping migration.";
     }
     else if (!reader) {
-        qWarning() << "Currently active backend does not support migration:" << qPrintable(_storage->displayName());
+        kWarning(300000) << "Currently active backend does not support migration:" << qPrintable(_storage->displayName());
     }
     if (writer) {
-        qWarning() << "New backend does not support migration:" << qPrintable(backend);
+        kWarning(300000) << "New backend does not support migration:" << qPrintable(backend);
     }
 
     // so we were unable to merge, but let's create a user \o/
@@ -714,11 +713,11 @@ void Core::createUser()
     enableStdInEcho();
 
     if (password != password2) {
-        qWarning() << "Passwords don't match!";
+        kWarning(300000) << "Passwords don't match!";
         return;
     }
     if (password.isEmpty()) {
-        qWarning() << "Password is empty!";
+        kWarning(300000) << "Password is empty!";
         return;
     }
 
@@ -726,7 +725,7 @@ void Core::createUser()
         out << "Added user " << username << " successfully!" << endl;
     }
     else {
-        qWarning() << "Unable to add user:" << qPrintable(username);
+        kWarning(300000) << "Unable to add user:" << qPrintable(username);
     }
 }
 
@@ -755,11 +754,11 @@ void Core::changeUserPass(const QString &username)
     enableStdInEcho();
 
     if (password != password2) {
-        qWarning() << "Passwords don't match!";
+        kWarning(300000) << "Passwords don't match!";
         return;
     }
     if (password.isEmpty()) {
-        qWarning() << "Password is empty!";
+        kWarning(300000) << "Password is empty!";
         return;
     }
 
@@ -767,7 +766,7 @@ void Core::changeUserPass(const QString &username)
         out << "Password changed successfully!" << endl;
     }
     else {
-        qWarning() << "Failed to change password!";
+        kWarning(300000) << "Failed to change password!";
     }
 }
 
@@ -779,7 +778,7 @@ AbstractSqlMigrationReader *Core::getMigrationReader(Storage *storage)
 
     AbstractSqlStorage *sqlStorage = qobject_cast<AbstractSqlStorage *>(storage);
     if (!sqlStorage) {
-        qDebug() << "Core::migrateDb(): only SQL based backends can be migrated!";
+        kDebug(300000) << "Core::migrateDb(): only SQL based backends can be migrated!";
         return 0;
     }
 
@@ -794,7 +793,7 @@ AbstractSqlMigrationWriter *Core::getMigrationWriter(Storage *storage)
 
     AbstractSqlStorage *sqlStorage = qobject_cast<AbstractSqlStorage *>(storage);
     if (!sqlStorage) {
-        qDebug() << "Core::migrateDb(): only SQL based backends can be migrated!";
+        kDebug(300000) << "Core::migrateDb(): only SQL based backends can be migrated!";
         return 0;
     }
 

@@ -111,7 +111,7 @@ void SettingsPage::initAutoWidgets()
         else if (widget->inherits("FontSelector"))
             connect(widget, SIGNAL(fontChanged(QFont)), SLOT(autoWidgetHasChanged()));
         else
-            qWarning() << "SettingsPage::init(): Unknown autoWidget type" << widget->metaObject()->className();
+            kWarning(300000) << "SettingsPage::init(): Unknown autoWidget type" << widget->metaObject()->className();
     }
 }
 
@@ -142,7 +142,7 @@ QByteArray SettingsPage::autoWidgetPropertyName(QObject *widget) const
     else if (widget->inherits("FontSelector"))
         prop = "selectedFont";
     else
-        qWarning() << "SettingsPage::autoWidgetPropertyName(): Unhandled widget type for" << widget;
+        kWarning(300000) << "SettingsPage::autoWidgetPropertyName(): Unhandled widget type for" << widget;
 
     return prop;
 }
@@ -167,7 +167,7 @@ void SettingsPage::autoWidgetHasChanged()
     foreach(QObject *widget, _autoWidgets) {
         QVariant curValue = widget->property(autoWidgetPropertyName(widget));
         if (!curValue.isValid())
-            qWarning() << "SettingsPage::autoWidgetHasChanged(): Unknown property";
+            kWarning(300000) << "SettingsPage::autoWidgetHasChanged(): Unknown property";
 
         if (curValue != widget->property("storedValue")) {
             changed_ = true;
@@ -237,12 +237,12 @@ void SettingsPage::defaults()
 
 QVariant SettingsPage::loadAutoWidgetValue(const QString &widgetName)
 {
-    qWarning() << "Could not load value for SettingsPage widget" << widgetName;
+    kWarning(300000) << "Could not load value for SettingsPage widget" << widgetName;
     return QVariant();
 }
 
 
 void SettingsPage::saveAutoWidgetValue(const QString &widgetName, const QVariant &)
 {
-    qWarning() << "Could not save value for SettingsPage widget" << widgetName;
+    kWarning(300000) << "Could not save value for SettingsPage widget" << widgetName;
 }

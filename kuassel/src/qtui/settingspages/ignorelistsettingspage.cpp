@@ -25,7 +25,7 @@
 #include <QMessageBox>
 #include <QString>
 #include <QEvent>
-#include <QDebug>
+#include <KDebug>
 
 #include <KIcon>
 #include <KLocale>

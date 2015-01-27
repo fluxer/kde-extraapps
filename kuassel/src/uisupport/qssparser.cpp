@@ -77,7 +77,7 @@ void QssParser::processStyleSheet(QString &ss)
     QRegExp blockrx("((?:ChatLine|ChatListItem|NickListItem)[^{]*)\\{([^}]+)\\}");
     pos = 0;
     while ((pos = blockrx.indexIn(ss, pos)) >= 0) {
-        //qDebug() << blockrx.cap(1) << blockrx.cap(2);
+        //kDebug(300000) << blockrx.cap(1) << blockrx.cap(2);
         QString declaration = blockrx.cap(1).trimmed();
         QString contents = blockrx.cap(2).trimmed();
 
@@ -125,7 +125,7 @@ void QssParser::parsePaletteBlock(const QString &decl, const QString &contents)
     // Check if we want to apply this palette definition for particular ColorGroups
     QRegExp rx("Palette((:(normal|active|inactive|disabled))*)");
     if (!rx.exactMatch(decl)) {
-        qWarning() << Q_FUNC_INFO << i18n("Invalid block declaration: %1").arg(decl);
+        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid block declaration: %1").arg(decl);
         return;
     }
     if (!rx.cap(1).isEmpty()) {
@@ -144,7 +144,7 @@ void QssParser::parsePaletteBlock(const QString &decl, const QString &contents)
     foreach(QString line, contents.split(';', QString::SkipEmptyParts)) {
         int idx = line.indexOf(':');
         if (idx <= 0) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid palette role assignment: %1").arg(line.trimmed());
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid palette role assignment: %1").arg(line.trimmed());
             continue;
         }
         QString rolestr = line.left(idx).trimmed();
@@ -163,7 +163,7 @@ void QssParser::parsePaletteBlock(const QString &decl, const QString &contents)
             _uiStylePalette[_uiStyleColorRoles.value(rolestr)] = parseBrush(brushstr);
         }
         else
-            qWarning() << Q_FUNC_INFO << i18n("Unknown palette role name: %1").arg(rolestr);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Unknown palette role name: %1").arg(rolestr);
     }
 }
 
@@ -175,7 +175,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
     QRegExp rx("ChatLine(?:::(\\w+))?(?:#([\\w\\-]+))?(?:\\[([=-,\\\"\\w\\s]+)\\])?");
     // $1: subelement; $2: msgtype; $3: conditionals
     if (!rx.exactMatch(decl)) {
-        qWarning() << Q_FUNC_INFO << i18n("Invalid block declaration: %1").arg(decl);
+        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid block declaration: %1").arg(decl);
         return UiStyle::Invalid;
     }
     QString subElement = rx.cap(1);
@@ -201,7 +201,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
         else if (subElement == "url")
             fmtType |= UiStyle::Url;
         else {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid subelement name in %1").arg(decl);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid subelement name in %1").arg(decl);
             return UiStyle::Invalid;
         }
     }
@@ -245,7 +245,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
         else if (msgType == "invite")
             fmtType |= UiStyle::InviteMsg;
         else {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid message type in %1").arg(decl);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid message type in %1").arg(decl);
         }
     }
 
@@ -254,7 +254,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
     if (!conditions.isEmpty()) {
         foreach(const QString &cond, conditions.split(',', QString::SkipEmptyParts)) {
             if (!condRx.exactMatch(cond)) {
-                qWarning() << Q_FUNC_INFO << i18n("Invalid condition %1").arg(cond);
+                kWarning(300000) << Q_FUNC_INFO << i18n("Invalid condition %1").arg(cond);
                 return UiStyle::Invalid;
             }
             QString condName = condRx.cap(1);
@@ -266,7 +266,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
                 else if (condValue == "selected")
                     labeltype = UiStyle::Selected;
                 else {
-                    qWarning() << Q_FUNC_INFO << i18n("Invalid message label: %1").arg(condValue);
+                    kWarning(300000) << Q_FUNC_INFO << i18n("Invalid message label: %1").arg(condValue);
                     return UiStyle::Invalid;
                 }
                 fmtType |= (labeltype << 32);
@@ -278,11 +278,11 @@ quint64 QssParser::parseFormatType(const QString &decl)
                     bool ok = true;
                     quint64 val = condValue.toUInt(&ok, 16);
                     if (!ok) {
-                        qWarning() << Q_FUNC_INFO << i18n("Invalid senderhash specification: %1").arg(condValue);
+                        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid senderhash specification: %1").arg(condValue);
                         return UiStyle::Invalid;
                     }
                     if (val >= 16) {
-                        qWarning() << Q_FUNC_INFO << i18n("Senderhash can be at most \"0x0f\"!");
+                        kWarning(300000) << Q_FUNC_INFO << i18n("Senderhash can be at most \"0x0f\"!");
                         return UiStyle::Invalid;
                     }
                     fmtType |= ++val << 48;
@@ -298,7 +298,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
                 else if (condValue == "reverse")
                     fmtType |= UiStyle::Reverse;
                 else {
-                    qWarning() << Q_FUNC_INFO << i18n("Invalid format name: %1").arg(condValue);
+                    kWarning(300000) << Q_FUNC_INFO << i18n("Invalid format name: %1").arg(condValue);
                     return UiStyle::Invalid;
                 }
             }
@@ -306,7 +306,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
                 bool ok;
                 quint8 col = condValue.toUInt(&ok, 16);
                 if (!ok || col > 0x0f) {
-                    qWarning() << Q_FUNC_INFO << i18n("Illegal IRC color specification (must be between 00 and 0f): %1").arg(condValue);
+                    kWarning(300000) << Q_FUNC_INFO << i18n("Illegal IRC color specification (must be between 00 and 0f): %1").arg(condValue);
                     return UiStyle::Invalid;
                 }
                 if (condName == "fg-color")
@@ -315,7 +315,7 @@ quint64 QssParser::parseFormatType(const QString &decl)
                     fmtType |= 0x00800000 | (quint32)(col << 28);
             }
             else {
-                qWarning() << Q_FUNC_INFO << i18n("Unhandled condition: %1").arg(condName);
+                kWarning(300000) << Q_FUNC_INFO << i18n("Unhandled condition: %1").arg(condName);
                 return UiStyle::Invalid;
             }
         }
@@ -331,7 +331,7 @@ quint32 QssParser::parseItemFormatType(const QString &decl)
     QRegExp rx("(Chat|Nick)ListItem(?:\\[([=-,\\\"\\w\\s]+)\\])?");
     // $1: item type; $2: properties
     if (!rx.exactMatch(decl)) {
-        qWarning() << Q_FUNC_INFO << i18n("Invalid block declaration: %1").arg(decl);
+        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid block declaration: %1").arg(decl);
         return UiStyle::Invalid;
     }
     QString mainItemType = rx.cap(1);
@@ -346,7 +346,7 @@ quint32 QssParser::parseItemFormatType(const QString &decl)
         QRegExp propRx("\\s*([\\w\\-]+)\\s*=\\s*\"([\\w\\-]+)\"\\s*");
         foreach(const QString &prop, properties.split(',', QString::SkipEmptyParts)) {
             if (!propRx.exactMatch(prop)) {
-                qWarning() << Q_FUNC_INFO << i18n("Invalid proplist %1").arg(prop);
+                kWarning(300000) << Q_FUNC_INFO << i18n("Invalid proplist %1").arg(prop);
                 return UiStyle::Invalid;
             }
             props[propRx.cap(1)] = propRx.cap(2);
@@ -365,7 +365,7 @@ quint32 QssParser::parseItemFormatType(const QString &decl)
             else if (type == "query")
                 fmtType |= UiStyle::QueryBufferItem;
             else {
-                qWarning() << Q_FUNC_INFO << i18n("Invalid chatlist item type %1").arg(type);
+                kWarning(300000) << Q_FUNC_INFO << i18n("Invalid chatlist item type %1").arg(type);
                 return UiStyle::Invalid;
             }
         }
@@ -381,7 +381,7 @@ quint32 QssParser::parseItemFormatType(const QString &decl)
             else if (state == "away")
                 fmtType |= UiStyle::UserAway;
             else {
-                qWarning() << Q_FUNC_INFO << i18n("Invalid chatlist state %1").arg(state);
+                kWarning(300000) << Q_FUNC_INFO << i18n("Invalid chatlist state %1").arg(state);
                 return UiStyle::Invalid;
             }
         }
@@ -411,7 +411,7 @@ QTextCharFormat QssParser::parseFormat(const QString &qss)
     foreach(QString line, qss.split(';', QString::SkipEmptyParts)) {
         int idx = line.indexOf(':');
         if (idx <= 0) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid property declaration: %1").arg(line.trimmed());
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid property declaration: %1").arg(line.trimmed());
             continue;
         }
         QString property = line.left(idx).trimmed();
@@ -435,13 +435,13 @@ QTextCharFormat QssParser::parseFormat(const QString &qss)
             else if (property == "font-family")
                 parseFontFamily(value, &format);
             else {
-                qWarning() << Q_FUNC_INFO << i18n("Invalid font property: %1").arg(line);
+                kWarning(300000) << Q_FUNC_INFO << i18n("Invalid font property: %1").arg(line);
                 continue;
             }
         }
 
         else {
-            qWarning() << Q_FUNC_INFO << i18n("Unknown ChatLine property: %1").arg(property);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Unknown ChatLine property: %1").arg(property);
         }
     }
 
@@ -465,21 +465,21 @@ QBrush QssParser::parseBrush(const QString &str, bool *ok)
     if (str.startsWith("palette")) { // Palette color role
         QRegExp rx("palette\\s*\\(\\s*([a-z-]+)\\s*\\)");
         if (!rx.exactMatch(str)) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid palette color role specification: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid palette color role specification: %1").arg(str);
             return QBrush();
         }
         if (_paletteColorRoles.contains(rx.cap(1)))
             return QBrush(_palette.brush(_paletteColorRoles.value(rx.cap(1))));
         if (_uiStyleColorRoles.contains(rx.cap(1)))
             return QBrush(_uiStylePalette.at(_uiStyleColorRoles.value(rx.cap(1))));
-        qWarning() << Q_FUNC_INFO << i18n("Unknown palette color role: %1").arg(rx.cap(1));
+        kWarning(300000) << Q_FUNC_INFO << i18n("Unknown palette color role: %1").arg(rx.cap(1));
         return QBrush();
     }
     else if (str.startsWith("qlineargradient")) {
         static QString rxFloat("\\s*(-?\\s*[0-9]*\\.?[0-9]+)\\s*");
         QRegExp rx(QString("qlineargradient\\s*\\(\\s*x1:%1,\\s*y1:%1,\\s*x2:%1,\\s*y2:%1,(.+)\\)").arg(rxFloat));
         if (!rx.exactMatch(str)) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid gradient declaration: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid gradient declaration: %1").arg(str);
             return QBrush();
         }
         qreal x1 = rx.cap(1).toDouble();
@@ -488,7 +488,7 @@ QBrush QssParser::parseBrush(const QString &str, bool *ok)
         qreal y2 = rx.cap(4).toDouble();
         QGradientStops stops = parseGradientStops(rx.cap(5).trimmed());
         if (!stops.count()) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid gradient stops list: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid gradient stops list: %1").arg(str);
             return QBrush();
         }
         QLinearGradient gradient(x1, y1, x2, y2);
@@ -502,7 +502,7 @@ QBrush QssParser::parseBrush(const QString &str, bool *ok)
         static QString rxFloat("\\s*(-?\\s*[0-9]*\\.?[0-9]+)\\s*");
         QRegExp rx(QString("qconicalgradient\\s*\\(\\s*cx:%1,\\s*cy:%1,\\s*angle:%1,(.+)\\)").arg(rxFloat));
         if (!rx.exactMatch(str)) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid gradient declaration: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid gradient declaration: %1").arg(str);
             return QBrush();
         }
         qreal cx = rx.cap(1).toDouble();
@@ -510,7 +510,7 @@ QBrush QssParser::parseBrush(const QString &str, bool *ok)
         qreal angle = rx.cap(3).toDouble();
         QGradientStops stops = parseGradientStops(rx.cap(4).trimmed());
         if (!stops.count()) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid gradient stops list: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid gradient stops list: %1").arg(str);
             return QBrush();
         }
         QConicalGradient gradient(cx, cy, angle);
@@ -524,7 +524,7 @@ QBrush QssParser::parseBrush(const QString &str, bool *ok)
         static QString rxFloat("\\s*(-?\\s*[0-9]*\\.?[0-9]+)\\s*");
         QRegExp rx(QString("qradialgradient\\s*\\(\\s*cx:%1,\\s*cy:%1,\\s*radius:%1,\\s*fx:%1,\\s*fy:%1,(.+)\\)").arg(rxFloat));
         if (!rx.exactMatch(str)) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid gradient declaration: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid gradient declaration: %1").arg(str);
             return QBrush();
         }
         qreal cx = rx.cap(1).toDouble();
@@ -534,7 +534,7 @@ QBrush QssParser::parseBrush(const QString &str, bool *ok)
         qreal fy = rx.cap(5).toDouble();
         QGradientStops stops = parseGradientStops(rx.cap(6).trimmed());
         if (!stops.count()) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid gradient stops list: %1").arg(str);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid gradient stops list: %1").arg(str);
             return QBrush();
         }
         QRadialGradient gradient(cx, cy, radius, fx, fy);
@@ -643,7 +643,7 @@ void QssParser::parseFont(const QString &value, QTextCharFormat *format)
 {
     QRegExp rx("((?:(?:normal|italic|oblique|underline|bold|100|200|300|400|500|600|700|800|900) ){0,2}) ?(\\d+)(pt|px)? \"(.*)\"");
     if (!rx.exactMatch(value)) {
-        qWarning() << Q_FUNC_INFO << i18n("Invalid font specification: %1").arg(value);
+        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid font specification: %1").arg(value);
         return;
     }
     format->setFontItalic(false);
@@ -684,7 +684,7 @@ void QssParser::parseFontStyle(const QString &value, QTextCharFormat *format)
     //else if(value == "oblique")
     //  format->setStyle(QFont::StyleOblique);
     else {
-        qWarning() << Q_FUNC_INFO << i18n("Invalid font style specification: %1").arg(value);
+        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid font style specification: %1").arg(value);
     }
 }
 
@@ -699,7 +699,7 @@ void QssParser::parseFontWeight(const QString &value, QTextCharFormat *format)
         bool ok;
         int w = value.toInt(&ok);
         if (!ok) {
-            qWarning() << Q_FUNC_INFO << i18n("Invalid font weight specification: %1").arg(value);
+            kWarning(300000) << Q_FUNC_INFO << i18n("Invalid font weight specification: %1").arg(value);
             return;
         }
         format->setFontWeight(qMin(w / 8, 99)); // taken from Qt's qss parser
@@ -711,7 +711,7 @@ void QssParser::parseFontSize(const QString &value, QTextCharFormat *format)
 {
     QRegExp rx("(\\d+)(pt|px)");
     if (!rx.exactMatch(value)) {
-        qWarning() << Q_FUNC_INFO << i18n("Invalid font size specification: %1").arg(value);
+        kWarning(300000) << Q_FUNC_INFO << i18n("Invalid font size specification: %1").arg(value);
         return;
     }
     if (rx.cap(2) == "px")

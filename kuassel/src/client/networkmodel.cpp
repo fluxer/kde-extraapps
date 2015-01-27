@@ -620,7 +620,7 @@ QString ChannelBufferItem::toolTip(int column) const
 void ChannelBufferItem::attachIrcChannel(IrcChannel *ircChannel)
 {
     if (_ircChannel) {
-        qWarning() << Q_FUNC_INFO << "IrcChannel already set; cleanup failed!?";
+        kWarning(300000) << Q_FUNC_INFO << "IrcChannel already set; cleanup failed!?";
         disconnect(_ircChannel, 0, this, 0);
     }
 
@@ -731,7 +731,7 @@ void ChannelBufferItem::addUsersToCategory(const QList<IrcUser *> &ircUsers)
 void ChannelBufferItem::part(IrcUser *ircUser)
 {
     if (!ircUser) {
-        qWarning() << bufferName() << "ChannelBufferItem::part(): unknown User" << ircUser;
+        kWarning(300000) << bufferName() << "ChannelBufferItem::part(): unknown User" << ircUser;
         return;
     }
 
@@ -792,7 +792,7 @@ void ChannelBufferItem::userModeChanged(IrcUser *ircUser)
     }
 
     if (!ircUserItem) {
-        qWarning() << "ChannelBufferItem::userModeChanged(IrcUser *): unable to determine old category of" << ircUser;
+        kWarning(300000) << "ChannelBufferItem::userModeChanged(IrcUser *): unable to determine old category of" << ircUser;
         return;
     }
     ircUserItem->reParent(categoryItem);
@@ -1199,7 +1199,7 @@ MsgId NetworkModel::lastSeenMsgId(const BufferId &bufferId)
 {
     BufferItem *bufferItem = findBufferItem(bufferId);
     if (!bufferItem) {
-        qDebug() << "NetworkModel::lastSeenMsgId(): buffer is unknown:" << bufferId;
+        kDebug(300000) << "NetworkModel::lastSeenMsgId(): buffer is unknown:" << bufferId;
         Client::purgeKnownBufferIds();
         return MsgId();
     }
@@ -1211,7 +1211,7 @@ void NetworkModel::setLastSeenMsgId(const BufferId &bufferId, const MsgId &msgId
 {
     BufferItem *bufferItem = findBufferItem(bufferId);
     if (!bufferItem) {
-        qDebug() << "NetworkModel::setLastSeenMsgId(): buffer is unknown:" << bufferId;
+        kDebug(300000) << "NetworkModel::setLastSeenMsgId(): buffer is unknown:" << bufferId;
         Client::purgeKnownBufferIds();
         return;
     }
@@ -1224,7 +1224,7 @@ void NetworkModel::setMarkerLineMsgId(const BufferId &bufferId, const MsgId &msg
 {
     BufferItem *bufferItem = findBufferItem(bufferId);
     if (!bufferItem) {
-        qDebug() << "NetworkModel::setMarkerLineMsgId(): buffer is unknown:" << bufferId;
+        kDebug(300000) << "NetworkModel::setMarkerLineMsgId(): buffer is unknown:" << bufferId;
         Client::purgeKnownBufferIds();
         return;
     }
@@ -1300,7 +1300,7 @@ void NetworkModel::setBufferActivity(const BufferId &bufferId, BufferInfo::Activ
 {
     BufferItem *bufferItem = findBufferItem(bufferId);
     if (!bufferItem) {
-        qDebug() << "NetworkModel::setBufferActivity(): buffer is unknown:" << bufferId;
+        kDebug(300000) << "NetworkModel::setBufferActivity(): buffer is unknown:" << bufferId;
         return;
     }
     bufferItem->setActivityLevel(level);
@@ -1311,7 +1311,7 @@ void NetworkModel::clearBufferActivity(const BufferId &bufferId)
 {
     BufferItem *bufferItem = findBufferItem(bufferId);
     if (!bufferItem) {
-        qDebug() << "NetworkModel::clearBufferActivity(): buffer is unknown:" << bufferId;
+        kDebug(300000) << "NetworkModel::clearBufferActivity(): buffer is unknown:" << bufferId;
         return;
     }
     bufferItem->clearActivityLevel();

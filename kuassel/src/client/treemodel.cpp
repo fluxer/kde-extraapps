@@ -21,7 +21,7 @@
 #include "treemodel.h"
 
 #include <QCoreApplication>
-#include <QDebug>
+#include <KDebug>
 
 #include "quassel.h"
 
@@ -153,7 +153,7 @@ bool AbstractTreeItem::reParent(AbstractTreeItem *newParent)
     // currently we support only re parenting if the child that's about to be
     // adopted does not have any children itself.
     if (childCount() != 0) {
-        qDebug() << "AbstractTreeItem::reParent(): cannot reparent"  << this << "with children.";
+        kDebug(300000) << "AbstractTreeItem::reParent(): cannot reparent"  << this << "with children.";
         return false;
     }
 
@@ -170,7 +170,7 @@ bool AbstractTreeItem::reParent(AbstractTreeItem *newParent)
 
     bool success = newParent->newChild(this);
     if (!success)
-        qWarning() << "AbstractTreeItem::reParent(): failed to attach to new parent after removing from old parent! this:" << this << "new parent:" << newParent;
+        kWarning(300000) << "AbstractTreeItem::reParent(): failed to attach to new parent after removing from old parent! this:" << this << "new parent:" << newParent;
 
     if (oldParent)
         oldParent->checkForDeletion();
@@ -200,30 +200,30 @@ int AbstractTreeItem::childCount(int column) const
 int AbstractTreeItem::row() const
 {
     if (!parent()) {
-        qWarning() << "AbstractTreeItem::row():" << this << "has no parent AbstractTreeItem as it's parent! parent is" << QObject::parent();
+        kWarning(300000) << "AbstractTreeItem::row():" << this << "has no parent AbstractTreeItem as it's parent! parent is" << QObject::parent();
         return -1;
     }
 
     int row_ = parent()->_childItems.indexOf(const_cast<AbstractTreeItem *>(this));
     if (row_ == -1)
-        qWarning() << "AbstractTreeItem::row():" << this << "is not in the child list of" << QObject::parent();
+        kWarning(300000) << "AbstractTreeItem::row():" << this << "is not in the child list of" << QObject::parent();
     return row_;
 }
 
 
 void AbstractTreeItem::dumpChildList()
 {
-    qDebug() << "==== Childlist for Item:" << this << "====";
+    kDebug(300000) << "==== Childlist for Item:" << this << "====";
     if (childCount() > 0) {
         AbstractTreeItem *child;
         QList<AbstractTreeItem *>::const_iterator childIter = _childItems.constBegin();
         while (childIter != _childItems.constEnd()) {
             child = *childIter;
-            qDebug() << "Row:" << child->row() << child << child->data(0, Qt::DisplayRole);
+            kDebug(300000) << "Row:" << child->row() << child << child->data(0, Qt::DisplayRole);
             childIter++;
         }
     }
-    qDebug() << "==== End Of Childlist ====";
+    kDebug(300000) << "==== End Of Childlist ====";
 }
 
 
@@ -389,7 +389,7 @@ QModelIndex TreeModel::index(int row, int column, const QModelIndex &parent) con
 QModelIndex TreeModel::indexByItem(AbstractTreeItem *item) const
 {
     if (item == 0) {
-        qWarning() << "TreeModel::indexByItem(AbstractTreeItem *item) received NULL-Pointer";
+        kWarning(300000) << "TreeModel::indexByItem(AbstractTreeItem *item) received NULL-Pointer";
         return QModelIndex();
     }
 
@@ -404,7 +404,7 @@ QModelIndex TreeModel::parent(const QModelIndex &index) const
 {
     if (!index.isValid()) {
         // ModelTest does this
-        // qWarning() << "TreeModel::parent(): has been asked for the rootItems Parent!";
+        // kWarning(300000) << "TreeModel::parent(): has been asked for the rootItems Parent!";
         return QModelIndex();
     }
 
@@ -532,7 +532,7 @@ void TreeModel::beginAppendChilds(int firstRow, int lastRow)
 {
     AbstractTreeItem *parentItem = qobject_cast<AbstractTreeItem *>(sender());
     if (!parentItem) {
-        qWarning() << "TreeModel::beginAppendChilds(): cannot append Children to unknown parent";
+        kWarning(300000) << "TreeModel::beginAppendChilds(): cannot append Children to unknown parent";
         return;
     }
 
@@ -549,7 +549,7 @@ void TreeModel::endAppendChilds()
 {
     AbstractTreeItem *parentItem = qobject_cast<AbstractTreeItem *>(sender());
     if (!parentItem) {
-        qWarning() << "TreeModel::endAppendChilds(): cannot append Children to unknown parent";
+        kWarning(300000) << "TreeModel::endAppendChilds(): cannot append Children to unknown parent";
         return;
     }
     Q_ASSERT(_aboutToRemoveOrInsert);
@@ -572,7 +572,7 @@ void TreeModel::beginRemoveChilds(int firstRow, int lastRow)
 {
     AbstractTreeItem *parentItem = qobject_cast<AbstractTreeItem *>(sender());
     if (!parentItem) {
-        qWarning() << "TreeModel::beginRemoveChilds(): cannot append Children to unknown parent";
+        kWarning(300000) << "TreeModel::beginRemoveChilds(): cannot append Children to unknown parent";
         return;
     }
 
@@ -596,7 +596,7 @@ void TreeModel::endRemoveChilds()
 {
     AbstractTreeItem *parentItem = qobject_cast<AbstractTreeItem *>(sender());
     if (!parentItem) {
-        qWarning() << "TreeModel::endRemoveChilds(): cannot remove Children from unknown parent";
+        kWarning(300000) << "TreeModel::endRemoveChilds(): cannot remove Children from unknown parent";
         return;
     }
 
@@ -622,7 +622,7 @@ void TreeModel::clear()
 
 void TreeModel::debug_rowsAboutToBeInserted(const QModelIndex &parent, int start, int end)
 {
-    qDebug() << "debug_rowsAboutToBeInserted" << parent << parent.internalPointer() << parent.data().toString() << rowCount(parent) << start << end;
+    kDebug(300000) << "debug_rowsAboutToBeInserted" << parent << parent.internalPointer() << parent.data().toString() << rowCount(parent) << start << end;
 }
 
 
@@ -632,13 +632,13 @@ void TreeModel::debug_rowsAboutToBeRemoved(const QModelIndex &parent, int start,
     parentItem = static_cast<AbstractTreeItem *>(parent.internalPointer());
     if (!parentItem)
         parentItem = rootItem;
-    qDebug() << "debug_rowsAboutToBeRemoved" << parent << parentItem << parent.data().toString() << rowCount(parent) << start << end;
+    kDebug(300000) << "debug_rowsAboutToBeRemoved" << parent << parentItem << parent.data().toString() << rowCount(parent) << start << end;
 
     QModelIndex child;
     for (int i = end; i >= start; i--) {
         child = parent.child(i, 0);
         Q_ASSERT(parentItem->child(i));
-        qDebug() << ">>>" << i << child << child.data().toString();
+        kDebug(300000) << ">>>" << i << child << child.data().toString();
     }
 }
 
@@ -649,32 +649,32 @@ void TreeModel::debug_rowsInserted(const QModelIndex &parent, int start, int end
     parentItem = static_cast<AbstractTreeItem *>(parent.internalPointer());
     if (!parentItem)
         parentItem = rootItem;
-    qDebug() << "debug_rowsInserted:" << parent << parentItem << parent.data().toString() << rowCount(parent) << start << end;
+    kDebug(300000) << "debug_rowsInserted:" << parent << parentItem << parent.data().toString() << rowCount(parent) << start << end;
 
     QModelIndex child;
     for (int i = start; i <= end; i++) {
         child = parent.child(i, 0);
         Q_ASSERT(parentItem->child(i));
-        qDebug() << "<<<" << i << child << child.data().toString();
+        kDebug(300000) << "<<<" << i << child << child.data().toString();
     }
 }
 
 
 void TreeModel::debug_rowsRemoved(const QModelIndex &parent, int start, int end)
 {
-    qDebug() << "debug_rowsRemoved" << parent << parent.internalPointer() << parent.data().toString() << rowCount(parent) << start << end;
+    kDebug(300000) << "debug_rowsRemoved" << parent << parent.internalPointer() << parent.data().toString() << rowCount(parent) << start << end;
 }
 
 
 void TreeModel::debug_dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
-    qDebug() << "debug_dataChanged" << topLeft << bottomRight;
+    kDebug(300000) << "debug_dataChanged" << topLeft << bottomRight;
     QStringList displayData;
     for (int row = topLeft.row(); row <= bottomRight.row(); row++) {
         displayData = QStringList();
         for (int column = topLeft.column(); column <= bottomRight.column(); column++) {
             displayData << data(topLeft.sibling(row, column), Qt::DisplayRole).toString();
         }
-        qDebug() << "  row:" << row << displayData;
+        kDebug(300000) << "  row:" << row << displayData;
     }
 }

@@ -28,7 +28,6 @@
 #include "ctcpevent.h"
 #include "ircevent.h"
 #include "ircuser.h"
-#include "logger.h"
 #include "messageevent.h"
 #include "netsplit.h"
 #include "quassel.h"
@@ -50,11 +49,11 @@ bool CoreSessionEventProcessor::checkParamCount(IrcEvent *e, int minParams)
 {
     if (e->params().count() < minParams) {
         if (e->type() == EventManager::IrcEventNumeric) {
-            qWarning() << "Command " << static_cast<IrcEventNumeric *>(e)->number() << " requires " << minParams << "params, got: " << e->params();
+            kWarning(300000) << "Command " << static_cast<IrcEventNumeric *>(e)->number() << " requires " << minParams << "params, got: " << e->params();
         }
         else {
             QString name = coreSession()->eventManager()->enumName(e->type());
-            qWarning() << qPrintable(name) << "requires" << minParams << "params, got:" << e->params();
+            kWarning(300000) << qPrintable(name) << "requires" << minParams << "params, got:" << e->params();
         }
         e->stop();
         return false;
@@ -113,7 +112,7 @@ void CoreSessionEventProcessor::processIrcEventAuthenticate(IrcEvent *e)
         return;
 
     if (e->params().at(0) != "+") {
-        qWarning() << "Invalid AUTHENTICATE" << e;
+        kWarning(300000) << "Invalid AUTHENTICATE" << e;
         return;
     }
 
@@ -248,7 +247,7 @@ void CoreSessionEventProcessor::processIrcEventMode(IrcEvent *e)
                 if (paramOffset < e->params().count()) {
                     IrcUser *ircUser = e->network()->ircUser(e->params()[paramOffset]);
                     if (!ircUser) {
-                        qWarning() << Q_FUNC_INFO << "Unknown IrcUser:" << e->params()[paramOffset];
+                        kWarning(300000) << Q_FUNC_INFO << "Unknown IrcUser:" << e->params()[paramOffset];
                     }
                     else {
                         if (add) {
@@ -269,7 +268,7 @@ void CoreSessionEventProcessor::processIrcEventMode(IrcEvent *e)
                     }
                 }
                 else {
-                    qWarning() << "Received MODE with too few parameters:" << e->params();
+                    kWarning(300000) << "Received MODE with too few parameters:" << e->params();
                 }
                 ++paramOffset;
             }
@@ -282,7 +281,7 @@ void CoreSessionEventProcessor::processIrcEventMode(IrcEvent *e)
                         value = e->params()[paramOffset];
                     }
                     else {
-                        qWarning() << "Received MODE with too few parameters:" << e->params();
+                        kWarning(300000) << "Received MODE with too few parameters:" << e->params();
                     }
                     ++paramOffset;
                 }
@@ -332,7 +331,7 @@ void CoreSessionEventProcessor::lateProcessIrcEventNick(IrcEvent *e)
     if (checkParamCount(e, 1)) {
         IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
         if (!ircuser) {
-            qWarning() << Q_FUNC_INFO << "Unknown IrcUser!";
+            kWarning(300000) << Q_FUNC_INFO << "Unknown IrcUser!";
             return;
         }
         QString newnick = e->params().at(0);
@@ -352,7 +351,7 @@ void CoreSessionEventProcessor::lateProcessIrcEventPart(IrcEvent *e)
     if (checkParamCount(e, 1)) {
         IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
         if (!ircuser) {
-            qWarning() << Q_FUNC_INFO<< "Unknown IrcUser!";
+            kWarning(300000) << Q_FUNC_INFO<< "Unknown IrcUser!";
             return;
         }
         QString channel = e->params().at(0);
@@ -786,7 +785,7 @@ void CoreSessionEventProcessor::processIrcEvent353(IrcEvent *e)
 
     IrcChannel *channel = e->network()->ircChannel(channelname);
     if (!channel) {
-        qWarning() << Q_FUNC_INFO << "Received unknown target channel:" << channelname;
+        kWarning(300000) << Q_FUNC_INFO << "Received unknown target channel:" << channelname;
         return;
     }
 
@@ -923,7 +922,7 @@ void CoreSessionEventProcessor::handleEarlyNetsplitJoin(Network *net, const QStr
 {
     IrcChannel *ircChannel = net->ircChannel(channel);
     if (!ircChannel) {
-        qDebug() << "handleEarlyNetsplitJoin(): channel " << channel << " invalid";
+        kDebug(300000) << "handleEarlyNetsplitJoin(): channel " << channel << " invalid";
         return;
     }
     QList<NetworkEvent *> events;
@@ -1019,7 +1018,7 @@ void CoreSessionEventProcessor::handleCtcpDcc(CtcpEvent *e)
 {
     // DCC support is unfinished, experimental and potentially dangerous, so make it opt-in
     if (!Quassel::isOptionSet("enable-experimental-dcc")) {
-        quInfo() << "DCC disabled, start core with --enable-experimental-dcc if you really want to try it out";
+        kDebug(30000) << "DCC disabled, start core with --enable-experimental-dcc if you really want to try it out";
         return;
     }
 
@@ -1030,7 +1029,7 @@ void CoreSessionEventProcessor::handleCtcpDcc(CtcpEvent *e)
         QString cmd = params[0].toUpper();
         if (cmd == "SEND") {
             if (params.count() < 4) {
-                qWarning() << "Invalid DCC SEND request:" << e;  // TODO emit proper error to client
+                kWarning(300000) << "Invalid DCC SEND request:" << e;  // TODO emit proper error to client
                 return;
             }
             QString filename = params[1];
@@ -1040,7 +1039,7 @@ void CoreSessionEventProcessor::handleCtcpDcc(CtcpEvent *e)
             QString numIp = params[2]; // this is either IPv4 as a 32 bit value, or IPv6 (which always contains a colon)
             if (numIp.contains(':')) { // IPv6
                 if (!address.setAddress(numIp)) {
-                    qWarning() << "Invalid IPv6:" << numIp;
+                    kWarning(300000) << "Invalid IPv6:" << numIp;
                     return;
                 }
             }
@@ -1053,7 +1052,7 @@ void CoreSessionEventProcessor::handleCtcpDcc(CtcpEvent *e)
                 return;
             }
             if (port < 1024) {
-                qWarning() << "Privileged port requested:" << port; // FIXME ask user if this is ok
+                kWarning(300000) << "Privileged port requested:" << port; // FIXME ask user if this is ok
             }
 
 

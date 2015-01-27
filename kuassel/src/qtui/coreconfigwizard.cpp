@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QDebug>
+#include <KDebug>
 #include <QAbstractButton>
 #include <QFormLayout>
 #include <QSpinBox>
@@ -252,7 +252,7 @@ QVariantMap StorageSelectionPage::connectionProperties() const
             properties[key] = def;
         }
     }
-    qDebug() << properties;
+    kDebug(300000) << properties;
 
 //   QVariantMap properties = _backends[backend].toMap()["ConnectionProperties"].toMap();
 //   if(!properties.isEmpty() && _connectionBox) {

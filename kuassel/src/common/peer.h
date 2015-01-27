@@ -24,6 +24,8 @@
 #include <QAbstractSocket>
 #include <QPointer>
 
+#include <KDebug>
+
 #include "authhandler.h"
 #include "protocol.h"
 #include "signalproxy.h"
@@ -94,7 +96,7 @@ void Peer::handle(const T &protoMessage)
     switch(protoMessage.handler()) {
         case Protocol::SignalProxy:
             if (!signalProxy()) {
-                qWarning() << Q_FUNC_INFO << "Cannot handle message without a SignalProxy!";
+                kWarning(300000) << Q_FUNC_INFO << "Cannot handle message without a SignalProxy!";
                 return;
             }
             signalProxy()->handle(this, protoMessage);
@@ -102,14 +104,14 @@ void Peer::handle(const T &protoMessage)
 
         case Protocol::AuthHandler:
             if (!authHandler()) {
-                qWarning() << Q_FUNC_INFO << "Cannot handle auth messages without an active AuthHandler!";
+                kWarning(300000) << Q_FUNC_INFO << "Cannot handle auth messages without an active AuthHandler!";
                 return;
             }
             authHandler()->handle(protoMessage);
             break;
 
         default:
-            qWarning() << Q_FUNC_INFO << "Unknown handler for protocol message!";
+            kWarning(300000) << Q_FUNC_INFO << "Unknown handler for protocol message!";
             return;
     }
 }

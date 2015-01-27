@@ -114,7 +114,7 @@ void BufferModel::switchToBufferIndex(const QModelIndex &bufferIdx)
         return;
     }
 
-    qWarning() << "BufferModel::switchToBufferIndex(const QModelIndex &):" << bufferIdx << "does not belong to BufferModel or NetworkModel";
+    kWarning(300000) << "BufferModel::switchToBufferIndex(const QModelIndex &):" << bufferIdx << "does not belong to BufferModel or NetworkModel";
 }
 
 
@@ -125,7 +125,7 @@ void BufferModel::switchToOrJoinBuffer(NetworkId networkId, const QString &name,
         QModelIndex targetIdx = Client::networkModel()->bufferIndex(bufId);
         switchToBuffer(bufId);
         if (!targetIdx.data(NetworkModel::ItemActiveRole).toBool()) {
-            qDebug() << "switchToOrJoinBuffer failed to switch even though bufId:" << bufId << "is valid.";
+            kDebug(300000) << "switchToOrJoinBuffer failed to switch even though bufId:" << bufId << "is valid.";
             Client::userInput(BufferInfo::fakeStatusBuffer(networkId), QString(isQuery ? "/QUERY %1" : "/JOIN %1").arg(name));
         }
     }
@@ -139,7 +139,7 @@ void BufferModel::switchToOrJoinBuffer(NetworkId networkId, const QString &name,
 void BufferModel::debug_currentChanged(QModelIndex current, QModelIndex previous)
 {
     Q_UNUSED(previous);
-    qDebug() << "Switched current Buffer: " << current << current.data().toString() << "Buffer:" << current.data(NetworkModel::BufferIdRole).value<BufferId>();
+    kDebug(300000) << "Switched current Buffer: " << current << current.data().toString() << "Buffer:" << current.data(NetworkModel::BufferIdRole).value<BufferId>();
 }
 
 

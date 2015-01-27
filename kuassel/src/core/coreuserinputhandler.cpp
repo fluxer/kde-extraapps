@@ -794,7 +794,7 @@ void CoreUserInputHandler::putPrivmsg(const QByteArray &target, const QByteArray
 
             maxSplitPos = splitPos - 1;
             if (maxSplitPos <= 0) { // this should never happen, but who knows...
-                qWarning() << i18n("[Error] Could not encrypt your message: %1").arg(message.data());
+                kWarning(300000) << i18n("[Error] Could not encrypt your message: %1").arg(message.data());
                 return;
             }
             continue; // we never come back here for !encrypted!

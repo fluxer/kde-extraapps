@@ -144,10 +144,6 @@ if (HAVE_SSL)
 endif()
 add_feature_info("SSL support in Qt" HAVE_SSL "Use secure network connections")
 
-# Check for syslog support
-check_include_file(syslog.h HAVE_SYSLOG)
-add_feature_info("syslog.h" HAVE_SYSLOG "Provide support for logging to the syslog")
-
 # Various settings
 ##################
 

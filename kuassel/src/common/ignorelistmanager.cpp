@@ -21,7 +21,7 @@
 #include "ignorelistmanager.h"
 
 #include <QtCore>
-#include <QDebug>
+#include <KDebug>
 #include <QStringList>
 
 INIT_SYNCABLE_OBJECT(IgnoreListManager)
@@ -91,7 +91,7 @@ void IgnoreListManager::initSetIgnoreList(const QVariantMap &ignoreList)
     int count = ignoreRule.count();
     if (count != scopeRule.count() || count != isRegEx.count() ||
         count != scope.count() || count != strictness.count() || count != ignoreType.count() || count != isActive.count()) {
-        qWarning() << "Corrupted IgnoreList settings! (Count missmatch)";
+        kWarning(300000) << "Corrupted IgnoreList settings! (Count missmatch)";
         return;
     }
 
@@ -144,14 +144,14 @@ IgnoreListManager::StrictnessType IgnoreListManager::_match(const QString &msgCo
             else
                 str = msgSender;
 
-//      qDebug() << "IgnoreListManager::match: ";
-//      qDebug() << "string: " << str;
-//      qDebug() << "pattern: " << ruleRx.pattern();
-//      qDebug() << "scopeRule: " << item.scopeRule;
-//      qDebug() << "now testing";
+//      kDebug(300000) << "IgnoreListManager::match: ";
+//      kDebug(300000) << "string: " << str;
+//      kDebug(300000) << "pattern: " << ruleRx.pattern();
+//      kDebug(300000) << "scopeRule: " << item.scopeRule;
+//      kDebug(300000) << "now testing";
             if ((!item.isRegEx && item.regEx.exactMatch(str)) ||
                 (item.isRegEx && item.regEx.indexIn(str) != -1)) {
-//        qDebug() << "MATCHED!";
+//        kDebug(300000) << "MATCHED!";
                 return item.strictness;
             }
         }

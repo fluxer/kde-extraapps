@@ -23,6 +23,8 @@
 #include <QTcpSocket>
 #include <QTimer>
 
+#include <KDebug>
+
 #include <zlib.h>
 
 const int maxBufferSize = 64 * 1024 * 1024; // protect us from zip bombs
@@ -85,21 +87,21 @@ bool Compressor::initStreams()
     _inflater = new z_stream;
     memset(_inflater, 0, sizeof(z_stream));
     if (Z_OK != inflateInit(_inflater)) {
-        qWarning() << "Could not initialize the inflate stream!";
+        kWarning(300000) << "Could not initialize the inflate stream!";
         return false;
     }
 
     _deflater = new z_stream;
     memset(_deflater, 0, sizeof(z_stream));
     if (Z_OK != deflateInit(_deflater, zlevel)) {
-        qWarning() << "Could not intialize the deflate stream!";
+        kWarning(300000) << "Could not intialize the deflate stream!";
         return false;
     }
 
     _inputBuffer.reserve(ioBufferSize); // pre-allocate space
     _outputBuffer.resize(ioBufferSize); // not a typo; we never change the size of this buffer anyway (we *do* for _inputBuffer!)
 
-    qDebug() << "Enabling compression...";
+    kDebug(300000) << "Enabling compression...";
 
     return true;
 }
@@ -198,21 +200,21 @@ void Compressor::readData()
             case Z_DATA_ERROR:
             case Z_MEM_ERROR:
             case Z_STREAM_ERROR:
-                qWarning() << "Error while decompressing stream:" << status;
+                kWarning(300000) << "Error while decompressing stream:" << status;
                 emit error(StreamError);
                 return;
             case Z_BUF_ERROR:
                 // means that we need more input to continue, so this is not an actual error
                 return;
             case Z_STREAM_END:
-                qWarning() << "Reached end of zlib stream!"; // this should really never happen
+                kWarning(300000) << "Reached end of zlib stream!"; // this should really never happen
                 return;
             default:
                 // just try to get more out of the stream
                 break;
         }
     }
-    //qDebug() << "inflate in:" << _inflater->total_in << "out:" << _inflater->total_out << "ratio:" << (double)_inflater->total_in/_inflater->total_out;
+    //kDebug(300000) << "inflate in:" << _inflater->total_in << "out:" << _inflater->total_out << "ratio:" << (double)_inflater->total_in/_inflater->total_out;
 }
 
 
@@ -233,7 +235,7 @@ void Compressor::writeData()
         _deflater->avail_out = ioBufferSize;
         status = deflate(_deflater, Z_PARTIAL_FLUSH);
         if (status != Z_OK && status != Z_BUF_ERROR) {
-            qWarning() << "Error while compressing stream:" << status;
+            kWarning(300000) << "Error while compressing stream:" << status;
             emit error(StreamError);
             return;
         }
@@ -242,20 +244,20 @@ void Compressor::writeData()
             continue; // nothing to write here
 
         if (!_socket->write(_outputBuffer.constData(), ioBufferSize - _deflater->avail_out)) {
-            qWarning() << "Error while writing to socket:" << _socket->errorString();
+            kWarning(300000) << "Error while writing to socket:" << _socket->errorString();
             emit error(DeviceError);
             return;
         }
     } while (_deflater->avail_out == 0); // the output buffer being full is the only reason we should have to loop here!
 
     if (_deflater->avail_in > 0) {
-        qWarning() << "Oops, something weird happened: data still remaining in write buffer!";
+        kWarning(300000) << "Oops, something weird happened: data still remaining in write buffer!";
         emit error(StreamError);
     }
 
     _writeBuffer.resize(0);
 
-    //qDebug() << "deflate in:" << _deflater->total_in << "out:" << _deflater->total_out << "ratio:" << (double)_deflater->total_out/_deflater->total_in;
+    //kDebug(300000) << "deflate in:" << _deflater->total_in << "out:" << _deflater->total_out << "ratio:" << (double)_deflater->total_out/_deflater->total_in;
 }
 
 

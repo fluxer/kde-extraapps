@@ -27,7 +27,7 @@
 #  include <cxxabi.h>
 #  include <QFile>
 #  include <QTextStream>
-#  include <QDebug>
+#  include <KDebug>
 #endif
 
 void Quassel::logBacktrace(const QString &filename)
@@ -90,7 +90,7 @@ void Quassel::logBacktrace(const QString &filename)
                             .arg(funcName);
 
         dumpStream << debugLine << "\n";
-        qDebug() << qPrintable(debugLine);
+        kDebug(300000) << qPrintable(debugLine);
     }
     dumpFile.close();
 #endif /* BUILD_CRASHHANDLER */

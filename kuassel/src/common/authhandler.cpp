@@ -20,6 +20,8 @@
 
 #include <QHostAddress>
 
+#include <KDebug>
+
 #include "authhandler.h"
 
 AuthHandler::AuthHandler(QObject *parent)
@@ -81,7 +83,7 @@ void AuthHandler::onSocketDisconnected()
 
 void AuthHandler::invalidMessage()
 {
-    qWarning() << Q_FUNC_INFO << "No handler for message!";
+    kWarning(300000) << Q_FUNC_INFO << "No handler for message!";
 }
 
 

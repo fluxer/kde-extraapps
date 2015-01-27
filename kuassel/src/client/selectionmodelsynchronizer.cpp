@@ -23,7 +23,7 @@
 #include <QAbstractItemModel>
 #include <QAbstractProxyModel>
 
-#include <QDebug>
+#include <KDebug>
 
 SelectionModelSynchronizer::SelectionModelSynchronizer(QAbstractItemModel *parent)
     : QObject(parent),
@@ -58,7 +58,7 @@ bool SelectionModelSynchronizer::checkBaseModel(QItemSelectionModel *selectionMo
 void SelectionModelSynchronizer::synchronizeSelectionModel(QItemSelectionModel *selectionModel)
 {
     if (!checkBaseModel(selectionModel)) {
-        qWarning() << "cannot Synchronize SelectionModel" << selectionModel << "which has a different baseModel()";
+        kWarning(300000) << "cannot Synchronize SelectionModel" << selectionModel << "which has a different baseModel()";
         return;
     }
 

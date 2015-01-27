@@ -98,7 +98,7 @@ void SessionThread::addClientToSession(QObject *peer)
         return;
     }
 
-    qWarning() << "SessionThread::addClient() received invalid peer!" << peer;
+    kWarning(300000) << "SessionThread::addClient() received invalid peer!" << peer;
 }
 
 

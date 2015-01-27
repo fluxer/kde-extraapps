@@ -158,7 +158,7 @@ void ClientAuthHandler::onSocketDisconnected()
 void ClientAuthHandler::onSocketConnected()
 {
     if (_peer) {
-        qWarning() << Q_FUNC_INFO << "Peer already exists!";
+        kWarning(300000) << Q_FUNC_INFO << "Peer already exists!";
         return;
     }
 
@@ -195,7 +195,7 @@ void ClientAuthHandler::onSocketConnected()
 
     // If we arrive here, it's the second connection attempt, meaning probing was not successful -> enable legacy support
 
-    qDebug() << "Legacy core detected, switching to compatibility mode";
+    kDebug(300000) << "Legacy core detected, switching to compatibility mode";
 
     RemotePeer *peer = PeerFactory::createPeer(PeerFactory::ProtoDescriptor(Protocol::LegacyProtocol, 0), this, socket(), Compressor::NoCompression, this);
     // Only needed for the legacy peer, as all others check the protocol version before instantiation
@@ -232,7 +232,7 @@ void ClientAuthHandler::onReadyRead()
 
     RemotePeer *peer = PeerFactory::createPeer(PeerFactory::ProtoDescriptor(type, protoFeatures), this, socket(), level, this);
     if (!peer) {
-        qWarning() << "No valid protocol supported for this core!";
+        kWarning(300000) << "No valid protocol supported for this core!";
         emit errorPopup(i18n("<b>Incompatible Quassel Core!</b><br>"
                            "None of the protocols this client speaks are supported by the core you are trying to connect to."));
 
@@ -259,7 +259,7 @@ void ClientAuthHandler::onProtocolVersionMismatch(int actual, int expected)
 
 void ClientAuthHandler::setPeer(RemotePeer *peer)
 {
-    qDebug().nospace() << "Using " << qPrintable(peer->protocolName()) << "...";
+    kDebug(300000).nospace() << "Using " << qPrintable(peer->protocolName()) << "...";
 
     _peer = peer;
     connect(_peer, SIGNAL(transferProgress(int,int)), SIGNAL(transferProgress(int,int)));
@@ -408,7 +408,7 @@ void ClientAuthHandler::checkAndEnableSsl(bool coreSupportsSsl)
         Q_ASSERT(sslSocket);
         connect(sslSocket, SIGNAL(encrypted()), SLOT(onSslSocketEncrypted()));
         connect(sslSocket, SIGNAL(sslErrors(QList<QSslError>)), SLOT(onSslErrors()));
-        qDebug() << "Starting encryption...";
+        kDebug(300000) << "Starting encryption...";
         sslSocket->flush();
         sslSocket->startClientEncryption();
     }

@@ -175,7 +175,7 @@ void CoreConnection::solidNetworkStatusChanged(Solid::Networking::Status status)
     switch (status) {
     case Solid::Networking::Unknown:
     case Solid::Networking::Connected:
-        //qDebug() << "Solid: Network status changed to connected or unknown";
+        //kDebug(300000) << "Solid: Network status changed to connected or unknown";
         if (state() == Disconnected) {
             if (_wantReconnect && s.autoReconnect()) {
                 reconnectToCore();
@@ -370,13 +370,13 @@ bool CoreConnection::connectToCore(AccountId accId)
 void CoreConnection::connectToCurrentAccount()
 {
     if (_authHandler) {
-        qWarning() << Q_FUNC_INFO << "Already connected!";
+        kWarning(300000) << Q_FUNC_INFO << "Already connected!";
         return;
     }
 
     if (currentAccount().isInternal()) {
         if (Quassel::runMode() != Quassel::Monolithic) {
-            qWarning() << "Cannot connect to internal core in client-only mode!";
+            kWarning(300000) << "Cannot connect to internal core in client-only mode!";
             return;
         }
         emit startInternalCore();

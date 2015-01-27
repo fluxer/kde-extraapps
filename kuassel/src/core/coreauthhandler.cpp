@@ -25,7 +25,6 @@
 #endif
 
 #include "core.h"
-#include "logger.h"
 
 using namespace Protocol;
 
@@ -61,7 +60,7 @@ void CoreAuthHandler::onReadyRead()
 
         if ((magic & 0xffffff00) != Protocol::magic) {
             // no magic, assume legacy protocol
-            qDebug() << "Legacy client detected, switching to compatibility mode";
+            kDebug(300000) << "Legacy client detected, switching to compatibility mode";
             _legacy = true;
             RemotePeer *peer = PeerFactory::createPeer(PeerFactory::ProtoDescriptor(Protocol::LegacyProtocol, 0), this, socket(), Compressor::NoCompression, this);
             connect(peer, SIGNAL(protocolVersionMismatch(int,int)), SLOT(onProtocolVersionMismatch(int,int)));
@@ -120,7 +119,7 @@ void CoreAuthHandler::onReadyRead()
 
 void CoreAuthHandler::setPeer(RemotePeer *peer)
 {
-    qDebug().nospace() << "Using " << qPrintable(peer->protocolName()) << "...";
+    kDebug(300000).nospace() << "Using " << qPrintable(peer->protocolName()) << "...";
 
     _peer = peer;
     disconnect(socket(), SIGNAL(readyRead()), this, SLOT(onReadyRead()));
@@ -129,7 +128,7 @@ void CoreAuthHandler::setPeer(RemotePeer *peer)
 // only in compat mode
 void CoreAuthHandler::onProtocolVersionMismatch(int actual, int expected)
 {
-    qWarning() << qPrintable(i18n("Client")) << _peer->description() << qPrintable(i18n("too old, rejecting."));
+    kWarning(300000) << qPrintable(i18n("Client")) << _peer->description() << qPrintable(i18n("too old, rejecting."));
     QString errorString = i18n("<b>Your Quassel Client is too old!</b><br>"
                              "This core needs at least client/core protocol version %1 (got: %2).<br>"
                              "Please consider upgrading your client.").arg(expected, actual);
@@ -141,7 +140,7 @@ void CoreAuthHandler::onProtocolVersionMismatch(int actual, int expected)
 bool CoreAuthHandler::checkClientRegistered()
 {
     if (!_clientRegistered) {
-        qWarning() << qPrintable(i18n("Client")) << qPrintable(socket()->peerAddress().toString()) << qPrintable(i18n("did not send a registration message before trying to login, rejecting."));
+        kWarning(300000) << qPrintable(i18n("Client")) << qPrintable(socket()->peerAddress().toString()) << qPrintable(i18n("did not send a registration message before trying to login, rejecting."));
         _peer->dispatch(ClientDenied(i18n("<b>Client not initialized!</b><br>You need to send a registration message before trying to login.")));
         _peer->close();
         return false;
@@ -212,7 +211,7 @@ void CoreAuthHandler::handle(const Login &msg)
     }
     _peer->dispatch(LoginSuccess());
 
-    quInfo() << qPrintable(i18n("Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3).").arg(socket()->peerAddress().toString(), msg.user, QString::number(uid.toInt())));
+    kDebug(30000) << qPrintable(i18n("Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3).").arg(socket()->peerAddress().toString(), msg.user, QString::number(uid.toInt())));
 
     disconnect(socket(), 0, this, 0);
     disconnect(_peer, 0, this, 0);
@@ -231,7 +230,7 @@ void CoreAuthHandler::startSsl()
     QSslSocket *sslSocket = qobject_cast<QSslSocket *>(socket());
     Q_ASSERT(sslSocket);
 
-    qDebug() << qPrintable(i18n("Starting encryption for Client:"))  << _peer->description();
+    kDebug(300000) << qPrintable(i18n("Starting encryption for Client:"))  << _peer->description();
     connect(sslSocket, SIGNAL(sslErrors(const QList<QSslError> &)), SLOT(onSslErrors()));
     sslSocket->flush(); // ensure that the write cache is flushed before we switch to ssl (bug 682)
     sslSocket->startServerEncryption();

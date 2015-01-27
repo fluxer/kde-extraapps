@@ -22,6 +22,7 @@
 #include <QThread>
 
 #include <KLocale>
+#include <KDebug>
 
 #include "internalpeer.h"
 
@@ -83,7 +84,7 @@ void InternalPeer::close(const QString &reason)
 {
     // FIXME
     Q_UNUSED(reason)
-    qWarning() << "closing not implemented!";
+    kWarning(300000) << "closing not implemented!";
 }
 
 
@@ -115,14 +116,14 @@ void InternalPeer::setSignalProxy(::SignalProxy *proxy)
         return;
     }
 
-    qWarning() << Q_FUNC_INFO << "Changing the SignalProxy is not supported!";
+    kWarning(300000) << Q_FUNC_INFO << "Changing the SignalProxy is not supported!";
 }
 
 
 void InternalPeer::setPeer(InternalPeer *peer)
 {
     if (_peer) {
-        qWarning() << Q_FUNC_INFO << "Peer already set, ignoring!";
+        kWarning(300000) << Q_FUNC_INFO << "Peer already set, ignoring!";
         return;
     }
     _peer = peer;
@@ -169,7 +170,7 @@ template<class T>
 void InternalPeer::dispatch(EventType eventType, const T &msg)
 {
     if (!_peer) {
-        qWarning() << Q_FUNC_INFO << "Cannot dispatch a message without a peer!";
+        kWarning(300000) << Q_FUNC_INFO << "Cannot dispatch a message without a peer!";
         return;
     }
 
@@ -205,7 +206,7 @@ void InternalPeer::customEvent(QEvent *event)
         }
 
         default:
-            qWarning() << Q_FUNC_INFO << "Received unknown custom event:" << event->type();
+            kWarning(300000) << Q_FUNC_INFO << "Received unknown custom event:" << event->type();
             return;
     }
 

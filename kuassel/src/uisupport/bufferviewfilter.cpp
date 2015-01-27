@@ -394,7 +394,7 @@ bool BufferViewFilter::filterAcceptsRow(int source_row, const QModelIndex &sourc
     QModelIndex child = sourceModel()->index(source_row, 0, source_parent);
 
     if (!child.isValid()) {
-        qWarning() << "filterAcceptsRow has been called with an invalid Child";
+        kWarning(300000) << "filterAcceptsRow has been called with an invalid Child";
         return false;
     }
 

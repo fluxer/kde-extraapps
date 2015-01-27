@@ -119,7 +119,7 @@ int SessionSettings::sessionAge()
     }
     else {
         // no int saved, delete session
-        //qDebug() << QString("deleting invalid session %1 (invalid session age found)").arg(_sessionId);
+        //kDebug(300000) << QString("deleting invalid session %1 (invalid session age found)").arg(_sessionId);
         removeSession();
     }
     return 10;

@@ -21,7 +21,7 @@
 #include "util.h"
 
 #include <QCoreApplication>
-#include <QDebug>
+#include <KDebug>
 #include <QFile>
 #include <QTextCodec>
 
@@ -118,7 +118,7 @@ QString decodeString(const QByteArray &input, QTextCodec *codec)
     }
     if (isUtf8 && cnt == 0) {
         QString s = QString::fromUtf8(input);
-        //qDebug() << "Detected utf8:" << s;
+        //kDebug(300000) << "Detected utf8:" << s;
         return s;
     }
     //QTextCodec *codec = QTextCodec::codecForName(encoding.toLatin1());

@@ -445,7 +445,7 @@ void InputWidget::updateNickSelector() const
 
     const Identity *identity = Client::identity(net->identity());
     if (!identity) {
-        qWarning() << "InputWidget::updateNickSelector(): can't find Identity for Network" << net->networkId() << "IdentityId:" << net->identity();
+        kWarning(300000) << "InputWidget::updateNickSelector(): can't find Identity for Network" << net->networkId() << "IdentityId:" << net->identity();
         return;
     }
 

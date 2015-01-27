@@ -115,7 +115,7 @@ QVariant ChatItem::data(int role) const
 {
     QModelIndex index = model()->index(row(), column());
     if (!index.isValid()) {
-        qWarning() << "ChatItem::data(): model index is invalid!" << index;
+        kWarning(300000) << "ChatItem::data(): model index is invalid!" << index;
         return QVariant();
     }
     return model()->data(index, role);
@@ -651,8 +651,8 @@ void ContentsChatItem::doLayout(QTextLayout *layout) const
             line.setNumColumns(i);
         }
         if (num != line.textLength()) {
-            qWarning() << "WARNING: Layout engine couldn't workaround Qt bug 238249, please report!";
-            // qDebug() << num << line.textLength() << t.mid(line.textStart(), line.textLength()) << t.mid(line.textStart() + line.textLength());
+            kWarning(300000) << "WARNING: Layout engine couldn't workaround Qt bug 238249, please report!";
+            // kDebug(300000) << num << line.textLength() << t.mid(line.textStart(), line.textLength()) << t.mid(line.textStart() + line.textLength());
         }
 
         line.setPosition(QPointF(0, h));

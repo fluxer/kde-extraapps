@@ -22,7 +22,6 @@
 
 #include <QtSql>
 
-#include "logger.h"
 #include "network.h"
 #include "quassel.h"
 

@@ -169,7 +169,7 @@ void HighlightSettingsPage::emptyTable()
 {
     // ui.highlight and highlightList should have the same size, but just to make sure.
     if (ui.highlightTable->rowCount() != highlightList.size()) {
-        qDebug() << "something is wrong: ui.highlight and highlightList don't have the same size!";
+        kDebug(300000) << "something is wrong: ui.highlight and highlightList don't have the same size!";
     }
     while (ui.highlightTable->rowCount()) {
         ui.highlightTable->removeRow(0);

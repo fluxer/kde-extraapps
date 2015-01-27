@@ -300,7 +300,7 @@ bool Identity::operator==(const Identity &other) const
         QMetaProperty metaProp = staticMetaObject.property(idx);
         Q_ASSERT(metaProp.isValid());
         QVariant v1 = this->property(metaProp.name());
-        QVariant v2 = other.property(metaProp.name()); // qDebug() << v1 << v2;
+        QVariant v2 = other.property(metaProp.name()); // kDebug(300000) << v1 << v2;
         // QVariant cannot compare custom types, so we need to check for this special case
         if (QString(v1.typeName()) == "IdentityId") {
             if (v1.value<IdentityId>() != v2.value<IdentityId>()) return false;

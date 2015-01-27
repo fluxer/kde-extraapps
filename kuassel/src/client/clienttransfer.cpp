@@ -70,7 +70,7 @@ void ClientTransfer::dataReceived(PeerPtr, const QByteArray &data)
     if (!_file) {
         _file = new QFile(_savePath, this);
         if (!_file->open(QFile::WriteOnly|QFile::Truncate)) {
-            qWarning() << Q_FUNC_INFO << "Could not open file:" << _file->errorString();
+            kWarning(300000) << Q_FUNC_INFO << "Could not open file:" << _file->errorString();
             return;
         }
     }
@@ -79,7 +79,7 @@ void ClientTransfer::dataReceived(PeerPtr, const QByteArray &data)
         return;
 
     if (_file->write(data) < 0) {
-        qWarning() << Q_FUNC_INFO << "Could not write to file:" << _file->errorString();
+        kWarning(300000) << Q_FUNC_INFO << "Could not write to file:" << _file->errorString();
         return;
     }
 }

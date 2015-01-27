@@ -225,7 +225,7 @@ void Client::updateNetwork(const NetworkInfo &info)
 {
     Network *netptr = instance()->_networks.value(info.networkId, 0);
     if (!netptr) {
-        qWarning() << "Update for unknown network requested:" << info;
+        kWarning(300000) << "Update for unknown network requested:" << info;
         return;
     }
     netptr->requestSetNetworkInfo(info);
@@ -246,7 +246,7 @@ void Client::addNetwork(Network *net)
 void Client::coreNetworkCreated(NetworkId id)
 {
     if (_networks.contains(id)) {
-        qWarning() << "Creation of already existing network requested!";
+        kWarning(300000) << "Creation of already existing network requested!";
         return;
     }
     Network *net = new Network(id, this);
@@ -294,7 +294,7 @@ void Client::updateIdentity(IdentityId id, const QVariantMap &ser)
 {
     Identity *idptr = instance()->_identities.value(id, 0);
     if (!idptr) {
-        qWarning() << "Update for unknown identity requested:" << id;
+        kWarning(300000) << "Update for unknown identity requested:" << id;
         return;
     }
     idptr->requestUpdate(ser);
@@ -317,7 +317,7 @@ void Client::coreIdentityCreated(const Identity &other)
         emit identityCreated(other.id());
     }
     else {
-        qWarning() << i18n("Identity already exists in client!");
+        kWarning(300000) << i18n("Identity already exists in client!");
     }
 }
 

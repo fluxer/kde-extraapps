@@ -80,24 +80,24 @@ void CoreBufferSyncer::removeBuffer(BufferId bufferId)
 {
     BufferInfo bufferInfo = Core::getBufferInfo(_coreSession->user(), bufferId);
     if (!bufferInfo.isValid()) {
-        qWarning() << "CoreBufferSyncer::removeBuffer(): invalid BufferId:" << bufferId << "for User:" << _coreSession->user();
+        kWarning(300000) << "CoreBufferSyncer::removeBuffer(): invalid BufferId:" << bufferId << "for User:" << _coreSession->user();
         return;
     }
 
     if (bufferInfo.type() == BufferInfo::StatusBuffer) {
-        qWarning() << "CoreBufferSyncer::removeBuffer(): Status Buffers cannot be removed!";
+        kWarning(300000) << "CoreBufferSyncer::removeBuffer(): Status Buffers cannot be removed!";
         return;
     }
 
     if (bufferInfo.type() == BufferInfo::ChannelBuffer) {
         CoreNetwork *net = _coreSession->network(bufferInfo.networkId());
         if (!net) {
-            qWarning() << "CoreBufferSyncer::removeBuffer(): Received BufferInfo with unknown networkId!";
+            kWarning(300000) << "CoreBufferSyncer::removeBuffer(): Received BufferInfo with unknown networkId!";
             return;
         }
         IrcChannel *chan = net->ircChannel(bufferInfo.bufferName());
         if (chan) {
-            qWarning() << "CoreBufferSyncer::removeBuffer(): Unable to remove Buffer for joined Channel:" << bufferInfo.bufferName();
+            kWarning(300000) << "CoreBufferSyncer::removeBuffer(): Unable to remove Buffer for joined Channel:" << bufferInfo.bufferName();
             return;
         }
     }
@@ -110,12 +110,12 @@ void CoreBufferSyncer::renameBuffer(BufferId bufferId, QString newName)
 {
     BufferInfo bufferInfo = Core::getBufferInfo(_coreSession->user(), bufferId);
     if (!bufferInfo.isValid()) {
-        qWarning() << "CoreBufferSyncer::renameBuffer(): invalid BufferId:" << bufferId << "for User:" << _coreSession->user();
+        kWarning(300000) << "CoreBufferSyncer::renameBuffer(): invalid BufferId:" << bufferId << "for User:" << _coreSession->user();
         return;
     }
 
     if (bufferInfo.type() != BufferInfo::QueryBuffer) {
-        qWarning() << "CoreBufferSyncer::renameBuffer(): only QueryBuffers can be renamed" << bufferId;
+        kWarning(300000) << "CoreBufferSyncer::renameBuffer(): only QueryBuffers can be renamed" << bufferId;
         return;
     }
 
@@ -129,12 +129,12 @@ void CoreBufferSyncer::mergeBuffersPermanently(BufferId bufferId1, BufferId buff
     BufferInfo bufferInfo1 = Core::getBufferInfo(_coreSession->user(), bufferId1);
     BufferInfo bufferInfo2 = Core::getBufferInfo(_coreSession->user(), bufferId2);
     if (!bufferInfo1.isValid() || !bufferInfo2.isValid()) {
-        qWarning() << "CoreBufferSyncer::mergeBufferPermanently(): invalid BufferIds:" << bufferId1 << bufferId2 << "for User:" << _coreSession->user();
+        kWarning(300000) << "CoreBufferSyncer::mergeBufferPermanently(): invalid BufferIds:" << bufferId1 << bufferId2 << "for User:" << _coreSession->user();
         return;
     }
 
     if (bufferInfo1.type() != BufferInfo::QueryBuffer || bufferInfo2.type() != BufferInfo::QueryBuffer) {
-        qWarning() << "CoreBufferSyncer::mergeBufferPermanently(): only QueryBuffers can be merged!" << bufferId1 << bufferId2;
+        kWarning(300000) << "CoreBufferSyncer::mergeBufferPermanently(): only QueryBuffers can be merged!" << bufferId1 << bufferId2;
         return;
     }
 

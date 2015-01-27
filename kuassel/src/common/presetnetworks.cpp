@@ -76,14 +76,14 @@ NetworkInfo PresetNetworks::networkInfo(const QString &networkName)
             bool ssl = false;
             QStringList splitserver = server.split(':', QString::SkipEmptyParts);
             if (splitserver.count() != 2) {
-                qWarning() << "Invalid server entry in networks.conf:" << server;
+                kWarning(300000) << "Invalid server entry in networks.conf:" << server;
                 continue;
             }
             if (splitserver[1].at(0) == '+')
                 ssl = true;
             uint port = splitserver[1].toUInt();
             if (!port) {
-                qWarning() << "Invalid port entry in networks.conf:" << server;
+                kWarning(300000) << "Invalid port entry in networks.conf:" << server;
                 continue;
             }
             info.serverList << Network::Server(splitserver[0].trimmed(), port, QString(), ssl);

@@ -205,7 +205,7 @@ void NetworkModelController::handleExternalAction(ActionType type, QAction *acti
     Q_UNUSED(type);
     if (receiver() && method()) {
         if (!QMetaObject::invokeMethod(receiver(), method(), Q_ARG(QAction *, action)))
-            qWarning() << "NetworkModelActionController::handleExternalAction(): Could not invoke slot" << receiver() << method();
+            kWarning(300000) << "NetworkModelActionController::handleExternalAction(): Could not invoke slot" << receiver() << method();
     }
 }
 
@@ -229,7 +229,7 @@ void NetworkModelController::actionTriggered(QAction *action)
         else if (type & ExternalMask)
             handleExternalAction(type, action);
         else
-            qWarning() << "NetworkModelController::actionTriggered(): Unhandled action!";
+            kWarning(300000) << "NetworkModelController::actionTriggered(): Unhandled action!";
     }
 }
 
@@ -514,7 +514,7 @@ void NetworkModelController::handleNickAction(ActionType type, QAction *action)
             Client::ignoreListManager()->requestToggleIgnoreRule(action->property("ignoreRule").toString());
             break;
         default:
-            qWarning() << "Unhandled nick action";
+            kWarning(300000) << "Unhandled nick action";
         }
     }
 }

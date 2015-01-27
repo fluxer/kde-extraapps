@@ -147,12 +147,12 @@ void CoreNetwork::connectToIrc(bool reconnecting)
             _autoReconnectCount = autoReconnectRetries();
     }
     if (serverList().isEmpty()) {
-        qWarning() << "Server list empty, ignoring connect request!";
+        kWarning(300000) << "Server list empty, ignoring connect request!";
         return;
     }
     CoreIdentity *identity = identityPtr();
     if (!identity) {
-        qWarning() << "Invalid identity configures, ignoring connect request!";
+        kWarning(300000) << "Invalid identity configures, ignoring connect request!";
         return;
     }
 
@@ -432,7 +432,7 @@ void CoreNetwork::socketError(QAbstractSocket::SocketError error)
         return;
 
     _previousConnectionAttemptFailed = true;
-    qWarning() << qPrintable(i18n("Could not connect to %1 (%2)").arg(networkName(), socket.errorString()));
+    kWarning(300000) << qPrintable(i18n("Could not connect to %1 (%2)").arg(networkName(), socket.errorString()));
     emit connectionError(socket.errorString());
     displayMsg(Message::Error, BufferInfo::StatusBuffer, "", i18n("Connection failure: %1").arg(socket.errorString()));
     emitConnectionError(socket.errorString());
@@ -479,7 +479,7 @@ void CoreNetwork::socketInitialized()
     QString nick;
     if (identity->nicks().isEmpty()) {
         nick = "kuassel";
-        qWarning() << "CoreNetwork::socketInitialized(): no nicks supplied for identity Id" << identity->id();
+        kWarning(300000) << "CoreNetwork::socketInitialized(): no nicks supplied for identity Id" << identity->id();
     }
     else {
         nick = identity->nicks()[0];
@@ -788,7 +788,7 @@ void CoreNetwork::setAutoReconnectRetries(quint16 retries)
 void CoreNetwork::doAutoReconnect()
 {
     if (connectionState() != Network::Disconnected && connectionState() != Network::Reconnecting) {
-        qWarning() << "CoreNetwork::doAutoReconnect(): Cannot reconnect while not being disconnected!";
+        kWarning(300000) << "CoreNetwork::doAutoReconnect(): Cannot reconnect while not being disconnected!";
         return;
     }
     if (_autoReconnectCount > 0 || _autoReconnectCount == -1)
@@ -801,7 +801,7 @@ void CoreNetwork::sendPing()
 {
     uint now = QDateTime::currentDateTime().toTime_t();
     if (_pingCount != 0) {
-        qDebug() << "UserId:" << userId() << "Network:" << networkName() << "missed" << _pingCount << "pings."
+        kDebug(300000) << "UserId:" << userId() << "Network:" << networkName() << "missed" << _pingCount << "pings."
                  << "BA:" << socket.bytesAvailable() << "BTW:" << socket.bytesToWrite();
     }
     if ((int)_pingCount >= networkConfig()->maxPingCount() && now - _lastPingTime <= (uint)(_pingTimer.interval() / 1000) + 1) {
@@ -951,7 +951,7 @@ Network::Server CoreNetwork::usedServer() const
 void CoreNetwork::requestConnect() const
 {
     if (connectionState() != Disconnected) {
-        qWarning() << "Requesting connect while already being connected!";
+        kWarning(300000) << "Requesting connect while already being connected!";
         return;
     }
     QMetaObject::invokeMethod(const_cast<CoreNetwork *>(this), "connectToIrc", Qt::QueuedConnection);
@@ -961,7 +961,7 @@ void CoreNetwork::requestConnect() const
 void CoreNetwork::requestDisconnect() const
 {
     if (connectionState() == Disconnected) {
-        qWarning() << "Requesting disconnect while not being connected!";
+        kWarning(300000) << "Requesting disconnect while not being connected!";
         return;
     }
     userInputHandler()->handleQuit(BufferInfo(), QString());

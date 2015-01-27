@@ -13,7 +13,6 @@
 */
 
 #include "cipher.h"
-#include "logger.h"
 
 Cipher::Cipher()
 {

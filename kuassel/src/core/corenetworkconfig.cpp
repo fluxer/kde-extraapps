@@ -29,7 +29,7 @@ CoreNetworkConfig::CoreNetworkConfig(const QString &objectName, CoreSession *ses
     setAllowClientUpdates(true);
 
     if (!session) {
-        qWarning() << Q_FUNC_INFO << "No CoreSession set, cannot load network configuration!";
+        kWarning(300000) << Q_FUNC_INFO << "No CoreSession set, cannot load network configuration!";
         return;
     }
 
@@ -41,7 +41,7 @@ void CoreNetworkConfig::save()
 {
     CoreSession *session = qobject_cast<CoreSession *>(parent());
     if (!session) {
-        qWarning() << Q_FUNC_INFO << "No CoreSession set, cannot save network configuration!";
+        kWarning(300000) << Q_FUNC_INFO << "No CoreSession set, cannot save network configuration!";
         return;
     }
 

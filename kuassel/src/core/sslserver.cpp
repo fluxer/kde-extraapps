@@ -27,7 +27,8 @@
 #include <QDateTime>
 #include <QFile>
 
-#include "logger.h"
+#include <KDebug>
+
 #include "quassel.h"
 
 #ifdef HAVE_SSL
@@ -39,7 +40,7 @@ SslServer::SslServer(QObject *parent)
     static bool sslWarningShown = false;
     if (!setCertificate(Quassel::configDirPath() + "quasselCert.pem")) {
         if (!sslWarningShown) {
-            quWarning()
+            kWarning(300000)
             << "SslServer: Unable to set certificate file\n"
             << "          Quassel Core will still work, but cannot provide SSL for client connections.\n"
             << "          Please see http://quassel-irc.org/faq/cert to learn how to enable SSL support.";
@@ -88,12 +89,12 @@ bool SslServer::setCertificate(const QString &path)
 
     QFile certFile(path);
     if (!certFile.exists()) {
-        quWarning() << "SslServer: Certificate file" << qPrintable(path) << "does not exist";
+        kWarning(300000) << "SslServer: Certificate file" << qPrintable(path) << "does not exist";
         return false;
     }
 
     if (!certFile.open(QIODevice::ReadOnly)) {
-        quWarning()
+        kWarning(300000)
         << "SslServer: Failed to open certificate file" << qPrintable(path)
         << "error:" << certFile.error();
         return false;
@@ -102,7 +103,7 @@ bool SslServer::setCertificate(const QString &path)
     QList<QSslCertificate> certList = QSslCertificate::fromDevice(&certFile);
 
     if (certList.isEmpty()) {
-        quWarning() << "SslServer: Certificate file doesn't contain a certificate";
+        kWarning(300000) << "SslServer: Certificate file doesn't contain a certificate";
         return false;
     }
 
@@ -113,7 +114,7 @@ bool SslServer::setCertificate(const QString &path)
     _ca = certList;
 
     if (!certFile.reset()) {
-        quWarning() << "SslServer: IO error reading certificate file";
+        kWarning(300000) << "SslServer: IO error reading certificate file";
         return false;
     }
 
@@ -121,17 +122,17 @@ bool SslServer::setCertificate(const QString &path)
     certFile.close();
 
     if (_cert.isNull()) {
-        quWarning() << "SslServer:" << qPrintable(path) << "contains no certificate data";
+        kWarning(300000) << "SslServer:" << qPrintable(path) << "contains no certificate data";
         return false;
     }
 
     // We allow the core to offer SSL anyway, so no "return false" here. Client will warn about the cert being invalid.
     const QDateTime now = QDateTime::currentDateTime();
     if (now < _cert.effectiveDate())
-        quWarning() << "SslServer: Certificate won't be valid before" << _cert.effectiveDate().toString();
+        kWarning(300000) << "SslServer: Certificate won't be valid before" << _cert.effectiveDate().toString();
 
     else if (now > _cert.expiryDate())
-        quWarning() << "SslServer: Certificate expired on" << _cert.expiryDate().toString();
+        kWarning(300000) << "SslServer: Certificate expired on" << _cert.expiryDate().toString();
 
     else { // Qt4's isValid() checks for time range and blacklist; avoid a double warning, hence the else block
 #if QT_VERSION < 0x050000
@@ -139,10 +140,10 @@ bool SslServer::setCertificate(const QString &path)
 #else
         if (_cert.isBlacklisted())
 #endif
-            quWarning() << "SslServer: Certificate blacklisted";
+            kWarning(300000) << "SslServer: Certificate blacklisted";
     }
     if (_key.isNull()) {
-        quWarning() << "SslServer:" << qPrintable(path) << "contains no key data";
+        kWarning(300000) << "SslServer:" << qPrintable(path) << "contains no key data";
         return false;
     }
 

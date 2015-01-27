@@ -28,7 +28,7 @@
 #include "qtuisettings.h"
 
 #include <QAction>
-#include <QDebug>
+#include <KDebug>
 #include <QEvent>
 #include <QAbstractButton>
 
@@ -140,7 +140,7 @@ void NickListWidget::nickSelectionChanged()
     NickView *view = qobject_cast<NickView *>(sender());
     Q_ASSERT(view);
     if (view != ui.stackedWidget->currentWidget()) {
-        qDebug() << "Nick selection of hidden view changed!";
+        kDebug(300000) << "Nick selection of hidden view changed!";
         return;
     }
     emit nickSelectionChanged(view->selectedIndexes());

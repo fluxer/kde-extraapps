@@ -219,7 +219,7 @@ void MainWin::init()
 
     if (Quassel::isOptionSet("url")) {
         // FIXME: connect to channel upon request from external KDE application
-        qWarning() << "non-interactive connection not yet implemented:" << Quassel::optionValue("url");
+        kWarning(300000) << "non-interactive connection not yet implemented:" << Quassel::optionValue("url");
     }
 
 }
@@ -1346,7 +1346,7 @@ void MainWin::messagesInserted(const QModelIndex &parent, int start, int end)
     for (int i = start; i <= end; i++) {
         QModelIndex idx = Client::messageModel()->index(i, ChatLineModel::ContentsColumn);
         if (!idx.isValid()) {
-            qDebug() << "MainWin::messagesInserted(): Invalid model index!";
+            kDebug(300000) << "MainWin::messagesInserted(): Invalid model index!";
             continue;
         }
         Message::Flags flags = (Message::Flags)idx.data(ChatLineModel::FlagsRole).toInt();

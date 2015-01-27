@@ -22,7 +22,7 @@
 #include "core.h"
 #include "coresession.h"
 
-#include <QDebug>
+#include <KDebug>
 
 INIT_SYNCABLE_OBJECT(CoreBacklogManager)
 CoreBacklogManager::CoreBacklogManager(CoreSession *coreSession)

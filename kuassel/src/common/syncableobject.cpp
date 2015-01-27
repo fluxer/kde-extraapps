@@ -20,7 +20,7 @@
 
 #include <QMetaProperty>
 
-#include <QDebug>
+#include <KDebug>
 
 #include "syncableobject.h"
 
@@ -115,9 +115,9 @@ QVariantMap SyncableObject::toVariantMap()
         QVariant::Type variantType = QVariant::nameToType(method.typeName());
         if (variantType == QVariant::Invalid && !QByteArray(method.typeName()).isEmpty()) {
 #if QT_VERSION >= 0x050000
-            qWarning() << "SyncableObject::toVariantMap(): cannot fetch init data for:" << this << method.methodSignature() << "- Returntype is unknown to Qt's MetaSystem:" << QByteArray(method.typeName());
+            kWarning(300000) << "SyncableObject::toVariantMap(): cannot fetch init data for:" << this << method.methodSignature() << "- Returntype is unknown to Qt's MetaSystem:" << QByteArray(method.typeName());
 #else
-            qWarning() << "SyncableObject::toVariantMap(): cannot fetch init data for:" << this << method.signature() << "- Returntype is unknown to Qt's MetaSystem:" << QByteArray(method.typeName());
+            kWarning(300000) << "SyncableObject::toVariantMap(): cannot fetch init data for:" << this << method.signature() << "- Returntype is unknown to Qt's MetaSystem:" << QByteArray(method.typeName());
 #endif
             continue;
         }
@@ -151,7 +151,7 @@ void SyncableObject::fromVariantMap(const QVariantMap &properties)
             setInitValue(propName, iterator.value());
         else
             setProperty(propName.toLatin1(), iterator.value());
-        // qDebug() << "<<< SYNC:" << name << iterator.value();
+        // kDebug(300000) << "<<< SYNC:" << name << iterator.value();
         iterator++;
     }
 }
@@ -208,7 +208,7 @@ void SyncableObject::requestUpdate(const QVariantMap &properties)
 
 void SyncableObject::sync_call__(SignalProxy::ProxyMode modeType, const char *funcname, ...) const
 {
-    //qDebug() << Q_FUNC_INFO << modeType << funcname;
+    //kDebug(300000) << Q_FUNC_INFO << modeType << funcname;
     foreach(SignalProxy *proxy, _signalProxies) {
         va_list ap;
         va_start(ap, funcname);

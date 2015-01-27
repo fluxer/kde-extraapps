@@ -50,7 +50,7 @@ void LegacyPeer::setSignalProxy(::SignalProxy *proxy)
         // enable compression now if requested - the initial handshake is uncompressed in the legacy protocol!
         _useCompression = socket()->property("UseCompression").toBool();
         if (_useCompression)
-            qDebug() << "Using compression for peer:" << qPrintable(socket()->peerAddress().toString());
+            kDebug(300000) << "Using compression for peer:" << qPrintable(socket()->peerAddress().toString());
     }
 
 }
@@ -348,7 +348,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
     QVariantList params(packedFunc.toList());
 
     if (params.isEmpty()) {
-        qWarning() << Q_FUNC_INFO << "Received incompatible data:" << packedFunc;
+        kWarning(300000) << Q_FUNC_INFO << "Received incompatible data:" << packedFunc;
         return;
     }
 
@@ -357,7 +357,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
     switch (requestType) {
         case Sync: {
             if (params.count() < 3) {
-                qWarning() << Q_FUNC_INFO << "Received invalid sync call:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid sync call:" << params;
                 return;
             }
             QByteArray className = params.takeFirst().toByteArray();
@@ -368,7 +368,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
         }
         case RpcCall: {
             if (params.empty()) {
-                qWarning() << Q_FUNC_INFO << "Received empty RPC call!";
+                kWarning(300000) << Q_FUNC_INFO << "Received empty RPC call!";
                 return;
             }
             QByteArray slotName = params.takeFirst().toByteArray();
@@ -377,7 +377,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
         }
         case InitRequest: {
             if (params.count() != 2) {
-                qWarning() << Q_FUNC_INFO << "Received invalid InitRequest:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid InitRequest:" << params;
                 return;
             }
             QByteArray className = params[0].toByteArray();
@@ -387,7 +387,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
         }
         case InitData: {
             if (params.count() != 3) {
-                qWarning() << Q_FUNC_INFO << "Received invalid InitData:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid InitData:" << params;
                 return;
             }
             QByteArray className = params[0].toByteArray();
@@ -402,7 +402,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
         }
         case HeartBeat: {
             if (params.count() != 1) {
-                qWarning() << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
                 return;
             }
             // The legacy protocol would only send a QTime, no QDateTime
@@ -414,7 +414,7 @@ void LegacyPeer::handlePackedFunc(const QVariant &packedFunc)
         }
         case HeartBeatReply: {
             if (params.count() != 1) {
-                qWarning() << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
                 return;
             }
             // The legacy protocol would only send a QTime, no QDateTime

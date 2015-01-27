@@ -45,7 +45,7 @@ void QtUiStyle::generateSettingsQss() const
 {
     QFile settingsQss(Quassel::configDirPath() + "settings.qss");
     if (!settingsQss.open(QFile::WriteOnly|QFile::Truncate)) {
-        qWarning() << "Could not open" << settingsQss.fileName() << "for writing!";
+        kWarning(300000) << "Could not open" << settingsQss.fileName() << "for writing!";
         return;
     }
     QTextStream out(&settingsQss);

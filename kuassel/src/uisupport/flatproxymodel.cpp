@@ -21,7 +21,7 @@
 #include "flatproxymodel.h"
 
 #include <QItemSelection>
-#include <QDebug>
+#include <KDebug>
 
 FlatProxyModel::FlatProxyModel(QObject *parent)
     : QAbstractProxyModel(parent),
@@ -62,7 +62,7 @@ QModelIndex FlatProxyModel::mapToSource(const QModelIndex &proxyIndex) const
         }
     }
 
-    qWarning() << "FlatProxyModel::mapToSource(): couldn't find source index for" << proxyIndex;
+    kWarning(300000) << "FlatProxyModel::mapToSource(): couldn't find source index for" << proxyIndex;
     Q_ASSERT(false);
     return QModelIndex(); // make compilers happy :)
 }
@@ -366,12 +366,12 @@ void FlatProxyModel::removeSubTree(const QModelIndex &source_idx, bool emitRemov
 QModelIndex FlatProxyModel::index(int row, int column, const QModelIndex &parent) const
 {
     if (parent.isValid()) {
-        qWarning() << "FlatProxyModel::index() called with valid parent:" << parent;
+        kWarning(300000) << "FlatProxyModel::index() called with valid parent:" << parent;
         return QModelIndex();
     }
 
     if (!_rootSourceItem) {
-        qWarning() << "FlatProxyModel::index() while model has no root Item";
+        kWarning(300000) << "FlatProxyModel::index() while model has no root Item";
         return QModelIndex();
     }
 
@@ -379,7 +379,7 @@ QModelIndex FlatProxyModel::index(int row, int column, const QModelIndex &parent
     while (item->pos() != row) {
         item = item->findChild(row);
         if (!item) {
-            qWarning() << "FlatProxyModel::index() no such row:" << row;
+            kWarning(300000) << "FlatProxyModel::index() no such row:" << row;
             return QModelIndex();
         }
     }
@@ -554,7 +554,7 @@ void FlatProxyModel::on_rowsAboutToBeRemoved(const QModelIndex &parent, int star
     // sanity check - if that check fails our indexes would be messed up
     for (int row = start; row <= end; row++) {
         if (sourceItem->child(row)->childCount() > 0) {
-            qWarning() << "on_rowsAboutToBeRemoved(): sourceModel() removed rows which have children on their own!" << sourceModel()->index(row, 0, parent);
+            kWarning(300000) << "on_rowsAboutToBeRemoved(): sourceModel() removed rows which have children on their own!" << sourceModel()->index(row, 0, parent);
             Q_ASSERT(false);
         }
     }
@@ -574,7 +574,7 @@ void FlatProxyModel::on_rowsInserted(const QModelIndex &parent, int start, int e
     for (int row = start; row <= end; row++) {
         QModelIndex child = sourceModel()->index(row, 0, parent);
         if (sourceModel()->rowCount(child) > 0) {
-            qWarning() << "on_rowsInserted(): sourceModel() inserted rows which already have children on their own!" << child;
+            kWarning(300000) << "on_rowsInserted(): sourceModel() inserted rows which already have children on their own!" << child;
             Q_ASSERT(false);
         }
     }
@@ -624,41 +624,41 @@ void FlatProxyModel::on_rowsRemoved(const QModelIndex &parent, int start, int en
 // integrity Tets
 void FlatProxyModel::linkTest() const
 {
-    qDebug() << "Checking FlatProxyModel for linklist integrity";
+    kDebug(300000) << "Checking FlatProxyModel for linklist integrity";
     if (!_rootSourceItem)
         return;
 
     int pos = -1;
     SourceItem *item = _rootSourceItem;
     while (true) {
-        qDebug() << item << ":" << item->pos() << "==" << pos;
+        kDebug(300000) << item << ":" << item->pos() << "==" << pos;
         Q_ASSERT(item->pos() == pos);
         pos++;
         if (!item->next())
             break;
         item = item->next();
     }
-    qDebug() << "Last item in linklist:" << item << item->pos();
+    kDebug(300000) << "Last item in linklist:" << item << item->pos();
 
     int lastPos = item->pos();
     item = _rootSourceItem;
     while (item->childCount() > 0) {
         item = item->child(item->childCount() - 1);
     }
-    qDebug() << "Last item in tree:" << item << item->pos();
+    kDebug(300000) << "Last item in tree:" << item << item->pos();
     Q_ASSERT(lastPos == item->pos());
     Q_UNUSED(lastPos);
 
-    qDebug() << "success!";
+    kDebug(300000) << "success!";
 }
 
 
 void FlatProxyModel::completenessTest() const
 {
-    qDebug() << "Checking FlatProxyModel for Completeness:";
+    kDebug(300000) << "Checking FlatProxyModel for Completeness:";
     int pos = -1;
     checkChildCount(QModelIndex(), _rootSourceItem, pos);
-    qDebug() << "success!";
+    kDebug(300000) << "success!";
 }
 
 
@@ -667,8 +667,8 @@ void FlatProxyModel::checkChildCount(const QModelIndex &index, const SourceItem 
     if (!sourceModel())
         return;
 
-    qDebug() << index  << "(Item:" << item << "):" << sourceModel()->rowCount(index) << "==" << item->childCount();
-    qDebug() << "ProxyPos:" << item->pos() << "==" << pos;
+    kDebug(300000) << index  << "(Item:" << item << "):" << sourceModel()->rowCount(index) << "==" << item->childCount();
+    kDebug(300000) << "ProxyPos:" << item->pos() << "==" << pos;
     Q_ASSERT(sourceModel()->rowCount(index) == item->childCount());
 
     for (int row = 0; row < sourceModel()->rowCount(index); row++) {

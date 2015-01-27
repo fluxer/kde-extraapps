@@ -47,7 +47,7 @@ void TransferManager::addTransfer(Transfer *transfer)
 {
     QUuid uuid = transfer->uuid();
     if (_transfers.contains(uuid)) {
-        qWarning() << "Cannot add the same file transfer twice!";
+        kWarning(300000) << "Cannot add the same file transfer twice!";
         transfer->deleteLater();
         return;
     }

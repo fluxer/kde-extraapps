@@ -22,7 +22,7 @@
 #define EVENT_H
 
 #include <QDateTime>
-#include <QDebug>
+#include <KDebug>
 
 #include "eventmanager.h"
 

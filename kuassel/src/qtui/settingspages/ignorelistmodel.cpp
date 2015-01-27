@@ -20,7 +20,7 @@
 
 #include "ignorelistmodel.h"
 
-#include <QDebug>
+#include <KDebug>
 #include <QStringList>
 #include <QPushButton>
 

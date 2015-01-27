@@ -41,7 +41,7 @@ const ClientTransfer *ClientTransferManager::transfer(const QUuid &uuid) const
 void ClientTransferManager::onCoreTransferAdded(const QUuid &uuid)
 {
     if (uuid.isNull()) {
-        qWarning() << Q_FUNC_INFO << "Invalid transfer uuid" << uuid.toString();
+        kWarning(300000) << Q_FUNC_INFO << "Invalid transfer uuid" << uuid.toString();
         return;
     }
 
@@ -63,7 +63,7 @@ void ClientTransferManager::onTransferAdded(const Transfer *transfer)
 {
     const ClientTransfer *t = qobject_cast<const ClientTransfer *>(transfer);
     if (!t) {
-        qWarning() << "Invalid Transfer added to ClientTransferManager!";
+        kWarning(300000) << "Invalid Transfer added to ClientTransferManager!";
         return;
     }
 

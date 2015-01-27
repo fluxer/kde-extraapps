@@ -104,7 +104,7 @@ QVariant ChatMonitorFilter::data(const QModelIndex &index, int role) const
 
     BufferId bufid = data(index, ChatLineModel::BufferIdRole).value<BufferId>();
     if (!bufid.isValid()) {
-        qDebug() << "ChatMonitorFilter::data(): chatline belongs to an invalid buffer!";
+        kDebug(300000) << "ChatMonitorFilter::data(): chatline belongs to an invalid buffer!";
         return QVariant();
     }
 

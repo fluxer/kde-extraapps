@@ -38,7 +38,6 @@
 
 #include "bufferinfo.h"
 #include "identity.h"
-#include "logger.h"
 #include "message.h"
 #include "network.h"
 #include "protocol.h"
@@ -53,13 +52,9 @@ Quassel::RunMode Quassel::_runMode;
 QString Quassel::_configDirPath;
 QStringList Quassel::_dataDirPaths;
 bool Quassel::_initialized = false;
-bool Quassel::DEBUG = false;
 QString Quassel::_coreDumpFileName;
 Quassel *Quassel::_instance = 0;
 bool Quassel::_handleCrashes = true;
-Quassel::LogLevel Quassel::_logLevel = InfoLevel;
-QFile *Quassel::_logFile = 0;
-bool Quassel::_logToSyslog = false;
 
 Quassel::Quassel()
 {
@@ -74,10 +69,6 @@ Quassel::Quassel()
 
 Quassel::~Quassel()
 {
-    if (logFile()) {
-        logFile()->close();
-        logFile()->deleteLater();
-    }
     delete _cliParser;
 }
 
@@ -120,33 +111,6 @@ bool Quassel::init()
     if (isOptionSet("version")) {
         std::cout << qPrintable("Kuassel IRC: " + Quassel::buildInfo().baseVersion) << std::endl;
         return false;
-    }
-
-    DEBUG = isOptionSet("debug");
-
-    // set up logging
-    if (Quassel::runMode() != Quassel::ClientOnly) {
-        if (isOptionSet("loglevel")) {
-            QString level = optionValue("loglevel");
-
-            if (level == "Debug") _logLevel = DebugLevel;
-            else if (level == "Info") _logLevel = InfoLevel;
-            else if (level == "Warning") _logLevel = WarningLevel;
-            else if (level == "Error") _logLevel = ErrorLevel;
-        }
-
-        QString logfilename = optionValue("logfile");
-        if (!logfilename.isEmpty()) {
-            _logFile = new QFile(logfilename);
-            if (!_logFile->open(QIODevice::Append | QIODevice::Text)) {
-                qWarning() << "Could not open log file" << logfilename << ":" << _logFile->errorString();
-                _logFile->deleteLater();
-                _logFile = 0;
-            }
-        }
-#ifdef HAVE_SYSLOG
-        _logToSyslog = isOptionSet("syslog");
-#endif
     }
 
     return true;
@@ -266,7 +230,7 @@ const QString &Quassel::coreDumpFileName()
         dumpFile.open(QIODevice::Append);
         QTextStream dumpStream(&dumpFile);
         dumpStream << "Kuassel IRC: " << _buildInfo.baseVersion << '\n';
-        qDebug() << "Kuassel IRC: " << _buildInfo.baseVersion;
+        kDebug(300000) << "Kuassel IRC: " << _buildInfo.baseVersion;
         dumpStream.flush();
         dumpFile.close();
     }

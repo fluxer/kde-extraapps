@@ -42,7 +42,6 @@
 #include "ircchannel.h"
 #include "ircparser.h"
 #include "ircuser.h"
-#include "logger.h"
 #include "messageevent.h"
 #include "remotepeer.h"
 #include "storage.h"
@@ -227,7 +226,7 @@ void CoreSession::removeClient(Peer *peer)
 {
     RemotePeer *p = qobject_cast<RemotePeer *>(peer);
     if (p)
-        quInfo() << qPrintable(i18n("Client")) << p->description() << qPrintable(i18n("disconnected (UserId: %1).").arg(user().toInt()));
+        kDebug(30000) << qPrintable(i18n("Client")) << p->description() << qPrintable(i18n("disconnected (UserId: %1).").arg(user().toInt()));
 }
 
 
@@ -245,7 +244,7 @@ void CoreSession::msgFromClient(BufferInfo bufinfo, QString msg)
         net->userInput(bufinfo, msg);
     }
     else {
-        qWarning() << "Trying to send to unconnected network:" << msg;
+        kWarning(300000) << "Trying to send to unconnected network:" << msg;
     }
 }
 
@@ -424,7 +423,7 @@ void CoreSession::createIdentity(const Identity &identity, const QVariantMap &ad
     if (additional.contains("CertPem"))
         coreIdentity.setSslCert(additional["CertPem"].toByteArray());
 #endif
-    qDebug() << Q_FUNC_INFO;
+    kDebug(300000) << Q_FUNC_INFO;
     IdentityId id = Core::createIdentity(user(), coreIdentity);
     if (!id.isValid())
         return;
@@ -475,7 +474,7 @@ void CoreSession::createNetwork(const NetworkInfo &info_, const QStringList &per
         Core::createNetwork(user(), info);
 
     if (!info.networkId.isValid()) {
-        qWarning() << qPrintable(i18n("CoreSession::createNetwork(): Got invalid networkId from Core when trying to create network %1!").arg(info.networkName));
+        kWarning(300000) << qPrintable(i18n("CoreSession::createNetwork(): Got invalid networkId from Core when trying to create network %1!").arg(info.networkName));
         return;
     }
 
@@ -485,7 +484,7 @@ void CoreSession::createNetwork(const NetworkInfo &info_, const QStringList &per
         QRegExp rx("\\s*(\\S+)(?:\\s*(\\S+))?\\s*");
         foreach(QString channel, persistentChans) {
             if (!rx.exactMatch(channel)) {
-                qWarning() << QString("Invalid persistent channel declaration: %1").arg(channel);
+                kWarning(300000) << QString("Invalid persistent channel declaration: %1").arg(channel);
                 continue;
             }
             Core::bufferInfo(user(), info.networkId, BufferInfo::ChannelBuffer, rx.cap(1), true);
@@ -507,7 +506,7 @@ void CoreSession::createNetwork(const NetworkInfo &info_, const QStringList &per
         emit networkCreated(id);
     }
     else {
-        qWarning() << qPrintable(i18n("CoreSession::createNetwork(): Trying to create a network that already exists, updating instead!"));
+        kWarning(300000) << qPrintable(i18n("CoreSession::createNetwork(): Trying to create a network that already exists, updating instead!"));
         _networks[info.networkId]->requestSetNetworkInfo(info);
     }
 }

@@ -114,7 +114,7 @@ void RemotePeer::setSignalProxy(::SignalProxy *proxy)
     }
     else {
         if (signalProxy()) {
-            qWarning() << Q_FUNC_INFO << "Setting another SignalProxy not supported, ignoring!";
+            kWarning(300000) << Q_FUNC_INFO << "Setting another SignalProxy not supported, ignoring!";
             return;
         }
         _signalProxy = proxy;
@@ -182,7 +182,7 @@ bool RemotePeer::isOpen() const
 void RemotePeer::close(const QString &reason)
 {
     if (!reason.isEmpty()) {
-        qWarning() << "Disconnecting:" << reason;
+        kWarning(300000) << "Disconnecting:" << reason;
     }
 
     if (socket() && socket()->state() != QTcpSocket::UnconnectedState) {
@@ -265,7 +265,7 @@ void RemotePeer::handle(const HeartBeatReply &heartBeatReply)
 void RemotePeer::sendHeartBeat()
 {
     if (signalProxy()->maxHeartBeatCount() > 0 && _heartBeatCount >= signalProxy()->maxHeartBeatCount()) {
-        qWarning() << "Disconnecting peer:" << description()
+        kWarning(300000) << "Disconnecting peer:" << description()
                    << "(didn't receive a heartbeat for over" << _heartBeatCount *_heartBeatTimer->interval() / 1000 << "seconds)";
         socket()->close();
         _heartBeatTimer->stop();

@@ -142,7 +142,7 @@ void StatusNotifierItem::registerToDaemon()
         checkForRegisteredHosts();
     }
     else {
-        //qDebug() << "StatusNotifierWatcher not reachable!";
+        //kDebug(300000) << "StatusNotifierWatcher not reachable!";
         setMode(Legacy);
     }
 }
@@ -153,7 +153,7 @@ void StatusNotifierItem::serviceChange(const QString &name, const QString &oldOw
     Q_UNUSED(name);
     if (newOwner.isEmpty()) {
         //unregistered
-        //qDebug() << "Connection to the StatusNotifierWatcher lost";
+        //kDebug(300000) << "Connection to the StatusNotifierWatcher lost";
         delete _statusNotifierWatcher;
         _statusNotifierWatcher = 0;
         setMode(Legacy);

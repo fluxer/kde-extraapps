@@ -22,7 +22,7 @@
 
 #include <QMetaMethod>
 
-#include "logger.h"
+#include <KDebug>
 
 BasicHandler::BasicHandler(QObject *parent)
     : QObject(parent),
@@ -89,7 +89,7 @@ void BasicHandler::handle(const QString &member, QGenericArgument val0,
 
     if (!handlerHash().contains(handler)) {
         if (_defaultHandler == -1) {
-            qWarning() << QString("No such Handler: %1::%2%3").arg(metaObject()->className(), _methodPrefix, handler);
+            kWarning(300000) << QString("No such Handler: %1::%2%3").arg(metaObject()->className(), _methodPrefix, handler);
             return;
         }
         else {

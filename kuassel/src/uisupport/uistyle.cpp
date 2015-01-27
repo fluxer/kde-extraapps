@@ -144,7 +144,7 @@ QString UiStyle::loadStyleSheet(const QString &styleSheet, bool shouldExist)
         }
         else {
             if (shouldExist)
-                qWarning() << "Could not open stylesheet file:" << file.fileName();
+                kWarning(300000) << "Could not open stylesheet file:" << file.fileName();
             return QString();
         }
     }
@@ -454,7 +454,7 @@ UiStyle::FormatType UiStyle::formatType(Message::Type msgType)
         return InviteMsg;
     }
     //Q_ASSERT(false); // we need to handle all message types
-    qWarning() << Q_FUNC_INFO << "Unknown message type:" << msgType;
+    kWarning(300000) << Q_FUNC_INFO << "Unknown message type:" << msgType;
     return ErrorMsg;
 }
 
@@ -498,7 +498,7 @@ UiStyle::StyledString UiStyle::styleString(const QString &s_, quint32 baseFormat
 
     if (s.length() > 65535) {
         // We use quint16 for indexes
-        qWarning() << QString("String too long to be styled: %1").arg(s);
+        kWarning(300000) << QString("String too long to be styled: %1").arg(s);
         result.plainText = s;
         return result;
     }
@@ -548,7 +548,7 @@ UiStyle::StyledString UiStyle::styleString(const QString &s_, quint32 baseFormat
             FormatType ftype = formatType(code);
             if (ftype == Invalid) {
                 pos++;
-                qWarning() << (QString("Invalid format code in string: %1").arg(s));
+                kWarning(300000) << (QString("Invalid format code in string: %1").arg(s));
                 continue;
             }
             curfmt ^= ftype;

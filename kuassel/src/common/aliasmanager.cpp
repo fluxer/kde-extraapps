@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QDebug>
+#include <KDebug>
 #include <QStringList>
 
 #include "aliasmanager.h"
@@ -69,7 +69,7 @@ void AliasManager::initSetAliases(const QVariantMap &aliases)
     QStringList expansions = aliases["expansions"].toStringList();
 
     if (names.count() != expansions.count()) {
-        qWarning() << "AliasesManager::initSetAliases: received" << names.count() << "alias names but only" << expansions.count() << "expansions!";
+        kWarning(300000) << "AliasesManager::initSetAliases: received" << names.count() << "alias names but only" << expansions.count() << "expansions!";
         return;
     }
 

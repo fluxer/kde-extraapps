@@ -21,7 +21,7 @@
 #ifndef TYPES_H_
 #define TYPES_H_
 
-#include <QDebug>
+#include <KDebug>
 #include <QString>
 #include <QVariant>
 #include <QDataStream>

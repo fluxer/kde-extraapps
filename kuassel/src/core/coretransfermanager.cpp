@@ -47,7 +47,7 @@ void CoreTransferManager::onTransferAdded(const Transfer *transfer)
     // for core-side use, publishing a non-const pointer is ok
     CoreTransfer *t = const_cast<CoreTransfer *>(qobject_cast<const CoreTransfer *>(transfer));
     if (!t) {
-        qWarning() << "Invalid Transfer added to CoreTransferManager!";
+        kWarning(300000) << "Invalid Transfer added to CoreTransferManager!";
         return;
     }
 

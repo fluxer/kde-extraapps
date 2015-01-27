@@ -58,11 +58,11 @@ bool EventStringifier::checkParamCount(IrcEvent *e, int minParams)
 {
     if (e->params().count() < minParams) {
         if (e->type() == EventManager::IrcEventNumeric) {
-            qWarning() << "Command " << static_cast<IrcEventNumeric *>(e)->number() << " requires " << minParams << "params, got: " << e->params();
+            kWarning(300000) << "Command " << static_cast<IrcEventNumeric *>(e)->number() << " requires " << minParams << "params, got: " << e->params();
         }
         else {
             QString name = coreSession()->eventManager()->enumName(e->type());
-            qWarning() << qPrintable(name) << "requires" << minParams << "params, got:" << e->params();
+            kWarning(300000) << qPrintable(name) << "requires" << minParams << "params, got:" << e->params();
         }
         e->stop();
         return false;
@@ -90,7 +90,7 @@ void EventStringifier::processNetworkSplitQuit(NetworkSplitEvent *e)
 
 void EventStringifier::processIrcEventNumeric(IrcEventNumeric *e)
 {
-    //qDebug() << e->number();
+    //kDebug(300000) << e->number();
     switch (e->number()) {
     // Welcome, status, info messages. Just display these.
     case 1:
@@ -289,7 +289,7 @@ void EventStringifier::processIrcEventNick(IrcEvent *e)
 
     IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
     if (!ircuser) {
-        qWarning() << Q_FUNC_INFO << "Unknown IrcUser!";
+        kWarning(300000) << Q_FUNC_INFO << "Unknown IrcUser!";
         return;
     }
 
@@ -569,7 +569,7 @@ void EventStringifier::processIrcEvent329(IrcEvent *e)
     QString channel = e->params()[0];
     uint unixtime = e->params()[1].toUInt();
     if (!unixtime) {
-        qWarning() << Q_FUNC_INFO << "received invalid timestamp:" << e->params()[1];
+        kWarning(300000) << Q_FUNC_INFO << "received invalid timestamp:" << e->params()[1];
         return;
     }
     QDateTime time = QDateTime::fromTime_t(unixtime).toUTC();

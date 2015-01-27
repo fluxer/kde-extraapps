@@ -28,7 +28,7 @@
 #include <QHashIterator>
 #include <QTextCodec>
 
-#include <QDebug>
+#include <KDebug>
 
 INIT_SYNCABLE_OBJECT(IrcChannel)
 IrcChannel::IrcChannel(const QString &channelname, Network *network)
@@ -56,12 +56,12 @@ IrcChannel::~IrcChannel()
 bool IrcChannel::isKnownUser(IrcUser *ircuser) const
 {
     if (ircuser == 0) {
-        qWarning() << "Channel" << name() << "received IrcUser Nullpointer!";
+        kWarning(300000) << "Channel" << name() << "received IrcUser Nullpointer!";
         return false;
     }
 
     if (!_userModes.contains(ircuser)) {
-        qWarning() << "Channel" << name() << "received data for unknown User" << ircuser->nick();
+        kWarning(300000) << "Channel" << name() << "received data for unknown User" << ircuser->nick();
         return false;
     }
 
@@ -73,7 +73,7 @@ bool IrcChannel::isValidChannelUserMode(const QString &mode) const
 {
     bool isvalid = true;
     if (mode.size() > 1) {
-        qWarning() << "Channel" << name() << "received Channel User Mode which is longer then 1 Char:" << mode;
+        kWarning(300000) << "Channel" << name() << "received Channel User Mode which is longer then 1 Char:" << mode;
         isvalid = false;
     }
     return isvalid;
@@ -166,7 +166,7 @@ void IrcChannel::joinIrcUsers(const QList<IrcUser *> &users, const QStringList &
         return;
 
     if (users.count() != modes.count()) {
-        qWarning() << "IrcChannel::addUsers(): number of nicks does not match number of modes!";
+        kWarning(300000) << "IrcChannel::addUsers(): number of nicks does not match number of modes!";
         return;
     }
 

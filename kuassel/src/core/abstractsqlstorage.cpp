@@ -21,8 +21,6 @@
 #include "abstractsqlstorage.h"
 #include "quassel.h"
 
-#include "logger.h"
-
 #include <QMutexLocker>
 #include <QSqlDriver>
 #include <QSqlError>
@@ -91,12 +89,12 @@ void AbstractSqlStorage::addConnectionToPool()
     }
 
     if (!db.open()) {
-        quWarning() << "Unable to open database" << displayName() << "for thread" << QThread::currentThread();
-        quWarning() << "-" << db.lastError().text();
+        kWarning(300000) << "Unable to open database" << displayName() << "for thread" << QThread::currentThread();
+        kWarning(300000) << "-" << db.lastError().text();
     }
     else {
         if (!initDbSession(db)) {
-            quWarning() << "Unable to initialize database" << displayName() << "for thread" << QThread::currentThread();
+            kWarning(300000) << "Unable to initialize database" << displayName() << "for thread" << QThread::currentThread();
             db.close();
         }
     }
@@ -124,14 +122,14 @@ Storage::State AbstractSqlStorage::init(const QVariantMap &settings)
     }
 
     if (installedSchemaVersion() < schemaVersion()) {
-        qWarning() << qPrintable(i18n("Installed Schema (version %1) is not up to date. Upgrading to version %2...").arg(installedSchemaVersion()).arg(schemaVersion()));
+        kWarning(300000) << qPrintable(i18n("Installed Schema (version %1) is not up to date. Upgrading to version %2...").arg(installedSchemaVersion()).arg(schemaVersion()));
         if (!upgradeDb()) {
-            qWarning() << qPrintable(i18n("Upgrade failed..."));
+            kWarning(300000) << qPrintable(i18n("Upgrade failed..."));
             return NotAvailable;
         }
     }
 
-    quInfo() << qPrintable(displayName()) << "Storage Backend is ready. Quassel Schema Version:" << installedSchemaVersion();
+    kDebug(30000) << qPrintable(displayName()) << "Storage Backend is ready. Quassel Schema Version:" << installedSchemaVersion();
     return IsReady;
 }
 
@@ -404,14 +402,14 @@ QVariantList AbstractSqlMigrator::boundValues()
 
 void AbstractSqlMigrator::dumpStatus()
 {
-    qWarning() << "  executed Query:";
-    qWarning() << qPrintable(executedQuery());
-    qWarning() << "  bound Values:";
+    kWarning(300000) << "  executed Query:";
+    kWarning(300000) << qPrintable(executedQuery());
+    kWarning(300000) << "  bound Values:";
     QList<QVariant> list = boundValues();
     for (int i = 0; i < list.size(); ++i)
-        qWarning() << i << ": " << list.at(i).toString().toLatin1().data();
-    qWarning() << "  Error Number:"   << lastError().number();
-    qWarning() << "  Error Message:"   << lastError().text();
+        kWarning(300000) << i << ": " << list.at(i).toString().toLatin1().data();
+    kWarning(300000) << "  Error Number:"   << lastError().number();
+    kWarning(300000) << "  Error Message:"   << lastError().text();
 }
 
 
@@ -428,11 +426,11 @@ AbstractSqlMigrationReader::AbstractSqlMigrationReader()
 bool AbstractSqlMigrationReader::migrateTo(AbstractSqlMigrationWriter *writer)
 {
     if (!transaction()) {
-        qWarning() << "AbstractSqlMigrationReader::migrateTo(): unable to start reader's transaction!";
+        kWarning(300000) << "AbstractSqlMigrationReader::migrateTo(): unable to start reader's transaction!";
         return false;
     }
     if (!writer->transaction()) {
-        qWarning() << "AbstractSqlMigrationReader::migrateTo(): unable to start writer's transaction!";
+        kWarning(300000) << "AbstractSqlMigrationReader::migrateTo(): unable to start writer's transaction!";
         rollback(); // close the reader transaction;
         return false;
     }
@@ -484,17 +482,17 @@ bool AbstractSqlMigrationReader::migrateTo(AbstractSqlMigrationWriter *writer)
 
 void AbstractSqlMigrationReader::abortMigration(const QString &errorMsg)
 {
-    qWarning() << "Migration Failed!";
+    kWarning(300000) << "Migration Failed!";
     if (!errorMsg.isNull()) {
-        qWarning() << qPrintable(errorMsg);
+        kWarning(300000) << qPrintable(errorMsg);
     }
     if (lastError().isValid()) {
-        qWarning() << "ReaderError:";
+        kWarning(300000) << "ReaderError:";
         dumpStatus();
     }
 
     if (_writer->lastError().isValid()) {
-        qWarning() << "WriterError:";
+        kWarning(300000) << "WriterError:";
         _writer->dumpStatus();
     }
 
@@ -534,7 +532,7 @@ bool AbstractSqlMigrationReader::transferMo(MigrationObject moType, T &mo)
         return false;
     }
 
-    qDebug() << qPrintable(QString("Transferring %1...").arg(AbstractSqlMigrator::migrationObject(moType)));
+    kDebug(300000) << qPrintable(QString("Transferring %1...").arg(AbstractSqlMigrator::migrationObject(moType)));
     int i = 0;
     QFile file;
     file.open(stdout, QIODevice::WriteOnly);
@@ -555,6 +553,6 @@ bool AbstractSqlMigrationReader::transferMo(MigrationObject moType, T &mo)
         file.flush();
     }
 
-    qDebug() << "Done.";
+    kDebug(300000) << "Done.";
     return true;
 }

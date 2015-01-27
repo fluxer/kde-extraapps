@@ -93,7 +93,7 @@ void QtUiApplication::commitData(QSessionManager &manager)
 
 void QtUiApplication::saveState(QSessionManager &manager)
 {
-    //qDebug() << QString("saving session state to id %1").arg(manager.sessionId());
+    //kDebug(300000) << QString("saving session state to id %1").arg(manager.sessionId());
     // AccountId activeCore = Client::currentCoreAccount().accountId(); // FIXME store this!
     SessionSettings s(manager.sessionId());
     s.setSessionAge(0);
@@ -105,7 +105,7 @@ void QtUiApplication::resumeSessionIfPossible()
 {
     // load all sessions
     if (isSessionRestored()) {
-        qDebug() << QString("restoring from session %1").arg(sessionId());
+        kDebug(300000) << QString("restoring from session %1").arg(sessionId());
         SessionSettings s(sessionId());
         s.sessionAging();
         s.setSessionAge(0);

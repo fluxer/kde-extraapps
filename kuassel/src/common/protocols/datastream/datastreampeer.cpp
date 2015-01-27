@@ -285,7 +285,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
     QVariantList params(packedFunc);
 
     if (params.isEmpty()) {
-        qWarning() << Q_FUNC_INFO << "Received incompatible data:" << packedFunc;
+        kWarning(300000) << Q_FUNC_INFO << "Received incompatible data:" << packedFunc;
         return;
     }
 
@@ -294,7 +294,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
     switch (requestType) {
         case Sync: {
             if (params.count() < 3) {
-                qWarning() << Q_FUNC_INFO << "Received invalid sync call:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid sync call:" << params;
                 return;
             }
             QByteArray className = params.takeFirst().toByteArray();
@@ -305,7 +305,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
         }
         case RpcCall: {
             if (params.empty()) {
-                qWarning() << Q_FUNC_INFO << "Received empty RPC call!";
+                kWarning(300000) << Q_FUNC_INFO << "Received empty RPC call!";
                 return;
             }
             QByteArray slotName = params.takeFirst().toByteArray();
@@ -314,7 +314,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
         }
         case InitRequest: {
             if (params.count() != 2) {
-                qWarning() << Q_FUNC_INFO << "Received invalid InitRequest:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid InitRequest:" << params;
                 return;
             }
             QByteArray className = params[0].toByteArray();
@@ -324,7 +324,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
         }
         case InitData: {
             if (params.count() < 2) {
-                qWarning() << Q_FUNC_INFO << "Received invalid InitData:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid InitData:" << params;
                 return;
             }
             QByteArray className = params.takeFirst().toByteArray();
@@ -337,7 +337,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
         }
         case HeartBeat: {
             if (params.count() != 1) {
-                qWarning() << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
                 return;
             }
             // Note: QDateTime instead of QTime as in the legacy protocol!
@@ -346,7 +346,7 @@ void DataStreamPeer::handlePackedFunc(const QVariantList &packedFunc)
         }
         case HeartBeatReply: {
             if (params.count() != 1) {
-                qWarning() << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
+                kWarning(300000) << Q_FUNC_INFO << "Received invalid HeartBeat:" << params;
                 return;
             }
             // Note: QDateTime instead of QTime as in the legacy protocol!

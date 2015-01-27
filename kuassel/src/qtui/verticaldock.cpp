@@ -24,7 +24,7 @@
 #include <QLayout>
 #include <QPainter>
 
-#include <QDebug>
+#include <KDebug>
 
 VerticalDockTitle::VerticalDockTitle(QDockWidget *parent)
     : QWidget(parent)

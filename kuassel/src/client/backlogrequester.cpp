@@ -69,7 +69,7 @@ BufferIdList BacklogRequester::allBufferIds() const
 void BacklogRequester::flushBuffer()
 {
     if (!_buffersWaiting.isEmpty()) {
-        qWarning() << Q_FUNC_INFO << "was called before all backlog was received:"
+        kWarning(300000) << Q_FUNC_INFO << "was called before all backlog was received:"
                    << _buffersWaiting.count() << "buffers are waiting.";
     }
     _bufferedMessages.clear();

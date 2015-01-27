@@ -199,7 +199,7 @@ void CoreAccountModel::insertAccount(const CoreAccount &acc)
 {
     if (acc.isInternal()) {
         if (internalAccount().isValid()) {
-            qWarning() << "Trying to insert a second internal account in CoreAccountModel, ignoring";
+            kWarning(300000) << "Trying to insert a second internal account in CoreAccountModel, ignoring";
             return;
         }
         _internalAccount = acc.accountId();

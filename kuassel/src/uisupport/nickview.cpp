@@ -23,7 +23,7 @@
 #include <QApplication>
 #include <QHeaderView>
 #include <QScrollBar>
-#include <QDebug>
+#include <KDebug>
 #include <QMenu>
 
 #include "buffermodel.h"

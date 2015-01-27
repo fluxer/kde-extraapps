@@ -195,7 +195,7 @@ Network::ChannelModeType Network::channelModeType(const QString &mode)
             modeType = (ChannelModeType)(modeType << 1);
     }
     if (modeType > D_CHANMODE) {
-        qWarning() << "Network" << networkId() << "supplied invalid CHANMODES:" << chanmodes;
+        kWarning(300000) << "Network" << networkId() << "supplied invalid CHANMODES:" << chanmodes;
         modeType = NOT_A_CHANMODE;
     }
     return modeType;
@@ -225,7 +225,7 @@ IrcUser *Network::newIrcUser(const QString &hostmask, const QVariantMap &initDat
         if (proxy())
             proxy()->synchronize(ircuser);
         else
-            qWarning() << "unable to synchronize new IrcUser" << hostmask << "forgot to call Network::setProxy(SignalProxy *)?";
+            kWarning(300000) << "unable to synchronize new IrcUser" << hostmask << "forgot to call Network::setProxy(SignalProxy *)?";
 
         connect(ircuser, SIGNAL(nickSet(QString)), this, SLOT(ircUserNickChanged(QString)));
 
@@ -302,7 +302,7 @@ IrcChannel *Network::newIrcChannel(const QString &channelname, const QVariantMap
         if (proxy())
             proxy()->synchronize(channel);
         else
-            qWarning() << "unable to synchronize new IrcChannel" << channelname << "forgot to call Network::setProxy(SignalProxy *)?";
+            kWarning(300000) << "unable to synchronize new IrcChannel" << channelname << "forgot to call Network::setProxy(SignalProxy *)?";
 
         _ircChannels[channelname.toLower()] = channel;
 
@@ -517,7 +517,7 @@ void Network::setConnected(bool connected)
 void Network::setConnectionState(int state)
 {
     _connectionState = (ConnectionState)state;
-    //qDebug() << "netstate" << networkId() << networkName() << state;
+    //kDebug(300000) << "netstate" << networkId() << networkName() << state;
     SYNC(ARG(state))
     emit connectionStateSet(_connectionState);
 }
@@ -751,7 +751,7 @@ void Network::initSetIrcUsersAndChannels(const QVariantMap &usersAndChannels)
 {
     Q_ASSERT(proxy());
     if (isInitialized()) {
-        qWarning() << "Network" << networkId() << "received init data for users and channels although there already are known users or channels!";
+        kWarning(300000) << "Network" << networkId() << "received init data for users and channels although there already are known users or channels!";
         return;
     }
 
@@ -764,7 +764,7 @@ void Network::initSetIrcUsersAndChannels(const QVariantMap &usersAndChannels)
     int count = users["nick"].toList().count();
     foreach(const QString &key, users.keys()) {
         if (users[key].toList().count() != count) {
-            qWarning() << "Received invalid usersAndChannels init data, sizes of attribute lists don't match!";
+            kWarning(300000) << "Received invalid usersAndChannels init data, sizes of attribute lists don't match!";
             return;
         }
     }
@@ -784,7 +784,7 @@ void Network::initSetIrcUsersAndChannels(const QVariantMap &usersAndChannels)
     count = channels["name"].toList().count();
     foreach(const QString &key, channels.keys()) {
         if (channels[key].toList().count() != count) {
-            qWarning() << "Received invalid usersAndChannels init data, sizes of attribute lists don't match!";
+            kWarning(300000) << "Received invalid usersAndChannels init data, sizes of attribute lists don't match!";
             return;
         }
     }

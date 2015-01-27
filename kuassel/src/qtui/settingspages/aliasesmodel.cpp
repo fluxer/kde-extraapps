@@ -20,7 +20,7 @@
 
 #include "aliasesmodel.h"
 
-#include <QDebug>
+#include <KDebug>
 #include <QStringList>
 
 #include "client.h"

@@ -20,7 +20,7 @@
 
 #include "clickablelabel.h"
 
-#include <QDebug>
+#include <KDebug>
 #include <QMouseEvent>
 
 ClickableLabel::ClickableLabel(QWidget *parent)

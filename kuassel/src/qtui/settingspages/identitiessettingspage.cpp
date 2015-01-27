@@ -231,11 +231,11 @@ void IdentitiesSettingsPage::clientIdentityUpdated()
 {
     const Identity *clientIdentity = qobject_cast<Identity *>(sender());
     if (!clientIdentity) {
-        qWarning() << "Invalid identity to update!";
+        kWarning(300000) << "Invalid identity to update!";
         return;
     }
     if (!identities.contains(clientIdentity->id())) {
-        qWarning() << "Unknown identity to update:" << clientIdentity->identityName();
+        kWarning(300000) << "Unknown identity to update:" << clientIdentity->identityName();
         return;
     }
 
@@ -434,7 +434,7 @@ SaveIdentitiesDlg::SaveIdentitiesDlg(const QList<CertIdentity *> &toCreate, cons
         foreach(CertIdentity *id, toUpdate) {
             const Identity *cid = Client::identity(id->id());
             if (!cid) {
-                qWarning() << "Invalid client identity!";
+                kWarning(300000) << "Invalid client identity!";
                 numevents--;
                 continue;
             }
@@ -449,7 +449,7 @@ SaveIdentitiesDlg::SaveIdentitiesDlg(const QList<CertIdentity *> &toCreate, cons
         }
     }
     else {
-        qWarning() << "Sync dialog called without stuff to change!";
+        kWarning(300000) << "Sync dialog called without stuff to change!";
         accept();
     }
 }

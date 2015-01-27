@@ -22,7 +22,7 @@
 
 #include <QCoreApplication>
 #include <QEvent>
-#include <QDebug>
+#include <KDebug>
 
 #include "event.h"
 #include "ircevent.h"
@@ -128,7 +128,7 @@ int EventManager::findEventType(const QString &methodSignature_, const QString &
             QString numericSig = methodSignature.left(methodSignature.length() - 3) + "Numeric";
             eventType = eventEnum().keyToValue(numericSig.toLatin1());
             if (eventType < 0) {
-                qWarning() << Q_FUNC_INFO << "Could not find EventType" << numericSig << "for handling" << methodSignature;
+                kWarning(300000) << Q_FUNC_INFO << "Could not find EventType" << numericSig << "for handling" << methodSignature;
                 return -1;
             }
             eventType += num;
@@ -138,7 +138,7 @@ int EventManager::findEventType(const QString &methodSignature_, const QString &
     if (eventType < 0)
         eventType = eventEnum().keyToValue(methodSignature.toLatin1());
     if (eventType < 0) {
-        qWarning() << Q_FUNC_INFO << "Could not find EventType" << methodSignature;
+        kWarning(300000) << Q_FUNC_INFO << "Could not find EventType" << methodSignature;
         return -1;
     }
     return eventType;
@@ -158,13 +158,13 @@ void EventManager::registerObject(QObject *object, Priority priority, const QStr
         if (eventType > 0) {
             Handler handler(object, i, priority);
             registeredHandlers()[eventType].append(handler);
-            //qDebug() << "Registered event handler for" << methodSignature << "in" << object;
+            //kDebug(300000) << "Registered event handler for" << methodSignature << "in" << object;
         }
         eventType = findEventType(methodSignature, filterPrefix);
         if (eventType > 0) {
             Handler handler(object, i, priority);
             registeredFilters()[eventType].append(handler);
-            //qDebug() << "Registered event filterer for" << methodSignature << "in" << object;
+            //kDebug(300000) << "Registered event filterer for" << methodSignature << "in" << object;
         }
     }
 }
@@ -192,18 +192,18 @@ void EventManager::registerEventHandler(QList<EventType> events, QObject *object
 {
     int methodIndex = object->metaObject()->indexOfMethod(slot);
     if (methodIndex < 0) {
-        qWarning() << Q_FUNC_INFO << QString("Slot %1 not found in object %2").arg(slot).arg(object->objectName());
+        kWarning(300000) << Q_FUNC_INFO << QString("Slot %1 not found in object %2").arg(slot).arg(object->objectName());
         return;
     }
     Handler handler(object, methodIndex, priority);
     foreach(EventType event, events) {
         if (isFilter) {
             registeredFilters()[event].append(handler);
-            qDebug() << "Registered event filter for" << event << "in" << object;
+            kDebug(300000) << "Registered event filter for" << event << "in" << object;
         }
         else {
             registeredHandlers()[event].append(handler);
-            qDebug() << "Registered event handler for" << event << "in" << object;
+            kDebug(300000) << "Registered event handler for" << event << "in" << object;
         }
     }
 }
@@ -249,7 +249,7 @@ void EventManager::processEvent(Event *event)
 
 void EventManager::dispatchEvent(Event *event)
 {
-    //qDebug() << "Dispatching" << event;
+    //kDebug(300000) << "Dispatching" << event;
 
     // we try handlers from specialized to generic by masking the enum
 
@@ -265,7 +265,7 @@ void EventManager::dispatchEvent(Event *event)
     if ((type & ~IrcEventNumericMask) == IrcEventNumeric) {
         ::IrcEventNumeric *numEvent = static_cast< ::IrcEventNumeric *>(event);
         if (!numEvent)
-            qWarning() << "Invalid event type for IrcEventNumeric!";
+            kWarning(300000) << "Invalid event type for IrcEventNumeric!";
         else {
             int num = numEvent->number();
             if (num > 0) {

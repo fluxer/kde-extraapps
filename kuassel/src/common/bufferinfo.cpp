@@ -20,7 +20,7 @@
 
 #include <QString>
 #include <QDataStream>
-#include <QDebug>
+#include <KDebug>
 #include <QByteArray>
 
 #include "bufferinfo.h"

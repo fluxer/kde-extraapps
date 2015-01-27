@@ -107,19 +107,6 @@ public:
 
     static const QString &coreDumpFileName();
 
-    static bool DEBUG;
-
-    enum LogLevel {
-        DebugLevel,
-        InfoLevel,
-        WarningLevel,
-        ErrorLevel
-    };
-
-    static inline LogLevel logLevel();
-    static inline QFile *logFile();
-    static inline bool logToSyslog();
-
     static void logFatalMessage(const char *msg);
 
 protected:
@@ -147,10 +134,6 @@ private:
     static QString _coreDumpFileName;
     static QString _configDirPath;
     static QStringList _dataDirPaths;
-
-    static LogLevel _logLevel;
-    static QFile *_logFile;
-    static bool _logToSyslog;
 };
 
 
@@ -166,9 +149,5 @@ void Quassel::setCliParser(AbstractCliParser *parser) { _cliParser = parser; }
 AbstractCliParser *Quassel::cliParser() { return _cliParser; }
 QString Quassel::optionValue(const QString &key) { return cliParser()->value(key); }
 bool Quassel::isOptionSet(const QString &key) { return cliParser()->isSet(key); }
-
-Quassel::LogLevel Quassel::logLevel() { return _logLevel; }
-QFile *Quassel::logFile() { return _logFile; }
-bool Quassel::logToSyslog() { return _logToSyslog; }
 
 #endif

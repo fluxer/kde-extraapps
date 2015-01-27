@@ -21,7 +21,6 @@ set(SOURCES
     ircevent.cpp
     irclisthelper.cpp
     ircuser.cpp
-    logger.cpp
     message.cpp
     messageevent.cpp
     network.cpp
@@ -52,10 +51,6 @@ if (QCA2_FOUND)
 endif()
 
 include_directories(${ZLIB_INCLUDE_DIRS})
-
-if (HAVE_SYSLOG)
-    add_definitions(-DHAVE_SYSLOG)
-endif()
 
 if (EXECINFO_FOUND)
     add_definitions(-DHAVE_EXECINFO)

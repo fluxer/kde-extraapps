@@ -45,7 +45,7 @@ QList<AbstractNotificationBackend::Notification> QtUi::_notifications;
 QtUi::QtUi() : GraphicalUi()
 {
     if (_instance != 0) {
-        qWarning() << "QtUi has been instantiated again!";
+        kWarning(300000) << "QtUi has been instantiated again!";
         return;
     }
     _instance = this;

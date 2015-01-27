@@ -71,7 +71,7 @@ bool BufferViewOverlayFilter::filterAcceptsRow(int source_row, const QModelIndex
     QModelIndex source_bufferIndex = sourceModel()->index(source_row, 0, source_parent);
 
     if (!source_bufferIndex.isValid()) {
-        qWarning() << "filterAcceptsRow has been called with an invalid Child";
+        kWarning(300000) << "filterAcceptsRow has been called with an invalid Child";
         return false;
     }
 
@@ -107,6 +107,6 @@ bool BufferViewOverlayFilter::filterAcceptsRow(int source_row, const QModelIndex
         return false;
 
     // the buffer is not known to us
-    qDebug() << "BufferViewOverlayFilter::filterAcceptsRow()" << bufferId << "is unknown!";
+    kDebug(300000) << "BufferViewOverlayFilter::filterAcceptsRow()" << bufferId << "is unknown!";
     return false;
 }

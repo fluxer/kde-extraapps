@@ -27,7 +27,7 @@
 
 #include <ctime>
 
-#include <QDebug>
+#include <KDebug>
 
 INIT_SYNCABLE_OBJECT(ClientBacklogManager)
 ClientBacklogManager::ClientBacklogManager(QObject *parent)
@@ -91,7 +91,7 @@ void ClientBacklogManager::requestInitialBacklog()
 {
     if (_initBacklogRequested) {
         Q_ASSERT(_requester);
-        qWarning() << "ClientBacklogManager::requestInitialBacklog() called twice in the same session! (Backlog has already been requested)";
+        kWarning(300000) << "ClientBacklogManager::requestInitialBacklog() called twice in the same session! (Backlog has already been requested)";
         return;
     }
 
@@ -138,7 +138,7 @@ void ClientBacklogManager::checkForBacklog(const QList<BufferId> &bufferIds)
 
     if (!_requester) {
         // during client start up this message is to be expected in some situations.
-        qDebug() << "ClientBacklogManager::checkForBacklog(): no active backlog requester.";
+        kDebug(300000) << "ClientBacklogManager::checkForBacklog(): no active backlog requester.";
         return;
     }
     switch (_requester->type()) {

@@ -21,7 +21,7 @@
 #include "cliparser.h"
 
 #include <QDir>
-#include <QDebug>
+#include <KDebug>
 #include <QString>
 #include <QFileInfo>
 
@@ -36,9 +36,9 @@ void CliParser::addArgument(const QString &longName_, const CliParserArg &arg)
 {
     QString longName = longName_;
     longName.remove(QRegExp("\\s*<.*>\\s*")); // KCmdLineArgs takes args of the form "arg <defval>"
-    if (argsMap.contains(longName)) qWarning() << "Warning: Multiple definition of argument" << longName;
+    if (argsMap.contains(longName)) kWarning(300000) << "Warning: Multiple definition of argument" << longName;
     if (arg.shortName != 0 && !lnameOfShortArg(arg.shortName).isNull())
-        qWarning().nospace() << "Warning: Redefining shortName '" << arg.shortName << "' for " << longName << " previously defined for " << lnameOfShortArg(arg.shortName);
+        kWarning(300000).nospace() << "Warning: Redefining shortName '" << arg.shortName << "' for " << longName << " previously defined for " << lnameOfShortArg(arg.shortName);
     argsMap.insert(longName, arg);
 }
 
@@ -55,7 +55,7 @@ bool CliParser::addLongArg(const CliParserArg::CliArgType type, const QString &n
             return true;
         }
     }
-    qWarning() << "Warning: Unrecognized argument:" << name;
+    kWarning(300000) << "Warning: Unrecognized argument:" << name;
     return false;
 }
 
@@ -75,12 +75,12 @@ bool CliParser::addShortArg(const CliParserArg::CliArgType type, const char shor
             }
             // arg is an option but detected as a switch -> argument is missing
             else {
-                qWarning().nospace() << "Warning: '" << shortName << "' is an option which needs an argument";
+                kWarning(300000).nospace() << "Warning: '" << shortName << "' is an option which needs an argument";
                 return false;
             }
         }
     }
-    qWarning().nospace() << "Warning: Unrecognized argument: '" << shortName << "'";
+    kWarning(300000).nospace() << "Warning: Unrecognized argument: '" << shortName << "'";
     return false;
 }
 
@@ -136,7 +136,7 @@ bool CliParser::init(const QStringList &args)
                 // option
                 // short options are not freely mixable with other shortargs
                 if (currentArg->mid(1).toLatin1().size() > 1) {
-                    qWarning() << "Warning: Shortoptions may not be combined with other shortoptions or switches";
+                    kWarning(300000) << "Warning: Shortoptions may not be combined with other shortoptions or switches";
                     return false;
                 }
                 QString value;
@@ -213,7 +213,7 @@ QString CliParser::value(const QString &longName)
             return argsMap.value(longName).def;
     }
     else {
-        qWarning() << "Warning: Requested value of not defined argument" << longName << "or argument is a switch";
+        kWarning(300000) << "Warning: Requested value of not defined argument" << longName << "or argument is a switch";
         return QString();
     }
 }
@@ -226,7 +226,7 @@ bool CliParser::isSet(const QString &longName)
         else return argsMap.value(longName).boolValue;
     }
     else {
-        qWarning() << "Warning: Requested isSet of not defined argument" << longName;
+        kWarning(300000) << "Warning: Requested isSet of not defined argument" << longName;
         return false;
     }
 }

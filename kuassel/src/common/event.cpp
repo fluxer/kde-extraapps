@@ -35,7 +35,7 @@ Event::Event(EventManager::EventType type, QVariantMap &map)
     , _valid(true)
 {
     if (!map.contains("flags") || !map.contains("timestamp")) {
-        qWarning() << "Received invalid serialized event:" << map;
+        kWarning(300000) << "Received invalid serialized event:" << map;
         setValid(false);
         return;
     }
@@ -66,7 +66,7 @@ Event *Event::fromVariantMap(QVariantMap &map, Network *network)
     int inttype = map.take("type").toInt();
     // sanity check if we have a valid enum value
     if (EventManager::enumName(inttype).isEmpty()) {
-        qWarning() << "Received a serialized event with unknown type" << inttype;
+        kWarning(300000) << "Received a serialized event with unknown type" << inttype;
         return 0;
     }
 
@@ -101,12 +101,12 @@ Event *Event::fromVariantMap(QVariantMap &map, Network *network)
     }
 
     if (!e) {
-        qWarning() << "Can't create event of type" << type;
+        kWarning(300000) << "Can't create event of type" << type;
         return 0;
     }
 
     if (!map.isEmpty()) {
-        qWarning() << "Event creation from map did not consume all data:" << map;
+        kWarning(300000) << "Event creation from map did not consume all data:" << map;
     }
 
     return e;

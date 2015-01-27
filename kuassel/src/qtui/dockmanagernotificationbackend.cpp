@@ -46,7 +46,7 @@ DockManagerNotificationBackend::DockManagerNotificationBackend(QObject *parent)
         if (_dock->isValid()) {
             _bus.connect("org.freedesktop.DockManager", "/org/freedesktop/DockManager", "org.freedesktop.DockManager", "ItemAdded", this, SLOT(itemAdded(QDBusObjectPath)));
         } else {
-            qDebug() << "No DockManager available";
+            kDebug(300000) << "No DockManager available";
             _enabled = false;
             return;
         }
@@ -72,7 +72,7 @@ void DockManagerNotificationBackend::itemAdded(QDBusObjectPath p)
         // stupid implementations (i.e. docky) use uint, but proper casing
         paths = _dock->call("GetItemsByPID", (unsigned int)QCoreApplication::applicationPid());
         if (!paths.isValid()) {
-            qDebug() << "DBus error:" << paths.error().message();
+            kDebug(300000) << "DBus error:" << paths.error().message();
             return;
         }
     }

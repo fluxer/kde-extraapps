@@ -310,7 +310,7 @@ void BufferViewSettingsPage::updateBufferView()
 
     int itemPos = listPos(config);
     if (itemPos == -1) {
-        qWarning() << "BufferViewSettingsPage::updateBufferView(): view is unknown:" << config->bufferViewId();
+        kWarning(300000) << "BufferViewSettingsPage::updateBufferView(): view is unknown:" << config->bufferViewId();
         return;
     }
     ui.bufferViewList->item(itemPos)->setText(config->bufferViewName());

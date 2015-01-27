@@ -53,7 +53,7 @@ QMap<QString, bool> ClientIgnoreListManager::matchingRulesForHostmask(const QStr
             && ((network.isEmpty() && channel.isEmpty()) || item.scope == GlobalScope || (item.scope == NetworkScope && scopeMatch(item.scopeRule, network))
                 || (item.scope == ChannelScope && scopeMatch(item.scopeRule, channel)))) {
             result[item.ignoreRule] = item.isActive;
-//      qDebug() << "matchingRulesForHostmask found: " << item.ignoreRule << "is active: " << item.isActive;
+//      kDebug(300000) << "matchingRulesForHostmask found: " << item.ignoreRule << "is active: " << item.isActive;
         }
     }
     return result;

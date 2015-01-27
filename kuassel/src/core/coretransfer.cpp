@@ -153,15 +153,15 @@ void CoreTransfer::onDataReceived()
 
     // Send ack to sender. The DCC protocol only specifies 32 bit values, but modern clients (i.e. those who can send files
     // larger than 4 GB) will ignore this anyway...
-    quint32 ack = qToBigEndian((quint32)_pos);// qDebug() << Q_FUNC_INFO << _pos;
+    quint32 ack = qToBigEndian((quint32)_pos);// kDebug(300000) << Q_FUNC_INFO << _pos;
     _socket->write((char *)&ack, 4);
 
     if (_pos > fileSize()) {
-        qWarning() << "DCC Receive: Got more data than expected!";
+        kWarning(300000) << "DCC Receive: Got more data than expected!";
         setError(i18n("DCC Receive: Got more data than expected!"));
     }
     else if (_pos == fileSize()) {
-        qDebug() << "DCC Receive: Transfer finished";
+        kDebug(300000) << "DCC Receive: Transfer finished";
         if (relayData(QByteArray(), false)) // empty buffer
             setState(Completed);
     }

@@ -46,7 +46,7 @@ QHash<QString, SettingsChangeNotifier *> Settings::settingsChangeNotifier;
 //   if(appPath.startsWith(Qtopia::packagePath())) {
 //     QString sandboxPath = appPath.left(Qtopia::packagePath().length() + 32);
 //     QSettings(sandboxPath + "/etc/QuasselIRC.conf", QSettings::IniFormat);
-//     qDebug() << sandboxPath + "/etc/QuasselIRC.conf";
+//     kDebug(300000) << sandboxPath + "/etc/QuasselIRC.conf";
 //   } else {
 //     QSettings(QCoreApplication::organizationName(), applicationName);
 //   }

@@ -342,12 +342,12 @@ void NetworksSettingsPage::clientIdentityUpdated()
 {
     const Identity *identity = qobject_cast<const Identity *>(sender());
     if (!identity) {
-        qWarning() << "NetworksSettingsPage: Invalid identity to update!";
+        kWarning(300000) << "NetworksSettingsPage: Invalid identity to update!";
         return;
     }
     int row = ui.identityList->findData(identity->id().toInt());
     if (row < 0) {
-        qWarning() << "NetworksSettingsPage: Invalid identity to update!";
+        kWarning(300000) << "NetworksSettingsPage: Invalid identity to update!";
         return;
     }
     if (ui.identityList->itemText(row) != identity->identityName()) {
@@ -399,7 +399,7 @@ void NetworksSettingsPage::clientNetworkUpdated()
 {
     const Network *net = qobject_cast<const Network *>(sender());
     if (!net) {
-        qWarning() << "Update request for unknown network received!";
+        kWarning(300000) << "Update request for unknown network received!";
         return;
     }
     networkInfos[net->networkId()] = net->networkInfo();
@@ -924,7 +924,7 @@ SaveNetworksDlg::SaveNetworksDlg(const QList<NetworkInfo> &toCreate, const QList
         foreach(NetworkInfo info, toUpdate) {
             const Network *net = Client::network(info.networkId);
             if (!net) {
-                qWarning() << "Invalid client network!";
+                kWarning(300000) << "Invalid client network!";
                 numevents--;
                 continue;
             }
@@ -934,7 +934,7 @@ SaveNetworksDlg::SaveNetworksDlg(const QList<NetworkInfo> &toCreate, const QList
         }
     }
     else {
-        qWarning() << "Sync dialog called without stuff to change!";
+        kWarning(300000) << "Sync dialog called without stuff to change!";
         accept();
     }
 }

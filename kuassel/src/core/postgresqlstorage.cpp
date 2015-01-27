@@ -22,7 +22,6 @@
 
 #include <QtSql>
 
-#include "logger.h"
 #include "network.h"
 #include "quassel.h"
 
@@ -54,7 +53,7 @@ AbstractSqlMigrationWriter *PostgreSqlStorage::createMigrationWriter()
 
 bool PostgreSqlStorage::isAvailable() const
 {
-    qDebug() << QSqlDatabase::drivers();
+    kDebug(300000) << QSqlDatabase::drivers();
     if (!QSqlDatabase::isDriverAvailable("QPSQL")) return false;
     return true;
 }
@@ -111,7 +110,7 @@ bool PostgreSqlStorage::initDbSession(QSqlDatabase &db)
         // as this is the expected behavior.
         // If it is a newer version, switch to legacy mode.
 
-        quWarning() << "Switching Postgres to legacy mode. (set standard conforming strings to off)";
+        kWarning(300000) << "Switching Postgres to legacy mode. (set standard conforming strings to off)";
         // If the following calls fail, it is a legacy DB anyways, so it doesn't matter
         // and no need to check the outcome.
         db.exec("set standard_conforming_strings = off");
@@ -125,14 +124,14 @@ bool PostgreSqlStorage::initDbSession(QSqlDatabase &db)
             if (query.lastError().isValid()) {
                 // We cannot enable standard conforming strings...
                 // since Quassel does no escaping by itself, this would yield a major vulnerability.
-                quError() << "Failed to enable standard_conforming_strings for the Postgres db!";
+                kError(300000) << "Failed to enable standard_conforming_strings for the Postgres db!";
                 return false;
             }
         }
         break;
     default:
         // The slash got replaced with 0 or more than 2 slashes! o_O
-        quError() << "Your version of Qt does something _VERY_ strange to slashes in QSqlQueries! You should consult your trusted doctor!";
+        kError(300000) << "Your version of Qt does something _VERY_ strange to slashes in QSqlQueries! You should consult your trusted doctor!";
         return false;
         break;
     }
@@ -298,7 +297,7 @@ void PostgreSqlStorage::delUser(UserId user)
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::delUser(): cannot start transaction!";
+        kWarning(300000) << "PostgreSqlStorage::delUser(): cannot start transaction!";
         return;
     }
 
@@ -379,8 +378,8 @@ IdentityId PostgreSqlStorage::createIdentity(UserId user, CoreIdentity &identity
 
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::createIdentity(): Unable to start Transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::createIdentity(): Unable to start Transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return identityId;
     }
 
@@ -439,8 +438,8 @@ IdentityId PostgreSqlStorage::createIdentity(UserId user, CoreIdentity &identity
     }
 
     if (!db.commit()) {
-        qWarning() << "PostgreSqlStorage::createIdentity(): committing data failed!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::createIdentity(): committing data failed!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return IdentityId();
     }
     return identityId;
@@ -451,8 +450,8 @@ bool PostgreSqlStorage::updateIdentity(UserId user, const CoreIdentity &identity
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::updateIdentity(): Unable to start Transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::updateIdentity(): Unable to start Transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -525,8 +524,8 @@ bool PostgreSqlStorage::updateIdentity(UserId user, const CoreIdentity &identity
     }
 
     if (!db.commit()) {
-        qWarning() << "PostgreSqlStorage::updateIdentity(): committing data failed!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::updateIdentity(): committing data failed!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
     return true;
@@ -537,8 +536,8 @@ void PostgreSqlStorage::removeIdentity(UserId user, IdentityId identityId)
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::removeIdentity(): Unable to start Transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::removeIdentity(): Unable to start Transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return;
     }
 
@@ -562,8 +561,8 @@ QList<CoreIdentity> PostgreSqlStorage::identities(UserId user)
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::identites(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::identites(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return identities;
     }
 
@@ -623,8 +622,8 @@ NetworkId PostgreSqlStorage::createNetwork(UserId user, const NetworkInfo &info)
 
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::createNetwork(): failed to begin transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::createNetwork(): failed to begin transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -660,8 +659,8 @@ NetworkId PostgreSqlStorage::createNetwork(UserId user, const NetworkInfo &info)
     }
 
     if (!db.commit()) {
-        qWarning() << "PostgreSqlStorage::createNetwork(): committing data failed!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::createNetwork(): committing data failed!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return NetworkId();
     }
     return networkId;
@@ -713,8 +712,8 @@ bool PostgreSqlStorage::updateNetwork(UserId user, const NetworkInfo &info)
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::updateNetwork(): failed to begin transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::updateNetwork(): failed to begin transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -756,8 +755,8 @@ bool PostgreSqlStorage::updateNetwork(UserId user, const NetworkInfo &info)
     }
 
     if (!db.commit()) {
-        qWarning() << "PostgreSqlStorage::updateNetwork(): committing data failed!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::updateNetwork(): committing data failed!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
     return true;
@@ -768,8 +767,8 @@ bool PostgreSqlStorage::removeNetwork(UserId user, const NetworkId &networkId)
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::removeNetwork(): cannot start transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::removeNetwork(): cannot start transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -794,8 +793,8 @@ QList<NetworkInfo> PostgreSqlStorage::networks(UserId user)
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::networks(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::networks(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return nets;
     }
 
@@ -871,8 +870,8 @@ QList<NetworkId> PostgreSqlStorage::connectedNetworks(UserId user)
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::connectedNetworks(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::connectedNetworks(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return connectedNets;
     }
 
@@ -909,8 +908,8 @@ QHash<QString, QString> PostgreSqlStorage::persistentChannels(UserId user, const
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::persistentChannels(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::persistentChannels(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return persistentChans;
     }
 
@@ -1014,8 +1013,8 @@ BufferInfo PostgreSqlStorage::bufferInfo(UserId user, const NetworkId &networkId
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::bufferInfo(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::bufferInfo(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return BufferInfo();
     }
 
@@ -1059,7 +1058,7 @@ BufferInfo PostgreSqlStorage::bufferInfo(UserId user, const NetworkId &networkId
     safeExec(createQuery);
 
     if (!watchQuery(createQuery)) {
-        qWarning() << "PostgreSqlStorage::bufferInfo(): unable to create buffer";
+        kWarning(300000) << "PostgreSqlStorage::bufferInfo(): unable to create buffer";
         db.rollback();
         return BufferInfo();
     }
@@ -1098,8 +1097,8 @@ QList<BufferInfo> PostgreSqlStorage::requestBuffers(UserId user)
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::requestBuffers(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::requestBuffers(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return bufferlist;
     }
 
@@ -1123,8 +1122,8 @@ QList<BufferId> PostgreSqlStorage::requestBufferIdsForNetwork(UserId user, Netwo
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::requestBufferIdsForNetwork(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::requestBufferIdsForNetwork(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return bufferList;
     }
 
@@ -1147,7 +1146,7 @@ bool PostgreSqlStorage::removeBuffer(const UserId &user, const BufferId &bufferI
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::removeBuffer(): cannot start transaction!";
+        kWarning(300000) << "PostgreSqlStorage::removeBuffer(): cannot start transaction!";
         return false;
     }
 
@@ -1171,7 +1170,7 @@ bool PostgreSqlStorage::removeBuffer(const UserId &user, const BufferId &bufferI
         return true;
     default:
         // there was more then one buffer deleted...
-        qWarning() << "PostgreSqlStorage::removeBuffer(): Userid" << user << "BufferId" << "caused deletion of" << numRows << "Buffers! Rolling back transaction...";
+        kWarning(300000) << "PostgreSqlStorage::removeBuffer(): Userid" << user << "BufferId" << "caused deletion of" << numRows << "Buffers! Rolling back transaction...";
         db.rollback();
         return false;
     }
@@ -1182,7 +1181,7 @@ bool PostgreSqlStorage::renameBuffer(const UserId &user, const BufferId &bufferI
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::renameBuffer(): cannot start transaction!";
+        kWarning(300000) << "PostgreSqlStorage::renameBuffer(): cannot start transaction!";
         return false;
     }
 
@@ -1208,7 +1207,7 @@ bool PostgreSqlStorage::renameBuffer(const UserId &user, const BufferId &bufferI
         return true;
     default:
         // there was more then one buffer deleted...
-        qWarning() << "PostgreSqlStorage::renameBuffer(): Userid" << user << "BufferId" << "affected" << numRows << "Buffers! Rolling back transaction...";
+        kWarning(300000) << "PostgreSqlStorage::renameBuffer(): Userid" << user << "BufferId" << "affected" << numRows << "Buffers! Rolling back transaction...";
         db.rollback();
         return false;
     }
@@ -1219,8 +1218,8 @@ bool PostgreSqlStorage::mergeBuffersPermanently(const UserId &user, const Buffer
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::mergeBuffersPermanently(): cannot start transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::mergeBuffersPermanently(): cannot start transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -1285,8 +1284,8 @@ QHash<BufferId, MsgId> PostgreSqlStorage::bufferLastSeenMsgIds(UserId user)
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::bufferLastSeenMsgIds(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::bufferLastSeenMsgIds(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return lastSeenHash;
     }
 
@@ -1327,8 +1326,8 @@ QHash<BufferId, MsgId> PostgreSqlStorage::bufferMarkerLineMsgIds(UserId user)
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::bufferMarkerLineMsgIds(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::bufferMarkerLineMsgIds(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return markerLineHash;
     }
 
@@ -1354,8 +1353,8 @@ bool PostgreSqlStorage::logMessage(Message &msg)
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::logMessage(): cannot start transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::logMessage(): cannot start transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -1416,8 +1415,8 @@ bool PostgreSqlStorage::logMessages(MessageList &msgs)
 {
     QSqlDatabase db = logDb();
     if (!beginTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::logMessage(): cannot start transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::logMessage(): cannot start transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return false;
     }
 
@@ -1501,8 +1500,8 @@ QList<Message> PostgreSqlStorage::requestMsgs(UserId user, BufferId bufferId, Ms
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::requestMsgs(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::requestMsgs(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return messagelist;
     }
 
@@ -1535,7 +1534,7 @@ QList<Message> PostgreSqlStorage::requestMsgs(UserId user, BufferId bufferId, Ms
     QSqlQuery query = executePreparedQuery(queryName, params, db);
 
     if (!watchQuery(query)) {
-        qDebug() << "select_messages failed";
+        kDebug(300000) << "select_messages failed";
         db.rollback();
         return messagelist;
     }
@@ -1571,8 +1570,8 @@ QList<Message> PostgreSqlStorage::requestAllMsgs(UserId user, MsgId first, MsgId
 
     QSqlDatabase db = logDb();
     if (!beginReadOnlyTransaction(db)) {
-        qWarning() << "PostgreSqlStorage::requestAllMsgs(): cannot start read only transaction!";
-        qWarning() << " -" << qPrintable(db.lastError().text());
+        kWarning(300000) << "PostgreSqlStorage::requestAllMsgs(): cannot start read only transaction!";
+        kWarning(300000) << " -" << qPrintable(db.lastError().text());
         return messagelist;
     }
 
@@ -1612,25 +1611,25 @@ QList<Message> PostgreSqlStorage::requestAllMsgs(UserId user, MsgId first, MsgId
 
 
 // void PostgreSqlStorage::safeExec(QSqlQuery &query) {
-//   qDebug() << "PostgreSqlStorage::safeExec";
-//   qDebug() << "   executing:\n" << query.executedQuery();
-//   qDebug() << "   bound Values:";
+//   kDebug(300000) << "PostgreSqlStorage::safeExec";
+//   kDebug(300000) << "   executing:\n" << query.executedQuery();
+//   kDebug(300000) << "   bound Values:";
 //   QList<QVariant> list = query.boundValues().values();
 //   for (int i = 0; i < list.size(); ++i)
 //     qCritical() << i << ": " << list.at(i).toString().toLatin1().data();
 
 //   query.exec();
 
-//   qDebug() << "Success:" << !query.lastError().isValid();
-//   qDebug();
+//   kDebug(300000) << "Success:" << !query.lastError().isValid();
+//   kDebug(300000);
 
 //   if(!query.lastError().isValid())
 //     return;
 
-//   qDebug() << "==================== ERROR ====================";
+//   kDebug(300000) << "==================== ERROR ====================";
 //   watchQuery(query);
-//   qDebug() << "===============================================";
-//   qDebug();
+//   kDebug(300000) << "===============================================";
+//   kDebug(300000);
 //   return;
 // }
 
@@ -1675,8 +1674,8 @@ QSqlQuery PostgreSqlStorage::prepareAndExecuteQuery(const QString &queryname, co
         if (!db.isOpen()) {
             db = logDb();
             if (!beginTransaction(db)) {
-                qWarning() << "PostgreSqlStorage::prepareAndExecuteQuery(): cannot start transaction while recovering from connection loss!";
-                qWarning() << " -" << qPrintable(db.lastError().text());
+                kWarning(300000) << "PostgreSqlStorage::prepareAndExecuteQuery(): cannot start transaction while recovering from connection loss!";
+                kWarning(300000) << " -" << qPrintable(db.lastError().text());
                 return query;
             }
             db.exec("SAVEPOINT quassel_prepare_query");
@@ -1691,8 +1690,8 @@ QSqlQuery PostgreSqlStorage::prepareAndExecuteQuery(const QString &queryname, co
         if (checkQuery.value(0).toInt() == 0) {
             db.exec(QString("PREPARE quassel_%1 AS %2").arg(queryname).arg(queryString(queryname)));
             if (db.lastError().isValid()) {
-                qWarning() << "PostgreSqlStorage::prepareQuery(): unable to prepare query:" << queryname << "AS" << queryString(queryname);
-                qWarning() << "  Error:" << db.lastError().text();
+                kWarning(300000) << "PostgreSqlStorage::prepareQuery(): unable to prepare query:" << queryname << "AS" << queryString(queryname);
+                kWarning(300000) << "  Error:" << db.lastError().text();
                 return QSqlQuery(db);
             }
         }
