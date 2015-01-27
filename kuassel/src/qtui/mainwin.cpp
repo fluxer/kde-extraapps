@@ -466,6 +466,12 @@ void MainWin::setupMenus()
     _helpDebugMenu->addAction(coll->action("ReloadStyle"));
 
     _helpMenu = menuBar()->addMenu(i18n("&Help"));
+    _helpMenu->addAction(KStandardAction::whatsThis(_kHelpMenu, SLOT(whatsThis()), this));
+    _helpMenu->addSeparator();
+    _helpMenu->addAction(KStandardAction::reportBug(_kHelpMenu, SLOT(reportBug()), this));
+    _helpMenu->addSeparator();
+    _helpMenu->addAction(KStandardAction::switchApplicationLanguage(_kHelpMenu, SLOT(switchApplicationLanguage()), this));
+    _helpMenu->addSeparator();
     _helpMenu->addAction(coll->action("AboutQuassel"));
     _helpMenu->addAction(KStandardAction::aboutKDE(_kHelpMenu, SLOT(aboutKDE()), this));
     _helpMenu->addSeparator();
