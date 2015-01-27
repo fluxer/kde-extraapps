@@ -1532,6 +1532,7 @@ void MainWin::on_actionDebugHotList_triggered()
 
     QTreeView *view = new QTreeView;
     view->setAttribute(Qt::WA_DeleteOnClose);
+    view->setWindowTitle("Debug HotList View");
     view->setModel(_bufferHotList);
     view->show();
 }
@@ -1550,6 +1551,7 @@ void MainWin::on_actionDebugMessageModel_triggered()
     QTableView *view = new QTableView(0);
     DebugMessageModelFilter *filter = new DebugMessageModelFilter(view);
     filter->setSourceModel(Client::messageModel());
+    view->setWindowTitle("Debug MessageModel View");
     view->setModel(filter);
     view->setAttribute(Qt::WA_DeleteOnClose, true);
     view->verticalHeader()->hide();
