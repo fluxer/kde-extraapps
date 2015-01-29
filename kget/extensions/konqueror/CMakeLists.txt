@@ -13,6 +13,6 @@ target_link_libraries(kget_browser_integration ${KDE4_KPARTS_LIBS} ${KDE4_KIO_LI
 install(TARGETS kget_browser_integration DESTINATION ${PLUGIN_INSTALL_DIR})
 
 ########### install files ###############
-install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${DATA_INSTALL_DIR}/khtml/kpartplugins)
+
 install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${DATA_INSTALL_DIR}/dolphinpart/kpartplugins)
 install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins)
