@@ -86,7 +86,7 @@ if (QT_QTDBUS_FOUND)
     list(APPEND QT_MODULES DBus)
     if (dbusmenu-qt_FOUND)
         add_definitions(-DHAVE_DBUSMENU)
-        include_directories(${dbusmenu-qt_INCLUDE_DIRS} ${dbusmenu-qt5_INCLUDE_DIRS})
+        include_directories(${dbusmenu-qt_INCLUDE_DIRS})
         list(APPEND LIBS dbusmenu-qt)
     endif()
 
