@@ -211,16 +211,6 @@ struct PreviewItemDelegatePrivate
         }
     }
 
-    QRect ratingRectFromIndexRect(const QRect& rect) const
-    {
-        return QRect(
-                   rect.left(),
-                   rect.bottom() - ratingRowHeight() - ITEM_MARGIN,
-                   rect.width(),
-                   ratingRowHeight());
-    }
-
-
     bool mouseButtonEventFilter(QEvent::Type type)
     {
         return false;
@@ -328,10 +318,6 @@ struct PreviewItemDelegatePrivate
         painter->drawText(rect.left() + posX, rect.top() + fm.ascent(), text);
     }
 
-    void drawRating(QPainter* painter, const QRect& rect, const QVariant& value)
-    {
-    }
-
     bool isTextElided(const QString& text) const
     {
         QHash<QString, QString>::const_iterator it = mElidedTextCache.constFind(text);
@@ -347,7 +333,7 @@ struct PreviewItemDelegatePrivate
      */
     void showToolTip(const QModelIndex& index)
     {
-        if (mDetails == 0 || mDetails == PreviewItemDelegate::RatingDetail) {
+        if (mDetails == 0) {
             // No text to display
             return;
         }
@@ -459,11 +445,6 @@ struct PreviewItemDelegatePrivate
         return mThumbnailSize.width() + 2 * ITEM_MARGIN;
     }
 
-    int ratingRowHeight() const
-    {
-        return 0;
-    }
-
     int itemHeight() const
     {
         const int lineHeight = mView->fontMetrics().height();
@@ -479,9 +460,6 @@ struct PreviewItemDelegatePrivate
         }
         if (mDetails & PreviewItemDelegate::FileSizeDetail) {
             textHeight += lineHeight;
-        }
-        if (mDetails & PreviewItemDelegate::RatingDetail) {
-            textHeight += ratingRowHeight();
         }
         if (textHeight == 0) {
             // Keep at least one row of text, so that we can show folder names
@@ -770,9 +748,6 @@ void PreviewItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
             d->drawText(painter, textRect, fgColor, st);
             textRect.moveTop(textRect.bottom());
         }
-    }
-
-    if (!isDirOrArchive && (d->mDetails & PreviewItemDelegate::RatingDetail)) {
     }
 
 #ifdef DEBUG_DRAW_CURRENT

@@ -61,9 +61,8 @@ public:
     enum ThumbnailDetail {
         FileNameDetail  = 1,
         DateDetail      = 2,
-        RatingDetail    = 4,
-        ImageSizeDetail = 8,
-        FileSizeDetail  = 16
+        ImageSizeDetail = 4,
+        FileSizeDetail  = 8
     };
     // FIXME: Find out why this cause problems with Qt::Alignment in
     // PreviewItemDelegate!
@@ -97,7 +96,6 @@ Q_SIGNALS:
     void rotateDocumentLeftRequested(const KUrl&);
     void rotateDocumentRightRequested(const KUrl&);
     void showDocumentInFullScreenRequested(const KUrl&);
-    void setDocumentRatingRequested(const KUrl&, int rating);
 
 private Q_SLOTS:
     void setThumbnailSize(const QSize&);

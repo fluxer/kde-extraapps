@@ -306,8 +306,6 @@ struct MainWindow::Private
                 mGvCore, SLOT(rotateRight(KUrl)));
         connect(delegate, SIGNAL(showDocumentInFullScreenRequested(KUrl)),
                 q, SLOT(showDocumentInFullScreen(KUrl)));
-        connect(delegate, SIGNAL(setDocumentRatingRequested(KUrl,int)),
-                mGvCore, SLOT(setRating(KUrl,int)));
 
         // Connect url navigator
         connect(mUrlNavigator, SIGNAL(urlChanged(KUrl)),
