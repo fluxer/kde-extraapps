@@ -63,7 +63,6 @@ protected:
 private Q_SLOTS:
     void slotListViewActivated(const QModelIndex& index);
     void showRecentFoldersViewContextMenu(const QPoint& pos);
-    void slotTagViewClicked(const QModelIndex& index);
 
 private:
     StartMainPagePrivate* const d;

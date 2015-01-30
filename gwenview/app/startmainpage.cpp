@@ -98,8 +98,6 @@ struct StartMainPagePrivate : public Ui_StartMainPage
 
     void setupSearchUi()
     {
-        mTagView->hide();
-        mTagLabel->hide();
     }
 
     void updateHistoryTab()
@@ -157,10 +155,6 @@ StartMainPage::StartMainPage(QWidget* parent, GvCore* gvCore)
     connect(d->mBookmarksView, SIGNAL(urlChanged(KUrl)),
             SIGNAL(urlSelected(KUrl)));
 
-    // Tag view
-    connect(d->mTagView, SIGNAL(clicked(QModelIndex)),
-            SLOT(slotTagViewClicked(QModelIndex)));
-
     // Recent folder view
     connect(d->mRecentFoldersView, SIGNAL(indexActivated(QModelIndex)),
             SLOT(slotListViewActivated(QModelIndex)));
@@ -197,10 +191,6 @@ StartMainPage::~StartMainPage()
     delete d;
 }
 
-void StartMainPage::slotTagViewClicked(const QModelIndex& index)
-{
-}
-
 void StartMainPage::applyPalette(const QPalette& newPalette)
 {
     QColor fgColor = newPalette.text().color();
@@ -214,7 +204,6 @@ void StartMainPage::applyPalette(const QPalette& newPalette)
     setPalette(pal);
 
     initViewPalette(d->mBookmarksView, fgColor);
-    initViewPalette(d->mTagView, fgColor);
     initViewPalette(d->mRecentFoldersView, fgColor);
     initViewPalette(d->mRecentUrlsView, fgColor);
 }
