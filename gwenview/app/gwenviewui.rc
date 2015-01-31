@@ -42,8 +42,6 @@
         <Action name="edit_copy"/>
         <Action name="edit_paste"/>
         <Separator/>
-        <Action name="edit_tags" />
-        <Separator/>
         <Action name="rotate_left" />
         <Action name="rotate_right" />
         <Action name="mirror" />
