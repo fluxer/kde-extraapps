@@ -5,21 +5,6 @@ if(NOT MSVC)
     add_definitions(-DQT_STRICT_ITERATORS)
 endif(NOT MSVC)
 
-if(APPLE)
-    set(mac_SRCS
-        app_mac.cpp
-        mac/GrowlInterface.cpp
-    )
-    # Notification Center Appeared in 10.8, or Darwin 12
-    if( CMAKE_SYSTEM_VERSION VERSION_GREATER "11.9.9")
-        list(APPEND mac_SRCS mac/MacSystemNotify.mm)
-        add_definitions(-DHAVE_NOTIFICATION_CENTER)
-    endif()
-
-    include_directories ( services/lastfm/ )
-    set( MAC_FILES_DIR  ${CMAKE_SOURCE_DIR}/src/mac )
-endif(APPLE)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
@@ -490,8 +475,8 @@ set(scriptconsole_SRCS
 )
 
 if (PYTHONINTERP_FOUND)
-    execute_process(COMMAND "${PYTHON_EXECUTABLE}" ${CMAKE_SOURCE_DIR}/src/scripting/scriptengine/PHAACG2.py
-                                                   ${CMAKE_SOURCE_DIR}/src/scripting/scriptengine
+    execute_process(COMMAND "${PYTHON_EXECUTABLE}" ${PROJECT_SOURCE_DIR}/src/scripting/scriptengine/PHAACG2.py
+                                                   ${PROJECT_SOURCE_DIR}/src/scripting/scriptengine
                                                    ${CMAKE_BINARY_DIR}/scriptconsole)
     install(FILES ${CMAKE_BINARY_DIR}/scriptconsole/AutoComplete.txt
             DESTINATION ${DATA_INSTALL_DIR}/amarok/scriptconsole)
@@ -753,7 +738,7 @@ set(amaroklib_LIB_SRCS
 
 if( LIBMYGPO_QT_FOUND )
     set( EXTRA_LIBS ${LIBMYGPO_QT_LIBRARIES} )
-    include_directories(     ${LIBMYGPO_QT_INCLUDE_DIRS} ${LIBMYGPO_QT_INCLUDE_DIRS}/../ )
+    include_directories( ${LIBMYGPO_QT_INCLUDE_DIRS} ${LIBMYGPO_QT_INCLUDE_DIRS}/../ )
 endif( LIBMYGPO_QT_FOUND )
 
 if( LIBLASTFM_FOUND )
@@ -909,14 +894,6 @@ endif( QCA2_FOUND )
 if(KDE4_BUILD_TESTS)
     target_link_libraries(amaroklib ${QT_QTTEST_LIBRARY})
 endif()
-
-if(WIN32)
-    target_link_libraries(amaroklib ${QT_QTWEBKIT_LIBRARY})
-endif(WIN32)
-if(APPLE)
-    target_link_libraries(amaroklib "/System/Library/Frameworks/Foundation.framework")
-    SET_TARGET_PROPERTIES(amaroklib PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-endif(APPLE)
 
 set_target_properties(amaroklib PROPERTIES VERSION 1.0.0 SOVERSION 1 )
 install(TARGETS amaroklib ${INSTALL_TARGETS_DEFAULT_ARGS} )
