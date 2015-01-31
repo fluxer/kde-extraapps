@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>590</width>
-    <height>115</height>
+    <height>141</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,22 +75,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="manageButton">
-       <property name="toolTip">
-        <string>Browse, install, and uninstall scripts</string>
-       </property>
-       <property name="text">
-        <string>Manage Scripts</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="KPushButton" name="reloadButton">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Reload</string>
        </property>
        <property name="icon">
         <iconset theme="view-refresh">

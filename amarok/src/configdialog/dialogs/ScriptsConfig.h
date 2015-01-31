@@ -46,7 +46,6 @@ public slots:
     void slotConfigChanged( bool changed );
 
 private slots:
-    void slotManageScripts();
     void installLocalScript();
     void slotReloadScriptSelector();
     void slotUpdateScripts();

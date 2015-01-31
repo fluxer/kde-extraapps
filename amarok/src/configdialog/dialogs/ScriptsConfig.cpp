@@ -27,7 +27,6 @@
 
 #include <KFileDialog>
 #include <KMessageBox>
-#include <KNS3/DownloadDialog>
 #include <KPluginInfo>
 #include <KPluginSelector>
 #include <KStandardDirs>
@@ -56,8 +55,6 @@ ScriptsConfig::ScriptsConfig( QWidget *parent )
 
     // Load config
     gui.kcfg_AutoUpdateScripts->setChecked( AmarokConfig::autoUpdateScripts() );
-    gui.manageButton->setIcon( KIcon( "get-hot-new-stuff-amarok" ) );
-    connect( gui.manageButton, SIGNAL(clicked()), SLOT(slotManageScripts()) );
     connect( gui.installButton, SIGNAL(clicked(bool)), SLOT(installLocalScript()) );
 
     m_selector = gui.scriptSelector;
@@ -74,17 +71,6 @@ ScriptsConfig::ScriptsConfig( QWidget *parent )
 
 ScriptsConfig::~ScriptsConfig()
 {}
-
-void
-ScriptsConfig::slotManageScripts()
-{
-    QStringList updateScriptsList;
-    KNS3::DownloadDialog dialog("amarok.knsrc", this);
-    dialog.exec();
-
-    if( !dialog.installedEntries().isEmpty() || !dialog.changedEntries().isEmpty() )
-        m_timer->start();
-}
 
 void
 ScriptsConfig::updateSettings()
