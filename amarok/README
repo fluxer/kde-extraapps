@@ -1,0 +1,178 @@
+Amarok - the audio player for KDE
+===================================
+
+There are many media players around these days, it's true. What's missing from most
+players is a user interface that doesn't get in the way of the user. How many
+buttons do you have to press for simply adding some new tracks to the playlist?
+Amarok tries to be a little different, providing a simple drag and drop interface
+that really makes playlist handling easy.
+
+
+ FEATURES
+==========
+
+    * Quick and simple drag and drop playlist creation
+    * Music library
+    * Cross platform: Support for Unix, MacOS X and Windows
+    * Plays all audio formats known to man
+    * Cover art download using Last.fm services
+    * Automatic play-statistics generation (iRate style)
+    * Full lyrics download
+    * Learn about your music with integrated Wikipedia
+    * Full Last.fm support
+    * gpodder.net support
+    * Configurable on screen display for track changes
+    * Podcast support
+    * iPod support, as well as other media players
+    * Powerful scripting interface
+    * KDE integration
+    * Integration with multiple web sources including Magnatune, Jamendo,
+      Ampache, MP3tunes, and others.
+--------------------------------------------------------------------------------
+
+
+ DEPENDENCIES
+==============
+
+Required
+    * KDE-Libs 4.8.4 (or newer) + KDE-Base-runtime 4.8 (oxygen-icons) (or newer)
+      http://www.kde.org
+
+    * Phonon backend, one of the following is strongly recommended
+      * phonon-gstreamer 4.6.3 (or newer)
+      * phonon-vlc 0.6.1 (or newer; as of 0.6.1 doesn't yet play Audio CDs, bug 313046)
+
+    * Qt 4.8.3 (or newer)
+      http://qt-project.org
+
+    * TagLib 1.7 (or newer)
+      (Metadata tagging library)
+
+    * TagLib Extras 1.0.1 (or newer)
+      (Support for metadata reading of additional file types)
+      svn://anonsvn.kde.org/home/kde/trunk/kdesupport/taglib-extras
+
+    * MySQL 5.0 (or newer) Embedded: libmysqld compiled with fPIC
+      (In-process database support)
+
+    * QtScript Generator, Qt Bindings 0.1.0
+      (Qt Bindings for QtScript for Amarok's scripting system)
+      http://code.google.com/p/qtscriptgenerator/
+      http://qt.gitorious.org/qt-labs/qtscriptgenerator
+
+    * LibQCA 2.0.2 (or newer)
+      (Qt Cryptographic Architecture)
+      http://delta.affinix.com/qca/
+
+Optional
+    * Taglib 1.8 for support of MOD, IT, S3M and XM files
+    * Taglib 1.9 for support of Opus files
+      http://developer.kde.org/~wheeler/taglib.html
+      https://github.com/taglib/taglib
+
+    * iPod support requires:
+      * libgpod 0.8.2 (or newer)
+        http://www.gtkpod.org/libgpod/
+      * optional iPod album artwork support requires:
+        * libgpod built with GDKPixBuf support enabled
+        * GDKPixBuf 2.0 (or newer) itself
+
+    * libmtp 1.0.0 (or newer)
+      (MTP device support)
+      http://libmtp.sourceforge.net/
+
+    * Spectrum analyzer requires:
+      * QtOpenGL
+
+    * Mp3tunes.com integration (including syncronization) requires:
+      * OpenSSL http://www.openssl.org
+      * libxml2 http://xmlsoft.org
+      * libcurl http://curl.haxx.se
+      * Glib2 http://www.gtk.org
+      * Loudmouth, the Jabber library, http://www.loudmouth-project.org/
+      * Qt must be compiled with Glib enabled
+
+    * Liblastfm 1.0.3 (or newer)
+      (For scrobbling, internet radio, and artist info)
+      http://cdn.last.fm/client/liblastfm-1.0.3.tar.gz
+      https://github.com/eartle/liblastfm
+
+    * QJson 0.7 (or newer)
+      (Qt JSON Parser for the Playdar Collection)
+      http://qjson.sourceforge.net/
+
+    * MySQL 5.0 (or newer) Server (external database support)
+
+    * MusicBrainz-based audio fingerprint tag lookup requires:
+      * FFmpeg 0.7.0 (or newer) - http://ffmpeg.org/
+        * libavcodec & libavformat specifically
+      * LibOFA - http://code.google.com/p/musicip-libofa/
+
+    * gpodder.net Podcast Provider & Service
+      * libmygpo-qt 1.0.7 (or newer)
+
+    * Transcoding requires (at runtime):
+      * FFmpeg 0.7.0 (or newer) - http://ffmpeg.org/
+      * For all supported encoders to be available in Amarok, FFmpeg needs to
+        support the following codecs:
+        * libfaac (NOT just "aac")
+        * alac
+        * flac
+        * libmp3lame (NOT just "mp3")
+        * libvorbis (NOT just "vorbis")
+        * wmav2
+
+    * CD support requires:
+      * audiocd-kio - http://www.kde.org/ (part of KDE multimedia)
+
+    * Downloading songs from Amazon works best on non Windows systems using
+      * clamz - https://code.google.com/p/clamz/
+      * The official downloader should work fine on Windows, too. But it's broken on many Linux systems.
+
+    * Building tests require:
+      * gmock 1.4 (or newer) - http://code.google.com/p/googlemock/
+
+Please note that if compiling from source you also need to install -dev/-devel
+versions of these packages, depending on your distribution.
+--------------------------------------------------------------------------------
+
+
+ IMPORTANT INSTALL INSTRUCTIONS
+================================
+
+To compile from source, please refer to the INSTALL file.
+
+Packages for popular distributions are available at http://amarok.kde.org
+--------------------------------------------------------------------------------
+
+
+ FURTHER RESOURCES
+===================
+
+For answers to problems like "Amarok won't play any MP3s!" and "My MP3s skip
+and stutter!" please visit:
+
+   http://amarok.kde.org/
+--------------------------------------------------------------------------------
+
+
+ CONTRIBUTING
+==============
+
+If you wish to contribute to Amarok, you should build it from Git and subscribe
+to the amarok AT kde.org mailing list. The IRC channel is also a place where
+it's nice to be. There you can talk to other developers easily, and you can see
+instant notifications of commits to the Git master repository. For instant email 
+notification of commits, visit http://commitfilter.kde.org/ , and http://amarok.be/fisheye
+provides a slightly-less-instant overview.
+
+More information at:
+http://community.kde.org/Amarok/Development/Join
+
+See you on IRC!
+
+--------------------------------------------------------------------------------
+
+WWW:  http://amarok.kde.org
+MAIL: amarok@kde.org
+IRC:  irc.freenode.net - #amarok, #amarok.de, #amarok.es, #amarok.fr

@@ -1,0 +1,84 @@
+ <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<style>
+
+body
+{
+	margin: 0;
+	padding: 0;
+/*    border: 8px solid #bbd2f6;*/
+    border: 4px solid {border_color};
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-moz-border-radius: 8px;
+    border-radius: 4px;
+	font-size: small;
+	font-family: Verdana, sans-serif;
+	text-align: justify;
+/*    background-color: #aac4f0;*/
+    background-color: {background_color};
+	color: {text_color};
+}
+
+#main
+{
+    text-align: center;
+}
+
+#logonnavi,
+#info
+{
+	margin: 0;
+}
+
+#logonnavi
+{
+	height: 106px;
+	padding: 8px 8px 0px 0px;
+	float: center;
+/*      background: #bbd2f6 url(_PATH_/info_frontpage_bg.png) bottom left repeat-x;*/*/
+//      background: {border_color} url(_PATH_/info_frontpage_bg.png) bottom left repeat-x;
+    background-color: {background_color};
+}
+
+#logo,
+#naviarea
+{ float: center; }
+
+#content
+{
+	clear: both;
+	margin: 4;
+	padding: 20px 20px 0 20px;
+/*      border: 4px solid #dee8f9;*/
+      border: 4px solid {header_background_color};
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;	
+	-moz-border-radius: 4px;
+      border-radius: 4px;
+/*	background: #dee8f9 url(_PATH_/info_frontpage_shadow.png) top left repeat-x;*/
+//	background: {headings_background_color} url(_PATH_/info_frontpage_shadow.png) top left repeat-x;
+    background-color: {header_background_color};
+}
+
+</style>
+
+    <body>
+	<div id="main">
+	    <div id="logonnavi">
+        <img id="logo" src="_PATH_/info_frontpage_logo.png" alt="Amarok" />
+	    </div>
+	    <div id="content">
+	    This is the Amarok 2 info applet. This will display info from and about the browsers as you browse through them and their content. <p>
+        Try out some of these services to get you started: <br>
+        <a href="amarok://navigate/internet/Magnatune.com?levels=genre-artist-album">Magnatune.com</a> <br>
+        <a href="amarok://navigate/internet/Jamendo.com?levels=genre-artist-album">Jamendo.com</a><p>
+        Or listen to audio books from LibriVox.org by some of these great authors: <br>
+        <a href="amarok://navigate/internet/Librivox.org?levels=artist-album&filter=Charles%20Dickens">Charles Dickens</a> <br>
+        <a href="amarok://navigate/internet/Librivox.org?levels=artist-album&filter=H.%20G.%20Wells">H. G. Wells</a> <br>
+        <a href="amarok://navigate/internet/Librivox.org?levels=artist-album&filter=Jules%20Verne">Jules Verne</a> <p>
+        You can also browse and subscribe to a huge list of <a href="amarok://navigate/internet/OpmlDirectory?levels=album">podcasts</a> and <a href="amarok://navigate/internet/Shoutcast%20Directory">radio stations</a>.
+	    </div>
+	</div>
+    </body>
+</html>

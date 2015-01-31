@@ -1,0 +1,48 @@
+[Desktop Entry]
+Type=Service
+Icon=network-server-database
+Name=MySQLServer Storage
+Name[ca]=Emmagatzematge MySQLServer
+Name[cs]=Úložiště MySQLServer
+Name[en_GB]=MySQLServer Storage
+Name[it]=Archiviazione MySQLServer
+Name[nl]=MySQLServer-opslag
+Name[pl]=Przechowalnia MySQLServer
+Name[pt]=Armazenamento no Servidor de MySQL
+Name[pt_BR]=Armazenamento MySQLServer
+Name[sv]=MySQLServer-lagring
+Name[uk]=Сховище даних MySQLServer
+Name[x-test]=xxMySQLServer Storagexx
+Comment=Storage plugin for Amarok
+Comment[ca]=Connector d'emmagatzematge per l'Amarok
+Comment[cs]=Modul úložiště pro AmaroK
+Comment[en_GB]=Storage plugin for Amarok
+Comment[it]=Estensione di archiviazione per Amarok
+Comment[nl]=Opslag-plug-in voor Amarok
+Comment[pl]=Wtyczka przechowywania dla Amaroka
+Comment[pt]='Plugin' de armazenamento do Amarok
+Comment[pt_BR]=Plugin de armazenamento para o Amarok
+Comment[sv]=Lagringsinsticksprogram för Amarok
+Comment[uk]=Додаток сховища даних для Amarok
+Comment[x-test]=xxStorage plugin for Amarokxx
+NoDisplay=true
+
+ServiceTypes=Amarok/Plugin
+
+X-KDE-Amarok-authors=Ralf Engels
+X-KDE-Amarok-email=ralf-engels@gmx.de
+X-KDE-Amarok-framework-version=72
+X-KDE-Amarok-name=mysqlserver-storage
+X-KDE-Amarok-plugintype=storage
+X-KDE-Amarok-rank=100
+X-KDE-Amarok-version=1
+X-KDE-Amarok-vital=true
+
+X-KDE-PluginInfo-Author=Ralf Engels
+X-KDE-PluginInfo-Email=ralf.engels@gmx.de
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Category=Storage
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Name=amarok_storage-mysqlserverstorage
+X-KDE-Library=amarok_storage-mysqlserverstorage

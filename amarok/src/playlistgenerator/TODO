@@ -1,0 +1,12 @@
+Backend:
+- make the QualityFactor in the ConstraintSolver work again
+- replace values in constraints with Qt properties, and use properties for
+  saving/loading from XML, and put XML in Constraint superclass
+- collection-specific heuristics for playlist size estimation in
+  PlaylistDuration and PlaylistSize constraints
+
+Constraints:
+- last.fm or echonest similar artists constraint
+
+GUI:
+- context menu for APGCategory

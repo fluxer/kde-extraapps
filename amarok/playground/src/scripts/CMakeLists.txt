@@ -1,0 +1,6 @@
+add_subdirectory( bbc_service )
+add_subdirectory( copycover )
+add_subdirectory( danish_streams_service )
+add_subdirectory( encoding_fixer )
+add_subdirectory( npr_service )
+add_subdirectory( seeqpod_service )

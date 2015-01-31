@@ -1,0 +1,99 @@
+Amarok Release process
+----------------------
+
+Dependencies:
+- The Ultimate KDE Extragear Release Script from git@git.kde.org:releaseme.git
+
+SECTION 0: A week in advance
+
+ * Check that release date doesn't clash with KDE's schedule
+ * Notify translators and update http://techbase.kde.org/Schedules/Extragear
+--------------------------------------------------------------------------------
+
+SECTION 1: Preparation
+
+ * Check the README file is still relevant
+ * Run the "fixuifiles" script from kdesdk from the repository root
+ * Run the "bump_plugin_version.rb" script from the repository root
+ * Commit the source to git
+--------------------------------------------------------------------------------
+
+SECTION 2: Creating and Testing the Tarball
+
+ * Run the amarok release script from releaseme.git (amarok2.rb)
+   example: ./amarok2.rb --src ~/Code/amarok -v 2.5.90
+   notice it updates version in shared/Version.h
+ * Test the following:
+
+     $ cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` -DCMAKE_BUILD_TYPE=RelWithDebInfo ./
+     $ make
+
+ * mkdir ~/.kde-test && export KDEHOME=$HOME/.kde-test
+ * Check it works OK without any amarok files in $KDEHOME (i.e. new user config)
+ * Make a backup of $KDEHOME/share/apps/amarok and $KDEHOME/share/config/amarok*
+   (release_scripts/backup_userdata.sh)
+ * Check it works with an existing $KDEHOME, including database updates
+--------------------------------------------------------------------------------
+
+SECTION 3: Once Happy with the Tarball
+
+ * Tag the commit: "git tag -s v2.5.90"
+ * ftp the tarball to ftp://upload.kde.org/incoming and file a sysadmin request to have it
+   transfered to stable/amarok/$version/src/ or unstable/amarok/$beta-version/src
+   Instructions at ftp://upload.kde.org/README
+ * Notify packagers:
+To: kde-packager@kde.org, Patrick von Reth (TheOneRing, Windows) <vonreth@kde.org>
+"
+Dear packagers
+
+Here you can find the beta tarball for the upcoming $version release:
+http://download.kde.org/download.php?url=unstable/amarok/$beta-version/src/amarok-$beta-version.tar.bz2
+
+MD5Sum: $(md5sum tarball.tar.bz2)
+SHA1Sum: $(sha1sum tarball.tar.bz2)
+
+We plan to release the final about 3 weeks from now but please make
+this available to users via a specialized beta archive for packaging
+is possible. We hope to get as much testers for this beta.
+
+Thanks for packaging.
+The Amarok Team
+"
+
+ * Write release notes and dot story (and notify KDE-press list if necessary)
+ * Add new version to Bugzilla
+--------------------------------------------------------------------------------
+
+SECTION 4: The Release Day
+
+ * Make tarball public
+ * Update download page on the wiki
+ * Update the amarok.kde.org front-page
+ * Send a witty, intelligent and diligently crafted email to the following lists:
+     To:  kde-announce-apps@kde.org, amarok@kde.org
+     CC:  amarok-promo@kde.org
+     BCC: kde-extra-gear@kde.org, kde-multimedia@kde.org, kde-packagers@kde.org,
+          (kde-press-announce@kde.org)
+ * Update IRC channel topics
+ * Update social networks
+ * Update kde-apps.org
+ * Add new version to bugzilla, disable unstable version reporting
+ * Write blog post
+ * Publish dot story (for major versions)
+--------------------------------------------------------------------------------
+
+SECTION 5: After the Release
+
+ * Update shared/Version.h to 2.6-git (if the release was 2.6.0)
+ * `git grep -ipn 'string freeze'` - now is the time to add/change strings
+
+ If you must change anything about the tarball you need to email sysadmin@kde.org
+ because otherwise they gets annoyed that the md5 has changed.
+ Generally it is not wise to change the tarball, it could annoy the entire
+ open-source world!
+--------------------------------------------------------------------------------
+
+APPENDIX
+
+To create a changelog in html format for updating the various articles and websites, run
+generate_changelog.rb.  It will output a file called ChangeLog.html.

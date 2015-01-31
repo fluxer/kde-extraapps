@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Author: Stanislav Karchebny, berk@upnet.ru -->
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+<include>qdir.h</include>
+
+<kcfgfile name="amarokrc"/>
+
+<group name="General Options">
+    <entry key="Left Time Display Enabled" type="Bool">
+        <label>Whether to display a second, left time label.</label>
+        <whatsthis>Set this to display a second time label to the left of the seek slider in the player window.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Left Time Display Remaining" type="Bool">
+        <label>Whether to display remaining track time in the left time label.</label>
+        <whatsthis>Set this to display remaining track time instead of past track time in the player window.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Favor Tracks" type="Enum">
+        <label>Which tracks or albums to favor in Random Mode</label>
+        <whatsthis>Tracks or albums with the chosen property will be more likely to be chosen in Random Mode.</whatsthis>
+        <choices>
+            <choice name="Off"></choice>
+            <choice name="HigherScores"></choice>
+            <choice name="HigherRatings"></choice>
+            <choice name="LessRecentlyPlayed"></choice>
+        </choices>
+        <default>Off</default>
+    </entry>
+     <entry key="Track Progression" type="Enum">
+        <label>How to progress through tracks in the playlist</label>
+        <whatsthis>Determines how amarok will progress through the tracks in the playlist</whatsthis>
+        <choices>
+            <choice name="Normal"></choice>
+            <choice name="OnlyQueue"></choice>
+            <choice name="RepeatTrack"></choice>
+            <choice name="RepeatAlbum"></choice>
+            <choice name="RepeatPlaylist"></choice>
+            <choice name="RandomTrack"></choice>
+            <choice name="RandomAlbum"></choice>
+        </choices>
+        <default>Normal</default>
+    </entry>
+    <entry key="Dynamic Mode" type="Bool">
+        <label>The status of dynamic mode.</label>
+        <whatsthis>If set, dynamic mode will be on, and tracks will be added according to the dynamic playlist specified.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Dynamic Duplicates" type="Bool">
+        <label>Duplicate tracks in dynamic mode.</label>
+        <whatsthis>If set, tracks added in the dynamic mode are allowed to have duplicates.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Previous Tracks" type="Int">
+        <label>Previous tracks count.</label>
+        <whatsthis>Number of tracks to leave in the playlist before the active track.</whatsthis>
+        <default>5</default>
+    </entry>
+    <entry key="Upcoming Tracks" type="Int">
+        <label>Upcoming tracks count.</label>
+        <whatsthis>Number of tracks to load into the playlist after the active track.</whatsthis>
+        <default>10</default>
+    </entry>
+    <entry key="Show Tray Icon" type="Bool">
+        <label>Whether to show icon in system tray</label>
+        <whatsthis>Enable/Disable tray icon for Amarok.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="HideContextView" type="Bool">
+        <label>Whether to hide the context view.</label>
+        <whatsthis>Enable/Disable context view in Amarok.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Undo Levels" type="Int">
+        <label>Number of undo levels in playlist</label>
+        <whatsthis>The number of undo levels in the playlist.</whatsthis>
+        <default>30</default>
+    </entry>
+    <entry key="Relative Playlist" type="Bool">
+        <label>Whether playlists store relative path</label>
+        <whatsthis>If set, Amarok's manually saved playlists will contain a relative path to each track, not an absolute path.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="External Browser" type="String">
+        <label>Filename of the external web browser to be invoked by Amarok.</label>
+        <default>xdg-open</default>
+    </entry>
+    <entry key="AutoGetCoverArt" type="Bool">
+        <label>Whether to automatically attempt to fetch cover art as needed</label>
+        <default>false</default>
+    </entry>
+    <entry key="ShowBrowserBackgroundImage" type="Bool">
+        <label>Whether to show background images in the browser pane</label>
+        <default>true</default>
+    </entry>
+    <entry key="AutoScrollPlaylist" type="Bool">
+        <label>Automatically scroll the playlist to make the currently playing song visible</label>
+        <default>true</default>
+    </entry>
+    <entry key="Show Album Art" type="Bool">
+        <label>Show Album art in the Collection Browser</label>
+        <default>true</default>
+    </entry>
+    <entry key="Lock Layout" type="Bool">
+        <label>Show the Context View</label>
+        <default>true</default>
+    </entry>
+    <entry key="PlayFirstRunJingle" type="Bool">
+        <label>Play the first run jingle</label>
+        <default>true</default>
+    </entry>
+    <entry key="AnimateAppletCollapse" type="Bool">
+        <label>Enable context applets collapse animations</label>
+        <whatsthis>If set, context applets will collapse using animations.</whatsthis>
+        <default>false</default>
+    </entry>
+</group>
+
+<group name="OrganizeCollectionDialog">
+    <entry key="Overwrite Files" type="Bool">
+        <label>Whether organize files will overwrite existing files.</label>
+        <whatsthis>If set, Organize files will overwrite any existing destination.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Ignore The" type="Bool">
+        <label>Whether organize files will move The in artist names to the end.</label>
+        <whatsthis>If set, Organize files will move The in artist names to the end as in "Beatles, The".</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Replace Space" type="Bool">
+        <label>Whether organize files will replace spaces in filenames with underscores.</label>
+        <whatsthis>If set, Organize files will replace spaces in filenames with underscores.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Cover Icons" type="Bool">
+        <label>Whether organize files will use cover art as folder icons.</label>
+        <whatsthis>If set, Organize files will use cover art as folder icons.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Organize Directory" type="String">
+        <label>Collection folder path destination for Organize files.</label>
+        <whatsthis>The path of the collection folder destination for Organize files.</whatsthis>
+        <default></default>
+    </entry>
+    <entry key="Vfat Compatible" type="Bool">
+        <label>Whether organize files will rename files in a manner compatible with vfat filesystems.</label>
+        <whatsthis>If set, Organize files will replace characters that are not compatible with vfat filesystems (such as ':', '*' and '?').</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Ascii Only" type="Bool">
+        <label>Whether organize files will rename files such that they only contain 7-bit ASCII characters.</label>
+        <whatsthis>If set, Organize files will replace characters that are not compatible with the 7-bit ASCII character set.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Use Custom Scheme" type="Bool">
+        <label>Whether organize files will use a custom file naming scheme.</label>
+        <whatsthis>If set, Organize files will rename files according to a custom format string.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Custom Scheme" type="String">
+        <label>Format string for Organize files, if a custom naming scheme is used.</label>
+        <whatsthis>If the custom filename scheme is enabled, then Organize files will rename files according to this format string.</whatsthis>
+        <default>%artist%/%album%/%track%_-_%title%</default>
+    </entry>
+    <entry key="Replacement Regexp" type="String">
+        <label>Regular expression that is to be replaced.</label>
+        <whatsthis>Organize files will replace substrings matching this regular expression.</whatsthis>
+        <default></default>
+    </entry>
+    <entry key="Replacement String" type="String">
+        <label>Replacing string.</label>
+        <whatsthis>Organize files will replace matching substrings with this string.</whatsthis>
+        <default></default>
+    </entry>
+    <entry key="Mode" type="String">
+        <label>Basic or Advanced Mode</label>
+        <whatsthis>In basic mode graphical drag/droppable tokens are used to create a filename scheme, in advanced mode the images are replaced with text.</whatsthis>
+        <default>Basic</default>
+    </entry>
+    <entry key="Format Presets" type="StringList">
+        <label>Format Presets</label>
+        <whatsthis>A list of preset formats (token schemas).</whatsthis>
+        <default>Default#DELIM#%artist%/%album%/%track%_-_%title%#DELIM#selected</default>
+    </entry>
+</group>
+
+<group name="Playback">
+    <entry key="Master Volume" type="Int">
+        <label>Master volume</label>
+        <whatsthis>The Amarok master volume, a value between 0 and 100.</whatsthis>
+        <default>80</default>
+        <min>0</min>
+        <max>100</max>
+    </entry>
+    <entry key="Mute State" type="Bool">
+        <label>Mute state</label>
+        <whatsthis>Mute/Unmute sound.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="FadeoutOnStop" type="Bool">
+        <label>Whether to fade out tracks when pressing stop.</label>
+        <whatsthis>Enable/Disable fadeout.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="FadeoutOnPause" type="Bool">
+        <label>Whether to fade out tracks when pressing pause.</label>
+        <whatsthis>Enable/Disable fadeout.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Fadeout Length" type="Int">
+        <label>Length of fadeout, in milliseconds</label>
+        <whatsthis>The length of the fadeout in milliseconds.</whatsthis>
+        <default>2000</default>
+        <min>400</min>
+    </entry>
+    <entry key="EqualizerMode" type="Int">
+        <label>Equalizer mode - 0 = off, 1 to n = preset no</label>
+        <whatsthis>When enabled, an equalizer plugin filters the audio stream.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="EqualizerGains" type="IntList">
+        <label>11 Equalizer gains include pre-amp, range -100..100, 0 is normal.</label>
+        <default>0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</default>
+    </entry>
+    <entry key="EqualizerPresetsNames" type="StringList">
+        <label>List with user equalizer preset names</label>
+    </entry>
+    <entry key="EqualizerPresestValues" type="IntList">
+        <label>List with user presets values</label>
+    </entry>
+
+    <entry key="Replay Gain Mode" type="Enum">
+        <label>The mode for adjusting playback volume.</label>
+        <whatsthis>Whether to adjust the volume of tracks to make them sound the same volume, and if so whether to make the adjustments per-track or per-album.</whatsthis>
+        <choices>
+            <choice name="Off">
+                <label>Disable Replay Gain</label>
+            </choice>
+            <choice name="Track">
+                <label>Make each track the same volume</label>
+            </choice>
+            <choice name="Album">
+                <label>Make each album the same volume</label>
+            </choice>
+        </choices>
+        <default>Track</default>
+    </entry>
+    <entry key="Seek Short" type="Int">
+        <label>The length of a short seek, in seconds.</label>
+        <default>2</default>
+        <min>1</min>
+    </entry>
+    <entry key="Seek Medium" type="Int">
+        <label>The length of a medium seek, in seconds.</label>
+        <default>10</default>
+        <min>1</min>
+    </entry>
+    <entry key="Seek Long" type="Int">
+        <label>The length of a long seek, in seconds.</label>
+        <default>60</default>
+        <min>1</min>
+    </entry>
+    <entry key="Pause On Suspend" type="Bool">
+        <label>Whether Amarok should pause the currently playing track on suspend.</label>
+        <default>false</default>
+    </entry>
+    <entry key="Inhibit Suspend" type="Bool">
+        <label>Whether Amarok should prevent the system from sleeping if it is playing a track.</label>
+        <default>true</default>
+    </entry>
+    <entry key="Start Playing On Add" type="Bool">
+        <label>Whether Amarok should start playing if a track is added to playlist (and nothing else is playing).</label>
+        <default>true</default>
+    </entry>
+</group>
+
+<group name="Cover Manager">
+    <entry key="Amazon Locale" type="String">
+        <label>Amazon locale for cover retrieval</label>
+        <whatsthis>Determines which Amazon server cover images should be retrieved from.</whatsthis>
+        <default>us</default>
+    </entry>
+</group>
+
+<group name="Wikipedia">
+    <entry key="Wikipedia Locale" type="String">
+        <label>Wikipedia locale for information retrieval</label>
+        <whatsthis>Determines in which language the information is retrieved from Wikipedia.</whatsthis>
+        <default>en</default>
+    </entry>
+</group>
+
+<group name="KNotify">
+    <entry key="KNotify Enabled" type="Bool">
+        <label>Use KNotify support</label>
+        <default>false</default>
+    </entry>
+</group>
+
+<group name="OSD">
+    <entry key="Osd Enabled" type="Bool">
+        <label>Use On-Screen Display</label>
+        <whatsthis>Enable/Disable the On-Screen Display.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Growl Enabled" type="Bool">
+        <label>Use Growl for notifications</label>
+        <whatsthis>Enable/Disable use of Growl for notifications.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Osd Use Translucency" type="Bool">
+        <label>Translucency Toggle</label>
+        <whatsthis>Make the background of the OSD translucent.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="Osd Use Custom Colors" type="Bool">
+        <label>Whether to use custom colors for the OSD</label>
+        <whatsthis>You can use custom colors for the OSD if you set this true.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Osd Text Color" type="Color">
+        <label>Font color for OSD</label>
+        <whatsthis>The color of the OSD text. The color is specified in RGB, a comma-separated list containing three integers between 0 and 255.</whatsthis>
+        <default>#ffff00</default>
+    </entry>
+    <entry key="Osd Font Scaling" type="Int">
+        <label>Font scaling for OSD</label>
+        <whatsthis>The scaling multiplier for the OSD font, in percent-of-normal. 100 is &#8220;normal size&#8221;.</whatsthis>
+        <default>115</default>
+        <min>0</min>
+        <max>1000</max>
+    </entry>
+    <entry key="Osd Duration" type="Int">
+        <label>How many milliseconds the text should be displayed for</label>
+        <whatsthis>The time in milliseconds to show the OSD. A value of 0 means never hide. The default value is 5000 ms.</whatsthis>
+        <default>5000</default>
+        <min>0</min>
+    </entry>
+    <entry key="Osd Y Offset" type="Int">
+        <label>Y position offset</label>
+        <whatsthis>The Y position of the OSD relative to the chosen screen and OSD alignment. If Top alignment is chosen the Y offset is the space between the upper part of the OSD and the top of the screen. If Bottom alignment is chosen the Y offset is the space between the bottom part of the OSD and the bottom of the screen.</whatsthis>
+        <default>50</default>
+        <min>0</min>
+        <max>10000</max>
+    </entry>
+    <entry key="Osd Screen" type="Int">
+        <label>OSD screen</label>
+        <whatsthis>The screen that should display the OSD. For single-headed environments this setting should be 0.</whatsthis>
+        <default>0</default>
+    </entry>
+    <entry key="Osd Alignment" type="Enum">
+        <label>Align OSD to</label>
+        <whatsthis>The relative position of the OSD. Possible choices are Left, Middle, Right and Center.</whatsthis>
+        <choices>
+            <choice name="Left"/>
+            <choice name="Middle"/>
+            <choice name="Center"/>
+            <choice name="Right"/>
+        </choices>
+        <default>Middle</default>
+    </entry>
+    <entry key="OsdHideOnFullscreen" type="Bool">
+        <label>Don't show when a fullscreen application is active</label>
+        <whatsthis>Do not show the On-Screen-Display if another application is focused and running in fullscreen mode.</whatsthis>
+        <default>false</default>
+    </entry>
+
+</group>
+
+<group name="Session">
+    <entry key="Resume Playback" type="Bool">
+        <label>Resume playback of last played track on startup</label>
+        <whatsthis>If set, Amarok resumes playback of the last played track on startup.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="Resume Track" type="Path">
+        <label>Track URL to resume upon startup</label>
+        <whatsthis>Internal: URL of the track to resume on startup.</whatsthis>
+    </entry>
+    <entry key="Resume Paused" type="Bool">
+        <label>Internal: Resume playback in paused state</label>
+        <default>false</default>
+    </entry>
+    <entry key="Resume Time" type="Int">
+        <label>Time to resume at, in milliseconds</label>
+        <whatsthis>Internal: Playback position in the track to resume on startup.</whatsthis>
+    </entry>
+    <entry key="Visible Browsers" type="IntList">
+        <label>List of bools describing which browsers are visible, from top to bottom.</label>
+    </entry>
+    <entry key="LastPlaying" type="Int">
+        <label>Track playing on last exit. Value is -1 if no track was playing.</label>
+        <default>-1</default>
+    </entry>
+    <entry key="Active Browser" type="Int">
+        <label>Number (from the top) of the last active browser.</label>
+    </entry>
+</group>
+
+<group name="Collection">
+    <entry key="Scan Recursively" type="Bool">
+        <label>Whether Collections folders are scanned recursively</label>
+        <default>true</default>
+    </entry>
+    <entry key="Monitor Changes" type="Bool">
+        <label>Whether Collection folders are rescanned on change</label>
+        <default>true</default>
+    </entry>
+    <entry key="Write Back" type="Bool">
+        <label>Whether meta data changes are written back</label>
+        <default>true</default>
+    </entry>
+    <entry key="Write Back Statistics" type="Bool">
+        <label>Whether changes to the track statistics are written back</label>
+        <default>false</default>
+    </entry>
+    <entry key="Write Back Cover" type="Bool">
+        <label>Whether changes to the album cover are written back</label>
+        <default>false</default>
+    </entry>
+    <entry key="Write Back Cover Dimensions" type="Int">
+        <label>Maximum embedded cover dimensions</label>
+        <default>400</default>
+    </entry>
+    <entry key="Collection Folders" type="PathList">
+        <label>List of folders in the Collection</label>
+    </entry>
+    <entry key="Show Track Numbers" type="Bool">
+        <label>Whether track numbers are shown in the collection browser.</label>
+        <default>true</default>
+    </entry>
+    <entry key="Show Years" type="Bool">
+        <label>Whether years are shown in the collection browser.</label>
+        <default>true</default>
+    </entry>
+    <entry key="Use Charset Detector" type="Bool">
+        <label>Whether to use Mozilla's Character Set Detector to try to guess ID3 tag encodings.</label>
+        <default>false</default>
+    </entry>
+</group>
+
+<group name="Scrobbler">
+    <entry key="SubmitPlayedSongs" type="Bool">
+        <label>Submit played songs</label>
+        <whatsthis>Whether played songs are submitted to Audioscrobbler</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="ScrobblerUsername" type="String">
+        <label context="Username for audioscrobbler login">Username</label>
+        <whatsthis>The username to use for connecting to Audioscrobbler</whatsthis>
+        <default/>
+    </entry>
+    <entry key="ScrobblerPassword" type="Password">
+        <label>Password</label>
+        <whatsthis>The password to use for connecting to Audioscrobbler</whatsthis>
+        <default/>
+    </entry>
+    <entry key="ScrobbleComposer" type="Bool">
+        <label>Send composer data</label>
+        <whatsthis>Use composer data in Last.fm as artist</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="RetrieveSimilarArtists" type="Bool">
+        <label>Retrieve similar artists</label>
+        <whatsthis>Whether similar songs are retrieved from Audioscrobbler</whatsthis>
+        <default>false</default>
+    </entry>
+</group>
+
+<group name="MediaDevice">
+    <entry key="DeviceType" type="String">
+        <label>Device type</label>
+        <whatsthis>The type of media device.</whatsthis>
+    </entry>
+    <entry key="MountPoint" type="String">
+        <label>Mount point</label>
+        <whatsthis>The mount point used for the media device connection.</whatsthis>
+    </entry>
+    <entry key="MountCommand" type="String">
+        <label>Mount command</label>
+        <whatsthis>The mount command used for the media device connection.</whatsthis>
+    </entry>
+    <entry key="UmountCommand" type="String">
+        <label>UmountCommand</label>
+        <whatsthis>The umount command used for the media device connection.</whatsthis>
+    </entry>
+    <entry key="AutoDeletePodcasts" type="Bool">
+        <label>Auto delete podcasts</label>
+        <whatsthis>Whether podcast shows already played are automatically deleted when media device is connected.</whatsthis>
+    </entry>
+    <entry key="SyncStats" type="Bool">
+        <label>Sync stats</label>
+        <whatsthis>Whether Amarok statistics should be synchronized with play count/ratings on device and whether tracks played should be submitted to Last.fm.</whatsthis>
+    </entry>
+</group>
+
+<group name="Daap">
+  <entry key="ManuallyAddedServers" type="StringList">
+      <label>Manually added servers</label>
+      <whatsthis>Music Sharing servers added by the user.</whatsthis>
+  </entry>
+  <entry key="ServerPasswords" type="StringList">
+    <label>Server passwords</label>
+    <whatsthis>Passwords stored by hostname.</whatsthis>
+  </entry>
+</group>
+
+<group name="Playlist Search">
+    <entry key="MatchTrack" type="Bool">
+        <label>Include track names in matching</label>
+        <default>true</default>
+    </entry>
+    <entry key="MatchAlbum" type="Bool">
+        <label>Include album names in matching</label>
+        <default>true</default>
+    </entry>
+    <entry key="MatchArtist" type="Bool">
+        <label>Include artist names in matching</label>
+        <default>true</default>
+    </entry>
+    <entry key="MatchGenre" type="Bool">
+        <label>Include genre names in matching</label>
+        <default>false</default>
+    </entry>
+    <entry key="MatchComposer" type="Bool">
+        <label>Include composer names in matching</label>
+        <default>false</default>
+    </entry>
+    <entry key="MatchYear" type="Bool">
+        <label>Include years in matching</label>
+        <default>false</default>
+    </entry>
+    <entry key="ShowOnlyMatches" type="Bool">
+        <label>Include years in matching</label>
+        <default>false</default>
+    </entry>
+</group>
+
+<group name="Playlist Layout">
+    <entry key="CurrentLayout" type="String">
+        <label>The name of the layout that will be loaded on startup</label>
+        <default>Default</default>
+    </entry>
+</group>
+
+<group name="MySQL">
+    <entry key="UseServer" type="Bool">
+        <label>Whether Amarok uses its own internal database, as opposed to an external engine.</label>
+        <default>false</default>
+    </entry>
+    <entry key="Host" type="String">
+        <label>The hostname of the external server to connect to.</label>
+        <default>localhost</default>
+    </entry>
+    <entry key="Port" type="Int">
+        <label>Which server port to connect to the database engine.</label>
+        <default>3306</default>
+    </entry>
+    <entry key="Database" type="String">
+        <label>The name of the database Amarok will use. The user should have sufficient access permissions.</label>
+        <default>amarokdb</default>
+    </entry>
+    <entry key="User" type="String">
+        <label>Username used to access the external database.</label>
+        <default>amarokuser</default>
+    </entry>
+    <entry key="Password" type="String">
+        <label>Password for the external database user.</label>
+        <default>password</default>
+    </entry>
+    <entry key="CheckCount" type="Int">
+        <label>Keeps a running count to know when run a CHECK.</label>
+        <default>0</default>
+    </entry>
+</group>
+
+<group name="ScriptManager">
+    <entry key="Enable Scripts" type="Bool">
+        <label>Whether to enable Amarok's scripting module.</label>
+        <whatsthis>Enable/Disable Amarok's scripting module.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="AutoUpdateScripts" type="Bool">
+        <label>Whether to automatically update built-in scripts</label>
+        <whatsthis>Enable/Disable automatic update for built-in scripts.</whatsthis>
+        <default>true</default>
+    </entry>
+    <entry key="EnableScriptConsole" type="Bool">
+        <label>Whether to enable the script console.</label>
+        <whatsthis>Whether to enable the script console.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="EnableDeprecationWarnings" type="Bool">
+        <label>Whether to display a warning about scripts accessing deprecated APIs.</label>
+        <whatsthis>Whether to display a warning about scripts accessing deprecated APIs.</whatsthis>
+        <default>true</default>
+    </entry>
+</group>
+
+<group name="ScriptConsole">
+    <entry key="SaveSession" type="Bool">
+        <label>Whether to save the current session on exit.</label>
+        <whatsthis>Whether to save the current session on exit.</whatsthis>
+        <default>false</default>
+    </entry>
+</group>
+
+<group name="Moodbar">
+    <entry key="ShowMoodbarInSlider" type="Bool">
+        <label>Whether to show the moodbar of the current track, if available, in the progress slider</label>
+        <whatsthis>Enable/Disable showing moodbar, if available, in the progress slider.</whatsthis>
+        <default>false</default>
+    </entry>
+    <entry key="MoodbarPaintStyle" type="Int">
+        <label>The style to use when painting the moodbar</label>
+        <default>0</default>
+    </entry>
+</group>
+
+<group name="PlaylistGenerator">
+    <entry key="qualityFactorAPG" type="Int">
+        <label>Quality factor for Automated Playlist Generator</label>
+        <whatsthis>A value between 0 and 10 that controls whether the Automated Playlist Generator tries to optimize for speed (0) or accuracy (10).</whatsthis>
+        <default>7</default>
+    </entry>
+</group>
+</kcfg>

@@ -1,0 +1,17 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.amarok.Collection">
+    <method name="Query">
+     <!-- this method is deprecated and will be removed for Amarok 2.3. use MprisQuery instead -->
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QList&lt;QVariantMap >"/>
+      <arg name="result" type="aa{sv}" direction="out"/>
+      <arg name="queryXml" type="s" direction="in"/>
+    </method>
+    <method name="MprisQuery">
+      <!-- This query will return the metadata in a MPRIS compatible format -->
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QList&lt;QVariantMap >"/>
+      <arg name="result" type="aa{sv}" direction="out"/>
+      <arg name="queryXml" type="s" direction="in"/>
+    </method>
+  </interface>
+</node>

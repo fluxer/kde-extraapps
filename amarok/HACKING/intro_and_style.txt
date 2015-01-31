@@ -1,0 +1,383 @@
+Hacking on Amarok
+-----------------
+
+Have a look at the community wiki for further information.
+Also have a look at the requirements for Amarok here:
+http://community.kde.org/Amarok/Development/Requirements
+
+Join the irc channel.
+
+New requirements, bugfixes and every other patch goes to the
+review board.
+Try not to post patches in the bugs database or the mailing list.
+
+Please respect these guidelines when coding for Amarok, thanks!
+
+* Where this document isn't clear, refer to Amarok code.
+
+
+This C++ FAQ is a life saver in many situations, so you want to keep it handy:
+
+  http://www.parashift.com/c++-faq-lite/
+
+
+Formatting
+----------
+* Spaces, not tabs
+* Indentation is 4 spaces
+* Lines should be limited to 90 characters
+* Spaces between brackets and argument functions, except for template arguments
+* For pointer and reference variable declarations put a space between the type
+  and the * or & and no space before the variable name.
+* For if, else, while and similar statements put the brackets on the next line,
+  although brackets are not needed for single statements.
+* Function and class definitions have their brackets on separate lines
+* A function implementation's return type is on its own line.
+* CamelCase.{cpp,h} style file names.
+* Qt includes a foreach keyword which makes it very easy to iterate over all
+  elements of a container.
+
+Example:
+
+ | bool
+ | MyClass::myMethod( QStringList list, const QString &name )
+ | {
+ |     if( list.isEmpty() )
+ |         return false;
+ |
+ |     /* Define the temporary variable like this to restrict its scope
+ |      * when you do not need it outside the loop. Let the compiler
+ |      * optimise it. */
+ |     foreach( const QString &string, list )
+ |         debug() << "Current string is " << string << endl;
+ |
+ |     switch( m_enumValue )
+ |     {
+ |         case Something:
+ |             return true;
+ |         case SomethingElse:
+ |         {
+ |             int auxiliaryVariable; // needs scoping in case construct
+ |             break;
+ |         }
+ |     }
+ | }
+
+
+Using "astyle" for auto formatting
+----------------------------------
+The program astyle can be used to automatically format source code, which can
+be useful for badly formatted 3rd party patches.
+
+Use it like this to get (approximately) Amarok formatting style:
+
+    "astyle -s4 -b -p -U -D -o source.cpp"
+
+
+Class, Function & Variable Naming
+---------------------------------
+*Use CamelCase for everything.
+*Local variables should start out with a lowercase letter.
+*Class names are captialized
+*Prefix class member variables with m_, ex. m_trackList.
+*Prefix static member variables with s_, ex s_instance
+*Functions are named in the Qt style. It's like Java's, without the "get" 
+ prefix.
+  *A getter is variable()
+  *If it's a getter for a boolean, prefix with 'is', so isCondition()
+  *A setter is setVariable( arg ).
+
+
+Includes
+--------
+Header includes should be listed in the following order:
+    - Own Header
+    - Amarok includes, relative to src/ (or shared/) preferably
+    - KDE includes, <KJob> is preferred to <kjob.h>
+    - Qt includes
+    - other includes
+
+They should also be sorted alphabetically (case-sensitively: classes on same level before
+folders), for ease of locating them. A small comment if applicable is also helpful.
+
+Includes in a header file should be kept to the absolute minimum, as to keep compile times
+low. This can be achieved by using "forward declarations" instead of includes, like
+"class QListView;"
+
+TIP:
+Kate/KDevelop users can sort the headers automatically. Select the lines you want to sort,
+then Tools -> Filter Selection Through Command -> "sort".
+
+In vim the same can be achieved by marking the block, and then doing ":sort".
+
+Example:
+
+ | #include "MySuperWidget.h"
+ |
+ | #include "EngineController.h"
+ | #include "core/playlists/Playlist.h"
+ | #include "core/support/Debug.h"
+ | #include "core/support/Amarok.h"
+ |
+ | #include <KDialogBase> // baseclass
+ | #include <KPushButton> // see function...
+ |
+ | #include <QGraphicsView>
+ | #include <QWidget>
+
+
+Comments
+--------
+Comment your code. Don't comment what the code does, comment on the purpose of the code. It's
+good for others reading your code, and ultimately it's good for you too.
+
+Comments are essential when adding a strange hack, like the following example:
+
+ | /**
+ |  * Due to xine-lib, we have to make K3Process close all fds, otherwise we get "device
+ |  * is busy" messages. Used by AmarokProcIO and AmarokProcess, exploiting commSetupDoneC(),
+ |  * a virtual method that happens to be called in the forked process.
+ |  * See bug #103750 for more information.
+ |  */
+ | class AmarokProcIO : public K3ProcIO 
+ | {
+ |     public:
+ |         virtual int commSetupDoneC();
+ | };
+
+
+Otherwise the comment is in the header. Use the Doxygen syntax. See: http://www.stack.nl/~dimitri/doxygen/
+You should be able to write this comment and explain the what the function does.
+If you can't, go back to the code and think what you really wanted to do.
+If the comment is getting to complicated or confusing, go back to the code and do better.
+
+Example:
+
+ | /**
+ |  * Start playback.
+ |  * @param offset Start playing at @p msec position.
+ |  * @return True for success.
+ |  */
+ | virtual bool play( uint offset = 0 ) = 0;
+
+
+Header Formatting
+-----------------
+General rules apply here.  Please keep header function definitions aligned nicely,
+if possible.  It helps greatly when looking through the code.  Sorted methods,
+either by name or by their function (ie, group all related methods together) is
+great too. Access levels should be sorted in this order: public, protected, private.
+
+ | #ifndef AMAROK_QUEUEMANAGER_H
+ | #define AMAROK_QUEUEMANAGER_H
+ |
+ | #include <QListView>
+ |
+ | namespace MyNamespace {
+ |     /**
+ |      * View showing currently queued tracks.
+ |      */
+ |     class QueueList : public QListView
+ |     {
+ |         Q_OBJECT
+ |
+ |         public:
+ |             explicit QueueList( QWidget *parent, const QString ̛&name = QString() );
+ |             ~QueueList();
+ |
+ |         public slots:
+ |             void moveSelectedUp();
+ |             void moveSelectedDown();
+ |
+ |         private:
+ |             int m_member;
+ |             QHash<int, QString> m_names;
+ |     };
+ | } // namespace MyNamespace
+ |
+ | #endif /* AMAROK_QUEUEMANAGER_H */
+
+
+Associated .cpp file could look like (skipping license):
+
+ | #define DEBUG_PREFIX "MyNamespace::QueueList" // only if you use debug(), warning()...
+ |
+ | #include "QueueList.h"
+ |
+ | using namespace MyNamespace;
+ |
+ | QueueList::QueueList( QWidget *parent, const QString ̛&name )
+ |     : QListView( parent )
+ |     , m_member( name.length() )
+ | {
+ | }
+
+
+0 vs NULL
+---------
+The use of 0 to express a null pointer is preferred over the use of NULL.
+0 is not a magic value, it's the defined value of the null pointer in C++.
+NULL, on the other hand, is a preprocessor directive (#define) and not only is
+it more typing than '0' but preprocessor directives are less elegant.
+
+ |     SomeClass *instance = 0;
+
+
+Const Correctness
+-----------------
+Try to keep your code const correct. Declare methods const if they don't mutate the object,
+and use const variables. It improves safety, and also makes it easier to understand the code.
+
+See: http://www.parashift.com/c++-faq-lite/const-correctness.html
+     const_correstness.txt
+
+Example:
+
+ | bool
+ | MyClass::isValidFile( const QString &path ) const
+ | {
+ |     const bool valid = QFile::exist( path );
+ |     return valid;
+ | }
+
+
+Debugging
+---------
+debug.h contains some handy functions for our debug console output.
+Please use them instead of kDebug().
+
+Usage:
+
+ | #include "debug.h"
+ |
+ | debug() << "Something is happening";
+ | warning() << "Something bad may happen";
+ | error() << "Something bad did happen!";
+
+Additionally, there are some macros for debugging functions:
+
+DEBUG_BLOCK
+DEBUG_FUNC_INFO
+DEBUG_LINE_INFO
+DEBUG_INDENT
+DEBUG_UNINDENT
+
+AMAROK_NOTIMPLEMENTED
+AMAROK_DEPRECATED
+
+threadweaver.h has two additional macros:
+DEBUG_THREAD_FUNC_INFO outputs the memory address of the current QThread or 'none'
+    if its the original GUI thread.
+SHOULD_BE_GUI outputs a warning message if it occurs in a thread that isn't in
+    the original "GUI Thread", otherwise it is silent. Useful for documenting
+    functions and to prevent problems in the future.
+
+
+Errors & Asserts
+----------------
+*Use Q_ASSERT where appropriate. If you don't know what an assert is, look it up now.
+
+*Never use fatal(). There must be a better option than crashing a user's
+application (its not uncommon for end-users to have debugging enabled).
+
+*KMessageBox is fine to use to prompt the user, but do not use it to display errors
+or informational messages. Instead, KDE::StatusBar has a few handy methods. Refer to
+amarok/src/statusbar/statusBarBase.h
+
+
+Commenting Out Code
+-------------------
+Don't keep commented out code. It just causes confusion and makes the source
+harder to read. Remember, the last revision before your change is always
+availabe in Git. Hence no need for leaving cruft in the source.
+
+Wrong:
+ | myWidget->show();
+ | //myWidget->rise(); // what is this good for?
+
+Correct:
+ | myWidget->show();
+
+
+Unit Tests and API Docs
+-----------------------
+Amarok uses the "Jenkins" system for doing automatic nightly builds, checking for
+compile errors, and visualizing Unit Tests. You can see the results here:
+
+http://build.kde.org/view/EXTRAGEAR/job/amarok_master/
+
+The API DOc for Amarok can be found here:
+
+http://api.kde.org/extragear-api/multimedia-apidocs/amarok/html/index.html
+
+
+Tips & Tricks
+-------------
+A useful service is http://lxr.kde.org. Lxr is a cross reference of the entire
+KDE SVN repository. You can for instance use it to search for example code
+from other applications for a given KDElibs method.
+
+
+Markey's .vimrc
+---------------
+
+let ruby_no_expensive = 1
+syntax on
+
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set hlsearch
+set ruler
+set smartindent
+set nowrap
+
+set ignorecase
+set smartcase
+
+set title
+set showtabline=2  "Makes the status bar always show, also for just one tab
+
+autocmd FileType ruby set shiftwidth=2 tabstop=2
+
+
+Git and SVN aware prompt
+----------------
+The following prompt shows the current git branch if sitting in a git repository.
+Random crap courtesy of shell colours.
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]`git branch 2>/dev/null|cut -f2 -d\* -s`\[\033[00m\]\$ '
+
+This is an even more colorful configuration for .bashrc that displays the
+current git branch if sitting in a git repository and the current SVN revision
+if sitting in an SVN checkout.
+svn_prompt() {
+	SVNBRANCH=`svn info 2>/dev/null | grep Revision: | cut -f 2 -d " "`
+	if [ -n "$SVNBRANCH" ]; then
+		BRANCH=" (r$SVNBRANCH)";
+	else
+		BRANCH="";
+	fi
+    echo "$BRANCH"
+}
+export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\033[01;33m\]`__git_ps1`\[\e[m\]\[\e[01;35m\]`svn_prompt`\[\e[m\]\[\033[00m\]  \[\e[1;32m\]\$ \[\e[m\]\[\e[1;37m\] '
+
+Git KDE commit template
+-----------------------
+
+HACKING/commit-template should be used so commits to KDE git servers are properly formatted and using the commit keywords.
+configure git to use the template using:
+git config commit.template HACKING/commmit-template
+
+Copyright
+---------
+To comply with the GPL, add your name, email address & the year to the top of any file
+that you edit. If you bring in code or files from elsewhere, make sure its
+GPL-compatible and to put the authors name, email & copyright year to the top of
+those files.
+
+Please note that it is not sufficient to write a pointer to the license (like a URL).
+The complete license header needs to be written everytime.
+
+
+Thanks, now have fun!
+  -- the Amarok developers
