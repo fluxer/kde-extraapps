@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>401</width>
+    <width>414</width>
     <height>306</height>
    </rect>
   </property>
@@ -63,25 +63,28 @@
     </widget>
    </item>
    <item>
-    <widget class="KEditListBox" name="blacklistEditListBox">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
      </property>
-     <property name="buttons">
-      <set>KEditListBox::Add|KEditListBox::Remove</set>
-     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="KEditListWidget" name="blacklistEditListBox">
+        <property name="buttons">
+         <set>KEditListWidget::Add|KEditListWidget::Remove</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KEditListBox</class>
-   <extends>QGroupBox</extends>
-   <header>keditlistbox.h</header>
+   <class>KEditListWidget</class>
+   <extends>QWidget</extends>
+   <header>keditlistwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
