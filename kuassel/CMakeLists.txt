@@ -172,17 +172,19 @@ set(CLIENT_DEPS )
 add_subdirectory(data)
 add_subdirectory(pics)
 
-# Set up and display feature summary
-#####################################################################
-
-feature_summary(WHAT ALL
-                INCLUDE_QUIET_PACKAGES
-                FATAL_ON_MISSING_REQUIRED_PACKAGES
-)
-
 # Finally, compile the sources
 # We want this after displaying the feature summary to avoid ugly
 # CMake backtraces in case a required Qt5 modules misses
 #####################################################################
 
 add_subdirectory(src)
+
+# Set up and display feature summary
+#####################################################################
+
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    feature_summary(WHAT ALL
+                INCLUDE_QUIET_PACKAGES
+                FATAL_ON_MISSING_REQUIRED_PACKAGES
+    )
+endif()
