@@ -1264,7 +1264,8 @@ KNotification *KGet::showNotification(QWidget *parent, const QString &eventType,
 GenericObserver::GenericObserver(QObject *parent)
   : QObject(parent),
     m_save(0),
-    m_finishAction(0)
+    m_finishAction(0),
+    m_allFinished(false)
 {
     connect(KGet::model(), SIGNAL(groupRemovedEvent(TransferGroupHandler*)), SLOT(groupRemovedEvent(TransferGroupHandler*)));
     connect(KGet::model(), SIGNAL(transfersAddedEvent(QList<TransferHandler*>)),
@@ -1305,6 +1306,7 @@ void GenericObserver::transfersAddedEvent(const QList<TransferHandler*> &handler
     requestSave();
     KGet::calculateGlobalSpeedLimits();
     KGet::checkSystemTray();
+    m_allFinished = false;
 }
 
 void GenericObserver::transfersRemovedEvent(const QList<TransferHandler*> &handlers)
@@ -1313,6 +1315,7 @@ void GenericObserver::transfersRemovedEvent(const QList<TransferHandler*> &handl
     requestSave();
     KGet::calculateGlobalSpeedLimits();
     KGet::checkSystemTray();
+    m_allFinished = false;
 }
 
 void GenericObserver::transferMovedEvent(TransferHandler *transfer, TransferGroupHandler *group)
@@ -1448,7 +1451,8 @@ void GenericObserver::transfersChangedEvent(QMap<TransferHandler*, Transfer::Cha
                 m_finishAction->start();
             }
         }
-    } else if (allFinished) {
+    } else if (allFinished && !m_allFinished) {
+        m_allFinished = true;
         KGet::showNotification(KGet::m_mainWindow, "finishedall",
                                i18n("<p>All transfers have been finished.</p>"),
                                "kget", i18n("Downloads completed"));

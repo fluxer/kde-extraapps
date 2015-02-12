@@ -486,6 +486,7 @@ class GenericObserver : public QObject
     private:
         QTimer *m_save;
         QTimer *m_finishAction;
+        bool m_allFinished;
         QHash<KNotification*, TransferHandler*> m_notifications;
 };
 #endif
