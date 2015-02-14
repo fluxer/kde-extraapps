@@ -54,6 +54,7 @@ Name[x-test]=xxRAW Photo Camera Filesxx
 Name[zh_CN]=RAW 照片相机文件
 Name[zh_TW]=原始相機檔
 X-KDE-ServiceTypes=ThumbCreator
+X-KDE-PluginInfo-EnabledByDefault=true
 # image/x-dcraw is the subclass for all "raw" image formats, so no need to list them all
 MimeType=image/x-dcraw;
 X-KDE-Library=rawthumbnail

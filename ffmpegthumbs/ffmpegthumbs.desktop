@@ -49,6 +49,7 @@ Name[x-test]=xxVideo Files (ffmpegthumbs)xx
 Name[zh_CN]=视频文件(ffmpegthumbs)
 Name[zh_TW]=影像檔 (ffmpegthumbs)
 X-KDE-ServiceTypes=ThumbCreator
+X-KDE-PluginInfo-EnabledByDefault=true
 MimeType=video/*;application/x-flash-video;application/vnd.ms-asf;application/vnd.rn-realmedia;
 X-KDE-Library=ffmpegthumbs
 ServiceTypes=ThumbCreator
