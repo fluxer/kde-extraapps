@@ -118,9 +118,7 @@ void AppLauncherItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *e)
 void AppLauncherItem::updateToolTip()
 {
     IconTasks::ToolTipContent data(m_launcher->name(), m_launcher->genericName(), m_launcher->icon());
-#if KDE_IS_VERSION(4, 7, 0)
     data.setInstantPopup(m_applet->instantToolTip());
-#endif
     QString key = mediaButtonKey();
     if (!key.isEmpty()) {
         data.setPlayState(MediaButtons::self()->playbackStatus(key));

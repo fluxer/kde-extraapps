@@ -444,9 +444,7 @@ void AbstractTaskItem::clearToolTip()
         m_mediaStateTimerId = 0;
     }
     IconTasks::ToolTipContent data;
-#if KDE_IS_VERSION(4, 7, 0)
     data.setInstantPopup(m_applet->instantToolTip());
-#endif
 
     IconTasks::ToolTipManager::self()->setContent(this, data);
 }

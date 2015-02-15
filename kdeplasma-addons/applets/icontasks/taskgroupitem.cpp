@@ -358,9 +358,7 @@ void TaskGroupItem::updateToolTip()
     IconTasks::ToolTipContent data;
 
     data.setClickable(true);
-#if KDE_IS_VERSION(4, 7, 0)
     data.setInstantPopup(m_applet->instantToolTip());
-#endif
     data.setHighlightWindows(m_applet->highlightWindows());
     data.setVertical(Plasma::Vertical == m_applet->formFactor());
 

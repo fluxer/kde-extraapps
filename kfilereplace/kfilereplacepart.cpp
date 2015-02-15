@@ -829,11 +829,7 @@ void KFileReplacePart::loadOwnerOptions()
 void KFileReplacePart::loadLocationsList()
 {
   KConfigGroup cg( m_config,"Directories");
-  #if KDE_IS_VERSION(3,1,3)
   QString locationsEntryList = cg.readPathEntry(rcDirectoriesList, QString());
-  #else
-  QString locationsEntryList = cg.readEntry(rcDirectoriesList);
-  #endif
 
   if(locationsEntryList.isEmpty())
     locationsEntryList = QDir::current().path();
@@ -844,11 +840,7 @@ void KFileReplacePart::loadLocationsList()
 void KFileReplacePart::loadFiltersList()
 {
   KConfigGroup cg( m_config,"Filters");
-  #if KDE_IS_VERSION(3,1,3)
   QString filtersEntryList = cg.readPathEntry(rcFiltersList, QString());
-  #else
-  QString filtersEntryList = cg.readEntry(rcFiltersList);
-  #endif
 
   if(filtersEntryList.isEmpty())
     filtersEntryList = "*.htm;*.html;*.xml;*.xhtml;*.css;*.js;*.php";

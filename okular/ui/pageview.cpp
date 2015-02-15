@@ -3992,7 +3992,6 @@ void PageView::updatePageStep() {
 
 void PageView::addWebShortcutsMenu( KMenu * menu, const QString & text )
 {
-#if KDE_IS_VERSION(4,5,70)
     if ( text.isEmpty() )
     {
         return;
@@ -4043,7 +4042,6 @@ void PageView::addWebShortcutsMenu( KMenu * menu, const QString & text )
             menu->addMenu(webShortcutsMenu);
         }
     }
-#endif
 }
 
 //BEGIN private SLOTS
@@ -4535,7 +4533,6 @@ void PageView::slotShowSizeAllCursor()
 
 void PageView::slotHandleWebShortcutAction()
 {
-#if KDE_IS_VERSION(4,5,70)
     KAction *action = qobject_cast<KAction*>( sender() );
 
     if (action)
@@ -4547,7 +4544,6 @@ void PageView::slotHandleWebShortcutAction()
             KToolInvocation::invokeBrowser( filterData.uri().url() );
         }
     }
-#endif
 }
 
 void PageView::slotConfigureWebShortcuts()

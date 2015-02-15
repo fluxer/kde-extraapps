@@ -589,9 +589,7 @@ void DockConfigItemDelegate::aboutClicked()
                              (dbusName.isEmpty() ? QString() : i18n("<tr><td align=\"right\">D-Bus:</td><td>%1</td></tr>", dbusName)) +
                              QString("</table>"),
                              model->data(index, Qt::DisplayRole).toString()
-#if KDE_IS_VERSION(4, 7, 0)
                              ,QString(), KMessageBox::WindowModal
-#endif
                              );
 }
 

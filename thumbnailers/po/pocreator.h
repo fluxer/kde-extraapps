@@ -25,11 +25,7 @@
 #include <kdeversion.h>
 #include <kio/thumbcreator.h>
 
-#if KDE_IS_VERSION(4,7,0)
 class PoCreator : public ThumbCreatorV2
-#else
-class PoCreator : public ThumbCreator
-#endif
 {
     public:
         explicit PoCreator();
