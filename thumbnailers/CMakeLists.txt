@@ -18,6 +18,8 @@ macro_log_feature(KEXIV2_FOUND "libkexiv2" "A library for reading and writing im
 macro_log_feature(KDCRAW_FOUND "libkdcraw" "A library for accessing raw files" "www.kde.org" FALSE "" "Required to build the RAW thumbnailer")
 macro_log_feature(GETTEXTPO_FOUND "gettext-po" "A library for processing PO files" "www.gnu.org/software/gettext" FALSE "" "Required to build the PO thumbnailer")
 
+macro_optional_add_subdirectory(audio)
+
 macro_optional_add_subdirectory(ps)
 
 if(KEXIV2_FOUND AND KDCRAW_FOUND)
