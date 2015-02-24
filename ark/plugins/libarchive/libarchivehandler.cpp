@@ -220,11 +220,8 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString& de
         QString entryName = QDir::fromNativeSeparators(QFile::decodeName(archive_entry_pathname(entry)));
 
         if (entryName.startsWith(QLatin1Char( '/' ))) {
-            //for now we just can't handle absolute filenames in a tar archive.
-            //TODO: find out what to do here!!
-            emit error(i18n("This archive contains archive entries with absolute paths, which are not yet supported by ark."));
-
-            return false;
+            // remove leading slash from absolute path entries
+            entryName = entryName.mid(1);
         }
 
         if (files.contains(entryName) || entryName == fileBeingRenamed || extractAll) {
