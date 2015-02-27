@@ -14,17 +14,17 @@ include_directories(
     ${PC_AVCODEC_INCLUDEDIR}
     ${PC_AVFORMAT_INCLUDEDIR}
     ${FFMPEG_INCLUDE_DIR}
-    )
+)
 
 # Certain versions of FFMPEG need this to be defined
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D __STDC_CONSTANT_MACROS")
 
-set( ffmpegthumbs_PART_SRCS
-  ffmpegthumbnailer.cpp
-  ffmpegthumbnailer/filmstripfilter.cpp
-  ffmpegthumbnailer/moviedecoder.cpp
-  ffmpegthumbnailer/imagewriter.cpp
-  ffmpegthumbnailer/videothumbnailer.cpp
+set(ffmpegthumbs_PART_SRCS
+    ffmpegthumbnailer.cpp
+    ffmpegthumbnailer/filmstripfilter.cpp
+    ffmpegthumbnailer/moviedecoder.cpp
+    ffmpegthumbnailer/imagewriter.cpp
+    ffmpegthumbnailer/videothumbnailer.cpp
 )
 
 kde4_add_plugin(ffmpegthumbs ${ffmpegthumbs_PART_SRCS})
@@ -38,5 +38,5 @@ install(TARGETS ffmpegthumbs DESTINATION ${PLUGIN_INSTALL_DIR})
 install(FILES  ffmpegthumbs.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
 if (KDE4_BUILD_TESTS)
-	add_subdirectory(tests)
+    add_subdirectory(tests)
 endif (KDE4_BUILD_TESTS)

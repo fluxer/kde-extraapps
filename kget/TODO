@@ -12,14 +12,10 @@ Legend:
 ---------------------
 Main Window
     1.1 - List title bar
-    1.2 - No text in toolbar                        DONE
-    1.3 - Menu item File → Open unclear             DONE (renamed to "Import Transfers")
     1.4 - Missing keyboard shortcuts
-    1.5 - Downloads don’t start immediately        DONE
     2.1 - Default group not necessary?              Renamed to "My Downloads". Is it enough?
-    3.1 - Visual alignment                          DONE (all centered)
-    3.2 - File details view not always visible      DONE? (extendable Details)
-    3.3 - File details view switching               DONE?
+    3.1 - File details view not always visible      DONE? (extendable Details)
+    3.2 - File details view switching               DONE?
 
 
 
@@ -96,44 +92,6 @@ LONG-TERM:
 
         DONE
 ---------------------
-
-
-  Things done until 21/01/2005
-
-  CHG <dario, eros> decoupling between gui and transfer operations.
-  ADD <dario> Implement the MainView class that should become the kget main view.
-  CHG <dario> Transfer object rewrite to make it easily inherited from 
-      new kind of transfers.
-  ADD <dario> TransferKio. The first transfer realized using kioSlaves
-  CHG <dario> Scheduler logic enhancement (there are still lots of things to do)
-  ADD <dario> groups support and notifies to the views.
-  ADD <dario> systray icon with blinking overlay.
-  CHG <eros> Move all the configuration framework to KConfigXT
-  CHG <dario> implement delayedInitialization of the kget app. This should speed up
-      the startup a lot with big lists of transfers.
-  FIX <dario> the konqueror plugin doesn't allow the download of links if 
-      the relative web page has been closed
-  FIX <pino> make more fluid the drop target movement
-  FIX <dario> handle SideBar resizing correctly
-  CHG <dario> finish to implement transferKio adding, for example, setDelay.
-  FIX <dario> (JJ) fix crash when resuming an already running transfer. The 
-      solution should be to check for this case in Scheduler::slotSetCommand
-      by calling the info() function on the transfer and checking if its status
-      is St_Trying or St_Running. In this case we should do nothing.
-  FIX <dario> (JJ) fixed Sidebar crash.
-  FIX <dario> fixed 'stop on transfer' crash
-  FIX <enrico> Optimized color scheme change (rebuilds pixmaps, droptarget,
-      etc) and pixmap deletion (leakfix)
-  CHG <enrico> disabled internal segv hander to show backtraces on crash
-  ADD <dario> make it possible to move transfers to a specific group using
-      the popup menu.
-
-  Things done after the big architecture rewrite
-
-  CHG <dario> rename the KMainWidget class (that IMHO is a rather confusing name)
-      to MainWindow (KGet? KGetWindow?)
-  ADD <dario> add the possibility to select "open destination folder" in 
-      the transfer's popup menu.
 
 IDEAS:
    * Use the single transfer dialog to display transfer property, progress and

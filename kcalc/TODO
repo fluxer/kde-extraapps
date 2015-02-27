@@ -12,8 +12,3 @@ unsigned short,...). Look here at some of Evan's code.
 * think what to do with cos, sin, etc. right now, as work-around cast KNumber to double,
 use standard libc cos, sin, etc., cast back
 
-====Below old TODOs ===
-* key groups for color configuration need to be rethought
-* better to handle keys with "accel" or with "keyPressEvent"?
-
-* check whether DelFormer Input in stat-mode works after using median!
