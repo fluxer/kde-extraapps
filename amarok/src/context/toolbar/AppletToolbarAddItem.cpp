@@ -150,4 +150,4 @@ Context::AppletToolbarAddItem::mousePressEvent( QGraphicsSceneMouseEvent * event
     event->accept();
 }
 
-#include "AppletToolbarAddItem.moc"
+#include "moc_AppletToolbarAddItem.cpp"

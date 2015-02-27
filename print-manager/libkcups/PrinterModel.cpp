@@ -550,4 +550,4 @@ void PrinterModel::serverChanged(const QString &text)
     update();
 }
 
-#include "PrinterModel.moc"
+#include "moc_PrinterModel.cpp"

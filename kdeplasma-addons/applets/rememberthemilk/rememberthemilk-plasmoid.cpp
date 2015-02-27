@@ -430,4 +430,4 @@ void RememberTheMilkPlasmoid::configChanged()
     setSortBy(SortDue); // Default
 }
 
-#include "rememberthemilk-plasmoid.moc"
+#include "moc_rememberthemilk-plasmoid.cpp"

@@ -22,7 +22,7 @@
 * ============================================================ */
 
 #include "skanlite.h"
-#include "skanlite.moc"
+#include "moc_skanlite.cpp"
 
 #include "KSaneImageSaver.h"
 #include "SaveLocation.h"

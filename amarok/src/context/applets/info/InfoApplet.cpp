@@ -136,4 +136,4 @@ void InfoApplet::linkClicked( const QUrl & url )
         QDesktopServices::openUrl( url.toString() );
 }
 
-#include "InfoApplet.moc"
+#include "moc_InfoApplet.cpp"

@@ -190,5 +190,5 @@ TransferDialog::convertSpaces_toggled( bool on )
     m_dev->setSpacesToUnderscores( on );
 }
 
-#include "transferdialog.moc"
+#include "moc_transferdialog.cpp"
 

@@ -146,5 +146,5 @@ void LayoutEditWidget::clear()
     m_dragstack->clear();
 }
 
-#include "LayoutEditWidget.moc"
+#include "moc_LayoutEditWidget.cpp"
 

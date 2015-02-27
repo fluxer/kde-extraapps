@@ -65,4 +65,4 @@ void MandelbrotRenderThread::run()
     }
 }
 
-#include "renderthread.moc"
+#include "moc_renderthread.cpp"

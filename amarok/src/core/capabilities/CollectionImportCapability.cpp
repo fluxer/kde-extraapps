@@ -23,4 +23,4 @@ Capabilities::CollectionImportCapability::CollectionImportCapability()
 Capabilities::CollectionImportCapability::~CollectionImportCapability()
 { }
 
-#include "CollectionImportCapability.moc"
+#include "moc_CollectionImportCapability.cpp"

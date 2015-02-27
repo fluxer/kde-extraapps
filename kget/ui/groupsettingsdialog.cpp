@@ -70,4 +70,4 @@ void GroupSettingsDialog::save()
 
 }
 
-#include "groupsettingsdialog.moc"
+#include "moc_groupsettingsdialog.cpp"

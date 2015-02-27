@@ -100,4 +100,4 @@ KGpgKeyserverTransaction::setProgressEnable(const bool b)
 	}
 }
 
-#include "kgpgkeyservertransaction.moc"
+#include "moc_kgpgkeyservertransaction.cpp"

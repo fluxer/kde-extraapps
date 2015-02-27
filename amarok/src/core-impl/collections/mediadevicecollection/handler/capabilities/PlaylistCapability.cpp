@@ -21,4 +21,4 @@ Handler::PlaylistCapability::~PlaylistCapability()
     // nothing to do here
 }
 
-#include "PlaylistCapability.moc"
+#include "moc_PlaylistCapability.cpp"

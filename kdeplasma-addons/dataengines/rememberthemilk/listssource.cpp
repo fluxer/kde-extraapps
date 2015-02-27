@@ -80,4 +80,4 @@ void ListsSource::loadCache() {
   }
 }
 
-#include "listssource.moc"
+#include "moc_listssource.cpp"

@@ -35,4 +35,4 @@ KgpgDetailedInfo::KgpgDetailedInfo(QWidget *parent, const QString &boxLabel, con
 				   boxLabel, keysList, QString(), NULL, 0, errormessage);
 }
 
-#include "detailedconsole.moc"
+#include "moc_detailedconsole.cpp"

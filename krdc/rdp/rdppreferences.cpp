@@ -63,4 +63,4 @@ void RdpPreferences::save()
     KCModule::save();
 }
 
-#include "rdppreferences.moc"
+#include "moc_rdppreferences.cpp"

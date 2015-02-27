@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kinputdialog.h>
 #include <kmenu.h>
 
-#include "kcalc_const_button.moc"
+#include "moc_kcalc_const_button.cpp"
 
 //------------------------------------------------------------------------------
 // Name: KCalcConstButton

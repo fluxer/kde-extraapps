@@ -557,5 +557,5 @@ TextDocumentSettings* TextDocumentGenerator::generalSettings()
     return d->mGeneralSettings;
 }
 
-#include "textdocumentgenerator.moc"
+#include "moc_textdocumentgenerator.cpp"
 

@@ -98,4 +98,4 @@ void kpPrintDialogPage::setPrintImageCenteredOnPage (bool printCentered)
 }
 
 
-#include <kpPrintDialogPage.moc>
+#include "moc_kpPrintDialogPage.cpp"

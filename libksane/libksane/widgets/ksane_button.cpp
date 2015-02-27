@@ -24,7 +24,7 @@
 
 // Local includes
 #include "ksane_button.h"
-#include "ksane_button.moc"
+#include "moc_ksane_button.cpp"
 
 // Qt includes
 #include <KDebug>

@@ -164,4 +164,4 @@ void SongkickEngine::ontourResult( KJob* job )
     setData( "ontour", data );
 }
 
-#include "SongkickEngine.moc"
+#include "moc_SongkickEngine.cpp"

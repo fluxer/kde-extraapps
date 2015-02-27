@@ -111,4 +111,4 @@ void ActionStack::showMainWidget()
     m_tabs->setCurrentIndex(0);
 }
 
-#include "actionstack.moc"
+#include "moc_actionstack.cpp"

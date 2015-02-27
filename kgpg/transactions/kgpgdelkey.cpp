@@ -89,4 +89,4 @@ KGpgDelKey::setCmdLine()
 	m_argscount = getProcess()->program().count();
 }
 
-#include "kgpgdelkey.moc"
+#include "moc_kgpgdelkey.cpp"

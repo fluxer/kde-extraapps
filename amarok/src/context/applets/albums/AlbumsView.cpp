@@ -611,4 +611,4 @@ AlbumsItemDelegate::setLengthAlignment( Qt::Alignment a )
     m_lengthAlignment = a;
 }
 
-#include <AlbumsView.moc>
+#include "moc_AlbumsView.cpp"

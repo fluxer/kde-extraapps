@@ -1024,4 +1024,4 @@ TestSqlQueryMaker::testLabelQueryMode()
     checkResultCount( &qm, type, result );
 }
 
-#include "TestSqlQueryMaker.moc"
+#include "moc_TestSqlQueryMaker.cpp"

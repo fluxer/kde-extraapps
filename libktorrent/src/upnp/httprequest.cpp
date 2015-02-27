@@ -159,4 +159,4 @@ namespace bt
 
 
 }
-#include "httprequest.moc"
+#include "moc_httprequest.cpp"

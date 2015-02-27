@@ -119,4 +119,4 @@ void AutoPasteConfig::enableWidgets()
     appsTreeView->setEnabled(autoPasteCheckBox->isChecked());
 }
 
-#include "autopasteconfig.moc"
+#include "moc_autopasteconfig.cpp"

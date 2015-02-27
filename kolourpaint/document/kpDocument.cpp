@@ -464,5 +464,5 @@ void kpDocument::slotSizeChanged (const QSize &newSize)
 //---------------------------------------------------------------------
 
 
-#include <kpDocument.moc>
+#include "moc_kpDocument.cpp"
 

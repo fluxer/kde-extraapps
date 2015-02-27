@@ -191,4 +191,4 @@ TestFastForwardImporter::providerShouldHandleErroneousConfigValues()
     QVERIFY( provider.artists().isEmpty() );
 }
 
-#include "TestFastForwardImporter.moc"
+#include "moc_TestFastForwardImporter.cpp"

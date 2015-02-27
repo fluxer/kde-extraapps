@@ -92,4 +92,4 @@ void SourceWatchList::dataUpdated(const QString& source, const Plasma::DataEngin
 }
 
 
-#include "sourcewatchlist.moc"
+#include "moc_sourcewatchlist.cpp"

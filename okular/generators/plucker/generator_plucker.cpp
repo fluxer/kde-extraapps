@@ -207,4 +207,4 @@ bool PluckerGenerator::print( QPrinter& )
     return true;
 }
 
-#include "generator_plucker.moc"
+#include "moc_generator_plucker.cpp"

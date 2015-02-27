@@ -2265,5 +2265,5 @@ QVariant XpsRenderNode::getChildData( const QString &name )
     }
 }
 
-#include "generator_xps.moc"
+#include "moc_generator_xps.cpp"
 

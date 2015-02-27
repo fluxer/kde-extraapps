@@ -27,7 +27,7 @@
 
 // Local includes
 #include "labeled_slider.h"
-#include "labeled_slider.moc"
+#include "moc_labeled_slider.cpp"
 
 // KDE includes
 #include <KNumInput>

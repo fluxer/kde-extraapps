@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 */
 // Self
-#include "hud/hudlabel.moc"
+#include "hud/moc_hudlabel.cpp"
 
 // Local
 #include <hud/hudtheme.h>

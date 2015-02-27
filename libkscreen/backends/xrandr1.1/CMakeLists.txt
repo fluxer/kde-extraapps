@@ -12,7 +12,7 @@ set(xrandr11_SRCS
     ../xrandr/xrandrx11helper.cpp
 )
 
-automoc4_add_library(KSC_XRandR11 MODULE ${xrandr11_SRCS})
+add_library(KSC_XRandR11 MODULE ${xrandr11_SRCS})
 
 set_target_properties(KSC_XRandR11 PROPERTIES PREFIX "")
 target_link_libraries(KSC_XRandR11 ${QT_QTCORE_LIBRARY}

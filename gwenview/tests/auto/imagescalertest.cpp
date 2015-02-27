@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 #include <qtest_kde.h>
 
-#include "imagescalertest.moc"
+#include "moc_imagescalertest.cpp"
 
 #include "../lib/imagescaler.h"
 #include "../lib/document/documentfactory.h"

@@ -122,4 +122,4 @@ void TransferGroupScheduler::setUploadLimit(int limit)
     calculateUploadLimit();
 }
 
-#include "transfergroupscheduler.moc"
+#include "moc_transfergroupscheduler.cpp"

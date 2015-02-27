@@ -86,4 +86,4 @@ void PluginsConfig::slotConfigChanged( bool changed )
         debug() << "config changed";
 }
 
-#include "PluginsConfig.moc"
+#include "moc_PluginsConfig.cpp"

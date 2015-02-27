@@ -149,4 +149,4 @@ void TrayIcon::showAbout()
     dlg->show();
 }
 
-#include "trayicon.moc"
+#include "moc_trayicon.cpp"

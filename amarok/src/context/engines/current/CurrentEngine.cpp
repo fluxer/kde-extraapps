@@ -270,4 +270,4 @@ CurrentEngine::resultReady( const Meta::AlbumList &albums )
         m_albums << albums;
 }
 
-#include "CurrentEngine.moc"
+#include "moc_CurrentEngine.cpp"

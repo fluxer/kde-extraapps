@@ -168,4 +168,4 @@ void CoverGridApplet::prepareLayout()
     m_layout->activate();
 }
 
-#include "CoverGridApplet.moc"
+#include "moc_CoverGridApplet.cpp"

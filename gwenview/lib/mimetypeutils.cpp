@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
 #include "mimetypeutils.h"
-#include "mimetypeutils_p.moc"
+#include "moc_mimetypeutils_p.cpp"
 
 // Qt
 #include <QApplication>

@@ -174,4 +174,4 @@ SimilarArtistsEngine::setArtist( const QString &name )
     m_artist = name;
 }
 
-#include "SimilarArtistsEngine.moc"
+#include "moc_SimilarArtistsEngine.cpp"

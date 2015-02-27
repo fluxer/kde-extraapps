@@ -593,4 +593,4 @@ void DockConfigItemDelegate::aboutClicked()
                              );
 }
 
-#include "dockconfig.moc"
+#include "moc_dockconfig.cpp"

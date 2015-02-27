@@ -297,4 +297,4 @@ void LayoutEditDialog::setToken( TokenWithLayout *t )
     }
 }
 
-#include "LayoutEditDialog.moc"
+#include "moc_LayoutEditDialog.cpp"

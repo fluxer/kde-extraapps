@@ -27,7 +27,7 @@
  * ============================================================ */
 
 #include "ksane_find_devices_thread.h"
-#include "ksane_find_devices_thread.moc"
+#include "moc_ksane_find_devices_thread.cpp"
 
 #include "ksane_widget_private.h"
 

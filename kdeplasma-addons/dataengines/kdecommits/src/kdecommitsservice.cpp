@@ -150,4 +150,4 @@ void KdeCommitsService::result(KJob *job)
     }
 }
 
-#include "kdecommitsservice.moc"
+#include "moc_kdecommitsservice.cpp"

@@ -998,4 +998,4 @@ void GroupingContainment::raise(QGraphicsWidget *widget)
     widget->setZValue(++GroupingContainmentPrivate::s_maxZValue);
 }
 
-#include "groupingcontainment.moc"
+#include "moc_groupingcontainment.cpp"

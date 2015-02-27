@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_option.h"
-#include "ksane_option.moc"
+#include "moc_ksane_option.cpp"
 
 // KDE includes
 #include <KDebug>

@@ -357,5 +357,5 @@ Dynamic::QuizPlayBias::followForName( const QString &name )
 
 
 
-#include "QuizPlayBias.moc"
+#include "moc_QuizPlayBias.cpp"
 

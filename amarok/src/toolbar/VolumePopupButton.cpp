@@ -160,4 +160,4 @@ VolumePopupButton::wheelEvent( QWheelEvent * event )
 }
 
 
-#include "VolumePopupButton.moc"
+#include "moc_VolumePopupButton.cpp"

@@ -80,4 +80,4 @@ KGpgTransactionJob::doKill()
 }
 
 
-#include "kgpgtransactionjob.moc"
+#include "moc_kgpgtransactionjob.cpp"

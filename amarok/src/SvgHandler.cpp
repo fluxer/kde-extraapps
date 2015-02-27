@@ -471,4 +471,4 @@ void SvgHandler::paintCustomSlider( QPainter *p, QStyleOptionSlider *slider, qre
     }
 }
 
-#include "SvgHandler.moc"
+#include "moc_SvgHandler.cpp"

@@ -78,4 +78,4 @@ AmazonUrlRunner::run( AmarokUrl url )
 }
 
 
-#include "AmazonUrlRunner.moc"
+#include "moc_AmazonUrlRunner.cpp"

@@ -186,5 +186,5 @@ void KompareURLDialog::setSecondURLRequesterMode( unsigned int mode )
 	m_filesPage->setSecondURLRequesterMode( mode );
 }
 
-#include "kompareurldialog.moc"
+#include "moc_kompareurldialog.cpp"
 

@@ -54,4 +54,4 @@ void ContactList::setOwnId(const QString& id)
 }
 
 
-#include "contactlist.moc"
+#include "moc_contactlist.cpp"

@@ -354,6 +354,6 @@ void BackgroundListModel::setResizeMethod(Plasma::Wallpaper::ResizeMethod resize
     m_resizeMethod = resizeMethod;
 }
 
-#include "backgroundlistmodel.moc"
+#include "moc_backgroundlistmodel.cpp"
 
 

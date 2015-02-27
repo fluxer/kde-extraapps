@@ -29,7 +29,7 @@ BoundedPlaybackCapability::~BoundedPlaybackCapability()
 
 }
 
-#include "BoundedPlaybackCapability.moc"
+#include "moc_BoundedPlaybackCapability.cpp"
 
 
 

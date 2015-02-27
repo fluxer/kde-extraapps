@@ -202,7 +202,7 @@ void MagnatuneDownloadHandler::albumDownloadComplete( bool success )
 }
 
 
-#include "MagnatuneDownloadHandler.moc"
+#include "moc_MagnatuneDownloadHandler.cpp"
 
 
 

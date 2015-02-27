@@ -484,5 +484,5 @@ void LancelotApplet::updateImmutability(const Plasma::ImmutabilityType immutable
     Plasma::Applet::setImmutability(immutable);
 }
 
-#include "LancelotApplet.moc"
+#include "moc_LancelotApplet.cpp"
 

@@ -46,4 +46,4 @@ void PluginSelector::loadDefaults()
     defaults();
 }
 
-#include "pluginselector.moc"
+#include "moc_pluginselector.cpp"

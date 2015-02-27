@@ -123,5 +123,5 @@ bool FaxGenerator::print( QPrinter& printer )
     return true;
 }
 
-#include "generator_fax.moc"
+#include "moc_generator_fax.cpp"
 

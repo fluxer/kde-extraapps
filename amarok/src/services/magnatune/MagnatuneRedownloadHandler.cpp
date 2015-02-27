@@ -201,4 +201,4 @@ DEBUG_BLOCK
 }
 
 
-#include "MagnatuneRedownloadHandler.moc"
+#include "moc_MagnatuneRedownloadHandler.cpp"

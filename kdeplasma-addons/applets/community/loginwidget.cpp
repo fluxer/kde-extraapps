@@ -136,4 +136,4 @@ void LoginWidget::registerNewAccount()
 }
 
 
-#include "loginwidget.moc"
+#include "moc_loginwidget.cpp"

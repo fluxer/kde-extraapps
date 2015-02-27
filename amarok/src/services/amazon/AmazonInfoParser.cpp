@@ -182,4 +182,4 @@ AmazonInfoParser::albumInfoDownloadComplete( KJob *requestJob )
     emit( info( contextHtml ) );
 }
 
-#include "AmazonInfoParser.moc"
+#include "moc_AmazonInfoParser.cpp"

@@ -135,6 +135,6 @@ TrashCollectionLocation::slotTrashJobFinished( KJob *job )
         slotCopyOperationFinished();
 }
 
-#include "TrashCollectionLocation.moc"
+#include "moc_TrashCollectionLocation.cpp"
 
 } //namespace Collections

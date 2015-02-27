@@ -168,4 +168,4 @@ RemoteLister::_completed()
 }
 }
 
-#include "remoteLister.moc"
+#include "moc_remoteLister.cpp"

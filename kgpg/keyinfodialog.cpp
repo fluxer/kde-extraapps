@@ -389,4 +389,4 @@ void KgpgKeyInfo::slotKeyExpanded()
 		slotLoadPhoto(m_photoid->currentText());
 }
 
-#include "keyinfodialog.moc"
+#include "moc_keyinfodialog.cpp"

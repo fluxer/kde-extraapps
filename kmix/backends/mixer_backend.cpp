@@ -327,4 +327,4 @@ QString Mixer_Backend::errorText(int mixer_error)
 
 
 
-#include "mixer_backend.moc"
+#include "moc_mixer_backend.cpp"

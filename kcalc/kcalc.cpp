@@ -2273,7 +2273,7 @@ bool KCalculator::eventFilter(QObject *o, QEvent *e) {
 ////////////////////////////////////////////////////////////////
 // Include the meta-object code for classes in this file
 //
-#include "kcalc.moc"
+#include "moc_kcalc.cpp"
 
 //------------------------------------------------------------------------------
 // Name: kdemain

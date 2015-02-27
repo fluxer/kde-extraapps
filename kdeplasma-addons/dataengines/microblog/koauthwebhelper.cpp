@@ -215,4 +215,4 @@ void KOAuthWebHelper::loadFinished()
 }
 
 }
-#include "koauthwebhelper.moc"
+#include "moc_koauthwebhelper.cpp"

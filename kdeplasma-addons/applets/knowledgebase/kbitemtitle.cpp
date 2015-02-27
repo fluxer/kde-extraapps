@@ -44,4 +44,4 @@ void KBItemTitle::mouseReleaseEvent(QGraphicsSceneMouseEvent  *event)
     emit clicked();
 }
 
-#include "kbitemtitle.moc"
+#include "moc_kbitemtitle.cpp"

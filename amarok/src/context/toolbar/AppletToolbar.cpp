@@ -178,4 +178,4 @@ Context::AppletToolbar::toggleConfigMode() // SLOT
     emit configModeToggled();
 }
 
-#include "AppletToolbar.moc"
+#include "moc_AppletToolbar.cpp"

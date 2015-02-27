@@ -319,4 +319,4 @@ Amarok::TrayIcon::updateOverlayIcon()
         setOverlayIconByName( QString() );
 }
 
-#include "TrayIcon.moc"
+#include "moc_TrayIcon.cpp"

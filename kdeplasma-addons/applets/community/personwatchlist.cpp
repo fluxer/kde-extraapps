@@ -63,4 +63,4 @@ void PersonWatchList::slotKeysRemoved(const QSet<QString>& keys) {
 }
 
 
-#include "personwatchlist.moc"
+#include "moc_personwatchlist.cpp"

@@ -137,4 +137,4 @@ void kpZoomedThumbnailView::adjustToEnvironment ()
 }
 
 
-#include <kpZoomedThumbnailView.moc>
+#include "moc_kpZoomedThumbnailView.cpp"

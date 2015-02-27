@@ -132,4 +132,4 @@ QString AddMacro::macro()
     return QString("%{%1(%2)}").arg(macro).arg(values.join(", "));
 }
 
-#include "addmacro.moc"
+#include "moc_addmacro.cpp"

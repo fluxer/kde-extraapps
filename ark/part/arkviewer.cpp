@@ -263,4 +263,4 @@ KService::Ptr ArkViewer::getViewer(const KMimeType::Ptr &mimeType)
 }
 
 
-#include "arkviewer.moc"
+#include "moc_arkviewer.cpp"

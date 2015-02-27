@@ -132,5 +132,5 @@ QMimeData * ActionListModel::selfMimeData() const
 
 } // namespace Lancelot
 
-#include "ActionListModel.moc"
+#include "moc_ActionListModel.cpp"
 

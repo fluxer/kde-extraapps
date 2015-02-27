@@ -94,4 +94,4 @@ int kpToolSelectionEnvironment::settingTextStyle () const
 }
 
 
-#include <kpToolSelectionEnvironment.moc>
+#include "moc_kpToolSelectionEnvironment.cpp"

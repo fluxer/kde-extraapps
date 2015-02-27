@@ -370,4 +370,4 @@ TextScrollingWidget::setDrawBackground( bool enable )
     d->drawBackground = enable;
 }
 
-#include "TextScrollingWidget.moc"
+#include "moc_TextScrollingWidget.cpp"

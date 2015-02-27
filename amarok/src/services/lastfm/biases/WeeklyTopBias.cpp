@@ -489,4 +489,4 @@ Dynamic::WeeklyTopBias::saveDataToFile() const
 }
 
 
-#include "WeeklyTopBias.moc"
+#include "moc_WeeklyTopBias.cpp"

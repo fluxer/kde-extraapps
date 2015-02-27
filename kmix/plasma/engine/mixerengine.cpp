@@ -407,4 +407,4 @@ Plasma::Service* MixerEngine::serviceForSource(const QString& source)
 
 K_EXPORT_PLASMA_DATAENGINE(mixer, MixerEngine)
 
-#include "mixerengine.moc"
+#include "moc_mixerengine.cpp"

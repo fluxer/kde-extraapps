@@ -126,4 +126,4 @@ void PrintQueue::removeQueue()
 }
 
 
-#include "PrintQueue.moc"
+#include "moc_PrintQueue.cpp"

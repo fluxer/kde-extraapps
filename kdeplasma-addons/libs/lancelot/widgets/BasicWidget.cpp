@@ -650,5 +650,5 @@ void BasicWidget::drawText(QPainter * painter, const QRectF & rectangle, int fla
 
 } // namespace Lancelot
 
-#include "BasicWidget.moc"
+#include "moc_BasicWidget.cpp"
 

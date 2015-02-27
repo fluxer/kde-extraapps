@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 */
 // Self
-#include "documentviewcontainer.moc"
+#include "moc_documentviewcontainer.cpp"
 
 // Local
 #include <lib/documentview/documentview.h>

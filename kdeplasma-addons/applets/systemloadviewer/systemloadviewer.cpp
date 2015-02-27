@@ -20,7 +20,7 @@
 *****************************************************************************/
 
 #include "systemloadviewer.h"
-#include "systemloadviewer.moc"
+#include "moc_systemloadviewer.cpp"
 
 #include <Plasma/ToolTipManager>
 #include <Plasma/ToolTipContent>

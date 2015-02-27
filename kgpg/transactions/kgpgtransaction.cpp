@@ -743,4 +743,4 @@ KGpgTransaction::newPassphraseEntered()
 {
 }
 
-#include "kgpgtransaction.moc"
+#include "moc_kgpgtransaction.cpp"

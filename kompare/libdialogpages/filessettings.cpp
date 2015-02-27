@@ -57,4 +57,4 @@ void FilesSettings::setGroup( const QString& groupName )
 	m_configGroupName = groupName;
 }
 
-#include "filessettings.moc"
+#include "moc_filessettings.cpp"

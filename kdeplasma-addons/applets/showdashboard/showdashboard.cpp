@@ -124,4 +124,4 @@ void ShowDashboard::iconSizeChanged(int group)
     }
 }
 
-#include "showdashboard.moc"
+#include "moc_showdashboard.cpp"

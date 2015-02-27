@@ -765,4 +765,4 @@ void dviRenderer::setEventLoop(QEventLoop *el)
      m_eventLoop = el;
 }
 
-#include "dviRenderer.moc"
+#include "moc_dviRenderer.cpp"

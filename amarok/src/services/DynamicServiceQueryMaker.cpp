@@ -166,5 +166,5 @@ DynamicServiceQueryMaker::matchAlbums( ServiceCollection *coll, const Meta::Arti
 }
 
 
-#include "DynamicServiceQueryMaker.moc"
+#include "moc_DynamicServiceQueryMaker.cpp"
 

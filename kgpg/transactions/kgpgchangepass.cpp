@@ -82,4 +82,4 @@ KGpgChangePass::passphraseReceived()
 	return false;
 }
 
-#include "kgpgchangepass.moc"
+#include "moc_kgpgchangepass.cpp"

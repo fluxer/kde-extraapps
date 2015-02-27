@@ -542,4 +542,4 @@ void Mandelbrot::importConfig()
     readConfig(configgroup, ReadViewpoint); // reading colors and quality level is implicit
 }                                           // but we dont want to read the lock status
 
-#include "mandelbrot.moc"
+#include "moc_mandelbrot.cpp"

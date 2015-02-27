@@ -1073,5 +1073,5 @@ void FreeHandle::calculateSize()
     m_totalRect = m_decorationRect.united(widget()->boundingRect());
 }
 
-#include "freehandle.moc"
+#include "moc_freehandle.cpp"
 

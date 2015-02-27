@@ -183,4 +183,4 @@ NotificationsConfig::useCustomColorsToggled( bool on )
     m_osdPreview->setUseCustomColors( on, kcfg_OsdTextColor->color() );
 }
 
-#include "NotificationsConfig.moc"
+#include "moc_NotificationsConfig.cpp"

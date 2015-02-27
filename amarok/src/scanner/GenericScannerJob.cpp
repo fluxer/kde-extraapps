@@ -403,4 +403,4 @@ GenericScannerJob::getScannerOutput()
 
 }
 
-#include "GenericScannerJob.moc"
+#include "moc_GenericScannerJob.cpp"

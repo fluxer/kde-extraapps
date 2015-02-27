@@ -456,4 +456,4 @@ void kpTransformPreviewDialog::slotUpdateWithWaitCursor ()
 }
 
 
-#include <kpTransformPreviewDialog.moc>
+#include "moc_kpTransformPreviewDialog.cpp"

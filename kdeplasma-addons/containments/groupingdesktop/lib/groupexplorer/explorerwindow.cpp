@@ -418,4 +418,4 @@ void ExplorerWindow::resizeEvent(QResizeEvent * event)
     QWidget::resizeEvent(event);
 }
 
-#include "explorerwindow.moc"
+#include "moc_explorerwindow.cpp"

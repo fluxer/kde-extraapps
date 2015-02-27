@@ -79,4 +79,4 @@ void SelectExpiryDate::slotEnableDate(const bool ison)
 		slotCheckDate(m_datepicker->date());
 }
 
-#include "selectexpirydate.moc"
+#include "moc_selectexpirydate.cpp"

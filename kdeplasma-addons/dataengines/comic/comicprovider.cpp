@@ -340,4 +340,4 @@ bool ComicProvider::isTopToBottom() const
     return true;
 }
 
-#include "comicprovider.moc"
+#include "moc_comicprovider.cpp"

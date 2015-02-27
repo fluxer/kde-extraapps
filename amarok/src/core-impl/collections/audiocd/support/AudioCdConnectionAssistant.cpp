@@ -55,4 +55,4 @@ AudioCdConnectionAssistant::deviceInfo( const QString& udi )
     return new AudioCdDeviceInfo( device, udi );
 }
 
-#include "AudioCdConnectionAssistant.moc"
+#include "moc_AudioCdConnectionAssistant.cpp"

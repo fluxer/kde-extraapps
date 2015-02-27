@@ -64,4 +64,4 @@ void TestPlaylistFileSupport::testIsPlaylist()
     QCOMPARE( Playlists::isPlaylist( m_testPlaylistPath + "no-playlist.png" ), false );
 }
 
-#include "TestPlaylistFileSupport.moc"
+#include "moc_TestPlaylistFileSupport.cpp"

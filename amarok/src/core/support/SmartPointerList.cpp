@@ -19,5 +19,5 @@
 //A file to make automoc happy
 
 #include "core/support/SmartPointerList.h"
-#include "SmartPointerList.moc"
+#include "moc_SmartPointerList.cpp"
 

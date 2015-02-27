@@ -192,4 +192,4 @@ KGpgDelUid::finish()
 		setSuccess(TS_MSG_SEQUENCE);
 }
 
-#include "kgpgdeluid.moc"
+#include "moc_kgpgdeluid.cpp"

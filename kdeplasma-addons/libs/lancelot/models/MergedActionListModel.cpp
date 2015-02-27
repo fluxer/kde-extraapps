@@ -394,5 +394,5 @@ void MergedActionListModel::setShowModelTitles(bool show)
 
 } // namespace Lancelot
 
-#include "MergedActionListModel.moc"
+#include "moc_MergedActionListModel.cpp"
 

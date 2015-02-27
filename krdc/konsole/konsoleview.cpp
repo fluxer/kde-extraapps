@@ -125,4 +125,4 @@ void KonsoleView::switchFullscreen(bool on)
     Q_UNUSED(on);
 }
 
-#include "konsoleview.moc"
+#include "moc_konsoleview.cpp"

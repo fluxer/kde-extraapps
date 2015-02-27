@@ -655,4 +655,4 @@ GroupInfo GridGroup::groupInfo()
     return gi;
 }
 
-#include "gridgroup.moc"
+#include "moc_gridgroup.cpp"

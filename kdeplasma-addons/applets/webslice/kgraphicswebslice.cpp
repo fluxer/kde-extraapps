@@ -290,5 +290,5 @@ void KGraphicsWebSlice::paint(QPainter *painter, const QStyleOptionGraphicsItem 
     //painter->drawRect(d->previewRect);
 }
 
-#include "kgraphicswebslice.moc"
+#include "moc_kgraphicswebslice.cpp"
 

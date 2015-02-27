@@ -68,4 +68,4 @@ CollectionConfig::updateSettings()
     m_collectionSetup->transcodingConfig()->currentChoice().saveToConfigGroup( transcodeGroup );
 }
 
-#include "CollectionConfig.moc"
+#include "moc_CollectionConfig.cpp"

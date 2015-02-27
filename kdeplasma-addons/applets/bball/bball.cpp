@@ -447,4 +447,4 @@ void bballApplet::updateScaledBallImage()
     }
 }
 
-#include "bball.moc"
+#include "moc_bball.cpp"

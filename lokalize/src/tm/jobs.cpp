@@ -2084,4 +2084,4 @@ void ExecQueryJob::run()
 
 
 
-#include "jobs.moc"
+#include "moc_jobs.cpp"

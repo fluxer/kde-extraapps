@@ -79,4 +79,4 @@ void MessageList::messageRemoved(const QString& id)
 }
 
 
-#include "messagelist.moc"
+#include "moc_messagelist.cpp"

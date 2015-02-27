@@ -288,4 +288,4 @@ void KCharSelectDia::lineEditChanged()
       }
 }
 
-#include "kcharselectdia.moc"
+#include "moc_kcharselectdia.cpp"

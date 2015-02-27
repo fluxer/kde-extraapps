@@ -469,4 +469,4 @@ SqlCollectionTranscodeCapability::setSavedConfiguration( const Transcoding::Conf
     transcodeGroup.sync();
 }
 
-#include "SqlCollection.moc"
+#include "moc_SqlCollection.cpp"

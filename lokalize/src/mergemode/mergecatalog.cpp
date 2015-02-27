@@ -345,4 +345,4 @@ void MergeCatalog::copyToBaseCatalog(int options)
     }
 }
 
-#include "mergecatalog.moc"
+#include "moc_mergecatalog.cpp"

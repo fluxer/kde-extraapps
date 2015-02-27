@@ -44,4 +44,4 @@ namespace bt
 	}
 
 }
-#include "exitoperation.moc"
+#include "moc_exitoperation.cpp"

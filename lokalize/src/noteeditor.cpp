@@ -154,4 +154,4 @@ int displayNotes(KTextBrowser* browser, const QVector<Note>& notes, int active, 
     return realOffset;
 }
 
-#include "noteeditor.moc"
+#include "moc_noteeditor.cpp"

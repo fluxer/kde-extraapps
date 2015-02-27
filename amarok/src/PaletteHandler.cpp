@@ -151,4 +151,4 @@ PaletteHandler::alternateBackgroundColor()
     return result;
 }
 
-#include "PaletteHandler.moc"
+#include "moc_PaletteHandler.cpp"

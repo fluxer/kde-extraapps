@@ -138,4 +138,4 @@ KGpgDecrypt::nextLine(const QString& line)
 	return KGpgTextOrFileTransaction::nextLine(line);
 }
 
-#include "kgpgdecrypt.moc"
+#include "moc_kgpgdecrypt.cpp"

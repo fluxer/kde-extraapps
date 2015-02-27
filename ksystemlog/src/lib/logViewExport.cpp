@@ -271,4 +271,4 @@ void LogViewExport::fileSave() {
 
 }
 
-#include "logViewExport.moc"
+#include "moc_logViewExport.cpp"

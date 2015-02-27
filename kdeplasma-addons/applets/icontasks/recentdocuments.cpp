@@ -555,4 +555,4 @@ void RecentDocuments::removeOld(qulonglong now, File::Type type)
     }
 }
 
-#include "recentdocuments.moc"
+#include "moc_recentdocuments.cpp"

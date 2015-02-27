@@ -433,4 +433,4 @@ QDebug operator<<(QDebug dbg, const KScreen::Output *output)
     return dbg;
 }
 
-#include "output.moc"
+#include "moc_output.cpp"

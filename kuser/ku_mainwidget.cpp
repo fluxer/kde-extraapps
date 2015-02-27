@@ -204,4 +204,4 @@ void KU_MainWidget::selectconn()
   sc->show();
 }
 
-#include "ku_mainwidget.moc"
+#include "moc_ku_mainwidget.cpp"

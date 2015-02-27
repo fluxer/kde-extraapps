@@ -312,4 +312,4 @@ void kpTransformRotateDialog::accept ()
 }
 
 
-#include <kpTransformRotateDialog.moc>
+#include "moc_kpTransformRotateDialog.cpp"

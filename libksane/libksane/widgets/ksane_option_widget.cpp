@@ -26,7 +26,7 @@
 
 // Local includes
 #include "ksane_option_widget.h"
-#include "ksane_option_widget.moc"
+#include "moc_ksane_option_widget.cpp"
 
 // Qt includes
 #include <KDebug>

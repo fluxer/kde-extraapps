@@ -339,5 +339,5 @@ void Previewer::slotRunClicked()
 
 K_EXPORT_PLASMA_APPLET(previewer, Previewer)
 
-#include "plasma-previewer.moc"
+#include "moc_plasma-previewer.cpp"
 

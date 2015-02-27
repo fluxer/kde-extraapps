@@ -56,4 +56,4 @@ Provider ProviderInitJob::provider() const
 }
 
 
-#include "providerinitjob.moc"
+#include "moc_providerinitjob.cpp"

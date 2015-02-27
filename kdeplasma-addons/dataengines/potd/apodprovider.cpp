@@ -97,4 +97,4 @@ QImage ApodProvider::image() const
     return d->mImage;
 }
 
-#include "apodprovider.moc"
+#include "moc_apodprovider.cpp"

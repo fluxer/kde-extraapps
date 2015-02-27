@@ -89,4 +89,4 @@ void CharSelectApplet::slotCharSelect( const QChar &c )
     m_lineEdit->setText( c );
 }
 
-#include "charselect.moc"
+#include "moc_charselect.cpp"

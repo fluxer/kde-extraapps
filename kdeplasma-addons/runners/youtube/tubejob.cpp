@@ -57,4 +57,4 @@ QByteArray TubeJob::data()
 }
 
 
-#include "tubejob.moc"
+#include "moc_tubejob.cpp"

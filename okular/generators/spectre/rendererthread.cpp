@@ -133,6 +133,6 @@ void GSRendererThread::run()
     }
 }
 
-#include "rendererthread.moc"
+#include "moc_rendererthread.cpp"
 
 /* kate: replace-tabs on; indent-width 4; */

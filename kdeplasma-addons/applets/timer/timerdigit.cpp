@@ -37,4 +37,4 @@ void TimerDigit::wheelEvent(QGraphicsSceneWheelEvent * event)
     emit changed((event->delta() < 0) ? -m_seconds : m_seconds);
 }
 
-#include "timerdigit.moc"
+#include "moc_timerdigit.cpp"

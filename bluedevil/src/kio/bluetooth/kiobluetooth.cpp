@@ -247,4 +247,4 @@ void KioBluetooth::setHost(const QString &hostname, quint16 port, const QString 
 }
 
 
-#include "kiobluetooth.moc"
+#include "moc_kiobluetooth.cpp"

@@ -311,4 +311,4 @@ void CatalogView::setEntriesFilteredOut(bool filteredOut)
 }
 
 
-#include "cataloglistview.moc"
+#include "moc_cataloglistview.cpp"

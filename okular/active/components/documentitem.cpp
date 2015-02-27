@@ -254,4 +254,4 @@ void Observer::notifyPageChanged(int page, int flags)
     emit pageChanged(page, flags);
 }
 
-#include "documentitem.moc"
+#include "moc_documentitem.cpp"

@@ -294,5 +294,5 @@ JamendoService::download() // SLOT
 }
 
 
-#include "JamendoService.moc"
+#include "moc_JamendoService.cpp"
 

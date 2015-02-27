@@ -110,4 +110,4 @@ void HistoryCollection::restore(const KConfigGroup &configgroup)
     //TODO texts are not updated - no matter
 }
 
-#include "historyAction.moc"
+#include "moc_historyAction.cpp"

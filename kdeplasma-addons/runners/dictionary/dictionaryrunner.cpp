@@ -80,4 +80,4 @@ void DictionaryRunner::match(Plasma::RunnerContext &context)
 
 K_EXPORT_PLASMA_RUNNER(krunner_dictionary, DictionaryRunner)
 
-#include "dictionaryrunner.moc"
+#include "moc_dictionaryrunner.cpp"

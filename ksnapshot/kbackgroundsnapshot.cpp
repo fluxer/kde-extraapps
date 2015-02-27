@@ -19,7 +19,7 @@
  */
 
 #include "kbackgroundsnapshot.h"
-#include "kbackgroundsnapshot.moc"
+#include "moc_kbackgroundsnapshot.cpp"
 #include "regiongrabber.h"
 #include "ksnapshot_options.h"
 #include <windowgrabber.h>

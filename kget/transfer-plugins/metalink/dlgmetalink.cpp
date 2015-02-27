@@ -46,4 +46,4 @@ void DlgSettingsWidget::save()
     MetalinkSettings::self()->writeConfig();
 }
 
-#include "dlgmetalink.moc"
+#include "moc_dlgmetalink.cpp"

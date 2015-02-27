@@ -34,4 +34,4 @@ void ImageScaler::run()
     emit scaled(img);
 }
 
-#include "imagescaler.moc"
+#include "moc_imagescaler.cpp"

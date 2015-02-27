@@ -166,4 +166,4 @@ CTHost* KCMCron::ctHost() const {
 	return d->ctHost;
 }
 
-#include "kcmCron.moc"
+#include "moc_kcmCron.cpp"

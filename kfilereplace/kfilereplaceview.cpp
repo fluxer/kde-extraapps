@@ -678,4 +678,4 @@ void KFileReplaceView::whatsThis()
   getResultsView()->setWhatsThis( lvResultWhatthis);
   getStringsView()->setWhatsThis( lvStringsWhatthis);
 }
-#include "kfilereplaceview.moc"
+#include "moc_kfilereplaceview.cpp"

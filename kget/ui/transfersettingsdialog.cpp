@@ -177,4 +177,4 @@ void TransferSettingsDialog::slotFinished()
     }
 }
 
-#include "transfersettingsdialog.moc"
+#include "moc_transfersettingsdialog.cpp"

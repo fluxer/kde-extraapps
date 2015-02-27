@@ -160,4 +160,4 @@ void XbelModel::Private::readBookmark()
 } // namespace Models
 } // namespace Lancelot
 
-#include "XbelModel.moc"
+#include "moc_XbelModel.cpp"

@@ -89,4 +89,4 @@ TimeLabel::setTotalTime( qint64 time )
     updateTime();
 }
 
-#include "timeLabel.moc"
+#include "moc_timeLabel.cpp"

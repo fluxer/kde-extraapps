@@ -159,4 +159,4 @@ void KU_SelectConn::slotApplySettings()
     emit( applyClicked() );
 }
 
-#include "ku_selectconn.moc"
+#include "moc_ku_selectconn.cpp"

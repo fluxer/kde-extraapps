@@ -92,4 +92,4 @@ void CharacterRunner::match(Plasma::RunnerContext &context)
     context.addMatch(term, match);
 }
 
-#include "charrunner.moc"
+#include "moc_charrunner.cpp"

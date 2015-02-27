@@ -318,4 +318,4 @@ QVariant GSGenerator::metaData(const QString &key, const QVariant &option) const
     return QVariant();
 }
 
-#include "generator_ghostview.moc"
+#include "moc_generator_ghostview.cpp"

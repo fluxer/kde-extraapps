@@ -191,5 +191,5 @@ const Okular::DocumentInfo * KIMGIOGenerator::generateDocumentInfo()
     return &docInfo;
 }
 
-#include "generator_kimgio.moc"
+#include "moc_generator_kimgio.cpp"
 

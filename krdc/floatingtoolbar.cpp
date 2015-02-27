@@ -483,4 +483,4 @@ void FloatingToolBar::animate()
     }
 }
 
-#include "floatingtoolbar.moc"
+#include "moc_floatingtoolbar.cpp"

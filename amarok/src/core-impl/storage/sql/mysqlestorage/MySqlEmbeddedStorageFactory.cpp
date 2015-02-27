@@ -56,5 +56,5 @@ MySqleStorageFactory::init()
     }
 }
 
-#include "MySqlEmbeddedStorageFactory.moc"
+#include "moc_MySqlEmbeddedStorageFactory.cpp"
 

@@ -57,4 +57,4 @@ kDebug() << "SERVICE START...operation: " << operation << " dest: " << destinati
     }
 }
 
-#include "konqprofilesservice.moc"
+#include "moc_konqprofilesservice.cpp"

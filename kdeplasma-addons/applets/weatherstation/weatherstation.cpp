@@ -323,4 +323,4 @@ void WeatherStation::clicked()
         KToolInvocation::invokeBrowser(m_url);
 }
 
-#include "weatherstation.moc"
+#include "moc_weatherstation.cpp"

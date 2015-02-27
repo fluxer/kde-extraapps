@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_opt_entry.h"
-#include "ksane_opt_entry.moc"
+#include "moc_ksane_opt_entry.cpp"
 
 #include "labeled_entry.h"
 

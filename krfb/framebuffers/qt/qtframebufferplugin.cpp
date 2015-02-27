@@ -43,5 +43,5 @@ K_PLUGIN_FACTORY(factory, registerPlugin<QtFrameBufferPlugin>();) \
 K_EXPORT_PLUGIN(factory("krfb_framebuffer_qt"))
 
 
-#include "qtframebufferplugin.moc"
+#include "moc_qtframebufferplugin.cpp"
 

@@ -90,4 +90,4 @@ void kpToolLine::endDraw (const QPoint &, const QRect &)
 }
 
 
-#include <kpToolLine.moc>
+#include "moc_kpToolLine.cpp"

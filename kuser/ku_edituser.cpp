@@ -866,4 +866,4 @@ void KU_EditUser::accept()
   }
 }
 
-#include "ku_edituser.moc"
+#include "moc_ku_edituser.cpp"

@@ -226,4 +226,4 @@ AmarokUrlHandler::prettyCommand( const QString &command )
 
 
 
-#include "AmarokUrlHandler.moc"
+#include "moc_AmarokUrlHandler.cpp"

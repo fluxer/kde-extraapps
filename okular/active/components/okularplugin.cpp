@@ -38,5 +38,5 @@ void OkularPlugin::registerTypes(const char *uri)
     qmlRegisterType<ThumbnailItem>(uri, 0, 1, "ThumbnailItem");
 }
 
-#include "okularplugin.moc"
+#include "moc_okularplugin.cpp"
 

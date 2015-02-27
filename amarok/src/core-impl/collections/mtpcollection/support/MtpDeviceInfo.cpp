@@ -27,4 +27,4 @@ MtpDeviceInfo::~MtpDeviceInfo()
 {
 }
 
-#include "MtpDeviceInfo.moc"
+#include "moc_MtpDeviceInfo.cpp"

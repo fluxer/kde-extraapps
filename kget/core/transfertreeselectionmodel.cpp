@@ -23,4 +23,4 @@ TransferTreeSelectionModel::~TransferTreeSelectionModel()
 {
 }
 
-#include "transfertreeselectionmodel.moc"
+#include "moc_transfertreeselectionmodel.cpp"

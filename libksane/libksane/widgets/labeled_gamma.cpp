@@ -27,7 +27,7 @@
 
 // Local includes
 #include "labeled_gamma.h"
-#include "labeled_gamma.moc"
+#include "moc_labeled_gamma.cpp"
 
 // C++ includes
 #include <cmath>

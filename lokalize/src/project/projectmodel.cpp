@@ -1399,4 +1399,4 @@ void UpdateStatsJob::setStatus(int status)
 }
 //END UpdateStatsJob
 
-#include "projectmodel.moc"
+#include "moc_projectmodel.cpp"

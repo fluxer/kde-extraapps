@@ -191,4 +191,4 @@ void XRandR11::updateConfig()
 }
 
 extern int dXndr() { static int s_area = KDebug::registerArea("KSRandr11", false); return s_area; }
-#include "xrandr11.moc"
+#include "moc_xrandr11.cpp"

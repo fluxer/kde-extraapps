@@ -148,4 +148,4 @@ void TrackListDBusHandler::aboutToFinish()
     m_media->enqueue(nextTrack());
 }
 
-#include "tracklistdbushandler.moc"
+#include "moc_tracklistdbushandler.cpp"

@@ -193,4 +193,4 @@ QString AvailableModels::titleForModel(const QString & modelId)
 } // namespace Models
 } // namespace Lancelot
 
-#include "AvailableModels.moc"
+#include "moc_AvailableModels.cpp"

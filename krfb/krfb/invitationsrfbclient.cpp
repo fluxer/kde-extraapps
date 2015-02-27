@@ -146,4 +146,4 @@ void PendingInvitationsRfbClient::dialogAccepted()
     accept(client);
 }
 
-#include "invitationsrfbclient.moc"
+#include "moc_invitationsrfbclient.cpp"

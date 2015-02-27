@@ -142,4 +142,4 @@ QImage ImageSource::polishImage(const QImage &img)
     return roundedImage;
 }
 
-#include <imagesource.moc>
+#include "moc_imagesource.cpp"

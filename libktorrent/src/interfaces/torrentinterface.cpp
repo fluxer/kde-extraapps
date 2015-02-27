@@ -37,4 +37,4 @@ namespace bt
 
 }
 
-#include "torrentinterface.moc"
+#include "moc_torrentinterface.cpp"

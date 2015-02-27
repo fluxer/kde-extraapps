@@ -138,4 +138,4 @@ void MainWidget::updateFont(const QFont& widgetFont)
     this->setStyleSheet(buttonStyle);
 
 }
-#include "mainwidget.moc"
+#include "moc_mainwidget.cpp"

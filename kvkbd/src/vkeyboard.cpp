@@ -28,4 +28,4 @@ VKeyboard::~VKeyboard()
 {
 }
 
-#include "vkeyboard.moc"
+#include "moc_vkeyboard.cpp"

@@ -45,4 +45,4 @@ KU_DelUser::KU_DelUser(KU_User *AUser, QWidget *parent)
   setButtonGuiItem(KDialog::Ok, KStandardGuiItem::del());
 }
 
-#include "ku_deluser.moc"
+#include "moc_ku_deluser.cpp"

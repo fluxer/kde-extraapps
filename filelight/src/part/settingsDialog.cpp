@@ -239,4 +239,4 @@ void SettingsDialog::reject()
     KDialog::reject();   //**** doesn't change back scheme so far
 }
 
-#include "settingsDialog.moc"
+#include "moc_settingsDialog.cpp"

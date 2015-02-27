@@ -200,4 +200,4 @@ void ControlManager::shutdownNow()
 	}
 }
 
-#include "ControlManager.moc"
+#include "moc_ControlManager.cpp"

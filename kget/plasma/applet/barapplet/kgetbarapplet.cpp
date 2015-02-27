@@ -140,5 +140,5 @@ void KGetBarApplet::init()
     KGetApplet::init();
 }
 
-#include "kgetbarapplet.moc"
-#include "kgetbarapplet_p.moc"
+#include "moc_kgetbarapplet.cpp"
+#include "moc_kgetbarapplet_p.cpp"

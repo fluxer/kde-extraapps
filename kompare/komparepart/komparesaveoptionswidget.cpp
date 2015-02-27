@@ -222,4 +222,4 @@ void KompareSaveOptionsWidget::saveOptions()
 
 }
 
-#include "komparesaveoptionswidget.moc"
+#include "moc_komparesaveoptionswidget.cpp"

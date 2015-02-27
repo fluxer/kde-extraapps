@@ -177,4 +177,4 @@ void FriendManagementWidget::updated()
 }
 
 
-#include "friendmanagementwidget.moc"
+#include "moc_friendmanagementwidget.cpp"

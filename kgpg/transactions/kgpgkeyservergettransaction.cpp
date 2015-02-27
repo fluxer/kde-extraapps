@@ -97,4 +97,4 @@ KGpgRefreshKeys::getGpgCommand() const
 	return QLatin1String( "--refresh-keys" );
 }
 
-#include "kgpgkeyservergettransaction.moc"
+#include "moc_kgpgkeyservergettransaction.cpp"

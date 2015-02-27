@@ -525,5 +525,5 @@ void KNewProjectDlg::whatsThis()
   m_leReplace->setWhatsThis( leReplaceWhatthis);
 }
 
-#include "knewprojectdlg.moc"
+#include "moc_knewprojectdlg.cpp"
 

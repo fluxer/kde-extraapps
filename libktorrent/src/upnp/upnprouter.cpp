@@ -555,7 +555,7 @@ namespace bt
 	}
 }
 
-#include "upnprouter.moc"
+#include "moc_upnprouter.cpp"
 
 
 

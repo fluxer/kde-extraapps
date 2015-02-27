@@ -373,5 +373,5 @@ MediaDeviceCache::volumeMountPoint( const QString &udi ) const
     return ssa->filePath();
 }
 
-#include "MediaDeviceCache.moc"
+#include "moc_MediaDeviceCache.cpp"
 

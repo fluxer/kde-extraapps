@@ -116,5 +116,5 @@ JamendoInfoParser::getInfo(TrackPtr track)
     emit( info( infoHtml ) );
 }
 
-#include "JamendoInfoParser.moc"
+#include "moc_JamendoInfoParser.cpp"
 

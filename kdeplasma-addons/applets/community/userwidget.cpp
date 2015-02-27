@@ -318,4 +318,4 @@ void UserWidget::setInfo()
 }
 
 
-#include "userwidget.moc"
+#include "moc_userwidget.cpp"

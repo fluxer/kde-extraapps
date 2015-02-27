@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_opt_button.h"
-#include "ksane_opt_button.moc"
+#include "moc_ksane_opt_button.cpp"
 
 #include "ksane_button.h"
 

@@ -206,4 +206,4 @@ void SendMessageWidget::setProvider(const QString& provider)
 }
 
 
-#include "sendmessagewidget.moc"
+#include "moc_sendmessagewidget.cpp"

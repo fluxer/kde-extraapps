@@ -1040,4 +1040,4 @@ void MicroBlog::openProfile(const QString &profile)
 
 
 
-#include "microblog.moc"
+#include "moc_microblog.cpp"

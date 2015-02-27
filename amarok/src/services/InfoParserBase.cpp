@@ -65,5 +65,5 @@ void InfoParserBase::showLoading( const QString &message )
     emit ( info( currentHtml ) );
 }
 
-#include "InfoParserBase.moc"
+#include "moc_InfoParserBase.cpp"
 

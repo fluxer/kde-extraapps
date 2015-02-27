@@ -157,4 +157,4 @@ namespace Dragon
         return false;
     }
 }
-#include "adjustSizeButton.moc"
+#include "moc_adjustSizeButton.cpp"

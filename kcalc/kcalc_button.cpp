@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStylePainter>
 #include <QTextDocument>
 
-#include "kcalc_button.moc"
+#include "moc_kcalc_button.cpp"
 
 //------------------------------------------------------------------------------
 // Name: KCalcButton

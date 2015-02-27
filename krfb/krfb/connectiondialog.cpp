@@ -85,4 +85,4 @@ void TubesConnectionDialog::setContactName(const QString & name)
 
 #endif // KRFB_WITH_TELEPATHY_TUBES
 
-#include "connectiondialog.moc"
+#include "moc_connectiondialog.cpp"

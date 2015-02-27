@@ -480,4 +480,4 @@ void fontPool::mf_output_receiver()
   }
 }
 
-#include "fontpool.moc"
+#include "moc_fontpool.cpp"

@@ -400,7 +400,7 @@ void BackgroundFinder::run()
     deleteLater();
 }
 
-#include "backgroundlistmodel.moc"
+#include "moc_backgroundlistmodel.cpp"
 
 
 #endif // BACKGROUNDLISTMODEL_CPP

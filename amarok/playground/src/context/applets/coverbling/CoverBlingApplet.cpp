@@ -482,5 +482,5 @@ void CoverBlingApplet::displaySearchName()
 	else
 		m_editsearch->setPlainText( artist_search_str );
 }
-#include "CoverBlingApplet.moc"
+#include "moc_CoverBlingApplet.cpp"
 

@@ -69,4 +69,4 @@ Dragon::VolumeAction::mutedChanged( bool mute )
         setIcon( KIcon( QLatin1String(  "player-volume" ) ) );
 }
 
-#include "actions.moc"
+#include "moc_actions.cpp"

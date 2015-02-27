@@ -91,4 +91,4 @@ Collections::Collection::isOrganizable() const
     return organizable;
 }
 
-#include "Collection.moc"
+#include "moc_Collection.cpp"

@@ -557,4 +557,4 @@ TestSqlTrack::testRemoveLabelFromTrackWhenNotInCache()
     QCOMPARE( urlsLabelsCount.first().toInt(), 0 );
 }
 
-#include "TestSqlTrack.moc"
+#include "moc_TestSqlTrack.cpp"

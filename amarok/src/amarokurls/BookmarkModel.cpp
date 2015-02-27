@@ -702,4 +702,4 @@ void BookmarkModel::upgradeTables( int from )
 
 
 
-#include "BookmarkModel.moc"
+#include "moc_BookmarkModel.cpp"

@@ -41,4 +41,4 @@ LibBzip2Interface::~LibBzip2Interface()
 
 KERFUFFLE_EXPORT_PLUGIN(LibBzip2Interface)
 
-#include "bz2plugin.moc"
+#include "moc_bz2plugin.cpp"

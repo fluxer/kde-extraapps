@@ -40,4 +40,4 @@ void GroupingDesktop::init()
     GroupingContainment::init();
 }
 
-#include "groupingdesktop.moc"
+#include "moc_groupingdesktop.cpp"

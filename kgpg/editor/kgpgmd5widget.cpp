@@ -98,4 +98,4 @@ void Md5Widget::slotApply()
     }
 }
 
-#include "kgpgmd5widget.moc"
+#include "moc_kgpgmd5widget.cpp"

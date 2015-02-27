@@ -347,4 +347,4 @@ void ContactWidget::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 }
 
 
-#include "contactwidget.moc"
+#include "moc_contactwidget.cpp"

@@ -792,4 +792,4 @@ void Pastebin::postingFinished(KJob *job)
 
 
 
-#include "pastebin.moc"
+#include "moc_pastebin.cpp"

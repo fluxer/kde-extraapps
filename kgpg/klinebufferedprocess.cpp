@@ -125,4 +125,4 @@ bool KLineBufferedProcess::hasLineStandardError() const
     return d->m_newlineInStderr >= 0;
 }
 
-#include "klinebufferedprocess.moc"
+#include "moc_klinebufferedprocess.cpp"

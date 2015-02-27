@@ -169,5 +169,5 @@ AmpacheSettings::saveCellEdit(int row, int column)
 }
 
 
-#include "AmpacheSettings.moc"
+#include "moc_AmpacheSettings.cpp"
 

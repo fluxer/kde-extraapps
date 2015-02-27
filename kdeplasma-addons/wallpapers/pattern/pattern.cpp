@@ -187,6 +187,6 @@ void PatternWallpaper::updateScreenshot(QPersistentModelIndex index)
     m_ui.m_pattern->update(index);
 }
 
-#include "pattern.moc"
+#include "moc_pattern.cpp"
 
 // vim: sw=4 sts=4 et tw=100

@@ -74,4 +74,4 @@ ContextDock::createContextView( Plasma::Containment *containment )
 }
 
 
-#include "ContextDock.moc"
+#include "moc_ContextDock.cpp"

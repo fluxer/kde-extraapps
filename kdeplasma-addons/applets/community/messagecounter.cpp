@@ -54,4 +54,4 @@ void MessageCounter::setProvider(const QString& provider)
 }
 
 
-#include "messagecounter.moc"
+#include "moc_messagecounter.cpp"

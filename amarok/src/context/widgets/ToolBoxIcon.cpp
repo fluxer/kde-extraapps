@@ -210,5 +210,5 @@ ToolBoxIcon::setBrush( const QBrush& b )
     m_text->setBrush( b );
 }
 
-#include "ToolBoxIcon.moc"
+#include "moc_ToolBoxIcon.cpp"
 

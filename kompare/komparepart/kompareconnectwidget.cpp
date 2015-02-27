@@ -255,4 +255,4 @@ QPainterPath KompareConnectWidget::makeBezier( int leftHeight, int rightHeight )
 	return p;
 }
 
-#include "kompareconnectwidget.moc"
+#include "moc_kompareconnectwidget.cpp"

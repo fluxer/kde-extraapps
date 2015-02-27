@@ -67,4 +67,4 @@ void MixerJob::start()
 	}
 }
 
-#include "mixerservice.moc"
+#include "moc_mixerservice.cpp"

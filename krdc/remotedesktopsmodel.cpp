@@ -300,4 +300,4 @@ void RemoteDesktopsModel::servicesChanged()
 }
 #endif
 
-#include "remotedesktopsmodel.moc"
+#include "moc_remotedesktopsmodel.cpp"

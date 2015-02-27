@@ -219,4 +219,4 @@ MusicDNSFinder::compileRequest( const QString &fingerprint, const Meta::TrackPtr
     return req;
 }
 
-#include "MusicDNSFinder.moc"
+#include "moc_MusicDNSFinder.cpp"

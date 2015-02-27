@@ -80,4 +80,4 @@ void Mp3tunesSettingsModule::settingsChanged()
     emit changed( true );
 }
 
-#include "Mp3tunesSettingsModule.moc"
+#include "moc_Mp3tunesSettingsModule.cpp"

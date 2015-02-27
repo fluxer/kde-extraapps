@@ -356,4 +356,4 @@ void KgpgTextEdit::slotHighlightText(const QString &, const int matchingindex, c
 	highlightWord(matchedlength, matchingindex);
 }
 
-#include "kgpgtextedit.moc"
+#include "moc_kgpgtextedit.cpp"

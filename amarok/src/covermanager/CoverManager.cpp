@@ -875,5 +875,5 @@ CoverViewItem::dragLeft()
     setSelected( false );
 }
 
-#include "CoverManager.moc"
+#include "moc_CoverManager.cpp"
 

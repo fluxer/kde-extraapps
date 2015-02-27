@@ -509,4 +509,4 @@ TabsEngine::netReplyError( NetworkAccessManagerProxy::Error e )
     }
 }
 
-#include "TabsEngine.moc"
+#include "moc_TabsEngine.cpp"

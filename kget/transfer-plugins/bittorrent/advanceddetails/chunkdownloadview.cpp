@@ -117,4 +117,4 @@ namespace kt
 	}
 }
 
-#include "chunkdownloadview.moc"
+#include "moc_chunkdownloadview.cpp"

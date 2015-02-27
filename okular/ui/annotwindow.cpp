@@ -408,4 +408,4 @@ void AnnotWindow::slotHandleContentsChangedByUndoRedo(Okular::Annotation* annot,
     emit containsLatex( GuiUtils::LatexRenderer::mightContainLatex( m_annot->contents() ) );
 }
 
-#include "annotwindow.moc"
+#include "moc_annotwindow.cpp"

@@ -240,4 +240,4 @@ void KGetPlugin::getLinks(bool selectedOnly)
     }
 }
 
-#include "kget_plug_in.moc"
+#include "moc_kget_plug_in.cpp"

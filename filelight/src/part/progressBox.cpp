@@ -128,4 +128,4 @@ void ProgressBox::paintEvent(QPaintEvent*)
 }
 
 
-#include "progressBox.moc"
+#include "moc_progressBox.cpp"

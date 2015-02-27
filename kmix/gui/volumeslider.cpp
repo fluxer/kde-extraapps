@@ -26,5 +26,5 @@ VolumeSlider::VolumeSlider(Qt::Orientation orientation, QWidget* parent) : QSlid
 {
 }
 
-#include "volumeslider.moc"
+#include "moc_volumeslider.cpp"
 

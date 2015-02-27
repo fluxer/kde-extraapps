@@ -542,4 +542,4 @@ int AudioPlayerControlRunner::currentSong()
     current.waitForFinished();
     return current;
 }
-#include "audioplayercontrolrunner.moc"
+#include "moc_audioplayercontrolrunner.cpp"

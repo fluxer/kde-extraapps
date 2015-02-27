@@ -202,4 +202,4 @@ signer::checkSignature()
 	this->thread()->quit();
 }
 		
-#include "signer.moc"
+#include "moc_signer.cpp"

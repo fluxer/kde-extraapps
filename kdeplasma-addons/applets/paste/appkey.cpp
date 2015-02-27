@@ -60,4 +60,4 @@ void AppKey::activeWindowChanged(WId id)
     enableWidgets();
 }
 
-#include "appkey.moc"
+#include "moc_appkey.cpp"

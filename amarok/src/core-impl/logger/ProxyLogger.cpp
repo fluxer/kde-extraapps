@@ -184,4 +184,4 @@ ProxyLogger::slotTotalSteps( int totalSteps )
     // warning, operation not found in m_progressQueue
 }
 
-#include "ProxyLogger.moc"
+#include "moc_ProxyLogger.cpp"

@@ -136,4 +136,4 @@ void KgpgSelectSecretKey::slotOk()
         slotButtonClicked(Ok);
 }
 
-#include "selectsecretkey.moc"
+#include "moc_selectsecretkey.cpp"

@@ -64,4 +64,4 @@ void MessageWatchList::slotKeysRemoved(const QSet<QString>& keys) {
 }
 
 
-#include "messagewatchlist.moc"
+#include "moc_messagewatchlist.cpp"

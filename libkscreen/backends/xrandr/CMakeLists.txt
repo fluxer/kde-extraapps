@@ -14,7 +14,7 @@ set(xrandr_SRCS
     xrandrscreen.cpp
 )
 
-automoc4_add_library(KSC_XRandR MODULE ${xrandr_SRCS})
+add_library(KSC_XRandR MODULE ${xrandr_SRCS})
 
 set_target_properties(KSC_XRandR PROPERTIES PREFIX "")
 target_link_libraries(KSC_XRandR ${QT_QTCORE_LIBRARY}

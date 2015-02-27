@@ -179,4 +179,4 @@ void TransferGroupHandler::createActions()
 
 }
 
-#include "transfergrouphandler.moc"
+#include "moc_transfergrouphandler.cpp"

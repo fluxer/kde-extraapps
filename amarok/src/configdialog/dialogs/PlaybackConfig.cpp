@@ -106,4 +106,4 @@ PlaybackConfig::setFadeoutState() //SLOT
 }
 
 
-#include "PlaybackConfig.moc"
+#include "moc_PlaybackConfig.cpp"

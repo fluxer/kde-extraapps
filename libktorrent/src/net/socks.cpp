@@ -507,4 +507,4 @@ namespace net
 	}
 }
 
-#include "socks.moc"
+#include "moc_socks.cpp"

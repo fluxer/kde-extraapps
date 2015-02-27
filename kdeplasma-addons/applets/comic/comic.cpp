@@ -801,4 +801,4 @@ bool ComicApplet::isTabHighlighted(int index) const
 
     return item->data(ActiveComicModel::ComicHighlightRole).toBool();
 }
-#include "comic.moc"
+#include "moc_comic.cpp"

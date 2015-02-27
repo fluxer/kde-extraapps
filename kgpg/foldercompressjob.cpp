@@ -181,4 +181,4 @@ FolderCompressJob::archiveNames()
 	return archives;
 }
 
-#include "foldercompressjob.moc"
+#include "moc_foldercompressjob.cpp"

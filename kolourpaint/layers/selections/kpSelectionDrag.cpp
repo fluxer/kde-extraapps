@@ -151,4 +151,4 @@ kpAbstractImageSelection *kpSelectionDrag::decode(const QMimeData *mimeData)
 
 //---------------------------------------------------------------------
 
-#include <kpSelectionDrag.moc>
+#include "moc_kpSelectionDrag.cpp"

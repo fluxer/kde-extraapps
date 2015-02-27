@@ -248,4 +248,4 @@ MediaDeviceCollection::ejectAction() const
     return m_ejectAction;
 }
 
-#include "MediaDeviceCollection.moc"
+#include "moc_MediaDeviceCollection.cpp"

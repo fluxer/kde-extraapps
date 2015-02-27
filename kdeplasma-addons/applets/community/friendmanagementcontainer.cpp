@@ -69,4 +69,4 @@ void FriendManagementContainer::setProvider(const QString& provider)
 }
 
 
-#include "friendmanagementcontainer.moc"
+#include "moc_friendmanagementcontainer.cpp"

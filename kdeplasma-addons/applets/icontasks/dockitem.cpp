@@ -266,4 +266,4 @@ void DockItem::check()
     }
 }
 
-#include "dockitem.moc"
+#include "moc_dockitem.cpp"

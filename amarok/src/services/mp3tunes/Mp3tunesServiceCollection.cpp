@@ -159,6 +159,6 @@ Mp3tunesServiceCollection::location()
     return new Mp3tunesServiceCollectionLocation( this );
 }
 
-#include "Mp3tunesServiceCollection.moc"
+#include "moc_Mp3tunesServiceCollection.cpp"
 
 

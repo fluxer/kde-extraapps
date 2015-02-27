@@ -115,4 +115,4 @@ PlayDialog::finished( QListWidgetItem *item )
 
 }
 
-#include "playDialog.moc"
+#include "moc_playDialog.cpp"

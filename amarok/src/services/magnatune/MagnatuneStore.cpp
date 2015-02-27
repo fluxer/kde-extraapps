@@ -751,6 +751,6 @@ MagnatuneStore::showSignupDialog()
 
 
 
-#include "MagnatuneStore.moc"
+#include "moc_MagnatuneStore.cpp"
 
 

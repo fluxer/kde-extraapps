@@ -353,4 +353,4 @@ void TwitterEngine::imageDataChanged()
 }
 
 
-#include "twitterengine.moc"
+#include "moc_twitterengine.cpp"

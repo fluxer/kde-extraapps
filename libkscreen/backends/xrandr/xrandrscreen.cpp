@@ -71,4 +71,4 @@ void XRandRScreen::updateKScreenScreen(KScreen::Screen *screen) const
 }
 
 
-#include "xrandrscreen.moc"
+#include "moc_xrandrscreen.cpp"

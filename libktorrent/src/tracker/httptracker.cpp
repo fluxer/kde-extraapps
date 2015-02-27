@@ -576,7 +576,7 @@ namespace bt
 	}
 
 }
-#include "httptracker.moc"
+#include "moc_httptracker.cpp"
 
 
 

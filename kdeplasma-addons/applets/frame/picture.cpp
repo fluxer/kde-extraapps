@@ -176,4 +176,4 @@ void Picture::checkImageLoaded(const QImage &newImage)
     }
 }
 
-#include "picture.moc"
+#include "moc_picture.cpp"

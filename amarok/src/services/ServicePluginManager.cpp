@@ -188,4 +188,4 @@ ServicePluginManager::sendMessage( const QString & serviceName, const QString & 
     return service->sendMessage( message );
 }
 
-#include "ServicePluginManager.moc"
+#include "moc_ServicePluginManager.cpp"

@@ -144,5 +144,5 @@ Meta::GenrePtr ServiceCollection::genreById( int id )
 }
 
 
-#include "ServiceCollection.moc"
+#include "moc_ServiceCollection.cpp"
 

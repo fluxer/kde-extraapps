@@ -65,4 +65,4 @@ void kpResizeSignallingLabel::resizeEvent (QResizeEvent *e)
 }
 
 
-#include <kpResizeSignallingLabel.moc>
+#include "moc_kpResizeSignallingLabel.cpp"

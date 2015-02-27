@@ -325,4 +325,4 @@ void TaskModel::insertTask(qulonglong taskid)
     rootitem->insertRow(rootitem->rowCount(), task);
 }
 
-#include "taskmodel.moc"
+#include "moc_taskmodel.cpp"

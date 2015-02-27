@@ -37,4 +37,4 @@ void SettingsBase::saveSettings( KConfig* /* config */ )
 {
 }
 
-#include "settingsbase.moc"
+#include "moc_settingsbase.cpp"

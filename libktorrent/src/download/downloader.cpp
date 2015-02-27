@@ -969,4 +969,4 @@ namespace bt
 	}
 }
 
-#include "downloader.moc"
+#include "moc_downloader.cpp"

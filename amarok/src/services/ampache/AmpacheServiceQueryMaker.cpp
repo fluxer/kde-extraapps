@@ -735,5 +735,5 @@ AmpacheServiceQueryMaker::getRequestUrl( const QString &action ) const
     return url;
 }
 
-#include "AmpacheServiceQueryMaker.moc"
+#include "moc_AmpacheServiceQueryMaker.cpp"
 

@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "../lib/transformimageoperation.h"
 #include "testutils.h"
 
-#include "transformimageoperationtest.moc"
+#include "moc_transformimageoperationtest.cpp"
 
 QTEST_KDEMAIN(TransformImageOperationTest, GUI)
 

@@ -329,4 +329,4 @@ void WeatherConfig::setHeadersVisible(bool visible)
     d->ui.unitsLabel->setVisible(visible);
 }
 
-#include "weatherconfig.moc"
+#include "moc_weatherconfig.cpp"

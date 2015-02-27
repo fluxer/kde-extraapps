@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_opt_fslider.h"
-#include "ksane_opt_fslider.moc"
+#include "moc_ksane_opt_fslider.cpp"
 
 #include "labeled_fslider.h"
 

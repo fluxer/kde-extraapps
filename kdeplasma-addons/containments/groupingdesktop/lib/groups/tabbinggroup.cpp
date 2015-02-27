@@ -381,4 +381,4 @@ GroupInfo TabbingGroup::groupInfo()
     return gi;
 }
 
-#include "tabbinggroup.moc"
+#include "moc_tabbinggroup.cpp"

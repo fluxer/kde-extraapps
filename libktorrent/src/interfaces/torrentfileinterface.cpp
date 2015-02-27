@@ -73,5 +73,5 @@ namespace bt
 
 }
 
-#include "torrentfileinterface.moc"
+#include "moc_torrentfileinterface.cpp"
 

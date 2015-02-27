@@ -1355,4 +1355,4 @@ void TranslationUnitTextEdit::completionActivated(const QString& semiWord)
     setTextCursor(cursor);
 }
 
-#include "xlifftextedit.moc"
+#include "moc_xlifftextedit.cpp"

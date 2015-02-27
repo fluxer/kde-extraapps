@@ -44,4 +44,4 @@ kpToolEllipse::kpToolEllipse (kpToolEnvironment *environ, QObject *parent)
 
 //---------------------------------------------------------------------
 
-#include <kpToolEllipse.moc>
+#include "moc_kpToolEllipse.cpp"

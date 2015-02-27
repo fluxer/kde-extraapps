@@ -961,4 +961,4 @@ WikipediaEngine::sourceRequestEvent( const QString &source )
     return false;
 }
 
-#include "WikipediaEngine.moc"
+#include "moc_WikipediaEngine.cpp"

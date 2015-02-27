@@ -64,4 +64,4 @@ Plasma::Service *KdeCommitsEngine::serviceForSource(const QString &source)
     return service;
 }
 
-#include "kdecommitsengine.moc"
+#include "moc_kdecommitsengine.cpp"

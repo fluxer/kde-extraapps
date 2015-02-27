@@ -281,5 +281,5 @@ void SyntaxHighlighter::unsetMisspelled(int start, int count)
 
 
 
-#include "syntaxhighlighter.moc"
+#include "moc_syntaxhighlighter.cpp"
 

@@ -621,4 +621,4 @@ void KTimerJob::fire()
         }
     }
 }
-#include "ktimer.moc"
+#include "moc_ktimer.cpp"

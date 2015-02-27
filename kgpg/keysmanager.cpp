@@ -2809,4 +2809,4 @@ KeysManager::clipSign()
 	kgpgtxtedit->show();
 }
 
-#include "keysmanager.moc"
+#include "moc_keysmanager.cpp"

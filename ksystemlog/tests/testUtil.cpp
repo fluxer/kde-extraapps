@@ -130,4 +130,4 @@ void TestUtil::addLogLines(const QString& fileName, const QStringList& addedLine
 	QTest::qWait(1000);
 }
 
-#include "testUtil.moc"
+#include "moc_testUtil.cpp"

@@ -78,5 +78,5 @@ void MyActionCollectionView::triggerSelectedActions()
 
 }
 
-#include "myactioncollectionview.moc"
+#include "moc_myactioncollectionview.cpp"
 

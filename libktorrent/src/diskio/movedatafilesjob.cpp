@@ -232,4 +232,4 @@ namespace bt
 
 
 }
-#include "movedatafilesjob.moc"
+#include "moc_movedatafilesjob.cpp"

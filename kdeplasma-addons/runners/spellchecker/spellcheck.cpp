@@ -241,4 +241,4 @@ void SpellCheckRunner::run(const Plasma::RunnerContext &context, const Plasma::Q
     kapp->clipboard()->setText(match.data().toString());
 }
 
-#include "spellcheck.moc"
+#include "moc_spellcheck.cpp"

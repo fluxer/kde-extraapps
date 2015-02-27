@@ -23,7 +23,7 @@
 * ============================================================ */
 
 #include "SaveLocation.h"
-#include "SaveLocation.moc"
+#include "moc_SaveLocation.cpp"
 
 #include <KDebug>
 #include <KFileDialog>

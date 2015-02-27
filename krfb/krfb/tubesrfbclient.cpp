@@ -84,4 +84,4 @@ void PendingTubesRfbClient::dialogAccepted()
     accept(client);
 }
 
-#include "tubesrfbclient.moc"
+#include "moc_tubesrfbclient.cpp"

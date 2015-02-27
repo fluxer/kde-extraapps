@@ -159,7 +159,7 @@ bool DeleteDialog::showTrashDialog(QWidget* parent, const KUrl::List& files)
 
     return doDelete;
 }
-#include "deletedialog.moc"
+#include "moc_deletedialog.cpp"
 
 // vim: set et ts=4 sw=4:
 

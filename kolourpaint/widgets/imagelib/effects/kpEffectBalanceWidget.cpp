@@ -322,4 +322,4 @@ void kpEffectBalanceWidget::resetAll ()
 }
 
 
-#include <kpEffectBalanceWidget.moc>
+#include "moc_kpEffectBalanceWidget.cpp"

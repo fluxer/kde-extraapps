@@ -304,5 +304,5 @@ AbstractScanResultProcessor::cleanupMembers()
     m_directories.clear();
 }
 
-#include "AbstractScanResultProcessor.moc"
+#include "moc_AbstractScanResultProcessor.cpp"
 

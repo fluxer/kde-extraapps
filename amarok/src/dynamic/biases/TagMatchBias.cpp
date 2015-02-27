@@ -519,5 +519,5 @@ Dynamic::TagMatchBias::matches( const Meta::TrackPtr &track ) const
         return result;
 }
 
-#include "TagMatchBias.moc"
+#include "moc_TagMatchBias.cpp"
 

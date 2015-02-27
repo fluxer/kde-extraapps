@@ -1021,4 +1021,4 @@ bool Catalog::isObsolete(int entry) const
 }
 
 
-#include "catalog.moc"
+#include "moc_catalog.cpp"

@@ -80,5 +80,5 @@ UpnpSearchCollection::trackForUrl( const KUrl &url )
 }
 
 } //~ namespace
-#include "UpnpSearchCollection.moc"
+#include "moc_UpnpSearchCollection.cpp"
 

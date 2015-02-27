@@ -578,4 +578,4 @@ void WindowGrabber::paintEvent( QPaintEvent * )
     }
 }
 
-#include "windowgrabber.moc"
+#include "moc_windowgrabber.cpp"

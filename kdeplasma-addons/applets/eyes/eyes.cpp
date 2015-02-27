@@ -185,4 +185,4 @@ void Eyes::timerEvent(QTimerEvent *e)
 }
 
 
-#include "eyes.moc"
+#include "moc_eyes.cpp"

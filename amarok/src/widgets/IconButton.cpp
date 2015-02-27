@@ -160,4 +160,4 @@ void IconButton::updateIconBuffer()
 }
 
 
-#include "IconButton.moc"
+#include "moc_IconButton.cpp"

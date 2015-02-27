@@ -529,4 +529,4 @@ void PlaylistManager::slotSyncNeeded()
     m_syncNeeded.clear();
 }
 
-#include "PlaylistManager.moc"
+#include "moc_PlaylistManager.cpp"

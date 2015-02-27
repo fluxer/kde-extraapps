@@ -261,4 +261,4 @@ kpToolEnvironment *kpTool::environ () const
 }
 
 
-#include <kpTool.moc>
+#include "moc_kpTool.cpp"

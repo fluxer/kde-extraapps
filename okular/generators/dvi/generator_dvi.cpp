@@ -602,4 +602,4 @@ QVariant DviGenerator::metaData( const QString & key, const QVariant & option ) 
     return QVariant();
 }
 
-#include "generator_dvi.moc"
+#include "moc_generator_dvi.cpp"

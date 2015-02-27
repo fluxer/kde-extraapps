@@ -120,5 +120,5 @@ int HoverIcon::activationMethod() const
 
 } // namespace Lancelot
 
-#include "HoverIcon.moc"
+#include "moc_HoverIcon.cpp"
 

@@ -322,5 +322,5 @@ LastFmServiceCollection::queryMaker()
     return ServiceCollection::queryMaker();
 }
 
-#include "LastFmServiceCollection.moc"
+#include "moc_LastFmServiceCollection.cpp"
 

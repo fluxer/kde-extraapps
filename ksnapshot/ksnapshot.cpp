@@ -936,4 +936,4 @@ int KSnapshot::previewHeight() const
     return mainWidget->lblImage->height();
 }
 
-#include "ksnapshot.moc"
+#include "moc_ksnapshot.cpp"

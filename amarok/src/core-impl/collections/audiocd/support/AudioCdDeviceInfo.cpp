@@ -34,4 +34,4 @@ AudioCdDeviceInfo::device()
     return m_device;
 }
 
-#include "AudioCdDeviceInfo.moc"
+#include "moc_AudioCdDeviceInfo.cpp"

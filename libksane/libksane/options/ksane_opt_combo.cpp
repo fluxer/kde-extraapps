@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_opt_combo.h"
-#include "ksane_opt_combo.moc"
+#include "moc_ksane_opt_combo.cpp"
 
 #include "labeled_combo.h"
 

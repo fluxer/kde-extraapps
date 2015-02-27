@@ -150,4 +150,4 @@ void CountdownFrame::paintEvent( QPaintEvent *e )
                              );
 }
 
-#include "LongMessageWidget.moc"
+#include "moc_LongMessageWidget.cpp"

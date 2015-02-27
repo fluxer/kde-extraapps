@@ -544,4 +544,4 @@ void Timer::reverseBlinkAnim()
     }
 }
 
-#include "timer.moc"
+#include "moc_timer.cpp"

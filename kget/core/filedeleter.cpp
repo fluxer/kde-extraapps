@@ -80,4 +80,4 @@ bool FileDeleter::isFileBeingDeleted(const KUrl &dest)
     return fileDeleter->d->isFileBeingDeleted(dest);
 }
 
-#include "filedeleter_p.moc"
+#include "moc_filedeleter_p.cpp"

@@ -409,4 +409,4 @@ void PageItem::setIsThumbnail(bool thumbnail)
     */
 }
 
-#include "pageitem.moc"
+#include "moc_pageitem.cpp"

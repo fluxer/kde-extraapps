@@ -123,4 +123,4 @@ QWidget *Paste::widget()
     return m_list;
 }
 
-#include "paste.moc"
+#include "moc_paste.cpp"

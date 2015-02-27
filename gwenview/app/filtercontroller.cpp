@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 */
 // Self
-#include "filtercontroller.moc"
+#include "moc_filtercontroller.cpp"
 
 #include <config-gwenview.h>
 

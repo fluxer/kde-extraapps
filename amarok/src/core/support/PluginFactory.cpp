@@ -32,4 +32,4 @@ Plugins::PluginFactory::info() const
     return m_info;
 }
 
-#include "PluginFactory.moc"
+#include "moc_PluginFactory.cpp"

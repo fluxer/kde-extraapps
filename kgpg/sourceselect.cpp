@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "sourceselect.h"
-#include "sourceselect.moc"
+#include "moc_sourceselect.cpp"
 
 SrcSelect::SrcSelect(QWidget *parent)
 	: QWidget(parent)

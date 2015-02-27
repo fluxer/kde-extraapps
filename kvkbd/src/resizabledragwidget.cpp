@@ -101,4 +101,4 @@ void ResizableDragWidget::paintEvent(QPaintEvent *ev)
 
 
 
-#include "resizabledragwidget.moc"
+#include "moc_resizabledragwidget.cpp"

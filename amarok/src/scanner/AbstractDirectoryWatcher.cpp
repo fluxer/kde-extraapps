@@ -171,5 +171,5 @@ AbstractDirectoryWatcher::addDirToList( const QString &directory )
 }
 
 
-#include "AbstractDirectoryWatcher.moc"
+#include "moc_AbstractDirectoryWatcher.cpp"
 

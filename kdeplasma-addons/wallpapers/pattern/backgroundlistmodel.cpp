@@ -250,7 +250,7 @@ void BackgroundListModel::setWallpaperSize(const QSize& size)
 
     m_size.scale(BackgroundDelegate::SCREENSHOT_SIZE, BackgroundDelegate::SCREENSHOT_SIZE/1.6, Qt::KeepAspectRatio);
 }
-#include "backgroundlistmodel.moc"
+#include "moc_backgroundlistmodel.cpp"
 
 
 #endif // BACKGROUNDLISTMODEL_CPP

@@ -250,4 +250,4 @@ void TaskEditor::animationFinished() {
     update();
 }
 
-#include "taskeditor.moc"
+#include "moc_taskeditor.cpp"

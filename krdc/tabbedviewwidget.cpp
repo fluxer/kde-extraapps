@@ -181,4 +181,4 @@ void TabbedViewWidget::setTabText(int index, const QString &label)
     m_model->emitDataChanged(index);
 }
 
-#include "tabbedviewwidget.moc"
+#include "moc_tabbedviewwidget.cpp"

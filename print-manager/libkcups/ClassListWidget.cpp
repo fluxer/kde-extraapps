@@ -186,4 +186,4 @@ void ClassListWidget::setShowClasses(bool enable)
     }
 }
 
-#include "ClassListWidget.moc"
+#include "moc_ClassListWidget.cpp"

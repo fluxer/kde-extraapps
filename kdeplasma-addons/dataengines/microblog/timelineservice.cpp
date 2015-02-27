@@ -85,5 +85,5 @@ Plasma::ServiceJob* TimelineService::createJob(const QString &operation, QMap<QS
 }
 
 
-#include <timelineservice.moc>
+#include "moc_timelineservice.cpp"
 

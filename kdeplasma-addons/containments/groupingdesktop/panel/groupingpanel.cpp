@@ -466,5 +466,5 @@ void GroupingPanel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 K_EXPORT_PLASMA_APPLET(groupingpanel, GroupingPanel)
 
-#include "groupingpanel.moc"
+#include "moc_groupingpanel.cpp"
 

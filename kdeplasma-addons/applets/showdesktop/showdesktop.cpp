@@ -149,4 +149,4 @@ void ShowDesktop::iconSizeChanged(int group)
 
 #endif
 
-#include "showdesktop.moc"
+#include "moc_showdesktop.cpp"

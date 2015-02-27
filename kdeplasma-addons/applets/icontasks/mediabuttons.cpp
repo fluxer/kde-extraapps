@@ -356,4 +356,4 @@ MediaButtons::Interface * MediaButtons::getV1Interface(const QString &name)
     return 0;
 }
 
-#include "mediabuttons.moc"
+#include "moc_mediabuttons.cpp"

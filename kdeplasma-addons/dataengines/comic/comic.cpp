@@ -330,4 +330,4 @@ QString ComicEngine::lastCachedIdentifier( const QString &identifier ) const
         return previousIdentifier;
 }
 
-#include "comic.moc"
+#include "moc_comic.cpp"

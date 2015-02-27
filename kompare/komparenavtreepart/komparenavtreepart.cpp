@@ -777,4 +777,4 @@ K_PLUGIN_FACTORY(KompareNavTreePartFactory,
     )
 K_EXPORT_PLUGIN( KompareNavTreePartFactory(aboutData()) )
 
-#include "komparenavtreepart.moc"
+#include "moc_komparenavtreepart.cpp"

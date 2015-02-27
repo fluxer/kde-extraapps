@@ -593,5 +593,5 @@ WorkerThread::run()
     m_success = m_reader->parseSongList( m_data, true );
 }
 
-#include "Reader.moc"
+#include "moc_Reader.cpp"
 

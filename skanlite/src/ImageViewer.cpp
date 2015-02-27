@@ -23,7 +23,7 @@
 * ============================================================ */
 
 #include "ImageViewer.h"
-#include "ImageViewer.moc"
+#include "moc_ImageViewer.cpp"
 
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>

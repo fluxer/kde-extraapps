@@ -106,5 +106,5 @@ bool ComicBookGenerator::print( QPrinter& printer )
     return true;
 }
 
-#include "generator_comicbook.moc"
+#include "moc_generator_comicbook.cpp"
 

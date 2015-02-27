@@ -145,4 +145,4 @@ void ActivityWidget::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 }
 
 
-#include "activitywidget.moc"
+#include "moc_activitywidget.cpp"

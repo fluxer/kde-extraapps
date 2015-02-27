@@ -788,4 +788,4 @@ void NewTransferDialogHandler::createDialog(const KUrl::List &urls, const QStrin
     m_dialog->showDialog(urls, suggestedFileName);
 }
 
-#include "newtransferdialog.moc"
+#include "moc_newtransferdialog.cpp"

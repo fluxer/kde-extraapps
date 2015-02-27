@@ -80,4 +80,4 @@ void PersonWatch::setSourceParameter(QString& variable, const QString& value)
 }
 
 
-#include "personwatch.moc"
+#include "moc_personwatch.cpp"

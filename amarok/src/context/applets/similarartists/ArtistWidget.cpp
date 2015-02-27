@@ -704,4 +704,4 @@ ArtistWidget::resultReady( const Meta::TrackList &tracks )
     }
 }
 
-#include "ArtistWidget.moc"
+#include "moc_ArtistWidget.cpp"

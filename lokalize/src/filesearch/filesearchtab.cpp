@@ -908,4 +908,4 @@ QString FileSearchTab::dbusObjectPath()
 
 //END DBus interface
 
-#include "filesearchtab.moc"
+#include "moc_filesearchtab.cpp"

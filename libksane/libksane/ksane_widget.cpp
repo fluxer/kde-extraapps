@@ -29,7 +29,7 @@
  * ============================================================ */
 
 #include "ksane.h"
-#include "ksane.moc"
+#include "moc_ksane.cpp"
 
 #include <unistd.h>
 

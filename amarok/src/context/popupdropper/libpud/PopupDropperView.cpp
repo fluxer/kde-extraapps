@@ -186,5 +186,5 @@ void PopupDropperView::setEntered( bool entered )
     d->entered = entered;
 }
 
-#include "PopupDropperView.moc"
+#include "moc_PopupDropperView.cpp"
 

@@ -186,4 +186,4 @@ void RequestFriendshipWidget::setProvider(const QString& provider)
 }
 
 
-#include "requestfriendshipwidget.moc"
+#include "moc_requestfriendshipwidget.cpp"

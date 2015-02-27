@@ -1439,4 +1439,4 @@ void EditorTab::setEntryTarget(int entry, int form, const QString& content)
 //END DBus interface
 
 
-#include "editortab.moc"
+#include "moc_editortab.cpp"

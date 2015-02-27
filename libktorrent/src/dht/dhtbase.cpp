@@ -33,5 +33,5 @@ namespace dht
 	{}
 }
 
-#include "dhtbase.moc"
+#include "moc_dhtbase.cpp"
 

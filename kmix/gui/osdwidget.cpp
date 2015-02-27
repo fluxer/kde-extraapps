@@ -217,4 +217,4 @@ void OSDWidget::setCurrentVolume(int volumeLevel, bool muted)
     m_volumeLabel->setText(QString::number(volumeLevel) + " %"); // if you change the text, please adjust textSize in themeUpdated()
 }
 
-#include "osdwidget.moc"
+#include "moc_osdwidget.cpp"

@@ -453,4 +453,4 @@ int GroupIconList::iconSize() const
     return m_iconSize;
 }
 
-#include "groupiconlist.moc"
+#include "moc_groupiconlist.cpp"

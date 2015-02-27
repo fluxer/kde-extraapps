@@ -22,7 +22,7 @@ License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 // Self
-#include "splittercollapser.moc"
+#include "moc_splittercollapser.cpp"
 
 // Qt
 #include <QApplication>

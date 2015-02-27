@@ -184,4 +184,4 @@ void PotdEngine::checkDayChanged()
 }
 
 
-#include "potd.moc"
+#include "moc_potd.cpp"

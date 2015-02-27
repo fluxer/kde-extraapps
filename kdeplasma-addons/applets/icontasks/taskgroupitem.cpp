@@ -1597,5 +1597,5 @@ QWidget *TaskGroupItem::popupDialog() const
     return m_popupDialog;
 }
 
-#include "taskgroupitem.moc"
+#include "moc_taskgroupitem.cpp"
 

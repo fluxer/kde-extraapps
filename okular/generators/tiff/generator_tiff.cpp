@@ -443,5 +443,5 @@ int TIFFGenerator::mapPage( int page ) const
     return it.value();
 }
 
-#include "generator_tiff.moc"
+#include "moc_generator_tiff.cpp"
 

@@ -670,5 +670,5 @@ void TestTransfers::simpleTest()
 
 QTEST_KDEMAIN(TestTransfers, GUI)
 
-#include "testtransfers.moc"
+#include "moc_testtransfers.cpp"
 

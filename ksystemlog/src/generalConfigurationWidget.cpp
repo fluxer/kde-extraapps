@@ -146,4 +146,4 @@ bool GeneralConfigurationWidget::isValid() const {
 	return false;
 }
 
-#include "generalConfigurationWidget.moc"
+#include "moc_generalConfigurationWidget.cpp"

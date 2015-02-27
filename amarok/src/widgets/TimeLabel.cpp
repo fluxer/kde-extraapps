@@ -63,4 +63,4 @@ TimeLabel::setText(const QString& text)
         QLabel::setText( text );
 }
 
-#include "TimeLabel.moc"
+#include "moc_TimeLabel.cpp"

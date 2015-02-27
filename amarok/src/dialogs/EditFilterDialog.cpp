@@ -490,5 +490,5 @@ EditFilterDialog::filter()
     return filterString;
 }
 
-#include "EditFilterDialog.moc"
+#include "moc_EditFilterDialog.cpp"
 

@@ -126,4 +126,4 @@ void Screen::setMaxActiveOutputsCount(int maxActiveOutputsCount)
 
 } //KScreen namespace
 
-#include "screen.moc"
+#include "moc_screen.cpp"

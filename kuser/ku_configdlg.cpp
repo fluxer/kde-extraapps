@@ -79,4 +79,4 @@ KU_ConfigDlg::~KU_ConfigDlg()
   delete fileui;
 }
 
-#include "ku_configdlg.moc"
+#include "moc_ku_configdlg.cpp"

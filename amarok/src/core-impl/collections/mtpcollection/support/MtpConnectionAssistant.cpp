@@ -59,4 +59,4 @@ MtpConnectionAssistant::deviceInfo( const QString& udi )
     return info;
 }
 
-#include "MtpConnectionAssistant.moc"
+#include "moc_MtpConnectionAssistant.cpp"

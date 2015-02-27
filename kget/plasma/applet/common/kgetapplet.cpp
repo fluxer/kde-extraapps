@@ -405,4 +405,4 @@ void KGetApplet::dropEvent(QDropEvent * event)
     event->accept();
 }
 
-#include "kgetapplet.moc"
+#include "moc_kgetapplet.cpp"

@@ -331,4 +331,4 @@ QStringList ModifyPrinter::neededValues() const
     return ret;
 }
 
-#include "ModifyPrinter.moc"
+#include "moc_ModifyPrinter.cpp"

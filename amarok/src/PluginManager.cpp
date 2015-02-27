@@ -301,4 +301,4 @@ Plugins::PluginManager::pluginFrameworkVersion()
     return s_pluginFrameworkVersion;
 }
 
-#include "PluginManager.moc"
+#include "moc_PluginManager.cpp"

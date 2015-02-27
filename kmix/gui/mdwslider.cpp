@@ -1300,4 +1300,4 @@ bool MDWSlider::eventFilter( QObject* obj, QEvent* e )
 	return QWidget::eventFilter(obj,e);
 }
 
-#include "mdwslider.moc"
+#include "moc_mdwslider.cpp"

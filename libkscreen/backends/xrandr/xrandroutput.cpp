@@ -415,4 +415,4 @@ void XRandROutput::updateKScreenOutput(KScreen::Output *output) const
     }
 }
 
-#include "xrandroutput.moc"
+#include "moc_xrandroutput.cpp"

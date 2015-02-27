@@ -204,5 +204,5 @@ QList<QAction*> FifteenPuzzle::contextualActions()
 }
 
 
-#include "fifteenPuzzle.moc"
+#include "moc_fifteenPuzzle.cpp"
 

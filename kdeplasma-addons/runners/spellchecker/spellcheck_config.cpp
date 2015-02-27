@@ -111,4 +111,4 @@ void SpellCheckConfig::defaults()
 }
 
 
-#include "spellcheck_config.moc"
+#include "moc_spellcheck_config.cpp"

@@ -170,5 +170,5 @@ void UserSource::parseJsonStatus(const QVariant& data)
 }
 
 
-#include <usersource.moc>
+#include "moc_usersource.cpp"
 

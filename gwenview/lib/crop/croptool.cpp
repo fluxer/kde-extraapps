@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 */
 // Self
-#include "croptool.moc"
+#include "moc_croptool.cpp"
 
 // Qt
 #include <qmath.h>

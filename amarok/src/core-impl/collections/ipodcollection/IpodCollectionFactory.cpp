@@ -271,4 +271,4 @@ IpodCollectionFactory::createCollectionForSolidDevice( const QString &udi )
         collection->deleteLater();
 }
 
-#include "IpodCollectionFactory.moc"
+#include "moc_IpodCollectionFactory.cpp"

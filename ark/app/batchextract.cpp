@@ -289,4 +289,4 @@ bool BatchExtract::showExtractDialog()
     return true;
 }
 
-#include <batchextract.moc>
+#include "moc_batchextract.cpp"

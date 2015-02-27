@@ -330,4 +330,4 @@ void QalculateApplet::hideHistory()
     m_graphicsWidget->resize(m_graphicsWidget->preferredSize());
 }
 
-#include "qalculate_applet.moc"
+#include "moc_qalculate_applet.cpp"

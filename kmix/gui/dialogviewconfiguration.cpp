@@ -456,5 +456,5 @@ void DialogViewConfiguration::prepareControls(QAbstractItemModel* model, bool is
 
 }
 
-#include "dialogviewconfiguration.moc"
+#include "moc_dialogviewconfiguration.cpp"
 

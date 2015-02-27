@@ -32,4 +32,4 @@ MediaDeviceInfo::udi()
     return m_udi;
 }
 
-#include "MediaDeviceInfo.moc"
+#include "moc_MediaDeviceInfo.cpp"

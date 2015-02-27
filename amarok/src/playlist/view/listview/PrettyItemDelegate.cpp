@@ -938,4 +938,4 @@ Playlist::PrettyItemDelegate::buildTrackArgsMap( const Meta::TrackPtr track ) co
     return args;
 }
 
-#include "PrettyItemDelegate.moc"
+#include "moc_PrettyItemDelegate.cpp"

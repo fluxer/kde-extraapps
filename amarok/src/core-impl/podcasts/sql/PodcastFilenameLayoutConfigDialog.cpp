@@ -79,4 +79,4 @@ PodcastFilenameLayoutConfigDialog::configure()
 }
 
 
-#include "PodcastFilenameLayoutConfigDialog.moc"
+#include "moc_PodcastFilenameLayoutConfigDialog.cpp"

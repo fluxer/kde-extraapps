@@ -102,4 +102,4 @@ void PageBase::setDefaults()
 
 }
 
-#include "pagebase.moc"
+#include "moc_pagebase.cpp"

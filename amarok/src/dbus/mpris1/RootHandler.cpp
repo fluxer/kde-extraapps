@@ -89,4 +89,4 @@ namespace Mpris1
 
 }
 
-#include "mprisv1/RootHandler.moc"
+#include "mprisv1/moc_RootHandler.cpp"

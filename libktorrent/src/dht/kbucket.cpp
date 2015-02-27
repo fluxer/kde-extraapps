@@ -376,4 +376,4 @@ namespace dht
 
 }
 
-#include "kbucket.moc"
+#include "moc_kbucket.cpp"

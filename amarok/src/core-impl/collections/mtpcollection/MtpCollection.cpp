@@ -83,5 +83,5 @@ MtpCollection::prettyName() const
 
 
 
-#include "MtpCollection.moc"
+#include "moc_MtpCollection.cpp"
 

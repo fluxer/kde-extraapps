@@ -88,4 +88,4 @@ namespace bt
 	}
 
 }
-#include "autorotatelogjob.moc"
+#include "moc_autorotatelogjob.cpp"

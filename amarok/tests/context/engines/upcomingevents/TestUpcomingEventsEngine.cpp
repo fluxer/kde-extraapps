@@ -63,4 +63,4 @@ TestUpcomingEventsEngine::cleanupTestCase()
     m_engine = 0;
 }
 
-#include "TestUpcomingEventsEngine.moc"
+#include "moc_TestUpcomingEventsEngine.cpp"

@@ -87,4 +87,4 @@ QImage OseiProvider::image() const
     return d->mImage;
 }
 
-#include "oseiprovider.moc"
+#include "moc_oseiprovider.cpp"

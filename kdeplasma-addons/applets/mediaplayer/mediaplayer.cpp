@@ -267,4 +267,4 @@ void MediaPlayer::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 K_EXPORT_PLASMA_APPLET(mediaplayer, MediaPlayer)
 
-#include "mediaplayer.moc"
+#include "moc_mediaplayer.cpp"

@@ -66,5 +66,5 @@ QueryMaker::addMatch( const Meta::LabelPtr &label )
     return this;
 }
 
-#include "QueryMaker.moc"
+#include "moc_QueryMaker.cpp"
 

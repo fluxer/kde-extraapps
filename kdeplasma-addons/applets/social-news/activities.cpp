@@ -106,4 +106,4 @@ void OpenDesktopActivities::dataUpdated(const QString &source, const Plasma::Dat
 }
 
 
-#include "activities.moc"
+#include "moc_activities.cpp"

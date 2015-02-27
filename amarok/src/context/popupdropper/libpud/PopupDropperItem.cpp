@@ -881,5 +881,5 @@ void PopupDropperItem::paint( QPainter* painter, const QStyleOptionGraphicsItem*
     return;
 }
 
-#include "PopupDropperItem.moc"
+#include "moc_PopupDropperItem.cpp"
 

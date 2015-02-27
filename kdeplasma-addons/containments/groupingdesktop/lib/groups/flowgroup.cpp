@@ -397,4 +397,4 @@ GroupInfo FlowGroup::groupInfo()
     return gi;
 }
 
-#include "flowgroup.moc"
+#include "moc_flowgroup.cpp"

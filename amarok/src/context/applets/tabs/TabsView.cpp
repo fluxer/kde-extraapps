@@ -237,5 +237,5 @@ TabsView::updateScrollBarVisibility()
 }
 
 
-#include <TabsView.moc>
+#include "moc_TabsView.cpp"
 

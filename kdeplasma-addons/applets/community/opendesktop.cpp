@@ -438,4 +438,4 @@ void OpenDesktop::unreadMessageCountChanged(int count)
 }
 
 
-#include "opendesktop.moc"
+#include "moc_opendesktop.cpp"

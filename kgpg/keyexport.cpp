@@ -49,4 +49,4 @@ void KeyExport::accept()
 	QDialog::accept();
 }
 
-#include "keyexport.moc"
+#include "moc_keyexport.cpp"

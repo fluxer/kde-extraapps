@@ -63,4 +63,4 @@ void NxPreferences::save()
     KCModule::save();
 }
 
-#include "nxpreferences.moc"
+#include "moc_nxpreferences.cpp"

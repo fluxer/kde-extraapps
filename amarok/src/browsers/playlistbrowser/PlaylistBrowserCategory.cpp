@@ -303,4 +303,4 @@ PlaylistBrowserCategory::newPalette( const QPalette &palette )
     The::paletteHandler()->updateItemView( m_playlistView );
 }
 
-#include "PlaylistBrowserCategory.moc"
+#include "moc_PlaylistBrowserCategory.cpp"

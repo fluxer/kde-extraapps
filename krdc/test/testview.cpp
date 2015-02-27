@@ -96,4 +96,4 @@ void TestView::switchFullscreen(bool on)
     Q_UNUSED(on);
 }
 
-#include "testview.moc"
+#include "moc_testview.cpp"

@@ -335,4 +335,4 @@ TabsApplet::reloadTabs()
     }
 }
 
-#include "TabsApplet.moc"
+#include "moc_TabsApplet.cpp"

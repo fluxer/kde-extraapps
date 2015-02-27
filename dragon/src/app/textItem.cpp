@@ -88,5 +88,5 @@ ExpandingTextItem::setPlainText(const QString& text)
     updateGeometry();
 }
 
-#include "textItem.moc"
+#include "moc_textItem.cpp"
 

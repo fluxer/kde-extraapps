@@ -563,4 +563,4 @@ bool XRandRConfig::changeOutput(Output* output, int crtcId) const
     return (s == RRSetConfigSuccess);
 }
 
-#include "xrandrconfig.moc"
+#include "moc_xrandrconfig.cpp"

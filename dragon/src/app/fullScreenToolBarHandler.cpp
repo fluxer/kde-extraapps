@@ -111,4 +111,4 @@ Dragon::FullScreenToolBarHandler::timerEvent( QTimerEvent*e )
     m_parent->toolBar()->hide();
 }
 
-#include "fullScreenToolBarHandler.moc"
+#include "moc_fullScreenToolBarHandler.cpp"

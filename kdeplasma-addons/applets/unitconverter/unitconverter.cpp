@@ -247,5 +247,5 @@ void UnitConverter::configChanged()
     calculate();
 }
 
-#include "unitconverter.moc"
+#include "moc_unitconverter.cpp"
 

@@ -368,5 +368,5 @@ void ServiceBase::setLevels( const QList<CategoryId::CatMenuId> &levels )
 }
 
 
-#include "ServiceBase.moc"
+#include "moc_ServiceBase.cpp"
 

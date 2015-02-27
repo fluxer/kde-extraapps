@@ -277,4 +277,4 @@ AmpacheAccountLogin::getRequestUrl( const QString &action ) const
     return url;
 }
 
-#include "AmpacheAccountLogin.moc"
+#include "moc_AmpacheAccountLogin.cpp"

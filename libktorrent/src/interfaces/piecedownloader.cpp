@@ -45,4 +45,4 @@ namespace bt
 
 }
 
-#include "piecedownloader.moc"
+#include "moc_piecedownloader.cpp"

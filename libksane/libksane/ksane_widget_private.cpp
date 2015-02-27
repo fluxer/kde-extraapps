@@ -28,7 +28,7 @@
 
 // Local includes
 #include "ksane_widget_private.h"
-#include "ksane_widget_private.moc"
+#include "moc_ksane_widget_private.cpp"
 
 // Qt includes
 #include <QImage>

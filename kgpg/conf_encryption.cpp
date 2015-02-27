@@ -42,4 +42,4 @@ void Encryption::allow_custom_option_toggled(bool isOn)
     kcfg_CustomEncryptionOptions->setEnabled(isOn);
 }
 
-#include "conf_encryption.moc"
+#include "moc_conf_encryption.cpp"

@@ -668,5 +668,5 @@ QVariant kpView::inputMethodQuery (Qt::InputMethodQuery query) const
 
 //---------------------------------------------------------------------
 
-#include <kpView.moc>
+#include "moc_kpView.cpp"
 

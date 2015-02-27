@@ -1691,4 +1691,4 @@ PodcastReader::podcastEpisodeCheck( Podcasts::PodcastEpisodePtr episode )
     return episodeMatch;
 }
 
-#include "PodcastReader.moc"
+#include "moc_PodcastReader.cpp"

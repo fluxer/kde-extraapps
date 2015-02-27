@@ -410,4 +410,4 @@ IpodCopyTracksJob::trackProcessed( CopiedStatus status, Meta::TrackPtr srcTrack,
     emit signalTrackProcessed( srcTrack, destTrack, status );
 }
 
-#include "IpodCopyTracksJob.moc"
+#include "moc_IpodCopyTracksJob.cpp"

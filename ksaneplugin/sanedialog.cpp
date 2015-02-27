@@ -111,4 +111,4 @@ void SaneDialog::imageReady(QByteArray &data, int w, int h, int bpl, int f)
 }
 
 
-#include "sanedialog.moc"
+#include "moc_sanedialog.cpp"

@@ -88,4 +88,4 @@ SingleCollectionTreeItemModel::filterChildren()
     ensureChildrenLoaded( m_rootItem );
 }
 
-#include "SingleCollectionTreeItemModel.moc"
+#include "moc_SingleCollectionTreeItemModel.cpp"

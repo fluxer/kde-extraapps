@@ -361,4 +361,4 @@ void RelPathSaver::setText (const QString& txt)
 
 
 
-#include "prefs.moc"
+#include "moc_prefs.cpp"

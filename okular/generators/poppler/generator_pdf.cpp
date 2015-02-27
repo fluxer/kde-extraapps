@@ -1812,6 +1812,6 @@ Okular::AnnotationProxy* PDFGenerator::annotationProxy() const
     return annotProxy;
 }
 
-#include "generator_pdf.moc"
+#include "moc_generator_pdf.cpp"
 
 /* kate: replace-tabs on; indent-width 4; */

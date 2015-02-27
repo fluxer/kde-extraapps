@@ -953,4 +953,4 @@ void KomparePart::optionsPreferences()
 		emit configChanged();
 }
 
-#include "kompare_part.moc"
+#include "moc_kompare_part.cpp"

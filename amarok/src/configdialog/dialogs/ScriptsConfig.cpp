@@ -282,4 +282,4 @@ ScriptsConfig::removeDir( const QString &dirPath ) const
     }
 }
 
-#include "ScriptsConfig.moc"
+#include "moc_ScriptsConfig.cpp"

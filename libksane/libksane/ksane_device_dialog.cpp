@@ -28,7 +28,7 @@
 
 // Local includes
 #include "ksane_device_dialog.h"
-#include "ksane_device_dialog.moc"
+#include "moc_ksane_device_dialog.cpp"
 
 
 // Sane includes

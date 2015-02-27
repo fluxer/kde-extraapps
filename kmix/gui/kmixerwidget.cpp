@@ -180,4 +180,4 @@ void KMixerWidget::toggleMenuBarSlot() {
     emit toggleMenuBar();
 }
 
-#include "kmixerwidget.moc"
+#include "moc_kmixerwidget.cpp"

@@ -41,4 +41,4 @@ LibGzipInterface::~LibGzipInterface()
 
 KERFUFFLE_EXPORT_PLUGIN(LibGzipInterface)
 
-#include "gzplugin.moc"
+#include "moc_gzplugin.cpp"

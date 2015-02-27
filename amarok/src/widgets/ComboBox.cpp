@@ -47,4 +47,4 @@ void ComboBox::keyPressEvent( QKeyEvent *event )
 
 } // namespace AMAROK
 
-#include "ComboBox.moc"
+#include "moc_ComboBox.cpp"

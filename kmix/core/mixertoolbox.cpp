@@ -392,4 +392,4 @@ KLocale* MixerToolBox::whatsthisControlLocale()
 */
 
 
-#include "mixertoolbox.moc"
+#include "moc_mixertoolbox.cpp"

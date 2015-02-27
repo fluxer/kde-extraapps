@@ -81,4 +81,4 @@ namespace kt
 	}
 }
 
-#include "torrentfilemodel.moc"
+#include "moc_torrentfilemodel.cpp"

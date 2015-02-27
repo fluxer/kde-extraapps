@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_opt_slider.h"
-#include "ksane_opt_slider.moc"
+#include "moc_ksane_opt_slider.cpp"
 
 #include "labeled_slider.h"
 

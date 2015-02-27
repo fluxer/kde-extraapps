@@ -1377,4 +1377,4 @@ EngineController::updateStreamLength( qint64 length )
     emit currentMetadataChanged( lengthMetaData );
 }
 
-#include "EngineController.moc" // mention explicitly so that it knows full Meta::Track
+#include "moc_EngineController.cpp" // mention explicitly so that it knows full Meta::Track

@@ -459,4 +459,4 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
 
 }
 
-#include "themeloader.moc"
+#include "moc_themeloader.cpp"

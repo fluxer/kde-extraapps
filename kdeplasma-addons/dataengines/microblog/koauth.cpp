@@ -657,4 +657,4 @@ void KOAuth::configToWallet()
 
 } // namespace
 
-#include "koauth.moc"
+#include "moc_koauth.cpp"

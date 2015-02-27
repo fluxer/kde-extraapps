@@ -218,4 +218,4 @@ GroupInfo StackingGroup::groupInfo()
     return gi;
 }
 
-#include "stackinggroup.moc"
+#include "moc_stackinggroup.cpp"

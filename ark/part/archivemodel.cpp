@@ -983,4 +983,4 @@ void ArchiveModel::slotCleanupEmptyDirs()
     }
 }
 
-#include "archivemodel.moc"
+#include "moc_archivemodel.cpp"

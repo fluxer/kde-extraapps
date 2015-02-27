@@ -62,4 +62,4 @@ void VncPreferences::save()
     KCModule::save();
 }
 
-#include "vncpreferences.moc"
+#include "moc_vncpreferences.cpp"

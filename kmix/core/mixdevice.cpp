@@ -467,5 +467,5 @@ int MixDevice::getUserfriendlyVolumeLevel()
 }
 
 
-#include "mixdevice.moc"
+#include "moc_mixdevice.cpp"
 

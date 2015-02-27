@@ -388,4 +388,4 @@ KGpgSearchResultModel::slotAddKey(QStringList lines)
 	}
 }
 
-#include "kgpgsearchresultmodel.moc"
+#include "moc_kgpgsearchresultmodel.cpp"

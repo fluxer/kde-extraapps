@@ -164,4 +164,4 @@ QListWidgetItem *SnippetConfig::newItem(const QString& text, const QString& name
     return item;
 }
 
-#include "snippetconfig.moc"
+#include "moc_snippetconfig.cpp"

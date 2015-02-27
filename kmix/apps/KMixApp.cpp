@@ -138,4 +138,4 @@ KMixApp::quitExtended()
 */
 
 
-#include "KMixApp.moc"
+#include "moc_KMixApp.cpp"

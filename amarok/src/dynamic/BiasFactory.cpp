@@ -298,4 +298,4 @@ Dynamic::BiasFactory::emitChanged()
     emit changed();
 }
 
-#include "BiasFactory.moc"
+#include "moc_BiasFactory.cpp"

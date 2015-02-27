@@ -72,5 +72,5 @@ void ServiceBrowser::addService( ServiceBase * service )
     addCategory( service );
 }
 
-#include "ServiceBrowser.moc"
+#include "moc_ServiceBrowser.cpp"
 

@@ -787,4 +787,4 @@ void Tasks::setPopupDialog(bool status)
 
 K_EXPORT_PLASMA_APPLET(icontasks, Tasks)
 
-#include "tasks.moc"
+#include "moc_tasks.cpp"

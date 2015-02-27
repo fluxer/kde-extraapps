@@ -49,4 +49,4 @@ PlaylistBrowserNS::PlaylistBrowser::~PlaylistBrowser()
 {
 }
 
-#include "PlaylistBrowser.moc"
+#include "moc_PlaylistBrowser.cpp"

@@ -125,4 +125,4 @@ void LoadingBar::progressLoading() {
 	kapp->processEvents();
 }
 
-#include "loadingBar.moc"
+#include "moc_loadingBar.cpp"

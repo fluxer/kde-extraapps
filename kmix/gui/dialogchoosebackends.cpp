@@ -161,5 +161,5 @@ void DialogChooseBackends::backendsModifiedSlot()
 	emit backendsModified();
 }
 
-#include "dialogchoosebackends.moc"
+#include "moc_dialogchoosebackends.cpp"
 

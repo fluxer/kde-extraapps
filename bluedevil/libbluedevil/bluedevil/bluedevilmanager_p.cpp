@@ -211,4 +211,4 @@ void ManagerPrivate::_k_bluezAdapterPoweredChanged(bool powered)
 
 }
 
-#include "bluedevilmanager_p.moc"
+#include "moc_bluedevilmanager_p.cpp"

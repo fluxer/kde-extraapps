@@ -421,4 +421,4 @@ void KvkbdApp::toggleExtension()
 
 
 
-#include "kvkbdapp.moc"
+#include "moc_kvkbdapp.cpp"

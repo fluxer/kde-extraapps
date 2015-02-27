@@ -109,4 +109,4 @@ MtpPlaylistCapability::renamePlaylist( const Playlists::MediaDevicePlaylistPtr &
     m_handler->renamePlaylist( playlist );
 }
 
-#include "MtpPlaylistCapability.moc"
+#include "moc_MtpPlaylistCapability.cpp"

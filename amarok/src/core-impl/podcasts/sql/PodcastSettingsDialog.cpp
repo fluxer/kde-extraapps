@@ -160,5 +160,5 @@ void PodcastSettingsDialog::launchFilenameLayoutConfigDialog()
 }
 
 
-#include "PodcastSettingsDialog.moc"
+#include "moc_PodcastSettingsDialog.cpp"
 

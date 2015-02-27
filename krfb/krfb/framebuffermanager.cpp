@@ -130,5 +130,5 @@ QSharedPointer<FrameBuffer> FrameBufferManager::frameBuffer(WId id)
 }
 
 
-#include "framebuffermanager.moc"
+#include "moc_framebuffermanager.cpp"
 

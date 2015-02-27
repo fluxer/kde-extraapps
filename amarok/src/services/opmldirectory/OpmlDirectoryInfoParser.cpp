@@ -126,4 +126,4 @@ void OpmlDirectoryInfoParser::rssDownloadComplete(KJob * downLoadJob)
     downLoadJob->deleteLater();
 }
 
-#include "OpmlDirectoryInfoParser.moc"
+#include "moc_OpmlDirectoryInfoParser.cpp"

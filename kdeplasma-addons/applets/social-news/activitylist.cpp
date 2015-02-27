@@ -105,4 +105,4 @@ void ActivityList::dataUpdated(const QString& source, const Plasma::DataEngine::
 }
 
 
-#include "activitylist.moc"
+#include "moc_activitylist.cpp"

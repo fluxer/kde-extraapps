@@ -49,4 +49,4 @@ void Spacer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     painter->fillPath(p, c);
 }
 
-#include "spacer.moc"
+#include "moc_spacer.cpp"

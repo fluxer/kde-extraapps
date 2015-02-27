@@ -137,4 +137,4 @@ KGpgDelSign::boolQuestion(const QString &line)
 	}
 }
 
-#include "kgpgdelsign.moc"
+#include "moc_kgpgdelsign.cpp"

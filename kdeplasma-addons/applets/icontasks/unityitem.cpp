@@ -245,4 +245,4 @@ void UnityItem::parseDesktopAction(const KConfigGroup& grp)
     }
 }
 
-#include "unityitem.moc"
+#include "moc_unityitem.cpp"

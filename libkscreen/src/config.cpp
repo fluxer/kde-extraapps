@@ -293,4 +293,4 @@ void Config::setValid(bool valid)
 
 } //KScreen namespace
 
-#include "config.moc"
+#include "moc_config.cpp"

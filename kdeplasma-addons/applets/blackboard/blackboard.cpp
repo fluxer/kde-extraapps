@@ -92,4 +92,4 @@ void BlackBoard::changeColor()
     blackBoard->setBrushColor(sender->property("color").value<QColor>());
 }
 
-#include "blackboard.moc"
+#include "moc_blackboard.cpp"

@@ -194,4 +194,4 @@ void JobManager::update(const QString &app)
     }
 }
 
-#include "jobmanager.moc"
+#include "moc_jobmanager.cpp"

@@ -414,6 +414,6 @@ void ScriptableService::setCurrentInfo( const QString & info )
 
 
 
-#include "ScriptableService.moc"
+#include "moc_ScriptableService.cpp"
 
 

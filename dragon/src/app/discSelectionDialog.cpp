@@ -135,4 +135,4 @@ DiscSelectionDialog::openItem( QListWidgetItem *item )
     }
 }
 
-#include "discSelectionDialog.moc"
+#include "moc_discSelectionDialog.cpp"

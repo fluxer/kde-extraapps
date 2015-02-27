@@ -283,4 +283,4 @@ SearchWidget::saveLineEditStatus()
     m_selectionLength = m_sw->lineEdit()->selectedText().length();
 }
 
-#include "SearchWidget.moc"
+#include "moc_SearchWidget.cpp"

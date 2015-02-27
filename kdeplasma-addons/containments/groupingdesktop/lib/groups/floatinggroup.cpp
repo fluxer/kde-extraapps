@@ -62,4 +62,4 @@ GroupInfo FloatingGroup::groupInfo()
     return gi;
 }
 
-#include "floatinggroup.moc"
+#include "moc_floatinggroup.cpp"

@@ -1934,4 +1934,4 @@ TaskManager::AbstractGroupableItem * AbstractTaskItem::abstractItem()
     return m_abstractItem;
 }
 
-#include "abstracttaskitem.moc"
+#include "moc_abstracttaskitem.cpp"

@@ -101,4 +101,4 @@ int main(int argc, char **argv)
     return app.exec();
 }
 
-#include "adaptertest.moc"
+#include "moc_adaptertest.cpp"

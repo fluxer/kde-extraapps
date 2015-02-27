@@ -98,4 +98,4 @@ QColor ViewSettings::colorForDifferenceType( int type, bool selected, bool appli
 	return color;
 }
 
-#include "viewsettings.moc"
+#include "moc_viewsettings.cpp"

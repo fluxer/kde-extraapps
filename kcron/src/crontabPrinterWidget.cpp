@@ -62,4 +62,4 @@ void CrontabPrinterWidget::setPrintAllUsers(bool setStatus) {
 	chkPrintAllUsers->setChecked(setStatus);
 }
 
-#include "crontabPrinterWidget.moc"
+#include "moc_crontabPrinterWidget.cpp"

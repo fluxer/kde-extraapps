@@ -58,4 +58,4 @@ AvatarDownloader::downloaded( const KUrl &url, QByteArray data, NetworkAccessMan
         debug() << QString("Error: failed to download %1'savatar: %1").arg(username).arg(e.description);
 }
 
-#include "AvatarDownloader.moc"
+#include "moc_AvatarDownloader.cpp"

@@ -151,4 +151,4 @@ AppMap ConfigData::readKeySequenceMapEntry(const char *pKey, AppMap defaultValue
     return result;
 }
 
-#include "configdata.moc"
+#include "moc_configdata.cpp"

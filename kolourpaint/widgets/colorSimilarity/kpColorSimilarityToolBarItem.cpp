@@ -279,4 +279,4 @@ void kpColorSimilarityToolBarItem::resizeEvent (QResizeEvent *e)
 
 //---------------------------------------------------------------------
 
-#include <kpColorSimilarityToolBarItem.moc>
+#include "moc_kpColorSimilarityToolBarItem.cpp"

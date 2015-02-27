@@ -142,4 +142,4 @@ void ListForm::setHideAfterClick(bool hide)
     m_hide = hide;
 }
 
-#include "list.moc"
+#include "moc_list.cpp"

@@ -94,4 +94,4 @@ TestSqlArtist::testSortableName()
 }
 
 
-#include "TestSqlArtist.moc"
+#include "moc_TestSqlArtist.cpp"

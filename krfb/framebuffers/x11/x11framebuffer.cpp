@@ -8,7 +8,7 @@
 */
 
 #include "x11framebuffer.h"
-#include "x11framebuffer.moc"
+#include "moc_x11framebuffer.cpp"
 
 #include <config-krfb.h>
 

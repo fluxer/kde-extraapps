@@ -51,4 +51,4 @@ void GridDesktop::layoutMainGroup()
     mainGroup()->setGeometry(rect);
 }
 
-#include "griddesktop.moc"
+#include "moc_griddesktop.cpp"

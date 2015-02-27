@@ -631,5 +631,5 @@ int TaskItemLayout::numberOfColumns()
     }
 }
 
-#include "taskitemlayout.moc"
+#include "moc_taskitemlayout.cpp"
 

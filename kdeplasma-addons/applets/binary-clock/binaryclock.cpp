@@ -313,4 +313,4 @@ void BinaryClock::paintInterface(QPainter *p, const QStyleOptionGraphicsItem *op
     }
 }
 
-#include "binaryclock.moc"
+#include "moc_binaryclock.cpp"

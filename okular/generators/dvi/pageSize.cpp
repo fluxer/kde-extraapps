@@ -360,5 +360,5 @@ int pageSize::defaultPageSize()
     return defaultImperialPaperSize;
 }
 
-#include "pageSize.moc"
+#include "moc_pageSize.cpp"
 

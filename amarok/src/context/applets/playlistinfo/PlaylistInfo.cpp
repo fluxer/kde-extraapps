@@ -193,5 +193,5 @@ void PlaylistInfo::resize( qreal newWidth, qreal aspectRatio )
     constraintsEvent();
 }
 
-#include "PlaylistInfo.moc"
+#include "moc_PlaylistInfo.cpp"
 

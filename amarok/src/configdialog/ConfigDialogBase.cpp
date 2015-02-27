@@ -15,5 +15,5 @@
  ****************************************************************************************/
 
 #include "ConfigDialogBase.h"
-#include "ConfigDialogBase.moc"
+#include "moc_ConfigDialogBase.cpp"
 

@@ -274,4 +274,4 @@ void kpToolSelectionResizeScaleCommand::unexecute ()
 }
 
 
-#include <kpToolSelectionResizeScaleCommand.moc>
+#include "moc_kpToolSelectionResizeScaleCommand.cpp"

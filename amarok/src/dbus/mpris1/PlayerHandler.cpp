@@ -280,4 +280,4 @@ namespace Mpris1
     }
 } // namespace Amarok
 
-#include "mprisv1/PlayerHandler.moc"
+#include "mprisv1/moc_PlayerHandler.cpp"

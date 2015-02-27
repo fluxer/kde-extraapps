@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "bitbutton.h"
 #include <QApplication>
 
-#include "bitbutton.moc"
+#include "moc_bitbutton.cpp"
 
 //------------------------------------------------------------------------------
 // Name: BitButton

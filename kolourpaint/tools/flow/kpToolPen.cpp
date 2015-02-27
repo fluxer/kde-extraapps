@@ -93,4 +93,4 @@ QRect kpToolPen::drawLine (const QPoint &thisPoint, const QPoint &lastPoint)
 }
 
 
-#include <kpToolPen.moc>
+#include "moc_kpToolPen.cpp"

@@ -17,8 +17,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
-#include "document.moc"
-#include "document_p.moc"
+#include "moc_document.cpp"
+#include "moc_document_p.cpp"
 
 // Qt
 #include <QApplication>

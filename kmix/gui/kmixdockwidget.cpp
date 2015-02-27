@@ -385,4 +385,4 @@ void KMixDockWidget::updateDockMuteAction ( KToggleAction* dockMuteAction )
     }
 }
 
-#include "kmixdockwidget.moc"
+#include "moc_kmixdockwidget.cpp"

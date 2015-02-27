@@ -100,4 +100,4 @@ void DockHelper::stop()
     }
 }
 
-#include "dockhelper.moc"
+#include "moc_dockhelper.cpp"

@@ -53,4 +53,4 @@ TestArtistHelper::testRealTrackArtist()
     QCOMPARE( ArtistHelper::realTrackArtist( artistTag ), realArtist );
 }
 
-#include "TestArtistHelper.moc"
+#include "moc_TestArtistHelper.cpp"

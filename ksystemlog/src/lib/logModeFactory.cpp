@@ -33,4 +33,4 @@ LogModeFactory::~LogModeFactory() {
 }
 
 
-#include "logModeFactory.moc"
+#include "moc_logModeFactory.cpp"

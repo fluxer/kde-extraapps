@@ -198,5 +198,5 @@ void MagnatuneDatabaseWorker::doFetchAlbumBySku()
     }
 }
 
-#include "MagnatuneDatabaseWorker.moc"
+#include "moc_MagnatuneDatabaseWorker.cpp"
 

@@ -8,7 +8,7 @@
 */
 
 #include "qtframebuffer.h"
-#include "qtframebuffer.moc"
+#include "moc_qtframebuffer.cpp"
 
 #include <QTimer>
 #include <QRegion>

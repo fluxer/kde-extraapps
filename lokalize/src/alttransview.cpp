@@ -315,4 +315,4 @@ void AltTransView::slotUseSuggestion(int i)
 }
 
 
-#include "alttransview.moc"
+#include "moc_alttransview.cpp"

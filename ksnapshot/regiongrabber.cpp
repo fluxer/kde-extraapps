@@ -418,4 +418,4 @@ QRect RegionGrabber::normalizeSelection( const QRect &s ) const
     return r;
 }
 
-#include "regiongrabber.moc"
+#include "moc_regiongrabber.cpp"

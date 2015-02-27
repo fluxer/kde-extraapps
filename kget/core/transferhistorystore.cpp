@@ -525,8 +525,8 @@ void SQLiteStore::createTables()
 #endif
 
 
-#include "transferhistorystore.moc"
-#include "transferhistorystore_xml_p.moc"
+#include "moc_transferhistorystore.cpp"
+#include "moc_transferhistorystore_xml_p.cpp"
 #ifdef HAVE_SQLITE
-    #include "transferhistorystore_sqlite_p.moc"
+    #include "moc_transferhistorystore_sqlite_p.cpp"
 #endif

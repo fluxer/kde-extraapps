@@ -198,5 +198,5 @@ void NotesTextEdit::focusOutEvent ( QFocusEvent * event )
     setExtraSelections(extras);
 }
 
-#include "textedit.moc"
+#include "moc_textedit.cpp"
 

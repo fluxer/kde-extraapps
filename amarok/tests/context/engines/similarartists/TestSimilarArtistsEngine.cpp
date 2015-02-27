@@ -62,4 +62,4 @@ TestSimilarArtistsEngine::cleanupTestCase()
     delete m_engine;
 }
 
-#include "TestSimilarArtistsEngine.moc"
+#include "moc_TestSimilarArtistsEngine.cpp"

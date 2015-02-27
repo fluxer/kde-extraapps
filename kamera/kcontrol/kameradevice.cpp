@@ -43,7 +43,7 @@ extern "C" {
 
 #include "kamera.h"
 #include "kameraconfigdialog.h"
-#include "kameradevice.moc"
+#include "moc_kameradevice.cpp"
 
 // Define some parts of the old API
 #define GP_PROMPT_OK 0

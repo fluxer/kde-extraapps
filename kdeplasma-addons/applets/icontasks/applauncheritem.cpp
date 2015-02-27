@@ -149,5 +149,5 @@ void AppLauncherItem::setAdditionalMimeData(QMimeData* mimeData)
     }
 }
 
-#include "applauncheritem.moc"
+#include "moc_applauncheritem.cpp"
 

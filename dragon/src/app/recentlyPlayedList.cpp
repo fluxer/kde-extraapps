@@ -126,4 +126,4 @@ RecentlyPlayedList::itemDoubleClicked(QListWidgetItem* item)
   emit(itemDoubleClicked(url));
 }
 
-#include "recentlyPlayedList.moc"
+#include "moc_recentlyPlayedList.cpp"

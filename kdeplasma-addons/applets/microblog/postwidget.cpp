@@ -164,4 +164,4 @@ QString PostWidget::timeDescription( const QDateTime &dt )
     return dt.toString(Qt::LocaleDate);
 }
 
-#include <postwidget.moc>
+#include "moc_postwidget.cpp"

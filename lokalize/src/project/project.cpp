@@ -291,4 +291,4 @@ void Project::init(const QString& path, const QString& kind, const QString& id,
 }
 
 
-#include "project.moc"
+#include "moc_project.cpp"

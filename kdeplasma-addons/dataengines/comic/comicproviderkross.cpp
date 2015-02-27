@@ -129,4 +129,4 @@ Plasma::PackageStructure::Ptr ComicProviderKross::packageStructure()
     return m_packageStructure;
 }
 
-#include "comicproviderkross.moc"
+#include "moc_comicproviderkross.cpp"

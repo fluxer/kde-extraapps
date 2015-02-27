@@ -414,4 +414,4 @@ KgpgKeyList KgpgInterface::readSecretKeys(const QStringList &ids)
 	return result;
 }
 
-#include "kgpginterface.moc"
+#include "moc_kgpginterface.cpp"

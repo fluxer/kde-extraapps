@@ -338,4 +338,4 @@ Part::showSummary()
 
 } //namespace Filelight
 
-#include "part.moc"
+#include "moc_part.cpp"

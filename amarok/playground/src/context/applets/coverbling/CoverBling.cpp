@@ -265,5 +265,5 @@ CoverBling::objectAtPosition( const QPoint& pos )
 }
 
 
-#include "CoverBling.moc"
+#include "moc_CoverBling.cpp"
 

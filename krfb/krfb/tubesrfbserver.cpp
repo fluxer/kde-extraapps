@@ -259,4 +259,4 @@ void TubesRfbServer::onAccountManagerReady()
 }
 #endif
 
-#include "tubesrfbserver.moc"
+#include "moc_tubesrfbserver.cpp"

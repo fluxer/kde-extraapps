@@ -149,4 +149,4 @@ TokenPool::performDrag()
     }
 }
 
-#include "TokenPool.moc"
+#include "moc_TokenPool.cpp"

@@ -207,5 +207,5 @@ void kpEffectInvertWidget::slotAllCheckBoxToggled ()
 }
 
 
-#include <kpEffectInvertWidget.moc>
+#include "moc_kpEffectInvertWidget.cpp"
 

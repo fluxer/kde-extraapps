@@ -359,4 +359,4 @@ bool CliPlugin::readListLine(const QString &line)
 
 KERFUFFLE_EXPORT_PLUGIN(CliPlugin)
 
-#include "cliplugin.moc"
+#include "moc_cliplugin.cpp"

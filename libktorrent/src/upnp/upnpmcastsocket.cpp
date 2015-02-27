@@ -374,4 +374,4 @@ namespace bt
 
 
 
-#include "upnpmcastsocket.moc"
+#include "moc_upnpmcastsocket.cpp"

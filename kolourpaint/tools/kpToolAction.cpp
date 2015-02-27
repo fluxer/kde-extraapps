@@ -67,4 +67,4 @@ void kpToolAction::updateToolTip()
 
 //---------------------------------------------------------------------
 
-#include <kpToolAction.moc>
+#include "moc_kpToolAction.cpp"

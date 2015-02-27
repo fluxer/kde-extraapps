@@ -134,4 +134,4 @@ namespace Dragon
 
 }
 
-#include "part.moc"
+#include "moc_part.cpp"

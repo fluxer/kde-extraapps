@@ -242,4 +242,4 @@ void CachedProvider::setMaxComicLimit( int limit )
     settings.setValue( QLatin1String( "maxComics" ), limit );
 }
 
-#include "cachedprovider.moc"
+#include "moc_cachedprovider.cpp"

@@ -914,4 +914,4 @@ void CoverFoundItem::setCaption()
         setText( captions.join( QLatin1String( " - " ) ) );
 }
 
-#include "CoverFoundDialog.moc"
+#include "moc_CoverFoundDialog.cpp"

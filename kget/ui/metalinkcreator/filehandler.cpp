@@ -214,4 +214,4 @@ void DirectoryHandler::evaluateFileProcess()
     }
 }
 
-#include "filehandler.moc"
+#include "moc_filehandler.cpp"

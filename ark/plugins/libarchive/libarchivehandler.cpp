@@ -785,4 +785,4 @@ bool LibArchiveInterface::writeFile(const QString& fileName, struct archive* arc
 
 KERFUFFLE_EXPORT_PLUGIN(LibArchiveInterface)
 
-#include "libarchivehandler.moc"
+#include "moc_libarchivehandler.cpp"

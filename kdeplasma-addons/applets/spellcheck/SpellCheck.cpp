@@ -288,4 +288,4 @@ void SpellCheck::setLanguage(const QString &language)
     emit configNeedsSaving();
 }
 
-#include "SpellCheck.moc"
+#include "moc_SpellCheck.cpp"

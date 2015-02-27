@@ -247,4 +247,4 @@ QString KgpgKeyGenerate::comment() const
     return m_comment->text();
 }
 
-#include "kgpgkeygenerate.moc"
+#include "moc_kgpgkeygenerate.cpp"

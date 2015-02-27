@@ -465,4 +465,4 @@ namespace kt
 	}
 }
 
-#include "fileview.moc"
+#include "moc_fileview.cpp"

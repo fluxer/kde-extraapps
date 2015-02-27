@@ -132,4 +132,4 @@ TestImporterProvider::defaultPreferenceShouldReturnNoByDefault()
     QCOMPARE( m_mockProvider->defaultPreference(), StatSyncing::Provider::NoByDefault );
 }
 
-#include "TestImporterProvider.moc"
+#include "moc_TestImporterProvider.cpp"

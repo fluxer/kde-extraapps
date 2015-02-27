@@ -2014,5 +2014,5 @@ namespace bt
 
 }
 
-#include "torrentcontrol.moc"
+#include "moc_torrentcontrol.cpp"
 

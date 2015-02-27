@@ -160,4 +160,4 @@ void MessageWidget::markMessageRead()
 }
 
 
-#include "messagewidget.moc"
+#include "moc_messagewidget.cpp"

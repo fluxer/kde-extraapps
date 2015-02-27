@@ -446,4 +446,4 @@ void Virus::updateScreenshot(QPersistentModelIndex index)
     m_uiVirus.m_view->update(index);
 }
 
-#include "virus.moc"
+#include "moc_virus.cpp"

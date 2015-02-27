@@ -332,4 +332,4 @@ ContainmentArrow::mouseReleaseEvent( QGraphicsSceneMouseEvent *event )
 
 }
 
-#include "ContainmentArrow.moc"
+#include "moc_ContainmentArrow.cpp"

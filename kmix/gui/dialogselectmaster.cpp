@@ -214,5 +214,5 @@ void DialogSelectMaster::apply()
    }
 }
 
-#include "dialogselectmaster.moc"
+#include "moc_dialogselectmaster.cpp"
 

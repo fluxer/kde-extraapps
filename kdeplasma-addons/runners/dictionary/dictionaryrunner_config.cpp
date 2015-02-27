@@ -47,4 +47,4 @@ void DictionaryRunnerConfig::defaults()
 	emit changed(true);
 }
 
-#include "dictionaryrunner_config.moc"
+#include "moc_dictionaryrunner_config.cpp"

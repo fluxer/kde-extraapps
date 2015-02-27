@@ -320,4 +320,4 @@ namespace mse
 
 }
 
-#include "encryptedauthenticate.moc"
+#include "moc_encryptedauthenticate.cpp"

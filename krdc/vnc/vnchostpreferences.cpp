@@ -140,4 +140,4 @@ RemoteView::Quality VncHostPreferences::quality()
     return (RemoteView::Quality) m_configGroup.readEntry("quality", (int) Settings::quality() + 1);
 }
 
-#include "vnchostpreferences.moc"
+#include "moc_vnchostpreferences.cpp"

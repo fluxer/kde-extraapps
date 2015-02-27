@@ -240,4 +240,4 @@ void KgpgSelectPublicKeyDlg::slotGotoDefaultKey()
 	m_keyslist->selectionModel()->setCurrentIndex(pidx, QItemSelectionModel::Clear | QItemSelectionModel::SelectCurrent | QItemSelectionModel::Rows);
 }
 
-#include "selectpublickeydialog.moc"
+#include "moc_selectpublickeydialog.cpp"

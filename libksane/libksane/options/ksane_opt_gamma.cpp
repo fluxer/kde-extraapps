@@ -26,7 +26,7 @@
  * ============================================================ */
 // Local includes
 #include "ksane_opt_gamma.h"
-#include "ksane_opt_gamma.moc"
+#include "moc_ksane_opt_gamma.cpp"
 
 #include "labeled_gamma.h"
 

@@ -47,4 +47,4 @@ GeneralConfig::updateSettings() //SLOT
 {
 }
 
-#include "GeneralConfig.moc"
+#include "moc_GeneralConfig.cpp"

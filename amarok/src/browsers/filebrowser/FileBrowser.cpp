@@ -20,7 +20,7 @@
 
 #include "FileBrowser.h"
 #include "FileBrowser_p.h"
-#include "FileBrowser_p.moc"
+#include "moc_FileBrowser_p.cpp"
 
 #include "amarokconfig.h"
 #include "EngineController.h"
@@ -627,4 +627,4 @@ DelayedActivator::slotRowsInserted( const QModelIndex &parent, int start )
     deleteLater();
 }
 
-#include "FileBrowser.moc"
+#include "moc_FileBrowser.cpp"

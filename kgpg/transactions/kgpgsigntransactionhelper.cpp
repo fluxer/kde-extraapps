@@ -141,4 +141,4 @@ KGpgSignTransactionHelper::setSecringFile(const QString &filename)
 	asTransaction()->insertArguments(1, secringargs);
 }
 
-#include "kgpgsigntransactionhelper.moc"
+#include "moc_kgpgsigntransactionhelper.cpp"

@@ -241,4 +241,4 @@ Context::AppletToolbarAppletItem::hoverLeaveEvent( QGraphicsSceneHoverEvent * )
 }
 
 
-#include "AppletToolbarAppletItem.moc"
+#include "moc_AppletToolbarAppletItem.cpp"

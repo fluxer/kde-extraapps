@@ -284,4 +284,4 @@ void LeaveNote::incrementMessageCount()
     mCountLabel->setText(i18np("One unread message", "%1 unread messages", mMessageCounter));
 }
 
-#include "leavenote.moc"
+#include "moc_leavenote.cpp"

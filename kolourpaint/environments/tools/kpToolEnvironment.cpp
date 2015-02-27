@@ -209,4 +209,4 @@ void kpToolEnvironment::fitToPage () const
 }
 
 
-#include <kpToolEnvironment.moc>
+#include "moc_kpToolEnvironment.cpp"

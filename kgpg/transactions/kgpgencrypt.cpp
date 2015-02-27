@@ -139,4 +139,4 @@ KGpgEncrypt::encryptExtension(const bool ascii)
 		return QLatin1String( ".gpg" );
 }
 
-#include "kgpgencrypt.moc"
+#include "moc_kgpgencrypt.cpp"

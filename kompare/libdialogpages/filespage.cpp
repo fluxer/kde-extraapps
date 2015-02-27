@@ -159,4 +159,4 @@ void FilesPage::setDefaults()
 	m_encodingComboBox->setCurrentIndex( 0 ); // "Default"
 }
 
-#include "filespage.moc"
+#include "moc_filespage.cpp"

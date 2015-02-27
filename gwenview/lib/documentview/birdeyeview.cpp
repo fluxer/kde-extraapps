@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 */
 // Self
-#include "birdeyeview.moc"
+#include "moc_birdeyeview.cpp"
 
 // Local
 #include <lib/document/document.h>

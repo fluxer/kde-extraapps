@@ -92,4 +92,4 @@ void KonqProfilesEngine::loadProfiles()
 
 K_EXPORT_PLASMA_DATAENGINE(konqprofilesengine, KonqProfilesEngine)
 
-#include "konqprofilesengine.moc"
+#include "moc_konqprofilesengine.cpp"

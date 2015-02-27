@@ -244,4 +244,4 @@ CollectionTreeItemModel::requestCollectionsExpansion()
     }
 }
 
-#include "CollectionTreeItemModel.moc"
+#include "moc_CollectionTreeItemModel.cpp"

@@ -25,7 +25,7 @@
  *
  * ============================================================ */
 #include "labeled_combo.h"
-#include "labeled_combo.moc"
+#include "moc_labeled_combo.cpp"
 
 // Qt includes
 #include <QLabel>

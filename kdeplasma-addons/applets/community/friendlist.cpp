@@ -71,4 +71,4 @@ void FriendList::setOwnId(const QString& id)
 }
 
 
-#include "friendlist.moc"
+#include "moc_friendlist.cpp"

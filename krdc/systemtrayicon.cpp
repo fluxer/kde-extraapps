@@ -59,4 +59,4 @@ SystemTrayIcon::~SystemTrayIcon()
 {
 }
 
-#include "systemtrayicon.moc"
+#include "moc_systemtrayicon.cpp"

@@ -117,4 +117,4 @@ ScriptSelector::slotFiltered( const QString &filter )
         emit filtered( true );
 }
 
-#include "ScriptSelector.moc"
+#include "moc_ScriptSelector.cpp"

@@ -1226,4 +1226,4 @@ void MainWindow::createDockWidget()
     addDockWidget(Qt::LeftDockWidgetArea, remoteDesktopsDockWidget);
 }
 
-#include "mainwindow.moc"
+#include "moc_mainwindow.cpp"

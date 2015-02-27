@@ -142,4 +142,4 @@ AmpacheService::onLoginSuccessful()
     setServiceReady( true );
 }
 
-#include "AmpacheService.moc"
+#include "moc_AmpacheService.cpp"

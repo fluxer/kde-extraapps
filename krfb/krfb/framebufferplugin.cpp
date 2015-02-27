@@ -32,5 +32,5 @@ FrameBufferPlugin::~FrameBufferPlugin()
 }
 
 
-#include "framebufferplugin.moc"
+#include "moc_framebufferplugin.cpp"
 

@@ -136,4 +136,4 @@ void DlgSettingsWidget::save()
     MirrorSearchSettings::self()->writeConfig();
 }
 
-#include "dlgmirrorsearch.moc"
+#include "moc_dlgmirrorsearch.cpp"

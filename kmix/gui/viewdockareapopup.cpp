@@ -419,4 +419,4 @@ void ViewDockAreaPopup::showPanelSlot()
     static_cast<QWidget*>(parent())->hide();
 }
 
-#include "viewdockareapopup.moc"
+#include "moc_viewdockareapopup.cpp"

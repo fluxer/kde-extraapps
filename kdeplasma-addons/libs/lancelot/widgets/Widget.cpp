@@ -268,5 +268,5 @@ void Widget::setPaintBackwardsWhenRTL(bool value)
 
 } // namespace Lancelot
 
-#include "Widget.moc"
+#include "moc_Widget.cpp"
 

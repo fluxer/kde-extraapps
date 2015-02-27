@@ -978,4 +978,4 @@ bool MainWindow::isFresh()
 
 } //namespace Dragon
 
-#include "mainWindow.moc"
+#include "moc_mainWindow.cpp"

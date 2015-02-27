@@ -168,4 +168,4 @@ Plasma::Service* RtmEngine::serviceForSource(const QString& source) {
 
 K_EXPORT_PLASMA_DATAENGINE(rtm, RtmEngine)
  
-#include "rtmengine.moc"
+#include "moc_rtmengine.cpp"

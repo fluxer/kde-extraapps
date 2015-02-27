@@ -215,4 +215,4 @@ void LogManager::loadDroppedUrls(const KUrl::List& urls) {
 	}
 }
 
-#include "logManager.moc"
+#include "moc_logManager.cpp"

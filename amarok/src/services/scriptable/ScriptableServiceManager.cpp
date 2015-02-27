@@ -178,7 +178,7 @@ namespace The {
 
 
 
-#include "ScriptableServiceManager.moc"
+#include "moc_ScriptableServiceManager.cpp"
 
 
 

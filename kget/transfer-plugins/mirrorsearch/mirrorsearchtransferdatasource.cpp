@@ -43,4 +43,4 @@ void MirrorSearchTransferDataSource::slotSearchUrls(QList<KUrl>& Urls)
     emit data(Urls);
 }
 
-#include "mirrorsearchtransferdatasource.moc"
+#include "moc_mirrorsearchtransferdatasource.cpp"

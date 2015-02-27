@@ -40,7 +40,7 @@
 #include <klocale.h>
 
 #include "kameraconfigdialog.h"
-#include "kameraconfigdialog.moc"
+#include "moc_kameraconfigdialog.cpp"
 
 KameraConfigDialog::KameraConfigDialog(Camera */*camera*/,
 					CameraWidget *widget,

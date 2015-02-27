@@ -80,5 +80,5 @@ void TasksSource::loadCache() {
   }
 }
 
-#include "taskssource.moc"
+#include "moc_taskssource.cpp"
 

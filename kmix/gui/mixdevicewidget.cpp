@@ -115,4 +115,4 @@ void MixDeviceWidget::mousePressEvent( QMouseEvent *e )
 }
 
 
-#include "mixdevicewidget.moc"
+#include "moc_mixdevicewidget.cpp"

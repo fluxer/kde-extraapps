@@ -710,4 +710,4 @@ namespace kt
 	}
 }
 
-#include "torrentfiletreemodel.moc"
+#include "moc_torrentfiletreemodel.cpp"

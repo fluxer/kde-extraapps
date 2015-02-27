@@ -51,4 +51,4 @@ void LineEdit::keyPressEvent( QKeyEvent *event )
 
 }
 
-#include "LineEdit.moc"
+#include "moc_LineEdit.cpp"

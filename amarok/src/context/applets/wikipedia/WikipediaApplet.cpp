@@ -19,7 +19,7 @@
 
 #include "WikipediaApplet.h"
 #include "WikipediaApplet_p.h"
-#include "WikipediaApplet_p.moc"
+#include "moc_WikipediaApplet_p.cpp"
 
 #include "App.h"
 #include "core/support/Amarok.h"
@@ -802,4 +802,4 @@ WikipediaApplet::createConfigurationInterface( KConfigDialog *parent )
     QTimer::singleShot( 0, this, SLOT(_configureLangSelector()) );
 }
 
-#include "WikipediaApplet.moc"
+#include "moc_WikipediaApplet.cpp"

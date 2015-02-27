@@ -121,4 +121,4 @@ namespace bt
 	
 }
 
-#include "server.moc"
+#include "moc_server.cpp"

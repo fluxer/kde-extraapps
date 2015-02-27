@@ -342,4 +342,4 @@ namespace kt
 	}
 }
 
-#include "iwfiletreemodel.moc"
+#include "moc_iwfiletreemodel.cpp"

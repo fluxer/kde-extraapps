@@ -40,4 +40,4 @@ KGpgPrimaryUid::passphraseReceived()
 	return KGpgTransaction::passphraseReceived();
 }
 
-#include "kgpgprimaryuid.moc"
+#include "moc_kgpgprimaryuid.cpp"

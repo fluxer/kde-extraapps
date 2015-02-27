@@ -790,4 +790,4 @@ void kpDocumentMetaInfoDialog::accept ()
 }
 
 
-#include <kpDocumentMetaInfoDialog.moc>
+#include "moc_kpDocumentMetaInfoDialog.cpp"

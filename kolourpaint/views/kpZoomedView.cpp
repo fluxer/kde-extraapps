@@ -100,4 +100,4 @@ void kpZoomedView::adjustToEnvironment ()
 }
 
 
-#include <kpZoomedView.moc>
+#include "moc_kpZoomedView.cpp"

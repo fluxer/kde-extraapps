@@ -713,7 +713,7 @@ void Notes::updateOptions()
     m_buttonFill->setDown(m_noteEditor->alignment() == Qt::AlignJustify);
 }
 
-#include "notes.moc"
+#include "moc_notes.cpp"
 
 K_EXPORT_PLASMA_APPLET(notes, Notes)
 

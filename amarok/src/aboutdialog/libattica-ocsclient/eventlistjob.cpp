@@ -89,4 +89,4 @@ void EventListJob::slotJobData(KIO::Job* job, const QByteArray& data)
 }
 
 
-#include "eventlistjob.moc"
+#include "moc_eventlistjob.cpp"

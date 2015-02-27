@@ -127,4 +127,4 @@ void StyleSheet::update()
     emit styleSheetChanged(m_styleSheet);
 }
 
-#include "stylesheet.moc"
+#include "moc_stylesheet.cpp"

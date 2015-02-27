@@ -27,7 +27,7 @@
 
 // Local includes
 #include "labeled_entry.h"
-#include "labeled_entry.moc"
+#include "moc_labeled_entry.cpp"
 
 // Qt includes
 #include <QHBoxLayout>

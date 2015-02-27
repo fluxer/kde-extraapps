@@ -290,4 +290,4 @@ PlaylistBrowserNS::DynamicView::contextMenuEvent( QContextMenuEvent *event )
     menu.exec( mapToGlobal( event->pos() ) );
 }
 
-#include "DynamicView.moc"
+#include "moc_DynamicView.cpp"

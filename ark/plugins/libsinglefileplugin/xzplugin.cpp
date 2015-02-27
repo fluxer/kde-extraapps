@@ -42,4 +42,4 @@ LibXzInterface::~LibXzInterface()
 
 KERFUFFLE_EXPORT_PLUGIN(LibXzInterface)
 
-#include "xzplugin.moc"
+#include "moc_xzplugin.cpp"

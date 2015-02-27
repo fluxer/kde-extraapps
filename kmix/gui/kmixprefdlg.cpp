@@ -425,4 +425,4 @@ void KMixPrefDlg::replaceBackendsInTab()
 
 
 
-#include "kmixprefdlg.moc"
+#include "moc_kmixprefdlg.cpp"

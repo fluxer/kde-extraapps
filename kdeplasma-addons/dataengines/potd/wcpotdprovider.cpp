@@ -87,4 +87,4 @@ QImage WcpotdProvider::image() const
     return d->mImage;
 }
 
-#include "wcpotdprovider.moc"
+#include "moc_wcpotdprovider.cpp"

@@ -503,4 +503,4 @@ void WindowPreview::controlButtons(QMouseEvent *event)
 
 } // namespace Plasma
 
-#include "windowpreview_p.moc"
+#include "moc_windowpreview_p.cpp"

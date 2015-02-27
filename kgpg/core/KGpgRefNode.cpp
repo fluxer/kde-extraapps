@@ -148,4 +148,4 @@ KGpgRefNode::getRefNode() const
 	return m_keynode;
 }
 
-#include "KGpgRefNode.moc"
+#include "moc_KGpgRefNode.cpp"

@@ -53,4 +53,4 @@ ConfigurePrinter::~ConfigurePrinter()
 {
 }
 
-#include "ConfigurePrinter.moc"
+#include "moc_ConfigurePrinter.cpp"

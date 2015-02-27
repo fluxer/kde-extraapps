@@ -250,4 +250,4 @@ void Unity::sycocaChanged(const QStringList &types)
     }
 }
 
-#include "unity.moc"
+#include "moc_unity.cpp"

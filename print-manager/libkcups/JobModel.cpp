@@ -651,4 +651,4 @@ QString JobModel::processingJob() const
     return m_processingJob;
 }
 
-#include "JobModel.moc"
+#include "moc_JobModel.cpp"

@@ -106,5 +106,5 @@ void Tooltip::paintEvent(QPaintEvent * event)
     frame->paintFrame(&painter, event->rect());
 }
 
-#include "tooltip.moc"
+#include "moc_tooltip.cpp"
 

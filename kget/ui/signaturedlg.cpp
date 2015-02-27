@@ -365,4 +365,4 @@ void SignatureDlg::handleWidgets(bool isAsciiSig)
     }
 }
 
-#include "signaturedlg.moc"
+#include "moc_signaturedlg.cpp"

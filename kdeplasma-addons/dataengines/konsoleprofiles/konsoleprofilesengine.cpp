@@ -92,4 +92,4 @@ void KonsoleProfilesEngine::loadProfiles()
 
 K_EXPORT_PLASMA_DATAENGINE(konsoleprofilesengine, KonsoleProfilesEngine)
 
-#include "konsoleprofilesengine.moc"
+#include "moc_konsoleprofilesengine.cpp"

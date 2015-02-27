@@ -99,5 +99,5 @@ void MagnatuneRedownloadDialog::selectionChanged( )
 /*$SPECIALIZATION$*/
 
 
-#include "MagnatuneRedownloadDialog.moc"
+#include "moc_MagnatuneRedownloadDialog.cpp"
 

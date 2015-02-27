@@ -1259,4 +1259,4 @@ namespace bt
 	
 }
 
-#include "chunkmanager.moc"
+#include "moc_chunkmanager.cpp"

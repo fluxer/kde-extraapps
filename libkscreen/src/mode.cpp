@@ -138,4 +138,4 @@ QDebug operator<<(QDebug dbg, const KScreen::Mode *mode)
 }
 
 
-#include "mode.moc"
+#include "moc_mode.cpp"

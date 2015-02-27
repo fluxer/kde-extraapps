@@ -144,5 +144,5 @@ const StandardActionListModel::Item & StandardActionListModel::itemAt(int index)
 
 } // namespace Lancelot
 
-#include "StandardActionListModel.moc"
+#include "moc_StandardActionListModel.cpp"
 

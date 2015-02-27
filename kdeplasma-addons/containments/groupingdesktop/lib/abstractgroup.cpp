@@ -863,4 +863,4 @@ GroupInfo AbstractGroup::groupInfo(const QString &name)
     return GroupInfo("");
 }
 
-#include "abstractgroup.moc"
+#include "moc_abstractgroup.cpp"

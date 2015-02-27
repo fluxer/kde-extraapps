@@ -88,5 +88,5 @@ namespace bt
 
 }
 
-#include "waitjob.moc"
+#include "moc_waitjob.cpp"
 

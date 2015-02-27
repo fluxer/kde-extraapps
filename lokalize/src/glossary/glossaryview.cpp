@@ -211,4 +211,4 @@ void GlossaryView::clear()
     }
 }
 
-#include "glossaryview.moc"
+#include "moc_glossaryview.cpp"

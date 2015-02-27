@@ -554,4 +554,4 @@ KGpgItemModel::updateNodeTrustColor(KGpgExpandableNode *node, const KgpgCore::Kg
 	}
 }
 
-#include "kgpgitemmodel.moc"
+#include "moc_kgpgitemmodel.cpp"

@@ -55,4 +55,4 @@ void AmarokDockWidget::setMovable( bool movable )
     }
 }
 
-#include "AmarokDockWidget.moc"
+#include "moc_AmarokDockWidget.cpp"

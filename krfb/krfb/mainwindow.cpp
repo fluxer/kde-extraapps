@@ -261,4 +261,4 @@ void MainWindow::saveProperties(KConfigGroup& group)
     KMainWindow::saveProperties(group);
 }
 
-#include "mainwindow.moc"
+#include "moc_mainwindow.cpp"

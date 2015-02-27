@@ -478,4 +478,4 @@ CollectionWidget::searchWidget()
     return d->searchWidget;
 }
 
-#include "CollectionWidget.moc"
+#include "moc_CollectionWidget.cpp"

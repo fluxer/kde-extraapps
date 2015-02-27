@@ -114,4 +114,4 @@ void KFileReplace::removeDuplicatedActions()
     part_action_collection->removeAction(part_help_action);
 }
 
-#include "kfilereplace.moc"
+#include "moc_kfilereplace.cpp"

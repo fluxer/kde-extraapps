@@ -118,4 +118,4 @@ ImporterMocks::cleanupTestCase()
     delete m_engineController;
 }
 
-#include "ImporterMocks.moc"
+#include "moc_ImporterMocks.cpp"

@@ -379,4 +379,4 @@ UpcomingEventsListWidget::setName( const QString &name )
     m_name = name;
 }
 
-#include "UpcomingEventsWidget.moc"
+#include "moc_UpcomingEventsWidget.cpp"

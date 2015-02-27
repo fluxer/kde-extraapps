@@ -445,4 +445,4 @@ void KKameraConfig::slot_error(const QString &message, const QString &details)
 	KMessageBox::detailedError(this, message, details);
 }
 
-#include "kamera.moc"
+#include "moc_kamera.cpp"

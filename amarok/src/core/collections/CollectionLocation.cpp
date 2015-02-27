@@ -740,4 +740,4 @@ CollectionLocation::transferError( const Meta::TrackPtr &track, const QString &e
     m_tracksWithError.insert( track, error );
 }
 
-#include "CollectionLocation.moc"
+#include "moc_CollectionLocation.cpp"

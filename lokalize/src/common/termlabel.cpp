@@ -143,4 +143,4 @@ void QueryResultBtn::mousePressEvent (QMouseEvent*/* event*/)
 
 #endif
 
-#include "termlabel.moc"
+#include "moc_termlabel.cpp"

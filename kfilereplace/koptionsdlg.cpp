@@ -232,4 +232,4 @@ void KOptionsDlg::whatsThis()
   m_chbConfirmStrings->setWhatsThis( chbConfirmStringsWhatthis);
 }
 
-#include "koptionsdlg.moc"
+#include "moc_koptionsdlg.cpp"

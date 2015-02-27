@@ -372,4 +372,4 @@ KGpgFirstAssistant::slotBinaryChanged(const QString &binary)
 	}
 }
 
-#include "kgpgfirstassistant.moc"
+#include "moc_kgpgfirstassistant.cpp"

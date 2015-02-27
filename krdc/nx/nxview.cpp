@@ -275,4 +275,4 @@ void NxView::connectionClosed()
     m_quitFlag = true;
 }
 
-#include "nxview.moc"
+#include "moc_nxview.cpp"

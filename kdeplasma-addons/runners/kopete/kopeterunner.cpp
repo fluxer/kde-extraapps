@@ -301,4 +301,4 @@ void KopeteRunner::updateContact(const QString& uuid)
         m_contactData[uuid] = reply.value();
 }
 
-#include <kopeterunner.moc>
+#include "moc_kopeterunner.cpp"

@@ -83,6 +83,6 @@ void InfoEngine::update()
 
 
 
-#include "InfoEngine.moc"
+#include "moc_InfoEngine.cpp"
 
 

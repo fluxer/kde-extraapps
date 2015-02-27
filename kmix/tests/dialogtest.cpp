@@ -68,5 +68,5 @@ DialogTest::DialogTest() : QDialog(  0)
     scrollArea->setWidget(vboxForScrollView);
 }
 
-#include "dialogtest.moc"
+#include "moc_dialogtest.cpp"
 

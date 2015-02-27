@@ -489,4 +489,4 @@ MemoryQueryMaker::setLabelQueryMode( LabelQueryMode mode )
     return this;
 }
 
-#include "MemoryQueryMaker.moc"
+#include "moc_MemoryQueryMaker.cpp"

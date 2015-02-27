@@ -236,4 +236,4 @@ void HostPreferences::setShownWhileConnected(bool connected)
     m_connected = connected;
 }
 
-#include "hostpreferences.moc"
+#include "moc_hostpreferences.cpp"

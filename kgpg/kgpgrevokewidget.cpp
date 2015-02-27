@@ -85,4 +85,4 @@ bool KGpgRevokeDialog::printChecked()
 	return m_revWidget->cbPrint->isChecked();
 }
 
-#include "kgpgrevokewidget.moc"
+#include "moc_kgpgrevokewidget.cpp"

@@ -336,4 +336,4 @@ void KU_EditGroup::accept()
   done( Accepted );
 }
 
-#include "ku_editgroup.moc"
+#include "moc_ku_editgroup.cpp"

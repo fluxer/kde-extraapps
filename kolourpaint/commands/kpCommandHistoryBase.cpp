@@ -749,4 +749,4 @@ void kpCommandHistoryBase::documentSaved ()
 }
 
 
-#include <kpCommandHistoryBase.moc>
+#include "moc_kpCommandHistoryBase.cpp"

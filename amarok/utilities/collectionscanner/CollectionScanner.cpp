@@ -435,5 +435,5 @@ CollectionScanner::Scanner::displayHelp( const QString &error )
     ::exit(0);
 }
 
-#include "CollectionScanner.moc"
+#include "moc_CollectionScanner.cpp"
 

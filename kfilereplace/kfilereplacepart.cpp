@@ -1730,4 +1730,4 @@ void KFileReplacePart::whatsThis()
   actionCollection()->action("options_regularexpressions")->setWhatsThis(optionsRegularExpressionsWhatthis);
 }
 
-#include "kfilereplacepart.moc"
+#include "moc_kfilereplacepart.cpp"

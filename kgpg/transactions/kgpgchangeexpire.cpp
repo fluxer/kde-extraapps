@@ -56,4 +56,4 @@ KGpgChangeExpire::setDate(const QDateTime &date)
 	m_date = date;
 }
 
-#include "kgpgchangeexpire.moc"
+#include "moc_kgpgchangeexpire.cpp"

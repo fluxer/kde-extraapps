@@ -213,4 +213,4 @@ int PlayerDBusHandler::VolumeGet() const
      return m_audioOutput->volume()*100;
 }
 
-#include "playerdbushandler.moc"
+#include "moc_playerdbushandler.cpp"

@@ -1013,4 +1013,4 @@ void TMView::slotUseSuggestion(int i)
 }
 
 
-#include "tmview.moc"
+#include "moc_tmview.cpp"

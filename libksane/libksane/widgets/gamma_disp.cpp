@@ -27,7 +27,7 @@
 
 // Local includes
 #include "gamma_disp.h"
-#include "gamma_disp.moc"
+#include "moc_gamma_disp.cpp"
 
 // Qt includes
 #include <QPainter>

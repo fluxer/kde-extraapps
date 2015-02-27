@@ -43,5 +43,5 @@ K_PLUGIN_FACTORY(factory, registerPlugin<X11FrameBufferPlugin>();) \
 K_EXPORT_PLUGIN(factory("krfb_framebuffer_x11"))
 
 
-#include "x11framebufferplugin.moc"
+#include "moc_x11framebufferplugin.cpp"
 

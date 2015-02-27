@@ -290,4 +290,4 @@ void WebSlice::handleGeometryEdit()
     }
 }
 
-#include "webslice.moc"
+#include "moc_webslice.cpp"

@@ -100,4 +100,4 @@ QString kpAbstractImageSelectionTool::haventBegunDrawUserMessageResizeScale () c
 
 //---------------------------------------------------------------------
 
-#include <kpAbstractImageSelectionTool.moc>
+#include "moc_kpAbstractImageSelectionTool.cpp"

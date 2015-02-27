@@ -63,4 +63,4 @@ int kpEffectWidgetBase::spacingHint () const
 }
 
 
-#include <kpEffectWidgetBase.moc>
+#include "moc_kpEffectWidgetBase.cpp"

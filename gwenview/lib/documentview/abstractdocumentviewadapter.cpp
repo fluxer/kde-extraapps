@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 */
 // Self
-#include "abstractdocumentviewadapter.moc"
+#include "moc_abstractdocumentviewadapter.cpp"
 
 // Qt
 #include <QCursor>

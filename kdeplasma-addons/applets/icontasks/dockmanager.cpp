@@ -533,4 +533,4 @@ void DockManager::serviceOwnerChanged(const QString &name, const QString &oldOwn
     }
 }
 
-#include "dockmanager.moc"
+#include "moc_dockmanager.cpp"

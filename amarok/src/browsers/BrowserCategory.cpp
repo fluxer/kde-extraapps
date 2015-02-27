@@ -178,4 +178,4 @@ BrowserCategory::additionalItems()
     return m_additionalItems;
 }
 
-#include "BrowserCategory.moc"
+#include "moc_BrowserCategory.cpp"

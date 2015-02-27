@@ -182,5 +182,5 @@ void CollectionLocationTest::testFailedCopyWithIncorrectUsageOfCopySuccesful()
     delete Amarok::Components::setCollectionLocationDelegate( 0 );
 }
 
-#include "CollectionLocationTest.moc"
+#include "moc_CollectionLocationTest.cpp"
 

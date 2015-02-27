@@ -86,4 +86,4 @@ int TransferDataSource::changeNeeded() const
 }
 
 
-#include "transferdatasource.moc"
+#include "moc_transferdatasource.cpp"

@@ -393,4 +393,4 @@ void GridHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
     m_configureIcons->paint(painter, iconRect.translated(shiftD), "close");
 }
 
-#include "gridhandle.moc"
+#include "moc_gridhandle.cpp"

@@ -180,4 +180,4 @@ KGpgRootNode::asRootNode() const
 	return this;
 }
 
-#include "KGpgRootNode.moc"
+#include "moc_KGpgRootNode.cpp"

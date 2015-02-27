@@ -70,4 +70,4 @@ QString PotdProvider::identifier() const
 }
 
 
-#include "potdprovider.moc"
+#include "moc_potdprovider.cpp"

@@ -420,4 +420,4 @@ QString Edid::Private::edidParseString(const quint8 *data) const
 
 } /* namespace KScreen */
 
-#include "edid.moc"
+#include "moc_edid.cpp"

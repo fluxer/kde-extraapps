@@ -44,4 +44,4 @@ void EditDeleteComboBoxView::mousePressEvent( QMouseEvent *event )
     QListView::mousePressEvent( event );
 }
 
-#include "EditDeleteComboBoxView.moc"
+#include "moc_EditDeleteComboBoxView.cpp"

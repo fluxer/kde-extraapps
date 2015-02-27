@@ -259,5 +259,5 @@ void LocalLister::readMounts()
 
 }//namespace Filelight
 
-#include "localLister.moc"
+#include "moc_localLister.cpp"
 

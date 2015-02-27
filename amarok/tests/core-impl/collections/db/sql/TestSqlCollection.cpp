@@ -91,4 +91,4 @@ TestSqlCollection::testDeviceRemovedWithoutTracks()
     QCOMPARE( spy.count(), 0 );
 }
 
-#include "TestSqlCollection.moc"
+#include "moc_TestSqlCollection.cpp"

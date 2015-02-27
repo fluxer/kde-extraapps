@@ -332,4 +332,4 @@ KGpgNode::getParentKeyNode() const
 	return m_parent;
 }
 
-#include "KGpgNode.moc"
+#include "moc_KGpgNode.cpp"

@@ -770,4 +770,4 @@ bool TMTab::findGuiTextPackage(QString text, QString package)
 
 //END DBus interface
 
-#include "tmtab.moc"
+#include "moc_tmtab.cpp"

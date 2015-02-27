@@ -234,4 +234,4 @@ GpodderServiceConfig::textDialogNo() //SLOT
     }
 }
 
-#include "GpodderServiceConfig.moc"
+#include "moc_GpodderServiceConfig.cpp"

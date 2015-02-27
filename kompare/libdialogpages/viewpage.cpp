@@ -213,4 +213,4 @@ void ViewPage::setDefaults()
         m_fontSizeSpinBox->setValue   ( 10 );
 }
 
-#include "viewpage.moc"
+#include "moc_viewpage.cpp"

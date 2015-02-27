@@ -749,4 +749,4 @@ void Clock::updateColors()
     }
 }
 
-#include "fuzzyClock.moc"
+#include "moc_fuzzyClock.cpp"

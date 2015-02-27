@@ -28,4 +28,4 @@ void ServiceJobWrapper::atticaJobFinished(BaseJob* job)
     setResult(QVariant());
 }
 
-#include "servicejobwrapper.moc"
+#include "moc_servicejobwrapper.cpp"

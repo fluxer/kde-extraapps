@@ -152,4 +152,4 @@ MagnatuneAlbumDownloader::albumDownloadAborted( )
 
 }
 
-#include "MagnatuneAlbumDownloader.moc"
+#include "moc_MagnatuneAlbumDownloader.cpp"

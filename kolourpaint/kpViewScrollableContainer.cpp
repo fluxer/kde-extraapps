@@ -1178,4 +1178,4 @@ void kpViewScrollableContainer::resizeEvent (QResizeEvent *e)
 
 //---------------------------------------------------------------------
 
-#include <kpViewScrollableContainer.moc>
+#include "moc_kpViewScrollableContainer.cpp"

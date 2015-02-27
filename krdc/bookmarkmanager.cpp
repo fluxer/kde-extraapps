@@ -216,4 +216,4 @@ void BookmarkManager::updateTitle(KBookmarkManager *manager, const QString &url,
     manager->emitChanged();
 }
 
-#include "bookmarkmanager.moc"
+#include "moc_bookmarkmanager.cpp"

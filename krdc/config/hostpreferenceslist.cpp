@@ -144,4 +144,4 @@ void HostPreferencesList::selectionChanged()
     removeButton->setEnabled(enabled);
 }
 
-#include "hostpreferenceslist.moc"
+#include "moc_hostpreferenceslist.cpp"

@@ -125,4 +125,4 @@ kpEffectCommandBase *kpEffectHSVWidget::createCommand (
 }
 
 
-#include <kpEffectHSVWidget.moc>
+#include "moc_kpEffectHSVWidget.cpp"

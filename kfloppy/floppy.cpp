@@ -757,4 +757,4 @@ void FloppyData::setWidgets(){
   }
 }
 
-#include "floppy.moc"
+#include "moc_floppy.cpp"

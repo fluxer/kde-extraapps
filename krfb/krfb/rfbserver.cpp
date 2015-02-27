@@ -278,4 +278,4 @@ void RfbServer::clipboardHook(char *str, int len, rfbClientPtr cl)
     QApplication::clipboard()->setText(QString::fromLocal8Bit(str,len));
 }
 
-#include "rfbserver.moc"
+#include "moc_rfbserver.cpp"

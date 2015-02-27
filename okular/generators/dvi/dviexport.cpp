@@ -323,4 +323,4 @@ void DVIExportToPS::abort_process_impl()
 }
 
 
-#include "dviexport.moc"
+#include "moc_dviexport.cpp"

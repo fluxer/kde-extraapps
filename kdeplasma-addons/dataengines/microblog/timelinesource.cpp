@@ -529,5 +529,5 @@ ImageSource *TimelineSource::imageSource() const
     return m_imageSource;
 }
 
-#include <timelinesource.moc>
+#include "moc_timelinesource.cpp"
 

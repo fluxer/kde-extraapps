@@ -922,5 +922,5 @@ void OcsEngine::serviceUpdates(const QString& command)
 }
 
 
-#include "ocsengine.moc"
+#include "moc_ocsengine.cpp"
 

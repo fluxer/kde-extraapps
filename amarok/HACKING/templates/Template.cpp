@@ -30,4 +30,4 @@ Template::~Template()
 }
 
 
-#include "Template.moc"
+#include "moc_Template.cpp"

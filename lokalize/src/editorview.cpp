@@ -363,4 +363,4 @@ void EditorView::setEquivTrans(bool equivTrans)
 }
 
 
-#include "editorview.moc"
+#include "moc_editorview.cpp"

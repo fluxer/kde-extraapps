@@ -88,4 +88,4 @@ CoverViewDialog::createViewer( const QImage &image, const QWidget *widget )
     raise();
 }
 
-#include "CoverViewDialog.moc"
+#include "moc_CoverViewDialog.cpp"

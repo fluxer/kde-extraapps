@@ -605,4 +605,4 @@ void kgpgOptions::slotSystrayEnable()
 	m_page7->kcfg_LeftClick->setEnabled(m_page7->kcfg_ShowSystray->isChecked());
 }
 
-#include "kgpgoptions.moc"
+#include "moc_kgpgoptions.cpp"

@@ -690,4 +690,4 @@ Dynamic::LastFmBias::matchForName( const QString &name )
 
 
 
-#include "LastFmBias.moc"
+#include "moc_LastFmBias.cpp"

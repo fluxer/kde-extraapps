@@ -627,5 +627,5 @@ QVariant kpAbstractSelectionTool::operation (DrawType drawType, Operation op,
 //---------------------------------------------------------------------
 
 
-#include <kpAbstractSelectionTool.moc>
+#include "moc_kpAbstractSelectionTool.cpp"
 

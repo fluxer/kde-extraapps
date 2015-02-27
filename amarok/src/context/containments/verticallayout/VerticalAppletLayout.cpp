@@ -249,4 +249,4 @@ Context::VerticalAppletLayout::showAtIndex( int index )
     m_showingIndex = index;
 }
 
-#include "VerticalAppletLayout.moc"
+#include "moc_VerticalAppletLayout.cpp"

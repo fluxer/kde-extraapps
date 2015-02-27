@@ -1032,7 +1032,7 @@ void DelayedFileOpener::doOpen()
 }
 
 
-#include "lokalizemainwindow.moc"
+#include "moc_lokalizemainwindow.cpp"
  //these have to be included somewhere ;)
-#include "lokalizesubwindowbase.moc"
-#include "multieditoradaptor.moc"
+#include "moc_lokalizesubwindowbase.cpp"
+#include "moc_multieditoradaptor.cpp"

@@ -151,4 +151,4 @@ void YouTube::parseJson(const QByteArray& data, Plasma::RunnerContext &context)
     }
 }
 
-#include "youtube.moc"
+#include "moc_youtube.cpp"

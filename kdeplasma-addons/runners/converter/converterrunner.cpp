@@ -261,4 +261,4 @@ void ConverterRunner::run(const Plasma::RunnerContext &context, const Plasma::Qu
     }
 }
 
-#include "converterrunner.moc"
+#include "moc_converterrunner.cpp"

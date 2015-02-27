@@ -312,4 +312,4 @@ SimilarArtistsApplet::updateNavigationIcons()
     m_backwardIcon->action()->setEnabled( !m_historyBack.isEmpty() );
 }
 
-#include "SimilarArtistsApplet.moc"
+#include "moc_SimilarArtistsApplet.cpp"

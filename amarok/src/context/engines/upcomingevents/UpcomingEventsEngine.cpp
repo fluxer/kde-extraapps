@@ -211,4 +211,4 @@ UpcomingEventsEngine::filterEvents( const LastFmEvent::List &events ) const
     return newEvents;
 }
 
-#include "UpcomingEventsEngine.moc"
+#include "moc_UpcomingEventsEngine.cpp"

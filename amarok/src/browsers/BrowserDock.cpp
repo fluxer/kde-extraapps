@@ -119,4 +119,4 @@ BrowserDock::paletteChanged( const QPalette &palette )
                 );
 }
 
-#include "BrowserDock.moc"
+#include "moc_BrowserDock.cpp"

@@ -987,4 +987,4 @@ void MinixFilesystem::processStdOut(KProcess *, char *b, int l)
 
 #endif
 
-#include "format.moc"
+#include "moc_format.cpp"

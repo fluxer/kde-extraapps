@@ -453,5 +453,5 @@ QGraphicsWidget *WindowTaskItem::busyWidget() const
     return m_busyWidget;
 }
 
-#include "windowtaskitem.moc"
+#include "moc_windowtaskitem.cpp"
 

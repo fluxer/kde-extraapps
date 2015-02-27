@@ -64,4 +64,4 @@ ConnectionAssistant::wait()
 }
 
 
-#include "ConnectionAssistant.moc"
+#include "moc_ConnectionAssistant.cpp"

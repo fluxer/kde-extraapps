@@ -151,4 +151,4 @@ namespace bt
 
 }
 
-#include "tracker.moc"
+#include "moc_tracker.cpp"

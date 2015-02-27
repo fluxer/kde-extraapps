@@ -271,4 +271,4 @@ QString RdpHostPreferences::shareMedia() const
     return m_configGroup.readEntry("shareMedia", Settings::shareMedia());
 }
 
-#include "rdphostpreferences.moc"
+#include "moc_rdphostpreferences.cpp"

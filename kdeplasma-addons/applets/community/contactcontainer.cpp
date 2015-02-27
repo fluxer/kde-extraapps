@@ -117,4 +117,4 @@ void ContactContainer::setSource(const QString& source)
 }
 
 
-#include "contactcontainer.moc"
+#include "moc_contactcontainer.cpp"

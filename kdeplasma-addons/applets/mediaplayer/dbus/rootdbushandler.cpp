@@ -71,4 +71,4 @@ Version RootDBusHandler::MprisVersion()
 
 
 
-#include "rootdbushandler.moc"
+#include "moc_rootdbushandler.cpp"

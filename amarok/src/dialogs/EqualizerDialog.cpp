@@ -324,4 +324,4 @@ EqualizerDialog::toggleEqualizer( bool enabled )
         eq->applyEqualizerPreset( eqPresets->currentIndex() );
 }
 
-#include "EqualizerDialog.moc"
+#include "moc_EqualizerDialog.cpp"

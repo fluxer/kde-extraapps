@@ -461,4 +461,4 @@ void kpDualColorButton::paintEvent (QPaintEvent *e)
 }
 
 
-#include <kpDualColorButton.moc>
+#include "moc_kpDualColorButton.cpp"

@@ -594,4 +594,4 @@ void WeatherWallpaper::dataUpdated(const QString &source, const Plasma::DataEngi
     loadImage();
 }
 
-#include "weatherwallpaper.moc"
+#include "moc_weatherwallpaper.cpp"

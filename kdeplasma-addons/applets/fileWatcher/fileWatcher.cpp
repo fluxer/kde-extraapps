@@ -292,4 +292,4 @@ QSizeF FileWatcher::sizeHint(Qt::SizeHint which, const QSizeF &constraint) const
     return hint;
 }
 
-#include "fileWatcher.moc"
+#include "moc_fileWatcher.cpp"

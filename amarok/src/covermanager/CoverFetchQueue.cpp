@@ -171,4 +171,4 @@ CoverFetchQueue::take( const Meta::AlbumPtr album )
     return KSharedPtr< CoverFetchUnit >();
 }
 
-#include "CoverFetchQueue.moc"
+#include "moc_CoverFetchQueue.cpp"

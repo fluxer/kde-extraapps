@@ -106,4 +106,4 @@ QImage NatGeoProvider::image() const
     return d->mImage;
 }
 
-#include "natgeoprovider.moc"
+#include "moc_natgeoprovider.cpp"

@@ -583,4 +583,4 @@ namespace bt
 		
 
 }
-#include "webseed.moc"
+#include "moc_webseed.cpp"

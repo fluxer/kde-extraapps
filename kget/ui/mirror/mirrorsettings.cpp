@@ -181,4 +181,4 @@ void MirrorSettings::save()
     m_transfer->setAvailableMirrors(m_file, m_model->availableMirrors());
 }
 
-#include "mirrorsettings.moc"
+#include "moc_mirrorsettings.cpp"

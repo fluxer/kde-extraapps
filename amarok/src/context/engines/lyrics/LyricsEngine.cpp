@@ -191,5 +191,5 @@ void LyricsEngine::lyricsMessage( const QString& key, const QString &val )
     setData( "lyrics", key, val );
 }
 
-#include "LyricsEngine.moc"
+#include "moc_LyricsEngine.cpp"
 

@@ -1373,4 +1373,4 @@ KMixWindow::newMixerShown(int /*tabIndex*/)
     }
 }
 
-#include "kmix.moc"
+#include "moc_kmix.cpp"

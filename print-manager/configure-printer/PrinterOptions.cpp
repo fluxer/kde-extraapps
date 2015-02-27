@@ -820,4 +820,4 @@ QString PrinterOptions::currentMakeAndModel() const
     return m_makeAndModel;
 }
 
-#include "PrinterOptions.moc"
+#include "moc_PrinterOptions.cpp"

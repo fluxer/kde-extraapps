@@ -235,4 +235,4 @@ ScanManager::foundCached(Folder *tree)
 
 }
 
-#include "scan.moc"
+#include "moc_scan.cpp"

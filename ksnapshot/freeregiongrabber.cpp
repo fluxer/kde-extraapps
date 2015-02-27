@@ -314,4 +314,4 @@ void FreeRegionGrabber::grabRect()
     }
 }
 
-#include "freeregiongrabber.moc"
+#include "moc_freeregiongrabber.cpp"

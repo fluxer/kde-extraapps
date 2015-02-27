@@ -214,4 +214,4 @@ namespace bt
 	
 	
 }
-#include "authenticate.moc"
+#include "moc_authenticate.cpp"

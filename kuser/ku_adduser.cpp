@@ -160,4 +160,4 @@ bool KU_AddUser::checkMailBox()
 
   return false;
 }
-#include "ku_adduser.moc"
+#include "moc_ku_adduser.cpp"

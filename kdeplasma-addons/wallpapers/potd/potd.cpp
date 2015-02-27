@@ -202,4 +202,4 @@ void PoTD::settingsModified()
     emit settingsChanged(true);
 }
 
-#include "potd.moc"
+#include "moc_potd.cpp"

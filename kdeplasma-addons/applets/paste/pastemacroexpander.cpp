@@ -187,4 +187,4 @@ QString PasteMacroExpander::password(const QString& args)
     return result;
 }
 
-#include "pastemacroexpander.moc"
+#include "moc_pastemacroexpander.cpp"

@@ -268,5 +268,5 @@ void KAddStringDlg::slotHelp()
   KToolInvocation::invokeHelp(QString::null, "kfilereplace");	//krazy:exclude=nullstrassign for old broken gcc
 }
 
-#include "kaddstringdlg.moc"
+#include "moc_kaddstringdlg.cpp"
 

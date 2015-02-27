@@ -21,4 +21,4 @@ Capabilities::Capability::~Capability()
     //nothing to do
 }
 
-#include "Capability.moc"
+#include "moc_Capability.cpp"

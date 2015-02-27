@@ -79,4 +79,4 @@ KGpgAddUid::setComment(const QString &comment)
 	m_comment = comment;
 }
 
-#include "kgpgadduid.moc"
+#include "moc_kgpgadduid.cpp"

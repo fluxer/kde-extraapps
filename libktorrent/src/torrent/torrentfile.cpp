@@ -215,4 +215,4 @@ namespace bt
 	}
 	
 }
-#include "torrentfile.moc"
+#include "moc_torrentfile.cpp"

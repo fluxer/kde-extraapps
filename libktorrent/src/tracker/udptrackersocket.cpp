@@ -282,4 +282,4 @@ namespace bt
 	}
 }
 
-#include "udptrackersocket.moc"
+#include "moc_udptrackersocket.cpp"

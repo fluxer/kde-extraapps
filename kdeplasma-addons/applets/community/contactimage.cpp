@@ -121,4 +121,4 @@ void ContactImage::resizeEvent(QGraphicsSceneResizeEvent* event)
 }
 
 
-#include "contactimage.moc"
+#include "moc_contactimage.cpp"

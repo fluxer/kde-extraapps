@@ -1627,4 +1627,4 @@ SqlPodcastProvider::slotConfigureProvider()
     configureProvider();
 }
 
-#include "SqlPodcastProvider.moc"
+#include "moc_SqlPodcastProvider.cpp"

@@ -650,4 +650,4 @@ QHash<QString, QString> RdpView::initKeymapToXfreerdp()
     return keymapToXfreerdpHash;
 }
 
-#include "rdpview.moc"
+#include "moc_rdpview.cpp"

@@ -779,4 +779,4 @@ void KgpgEditor::newText()
 	slotResetEncoding(false);
 }
 
-#include "kgpgeditor.moc"
+#include "moc_kgpgeditor.cpp"

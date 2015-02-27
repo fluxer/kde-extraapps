@@ -313,7 +313,7 @@ void TokenWithLayout::setUnderline( bool underline )
 }
 
 
-#include "TokenWithLayout.moc"
+#include "moc_TokenWithLayout.cpp"
 
 
 

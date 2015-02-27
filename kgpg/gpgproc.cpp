@@ -368,4 +368,4 @@ QString GPGProc::getGpgHome(const QString &binary)
 	return gpgHome;
 }
 
-#include "gpgproc.moc"
+#include "moc_gpgproc.cpp"

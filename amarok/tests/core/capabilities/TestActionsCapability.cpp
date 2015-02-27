@@ -54,4 +54,4 @@ TestActionsCapability::testCapabilityInterfaceType()
     QVERIFY( actions_capability->capabilityInterfaceType() == Capabilities::Capability::Actions );
 }
 
-#include "TestActionsCapability.moc"
+#include "moc_TestActionsCapability.cpp"

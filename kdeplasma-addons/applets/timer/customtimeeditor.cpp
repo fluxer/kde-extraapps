@@ -103,5 +103,5 @@ QString CustomTimeEditor::fromLocalizedTimer(const QString &timer)
     }
     return timer.left(p1) + ':' + timer.mid(p1 + 1, p2 - p1 - 1) + ':' + timer.mid(p2 + 1);
 }
-#include "customtimeeditor.moc"
+#include "moc_customtimeeditor.cpp"
 

@@ -124,4 +124,4 @@ void UrlWidget::save()
 }
 
 
-#include "urlwidget.moc"
+#include "moc_urlwidget.cpp"

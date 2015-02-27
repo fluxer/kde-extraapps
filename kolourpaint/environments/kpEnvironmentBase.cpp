@@ -118,4 +118,4 @@ kpMainWindow *kpEnvironmentBase::mainWindow () const
 }
 
 
-#include <kpEnvironmentBase.moc>
+#include "moc_kpEnvironmentBase.cpp"

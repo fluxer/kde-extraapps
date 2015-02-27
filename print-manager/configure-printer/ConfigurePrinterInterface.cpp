@@ -127,4 +127,4 @@ void ConfigurePrinterInterface::RemovePrinter()
     }
 }
 
-#include "ConfigurePrinterInterface.moc"
+#include "moc_ConfigurePrinterInterface.cpp"

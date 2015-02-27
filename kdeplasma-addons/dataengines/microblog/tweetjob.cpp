@@ -114,5 +114,5 @@ void TweetJob::result(KJob *job)
 }
 
 
-#include <tweetjob.moc>
+#include "moc_tweetjob.cpp"
 
