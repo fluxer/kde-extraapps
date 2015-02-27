@@ -116,10 +116,7 @@ void VideoWidget::Private::load()
     {
         newurl = url;
     }
-    if ( newurl.isLocalFile() )
-        player->load( newurl.toLocalFile() );
-    else
-        player->load( newurl );
+    player->load( newurl );
 
     connect( player->mediaObject(), SIGNAL( stateChanged( Phonon::State, Phonon::State ) ),
              q, SLOT( stateChanged( Phonon::State, Phonon::State ) ) );
@@ -447,4 +444,4 @@ void VideoWidget::resizeEvent( QResizeEvent * event )
     }
 }
 
-#include "videowidget.moc"
+#include "moc_videowidget.cpp"
