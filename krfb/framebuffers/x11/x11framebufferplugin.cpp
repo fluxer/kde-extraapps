@@ -22,7 +22,7 @@
 
 #include "x11framebuffer.h"
 
-#include <KGenericFactory>
+#include <KPluginFactory>
 
 
 X11FrameBufferPlugin::X11FrameBufferPlugin(QObject *parent, const QVariantList &args)

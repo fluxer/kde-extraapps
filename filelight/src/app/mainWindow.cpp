@@ -34,7 +34,6 @@
 #include <QLineEdit>
 #include <KStandardShortcut>
 #include <KFileDialog>
-#include <KLibLoader>
 #include <KLocale>
 #include <KMessageBox>
 #include <KShell>
@@ -50,6 +49,8 @@
 #include <KSharedConfig>
 #include <KStandardAction>
 #include <KActionCollection>
+#include <KPluginLoader>
+#include <KPluginFactory>
 
 namespace Filelight {
 

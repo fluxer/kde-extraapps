@@ -19,7 +19,7 @@ email                : markey@web.de
 #include <vector>
 #include <QString>
 
-#include <klibloader.h>
+#include <kpluginfactory.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>

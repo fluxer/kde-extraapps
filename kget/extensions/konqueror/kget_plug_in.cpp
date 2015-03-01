@@ -27,7 +27,7 @@
 #include <KDE/KRun>
 #include <KDE/KIcon>
 #include <KDE/KToolInvocation>
-#include <KDE/KGenericFactory>
+#include <KDE/KPluginFactory>
 #include <KDE/KProtocolInfo>
 #include <KDE/KFileItem>
 #include <KDE/KParts/Part>

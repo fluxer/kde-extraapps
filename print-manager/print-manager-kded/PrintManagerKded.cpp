@@ -24,7 +24,7 @@
 
 #include <QTimer>
 
-#include <KGenericFactory>
+#include <KPluginFactory>
 
 K_PLUGIN_FACTORY(PrintDFactory, registerPlugin<PrintManagerKded>();)
 K_EXPORT_PLUGIN(PrintDFactory("printmanager", "print-manager"))

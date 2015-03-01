@@ -28,7 +28,7 @@
 
 #include <KAboutData>
 #include <KConfigDialogManager>
-#include <KGenericFactory>
+#include <KPluginFactory>
 #include <KLocalizedString>
 #include <kdemacros.h>
 

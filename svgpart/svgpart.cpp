@@ -27,7 +27,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // KDE
 #include <kaboutdata.h>
 #include <kactioncollection.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kstandardaction.h>
 
 // Local

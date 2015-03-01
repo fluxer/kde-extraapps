@@ -27,7 +27,6 @@
 #include <kencodingfiledialog.h>
 #include <kiconloader.h>
 #include <kshortcutsdialog.h>
-#include <klibloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kparts/componentfactory.h>

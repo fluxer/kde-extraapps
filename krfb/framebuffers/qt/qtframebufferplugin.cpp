@@ -22,7 +22,7 @@
 
 #include "qtframebuffer.h"
 
-#include <KGenericFactory>
+#include <KPluginFactory>
 
 
 QtFrameBufferPlugin::QtFrameBufferPlugin(QObject *parent, const QVariantList &args)

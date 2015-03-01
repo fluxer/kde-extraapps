@@ -32,7 +32,7 @@
 #include <KXMLGUIClient>
 #include <Plasma/DataEngineManager>
 #include <Plasma/ServiceJob>
-
+#include <KDebug>
 
 K_PLUGIN_FACTORY(SharePluginFactory, registerPlugin<SharePluginIface>();)
 K_EXPORT_PLUGIN(SharePluginFactory("akregator_sharemicroblog_plugin"))

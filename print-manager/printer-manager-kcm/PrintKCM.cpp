@@ -30,15 +30,15 @@
 #include "PrinterDescription.h"
 
 #include <KMessageBox>
-#include <KGenericFactory>
+#include <KPluginFactory>
 #include <KAboutData>
 #include <KToolInvocation>
 #include <KIcon>
-
-#include <QMenu>
 #include <KCupsRequest.h>
 #include <KCupsServer.h>
 #include <NoSelectionRectDelegate.h>
+
+#include <QMenu>
 
 #include <cups/cups.h>
 
