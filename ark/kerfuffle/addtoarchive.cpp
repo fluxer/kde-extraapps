@@ -118,8 +118,6 @@ void AddToArchive::start()
     QTimer::singleShot(0, this, SLOT(slotStartJob()));
 }
 
-// TODO: If this class should ever be called outside main.cpp,
-//       the returns should be preceded by emitResult().
 void AddToArchive::slotStartJob(void)
 {
     kDebug();
@@ -138,11 +136,13 @@ void AddToArchive::slotStartJob(void)
     } else {
         if (m_autoFilenameSuffix.isEmpty()) {
             KMessageBox::error(NULL, i18n("You need to either supply a filename for the archive or a suffix (such as rar, tar.gz) with the <command>--autofilename</command> argument."));
+            emitResult();
             return;
         }
 
         if (m_firstPath.isEmpty()) {
             kDebug() << "Weird, this should not happen. no firstpath defined. aborting";
+            emitResult();
             return;
         }
 
@@ -167,15 +167,18 @@ void AddToArchive::slotStartJob(void)
 
     if (archive == NULL) {
         KMessageBox::error(NULL, i18n("Failed to create the new archive. Permissions might not be sufficient."));
+        emitResult();
         return;
     } else if (archive->isReadOnly()) {
         KMessageBox::error(NULL, i18n("It is not possible to create archives of this type."));
+        emitResult();
         return;
     }
 
     if (m_changeToFirstPath) {
         if (m_firstPath.isEmpty()) {
             kDebug() << "Weird, this should not happen. no firstpath defined. aborting";
+            emitResult();
             return;
         }
 
