@@ -125,6 +125,7 @@ static const struct
 	{ FileSystem::Fat16, "fat16" },
 	{ FileSystem::Fat32, "fat32" },
 	{ FileSystem::Ntfs, "ntfs" },
+	{ FileSystem::Exfat, "ntfs" },
 	{ FileSystem::ReiserFS, "reiserfs" },
 	{ FileSystem::Reiser4, "reiser4" },
 	{ FileSystem::Xfs, "xfs" },
