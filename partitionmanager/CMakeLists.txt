@@ -26,12 +26,11 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
 set(VERSION_MAJOR "1")
 set(VERSION_MINOR "1")
-set(VERSION_RELEASE "0")
+set(VERSION_RELEASE "1")
 set(VERSION_SUFFIX "")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
 add_definitions(-DVERSION="${VERSION}")
 
-set(KDE_MIN_VERSION 4.4)
 find_package(KDE4 4.14.3 REQUIRED)
 
 find_package(MSGFMT REQUIRED)
@@ -45,20 +44,8 @@ add_definitions(${KDE4_ENABLE_EXCEPTIONS})
 include(KDE4Defaults)
 include(MacroLibrary)
 
-############### prefer udisks2 over udisks
-macro_optional_find_package( UDisks2 )
-set_package_properties(UDisks2 PROPERTIES DESCRIPTION "UDisks2 support"
-                       URL "http://www.freedesktop.org/wiki/Software/udisks/"
-                       TYPE OPTIONAL
-                      )
-if ( UDISKS2_FOUND )
-    message(STATUS "Building Partition Manager with UDisks2 support enabled")
-    add_definitions(-DENABLE_UDISKS2)
-endif()
-
 include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
 add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)
-

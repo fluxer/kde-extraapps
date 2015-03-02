@@ -92,7 +92,7 @@ ExternalCommand::~ExternalCommand()
 
 void ExternalCommand::setup()
 {
-	setEnvironment(QStringList() << "LC_ALL=C" << QString("PATH=") + QString(getenv("PATH")));
+	setEnvironment(QStringList() << "LC_ALL=C" << QString("PATH=") + qgetenv("PATH"));
 	setProcessChannelMode(MergedChannels);
 
 	processes = new QProcess[command().size()];
