@@ -132,7 +132,9 @@ static const struct
 	{ FileSystem::Jfs, "jfs" },
 	{ FileSystem::Hfs, "hfs" },
 	{ FileSystem::HfsPlus, "hfs+" },
-	{ FileSystem::Ufs, "ufs" }
+	{ FileSystem::Ufs, "ufs" },
+	{ FileSystem::Btrfs, "btrfs" },
+	{ FileSystem::Nilfs2, "nilfs2" }
 };
 
 static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
