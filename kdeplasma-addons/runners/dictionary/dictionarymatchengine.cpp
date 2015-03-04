@@ -6,6 +6,7 @@
 #include <Plasma/AbstractRunner>
 #include <QThread>
 #include <QMetaMethod>
+#include <KDebug>
 
 DictionaryMatchEngine::DictionaryMatchEngine(Plasma::DataEngine *dictionaryEngine, QObject *parent)
 	: QObject(parent),

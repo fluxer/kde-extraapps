@@ -33,6 +33,7 @@
 #include <KDE/KStandardDirs>
 #include <KDE/KDirWatch>
 #include <KDE/KConfigDialog>
+#include <KDE/KDebug>
 #include <QtCore/QDir>
 #include <QtCore/QTimer>
 #include <QtCore/QThread>

@@ -21,6 +21,7 @@
 
 #include "textedit.h"
 
+#include <QtCore/QTextStream>
 #include <QtGui/QGraphicsGridLayout>
 #include <QtGui/QGraphicsTextItem>
 #include <QtGui/QScrollBar>

@@ -22,6 +22,7 @@
 #include "backgrounddelegate.h"
 #include <plasma/package.h>
 #include <KStandardDirs>
+#include <KDebug>
 #include <kdeclarative.h>
 #include <QGraphicsScene>
 #include <QDeclarativeEngine>
