@@ -59,9 +59,6 @@ public:
      */
     void defaults();
 
-protected slots:
-    void onStyle();
-
 private:
     /**
      * UI
