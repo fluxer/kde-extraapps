@@ -96,17 +96,17 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
         d->ui.leGateway->setText(gateway);
     }
     // Certificate
-    d->ui.leGatewayCertificate->setUrl(KUrl::fromPathOrUrl(dataMap[NM_STRONGSWAN_CERTIFICATE]) );
+    d->ui.leGatewayCertificate->setUrl(KUrl(dataMap[NM_STRONGSWAN_CERTIFICATE]) );
 
     // Authentication
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
     if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::PrivateKey);
-        d->ui.leAuthPrivatekeyCertificate->setUrl(KUrl::fromPathOrUrl(dataMap[NM_STRONGSWAN_USERCERT]));
-        d->ui.leAuthPrivatekeyKey->setUrl(KUrl::fromPathOrUrl(dataMap[NM_STRONGSWAN_USERKEY]));
+        d->ui.leAuthPrivatekeyCertificate->setUrl(KUrl(dataMap[NM_STRONGSWAN_USERCERT]));
+        d->ui.leAuthPrivatekeyKey->setUrl(KUrl(dataMap[NM_STRONGSWAN_USERKEY]));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::SshAgent);
-        d->ui.leAuthSshCertificate->setUrl(KUrl::fromPathOrUrl(dataMap[NM_STRONGSWAN_USERCERT]));
+        d->ui.leAuthSshCertificate->setUrl(KUrl(dataMap[NM_STRONGSWAN_USERCERT]));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Smartcard);
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {

@@ -697,8 +697,12 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
 
     line = QString(CLIENT_TAG) + '\n';
     expFile.write(line.toLatin1());
-    line = QString(REMOTE_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_REMOTE] +
-           (dataMap[NM_OPENVPN_KEY_PORT].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_PORT]) + '\n');
+    line = QString("%1 %2").arg(REMOTE_TAG, dataMap[NM_OPENVPN_KEY_REMOTE]);
+    if (dataMap[NM_OPENVPN_KEY_PORT].isEmpty()) {
+         line.append('\n');
+    } else {
+        line.append(' ' + dataMap[NM_OPENVPN_KEY_PORT] + '\n');
+    }
     expFile.write(line.toLatin1());
     if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS ||
             dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD ||
@@ -743,14 +747,22 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
             expFile.write(line.toLatin1());
         }
         if (!dataMap[NM_OPENVPN_KEY_TA].isEmpty()) {
-            line = QString(TLS_AUTH_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TA] + '\"' + (dataMap[NM_OPENVPN_KEY_TA_DIR].isEmpty() ?
-                                "\n" : (' ' + dataMap[NM_OPENVPN_KEY_TA_DIR]) + '\n');
+            line = QString(TLS_AUTH_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TA] + '\"';
+            if (dataMap[NM_OPENVPN_KEY_TA_DIR].isEmpty()) {
+                line.append("\n");
+            } else {
+                line.append(' ' + dataMap[NM_OPENVPN_KEY_TA_DIR] + '\n');
+            }
             expFile.write(line.toLatin1());
         }
     }
     if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_STATIC_KEY) {
-        line = QString(SECRET_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_STATIC_KEY] + '\"' + (dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION].isEmpty() ?
-                          "\n" : (' ' + dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION]) + '\n');
+        line = QString(SECRET_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_STATIC_KEY] + '\"';
+        if (dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION].isEmpty()) {
+            line.append("\n");
+        } else {
+            line.append(' ' + dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION] + '\n');
+        }
         expFile.write(line.toLatin1());
     }
     if (dataMap.contains(NM_OPENVPN_KEY_RENEG_SECONDS) && !dataMap[NM_OPENVPN_KEY_RENEG_SECONDS].isEmpty()) {
@@ -788,8 +800,12 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
                                                          && dataMap.contains(NM_OPENVPN_KEY_PROXY_PORT)) {
             if (proxy_port.toInt() == 0)
                 proxy_port = "8080";
-            line = QString(HTTP_PROXY_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_PROXY_SERVER] + ' ' + proxy_port +
-                    (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME].isEmpty() ? "\n" : (' ' + fileName + "-httpauthfile") + '\n');
+            line = QString(HTTP_PROXY_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_PROXY_SERVER] + ' ' + proxy_port;
+            if (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME].isEmpty()) {
+                line.append("\n");
+            } else {
+                line.append(' ' + fileName + "-httpauthfile\n");
+            }
             expFile.write(line.toLatin1());
             if (dataMap[NM_OPENVPN_KEY_PROXY_RETRY] == "yes") {
                 line = QString(HTTP_PROXY_RETRY_TAG) + '\n';
@@ -799,8 +815,12 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
             if (!dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME].isEmpty()) {
                 QFile authFile(fileName + "-httpauthfile");
                 if (authFile.open(QFile::WriteOnly | QFile::Text)) {
-                    line = dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME] + (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD].isEmpty()?
-                                                                         "\n" : (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD] + '\n'));
+                    line = dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME];
+                    if (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD].isEmpty()) {
+                        line.append("\n");
+                    } else {
+                        line.append(dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD] + '\n');
+                    }
                     authFile.write(line.toLatin1());
                     authFile.close();
                 }
