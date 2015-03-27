@@ -63,7 +63,7 @@ Module::Module(QWidget *parent, const QVariantList &args) :
 {
     KAboutData *about = new KAboutData("kcm-about-distro", 0,
                                        ki18n("About Distribution"),
-                                       global_s_versionStringFull,
+                                       "1.1.0",
                                        KLocalizedString(),
                                        KAboutData::License_GPL_V3,
                                        ki18n("Copyright 2012-2014 Harald Sitter"),
@@ -179,7 +179,3 @@ void Module::defaults()
 {
 }
 
-void Module::onStyle()
-{
-    KToolInvocation::invokeBrowser("http://www.youtube.com/watch?v=CX_4aGQWw_4");
-}
