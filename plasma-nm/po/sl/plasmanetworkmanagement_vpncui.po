@@ -1,0 +1,305 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-07 05:41+0000\n"
+"PO-Revision-Date: 2014-07-25 16:03+0200\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: vpnc.cpp:84
+msgid "Error decrypting the obfuscated password"
+msgstr "Napaka med odšifriranjem zapletenega gesla"
+
+#: vpnc.cpp:84
+msgid "Error"
+msgstr "Napaka"
+
+#: vpnc.cpp:142
+#, kde-format
+msgid "File %1 could not be opened."
+msgstr "Datoteke %1 ni bilo mogoče odpreti."
+
+#: vpnc.cpp:151
+msgid "Needed executable cisco-decrypt could not be found."
+msgstr "Ni bilo mogoče najti zahtevane izvedljive datoteke cisco-decrypt."
+
+#: vpnc.cpp:266
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+"Datoteka z nastavitvami VPN, '%1', določa, da naj bi bil promet skozi VPN "
+"tuneliran skozi TCP, to pa trenutno ni podprto v programu vpnc.\n"
+"\n"
+"Povezava se lahko vseeno ustvari, z onemogočenim TCP tuneliranjem, obstaja "
+"pa možnost, da ne bo delovala kot bi pričakovali."
+
+#: vpnc.cpp:266
+msgid "Not supported"
+msgstr "Ni podprto"
+
+#: vpnc.cpp:300
+#, kde-format
+msgid "%1: file format error."
+msgstr "%1: napaka oblike datoteke."
+
+#: vpnc.cpp:319
+#, kde-format
+msgid "%1: file could not be created"
+msgstr "%1: datoteke ni bilo mogoče ustvariti"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnc.ui:18
+msgid "Gateway:"
+msgstr "Prehod:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnc.ui:31
+msgid "User name:"
+msgstr "Uporabniško ime:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnc.ui:44
+msgid "User password:"
+msgstr "Uporabniško geslo:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:70 vpnc.ui:129
+msgid "Store"
+msgstr "Shrani"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:75 vpnc.ui:134
+msgid "Always Ask"
+msgstr "Vedno vprašaj"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:80 vpnc.ui:139
+msgid "Not Required"
+msgstr "Ni zahtevano"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnc.ui:90 vpncauth.ui:106
+msgid "Group name:"
+msgstr "Ime skupine:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnc.ui:103
+msgid "Group password:"
+msgstr "Skupinsko geslo:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: vpnc.ui:149 vpncauth.ui:79
+msgid "Show passwords"
+msgstr "Pokaži gesla"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:172
+msgid "Use hybrid authentication"
+msgstr "Uporabi hibridno overitev"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnc.ui:182
+msgid "CA &file:"
+msgstr "&Datoteka CA:"
+
+#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
+#: vpnc.ui:195
+msgid "*.pem *.crt *.cer"
+msgstr "*.pem *.crt *.cer"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: vpnc.ui:217
+msgid "Advanced..."
+msgstr "Napredno ..."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpncadvanced.ui:18
+msgid "Identification"
+msgstr "Istovetnost"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpncadvanced.ui:24
+msgid "Domain:"
+msgstr "Domena:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpncadvanced.ui:37
+msgid "Vendor:"
+msgstr "Proizvajalec:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpncadvanced.ui:60
+msgid "Transport and Security"
+msgstr "Prenos in varnost"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpncadvanced.ui:69
+msgid "Encryption method:"
+msgstr "Šifrirna metoda:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpncadvanced.ui:89
+msgid "NAT traversal:"
+msgstr "Prehod prek NAT-a:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpncadvanced.ui:109
+msgid "IKE DH Group:"
+msgstr "Skupina IKE DH:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpncadvanced.ui:129
+msgid "Perfect Forward Secrecy:"
+msgstr "Popolna skrivnostnost posredovanja:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:155
+msgid "Disable dead peer detection"
+msgstr "Onemogoči zaznavanje mrtvih vrstnikov"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpncadvanced.ui:162
+msgid "Local Port:"
+msgstr "Krajevna vrata:"
+
+#. i18n: ectx: property (toolTip), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:178
+msgid "Local port to use (0-65535). 0 (default value) means random port."
+msgstr ""
+"Krajevna vrata, ki bodo uporabljena (0 - 65535). Privzeta vrednost 0 pomeni "
+"naključna vrata."
+
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:181
+msgid "Random"
+msgstr "Naključno"
+
+#: vpncadvancedwidget.cpp:34
+msgid "Advanced VPNC properties"
+msgstr "Napredne lastnosti VPNC"
+
+#: vpncadvancedwidget.cpp:37
+msgctxt "VPNC vendor name"
+msgid "Cisco"
+msgstr "Cisco"
+
+#: vpncadvancedwidget.cpp:38
+msgctxt "VPNC vendor name"
+msgid "Netscreen"
+msgstr "Netscreen"
+
+#: vpncadvancedwidget.cpp:41
+msgctxt "VPNC encryption method"
+msgid "Secure (default)"
+msgstr "Varno (privzeto)"
+
+#: vpncadvancedwidget.cpp:42
+msgctxt "VPNC encryption method"
+msgid "Weak (DES encryption, use with caution)"
+msgstr "Šibko (šifriranje DES, uporabite s previdnostjo)"
+
+#: vpncadvancedwidget.cpp:43
+msgctxt "VPNC encryption method"
+msgid "None (completely insecure)"
+msgstr "Brez (popolnoma nezaščiteno)"
+
+#: vpncadvancedwidget.cpp:46
+msgctxt "NAT traversal method"
+msgid "NAT-T when available (default)"
+msgstr "NAT-T, ko je na voljo (privzeto)"
+
+#: vpncadvancedwidget.cpp:47
+msgctxt "NAT traversal method"
+msgid "NAT-T always"
+msgstr "NAT-T vedno"
+
+#: vpncadvancedwidget.cpp:48
+msgctxt "NAT traversal method"
+msgid "Cisco UDP"
+msgstr "Cisco UDP"
+
+#: vpncadvancedwidget.cpp:49
+msgctxt "NAT traversal method"
+msgid "Disabled"
+msgstr "Onemogočeno"
+
+#: vpncadvancedwidget.cpp:52
+msgctxt "IKE DH group"
+msgid "DH Group 1"
+msgstr "Skupina DH 1"
+
+#: vpncadvancedwidget.cpp:53
+msgctxt "IKE DH group"
+msgid "DH Group 2 (default)"
+msgstr "Skupina DH 2 (privzeto)"
+
+#: vpncadvancedwidget.cpp:54
+msgctxt "IKE DH group"
+msgid "DH Group 5"
+msgstr "Skupina DH 5"
+
+#: vpncadvancedwidget.cpp:57
+msgctxt "Perfect Forward Secrecy"
+msgid "Server (default)"
+msgstr "Strežnik (privzeto)"
+
+#: vpncadvancedwidget.cpp:58
+msgctxt "Perfect Forward Secrecy"
+msgid "None"
+msgstr "Brez"
+
+#: vpncadvancedwidget.cpp:59
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 1"
+msgstr "Skupina DH 1"
+
+#: vpncadvancedwidget.cpp:60
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 2"
+msgstr "Skupina DH 2"
+
+#: vpncadvancedwidget.cpp:61
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 5"
+msgstr "Skupina DH 5"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpncauth.ui:14
+msgid "VPNCAuthentication"
+msgstr "Overjanje VPNC"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: vpncauth.ui:23
+msgid "User Password:"
+msgstr "Uporabniško geslo:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: vpncauth.ui:36
+msgid "Group Password:"
+msgstr "Skupinsko geslo:"
+
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: vpncauth.ui:89
+msgid "Username:"
+msgstr "Uporabniško ime:"

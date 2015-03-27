@@ -1,0 +1,1368 @@
+# Translation of plasma_applet_org.kde.networkmanagement.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"PO-Revision-Date: 2014-10-11 16:14+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Часлав Илић"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "caslav.ilic@gmx.net"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
+#: applet/declarative/contents/ui/config.ui:19
+msgid "Show sections"
+msgstr "Прикажи секције"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: applet/declarative/contents/ui/config.ui:32
+msgid "Show &network speed in:"
+msgstr "Јединица &брзине мреже:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
+#: applet/declarative/contents/ui/config.ui:46
+msgid "KBytes/s"
+msgstr "KB/s"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
+#: applet/declarative/contents/ui/config.ui:51
+msgid "KBits/s"
+msgstr "Kb/s"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: applet/declarative/contents/ui/config.ui:68
+msgid "Connection Details"
+msgstr "Детаљи везе"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
+msgid "Connect"
+msgstr "Повежи се"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
+msgid "Disconnect"
+msgstr "Прекини везу"
+
+# >> @title:tab
+#: applet/declarative/contents/ui/ConnectionItem.qml:209
+msgid "Speed"
+msgstr "Брзина"
+
+# >> @title:tab
+#: applet/declarative/contents/ui/ConnectionItem.qml:215
+msgid "Details"
+msgstr "Детаљи"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:311
+msgid "Password..."
+msgstr "Лозинка..."
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:338
+msgid "Show password"
+msgstr "Прикажи лозинку"
+
+# >> @item
+#: applet/declarative/contents/ui/ConnectionItem.qml:421
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr "успостављена, ⬇ %1/s, ⬆ %2/s"
+
+# >> @item
+#: applet/declarative/contents/ui/ConnectionItem.qml:425
+msgid "Connected"
+msgstr "успостављена"
+
+#: applet/declarative/contents/ui/Header.qml:58
+#: libs/models/networkmodelitem.cpp:312
+msgid "Available connections"
+msgstr "Доступне везе"
+
+#: applet/declarative/contents/ui/Toolbar.qml:58
+msgid "Wireless enabled"
+msgstr "Бежична активирана"
+
+#: applet/declarative/contents/ui/Toolbar.qml:58
+msgid "Wireless disabled"
+msgstr "Бежична деактивирана"
+
+#: applet/declarative/contents/ui/Toolbar.qml:72
+msgid "Mobile broadband enabled"
+msgstr "Мобилна широкопојасна активирана"
+
+#: applet/declarative/contents/ui/Toolbar.qml:72
+msgid "Mobile broadband disabled"
+msgstr "Мобилна широкопојасна деактивирана"
+
+#: applet/declarative/contents/ui/Toolbar.qml:85
+msgid "Airplane mode enabled"
+msgstr "Авионски режим активиран"
+
+#: applet/declarative/contents/ui/Toolbar.qml:85
+msgid "Airplane mode disabled"
+msgstr "Авионски режим деактивиран"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:80
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "повезано"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:83
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "повезано"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:86
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "повезано"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:89
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "неактивно"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:92
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "неповезано"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:95
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "прекида се"
+
+# >> @item
+#: libs/declarative/networkstatus.cpp:98
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "повезује се"
+
+#: libs/declarative/networkstatus.cpp:143
+msgid "VPN Connection"
+msgstr "ВПН веза"
+
+#: libs/declarative/networkstatus.cpp:148
+#, kde-format
+msgid "Connected to %1"
+msgstr "Повезан на %1"
+
+#: libs/declarative/networkstatus.cpp:150
+#, kde-format
+msgid "Connecting to %1"
+msgstr "Повезујем се на %1"
+
+#: libs/declarative/networkstatus.cpp:173
+msgid "NetworkManager not running"
+msgstr "Менаџер мреже није у погону"
+
+#: libs/declarative/networkstatus.cpp:178
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "Потребан је Менаџер мреже 0.9.8, нађен %1."
+
+#: libs/declarative/networkstatus.cpp:181
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "Непознато"
+
+#: libs/declarative/trafficmonitor.cpp:141
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr "Примљено"
+
+#: libs/declarative/trafficmonitor.cpp:143
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "Послато"
+
+#: libs/declarative/trafficmonitor.cpp:203
+msgid "KBit/s"
+msgstr "Kb/s"
+
+#: libs/declarative/trafficmonitor.cpp:205
+msgid "MBit/s"
+msgstr " Mb/s"
+
+#: libs/declarative/trafficmonitor.cpp:210
+msgid "GBit/s"
+msgstr "Gb/s"
+
+#: libs/declarative/trafficmonitor.cpp:234
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+# >> @title:column
+#: libs/declarative/trafficmonitor.cpp:243
+msgid "Received"
+msgstr "примљено"
+
+# >> @title:column
+#: libs/declarative/trafficmonitor.cpp:246
+msgid "Transmitted"
+msgstr "послато"
+
+#: libs/handler.cpp:89
+msgid "Missing VPN plugin"
+msgstr "Недостаје прикључак за ВПН"
+
+#: libs/handler.cpp:391
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "Не могу да активирам %1"
+
+#: libs/handler.cpp:396
+#, kde-format
+msgid "Failed to add %1"
+msgstr "Не могу да додам %1"
+
+#: libs/handler.cpp:401
+msgid "Failed to request scan"
+msgstr "Не могу да затражим скенирање"
+
+# >> @title:column
+#: libs/models/editoridentitymodel.cpp:62
+msgid "Connection name"
+msgstr "име везе"
+
+# >> @title:column
+#: libs/models/editoridentitymodel.cpp:64
+msgid "Last used"
+msgstr "последње коришћена"
+
+#: libs/models/networkmodelitem.cpp:310
+msgid "Active connections"
+msgstr "Активне везе"
+
+#: libs/uiutils.cpp:58 libs/uiutils.cpp:104
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Жичано етернетско"
+
+#: libs/uiutils.cpp:61
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "Бежично 802.11"
+
+#: libs/uiutils.cpp:64
+msgctxt "title of the interface widget in nm's popup"
+msgid "Bluetooth"
+msgstr "Блутут"
+
+#: libs/uiutils.cpp:67
+msgctxt "title of the interface widget in nm's popup"
+msgid "WiMAX"
+msgstr "Вимакс"
+
+#: libs/uiutils.cpp:70
+msgctxt "title of the interface widget in nm's popup"
+msgid "Infiniband"
+msgstr "Инфинибанд"
+
+#: libs/uiutils.cpp:73
+msgctxt "title of the interface widget in nm's popup"
+msgid "ADSL"
+msgstr "АДСЛ"
+
+#: libs/uiutils.cpp:76
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bond)"
+msgstr "Виртуелно (спој)"
+
+#: libs/uiutils.cpp:79
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bridge)"
+msgstr "Виртуелно (мост)"
+
+#: libs/uiutils.cpp:82
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (vlan)"
+msgstr "Виртуелно (ВЛАН)"
+
+#: libs/uiutils.cpp:89
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Серијско модемско"
+
+#: libs/uiutils.cpp:94
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Мобилно широкопојасно"
+
+#: libs/uiutils.cpp:116
+msgid "ADSL"
+msgstr "АДСЛ"
+
+#: libs/uiutils.cpp:120
+msgid "DSL"
+msgstr "ДСЛ"
+
+#: libs/uiutils.cpp:124
+msgid "Bluetooth"
+msgstr "Блутут"
+
+#: libs/uiutils.cpp:128
+msgid "Bond"
+msgstr "Спој"
+
+#: libs/uiutils.cpp:131
+msgid "Bridge"
+msgstr "Мост"
+
+#: libs/uiutils.cpp:135
+msgid "Mobile broadband"
+msgstr "Мобилна широкопојасна"
+
+#: libs/uiutils.cpp:139
+msgid "Infiniband"
+msgstr "Инфинибанд"
+
+#: libs/uiutils.cpp:142
+msgid "Olpc mesh"
+msgstr "ОЛПЦ решетка"
+
+#: libs/uiutils.cpp:145
+msgid "VLAN"
+msgstr "ВЛАН"
+
+#: libs/uiutils.cpp:148
+msgid "VPN"
+msgstr "ВПН"
+
+#: libs/uiutils.cpp:152
+msgid "WiMAX"
+msgstr "Вимакс"
+
+#: libs/uiutils.cpp:156
+msgid "Wired"
+msgstr "Жичана"
+
+#: libs/uiutils.cpp:160
+msgid "Wireless"
+msgstr "Бежична"
+
+#: libs/uiutils.cpp:164
+msgid "Unknown connection type"
+msgstr "Непозната врста везе"
+
+#: libs/uiutils.cpp:176
+#, kde-format
+msgid "Wireless Interface (%1)"
+msgstr "Бежично сучеље (%1)"
+
+#: libs/uiutils.cpp:179
+#, kde-format
+msgid "Wired Interface (%1)"
+msgstr "Жичано сучеље (%1)"
+
+#: libs/uiutils.cpp:182
+#, kde-format
+msgid "Bluetooth (%1)"
+msgstr "Блутут (%1)"
+
+#: libs/uiutils.cpp:185
+#, kde-format
+msgid "Modem (%1)"
+msgstr "Модем (%1)"
+
+#: libs/uiutils.cpp:188
+#, kde-format
+msgid "ADSL (%1)"
+msgstr "АДСЛ (%1)"
+
+#: libs/uiutils.cpp:191
+#, kde-format
+msgid "VLan (%1)"
+msgstr "ВЛАН (%1)"
+
+#: libs/uiutils.cpp:194
+#, kde-format
+msgid "Bridge (%1)"
+msgstr "Мост (%1)"
+
+#: libs/uiutils.cpp:207
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Непознато"
+
+#: libs/uiutils.cpp:210
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "Неуправљано"
+
+#: libs/uiutils.cpp:213
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "Недоступно"
+
+#: libs/uiutils.cpp:216
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "Није повезано"
+
+#: libs/uiutils.cpp:219
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Припремам повезивање"
+
+#: libs/uiutils.cpp:222
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Подешавам сучеље"
+
+#: libs/uiutils.cpp:225
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Чекам овлашћење"
+
+#: libs/uiutils.cpp:228
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Постављам мрежну адресу"
+
+#: libs/uiutils.cpp:231
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr "Проверавам даљу повезивост"
+
+#: libs/uiutils.cpp:234
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "Чекам секундарну везу"
+
+#: libs/uiutils.cpp:238
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Повезано"
+
+#: libs/uiutils.cpp:240
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Повезано на %1"
+
+#: libs/uiutils.cpp:244
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "Обустављам везу"
+
+#: libs/uiutils.cpp:247
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "Повезивање пропало"
+
+#: libs/uiutils.cpp:250 libs/uiutils.cpp:284
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Грешка: лоше стање"
+
+#: libs/uiutils.cpp:260
+msgctxt "The state of the VPN connection is unknown"
+msgid "Unknown"
+msgstr "Непознато"
+
+#: libs/uiutils.cpp:263
+msgctxt "The VPN connection is preparing to connect"
+msgid "Preparing to connect"
+msgstr "Припремам повезивање"
+
+#: libs/uiutils.cpp:266
+msgctxt "The VPN connection needs authorization credentials"
+msgid "Needs authorization"
+msgstr "Потребно овлашћење"
+
+#: libs/uiutils.cpp:269
+msgctxt "The VPN connection is being established"
+msgid "Connecting"
+msgstr "Повезујем се"
+
+#: libs/uiutils.cpp:272
+msgctxt "The VPN connection is getting an IP address"
+msgid "Setting network address"
+msgstr "Постављам мрежну адресу"
+
+#: libs/uiutils.cpp:275
+msgctxt "The VPN connection is active"
+msgid "Activated"
+msgstr "Активирана"
+
+#: libs/uiutils.cpp:278
+msgctxt "The VPN connection failed"
+msgid "Failed"
+msgstr "Пропала"
+
+#: libs/uiutils.cpp:281
+msgctxt "The VPN connection is disconnected"
+msgid "Failed"
+msgstr "Пропала"
+
+#: libs/uiutils.cpp:293
+msgctxt "wireless network operation mode"
+msgid "Unknown"
+msgstr "непозната"
+
+#: libs/uiutils.cpp:296
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "импровизована"
+
+#: libs/uiutils.cpp:299
+msgctxt "wireless network operation mode"
+msgid "Infrastructure"
+msgstr "инфраструктурна"
+
+#: libs/uiutils.cpp:302
+msgctxt "wireless network operation mode"
+msgid "Access point"
+msgstr "приступна тачка"
+
+#: libs/uiutils.cpp:305
+msgid "INCORRECT MODE FIX ME"
+msgstr "ЛОШ РЕЖИМ ПОПРАВИ МЕ"
+
+#: libs/uiutils.cpp:327
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "ВЕП40 по паровима"
+
+#: libs/uiutils.cpp:329
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "ВЕП104 по паровима"
+
+#: libs/uiutils.cpp:331
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "ТКИП по паровима"
+
+#: libs/uiutils.cpp:333
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "ЦЦМП по паровима"
+
+#: libs/uiutils.cpp:335
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "ВЕП40 групно"
+
+#: libs/uiutils.cpp:337
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "ВЕП104 групно"
+
+#: libs/uiutils.cpp:339
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "ТКИП групно"
+
+#: libs/uiutils.cpp:341
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "ЦЦМП групно"
+
+#: libs/uiutils.cpp:343
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "ПСК"
+
+#: libs/uiutils.cpp:345
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: libs/uiutils.cpp:355
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> Bit/s"
+msgstr "<numid>%1</numid> b/s"
+
+#: libs/uiutils.cpp:357
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> MBit/s"
+msgstr "<numid>%1</numid> Mb/s"
+
+#: libs/uiutils.cpp:359
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> GBit/s"
+msgstr "<numid>%1</numid> Gb/s"
+
+#: libs/uiutils.cpp:385
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "LTE"
+msgstr "ЛТЕ"
+
+#: libs/uiutils.cpp:387
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "UMTS/HSxPA"
+msgstr "УМТС/ХСнПА"
+
+#: libs/uiutils.cpp:389
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GPRS/EDGE"
+msgstr "ГПРС/ЕДГЕ"
+
+#: libs/uiutils.cpp:391
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GSM"
+msgstr "ГСМ"
+
+#: libs/uiutils.cpp:393 libs/uiutils.cpp:396
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "Any"
+msgstr "било који"
+
+#: libs/uiutils.cpp:402
+msgctxt "Cellular access technology"
+msgid "LTE"
+msgstr "ЛТЕ"
+
+#: libs/uiutils.cpp:404
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision B"
+msgstr "ЦДМА2000 ЕВ‑ДО ревизија Б"
+
+#: libs/uiutils.cpp:406
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision A"
+msgstr "ЦДМА2000 ЕВ‑ДО ревизија А"
+
+#: libs/uiutils.cpp:408
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision 0"
+msgstr "ЦДМА2000 ЕВ‑ДО ревизија 0"
+
+#: libs/uiutils.cpp:410
+msgctxt "Cellular access technology"
+msgid "CDMA2000 1xRTT"
+msgstr "ЦДМА2000 1xРТТ"
+
+#: libs/uiutils.cpp:412
+msgctxt "Cellular access technology"
+msgid "HSPA+"
+msgstr "ХСПА+"
+
+#: libs/uiutils.cpp:414
+msgctxt "Cellular access technology"
+msgid "HSPA"
+msgstr "ХСПА"
+
+#: libs/uiutils.cpp:416
+msgctxt "Cellular access technology"
+msgid "HSUPA"
+msgstr "ХСУПА"
+
+#: libs/uiutils.cpp:418
+msgctxt "Cellular access technology"
+msgid "HSDPA"
+msgstr "ХСДПА"
+
+#: libs/uiutils.cpp:420
+msgctxt "Cellular access technology"
+msgid "UMTS"
+msgstr "УМТС"
+
+#: libs/uiutils.cpp:422
+msgctxt "Cellular access technology"
+msgid "EDGE"
+msgstr "ЕДГЕ"
+
+#: libs/uiutils.cpp:424
+msgctxt "Cellular access technology"
+msgid "GPRS"
+msgstr "ГПРС"
+
+#: libs/uiutils.cpp:426
+msgctxt "Cellular access technology"
+msgid "Compact GSM"
+msgstr "компактни ГСМ"
+
+#: libs/uiutils.cpp:428
+msgctxt "Cellular access technology"
+msgid "GSM"
+msgstr "ГСМ"
+
+#: libs/uiutils.cpp:430
+msgctxt "Analog wireline modem"
+msgid "Analog"
+msgstr "аналогно"
+
+#: libs/uiutils.cpp:432 libs/uiutils.cpp:437
+msgctxt "Unknown cellular access technology"
+msgid "Unknown"
+msgstr "непознато"
+
+#: libs/uiutils.cpp:434
+msgctxt "Any cellular access technology"
+msgid "Any"
+msgstr "било које"
+
+#: libs/uiutils.cpp:444
+msgctxt "possible SIM lock reason"
+msgid "Modem is unlocked."
+msgstr "Модем је откључан."
+
+#: libs/uiutils.cpp:446
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN code."
+msgstr "СИМ захтева ПИН код."
+
+#: libs/uiutils.cpp:448
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN2 code."
+msgstr "СИМ захтева ПИН2 код."
+
+#: libs/uiutils.cpp:450
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK code."
+msgstr "СИМ захтева ПУК код."
+
+#: libs/uiutils.cpp:452
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK2 code."
+msgstr "СИМ захтева ПУК2 код."
+
+# rewrite-msgid: /service//
+#: libs/uiutils.cpp:454
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PIN code."
+msgstr "Модем захтева ПИН ко̂д провајдера."
+
+# rewrite-msgid: /service//
+#: libs/uiutils.cpp:456
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PUK code."
+msgstr "Модем захтева ПУК ко̂д провајдера."
+
+#: libs/uiutils.cpp:458
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PIN code."
+msgstr "Модем захтева ПИН ко̂д мреже."
+
+#: libs/uiutils.cpp:460
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PUK code."
+msgstr "Модем захтева ПУК ко̂д мреже."
+
+#: libs/uiutils.cpp:462
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PIN code."
+msgstr "Модем захтева ПИН код."
+
+#: libs/uiutils.cpp:464
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PIN code."
+msgstr "Модем захтева компанијски ПИН код."
+
+#: libs/uiutils.cpp:466
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PUK code."
+msgstr "Модем захтева компанијски ПУК код."
+
+#: libs/uiutils.cpp:468
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PIN code."
+msgstr "Модем захтева ПХ‑ФСИМ ПИН код."
+
+#: libs/uiutils.cpp:470
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PUK code."
+msgstr "Модем захтева ПХ‑ФСИМ ПУК код."
+
+#: libs/uiutils.cpp:472
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PIN code."
+msgstr "Модем захтева ПИН ко̂д мрежног подскупа."
+
+#: libs/uiutils.cpp:474
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PUK code."
+msgstr "Модем захтева ПУК ко̂д мрежног подскупа."
+
+#: libs/uiutils.cpp:477
+msgctxt "possible SIM lock reason"
+msgid "Lock reason unknown."
+msgstr "Непознат разлог закључавања."
+
+# >> @item NSP type
+#: libs/uiutils.cpp:485 libs/uiutils.cpp:491
+msgctxt "Unknown"
+msgid "Unknown Wimax NSP type"
+msgstr "непознат тип вимаксНСП‑а"
+
+# >> @item NSP type
+#: libs/uiutils.cpp:486
+msgid "Home"
+msgstr "домаће"
+
+# >> @item NSP type
+#: libs/uiutils.cpp:487
+msgid "Partner"
+msgstr "саговорник"
+
+# >> @item NSP type
+#: libs/uiutils.cpp:488
+msgid "Roaming partner"
+msgstr "партнер у ромингу"
+
+#: libs/uiutils.cpp:513
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "небезбедно"
+
+#: libs/uiutils.cpp:516
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "ВЕП"
+
+#: libs/uiutils.cpp:519
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: libs/uiutils.cpp:522
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "динамички ВЕП"
+
+#: libs/uiutils.cpp:525
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "ВПА‑ПСК"
+
+#: libs/uiutils.cpp:528
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: libs/uiutils.cpp:531
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "ВПА2‑ПСК"
+
+#: libs/uiutils.cpp:534
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: libs/uiutils.cpp:537
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "непознат тип безбедности"
+
+#: libs/uiutils.cpp:548
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "небезбедно"
+
+#: libs/uiutils.cpp:551
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "ВЕП"
+
+#: libs/uiutils.cpp:554
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+#: libs/uiutils.cpp:557
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "динамички ВЕП"
+
+#: libs/uiutils.cpp:560
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "ВПА‑ПСК"
+
+#: libs/uiutils.cpp:563
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: libs/uiutils.cpp:566
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "ВПА2‑ПСК"
+
+#: libs/uiutils.cpp:569
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "ВПА2‑ЕАП"
+
+#: libs/uiutils.cpp:572
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "непознат тип безбедности"
+
+#: libs/uiutils.cpp:595
+msgid "System name:"
+msgstr "Име система:"
+
+#: libs/uiutils.cpp:604
+msgid "IPv4 Address:"
+msgstr "ИПв4 адреса:"
+
+#: libs/uiutils.cpp:614
+msgid "IPv4 Gateway:"
+msgstr "ИПв4 мрежни излаз:"
+
+#: libs/uiutils.cpp:624
+msgid "IPv6 Address:"
+msgstr "ИПв6 адресе:"
+
+#: libs/uiutils.cpp:634
+msgid "IPv6 Gateway:"
+msgstr "ИПв6 мрежни излаз:"
+
+#: libs/uiutils.cpp:639
+msgid "Driver:"
+msgstr "Драјвер:"
+
+#: libs/uiutils.cpp:655
+msgctxt "Name"
+msgid "Bluetooth name"
+msgstr "Блутут име:"
+
+#: libs/uiutils.cpp:659 libs/uiutils.cpp:794 libs/uiutils.cpp:818
+msgid "MAC Address:"
+msgstr "МАЦ адреса:"
+
+#: libs/uiutils.cpp:686
+msgid "Operator:"
+msgstr "Оператер:"
+
+#: libs/uiutils.cpp:688
+msgid "Network ID:"
+msgstr "ИД мреже:"
+
+#: libs/uiutils.cpp:692 libs/uiutils.cpp:767
+msgid "Signal Quality:"
+msgstr "Квалитет сигнала:"
+
+#: libs/uiutils.cpp:696
+msgid "Access Technology:"
+msgstr "Технологија приступа:"
+
+#: libs/uiutils.cpp:700
+msgid "Allowed Mode:"
+msgstr "Дозвољени режим:"
+
+#: libs/uiutils.cpp:704
+msgid "Unlock Required:"
+msgstr "Неопходно откључавање:"
+
+#: libs/uiutils.cpp:708
+msgid "IMEI:"
+msgstr "ИМЕИ:"
+
+#: libs/uiutils.cpp:715
+msgid "IMSI:"
+msgstr "ИМСИ:"
+
+#: libs/uiutils.cpp:736
+msgid "VPN plugin:"
+msgstr "ВПН прикључак:"
+
+#: libs/uiutils.cpp:740
+msgid "Banner:"
+msgstr "Барјак:"
+
+#: libs/uiutils.cpp:759
+msgid "Bsid:"
+msgstr "БСИД:"
+
+#: libs/uiutils.cpp:763
+msgid "NSP Name:"
+msgstr "НСП име:"
+
+#: libs/uiutils.cpp:767 libs/uiutils.cpp:826
+#, kde-format
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/uiutils.cpp:771
+msgid "Network Type:"
+msgstr "Тип мреже:"
+
+#: libs/uiutils.cpp:790 libs/uiutils.cpp:814
+msgid "Connection speed:"
+msgstr "Брзина везе:"
+
+#: libs/uiutils.cpp:822
+msgid "Mode:"
+msgstr "Режим:"
+
+#: libs/uiutils.cpp:826
+msgid "Signal strength:"
+msgstr "Јачина сигнала:"
+
+#: libs/uiutils.cpp:830
+msgid "Access point (SSID):"
+msgstr "Приступна тачка (ССИД):"
+
+#: libs/uiutils.cpp:834
+msgid "Access point (BSSID):"
+msgstr "Приступна тачка (БССИД):"
+
+#: libs/uiutils.cpp:838
+msgctxt "Wifi AP channel and frequency"
+msgid "Channel:"
+msgstr "Канал:"
+
+#: libs/uiutils.cpp:838
+#, kde-format
+msgid "%1 (%2 MHz)"
+msgstr "%1 (%2 MHz)"
+
+#: libs/uiutils.cpp:846 libs/uiutils.cpp:852
+msgid "Security:"
+msgstr "Безбедност:"
+
+#: libs/uiutils.cpp:857
+msgid "Frequency band:"
+msgstr "Појас фреквенција:"
+
+#: libs/uiutils.cpp:876
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "пре %1 минута"
+msgstr[1] "пре %1 минута"
+msgstr[2] "пре %1 минута"
+msgstr[3] "пре минут"
+
+#: libs/uiutils.cpp:883
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "пре %1 сат"
+msgstr[1] "пре %1 сата"
+msgstr[2] "пре %1 сати"
+msgstr[3] "пре сат"
+
+#: libs/uiutils.cpp:888
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "јуче"
+
+#: libs/uiutils.cpp:894
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "никад"
+
+#: libs/uiutils.cpp:910
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "Last used one minute ago"
+msgid_plural "Last used %1 minutes ago"
+msgstr[0] "последње коришћено пре %1 минут"
+msgstr[1] "последње коришћено пре %1 минута"
+msgstr[2] "последње коришћено пре %1 минута"
+msgstr[3] "последње коришћено пре минут"
+
+#: libs/uiutils.cpp:917
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "Last used one hour ago"
+msgid_plural "Last used %1 hours ago"
+msgstr[0] "последње коришћено пре %1 сат"
+msgstr[1] "последње коришћено пре %1 сата"
+msgstr[2] "последње коришћено пре %1 сати"
+msgstr[3] "последње коришћено пре сат"
+
+#: libs/uiutils.cpp:922
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Last used yesterday"
+msgstr "последње коришћено јуче"
+
+#: libs/uiutils.cpp:924
+#, kde-format
+msgid "Last used on %1"
+msgstr ""
+"последње коришћено %1"
+"|/|"
+"последње коришћено $[на-ријеч %1 ген]"
+
+#: libs/uiutils.cpp:928
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never used"
+msgstr "никад коришћено"
+
+#: settings/details/detailkeyseditor.cpp:92
+msgid "Driver"
+msgstr "Драјвер"
+
+#: settings/details/detailkeyseditor.cpp:92
+msgid "Device driver"
+msgstr "Драјвер уређаја"
+
+#: settings/details/detailkeyseditor.cpp:93
+msgid "Connection Speed"
+msgstr "Брзина везе"
+
+#: settings/details/detailkeyseditor.cpp:93
+msgid "Connection speed"
+msgstr "Брзина везе"
+
+#: settings/details/detailkeyseditor.cpp:94
+msgid "System Name"
+msgstr "системском имену"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "MAC Address"
+msgstr "МАЦ адреса"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "Hardware address"
+msgstr "Хардверска адреса"
+
+#: settings/details/detailkeyseditor.cpp:98
+msgid "IPv4 Address"
+msgstr "ИПв4 адреса"
+
+#: settings/details/detailkeyseditor.cpp:98
+msgid "IP version 4 address"
+msgstr "ИПв4 адреса"
+
+#: settings/details/detailkeyseditor.cpp:101
+msgid "IPv4 Gateway"
+msgstr "ИПв4 мрежни излаз"
+
+#: settings/details/detailkeyseditor.cpp:101
+msgid "IP version 4 default gateway"
+msgstr "Подразумевани ИПв4 мрежни излаз"
+
+#: settings/details/detailkeyseditor.cpp:104
+msgid "IPv6 Address"
+msgstr "ИПв6 адресе"
+
+#: settings/details/detailkeyseditor.cpp:104
+msgid "IP version 6 address"
+msgstr "ИПв6 адреса"
+
+#: settings/details/detailkeyseditor.cpp:107
+msgid "IPv6 Gateway"
+msgstr "ИПв6 мрежни излаз"
+
+#: settings/details/detailkeyseditor.cpp:107
+msgid "IP version 6 default gateway"
+msgstr "Подразумевани ИПв6 мрежни излаз"
+
+#: settings/details/detailkeyseditor.cpp:110
+msgid "WiMAX Bsid"
+msgstr "Вимакс БСИД"
+
+#: settings/details/detailkeyseditor.cpp:110
+msgid "The ID of the serving base station as received from the network"
+msgstr "ИД опслужујуће базне станице, добијен од мреже"
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "WiMAX NSP"
+msgstr "Вимакс НСП"
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "The name of the NSP"
+msgstr "Име НСП‑а"
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "WiMAX Signal"
+msgstr "Вимакс сигнал"
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "The current signal quality of the NSP, in percent."
+msgstr "Тренутни квалитет сигнала НСП‑а, у процентима."
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "WiMAX NSP Type"
+msgstr "Тип вимакс НСП‑а"
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "The network type of the NSP."
+msgstr "Мрежни тип НСП‑а."
+
+#: settings/details/detailkeyseditor.cpp:116
+msgid "Access Point (SSID)"
+msgstr "Приступна тачка (ССИД)"
+
+#: settings/details/detailkeyseditor.cpp:116
+msgid "Wireless Access Point's SSID"
+msgstr "ССИД бежичне приступне тачке"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Signal Strength"
+msgstr "Јачина сигнала"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Wireless Access Point's signal strength"
+msgstr "Јачина сигнала бежичне приступне тачке"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Access Point (MAC)"
+msgstr "Приступна тачка (МАЦ)"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Wireless Access Point's Hardware Address"
+msgstr "Хардверска адреса бежичне приступне тачке"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Band"
+msgstr "Бежични појас"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Frequency Band"
+msgstr "Појас бежичне фреквенције"
+
+#: settings/details/detailkeyseditor.cpp:120
+msgid "Wireless Channel"
+msgstr "Бежични канал"
+
+#: settings/details/detailkeyseditor.cpp:120
+msgid "Wireless Frequency Channel"
+msgstr "Канал бежичне фреквенције"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Wireless Security"
+msgstr "Бежична безбедност"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Describes the security capabilities of the access point"
+msgstr "Описује безбедносне способности приступне тачке"
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "Wireless Mode"
+msgstr "Бежични режим"
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "The operating mode of the wireless device"
+msgstr "Радни режим бежичног уређаја"
+
+#: settings/details/detailkeyseditor.cpp:125
+msgid "Mobile Operator"
+msgstr "Мобилни оператер"
+
+#: settings/details/detailkeyseditor.cpp:125
+msgid "Mobile Operator's Name"
+msgstr "Име мобилног оператера"
+
+#: settings/details/detailkeyseditor.cpp:126
+msgid "Mobile Signal Quality"
+msgstr "Квалитет мобилног сигнала"
+
+#: settings/details/detailkeyseditor.cpp:127
+msgid "Mobile Access Technology"
+msgstr "Технологија мобилног приступа"
+
+#: settings/details/detailkeyseditor.cpp:129
+msgid "Mobile Allowed Mode"
+msgstr "Дозвољени мобилни режим"
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Unlock Required"
+msgstr "Неопходно откључавање мобилног"
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Master Device"
+msgstr "Главни мобилни уређај"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Device IMEI"
+msgstr "ИМЕИ мобилног уређаја"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Device Serial Number"
+msgstr "Серијски број мобилног уређаја"
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device IMSI"
+msgstr "ИМСИ мобилног уређаја"
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device Identity Number"
+msgstr "Број идентитета мобилног уређаја"
+
+#: settings/details/detailkeyseditor.cpp:135
+msgid "Bluetooth Name"
+msgstr "Блутут име"
+
+#: settings/details/detailkeyseditor.cpp:135
+msgid "Bluetooth name of the device"
+msgstr "Блутут име уређаја"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "VPN Plugin"
+msgstr "ВПН прикључак"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "VPN plugin type"
+msgstr "Тип ВПН прикључка"
+
+#: settings/details/detailkeyseditor.cpp:137
+msgid "VPN Banner"
+msgstr "ВПН барјак"
+
+#: settings/details/detailkeyseditor.cpp:137
+msgid "VPN connection banner"
+msgstr "Барјак ВПН везе"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settings/details/detailkeyswidget.ui:34
+msgid "Available Details"
+msgstr "Доступни детаљи"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availDetails)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentDetails)
+#: settings/details/detailkeyswidget.ui:78
+#: settings/details/detailkeyswidget.ui:251
+msgctxt "title of a table's column"
+msgid "Name"
+msgstr "име"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/details/detailkeyswidget.ui:204
+msgid "Details to Show"
+msgstr "Детаљи за приказ"

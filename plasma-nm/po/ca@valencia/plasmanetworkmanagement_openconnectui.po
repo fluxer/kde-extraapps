@@ -1,0 +1,154 @@
+# Translation of plasmanetworkmanagement_openconnectui.po to Catalan
+# Copyright (C) 2014 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Antoni Bella Pérez <antonibella5@orange.es>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:57+0000\n"
+"PO-Revision-Date: 2014-01-10 01:37+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@orange.es>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: openconnectauth.cpp:284
+msgid "Contacting host, please wait..."
+msgstr "S'està connectant amb el servidor, espereu..."
+
+#: openconnectauth.cpp:418
+msgid "&Show password"
+msgstr "Mo&stra la contrasenya"
+
+#: openconnectauth.cpp:478
+msgid "Login"
+msgstr "Entrada"
+
+#: openconnectauth.cpp:526
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"Ha fallat la verificació del certificat del servidor VPN «%1».\n"
+"Motiu: %2\n"
+"L'accepte malgrat tot?"
+
+#: openconnectauth.cpp:611
+msgid "Connection attempt was unsuccessful."
+msgstr "L'intent de connexió ha estat infructuós."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:20
+msgid "OpenConnect VPN Authentication"
+msgstr "Autenticació VPN OpenConnect"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:40
+msgid "VPN Host"
+msgstr "Servidor VPN"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
+#: openconnectauth.ui:56
+msgid "Connect"
+msgstr "Connecta"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:77
+msgid "Automatically start connecting next time"
+msgstr "Inicia automàticament la connexió la propera vegada"
+
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:112
+msgid "View Log"
+msgstr "Mostra el registre"
+
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:122
+msgid "Log Level:"
+msgstr "Nivell de depuració:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:133
+msgid "Error"
+msgstr "Error"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:138
+msgid "Info"
+msgstr "Informació"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:143
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr "Depuració"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:148
+msgid "Trace"
+msgstr "Traça"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:14
+msgid "OpenConnect Settings"
+msgstr "Paràmetres de l'OpenConnect"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:20
+msgctxt "like in General settings"
+msgid "General"
+msgstr "General"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:29
+msgid "Gateway:"
+msgstr "Passarel·la:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:42
+msgid "CA Certificate:"
+msgstr "Certificat CA:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:55
+msgid "Proxy:"
+msgstr "Servidor intermediari:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:68
+msgid "CSD Wrapper Script:"
+msgstr "Script d'embolcall CSD:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:78
+msgid "Allow Cisco Secure Desktop &trojan"
+msgstr "Permetre el cavall de &Troia de «Cisco Secure Desktop»"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:91
+msgid "Certificate Authentication"
+msgstr "Certificat d'autenticació"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:97
+msgid "User Certificate:"
+msgstr "Certificat de l'usuari:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:107
+msgid "Private Key:"
+msgstr "Clau privada:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:123
+msgid "Use FSID for key passphrase"
+msgstr "Usa FSID per a la frase de contrasenya"

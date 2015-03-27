@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdenm\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2013-12-30 23:58+0000\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: bosanski <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Launchpad (build 16877)\n"
+"X-Launchpad-Export-Date: 2014-01-01 05:41+0000\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Samir Ribić,memsud"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "samir.ribic@etf.unsa.ba,dedovic.memsud94@hotmail.com"
+
+#: connectioneditor.cpp:76
+#, fuzzy
+#| msgid "Search connections..."
+msgid "Type here to search connections..."
+msgstr "Potrazi vezu..."
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr "Dodaj"
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr "Hardver"
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr "DSL"
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr "InfiniBand"
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr "Mobilna širokopojasna..."
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr "Žičana"
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr "Dijeljena žičana"
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr "Bežičn a"
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr "Dijeljena bežična"
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: connectioneditor.cpp:151
+#, fuzzy
+#| msgid "Virtual"
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr "Virtuelna"
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr "Povez"
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr "Most"
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr "VLAN"
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr "VPN"
+
+#: connectioneditor.cpp:178
+#, fuzzy
+#| msgid "Edit"
+msgid "Edit..."
+msgstr "Izmijeni"
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr "Obriši"
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr "Uvoz VPN..."
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr "Izvezi VPN..."
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "Konekcija %1 je dodata"
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Želite li da uklonite konekciju %1?"
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr "Ukloni vezu"
+
+#: connectioneditor.cpp:352
+#, fuzzy
+#| msgid "Connection"
+msgid "Connect"
+msgstr "Veza"
+
+#: connectioneditor.cpp:354
+#, fuzzy
+#| msgid "Edit connection"
+msgid "Disconnect"
+msgstr "Izmijeni vezu"
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr "Uvezi  VPN Konekciju"
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Ostvarivanje   VPN konekcije %1 neuspijelo \n"
+"%2"
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr "Izvoz nije podrzan od VPN tipa"
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr "Izvezi VPN Konekciju"
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Izvoženje VPN konekcije %1 neuspijelo\n"
+"%2"
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr "VPN Konekcija %1 je izevzena uspijesno"
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr "Veza"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr "Glavna traka alata"
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr "Uređivač veze"
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr "Upravljajte svojim mrežnim vezama"
+
+#: main.cpp:40
+#, fuzzy
+#| msgid "(C) 2013 Jan Grulich and Lukáš Tinkl"
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr "(C) 2013 Jan Grulich and Lukáš Tinkl"
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+"Ovaj program dopusta nam da kreiramo,uredimo i izbrisemo mreznu konekciju.\n"
+"\n"
+"Koristeci NM verziju: %1"
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr "Jan Grulich"
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr "Programer"
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr "Lukáš Tinkl"
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr "Lamarque Souza"
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr "libnm-qt autor"
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr "Daniel Nicoletti"
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr "Razne ispravke"
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr "Priključak za VPN"
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr "Izmijeni vezu"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr "Mrezni uređivac"

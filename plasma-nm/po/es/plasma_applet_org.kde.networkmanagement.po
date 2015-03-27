@@ -1,0 +1,4907 @@
+# translation of libknetworkmanager.po to Spanish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2011, 2012, 2013, 2014.
+# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2009.
+# Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>, 2009.
+# Ignacio Poggi <ipoggi@qi.fcen.uba.ar>, 2009.
+# Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
+# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
+# Rocio Gallego <traducciones@rociogallego.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: libknetworkmanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"PO-Revision-Date: 2014-10-24 10:28+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"com>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Rocío Gallego,Rafael Muñoz Cárdenas,Eloy Cuadra,Enrique Matías Sánchez "
+"(Quique),Ignacio Poggi,Cristina Yenyxe González García"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"traducciones@rociogallego.com,bymenda@gmail.com,ecuadra@eloihr.net,"
+"cronopios@gmail.com,ignaciop.3@gmail.com,the.blue.valkyrie@gmail.com"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
+#: applet/declarative/contents/ui/config.ui:19
+msgid "Show sections"
+msgstr "Mostrar secciones"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: applet/declarative/contents/ui/config.ui:32
+msgid "Show &network speed in:"
+msgstr "&Mostrar la velocidad de la red en:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
+#: applet/declarative/contents/ui/config.ui:46
+msgid "KBytes/s"
+msgstr "KBytes/s"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
+#: applet/declarative/contents/ui/config.ui:51
+msgid "KBits/s"
+msgstr "KBits/s"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: applet/declarative/contents/ui/config.ui:68
+msgid "Connection Details"
+msgstr "Detalles de la conexión"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
+msgid "Connect"
+msgstr "Conectar"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
+msgid "Disconnect"
+msgstr "Desconectar"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:209
+msgid "Speed"
+msgstr "Velocidad"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:215
+msgid "Details"
+msgstr "Detalles"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:311
+msgid "Password..."
+msgstr "Contraseña..."
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:338
+msgid "Show password"
+msgstr "Mostrar la contraseña"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:421
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr "Conectado, ⬇ %1/s, ⬆ %2/s"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:425
+msgid "Connected"
+msgstr "Conectado"
+
+#: applet/declarative/contents/ui/Header.qml:58
+#: libs/models/networkmodelitem.cpp:312
+msgid "Available connections"
+msgstr "Conexiones disponibles"
+
+#: applet/declarative/contents/ui/Toolbar.qml:58
+msgid "Wireless enabled"
+msgstr "Hardware inalámbrico activado"
+
+#: applet/declarative/contents/ui/Toolbar.qml:58
+msgid "Wireless disabled"
+msgstr "Hardware inalámbrico desactivado"
+
+#: applet/declarative/contents/ui/Toolbar.qml:72
+msgid "Mobile broadband enabled"
+msgstr "Banda ancha móvil activada"
+
+#: applet/declarative/contents/ui/Toolbar.qml:72
+msgid "Mobile broadband disabled"
+msgstr "Banda ancha móvil desactivada"
+
+#: applet/declarative/contents/ui/Toolbar.qml:85
+msgid "Airplane mode enabled"
+msgstr "Modo avión activado"
+
+#: applet/declarative/contents/ui/Toolbar.qml:85
+msgid "Airplane mode disabled"
+msgstr "Modo avión desactivado"
+
+#: libs/declarative/networkstatus.cpp:80
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "Conectado"
+
+#: libs/declarative/networkstatus.cpp:83
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "Conectado"
+
+#: libs/declarative/networkstatus.cpp:86
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "Conectado"
+
+#: libs/declarative/networkstatus.cpp:89
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "Inactiva"
+
+#: libs/declarative/networkstatus.cpp:92
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "Desconectada"
+
+#: libs/declarative/networkstatus.cpp:95
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "Desconectando"
+
+#: libs/declarative/networkstatus.cpp:98
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "Conectando"
+
+#: libs/declarative/networkstatus.cpp:143
+msgid "VPN Connection"
+msgstr "Conexión VPN"
+
+#: libs/declarative/networkstatus.cpp:148
+#, kde-format
+msgid "Connected to %1"
+msgstr "Conectado a %1"
+
+#: libs/declarative/networkstatus.cpp:150
+#, kde-format
+msgid "Connecting to %1"
+msgstr "Conectando a %1"
+
+#: libs/declarative/networkstatus.cpp:173
+msgid "NetworkManager not running"
+msgstr "NetworkManager no está en ejecución"
+
+#: libs/declarative/networkstatus.cpp:178
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "Se necesita NetworkManager 0.9.8; se ha encontrado %1."
+
+#: libs/declarative/networkstatus.cpp:181
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: libs/declarative/trafficmonitor.cpp:141
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr "Recibido"
+
+#: libs/declarative/trafficmonitor.cpp:143
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "Transmitido"
+
+#: libs/declarative/trafficmonitor.cpp:203
+msgid "KBit/s"
+msgstr "KBits/s"
+
+#: libs/declarative/trafficmonitor.cpp:205
+msgid "MBit/s"
+msgstr "MBits/s"
+
+#: libs/declarative/trafficmonitor.cpp:210
+msgid "GBit/s"
+msgstr "GBits/s"
+
+#: libs/declarative/trafficmonitor.cpp:234
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: libs/declarative/trafficmonitor.cpp:243
+msgid "Received"
+msgstr "Recibido"
+
+#: libs/declarative/trafficmonitor.cpp:246
+msgid "Transmitted"
+msgstr "Transmitido"
+
+#: libs/handler.cpp:89
+msgid "Missing VPN plugin"
+msgstr "Falta el complemento VPN"
+
+#: libs/handler.cpp:391
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "Ha fallado la activación de %1"
+
+#: libs/handler.cpp:396
+#, kde-format
+msgid "Failed to add %1"
+msgstr "Ha ocurrido un fallo al añadir %1"
+
+#: libs/handler.cpp:401
+msgid "Failed to request scan"
+msgstr "La petición de la exploración ha fallado"
+
+#: libs/models/editoridentitymodel.cpp:62
+msgid "Connection name"
+msgstr "Nombre de la conexión"
+
+#: libs/models/editoridentitymodel.cpp:64
+msgid "Last used"
+msgstr "Último uso"
+
+#: libs/models/networkmodelitem.cpp:310
+msgid "Active connections"
+msgstr "Conexiones activas"
+
+#: libs/uiutils.cpp:58 libs/uiutils.cpp:104
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Ethernet cableada"
+
+#: libs/uiutils.cpp:61
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "Red inalámbrica 802.11"
+
+#: libs/uiutils.cpp:64
+msgctxt "title of the interface widget in nm's popup"
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: libs/uiutils.cpp:67
+msgctxt "title of the interface widget in nm's popup"
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: libs/uiutils.cpp:70
+msgctxt "title of the interface widget in nm's popup"
+msgid "Infiniband"
+msgstr "InfiniBand"
+
+#: libs/uiutils.cpp:73
+msgctxt "title of the interface widget in nm's popup"
+msgid "ADSL"
+msgstr "ADSL"
+
+#: libs/uiutils.cpp:76
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bond)"
+msgstr "Virtual (enlazada)"
+
+#: libs/uiutils.cpp:79
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bridge)"
+msgstr "Virtual (puente)"
+
+#: libs/uiutils.cpp:82
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (vlan)"
+msgstr "Virtual (vlan)"
+
+#: libs/uiutils.cpp:89
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Módem serial"
+
+#: libs/uiutils.cpp:94
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Banda ancha móvil"
+
+#: libs/uiutils.cpp:116
+msgid "ADSL"
+msgstr "ADSL"
+
+#: libs/uiutils.cpp:120
+msgid "DSL"
+msgstr "DSL"
+
+#: libs/uiutils.cpp:124
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: libs/uiutils.cpp:128
+msgid "Bond"
+msgstr "Enlace"
+
+#: libs/uiutils.cpp:131
+msgid "Bridge"
+msgstr "Puente"
+
+#: libs/uiutils.cpp:135
+msgid "Mobile broadband"
+msgstr "Banda ancha móvil"
+
+#: libs/uiutils.cpp:139
+msgid "Infiniband"
+msgstr "InfiniBand"
+
+#: libs/uiutils.cpp:142
+msgid "Olpc mesh"
+msgstr "Malla de OLPC"
+
+#: libs/uiutils.cpp:145
+msgid "VLAN"
+msgstr "VLAN"
+
+#: libs/uiutils.cpp:148
+msgid "VPN"
+msgstr "VPN"
+
+#: libs/uiutils.cpp:152
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: libs/uiutils.cpp:156
+msgid "Wired"
+msgstr "Cableada"
+
+#: libs/uiutils.cpp:160
+msgid "Wireless"
+msgstr "Inalámbrica"
+
+#: libs/uiutils.cpp:164
+msgid "Unknown connection type"
+msgstr "Tipo de conexión desconocido"
+
+#: libs/uiutils.cpp:176
+#, kde-format
+msgid "Wireless Interface (%1)"
+msgstr "Interfaz inalámbrica (%1)"
+
+#: libs/uiutils.cpp:179
+#, kde-format
+msgid "Wired Interface (%1)"
+msgstr "Interfaz cableada (%1)"
+
+#: libs/uiutils.cpp:182
+#, kde-format
+msgid "Bluetooth (%1)"
+msgstr "Bluetooth (%1)"
+
+#: libs/uiutils.cpp:185
+#, kde-format
+msgid "Modem (%1)"
+msgstr "Módem (%1)"
+
+#: libs/uiutils.cpp:188
+#, kde-format
+msgid "ADSL (%1)"
+msgstr "ADSL (%1)"
+
+#: libs/uiutils.cpp:191
+#, kde-format
+msgid "VLan (%1)"
+msgstr "VLAN (%1)"
+
+#: libs/uiutils.cpp:194
+#, kde-format
+msgid "Bridge (%1)"
+msgstr "Puente (%1)"
+
+#: libs/uiutils.cpp:207
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: libs/uiutils.cpp:210
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "No gestionada"
+
+#: libs/uiutils.cpp:213
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "No disponible"
+
+#: libs/uiutils.cpp:216
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "No conectada"
+
+#: libs/uiutils.cpp:219
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Preparándose para conectar"
+
+#: libs/uiutils.cpp:222
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Configurando interfaz"
+
+#: libs/uiutils.cpp:225
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Esperando autorización"
+
+#: libs/uiutils.cpp:228
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Estableciendo dirección de red"
+
+#: libs/uiutils.cpp:231
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr "Comprobando conectividad adicional"
+
+#: libs/uiutils.cpp:234
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "Esperando una conexión secundaria"
+
+#: libs/uiutils.cpp:238
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Conectada"
+
+#: libs/uiutils.cpp:240
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Conectada a %1"
+
+#: libs/uiutils.cpp:244
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "Desactivando la conexión"
+
+#: libs/uiutils.cpp:247
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "Conexión fallida"
+
+#: libs/uiutils.cpp:250 libs/uiutils.cpp:284
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Error: Estado no válido"
+
+#: libs/uiutils.cpp:260
+msgctxt "The state of the VPN connection is unknown"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: libs/uiutils.cpp:263
+msgctxt "The VPN connection is preparing to connect"
+msgid "Preparing to connect"
+msgstr "Preparando la conexión"
+
+#: libs/uiutils.cpp:266
+msgctxt "The VPN connection needs authorization credentials"
+msgid "Needs authorization"
+msgstr "Necesita autorización"
+
+#: libs/uiutils.cpp:269
+msgctxt "The VPN connection is being established"
+msgid "Connecting"
+msgstr "Conectando"
+
+#: libs/uiutils.cpp:272
+msgctxt "The VPN connection is getting an IP address"
+msgid "Setting network address"
+msgstr "Estableciendo dirección de red"
+
+#: libs/uiutils.cpp:275
+msgctxt "The VPN connection is active"
+msgid "Activated"
+msgstr "Activada"
+
+#: libs/uiutils.cpp:278
+msgctxt "The VPN connection failed"
+msgid "Failed"
+msgstr "Fallida"
+
+#: libs/uiutils.cpp:281
+msgctxt "The VPN connection is disconnected"
+msgid "Failed"
+msgstr "Fallida"
+
+#: libs/uiutils.cpp:293
+msgctxt "wireless network operation mode"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: libs/uiutils.cpp:296
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "Ad-hoc"
+
+#: libs/uiutils.cpp:299
+msgctxt "wireless network operation mode"
+msgid "Infrastructure"
+msgstr "Infraestructura"
+
+#: libs/uiutils.cpp:302
+msgctxt "wireless network operation mode"
+msgid "Access point"
+msgstr "Punto de acceso"
+
+#: libs/uiutils.cpp:305
+msgid "INCORRECT MODE FIX ME"
+msgstr "MODO INCORRECTO - CORRÍJAME"
+
+#: libs/uiutils.cpp:327
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "Pares  WEP40"
+
+#: libs/uiutils.cpp:329
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "Pares  WEP104"
+
+#: libs/uiutils.cpp:331
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "Pares  TKIP"
+
+#: libs/uiutils.cpp:333
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "Pares  CCMP"
+
+#: libs/uiutils.cpp:335
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "Grupo WEP40"
+
+#: libs/uiutils.cpp:337
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "Grupo WEP104"
+
+#: libs/uiutils.cpp:339
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "Grupo TKIP"
+
+#: libs/uiutils.cpp:341
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "Grupo CCMP"
+
+#: libs/uiutils.cpp:343
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "PSK"
+
+#: libs/uiutils.cpp:345
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: libs/uiutils.cpp:355
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> Bit/s"
+msgstr "<numid>%1</numid> Bit/s"
+
+#: libs/uiutils.cpp:357
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> MBit/s"
+msgstr "<numid>%1</numid> MBit/s"
+
+#: libs/uiutils.cpp:359
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> GBit/s"
+msgstr "<numid>%1</numid> GBit/s"
+
+#: libs/uiutils.cpp:385
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "LTE"
+msgstr "LTE"
+
+#: libs/uiutils.cpp:387
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "UMTS/HSxPA"
+msgstr "UMTS/HSxPA"
+
+#: libs/uiutils.cpp:389
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GPRS/EDGE"
+msgstr "GPRS/EDGE"
+
+#: libs/uiutils.cpp:391
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GSM"
+msgstr "GSM"
+
+#: libs/uiutils.cpp:393 libs/uiutils.cpp:396
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "Any"
+msgstr "Cualquiera"
+
+#: libs/uiutils.cpp:402
+msgctxt "Cellular access technology"
+msgid "LTE"
+msgstr "LTE"
+
+#: libs/uiutils.cpp:404
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision B"
+msgstr "CDMA2000 EVDO revisión B"
+
+#: libs/uiutils.cpp:406
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision A"
+msgstr "CDMA2000 EVDO revisión A"
+
+#: libs/uiutils.cpp:408
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision 0"
+msgstr "CDMA2000 EVDO revisión 0"
+
+#: libs/uiutils.cpp:410
+msgctxt "Cellular access technology"
+msgid "CDMA2000 1xRTT"
+msgstr "CDMA2000 1xRTT"
+
+#: libs/uiutils.cpp:412
+msgctxt "Cellular access technology"
+msgid "HSPA+"
+msgstr "HSPA+"
+
+#: libs/uiutils.cpp:414
+msgctxt "Cellular access technology"
+msgid "HSPA"
+msgstr "HSPA"
+
+#: libs/uiutils.cpp:416
+msgctxt "Cellular access technology"
+msgid "HSUPA"
+msgstr "HSUPA"
+
+#: libs/uiutils.cpp:418
+msgctxt "Cellular access technology"
+msgid "HSDPA"
+msgstr "HSDPA"
+
+#: libs/uiutils.cpp:420
+msgctxt "Cellular access technology"
+msgid "UMTS"
+msgstr "UMTS"
+
+#: libs/uiutils.cpp:422
+msgctxt "Cellular access technology"
+msgid "EDGE"
+msgstr "EDGE"
+
+#: libs/uiutils.cpp:424
+msgctxt "Cellular access technology"
+msgid "GPRS"
+msgstr "GPRS"
+
+#: libs/uiutils.cpp:426
+msgctxt "Cellular access technology"
+msgid "Compact GSM"
+msgstr "GSM compacto"
+
+#: libs/uiutils.cpp:428
+msgctxt "Cellular access technology"
+msgid "GSM"
+msgstr "GSM"
+
+#: libs/uiutils.cpp:430
+msgctxt "Analog wireline modem"
+msgid "Analog"
+msgstr "Analógica"
+
+#: libs/uiutils.cpp:432 libs/uiutils.cpp:437
+msgctxt "Unknown cellular access technology"
+msgid "Unknown"
+msgstr "Desconocida"
+
+#: libs/uiutils.cpp:434
+msgctxt "Any cellular access technology"
+msgid "Any"
+msgstr "Cualquiera"
+
+#: libs/uiutils.cpp:444
+msgctxt "possible SIM lock reason"
+msgid "Modem is unlocked."
+msgstr "El módem está desbloqueado."
+
+#: libs/uiutils.cpp:446
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN code."
+msgstr "SIM necesita el código PIN."
+
+#: libs/uiutils.cpp:448
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN2 code."
+msgstr "SIM necesita el código PIN2."
+
+#: libs/uiutils.cpp:450
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK code."
+msgstr "SIM necesita el código PUK."
+
+#: libs/uiutils.cpp:452
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK2 code."
+msgstr "SIM necesita el código PUK2."
+
+#: libs/uiutils.cpp:454
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PIN code."
+msgstr "El módem necesita el código PIN del proveedor de servicio."
+
+#: libs/uiutils.cpp:456
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PUK code."
+msgstr "El módem necesita el código PUK del proveedor de servicio."
+
+#: libs/uiutils.cpp:458
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PIN code."
+msgstr "El módem necesita el código PIN de la red."
+
+#: libs/uiutils.cpp:460
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PUK code."
+msgstr "El módem necesita el código PUK de la red."
+
+#: libs/uiutils.cpp:462
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PIN code."
+msgstr "El módem necesita el código PIN."
+
+#: libs/uiutils.cpp:464
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PIN code."
+msgstr "El módem necesita el código PIN corporativo."
+
+#: libs/uiutils.cpp:466
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PUK code."
+msgstr "El módem necesita el código PUK corporativo."
+
+#: libs/uiutils.cpp:468
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PIN code."
+msgstr "El módem necesita el código PIN PH-FSIM."
+
+#: libs/uiutils.cpp:470
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PUK code."
+msgstr "El módem necesita el código PUK PH-FSIM."
+
+#: libs/uiutils.cpp:472
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PIN code."
+msgstr "El módem necesita el código PIN del subconjunto de la red."
+
+#: libs/uiutils.cpp:474
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PUK code."
+msgstr "El módem necesita el código PUK del subconjunto de la red."
+
+#: libs/uiutils.cpp:477
+msgctxt "possible SIM lock reason"
+msgid "Lock reason unknown."
+msgstr "Motivo de bloqueo desconocido."
+
+#: libs/uiutils.cpp:485 libs/uiutils.cpp:491
+msgctxt "Unknown"
+msgid "Unknown Wimax NSP type"
+msgstr "Tipo de NSP Wimax desconocido"
+
+#: libs/uiutils.cpp:486
+msgid "Home"
+msgstr "Base"
+
+#: libs/uiutils.cpp:487
+msgid "Partner"
+msgstr "Compañero"
+
+#: libs/uiutils.cpp:488
+msgid "Roaming partner"
+msgstr "Compañero de itinerancia"
+
+#: libs/uiutils.cpp:513
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "Insegura"
+
+#: libs/uiutils.cpp:516
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/uiutils.cpp:519
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/uiutils.cpp:522
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "WEP dinámica"
+
+#: libs/uiutils.cpp:525
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/uiutils.cpp:528
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/uiutils.cpp:531
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/uiutils.cpp:534
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/uiutils.cpp:537
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "Tipo de seguridad desconocido"
+
+#: libs/uiutils.cpp:548
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "Insegura"
+
+#: libs/uiutils.cpp:551
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/uiutils.cpp:554
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/uiutils.cpp:557
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "WEP dinámica"
+
+#: libs/uiutils.cpp:560
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/uiutils.cpp:563
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/uiutils.cpp:566
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/uiutils.cpp:569
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/uiutils.cpp:572
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "Tipo de seguridad desconocido"
+
+#: libs/uiutils.cpp:595
+msgid "System name:"
+msgstr "Nombre del sistema:"
+
+#: libs/uiutils.cpp:604
+msgid "IPv4 Address:"
+msgstr "Dirección IPv4:"
+
+#: libs/uiutils.cpp:614
+msgid "IPv4 Gateway:"
+msgstr "Puerta de enlace IPv4:"
+
+#: libs/uiutils.cpp:624
+msgid "IPv6 Address:"
+msgstr "Dirección IPv6:"
+
+#: libs/uiutils.cpp:634
+msgid "IPv6 Gateway:"
+msgstr "Puerta de enlace IPv6:"
+
+#: libs/uiutils.cpp:639
+msgid "Driver:"
+msgstr "Controlador:"
+
+#: libs/uiutils.cpp:655
+msgctxt "Name"
+msgid "Bluetooth name"
+msgstr "Nombre Bluetooth"
+
+#: libs/uiutils.cpp:659 libs/uiutils.cpp:794 libs/uiutils.cpp:818
+msgid "MAC Address:"
+msgstr "Dirección MAC:"
+
+#: libs/uiutils.cpp:686
+msgid "Operator:"
+msgstr "Operador:"
+
+#: libs/uiutils.cpp:688
+msgid "Network ID:"
+msgstr "ID de la red:"
+
+#: libs/uiutils.cpp:692 libs/uiutils.cpp:767
+msgid "Signal Quality:"
+msgstr "Calidad de la señal:"
+
+#: libs/uiutils.cpp:696
+msgid "Access Technology:"
+msgstr "Tecnología de acceso:"
+
+#: libs/uiutils.cpp:700
+msgid "Allowed Mode:"
+msgstr "Modo permitido:"
+
+#: libs/uiutils.cpp:704
+msgid "Unlock Required:"
+msgstr "Se necesita desbloquear:"
+
+#: libs/uiutils.cpp:708
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: libs/uiutils.cpp:715
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: libs/uiutils.cpp:736
+msgid "VPN plugin:"
+msgstr "Complemento VPN:"
+
+#: libs/uiutils.cpp:740
+msgid "Banner:"
+msgstr "Separador:"
+
+#: libs/uiutils.cpp:759
+msgid "Bsid:"
+msgstr "Bsid:"
+
+#: libs/uiutils.cpp:763
+msgid "NSP Name:"
+msgstr "Nombre del NSP:"
+
+#: libs/uiutils.cpp:767 libs/uiutils.cpp:826
+#, kde-format
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/uiutils.cpp:771
+msgid "Network Type:"
+msgstr "Tipo de red:"
+
+#: libs/uiutils.cpp:790 libs/uiutils.cpp:814
+msgid "Connection speed:"
+msgstr "Velocidad de la conexión:"
+
+#: libs/uiutils.cpp:822
+msgid "Mode:"
+msgstr "Modo:"
+
+#: libs/uiutils.cpp:826
+msgid "Signal strength:"
+msgstr "Potencia de la señal:"
+
+#: libs/uiutils.cpp:830
+msgid "Access point (SSID):"
+msgstr "Punto de acceso (SSID):"
+
+#: libs/uiutils.cpp:834
+msgid "Access point (BSSID):"
+msgstr "Punto de acceso (BSSID):"
+
+#: libs/uiutils.cpp:838
+msgctxt "Wifi AP channel and frequency"
+msgid "Channel:"
+msgstr "Canal:"
+
+#: libs/uiutils.cpp:838
+#, kde-format
+msgid "%1 (%2 MHz)"
+msgstr "%1 (%2 MHz)"
+
+#: libs/uiutils.cpp:846 libs/uiutils.cpp:852
+msgid "Security:"
+msgstr "Seguridad:"
+
+#: libs/uiutils.cpp:857
+msgid "Frequency band:"
+msgstr "Banda de frecuencia:"
+
+#: libs/uiutils.cpp:876
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "Hace un minuto"
+msgstr[1] "Hace %1 minutos"
+
+#: libs/uiutils.cpp:883
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "Hace una hora"
+msgstr[1] "Hace %1 horas"
+
+#: libs/uiutils.cpp:888
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "Ayer"
+
+#: libs/uiutils.cpp:894
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "Nunca"
+
+#: libs/uiutils.cpp:910
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "Last used one minute ago"
+msgid_plural "Last used %1 minutes ago"
+msgstr[0] "Usada por última vez hace 1 minuto"
+msgstr[1] "Usada por última vez hace %1 minutos"
+
+#: libs/uiutils.cpp:917
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "Last used one hour ago"
+msgid_plural "Last used %1 hours ago"
+msgstr[0] "Usada por última vez hace 1 hora"
+msgstr[1] "Usada por última vez hace %1 horas"
+
+#: libs/uiutils.cpp:922
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Last used yesterday"
+msgstr "Usada por última vez ayer"
+
+#: libs/uiutils.cpp:924
+#, kde-format
+msgid "Last used on %1"
+msgstr "Usada por última vez el %1"
+
+#: libs/uiutils.cpp:928
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never used"
+msgstr "No usada nunca"
+
+#: settings/details/detailkeyseditor.cpp:92
+msgid "Driver"
+msgstr "Controlador"
+
+#: settings/details/detailkeyseditor.cpp:92
+msgid "Device driver"
+msgstr "Controlador de dispositivo"
+
+#: settings/details/detailkeyseditor.cpp:93
+msgid "Connection Speed"
+msgstr "Velocidad de la conexión"
+
+#: settings/details/detailkeyseditor.cpp:93
+msgid "Connection speed"
+msgstr "Velocidad de la conexión"
+
+#: settings/details/detailkeyseditor.cpp:94
+msgid "System Name"
+msgstr "Nombre en el sistema"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "MAC Address"
+msgstr "Dirección MAC"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "Hardware address"
+msgstr "Dirección de hardware"
+
+#: settings/details/detailkeyseditor.cpp:98
+msgid "IPv4 Address"
+msgstr "Dirección IPv4"
+
+#: settings/details/detailkeyseditor.cpp:98
+msgid "IP version 4 address"
+msgstr "Dirección IP versión 4"
+
+#: settings/details/detailkeyseditor.cpp:101
+msgid "IPv4 Gateway"
+msgstr "Puerta de enlace IPv4"
+
+#: settings/details/detailkeyseditor.cpp:101
+msgid "IP version 4 default gateway"
+msgstr "Puerta de enlace IP versión 4 por omisión"
+
+#: settings/details/detailkeyseditor.cpp:104
+msgid "IPv6 Address"
+msgstr "Dirección IPv6"
+
+#: settings/details/detailkeyseditor.cpp:104
+msgid "IP version 6 address"
+msgstr "Dirección IP versión 6"
+
+#: settings/details/detailkeyseditor.cpp:107
+msgid "IPv6 Gateway"
+msgstr "Puerta de enlace IPv6"
+
+#: settings/details/detailkeyseditor.cpp:107
+msgid "IP version 6 default gateway"
+msgstr "Puerta de enlace IP versión 6 por omisión"
+
+#: settings/details/detailkeyseditor.cpp:110
+msgid "WiMAX Bsid"
+msgstr "Bsid WiMAX"
+
+#: settings/details/detailkeyseditor.cpp:110
+msgid "The ID of the serving base station as received from the network"
+msgstr "La ID de la estación base de servicio tal y como se recibe de la red"
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "WiMAX NSP"
+msgstr "NSP de WiMAX"
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "The name of the NSP"
+msgstr "El nombre del NSP"
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "WiMAX Signal"
+msgstr "Señal WiMAX"
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "The current signal quality of the NSP, in percent."
+msgstr "La calidad actual de la señal del NSP, en tanto por ciento."
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "WiMAX NSP Type"
+msgstr "Tipo de NSP de WiMAX"
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "The network type of the NSP."
+msgstr "El tipo de red del NSP."
+
+#: settings/details/detailkeyseditor.cpp:116
+msgid "Access Point (SSID)"
+msgstr "Punto de acceso (SSID)"
+
+#: settings/details/detailkeyseditor.cpp:116
+msgid "Wireless Access Point's SSID"
+msgstr "SSID del punto de acceso inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Signal Strength"
+msgstr "Intensidad de la señal"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Wireless Access Point's signal strength"
+msgstr "Potencia de la señal del punto de acceso inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Access Point (MAC)"
+msgstr "Punto de acceso (MAC)"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Wireless Access Point's Hardware Address"
+msgstr "Dirección hardware del punto de acceso inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Band"
+msgstr "Banda inalámbrica"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Frequency Band"
+msgstr "Banda de frecuencia inalámbrica"
+
+#: settings/details/detailkeyseditor.cpp:120
+msgid "Wireless Channel"
+msgstr "Canal inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:120
+msgid "Wireless Frequency Channel"
+msgstr "Canal de frecuencia inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Wireless Security"
+msgstr "Seguridad inalámbrica"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Describes the security capabilities of the access point"
+msgstr "Describe las capacidades de seguridad del punto de acceso"
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "Wireless Mode"
+msgstr "Modo inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "The operating mode of the wireless device"
+msgstr "El modo de operación del dispositivo inalámbrico"
+
+#: settings/details/detailkeyseditor.cpp:125
+msgid "Mobile Operator"
+msgstr "Operador móvil"
+
+#: settings/details/detailkeyseditor.cpp:125
+msgid "Mobile Operator's Name"
+msgstr "Nombre del operador móvil"
+
+#: settings/details/detailkeyseditor.cpp:126
+msgid "Mobile Signal Quality"
+msgstr "Calidad de la señal móvil"
+
+#: settings/details/detailkeyseditor.cpp:127
+msgid "Mobile Access Technology"
+msgstr "Tecnología de acceso móvil"
+
+#: settings/details/detailkeyseditor.cpp:129
+msgid "Mobile Allowed Mode"
+msgstr "Modo móvil permitido"
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Unlock Required"
+msgstr "Se necesita desbloqueo móvil"
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Master Device"
+msgstr "Dispositivo maestro móvil"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Device IMEI"
+msgstr "IMEI de dispositivo móvil"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Device Serial Number"
+msgstr "Número de serie de dispositivo móvil"
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device IMSI"
+msgstr "IMSI de dispositivo móvil"
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device Identity Number"
+msgstr "Número de identidad del dispositivo móvil"
+
+#: settings/details/detailkeyseditor.cpp:135
+msgid "Bluetooth Name"
+msgstr "Nombre Bluetooth"
+
+#: settings/details/detailkeyseditor.cpp:135
+msgid "Bluetooth name of the device"
+msgstr "Nombre Bluetooth del dispositivo"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "VPN Plugin"
+msgstr "Complemento VPN"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "VPN plugin type"
+msgstr "Tipo de complemento VPN"
+
+#: settings/details/detailkeyseditor.cpp:137
+msgid "VPN Banner"
+msgstr "Separador VPN"
+
+#: settings/details/detailkeyseditor.cpp:137
+msgid "VPN connection banner"
+msgstr "Separador de la conexión VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settings/details/detailkeyswidget.ui:34
+msgid "Available Details"
+msgstr "Detalles disponibles"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availDetails)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentDetails)
+#: settings/details/detailkeyswidget.ui:78
+#: settings/details/detailkeyswidget.ui:251
+msgctxt "title of a table's column"
+msgid "Name"
+msgstr "Nombre"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/details/detailkeyswidget.ui:204
+msgid "Details to Show"
+msgstr "Detalles a mostrar"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy

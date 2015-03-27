@@ -1,0 +1,630 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-23 05:59+0000\n"
+"PO-Revision-Date: 2014-09-28 12:12+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: bluetoothmonitor.cpp:82
+msgid "Only 'dun' and 'nap' services are supported."
+msgstr "Alleen 'dun' en 'nap' services worden ondersteund."
+
+#: bluetoothmonitor.cpp:95
+msgid "Could not contact Bluetooth manager (BlueZ)."
+msgstr "Kon geen contact maken met de Bluetooth-beheerder (BlueZ)."
+
+#: bluetoothmonitor.cpp:103
+#, kde-format
+msgid "Default Bluetooth adapter not found: %1"
+msgstr "Standaard Bluetooth-adapter niet gevonden: %1"
+
+#: bluetoothmonitor.cpp:165
+#, kde-format
+msgid "%1 (%2) does not support Dialup Networking (DUN)."
+msgstr "%1 (%2) ondersteunt geen opbelnetwerk (DUN)."
+
+#: bluetoothmonitor.cpp:170
+#, kde-format
+msgid "%1 (%2) does not support Network Access Point (NAP)."
+msgstr "%1 (%2) ondersteunt geen netwerk-access-point (NAP)."
+
+#: bluetoothmonitor.cpp:217
+#, kde-format
+msgid "Error activating devices's serial port: %1"
+msgstr "Fout bij activeren van seriële poort '%1' van apparaten"
+
+#: bluetoothmonitor.cpp:243
+#, kde-format
+msgid "Device %1 is not the wanted one (%2)"
+msgstr "Apparaat %1 is niet de gewenste (%2)"
+
+#: bluetoothmonitor.cpp:245
+#, kde-format
+msgid "Device for serial port %1 (%2) not found."
+msgstr "Apparaat voor seriële poort %1 (%2) niet gevonden."
+
+#: modemmonitor.cpp:191
+#, kde-format
+msgctxt "Text in GSM PIN/PUK unlock error dialog"
+msgid "Error unlocking modem: %1"
+msgstr "Fout bij ontgrendelen van het modem: %1"
+
+#: modemmonitor.cpp:192
+msgctxt "Title for GSM PIN/PUK unlock error dialog"
+msgid "PIN/PUK unlock error"
+msgstr "PIN/PUK ontgrendelfout"
+
+#: notification.cpp:89
+msgctxt ""
+"@info:status Notification when the device failed due to ConfigFailedReason"
+msgid "The device could not be configured"
+msgstr "Het apparaat kon niet ingesteld worden"
+
+#: notification.cpp:93
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ConfigUnavailableReason"
+msgid "IP configuration was unavailable"
+msgstr "IP-configuratie was niet beschikbaar"
+
+#: notification.cpp:97
+msgctxt ""
+"@info:status Notification when the device failed due to ConfigExpiredReason"
+msgid "IP configuration expired"
+msgstr "IP-configuratie is verlopen"
+
+#: notification.cpp:101
+msgctxt ""
+"@info:status Notification when the device failed due to NoSecretsReason"
+msgid "No secrets were provided"
+msgstr "Secrets zijn niet geleverd"
+
+#: notification.cpp:105
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantDisconnectReason"
+msgid "Authorization supplicant disconnected"
+msgstr "Autorisatie-supplicant verbinding verbroken"
+
+#: notification.cpp:109
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantConfigFailedReason"
+msgid "Authorization supplicant's configuration failed"
+msgstr "Configuratie van de autorisatie-supplicant is mislukt"
+
+#: notification.cpp:113
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantFailedReason"
+msgid "Authorization supplicant failed"
+msgstr "Autorisatie-supplicant is mislukt"
+
+#: notification.cpp:117
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantTimeoutReason"
+msgid "Authorization supplicant timed out"
+msgstr "Tijdslimiet voor de autorisatie-supplicant is verlopen"
+
+#: notification.cpp:121
+msgctxt ""
+"@info:status Notification when the device failed due to PppStartFailedReason"
+msgid "PPP failed to start"
+msgstr "PPP opstarten is mislukt"
+
+#: notification.cpp:125
+msgctxt ""
+"@info:status Notification when the device failed due to PppDisconnectReason"
+msgid "PPP disconnected"
+msgstr "PPP verbinding verbroken"
+
+#: notification.cpp:129
+msgctxt ""
+"@info:status Notification when the device failed due to PppFailedReason"
+msgid "PPP failed"
+msgstr "PPP is mislukt"
+
+#: notification.cpp:133
+msgctxt ""
+"@info:status Notification when the device failed due to DhcpStartFailedReason"
+msgid "DHCP failed to start"
+msgstr "DHCP opstarten is mislukt"
+
+#: notification.cpp:137
+msgctxt ""
+"@info:status Notification when the device failed due to DhcpErrorReason"
+msgid "A DHCP error occurred"
+msgstr "Er trad een DHCP-fout op"
+
+#: notification.cpp:141
+msgctxt ""
+"@info:status Notification when the device failed due to DhcpFailedReason"
+msgid "DHCP failed "
+msgstr "DHCP is mislukt "
+
+#: notification.cpp:145
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"SharedStartFailedReason"
+msgid "The shared service failed to start"
+msgstr "Opstarten van de gedeelde service is mislukt"
+
+#: notification.cpp:149
+msgctxt ""
+"@info:status Notification when the device failed due to SharedFailedReason"
+msgid "The shared service failed"
+msgstr "De gedeelde service is mislukt"
+
+#: notification.cpp:153
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AutoIpStartFailedReason"
+msgid "The auto IP service failed to start"
+msgstr "Opstarten van de auto-IP-service is mislukt"
+
+#: notification.cpp:157
+msgctxt ""
+"@info:status Notification when the device failed due to AutoIpErrorReason"
+msgid "The auto IP service reported an error"
+msgstr "De auto-IP-service rapporteerde een fout"
+
+#: notification.cpp:161
+msgctxt ""
+"@info:status Notification when the device failed due to AutoIpFailedReason"
+msgid "The auto IP service failed"
+msgstr "De auto-IP-service is mislukt"
+
+#: notification.cpp:165
+msgctxt ""
+"@info:status Notification when the device failed due to ModemBusyReason"
+msgid "The modem is busy"
+msgstr "Het modem is bezet"
+
+#: notification.cpp:169
+msgctxt ""
+"@info:status Notification when the device failed due to ModemNoDialToneReason"
+msgid "The modem has no dial tone"
+msgstr "Het modem heeft geen kiestoon"
+
+#: notification.cpp:173
+msgctxt ""
+"@info:status Notification when the device failed due to ModemNoCarrierReason"
+msgid "The modem shows no carrier"
+msgstr "Het modem toont geen carrier"
+
+#: notification.cpp:177
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ModemDialTimeoutReason"
+msgid "The modem dial timed out"
+msgstr "De tijdslimiet voor het kiezen met het modem verliep"
+
+#: notification.cpp:181
+msgctxt ""
+"@info:status Notification when the device failed due to ModemDialFailedReason"
+msgid "The modem dial failed"
+msgstr "Het kiezen met het modem is mislukt"
+
+#: notification.cpp:185
+msgctxt ""
+"@info:status Notification when the device failed due to ModemInitFailedReason"
+msgid "The modem could not be initialized"
+msgstr "Het modem kon niet geïnitialiseerd worden"
+
+#: notification.cpp:189
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmApnSelectFailedReason"
+msgid "The GSM APN could not be selected"
+msgstr "De GSM APN kon niet geselecteerd worden"
+
+#: notification.cpp:193
+msgctxt ""
+"@info:status Notification when the device failed due to GsmNotSearchingReason"
+msgid "The GSM modem is not searching"
+msgstr "Het GSM modem is niet aan het zoeken"
+
+#: notification.cpp:197
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmRegistrationDeniedReason"
+msgid "GSM network registration was denied"
+msgstr "De GSM-netwerkregistratie is verworpen"
+
+#: notification.cpp:201
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmRegistrationTimeoutReason"
+msgid "GSM network registration timed out"
+msgstr "De tijdslimiet voor GSM-netwerkregistratie verliep"
+
+#: notification.cpp:205
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmRegistrationFailedReason"
+msgid "GSM registration failed"
+msgstr "GSM-registratie is mislukt"
+
+#: notification.cpp:209
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmPinCheckFailedReason"
+msgid "The GSM PIN check failed"
+msgstr "De GSM-PIN-controle is mislukt"
+
+#: notification.cpp:213
+msgctxt ""
+"@info:status Notification when the device failed due to FirmwareMissingReason"
+msgid "Device firmware is missing"
+msgstr "Firmware van het apparaat ontbreekt"
+
+#: notification.cpp:217
+msgctxt ""
+"@info:status Notification when the device failed due to DeviceRemovedReason"
+msgid "The device was removed"
+msgstr "Het apparaat was verwijderd"
+
+#: notification.cpp:221
+msgctxt ""
+"@info:status Notification when the device failed due to SleepingReason"
+msgid "The networking system is now sleeping"
+msgstr "Het netwerksysteem slaapt nu"
+
+#: notification.cpp:225
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ConnectionRemovedReason"
+msgid "The connection was removed"
+msgstr "De verbinding was verwijderd"
+
+#: notification.cpp:231
+msgctxt "@info:status Notification when the device failed due to CarrierReason"
+msgid "The cable was disconnected"
+msgstr "De kabelverbinding was verbroken"
+
+#: notification.cpp:238
+msgctxt ""
+"@info:status Notification when the device failed due to ModemNotFoundReason"
+msgid "The modem could not be found"
+msgstr "Het modem kon niet worden gevonden"
+
+#: notification.cpp:242
+msgctxt ""
+"@info:status Notification when the device failed due to BluetoothFailedReason"
+msgid "The bluetooth connection failed or timed out"
+msgstr "De bluetooth verbinding is mislukt of de tijdslimiet werd overschreden"
+
+#: notification.cpp:246
+msgctxt ""
+"@info:status Notification when the device failed due to GsmSimNotInserted"
+msgid "GSM Modem's SIM Card not inserted"
+msgstr "De SIM-kaart van het GSM-modem is niet aanwezig"
+
+#: notification.cpp:250
+msgctxt ""
+"@info:status Notification when the device failed due to GsmSimPinRequired"
+msgid "GSM Modem's SIM Pin required"
+msgstr "De PIN van de SIM van het GSM-modem is vereist"
+
+#: notification.cpp:254
+msgctxt ""
+"@info:status Notification when the device failed due to GsmSimPukRequired"
+msgid "GSM Modem's SIM Puk required"
+msgstr "De PUK van de SIM van het GSM-modem is vereist"
+
+#: notification.cpp:258
+msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
+msgid "GSM Modem's SIM wrong"
+msgstr "De SIM van het GSM-modem is fout"
+
+#: notification.cpp:262
+msgctxt ""
+"@info:status Notification when the device failed due to InfiniBandMode"
+msgid "InfiniBand device does not support connected mode"
+msgstr "InfiniBand-apparaat ondersteunt geen verbindingsmodus"
+
+#: notification.cpp:266
+msgctxt ""
+"@info:status Notification when the device failed due to DependencyFailed"
+msgid "A dependency of the connection failed"
+msgstr "Aan een afhankelijkheid van de verbinding werd niet voldaan"
+
+#: notification.cpp:270
+msgctxt "@info:status Notification when the device failed due to Br2684Failed"
+msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
+msgstr "Probleem met de RFC 2684 Ethernet over ADSL bridge"
+
+#: notification.cpp:274
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ModemManagerUnavailable"
+msgid "ModemManager not running"
+msgstr "ModemManager is niet actief"
+
+#: notification.cpp:278
+msgctxt "@info:status Notification when the device failed due to SsidNotFound"
+msgid "The WiFi network could not be found"
+msgstr "Het WiFi-netwerk werd niet gevonden"
+
+#: notification.cpp:282
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"SecondaryConnectionFailed"
+msgid "A secondary connection of the base connection failed"
+msgstr "Een secondaire verbinding van de basisverbinding is mislukt"
+
+#: notification.cpp:336
+#, kde-format
+msgid "Connection '%1' activated."
+msgstr "Verbinding '%1' geactiveerd."
+
+#: notification.cpp:339
+#, kde-format
+msgid "Connection '%1' deactivated."
+msgstr "Verbinding '%1' gedeactiveerd."
+
+#: notification.cpp:370
+#, kde-format
+msgid "VPN connection '%1' activated."
+msgstr "VPN-verbinding '%1' geactiveerd."
+
+#: notification.cpp:373
+#, kde-format
+msgid "VPN connection '%1' failed."
+msgstr "VPN-verbinding '%1' is mislukt."
+
+#: notification.cpp:376
+#, kde-format
+msgid "VPN connection '%1' disconnected."
+msgstr "VPN-verbinding '%1' verbroken."
+
+#: notification.cpp:384
+msgid "The VPN connection changed state because the user disconnected it."
+msgstr ""
+"De status van de VPN-verbinding gewijzigd omdat de gebruiker deze heeft "
+"verbroken."
+
+#: notification.cpp:387
+msgid ""
+"The VPN connection changed state because the device it was using was "
+"disconnected."
+msgstr ""
+"De status van de VPN-verbinding gewijzigd omdat de verbinding op het "
+"gebruikte apparaat was verbroken."
+
+#: notification.cpp:390
+msgid "The service providing the VPN connection was stopped."
+msgstr "De service die de VPN-verbinding levert is gestopt."
+
+#: notification.cpp:393
+msgid "The IP config of the VPN connection was invalid."
+msgstr "De IP-configuratie van de VPN-verbinding was ongeldig."
+
+#: notification.cpp:396
+msgid "The connection attempt to the VPN service timed out."
+msgstr ""
+"De poging om verbinding te maken met de VPN-service heeft de tijdslimiet "
+"overschreden."
+
+#: notification.cpp:399
+msgid ""
+"A timeout occurred while starting the service providing the VPN connection."
+msgstr ""
+"De wachttijd bij het starten van de service die de VPN-verbinding levert is "
+"verlopen."
+
+#: notification.cpp:402
+msgid "Starting the service providing the VPN connection failed."
+msgstr "Het starten van de service die de VPN-verbinding levert is mislukt."
+
+#: notification.cpp:405
+msgid "Necessary secrets for the VPN connection were not provided."
+msgstr "De noodzakelijke geheimen voor de VPN-verbinding zijn niet geleverd."
+
+#: notification.cpp:408
+msgid "Authentication to the VPN server failed."
+msgstr "Authenticatie naar de VPN-server is mislukt."
+
+#: notification.cpp:411
+msgid "The connection was deleted from settings."
+msgstr "De verbinding was uit de instellingen verwijderd."
+
+#: passworddialog.cpp:78
+#, kde-format
+msgid ""
+"For accessing the wireless network '%1' you need to provide a password below"
+msgstr ""
+"Om toegang te krijgen tot het draadloze netwerk '%1' moet u hieronder een "
+"wachtwoord invoeren"
+
+#: passworddialog.cpp:80
+#, kde-format
+msgid "Please provide the password for activating connection '%1'"
+msgstr "Voer het wachtwoord in voor activeren van de verbinding '%1'"
+
+#: passworddialog.cpp:108
+#, kde-format
+msgid "VPN secrets (%1)"
+msgstr "VPN secrets (%1)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:14
+msgid "Password dialog"
+msgstr "Wachtwoordvenster"
+
+#. i18n: ectx: property (text), widget (QLabel, labelIcon)
+#. i18n: ectx: property (text), widget (QLabel, labelText)
+#: passworddialog.ui:20 passworddialog.ui:50
+msgid "TextLabel"
+msgstr "Tekstlabel"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:29
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPassword)
+#: passworddialog.ui:43
+msgid "&Show password"
+msgstr "Wachtwoord &tonen"
+
+#: pindialog.cpp:73
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Ontgrendelen"
+
+#: pindialog.cpp:79
+msgid "SIM PUK"
+msgstr "SIM PUK"
+
+#: pindialog.cpp:81
+msgid "SIM PUK2"
+msgstr "SIM PUK2"
+
+#: pindialog.cpp:83
+msgid "Service provider PUK"
+msgstr "PUK van leverancier"
+
+#: pindialog.cpp:85
+msgid "Network PUK"
+msgstr "PUK van netwerk"
+
+#: pindialog.cpp:87
+msgid "Corporate PUK"
+msgstr "PUK van grootbedrijf"
+
+#: pindialog.cpp:89
+msgid "PH-FSIM PUK"
+msgstr "PH-FSIM PUK"
+
+#: pindialog.cpp:91
+msgid "Network Subset PUK"
+msgstr "PUK van subset van het netwerk"
+
+#: pindialog.cpp:94 pindialog.cpp:126
+#, kde-format
+msgid "%1 unlock required"
+msgstr "Ontgrendelen van %1 vereist"
+
+#: pindialog.cpp:95 pindialog.cpp:127
+#, kde-format
+msgid "%1 Unlock Required"
+msgstr "Ontgrendelen van %1 vereist"
+
+#: pindialog.cpp:96 pindialog.cpp:128
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a %2 code before it can be used."
+msgstr ""
+"Het mobiele breedbandapparaat '%1' vereist een %2 voordat het kan worden "
+"gebruikt."
+
+#: pindialog.cpp:97 pindialog.cpp:129
+#, kde-format
+msgid "%1 code:"
+msgstr "%1-code:"
+
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:98 pinwidget.ui:135
+msgid "New PIN code:"
+msgstr "Nieuwe PIN-code:"
+
+#: pindialog.cpp:99
+msgid "Re-enter new PIN code:"
+msgstr "Nieuwe PIN-code opnieuw invoeren:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:100 pinwidget.ui:175
+msgid "Show PIN/PUK code"
+msgstr "PIN/PUK-code tonen"
+
+#: pindialog.cpp:110
+msgid "SIM PIN"
+msgstr "SIM PIN"
+
+#: pindialog.cpp:112
+msgid "SIM PIN2"
+msgstr "SIM PIN2"
+
+#: pindialog.cpp:114
+msgid "Service provider PIN"
+msgstr "PIN van leverancier"
+
+#: pindialog.cpp:116
+msgid "Network PIN"
+msgstr "PIN van netwerk"
+
+#: pindialog.cpp:118
+msgid "PIN"
+msgstr "PIN"
+
+#: pindialog.cpp:120
+msgid "Corporate PIN"
+msgstr "PIN van grootbedrijf"
+
+#: pindialog.cpp:122
+msgid "PH-FSIM PIN"
+msgstr "PH-FSIM PIN"
+
+#: pindialog.cpp:124
+msgid "Network Subset PIN"
+msgstr "PIN van subset van het netwerk"
+
+#: pindialog.cpp:130
+msgid "Show PIN code"
+msgstr "PIN-code tonen"
+
+#: pindialog.cpp:213
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "PIN-code is te kort. Het moet minstens 4 cijfers zijn."
+
+#: pindialog.cpp:218
+msgid "The two PIN codes do not match"
+msgstr "De twee PIN-codes komen niet overeen"
+
+#: pindialog.cpp:223
+msgid "PUK code too short. It should be 8 digits."
+msgstr "PUK-code is te kort. Het moet minstens 8 cijfers zijn."
+
+#: pindialog.cpp:228
+msgid "Unknown Error"
+msgstr "Onbekende fout"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:41
+msgid "SIM PIN unlock required"
+msgstr "SIM PIN ontgrendelen vereist"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:70
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Het mobiele breedbandapparaat '%1' vereist een SIM PIN-code voordat het kan "
+"worden gebruikt."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:115
+msgid "PUK code:"
+msgstr "PUK-code:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:155
+msgid "Re-enter PIN code:"
+msgstr "Voer PIN-code opnieuw in:"

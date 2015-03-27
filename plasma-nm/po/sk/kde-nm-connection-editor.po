@@ -1,0 +1,244 @@
+# translation of kde-nm-connection-editor.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-nm-connection-editor\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2014-07-08 11:02+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: connectioneditor.cpp:76
+msgid "Type here to search connections..."
+msgstr "Sem píšte na hľadanie pripojení..."
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr "Pridať"
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr "Hardvér"
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr "DSL"
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr "InfiniBand"
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr "Mobilné širokopásmové..."
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr "Drôtové"
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr "Drôtové (zdieľané)"
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr "Bezdrôtové"
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr "Bezdrôtové (zdieľané)"
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: connectioneditor.cpp:151
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr "Virtuálny"
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr "Bond"
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr "Most"
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr "VLAN"
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr "VPN"
+
+#: connectioneditor.cpp:178
+msgid "Edit..."
+msgstr "Upraviť..."
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr "Vymazať"
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr "Importovať VPN..."
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr "Exportovať VPN..."
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "Pripojenie %1 bolo pridané"
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Chcete odstrániť pripojenie '%1'?"
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr "Odstrániť spojenie"
+
+#: connectioneditor.cpp:352
+msgid "Connect"
+msgstr "Pripojiť"
+
+#: connectioneditor.cpp:354
+msgid "Disconnect"
+msgstr "Odpojiť"
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr "Importovať VPN pripojenie"
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Import VPN pripojenia %1 zlyhal\n"
+"%2"
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr "Export nie je podporovaný týmto typom VPN"
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr "Exportovať VPN pripojenie"
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Export VPN pripojenia %1 zlyhalo\n"
+"%2"
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr "VPN pripojenie %1 exportované úspešne"
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr "Pripojenie"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr "Hlavný panel nástrojov"
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr "Editor pripojení"
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr "Spravovať vaše sieťové pripojenia"
+
+#: main.cpp:40
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr "(C) 2013-2014 Jan Grulich a Lukáš Tinkl"
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+"Táto aplikácia vám umožní vytvoriť, upraviť a vymazať sieťové pripojenia.\n"
+"\n"
+"Používa verziu NM: %1"
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr "Jan Grulich"
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr "Vývojár"
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr "Lukáš Tinkl"
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr "Lamarque Souza"
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr "libnm-qt autor"
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr "Daniel Nicoletti"
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr "rôzne opravy chýb"
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr "VPN pluginy"
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr "Upraviť spojenie"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr "Editor pripojené"

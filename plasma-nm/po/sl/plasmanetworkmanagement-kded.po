@@ -1,0 +1,625 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-23 05:59+0000\n"
+"PO-Revision-Date: 2014-06-25 12:32+0200\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: bluetoothmonitor.cpp:82
+msgid "Only 'dun' and 'nap' services are supported."
+msgstr "Podprti sta le storitvi 'dun' in 'nap'."
+
+#: bluetoothmonitor.cpp:95
+msgid "Could not contact Bluetooth manager (BlueZ)."
+msgstr "Z upravljalnikom Bluetootha (BlueZ) ni bilo mogoče navezati stika."
+
+#: bluetoothmonitor.cpp:103
+#, kde-format
+msgid "Default Bluetooth adapter not found: %1"
+msgstr "Privzet prilagodilnik za Bluetooth ni bil najden: %1"
+
+#: bluetoothmonitor.cpp:165
+#, kde-format
+msgid "%1 (%2) does not support Dialup Networking (DUN)."
+msgstr "%1 (%2) ne podpira klicnega omrežja (DUN)"
+
+#: bluetoothmonitor.cpp:170
+#, kde-format
+msgid "%1 (%2) does not support Network Access Point (NAP)."
+msgstr "%1 (%2) ne podpira omrežne dostopne točke (NAP)."
+
+#: bluetoothmonitor.cpp:217
+#, kde-format
+msgid "Error activating devices's serial port: %1"
+msgstr "Napaka med omogočanjem zaporednih vrat naprave: %1"
+
+#: bluetoothmonitor.cpp:243
+#, kde-format
+msgid "Device %1 is not the wanted one (%2)"
+msgstr "Naprava %1 ni tista, ki jo želimo (%2)"
+
+#: bluetoothmonitor.cpp:245
+#, kde-format
+msgid "Device for serial port %1 (%2) not found."
+msgstr "Naprava za zaporedna vrata %1 (%2) ni bila najdena."
+
+#: modemmonitor.cpp:191
+#, kde-format
+msgctxt "Text in GSM PIN/PUK unlock error dialog"
+msgid "Error unlocking modem: %1"
+msgstr "Napaka med odklepanjem modema: %1"
+
+#: modemmonitor.cpp:192
+msgctxt "Title for GSM PIN/PUK unlock error dialog"
+msgid "PIN/PUK unlock error"
+msgstr "Napaka odklepa PIN/PUK"
+
+#: notification.cpp:89
+msgctxt ""
+"@info:status Notification when the device failed due to ConfigFailedReason"
+msgid "The device could not be configured"
+msgstr "Naprave ni bilo mogoče nastaviti"
+
+#: notification.cpp:93
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ConfigUnavailableReason"
+msgid "IP configuration was unavailable"
+msgstr "Nastavitev IP ni bila razpoložljiva"
+
+#: notification.cpp:97
+msgctxt ""
+"@info:status Notification when the device failed due to ConfigExpiredReason"
+msgid "IP configuration expired"
+msgstr "Nastavitev IP je pretekla"
+
+#: notification.cpp:101
+msgctxt ""
+"@info:status Notification when the device failed due to NoSecretsReason"
+msgid "No secrets were provided"
+msgstr "Skrivnosti niso bile predložene"
+
+#: notification.cpp:105
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantDisconnectReason"
+msgid "Authorization supplicant disconnected"
+msgstr "Pooblastitveni prosilnik je prekinil povezavo"
+
+#: notification.cpp:109
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantConfigFailedReason"
+msgid "Authorization supplicant's configuration failed"
+msgstr "Nastavitev pooblastitvenega prosilnika je spodletela"
+
+#: notification.cpp:113
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantFailedReason"
+msgid "Authorization supplicant failed"
+msgstr "Pooblastitveni prosilnik je spodletel"
+
+#: notification.cpp:117
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AuthSupplicantTimeoutReason"
+msgid "Authorization supplicant timed out"
+msgstr "Pooblastitveni prosilnik je dosegel časovno omejitev"
+
+#: notification.cpp:121
+msgctxt ""
+"@info:status Notification when the device failed due to PppStartFailedReason"
+msgid "PPP failed to start"
+msgstr "Zagon PPP ni uspel"
+
+#: notification.cpp:125
+msgctxt ""
+"@info:status Notification when the device failed due to PppDisconnectReason"
+msgid "PPP disconnected"
+msgstr "Povezava PPP prekinjena"
+
+#: notification.cpp:129
+msgctxt ""
+"@info:status Notification when the device failed due to PppFailedReason"
+msgid "PPP failed"
+msgstr "PPP ni uspel"
+
+#: notification.cpp:133
+msgctxt ""
+"@info:status Notification when the device failed due to DhcpStartFailedReason"
+msgid "DHCP failed to start"
+msgstr "DHCP se ni uspešno zagnal"
+
+#: notification.cpp:137
+msgctxt ""
+"@info:status Notification when the device failed due to DhcpErrorReason"
+msgid "A DHCP error occurred"
+msgstr "Prišlo je do napake DHCP"
+
+#: notification.cpp:141
+msgctxt ""
+"@info:status Notification when the device failed due to DhcpFailedReason"
+msgid "DHCP failed "
+msgstr "DHCP ni uspel "
+
+#: notification.cpp:145
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"SharedStartFailedReason"
+msgid "The shared service failed to start"
+msgstr "Deljena storitev se ni uspešno zagnala"
+
+#: notification.cpp:149
+msgctxt ""
+"@info:status Notification when the device failed due to SharedFailedReason"
+msgid "The shared service failed"
+msgstr "Deljena storitev ni uspela"
+
+#: notification.cpp:153
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"AutoIpStartFailedReason"
+msgid "The auto IP service failed to start"
+msgstr "Storitev za samodejni IP se ni uspešno zagnala"
+
+#: notification.cpp:157
+msgctxt ""
+"@info:status Notification when the device failed due to AutoIpErrorReason"
+msgid "The auto IP service reported an error"
+msgstr "Storitev za samodejni IP je javila napako"
+
+#: notification.cpp:161
+msgctxt ""
+"@info:status Notification when the device failed due to AutoIpFailedReason"
+msgid "The auto IP service failed"
+msgstr "Storitev za samodejni IP ni uspela"
+
+#: notification.cpp:165
+msgctxt ""
+"@info:status Notification when the device failed due to ModemBusyReason"
+msgid "The modem is busy"
+msgstr "Modem je zaposlen"
+
+#: notification.cpp:169
+msgctxt ""
+"@info:status Notification when the device failed due to ModemNoDialToneReason"
+msgid "The modem has no dial tone"
+msgstr "Modem ni prejel klicnega tona"
+
+#: notification.cpp:173
+msgctxt ""
+"@info:status Notification when the device failed due to ModemNoCarrierReason"
+msgid "The modem shows no carrier"
+msgstr "Modem ne kaže nosilca"
+
+#: notification.cpp:177
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ModemDialTimeoutReason"
+msgid "The modem dial timed out"
+msgstr "Modemu je potekel čas za klicanje"
+
+#: notification.cpp:181
+msgctxt ""
+"@info:status Notification when the device failed due to ModemDialFailedReason"
+msgid "The modem dial failed"
+msgstr "Modemsko klicanje je spodletelo"
+
+#: notification.cpp:185
+msgctxt ""
+"@info:status Notification when the device failed due to ModemInitFailedReason"
+msgid "The modem could not be initialized"
+msgstr "Ni bilo mogoče nastaviti začetnih vrednosti na modemu"
+
+#: notification.cpp:189
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmApnSelectFailedReason"
+msgid "The GSM APN could not be selected"
+msgstr "Imena dostopne točke GSM ni bilo mogoče izbrati"
+
+#: notification.cpp:193
+msgctxt ""
+"@info:status Notification when the device failed due to GsmNotSearchingReason"
+msgid "The GSM modem is not searching"
+msgstr "Modem GSM ne išče"
+
+#: notification.cpp:197
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmRegistrationDeniedReason"
+msgid "GSM network registration was denied"
+msgstr "Registracija v omrežju GSM je bila zavrnjena"
+
+#: notification.cpp:201
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmRegistrationTimeoutReason"
+msgid "GSM network registration timed out"
+msgstr "Čas za registracijo v omrežju GSM je pretekel"
+
+#: notification.cpp:205
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmRegistrationFailedReason"
+msgid "GSM registration failed"
+msgstr "Registracija GSM ni uspela"
+
+#: notification.cpp:209
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"GsmPinCheckFailedReason"
+msgid "The GSM PIN check failed"
+msgstr "Preverjanje PIN-a GSM ni uspelo"
+
+#: notification.cpp:213
+msgctxt ""
+"@info:status Notification when the device failed due to FirmwareMissingReason"
+msgid "Device firmware is missing"
+msgstr "Manjka strojna programska oprema"
+
+#: notification.cpp:217
+msgctxt ""
+"@info:status Notification when the device failed due to DeviceRemovedReason"
+msgid "The device was removed"
+msgstr "Naprava je bila odstranjena"
+
+#: notification.cpp:221
+msgctxt ""
+"@info:status Notification when the device failed due to SleepingReason"
+msgid "The networking system is now sleeping"
+msgstr "Omrežni sistem trenutno miruje"
+
+#: notification.cpp:225
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ConnectionRemovedReason"
+msgid "The connection was removed"
+msgstr "Povezava je bila odstranjena"
+
+#: notification.cpp:231
+msgctxt "@info:status Notification when the device failed due to CarrierReason"
+msgid "The cable was disconnected"
+msgstr "Kabel je bil izklopljen"
+
+#: notification.cpp:238
+msgctxt ""
+"@info:status Notification when the device failed due to ModemNotFoundReason"
+msgid "The modem could not be found"
+msgstr "Ni bilo mogoče najti modema"
+
+#: notification.cpp:242
+msgctxt ""
+"@info:status Notification when the device failed due to BluetoothFailedReason"
+msgid "The bluetooth connection failed or timed out"
+msgstr "Povezava bluetooth spodletela ali pa je dosegla časovno omejitev"
+
+#: notification.cpp:246
+msgctxt ""
+"@info:status Notification when the device failed due to GsmSimNotInserted"
+msgid "GSM Modem's SIM Card not inserted"
+msgstr "Kartica SIM GSM modema ni vstavljena"
+
+#: notification.cpp:250
+msgctxt ""
+"@info:status Notification when the device failed due to GsmSimPinRequired"
+msgid "GSM Modem's SIM Pin required"
+msgstr "Zahtevan je PIN za SIM GSM modema"
+
+#: notification.cpp:254
+msgctxt ""
+"@info:status Notification when the device failed due to GsmSimPukRequired"
+msgid "GSM Modem's SIM Puk required"
+msgstr "Zahtevan je PUK za SIM GSM modema"
+
+#: notification.cpp:258
+msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
+msgid "GSM Modem's SIM wrong"
+msgstr "Kartica SIM GSM modema je napačna"
+
+#: notification.cpp:262
+msgctxt ""
+"@info:status Notification when the device failed due to InfiniBandMode"
+msgid "InfiniBand device does not support connected mode"
+msgstr "Naprava InfiniBand ne podpira povezanega načina"
+
+#: notification.cpp:266
+msgctxt ""
+"@info:status Notification when the device failed due to DependencyFailed"
+msgid "A dependency of the connection failed"
+msgstr "Odvisnost povezave je spodletela"
+
+#: notification.cpp:270
+msgctxt "@info:status Notification when the device failed due to Br2684Failed"
+msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
+msgstr "Težava z ethernetom RFC 2684 preko mosta ADSL"
+
+#: notification.cpp:274
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"ModemManagerUnavailable"
+msgid "ModemManager not running"
+msgstr "ModemManager ne teče"
+
+#: notification.cpp:278
+msgctxt "@info:status Notification when the device failed due to SsidNotFound"
+msgid "The WiFi network could not be found"
+msgstr "Omrežja WiFi ni bilo mogoče najti"
+
+#: notification.cpp:282
+msgctxt ""
+"@info:status Notification when the device failed due to "
+"SecondaryConnectionFailed"
+msgid "A secondary connection of the base connection failed"
+msgstr "Drugotna povezava osnovne povezave je spodletela"
+
+#: notification.cpp:336
+#, kde-format
+msgid "Connection '%1' activated."
+msgstr "Povezava '%1' omogočena."
+
+#: notification.cpp:339
+#, kde-format
+msgid "Connection '%1' deactivated."
+msgstr "Povezava '%1' onemogočena."
+
+#: notification.cpp:370
+#, kde-format
+msgid "VPN connection '%1' activated."
+msgstr "Povezava VPN '%1' omogočena."
+
+#: notification.cpp:373
+#, kde-format
+msgid "VPN connection '%1' failed."
+msgstr "Povezava VPN '%1' ni uspela."
+
+#: notification.cpp:376
+#, kde-format
+msgid "VPN connection '%1' disconnected."
+msgstr "Povezava VPN '%1' prekinjena."
+
+#: notification.cpp:384
+msgid "The VPN connection changed state because the user disconnected it."
+msgstr "Povezava VPN je spremenila stanje, ker jo je uporabnik prekinil."
+
+#: notification.cpp:387
+msgid ""
+"The VPN connection changed state because the device it was using was "
+"disconnected."
+msgstr ""
+"Povezava VPN je spremenila stanje, ker je bila uporabljena naprava "
+"odklopljena."
+
+#: notification.cpp:390
+msgid "The service providing the VPN connection was stopped."
+msgstr "Storitev, ki ponuja povezavo VPN je bila zaustavljena."
+
+#: notification.cpp:393
+msgid "The IP config of the VPN connection was invalid."
+msgstr "Nastavitev IP povezave VPN je bila neveljavna."
+
+#: notification.cpp:396
+msgid "The connection attempt to the VPN service timed out."
+msgstr "Poskus povezave s storitvijo VPN je časovno pretekel."
+
+#: notification.cpp:399
+msgid ""
+"A timeout occurred while starting the service providing the VPN connection."
+msgstr ""
+"Med začenjanjem storitve, ki ponuja povezavo VPN je prišlo do časovnega "
+"preteka."
+
+#: notification.cpp:402
+msgid "Starting the service providing the VPN connection failed."
+msgstr "Začenjanje storitve, ki ponuja povezavo VPN, je spodletelo."
+
+#: notification.cpp:405
+msgid "Necessary secrets for the VPN connection were not provided."
+msgstr "Zahtevane skrivnosti za povezavo VPN niso bile ponujene."
+
+#: notification.cpp:408
+msgid "Authentication to the VPN server failed."
+msgstr "Overitev na strežniku VPN je spodletela."
+
+#: notification.cpp:411
+msgid "The connection was deleted from settings."
+msgstr "Povezava je bila izbrisana iz nastavitev."
+
+#: passworddialog.cpp:78
+#, kde-format
+msgid ""
+"For accessing the wireless network '%1' you need to provide a password below"
+msgstr "Za dostop do brezžičnega omrežja '%1' morate spodaj podati geslo"
+
+#: passworddialog.cpp:80
+#, kde-format
+msgid "Please provide the password for activating connection '%1'"
+msgstr "Podajte geslo za vklop povezave '%1'"
+
+#: passworddialog.cpp:108
+#, kde-format
+msgid "VPN secrets (%1)"
+msgstr "Skrivnosti za VPN (%1)"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:14
+msgid "Password dialog"
+msgstr "Pogovorno okno gesla"
+
+#. i18n: ectx: property (text), widget (QLabel, labelIcon)
+#. i18n: ectx: property (text), widget (QLabel, labelText)
+#: passworddialog.ui:20 passworddialog.ui:50
+msgid "TextLabel"
+msgstr "BesedilnaOznaka"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:29
+msgid "Password:"
+msgstr "Geslo:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showPassword)
+#: passworddialog.ui:43
+msgid "&Show password"
+msgstr "&Pokaži geslo"
+
+#: pindialog.cpp:73
+msgctxt "As in 'Unlock cell phone with this pin code'"
+msgid "Unlock"
+msgstr "Odkleni"
+
+#: pindialog.cpp:79
+msgid "SIM PUK"
+msgstr "SIM PUK"
+
+#: pindialog.cpp:81
+msgid "SIM PUK2"
+msgstr "SIM PUK2"
+
+#: pindialog.cpp:83
+msgid "Service provider PUK"
+msgstr "PUK ponudnika storitve"
+
+#: pindialog.cpp:85
+msgid "Network PUK"
+msgstr "PUK omrežja"
+
+#: pindialog.cpp:87
+msgid "Corporate PUK"
+msgstr "PUK gospodarske družbe"
+
+#: pindialog.cpp:89
+msgid "PH-FSIM PUK"
+msgstr "PH-FSIM PUK"
+
+#: pindialog.cpp:91
+msgid "Network Subset PUK"
+msgstr "PUK podskupine omrežja"
+
+#: pindialog.cpp:94 pindialog.cpp:126
+#, kde-format
+msgid "%1 unlock required"
+msgstr "Zahtevan je odklep %1"
+
+#: pindialog.cpp:95 pindialog.cpp:127
+#, kde-format
+msgid "%1 Unlock Required"
+msgstr "Zahtevan je odklep %1"
+
+#: pindialog.cpp:96 pindialog.cpp:128
+#, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a %2 code before it can be used."
+msgstr ""
+"Mobilna širokopasovna naprava '%1' zahteva vnos kode %2, preden jo boste "
+"lahko uporabili."
+
+#: pindialog.cpp:97 pindialog.cpp:129
+#, kde-format
+msgid "%1 code:"
+msgstr "Koda %1:"
+
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:98 pinwidget.ui:135
+msgid "New PIN code:"
+msgstr "Nova koda PIN:"
+
+#: pindialog.cpp:99
+msgid "Re-enter new PIN code:"
+msgstr "Ponovno vnesite novo kodo PIN:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:100 pinwidget.ui:175
+msgid "Show PIN/PUK code"
+msgstr "Prikaži kodo PIN/PUK"
+
+#: pindialog.cpp:110
+msgid "SIM PIN"
+msgstr "SIM PIN"
+
+#: pindialog.cpp:112
+msgid "SIM PIN2"
+msgstr "SIM PIN2"
+
+#: pindialog.cpp:114
+msgid "Service provider PIN"
+msgstr "PIN ponudnika storitve"
+
+#: pindialog.cpp:116
+msgid "Network PIN"
+msgstr "PIN omrežja"
+
+#: pindialog.cpp:118
+msgid "PIN"
+msgstr "PIN"
+
+#: pindialog.cpp:120
+msgid "Corporate PIN"
+msgstr "PIN gospodarske družbe"
+
+#: pindialog.cpp:122
+msgid "PH-FSIM PIN"
+msgstr "PH-FSIM PIN"
+
+#: pindialog.cpp:124
+msgid "Network Subset PIN"
+msgstr "PIN podskupine omrežja"
+
+#: pindialog.cpp:130
+msgid "Show PIN code"
+msgstr "Prikaži kodo PIN"
+
+#: pindialog.cpp:213
+msgid "PIN code too short. It should be at least 4 digits."
+msgstr "Koda PIN je prekratka. Dolga naj bi bila vsaj štiri števke."
+
+#: pindialog.cpp:218
+msgid "The two PIN codes do not match"
+msgstr "Kodi PIN se ne ujemata"
+
+#: pindialog.cpp:223
+msgid "PUK code too short. It should be 8 digits."
+msgstr "Koda PUK je prekratka. Dolga naj bi bila 8 števk."
+
+#: pindialog.cpp:228
+msgid "Unknown Error"
+msgstr "Neznana napaka"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:41
+msgid "SIM PIN unlock required"
+msgstr "Zahtevan je odklep SIM PIN"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:70
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Mobilna širokopasovna naprava '%1' zahteva vnos kode SIM PIN, preden jo "
+"boste lahko uporabili."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:115
+msgid "PUK code:"
+msgstr "Koda PUK:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:155
+msgid "Re-enter PIN code:"
+msgstr "Ponovno vnesite kodo PIN:"

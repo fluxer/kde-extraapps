@@ -1,0 +1,189 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-16 02:03+0000\n"
+"PO-Revision-Date: 2013-10-02 12:32+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
+#: pptpadvanced.ui:17
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_auth)
+#: pptpadvanced.ui:23
+msgid "Allow following authentication methods:"
+msgstr "Folgende Authentifizierungsmethoden erlauben:"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: pptpadvanced.ui:34
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: pptpadvanced.ui:42
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: pptpadvanced.ui:50
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: pptpadvanced.ui:58
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: pptpadvanced.ui:66
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
+#: pptpadvanced.ui:80
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "Microsoft Punkt-zu-Punkt-Verschlüsselung (MPPE) verwenden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
+#: pptpadvanced.ui:83
+msgid "Use MPPE Encryption"
+msgstr "MPPE-Verschlüsselung verwenden"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
+#: pptpadvanced.ui:101
+msgid "Crypto:"
+msgstr "Verschlüsselung:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cb_MPPECrypto)
+#: pptpadvanced.ui:118
+msgctxt "like in use Any configuration"
+msgid "Any"
+msgstr "Jede"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cb_MPPECrypto)
+#: pptpadvanced.ui:123
+msgid "128 bit"
+msgstr "128-Bit"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cb_MPPECrypto)
+#: pptpadvanced.ui:128
+msgid "40 bit"
+msgstr "40-Bit"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
+#: pptpadvanced.ui:136
+msgid "Use stateful encryption"
+msgstr "Zustandsorientierte Verschlüsselung verwenden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
+#: pptpadvanced.ui:146
+msgid "Compression"
+msgstr "Komprimierung"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
+#: pptpadvanced.ui:155
+msgid "Allow BSD compression"
+msgstr "BSD-Komprimierung zulassen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
+#: pptpadvanced.ui:165
+msgid "Allow Deflate compression"
+msgstr "Deflate-Komprimierung zulassen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
+#: pptpadvanced.ui:175
+msgid "Allow TCP header compression"
+msgstr "TCP-Header-Komprimierung zulassen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
+#: pptpadvanced.ui:188
+msgid "Echo"
+msgstr "Echo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
+#: pptpadvanced.ui:194
+msgid "Send PPP echo packets "
+msgstr "PPP-Echo-Pakete senden "
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpAuthenticationWidget)
+#: pptpauth.ui:14
+msgid "PPTPAuthentication"
+msgstr "PPTP-Authentifizierung"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#: pptpauth.ui:26 pptpprop.ui:103
+msgid "Password:"
+msgstr "Passwort:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPassword)
+#. i18n: ectx: property (text), widget (QCheckBox, cb_showPassword)
+#: pptpauth.ui:39 pptpprop.ui:144
+msgid "Show password"
+msgstr "Passwort anzeigen"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
+#: pptpprop.ui:14
+msgid "PPTP Settings"
+msgstr "PPTP-Einstellungen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: pptpprop.ui:26
+msgctxt "like in General settings"
+msgid "General"
+msgstr "Allgemein"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#: pptpprop.ui:34
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
+#: pptpprop.ui:52
+msgctxt "like in Additional settings"
+msgid "Additional"
+msgstr "Zusätzlich"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_login)
+#: pptpprop.ui:74
+msgid "Login:"
+msgstr "Anmeldung:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#: pptpprop.ui:124
+msgid "Store"
+msgstr "Speichern"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#: pptpprop.ui:129
+msgid "Always Ask"
+msgstr "Immer nachfragen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbPasswordStorage)
+#: pptpprop.ui:134
+msgid "Not Required"
+msgstr "Nicht erforderlich"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
+#: pptpprop.ui:165
+msgid "NT Domain:"
+msgstr "NT-Domäne:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: pptpprop.ui:208
+msgctxt "like in Advanced settings"
+msgid "Advanced..."
+msgstr "Erweitert ..."

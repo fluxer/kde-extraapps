@@ -1,0 +1,85 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-16 02:03+0000\n"
+"PO-Revision-Date: 2013-10-02 12:32+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openswan.ui:17
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openswan.ui:27 openswanauth.ui:17
+msgid "Group name:"
+msgstr "Gruppenname:"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openswan.ui:37 openswanauth.ui:37
+msgid "User password:"
+msgstr "Benutzerpasswort:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbUsernamePasswordMode)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbGroupPasswordMode)
+#: openswan.ui:54 openswan.ui:91
+msgid "Store"
+msgstr "Speichern"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbUsernamePasswordMode)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbGroupPasswordMode)
+#: openswan.ui:59 openswan.ui:96
+msgid "Always Ask"
+msgstr "Immer nachfragen"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbUsernamePasswordMode)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbGroupPasswordMode)
+#: openswan.ui:64 openswan.ui:101
+msgid "Not Required"
+msgstr "Nicht erforderlich"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openswan.ui:74 openswanauth.ui:57
+msgid "Group password:"
+msgstr "Gruppenpasswort:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, ckShowPasswords)
+#: openswan.ui:111 openswanauth.ui:77
+msgid "Show passwords"
+msgstr "Passwort anzeigen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openswan.ui:131
+msgid "User name:"
+msgstr "Benutzername:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openswan.ui:141
+msgid "Phase1 algorithms:"
+msgstr "„Phase 1“-Algorithmen:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: openswan.ui:151
+msgid "Phase2 algorithms:"
+msgstr "„Phase 2“-Algorithmen:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openswan.ui:161
+msgid "Domain:"
+msgstr "Domäne:"

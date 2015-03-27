@@ -1,0 +1,304 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-07 05:41+0000\n"
+"PO-Revision-Date: 2014-08-01 13:16+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: vpnc.cpp:84
+msgid "Error decrypting the obfuscated password"
+msgstr "Error al descifrar la contraseña ofuscada"
+
+#: vpnc.cpp:84
+msgid "Error"
+msgstr "Error"
+
+#: vpnc.cpp:142
+#, kde-format
+msgid "File %1 could not be opened."
+msgstr "No se puede abrir el archivo %1."
+
+#: vpnc.cpp:151
+msgid "Needed executable cisco-decrypt could not be found."
+msgstr "No se puede encontrar el ejecutable necesario «cisco-decrypt»."
+
+#: vpnc.cpp:266
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+"El archivo preferencias de VPN «%1» indica que el tráfico VPN debe usar un "
+"túnel TCP que todavía no está implementado en el software vpnc.\n"
+"\n"
+"Aún así, la conexión se puede crear con el túnel TCP desactivado, pero es "
+"posible que no funcione como se esperaba."
+
+#: vpnc.cpp:266
+msgid "Not supported"
+msgstr "No permitido"
+
+#: vpnc.cpp:300
+#, kde-format
+msgid "%1: file format error."
+msgstr "%1: error de formato de archivo."
+
+#: vpnc.cpp:319
+#, kde-format
+msgid "%1: file could not be created"
+msgstr "%1: no se puede crear el archivo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnc.ui:18
+msgid "Gateway:"
+msgstr "Puerta de enlace:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnc.ui:31
+msgid "User name:"
+msgstr "Nombre de usuario:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnc.ui:44
+msgid "User password:"
+msgstr "Contraseña del usuario:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:70 vpnc.ui:129
+msgid "Store"
+msgstr "Almacenar"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:75 vpnc.ui:134
+msgid "Always Ask"
+msgstr "Preguntar siempre"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:80 vpnc.ui:139
+msgid "Not Required"
+msgstr "No es necesaria"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnc.ui:90 vpncauth.ui:106
+msgid "Group name:"
+msgstr "Nombre de grupo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnc.ui:103
+msgid "Group password:"
+msgstr "Contraseña de grupo:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: vpnc.ui:149 vpncauth.ui:79
+msgid "Show passwords"
+msgstr "Mostrar contraseñas"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:172
+msgid "Use hybrid authentication"
+msgstr "Usar autenticación híbrida"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnc.ui:182
+msgid "CA &file:"
+msgstr "Arc&hivo de la AC:"
+
+#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
+#: vpnc.ui:195
+msgid "*.pem *.crt *.cer"
+msgstr "*.pem *.crt *.cer"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: vpnc.ui:217
+msgid "Advanced..."
+msgstr "Avanzado..."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpncadvanced.ui:18
+msgid "Identification"
+msgstr "Identificación"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpncadvanced.ui:24
+msgid "Domain:"
+msgstr "Dominio:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpncadvanced.ui:37
+msgid "Vendor:"
+msgstr "Vendedor:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpncadvanced.ui:60
+msgid "Transport and Security"
+msgstr "Transporte y seguridad"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpncadvanced.ui:69
+msgid "Encryption method:"
+msgstr "Método de cifrado:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpncadvanced.ui:89
+msgid "NAT traversal:"
+msgstr "NAT transversal:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpncadvanced.ui:109
+msgid "IKE DH Group:"
+msgstr "Grupo DH de IKE:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpncadvanced.ui:129
+msgid "Perfect Forward Secrecy:"
+msgstr "Secreto perfecto hacia adelante (PFS):"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:155
+msgid "Disable dead peer detection"
+msgstr "Desactivar la detección de par muerto"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpncadvanced.ui:162
+msgid "Local Port:"
+msgstr "Puerto local:"
+
+#. i18n: ectx: property (toolTip), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:178
+msgid "Local port to use (0-65535). 0 (default value) means random port."
+msgstr ""
+"Puerto local a usar (0-65535). 0 (el valor por omisión) representa un puerto "
+"aleatorio."
+
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:181
+msgid "Random"
+msgstr "Aleatorio"
+
+#: vpncadvancedwidget.cpp:34
+msgid "Advanced VPNC properties"
+msgstr "Propiedades avanzadas de VPNC"
+
+#: vpncadvancedwidget.cpp:37
+msgctxt "VPNC vendor name"
+msgid "Cisco"
+msgstr "Cisco"
+
+#: vpncadvancedwidget.cpp:38
+msgctxt "VPNC vendor name"
+msgid "Netscreen"
+msgstr "Netscreen"
+
+#: vpncadvancedwidget.cpp:41
+msgctxt "VPNC encryption method"
+msgid "Secure (default)"
+msgstr "Seguro (por omisión)"
+
+#: vpncadvancedwidget.cpp:42
+msgctxt "VPNC encryption method"
+msgid "Weak (DES encryption, use with caution)"
+msgstr "Débil (cifrado DES, úselo con precaución)"
+
+#: vpncadvancedwidget.cpp:43
+msgctxt "VPNC encryption method"
+msgid "None (completely insecure)"
+msgstr "Ninguno (completamente inseguro)"
+
+#: vpncadvancedwidget.cpp:46
+msgctxt "NAT traversal method"
+msgid "NAT-T when available (default)"
+msgstr "NAT-T cuando esté disponible (por omisión)"
+
+#: vpncadvancedwidget.cpp:47
+msgctxt "NAT traversal method"
+msgid "NAT-T always"
+msgstr "Siempre NAT-T"
+
+#: vpncadvancedwidget.cpp:48
+msgctxt "NAT traversal method"
+msgid "Cisco UDP"
+msgstr "UDP de Cisco"
+
+#: vpncadvancedwidget.cpp:49
+msgctxt "NAT traversal method"
+msgid "Disabled"
+msgstr "Desactivada"
+
+#: vpncadvancedwidget.cpp:52
+msgctxt "IKE DH group"
+msgid "DH Group 1"
+msgstr "Grupo 1 de DH"
+
+#: vpncadvancedwidget.cpp:53
+msgctxt "IKE DH group"
+msgid "DH Group 2 (default)"
+msgstr "Grupo 2 de DH (por omisión)"
+
+#: vpncadvancedwidget.cpp:54
+msgctxt "IKE DH group"
+msgid "DH Group 5"
+msgstr "Grupo 5 de DH"
+
+#: vpncadvancedwidget.cpp:57
+msgctxt "Perfect Forward Secrecy"
+msgid "Server (default)"
+msgstr "Servidor (por omisión)"
+
+#: vpncadvancedwidget.cpp:58
+msgctxt "Perfect Forward Secrecy"
+msgid "None"
+msgstr "Ninguna"
+
+#: vpncadvancedwidget.cpp:59
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 1"
+msgstr "Grupo 1 de DH"
+
+#: vpncadvancedwidget.cpp:60
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 2"
+msgstr "Grupo 2 de DH"
+
+#: vpncadvancedwidget.cpp:61
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 5"
+msgstr "Grupo 5 de DH"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpncauth.ui:14
+msgid "VPNCAuthentication"
+msgstr "VPNCAuthentication"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: vpncauth.ui:23
+msgid "User Password:"
+msgstr "Contraseña del usuario:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: vpncauth.ui:36
+msgid "Group Password:"
+msgstr "Contraseña de grupo:"
+
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: vpncauth.ui:89
+msgid "Username:"
+msgstr "Nombre de usuario:"

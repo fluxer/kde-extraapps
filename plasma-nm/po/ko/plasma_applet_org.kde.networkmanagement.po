@@ -1,0 +1,1333 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Park Shinjo <kde@peremen.name>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"PO-Revision-Date: 2014-08-31 00:07+0900\n"
+"Last-Translator: Park Shinjo <kde@peremen.name>\n"
+"Language-Team: Korean <kde@peremen.name>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Park Shinjo"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
+#: applet/declarative/contents/ui/config.ui:19
+msgid "Show sections"
+msgstr "섹션 보기"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: applet/declarative/contents/ui/config.ui:32
+msgid "Show &network speed in:"
+msgstr "네트워크 속도 단위(&N):"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
+#: applet/declarative/contents/ui/config.ui:46
+msgid "KBytes/s"
+msgstr "KByte/초"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
+#: applet/declarative/contents/ui/config.ui:51
+msgid "KBits/s"
+msgstr "KBit/초"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: applet/declarative/contents/ui/config.ui:68
+msgid "Connection Details"
+msgstr "연결 정보"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
+msgid "Connect"
+msgstr "연결"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
+msgid "Disconnect"
+msgstr "연결 해제"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:209
+msgid "Speed"
+msgstr "속도"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:215
+msgid "Details"
+msgstr "자세히"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:311
+msgid "Password..."
+msgstr "암호..."
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:338
+msgid "Show password"
+msgstr "암호 보이기"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:421
+#, fuzzy
+#| msgid "Connected, ⬇ %1, ⬆ %2"
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr "연결됨, ⬇ %1, ⬆ %2"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:425
+msgid "Connected"
+msgstr "연결됨"
+
+#: applet/declarative/contents/ui/Header.qml:58
+#: libs/models/networkmodelitem.cpp:312
+msgid "Available connections"
+msgstr "사용 가능한 연결"
+
+#: applet/declarative/contents/ui/Toolbar.qml:58
+msgid "Wireless enabled"
+msgstr "무선 켜짐"
+
+#: applet/declarative/contents/ui/Toolbar.qml:58
+msgid "Wireless disabled"
+msgstr "무선 꺼짐"
+
+#: applet/declarative/contents/ui/Toolbar.qml:72
+msgid "Mobile broadband enabled"
+msgstr "모바일 광대역 켜짐"
+
+#: applet/declarative/contents/ui/Toolbar.qml:72
+msgid "Mobile broadband disabled"
+msgstr "모바일 광대역 꺼짐"
+
+#: applet/declarative/contents/ui/Toolbar.qml:85
+msgid "Airplane mode enabled"
+msgstr "비행기 모드 켜짐"
+
+#: applet/declarative/contents/ui/Toolbar.qml:85
+msgid "Airplane mode disabled"
+msgstr "비행기 모드 꺼짐"
+
+#: libs/declarative/networkstatus.cpp:80
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "연결됨"
+
+#: libs/declarative/networkstatus.cpp:83
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "연결됨"
+
+#: libs/declarative/networkstatus.cpp:86
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "연결됨"
+
+#: libs/declarative/networkstatus.cpp:89
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "비활성"
+
+#: libs/declarative/networkstatus.cpp:92
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "연결 끊김"
+
+#: libs/declarative/networkstatus.cpp:95
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "연결 끊는 중"
+
+#: libs/declarative/networkstatus.cpp:98
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "연결 중"
+
+#: libs/declarative/networkstatus.cpp:143
+msgid "VPN Connection"
+msgstr "VPN 연결"
+
+#: libs/declarative/networkstatus.cpp:148
+#, kde-format
+msgid "Connected to %1"
+msgstr "%1에 연결됨"
+
+#: libs/declarative/networkstatus.cpp:150
+#, kde-format
+msgid "Connecting to %1"
+msgstr "%1에 연결 중"
+
+#: libs/declarative/networkstatus.cpp:173
+msgid "NetworkManager not running"
+msgstr "NetworkManager가 실행 중이 아님"
+
+#: libs/declarative/networkstatus.cpp:178
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "NetworkManager 0.9.8이 필요함, 설치된 버전은 %1입니다."
+
+#: libs/declarative/networkstatus.cpp:181
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: libs/declarative/trafficmonitor.cpp:141
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr "수신"
+
+#: libs/declarative/trafficmonitor.cpp:143
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "송신"
+
+#: libs/declarative/trafficmonitor.cpp:203
+msgid "KBit/s"
+msgstr "KBit/초"
+
+#: libs/declarative/trafficmonitor.cpp:205
+msgid "MBit/s"
+msgstr "MBit/초"
+
+#: libs/declarative/trafficmonitor.cpp:210
+msgid "GBit/s"
+msgstr "GBit/초"
+
+#: libs/declarative/trafficmonitor.cpp:234
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr "%1%2"
+
+#: libs/declarative/trafficmonitor.cpp:243
+msgid "Received"
+msgstr "수신"
+
+#: libs/declarative/trafficmonitor.cpp:246
+msgid "Transmitted"
+msgstr "송신"
+
+#: libs/handler.cpp:89
+msgid "Missing VPN plugin"
+msgstr "VPN 플러그인 없음"
+
+#: libs/handler.cpp:391
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "%1을(를) 활성화할 수 없음"
+
+#: libs/handler.cpp:396
+#, kde-format
+msgid "Failed to add %1"
+msgstr "%1을(를) 추가할 수 없음"
+
+#: libs/handler.cpp:401
+msgid "Failed to request scan"
+msgstr "검색을 요청할 수 없음"
+
+#: libs/models/editoridentitymodel.cpp:62
+msgid "Connection name"
+msgstr "연결 이름"
+
+#: libs/models/editoridentitymodel.cpp:64
+msgid "Last used"
+msgstr "최근 사용"
+
+#: libs/models/networkmodelitem.cpp:310
+msgid "Active connections"
+msgstr "활성 연결"
+
+#: libs/uiutils.cpp:58 libs/uiutils.cpp:104
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "유선 이더넷"
+
+#: libs/uiutils.cpp:61
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "무선 802.11"
+
+#: libs/uiutils.cpp:64
+msgctxt "title of the interface widget in nm's popup"
+msgid "Bluetooth"
+msgstr "블루투스"
+
+#: libs/uiutils.cpp:67
+msgctxt "title of the interface widget in nm's popup"
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: libs/uiutils.cpp:70
+msgctxt "title of the interface widget in nm's popup"
+msgid "Infiniband"
+msgstr "인피니밴드"
+
+#: libs/uiutils.cpp:73
+msgctxt "title of the interface widget in nm's popup"
+msgid "ADSL"
+msgstr "ADSL"
+
+#: libs/uiutils.cpp:76
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bond)"
+msgstr "가상(본드)"
+
+#: libs/uiutils.cpp:79
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bridge)"
+msgstr "가상(브리지)"
+
+#: libs/uiutils.cpp:82
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (vlan)"
+msgstr "가상(VLAN)"
+
+#: libs/uiutils.cpp:89
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "직렬 모뎀"
+
+#: libs/uiutils.cpp:94
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "모바일 광대역"
+
+#: libs/uiutils.cpp:116
+msgid "ADSL"
+msgstr "ADSL"
+
+#: libs/uiutils.cpp:120
+msgid "DSL"
+msgstr "DSL"
+
+#: libs/uiutils.cpp:124
+msgid "Bluetooth"
+msgstr "블루투스"
+
+#: libs/uiutils.cpp:128
+msgid "Bond"
+msgstr "본드"
+
+#: libs/uiutils.cpp:131
+msgid "Bridge"
+msgstr "브리지"
+
+#: libs/uiutils.cpp:135
+msgid "Mobile broadband"
+msgstr "모바일 광대역"
+
+#: libs/uiutils.cpp:139
+msgid "Infiniband"
+msgstr "인피니밴드"
+
+#: libs/uiutils.cpp:142
+msgid "Olpc mesh"
+msgstr "OLPC 메시"
+
+#: libs/uiutils.cpp:145
+msgid "VLAN"
+msgstr "VLAN"
+
+#: libs/uiutils.cpp:148
+msgid "VPN"
+msgstr "VPN"
+
+#: libs/uiutils.cpp:152
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: libs/uiutils.cpp:156
+msgid "Wired"
+msgstr "유선"
+
+#: libs/uiutils.cpp:160
+msgid "Wireless"
+msgstr "무선"
+
+#: libs/uiutils.cpp:164
+msgid "Unknown connection type"
+msgstr "알 수 없는 연결 형식"
+
+#: libs/uiutils.cpp:176
+#, kde-format
+msgid "Wireless Interface (%1)"
+msgstr "무선 인터페이스(%1)"
+
+#: libs/uiutils.cpp:179
+#, kde-format
+msgid "Wired Interface (%1)"
+msgstr "유선 인터페이스(%1)"
+
+#: libs/uiutils.cpp:182
+#, kde-format
+msgid "Bluetooth (%1)"
+msgstr "블루투스(%1)"
+
+#: libs/uiutils.cpp:185
+#, kde-format
+msgid "Modem (%1)"
+msgstr "모뎀(%1)"
+
+#: libs/uiutils.cpp:188
+#, kde-format
+msgid "ADSL (%1)"
+msgstr "ADSL(%1)"
+
+#: libs/uiutils.cpp:191
+#, kde-format
+msgid "VLan (%1)"
+msgstr "VLAN(%1)"
+
+#: libs/uiutils.cpp:194
+#, kde-format
+msgid "Bridge (%1)"
+msgstr "브리지(%1)"
+
+#: libs/uiutils.cpp:207
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: libs/uiutils.cpp:210
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "관리되지 않음"
+
+#: libs/uiutils.cpp:213
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "사용 불가능"
+
+#: libs/uiutils.cpp:216
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "연결되지 않음"
+
+#: libs/uiutils.cpp:219
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "연결 준비 중"
+
+#: libs/uiutils.cpp:222
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "인터페이스 설정 중"
+
+#: libs/uiutils.cpp:225
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "인증 대기 중"
+
+#: libs/uiutils.cpp:228
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "네트워크 주소 설정 중"
+
+#: libs/uiutils.cpp:231
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr "추가 인증 확인 중"
+
+#: libs/uiutils.cpp:234
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "2차 연결 대가 중"
+
+#: libs/uiutils.cpp:238
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "연결됨"
+
+#: libs/uiutils.cpp:240
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "%1에 연결됨"
+
+#: libs/uiutils.cpp:244
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "연결 비활성화 중"
+
+#: libs/uiutils.cpp:247
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "연결 실패"
+
+#: libs/uiutils.cpp:250 libs/uiutils.cpp:284
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "오류: 잘못된 상태"
+
+#: libs/uiutils.cpp:260
+msgctxt "The state of the VPN connection is unknown"
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: libs/uiutils.cpp:263
+msgctxt "The VPN connection is preparing to connect"
+msgid "Preparing to connect"
+msgstr "연결 준비 중"
+
+#: libs/uiutils.cpp:266
+msgctxt "The VPN connection needs authorization credentials"
+msgid "Needs authorization"
+msgstr "인증 필요"
+
+#: libs/uiutils.cpp:269
+msgctxt "The VPN connection is being established"
+msgid "Connecting"
+msgstr "연결 중"
+
+#: libs/uiutils.cpp:272
+msgctxt "The VPN connection is getting an IP address"
+msgid "Setting network address"
+msgstr "네트워크 주소 설정 중"
+
+#: libs/uiutils.cpp:275
+msgctxt "The VPN connection is active"
+msgid "Activated"
+msgstr "활성화됨"
+
+#: libs/uiutils.cpp:278
+msgctxt "The VPN connection failed"
+msgid "Failed"
+msgstr "실패"
+
+#: libs/uiutils.cpp:281
+msgctxt "The VPN connection is disconnected"
+msgid "Failed"
+msgstr "실패"
+
+#: libs/uiutils.cpp:293
+msgctxt "wireless network operation mode"
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: libs/uiutils.cpp:296
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "Adhoc"
+
+#: libs/uiutils.cpp:299
+msgctxt "wireless network operation mode"
+msgid "Infrastructure"
+msgstr "Infrastructure"
+
+#: libs/uiutils.cpp:302
+msgctxt "wireless network operation mode"
+msgid "Access point"
+msgstr "액세스 포인트"
+
+#: libs/uiutils.cpp:305
+msgid "INCORRECT MODE FIX ME"
+msgstr "INCORRECT MODE FIX ME"
+
+#: libs/uiutils.cpp:327
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "페어와이즈 WEP40"
+
+#: libs/uiutils.cpp:329
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "페어와이즈 WEP104"
+
+#: libs/uiutils.cpp:331
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "페어와이즈 TKIP"
+
+#: libs/uiutils.cpp:333
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "페어와이즈 CCMP"
+
+#: libs/uiutils.cpp:335
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "그룹 WEP40"
+
+#: libs/uiutils.cpp:337
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "그룹 WEP104"
+
+#: libs/uiutils.cpp:339
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "그룹 TKIP"
+
+#: libs/uiutils.cpp:341
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "그룹 CCMP"
+
+#: libs/uiutils.cpp:343
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "PSK"
+
+#: libs/uiutils.cpp:345
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: libs/uiutils.cpp:355
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> Bit/s"
+msgstr "<numid>%1</numid>Bit/초"
+
+#: libs/uiutils.cpp:357
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> MBit/s"
+msgstr "<numid>%1</numid>MBit/초"
+
+#: libs/uiutils.cpp:359
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> GBit/s"
+msgstr "<numid>%1</numid>GBit/초"
+
+#: libs/uiutils.cpp:385
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "LTE"
+msgstr "LTE"
+
+#: libs/uiutils.cpp:387
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "UMTS/HSxPA"
+msgstr "UMTS/HSxPA"
+
+#: libs/uiutils.cpp:389
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GPRS/EDGE"
+msgstr "GPRS/EDGE"
+
+#: libs/uiutils.cpp:391
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GSM"
+msgstr "GSM"
+
+#: libs/uiutils.cpp:393 libs/uiutils.cpp:396
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "Any"
+msgstr "임의"
+
+#: libs/uiutils.cpp:402
+msgctxt "Cellular access technology"
+msgid "LTE"
+msgstr "LTE"
+
+#: libs/uiutils.cpp:404
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision B"
+msgstr "CDMA2000 EVDO 리비전 B"
+
+#: libs/uiutils.cpp:406
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision A"
+msgstr "CDMA2000 EVDO 리비전 A"
+
+#: libs/uiutils.cpp:408
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision 0"
+msgstr "CDMA2000 EVDO 리비전 0"
+
+#: libs/uiutils.cpp:410
+msgctxt "Cellular access technology"
+msgid "CDMA2000 1xRTT"
+msgstr "CDMA2000 1xRTT"
+
+#: libs/uiutils.cpp:412
+msgctxt "Cellular access technology"
+msgid "HSPA+"
+msgstr "HSPA+"
+
+#: libs/uiutils.cpp:414
+msgctxt "Cellular access technology"
+msgid "HSPA"
+msgstr "HSPA"
+
+#: libs/uiutils.cpp:416
+msgctxt "Cellular access technology"
+msgid "HSUPA"
+msgstr "HSUPA"
+
+#: libs/uiutils.cpp:418
+msgctxt "Cellular access technology"
+msgid "HSDPA"
+msgstr "HSDPA"
+
+#: libs/uiutils.cpp:420
+msgctxt "Cellular access technology"
+msgid "UMTS"
+msgstr "UMTS"
+
+#: libs/uiutils.cpp:422
+msgctxt "Cellular access technology"
+msgid "EDGE"
+msgstr "EDGE"
+
+#: libs/uiutils.cpp:424
+msgctxt "Cellular access technology"
+msgid "GPRS"
+msgstr "GPRS"
+
+#: libs/uiutils.cpp:426
+msgctxt "Cellular access technology"
+msgid "Compact GSM"
+msgstr "Compact GSM"
+
+#: libs/uiutils.cpp:428
+msgctxt "Cellular access technology"
+msgid "GSM"
+msgstr "GSM"
+
+#: libs/uiutils.cpp:430
+msgctxt "Analog wireline modem"
+msgid "Analog"
+msgstr "아날로그"
+
+#: libs/uiutils.cpp:432 libs/uiutils.cpp:437
+msgctxt "Unknown cellular access technology"
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#: libs/uiutils.cpp:434
+msgctxt "Any cellular access technology"
+msgid "Any"
+msgstr "임의"
+
+#: libs/uiutils.cpp:444
+msgctxt "possible SIM lock reason"
+msgid "Modem is unlocked."
+msgstr "모뎀 잠금이 해제되었습니다."
+
+#: libs/uiutils.cpp:446
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN code."
+msgstr "SIM PIN 코드가 필요합니다."
+
+#: libs/uiutils.cpp:448
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN2 code."
+msgstr "SIM PIN2 코드가 필요합니다."
+
+#: libs/uiutils.cpp:450
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK code."
+msgstr "SIM PUK 코드가 필요합니다."
+
+#: libs/uiutils.cpp:452
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK2 code."
+msgstr "SIM PUK2 코드가 필요합니다."
+
+#: libs/uiutils.cpp:454
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PIN code."
+msgstr "모뎀에서 서비스 제공자 PIN 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:456
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PUK code."
+msgstr "모뎀에서 서비스 제공자 PUK 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:458
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PIN code."
+msgstr "모뎀에서 네트워크 PIN 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:460
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PUK code."
+msgstr "모뎀에서 네트워크 PUK 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:462
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PIN code."
+msgstr "모뎀에서 PIN 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:464
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PIN code."
+msgstr "모뎀에서 사업자 PIN 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:466
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PUK code."
+msgstr "모뎀에서 사업자 PUK 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:468
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PIN code."
+msgstr "모뎀에서 PH-FSIM PIN 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:470
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PUK code."
+msgstr "모뎀에서 PH-FSIM PUK 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:472
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PIN code."
+msgstr "모뎀에서 네트워크 하위 집합 PIN 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:474
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PUK code."
+msgstr "모뎀에서 네트워크 하위 집합 PUK 코드를 필요로 합니다."
+
+#: libs/uiutils.cpp:477
+msgctxt "possible SIM lock reason"
+msgid "Lock reason unknown."
+msgstr "잠금 원인을 알 수 없습니다."
+
+#: libs/uiutils.cpp:485 libs/uiutils.cpp:491
+msgctxt "Unknown"
+msgid "Unknown Wimax NSP type"
+msgstr "알 수 없는 WiMax NSP 종류"
+
+#: libs/uiutils.cpp:486
+msgid "Home"
+msgstr "홈"
+
+#: libs/uiutils.cpp:487
+msgid "Partner"
+msgstr "파트너"
+
+#: libs/uiutils.cpp:488
+msgid "Roaming partner"
+msgstr "로밍 파트너"
+
+#: libs/uiutils.cpp:513
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "보안 없음"
+
+#: libs/uiutils.cpp:516
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/uiutils.cpp:519
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/uiutils.cpp:522
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "동적 WEP"
+
+#: libs/uiutils.cpp:525
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/uiutils.cpp:528
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/uiutils.cpp:531
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/uiutils.cpp:534
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/uiutils.cpp:537
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "알 수 없는 보안 형식"
+
+#: libs/uiutils.cpp:548
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "보안 없음"
+
+#: libs/uiutils.cpp:551
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: libs/uiutils.cpp:554
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: libs/uiutils.cpp:557
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "동적 WEP"
+
+#: libs/uiutils.cpp:560
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: libs/uiutils.cpp:563
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: libs/uiutils.cpp:566
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: libs/uiutils.cpp:569
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: libs/uiutils.cpp:572
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "알 수 없는 보안 형식"
+
+#: libs/uiutils.cpp:595
+msgid "System name:"
+msgstr "시스템 이름:"
+
+#: libs/uiutils.cpp:604
+msgid "IPv4 Address:"
+msgstr "IPv4 주소:"
+
+#: libs/uiutils.cpp:614
+msgid "IPv4 Gateway:"
+msgstr "IPv4 게이트웨이:"
+
+#: libs/uiutils.cpp:624
+msgid "IPv6 Address:"
+msgstr "IPv6 주소:"
+
+#: libs/uiutils.cpp:634
+msgid "IPv6 Gateway:"
+msgstr "IPv6 게이트웨이:"
+
+#: libs/uiutils.cpp:639
+msgid "Driver:"
+msgstr "드라이버:"
+
+#: libs/uiutils.cpp:655
+msgctxt "Name"
+msgid "Bluetooth name"
+msgstr "블루투스 이름"
+
+#: libs/uiutils.cpp:659 libs/uiutils.cpp:794 libs/uiutils.cpp:818
+msgid "MAC Address:"
+msgstr "MAC 주소:"
+
+#: libs/uiutils.cpp:686
+msgid "Operator:"
+msgstr "운영자:"
+
+#: libs/uiutils.cpp:688
+msgid "Network ID:"
+msgstr "네트워크 ID:"
+
+#: libs/uiutils.cpp:692 libs/uiutils.cpp:767
+msgid "Signal Quality:"
+msgstr "신호 품질:"
+
+#: libs/uiutils.cpp:696
+msgid "Access Technology:"
+msgstr "접속 기술:"
+
+#: libs/uiutils.cpp:700
+msgid "Allowed Mode:"
+msgstr "허용된 모드:"
+
+#: libs/uiutils.cpp:704
+msgid "Unlock Required:"
+msgstr "잠금 해제 필요:"
+
+#: libs/uiutils.cpp:708
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: libs/uiutils.cpp:715
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: libs/uiutils.cpp:736
+msgid "VPN plugin:"
+msgstr "VPN 플러그인:"
+
+#: libs/uiutils.cpp:740
+msgid "Banner:"
+msgstr "배너:"
+
+#: libs/uiutils.cpp:759
+msgid "Bsid:"
+msgstr "Bsid:"
+
+#: libs/uiutils.cpp:763
+msgid "NSP Name:"
+msgstr "NSP 이름:"
+
+#: libs/uiutils.cpp:767 libs/uiutils.cpp:826
+#, kde-format
+msgid "%1%"
+msgstr "%1%"
+
+#: libs/uiutils.cpp:771
+msgid "Network Type:"
+msgstr "네트워크 종류:"
+
+#: libs/uiutils.cpp:790 libs/uiutils.cpp:814
+msgid "Connection speed:"
+msgstr "연결 속도:"
+
+#: libs/uiutils.cpp:822
+msgid "Mode:"
+msgstr "모드:"
+
+#: libs/uiutils.cpp:826
+msgid "Signal strength:"
+msgstr "신호 강도:"
+
+#: libs/uiutils.cpp:830
+msgid "Access point (SSID):"
+msgstr "액세스 포인트(SSID):"
+
+#: libs/uiutils.cpp:834
+msgid "Access point (BSSID):"
+msgstr "액세스 포인트(BSSID):"
+
+#: libs/uiutils.cpp:838
+msgctxt "Wifi AP channel and frequency"
+msgid "Channel:"
+msgstr "채널:"
+
+#: libs/uiutils.cpp:838
+#, kde-format
+msgid "%1 (%2 MHz)"
+msgstr "%1(%2MHz)"
+
+#: libs/uiutils.cpp:846 libs/uiutils.cpp:852
+msgid "Security:"
+msgstr "보안:"
+
+#: libs/uiutils.cpp:857
+msgid "Frequency band:"
+msgstr "주파수 대역:"
+
+#: libs/uiutils.cpp:876
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "%1분 전"
+
+#: libs/uiutils.cpp:883
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "%1시간 전"
+
+#: libs/uiutils.cpp:888
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "어제"
+
+#: libs/uiutils.cpp:894
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "사용되지 않음"
+
+#: libs/uiutils.cpp:910
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "Last used one minute ago"
+msgid_plural "Last used %1 minutes ago"
+msgstr[0] "%1분 전에 마지막으로 사용됨"
+
+#: libs/uiutils.cpp:917
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "Last used one hour ago"
+msgid_plural "Last used %1 hours ago"
+msgstr[0] "%1시간 전에 마지막으로 사용됨"
+
+#: libs/uiutils.cpp:922
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Last used yesterday"
+msgstr "어제 마지막으로 사용됨"
+
+#: libs/uiutils.cpp:924
+#, kde-format
+msgid "Last used on %1"
+msgstr "%1에 마지막으로 사용됨"
+
+#: libs/uiutils.cpp:928
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never used"
+msgstr "사용되지 않음"
+
+#: settings/details/detailkeyseditor.cpp:92
+msgid "Driver"
+msgstr "드라이버"
+
+#: settings/details/detailkeyseditor.cpp:92
+msgid "Device driver"
+msgstr "장치 드라이버"
+
+#: settings/details/detailkeyseditor.cpp:93
+msgid "Connection Speed"
+msgstr "연결 속도"
+
+#: settings/details/detailkeyseditor.cpp:93
+msgid "Connection speed"
+msgstr "연결 속도"
+
+#: settings/details/detailkeyseditor.cpp:94
+msgid "System Name"
+msgstr "시스템 이름"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "MAC Address"
+msgstr "MAC 주소"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "Hardware address"
+msgstr "하드웨어 주소"
+
+#: settings/details/detailkeyseditor.cpp:98
+msgid "IPv4 Address"
+msgstr "IPv4 주소"
+
+#: settings/details/detailkeyseditor.cpp:98
+msgid "IP version 4 address"
+msgstr "IPv4 주소"
+
+#: settings/details/detailkeyseditor.cpp:101
+msgid "IPv4 Gateway"
+msgstr "IPv4 게이트웨이"
+
+#: settings/details/detailkeyseditor.cpp:101
+msgid "IP version 4 default gateway"
+msgstr "IPv4 기본 게이트웨이"
+
+#: settings/details/detailkeyseditor.cpp:104
+msgid "IPv6 Address"
+msgstr "IPv6 주소"
+
+#: settings/details/detailkeyseditor.cpp:104
+msgid "IP version 6 address"
+msgstr "IPv6 주소"
+
+#: settings/details/detailkeyseditor.cpp:107
+msgid "IPv6 Gateway"
+msgstr "IPv6 게이트웨이"
+
+#: settings/details/detailkeyseditor.cpp:107
+msgid "IP version 6 default gateway"
+msgstr "IPv6 기본 게이트웨이"
+
+#: settings/details/detailkeyseditor.cpp:110
+msgid "WiMAX Bsid"
+msgstr "WiMAX Bsid"
+
+#: settings/details/detailkeyseditor.cpp:110
+msgid "The ID of the serving base station as received from the network"
+msgstr "네트워크에서 수신한 사용 중인 베이스 스테이션 ID"
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "WiMAX NSP"
+msgstr "WiMAX NSP"
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "The name of the NSP"
+msgstr "NSP 이름"
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "WiMAX Signal"
+msgstr "WiMAX 신호"
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "The current signal quality of the NSP, in percent."
+msgstr "퍼센트 단위 NSP 신호 품질입니다."
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "WiMAX NSP Type"
+msgstr "WiMAX NSP 종류"
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "The network type of the NSP."
+msgstr "NSP 네트워크 종류입니다."
+
+#: settings/details/detailkeyseditor.cpp:116
+msgid "Access Point (SSID)"
+msgstr "액세스 포인트(SSID)"
+
+#: settings/details/detailkeyseditor.cpp:116
+msgid "Wireless Access Point's SSID"
+msgstr "무선 액세스 포인트 SSID"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Signal Strength"
+msgstr "신호 강도"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Wireless Access Point's signal strength"
+msgstr "무선 액세스 포인트 신호 강도"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Access Point (MAC)"
+msgstr "액세스 포인트(MAC)"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Wireless Access Point's Hardware Address"
+msgstr "무선 액세스 포인트 하드웨어 주소"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Band"
+msgstr "무선 대역"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Frequency Band"
+msgstr "무선 주파수 대역"
+
+#: settings/details/detailkeyseditor.cpp:120
+msgid "Wireless Channel"
+msgstr "무선 채널"
+
+#: settings/details/detailkeyseditor.cpp:120
+msgid "Wireless Frequency Channel"
+msgstr "무선 주파수 채널"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Wireless Security"
+msgstr "무선 보안"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Describes the security capabilities of the access point"
+msgstr "액세스 포인트가 지원하는 무선 보안 기능"
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "Wireless Mode"
+msgstr "무선 모드"
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "The operating mode of the wireless device"
+msgstr "무선 장치 동작 모드"
+
+#: settings/details/detailkeyseditor.cpp:125
+msgid "Mobile Operator"
+msgstr "모바일 사업자"
+
+#: settings/details/detailkeyseditor.cpp:125
+msgid "Mobile Operator's Name"
+msgstr "모바일 사업자 이름"
+
+#: settings/details/detailkeyseditor.cpp:126
+msgid "Mobile Signal Quality"
+msgstr "모바일 신호 품질"
+
+#: settings/details/detailkeyseditor.cpp:127
+msgid "Mobile Access Technology"
+msgstr "모바일 접속 기술"
+
+#: settings/details/detailkeyseditor.cpp:129
+msgid "Mobile Allowed Mode"
+msgstr "모바일 허용 모드"
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Unlock Required"
+msgstr "모바일 잠금 해제 필요"
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Master Device"
+msgstr "모바일 마스터 장치"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Device IMEI"
+msgstr "모바일 장치 IMEI"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Device Serial Number"
+msgstr "모바일 장치 일련 번호"
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device IMSI"
+msgstr "모바일 장치 IMSI"
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device Identity Number"
+msgstr "모바일 장치 식별 번호"
+
+#: settings/details/detailkeyseditor.cpp:135
+msgid "Bluetooth Name"
+msgstr "블루투스 이름"
+
+#: settings/details/detailkeyseditor.cpp:135
+msgid "Bluetooth name of the device"
+msgstr "장치의 블루투스 이름"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "VPN Plugin"
+msgstr "VPN 플러그인"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "VPN plugin type"
+msgstr "VPN 플러그인 종류"
+
+#: settings/details/detailkeyseditor.cpp:137
+msgid "VPN Banner"
+msgstr "VPN 배너"
+
+#: settings/details/detailkeyseditor.cpp:137
+msgid "VPN connection banner"
+msgstr "VPN 연결 배너"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settings/details/detailkeyswidget.ui:34
+msgid "Available Details"
+msgstr "사용 가능한 정보"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availDetails)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentDetails)
+#: settings/details/detailkeyswidget.ui:78
+#: settings/details/detailkeyswidget.ui:251
+msgctxt "title of a table's column"
+msgid "Name"
+msgstr "이름"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/details/detailkeyswidget.ui:204
+msgid "Details to Show"
+msgstr "표시할 정보"

@@ -1,0 +1,496 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-09 05:29+0000\n"
+"PO-Revision-Date: 2014-10-10 19:34+0300\n"
+"Last-Translator: Larso\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: openvpn.cpp:184
+msgid "Could not open file"
+msgstr "Tiedostoa ei voitu avata"
+
+#: openvpn.cpp:191
+#, kde-format
+msgid "Do you want to copy your certificates to %1?"
+msgstr "Haluatko kopioida varmenteet kohteeseen %1?"
+
+#: openvpn.cpp:192
+msgid "Copy certificates"
+msgstr "Kopioi varmenteet"
+
+#: openvpn.cpp:240 openvpn.cpp:261 openvpn.cpp:476
+#, kde-format
+msgid "Unknown option: %1"
+msgstr "Tuntematon valitsin: %1"
+
+#: openvpn.cpp:244 openvpn.cpp:265 openvpn.cpp:283 openvpn.cpp:297
+#: openvpn.cpp:315 openvpn.cpp:389 openvpn.cpp:467 openvpn.cpp:498
+#, kde-format
+msgid "Invalid number of arguments (expected 1) in option: %1"
+msgstr "Virheellinen valitsimen parametrien määrä (odotettiin yhtä): %1"
+
+#: openvpn.cpp:279 openvpn.cpp:293
+#, kde-format
+msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+msgstr "Virheellinen koko (tulisi olla väliltä 0–0xFFFF) valitsimessa: %1"
+
+#: openvpn.cpp:311
+#, kde-format
+msgid "Invalid size (should be between 0 and 604800) in option: %1"
+msgstr "Virheellinen koko (tulisi olla väliltä 0–604800) valitsimessa: %1"
+
+#: openvpn.cpp:363
+#, kde-format
+msgid "Invalid proxy option: %1"
+msgstr "Virheellinen välitysvalitsin: %1"
+
+#: openvpn.cpp:386
+#, kde-format
+msgid "Invalid port (should be between 1 and 65535) in option: %1"
+msgstr "Virheellinen portti (tulisi olla väliltä 1–65535) valitsimessa: %1"
+
+#: openvpn.cpp:486
+#, kde-format
+msgid "Invalid number of arguments (expected 2) in option: %1"
+msgstr "Virheellinen valitsimen parametrien määrä (odotettiin kahta): %1"
+
+#: openvpn.cpp:512
+#, kde-format
+msgid "Invalid argument in option: %1"
+msgstr "Virheellinen parametri valitsimessa: %1"
+
+#: openvpn.cpp:573
+#, kde-format
+msgid "File %1 is not a valid OpenVPN's client configuration file"
+msgstr "Tiedosto %1 ei ole kelvollinen OpenVPN:n asiakasasetustiedosto"
+
+#: openvpn.cpp:578
+#, kde-format
+msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+msgstr "Tiedosto %1 ei ole kelvollinen OpenVPN-asetus (ei etätiedosto)."
+
+#: openvpn.cpp:644
+#, kde-format
+msgid "Error saving file %1: %2"
+msgstr "Virhe tallennettaessa tiedostoa %1: %2"
+
+#: openvpn.cpp:672
+#, kde-format
+msgid "Error copying certificate to %1: %2"
+msgstr "Virhe kopioitaessa varmennetta kohteeseen %1: %2"
+
+#: openvpn.cpp:684
+msgid "Could not open file for writing"
+msgstr "Tiedostoa ei voitu avata kirjoitettavaksi"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: openvpn.ui:17
+msgid "Advanced..."
+msgstr "Lisäasetukset…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPasswords)
+#: openvpn.ui:24
+msgid "Show Passwords"
+msgstr "Näytä salasanat"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: openvpn.ui:33
+msgid "Gateway:"
+msgstr "Yhdyskäytävä:"
+
+#. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
+#: openvpn.ui:52
+msgid "Connection type:"
+msgstr "Yhteyden tyyppi:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: openvpn.ui:75
+msgid "X.509 Certificates"
+msgstr "X.509-varmenteet"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: openvpn.ui:80
+msgid "Pre-shared Key"
+msgstr "Esijaettu avain"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: openvpn.ui:85
+msgid "Password"
+msgstr "Salasana"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbConnectionType)
+#: openvpn.ui:90
+msgid "X.509 With Password"
+msgstr "Salasanallinen X.509"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
+#: openvpn.ui:106 openvpn.ui:422
+msgid "CA file:"
+msgstr "CA-tiedosto:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
+#: openvpn.ui:122 openvpn.ui:438
+msgid "Certificate:"
+msgstr "Varmenne:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
+#: openvpn.ui:138 openvpn.ui:454 openvpnadvanced.ui:326
+msgid "Key:"
+msgstr "Avain:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openvpn.ui:154 openvpn.ui:470
+msgid "Key password:"
+msgstr "Avaimen salasana:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#: openvpn.ui:171 openvpn.ui:381 openvpn.ui:510 openvpn.ui:543
+#: openvpnadvanced.ui:533
+msgid "Store"
+msgstr "Tallenna"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#: openvpn.ui:176 openvpn.ui:386 openvpn.ui:515 openvpn.ui:548
+#: openvpnadvanced.ui:538
+msgid "Always Ask"
+msgstr "Kysy aina"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, x509KeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, passPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassKeyPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, x509PassPasswordStorage)
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#. i18n: ectx: property (text), item, widget (KComboBox, proxyPasswordStorage)
+#: openvpn.ui:181 openvpn.ui:391 openvpn.ui:520 openvpn.ui:553
+#: openvpnadvanced.ui:429 openvpnadvanced.ui:543
+msgid "Not Required"
+msgstr "Ei vaadittu"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: openvpn.ui:212
+msgid "Shared Key:"
+msgstr "Jaettu avain:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: openvpn.ui:228
+msgid "Local IP:"
+msgstr "Paikallinen IP:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel7)
+#: openvpn.ui:244
+msgid "Remote IP:"
+msgstr "Etä-IP:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: openvpn.ui:264 openvpnadvanced.ui:346
+msgid "Key Direction:"
+msgstr "Avaimen suunta:"
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, cmbKeyDirection)
+#: openvpn.ui:277
+msgid ""
+"If key direction is used, it must be the opposite of that used on the VPN "
+"peer."
+msgstr ""
+"Jos avaimen suunta on käytössä, sen täytyy olla vastakkainen kuin VPN:n "
+"vertaiskoneella."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: openvpn.ui:281 openvpnadvanced.ui:221 openvpnadvanced.ui:360
+msgctxt "like in None setting selected"
+msgid "None"
+msgstr "Ei mikään"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#: openvpn.ui:286
+msgid "0"
+msgstr "0"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbKeyDirection)
+#: openvpn.ui:291
+msgid "1"
+msgstr "1"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: openvpn.ui:320
+msgid "CA File:"
+msgstr "CA-tiedosto:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel9)
+#. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
+#: openvpn.ui:339 openvpn.ui:477
+msgctxt "like in Username for athentication"
+msgid "Username:"
+msgstr "Käyttäjätunnus:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openvpn.ui:358 openvpn.ui:493 openvpnauth.cpp:82 openvpnauth.cpp:91
+#: openvpnauth.ui:23
+msgid "Password:"
+msgstr "Salasana:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, generalTab)
+#: openvpnadvanced.ui:18
+msgid "General"
+msgstr "Yleisasetukset"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openvpnadvanced.ui:26
+msgid "Gateway Port:"
+msgstr "Yhdyskäytävän portti:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbMtu)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, sbUdpFragmentSize)
+#: openvpnadvanced.ui:36 openvpnadvanced.ui:60 openvpnadvanced.ui:84
+msgctxt "like in use Automatic configuration"
+msgid "Automatic"
+msgstr "Automaattinen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openvpnadvanced.ui:50
+msgid "Tunnel MTU:"
+msgstr "Tunnelin MTU:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openvpnadvanced.ui:74
+msgid "UDP fragment size:"
+msgstr "UDP-lohkon koko:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
+#: openvpnadvanced.ui:98
+msgid "Use custom renegotiation interval"
+msgstr "Mukauta uudelleenneuvotteluaikaväliä"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseLZO)
+#: openvpnadvanced.ui:117
+msgid "Use LZO compression"
+msgstr "Käytä LZO-pakkausta"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
+#: openvpnadvanced.ui:124
+msgid "Use TCP connection"
+msgstr "Käytä TCP-yhteyttä"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseTAP)
+#: openvpnadvanced.ui:131
+msgid "Use TAP device"
+msgstr "Käytä TAP-laitetta"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
+#: openvpnadvanced.ui:138
+msgid "Restrict TCP maximum segment size (MSS)"
+msgstr "Rajoita TCP:n segmentin enimmäiskokoa (MSS)"
+
+#. i18n: ectx: attribute (title), widget (QWidget, securityTab)
+#: openvpnadvanced.ui:159
+msgid "Security"
+msgstr "Suojaus"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openvpnadvanced.ui:167
+msgid "Cipher:"
+msgstr "Salaus:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboCipher)
+#: openvpnadvanced.ui:187
+msgid "Obtaining available ciphers..."
+msgstr "Haetaan saatavilla olevia salauksia…"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openvpnadvanced.ui:199
+msgid "HMAC Authentication:"
+msgstr "HMAC-todentaminen:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:216
+msgctxt "like in use Default configuration"
+msgid "Default"
+msgstr "Default"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:226
+msgid "MD-4"
+msgstr "MD-4"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:231
+msgid "MD-5"
+msgstr "MD-5"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:236
+msgid "SHA-1"
+msgstr "SHA-1"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:241
+msgid "SHA-224"
+msgstr "SHA-224"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:246
+msgid "SHA-256"
+msgstr "SHA-256"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:251
+msgid "SHA-384"
+msgstr "SHA-384"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:256
+msgid "SHA-512"
+msgstr "SHA-512"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboHmac)
+#: openvpnadvanced.ui:261
+msgid "RIPEMD-160"
+msgstr "RIPEMD-160"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tlsTab)
+#: openvpnadvanced.ui:285
+msgid "TLS Settings"
+msgstr "TLS-asetukset"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: openvpnadvanced.ui:293
+msgid "Subject Match:"
+msgstr "Aiheen haku:"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, subjectMatch)
+#: openvpnadvanced.ui:303
+msgid ""
+"Connect only to servers whose certificate matches the given subject. "
+"Example: /CN=myvpn.company.com"
+msgstr ""
+"Yhdistä vain palvelimiin, joiden varmenne vastaa annettua aihetta. Esim. /"
+"CN=omavpn.yritys.fi"
+
+#. i18n: ectx: property (title), widget (QGroupBox, useExtraTlsAuth)
+#: openvpnadvanced.ui:312
+msgid "Use additional TLS authentication"
+msgstr "Käytä lisäksi TLS-todentamista"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: openvpnadvanced.ui:365
+msgid "Server (0)"
+msgstr "Palvelin (0)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboDirection)
+#: openvpnadvanced.ui:370
+msgid "Client (1)"
+msgstr "Asiakas (1)"
+
+#. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
+#: openvpnadvanced.ui:397
+msgid "Proxies"
+msgstr "Välityspalvelimet"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: openvpnadvanced.ui:406
+msgid "Proxy Type:"
+msgstr "Välityspalvelimen tyyppi:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#: openvpnadvanced.ui:434
+msgid "HTTP"
+msgstr "HTTP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbProxyType)
+#: openvpnadvanced.ui:439
+msgid "SOCKS"
+msgstr "SOCKS"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: openvpnadvanced.ui:447
+msgid "Server Address:"
+msgstr "Palvelinosoite:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: openvpnadvanced.ui:460
+msgid "Port:"
+msgstr "Portti:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
+#: openvpnadvanced.ui:483
+msgid "Retry indefinitely when errors occur"
+msgstr "Yritä rajattomasti uudelleen virheiden sattuessa"
+
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: openvpnadvanced.ui:490
+msgid "Proxy Username:"
+msgstr "Välityspalvelimen käyttäjätunnus:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: openvpnadvanced.ui:500 openvpnauth.cpp:111
+msgid "Proxy Password:"
+msgstr "Välityspalvelimen salasana:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkProxyShowPassword)
+#: openvpnadvanced.ui:513
+msgid "Show Password"
+msgstr "Näytä salasana"
+
+#: openvpnadvancedwidget.cpp:59
+msgctxt "@title: window advanced openvpn properties"
+msgid "Advanced OpenVPN properties"
+msgstr "OpenVPN:n lisäasetukset"
+
+#: openvpnadvancedwidget.cpp:108 openvpnadvancedwidget.cpp:132
+msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
+msgid "OpenVPN cipher lookup failed"
+msgstr "OpenVPN:n salauksen haku epäonnistui"
+
+#: openvpnadvancedwidget.cpp:115
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "Oletus"
+
+#: openvpnadvancedwidget.cpp:129
+msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
+msgid "No OpenVPN ciphers found"
+msgstr "OpenVPN-salauksia ei löytynyt"
+
+#: openvpnauth.cpp:74 openvpnauth.cpp:100
+msgid "Key Password:"
+msgstr "Avaimen salasana:"
+
+#: openvpnauth.cpp:128
+msgid "&Show password"
+msgstr "&Näytä salasana"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenVPNAuthenticationWidget)
+#: openvpnauth.ui:14
+msgid "OpenVPNAuthentication"
+msgstr "OpenVPN-todentaminen"

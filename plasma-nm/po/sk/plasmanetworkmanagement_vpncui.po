@@ -1,0 +1,303 @@
+# translation of plasmanetworkmanagement_vpncui.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2013, 2014.
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmanetworkmanagement_vpncui\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-07 05:41+0000\n"
+"PO-Revision-Date: 2014-07-26 11:08+0200\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: vpnc.cpp:84
+msgid "Error decrypting the obfuscated password"
+msgstr "Chyba dešifrovania popleteného hesla"
+
+#: vpnc.cpp:84
+msgid "Error"
+msgstr "Chyba"
+
+#: vpnc.cpp:142
+#, kde-format
+msgid "File %1 could not be opened."
+msgstr "Súbor %1 nie je možné otvoriť."
+
+#: vpnc.cpp:151
+msgid "Needed executable cisco-decrypt could not be found."
+msgstr "Potrebný program cisco-decrypt sa nedá nájsť."
+
+#: vpnc.cpp:266
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+"VPN nastavenia súboru '%1' určujú, že VPN prevádzka má byť tunelovaná cez "
+"TCP, čo momentálne nie je podporované v softvéri vpnc.\n"
+"\n"
+"Pripojenie sa stále dá vytvoriť, ale so zakázaným TCP tunelovaním, teda to "
+"nemusí fungovať, ako sa očakáva."
+
+#: vpnc.cpp:266
+msgid "Not supported"
+msgstr "Nepodporované"
+
+#: vpnc.cpp:300
+#, kde-format
+msgid "%1: file format error."
+msgstr "%1: chyba formátu súboru."
+
+#: vpnc.cpp:319
+#, kde-format
+msgid "%1: file could not be created"
+msgstr "%1: súbor nie je možné vytvoriť"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnc.ui:18
+msgid "Gateway:"
+msgstr "Brána:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnc.ui:31
+msgid "User name:"
+msgstr "Meno používateľa:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnc.ui:44
+msgid "User password:"
+msgstr "Heslo používateľa:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:70 vpnc.ui:129
+msgid "Store"
+msgstr "Uložiť"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:75 vpnc.ui:134
+msgid "Always Ask"
+msgstr "Vždy sa pýtať"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:80 vpnc.ui:139
+msgid "Not Required"
+msgstr "Nepožadované"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnc.ui:90 vpncauth.ui:106
+msgid "Group name:"
+msgstr "Názov skupiny:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnc.ui:103
+msgid "Group password:"
+msgstr "Heslo skupiny:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: vpnc.ui:149 vpncauth.ui:79
+msgid "Show passwords"
+msgstr "Zobraziť heslá"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:172
+msgid "Use hybrid authentication"
+msgstr "Použiť hybridnú autentifikáciu"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnc.ui:182
+msgid "CA &file:"
+msgstr "Súbor C&A:"
+
+#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
+#: vpnc.ui:195
+msgid "*.pem *.crt *.cer"
+msgstr "*.pem *.crt *.cer"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: vpnc.ui:217
+msgid "Advanced..."
+msgstr "Pokročilé..."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpncadvanced.ui:18
+msgid "Identification"
+msgstr "Identifikácia"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpncadvanced.ui:24
+msgid "Domain:"
+msgstr "Doména:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpncadvanced.ui:37
+msgid "Vendor:"
+msgstr "Predajca:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpncadvanced.ui:60
+msgid "Transport and Security"
+msgstr "Prenos a bezpečnosť"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpncadvanced.ui:69
+msgid "Encryption method:"
+msgstr "Metóda šifrovania:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpncadvanced.ui:89
+msgid "NAT traversal:"
+msgstr "Prechod cez NAT:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpncadvanced.ui:109
+msgid "IKE DH Group:"
+msgstr "Skupina IKE DH:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpncadvanced.ui:129
+msgid "Perfect Forward Secrecy:"
+msgstr "Dokonalá tajnosť forwardu:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:155
+msgid "Disable dead peer detection"
+msgstr "Zakázať detekciu mŕtvych klientov"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpncadvanced.ui:162
+msgid "Local Port:"
+msgstr "Lokálny port:"
+
+#. i18n: ectx: property (toolTip), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:178
+msgid "Local port to use (0-65535). 0 (default value) means random port."
+msgstr ""
+"Lokálny port, ktorý sa použije (0-65535). 0 (predvolená hodnota) znamená "
+"náhodný port."
+
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:181
+msgid "Random"
+msgstr "Náhodný"
+
+#: vpncadvancedwidget.cpp:34
+msgid "Advanced VPNC properties"
+msgstr "Pokročilé nastavenia VPNC"
+
+#: vpncadvancedwidget.cpp:37
+msgctxt "VPNC vendor name"
+msgid "Cisco"
+msgstr "Cisco"
+
+#: vpncadvancedwidget.cpp:38
+msgctxt "VPNC vendor name"
+msgid "Netscreen"
+msgstr "Netscreen"
+
+#: vpncadvancedwidget.cpp:41
+msgctxt "VPNC encryption method"
+msgid "Secure (default)"
+msgstr "Zabezpečené (predvolené)"
+
+#: vpncadvancedwidget.cpp:42
+msgctxt "VPNC encryption method"
+msgid "Weak (DES encryption, use with caution)"
+msgstr "Slabé (šifrovanie DES používajte opatrne)"
+
+#: vpncadvancedwidget.cpp:43
+msgctxt "VPNC encryption method"
+msgid "None (completely insecure)"
+msgstr "Žiadne (úplne nezabezpečené)"
+
+#: vpncadvancedwidget.cpp:46
+msgctxt "NAT traversal method"
+msgid "NAT-T when available (default)"
+msgstr "NAT-T ak je dostupné (predvolené)"
+
+#: vpncadvancedwidget.cpp:47
+msgctxt "NAT traversal method"
+msgid "NAT-T always"
+msgstr "NAT-T vždy"
+
+#: vpncadvancedwidget.cpp:48
+msgctxt "NAT traversal method"
+msgid "Cisco UDP"
+msgstr "Cisco UDP"
+
+#: vpncadvancedwidget.cpp:49
+msgctxt "NAT traversal method"
+msgid "Disabled"
+msgstr "Zakázané"
+
+#: vpncadvancedwidget.cpp:52
+msgctxt "IKE DH group"
+msgid "DH Group 1"
+msgstr "DH Group 1"
+
+#: vpncadvancedwidget.cpp:53
+msgctxt "IKE DH group"
+msgid "DH Group 2 (default)"
+msgstr "DH Group 2 (predvolené)"
+
+#: vpncadvancedwidget.cpp:54
+msgctxt "IKE DH group"
+msgid "DH Group 5"
+msgstr "DH Group 5"
+
+#: vpncadvancedwidget.cpp:57
+msgctxt "Perfect Forward Secrecy"
+msgid "Server (default)"
+msgstr "Server (predvolené)"
+
+#: vpncadvancedwidget.cpp:58
+msgctxt "Perfect Forward Secrecy"
+msgid "None"
+msgstr "Žiadne"
+
+#: vpncadvancedwidget.cpp:59
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 1"
+msgstr "DH Group 1"
+
+#: vpncadvancedwidget.cpp:60
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 2"
+msgstr "DH Group 2"
+
+#: vpncadvancedwidget.cpp:61
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 5"
+msgstr "DH Group 5"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpncauth.ui:14
+msgid "VPNCAuthentication"
+msgstr "Overovanie VPNC"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: vpncauth.ui:23
+msgid "User Password:"
+msgstr "Heslo používateľa:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: vpncauth.ui:36
+msgid "Group Password:"
+msgstr "Heslo skupiny:"
+
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: vpncauth.ui:89
+msgid "Username:"
+msgstr "Užívateľské meno:"

@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmanm_openconnectui\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:57+0000\n"
+"PO-Revision-Date: 2013-06-14 13:42+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: OpenConnect AC Secure CSD Desktop VPN Gateway FSID\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: openconnectauth.cpp:284
+msgid "Contacting host, please wait..."
+msgstr "A contactar a máquina, espere por favor..."
+
+#: openconnectauth.cpp:418
+msgid "&Show password"
+msgstr "Mostrar a &senha"
+
+#: openconnectauth.cpp:478
+msgid "Login"
+msgstr "Utilizador"
+
+#: openconnectauth.cpp:526
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"A verificação foi mal-sucedida para o certificado do servidor VPN \"%1\".\n"
+"Razão: %2\n"
+"Deseja aceitá-la à mesma?"
+
+#: openconnectauth.cpp:611
+msgid "Connection attempt was unsuccessful."
+msgstr "A tentativa de ligação foi mal-sucedida."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:20
+msgid "OpenConnect VPN Authentication"
+msgstr "Autenticação da VPN com OpenConnect"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:40
+msgid "VPN Host"
+msgstr "Servidor de VPN"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
+#: openconnectauth.ui:56
+msgid "Connect"
+msgstr "Ligar"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:77
+msgid "Automatically start connecting next time"
+msgstr "Iniciar automaticamente a ligação da próxima vez"
+
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:112
+msgid "View Log"
+msgstr "Ver o Registo"
+
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:122
+msgid "Log Level:"
+msgstr "Nível de Registo:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:133
+msgid "Error"
+msgstr "Erro"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:138
+msgid "Info"
+msgstr "Informação"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:143
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr "Depuração"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:148
+msgid "Trace"
+msgstr "Traceamento"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:14
+msgid "OpenConnect Settings"
+msgstr "Configuração do OpenConnect"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:20
+msgctxt "like in General settings"
+msgid "General"
+msgstr "Geral"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:29
+msgid "Gateway:"
+msgstr "'Gateway':"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:42
+msgid "CA Certificate:"
+msgstr "Certificado da AC:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:55
+msgid "Proxy:"
+msgstr "'Proxy':"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:68
+msgid "CSD Wrapper Script:"
+msgstr "Programa de Interface CSD:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:78
+msgid "Allow Cisco Secure Desktop &trojan"
+msgstr "Permitir o agen&te do 'Cisco Secure Desktop'"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:91
+msgid "Certificate Authentication"
+msgstr "Autenticação do Certificado"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:97
+msgid "User Certificate:"
+msgstr "Certificado do Utilizador:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:107
+msgid "Private Key:"
+msgstr "Chave Privada:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:123
+msgid "Use FSID for key passphrase"
+msgstr "Usar o FSID para a frase-senha da chave"

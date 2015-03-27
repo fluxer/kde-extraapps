@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-nm-connection-editor\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2013-04-09 02:51-0700\n"
+"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: connectioneditor.cpp:76
+msgid "Type here to search connections..."
+msgstr ""
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr ""
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr ""
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr ""
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr ""
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr ""
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr ""
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr ""
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr ""
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr ""
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr ""
+
+#: connectioneditor.cpp:151
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr ""
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr ""
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr ""
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr ""
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr ""
+
+#: connectioneditor.cpp:178
+msgid "Edit..."
+msgstr ""
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr ""
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr ""
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr ""
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr ""
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr ""
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr ""
+
+#: connectioneditor.cpp:352
+msgid "Connect"
+msgstr ""
+
+#: connectioneditor.cpp:354
+msgid "Disconnect"
+msgstr ""
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr ""
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr ""
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr ""
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr ""
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr ""
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr ""
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr ""
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr ""
+
+#: main.cpp:40
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr ""
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr ""
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr ""
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr ""
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr ""
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr ""
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr ""
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr ""
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr ""
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr ""
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr ""
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr ""

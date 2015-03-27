@@ -1,0 +1,152 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Park Shinjo <kde@peremen.name>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:57+0000\n"
+"PO-Revision-Date: 2014-09-08 20:34+0900\n"
+"Last-Translator: Park Shinjo <kde@peremen.name>\n"
+"Language-Team: Korean <kde@peremen.name>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: openconnectauth.cpp:284
+msgid "Contacting host, please wait..."
+msgstr "호스트 연결 중, 잠시 기다려 주십시오..."
+
+#: openconnectauth.cpp:418
+msgid "&Show password"
+msgstr "암호 보이기(&S)"
+
+#: openconnectauth.cpp:478
+msgid "Login"
+msgstr "로그인"
+
+#: openconnectauth.cpp:526
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"VPN 서버 \"%1\"의 인증서를 확인할 수 없습니다.\n"
+"이유: %2\n"
+"인증서를 수락하시겠습니까?"
+
+#: openconnectauth.cpp:611
+msgid "Connection attempt was unsuccessful."
+msgstr "연결 시도가 실패하였습니다."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:20
+msgid "OpenConnect VPN Authentication"
+msgstr "OpenConnect VPN 인증"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:40
+msgid "VPN Host"
+msgstr "VPN 호스트"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
+#: openconnectauth.ui:56
+msgid "Connect"
+msgstr "연결"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:77
+msgid "Automatically start connecting next time"
+msgstr "다음에 자동으로 연결"
+
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:112
+msgid "View Log"
+msgstr "기록 보기"
+
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:122
+msgid "Log Level:"
+msgstr "기록 단계:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:133
+msgid "Error"
+msgstr "오류"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:138
+msgid "Info"
+msgstr "정보"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:143
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr "디버그"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
+#: openconnectauth.ui:148
+msgid "Trace"
+msgstr "추적"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:14
+msgid "OpenConnect Settings"
+msgstr "OpenConnect 설정"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:20
+msgctxt "like in General settings"
+msgid "General"
+msgstr "일반"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:29
+msgid "Gateway:"
+msgstr "게이트웨이:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:42
+msgid "CA Certificate:"
+msgstr "CA 인증서:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:55
+msgid "Proxy:"
+msgstr "프록시:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:68
+msgid "CSD Wrapper Script:"
+msgstr "CSD 래퍼 스크립트:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:78
+msgid "Allow Cisco Secure Desktop &trojan"
+msgstr "Cisco Secure Desktop Trojan 허용(&T)"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:91
+msgid "Certificate Authentication"
+msgstr "인증서 인증"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:97
+msgid "User Certificate:"
+msgstr "사용자 인증서:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:107
+msgid "Private Key:"
+msgstr "비밀 키:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:123
+msgid "Use FSID for key passphrase"
+msgstr "키 암호에 FSID 사용"

@@ -1,0 +1,305 @@
+# Lithuanian translations for l package.
+# Copyright (C) 2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the l package.
+#
+# Automatically generated, 2014.
+# Liudas Ališauskas <liudas@aksioma.lt>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: l 10n\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-07 05:41+0000\n"
+"PO-Revision-Date: 2014-03-15 01:22+0200\n"
+"Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: vpnc.cpp:84
+msgid "Error decrypting the obfuscated password"
+msgstr "Klaida atkoduojant užslaptintą slaptažodį"
+
+#: vpnc.cpp:84
+msgid "Error"
+msgstr "Klaida"
+
+#: vpnc.cpp:142
+#, kde-format
+msgid "File %1 could not be opened."
+msgstr "Nepavyko atverti failo %1."
+
+#: vpnc.cpp:151
+msgid "Needed executable cisco-decrypt could not be found."
+msgstr "Nerastas reikalingas vykdomasis failas cisco-decrypt."
+
+#: vpnc.cpp:266
+#, kde-format
+msgid ""
+"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+"through TCP which is currently not supported in the vpnc software.\n"
+"\n"
+"The connection can still be created, with TCP tunneling disabled, however it "
+"may not work as expected."
+msgstr ""
+"VPN nustatymų failas „%1“ rodo, kad VPN srautas turėtų būti praleistas per "
+"TCP, o jo šiuo metu vpnc programinė įranga nepalaiko.\n"
+"\n"
+"Šią jungtį visgi galima sukurti, išjungus praleidimą per TCP, tik ji gali "
+"veikti kiek kitaip nei tikėtasi."
+
+#: vpnc.cpp:266
+msgid "Not supported"
+msgstr "Nepalaikoma"
+
+#: vpnc.cpp:300
+#, kde-format
+msgid "%1: file format error."
+msgstr "%1: failo formato klaida."
+
+#: vpnc.cpp:319
+#, kde-format
+msgid "%1: file could not be created"
+msgstr "%1: Nepavyko sukurti faulo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnc.ui:18
+msgid "Gateway:"
+msgstr "Šliuzas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnc.ui:31
+msgid "User name:"
+msgstr "Naudotojo vardas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnc.ui:44
+msgid "User password:"
+msgstr "Naudotojo slaptažodis:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:70 vpnc.ui:129
+msgid "Store"
+msgstr "Saugoti"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:75 vpnc.ui:134
+msgid "Always Ask"
+msgstr "Visada klausti"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPasswordType)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboGroupPasswordType)
+#: vpnc.ui:80 vpnc.ui:139
+msgid "Not Required"
+msgstr "Nebūtinas"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnc.ui:90 vpncauth.ui:106
+msgid "Group name:"
+msgstr "Grupės pavadinimas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnc.ui:103
+msgid "Group password:"
+msgstr "Grupės slaptažodis:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: vpnc.ui:149 vpncauth.ui:79
+msgid "Show passwords"
+msgstr "Rodyti slaptažodžius:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:172
+msgid "Use hybrid authentication"
+msgstr "Naudoti hibridinį tapatumo nustatymą"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnc.ui:182
+msgid "CA &file:"
+msgstr "CA failas:"
+
+#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
+#: vpnc.ui:195
+msgid "*.pem *.crt *.cer"
+msgstr "*.pem *.crt *.cer"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: vpnc.ui:217
+msgid "Advanced..."
+msgstr "Išsamiau..."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpncadvanced.ui:18
+msgid "Identification"
+msgstr "Identifikacija"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpncadvanced.ui:24
+msgid "Domain:"
+msgstr "Sritis:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpncadvanced.ui:37
+msgid "Vendor:"
+msgstr "Gamintojas:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpncadvanced.ui:60
+msgid "Transport and Security"
+msgstr "Transportas ir saugumas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpncadvanced.ui:69
+msgid "Encryption method:"
+msgstr "Šifravimo būdas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpncadvanced.ui:89
+msgid "NAT traversal:"
+msgstr "NAT apėjimas:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpncadvanced.ui:109
+msgid "IKE DH Group:"
+msgstr "IKE DH grupė:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpncadvanced.ui:129
+msgid "Perfect Forward Secrecy:"
+msgstr "Puikus persiunčiamas slaptumas:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:155
+msgid "Disable dead peer detection"
+msgstr "Išjungti neatsakančių lygiarangių aptikimą"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpncadvanced.ui:162
+msgid "Local Port:"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:178
+msgid "Local port to use (0-65535). 0 (default value) means random port."
+msgstr ""
+
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, localport)
+#: vpncadvanced.ui:181
+msgid "Random"
+msgstr ""
+
+#: vpncadvancedwidget.cpp:34
+msgid "Advanced VPNC properties"
+msgstr "Išsamesnės VPNC savybės"
+
+#: vpncadvancedwidget.cpp:37
+msgctxt "VPNC vendor name"
+msgid "Cisco"
+msgstr "Cisco"
+
+#: vpncadvancedwidget.cpp:38
+msgctxt "VPNC vendor name"
+msgid "Netscreen"
+msgstr "Netscreen"
+
+#: vpncadvancedwidget.cpp:41
+msgctxt "VPNC encryption method"
+msgid "Secure (default)"
+msgstr "Saugus (numatytasis)"
+
+#: vpncadvancedwidget.cpp:42
+msgctxt "VPNC encryption method"
+msgid "Weak (DES encryption, use with caution)"
+msgstr "Silpnas (DES šifravimas, naudokite atsargiai)"
+
+#: vpncadvancedwidget.cpp:43
+msgctxt "VPNC encryption method"
+msgid "None (completely insecure)"
+msgstr "Nėra (visiškai nesaugu)"
+
+#: vpncadvancedwidget.cpp:46
+msgctxt "NAT traversal method"
+msgid "NAT-T when available (default)"
+msgstr "NAT-T kai įmanoma (numatytasis)"
+
+#: vpncadvancedwidget.cpp:47
+msgctxt "NAT traversal method"
+msgid "NAT-T always"
+msgstr "NAT-T visada"
+
+#: vpncadvancedwidget.cpp:48
+msgctxt "NAT traversal method"
+msgid "Cisco UDP"
+msgstr "Cisco UDP"
+
+#: vpncadvancedwidget.cpp:49
+msgctxt "NAT traversal method"
+msgid "Disabled"
+msgstr "Išjungtas"
+
+#: vpncadvancedwidget.cpp:52
+msgctxt "IKE DH group"
+msgid "DH Group 1"
+msgstr "DH grupė 1"
+
+#: vpncadvancedwidget.cpp:53
+msgctxt "IKE DH group"
+msgid "DH Group 2 (default)"
+msgstr "DH 2 grupė (numatytoji)"
+
+#: vpncadvancedwidget.cpp:54
+msgctxt "IKE DH group"
+msgid "DH Group 5"
+msgstr "DH grupė 5"
+
+#: vpncadvancedwidget.cpp:57
+msgctxt "Perfect Forward Secrecy"
+msgid "Server (default)"
+msgstr "Serveris (numatytasis)"
+
+#: vpncadvancedwidget.cpp:58
+msgctxt "Perfect Forward Secrecy"
+msgid "None"
+msgstr "Joks"
+
+#: vpncadvancedwidget.cpp:59
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 1"
+msgstr "DH grupė 1"
+
+#: vpncadvancedwidget.cpp:60
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 2"
+msgstr "DH grupė 2"
+
+#: vpncadvancedwidget.cpp:61
+msgctxt "Perfect Forward Secrecy"
+msgid "DH Group 5"
+msgstr "DH grupė 5"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpncauth.ui:14
+msgid "VPNCAuthentication"
+msgstr "VPNC tapatumo nustatymas"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: vpncauth.ui:23
+msgid "User Password:"
+msgstr "Naudotojo slaptažodis:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: vpncauth.ui:36
+msgid "Group Password:"
+msgstr "Grupės slaptažodis:"
+
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: vpncauth.ui:89
+msgid "Username:"
+msgstr "Naudotojo vardas:"

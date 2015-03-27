@@ -1,0 +1,250 @@
+# Translation of kde-nm-connection-editor.po to Catalan
+# Copyright (C) 2014 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Antoni Bella Pérez <antonibella5@orange.es>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-nm-connection-editor\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2014-03-16 22:50+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@orange.es>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Antoni Bella Pérez"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "antonibella5@orange.es"
+
+#: connectioneditor.cpp:76
+msgid "Type here to search connections..."
+msgstr "Escriviu ací per a cercar les connexions..."
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr "Afig"
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr "Maquinari"
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr "DSL"
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr "InfiniBand"
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr "Banda ampla per mòbil..."
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr "Per cable"
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr "Per cable (compartida)"
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr "Sense fils"
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr "Sense fils (compartida)"
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: connectioneditor.cpp:151
+#, fuzzy
+#| msgid "Virtual"
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr "Virtual"
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr "Enllaç"
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr "Pont"
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr "VLAN"
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr "VPN"
+
+#: connectioneditor.cpp:178
+msgid "Edit..."
+msgstr "Edita..."
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr "Esborra"
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr "Importa la VPN..."
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr "Exporta VPN..."
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "S'ha afegit la connexió %1"
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Voleu eliminar la connexió «%1»?"
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr "Elimina la connexió"
+
+#: connectioneditor.cpp:352
+msgid "Connect"
+msgstr "Connecta"
+
+#: connectioneditor.cpp:354
+msgid "Disconnect"
+msgstr "Desconnecta"
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr "Importa la connexió VPN"
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Ha fallat la importació de la connexió VPN %1\n"
+"%2"
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr "L'exportació no està implementada per este tipus de VPN"
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr "Exporta la connexió VPN"
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Ha fallat l'exportació de la connexió VPN %1\n"
+"%2"
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr "La connexió VPN %1 s'ha exportat satisfactòriament"
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr "Connexió"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr "Barra d'eines principal"
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr "Editor de la connexió"
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr "Gestiona les connexions de xarxa"
+
+#: main.cpp:40
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr "(C) 2013-2014 Jan Grulich i Lukáš Tinkl"
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+"Esta aplicació permet crear, editar i eliminar connexions de xarxa.\n"
+"\n"
+"S'utilitza la versió de NM: %1"
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr "Jan Grulich"
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr "Desenvolupador"
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr "Lukáš Tinkl"
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr "Lamarque Souza"
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr "Autor de «libnm-qt»"
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr "Daniel Nicoletti"
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr "Vàries correccions d'errors"
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr "Connectors VPN"
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr "Edita la connexió"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr "Editor de la connexió"

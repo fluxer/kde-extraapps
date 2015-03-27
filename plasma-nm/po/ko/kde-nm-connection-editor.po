@@ -1,0 +1,246 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Park Shinjo <kde@peremen.name>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2014-08-30 20:17+0900\n"
+"Last-Translator: Park Shinjo <kde@peremen.name>\n"
+"Language-Team: Korean <kde@peremen.name>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Park Shinjo"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: connectioneditor.cpp:76
+msgid "Type here to search connections..."
+msgstr "연결을 검색하려면 입력하십시오..."
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr "추가"
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr "하드웨어"
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr "DSL"
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr "인피니밴드"
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr "모바일 광대역..."
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr "유선"
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr "유선(공유됨)"
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr "무선"
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr "무선(공유됨)"
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: connectioneditor.cpp:151
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr "가상"
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr "본드"
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr "브리지"
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr "VLAN"
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr "VPN"
+
+#: connectioneditor.cpp:178
+msgid "Edit..."
+msgstr "편집..."
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr "삭제"
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr "VPN 가져오기..."
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr "VPN 내보내기..."
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "연결 %1이(가) 추가됨"
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr "연결 삭제"
+
+#: connectioneditor.cpp:352
+msgid "Connect"
+msgstr "연결"
+
+#: connectioneditor.cpp:354
+msgid "Disconnect"
+msgstr "연결 해제"
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr "VPN 연결 가져오기"
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"VPN 연결 %1을(를) 가져올 수 없음\n"
+"%2"
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr "이 VPN 형식을 내보낼 수 없음"
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr "VPN 연결 내보내기"
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"VPN 연결 %1을(를) 내보낼 수 없음\n"
+"%2"
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr "VPN 연결 %1을(를) 내보냄"
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr "연결"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr "주 도구 모음"
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr "연결 편집기"
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr "네트워크 연결 관리"
+
+#: main.cpp:40
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+"네트워크 연결을 만들고, 편집하고, 삭제할 수 있습니다.\n"
+"\n"
+"사용하는 NM 버전: %1"
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr "Jan Grulich"
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr "개발자"
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr "Lukáš Tinkl"
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr "Lamarque Souza"
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr "libnm-qt 작성자"
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr "Daniel Nicoletti"
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr "다양한 버그 수리"
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr "VPN 플러그인"
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr "연결 편집"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr "연결 편집기"

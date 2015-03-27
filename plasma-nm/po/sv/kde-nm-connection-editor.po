@@ -1,0 +1,246 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2014-07-11 20:56+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: connectioneditor.cpp:76
+msgid "Type here to search connections..."
+msgstr "Skriv här för att söka efter anslutningar..."
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr "Lägg till"
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr "Hårdvara"
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr "DSL"
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr "InfiniBand"
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr "Mobilt bredband..."
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr "Trådbunden"
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr "Trådbunden (delad)"
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr "Trådlös"
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr "Trådlös (delad)"
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr "WiMAX"
+
+#: connectioneditor.cpp:151
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr "Virtuell"
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr "Förbindelse"
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr "Bro"
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr "VLAN"
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr "VPN"
+
+#: connectioneditor.cpp:178
+msgid "Edit..."
+msgstr "Redigera..."
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr "Ta bort"
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr "Importera VPN..."
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr "Exportera VPN..."
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "Anslutning %1 har lagts till"
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Vill du ta bort anslutningen '%1'?"
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr "Ta bort anslutning"
+
+#: connectioneditor.cpp:352
+msgid "Connect"
+msgstr "Anslut"
+
+#: connectioneditor.cpp:354
+msgid "Disconnect"
+msgstr "Koppla ner"
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr "Importera VPN-anslutning"
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Import av VPN-anslutning %1 misslyckades\n"
+"%2"
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr "Export stöds inte av den här VPN-typen"
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr "Exportera VPN-anslutning"
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"Export av VPN-anslutning %1 misslyckades\n"
+"%2"
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr "VPN-anslutning %1 exporterad med lyckat resultat"
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr "Anslutning"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr "Huvudverktygsrad"
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr "Anslutningseditor"
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr "Hantera nätverksanslutningar"
+
+#: main.cpp:40
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr "© 2013-2014 Jan Grulich och Lukáš Tinkl"
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+"Programmet låter dig skapa, redigera och ta bort nätverksanslutningar.\n"
+"\n"
+"Använder NH version: %1"
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr "Jan Grulich"
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr "Utvecklare"
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr "Lukáš Tinkl"
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr "Lamarque Souza"
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr "Upphovsman till libnm-qt"
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr "Daniel Nicoletti"
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr "Diverse felrättningar"
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr "VPN-insticksprogram"
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr "Redigera anslutning"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr "Anslutningseditor"

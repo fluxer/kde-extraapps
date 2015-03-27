@@ -1,0 +1,222 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-16 02:03+0000\n"
+"PO-Revision-Date: 2013-12-03 22:34+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: l2tp.ui:17
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: l2tp.ui:27
+msgid "User name:"
+msgstr "Benutzername:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: l2tp.ui:37
+msgid "Password:"
+msgstr "Passwort:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPasswordType)
+#: l2tp.ui:54
+msgid "Store"
+msgstr "Speichern"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPasswordType)
+#: l2tp.ui:59
+msgid "Always Ask"
+msgstr "Immer nachfragen"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPasswordType)
+#: l2tp.ui:64
+msgid "Not Required"
+msgstr "Nicht erforderlich"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPassword)
+#: l2tp.ui:74
+msgid "Show password"
+msgstr "Passwort anzeigen"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: l2tp.ui:81
+msgid "NT Domain:"
+msgstr "NT-Domäne:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
+#: l2tp.ui:119
+msgid "IPsec Settings..."
+msgstr "Einstellungen für IPSec ..."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
+#: l2tp.ui:126
+msgid "PPP Settings..."
+msgstr "Einstellungen für PPP ..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbEnableTunnelToHost)
+#: l2tpadvanced.ui:17
+msgid "Enable IPsec tunnel to L2TP host"
+msgstr "IPsec-Tunnel zum L2TP-Rechner aktivieren"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpadvanced.ui:24
+msgid "Group Name:"
+msgstr "Gruppenname:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: l2tpadvanced.ui:38
+msgid "Gateway ID:"
+msgstr "Gateway-Kennung:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: l2tpadvanced.ui:52
+msgid "Pre-shared Key:"
+msgstr "Preshared-Schlüssel (PSK):"
+
+#: l2tpadvancedwidget.cpp:35
+msgid "L2TP IPsec Options"
+msgstr "Optionen für L2TP-IPsec"
+
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: l2tpauth.ui:17
+msgid "Username:"
+msgstr "Benutzername:"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: l2tpauth.ui:34
+msgid "User Password:"
+msgstr "Benutzerpasswort:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: l2tpauth.ui:54
+msgid "Show passwords"
+msgstr "Passwort anzeigen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
+#: l2tpppp.ui:17
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#. i18n: ectx: property (text), widget (QLabel, lblauth)
+#: l2tpppp.ui:23
+msgid "Allow following authentication methods:"
+msgstr "Folgende Authentifizierungsmethoden erlauben:"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:34
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:42
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:50
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:58
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:66
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
+#: l2tpppp.ui:80
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "Microsoft Punkt-zu-Punkt-Verschlüsselung (MPPE) verwenden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
+#: l2tpppp.ui:83
+msgid "Use MPPE Encryption"
+msgstr "MPPE-Verschlüsselung verwenden"
+
+#. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
+#: l2tpppp.ui:101
+msgid "Crypto:"
+msgstr "Verschlüsselung:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbMPPECrypto)
+#: l2tpppp.ui:118
+msgctxt "like in use Any configuration"
+msgid "Any"
+msgstr "Jede"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbMPPECrypto)
+#: l2tpppp.ui:123
+msgid "128 bit"
+msgstr "128-Bit"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbMPPECrypto)
+#: l2tpppp.ui:128
+msgid "40 bit"
+msgstr "40-Bit"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
+#: l2tpppp.ui:136
+msgid "Use stateful encryption"
+msgstr "Zustandsorientierte Verschlüsselung verwenden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
+#: l2tpppp.ui:146
+msgid "Compression"
+msgstr "Komprimierung"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbBSD)
+#: l2tpppp.ui:155
+msgid "Allow BSD compression"
+msgstr "BSD-Komprimierung zulassen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
+#: l2tpppp.ui:165
+msgid "Allow Deflate compression"
+msgstr "Deflate-Komprimierung zulassen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
+#: l2tpppp.ui:175
+msgid "Allow TCP header compression"
+msgstr "TCP-Header-Komprimierung zulassen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
+#: l2tpppp.ui:185
+msgid "Use protocol field compression negotiation"
+msgstr "Aushandlung für Protokollfeld-Komprimierung verwenden"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
+#: l2tpppp.ui:198
+msgid "Use Address/Control compression"
+msgstr "Adress-Kontroll-Komprimierung verwenden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
+#: l2tpppp.ui:211
+msgid "Echo"
+msgstr "Echo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
+#: l2tpppp.ui:217
+msgid "Send PPP echo packets "
+msgstr "PPP-Echo-Pakete senden "
+
+#: l2tppppwidget.cpp:35
+msgid "L2TP PPP Options"
+msgstr "Optionen für L2TP-PPP"

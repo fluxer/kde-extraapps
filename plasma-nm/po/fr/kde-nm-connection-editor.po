@@ -1,0 +1,291 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Joëlle Cornavin <jcorn@free.fr>, 2013.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"PO-Revision-Date: 2013-09-05 13:53+0200\n"
+"Last-Translator: xavier <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr"
+
+#: connectioneditor.cpp:76
+#, fuzzy
+msgid "Type here to search connections..."
+msgstr "Chercher des connexions..."
+
+#: connectioneditor.cpp:111
+msgid "Add"
+msgstr "Ajouter"
+
+#: connectioneditor.cpp:116
+msgid "Hardware"
+msgstr "Matériel"
+
+#: connectioneditor.cpp:119
+msgid "DSL"
+msgstr "DSL"
+
+#: connectioneditor.cpp:122
+msgid "InfiniBand"
+msgstr "InfiniBand"
+
+#: connectioneditor.cpp:126
+msgid "Mobile Broadband..."
+msgstr "Haut débit mobile..."
+
+#: connectioneditor.cpp:130
+msgid "Wired"
+msgstr "Filaire"
+
+#: connectioneditor.cpp:134
+msgid "Wired (shared)"
+msgstr "Filaire (partagé)"
+
+#: connectioneditor.cpp:138
+msgid "Wireless"
+msgstr "Sans fil"
+
+#: connectioneditor.cpp:142
+msgid "Wireless (shared)"
+msgstr "Sans fil (partagé)"
+
+#: connectioneditor.cpp:146
+msgid "WiMAX"
+msgstr "WiMax"
+
+#: connectioneditor.cpp:151
+#, fuzzy
+#| msgid "Virtual"
+msgctxt "Virtual hardware devices, eg Bridge, Bond"
+msgid "Virtual"
+msgstr "Virtuel"
+
+#: connectioneditor.cpp:153
+msgid "Bond"
+msgstr "Lié"
+
+#: connectioneditor.cpp:156
+msgid "Bridge"
+msgstr "Pont"
+
+#: connectioneditor.cpp:159
+msgid "VLAN"
+msgstr "VLAN"
+
+#: connectioneditor.cpp:164
+msgid "VPN"
+msgstr "VPN"
+
+#: connectioneditor.cpp:178
+#, fuzzy
+msgid "Edit..."
+msgstr "Modifier"
+
+#: connectioneditor.cpp:183
+msgid "Delete"
+msgstr "Supprimer"
+
+#: connectioneditor.cpp:189
+msgid "Import VPN..."
+msgstr "Importation VPN..."
+
+#: connectioneditor.cpp:193
+msgid "Export VPN..."
+msgstr "Exportation VPN..."
+
+#: connectioneditor.cpp:260
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "La connexion %1 a été ajoutée"
+
+#: connectioneditor.cpp:330
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Voulez-vous supprimer la connexion « %1 » ?"
+
+#: connectioneditor.cpp:330
+msgid "Remove Connection"
+msgstr "Supprimer la connexion"
+
+#: connectioneditor.cpp:352
+#, fuzzy
+#| msgid "Connection"
+msgid "Connect"
+msgstr "Connexion"
+
+#: connectioneditor.cpp:354
+#, fuzzy
+#| msgid "Edit connection"
+msgid "Disconnect"
+msgstr "Modifier une connexion"
+
+#: connectioneditor.cpp:464
+msgid "Import VPN Connection"
+msgstr "Importer une connexion VPN"
+
+#: connectioneditor.cpp:491
+#, kde-format
+msgid ""
+"Importing VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"L'importation de la connexion VPN %1 a échoué\n"
+"%2"
+
+#: connectioneditor.cpp:535
+msgid "Export is not supported by this VPN type"
+msgstr "L'exportation n'est pas prise en charge par ce type de VPN"
+
+#: connectioneditor.cpp:541
+msgid "Export VPN Connection"
+msgstr "Exporter une connexion VPN"
+
+#: connectioneditor.cpp:546
+#, kde-format
+msgid ""
+"Exporting VPN connection %1 failed\n"
+"%2"
+msgstr ""
+"L'exportation de la connexion VPN %1 a échoué\n"
+"%2"
+
+#: connectioneditor.cpp:551
+#, kde-format
+msgid "VPN connection %1 exported successfully"
+msgstr "La connexion VPN %1 a été exportée avec succès"
+
+#. i18n: ectx: Menu (connection)
+#: kde-nm-connection-editorui.rc:16
+msgid "Connection"
+msgstr "Connexion"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kde-nm-connection-editorui.rc:24
+msgid "Main Toolbar"
+msgstr "Barre principale d'outils"
+
+#: main.cpp:38
+msgid "Connection editor"
+msgstr "Éditeur de connexions"
+
+#: main.cpp:39
+msgid "Manage your network connections"
+msgstr "Gérez vos connexions réseau"
+
+#: main.cpp:40
+#, fuzzy
+#| msgid "(C) 2013 Jan Grulich and Lukáš Tinkl"
+msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
+msgstr "(C) 2013 Jan Grulich and Lukáš Tinkl"
+
+#: main.cpp:41
+#, kde-format
+msgid ""
+"This application allows you to create, edit and delete network connections.\n"
+"\n"
+"Using NM version: %1"
+msgstr ""
+"Cette application permet de créer, modifier et supprimer des connexions "
+"réseau.\n"
+"\n"
+"Utilisation de la version NM : %1"
+
+#: main.cpp:43
+msgid "Jan Grulich"
+msgstr "Jan Grulich"
+
+#: main.cpp:43 main.cpp:44
+msgid "Developer"
+msgstr "Développeur"
+
+#: main.cpp:44
+msgid "Lukáš Tinkl"
+msgstr "Lukáš Tinkl"
+
+#: main.cpp:45
+msgid "Lamarque Souza"
+msgstr "Lamarque Souza"
+
+#: main.cpp:45
+msgid "libnm-qt author"
+msgstr "Auteur de « libnm-qt »"
+
+#: main.cpp:46
+msgid "Daniel Nicoletti"
+msgstr "Daniel Nicoletti"
+
+#: main.cpp:46
+msgid "various bugfixes"
+msgstr "diverses corrections de bogues"
+
+#: main.cpp:47
+msgid "Will Stephenson"
+msgstr "Will Stephenson"
+
+#: main.cpp:47 main.cpp:48
+msgid "VPN plugins"
+msgstr "Modules externes VPN"
+
+#: main.cpp:48
+msgid "Ilia Kats"
+msgstr "Ilia Kats"
+
+#: main.cpp:54
+msgid "Edit connection"
+msgstr "Modifier une connexion"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionEditor)
+#: ui/connectioneditor.ui:20
+msgid "Connection Editor"
+msgstr "Éditeur de connexions"
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy

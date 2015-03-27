@@ -1,0 +1,162 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-16 02:03+0000\n"
+"PO-Revision-Date: 2013-10-10 06:12+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: strongswanauth.cpp:70
+msgctxt "@label:textbox password label for private key password"
+msgid "Private Key Password:"
+msgstr "Passwort für privaten Schlüssel:"
+
+#: strongswanauth.cpp:72
+msgctxt "@label:textbox password label for smartcard pin"
+msgid "PIN:"
+msgstr "PIN:"
+
+#: strongswanauth.cpp:74
+msgctxt "@label:textbox password label for EAP password"
+msgid "Password:"
+msgstr "Passwort:"
+
+#: strongswanauth.cpp:116
+msgctxt "@label:textbox error message while saving configuration"
+msgid ""
+"Configuration uses ssh-agent for authentication, but no ssh-agent found "
+"running."
+msgstr ""
+"Die Einrichtung benutzt ssh-agent für die Authentifizierung, das Programm "
+"ssh-agent läuft aber nicht. "
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#: strongswanauth.ui:14 strongswanprop.ui:14
+msgid "Strong Swan VPN"
+msgstr "StrongSwan-VPN"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: strongswanauth.ui:37 strongswanprop.ui:294
+msgid "&Show passwords"
+msgstr "Pa&sswort anzeigen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: strongswanprop.ui:20
+msgid "Gateway"
+msgstr "Gateway"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: strongswanprop.ui:26
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: strongswanprop.ui:42 strongswanprop.ui:110 strongswanprop.ui:180
+msgid "Certificate:"
+msgstr "Zertifikat:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: strongswanprop.ui:55
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMethod)
+#: strongswanprop.ui:71
+msgid "Certificate/private key"
+msgstr "Zertifikat/Privater Schlüssel"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMethod)
+#: strongswanprop.ui:76
+msgid "Certificate/ssh-agent"
+msgstr "Zertifikat/ssh-agent"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMethod)
+#: strongswanprop.ui:81
+msgid "Smartcard"
+msgstr "Smartcard"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cmbMethod)
+#: strongswanprop.ui:86
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: strongswanprop.ui:120
+msgid "Private key:"
+msgstr "Privater Schlüssel:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: strongswanprop.ui:130
+msgid "Private Key Password:"
+msgstr "Passwort für privaten Schlüssel:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPassOptions)
+#: strongswanprop.ui:156 strongswanprop.ui:210 strongswanprop.ui:260
+msgid "Store"
+msgstr "Speichern"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPassOptions)
+#: strongswanprop.ui:161 strongswanprop.ui:215 strongswanprop.ui:265
+msgid "Always Ask"
+msgstr "Immer nachfragen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPrivateKeyPassOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboPinOptions)
+#. i18n: ectx: property (text), item, widget (KComboBox, cboUserPassOptions)
+#: strongswanprop.ui:166 strongswanprop.ui:220 strongswanprop.ui:270
+msgid "Not Required"
+msgstr "Nicht erforderlich"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: strongswanprop.ui:194
+msgid "PIN:"
+msgstr "PIN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: strongswanprop.ui:237
+msgid "&Username:"
+msgstr "Be&nutzername:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: strongswanprop.ui:280
+msgid "User &Password"
+msgstr "Benutzer&passwort"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: strongswanprop.ui:307
+msgid "Options"
+msgstr "Einstellungen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: strongswanprop.ui:316
+msgid "Request an inner IP address"
+msgstr "Eine innere IP-Adresse anfordern"
+
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: strongswanprop.ui:329
+msgid "Enforce UDP encapsulation"
+msgstr "UDP-Kapselung erzwingen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: strongswanprop.ui:336
+msgid "Use IP compression"
+msgstr "IP-Komprimierung verwenden"

@@ -1,0 +1,3650 @@
+# Translation of libknetworkmanager to Croatian
+#
+# Zarko Pintar <zarko.pintar@gmail.com>, 2009.
+# DoDo <DoDoEntertainment@gmail.com>, 2009.
+# Marko Dimjasevic <marko@dimjasevic.net>, 2010.
+# Andrej Dundovic <andrej@dundovic.com.hr>, 2010.
+# Marko Dimjašević <marko@dimjasevic.net>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-07-18 01:44+0000\n"
+"PO-Revision-Date: 2011-06-27 14:57+0200\n"
+"Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Dundović, Marko Dimjašević"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrej@dundovic.com.hr, marko@dimjasevic.net"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:181
+#: applet/declarative/contents/ui/ConnectionItem.qml:201
+#: applet/declarative/contents/ui/main.qml:98
+#: applet/declarative/contents/ui/main.qml:108
+#: declarative-plugins/model/modelitem.cpp:176
+#, fuzzy
+msgid "Active connections"
+msgstr "&Sistemska veza"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:182
+#: applet/declarative/contents/ui/ConnectionItem.qml:202
+#: applet/declarative/contents/ui/main.qml:100
+#: applet/declarative/contents/ui/main.qml:110
+#: declarative-plugins/model/modelitem.cpp:178
+#, fuzzy
+msgid "Previous connections"
+msgstr "Pripremam se za spajanje"
+
+#: applet/declarative/contents/ui/ConnectionItem.qml:183
+#: applet/declarative/contents/ui/ConnectionItem.qml:203
+#: declarative-plugins/model/modelitem.cpp:180
+#, fuzzy
+msgid "Unknown connections"
+msgstr "Veze"
+
+#: applet/declarative/contents/ui/DetailsWidget.qml:82
+msgid "Back"
+msgstr ""
+
+#: applet/declarative/contents/ui/DetailsWidget.qml:92
+#, fuzzy
+msgid "Edit"
+msgstr "Uredi…"
+
+#: applet/declarative/contents/ui/DetailsWidget.qml:106
+#: applet/declarative/contents/ui/main.qml:185
+#, fuzzy
+msgid "Remove"
+msgstr "Ukloni"
+
+#: applet/declarative/contents/ui/main.qml:175
+#, fuzzy
+msgid "Do you really want to remove connection %1?"
+msgstr "Želite li zaista izbrisati vezu '%1'?"
+
+#: applet/declarative/contents/ui/main.qml:193
+msgid "Cancel"
+msgstr ""
+
+#: applet/declarative/contents/ui/OptionsWidget.qml:79
+#, fuzzy
+msgid "Networking enabled"
+msgstr "Mrežni sustav je onemogućen"
+
+#: applet/declarative/contents/ui/OptionsWidget.qml:91
+#, fuzzy
+msgid "Wireless enabled"
+msgstr "Hardver za bežičnu vezu omogućen"
+
+#: applet/declarative/contents/ui/OptionsWidget.qml:103
+msgid "Wimax enabled"
+msgstr ""
+
+#: applet/declarative/contents/ui/OptionsWidget.qml:115
+#, fuzzy
+msgid "Mobile broadband enabled"
+msgstr "Mobilna širokopojasna"
+
+#: applet/declarative/contents/ui/OptionsWidget.qml:128
+#, fuzzy
+msgid "Edit connections..."
+msgstr "Veze"
+
+#: declarative-plugins/applet/networkstatus.cpp:83
+#: declarative-plugins/model/modelitem.cpp:245
+#, fuzzy
+msgid "Connected"
+msgstr "Spojen"
+
+#: declarative-plugins/applet/networkstatus.cpp:90
+msgid "Inactive"
+msgstr ""
+
+#: declarative-plugins/applet/networkstatus.cpp:95
+#: declarative-plugins/model/modelitem.cpp:241
+#, fuzzy
+msgid "Disconnected"
+msgstr "Koristi TCP vezu"
+
+#: declarative-plugins/applet/networkstatus.cpp:100
+#, fuzzy
+msgid "Disconnecting"
+msgstr "Koristi TCP vezu"
+
+#: declarative-plugins/applet/networkstatus.cpp:105
+#: declarative-plugins/model/modelitem.cpp:243
+#, fuzzy
+msgid "Connecting"
+msgstr "Veza"
+
+#: declarative-plugins/applet/networkstatus.cpp:150
+#, fuzzy
+msgid "VPN Connection"
+msgstr "Nova VPN veza"
+
+#: declarative-plugins/applet/networkstatus.cpp:155
+#, fuzzy, kde-format
+msgid "Connected to %1"
+msgstr "Spojen na %1"
+
+#: declarative-plugins/applet/networkstatus.cpp:157
+#, fuzzy, kde-format
+msgid "Connecting to %1"
+msgstr "&Tip veze:"
+
+#: declarative-plugins/applet/networkstatus.cpp:179
+#, fuzzy
+msgid "NetworkManager not running"
+msgstr "Upravljanje mrežom"
+
+#: declarative-plugins/applet/networkstatus.cpp:183
+msgid "Incompatible NM version, 0.9.8 required"
+msgstr ""
+
+#: declarative-plugins/applet/networkstatus.cpp:186
+#, fuzzy
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: declarative-plugins/applet/trafficmonitor.cpp:131
+msgctxt "traffic received empty"
+msgid "Received"
+msgstr ""
+
+#: declarative-plugins/applet/trafficmonitor.cpp:133
+#, fuzzy
+msgctxt "traffic transmitted empty"
+msgid "Transmitted"
+msgstr "Snaga emisije"
+
+#: declarative-plugins/applet/trafficmonitor.cpp:195
+#, fuzzy
+msgid "KBit/s"
+msgstr "%1 Bit/s"
+
+#: declarative-plugins/applet/trafficmonitor.cpp:197
+#, fuzzy
+msgid "MBit/s"
+msgstr "%1 MBit/s"
+
+#: declarative-plugins/applet/trafficmonitor.cpp:201
+#, fuzzy
+msgid "GBit/s"
+msgstr "%1 GBit/s"
+
+#: declarative-plugins/applet/trafficmonitor.cpp:224
+#, kde-format
+msgctxt ""
+"traffic, e.g. n KB/s\n"
+" m KB/s"
+msgid "%1 %2"
+msgstr ""
+
+#: declarative-plugins/applet/trafficmonitor.cpp:233
+msgid "Received"
+msgstr ""
+
+#: declarative-plugins/applet/trafficmonitor.cpp:236
+#, fuzzy
+msgid "Transmitted"
+msgstr "Snaga emisije"
+
+#: declarative-plugins/model/modelitem.cpp:238
+#, fuzzy
+msgctxt "type of network device"
+msgid "Type:"
+msgstr "&Tip:"
+
+#: declarative-plugins/model/modelitem.cpp:247
+#, fuzzy
+msgid "Status:"
+msgstr "Status"
+
+#: declarative-plugins/model/modelitem.cpp:256
+#, fuzzy
+msgid "System name:"
+msgstr "Ime u sustavu"
+
+#: declarative-plugins/model/modelitem.cpp:264
+#, fuzzy
+msgid "IPv4 Address:"
+msgstr "IPv4 adresa"
+
+#: declarative-plugins/model/modelitem.cpp:272
+#, fuzzy
+msgid "IPv4 Gateway:"
+msgstr "&Pristupna točka:"
+
+#: declarative-plugins/model/modelitem.cpp:280
+#, fuzzy
+msgid "IPv6 Address:"
+msgstr "IPv6 adresa"
+
+#: declarative-plugins/model/modelitem.cpp:288
+#, fuzzy
+msgid "IPv6 Gateway:"
+msgstr "&Pristupna točka:"
+
+#: declarative-plugins/model/modelitem.cpp:292
+#: declarative-plugins/model/modelitem.cpp:314
+#, fuzzy
+msgid "Driver:"
+msgstr "Upravljački program"
+
+#: declarative-plugins/model/modelitem.cpp:306
+#, fuzzy
+msgid "Name:"
+msgstr "Naziv"
+
+#: declarative-plugins/model/modelitem.cpp:310
+#: declarative-plugins/model/modelitem.cpp:413
+#: declarative-plugins/model/modelitem.cpp:438
+#, fuzzy
+msgid "MAC Address:"
+msgstr "MAC adresa"
+
+#: declarative-plugins/model/modelitem.cpp:331
+msgid "Operator:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:335
+msgid "Signal quality:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:339
+msgid "Access technology:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:343
+msgid "Allowed Mode"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:347
+#, fuzzy
+msgid "Frequency Band:"
+msgstr "Frekvencija"
+
+#: declarative-plugins/model/modelitem.cpp:351
+#, fuzzy
+msgid "Unlock Required:"
+msgstr "Potrebno otključavanje SIM PUK"
+
+#: declarative-plugins/model/modelitem.cpp:358
+msgid "IMEI:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:366
+msgid "IMSI:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:384
+msgid "Bsid:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:388
+#, fuzzy
+msgid "NSP Name:"
+msgstr "Naziv"
+
+#: declarative-plugins/model/modelitem.cpp:392
+msgid "Signal Quality:"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:392
+#: declarative-plugins/model/modelitem.cpp:446
+#, fuzzy, kde-format
+msgid "%1%"
+msgstr "%1%"
+
+#: declarative-plugins/model/modelitem.cpp:396
+#, fuzzy
+msgid "Network Type:"
+msgstr "Tip Mreže"
+
+#: declarative-plugins/model/modelitem.cpp:409
+#: declarative-plugins/model/modelitem.cpp:434
+#, fuzzy
+msgid "Connection speed:"
+msgstr "&Tip veze:"
+
+#: declarative-plugins/model/modelitem.cpp:442
+#, fuzzy
+msgid "Mode:"
+msgstr "&Način:"
+
+#: declarative-plugins/model/modelitem.cpp:446
+#, fuzzy
+msgid "Signal strength:"
+msgstr "Jakost signala"
+
+#: declarative-plugins/model/modelitem.cpp:450
+#, fuzzy
+msgid "Access point (SSID):"
+msgstr "Pristupna točka"
+
+#: declarative-plugins/model/modelitem.cpp:454
+#, fuzzy
+msgid "Access point (BSSID):"
+msgstr "Pristupna točka"
+
+#: declarative-plugins/model/modelitem.cpp:458
+#, fuzzy
+msgctxt "Wifi AP channel and frequency"
+msgid "Channel:"
+msgstr "&Kanal:"
+
+#: declarative-plugins/model/modelitem.cpp:458
+#, kde-format
+msgid "%1 (%2 MHz)"
+msgstr ""
+
+#: declarative-plugins/model/modelitem.cpp:464
+#, fuzzy
+msgid "Security:"
+msgstr "&Sigurnost:"
+
+#: declarative-plugins/model/modelitem.cpp:468
+#, fuzzy
+msgid "Frequency band:"
+msgstr "Frekvencija"
+
+#: declarative-plugins/model/modelitem.cpp:493
+#, fuzzy
+msgid "VPN plugin:"
+msgstr "Naziv priključka za VPN"
+
+#: declarative-plugins/model/modelitem.cpp:497
+#, fuzzy
+msgid "Banner:"
+msgstr "&Kanal:"
+
+#: lib/bssidcombobox.cpp:137
+msgid "First select the SSID"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:56
+msgctxt "Mobile Connection Wizard"
+msgid "New Mobile Broadband Connection"
+msgstr "Nova mobilna širokopojasna veza"
+
+#: lib/mobileconnectionwizard.cpp:153 lib/mobileconnectionwizard.cpp:171
+#: lib/mobileconnectionwizard.cpp:197 lib/mobileconnectionwizard.cpp:532
+msgctxt "Mobile Connection Wizard"
+msgid "My plan is not listed..."
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:158
+msgctxt "Mobile Connection Wizard"
+msgid "Unknown Provider"
+msgstr "Nepoznati pružatelj"
+
+#: lib/mobileconnectionwizard.cpp:166
+msgctxt "Mobile Connection Wizard"
+msgid "Default"
+msgstr "Uobičajeno"
+
+#: lib/mobileconnectionwizard.cpp:199 lib/mobileconnectionwizard.cpp:207
+msgctxt "Mobile Connection Wizard"
+msgid "APN"
+msgstr "APN"
+
+#: lib/mobileconnectionwizard.cpp:252
+msgctxt "Mobile Connection Wizard"
+msgid "Set up a Mobile Broadband Connection"
+msgstr "Postavi mobilnu širokopojasnu vezu"
+
+#: lib/mobileconnectionwizard.cpp:255
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"This assistant helps you easily set up a mobile broadband connection to a "
+"cellular (3G) network."
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:259
+msgctxt "Mobile Connection Wizard"
+msgid "You will need the following information:"
+msgstr "Trebat će Vam sljedeće informacije:"
+
+#: lib/mobileconnectionwizard.cpp:263
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband provider's name"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:264
+msgctxt "Mobile Connection Wizard"
+msgid "Your broadband billing plan name"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:265
+msgctxt "Mobile Connection Wizard"
+msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:269
+msgctxt "Mobile Connection Wizard"
+msgid "Create a connection for &this mobile broadband device:"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:273 lib/mobileconnectionwizard.cpp:402
+#, fuzzy
+msgctxt "Mobile Connection Wizard"
+msgid "Any GSM device"
+msgstr "Bilo koji uređaj"
+
+#: lib/mobileconnectionwizard.cpp:275 lib/mobileconnectionwizard.cpp:404
+#, fuzzy
+msgctxt "Mobile Connection Wizard"
+msgid "Any CDMA device"
+msgstr "Bilo koji uređaj"
+
+#: lib/mobileconnectionwizard.cpp:328
+msgctxt "Mobile Connection Wizard"
+msgid "Installed GSM device"
+msgstr "Instalirani GSM uređaj"
+
+#: lib/mobileconnectionwizard.cpp:332
+msgctxt "Mobile Connection Wizard"
+msgid "Installed CDMA device"
+msgstr "Instalirani CDMA uređaj"
+
+#: lib/mobileconnectionwizard.cpp:417
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider's Country"
+msgstr "Izaberite državu svog pružatelja"
+
+#: lib/mobileconnectionwizard.cpp:420
+msgctxt "Mobile Connection Wizard"
+msgid "Country List:"
+msgstr "Lista država:"
+
+#: lib/mobileconnectionwizard.cpp:424
+msgctxt "Mobile Connection Wizard"
+msgid "My country is not listed"
+msgstr "Moja država nije navedena"
+
+#: lib/mobileconnectionwizard.cpp:440
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Provider"
+msgstr "Izaberite svog pružatelja"
+
+#: lib/mobileconnectionwizard.cpp:443
+msgctxt "Mobile Connection Wizard"
+msgid "Select your provider from a &list:"
+msgstr "Odaberite svog pružatelja iz &liste:"
+
+#: lib/mobileconnectionwizard.cpp:452
+msgctxt "Mobile Connection Wizard"
+msgid "I can't find my provider and I wish to enter it &manually:"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:494
+msgctxt "Mobile Connection Wizard"
+msgid "Choose your Billing Plan"
+msgstr "Odaberite plan naplate"
+
+#: lib/mobileconnectionwizard.cpp:497
+msgctxt "Mobile Connection Wizard"
+msgid "&Select your plan:"
+msgstr "Odaberite svoj plan:"
+
+#: lib/mobileconnectionwizard.cpp:504
+msgctxt "Mobile Connection Wizard"
+msgid "Selected plan &APN (Access Point Name):"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:516
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Warning: Selecting an incorrect plan may result in billing issues for your "
+"broadband account or may prevent connectivity.\n"
+"\n"
+"If you are unsure of your plan please ask your provider for your plan's APN."
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:553
+msgctxt "Mobile Connection Wizard"
+msgid "Confirm Mobile Broadband Settings"
+msgstr "Potvrdite mobilne širokopojasne postavke"
+
+#: lib/mobileconnectionwizard.cpp:556
+msgctxt "Mobile Connection Wizard"
+msgid ""
+"Your mobile broadband connection is configured with the following settings:"
+msgstr ""
+
+#: lib/mobileconnectionwizard.cpp:560
+msgctxt "Mobile Connection Wizard"
+msgid "Your Provider:"
+msgstr "Vaš pružatelj:"
+
+#: lib/mobileconnectionwizard.cpp:565
+msgctxt "Mobile Connection Wizard"
+msgid "Your Plan:"
+msgstr "Vaš plan:"
+
+#: lib/ssidcombobox.cpp:152
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Security: %3\n"
+"Frequency: %4 Mhz"
+msgstr ""
+
+#: lib/ssidcombobox.cpp:155
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Security: Insecure\n"
+"Frequency: %3 Mhz"
+msgstr ""
+
+#: lib/uiutils.cpp:52 lib/uiutils.cpp:98
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Žičana mreža"
+
+#: lib/uiutils.cpp:55
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wireless 802.11"
+msgstr "Bežična mreža 802.11"
+
+#: lib/uiutils.cpp:58
+#, fuzzy
+msgctxt "title of the interface widget in nm's popup"
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: lib/uiutils.cpp:61
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wimax"
+msgstr ""
+
+#: lib/uiutils.cpp:64
+msgctxt "title of the interface widget in nm's popup"
+msgid "Infiniband"
+msgstr ""
+
+#: lib/uiutils.cpp:67
+msgctxt "title of the interface widget in nm's popup"
+msgid "ADSL"
+msgstr ""
+
+#: lib/uiutils.cpp:70
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bond)"
+msgstr ""
+
+#: lib/uiutils.cpp:73
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bridge)"
+msgstr ""
+
+#: lib/uiutils.cpp:76
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (vlan)"
+msgstr ""
+
+#: lib/uiutils.cpp:83
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Serijski modem"
+
+#: lib/uiutils.cpp:88
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Mobilno širokopojasno"
+
+#: lib/uiutils.cpp:167
+msgid "ADSL"
+msgstr ""
+
+#: lib/uiutils.cpp:171
+msgid "DSL"
+msgstr "DSL"
+
+#: lib/uiutils.cpp:175
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: lib/uiutils.cpp:179
+msgid "Bond"
+msgstr ""
+
+#: lib/uiutils.cpp:182
+msgid "Bridge"
+msgstr ""
+
+#: lib/uiutils.cpp:186
+#, fuzzy
+msgid "Mobile broadband"
+msgstr "Mobilna širokopojasna"
+
+#: lib/uiutils.cpp:190
+msgid "Infiniband"
+msgstr ""
+
+#: lib/uiutils.cpp:193
+msgid "Olpc mesh"
+msgstr ""
+
+#: lib/uiutils.cpp:196
+msgid "VLAN"
+msgstr ""
+
+#: lib/uiutils.cpp:199
+msgid "VPN"
+msgstr "VPN"
+
+#: lib/uiutils.cpp:203
+msgid "WiMAX"
+msgstr ""
+
+#: lib/uiutils.cpp:207
+msgid "Wired"
+msgstr "Žičana"
+
+#: lib/uiutils.cpp:211
+msgid "Wireless"
+msgstr "Bežićna"
+
+#: lib/uiutils.cpp:215
+#, fuzzy
+msgid "Unknown connection type"
+msgstr "Nepoznta vrsta sigurnosti"
+
+#: lib/uiutils.cpp:250
+#, fuzzy, kde-format
+msgid "Wireless Interface (%1)"
+msgstr "Bežićna mrežna sučelja"
+
+#: lib/uiutils.cpp:253
+#, fuzzy, kde-format
+msgid "Wired Interface (%1)"
+msgstr "Odspojeno sučelje (%1)"
+
+#: lib/uiutils.cpp:256
+#, fuzzy, kde-format
+msgid "Bluetooth (%1)"
+msgstr "Bluetooth"
+
+#: lib/uiutils.cpp:259
+#, kde-format
+msgid "Modem (%1)"
+msgstr ""
+
+#: lib/uiutils.cpp:262
+#, kde-format
+msgid "ADSL (%1)"
+msgstr ""
+
+#: lib/uiutils.cpp:265
+#, kde-format
+msgid "VLan (%1)"
+msgstr ""
+
+#: lib/uiutils.cpp:268
+#, kde-format
+msgid "Bridge (%1)"
+msgstr ""
+
+#: lib/uiutils.cpp:281
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lib/uiutils.cpp:284
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "Neupravljano"
+
+#: lib/uiutils.cpp:287
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "Nedostupno"
+
+#: lib/uiutils.cpp:290
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "Nije spojeno"
+
+#: lib/uiutils.cpp:293
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Pripremam se za spajanje"
+
+#: lib/uiutils.cpp:296
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Podešavam sučelje"
+
+#: lib/uiutils.cpp:299
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Čekam na prijavu"
+
+#: lib/uiutils.cpp:302
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Postavljam mrežnu adresu"
+
+#: lib/uiutils.cpp:305
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr ""
+
+#: lib/uiutils.cpp:308
+#, fuzzy
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "Čekam na prijavu"
+
+#: lib/uiutils.cpp:312
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Spojen"
+
+#: lib/uiutils.cpp:314
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Spojen na %1"
+
+#: lib/uiutils.cpp:318
+#, fuzzy
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "Stvori vezu"
+
+#: lib/uiutils.cpp:321
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "Veza nije uspjela"
+
+#: lib/uiutils.cpp:324
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Pogreška: neispravno stanje"
+
+#: lib/uiutils.cpp:383
+#, kde-format
+msgctxt "Format for <Vendor> <Product>"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
+#: lib/uiutils.cpp:472
+#, fuzzy
+msgctxt "wireless network operation mode"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lib/uiutils.cpp:475
+#, fuzzy
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "Ad-hoc"
+
+#: lib/uiutils.cpp:478
+#, fuzzy
+msgctxt "wireless network operation mode"
+msgid "Infrastructure"
+msgstr "Infrastruktura"
+
+#: lib/uiutils.cpp:481
+#, fuzzy
+msgctxt "wireless network operation mode"
+msgid "Access point"
+msgstr "Pristupna točka"
+
+#: lib/uiutils.cpp:484
+msgid "INCORRECT MODE FIX ME"
+msgstr "NEISPRAVAN NAČIN POPRAVI ME"
+
+#: lib/uiutils.cpp:506
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "U paru WEP40"
+
+#: lib/uiutils.cpp:508
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "U paru WEP104"
+
+#: lib/uiutils.cpp:510
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "U paru TKIP"
+
+#: lib/uiutils.cpp:512
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "U paru CCMP"
+
+#: lib/uiutils.cpp:514
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "Grupa WEP40"
+
+#: lib/uiutils.cpp:516
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "Grupa WEP104"
+
+#: lib/uiutils.cpp:518
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "Grupa TKIP"
+
+#: lib/uiutils.cpp:520
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "Grupa CCMP"
+
+#: lib/uiutils.cpp:522
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "PSK"
+
+#: lib/uiutils.cpp:524
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: lib/uiutils.cpp:534
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> Bit/s"
+msgstr ""
+
+#: lib/uiutils.cpp:536
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> MBit/s"
+msgstr ""
+
+#: lib/uiutils.cpp:538
+#, kde-format
+msgctxt "connection speed"
+msgid "<numid>%1</numid> GBit/s"
+msgstr ""
+
+#: lib/uiutils.cpp:563 lib/uiutils.cpp:568
+#, fuzzy
+msgctxt "Unknown cellular type"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lib/uiutils.cpp:564
+msgctxt "Gsm cellular type"
+msgid "Gsm"
+msgstr ""
+
+#: lib/uiutils.cpp:565
+msgctxt "Cdma cellular type"
+msgid "Cdma"
+msgstr ""
+
+#: lib/uiutils.cpp:574 lib/uiutils.cpp:591
+#, fuzzy
+msgctxt "Unknown cellular frequency band"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lib/uiutils.cpp:575
+#, fuzzy
+msgctxt "Any cellular frequency band"
+msgid "Any"
+msgstr "Bilo koji"
+
+#: lib/uiutils.cpp:576
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 900 MHz"
+msgstr ""
+
+#: lib/uiutils.cpp:577
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 1800 MHz"
+msgstr ""
+
+#: lib/uiutils.cpp:578
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 1900 MHz"
+msgstr ""
+
+#: lib/uiutils.cpp:579
+msgctxt "Cellular frequency band"
+msgid "GSM/GPRS/EDGE 850 MHz"
+msgstr ""
+
+#: lib/uiutils.cpp:580
+msgctxt "Cellular frequency band"
+msgid "WCDMA 2100 MHz (Class I)"
+msgstr ""
+
+#: lib/uiutils.cpp:581
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP 1800 MHz (Class III)"
+msgstr ""
+
+#: lib/uiutils.cpp:582
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP AWS 1700/2100 MHz (Class IV)"
+msgstr ""
+
+#: lib/uiutils.cpp:583
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 800 MHz (Class VI)"
+msgstr ""
+
+#: lib/uiutils.cpp:584
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 850 MHz (Class V)"
+msgstr ""
+
+#: lib/uiutils.cpp:585
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 900 MHz (Class VIII)"
+msgstr ""
+
+#: lib/uiutils.cpp:586
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 1700 MHz (Class IX)"
+msgstr ""
+
+#: lib/uiutils.cpp:587
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 1900 MHz (Class II)"
+msgstr ""
+
+#: lib/uiutils.cpp:588
+msgctxt "Cellular frequency band"
+msgid "WCDMA 3GPP UMTS 2600 MHz (Class VII)"
+msgstr ""
+
+#: lib/uiutils.cpp:597 lib/uiutils.cpp:604
+#, fuzzy
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Any"
+msgstr "Bilo koji"
+
+#: lib/uiutils.cpp:598
+#, fuzzy
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Prefer 2G"
+msgstr "Preferiraj 2G"
+
+#: lib/uiutils.cpp:599
+#, fuzzy
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Prefer 3G"
+msgstr "Preferiraj 3G"
+
+#: lib/uiutils.cpp:600
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Only 2G"
+msgstr ""
+
+#: lib/uiutils.cpp:601
+msgctxt "Allowed Gsm modes (2G/3G/any)"
+msgid "Only 3G"
+msgstr ""
+
+#: lib/uiutils.cpp:610 lib/uiutils.cpp:623
+#, fuzzy
+msgctxt "Unknown cellular access technology"
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lib/uiutils.cpp:611
+msgctxt "Cellular access technology"
+msgid "GSM"
+msgstr ""
+
+#: lib/uiutils.cpp:612
+msgctxt "Cellular access technology"
+msgid "Compact GSM"
+msgstr ""
+
+#: lib/uiutils.cpp:613
+msgctxt "Cellular access technology"
+msgid "GPRS"
+msgstr ""
+
+#: lib/uiutils.cpp:614
+msgctxt "Cellular access technology"
+msgid "EDGE"
+msgstr ""
+
+#: lib/uiutils.cpp:615
+msgctxt "Cellular access technology"
+msgid "UMTS"
+msgstr ""
+
+#: lib/uiutils.cpp:616
+msgctxt "Cellular access technology"
+msgid "HSDPA"
+msgstr ""
+
+#: lib/uiutils.cpp:617
+msgctxt "Cellular access technology"
+msgid "HSUPA"
+msgstr ""
+
+#: lib/uiutils.cpp:618
+msgctxt "Cellular access technology"
+msgid "HSPA"
+msgstr ""
+
+#: lib/uiutils.cpp:619
+msgctxt "Cellular access technology"
+msgid "HSPA+"
+msgstr ""
+
+#: lib/uiutils.cpp:620
+msgctxt "Cellular access technology"
+msgid "LTE"
+msgstr ""
+
+#: lib/uiutils.cpp:629 lib/uiutils.cpp:635
+#, fuzzy
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lib/uiutils.cpp:630
+msgid "Home"
+msgstr ""
+
+#: lib/uiutils.cpp:631
+msgid "Partner"
+msgstr ""
+
+#: lib/uiutils.cpp:632
+msgid "Roaming partner"
+msgstr ""
+
+#: lib/uiutils.cpp:657
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "Nesigurna"
+
+#: lib/uiutils.cpp:660
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: lib/uiutils.cpp:663
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: lib/uiutils.cpp:666
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "Dinamični WEP"
+
+#: lib/uiutils.cpp:669
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: lib/uiutils.cpp:672
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: lib/uiutils.cpp:675
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: lib/uiutils.cpp:678
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: lib/uiutils.cpp:681
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "Nepoznta vrsta sigurnosti"
+
+#: lib/uiutils.cpp:692
+msgctxt "@info:tooltip no security"
+msgid "Insecure"
+msgstr "Nesigurna"
+
+#: lib/uiutils.cpp:695
+msgctxt "@info:tooltip WEP security"
+msgid "WEP"
+msgstr "WEP"
+
+#: lib/uiutils.cpp:698
+msgctxt "@info:tooltip LEAP security"
+msgid "LEAP"
+msgstr "LEAP"
+
+#: lib/uiutils.cpp:701
+msgctxt "@info:tooltip Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "Dinamični WEP"
+
+#: lib/uiutils.cpp:704
+msgctxt "@info:tooltip WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "WPA-PSK"
+
+#: lib/uiutils.cpp:707
+msgctxt "@info:tooltip WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "WPA-EAP"
+
+#: lib/uiutils.cpp:710
+msgctxt "@info:tooltip WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "WPA2-PSK"
+
+#: lib/uiutils.cpp:713
+msgctxt "@info:tooltip WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "WPA2-EAP"
+
+#: lib/uiutils.cpp:716
+msgctxt "@info:tooltip unknown security"
+msgid "Unknown security type"
+msgstr "Nepoznat tip sigurnosti"
+
+#: lib/vpnuiplugin.cpp:53
+msgctxt "Error message in VPN import/export dialog"
+msgid "Operation not supported for this VPN type."
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:91
+msgid "Type"
+msgstr "Tip"
+
+#: settings/details/detailkeyseditor.cpp:91
+#, fuzzy
+msgid "Interface type"
+msgstr "Tip Sučelja"
+
+#: settings/details/detailkeyseditor.cpp:92
+#, fuzzy
+msgid "Connection State"
+msgstr "&Tip veze:"
+
+#: settings/details/detailkeyseditor.cpp:92
+#, fuzzy
+msgid "Connection state"
+msgstr "Veze"
+
+#: settings/details/detailkeyseditor.cpp:93
+#, fuzzy
+msgid "Driver"
+msgstr "Upravljački program"
+
+#: settings/details/detailkeyseditor.cpp:93
+#, fuzzy
+msgid "Device driver"
+msgstr "Upravljački program"
+
+#: settings/details/detailkeyseditor.cpp:94
+#, fuzzy
+msgid "Connection Speed"
+msgstr "&Tip veze:"
+
+#: settings/details/detailkeyseditor.cpp:94
+#, fuzzy
+msgid "Connection speed"
+msgstr "Veze"
+
+#: settings/details/detailkeyseditor.cpp:95
+msgid "System Name"
+msgstr "Ime u sustavu"
+
+#: settings/details/detailkeyseditor.cpp:96
+msgid "MAC Address"
+msgstr "MAC adresa"
+
+#: settings/details/detailkeyseditor.cpp:96
+#, fuzzy
+msgid "Hardware address"
+msgstr "Hardverska adresa"
+
+#: settings/details/detailkeyseditor.cpp:99
+msgid "IPv4 Address"
+msgstr "IPv4 adresa"
+
+#: settings/details/detailkeyseditor.cpp:99
+#, fuzzy
+msgid "IP version 4 address"
+msgstr "IPv4 adresa"
+
+#: settings/details/detailkeyseditor.cpp:102
+#, fuzzy
+msgid "IPv4 Gateway"
+msgstr "&Pristupna točka:"
+
+#: settings/details/detailkeyseditor.cpp:102
+msgid "IP version 4 default gateway"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:105
+msgid "IPv6 Address"
+msgstr "IPv6 adresa"
+
+#: settings/details/detailkeyseditor.cpp:105
+#, fuzzy
+msgid "IP version 6 address"
+msgstr "IPv6 adresa"
+
+#: settings/details/detailkeyseditor.cpp:108
+#, fuzzy
+msgid "IPv6 Gateway"
+msgstr "&Pristupna točka:"
+
+#: settings/details/detailkeyseditor.cpp:108
+msgid "IP version 6 default gateway"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "Wimax Bsid"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:111
+msgid "The ID of the serving base station as received from the network"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:112
+msgid "Wimax Nsp"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:112
+#, fuzzy
+msgid "The name of the NSP"
+msgstr "Ime bežićne mreže"
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "Wimax Signal"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:113
+msgid "The current signal quality of the NSP, in percent."
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:114
+msgid "Wimax NSP Type"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:114
+msgid "The network type of the NSP."
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:117
+#, fuzzy
+msgid "Access Point (SSID)"
+msgstr "Pristupna točka"
+
+#: settings/details/detailkeyseditor.cpp:117
+msgid "Wireless Access Point's SSID"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:118
+#, fuzzy
+msgid "Signal Strength"
+msgstr "Jakost signala"
+
+#: settings/details/detailkeyseditor.cpp:118
+msgid "Wireless Access Point's signal strength"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:119
+#, fuzzy
+msgid "Access Point (MAC)"
+msgstr "Pristupna točka"
+
+#: settings/details/detailkeyseditor.cpp:119
+msgid "Wireless Access Point's Hardware Address"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:120
+#, fuzzy
+msgid "Wireless Band"
+msgstr "Bežićna"
+
+#: settings/details/detailkeyseditor.cpp:120
+#, fuzzy
+msgid "Wireless Frequency Band"
+msgstr "Hardver za bežičnu vezu omogućen"
+
+#: settings/details/detailkeyseditor.cpp:121
+#, fuzzy
+msgid "Wireless Channel"
+msgstr "Nova bežićna veza"
+
+#: settings/details/detailkeyseditor.cpp:121
+msgid "Wireless Frequency Channel"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:122
+msgid "Wireless Security"
+msgstr "Sigurnost bežične mreže"
+
+#: settings/details/detailkeyseditor.cpp:122
+#, fuzzy
+msgid "Describes the security capabilities of the access point"
+msgstr "Osnovni SSID pristupne točke"
+
+#: settings/details/detailkeyseditor.cpp:123
+#, fuzzy
+msgid "Wireless Mode"
+msgstr "Bežićna"
+
+#: settings/details/detailkeyseditor.cpp:123
+#, fuzzy
+msgid "The operating mode of the wireless device"
+msgstr "Način rada bežićne mreže"
+
+#: settings/details/detailkeyseditor.cpp:126
+msgid "Mobile Operator"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:126
+msgid "Mobile Operator's Name"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:127
+msgid "Mobile Signal Quality"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:128
+msgid "Mobile Access Technology"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:129
+msgid "Mobile Frequency Band"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:130
+msgid "Mobile Allowed Mode"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:131
+#, fuzzy
+msgid "Mobile Unlock Required"
+msgstr "Potrebno otključavanje SIM PUK"
+
+#: settings/details/detailkeyseditor.cpp:131
+msgid "Mobile Master Device"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device IMEI"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:132
+msgid "Mobile Device Serial Number"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:133
+msgid "Mobile Device IMSI"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:133
+msgid "Mobile Device Identity Number"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:136
+#, fuzzy
+msgid "Bluetooth Name"
+msgstr "Bluetooth"
+
+#: settings/details/detailkeyseditor.cpp:136
+msgid "Bluetooth name of the device"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:137
+#, fuzzy
+msgid "VPN Plugin"
+msgstr "Naziv priključka za VPN"
+
+#: settings/details/detailkeyseditor.cpp:137
+#, fuzzy
+msgid "VPN plugin type"
+msgstr "Naziv priključka za VPN"
+
+#: settings/details/detailkeyseditor.cpp:138
+msgid "VPN Banner"
+msgstr ""
+
+#: settings/details/detailkeyseditor.cpp:138
+#, fuzzy
+msgid "VPN connection banner"
+msgstr "Nova VPN veza"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settings/details/detailkeyswidget.ui:34
+#, fuzzy
+msgid "Available Details"
+msgstr "Dostupne mreže"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availDetails)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentDetails)
+#: settings/details/detailkeyswidget.ui:78
+#: settings/details/detailkeyswidget.ui:251
+#, fuzzy
+msgctxt "title of a table's column"
+msgid "Name"
+msgstr "Naziv"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/details/detailkeyswidget.ui:204
+#, fuzzy
+msgid "Details to Show"
+msgstr "Detalji"
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy

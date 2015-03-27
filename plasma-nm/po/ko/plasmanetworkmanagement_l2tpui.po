@@ -1,0 +1,222 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Park Shinjo <kde@peremen.name>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-16 02:03+0000\n"
+"PO-Revision-Date: 2014-09-08 20:29+0900\n"
+"Last-Translator: Park Shinjo <kde@peremen.name>\n"
+"Language-Team: Korean <kde@peremen.name>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: l2tp.ui:17
+msgid "Gateway:"
+msgstr "게이트웨이:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: l2tp.ui:27
+msgid "User name:"
+msgstr "사용자 이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: l2tp.ui:37
+msgid "Password:"
+msgstr "암호:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPasswordType)
+#: l2tp.ui:54
+msgid "Store"
+msgstr "저장"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPasswordType)
+#: l2tp.ui:59
+msgid "Always Ask"
+msgstr "항상 묻기"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cboUserPasswordType)
+#: l2tp.ui:64
+msgid "Not Required"
+msgstr "필요하지 않음"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPassword)
+#: l2tp.ui:74
+msgid "Show password"
+msgstr "암호 보이기"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: l2tp.ui:81
+msgid "NT Domain:"
+msgstr "NT 도메인:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
+#: l2tp.ui:119
+msgid "IPsec Settings..."
+msgstr "IPsec 설정..."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
+#: l2tp.ui:126
+msgid "PPP Settings..."
+msgstr "PPP 설정..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbEnableTunnelToHost)
+#: l2tpadvanced.ui:17
+msgid "Enable IPsec tunnel to L2TP host"
+msgstr "L2TP 호스트로 가는 IPsec 터널 사용"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpadvanced.ui:24
+msgid "Group Name:"
+msgstr "그룹 이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: l2tpadvanced.ui:38
+msgid "Gateway ID:"
+msgstr "게이트웨이 ID:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: l2tpadvanced.ui:52
+msgid "Pre-shared Key:"
+msgstr "사전 공유 키:"
+
+#: l2tpadvancedwidget.cpp:35
+msgid "L2TP IPsec Options"
+msgstr "L2TP IPsec 옵션"
+
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: l2tpauth.ui:17
+msgid "Username:"
+msgstr "사용자 이름:"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: l2tpauth.ui:34
+msgid "User Password:"
+msgstr "사용자 암호:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbShowPasswords)
+#: l2tpauth.ui:54
+msgid "Show passwords"
+msgstr "암호 보이기"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
+#: l2tpppp.ui:17
+msgid "Authentication"
+msgstr "인증"
+
+#. i18n: ectx: property (text), widget (QLabel, lblauth)
+#: l2tpppp.ui:23
+msgid "Allow following authentication methods:"
+msgstr "다음 인증 방식 허용:"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:34
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:42
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:50
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:58
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
+#: l2tpppp.ui:66
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
+#: l2tpppp.ui:80
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "마이크로소프트 지점 대 지점 암호화 사용"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
+#: l2tpppp.ui:83
+msgid "Use MPPE Encryption"
+msgstr "MPPE 암호화 사용"
+
+#. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
+#: l2tpppp.ui:101
+msgid "Crypto:"
+msgstr "암호화:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbMPPECrypto)
+#: l2tpppp.ui:118
+msgctxt "like in use Any configuration"
+msgid "Any"
+msgstr "임의"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbMPPECrypto)
+#: l2tpppp.ui:123
+msgid "128 bit"
+msgstr "128비트"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbMPPECrypto)
+#: l2tpppp.ui:128
+msgid "40 bit"
+msgstr "40비트"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
+#: l2tpppp.ui:136
+msgid "Use stateful encryption"
+msgstr "상태가 있는 암호화 사용"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
+#: l2tpppp.ui:146
+msgid "Compression"
+msgstr "압축"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbBSD)
+#: l2tpppp.ui:155
+msgid "Allow BSD compression"
+msgstr "BSD 압축 허용"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
+#: l2tpppp.ui:165
+msgid "Allow Deflate compression"
+msgstr "Deflate 압축 허용"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
+#: l2tpppp.ui:175
+msgid "Allow TCP header compression"
+msgstr "TCP 헤더 압축 허용"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
+#: l2tpppp.ui:185
+msgid "Use protocol field compression negotiation"
+msgstr "프로토콜 필드 압축 협상 사용"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
+#: l2tpppp.ui:198
+msgid "Use Address/Control compression"
+msgstr "주소/제어 압축 사용"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
+#: l2tpppp.ui:211
+msgid "Echo"
+msgstr "에코"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
+#: l2tpppp.ui:217
+msgid "Send PPP echo packets "
+msgstr "PPP 에코 패킷 보내기"
+
+#: l2tppppwidget.cpp:35
+msgid "L2TP PPP Options"
+msgstr "L2TP PPP 옵션"
