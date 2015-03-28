@@ -41,7 +41,6 @@
 #include <sys/utsname.h>
 
 #include "OSRelease.h"
-#include "Version.h"
 
 K_PLUGIN_FACTORY_DECLARATION(KcmAboutDistroFactory);
 
