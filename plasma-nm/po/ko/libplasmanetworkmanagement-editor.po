@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Park Shinjo <kde@peremen.name>, 2014.
+# Park Shinjo <kde@peremen.name>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-08-30 22:24+0900\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2015-01-18 00:52+0900\n"
 "Last-Translator: Park Shinjo <kde@peremen.name>\n"
 "Language-Team: Korean <kde@peremen.name>\n"
 "Language: ko\n"
@@ -813,7 +813,7 @@ msgstr "DNS 서버 목록 편집"
 #: settings/ui/ipv4.ui:146 settings/ui/ipv6.ui:178
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr "검색 도메인:"
+msgstr "찾을 도메인:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: settings/ui/ipv4.ui:164 settings/ui/ipv6.ui:196
@@ -1225,6 +1225,16 @@ msgstr "사용할 수 없음"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "SSID 선택"
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1(%2%)\n"
+"주파수: %3MHz채널: %4"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

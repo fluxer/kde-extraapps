@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-23 05:57+0000\n"
+"POT-Creation-Date: 2015-01-20 07:05+0000\n"
 "PO-Revision-Date: 2014-03-15 01:14+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: openconnectauth.cpp:284
+#: openconnectauth.cpp:279
 msgid "Contacting host, please wait..."
 msgstr "Jungiamasi prie stoties, prašome palaukti..."
 
-#: openconnectauth.cpp:418
+#: openconnectauth.cpp:423
 msgid "&Show password"
 msgstr "&Rodyti slaptažodį"
 
-#: openconnectauth.cpp:478
+#: openconnectauth.cpp:483
 msgid "Login"
 msgstr "Prisijungti"
 
-#: openconnectauth.cpp:526
+#: openconnectauth.cpp:540
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -43,7 +43,7 @@ msgstr ""
 "Priežastis: %2\n"
 "Vis tiek priimti?"
 
-#: openconnectauth.cpp:611
+#: openconnectauth.cpp:629
 msgid "Connection attempt was unsuccessful."
 msgstr "Bandymas prisijungti nesėkmingas."
 
@@ -53,48 +53,55 @@ msgid "OpenConnect VPN Authentication"
 msgstr "OpenConnect VPN tapatumo nustatymas"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: openconnectauth.ui:40
+#: openconnectauth.ui:49
 msgid "VPN Host"
 msgstr "VPN mazgas"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
-#: openconnectauth.ui:56
+#: openconnectauth.ui:65
 msgid "Connect"
 msgstr "Prisijungti"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
-#: openconnectauth.ui:77
+#: openconnectauth.ui:86
 msgid "Automatically start connecting next time"
 msgstr "Kitą kartą automatiškai įjungti ryšį"
 
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:93
+#, fuzzy
+#| msgid "&Show password"
+msgid "Store passwords"
+msgstr "&Rodyti slaptažodį"
+
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
-#: openconnectauth.ui:112
+#: openconnectauth.ui:137
 msgid "View Log"
 msgstr "Rodyti žurnalą"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
-#: openconnectauth.ui:122
+#: openconnectauth.ui:147
 msgid "Log Level:"
 msgstr "Registravimo lygis:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:133
+#: openconnectauth.ui:158
 msgid "Error"
 msgstr "Klaida"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:138
+#: openconnectauth.ui:163
 msgid "Info"
 msgstr "Informacija"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:143
+#: openconnectauth.ui:168
 msgctxt "like in Debug log level"
 msgid "Debug"
 msgstr "Derinti"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:148
+#: openconnectauth.ui:173
 msgid "Trace"
 msgstr "Sekti"
 

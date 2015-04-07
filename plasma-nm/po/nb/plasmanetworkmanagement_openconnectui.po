@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-23 05:57+0000\n"
+"POT-Creation-Date: 2015-01-20 07:05+0000\n"
 "PO-Revision-Date: 2014-09-01 18:46+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -19,19 +19,19 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: openconnectauth.cpp:284
+#: openconnectauth.cpp:279
 msgid "Contacting host, please wait..."
 msgstr "Kontakter verten, vent litt …"
 
-#: openconnectauth.cpp:418
+#: openconnectauth.cpp:423
 msgid "&Show password"
 msgstr "Vi&s password"
 
-#: openconnectauth.cpp:478
+#: openconnectauth.cpp:483
 msgid "Login"
 msgstr "Logg inn"
 
-#: openconnectauth.cpp:526
+#: openconnectauth.cpp:540
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Årsak: %2\n"
 "Godta likevel?"
 
-#: openconnectauth.cpp:611
+#: openconnectauth.cpp:629
 msgid "Connection attempt was unsuccessful."
 msgstr "TIlkoblingsforsøk var mislykket."
 
@@ -52,48 +52,53 @@ msgid "OpenConnect VPN Authentication"
 msgstr "OpenConnect VPN-autentisering"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: openconnectauth.ui:40
+#: openconnectauth.ui:49
 msgid "VPN Host"
 msgstr "VPN Vert"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
-#: openconnectauth.ui:56
+#: openconnectauth.ui:65
 msgid "Connect"
 msgstr "Koble til"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
-#: openconnectauth.ui:77
+#: openconnectauth.ui:86
 msgid "Automatically start connecting next time"
 msgstr "Start tilkobling automatisk neste gang"
 
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:93
+msgid "Store passwords"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
-#: openconnectauth.ui:112
+#: openconnectauth.ui:137
 msgid "View Log"
 msgstr "Vis logg"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
-#: openconnectauth.ui:122
+#: openconnectauth.ui:147
 msgid "Log Level:"
 msgstr "Loggnivå:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:133
+#: openconnectauth.ui:158
 msgid "Error"
 msgstr "Feil"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:138
+#: openconnectauth.ui:163
 msgid "Info"
 msgstr "Info"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:143
+#: openconnectauth.ui:168
 msgctxt "like in Debug log level"
 msgid "Debug"
 msgstr "Feilsøk"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:148
+#: openconnectauth.ui:173
 msgid "Trace"
 msgstr "Spor"
 

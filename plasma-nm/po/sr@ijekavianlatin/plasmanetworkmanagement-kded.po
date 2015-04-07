@@ -1,5 +1,5 @@
 # Translation of plasmanetworkmanagement-kded.po into Serbian.
-# Chusslove Illich <caslav.ilic@gmx.net>, 2014.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"

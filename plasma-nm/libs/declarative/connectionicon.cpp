@@ -73,6 +73,14 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
                 connect(wiredDevice.data(), SIGNAL(carrierChanged(bool)),
                         SLOT(carrierChanged(bool)));
             }
+        } else if (device->type() == NetworkManager::Device::Wifi) {
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.staticCast<NetworkManager::WirelessDevice>();
+            if (wifiDevice) {
+                connect(wifiDevice.data(), SIGNAL(availableConnectionAppeared(QString)),
+                        SLOT(wirelessNetworkAppeared(QString)));
+                connect(wifiDevice.data(), SIGNAL(networkAppeared(QString)),
+                        SLOT(wirelessNetworkAppeared(QString)));
+            }
         }
     }
 
@@ -287,6 +295,14 @@ void ConnectionIcon::wirelessEnabledChanged(bool enabled)
     }
 }
 
+void ConnectionIcon::wirelessNetworkAppeared(const QString& network)
+{
+    Q_UNUSED(network);
+    if (NetworkManager::status() == NetworkManager::Disconnected) {
+        setDisconnectedIcon();
+    }
+}
+
 void ConnectionIcon::wwanEnabledChanged(bool enabled)
 {
     Q_UNUSED(enabled);
@@ -317,17 +333,36 @@ void ConnectionIcon::setIcons()
     // Workaround, because PrimaryConnection is kinda broken in NM 0.9.8.x and
     // doesn't work correctly with some VPN connections. This shouldn't be necessary
     // for NM 0.9.9.0 or the upcoming bugfix release NM 0.9.8.10
+#if !NM_CHECK_VERSION(0, 9, 10)
     if (!connection) {
-        foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+        bool defaultRoute = false;
+        NetworkManager::ActiveConnection::Ptr mainActiveConnection;
+        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if ((activeConnection->default4() || activeConnection->default6()) && activeConnection->vpn()) {
-                NetworkManager::ActiveConnection::Ptr baseActiveConnection;
-                baseActiveConnection = NetworkManager::findActiveConnection(activeConnection->specificObject());
-                if (baseActiveConnection) {
-                    connection = baseActiveConnection;
+                defaultRoute = true;
+                mainActiveConnection = activeConnection;
+                break;
+            }
+        }
+
+        if (!defaultRoute) {
+            Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+                if (activeConnection->vpn()) {
+                    mainActiveConnection = activeConnection;
+                    break;
                 }
             }
         }
+
+        if (mainActiveConnection) {
+            NetworkManager::ActiveConnection::Ptr baseActiveConnection;
+            baseActiveConnection = NetworkManager::findActiveConnection(mainActiveConnection->specificObject());
+            if (baseActiveConnection) {
+                connection = baseActiveConnection;
+            }
+        }
     }
+#endif
 
     if (connection && !connection->devices().isEmpty()) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(connection->devices().first());
@@ -415,7 +450,7 @@ void ConnectionIcon::setDisconnectedIcon()
                    NetworkManager::isWirelessEnabled() &&
                    NetworkManager::isWirelessHardwareEnabled()) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-            if (!wifiDevice->accessPoints().isEmpty()) {
+            if (!wifiDevice->accessPoints().isEmpty() || !wifiDevice->availableConnections().isEmpty()) {
                 wireless = true;
             }
         } else if (device->type() == NetworkManager::Device::Modem &&

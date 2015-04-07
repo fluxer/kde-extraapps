@@ -4,12 +4,12 @@
 #
 # Joan Maspons <joanmaspons@gmail.com>, 2010, 2011.
 # Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013.
-# Antoni Bella Pérez <antonibella5@orange.es>, 2012, 2014.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2014-10-08 17:20+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -27,7 +27,7 @@ msgstr "Joan Maspons Ventura,Antoni Bella Pérez"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "joanmaspons@gmail.com,antonibella5@orange.es"
+msgstr "joanmaspons@gmail.com,antonibella5@yahoo.com"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
 #: applet/declarative/contents/ui/config.ui:19
@@ -154,30 +154,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "S'està connectant"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "Connexió VPN"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Connectat a %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "S'està connectant a %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "El NetworkManager no s'està executant"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Es requereix NetworkManager 0.9.8, però s'ha trobat el %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconeguda"
@@ -224,17 +224,17 @@ msgstr "S'han transmès"
 msgid "Missing VPN plugin"
 msgstr "Manca el connector VPN"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ha fallat en activar %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ha fallat en afegir %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "Ha fallat en demanar escanejar"
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-06-21 09:36+0200\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2014-11-15 14:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128@baslug.org>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: connectiondetaileditor.cpp:98
 msgid "my_shared_connection"
@@ -1225,6 +1226,17 @@ msgstr "Non disponibile"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "Seleziona prima il SSID"
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Frequenza: %3 Mhz\n"
+"Canale: %4"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

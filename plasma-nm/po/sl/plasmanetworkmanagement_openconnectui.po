@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-23 05:57+0000\n"
-"PO-Revision-Date: 2013-12-07 12:17+0100\n"
+"POT-Creation-Date: 2015-01-20 07:05+0000\n"
+"PO-Revision-Date: 2015-03-21 09:15+0100\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,19 +18,19 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: openconnectauth.cpp:284
+#: openconnectauth.cpp:279
 msgid "Contacting host, please wait..."
 msgstr "Povezovanje z gostiteljem, počakajte ..."
 
-#: openconnectauth.cpp:418
+#: openconnectauth.cpp:423
 msgid "&Show password"
 msgstr "&Prikaži geslo"
 
-#: openconnectauth.cpp:478
+#: openconnectauth.cpp:483
 msgid "Login"
 msgstr "Prijava"
 
-#: openconnectauth.cpp:526
+#: openconnectauth.cpp:540
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -41,7 +41,7 @@ msgstr ""
 "Vzrok: %2\n"
 "Ali bi ga želeli vseeno sprejeti?"
 
-#: openconnectauth.cpp:611
+#: openconnectauth.cpp:629
 msgid "Connection attempt was unsuccessful."
 msgstr "Poskus povezave ni bil uspešen."
 
@@ -51,48 +51,53 @@ msgid "OpenConnect VPN Authentication"
 msgstr "Overitev OpenConnect VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: openconnectauth.ui:40
+#: openconnectauth.ui:49
 msgid "VPN Host"
 msgstr "Gostitelj VPN"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
-#: openconnectauth.ui:56
+#: openconnectauth.ui:65
 msgid "Connect"
 msgstr "Poveži se"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
-#: openconnectauth.ui:77
+#: openconnectauth.ui:86
 msgid "Automatically start connecting next time"
 msgstr "Naslednjič se samodejno poveži"
 
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:93
+msgid "Store passwords"
+msgstr "Shrani gesla"
+
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
-#: openconnectauth.ui:112
+#: openconnectauth.ui:137
 msgid "View Log"
 msgstr "Ogled dnevnika"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
-#: openconnectauth.ui:122
+#: openconnectauth.ui:147
 msgid "Log Level:"
 msgstr "Raven dnevnika:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:133
+#: openconnectauth.ui:158
 msgid "Error"
 msgstr "Napaka"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:138
+#: openconnectauth.ui:163
 msgid "Info"
 msgstr "Podrobnosti"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:143
+#: openconnectauth.ui:168
 msgctxt "like in Debug log level"
 msgid "Debug"
 msgstr "Razhroščevanje"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:148
+#: openconnectauth.ui:173
 msgid "Trace"
 msgstr "Sled"
 

@@ -3,22 +3,22 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Antoni Bella Pérez <antonibella5@orange.es>, 2014.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2014.
 # Josep Ma. Ferrer <txemaq@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-06-17 09:45+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2014-11-16 13:06+0100\n"
+"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 1.4\n"
 
 #: connectiondetaileditor.cpp:98
 msgid "my_shared_connection"
@@ -532,7 +532,7 @@ msgstr "Edita..."
 #. i18n: ectx: property (text), widget (KPushButton, btnDelete)
 #: settings/ui/bond.ui:86 settings/ui/bridge.ui:86
 msgid "Delete"
-msgstr "Esborra"
+msgstr "Suprimeix"
 
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -659,7 +659,7 @@ msgid ""
 "which users can activate/modify/delete this connection."
 msgstr ""
 "Editor de permisos detallats per aquesta connexió. Us permet triar quins "
-"usuaris poden activar/modificar/esborrar aquesta connexió."
+"usuaris poden activar/modificar/suprimir aquesta connexió."
 
 #. i18n: ectx: property (text), widget (KPushButton, pushButtonPermissions)
 #: settings/ui/connectionwidget.ui:94
@@ -1229,6 +1229,17 @@ msgstr "No disponible"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "Primer seleccioneu el SSID"
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Freqüència: %3 Mhz\n"
+"Canal: %4"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

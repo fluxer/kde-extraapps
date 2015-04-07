@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
 "PO-Revision-Date: 2014-10-05 12:06+0400\n"
 "Last-Translator: Alexander Potashev <aspotashev@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,6 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
 #: connectiondetaileditor.cpp:98
 msgid "my_shared_connection"
@@ -1228,6 +1231,21 @@ msgstr "Недоступно"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "Сначала выберите SSID"
+
+#: widgets/bssidcombobox.cpp:146
+#, fuzzy, kde-format
+#| msgid ""
+#| "%1 (%2%)\n"
+#| "Security: %3\n"
+#| "Frequency: %4 Mhz"
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Защита: %3\n"
+"Частота: %4 МГц"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2014-11-03 09:41+0100\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -152,30 +152,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Povezovanje"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "Nova povezava VPN"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Povezan na %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Povezovanje s %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "Upravljalnik omrežja ni zagnan "
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Zahtevan NetworkManager 0.9.8, najden %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Neznano"
@@ -222,17 +222,17 @@ msgstr "Poslano"
 msgid "Missing VPN plugin"
 msgstr "Manjka vstavek VPN"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ni bilo mogoče omogočiti %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ni bilo mogoče dodati %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "Zahteva po preiskovanju ni uspela"
 

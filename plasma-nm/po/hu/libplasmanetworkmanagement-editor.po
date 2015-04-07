@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
 "PO-Revision-Date: 2014-06-24 20:26+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1229,6 +1229,21 @@ msgstr "Nem érhető el"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "Először válassza ki a SSID-t"
+
+#: widgets/bssidcombobox.cpp:146
+#, fuzzy, kde-format
+#| msgid ""
+#| "%1 (%2%)\n"
+#| "Security: %3\n"
+#| "Frequency: %4 Mhz"
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Biztonság: %3\n"
+"Frekvencia: %4 Mhz"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

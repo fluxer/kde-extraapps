@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-06-17 21:12-0300\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2014-11-08 15:35-0200\n"
 "Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
 "Language: pt_BR\n"
@@ -1227,6 +1227,17 @@ msgstr "Indisponível"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "Selecione primeiro o SSID"
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Frequência: %3 Mhz\n"
+"Canal: %4"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

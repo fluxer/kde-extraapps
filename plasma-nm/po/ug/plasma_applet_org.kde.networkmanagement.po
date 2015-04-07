@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -183,30 +183,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "باغلىنىۋاتىدۇ"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "%1 غا باغلاندى"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "%1 غا باغلىنىۋاتىدۇ"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "نامەلۇم"
@@ -253,17 +253,17 @@ msgstr "يوللانغىنى"
 msgid "Missing VPN plugin"
 msgstr ""
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr ""
 

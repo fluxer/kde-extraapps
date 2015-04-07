@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2014.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-23 05:57+0000\n"
-"PO-Revision-Date: 2014-09-28 12:12+0200\n"
+"POT-Creation-Date: 2015-01-20 07:05+0000\n"
+"PO-Revision-Date: 2015-01-20 10:23+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "Language: nl\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: openconnectauth.cpp:284
+#: openconnectauth.cpp:279
 msgid "Contacting host, please wait..."
 msgstr "Contact maken met de host, even geduld a.u.b..."
 
-#: openconnectauth.cpp:418
+#: openconnectauth.cpp:423
 msgid "&Show password"
 msgstr "Wachtwoord &tonen"
 
-#: openconnectauth.cpp:478
+#: openconnectauth.cpp:483
 msgid "Login"
 msgstr "Aanmelden"
 
-#: openconnectauth.cpp:526
+#: openconnectauth.cpp:540
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -40,7 +40,7 @@ msgstr ""
 "Reden: %2\n"
 "Toch accepteren?"
 
-#: openconnectauth.cpp:611
+#: openconnectauth.cpp:629
 msgid "Connection attempt was unsuccessful."
 msgstr "Verbindingspoging was zonder succes."
 
@@ -50,48 +50,53 @@ msgid "OpenConnect VPN Authentication"
 msgstr "OpenConnect VPN authenticatie"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: openconnectauth.ui:40
+#: openconnectauth.ui:49
 msgid "VPN Host"
 msgstr "VPN host"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
-#: openconnectauth.ui:56
+#: openconnectauth.ui:65
 msgid "Connect"
 msgstr "Verbinden"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
-#: openconnectauth.ui:77
+#: openconnectauth.ui:86
 msgid "Automatically start connecting next time"
 msgstr "De verbinding de volgende keer automatisch starten"
 
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:93
+msgid "Store passwords"
+msgstr "Wachtwoorden opslaan"
+
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
-#: openconnectauth.ui:112
+#: openconnectauth.ui:137
 msgid "View Log"
 msgstr "Log tonen"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
-#: openconnectauth.ui:122
+#: openconnectauth.ui:147
 msgid "Log Level:"
 msgstr "Logniveau:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:133
+#: openconnectauth.ui:158
 msgid "Error"
 msgstr "Fout"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:138
+#: openconnectauth.ui:163
 msgid "Info"
 msgstr "Info"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:143
+#: openconnectauth.ui:168
 msgctxt "like in Debug log level"
 msgid "Debug"
 msgstr "Debuggen"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:148
+#: openconnectauth.ui:173
 msgid "Trace"
 msgstr "Trace"
 

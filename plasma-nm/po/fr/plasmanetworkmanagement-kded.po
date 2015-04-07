@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Joëlle Cornavin <jcorn@free.fr>, 2013.
 # Bruno Patri <bruno.patri@gmail.com>, 2013.
+# Maxime Corteel <mcorteel@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-06-23 05:59+0000\n"
-"PO-Revision-Date: 2013-11-17 17:58+0100\n"
-"Last-Translator: Bruno Patri <bruno.patri@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2014-12-07 17:08+0100\n"
+"Last-Translator: Maxime Corteel <mcorteel@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,22 +24,17 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 
 #: bluetoothmonitor.cpp:82
-#, fuzzy
-#| msgid "We support 'dun' and 'nap' services only."
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr "Sels les services « DUN » et « NAP » sont pris en charge."
+msgstr "Seuls les services « DUN » et « NAP » sont pris en charge."
 
 #: bluetoothmonitor.cpp:95
-#, fuzzy
-#| msgid "Could not contact bluetooth manager (BlueZ)."
 msgid "Could not contact Bluetooth manager (BlueZ)."
-msgstr "Impossible de contacter le gestionnaire Bluetooth (BlueZ)."
+msgstr "Impossible de contacter le gestionnaire Bluetooth (BlueZ)."
 
 #: bluetoothmonitor.cpp:103
-#, fuzzy, kde-format
-#| msgid "Default bluetooth adapter not found: %1"
+#, kde-format
 msgid "Default Bluetooth adapter not found: %1"
-msgstr "L'adaptateur Bluetooth par défaut est introuvable : %1"
+msgstr "L'adaptateur Bluetooth par défaut est introuvable : %1"
 
 #: bluetoothmonitor.cpp:165
 #, kde-format
@@ -57,10 +53,9 @@ msgid "Error activating devices's serial port: %1"
 msgstr "Erreur lors de l'activation du port série du périphérique : %1"
 
 #: bluetoothmonitor.cpp:243
-#, fuzzy, kde-format
-#| msgid "Device %1 is not the one we want (%2)"
+#, kde-format
 msgid "Device %1 is not the wanted one (%2)"
-msgstr "Le périphérique %1 n'est pas celui que nous souhaitons (%2)"
+msgstr "Le périphérique %1 n'est pas celui souhaité (%2)"
 
 #: bluetoothmonitor.cpp:245
 #, kde-format
@@ -461,10 +456,9 @@ msgstr ""
 "dessous"
 
 #: passworddialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Please provide a password below"
+#, kde-format
 msgid "Please provide the password for activating connection '%1'"
-msgstr "Veuillez fournir un mot de passe ci-dessous"
+msgstr "Veuillez fournir le mot de passe pour activer la connexion « %1 »"
 
 #: passworddialog.cpp:108
 #, kde-format

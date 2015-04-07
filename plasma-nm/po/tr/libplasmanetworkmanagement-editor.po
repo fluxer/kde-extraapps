@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-11-04 10:53+0200\n"
-"Last-Translator: Kaan Ozdincer <kaanozdincer@gmail.com>\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2014-11-10 14:43+0000\n"
+"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "'%1' Bağlantısını Düzenle"
 #: connectiondetaileditor.cpp:290
 msgctxt "General"
 msgid "General configuration"
-msgstr "Genel ayarlar"
+msgstr "Genel yapılandırma"
 
 #: connectiondetaileditor.cpp:300 connectiondetaileditor.cpp:314
 msgid "Wired"
@@ -1227,6 +1227,17 @@ msgstr "Kullanılabilir Değil"
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
 msgstr "İlk olarak SSID seçin"
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Frekans: %3 Mhz\n"
+"Kanal: %4"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"

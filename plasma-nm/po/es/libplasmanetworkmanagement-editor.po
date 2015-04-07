@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-06-30 11:52+0200\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2014-11-08 08:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1228,6 +1228,17 @@ msgstr "No disponible"
 msgid "First select the SSID"
 msgstr "Seleccione primero el SSID"
 
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Frecuencia: %3 MHz\n"
+"Canal: %4"
+
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
@@ -1427,7 +1438,7 @@ msgid ""
 msgstr ""
 "%1 (%2%)\n"
 "Seguridad: %3\n"
-"Frecuencia: %4 Mhz"
+"Frecuencia: %4 MHz"
 
 #: widgets/ssidcombobox.cpp:155
 #, kde-format
@@ -1438,7 +1449,7 @@ msgid ""
 msgstr ""
 "%1 (%2%)\n"
 "Seguridad: Insegura\n"
-"Frecuencia: %3 Mhz"
+"Frecuencia: %3 MHz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/advancedpermissionswidget.ui:34

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-23 05:57+0000\n"
+"POT-Creation-Date: 2015-01-20 07:05+0000\n"
 "PO-Revision-Date: 2014-04-03 15:42+0400\n"
 "Last-Translator: Alexander Lakhin <exclusion@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -18,20 +18,23 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
-#: openconnectauth.cpp:284
+#: openconnectauth.cpp:279
 msgid "Contacting host, please wait..."
 msgstr "Установление связи с узлом, подождите..."
 
-#: openconnectauth.cpp:418
+#: openconnectauth.cpp:423
 msgid "&Show password"
 msgstr "&Показать пароль"
 
-#: openconnectauth.cpp:478
+#: openconnectauth.cpp:483
 msgid "Login"
 msgstr "Подключиться"
 
-#: openconnectauth.cpp:526
+#: openconnectauth.cpp:540
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -42,7 +45,7 @@ msgstr ""
 "Причина: %2\n"
 "Всё равно принять сертификат?"
 
-#: openconnectauth.cpp:611
+#: openconnectauth.cpp:629
 msgid "Connection attempt was unsuccessful."
 msgstr "Попытка подключения не удалась."
 
@@ -52,48 +55,55 @@ msgid "OpenConnect VPN Authentication"
 msgstr "Аутентификация OpenConnect VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: openconnectauth.ui:40
+#: openconnectauth.ui:49
 msgid "VPN Host"
 msgstr "VPN-сервер"
 
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnConnect)
-#: openconnectauth.ui:56
+#: openconnectauth.ui:65
 msgid "Connect"
 msgstr "Подключиться"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
-#: openconnectauth.ui:77
+#: openconnectauth.ui:86
 msgid "Automatically start connecting next time"
 msgstr "Автоматически подключаться в следующий раз"
 
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:93
+#, fuzzy
+#| msgid "&Show password"
+msgid "Store passwords"
+msgstr "&Показать пароль"
+
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
-#: openconnectauth.ui:112
+#: openconnectauth.ui:137
 msgid "View Log"
 msgstr "Просмотреть журнал"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
-#: openconnectauth.ui:122
+#: openconnectauth.ui:147
 msgid "Log Level:"
 msgstr "Уровень детализации:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:133
+#: openconnectauth.ui:158
 msgid "Error"
 msgstr "Ошибки"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:138
+#: openconnectauth.ui:163
 msgid "Info"
 msgstr "Сведения"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:143
+#: openconnectauth.ui:168
 msgctxt "like in Debug log level"
 msgid "Debug"
 msgstr "Отладка"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbLogLevel)
-#: openconnectauth.ui:148
+#: openconnectauth.ui:173
 msgid "Trace"
 msgstr "Трассировка"
 

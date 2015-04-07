@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2014-10-13 09:25+0200\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2014-12-05 13:32+0100\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -153,30 +153,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Připojuji se"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "Spojení VPN"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Připojen k %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Připojuji se k %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "NetworkManager neběží"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Je potřeba NetworkManager 0.9.8, nalezena verze %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Neznámý"
@@ -223,19 +223,19 @@ msgstr "Odesláno"
 msgid "Missing VPN plugin"
 msgstr "Chybějící modul VPN:"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Aktivace %1 selhala"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Přidání %1 selhalo"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
-msgstr ""
+msgstr "Vyžádání prohledávání selhalo"
 
 #: libs/models/editoridentitymodel.cpp:62
 msgid "Connection name"
@@ -742,27 +742,27 @@ msgstr "SIM vyžaduje kód PUK2."
 #: libs/uiutils.cpp:454
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "Modem vyžaduje kód poskytovatele služby PIN."
 
 #: libs/uiutils.cpp:456
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "Modem vyžaduje kód poskytovatele služby PUK."
 
 #: libs/uiutils.cpp:458
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "Modem vyžaduje kód sítě PIN."
 
 #: libs/uiutils.cpp:460
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "Modem vyžaduje kód sítě PUK."
 
 #: libs/uiutils.cpp:462
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "Modem vyžaduje kód PIN."
 
 #: libs/uiutils.cpp:464
 msgctxt "possible SIM lock reason"

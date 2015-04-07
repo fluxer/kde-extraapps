@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"POT-Creation-Date: 2015-03-03 10:02+0000\n"
 "PO-Revision-Date: 2013-03-30 16:51+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -100,82 +100,82 @@ msgstr ""
 
 #: connectioneditor.cpp:178
 #, fuzzy
-#| msgid "&Edit"
-msgid "Edit..."
-msgstr "संपादन (&E)"
-
-#: connectioneditor.cpp:183
-#, fuzzy
-#| msgid "&Delete"
-msgid "Delete"
-msgstr "काढून टाका (&D)"
-
-#: connectioneditor.cpp:189
-msgid "Import VPN..."
-msgstr ""
-
-#: connectioneditor.cpp:193
-msgid "Export VPN..."
-msgstr ""
-
-#: connectioneditor.cpp:260
-#, fuzzy, kde-format
-#| msgid "Connection &name:"
-msgid "Connection %1 has been added"
-msgstr "जुळवणी नाव (&N):"
-
-#: connectioneditor.cpp:330
-#, kde-format
-msgid "Do you want to remove the connection '%1'?"
-msgstr ""
-
-#: connectioneditor.cpp:330
-msgid "Remove Connection"
-msgstr "जुळवणी तोडा"
-
-#: connectioneditor.cpp:352
-#, fuzzy
 #| msgid "Connection"
 msgid "Connect"
 msgstr "जुळवणी"
 
-#: connectioneditor.cpp:354
+#: connectioneditor.cpp:183
 #, fuzzy
 #| msgid "Edit connection"
 msgid "Disconnect"
 msgstr "जुळवणी संपादन"
 
-#: connectioneditor.cpp:464
+#: connectioneditor.cpp:188
+#, fuzzy
+#| msgid "&Edit"
+msgid "Edit..."
+msgstr "संपादन (&E)"
+
+#: connectioneditor.cpp:193
+#, fuzzy
+#| msgid "&Delete"
+msgid "Delete"
+msgstr "काढून टाका (&D)"
+
+#: connectioneditor.cpp:199
+msgid "Import VPN..."
+msgstr ""
+
+#: connectioneditor.cpp:203
+msgid "Export VPN..."
+msgstr ""
+
+#: connectioneditor.cpp:270
+#, fuzzy, kde-format
+#| msgid "Connection &name:"
+msgid "Connection %1 has been added"
+msgstr "जुळवणी नाव (&N):"
+
+#: connectioneditor.cpp:354
+#, kde-format
+msgid "Do you want to remove the connection '%1'?"
+msgstr ""
+
+#: connectioneditor.cpp:354
+msgid "Remove Connection"
+msgstr "जुळवणी तोडा"
+
+#: connectioneditor.cpp:496
 #, fuzzy
 #| msgid "Remove Connection"
 msgid "Import VPN Connection"
 msgstr "जुळवणी तोडा"
 
-#: connectioneditor.cpp:491
+#: connectioneditor.cpp:523
 #, kde-format
 msgid ""
 "Importing VPN connection %1 failed\n"
 "%2"
 msgstr ""
 
-#: connectioneditor.cpp:535
+#: connectioneditor.cpp:567
 msgid "Export is not supported by this VPN type"
 msgstr ""
 
-#: connectioneditor.cpp:541
+#: connectioneditor.cpp:573
 #, fuzzy
 #| msgid "Edit connection"
 msgid "Export VPN Connection"
 msgstr "जुळवणी संपादन"
 
-#: connectioneditor.cpp:546
+#: connectioneditor.cpp:578
 #, kde-format
 msgid ""
 "Exporting VPN connection %1 failed\n"
 "%2"
 msgstr ""
 
-#: connectioneditor.cpp:551
+#: connectioneditor.cpp:583
 #, kde-format
 msgid "VPN connection %1 exported successfully"
 msgstr ""
@@ -186,7 +186,7 @@ msgid "Connection"
 msgstr "जुळवणी"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: kde-nm-connection-editorui.rc:24
+#: kde-nm-connection-editorui.rc:26
 msgid "Main Toolbar"
 msgstr ""
 

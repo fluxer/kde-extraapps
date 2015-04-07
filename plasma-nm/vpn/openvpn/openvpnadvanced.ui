@@ -6,13 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>462</height>
+    <width>573</width>
+    <height>471</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="KTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="generalTab">
       <attribute name="title">
        <string>General</string>
@@ -284,7 +287,7 @@
       <attribute name="title">
        <string>TLS Settings</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_9">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
@@ -302,6 +305,44 @@
            <property name="whatsThis">
             <string>Connect only to servers whose certificate matches the given subject. Example: /CN=myvpn.company.com</string>
            </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkRemoteCertTls">
+         <property name="text">
+          <string>Verify peer (server) certificate usage signature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="labelRemoteCertTls">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Remote peer certificate TLS type:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbRemoteCertTls">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Server</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Client</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>
@@ -384,8 +425,8 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>0</height>
+           <width>533</width>
+           <height>178</height>
           </size>
          </property>
         </spacer>
@@ -521,7 +562,7 @@
            <property name="enabled">
             <bool>false</bool>
            </property>
-           <property name="passwordMode">
+           <property name="passwordMode" stdset="0">
             <bool>true</bool>
            </property>
           </widget>
@@ -580,6 +621,7 @@
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>KTabWidget</class>
@@ -602,17 +644,19 @@
   <tabstop>cboCipher</tabstop>
   <tabstop>cboHmac</tabstop>
   <tabstop>subjectMatch</tabstop>
+  <tabstop>chkRemoteCertTls</tabstop>
+  <tabstop>cmbRemoteCertTls</tabstop>
   <tabstop>useExtraTlsAuth</tabstop>
-  <tabstop>kurlTlsAuthKey</tabstop>
   <tabstop>cboDirection</tabstop>
   <tabstop>cmbProxyType</tabstop>
   <tabstop>proxyServerAddress</tabstop>
   <tabstop>sbProxyPort</tabstop>
   <tabstop>chkProxyRetry</tabstop>
   <tabstop>proxyUsername</tabstop>
-  <tabstop>chkProxyShowPassword</tabstop>
   <tabstop>proxyPassword</tabstop>
   <tabstop>proxyPasswordStorage</tabstop>
+  <tabstop>chkProxyShowPassword</tabstop>
+  <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -629,6 +673,38 @@
     <hint type="destinationlabel">
      <x>392</x>
      <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkRemoteCertTls</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelRemoteCertTls</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>145</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkRemoteCertTls</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbRemoteCertTls</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>413</x>
+     <y>100</y>
     </hint>
    </hints>
   </connection>

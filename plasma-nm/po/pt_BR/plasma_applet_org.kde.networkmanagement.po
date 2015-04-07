@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma-nm\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2014-10-07 22:01-0300\n"
 "Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
@@ -151,30 +151,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Conectando"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "Conexão VPN"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Conectado a %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Conectando a %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "O NetworkManager não está em execução"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "É necessário o NetworkManager 0.9.8, mas foi encontrado o %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconhecido"
@@ -221,17 +221,17 @@ msgstr "Transmitido"
 msgid "Missing VPN plugin"
 msgstr "Plugin de VPN ausente"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ocorreu um erro ao ativar a %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ocorreu um erro ao adicionar a %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "Ocorreu um erro ao solicitar a verificação"
 

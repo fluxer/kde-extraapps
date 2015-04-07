@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-nm-connection-editor\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"POT-Creation-Date: 2015-03-03 10:02+0000\n"
 "PO-Revision-Date: 2014-08-03 18:05+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128@baslug.org>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -90,48 +90,48 @@ msgid "VPN"
 msgstr "VPN"
 
 #: connectioneditor.cpp:178
+msgid "Connect"
+msgstr "Connetti"
+
+#: connectioneditor.cpp:183
+msgid "Disconnect"
+msgstr "Disconnetti"
+
+#: connectioneditor.cpp:188
 msgid "Edit..."
 msgstr "Modifica..."
 
-#: connectioneditor.cpp:183
+#: connectioneditor.cpp:193
 msgid "Delete"
 msgstr "Elimina"
 
-#: connectioneditor.cpp:189
+#: connectioneditor.cpp:199
 msgid "Import VPN..."
 msgstr "Importa VPN..."
 
-#: connectioneditor.cpp:193
+#: connectioneditor.cpp:203
 msgid "Export VPN..."
 msgstr "Esporta VPN..."
 
-#: connectioneditor.cpp:260
+#: connectioneditor.cpp:270
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "La connessione %1 è stata aggiunta"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Vuoi rimuovere la connessione «%1»?"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 msgid "Remove Connection"
 msgstr "Rimuovi connessione"
 
-#: connectioneditor.cpp:352
-msgid "Connect"
-msgstr "Connetti"
-
-#: connectioneditor.cpp:354
-msgid "Disconnect"
-msgstr "Disconnetti"
-
-#: connectioneditor.cpp:464
+#: connectioneditor.cpp:496
 msgid "Import VPN Connection"
 msgstr "Importa connessione VPN"
 
-#: connectioneditor.cpp:491
+#: connectioneditor.cpp:523
 #, kde-format
 msgid ""
 "Importing VPN connection %1 failed\n"
@@ -140,15 +140,15 @@ msgstr ""
 "L'importazione della connessione VPN %1 non è riuscita\n"
 "%2"
 
-#: connectioneditor.cpp:535
+#: connectioneditor.cpp:567
 msgid "Export is not supported by this VPN type"
 msgstr "L'esportazione non è supportata per questo tipo di VPN"
 
-#: connectioneditor.cpp:541
+#: connectioneditor.cpp:573
 msgid "Export VPN Connection"
 msgstr "Esporta connessione VPN"
 
-#: connectioneditor.cpp:546
+#: connectioneditor.cpp:578
 #, kde-format
 msgid ""
 "Exporting VPN connection %1 failed\n"
@@ -157,7 +157,7 @@ msgstr ""
 "L'esportazione della connessione VPN %1 non è riuscita\n"
 "%2"
 
-#: connectioneditor.cpp:551
+#: connectioneditor.cpp:583
 #, kde-format
 msgid "VPN connection %1 exported successfully"
 msgstr "La connessione VPN %1 è stata esportata correttamente"
@@ -168,7 +168,7 @@ msgid "Connection"
 msgstr "Connessione"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: kde-nm-connection-editorui.rc:24
+#: kde-nm-connection-editorui.rc:26
 msgid "Main Toolbar"
 msgstr "Barra degli strumenti principale"
 

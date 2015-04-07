@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2014-10-11 16:14+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -162,30 +162,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "повезује се"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "ВПН веза"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Повезан на %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Повезујем се на %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "Менаџер мреже није у погону"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Потребан је Менаџер мреже 0.9.8, нађен %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Непознато"
@@ -234,17 +234,17 @@ msgstr "послато"
 msgid "Missing VPN plugin"
 msgstr "Недостаје прикључак за ВПН"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Не могу да активирам %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Не могу да додам %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "Не могу да затражим скенирање"
 
@@ -1122,10 +1122,7 @@ msgstr "последње коришћено јуче"
 #: libs/uiutils.cpp:924
 #, kde-format
 msgid "Last used on %1"
-msgstr ""
-"последње коришћено %1"
-"|/|"
-"последње коришћено $[на-реч %1 ген]"
+msgstr "последње коришћено %1|/|последње коришћено $[на-реч %1 ген]"
 
 #: libs/uiutils.cpp:928
 msgctxt ""

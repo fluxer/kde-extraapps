@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2008-12-27 19:43+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Lavtian <locale@laka.lv>\n"
@@ -182,32 +182,32 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Pieslēguma veids"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 #, fuzzy
 msgid "VPN Connection"
 msgstr "Pieslēguma veids"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, fuzzy, kde-format
 msgid "Connected to %1"
 msgstr "Pieslēguma veids"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, fuzzy, kde-format
 msgid "Connecting to %1"
 msgstr "Pieslēguma veids"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 #, fuzzy
 msgid "NetworkManager not running"
 msgstr "Bezvadu tīkla konfigurācija"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, fuzzy, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Bezvadu tīkla konfigurācija"
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr ""
@@ -254,17 +254,17 @@ msgstr ""
 msgid "Missing VPN plugin"
 msgstr ""
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr ""
 

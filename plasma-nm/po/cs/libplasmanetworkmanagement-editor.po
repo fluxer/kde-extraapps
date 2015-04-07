@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-06-23 11:11+0200\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2014-12-05 13:33+0100\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -40,7 +40,7 @@ msgstr "Upravit spojení '%1'"
 #: connectiondetaileditor.cpp:290
 msgctxt "General"
 msgid "General configuration"
-msgstr ""
+msgstr "Obecné nastavení"
 
 #: connectiondetaileditor.cpp:300 connectiondetaileditor.cpp:314
 msgid "Wired"
@@ -573,7 +573,7 @@ msgstr "ARP cíle:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
 #: settings/ui/bond.ui:246
 msgid "An IP address or comma-separated list of addresses."
-msgstr ""
+msgstr "Adresa nebo seznam IP adres oddělený čárkou."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: settings/ui/bridge.ui:31
@@ -764,7 +764,7 @@ msgstr "Metoda:"
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: settings/ui/ipv4.ui:42 settings/ui/ipv6.ui:74
 msgid "Automatic (Only addresses)"
-msgstr ""
+msgstr "Automaticky (pouze adresy)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: settings/ui/ipv4.ui:47 settings/ui/ipv6.ui:84
@@ -806,7 +806,7 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (KPushButton, dnsMorePushButton)
 #: settings/ui/ipv4.ui:126 settings/ui/ipv6.ui:158
 msgid "Edit DNS the list of servers"
-msgstr ""
+msgstr "Upravit seznam DNS serverů"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: settings/ui/ipv4.ui:146 settings/ui/ipv6.ui:178
@@ -1220,6 +1220,17 @@ msgstr "Nedostupný"
 msgid "First select the SSID"
 msgstr "Nejdříve vyberte SSID"
 
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Frekvence: %3 Mhz\n"
+"Kanál: %4"
+
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
@@ -1407,6 +1418,9 @@ msgid ""
 "Security: %3\n"
 "Frequency: %4 Mhz"
 msgstr ""
+"%1 (%2%)\n"
+"Zabezpečení: %3\n"
+"Frekvence: %4 Mhz"
 
 #: widgets/ssidcombobox.cpp:155
 #, kde-format
@@ -1415,6 +1429,9 @@ msgid ""
 "Security: Insecure\n"
 "Frequency: %3 Mhz"
 msgstr ""
+"%1 (%2%)\n"
+"Zabezpečení: Nezabezpečené\n"
+"Frekvence: %3 Mhz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/advancedpermissionswidget.ui:34

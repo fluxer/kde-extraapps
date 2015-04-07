@@ -66,8 +66,8 @@ public:
     Ui_OpenconnectAuth ui;
     NetworkManager::VpnSetting::Ptr setting;
     struct openconnect_info *vpninfo;
-    QStringList certificateFingerprints;
     NMStringMap secrets;
+    NMStringMap tmpSecrets;
     QMutex mutex;
     QWaitCondition workerWaiting;
     OpenconnectAuthWorkerThread *worker;
@@ -161,7 +161,7 @@ void OpenconnectAuthWidget::readConfig()
     }
     if (!dataMap[NM_OPENCONNECT_KEY_CACERT].isEmpty()) {
         const QByteArray crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_CACERT]);
-        openconnect_set_cafile(d->vpninfo, strdup(crt.data()));
+        openconnect_set_cafile(d->vpninfo, OC3DUP(crt.data()));
     }
     if (dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes") {
         char *wrapper;
@@ -174,12 +174,12 @@ void OpenconnectAuthWidget::readConfig()
     }
     if (!dataMap[NM_OPENCONNECT_KEY_PROXY].isEmpty()) {
         const QByteArray proxy = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PROXY]);
-        openconnect_set_http_proxy(d->vpninfo, strdup(proxy.data()));
+        openconnect_set_http_proxy(d->vpninfo, OC3DUP(proxy.data()));
     }
     if (!dataMap[NM_OPENCONNECT_KEY_USERCERT].isEmpty()) {
         const QByteArray crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_USERCERT]);
         const QByteArray key = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]);
-        openconnect_set_client_cert (d->vpninfo, strdup(crt.data()), strdup(key.data()));
+        openconnect_set_client_cert (d->vpninfo, OC3DUP(crt.data()), OC3DUP(key.data()));
 
         if (!crt.isEmpty() && dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes") {
             openconnect_passphrase_from_fsid(d->vpninfo);
@@ -192,10 +192,6 @@ void OpenconnectAuthWidget::readSecrets()
     Q_D(OpenconnectAuthWidget);
 
     d->secrets = d->setting->secrets();
-
-    if (!d->secrets[NM_OPENCONNECT_KEY_GWCERT].isEmpty()) {
-        d->certificateFingerprints.append(d->secrets[NM_OPENCONNECT_KEY_GWCERT]);
-    }
 
     if (!d->secrets["xmlconfig"].isEmpty()) {
         const QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
@@ -237,10 +233,9 @@ void OpenconnectAuthWidget::readSecrets()
         QTimer::singleShot(0, this, SLOT(connectHost()));
     }
 
-    if (!d->secrets["certsigs"].isEmpty()) {
-        d->certificateFingerprints.append(d->secrets["certsigs"].split('\t'));
+    if (d->secrets["save_passwords"] == "yes") {
+        d->ui.chkStorePasswords->setChecked(true);
     }
-    d->certificateFingerprints.removeDuplicates();
 }
 
 void OpenconnectAuthWidget::acceptDialog()
@@ -276,10 +271,10 @@ void OpenconnectAuthWidget::connectHost()
     const VPNHost &host = d->hosts.at(i);
     if (openconnect_parse_url(d->vpninfo, host.address.toAscii().data())) {
         kWarning() << "Failed to parse server URL" << host.address;
-        openconnect_set_hostname(d->vpninfo, strdup(host.address.toAscii().data()));
+        openconnect_set_hostname(d->vpninfo, OC3DUP(host.address.toAscii().data()));
     }
     if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty())
-        openconnect_set_urlpath(d->vpninfo, strdup(host.group.toAscii().data()));
+        openconnect_set_urlpath(d->vpninfo, OC3DUP(host.group.toAscii().data()));
     d->secrets["lasthost"] = host.name;
     addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait..."));
     d->worker->start();
@@ -301,12 +296,16 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE), QLatin1String(openconnect_get_cookie(d->vpninfo)));
     openconnect_clear_cookie(d->vpninfo);
 
+#if OPENCONNECT_CHECK_VER(5,0)
+    const char *fingerprint = openconnect_get_peer_cert_hash(d->vpninfo);
+#else
     OPENCONNECT_X509 *cert = openconnect_get_peer_cert(d->vpninfo);
     char fingerprint[41];
     openconnect_get_cert_sha1(d->vpninfo, cert, fingerprint);
+#endif
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT), QLatin1String(fingerprint));
-    secrets.insert(QLatin1String("certsigs"), d->certificateFingerprints.join("\t"));
     secrets.insert(QLatin1String("autoconnect"), d->ui.chkAutoconnect->isChecked() ? "yes" : "no");
+    secrets.insert(QLatin1String("save_passwords"), d->ui.chkStorePasswords->isChecked() ? "yes" : "no");
 
     NMStringMap::iterator i = secrets.begin();
     while (i != secrets.end()) {
@@ -317,6 +316,12 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
+
+    // These secrets are not officially part of the secrets which would be returned back to NetworkManager. We just
+    // need to somehow get them to our secret agent which will handle them separately and store them.
+    if (!d->tmpSecrets.isEmpty()) {
+        secretData.insert("tmp-secrets", QVariant::fromValue<NMStringMap>(d->tmpSecrets));
+    }
     return secretData;
 }
 
@@ -488,7 +493,16 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 {
     Q_D(OpenconnectAuthWidget);
 
-    if (!d->certificateFingerprints.contains(fingerprint)) {
+    const QString host = QLatin1String(openconnect_get_hostname(d->vpninfo));
+    const QString port = QString::number(openconnect_get_port(d->vpninfo));
+    const QString key = QString("certificate:%1:%2").arg(host,  port);
+    const QString value = d->secrets.value(key);
+
+#if !OPENCONNECT_CHECK_VER(5,0)
+#define openconnect_check_peer_cert_hash(v,d) strcmp(d, fingerprint.toUtf8().data())
+#endif
+
+    if (openconnect_check_peer_cert_hash(d->vpninfo, value.toUtf8().data())) {
         QWidget *widget = new QWidget();
         QVBoxLayout *verticalLayout;
         QHBoxLayout *horizontalLayout;
@@ -533,7 +547,6 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         dialog.data()->setButtons(KDialog::Yes | KDialog::No);
         dialog.data()->setMainWidget(widget);
         if(dialog.data()->exec() == KDialog::Yes) {
-            d->certificateFingerprints.append(fingerprint);
             *accepted = true;
         } else {
             *accepted = false;
@@ -545,6 +558,8 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
     } else {
         *accepted = true;
     }
+    if (*accepted)
+        d->secrets.insert(key, QString(fingerprint));
     d->mutex.lock();
     d->workerWaiting.wakeAll();
     d->mutex.unlock();
@@ -578,18 +593,21 @@ void OpenconnectAuthWidget::formLoginClicked()
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
                 KLineEdit *le = qobject_cast<KLineEdit*>(widget);
                 QByteArray text = le->text().toUtf8();
-                opt->value = strdup(text.data());
+                openconnect_set_option_value(opt, text.data());
                 if (opt->type == OC_FORM_OPT_TEXT) {
-                    d->secrets.insert(key,le->text());
+                    d->secrets.insert(key, le->text());
+                } else {
+                    d->tmpSecrets.insert(key, le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
                 KComboBox *cbo = qobject_cast<KComboBox*>(widget);
                 QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toAscii();
-                opt->value = strdup(text.data());
+                openconnect_set_option_value(opt, text.data());
                 d->secrets.insert(key,cbo->itemData(cbo->currentIndex()).toString());
             }
         }
     }
+
     deleteAllFromLayout(d->ui.loginBoxLayout);
     d->workerWaiting.wakeAll();
 }
@@ -637,7 +655,7 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
     d->ui.lblLogLevel->setVisible(toggled);
     d->ui.cmbLogLevel->setVisible(toggled);
     if (toggled) {
-        QLayoutItem *item = d->ui.verticalLayout->takeAt(4);
+        QLayoutItem *item = d->ui.verticalLayout->takeAt(5);
         if (item) {
             delete item;
         }

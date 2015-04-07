@@ -7,38 +7,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2013-10-19 21:31+0000\n"
-"Last-Translator: Vedran Ljubovic <vljubovic@smartnet.ba>\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2015-02-22 19:46+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Launchpad (build 16807)\n"
-"X-Launchpad-Export-Date: 2013-10-20 05:02+0000\n"
+"X-Generator: Launchpad (build 17341)\n"
+"X-Launchpad-Export-Date: 2015-02-17 06:23+0000\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Enes Mujic,Samir Ribić,Vedran Ljubovic"
+msgstr "Enes Mujic,Samir Ribić,Nermin Demir,Vedran Ljubovic"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "enes_mujic@hotmail.com,samir.ribic@etf.unsa.ba,vljubovic@smartnet.ba"
+msgstr ""
+"Enes_mujic@hotmail.com,samir.ribic@etf.unsa.ba,nermin.demir95@gmail.com,"
+"vljubovic@smartnet.ba"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
 #: applet/declarative/contents/ui/config.ui:19
-#, fuzzy
-#| msgid "&Show secrets"
 msgid "Show sections"
-msgstr "&Prikaži tajne"
+msgstr "Prikaži sekcije"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: applet/declarative/contents/ui/config.ui:32
 msgid "Show &network speed in:"
-msgstr ""
+msgstr "Pokaži &brzinu mreže u :"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
 #: applet/declarative/contents/ui/config.ui:46
@@ -48,12 +48,12 @@ msgstr "KB/s"
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
 #: applet/declarative/contents/ui/config.ui:51
 msgid "KBits/s"
-msgstr ""
+msgstr "KBits/s"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: applet/declarative/contents/ui/config.ui:68
 msgid "Connection Details"
-msgstr ""
+msgstr "Detalji konekcije"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:154
 msgid "Connect"
@@ -61,7 +61,7 @@ msgstr "Spoji"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:154
 msgid "Disconnect"
-msgstr ""
+msgstr "Prekini vezu"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:209
 msgid "Speed"
@@ -73,173 +73,137 @@ msgstr "Detalji"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:311
 msgid "Password..."
-msgstr ""
+msgstr "Šifra..."
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:338
 msgid "Show password"
-msgstr ""
+msgstr "Prikaži šifru"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:421
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected to %1"
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr "Priključen na %1"
+msgstr "Povezano, ⬇ %1/s, ⬆ %2/s"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:425
 msgid "Connected"
-msgstr ""
+msgstr "Spojeno"
 
 #: applet/declarative/contents/ui/Header.qml:58
 #: libs/models/networkmodelitem.cpp:312
-#, fuzzy
-#| msgid "Manage Connections"
 msgid "Available connections"
-msgstr "Uredi veze"
+msgstr "Dostupne konekcije"
 
 #: applet/declarative/contents/ui/Toolbar.qml:58
-#, fuzzy
-#| msgctxt "@info:status Notification for radio kill switch turned off"
-#| msgid "Wireless hardware disabled"
 msgid "Wireless enabled"
-msgstr "Bežični hardver onemogučen"
+msgstr "Omogućene Wireless"
 
 #: applet/declarative/contents/ui/Toolbar.qml:58
-#, fuzzy
-#| msgctxt "@info:status Notification for radio kill switch turned off"
-#| msgid "Wireless hardware disabled"
 msgid "Wireless disabled"
-msgstr "Bežični hardver onemogučen"
+msgstr "Omogućene Wireless"
 
 #: applet/declarative/contents/ui/Toolbar.qml:72
-#, fuzzy
-#| msgctxt "title of the interface widget in nm's popup"
-#| msgid "Mobile Broadband"
 msgid "Mobile broadband enabled"
-msgstr "Mobilna širokopojasna"
+msgstr "Mobilna širokopojasna komunikacija omogućena"
 
 #: applet/declarative/contents/ui/Toolbar.qml:72
-#, fuzzy
-#| msgctxt "title of the interface widget in nm's popup"
-#| msgid "Mobile Broadband"
 msgid "Mobile broadband disabled"
-msgstr "Mobilna širokopojasna"
+msgstr "Mobilna širokopojasna komunikacija onemogućena"
 
 #: applet/declarative/contents/ui/Toolbar.qml:85
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Omogućen avionski režim"
 
 #: applet/declarative/contents/ui/Toolbar.qml:85
-#, fuzzy
-#| msgctxt "@info:status Notification for radio kill switch turned off"
-#| msgid "Wireless hardware disabled"
 msgid "Airplane mode disabled"
-msgstr "Bežični hardver onemogučen"
+msgstr "Isključen avionski režim"
 
 #: libs/declarative/networkstatus.cpp:80
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected"
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
-msgstr "Povezan"
+msgstr "Povezano"
 
 #: libs/declarative/networkstatus.cpp:83
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected"
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
-msgstr "Povezan"
+msgstr "Povezano"
 
 #: libs/declarative/networkstatus.cpp:86
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected"
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
-msgstr "Povezan"
+msgstr "Povezano"
 
 #: libs/declarative/networkstatus.cpp:89
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
-msgstr ""
+msgstr "Neaktivno"
 
 #: libs/declarative/networkstatus.cpp:92
-#, fuzzy
-#| msgctxt "network interface connected state label"
-#| msgid "Connected"
 msgctxt "There is no active network connection"
 msgid "Disconnected"
-msgstr "Povezan"
+msgstr "Odspojeno"
 
 #: libs/declarative/networkstatus.cpp:95
-#, fuzzy
-#| msgid "Connect"
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
-msgstr "Spoji"
+msgstr "Odspajanje"
 
 #: libs/declarative/networkstatus.cpp:98
-#, fuzzy
-#| msgid "Connect"
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
 "network connection"
 msgid "Connecting"
-msgstr "Spoji"
-
-#: libs/declarative/networkstatus.cpp:143
-msgid "VPN Connection"
-msgstr ""
+msgstr "Povezujem se"
 
 #: libs/declarative/networkstatus.cpp:148
+msgid "VPN Connection"
+msgstr "VPN Konekcija"
+
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
-msgstr ""
+msgstr "Priključen na %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
-msgstr ""
-
-#: libs/declarative/networkstatus.cpp:173
-msgid "NetworkManager not running"
-msgstr ""
+msgstr "Povezujem se na %1"
 
 #: libs/declarative/networkstatus.cpp:178
+msgid "NetworkManager not running"
+msgstr "Mrežni Menadžer ne radi"
+
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
-msgstr ""
+msgstr "Mrežni Menadžer 0.9.8 potreban, pronađen %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
-msgstr ""
+msgstr "Nepoznato"
 
 #: libs/declarative/trafficmonitor.cpp:141
 msgctxt "traffic received empty"
 msgid "Received"
-msgstr ""
+msgstr "Primljeno"
 
 #: libs/declarative/trafficmonitor.cpp:143
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
-msgstr ""
+msgstr "Poslano"
 
 #: libs/declarative/trafficmonitor.cpp:203
 msgid "KBit/s"
-msgstr ""
+msgstr "KBit/s"
 
 #: libs/declarative/trafficmonitor.cpp:205
 msgid "MBit/s"
-msgstr ""
+msgstr "MBit/s"
 
 #: libs/declarative/trafficmonitor.cpp:210
 msgid "GBit/s"
-msgstr ""
+msgstr "GBit/s"
 
 #: libs/declarative/trafficmonitor.cpp:234
 #, kde-format
@@ -247,50 +211,45 @@ msgctxt ""
 "traffic, e.g. n KB/s\n"
 " m KB/s"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: libs/declarative/trafficmonitor.cpp:243
 msgid "Received"
-msgstr ""
+msgstr "Primljeno"
 
 #: libs/declarative/trafficmonitor.cpp:246
 msgid "Transmitted"
-msgstr ""
+msgstr "Poslano"
 
 #: libs/handler.cpp:89
-#, fuzzy
 msgid "Missing VPN plugin"
-msgstr "VPN Ime Dodatka"
+msgstr "Nedostaje VPN dodatak"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
-msgstr ""
+msgstr "Neuspješno aktiviranje %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
-msgstr ""
+msgstr "Neuspješno dodavanje %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
-msgstr ""
+msgstr "Neuspjelo traženje skeniranja"
 
 #: libs/models/editoridentitymodel.cpp:62
-#, fuzzy
-#| msgid "&Connection name:"
 msgid "Connection name"
-msgstr "&Ime veze:"
+msgstr "Naziv konekcije"
 
 #: libs/models/editoridentitymodel.cpp:64
-#, fuzzy
-#| msgid "Last Used"
 msgid "Last used"
-msgstr "Posljednja korišćena"
+msgstr "Zadnje koristeno"
 
 #: libs/models/networkmodelitem.cpp:310
 msgid "Active connections"
-msgstr ""
+msgstr "Aktivne konekcije"
 
 #: libs/uiutils.cpp:58 libs/uiutils.cpp:104
 msgctxt "title of the interface widget in nm's popup"
@@ -305,37 +264,37 @@ msgstr "Bežični 802.11"
 #: libs/uiutils.cpp:64
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: libs/uiutils.cpp:67
 msgctxt "title of the interface widget in nm's popup"
 msgid "WiMAX"
-msgstr ""
+msgstr "WiMAX"
 
 #: libs/uiutils.cpp:70
 msgctxt "title of the interface widget in nm's popup"
 msgid "Infiniband"
-msgstr ""
+msgstr "Infiniband"
 
 #: libs/uiutils.cpp:73
 msgctxt "title of the interface widget in nm's popup"
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: libs/uiutils.cpp:76
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
-msgstr ""
+msgstr "Virtuelno (bond)"
 
 #: libs/uiutils.cpp:79
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
-msgstr ""
+msgstr "Virtuelno (most)"
 
 #: libs/uiutils.cpp:82
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
-msgstr ""
+msgstr "Vistuelno (vlan)"
 
 #: libs/uiutils.cpp:89
 msgctxt "title of the interface widget in nm's popup"
@@ -349,7 +308,7 @@ msgstr "Mobilna širokopojasna"
 
 #: libs/uiutils.cpp:116
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: libs/uiutils.cpp:120
 msgid "DSL"
@@ -361,27 +320,27 @@ msgstr "Bluetooth"
 
 #: libs/uiutils.cpp:128
 msgid "Bond"
-msgstr ""
+msgstr "Povez"
 
 #: libs/uiutils.cpp:131
 msgid "Bridge"
-msgstr ""
+msgstr "Most"
 
 #: libs/uiutils.cpp:135
 msgid "Mobile broadband"
-msgstr ""
+msgstr "Mobilna širokopojasna mreža"
 
 #: libs/uiutils.cpp:139
 msgid "Infiniband"
-msgstr ""
+msgstr "Infiniband"
 
 #: libs/uiutils.cpp:142
 msgid "Olpc mesh"
-msgstr ""
+msgstr "Olpc mesh"
 
 #: libs/uiutils.cpp:145
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: libs/uiutils.cpp:148
 msgid "VPN"
@@ -389,7 +348,7 @@ msgstr "VPN"
 
 #: libs/uiutils.cpp:152
 msgid "WiMAX"
-msgstr ""
+msgstr "WiMAX"
 
 #: libs/uiutils.cpp:156
 msgid "Wired"
@@ -401,42 +360,42 @@ msgstr "Bežično"
 
 #: libs/uiutils.cpp:164
 msgid "Unknown connection type"
-msgstr ""
+msgstr "Nepoznata vrsta konekcije"
 
 #: libs/uiutils.cpp:176
 #, kde-format
 msgid "Wireless Interface (%1)"
-msgstr ""
+msgstr "Bežično sučelje (%1)"
 
 #: libs/uiutils.cpp:179
 #, kde-format
 msgid "Wired Interface (%1)"
-msgstr ""
+msgstr "Ožičeno sučelje (%1)"
 
 #: libs/uiutils.cpp:182
 #, kde-format
 msgid "Bluetooth (%1)"
-msgstr ""
+msgstr "Bluetooth (%1)"
 
 #: libs/uiutils.cpp:185
 #, kde-format
 msgid "Modem (%1)"
-msgstr ""
+msgstr "Modem (%1)"
 
 #: libs/uiutils.cpp:188
 #, kde-format
 msgid "ADSL (%1)"
-msgstr ""
+msgstr "ADSL (%1)"
 
 #: libs/uiutils.cpp:191
 #, kde-format
 msgid "VLan (%1)"
-msgstr ""
+msgstr "VLan (%1)"
 
 #: libs/uiutils.cpp:194
 #, kde-format
 msgid "Bridge (%1)"
-msgstr ""
+msgstr "Most (%1)"
 
 #: libs/uiutils.cpp:207
 msgctxt "description of unknown network interface state"
@@ -516,67 +475,49 @@ msgid "Error: Invalid state"
 msgstr "Greška: Neispravno stanje"
 
 #: libs/uiutils.cpp:260
-#, fuzzy
-#| msgctxt "description of unknown network interface state"
-#| msgid "Unknown"
 msgctxt "The state of the VPN connection is unknown"
 msgid "Unknown"
 msgstr "Nepoznato"
 
 #: libs/uiutils.cpp:263
-#, fuzzy
-#| msgctxt "description of preparing to connect network interface state"
-#| msgid "Preparing to connect"
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
 msgstr "Priprema se za konekciju"
 
 #: libs/uiutils.cpp:266
-#, fuzzy
-#| msgctxt "description of waiting for authentication network interface state"
-#| msgid "Waiting for authorization"
 msgctxt "The VPN connection needs authorization credentials"
 msgid "Needs authorization"
-msgstr "Čekam dozvolu"
+msgstr "Potrebna autorizacija"
 
 #: libs/uiutils.cpp:269
-#, fuzzy
-#| msgid "Connect"
 msgctxt "The VPN connection is being established"
 msgid "Connecting"
-msgstr "Spoji"
+msgstr "Povezujem se"
 
 #: libs/uiutils.cpp:272
-#, fuzzy
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
 msgstr "Postavljanje mrežne adrese"
 
 #: libs/uiutils.cpp:275
-#, fuzzy
-#| msgctxt ""
-#| "@info:status Notification text when a connection has been activated"
-#| msgid "%1 activated"
 msgctxt "The VPN connection is active"
 msgid "Activated"
-msgstr "%1 aktivirano"
+msgstr "Aktivirano"
 
 #: libs/uiutils.cpp:278
 msgctxt "The VPN connection failed"
 msgid "Failed"
-msgstr ""
+msgstr "Nije uspjelo"
 
 #: libs/uiutils.cpp:281
 msgctxt "The VPN connection is disconnected"
 msgid "Failed"
-msgstr ""
+msgstr "Nije uspjelo"
 
 #: libs/uiutils.cpp:293
 msgctxt "wireless network operation mode"
 msgid "Unknown"
-msgstr ""
+msgstr "Nepoznato"
 
 #: libs/uiutils.cpp:296
 msgctxt "wireless network operation mode"
@@ -586,12 +527,12 @@ msgstr "Adhoc"
 #: libs/uiutils.cpp:299
 msgctxt "wireless network operation mode"
 msgid "Infrastructure"
-msgstr ""
+msgstr "Infrastruktura"
 
 #: libs/uiutils.cpp:302
 msgctxt "wireless network operation mode"
 msgid "Access point"
-msgstr ""
+msgstr "Pristupna tačka"
 
 #: libs/uiutils.cpp:305
 msgid "INCORRECT MODE FIX ME"
@@ -651,236 +592,231 @@ msgstr "802.1x"
 #, kde-format
 msgctxt "connection speed"
 msgid "<numid>%1</numid> Bit/s"
-msgstr ""
+msgstr "<numid>%1</numid> Bit/s"
 
 #: libs/uiutils.cpp:357
 #, kde-format
 msgctxt "connection speed"
 msgid "<numid>%1</numid> MBit/s"
-msgstr ""
+msgstr "<numid>%1</numid> MBit/s"
 
 #: libs/uiutils.cpp:359
 #, kde-format
 msgctxt "connection speed"
 msgid "<numid>%1</numid> GBit/s"
-msgstr ""
+msgstr "<numid>%1</numid> GBit/s"
 
 #: libs/uiutils.cpp:385
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: libs/uiutils.cpp:387
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
-msgstr ""
+msgstr "UMTS/HSxPA"
 
 #: libs/uiutils.cpp:389
-#, fuzzy
-#| msgid "2G (GPRS/EDGE)"
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr "2G (GPRS/EDGE)"
+msgstr "GPRS/EDGE"
 
 #: libs/uiutils.cpp:391
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: libs/uiutils.cpp:393 libs/uiutils.cpp:396
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
-msgstr ""
+msgstr "Bilo koja"
 
 #: libs/uiutils.cpp:402
 msgctxt "Cellular access technology"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: libs/uiutils.cpp:404
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
-msgstr ""
+msgstr "CDMA2000 EVDO revizija B"
 
 #: libs/uiutils.cpp:406
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
-msgstr ""
+msgstr "CDMA2000 EVDO revizija A"
 
 #: libs/uiutils.cpp:408
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
-msgstr ""
+msgstr "CDMA2000 EVDO revizija 0"
 
 #: libs/uiutils.cpp:410
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "CDMA2000 1xRTT"
 
 #: libs/uiutils.cpp:412
 msgctxt "Cellular access technology"
 msgid "HSPA+"
-msgstr ""
+msgstr "HSPA+"
 
 #: libs/uiutils.cpp:414
 msgctxt "Cellular access technology"
 msgid "HSPA"
-msgstr ""
+msgstr "HSPA"
 
 #: libs/uiutils.cpp:416
 msgctxt "Cellular access technology"
 msgid "HSUPA"
-msgstr ""
+msgstr "HSUPA"
 
 #: libs/uiutils.cpp:418
 msgctxt "Cellular access technology"
 msgid "HSDPA"
-msgstr ""
+msgstr "HSDPA"
 
 #: libs/uiutils.cpp:420
 msgctxt "Cellular access technology"
 msgid "UMTS"
-msgstr ""
+msgstr "UMTS"
 
 #: libs/uiutils.cpp:422
 msgctxt "Cellular access technology"
 msgid "EDGE"
-msgstr ""
+msgstr "EDGE"
 
 #: libs/uiutils.cpp:424
 msgctxt "Cellular access technology"
 msgid "GPRS"
-msgstr ""
+msgstr "GPRS"
 
 #: libs/uiutils.cpp:426
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
-msgstr ""
+msgstr "Kompaktni GSM"
 
 #: libs/uiutils.cpp:428
 msgctxt "Cellular access technology"
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: libs/uiutils.cpp:430
 msgctxt "Analog wireline modem"
 msgid "Analog"
-msgstr ""
+msgstr "Analogni"
 
 #: libs/uiutils.cpp:432 libs/uiutils.cpp:437
 msgctxt "Unknown cellular access technology"
 msgid "Unknown"
-msgstr ""
+msgstr "Nepoznato"
 
 #: libs/uiutils.cpp:434
 msgctxt "Any cellular access technology"
 msgid "Any"
-msgstr ""
+msgstr "Bilo koja"
 
 #: libs/uiutils.cpp:444
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
-msgstr ""
+msgstr "Modem je otključan."
 
 #: libs/uiutils.cpp:446
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "SIM traži PIN kod."
 
 #: libs/uiutils.cpp:448
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "SIM traži PIN2 kod."
 
 #: libs/uiutils.cpp:450
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "SIM traži PUK kod."
 
 #: libs/uiutils.cpp:452
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "SIM traži PUK2 kod."
 
 #: libs/uiutils.cpp:454
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "Modem traži PIN kod servisnog provajdera."
 
 #: libs/uiutils.cpp:456
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "Modem traži PUK kod servisnog provajdera."
 
 #: libs/uiutils.cpp:458
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "Modem traži mrežni PIN kod."
 
 #: libs/uiutils.cpp:460
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "Modem traži mrežni PUK kod."
 
 #: libs/uiutils.cpp:462
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "Modem traži PIN kod."
 
 #: libs/uiutils.cpp:464
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "Modem traži korporacijski PIN kod."
 
 #: libs/uiutils.cpp:466
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "Modem traži korporacijski PUK kod."
 
 #: libs/uiutils.cpp:468
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "Modem traži PH-FSIM PIN kod."
 
 #: libs/uiutils.cpp:470
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "Modem traži PH-FSIM PUK kod."
 
 #: libs/uiutils.cpp:472
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "Modem traži PIN kod mrežnog podskupa."
 
 #: libs/uiutils.cpp:474
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "Modem traži PUK kod mrežnog podskupa."
 
 #: libs/uiutils.cpp:477
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "Razlog zaključavanja nepoznat."
 
 #: libs/uiutils.cpp:485 libs/uiutils.cpp:491
-#, fuzzy
-#| msgctxt "@label unknown security"
-#| msgid "Unknown security type"
 msgctxt "Unknown"
 msgid "Unknown Wimax NSP type"
-msgstr "Nepoznata vrsta sigurnosti"
+msgstr "Nepoznata vrsta Wimax NSP"
 
 #: libs/uiutils.cpp:486
 msgid "Home"
-msgstr ""
+msgstr "Početna"
 
 #: libs/uiutils.cpp:487
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #: libs/uiutils.cpp:488
 msgid "Roaming partner"
-msgstr ""
+msgstr "Roming partner"
 
 #: libs/uiutils.cpp:513
 msgctxt "@label no security"
@@ -974,133 +910,131 @@ msgstr "Nepoznata vrsta sigurnosti"
 
 #: libs/uiutils.cpp:595
 msgid "System name:"
-msgstr ""
+msgstr "Ime Sistema :"
 
 #: libs/uiutils.cpp:604
 msgid "IPv4 Address:"
-msgstr ""
+msgstr "IPv4 Adresa:"
 
 #: libs/uiutils.cpp:614
 msgid "IPv4 Gateway:"
-msgstr ""
+msgstr "IPv4 prolaz:"
 
 #: libs/uiutils.cpp:624
 msgid "IPv6 Address:"
-msgstr ""
+msgstr "IPv6 Adresa:"
 
 #: libs/uiutils.cpp:634
 msgid "IPv6 Gateway:"
-msgstr ""
+msgstr "IPv6 prolaz:"
 
 #: libs/uiutils.cpp:639
 msgid "Driver:"
-msgstr ""
+msgstr "Drajver:"
 
 #: libs/uiutils.cpp:655
-#, fuzzy
-#| msgid "Bluetooth"
 msgctxt "Name"
 msgid "Bluetooth name"
-msgstr "Bluetooth"
+msgstr "Bluetooth Ime"
 
 #: libs/uiutils.cpp:659 libs/uiutils.cpp:794 libs/uiutils.cpp:818
 msgid "MAC Address:"
-msgstr ""
+msgstr "MAC adresa:"
 
 #: libs/uiutils.cpp:686
 msgid "Operator:"
-msgstr ""
+msgstr "Operator:"
 
 #: libs/uiutils.cpp:688
 msgid "Network ID:"
-msgstr ""
+msgstr "ID mreže:"
 
 #: libs/uiutils.cpp:692 libs/uiutils.cpp:767
 msgid "Signal Quality:"
-msgstr ""
+msgstr "Kvalitet signala:"
 
 #: libs/uiutils.cpp:696
 msgid "Access Technology:"
-msgstr ""
+msgstr "Pristupna tehnologija:"
 
 #: libs/uiutils.cpp:700
 msgid "Allowed Mode:"
-msgstr ""
+msgstr "Dozvoljeni Mod :"
 
 #: libs/uiutils.cpp:704
 msgid "Unlock Required:"
-msgstr ""
+msgstr "Otključavanje potrebno:"
 
 #: libs/uiutils.cpp:708
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI:"
 
 #: libs/uiutils.cpp:715
 msgid "IMSI:"
-msgstr ""
+msgstr "IMSI:"
 
 #: libs/uiutils.cpp:736
 msgid "VPN plugin:"
-msgstr ""
+msgstr "VPN dodatak:"
 
 #: libs/uiutils.cpp:740
 msgid "Banner:"
-msgstr ""
+msgstr "Zastava:"
 
 #: libs/uiutils.cpp:759
 msgid "Bsid:"
-msgstr ""
+msgstr "Bsid:"
 
 #: libs/uiutils.cpp:763
 msgid "NSP Name:"
-msgstr ""
+msgstr "NSP Ime:"
 
 #: libs/uiutils.cpp:767 libs/uiutils.cpp:826
 #, kde-format
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: libs/uiutils.cpp:771
 msgid "Network Type:"
-msgstr ""
+msgstr "Vrsta mreže:"
 
 #: libs/uiutils.cpp:790 libs/uiutils.cpp:814
 msgid "Connection speed:"
-msgstr ""
+msgstr "Brzina veze :"
 
 #: libs/uiutils.cpp:822
 msgid "Mode:"
-msgstr ""
+msgstr "Mod:"
 
 #: libs/uiutils.cpp:826
 msgid "Signal strength:"
-msgstr ""
+msgstr "Jačina signala:"
 
 #: libs/uiutils.cpp:830
 msgid "Access point (SSID):"
-msgstr ""
+msgstr "Pristupna tačka (SSID):"
 
 #: libs/uiutils.cpp:834
 msgid "Access point (BSSID):"
-msgstr ""
+msgstr "Pristupna tačka  (BSSID):"
 
 #: libs/uiutils.cpp:838
 msgctxt "Wifi AP channel and frequency"
 msgid "Channel:"
-msgstr ""
+msgstr "Kanal:"
 
 #: libs/uiutils.cpp:838
 #, kde-format
 msgid "%1 (%2 MHz)"
-msgstr ""
+msgstr "%1 (%2 MHz)"
 
 #: libs/uiutils.cpp:846 libs/uiutils.cpp:852
 msgid "Security:"
-msgstr ""
+msgstr "Sigurnost:"
 
 #: libs/uiutils.cpp:857
 msgid "Frequency band:"
-msgstr ""
+msgstr "Frekvencija band-a :"
 
 #: libs/uiutils.cpp:876
 #, kde-format
@@ -1110,8 +1044,8 @@ msgctxt ""
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
 msgstr[0] "Prije %1 minutu"
-msgstr[1] "prije %1 minuta"
-msgstr[2] "prije %1 minuta"
+msgstr[1] "Prije %1 minute"
+msgstr[2] "Prije %1 minuta"
 
 #: libs/uiutils.cpp:883
 #, kde-format
@@ -1121,8 +1055,8 @@ msgctxt ""
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
 msgstr[0] "Prije %1 sat"
-msgstr[1] "prije %1 sata"
-msgstr[2] "prije %1 sati"
+msgstr[1] "Prije %1 sata"
+msgstr[2] "Prije %1 sati"
 
 #: libs/uiutils.cpp:888
 msgctxt ""
@@ -1137,76 +1071,59 @@ msgid "Never"
 msgstr "Nikad"
 
 #: libs/uiutils.cpp:910
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for last used time for a network connection used in the last hour, "
-#| "as the number of minutes since usage"
-#| msgid "One minute ago"
-#| msgid_plural "%1 minutes ago"
+#, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] "Prije %1 minutu"
-msgstr[1] "prije %1 minuta"
-msgstr[2] "prije %1 minuta"
+msgstr[0] "Zadnji put korišteno prije %1 minute"
+msgstr[1] "Zadnji put korišteno prije %1 minute"
+msgstr[2] "Zadnji put korišteno prije %1 minuta"
 
 #: libs/uiutils.cpp:917
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for last used time for a network connection used in the last day, "
-#| "as the number of hours since usage"
-#| msgid "One hour ago"
-#| msgid_plural "%1 hours ago"
+#, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "Prije %1 sat"
-msgstr[1] "prije %1 sata"
-msgstr[2] "prije %1 sati"
+msgstr[0] "Zadnji put korišteno prije %1 sata"
+msgstr[1] "Zadnji put korišteno prije %1 sata"
+msgstr[2] "Zadnji put korišteno prije %1 sati"
 
 #: libs/uiutils.cpp:922
-#, fuzzy
-#| msgid "Last used"
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
-msgstr "Zadnje koristeno"
+msgstr "Zadnji put korišteno juče"
 
 #: libs/uiutils.cpp:924
-#, fuzzy, kde-format
-#| msgid "Last used"
+#, kde-format
 msgid "Last used on %1"
-msgstr "Zadnje koristeno"
+msgstr "Zadnji put korišteno %1"
 
 #: libs/uiutils.cpp:928
-#, fuzzy
-#| msgctxt ""
-#| "Label for last used time for a network connection that has never been used"
-#| msgid "Never"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr "Nikad"
+msgstr "Nikad nije korišteno"
 
 #: settings/details/detailkeyseditor.cpp:92
 msgid "Driver"
-msgstr ""
+msgstr "Drajver"
 
 #: settings/details/detailkeyseditor.cpp:92
 msgid "Device driver"
-msgstr ""
+msgstr "Drajver za uređaj"
 
 #: settings/details/detailkeyseditor.cpp:93
 msgid "Connection Speed"
-msgstr ""
+msgstr "Brzina veze"
 
 #: settings/details/detailkeyseditor.cpp:93
 msgid "Connection speed"
-msgstr ""
+msgstr "Brzina veze"
 
 #: settings/details/detailkeyseditor.cpp:94
 msgid "System Name"
@@ -1218,7 +1135,7 @@ msgstr "MAC Adresa"
 
 #: settings/details/detailkeyseditor.cpp:95
 msgid "Hardware address"
-msgstr ""
+msgstr "Hardver adresa"
 
 #: settings/details/detailkeyseditor.cpp:98
 msgid "IPv4 Address"
@@ -1226,15 +1143,15 @@ msgstr "IPv4 Adresa"
 
 #: settings/details/detailkeyseditor.cpp:98
 msgid "IP version 4 address"
-msgstr ""
+msgstr "IP verzija 4 adrese"
 
 #: settings/details/detailkeyseditor.cpp:101
 msgid "IPv4 Gateway"
-msgstr ""
+msgstr "IPv4 izlaz"
 
 #: settings/details/detailkeyseditor.cpp:101
 msgid "IP version 4 default gateway"
-msgstr ""
+msgstr "IP verzija 4 uobičajena vrata"
 
 #: settings/details/detailkeyseditor.cpp:104
 msgid "IPv6 Address"
@@ -1242,87 +1159,87 @@ msgstr "IPv6 Adresa"
 
 #: settings/details/detailkeyseditor.cpp:104
 msgid "IP version 6 address"
-msgstr ""
+msgstr "IP verzija 6 adresa"
 
 #: settings/details/detailkeyseditor.cpp:107
 msgid "IPv6 Gateway"
-msgstr ""
+msgstr "IPv6 izlaz"
 
 #: settings/details/detailkeyseditor.cpp:107
 msgid "IP version 6 default gateway"
-msgstr ""
+msgstr "IP verzija 6 uobičajena vrata"
 
 #: settings/details/detailkeyseditor.cpp:110
 msgid "WiMAX Bsid"
-msgstr ""
+msgstr "Wimax Bsid"
 
 #: settings/details/detailkeyseditor.cpp:110
 msgid "The ID of the serving base station as received from the network"
-msgstr ""
+msgstr "ID-a koji služe kao bazne stanice dobijen od mreže"
 
 #: settings/details/detailkeyseditor.cpp:111
 msgid "WiMAX NSP"
-msgstr ""
+msgstr "WiMAX"
 
 #: settings/details/detailkeyseditor.cpp:111
 msgid "The name of the NSP"
-msgstr ""
+msgstr "Ime NSP-a"
 
 #: settings/details/detailkeyseditor.cpp:112
 msgid "WiMAX Signal"
-msgstr ""
+msgstr "Wimax Signal"
 
 #: settings/details/detailkeyseditor.cpp:112
 msgid "The current signal quality of the NSP, in percent."
-msgstr ""
+msgstr "Trenutni Kvalitet signal NSP , u procentima ."
 
 #: settings/details/detailkeyseditor.cpp:113
 msgid "WiMAX NSP Type"
-msgstr ""
+msgstr "Wimax NSP Tip"
 
 #: settings/details/detailkeyseditor.cpp:113
 msgid "The network type of the NSP."
-msgstr ""
+msgstr "Mrežni tip NSP."
 
 #: settings/details/detailkeyseditor.cpp:116
 msgid "Access Point (SSID)"
-msgstr ""
+msgstr "Pristupna tačka (SSID)"
 
 #: settings/details/detailkeyseditor.cpp:116
 msgid "Wireless Access Point's SSID"
-msgstr ""
+msgstr "Bežična Pristupna tačka (SSID)"
 
 #: settings/details/detailkeyseditor.cpp:117
 msgid "Signal Strength"
-msgstr ""
+msgstr "Jačina Signala"
 
 #: settings/details/detailkeyseditor.cpp:117
 msgid "Wireless Access Point's signal strength"
-msgstr ""
+msgstr "Jačina signala Pristupne tačke"
 
 #: settings/details/detailkeyseditor.cpp:118
 msgid "Access Point (MAC)"
-msgstr ""
+msgstr "Pristupna tačka(MAC)"
 
 #: settings/details/detailkeyseditor.cpp:118
 msgid "Wireless Access Point's Hardware Address"
-msgstr ""
+msgstr "Bežična Pristupna tačka (SSID) Hardwerska adresa"
 
 #: settings/details/detailkeyseditor.cpp:119
 msgid "Wireless Band"
-msgstr ""
+msgstr "Bežični opseg"
 
 #: settings/details/detailkeyseditor.cpp:119
 msgid "Wireless Frequency Band"
-msgstr ""
+msgstr "Bežični frekventni opseg"
 
 #: settings/details/detailkeyseditor.cpp:120
 msgid "Wireless Channel"
-msgstr ""
+msgstr "Bežični kanal"
 
 #: settings/details/detailkeyseditor.cpp:120
 msgid "Wireless Frequency Channel"
-msgstr ""
+msgstr "Frekventni Bežični kanal"
 
 #: settings/details/detailkeyseditor.cpp:121
 msgid "Wireless Security"
@@ -1330,88 +1247,88 @@ msgstr "Bežična bezbjednost"
 
 #: settings/details/detailkeyseditor.cpp:121
 msgid "Describes the security capabilities of the access point"
-msgstr ""
+msgstr "Opisuje sigurnost mogućnosti pristupne tačke"
 
 #: settings/details/detailkeyseditor.cpp:122
 msgid "Wireless Mode"
-msgstr ""
+msgstr "Bežični režim"
 
 #: settings/details/detailkeyseditor.cpp:122
 msgid "The operating mode of the wireless device"
-msgstr ""
+msgstr "Radni režim bežičnog uređaja"
 
 #: settings/details/detailkeyseditor.cpp:125
 msgid "Mobile Operator"
-msgstr ""
+msgstr "Mobilni operater"
 
 #: settings/details/detailkeyseditor.cpp:125
 msgid "Mobile Operator's Name"
-msgstr ""
+msgstr "Ime mobilnog operatera"
 
 #: settings/details/detailkeyseditor.cpp:126
 msgid "Mobile Signal Quality"
-msgstr ""
+msgstr "Kvalitet mobilnog signala"
 
 #: settings/details/detailkeyseditor.cpp:127
 msgid "Mobile Access Technology"
-msgstr ""
+msgstr "Tehnologija pristupanja mobilnoj mrezi"
 
 #: settings/details/detailkeyseditor.cpp:129
 msgid "Mobile Allowed Mode"
-msgstr ""
+msgstr "Mobilni dozvoljeni mod"
 
 #: settings/details/detailkeyseditor.cpp:130
 msgid "Mobile Unlock Required"
-msgstr ""
+msgstr "Zahtijevano otključavanje mobitela"
 
 #: settings/details/detailkeyseditor.cpp:130
 msgid "Mobile Master Device"
-msgstr ""
+msgstr "Glavni mobilni uređaj"
 
 #: settings/details/detailkeyseditor.cpp:131
 msgid "Mobile Device IMEI"
-msgstr ""
+msgstr "Mobilni uređaj IMEI"
 
 #: settings/details/detailkeyseditor.cpp:131
 msgid "Mobile Device Serial Number"
-msgstr ""
+msgstr "Serijski broj mobilnog uređaja"
 
 #: settings/details/detailkeyseditor.cpp:132
 msgid "Mobile Device IMSI"
-msgstr ""
+msgstr "IMSI mobilnog uređaja"
 
 #: settings/details/detailkeyseditor.cpp:132
 msgid "Mobile Device Identity Number"
-msgstr ""
+msgstr "Identifikacioni broj mobilnog uređaja"
 
 #: settings/details/detailkeyseditor.cpp:135
 msgid "Bluetooth Name"
-msgstr ""
+msgstr "Bluetooth Ime"
 
 #: settings/details/detailkeyseditor.cpp:135
 msgid "Bluetooth name of the device"
-msgstr ""
+msgstr "Bluetooth ime uređaja"
 
 #: settings/details/detailkeyseditor.cpp:136
 msgid "VPN Plugin"
-msgstr ""
+msgstr "VPN dodatak"
 
 #: settings/details/detailkeyseditor.cpp:136
 msgid "VPN plugin type"
-msgstr ""
+msgstr "VPN tip dodatka"
 
 #: settings/details/detailkeyseditor.cpp:137
 msgid "VPN Banner"
-msgstr ""
+msgstr "VPN Banner"
 
 #: settings/details/detailkeyseditor.cpp:137
 msgid "VPN connection banner"
-msgstr ""
+msgstr "VPN konekcijski transparent"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: settings/details/detailkeyswidget.ui:34
 msgid "Available Details"
-msgstr ""
+msgstr "Dostupni detalji"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availDetails)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentDetails)
@@ -1419,3063 +1336,9 @@ msgstr ""
 #: settings/details/detailkeyswidget.ui:251
 msgctxt "title of a table's column"
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: settings/details/detailkeyswidget.ui:204
 msgid "Details to Show"
-msgstr ""
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-#, fuzzy
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-
-
-
-
-
-#, fuzzy
+msgstr "Detalji za prikazati"

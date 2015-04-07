@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-01-08 23:32+0000\n"
-"Last-Translator: Haris Čustović <hcustovic1@etf.unsa.ba>\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2015-02-22 20:02+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-09 05:35+0000\n"
-"X-Generator: Launchpad (build 16884)\n"
+"X-Launchpad-Export-Date: 2015-02-05 07:13+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
@@ -42,7 +42,7 @@ msgstr "Uredi povezanost '%1'"
 #: connectiondetaileditor.cpp:290
 msgctxt "General"
 msgid "General configuration"
-msgstr ""
+msgstr "Generalna konfiguracija"
 
 #: connectiondetaileditor.cpp:300 connectiondetaileditor.cpp:314
 msgid "Wired"
@@ -99,7 +99,7 @@ msgstr "Vlan"
 
 #: connectiondetaileditor.cpp:345
 msgid "WiMAX"
-msgstr ""
+msgstr "WiMAX"
 
 #: connectiondetaileditor.cpp:368
 #, kde-format
@@ -201,7 +201,7 @@ msgstr "Napredni uređivač dopuštenja"
 #: settings/gsmwidget.cpp:38
 msgctxt "GSM network type"
 msgid "Any"
-msgstr "bilo koji"
+msgstr "Bilo koji"
 
 #: settings/gsmwidget.cpp:39
 msgid "3G Only (UMTS/HSPA)"
@@ -261,7 +261,7 @@ msgstr "Dodatni DNS poslužitelji:"
 #: settings/ipv6widget.cpp:268 settings/ipv6widget.cpp:281
 #: settings/ipv6widget.cpp:294 settings/ipv6widget.cpp:307
 msgid "DNS Servers:"
-msgstr "DNS serveri"
+msgstr "DNS serveri:"
 
 #: settings/ipv4widget.cpp:414 settings/ipv6widget.cpp:404
 msgid "Edit DNS servers"
@@ -397,7 +397,7 @@ msgstr "CA certifikat:"
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: settings/ui/802-1x.ui:163
 msgid "Private key:"
-msgstr "Privatni ključ"
+msgstr "Privatni ključ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: settings/ui/802-1x.ui:180
@@ -512,7 +512,7 @@ msgstr "Verzija 1"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: settings/ui/bond.ui:18 settings/ui/bridge.ui:18
 msgid "Interface name:"
-msgstr "ime interfejsa"
+msgstr "ime interfejsa:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: settings/ui/bond.ui:31
@@ -548,7 +548,7 @@ msgstr "Link nadgledanje:"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: settings/ui/bond.ui:153
 msgid "Monitoring frequency:"
-msgstr "Frekvencija praćenja"
+msgstr "Frekvencija praćenja:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
 #. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
@@ -585,7 +585,7 @@ msgstr "Mostovne povezanosti:"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: settings/ui/bridge.ui:113
 msgid "Aging time:"
-msgstr "Vrijeme starenja"
+msgstr "Vrijeme starenja:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
 #. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
@@ -620,7 +620,7 @@ msgstr "Vrijeme pozdrava:"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: settings/ui/bridge.ui:235
 msgid "Max age:"
-msgstr "Najveća starost"
+msgstr "Najveća starost:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: settings/ui/bt.ui:18
@@ -717,7 +717,7 @@ msgstr "APN:"
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: settings/ui/gsm.ui:129
 msgid "Network ID:"
-msgstr "Mrežni ID"
+msgstr "Mrežni ID:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: settings/ui/gsm.ui:149
@@ -796,7 +796,7 @@ msgstr "Onemogućen"
 #: settings/ui/ipv4.ui:92 settings/ui/ipv6.ui:124
 msgctxt "@info"
 msgid "DNS Servers:"
-msgstr "DNS serveri"
+msgstr "DNS serveri:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: settings/ui/ipv4.ui:119 settings/ui/ipv6.ui:151
@@ -876,7 +876,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: settings/ui/ipv6.ui:42
 msgid "Privacy:"
-msgstr "Privatnost"
+msgstr "Privatnost:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: settings/ui/ipv6.ui:79
@@ -896,9 +896,8 @@ msgstr "IPv6 je potreban za ovu povezanost"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: settings/ui/ipv6.ui:333
-#, fuzzy
 msgid "Default"
-msgstr "1 (Podrazumijevano)"
+msgstr "Podrazumijevano"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: settings/ui/ipv6.ui:338
@@ -1029,7 +1028,7 @@ msgstr "Ad-hoc"
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: settings/ui/wificonnectionwidget.ui:64
 msgid "Access Point"
-msgstr "pristupna tačka"
+msgstr "Pristupna tačka"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: settings/ui/wificonnectionwidget.ui:72
@@ -1053,14 +1052,12 @@ msgstr "Nasumičan..."
 #: settings/ui/wificonnectionwidget.ui:184
 #: settings/ui/wificonnectionwidget.ui:194
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
+msgstr "Označite ovo ako želite kreirate vezu sa skrivenom mrežom"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: settings/ui/wificonnectionwidget.ui:197
-#, fuzzy
-#| msgid "Hidden:"
 msgid "Hidden network:"
-msgstr "Sakriveno:"
+msgstr "Skrivena mreža:"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: settings/ui/wificonnectionwidget.ui:207
@@ -1186,7 +1183,7 @@ msgstr " Mbit/s"
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: settings/ui/wiredconnectionwidget.ui:141
 msgid "Duplex:"
-msgstr "Dupleks"
+msgstr "Dupleks:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: settings/ui/wiredconnectionwidget.ui:158
@@ -1216,7 +1213,7 @@ msgstr "%1 (%2 MHz)"
 #: vpnuiplugin.cpp:53
 msgctxt "Error message in VPN import/export dialog"
 msgid "Operation not supported for this VPN type."
-msgstr ""
+msgstr "Operacija nije podržana za ovaj VPN tip."
 
 #: widgets/advancedpermissionswidget.cpp:101
 msgctxt "@item:intable shortcut for Not Available"
@@ -1230,7 +1227,18 @@ msgstr "Nedostup(an/na)"
 
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
+msgstr "Prvo izaberite SSID"
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
 msgstr ""
+"%1 (%2%)\n"
+"Frkvencija: %3 Mhz\n"
+"Kanal: %4"
 
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"
@@ -1248,11 +1256,9 @@ msgid "Metric"
 msgstr "Metrika"
 
 #: widgets/mobileconnectionwizard.cpp:56
-#, fuzzy
-#| msgid "Mobile Broadband (%1)"
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr "Mobilna širokopojasna (%1)"
+msgstr "Nova mobilna, širokopojasna veza"
 
 #: widgets/mobileconnectionwizard.cpp:153
 #: widgets/mobileconnectionwizard.cpp:171
@@ -1260,31 +1266,29 @@ msgstr "Mobilna širokopojasna (%1)"
 #: widgets/mobileconnectionwizard.cpp:533
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed..."
-msgstr ""
+msgstr "Moj plan nije na spisku..."
 
 #: widgets/mobileconnectionwizard.cpp:158
 msgctxt "Mobile Connection Wizard"
 msgid "Unknown Provider"
-msgstr ""
+msgstr "Nepoznat dobavljač"
 
 #: widgets/mobileconnectionwizard.cpp:166
-#, fuzzy
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "1 (Podrazumijevano)"
+msgstr "Podrazumijevano"
 
 #: widgets/mobileconnectionwizard.cpp:199
 #: widgets/mobileconnectionwizard.cpp:207
-#, fuzzy, kde-format
-#| msgid "APN:"
+#, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr "APN:"
+msgstr "APN: %1"
 
 #: widgets/mobileconnectionwizard.cpp:252
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr ""
+msgstr "Podesi mobilnu, širokopojasnu vezu"
 
 #: widgets/mobileconnectionwizard.cpp:255
 msgctxt "Mobile Connection Wizard"
@@ -1292,98 +1296,102 @@ msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
 msgstr ""
+"Ovaj pomoćnik vam pomaže da lako podesite mobilnu širokopojasnu vezu prema "
+"mreži mobilnih telefona (3G)."
 
 #: widgets/mobileconnectionwizard.cpp:259
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
-msgstr ""
+msgstr "Biće vam potrebne sljedeće informacije:"
 
 #: widgets/mobileconnectionwizard.cpp:263
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
-msgstr ""
+msgstr "Ime vašeg provajdera širokopojasnih usluga"
 
 #: widgets/mobileconnectionwizard.cpp:264
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
-msgstr ""
+msgstr "Ime vašeg plana obračunavanja širokopojasnih usluga"
 
 #: widgets/mobileconnectionwizard.cpp:265
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr ""
+"(u nekim slučajevima) APN (Ime Tačke Pristupa) vašeg plana obračunavanja "
+"širokopojasnih usluga"
 
 #: widgets/mobileconnectionwizard.cpp:269
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr ""
+msgstr "Kreiraj konekciju za &taj mobilni širokopojasni uređaj:"
 
 #: widgets/mobileconnectionwizard.cpp:273
 #: widgets/mobileconnectionwizard.cpp:403
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr ""
+msgstr "Neki GSM uređaj"
 
 #: widgets/mobileconnectionwizard.cpp:275
 #: widgets/mobileconnectionwizard.cpp:405
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr ""
+msgstr "Neki CDMA uređaj"
 
 #: widgets/mobileconnectionwizard.cpp:329
 msgctxt "Mobile Connection Wizard"
 msgid "Installed GSM device"
-msgstr ""
+msgstr "Instaliran GSM uređaj"
 
 #: widgets/mobileconnectionwizard.cpp:333
 msgctxt "Mobile Connection Wizard"
 msgid "Installed CDMA device"
-msgstr ""
+msgstr "Instaliran CDMS uređaj"
 
 #: widgets/mobileconnectionwizard.cpp:418
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr ""
+msgstr "Izaberite vašu državu provajdera"
 
 #: widgets/mobileconnectionwizard.cpp:421
 msgctxt "Mobile Connection Wizard"
 msgid "Country List:"
-msgstr ""
+msgstr "Spisak država:"
 
 #: widgets/mobileconnectionwizard.cpp:425
 msgctxt "Mobile Connection Wizard"
 msgid "My country is not listed"
-msgstr ""
+msgstr "Moja država nije na spisku"
 
 #: widgets/mobileconnectionwizard.cpp:441
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr ""
+msgstr "Izaberite vašeg Provajdera"
 
 #: widgets/mobileconnectionwizard.cpp:444
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr ""
+msgstr "Izaberite dobavljača s &liste:"
 
 #: widgets/mobileconnectionwizard.cpp:453
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr ""
+msgstr "Ne mogu da pronađem mog provajdera i želim da ga unesem &ručno:"
 
 #: widgets/mobileconnectionwizard.cpp:495
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
-msgstr ""
+msgstr "Izaberite vaš plan obračunavanja"
 
 #: widgets/mobileconnectionwizard.cpp:498
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr ""
+msgstr "Izaberite &svoj plan:"
 
 #: widgets/mobileconnectionwizard.cpp:505
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr ""
+msgstr "&APN izabranog plana(Ime pristupne tačke):"
 
 #: widgets/mobileconnectionwizard.cpp:517
 msgctxt "Mobile Connection Wizard"
@@ -1393,29 +1401,33 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
+"Upozorenje: Izbor pogrešnog plana može da dovede do problema pri "
+"obračunavanju vašeg naloga širokopojasne veze ili može spriječiti "
+"povezivanje.\n"
+"\n"
+"Ako niste sigurni o vašem planu obratite se vašem provajderu za APN vašeg "
+"plana."
 
 #: widgets/mobileconnectionwizard.cpp:554
-#, fuzzy
-#| msgid "Mobile Broadband (%1)"
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
-msgstr "Mobilna širokopojasna (%1)"
+msgstr "Potvrdite podešavanja mobilne širokopojasne veze"
 
 #: widgets/mobileconnectionwizard.cpp:557
 msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
-msgstr ""
+msgstr "Vaša mobilna širokopojasna veza je podešena sa sljedećim parametrima:"
 
 #: widgets/mobileconnectionwizard.cpp:561
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr ""
+msgstr "Vaš provajder:"
 
 #: widgets/mobileconnectionwizard.cpp:566
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
-msgstr ""
+msgstr "Vaš plan:"
 
 #: widgets/ssidcombobox.cpp:152
 #, kde-format
@@ -1424,6 +1436,9 @@ msgid ""
 "Security: %3\n"
 "Frequency: %4 Mhz"
 msgstr ""
+"%1 (%2%)\n"
+"Sigurnost: %3\n"
+"Frekvencija: %4 Mhz"
 
 #: widgets/ssidcombobox.cpp:155
 #, kde-format
@@ -1432,6 +1447,9 @@ msgid ""
 "Security: Insecure\n"
 "Frequency: %3 Mhz"
 msgstr ""
+"%1 (%2%)\n"
+"Sigurnost: Nesigurno\n"
+"Frekvencija: %3 Mhz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/advancedpermissionswidget.ui:34
@@ -1489,12 +1507,3 @@ msgstr "Ignoriraj automatski prikupljene puteve"
 #: widgets/ui/ipv6routes.ui:20
 msgid "Edit IPv6 Routes"
 msgstr "Uredi IPv6 puteve"
-
-
-
-
-#, fuzzy
-
-
-
-#, fuzzy

@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-06-23 05:59+0000\n"
-"PO-Revision-Date: 2014-11-04 10:54+0200\n"
-"Last-Translator: Kaan Ozdincer <kaanozdincer@gmail.com>\n"
+"PO-Revision-Date: 2014-11-10 14:32+0000\n"
+"Last-Translator: Simge <simgesezgin88@gmail.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -448,7 +448,7 @@ msgstr "'%1' kablosuz ağına erişebilmek için aşağıya bir parola girmelisi
 #: passworddialog.cpp:80
 #, kde-format
 msgid "Please provide the password for activating connection '%1'"
-msgstr ""
+msgstr "Lütfen '%1' bağlantısını etkinleştirmek için bir parola girin"
 
 #: passworddialog.cpp:108
 #, kde-format

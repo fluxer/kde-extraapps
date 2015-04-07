@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-06-23 05:59+0000\n"
-"PO-Revision-Date: 2014-10-20 15:49+0200\n"
+"PO-Revision-Date: 2014-10-27 10:07+0100\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -427,7 +427,7 @@ msgstr "Spuštění služby poskytující spojení VPN selhalo."
 
 #: notification.cpp:405
 msgid "Necessary secrets for the VPN connection were not provided."
-msgstr ""
+msgstr "Požadovaná hesla pro VPN připojení nebyla zadána."
 
 #: notification.cpp:408
 msgid "Authentication to the VPN server failed."

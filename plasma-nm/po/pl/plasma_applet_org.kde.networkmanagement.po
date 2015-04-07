@@ -1,15 +1,15 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2013, 2014.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2013, 2014, 2015.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2013, 2014.
 # Marcin Kocur <marcin2006@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2014-10-18 15:00+0200\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2015-02-07 07:56+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -153,30 +153,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Łączenie"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "Połączenie VPN"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Połączono z %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Łączenie z %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "ZarządzanieSiecią nie jest uruchomione"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Wymagane Zarządzanie Siecią w odsłonie 0.9.8, znaleziono %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Nieznany"
@@ -217,23 +217,23 @@ msgstr "Pobrano"
 
 #: libs/declarative/trafficmonitor.cpp:246
 msgid "Transmitted"
-msgstr "Przesłano"
+msgstr "Wysłano"
 
 #: libs/handler.cpp:89
 msgid "Missing VPN plugin"
 msgstr "Brak wtyczki VPN"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Nieudane włączanie %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nieudane dodawanie %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "Nieudane żądanie przeszukiwania"
 
@@ -243,7 +243,7 @@ msgstr "Nazwa połączenia"
 
 #: libs/models/editoridentitymodel.cpp:64
 msgid "Last used"
-msgstr "Ostatnio używane"
+msgstr "Ostatnio używana"
 
 #: libs/models/networkmodelitem.cpp:310
 msgid "Active connections"
@@ -423,7 +423,7 @@ msgstr "Przygotowywanie do połączenia"
 #: libs/uiutils.cpp:222
 msgctxt "description of configuring hardware network interface state"
 msgid "Configuring interface"
-msgstr "Ustawienia interfejsu"
+msgstr "Ustawianie interfejsu"
 
 #: libs/uiutils.cpp:225
 msgctxt "description of waiting for authentication network interface state"
@@ -1075,9 +1075,9 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] "Ostatnio używane jedną minutę temu"
-msgstr[1] "Ostatnio używane %1 minuty temu"
-msgstr[2] "Ostatnio używane %1 minut temu"
+msgstr[0] "Ostatnio używana jedną minutę temu"
+msgstr[1] "Ostatnio używana %1 minuty temu"
+msgstr[2] "Ostatnio używana %1 minut temu"
 
 #: libs/uiutils.cpp:917
 #, kde-format
@@ -1086,26 +1086,26 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "Ostatnio używane jedną godzinę temu"
-msgstr[1] "Ostatnio używane %1 godziny temu"
-msgstr[2] "Ostatnio używane %1 godzin temu"
+msgstr[0] "Ostatnio używana jedną godzinę temu"
+msgstr[1] "Ostatnio używana %1 godziny temu"
+msgstr[2] "Ostatnio używana %1 godzin temu"
 
 #: libs/uiutils.cpp:922
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
-msgstr "Ostatnio używane wczoraj"
+msgstr "Ostatnio używana wczoraj"
 
 #: libs/uiutils.cpp:924
 #, kde-format
 msgid "Last used on %1"
-msgstr "Ostatnio używane w dniu %1"
+msgstr "Ostatnio używana w dniu %1"
 
 #: libs/uiutils.cpp:928
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr "Nigdy nie używane"
+msgstr "Nigdy nie używana"
 
 #: settings/details/detailkeyseditor.cpp:92
 msgid "Driver"

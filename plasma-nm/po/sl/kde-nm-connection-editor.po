@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"POT-Creation-Date: 2015-03-03 10:02+0000\n"
 "PO-Revision-Date: 2014-07-12 08:58+0200\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -92,48 +92,48 @@ msgid "VPN"
 msgstr "VPN"
 
 #: connectioneditor.cpp:178
+msgid "Connect"
+msgstr "Poveži se"
+
+#: connectioneditor.cpp:183
+msgid "Disconnect"
+msgstr "Prekini povezavo"
+
+#: connectioneditor.cpp:188
 msgid "Edit..."
 msgstr "Uredi ..."
 
-#: connectioneditor.cpp:183
+#: connectioneditor.cpp:193
 msgid "Delete"
 msgstr "Izbriši"
 
-#: connectioneditor.cpp:189
+#: connectioneditor.cpp:199
 msgid "Import VPN..."
 msgstr "Uvozi VPN ..."
 
-#: connectioneditor.cpp:193
+#: connectioneditor.cpp:203
 msgid "Export VPN..."
 msgstr "Izvozi VPN ..."
 
-#: connectioneditor.cpp:260
+#: connectioneditor.cpp:270
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Povezava %1 je bila dodana"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Ali želite odstraniti povezavo '%1'?"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 msgid "Remove Connection"
 msgstr "Odstrani povezavo"
 
-#: connectioneditor.cpp:352
-msgid "Connect"
-msgstr "Poveži se"
-
-#: connectioneditor.cpp:354
-msgid "Disconnect"
-msgstr "Prekini povezavo"
-
-#: connectioneditor.cpp:464
+#: connectioneditor.cpp:496
 msgid "Import VPN Connection"
 msgstr "Uvozi povezavo VPN"
 
-#: connectioneditor.cpp:491
+#: connectioneditor.cpp:523
 #, kde-format
 msgid ""
 "Importing VPN connection %1 failed\n"
@@ -142,15 +142,15 @@ msgstr ""
 "Uvažanje povezave VPN %1 ni uspelo\n"
 "%2"
 
-#: connectioneditor.cpp:535
+#: connectioneditor.cpp:567
 msgid "Export is not supported by this VPN type"
 msgstr "Izvoz ni podprt za to vrsto VPN"
 
-#: connectioneditor.cpp:541
+#: connectioneditor.cpp:573
 msgid "Export VPN Connection"
 msgstr "Izvozi povezavo VPN"
 
-#: connectioneditor.cpp:546
+#: connectioneditor.cpp:578
 #, kde-format
 msgid ""
 "Exporting VPN connection %1 failed\n"
@@ -159,7 +159,7 @@ msgstr ""
 "Izvažanje povezave VPN %1 ni uspelo\n"
 "%2"
 
-#: connectioneditor.cpp:551
+#: connectioneditor.cpp:583
 #, kde-format
 msgid "VPN connection %1 exported successfully"
 msgstr "Povezava VPN %1 je bila uspešno izvožena"
@@ -170,7 +170,7 @@ msgid "Connection"
 msgstr "Povezava"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: kde-nm-connection-editorui.rc:24
+#: kde-nm-connection-editorui.rc:26
 msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
 

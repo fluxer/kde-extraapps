@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-22 07:46+0000\n"
+"POT-Creation-Date: 2015-03-03 10:02+0000\n"
 "PO-Revision-Date: 2014-08-30 20:17+0900\n"
 "Last-Translator: Park Shinjo <kde@peremen.name>\n"
 "Language-Team: Korean <kde@peremen.name>\n"
@@ -91,48 +91,48 @@ msgid "VPN"
 msgstr "VPN"
 
 #: connectioneditor.cpp:178
+msgid "Connect"
+msgstr "연결"
+
+#: connectioneditor.cpp:183
+msgid "Disconnect"
+msgstr "연결 해제"
+
+#: connectioneditor.cpp:188
 msgid "Edit..."
 msgstr "편집..."
 
-#: connectioneditor.cpp:183
+#: connectioneditor.cpp:193
 msgid "Delete"
 msgstr "삭제"
 
-#: connectioneditor.cpp:189
+#: connectioneditor.cpp:199
 msgid "Import VPN..."
 msgstr "VPN 가져오기..."
 
-#: connectioneditor.cpp:193
+#: connectioneditor.cpp:203
 msgid "Export VPN..."
 msgstr "VPN 내보내기..."
 
-#: connectioneditor.cpp:260
+#: connectioneditor.cpp:270
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "연결 %1이(가) 추가됨"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 msgid "Remove Connection"
 msgstr "연결 삭제"
 
-#: connectioneditor.cpp:352
-msgid "Connect"
-msgstr "연결"
-
-#: connectioneditor.cpp:354
-msgid "Disconnect"
-msgstr "연결 해제"
-
-#: connectioneditor.cpp:464
+#: connectioneditor.cpp:496
 msgid "Import VPN Connection"
 msgstr "VPN 연결 가져오기"
 
-#: connectioneditor.cpp:491
+#: connectioneditor.cpp:523
 #, kde-format
 msgid ""
 "Importing VPN connection %1 failed\n"
@@ -141,15 +141,15 @@ msgstr ""
 "VPN 연결 %1을(를) 가져올 수 없음\n"
 "%2"
 
-#: connectioneditor.cpp:535
+#: connectioneditor.cpp:567
 msgid "Export is not supported by this VPN type"
 msgstr "이 VPN 형식을 내보낼 수 없음"
 
-#: connectioneditor.cpp:541
+#: connectioneditor.cpp:573
 msgid "Export VPN Connection"
 msgstr "VPN 연결 내보내기"
 
-#: connectioneditor.cpp:546
+#: connectioneditor.cpp:578
 #, kde-format
 msgid ""
 "Exporting VPN connection %1 failed\n"
@@ -158,7 +158,7 @@ msgstr ""
 "VPN 연결 %1을(를) 내보낼 수 없음\n"
 "%2"
 
-#: connectioneditor.cpp:551
+#: connectioneditor.cpp:583
 #, kde-format
 msgid "VPN connection %1 exported successfully"
 msgstr "VPN 연결 %1을(를) 내보냄"
@@ -169,7 +169,7 @@ msgid "Connection"
 msgstr "연결"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: kde-nm-connection-editorui.rc:24
+#: kde-nm-connection-editorui.rc:26
 msgid "Main Toolbar"
 msgstr "주 도구 모음"
 

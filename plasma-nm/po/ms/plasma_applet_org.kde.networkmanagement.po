@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -174,32 +174,32 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Sambungan"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 #, fuzzy
 msgid "VPN Connection"
 msgstr "Sambungan"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, fuzzy, kde-format
 msgid "Connected to %1"
 msgstr "Tersambung"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, fuzzy, kde-format
 msgid "Connecting to %1"
 msgstr "Sambungan"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 #, fuzzy
 msgid "NetworkManager not running"
 msgstr "Pengurusan Rangkaian"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, fuzzy, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Pengurusan Rangkaian"
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 #, fuzzy
 msgctxt "global connection state"
 msgid "Unknown"
@@ -247,17 +247,17 @@ msgstr ""
 msgid "Missing VPN plugin"
 msgstr ""
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr ""
 

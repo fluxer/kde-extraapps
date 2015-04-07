@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2013-03-30 10:54+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -186,37 +186,37 @@ msgctxt ""
 msgid "Connecting"
 msgstr "जुळवत आहे"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 #, fuzzy
 #| msgid "Connecting"
 msgid "VPN Connection"
 msgstr "जुळवत आहे"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, fuzzy, kde-format
 #| msgid "Connected (via %1)"
 msgid "Connected to %1"
 msgstr "जुळलेले (द्वारे %1)"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, fuzzy, kde-format
 #| msgid "Connected (via %1)"
 msgid "Connecting to %1"
 msgstr "जुळलेले (द्वारे %1)"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 #, fuzzy
 #| msgid "Network management"
 msgid "NetworkManager not running"
 msgstr "संजाळ व्यवस्थापन"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, fuzzy, kde-format
 #| msgid "Network management"
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "संजाळ व्यवस्थापन"
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 #, fuzzy
 #| msgid "Unknown"
 msgctxt "global connection state"
@@ -265,17 +265,17 @@ msgstr ""
 msgid "Missing VPN plugin"
 msgstr ""
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr ""
 

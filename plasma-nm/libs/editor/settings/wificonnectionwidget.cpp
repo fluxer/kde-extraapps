@@ -59,14 +59,14 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 {
     NetworkManager::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::WirelessSetting>();
 
-    m_ui->SSIDCombo->init(wifiSetting->ssid());
+    m_ui->SSIDCombo->init(QString::fromUtf8(wifiSetting->ssid()));
 
     if (wifiSetting->mode() != NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
     }
     modeChanged(wifiSetting->mode());
 
-    m_ui->BSSIDCombo->init(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()), wifiSetting->ssid());
+    m_ui->BSSIDCombo->init(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()), QString::fromUtf8(wifiSetting->ssid()));
 
     m_ui->band->setCurrentIndex(wifiSetting->band());
     if (wifiSetting->band() != NetworkManager::WirelessSetting::Automatic) {

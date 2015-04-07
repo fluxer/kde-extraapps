@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# Vincenzo Reale <smart2128@baslug.org>, 2014, 2015.
 #
-# Vincenzo Reale <smart2128@baslug.org>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-06-23 05:59+0000\n"
-"PO-Revision-Date: 2014-10-06 00:16+0200\n"
+"PO-Revision-Date: 2015-03-19 10:49+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128@baslug.org>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -123,7 +123,7 @@ msgstr "La richiesta di autorizzazione è scaduta"
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
-msgstr "Avvio PPP non riusciuto"
+msgstr "Avvio PPP non riuscito"
 
 #: notification.cpp:125
 msgctxt ""
@@ -153,7 +153,7 @@ msgstr "Si è verificato un errore DHCP"
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
-msgstr "DHCP non riuscito"
+msgstr "DHCP non riuscito "
 
 #: notification.cpp:145
 msgctxt ""
@@ -389,7 +389,7 @@ msgstr "Connessione VPN «%1» non riuscita."
 #: notification.cpp:376
 #, kde-format
 msgid "VPN connection '%1' disconnected."
-msgstr "Connessione VPN «%1»disconnessa."
+msgstr "Connessione VPN «%1» disconnessa."
 
 #: notification.cpp:384
 msgid "The VPN connection changed state because the user disconnected it."
@@ -428,7 +428,7 @@ msgstr "L'avvio del servizio che fornisce la connessione VPN non è riuscito."
 
 #: notification.cpp:405
 msgid "Necessary secrets for the VPN connection were not provided."
-msgstr "I segreti neccessari per la connessione VPN non sono stati forniti."
+msgstr "I segreti necessari per la connessione VPN non sono stati forniti."
 
 #: notification.cpp:408
 msgid "Authentication to the VPN server failed."

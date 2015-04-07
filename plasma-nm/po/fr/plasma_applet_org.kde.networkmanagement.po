@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Joëlle Cornavin <jcorn@free.fr>, 2013.
 # Bruno Patri <bruno.patri@gmail.com>, 2013.
+# Thomas Vergnaud <thomas.vergnaud@gmx.fr>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma-nm\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2013-11-17 17:23+0100\n"
-"Last-Translator: Bruno Patri <bruno.patri@gmail.com>\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2015-03-17 21:50+0100\n"
+"Last-Translator: Thomas Vergnaud <thomas.vergnaud@gmx.fr>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -24,18 +25,16 @@ msgstr ""
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Joëlle Cornavin, Bruno Patri"
+msgstr "Joëlle Cornavin, Bruno Patri, Thomas Vergnaud"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "jcorn@free.fr, bruno.patri@gmail.com"
+msgstr "jcorn@free.fr, bruno.patri@gmail.com, thomas.vergnaud@gmx.fr"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
 #: applet/declarative/contents/ui/config.ui:19
-#, fuzzy
-#| msgid "Unknown connections"
 msgid "Show sections"
-msgstr "Connexions inconnues"
+msgstr "Afficher les sections"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: applet/declarative/contents/ui/config.ui:32
@@ -67,13 +66,11 @@ msgstr "Se déconnecter"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:209
 msgid "Speed"
-msgstr ""
+msgstr "Vitesse"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:215
-#, fuzzy
-#| msgid "Details to Show"
 msgid "Details"
-msgstr "Renseignements à afficher"
+msgstr "Détails"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:311
 msgid "Password..."
@@ -84,10 +81,8 @@ msgid "Show password"
 msgstr "Afficher le mot de passe"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:421
-#, fuzzy
-#| msgid "Connected to %1"
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr "Connecté à %1"
+msgstr "Connecté, ⬇ %1/s, ⬆ %2/s"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:425
 msgid "Connected"
@@ -95,118 +90,96 @@ msgstr "Connecté"
 
 #: applet/declarative/contents/ui/Header.qml:58
 #: libs/models/networkmodelitem.cpp:312
-#, fuzzy
-#| msgid "Active connections"
 msgid "Available connections"
-msgstr "Connexions actives"
+msgstr "Connexions disponibles"
 
 #: applet/declarative/contents/ui/Toolbar.qml:58
 msgid "Wireless enabled"
 msgstr "Sans fil activé"
 
 #: applet/declarative/contents/ui/Toolbar.qml:58
-#, fuzzy
-#| msgid "Wireless enabled"
 msgid "Wireless disabled"
-msgstr "Sans fil activé"
+msgstr "Sans fil désactivé"
 
 #: applet/declarative/contents/ui/Toolbar.qml:72
 msgid "Mobile broadband enabled"
 msgstr "Haut débit mobile activé"
 
 #: applet/declarative/contents/ui/Toolbar.qml:72
-#, fuzzy
-#| msgid "Mobile broadband enabled"
 msgid "Mobile broadband disabled"
-msgstr "Haut débit mobile activé"
+msgstr "Haut débit mobile désactivé"
 
 #: applet/declarative/contents/ui/Toolbar.qml:85
-#, fuzzy
-#| msgid "Wireless enabled"
 msgid "Airplane mode enabled"
-msgstr "Sans fil activé"
+msgstr "Mode avion activé"
 
 #: applet/declarative/contents/ui/Toolbar.qml:85
 msgid "Airplane mode disabled"
-msgstr ""
+msgstr "Mode avion désactivé"
 
 #: libs/declarative/networkstatus.cpp:80
-#, fuzzy
-#| msgid "Connected"
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "Connecté"
 
 #: libs/declarative/networkstatus.cpp:83
-#, fuzzy
-#| msgid "Connected"
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "Connecté"
 
 #: libs/declarative/networkstatus.cpp:86
-#, fuzzy
-#| msgid "Connected"
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "Connecté"
 
 #: libs/declarative/networkstatus.cpp:89
-#, fuzzy
-#| msgid "Inactive"
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr "Inactive"
 
 #: libs/declarative/networkstatus.cpp:92
-#, fuzzy
-#| msgid "Disconnected"
 msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "Déconnecté"
 
 #: libs/declarative/networkstatus.cpp:95
-#, fuzzy
-#| msgid "Disconnecting"
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "Déconnexion"
 
 #: libs/declarative/networkstatus.cpp:98
-#, fuzzy
-#| msgid "Connecting"
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
 "network connection"
 msgid "Connecting"
 msgstr "Connexion"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "Connexion VPN"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "Connecté à %1"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Connexion à %1"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "NetworkManager n'est pas en cours d'exécution"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "NetworkManager 0.9.8 est requis. %1 est installé."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -253,29 +226,27 @@ msgstr "Transmis"
 msgid "Missing VPN plugin"
 msgstr "Module externe VPN manquant"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
-msgstr ""
+msgstr "Échec de l'activation de %1"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
-msgstr ""
+msgstr "Échec de l'ajout de %1"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr ""
 
 #: libs/models/editoridentitymodel.cpp:62
-#, fuzzy
-#| msgid "Connection State"
 msgid "Connection name"
-msgstr "État de la connexion"
+msgstr "Nom de la connexion"
 
 #: libs/models/editoridentitymodel.cpp:64
 msgid "Last used"
-msgstr ""
+msgstr "Dernière utilisation"
 
 #: libs/models/networkmodelitem.cpp:310
 msgid "Active connections"
@@ -297,8 +268,6 @@ msgid "Bluetooth"
 msgstr "Bluetooth"
 
 #: libs/uiutils.cpp:67
-#, fuzzy
-#| msgid "WiMAX"
 msgctxt "title of the interface widget in nm's popup"
 msgid "WiMAX"
 msgstr "WiMax"
@@ -507,59 +476,44 @@ msgid "Error: Invalid state"
 msgstr "Erreur : état non valable"
 
 #: libs/uiutils.cpp:260
-#, fuzzy
-#| msgid "Unknown"
 msgctxt "The state of the VPN connection is unknown"
 msgid "Unknown"
 msgstr "Inconnu"
 
 #: libs/uiutils.cpp:263
-#, fuzzy
-#| msgctxt "description of preparing to connect network interface state"
-#| msgid "Preparing to connect"
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr "Préparation à la connexion"
+msgstr "Préparation de la connexion"
 
 #: libs/uiutils.cpp:266
-#, fuzzy
-#| msgctxt "description of waiting for authentication network interface state"
-#| msgid "Waiting for authorization"
 msgctxt "The VPN connection needs authorization credentials"
 msgid "Needs authorization"
-msgstr "En attente d'autorisation"
+msgstr "Nécessite une autorisation"
 
 #: libs/uiutils.cpp:269
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "The VPN connection is being established"
 msgid "Connecting"
 msgstr "Connexion"
 
 #: libs/uiutils.cpp:272
-#, fuzzy
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
 msgstr "Attribution de l'adresse réseau"
 
 #: libs/uiutils.cpp:275
-#, fuzzy
-#| msgid "Activating"
 msgctxt "The VPN connection is active"
 msgid "Activated"
-msgstr "Activation"
+msgstr "Activé"
 
 #: libs/uiutils.cpp:278
 msgctxt "The VPN connection failed"
 msgid "Failed"
-msgstr ""
+msgstr "Échec"
 
 #: libs/uiutils.cpp:281
 msgctxt "The VPN connection is disconnected"
 msgid "Failed"
-msgstr ""
+msgstr "Échec"
 
 #: libs/uiutils.cpp:293
 msgctxt "wireless network operation mode"
@@ -664,12 +618,9 @@ msgid "UMTS/HSxPA"
 msgstr "UMTS / HSPA"
 
 #: libs/uiutils.cpp:389
-#, fuzzy
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "GPRS/Edge"
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr "GPRS/Edge"
+msgstr "GPRS/EDGE"
 
 #: libs/uiutils.cpp:391
 msgctxt "Gsm modes (2G/3G/any)"
@@ -852,12 +803,9 @@ msgid "Lock reason unknown."
 msgstr "Motif de verrouillage inconnu."
 
 #: libs/uiutils.cpp:485 libs/uiutils.cpp:491
-#, fuzzy
-#| msgctxt "@label unknown security"
-#| msgid "Unknown security type"
 msgctxt "Unknown"
 msgid "Unknown Wimax NSP type"
-msgstr "Type de sécurité inconnu"
+msgstr "Type de NSP WiMax inconnu"
 
 #: libs/uiutils.cpp:486
 msgid "Home"
@@ -986,8 +934,6 @@ msgid "Driver:"
 msgstr "Pilote :"
 
 #: libs/uiutils.cpp:655
-#, fuzzy
-#| msgid "Bluetooth Name"
 msgctxt "Name"
 msgid "Bluetooth name"
 msgstr "Nom Bluetooth"
@@ -1098,8 +1044,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Il y a une minute"
+msgstr[1] "Il y a %1 minutes"
 
 #: libs/uiutils.cpp:883
 #, kde-format
@@ -1108,20 +1054,20 @@ msgctxt ""
 "the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Il y a une heure"
+msgstr[1] "Il y a %1 heures"
 
 #: libs/uiutils.cpp:888
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
-msgstr ""
+msgstr "Hier"
 
 #: libs/uiutils.cpp:894
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr ""
+msgstr "Jamais"
 
 #: libs/uiutils.cpp:910
 #, kde-format
@@ -1130,8 +1076,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dernière utilisation il y a une minute"
+msgstr[1] "Dernière utilisation il y a %1 minutes"
 
 #: libs/uiutils.cpp:917
 #, kde-format
@@ -1140,25 +1086,25 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dernière utilisation il y a une heure"
+msgstr[1] "Dernière utilisation il y a %1 heures"
 
 #: libs/uiutils.cpp:922
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
-msgstr ""
+msgstr "Dernière utilisation hier"
 
 #: libs/uiutils.cpp:924
 #, kde-format
 msgid "Last used on %1"
-msgstr ""
+msgstr "Dernière utilisation le %1"
 
 #: libs/uiutils.cpp:928
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr ""
+msgstr "Jamais utilisé"
 
 #: settings/details/detailkeyseditor.cpp:92
 msgid "Driver"
@@ -1221,8 +1167,6 @@ msgid "IP version 6 default gateway"
 msgstr "Passerelle par défaut en IP version 6"
 
 #: settings/details/detailkeyseditor.cpp:110
-#, fuzzy
-#| msgid "Wimax Bsid"
 msgid "WiMAX Bsid"
 msgstr "BSSID WiMax"
 
@@ -1232,18 +1176,14 @@ msgstr ""
 "L'identifiant de la station serveur de base tel que reçu depuis le réseau"
 
 #: settings/details/detailkeyseditor.cpp:111
-#, fuzzy
-#| msgid "WiMAX"
 msgid "WiMAX NSP"
-msgstr "WiMax"
+msgstr "NSP WiMax"
 
 #: settings/details/detailkeyseditor.cpp:111
 msgid "The name of the NSP"
 msgstr "Le nom du NSP"
 
 #: settings/details/detailkeyseditor.cpp:112
-#, fuzzy
-#| msgid "Wimax Signal"
 msgid "WiMAX Signal"
 msgstr "Signal WiMax"
 
@@ -1252,8 +1192,6 @@ msgid "The current signal quality of the NSP, in percent."
 msgstr "La qualité du signal actuel du NSP, en pourcentage."
 
 #: settings/details/detailkeyseditor.cpp:113
-#, fuzzy
-#| msgid "Wimax NSP Type"
 msgid "WiMAX NSP Type"
 msgstr "Type de NSP WiMax"
 

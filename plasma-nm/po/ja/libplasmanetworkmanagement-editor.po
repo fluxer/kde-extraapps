@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
 "PO-Revision-Date: 2013-05-10 21:39-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
-"Language: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1212,6 +1212,14 @@ msgstr ""
 
 #: widgets/bssidcombobox.cpp:137
 msgid "First select the SSID"
+msgstr ""
+
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
 msgstr ""
 
 #: widgets/ipv4routeswidget.cpp:47

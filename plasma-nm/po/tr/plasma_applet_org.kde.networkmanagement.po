@@ -10,16 +10,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2014-11-04 10:54+0200\n"
-"Last-Translator: Kaan Ozdincer <kaanozdincer@gmail.com>\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2014-11-10 14:25+0000\n"
+"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.4\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -83,7 +83,7 @@ msgstr "Parolayı göster"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:421
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr ""
+msgstr "Bağlı, ⬇ %1/s, ⬆ %2/s"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:425
 msgid "Connected"
@@ -122,7 +122,7 @@ msgstr "Uçak kipi devre dışı"
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
-msgstr ""
+msgstr "Bağlı"
 
 #: libs/declarative/networkstatus.cpp:83
 msgctxt ""
@@ -157,30 +157,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Bağlanıyor"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "VPN Bağlantısı"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "%1 ağına bağlı"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "%1 ağına bağlanıyor"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "Ağ Yöneticisi çalışmıyor"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Ağ Yönetici 0.9.8 gerekli, bulunan %1."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -227,17 +227,17 @@ msgstr "Gönderilen"
 msgid "Missing VPN plugin"
 msgstr "VPN eklentisi eksik"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1 etkinleştirilemedi"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1 eklenemedi"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "Tarama isteği başarısız"
 

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Park Shinjo <kde@peremen.name>, 2014.
+# Park Shinjo <kde@peremen.name>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2014-08-31 00:07+0900\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2015-01-18 18:06+0900\n"
 "Last-Translator: Park Shinjo <kde@peremen.name>\n"
 "Language-Team: Korean <kde@peremen.name>\n"
 "Language: ko\n"
@@ -75,10 +75,8 @@ msgid "Show password"
 msgstr "암호 보이기"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:421
-#, fuzzy
-#| msgid "Connected, ⬇ %1, ⬆ %2"
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr "연결됨, ⬇ %1, ⬆ %2"
+msgstr "연결됨, ⬇ %1/초, ⬆ %2/초"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:425
 msgid "Connected"
@@ -152,30 +150,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr "연결 중"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr "VPN 연결"
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr "%1에 연결됨"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr "%1에 연결 중"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr "NetworkManager가 실행 중이 아님"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "NetworkManager 0.9.8이 필요함, 설치된 버전은 %1입니다."
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "알 수 없음"
@@ -222,17 +220,17 @@ msgstr "송신"
 msgid "Missing VPN plugin"
 msgstr "VPN 플러그인 없음"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1을(를) 활성화할 수 없음"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1을(를) 추가할 수 없음"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr "검색을 요청할 수 없음"
 

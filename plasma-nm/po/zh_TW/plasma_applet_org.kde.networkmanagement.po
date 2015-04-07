@@ -4,14 +4,14 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009, 2010.
 # Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>, 2010.
 # Franklin Weng <franklin@mail.everfocus.com.tw>, 2010, 2011, 2012.
-# Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013.
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
-"PO-Revision-Date: 2013-06-11 09:47+0800\n"
-"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
+"PO-Revision-Date: 2015-01-21 23:30+0800\n"
+"Last-Translator: Franklin\n"
 "Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Frank Weng (a.k.a. Franklin)"
+msgstr "Franklin Weng"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -30,17 +30,13 @@ msgstr "franklin@goodhorse.idv.tw"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showSections)
 #: applet/declarative/contents/ui/config.ui:19
-#, fuzzy
-#| msgid "&Show secrets"
 msgid "Show sections"
-msgstr "顯示密碼(&S)"
+msgstr "顯示區段"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: applet/declarative/contents/ui/config.ui:32
-#, fuzzy
-#| msgid "Show network speed in:"
 msgid "Show &network speed in:"
-msgstr "顯示網路速度單位："
+msgstr "顯示網路速度單位(&N)："
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
 #: applet/declarative/contents/ui/config.ui:46
@@ -49,26 +45,21 @@ msgstr "KBytes/s"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_networkSpeedUnit)
 #: applet/declarative/contents/ui/config.ui:51
-#, fuzzy
 msgid "KBits/s"
 msgstr "KBits/s"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: applet/declarative/contents/ui/config.ui:68
-#, fuzzy
-#| msgctxt "network interface connection failed state label"
-#| msgid "Connection Failed"
 msgid "Connection Details"
-msgstr "連線失敗"
+msgstr "連線詳情"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:154
 msgid "Connect"
 msgstr "連線"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:154
-#, fuzzy
 msgid "Disconnect"
-msgstr "已連線"
+msgstr "斷線"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:209
 msgid "Speed"
@@ -79,81 +70,63 @@ msgid "Details"
 msgstr "詳情"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:311
-#, fuzzy
-#| msgid "Password"
 msgid "Password..."
-msgstr "密碼"
+msgstr "密碼..."
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:338
-#, fuzzy
-#| msgid "&Show password"
 msgid "Show password"
-msgstr "顯示密碼 (&S)"
+msgstr "顯示密碼"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:421
-#, fuzzy
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr "已連線到 %1"
+msgstr "已連線，⬇ %1/s, ⬆ %2/s"
 
 #: applet/declarative/contents/ui/ConnectionItem.qml:425
-#, fuzzy
 msgid "Connected"
 msgstr "已連線"
 
 #: applet/declarative/contents/ui/Header.qml:58
 #: libs/models/networkmodelitem.cpp:312
-#, fuzzy
 msgid "Available connections"
-msgstr "解除連線"
+msgstr "可用的連線"
 
 #: applet/declarative/contents/ui/Toolbar.qml:58
-#, fuzzy
 msgid "Wireless enabled"
-msgstr "無線網路硬體已開啟"
+msgstr "無線網路已開啟"
 
 #: applet/declarative/contents/ui/Toolbar.qml:58
-#, fuzzy
 msgid "Wireless disabled"
-msgstr "無線網路硬體已開啟"
+msgstr "無線網路已關閉"
 
 #: applet/declarative/contents/ui/Toolbar.qml:72
-#, fuzzy
 msgid "Mobile broadband enabled"
-msgstr "行動寬頻"
+msgstr "行動寬頻已開啟"
 
 #: applet/declarative/contents/ui/Toolbar.qml:72
-#, fuzzy
 msgid "Mobile broadband disabled"
-msgstr "行動寬頻"
+msgstr "行動寬頻已關閉"
 
 #: applet/declarative/contents/ui/Toolbar.qml:85
-#, fuzzy
 msgid "Airplane mode enabled"
-msgstr "無線網路硬體已開啟"
+msgstr "飛航模式已開啟"
 
 #: applet/declarative/contents/ui/Toolbar.qml:85
-#, fuzzy
-#| msgctxt "@info:status Notification for radio kill switch turned off"
-#| msgid "Wireless hardware disabled"
 msgid "Airplane mode disabled"
-msgstr "無線網路硬體已關閉"
+msgstr "飛航模式已關閉"
 
 #: libs/declarative/networkstatus.cpp:80
-#, fuzzy
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "已連線"
 
 #: libs/declarative/networkstatus.cpp:83
-#, fuzzy
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "已連線"
 
 #: libs/declarative/networkstatus.cpp:86
-#, fuzzy
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "已連線"
@@ -161,55 +134,49 @@ msgstr "已連線"
 #: libs/declarative/networkstatus.cpp:89
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
-msgstr ""
+msgstr "非作用中"
 
 #: libs/declarative/networkstatus.cpp:92
-#, fuzzy
 msgctxt "There is no active network connection"
 msgid "Disconnected"
-msgstr "已連線"
+msgstr "已斷線"
 
 #: libs/declarative/networkstatus.cpp:95
-#, fuzzy
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
-msgstr "連線"
+msgstr "正在斷線..."
 
 #: libs/declarative/networkstatus.cpp:98
-#, fuzzy
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
 "network connection"
 msgid "Connecting"
-msgstr "連線"
-
-#: libs/declarative/networkstatus.cpp:143
-#, fuzzy
-msgid "VPN Connection"
-msgstr "新的 VPN 連線"
+msgstr "連線中"
 
 #: libs/declarative/networkstatus.cpp:148
-#, fuzzy, kde-format
+msgid "VPN Connection"
+msgstr "VPN 連線"
+
+#: libs/declarative/networkstatus.cpp:153
+#, kde-format
 msgid "Connected to %1"
 msgstr "已連線到 %1"
 
-#: libs/declarative/networkstatus.cpp:150
-#, fuzzy, kde-format
+#: libs/declarative/networkstatus.cpp:155
+#, kde-format
 msgid "Connecting to %1"
-msgstr "已連線到 %1"
-
-#: libs/declarative/networkstatus.cpp:173
-#, fuzzy
-msgid "NetworkManager not running"
-msgstr "網路管理"
+msgstr "正在連線到 %1"
 
 #: libs/declarative/networkstatus.cpp:178
-#, fuzzy, kde-format
-msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "網路管理"
+msgid "NetworkManager not running"
+msgstr "NetworkManager 未執行"
 
-#: libs/declarative/networkstatus.cpp:181
-#, fuzzy
+#: libs/declarative/networkstatus.cpp:183
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "需要 NetworkManager 0.9.8，找到的版本是 %1。"
+
+#: libs/declarative/networkstatus.cpp:186
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "未知"
@@ -217,28 +184,24 @@ msgstr "未知"
 #: libs/declarative/trafficmonitor.cpp:141
 msgctxt "traffic received empty"
 msgid "Received"
-msgstr ""
+msgstr "已接收"
 
 #: libs/declarative/trafficmonitor.cpp:143
-#, fuzzy
 msgctxt "traffic transmitted empty"
 msgid "Transmitted"
-msgstr "傳輸強度"
+msgstr "已傳送"
 
 #: libs/declarative/trafficmonitor.cpp:203
-#, fuzzy
 msgid "KBit/s"
-msgstr "KBits/s"
+msgstr "KBit/s"
 
 #: libs/declarative/trafficmonitor.cpp:205
-#, fuzzy
 msgid "MBit/s"
-msgstr " MBit/s"
+msgstr "MBit/s"
 
 #: libs/declarative/trafficmonitor.cpp:210
-#, fuzzy
 msgid "GBit/s"
-msgstr "%1 GBit/s"
+msgstr "GBit/s"
 
 #: libs/declarative/trafficmonitor.cpp:234
 #, kde-format
@@ -246,52 +209,45 @@ msgctxt ""
 "traffic, e.g. n KB/s\n"
 " m KB/s"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: libs/declarative/trafficmonitor.cpp:243
 msgid "Received"
-msgstr ""
+msgstr "已接收"
 
 #: libs/declarative/trafficmonitor.cpp:246
-#, fuzzy
 msgid "Transmitted"
-msgstr "傳輸強度"
+msgstr "已傳送"
 
 #: libs/handler.cpp:89
-#, fuzzy
 msgid "Missing VPN plugin"
-msgstr "VPN 外掛程式名稱"
+msgstr "遺失 VPN 外掛程式"
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
-msgstr ""
+msgstr "啟動 %1 失敗"
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
-msgstr ""
+msgstr "新增 %1 失敗"
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
-msgstr ""
+msgstr "請求掃描失敗"
 
 #: libs/models/editoridentitymodel.cpp:62
-#, fuzzy
-#| msgid "&Connection name:"
 msgid "Connection name"
-msgstr "連線名稱(&C)："
+msgstr "連線名稱"
 
 #: libs/models/editoridentitymodel.cpp:64
-#, fuzzy
-#| msgid "Last Used"
 msgid "Last used"
 msgstr "上次使用"
 
 #: libs/models/networkmodelitem.cpp:310
-#, fuzzy
 msgid "Active connections"
-msgstr "解除連線"
+msgstr "作用中的連線"
 
 #: libs/uiutils.cpp:58 libs/uiutils.cpp:104
 msgctxt "title of the interface widget in nm's popup"
@@ -304,7 +260,6 @@ msgid "Wireless 802.11"
 msgstr "無線網路 802.11"
 
 #: libs/uiutils.cpp:64
-#, fuzzy
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
 msgstr "藍芽"
@@ -312,32 +267,32 @@ msgstr "藍芽"
 #: libs/uiutils.cpp:67
 msgctxt "title of the interface widget in nm's popup"
 msgid "WiMAX"
-msgstr ""
+msgstr "WiMAX"
 
 #: libs/uiutils.cpp:70
 msgctxt "title of the interface widget in nm's popup"
 msgid "Infiniband"
-msgstr ""
+msgstr "InfiniBand"
 
 #: libs/uiutils.cpp:73
 msgctxt "title of the interface widget in nm's popup"
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: libs/uiutils.cpp:76
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
-msgstr ""
+msgstr "虛擬（bond）"
 
 #: libs/uiutils.cpp:79
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
-msgstr ""
+msgstr "虛擬（bridge）"
 
 #: libs/uiutils.cpp:82
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
-msgstr ""
+msgstr "虛擬（vlan）"
 
 #: libs/uiutils.cpp:89
 msgctxt "title of the interface widget in nm's popup"
@@ -351,7 +306,7 @@ msgstr "行動寬頻"
 
 #: libs/uiutils.cpp:116
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: libs/uiutils.cpp:120
 msgid "DSL"
@@ -363,28 +318,27 @@ msgstr "藍芽"
 
 #: libs/uiutils.cpp:128
 msgid "Bond"
-msgstr ""
+msgstr "結合（Bond）"
 
 #: libs/uiutils.cpp:131
 msgid "Bridge"
-msgstr ""
+msgstr "橋接"
 
 #: libs/uiutils.cpp:135
-#, fuzzy
 msgid "Mobile broadband"
 msgstr "行動寬頻"
 
 #: libs/uiutils.cpp:139
 msgid "Infiniband"
-msgstr ""
+msgstr "InfiniBand"
 
 #: libs/uiutils.cpp:142
 msgid "Olpc mesh"
-msgstr ""
+msgstr "Olpc mesh"
 
 #: libs/uiutils.cpp:145
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: libs/uiutils.cpp:148
 msgid "VPN"
@@ -392,7 +346,7 @@ msgstr "VPN"
 
 #: libs/uiutils.cpp:152
 msgid "WiMAX"
-msgstr ""
+msgstr "WiMAX"
 
 #: libs/uiutils.cpp:156
 msgid "Wired"
@@ -403,44 +357,43 @@ msgid "Wireless"
 msgstr "無線"
 
 #: libs/uiutils.cpp:164
-#, fuzzy
 msgid "Unknown connection type"
-msgstr "未知的安全型態"
+msgstr "未知的連線型態"
 
 #: libs/uiutils.cpp:176
-#, fuzzy, kde-format
+#, kde-format
 msgid "Wireless Interface (%1)"
-msgstr "無線網路介面"
+msgstr "無線介面 (%1)"
 
 #: libs/uiutils.cpp:179
-#, fuzzy, kde-format
+#, kde-format
 msgid "Wired Interface (%1)"
-msgstr "已斷線介面（%1）"
+msgstr "有線介面 (%1)"
 
 #: libs/uiutils.cpp:182
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bluetooth (%1)"
-msgstr "藍芽"
+msgstr "藍芽 (%1)"
 
 #: libs/uiutils.cpp:185
 #, kde-format
 msgid "Modem (%1)"
-msgstr ""
+msgstr "數據機 (%1)"
 
 #: libs/uiutils.cpp:188
 #, kde-format
 msgid "ADSL (%1)"
-msgstr ""
+msgstr "ADSL (%1)"
 
 #: libs/uiutils.cpp:191
 #, kde-format
 msgid "VLan (%1)"
-msgstr ""
+msgstr "VLAN (%1)"
 
 #: libs/uiutils.cpp:194
 #, kde-format
 msgid "Bridge (%1)"
-msgstr ""
+msgstr "橋接 (%1)"
 
 #: libs/uiutils.cpp:207
 msgctxt "description of unknown network interface state"
@@ -520,59 +473,44 @@ msgid "Error: Invalid state"
 msgstr "錯誤：不合法的狀態"
 
 #: libs/uiutils.cpp:260
-#, fuzzy
 msgctxt "The state of the VPN connection is unknown"
 msgid "Unknown"
 msgstr "未知"
 
 #: libs/uiutils.cpp:263
-#, fuzzy
-#| msgctxt "description of preparing to connect network interface state"
-#| msgid "Preparing to connect"
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
 msgstr "準備連線中"
 
 #: libs/uiutils.cpp:266
-#, fuzzy
-#| msgctxt "description of waiting for authentication network interface state"
-#| msgid "Waiting for authorization"
 msgctxt "The VPN connection needs authorization credentials"
 msgid "Needs authorization"
-msgstr "等待認證"
+msgstr "需要認證"
 
 #: libs/uiutils.cpp:269
-#, fuzzy
 msgctxt "The VPN connection is being established"
 msgid "Connecting"
-msgstr "連線"
+msgstr "連線中"
 
 #: libs/uiutils.cpp:272
-#, fuzzy
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
 msgstr "設定網路位址"
 
 #: libs/uiutils.cpp:275
-#, fuzzy
-#| msgctxt ""
-#| "@info:status Notification text when a connection has been activated"
-#| msgid "%1 activated"
 msgctxt "The VPN connection is active"
 msgid "Activated"
-msgstr "%1 已啟動"
+msgstr "已啟動"
 
 #: libs/uiutils.cpp:278
 msgctxt "The VPN connection failed"
 msgid "Failed"
-msgstr ""
+msgstr "失敗"
 
 #: libs/uiutils.cpp:281
 msgctxt "The VPN connection is disconnected"
 msgid "Failed"
-msgstr ""
+msgstr "失敗"
 
 #: libs/uiutils.cpp:293
 msgctxt "wireless network operation mode"
@@ -590,7 +528,6 @@ msgid "Infrastructure"
 msgstr "Infrastructure"
 
 #: libs/uiutils.cpp:302
-#, fuzzy
 msgctxt "wireless network operation mode"
 msgid "Access point"
 msgstr "存取點"
@@ -670,34 +607,24 @@ msgstr "<numid>%1</numid> GBit/s"
 #: libs/uiutils.cpp:385
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: libs/uiutils.cpp:387
-#, fuzzy
-#| msgid "3G (UMTS/HSPA)"
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
-msgstr "3G (UMTS/HSPA)"
+msgstr "UMTS/HSxPA"
 
 #: libs/uiutils.cpp:389
-#, fuzzy
-#| msgid "2G (GPRS/EDGE)"
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr "2G (GPRS/EDGE)"
+msgstr "GPRS/EDGE"
 
 #: libs/uiutils.cpp:391
-#, fuzzy
-#| msgctxt "Cellular access technology"
-#| msgid "GSM"
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GSM"
 msgstr "GSM"
 
 #: libs/uiutils.cpp:393 libs/uiutils.cpp:396
-#, fuzzy
-#| msgctxt "Any cellular frequency band"
-#| msgid "Any"
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
 msgstr "任何"
@@ -705,33 +632,32 @@ msgstr "任何"
 #: libs/uiutils.cpp:402
 msgctxt "Cellular access technology"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: libs/uiutils.cpp:404
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
-msgstr ""
+msgstr "CDMA2000 EVDO revision B"
 
 #: libs/uiutils.cpp:406
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
-msgstr ""
+msgstr "CDMA2000 EVDO revision A"
 
 #: libs/uiutils.cpp:408
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
-msgstr ""
+msgstr "CDMA2000 EVDO revision 0"
 
 #: libs/uiutils.cpp:410
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "CDMA2000 1xRTT"
 
 #: libs/uiutils.cpp:412
-#, fuzzy
 msgctxt "Cellular access technology"
 msgid "HSPA+"
-msgstr "HSPA"
+msgstr "HSPA+"
 
 #: libs/uiutils.cpp:414
 msgctxt "Cellular access technology"
@@ -776,7 +702,7 @@ msgstr "GSM"
 #: libs/uiutils.cpp:430
 msgctxt "Analog wireline modem"
 msgid "Analog"
-msgstr ""
+msgstr "類比"
 
 #: libs/uiutils.cpp:432 libs/uiutils.cpp:437
 msgctxt "Unknown cellular access technology"
@@ -784,9 +710,6 @@ msgid "Unknown"
 msgstr "未知"
 
 #: libs/uiutils.cpp:434
-#, fuzzy
-#| msgctxt "Any cellular frequency band"
-#| msgid "Any"
 msgctxt "Any cellular access technology"
 msgid "Any"
 msgstr "任何"
@@ -794,112 +717,109 @@ msgstr "任何"
 #: libs/uiutils.cpp:444
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
-msgstr ""
+msgstr "數據機已解鎖。"
 
 #: libs/uiutils.cpp:446
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "SIM 需要 PIN 碼。"
 
 #: libs/uiutils.cpp:448
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "SIM 需要 PIN2 碼。"
 
 #: libs/uiutils.cpp:450
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "SIM 需要 PUK 碼"
 
 #: libs/uiutils.cpp:452
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "SIM 需要 PUK2 碼"
 
 #: libs/uiutils.cpp:454
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "數據機需要服務提供者的 PIN 碼。"
 
 #: libs/uiutils.cpp:456
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "數據機需要服務提供者的 PUK 碼。"
 
 #: libs/uiutils.cpp:458
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "數據機需要網路的 PIN 碼。"
 
 #: libs/uiutils.cpp:460
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "數據機需要網路的 PUK 碼。"
 
 #: libs/uiutils.cpp:462
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "數據機需要 PIN 碼。"
 
 #: libs/uiutils.cpp:464
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "數據機需要組織的 PIN 碼。"
 
 #: libs/uiutils.cpp:466
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "數據機需要組織的 PUK 碼。"
 
 #: libs/uiutils.cpp:468
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "數據機需要 PH-FSIM PIN 碼。"
 
 #: libs/uiutils.cpp:470
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "數據機需要 PH-FSIM PUK 碼。"
 
 #: libs/uiutils.cpp:472
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "數據機需要網路的子集 PIN 碼。"
 
 #: libs/uiutils.cpp:474
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "數據機需要網路的子集 PUK 碼。"
 
 #: libs/uiutils.cpp:477
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "鎖定理由未知。"
 
 #: libs/uiutils.cpp:485 libs/uiutils.cpp:491
-#, fuzzy
-#| msgctxt "@label unknown security"
-#| msgid "Unknown security type"
 msgctxt "Unknown"
 msgid "Unknown Wimax NSP type"
-msgstr "未知的安全型態"
+msgstr "未知的 Wimax NSP 型態"
 
 #: libs/uiutils.cpp:486
 msgid "Home"
-msgstr ""
+msgstr "首頁"
 
 #: libs/uiutils.cpp:487
 msgid "Partner"
-msgstr ""
+msgstr "伙伴"
 
 #: libs/uiutils.cpp:488
 msgid "Roaming partner"
-msgstr ""
+msgstr "漫遊夥伴"
 
 #: libs/uiutils.cpp:513
 msgctxt "@label no security"
 msgid "Insecure"
-msgstr "不安全"
+msgstr "不安全的"
 
 #: libs/uiutils.cpp:516
 msgctxt "@label WEP security"
@@ -914,7 +834,7 @@ msgstr "LEAP"
 #: libs/uiutils.cpp:522
 msgctxt "@label Dynamic WEP security"
 msgid "Dynamic WEP"
-msgstr "動態 WEP"
+msgstr "動態式 WEP"
 
 #: libs/uiutils.cpp:525
 msgctxt "@label WPA-PSK security"
@@ -987,159 +907,132 @@ msgid "Unknown security type"
 msgstr "未知的安全型態"
 
 #: libs/uiutils.cpp:595
-#, fuzzy
 msgid "System name:"
-msgstr "系統名稱"
+msgstr "系統名稱："
 
 #: libs/uiutils.cpp:604
-#, fuzzy
 msgid "IPv4 Address:"
-msgstr "IPv4 位址"
+msgstr "IPv4 位址："
 
 #: libs/uiutils.cpp:614
-#, fuzzy
 msgid "IPv4 Gateway:"
-msgstr "IPv4 閘道"
+msgstr "IPv4 閘道："
 
 #: libs/uiutils.cpp:624
-#, fuzzy
 msgid "IPv6 Address:"
-msgstr "IPv6 位址"
+msgstr "IPv6 位址："
 
 #: libs/uiutils.cpp:634
-#, fuzzy
 msgid "IPv6 Gateway:"
-msgstr "IPv4 閘道"
+msgstr "IPv6 閘道："
 
 #: libs/uiutils.cpp:639
-#, fuzzy
 msgid "Driver:"
-msgstr "驅動程式"
+msgstr "驅動程式："
 
 #: libs/uiutils.cpp:655
-#, fuzzy
 msgctxt "Name"
 msgid "Bluetooth name"
-msgstr "藍芽"
+msgstr "藍芽名稱"
 
 #: libs/uiutils.cpp:659 libs/uiutils.cpp:794 libs/uiutils.cpp:818
-#, fuzzy
 msgid "MAC Address:"
-msgstr "硬體 Mac 位址"
+msgstr "硬體位址："
 
 #: libs/uiutils.cpp:686
-#, fuzzy
 msgid "Operator:"
-msgstr "行動裝置操作程式"
+msgstr "操作者："
 
 #: libs/uiutils.cpp:688
-#, fuzzy
-#| msgid "Network ID"
 msgid "Network ID:"
-msgstr "網路代碼"
+msgstr "網路代碼："
 
 #: libs/uiutils.cpp:692 libs/uiutils.cpp:767
-#, fuzzy
 msgid "Signal Quality:"
-msgstr "行動網路信號品質"
+msgstr "信號品質："
 
 #: libs/uiutils.cpp:696
-#, fuzzy
 msgid "Access Technology:"
-msgstr "行動網路存取技術"
+msgstr "存取技術："
 
 #: libs/uiutils.cpp:700
-#, fuzzy
 msgid "Allowed Mode:"
-msgstr "行動網路允許的模式"
+msgstr "允許的模式："
 
 #: libs/uiutils.cpp:704
-#, fuzzy
 msgid "Unlock Required:"
-msgstr "行動網路需要解除鎖定"
+msgstr "需要解除鎖定："
 
 #: libs/uiutils.cpp:708
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI 碼："
 
 #: libs/uiutils.cpp:715
 msgid "IMSI:"
-msgstr ""
+msgstr "IMSI 碼："
 
 #: libs/uiutils.cpp:736
-#, fuzzy
 msgid "VPN plugin:"
-msgstr "VPN 外掛程式名稱"
+msgstr "VPN 外掛程式："
 
 #: libs/uiutils.cpp:740
-#, fuzzy
 msgid "Banner:"
-msgstr "頻道(&C)："
+msgstr "標誌："
 
 #: libs/uiutils.cpp:759
 msgid "Bsid:"
-msgstr ""
+msgstr "Bsid："
 
 #: libs/uiutils.cpp:763
-#, fuzzy
 msgid "NSP Name:"
-msgstr "名稱"
+msgstr "NSP 名稱："
 
 #: libs/uiutils.cpp:767 libs/uiutils.cpp:826
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1%"
 msgstr "%1%"
 
 #: libs/uiutils.cpp:771
-#, fuzzy
 msgid "Network Type:"
-msgstr "網路型態"
+msgstr "網路型態："
 
 #: libs/uiutils.cpp:790 libs/uiutils.cpp:814
-#, fuzzy
 msgid "Connection speed:"
-msgstr "連線速度"
+msgstr "連線速度："
 
 #: libs/uiutils.cpp:822
-#, fuzzy
 msgid "Mode:"
-msgstr "模式(&M)："
+msgstr "模式："
 
 #: libs/uiutils.cpp:826
-#, fuzzy
 msgid "Signal strength:"
-msgstr "信號強度"
+msgstr "信號強度："
 
 #: libs/uiutils.cpp:830
-#, fuzzy
 msgid "Access point (SSID):"
-msgstr "存取點 (SSID)"
+msgstr "存取點 (SSID)："
 
 #: libs/uiutils.cpp:834
-#, fuzzy
 msgid "Access point (BSSID):"
-msgstr "存取點 (SSID)"
+msgstr "存取點 (BSSID)："
 
 #: libs/uiutils.cpp:838
-#, fuzzy
 msgctxt "Wifi AP channel and frequency"
 msgid "Channel:"
-msgstr "頻道(&C)："
+msgstr "頻道："
 
 #: libs/uiutils.cpp:838
 #, kde-format
 msgid "%1 (%2 MHz)"
-msgstr ""
+msgstr "%1 (%2 MHz)"
 
 #: libs/uiutils.cpp:846 libs/uiutils.cpp:852
-#, fuzzy
 msgid "Security:"
-msgstr "安全性(&S)："
+msgstr "安全性："
 
 #: libs/uiutils.cpp:857
-#, fuzzy
 msgid "Frequency band:"
-msgstr "頻率"
+msgstr "頻帶："
 
 #: libs/uiutils.cpp:876
 #, kde-format
@@ -1172,52 +1065,35 @@ msgid "Never"
 msgstr "從未用過"
 
 #: libs/uiutils.cpp:910
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for last used time for a network connection used in the last hour, "
-#| "as the number of minutes since usage"
-#| msgid "One minute ago"
-#| msgid_plural "%1 minutes ago"
+#, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] "%1 分鐘之前"
+msgstr[0] "上次使用於 %1 分鐘之前"
 
 #: libs/uiutils.cpp:917
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Label for last used time for a network connection used in the last day, "
-#| "as the number of hours since usage"
-#| msgid "One hour ago"
-#| msgid_plural "%1 hours ago"
+#, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "%1 小時之前"
+msgstr[0] "上次使用於 %1 小時之前"
 
 #: libs/uiutils.cpp:922
-#, fuzzy
-#| msgid "Last used"
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
-msgstr "上次使用"
+msgstr "上次使用於昨天"
 
 #: libs/uiutils.cpp:924
-#, fuzzy, kde-format
-#| msgid "Last used"
+#, kde-format
 msgid "Last used on %1"
-msgstr "上次使用"
+msgstr "上次使用於 %1"
 
 #: libs/uiutils.cpp:928
-#, fuzzy
-#| msgctxt ""
-#| "Label for last used time for a network connection that has never been used"
-#| msgid "Never"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
@@ -1272,52 +1148,48 @@ msgid "IPv6 Address"
 msgstr "IPv6 位址"
 
 #: settings/details/detailkeyseditor.cpp:104
-#, fuzzy
 msgid "IP version 6 address"
-msgstr "IPv4 位址"
+msgstr "IPv6 位址"
 
 #: settings/details/detailkeyseditor.cpp:107
-#, fuzzy
 msgid "IPv6 Gateway"
-msgstr "IPv4 閘道"
+msgstr "IPv6 閘道"
 
 #: settings/details/detailkeyseditor.cpp:107
-#, fuzzy
 msgid "IP version 6 default gateway"
-msgstr "IPv4 預設閘道器"
+msgstr "IPv6 預設閘道器"
 
 #: settings/details/detailkeyseditor.cpp:110
 msgid "WiMAX Bsid"
-msgstr ""
+msgstr "WiMAX Bsid"
 
 #: settings/details/detailkeyseditor.cpp:110
 msgid "The ID of the serving base station as received from the network"
-msgstr ""
+msgstr "從網路接收到的基地台的 ID"
 
 #: settings/details/detailkeyseditor.cpp:111
 msgid "WiMAX NSP"
-msgstr ""
+msgstr "WiMAX NSP"
 
 #: settings/details/detailkeyseditor.cpp:111
-#, fuzzy
 msgid "The name of the NSP"
-msgstr "無線網路名稱"
+msgstr "NSP 名稱"
 
 #: settings/details/detailkeyseditor.cpp:112
 msgid "WiMAX Signal"
-msgstr ""
+msgstr "WiMAX 信號"
 
 #: settings/details/detailkeyseditor.cpp:112
 msgid "The current signal quality of the NSP, in percent."
-msgstr ""
+msgstr "目前的信號品質百分比。"
 
 #: settings/details/detailkeyseditor.cpp:113
 msgid "WiMAX NSP Type"
-msgstr ""
+msgstr "WiMAX NSP 型態"
 
 #: settings/details/detailkeyseditor.cpp:113
 msgid "The network type of the NSP."
-msgstr ""
+msgstr "NSP 的網路型態。"
 
 #: settings/details/detailkeyseditor.cpp:116
 msgid "Access Point (SSID)"
@@ -1332,9 +1204,8 @@ msgid "Signal Strength"
 msgstr "信號強度"
 
 #: settings/details/detailkeyseditor.cpp:117
-#, fuzzy
 msgid "Wireless Access Point's signal strength"
-msgstr "無線網路存取點的 SSID"
+msgstr "無線網路存取點的信號強度"
 
 #: settings/details/detailkeyseditor.cpp:118
 msgid "Access Point (MAC)"
@@ -1365,19 +1236,16 @@ msgid "Wireless Security"
 msgstr "無線安全性"
 
 #: settings/details/detailkeyseditor.cpp:121
-#, fuzzy
 msgid "Describes the security capabilities of the access point"
-msgstr "此存取點使用的基本 SSID（Basic SSID）"
+msgstr "描述此存取點的安全性"
 
 #: settings/details/detailkeyseditor.cpp:122
-#, fuzzy
 msgid "Wireless Mode"
-msgstr "無線頻帶"
+msgstr "無線模式"
 
 #: settings/details/detailkeyseditor.cpp:122
-#, fuzzy
 msgid "The operating mode of the wireless device"
-msgstr "無線網路操作模式"
+msgstr "無線裝置的操作模式"
 
 #: settings/details/detailkeyseditor.cpp:125
 msgid "Mobile Operator"
@@ -1424,32 +1292,28 @@ msgid "Mobile Device Identity Number"
 msgstr "行動裝置識別碼"
 
 #: settings/details/detailkeyseditor.cpp:135
-#, fuzzy
 msgid "Bluetooth Name"
-msgstr "藍芽"
+msgstr "藍芽名稱"
 
 #: settings/details/detailkeyseditor.cpp:135
 msgid "Bluetooth name of the device"
-msgstr ""
+msgstr "藍牙裝置的名稱"
 
 #: settings/details/detailkeyseditor.cpp:136
-#, fuzzy
 msgid "VPN Plugin"
-msgstr "VPN 外掛程式名稱"
+msgstr "VPN 外掛程式"
 
 #: settings/details/detailkeyseditor.cpp:136
-#, fuzzy
 msgid "VPN plugin type"
-msgstr "VPN 外掛程式名稱"
+msgstr "VPN 外掛程式型態"
 
 #: settings/details/detailkeyseditor.cpp:137
 msgid "VPN Banner"
-msgstr ""
+msgstr "VPN 的標誌"
 
 #: settings/details/detailkeyseditor.cpp:137
-#, fuzzy
 msgid "VPN connection banner"
-msgstr "新的 VPN 連線"
+msgstr "VPN 連線標誌"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: settings/details/detailkeyswidget.ui:34

@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2013, 2014.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2013, 2014, 2015.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-23 05:42+0000\n"
-"PO-Revision-Date: 2014-06-29 09:26+0200\n"
+"POT-Creation-Date: 2014-11-08 05:31+0000\n"
+"PO-Revision-Date: 2015-03-07 07:23+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: connectiondetaileditor.cpp:98
 msgid "my_shared_connection"
-msgstr "moje_współdzielone_połączenie"
+msgstr "moje_wspoldzielone_polaczenie"
 
 #: connectiondetaileditor.cpp:264
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "Nowe połączenie %1"
 #: connectiondetaileditor.cpp:267
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "Modyfikuj połączenie '%1'"
+msgstr "Edycja połączenia '%1'"
 
 #: connectiondetaileditor.cpp:290
 msgctxt "General"
@@ -1229,6 +1229,17 @@ msgstr "Niedostępne"
 msgid "First select the SSID"
 msgstr "Najpierw wybierz SSID"
 
+#: widgets/bssidcombobox.cpp:146
+#, kde-format
+msgid ""
+"%1 (%2%)\n"
+"Frequency: %3 Mhz\n"
+"Channel: %4"
+msgstr ""
+"%1 (%2%)\n"
+"Częstotliwość: %3 Mhz\n"
+"Kanał: %4"
+
 #: widgets/ipv4routeswidget.cpp:47
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
@@ -1381,7 +1392,7 @@ msgstr "Wybierz &swój plan:"
 #: widgets/mobileconnectionwizard.cpp:505
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr "Wybrany &APN planu (Nazwa Punktu Dostępowego):"
+msgstr "Wybrany &APN (z ang. Nazwa Punktu Dostępowego) dla planu:"
 
 #: widgets/mobileconnectionwizard.cpp:517
 msgctxt "Mobile Connection Wizard"
@@ -1392,7 +1403,7 @@ msgid ""
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
 "Uwaga: Wybranie nieprawidłowego planu może skutkować problemami "
-"rozliczeniowymi dla twojego kąta internetowego lub może powstrzymać "
+"rozliczeniowymi dla twojego konta internetowego lub może uniemożliwić "
 "łączność.\n"
 "\n"
 "Jeżeli nie jesteś pewny(a) twojego planu, to zapytaj dostawcy o APN twojego "
@@ -1427,7 +1438,7 @@ msgid ""
 "Frequency: %4 Mhz"
 msgstr ""
 "%1 (%2%)\n"
-"Bezpieczeństwo: %3\n"
+"Zabezpieczenie: %3\n"
 "Częstotliwość: %4 Mhz"
 
 #: widgets/ssidcombobox.cpp:155

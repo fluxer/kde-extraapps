@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-07-22 07:46+0000\n"
-"PO-Revision-Date: 2013-12-30 23:58+0000\n"
-"Last-Translator: Samir Ribić <Unknown>\n"
+"POT-Creation-Date: 2015-03-03 10:02+0000\n"
+"PO-Revision-Date: 2015-02-22 19:43+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
@@ -17,22 +17,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Launchpad (build 16877)\n"
-"X-Launchpad-Export-Date: 2014-01-01 05:41+0000\n"
+"X-Generator: Launchpad (build 17341)\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:22+0000\n"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Samir Ribić,memsud"
+msgstr "Samir Ribić,Memsud Dedović"
 
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "samir.ribic@etf.unsa.ba,dedovic.memsud94@hotmail.com"
+msgstr "Samir.ribic@etf.unsa.ba,dedovic.memsud94@hotmail.com"
 
 #: connectioneditor.cpp:76
-#, fuzzy
-#| msgid "Search connections..."
 msgid "Type here to search connections..."
-msgstr "Potrazi vezu..."
+msgstr "Unesite ovdje za traženje konekcija..."
 
 #: connectioneditor.cpp:111
 msgid "Add"
@@ -75,11 +73,9 @@ msgid "WiMAX"
 msgstr "WiMAX"
 
 #: connectioneditor.cpp:151
-#, fuzzy
-#| msgid "Virtual"
 msgctxt "Virtual hardware devices, eg Bridge, Bond"
 msgid "Virtual"
-msgstr "Virtuelna"
+msgstr "Virtuelno"
 
 #: connectioneditor.cpp:153
 msgid "Bond"
@@ -98,54 +94,48 @@ msgid "VPN"
 msgstr "VPN"
 
 #: connectioneditor.cpp:178
-#, fuzzy
-#| msgid "Edit"
-msgid "Edit..."
-msgstr "Izmijeni"
+msgid "Connect"
+msgstr "Poveži se"
 
 #: connectioneditor.cpp:183
+msgid "Disconnect"
+msgstr "Odspoji"
+
+#: connectioneditor.cpp:188
+msgid "Edit..."
+msgstr "Izmijeni..."
+
+#: connectioneditor.cpp:193
 msgid "Delete"
 msgstr "Obriši"
 
-#: connectioneditor.cpp:189
+#: connectioneditor.cpp:199
 msgid "Import VPN..."
 msgstr "Uvoz VPN..."
 
-#: connectioneditor.cpp:193
+#: connectioneditor.cpp:203
 msgid "Export VPN..."
 msgstr "Izvezi VPN..."
 
-#: connectioneditor.cpp:260
+#: connectioneditor.cpp:270
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Konekcija %1 je dodata"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Želite li da uklonite konekciju %1?"
 
-#: connectioneditor.cpp:330
+#: connectioneditor.cpp:354
 msgid "Remove Connection"
 msgstr "Ukloni vezu"
 
-#: connectioneditor.cpp:352
-#, fuzzy
-#| msgid "Connection"
-msgid "Connect"
-msgstr "Veza"
-
-#: connectioneditor.cpp:354
-#, fuzzy
-#| msgid "Edit connection"
-msgid "Disconnect"
-msgstr "Izmijeni vezu"
-
-#: connectioneditor.cpp:464
+#: connectioneditor.cpp:496
 msgid "Import VPN Connection"
 msgstr "Uvezi  VPN Konekciju"
 
-#: connectioneditor.cpp:491
+#: connectioneditor.cpp:523
 #, kde-format
 msgid ""
 "Importing VPN connection %1 failed\n"
@@ -154,15 +144,15 @@ msgstr ""
 "Ostvarivanje   VPN konekcije %1 neuspijelo \n"
 "%2"
 
-#: connectioneditor.cpp:535
+#: connectioneditor.cpp:567
 msgid "Export is not supported by this VPN type"
 msgstr "Izvoz nije podrzan od VPN tipa"
 
-#: connectioneditor.cpp:541
+#: connectioneditor.cpp:573
 msgid "Export VPN Connection"
 msgstr "Izvezi VPN Konekciju"
 
-#: connectioneditor.cpp:546
+#: connectioneditor.cpp:578
 #, kde-format
 msgid ""
 "Exporting VPN connection %1 failed\n"
@@ -171,7 +161,7 @@ msgstr ""
 "Izvoženje VPN konekcije %1 neuspijelo\n"
 "%2"
 
-#: connectioneditor.cpp:551
+#: connectioneditor.cpp:583
 #, kde-format
 msgid "VPN connection %1 exported successfully"
 msgstr "VPN Konekcija %1 je izevzena uspijesno"
@@ -182,7 +172,7 @@ msgid "Connection"
 msgstr "Veza"
 
 #. i18n: ectx: ToolBar (mainToolBar)
-#: kde-nm-connection-editorui.rc:24
+#: kde-nm-connection-editorui.rc:26
 msgid "Main Toolbar"
 msgstr "Glavna traka alata"
 
@@ -195,10 +185,8 @@ msgid "Manage your network connections"
 msgstr "Upravljajte svojim mrežnim vezama"
 
 #: main.cpp:40
-#, fuzzy
-#| msgid "(C) 2013 Jan Grulich and Lukáš Tinkl"
 msgid "(C) 2013-2014 Jan Grulich and Lukáš Tinkl"
-msgstr "(C) 2013 Jan Grulich and Lukáš Tinkl"
+msgstr "(C) 2013-2014 Jan Grulich i Lukáš Tinkl"
 
 #: main.cpp:41
 #, kde-format
@@ -237,7 +225,7 @@ msgstr "Daniel Nicoletti"
 
 #: main.cpp:46
 msgid "various bugfixes"
-msgstr "Razne ispravke"
+msgstr "razne ispravke"
 
 #: main.cpp:47
 msgid "Will Stephenson"

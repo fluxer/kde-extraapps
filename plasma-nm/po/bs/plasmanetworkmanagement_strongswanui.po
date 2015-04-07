@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-06-16 02:03+0000\n"
-"PO-Revision-Date: 2014-01-12 22:48+0000\n"
+"PO-Revision-Date: 2015-02-04 14:44+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-13 05:56+0000\n"
-"X-Generator: Launchpad (build 16890)\n"
+"X-Launchpad-Export-Date: 2015-02-05 07:08+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
@@ -33,7 +33,7 @@ msgstr "PIN:"
 #: strongswanauth.cpp:74
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
-msgstr "Lozinka"
+msgstr "Lozinka:"
 
 #: strongswanauth.cpp:116
 msgctxt "@label:textbox error message while saving configuration"
@@ -101,7 +101,7 @@ msgstr "EAP"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:120
 msgid "Private key:"
-msgstr "Privatni ključ"
+msgstr "Privatni ključ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: strongswanprop.ui:130

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-09-12 05:50+0000\n"
+"POT-Creation-Date: 2015-02-14 06:59+0000\n"
 "PO-Revision-Date: 2008-11-26 17:46+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -50,40 +50,40 @@ msgstr ""
 msgid "Connection Details"
 msgstr ""
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:136
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
 msgid "Connect"
 msgstr ""
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:136
+#: applet/declarative/contents/ui/ConnectionItem.qml:154
 msgid "Disconnect"
 msgstr ""
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:191
+#: applet/declarative/contents/ui/ConnectionItem.qml:209
 msgid "Speed"
 msgstr "Fart"
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:197
+#: applet/declarative/contents/ui/ConnectionItem.qml:215
 msgid "Details"
 msgstr "Detaljar"
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:293
+#: applet/declarative/contents/ui/ConnectionItem.qml:311
 msgid "Password..."
 msgstr ""
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:320
+#: applet/declarative/contents/ui/ConnectionItem.qml:338
 msgid "Show password"
 msgstr ""
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:407
-msgid "Connected, ⬇ %1, ⬆ %2"
+#: applet/declarative/contents/ui/ConnectionItem.qml:421
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr ""
 
-#: applet/declarative/contents/ui/ConnectionItem.qml:409
+#: applet/declarative/contents/ui/ConnectionItem.qml:425
 msgid "Connected"
 msgstr "Kopla til"
 
 #: applet/declarative/contents/ui/Header.qml:58
-#: libs/models/networkmodelitem.cpp:322
+#: libs/models/networkmodelitem.cpp:312
 msgid "Available connections"
 msgstr ""
 
@@ -150,30 +150,30 @@ msgctxt ""
 msgid "Connecting"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 msgid "VPN Connection"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, kde-format
 msgid "Connected to %1"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, kde-format
 msgid "Connecting to %1"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 msgid "NetworkManager not running"
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr ""
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 #, fuzzy
 msgctxt "global connection state"
 msgid "Unknown"
@@ -243,7 +243,7 @@ msgstr ""
 msgid "Last used"
 msgstr ""
 
-#: libs/models/networkmodelitem.cpp:320
+#: libs/models/networkmodelitem.cpp:310
 msgid "Active connections"
 msgstr ""
 

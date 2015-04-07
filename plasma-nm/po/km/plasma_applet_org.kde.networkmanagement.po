@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2014-10-07 06:44+0000\n"
+"POT-Creation-Date: 2015-03-07 06:14+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -182,32 +182,32 @@ msgctxt ""
 msgid "Connecting"
 msgstr "ការ​តភ្ជាប់​"
 
-#: libs/declarative/networkstatus.cpp:143
+#: libs/declarative/networkstatus.cpp:148
 #, fuzzy
 msgid "VPN Connection"
 msgstr "ការ​តភ្ជាប់ VPN ​ថ្មី​​ "
 
-#: libs/declarative/networkstatus.cpp:148
+#: libs/declarative/networkstatus.cpp:153
 #, fuzzy, kde-format
 msgid "Connected to %1"
 msgstr "បាន​តភ្ជាប់​ទៅកាន់​​ %1​​"
 
-#: libs/declarative/networkstatus.cpp:150
+#: libs/declarative/networkstatus.cpp:155
 #, fuzzy, kde-format
 msgid "Connecting to %1"
 msgstr "បាន​តភ្ជាប់​ទៅកាន់​​ %1​​"
 
-#: libs/declarative/networkstatus.cpp:173
+#: libs/declarative/networkstatus.cpp:178
 #, fuzzy
 msgid "NetworkManager not running"
 msgstr "ការ​គ្រប់គ្រង​បណ្ដាញ"
 
-#: libs/declarative/networkstatus.cpp:178
+#: libs/declarative/networkstatus.cpp:183
 #, fuzzy, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "ការ​គ្រប់គ្រង​បណ្ដាញ"
 
-#: libs/declarative/networkstatus.cpp:181
+#: libs/declarative/networkstatus.cpp:186
 #, fuzzy
 msgctxt "global connection state"
 msgid "Unknown"
@@ -261,17 +261,17 @@ msgstr "បញ្ជូន​ថាមពល"
 msgid "Missing VPN plugin"
 msgstr "ឈ្មោះ​កម្មវិធី​ជំនួយ​ VPN "
 
-#: libs/handler.cpp:391
+#: libs/handler.cpp:392
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: libs/handler.cpp:396
+#: libs/handler.cpp:397
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: libs/handler.cpp:401
+#: libs/handler.cpp:402
 msgid "Failed to request scan"
 msgstr ""
 

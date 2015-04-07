@@ -96,6 +96,13 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
         return false;
     }
 
+#if NM_CHECK_VERSION(0, 9, 10)
+    const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
+    if (type < NetworkManager::ConnectionSettings::Adsl || type > NetworkManager::ConnectionSettings::Wireless) {
+        return false;
+    }
+#endif
+
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
 
     if (itemType == NetworkModelItem::AvailableConnection ||
@@ -111,17 +118,21 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 {
     const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const int leftConnectionState = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt();
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
     const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, NetworkModel::UuidRole).toString();
     const int leftSignal = sourceModel()->data(left, NetworkModel::SignalRole).toInt();
+    const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
 
     const bool rightAvailable = (NetworkModelItem::ItemType)sourceModel()->data(right, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const int rightConnectionState = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt();
     const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
     const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, NetworkModel::UuidRole).toString();
     const int rightSignal = sourceModel()->data(right, NetworkModel::SignalRole).toInt();
+    const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
 
     if (leftAvailable < rightAvailable) {
         return true;
@@ -135,6 +146,12 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return false;
     }
 
+    if (leftConnectionState > rightConnectionState) {
+        return true;
+    } else if (leftConnectionState < rightConnectionState) {
+        return false;
+    }
+
     if (leftUuid.isEmpty() && !rightUuid.isEmpty()) {
         return true;
     } else if (!leftUuid.isEmpty() && rightUuid.isEmpty()) {
@@ -144,6 +161,12 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     if (leftType < rightType) {
         return false;
     } else if (leftType > rightType) {
+        return true;
+    }
+
+    if (leftDate > rightDate) {
+        return false;
+    } else if (leftDate < rightDate) {
         return true;
     }
 

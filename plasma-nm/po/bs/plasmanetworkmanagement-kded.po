@@ -8,35 +8,30 @@ msgstr ""
 "Project-Id-Version: kded\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2014-06-23 05:59+0000\n"
-"PO-Revision-Date: 2013-12-19 14:49+0000\n"
-"Last-Translator: Anela Darman <adarman1@etf.unsa.ba>\n"
+"PO-Revision-Date: 2015-02-22 17:04+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-12-20 05:32+0000\n"
-"X-Generator: Launchpad (build 16872)\n"
+"X-Launchpad-Export-Date: 2015-02-17 06:22+0000\n"
+"X-Generator: Launchpad (build 17341)\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: bluetoothmonitor.cpp:82
-#, fuzzy
-#| msgid "We support 'dun' and 'nap' services only."
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr "Podržavamo samo 'dun' i 'nap' servise."
+msgstr "Samo 'dun' i 'nap' servisi su podržani."
 
 #: bluetoothmonitor.cpp:95
-#, fuzzy
-#| msgid "Could not contact bluetooth manager (BlueZ)."
 msgid "Could not contact Bluetooth manager (BlueZ)."
-msgstr "Ne mogu kontaktirati bluetooth menadžer (BlueZ)."
+msgstr "Ne mogu kontaktirati Bluetooth menadžer (BlueZ)."
 
 #: bluetoothmonitor.cpp:103
-#, fuzzy, kde-format
-#| msgid "Default bluetooth adapter not found: %1"
+#, kde-format
 msgid "Default Bluetooth adapter not found: %1"
-msgstr "Podrazumijevani bluetooth adapter nije nađen: %1"
+msgstr "Podrazumijevani Bluetooth adapter nije nađen: %1"
 
 #: bluetoothmonitor.cpp:165
 #, kde-format
@@ -54,10 +49,9 @@ msgid "Error activating devices's serial port: %1"
 msgstr "Greška u aktiviranju serijskog porta uređaja: %1"
 
 #: bluetoothmonitor.cpp:243
-#, fuzzy, kde-format
-#| msgid "Device %1 is not the one we want (%2)"
+#, kde-format
 msgid "Device %1 is not the wanted one (%2)"
-msgstr "Uređaj %1 nije onaj koga želimo (%2)"
+msgstr "Uređaj %1 nije željen (%2)"
 
 #: bluetoothmonitor.cpp:245
 #, kde-format
@@ -73,7 +67,7 @@ msgstr "Greška otključavanja modema: %1"
 #: modemmonitor.cpp:192
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
-msgstr "PIN/PUK unlock error"
+msgstr "PIN/PUK greška otključavanja"
 
 #: notification.cpp:89
 msgctxt ""
@@ -297,7 +291,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr ""
+msgstr "Konekcija je uklonjena"
 
 #: notification.cpp:231
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
@@ -426,7 +420,7 @@ msgstr "Pokušaj povezivanja na VPN uslugu istekao."
 #: notification.cpp:399
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection."
-msgstr "Došlo je do isteka vremena pri pokretanju usluge VPN veze"
+msgstr "Došlo je do isteka vremena pri pokretanju usluge VPN veze."
 
 #: notification.cpp:402
 msgid "Starting the service providing the VPN connection failed."
@@ -448,13 +442,12 @@ msgstr "Veza je izbrisana iz postavki."
 #, kde-format
 msgid ""
 "For accessing the wireless network '%1' you need to provide a password below"
-msgstr ""
+msgstr "Za pristup bežičnoj mreži '%1' potrebno je navesti šifru ispod"
 
 #: passworddialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Please provide a password below"
+#, kde-format
 msgid "Please provide the password for activating connection '%1'"
-msgstr "Molimo vas da navedete šifru ispod"
+msgstr "Molim dajte lozinku za aktiviranje konekcije '%1'"
 
 #: passworddialog.cpp:108
 #, kde-format
@@ -530,11 +523,13 @@ msgstr "%1 Otključavanje Potrebno"
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr ""
+"Mobilni širokoopsežni uređaj '%1' zahtjeva %2 koda prije nego postane "
+"upotrebljiv."
 
 #: pindialog.cpp:97 pindialog.cpp:129
 #, kde-format
 msgid "%1 code:"
-msgstr ""
+msgstr "%1 koda:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: pindialog.cpp:98 pinwidget.ui:135
@@ -621,34 +616,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)
 #: pinwidget.ui:115
 msgid "PUK code:"
-msgstr "PUK kod"
+msgstr "PUK kod:"
 
 #. i18n: ectx: property (text), widget (QLabel, pin2Label)
 #: pinwidget.ui:155
 msgid "Re-enter PIN code:"
 msgstr "Ponovo unesi PIN kod:"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#, fuzzy
-
-
-
-#, fuzzy
