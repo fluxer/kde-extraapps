@@ -60,7 +60,6 @@ AppearanceSettings::AppearanceSettings(QWidget* parent) : QWidget(parent)
 
     installButton->setIcon(KIcon("folder"));
     removeButton->setIcon(KIcon("edit-delete"));
-    ghnsButton->setIcon(KIcon("get-hot-new-stuff"));
 
     m_selectedSkinId = Settings::skin();
 
