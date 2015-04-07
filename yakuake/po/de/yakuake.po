@@ -1,0 +1,1581 @@
+# Eike Hein <sho@eikehein.com>, 2006.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2006.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2008, 2009, 2010, 2011, 2012.
+# Burkhard Lück <lueck@hube-lueck.de>, 2008, 2011, 2012.
+# Markus Slopianka <markus.s@kdemail.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: yakuake\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-10-15 04:19+0200\n"
+"PO-Revision-Date: 2012-07-15 21:24+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.2\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org"
+
+#: app/config/appearancesettings.cpp:181
+msgctxt "@item:inlistbox Unknown skin author"
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: app/config/appearancesettings.cpp:229
+msgctxt "@title:window"
+msgid "Failed to Download Skin"
+msgstr "Download des Designs fehlgeschlagen"
+
+#: app/config/appearancesettings.cpp:246
+msgctxt "@info"
+msgid "The installer was given a directory, not a file."
+msgstr "Der Installer benötigt eine Datei, keinen Ordner."
+
+#: app/config/appearancesettings.cpp:268
+msgctxt "@info"
+msgid ""
+"Unable to locate required files in the skin archive.<nl/><nl/>The archive "
+"appears to be invalid."
+msgstr ""
+"Benötigte Dateien können im Designarchiv nicht gefunden werden.<nl/><nl/>Das "
+"Archiv ist ungültig."
+
+#: app/config/appearancesettings.cpp:271
+msgctxt "@info"
+msgid "Unable to list the skin archive contents."
+msgstr "Der Inhalt des Designarchivs kann nicht angezeigt werden."
+
+#: app/config/appearancesettings.cpp:316
+msgctxt "@info"
+msgid ""
+"This skin appears to be already installed and you lack the required "
+"permissions to overwrite it."
+msgstr ""
+"Dieses Design ist bereits installiert und Sie besitzen nicht die nötigen "
+"Rechte, es zu überschreiben."
+
+#: app/config/appearancesettings.cpp:323
+msgctxt "@info"
+msgid "This skin appears to be already installed. Do you want to overwrite it?"
+msgstr "Dieses Design ist bereits installiert. Möchten Sie es überschreiben?"
+
+#: app/config/appearancesettings.cpp:324
+msgctxt "@title:window"
+msgid "Skin Already Exists"
+msgstr "Design bereits vorhanden"
+
+#: app/config/appearancesettings.cpp:325
+msgctxt "@action:button"
+msgid "Reinstall Skin"
+msgstr "Design neu installieren"
+
+#: app/config/appearancesettings.cpp:345
+msgctxt "@title:Window"
+msgid "Could Not Delete Skin"
+msgstr "Design kann nicht entfernt werden"
+
+#: app/config/appearancesettings.cpp:366
+msgctxt "@info"
+msgid "The skin archive file could not be opened."
+msgstr "Das Designarchiv kann nicht geöffnet werden."
+
+#: app/config/appearancesettings.cpp:371
+msgctxt "@title:window"
+msgid "Cannot Install Skin"
+msgstr "Das Design kann nicht geladen werden"
+
+#: app/config/appearancesettings.cpp:431
+#, kde-format
+msgctxt "@info"
+msgid "Do you want to remove \"%1\" by %2?"
+msgstr "Möchten Sie „%1“ von %2 entfernen?"
+
+#: app/config/appearancesettings.cpp:432
+msgctxt "@title:window"
+msgid "Remove Skin"
+msgstr "Design entfernen"
+
+#: app/config/appearancesettings.cpp:455
+#, kde-format
+msgctxt "@info"
+msgid "Could not remove skin \"%1\"."
+msgstr "Das Design „%1“ kann nicht entfernt werden."
+
+#: app/config/appearancesettings.cpp:546
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The following skin is missing required files. Thus it was removed:<ul>%2</ul>"
+msgid_plural ""
+"The following skins are missing required files. Thus they were removed:<ul>"
+"%2</ul>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_1)
+#: app/config/appearancesettings.ui:20 app/config/behaviorsettings.ui:20
+msgctxt "@title:group Group box label"
+msgid "General"
+msgstr "Allgemein"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_TerminalHighlightOnManualActivation)
+#: app/config/appearancesettings.ui:26
+msgctxt "@info:whatsthis"
+msgid ""
+"Enabling this option will make Yakuake briefly display a colored overlay "
+"above the newly focused terminal when moving focus between multple terminals "
+"in a session, as well as over the currently focused terminal when switching "
+"to a session with multiple terminals."
+msgstr ""
+"Ist diese Einstellung markiert, hebt Yakuake ein aktiviertes Terminal kurz "
+"farbig hervor. Dies gilt für die Aktivierung eines Terminals innerhalb einer "
+"Sitzung, sowie für das aktivierte Terminal beim Wechsel in eine Sitzung mit "
+"mehreren Terminals."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_TerminalHighlightOnManualActivation)
+#: app/config/appearancesettings.ui:29
+msgctxt "@option:check"
+msgid "Highlight terminals when moving focus between them"
+msgstr "Terminals hervorheben, wenn sie aktiviert werden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: app/config/appearancesettings.ui:39
+msgctxt "@title:group"
+msgid "Window Background"
+msgstr "Fensterhintergrund"
+
+#. i18n: ectx: property (text), widget (QLabel, backgroundColorLabel)
+#: app/config/appearancesettings.ui:47
+msgctxt "@label:chooser"
+msgid "Background color:"
+msgstr "Hintergrundfarbe:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_Translucency)
+#: app/config/appearancesettings.ui:76
+msgctxt "@info:whatsthis"
+msgid ""
+"Translucency requires support by the selected skin as well as your desktop "
+"environment. The default skin supports translucency."
+msgstr ""
+"Durchsichtigkeit benötigt Unterstützung im ausgewählten Design sowie in "
+"Ihrer Arbeitsfläche. Das Standard-Design unterstützt Durchsichtigkeit."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Translucency)
+#: app/config/appearancesettings.ui:79
+msgctxt "@option:check"
+msgid "Use skin translucency if supported"
+msgstr "Durchscheinendes Design verwenden, sofern unterstützt"
+
+#. i18n: ectx: property (text), widget (QLabel, backgroundColorOpacityLabel)
+#: app/config/appearancesettings.ui:110
+msgctxt "@label:spinbox"
+msgid "Background color opacity:"
+msgstr "Deckkraft der Hintergrundfarbe:"
+
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_BackgroundColorOpacity)
+#: app/config/appearancesettings.ui:120
+msgctxt "@info:whatsthis"
+msgid ""
+"When using translucency, the background color will be filled in using the "
+"given opacity before the skin elements are painted on top of the background. "
+"This allows influencing the opacity and color tint of translucent areas of "
+"the skin."
+msgstr ""
+"Bei Durchsichtigkeit wird die Hintergrundfarbe mit der angegebenen Deckkraft "
+"gesetzt bevor die Designelemente über den Hintergrund gezeichnet werden. Das "
+"ermöglicht es, die Deckkraft und den Farbton der durchscheinenden Flächen "
+"des Designs zu beeinflussen."
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_Width)
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_Height)
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_BackgroundColorOpacity)
+#: app/config/appearancesettings.ui:123 app/config/windowsettings.ui:115
+#: app/config/windowsettings.ui:169
+#, no-c-format
+msgctxt "@label Spinbox unit suffix"
+msgid "%"
+msgstr " %"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: app/config/appearancesettings.ui:154
+msgctxt "@title:group"
+msgid "Skin"
+msgstr "Design"
+
+#. i18n: ectx: property (text), widget (KPushButton, ghnsButton)
+#: app/config/appearancesettings.ui:160
+msgctxt "@action:button"
+msgid "Get New Skins..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (KPushButton, removeButton)
+#: app/config/appearancesettings.ui:187
+msgctxt "@action:button"
+msgid "Remove Skin"
+msgstr "Design entfernen"
+
+#. i18n: ectx: property (text), widget (KPushButton, installButton)
+#: app/config/appearancesettings.ui:197
+msgctxt "@action:button"
+msgid "Install Skin..."
+msgstr "Design installieren ..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_OpenAfterStart)
+#: app/config/behaviorsettings.ui:26
+msgctxt "@option:check"
+msgid "Open window after program start"
+msgstr "Fenster beim Programmstart öffnen"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_PollMouse)
+#: app/config/behaviorsettings.ui:33
+msgctxt "@info:whatsthis"
+msgid ""
+"If this option is enabled, the window will automatically open when the mouse "
+"pointer is moved to the same edge of the screen that it would open on when "
+"using the shortcut."
+msgstr ""
+"Ist diese Einstellung aktiviert, öffnet sich das Fenster automatisch, wenn "
+"der Mauszeiger an der Bildschirmkante bewegt wird, von der das Fenster "
+"ausgefährt."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_PollMouse)
+#: app/config/behaviorsettings.ui:36
+msgctxt "@option:check"
+msgid "Open window when the mouse pointer touches the screen edge"
+msgstr "Fenster öffnen, wenn der Mauszeiger die Bildschirmkante berührt"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_KeepOpen)
+#: app/config/behaviorsettings.ui:43
+msgctxt "@option:check"
+msgid "Keep window open when it loses focus"
+msgstr "Fenster geöffnet halten, wenn der Fokus verloren geht"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_KeepAbove)
+#: app/config/behaviorsettings.ui:75
+msgctxt "@option:check"
+msgid "Keep window above other windows"
+msgstr "Fenster über anderen Fenstern halten"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_ToggleToFocus)
+#: app/config/behaviorsettings.ui:107
+#, fuzzy
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "If this option is enabled, the shortcut normally used to open and retract "
+#| "the window will give it focus, rather than close it, if it has previously "
+#| "lost focus."
+msgctxt "@info:whatsthis"
+msgid ""
+"If this option is enabled, the shortcut normally used to open and retract "
+"the window will give it focus, rather than close it, if it has previously "
+"lost focus. Unless the window is set to show on all virtual desktops, this "
+"may cause the window manager to switch to the virtual desktop it currently "
+"resides on."
+msgstr ""
+"Ist diese Einstellung aktiviert, holt das Tastenkürzel zum Ein- und "
+"Ausfahren des Fensters den Fokus zurück, wenn dieser zuvor verloren wurde."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ToggleToFocus)
+#: app/config/behaviorsettings.ui:110
+msgctxt "@option:check"
+msgid "Use Open/Retract action to focus window"
+msgstr "Tastenkürzel für Ein- und Ausfahren holt Fokus zurück"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_FocusFollowsMouse)
+#: app/config/behaviorsettings.ui:117
+msgctxt "@option:check"
+msgid "Focus terminals when the mouse pointer is moved over them"
+msgstr "Terminals aktivieren, wenn sich der Mauszeiger über ihnen befindet"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: app/config/behaviorsettings.ui:127
+msgctxt "@title:group"
+msgid "Dialogs"
+msgstr "Dialoge"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ConfirmQuit)
+#: app/config/behaviorsettings.ui:133
+msgctxt "@option:check"
+msgid "Confirm quit when more than one session is open"
+msgstr "Beenden bestätigen, wenn mehr als eine Sitzung geöffnet ist"
+
+#: app/config/skinlistdelegate.cpp:144 app/config/skinlistdelegate.cpp:187
+#, kde-format
+msgctxt "@item:intext"
+msgid "by %1"
+msgstr "von %1"
+
+#: app/config/windowsettings.cpp:33
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Screen <numid>%1</numid>"
+msgstr "Bildschirm <numid>%1</numid>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_1)
+#: app/config/windowsettings.ui:23
+msgctxt "@title:group"
+msgid "Tab Bar"
+msgstr "Unterfensterleiste"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowTabBar)
+#: app/config/windowsettings.ui:29
+msgctxt "@option:check"
+msgid "Show the tab bar"
+msgstr "Unterfensterleiste anzeigen"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_DynamicTabTitles)
+#: app/config/windowsettings.ui:61
+msgctxt "@info:whatsthis"
+msgid ""
+"If this option is enabled, the information about the active terminal's "
+"contents that is normally shown in the title bar will also be shown on the "
+"tab bar. You can modify the format of the information in the terminal "
+"profile."
+msgstr ""
+"Ist diese Einstellung aktiviert, werden die Informationen über den Inhalt "
+"des aktiven Terminals, die sonst in der Titelleiste angezeigt werden, "
+"zusätzlich in der Unterfensterleiste angezeigt. Sie können das Format dieser "
+"Informationen im Terminalprofil einstellen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_DynamicTabTitles)
+#: app/config/windowsettings.ui:64
+msgctxt "@option:check"
+msgid "Show title bar contents in tab labels"
+msgstr "Titelleisteninhalt als Unterfensterbeschriftung verwenden"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: app/config/windowsettings.ui:74
+msgctxt "@title:group"
+msgid "Size and Animation"
+msgstr "Größe und Animation"
+
+#. i18n: ectx: property (text), widget (QLabel, widthLabel)
+#: app/config/windowsettings.ui:80
+msgctxt "@label:slider"
+msgid "Width:"
+msgstr "Breite:"
+
+#. i18n: ectx: property (text), widget (QLabel, heightLabel)
+#: app/config/windowsettings.ui:134
+msgctxt "@label:slider"
+msgid "Height:"
+msgstr "Höhe:"
+
+#. i18n: ectx: property (text), widget (QLabel, durationLabel)
+#: app/config/windowsettings.ui:188
+msgctxt "@label:slider"
+msgid "Duration:"
+msgstr "Dauer:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, framesSpinBox)
+#: app/config/windowsettings.ui:220
+msgctxt "@label Spinbox unit suffix"
+msgid "ms"
+msgstr " ms"
+
+#. i18n: ectx: property (prefix), widget (QSpinBox, framesSpinBox)
+#: app/config/windowsettings.ui:223
+msgctxt "@label Spinbox unit prefix"
+msgid "~"
+msgstr "~"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_UseWMAssist)
+#: app/config/windowsettings.ui:239
+msgctxt "@info:whatsthis"
+msgid ""
+"If this option is enabled, Yakuake will ask the window manager to perform "
+"the window open/retract animation. If the window manager is unable to "
+"provide the requested service, Yakuake will fall back to an animation "
+"strategy of progressively adjusting the window mask."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_UseWMAssist)
+#: app/config/windowsettings.ui:242
+msgctxt "@option:check"
+msgid "Ask the window manager to perform the animation"
+msgstr "Dem Fenstermanager das Ausführen der Animation überlassen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: app/config/windowsettings.ui:252
+msgctxt "@title:group"
+msgid "Position"
+msgstr "Position"
+
+#. i18n: ectx: property (text), widget (QLabel, leftLabel)
+#: app/config/windowsettings.ui:260
+msgctxt "@item:inrange Direction to move the window in"
+msgid "Left"
+msgstr "Links"
+
+#. i18n: ectx: property (text), widget (QLabel, rightLabel)
+#: app/config/windowsettings.ui:292
+msgctxt "@item:inrange Direction to move the window in"
+msgid "Right"
+msgstr "Rechts"
+
+#. i18n: ectx: property (text), widget (QLabel, screenLabel)
+#: app/config/windowsettings.ui:306
+msgctxt "@label:listbox"
+msgid "Open on screen:"
+msgstr "Auf Bildschirm anzeigen:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_Screen)
+#: app/config/windowsettings.ui:317
+msgctxt "@item:inlistbox"
+msgid "At mouse location"
+msgstr "An Mauszeigerposition"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_Screen)
+#: app/config/windowsettings.ui:322
+msgctxt "@item:inlistbox"
+msgid "Screen 1"
+msgstr "Bildschirm 1"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowOnAllDesktops)
+#: app/config/windowsettings.ui:345
+msgctxt "@option:check"
+msgid "Show on all desktops"
+msgstr "Auf allen Arbeitsflächen anzeigen"
+
+#. i18n: ectx: label, entry (Screen), group (Window)
+#: app/config/yakuake.kcfg:9
+msgctxt "@label"
+msgid "Screen to use"
+msgstr "Zu benutzender Bildschirm"
+
+#. i18n: ectx: whatsthis, entry (Screen), group (Window)
+#: app/config/yakuake.kcfg:10
+msgctxt "@info:whatsthis"
+msgid ""
+"The screen on which the application window will appear. 0 is understood to "
+"be the screen the mouse pointer is on."
+msgstr ""
+"Der Bildschirm, auf dem das Anwendungsfenster erscheinen soll. 0 bezeichnet "
+"den Bildschirm, auf dem sich der Mauszeiger befindet."
+
+#. i18n: ectx: label, entry (Width), group (Window)
+#: app/config/yakuake.kcfg:14
+msgctxt "@label"
+msgid "Window width"
+msgstr "Fensterbreite"
+
+#. i18n: ectx: whatsthis, entry (Width), group (Window)
+#: app/config/yakuake.kcfg:15
+msgctxt "@info:whatsthis"
+msgid "Width of the application window as a percentage of the screen."
+msgstr "Breite des Anwendungsfensters prozentual zur Bildschirmbreite."
+
+#. i18n: ectx: label, entry (Height), group (Window)
+#: app/config/yakuake.kcfg:21
+msgctxt "@label"
+msgid "Window height"
+msgstr "Fensterhöhe"
+
+#. i18n: ectx: whatsthis, entry (Height), group (Window)
+#: app/config/yakuake.kcfg:22
+msgctxt "@info:whatsthis"
+msgid "Height of the application window as a percentage of the screen."
+msgstr "Höhe des Anwendungsfensters prozentual zur Bildschirmhöhe."
+
+#. i18n: ectx: label, entry (Position), group (Window)
+#: app/config/yakuake.kcfg:28
+msgctxt "@label"
+msgid "Window position"
+msgstr "Fensterposition"
+
+#. i18n: ectx: whatsthis, entry (Position), group (Window)
+#: app/config/yakuake.kcfg:29
+msgctxt "@info:whatsthis"
+msgid ""
+"Center point of the application window, as a percentage, measured from the "
+"left-hand edge of the screen."
+msgstr ""
+"Mittelpunkt des Anwendungsfensters prozentual zur linken Bildschirmkante."
+
+#. i18n: ectx: label, entry (ShowOnAllDesktops), group (Window)
+#: app/config/yakuake.kcfg:35
+msgctxt "@label"
+msgid "Show window on all desktops"
+msgstr "Fenster auf allen Arbeitsflächen anzeigen"
+
+#. i18n: ectx: whatsthis, entry (ShowOnAllDesktops), group (Window)
+#: app/config/yakuake.kcfg:36
+msgctxt "@info:whatsthis"
+msgid "Whether to show the window on all desktops."
+msgstr "Gibt an, ob das Fenster auf allen Arbeitsflächen angezeigt wird."
+
+#. i18n: ectx: label, entry (KeepOpen), group (Window)
+#: app/config/yakuake.kcfg:40
+msgctxt "@label"
+msgid "Keep window open"
+msgstr "Fenster geöffnet halten"
+
+#. i18n: ectx: whatsthis, entry (KeepOpen), group (Window)
+#: app/config/yakuake.kcfg:41
+msgctxt "@info:whatsthis"
+msgid "Whether to keep the application window open when it loses focus."
+msgstr ""
+"Gibt an, ob das Anwendungsfenster geöffnet bleibt, wenn es den Fokus "
+"verliert."
+
+#. i18n: ectx: label, entry (ToggleToFocus), group (Window)
+#: app/config/yakuake.kcfg:45
+msgctxt "@label"
+msgid "Use open/retract shortcut to focus window"
+msgstr "Tastenkürzel für Ein- und Ausfahren holt Fokus zurück"
+
+#. i18n: ectx: whatsthis, entry (ToggleToFocus), group (Window)
+#: app/config/yakuake.kcfg:46
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether the open/retract keyboard shortcut can be used to focus the "
+"application window when it is already open."
+msgstr ""
+"Gibt an, ob das Tastenkürzel zum Ein- und Ausfahren verwendet werden kann, "
+"um den Fokus des Fensters zurück zu holen, wenn es bereits geöffnet ist."
+
+#. i18n: ectx: label, entry (KeepAbove), group (Window)
+#: app/config/yakuake.kcfg:50
+msgctxt "@label"
+msgid "Keep window on top"
+msgstr "Andere Fenster verdecken"
+
+#. i18n: ectx: whatsthis, entry (KeepAbove), group (Window)
+#: app/config/yakuake.kcfg:51
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether to keep the application window above other windows on the screen."
+msgstr ""
+"Gibt an, ob das Anwendungsfenster andere Fenster auf dem Bildschirm verdeckt."
+
+#. i18n: ectx: label, entry (ShowTabBar), group (Window)
+#: app/config/yakuake.kcfg:55
+msgctxt "@label"
+msgid "Show tab bar"
+msgstr "Unterfensterleiste anzeigen"
+
+#. i18n: ectx: whatsthis, entry (ShowTabBar), group (Window)
+#: app/config/yakuake.kcfg:56
+msgctxt "@info:whatsthis"
+msgid "Whether to show the tab bar in the application window."
+msgstr ""
+"Gibt an, ob die Unterfensterleiste im Anwendungsfenster angezeigt wird."
+
+#. i18n: ectx: label, entry (DynamicTabTitles), group (Window)
+#: app/config/yakuake.kcfg:60
+msgctxt "@label"
+msgid "Dynamic tab titles"
+msgstr "Dynamische Unterfensternamen"
+
+#. i18n: ectx: whatsthis, entry (DynamicTabTitles), group (Window)
+#: app/config/yakuake.kcfg:61
+msgctxt "@info:whatsthis"
+msgid "Whether to update tab titles along with the title bar."
+msgstr ""
+"Gibt an, ob die Unterfensternamen zusammen mit der Titelleiste aktualisiert "
+"werden."
+
+#. i18n: ectx: label, entry (FocusFollowsMouse), group (Behavior)
+#: app/config/yakuake.kcfg:67
+msgctxt "@label"
+msgid "Focus follows mouse"
+msgstr "Aktivierung bei Mauskontakt"
+
+#. i18n: ectx: whatsthis, entry (FocusFollowsMouse), group (Behavior)
+#: app/config/yakuake.kcfg:68
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether an individual terminal in a session will be given focus when the "
+"mouse pointer is moved above it."
+msgstr ""
+"Gibt an, ob ein Terminal in einer Session den Fokus erhält, wenn der "
+"Mauszeiger sich darüber befindet."
+
+#. i18n: ectx: label, entry (OpenAfterStart), group (Behavior)
+#: app/config/yakuake.kcfg:72
+msgctxt "@label"
+msgid "Open after start"
+msgstr "Beim Start öffnen"
+
+#. i18n: ectx: whatsthis, entry (OpenAfterStart), group (Behavior)
+#: app/config/yakuake.kcfg:73
+msgctxt "@info:whatsthis"
+msgid "Whether the application window should be opened after program start."
+msgstr "Gibt an, ob das Anwendungsfenster beim Programmstart geöffnet wird."
+
+#. i18n: ectx: label, entry (Skin), group (Appearance)
+#: app/config/yakuake.kcfg:79
+msgctxt "@label"
+msgid "Skin"
+msgstr "Design"
+
+#. i18n: ectx: whatsthis, entry (Skin), group (Appearance)
+#: app/config/yakuake.kcfg:80
+msgctxt "@info:whatsthis"
+msgid "The skin to be used by the application window."
+msgstr "Das Design, das für das Anwendungsfenster verwendet wird."
+
+#. i18n: ectx: label, entry (SkinInstalledWithKns), group (Appearance)
+#: app/config/yakuake.kcfg:84
+msgctxt "@label"
+msgid "Skin installed by KNS"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (SkinInstalledWithKns), group (Appearance)
+#: app/config/yakuake.kcfg:85
+msgctxt "@info:whatsthis"
+msgid "Whether the currently active skin was installed via KNS."
+msgstr ""
+
+#. i18n: ectx: label, entry (Translucency), group (Appearance)
+#: app/config/yakuake.kcfg:89
+msgctxt "@label"
+msgid "Use translucent background"
+msgstr "Durchscheinenden Hintergrund verwenden"
+
+#. i18n: ectx: whatsthis, entry (Translucency), group (Appearance)
+#: app/config/yakuake.kcfg:90
+msgctxt "@info:whatsthis"
+msgid "Whether to make use of XComposite ARGB translucency."
+msgstr "Gibt an, ob XComposite-ARGB-Durchsichtigkeit verwendet wird."
+
+#. i18n: ectx: label, entry (BackgroundColor), group (Appearance)
+#: app/config/yakuake.kcfg:94
+msgctxt "@label"
+msgid "Window background color"
+msgstr "Hintergrundfarbe des Fensters"
+
+#. i18n: ectx: whatsthis, entry (BackgroundColor), group (Appearance)
+#: app/config/yakuake.kcfg:95
+msgctxt "@info:whatsthis"
+msgid "Background color painted below skin elements."
+msgstr "Hintergrundfarbe wird hinter Designelementen gezeichnet."
+
+#. i18n: ectx: label, entry (BackgroundColorOpacity), group (Appearance)
+#: app/config/yakuake.kcfg:99
+msgctxt "@label"
+msgid "Background color opacity"
+msgstr "Deckkraft der Hintergrundfarbe"
+
+#. i18n: ectx: whatsthis, entry (BackgroundColorOpacity), group (Appearance)
+#: app/config/yakuake.kcfg:100
+msgctxt "@info:whatsthis"
+msgid "The opacity of the background color fill when using translucency."
+msgstr "Die Deckkraft der Hintergrundfarbe bei Durchsichtigkeit."
+
+#. i18n: ectx: label, entry (TerminalHighlightOnManualActivation), group (Appearance)
+#: app/config/yakuake.kcfg:106
+msgctxt "@label"
+msgid "Highlight newly focused terminals"
+msgstr "Terminals beim Aktivieren hervorheben"
+
+#. i18n: ectx: whatsthis, entry (TerminalHighlightOnManualActivation), group (Appearance)
+#: app/config/yakuake.kcfg:107
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether to briefly display a colored overlay above the newly focused "
+"terminal when moving focus between multiple terminals in a session, as well "
+"as over the currently focused terminal when switching to a session with "
+"multiple terminals."
+msgstr ""
+"Gibt an, ob ein aktiviertes Terminal kurz farbig hervorgehoben wird. Dies "
+"gilt für die Aktivierung eines Terminals innerhalb einer Sitzung, sowie für "
+"das aktivierte Terminal beim Wechsel in eine Sitzung mit mehreren Terminals."
+
+#. i18n: ectx: label, entry (TerminalHighlightOpacity), group (Appearance)
+#: app/config/yakuake.kcfg:111
+msgctxt "@label"
+msgid "Terminal highlight opacity"
+msgstr "Deckkraft der Hervorhebung"
+
+#. i18n: ectx: whatsthis, entry (TerminalHighlightOpacity), group (Appearance)
+#: app/config/yakuake.kcfg:112
+msgctxt "@info:whatsthis"
+msgid "The opacity of the colored overlay used to highlight a terminal."
+msgstr "Die Deckkraft der Farbe, in der das Terminal hervorgehoben wird."
+
+#. i18n: ectx: label, entry (TerminalHighlightDuration), group (Appearance)
+#: app/config/yakuake.kcfg:118
+msgctxt "@label"
+msgid "Terminal highlight duration"
+msgstr "Dauer der Hervorhebung"
+
+#. i18n: ectx: whatsthis, entry (TerminalHighlightDuration), group (Appearance)
+#: app/config/yakuake.kcfg:119
+msgctxt "@info:whatsthis"
+msgid "The duration of the terminal highlight overlay."
+msgstr "GIbt an, wie lange das Terminal hervorgehoben wird."
+
+#. i18n: ectx: label, entry (KeyboardInputBlockIndicatorColor), group (Appearance)
+#: app/config/yakuake.kcfg:125
+msgctxt "@label"
+msgid "Keyboard input block indicator color"
+msgstr "Anzeigefarbe bei Tastatursperre"
+
+#. i18n: ectx: whatsthis, entry (KeyboardInputBlockIndicatorColor), group (Appearance)
+#: app/config/yakuake.kcfg:126
+msgctxt "@info:whatsthis"
+msgid "The color of the keyboard input block indicator overlay."
+msgstr "Die Farbe, in der die Tastatursperre angezeigt wird."
+
+#. i18n: ectx: label, entry (KeyboardInputBlockIndicatorOpacity), group (Appearance)
+#: app/config/yakuake.kcfg:130
+msgctxt "@label"
+msgid "Keyboard input block indicator opacity"
+msgstr "Deckkraft der Farbe bei Tastatursperre"
+
+#. i18n: ectx: whatsthis, entry (KeyboardInputBlockIndicatorOpacity), group (Appearance)
+#: app/config/yakuake.kcfg:131
+msgctxt "@info:whatsthis"
+msgid "The opacity of the keyboard input block indicator overlay."
+msgstr "Die Deckkraft der Farbe, die bei Tastatursperre angezeigt wird."
+
+#. i18n: ectx: label, entry (KeyboardInputBlockIndicatorDuration), group (Appearance)
+#: app/config/yakuake.kcfg:137
+msgctxt "@label"
+msgid "Keyboard input block indicator duration"
+msgstr "Dauer des Anzeige bei Tastatursperre"
+
+#. i18n: ectx: whatsthis, entry (KeyboardInputBlockIndicatorDuration), group (Appearance)
+#: app/config/yakuake.kcfg:138
+msgctxt "@info:whatsthis"
+msgid "The duration of the keyboard input block indicator overlay."
+msgstr "Gibt an, wie lange die Tastatursperre angezeigt wird."
+
+#. i18n: ectx: label, entry (UseWMAssist), group (Animation)
+#: app/config/yakuake.kcfg:146
+msgctxt "@label"
+msgid "Attempt to use the window manager to animate the window"
+msgstr "Versuchen, dem Fenstermanager die Animation zu überlassen"
+
+#. i18n: ectx: whatsthis, entry (UseWMAssist), group (Animation)
+#: app/config/yakuake.kcfg:147
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether to try and let the window manager perform the window open/retract "
+"animation. Yakuake will fall back to an animation strategy of progressively "
+"adjusting the window mask if the window manager is unable to provide the "
+"requested service."
+msgstr ""
+
+#. i18n: ectx: label, entry (Frames), group (Animation)
+#: app/config/yakuake.kcfg:151
+msgctxt "@label"
+msgid "Animation frames"
+msgstr "Animationsdauer"
+
+#. i18n: ectx: whatsthis, entry (Frames), group (Animation)
+#: app/config/yakuake.kcfg:152
+msgctxt "@info:whatsthis"
+msgid ""
+"The number of frames of the open/retract animation. One frame is taken to be "
+"10 miliseconds."
+msgstr ""
+"Anzahl der Frames der Animation beim Ein- und Ausfahren. Es wird angenommen, "
+"dass ein Frame 10 Millisekunden entspricht."
+
+#. i18n: ectx: label, entry (PollMouse), group (AutoOpen)
+#: app/config/yakuake.kcfg:160
+msgctxt "@label"
+msgid "Auto-open window"
+msgstr "Fenster automatisch öffnen"
+
+#. i18n: ectx: whatsthis, entry (PollMouse), group (AutoOpen)
+#: app/config/yakuake.kcfg:161
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether to automatically open the application window when the mouse pointer "
+"is found at the edge of the screen."
+msgstr ""
+"Gibt an, ob das Anwendungsfenster automatisch geöffnet wird, wenn der "
+"Mauszeiger sich an der Bildschirmkante befindet."
+
+#. i18n: ectx: label, entry (PollInterval), group (AutoOpen)
+#: app/config/yakuake.kcfg:165
+msgctxt "@label"
+msgid "Mouse pointer poll interval"
+msgstr "Abfrageintervall des Mauszeigers"
+
+#. i18n: ectx: whatsthis, entry (PollInterval), group (AutoOpen)
+#: app/config/yakuake.kcfg:166
+msgctxt "@info:whatsthis"
+msgid ""
+"The interval during which the mouse pointer position will be checked to "
+"determine whether or not it is at the same edge of the screen as the window."
+msgstr ""
+"Das Intervall, in dem die Position des Mauszeigers abgefragt wird. Es wird "
+"ermittelt, ob sich der Mauszeiger an derselben Bildschirmkante befindet wie "
+"das Fenster."
+
+#. i18n: ectx: label, entry (FirstRun), group (Dialogs)
+#: app/config/yakuake.kcfg:172
+msgctxt "@label"
+msgid "Application first run"
+msgstr "Erster Start der Anwendung"
+
+#. i18n: ectx: whatsthis, entry (FirstRun), group (Dialogs)
+#: app/config/yakuake.kcfg:173
+msgctxt "@info:whatsthis"
+msgid "Whether this is the first time the application is run."
+msgstr "Gibt an, ob die Anwendung zur ersten Mal gestartet wird."
+
+#. i18n: ectx: label, entry (ConfirmQuit), group (Dialogs)
+#: app/config/yakuake.kcfg:177
+msgctxt "@label"
+msgid "Confirm quit with multiple sessions"
+msgstr "Beenden bei mehreren Sitzungen bestätigen"
+
+#. i18n: ectx: whatsthis, entry (ConfirmQuit), group (Dialogs)
+#: app/config/yakuake.kcfg:178
+msgctxt "@info:whatsthis"
+msgid ""
+"Whether to prompt the user before quitting the application when multiple "
+"sessions are open."
+msgstr ""
+"Gibt an, ob der Benutzer beim Beenden der Anwendung gefragt wird, wenn "
+"mehrere Sitzungen geöffnet sind."
+
+#: app/firstrundialog.cpp:34
+msgctxt "@title:window"
+msgid "First Run"
+msgstr "Erster Start"
+
+#. i18n: ectx: property (text), widget (KTitleWidget, titleWidget)
+#: app/firstrundialog.ui:46
+msgctxt "@title"
+msgid "Welcome to Yakuake"
+msgstr "Willkommen in Yakuake"
+
+#. i18n: ectx: property (text), widget (QLabel, introLabel)
+#: app/firstrundialog.ui:53
+msgctxt "@info"
+msgid ""
+"Before starting to use the application, you might want to change the "
+"keyboard shortcut used to open and retract the Yakuake window:"
+msgstr ""
+"Bevor Sie die Anwendung starten, sollten Sie den Kurzbefehl zum Ein- und "
+"Ausfahren des Yakuake-Fensters festlegen:"
+
+#. i18n: ectx: property (text), widget (QLabel, outroLabel)
+#: app/firstrundialog.ui:130
+msgctxt "@info"
+msgid "You can change the shortcut later at any time via the menu."
+msgstr "Sie können den Kurzbefehl jederzeit im Menü ändern."
+
+#: app/main.cpp:36
+msgctxt "@title"
+msgid "<application>Yakuake</application>"
+msgstr "<application>Yakuake</application>"
+
+#: app/main.cpp:38
+msgctxt "@title"
+msgid "A drop-down terminal emulator based on KDE Konsole technology."
+msgstr ""
+"Ein Aufklapp-Terminalemulator basierend auf der Technologie der KDE-Konsole."
+
+#: app/main.cpp:40
+msgctxt "@info:credit"
+msgid "(c) 2008-2011 The Yakuake Team"
+msgstr "© 2008–2011 Das Yakuake-Team"
+
+#: app/main.cpp:46
+msgctxt "@info:credit"
+msgid "Eike Hein"
+msgstr "Eike Hein"
+
+#: app/main.cpp:47
+msgctxt "@info:credit"
+msgid "Maintainer, Lead Developer"
+msgstr "Betreuer, Haupt-Entwickler"
+
+#: app/main.cpp:48
+msgctxt "@info:credit"
+msgid "Francois Chazal"
+msgstr "Francois Chazal"
+
+#: app/main.cpp:49
+msgctxt "@info:credit"
+msgid "Project Founder, Default skin (Inactive)"
+msgstr "Projektgründer, Standarddesign (Inaktiv)"
+
+#: app/main.cpp:50
+msgctxt "@info:credit"
+msgid "Daniel 'suslik' D."
+msgstr "Daniel „suslik“ D."
+
+#: app/main.cpp:51
+msgctxt "@info:credit"
+msgid "Plastik skin"
+msgstr "Plastik-Design"
+
+#: app/main.cpp:52
+msgctxt "@info:credit"
+msgid "Juan Carlos Torres"
+msgstr "Juan Carlos Torres"
+
+#: app/main.cpp:53
+msgctxt "@info:credit"
+msgid "Tab bar drag and drop support, Prevent Closing toggle"
+msgstr ""
+"Unterstützung für Ziehen und Ablegen in der Unterfensterleiste, "
+"Unterstützung zum Sperren gegen ungewolltes Schließen"
+
+#: app/main.cpp:54
+msgctxt "@info:credit"
+msgid "Gustavo Ribeiro Croscato"
+msgstr "Gustavo Ribeiro Croscato"
+
+#: app/main.cpp:55
+msgctxt "@info:credit"
+msgid "Icon on tabs with Prevent Closing enabled"
+msgstr "Symbol auf Unterfensterreitern bei aktiviertem „Schließen verhindern“"
+
+#: app/main.cpp:56
+msgctxt "@info:credit"
+msgid "Danilo Cesar Lemes de Paula"
+msgstr "Danilo Cesar Lemes de Paula"
+
+#: app/main.cpp:57
+msgctxt "@info:credit"
+msgid "Actions to grow terminals"
+msgstr "Aktionen zum Verändern der Terminal-Größe"
+
+#: app/main.cpp:65
+msgctxt "@info:shell"
+msgid "Yakuake is already running, toggling window ..."
+msgstr "Yakuake läuft bereits, Fenster wird ein- bzw. ausgefahren ..."
+
+#: app/mainwindow.cpp:139
+msgctxt "@info"
+msgid "Are you sure you want to quit?"
+msgstr "Sind Sie sicher, dass Sie die Anwendung beenden möchten?"
+
+#: app/mainwindow.cpp:147
+msgctxt "@info"
+msgid ""
+"<warning>There are multiple open sessions, <emphasis>some of which you have "
+"locked to prevent closing them accidentally.</emphasis> These will be killed "
+"if you continue.</warning>"
+msgstr ""
+"<warning>Sie haben mehrere Sitzungen geöffnet, <emphasis>von denen einige "
+"gegen ungewolltes Schließen gesperrt sind.</emphasis> Wenn Sie fortfahren, "
+"werden diese ebenfalls beendet.</warning>"
+
+#: app/mainwindow.cpp:149
+msgctxt "@info"
+msgid ""
+"<warning>There are multiple open sessions. These will be killed if you "
+"continue.</warning>"
+msgstr ""
+"<warning>Sie haben mehrere Sitzungen geöffnet. Wenn Sie fortfahren, werden "
+"diese ebenfalls beendet.</warning>"
+
+#: app/mainwindow.cpp:153
+msgctxt "@info"
+msgid ""
+"<warning>There are one or more open sessions that you have locked to prevent "
+"closing them accidentally. These will be killed if you continue.</warning>"
+msgstr ""
+"<warning>Sie haben eine oder mehrere Sitzungen geöffnet, die gegen "
+"ungewolltes Schließen gesperrt sind. Wenn Sie fortfahren, werden diese "
+"beendet.</warning>"
+
+#: app/mainwindow.cpp:158
+msgctxt "@title:window"
+msgid "Really Quit?"
+msgstr "Wirklich beenden?"
+
+#: app/mainwindow.cpp:193
+msgctxt "@action"
+msgid "Open/Retract Yakuake"
+msgstr "Yakuake einfahren/ausfahren"
+
+#: app/mainwindow.cpp:199
+msgctxt "@action"
+msgid "Keep window open when it loses focus"
+msgstr "Fenster geöffnet halten, wenn es den Fokus verliert"
+
+#: app/mainwindow.cpp:204
+msgctxt "@action"
+msgid "Manage Profiles..."
+msgstr "Profile verwalten ..."
+
+#: app/mainwindow.cpp:209
+msgctxt "@action"
+msgid "Edit Current Profile..."
+msgstr "Aktuelles Profil bearbeiten ..."
+
+#: app/mainwindow.cpp:215
+msgctxt "@action"
+msgid "Increase Window Width"
+msgstr "Fensterbreite vergrößern"
+
+#: app/mainwindow.cpp:220
+msgctxt "@action"
+msgid "Decrease Window Width"
+msgstr "Fensterbreite verringern"
+
+#: app/mainwindow.cpp:225
+msgctxt "@action"
+msgid "Increase Window Height"
+msgstr "Fensterhöhe vergrößern"
+
+#: app/mainwindow.cpp:230
+msgctxt "@action"
+msgid "Decrease Window Height"
+msgstr "Fensterhöhe verringern"
+
+#: app/mainwindow.cpp:235
+msgctxt "@action"
+msgid "New Session"
+msgstr "Neue Sitzung"
+
+#: app/mainwindow.cpp:241
+msgctxt "@action"
+msgid "Two Terminals, Horizontally"
+msgstr "Zwei Terminals, waagerecht"
+
+#: app/mainwindow.cpp:246
+msgctxt "@action"
+msgid "Two Terminals, Vertically"
+msgstr "Zwei Terminals, senkrecht"
+
+#: app/mainwindow.cpp:251
+msgctxt "@action"
+msgid "Four Terminals, Grid"
+msgstr "Vier Terminals, Raster"
+
+#: app/mainwindow.cpp:256
+msgctxt "@action"
+msgid "Close Session"
+msgstr "Sitzung schließen"
+
+#: app/mainwindow.cpp:263
+msgctxt "@action"
+msgid "Previous Session"
+msgstr "Vorherige Sitzung"
+
+#: app/mainwindow.cpp:269
+msgctxt "@action"
+msgid "Next Session"
+msgstr "Nächste Sitzung"
+
+#: app/mainwindow.cpp:275
+msgctxt "@action"
+msgid "Move Session Left"
+msgstr "Sitzung nach links verschieben"
+
+#: app/mainwindow.cpp:282
+msgctxt "@action"
+msgid "Move Session Right"
+msgstr "Sitzung nach rechts verschieben"
+
+#: app/mainwindow.cpp:289
+msgctxt "@action"
+msgid "Grow Terminal to the Right"
+msgstr "Terminal nach rechts vergrößern"
+
+#: app/mainwindow.cpp:296
+msgctxt "@action"
+msgid "Grow Terminal to the Left"
+msgstr "Terminal nach links vergrößern"
+
+#: app/mainwindow.cpp:303
+msgctxt "@action"
+msgid "Grow Terminal to the Top"
+msgstr "Terminal nach oben vergrößern"
+
+#: app/mainwindow.cpp:310
+msgctxt "@action"
+msgid "Grow Terminal to the Bottom"
+msgstr "Terminal nach unten vergrößern"
+
+#: app/mainwindow.cpp:317
+msgctxt "@action"
+msgid "Rename Session..."
+msgstr "Sitzung umbenennen ..."
+
+#: app/mainwindow.cpp:324
+msgctxt "@action"
+msgid "Previous Terminal"
+msgstr "Vorheriges Terminal"
+
+#: app/mainwindow.cpp:330
+msgctxt "@action"
+msgid "Next Terminal"
+msgstr "Nächstes Terminal"
+
+#: app/mainwindow.cpp:336
+msgctxt "@action"
+msgid "Close Active Terminal"
+msgstr "Aktives Terminal schließen"
+
+#: app/mainwindow.cpp:343
+msgctxt "@action"
+msgid "Split Left/Right"
+msgstr "Aufteilen (links/rechts)"
+
+#: app/mainwindow.cpp:350
+msgctxt "@action"
+msgid "Split Top/Bottom"
+msgstr "Aufteilen (oben/unten)"
+
+#: app/mainwindow.cpp:357
+msgctxt "@action"
+msgid "Prevent Closing"
+msgstr "Schließen verhindern"
+
+#: app/mainwindow.cpp:363 app/tabbar.cpp:206
+msgctxt "@action"
+msgid "Disable Keyboard Input"
+msgstr "Tastatureingaben deaktivieren"
+
+#: app/mainwindow.cpp:369 app/tabbar.cpp:254
+msgctxt "@action"
+msgid "Monitor for Activity"
+msgstr "Auf Aktivität überwachen"
+
+#: app/mainwindow.cpp:376 app/tabbar.cpp:302
+msgctxt "@action"
+msgid "Monitor for Silence"
+msgstr "Auf Inaktivität überwachen"
+
+#: app/mainwindow.cpp:385
+#, kde-format
+msgctxt "@action"
+msgid "Switch to Session <numid>%1</numid>"
+msgstr "Zu Sitzung <numid>%1</numid> wechseln"
+
+#: app/mainwindow.cpp:517
+#, kde-format
+msgctxt "@info"
+msgid "Activity detected in monitored terminal in session \"%1\"."
+msgstr ""
+"In einem überwachten Terminal Aktivität in der Sitzung „%1“ festgestellt."
+
+#: app/mainwindow.cpp:531
+#, kde-format
+msgctxt "@info"
+msgid "Silence detected in monitored terminal in session \"%1\"."
+msgstr ""
+"In einem überwachten Terminal keine Aktivität in der Sitzung „%1“ "
+"festgestellt."
+
+#: app/mainwindow.cpp:555
+msgctxt "@title:menu"
+msgid "Help"
+msgstr "Hilfe"
+
+#: app/mainwindow.cpp:561
+msgctxt "@title:menu"
+msgid "Quick Options"
+msgstr "Schnelleinstellungen"
+
+#: app/mainwindow.cpp:567
+msgctxt "@title:menu"
+msgid "Screen"
+msgstr "Bildschirm"
+
+#: app/mainwindow.cpp:572
+msgctxt "@title:menu"
+msgid "Width"
+msgstr "Breite"
+
+#: app/mainwindow.cpp:577
+msgctxt "@title:menu"
+msgid "Height"
+msgstr "Höhe"
+
+#: app/mainwindow.cpp:580
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: app/mainwindow.cpp:593
+msgctxt "@item:inmenu"
+msgid "At mouse location"
+msgstr "An Zeigerposition"
+
+#: app/mainwindow.cpp:600
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Screen <numid>%1</numid>"
+msgstr "Bildschirm <numid>%1</numid>"
+
+#: app/mainwindow.cpp:690
+msgctxt "@title Preferences page name"
+msgid "Window"
+msgstr "Fenster"
+
+#: app/mainwindow.cpp:697
+msgctxt "@title Preferences page name"
+msgid "Behavior"
+msgstr "Verhalten"
+
+#: app/mainwindow.cpp:701
+msgctxt "@title Preferences page name"
+msgid "Appearance"
+msgstr "Erscheinungsbild"
+
+#: app/mainwindow.cpp:756
+msgctxt "@info"
+msgid ""
+"<application>Yakuake</application> was unable to load a skin. It is likely "
+"that it was installed incorrectly.<nl/><nl/>The application will now quit."
+msgstr ""
+"Das Design kann nicht geladen werden. Es ist möglicherweise fehlerhaft "
+"installiert.<nl/><nl/>Die Anwendung wird nun beendet."
+
+#: app/mainwindow.cpp:758
+msgctxt "@title:window"
+msgid "Cannot Load Skin"
+msgstr "Design kann nicht geladen werden"
+
+#: app/mainwindow.cpp:1330
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Application successfully started.<nl/>Press <shortcut>%1</shortcut> to use "
+"it ..."
+msgstr ""
+"Die Anwendung wurde erfolgreich gestartet.<nl/>Zur Benutzung drücken Sie "
+"bitte <shortcut>%1</shortcut> ..."
+
+#: app/sessionstack.cpp:614
+msgctxt "@info"
+msgid ""
+"<warning>You have locked this session to prevent accidental closing of "
+"terminals.</warning>"
+msgstr ""
+"<warning>Sie haben diese Sitzung gesperrt, um ungewolltes Schließen von "
+"Terminals zu verhindern.</warning>"
+
+#: app/sessionstack.cpp:618
+msgctxt "@info"
+msgid "Are you sure you want to close this session?"
+msgstr "Sind Sie sicher, dass Sie diese SItzung schließen möchten?"
+
+#: app/sessionstack.cpp:620
+msgctxt "@info"
+msgid "Are you sure you want to close this terminal?"
+msgstr "Sind Sie sicher, dass Sie diees Terminal schließen möchten?"
+
+#: app/sessionstack.cpp:624
+msgctxt "@title:window"
+msgid "Really Close?"
+msgstr "Wirklich schließen?"
+
+#: app/tabbar.cpp:54
+msgctxt "@info:whatsthis"
+msgid ""
+"<title>Tab Bar</title><para>The tab bar allows you to switch between "
+"sessions. You can double-click a tab to edit its label.</para>"
+msgstr ""
+"<title>Unterfensterleiste</title><para>Mit der Unterfensterleiste können Sie "
+"zwischen Sitzungen umschalten. Durch einen Doppelklick auf die Beschriftung "
+"können Sie diese ändern.</para>"
+
+#: app/tabbar.cpp:73
+msgctxt "@title:menu"
+msgid "Disable Keyboard Input"
+msgstr "Tastatureingaben deaktivieren"
+
+#: app/tabbar.cpp:74
+msgctxt "@title:menu"
+msgid "Monitor for Activity"
+msgstr "Auf Aktivität überwachen"
+
+#: app/tabbar.cpp:75
+msgctxt "@title:menu"
+msgid "Monitor for Silence"
+msgstr "Auf Inaktivität überwachen"
+
+#: app/tabbar.cpp:84
+msgctxt "@info:tooltip"
+msgid "New Session"
+msgstr "Neue Sitzung"
+
+#: app/tabbar.cpp:85
+msgctxt "@info:whatsthis"
+msgid "Adds a new session. Press and hold to select session type from menu."
+msgstr ""
+"Fügt eine neue Sitzung hinzu. Drücken Sie die Maustaste und halten Sie sie "
+"gedrückt, um einen Sitzungstyp aus dem Menü zu wählen."
+
+#: app/tabbar.cpp:90
+msgctxt "@info:tooltip"
+msgid "Close Session"
+msgstr "Sitzung schließen"
+
+#: app/tabbar.cpp:91
+msgctxt "@info:whatsthis"
+msgid "Closes the active session."
+msgstr "Schließt die aktive Sitzung."
+
+#: app/tabbar.cpp:212
+msgctxt "@action"
+msgid "For This Session"
+msgstr "In dieser Sitzung"
+
+#: app/tabbar.cpp:230
+#, kde-format
+msgctxt "@action"
+msgid "For Terminal %1"
+msgstr "In Terminal Terminals %1"
+
+#: app/tabbar.cpp:260 app/tabbar.cpp:308
+msgctxt "@action"
+msgid "In This Session"
+msgstr "In dieser Sitzung"
+
+#: app/tabbar.cpp:278 app/tabbar.cpp:326
+#, kde-format
+msgctxt "@action"
+msgid "In Terminal %1"
+msgstr "In Terminal %1"
+
+#: app/tabbar.cpp:934
+msgctxt "@title:tab"
+msgid "Shell"
+msgstr "Shell"
+
+#: app/tabbar.cpp:938
+#, kde-format
+msgctxt "@title:tab"
+msgid "Shell No. <numid>%1</numid>"
+msgstr "Shell Nr. <numid>%1</numid>"
+
+#: app/terminal.cpp:167
+msgctxt "@info"
+msgid ""
+"<application>Yakuake</application> was unable to load the "
+"<application>Konsole</application> component.<nl/> A <application>Konsole</"
+"application> installation is required to use Yakuake."
+msgstr ""
+"Das <application>Konsole</application>-Modul kann nicht geladen werden.<nl/> "
+"Zur Ausführung von <application>Yakuake</application> muss "
+"<application>Konsole</application> installiert sein."
+
+#: app/titlebar.cpp:38
+msgctxt "@info:whatsthis"
+msgid ""
+"<title>Title Bar</title><para>The title bar displays the session title if "
+"available.</para>"
+msgstr ""
+"<title>Titelleiste</title><para>Sofern verfügbar, wird in der Titelleiste "
+"der Sitzungstitel angezeigt.</para>"
+
+#: app/titlebar.cpp:49
+msgctxt "@info:tooltip"
+msgid "Keep window open when it loses focus"
+msgstr "Fenster geöffnet halten, wenn der Fokus verloren geht"
+
+#: app/titlebar.cpp:50
+msgctxt "@info:whatsthis"
+msgid "If this is checked, the window will stay open when it loses focus."
+msgstr ""
+"Ist diese Einstellung markiert, bleibt das Yakuake-Fenster geöffnet, wenn es "
+"den Fokus verliert."
+
+#: app/titlebar.cpp:56
+msgctxt "@info:tooltip"
+msgid "Open Menu"
+msgstr "Menü öffnen"
+
+#: app/titlebar.cpp:57
+msgctxt "@info:whatsthis"
+msgid "Opens the main menu."
+msgstr "Öffnet das Hauptmenü."
+
+#: app/titlebar.cpp:61
+msgctxt "@info:tooltip Quits the application"
+msgid "Quit"
+msgstr "Beenden"
+
+#: app/titlebar.cpp:62
+msgctxt "@info:whatsthis"
+msgid "Quits the application."
+msgstr "Beendet die Anwendung."
+
+#~ msgctxt "@label"
+#~ msgid "Show startup notification"
+#~ msgstr "Hinweisfenster beim Starten anzeigen"
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Whether to show a notification popup at application startup."
+#~ msgstr "Gibt an, ob beim Programmstart ein Hinweisfenster angezeiget wird."
+
+#~ msgctxt "@option:check"
+#~ msgid "Show startup notification popup"
+#~ msgstr "Hinweisfenster beim Starten anzeigen"
+
+#~ msgctxt "@title:window"
+#~ msgid "<application>Yakuake</application> Notification"
+#~ msgstr "<application>Yakuake</application>-Meldung"
+
+#~ msgctxt "@label:slider"
+#~ msgid "Speed:"
+#~ msgstr "Geschwindigkeit:"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Cannot connect to X server."
+#~ msgstr "Verbindung mit X-Server fehlgeschlagen."
+
+#~ msgctxt "@info:whatsthis"
+#~ msgid "Background color used if XComposite ARGB translucency is disabled."
+#~ msgstr ""
+#~ "Die Hintergrundfarbe, die verwendet wird, wenn XComposite-ARGB-"
+#~ "Durchsichtigkeit abgeschaltet ist."
+
+#~ msgid "Yakuake"
+#~ msgstr "Yakuake"
+
+#~ msgid "Maintainer"
+#~ msgstr "Betreuer"
+
+#~ msgid "Auto-open on pointer touching screen edge"
+#~ msgstr "Automatisch öffnen, wenn Mauszeiger obere Bildschirmkante berührt"
+
+#~ msgid "Screen %1"
+#~ msgstr "Bildschirm %1"
+
+#~ msgid "The tab bar allows you to switch between sessions."
+#~ msgstr ""
+#~ "Mit der Unterfensterleiste können Sie zwischen Sitzungen umschalten."
+
+#~ msgid "Keep open when focus is lost"
+#~ msgstr "Bei Fokusverlust geöffnet lassen"
+
+#~ msgid "Slides the Yakuake window in and out"
+#~ msgstr "Fährt das Yakuake-Fenster ein bzw. aus"
+
+#~ msgid "Paste Selection"
+#~ msgstr "Auswahl einfügen"
+
+#~ msgid "Configure Global Shortcuts..."
+#~ msgstr "Globale Kurzbefehle einrichten ..."
+
+#~ msgid "Go to Next Session"
+#~ msgstr "Zu nächster Sitzung gehen"
+
+#~ msgid "Split Terminal Horizontally"
+#~ msgstr "Terminal waagerecht teilen"
+
+#~ msgid "Split Terminal Vertically"
+#~ msgstr "Terminal senkrecht teilen"
+
+#~ msgid "C&lose Session"
+#~ msgstr "Sitzung schl&ießen"
+
+#~ msgid "Open on screen"
+#~ msgstr "Auf Bildschirm öffnen"
+
+#~ msgid "Keep open on focus change"
+#~ msgstr "Geöffnet halten, wenn Fokus verloren geht"
+
+#~ msgid "Skins"
+#~ msgstr "Designs"
+
+#~ msgid "Unnamed"
+#~ msgstr "Unbenannt"
+
+#~ msgid "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake Skins"
+#~ msgstr "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake-Designs"
+
+#~ msgid "Select Skin Archive"
+#~ msgstr "Designarchiv auswählen"
+
+#~ msgid ""
+#~ "_n: Shell\n"
+#~ "Shell No. %n"
+#~ msgstr ""
+#~ "Befehlsfenster\n"
+#~ "Befehlsfenster %n"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Eike Hein, Frederik Schwarzer"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "sho@eikehein.com, schwarzer@kde.org"
+
+#~ msgid ""
+#~ "This controls the color of the surface that translucent skin elements are "
+#~ "composited upon. This setting is only available if Yakuake is run outside "
+#~ "of KDE and translucency is unavailable."
+#~ msgstr ""
+#~ "Diese Einstellung definiert die Farbe der Oberfläche, auf die "
+#~ "durchscheinende Design-Elemente gemalt werden. Sie ist nur verfügbar, "
+#~ "wenn Yakuake außerhalb von KDE läuft und Transluzenz nicht verfügbar ist."
+
+#~ msgid "None"
+#~ msgstr "Keiner"
+
+#~ msgid ""
+#~ "Enable this option if you want the Yakuake window to keep on top of other "
+#~ "windows even when it loses focus."
+#~ msgstr ""
+#~ "Ist diese Einstellung markiert, bleibt das Yakuake-Fenster über anderen "
+#~ "Fenster, selbst wenn es den Fokus verliert."
+
+#~ msgid ""
+#~ "Enable this option if you want the Open/Retract shortcut to focus the "
+#~ "Yakuake window when it is already open but lacks focus. Disable this "
+#~ "option to have the Open/Retract shortcut retract the Yakuake window "
+#~ "regardless of whether or not it has focus."
+#~ msgstr ""
+#~ "Ist diese Einstellung markiert, holt das Tastenkürzel den Fokus zurück, "
+#~ "wenn das Yakuake-Fenster zwar geöffnet ist, aber nicht den Fokus hat. Ist "
+#~ "diese Einstellung deaktiviert, fährt das Yakuake-Fenster mit dem "
+#~ "Tastenkürzel ein, ob es den Fokus hat, oder nicht."
+
+#~ msgid ""
+#~ "Enable this option if you want the Yakuake window to open when the mouse "
+#~ "pointer touches the top edge of the screen."
+#~ msgstr ""
+#~ "Ist diese Einstellung markiert, wird das Yakuake-Fenster geöffnet, wenn "
+#~ "der Mauszeiger die obere Bildschirmkante berührt."
+
+#~ msgid ""
+#~ "This setting controls the approximate duration of the sliding animation "
+#~ "when the Yakuake window is opening or retracting."
+#~ msgstr ""
+#~ "Diese Einstellung steuert die ungefähre Dauer der Animation beim Aus- und "
+#~ "Einfahren des Yakuake-Fensters."
+
+#~ msgid "Access key"
+#~ msgstr "Zugriffstaste"
+
+#~ msgid "Toggles the open/close state of Yakuake"
+#~ msgstr "Öffnet/schließt Yakuake"
+
+#~ msgid "Screen Display"
+#~ msgstr "Bildschirm"
+
+#~ msgid "Terminal Width"
+#~ msgstr "Terminalbreite"
+
+#~ msgid "Horizontal Location"
+#~ msgstr "Horizontale Position"
+
+#~ msgid "Force Background Refresh"
+#~ msgstr "Hintergrundaktualisierung erzwingen"
+
+#~ msgid "Shortcuts"
+#~ msgstr "Kurzbefehle"
+
+#~ msgid "Change Access Key..."
+#~ msgstr "Zugriffstaste ändern ..."
