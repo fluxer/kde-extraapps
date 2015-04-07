@@ -24,17 +24,6 @@
 #include <KTemporaryFile>
 #include <KZip>
 
-#ifdef HAVE_NEPOMUK
-#include <Nepomuk/Resource>
-#include <Nepomuk/Tag>
-#include <Nepomuk/Variant>
-#include <Nepomuk/Vocabulary/NCO>
-#include <Nepomuk/Vocabulary/NFO>
-#include <Nepomuk/Vocabulary/PIMO>
-
-using namespace Nepomuk::Vocabulary;
-#endif
-
 ComicArchiveJob::ComicArchiveJob( const KUrl &dest, Plasma::DataEngine *engine, ComicArchiveJob::ArchiveType archiveType, IdentifierType identifierType, const QString &pluginName, QObject *parent )
   : KJob( parent ),
     mType( archiveType ),
@@ -393,35 +382,6 @@ void ComicArchiveJob::copyZipFileToDestination()
         emitResultIfNeeded();
         return;
     }
-
-#ifdef HAVE_NEPOMUK
-    //store additional data using Nepomuk
-    Nepomuk::Resource res( mDest, NFO::FileDataObject() );
-
-    Nepomuk::Resource comicTopic( "Comic", PIMO::Topic() );
-    comicTopic.setLabel( i18n( "Comic" ) );
-
-    if ( !mComicTitle.isEmpty() ) {
-        Nepomuk::Resource topic( mComicTitle, PIMO::Topic() );
-        topic.setLabel( mComicTitle );
-        topic.setProperty( PIMO::superTopic(), comicTopic );
-        res.addTag( topic );
-    } else {
-//             res.addTag( comicTopic );//TODO activate this, see below
-        ;
-    }
-
-    //FIXME also set the comic topic as tag, this is redundant, as topic has this as super topic
-    //though at this point the gui (Dolphin) does not manage to show the correct tags
-    res.addTag( comicTopic );
-
-    foreach ( QString author, mAuthors ) {
-        author = author.trimmed();
-        Nepomuk::Resource authorRes( author, NCO::PersonContact() );
-        authorRes.setProperty( NCO::fullname(), author );
-        res.addProperty( NCO::creator(), authorRes );
-    }
-#endif
 
     emitResultIfNeeded();
 }

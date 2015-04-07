@@ -24,11 +24,6 @@ macro_log_feature(LIBATTICA_FOUND "libattica" "Attica Library" "http://websvn.kd
 macro_optional_find_package(OpenGL)
 macro_log_feature(OPENGL_FOUND "OpenGL" "API for developing portable, interactive 2D and 3D graphics applications" "http://mesa3d.sourceforge.net" FALSE "" "STRONGLY RECOMMENDED: The 3D hardware acceleration available through the OpenGL API is used in applications ranging from graphics and modellers to screensavers and video players.")
 
-macro_optional_find_package(Nepomuk)
-macro_log_feature(NEPOMUK_FOUND "Nepomuk" "Handles all kinds of metadata on the KDE desktop to provide a semantic desktop" "http://nepomuk.kde.org/" FALSE "" "STRONGLY_RECOMMENDED: Nepomuk is used to provide metadata on objects like files, emails etc. to provide a semantic desktop.")
-macro_bool_to_01(NEPOMUK_FOUND HAVE_NEPOMUK)
-
-
 macro_optional_find_package(QJSON)
 macro_log_feature(QJSON_FOUND "QJSon" "Used for various Internet runners, for parsing API responses, and the microblog dataengine" "" FALSE "" "")
 
@@ -45,10 +40,6 @@ macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" 
 
 macro_optional_find_package(DBusMenuQt)
 macro_log_feature(DBUSMENUQT_FOUND "DBusMenuQt" "DBusMenu Qt" "https://launchpad.net/libdbusmenu-qt/" FALSE "" "Needed for Unity support in IconTasks.")
-
-if (NEPOMUK_FOUND)
-  include_directories( ${SOPRANO_INCLUDE_DIR} ${NEPOMUK_INCLUDE_DIR} )
-endif (NEPOMUK_FOUND)
 
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
