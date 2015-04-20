@@ -19,7 +19,7 @@
 
 #include "ui_Mp3tunesConfigWidget.h"
 
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 K_PLUGIN_FACTORY( Mp3tunesSettingsFactory, registerPlugin<Mp3tunesSettingsModule>(); )
 K_EXPORT_PLUGIN( Mp3tunesSettingsFactory( "kcm_amarok_mp3tunes" ) )

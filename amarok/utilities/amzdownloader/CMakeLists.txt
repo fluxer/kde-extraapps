@@ -22,8 +22,6 @@ set( amzdownloader_MOC_HDRS
 
 qt4_wrap_ui( amzdownloader_SRCS ${amzdownloader_UI} )
 
-qt4_wrap_cpp( amzdownloader_MOC ${amzdownloader_MOC_HDRS} )
-
 add_executable( amzdownloader ${amzdownloader_SRCS} ${amzdownloader_MOC})
 
 target_link_libraries( amzdownloader

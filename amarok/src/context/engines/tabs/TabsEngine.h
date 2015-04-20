@@ -24,6 +24,7 @@
 #include "NetworkAccessManagerProxy.h"
 
 #include <QVariant>
+#include <QSet>
 
 class KJob;
 using namespace Context;

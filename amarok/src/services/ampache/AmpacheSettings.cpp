@@ -19,7 +19,8 @@
 #include "AddServerDialog.h"
 #include "ui_AmpacheConfigWidget.h"
 
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
+#include <kdebug.h>
 
 #include <QTableWidget>
 #include <QHeaderView>

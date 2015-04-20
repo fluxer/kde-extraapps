@@ -24,7 +24,7 @@
 
 #include "ui_AmazonConfigWidget.h"
 
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 #include <QTimer>
 

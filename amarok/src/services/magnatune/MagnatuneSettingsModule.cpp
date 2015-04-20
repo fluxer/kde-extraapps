@@ -22,7 +22,7 @@
 
 #include "ui_MagnatuneConfigWidget.h"
 
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 
 
