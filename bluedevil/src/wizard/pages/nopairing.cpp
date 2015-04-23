@@ -32,14 +32,23 @@
 
 using namespace BlueDevil;
 
-NoPairingPage::NoPairingPage(BlueWizard* parent) : QWizardPage(parent)
-, m_validPage(false)
-, m_wizard(parent)
+NoPairingPage::NoPairingPage(BlueWizard *parent)
+    : QWizardPage(parent)
+    , m_success(false)
+    , m_wizard(parent)
 {
     setupUi(this);
     m_working = new KPixmapSequenceOverlayPainter(this);
     m_working->setWidget(working);
     m_working->start();
+}
+
+int NoPairingPage::nextId() const
+{
+    if (m_success) {
+        return BlueWizard::Success;
+    }
+    return BlueWizard::Fail;
 }
 
 void NoPairingPage::initializePage()
@@ -49,10 +58,6 @@ void NoPairingPage::initializePage()
 
     connecting->setText(connecting->text().append(m_wizard->device()->name()));
 
-    //It can happen that the device is technically connected and trusted but we are not connected
-    //to the profile. We have no way to know if the profile was activated or not so we have to relay
-    //on a timeout (10s)
-    QTimer::singleShot(10000, this, SLOT(timeout()));
     connect(m_wizard->device(), SIGNAL(connectedChanged(bool)), SLOT(connectedChanged(bool)));
     connect(m_wizard->device(), SIGNAL(trustedChanged(bool)), SLOT(connectedChanged(bool)));
 
@@ -60,30 +65,14 @@ void NoPairingPage::initializePage()
     m_wizard->device()->setTrusted(true);
 }
 
-void NoPairingPage::timeout()
-{
-    connectedChanged(true);
-}
-
 void NoPairingPage::connectedChanged(bool connected)
 {
-    kDebug();
+    kDebug() << "Connect finished" << connected;
 
-    m_validPage = connected;
-    if (m_validPage) {
-        kDebug() << "Done";
-        m_wizard->done(0);
-    }
-}
-
-bool NoPairingPage::validatePage()
-{
-    return m_validPage;
-}
-
-int NoPairingPage::nextId() const
-{
-    return -1;
+    // Connect may fail but that doesn't really mean the device was setup incorrectly
+    // Device::connectDevice will fail eg. when A2DP profile could not be connected due to missing pulseaudio plugin
+    m_success = true;
+    QTimer::singleShot(500, m_wizard, SLOT(next()));
 }
 
 QList<QWizard::WizardButton> NoPairingPage::wizardButtonsLayout() const
@@ -91,6 +80,5 @@ QList<QWizard::WizardButton> NoPairingPage::wizardButtonsLayout() const
     QList <QWizard::WizardButton> list;
     list << QWizard::Stretch;
     list << QWizard::CancelButton;
-
     return list;
 }

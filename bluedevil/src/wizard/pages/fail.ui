@@ -30,6 +30,16 @@
       </spacer>
      </item>
      <item>
+      <widget class="QLabel" name="failIcon">
+       <property name="maximumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="failLbl">
        <property name="text">
         <string/>
