@@ -11,7 +11,7 @@ if [ -z "$boost" ];then
     echo "ERROR: unable to find boost headers"
     exit 1
 elif [ -z "$(type -p bcp)" ];then
-    "ERROR: bcp tool not found"
+    echo "ERROR: bcp tool not found"
     exit 2
 fi
 rm -vrf miniboost/
