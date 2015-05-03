@@ -64,7 +64,7 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
     properties->setFileSharingPage(vbox);
 
     // smbd is usually found as /usr/sbin/smbd
-    QString exePath = "/usr/sbin:/usr/bin:/sbin:/bin";
+    const QString exePath = "/usr/sbin:/usr/bin:/sbin:/bin";
     if (KStandardDirs::findExe("smbd", exePath).isEmpty()) {
 
         QWidget *widget = new QWidget(vbox);
@@ -222,7 +222,7 @@ void SambaUserSharePlugin::applyChanges()
 void SambaUserSharePlugin::toggleShareStatus(bool checked)
 {
     propertiesUi.sambaNameEdit->setEnabled(checked);
-    propertiesUi.sambaAllowGuestChk->setCheckable(checked);
+    propertiesUi.sambaAllowGuestChk->setEnabled(checked);
     propertiesUi.tableView->setEnabled(checked);
     if (checked && propertiesUi.sambaNameEdit->text().isEmpty()) {
         propertiesUi.sambaNameEdit->setText(getNewShareName());
