@@ -1,5 +1,5 @@
 /* Define ISO C stdio on top of C++ iostreams.
-   Copyright (C) 1991-2014 Free Software Foundation, Inc.
+   Copyright (C) 1991-2015 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -932,7 +932,7 @@ extern void funlockfile (FILE *__stream) __THROW;
 #ifdef __USE_EXTERN_INLINES
 # include <bits/stdio.h>
 #endif
-#if __USE_FORTIFY_LEVEL > 0 && defined __extern_always_inline
+#if __USE_FORTIFY_LEVEL > 0 && defined __fortify_function
 # include <bits/stdio2.h>
 #endif
 #ifdef __LDBL_COMPAT

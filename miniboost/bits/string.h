@@ -1,5 +1,5 @@
 /* Optimized, inlined string functions.  i486/x86-64 version.
-   Copyright (C) 2001-2014 Free Software Foundation, Inc.
+   Copyright (C) 2001-2015 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -29,9 +29,14 @@
 			    || defined __pentiumpro__ || defined __pentium4__ \
 			    || defined __nocona__ || defined __atom__ 	      \
 			    || defined __core2__ || defined __corei7__	      \
+			    || defined __sandybridge__ || defined __haswell__ \
+			    || defined __bonnell__ || defined __silvermont__  \
 			    || defined __k6__ || defined __geode__	      \
 			    || defined __k8__ || defined __athlon__	      \
-			    || defined __amdfam10__)
+			    || defined __amdfam10__ || defined __bdver1__     \
+			    || defined __bdver2__ || defined __bdver3__	      \
+			    || defined __bdver4__ || defined __btver1__	      \
+			    || defined __btver2__)
 
 /* We only provide optimizations if the user selects them and if
    GNU CC is used.  */

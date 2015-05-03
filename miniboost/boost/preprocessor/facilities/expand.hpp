@@ -11,20 +11,18 @@
 #
 # /* See http://www.boost.org for most recent version. */
 #
-# ifndef BOOST_PREPROCESSOR_LOGICAL_NOT_HPP
-# define BOOST_PREPROCESSOR_LOGICAL_NOT_HPP
+# ifndef BOOST_PREPROCESSOR_FACILITIES_EXPAND_HPP
+# define BOOST_PREPROCESSOR_FACILITIES_EXPAND_HPP
 #
 # include <boost/preprocessor/config/config.hpp>
-# include <boost/preprocessor/logical/bool.hpp>
-# include <boost/preprocessor/logical/compl.hpp>
 #
-# /* BOOST_PP_NOT */
-#
-# if ~BOOST_PP_CONFIG_FLAGS() & BOOST_PP_CONFIG_EDG()
-#    define BOOST_PP_NOT(x) BOOST_PP_COMPL(BOOST_PP_BOOL(x))
+# if ~BOOST_PP_CONFIG_FLAGS() & BOOST_PP_CONFIG_MWCC() && ~BOOST_PP_CONFIG_FLAGS() & BOOST_PP_CONFIG_DMC()
+#    define BOOST_PP_EXPAND(x) BOOST_PP_EXPAND_I(x)
 # else
-#    define BOOST_PP_NOT(x) BOOST_PP_NOT_I(x)
-#    define BOOST_PP_NOT_I(x) BOOST_PP_COMPL(BOOST_PP_BOOL(x))
+#    define BOOST_PP_EXPAND(x) BOOST_PP_EXPAND_OO((x))
+#    define BOOST_PP_EXPAND_OO(par) BOOST_PP_EXPAND_I ## par
 # endif
+#
+# define BOOST_PP_EXPAND_I(x) x
 #
 # endif
