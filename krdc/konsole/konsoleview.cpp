@@ -50,11 +50,7 @@ KonsoleView::KonsoleView(QWidget *parent, const KUrl &url, KConfigGroup configGr
     setFixedSize(size);
     emit framebufferSizeChanged(size.width(), size.height());
     
-    KPluginFactory* factory = 0;
-    KService::Ptr service = KService::serviceByDesktopName("konsolepart");
-    if (service) {
-        factory = KPluginLoader(service->library()).factory();
-    }
+    KPluginFactory* factory = KPluginLoader("konsolepart").factory();
     KParts::ReadOnlyPart* part = factory ? (factory->create<KParts::ReadOnlyPart>(this)) : 0;
     if (part != 0) {
 //         connect(part, SIGNAL(destroyed(QObject*)), this, SLOT(terminalExited()));
