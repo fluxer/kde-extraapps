@@ -34,8 +34,7 @@ target_link_libraries(dragon
     ${KDE4_KIO_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_PHONON_LIBS}
-    ${KDE4_SOLID_LIBS}
-    ${KDE4_PLASMA_LIBS} )
+    ${KDE4_SOLID_LIBS})
 
 install(TARGETS dragon ${INSTALL_TARGETS_DEFAULT_ARGS})
 
