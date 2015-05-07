@@ -21,7 +21,7 @@ include_directories(
    ${CMAKE_SOURCE_DIR}
 )
 
-add_subdirectory( active )
+add_subdirectory( plasma )
 add_subdirectory( ui )
 add_subdirectory( shell )
 add_subdirectory( generators )
