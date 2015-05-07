@@ -7,7 +7,7 @@
 # Mute
 #################################################################################
 
-usage
+usage()
 {
   echo "Usage:"
   echo "List mixers    #   $0 list"
@@ -18,16 +18,16 @@ usage
   echo 
 }
 
-exit_with_error
+exit_with_error()
 {
   echo "Error: $1"
-  echo 
+  echo
   usage
   exit 1
 }
 
 # Prints the mixer DBUS ID's on the console. leaving out the "/Mixers/" prefix
-listMixers
+listMixers()
 {
   qdbus org.kde.kmix /Mixers org.freedesktop.DBus.Properties.Get org.kde.KMix.MixSet mixers | cut -f3 -d/
   errorCode=$?
@@ -37,7 +37,7 @@ listMixers
 }
 
 # Prints the mixer control DBUS ID's of the given mixer on the console. leaving out the "/Mixers/" prefix
-listControls
+listControls()
 {
   qdbus org.kde.kmix $1 org.freedesktop.DBus.Properties.Get org.kde.KMix.Mixer controls  | cut -f4 -d/
   errorCode=$?
