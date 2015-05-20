@@ -509,7 +509,7 @@ Transfer * TransferTreeModel::findTransferByDBusObjectPath(const QString & dbusO
 void TransferTreeModel::postDataChangedEvent(TransferHandler * transfer)
 {
     if(m_timerId == -1)
-        m_timerId = startTimer(500);
+        m_timerId = startTimer(1000);
 
     m_changedTransfers.append(transfer);
 }
@@ -517,7 +517,7 @@ void TransferTreeModel::postDataChangedEvent(TransferHandler * transfer)
 void TransferTreeModel::postDataChangedEvent(TransferGroupHandler * group)
 {
     if(m_timerId == -1)
-        m_timerId = startTimer(500);
+        m_timerId = startTimer(1000);
 
     m_changedGroups.append(group);
 }
