@@ -27,7 +27,7 @@
 
 #include "kerfuffle/archiveinterface.h"
 
-#include <KDE/KDebug>
+#include <KDebug>
 
 #include <QtCore/QLatin1String>
 

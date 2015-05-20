@@ -42,9 +42,9 @@
 #include <kglobal.h>
 #include <kglobalsettings.h>
 #include <kwindowsystem.h>
-#include <KDE/KIcon>
-#include <KDE/KIconLoader>
-#include <KDE/KIconEffect>
+#include <KIcon>
+#include <KIconLoader>
+#include <KIconEffect>
 
 #include <plasma/plasma.h>
 #include <plasma/paintutils.h>

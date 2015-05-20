@@ -22,19 +22,19 @@
  */
 
 #include "recentdocuments.h"
-#include <KDE/KRecentDocument>
-#include <KDE/KDirWatch>
-#include <KDE/KGlobal>
-#include <KDE/KDesktopFile>
-#include <KDE/KConfigGroup>
-#include <KDE/KIcon>
-#include <KDE/KRun>
-#include <KDE/KStandardDirs>
-#include <KDE/KSycoca>
-#include <KDE/KDebug>
-#include <KDE/KServiceTypeTrader>
-#include <KDE/KService>
-#include <KDE/KMimeType>
+#include <KRecentDocument>
+#include <KDirWatch>
+#include <KGlobal>
+#include <KDesktopFile>
+#include <KConfigGroup>
+#include <KIcon>
+#include <KRun>
+#include <KStandardDirs>
+#include <KSycoca>
+#include <KDebug>
+#include <KServiceTypeTrader>
+#include <KService>
+#include <KMimeType>
 #include <QtXml/QDomDocument>
 #include <QtXml/QDomElement>
 #include <QtXml/QDomNode>

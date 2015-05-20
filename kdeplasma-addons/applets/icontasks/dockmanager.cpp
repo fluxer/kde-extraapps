@@ -29,11 +29,11 @@
 #include "tasks.h"
 #include "abstracttaskitem.h"
 #include "windowtaskitem.h"
-#include <KDE/KGlobal>
-#include <KDE/KStandardDirs>
-#include <KDE/KDirWatch>
-#include <KDE/KConfigDialog>
-#include <KDE/KDebug>
+#include <KGlobal>
+#include <KStandardDirs>
+#include <KDirWatch>
+#include <KConfigDialog>
+#include <KDebug>
 #include <QtCore/QDir>
 #include <QtCore/QTimer>
 #include <QtCore/QThread>

@@ -25,7 +25,7 @@
 #include "dockitemadaptor.h"
 #include "dockmanager.h"
 #include "abstracttaskitem.h"
-#include <KDE/KDesktopFile>
+#include <KDesktopFile>
 #include <QtGui/QAction>
 #include <QtGui/QMenu>
 #include <QtCore/QFile>

@@ -29,7 +29,7 @@
 #include <QtCore/QMap>
 #include <QtGui/QIcon>
 #include <QtDBus/QtDBus>
-#include <KDE/KUrl>
+#include <KUrl>
 
 class AbstractTaskItem;
 class QAction;

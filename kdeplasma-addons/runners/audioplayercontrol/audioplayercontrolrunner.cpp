@@ -27,11 +27,11 @@
 #include <QtDBus/QDBusPendingCallWatcher>
 #include <QtDBus/QDBusMessage>
 
-#include <KDE/KMessageBox>
-#include <KDE/KDebug>
-#include <KDE/KIcon>
-#include <KDE/KRun>
-#include <KDE/KUrl>
+#include <KMessageBox>
+#include <KDebug>
+#include <KIcon>
+#include <KRun>
+#include <KUrl>
 
 #include "audioplayercontrolconfigkeys.h"
 

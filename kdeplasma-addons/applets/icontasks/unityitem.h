@@ -31,7 +31,7 @@
 #include <QtCore/QVariant>
 #include <QtCore/QString>
 
-#include <KDE/KConfigGroup>
+#include <KConfigGroup>
 
 class AbstractTaskItem;
 class QTimer;

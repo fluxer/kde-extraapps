@@ -26,7 +26,7 @@
 // Own
 #include "taskmanager/taskmanager.h"
 #include "taskmanager/taskitem.h"
-#include <KDE/KUrl>
+#include <KUrl>
 
 /**
  * A task item for a task which represents a window on the desktop.

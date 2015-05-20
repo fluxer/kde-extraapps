@@ -27,7 +27,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QMap>
 #include <QtDBus/QtDBus>
-#include <KDE/KUrl>
+#include <KUrl>
 
 class AbstractTaskItem;
 class UnityItem;

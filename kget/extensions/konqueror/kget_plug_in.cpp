@@ -16,24 +16,24 @@
 
 #include "kget_interface.h"
 
-#include <KDE/KActionCollection>
-#include <KDE/KToggleAction>
-#include <KDE/KActionMenu>
-#include <KDE/KIconLoader>
-#include <KDE/KComponentData>
-#include <KDE/KLocale>
-#include <KDE/KMessageBox>
-#include <KDE/KMenu>
-#include <KDE/KRun>
-#include <KDE/KIcon>
-#include <KDE/KToolInvocation>
-#include <KDE/KPluginFactory>
-#include <KDE/KProtocolInfo>
-#include <KDE/KFileItem>
-#include <KDE/KParts/Part>
-#include <KDE/KParts/PartManager>
-#include <KDE/KParts/HtmlExtension>
-#include <KDE/KParts/FileInfoExtension>
+#include <KActionCollection>
+#include <KToggleAction>
+#include <KActionMenu>
+#include <KIconLoader>
+#include <KComponentData>
+#include <KLocale>
+#include <KMessageBox>
+#include <KMenu>
+#include <KRun>
+#include <KIcon>
+#include <KToolInvocation>
+#include <KPluginFactory>
+#include <KProtocolInfo>
+#include <KFileItem>
+#include <KParts/Part>
+#include <KParts/PartManager>
+#include <KParts/HtmlExtension>
+#include <KParts/FileInfoExtension>
 
 #include <QtDBus/QDBusConnection>
 

@@ -25,8 +25,8 @@
 #include <QtGui/QGraphicsScene>
 #include <QtGui/QGraphicsSceneResizeEvent>
 
-#include <KDE/KConfigDialog>
-#include <KDE/KWindowSystem>
+#include <KConfigDialog>
+#include <KWindowSystem>
 #include <kservice.h>
 #include <kservicetypetrader.h>
 

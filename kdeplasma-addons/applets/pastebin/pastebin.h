@@ -23,8 +23,8 @@
 
 #include "ui_pastebinConfig.h"
 
-#include <KDE/KIO/TransferJob>
-#include <KDE/KIO/Job>
+#include <KIO/TransferJob>
+#include <KIO/Job>
 
 #include <Plasma/Applet>
 #include <Plasma/Label>

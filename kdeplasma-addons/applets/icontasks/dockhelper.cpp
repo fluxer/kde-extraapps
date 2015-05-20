@@ -23,14 +23,14 @@
 
 #include "dockhelper.h"
 #include "dockmanager.h"
-#include <KDE/KConfig>
-#include <KDE/KConfigGroup>
+#include <KConfig>
+#include <KConfigGroup>
 #include <QtCore/QFile>
 #include <QtDBus/QDBusServiceWatcher>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusConnectionInterface>
-#include <KDE/KDebug>
-#include <KDE/KStandardDirs>
+#include <KDebug>
+#include <KStandardDirs>
 
 DockHelper::DockHelper(const QString &dir, const QString &fn)
     : m_fileName(fn)

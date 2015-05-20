@@ -30,8 +30,8 @@
     #define KUrl QUrl
     #define KRDCCORE_EXPORT
 #else
-    #include <KDE/KUrl>
-    #include <KDE/KWallet/Wallet>
+    #include <KUrl>
+    #include <KWallet/Wallet>
     #include <krdc_export.h>
 #endif
 

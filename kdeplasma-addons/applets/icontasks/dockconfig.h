@@ -25,7 +25,7 @@
 #define __DOCKCONFIG_H__
 
 #include "ui_dockconfig.h"
-#include <KDE/KWidgetItemDelegate>
+#include <KWidgetItemDelegate>
 #include <QtGui/QWidget>
 #include <QtGui/QIcon>
 #include <QtCore/QSet>

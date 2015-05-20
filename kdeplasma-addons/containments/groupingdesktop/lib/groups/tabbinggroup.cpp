@@ -25,8 +25,8 @@
 #include <QtGui/QGraphicsSceneDragDropEvent>
 #include <QtCore/QTimer>
 
-#include <KDE/KConfigDialog>
-#include <KDE/KPushButton>
+#include <KConfigDialog>
+#include <KPushButton>
 
 #include <Plasma/TabBar>
 #include <Plasma/PushButton>

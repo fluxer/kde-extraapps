@@ -33,7 +33,7 @@
 #include <Plasma/ToolTipManager>
 #include <Plasma/ToolTipContent>
 
-#include <KDE/KConfigDialog>
+#include <KConfigDialog>
 
 #include <KDebug>
 

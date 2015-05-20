@@ -28,7 +28,7 @@
 
 #include <kmimetype.h>
 #include <KTemporaryFile>
-#include <KDE/KIO/MimetypeJob>
+#include <KIO/MimetypeJob>
 #include <KDebug>
 
 #include <kio/global.h>

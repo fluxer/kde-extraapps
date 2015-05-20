@@ -27,10 +27,10 @@
 #include "abstracttaskitem.h"
 #include <QtCore/QTimer>
 #include <QtDBus/QDBusServiceWatcher>
-#include <KDE/KGlobal>
-#include <KDE/KSycoca>
-#include <KDE/OrgKdeKLauncherInterface>
-#include <KDE/KDebug>
+#include <KGlobal>
+#include <KSycoca>
+#include <OrgKdeKLauncherInterface>
+#include <KDebug>
 
 static const QString constDbusService = "com.canonical.Unity";
 static const QString constDbusObject = "/Unity";

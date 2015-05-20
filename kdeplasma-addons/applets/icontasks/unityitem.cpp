@@ -27,9 +27,9 @@
 #include <QtCore/QTimer>
 #include <QtGui/QAction>
 #include <QtGui/QMenu>
-#include <KDE/KDesktopFile>
-#include <KDE/KRun>
-#include <KDE/KIcon>
+#include <KDesktopFile>
+#include <KRun>
+#include <KIcon>
 #include <dbusmenuimporter.h>
 
 UnityItem::UnityItem(const QString &i, const QString &desktopFile)
