@@ -24,8 +24,8 @@
 #include <QKeyEvent>
 #include <QHash>
 
-#  include <KDE/KTextEdit>
-#  define MultiLineEditParent KTextEdit
+#include <KTextEdit>
+#define MultiLineEditParent KTextEdit
 
 class QKeyEvent;
 class TabCompleter;
