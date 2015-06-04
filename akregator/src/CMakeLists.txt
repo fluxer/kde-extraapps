@@ -4,7 +4,6 @@ add_subdirectory(about)
 add_subdirectory(icons)
 
 include_directories(
-  ${Boost_INCLUDE_DIR}
   ${PROJECT_SOURCE_DIR}/interfaces
   ${PROJECT_BINARY_DIR}/interfaces
 )

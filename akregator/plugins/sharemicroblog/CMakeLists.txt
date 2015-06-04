@@ -6,7 +6,6 @@ include_directories(
   ${QT_INCLUDES}
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${Boost_INCLUDE_DIRS}
 )
 
 set(akregator_sharemicroblog_plugin_SRCS sharemicroblogplugin.cpp)

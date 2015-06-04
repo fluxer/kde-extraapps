@@ -15,7 +15,6 @@ macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delt
 
 macro_optional_find_package(KdepimLibs)
 macro_log_feature(KDEPIMLIBS_FOUND "kdepimlibs" "KDE PIM libraries" "http://www.kde.org" FALSE "" "Needed for building several Plasma plugins")
-find_package(Boost)
 
 set(LIBATTICA_MIN_VERSION "0.1.1")
 macro_optional_find_package(LibAttica)

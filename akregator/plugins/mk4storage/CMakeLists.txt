@@ -7,7 +7,6 @@ include_directories(
   ${PROJECT_BINARY_DIR}
   ${KDE4_INCLUDE_DIR}
   ${QT_INCLUDES}
-  ${Boost_INCLUDE_DIR}
 )
 
 set(libmetakitlocal_SRCS
