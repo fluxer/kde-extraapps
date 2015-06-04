@@ -108,7 +108,7 @@
     <!-- contactProperties is an experimental method that might be removed before KDE 4.2 --> 
     <method name="contactProperties">
       <arg type="a{sv}" direction="out"/>
-      <annotation name="com.trolltech.QtDBus.QtTypeName.Out0" value="QVariantMap"/>
+      <annotation name="org.qtproject.QtTypeName.Out0" value="QVariantMap"/>
       <arg name="contactId" type="s" direction="in"/>
     </method>
     <!-- contactChanged is an experimental signal that might be removed before KDE 4.2 --> 
