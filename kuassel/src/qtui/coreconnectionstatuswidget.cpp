@@ -63,7 +63,7 @@ void CoreConnectionStatusWidget::update()
 void CoreConnectionStatusWidget::updateLag(int msecs)
 {
     if (msecs >= 0) {
-        QString unit = msecs >= 100 ? i18n("s", "seconds") : i18n("ms", "milliseconds");
+        QString unit = msecs >= 100 ? i18n("seconds") : i18n("milliseconds");
         ui.lagLabel->setText(i18n("(Lag: %1 %2)").arg(msecs >= 100 ? msecs / 1000. : msecs, 0, 'f', (int)(msecs >= 100)).arg(unit));
         if (!ui.lagLabel->isVisible())
             ui.lagLabel->show();

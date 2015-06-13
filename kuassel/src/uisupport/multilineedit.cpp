@@ -701,7 +701,7 @@ void MultiLineEdit::on_textChanged()
             clear();
 
             if (lines.count() >= 4) {
-                QString msg = i18n("Do you really want to paste %n line(s)?", "", lines.count());
+                QString msg = i18n("Do you really want to paste %n line(s)?", lines.count());
                 msg += "<p>";
                 for (int i = 0; i < 4; i++) {
 #if QT_VERSION < 0x050000
