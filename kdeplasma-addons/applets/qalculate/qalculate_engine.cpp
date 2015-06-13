@@ -32,6 +32,7 @@
 #include <QClipboard>
 #include <QString>
 
+#include <KDebug>
 #include <KLocale>
 #include <KIO/Job>
 #include <KIO/NetAccess>
