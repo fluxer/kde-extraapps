@@ -34,7 +34,7 @@ static const char version[] = "0.7.2";
 
 void findLoginWindow()
 {
-	unsigned int numkids, i,mapped,scrn;
+	unsigned int numkids, i, scrn;
 	Window r, p;
 	Window *kids=0;
 	//XWindowAttributes attr;
@@ -48,7 +48,6 @@ void findLoginWindow()
 	scrn = DefaultScreen(dipsy);
 	root = RootWindow(dipsy, scrn);
 	
-	mapped = 0;
 	XQueryTree(dipsy, root, &r, &p, &kids, &numkids);
 		
 
