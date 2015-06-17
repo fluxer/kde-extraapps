@@ -91,7 +91,7 @@ if (PULSEAUDIO_FOUND)
       backends/mixer_pulse.cpp )
 endif (PULSEAUDIO_FOUND)
 
-set(kmix_KDEINIT_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
+set(kmix_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
    apps/main.cpp 
    apps/kmix.cpp 
    apps/KMixApp.cpp
@@ -129,26 +129,24 @@ set(kmix_KDEINIT_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
    core/volume.cpp
    )
 
-kde4_add_kdeinit_executable( kmix ${kmix_KDEINIT_SRCS})
+kde4_add_executable( kmix ${kmix_SRCS})
 
-target_link_libraries(kdeinit_kmix ${KDE4_SOLID_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
-#target_link_libraries(kdeinit_kmix ${KDE4_KUTILS_LIBS} /home/kde/workspace/kdelibs/build/lib/libsolid.so.4.7.0 ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${QT_QTXML_LIBRARY})
+target_link_libraries(kmix ${KDE4_SOLID_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
 if (HAVE_LIBASOUND2)
-    target_link_libraries(kdeinit_kmix ${ASOUND_LIBRARY})
+    target_link_libraries(kmix ${ASOUND_LIBRARY})
 endif (HAVE_LIBASOUND2)
 
 if (PULSEAUDIO_FOUND)
-    target_link_libraries(kdeinit_kmix ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
+    target_link_libraries(kmix ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
 endif (PULSEAUDIO_FOUND)
 
 if (CANBERRA_FOUND)
-  target_link_libraries(kdeinit_kmix ${CANBERRA_LIBRARIES})
+  target_link_libraries(kmix ${CANBERRA_LIBRARIES})
 endif (CANBERRA_FOUND)
 
-install(TARGETS kdeinit_kmix  DESTINATION ${LIB_INSTALL_DIR} )
+install(TARGETS kmix  DESTINATION ${LIB_INSTALL_DIR} )
 
-target_link_libraries( kmix kdeinit_kmix )
 install(TARGETS kmix  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### next target ###############
@@ -196,7 +194,7 @@ install( FILES kmixd.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/kded )
 
 ########### next target ###############
 
-set(kmixctrl_KDEINIT_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
+set(kmixctrl_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
    apps/kmixctrl.cpp 
    core/ControlManager.cpp
 #   core/ControlPool.cpp
@@ -214,28 +212,27 @@ set(kmixctrl_KDEINIT_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
 # gui/guiprofile.cpp
 
 
-kde4_add_kdeinit_executable( kmixctrl ${kmixctrl_KDEINIT_SRCS})
+kde4_add_executable( kmixctrl ${kmixctrl_SRCS})
 
-target_link_libraries(kdeinit_kmixctrl ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
+target_link_libraries(kmixctrl ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
 if (HAVE_LIBASOUND2)
-    target_link_libraries(kdeinit_kmixctrl ${ASOUND_LIBRARY})
+    target_link_libraries(kmixctrl ${ASOUND_LIBRARY})
 endif (HAVE_LIBASOUND2)
 
 if (PULSEAUDIO_FOUND)
-    target_link_libraries(kdeinit_kmixctrl ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
+    target_link_libraries(kmixctrl ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
 endif (PULSEAUDIO_FOUND)
 
 if (CANBERRA_FOUND)
-  target_link_libraries(kdeinit_kmixctrl ${CANBERRA_LIBRARIES})
+  target_link_libraries(kmixctrl ${CANBERRA_LIBRARIES})
 endif (CANBERRA_FOUND)
 
 ########### next target ###############
 add_subdirectory( plasma )
 
-install( TARGETS kdeinit_kmixctrl  DESTINATION ${LIB_INSTALL_DIR} )
+install( TARGETS kmixctrl  DESTINATION ${LIB_INSTALL_DIR} )
 
-target_link_libraries( kmixctrl kdeinit_kmixctrl )
 install( TARGETS kmixctrl ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 install( PROGRAMS kmix.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )

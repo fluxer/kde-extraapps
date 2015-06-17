@@ -36,7 +36,7 @@
 static const char description[] =
 I18N_NOOP("kmixctrl - kmix volume save/restore utility");
 
-extern "C" KDE_EXPORT int kdemain(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
    KLocale::setMainCatalog("kmix");
    KAboutData aboutData( "kmixctrl", 0, ki18n("KMixCtrl"),

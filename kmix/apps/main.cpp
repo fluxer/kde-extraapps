@@ -32,7 +32,7 @@
 static const char description[] =
 I18N_NOOP("KMix - KDE's full featured mini mixer");
 
-extern "C" KDE_EXPORT int kdemain(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
    KAboutData aboutData( "kmix", 0, ki18n("KMix"),
                          APP_VERSION, ki18n(description), KAboutData::License_GPL,

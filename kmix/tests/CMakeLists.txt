@@ -35,11 +35,10 @@ if (PULSEAUDIO_FOUND)
 endif (PULSEAUDIO_FOUND)
 
 ########### next target ###############
-set(dialogtest_KDEINIT_SRCS dialogtest.cpp )
+set(dialogtest_SRCS dialogtest.cpp )
 
-kde4_add_kdeinit_executable( dialogtest ${dialogtest_KDEINIT_SRCS}
-    )
+kde4_add_executable( dialogtest ${dialogtest_SRCS} )
     
-target_link_libraries(kdeinit_dialogtest  ${KDE4_KDEUI_LIBS} )
+target_link_libraries(dialogtest  ${KDE4_KDEUI_LIBS} )
 
 
