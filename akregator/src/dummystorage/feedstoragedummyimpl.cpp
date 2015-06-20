@@ -82,11 +82,6 @@ class FeedStorageDummyImpl::FeedStorageDummyImplPrivate
     QString url;
 };
 
-
-void FeedStorageDummyImpl::convertOldArchive()
-{
-}
-
 FeedStorageDummyImpl::FeedStorageDummyImpl(const QString& url, StorageDummyImpl* main) : d(new FeedStorageDummyImplPrivate)
 {
     d->url = url;

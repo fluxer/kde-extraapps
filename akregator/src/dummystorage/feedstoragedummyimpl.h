@@ -100,7 +100,6 @@ class FeedStorageDummyImpl : public FeedStorage
         virtual void commit();
         virtual void rollback();
 
-        virtual void convertOldArchive();
    private:
         /** finds article by guid, returns -1 if not in archive **/
         int findArticle(const QString& guid) const;

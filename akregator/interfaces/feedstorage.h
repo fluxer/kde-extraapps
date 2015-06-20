@@ -142,8 +142,6 @@ class FeedStorage : public QObject //krazy:exclude=qobject
         virtual void close() = 0;
         virtual void commit() = 0;
         virtual void rollback() = 0;
-
-        virtual void convertOldArchive() = 0;
 };
 
 } // namespace Backend

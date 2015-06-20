@@ -100,7 +100,6 @@ class FeedStorageMK4Impl : public FeedStorage
         void commit();
         void rollback();
 
-        void convertOldArchive();
    private:
         void markDirty();
         /** finds article by guid, returns -1 if not in archive **/
