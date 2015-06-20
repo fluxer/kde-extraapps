@@ -1,5 +1,5 @@
 // header.h --
-// $Id: header.h 1258 2007-03-09 16:48:38Z jcw $
+// $Id$
 // This is part of Metakit, the homepage is http://www.equi4.com/metakit.html
 
 /** @file
@@ -11,8 +11,8 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-#include <config-akregator.h>
-
+#include <config-metakit.h>
+#include <stdint.h>
 /////////////////////////////////////////////////////////////////////////////
 // A number of preprocessor options are used in the source code
 //
@@ -137,13 +137,8 @@ defined(_AIX) || defined(__hpux)
 extern void f4_memmove(void *d, const void *s, int n);
 #endif 
 
-typedef unsigned char t4_byte; // create typedefs for t4_byte, etc.
-
-#if SIZEOF_LONG == 8
-typedef int t4_i32; // longs are 64b, so int must be 32b
-#else 
-typedef long t4_i32; // longs aren't 64b, so they are 32b
-#endif 
+typedef uint8_t t4_byte; // create typedefs for t4_byte, etc.
+typedef int32_t t4_i32; // longs are 64b, so int must be 32b
 
 /////////////////////////////////////////////////////////////////////////////
 // Include header files which contain additional os/cpu/ide/fw specifics
