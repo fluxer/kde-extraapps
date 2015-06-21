@@ -30,12 +30,6 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
-
-add_custom_target(  
-    package
-    COMMAND ./build-package.sh
-)
-
 ##
 # To specify a different install prefix, use :
 # cmake -D CMAKE_INSTALL_PREFIX=build .
