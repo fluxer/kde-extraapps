@@ -53,7 +53,7 @@ set(libknumber_la_SRCS
 add_subdirectory( knumber )
 # add_subdirectory( tests )
 
-set(kcalc_KDEINIT_SRCS ${libknumber_la_SRCS}
+set(kcalc_SRCS ${libknumber_la_SRCS}
    kcalc.cpp 
    bitbutton.cpp
    kcalc_bitset.cpp
@@ -64,24 +64,21 @@ set(kcalc_KDEINIT_SRCS ${libknumber_la_SRCS}
    kcalcdisplay.cpp 
    stats.cpp )
 
-kde4_add_ui_files(kcalc_KDEINIT_SRCS
+kde4_add_ui_files(kcalc_SRCS
    kcalc.ui
    constants.ui
    colors.ui
    fonts.ui
    general.ui)
 
-kde4_add_kcfg_files(kcalc_KDEINIT_SRCS kcalc_settings.kcfgc )
+kde4_add_kcfg_files(kcalc_SRCS kcalc_settings.kcfgc )
 
-kde4_add_app_icon(kcalc_KDEINIT_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/apps/accessories-calculator.png")
+kde4_add_app_icon(kcalc_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/apps/accessories-calculator.png")
 
-kde4_add_kdeinit_executable( kcalc ${kcalc_KDEINIT_SRCS})
+kde4_add_executable( kcalc ${kcalc_SRCS})
 
-target_link_libraries(kdeinit_kcalc ${QT_QTXML_LIBRARY} ${KDE4_KDEUI_LIBS} ${GMP_LIBRARIES} ${MPFR_LIBRARIES})
+target_link_libraries(kcalc ${QT_QTXML_LIBRARY} ${KDE4_KDEUI_LIBS} ${GMP_LIBRARIES} ${MPFR_LIBRARIES})
 
-install(TARGETS kdeinit_kcalc ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-target_link_libraries( kcalc kdeinit_kcalc )
 install(TARGETS kcalc  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############

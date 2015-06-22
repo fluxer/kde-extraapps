@@ -2279,7 +2279,7 @@ bool KCalculator::eventFilter(QObject *o, QEvent *e) {
 // Name: kdemain
 // Desc: entry point of the application
 //------------------------------------------------------------------------------
-extern "C" KDE_EXPORT int kdemain(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
 	KAboutData aboutData("kcalc",
 		0,
