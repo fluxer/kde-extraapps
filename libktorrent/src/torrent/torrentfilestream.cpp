@@ -112,7 +112,7 @@ namespace bt
 		if (d->opened)
 			return true;
 	
-		QIODevice::open(mode|QIODevice::Unbuffered);
+		QIODevice::open(mode);
 		d->opened = true;
 		return true;
 	}
