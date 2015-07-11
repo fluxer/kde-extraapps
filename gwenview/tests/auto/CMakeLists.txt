@@ -3,7 +3,6 @@ macro(gv_add_unit_test _test)
     qt4_automoc(${_src})
     kde4_add_unit_test(${_test} ${_src})
     target_link_libraries(${_test}
-        ${BALOO_LIBRARIES}
         ${KDE4_KIO_LIBS}
         ${KDE4_KDEUI_LIBS}
         ${KDE4_KDECORE_LIBS}

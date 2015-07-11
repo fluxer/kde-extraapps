@@ -47,13 +47,6 @@ include_directories(
     ${KDCRAW_INCLUDE_DIR}
     )
 
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    include_directories(
-        ${BALOO_INCLUDE_DIR}
-        ${KFILEMETADATA_INCLUDE_DIR}
-        )
-endif()
-
 ## dirs to build
 add_subdirectory(lib)
 add_subdirectory(app)

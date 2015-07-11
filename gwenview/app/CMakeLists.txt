@@ -2,7 +2,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${EXIV2_INCLUDE_DIR}
     ${LIBKONQ_INCLUDE_DIR}
-    ${KACTIVITIES_INCLUDE_DIRS}
     )
 
 if (KIPI_FOUND)
@@ -62,23 +61,18 @@ kde4_add_app_icon(gwenview_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-g
 
 kde4_add_executable(gwenview ${gwenview_SRCS})
 
-target_link_libraries(gwenview
+target_link_libraries(gwenview PRIVATE
     ${KDE4_KFILE_LIBS}
     gwenviewlib
     ${KDE4_KIO_LIBS}
     ${LIBKONQ_LIBRARY}
     ${QT_QTCORE_LIBRARY}
-    ${KACTIVITIES_LIBRARIES}
     )
 
-target_link_libraries(gwenview LINK_INTERFACE_LIBRARIES ${KDE4_KIO_LIBS} ${QT_QTCORE_LIBRARY})
+target_link_libraries(gwenview PUBLIC ${KDE4_KIO_LIBS} ${QT_QTCORE_LIBRARY})
 
 if (KIPI_FOUND)
-    target_link_libraries(gwenview ${KIPI_LIBRARIES})
-endif()
-
-if (NOT GWENVIEW_SEMANTICINFO_BACKEND_NONE)
-    target_link_libraries(gwenview ${BALOO_LIBRARIES})
+    target_link_libraries(gwenview PRIVATE ${KIPI_LIBRARIES})
 endif()
 
 install(TARGETS gwenview

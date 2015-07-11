@@ -67,7 +67,7 @@ public slots:
     virtual void showContextMenu(const QPoint& pos = QCursor::pos());
 
 signals:
-    virtual void guiVisibilityChange(MixDeviceWidget* source, bool enable);
+    void guiVisibilityChange(MixDeviceWidget* source, bool enable);
 
 private:
     void createWidgets();

@@ -17,8 +17,8 @@ set(comic_provider_core_SRCS
 )
 
 kde4_add_library( plasmacomicprovidercore SHARED ${comic_provider_core_SRCS} )
-target_link_libraries( plasmacomicprovidercore ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KROSSCORE_LIBS} )
-target_link_libraries( plasmacomicprovidercore LINK_INTERFACE_LIBRARIES ${KDE4_KDECORE_LIBS})
+target_link_libraries( plasmacomicprovidercore PRIVATE ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KROSSCORE_LIBS} )
+target_link_libraries( plasmacomicprovidercore PUBLIC ${KDE4_KDECORE_LIBS})
 set_target_properties(
    plasmacomicprovidercore PROPERTIES VERSION 1.0.0 SOVERSION 1
 )

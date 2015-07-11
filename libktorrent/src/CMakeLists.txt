@@ -219,9 +219,9 @@ set(libktorrent_SRC
 # kde4_add_kcfg_files(libktorrent_SRC settings.kcfgc)
 kde4_add_library(ktorrent SHARED ${libktorrent_SRC})
 
-target_link_libraries(ktorrent ${KDE4_KIO_LIBS} ${GMP_LIBRARIES} ${KDE4_SOLID_LIBS} ${LIBGCRYPT_LIBRARIES} ${QCA2_LIBRARIES})
+target_link_libraries(ktorrent PRIVATE ${KDE4_KIO_LIBS} ${GMP_LIBRARIES} ${KDE4_SOLID_LIBS} ${LIBGCRYPT_LIBRARIES} ${QCA2_LIBRARIES})
+target_link_libraries(ktorrent PUBLIC ${KDE4_KDEUI_LIBS})
 set_target_properties(ktorrent PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
-set_target_properties(ktorrent PROPERTIES LINK_INTERFACE_LIBRARIES ${KDE4_KDEUI_LIBS})
 install(TARGETS ktorrent  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 

@@ -58,7 +58,6 @@ target_link_libraries(akregatorprivate
   akregatorinterfaces
   syndication
 )
-target_link_libraries(akregatorprivate LINK_INTERFACE_LIBRARIES ${KDE4_KHTML_LIBS})
 
 set_target_properties(akregatorprivate
   PROPERTIES VERSION ${GENERIC_LIB_VERSION}

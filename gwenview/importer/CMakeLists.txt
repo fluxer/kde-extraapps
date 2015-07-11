@@ -35,7 +35,7 @@ kde4_add_kcfg_files(importer_SRCS
 
 kde4_add_executable(gwenview_importer ${importer_SRCS})
 
-target_link_libraries(gwenview_importer
+target_link_libraries(gwenview_importer PRIVATE
     ${KDE4_KFILE_LIBS}
     gwenviewlib
     ${KDE4_KIO_LIBS}
@@ -43,8 +43,7 @@ target_link_libraries(gwenview_importer
     ${QT_QTCORE_LIBRARY}
     )
 
-target_link_libraries(gwenview_importer
-    LINK_INTERFACE_LIBRARIES
+target_link_libraries(gwenview_importer PUBLIC
     ${KDE4_KIO_LIBS}
     ${KDE4_SOLID_LIBS}
     ${QT_QTCORE_LIBRARY}
