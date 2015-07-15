@@ -55,11 +55,7 @@ void KNotificationBackend::notify(const Notification &n)
         type = "PrivMsgFocused"; break;
     }
 
-#if QT_VERSION < 0x050000
     QString message = QString("<b>&lt;%1&gt;</b> %2").arg(n.sender, Qt::escape(n.message));
-#else
-    QString message = QString("<b>&lt;%1&gt;</b> %2").arg(n.sender, n.message.toHtmlEscaped());
-#endif
     KNotification *notification = KNotification::event(type, message, KIcon("dialog-information").pixmap(48), QtUi::mainWindow(),
         KNotification::RaiseWidgetOnActivation
         |KNotification::CloseWhenWidgetActivated

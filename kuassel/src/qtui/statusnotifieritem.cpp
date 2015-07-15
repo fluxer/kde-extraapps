@@ -52,14 +52,10 @@ protected:
     virtual QString iconNameForAction(QAction *action) // TODO Qt 4.7: fixme when we have converted our iconloader
     {
         QIcon icon(action->icon());
-#if QT_VERSION >= 0x040701
         // QIcon::name() is in the 4.7 git branch, but it is not in 4.7 TP.
         // If you get a build error here, you need to update your pre-release
         // of Qt 4.7.
         return icon.isNull() ? QString() : icon.name();
-#else
-        return QString();
-#endif
     }
 };
 
@@ -308,11 +304,7 @@ void StatusNotifierItem::showMessage(const QString &title, const QString &messag
     QString message = message_;
     if (_notificationsClient->isValid()) {
         if (_notificationsClientSupportsMarkup)
-#if QT_VERSION < 0x050000
             message = Qt::escape(message);
-#else
-            message = message.toHtmlEscaped();
-#endif
 
         QStringList actions;
         if (_notificationsClientSupportsActions)

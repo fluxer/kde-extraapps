@@ -115,19 +115,11 @@ void TopicWidget::setTopic(const QModelIndex &index)
         switch (Client::networkModel()->bufferType(id)) {
         case BufferInfo::StatusBuffer:
             if (network) {
-#if QT_VERSION < 0x050000
                 newtopic = QString("%1 (%2) | %3 | %4")
                            .arg(Qt::escape(network->networkName()))
                            .arg(Qt::escape(network->currentServer()))
                            .arg(i18n("Users: %1").arg(network->ircUsers().count()))
                            .arg(i18n("Lag: %1 msecs").arg(network->latency()));
-#else
-                newtopic = QString("%1 (%2) | %3 | %4")
-                           .arg(network->networkName().toHtmlEscaped())
-                           .arg(network->currentServer().toHtmlEscaped())
-                           .arg(i18n("Users: %1").arg(network->ircUsers().count()))
-                           .arg(i18n("Lag: %1 msecs").arg(network->latency()));
-#endif
             }
             else {
                 newtopic = index0.data(Qt::DisplayRole).toString();

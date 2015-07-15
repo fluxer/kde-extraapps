@@ -87,20 +87,12 @@ void SslInfoDlg::setCurrentCert(int index)
 // in Qt5, subjectInfo returns a QStringList(); turn this into a comma-separated string instead
 QString SslInfoDlg::subjectInfo(const QSslCertificate &cert, QSslCertificate::SubjectInfo subjectInfo) const
 {
-#if QT_VERSION < 0x050000
     return cert.subjectInfo(subjectInfo);
-#else
-    return cert.subjectInfo(subjectInfo).join(", ");
-#endif
 }
 
 
 // same here
 QString SslInfoDlg::issuerInfo(const QSslCertificate &cert, QSslCertificate::SubjectInfo subjectInfo) const
 {
-#if QT_VERSION < 0x050000
     return cert.issuerInfo(subjectInfo);
-#else
-    return cert.issuerInfo(subjectInfo).join(", ");
-#endif
 }

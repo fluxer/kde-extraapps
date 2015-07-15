@@ -58,11 +58,7 @@ QTcpSocket *SslServer::nextPendingConnection()
         return _pendingConnections.takeFirst();
 }
 
-#if QT_VERSION >= 0x050000
-void SslServer::incomingConnection(qintptr socketDescriptor)
-#else
 void SslServer::incomingConnection(int socketDescriptor)
-#endif
 {
     QSslSocket *serverSocket = new QSslSocket(this);
     if (serverSocket->setSocketDescriptor(socketDescriptor)) {
@@ -135,11 +131,7 @@ bool SslServer::setCertificate(const QString &path)
         kWarning(300000) << "SslServer: Certificate expired on" << _cert.expiryDate().toString();
 
     else { // Qt4's isValid() checks for time range and blacklist; avoid a double warning, hence the else block
-#if QT_VERSION < 0x050000
         if (!_cert.isValid())
-#else
-        if (_cert.isBlacklisted())
-#endif
             kWarning(300000) << "SslServer: Certificate blacklisted";
     }
     if (_key.isNull()) {

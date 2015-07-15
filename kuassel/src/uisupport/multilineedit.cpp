@@ -43,9 +43,7 @@ MultiLineEdit::MultiLineEdit(QWidget *parent)
     _emacsMode(false),
     _lastDocumentHeight(-1)
 {
-#if QT_VERSION >= 0x040500
     document()->setDocumentMargin(0); // new in Qt 4.5 and we really don't want it here
-#endif
 
     setAcceptRichText(false);
     enableFindReplace(false);
@@ -291,12 +289,7 @@ bool MultiLineEdit::event(QEvent *e)
 void MultiLineEdit::keyPressEvent(QKeyEvent *event)
 {
     // Workaround the fact that Qt < 4.5 doesn't know InsertLineSeparator yet
-#if QT_VERSION >= 0x040500
     if (event == QKeySequence::InsertLineSeparator) {
-#else
-
-    if ((event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) && event->modifiers() & Qt::SHIFT) {
-#endif
 
         if (_mode == SingleLine) {
             event->accept();
@@ -704,11 +697,7 @@ void MultiLineEdit::on_textChanged()
                 QString msg = i18n("Do you really want to paste %n line(s)?", lines.count());
                 msg += "<p>";
                 for (int i = 0; i < 4; i++) {
-#if QT_VERSION < 0x050000
                     msg += Qt::escape(lines[i].left(40));
-#else
-                    msg += lines[i].left(40).toHtmlEscaped();
-#endif
                     if (lines[i].count() > 40)
                         msg += "...";
                     msg += "<br />";
