@@ -98,35 +98,15 @@ namespace {
         QDomElement body = doc.createElement( "body" );
         root.appendChild(body);
 
+        // KDE feeds
         QDomElement mainFolder = doc.createElement( "outline" );
         mainFolder.setAttribute("text","KDE");
         body.appendChild(mainFolder);
-
-        /*
-        // NOTE: If these feeds ever get updated again, reenable them.
-        //       For now I (Bertjan, July 2010) just disable them to
-        //       make the default feeds non-embarassing (these are
-        //       still updated regularly.
-        QDomElement ak = doc.createElement( "outline" );
-        ak.setAttribute("text",i18n("Akregator News"));
-        ak.setAttribute("xmlUrl","http://akregator.sf.net/rss2.php");
-        mainFolder.appendChild(ak);
-
-        QDomElement akb = doc.createElement( "outline" );
-        akb.setAttribute("text",i18n("Akregator Blog"));
-        akb.setAttribute("xmlUrl","http://akregator.pwsp.net/blog/?feed=rss2");
-        mainFolder.appendChild(akb);
-        */
 
         QDomElement dot = doc.createElement( "outline" );
         dot.setAttribute("text",i18n("KDE Dot News"));
         dot.setAttribute("xmlUrl","http://www.kde.org/dotkdeorg.rdf");
         mainFolder.appendChild(dot);
-
-        QDomElement linuxFeeds = doc.createElement( "outline" );
-        linuxFeeds.setAttribute("text",i18n("Linux.com"));
-        linuxFeeds.setAttribute("xmlUrl","https://www.linux.com/rss/feeds.php");
-        mainFolder.appendChild(linuxFeeds);
 
         QDomElement planetkde = doc.createElement( "outline" );
         planetkde.setAttribute("text",i18n("Planet KDE"));
@@ -143,25 +123,15 @@ namespace {
         look.setAttribute("xmlUrl","http://www.kde.org/kde-look-content.rdf");
         mainFolder.appendChild(look);
 
-        // hungarian feed(s)
-        QDomElement hungarianFolder = doc.createElement( "outline" );
-        hungarianFolder.setAttribute("text",i18n("Hungarian feeds"));
-        mainFolder.appendChild(hungarianFolder);
+        // Linux feeds
+        QDomElement linuxFolder = doc.createElement( "outline" );
+        linuxFolder.setAttribute("text","Linux");
+        body.appendChild(linuxFolder);
 
-        QDomElement hungarianKde = doc.createElement( "outline" );
-        hungarianKde.setAttribute("text",i18n("KDE.HU"));
-        hungarianKde.setAttribute("xmlUrl","http://kde.hu/rss.xml");
-        hungarianFolder.appendChild(hungarianKde);
-
-        // spanish feed(s)
-        QDomElement spanishFolder = doc.createElement( "outline" );
-        spanishFolder.setAttribute("text",i18n("Spanish feeds"));
-        mainFolder.appendChild(spanishFolder);
-
-        QDomElement spanishKde = doc.createElement( "outline" );
-        spanishKde.setAttribute("text",i18n("Planet KDE España"));
-        spanishKde.setAttribute("xmlUrl","http://planet.kde-espana.es/");
-        spanishFolder.appendChild(spanishKde);
+        QDomElement linuxFeeds = doc.createElement( "outline" );
+        linuxFeeds.setAttribute("text",i18n("Linux.com"));
+        linuxFeeds.setAttribute("xmlUrl","https://www.linux.com/rss/feeds.php");
+        linuxFolder.appendChild(linuxFeeds);
 
         return doc;
     }
