@@ -29,7 +29,6 @@
 #include <KIcon>
 #include <KPluginFactory>
 #include <KPluginLoader>
-
 #include <KDebug>
 #include <KProcess>
 #include <KLocalizedString>
@@ -38,7 +37,7 @@ K_PLUGIN_FACTORY(SendFileItemActionFactory, registerPlugin<SendFileItemAction>()
 K_EXPORT_PLUGIN(SendFileItemActionFactory("SendFileItemAction", "bluedevil"))
 
 SendFileItemAction::SendFileItemAction(QObject *parent, const QVariantList &args)
-    : KFileItemActionPlugin(parent)
+    : KAbstractFileItemActionPlugin(parent)
 {
     Q_UNUSED(args)
 
@@ -49,7 +48,7 @@ SendFileItemAction::SendFileItemAction(QObject *parent, const QVariantList &args
                                      QDBusConnection::sessionBus(), this);
 }
 
-QList<QAction*> SendFileItemAction::actions(const KFileItemListProperties &fileItemInfos, QWidget *parentWidget) const
+QList<QAction*> SendFileItemAction::actions(const KFileItemListProperties &fileItemInfos, QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget)
 

@@ -21,7 +21,7 @@
 #ifndef SENDFILEITEMACTION_H
 #define SENDFILEITEMACTION_H
 
-#include <kfileitemactionplugin.h>
+#include <kabstractfileitemactionplugin.h>
 #include <KFileItemListProperties>
 
 #include "kded_bluedevil.h"
@@ -30,12 +30,12 @@ class QAction;
 class KFileItemListProperties;
 class QWidget;
 
-class SendFileItemAction : public KFileItemActionPlugin
+class SendFileItemAction : public KAbstractFileItemActionPlugin
 {
     Q_OBJECT
 public:
     SendFileItemAction(QObject* parent, const QVariantList &args);
-    virtual QList<QAction*> actions(const KFileItemListProperties &fileItemInfos, QWidget *parentWidget) const;
+    virtual QList<QAction*> actions(const KFileItemListProperties &fileItemInfos, QWidget *parentWidget);
 
 private Q_SLOTS:
     void deviceTriggered();
