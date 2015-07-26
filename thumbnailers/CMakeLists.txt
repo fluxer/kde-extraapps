@@ -30,4 +30,3 @@ if(GETTEXTPO_FOUND)
     macro_optional_add_subdirectory(po)
 endif(GETTEXTPO_FOUND)
 
-macro_display_feature_log()

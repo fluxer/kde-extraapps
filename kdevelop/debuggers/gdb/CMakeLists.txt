@@ -13,7 +13,7 @@ function(add_debuggable_executable target)
 endfunction()
 
 if(NOT APPLE)
-macro_optional_find_package( KDE4Workspace 4.2.0 )
+macro_optional_find_package(KDE4Workspace)
 
 macro_log_feature( KDE4WORKSPACE_FOUND
 "KDE 4 Workspace" "KDE 4 Workspace libraries" "kdebase/workspace" FALSE

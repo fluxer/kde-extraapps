@@ -30,12 +30,8 @@ add_subdirectory(projectfilter)
 
 macro_optional_add_subdirectory(dashboard)
 
-set(Boost_ADDITIONAL_VERSIONS 1.39.0 1.39)
-find_package(Boost 1.35.0)
-macro_log_feature( Boost_FOUND "Boost" "Boost libraries for enabling the classbrowser" "http://www.boost.org" FALSE "1.35.0" "The boost libraries are needed to build the Class Browser" )
-if(Boost_FOUND)
-    macro_optional_add_subdirectory(classbrowser)
-endif(Boost_FOUND)
+# requires boost
+macro_optional_add_subdirectory(classbrowser)
 
 find_package(SubversionLibrary)
 macro_log_feature( SUBVERSION_FOUND "Subversion" "Support for Subversion integration" "http://subversion.tigris.org" FALSE "1.3.0" "The subversion libraries are needed for the Subversion support" )
@@ -48,4 +44,3 @@ if(QJSON_FOUND)
     macro_optional_add_subdirectory(reviewboard)
 endif(QJSON_FOUND)
 
-macro_display_feature_log()

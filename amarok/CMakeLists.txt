@@ -237,8 +237,6 @@ if( WITH_PLAYER )
     macro_log_feature( TAGLIB_MOD_FOUND "taglib" "Additional support for Audio metadata of mod, s3m, it and xm files." "http://developer.kde.org/~wheeler/taglib.html" FALSE "1.8" "" )
     macro_log_feature( TAGLIB_OPUS_FOUND "taglib" "Additional support for Audio metadata of opus files." "http://developer.kde.org/~wheeler/taglib.html" FALSE "1.9" "" )
 
-    macro_display_feature_log()
-
 endif( WITH_PLAYER )
 
 if( WITH_UTILITIES )

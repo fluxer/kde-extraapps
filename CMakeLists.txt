@@ -62,3 +62,5 @@ macro_optional_add_subdirectory (thumbnailers)
 macro_optional_add_subdirectory (yakuake)
 macro_optional_add_subdirectory (kdevplatform)
 macro_optional_add_subdirectory (kdevelop)
+
+macro_display_feature_log()

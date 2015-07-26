@@ -37,7 +37,6 @@ if("${_isSystemLibDir}" STREQUAL "-1")
 endif("${_isSystemLibDir}" STREQUAL "-1")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-find_package(KDevPlatform ${KDEVPLATFORM_VERSION} REQUIRED)
 
 include_directories(${KDEVPLATFORM_INCLUDE_DIR})
 
@@ -79,13 +78,11 @@ add_subdirectory(utils)
 add_subdirectory(file_templates)
 add_subdirectory(providers)
 
-macro_display_feature_log()
-
 include(CTest)
 
 # CTestCustom.cmake has to be in the CTEST_BINARY_DIR.
 # in the KDE build system, this is the same as CMAKE_BINARY_DIR.
-configure_file(${CMAKE_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_BINARY_DIR}/CTestCustom.cmake)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_CURRENT_BINARY_DIR}/CTestCustom.cmake)
 
 include(MacroOptionalAddSubdirectory)
 macro_optional_add_subdirectory( po )

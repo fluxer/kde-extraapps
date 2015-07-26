@@ -57,4 +57,3 @@ add_subdirectory(wallpapers)
 add_subdirectory(containments)
 add_subdirectory(cmake)
 
-macro_display_feature_log()

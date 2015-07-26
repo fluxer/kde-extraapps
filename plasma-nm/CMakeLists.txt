@@ -63,7 +63,5 @@ add_subdirectory(libs)
 add_subdirectory(vpn)
 add_subdirectory(settings)
 
-macro_display_feature_log()
-
 include(MacroOptionalAddSubdirectory)
 macro_optional_add_subdirectory( po )
