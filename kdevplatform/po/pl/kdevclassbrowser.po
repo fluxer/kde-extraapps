@@ -1,0 +1,106 @@
+# translation of kdevclassbrowser.po to
+# translation of kdevelop.po to
+# Version: $Revision$
+# KDevelop polish translation file.
+# Translation work:
+#       Jacek Wojdeł <wojdel@kbs.twi.tudelft.nl>
+# Corrections:
+#       Waldemar Kochaniec
+#       Jacek Stolarczyk
+#       Anna Wojdeł <ania@kbs.twi.tudelft.nl>
+#
+# Krzysztof Lichota, 2004.
+# Marta Rybczyńska <mrybczynsk@poczta.onet.pl>, 2003, 2004.
+# Marta Rybczynska <mrybczynska@poczta.onet.pl>, 2004, 2005.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2004, 2005.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006, 2007.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2010.
+# Michał Smoczyk <msmoczyk@wp.pl>, 2008.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevclassbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2014-02-09 06:02+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marta Rybczyńska"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-i18n@rybczynska.net"
+
+#: allclassesfolder.cpp:37
+msgid "All projects classes"
+msgstr "Wszystkie klasy projektu"
+
+#: classbrowserplugin.cpp:56 classwidget.cpp:86
+msgid "Class Browser"
+msgstr "Przeglądarka klas"
+
+#: classbrowserplugin.cpp:56
+msgid ""
+"This plugin provides a browsable model of the currently parsed classes and "
+"other items."
+msgstr ""
+"Ta wtyczka udostępnia możliwy do przeglądania model przeanalizowanych klas i "
+"innych elementów."
+
+#: classbrowserplugin.cpp:89 classbrowserplugin.cpp:139 classwidget.cpp:49
+msgid "Classes"
+msgstr "Klasy"
+
+#: classbrowserplugin.cpp:92
+msgid "Find in &Class Browser"
+msgstr "Przeglądarka znajdowania w &klasie"
+
+#: classmodelnode.cpp:379
+msgid "Base classes"
+msgstr "Klasy bazowe"
+
+#: classmodelnode.cpp:414
+msgid "Derived classes"
+msgstr "Klasy pochodne"
+
+#: classwidget.cpp:69
+msgid "S&earch:"
+msgstr "&Znajdź:"
+
+#: projectfolder.cpp:30
+#, kde-format
+msgid "Classes in project %1"
+msgstr "Klasy w projekcie %1"
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy

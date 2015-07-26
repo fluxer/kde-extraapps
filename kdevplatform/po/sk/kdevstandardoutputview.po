@@ -1,0 +1,104 @@
+# translation of kdevstandardoutputview.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevstandardoutputview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-10 20:51+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ňRoman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevstandardoutputview.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigácia"
+
+#: outputwidget.cpp:70 standardoutputview.cpp:49
+msgid "Output View"
+msgstr "Výstupný pohľad"
+
+#: outputwidget.cpp:81
+msgid "Close the currently active output view"
+msgstr "Zatvoriť aktuálne aktívny výstupný pohľad"
+
+#: outputwidget.cpp:86
+msgid "Close all other output views"
+msgstr "Zatvoriť všetky ostatné výstupné pohľady"
+
+#: outputwidget.cpp:96
+msgid "Previous"
+msgstr "Predchádzajúca"
+
+#: outputwidget.cpp:99
+msgid "Next"
+msgstr "Nasledujúca"
+
+#: outputwidget.cpp:107
+msgid "Select activated Item"
+msgstr "Vybrať aktivovanú položku"
+
+#: outputwidget.cpp:109
+msgid "Focus when selecting Item"
+msgstr "Zamerať pri vybraní položky"
+
+#: outputwidget.cpp:135
+msgid "Search..."
+msgstr "Hľadať..."
+
+#: outputwidget.cpp:137
+msgid "Enter a wild card string to filter the output view"
+msgstr "Zadajte reťazec masky na filtrovanie zobrazenia výstupu"
+
+#: standardoutputview.cpp:49
+msgid "Provides toolviews for presenting the output of running apps"
+msgstr "Poskytuje pohľady nástrojov na prezentáciu výstupu bežiacich aplikácií"
+
+#: standardoutputview.cpp:86
+msgid "Jump to Next Outputmark"
+msgstr "Prejsť na ďaľšiu výstupnú značku"
+
+#: standardoutputview.cpp:92
+msgid "Jump to Previous Outputmark"
+msgstr "Prejsť na predchadzajúcu výstupnú značku"
+
+#: standardoutputview.cpp:136
+msgctxt "@title:window"
+msgid "Build"
+msgstr "Vybudovať"
+
+#: standardoutputview.cpp:141
+msgctxt "@title:window"
+msgid "Run"
+msgstr "Spustiť"
+
+#: standardoutputview.cpp:146
+msgctxt "@title:window"
+msgid "Debug"
+msgstr "Ladiť"
+
+#: standardoutputview.cpp:151
+msgctxt "@title:window"
+msgid "Test"
+msgstr "Test"
+
+#: standardoutputview.cpp:156
+msgctxt "@title:window"
+msgid "Version Control"
+msgstr "Správa verzií"

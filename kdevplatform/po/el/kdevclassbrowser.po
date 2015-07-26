@@ -1,0 +1,88 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2008.
+# Stelios <sstavra@gmail.com>, 2011.
+# Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevclassbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2014-03-19 20:51+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: allclassesfolder.cpp:37
+msgid "All projects classes"
+msgstr "Κλάσεις για όλα τα έργα"
+
+#: classbrowserplugin.cpp:56 classwidget.cpp:86
+msgid "Class Browser"
+msgstr "Περιηγητής κλάσεων"
+
+#: classbrowserplugin.cpp:56
+msgid ""
+"This plugin provides a browsable model of the currently parsed classes and "
+"other items."
+msgstr ""
+"Αυτό το πρόσθετο προσφέρει ένα μοντέλο περιήγησης των αναλυμένων κλάσεων και "
+"άλλων αντικειμένων."
+
+#: classbrowserplugin.cpp:89 classbrowserplugin.cpp:139 classwidget.cpp:49
+msgid "Classes"
+msgstr "Κλάσεις"
+
+#: classbrowserplugin.cpp:92
+msgid "Find in &Class Browser"
+msgstr "Αναζήτηση στον περιηγητή &κλάσεων"
+
+#: classmodelnode.cpp:379
+msgid "Base classes"
+msgstr "Βασικές κλάσεις"
+
+#: classmodelnode.cpp:414
+msgid "Derived classes"
+msgstr "Παράγωγες κλάσεις"
+
+#: classwidget.cpp:69
+msgid "S&earch:"
+msgstr "Α&ναζήτηση:"
+
+#: projectfolder.cpp:30
+#, kde-format
+msgid "Classes in project %1"
+msgstr "Κλάσεις στο έργο %1"
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy

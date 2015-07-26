@@ -1,0 +1,317 @@
+# Translation of kdevpatchreview to Norwegian Bokmål
+#
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-13 06:42+0000\n"
+"PO-Revision-Date: 2011-08-06 13:31+0200\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.1\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Bjørn Steensrud"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bjornst@skogkatt.homelinux.org"
+
+#: libdiff2/komparemodellist.cpp:254 libdiff2/komparemodellist.cpp:282
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Ingen modeller eller ingen forskjeller, denne fila: <b>%1</b>, er ikke "
+"en gyldig diff-fil.</qt>"
+
+#: libdiff2/komparemodellist.cpp:263
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Det var problemer med å legge på diff <b>%1</b> på fila <b>%2</b>.</qt>"
+
+#: libdiff2/komparemodellist.cpp:293
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Det var problemer med å legge på diff <b>%1</b> på mappa <b>%2</b>.</qt>"
+
+#: libdiff2/komparemodellist.cpp:326 libdiff2/komparemodellist.cpp:634
+msgid "Could not open a temporary file."
+msgstr "Klarte ikke åpne en midlertidig fil."
+
+#: libdiff2/komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Klarte ikke skrive til den midlertidige fila <b>%1</b>, sletter den.</qt>"
+
+#: libdiff2/komparemodellist.cpp:404
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Kunne ikke opprette målmappa <b>%1</b>.\n"
+"Fila ble ikke lagret.</qt>"
+
+#: libdiff2/komparemodellist.cpp:421
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Klarte ikke laste opp den midlertidige fila til målet <b>%1</b>. Fila er "
+"fremdeles tilgjengelig under: <b>%2</b>. Du kan kopiere den manuelt til det "
+"riktige stedet.</qt>"
+
+#: libdiff2/komparemodellist.cpp:486 libdiff2/komparemodellist.cpp:599
+msgid "Could not parse diff output."
+msgstr "Klarte ikke tolke utdata fra diff."
+
+#: libdiff2/komparemodellist.cpp:502
+msgid "The files are identical."
+msgstr "Filene er identiske."
+
+#: libdiff2/komparemodellist.cpp:666
+msgid "Could not write to the temporary file."
+msgstr "Klarte ikke skrive til den midlertidige fila."
+
+#: localpatchsource.cpp:43
+msgid "Custom Patch"
+msgstr "Tilpasset lapp"
+
+#. i18n: ectx: property (title), widget (QGroupBox, localPatchOptions)
+#: localpatchwidget.ui:17
+msgid "Patch"
+msgstr "Lapp"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: localpatchwidget.ui:26
+msgid "Base:"
+msgstr "Base:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, baseDir)
+#: localpatchwidget.ui:33
+msgid "Patch base..."
+msgstr "Lapp-base …"
+
+#. i18n: ectx: attribute (title), widget (QWidget, fileTab)
+#: localpatchwidget.ui:44
+msgid "From File"
+msgstr ""
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, filename)
+#: localpatchwidget.ui:50
+msgid "Patch location..."
+msgstr "Lappens sted …"
+
+#. i18n: ectx: attribute (title), widget (QWidget, commandTab)
+#: localpatchwidget.ui:58
+msgid "From Command"
+msgstr ""
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, command)
+#: localpatchwidget.ui:64
+msgid "Command's output..."
+msgstr "Kommandoens utdata …"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, applied)
+#: localpatchwidget.ui:75
+msgid "Patch is already applied on local version"
+msgstr "Lappen er alt anvendt på den lokale versjonen"
+
+#. i18n: ectx: property (text), widget (QCheckBox, applied)
+#: localpatchwidget.ui:78
+msgid "Already applied"
+msgstr "Allerede anvendt"
+
+#: patchhighlighter.cpp:81
+msgid "<b><span style=\"color:red\">Conflict</span></b><br/>"
+msgstr "<b><span style=\"color:red\">Konflikt</span></b><br/>"
+
+#: patchhighlighter.cpp:89
+msgid "Applied.<br/>"
+msgstr ""
+
+#: patchhighlighter.cpp:92 patchhighlighter.cpp:107
+msgid "Insertion<br/>"
+msgstr ""
+
+#: patchhighlighter.cpp:95 patchhighlighter.cpp:104
+msgid "Removal<br/>"
+msgstr ""
+
+#: patchhighlighter.cpp:96
+msgid "Previous:<br/>"
+msgstr ""
+
+#: patchhighlighter.cpp:101
+msgid "Reverted.<br/>"
+msgstr ""
+
+#: patchhighlighter.cpp:109
+msgid "Alternative:<br/>"
+msgstr ""
+
+#: patchhighlighter.cpp:213
+#, kde-format
+msgid "Could not apply the change: Text should be \"%1\", but is \"%2\"."
+msgstr ""
+"Klarte ikke anvende endringen: Teksten skulle være «%1», men er \"%2\"."
+
+#: patchhighlighter.cpp:369 patchhighlighter.cpp:376
+msgid "Insertion"
+msgstr "Innsetting"
+
+#: patchhighlighter.cpp:371 patchhighlighter.cpp:378
+msgid "Removal"
+msgstr "Fjerning"
+
+#: patchhighlighter.cpp:373 patchhighlighter.cpp:380
+msgid "Change"
+msgstr "Endring"
+
+#: patchreview.cpp:267 patchreview.cpp:269
+msgid "Kompare Model Update"
+msgstr "Kompare modellopdatering"
+
+#: patchreview.cpp:280 patchreview.cpp:468 patchreview.cpp:507
+msgid "Patch Review"
+msgstr "Lappegjennomgang"
+
+#: patchreview.cpp:280
+msgid "Highlights code affected by a patch"
+msgstr "Uthever kode som påvirkes av en lapp"
+
+#: patchreview.cpp:430
+msgid "Overview"
+msgstr "Oversikt"
+
+#. i18n: ectx: property (text), widget (QToolButton, finishReview)
+#: patchreview.cpp:493 patchreview.ui:134
+msgid "Finish Review"
+msgstr "Fullfør gjennomgang"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditPatch)
+#: patchreview.ui:14
+msgid "Edit Patch"
+msgstr "Rediger lapp"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousFile)
+#: patchreview.ui:24
+msgid "Previous file"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, previousFile)
+#. i18n: ectx: property (text), widget (QToolButton, previousHunk)
+#. i18n: ectx: property (text), widget (QToolButton, nextHunk)
+#. i18n: ectx: property (text), widget (QToolButton, nextFile)
+#: patchreview.ui:27 patchreview.ui:37 patchreview.ui:47 patchreview.ui:57
+msgid "..."
+msgstr "…"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousHunk)
+#: patchreview.ui:34
+msgid "Previous difference"
+msgstr "Forrige forskjell"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextHunk)
+#: patchreview.ui:44
+msgid "Next difference"
+msgstr "Neste forskjell"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextFile)
+#: patchreview.ui:54
+msgid "Next file"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: patchreview.ui:83
+msgid "Update"
+msgstr "Oppdater"
+
+#. i18n: ectx: property (text), widget (QPushButton, testsButton)
+#: patchreview.ui:90
+msgid "Run Tests"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, exportReview)
+#: patchreview.ui:117
+msgid "Export Diff..."
+msgstr "Eksporter diff …"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelReview)
+#: patchreview.ui:127
+msgid "Cancel Review"
+msgstr "Avbryt gjennomgang"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filesGroup)
+#: patchreview.ui:153
+msgid "Changes"
+msgstr "Endringer"
+
+#: patchreviewtoolview.cpp:72
+#, kde-format
+msgctxt "%1: number of changed hunks, %2: file name"
+msgid "%2 (1 hunk)"
+msgid_plural "%2 (%1 hunks)"
+msgstr[0] "%2 (1 klump)"
+msgstr[1] "%2 (%1 klumper)"
+
+#: patchreviewtoolview.cpp:228
+msgid "Select All"
+msgstr ""
+
+#: patchreviewtoolview.cpp:230
+msgid "Deselect All"
+msgstr ""
+
+#: patchreviewtoolview.cpp:509
+msgid "Running tests: %p%"
+msgstr ""
+
+#: patchreviewtoolview.cpp:537
+#, kde-format
+msgid "Test passed"
+msgid_plural "All %1 tests passed"
+msgstr[0] ""
+msgstr[1] ""
+
+#: patchreviewtoolview.cpp:541
+#, kde-format
+msgid "Test results: %1 passed, %2 failed, %3 errors"
+msgstr ""
+
+#: standardpatchexport.cpp:53
+msgid "Save As..."
+msgstr "Lagre som …"
+
+#: standardpatchexport.cpp:63
+msgid "Send..."
+msgstr "Send …"
+
+#: standardpatchexport.cpp:75
+msgid "Send to contact..."
+msgstr ""
+
+#: standardpatchexport.cpp:89
+msgid "Side view (Kompare)..."
+msgstr "Sidevisning (Kompare) …"

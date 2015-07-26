@@ -1,0 +1,126 @@
+# Translation of kdevmakebuilder.po to Catalan
+# Copyright (C) 2009-2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa <manutortosa@gmail.com>, 2009.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013.
+# Antoni Bella Pérez <antonibella5@orange.es>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2013-11-10 13:25+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@orange.es>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#. i18n: ectx: Menu (view)
+#: kdevmakebuilder.rc:5
+msgid "View"
+msgstr "Visualitza"
+
+#: makebuilder.cpp:38
+msgid "Make Builder"
+msgstr "Constructor Make"
+
+#: makebuilder.cpp:38
+msgid "Support for building Make projects"
+msgstr "Implementació per a construir projectes de Make"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: makeconfig.ui:20
+msgid "&Abort on first error:"
+msgstr "C&ancel·la al primer error:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: makeconfig.ui:40
+msgid "&Display commands but do not execute them:"
+msgstr "&Mostra les ordes però no les executes:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: makeconfig.ui:60
+msgid "Install as &root:"
+msgstr "Instal·la com a «&root»:"
+
+#. i18n: ectx: property (text), widget (QLabel, rootinstallationcommandLabel)
+#: makeconfig.ui:80
+msgid "Root installation &command:"
+msgstr "&Orde d'instal·lació com a «root»:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:94
+msgid "kdesu"
+msgstr "kdesu"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:99
+msgid "kdesudo"
+msgstr "kdesudo"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:104
+msgid "sudo"
+msgstr "sudo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: makeconfig.ui:112
+msgid "&Number of simultaneous jobs:"
+msgstr "&Nombre de tasques simultànies:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: makeconfig.ui:132
+msgid "&Make executable:"
+msgstr "Executable de &Make:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: makeconfig.ui:155
+msgid "Default make &target:"
+msgstr "Objec&tiu Make per omissió:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: makeconfig.ui:175
+msgid "Additional make &options:"
+msgstr "&Opcions addicionals de Make:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: makeconfig.ui:195
+msgid "Active environment &profile:"
+msgstr "&Perfil de l'entorn actiu:"
+
+#: makejob.cpp:61
+#, kde-format
+msgid "Make (%1): %2"
+msgstr "Make (%1): %2"
+
+#: makejob.cpp:63
+#, kde-format
+msgid "Make (%1)"
+msgstr "Make (%1)"
+
+#: makejob.cpp:65
+msgid "Make"
+msgstr "Make"
+
+#: makejob.cpp:79
+msgid "Build item no longer available"
+msgstr "L'element de construcció ja no està disponible"
+
+#: makejob.cpp:85
+msgid "Internal error: cannot build a file item"
+msgstr "Error intern: no s'ha pogut construir un element de fitxer"

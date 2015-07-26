@@ -1,0 +1,108 @@
+# Bosnian translation for kdevplatform
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the kdevplatform package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevplatform\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-14 22:51+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-01-26 22:17+0000\n"
+"X-Generator: Launchpad (build 16451)\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kenan Dervišević,Samir Ribić"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kd@etf.unsa.ba,samir.ribic@etf.unsa.ba"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevstandardoutputview.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigacija"
+
+#: outputwidget.cpp:70 standardoutputview.cpp:49
+msgid "Output View"
+msgstr "Pregled izlaza"
+
+#: outputwidget.cpp:81
+msgid "Close the currently active output view"
+msgstr "Zatvori trenutni aktivni izlazni pregled"
+
+#: outputwidget.cpp:86
+msgid "Close all other output views"
+msgstr "Zatvori druge izlazne preglede"
+
+#: outputwidget.cpp:96
+msgid "Previous"
+msgstr "Prethodna"
+
+#: outputwidget.cpp:99
+msgid "Next"
+msgstr "Sljedeća"
+
+#: outputwidget.cpp:107
+msgid "Select activated Item"
+msgstr "Odaberi aktiviranu stavku"
+
+#: outputwidget.cpp:109
+msgid "Focus when selecting Item"
+msgstr "Fokus pri izboru objekta"
+
+#: outputwidget.cpp:135
+msgid "Search..."
+msgstr "Traži..."
+
+#: outputwidget.cpp:137
+msgid "Enter a wild card string to filter the output view"
+msgstr "Unesi džoker za filtriranje izlaza"
+
+#: standardoutputview.cpp:49
+msgid "Provides toolviews for presenting the output of running apps"
+msgstr "Nudi alatne poglede za predstavljanje izlaza aktivnih programa"
+
+#: standardoutputview.cpp:86
+msgid "Jump to Next Outputmark"
+msgstr "Skojk na sljedeći izlazni marker"
+
+#: standardoutputview.cpp:92
+msgid "Jump to Previous Outputmark"
+msgstr "Skojk na prethodni izlazni marker"
+
+#: standardoutputview.cpp:136
+msgctxt "@title:window"
+msgid "Build"
+msgstr "Izgradi"
+
+#: standardoutputview.cpp:141
+msgctxt "@title:window"
+msgid "Run"
+msgstr "Pokreni"
+
+#: standardoutputview.cpp:146
+msgctxt "@title:window"
+msgid "Debug"
+msgstr "Ispravka grešaka"
+
+#: standardoutputview.cpp:151
+msgctxt "@title:window"
+msgid "Test"
+msgstr "Test"
+
+#: standardoutputview.cpp:156
+msgctxt "@title:window"
+msgid "Version Control"
+msgstr "Upravljanje verzijama"

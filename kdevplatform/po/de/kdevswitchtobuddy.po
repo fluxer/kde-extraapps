@@ -1,0 +1,51 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-07 10:31+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org"
+
+#: switchtobuddyplugin.cpp:42
+msgid "Switch to Buddy"
+msgstr "Zu verwandtem Element wechseln"
+
+#: switchtobuddyplugin.cpp:44
+msgid ""
+"Allows switching between buddy documents like implementation and header file."
+msgstr ""
+"Ermöglicht das Umschalten zwischen verwandten Dokumenten wie "
+"Implementations- und Header-Dateien."
+
+#: switchtobuddyplugin.cpp:46
+msgid "André Stein"
+msgstr "André Stein"
+
+#: switchtobuddyplugin.cpp:47
+msgid "Author"
+msgstr "Autor"
+
+#: switchtobuddyplugin.cpp:90
+#, kde-format
+msgid "Switch to '%1'"
+msgstr "Wechseln zu „%1“"

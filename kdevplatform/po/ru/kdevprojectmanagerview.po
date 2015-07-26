@@ -1,0 +1,375 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Николай Ерёмин <doktorkster@gmail.com>, 2009.
+# Ерёмин Николай <doktorkster@gmail.com>, 2009.
+# Nick Shaforostoff <shaforostoff@kde.ru>, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2010, 2011.
+# Alexander Lakhin <exclusion@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevprojectmanagerview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-08-23 11:23+0400\n"
+"Last-Translator: Alexander Lakhin <exclusion@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ерёмин Николай,Александр Поташев,Алексей Морозов"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "doktorkster@gmail.com,aspotashev@gmail.com,morozov@gmail.com"
+
+#. i18n: ectx: Menu (project)
+#: kdevprojectmanagerview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Запустить"
+
+#: projectbuildsetwidget.cpp:147
+#, fuzzy
+#| msgid "Buildset"
+msgid "Build Set"
+msgstr "Комплект сборки"
+
+#: projectbuildsetwidget.cpp:148
+#, fuzzy
+#| msgid "Remove from buildset"
+msgid "Remove From Build Set"
+msgstr "Удалить из сборки"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, topButton)
+#: projectbuildsetwidget.ui:32
+msgid "Move the selected items to the top"
+msgstr "Поднять выбранные объекты вверх"
+
+#. i18n: ectx: property (text), widget (QToolButton, topButton)
+#. i18n: ectx: property (text), widget (QToolButton, upButton)
+#. i18n: ectx: property (text), widget (QToolButton, downButton)
+#. i18n: ectx: property (text), widget (QToolButton, bottomButton)
+#. i18n: ectx: property (text), widget (QToolButton, addItemButton)
+#. i18n: ectx: property (text), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:35 projectbuildsetwidget.ui:61
+#: projectbuildsetwidget.ui:71 projectbuildsetwidget.ui:97
+#: projectbuildsetwidget.ui:147 projectbuildsetwidget.ui:157
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, upButton)
+#: projectbuildsetwidget.ui:58
+msgid "Move the selected items up"
+msgstr "Переместить выбранные объекты выше"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, downButton)
+#: projectbuildsetwidget.ui:68
+msgid "Move the selected item down"
+msgstr "Переместить выбранные объекты ниже"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bottomButton)
+#: projectbuildsetwidget.ui:94
+msgid "Move the selected items to the bottom"
+msgstr "Опустить выбранные объекты вниз"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectbuildsetwidget.ui:121
+msgid "Build Sequence"
+msgstr "Последовательность сборки"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: projectbuildsetwidget.ui:124
+msgid "These items will be built in the order they are listed."
+msgstr "Эти объекты будут собраны в показанном порядке."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, addItemButton)
+#: projectbuildsetwidget.ui:144
+msgid "Add currently selected items from project tree view to buildset."
+msgstr "Добавить выбранные сейчас объекты из дерева проектов в сборку."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:154
+msgid "Remove currently selected item from buildset."
+msgstr "Удалить выбранные сейчас объекты из сборки"
+
+#: projectmanagerview.cpp:94
+msgid "Locate Current Document"
+msgstr "Найти текущий документ"
+
+#: projectmanagerview.cpp:95
+msgid "Locates the current document in the project tree and selects it."
+msgstr "Найти текущий документ в дереве проекта и выделить его."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:14 projectmanagerviewplugin.cpp:151
+msgid "Projects"
+msgstr "Проекты"
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:17
+msgid "Project Manager"
+msgstr "Управление проектами"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectTreeView, projectTreeView)
+#: projectmanagerview.ui:39
+msgid "Project Overview"
+msgstr "Обзор проекта"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectBuildSetWidget, buildSetView)
+#: projectmanagerview.ui:59
+msgid "Build Items:"
+msgstr "Элементы сборки:"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Project Management View"
+msgstr "Панель Проекты"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Toolview to do all the project management stuff"
+msgstr "Панель для выполнения всех задач, связанных с управлением проектом"
+
+#: projectmanagerviewplugin.cpp:108
+msgid "Build all Projects"
+msgstr "Собрать все проекты"
+
+#: projectmanagerviewplugin.cpp:113
+msgid "Build Selection"
+msgstr "Собрать выделенное"
+
+#: projectmanagerviewplugin.cpp:114
+msgid "Build"
+msgstr "Собрать"
+
+#: projectmanagerviewplugin.cpp:120
+msgid "Install Selection"
+msgstr "Установить выделенное"
+
+#: projectmanagerviewplugin.cpp:121
+msgid "Install"
+msgstr "Установить"
+
+#: projectmanagerviewplugin.cpp:127
+msgid "Clean Selection"
+msgstr "Очистить выделенное"
+
+#: projectmanagerviewplugin.cpp:128
+msgid "Clean"
+msgstr "Очистить"
+
+#: projectmanagerviewplugin.cpp:133
+msgid "Configure Selection"
+msgstr "Сконфигурировать выделенное"
+
+#: projectmanagerviewplugin.cpp:134
+msgid "Configure"
+msgstr "Сконфигурировать"
+
+#: projectmanagerviewplugin.cpp:139
+msgid "Prune Selection"
+msgstr "Прибрать выделенное"
+
+#: projectmanagerviewplugin.cpp:140
+msgid "Prune"
+msgstr "Прибрать"
+
+#: projectmanagerviewplugin.cpp:241
+msgid "Create File"
+msgstr "Создать файл..."
+
+#: projectmanagerviewplugin.cpp:247
+msgid "Create Folder"
+msgstr "Создать каталог..."
+
+#: projectmanagerviewplugin.cpp:254
+msgctxt "@action"
+msgid "Build"
+msgstr "Собрать"
+
+#: projectmanagerviewplugin.cpp:258
+msgctxt "@action"
+msgid "Install"
+msgstr "Установить"
+
+#: projectmanagerviewplugin.cpp:262
+msgctxt "@action"
+msgid "Clean"
+msgstr "Очистить"
+
+#: projectmanagerviewplugin.cpp:266
+#, fuzzy
+#| msgid "Add to Buildset"
+msgid "Add to Build Set"
+msgstr "Добавить в список собираемых"
+
+#: projectmanagerviewplugin.cpp:273
+msgid "Close Project"
+msgid_plural "Close Projects"
+msgstr[0] "Закрыть проекты"
+msgstr[1] "Закрыть проекты"
+msgstr[2] "Закрыть проекты"
+msgstr[3] "Закрыть проект"
+
+#: projectmanagerviewplugin.cpp:279
+msgid "Reload"
+msgstr "Перезагрузить"
+
+#: projectmanagerviewplugin.cpp:285
+msgid "Remove"
+msgstr "Удалить"
+
+#: projectmanagerviewplugin.cpp:289
+msgid "Rename"
+msgstr "Переименовать"
+
+#: projectmanagerviewplugin.cpp:295
+msgid "Remove From Target"
+msgstr "Удалить из цели"
+
+#: projectmanagerviewplugin.cpp:489
+#, kde-format
+msgid "Create Folder in %1"
+msgstr "Создание каталога в %1"
+
+#: projectmanagerviewplugin.cpp:489
+msgid "Folder Name"
+msgstr "Имя каталога:"
+
+#: projectmanagerviewplugin.cpp:541
+#, kde-format
+msgid "Do you really want to delete this item?"
+msgid_plural "Do you really want to delete these %1 items?"
+msgstr[0] "Удалить следующий %1 объект?"
+msgstr[1] "Удалить следующие %1 объекта?"
+msgstr[2] "Удалить следующие %1 объектов?"
+msgstr[3] "Удалить этот объект?"
+
+#: projectmanagerviewplugin.cpp:544
+msgid "Delete Files"
+msgstr "Удаление файлов"
+
+#: projectmanagerviewplugin.cpp:597
+msgid "Rename..."
+msgstr "Переименование"
+
+#: projectmanagerviewplugin.cpp:598
+#, fuzzy, kde-format
+#| msgid "New name for '%1'"
+msgid "New name for '%1':"
+msgstr "Новое имя для «%1»:"
+
+#: projectmanagerviewplugin.cpp:609
+#, kde-format
+msgid "There is already a file named '%1'"
+msgstr "Файл с именем «%1» уже существует."
+
+#: projectmanagerviewplugin.cpp:612
+#, kde-format
+msgid "Could not rename '%1'"
+msgstr "Не удалось переименовать «%1»."
+
+#: projectmanagerviewplugin.cpp:615
+#, kde-format
+msgid "'%1' is not a valid file name"
+msgstr "«%1» не является допустимым именем файла."
+
+#: projectmanagerviewplugin.cpp:625
+#, kde-format
+msgid "Create File in %1"
+msgstr "Создание файла в %1"
+
+#: projectmanagerviewplugin.cpp:625
+#, fuzzy
+#| msgid "File Name"
+msgid "File name:"
+msgstr "Имя файла:"
+
+#: projecttreeview.cpp:161
+msgid "&Move Here"
+msgstr "Переместить &сюда"
+
+#: projecttreeview.cpp:167
+msgid "&Copy Here"
+msgstr "Копировать с&юда"
+
+#: projecttreeview.cpp:173 projecttreeview.cpp:232
+msgid "C&ancel"
+msgstr "О&тменить"
+
+#: projecttreeview.cpp:226
+msgid "&Add to Target"
+msgstr "&Добавить в цель"
+
+#: projecttreeview.cpp:345
+msgid "Open Configuration..."
+msgstr "Настроить проект..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy

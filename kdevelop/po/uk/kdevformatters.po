@@ -1,0 +1,537 @@
+# translation of kdevformatters.po to Ukrainian
+# Copyright (C) 2008-2013 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevformatters\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:45+0000\n"
+"PO-Revision-Date: 2013-05-13 19:09+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "Astyle Formatter"
+msgstr "Інструмент форматування Astyle"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "A formatting tool using astyle"
+msgstr "Інструмент форматування, який використовує astyle"
+
+#: astyle/astyle_plugin.cpp:65
+msgid ""
+"<b>Artistic Style</b> is a source code indenter, formatter, and beautifier "
+"for the C, C++, C# and Java programming languages.<br />Home Page: <a href="
+"\"http://astyle.sourceforge.net/\">http://astyle.sourceforge.net</a>"
+msgstr ""
+"<b>Artistic Style</b> — це інструмент для встановлення відступів, "
+"форматування і покращення вигляду коду мовами програмування C, C++, C# і "
+"Java.<br />Домашня сторінка: <a href=\"http://astyle.sourceforge.net/"
+"\">http://astyle.sourceforge.net</a>"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabIndentqtion)
+#: astyle/astyle_preferences.ui:21
+msgid "Indentation"
+msgstr "Відступи"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:36
+msgctxt "Indentation type"
+msgid "Tabs"
+msgstr "Табуляції"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:41
+msgctxt "Indentation type"
+msgid "Force tabs"
+msgstr "Примусові табуляції"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:46
+msgctxt "Indentation type"
+msgid "Spaces"
+msgstr "Пробіли"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpNuberSpaces)
+#: astyle/astyle_preferences.ui:74
+msgid ""
+"Number of spaces that will be converted to a tab.\n"
+"The number of spaces per tab is controled by the editor."
+msgstr ""
+"Кількість пробілів, які буде перетворено на табуляції.\n"
+"Кількістю пробілів на одну табуляцію керує редактор."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:92
+msgid "Convert tabs to spaces."
+msgstr "Перетворити табуляції на пробіли."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:95
+msgid "Con&vert tabs into spaces"
+msgstr "Пере&творити табуляції на пробіли"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:102
+msgid "Fill empty lines with the white space of their previous lines."
+msgstr "Заповнювати порожні рядки пробілами з попередніх рядків."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:105
+msgid "Fill empt&y lines"
+msgstr "Заповнювати п&орожні рядки"
+
+#. i18n: ectx: property (text), widget (QLabel, lblIndentObjects)
+#: astyle/astyle_preferences.ui:127
+msgid "Indent"
+msgstr "Відступ"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBlocks)
+#: astyle/astyle_preferences.ui:144 astyle/astyle_preferences.ui:352
+msgid "Blocks"
+msgstr "Блоки"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBrackets)
+#: astyle/astyle_preferences.ui:149 astyle/astyle_preferences.ui:269
+msgid "Brackets"
+msgstr "Дужки"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:154
+msgid "Cases"
+msgstr "Варіанти"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:159
+msgid "Class"
+msgstr "Клас"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:164
+msgid "Labels"
+msgstr "Мітки"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:169
+msgid "Namespaces"
+msgstr "Простори імен"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:174
+msgid "Preprocessor directives"
+msgstr "Директиви процесора попередньої обробки"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:179
+msgid "Switches"
+msgstr "Перемикачі"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMaxStatement)
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:192 astyle/astyle_preferences.ui:234
+msgid ""
+"Indent a maximal # spaces in a continuous statement,\n"
+"relative to the previous line."
+msgstr ""
+"Відступати на цю кількість пробілів в межах однієї команди,\n"
+"відносно попереднього рядка."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel3_2)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:203 astyle/astyle_preferences.ui:217
+msgid ""
+"Indent a minimal # spaces in a continuous conditional\n"
+"belonging to a conditional header."
+msgstr ""
+"Відступати на цю кількість пробілів у межах умови\n"
+"відносно заголовку умови."
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: astyle/astyle_preferences.ui:206
+msgid "Minimum in conditional:"
+msgstr "Мінімум в умові:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:220
+msgid "Twice current"
+msgstr "Подвійний поточний"
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:237
+msgid "Maximum in statement:"
+msgstr "Максимум у команді:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabOther)
+#. i18n: ectx: property (title), widget (QGroupBox, gpOther)
+#: astyle/astyle_preferences.ui:263 astyle/astyle_preferences.ui:521
+msgid "Other"
+msgstr "Інше"
+
+#. i18n: ectx: property (text), widget (QLabel, lblBrackets)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:283 astyle/astyle_preferences.ui:550
+msgid "Type"
+msgstr "Тип"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:297
+msgid ""
+"Break brackets before closing headers (e.g. 'else', 'catch', ...)\n"
+"from their immediately preceding closing brackets."
+msgstr ""
+"Розділяти дужки перед закриттям заголовків (наприклад, «else», "
+"«catch», ...),\n"
+"запобігаючи негайному закриттю дужок."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:300
+msgid "Brea&k closing headers"
+msgstr "Роз&діляти завершення заголовка"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:314 astyle/astyle_preferences.ui:426
+#: astyle/astyle_preferences.ui:535
+msgid "No change"
+msgstr "Без змін"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:319
+msgid "Attach"
+msgstr "Долучити"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:324
+msgid "Break"
+msgstr "Розбити"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:329
+msgid "Linux"
+msgstr "Linux"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:334
+msgid "Stroustrup"
+msgstr "Страуструп"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:339
+msgid "Run-In"
+msgstr "Вставка"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:367
+msgid ""
+"Insert empty lines around unrelated blocks, labels, classes,...\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Додавати порожні рядки навколо окремих блоків, міток, класів,...\n"
+"Відомі недоліки:\n"
+"\n"
+"1. Якщо команда НЕ є частиною блоку, \n"
+"наступні команди буде відокремлено двома порожніми рядками. \n"
+"Команди, що входять до блоку, буде відформатовано \n"
+"правильно.\n"
+"\n"
+"2. Коментарі відриваються від блоку.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:370
+msgctxt "Means break unrelated blocks by a newline"
+msgid "&Break blocks"
+msgstr "&Відокремлювати блоки"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:388
+msgid ""
+"Like --break-blocks, except also insert empty lines \n"
+"around closing headers (e.g. 'else', 'catch', ...).\n"
+"\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Подібне до --break-blocks, але додаються ще порожні рядки навколо \n"
+"завершень заголовків (наприклад, «else», «catch», ...).\n"
+"\n"
+"Відомі недоліки:\n"
+"\n"
+"1. Якщо команда НЕ є частиною блоку, всі\n"
+"наступні команди буде відокремлено двома порожніми рядками. \n"
+"Команди, що входять до блоку, буде відформатовано \n"
+"правильно.\n"
+"\n"
+"2. Коментарі відриваються від блоку.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:391
+msgctxt "Means break all blocks with a newline"
+msgid "Break all bl&ocks"
+msgstr "Ві&докремлювати всі блоки"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:398
+msgid "Break 'else if()' statements into two different lines."
+msgstr "Розділяти вирази «else if()» на два окремих рядка."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:401
+msgctxt "Means break else if() into separate lines"
+msgid "Break i&f-else"
+msgstr "Розділяти i&f-else"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpPadding)
+#: astyle/astyle_preferences.ui:411
+msgid "Padding"
+msgstr "Заповнення"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:431
+msgid "Unpad"
+msgstr "Прибрати виділення"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:436
+msgid "Inside only"
+msgstr "Лише всередині"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:441
+msgid "Outside only"
+msgstr "Лише ззовні"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:446
+msgid "Inside and outside"
+msgstr "Всередині і ззовні"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:456
+msgid ""
+"Insert space padding around operators.\n"
+"Once padded, operators stay padded.\n"
+"There is no unpad operator option."
+msgstr ""
+"Додавати заповнення пробілами навколо операторів.\n"
+"Після такого виділення, оператори залишаться з пробілами.\n"
+"Зворотного процесу не передбачено."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:459
+msgid "&Add spaces around operators"
+msgstr "&Додавати пробіли навколо операторів"
+
+#. i18n: ectx: property (text), widget (QLabel, lblParenthesis)
+#: astyle/astyle_preferences.ui:466
+msgid "Pad parenthesis"
+msgstr "Виділяти дужки"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:476
+msgid ""
+"Insert space padding after parenthesis headers (e.g. 'if', 'for', "
+"'while', ...)"
+msgstr ""
+"Додавати пробіли після заголовків з дужками (наприклад «if», «for», «while» "
+"тощо)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:479
+msgid "Add spaces after parenthesis &headers"
+msgstr "Додавати пробіли після заголовків з &дужками"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpOneLiners)
+#: astyle/astyle_preferences.ui:491
+msgid "One liners"
+msgstr "Однорядкові"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:498
+msgid ""
+"Do not break lines containing multiple statements into\n"
+"multiple single-statement lines."
+msgstr ""
+"Не розбивати рядки з декількома командами на\n"
+"декілька рядків по команді у кожному."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:501
+msgid "&Keep one-line statements"
+msgstr "&Зберігати однорядкові команди"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:508
+msgid "Do not break blocks residing completely on one line."
+msgstr "Не розбивати блоки, які повністю вміщуються на одному рядку."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:511
+msgid "Keep o&ne-line blocks"
+msgstr "Зберігати &однорядкові блоки"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPointerAlign)
+#: astyle/astyle_preferences.ui:527
+msgid "Pointer Alignment"
+msgstr "Вирівнювання вказівника"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:540
+msgid "Name"
+msgstr "Назва"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:545
+msgid "Middle"
+msgstr "Посередині"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "Custom Script Formatter"
+msgstr "Нетиповий інструмент форматування"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "A formatter using custom scripts"
+msgstr "Інструмент для створення відступів, який використовує нетипові скрипти"
+
+#: customscript/customscript_plugin.cpp:99
+msgid ""
+"<b>Indent and Format Source Code.</b><br />This plugin allows using powerful "
+"external formatting tools that can be invoked through the command-line.<br /"
+">For example, the <b>uncrustify</b>, <b>astyle</b> or <b>indent</b> "
+"formatters can be used.<br />The advantage of command-line formatters is "
+"that formatting configurations can be easily shared by all team members, "
+"independent of their preferred IDE."
+msgstr ""
+"<b>Додавання відступів та форматування кодів.</b><br />Цим додатком "
+"використовуються потужні зовнішні інструменти форматування, керувати якими "
+"можна за допомогою командного рядка.<br />Прикладами таких інструментів є "
+"<b>uncrustify</b>, <b>astyle</b> та <b>indent</b>.<br /> Перевагою "
+"інструментів форматування, які керуються командним рядком є те, що "
+"налаштування форматування може бути використано одразу усіма учасниками "
+"команди, незалежно від комплексного середовища розробки, яким вони "
+"користуються."
+
+#: customscript/customscript_plugin.cpp:242
+msgid "Gnu Indent: GNU"
+msgstr "Gnu Indent: GNU"
+
+#: customscript/customscript_plugin.cpp:245
+msgid "Gnu Indent: Kernighan & Ritchie"
+msgstr "Gnu Indent: Керніган і Річі"
+
+#: customscript/customscript_plugin.cpp:248
+msgid "Gnu Indent: Original Berkeley indent style"
+msgstr "Gnu Indent: типовий стиль відступів Берклі"
+
+#: customscript/customscript_plugin.cpp:254
+msgid ""
+"Description:<br /><b>kdev_format_source</b> is a script bundled with "
+"KDevelop which allows using fine-grained formatting rules by placing meta-"
+"files called <b>format_sources</b> into the file-system.<br /><br />Each "
+"line of the <b>format_sources</b> files defines a list of wildcards followed "
+"by a colon and the used formatting-command.<br /><br />The formatting-"
+"command should use <b>$TMPFILE</b> to reference the temporary file to "
+"reformat.<br /><br />Example:<br /><b>*.cpp *.h : myformatter $TMPFILE</"
+"b><br />This will reformat all files ending with <b>.cpp</b> or <b>.h</b> "
+"using the custom formatting script <b>myformatter</b>.<br /><br />Example: "
+"<br /><b>subdir/* : uncrustify -l CPP -f $TMPFILE -c uncrustify.config -o "
+"$TMPFILE</b> <br />This will reformat all files in subdirectory <b>subdir</"
+"b> using the <b>uncrustify</b> tool with the config-file <b>uncrustify."
+"config</b>."
+msgstr ""
+"Опис:<br /><b>kdev_format_source</b> — скрипт, що постачається разом з "
+"KDevelop і надає змогу точно налаштувати правила форматування за допомогою "
+"розташованих у файловій системі метафайлів з назвами <b>format_sources</b>."
+"<br /><br />Кожен з рядків файлів <b>format_sources</b> визначає список "
+"шаблонів, відокремлених від команди форматування двокрапкою.<br /><br />У "
+"команді форматування слід позначати <b>$TMPFILE</b> тимчасовий файл, над "
+"яким виконуватимуться дії зі зміни форматування.<br /><br />Приклад:<br /"
+"><b>*.cpp *.h : myformatter $TMPFILE</b><br />За допомогою цього рядка "
+"визначається повторне форматування всіх файлів, назви яких завершуються на "
+"<b>.cpp</b> або <b>.h</b> за допомогою нетипового скрипту форматування "
+"<b>myformatter</b>.<br /><br />Приклад: <br /><b>subdir/*.h : uncrustify -l "
+"CPP -f $TMPFILE -c uncrustify.config -o $TMPFILE</b> <br />Цей приклад "
+"визначає повторне форматування всіх файлів у підкаталозі <b>subdir</b> за "
+"допомогою програми <b>uncrustify</b> на основі файла налаштувань "
+"<b>uncrustify.config</b>."
+
+#: customscript/customscript_plugin.cpp:504
+msgid "Command: "
+msgstr "Команда: "
+
+#: customscript/customscript_plugin.cpp:510
+msgid ""
+"<i>You can enter an arbitrary shell command.</i><br />The unformatted source-"
+"code is reached to the command <br />through the standard input, and the "
+"<br />formatted result is read from the standard output.<br /><br />If you "
+"add <b>$TMPFILE</b> into the command, then <br />a temporary file is used "
+"for transferring the code."
+msgstr ""
+"<i>Ви можете вказати довільну команду оболонки.</i><br />Неформатований код "
+"буде передано команді, а<br />результат буде прочитано зі стандартного "
+"виводу даних.<br /><br />Якщо ви додасте до команди параметр <b>$TMPFILE</b>,"
+"<br /> код буде передано через файл тимчасових даних."
+
+#: customscript/customscript_plugin.cpp:521
+msgid "More Variables"
+msgstr "Інші змінні"
+
+#: customscript/customscript_plugin.cpp:531
+#, kde-format
+msgid "Style: %1"
+msgstr "Стиль: %1"
+
+#: customscript/customscript_plugin.cpp:544
+msgid ""
+"<b>$TMPFILE</b> will be replaced with the path to a temporary file. <br /"
+">The code will be written into the file, the temporary <br />file will be "
+"substituted into that position, and the result <br />will be read out of "
+"that file. <br /><br /><b>$FILE</b> will be replaced with the path of the "
+"original file. <br />The contents of the file must not be modified, changes "
+"are allowed <br />only in $TMPFILE.<br /><br /><b>${PROJECT_NAME}</b> will "
+"be replaced by the path of <br />the currently open project with the "
+"matching name."
+msgstr ""
+"<b>$TMPFILE</b> буде замінено на шлях до файла тимчасових даних. <br />Код "
+"буде записано до цього файла, назву файла тимчасових даних <br />буде "
+"підставлено у команду, потім результат <br />буде прочитано з файла "
+"тимчасових даних. <br /><br /><b>$FILE</b> буде замінено на шлях початкового "
+"файла. <br />Дані у файлі не повинні змінюватися, зміни можна вносити <br /"
+">лише до $TMPFILE.<br /><br /><b>${PROJECT_NAME}</b> буде замінено на шлях "
+"до <br />поточного відкритого проекту з відповідною назвою."
+
+#: customscript/customscript_plugin.cpp:556
+msgid "Variable Replacements"
+msgstr "Заміни змінних"

@@ -1,0 +1,87 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-07-12 10:24+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Burkhard Lück"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lueck@hube-lueck.de"
+
+#. i18n: ectx: Menu (run)
+#: kdevtestview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Ausführen"
+
+#: testview.cpp:69 testview.cpp:77
+msgid "Filter..."
+msgstr "Filter ..."
+
+#: testview.cpp:70
+msgid ""
+"Insert wildcard patterns to filter the test view for matching test suites "
+"and cases."
+msgstr ""
+"Geben Sie Suchmuster ein, um die Testansicht nach passenden Testgruppen und "
+"Testfälle zu filtern."
+
+#: testview.cpp:99 testviewplugin.cpp:86
+msgid "Unit Tests"
+msgstr "Unit-Tests"
+
+#: testview.cpp:120
+msgid "Show Source"
+msgstr "Quelle anzeigen"
+
+#: testview.cpp:124
+msgid "Run Selected Tests"
+msgstr "Ausgewählte Tests ausführen"
+
+#: testview.cpp:328
+#, kde-format
+msgid "Run 1 test"
+msgid_plural "Run %1 tests"
+msgstr[0] "Einen Test ausführen"
+msgstr[1] "%1 Tests ausführen"
+
+#: testviewplugin.cpp:42
+msgid "Unit Test View"
+msgstr "Unit-Test-Ansicht"
+
+#: testviewplugin.cpp:42
+msgid "Lets you see and run unit tests"
+msgstr "Unit-Tests anzeigen und ausführen"
+
+#: testviewplugin.cpp:75
+msgid "Run All Tests"
+msgstr "Alle Tests ausführen"
+
+#: testviewplugin.cpp:79
+msgid "Stop Running Tests"
+msgstr "Laufende Tests abbrechen"
+
+#: testviewplugin.cpp:121
+#, kde-format
+msgid "Run 1 test in %2"
+msgid_plural "Run %1 tests in %2"
+msgstr[0] "Einen Test in %2 ausführen"
+msgstr[1] "%1 Tests in %2 ausführen"

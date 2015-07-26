@@ -1,0 +1,357 @@
+# translation of kdevcmake.po to Swedish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2008, 2009, 2010.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmake\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-09 05:44+0000\n"
+"PO-Revision-Date: 2014-06-26 17:06+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: cmakebuilddirchooser.cpp:62
+msgid "Configure a build directory"
+msgstr "Anpassa en byggkatalog"
+
+#: cmakebuilddirchooser.cpp:104
+#, kde-format
+msgid "Configure a build directory for %1"
+msgstr "Anpassa en byggkatalog för %1"
+
+#: cmakebuilddirchooser.cpp:147
+msgid "You need to select a cmake binary."
+msgstr "Du måste välja ett cmake binärprogram."
+
+#: cmakebuilddirchooser.cpp:190
+msgid "You need to specify a build directory."
+msgstr "Du måste ange en byggkatalog."
+
+#: cmakebuilddirchooser.cpp:197
+msgid "Using an already created build directory."
+msgstr "Använder en byggkatalog som redan skapats."
+
+#: cmakebuilddirchooser.cpp:208
+msgid "Creating a new build directory."
+msgstr "Skapar en ny byggkatalog."
+
+#: cmakebuilddirchooser.cpp:214
+msgid "Build directory already configured."
+msgstr "Byggkatalog redan inställd."
+
+#: cmakebuilddirchooser.cpp:216
+#, kde-format
+msgid "This build directory is for %1, but the project directory is %2."
+msgstr "Den här byggkatalogen är för %1, men projektkatalogen är %2."
+
+#: cmakebuilddirchooser.cpp:219
+msgid "You may not select a relative build directory."
+msgstr "Du får inte välja en relativ byggkatalog."
+
+#: cmakebuilddirchooser.cpp:221
+msgid "The selected build directory is not empty."
+msgstr "Den valda byggkatalogen är inte tom."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: cmakebuilddirchooser.ui:26
+msgid "CMake &Binary:"
+msgstr "CMake-&binärfil:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: cmakebuilddirchooser.ui:49
+msgid "&Build Directory:"
+msgstr "&Byggkatalog:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuilddirchooser.ui:65
+msgid "&Installation Prefix:"
+msgstr "&Installationsprefix:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: cmakebuilddirchooser.ui:88
+msgid "Build &type:"
+msgstr "Bygg&typ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: cmakebuilddirchooser.ui:154
+msgid "Extra Arguments:"
+msgstr "Extra argument"
+
+#: cmakecodecompletionmodel.cpp:195
+msgid "INVALID"
+msgstr "OGILTIG"
+
+#: cmakecodecompletionmodel.cpp:203
+msgid "Command"
+msgstr "Kommando"
+
+#: cmakecodecompletionmodel.cpp:204
+msgid "Variable"
+msgstr "Variabel"
+
+#: cmakecodecompletionmodel.cpp:205
+msgid "Macro"
+msgstr "Makro"
+
+#: cmakecodecompletionmodel.cpp:206
+msgid "Path"
+msgstr "Sökväg"
+
+#: cmakecodecompletionmodel.cpp:207
+msgid "Target"
+msgstr "Mål"
+
+#: cmakecodecompletionmodel.cpp:249
+msgid "wrong"
+msgstr "fel"
+
+#: cmakedocumentation.cpp:43
+msgid "CMake Documentation"
+msgstr "CMake-dokumentation"
+
+#: cmakedocumentation.cpp:43
+msgid "Support for CMake documentation"
+msgstr "Stöd för CMake-dokumentation"
+
+#: cmakedocumentation.cpp:71 cmakemanager.cpp:118
+msgid "cmake is not installed"
+msgstr "cmake är inte installerat"
+
+#: cmakedocumentation.cpp:141
+#, kde-format
+msgid "<br /><em>Cache Value:</em> %1\n"
+msgstr "<br /><em>Cache-värde:</em> %1\n"
+
+#: cmakedocumentation.cpp:144
+#, kde-format
+msgid "<br /><em>Cache Documentation:</em> %1\n"
+msgstr "<br /><em>Cache-dokumentation:</em> %1\n"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Commands"
+msgstr "Kommandon"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Variables"
+msgstr "Variabler"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Modules"
+msgstr "Moduler"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Properties"
+msgstr "Egenskaper"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Policies"
+msgstr "Policyer"
+
+#: cmakehelpdocumentation.cpp:42
+msgid "CMake Content Page"
+msgstr "CMake innehållssida"
+
+#: cmakemanager.cpp:82
+msgid "CMake Manager"
+msgstr "Hantering av CMake"
+
+#: cmakemanager.cpp:82
+msgid "Support for managing CMake projects"
+msgstr "Stöd för att hantera CMake-projekt"
+
+#: cmakemanager.cpp:84
+msgid "KDevelop - CMake Support"
+msgstr "KDevelop - Stöd för CMake"
+
+#: cmakemanager.cpp:462
+msgid "Jump to Target Definition"
+msgstr "Gå till måldefinition"
+
+#: cmakemanager.cpp:497
+msgid "Move files and folders within CMakeLists as follows:"
+msgstr "Flytta filer och kataloger inom CMakeLists på följande sätt:"
+
+#: cmakemanager.cpp:536
+msgid "Changes to CMakeLists failed, abort move?"
+msgstr "Ändringar av CMakeLists misslyckades. Avbryt förflyttning?"
+
+#: cmakemanager.cpp:591
+msgid "Remove files and folders from CMakeLists as follows:"
+msgstr "Ta bort filer och kataloger från CMakeLists på följande sätt:"
+
+#: cmakemanager.cpp:601
+msgid "Changes to CMakeLists failed, abort deletion?"
+msgstr "Ändringar av CMakeLists misslyckades. Avbryt borttagning?"
+
+#: cmakemanager.cpp:622
+msgid "Modify project targets as follows:"
+msgstr "Ändra projektmål på följande sätt:"
+
+#: cmakemanager.cpp:643
+#, kde-format
+msgid "Create folder '%1':"
+msgstr "Skapa katalog '%1':"
+
+#: cmakemanager.cpp:654
+msgid "Could not save the change."
+msgstr "Kunde inte spara ändringen."
+
+#: cmakemanager.cpp:702
+#, kde-format
+msgid "Modify target '%1' as follows:"
+msgstr "Ändra mål '%1' på följande sätt:"
+
+#: cmakemanager.cpp:709
+msgid "CMakeLists changes failed."
+msgstr "Ändringar av CMakeLists misslyckades."
+
+#: cmakemanager.cpp:721
+#, kde-format
+msgid "Rename '%1' to '%2':"
+msgstr "Byt namn på '%1' till '%2':"
+
+#: cmakemanager.cpp:748
+msgid "Changes to CMakeLists failed, abort rename?"
+msgstr "Ändringar av CMakeLists misslyckades. Avbryt namnbyte?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakepossibleroots.ui:16
+msgid ""
+"KDevelop has found several possible root directories for your project, "
+"please select the correct one."
+msgstr ""
+"KDevelop har hittat flera möjliga rotkataloger för projektet. Välj den "
+"riktiga."
+
+#: parser/cmakeprojectvisitor.cpp:2375
+#, kde-format
+msgid "%1 is a deprecated command and should not be used"
+msgstr "%1 är ett kommando som avråds från, och som inte ska användas"
+
+#: parser/cmakeprojectvisitor.cpp:2393
+msgid "Unfinished function. "
+msgstr "Inte färdig funktion. "
+
+#. i18n: ectx: property (text), widget (QPushButton, addBuildDir)
+#: settings/cmakebuildsettings.ui:34
+msgid "Add"
+msgstr "Lägg till"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeBuildDir)
+#: settings/cmakebuildsettings.ui:47
+msgid "Remove"
+msgstr "Ta bort"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: settings/cmakebuildsettings.ui:56
+msgid "Cache Values"
+msgstr "Cachevärden"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: settings/cmakebuildsettings.ui:71
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#. i18n: ectx: property (text), widget (QPushButton, showAdvanced)
+#: settings/cmakebuildsettings.ui:88
+msgid "Show Advanced"
+msgstr "Visa avancerat"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advancedBox)
+#: settings/cmakebuildsettings.ui:107 settings/cmakecachemodel.cpp:53
+msgid "Advanced"
+msgstr "Avancerat"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/cmakebuildsettings.ui:116
+msgid "Configure Environment"
+msgstr "Anpassa miljövariabler"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: settings/cmakebuildsettings.ui:131
+msgid "Select an environment to be used"
+msgstr "Välj en miljö att använda"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showInternal)
+#: settings/cmakebuildsettings.ui:143
+msgid "Show Advanced Values"
+msgstr "Visa avancerade värden"
+
+#: settings/cmakecachemodel.cpp:49
+msgid "Name"
+msgstr "Namn"
+
+#: settings/cmakecachemodel.cpp:50
+msgid "Type"
+msgstr "Typ"
+
+#: settings/cmakecachemodel.cpp:51
+msgid "Value"
+msgstr "Värde"
+
+#: settings/cmakecachemodel.cpp:52
+msgid "Comment"
+msgstr "Kommentar"
+
+#: settings/cmakepreferences.cpp:148
+#, kde-format
+msgid ""
+"Could not write CMake settings to file '%1'.\n"
+"Check that you have write access to it"
+msgstr ""
+"Kunde inte skriva CMake-inställningar i filen '%1'.\n"
+"Kontrollera att du har skrivrättigheter för den."
+
+#: settings/cmakepreferences.cpp:326
+#, kde-format
+msgid ""
+"The %1 directory is about to be removed in KDevelop's list.\n"
+"Do you want KDevelop to remove it in the file system as well?"
+msgstr ""
+"Katalogen %1 kommer nu att tas bort från KDevelops lista.\n"
+"Vill du att KDevelop också ska ta bort den i filsystemet?"
+
+#: settings/cmakepreferences.cpp:332
+#, kde-format
+msgid "Could not remove: %1.\n"
+msgstr "Kunde inte ta bort: %1.\n"
+
+#: testing/ctestfindjob.cpp:38
+#, kde-format
+msgid "Parse test suite %1"
+msgstr "Tolka testsvit %1"
+
+#: testing/ctestrunjob.cpp:93
+msgid "CTest"
+msgstr "CTest"
+
+#: testing/ctestrunjob.cpp:131
+#, kde-format
+msgctxt "running test %1, %2 test case"
+msgid "CTest %1: %2"
+msgstr "CTest %1: %2"
+
+#: testing/ctestrunjob.cpp:133
+#, kde-format
+msgctxt "running test %1, %2 number of test cases"
+msgid "CTest %2 (%1)"
+msgid_plural "CTest %2 (%1)"
+msgstr[0] "CTest %2 (%1)"
+msgstr[1] "CTest %2 (%1)"

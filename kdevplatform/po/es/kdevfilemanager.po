@@ -1,0 +1,63 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2009, 2010, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevfilemanager\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-11-07 21:25+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: filemanager.cpp:60 kdevfilemanagerplugin.cpp:87
+msgid "Filesystem"
+msgstr "Sistema de archivos"
+
+#: filemanager.cpp:128
+msgid "Bookmarks"
+msgstr "Marcadores"
+
+#: filemanager.cpp:135
+msgid "Current Document Directory"
+msgstr "Directorio del documento actual"
+
+#: filemanager.cpp:149
+msgid "New File..."
+msgstr "Nuevo archivo..."
+
+#: filemanager.cpp:160
+msgid "Create New File"
+msgstr "Crear nuevo archivo"
+
+#: filemanager.cpp:161
+msgid "Filename:"
+msgstr "Nombre de archivo:"
+
+#: filemanager.cpp:176
+#, kde-format
+msgid "Unable to create file '%1'"
+msgstr "No se puede crear el archivo «%1»"
+
+#: kdevfilemanagerplugin.cpp:37
+msgid "File Manager"
+msgstr "Gestor de archivos"
+
+#: kdevfilemanagerplugin.cpp:37
+msgid "This plugin brings a filemanager to KDevelop."
+msgstr "Este complemento aporta un gestor de archivos a KDevelop."

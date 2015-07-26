@@ -1,0 +1,168 @@
+# Burkhard Lück <lueck@hube-lueck.de>, 2009, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2012, 2014.
+# Gerhard Stengel <gstengel@gmx.net>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevgit\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-01 05:17+0000\n"
+"PO-Revision-Date: 2014-07-12 10:10+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer,Gerhard Stengel"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org,gstengel@gmx.net"
+
+#: gitmessagehighlighter.cpp:79
+#, kde-format
+msgid "Try to keep summary length below %1 characters."
+msgstr ""
+"Versuchen Sie, die Länge der Zusammenfassung auf %1 Zeichen zu beschränken."
+
+#: gitmessagehighlighter.cpp:95
+msgid "Separate summary from details with one empty line."
+msgstr "Trennen Sie die Zusammenfassung von den Details mit einer Leerzeile."
+
+#: gitmessagehighlighter.cpp:105
+#, kde-format
+msgid "Try to keep line length below %1 characters."
+msgstr "Versuchen Sie, die Zeilenlänge auf %1 Zeichen zu beschränken."
+
+#: gitplugin.cpp:64
+msgid "Git"
+msgstr "Git"
+
+#: gitplugin.cpp:64
+msgid "A plugin to support git version control systems"
+msgstr "Ein Modul zur Unterstützung der Git-Versionsverwaltung"
+
+#: gitplugin.cpp:182
+msgid "git is not installed"
+msgstr "Git ist nicht installiert"
+
+#: gitplugin.cpp:236
+msgid "Git Stashes"
+msgstr "Git-Stashes"
+
+#: gitplugin.cpp:237 stashmanagerdialog.cpp:36
+msgid "Stash Manager"
+msgstr "Stash-Verwaltung"
+
+#: gitplugin.cpp:238
+msgid "Push Stash"
+msgstr "In den Stash hineinlegen"
+
+#: gitplugin.cpp:239
+msgid "Pop Stash"
+msgstr "Aus dem Stash herausnehmen"
+
+#: gitplugin.cpp:265
+#, kde-format
+msgid "error: %1"
+msgstr "Fehler: %1"
+
+#: gitplugin.cpp:321 gitplugin.cpp:332
+msgid "Did not specify the list of files"
+msgstr "Liste der Dateien ist nicht angegeben"
+
+#: gitplugin.cpp:383
+msgid "Could not revert changes"
+msgstr "Änderungen können nicht rückgängig gemacht werden"
+
+#: gitplugin.cpp:393
+msgid ""
+"The following files have uncommited changes, which will be lost. Continue?"
+msgstr ""
+"Die folgenden Dateien haben nicht eingespielte Änderungen, die verloren "
+"gehen. Möchten Sie fortfahren?"
+
+#: gitplugin.cpp:416
+msgid "No files or message specified"
+msgstr "Keine Dateien oder Nachrichten angegeben"
+
+#: gitplugin.cpp:468
+msgid "No files to remove"
+msgstr "Keine zu entfernenden Dateien"
+
+#: gitplugin.cpp:645
+msgid "There are pending changes, do you want to stash them first?"
+msgstr ""
+"Es gibt anstehende Änderungen, möchten Sie sie vorher in den Stash "
+"verschieben?"
+
+#: stashmanagerdialog.cpp:108
+#, kde-format
+msgid "Are you sure you want to drop the stash '%1'?"
+msgstr "Möchten Sie den Stash „%1“ wirklich verwerfen?"
+
+#: stashmanagerdialog.cpp:116
+msgid "KDevelop - Git Stash"
+msgstr "KDevelop - Git Stash"
+
+#: stashmanagerdialog.cpp:116
+msgid "Select a name for the new branch:"
+msgstr "Wählen Sie einen Namen für den neuen Zweig:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, show)
+#: stashmanagerdialog.ui:16
+msgid "Show the contents of the stash"
+msgstr "Zeigt den Inhalt des Stash an"
+
+#. i18n: ectx: property (text), widget (QPushButton, show)
+#: stashmanagerdialog.ui:19
+msgid "Show"
+msgstr "Anzeigen"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:26
+msgid "Applies stash's patch"
+msgstr "Den Patch aus dem Stash anwenden"
+
+#. i18n: ectx: property (text), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:29
+msgid "Apply"
+msgstr "Anwenden"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:36
+msgid "Applies stash's patch and drops the stash"
+msgstr "Den Patch aus dem Stash anwenden und den Stash dann verwerfen"
+
+#. i18n: ectx: property (text), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:39
+msgid "Pop"
+msgstr "Herausnehmen"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:46
+msgid ""
+"Creates a new branch and applies the stash there, then it drops the stash."
+msgstr ""
+"Erstellt einen neuen Zweig und wendet den Stash dort an. Der Stash wird dann "
+"geleert."
+
+#. i18n: ectx: property (text), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:49
+msgid "Branch"
+msgstr "Zweig"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:69
+msgid "Removes the selected branch"
+msgstr "Entfernt den ausgewählten Zweig"
+
+#. i18n: ectx: property (text), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:72
+msgid "Drop"
+msgstr "Verwerfen"

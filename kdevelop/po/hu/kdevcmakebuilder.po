@@ -1,0 +1,102 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2013-11-08 20:03+0100\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Úr Balázs"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "urbalazs@gmail.com"
+
+#: cmakebuilder.cpp:55
+msgid "CMake Builder"
+msgstr "CMake fordító"
+
+#: cmakebuilder.cpp:56
+msgid "Support for building CMake projects"
+msgstr "CMake projektek fordításának támogatása"
+
+#: cmakebuilder.cpp:109
+msgid "No Build Directory configured, cannot build"
+msgstr "Nincs fordítási könyvtár beállítva, nem fordítható"
+
+#: cmakebuilder.cpp:109
+msgid "Aborting build"
+msgstr "Fordítás megszakítása"
+
+#: cmakebuilder.cpp:160
+msgid "No Build Directory configured, cannot clean"
+msgstr "Nincs fordítási könyvtár beállítva, nem törölhető"
+
+#: cmakebuilder.cpp:160
+msgid "Aborting clean"
+msgstr "Törlés megszakítása"
+
+#: cmakebuilder.cpp:195
+msgid "No Build Directory configured, cannot install"
+msgstr "Nincs fordítási könyvtár beállítva, nem telepíthető"
+
+#: cmakebuilder.cpp:195
+msgid "Aborting install"
+msgstr "Telepítés megszakítása"
+
+#: cmakebuilder.cpp:219
+msgid "No Build Directory configured, cannot configure"
+msgstr "Nincs fordítási könyvtár beállítva, nem állítható be"
+
+#: cmakebuilder.cpp:219
+msgid "Aborting configure"
+msgstr "Beállítás megszakítása"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuildersettings.ui:17
+msgid "Generator:"
+msgstr "Előállító:"
+
+#: cmakejob.cpp:50 prunejob.cpp:38
+msgid "CMake"
+msgstr "CMake"
+
+#: cmakejob.cpp:137
+#, kde-format
+msgid "CMake: %1"
+msgstr "CMake: %1"
+
+#: prunejob.cpp:52
+msgid "No Build Directory configured, cannot clear builddir"
+msgstr "Nincs fordítási könyvtár beállítva, nem törölhető a fordítási könyvtár"
+
+#: prunejob.cpp:58
+msgid "Wrong build directory, cannot clear the build directory"
+msgstr "Hibás fordítási könyvtár, nem törölhető a fordítási könyvtár"
+
+#: prunejob.cpp:71
+#, kde-format
+msgid "%1> rm -rf %2"
+msgstr "%1> rm -rf %2"
+
+#: prunejob.cpp:86
+msgid "** Prune successful **"
+msgstr "** Sikeres törlés **"
+
+#: prunejob.cpp:88
+#, kde-format
+msgid "** Prune failed: %1 **"
+msgstr "** Sikertelen törlés: %1 **"

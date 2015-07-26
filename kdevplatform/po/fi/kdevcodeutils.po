@@ -1,0 +1,81 @@
+# Finnish messages for kdevcodeutils.
+# Copyright © 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the extragear-kdevelop package.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2013.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2011.
+#
+# KDE Finnish translation sprint participants:
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcodeutils\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-12-22 13:53+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:28+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lasse Liehu, Jorma Karvonen"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lasse.liehu@gmail.com, karvonen.jorma@gmail.com"
+
+#: codeutilsplugin.cpp:60
+msgid "Code Utilities"
+msgstr "Koodityökalut"
+
+#: codeutilsplugin.cpp:60
+msgid ""
+"Collection of various utilities that increase productivity while programming."
+msgstr ""
+"Kokoelma sekalaisia työkaluja, jotka lisäävät ohjelmointisi tuottavuutta."
+
+#: codeutilsplugin.cpp:61
+msgid "Milian Wolff"
+msgstr "Milian Wolff"
+
+#: codeutilsplugin.cpp:61
+msgid "Author"
+msgstr "Tekijä"
+
+#. i18n: action name; 'Document' is a verb
+#: codeutilsplugin.cpp:75
+msgid "Document Declaration"
+msgstr "Dokumentoi esittely"
+
+#: codeutilsplugin.cpp:76
+msgid "Alt+Shift+d"
+msgstr "Alt+Vaihto+d"
+
+#: codeutilsplugin.cpp:78
+msgid "Add Doxygen skeleton for declaration under cursor."
+msgstr "Lisää esittelyn Doxygen-rungon kohdistimen kohdalle."
+
+#. i18n: translate title same as the action name
+#: codeutilsplugin.cpp:80
+msgid ""
+"Adds a basic Doxygen comment skeleton in front of the declaration under the "
+"cursor, e.g. with all the parameter of a function."
+msgstr ""
+"Lisää perus-Doxygen-kommenttirungon kohdistimen kohdalla olevan esittelyn "
+"eteen, esim. funktion kaikkine parametreineen."
+
+#: codeutilsplugin.cpp:120
+msgid "..."
+msgstr "…"
+
+#. i18n: ectx: Menu (code)
+#: kdevcodeutils.rc:5
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Koodi"

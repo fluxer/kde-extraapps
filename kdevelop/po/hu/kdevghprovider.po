@@ -1,0 +1,90 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-19 05:48+0000\n"
+"PO-Revision-Date: 2014-07-09 00:04+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Úr Balázs"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "urbalazs@gmail.com"
+
+#: ghdialog.cpp:52
+msgid "Log out"
+msgstr "Kijelentkezés"
+
+#: ghdialog.cpp:56
+msgid "Force sync"
+msgstr "Szinkronizálás erőltetése"
+
+#: ghdialog.cpp:61
+msgid "Authorize"
+msgstr "Felhatalmazás"
+
+#: ghdialog.cpp:70
+msgid "Github Account"
+msgstr "Github fiók"
+
+#: ghdialog.cpp:76
+msgid "Enter a login and a password"
+msgstr "Adja meg a felhasználónevet és a jelszót"
+
+#: ghdialog.cpp:81 ghdialog.cpp:109 ghproviderwidget.cpp:52
+msgid "Waiting for response"
+msgstr "Várakozás válaszra"
+
+#: ghdialog.cpp:95
+msgid "Authentication failed! Please, try again"
+msgstr "A hitelesítés nem sikerült! Kérjük próbálja újra"
+
+#: ghdialog.cpp:124
+msgid "Please, write your password here."
+msgstr "Kérjük írja ide a jelszavát."
+
+#: ghproviderplugin.cpp:31
+msgid "Github Provider"
+msgstr "Github szolgáltató"
+
+#: ghproviderplugin.cpp:31
+msgid "Import projects from Github"
+msgstr "Projektek importálása a Githubról"
+
+#: ghproviderplugin.cpp:51
+msgid "Github"
+msgstr "Github"
+
+#: ghproviderwidget.cpp:65
+msgid "Search"
+msgstr "Keresés"
+
+#: ghproviderwidget.cpp:66
+msgid "You can press the Return key if you don't want to wait"
+msgstr "Nyomja meg az Enter billentyűt, ha nem szeretne várakozni"
+
+#: ghproviderwidget.cpp:78
+msgid "Click this button to configure your Github account"
+msgstr "Kattintson erre a gombra a Github fiók beállításához"
+
+#: ghproviderwidget.cpp:110
+msgid "User"
+msgstr "Felhasználó"
+
+#: ghproviderwidget.cpp:111
+msgid "Organization"
+msgstr "Szervezet"

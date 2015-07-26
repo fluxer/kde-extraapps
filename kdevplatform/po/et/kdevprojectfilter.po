@@ -1,0 +1,167 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marek Laane <bald@smail.ee>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-07-03 17:52+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marek Laane"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bald@smail.ee"
+
+#: filtermodel.cpp:90
+msgid "Pattern"
+msgstr "Muster"
+
+#: filtermodel.cpp:92
+msgid "Targets"
+msgstr "Sihtmärgid"
+
+#: filtermodel.cpp:94
+msgid "Action"
+msgstr "Toiming"
+
+#: filtermodel.cpp:123
+msgid ""
+"The wildcard pattern defines whether a file or folder is included in a "
+"project or not.<br />The pattern is matched case-sensitively against the "
+"items relative path to the project root. The relative path starts with a "
+"forward slash, trailing slashes of folders are removed.<br />Patterns ending "
+"on <code>\"/\"</code> are implicitly considered to match against folders "
+"only.<br />Patterns which do not explicitly start with either <code>\"/\"</"
+"code> or <code>\"*\"</code> implicitly get <code>\"*/\"</code> prepended and "
+"thus match any item with a relative path ending on the given pattern."
+msgstr ""
+"Metamärkmuster määrab, kas faili või kataloog kaasatakse projekti või mitte."
+"<br />Mustrit kontrollitakse tähesuurust arvestades elementide peal, mille "
+"asukoha määrab projekti juur. Suhteline asukoht algab kaldkriipsuga, "
+"kataloogide lõpukaldkriipsud eemaldatakse.<br />Mustreid, mille lõpus seisab "
+"<code>\"/\"</code>, rakendatakse ainult kataloogide suhtes.<br />Mustritele, "
+"mille alguses ei seisa <code>\"/\"</code> või <code>\"*\"</code>, lisatakse "
+"vaikimisi ette <code>\"*/\"</code> ning neid rakendatakse seejärel kõigi "
+"asukoha elementide suhtes, mis sobivad sellele järgneva mustriga."
+
+#: filtermodel.cpp:135
+msgid ""
+"The target defines what type of item the filter is matched against.<br /"
+">Filters either apply only to files, only to folders or to both."
+msgstr ""
+"Sihtmärgiga saab määrata, millist tüüpi elemente filtriga otsitakse.<br /"
+">Filtreid rakendatakse kas ainult failidele, ainult kataloogidele või "
+"mõlemale."
+
+#: filtermodel.cpp:141 projectfilterkcm.cpp:67
+msgid "Files and Folders"
+msgstr "Failid ja kataloogid"
+
+#: filtermodel.cpp:146 projectfilterkcm.cpp:66
+msgid "Folders"
+msgstr "Kataloogid"
+
+#: filtermodel.cpp:151 projectfilterkcm.cpp:65
+msgid "Files"
+msgstr "Failid"
+
+#: filtermodel.cpp:157
+msgid ""
+"Filters by default exclude items from the project. Inclusive patterns can be "
+"used to include items which where matched by previous exclusive patterns."
+"<br />E.g. to only include files ending on <code>\".cpp\"</code> in your "
+"project, you could exclude all files via <code>\"*\"</code> and then apply "
+"an inclusive <code>\"*.cpp\"</code> pattern."
+msgstr ""
+"Vaikimisi jätavad filtrid elemente projektist välja. Kaasavate mustritega "
+"saab kaasata elemente, mis on varem vastanud mõnele väljajätumustrile.<br /"
+">Kui näiteks soovid kaasata projekti ainult faile lõpuga <code>\".cpp\"</"
+"code>, võid välja jätta kõik failid filtriga <code>\"*\"</code> ja seejärel "
+"kasutada kaasava mustriga filtrit <code>\"*.cpp\"</code>."
+
+#: filtermodel.cpp:163 projectfilterkcm.cpp:72
+msgid "Include"
+msgstr "Kaasamine"
+
+#: filtermodel.cpp:168 projectfilterkcm.cpp:71
+msgid "Exclude"
+msgstr "Väljajätmine"
+
+#: projectfilterkcm.cpp:195
+msgid ""
+"A filter with an empty pattern will match all items. Use <code>\"*\"</code> "
+"to make this explicit."
+msgstr ""
+"Tühja mustriga filtrile vastavad kõik elemendid. Selle otseseks "
+"väljendamiseks kasuta <code>\"*\"</code>."
+
+#: projectfilterkcm.cpp:198
+msgid "A filter ending on <code>\"/\"</code> can never match a file."
+msgstr "Filtrile, mille lõpus seisab <code>\"/\"</code>, ei vasta kunagi fail."
+
+#: projectfilterprovider.cpp:47
+msgid "Project Filter"
+msgstr "Projektifilter"
+
+#: projectfilterprovider.cpp:48
+msgid ""
+"Configure which files and folders inside the project folder should be "
+"included or excluded."
+msgstr ""
+"Määramine, millised projektikataloogi failid ja kataloogid kaasata või välja "
+"jätta."
+
+#: projectfilterprovider.cpp:95
+msgid "Exclude Item From Project"
+msgid_plural "Exclude Items From Project"
+msgstr[0] "Jäta see projektist välja"
+msgstr[1] "Jäta need projektist välja"
+
+#: projectfilterprovider.cpp:133
+msgid ""
+"A filter for the item was added. To undo, use the project filter settings."
+msgid_plural ""
+"A filter for the items was added. To undo, use the project filter settings."
+msgstr[0] ""
+"Elemendi tarbeks lisati filter. Seda saab tühistada projekti filtri "
+"seadistustes."
+msgstr[1] ""
+"Elementide tarbeks lisati filter. Seda saab tühistada projekti filtri "
+"seadistustes."
+
+#: projectfilterprovider.cpp:135
+msgid "Project Filter Added"
+msgstr "Lisati projektifilter"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: projectfiltersettings.ui:31
+msgid "Add"
+msgstr "Lisa"
+
+#. i18n: ectx: property (text), widget (QPushButton, remove)
+#: projectfiltersettings.ui:46
+msgid "Remove"
+msgstr "Eemalda"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUp)
+#: projectfiltersettings.ui:58
+msgid "Move Up"
+msgstr "Liiguta üles"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDown)
+#: projectfiltersettings.ui:70
+msgid "Move Down"
+msgstr "Liiguta alla"

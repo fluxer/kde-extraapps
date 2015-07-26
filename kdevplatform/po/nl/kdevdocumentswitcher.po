@@ -1,0 +1,60 @@
+# translation of kdevdocumentswitcher.po to Dutch
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevdocumentswitcher\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-07 10:25+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: documentswitcherplugin.cpp:52
+msgid "Document Switcher"
+msgstr "Documentenwisselaar"
+
+#: documentswitcherplugin.cpp:52
+msgid "Switch between open documents using most-recently-used list"
+msgstr ""
+"Wissel tussen open documenten met gebruik van de lijst meest-recent-"
+"gebruikte "
+
+#: documentswitcherplugin.cpp:66
+msgid "Last Used Views"
+msgstr "Weergave van laatst-gebruikt"
+
+#: documentswitcherplugin.cpp:69
+msgid "Opens a list to walk through the list of last used views."
+msgstr ""
+"Opent een lijst om door de lijst met laatst gebruikte weergaven te lopen."
+
+#: documentswitcherplugin.cpp:70 documentswitcherplugin.cpp:78
+msgid "Walk through the list of last used views"
+msgstr "Loop door de weergave van laatst-gebruikt"
+
+#: documentswitcherplugin.cpp:74
+msgid "Last Used Views (Reverse)"
+msgstr "Weergave van laatst-gebruikt (omgekeerd)"
+
+#: documentswitcherplugin.cpp:77
+msgid "Opens a list to walk through the list of last used views in reverse."
+msgstr ""
+"Opent een lijst om in omgekeerde volgorde door de lijst met laatst gebruikte "
+"weergaven te lopen."

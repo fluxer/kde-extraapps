@@ -1,0 +1,39 @@
+ChangeLog for kdevplatform v1.7.1
+=================================
+
+* Milian Wolff: Don't crash when no service is available to open directories.
+* Sebastien Speierer: Prevent new project in a non-empty folder.
+* Milian Wolff: Prepare release of 1.7.1
+* Milian Wolff: Prevent accessing invalid m_view pointer.
+* Milian Wolff: Cleanup code to prevent crashes when accessing nullptr.
+* Milian Wolff: Fix potential deadlock on shutdown.
+* Kevin Funk: Fix access to nullptr
+* Kevin Funk: projectfilter: Hide *.orig by default
+* Kevin Funk: projectmanagerview: Fix bug on delayed initialization
+* René J.V. Bertin: Restore upload functionality to git.reviewboard.kde.org
+* Nicolai Hähnle: sublime: prevent accidentally adding nullptrs to ContainerPrivate::viewForWidget
+* René J.V. Bertin: replace toAscii() with toLatin1() in KUrl conversions
+* Kevin Funk: Fix possible crash in CodeHighlighting
+* Kevin Funk: BreakpointWidget: Make less annoying
+* Kevin Funk: BreakpointWidget: Fix look of header
+* Kevin Funk: Detect more common Qt runtime warnings
+* Kevin Funk: ProblemReporter: Improve appearance of the list
+* Kevin Funk: Use KDevelop::htmlToPlainText where applicable
+* Kevin Funk: Make the assistant popup less obtrusive
+* Sven Brauch: Use an estimate of the text width to decide on assistant layout
+* Kevin Funk: Introduce KDevelop::htmlToPlainText
+* Kevin Funk: Don't use the undocumented qAppName()
+* Milian Wolff: Hide inline private data type and use typedef for Defines more.
+* Milian Wolff: Improve error reporting.
+* Sven Brauch: Move __pycache__ to excluded folders, it's not a file
+* Kevin Funk: Make compile on OSX
+* Milian Wolff: Use kDebug instead of qDebug
+* Kevin Funk: Fix unused variable
+* Kevin Funk: Fix unused variable
+* Kevin Funk: Revert "Make shell scripts portable and stable."
+* Kevin Funk: Revert "Attempt to fix kdevplatform_shell_environment"
+* Sergey Kalinichev: Don't start parse project job if there is nothing to parse.
+* Kevin Funk: Make F4 work again
+* Kevin Funk: externalscript: Fix crash in case of no active document
+* Sergey Kalinichev: Use match accuracy when asking for mime type.
+* René J.V. Bertin: Workaround a crash on Mac OS X after finishing code review.

@@ -1,0 +1,846 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-17 05:11+0000\n"
+"PO-Revision-Date: 2013-10-25 10:46+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Úr Balázs"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "urbalazs@gmail.com"
+
+#: codecompletion/context.cpp:883
+msgid "Initialize"
+msgstr "Előkészítés"
+
+#: codecompletion/context.cpp:1338 codecompletion/context.cpp:2038
+msgid "Not Included"
+msgstr "Nem tartalmazza"
+
+#: codecompletion/context.cpp:1490
+#, kde-format
+msgctxt ""
+"Here, overload is used as a programming term.  This string is used to "
+"display how many overloaded versions there are of the function whose name is "
+"the second argument."
+msgid "1 more overload of %2 (show more)"
+msgid_plural "%1 more overloads of %2 (show more)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: codecompletion/context.cpp:1614
+#, kde-format
+msgid "Connect to %1 (%2)"
+msgstr "Csatlakozás ehhez: %1 (%2)"
+
+#: codecompletion/context.cpp:1666
+msgid "Signals/Slots"
+msgstr "Szignálok/szignálfogadók"
+
+#: codecompletion/context.cpp:1935
+msgid "Virtual Override"
+msgstr "Virtuális felülírás"
+
+#: codecompletion/context.cpp:1942
+msgctxt "@action"
+msgid "Implement Function"
+msgstr "Függvény megvalósítása"
+
+#: codecompletion/context.cpp:1971 codecompletion/context.cpp:1973
+msgid "C++ Builtin"
+msgstr "C++ beépített"
+
+#: codecompletion/context.cpp:2098
+msgid "Lookahead Matches"
+msgstr "Előre néző illeszkedések"
+
+#: codecompletion/implementationhelperitem.cpp:86
+msgctxt "@action C++ code completion"
+msgid "Override"
+msgstr "Felülírás"
+
+#: codecompletion/implementationhelperitem.cpp:88
+msgctxt "@action C++ code completion"
+msgid "Implement"
+msgstr "Megvalósítás"
+
+#: codecompletion/implementationhelperitem.cpp:90
+msgctxt "@action C++ code completion"
+msgid "Create Slot"
+msgstr "Tárolóhely létrehozása"
+
+#: codecompletion/implementationhelperitem.cpp:127
+#, kde-format
+msgid "From %1"
+msgstr "Ettől: %1"
+
+#: codecompletion/missingincludeitem.cpp:484
+msgid "Add include directive"
+msgstr ""
+
+#: codecompletion/missingincludeitem.cpp:489
+#, kde-format
+msgctxt "file content unknown"
+msgid "%1<unknown contents>, %2"
+msgstr ""
+
+#: codecompletion/missingincludeitem.cpp:564
+msgid "Add Forward-Declaration"
+msgstr ""
+
+#: codecompletion/missingincludeitem.cpp:576
+msgid "forward-declare"
+msgstr ""
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update declaration signature"
+msgstr "Deklaráció aláírás frissítése"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update definition signature"
+msgstr "Definíció aláírás frissítése"
+
+#: codegen/adaptsignatureaction.cpp:99
+#, kde-format
+msgid ""
+"Update %1\n"
+"from: %2(%3)%4\n"
+"to: %2(%5)%6"
+msgstr ""
+"Frissítés %1\n"
+"ettől: %2(%3)%4\n"
+"eddig: %2(%5)%6"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "declaration"
+msgstr "deklaráció"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "definition"
+msgstr "definíció"
+
+#: codegen/adaptsignatureaction.cpp:184
+#, kde-format
+msgid "Failed to apply changes: %1"
+msgstr "A módosítások alkalmazása nem sikerült: %1"
+
+#: codegen/customincludepaths.cpp:35
+msgid "Setup Custom Include Paths"
+msgstr "Egyéni felvételi útvonalak beállítása"
+
+#: codegen/makeimplementationprivate.cpp:174
+msgid "Private Class Implementation Options"
+msgstr "Privát osztály megvalósítás beállítások"
+
+#: codegen/makeimplementationprivate.cpp:309
+msgid ""
+"Warning. It is not recommended to move initialization lists to private "
+"constructor when multiple constructors are defined."
+msgstr ""
+"Figyelem. Nem ajánlott az előkészítési listákat privát konstruktorba "
+"helyezni, amikor több konstruktor van meghatározva."
+
+#: codegen/simplerefactoring.cpp:76
+#, kde-format
+msgid "Rename %1"
+msgstr "%1 átnevezése"
+
+#: codegen/simplerefactoring.cpp:88
+#, kde-format
+msgid "Create separate definition for %1"
+msgstr "Szétválasztott definíció létrehozása ehhez: %1"
+
+#: codegen/simplerefactoring.cpp:105 codegen/simplerefactoring.cpp:258
+msgid "No declaration under cursor"
+msgstr "Nincs deklaráció a kurzor alatt"
+
+#: codegen/simplerefactoring.cpp:115
+#, kde-format
+msgid "No source file available for %1."
+msgstr "Nem érhető el forrásfájl ehhez: %1."
+
+#: codegen/simplerefactoring.cpp:127
+#, kde-format
+msgid "Failed to update DUChain for %1."
+msgstr "Nem sikerült a DUChain frissítése ehhez: %1."
+
+#: codegen/simplerefactoring.cpp:131
+msgid "Declaration lost while updating."
+msgstr "A deklaráció elveszett frissítés közben."
+
+#: codegen/simplerefactoring.cpp:141
+msgid "Cannot create definition for this declaration."
+msgstr "Nem sikerült definíciót létrehozni ehhez a deklarációhoz."
+
+#: codegen/simplerefactoring.cpp:146
+#, kde-format
+msgid "No document for %1"
+msgstr "Nincs dokumentum ehhez: %1"
+
+#: codegen/simplerefactoring.cpp:190
+msgid "Insertion failed"
+msgstr "Beillesztés sikertelen"
+
+#: codegen/simplerefactoring.cpp:195 codegen/simplerefactoring.cpp:203
+#: codegen/simplerefactoring.cpp:334
+#, kde-format
+msgid "Applying changes failed: %1"
+msgstr "A módosítások alkalmazása nem sikerült: %1"
+
+#: codegen/simplerefactoring.cpp:265
+#, kde-format
+msgid "Declaration is located in non-writeable file %1."
+msgstr "A deklaráció a(z) %1 nem írható fájlban található."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/cppnewclass.ui:16
+msgid "C++ Options"
+msgstr "C++ beállítások"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/cppnewclass.ui:22
+msgid "&Export:"
+msgstr "&Exportálás:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/cppnewclass.ui:53
+msgid "&Macro:"
+msgstr "&Makró:"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_3)
+#: codegen/ui/cppoverridebuttons.ui:16
+msgid "Public"
+msgstr "Publikus"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_4)
+#: codegen/ui/cppoverridebuttons.ui:23
+msgid "Protected"
+msgstr "Védett"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_5)
+#: codegen/ui/cppoverridebuttons.ui:30
+msgid "Private"
+msgstr "Privát"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_6)
+#: codegen/ui/cppoverridebuttons.ui:53
+msgid "Slot"
+msgstr "Szignálkezelő"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_7)
+#: codegen/ui/cppoverridebuttons.ui:60
+msgid "Signal"
+msgstr "Szignál"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/custom_include_paths.ui:23
+msgid "Storage Directory"
+msgstr "Tároló könyvtár"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/custom_include_paths.ui:35
+msgid ""
+"The custom include-path will be stored in a special file called \"."
+"kdev_include_paths\" stored within a source directory. The custom path will "
+"be used for all files below that directory."
+msgstr ""
+"Az egyéni felvételi útvonalak egy speciális „.kdev_include_paths” nevű "
+"fájlban lesznek eltárolva a forráskönyvtáron belül. Az egyéni útvonal lesz "
+"használva minden fájlhoz azon könyvtár alatt."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/custom_include_paths.ui:47
+msgid "Storage Directory:"
+msgstr "Tároló könyvtár:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: codegen/ui/custom_include_paths.ui:68
+msgid "Automatic Resolution"
+msgstr "Automatikus felbontás"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/custom_include_paths.ui:74
+msgid ""
+"If your project uses simple Makefiles, it may be possible to automatically "
+"resolve the include-paths using the make utility. For this, set up a mapping "
+"from a source- to a build-directory here."
+msgstr ""
+"Ha a projekt egyszerű Makefájlokat használ, lehetséges, hogy automatikusan "
+"feloldja a felvételi útvonalakat a make segédprogram használatával. Ehhez "
+"állítson be itt egy leképezést a forráskönyvtárról a fordítás könyvtárra."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: codegen/ui/custom_include_paths.ui:86
+msgid "Source Directory:"
+msgstr "Forráskönyvtár:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: codegen/ui/custom_include_paths.ui:96
+msgid "Build Directory:"
+msgstr "Fordítás könyvtár:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: codegen/ui/custom_include_paths.ui:111
+msgid "Custom Include Paths"
+msgstr "Egyéni felvételi útvonalak"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/custom_include_paths.ui:117
+msgid ""
+"You can add a list of custom include paths here. Relative paths will be "
+"resolved from the storage directory."
+msgstr ""
+"Itt adhatja hozzá az egyéni felvételi útvonalak listáját. A relatív "
+"útvonalak fel lesznek oldva a tárolókönyvtárból."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:148
+msgid "Select a directory to include."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:151
+msgid "..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: codegen/ui/custom_include_paths.ui:168
+msgid ""
+"Note: These settings do not affect the compiler or the project in any way, "
+"they are only used to find included headers within KDevelop."
+msgstr ""
+"Megjegyzés: ezek a beállítások nem érintik a fordítót vagy a projektet "
+"semmilyen módon, csak a felvett fejlécek keresésére vannak használva a "
+"KDevelopon belül."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, PrivateImplementationDialog)
+#: codegen/ui/privateimplementation.ui:14
+msgid ""
+"Options & settings to move the private data fields of a class into a private "
+"structure"
+msgstr ""
+"Opciók és beállítások az osztály privát adatmezőinek áthelyezéséhez egy "
+"privát szerkezetbe"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/privateimplementation.ui:42
+msgid "Private structure name:"
+msgstr "Privát szerkezet neve:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, optionGroup)
+#: codegen/ui/privateimplementation.ui:55
+msgid "Options"
+msgstr "Opciók"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:75
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default private "
+"implementation structures are declared as <span style=\" font-style:italic;"
+"\">struct</span> to have default public access.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Check this box if you wish "
+"the private implementation structure be declared as <span style=\" font-"
+"style:italic;\">class</span> with public access.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:78
+msgid "Use class instead of struct"
+msgstr "Osztály használata struct helyett"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:97
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Move any current variables "
+"that are initialized in the constructor initializer list to the private "
+"implementation structure's constructor initializer list.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Note:</span> All references, and variables "
+"with types that do not offer default constructors are moved regardless of "
+"the state of this option.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:100
+msgid "Move Variable initialization to private structure"
+msgstr "A változó előkészítés áthelyezése a privát szerkezetbe"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:113
+msgid ""
+"Move all currently declared private methods to the private implementation "
+"structure."
+msgstr ""
+"Minden jelenleg deklarált privát metódus áthelyezése privát implementáció "
+"szerkezetbe."
+
+#. i18n: ectx: property (text), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:116
+msgid "Move Private methods"
+msgstr "Privát metódusok áthelyezése"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/privateimplementation.ui:130
+msgid "Pointer name:"
+msgstr "Mutató neve:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:146
+msgid ""
+"The name of the member variable that will be the pointer held to the private "
+"implementation"
+msgstr ""
+"A tagváltozó neve, amely a mutatót fogja tartani a privát implementációra"
+
+#. i18n: ectx: property (text), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:149
+msgid "d"
+msgstr "d"
+
+#: codegen/unresolvedincludeassistant.cpp:84
+#, kde-format
+msgid "Failed to save custom include paths in directory: %1"
+msgstr ""
+"Nem sikerült az egyéni felvételi útvonalak mentése ebbe a könyvtárba: %1"
+
+#: codegen/unresolvedincludeassistant.cpp:101
+#: codegen/unresolvedincludeassistant.cpp:144
+msgid "Add Custom Include Path"
+msgstr "Egyéni felvételi útvonal hozzáadása"
+
+#: codegen/unresolvedincludeassistant.cpp:114
+msgid "Open Project"
+msgstr "Projekt megnyitása"
+
+#: codegen/unresolvedincludeassistant.cpp:118
+#, kde-format
+msgid "Include file \"%1\" not found"
+msgstr "A(z) „%1” felvételi fájl nem található"
+
+#: cppduchain/contextbuilder.cpp:149
+#, kde-format
+msgid "Could not resolve base class, adding it indirectly: %1"
+msgstr "Nem sikerült feloldani az alaposztályt, hozzáadás közvetve: %1"
+
+#: cppduchain/contextbuilder.cpp:154
+#, kde-format
+msgid "Invalid base class: %1"
+msgstr "Érvénytelen alaposztály: %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:113
+msgid "<b>local</b> variable"
+msgstr "<b>helyi</b> változó"
+
+#: cppduchain/missingdeclarationassistant.cpp:117
+#, kde-format
+msgid "Create local declaration %1"
+msgstr "Helyi deklaráció létrehozása: %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:227
+#, kde-format
+msgctxt "%1: access, %2: identifier/signature"
+msgid "Declare %1 %2"
+msgstr "%1 %2 deklarálása"
+
+#: cppduchain/missingdeclarationassistant.cpp:352
+#, kde-format
+msgctxt "assistant, declare member in class identified by %1"
+msgid "member of <code>%1</code>:"
+msgstr "<code>%1</code> tagja:"
+
+#: cppduchain/missingdeclarationassistant.cpp:358
+#, kde-format
+msgctxt "assistant, declare %1 as member of class identified by %2"
+msgid "Declare <code>'%1'</code> as member of <code>%2</code>"
+msgstr "<code>„%1”</code> deklarálása <code>%2</code> tagjaként"
+
+#: cppduchain/missingdeclarationassistant.cpp:382
+#, kde-format
+msgid "Declare <code>'%1'</code> as"
+msgstr "<code>„%1”</code> deklarálása másként"
+
+#: cppduchain/missingdeclarationproblem.cpp:27
+#, kde-format
+msgid "Declaration not found: %1"
+msgstr "Deklaráció nem található: %1"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:52
+msgctxt "Headers included into this header"
+msgid "Includes"
+msgstr "Felvételek"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:53
+msgctxt "Count of files this header was included into"
+msgid "Included by"
+msgstr "Felvette"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:54
+msgctxt "Count of macros defined in this header"
+msgid "Defined macros"
+msgstr "Meghatározott makrók"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:81
+msgid "Preprocessed Body:"
+msgstr "Előre feldolgozott törzs:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:84
+msgid "Preprocessed Body: (empty)"
+msgstr "Előre feldolgozott törzs: (üres)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:87
+msgid "Body:"
+msgstr "Törzs:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:90
+msgid "Body: (empty)"
+msgstr "Törzs: (üres)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:142
+#, kde-format
+msgctxt ""
+"%1: macro type, i.e.: 'Function macro' or just 'Macro'%2: the macro name and "
+"arguments%3 the link to the definition"
+msgid "%1: %2, defined in %3"
+msgstr "%1: %2, meghatározva itt: %3"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Function macro"
+msgstr "Függvény makró"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Macro"
+msgstr "Makró"
+
+#: cppduchain/usebuilder.cpp:151
+#, fuzzy, kde-format
+#| msgid "use of deleted function"
+msgid "Use of deleted function: %1"
+msgstr "törölt függvény használata"
+
+#: cpplanguagesupport.cpp:141
+#, fuzzy
+#| msgid "invalid include directive"
+msgid "Edit include directories"
+msgstr "érvénytelen felvételi direktíva"
+
+#: cpplanguagesupport.cpp:175
+msgid "C++ Support"
+msgstr "C++ támogatás"
+
+#: cpplanguagesupport.cpp:175
+msgid "Support for C++ Language"
+msgstr "Támogatás a C++ nyelvhez"
+
+#: cpplanguagesupport.cpp:220
+msgid "Files"
+msgstr "Fájlok"
+
+#: cpplanguagesupport.cpp:240
+msgid "&Switch Definition/Declaration"
+msgstr "&Váltás a definíció/deklaráció között"
+
+#: cpplanguagesupport.cpp:250
+msgid "Rename Declaration"
+msgstr "Deklaráció átnevezése"
+
+#: cpplanguagesupport.cpp:256
+msgid "Move into Source"
+msgstr "Áthelyezés a forrásba"
+
+#: cpplanguagesupport.cpp:810
+msgid "Emptied by preprocessor<br />"
+msgstr ""
+
+#: cppparsejob.cpp:158
+msgid "Parsing included files"
+msgstr "Tartalmazott fájlok feldolgozása"
+
+#: cppparsejob.cpp:469
+msgid "Parsing actual file"
+msgstr "Aktuális fájl feldolgozása"
+
+#: cppparsejob.cpp:581
+#, kde-format
+msgid "Not updating duchain for %1"
+msgstr "Nincs frissítve a duchain ehhez: %1"
+
+#: cppparsejob.cpp:710
+msgid "Building uses"
+msgstr ""
+
+#: cppparsejob.cpp:858
+msgid "Ready"
+msgstr "Kész"
+
+#: includepathresolver.cpp:518
+msgid ""
+"Tried include path resolution while another resolution process was still "
+"running"
+msgstr ""
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Makefile is missing in folder \"%1\""
+msgstr "A Makefájl hiányzik ebből a mappából: „%1”"
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Problem while trying to resolve include paths for %1"
+msgstr ""
+"Hiba történt a felvételi útvonalak feloldásának kísérlete közben ehhez: %1"
+
+#: includepathresolver.cpp:639
+#, kde-format
+msgid "Cached: %1"
+msgstr "Gyorsítótárazva: %1"
+
+#: includepathresolver.cpp:668
+#, kde-format
+msgid "Filename %1 seems to be malformed"
+msgstr "A(z) %1 fájlnév helytelenül formázottnak tűnik"
+
+#: includepathresolver.cpp:806
+msgid "Failed to extract new working directory"
+msgstr "Nem sikerült az új munkakönyvtár kibontása"
+
+#: includepathresolver.cpp:806 includepathresolver.cpp:835
+#, kde-format
+msgid "Output was: %1"
+msgstr "A kimenet ez volt: %1"
+
+#: includepathresolver.cpp:828 includepathresolver.cpp:831
+msgid "Recursive make call failed"
+msgstr "A rekurzív make hívás nem sikerült"
+
+#: includepathresolver.cpp:828
+#, kde-format
+msgid "The parameter string \"%1\" does not seem to be valid. Output was: %2."
+msgstr ""
+"A(z) „%1” paraméter karakterlánc nem tűnik érvényesnek. A kimenet ez volt: "
+"%2."
+
+#: includepathresolver.cpp:831
+#, kde-format
+msgid "The directory \"%1\" does not exist. Output was: %2."
+msgstr "A(z) „%1” könyvtár nem létezik. A kimenet ez volt: %2."
+
+#: includepathresolver.cpp:835
+msgid "Malformed recursive make call"
+msgstr "Helytelenül formázott rekurzív make hívás"
+
+#: includepathresolver.cpp:887
+msgid "Could not extract include paths from make output"
+msgstr "Nem sikerült kibontani a felvételi útvonalakat a make kimenetből"
+
+#: includepathresolver.cpp:888
+#, kde-format
+msgid "Folder: \"%1\"  Command: \"%2\"  Output: \"%3\""
+msgstr "Mappa: „%1”  Parancs: „%2”  Kimenet: „%3”"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcppsupport.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigáció"
+
+#. i18n: ectx: Menu (code)
+#: kdevcppsupport.rc:9
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Kód"
+
+#: parser/headergen/main.cpp:240
+msgid "KDE forwarding header generator"
+msgstr ""
+
+#: parser/headergen/main.cpp:241
+msgid ""
+"An application which creates forwarding headers (like Qt headers) from "
+"source code."
+msgstr ""
+
+#: parser/headergen/main.cpp:242
+msgid "(c) 2006, Hamish Rodda"
+msgstr "© Hamish Rodda, 2006."
+
+#: parser/headergen/main.cpp:247
+msgid ""
+"KDE include directory - headers go into <placeholder>includes</placeholder>/"
+"KDE"
+msgstr ""
+
+#: parser/headergen/main.cpp:248
+msgid "Build information from the cmake XML generator"
+msgstr "Információk fordítása a cmake XML előállítóból"
+
+#: parser/lexer.cpp:1106
+#, kde-format
+msgid "invalid input: %1"
+msgstr "érvénytelen bemenet: %1"
+
+#: parser/rpp/pp-engine.cpp:165
+msgid "invalid include directive"
+msgstr "érvénytelen felvételi direktíva"
+
+#: parser/rpp/pp-engine.cpp:301
+msgid "Unterminated #if statement"
+msgstr "Befejezetlen #if utasítás"
+
+#: parser/rpp/pp-engine.cpp:501 parser/rpp/pp-engine.cpp:519
+#: parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "character %1"
+msgstr "%1 karakter"
+
+#: parser/rpp/pp-engine.cpp:501
+#, kde-format
+msgid "Expected \"identifier\", found: %1"
+msgstr "„azonosító” helyett %1 található"
+
+#: parser/rpp/pp-engine.cpp:502 parser/rpp/pp-engine.cpp:520
+#: parser/rpp/pp-engine.cpp:556
+#, kde-format
+msgid "<h5>Token text</h5><pre>%1</pre><h5>Input</h5><pre>%2</pre>"
+msgstr "<h5>Token szöveg</h5><pre>%1</pre><h5>Bemenet</h5><pre>%2</pre>"
+
+#: parser/rpp/pp-engine.cpp:519 parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "Expected \")\", found %1"
+msgstr "„)” helyett %1 található"
+
+#: parser/rpp/pp-engine.cpp:591 parser/rpp/pp-engine.cpp:604
+msgid "Division by zero"
+msgstr "Osztás nullával"
+
+#: parser/rpp/pp-engine.cpp:592 parser/rpp/pp-engine.cpp:605
+#, kde-format
+msgid "Input text: %1"
+msgstr "Bemeneti szöveg: %1"
+
+#: parser/rpp/pp-engine.cpp:842
+#, kde-format
+msgid "expected ``:'' = %1"
+msgstr "várt érték: ``:'' = %1"
+
+#: parser/rpp/pp-engine.cpp:906 parser/rpp/pp-engine.cpp:931
+msgid "#else without #if"
+msgstr "#else #if nélkül"
+
+#: parser/rpp/pp-engine.cpp:969
+#, kde-format
+msgid "#endif without #if at output line %1"
+msgstr "#endif #if nélkül a kimeneti sorban: %1"
+
+#: parser/rpp/pp-engine.cpp:1204
+msgid "Invalid suffix combination"
+msgstr "Érvénytelen utótag kombináció"
+
+#: parser/rpp/pp-engine.cpp:1220
+msgid "Invalid numeric value"
+msgstr "Érvénytelen számérték"
+
+#: parser/rpp/pp-macro-expander.cpp:102
+msgid "Macro error"
+msgstr "Makró hiba"
+
+#: parser/rpp/pp-macro-expander.cpp:115
+#, kde-format
+msgid "Call to macro %1 missing argument number %2"
+msgstr ""
+
+#: parser/rpp/pp-macro-expander.cpp:116
+#, kde-format
+msgid "Formals: %1"
+msgstr ""
+
+#: preprocessjob.cpp:464
+#, kde-format
+msgid "File was included recursively from within itself: %1"
+msgstr ""
+
+#: preprocessjob.cpp:606
+#, kde-format
+msgid "Included file was not found: %1"
+msgstr "A felvételi fájl nem található: %1"
+
+#: preprocessjob.cpp:607
+#, kde-format
+msgid ""
+"Searched include path:\n"
+"%1"
+msgstr ""
+"A keresett felvételi útvonal:\n"
+"%1"
+
+#: quickopen.cpp:161
+msgid "This file imports the current open document<br/>"
+msgstr "Ez a fájl importálja a jelenleg nyitott dokumentumot<br/>"
+
+#: quickopen.cpp:166
+#, kde-format
+msgid "In include path %1"
+msgstr ""
+
+#: quickopen.cpp:170
+#, kde-format
+msgid "Included through %1 <br/>"
+msgstr ""
+
+#: quickopen.cpp:180
+#, kde-format
+msgid "Directory %1"
+msgstr "%1 könyvtár"
+
+#: quickopen.cpp:183
+#, kde-format
+msgid "In %1th include path"
+msgstr "A(z) %1. felvételi útvonalon"
+
+#: quickopen.cpp:408 quickopen.cpp:415
+msgid "Includes"
+msgstr "Felvételek"
+
+#: quickopen.cpp:409 quickopen.cpp:416
+msgid "Include Path"
+msgstr "Felvételi útvonal"
+
+#: quickopen.cpp:410 quickopen.cpp:417
+msgid "Includers"
+msgstr "Felvevők"

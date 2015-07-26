@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcvs\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2012-11-12 11:10+0000\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: kdevelopalfa HEAD GroupBox versaofixe\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "José Nuno Pires"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zepires@gmail.com"
+
+#: checkoutdialog.cpp:53
+msgid "Error on checkout"
+msgstr "Erro na recepção"
+
+#: checkoutdialog.cpp:53 checkoutdialog.cpp:80
+msgid "Checkout Error"
+msgstr "Erro na Recepção"
+
+#: checkoutdialog.cpp:79
+#, kde-format
+msgid "Some errors occurred while checking out into %1"
+msgstr "Ocorreram alguns erros ao extrair para %1"
+
+#. i18n: ectx: property (windowTitle), widget (KDialog, CheckoutDialogBase)
+#: checkoutdialog.ui:13
+msgid "Checkout"
+msgstr "Extrair"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: checkoutdialog.ui:21
+msgid "&Local destination directory:"
+msgstr "Pasta &local de destino:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: checkoutdialog.ui:47
+msgid "&Server path (e.g. :pserver:username@cvs.example.com:/cvsroot):"
+msgstr ""
+"Localização do &servidor (p.ex.. :pserver:utilizador@cvs.exemplo.com:/topo):"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: checkoutdialog.ui:67
+msgid "&Module:"
+msgstr "&Módulo:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: checkoutdialog.ui:88
+msgid "Tag/Branch:"
+msgstr "Marca/Ramificação:"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CommitDialogBase)
+#: commitdialog.ui:13
+msgid "Commit to Repository"
+msgstr "Enviar para o Repositório"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: commitdialog.ui:19
+msgid "Message"
+msgstr "Mensagem"
+
+#: cvsgenericoutputview.cpp:42
+msgid "Job exited normally"
+msgstr "A tarefa saiu normalmente"
+
+#: cvsmainview.cpp:26 cvsmainview.cpp:38 cvsplugin.cpp:52 cvsplugin.cpp:92
+#: cvsplugin.cpp:472
+msgid "CVS"
+msgstr "CVS"
+
+#: cvsplugin.cpp:52
+msgid "Support for CVS version control system"
+msgstr "Suporte para o sistema de controlo de versões CVS"
+
+#: cvsplugin.cpp:119
+msgid "Import Directory..."
+msgstr "Importar uma Pasta..."
+
+#: cvsplugin.cpp:123
+msgid "Checkout..."
+msgstr "Extrair..."
+
+#: cvsplugin.cpp:127
+msgid "Status..."
+msgstr "Estado..."
+
+#: cvsplugin.cpp:171
+msgid "Status"
+msgstr "Estado"
+
+#: cvsplugin.cpp:200
+msgid "Edit"
+msgstr "Editar"
+
+#: cvsplugin.cpp:204
+msgid "Unedit"
+msgstr "Terminar a Edição"
+
+#: cvsplugin.cpp:208
+msgid "Show Editors"
+msgstr "Mostrar os Editores"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditorsViewBase)
+#: cvsplugin.cpp:256 editorsview.ui:13
+msgid "Editors"
+msgstr "Editores"
+
+#: editorsview.cpp:43
+msgid "Listing editors failed"
+msgstr "A listagem dos editores foi mal-sucedida"
+
+#: editorsview.cpp:58
+msgid "No files from your query are marked as being edited."
+msgstr ""
+"Não está marcado nenhum dos ficheiros da sua procura como estando em edição."
+
+#: editorsview.cpp:66
+msgid "User"
+msgstr "Utilizador"
+
+#: editorsview.cpp:67
+msgid "Date"
+msgstr "Data"
+
+#: editorsview.cpp:68
+msgid "Machine"
+msgstr "Máquina"
+
+#: editorsview.cpp:69
+msgid "Repository"
+msgstr "Repositório"
+
+#: importdialog.cpp:54
+msgid "Error on importing"
+msgstr "Erro na importação"
+
+#: importdialog.cpp:54 importdialog.cpp:84
+msgid "Import Error"
+msgstr "Erro de Importação"
+
+#: importdialog.cpp:83
+#, kde-format
+msgid "Some errors occurred while importing %1"
+msgstr "Ocorreram alguns erros durante a importação de %1"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ImportMetadataWidget)
+#: importmetadatawidget.ui:13
+msgid "Import"
+msgstr "Importar"
+
+#. i18n: ectx: property (text), widget (QLabel, labelUrl)
+#: importmetadatawidget.ui:19
+msgid "Source Directory:"
+msgstr "Pasta de Origem:"
+
+#. i18n: ectx: property (text), widget (QLabel, repositoryLabel)
+#: importmetadatawidget.ui:35
+msgid "&Repository:"
+msgstr "&Repositório:"
+
+#. i18n: ectx: property (text), widget (QLabel, moduleLabel)
+#: importmetadatawidget.ui:57
+msgid "Mo&dule:"
+msgstr "Mó&dulo:"
+
+#. i18n: ectx: property (text), widget (QLabel, vendorLabel)
+#: importmetadatawidget.ui:79
+msgid "&Vendor tag:"
+msgstr "Marca do &distribuidor:"
+
+#. i18n: ectx: property (text), widget (KLineEdit, vendorTag)
+#: importmetadatawidget.ui:92
+msgid "vendor"
+msgstr "distribuidor"
+
+#. i18n: ectx: property (text), widget (QLabel, releaseLabel)
+#: importmetadatawidget.ui:105
+msgid "Re&lease tag:"
+msgstr "Marca de &lançamento:"
+
+#. i18n: ectx: property (text), widget (KLineEdit, releaseTag)
+#: importmetadatawidget.ui:118
+msgid "start"
+msgstr "início"
+
+#. i18n: ectx: property (text), widget (QLabel, commentLabel)
+#: importmetadatawidget.ui:131
+msgid "Co&mment:"
+msgstr "Co&mentário:"
+
+#. i18n: ectx: Menu (cvs_popup)
+#: kdevcvs.rc:5
+msgctxt "@title:menu"
+msgid "CVS"
+msgstr "CVS"

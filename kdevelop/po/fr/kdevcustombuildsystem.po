@@ -1,0 +1,286 @@
+# translation of kdevcustombuildsystem.po to Français
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Joëlle Cornavin <jcorn@free.fr>, 2011, 2013.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcustombuildsystem\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-07-11 14:01+0200\n"
+"Last-Translator: xavier <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr"
+
+#: configwidget.cpp:40
+msgid "Build"
+msgstr "Compiler"
+
+#: configwidget.cpp:41
+msgid "Configure"
+msgstr "Configurer"
+
+#: configwidget.cpp:42
+msgid "Install"
+msgstr "Installer"
+
+#: configwidget.cpp:43
+msgid "Clean"
+msgstr "Nettoyer"
+
+#: configwidget.cpp:44
+msgid "Prune"
+msgstr "Élaguer"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: configwidget.ui:19
+msgid "Build Directory:"
+msgstr "Dossier de compilation :"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, buildDir)
+#: configwidget.ui:27
+msgid ""
+"Select the directory where the tools are being executed in.\n"
+"If this is the same as the source directory you can leave it empty."
+msgstr ""
+"Sélectionnez le dossier dans lequel les outils sont exécutés en ce moment.\n"
+"S'il est identique au dossier source, vous pouvez le laisser vide."
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, buildDir)
+#: configwidget.ui:33
+msgid "The directory where the tools are executed"
+msgstr "Le dossier dans lequel les outils sont exécutés"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configwidget.ui:45
+msgid "Build Tools"
+msgstr "Outils de compilation"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configwidget.ui:51
+msgid "Action:"
+msgstr "Action :"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: configwidget.ui:61
+msgid "Enable:"
+msgstr "Activer :"
+
+#. i18n: ectx: property (text), widget (QLabel, execLabel)
+#: configwidget.ui:78
+msgid "Executable:"
+msgstr "Exécutable :"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, actionExecutable)
+#: configwidget.ui:88
+msgid ""
+"This is the executable that should be executed when selecting the action "
+"from the Project menu"
+msgstr ""
+"Il s'agit de l'exécutable à lancer lors d'une sélection d'action depuis le "
+"menu « Projet »"
+
+#. i18n: ectx: property (text), widget (QLabel, argLabel)
+#: configwidget.ui:98
+msgid "Arguments:"
+msgstr "Arguments :"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, actionArguments)
+#: configwidget.ui:108
+msgid "The arguments that the tool needs to execute properly."
+msgstr "Les arguments dont l'outil a besoin pour s'exécuter correctement."
+
+#. i18n: ectx: property (text), widget (QLabel, envLabel)
+#: configwidget.ui:118
+msgid "Environment:"
+msgstr "Environnement :"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, actionEnvironment)
+#: configwidget.ui:128
+msgid "Choose a pre-configured environment for your tool"
+msgstr "Sélectionnez un environnement préconfiguré pour votre outil"
+
+#: custombuildjob.cpp:50
+msgid "Building:"
+msgstr "Compilation :"
+
+#: custombuildjob.cpp:54
+msgid "Cleaning:"
+msgstr "Nettoyage :"
+
+#: custombuildjob.cpp:58
+msgid "Installing:"
+msgstr "Installation :"
+
+#: custombuildjob.cpp:62
+msgid "Configuring:"
+msgstr "Configuration :"
+
+#: custombuildjob.cpp:66
+msgid "Pruning:"
+msgstr "Élagage :"
+
+#: custombuildjob.cpp:90
+msgid "Undefined Build type"
+msgstr "Type de compilation indéfini"
+
+#: custombuildjob.cpp:94
+msgid "No command given"
+msgstr "Aucune commande indiquée"
+
+#: custombuildjob.cpp:98
+msgid "This command is disabled"
+msgstr "Cette commande est désactivée"
+
+#: custombuildjob.cpp:109
+msgid ""
+"The given arguments would need a real shell, this is not supported currently."
+msgstr ""
+"Les arguments fournis nécessiteraient un interpréteur réel. Ceci n'est pas "
+"pris en charge actuellement."
+
+#: custombuildjob.cpp:154
+msgid "Failed to start command."
+msgstr "Impossible de lancer une commande."
+
+#: custombuildjob.cpp:157
+msgid "Command crashed."
+msgstr "La commande s'est arrêtée brutalement."
+
+#: custombuildjob.cpp:160
+msgid "Unknown error executing command."
+msgstr "Erreur inconnue lors de l'exécution de la commande."
+
+#: custombuildjob.cpp:177
+msgid "*** Failed ***"
+msgstr "*** Échec ***"
+
+#: custombuildjob.cpp:179
+msgid "*** Finished ***"
+msgstr "*** Terminé ***"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: custombuildsystemconfigwidget.ui:19
+msgid "Build Configuration:"
+msgstr "Configuration de compilation :"
+
+#. i18n: ectx: property (text), widget (KPushButton, addConfig)
+#: custombuildsystemconfigwidget.ui:42
+msgid "Add"
+msgstr "Ajouter"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeConfig)
+#: custombuildsystemconfigwidget.ui:49
+msgid "Remove"
+msgstr "Supprimer"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Custom Build System"
+msgstr "Système personnalisé de compilation"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Support for building and managing custom build systems"
+msgstr ""
+"Prise en charge de la compilation et de la gestion des systèmes "
+"personnalisés de compilation"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+msgstr "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy

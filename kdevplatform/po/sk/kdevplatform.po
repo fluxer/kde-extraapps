@@ -1,0 +1,4500 @@
+# translation of kdevplatform.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevplatform\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-01 05:17+0000\n"
+"PO-Revision-Date: 2014-06-26 14:22+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: debugger/breakpoint/breakpoint.cpp:152
+msgctxt "@info:tooltip"
+msgid "Error"
+msgstr "Chyba"
+
+#: debugger/breakpoint/breakpoint.cpp:158
+msgctxt "@info:tooltip"
+msgid "Dirty"
+msgstr "Špinavá"
+
+#: debugger/breakpoint/breakpoint.cpp:160
+msgctxt "@info:tooltip"
+msgid "Pending"
+msgstr "Čakajúci"
+
+#: debugger/breakpoint/breakpoint.cpp:162
+msgctxt "@info:tooltip"
+msgid "Clean"
+msgstr "Vyčistiť"
+
+#: debugger/breakpoint/breakpointdetails.cpp:57
+#: debugger/breakpoint/breakpointdetails.cpp:134
+msgid "Not hit yet"
+msgstr "Ešte nedosiahnuté"
+
+#: debugger/breakpoint/breakpointdetails.cpp:65
+msgid "Ignore"
+msgstr "Ignorovať"
+
+#: debugger/breakpoint/breakpointdetails.cpp:73
+msgid "next hits"
+msgstr "nasledujúce zarážky"
+
+#: debugger/breakpoint/breakpointdetails.cpp:119
+msgid "Breakpoint is <a href=\"pending\">pending</a>"
+msgstr "Bod zastavenia je <a href=\"pending\">nevybavený</a>"
+
+#: debugger/breakpoint/breakpointdetails.cpp:122
+msgid "Breakpoint is <a href=\"dirty\">dirty</a>"
+msgstr "Bod zastavenia je <a href=\"dirty\">špinavý</a>"
+
+#: debugger/breakpoint/breakpointdetails.cpp:125
+msgid "Breakpoint is active"
+msgstr "Bod zastavenia je aktívny"
+
+#: debugger/breakpoint/breakpointdetails.cpp:132
+#, kde-format
+msgid "Hit %1 time"
+msgid_plural "Hit %1 times"
+msgstr[0] "Zásah %1 krát"
+msgstr[1] "Zásah %1 krát"
+msgstr[2] "Zásah %1 krát"
+
+#: debugger/breakpoint/breakpointdetails.cpp:136
+msgid "Breakpoint has errors"
+msgstr "Bod zastavenia má chyby"
+
+#: debugger/breakpoint/breakpointdetails.cpp:147
+msgid ""
+"<b>Breakpoint is pending</b><p>Pending breakpoints are those that have been "
+"passed to GDB, but which are not yet installed in the target, because GDB "
+"cannot find the function or file to which the breakpoint refers. The most "
+"common case is a breakpoint in a shared library: GDB will insert this "
+"breakpoint only when the library is loaded.</p>"
+msgstr ""
+"<b>Bod zastavenia je nevybavený</b><p>Čakajúce body zastavenia sú tie, ktoré "
+"boli odovzdané do GDB, ale ktoré ešte nie sú umiestnené v cieli, pretože GDB "
+"nemôže nájsť funkciu alebo súbor, na ktorý bod zastavenia odkazuje. "
+"Najčastejším prípadom je, keď sa bod zastavenia nachádza v zdieľanej "
+"knižnici: GDB vloží tento bod zastavenia iba vtedy, keď je knižnica načítaná."
+"</p>"
+
+#: debugger/breakpoint/breakpointdetails.cpp:160
+msgid ""
+"<b>Breakpoint is dirty</b><p>The breakpoint has not yet been passed to the "
+"debugger.</p>"
+msgstr ""
+"<b>Bod zastavenia je špinavý</b><p>Bod zastavenia ešte nebol odovzdaný "
+"ladiacemu programu.</p>"
+
+#: debugger/breakpoint/breakpointmodel.cpp:88
+msgid "Breakpoint"
+msgstr "Bod zastavenia"
+
+#: debugger/breakpoint/breakpointmodel.cpp:131
+msgid "&Delete Breakpoint"
+msgstr "Vymazať bo&d zastavenia"
+
+#: debugger/breakpoint/breakpointmodel.cpp:132
+msgid "&Disable Breakpoint"
+msgstr "Zakázať bo&d zastavenia"
+
+#: debugger/breakpoint/breakpointmodel.cpp:133
+msgid "&Enable Breakpoint"
+msgstr "Povoliť bod zastav&enia"
+
+#: debugger/breakpoint/breakpointmodel.cpp:169
+#: debugger/variable/variablecollection.cpp:406
+#: debugger/variable/variabletooltip.cpp:100
+msgid "Type"
+msgstr "Typ"
+
+#: debugger/breakpoint/breakpointmodel.cpp:170
+#: vcs/models/vcsitemeventmodel.cpp:95
+msgid "Location"
+msgstr "Umiestnenie"
+
+#: debugger/breakpoint/breakpointmodel.cpp:171
+msgid "Condition"
+msgstr "Podmienka"
+
+#: debugger/breakpoint/breakpointmodel.cpp:175
+msgid "Active status"
+msgstr "Aktívny stav"
+
+#: debugger/breakpoint/breakpointmodel.cpp:176 shell/sessioncontroller.cpp:839
+msgid "State"
+msgstr "Stav"
+
+#: debugger/breakpoint/breakpointwidget.cpp:54
+msgctxt "@title:window"
+msgid "Debugger Breakpoints"
+msgstr "Body zastavenia ladiaceho programu"
+
+#: debugger/breakpoint/breakpointwidget.cpp:55
+msgctxt "@info:whatsthis"
+msgid ""
+"Displays a list of breakpoints with their current status. Clicking on a "
+"breakpoint item allows you to change the breakpoint and will take you to the "
+"source in the editor window."
+msgstr ""
+"Zobrazí zoznam bodov zastavenia s ich aktuálnom stavom. Kliknutie na položku "
+"bodu zastavenia vám umožňuje zmeniť bod zastavenia a dostanete sa na zdroj v "
+"okne editora."
+
+#: debugger/breakpoint/breakpointwidget.cpp:81
+msgid "New code breakpoint ..."
+msgstr "Nový breakpoint kódu..."
+
+#: debugger/breakpoint/breakpointwidget.cpp:82
+msgid "Enter condition ..."
+msgstr "Zadajte podmienku..."
+
+#: debugger/breakpoint/breakpointwidget.cpp:110
+msgctxt "New breakpoint"
+msgid "&New"
+msgstr "&Nový"
+
+#: debugger/breakpoint/breakpointwidget.cpp:114
+msgctxt "Code breakpoint"
+msgid "&Code"
+msgstr "&Kód"
+
+#: debugger/breakpoint/breakpointwidget.cpp:123
+msgctxt "Data breakpoint"
+msgid "Data &Write"
+msgstr "Dáta zapísané"
+
+#: debugger/breakpoint/breakpointwidget.cpp:126
+msgctxt "Data read breakpoint"
+msgid "Data &Read"
+msgstr "Dáta načítané"
+
+#: debugger/breakpoint/breakpointwidget.cpp:129
+msgctxt "Data access breakpoint"
+msgid "Data &Access"
+msgstr "Prístup úd&ajov"
+
+#: debugger/breakpoint/breakpointwidget.cpp:134
+msgid "&Delete"
+msgstr "Odstrá&niť"
+
+#: debugger/breakpoint/breakpointwidget.cpp:143
+msgid "Disable &All"
+msgstr "Zakázať všetko"
+
+#: debugger/breakpoint/breakpointwidget.cpp:144
+msgid "&Enable All"
+msgstr "Povoliť všetko"
+
+#: debugger/breakpoint/breakpointwidget.cpp:145
+msgid "&Remove All"
+msgstr "Odstrániť všetko"
+
+#: debugger/framestack/framestackmodel.cpp:145
+#, kde-format
+msgctxt "#thread-id at function-name or address"
+msgid "#%1 at %2"
+msgstr "#%1 na %2"
+
+#: debugger/framestack/framestackmodel.cpp:223
+msgid "Depth"
+msgstr "Hĺbka"
+
+#: debugger/framestack/framestackmodel.cpp:225
+#: language/duchain/navigation/abstractnavigationcontext.cpp:397
+msgid "Function"
+msgstr "Funkcia"
+
+#. i18n: ectx: property (title), widget (QGroupBox, sourceBox)
+#: debugger/framestack/framestackmodel.cpp:227 shell/projectsourcepage.ui:66
+msgid "Source"
+msgstr "Zdroj"
+
+#: debugger/framestack/framestackwidget.cpp:60
+msgid ""
+"<b>Frame stack</b>Often referred to as the \"call stack\", this is a list "
+"showing which function is currently active, and what called each function to "
+"get to this point in your program. By clicking on an item you can see the "
+"values in any of the previous calling functions."
+msgstr ""
+"<b>Rámcový zásobník</b>Často zmieňovaný ako \"zásobník volaní \", toto je "
+"zoznam ukazujúci, ktorá funkcia je práve aktívna, a to, čo volali jednotlivé "
+"funkcie, aby sa dostali k tomuto bodu programu. Kliknutím na položku môžete "
+"vidieť hodnoty v ktoromkoľvek z predchádzajúcich volaní funkcie."
+
+#: debugger/framestack/framestackwidget.cpp:95
+msgid "Threads:"
+msgstr "Vlákien:"
+
+#: debugger/interfaces/ibreakpointcontroller.cpp:183
+#, kde-format
+msgid "Breakpoint hit: %1"
+msgstr "Dosiahnutý bod zastavenia: %1"
+
+#: debugger/interfaces/ibreakpointcontroller.cpp:189
+#, kde-format
+msgid "Watchpoint hit: %1"
+msgstr "Dosiahnutý bod sledovania: %1"
+
+#: debugger/util/pathmappings.cpp:112
+msgid "Remote Path"
+msgstr "Vzdialená cesta"
+
+#: debugger/util/pathmappings.cpp:114
+msgid "Local Path"
+msgstr "Lokálna cesta"
+
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#. i18n: ectx: property (text), widget (KPushButton, btnDelStyle)
+#: debugger/util/pathmappings.cpp:240 shell/sessiondialog.ui:72
+#: shell/settings/sourceformattersettings.ui:195
+#: shell/workingsets/workingsettooltipwidget.cpp:95
+#: vcs/dvcs/ui/branchmanager.ui:32
+msgid "Delete"
+msgstr "Vymazať"
+
+#: debugger/variable/variablecollection.cpp:212
+#: language/duchain/problem.cpp:181
+msgid "Error"
+msgstr "Chyba"
+
+#: debugger/variable/variablecollection.cpp:233
+msgid "Auto"
+msgstr "Auto"
+
+#. i18n: ectx: property (text), widget (QLabel, configName)
+#: debugger/variable/variablecollection.cpp:406
+#: debugger/variable/variabletooltip.cpp:100
+#: shell/launchconfigurationdialog.ui:112
+msgid "Name"
+msgstr "Názov"
+
+#: debugger/variable/variablecollection.cpp:406
+#: debugger/variable/variabletooltip.cpp:100
+#: shell/settings/environmentgroupmodel.cpp:98
+msgid "Value"
+msgstr "Hodnota"
+
+#: debugger/variable/variablecollection.h:216
+msgid "Locals"
+msgstr "Miestne"
+
+#: debugger/variable/variabletooltip.cpp:135
+msgid "Watch this"
+msgstr "Sledovať toto"
+
+#: debugger/variable/variabletooltip.cpp:137
+msgid "Stop on Change"
+msgstr "Zastaviť pri zmene"
+
+#: debugger/variable/variablewidget.cpp:87
+msgid "Debugger Variables"
+msgstr "Premenné ladiaceho programu"
+
+#: debugger/variable/variablewidget.cpp:108
+msgid ""
+"<b>Variable tree</b>The variable tree allows you to see the values of local "
+"variables and arbitrary expressions.<br />Local variables are displayed "
+"automatically and are updated as you step through your program. For each "
+"expression you enter, you can either evaluate it once, or \"watch\" it (make "
+"it auto-updated). Expressions that are not auto-updated can be updated "
+"manually from the context menu. Expressions can be renamed to more "
+"descriptive names by clicking on the name column.<br />To change the value "
+"of a variable or an expression, click on the value.<br />"
+msgstr ""
+"<b>Strom premenných</b>Strom premenných vám umožňuje vidieť hodnoty "
+"lokálnych premenných a ľubovoľných výrazov.<br /> Lokálne premenné sa "
+"zobrazia automaticky a sú aktualizované tak, ako krokujete váš program. "
+"Každý výraz, ktorý zadáte, môžete vyhodnotiť buď raz alebo \"pozorovať"
+"\" (robí to automatická aktualizácia). Výrazy, ktoré nie sú automaticky "
+"aktualizované sa môžu aktualizovať ručne z kontextového menu. Výrazy možno "
+"premenovať na výstižnejšie názvy kliknutím na názov stĺpca. <br /> Ak chcete "
+"zmeniť hodnotu premennej alebo výrazu, kliknite na hodnotu.<br />"
+
+#: debugger/variable/variablewidget.cpp:122
+msgid "<b>Expression entry</b>Type in expression to watch."
+msgstr "<b>Položka výrazu</b>Zadajte výraz na sledovanie."
+
+#: debugger/variable/variablewidget.cpp:202
+msgid "&Format"
+msgstr "&Formátovať"
+
+#: debugger/variable/variablewidget.cpp:207
+msgid "&Natural"
+msgstr "Prirodzený"
+
+#: debugger/variable/variablewidget.cpp:212
+msgid "&Binary"
+msgstr "&Binárny"
+
+#: debugger/variable/variablewidget.cpp:217
+msgid "&Octal"
+msgstr "&Osmičkový"
+
+#: debugger/variable/variablewidget.cpp:222
+msgid "&Decimal"
+msgstr "&Decimálny"
+
+#: debugger/variable/variablewidget.cpp:227
+msgid "&Hexadecimal"
+msgstr "&Hexadecimálny"
+
+#: debugger/variable/variablewidget.cpp:243
+msgid "Remove Watch Variable"
+msgstr "Odstrániť sledované premenné"
+
+#: debugger/variable/variablewidget.cpp:250
+msgid "&Copy Value"
+msgstr "Kopírovať hodnotu"
+
+#: debugger/variable/variablewidget.cpp:255
+msgid "&Stop on Change"
+msgstr "Zastaviť pri zmene"
+
+#: debugger/variable/variablewidget.cpp:335
+msgid "Recent Expressions"
+msgstr "Posledné výrazy"
+
+#: debugger/variable/variablewidget.cpp:336
+#: shell/workingsets/workingsettooltipwidget.cpp:138
+msgid "Remove All"
+msgstr "Odstrániť všetko"
+
+#: debugger/variable/variablewidget.cpp:337
+msgid "Re-evaluate All"
+msgstr "Znovu vyhodnotiť všetko"
+
+#: debugger/variable/variablewidget.cpp:383
+msgid "Remember Value"
+msgstr "Zapamätať hodnotu"
+
+#: debugger/variable/variablewidget.cpp:388
+msgid "Watch Variable"
+msgstr "Sledovať premennú"
+
+#: debugger/variable/variablewidget.cpp:393
+msgid "Reevaluate Expression"
+msgstr "Znovu vyhodnotiť výraz"
+
+#: debugger/variable/variablewidget.cpp:395
+msgid "Remove Expression"
+msgstr "Odstrániť výraz"
+
+#: debugger/variable/variablewidget.cpp:401
+msgid "Data write breakpoint"
+msgstr "Bod zastavenia zápisu údajov"
+
+#. i18n: ectx: property (text), widget (QToolButton, hideButton)
+#: documentation/documentationfindwidget.ui:23
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: documentation/documentationfindwidget.ui:33
+msgid "Find:"
+msgstr "Nájsť:"
+
+#. i18n: ectx: property (text), widget (QPushButton, nextButton)
+#: documentation/documentationfindwidget.ui:47
+msgid "Next"
+msgstr "Nasledujúci"
+
+#. i18n: ectx: property (text), widget (QPushButton, previousButton)
+#: documentation/documentationfindwidget.ui:54
+msgid "Previous"
+msgstr "Predchádzajúci"
+
+#. i18n: ectx: property (text), widget (QCheckBox, matchCase)
+#: documentation/documentationfindwidget.ui:61
+msgid "Match case"
+msgstr "Zhoda veľkosti písmen"
+
+#: documentation/documentationview.cpp:46
+#: shell/documentationcontroller.cpp:124 shell/documentationcontroller.cpp:226
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+#: documentation/documentationview.cpp:56
+msgid "Documentation Tool Bar"
+msgstr "Panel nástrojov dokumentácie"
+
+#: documentation/documentationview.cpp:64
+msgid "Back"
+msgstr "Dozadu"
+
+#: documentation/documentationview.cpp:65
+msgid "Forward"
+msgstr "Dopredu"
+
+#: documentation/documentationview.cpp:66
+msgid "Find"
+msgstr "Nájsť"
+
+#: documentation/documentationview.cpp:68
+msgid "Home"
+msgstr "Domov"
+
+#: interfaces/contextmenuextension.cpp:153 shell/debugcontroller.cpp:389
+#: shell/runcontroller.cpp:82 shell/uicontroller.cpp:92
+msgid "Debug"
+msgstr "Ladenie"
+
+#: interfaces/contextmenuextension.cpp:164
+msgid "Refactor"
+msgstr "Refactoring"
+
+#: interfaces/contextmenuextension.cpp:175
+msgid "Version Control"
+msgstr "Správa verzií"
+
+#: interfaces/isourceformatter.cpp:188
+#, kde-format
+msgid ""
+"The executable %1 cannot be found. Please make sure it is installed and can "
+"be executed. <br />The plugin will not work until you fix this problem."
+msgstr ""
+"Program %1 nie je možné nájsť. Prosím uistite sa, že je nainštalovaný a dá "
+"sa spustiť.<br />Plugin nebude fungovať, kým sa neopraví tento problém."
+
+#: language/assistant/renameaction.cpp:76
+#, kde-format
+msgid "Rename \"%1\" to \"%2\""
+msgstr "Premenovať \"%1\" na \"%2\""
+
+#: language/assistant/renameaction.cpp:110
+#: language/assistant/renamefileaction.cpp:78
+#, kde-format
+msgid "Failed to apply changes: %1"
+msgstr "Zlyhalo použitie zmien: %1"
+
+#: language/assistant/renamefileaction.cpp:54
+#, kde-format
+msgid "Rename file from \"%1\" to \"%2\"."
+msgstr "Premenovať súbor z \"%1\" na \"%2\"."
+
+#: language/backgroundparser/backgroundparser.cpp:212
+#, kde-format
+msgid "Parsing: %1"
+msgstr "Spracúvam: %1"
+
+#: language/backgroundparser/backgroundparser.cpp:501
+msgid "Background Parser"
+msgstr "Analyzátor na pozadí"
+
+#: language/backgroundparser/parsejob.cpp:280
+#, kde-format
+msgctxt "%1: filename"
+msgid "Skipped file that is too large: '%1'"
+msgstr "Preskočený súbor, ktorý je veľmi veľký: '%1'"
+
+#: language/backgroundparser/parsejob.cpp:282
+#, kde-format
+msgctxt "%1: file size, %2: limit file size"
+msgid "The file is %1 and exceeds the limit of %2."
+msgstr "Súbor je %1 a presahuje limit %2."
+
+#: language/backgroundparser/parsejob.cpp:295
+#, kde-format
+msgid "Could not open file '%1'"
+msgstr "Nepodarilo sa otvoriť súbor '%1'"
+
+#: language/backgroundparser/parsejob.cpp:298
+msgid "File could not be read from disk."
+msgstr "Nepodarilo sa prečítať súbor z disku"
+
+#: language/backgroundparser/parsejob.cpp:301
+msgid "File could not be opened."
+msgstr "Súbor nie je možné otvoriť."
+
+#: language/backgroundparser/parsejob.cpp:304
+msgid "File could not be read from disk due to permissions."
+msgstr "Súbor nebolo možné načítať z disku kvôli oprávneniam."
+
+#: language/backgroundparser/parseprojectjob.cpp:67
+#, kde-format
+msgid "Process 1 file in %2"
+msgid_plural "Process %1 files in %2"
+msgstr[0] "Spracovaný 1 súbor v %2"
+msgstr[1] "Spracované %1 súbory v %2"
+msgstr[2] "Spracovaných %1 súborov v %2"
+
+#: language/codegen/basicrefactoring.cpp:105
+#, kde-format
+msgid "Rename \"%1\"..."
+msgstr "Premenovať \"%1\"..."
+
+#: language/codegen/basicrefactoring.cpp:226
+msgid "No declaration under cursor"
+msgstr "Žiadna deklarácia pod kurzorom"
+
+#: language/codegen/basicrefactoring.cpp:232
+#, kde-format
+msgid "Declaration is located in non-writeable file %1."
+msgstr "Deklarácia je umiestnená v nezapisovateľnom súbore %1."
+
+#: language/codegen/basicrefactoring.cpp:288
+#, kde-format
+msgctxt "Renaming some declaration"
+msgid "Rename \"%1\""
+msgstr "Premenovať \"%1\""
+
+#: language/codegen/basicrefactoring.cpp:292
+msgid "Uses"
+msgstr "Použitia"
+
+#: language/codegen/basicrefactoring.cpp:294
+msgid "Declaration Info"
+msgstr "Info o deklarácii"
+
+#: language/codegen/basicrefactoring.cpp:300
+#, kde-format
+msgid "Renaming \"%1\" to \"%2\""
+msgstr "Premenovanie \"%1\" na \"%2\""
+
+#: language/codegen/basicrefactoring.cpp:326
+#: language/codegen/basicrefactoring.cpp:334
+#: language/codegen/basicrefactoring.cpp:347
+#, kde-format
+msgid "Applying changes failed: %1"
+msgstr "Použitie zmien zlyhalo: %1"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, RenameDialog)
+#. i18n: ectx: property (text), widget (QPushButton, renameButton)
+#: language/codegen/basicrefactoring.ui:14 vcs/dvcs/ui/branchmanager.ui:55
+msgid "Rename"
+msgstr "Premenovať"
+
+#. i18n: ectx: property (text), widget (QLabel, newNameLabel)
+#: language/codegen/basicrefactoring.ui:22
+msgid "&New name:"
+msgstr "Nový názov:"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, goButton)
+#: language/codegen/basicrefactoring.ui:35
+msgid ""
+"<html><head/><body><p>\"Note: All overloaded functions, overloads, forward-"
+"declarations, etc. will be renamed too\"</p></body></html>"
+msgstr ""
+"<html><head/><body><p>\"Poznámka: Všetky preťažené funkcie, preťaženia, "
+"dopredné deklarácie atď. budú tiež premenované\"</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QPushButton, goButton)
+#: language/codegen/basicrefactoring.ui:38
+msgid "&Rename"
+msgstr "P&remenovať"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: language/codegen/basicrefactoring.ui:45
+msgid "&Cancel"
+msgstr "&Zrušiť"
+
+#: language/codegen/codegenerator.cpp:134
+msgid "Could not find an open document"
+msgstr "Nepodarilo sa nájsť otvorený dokument"
+
+#: language/codegen/codegenerator.cpp:173
+msgid "Error finding context for selection range"
+msgstr "Chyba hľadania kontextu pre rozsah výberu"
+
+#: language/codegen/codegenerator.cpp:179
+#, kde-format
+msgid "Error checking conditions to generate code: %1"
+msgstr "Chyba kontroly podmienok na generovanie kódu: %1"
+
+#: language/codegen/codegenerator.cpp:188
+#, kde-format
+msgid "Error Gathering user information: %1"
+msgstr "Chyba pri získavaní informácie o používateľovi: %1"
+
+#: language/codegen/codegenerator.cpp:196
+#, kde-format
+msgid "Error generating code: %1"
+msgstr "Chyba generovania kódu: %1"
+
+#: language/codegen/documentchangeset.cpp:229
+#, kde-format
+msgid "Could not rename '%1' to '%2'"
+msgstr "Nepodarilo sa premenovať '%1' na '%2'"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, RefactoringDialog)
+#: language/codegen/progressdialogs/refactoringdialog.ui:14
+msgid "Refactoring"
+msgstr "Refaktoring"
+
+#. i18n: ectx: property (text), widget (QPushButton, abortButton)
+#: language/codegen/progressdialogs/refactoringdialog.ui:27
+msgid "&Abort"
+msgstr "&Prerušiť"
+
+#: language/duchain/forwarddeclaration.cpp:61
+#, kde-format
+msgid "context-free forward-declaration %1"
+msgstr "bezkontextová dopredná deklarácia %1"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:72
+msgid "<br /> lost declaration <br />"
+msgstr "<br /> stratená deklarácia <br />"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:78
+#, kde-format
+msgid "Back to %1<br />"
+msgstr "Späť na  %1<br />"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:94
+msgid "enumerator "
+msgstr "enumerátor"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:111
+#, kde-format
+msgid "namespace %1 "
+msgstr "menný priestor %1 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:116
+#, kde-format
+msgid "enumeration %1 "
+msgstr "enumerácia %1 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:123
+msgid "( resolved forward-declaration: "
+msgstr "( vyriešená dopredná deklarácia: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:125
+msgid ") "
+msgstr ") "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:127
+msgid "(unresolved forward-declaration) "
+msgstr "(nevyriešená dopredná deklarácia) "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:135
+msgid "possible resolution from"
+msgstr "možné riešenie z"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:148
+msgid "Returns: "
+msgstr "Vracia:"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:150
+msgid "Type: "
+msgstr "Typ: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:170
+msgid "Enum: "
+msgstr "Enum: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:172
+msgid "Container: "
+msgstr "Kontajner:"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:179
+#, kde-format
+msgid "Scope: %1 "
+msgstr "Rozsah: %1 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:198
+#, kde-format
+msgid "Access: %1 "
+msgstr "Prístup: %1 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:218
+#, kde-format
+msgid "Kind: %1 %2 "
+msgstr "Typ: %1 %2 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:220
+#, kde-format
+msgid "Kind: %1 "
+msgstr "Typ: %1 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:222
+#, kde-format
+msgid "Modifiers: %1 "
+msgstr "Modifikátory: %1 "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:232
+msgid "Def.: "
+msgstr "Def.: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:234
+msgid "Decl.: "
+msgstr "Decl.: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:241
+msgid " Def.: "
+msgstr " Def.: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:248
+msgid " Decl.: "
+msgstr " Decl.: "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:254
+msgid "Show uses"
+msgstr "Ukázať použitia"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:276
+msgid "Show documentation for "
+msgstr "Ukázať dokumentáciu pre"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:376
+msgid "Overrides a "
+msgstr "Prepíše"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:377
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:392
+msgid "function"
+msgstr "funkcia"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:378
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:393
+msgid " from "
+msgstr " od"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:391
+msgid "Hides a "
+msgstr "Skryje"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:409
+msgid "Overridden in "
+msgstr "Prepísané v"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:422
+msgid "Overriders possible, show all"
+msgstr "Možné náhrady, ukázať všetky"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:422
+msgid "More overriders possible, show all"
+msgstr "Možných viacero náhrad, ukázať všetky"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:432
+msgid "Inherited by "
+msgstr "Zdedené od "
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:445
+msgid "Inheriters possible, show all"
+msgstr "Možní dediči, ukázať všetkých"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:445
+msgid "More inheriters possible, show all"
+msgstr "Možných viac dedičov, ukázať všetkých"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:622
+msgctxt "A declaration that is unknown"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:648
+msgctxt "tells if a declaration is defining the variable's value"
+msgid "definition"
+msgstr "definícia"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:653
+msgctxt "as in c++ forward declaration"
+msgid "forward"
+msgstr "forward"
+
+#: language/duchain/navigation/abstractdeclarationnavigationcontext.cpp:658
+msgctxt "a variable that won't change, const"
+msgid "constant"
+msgstr "konštanta"
+
+#: language/duchain/navigation/abstractincludenavigationcontext.cpp:96
+msgid "Declarations:"
+msgstr "Deklarácie:"
+
+#: language/duchain/navigation/abstractincludenavigationcontext.cpp:102
+msgid "not parsed yet"
+msgstr "ešte neanalyzované"
+
+#: language/duchain/navigation/abstractincludenavigationcontext.cpp:113
+msgctxt "Files included into this file"
+msgid "Includes"
+msgstr "Zahŕňa"
+
+#: language/duchain/navigation/abstractincludenavigationcontext.cpp:113
+msgctxt "Count of files this file was included into"
+msgid "Included by"
+msgstr "Zahrnuté s"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:379
+msgid "Typedef"
+msgstr "Typedef"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:382
+msgid "Class"
+msgstr "Trieda"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:384
+#: shell/settings/environmentgroupmodel.cpp:95
+msgid "Variable"
+msgstr "Premenná"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:386
+msgid "Namespace"
+msgstr "Priestor mien"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:391
+msgid "Namespace import"
+msgstr "Import priestora mien"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:393
+msgid "Namespace alias"
+msgstr "Alias priestora mien"
+
+#: language/duchain/navigation/abstractnavigationcontext.cpp:400
+msgid "Forward Declaration"
+msgstr "Dopredná deklarácia"
+
+#: language/duchain/navigation/problemnavigationcontext.cpp:46
+#, kde-format
+msgid "Solve: %1"
+msgstr "Vyriešiť: %1"
+
+#: language/duchain/navigation/problemnavigationcontext.cpp:48
+msgid "Solve"
+msgstr "Riešiť"
+
+#: language/duchain/navigation/problemnavigationcontext.cpp:81
+msgid "Problem"
+msgstr "Problém"
+
+#: language/duchain/navigation/problemnavigationcontext.cpp:91
+#, kde-format
+msgid "Problem in <b>%1</b>:<br/>"
+msgstr "Problém v <b>%1</b>:<br/>"
+
+#: language/duchain/navigation/problemnavigationcontext.cpp:111
+msgid " in "
+msgstr " v "
+
+#: language/duchain/navigation/usescollector.cpp:379
+#, kde-format
+msgid "%1 still needs an update!"
+msgstr "%1 stále potrebuje aktualizáciu!"
+
+#: language/duchain/navigation/usesnavigationcontext.cpp:46
+msgid "Uses of "
+msgstr "Použitia"
+
+#: language/duchain/navigation/usesnavigationcontext.cpp:51
+#, kde-format
+msgid "Uses of %1"
+msgstr "Použitia %1"
+
+#: language/duchain/navigation/useswidget.cpp:118
+#, kde-format
+msgctxt "refers to a line in source code"
+msgid "Line <b>%1</b>:"
+msgstr "Riadok <b>%1</b>:"
+
+#: language/duchain/navigation/useswidget.cpp:167
+#: language/duchain/navigation/useswidget.cpp:172
+#, kde-format
+msgctxt "Refers to a line in source code"
+msgid "Line <b>%1</b>"
+msgstr "Riadok <b>%1</b>"
+
+#: language/duchain/navigation/useswidget.cpp:331
+msgid "Unknown context"
+msgstr "Neznámy kontext"
+
+#: language/duchain/navigation/useswidget.cpp:338
+#: shell/launchconfigurationdialog.cpp:482
+msgid "Global"
+msgstr "Globálne"
+
+#: language/duchain/navigation/useswidget.cpp:361
+#, kde-format
+msgctxt "%1: source file"
+msgid "In %1"
+msgstr "V %1"
+
+#: language/duchain/navigation/useswidget.cpp:390
+msgid "Definition"
+msgstr "Definícia"
+
+#: language/duchain/navigation/useswidget.cpp:390
+msgid "Declaration"
+msgstr "Deklarácia"
+
+#: language/duchain/navigation/useswidget.cpp:425
+#, kde-format
+msgctxt "%1: number of uses, %2: filename with uses"
+msgid "%2: 1 use"
+msgid_plural "%2: %1 uses"
+msgstr[0] "%2: 1 použitie"
+msgstr[1] "%2: %1 použitia"
+msgstr[2] "%2: %1 použití"
+
+#: language/duchain/navigation/useswidget.cpp:429
+#: language/duchain/navigation/useswidget.cpp:463
+msgctxt "Refers to closing a UI element"
+msgid "Collapse"
+msgstr "Zbaliť"
+
+#: language/duchain/navigation/useswidget.cpp:460
+msgctxt "Refers to opening a UI element"
+msgid "Expand"
+msgstr "Rozbaliť"
+
+#: language/duchain/navigation/useswidget.cpp:541
+#, kde-format
+msgid "1 use found"
+msgid_plural "%1 uses found"
+msgstr[0] "1 použitie nájdené"
+msgstr[1] "%1 použitia nájdené"
+msgstr[2] "%1 použití nájdených"
+
+#: language/duchain/navigation/useswidget.cpp:542
+msgid "Expand all"
+msgstr "Rozbaliť všetko"
+
+#: language/duchain/navigation/useswidget.cpp:543
+msgid "Collapse all"
+msgstr "Zbaliť všetko"
+
+#: language/duchain/problem.cpp:183
+msgid "Warning"
+msgstr "Upozornenie"
+
+#: language/duchain/problem.cpp:185
+msgid "Hint"
+msgstr "Rada"
+
+#: language/duchain/problem.cpp:194
+msgid "Disk"
+msgstr "Disk"
+
+#: language/duchain/problem.cpp:196
+msgid "Preprocessor"
+msgstr "Preprocesor"
+
+#: language/duchain/problem.cpp:198
+msgid "Lexer"
+msgstr "Lexer"
+
+#: language/duchain/problem.cpp:200
+msgid "Parser"
+msgstr "Analyzátor"
+
+#: language/duchain/problem.cpp:202
+msgid "Definition-Use Chain"
+msgstr "Reťaz Definícia-Použitie"
+
+#: language/duchain/problem.cpp:204
+msgid "Semantic Analysis"
+msgstr "Sémantická analýza"
+
+#: language/duchain/problem.cpp:206
+msgid "TODO"
+msgstr "Úlohy"
+
+#: language/duchain/problem.cpp:209
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: language/duchain/repositories/itemrepository.h:207
+#: language/duchain/repositories/itemrepository.h:2134
+#, kde-format
+msgid "Failed writing to %1, probably the disk is full"
+msgstr "Zlyhal zápis do %1, pravdepodobne je disk plný"
+
+#: language/duchain/repositories/itemrepositoryregistry.cpp:90
+#, kde-format
+msgid "The previous session crashed"
+msgid_plural "Session crashed %1 times in a row"
+msgstr[0] "Predošlé sedenie spadlo"
+msgstr[1] "Sedenie spadlo %1 krát za sebou"
+msgstr[2] "Sedenie spadlo %1 krát za sebou"
+
+#: language/duchain/repositories/itemrepositoryregistry.cpp:91
+msgctxt "@action"
+msgid "Clear cache"
+msgstr "Vymazať vyrovnávaciu pamäť"
+
+#: language/duchain/repositories/itemrepositoryregistry.cpp:92
+msgctxt "@title"
+msgid "Session crashed"
+msgstr "Sedenie spadlo"
+
+#: language/duchain/repositories/itemrepositoryregistry.cpp:93
+msgid ""
+"The crash may be caused by a corruption of cached data.\n"
+"\n"
+"Press OK if you want KDevelop to clear the cache, otherwise press Cancel if "
+"you are sure the crash has another origin."
+msgstr ""
+"Zrútenie môže byť spôsobené poškodením údajov vo vyrovnávacej pamäti.\n"
+"\n"
+"Stlačte OK, ak chcete, aby aplikácia KDevelop vyčistila cache, inak stlačte "
+"tlačidlo Zrušiť, ak ste si istí, že zrútenie má iný pôvod."
+
+#: language/duchain/types/containertypes.cpp:87
+#, kde-format
+msgid "%1 of %2"
+msgstr "%1 z %2"
+
+#: language/duchain/types/containertypes.cpp:97
+#: language/duchain/types/containertypes.cpp:98
+msgid "unknown"
+msgstr "neznáme"
+
+#: language/duchain/types/containertypes.cpp:100
+#, kde-format
+msgid "%1 of %2 : %3"
+msgstr "%1 z %2 : %3"
+
+#: language/util/debuglanguageparserhelper.h:166
+msgid "print generated AST tree"
+msgstr "tlačiť vygenerovaný strom AST"
+
+#: language/util/debuglanguageparserhelper.h:167
+msgid "print generated token stream"
+msgstr "tlačiť vygenerovaný prúd tokenov"
+
+#: language/util/debuglanguageparserhelper.h:168
+msgid "code to parse"
+msgstr "kód na analýzu"
+
+#: language/util/debuglanguageparserhelper.h:169
+msgid ""
+"files or - to read from STDIN, the latter is the default if nothing is "
+"provided"
+msgstr ""
+"súbory alebo čítať z STDIN, druhé je predvoľba, ak nič nie je poskytnuté"
+
+#: outputview/outputexecutejob.cpp:184
+msgid "No build directory specified for a builder job."
+msgstr "Žiadny adresár zostavenia určený pre úlohu zostavovacieho programu."
+
+#: outputview/outputexecutejob.cpp:186
+msgid "No working directory specified for a process."
+msgstr "Žiadny pracovný adresár určený pre proces."
+
+#: outputview/outputexecutejob.cpp:197
+#, kde-format
+msgid "Invalid build directory '%1'"
+msgstr "Neplatný adresár zostavenia '%1'"
+
+#: outputview/outputexecutejob.cpp:199
+#, kde-format
+msgid "Invalid working directory '%1'"
+msgstr "Neplatný pracovný adresár '%1'"
+
+#: outputview/outputexecutejob.cpp:205
+#, kde-format
+msgid "Build directory '%1' is not a local path"
+msgstr "Adresár zostavenia '%1' nie je miestna cesta"
+
+#: outputview/outputexecutejob.cpp:207
+#, kde-format
+msgid "Working directory '%1' is not a local path"
+msgstr "Pracovný adresár '%1' nie je miestna cesta"
+
+#: outputview/outputexecutejob.cpp:225
+#, kde-format
+msgid "Build directory '%1' does not exist or is not a directory"
+msgstr "Adresár zostavenia '%1' neexistuje alebo nie je adresár"
+
+#: outputview/outputexecutejob.cpp:227
+#, kde-format
+msgid "Working directory '%1' does not exist or is not a directory"
+msgstr "Pracovný adresár '%1' neexistuje alebo nie je adresár."
+
+#: outputview/outputexecutejob.cpp:292
+msgid "*** Aborted ***"
+msgstr "*** Prerušené ***"
+
+#: outputview/outputexecutejob.cpp:295
+msgid "*** Warning: could not kill the process ***"
+msgstr "*** Varovanie: nepodarilo sa zabiť proces ***"
+
+#: outputview/outputexecutejob.cpp:311
+#, kde-format
+msgid "%1 has failed to start"
+msgstr "Zlyhalo spustenie %1"
+
+#: outputview/outputexecutejob.cpp:315
+#, kde-format
+msgid "%1 has crashed"
+msgstr "%1 spadol"
+
+#: outputview/outputexecutejob.cpp:319
+msgid "Read error"
+msgstr "Chyba načítania"
+
+#: outputview/outputexecutejob.cpp:323
+msgid "Write error"
+msgstr "Chyba zápisu"
+
+#: outputview/outputexecutejob.cpp:327
+msgid "Waiting for the process has timed out"
+msgstr "Čakanie na proces uplynulo"
+
+#: outputview/outputexecutejob.cpp:332
+#, kde-format
+msgid "Exit code %1"
+msgstr "Ukončovací kód %1"
+
+#: outputview/outputexecutejob.cpp:345
+#, kde-format
+msgid "*** Failure: %1 ***"
+msgstr "*** Zlyhanie: %1 ***"
+
+#: outputview/outputexecutejob.cpp:361
+msgid "*** Finished ***"
+msgstr "*** Dokončené ***"
+
+#: outputview/outputfilteringstrategies.cpp:160
+#: outputview/outputfilteringstrategies.cpp:169
+#: outputview/outputfilteringstrategies.cpp:177
+#: outputview/outputfilteringstrategies.cpp:189
+msgctxt ""
+msgid "compiling"
+msgstr "kompilácia"
+
+#: outputview/outputfilteringstrategies.cpp:164
+#: outputview/outputfilteringstrategies.cpp:170
+#: outputview/outputfilteringstrategies.cpp:178
+#: outputview/outputfilteringstrategies.cpp:188
+msgctxt ""
+msgid "generating"
+msgstr "generovanie"
+
+#: outputview/outputfilteringstrategies.cpp:166
+#: outputview/outputfilteringstrategies.cpp:172
+#: outputview/outputfilteringstrategies.cpp:174
+#: outputview/outputfilteringstrategies.cpp:180
+msgctxt "Linking object files into a library or executable"
+msgid "linking"
+msgstr "linkujem"
+
+#: outputview/outputfilteringstrategies.cpp:176
+msgctxt ""
+msgid "built"
+msgstr "zostavené"
+
+#: outputview/outputfilteringstrategies.cpp:181
+msgctxt ""
+msgid "configuring"
+msgstr "nastavovanie"
+
+#: outputview/outputfilteringstrategies.cpp:182
+#: outputview/outputfilteringstrategies.cpp:185
+msgctxt ""
+msgid "installing"
+msgstr "inštalovanie"
+
+#: outputview/outputfilteringstrategies.cpp:184
+msgctxt ""
+msgid "creating"
+msgstr "vytváranie"
+
+#: project/abstractfilemanagerplugin.cpp:316
+#, kde-format
+msgid ""
+"The base folder of project <b>%1</b> got deleted or moved outside of "
+"KDevelop.\n"
+"The project has to be closed."
+msgstr ""
+"Základná priečinok projektu <b>%1</b> sa vymazal alebo presunul mimo "
+"KDevelop.\n"
+"Projekt musí byť uzavretý."
+
+#: project/abstractfilemanagerplugin.cpp:319
+msgid "Project Folder Deleted"
+msgstr "Vymazaný priečinok projektu"
+
+#: project/abstractfilemanagerplugin.cpp:343
+#, kde-format
+msgid ""
+"You tried to rename '%1' to '%2', but the latter is filtered and will be "
+"hidden.\n"
+"Do you want to continue?"
+msgstr ""
+"Pokúsili ste sa premenovať '%1' na '%2', ale ten druhý je filtrovaný a bude "
+"skrytý.\n"
+"Chcete pokračovať?"
+
+#: project/builderjob.cpp:90
+msgctxt "@info:status"
+msgid "build"
+msgstr "zostavenie"
+
+#: project/builderjob.cpp:92
+msgctxt "@info:status"
+msgid "clean"
+msgstr "vyčistiť"
+
+#: project/builderjob.cpp:94
+msgctxt "@info:status"
+msgid "configure"
+msgstr "nastaviť"
+
+#: project/builderjob.cpp:96
+msgctxt "@info:status"
+msgid "install"
+msgstr "nainštalovať"
+
+#: project/builderjob.cpp:98
+msgctxt "@info:status"
+msgid "prune"
+msgstr "zostrihať"
+
+#: project/builderjob.cpp:243
+msgctxt "Unspecified set of build items (e. g. projects, targets)"
+msgid "Various items"
+msgstr "Rôzne položky"
+
+#: project/helper.cpp:67
+#, kde-format
+msgid "Cannot remove folder <i>%1</i>."
+msgstr "Nemožno odstrániť priečinok <i>%1</i>."
+
+#: project/helper.cpp:68
+#, kde-format
+msgid "Cannot remove file <i>%1</i>."
+msgstr "Nemožno odstrániť súbor <i>%1</i>."
+
+#: project/helper.cpp:83
+#, kde-format
+msgid "The file <i>%1</i> already exists."
+msgstr "Súbor <i>%1</i> už existuje."
+
+#: project/helper.cpp:91
+#, kde-format
+msgid "Cannot create temporary file to create <i>%1</i>."
+msgstr "Nemožno vytvoriť dočasný súbor pre vytvorenie <i>%1</i>."
+
+#: project/helper.cpp:96
+#, kde-format
+msgid "Cannot create file <i>%1</i>."
+msgstr "Nie je možné vytvoriť súbor <i>%1</i>."
+
+#: project/helper.cpp:111
+#, kde-format
+msgid "Cannot create folder <i>%1</i>."
+msgstr "Nedá sa vytvoriť priečinok <i>%1</i>."
+
+#: project/importprojectjob.cpp:68
+#, kde-format
+msgid "Project Import: %1"
+msgstr "Import projektu: %1"
+
+#: project/importprojectjob.cpp:100
+msgid "Project import canceled."
+msgstr "Import projektu zrušený."
+
+#: project/projectbuildsetmodel.cpp:273
+msgctxt "@title:column buildset item name"
+msgid "Name"
+msgstr "Názov"
+
+#: project/projectbuildsetmodel.cpp:276
+msgctxt "@title:column buildset item path"
+msgid "Path"
+msgstr "Cesta"
+
+#: project/projectitemlineedit.cpp:153
+msgid "Enter the path to an item from the projects tree"
+msgstr "Zadať cestu k položke zo stromu projektov"
+
+#: project/projectitemlineedit.cpp:155
+msgid "Select..."
+msgstr "Vybrať..."
+
+#: project/projectitemlineedit.cpp:182
+msgid "Select the item you want to get the path from."
+msgstr "Vyberte položku, od ktorej chcete získať cestu."
+
+#: project/projectitemlineedit.cpp:187
+msgid "Select an item..."
+msgstr "Vybrať položku..."
+
+#: project/projectutils.cpp:87
+#, kde-format
+msgid "Folder %1"
+msgstr "Priečinok %1"
+
+#: project/projectutils.cpp:89
+#, kde-format
+msgid "Project %1"
+msgstr "Projekt %1"
+
+#: shell/areadisplay.cpp:54
+msgid ""
+"Execute actions to change the area.<br />An area is a toolview configuration "
+"for a specific use case. From here you can also navigate back to the default "
+"code area."
+msgstr ""
+"Vykonať činnosti na zmenu plochy.<br/> Plocha je konfigurácia pohľadu "
+"nástrojov pre konkrétny prípad použitia. Odtiaľ tiež môžete prejsť späť do "
+"východzieho kódu oblasti."
+
+#: shell/areadisplay.cpp:80
+msgid "Back to code"
+msgstr "Späť na kód"
+
+#: shell/assistantpopup.cpp:387
+msgid "Hide"
+msgstr "Skryť"
+
+#: shell/core.cpp:98
+msgid "KDevelop Platform"
+msgstr "KDevelop Platform"
+
+#: shell/core.cpp:99
+msgid "Development Platform for IDE-like Applications"
+msgstr "Vývojová platforma pre IDE aplikácie"
+
+#: shell/core.cpp:100
+msgid "Copyright 2004-2014, The KDevelop developers"
+msgstr "Copyright 2004-2014, Vývojári KDevelop"
+
+#: shell/core.cpp:102
+msgid "Andreas Pakulat"
+msgstr "Andreas Pakulat"
+
+#: shell/core.cpp:102
+msgid ""
+"Architecture, VCS Support, Project Management Support, QMake Projectmanager"
+msgstr ""
+"Architektúra, podpora VCS, podpora správy projektov, projektový manažér QMake"
+
+#: shell/core.cpp:103
+msgid "Alexander Dymo"
+msgstr "Alexander Dymo"
+
+#: shell/core.cpp:103
+msgid "Architecture, Sublime UI, Ruby support"
+msgstr "Architektúra, Sublime UI, Podpora Ruby"
+
+#: shell/core.cpp:104
+msgid "David Nolden"
+msgstr "David Nolden"
+
+#: shell/core.cpp:104
+msgid "Definition-Use Chain, C++ Support"
+msgstr "Definition-Use Chain, C++ Support"
+
+#: shell/core.cpp:105
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: shell/core.cpp:105
+msgid "Co-Maintainer, CMake Support, Run Support, Kross Support"
+msgstr "Spolusprávca, podpora CMake, podpora behu, podpora Kross"
+
+#: shell/core.cpp:106
+msgid "Vladimir Prus"
+msgstr "Vladimir Prus"
+
+#: shell/core.cpp:106
+msgid "GDB integration"
+msgstr "GDB integrácia"
+
+#: shell/core.cpp:107
+msgid "Hamish Rodda"
+msgstr "Hamish Rodda"
+
+#: shell/core.cpp:107
+msgid "Text editor integration, definition-use chain"
+msgstr "Integrácia textového editora, definition-use chain"
+
+#: shell/core.cpp:109
+msgid "Matt Rogers"
+msgstr "Matt Rogers"
+
+#: shell/core.cpp:110
+msgid "Cédric Pasteur"
+msgstr "Cédric Pasteur"
+
+#: shell/core.cpp:110
+msgid "astyle and indent support"
+msgstr "Podpora astyle a odsadenia"
+
+#: shell/core.cpp:111
+msgid "Evgeniy Ivanov"
+msgstr "Evgeniy Ivanov"
+
+#: shell/core.cpp:111
+msgid "Distributed VCS, Git, Mercurial"
+msgstr "Distributed VCS, Git, Mercurial"
+
+#: shell/core.cpp:114
+msgid "Robert Gruber"
+msgstr "Robert Gruber"
+
+#: shell/core.cpp:114
+msgid "SnippetPart, debugger and usability patches"
+msgstr "SnippetPart, debugger a záplaty na použiteľnosť"
+
+#: shell/core.cpp:115
+msgid "Dukju Ahn"
+msgstr "Dukju Ahn"
+
+#: shell/core.cpp:115
+msgid "Subversion plugin, Custom Make Manager, Overall improvements"
+msgstr "Plugin Subversion, Custom Make Manager, celkové zlepšenia"
+
+#: shell/core.cpp:116
+msgid "Niko Sams"
+msgstr "Niko Sams"
+
+#: shell/core.cpp:116
+msgid "GDB integration, Webdevelopment Plugins"
+msgstr "GDB intergácia, pluginy webového vývoja"
+
+#: shell/core.cpp:117
+msgid "Milian Wolff"
+msgstr "Milian Wolff"
+
+#: shell/core.cpp:117
+msgid ""
+"Co-Maintainer, Generic manager, Webdevelopment Plugins, Snippets, Performance"
+msgstr ""
+"Spolusprávca, všeobecný správca, pluginy webového vývoja, úryvky, výkon"
+
+#: shell/core.cpp:275
+msgid ""
+"The installed Kate version does not support the MovingInterface which is "
+"crucial for KDevelop starting from version 4.2.\n"
+"\n"
+"To use KDevelop with KDE SC prior to 4.6, where the SmartInterface is used "
+"instead of the MovingInterface, you need KDevelop 4.1 or lower."
+msgstr ""
+"Nainštalovaná verzia Kate nepodporuje MovingInterface, čo je kľúčové pre "
+"KDevelop od verzie 4.2.\n"
+"\n"
+"Ak chcete používať KDevelop s KDE SC pred 4.6, kde sa používa SmartInterface "
+"namiesto MovingInterface, potrebujete KDevelop 4.1 alebo nižšie."
+
+#: shell/debugcontroller.cpp:131
+msgid "Frame Stack"
+msgstr "Rámcový zásobník"
+
+#: shell/debugcontroller.cpp:137
+msgid "Breakpoints"
+msgstr "Body zastavenia"
+
+#: shell/debugcontroller.cpp:143
+msgid "Variables"
+msgstr "Premenné"
+
+#: shell/debugcontroller.cpp:201
+msgid "&Continue"
+msgstr "Pokračovať"
+
+#: shell/debugcontroller.cpp:202
+msgid "Continue application execution"
+msgstr "Pokračovať vo vykonávaní aplikácie"
+
+#: shell/debugcontroller.cpp:203
+msgid ""
+"Continues the execution of your application in the debugger. This only takes "
+"effect when the application has been halted by the debugger (i.e. a "
+"breakpoint has been activated or the interrupt was pressed)."
+msgstr ""
+"Pokračuje vo vykonávaní vašej aplikácie v ladiacom programe. Toto nastane, "
+"iba ak bola aplikácia zastavená ladiacim programom (t.j. bol aktivovaný bod "
+"zastavenia alebo bolo vyžiadané prerušenie)."
+
+#: shell/debugcontroller.cpp:211
+msgid "&Restart"
+msgstr "&Reštart"
+
+#: shell/debugcontroller.cpp:212
+msgid "Restart program"
+msgstr "Reštartovať program"
+
+#: shell/debugcontroller.cpp:213
+msgid "Restarts applications from the beginning."
+msgstr "Reštartuje aplikácie od začiatku"
+
+#: shell/debugcontroller.cpp:219
+msgid "Interrupt"
+msgstr "Prerušenie"
+
+#: shell/debugcontroller.cpp:220
+msgid "Interrupt application"
+msgstr "Prerušiť aplikáciu"
+
+#: shell/debugcontroller.cpp:221
+msgid "Interrupts the debugged process or current debugger command."
+msgstr "Preruší ladiaci proces alebo aktuálny príkaz ladiaceho programu."
+
+#: shell/debugcontroller.cpp:225
+msgid "Run to &Cursor"
+msgstr "Bežať na kurzor"
+
+#: shell/debugcontroller.cpp:226
+msgid "Run to cursor"
+msgstr "Bežať na kurzor"
+
+#: shell/debugcontroller.cpp:227
+msgid "Continues execution until the cursor position is reached."
+msgstr "Pokračovať vo vykonávaní pokiaľ nie je dosiahnutá pozícia kurzora."
+
+#: shell/debugcontroller.cpp:232
+msgid "Set E&xecution Position to Cursor"
+msgstr "Nastaviť pozíciu &vykonávania na kurzor"
+
+#: shell/debugcontroller.cpp:233
+msgid "Jump to cursor"
+msgstr "Skočiť na kurzor"
+
+#: shell/debugcontroller.cpp:234
+msgid "Continue execution from the current cursor position."
+msgstr "Pokračovať vo vykonávaní od súčasnej pozície kurzora."
+
+#: shell/debugcontroller.cpp:238
+msgid "Step &Over"
+msgstr "Prekročiť"
+
+#: shell/debugcontroller.cpp:240
+msgid "Step over the next line"
+msgstr "Prekročiť nasledujúci riadok"
+
+#: shell/debugcontroller.cpp:241
+msgid ""
+"Executes one line of source in the current source file. If the source line "
+"is a call to a function the whole function is executed and the app will stop "
+"at the line following the function call."
+msgstr ""
+"Vykoná jeden riadok zdroja v súčasnom zdrojovom súbore. Ak je zdrojový "
+"riadok volanie funkcie, vykoná sa celá funkcia a aplikácia sa zastaví na "
+"riadku nasledujúcom po volaní funkcie."
+
+#: shell/debugcontroller.cpp:249
+msgid "Step over Ins&truction"
+msgstr "Prekročiť inš&trukciu"
+
+#: shell/debugcontroller.cpp:250
+msgid "Step over instruction"
+msgstr "Prekročiť inštrukciu"
+
+#: shell/debugcontroller.cpp:251
+msgid "Steps over the next assembly instruction."
+msgstr "Prekročí nasledujúcu inštrukciu zostavenia."
+
+#: shell/debugcontroller.cpp:256
+msgid "Step &Into"
+msgstr "Krok do"
+
+#: shell/debugcontroller.cpp:258
+msgid "Step into the next statement"
+msgstr "Vstúpiť do nasledujúceho príkazu"
+
+#: shell/debugcontroller.cpp:259
+msgid ""
+"Executes exactly one line of source. If the source line is a call to a "
+"function then execution will stop after the function has been entered."
+msgstr ""
+"Vykoná presne jeden riadok zdroja. Ak je zdrojový riadok volanie funkcie, "
+"potom sa vykonávanie zastaví po vstupe do funkcie."
+
+#: shell/debugcontroller.cpp:266
+msgid "Step into I&nstruction"
+msgstr "Vstúpiť do i&nštrukcie"
+
+#: shell/debugcontroller.cpp:267
+msgid "Step into instruction"
+msgstr "Vstúpiť do inštrukcie "
+
+#: shell/debugcontroller.cpp:268
+msgid "Steps into the next assembly instruction."
+msgstr "Vstúpi do nasledujúcej inštrukcie zostavenia."
+
+#: shell/debugcontroller.cpp:272
+msgid "Step O&ut"
+msgstr "Krok von"
+
+#: shell/debugcontroller.cpp:274
+msgid "Step out of the current function"
+msgstr "Vystúpiť zo súčasnej funkcie"
+
+#: shell/debugcontroller.cpp:275
+msgid ""
+"Executes the application until the currently executing function is "
+"completed. The debugger will then display the line after the original call "
+"to that function. If program execution is in the outermost frame (i.e. in "
+"main()) then this operation has no effect."
+msgstr ""
+"Vykonáva aplikáciu, pokiaľ nie je práve realizovaná funkcia dokončená. "
+"Ladiaci program potom zobrazí riadok po pôvodnom volaní tejto funkcie. Ak je "
+"vykonávanie programu v najvonkajšom tele (t.j. v main ()), potom táto "
+"operácia nemá žiadny efekt."
+
+#: shell/debugcontroller.cpp:283
+msgid "Toggle Breakpoint"
+msgstr "Prepnúť bod zastavenia"
+
+#: shell/debugcontroller.cpp:284
+msgid "Ctrl+Alt+B"
+msgstr "Ctrl+Alt+B"
+
+#: shell/debugcontroller.cpp:285
+msgid "Toggle breakpoint"
+msgstr "Prepnúť bod zastavenia"
+
+#: shell/debugcontroller.cpp:286
+msgid "Toggles the breakpoint at the current line in editor."
+msgstr "Prepne bod zastavenia na aktuálny riadok v editore."
+
+#. i18n: ectx: Menu (run)
+#: shell/debugger/kdevdebuggershellui.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Spustiť"
+
+#. i18n: ectx: ToolBar (debugToolBar)
+#: shell/debugger/kdevdebuggershellui.rc:27
+msgid "Debugger Toolbar"
+msgstr "Panel nástrojov ladenia"
+
+#: shell/documentationcontroller.cpp:116
+msgid "Show Documentation"
+msgstr "Zobraziť dokumentáciu"
+
+#: shell/documentcontroller.cpp:72
+msgid "Untitled"
+msgstr "Nepomenovaný"
+
+#: shell/documentcontroller.cpp:133 shell/documentcontroller.cpp:216
+msgid "*|Text File\n"
+msgstr "*|Textový súbor\n"
+
+#: shell/documentcontroller.cpp:135 shell/documentcontroller.cpp:218
+msgid "Open File"
+msgstr "Otvoriť súbor"
+
+#: shell/documentcontroller.cpp:315
+#, kde-format
+msgid ""
+"KDevelop could not find the editor for file '%1' of type %2.\n"
+"Do you want to open it as plain text?"
+msgstr ""
+"KDevelop nemohol nájsť editor pre súbor '%1' typu %2.\n"
+"Chcete ho otvoriť ako jednoduchý text?"
+
+#: shell/documentcontroller.cpp:315
+msgctxt "@title:window"
+msgid "Could Not Find Editor"
+msgstr "Nepodarilo sa nájsť editor"
+
+#: shell/documentcontroller.cpp:617
+msgid "&Open..."
+msgstr "&Otvoriť..."
+
+#: shell/documentcontroller.cpp:619
+msgid "Open file"
+msgstr "Otvoriť súbor"
+
+#: shell/documentcontroller.cpp:620
+msgid "Opens a file for editing."
+msgstr "Otvorí súbor pre úpravy."
+
+#: shell/documentcontroller.cpp:624
+msgid ""
+"This lists files which you have opened recently, and allows you to easily "
+"open them again."
+msgstr ""
+"Toto je zoznam súborov, ktoré boli naposledy otvorené. Podporuje ich "
+"jednoduché znovuotvorenie."
+
+#: shell/documentcontroller.cpp:629
+msgid "Save Al&l"
+msgstr "Uložiť všetko"
+
+#: shell/documentcontroller.cpp:631
+msgid "Save all open documents"
+msgstr "Uložiť všetky otvorené dokumenty"
+
+#: shell/documentcontroller.cpp:632
+msgid ""
+"Save all open documents, prompting for additional information when necessary."
+msgstr ""
+"Uložiť všetky otvorené dokumenty, opýtať sa na ďalšie informácie v prípade "
+"potreby."
+
+#: shell/documentcontroller.cpp:638 shell/mainwindow_p.cpp:370
+msgid "Reload All"
+msgstr "Obnoviť všetko"
+
+#: shell/documentcontroller.cpp:640
+msgid "Revert all open documents"
+msgstr "Vrátiť všetky otvorené dokumenty"
+
+#: shell/documentcontroller.cpp:641
+msgid "Revert all open documents, returning to the previously saved state."
+msgstr "Vrátiť všetky otvorené dokumenty, návrat do predtým uloženého stavu."
+
+#: shell/documentcontroller.cpp:647
+msgid "&Close"
+msgstr "&Zatvoriť"
+
+#: shell/documentcontroller.cpp:649
+msgid "Close file"
+msgstr "Zatvoriť súbor"
+
+#: shell/documentcontroller.cpp:650
+msgid "Closes current file."
+msgstr "Zatvorí súčasný súbor."
+
+#: shell/documentcontroller.cpp:655
+msgid "Clos&e All"
+msgstr "Zav&rieť všetko"
+
+#: shell/documentcontroller.cpp:657
+msgid "Close all open documents"
+msgstr "Zavrieť všetky otvorené dokumenty."
+
+#: shell/documentcontroller.cpp:658
+msgid ""
+"Close all open documents, prompting for additional information when "
+"necessary."
+msgstr ""
+"Zatvoriť všetky otvorené dokumenty, opýtať sa na ďalšie informácie v prípade "
+"potreby."
+
+#: shell/documentcontroller.cpp:664
+msgid "Close All Ot&hers"
+msgstr "Zavrieť všetky &ostatné"
+
+#: shell/documentcontroller.cpp:666
+msgid "Close all other documents"
+msgstr "Zatvoriť všetky ostatné dokumenty"
+
+#: shell/documentcontroller.cpp:667
+msgid ""
+"Close all open documents, with the exception of the currently active "
+"document."
+msgstr ""
+"Zatvoriť všetky otvorené dokumenty s výnimkou práve aktívneho dokumentu."
+
+#: shell/documentcontroller.cpp:672
+msgid "Show Annotate on current document"
+msgstr "Ukázať poznámky v aktuálnom dokumente"
+
+#: shell/documentcontroller.cpp:673
+msgid "Annotate"
+msgstr "Doplniť poznámky"
+
+#: shell/documentcontroller.cpp:1228
+msgid ""
+"Could not annotate the document because it is not part of a version-"
+"controlled project."
+msgstr ""
+"Nemôžem anotovať dokument, pretože nie je súčasťou projektu s kontrolou "
+"verzií."
+
+#. i18n: ectx: Menu (session)
+#: shell/kdevsessionui.rc:5
+msgctxt "@title:menu"
+msgid "Session"
+msgstr "Sedenie"
+
+#. i18n: ectx: Menu (edit)
+#: shell/kdevsourceformatter.rc:5
+msgctxt "@title:menu"
+msgid "Edit"
+msgstr "Upraviť"
+
+#: shell/launchconfigurationdialog.cpp:64
+msgid "Launch Configurations"
+msgstr "Konfigurácie spustenia"
+
+#: shell/launchconfigurationdialog.cpp:73
+msgctxt "@info:tooltip"
+msgid "Add a new launch configuration."
+msgstr "Pridať novú konfiguráciu spustenia."
+
+#: shell/launchconfigurationdialog.cpp:76
+msgctxt "@info:tooltip"
+msgid "Delete selected launch configuration."
+msgstr "Vymazať vybranú konfiguráciu spustenia."
+
+#: shell/launchconfigurationdialog.cpp:201
+msgid "Rename configuration"
+msgstr "Premenovať konfiguráciu"
+
+#: shell/launchconfigurationdialog.cpp:202
+msgid "Delete configuration"
+msgstr "Zmazať konfiguráciu"
+
+#: shell/launchconfigurationdialog.cpp:256
+msgid ""
+"Selected Launch Configuration has unsaved changes. Do you want to save it?"
+msgstr ""
+"Vybraná konfigurácia spustenia obsahuje neuložené zmeny. Chcete ju uložiť?"
+
+#: shell/launchconfigurationdialog.cpp:256
+msgid "Unsaved Changes"
+msgstr "Neuložené zmeny"
+
+#: shell/launchconfigurationdialog.cpp:326
+#, kde-format
+msgctxt "%1 is a launcher name"
+msgid "No configuration is needed for '%1'"
+msgstr "Nie je potrebná žiadna konfigurácia pre '%1'"
+
+#: shell/launchconfigurationdialog.cpp:370
+msgid ""
+"<i>Select a configuration to edit from the left,<br>or click the \"Add New\" "
+"button to add a new one.</i>"
+msgstr ""
+"<i>Vybrať zľava konfiguráciu, ktorá sa upraví,<br>alebo pre pridanie novej "
+"kliknúť na tlačidlo \"Pridať novú\".</i>"
+
+#: shell/launchconfigurationdialog.cpp:438
+#, kde-format
+msgid "Editing %2: <b>%1</b>"
+msgstr "Úprava %2: <b>%1</b>"
+
+#: shell/launchconfigurationdialog.cpp:710
+msgctxt "Name of the Launch Configurations"
+msgid "Name"
+msgstr "Názov"
+
+#: shell/launchconfigurationdialog.cpp:713
+msgctxt ""
+"The type of the Launch Configurations (i.e. Python Application, C++ "
+"Application)"
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: ectx: property (text), widget (QToolButton, addConfig)
+#: shell/launchconfigurationdialog.ui:40
+msgid "Add New..."
+msgstr "Pridať novú..."
+
+#. i18n: ectx: property (text), widget (QToolButton, deleteConfig)
+#: shell/launchconfigurationdialog.ui:53
+msgid "Remove Selected"
+msgstr "Odstrániť vybrané"
+
+#. i18n: ectx: property (text), widget (QLabel, debugLabel)
+#: shell/launchconfigurationdialog.ui:86
+msgid "Debugger:"
+msgstr "Debugger:"
+
+#: shell/loadedpluginsdialog.cpp:271 shell/mainwindow_p.cpp:248
+msgid "Loaded Plugins"
+msgstr "Načítané zásuvné moduly"
+
+#: shell/loadedpluginsdialog.cpp:279
+#, kde-format
+msgid "<html><font size=\"4\">Plugins loaded for <b>%1</b></font></html>"
+msgstr ""
+"<html><font size=\"4\">Načítané zásuvné moduly pre <b>%1</b></font></html>"
+
+#: shell/mainwindow_p.cpp:226
+#, kde-format
+msgctxt "%1 = application name"
+msgid "Configure %1"
+msgstr "Nastaviť %1"
+
+#: shell/mainwindow_p.cpp:230
+#, kde-format
+msgid "Lets you customize %1."
+msgstr "Umožní vám prispôsobiť %1."
+
+#: shell/mainwindow_p.cpp:234
+msgid "Configure Editor..."
+msgstr "Nastaviť editor..."
+
+#: shell/mainwindow_p.cpp:235
+msgctxt "@info:whatsthis"
+msgid "Configure various aspects of this editor."
+msgstr "Nastaviť rôzne aspekty tohoto editora."
+
+#: shell/mainwindow_p.cpp:238
+msgid "Configure Notifications..."
+msgstr "Nastaviť upozornenia..."
+
+#: shell/mainwindow_p.cpp:239
+msgctxt "@info:tooltip"
+msgid "Configure notifications"
+msgstr "Nastaviť upozornenia"
+
+#: shell/mainwindow_p.cpp:240
+msgctxt "@info:whatsthis"
+msgid "Shows a dialog that lets you configure notifications."
+msgstr "Zobrazí sa dialóg, ktorý vám umožní konfigurovať oznámenia."
+
+#: shell/mainwindow_p.cpp:243
+msgid "About KDevelop Platform"
+msgstr "O KDevelop Platform"
+
+#: shell/mainwindow_p.cpp:244
+msgid "Show Information about KDevelop Platform"
+msgstr "Ukázať informáciu o KDevelop Platform"
+
+#: shell/mainwindow_p.cpp:245
+msgctxt "@info:whatsthis"
+msgid "Shows a dialog with information about KDevelop Platform."
+msgstr "Ukáže dialóg s informáciou o KDevelop Platform."
+
+#: shell/mainwindow_p.cpp:249
+msgid "Show a list of all loaded plugins"
+msgstr "Ukázať zoznam všetkých načítaných zásuvných modulov"
+
+#: shell/mainwindow_p.cpp:250
+msgctxt "@info:whatsthis"
+msgid "Shows a dialog with information about all loaded plugins."
+msgstr "Ukáže dialóg s informáciami o všetkých načítaných zásuvných moduloch."
+
+#: shell/mainwindow_p.cpp:253
+msgid "&Next Window"
+msgstr "&Nasledujúce okno"
+
+#: shell/mainwindow_p.cpp:256
+msgctxt "@info:tooltip"
+msgid "Next window"
+msgstr "Nasledujúce okno"
+
+#: shell/mainwindow_p.cpp:257
+msgctxt "@info:whatsthis"
+msgid "Switches to the next window."
+msgstr "Prepne do nasledujúceho okna."
+
+#: shell/mainwindow_p.cpp:261
+msgid "&Previous Window"
+msgstr "&Predchádzajúce okno"
+
+#: shell/mainwindow_p.cpp:264
+msgctxt "@info:tooltip"
+msgid "Previous window"
+msgstr "Predchádzajúce okno"
+
+#: shell/mainwindow_p.cpp:265
+msgctxt "@info:whatsthis"
+msgid "Switches to the previous window."
+msgstr "Prepne do predchádzajúceho okna."
+
+#: shell/mainwindow_p.cpp:270
+msgid "Split View &Top/Bottom"
+msgstr "Rozdeliť pohľad &horizontálne"
+
+#: shell/mainwindow_p.cpp:273
+msgctxt "@info:tooltip"
+msgid "Split horizontal"
+msgstr "Rozdeliť &horizontálne"
+
+#: shell/mainwindow_p.cpp:274
+msgctxt "@info:whatsthis"
+msgid "Splits the current view horizontally."
+msgstr "Rozdelí súčasný pohľad vodorovne."
+
+#: shell/mainwindow_p.cpp:278
+msgid "Split View &Left/Right"
+msgstr "Rozdeliť pohľad &vertikálne"
+
+#: shell/mainwindow_p.cpp:281
+msgctxt "@info:tooltip"
+msgid "Split vertical"
+msgstr "Rozdeliť vertikálne"
+
+#: shell/mainwindow_p.cpp:282
+msgctxt "@info:whatsthis"
+msgid "Splits the current view vertically."
+msgstr "Rozdelí súčasný pohľad zvisle."
+
+#: shell/mainwindow_p.cpp:285
+msgid "&Next Split View"
+msgstr "Ďalší rozdelený pohľad"
+
+#: shell/mainwindow_p.cpp:288
+msgctxt "@info:tooltip"
+msgid "Next split view"
+msgstr "Ďalší rozdelený pohľad"
+
+#: shell/mainwindow_p.cpp:289
+msgctxt "@info:whatsthis"
+msgid "Switches to the next split view."
+msgstr "Prepne na nasledujúci rozdelený pohľad."
+
+#: shell/mainwindow_p.cpp:293
+msgid "&Previous Split View"
+msgstr "Predošlý rozdelený pohľad"
+
+#: shell/mainwindow_p.cpp:296
+msgctxt "@info:tooltip"
+msgid "Previous split view"
+msgstr "Predošlý rozdelený pohľad"
+
+#: shell/mainwindow_p.cpp:297
+msgctxt "@info:whatsthis"
+msgid "Switches to the previous split view."
+msgstr "Prepne na predchádzajúci rozdelený pohľad."
+
+#: shell/mainwindow_p.cpp:305
+msgid "&New"
+msgstr "&Nové"
+
+#: shell/mainwindow_p.cpp:306
+msgctxt "Shorter Text for 'New File' shown in the toolbar"
+msgid "New"
+msgstr "Nové"
+
+#: shell/mainwindow_p.cpp:308
+msgctxt "@info:tooltip"
+msgid "New file"
+msgstr "Nový súbor"
+
+#: shell/mainwindow_p.cpp:309
+msgctxt "@info:whatsthis"
+msgid "Creates an empty file."
+msgstr "Vytvorí prázdny súbor."
+
+#: shell/mainwindow_p.cpp:314
+msgid "&Add Tool View..."
+msgstr "Prid&ať nástrojový pohľad"
+
+#: shell/mainwindow_p.cpp:316
+msgctxt "@info:tooltip"
+msgid "Add tool view"
+msgstr "Pridať nástrojový pohľad"
+
+#: shell/mainwindow_p.cpp:317
+msgctxt "@info:whatsthis"
+msgid "Adds a new tool view to this window."
+msgstr "Pridá nový nástrojový pohľad do tohto okna."
+
+#: shell/mainwindow_p.cpp:355
+msgid "Split View Top/Bottom"
+msgstr "Rozdeliť pohľad horizontálne"
+
+#: shell/mainwindow_p.cpp:358
+msgid "Split View Left/Right"
+msgstr "Rozdeliť pohľad vertikálne"
+
+#: shell/mainwindow_p.cpp:362
+msgid "New File"
+msgstr "Nový súbor"
+
+#: shell/mainwindow_p.cpp:367
+msgid "Reload"
+msgstr "Znovu načítať"
+
+#: shell/mainwindow_p.cpp:410
+msgid "Add Tool View"
+msgstr "Pridať nástrojový pohľad"
+
+#: shell/openprojectdialog.cpp:52
+msgid "Select Source"
+msgstr "Vybrať zdroj"
+
+#: shell/openprojectdialog.cpp:59
+msgid ""
+"Select a build system setup file, existing KDevelop project, or any folder "
+"to open as a project"
+msgstr ""
+"Vyberte súbor nastavenia systému zostavenia, existujúci projekt KDevelop "
+"alebo akýkoľvek priečinok, ktorý sa otvorí ako projekt"
+
+#: shell/openprojectdialog.cpp:69
+msgid "Project Information"
+msgstr "Informácie projektu"
+
+#: shell/openprojectdialog.cpp:78
+msgid "Open Project"
+msgstr "Otvoriť projekt"
+
+#: shell/openprojectdialog.cpp:115
+#, kde-format
+msgid "Open \"%1\" as project"
+msgstr "Otvoriť \"%1\" ako projekt"
+
+#: shell/openprojectdialog.cpp:119
+msgid "Selected URL is invalid"
+msgstr "Vybrané URL je neplatné"
+
+#: shell/openprojectpage.cpp:63
+#, kde-format
+msgid "%1|All Project Files (%1)"
+msgstr "%1|Všetky súbory projektu (%1)"
+
+#: shell/partcontroller.cpp:120
+msgid ""
+"Could not find KTextEditor::Factory, check your installation:\n"
+"Make sure that Kate is installed, KDEDIRS is set properly and that you ran "
+"kbuildsycoca4."
+msgstr ""
+"Nepodarilo sa nájsť KTextEditor::Factory, skontrolujte si vašu inštaláciu:\n"
+"Uistite sa, že je nainštalovaná aplikácia Kate, KDEDIRS je správne nastavený "
+"a že ste spustili kbuildsycoca4."
+
+#: shell/partcontroller.cpp:122
+msgid "System Configuration Error"
+msgstr "Chyba konfigurácie systému"
+
+#: shell/partdocument.cpp:102 shell/textdocument.cpp:553
+#, kde-format
+msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
+msgstr "Dokument \"%1\" má neuložené zmeny. Chcete ich uložiť?"
+
+#: shell/partdocument.cpp:103 shell/partdocument.cpp:119
+msgid "Close Document"
+msgstr "Zatvoriť dokument"
+
+#: shell/partdocument.cpp:117
+#, kde-format
+msgid ""
+"The document \"%1\" has unsaved changes and was modified by an external "
+"process.\n"
+"Do you want to override the external changes?"
+msgstr ""
+"Dokument \"%1\" obsahuje neuložené zmeny a bol upravený externým procesom.\n"
+"Chcete prepísať externé zmeny?"
+
+#: shell/plugincontroller.cpp:493
+#, kde-format
+msgid ""
+"Plugin '%1' could not be loaded correctly and was disabled.\n"
+"Reason: %2."
+msgstr ""
+"Zásuvný modul '%1' sa nepodarilo načítať správne a bol zablokovaný.\n"
+"Dôvod: %2."
+
+#: shell/progresswidget/progressdialog.cpp:171
+msgid "Cancel this operation."
+msgstr "Zrušiť túto operáciu."
+
+#: shell/progresswidget/progressmanager.cpp:108
+msgid "Aborting..."
+msgstr "Prerušujem..."
+
+#: shell/progresswidget/statusbarprogresswidget.cpp:79
+msgid "Open detailed progress dialog"
+msgstr "Otvorí detailný dialóg priebehu"
+
+#: shell/progresswidget/statusbarprogresswidget.cpp:287
+msgid "Hide detailed progress window"
+msgstr "Skryje okno s detailným priebehom"
+
+#: shell/progresswidget/statusbarprogresswidget.cpp:291
+msgid "Show detailed progress window"
+msgstr "Zobraziť detailný dialóg prebiehu"
+
+#: shell/project.cpp:113
+#, kde-format
+msgid "Loading Project %1"
+msgstr "Načítavanie projektu %1"
+
+#: shell/project.cpp:121
+#, kde-format
+msgctxt "%1: Project name"
+msgid "Loading %1"
+msgstr "Načítavanie %1"
+
+#: shell/project.cpp:264
+#, kde-format
+msgid ""
+"Unable to load the project file %1.<br>The project has been removed from the "
+"session."
+msgstr ""
+"Nie je možné načítať súbor projektu %1.<br>Projekt bol odstránený zo sedenia."
+
+#: shell/project.cpp:289
+#, kde-format
+msgid "Unable to create hidden dir (%1) for developer file"
+msgstr "Nie je možné vytvoriť skrytý adresár (%1) pre vývojárky súbor"
+
+#: shell/project.cpp:301
+#, kde-format
+msgid "Unable to get project file: %1"
+msgstr "Nie je možné získať súbor projektu: %1"
+
+#: shell/project.cpp:341
+#, kde-format
+msgid "Could not load %1, a project with the same name '%2' is already open."
+msgstr ""
+"Nepodarilo sa načítať %1, projekt s rovnakým názvom '%2' je už otvorený."
+
+#: shell/project.cpp:372
+#, kde-format
+msgid "Could not load project management plugin %1."
+msgstr "Nepodarilo sa načítať zásuvný modul správy projektov %1."
+
+#: shell/project.cpp:379
+#, kde-format
+msgid ""
+"project importing plugin (%1) does not support the IProjectFileManager "
+"interface."
+msgstr ""
+"importovací zásuvný modul projektu (%1) nepodporuje rozhranie "
+"IProjectFileManager."
+
+#: shell/project.cpp:423
+msgid "Could not open project"
+msgstr "Nie je možné otvoriť projekt"
+
+#: shell/project.cpp:568
+msgid ""
+"Could not store developer specific project configuration.\n"
+"Attention: The project settings you changed will be lost."
+msgstr ""
+"Nemožno uložiť osobitnú vývojársku konfiguráciu projektu.\n"
+"Pozor: Nastavenia projektu, ktoré ste zmenili, budú stratené."
+
+#: shell/projectcontroller.cpp:151
+#, kde-format
+msgid "Configure Project %1"
+msgstr "Nastaviť projekt %1"
+
+#: shell/projectcontroller.cpp:271
+#, kde-format
+msgid "Invalid Location: %1"
+msgstr "Neplatné umiestnenie %1"
+
+#: shell/projectcontroller.cpp:278
+msgid "Project already being opened"
+msgstr "Projekt sa práve otvára"
+
+#: shell/projectcontroller.cpp:279
+#, kde-format
+msgid "Already opening %1, not opening again"
+msgstr "Práve sa otvára%1, neotvárať znovu"
+
+#: shell/projectcontroller.cpp:416
+msgid "Override"
+msgstr "Prepísať"
+
+#: shell/projectcontroller.cpp:417
+msgctxt "@info:tooltip"
+msgid ""
+"Continue to open the project and use the just provided project configuration."
+msgstr ""
+"Pokračovať v otváraní projektu a použiť práve poskytnutú konfiguráciu "
+"projektu."
+
+#: shell/projectcontroller.cpp:420
+msgid "Open Existing File"
+msgstr "Otvoriť existujúci súbor"
+
+#: shell/projectcontroller.cpp:421
+msgctxt "@info:tooltip"
+msgid ""
+"Continue to open the project but use the existing project configuration."
+msgstr ""
+"Pokračovať v otváraní projektu, ale použiť existujúcu konfiguráciu projektu."
+
+#: shell/projectcontroller.cpp:424
+msgctxt "@info:tooltip"
+msgid "Cancel and do not open the project."
+msgstr "Zrušiť a neotvárať projekt."
+
+#: shell/projectcontroller.cpp:426
+#, kde-format
+msgid ""
+"There already exists a project configuration file at %1.\n"
+"Do you want to override it or open the existing file?"
+msgstr ""
+"Už existuje konfiguračný súbor projektu v %1.\n"
+"Chcete ho prepísať alebo otvoríť existujúci súbor?"
+
+#: shell/projectcontroller.cpp:428
+msgid "Override existing project configuration"
+msgstr "Prepísať existujúcu konfiguráciu projektu"
+
+#: shell/projectcontroller.cpp:444
+#, kde-format
+msgid "Unable to create configuration file %1"
+msgstr "Nie je možné vytvoriť konfiguračný súbor %1"
+
+#: shell/projectcontroller.cpp:455
+msgid "Reopen the current project?"
+msgstr "Znovu otvoriť súčasný projekt?"
+
+#: shell/projectcontroller.cpp:489
+msgctxt "@action"
+msgid "Open / Import Project..."
+msgstr "Otvoriť / Importovať projekt..."
+
+#: shell/projectcontroller.cpp:490
+msgctxt "@info:tooltip"
+msgid "Open or import project"
+msgstr "Otvoriť alebo importovať projekt"
+
+#: shell/projectcontroller.cpp:491
+msgctxt "@info:whatsthis"
+msgid ""
+"Open an existing KDevelop 4 project or import an existing Project into "
+"KDevelop 4. This entry allows to select a KDevelop4 project file or an "
+"existing directory to open it in KDevelop. When opening an existing "
+"directory that does not yet have a KDevelop4 project file, the file will be "
+"created."
+msgstr ""
+"Otvoriť existujúci projekt KDevelop 4 alebo importovať existujúci projekt do "
+"KDevelop 4. Táto položka umožňuje vybrať súbor projektu KDevelop4 alebo "
+"existujúci adresár pre otvorenie v KDevelop. Pri otvorení existujúceho "
+"adresára, ktorý doteraz nemá súbor projektu KDevelop4, bude tento súbor "
+"vytvorený."
+
+#: shell/projectcontroller.cpp:502
+msgctxt "@action"
+msgid "Fetch Project..."
+msgstr "Natiahnuť projekt..."
+
+#: shell/projectcontroller.cpp:504
+msgctxt "@info:tooltip"
+msgid "Fetch project"
+msgstr "Natiahnuť projekt"
+
+#: shell/projectcontroller.cpp:505
+msgctxt "@info:whatsthis"
+msgid ""
+"Guides the user through the project fetch and then imports it into KDevelop "
+"4."
+msgstr ""
+"Vedie používateľa cez načítanie projektu a potom ho importuje do KDevelop 4."
+
+#: shell/projectcontroller.cpp:519
+msgctxt "@action"
+msgid "Close Project(s)"
+msgstr "Zatvoriť projekt(y)"
+
+#: shell/projectcontroller.cpp:521
+msgctxt "@info:tooltip"
+msgid "Closes all currently selected projects"
+msgstr "Zatvorí všetky aktuálne vybrané projekty"
+
+#: shell/projectcontroller.cpp:526
+msgid "Open Configuration..."
+msgstr "Otvoriť konfiguráciu..."
+
+#: shell/projectcontroller.cpp:532
+msgid "Commit Current Project..."
+msgstr "Začleniť súčasný projekt..."
+
+#: shell/projectcontroller.cpp:533 vcs/vcspluginhelper.cpp:98
+msgid "Commit..."
+msgstr "Začleniť..."
+
+#: shell/projectcontroller.cpp:544
+msgid "Open Recent Project"
+msgstr "Otvoriť nedávny projekt"
+
+#: shell/projectcontroller.cpp:545
+msgctxt "@info:whatsthis"
+msgid "Opens recently opened project."
+msgstr "Otvorí nedávno otvorený projekt"
+
+#: shell/projectcontroller.cpp:550
+msgid "Open Project for Current File"
+msgstr "Otvoriť projekt pre aktuálny súbor"
+
+#: shell/projectcontroller.cpp:670
+#, kde-format
+msgid "Project already open: %1"
+msgstr "Už otvorený projekt: %1"
+
+#: shell/projectcontroller.cpp:673
+msgid "No active document"
+msgstr "Žiadny aktívny dokument"
+
+#: shell/projectcontroller.cpp:737
+msgid "Project Already Open"
+msgstr "Už otvorený projekt"
+
+#: shell/projectcontroller.cpp:741
+msgid ""
+"The project you're trying to open is already open in at least one other "
+"session.<br>What do you want to do?"
+msgstr ""
+"Projekt, ktorý sa snažíte otvoriť, je už otvorený v najmenej jednom ďalšom "
+"sedení.<br>Čo chcete robiť?"
+
+#: shell/projectcontroller.cpp:745
+msgid "Add project to current session"
+msgstr "Pridať projekt do súčasného sedenia"
+
+#: shell/projectcontroller.cpp:749
+#, kde-format
+msgid "Open session %1"
+msgstr "Otvoriť sedenie %1"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, nameEdit)
+#: shell/projectinfopage.ui:16 shell/projectinfopage.ui:26
+msgid "Provide a name for the project"
+msgstr "Určiť názov pre projekt"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: shell/projectinfopage.ui:19
+msgid "Name:"
+msgstr "Názov:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_2)
+#. i18n: ectx: property (toolTip), widget (QComboBox, managerCombo)
+#: shell/projectinfopage.ui:33 shell/projectinfopage.ui:43
+msgid "Select the Management Plugin to use for this project"
+msgstr "Vybrať zásuvný modul správy, ktorý sa použije pre tento projekt"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: shell/projectinfopage.ui:36
+msgid "Build System:"
+msgstr "Systém zostavenia:"
+
+#: shell/projectsourcepage.cpp:40
+msgid "From File System"
+msgstr "Zo súborového systému"
+
+#: shell/projectsourcepage.cpp:148
+#, kde-format
+msgid "Could not create the directory: %1"
+msgstr "Nepodarilo sa vytvoriť adresár %1"
+
+#: shell/projectsourcepage.cpp:177
+#, kde-format
+msgctxt "Format of the progress bar text. progress and info"
+msgid "%1 : %p%"
+msgstr "%1 : %p%"
+
+#: shell/projectsourcepage.cpp:220
+msgid ""
+"You need to specify a valid or nonexistent directory to check out a project"
+msgstr ""
+"Je potrebné, aby ste určili platný alebo neexistujúci adresár, aby ste si "
+"overili projekt."
+
+#: shell/projectsourcepage.cpp:222
+msgid "You need to specify a valid project location"
+msgstr "Je potrebné, aby ste určili platné umiestnenie projektu"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: shell/projectsourcepage.ui:25
+msgid "Source:"
+msgstr "Zdroj:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: shell/projectsourcepage.ui:37
+msgid "Destination"
+msgstr "Cieľ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: shell/projectsourcepage.ui:43
+msgid "Directory:"
+msgstr "Adresár:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, workingDir)
+#: shell/projectsourcepage.ui:50
+msgid "Select the directory to use..."
+msgstr "Vybrať adresár pre použitie..."
+
+#. i18n: ectx: property (text), widget (QPushButton, get)
+#: shell/projectsourcepage.ui:80
+msgid "Get"
+msgstr "Získať"
+
+#: shell/runcontroller.cpp:91
+msgid "Profile"
+msgstr "Profil"
+
+#: shell/runcontroller.cpp:100
+msgid "Execute"
+msgstr "Vykonať"
+
+#: shell/runcontroller.cpp:401
+#, kde-format
+msgid "The current launch configuration does not support the '%1' mode."
+msgstr "Aktuálna konfigurácia spustenia nepodporuje režim '%1'."
+
+#: shell/runcontroller.cpp:418
+msgid "Configure Launches..."
+msgstr "Konfigurovať spustenia..."
+
+#: shell/runcontroller.cpp:420
+msgid "Open Launch Configuration Dialog"
+msgstr "Otvoriť konfiguračný dialóg spustenia"
+
+#: shell/runcontroller.cpp:421
+msgctxt "@info:tooltip"
+msgid "Open Launch Configuration Dialog"
+msgstr "Otvoriť konfiguračný dialóg spustenia"
+
+#: shell/runcontroller.cpp:422
+msgctxt "@info:whatsthis"
+msgid ""
+"Opens a dialog to setup new launch configurations, or to change the existing "
+"ones."
+msgstr ""
+"Otvorí dialóg pre nastavenie nových konfigurácií spustenia alebo pre zmenu "
+"existujúcich."
+
+#: shell/runcontroller.cpp:425
+msgid "Execute Launch"
+msgstr "Vykonať spustenie"
+
+#: shell/runcontroller.cpp:426
+msgctxt "Short text for 'Execute launch' used in the toolbar"
+msgid "Execute"
+msgstr "Spustiť"
+
+#: shell/runcontroller.cpp:428
+msgctxt "@info:tooltip"
+msgid "Execute current launch"
+msgstr "Vykonať aktuálne spustenie"
+
+#: shell/runcontroller.cpp:429
+msgid "Execute current launch"
+msgstr "Vykonať aktuálne spustenie"
+
+#: shell/runcontroller.cpp:430
+msgctxt "@info:whatsthis"
+msgid ""
+"Executes the target or the program specified in currently active launch "
+"configuration."
+msgstr ""
+"Vykoná cieľ alebo program určený v práve aktívnej konfigurácii spustenia."
+
+#: shell/runcontroller.cpp:434
+msgid "Debug Launch"
+msgstr "Odladiť spustenie"
+
+#: shell/runcontroller.cpp:436
+msgctxt "Short text for 'Debug launch' used in the toolbar"
+msgid "Debug"
+msgstr "Ladiť"
+
+#: shell/runcontroller.cpp:437
+msgctxt "@info:tooltip"
+msgid "Debug current launch"
+msgstr "Odladiť aktuálne spustenie"
+
+#: shell/runcontroller.cpp:438
+msgid "Debug current launch"
+msgstr "Odladiť aktuálne spustenie"
+
+#: shell/runcontroller.cpp:439
+msgctxt "@info:whatsthis"
+msgid ""
+"Executes the target or the program specified in currently active launch "
+"configuration inside a Debugger."
+msgstr ""
+"Vykoná cieľ alebo program určený v práve aktívnej konfigurácii spustenia v "
+"ladiacom programe."
+
+#: shell/runcontroller.cpp:452
+msgid "Stop All Jobs"
+msgstr "Zastaviť všetky úlohy"
+
+#: shell/runcontroller.cpp:453
+msgctxt "Short text for 'Stop All Jobs' used in the toolbar"
+msgid "Stop All"
+msgstr "Zastaviť všetko"
+
+#: shell/runcontroller.cpp:456
+msgctxt "@info:tooltip"
+msgid "Stop all currently running jobs"
+msgstr "Zastaviť všetky práve bežiace úlohy"
+
+#: shell/runcontroller.cpp:457
+msgctxt "@info:whatsthis"
+msgid "Requests that all running jobs are stopped."
+msgstr "Požaduje, aby sa všetky bežiace úlohy zastavili."
+
+#: shell/runcontroller.cpp:463
+msgid "Stop"
+msgstr "Zastaviť"
+
+#: shell/runcontroller.cpp:464
+msgctxt "Short text for 'Stop' used in the toolbar"
+msgid "Stop"
+msgstr "Zastaviť"
+
+#: shell/runcontroller.cpp:465
+msgctxt "@info:tooltip"
+msgid "Menu allowing to stop individual jobs"
+msgstr "Menu umožňuje zastaviť jednotlivé úlohy"
+
+#: shell/runcontroller.cpp:466
+msgctxt "@info:whatsthis"
+msgid "List of jobs that can be stopped individually."
+msgstr "Zoznam úloh, ktoré sa môžu zastaviť individuálne."
+
+#: shell/runcontroller.cpp:470
+msgid "Current Launch Configuration"
+msgstr "Súčasná konfigurácia spustenia"
+
+#: shell/runcontroller.cpp:471
+msgctxt "@info:tooltip"
+msgid "Current launch configuration"
+msgstr "Súčasná konfigurácia spustenia"
+
+#: shell/runcontroller.cpp:472
+msgid "Current launch Configuration"
+msgstr "Súčasná konfigurácia spustenia"
+
+#: shell/runcontroller.cpp:473
+msgctxt "@info:whatsthis"
+msgid "Select which launch configuration to run when run is invoked."
+msgstr ""
+"Vybrať, ktorú konfiguráciu spustenia spustiť, keď je vyvolané spustenie."
+
+#: shell/runcontroller.cpp:567
+#, kde-format
+msgid "<%1> Unnamed job"
+msgstr "<%1> nepomenovaná úloha"
+
+#: shell/runcontroller.cpp:672
+msgid "Process Error"
+msgstr "Chyba procesu"
+
+#: shell/runcontroller.cpp:898
+#, kde-format
+msgid "New %1 Launcher"
+msgstr "Nový %1 spúšťač"
+
+#: shell/runcontroller.cpp:935
+#, kde-format
+msgid "%1 As..."
+msgstr "%1 ako..."
+
+#: shell/savedialog.cpp:55
+msgid "Save Modified Files?"
+msgstr "Uložiť zmenené súbory?"
+
+#: shell/savedialog.cpp:65
+msgid "The following files have been modified. Save them?"
+msgstr "Nasledujúce súbory boli zmenené. Uložiť ich?"
+
+#: shell/savedialog.cpp:73
+msgid "Save &Selected"
+msgstr "&Uložiť zvolený"
+
+#: shell/savedialog.cpp:73
+msgctxt "@info:tooltip"
+msgid "Saves all selected files"
+msgstr "Uložiť všetky označené súbory"
+
+#: shell/savedialog.cpp:74
+msgid "Save &None"
+msgstr "Nič neuložiť"
+
+#: shell/savedialog.cpp:75
+msgid "Discard all modifications"
+msgstr "Zahodiť všetky zmeny"
+
+#: shell/session.cpp:185
+msgid "(no projects)"
+msgstr "(žiadne projekty)"
+
+#: shell/sessionchooserdialog.cpp:48
+msgctxt "@info"
+msgid "Delete session"
+msgstr "Vymazať sedenie"
+
+#: shell/sessionchooserdialog.cpp:61
+msgid "Pick a Session"
+msgstr "Vybrať sedenie"
+
+#: shell/sessionchooserdialog.cpp:63
+msgid "Run"
+msgstr "Spustiť"
+
+#: shell/sessionchooserdialog.cpp:95
+#, kde-format
+msgid ""
+"Active session.\n"
+"pid %1, app %2, host %3"
+msgstr ""
+"Aktívne sedenie.\n"
+"pid %1, app %2, host %3"
+
+#: shell/sessionchooserdialog.cpp:97
+msgid "Running"
+msgstr "Beží"
+
+#: shell/sessionchooserdialog.cpp:182
+msgctxt "@title"
+msgid "Cannot Delete Session"
+msgstr "Nemožno vymazať sedenie"
+
+#: shell/sessionchooserdialog.cpp:183
+msgctxt "@info"
+msgid "<p>Cannot delete a locked session."
+msgstr "<p>Nemožno vymazať zamknuté sedenie."
+
+#: shell/sessionchooserdialog.cpp:186
+#, kde-format
+msgctxt "@info"
+msgid "<p>The session is locked by %1 on %2 (PID %3)."
+msgstr "<p>Sedenie je zamknuté s %1 na %2 (PID %3)."
+
+#: shell/sessionchooserdialog.cpp:194
+msgctxt "@info"
+msgid ""
+"The session and all contained settings will be deleted. The projects will "
+"stay unaffected. Do you really want to continue?"
+msgstr ""
+"Sedenie a všetky obsiahnuté nastavenia budú vymazané. Projekty zostanú "
+"neovplyvnené. Naozaj chcete pokračovať?"
+
+#: shell/sessionchooserdialog.cpp:195
+msgctxt "@title"
+msgid "Delete Session"
+msgstr "Vymazať sedenie"
+
+#: shell/sessioncontroller.cpp:188
+msgid ""
+"The current session and all contained settings will be deleted. The projects "
+"will stay unaffected. Do you really want to continue?"
+msgstr ""
+"Súčasné sedenie a všetky obsiahnuté nastavenia budú vymazané. Projekty "
+"zostanú neovplyvnené. Naozaj chcete pokračovať?"
+
+#: shell/sessioncontroller.cpp:200
+msgid "Rename Session"
+msgstr "Premenovať sedenie"
+
+#: shell/sessioncontroller.cpp:204
+msgid "New Session Name"
+msgstr "Nový názov sedenia"
+
+#: shell/sessioncontroller.cpp:383
+msgid "Recover"
+msgstr "Obnoviť"
+
+#: shell/sessioncontroller.cpp:387
+#, kde-format
+msgctxt "%1: date of the last snapshot"
+msgid ""
+"The session crashed the last time it was used. The following modified files "
+"can be recovered from a backup from %1."
+msgstr ""
+"Sedenie spadlo naposledy, keď bolo použité. Nasledujúce zmenené súbory môžu "
+"byť obnovené zo zálohy z %1."
+
+#: shell/sessioncontroller.cpp:389
+msgid "Crash Recovery"
+msgstr "Obnova po spadnutí"
+
+#: shell/sessioncontroller.cpp:409
+#, kde-format
+msgid "Could not recover %1, the recovery file is empty"
+msgstr "Nepodarilo sa obnoviť %1, súbor obnovy je prázdny"
+
+#: shell/sessioncontroller.cpp:409
+msgid "Recovery"
+msgstr "Obnova"
+
+#: shell/sessioncontroller.cpp:516
+#, kde-format
+msgid ""
+"Failed to write recovery copies to %1. Please make sure that your home "
+"directory is writable and not full. This application requires available "
+"space in the home directory to run stable. You may experience application "
+"crashes until you free up some space."
+msgstr ""
+"Zlyhal zápis kópií obnovy do %1. Prosím, uistite sa, že váš domovský adresár "
+"je zapisovateľný a nie je plný. Táto aplikácia vyžaduje dostupné miesto v "
+"domovskom adresári pre stabilný beh. Môže dochádzať k pádom aplikácie, "
+"pokiaľ neuvoľníte nejaké miesto."
+
+#: shell/sessioncontroller.cpp:517
+msgid "Recovery Error"
+msgstr "Chyba obnovy"
+
+#: shell/sessioncontroller.cpp:554
+msgctxt "@action:inmenu"
+msgid "Start New Session"
+msgstr "Spustiť nové sedenie"
+
+#: shell/sessioncontroller.cpp:555
+msgctxt "@info:tooltip"
+msgid "Start a new KDevelop instance with an empty session"
+msgstr "Spustiť novú inštanciu KDevelop s prázdnym sedením"
+
+#: shell/sessioncontroller.cpp:559
+msgid "Rename Current Session..."
+msgstr "Premenovať aktuálne sedenie..."
+
+#: shell/sessioncontroller.cpp:563
+msgid "Delete Current Session..."
+msgstr "Vymazať aktuálne sedenie..."
+
+#: shell/sessioncontroller.cpp:567
+msgid "Quit"
+msgstr "Koniec"
+
+#: shell/sessioncontroller.cpp:573
+msgid "Configure Sessions..."
+msgstr "Nastaviť sedenia..."
+
+#: shell/sessioncontroller.cpp:574
+msgid "Create/Delete/Activate Sessions"
+msgstr "Vytvoriť/Vymazať/Aktivovať sedenie"
+
+#: shell/sessioncontroller.cpp:575
+msgid "Shows a dialog to Create/Delete Sessions and set a new active session."
+msgstr ""
+"Ukáže dialógové okno Vytvoriť/Vymazať sedenia a nastaviť nové aktívne "
+"sedenie."
+
+#: shell/sessioncontroller.cpp:759
+#, kde-format
+msgid "Copy of %1"
+msgstr "Kópia %1"
+
+#: shell/sessioncontroller.cpp:814
+msgid "Search"
+msgstr "Hľadať"
+
+#: shell/sessioncontroller.cpp:837
+msgid "Identity"
+msgstr "Identita"
+
+#: shell/sessioncontroller.cpp:838
+msgid "Contents"
+msgstr "Obsah"
+
+#: shell/sessioncontroller.cpp:845
+msgid "Filter:"
+msgstr "Filter:"
+
+#: shell/sessioncontroller.cpp:876
+msgid "Create New Session"
+msgstr "Vytvoriť nové sedenie"
+
+#: shell/sessiondialog.cpp:186
+msgid "Configure Sessions"
+msgstr "Nastaviť sedenia"
+
+#. i18n: ectx: property (text), widget (QPushButton, newButton)
+#. i18n: ectx: property (text), widget (KPushButton, btnNewStyle)
+#: shell/sessiondialog.ui:34 shell/settings/sourceformattersettings.ui:181
+#: vcs/dvcs/ui/branchmanager.ui:22
+msgid "New"
+msgstr "Nový"
+
+#. i18n: ectx: property (text), widget (QPushButton, cloneButton)
+#: shell/sessiondialog.ui:44
+msgid "Clone"
+msgstr "Klonovať"
+
+#. i18n: ectx: property (text), widget (QPushButton, activateButton)
+#: shell/sessiondialog.ui:59
+msgid "Make Active"
+msgstr "Urobiť aktívnym"
+
+#: shell/sessionlock.cpp:168
+#, kde-format
+msgctxt "@info:shell"
+msgid "made running %1 instance (PID: %2) visible"
+msgstr "bežiaca inštancia %1 (PID: %2) urobená viditeľnou"
+
+#: shell/sessionlock.cpp:171
+#, kde-format
+msgctxt "@info:shell"
+msgid "running %1 instance (PID: %2) is apparently hung"
+msgstr "bežiaca inštancia %1 (PID: %2) zrejme visí"
+
+#: shell/sessionlock.cpp:177
+msgctxt "@info"
+msgid ""
+"The given application did not respond to a DBUS call, it may have crashed or "
+"is hanging."
+msgstr ""
+"Daná aplikácia nereagovala na volanie DBUS, je možné, že spadla alebo visí."
+
+#: shell/sessionlock.cpp:182
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Failed to lock the session <em>%1</em>, already locked by %2 on %3 (PID %4)."
+msgstr ""
+"Zlyhalo zamknutie sedenia <em>%1</em>, už zamknuté s %2 na %3 (PID %4)."
+
+#: shell/sessionlock.cpp:186
+#, kde-format
+msgctxt "@info"
+msgid "Failed to lock the session <em>%1</em> (lock-file unavailable)."
+msgstr "Zlyhalo zamknutie sedenia <em>%1</em> (súbor zámku nedostupný)."
+
+#: shell/sessionlock.cpp:190
+msgctxt "@info"
+msgid ""
+"<p>Please, close the offending application instance or choose another "
+"session to launch.</p>"
+msgstr ""
+"<p>Prosím, zatvorte problematickú inštanciu aplikácie alebo zvoľte ďalšie "
+"sedenie pre spustenie.</p>"
+
+#: shell/sessionlock.cpp:196
+msgctxt "@action:button"
+msgid "Retry startup"
+msgstr "Opakovať spustenie"
+
+#: shell/sessionlock.cpp:199
+msgctxt "@action:button"
+msgid "Choose another session"
+msgstr "Zvoliť ďalšie sedenie"
+
+#: shell/sessionlock.cpp:202
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to Lock Session %1"
+msgstr "Zlyhalo zamknutie sedenia %1"
+
+#: shell/sessionlock.cpp:210
+#, kde-format
+msgctxt "@info"
+msgid "The session %1 is already active in another running instance."
+msgstr "Sedenie %1 je už aktívne v inej spustenej inštancii."
+
+#: shell/settings/bgpreferences.cpp:40
+msgid "Parser Background Settings"
+msgstr "Nastavenia analyzátora v pozadí"
+
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_enable)
+#: shell/settings/bgsettings.ui:29
+msgid ""
+"<p>Enables or disables the background parser.<br>If unsure, leave it "
+"enabled. Disabling the background parser will disable large parts of "
+"KDevelop's functionality.</p>"
+msgstr ""
+"<p>Povolí alebo zakáže analyzátor na pozadí.<br>Ak si nie ste istí, nechajte "
+"to povolené. Zakázanie analyzátora na pozadí vypne veľký rozsah "
+"funkcionality KDevelop.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_enable)
+#: shell/settings/bgsettings.ui:32
+msgid "Enable Background Parser"
+msgstr "Povoliť analyzátor na pozadí"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_delay)
+#: shell/settings/bgsettings.ui:47 shell/settings/bgsettings.ui:63
+msgid "The time to wait before the document is re-analyzed when you edit it."
+msgstr "Čas čakania, než sa dokument opäť analyzuje, ak  ste ho upravili."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: shell/settings/bgsettings.ui:50
+msgid "Delay:"
+msgstr "Oneskorenie:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_delay)
+#: shell/settings/bgsettings.ui:66
+msgid " ms"
+msgstr " ms"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_threads)
+#: shell/settings/bgsettings.ui:79 shell/settings/bgsettings.ui:95
+msgid ""
+"The maximum number of parallel instances the background parser uses. If "
+"unsure, select 1 or 2."
+msgstr ""
+"Maximálny počet súbežných inštancií, ktoré používa analyzátor na pozadí. Ak "
+"si nie ste istí, vyberte 1 alebo 2."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: shell/settings/bgsettings.ui:82
+msgid "Maximum number of threads:"
+msgstr "Maximálny počet vlákien:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_threads)
+#: shell/settings/bgsettings.ui:98
+msgid " threads"
+msgstr " vlákien"
+
+#: shell/settings/ccpreferences.cpp:52
+msgid "Language Support Settings"
+msgstr "Nastavenia podpory jazyka"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: shell/settings/ccsettings.ui:17
+msgid "Code Completion"
+msgstr "Dokončovanie kódu"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_automaticInvocation)
+#. i18n: ectx: property (toolTip), widget (QLabel, label_6)
+#: shell/settings/ccsettings.ui:23 shell/settings/ccsettings.ui:78
+msgid "If disabled, the code completion widget will never show automatically."
+msgstr ""
+"Ak je zakázané, widget doplňovania kódu sa nebude nikdy sa automaticky "
+"ukazovať."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_showMultiLineSelectionInformation)
+#: shell/settings/ccsettings.ui:33
+msgid ""
+"Choose whether to display additional information for the currently selected "
+"code completion item."
+msgstr ""
+"Zvoliť, či sa zobrazia dodatočné informácie pre práve vybratú položku "
+"doplňovania kódu."
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_completionDetail)
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: shell/settings/ccsettings.ui:43 shell/settings/ccsettings.ui:68
+msgid ""
+"<p>The code completion UI has a minimal mode and a detailed mode.<br>Choose "
+"in what cases full code completion will be displayed.</p>"
+msgstr ""
+"<p>UI doplňovania kódu má minimálny režim a podrobný režim.<br>Zvoliť, v "
+"ktorých prípadoch sa zobrazí v úplne doplňovanie kódu.</p>"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_completionDetail)
+#: shell/settings/ccsettings.ui:50
+msgid "Never"
+msgstr "Nikdy"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_completionDetail)
+#: shell/settings/ccsettings.ui:55
+msgid "When Invoked Manually"
+msgstr "Keď sa vyvolá ručne"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_completionDetail)
+#: shell/settings/ccsettings.ui:60
+msgid "Always"
+msgstr "Vždy"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: shell/settings/ccsettings.ui:71
+msgid "Detailed completion:"
+msgstr "Podrobné dokončovanie:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: shell/settings/ccsettings.ui:81
+msgid "Enable automatic invocation:"
+msgstr "Povoliť automatické vyvolanie:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_7)
+#: shell/settings/ccsettings.ui:88
+msgid ""
+"Choose whether to display additional information for the currently selected "
+"codecompletion item."
+msgstr ""
+"Zvoliť, či sa zobrazia dodatočné informácie pre práve vybratú položku "
+"doplňovania kódu."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: shell/settings/ccsettings.ui:91
+msgid "Additional information for current item:"
+msgstr "Dodatočné informácie pre aktuálnu položku:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: shell/settings/ccsettings.ui:101
+msgid "Semantic Code Highlighting"
+msgstr "Sémantické zvýrazňovanie kódu"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, localColorizationLabel)
+#. i18n: ectx: property (toolTip), widget (QSlider, kcfg_localColorization)
+#: shell/settings/ccsettings.ui:110 shell/settings/ccsettings.ui:123
+msgid ""
+"<p>This setting decides about the intensity of colors for local variables, "
+"for example function arguments, variables and the like.</p>"
+msgstr ""
+"<p>Toto nastavenie rozhoduje o intenzite farieb pre lokálne premenné, "
+"napríklad argumenty funkcií, premenné a podobne.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, localColorizationLabel)
+#: shell/settings/ccsettings.ui:113
+msgid "Local colorization intensity:"
+msgstr "Miestna farebná intenzita:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_highlightSemanticProblems)
+#: shell/settings/ccsettings.ui:145 shell/settings/ccsettings.ui:155
+msgid ""
+"<p>Highlight semantic problems, such as non-existent or inaccessible "
+"declarations.</p>"
+msgstr ""
+"<p>Zvýrazniť sémantické problémy, také ako neexistujúce alebo neprístupne "
+"deklarácie.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: shell/settings/ccsettings.ui:148
+msgid "Highlight semantic problems:"
+msgstr "Zvýrazniť sémantické problémy:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_5)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_highlightProblematicLines)
+#: shell/settings/ccsettings.ui:165 shell/settings/ccsettings.ui:175
+msgid ""
+"<p>When enabled, lines with errors will get additionally highlighted and "
+"their positions get marked in the scrollbar.</p>"
+msgstr ""
+"<p>Ak je povolené, riadky s chybami sa dodatočne zvýraznia a ich pozície sa "
+"vyznačia v posuvníku.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: shell/settings/ccsettings.ui:168
+msgid "Highlight problematic lines:"
+msgstr "Zvýrazniť problematické riadky:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
+#: shell/settings/ccsettings.ui:185
+msgid "Space-separated list of words that make a comment represent a TODO item"
+msgstr ""
+"Medzerou oddelený zoznam slov, ktoré tvoria komentár, predstavujú položky "
+"úloh."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: shell/settings/ccsettings.ui:188
+msgid "TODO marker words:"
+msgstr "Značkovacie slová úloh:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, kcfg_todoMarkerWords)
+#: shell/settings/ccsettings.ui:195
+msgid ""
+"Space-separated list of words that make a comment represent a TODO item."
+msgstr ""
+"Medzerou oddelený zoznam slov, ktoré tvoria komentár, predstavujú položky "
+"úloh."
+
+#. i18n: ectx: property (toolTip), widget (QSlider, kcfg_globalColorization)
+#. i18n: ectx: property (toolTip), widget (QLabel, globalColorizationLabel)
+#: shell/settings/ccsettings.ui:205 shell/settings/ccsettings.ui:227
+msgid ""
+"<p>This settings lets you change the intensity of globally accessible types, "
+"for example classes, methods, functions etc.</p>"
+msgstr ""
+"<p>Tieto nastavenia vám umožňujú meniť intenzitu globálne dostupných typov, "
+"napríklad triedy, metódy, funkcie atď.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, globalColorizationLabel)
+#: shell/settings/ccsettings.ui:230
+msgid "Global colorization intensity:"
+msgstr "Globálna farebná intenzita:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: shell/settings/ccsettings.ui:253
+msgid "Project Parsing"
+msgstr "Rozbor projektu"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_2)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_minFilesForSimplifiedParsing)
+#: shell/settings/ccsettings.ui:263 shell/settings/ccsettings.ui:286
+msgid ""
+"<p>When a project contains more files than this number, the project will be\n"
+"parsed in simplified mode, increasing the efficiency by gathering less "
+"information. Global code navigation and quickopen capabilities will be "
+"reduced.</p>"
+msgstr ""
+"<p>Ak projekt obsahuje viac súborov, ako toto číslo, bude projekt\n"
+"analyzovaný v zjednodušenom režime, čo zvyšuje účinnosť cez zhromažďovanie "
+"menšieho množstva informácií. Schopnosti navigácie globálnym kódom a "
+"rýchleho otvárania sa obmedzia.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: shell/settings/ccsettings.ui:266
+msgid "Minimum project size for simplified parsing:"
+msgstr "Minimálna veľkosť projektu pre zjednodušenú analýzu:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_minFilesForSimplifiedParsing)
+#: shell/settings/ccsettings.ui:289
+msgid " files"
+msgstr " súborov"
+
+#: shell/settings/editstyledialog.cpp:69
+#: shell/settings/sourceformattersettings.cpp:76
+msgid ""
+"A KDE text-editor component could not be found.\n"
+"Please check your KDE installation."
+msgstr ""
+"Nepodarilo sa nájsť komponent KDE pre textový editor.\n"
+"Skontrolujte si svoju inštaláciu KDE."
+
+#: shell/settings/editstyledialog.cpp:103
+msgid "No Source Formatter available"
+msgstr "Žiadny zdrojový formátovač nie je k dispozícii"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPreview)
+#: shell/settings/editstyledialog.ui:28
+msgid "Preview"
+msgstr "Náhľad"
+
+#: shell/settings/environmentpreferences.cpp:46
+msgid "Environment Settings"
+msgstr "Nastavenia prostredia"
+
+#: shell/settings/environmentwidget.cpp:57
+msgid "Enter variable ..."
+msgstr "Zadajte premennú..."
+
+#: shell/settings/environmentwidget.cpp:155
+msgid "New Environment Variables"
+msgstr "Nové premenné prostredia"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: shell/settings/environmentwidget.ui:19
+msgid "Environment group:"
+msgstr "Skupina prostredia:"
+
+#. i18n: ectx: property (text), widget (QPushButton, addgrpBtn)
+#: shell/settings/environmentwidget.ui:39
+msgid "Add Group"
+msgstr "Pridať skupinu"
+
+#. i18n: ectx: property (text), widget (QPushButton, removegrpBtn)
+#: shell/settings/environmentwidget.ui:46
+msgid "Remove Group"
+msgstr "Odstrániť skupinu"
+
+#. i18n: ectx: property (text), widget (KPushButton, setAsDefaultBtn)
+#: shell/settings/environmentwidget.ui:53
+msgid "Set As Default Group"
+msgstr "Nastaviť ako predvolenú skupinu"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, deleteButton)
+#: shell/settings/environmentwidget.ui:92
+msgid "Remove variable"
+msgstr "Odstrániť premennú"
+
+#. i18n: ectx: property (toolTip), widget (KPushButton, newMultipleButton)
+#: shell/settings/environmentwidget.ui:105
+msgid "Add Multiple Variables"
+msgstr "Pridať viaceré premené"
+
+#: shell/settings/pluginpreferences.cpp:40
+msgid "Plugin Selection"
+msgstr "Výber pluginu"
+
+#: shell/settings/pluginpreferences.cpp:51
+msgctxt "@title:group"
+msgid "Core"
+msgstr "Jadro"
+
+#: shell/settings/pluginpreferences.cpp:52
+msgctxt "@title:group"
+msgid "Project Management"
+msgstr "Správa projektov"
+
+#: shell/settings/pluginpreferences.cpp:53
+msgctxt "@title:group"
+msgid "Version Control"
+msgstr "Správa verzií"
+
+#: shell/settings/pluginpreferences.cpp:54
+msgctxt "@title:group"
+msgid "Utilities"
+msgstr "Nástroje"
+
+#: shell/settings/pluginpreferences.cpp:55
+msgctxt "@title:group"
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+#: shell/settings/pluginpreferences.cpp:56
+msgctxt "@title:group"
+msgid "Language Support"
+msgstr "Jazyková podpora"
+
+#: shell/settings/pluginpreferences.cpp:57
+msgctxt "@title:group"
+msgid "Debugging"
+msgstr "Ladenie"
+
+#: shell/settings/pluginpreferences.cpp:58
+msgctxt "@title:group"
+msgid "Testing"
+msgstr "Testovanie"
+
+#: shell/settings/pluginpreferences.cpp:59
+msgctxt "@title:group"
+msgid "Other"
+msgstr "Iné"
+
+#. i18n: ectx: label, entry (parseAllProjectSources), group (Project Manager)
+#: shell/settings/projectconfig.kcfg:11
+msgid ""
+"Schedule all project source code to be parsed by the language support in the "
+"background"
+msgstr ""
+"Naplánovať všetok zdrojový kód projektu na analýzu pomocou jazykovej podpory "
+"na pozadí"
+
+#. i18n: ectx: whatsthis, entry (parseAllProjectSources), group (Project Manager)
+#: shell/settings/projectconfig.kcfg:15
+msgid ""
+"If this option is set, KDevelop will schedule all source code\n"
+"        found by the current build system for parsing by the appropriate "
+"language\n"
+"        support part.  This will enable more complete language support, but "
+"may\n"
+"        be slower."
+msgstr ""
+"Ak je táto voľba nastavená, KDevelop naplánuje všetok zdrojový kód,\n"
+"        ktorý nájde aktuálnym systémom zostavenia pre analýzu príslušnou "
+"časťou\n"
+"        jazykovej podpory.  To umožní úplnejšiu jazykovú podporu, ale môže "
+"to\n"
+"         byť pomalšie."
+
+#. i18n: ectx: whatsthis, entry (projectsBaseDirectory), group (Project Manager)
+#: shell/settings/projectconfig.kcfg:19
+msgid "Chooses the base directory where new projects are created."
+msgstr "Zvolí základný adresár, v ktorom sa vytvárajú nové projekty."
+
+#. i18n: ectx: label, entry (saveDocuments), group (Project Manager)
+#: shell/settings/projectconfig.kcfg:23
+msgid "Save all open documents before building anything"
+msgstr "Uložiť všetky otvorené dokumenty pred zostavením čokoľvek"
+
+#. i18n: ectx: whatsthis, entry (saveDocuments), group (Project Manager)
+#: shell/settings/projectconfig.kcfg:24
+msgid ""
+"If this option is set all open documents will be automatically saved before "
+"any build is started."
+msgstr ""
+"Ak je táto voľba nastavená všetky otvorené dokumenty budú automaticky "
+"uložené pred začatím akéhokoľvek zostavenia."
+
+#: shell/settings/projectpreferences.cpp:37
+msgid "Projects Settings"
+msgstr "Nastavenie projektu"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_3)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_projectsBaseDirectory)
+#: shell/settings/projectsettings.ui:19 shell/settings/projectsettings.ui:32
+msgid "Select the base directory where new projects are to be created."
+msgstr "Vybrať základný adresár, v ktorom majú byť vytvorené nové projekty."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: shell/settings/projectsettings.ui:22
+msgid "Projects base directory:"
+msgstr "Základný adresár projektov:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_parseAllProjectSources)
+#: shell/settings/projectsettings.ui:44
+msgid "Parse all files in a project after the project has been opened."
+msgstr "Analyzovať všetky súbory v projekte po tom, čo bol projekt otvorený."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_parseAllProjectSources)
+#: shell/settings/projectsettings.ui:47
+msgid "Schedule all project files for parsing"
+msgstr "Naplánovať všetky súbory projektu na analýzu"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_saveDocuments)
+#: shell/settings/projectsettings.ui:54
+msgid "Save all modified documents when the \"build\" action is triggered."
+msgstr "Uložiť všetky zmenené dokumenty, keď je spustená akcia \"zostavenie\"."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_saveDocuments)
+#: shell/settings/projectsettings.ui:57
+msgid "Save all documents before building"
+msgstr "Uložiť všetky dokumenty pred zostavením"
+
+#: shell/settings/sourceformattersettings.cpp:369
+#, kde-format
+msgid ""
+"The style %1 is also used for the following languages:\n"
+"%2.\n"
+"Are you sure you want to delete it?"
+msgstr ""
+"Štýl %1 sa používa aj pre nasledujúce jazyky:\n"
+"%2.\n"
+"Ste si istí, že ho chcete zmazať?"
+
+#: shell/settings/sourceformattersettings.cpp:370
+msgid "Style being deleted"
+msgstr "Vymazávaný štýl"
+
+#: shell/settings/sourceformattersettings.cpp:422
+#, kde-format
+msgid "New %1"
+msgstr "Nové %1"
+
+#: shell/settings/sourceformattersettings.cpp:425
+msgid "New Style"
+msgstr "Nový štýl"
+
+#: shell/settings/sourceformattersettings.cpp:504
+msgid "No Language selected"
+msgstr "Nevybraný jazyk"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: shell/settings/sourceformattersettings.ui:17
+msgid "General"
+msgstr "Všeobecné"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKateOverrideIndentation)
+#: shell/settings/sourceformattersettings.ui:23
+msgid ""
+"Override the editor indentation mode according to the formatting style for "
+"documents without Kate modeline."
+msgstr ""
+"Prepísať režim odsadenie editora podľa štýlu formátovania pre dokumenty bez "
+"riadka režimov Kate."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKateOverrideIndentation)
+#: shell/settings/sourceformattersettings.ui:26
+msgid "Override Kate Indentation Mode"
+msgstr "Prepísať režim odsadenia Kate"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKateModelines)
+#: shell/settings/sourceformattersettings.ui:33
+msgid ""
+"Add a Kate modeline according to the formatting style to formatted documents."
+msgstr ""
+"Pridať riadok režimov Kate podľa štýlu formátovania formátovaných dokumentov."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKateModelines)
+#: shell/settings/sourceformattersettings.ui:36
+msgid "Add Kate Modeline"
+msgstr "Pridať riadok režimov Kate"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: shell/settings/sourceformattersettings.ui:58
+msgid "Formatting Styles"
+msgstr "Štýly formátovania"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: shell/settings/sourceformattersettings.ui:64
+msgid "Language:"
+msgstr "Jazyk:"
+
+#. i18n: ectx: property (text), widget (QLabel, previewLabel)
+#: shell/settings/sourceformattersettings.ui:118
+msgid "Preview:"
+msgstr "Náhľad:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: shell/settings/sourceformattersettings.ui:143
+msgid "Formatter:"
+msgstr "Formátovač:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: shell/settings/sourceformattersettings.ui:163
+msgid "Style:"
+msgstr "Štýl:"
+
+#. i18n: ectx: property (text), widget (KPushButton, btnEditStyle)
+#: shell/settings/sourceformattersettings.ui:188
+msgid "Edit..."
+msgstr "Upraviť..."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, UiConfig)
+#: shell/settings/uiconfig.ui:14
+msgid "User Interface"
+msgstr "Užívateľské rozhranie"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: shell/settings/uiconfig.ui:20
+msgid "Dock Window Behavior"
+msgstr "Správanie dokovateľného okna"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_BottomLeftCornerOwner)
+#: shell/settings/uiconfig.ui:26 shell/settings/uiconfig.ui:52
+msgid ""
+"<p>Controls whether the bottom left corner is occupied by the dock at the "
+"left, or by the dock at the bottom.</p>"
+msgstr ""
+"<p>Určuje, či je ľavý dolný roh obsadený dokovaním naľavo alebo dokovaním "
+"naspodku.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: shell/settings/uiconfig.ui:29
+msgid "Bottom left corner occupied by:"
+msgstr "Ľavý dolný roh obsadený s:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_5)
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_BottomRightCornerOwner)
+#: shell/settings/uiconfig.ui:36 shell/settings/uiconfig.ui:75
+msgid ""
+"<p>Controls whether the bottom right corner is occupied by the dock at the "
+"right, or by the dock at the bottom.</p>"
+msgstr ""
+"<p>Určuje, či je pravý dolný roh obsadený dokovaním napravo alebo dokovaním "
+"naspodku.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: shell/settings/uiconfig.ui:39
+msgid "Bottom right corner occupied by:"
+msgstr "Dolný pravý roh obsadený s:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_BottomLeftCornerOwner)
+#: shell/settings/uiconfig.ui:56
+msgid "Left Dock"
+msgstr "Ľavé dokovanie"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_BottomLeftCornerOwner)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_BottomRightCornerOwner)
+#: shell/settings/uiconfig.ui:61 shell/settings/uiconfig.ui:84
+msgid "Bottom Dock"
+msgstr "Spodné dokovanie"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_BottomRightCornerOwner)
+#: shell/settings/uiconfig.ui:79
+msgid "Right Dock"
+msgstr "Pravé dokovanie"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: shell/settings/uiconfig.ui:108
+msgid "Tabbed Browsing"
+msgstr "Prehliadanie s kartami"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_TabBarVisibility)
+#: shell/settings/uiconfig.ui:114
+msgid ""
+"Enables or disables the display of the tab bar at the top of the editor "
+"window."
+msgstr ""
+"Povolí alebo zakáže zobrazenie panela záložiek v hornej časti okna editora."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_TabBarVisibility)
+#: shell/settings/uiconfig.ui:117
+msgid "Show tabs"
+msgstr "Zobraziť záložky"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_TabBarOpenAfterCurrent)
+#: shell/settings/uiconfig.ui:127
+msgid "Controls whether to open new tabs next to the active one."
+msgstr "Určuje, či otvoriť nové záložky vedľa aktívnej."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_TabBarOpenAfterCurrent)
+#: shell/settings/uiconfig.ui:130
+msgid "Open new tab after current"
+msgstr "Otvoriť novú záložku za aktuálnou"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_TabBarArrangeBuddies)
+#: shell/settings/uiconfig.ui:141
+msgid ""
+"When enabled, plugins can group related files side by side.\n"
+"For example, a header file will be opened next to the implementation file."
+msgstr ""
+"Ak je povolené, zásuvné moduly môžu zoskupovať súvisiace súbory vedľa seba.\n"
+"Napríklad, hlavičkový súbor bude otvorený vedľa implementačného súboru."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_TabBarArrangeBuddies)
+#: shell/settings/uiconfig.ui:144
+msgid "Arrange related documents side by side"
+msgstr "Usporiadať súvisiace dokumenty vedľa seba"
+
+#: shell/settings/uipreferences.cpp:38
+msgid "User Interface Settings"
+msgstr "Nastavenia užívateľského rozhrania"
+
+#: shell/sourceformattercontroller.cpp:75
+msgid "&Reformat Source"
+msgstr "&Preformátovať zdroj"
+
+#: shell/sourceformattercontroller.cpp:76
+msgid "Reformat source using AStyle"
+msgstr "Preformátovať zdroj pomocou AStyle."
+
+#: shell/sourceformattercontroller.cpp:77
+msgid "Source reformatting functionality using <b>astyle</b> library."
+msgstr "Funkcionalita preformátovania zdroja pomocou knižnice <b>astyle</b>."
+
+#: shell/sourceformattercontroller.cpp:81
+msgid "Reformat Line"
+msgstr "Preformátovať riadok"
+
+#: shell/sourceformattercontroller.cpp:82
+msgid "Reformat current line using AStyle"
+msgstr "Preformátovať aktuálny riadok pomocou AStyle"
+
+#: shell/sourceformattercontroller.cpp:83
+msgid "Source reformatting of line under cursor using <b>astyle</b> library."
+msgstr ""
+"Preformátovanie riadku zdroja pod kurzorom pomocou knižnice <b>astyle</b>."
+
+#: shell/sourceformattercontroller.cpp:87
+msgid "Format Files"
+msgstr "Formátovať súbory"
+
+#: shell/sourceformattercontroller.cpp:88
+msgid "Format file(s) using the current theme"
+msgstr "Formátovať súbor(y) pomocou aktuálnej témy"
+
+#: shell/sourceformattercontroller.cpp:89
+msgid "Formatting functionality using <b>astyle</b> library."
+msgstr "Formátovacia funkčnosť používajúca knižnicu <b>astyle</b>."
+
+#: shell/sourceformattercontroller.cpp:545
+#, kde-format
+msgid "Unable to read %1"
+msgstr "Nie je možné čítať %1"
+
+#: shell/sourceformattercontroller.cpp:553
+#, kde-format
+msgid "Unable to write to %1"
+msgstr "Nie je možné zapísať do %1"
+
+#: shell/textdocument.cpp:554
+msgctxt "@title:window"
+msgid "Close Document"
+msgstr "Zatvoriť dokument"
+
+#: shell/textdocument.cpp:566
+#, kde-format
+msgid ""
+"The file \"%1\" is modified on disk.\n"
+"\n"
+"Are you sure you want to overwrite it? (External changes will be lost.)"
+msgstr ""
+"Súbor \"%1\" je na disku zmenený.\n"
+"\n"
+"Ste si istí, že ho chcete prepísať? (Budú stratené externé zmeny.)"
+
+#: shell/textdocument.cpp:569
+msgctxt "@title:window"
+msgid "Document Externally Modified"
+msgstr "Externe zmenený dokument"
+
+#: shell/textdocument.cpp:866
+#, kde-format
+msgid " Line: %1 Col: %2 "
+msgstr " Riadok: %1 Stĺpec: %2 "
+
+#: shell/uicontroller.cpp:81
+msgid "Code"
+msgstr "Kód"
+
+#: shell/uicontroller.cpp:101
+msgid "Review"
+msgstr "Revízia"
+
+#: shell/uicontroller.cpp:405
+msgid "Select Tool View to Add"
+msgstr "Vybrať nástrojový pohľad na pridanie"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:76
+msgid "<b>Active Working Set</b>"
+msgstr "<b>Aktívne nastavenie pracoviska</b>"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:78
+msgid "<b>Working Set</b>"
+msgstr "<b>Nastavenie pracoviska</b>"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:96
+msgid "Remove this working set. The contained documents are not affected."
+msgstr ""
+"Odstrániť toto nastavenie pracoviska. Obsiahnuté dokumenty nie sú ovplyvnené."
+
+#: shell/workingsets/workingsettooltipwidget.cpp:122
+msgid "Documents:"
+msgstr "Dokumenty:"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:130
+msgid "Add All"
+msgstr "Pridať všetko"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:131
+msgid ""
+"Add all documents that are part of this working set to the currently active "
+"working set."
+msgstr ""
+"Pridať všetky dokumenty, ktoré sú súčasťou tohto nastavenia pracoviska, do "
+"práve aktívneho nastavenia pracoviska."
+
+#: shell/workingsets/workingsettooltipwidget.cpp:139
+msgid ""
+"Remove all documents that are part of this working set from the currently "
+"active working set."
+msgstr ""
+"Odstrániť všetky dokumenty, ktoré sú súčasťou tohto nastavenia pracoviska, z "
+"práve aktívneho nastavenia pracoviska."
+
+#: shell/workingsets/workingsettooltipwidget.cpp:171
+msgctxt "@info:tooltip"
+msgid "Click to open and activate this document."
+msgstr "Kliknúť pre otvorenie a aktiváciu tohto dokumentu."
+
+#: shell/workingsets/workingsettooltipwidget.cpp:282
+msgid "Remove this file from the current working set"
+msgstr "Odstrániť tento súbor do súčasného nastavenia pracoviska"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:287
+msgid "Add this file to the current working set"
+msgstr "Pridať tento súbor do súčasného nastavenia pracoviska"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:316
+msgid "Stash"
+msgstr "Úschovňa"
+
+#: shell/workingsets/workingsettooltipwidget.cpp:322
+msgid "Load"
+msgstr "Načítať"
+
+#: sublime/container.cpp:191
+msgid "Line: 00000 Col: 000"
+msgstr "Riadok: 00000 Stĺpec: 000"
+
+#: sublime/container.cpp:218
+msgid "Show sorted list of opened documents"
+msgstr "Ukázať zoradený zoznam otvorených dokumentov"
+
+#: sublime/container.cpp:517
+msgid "Close File"
+msgstr "Zatvoriť súbor"
+
+#: sublime/container.cpp:518
+msgid "Close Other Files"
+msgstr "Zavrieť ostatné súbory"
+
+#: sublime/container.cpp:519
+msgid "Close All Files"
+msgstr "Zatvoriť všetky súbory"
+
+#: sublime/examples/example1.cpp:29
+msgid "Example 1"
+msgstr "Ukážka 1"
+
+#: sublime/examples/example1.cpp:31 sublime/examples/example2.cpp:36
+msgid "(c) 2007, Alexander Dymo"
+msgstr "(c) 2007, Alexander Dymo"
+
+#: sublime/examples/example2.cpp:34
+msgid "Example 2"
+msgstr "Ukážka 2"
+
+#: sublime/idealbuttonbarwidget.cpp:49
+msgctxt "@info:tooltip"
+msgid "Right click to add new tool views."
+msgstr "Kliknúť pravým tlačidlom na pridanie nových nástrojových pohľadov."
+
+#: sublime/idealbuttonbarwidget.cpp:194
+#, kde-format
+msgid "Toggle '%1' tool view."
+msgstr "Prepnúť '%1' nástrojový pohľad"
+
+#: sublime/idealcontroller.cpp:114
+#, kde-format
+msgid "%1 Tool Bar"
+msgstr "Panel nástrojov %1"
+
+#: sublime/idealdockwidget.cpp:113
+msgid "Toolview Position"
+msgstr "Pozícia nástrojového pohľadu"
+
+#: sublime/idealdockwidget.cpp:117
+msgctxt "toolview position"
+msgid "Left"
+msgstr "Vľavo"
+
+#: sublime/idealdockwidget.cpp:118
+msgctxt "toolview position"
+msgid "Bottom"
+msgstr "Dole"
+
+#: sublime/idealdockwidget.cpp:119
+msgctxt "toolview position"
+msgid "Right"
+msgstr "Vpravo"
+
+#: sublime/idealdockwidget.cpp:120
+msgctxt "toolview position"
+msgid "Detached"
+msgstr "Oddelené"
+
+#: sublime/idealdockwidget.cpp:138
+msgid "Assign Shortcut..."
+msgstr "Priradiť skratku..."
+
+#: sublime/idealdockwidget.cpp:139
+msgid "Use this shortcut to trigger visibility of the toolview."
+msgstr ""
+"Použiť túto klávesovú skratku pre spustenie viditeľnosti nástrojového "
+"pohľadu."
+
+#: sublime/idealdockwidget.cpp:142
+msgid "Remove Toolview"
+msgstr "Odstrániť nástrojový pohľad"
+
+#: sublime/idealdockwidget.cpp:153
+#, kde-format
+msgid "Assign Shortcut For '%1' Tool View"
+msgstr "Priradiť klávesovú skratku pre nástrojový pohľad '%1'"
+
+#: sublime/mainwindow_p.cpp:99
+msgid "Show Left Dock"
+msgstr "Ukázať ľavé dokovanie"
+
+#: sublime/mainwindow_p.cpp:105
+msgid "Show Right Dock"
+msgstr "Ukázať pravé dokovanie"
+
+#: sublime/mainwindow_p.cpp:111
+msgid "Show Bottom Dock"
+msgstr "Ukázať spodné dokovanie"
+
+#: sublime/mainwindow_p.cpp:117
+msgctxt "@action"
+msgid "Focus Editor"
+msgstr "Editor zamerania"
+
+#: sublime/mainwindow_p.cpp:122
+msgid "Hide/Restore Docks"
+msgstr "Skryť/Obnoviť dokovania"
+
+#: sublime/mainwindow_p.cpp:127
+msgid "Next Tool View"
+msgstr "Nasledujúci pohľad nástrojov"
+
+#: sublime/mainwindow_p.cpp:133
+msgid "Previous Tool View"
+msgstr "Predchádzajúci pohľad nástrojov"
+
+#: sublime/mainwindow_p.cpp:139
+msgid "Tool Views"
+msgstr "Pohľady nástrojov"
+
+#: sublime/mainwindow_p.cpp:144
+msgid "Left Button Bar"
+msgstr "Ľavý tlačidlový panel"
+
+#: sublime/mainwindow_p.cpp:148
+msgid "Right Button Bar"
+msgstr "Pravý tlačidlový panel"
+
+#: sublime/mainwindow_p.cpp:152
+msgid "Bottom Button Bar"
+msgstr "Spodný tlačidlový panel"
+
+#: util/duchainify/main.cpp:230
+msgid "duchainify"
+msgstr "duchainify"
+
+#: util/duchainify/main.cpp:231
+msgid "Duchain builder application"
+msgstr "Aplikácia Duchain builder"
+
+#: util/duchainify/main.cpp:232
+msgid "(c) 2009 David Nolden"
+msgstr "(c) 2009 David Nolden"
+
+#: util/duchainify/main.cpp:235
+msgid "directory"
+msgstr "adresár"
+
+#: util/duchainify/main.cpp:237
+msgid "Show warnings"
+msgstr "Ukázať varovania"
+
+#: util/duchainify/main.cpp:238
+msgid "Show warnings and debug output"
+msgstr "Ukázať varovania a ladiaci výstup"
+
+#: util/duchainify/main.cpp:239
+msgid "Enforce an update of the top-contexts corresponding to the given files"
+msgstr ""
+"Vynútiť aktualizáciu najvyšších kontextov, ktoré zodpovedajú zadaným súborom"
+
+#: util/duchainify/main.cpp:240
+msgid ""
+"Enforce an update of the top-contexts corresponding to the given files and "
+"all included files"
+msgstr ""
+"Vynútiť aktualizáciu najvyšších kontextov, ktoré zodpovedajú zadaným súborom "
+"a všetkých zahrnutým súborom"
+
+#: util/duchainify/main.cpp:241
+msgid "Number of threads to use"
+msgstr "Počet vlákien na použitie"
+
+#: util/duchainify/main.cpp:242
+msgid ""
+"Features to build. Options: empty, simplified-visible-declarations, visible-"
+"declarations (default), all-declarations, all-declarations-and-uses, all-"
+"declarations-and-uses-and-AST"
+msgstr ""
+"Funkcie na zabudovanie. Voľby: prázdne, zjednodušené-viditeľné-deklarácie, "
+"viditeľné-deklarácie (predvolené), všetky-deklarácie, všetky-deklarácie-a-"
+"použitia, všetky-deklarácie-a-použitia-a-AST"
+
+#: util/duchainify/main.cpp:243
+msgid "Print complete Definition-Use Chain on successful parse"
+msgstr "Tlač hotová Definícia-Použiť reťaz pri úspešnom spracovaní"
+
+#: util/duchainify/main.cpp:244
+msgid "Print problems encountered during parsing"
+msgstr "Nastali problémy tlače počas rozboru"
+
+#: util/environmentconfigurebutton.cpp:74
+msgid "Configure environment variables"
+msgstr "Nastaviť premenné prostredia"
+
+#: util/environmentselectionmodel.cpp:52
+msgctxt "@title:column"
+msgid "Profile"
+msgstr "Profil"
+
+#: util/environmentselectionmodel.cpp:63
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Use default profile (currently: %1)"
+msgstr "Použiť predvolený profil (aktuálne: %1)"
+
+#: util/environmentselectionmodel.cpp:67
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "%1 (does not exist)"
+msgstr "%1 (neexistuje)"
+
+#: util/projecttestjob.cpp:94
+#, kde-format
+msgid "Run all tests in %1"
+msgstr "Spustiť všetky testy v %1"
+
+#: util/sequentiallyrunjobs.cpp:36
+#, kde-format
+msgid "'%1' + '%2'"
+msgstr "'%1' + '%2'"
+
+#: util/ssh_client/main.cpp:74
+msgid "Simple KDE ssh client provider"
+msgstr "Poskytovateľ jednoduchého klienta ssh KDE"
+
+#: util/ssh_client/main.cpp:76
+msgid ""
+"Displays a KDE Password Dialog and establishes an ssh connection using "
+"libssh. After connecting it executes 'svnserve -t' to provide tunneling."
+msgstr ""
+"Zobrazí Dialóg hesla KDE a nadviaže spojenie ssh pomocou libssh. Po "
+"pripojení sa spustí 'svnserve -t' pre poskytnutie tunelovania."
+
+#: util/ssh_client/main.cpp:78
+msgid "(c) 2009"
+msgstr "(c) 2009"
+
+#: util/ssh_client/main.cpp:79
+msgid ""
+"Use this client instead of standard ssh when using subversion to provide a "
+"KDE Password Dialog instead of a command-line ssh password prompt."
+msgstr ""
+"Použiť tohto klienta namiesto štandardného ssh pomocou subversion poskytnúť "
+"Dialóg hesla KDE namiesto výzvy príkazového riadka na zadanie hesla ssh."
+
+#: util/ssh_client/main.cpp:88
+msgid "Hostname to connect"
+msgstr "Názov hostiteľa na pripojenie"
+
+#: util/ssh_client/main.cpp:89
+msgid "Subversion command to call"
+msgstr "Príkaz Subversion pre volanie"
+
+#: util/ssh_client/main.cpp:90
+msgid "svnserve option"
+msgstr "Možnosť svnserve"
+
+#: util/ssh_client/main.cpp:117
+msgid "Cannot create socket, operation aborted."
+msgstr "Nemožno vytvoriť soket, "
+
+#: util/ssh_client/main.cpp:126
+msgid "Get host by name failed, operation aborted."
+msgstr "Získať hostiteľa podľa názvu zlyhalo, operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:134
+msgid "Cannot connect to host, operation aborted."
+msgstr "Nemožno sa pripojiť k hostiteľovi, operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:142
+msgid "Cannot start an ssh session, operation aborted."
+msgstr "Nemožno spustiť sedenie ssh, operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:147
+msgid "SSH connection failed, operation aborted."
+msgstr "Pripojenie SSH pripojenie, operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:154
+msgid ""
+"Server does not support any authentication methods for the user, operation "
+"aborted."
+msgstr ""
+"Server nepodporuje žiadne metódy overovania pre používateľa, operácia bola "
+"prerušená."
+
+#: util/ssh_client/main.cpp:169
+msgid "ssh auth"
+msgstr "ssh auth"
+
+#: util/ssh_client/main.cpp:193
+msgid ""
+"Unsupported authentication type, could possibly be a bug. Operation aborted."
+msgstr ""
+"Nepodporovaný typ overovania, mohla by byť prípadne chyba. Operácia bola "
+"prerušená."
+
+#: util/ssh_client/main.cpp:199
+msgid "Authentication failed, operation aborted."
+msgstr "Overovanie zlyhalo, operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:206
+msgid "Cannot open ssh channel, operation aborted."
+msgstr "Nemožno otvoriť kanál ssh, operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:212
+msgid "Failed to launch 'svnserve -t', operation aborted."
+msgstr "Nepodarilo sa spustiť 'svnserve -t', operácia bola prerušená."
+
+#: util/ssh_client/main.cpp:224
+msgid "Cannot set non-blocking mode for stdin, operation aborted."
+msgstr ""
+"Nemožno nastaviť režim bez blokovania pre stdin, operácia bola prerušená."
+
+#: util/ssh_client/main.h:47
+msgid "&Username:"
+msgstr "&Užívateľské meno:"
+
+#: util/ssh_client/main.h:52
+msgid "&Password or passphrase:"
+msgstr "&Prístupové slovo alebo fráza "
+
+#: util/ssh_client/main.h:56
+msgid "Publi&c key:"
+msgstr "Verejný kľúč:"
+
+#: util/ssh_client/main.h:60
+msgid "P&rivate key:"
+msgstr "Súkromný kľúč:"
+
+#: util/ssh_client/main.h:65
+msgid "Password auth"
+msgstr "Overovanie hesla"
+
+#: util/ssh_client/main.h:67
+msgid "Public key auth"
+msgstr "Overovanie verejného kľúča"
+
+#: util/ssh_client/main.h:69
+msgid "No auth type supported by server"
+msgstr "Žiadny typ overovania podporovaný serverom"
+
+#: util/ssh_client/main.h:83
+msgid "Select keys"
+msgstr "Vybrať kľúče"
+
+#: vcs/dvcs/dvcsjob.cpp:163
+#, kde-format
+msgid "Working Directory does not exist: %1"
+msgstr "Pracovný adresár neexistuje: %1"
+
+#: vcs/dvcs/dvcsjob.cpp:172
+#, kde-format
+msgid "Working Directory is not absolute: %1"
+msgstr "Pracovný adresár nie je absolútny: %1"
+
+#: vcs/dvcs/dvcsjob.cpp:214
+#, kde-format
+msgid ""
+"Process '%1' exited with status %2\n"
+"%3"
+msgstr ""
+"Proces sa '%1' ukončil so stavom %2\n"
+"%3"
+
+#: vcs/dvcs/dvcsjob.cpp:244
+#, kde-format
+msgid "Command finished with error %1."
+msgstr "Príkaz skončil s chybou %1."
+
+#: vcs/dvcs/dvcsjob.cpp:256
+#, kde-format
+msgid "Command exited with value %1."
+msgstr "Príkaz sa ukončil s hodnotou %1."
+
+#: vcs/dvcs/dvcsplugin.cpp:110
+msgid "Branches..."
+msgstr "Vetvy..."
+
+#: vcs/dvcs/dvcsplugin.cpp:111
+msgid "Revision Graph..."
+msgstr "Graf revízií..."
+
+#: vcs/dvcs/ui/branchmanager.cpp:46
+msgid "Branch Manager"
+msgstr "Správca vetiev"
+
+#: vcs/dvcs/ui/branchmanager.cpp:87
+msgid ""
+"You must select a base branch from the list before creating a new branch."
+msgstr "Pred vytvorením novej vetvy musíte vybrať základnú vetvu zo zoznamu."
+
+#: vcs/dvcs/ui/branchmanager.cpp:92
+msgid "New branch"
+msgstr "Nová vetva"
+
+#: vcs/dvcs/ui/branchmanager.cpp:92
+msgid "Name of the new branch:"
+msgstr "Názov novej vetvy:"
+
+#: vcs/dvcs/ui/branchmanager.cpp:100
+#, kde-format
+msgid ""
+"Branch \"%1\" already exists.\n"
+"Please, choose another name."
+msgstr ""
+"Vetva \"%1\" už existuje.\n"
+"Prosím, zvoľte iný názov."
+
+#: vcs/dvcs/ui/branchmanager.cpp:115
+#, kde-format
+msgid ""
+"Currently at the branch \"%1\".\n"
+"To remove it, please change to another branch."
+msgstr ""
+"V súčasnej dobe vo vetve \"%1\".\n"
+"Ak to chcete odstrániť, prosím, zmeňte na inú vetvu."
+
+#: vcs/dvcs/ui/branchmanager.cpp:122
+#, kde-format
+msgid "Are you sure you want to irreversibly remove the branch '%1'?"
+msgstr "Naozaj chcete odstrániť nezvratne odstrániť vetvu '%1'?"
+
+#: vcs/dvcs/ui/branchmanager.cpp:142
+#, kde-format
+msgid "Already on branch \"%1\"\n"
+msgstr "Už na vetve \"%1\"\n"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, newButton)
+#: vcs/dvcs/ui/branchmanager.ui:19
+msgid "Creates new branch based on the selected branch"
+msgstr "Vytvorí novú vetvu založenú na vybranej vetve"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteButton)
+#: vcs/dvcs/ui/branchmanager.ui:29
+msgid "The same as git branch -D"
+msgstr "Rovnaké ako vetva git -D"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, checkoutButton)
+#: vcs/dvcs/ui/branchmanager.ui:62
+msgid "Checkout to the selected branch"
+msgstr "Preskúšať na vybranej vetve"
+
+#. i18n: ectx: property (text), widget (QPushButton, checkoutButton)
+#: vcs/dvcs/ui/branchmanager.ui:65
+msgid "Checkout"
+msgstr "Checkout"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, DvcsImportMetadataWidget)
+#: vcs/dvcs/ui/dvcsimportmetadatawidget.ui:13
+msgid "Import"
+msgstr "Importovať"
+
+#. i18n: ectx: property (text), widget (QLabel, labelUrl)
+#: vcs/dvcs/ui/dvcsimportmetadatawidget.ui:19
+msgid "Source Directory:"
+msgstr "Zdrojový adresár:"
+
+#: vcs/models/brancheslistmodel.cpp:63
+#, kde-format
+msgid "Branch \"%1\" already exists."
+msgstr "Vetva \"%1\" už existuje."
+
+#: vcs/models/brancheslistmodel.cpp:68
+#, kde-format
+msgid "Are you sure you want to rename \"%1\" to \"%2\"?"
+msgstr "Ste si istý, že chcete premenovať \"%1\" na \"%2\"?"
+
+#: vcs/models/projectchangesmodel.cpp:267
+msgid "no branch"
+msgstr "Žiadna vetva"
+
+#: vcs/models/projectchangesmodel.cpp:268
+#, kde-format
+msgctxt "project name (branch name)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: vcs/models/vcsannotationmodel.cpp:128
+#, kde-format
+msgid ""
+"Author: %1\n"
+"Date: %2\n"
+"Commit Message: %3"
+msgstr ""
+"Autor: %1\n"
+"Dátum: %2\n"
+"Správa začlenenia: %3"
+
+#: vcs/models/vcseventmodel.cpp:110
+msgid "Revision"
+msgstr "Revízia"
+
+#: vcs/models/vcseventmodel.cpp:112
+msgid "Message"
+msgstr "Správa"
+
+#: vcs/models/vcseventmodel.cpp:114
+msgid "Author"
+msgstr "Autor"
+
+#: vcs/models/vcseventmodel.cpp:116
+msgid "Date"
+msgstr "Dátum"
+
+#: vcs/models/vcsfilechangesmodel.cpp:43
+msgctxt "file was added to versioncontrolsystem"
+msgid "Added"
+msgstr "Pridané"
+
+#: vcs/models/vcsfilechangesmodel.cpp:45
+msgctxt "file was deleted from versioncontrolsystem"
+msgid "Deleted"
+msgstr "Odstránené"
+
+#: vcs/models/vcsfilechangesmodel.cpp:47
+msgctxt "file is confilicting (versioncontrolsystem)"
+msgid "Has Conflicts"
+msgstr "Má konflikty"
+
+#: vcs/models/vcsfilechangesmodel.cpp:49
+msgctxt "version controlled file was modified"
+msgid "Modified"
+msgstr "Zmenené"
+
+#: vcs/models/vcsfilechangesmodel.cpp:51
+msgctxt "file is up to date in versioncontrolsystem"
+msgid "Up To Date"
+msgstr "Akuálne"
+
+#: vcs/models/vcsfilechangesmodel.cpp:54
+msgctxt "file is not known to versioncontrolsystem"
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: vcs/models/vcsfilechangesmodel.cpp:56
+msgctxt "Unknown VCS file status, probably a backend error"
+msgid "?"
+msgstr "?"
+
+#: vcs/models/vcsfilechangesmodel.cpp:90
+msgid "Filename"
+msgstr "Názov súboru"
+
+#: vcs/models/vcsfilechangesmodel.cpp:91
+msgid "Status"
+msgstr "Stav"
+
+#: vcs/models/vcsitemeventmodel.cpp:60
+msgid "Added"
+msgstr "Pridané"
+
+#: vcs/models/vcsitemeventmodel.cpp:62
+msgid "Deleted"
+msgstr "Odstránené"
+
+#: vcs/models/vcsitemeventmodel.cpp:64
+msgid "Modified"
+msgstr "Zmenené"
+
+#: vcs/models/vcsitemeventmodel.cpp:66
+msgid "Copied"
+msgstr "Skopírované"
+
+#: vcs/models/vcsitemeventmodel.cpp:68
+msgid "Replaced"
+msgstr "Nahradené"
+
+#: vcs/models/vcsitemeventmodel.cpp:72
+msgctxt "separes an action list"
+msgid ", "
+msgstr ", "
+
+#: vcs/models/vcsitemeventmodel.cpp:96
+msgid "Actions"
+msgstr "Akcie"
+
+#: vcs/models/vcsitemeventmodel.cpp:97
+msgid "Source Location"
+msgstr "Umiestnenie zdroja"
+
+#: vcs/models/vcsitemeventmodel.cpp:98
+msgid "Source Revision"
+msgstr "Zdrojová revízia"
+
+#: vcs/vcspluginhelper.cpp:99
+msgid "Update"
+msgstr "Aktualizovať"
+
+#: vcs/vcspluginhelper.cpp:100
+msgid "Add"
+msgstr "Pridať"
+
+#: vcs/vcspluginhelper.cpp:101
+msgid "Show Differences..."
+msgstr "Ukázať rozdiely..."
+
+#: vcs/vcspluginhelper.cpp:102
+msgid "Revert"
+msgstr "Vrátiť"
+
+#: vcs/vcspluginhelper.cpp:103 vcs/vcspluginhelper.cpp:478
+msgid "History..."
+msgstr "História..."
+
+#: vcs/vcspluginhelper.cpp:104
+msgid "Annotation..."
+msgstr "Poznámka..."
+
+#: vcs/vcspluginhelper.cpp:105
+msgid "Show Diff..."
+msgstr "Ukázať rozdiel..."
+
+#: vcs/vcspluginhelper.cpp:106
+msgid "Show Diff (all files)..."
+msgstr "Ukázať rozdiel (všetky súbory)..."
+
+#: vcs/vcspluginhelper.cpp:107
+msgid "Push"
+msgstr "Push"
+
+#: vcs/vcspluginhelper.cpp:108
+msgid "Pull"
+msgstr "Ťahať"
+
+#: vcs/vcspluginhelper.cpp:321
+msgid "There are no differences."
+msgstr "Nie sú žiadne rozdiely."
+
+#: vcs/vcspluginhelper.cpp:322
+msgid "VCS support"
+msgstr "Podpora VCS"
+
+#: vcs/vcspluginhelper.cpp:328
+msgid "Unable to get difference."
+msgstr "Nie je možné získať rozdiel."
+
+#: vcs/vcspluginhelper.cpp:376
+#, kde-format
+msgctxt "%1: path or URL, %2: name of a version control system"
+msgid "%2 History (%1)"
+msgstr "%2 história (%1)"
+
+#: vcs/vcspluginhelper.cpp:424
+msgid ""
+"Cannot display annotations, missing interface KTextEditor::"
+"AnnotationInterface for the editor."
+msgstr ""
+"Nemožno zobraziť poznámky, chýba rozhranie KTextEditor::AnnotationInterface "
+"pre editor."
+
+#: vcs/vcspluginhelper.cpp:428
+#, kde-format
+msgid ""
+"Cannot execute annotate action because the document was not found, or was "
+"not a text document:\n"
+"%1"
+msgstr ""
+"Nemožno vykonať akciu doplnenia poznámok, pretože dokument nebol nájdený "
+"alebo nebol textový dokument:\n"
+"%1"
+
+#: vcs/vcspluginhelper.cpp:477
+msgid "Copy Revision"
+msgstr "Kopírovať revíziu"
+
+#: vcs/widgets/standardvcslocationwidget.cpp:35
+msgid "Introduce the repository URL..."
+msgstr "Uviesť URL repozitára..."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VcsCommitDialog)
+#: vcs/widgets/vcscommitdialog.ui:17
+msgid "Select Files to commit"
+msgstr "Vyberte súbory na začlenenie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vcs/widgets/vcscommitdialog.ui:23
+msgid "Commit Files:"
+msgstr "Súbory na začlenenie:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, recursiveChk)
+#: vcs/widgets/vcscommitdialog.ui:33
+msgid "Recursive"
+msgstr "Rekurzívne"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:51
+msgid "Commit Message:"
+msgstr "Správa začlenenia:"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:55
+msgid "Old Messages"
+msgstr "Staré správy"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:108
+msgid "For more detailed information please see the Version Control toolview"
+msgstr ""
+"Pre podrobnejšie informácie si prosím pozrite nástrojový pohľad správy verzií"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:110
+msgid "Unable to commit"
+msgstr "Nemôžem potvrdiť"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:110
+msgid "Commit unsuccessful"
+msgstr "Potvrdenie neúspešné"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:224
+msgctxt "@action:button To make a commit"
+msgid "Commit"
+msgstr "Začleniť"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:255
+#, kde-format
+msgid ""
+"<qt>Files will be committed:\n"
+"<ul>%1</ul>\n"
+"With message:\n"
+" <pre>%2</pre></qt>"
+msgstr ""
+"<qt>Súbory budú začlenené:\n"
+"<ul>%1</ul>\n"
+"So správou:\n"
+" <pre>%2</pre></qt>"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:257
+msgid "About to commit to repository"
+msgstr "O začlenení do repozitára"
+
+#: vcs/widgets/vcsdiffpatchsources.cpp:304
+msgid "Could not create a patch for the current version."
+msgstr "Nepodarilo sa vytvoriť záplatu pre aktuálnu verziu."
+
+#: vcs/widgets/vcsdiffwidget.cpp:103
+#, kde-format
+msgid "Difference between revision %1 and %2:"
+msgstr "Rozdiel medzi revíziou %1 a %2:"
+
+#. i18n: ectx: property (text), widget (QLabel, revLabel)
+#: vcs/widgets/vcsdiffwidget.ui:16
+msgid "Difference between revisions"
+msgstr "Rozdiel medzi revíziami"
+
+#: vcs/widgets/vcseventwidget.cpp:59
+msgid "Copy revision number"
+msgstr "Kopírovať číslo revízie"
+
+#: vcs/widgets/vcseventwidget.cpp:91
+msgid "Diff to previous revision"
+msgstr "Rozdiel od predchádzajúcej revízie"
+
+#: vcs/widgets/vcseventwidget.cpp:92
+msgid "Diff between revisions"
+msgstr "Rozdiel medzi revíziami"
+
+#: vcs/widgets/vcseventwidget.cpp:145
+msgid "Difference To Previous"
+msgstr "Rozdiel od predchádzajúceho"
+
+#: vcs/widgets/vcseventwidget.cpp:164
+msgid "Difference between Revisions"
+msgstr "Rozdiel medzi revíziami"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, VcsEventWidget)
+#: vcs/widgets/vcseventwidget.ui:20
+msgid "Logview"
+msgstr "Prehliadač záznamov"

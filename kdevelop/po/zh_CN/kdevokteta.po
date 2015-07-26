@@ -1,0 +1,74 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ni Hui <shuizhuyuanluo@126.com>, 2010.
+# Weng Xuetian <wengxt@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-09-11 05:32+0000\n"
+"PO-Revision-Date: 2013-04-16 15:02-0400\n"
+"Last-Translator: Weng Xuetian <wengxt@gmail.com>\n"
+"Language-Team: Chinese Simplified <kde-china@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ni Hui"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "shuizhuyuanluo@126.com"
+
+#. i18n: ectx: Menu (permission)
+#: kdevokteta.rc:10
+msgctxt "@title:menu"
+msgid "Permissions"
+msgstr "权限"
+
+#. i18n: ectx: Menu (view)
+#: kdevokteta.rc:41
+msgid "View"
+msgstr "查看"
+
+#. i18n: ectx: Menu (bookmarks)
+#: kdevokteta.rc:59
+msgid "Bookmarks"
+msgstr "书签"
+
+#. i18n: ectx: ToolBar (designerToolbar)
+#: kdevokteta.rc:90
+msgid "Designer Layout Toolbar"
+msgstr "设计器布局工具栏"
+
+#: oktetadocument.cpp:174
+#, kde-format
+msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
+msgstr "文档“%1”有未保存的更改。您想要保存它们吗？"
+
+#: oktetadocument.cpp:175
+msgid "Close Document"
+msgstr "关闭文档"
+
+#: oktetaplugin.cpp:68
+msgid "Okteta Plugin for KDevelop"
+msgstr "KDevelop 的 Okteta 插件"
+
+#: oktetaplugin.cpp:68
+msgid "Provides simple Hex Editing"
+msgstr "提供简单的十六进制编辑"
+
+#: oktetaplugin.cpp:124
+msgid "Hex Editor"
+msgstr "十六进制编辑器"
+
+#: oktetawidget.cpp:118
+msgctxt "@action:inmenu"
+msgid "Manage Byte Array View Profiles..."
+msgstr "管理字节数组查看方案..."

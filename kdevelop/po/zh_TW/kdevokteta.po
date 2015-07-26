@@ -1,0 +1,73 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-09-11 05:32+0000\n"
+"PO-Revision-Date: 2013-02-04 18:17+0800\n"
+"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frank Weng (a.k.a. Franklin)"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "franklin at goodhorse dot idv dot tw"
+
+#. i18n: ectx: Menu (permission)
+#: kdevokteta.rc:10
+msgctxt "@title:menu"
+msgid "Permissions"
+msgstr "權限"
+
+#. i18n: ectx: Menu (view)
+#: kdevokteta.rc:41
+msgid "View"
+msgstr "檢視"
+
+#. i18n: ectx: Menu (bookmarks)
+#: kdevokteta.rc:59
+msgid "Bookmarks"
+msgstr "書籤"
+
+#. i18n: ectx: ToolBar (designerToolbar)
+#: kdevokteta.rc:90
+msgid "Designer Layout Toolbar"
+msgstr "設計器佈局工具列"
+
+#: oktetadocument.cpp:174
+#, kde-format
+msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
+msgstr "文件 %1 有未儲存的變更。您要儲存它嗎？"
+
+#: oktetadocument.cpp:175
+msgid "Close Document"
+msgstr "關閉文件"
+
+#: oktetaplugin.cpp:68
+msgid "Okteta Plugin for KDevelop"
+msgstr "KDevelop 的 Okteta 外掛程式"
+
+#: oktetaplugin.cpp:68
+msgid "Provides simple Hex Editing"
+msgstr "提供簡單的十六進位資料編輯"
+
+#: oktetaplugin.cpp:124
+msgid "Hex Editor"
+msgstr "十六進位資料編輯器"
+
+#: oktetawidget.cpp:118
+msgctxt "@action:inmenu"
+msgid "Manage Byte Array View Profiles..."
+msgstr "管理位元陣列檢視設定檔..."

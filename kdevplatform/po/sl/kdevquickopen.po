@@ -1,0 +1,214 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-04 06:03+0000\n"
+"PO-Revision-Date: 2014-07-05 20:16+0200\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Mernik"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrejm@ubuntu.si"
+
+#: documentationquickopenprovider.cpp:49
+#, kde-format
+msgid "Documentation in the %1"
+msgstr "Dokumentacija v %1"
+
+#: duchainitemquickopen.cpp:52
+#, kde-format
+msgid "Not available any more: %1"
+msgstr "Ni več na voljo: %1"
+
+#: duchainitemquickopen.cpp:137
+msgid "Not available any more"
+msgstr "Ni več na voljo"
+
+#: duchainitemquickopen.cpp:145
+#, kde-format
+msgctxt "%1: function signature"
+msgid "Return: %1"
+msgstr "Vrni: %1"
+
+#: duchainitemquickopen.cpp:149
+#, kde-format
+msgctxt "%1: file path"
+msgid "File: %1"
+msgstr "Datoteka: %1"
+
+#: duchainitemquickopen.cpp:154 duchainitemquickopen.cpp:206
+#, kde-format
+msgid "Project %1"
+msgstr "Projekt %1"
+
+#. i18n: ectx: ToolBar (quickOpenToolBar)
+#: kdevquickopen.rc:42
+msgid "Quick Open Toolbar"
+msgstr "Orodna vrstica za hitro odpiranje"
+
+#: projectfilequickopen.cpp:83 projectfilequickopen.cpp:147
+#: projectfilequickopen.cpp:154
+#, kde-format
+msgctxt "%1: project name"
+msgid "Project %1"
+msgstr "Projekt %1"
+
+#: projectfilequickopen.cpp:155
+msgid "Not parsed yet"
+msgstr "Še ni razčlenjeno"
+
+#: projectfilequickopen.cpp:190
+msgid "none"
+msgstr "brez"
+
+#: projectitemquickopen.cpp:343 projectitemquickopen.cpp:353
+#: quickopenplugin.cpp:913
+msgid "Classes"
+msgstr "Razredi"
+
+#: projectitemquickopen.cpp:344 projectitemquickopen.cpp:356
+#: quickopenplugin.cpp:910
+msgid "Functions"
+msgstr "Funkcije"
+
+#: projectitemquickopen.cpp:351 quickopenplugin.cpp:811
+#: quickopenplugin.cpp:824 quickopenplugin.cpp:831
+msgid "Project"
+msgstr "Projekt"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, QuickOpen)
+#: quickopen.ui:14 quickopenplugin.cpp:119 quickopenplugin.cpp:169
+#: quickopenplugin.cpp:928
+msgid "Quick Open"
+msgstr "Hitro odpiranje"
+
+#. i18n: ectx: property (text), widget (QLabel, searchLabel)
+#: quickopen.ui:31
+msgid "Search:"
+msgstr "Poišči:"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, searchLine)
+#: quickopen.ui:44 quickopenplugin.cpp:1340
+msgid "Quick Open..."
+msgstr "Hitro odpiranje ..."
+
+#. i18n: ectx: property (text), widget (QPushButton, okButton)
+#: quickopen.ui:54
+msgid "Open"
+msgstr "Odpri"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: quickopen.ui:61
+msgid "Cancel"
+msgstr "Prekliči"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: quickopen.ui:91
+msgid "&Scopes:"
+msgstr "Ob&segi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: quickopen.ui:136
+msgid "&Items:"
+msgstr "Predmet&i:"
+
+#: quickopenplugin.cpp:169
+msgid ""
+"This plugin allows quick access to project files and language-items like "
+"classes/functions."
+msgstr ""
+"Vstavek omogoča hiter dostop do projektnih datotek in predmetov kot so "
+"razredi in funkcije."
+
+#: quickopenplugin.cpp:734
+msgid "&Quick Open"
+msgstr "&Hitro odpiranje"
+
+#: quickopenplugin.cpp:740
+msgid "Quick Open &File"
+msgstr "Hitro odpri &datoteko"
+
+#: quickopenplugin.cpp:746
+msgid "Quick Open &Class"
+msgstr "Hitro odpri &razred"
+
+#: quickopenplugin.cpp:752
+msgid "Quick Open &Function"
+msgstr "Hitro odpri &funkcijo"
+
+#: quickopenplugin.cpp:758
+msgid "Quick Open &Already Open File"
+msgstr "Hitro odpri že odprto d&atoteko"
+
+#: quickopenplugin.cpp:763
+msgid "Quick Open &Documentation"
+msgstr "Hitro odpri dokumen&tacijo"
+
+#: quickopenplugin.cpp:769
+msgid "Jump to Declaration"
+msgstr "Pojdi na deklaracijo"
+
+#: quickopenplugin.cpp:775
+msgid "Jump to Definition"
+msgstr "Pojdi na določilo"
+
+#: quickopenplugin.cpp:781
+msgid "Embedded Quick Open"
+msgstr "Vstavljeno hitro odpiranje"
+
+#: quickopenplugin.cpp:787
+msgid "Next Function"
+msgstr "Naslednja funkcija"
+
+#: quickopenplugin.cpp:792
+msgid "Previous Function"
+msgstr "Predhodna funkcija"
+
+#: quickopenplugin.cpp:797 quickopenplugin.cpp:1253
+msgid "Outline"
+msgstr "Oris"
+
+#: quickopenplugin.cpp:811 quickopenplugin.cpp:838 quickopenplugin.cpp:997
+msgid "Includes"
+msgstr "Vključitve"
+
+#: quickopenplugin.cpp:811
+msgid "Includers"
+msgstr "Vključitelji"
+
+#: quickopenplugin.cpp:811 quickopenplugin.cpp:817 quickopenplugin.cpp:894
+#: quickopenplugin.cpp:895 quickopenplugin.cpp:919 quickopenplugin.cpp:920
+msgid "Currently Open"
+msgstr "Trenutno odprto"
+
+#: quickopenplugin.cpp:818 quickopenplugin.cpp:825 quickopenplugin.cpp:907
+msgid "Files"
+msgstr "Datoteke"
+
+#: quickopenplugin.cpp:839 quickopenplugin.cpp:997
+msgid "Documentation"
+msgstr "Dokumentacija"
+
+#: quickopenplugin.cpp:1341
+msgid ""
+"Search for files, classes, functions and more, allowing you to quickly "
+"navigate in your source code."
+msgstr ""
+"Najdite datoteke, razrede, funkcije in več, kar vam omogoča hitro krmarjenje "
+"po vaši izvorni kodi."

@@ -1,0 +1,170 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2008.
+# Stelios <sstavra@gmail.com>, 2011.
+# Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevgit\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-01 05:17+0000\n"
+"PO-Revision-Date: 2014-03-20 22:37+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: gitmessagehighlighter.cpp:79
+#, kde-format
+msgid "Try to keep summary length below %1 characters."
+msgstr ""
+"Προσπαθήστε να διατηρήσετε το μήκος της περίληψης κάτω από %1 χαρακτήρες."
+
+#: gitmessagehighlighter.cpp:95
+msgid "Separate summary from details with one empty line."
+msgstr "Διαχωρίστε την περίληψη από τις λεπτομέρειες με μία κενή γραμμή."
+
+#: gitmessagehighlighter.cpp:105
+#, kde-format
+msgid "Try to keep line length below %1 characters."
+msgstr ""
+"Προσπαθήστε να διατηρήσετε το μήκος της γραμμής κάτω από %1 χαρακτήρες."
+
+#: gitplugin.cpp:64
+msgid "Git"
+msgstr "Git"
+
+#: gitplugin.cpp:64
+msgid "A plugin to support git version control systems"
+msgstr "Ένα πρόσθετο υποστήριξης συστημάτων ελέγχου εκδόσεων git"
+
+#: gitplugin.cpp:182
+msgid "git is not installed"
+msgstr "Το git δεν έχει εγκατασταθεί"
+
+#: gitplugin.cpp:236
+msgid "Git Stashes"
+msgstr "Εκκρεμότητες git"
+
+#: gitplugin.cpp:237 stashmanagerdialog.cpp:36
+msgid "Stash Manager"
+msgstr "Διαχειριστής εκκρεμοτήτων"
+
+#: gitplugin.cpp:238
+msgid "Push Stash"
+msgstr "Ώθηση εκκρεμότητας"
+
+#: gitplugin.cpp:239
+msgid "Pop Stash"
+msgstr "Απώθηση εκκρεμότητας"
+
+#: gitplugin.cpp:265
+#, kde-format
+msgid "error: %1"
+msgstr "σφάλμα: %1"
+
+#: gitplugin.cpp:321 gitplugin.cpp:332
+msgid "Did not specify the list of files"
+msgstr "Δε καθορίστηκε η λίστα των αρχείων"
+
+#: gitplugin.cpp:383
+msgid "Could not revert changes"
+msgstr "Αδυναμία επαναφοράς από αλλαγές"
+
+#: gitplugin.cpp:393
+msgid ""
+"The following files have uncommited changes, which will be lost. Continue?"
+msgstr ""
+
+#: gitplugin.cpp:416
+msgid "No files or message specified"
+msgstr "Δν ορίστηκαν αρχεία ή μήνυμα"
+
+#: gitplugin.cpp:468
+msgid "No files to remove"
+msgstr "Δεν υπάρχουν αρχεία για αφαίρεση"
+
+#: gitplugin.cpp:645
+msgid "There are pending changes, do you want to stash them first?"
+msgstr ""
+"Υπάρχουν αλλαγές σε εξέλιξη, θέλετε να τις θέσετε σε εκκρεμότητα πρώτα;"
+
+#: stashmanagerdialog.cpp:108
+#, kde-format
+msgid "Are you sure you want to drop the stash '%1'?"
+msgstr "Είστε βέβαιοι ότι θέλετε να απορρίψετε την εκκερεμότητα '%1';"
+
+#: stashmanagerdialog.cpp:116
+msgid "KDevelop - Git Stash"
+msgstr "KDevelop - Εκκρεμότητα Git"
+
+#: stashmanagerdialog.cpp:116
+#, fuzzy
+#| msgid "Select a name for the new branch"
+msgid "Select a name for the new branch:"
+msgstr "Επιλογή ονόματος για τον νέο κλάδο"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, show)
+#: stashmanagerdialog.ui:16
+msgid "Show the contents of the stash"
+msgstr "Εμφάνιση των περιεχομένων του stash"
+
+#. i18n: ectx: property (text), widget (QPushButton, show)
+#: stashmanagerdialog.ui:19
+msgid "Show"
+msgstr "Εμφάνιση"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:26
+msgid "Applies stash's patch"
+msgstr "Εφαρμογή διόρθωσης εκκρεμότητας"
+
+#. i18n: ectx: property (text), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:29
+msgid "Apply"
+msgstr "Εφαρμογή"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:36
+msgid "Applies stash's patch and drops the stash"
+msgstr "Εφαρμογή διόρθωσης εκκρεμότητας και απόρριψη εκκρεμότητας"
+
+#. i18n: ectx: property (text), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:39
+msgid "Pop"
+msgstr "Απώθηση"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:46
+msgid ""
+"Creates a new branch and applies the stash there, then it drops the stash."
+msgstr ""
+"Δημιουργεί έναν νέο κλάδο, εφαρμόζει την εκκρεμότητα εκεί και την απορρίπτει."
+
+#. i18n: ectx: property (text), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:49
+msgid "Branch"
+msgstr "Κλάδος"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:69
+msgid "Removes the selected branch"
+msgstr "Αφαίρεση του επιλεγμένου κλάδου"
+
+#. i18n: ectx: property (text), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:72
+msgid "Drop"
+msgstr "Απόρριψη"

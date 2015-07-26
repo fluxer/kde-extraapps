@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2013-05-09 13:36+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: CMake rm rf\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "José Nuno Pires"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zepires@gmail.com"
+
+#: cmakebuilder.cpp:55
+msgid "CMake Builder"
+msgstr "Construtor do CMake"
+
+#: cmakebuilder.cpp:56
+msgid "Support for building CMake projects"
+msgstr "Suporte para a compilação dos projectos de CMake"
+
+#: cmakebuilder.cpp:109
+msgid "No Build Directory configured, cannot build"
+msgstr ""
+"Não está configurada nenhuma pasta de compilação; esta não poderá ser "
+"executada"
+
+#: cmakebuilder.cpp:109
+msgid "Aborting build"
+msgstr "A interromper a compilação"
+
+#: cmakebuilder.cpp:160
+msgid "No Build Directory configured, cannot clean"
+msgstr ""
+"Não está configurada nenhuma pasta de compilação; não se pode limpar o "
+"projecto"
+
+#: cmakebuilder.cpp:160
+msgid "Aborting clean"
+msgstr "A interromper a limpeza"
+
+#: cmakebuilder.cpp:195
+msgid "No Build Directory configured, cannot install"
+msgstr ""
+"Não está configurada nenhuma pasta de compilação; não é possível instalar"
+
+#: cmakebuilder.cpp:195
+msgid "Aborting install"
+msgstr "A interromper a instalação"
+
+#: cmakebuilder.cpp:219
+msgid "No Build Directory configured, cannot configure"
+msgstr ""
+"Não está configurada nenhuma pasta de compilação; não é possível configurar"
+
+#: cmakebuilder.cpp:219
+msgid "Aborting configure"
+msgstr "A interromper a configuração"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuildersettings.ui:17
+msgid "Generator:"
+msgstr "Gerador:"
+
+#: cmakejob.cpp:50 prunejob.cpp:38
+msgid "CMake"
+msgstr "CMake"
+
+#: cmakejob.cpp:137
+#, kde-format
+msgid "CMake: %1"
+msgstr "CMake: %1"
+
+#: prunejob.cpp:52
+msgid "No Build Directory configured, cannot clear builddir"
+msgstr ""
+"Não está configurada nenhuma pasta de compilação; não é possível limpar esta "
+"pasta"
+
+#: prunejob.cpp:58
+msgid "Wrong build directory, cannot clear the build directory"
+msgstr "A pasta de compilação é inválida; não é possível limpar esta pasta"
+
+#: prunejob.cpp:71
+#, kde-format
+msgid "%1> rm -rf %2"
+msgstr "%1> rm -rf %2"
+
+#: prunejob.cpp:86
+msgid "** Prune successful **"
+msgstr "** Eliminação com sucesso **"
+
+#: prunejob.cpp:88
+#, kde-format
+msgid "** Prune failed: %1 **"
+msgstr "** A eliminação falhou: %1 **"
+
+
+
+
+
+
+
+
+
+
+#, fuzzy

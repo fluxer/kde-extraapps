@@ -1,0 +1,77 @@
+# Copyright © 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdevelop package.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
+#
+# KDE Finnish translation sprint participants:
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevokteta\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-09-11 05:32+0000\n"
+"PO-Revision-Date: 2014-03-31 04:16+0300\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:31+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lasse Liehu"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lasse.liehu@gmail.com"
+
+#. i18n: ectx: Menu (permission)
+#: kdevokteta.rc:10
+msgctxt "@title:menu"
+msgid "Permissions"
+msgstr "Käyttöoikeudet"
+
+#. i18n: ectx: Menu (view)
+#: kdevokteta.rc:41
+msgid "View"
+msgstr "Näytä"
+
+#. i18n: ectx: Menu (bookmarks)
+#: kdevokteta.rc:59
+msgid "Bookmarks"
+msgstr "Kirjanmerkit"
+
+# Tämä viesti on tarpeeton eikä tätä käytetä missään. Designer viittaa luultavasti Qt Designeriin.
+#. i18n: ectx: ToolBar (designerToolbar)
+#: kdevokteta.rc:90
+msgid "Designer Layout Toolbar"
+msgstr "Designerin asettelutyökalurivi"
+
+#: oktetadocument.cpp:174
+#, kde-format
+msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
+msgstr "Tiedostossa ”%1” on tallentamattomia muutoksia. Haluatko tallentaa ne?"
+
+#: oktetadocument.cpp:175
+msgid "Close Document"
+msgstr "Sulje tiedosto"
+
+#: oktetaplugin.cpp:68
+msgid "Okteta Plugin for KDevelop"
+msgstr "Okteta-liitännäinen KDevelopiin"
+
+#: oktetaplugin.cpp:68
+msgid "Provides simple Hex Editing"
+msgstr "Tarjoaa yksinkertaisen heksadesimaalimuokkauksen"
+
+#: oktetaplugin.cpp:124
+msgid "Hex Editor"
+msgstr "Heksaeditori"
+
+#: oktetawidget.cpp:118
+msgctxt "@action:inmenu"
+msgid "Manage Byte Array View Profiles..."
+msgstr "Hallinnoi tavutaulukon näyttöprofiileja…"

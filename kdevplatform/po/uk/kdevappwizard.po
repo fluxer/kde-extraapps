@@ -1,0 +1,201 @@
+# translation of kdevappwizard.po to Ukrainian
+# Copyright (C) 2009-2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevappwizard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-03-07 09:43+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: appwizarddialog.cpp:27
+msgid "Create New Project"
+msgstr "Створити новий проект"
+
+#: appwizarddialog.cpp:35
+msgctxt "Page for general configuration options"
+msgid "General"
+msgstr "Загальні"
+
+#: appwizarddialog.cpp:37
+msgctxt "Page for version control options"
+msgid "Version Control"
+msgstr "Керування версіями"
+
+#: appwizardplugin.cpp:70
+msgid "Project Wizard"
+msgstr "Майстер проектів"
+
+#: appwizardplugin.cpp:70
+msgid "Support for creating and importing projects"
+msgstr "Підтримка створення та імпортування проектів"
+
+#: appwizardplugin.cpp:81
+msgid "New From Template..."
+msgstr "Створити за шаблоном..."
+
+#: appwizardplugin.cpp:83
+msgid "Generate a new project from a template"
+msgstr "Створити новий проект за шаблоном"
+
+#: appwizardplugin.cpp:84
+msgid ""
+"This starts KDevelop's application wizard. It helps you to generate a "
+"skeleton for your application from a set of templates."
+msgstr ""
+"Буде запущено майстер створення програм KDevelop. Він допоможе вам створити "
+"основу вашої програми за допомогою набору шаблонів."
+
+#: appwizardplugin.cpp:114
+msgid "Could not create project from template\n"
+msgstr "Не вдалося створити проект з шаблону\n"
+
+#: appwizardplugin.cpp:114
+msgid "Failed to create project"
+msgstr "Не вдалося створити проект"
+
+#: appwizardplugin.cpp:140
+msgid "Please see the Version Control toolview"
+msgstr "Будь ласка, зверніться до даних панелі керування версіями"
+
+#: appwizardplugin.cpp:142
+msgid "Version Control System Error"
+msgstr "Помилка системи керування версіями"
+
+#: appwizardplugin.cpp:158
+msgid "Could not initialize DVCS repository"
+msgstr "Не вдалося започаткувати роботу зі сховищем DVCS"
+
+#: appwizardplugin.cpp:166
+msgid "Could not add files to the DVCS repository"
+msgstr "Не вдалося додати файли у сховище DVCS"
+
+#: appwizardplugin.cpp:173
+#, kde-format
+msgid "Could not import project into %1."
+msgstr "Не вдалося імпортувати проект до %1"
+
+#: appwizardplugin.cpp:190
+msgid "Could not import project"
+msgstr "Не вдалося імпортувати проект"
+
+#: appwizardplugin.cpp:198
+msgid "Could not checkout imported project"
+msgstr "Не вдалося перевірити імпортований проект"
+
+#: appwizardplugin.cpp:280
+msgid "Could not create new project"
+msgstr "Не вдалося створити новий проект"
+
+#: appwizardplugin.cpp:406
+#, kde-format
+msgid "The file %1 cannot be created."
+msgstr "Не вдалося створити файл %1."
+
+#: appwizardplugin.cpp:500
+msgid "Project Templates"
+msgstr "Шаблони проектів"
+
+#. i18n: ectx: Menu (project)
+#: kdevappwizard.rc:5
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Проект"
+
+#: projectselectionpage.cpp:57
+msgid "Category"
+msgstr "Категорія"
+
+#: projectselectionpage.cpp:57
+msgid "Project Type"
+msgstr "Тип проекту"
+
+#: projectselectionpage.cpp:68
+msgid "Get More Templates"
+msgstr "Отримати додаткові шаблони"
+
+#: projectselectionpage.cpp:74
+msgid "Load Template From File"
+msgstr "Завантаження шаблону з файла"
+
+#: projectselectionpage.cpp:182
+msgid "Invalid location"
+msgstr "Некоректна адреса"
+
+#: projectselectionpage.cpp:190
+msgid "Empty project name"
+msgstr "Порожня назва проекту"
+
+#: projectselectionpage.cpp:212
+msgid "Invalid project name"
+msgstr "Некоректна назва проекту"
+
+#: projectselectionpage.cpp:231
+#, kde-format
+msgid "Unable to create subdirectories, missing permissions on: %1"
+msgstr "Не вдалося створити підкаталоги, немає дозволів на %1"
+
+#: projectselectionpage.cpp:247
+msgid "Invalid project template, please choose a leaf item"
+msgstr "Некоректний шаблон проекту, будь ласка, оберіть коректний запис"
+
+#: projectselectionpage.cpp:260
+msgid "Path already exists and contains files"
+msgstr "Каталог вже існує і містить файли"
+
+#: projectselectionpage.cpp:303
+msgid ""
+"The specified path already exists and contains files. Are you sure you want "
+"to proceed?"
+msgstr ""
+"Каталог за вказаною адресою вже існує і містить файли. Ви справді бажаєте "
+"продовжити процедуру?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, propertiesBox)
+#: projectselectionpage.ui:26
+msgid "Properties"
+msgstr "Властивості"
+
+#. i18n: ectx: property (text), widget (QLabel, appNameLabel)
+#: projectselectionpage.ui:32
+msgid "Application Name:"
+msgstr "Назва програми:"
+
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: projectselectionpage.ui:42
+msgid "Location:"
+msgstr "Адреса:"
+
+#. i18n: ectx: property (text), widget (KSqueezedTextLabel, locationValidLabel)
+#: projectselectionpage.ui:52
+msgid "KSqueezedTextLabel"
+msgstr "KSqueezedTextLabel"
+
+#: projectvcspage.cpp:42
+msgctxt "No Version Control Support chosen"
+msgid "None"
+msgstr "Немає"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectvcspage.ui:18
+msgid "Version Control System:"
+msgstr "Система керування версіями:"

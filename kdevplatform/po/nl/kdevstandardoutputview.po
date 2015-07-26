@@ -1,0 +1,110 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kristof Bal <kristof.bal@gmail.com>, 2008.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevstandardoutputview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-07 10:47+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevstandardoutputview.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigatie"
+
+#: outputwidget.cpp:70 standardoutputview.cpp:49
+msgid "Output View"
+msgstr "Uitvoerweergave"
+
+#: outputwidget.cpp:81
+msgid "Close the currently active output view"
+msgstr "Sluit de huidige actieve uitvoerweergave"
+
+#: outputwidget.cpp:86
+msgid "Close all other output views"
+msgstr "Sluit alle andere uitvoerweergaven"
+
+#: outputwidget.cpp:96
+msgid "Previous"
+msgstr "Vorige"
+
+#: outputwidget.cpp:99
+msgid "Next"
+msgstr "Volgende"
+
+#: outputwidget.cpp:107
+msgid "Select activated Item"
+msgstr "Geactiveerd item selecteren"
+
+#: outputwidget.cpp:109
+msgid "Focus when selecting Item"
+msgstr "Krijg focus bij selecteren van een item"
+
+#: outputwidget.cpp:135
+msgid "Search..."
+msgstr "Zoeken..."
+
+#: outputwidget.cpp:137
+msgid "Enter a wild card string to filter the output view"
+msgstr ""
+"Voer een tekenreeks met jokertekens in om de weergave van de uitvoer te "
+"filteren"
+
+#: standardoutputview.cpp:49
+msgid "Provides toolviews for presenting the output of running apps"
+msgstr ""
+"Levert hulpmiddelweergave voor het tonen van de uitvoer van draaiende "
+"applicaties"
+
+#: standardoutputview.cpp:86
+msgid "Jump to Next Outputmark"
+msgstr "Ga naar volgende uitvoermarkering"
+
+#: standardoutputview.cpp:92
+msgid "Jump to Previous Outputmark"
+msgstr "Ga naar vorige uitvoermarkering"
+
+#: standardoutputview.cpp:136
+msgctxt "@title:window"
+msgid "Build"
+msgstr "Bouwen"
+
+#: standardoutputview.cpp:141
+msgctxt "@title:window"
+msgid "Run"
+msgstr "Uitvoeren"
+
+#: standardoutputview.cpp:146
+msgctxt "@title:window"
+msgid "Debug"
+msgstr "Debuggen"
+
+#: standardoutputview.cpp:151
+msgctxt "@title:window"
+msgid "Test"
+msgstr "Testen"
+
+#: standardoutputview.cpp:156
+msgctxt "@title:window"
+msgid "Version Control"
+msgstr "Versiebeheer"

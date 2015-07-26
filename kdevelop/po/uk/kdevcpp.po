@@ -1,0 +1,885 @@
+# translation of kdevcpp.po to Ukrainian
+# Copyright (C) 2008-2013 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcpp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-17 05:11+0000\n"
+"PO-Revision-Date: 2014-06-26 18:45+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: codecompletion/context.cpp:883
+msgid "Initialize"
+msgstr "Ініціалізувати"
+
+#: codecompletion/context.cpp:1338 codecompletion/context.cpp:2038
+msgid "Not Included"
+msgstr "Невключені"
+
+#: codecompletion/context.cpp:1490
+#, kde-format
+msgctxt ""
+"Here, overload is used as a programming term.  This string is used to "
+"display how many overloaded versions there are of the function whose name is "
+"the second argument."
+msgid "1 more overload of %2 (show more)"
+msgid_plural "%1 more overloads of %2 (show more)"
+msgstr[0] "ще %1 перевантаження %2 (показати інші)"
+msgstr[1] "ще %1 перевантаження %2 (показати інші)"
+msgstr[2] "ще %1 перевантажень %2  (показати інші)"
+msgstr[3] "ще %1 перевантаження %2 (показати інші)"
+
+#: codecompletion/context.cpp:1614
+#, kde-format
+msgid "Connect to %1 (%2)"
+msgstr "З’єднати з %1 (%2)"
+
+#: codecompletion/context.cpp:1666
+msgid "Signals/Slots"
+msgstr "Сигнали/Слоти"
+
+#: codecompletion/context.cpp:1935
+msgid "Virtual Override"
+msgstr "Віртуальне перевизначення"
+
+#: codecompletion/context.cpp:1942
+msgctxt "@action"
+msgid "Implement Function"
+msgstr "Реалізувати функцію"
+
+#: codecompletion/context.cpp:1971 codecompletion/context.cpp:1973
+msgid "C++ Builtin"
+msgstr "Вбудовані C++"
+
+#: codecompletion/context.cpp:2098
+msgid "Lookahead Matches"
+msgstr "Відповідники з випередженням"
+
+#: codecompletion/implementationhelperitem.cpp:86
+msgctxt "@action C++ code completion"
+msgid "Override"
+msgstr "Перезапис"
+
+#: codecompletion/implementationhelperitem.cpp:88
+msgctxt "@action C++ code completion"
+msgid "Implement"
+msgstr "Реалізація"
+
+#: codecompletion/implementationhelperitem.cpp:90
+msgctxt "@action C++ code completion"
+msgid "Create Slot"
+msgstr "Створення слоту"
+
+#: codecompletion/implementationhelperitem.cpp:127
+#, kde-format
+msgid "From %1"
+msgstr "З %1"
+
+#: codecompletion/missingincludeitem.cpp:484
+msgid "Add include directive"
+msgstr "Додати директиву include"
+
+#: codecompletion/missingincludeitem.cpp:489
+#, kde-format
+msgctxt "file content unknown"
+msgid "%1<unknown contents>, %2"
+msgstr "%1<невідомий вміст>, %2"
+
+#: codecompletion/missingincludeitem.cpp:564
+msgid "Add Forward-Declaration"
+msgstr "Додати попереднє оголошення (forward)"
+
+#: codecompletion/missingincludeitem.cpp:576
+msgid "forward-declare"
+msgstr "попереднє оголошення (forward)"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update declaration signature"
+msgstr "Оновити підпис оголошення"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update definition signature"
+msgstr "Оновити підпис визначення"
+
+#: codegen/adaptsignatureaction.cpp:99
+#, kde-format
+msgid ""
+"Update %1\n"
+"from: %2(%3)%4\n"
+"to: %2(%5)%6"
+msgstr ""
+"Оновлення %1\n"
+"з %2(%3)%4\n"
+"на %2(%5)%6"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "declaration"
+msgstr "оголошення"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "definition"
+msgstr "визначення"
+
+#: codegen/adaptsignatureaction.cpp:184
+#, kde-format
+msgid "Failed to apply changes: %1"
+msgstr "Не вдалося застосувати зміни: %1"
+
+#: codegen/customincludepaths.cpp:35
+msgid "Setup Custom Include Paths"
+msgstr "Налаштувати нетипові шляхи включення"
+
+#: codegen/makeimplementationprivate.cpp:174
+msgid "Private Class Implementation Options"
+msgstr "Параметри приватної (private) реалізації класу"
+
+#: codegen/makeimplementationprivate.cpp:309
+msgid ""
+"Warning. It is not recommended to move initialization lists to private "
+"constructor when multiple constructors are defined."
+msgstr ""
+"Попередження: не варто пересувати списки ініціалізації до закритого "
+"(private) конструктора, якщо визначено декілька конструкторів."
+
+#: codegen/simplerefactoring.cpp:76
+#, kde-format
+msgid "Rename %1"
+msgstr "Перейменувати %1"
+
+#: codegen/simplerefactoring.cpp:88
+#, kde-format
+msgid "Create separate definition for %1"
+msgstr "Створити окреме визначення для %1"
+
+#: codegen/simplerefactoring.cpp:105 codegen/simplerefactoring.cpp:258
+msgid "No declaration under cursor"
+msgstr "Під курсором немає оголошень"
+
+#: codegen/simplerefactoring.cpp:115
+#, kde-format
+msgid "No source file available for %1."
+msgstr "Файл джерела для %1 недоступний."
+
+#: codegen/simplerefactoring.cpp:127
+#, kde-format
+msgid "Failed to update DUChain for %1."
+msgstr "Не вдалося оновити ланцюжок ВВ для %1."
+
+#: codegen/simplerefactoring.cpp:131
+msgid "Declaration lost while updating."
+msgstr "Оголошення було втрачено під час оновлення."
+
+#: codegen/simplerefactoring.cpp:141
+msgid "Cannot create definition for this declaration."
+msgstr "Не вдалося створити визначення для цього оголошення."
+
+#: codegen/simplerefactoring.cpp:146
+#, kde-format
+msgid "No document for %1"
+msgstr "Немає документа для %1"
+
+#: codegen/simplerefactoring.cpp:190
+msgid "Insertion failed"
+msgstr "Спроба вставки зазнала невдачі"
+
+#: codegen/simplerefactoring.cpp:195 codegen/simplerefactoring.cpp:203
+#: codegen/simplerefactoring.cpp:334
+#, kde-format
+msgid "Applying changes failed: %1"
+msgstr "Спроба застосування змін завершилася невдало: %1"
+
+#: codegen/simplerefactoring.cpp:265
+#, kde-format
+msgid "Declaration is located in non-writeable file %1."
+msgstr "Оголошення розташовано у файлі, непридатному до запису %1."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/cppnewclass.ui:16
+msgid "C++ Options"
+msgstr "Параметри C++"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/cppnewclass.ui:22
+msgid "&Export:"
+msgstr "&Експортувати:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/cppnewclass.ui:53
+msgid "&Macro:"
+msgstr "&Макрос:"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_3)
+#: codegen/ui/cppoverridebuttons.ui:16
+msgid "Public"
+msgstr "Публічний"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_4)
+#: codegen/ui/cppoverridebuttons.ui:23
+msgid "Protected"
+msgstr "Захищений"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_5)
+#: codegen/ui/cppoverridebuttons.ui:30
+msgid "Private"
+msgstr "Приватний"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_6)
+#: codegen/ui/cppoverridebuttons.ui:53
+msgid "Slot"
+msgstr "Гніздо"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_7)
+#: codegen/ui/cppoverridebuttons.ui:60
+msgid "Signal"
+msgstr "Сигнал"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/custom_include_paths.ui:23
+msgid "Storage Directory"
+msgstr "Каталог зберігання"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/custom_include_paths.ui:35
+msgid ""
+"The custom include-path will be stored in a special file called \"."
+"kdev_include_paths\" stored within a source directory. The custom path will "
+"be used for all files below that directory."
+msgstr ""
+"Нетипові шляхи включення буде збережено у спеціальному файлі з назвою «."
+"kdev_include_paths», який зберігатиметься у каталозі кодів. Нетиповий шлях "
+"буде використано для всіх файлів з цього каталогу."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/custom_include_paths.ui:47
+msgid "Storage Directory:"
+msgstr "Каталог зберігання:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: codegen/ui/custom_include_paths.ui:68
+msgid "Automatic Resolution"
+msgstr "Автоматичне вирішення"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/custom_include_paths.ui:74
+msgid ""
+"If your project uses simple Makefiles, it may be possible to automatically "
+"resolve the include-paths using the make utility. For this, set up a mapping "
+"from a source- to a build-directory here."
+msgstr ""
+"Якщо ваш проект використовує для збирання прості Makefile, ви можете "
+"скористатися автоматичним визначенням шляхів включення за допомогою програми "
+"make. Щоб використати це визначення, вкажіть у цьому вікні параметри "
+"відповідності між каталогами кодів і збирання."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: codegen/ui/custom_include_paths.ui:86
+msgid "Source Directory:"
+msgstr "Каталог кодів:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: codegen/ui/custom_include_paths.ui:96
+msgid "Build Directory:"
+msgstr "Каталог збирання:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: codegen/ui/custom_include_paths.ui:111
+msgid "Custom Include Paths"
+msgstr "Нетипові шляхи включення"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/custom_include_paths.ui:117
+msgid ""
+"You can add a list of custom include paths here. Relative paths will be "
+"resolved from the storage directory."
+msgstr ""
+"Тут ви можете вказати список нетипових шляхів включення. Неабсолютні адреси "
+"визначатимуться відносного кореневого каталогу сховища даних."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:148
+msgid "Select a directory to include."
+msgstr "Вибрати каталог для включення."
+
+#. i18n: ectx: property (text), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:151
+msgid "..."
+msgstr "…"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: codegen/ui/custom_include_paths.ui:168
+msgid ""
+"Note: These settings do not affect the compiler or the project in any way, "
+"they are only used to find included headers within KDevelop."
+msgstr ""
+"Зауваження: ці параметри не впливають на компілятор або проект, вони "
+"використовуються лише для пошуку включених файлів заголовків у межах "
+"KDevelop."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, PrivateImplementationDialog)
+#: codegen/ui/privateimplementation.ui:14
+msgid ""
+"Options & settings to move the private data fields of a class into a private "
+"structure"
+msgstr ""
+"Параметри і налаштування пересування приватних полів даних класу до "
+"приватної структури"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/privateimplementation.ui:42
+msgid "Private structure name:"
+msgstr "Назва приватної структури"
+
+#. i18n: ectx: property (title), widget (QGroupBox, optionGroup)
+#: codegen/ui/privateimplementation.ui:55
+msgid "Options"
+msgstr "Параметри"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:75
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default private "
+"implementation structures are declared as <span style=\" font-style:italic;"
+"\">struct</span> to have default public access.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Check this box if you wish "
+"the private implementation structure be declared as <span style=\" font-"
+"style:italic;\">class</span> with public access.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Типово, приватні "
+"реалізації структури оголошуються як <span style=\" font-style:italic;"
+"\">struct</span>, щоб типовий доступ був загальним (public).</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Позначте цей пункт, якщо "
+"ви бажаєте, щоб приватні реалізації структур оголошувалися як <span style=\" "
+"font-style:italic;\">class</span> з загальним (public) доступом.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:78
+msgid "Use class instead of struct"
+msgstr "Використовувати class, а не struct"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:97
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Move any current variables "
+"that are initialized in the constructor initializer list to the private "
+"implementation structure's constructor initializer list.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Note:</span> All references, and variables "
+"with types that do not offer default constructors are moved regardless of "
+"the state of this option.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Пересунути всі поточні "
+"змінні, які було ініціалізовано у списку ініціалізації конструктора до "
+"списку ініціалізації приватної (private) реалізації структури.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Зауваження:</span> всі посилання і типізовані "
+"змінні, які не пропонують типових конструкторів буде пересунуто незалежно "
+"від позначення цього пункту.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:100
+msgid "Move Variable initialization to private structure"
+msgstr "Пересунути ініціалізацію змінної до приватної (private) структури"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:113
+msgid ""
+"Move all currently declared private methods to the private implementation "
+"structure."
+msgstr ""
+"Пересунути всі поточні оголошені приватні (private) методи до приватної "
+"реалізації структури."
+
+#. i18n: ectx: property (text), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:116
+msgid "Move Private methods"
+msgstr "Пересунути приватні методи"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/privateimplementation.ui:130
+msgid "Pointer name:"
+msgstr "Назва вказівника:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:146
+msgid ""
+"The name of the member variable that will be the pointer held to the private "
+"implementation"
+msgstr ""
+"Назва змінної елемента, яка буде носієм вказівника до приватної реалізації"
+
+#. i18n: ectx: property (text), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:149
+msgid "d"
+msgstr "d"
+
+#: codegen/unresolvedincludeassistant.cpp:84
+#, kde-format
+msgid "Failed to save custom include paths in directory: %1"
+msgstr "Не вдалося зберегти нетипові шляхи включення у каталозі: %1"
+
+#: codegen/unresolvedincludeassistant.cpp:101
+#: codegen/unresolvedincludeassistant.cpp:144
+msgid "Add Custom Include Path"
+msgstr "Додати нетиповий шлях включення"
+
+#: codegen/unresolvedincludeassistant.cpp:114
+msgid "Open Project"
+msgstr "Відкрити проект"
+
+#: codegen/unresolvedincludeassistant.cpp:118
+#, kde-format
+msgid "Include file \"%1\" not found"
+msgstr "Включений файл «%1» не знайдено"
+
+#: cppduchain/contextbuilder.cpp:149
+#, kde-format
+msgid "Could not resolve base class, adding it indirectly: %1"
+msgstr "Не вдалося визначити базовий клас, непряме додавання: %1"
+
+#: cppduchain/contextbuilder.cpp:154
+#, kde-format
+msgid "Invalid base class: %1"
+msgstr "Некоректний базовий клас: %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:113
+msgid "<b>local</b> variable"
+msgstr "<b>локальна</b> змінна"
+
+#: cppduchain/missingdeclarationassistant.cpp:117
+#, kde-format
+msgid "Create local declaration %1"
+msgstr "Створити локальне оголошення %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:227
+#, kde-format
+msgctxt "%1: access, %2: identifier/signature"
+msgid "Declare %1 %2"
+msgstr "Оголосити %1 %2"
+
+#: cppduchain/missingdeclarationassistant.cpp:352
+#, kde-format
+msgctxt "assistant, declare member in class identified by %1"
+msgid "member of <code>%1</code>:"
+msgstr "учасник <code>%1</code>:"
+
+#: cppduchain/missingdeclarationassistant.cpp:358
+#, kde-format
+msgctxt "assistant, declare %1 as member of class identified by %2"
+msgid "Declare <code>'%1'</code> as member of <code>%2</code>"
+msgstr "Оголосити <code>«%1»</code> як учасник <code>%2</code>"
+
+#: cppduchain/missingdeclarationassistant.cpp:382
+#, kde-format
+msgid "Declare <code>'%1'</code> as"
+msgstr "Оголосити <code>«%1»</code> як"
+
+#: cppduchain/missingdeclarationproblem.cpp:27
+#, kde-format
+msgid "Declaration not found: %1"
+msgstr "Оголошення не знайдено: %1"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:52
+msgctxt "Headers included into this header"
+msgid "Includes"
+msgstr "Включення"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:53
+msgctxt "Count of files this header was included into"
+msgid "Included by"
+msgstr "Включено з"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:54
+msgctxt "Count of macros defined in this header"
+msgid "Defined macros"
+msgstr "Визначених макросів"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:81
+msgid "Preprocessed Body:"
+msgstr "Попередньо оброблене тіло:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:84
+msgid "Preprocessed Body: (empty)"
+msgstr "Попередньо оброблене тіло: (порожньо)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:87
+msgid "Body:"
+msgstr "Тіло:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:90
+msgid "Body: (empty)"
+msgstr "Тіло: (порожньо)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:142
+#, kde-format
+msgctxt ""
+"%1: macro type, i.e.: 'Function macro' or just 'Macro'%2: the macro name and "
+"arguments%3 the link to the definition"
+msgid "%1: %2, defined in %3"
+msgstr "%1: %2, визначено у %3"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Function macro"
+msgstr "Макрос-функція"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Macro"
+msgstr "Макрос"
+
+#: cppduchain/usebuilder.cpp:151
+#, kde-format
+msgid "Use of deleted function: %1"
+msgstr "Використання вилученої функції: %1"
+
+#: cpplanguagesupport.cpp:141
+msgid "Edit include directories"
+msgstr "Змінити каталоги включень"
+
+#: cpplanguagesupport.cpp:175
+msgid "C++ Support"
+msgstr "Підтримка C++"
+
+#: cpplanguagesupport.cpp:175
+msgid "Support for C++ Language"
+msgstr "Підтримка мови C++"
+
+#: cpplanguagesupport.cpp:220
+msgid "Files"
+msgstr "Файли"
+
+#: cpplanguagesupport.cpp:240
+msgid "&Switch Definition/Declaration"
+msgstr "&Перемкнути визначення/оголошення"
+
+#: cpplanguagesupport.cpp:250
+msgid "Rename Declaration"
+msgstr "Перейменувати оголошення"
+
+#: cpplanguagesupport.cpp:256
+msgid "Move into Source"
+msgstr "Пересунути до коду"
+
+#: cpplanguagesupport.cpp:810
+msgid "Emptied by preprocessor<br />"
+msgstr "Спорожнено процесором попередньої обробки<br />"
+
+#: cppparsejob.cpp:158
+msgid "Parsing included files"
+msgstr "Розбір включених файлів"
+
+#: cppparsejob.cpp:469
+msgid "Parsing actual file"
+msgstr "Розбір поточного файла"
+
+#: cppparsejob.cpp:581
+#, kde-format
+msgid "Not updating duchain for %1"
+msgstr "Оновлення ланцюжка ВВ для %1 не відбувається"
+
+#: cppparsejob.cpp:710
+msgid "Building uses"
+msgstr "Збирання з використанням"
+
+#: cppparsejob.cpp:858
+msgid "Ready"
+msgstr "Виконано"
+
+#: includepathresolver.cpp:518
+msgid ""
+"Tried include path resolution while another resolution process was still "
+"running"
+msgstr ""
+"Спроба виявлення шляхів include у той час, коли ще виконувався інший процес "
+"виявлення"
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Makefile is missing in folder \"%1\""
+msgstr "У теці «%1» відсутній Makefile"
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Problem while trying to resolve include paths for %1"
+msgstr "Проблема під час спроби визначити шляхи include для %1"
+
+#: includepathresolver.cpp:639
+#, kde-format
+msgid "Cached: %1"
+msgstr "Кешовано: %1"
+
+#: includepathresolver.cpp:668
+#, kde-format
+msgid "Filename %1 seems to be malformed"
+msgstr "Назву файла %1, здається, неправильно сформовано"
+
+#: includepathresolver.cpp:806
+msgid "Failed to extract new working directory"
+msgstr "Не вдалося видобути новий робочий каталог"
+
+#: includepathresolver.cpp:806 includepathresolver.cpp:835
+#, kde-format
+msgid "Output was: %1"
+msgstr "Виведено: %1"
+
+#: includepathresolver.cpp:828 includepathresolver.cpp:831
+msgid "Recursive make call failed"
+msgstr "Помилка рекурсивного виклику make"
+
+#: includepathresolver.cpp:828
+#, kde-format
+msgid "The parameter string \"%1\" does not seem to be valid. Output was: %2."
+msgstr "Рядок параметрів «%1», здається, не є коректним. Вивід: %2"
+
+#: includepathresolver.cpp:831
+#, kde-format
+msgid "The directory \"%1\" does not exist. Output was: %2."
+msgstr "Каталогу «%1» не існує. Вивід: %2"
+
+#: includepathresolver.cpp:835
+msgid "Malformed recursive make call"
+msgstr "Неправильно сформований рекурсивний виклик make"
+
+#: includepathresolver.cpp:887
+msgid "Could not extract include paths from make output"
+msgstr "Не вдалося визначити шляхи include з виводу make"
+
+#: includepathresolver.cpp:888
+#, kde-format
+msgid "Folder: \"%1\"  Command: \"%2\"  Output: \"%3\""
+msgstr "Тека: «%1»  Команда: «%2» Вивід: «%3»"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcppsupport.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Навігація"
+
+#. i18n: ectx: Menu (code)
+#: kdevcppsupport.rc:9
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Код"
+
+#: parser/headergen/main.cpp:240
+msgid "KDE forwarding header generator"
+msgstr "Програма для створення випереджального заголовка у KDE"
+
+#: parser/headergen/main.cpp:241
+msgid ""
+"An application which creates forwarding headers (like Qt headers) from "
+"source code."
+msgstr ""
+"Програма, яка створює випереджальні заголовки (на зразок заголовків Qt) з "
+"вхідного коду."
+
+#: parser/headergen/main.cpp:242
+msgid "(c) 2006, Hamish Rodda"
+msgstr "© Hamish Rodda, 2006"
+
+#: parser/headergen/main.cpp:247
+msgid ""
+"KDE include directory - headers go into <placeholder>includes</placeholder>/"
+"KDE"
+msgstr ""
+"Тека include KDE — заголовки переходять у <placeholder>includes</"
+"placeholder>/KDE"
+
+#: parser/headergen/main.cpp:248
+msgid "Build information from the cmake XML generator"
+msgstr "Інформація про збирання зі створювача XML cmake"
+
+#: parser/lexer.cpp:1106
+#, kde-format
+msgid "invalid input: %1"
+msgstr "некоректні вхідні дані: %1"
+
+#: parser/rpp/pp-engine.cpp:165
+msgid "invalid include directive"
+msgstr "некоректна директива include"
+
+#: parser/rpp/pp-engine.cpp:301
+msgid "Unterminated #if statement"
+msgstr "Незавершена конструкція #if"
+
+#: parser/rpp/pp-engine.cpp:501 parser/rpp/pp-engine.cpp:519
+#: parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "character %1"
+msgstr "Символ %1"
+
+#: parser/rpp/pp-engine.cpp:501
+#, kde-format
+msgid "Expected \"identifier\", found: %1"
+msgstr "Очікувалося «ідентифікатор», отримано: %1"
+
+#: parser/rpp/pp-engine.cpp:502 parser/rpp/pp-engine.cpp:520
+#: parser/rpp/pp-engine.cpp:556
+#, kde-format
+msgid "<h5>Token text</h5><pre>%1</pre><h5>Input</h5><pre>%2</pre>"
+msgstr "<h5>Текст елемента</h5><pre>%1</pre><h5>Ввід</h5><pre>%2</pre>"
+
+#: parser/rpp/pp-engine.cpp:519 parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "Expected \")\", found %1"
+msgstr "Очікувалося «)», отримано %1"
+
+#: parser/rpp/pp-engine.cpp:591 parser/rpp/pp-engine.cpp:604
+msgid "Division by zero"
+msgstr "Ділення на нуль"
+
+#: parser/rpp/pp-engine.cpp:592 parser/rpp/pp-engine.cpp:605
+#, kde-format
+msgid "Input text: %1"
+msgstr "Введений текст: %1"
+
+#: parser/rpp/pp-engine.cpp:842
+#, kde-format
+msgid "expected ``:'' = %1"
+msgstr "очікувалося ``:'' = %1"
+
+#: parser/rpp/pp-engine.cpp:906 parser/rpp/pp-engine.cpp:931
+msgid "#else without #if"
+msgstr "#else без #if"
+
+#: parser/rpp/pp-engine.cpp:969
+#, kde-format
+msgid "#endif without #if at output line %1"
+msgstr "#endif без #if у рядку виводу %1"
+
+#: parser/rpp/pp-engine.cpp:1204
+msgid "Invalid suffix combination"
+msgstr "Некоректне поєднання суфіксів"
+
+#: parser/rpp/pp-engine.cpp:1220
+msgid "Invalid numeric value"
+msgstr "Некоректне числове значення"
+
+#: parser/rpp/pp-macro-expander.cpp:102
+msgid "Macro error"
+msgstr "Помилка макроса"
+
+#: parser/rpp/pp-macro-expander.cpp:115
+#, kde-format
+msgid "Call to macro %1 missing argument number %2"
+msgstr "У виклику макроса %1 відсутній аргумент з номером %2"
+
+#: parser/rpp/pp-macro-expander.cpp:116
+#, kde-format
+msgid "Formals: %1"
+msgstr "Формальні вирази: %1"
+
+#: preprocessjob.cpp:464
+#, kde-format
+msgid "File was included recursively from within itself: %1"
+msgstr "Файл було рекурсивно включено з цього ж файла: %1"
+
+#: preprocessjob.cpp:606
+#, kde-format
+msgid "Included file was not found: %1"
+msgstr "Включений файл не знайдено: %1"
+
+#: preprocessjob.cpp:607
+#, kde-format
+msgid ""
+"Searched include path:\n"
+"%1"
+msgstr ""
+"Шуканий шлях включення:\n"
+"%1"
+
+#: quickopen.cpp:161
+msgid "This file imports the current open document<br/>"
+msgstr "Цей файл імпортує поточний відкритий документ<br/>"
+
+#: quickopen.cpp:166
+#, kde-format
+msgid "In include path %1"
+msgstr "У %1-му шляху include"
+
+#: quickopen.cpp:170
+#, kde-format
+msgid "Included through %1 <br/>"
+msgstr "Включено через %1 <br/>"
+
+#: quickopen.cpp:180
+#, kde-format
+msgid "Directory %1"
+msgstr "Тека %1"
+
+#: quickopen.cpp:183
+#, kde-format
+msgid "In %1th include path"
+msgstr "У %1-му шляху include"
+
+#: quickopen.cpp:408 quickopen.cpp:415
+msgid "Includes"
+msgstr "Включення"
+
+#: quickopen.cpp:409 quickopen.cpp:416
+msgid "Include Path"
+msgstr "Шлях до включених файлів"
+
+#: quickopen.cpp:410 quickopen.cpp:417
+msgid "Includers"
+msgstr "Виклики на включення"

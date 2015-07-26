@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevvcsprojectintegration\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:07+0000\n"
+"PO-Revision-Date: 2013-10-05 11:44+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: SCV\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "José Nuno Pires"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zepires@gmail.com"
+
+#: vcschangesview.cpp:84
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: vcschangesviewplugin.cpp:48
+msgid "VCS Project Integration"
+msgstr "Integração do Projecto com SCV"
+
+#: vcschangesviewplugin.cpp:48
+msgid ""
+"This plugin provides integration between the projects and their VCS "
+"infrastructure"
+msgstr ""
+"Este 'plugin' oferece a integração entre os projectos e a sua infra-"
+"estrutura de SCV"
+
+#: vcschangesviewplugin.cpp:85
+msgid "VCS Changes"
+msgstr "Alterações do SCV"
+
+#: vcschangesviewplugin.cpp:88
+msgid "Locate Current Document"
+msgstr "Localizar o Documento Actual"
+
+#: vcschangesviewplugin.cpp:90
+msgid "Locates the current document and selects it."
+msgstr "Localiza o documento actual e selecciona-o."
+
+#: vcschangesviewplugin.cpp:93
+msgid "Reload View"
+msgstr "Recarregar a Janela"
+
+#: vcschangesviewplugin.cpp:95
+msgid "Refreshes the view for all projects, in case anything changed."
+msgstr ""
+"Actualiza o ecrã para todos os projectos, no caso de qualquer alteração."

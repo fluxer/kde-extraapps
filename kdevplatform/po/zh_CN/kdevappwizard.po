@@ -1,0 +1,208 @@
+# translation of kdevappwizard.po to 简体中文
+# Copyright (C) 2002,2003, 2004, 2008, 2009 Free Software Foundation, Inc.
+#
+# Qi Liang <cavendish@eyou.com>, 2001.
+# Xiong Jiang <jxiong@offtopic.org>, 2002,2003, 2004.
+# Funda Wang <fundawang@linux.net.cn>, 2005.
+# Ni Hui <shuizhuyuanluo@126.com>, 2008, 2009, 2010.
+# Sign <guoyunhebrave@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevappwizard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-01-26 14:43+0800\n"
+"Last-Translator: Sign <guoyunhebrave@gmail.com>\n"
+"Language-Team: Chinese Simplified <kde-china@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org"
+
+#: appwizarddialog.cpp:27
+msgid "Create New Project"
+msgstr "创建新工程"
+
+#: appwizarddialog.cpp:35
+msgctxt "Page for general configuration options"
+msgid "General"
+msgstr "常规"
+
+#: appwizarddialog.cpp:37
+msgctxt "Page for version control options"
+msgid "Version Control"
+msgstr "版本控制"
+
+#: appwizardplugin.cpp:70
+msgid "Project Wizard"
+msgstr "工程向导"
+
+#: appwizardplugin.cpp:70
+msgid "Support for creating and importing projects"
+msgstr "创建和导入工程支持"
+
+#: appwizardplugin.cpp:81
+msgid "New From Template..."
+msgstr "从模板新建..."
+
+#: appwizardplugin.cpp:83
+msgid "Generate a new project from a template"
+msgstr "从模板生成新的工程"
+
+#: appwizardplugin.cpp:84
+#, fuzzy
+#| msgid ""
+#| "<b>New project</b><p>This starts KDevelop's application wizard. It helps "
+#| "you to generate a skeleton for your application from a set of templates.</"
+#| "p>"
+msgid ""
+"This starts KDevelop's application wizard. It helps you to generate a "
+"skeleton for your application from a set of templates."
+msgstr ""
+"<b>新建工程</b><p>它启动 KDevelop 的应用程序向导。它能帮助您从模板为您的应用"
+"程序建立一个基本框架。</p>"
+
+#: appwizardplugin.cpp:114
+msgid "Could not create project from template\n"
+msgstr "无法从模板创建工程\n"
+
+#: appwizardplugin.cpp:114
+msgid "Failed to create project"
+msgstr "创建工程失败"
+
+#: appwizardplugin.cpp:140
+msgid "Please see the Version Control toolview"
+msgstr ""
+
+#: appwizardplugin.cpp:142
+#, fuzzy
+#| msgid "Version Control System:"
+msgid "Version Control System Error"
+msgstr "版本控制系统："
+
+#: appwizardplugin.cpp:158
+msgid "Could not initialize DVCS repository"
+msgstr "无法初始化 DVCS 仓库"
+
+#: appwizardplugin.cpp:166
+msgid "Could not add files to the DVCS repository"
+msgstr "无法添加文件至 DVCS 仓库"
+
+#: appwizardplugin.cpp:173
+#, kde-format
+msgid "Could not import project into %1."
+msgstr "无法导入工程至 %1。"
+
+#: appwizardplugin.cpp:190
+msgid "Could not import project"
+msgstr "无法导入工程"
+
+#: appwizardplugin.cpp:198
+msgid "Could not checkout imported project"
+msgstr "无法检验导入的工程"
+
+#: appwizardplugin.cpp:280
+msgid "Could not create new project"
+msgstr "无法新建工程"
+
+#: appwizardplugin.cpp:406
+#, kde-format
+msgid "The file %1 cannot be created."
+msgstr "无法创建文件 %1。"
+
+#: appwizardplugin.cpp:500
+msgid "Project Templates"
+msgstr "工程模板"
+
+#. i18n: ectx: Menu (project)
+#: kdevappwizard.rc:5
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "工程"
+
+#: projectselectionpage.cpp:57
+msgid "Category"
+msgstr "类别"
+
+#: projectselectionpage.cpp:57
+msgid "Project Type"
+msgstr "工程类型"
+
+#: projectselectionpage.cpp:68
+msgid "Get More Templates"
+msgstr "获取更多模板"
+
+#: projectselectionpage.cpp:74
+msgid "Load Template From File"
+msgstr "从文件装入模板"
+
+#: projectselectionpage.cpp:182
+msgid "Invalid location"
+msgstr "无效位置"
+
+#: projectselectionpage.cpp:190
+msgid "Empty project name"
+msgstr "空工程名称"
+
+#: projectselectionpage.cpp:212
+msgid "Invalid project name"
+msgstr "无效的工程名称"
+
+#: projectselectionpage.cpp:231
+#, kde-format
+msgid "Unable to create subdirectories, missing permissions on: %1"
+msgstr "无法创建子目录，缺少权限于：%1"
+
+#: projectselectionpage.cpp:247
+msgid "Invalid project template, please choose a leaf item"
+msgstr "无效的工程模板，请选择子项目"
+
+#: projectselectionpage.cpp:260
+msgid "Path already exists and contains files"
+msgstr "路径已经存在并包含文件"
+
+#: projectselectionpage.cpp:303
+msgid ""
+"The specified path already exists and contains files. Are you sure you want "
+"to proceed?"
+msgstr "指定的路径已经存在并且包含文件。您确定要继续吗？"
+
+#. i18n: ectx: property (title), widget (QGroupBox, propertiesBox)
+#: projectselectionpage.ui:26
+msgid "Properties"
+msgstr "属性"
+
+#. i18n: ectx: property (text), widget (QLabel, appNameLabel)
+#: projectselectionpage.ui:32
+msgid "Application Name:"
+msgstr "应用程序名称："
+
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: projectselectionpage.ui:42
+msgid "Location:"
+msgstr "位置："
+
+#. i18n: ectx: property (text), widget (KSqueezedTextLabel, locationValidLabel)
+#: projectselectionpage.ui:52
+msgid "KSqueezedTextLabel"
+msgstr "KSqueezedTextLabel"
+
+#: projectvcspage.cpp:42
+msgctxt "No Version Control Support chosen"
+msgid "None"
+msgstr "无"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectvcspage.ui:18
+msgid "Version Control System:"
+msgstr "版本控制系统："

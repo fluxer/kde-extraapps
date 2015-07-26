@@ -1,0 +1,88 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Martin Schlander <mschlander@opensuse.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-25 22:20+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Martin Schlander"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mschlander@opensuse.org"
+
+#: kdevninjabuilderplugin.cpp:33
+msgid "Ninja Builder"
+msgstr "Ninja-bygning"
+
+#: kdevninjabuilderplugin.cpp:33
+msgid "Support for building Ninja projects"
+msgstr "Understøttelse af bygning af Ninja-projekter"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: ninjaconfig.ui:20
+msgid "&Display commands but do not execute them:"
+msgstr "&Vis kommandoer men kør dem ikke:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: ninjaconfig.ui:40
+msgid "Install as &root:"
+msgstr "Installér som &root:"
+
+#. i18n: ectx: property (text), widget (QLabel, rootinstallationcommandLabel)
+#: ninjaconfig.ui:63
+msgid "Root installation &command:"
+msgstr "&Kommando til root-installation:"
+
+#. i18n: ectx: property (text), widget (QLabel, jobOverrideLabel)
+#: ninjaconfig.ui:98
+msgid "&Number of simultaneous jobs:"
+msgstr "A&ntal samtidige jobs:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_1)
+#: ninjaconfig.ui:121
+msgid "Count of &errors to be tolerated:"
+msgstr "Antal &fejl der skal tolereres:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ninjaconfig.ui:141
+msgid "Additional ninja &options:"
+msgstr "Yderligere ninja-&tilvalg:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ninjaconfig.ui:161
+msgid "Active Environment &Profile:"
+msgstr "&Profil for aktivt miljø:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ninjaconfig.ui:196
+msgid "O&verride number of jobs:"
+msgstr "Ti&lsidesæt antal jobs:"
+
+#: ninjajob.cpp:41
+msgid "Ninja"
+msgstr "Ninja"
+
+#: ninjajob.cpp:59
+#, kde-format
+msgid "Ninja (%1): %2"
+msgstr "Ninja (%1): %2"
+
+#: ninjajob.cpp:61
+#, kde-format
+msgid "Ninja (%1)"
+msgstr "Ninja (%1)"

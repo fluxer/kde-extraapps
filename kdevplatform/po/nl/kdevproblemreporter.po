@@ -1,0 +1,191 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kristof Bal <kristof.bal@gmail.com>, 2008.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevproblemreporter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-24 05:23+0000\n"
+"PO-Revision-Date: 2013-11-07 10:42+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: problemmodel.cpp:207
+msgctxt "@title:column source of problem"
+msgid "Source"
+msgstr "Bron"
+
+#: problemmodel.cpp:209
+msgctxt "@title:column problem description"
+msgid "Problem"
+msgstr "Probleem"
+
+#: problemmodel.cpp:211
+msgctxt "@title:column file where problem was found"
+msgid "File"
+msgstr "Bestand"
+
+#: problemmodel.cpp:213
+msgctxt "@title:column line number with problem"
+msgid "Line"
+msgstr "Regel"
+
+#: problemmodel.cpp:215
+msgctxt "@title:column column number with problem"
+msgid "Column"
+msgstr "Kolom"
+
+#: problemreporterplugin.cpp:58
+msgid "Problem Reporter"
+msgstr "Probleemrapportage"
+
+#: problemreporterplugin.cpp:58
+msgid "Shows errors in source code"
+msgstr "Toont fouten in broncode"
+
+#: problemreporterplugin.cpp:93 problemwidget.cpp:56 problemwidget.cpp:59
+msgid "Problems"
+msgstr "Problemen"
+
+#: problemreporterplugin.cpp:180
+msgid "Solve Problem"
+msgstr "Probleem oplossen"
+
+#: problemreporterplugin.cpp:182
+#, kde-format
+msgid "Solve: %1"
+msgstr "Oplossen: %1 "
+
+#: problemwidget.cpp:66
+msgid "Force Full Update"
+msgstr "Volledig bijwerken forceren"
+
+#: problemwidget.cpp:67
+msgctxt "@info:tooltip"
+msgid "Re-parse all watched documents"
+msgstr "Alle bewaakte documenten opnieuw ontleden"
+
+#: problemwidget.cpp:76
+msgid "Show Imports"
+msgstr "Importen tonen"
+
+#: problemwidget.cpp:77
+msgctxt "@info:tooltip"
+msgid "Display problems in imported files"
+msgstr "Problemen in geïmporteerde bestanden tonen"
+
+#: problemwidget.cpp:83
+msgid "Scope"
+msgstr "Bereik"
+
+#: problemwidget.cpp:84
+msgctxt "@info:tooltip"
+msgid "Which files to display the problems for"
+msgstr "Voor welke bestanden de problemen tonen"
+
+#: problemwidget.cpp:89
+msgid "Current Document"
+msgstr "Huidig document"
+
+#: problemwidget.cpp:90
+msgctxt "@info:tooltip"
+msgid "Display problems in current document"
+msgstr "Problemen in het huidige document tonen"
+
+#: problemwidget.cpp:93
+msgid "Open Documents"
+msgstr "Documenten openen"
+
+#: problemwidget.cpp:94
+msgctxt "@info:tooltip"
+msgid "Display problems in all open documents"
+msgstr "Problemen in alle geopende documenten tonen"
+
+#: problemwidget.cpp:97
+msgid "Current Project"
+msgstr "Huidige project"
+
+#: problemwidget.cpp:98
+msgctxt "@info:tooltip"
+msgid "Display problems in current project"
+msgstr "Problemen in het huidige project tonen"
+
+#: problemwidget.cpp:101
+msgid "All Projects"
+msgstr "Alle projecten"
+
+#: problemwidget.cpp:102
+msgctxt "@info:tooltip"
+msgid "Display problems in all projects"
+msgstr "Problemen in alle projecten tonen"
+
+#: problemwidget.cpp:125
+msgid "Severity"
+msgstr "Ernst"
+
+#: problemwidget.cpp:127
+msgctxt "@info:tooltip"
+msgid "Select the lowest level of problem severity to be displayed"
+msgstr "Selecteer het laagste niveau van de ernst van problemen om te tonen"
+
+#: problemwidget.cpp:130
+msgid "Error"
+msgstr "Fout"
+
+#: problemwidget.cpp:131
+msgctxt "@info:tooltip"
+msgid "Display only errors"
+msgstr "Alleen fouten tonen"
+
+#: problemwidget.cpp:133
+msgid "Warning"
+msgstr "Waarschuwing"
+
+#: problemwidget.cpp:134
+msgctxt "@info:tooltip"
+msgid "Display errors and warnings"
+msgstr "Fouten en waarschuwingen tonen"
+
+#: problemwidget.cpp:136
+msgid "Hint"
+msgstr "Tip"
+
+#: problemwidget.cpp:137
+msgctxt "@info:tooltip"
+msgid "Display errors, warnings and hints"
+msgstr "Fouten, waarschuwingen en tips tonen"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy

@@ -1,0 +1,85 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Simone Solinas <ksolsim@gmail.com>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevtestview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-08-10 16:25+0200\n"
+"Last-Translator: Simone Solinas <ksolsim@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Simone Solinas"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ksolsim@gmail.com"
+
+#. i18n: ectx: Menu (run)
+#: kdevtestview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Esegui"
+
+#: testview.cpp:69 testview.cpp:77
+msgid "Filter..."
+msgstr "Filtro..."
+
+#: testview.cpp:70
+msgid ""
+"Insert wildcard patterns to filter the test view for matching test suites "
+"and cases."
+msgstr ""
+"Inserisci caratteri jolly per filtrare la vista test per le suite di test e "
+"i casi corrispondenti."
+
+#: testview.cpp:99 testviewplugin.cpp:86
+msgid "Unit Tests"
+msgstr "Unit Test"
+
+#: testview.cpp:120
+msgid "Show Source"
+msgstr "Mostra sorgente"
+
+#: testview.cpp:124
+msgid "Run Selected Tests"
+msgstr "Esegui i test selezionati"
+
+#: testview.cpp:328
+#, kde-format
+msgid "Run 1 test"
+msgid_plural "Run %1 tests"
+msgstr[0] "Esegui il test 1"
+msgstr[1] "Esegui i test %1"
+
+#: testviewplugin.cpp:42
+msgid "Unit Test View"
+msgstr "Vista unit test"
+
+#: testviewplugin.cpp:42
+msgid "Lets you see and run unit tests"
+msgstr "Ti permette di vedere ed eseguire gli unit test"
+
+#: testviewplugin.cpp:75
+msgid "Run All Tests"
+msgstr "Esegui tutti i test"
+
+#: testviewplugin.cpp:79
+msgid "Stop Running Tests"
+msgstr "Ferma i test in esecuzione"
+
+#: testviewplugin.cpp:121
+#, kde-format
+msgid "Run 1 test in %2"
+msgid_plural "Run %1 tests in %2"
+msgstr[0] "Esegui il test 1 su %2"
+msgstr[1] "Esegui i test %1 su %2"

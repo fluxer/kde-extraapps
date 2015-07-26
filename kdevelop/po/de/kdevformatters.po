@@ -1,0 +1,534 @@
+# Burkhard Lück <lueck@hube-lueck.de>, 2008, 2012, 2013.
+# Arndt Braun <arndtbraun@googlemail.com>, 2008, 2009.
+# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2012, 2013.
+# Gerhard Stengel <gstengel@gmx.net>, 2012.
+# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevformatters\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:45+0000\n"
+"PO-Revision-Date: 2013-11-07 10:28+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "Astyle Formatter"
+msgstr "AStyle-Formatierer"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "A formatting tool using astyle"
+msgstr "Ein Quelltext-Formatierer, der AStyle verwendet"
+
+#: astyle/astyle_plugin.cpp:65
+msgid ""
+"<b>Artistic Style</b> is a source code indenter, formatter, and beautifier "
+"for the C, C++, C# and Java programming languages.<br />Home Page: <a href="
+"\"http://astyle.sourceforge.net/\">http://astyle.sourceforge.net</a>"
+msgstr ""
+"<b>Artistic Style</b> ist ein Quelltext-Einrücker, -Formatierer und -"
+"Verschönerer für die Programmiersprachen C, C++, C# und Java.<br/>Webseite: "
+"<a href=\"http://astyle.sourceforge.net/\">http://astyle.sourceforge.net/</a>"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabIndentqtion)
+#: astyle/astyle_preferences.ui:21
+msgid "Indentation"
+msgstr "Einrückung"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:36
+msgctxt "Indentation type"
+msgid "Tabs"
+msgstr "Tabulatoren"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:41
+msgctxt "Indentation type"
+msgid "Force tabs"
+msgstr "Tabulatoren erzwingen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:46
+msgctxt "Indentation type"
+msgid "Spaces"
+msgstr "Leerzeichen"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpNuberSpaces)
+#: astyle/astyle_preferences.ui:74
+msgid ""
+"Number of spaces that will be converted to a tab.\n"
+"The number of spaces per tab is controled by the editor."
+msgstr ""
+"Anzahl der Leerzeichen, die in einen Tabulator umgewandelt werden.\n"
+"Die Anzahl der Leerzeichen für einen Tabulator werden vom Editor bestimmt."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:92
+msgid "Convert tabs to spaces."
+msgstr "Tabulatoren in Leerzeichen umwandeln."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:95
+msgid "Con&vert tabs into spaces"
+msgstr "Tabulatoren in &Leerzeichen umwandeln"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:102
+msgid "Fill empty lines with the white space of their previous lines."
+msgstr "Leere Zeilen mit den Leerzeichen der vorherigen Zeilen füllen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:105
+msgid "Fill empt&y lines"
+msgstr "Leere Zeilen &füllen"
+
+#. i18n: ectx: property (text), widget (QLabel, lblIndentObjects)
+#: astyle/astyle_preferences.ui:127
+msgid "Indent"
+msgstr "Einrücken"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBlocks)
+#: astyle/astyle_preferences.ui:144 astyle/astyle_preferences.ui:352
+msgid "Blocks"
+msgstr "Blöcke"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBrackets)
+#: astyle/astyle_preferences.ui:149 astyle/astyle_preferences.ui:269
+msgid "Brackets"
+msgstr "Klammern"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:154
+msgid "Cases"
+msgstr "Cases"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:159
+msgid "Class"
+msgstr "Klasse"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:164
+msgid "Labels"
+msgstr "Labels"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:169
+msgid "Namespaces"
+msgstr "Namensräume"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:174
+msgid "Preprocessor directives"
+msgstr "Präprozessor-Direktiven"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:179
+msgid "Switches"
+msgstr "Switches"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMaxStatement)
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:192 astyle/astyle_preferences.ui:234
+msgid ""
+"Indent a maximal # spaces in a continuous statement,\n"
+"relative to the previous line."
+msgstr ""
+"Einrücken um eine maximale Anzahl von Leerzeichen in einer\n"
+"zusammenhängenden Anweisung, relativ zur vorherigen Zeile."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel3_2)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:203 astyle/astyle_preferences.ui:217
+msgid ""
+"Indent a minimal # spaces in a continuous conditional\n"
+"belonging to a conditional header."
+msgstr ""
+"Einrücken um eine minimale Anzahl von Leerzeichen in einer\n"
+"zusammenhängenden Bedingung, die zu ihrem Block-Header gehört."
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: astyle/astyle_preferences.ui:206
+msgid "Minimum in conditional:"
+msgstr "Minimum in Bedingung:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:220
+msgid "Twice current"
+msgstr "Doppeltes vom aktuellen"
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:237
+msgid "Maximum in statement:"
+msgstr "Maximum in Anweisung:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabOther)
+#. i18n: ectx: property (title), widget (QGroupBox, gpOther)
+#: astyle/astyle_preferences.ui:263 astyle/astyle_preferences.ui:521
+msgid "Other"
+msgstr "Weitere"
+
+#. i18n: ectx: property (text), widget (QLabel, lblBrackets)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:283 astyle/astyle_preferences.ui:550
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:297
+msgid ""
+"Break brackets before closing headers (e.g. 'else', 'catch', ...)\n"
+"from their immediately preceding closing brackets."
+msgstr ""
+"Nach schließenden Klammern umbrechen, wenn ein beendender\n"
+"Block-Header (z. B. „else“, „catch“ ...) beginnt."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:300
+msgid "Brea&k closing headers"
+msgstr "Beendende Bloc&k-Header umbrechen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:314 astyle/astyle_preferences.ui:426
+#: astyle/astyle_preferences.ui:535
+msgid "No change"
+msgstr "Keine Änderung"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:319
+msgid "Attach"
+msgstr "Anhängen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:324
+msgid "Break"
+msgstr "Umbrechen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:329
+msgid "Linux"
+msgstr "Linux"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:334
+msgid "Stroustrup"
+msgstr "Stroustrup"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:339
+msgid "Run-In"
+msgstr "Einleitend"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:367
+msgid ""
+"Insert empty lines around unrelated blocks, labels, classes,...\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Leerzeilen um nicht zusammenhängende Blöcke, Klassen, Beschriftungen usw. "
+"einfügen:\n"
+"Bekannte Probleme:\n"
+"\n"
+"1. Falls eine Anweisung NICHT Teil eines Blockes ist,\n"
+"werden die folgenden Anweisungen mit doppelten Leerzeichen ausgegeben.\n"
+"Anweisungen innerhalb von Blöcken werden korrekt formatiert.\n"
+"\n"
+"2. Kommentare werden von dem Block getrennt.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:370
+msgctxt "Means break unrelated blocks by a newline"
+msgid "&Break blocks"
+msgstr "&Blöcke durch Leerzeilen trennen"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:388
+msgid ""
+"Like --break-blocks, except also insert empty lines \n"
+"around closing headers (e.g. 'else', 'catch', ...).\n"
+"\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Wie --break-blocks, bis auf das Einfügen von Leerzeilen\n"
+"um beendende Block-Header (z. B. „else“, „catch“ ...).\n"
+"\n"
+"Bekannte Probleme:\n"
+"\n"
+"1. Falls ein Ausdruck NICHT Teil eines Blockes ist,\n"
+"werden die folgenden Ausdrücke mit doppelten Leerzeichen ausgegeben.\n"
+"Ausdrücke innerhalb von Blöcken werden korrekt formatiert.\n"
+"\n"
+"2. Kommentare werden von dem Block getrennt.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:391
+msgctxt "Means break all blocks with a newline"
+msgid "Break all bl&ocks"
+msgstr "Alle Blöcke &durch Leerzeilen trennen"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:398
+msgid "Break 'else if()' statements into two different lines."
+msgstr "Verteilt „else if()“-Anweisungen auf zwei Zeilen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:401
+msgctxt "Means break else if() into separate lines"
+msgid "Break i&f-else"
+msgstr "else i&f() umbrechen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpPadding)
+#: astyle/astyle_preferences.ui:411
+msgid "Padding"
+msgstr "Auffüllen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:431
+msgid "Unpad"
+msgstr "Nicht absetzen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:436
+msgid "Inside only"
+msgstr "Nur innen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:441
+msgid "Outside only"
+msgstr "Nur außen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:446
+msgid "Inside and outside"
+msgstr "Innen und außen"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:456
+msgid ""
+"Insert space padding around operators.\n"
+"Once padded, operators stay padded.\n"
+"There is no unpad operator option."
+msgstr ""
+"Auffüllen von Leerzeichen um Operatoren.\n"
+"Einmal aufgefüllt bleiben die Operatoren aufgefüllt.\n"
+"Es gibt keine Operation, um das Auffüllen rückgängig zu machen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:459
+msgid "&Add spaces around operators"
+msgstr "&Leerzeichen um Operatoren einfügen"
+
+#. i18n: ectx: property (text), widget (QLabel, lblParenthesis)
+#: astyle/astyle_preferences.ui:466
+msgid "Pad parenthesis"
+msgstr "Klammern absetzen"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:476
+msgid ""
+"Insert space padding after parenthesis headers (e.g. 'if', 'for', "
+"'while', ...)"
+msgstr ""
+"Leerzeichen nach Headern von Klammer-Ausdrücken einfügen (z. B. „if“, „for“, "
+"„while“, ...)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:479
+msgid "Add spaces after parenthesis &headers"
+msgstr "&Header von Klammer-Ausdrücken absetzen"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpOneLiners)
+#: astyle/astyle_preferences.ui:491
+msgid "One liners"
+msgstr "Einzeiler"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:498
+msgid ""
+"Do not break lines containing multiple statements into\n"
+"multiple single-statement lines."
+msgstr ""
+"Zeilen mit mehreren Anweisungen in einer Zeile nicht in\n"
+"eine Anweisung pro Zeile umbrechen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:501
+msgid "&Keep one-line statements"
+msgstr "Ein&zeilige Anweisungen beibehalten"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:508
+msgid "Do not break blocks residing completely on one line."
+msgstr "Blöcke, die sich komplett in einer Zeile befinden, nicht umbrechen."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:511
+msgid "Keep o&ne-line blocks"
+msgstr "E&inzeilige Blöcke beibehalten"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPointerAlign)
+#: astyle/astyle_preferences.ui:527
+msgid "Pointer Alignment"
+msgstr "Zeigerausrichtung"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:540
+msgid "Name"
+msgstr "Name"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:545
+msgid "Middle"
+msgstr "Mitte"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "Custom Script Formatter"
+msgstr "Formatierer mit eigenen Skripten"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "A formatter using custom scripts"
+msgstr "Ein Quelltext-Formatierer, der eigene Skripte verwendet"
+
+#: customscript/customscript_plugin.cpp:99
+msgid ""
+"<b>Indent and Format Source Code.</b><br />This plugin allows using powerful "
+"external formatting tools that can be invoked through the command-line.<br /"
+">For example, the <b>uncrustify</b>, <b>astyle</b> or <b>indent</b> "
+"formatters can be used.<br />The advantage of command-line formatters is "
+"that formatting configurations can be easily shared by all team members, "
+"independent of their preferred IDE."
+msgstr ""
+"<b>Quelltext einrücken und formatieren.</b><br />Dieses Modul ermöglicht die "
+"Verwendung von leistungsfähigen externen Formatierungswerkzeugen, die von "
+"der Befehlszeile aufgerufen werden können.<br />Beispielsweise können die "
+"Formatierer <b>uncrustify</b>, <b>astyle</b> oder <b>indent</b> verwendet "
+"werden.<br />Der Vorteil eines befehlszeilenbasierten Formatierers ist, dass "
+"die Einstellungen problemlos von allen Mitgliedern der Gruppe gemeinsam "
+"genutzt werden können, unabhängig von der bevorzugten IDE."
+
+#: customscript/customscript_plugin.cpp:242
+msgid "Gnu Indent: GNU"
+msgstr "Gnu Indent: GNU"
+
+#: customscript/customscript_plugin.cpp:245
+msgid "Gnu Indent: Kernighan & Ritchie"
+msgstr "Gnu Indent: Kernighan & Ritchie"
+
+#: customscript/customscript_plugin.cpp:248
+msgid "Gnu Indent: Original Berkeley indent style"
+msgstr "Gnu Indent: Original-Berkeley-Einrückungsstil"
+
+#: customscript/customscript_plugin.cpp:254
+msgid ""
+"Description:<br /><b>kdev_format_source</b> is a script bundled with "
+"KDevelop which allows using fine-grained formatting rules by placing meta-"
+"files called <b>format_sources</b> into the file-system.<br /><br />Each "
+"line of the <b>format_sources</b> files defines a list of wildcards followed "
+"by a colon and the used formatting-command.<br /><br />The formatting-"
+"command should use <b>$TMPFILE</b> to reference the temporary file to "
+"reformat.<br /><br />Example:<br /><b>*.cpp *.h : myformatter $TMPFILE</"
+"b><br />This will reformat all files ending with <b>.cpp</b> or <b>.h</b> "
+"using the custom formatting script <b>myformatter</b>.<br /><br />Example: "
+"<br /><b>subdir/* : uncrustify -l CPP -f $TMPFILE -c uncrustify.config -o "
+"$TMPFILE</b> <br />This will reformat all files in subdirectory <b>subdir</"
+"b> using the <b>uncrustify</b> tool with the config-file <b>uncrustify."
+"config</b>."
+msgstr ""
+"Beschreibung:<br /><b>kdev_format_source</b> ist ein mit KDevelop "
+"geliefertes Skript, das die Verwendung von fein einstellbaren "
+"Formatierungsregeln ermöglicht, indem Meta-Dateien mit dem Namen "
+"<b>format_sources</b> im Dateisystem abgelegt werden.<br /><br />Jede Zeile "
+"der <b>format_sources</b>-Dateien definiert eine Liste von Platzhaltern "
+"gefolgt von einem Doppelpunkt und dem zu verwendenden Formatierungsbefehl."
+"<br /><br />Der Formatierungsbefehl sollte <b>$TMPFILE</b> verwenden, um die "
+"zu formatierende temporäre Datei zu referenzieren.<br /><br />Beispiel:<br /"
+"><b>*.cpp *.h : myformatter $TMPFILE</b><br />Dadurch werden alle Dateien "
+"mit den Endungen <b>.cpp</b> oder <b>.h</b> mit dem eigenen "
+"Formatierungsskript <b>myformatter</b> umformatiert.<br /><br />Beispiel: "
+"<br /><b>subdir/* : uncrustify -l CPP -f $TMPFILE -c uncrustify.config -o "
+"$TMPFILE</b> <br />Dadurch werden alle .h-Dateien im Unterordner <b>subdir</"
+"b> mit dem <b>uncrustify</b>-Werkzeug und dessen Einrichtungsdatei "
+"<b>uncrustify.config</b> umformatiert."
+
+#: customscript/customscript_plugin.cpp:504
+msgid "Command: "
+msgstr "Befehl: "
+
+#: customscript/customscript_plugin.cpp:510
+msgid ""
+"<i>You can enter an arbitrary shell command.</i><br />The unformatted source-"
+"code is reached to the command <br />through the standard input, and the "
+"<br />formatted result is read from the standard output.<br /><br />If you "
+"add <b>$TMPFILE</b> into the command, then <br />a temporary file is used "
+"for transferring the code."
+msgstr ""
+"<i>Sie können einen beliebigen Shell-Befehl angeben.</i><br />Der "
+"unformatierte Quelltext wird durch die Standardeingabe<br />an den Befehl "
+"weitergeleitet und das formatierte Ergebnis<br />wird von der "
+"Standardausgabe gelesen.<br /><br />Wenn Sie <b>$TMPFILE</b> zum Befehl "
+"hinzufügen, wird eine<br />temporäre Datei zur Weiterleitung des Quelltextes "
+"verwendet."
+
+#: customscript/customscript_plugin.cpp:521
+msgid "More Variables"
+msgstr "Weitere Variablen"
+
+#: customscript/customscript_plugin.cpp:531
+#, kde-format
+msgid "Style: %1"
+msgstr "Stil: %1"
+
+#: customscript/customscript_plugin.cpp:544
+msgid ""
+"<b>$TMPFILE</b> will be replaced with the path to a temporary file. <br /"
+">The code will be written into the file, the temporary <br />file will be "
+"substituted into that position, and the result <br />will be read out of "
+"that file. <br /><br /><b>$FILE</b> will be replaced with the path of the "
+"original file. <br />The contents of the file must not be modified, changes "
+"are allowed <br />only in $TMPFILE.<br /><br /><b>${PROJECT_NAME}</b> will "
+"be replaced by the path of <br />the currently open project with the "
+"matching name."
+msgstr ""
+"<b>$TMPFILE</b> wird mit dem Pfad zu einer temporären Datei ersetzt.<br /"
+">Der Quelltext wird in eine Datei geschrieben, die an diese Position<br /"
+">verschoben wird. Das Ergebnis wird aus dieser Datei gelesen.<br /><br /><b>"
+"$FILE</b> wird mit dem Pfad der Originaldatei ersetzt.<br />Der Inhalt der "
+"Datei darf nicht verändert werden; Änderungen sind<br />nur in $TMPFILE "
+"erlaubt.<br /><br /><b>${PROJECT_NAME}</b> wird mit dem Pfad und dem Namen "
+"des aktuell<br />geöffneten Projekts ersetzt."
+
+#: customscript/customscript_plugin.cpp:556
+msgid "Variable Replacements"
+msgstr "Ersetzungen von Variablen"

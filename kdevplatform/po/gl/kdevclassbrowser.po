@@ -1,0 +1,76 @@
+# translation of kdevclassbrowser.po to Galician
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# mvillarino <mvillarino@users.sourceforge.net>, 2008.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# Xosé <xosecalvo@gmail.com>, 2009.
+# Xosé <xosecalvo@edu.xunta.es>, 2009.
+# Marce Villarino <mvillarino@gmail.com>, 2009, 2013.
+# Xabier Villar <xabier.villar@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevclassbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-11-08 23:16+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde, development\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marce Villarino, Xosé Calvo"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mvillarino@users.sourceforge.net, proxecto@trasno.net"
+
+#: allclassesfolder.cpp:37
+msgid "All projects classes"
+msgstr "Todas as clases dos proxectos"
+
+#: classbrowserplugin.cpp:56 classwidget.cpp:86
+msgid "Class Browser"
+msgstr "Navegador de clases"
+
+#: classbrowserplugin.cpp:56
+msgid ""
+"This plugin provides a browsable model of the currently parsed classes and "
+"other items."
+msgstr ""
+"Este complemento fornece un modelo navegábel das clases e outros elementos "
+"que estean procesados."
+
+#: classbrowserplugin.cpp:89 classbrowserplugin.cpp:139 classwidget.cpp:49
+msgid "Classes"
+msgstr "Clases"
+
+#: classbrowserplugin.cpp:92
+msgid "Find in &Class Browser"
+msgstr "Atopar no navegador de &clases"
+
+#: classmodelnode.cpp:379
+msgid "Base classes"
+msgstr "Clases de base"
+
+#: classmodelnode.cpp:414
+msgid "Derived classes"
+msgstr "Clases derivadas"
+
+#: classwidget.cpp:69
+msgid "S&earch:"
+msgstr "&Procurar:"
+
+#: projectfolder.cpp:30
+#, kde-format
+msgid "Classes in project %1"
+msgstr "Clases do proxecto %1"

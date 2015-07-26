@@ -1,0 +1,362 @@
+# Finnish messages for kdevcmake.
+# Copyright © 2009, 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdevelop package.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2009, 2011.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
+#
+# KDE Finnish translation sprint participants:
+# Author: Karvjorm
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmake\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-09 05:44+0000\n"
+"PO-Revision-Date: 2014-11-24 12:58+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:28+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lasse Liehu,Jorma Karvonen"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lasse.liehu@gmail.com,karvonen.jorma@gmail.com"
+
+#: cmakebuilddirchooser.cpp:62
+msgid "Configure a build directory"
+msgstr "Aseta käännöshakemisto"
+
+#: cmakebuilddirchooser.cpp:104
+#, kde-format
+msgid "Configure a build directory for %1"
+msgstr "Aseta käännöshakemisto kohteelle %1"
+
+#: cmakebuilddirchooser.cpp:147
+msgid "You need to select a cmake binary."
+msgstr "cmake-ohjelma täytyy valita."
+
+#: cmakebuilddirchooser.cpp:190
+msgid "You need to specify a build directory."
+msgstr "Käännöshakemisto täytyy määritellä."
+
+#: cmakebuilddirchooser.cpp:197
+msgid "Using an already created build directory."
+msgstr "Käytetään aiemmin luotua käännöshakemistoa."
+
+#: cmakebuilddirchooser.cpp:208
+msgid "Creating a new build directory."
+msgstr "Luodaan uusi käännöshakemisto."
+
+#: cmakebuilddirchooser.cpp:214
+msgid "Build directory already configured."
+msgstr "Käännöshakemisto on jo asetettu."
+
+#: cmakebuilddirchooser.cpp:216
+#, kde-format
+msgid "This build directory is for %1, but the project directory is %2."
+msgstr "Tämä käännöshakemisto on kohteelle %1, mutta projektihakemisto on %2."
+
+#: cmakebuilddirchooser.cpp:219
+msgid "You may not select a relative build directory."
+msgstr "Suhteellista käännöshakemistoa ei voi valita."
+
+#: cmakebuilddirchooser.cpp:221
+msgid "The selected build directory is not empty."
+msgstr "Valittu käännöshakemisto ei ole tyhjä."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: cmakebuilddirchooser.ui:26
+msgid "CMake &Binary:"
+msgstr "CMake-&ohjelma:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: cmakebuilddirchooser.ui:49
+msgid "&Build Directory:"
+msgstr "&Käännöshakemisto:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuilddirchooser.ui:65
+msgid "&Installation Prefix:"
+msgstr "Asennuspref&iksi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: cmakebuilddirchooser.ui:88
+msgid "Build &type:"
+msgstr "Käännös&tyyppi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: cmakebuilddirchooser.ui:154
+msgid "Extra Arguments:"
+msgstr "Lisäparametrit:"
+
+#: cmakecodecompletionmodel.cpp:195
+msgid "INVALID"
+msgstr "VIRHEELLINEN"
+
+#: cmakecodecompletionmodel.cpp:203
+msgid "Command"
+msgstr "Komento"
+
+#: cmakecodecompletionmodel.cpp:204
+msgid "Variable"
+msgstr "Muuttuja"
+
+#: cmakecodecompletionmodel.cpp:205
+msgid "Macro"
+msgstr "Makro"
+
+#: cmakecodecompletionmodel.cpp:206
+msgid "Path"
+msgstr "Polku"
+
+#: cmakecodecompletionmodel.cpp:207
+msgid "Target"
+msgstr "Kohde"
+
+#: cmakecodecompletionmodel.cpp:249
+msgid "wrong"
+msgstr "väärä"
+
+#: cmakedocumentation.cpp:43
+msgid "CMake Documentation"
+msgstr "CMake-dokumentaatio"
+
+#: cmakedocumentation.cpp:43
+msgid "Support for CMake documentation"
+msgstr "Tuki CMake-dokumentaatiolle"
+
+#: cmakedocumentation.cpp:71 cmakemanager.cpp:118
+msgid "cmake is not installed"
+msgstr "cmakea ei ole asennettu"
+
+#: cmakedocumentation.cpp:141
+#, kde-format
+msgid "<br /><em>Cache Value:</em> %1\n"
+msgstr "<br /><em>Välimuistiarvo:</em> %1\n"
+
+#: cmakedocumentation.cpp:144
+#, kde-format
+msgid "<br /><em>Cache Documentation:</em> %1\n"
+msgstr "<br /><em>Välimuistidokumentaatio:</em> %1\n"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Commands"
+msgstr "Komennot"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Variables"
+msgstr "Muuttujat"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Modules"
+msgstr "Moduulit"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Policies"
+msgstr "Käytänteet"
+
+#: cmakehelpdocumentation.cpp:42
+msgid "CMake Content Page"
+msgstr "CMake-sisältösivu"
+
+#: cmakemanager.cpp:82
+msgid "CMake Manager"
+msgstr "CMake-hallinta"
+
+#: cmakemanager.cpp:82
+msgid "Support for managing CMake projects"
+msgstr "Tuki CMake-projektien hallintaan"
+
+#: cmakemanager.cpp:84
+msgid "KDevelop - CMake Support"
+msgstr "KDevelop – CMake-tuki"
+
+#: cmakemanager.cpp:462
+msgid "Jump to Target Definition"
+msgstr "Hyppää kohdemäärittelyyn"
+
+#: cmakemanager.cpp:497
+msgid "Move files and folders within CMakeLists as follows:"
+msgstr "Siirrä tiedostot ja kansiot CMakeListsissä seuraavasti:"
+
+#: cmakemanager.cpp:536
+msgid "Changes to CMakeLists failed, abort move?"
+msgstr "Muutosten tekeminen CMakeListsiin epäonnistui. Keskeytetäänkö siirto?"
+
+#: cmakemanager.cpp:591
+msgid "Remove files and folders from CMakeLists as follows:"
+msgstr "Poista tiedostot ja kansiot CMakeListsistä seuraavasti:"
+
+#: cmakemanager.cpp:601
+msgid "Changes to CMakeLists failed, abort deletion?"
+msgstr "Muutosten tekeminen CMakeListsiin epäonnistui. Keskeytetäänkö poisto?"
+
+#: cmakemanager.cpp:622
+msgid "Modify project targets as follows:"
+msgstr "Muuta projektin kohteita seuraavasti:"
+
+#: cmakemanager.cpp:643
+#, kde-format
+msgid "Create folder '%1':"
+msgstr "Luo kansio ”%1”:"
+
+#: cmakemanager.cpp:654
+msgid "Could not save the change."
+msgstr "Ei voitu tallentaa muutosta."
+
+#: cmakemanager.cpp:702
+#, kde-format
+msgid "Modify target '%1' as follows:"
+msgstr "Muuta kohdetta ”%1” seuraavasti:"
+
+#: cmakemanager.cpp:709
+msgid "CMakeLists changes failed."
+msgstr "CMakeLists-muutokset epäonnistuivat."
+
+#: cmakemanager.cpp:721
+#, kde-format
+msgid "Rename '%1' to '%2':"
+msgstr "Muuta ”%1” nimeksi ”%2”:"
+
+#: cmakemanager.cpp:748
+msgid "Changes to CMakeLists failed, abort rename?"
+msgstr ""
+"Muutosten tekeminen CMakeListsiin epäonnistui. Keskeytetäänkö nimen "
+"muuttaminen?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakepossibleroots.ui:16
+msgid ""
+"KDevelop has found several possible root directories for your project, "
+"please select the correct one."
+msgstr ""
+"KDevelop löysi useita mahdollisia juurihakemistoja projektillesi; valitse "
+"niistä oikea."
+
+#: parser/cmakeprojectvisitor.cpp:2375
+#, kde-format
+msgid "%1 is a deprecated command and should not be used"
+msgstr "%1 on vanhentunut komento ja sitä ei pitäisi käyttää"
+
+#: parser/cmakeprojectvisitor.cpp:2393
+msgid "Unfinished function. "
+msgstr "Päättämätön toiminto. "
+
+#. i18n: ectx: property (text), widget (QPushButton, addBuildDir)
+#: settings/cmakebuildsettings.ui:34
+msgid "Add"
+msgstr "Lisää"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeBuildDir)
+#: settings/cmakebuildsettings.ui:47
+msgid "Remove"
+msgstr "Poista"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: settings/cmakebuildsettings.ui:56
+msgid "Cache Values"
+msgstr "Välimuistiarvot"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: settings/cmakebuildsettings.ui:71
+msgid "Comment:"
+msgstr "Kommentti:"
+
+#. i18n: ectx: property (text), widget (QPushButton, showAdvanced)
+#: settings/cmakebuildsettings.ui:88
+msgid "Show Advanced"
+msgstr "Näytä lisäasetukset"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advancedBox)
+#: settings/cmakebuildsettings.ui:107 settings/cmakecachemodel.cpp:53
+msgid "Advanced"
+msgstr "Lisäasetukset"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/cmakebuildsettings.ui:116
+msgid "Configure Environment"
+msgstr "Määritä ympäristö"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: settings/cmakebuildsettings.ui:131
+msgid "Select an environment to be used"
+msgstr "Valitse käytettävä ympäristö"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showInternal)
+#: settings/cmakebuildsettings.ui:143
+msgid "Show Advanced Values"
+msgstr "Näytä lisäarvot"
+
+#: settings/cmakecachemodel.cpp:49
+msgid "Name"
+msgstr "Nimi"
+
+#: settings/cmakecachemodel.cpp:50
+msgid "Type"
+msgstr "Tyyppi"
+
+#: settings/cmakecachemodel.cpp:51
+msgid "Value"
+msgstr "Arvo"
+
+#: settings/cmakecachemodel.cpp:52
+msgid "Comment"
+msgstr "Kommentti"
+
+#: settings/cmakepreferences.cpp:148
+#, kde-format
+msgid ""
+"Could not write CMake settings to file '%1'.\n"
+"Check that you have write access to it"
+msgstr ""
+"CMake-asetuksia ei voitu kirjoittaa tiedostoon ”%1”.\n"
+"Tarkista, että sinulla on siihen kirjoitusoikeudet."
+
+#: settings/cmakepreferences.cpp:326
+#, kde-format
+msgid ""
+"The %1 directory is about to be removed in KDevelop's list.\n"
+"Do you want KDevelop to remove it in the file system as well?"
+msgstr ""
+"Hakemistoa %1 ollaan poistamassa KDevelop-ohjelman luettelosta.\n"
+"Haluatko, että KDevelop poistaa sen myös tiedostojärjestelmästä?"
+
+#: settings/cmakepreferences.cpp:332
+#, kde-format
+msgid "Could not remove: %1.\n"
+msgstr "Ei voitu poistaa: %1.\n"
+
+#: testing/ctestfindjob.cpp:38
+#, kde-format
+msgid "Parse test suite %1"
+msgstr "Jäsennä testisarja %1"
+
+#: testing/ctestrunjob.cpp:93
+msgid "CTest"
+msgstr "CTest"
+
+#: testing/ctestrunjob.cpp:131
+#, kde-format
+msgctxt "running test %1, %2 test case"
+msgid "CTest %1: %2"
+msgstr "CTest %1: %2"
+
+#: testing/ctestrunjob.cpp:133
+#, kde-format
+msgctxt "running test %1, %2 number of test cases"
+msgid "CTest %2 (%1)"
+msgid_plural "CTest %2 (%1)"
+msgstr[0] "CTest %2 (%1)"
+msgstr[1] "CTest %2 (%1)"

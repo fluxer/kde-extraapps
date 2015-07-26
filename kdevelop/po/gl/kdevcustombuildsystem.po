@@ -1,0 +1,205 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Xosé <xosecalvo@gmail.com>, 2013.
+# Marce Villarino <mvillarino@kde-espana.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-01-28 22:33+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde, development\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xosé Calvo"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xosecalvo@gmail.com"
+
+#: configwidget.cpp:40
+msgid "Build"
+msgstr "Xerar"
+
+#: configwidget.cpp:41
+msgid "Configure"
+msgstr "Configurar"
+
+#: configwidget.cpp:42
+msgid "Install"
+msgstr "Instalar"
+
+#: configwidget.cpp:43
+msgid "Clean"
+msgstr "Limpar"
+
+#: configwidget.cpp:44
+msgid "Prune"
+msgstr "Eliminar"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: configwidget.ui:19
+msgid "Build Directory:"
+msgstr "Directorio de construción:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, buildDir)
+#: configwidget.ui:27
+msgid ""
+"Select the directory where the tools are being executed in.\n"
+"If this is the same as the source directory you can leave it empty."
+msgstr ""
+"Escolla o directorio no que se executarán as ferramentas.\n"
+"Se é o mesmo que o directorio de orixe, pode deixalo en branco."
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, buildDir)
+#: configwidget.ui:33
+msgid "The directory where the tools are executed"
+msgstr "O directorio no que se executan as ferramentas"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configwidget.ui:45
+msgid "Build Tools"
+msgstr "Ferramentas de compilación"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configwidget.ui:51
+msgid "Action:"
+msgstr "Acción:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: configwidget.ui:61
+msgid "Enable:"
+msgstr "Activar:"
+
+#. i18n: ectx: property (text), widget (QLabel, execLabel)
+#: configwidget.ui:78
+msgid "Executable:"
+msgstr "Executábel:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, actionExecutable)
+#: configwidget.ui:88
+msgid ""
+"This is the executable that should be executed when selecting the action "
+"from the Project menu"
+msgstr ""
+"Este é o executábel que será chamado cando se escolla a acción do menú "
+"Proxecto"
+
+#. i18n: ectx: property (text), widget (QLabel, argLabel)
+#: configwidget.ui:98
+msgid "Arguments:"
+msgstr "Argumentos:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, actionArguments)
+#: configwidget.ui:108
+msgid "The arguments that the tool needs to execute properly."
+msgstr "Os argumentos que a ferramenta precisa para executarse adecuadamente."
+
+#. i18n: ectx: property (text), widget (QLabel, envLabel)
+#: configwidget.ui:118
+msgid "Environment:"
+msgstr "Entorno:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, actionEnvironment)
+#: configwidget.ui:128
+msgid "Choose a pre-configured environment for your tool"
+msgstr "Escolla un entorno preconfigurado para a súa ferramenta"
+
+#: custombuildjob.cpp:50
+msgid "Building:"
+msgstr "Compilando:"
+
+#: custombuildjob.cpp:54
+msgid "Cleaning:"
+msgstr "Limpando:"
+
+#: custombuildjob.cpp:58
+msgid "Installing:"
+msgstr "Instalando:"
+
+#: custombuildjob.cpp:62
+msgid "Configuring:"
+msgstr "Configurando:"
+
+#: custombuildjob.cpp:66
+msgid "Pruning:"
+msgstr "Eliminando:"
+
+#: custombuildjob.cpp:90
+msgid "Undefined Build type"
+msgstr "Tipo de compilación non definido"
+
+#: custombuildjob.cpp:94
+msgid "No command given"
+msgstr "Non se indicou ningunha orde"
+
+#: custombuildjob.cpp:98
+msgid "This command is disabled"
+msgstr "Esta orde está desactivada"
+
+#: custombuildjob.cpp:109
+msgid ""
+"The given arguments would need a real shell, this is not supported currently."
+msgstr ""
+"Os argumentos indicados precisan dun intérprete de ordes real, isto aínda "
+"non se soporta."
+
+#: custombuildjob.cpp:154
+msgid "Failed to start command."
+msgstr "Non foi posíbel iniciar a orde."
+
+#: custombuildjob.cpp:157
+msgid "Command crashed."
+msgstr "A orde fallou."
+
+#: custombuildjob.cpp:160
+msgid "Unknown error executing command."
+msgstr "Produciuse un erro descoñecido ao executar a orde."
+
+#: custombuildjob.cpp:177
+msgid "*** Failed ***"
+msgstr "*** Fallou ***"
+
+#: custombuildjob.cpp:179
+msgid "*** Finished ***"
+msgstr "*** Rematou ***"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: custombuildsystemconfigwidget.ui:19
+msgid "Build Configuration:"
+msgstr "Configuración da compilación:"
+
+#. i18n: ectx: property (text), widget (KPushButton, addConfig)
+#: custombuildsystemconfigwidget.ui:42
+msgid "Add"
+msgstr "Engadir"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeConfig)
+#: custombuildsystemconfigwidget.ui:49
+msgid "Remove"
+msgstr "Eliminar"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Custom Build System"
+msgstr " Sistema de construción personalizado"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Support for building and managing custom build systems"
+msgstr ""
+"Soporte para construír e xestionar sistemas de compilación personalizados"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+msgstr "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"

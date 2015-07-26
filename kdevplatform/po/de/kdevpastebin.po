@@ -1,0 +1,40 @@
+# Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevpastebin\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-07-21 13:37+0200\n"
+"PO-Revision-Date: 2010-11-10 23:41+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Panagiotis Papadopoulos"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pano_90@gmx.net"
+
+#: pastebinplugin.cpp:38
+msgid "Pastebin Plugin"
+msgstr "Pastebin-Modul"
+
+#: pastebinplugin.cpp:38
+msgid "Easily export patches to the Pastebin service"
+msgstr "Patches zum Pastebin-Dienst exportieren"
+
+# TODO:
+# „Ihr Patch befindet sich hier:“?
+#: pastebinplugin.cpp:97
+#, kde-format
+msgctxt "The parameter is the link where the patch is stored"
+msgid "<qt>You can find your patch at:<br/>%1</qt>"
+msgstr "<qt>Sie können Ihren Patch hier finden:<br/>%1</qt>"

@@ -1,0 +1,183 @@
+# translation of kdevgit.po to
+# translation of kdevelop.po to
+# Version: $Revision$
+# KDevelop polish translation file.
+# Translation work:
+#       Jacek Wojdeł <wojdel@kbs.twi.tudelft.nl>
+# Corrections:
+#       Waldemar Kochaniec
+#       Jacek Stolarczyk
+#       Anna Wojdeł <ania@kbs.twi.tudelft.nl>
+#
+# Krzysztof Lichota, 2004.
+# Marta Rybczyńska <mrybczynsk@poczta.onet.pl>, 2003, 2004.
+# Marta Rybczynska <mrybczynska@poczta.onet.pl>, 2004, 2005.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2004, 2005.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006, 2007.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008.
+# Michał Smoczyk <msmoczyk@wp.pl>, 2008.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevgit\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-01 05:17+0000\n"
+"PO-Revision-Date: 2014-06-29 09:38+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#: gitmessagehighlighter.cpp:79
+#, kde-format
+msgid "Try to keep summary length below %1 characters."
+msgstr "Próbuj utrzymać długość podsumowania poniżej %1 znaków."
+
+#: gitmessagehighlighter.cpp:95
+msgid "Separate summary from details with one empty line."
+msgstr "Odseparuj podsumowanie od szczegółów jednym pustym wierszem."
+
+#: gitmessagehighlighter.cpp:105
+#, kde-format
+msgid "Try to keep line length below %1 characters."
+msgstr "Próbuj utrzymać długość wiersza poniżej %1 znaków."
+
+#: gitplugin.cpp:64
+msgid "Git"
+msgstr "Git"
+
+#: gitplugin.cpp:64
+msgid "A plugin to support git version control systems"
+msgstr "Wtyczka obsługująca system kontroli wersji git"
+
+#: gitplugin.cpp:182
+msgid "git is not installed"
+msgstr "git nie jest zainstalowany"
+
+#: gitplugin.cpp:236
+msgid "Git Stashes"
+msgstr "Składowiska Git"
+
+#: gitplugin.cpp:237 stashmanagerdialog.cpp:36
+msgid "Stash Manager"
+msgstr "Zarządzanie składowiskiem"
+
+#: gitplugin.cpp:238
+msgid "Push Stash"
+msgstr "Popchnij na składowisko"
+
+#: gitplugin.cpp:239
+msgid "Pop Stash"
+msgstr "Pobierz ze składowiska"
+
+#: gitplugin.cpp:265
+#, kde-format
+msgid "error: %1"
+msgstr "błąd: %1"
+
+#: gitplugin.cpp:321 gitplugin.cpp:332
+msgid "Did not specify the list of files"
+msgstr "Nie określono listy plików"
+
+#: gitplugin.cpp:383
+msgid "Could not revert changes"
+msgstr "Nie można odczynić zmian"
+
+#: gitplugin.cpp:393
+msgid ""
+"The following files have uncommited changes, which will be lost. Continue?"
+msgstr ""
+"Następujące pliki mają niewdrożone zmiany, które zostaną utracone. Czy "
+"kontynuować?"
+
+#: gitplugin.cpp:416
+msgid "No files or message specified"
+msgstr "Nie określono plików lub wiadomości"
+
+#: gitplugin.cpp:468
+msgid "No files to remove"
+msgstr "Brak plików do usunięcia"
+
+#: gitplugin.cpp:645
+msgid "There are pending changes, do you want to stash them first?"
+msgstr "Istnieją oczekujące zmiany, czy chcesz je najpierw zeskładować?"
+
+#: stashmanagerdialog.cpp:108
+#, kde-format
+msgid "Are you sure you want to drop the stash '%1'?"
+msgstr "Czy na pewno chcesz obniżyć składowisko '%1'?"
+
+#: stashmanagerdialog.cpp:116
+msgid "KDevelop - Git Stash"
+msgstr "KDevelop - Git Składowisko"
+
+#: stashmanagerdialog.cpp:116
+msgid "Select a name for the new branch:"
+msgstr "Wybierz nazwę dla nowej gałęzi:"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, show)
+#: stashmanagerdialog.ui:16
+msgid "Show the contents of the stash"
+msgstr "Pokaż zawartość stosu"
+
+#. i18n: ectx: property (text), widget (QPushButton, show)
+#: stashmanagerdialog.ui:19
+msgid "Show"
+msgstr "Pokaż"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:26
+msgid "Applies stash's patch"
+msgstr "Zastosuje łatkę składowiska"
+
+#. i18n: ectx: property (text), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:29
+msgid "Apply"
+msgstr "Zastosuj"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:36
+msgid "Applies stash's patch and drops the stash"
+msgstr "Zastosuje łatkę składowiska i obniża składowisko"
+
+#. i18n: ectx: property (text), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:39
+msgid "Pop"
+msgstr "Pobierz"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:46
+msgid ""
+"Creates a new branch and applies the stash there, then it drops the stash."
+msgstr ""
+"Tworzy nową gałąź i stosuje tam składowisko, następnie obniża składowisko."
+
+#. i18n: ectx: property (text), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:49
+msgid "Branch"
+msgstr "Gałąź"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:69
+msgid "Removes the selected branch"
+msgstr "Usuwa wybraną gałąź"
+
+#. i18n: ectx: property (text), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:72
+msgid "Drop"
+msgstr "Obniż"
+
+#, fuzzy

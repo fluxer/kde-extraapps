@@ -1,0 +1,172 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010.
+# Steve Allewell <steve.allewell@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-24 05:23+0000\n"
+"PO-Revision-Date: 2014-06-21 10:52+0100\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrew Coles, Steve Allewell"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrew_coles@yahoo.co.uk, steve.allewell@gmail.com"
+
+#: problemmodel.cpp:207
+msgctxt "@title:column source of problem"
+msgid "Source"
+msgstr "Source"
+
+#: problemmodel.cpp:209
+msgctxt "@title:column problem description"
+msgid "Problem"
+msgstr "Problem"
+
+#: problemmodel.cpp:211
+msgctxt "@title:column file where problem was found"
+msgid "File"
+msgstr "File"
+
+#: problemmodel.cpp:213
+msgctxt "@title:column line number with problem"
+msgid "Line"
+msgstr "Line"
+
+#: problemmodel.cpp:215
+msgctxt "@title:column column number with problem"
+msgid "Column"
+msgstr "Column"
+
+#: problemreporterplugin.cpp:58
+msgid "Problem Reporter"
+msgstr "Problem Reporter"
+
+#: problemreporterplugin.cpp:58
+msgid "Shows errors in source code"
+msgstr "Shows errors in source code"
+
+#: problemreporterplugin.cpp:93 problemwidget.cpp:56 problemwidget.cpp:59
+msgid "Problems"
+msgstr "Problems"
+
+#: problemreporterplugin.cpp:180
+msgid "Solve Problem"
+msgstr "Solve Problem"
+
+#: problemreporterplugin.cpp:182
+#, kde-format
+msgid "Solve: %1"
+msgstr "Solve: %1"
+
+#: problemwidget.cpp:66
+msgid "Force Full Update"
+msgstr "Force Full Update"
+
+#: problemwidget.cpp:67
+msgctxt "@info:tooltip"
+msgid "Re-parse all watched documents"
+msgstr "Re-parse all watched documents"
+
+#: problemwidget.cpp:76
+msgid "Show Imports"
+msgstr "Show Imports"
+
+#: problemwidget.cpp:77
+msgctxt "@info:tooltip"
+msgid "Display problems in imported files"
+msgstr "Display problems in imported files"
+
+#: problemwidget.cpp:83
+msgid "Scope"
+msgstr "Scope"
+
+#: problemwidget.cpp:84
+msgctxt "@info:tooltip"
+msgid "Which files to display the problems for"
+msgstr "Which files to display the problems for"
+
+#: problemwidget.cpp:89
+msgid "Current Document"
+msgstr "Current Document"
+
+#: problemwidget.cpp:90
+msgctxt "@info:tooltip"
+msgid "Display problems in current document"
+msgstr "Display problems in current document"
+
+#: problemwidget.cpp:93
+msgid "Open Documents"
+msgstr "Open Documents"
+
+#: problemwidget.cpp:94
+msgctxt "@info:tooltip"
+msgid "Display problems in all open documents"
+msgstr "Display problems in all open documents"
+
+#: problemwidget.cpp:97
+msgid "Current Project"
+msgstr "Current Project"
+
+#: problemwidget.cpp:98
+msgctxt "@info:tooltip"
+msgid "Display problems in current project"
+msgstr "Display problems in current project"
+
+#: problemwidget.cpp:101
+msgid "All Projects"
+msgstr "All Projects"
+
+#: problemwidget.cpp:102
+msgctxt "@info:tooltip"
+msgid "Display problems in all projects"
+msgstr "Display problems in all projects"
+
+#: problemwidget.cpp:125
+msgid "Severity"
+msgstr "Severity"
+
+#: problemwidget.cpp:127
+msgctxt "@info:tooltip"
+msgid "Select the lowest level of problem severity to be displayed"
+msgstr "Select the lowest level of problem severity to be displayed"
+
+#: problemwidget.cpp:130
+msgid "Error"
+msgstr "Error"
+
+#: problemwidget.cpp:131
+msgctxt "@info:tooltip"
+msgid "Display only errors"
+msgstr "Display only errors"
+
+#: problemwidget.cpp:133
+msgid "Warning"
+msgstr "Warning"
+
+#: problemwidget.cpp:134
+msgctxt "@info:tooltip"
+msgid "Display errors and warnings"
+msgstr "Display errors and warnings"
+
+#: problemwidget.cpp:136
+msgid "Hint"
+msgstr "Hint"
+
+#: problemwidget.cpp:137
+msgctxt "@info:tooltip"
+msgid "Display errors, warnings and hints"
+msgstr "Display errors, warnings and hints"

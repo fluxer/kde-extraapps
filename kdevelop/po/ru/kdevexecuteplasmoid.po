@@ -1,0 +1,181 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Alexander Lakhin <exclusion@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-08-23 11:22+0400\n"
+"Last-Translator: Alexander Lakhin <exclusion@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Александр Лахин"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "exclusion@gmail.com"
+
+#: executeplasmoidplugin.cpp:34
+msgid "Execute plasmoid support"
+msgstr "Поддержка запуска плазмоидов"
+
+#: executeplasmoidplugin.cpp:35
+msgid "Allows running of plasmoids"
+msgstr "Позволяет запускать плазмоиды"
+
+#: executeplasmoidplugin.cpp:36
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: executeplasmoidplugin.cpp:36
+msgid "Author"
+msgstr "Автор"
+
+#: plasmoidexecutionconfig.cpp:156
+msgid "Configure Plasmoid Execution"
+msgstr "Настройка запуска плазмоида"
+
+#: plasmoidexecutionconfig.cpp:166
+msgid "Display a plasmoid"
+msgstr "Показывает плазмоид"
+
+#: plasmoidexecutionconfig.cpp:176 plasmoidexecutionconfig.cpp:266
+msgid "Plasmoid Launcher"
+msgstr "Запуск плазмоида"
+
+#: plasmoidexecutionconfig.cpp:223
+#, kde-format
+msgid "Couldn't resolve the dependency: %1"
+msgstr "Не удалось разрешить зависимость: %1"
+
+#: plasmoidexecutionconfig.cpp:337
+msgid "Plasmoids"
+msgstr "Плазмоиды"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: plasmoidexecutionconfig.ui:17
+msgid "Plasmoid"
+msgstr "Плазмоид"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: plasmoidexecutionconfig.ui:23
+msgid "Path or name:"
+msgstr "Путь или имя:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: plasmoidexecutionconfig.ui:52
+msgid "Behavior"
+msgstr "Поведение"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: plasmoidexecutionconfig.ui:58
+msgid "Form Factor"
+msgstr "Форм-фактор"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
+#: plasmoidexecutionconfig.ui:66
+msgid "planar"
+msgstr "планарный"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
+#: plasmoidexecutionconfig.ui:71
+msgid "horizontal"
+msgstr "горизонтальный"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
+#: plasmoidexecutionconfig.ui:76
+msgid "vertical"
+msgstr "вертикальный"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
+#: plasmoidexecutionconfig.ui:81
+msgid "mediacenter"
+msgstr "медиацентр"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: plasmoidexecutionconfig.ui:89
+msgid "Theme"
+msgstr "Тема оформления"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: plasmoidexecutionconfig.ui:102
+msgid "Dependencies"
+msgstr "Зависимости"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: plasmoidexecutionconfig.ui:111
+msgid "Targets:"
+msgstr "Цели:"
+
+#. i18n: ectx: property (toolTip), widget (ProjectItemLineEdit, targetDependency)
+#. i18n: ectx: property (clickMessage), widget (ProjectItemLineEdit, targetDependency)
+#: plasmoidexecutionconfig.ui:123 plasmoidexecutionconfig.ui:126
+msgid "Enter a dependency to add to the list"
+msgstr "Введите зависимость для добавления в список"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, addDependency)
+#: plasmoidexecutionconfig.ui:142
+msgid "Adds the listed target to the dependency list."
+msgstr "Добавить указанную цель в список зависимостей."
+
+#. i18n: ectx: property (toolTip), widget (KListWidget, dependencies)
+#: plasmoidexecutionconfig.ui:152
+msgid "List of indirect dependent targets."
+msgstr "Список косвенно зависимых целей."
+
+#. i18n: ectx: property (whatsThis), widget (KListWidget, dependencies)
+#: plasmoidexecutionconfig.ui:155
+msgid ""
+"This list should contain targets that the application does not directly "
+"depend on, but for which an action needs to be taken before running the "
+"application."
+msgstr ""
+"Это список целей, от которых приложение не зависит напрямую, но для которых "
+"требуются какие-либо действия перед запуском приложения."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, removeDependency)
+#: plasmoidexecutionconfig.ui:171
+msgid "Removes the selected dependencies from the list."
+msgstr "Удалить выбранные зависимости из списка."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, moveDepUp)
+#: plasmoidexecutionconfig.ui:184
+msgid "Move a dependency up in the list."
+msgstr "Переместить выделенную зависимость вверх по списку."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, moveDepDown)
+#: plasmoidexecutionconfig.ui:197
+msgid "Moves the selected dependency down in the list."
+msgstr "Переместить выделенную зависимость вниз по списку."
+
+#: plasmoidexecutionjob.cpp:57
+msgid "Plasmoid Viewer"
+msgstr "Просмотр плазмоида"
+
+#: plasmoidexecutionjob.cpp:92
+msgid "** Killed **"
+msgstr "** Уничтожен **"
+
+#: plasmoidexecutionjob.cpp:105 plasmoidexecutionjob.cpp:117
+msgid "*** Failed ***"
+msgstr "*** Завершено с ошибкой ***"
+
+#: plasmoidexecutionjob.cpp:107
+msgid "*** Finished ***"
+msgstr "*** Завершено ***"
+
+#: plasmoidexecutionjob.cpp:116
+#, kde-format
+msgid "Ninja failed to compile %1"
+msgstr "Ninja не может скомпилировать %1"

@@ -1,0 +1,90 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-19 05:48+0000\n"
+"PO-Revision-Date: 2014-07-02 09:29+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: ghdialog.cpp:52
+msgid "Log out"
+msgstr "Afmelden"
+
+#: ghdialog.cpp:56
+msgid "Force sync"
+msgstr "Synchronisatie afdwingen"
+
+#: ghdialog.cpp:61
+msgid "Authorize"
+msgstr "Autoriseren"
+
+#: ghdialog.cpp:70
+msgid "Github Account"
+msgstr "Github-account"
+
+#: ghdialog.cpp:76
+msgid "Enter a login and a password"
+msgstr "Voer een aanmeldnaam en wachtwoord in"
+
+#: ghdialog.cpp:81 ghdialog.cpp:109 ghproviderwidget.cpp:52
+msgid "Waiting for response"
+msgstr "Wacht op antwoord"
+
+#: ghdialog.cpp:95
+msgid "Authentication failed! Please, try again"
+msgstr "Authenticatie is mislukt. Probeer het opnieuw"
+
+#: ghdialog.cpp:124
+msgid "Please, write your password here."
+msgstr "Voer uw wachtwoord hier in."
+
+#: ghproviderplugin.cpp:31
+msgid "Github Provider"
+msgstr "Github-leverancier"
+
+#: ghproviderplugin.cpp:31
+msgid "Import projects from Github"
+msgstr "Importeer projecten uit Github"
+
+#: ghproviderplugin.cpp:51
+msgid "Github"
+msgstr "Github"
+
+#: ghproviderwidget.cpp:65
+msgid "Search"
+msgstr "Zoeken"
+
+#: ghproviderwidget.cpp:66
+msgid "You can press the Return key if you don't want to wait"
+msgstr "Druk op de toets Return als u niet wilt wachten"
+
+#: ghproviderwidget.cpp:78
+msgid "Click this button to configure your Github account"
+msgstr "Klik op deze knop om uw Github-account in te stellen"
+
+#: ghproviderwidget.cpp:110
+msgid "User"
+msgstr "Gebruiker"
+
+#: ghproviderwidget.cpp:111
+msgid "Organization"
+msgstr "Organisatie"

@@ -1,0 +1,51 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Feng Chao <rainofchaos@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2011-06-12 22:52+0800\n"
+"Last-Translator: Feng Chao <rainofchaos@gmail.com>\n"
+"Language-Team: Chinese Simplified <kde-china@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org"
+
+#: manpagedocumentation.cpp:56
+#, kde-format
+msgid "Could not find any documentation for '%1'"
+msgstr "无法找到任何“%1”的文档"
+
+#: manpagedocumentation.cpp:99
+msgid "Man Content Page"
+msgstr "手册内容页面"
+
+#: manpagedocumentationwidget.cpp:43
+msgid "Loading man pages ..."
+msgstr "装入手册页面..."
+
+#: manpageplugin.cpp:57
+msgid "ManPage"
+msgstr "ManPage"
+
+#: manpageplugin.cpp:58
+msgid "Check Man Page documentation"
+msgstr "检查帮助页面文档"
+
+#: manpageplugin.cpp:77
+msgid "Man Page"
+msgstr "手册页面"

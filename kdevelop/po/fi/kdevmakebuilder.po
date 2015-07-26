@@ -1,0 +1,126 @@
+# Finnish messages for kdevmakebuilder.
+# Copyright © 2009, 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdevelop package.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2009.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
+#
+# KDE Finnish translation sprint participants:
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2014-11-24 12:46+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:30+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lasse Liehu,Jorma Karvonen"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lasse.liehu@gmail.com,karvonen.jorma@gmail.com"
+
+#. i18n: ectx: Menu (view)
+#: kdevmakebuilder.rc:5
+msgid "View"
+msgstr "Näytä"
+
+#: makebuilder.cpp:38
+msgid "Make Builder"
+msgstr "Make-käännin"
+
+#: makebuilder.cpp:38
+msgid "Support for building Make projects"
+msgstr "Tuki Make-projektien kääntämiselle"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: makeconfig.ui:20
+msgid "&Abort on first error:"
+msgstr "&Keskeytä ensimmäiseen virheeseen:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: makeconfig.ui:40
+msgid "&Display commands but do not execute them:"
+msgstr "&Näytä komennot, mutta älä suorita niitä:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: makeconfig.ui:60
+msgid "Install as &root:"
+msgstr "&Asenna pääkäyttäjänä:"
+
+#. i18n: ectx: property (text), widget (QLabel, rootinstallationcommandLabel)
+#: makeconfig.ui:80
+msgid "Root installation &command:"
+msgstr "&Pääkäyttäjäoikeuksin asentamisen komento:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:94
+msgid "kdesu"
+msgstr "kdesu"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:99
+msgid "kdesudo"
+msgstr "kdesudo"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:104
+msgid "sudo"
+msgstr "sudo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: makeconfig.ui:112
+msgid "&Number of simultaneous jobs:"
+msgstr "&Samanaikaisten töiden lukumäärä:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: makeconfig.ui:132
+msgid "&Make executable:"
+msgstr "&Make-ohjelma:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: makeconfig.ui:155
+msgid "Default make &target:"
+msgstr "&Make-oletuskohde:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: makeconfig.ui:175
+msgid "Additional make &options:"
+msgstr "Make-&lisävalitsimet:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: makeconfig.ui:195
+msgid "Active environment &profile:"
+msgstr "Aktiivinen ympäristö&profiili:"
+
+#: makejob.cpp:61
+#, kde-format
+msgid "Make (%1): %2"
+msgstr "Make (%1): %2"
+
+#: makejob.cpp:63
+#, kde-format
+msgid "Make (%1)"
+msgstr "Make (%1)"
+
+#: makejob.cpp:65
+msgid "Make"
+msgstr "Make"
+
+#: makejob.cpp:79
+msgid "Build item no longer available"
+msgstr "Käännöskohde ei ole enää saatavilla"
+
+#: makejob.cpp:85
+msgid "Internal error: cannot build a file item"
+msgstr "Sisäinen virhe: tiedostokohdetta ei voi kääntää"

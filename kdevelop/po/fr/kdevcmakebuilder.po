@@ -1,0 +1,112 @@
+# translation of kdevcmakebuilder.po to Français
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Joëlle Cornavin <jcorn@free.fr>, 2008, 2009, 2010, 2011, 2012, 2013.
+# Sebastien Renard <renard@kde.org>, 2013.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2013-07-11 10:24+0200\n"
+"Last-Translator: xavier <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcornavi@club-internet.fr"
+
+#: cmakebuilder.cpp:55
+msgid "CMake Builder"
+msgstr "Compilateur CMake"
+
+#: cmakebuilder.cpp:56
+msgid "Support for building CMake projects"
+msgstr "Prise en charge de la compilation de projets avec CMake"
+
+#: cmakebuilder.cpp:109
+msgid "No Build Directory configured, cannot build"
+msgstr "Aucun dossier de compilation n'est configuré, compilation impossible"
+
+#: cmakebuilder.cpp:109
+msgid "Aborting build"
+msgstr "Interruption de la compilation"
+
+#: cmakebuilder.cpp:160
+msgid "No Build Directory configured, cannot clean"
+msgstr "Aucun dossier de compilation n'est configuré, nettoyage impossible"
+
+#: cmakebuilder.cpp:160
+msgid "Aborting clean"
+msgstr "Interruption du nettoyage"
+
+#: cmakebuilder.cpp:195
+msgid "No Build Directory configured, cannot install"
+msgstr "Aucun dossier de compilation n'est configuré, installation impossible"
+
+#: cmakebuilder.cpp:195
+msgid "Aborting install"
+msgstr "Interruption de l'installation"
+
+#: cmakebuilder.cpp:219
+msgid "No Build Directory configured, cannot configure"
+msgstr "Aucun dossier de compilation n'est configuré, configuration impossible"
+
+#: cmakebuilder.cpp:219
+msgid "Aborting configure"
+msgstr "Interruption de la configuration"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuildersettings.ui:17
+msgid "Generator:"
+msgstr "Générateur :"
+
+#: cmakejob.cpp:50 prunejob.cpp:38
+msgid "CMake"
+msgstr "CMake"
+
+#: cmakejob.cpp:137
+#, kde-format
+msgid "CMake: %1"
+msgstr "CMake : %1"
+
+#: prunejob.cpp:52
+msgid "No Build Directory configured, cannot clear builddir"
+msgstr ""
+"Aucun dossier de compilation n'est configuré, effacement du dossier de "
+"compilation impossible"
+
+#: prunejob.cpp:58
+msgid "Wrong build directory, cannot clear the build directory"
+msgstr ""
+"Mauvaise configuration du dossier de compilation, effacement du dossier de "
+"compilation impossible"
+
+#: prunejob.cpp:71
+#, kde-format
+msgid "%1> rm -rf %2"
+msgstr "%1> rm -rf %2"
+
+#: prunejob.cpp:86
+msgid "** Prune successful **"
+msgstr "** L'élagage a réussi **"
+
+#: prunejob.cpp:88
+#, kde-format
+msgid "** Prune failed: %1 **"
+msgstr "** L'élagage a échoué : %1 **"

@@ -1,20 +1,16 @@
-# Kate project
 project (kde-extraapps)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
 
-#search packages used by KDE
 set(QT_MIN_VERSION "4.8.2")
 find_package(KDE4 4.14.3 REQUIRED)
-include (KDE4Defaults)
+include(KDE4Defaults)
 include(GenerateExportHeader)
 
-# shared libs
-set (LIBRARY_TYPE SHARED)
+set(LIBRARY_TYPE SHARED)
 
-# KDE/QT definitions we want
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DKTEXTEDITOR_NO_DEPRECATED)
+add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 # global include directories
 include_directories (${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES})
@@ -64,3 +60,5 @@ macro_optional_add_subdirectory (skanlite)
 macro_optional_add_subdirectory (svgpart)
 macro_optional_add_subdirectory (thumbnailers)
 macro_optional_add_subdirectory (yakuake)
+macro_optional_add_subdirectory (kdevplatform)
+macro_optional_add_subdirectory (kdevelop)

@@ -1,0 +1,213 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2009, 2010, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevquickopen\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-04 06:03+0000\n"
+"PO-Revision-Date: 2014-06-27 12:19+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: documentationquickopenprovider.cpp:49
+#, kde-format
+msgid "Documentation in the %1"
+msgstr "Documentación de %1"
+
+#: duchainitemquickopen.cpp:52
+#, kde-format
+msgid "Not available any more: %1"
+msgstr "Ya no está disponible: %1"
+
+#: duchainitemquickopen.cpp:137
+msgid "Not available any more"
+msgstr "Ya no está disponible"
+
+#: duchainitemquickopen.cpp:145
+#, kde-format
+msgctxt "%1: function signature"
+msgid "Return: %1"
+msgstr "Retorno: %1"
+
+#: duchainitemquickopen.cpp:149
+#, kde-format
+msgctxt "%1: file path"
+msgid "File: %1"
+msgstr "Archivo: %1"
+
+#: duchainitemquickopen.cpp:154 duchainitemquickopen.cpp:206
+#, kde-format
+msgid "Project %1"
+msgstr "Proyecto %1"
+
+#. i18n: ectx: ToolBar (quickOpenToolBar)
+#: kdevquickopen.rc:42
+msgid "Quick Open Toolbar"
+msgstr "Barra de herramientas de apertura rápida"
+
+#: projectfilequickopen.cpp:83 projectfilequickopen.cpp:147
+#: projectfilequickopen.cpp:154
+#, kde-format
+msgctxt "%1: project name"
+msgid "Project %1"
+msgstr "Proyecto %1"
+
+#: projectfilequickopen.cpp:155
+msgid "Not parsed yet"
+msgstr "Aún no analizado"
+
+#: projectfilequickopen.cpp:190
+msgid "none"
+msgstr "ninguno"
+
+#: projectitemquickopen.cpp:343 projectitemquickopen.cpp:353
+#: quickopenplugin.cpp:913
+msgid "Classes"
+msgstr "Clases"
+
+#: projectitemquickopen.cpp:344 projectitemquickopen.cpp:356
+#: quickopenplugin.cpp:910
+msgid "Functions"
+msgstr "Funciones"
+
+#: projectitemquickopen.cpp:351 quickopenplugin.cpp:811
+#: quickopenplugin.cpp:824 quickopenplugin.cpp:831
+msgid "Project"
+msgstr "Proyecto"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, QuickOpen)
+#: quickopen.ui:14 quickopenplugin.cpp:119 quickopenplugin.cpp:169
+#: quickopenplugin.cpp:928
+msgid "Quick Open"
+msgstr "Apertura rápida"
+
+#. i18n: ectx: property (text), widget (QLabel, searchLabel)
+#: quickopen.ui:31
+msgid "Search:"
+msgstr "Buscar:"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, searchLine)
+#: quickopen.ui:44 quickopenplugin.cpp:1340
+msgid "Quick Open..."
+msgstr "Apertura rápida..."
+
+#. i18n: ectx: property (text), widget (QPushButton, okButton)
+#: quickopen.ui:54
+msgid "Open"
+msgstr "Abrir"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: quickopen.ui:61
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: quickopen.ui:91
+msgid "&Scopes:"
+msgstr "Alcance&s:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: quickopen.ui:136
+msgid "&Items:"
+msgstr "E&lementos:"
+
+#: quickopenplugin.cpp:169
+msgid ""
+"This plugin allows quick access to project files and language-items like "
+"classes/functions."
+msgstr ""
+"Este complemento permite acceso rápido a los archivos del proyecto y a los "
+"elementos del lenguaje, como las clases y las funciones."
+
+#: quickopenplugin.cpp:734
+msgid "&Quick Open"
+msgstr "Ap&ertura rápida"
+
+#: quickopenplugin.cpp:740
+msgid "Quick Open &File"
+msgstr "Apertura rápida de arc&hivo"
+
+#: quickopenplugin.cpp:746
+msgid "Quick Open &Class"
+msgstr "Apertura rápida de &clase"
+
+#: quickopenplugin.cpp:752
+msgid "Quick Open &Function"
+msgstr "Apertura rápida de &función"
+
+#: quickopenplugin.cpp:758
+msgid "Quick Open &Already Open File"
+msgstr "Apert&ura rápida de archivo ya abierto"
+
+#: quickopenplugin.cpp:763
+msgid "Quick Open &Documentation"
+msgstr "Apertura rápida de &documentación"
+
+#: quickopenplugin.cpp:769
+msgid "Jump to Declaration"
+msgstr "Saltar a la declaración"
+
+#: quickopenplugin.cpp:775
+msgid "Jump to Definition"
+msgstr "Saltar a la definición"
+
+#: quickopenplugin.cpp:781
+msgid "Embedded Quick Open"
+msgstr "Apertura rápida integrada"
+
+#: quickopenplugin.cpp:787
+msgid "Next Function"
+msgstr "Siguiente función"
+
+#: quickopenplugin.cpp:792
+msgid "Previous Function"
+msgstr "Anterior función"
+
+#: quickopenplugin.cpp:797 quickopenplugin.cpp:1253
+msgid "Outline"
+msgstr "Esquema"
+
+#: quickopenplugin.cpp:811 quickopenplugin.cpp:838 quickopenplugin.cpp:997
+msgid "Includes"
+msgstr "Cabeceras"
+
+#: quickopenplugin.cpp:811
+msgid "Includers"
+msgstr "Incluidas en"
+
+#: quickopenplugin.cpp:811 quickopenplugin.cpp:817 quickopenplugin.cpp:894
+#: quickopenplugin.cpp:895 quickopenplugin.cpp:919 quickopenplugin.cpp:920
+msgid "Currently Open"
+msgstr "Abierto actualmente"
+
+#: quickopenplugin.cpp:818 quickopenplugin.cpp:825 quickopenplugin.cpp:907
+msgid "Files"
+msgstr "Archivos"
+
+#: quickopenplugin.cpp:839 quickopenplugin.cpp:997
+msgid "Documentation"
+msgstr "Documentación"
+
+#: quickopenplugin.cpp:1341
+msgid ""
+"Search for files, classes, functions and more, allowing you to quickly "
+"navigate in your source code."
+msgstr ""
+"Buscar archivos, clases, funciones y demás, permitiéndole navegar "
+"rápidamente a través de su código fuente."

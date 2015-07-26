@@ -1,0 +1,4122 @@
+# translation of kdevelop.po to greek
+# translation of kdevelop.po to
+# Copyright (C) 2002,2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+#
+# Stergios Dramis <sdramis@egnatia.ee.auth.gr>, 2002-2003.
+# Andreas Vlachos <avlach@gmail.com>, 2005.
+# Spiros Georgaras <sng@hellug.gr>, 2005, 2006, 2007, 2008.
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2005, 2007, 2008, 2009.
+# Σπύρος Γεωργαράς <sngeorgaras@otenet.gr>, 2008.
+# Spiros Georgaras <sngeorgaras@otenet.gr>, 2008.
+# Stelios <sstavra@gmail.com>, 2011.
+# Dimitrios Glentadakis <dglent@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevelop\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-19 05:35+0000\n"
+"PO-Revision-Date: 2013-01-18 21:31+0200\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Τούσης Μανώλης,Σπύρος Γεωργαράς,Stelios"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manolis@koppermind.homelinux.org,sng@hellug.gr,sstavra@gmail.com"
+
+#. i18n: ectx: Menu (file)
+#: katepartui.rc:4 vendor/kate/katepartui.rc:4
+msgid "&File"
+msgstr "&Αρχείο"
+
+#. i18n: ectx: Menu (edit)
+#: katepartui.rc:13 vendor/kate/katepartui.rc:12
+msgid "&Edit"
+msgstr "&Επεξεργασία"
+
+#. i18n: ectx: Menu (edit_advanced)
+#: katepartui.rc:23
+msgid "&Advanced"
+msgstr "Για προ&χωρημένους"
+
+#. i18n: ectx: Menu (view)
+#: katepartui.rc:43 vendor/kate/katepartui.rc:37
+msgid "&View"
+msgstr "&Προβολή"
+
+#. i18n: ectx: Menu (codefolding)
+#: katepartui.rc:57 vendor/kate/katepartui.rc:51
+msgid "&Code Folding"
+msgstr "Folding &κώδικα"
+
+#. i18n: ectx: Menu (tools)
+#: katepartui.rc:70 vendor/kate/katepartui.rc:64
+msgid "&Tools"
+msgstr "Ε&ργαλεία"
+
+#. i18n: ectx: Menu (wordcompletion)
+#: katepartui.rc:83 vendor/kate/katepartui.rc:75
+msgid "Word Completion"
+msgstr "Ολοκλήρωση λέξης"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: katepartui.rc:130 kdevelopui.rc:166 vendor/kate/katepartui.rc:123
+msgid "Main Toolbar"
+msgstr "Κύρια γραμμή εργαλείων"
+
+#. i18n: ectx: Menu (session)
+#: kdevelopui.rc:6
+msgctxt "@title:menu"
+msgid "Session"
+msgstr "Συνεδρία"
+
+#. i18n: ectx: Menu (project)
+#: kdevelopui.rc:10
+msgctxt "@title:menu"
+msgid "&Project"
+msgstr "Έρ&γο"
+
+#. i18n: ectx: Menu (run)
+#: kdevelopui.rc:29
+msgid "&Run"
+msgstr "Εκτέλε&ση"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevelopui.rc:53
+msgctxt "@title:menu"
+msgid "&Navigation"
+msgstr "Π&λοήγηση"
+
+#. i18n: ectx: Menu (file)
+#: kdevelopui.rc:75
+msgctxt "@title:menu"
+msgid "&File"
+msgstr "&Αρχείο"
+
+#. i18n: ectx: Menu (edit)
+#: kdevelopui.rc:86
+msgctxt "@title:menu"
+msgid "&Edit"
+msgstr "&Επεξεργασία"
+
+#. i18n: ectx: Menu (editor)
+#: kdevelopui.rc:99
+msgctxt "@title:menu"
+msgid "Editor"
+msgstr "Κειμενογράφος"
+
+#. i18n: ectx: Menu (code)
+#: kdevelopui.rc:104
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Κώδικας"
+
+#. i18n: ectx: Menu (window)
+#: kdevelopui.rc:111
+msgctxt "@title:menu"
+msgid "&Window"
+msgstr "Παρά&θυρο"
+
+#. i18n: ectx: Menu (settings)
+#: kdevelopui.rc:151
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: kdevideextension.cpp:48
+msgid "Code"
+msgstr "Κώδικας"
+
+#: kdevideextension.cpp:59
+msgid "KDevelop4 Project Files"
+msgstr "Αρχεία έργου KDevelop4"
+
+#: main.cpp:148
+#, fuzzy, kde-format
+#| msgid "Could not open %1"
+msgid "Could not open file %1."
+msgstr "Αδυναμία ανοίγματος του '%1'"
+
+#: main.cpp:178
+#, fuzzy
+#| msgid "Select the session you would like to use"
+msgid "Select the session to open the document in"
+msgstr "Επιλέξτε τη συνεδρία που θέλετε να χρησιμοποιήσετε"
+
+#: main.cpp:200
+msgid "The KDevelop Integrated Development Environment"
+msgstr "Το περιβάλλον ανάπτυξης του KDevelop"
+
+#: main.cpp:201
+msgid "KDevelop"
+msgstr "KDevelop"
+
+#: main.cpp:202
+#, fuzzy
+#| msgid "Copyright 1999-2012, The KDevelop developers"
+msgid "Copyright 1999-2014, The KDevelop developers"
+msgstr "Copyright 1999-2012, Οι προγραμματιστές του KDevelop"
+
+#: main.cpp:203
+msgid "Andreas Pakulat"
+msgstr "Andreas Pakulat"
+
+#: main.cpp:203
+msgid ""
+"Architecture, VCS Support, Project Management Support, QMake Projectmanager"
+msgstr ""
+"Αρχιτεκτονική, υποστήριξη VCS, υποστήριξη διαχείρισης έργου, διαχείριση "
+"έργου QMake"
+
+#: main.cpp:204
+msgid "Alexander Dymo"
+msgstr "Alexander Dymo"
+
+#: main.cpp:204
+msgid "Architecture, Sublime UI, Ruby support"
+msgstr "Αρχιτεκτονική, Περιβάλλον εργασίας Sublime, υποστήριξη Ruby"
+
+#: main.cpp:205
+msgid "David Nolden"
+msgstr "David Nolden"
+
+#: main.cpp:205
+msgid ""
+"Definition-Use Chain, C++ Support, Code Navigation, Code Completion, Coding "
+"Assistance, Refactoring"
+msgstr ""
+"Αλυσίδα χρήσεων ορισμού, υποστήριξη C++, πλοήγηση κώδικα, ολοκλήρωση κώδικα, "
+"βοήθεια σε προγράμματα, refactoring"
+
+#: main.cpp:206
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: main.cpp:206
+msgid "Co-Maintainer, CMake Support, Run Support, Kross Support"
+msgstr "Συντήρηση, υποστήριξη CMake, υποστήριξη εκτέλεσης, υποστήριξη Kross"
+
+#: main.cpp:207
+msgid "Vladimir Prus"
+msgstr "Vladimir Prus"
+
+#: main.cpp:207
+msgid "GDB integration"
+msgstr "Ενσωμάτωση GDB"
+
+#: main.cpp:208
+msgid "Hamish Rodda"
+msgstr "Hamish Rodda"
+
+#: main.cpp:208
+msgid "Text editor integration, definition-use chain"
+msgstr "Ενσωμάτωση κειμενογράφου, αλυσίδα χρήσεων ορισμού"
+
+#: main.cpp:209
+msgid "Amilcar do Carmo Lucas"
+msgstr "Amilcar do Carmo Lucas"
+
+#: main.cpp:209
+msgid "Website admin, API documentation, Doxygen and autoproject patches"
+msgstr ""
+"Διαχείριση ιστοχώρου, τεκμηρίωση API, διορθώσεις Doxygen και autoproject"
+
+#: main.cpp:210
+msgid "Niko Sams"
+msgstr "Niko Sams"
+
+#: main.cpp:210
+msgid "GDB integration, Webdevelopment Plugins"
+msgstr "Ενσωμάτωση GDB, πρόσθετα για Webdevelopment"
+
+#: main.cpp:211
+msgid "Milian Wolff"
+msgstr "Milian Wolff"
+
+#: main.cpp:211
+msgid ""
+"Co-Maintainer, Generic manager, Webdevelopment Plugins, Snippets, Performance"
+msgstr ""
+"Συντήρηση, γενική διαχείριση, πρόσθετα Webdevelopment, αποσπάσματα κώδικα, "
+"μέτρηση επιδόσεων"
+
+#: main.cpp:212
+msgid "Sven Brauch"
+msgstr ""
+
+#: main.cpp:212
+msgid "Python Support, User Interface improvements"
+msgstr ""
+
+#: main.cpp:214
+msgid "Matt Rogers"
+msgstr "Matt Rogers"
+
+#: main.cpp:215
+msgid "Cédric Pasteur"
+msgstr "Cédric Pasteur"
+
+#: main.cpp:215
+msgid "astyle and indent support"
+msgstr "υποστήριξη για astyle και εσοχές κειμένου"
+
+#: main.cpp:216
+msgid "Evgeniy Ivanov"
+msgstr "Evgeniy Ivanov"
+
+#: main.cpp:216
+msgid "Distributed VCS, Git, Mercurial"
+msgstr "Κατανεμημένο VCS, Git, Mercurial"
+
+#: main.cpp:219
+msgid "Robert Gruber"
+msgstr "Robert Gruber"
+
+#: main.cpp:219
+msgid "SnippetPart, debugger and usability patches"
+msgstr "SnippetPart, debugger και διορθώσεις χρηστικότητας"
+
+#: main.cpp:220
+msgid "Dukju Ahn"
+msgstr "Dukju Ahn"
+
+#: main.cpp:220
+msgid "Subversion plugin, Custom Make Manager, Overall improvements"
+msgstr ""
+"Πρόσθετο Subversion, προσαρμοσμένος διαχειριστής Make, συνολικές βελτιώσεις"
+
+#: main.cpp:221
+msgid "Harald Fernengel"
+msgstr "Harald Fernengel"
+
+#: main.cpp:221
+msgid "Ported to Qt 3, patches, valgrind, diff and perforce support"
+msgstr "Μεταφορά στο Qt 3, διορθώσεις, valgrind, υποστήριξη diff και perforce"
+
+#: main.cpp:222
+msgid "Roberto Raggi"
+msgstr "Roberto Raggi"
+
+#: main.cpp:222
+msgid "C++ parser"
+msgstr "Συντακτικός αναλυτής C++"
+
+#: main.cpp:223
+msgid "The KWrite authors"
+msgstr "Οι προγραμματιστές του KWrite"
+
+#: main.cpp:223
+msgid "Kate editor component"
+msgstr "Συστατικό επεξεργαστή Kate"
+
+#: main.cpp:224
+msgid "Nokia Corporation/Qt Software"
+msgstr "Nokia Corporation/Qt Software"
+
+#: main.cpp:224
+msgid "Designer code"
+msgstr "Κώδικας σχεδιαστή"
+
+#: main.cpp:226
+msgid "Contributors to older versions:"
+msgstr "Συντελεστές παλαιότερων εκδόσεων:"
+
+#: main.cpp:227
+msgid "The KHTML authors"
+msgstr "Οι προγραμματιστές του KHTML"
+
+#: main.cpp:227
+msgid "HTML documentation component"
+msgstr "Συστατικό τεκμηρίωσης HTML"
+
+#: main.cpp:228
+msgid "Bernd Gehrmann"
+msgstr "Bernd Gehrmann"
+
+#: main.cpp:228
+msgid "Initial idea, basic architecture, much initial source code"
+msgstr "Αρχική ιδέα, βασική αρχιτεκτονική, αρχικός πηγαίος κώδικας"
+
+#: main.cpp:229
+msgid "Caleb Tennis"
+msgstr "Caleb Tennis"
+
+#: main.cpp:229
+msgid "KTabBar, bugfixes"
+msgstr "KTabBar, διορθώσεις"
+
+#: main.cpp:230
+msgid "Richard Dale"
+msgstr "Richard Dale"
+
+#: main.cpp:230
+msgid "Java & Objective C support"
+msgstr "υποστήριξη Java & Objective C"
+
+#: main.cpp:231
+msgid "John Birch"
+msgstr "John Birch"
+
+#: main.cpp:231
+msgid "Debugger frontend"
+msgstr "Περιβάλλον διορθωτή"
+
+#: main.cpp:232
+msgid "Sandy Meier"
+msgstr "Sandy Meier"
+
+#: main.cpp:232
+msgid "PHP support, context menu stuff"
+msgstr "Υποστήριξη PHP, υλικό στα σχετικά μενού"
+
+#: main.cpp:233
+msgid "Kurt Granroth"
+msgstr "Kurt Granroth"
+
+#: main.cpp:233
+msgid "KDE application templates"
+msgstr "Πρότυπα εφαρμογών KDE"
+
+#: main.cpp:234
+msgid "Ian Reinhart Geiser"
+msgstr "Ian Reinhart Geiser"
+
+#: main.cpp:234
+msgid "Dist part, bash support, application templates"
+msgstr "Τμήμα διανομής, υποστήριξη bash, πρότυπα εφαρμογών"
+
+#: main.cpp:235
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:235
+msgid "Several components, htdig indexing"
+msgstr "Διάφορα συστατικά, αναζήτηση htdig"
+
+#: main.cpp:236
+msgid "Victor Roeder"
+msgstr "Victor Roeder"
+
+#: main.cpp:236
+msgid "Help with Automake manager and persistent class store"
+msgstr ""
+"Βοήθεια με το διαχειριστή Automake και την αντικειμενοστραφή αποθήκη κλάσεων"
+
+#: main.cpp:237
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: main.cpp:237
+msgid "Help with KParts infrastructure"
+msgstr "Βοήθεια με τη δομή KParts"
+
+#: main.cpp:238
+msgid "Oliver Kellogg"
+msgstr "Oliver Kellogg"
+
+#: main.cpp:238
+msgid "Ada support"
+msgstr "υποστήριξη Ada"
+
+#: main.cpp:239
+msgid "Jakob Simon-Gaarde"
+msgstr "Jakob Simon-Gaarde"
+
+#: main.cpp:239
+msgid "QMake projectmanager"
+msgstr "Διαχειριστής έργου QMake"
+
+#: main.cpp:240
+msgid "Falk Brettschneider"
+msgstr "Falk Brettschneider"
+
+#: main.cpp:240
+msgid "MDI modes, QEditor, bugfixes"
+msgstr "Λειτουργίες MDI, QEditor, διορθώσεις"
+
+#: main.cpp:241
+msgid "Mario Scalas"
+msgstr "Mario Scalas"
+
+#: main.cpp:241
+msgid "PartExplorer, redesign of CvsPart, patches, bugs(fixes)"
+msgstr ""
+"PartExplorer, επανασχεδιασμός του CvsPart, διορθώσεις, διορθώσεις σφαλμάτων"
+
+#: main.cpp:242
+msgid "Jens Dagerbo"
+msgstr "Jens Dagerbo"
+
+#: main.cpp:242
+msgid ""
+"Replace, Bookmarks, FileList and CTags2 plugins. Overall improvements and "
+"patches"
+msgstr ""
+"Αντικατάσταση, σελιδοδείκτες, πρόσθετα λίστας αρχείων και CTags2. Καθολικές "
+"βελτιώσεις και διορθώσεις"
+
+#: main.cpp:243
+msgid "Julian Rockey"
+msgstr "Julian Rockey"
+
+#: main.cpp:243
+msgid "Filecreate part and other bits and patches"
+msgstr "Τμήμα δημιουργίας αρχείων και άλλα κομμάτια και διορθώσεις"
+
+#: main.cpp:244
+msgid "Ajay Guleria"
+msgstr "Ajay Guleria"
+
+#: main.cpp:244
+msgid "ClearCase support"
+msgstr "Υποστήριξη ClearCase"
+
+#: main.cpp:245
+msgid "Marek Janukowicz"
+msgstr "Marek Janukowicz"
+
+#: main.cpp:245
+msgid "Ruby support"
+msgstr "Υποστήριξη Ruby"
+
+#: main.cpp:246
+msgid "Robert Moniot"
+msgstr "Robert Moniot"
+
+#: main.cpp:246
+msgid "Fortran documentation"
+msgstr "Τεκμηρίωση Fortran"
+
+#: main.cpp:247
+msgid "Ka-Ping Yee"
+msgstr "Ka-Ping Yee"
+
+#: main.cpp:247
+msgid "Python documentation utility"
+msgstr "Εργαλείο τεκμηρίωσης Python"
+
+#: main.cpp:248
+msgid "Dimitri van Heesch"
+msgstr "Dimitri van Heesch"
+
+#: main.cpp:248
+msgid "Doxygen wizard"
+msgstr "Μάγος Doxygen"
+
+#: main.cpp:249
+msgid "Hugo Varotto"
+msgstr "Hugo Varotto"
+
+#: main.cpp:249 main.cpp:250
+msgid "Fileselector component"
+msgstr "Συστατικό επιλογής αρχείων"
+
+#: main.cpp:250
+msgid "Matt Newell"
+msgstr "Matt Newell"
+
+#: main.cpp:251
+msgid "Daniel Engelschalt"
+msgstr "Daniel Engelschalt"
+
+#: main.cpp:251
+msgid "C++ code completion, persistent class store"
+msgstr "C++ συμπλήρωση κώδικα, αντικειμενοστραφής αποθήκη κλάσεων"
+
+#: main.cpp:252
+msgid "Stephane Ancelot"
+msgstr "Stephane Ancelot"
+
+#: main.cpp:252 main.cpp:253 main.cpp:256
+msgid "Patches"
+msgstr "Διορθώσεις"
+
+#: main.cpp:253
+msgid "Jens Zurheide"
+msgstr "Jens Zurheide"
+
+#: main.cpp:254
+msgid "Luc Willems"
+msgstr "Luc Willems"
+
+#: main.cpp:254
+msgid "Help with Perl support"
+msgstr "Βοήθεια με την υποστήριξη Perl"
+
+#: main.cpp:255
+msgid "Marcel Turino"
+msgstr "Marcel Turino"
+
+#: main.cpp:255
+msgid "Documentation index view"
+msgstr "Προβολή περιεχομένων τεκμηρίωσης"
+
+#: main.cpp:256
+msgid "Yann Hodique"
+msgstr "Yann Hodique"
+
+#: main.cpp:257
+msgid "Tobias Gläßer"
+msgstr "Tobias Gläßer"
+
+#: main.cpp:257
+msgid ""
+"Documentation Finder,  qmake projectmanager patches, usability improvements, "
+"bugfixes ... "
+msgstr ""
+"Αναζήτηση τεκμηρίωσης,  διορθώσεις του διαχειριστή έργου qmake, βελτιώσεις "
+"χρηστικότητας, διορθώσεις σφαλμάτων ... "
+
+#: main.cpp:258
+msgid "Andreas Koepfle"
+msgstr "Andreas Koepfle"
+
+#: main.cpp:258
+msgid "QMake project manager patches"
+msgstr "Διορθώσεις διαχειριστή έργου QMake"
+
+#: main.cpp:259
+msgid "Sascha Cunz"
+msgstr "Sascha Cunz"
+
+#: main.cpp:259
+msgid "Cleanup and bugfixes for qEditor, AutoMake and much other stuff"
+msgstr "Καθαρισμός και διορθώσεις του qEditor, αυτόματης δημιουργίας και άλλων"
+
+#: main.cpp:260
+msgid "Zoran Karavla"
+msgstr "Zoran Karavla"
+
+#: main.cpp:260
+msgid "Artwork for the ruby language"
+msgstr "Γραφικά για τη γλώσσα Ruby"
+
+#: main.cpp:292
+msgid "Open KDevelop with a new session using the given name."
+msgstr "Άνοιγμα του KDevelop με νέα συνεδρία χρησιμοποιώντας το δοσμένο όνομα."
+
+#: main.cpp:294
+msgid ""
+"Open KDevelop with the given session.\n"
+"You can pass either hash or the name of the session."
+msgstr ""
+"Άνοιγμα του KDevelop με τη δοσμένη συνεδρία.\n"
+"Μπορείτε να δώσετε ως όρισμα ή δίεση ή το όνομα της συνεδρίας."
+
+#: main.cpp:296
+msgid "Shows all available sessions and lets you select one to open."
+msgstr ""
+"Εμφανίζει όλες τις διαθέσιμες συνεδρίες και σας επιτρέπει να επιλέξετε μία "
+"για άνοιγμα."
+
+#: main.cpp:297
+msgid "List all available sessions on shell and lets you select one to open."
+msgstr ""
+"Καταγράφει όλες τις διαθέσιμες συνεδρίες στο κέλυφος και σας επιτρέπει να "
+"επιλέξετε να ανοίξετε μία."
+
+#: main.cpp:299
+msgid "List available sessions and quit."
+msgstr "Εμφάνισε τη λίστα με τις διαθέσιμες συνεδρίες και εγκατέλειψε."
+
+#: main.cpp:301
+msgid "Open KDevelop and load the given project."
+msgstr "Άνοιγμα του KDevelop και φόρτωση του δοσμένου έργου."
+
+#: main.cpp:304
+msgid ""
+"Start debugging an application in KDevelop with the given debugger.\n"
+"The binary that should be debugged must follow - including arguments.\n"
+"Example: kdevelop --debug gdb myapp --foo bar"
+msgstr ""
+"Έναρξη διόρθωσης εφαρμογής στο KDevelop με τον δοσμένο debugger.\n"
+"Το προς διόρθωση εκτελέσιμο θα πρέπει να ακολουθεί - μαζί με τα ορίσματα.\n"
+"Παράδειγμα: kdevelop --debug gdb myapp --foo bar"
+
+#: main.cpp:310
+msgid "Files to load"
+msgstr "Αρχεία για φόρτωση"
+
+#: main.cpp:312
+msgid "Deprecated options:"
+msgstr "Ανεπιθύμητες επιλογές:"
+
+#: main.cpp:313
+msgid "Same as -l / --list-sessions"
+msgstr "Ίδιο με το -l / --list-sessions"
+
+#: main.cpp:314
+msgid "Same as -n / --new-session"
+msgstr "Ίδιο με το -n / --new-session"
+
+#: main.cpp:326
+msgid "Available sessions (use '-s HASH' or '-s NAME' to open a specific one):"
+msgstr ""
+"Διαθέσιμες συνεδρίες (χρησιμοποίησε '-s HASH' ή '-s NAME' για άνοιγμα μιας "
+"συγκεκριμένης):"
+
+#: main.cpp:327
+msgid "Hash"
+msgstr "Δίεση"
+
+#: main.cpp:327
+msgid "Name: Opened Projects"
+msgstr "Όνομα: Ανοιχτά έργα"
+
+#: main.cpp:336
+msgid "[running]"
+msgstr "[εκτελείται]"
+
+#: main.cpp:397
+msgid "Select the session you would like to use"
+msgstr "Επιλέξτε τη συνεδρία που θέλετε να χρησιμοποιήσετε"
+
+#: main.cpp:405
+msgctxt "@info:shell"
+msgid "Specify the binary you want to debug."
+msgstr "Προσδιορίστε το εκτελέσιμο που θέλετε να διορθώσετε."
+
+#: main.cpp:408
+#, kde-format
+msgid "Debug %1"
+msgstr "Εντοπισμός σφαλμάτων %1"
+
+#: main.cpp:417
+#, kde-format
+msgid ""
+"A session with the name %1 exists already. Use the -s switch to open it."
+msgstr ""
+"Μια συνεδρία με όνομα %1 ήδη υπάρχει. Χρησιμοποιήστε το διακόπτη -s για να "
+"την ανοίξετε"
+
+#: main.cpp:447
+#, kde-format
+msgid ""
+"Cannot open unknown session %1. See --sessions switch for available sessions "
+"or use -cs to create a new one."
+msgstr ""
+"Αδυναμία ανοίγματος της άγνωστης συνεδρίας %1. Δείτε το διακόπτη --sessions "
+"για τις διαθέσιμες συνεδρίες ή χρησιμοποιήστε -cs για να ξεκινήσετε μία νέα."
+
+#: main.cpp:537
+msgid "Cannot find native launch configuration type"
+msgstr "Αδυναμία εύρεσης εγγενούς τύπου διαμόρφωσης για εκκίνηση"
+
+#: main.cpp:556
+#, kde-format
+msgid "Cannot find launcher %1"
+msgstr "Αδυναμία εύρεσης προγράμματος εκκίνησης %1"
+
+#: main.cpp:571
+#, kde-format
+msgid "Could not open %1"
+msgstr "Αδυναμία ανοίγματος του '%1'"
+
+#: plasma/applet/package/contents/ui/kdevelopsessions.qml:74
+msgid "KDevelop Sessions"
+msgstr "Συνεδρίες KDevelop"
+
+#: plasma/applet/package/contents/ui/kdevelopsessions.qml:94
+msgid "Arbitrary String Which Says Something"
+msgstr "Αυθαίρετη συμβολοσειρά που σημαίνει κάτι"
+
+#: plasma/runner/kdevelopsessions.cpp:58
+msgid "Finds KDevelop sessions matching :q:."
+msgstr "Βρίσκει συνεδρίες KDevelop που ταιριάζουν με :q:."
+
+#: plasma/runner/kdevelopsessions.cpp:62
+msgid "Lists all the KDevelop editor sessions in your account."
+msgstr ""
+"Τοποθετεί σε λίστα όλες τις συνεδρίες επεξεργαστή KDevelop του λογαριασμού "
+"σας."
+
+#: plasma/runner/kdevelopsessions.cpp:142
+msgid "Open KDevelop Session"
+msgstr "Άνοιγμα συνεδρίας KDevelop"
+
+#. i18n: ectx: Menu (settings)
+#: vendor/kate/katepartui.rc:104
+msgid "&Settings"
+msgstr "&Ρυθμίσεις"
+
+#: welcomepage/qml/area_code.qml:38
+#, fuzzy
+#| msgid "KDevelop"
+msgid "Develop"
+msgstr "KDevelop"
+
+#: welcomepage/qml/area_code.qml:43
+msgid "Getting Started"
+msgstr ""
+
+#: welcomepage/qml/area_debug.qml:35 welcomepage/qml/area_review.qml:35
+msgid "Back to code"
+msgstr "Πίσω στον κώδικα"
+
+#: welcomepage/qml/area_debug.qml:55
+msgid "Configure a new Launcher"
+msgstr "Διαμόρφωση νέου εκτελεστή"
+
+#: welcomepage/qml/area_debug.qml:56
+msgid "Attach to Process"
+msgstr "Σύναψη σε διεργασία"
+
+#: welcomepage/qml/area_debug.qml:57
+msgid "Debug your program"
+msgstr "Διορθώστε σφάλματα στο πρόγραμμά σας"
+
+#: welcomepage/qml/area_debug.qml:60
+msgid "Debug Area"
+msgstr "Περιοχή διόρθωσης σφαλμάτων"
+
+#: welcomepage/qml/area_debug.qml:63
+msgid ""
+"On the <em>Debug</em> area you will be able to see and analyze how your "
+"program works on execution. On the <em>Run</em> menu you will find all the "
+"possible options.<br/><br/>As you can see, here you can just execute your "
+"application or debug it if you need further runtime information. You can "
+"select what is going to be run by configuring the launches and selecting the "
+"one you want to use in the <em>Current Launch Configuration</em> sub-menu."
+msgstr ""
+"Στην περιοχή <em>Διόρθωση</em> θα μπορείτε να δείτε και να αναλύσετε πώς το "
+"πρόγραμμά σας λειτουργεί κατά την εκτέλεση. Στο μενού <em>Εκτέλεση</em> θα "
+"βρείτε όλες τις πιθανές επιλογές.<br/><br/>Όπως μπορείτε να δείτε, εδώ "
+"μπορείτε απλώς να εκτελέσετε την εφαρμογή σας ή να κάνετε διόρθωση σφαλμάτων "
+"αν χρειάζεστε περισσότερες πληροφορίες εκτέλεσης. Μπορείτε να επιλέξετε τι "
+"πρόκειται να εκτελεστεί διαμορφώνοντας τις εκκινήσεις και επιλέγοντας εκείνη "
+"που θέλετε να χρησιμοποιήσετε στο υπομενού <em>Τρέχουσα διαμόρφωση "
+"εκκίνησης</em>."
+
+#: welcomepage/qml/area_review.qml:57
+msgid "Review a Patch"
+msgstr "Επιθεωρήστε μια διόρθωση"
+
+#: welcomepage/qml/area_review.qml:65
+msgid "Review Area"
+msgstr "Περιοχή επιθεώρησης"
+
+#: welcomepage/qml/area_review.qml:69
+msgid ""
+"On the <em>Review</em> area you will be able to find the tools you need to "
+"review changes in your projects, either the ones you made or some external "
+"patch.<br/> Also it will help you send the changes to the community you're "
+"contributing to, either by committing the changes, sending them by e-mail or "
+"putting them on a ReviewBoard service."
+msgstr ""
+"Στην περιοχή <em>Επιθεώρηση</em> θα μπορείτε να βρείτε τα εργαλεία που "
+"χρειάζεστε για να επιθεωρήσετε τις τροποποιήσεις στα έργα σας, ή εκείνες που "
+"κάνατε ή κάποια εξωτερική διόρθωση.<br/> Επίσης θα σας βοηθήσει να στείλετε "
+"τις τροποποιήσεις στην κοινότητα στην οποία συνεισφέρετε, ή με την υποβολή "
+"των τροποποιήσεων, στέλνοντάς τις με ηλεκτρονική αλληλογραφία (e-mail) ή "
+"τοποθετώντας τις σε μια υπηρεσία ReviewBoard."
+
+#: welcomepage/qml/Develop.qml:39
+msgid "New Project"
+msgstr "Νέο έργο"
+
+#: welcomepage/qml/Develop.qml:45
+msgid "Open project"
+msgstr "Άνοιγμα έργου"
+
+#: welcomepage/qml/Develop.qml:51
+msgid "Fetch project"
+msgstr "Προσκόμιση έργου"
+
+#: welcomepage/qml/Develop.qml:57
+msgid "Recent Projects"
+msgstr "Πρόσφατα έργα"
+
+#: welcomepage/qml/Develop.qml:89
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: welcomepage/qml/Develop.qml:101
+msgid "Sessions"
+msgstr "Συνεδρίες"
+
+#: welcomepage/qml/GettingStarted.qml:35
+msgid "Official Website"
+msgstr "Επίσημος ιστότοπος"
+
+#: welcomepage/qml/GettingStarted.qml:36
+msgid "Userbase"
+msgstr "Βάση χρηστών"
+
+#: welcomepage/qml/GettingStarted.qml:37
+msgid "Techbase"
+msgstr "Τεχνική βάση"
+
+#: welcomepage/qml/GettingStarted.qml:38
+msgid "Handbook"
+msgstr "Εγχειρίδιο"
+
+#: welcomepage/qml/GettingStarted.qml:66
+msgid "Go!"
+msgstr "Go!"
+
+#: welcomepage/qml/GettingStarted.qml:73
+msgid "Documentation for KDevelop users"
+msgstr "Τεκμηρίωση για χρήστες του KDevelop"
+
+#: welcomepage/qml/GettingStarted.qml:78
+#, fuzzy
+#| msgid "Keep up with KDevelop's development!"
+msgid "Keep up with KDevelop's development"
+msgstr "Συνεχίστε την ανάπτυξη του KDevelop!"
+
+#: welcomepage/qml/GettingStarted.qml:83
+#, fuzzy
+#| msgid "Help us improve KDevelop!"
+msgid "Help us improve KDevelop"
+msgstr "Βοηθήστε μας να βελτιώσουμε το KDevelop!"
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy

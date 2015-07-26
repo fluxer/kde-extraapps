@@ -1,0 +1,168 @@
+# translation of kdevprojectfilter.po to Slovak
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevprojectfilter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-26 14:20+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: filtermodel.cpp:90
+msgid "Pattern"
+msgstr "Vzorka"
+
+#: filtermodel.cpp:92
+msgid "Targets"
+msgstr "Ciele"
+
+#: filtermodel.cpp:94
+msgid "Action"
+msgstr "Akcia"
+
+#: filtermodel.cpp:123
+msgid ""
+"The wildcard pattern defines whether a file or folder is included in a "
+"project or not.<br />The pattern is matched case-sensitively against the "
+"items relative path to the project root. The relative path starts with a "
+"forward slash, trailing slashes of folders are removed.<br />Patterns ending "
+"on <code>\"/\"</code> are implicitly considered to match against folders "
+"only.<br />Patterns which do not explicitly start with either <code>\"/\"</"
+"code> or <code>\"*\"</code> implicitly get <code>\"*/\"</code> prepended and "
+"thus match any item with a relative path ending on the given pattern."
+msgstr ""
+"Vzor s divokou kartou definuje, či je súbor alebo priečinok zahrnutý v "
+"projekte, alebo nie.<br />Vzor sa porovnáva s citlivosťou na veľkosť písmen "
+"oproti relatívnej ceste položiek ku koreňu projektu. Relatívne cesty "
+"začínajú lomkou, prebytočné lomky priečinkov sú odstránené.<br />Vzory "
+"končiace na <code>\"/\"</code> sa implicitne považujú iba na kontrolu "
+"priečinkov.<br />Vzory, ktoré explicitne nezačínajú <code>\"/\"</code> alebo "
+"<code>\"*\"</code>, implicitne dostanú predradené <code>\"*/\"</code> a teda "
+"vyhovujú každej položke s relatívnou cestou končiacou daným vzorom."
+
+#: filtermodel.cpp:135
+msgid ""
+"The target defines what type of item the filter is matched against.<br /"
+">Filters either apply only to files, only to folders or to both."
+msgstr ""
+"Cieľ definuje, ktorému typu položky sa filter porovnáva.<br />Filtre sa môžu "
+"použiť iba na súbory, iba na priečinky alebo na oboje."
+
+#: filtermodel.cpp:141 projectfilterkcm.cpp:67
+msgid "Files and Folders"
+msgstr "Súbory a priečinky"
+
+#: filtermodel.cpp:146 projectfilterkcm.cpp:66
+msgid "Folders"
+msgstr "Priečinky"
+
+#: filtermodel.cpp:151 projectfilterkcm.cpp:65
+msgid "Files"
+msgstr "Súbory"
+
+#: filtermodel.cpp:157
+msgid ""
+"Filters by default exclude items from the project. Inclusive patterns can be "
+"used to include items which where matched by previous exclusive patterns."
+"<br />E.g. to only include files ending on <code>\".cpp\"</code> in your "
+"project, you could exclude all files via <code>\"*\"</code> and then apply "
+"an inclusive <code>\"*.cpp\"</code> pattern."
+msgstr ""
+"Filtre predvolene vylučujú položky z projektu. Zahrňovacie vzory sa dajú "
+"použiť na zahrntie položiek, ktoré vyhovujú predošlým vylučovacím vzorom."
+"<br />Napr. iba na zahrnutie súborov končiacich na <code>\".cpp\"</code> vo "
+"vašom projekte, môžete vylúčiť všetky súbory cez <code>\"*\"</code> a potom "
+"použiť vzor zahrnutia <code>\"*.cpp\"</code>."
+
+#: filtermodel.cpp:163 projectfilterkcm.cpp:72
+msgid "Include"
+msgstr "Zahrnúť"
+
+#: filtermodel.cpp:168 projectfilterkcm.cpp:71
+msgid "Exclude"
+msgstr "Vylúčiť"
+
+#: projectfilterkcm.cpp:195
+msgid ""
+"A filter with an empty pattern will match all items. Use <code>\"*\"</code> "
+"to make this explicit."
+msgstr ""
+"Filter s prázdnym vzorom vyhovuje všetkým položkám. Použite <code>\"*\"</"
+"code>, aby to bolo explicitné."
+
+#: projectfilterkcm.cpp:198
+msgid "A filter ending on <code>\"/\"</code> can never match a file."
+msgstr "Filtru končiacemu na <code>\"/\"</code> nemôže vyhovovať žiadny súbor."
+
+#: projectfilterprovider.cpp:47
+msgid "Project Filter"
+msgstr "Filter projektu"
+
+#: projectfilterprovider.cpp:48
+msgid ""
+"Configure which files and folders inside the project folder should be "
+"included or excluded."
+msgstr ""
+"Nastaviť, ktoré súbory a priečinky v priečinku projektu majú byť zahrnuté "
+"alebo vylúčené."
+
+#: projectfilterprovider.cpp:95
+msgid "Exclude Item From Project"
+msgid_plural "Exclude Items From Project"
+msgstr[0] "Vylúčiť položku z projektu."
+msgstr[1] "Vylúčiť položky z projektu."
+msgstr[2] "Vylúčiť položky z projektu."
+
+#: projectfilterprovider.cpp:133
+msgid ""
+"A filter for the item was added. To undo, use the project filter settings."
+msgid_plural ""
+"A filter for the items was added. To undo, use the project filter settings."
+msgstr[0] ""
+"Filter pre položku bol pridaný. Na vrátenie použite nastavenia filtra "
+"projektu."
+msgstr[1] ""
+"Filter pre položky bol pridaný. Na vrátenie použite nastavenia filtra "
+"projektu."
+msgstr[2] ""
+"Filter pre položky bol pridaný. Na vrátenie použite nastavenia filtra "
+"projektu."
+
+#: projectfilterprovider.cpp:135
+msgid "Project Filter Added"
+msgstr "Filter projektu pridaný"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: projectfiltersettings.ui:31
+msgid "Add"
+msgstr "Pridať"
+
+#. i18n: ectx: property (text), widget (QPushButton, remove)
+#: projectfiltersettings.ui:46
+msgid "Remove"
+msgstr "Odstrániť"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUp)
+#: projectfiltersettings.ui:58
+msgid "Move Up"
+msgstr "Posunúť vyššie"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDown)
+#: projectfiltersettings.ui:70
+msgid "Move Down"
+msgstr "Posunúť nižšie"

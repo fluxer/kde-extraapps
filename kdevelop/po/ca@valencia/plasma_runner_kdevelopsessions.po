@@ -1,0 +1,34 @@
+# Translation of plasma_runner_kdevelopsessions.po to Catalan
+# Copyright (C) 2012-2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2012.
+# Antoni Bella Pérez <antonibella5@orange.es>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_runner_kdevelopsessions\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-05-22 05:50+0000\n"
+"PO-Revision-Date: 2013-11-10 13:41+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@orange.es>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#: kdevelopsessions.cpp:58
+msgid "Finds KDevelop sessions matching :q:."
+msgstr "Cerca sessions del KDevelop que coincidisquen amb :q:."
+
+#: kdevelopsessions.cpp:62
+msgid "Lists all the KDevelop editor sessions in your account."
+msgstr "Llista totes les sessions de l'editor del KDevelop del vostre compte."
+
+#: kdevelopsessions.cpp:142
+msgid "Open KDevelop Session"
+msgstr "Obri una sessió del KDevelop"

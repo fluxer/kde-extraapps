@@ -1,0 +1,212 @@
+# translation of kdevcvs.po to 简体中文
+# Copyright (C) 2002,2003, 2004, 2008, 2009 Free Software Foundation, Inc.
+#
+# Qi Liang <cavendish@eyou.com>, 2001.
+# Xiong Jiang <jxiong@offtopic.org>, 2002,2003, 2004.
+# Funda Wang <fundawang@linux.net.cn>, 2005.
+# Ni Hui <shuizhuyuanluo@126.com>, 2008, 2009.
+# FengChao <rainofchaos@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcvs\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-01-20 20:30+0800\n"
+"Last-Translator: FengChao <rainofchaos@gmail.com>\n"
+"Language-Team: Chinese Simplified <kde-china@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org"
+
+#: checkoutdialog.cpp:53
+msgid "Error on checkout"
+msgstr "检出出错"
+
+#: checkoutdialog.cpp:53 checkoutdialog.cpp:80
+msgid "Checkout Error"
+msgstr "检出错误"
+
+#: checkoutdialog.cpp:79
+#, kde-format
+msgid "Some errors occurred while checking out into %1"
+msgstr "检出到 %1 时发生了一些错误"
+
+#. i18n: ectx: property (windowTitle), widget (KDialog, CheckoutDialogBase)
+#: checkoutdialog.ui:13
+msgid "Checkout"
+msgstr "检出"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: checkoutdialog.ui:21
+msgid "&Local destination directory:"
+msgstr "本地目标目录(&L)："
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: checkoutdialog.ui:47
+msgid "&Server path (e.g. :pserver:username@cvs.example.com:/cvsroot):"
+msgstr "服务器路径(例如：pserver:username@cvs.example.com:/cvsroot)(&S)："
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: checkoutdialog.ui:67
+msgid "&Module:"
+msgstr "模块(&M)："
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: checkoutdialog.ui:88
+msgid "Tag/Branch:"
+msgstr "标记/分支："
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CommitDialogBase)
+#: commitdialog.ui:13
+msgid "Commit to Repository"
+msgstr "提交到仓库"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: commitdialog.ui:19
+msgid "Message"
+msgstr "消息"
+
+#: cvsgenericoutputview.cpp:42
+msgid "Job exited normally"
+msgstr "作业正常退出"
+
+#: cvsmainview.cpp:26 cvsmainview.cpp:38 cvsplugin.cpp:52 cvsplugin.cpp:92
+#: cvsplugin.cpp:472
+msgid "CVS"
+msgstr "CVS"
+
+#: cvsplugin.cpp:52
+msgid "Support for CVS version control system"
+msgstr "CVS 版本控制系统支持"
+
+#: cvsplugin.cpp:119
+msgid "Import Directory..."
+msgstr "导入目录..."
+
+#: cvsplugin.cpp:123
+msgid "Checkout..."
+msgstr "检出..."
+
+#: cvsplugin.cpp:127
+msgid "Status..."
+msgstr "状态..."
+
+#: cvsplugin.cpp:171
+msgid "Status"
+msgstr "状态"
+
+#: cvsplugin.cpp:200
+msgid "Edit"
+msgstr "编辑"
+
+#: cvsplugin.cpp:204
+msgid "Unedit"
+msgstr "取消编辑"
+
+#: cvsplugin.cpp:208
+msgid "Show Editors"
+msgstr "显示编辑器"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditorsViewBase)
+#: cvsplugin.cpp:256 editorsview.ui:13
+msgid "Editors"
+msgstr "编辑器"
+
+#: editorsview.cpp:43
+msgid "Listing editors failed"
+msgstr "列出编辑器失败"
+
+#: editorsview.cpp:58
+msgid "No files from your query are marked as being edited."
+msgstr "您队列中没有标记为正在编辑中的文件。"
+
+#: editorsview.cpp:66
+msgid "User"
+msgstr "用户"
+
+#: editorsview.cpp:67
+msgid "Date"
+msgstr "日期"
+
+#: editorsview.cpp:68
+msgid "Machine"
+msgstr "机器"
+
+#: editorsview.cpp:69
+msgid "Repository"
+msgstr "仓库"
+
+#: importdialog.cpp:54
+msgid "Error on importing"
+msgstr "导入出错"
+
+#: importdialog.cpp:54 importdialog.cpp:84
+msgid "Import Error"
+msgstr "导入错误"
+
+#: importdialog.cpp:83
+#, kde-format
+msgid "Some errors occurred while importing %1"
+msgstr "导入 %1 时发生了一些错误"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ImportMetadataWidget)
+#: importmetadatawidget.ui:13
+msgid "Import"
+msgstr "导入"
+
+#. i18n: ectx: property (text), widget (QLabel, labelUrl)
+#: importmetadatawidget.ui:19
+msgid "Source Directory:"
+msgstr "源代码目录："
+
+#. i18n: ectx: property (text), widget (QLabel, repositoryLabel)
+#: importmetadatawidget.ui:35
+msgid "&Repository:"
+msgstr "仓库(&R)："
+
+#. i18n: ectx: property (text), widget (QLabel, moduleLabel)
+#: importmetadatawidget.ui:57
+msgid "Mo&dule:"
+msgstr "模块(&D)："
+
+#. i18n: ectx: property (text), widget (QLabel, vendorLabel)
+#: importmetadatawidget.ui:79
+msgid "&Vendor tag:"
+msgstr "销售商标记(&V)："
+
+#. i18n: ectx: property (text), widget (KLineEdit, vendorTag)
+#: importmetadatawidget.ui:92
+msgid "vendor"
+msgstr "销售商"
+
+#. i18n: ectx: property (text), widget (QLabel, releaseLabel)
+#: importmetadatawidget.ui:105
+msgid "Re&lease tag:"
+msgstr "发布标记(&L)："
+
+#. i18n: ectx: property (text), widget (KLineEdit, releaseTag)
+#: importmetadatawidget.ui:118
+msgid "start"
+msgstr "开始"
+
+#. i18n: ectx: property (text), widget (QLabel, commentLabel)
+#: importmetadatawidget.ui:131
+msgid "Co&mment:"
+msgstr "注释(&M)："
+
+#. i18n: ectx: Menu (cvs_popup)
+#: kdevcvs.rc:5
+msgctxt "@title:menu"
+msgid "CVS"
+msgstr "CVS"

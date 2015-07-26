@@ -1,0 +1,5 @@
+
+add_subdirectory(makebuilder)
+add_subdirectory(ninjabuilder)
+macro_optional_add_subdirectory(cmakebuilder)
+

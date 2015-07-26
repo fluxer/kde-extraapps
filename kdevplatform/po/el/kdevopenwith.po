@@ -1,0 +1,65 @@
+# # translation of kdevopenwith.po into [el]
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stelios <sstavra@gmail.com>, 2011, 2013.
+# Dimitrios Glentadakis <dglent@gmail.com>, 2012.
+# Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevopenwith\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-03-20 22:25+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: openwithplugin.cpp:52 openwithplugin.cpp:116
+msgid "Open With"
+msgstr "Άνοιγμα με"
+
+#: openwithplugin.cpp:52
+msgid "This plugin allows to open files with associated external applications."
+msgstr ""
+"Αυτό το πρόσθετο επιτρέπει το άνοιγμα αρχείων με σχετικές εξωτερικές "
+"εφαρμογές."
+
+#: openwithplugin.cpp:120
+msgid "Embedded Editors"
+msgstr "Επεξεργαστές δεκαεξαδικών"
+
+#: openwithplugin.cpp:124
+msgid "External Applications"
+msgstr "Εξωτερικές εφαρμογές"
+
+#: openwithplugin.cpp:128
+msgid "Open"
+msgstr "Άνοιγμα"
+
+#: openwithplugin.cpp:174
+msgid "Default Editor"
+msgstr "Προκαθορισμένος επεξεργαστής"
+
+#: openwithplugin.cpp:240
+#, kde-format
+msgctxt "%1: mime type name, %2: app/part name"
+msgid "Do you want to open all '%1' files by default with %2?"
+msgstr "Θέλετε να ανοίγετε τα %1 αρχεία εξ ορισμού με %2;"
+
+#: openwithplugin.cpp:242
+msgid "Set as default?"
+msgstr "Να οριστεί ως προκαθορισμένο;"

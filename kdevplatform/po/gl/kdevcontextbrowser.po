@@ -1,0 +1,124 @@
+# translation of kdevcontextbrowser.po to Galician
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# mvillarino <mvillarino@users.sourceforge.net>, 2008.
+# Xosé <xosecalvo@gmail.com>, 2009.
+# Xosé <xosecalvo@edu.xunta.es>, 2009.
+# Marce Villarino <mvillarino@gmail.com>, 2009, 2013.
+# Xabier Villar <xabier.villar@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcontextbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-11 01:26+0000\n"
+"PO-Revision-Date: 2013-11-08 23:16+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde, development\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xosé Calvo"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "proxecto@trasno.net"
+
+#: contextbrowser.cpp:175
+msgid "Go back in context history"
+msgstr "Volver atrás no historial de contexto"
+
+#: contextbrowser.cpp:186
+msgid "Go forward in context history"
+msgstr "Avanzar no historial de contexto"
+
+#: contextbrowser.cpp:198
+msgid "Enable/disable source browse mode"
+msgstr "Conmutar o modo de navegación polo código"
+
+#: contextbrowser.cpp:199
+msgid ""
+"When this is enabled, you can browse the source-code by clicking in the "
+"editor."
+msgstr ""
+"Se escolle esta opción poderá navegar polo código fonte premendo o editor."
+
+#: contextbrowser.cpp:208
+msgid "Outline"
+msgstr "Esquema"
+
+#: contextbrowser.cpp:209
+msgid "Outline..."
+msgstr "Esquema..."
+
+#: contextbrowser.cpp:210
+msgid "Navigate outline of active document, click to browse."
+msgstr "Navegue polo esquema do documento activo, prema para examinar."
+
+#: contextbrowser.cpp:248
+msgid "&Previous Visited Context"
+msgstr "Contexto &anterior visitado"
+
+#: contextbrowser.cpp:254
+msgid "&Next Visited Context"
+msgstr "Contexto &seguinte visitado"
+
+#: contextbrowser.cpp:260
+msgid "&Previous Use"
+msgstr "Utilización &anterior"
+
+#: contextbrowser.cpp:266
+msgid "&Next Use"
+msgstr "Utilización &seguinte"
+
+#: contextbrowser.cpp:272 contextbrowser.cpp:293
+msgid "Context Browser"
+msgstr "Navegador do contexto"
+
+#: contextbrowser.cpp:293
+msgid ""
+"This plugin shows information about the current language context in a side "
+"view, and highlights relevant declarations and uses."
+msgstr ""
+"Este complemento mostra información acerca do contexto da linguaxe actual "
+"nunha vista lateral, e realza as declaracións e utilizacións relevantes."
+
+#: contextbrowser.cpp:302 contextbrowser.cpp:372
+msgid "Code Browser"
+msgstr "Navegador do código"
+
+#: contextbrowser.cpp:315
+msgid "Find Uses"
+msgstr "Atopar utilizacións"
+
+#: contextbrowser.cpp:1358
+msgid "(changed)"
+msgstr "(modificado)"
+
+#: contextbrowserview.cpp:122
+msgid "Declaration menu"
+msgstr "Menú de declaración"
+
+#: contextbrowserview.cpp:128
+msgid "Lock current view"
+msgstr "Trancar a vista actual"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcontextbrowser.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navegación"
+
+#. i18n: ectx: ToolBar (KDevCodebrowserToolBar)
+#: kdevcontextbrowser.rc:25
+msgid "Code Browser Toolbar"
+msgstr "Barra de ferramentas do Navegador do código"

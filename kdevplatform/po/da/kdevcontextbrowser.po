@@ -1,0 +1,117 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Morten Anton Bach Sjøgren <m_abs@mabs.dk>, 2010.
+# Martin Schlander <mschlander@opensuse.org>, 2010, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-11 01:26+0000\n"
+"PO-Revision-Date: 2013-11-25 22:16+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Morten Anton Bach Sjøgren"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "m_abs@mabs.dk"
+
+#: contextbrowser.cpp:175
+msgid "Go back in context history"
+msgstr "Gå tilbage i konteksthistorikken"
+
+#: contextbrowser.cpp:186
+msgid "Go forward in context history"
+msgstr "Gå frem i konteksthistorikken"
+
+#: contextbrowser.cpp:198
+msgid "Enable/disable source browse mode"
+msgstr "Slå kildekodebrowser-tilstand til/fra"
+
+#: contextbrowser.cpp:199
+msgid ""
+"When this is enabled, you can browse the source-code by clicking in the "
+"editor."
+msgstr ""
+"Når dette er slået til, kan du gennemse kildekode ved at klikke i editoren."
+
+#: contextbrowser.cpp:208
+msgid "Outline"
+msgstr "Omrids"
+
+#: contextbrowser.cpp:209
+msgid "Outline..."
+msgstr "Omrids..."
+
+#: contextbrowser.cpp:210
+msgid "Navigate outline of active document, click to browse."
+msgstr "Navigér omrids af det aktive dokument, klik for at gennemse."
+
+#: contextbrowser.cpp:248
+msgid "&Previous Visited Context"
+msgstr "&Forrige besøgte kontekst"
+
+#: contextbrowser.cpp:254
+msgid "&Next Visited Context"
+msgstr "&Næste besøgte kontekst"
+
+#: contextbrowser.cpp:260
+msgid "&Previous Use"
+msgstr "Fo&rrige brugstilfælde"
+
+#: contextbrowser.cpp:266
+msgid "&Next Use"
+msgstr "Næs&te brugstilfælde"
+
+#: contextbrowser.cpp:272 contextbrowser.cpp:293
+msgid "Context Browser"
+msgstr "Kontekstbrowser"
+
+#: contextbrowser.cpp:293
+msgid ""
+"This plugin shows information about the current language context in a side "
+"view, and highlights relevant declarations and uses."
+msgstr ""
+"Dette plugin viser information om den sprogkontekst i et sidepanel og "
+"fremhæver relevante erklæringer og brug."
+
+#: contextbrowser.cpp:302 contextbrowser.cpp:372
+msgid "Code Browser"
+msgstr "Kodebrowser"
+
+#: contextbrowser.cpp:315
+msgid "Find Uses"
+msgstr "Find brugstilfælde"
+
+#: contextbrowser.cpp:1358
+msgid "(changed)"
+msgstr "(ændret)"
+
+#: contextbrowserview.cpp:122
+msgid "Declaration menu"
+msgstr "Erklæringsmenu"
+
+#: contextbrowserview.cpp:128
+msgid "Lock current view"
+msgstr "Lås nuværende visning"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcontextbrowser.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigation"
+
+#. i18n: ectx: ToolBar (KDevCodebrowserToolBar)
+#: kdevcontextbrowser.rc:25
+msgid "Code Browser Toolbar"
+msgstr "Kodebrowser-værktøjslinje"

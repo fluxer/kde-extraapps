@@ -1,0 +1,1023 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Dimitrios Glentadakis <dglent@gmail.com>, 2012.
+# Petros Vidalis <pvidalis@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-17 05:40+0000\n"
+"PO-Revision-Date: 2012-10-04 14:34+0300\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios, Πέτρος Βιδάλης"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com, p_vidalis@hotmail.com"
+
+#: breakpointcontroller.cpp:555
+#, kde-format
+msgid "<br>Old value: %1"
+msgstr "<br>Παλιά τιμή: %1"
+
+#: breakpointcontroller.cpp:558
+#, kde-format
+msgid "<br>New value: %1"
+msgstr "<br>Νέα τιμή: %1"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, DebuggerConfigWidget)
+#: debuggerconfigwidget.ui:14
+msgid "Debugger Configuration"
+msgstr "Ρυθμίσεις debugger"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: debuggerconfigwidget.ui:26 debuggerplugin.cpp:416
+msgid "Debugger"
+msgstr "Debugger"
+
+#. i18n: ectx: property (text), widget (QLabel, gdbPath_label)
+#: debuggerconfigwidget.ui:38
+msgid "Debugger executable:"
+msgstr "Εκτελέσιμο debugger:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_gdbPath)
+#: debuggerconfigwidget.ui:51
+msgid "Gdb executable"
+msgstr "Εκτελέσιμο gdb"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_gdbPath)
+#: debuggerconfigwidget.ui:54
+msgid ""
+"To run \"gdb\" binary from $PATH, leave this field empty. To run custom gdb, "
+"for example, for a different architecture, enter the executable name here. "
+"You can either run gdb from $PATH, but with a different name (say, \"arm-gdb"
+"\"), by typing the name here, or specify full path to the gdb executable."
+msgstr ""
+"Για την εκτέλεση του \"gdb\" από τη $PATH, αφήστε το πεδίο αυτό κενό. Για "
+"την εκτέλεση ενός προσαρμοσμένου gdb, π.χ. για διαφορετική εφαρμογή, "
+"εισάγετε εδώ το όνομά του. Μπορείτε επίσης να εκτελέσετε το gdb από τη "
+"$PATH, αλλά με κάποιο άλλο όνομα (π.χ. \"arm-gdb\"),  πληκτρολογώντας εδώ το "
+"όνομα, ή καθορίζοντας την πλήρη διαδρομή του εκτελέσιμου."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, debuggingShell_label)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_debuggingShell)
+#: debuggerconfigwidget.ui:67 debuggerconfigwidget.ui:86
+msgid ""
+"<html><head/><body><p>If you want gdb to be executed by a special shell "
+"script, which for example properly sets the library path, insert it here e."
+"g.: /path/to/script.sh --scriptArguments</p><p>Note: your script'll be "
+"invoked like this: /path/to/script.sh --scriptArguments debbuger --"
+"debuggerArguments. So script.sh <span style=\" font-weight:600;\">must</"
+"span> invoke \"debugger\" executable manually.</p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, debuggingShell_label)
+#: debuggerconfigwidget.ui:73
+#, fuzzy
+#| msgctxt "Shell script to be executed at run time"
+#| msgid "R&un shell script:"
+msgid "&Shell script:"
+msgstr "&Εκτέλεση σεναρίου κελύφους:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_debuggingShell)
+#: debuggerconfigwidget.ui:89
+msgid "<html><head/><body><p><br/></p></body></html>"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: debuggerconfigwidget.ui:99
+msgid "Options"
+msgstr "Επιλογές"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: debuggerconfigwidget.ui:108
+msgid "Display static &members:"
+msgstr "Εμφάνιση στατικών &μελών:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_displayStaticMembers)
+#: debuggerconfigwidget.ui:123
+msgid ""
+"Displaying static members makes GDB slower in\n"
+"producing data within KDE and Qt.\n"
+"It may change the \"signature\" of the data\n"
+"which QString and friends rely on,\n"
+"but if you need to debug into these values then\n"
+"check this option."
+msgstr ""
+"Η εμφάνιση στατικών μελών κάνει το GDB αργότερο στην\n"
+"παραγωγή δεδομένων εντός του KDE και του Qt.\n"
+"Μπορεί να αλλάξει την \"υπογραφή\" των δεδομένων στα\n"
+"οποία το GString και οι φίλες τάξεις βασίζονται,\n"
+"αλλά αν χρειάζεστε να αποσφαλματώσετε σε αυτές τις τιμές\n"
+"τότε ενεργοποιήστε αυτή την επιλογή."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: debuggerconfigwidget.ui:133
+msgid "Display &demangled names:"
+msgstr "Εμφάνιση &αποκωδικοποιημένων ονομάτων:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_asmDemangle)
+#: debuggerconfigwidget.ui:145
+msgid ""
+"When displaying the disassembled code you\n"
+"can select to see the methods' mangled names.\n"
+"However, non-mangled names are easier to read."
+msgstr ""
+"Όταν εμφανίζεται ο τελεστικός κώδικας μηχανής μπορείτε να επιλέξετε\n"
+"να δείτε τις μεθόδους με τα κωδικά τους ονόματα.\n"
+"Όμως, τα αποκωδικοποιημένα ονόματα είναι πιο ευανάγνωστα."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: debuggerconfigwidget.ui:155
+msgid "Start Debugger with:"
+msgstr "Εκκίνηση του αποσφαλματωτή με:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
+#: debuggerconfigwidget.ui:166
+msgid "Application Output"
+msgstr "Έξοδος εφαρμογής"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
+#: debuggerconfigwidget.ui:171
+msgid "GDB Console"
+msgstr "GDB τερματικό"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
+#: debuggerconfigwidget.ui:176
+msgid "Frame Stack"
+msgstr "Πλαίσιο στοίβας"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox)
+#: debuggerconfigwidget.ui:190
+msgid ""
+"This script is intended for the actual commands needed to connect to a "
+"remotely running executable.\n"
+"\tshell sleep 5\twait for remote program to start\n"
+"\ttarget remote ...\tconnect to the remote debugger\n"
+"\tcontinue\t[optional] run debugging to the first breakpoint"
+msgstr ""
+"Το σενάριο αυτό προορίζεται για τις απαιτούμενες εντολές σύνδεσης σε ένα "
+"απομακρυσμένο εκτελέσιμο.\n"
+"\tshell sleep 5\tαναμονή για εκκίνηση του απομακρυσμένου προγράμματος\n"
+"\ttarget remote ...\tσύνδεση στον απομακρυσμένο debugger\n"
+"\tcontinue\t[προαιρετικό] εκτέλεση αποσφαλμάτωσης έως το πρώτο σημείο "
+"διακοπής"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: debuggerconfigwidget.ui:193
+msgid "Remote Debugging"
+msgstr "Απομακρυσμένη αποσφαλμάτωση"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, runShellScript_label)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runShellScript)
+#: debuggerconfigwidget.ui:199 debuggerconfigwidget.ui:215
+#, fuzzy
+#| msgid ""
+#| "This shell script is run after the Config gdb script has been sourced by "
+#| "gdb.\n"
+#| "When debugging remotely this script is intended to actually start the "
+#| "remote process.\n"
+#| "[It is expected that the debug executable can be reached on the target, "
+#| "maybe by downloading it as a final build step]\n"
+#| "1) Find a way to execute a command remotely - rsh, ssh, telnet, ...\n"
+#| "2a) Execute \"gdbserver ... application\" on target.\n"
+#| "or if your executable contains the gdb stub\n"
+#| "2b) Execute \"application\" on target."
+msgid ""
+"<html><head/><body><p>Script to start remote application</p><p></p><p>This "
+"shell script is run after the Gdb Config script has been sourced by gdb.</"
+"p><p>It's purpose is to actually start the remote process.</p><p>1) Find a "
+"way to execute a command remotely - rsh, ssh, telnet, ...</p><p>2a) Execute "
+"\"gdbserver ... application\" on target.</p><p>or if your executable "
+"contains the gdb stub:</p><p>2b) Execute \"application\" on target.</p></"
+"body></html>"
+msgstr ""
+"Αυτό το σενάριο εκτελείται αφού το σενάριο Config gdb έχει εκτελεστεί από το "
+"gdb.\n"
+"Κατά την απομακρυσμένη αποσφαλμάτωση αυτό το σενάριο προορίζεται για να "
+"εκκινηθεί η απομακρυσμένη διεργασία.\n"
+"[Αναμένεται ότι το προς αποσφαλμάτωση εκτελέσιμο μπορεί να προσεγγιστεί, "
+"ίσως λαμβάνοντάς το ως τελικό βήμα στην κατασκευή]\n"
+"1) Αναζήτηση ενός τρόπου απομακρυσμένης εκτέλεσης εντολών - rsh, ssh, "
+"telnet, ...\n"
+"2)α) Εκτέλεση \"gdbserver ... εφαρμογή\" απομακρυσμένα.\n"
+"ή αν το εκτελέσιμο περιέχει το \"ίχνος\" του gdb\n"
+"2β) Εκτέλεση της \"εφαρμογής\" στον προορισμό."
+
+#. i18n: ectx: property (text), widget (QLabel, runShellScript_label)
+#: debuggerconfigwidget.ui:202
+msgctxt "Shell script to be executed at run time"
+msgid "R&un shell script:"
+msgstr "&Εκτέλεση σεναρίου κελύφους:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, configGdbScript_label)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_configGdbScript)
+#: debuggerconfigwidget.ui:225 debuggerconfigwidget.ui:267
+#, fuzzy
+#| msgid "This script is sourced by gdb when the debugging starts."
+msgid ""
+"<html><head/><body><p>This script is sourced by gdb when the debugging "
+"starts.</p></body></html>"
+msgstr ""
+"Αυτό το σενάριο εκτελείται από το gdb κατά την εκκίνηση της αποσφαλμάτωσης."
+
+#. i18n: ectx: property (text), widget (QLabel, configGdbScript_label)
+#: debuggerconfigwidget.ui:228
+#, fuzzy
+#| msgid "Gdb configure script"
+msgid "Gdb &config script:"
+msgstr "Σενάριο ρύθμισης gdb"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runGdbScript)
+#. i18n: ectx: property (toolTip), widget (QLabel, runGdbScript_label)
+#: debuggerconfigwidget.ui:241 debuggerconfigwidget.ui:251
+#, fuzzy
+#| msgid ""
+#| "This script is intended for the actual commands needed to connect to a "
+#| "remotely running executable.\n"
+#| "\tshell sleep 5\twait for remote program to start\n"
+#| "\ttarget remote ...\tconnect to the remote debugger\n"
+#| "\tcontinue\t[optional] run debugging to the first breakpoint"
+msgid ""
+"<html><head/><body><p>Script to connect with remote application</p><p>For "
+"example:</p><p>\tshell sleep 5\t #wait for remote program to start</p><p>"
+"\ttarget remote ...\t#connect to the remote debugger</p><p>\tcontinue\t#"
+"[optional] run debugging to the first breakpoint.</p></body></html>"
+msgstr ""
+"Το σενάριο αυτό προορίζεται για τις απαιτούμενες εντολές σύνδεσης σε ένα "
+"απομακρυσμένο εκτελέσιμο.\n"
+"\tshell sleep 5\tαναμονή για εκκίνηση του απομακρυσμένου προγράμματος\n"
+"\ttarget remote ...\tσύνδεση στον απομακρυσμένο debugger\n"
+"\tcontinue\t[προαιρετικό] εκτέλεση αποσφαλμάτωσης έως το πρώτο σημείο "
+"διακοπής"
+
+#. i18n: ectx: property (text), widget (QLabel, runGdbScript_label)
+#: debuggerconfigwidget.ui:254
+msgctxt "Gdb script to be executed at run time."
+msgid "Run &gdb script:"
+msgstr "Εκτέλεση σε&ναρίου gdb:"
+
+#: debuggerplugin.cpp:93
+msgid "GDB Support"
+msgstr "Υποστήριξη GDB"
+
+#: debuggerplugin.cpp:93
+msgid ""
+"This plugin provides a frontend for GDB, a source-level debugger for C, C++ "
+"and more."
+msgstr ""
+
+#: debuggerplugin.cpp:155
+#, fuzzy
+#| msgid "Disassemble View"
+msgid "Disassemble/Registers"
+msgstr "Προβολή τελεστών μηχανής"
+
+#: debuggerplugin.cpp:159 gdblaunchconfig.cpp:137
+msgid "GDB"
+msgstr "GDB"
+
+#: debuggerplugin.cpp:165
+#, fuzzy
+#| msgid "Memory view"
+msgid "Memory"
+msgstr "Προβολή μνήμης"
+
+#: debuggerplugin.cpp:200
+msgid "Examine Core File..."
+msgstr "Εξέταση αρχείου πυρήνα..."
+
+#: debuggerplugin.cpp:201
+msgid "Examine core file"
+msgstr "Εξέταση αρχείου πυρήνα"
+
+#: debuggerplugin.cpp:202
+msgid ""
+"<b>Examine core file</b><p>This loads a core file, which is typically "
+"created after the application has crashed, e.g. with a segmentation fault. "
+"The core file contains an image of the program memory at the time it "
+"crashed, allowing you to do a post-mortem analysis.</p>"
+msgstr ""
+"<b>Εξέταση αρχείου πυρήνα</b><p>Αυτό φορτώνει το αρχείο πυρήνα, το οποίο "
+"συνήθως είναι το αρχείο που δημιουργείται μετά από την κατάρρευση της "
+"εφαρμογής, π.χ. με ένα σφάλμα αποκοπής. Το αρχείο πυρήνα περιέχει την εικόνα "
+"της μνήμης του προγράμματος τη στιγμή της κατάρρευσης, δίνοντας τη "
+"δυνατότητα για περαιτέρω ανάλυση.</p>"
+
+#: debuggerplugin.cpp:212
+msgid "Attach to Process"
+msgstr "Πρόσδεση σε διεργασία"
+
+#: debuggerplugin.cpp:213
+msgid "Attach to process..."
+msgstr "Πρόσδεση σε διεργασία..."
+
+#: debuggerplugin.cpp:214
+msgid ""
+"<b>Attach to process</b><p>Attaches the debugger to a running process.</p>"
+msgstr ""
+"<b>Πρόσδεση σε διεργασία</b><p>Πρόσδεση του debugger σε μια εκτελούμενη "
+"διεργασία.</p>"
+
+#: debuggerplugin.cpp:246
+msgid "KDevelop"
+msgstr "KDevelop"
+
+#: debuggerplugin.cpp:319
+#, kde-format
+msgid "Evaluate: %1"
+msgstr "Υπολογισμός: %1"
+
+#: debuggerplugin.cpp:321
+msgid ""
+"<b>Evaluate expression</b><p>Shows the value of the expression under the "
+"cursor.</p>"
+msgstr ""
+"<b>Υπολογισμός έκφρασης</b><p>Εμφανίζει την τιμή της έκφρασης κάτω από το "
+"δρομέα.</p>"
+
+#: debuggerplugin.cpp:324
+#, kde-format
+msgid "Watch: %1"
+msgstr "Παρακολούθηση: %1"
+
+#: debuggerplugin.cpp:326
+msgid ""
+"<b>Watch expression</b><p>Adds an expression under the cursor to the "
+"Variables/Watch list.</p>"
+msgstr ""
+"<b>Παρακολούθηση έκφρασης</b><p>Προσθήκη μιας έκφρασης κάτω από το δρομέα "
+"στη λίστα παρακολουθήσεων μεταβλητών.</p>"
+
+#: debuggerplugin.cpp:356
+msgid "Choose a core file to examine..."
+msgstr "Επιλογή αρχείου πυρήνα για εξέταση..."
+
+#: debuggerplugin.cpp:363
+#, kde-format
+msgid "Examining core file %1"
+msgstr "Εξέταση αρχείου πυρήνα %1"
+
+#: debuggerplugin.cpp:369
+msgid "Debug core file"
+msgstr "Διόρθωση αρχείου πυρήνα"
+
+#: debuggerplugin.cpp:377
+msgid "Choose a process to attach to..."
+msgstr "Επιλογή μιας διεργασίας για πρόσδεση..."
+
+#: debuggerplugin.cpp:386
+#, kde-format
+msgid "Not attaching to process %1: cannot attach the debugger to itself."
+msgstr ""
+"Δεν έγινε πρόσδεση στη διεργασία %1: αδυναμία πρόσδεσης του debugger στον "
+"εαυτό του."
+
+#: debuggerplugin.cpp:394
+#, kde-format
+msgid "Attaching to process %1"
+msgstr "Πρόσδεση με διεργασία %1"
+
+#: debuggerplugin.cpp:400
+#, kde-format
+msgid "Debug process %1"
+msgstr "Διόρθωση διεργασίας %1"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, DebuggerTracingDialog)
+#: debuggertracingdialog.ui:13
+msgid "Tracing Configuration"
+msgstr "Διαμόρφωση ανίχνευσης"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, enable)
+#: debuggertracingdialog.ui:20
+msgid ""
+"<b>Enable tracing</b>\n"
+"<p>Tracing is a mechanism to automatically print values of the chosen "
+"expressions and continue execution when breakpoint is hit. You can think of "
+"it as printf debugging that does not require modifying the source.</p>"
+msgstr ""
+"<b>Ενεργοποίηση ανίχνευσης</b>\n"
+"<p>Η ανίχνευση είναι ένας μηχανισμός που αυτόματα εμφανίζει τιμές των "
+"επιλεγμένων εκφράσεων και της συνέχισης της εκτέλεσης μετά από σημείο "
+"διακοπής. Μπορείτε να το φανταστείτε ως μία εντολή printf κατά την "
+"αποσφαλμάτωση η οποία δεν απαιτεί τροποποίηση του κώδικα.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enable)
+#: debuggertracingdialog.ui:23
+msgid "Enable tracing"
+msgstr "Ενεργοποίηση ανίχνευσης"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: debuggertracingdialog.ui:30 memviewdlg.cpp:101
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enableCustomFormat)
+#: debuggertracingdialog.ui:40
+msgid "Custom format string"
+msgstr "Συμβολοσειρά προσαρμοσμένης μορφής"
+
+#. i18n: ectx: property (text), widget (QPushButton, okButton)
+#: debuggertracingdialog.ui:47 memviewdlg.cpp:98
+msgid "OK"
+msgstr "Εντάξει"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, customFormat)
+#: debuggertracingdialog.ui:79
+#, no-c-format
+msgid ""
+"<b>Custom format string</b>\n"
+"<p>Specify a C-style format string that will be used when printing the "
+"chosen expression. For example:\n"
+"<p align=\"center\"> <tt>Tracepoint 1: g = %d</tt></p>\n"
+"If custom format string is not enabled, names and values of all expressions "
+"will be printed, using \"%d\" as format specifier for all expressions."
+msgstr ""
+"<b>Συμβολοσειρά προσαρμοσμένης μορφής</b>\n"
+"<p>Ορίστε μία συμβολοσειρά C-μορφής το οποίο θα χρησιμοποιείται για την "
+"εμφάνιση της επιλεγμένης έκφρασης. Για παράδειγμα:\n"
+"<p align=\"center\"> <tt>Σημείο ανίχνευσης 1: g = %d</tt></p>\n"
+"Αν δεν είναι ενεργοποιημένο, τα ονόματα και οι τιμές όλων των εκφράσεων θα "
+"εμφανίζονται, χρησιμοποιώντας το \"%d\" για τον ορισμό μορφής τους."
+
+#. i18n: ectx: property (text), widget (QLabel, expressionsLabel)
+#: debuggertracingdialog.ui:99
+msgid "Expressions to print:"
+msgstr "Εκφράσεις για εμφάνιση:"
+
+#: debugsession.cpp:157
+msgid "Debugger stopped"
+msgstr "Ο debugger σταμάτησε"
+
+#: debugsession.cpp:186
+msgid "Application interrupted"
+msgstr "Η εφαρμογή διακόπηκε"
+
+#: debugsession.cpp:190
+msgid "Process exited"
+msgstr "Η διεργασία τερμάτισε"
+
+#: debugsession.cpp:197
+msgid "Application is running"
+msgstr "Η εφαρμογή εκτελείται"
+
+#: debugsession.cpp:203
+msgid "Application is paused"
+msgstr "Η εφαρμογή είναι σε παύση"
+
+#: debugsession.cpp:416
+msgid ""
+"<b>GDB exited abnormally</b><p>This is likely a bug in GDB. Examine the gdb "
+"output window and then stop the debugger"
+msgstr ""
+"<b>Ο GDB τερμάτισε αντικανονικά</b><p>Αυτό πιθανόν να είναι ένα σφάλμα στο "
+"GDB. Ελέγξτε το παράθυρο εξόδου του gdb και έπειτα σταματήστε τον debugger"
+
+#: debugsession.cpp:419
+msgid "GDB exited abnormally"
+msgstr "Ο GDB τερμάτισε αντικανονικά"
+
+#: debugsession.cpp:548
+#, kde-format
+msgid ""
+"<b>Gdb command sent when debugger is not running</b><br>The command was:<br> "
+"%1"
+msgstr ""
+"<b>Στάλθηκε εντολή Gdb χωρίς να εκτελείται ο debugger</b><br>Η εντολή ήταν η:"
+"<br> %1"
+
+#: debugsession.cpp:550
+msgid "Internal error"
+msgstr "Εσωτερικό σφάλμα"
+
+#: debugsession.cpp:647
+#, kde-format
+msgid "<b>Invalid debugger command</b><br>%1"
+msgstr "<b>Μη έγκυρη εντολή debugger</b><br>%1"
+
+#: debugsession.cpp:648
+msgid "Invalid debugger command"
+msgstr "Μη έγκυρη εντολή debugger"
+
+#: debugsession.cpp:676
+#, kde-format
+msgid "Exited with return code: %1"
+msgstr "Έξοδος με επιστροφή κωδικού: %1"
+
+#: debugsession.cpp:678
+msgid "Exited normally"
+msgstr "Τερμάτισε κανονικά"
+
+#: debugsession.cpp:686
+#, kde-format
+msgid "Exited on signal %1"
+msgstr "Έξοδος με σήμα %1"
+
+#: debugsession.cpp:745
+#, kde-format
+msgid "Program received signal %1 (%2)"
+msgstr "Το πρόγραμμα έλαβε το σήμα %1 (%2)"
+
+#: debugsession.cpp:951
+msgid "Running program"
+msgstr "Εκτέλεση προγράμματος"
+
+#: debugsession.cpp:971
+#, kde-format
+msgid ""
+"No environment group specified, looks like a broken configuration, please "
+"check run configuration '%1'. Using default environment group."
+msgstr ""
+"Δεν έχει οριστεί ομάδα από περιβάλλοντα, η διαμόρφωση φαίνεται προβληματική, "
+"παρακαλώ ελέγξτε τη διαμόρφωση εκτέλεσης '%1'. Χρησιμοποιήστε την "
+"προεπιλεγμένη ομάδα από περιβάλλοντα."
+
+#: debugsession.cpp:1019
+msgid "Warning"
+msgstr "Προειδοποίηση"
+
+#: debugsession.cpp:1223
+#, kde-format
+msgid "<b>Debugger error</b><p>Debugger reported the following error:<p><tt>%1"
+msgstr ""
+"<b>Σφάλμα debugger</b><p>Ο debugger ανέφερε το παρακάτω σφάλμα:<p><tt>%1"
+
+#: debugsession.cpp:1226
+msgid "Debugger error"
+msgstr "Σφάλμα debugger"
+
+#: debugsession.cpp:1325
+#, kde-format
+msgid "1 command in queue\n"
+msgid_plural "%1 commands in queue\n"
+msgstr[0] "1 εντολή σε αναμονή\n"
+msgstr[1] "%1 εντολές σε αναμονή\n"
+
+#: debugsession.cpp:1326
+#, kde-format
+msgctxt "Only the 0 and 1 cases need to be translated"
+msgid "1 command being processed by gdb\n"
+msgid_plural "%1 commands being processed by gdb\n"
+msgstr[0] "1 εντολή επεξεργάζεται από το gdb\n"
+msgstr[1] "%1 εντολές επεξεργάζονται από το gdb\n"
+
+#: debugsession.cpp:1327
+#, kde-format
+msgid "Debugger state: %1\n"
+msgstr "Κατάσταση debugger: %1\n"
+
+#: debugsession.cpp:1331
+#, kde-format
+msgid ""
+"Current command class: '%1'\n"
+"Current command text: '%2'\n"
+"Current command original text: '%3'\n"
+msgstr ""
+"Τρέχουσα κλάση εντολής: '%1'\n"
+"Τρέχον κείμενο εντολής: '%2'\n"
+"Αρχικό κείμενο τρέχουσας εντολής: '%3'\n"
+
+#: debugsession.cpp:1342
+msgid "Debugger status"
+msgstr "Κατάσταση debugger"
+
+#: debugsession.cpp:1445
+#, kde-format
+msgid "<b>You need gdb 7.0.0 or higher.</b><br />You are using: %1"
+msgstr "<b>Απαιτείται gdb 7.0.0 ή μεταγενέστερο.</b><br />Χρησιμοποιείτε: %1"
+
+#: debugsession.cpp:1447
+msgid "gdb error"
+msgstr "Σφάλμα gdb"
+
+#: debugsession.cpp:1458
+msgid "<b>Could not start debugger:</b><br />"
+msgstr "<b>Αδυναμία εκκίνησης του debugger:</b><br />"
+
+#: debugsession.cpp:1460 debugsession.cpp:1472
+msgid "Startup error"
+msgstr "Σφάλμα εκκίνησης"
+
+#: debugsession.cpp:1470
+msgid "<b>Could not attach debugger:</b><br />"
+msgstr "<b>Αδυναμία εκκίνησης του debugger</b><br />"
+
+#: disassemblewidget.cpp:66
+msgid "Address Selector"
+msgstr "Διεύθυνση επιλογέα"
+
+#: disassemblewidget.cpp:106
+msgid "Change &address"
+msgstr "Αλλαγή &διεύθυνσης"
+
+#: disassemblewidget.cpp:110
+msgid "&Jump to Cursor"
+msgstr ""
+
+#: disassemblewidget.cpp:111
+msgid "Sets the execution pointer to the current cursor position."
+msgstr ""
+
+#: disassemblewidget.cpp:114
+msgid "&Run to Cursor"
+msgstr ""
+
+#: disassemblewidget.cpp:115
+msgid "Continues execution until the cursor position is reached."
+msgstr ""
+
+#: disassemblewidget.cpp:155
+msgid ""
+"<b>Machine code display</b><p>A machine code view into your running "
+"executable with the current instruction highlighted. You can step "
+"instruction by instruction using the debuggers toolbar buttons of \"step over"
+"\" instruction and \"step into\" instruction."
+msgstr ""
+"<b>Εμφάνιση του κώδικα μηχανής</b><p>Μια προβολή του κώδικα μηχανής του "
+"τρέχοντος εκτελούμενου αρχείου με την τρέχουσα εντολή τονισμένη. Μπορείτε να "
+"κάνετε βήματα ανά εντολή χρησιμοποιώντας τα κουμπιά της γραμμής εργαλείων "
+"του debugger \"βήμα πάνω\" από εντολή και \"βήμα μέσα\" στην εντολή."
+
+#: disassemblewidget.cpp:169
+msgid "Address"
+msgstr "Διεύθυνση"
+
+#: disassemblewidget.cpp:169
+msgid "Function"
+msgstr "Συνάρτηση"
+
+#: disassemblewidget.cpp:169
+msgid "Instruction"
+msgstr "Τελεστής"
+
+#: disassemblewidget.cpp:188
+#, fuzzy
+#| msgid "Disassemble View"
+msgid "Disassemble/Registers View"
+msgstr "Προβολή τελεστών μηχανής"
+
+#: gdb.cpp:104
+#, kde-format
+msgid "Could not locate the debugging shell '%1'."
+msgstr "Αδυναμία εντοπισμού του φλοιού διόρθωσης '%1'."
+
+#: gdb.cpp:105
+msgid "Debugging Shell Not Found"
+msgstr "Το κέλυφος αποσφαλμάτωσης δε βρέθηκε"
+
+#: gdb.cpp:351
+msgctxt "<b>Internal debugger error</b>"
+msgid ""
+"<p>The debugger component encountered internal error while processing reply "
+"from gdb. Please submit a bug report."
+msgstr ""
+"<p>Το συστατικό debugger εμφανίστηκε εσωτερικό σφάλμα κατά την επεξεργασία "
+"της απάντησης από το gdb. Παρακαλώ υποβάλετε μια αναφορά σφάλματος."
+
+#: gdb.cpp:353
+#, kde-format
+msgid ""
+"The exception is: %1\n"
+"The MI response is: %2"
+msgstr ""
+"Η εξαίρεση είναι: %1\n"
+"Η απάντηση MI είναι: %2"
+
+#: gdb.cpp:356
+msgid "Internal debugger error"
+msgstr "Εσωτερικό σφάλμα debugger"
+
+#: gdb.cpp:408
+#, kde-format
+msgid ""
+"<b>Could not start debugger.</b><p>Could not run '%1'. Make sure that the "
+"path name is specified correctly."
+msgstr ""
+"<b>Αδυναμία εκκίνησης του debugger.</b><p>Αδυναμία εκτέλεσης του '%1'. "
+"Σιγουρευτείτε ότι δώσατε τη διαδρομή και το όνομα σωστά."
+
+#: gdb.cpp:412
+msgid "Could not start debugger"
+msgstr "Αδυναμία εκκίνησης του debugger"
+
+#: gdb.cpp:429
+msgid ""
+"<b>Gdb crashed.</b><p>Because of that the debug session has to be ended."
+"<br>Try to reproduce the crash with plain gdb and report a bug.<br>"
+msgstr ""
+"<b>Το Gdb κατέρρευσε.</b><p>Εξαιτίας αυτού η συνεδρία εντοπισμού σφαλμάτων "
+"πρέπει να τερματιστεί.<br>Προσπαθήστε να αναπαραγάγετε την κατάρρευση με "
+"απλό gdb και στείλτε αναφορά σφάλματος.<br>"
+
+#: gdb.cpp:432
+msgid "Gdb crashed"
+msgstr "Το gdb κατέρρευσε"
+
+#: gdblaunchconfig.cpp:114
+msgid "GDB Configuration"
+msgstr "Διαμόρφωση GDB"
+
+#: gdblaunchconfig.cpp:171
+msgid "Executes a Native application in GDB"
+msgstr "Εκτελεί μια εγγενή εφαρμογή στο GDB"
+
+#: gdboutputwidget.cpp:68
+msgid "GDB Output"
+msgstr "Έξοδος GDB"
+
+#: gdboutputwidget.cpp:69
+msgid ""
+"<b>GDB output</b><p>Shows all gdb commands being executed. You can also "
+"issue any other gdb command while debugging.</p>"
+msgstr ""
+"<b>Έξοδος GDB</b><p>Εμφανίζει όλες τις εντολές gdb που εκτελούνται. Μπορείτε "
+"επίσης να καλέσετε οποιαδήποτε άλλη εντολή gdb κατά την αποσφαλμάτωση.</p>"
+
+#: gdboutputwidget.cpp:78
+msgid "&GDB cmd:"
+msgstr "ε&ντολή GDB:"
+
+#: gdboutputwidget.cpp:83
+msgid "Pause execution of the app to enter gdb commands"
+msgstr "Παύση εκτέλεσης της εφαρμογής για εισαγωγή gdb εντολών"
+
+#: gdboutputwidget.cpp:395 gdboutputwidget.cpp:445
+msgid "Show Internal Commands"
+msgstr "Εμφάνιση εσωτερικών εντολών"
+
+#: gdboutputwidget.cpp:402 gdboutputwidget.cpp:452
+msgid ""
+"Controls if commands issued internally by KDevelop will be shown or not."
+"<br>This option will affect only future commands, it will not add or remove "
+"already issued commands from the view."
+msgstr ""
+"Ελέγχει αν οι εντολές που εκτελούνται εσωτερικά από το KDevelop θα "
+"εμφανίζονται ή όχι.<br>Αυτή η εντολή έχει αποτέλεσμα μόνο στις μελλοντικές "
+"εντολές, δε θα προσθέσει ή αφαιρέσει εκτελεσμένες εντολές από την προβολή."
+
+#: gdboutputwidget.cpp:407
+msgid "Copy All"
+msgstr "Αντιγραφή όλων"
+
+#. i18n: ectx: Menu (run)
+#: kdevgdbui.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Εκτέλεση"
+
+#. i18n: ectx: ToolBar (debugToolBar)
+#: kdevgdbui.rc:16
+msgid "Debugger Toolbar"
+msgstr "Γραμμή εργαλείων debugger"
+
+#: memviewdlg.cpp:80
+msgid "Start"
+msgstr "Αρχή"
+
+#: memviewdlg.cpp:86
+msgid "Amount"
+msgstr "Ποσότητα"
+
+#: memviewdlg.cpp:125
+msgid "Memory view"
+msgstr "Προβολή μνήμης"
+
+#: memviewdlg.cpp:268
+#, kde-format
+msgid "%2 (1 byte)"
+msgid_plural "%2 (%1 bytes)"
+msgstr[0] "%2 (1 byte)"
+msgstr[1] "%2 (%1 bytes)"
+
+#: memviewdlg.cpp:315
+#, fuzzy
+#| msgid "Reload"
+msgid "&Reload"
+msgstr "Επαναφόρτωση"
+
+#: memviewdlg.cpp:324
+msgid "&Format"
+msgstr ""
+
+#: memviewdlg.cpp:327
+msgid "&Binary"
+msgstr ""
+
+#: memviewdlg.cpp:332
+msgid "&Octal"
+msgstr ""
+
+#: memviewdlg.cpp:337
+msgid "&Decimal"
+msgstr ""
+
+#: memviewdlg.cpp:342
+msgid "&Hexadecimal"
+msgstr ""
+
+#: memviewdlg.cpp:358
+msgid "&Grouping"
+msgstr ""
+
+#: memviewdlg.cpp:361
+msgid "&0"
+msgstr ""
+
+#: memviewdlg.cpp:366
+msgid "&1"
+msgstr ""
+
+#: memviewdlg.cpp:371
+msgid "&2"
+msgstr ""
+
+#: memviewdlg.cpp:376
+msgid "&4"
+msgstr ""
+
+#: memviewdlg.cpp:381
+msgid "&8"
+msgstr ""
+
+#: memviewdlg.cpp:386
+msgid "1&6"
+msgstr ""
+
+#: memviewdlg.cpp:401
+msgid "Write changes"
+msgstr ""
+
+#: memviewdlg.cpp:405
+msgid "Change memory range"
+msgstr "Τροποποίηση εύρους μνήμης"
+
+#: memviewdlg.cpp:409
+msgid "Close this view"
+msgstr "Κλείσιμο αυτής της προβολής"
+
+#: memviewdlg.cpp:478
+#, fuzzy
+#| msgid "Memory view"
+msgid "Memory viewer"
+msgstr "Προβολή μνήμης"
+
+#: memviewdlg.cpp:482
+#, fuzzy
+#| msgid "Memory view"
+msgid "New memory viewer"
+msgstr "Προβολή μνήμης"
+
+#: memviewdlg.cpp:483
+msgctxt "@info:tooltip"
+msgid "Open a new memory viewer."
+msgstr ""
+
+#: processselection.cpp:38
+msgid "Attach to a process"
+msgstr "Πρόσδεση σε μια διεργασία"
+
+#: registers/converters.cpp:31
+msgid "Binary"
+msgstr ""
+
+#: registers/converters.cpp:31
+msgid "Octal"
+msgstr ""
+
+#: registers/converters.cpp:31
+msgid "Decimal"
+msgstr ""
+
+#: registers/converters.cpp:31
+msgid "Hexadecimal"
+msgstr ""
+
+#: registers/converters.cpp:31
+msgid "Raw"
+msgstr ""
+
+#: registers/converters.cpp:31
+msgid "Unsigned"
+msgstr ""
+
+#: registers/registercontroller_arm.cpp:107
+#: registers/registercontroller_x86.cpp:107
+msgid "General"
+msgstr ""
+
+#: registers/registercontroller_arm.cpp:107
+#: registers/registercontroller_x86.cpp:107
+msgid "Flags"
+msgstr ""
+
+#: registers/registercontroller_arm.cpp:107
+msgid "VFP single-word"
+msgstr ""
+
+#: registers/registercontroller_arm.cpp:107
+msgid "VFP double-word"
+msgstr ""
+
+#: registers/registercontroller_arm.cpp:107
+msgid "VFP quad-word"
+msgstr ""
+
+#: registers/registercontroller_x86.cpp:107
+msgid "FPU"
+msgstr ""
+
+#: registers/registercontroller_x86.cpp:107
+msgid "XMM"
+msgstr ""
+
+#: registers/registercontroller_x86.cpp:107
+msgid "Segment"
+msgstr ""
+
+#: registers/registersview.cpp:68
+msgid "Format"
+msgstr ""
+
+#: registers/registersview.cpp:77
+msgid "Mode"
+msgstr ""
+
+#: registers/registersview.cpp:213
+msgid "Update"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SelectAddress)
+#: selectaddress.ui:20
+msgid "Address selector"
+msgstr "Διεύθυνση επιλογέα"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, SelectAddress)
+#: selectaddress.ui:23
+msgid "Select the address to disassemble around"
+msgstr "Επιλογή της διεύθυνσης για αποσυναρμολόγηση"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: selectaddress.ui:29
+msgid "Select address to disassemble around"
+msgstr "Επιλογή της διεύθυνσης για αποσυναρμολόγηση"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: selectcore.ui:17
+msgid "Executable:"
+msgstr "Εκτελέσιμο:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: selectcore.ui:27
+msgid "Core File:"
+msgstr "Αρχείο πυρήνα:"
+
+#: selectcoredialog.cpp:32
+msgid "Select Core File"
+msgstr "Επιλογή αρχείου πυρήνα"
+
+#: stty.cpp:247
+#, fuzzy
+#| msgid ""
+#| "GDB cannot use the tty* or pty* devices.\n"
+#| "Check the settings on /dev/tty* and /dev/pty*\n"
+#| "As root you may need to \"chmod ug+rw\" tty* and pty* devices and/or add "
+#| "the user to the tty group using \"usermod -G tty username\"."
+msgid ""
+"Cannot use the tty* or pty* devices.\n"
+"Check the settings on /dev/tty* and /dev/pty*\n"
+"As root you may need to \"chmod ug+rw\" tty* and pty* devices and/or add the "
+"user to the tty group using \"usermod -aG tty username\"."
+msgstr ""
+"Το GDB δεν μπορεί να χρησιμοποιήσει τις συσκευές tty* ή pty*.\n"
+"Ελέγξτε τις ρυθμίσεις στις /dev/tty* και /dev/pty*\n"
+"Ως βασικός χρήστης (root) ίσως χρειαστεί να εκτελέσετε την \"chmod ug+rw\" "
+"tty* και στις συσκευές pty* και/ή να προσθέσετε το χρήστη στην ομάδα tty "
+"χρησιμοποιώντας την \"usermod -G tty όνομα χρήστη\"."
+
+#: stty.cpp:296
+#, kde-format
+msgid "%1 is incorrect terminal name"
+msgstr ""
+
+#: stty.cpp:302
+msgid "Can't create a temporary file"
+msgstr ""
+
+#: stty.cpp:341
+#, kde-format
+msgid ""
+"Can't receive %1 tty/pty. Check that %1 is actually a terminal and that it "
+"accepts these arguments: -e sh -c \"tty> %2 ;exec<&-;exec>&-;while :;do "
+"sleep 3600;done\""
+msgstr ""

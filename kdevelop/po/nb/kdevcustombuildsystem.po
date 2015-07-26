@@ -1,0 +1,201 @@
+# Translation of kdevcustombuildsystem to Norwegian Bokmål
+#
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2012-11-25 19:00+0100\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Bjørn Steensrud"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bjornst@skogkatt.homelinux.org"
+
+#: configwidget.cpp:40
+msgid "Build"
+msgstr "Bygg"
+
+#: configwidget.cpp:41
+msgid "Configure"
+msgstr "Sett opp"
+
+#: configwidget.cpp:42
+msgid "Install"
+msgstr "Installer"
+
+#: configwidget.cpp:43
+msgid "Clean"
+msgstr "Rydd opp"
+
+#: configwidget.cpp:44
+msgid "Prune"
+msgstr "Beskjær"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: configwidget.ui:19
+msgid "Build Directory:"
+msgstr "Byggemappe:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, buildDir)
+#: configwidget.ui:27
+msgid ""
+"Select the directory where the tools are being executed in.\n"
+"If this is the same as the source directory you can leave it empty."
+msgstr ""
+"Velg mappa hvor verktøyene kjøres.\n"
+"Hvis dette er den samme som kildemappa kan du la det være tomt."
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, buildDir)
+#: configwidget.ui:33
+msgid "The directory where the tools are executed"
+msgstr "Mappa der verktøyene kjøres"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configwidget.ui:45
+msgid "Build Tools"
+msgstr "Byggeverktøy"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configwidget.ui:51
+msgid "Action:"
+msgstr "Handling:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: configwidget.ui:61
+msgid "Enable:"
+msgstr "Slå på:"
+
+#. i18n: ectx: property (text), widget (QLabel, execLabel)
+#: configwidget.ui:78
+msgid "Executable:"
+msgstr "Kjørbar fil:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, actionExecutable)
+#: configwidget.ui:88
+msgid ""
+"This is the executable that should be executed when selecting the action "
+"from the Project menu"
+msgstr ""
+"Dette er programmet som skal kjøres når handlingen velges fra Prosjekt-menyen"
+
+#. i18n: ectx: property (text), widget (QLabel, argLabel)
+#: configwidget.ui:98
+msgid "Arguments:"
+msgstr "Argumenter:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, actionArguments)
+#: configwidget.ui:108
+msgid "The arguments that the tool needs to execute properly."
+msgstr "Argumentene som verktøyet trenger for å kjøre ordentlig."
+
+#. i18n: ectx: property (text), widget (QLabel, envLabel)
+#: configwidget.ui:118
+msgid "Environment:"
+msgstr "Miljø:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, actionEnvironment)
+#: configwidget.ui:128
+msgid "Choose a pre-configured environment for your tool"
+msgstr "Velg et forhåndsoppsatt miljø for verktøyet ditt"
+
+#: custombuildjob.cpp:50
+msgid "Building:"
+msgstr "Bygger:"
+
+#: custombuildjob.cpp:54
+msgid "Cleaning:"
+msgstr "Rydder opp:"
+
+#: custombuildjob.cpp:58
+msgid "Installing:"
+msgstr "Installerer:"
+
+#: custombuildjob.cpp:62
+msgid "Configuring:"
+msgstr "Setter opp:"
+
+#: custombuildjob.cpp:66
+msgid "Pruning:"
+msgstr "Beskjærer:"
+
+#: custombuildjob.cpp:90
+msgid "Undefined Build type"
+msgstr "Udefinert byggetype"
+
+#: custombuildjob.cpp:94
+msgid "No command given"
+msgstr "Ingen kommando gitt"
+
+#: custombuildjob.cpp:98
+msgid "This command is disabled"
+msgstr "Denne kommandoen er slått av"
+
+#: custombuildjob.cpp:109
+msgid ""
+"The given arguments would need a real shell, this is not supported currently."
+msgstr ""
+"De gitte argumentene vil trenge et ordentlig skall, dette er det ikke støtte "
+"for nå."
+
+#: custombuildjob.cpp:154
+msgid "Failed to start command."
+msgstr "Klarte ikke å starte kommando."
+
+#: custombuildjob.cpp:157
+msgid "Command crashed."
+msgstr "Kommandoen krasjet."
+
+#: custombuildjob.cpp:160
+msgid "Unknown error executing command."
+msgstr "Ukjent feil ved kjøring av kommando."
+
+#: custombuildjob.cpp:177
+msgid "*** Failed ***"
+msgstr "*** Mislykket ***"
+
+#: custombuildjob.cpp:179
+msgid "*** Finished ***"
+msgstr "*** Ferdig ***"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: custombuildsystemconfigwidget.ui:19
+msgid "Build Configuration:"
+msgstr "Byggeoppsett:"
+
+#. i18n: ectx: property (text), widget (KPushButton, addConfig)
+#: custombuildsystemconfigwidget.ui:42
+msgid "Add"
+msgstr "Legg til"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeConfig)
+#: custombuildsystemconfigwidget.ui:49
+msgid "Remove"
+msgstr "Fjern"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Custom Build System"
+msgstr "Egendefinert byggesystem"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Support for building and managing custom build systems"
+msgstr "Støtte for å bygge og håndtere tilpassede byggesystemer"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+msgstr "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"

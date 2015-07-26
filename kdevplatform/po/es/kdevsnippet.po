@@ -1,0 +1,321 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2009, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevsnippet\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-11-07 21:30+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: legacy/editrepository.cpp:75 legacy/editrepository.cpp:117
+#, kde-format
+msgid "Edit Snippet Repository %1"
+msgstr "Editar el repositorio de fragmentos %1"
+
+#: legacy/editrepository.cpp:77
+msgid "Create New Snippet Repository"
+msgstr "Crear nuevo repositorio de fragmentos"
+
+#: legacy/editrepository.cpp:127
+msgid "<i>leave empty for general purpose snippets</i>"
+msgstr "<i>dejar en blanco para fragmentos de propósito general</i>"
+
+#. i18n: ectx: property (text), widget (QLabel, repoNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, snippetName)
+#: legacy/editrepository.ui:29 legacy/editsnippet.ui:41
+msgid "&Name:"
+msgstr "&Nombre:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, repoNameEdit)
+#: legacy/editrepository.ui:39
+msgid ""
+"The name of the repository. Must not be empty or contain forward slashes (/)."
+msgstr ""
+"El nombre del repositorio. No debe estar vacío ni contener barras oblicuas "
+"(/)."
+
+#. i18n: ectx: property (text), widget (QLabel, repoNamespaceLabel)
+#: legacy/editrepository.ui:46
+msgid "Na&mespace:"
+msgstr "Espacio de no&mbres:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, repoNamespaceEdit)
+#: legacy/editrepository.ui:57
+msgid ""
+"<p>If non-empty this will be used as a prefix for all snippets in this "
+"repository during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Si no está vacío, esto se usará como prefijo para todos los fragmentos de "
+"este repositorio durante la terminación de código.</p>\n"
+"<p><b>Nota:</b> no se permiten espacios.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, repoLicenseLabel)
+#: legacy/editrepository.ui:64
+msgid "&License:"
+msgstr "&Licencia:"
+
+#. i18n: ectx: property (text), widget (QLabel, repoAuthorsLabel)
+#: legacy/editrepository.ui:77
+msgid "&Authors:"
+msgstr "&Autores:"
+
+#. i18n: ectx: property (text), widget (QLabel, repoFileTypesLabel)
+#: legacy/editrepository.ui:90
+msgid "&File types:"
+msgstr "&Tipos de archivos:"
+
+#: legacy/editsnippet.cpp:51
+msgid "Show Documentation"
+msgstr "Mostrar documentación"
+
+#: legacy/editsnippet.cpp:104 legacy/editsnippet.cpp:184
+#, kde-format
+msgid "Edit Snippet %1 in %2"
+msgstr "Editar fragmento %1 en %2"
+
+#: legacy/editsnippet.cpp:117
+#, kde-format
+msgid "Create New Snippet in Repository %1"
+msgstr "Crear nuevo fragmento en el repositorio %1"
+
+#: legacy/editsnippet.cpp:149
+msgid "Snippet name cannot contain spaces"
+msgstr "El nombre del fragmento no debe contener espacios"
+
+#: legacy/editsnippet.cpp:201
+msgid ""
+"The snippet contains unsaved changes. Do you want to continue and lose all "
+"changes?"
+msgstr ""
+"El fragmento contiene cambios sin guardar. ¿Desea continuar y perder todos "
+"los cambios?"
+
+#: legacy/editsnippet.cpp:202
+msgid "Warning - Unsaved Changes"
+msgstr "Advertencia: cambios sin guardar"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetNameEdit)
+#: legacy/editsnippet.ui:52
+msgid ""
+"<p>The name will also be used as the identifier during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>El nombre también se usará como identificador durante la terminación de "
+"código.</p>\n"
+"<p><b>Nota:</b> no se permiten espacios.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, snippetPrefixLabel)
+#: legacy/editsnippet.ui:59
+msgid "Display &Prefix:"
+msgstr "Mostrar &prefijo:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetPrefixEdit)
+#: legacy/editsnippet.ui:69
+msgid "The display prefix will be shown during code completion."
+msgstr "El prefijo que se mostrará durante la terminación de código."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetArgumentsLabel)
+#: legacy/editsnippet.ui:76
+msgid "Display &Arguments:"
+msgstr "Mostrar &argumentos:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetArgumentsEdit)
+#: legacy/editsnippet.ui:86
+msgid "The arguments will be shown during code completion."
+msgstr "Los argumentos que se mostrarán durante la terminación de código."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetPostfixLabel)
+#: legacy/editsnippet.ui:93
+msgid "Display P&ostfix:"
+msgstr "M&ostrar sufijo:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetPostfixEdit)
+#: legacy/editsnippet.ui:103
+msgid "The postfix will be shown during code completion."
+msgstr "El sufijo que se mostrará durante la terminación de código."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetShortcutLabel)
+#: legacy/editsnippet.ui:110
+msgid "Shortcut:"
+msgstr "Acceso rápido:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, snippetTab)
+#: legacy/editsnippet.ui:126
+msgid "&Snippet"
+msgstr "&Fragmento"
+
+#. i18n: ectx: attribute (title), widget (QWidget, scriptTab)
+#: legacy/editsnippet.ui:131
+msgid "S&cripts"
+msgstr "S&cripts"
+
+#. i18n: ectx: Menu (edit)
+#: legacy/kdevsnippet.rc:4
+msgid "&Edit"
+msgstr "&Editar"
+
+#: legacy/snippet.cpp:27
+msgid "<empty snippet>"
+msgstr "<fragmento vacío>"
+
+#: legacy/snippet.cpp:89
+#, kde-format
+msgid "insert snippet %1"
+msgstr "insertar fragmento %1"
+
+#: legacy/snippetcompletionmodel.cpp:52 legacy/snippetview.cpp:38
+#: legacy/snippetview.cpp:148 snippetplugin.cpp:45 snippetplugin.cpp:104
+msgid "Snippets"
+msgstr "Fragmentos"
+
+#: legacy/snippetrepository.cpp:40
+msgid "<empty repository>"
+msgstr "<repositorio vacío>"
+
+#: legacy/snippetrepository.cpp:219
+msgid ""
+"You have edited a data file not located in your personal data directory; as "
+"such, a renamed clone of the original data file has been created within your "
+"personal data directory."
+msgstr ""
+"Ha editado un archivo de datos situado fuera de su directorio de datos, por "
+"lo que se ha creado una copia del archivo de datos original con el nombre "
+"cambiado en su directorio de datos personal."
+
+#: legacy/snippetrepository.cpp:224
+#, kde-format
+msgid "Output file '%1' could not be opened for writing"
+msgstr "El archivo de salida «%1» no se puede abrir para escritura"
+
+#: legacy/snippetrepository.cpp:253
+#, kde-format
+msgid "Cannot open snippet repository %1."
+msgstr "No se puede abrir el repositorio de fragmentos %1."
+
+#: legacy/snippetrepository.cpp:265
+#, kde-format
+msgid ""
+"<qt>The error <b>%4</b><br /> has been detected in the file %1 at %2/%3</qt>"
+msgstr ""
+"<qt>Se ha detectado el error <b>%4</b><br /> en el archivo %1, en %2/%3</qt>"
+
+#: legacy/snippetrepository.cpp:273
+#, kde-format
+msgid "Invalid XML snippet file: %1"
+msgstr "Archivo de fragmentos XML no válido: %1"
+
+#: legacy/snippetrepository.cpp:340
+msgid ""
+"Repository is disabled, the contained snippets will not be shown during code-"
+"completion."
+msgstr ""
+"El repositorio está desactivado, por lo que los fragmentos que contiene no "
+"se mostrarán durante la terminación de código."
+
+#: legacy/snippetrepository.cpp:343
+msgid "Applies to all filetypes"
+msgstr "Se aplica a todos los tipos de archivos"
+
+#: legacy/snippetrepository.cpp:345
+#, kde-format
+msgid "Applies to the following filetypes: %1"
+msgstr "Se aplica a los siguientes tipos de archivos: %1"
+
+#: legacy/snippetview.cpp:59
+msgid "Add Repository"
+msgstr "Añadir repositorio"
+
+#: legacy/snippetview.cpp:62
+msgid "Edit Repository"
+msgstr "Editar repositorio"
+
+#: legacy/snippetview.cpp:65
+msgid "Remove Repository"
+msgstr "Eliminar repositorio"
+
+#: legacy/snippetview.cpp:69
+msgid "Publish Repository"
+msgstr "Publicar repositorio"
+
+#: legacy/snippetview.cpp:77
+msgid "Add Snippet"
+msgstr "Añadir fragmento"
+
+#: legacy/snippetview.cpp:80
+msgid "Edit Snippet"
+msgstr "Editar fragmento"
+
+#: legacy/snippetview.cpp:83
+msgid "Remove Snippet"
+msgstr "Eliminar fragmento"
+
+#: legacy/snippetview.cpp:89
+msgid "Get New Snippets"
+msgstr "Obtener nuevos fragmentos"
+
+#: legacy/snippetview.cpp:156
+#, kde-format
+msgid "Snippet: %1"
+msgstr "Fragmento: %1"
+
+#: legacy/snippetview.cpp:164
+#, kde-format
+msgid "Repository: %1"
+msgstr "Repositorio: %1"
+
+#: legacy/snippetview.cpp:224
+#, kde-format
+msgid "Do you really want to delete the snippet \"%1\"?"
+msgstr "¿Realmente desea borrar el fragmento «%1»?"
+
+#: legacy/snippetview.cpp:264
+#, kde-format
+msgid ""
+"Do you really want to delete the repository \"%1\" with all its snippets?"
+msgstr "¿Realmente desea borrar el repositorio «%1» con todos sus fragmentos?"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, filterText)
+#: legacy/snippetview.ui:35
+msgid "Define filter here"
+msgstr "Definir filtro aquí"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, filterText)
+#: legacy/snippetview.ui:38
+msgid "Filter..."
+msgstr "Filtro..."
+
+#: snippetplugin.cpp:45
+msgid ""
+"This plugin allows to store code snippets and insert them into open files"
+msgstr ""
+"Este complemento permite almacenar fragmentos de código e insertarlos en "
+"archivos abiertos"
+
+#: snippetplugin.cpp:180
+msgid "Create Snippet"
+msgstr "Crear fragmento"
+
+#: snippetplugin.cpp:218
+#, kde-format
+msgctxt "Autogenerated repository name for a programming language"
+msgid "%1 snippets"
+msgstr "%1 fragmentos"

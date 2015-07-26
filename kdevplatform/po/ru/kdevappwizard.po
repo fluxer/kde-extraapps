@@ -1,0 +1,212 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Николай Ерёмин <doktorkster@gmail.com>, 2009.
+# Ерёмин Николай <doktorkster@gmail.com>, 2009.
+# Nick Shaforostoff <shaforostoff@kde.ru>, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2010.
+# Alexander Lakhin <exclusion@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevappwizard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-08-23 12:21+0400\n"
+"Last-Translator: Alexander Lakhin <exclusion@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ерёмин Николай"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "doktorkster@gmail.com"
+
+#: appwizarddialog.cpp:27
+msgid "Create New Project"
+msgstr "Создание нового проекта"
+
+#: appwizarddialog.cpp:35
+msgctxt "Page for general configuration options"
+msgid "General"
+msgstr "Основное"
+
+#: appwizarddialog.cpp:37
+msgctxt "Page for version control options"
+msgid "Version Control"
+msgstr "Управление версиями"
+
+#: appwizardplugin.cpp:70
+msgid "Project Wizard"
+msgstr "Мастер проектов"
+
+#: appwizardplugin.cpp:70
+msgid "Support for creating and importing projects"
+msgstr "Поддержка создания и импорта проектов"
+
+#: appwizardplugin.cpp:81
+msgid "New From Template..."
+msgstr "Создать из шаблона..."
+
+#: appwizardplugin.cpp:83
+msgid "Generate a new project from a template"
+msgstr "Создать новый проект из шаблона"
+
+#: appwizardplugin.cpp:84
+#, fuzzy
+#| msgid ""
+#| "<b>New project</b><p>This starts KDevelop's application wizard. It helps "
+#| "you to generate a skeleton for your application from a set of templates.</"
+#| "p>"
+msgid ""
+"This starts KDevelop's application wizard. It helps you to generate a "
+"skeleton for your application from a set of templates."
+msgstr ""
+"<b>Новый проект</b><p>Запущенный мастер создания приложений KDevelop поможет "
+"вам сформировать каркас приложения из набора шаблонов.</p>"
+
+#: appwizardplugin.cpp:114
+msgid "Could not create project from template\n"
+msgstr "Не удалось создать проект из шаблона\n"
+
+#: appwizardplugin.cpp:114
+msgid "Failed to create project"
+msgstr "Ошибка создания проекта"
+
+#: appwizardplugin.cpp:140
+msgid "Please see the Version Control toolview"
+msgstr ""
+
+#: appwizardplugin.cpp:142
+#, fuzzy
+#| msgid "Version Control System:"
+msgid "Version Control System Error"
+msgstr "Система управления версиями:"
+
+#: appwizardplugin.cpp:158
+msgid "Could not initialize DVCS repository"
+msgstr "Не удалось инициализировать репозиторий DVCS"
+
+#: appwizardplugin.cpp:166
+msgid "Could not add files to the DVCS repository"
+msgstr "Не удалось добавить файлы в репозиторий DVCS"
+
+#: appwizardplugin.cpp:173
+#, kde-format
+msgid "Could not import project into %1."
+msgstr "Не удалось импортировать проект в %1."
+
+#: appwizardplugin.cpp:190
+msgid "Could not import project"
+msgstr "Не удалось импортировать проект"
+
+#: appwizardplugin.cpp:198
+msgid "Could not checkout imported project"
+msgstr "Не удалось получить импортированный проект из репозитория"
+
+#: appwizardplugin.cpp:280
+msgid "Could not create new project"
+msgstr "Не удалось создать новый проект"
+
+#: appwizardplugin.cpp:406
+#, kde-format
+msgid "The file %1 cannot be created."
+msgstr "Файл %1 не может быть создан."
+
+#: appwizardplugin.cpp:500
+msgid "Project Templates"
+msgstr "Шаблоны проектов"
+
+#. i18n: ectx: Menu (project)
+#: kdevappwizard.rc:5
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Проект"
+
+#: projectselectionpage.cpp:57
+msgid "Category"
+msgstr "Категория"
+
+#: projectselectionpage.cpp:57
+msgid "Project Type"
+msgstr "Тип проекта"
+
+#: projectselectionpage.cpp:68
+msgid "Get More Templates"
+msgstr "Получить другие шаблоны"
+
+#: projectselectionpage.cpp:74
+msgid "Load Template From File"
+msgstr "Загрузить шаблон из файла"
+
+#: projectselectionpage.cpp:182
+msgid "Invalid location"
+msgstr "Недопустимое расположение"
+
+#: projectselectionpage.cpp:190
+msgid "Empty project name"
+msgstr "Пустое имя проекта"
+
+#: projectselectionpage.cpp:212
+msgid "Invalid project name"
+msgstr "Недопустимое имя проекта"
+
+#: projectselectionpage.cpp:231
+#, kde-format
+msgid "Unable to create subdirectories, missing permissions on: %1"
+msgstr "Создать подкаталоги не удалось, нет доступа к %1"
+
+#: projectselectionpage.cpp:247
+msgid "Invalid project template, please choose a leaf item"
+msgstr "Не выбран шаблон проекта. Возможно, выбрана категория."
+
+#: projectselectionpage.cpp:260
+msgid "Path already exists and contains files"
+msgstr "Путь уже существует и содержит файлы"
+
+#: projectselectionpage.cpp:303
+msgid ""
+"The specified path already exists and contains files. Are you sure you want "
+"to proceed?"
+msgstr "Заданный путь уже существует и содержит файлы. Продолжить?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, propertiesBox)
+#: projectselectionpage.ui:26
+msgid "Properties"
+msgstr "Свойства"
+
+#. i18n: ectx: property (text), widget (QLabel, appNameLabel)
+#: projectselectionpage.ui:32
+msgid "Application Name:"
+msgstr "Название приложения:"
+
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: projectselectionpage.ui:42
+msgid "Location:"
+msgstr "Расположение:"
+
+#. i18n: ectx: property (text), widget (KSqueezedTextLabel, locationValidLabel)
+#: projectselectionpage.ui:52
+msgid "KSqueezedTextLabel"
+msgstr "KSqueezedTextLabel"
+
+#: projectvcspage.cpp:42
+msgctxt "No Version Control Support chosen"
+msgid "None"
+msgstr "Нет"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectvcspage.ui:18
+msgid "Version Control System:"
+msgstr "Система управления версиями:"

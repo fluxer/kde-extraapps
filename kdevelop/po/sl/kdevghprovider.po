@@ -1,0 +1,91 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-19 05:48+0000\n"
+"PO-Revision-Date: 2014-07-05 20:12+0200\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Mernik"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrejm@ubuntu.si"
+
+#: ghdialog.cpp:52
+msgid "Log out"
+msgstr "Odjavi se"
+
+#: ghdialog.cpp:56
+msgid "Force sync"
+msgstr "Vsili uskladitev"
+
+#: ghdialog.cpp:61
+msgid "Authorize"
+msgstr "Odobri"
+
+#: ghdialog.cpp:70
+msgid "Github Account"
+msgstr "Račun Github"
+
+#: ghdialog.cpp:76
+msgid "Enter a login and a password"
+msgstr "Vnesite uporabniško ime in geslo"
+
+#: ghdialog.cpp:81 ghdialog.cpp:109 ghproviderwidget.cpp:52
+msgid "Waiting for response"
+msgstr "Čakanje na odgovor"
+
+#: ghdialog.cpp:95
+msgid "Authentication failed! Please, try again"
+msgstr "Overitev ni uspela! Poskusite znova"
+
+#: ghdialog.cpp:124
+msgid "Please, write your password here."
+msgstr "Vnesite svoje geslo."
+
+#: ghproviderplugin.cpp:31
+msgid "Github Provider"
+msgstr "Ponudnik za Github"
+
+#: ghproviderplugin.cpp:31
+msgid "Import projects from Github"
+msgstr "Uvozite projekte iz Githuba"
+
+#: ghproviderplugin.cpp:51
+msgid "Github"
+msgstr "Github"
+
+#: ghproviderwidget.cpp:65
+msgid "Search"
+msgstr "Poišči"
+
+#: ghproviderwidget.cpp:66
+msgid "You can press the Return key if you don't want to wait"
+msgstr "Če ne želite čakati, lahko pritisnete Vračalko"
+
+#: ghproviderwidget.cpp:78
+msgid "Click this button to configure your Github account"
+msgstr "Kliknite ta gumb, da nastavite vaš račun Github"
+
+#: ghproviderwidget.cpp:110
+msgid "User"
+msgstr "Uporabnik"
+
+#: ghproviderwidget.cpp:111
+msgid "Organization"
+msgstr "Organizacija"

@@ -1,0 +1,535 @@
+# translation of kdevformatters.po to Swedish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2008, 2009.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevformatters\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:45+0000\n"
+"PO-Revision-Date: 2013-05-14 17:36+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "Astyle Formatter"
+msgstr "Formatering med Astyle"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "A formatting tool using astyle"
+msgstr "Ett formateringsverktyg som använder Astyle"
+
+#: astyle/astyle_plugin.cpp:65
+msgid ""
+"<b>Artistic Style</b> is a source code indenter, formatter, and beautifier "
+"for the C, C++, C# and Java programming languages.<br />Home Page: <a href="
+"\"http://astyle.sourceforge.net/\">http://astyle.sourceforge.net</a>"
+msgstr ""
+"<b>Artistic style</b> är ett verktyg för indentering, formatering, och "
+"försköning av källkod för programspråken C, C++, C# och Java.<br />Hemsida: "
+"<a href= \"http://astyle.sourceforge.net/\">http://astyle.sourceforge.net</a>"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabIndentqtion)
+#: astyle/astyle_preferences.ui:21
+msgid "Indentation"
+msgstr "Indentering"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:36
+msgctxt "Indentation type"
+msgid "Tabs"
+msgstr "Tabulatortecken"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:41
+msgctxt "Indentation type"
+msgid "Force tabs"
+msgstr "Använd alltid tabulatortecken"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:46
+msgctxt "Indentation type"
+msgid "Spaces"
+msgstr "Mellanslag"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpNuberSpaces)
+#: astyle/astyle_preferences.ui:74
+msgid ""
+"Number of spaces that will be converted to a tab.\n"
+"The number of spaces per tab is controled by the editor."
+msgstr ""
+"Antal mellanslag som konverteras till ett tabulatortecken.\n"
+"Antal mellanslag per tabulatortecken styrs av editorn."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:92
+msgid "Convert tabs to spaces."
+msgstr "Konvertera tabulatortecken till mellanslag."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:95
+msgid "Con&vert tabs into spaces"
+msgstr "Kon&vertera tabulatortecken till mellanslag"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:102
+msgid "Fill empty lines with the white space of their previous lines."
+msgstr "Fyll i tomma rader med blanktecken från föregående rader."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:105
+msgid "Fill empt&y lines"
+msgstr "F&yll tomma rader"
+
+#. i18n: ectx: property (text), widget (QLabel, lblIndentObjects)
+#: astyle/astyle_preferences.ui:127
+msgid "Indent"
+msgstr "Indentera"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBlocks)
+#: astyle/astyle_preferences.ui:144 astyle/astyle_preferences.ui:352
+msgid "Blocks"
+msgstr "Block"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBrackets)
+#: astyle/astyle_preferences.ui:149 astyle/astyle_preferences.ui:269
+msgid "Brackets"
+msgstr "Parenteser"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:154
+msgid "Cases"
+msgstr "Case-satser"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:159
+msgid "Class"
+msgstr "Klass"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:164
+msgid "Labels"
+msgstr "Etiketter"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:169
+msgid "Namespaces"
+msgstr "Namnrymder"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:174
+msgid "Preprocessor directives"
+msgstr "Preprocessordirektiv"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:179
+msgid "Switches"
+msgstr "Switch-satser"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMaxStatement)
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:192 astyle/astyle_preferences.ui:234
+msgid ""
+"Indent a maximal # spaces in a continuous statement,\n"
+"relative to the previous line."
+msgstr ""
+"Indentera maximalt antal mellanslag i en fortsättningssats,\n"
+"relativt föregående rad."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel3_2)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:203 astyle/astyle_preferences.ui:217
+msgid ""
+"Indent a minimal # spaces in a continuous conditional\n"
+"belonging to a conditional header."
+msgstr ""
+"Indentera minimalt antal mellanslag i ett fortsättningsvillkor\n"
+"som tillhör en villkorsdeklaration."
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: astyle/astyle_preferences.ui:206
+msgid "Minimum in conditional:"
+msgstr "Minimum i villkor:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:220
+msgid "Twice current"
+msgstr "Två gånger nuvarande"
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:237
+msgid "Maximum in statement:"
+msgstr "Maximum i sats:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabOther)
+#. i18n: ectx: property (title), widget (QGroupBox, gpOther)
+#: astyle/astyle_preferences.ui:263 astyle/astyle_preferences.ui:521
+msgid "Other"
+msgstr "Övriga"
+
+#. i18n: ectx: property (text), widget (QLabel, lblBrackets)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:283 astyle/astyle_preferences.ui:550
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:297
+msgid ""
+"Break brackets before closing headers (e.g. 'else', 'catch', ...)\n"
+"from their immediately preceding closing brackets."
+msgstr ""
+"Dela krullparenteser innan avslutande deklarationer (t.ex. 'else', "
+"'catch', ...)\n"
+"från deras omedelbart föregående avslutande krullparenteser."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:300
+msgid "Brea&k closing headers"
+msgstr "Dela vid avslutande &deklarationer"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:314 astyle/astyle_preferences.ui:426
+#: astyle/astyle_preferences.ui:535
+msgid "No change"
+msgstr "Ingen ändring"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:319
+msgid "Attach"
+msgstr "Anslut"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:324
+msgid "Break"
+msgstr "Bryt"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:329
+msgid "Linux"
+msgstr "Linux"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:334
+msgid "Stroustrup"
+msgstr "Stroustrup"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:339
+msgid "Run-In"
+msgstr "Kör in"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:367
+msgid ""
+"Insert empty lines around unrelated blocks, labels, classes,...\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Infoga tomma rader omkring block, etiketter, klasser, ... som inte hör "
+"ihop,\n"
+"Kända problem:\n"
+"\n"
+"1. Om en sats INTE ingår i ett block, följs\n"
+"alla efterföljande satser av en tom rad.\n"
+"Satser omgivna av ett block formateras\n"
+"riktigt.\n"
+"\n"
+"2. Kommentarer skiljs från blocket.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:370
+msgctxt "Means break unrelated blocks by a newline"
+msgid "&Break blocks"
+msgstr "Dela &block"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:388
+msgid ""
+"Like --break-blocks, except also insert empty lines \n"
+"around closing headers (e.g. 'else', 'catch', ...).\n"
+"\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Som Dela block, men infogar också tomma rader \n"
+"omkring avslutande deklarationer (t.ex. 'else', 'catch', ...).\n"
+"\n"
+"Kända problem:\n"
+"\n"
+"1. Om en sats INTE ingår i ett block, följs\n"
+"alla efterföljande satser av en tom rad.\n"
+"Satser omgivna av ett block formateras\n"
+"riktigt.\n"
+"\n"
+"2. Kommentarer skiljs från blocket.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:391
+msgctxt "Means break all blocks with a newline"
+msgid "Break all bl&ocks"
+msgstr "Dela alla bl&ock"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:398
+msgid "Break 'else if()' statements into two different lines."
+msgstr "Dela 'else if()'-satser på två skilda rader."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:401
+msgctxt "Means break else if() into separate lines"
+msgid "Break i&f-else"
+msgstr "Dela i&f-else"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpPadding)
+#: astyle/astyle_preferences.ui:411
+msgid "Padding"
+msgstr "Vaddering"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:431
+msgid "Unpad"
+msgstr "Ta bort vaddering"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:436
+msgid "Inside only"
+msgstr "Bara innanför"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:441
+msgid "Outside only"
+msgstr "Bara utanför"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:446
+msgid "Inside and outside"
+msgstr "Innanför och utanför"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:456
+msgid ""
+"Insert space padding around operators.\n"
+"Once padded, operators stay padded.\n"
+"There is no unpad operator option."
+msgstr ""
+"Infoga vadderande mellanslag omkring operatorer.\n"
+"När de väl vadderats, förblir operatorer vadderade. Det\n"
+"finns inget alternativ för att ta bort vaddering av operatorer."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:459
+msgid "&Add spaces around operators"
+msgstr "Lägg till &mellanslag omkring operatorer"
+
+#. i18n: ectx: property (text), widget (QLabel, lblParenthesis)
+#: astyle/astyle_preferences.ui:466
+msgid "Pad parenthesis"
+msgstr "Vaddera parenteser"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:476
+msgid ""
+"Insert space padding after parenthesis headers (e.g. 'if', 'for', "
+"'while', ...)"
+msgstr ""
+"Infoga vaddering med mellanslag efter deklarationsparenteser (t.ex. 'if', "
+"'for', 'while', ...)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:479
+msgid "Add spaces after parenthesis &headers"
+msgstr "Lägg till mellanslag efter &deklarationsparenteser"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpOneLiners)
+#: astyle/astyle_preferences.ui:491
+msgid "One liners"
+msgstr "Enrader"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:498
+msgid ""
+"Do not break lines containing multiple statements into\n"
+"multiple single-statement lines."
+msgstr ""
+"Bryt inte rader som innehåller flera satser till\n"
+"flera enskilda rader med en sats vardera."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:501
+msgid "&Keep one-line statements"
+msgstr "Behåll enrads&satser"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:508
+msgid "Do not break blocks residing completely on one line."
+msgstr "Bryt inte block som helt och hållet får plats på en rad."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:511
+msgid "Keep o&ne-line blocks"
+msgstr "Behåll enrads&block"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPointerAlign)
+#: astyle/astyle_preferences.ui:527
+msgid "Pointer Alignment"
+msgstr "Pekarjustering"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:540
+msgid "Name"
+msgstr "Namn"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:545
+msgid "Middle"
+msgstr "Mitten"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "Custom Script Formatter"
+msgstr "Formatering med eget skript"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "A formatter using custom scripts"
+msgstr "Ett formateringsverktyg som använder skript"
+
+#: customscript/customscript_plugin.cpp:99
+msgid ""
+"<b>Indent and Format Source Code.</b><br />This plugin allows using powerful "
+"external formatting tools that can be invoked through the command-line.<br /"
+">For example, the <b>uncrustify</b>, <b>astyle</b> or <b>indent</b> "
+"formatters can be used.<br />The advantage of command-line formatters is "
+"that formatting configurations can be easily shared by all team members, "
+"independent of their preferred IDE."
+msgstr ""
+"<b>Indentera och formatera källkod.</b><br />Insticksprogrammet tillåter "
+"användning av kraftfulla externa formateringsverktyg som kan startas från "
+"kommandoraden.<br />Exempelvis kan formateringsverktygen <b>uncrustify</b>, "
+"<b>astyle</b> eller <b>indent</b> användas.<br />Fördelen med "
+"formateringsverktyg som använder kommandoraden är att inställningar av "
+"formatering enkelt kan delas av alla gruppmedlemmar, oberoende av vilken "
+"integrerad utvecklingsmiljö de föredrar."
+
+#: customscript/customscript_plugin.cpp:242
+msgid "Gnu Indent: GNU"
+msgstr "Gnu Indent: GNU"
+
+#: customscript/customscript_plugin.cpp:245
+msgid "Gnu Indent: Kernighan & Ritchie"
+msgstr "Gnu Indent: Kernighan & Ritchie"
+
+#: customscript/customscript_plugin.cpp:248
+msgid "Gnu Indent: Original Berkeley indent style"
+msgstr "GNU Indent: Ursprunglig Berkeley-indenteringsstil"
+
+#: customscript/customscript_plugin.cpp:254
+msgid ""
+"Description:<br /><b>kdev_format_source</b> is a script bundled with "
+"KDevelop which allows using fine-grained formatting rules by placing meta-"
+"files called <b>format_sources</b> into the file-system.<br /><br />Each "
+"line of the <b>format_sources</b> files defines a list of wildcards followed "
+"by a colon and the used formatting-command.<br /><br />The formatting-"
+"command should use <b>$TMPFILE</b> to reference the temporary file to "
+"reformat.<br /><br />Example:<br /><b>*.cpp *.h : myformatter $TMPFILE</"
+"b><br />This will reformat all files ending with <b>.cpp</b> or <b>.h</b> "
+"using the custom formatting script <b>myformatter</b>.<br /><br />Example: "
+"<br /><b>subdir/* : uncrustify -l CPP -f $TMPFILE -c uncrustify.config -o "
+"$TMPFILE</b> <br />This will reformat all files in subdirectory <b>subdir</"
+"b> using the <b>uncrustify</b> tool with the config-file <b>uncrustify."
+"config</b>."
+msgstr ""
+"Beskrivning:<br /><b>kdev_format_source</b> är ett skript som följer med "
+"KDevelop, som gör det möjligt att använda finkorniga formateringsregler "
+"genom att lägga metafiler som kallas <b>format_sources</b> i filsystemet."
+"<br /><br />Varje rad i <b>format_sources</b>-filerna  definierar en lista "
+"med jokertecken följt av ett kolon och det använda formateringskommandot."
+"<br /><br />Formateringskommandot ska använda <b>$TMPFILE</b> för att "
+"referera till den tillfälliga filen som ska formateras om.<br /><br /"
+">Exempel:<br /><b>*.cpp *.h : min-formatering $TMPFILE</b><br />Det "
+"formaterar om alla filer som slutar med <b>.cpp</b> eller <b>.h</b> med det "
+"egna formateringsskriptet <b>min-formatering</b>.<br /><br />Exempel: <br /"
+"><b>underkatalog/* : uncrustify -l CPP -f $TMPFILE -c uncrustify.config -o "
+"$TMPFILE</b> <br />Det formaterar om alla filer i <b>underkatalog</b> med "
+"verktyget <b>uncrustify</b> och inställningsfilen <b>uncrustify.config</b>."
+
+#: customscript/customscript_plugin.cpp:504
+msgid "Command: "
+msgstr "Kommando: "
+
+#: customscript/customscript_plugin.cpp:510
+msgid ""
+"<i>You can enter an arbitrary shell command.</i><br />The unformatted source-"
+"code is reached to the command <br />through the standard input, and the "
+"<br />formatted result is read from the standard output.<br /><br />If you "
+"add <b>$TMPFILE</b> into the command, then <br />a temporary file is used "
+"for transferring the code."
+msgstr ""
+"<i>Ett godtyckligt skalkommando kan anges.</i><br /> Den oformaterade "
+"källkoden skickas till<br />kommandot via standardinmatningen, och det<br /"
+">formaterade resultatet läses från standardutmatningen.<br /><br />Om <b>"
+"$TMPFILE</b> läggs till i kommandot,<br />används en tillfällig fil för att "
+"överföra koden."
+
+#: customscript/customscript_plugin.cpp:521
+msgid "More Variables"
+msgstr "Fler variabler"
+
+#: customscript/customscript_plugin.cpp:531
+#, kde-format
+msgid "Style: %1"
+msgstr "Stil: %1"
+
+#: customscript/customscript_plugin.cpp:544
+msgid ""
+"<b>$TMPFILE</b> will be replaced with the path to a temporary file. <br /"
+">The code will be written into the file, the temporary <br />file will be "
+"substituted into that position, and the result <br />will be read out of "
+"that file. <br /><br /><b>$FILE</b> will be replaced with the path of the "
+"original file. <br />The contents of the file must not be modified, changes "
+"are allowed <br />only in $TMPFILE.<br /><br /><b>${PROJECT_NAME}</b> will "
+"be replaced by the path of <br />the currently open project with the "
+"matching name."
+msgstr ""
+"<b>$TMPFILE</b> ersätts med sökvägen till en tillfällig fil. <br />Koden "
+"skrivs i filen, den tillfälliga filen <br />ersätts på den positionen, och "
+"resultatet <br />läses från den filen.  <br /><br /><b>$FILE</b> ersätts med "
+"sökvägen till den ursprungliga filen. <br />Filens innehåll får inte ändras, "
+"ändringar tillåts <br /> bara i $TMPFILE.<br /><br/><b>${PROJECT_NAME}</b> "
+"ersätts av sökvägen till <br />projektet med matchande namn som för "
+"närvarande är öppet."
+
+#: customscript/customscript_plugin.cpp:556
+msgid "Variable Replacements"
+msgstr "Variabelersättningar"

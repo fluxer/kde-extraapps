@@ -1,0 +1,526 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-23 05:45+0000\n"
+"PO-Revision-Date: 2013-09-18 18:53+0200\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Mernik"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrejm@ubuntu.si"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "Astyle Formatter"
+msgstr "Oblikovalnik Astyle"
+
+#: astyle/astyle_plugin.cpp:37
+msgid "A formatting tool using astyle"
+msgstr "Orodje za oblikovanje z uporabo astyle"
+
+#: astyle/astyle_plugin.cpp:65
+msgid ""
+"<b>Artistic Style</b> is a source code indenter, formatter, and beautifier "
+"for the C, C++, C# and Java programming languages.<br />Home Page: <a href="
+"\"http://astyle.sourceforge.net/\">http://astyle.sourceforge.net</a>"
+msgstr ""
+"<b>Artistic Style</b> je zamikovalnik, oblikovalnik in olepševalnik za "
+"programske jezike C, C++, C# in Java .<br />Domača stran: <a href=\"http://"
+"astyle.sourceforge.net/\">http://astyle.sourceforge.net</a>"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabIndentqtion)
+#: astyle/astyle_preferences.ui:21
+msgid "Indentation"
+msgstr "Zamikanje"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:36
+msgctxt "Indentation type"
+msgid "Tabs"
+msgstr "Tabulatorji"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:41
+msgctxt "Indentation type"
+msgid "Force tabs"
+msgstr "Vsili tabulatorje"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbIndentType)
+#: astyle/astyle_preferences.ui:46
+msgctxt "Indentation type"
+msgid "Spaces"
+msgstr "Presledki"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpNuberSpaces)
+#: astyle/astyle_preferences.ui:74
+msgid ""
+"Number of spaces that will be converted to a tab.\n"
+"The number of spaces per tab is controled by the editor."
+msgstr ""
+"Število presledkov, ki bodo pretvorjeni v tabulator.\n"
+"Število presledkov na tabulator nadzira urejevalnik."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:92
+msgid "Convert tabs to spaces."
+msgstr "Pretvori tabulatorje v presledke."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkConvertTabs)
+#: astyle/astyle_preferences.ui:95
+msgid "Con&vert tabs into spaces"
+msgstr "Pret&vori tabulatorje v presledke."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:102
+msgid "Fill empty lines with the white space of their previous lines."
+msgstr "Zapolni prazne vrstice s preslednimi znaki njihovih predhodnih vrstic."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkFillEmptyLines)
+#: astyle/astyle_preferences.ui:105
+msgid "Fill empt&y lines"
+msgstr "Zapolni pra&zne vrstice"
+
+#. i18n: ectx: property (text), widget (QLabel, lblIndentObjects)
+#: astyle/astyle_preferences.ui:127
+msgid "Indent"
+msgstr "Zamakni"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBlocks)
+#: astyle/astyle_preferences.ui:144 astyle/astyle_preferences.ui:352
+msgid "Blocks"
+msgstr "Bloki"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#. i18n: ectx: property (title), widget (QGroupBox, gpBrackets)
+#: astyle/astyle_preferences.ui:149 astyle/astyle_preferences.ui:269
+msgid "Brackets"
+msgstr "Zaviti oklepaji"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:154
+msgid "Cases"
+msgstr "Primeri"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:159
+msgid "Class"
+msgstr "Razred"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:164
+msgid "Labels"
+msgstr "Oznake"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:169
+msgid "Namespaces"
+msgstr "Imenski prostori"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:174
+msgid "Preprocessor directives"
+msgstr "Direktive predobdelovalnika"
+
+#. i18n: ectx: property (text), item, widget (KListWidget, listIdentObjects)
+#: astyle/astyle_preferences.ui:179
+msgid "Switches"
+msgstr "Stikala"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMaxStatement)
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:192 astyle/astyle_preferences.ui:234
+msgid ""
+"Indent a maximal # spaces in a continuous statement,\n"
+"relative to the previous line."
+msgstr ""
+"Zamakni največje število presledkov v neprekinjeni izjavi,\n"
+"relativno glede na predhodno vrstico."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, TextLabel3_2)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:203 astyle/astyle_preferences.ui:217
+msgid ""
+"Indent a minimal # spaces in a continuous conditional\n"
+"belonging to a conditional header."
+msgstr ""
+"Zamakni najmanjše število presledkov v neprekinjenem\n"
+"pogojniku, ki spada k pogojni glavi."
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: astyle/astyle_preferences.ui:206
+msgid "Minimum in conditional:"
+msgstr "Najmanj v pogojniku:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, inpMinConditional)
+#: astyle/astyle_preferences.ui:220
+msgid "Twice current"
+msgstr "Dvakrat trenutno"
+
+#. i18n: ectx: property (text), widget (QLabel, TextLabel2_2)
+#: astyle/astyle_preferences.ui:237
+msgid "Maximum in statement:"
+msgstr "Največ v izjavi:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabOther)
+#. i18n: ectx: property (title), widget (QGroupBox, gpOther)
+#: astyle/astyle_preferences.ui:263 astyle/astyle_preferences.ui:521
+msgid "Other"
+msgstr "Drugo"
+
+#. i18n: ectx: property (text), widget (QLabel, lblBrackets)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:283 astyle/astyle_preferences.ui:550
+msgid "Type"
+msgstr "Vrsta"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:297
+msgid ""
+"Break brackets before closing headers (e.g. 'else', 'catch', ...)\n"
+"from their immediately preceding closing brackets."
+msgstr ""
+"Napravi prelom za zaključnimi zavitimi oklepaji, če se za njimi\n"
+"začne zaključni blok glav (npr. 'else', 'catch', ...)."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBracketsCloseHeaders)
+#: astyle/astyle_preferences.ui:300
+msgid "Brea&k closing headers"
+msgstr "Pre&lomi zaključne glave"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:314 astyle/astyle_preferences.ui:426
+#: astyle/astyle_preferences.ui:535
+msgid "No change"
+msgstr "Brez sprememb"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:319
+msgid "Attach"
+msgstr "Priloži"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:324
+msgid "Break"
+msgstr "Prelomi"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:329
+msgid "Linux"
+msgstr "Linux"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:334
+msgid "Stroustrup"
+msgstr "Stroustrup"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbBrackets)
+#: astyle/astyle_preferences.ui:339
+msgid "Run-In"
+msgstr "Uvod"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:367
+msgid ""
+"Insert empty lines around unrelated blocks, labels, classes,...\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Vstavi prazne vrstice okrog blokov, oznak in razredov, ki niso sorodni.\n"
+"Znane težave:\n"
+"\n"
+"1. Če izjava NI del bloka, bodo naslednje izjave\n"
+"imele dvojne presledke. Izjave, ki so\n"
+"obdane v bloku, so oblikovane pravilno.\n"
+"\n"
+"2. Opombe so ločene od bloka.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreak)
+#: astyle/astyle_preferences.ui:370
+msgctxt "Means break unrelated blocks by a newline"
+msgid "&Break blocks"
+msgstr "Prelomi &bloke"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:388
+msgid ""
+"Like --break-blocks, except also insert empty lines \n"
+"around closing headers (e.g. 'else', 'catch', ...).\n"
+"\n"
+"Known problems:\n"
+"\n"
+"1. If a statement is NOT part of a block, \n"
+"the following statements are all double spaced. \n"
+"Statements enclosed in a block are formatted \n"
+"correctly.\n"
+"\n"
+"2. Comments are broken from the block.\n"
+msgstr ""
+"Kot --break-blocks, le da vstavi še prazne vrstice \n"
+"okoli zaključnih glav (npr. 'else', 'catch', ...).\n"
+"\n"
+"Znane težave:\n"
+"\n"
+"1. Če izjava NI del bloka, bodo naslednje izjave\n"
+"imele dvojne presledke. Izjave, ki so\n"
+"obdane v bloku, so oblikovane pravilno.\n"
+"\n"
+"2. Opombe so ločene od bloka.\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockBreakAll)
+#: astyle/astyle_preferences.ui:391
+msgctxt "Means break all blocks with a newline"
+msgid "Break all bl&ocks"
+msgstr "Prelomi vse bl&oke"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:398
+msgid "Break 'else if()' statements into two different lines."
+msgstr "Prelomi izjave 'else if()' v dve različni vrstici."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkBlockIfElse)
+#: astyle/astyle_preferences.ui:401
+msgctxt "Means break else if() into separate lines"
+msgid "Break i&f-else"
+msgstr "Prelomi i&f-else"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpPadding)
+#: astyle/astyle_preferences.ui:411
+msgid "Padding"
+msgstr "Blazinjenje"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:431
+msgid "Unpad"
+msgstr "Odstrani blazinjenje"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:436
+msgid "Inside only"
+msgstr "Samo znotraj"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:441
+msgid "Outside only"
+msgstr "Samo zunaj"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, cbParenthesisPadding)
+#: astyle/astyle_preferences.ui:446
+msgid "Inside and outside"
+msgstr "Znotraj in zunaj"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:456
+msgid ""
+"Insert space padding around operators.\n"
+"Once padded, operators stay padded.\n"
+"There is no unpad operator option."
+msgstr ""
+"Vstavi blazinjenje s presledki okrog operatorjev.\n"
+"Ko so enkrat oblazinjeni, taki tudi ostanejo.\n"
+"Možnosti za odstranitev blazinjenja operatorjev ni."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadOperators)
+#: astyle/astyle_preferences.ui:459
+msgid "&Add spaces around operators"
+msgstr "Dod&aj presledke okrog operatorjev"
+
+#. i18n: ectx: property (text), widget (QLabel, lblParenthesis)
+#: astyle/astyle_preferences.ui:466
+msgid "Pad parenthesis"
+msgstr "Oblazini okrogle oklepaje"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:476
+msgid ""
+"Insert space padding after parenthesis headers (e.g. 'if', 'for', "
+"'while', ...)"
+msgstr ""
+"Vstavi presledek po glavah okroglih oklepajev (npr. if', 'for', 'while', ...)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkPadParenthesisHeader)
+#: astyle/astyle_preferences.ui:479
+msgid "Add spaces after parenthesis &headers"
+msgstr "Vstavi presledek po glava&h okroglih oklepajev"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gpOneLiners)
+#: astyle/astyle_preferences.ui:491
+msgid "One liners"
+msgstr "Enovrstičnice"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:498
+msgid ""
+"Do not break lines containing multiple statements into\n"
+"multiple single-statement lines."
+msgstr ""
+"Ne prelamljaj vrstic, ki vsebujejo več izjav, v več vrstic\n"
+"z eno izjavo."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepStatements)
+#: astyle/astyle_preferences.ui:501
+msgid "&Keep one-line statements"
+msgstr "O&hrani enovrstične izjave"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:508
+msgid "Do not break blocks residing completely on one line."
+msgstr "Ne prelamljaj blokov, ki se v celoti nahajajo v eni vrstici."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkKeepBlocks)
+#: astyle/astyle_preferences.ui:511
+msgid "Keep o&ne-line blocks"
+msgstr "Ohrani e&novrstične bloke"
+
+#. i18n: ectx: property (text), widget (QLabel, lblPointerAlign)
+#: astyle/astyle_preferences.ui:527
+msgid "Pointer Alignment"
+msgstr "Poravnava kazalcev"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:540
+msgid "Name"
+msgstr "Ime"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cbPointerAlign)
+#: astyle/astyle_preferences.ui:545
+msgid "Middle"
+msgstr "Sredina"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "Custom Script Formatter"
+msgstr "Oblikovalnik skriptov po meri"
+
+#: customscript/customscript_plugin.cpp:50
+msgid "A formatter using custom scripts"
+msgstr "Oblikovalnik, ki uporablja skripte po meri"
+
+#: customscript/customscript_plugin.cpp:99
+msgid ""
+"<b>Indent and Format Source Code.</b><br />This plugin allows using powerful "
+"external formatting tools that can be invoked through the command-line.<br /"
+">For example, the <b>uncrustify</b>, <b>astyle</b> or <b>indent</b> "
+"formatters can be used.<br />The advantage of command-line formatters is "
+"that formatting configurations can be easily shared by all team members, "
+"independent of their preferred IDE."
+msgstr ""
+"<b>Zamikanje in oblikovanje izvorne kode.</b><br />Ta vstavek omogoča, da "
+"izvedete mogočna zunanja oblikovalna orodja preko ukazne vrstice.<br /"
+">Uporabite lahko oblikovalnike <b>uncrustify</b>, <b>astyle</b> ali "
+"<b>indent</b>.<br />Prednost teh orodij je v tem, da si lahko nastavitve "
+"delijo vsi člani ekipe, neodvisno od njihovega orodja za razvoj."
+
+#: customscript/customscript_plugin.cpp:242
+msgid "Gnu Indent: GNU"
+msgstr "Zamikovalnik Gnu: GNU"
+
+#: customscript/customscript_plugin.cpp:245
+msgid "Gnu Indent: Kernighan & Ritchie"
+msgstr "Zamikovalnik Gnu: Kernighan & Ritchie"
+
+#: customscript/customscript_plugin.cpp:248
+msgid "Gnu Indent: Original Berkeley indent style"
+msgstr "Zamikovalnik Gnu: izvorni slog zamikanja Berkeley"
+
+#: customscript/customscript_plugin.cpp:254
+msgid ""
+"Description:<br /><b>kdev_format_source</b> is a script bundled with "
+"KDevelop which allows using fine-grained formatting rules by placing meta-"
+"files called <b>format_sources</b> into the file-system.<br /><br />Each "
+"line of the <b>format_sources</b> files defines a list of wildcards followed "
+"by a colon and the used formatting-command.<br /><br />The formatting-"
+"command should use <b>$TMPFILE</b> to reference the temporary file to "
+"reformat.<br /><br />Example:<br /><b>*.cpp *.h : myformatter $TMPFILE</"
+"b><br />This will reformat all files ending with <b>.cpp</b> or <b>.h</b> "
+"using the custom formatting script <b>myformatter</b>.<br /><br />Example: "
+"<br /><b>subdir/* : uncrustify -l CPP -f $TMPFILE -c uncrustify.config -o "
+"$TMPFILE</b> <br />This will reformat all files in subdirectory <b>subdir</"
+"b> using the <b>uncrustify</b> tool with the config-file <b>uncrustify."
+"config</b>."
+msgstr ""
+"Opis:<br /><b>kdev_format_source</b> je skript vključen v KDevelop, ki "
+"omogoča podrobna pravila oblikovanja z uporabo meta datotek imenovanih "
+"<b>format_sources</b>.<br /><br />Vsaka vrstica datotek <b>format_sources</"
+"b> določa seznam nadomestnih znakov, ki jim sledi dvopičje in uporabljen "
+"ukaz za oblikovanje.<br /><br />Ukaz za oblikovanje bi moral uporabiti <b>"
+"$TMPFILE</b>, ki določa začasno datoteko, ki bo preoblikovana.<br /><br /"
+">Primer:<br /><b>*.cpp *.h : moj_oblikovalnik $TMPFILE</b><br />To bo "
+"preoblikovalo vse datoteke, ki se končajo z <b>.cpp</b> ali <b>.h</b> z "
+"uporabo skripta za oblikovanje po meri <b>moj_oblikovalnik</b>.<br /><br /"
+">Primer: <br /><b>podmapa/* : uncrustify -l CPP -f $TMPFILE -c uncrustify."
+"config -o $TMPFILE</b> <br />To bo preoblikovalo vse datoteke v podmapi "
+"<b>podmapa</b> z uporabo orodja <b>uncrustify</b> in nastavitveno datoteko "
+"<b>uncrustify.config</b>."
+
+#: customscript/customscript_plugin.cpp:504
+msgid "Command: "
+msgstr "Ukaz: "
+
+#: customscript/customscript_plugin.cpp:510
+msgid ""
+"<i>You can enter an arbitrary shell command.</i><br />The unformatted source-"
+"code is reached to the command <br />through the standard input, and the "
+"<br />formatted result is read from the standard output.<br /><br />If you "
+"add <b>$TMPFILE</b> into the command, then <br />a temporary file is used "
+"for transferring the code."
+msgstr ""
+"<i>Vnesete lahko poljubni lupinski ukaz.</i><br />Neoblikovana izvorna koda "
+"je podana ukazu skozi<br />standardni vhod in oblikovan rezultat je<br /"
+">prebran iz standardnega izhoda.<br /><br />Če v ukaz dodate <b>$TMPFILE</b> "
+"potem bo za prenos<br />kode uporabljena začasna datoteka."
+
+#: customscript/customscript_plugin.cpp:521
+msgid "More Variables"
+msgstr "Več spremenljivk"
+
+#: customscript/customscript_plugin.cpp:531
+#, kde-format
+msgid "Style: %1"
+msgstr "Slog: %1"
+
+#: customscript/customscript_plugin.cpp:544
+msgid ""
+"<b>$TMPFILE</b> will be replaced with the path to a temporary file. <br /"
+">The code will be written into the file, the temporary <br />file will be "
+"substituted into that position, and the result <br />will be read out of "
+"that file. <br /><br /><b>$FILE</b> will be replaced with the path of the "
+"original file. <br />The contents of the file must not be modified, changes "
+"are allowed <br />only in $TMPFILE.<br /><br /><b>${PROJECT_NAME}</b> will "
+"be replaced by the path of <br />the currently open project with the "
+"matching name."
+msgstr ""
+"<b>$TMPFILE</b> bo zamenjana s potjo do začasne datoteke. <br />Koda bo "
+"zapisana v datoteko, na ta položaj bo<br />postavljena začasna datoteka in "
+"rezultat bo <br />prebran iz nje. <br /><br /><b>$FILE</b> bo zamenjana s "
+"potjo do izvorne datoteke. <br />Vsebina datoteke ne sme biti spremenjena, "
+"spremembe so dovoljene le <br />v $TMPFILE.<br /><br /><b>${PROJECT_NAME}</"
+"b> bo zamenjan s potjo trenutno <br />odprtega projekta, ki ima ujemajoče se "
+"ime."
+
+#: customscript/customscript_plugin.cpp:556
+msgid "Variable Replacements"
+msgstr "Zamenjave spremenljivk"

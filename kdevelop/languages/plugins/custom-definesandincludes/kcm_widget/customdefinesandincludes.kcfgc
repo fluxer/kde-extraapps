@@ -1,0 +1,5 @@
+File=customdefinesandincludes.kcfgc
+ClassName=CustomDefinesAndIncludes
+Singleton=true
+Inherits=KDevelop::ProjectConfigSkeleton
+IncludeFiles=project/projectconfigskeleton.h

@@ -1,0 +1,297 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sairan Kikkarin <sairan@computer.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-14 03:09+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#. i18n: ectx: Menu (project)
+#: kdevprojectmanagerview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Жегу"
+
+#: projectbuildsetwidget.cpp:147
+msgid "Build Set"
+msgstr "Құрастыру жиыны"
+
+#: projectbuildsetwidget.cpp:148
+msgid "Remove From Build Set"
+msgstr "Құрастыру жиыннан кетіру"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, topButton)
+#: projectbuildsetwidget.ui:32
+msgid "Move the selected items to the top"
+msgstr "Таңдалған аталымдарын ең жоғарға шығару"
+
+#. i18n: ectx: property (text), widget (QToolButton, topButton)
+#. i18n: ectx: property (text), widget (QToolButton, upButton)
+#. i18n: ectx: property (text), widget (QToolButton, downButton)
+#. i18n: ectx: property (text), widget (QToolButton, bottomButton)
+#. i18n: ectx: property (text), widget (QToolButton, addItemButton)
+#. i18n: ectx: property (text), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:35 projectbuildsetwidget.ui:61
+#: projectbuildsetwidget.ui:71 projectbuildsetwidget.ui:97
+#: projectbuildsetwidget.ui:147 projectbuildsetwidget.ui:157
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, upButton)
+#: projectbuildsetwidget.ui:58
+msgid "Move the selected items up"
+msgstr "Таңдалған аталымдарын жоғарлату"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, downButton)
+#: projectbuildsetwidget.ui:68
+msgid "Move the selected item down"
+msgstr "Таңдалған аталымдарды төмендету"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bottomButton)
+#: projectbuildsetwidget.ui:94
+msgid "Move the selected items to the bottom"
+msgstr "Таңдалған аталымдарды ең төменге түсіру"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectbuildsetwidget.ui:121
+msgid "Build Sequence"
+msgstr "Құрастыру реті"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: projectbuildsetwidget.ui:124
+msgid "These items will be built in the order they are listed."
+msgstr "Бұл аталымдарды тізбектелген ретімен құрастыру керек."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, addItemButton)
+#: projectbuildsetwidget.ui:144
+msgid "Add currently selected items from project tree view to buildset."
+msgstr "Жоба бұтағынан таңдалған аталымдарды құрастыру жиынға қосу."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:154
+msgid "Remove currently selected item from buildset."
+msgstr "Таңдалған аталымды құрастыру жиыннан өшіру."
+
+#: projectmanagerview.cpp:94
+msgid "Locate Current Document"
+msgstr "Назардағы құжаттың орнын табу"
+
+#: projectmanagerview.cpp:95
+msgid "Locates the current document in the project tree and selects it."
+msgstr "Назардағы құжаттың орнын жоба бұтағында тауып таңдау."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:14 projectmanagerviewplugin.cpp:151
+msgid "Projects"
+msgstr "Жобалар"
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:17
+msgid "Project Manager"
+msgstr "Жоба менеджері"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectTreeView, projectTreeView)
+#: projectmanagerview.ui:39
+msgid "Project Overview"
+msgstr "Жоба шолуы"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectBuildSetWidget, buildSetView)
+#: projectmanagerview.ui:59
+msgid "Build Items:"
+msgstr "Құрастыратын аталымдар:"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Project Management View"
+msgstr "Жобаны басқару көрінісі"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Toolview to do all the project management stuff"
+msgstr "Жобаның бүкіл басқару амалдарын істейтін панелі"
+
+#: projectmanagerviewplugin.cpp:108
+msgid "Build all Projects"
+msgstr "Бүкіл жобаларды құрастыру"
+
+#: projectmanagerviewplugin.cpp:113
+msgid "Build Selection"
+msgstr "Таңдағанды құрастыру"
+
+#: projectmanagerviewplugin.cpp:114
+msgid "Build"
+msgstr "Құрастыру"
+
+#: projectmanagerviewplugin.cpp:120
+msgid "Install Selection"
+msgstr "Таңдағанды орнату"
+
+#: projectmanagerviewplugin.cpp:121
+msgid "Install"
+msgstr "Орнату"
+
+#: projectmanagerviewplugin.cpp:127
+msgid "Clean Selection"
+msgstr "Таңдағанды тазалау"
+
+#: projectmanagerviewplugin.cpp:128
+msgid "Clean"
+msgstr "Тазалау"
+
+#: projectmanagerviewplugin.cpp:133
+msgid "Configure Selection"
+msgstr "Таңдағанды баптау"
+
+#: projectmanagerviewplugin.cpp:134
+msgid "Configure"
+msgstr "Баптау"
+
+#: projectmanagerviewplugin.cpp:139
+msgid "Prune Selection"
+msgstr "Таңдағанды қысқарту"
+
+#: projectmanagerviewplugin.cpp:140
+msgid "Prune"
+msgstr "Қысқарту"
+
+#: projectmanagerviewplugin.cpp:241
+msgid "Create File"
+msgstr "Файлды құру"
+
+#: projectmanagerviewplugin.cpp:247
+msgid "Create Folder"
+msgstr "Қапшығын құру"
+
+#: projectmanagerviewplugin.cpp:254
+msgctxt "@action"
+msgid "Build"
+msgstr "Құрастыру"
+
+#: projectmanagerviewplugin.cpp:258
+msgctxt "@action"
+msgid "Install"
+msgstr "Орнату"
+
+#: projectmanagerviewplugin.cpp:262
+msgctxt "@action"
+msgid "Clean"
+msgstr "Тазалау"
+
+#: projectmanagerviewplugin.cpp:266
+msgid "Add to Build Set"
+msgstr "Құрастыру жиынына қосу"
+
+#: projectmanagerviewplugin.cpp:273
+msgid "Close Project"
+msgid_plural "Close Projects"
+msgstr[0] "Жобаларын жабу"
+
+#: projectmanagerviewplugin.cpp:279
+msgid "Reload"
+msgstr "Қайта жүктеу"
+
+#: projectmanagerviewplugin.cpp:285
+msgid "Remove"
+msgstr "Өшіру"
+
+#: projectmanagerviewplugin.cpp:289
+msgid "Rename"
+msgstr "Атауын өзгерту"
+
+#: projectmanagerviewplugin.cpp:295
+msgid "Remove From Target"
+msgstr "Мақсаттан кетіру"
+
+#: projectmanagerviewplugin.cpp:489
+#, kde-format
+msgid "Create Folder in %1"
+msgstr "%1 дегенде қапшықты құру"
+
+#: projectmanagerviewplugin.cpp:489
+msgid "Folder Name"
+msgstr "Қапшықтың атауы"
+
+#: projectmanagerviewplugin.cpp:541
+#, kde-format
+msgid "Do you really want to delete this item?"
+msgid_plural "Do you really want to delete these %1 items?"
+msgstr[0] "Осы %1 аталым өшірілсін бе?"
+
+#: projectmanagerviewplugin.cpp:544
+msgid "Delete Files"
+msgstr "Файлдарды өшіру"
+
+#: projectmanagerviewplugin.cpp:597
+msgid "Rename..."
+msgstr "Атауын өзгерту..."
+
+#: projectmanagerviewplugin.cpp:598
+#, fuzzy, kde-format
+#| msgid "New name for '%1'"
+msgid "New name for '%1':"
+msgstr "'%1' дегеннің жаңа атауы"
+
+#: projectmanagerviewplugin.cpp:609
+#, kde-format
+msgid "There is already a file named '%1'"
+msgstr "'%1' деп аталған файл бар екен"
+
+#: projectmanagerviewplugin.cpp:612
+#, kde-format
+msgid "Could not rename '%1'"
+msgstr "'%1' атауы өзгертілмеді"
+
+#: projectmanagerviewplugin.cpp:615
+#, kde-format
+msgid "'%1' is not a valid file name"
+msgstr "'%1' дұрыс емес файл атауы"
+
+#: projectmanagerviewplugin.cpp:625
+#, kde-format
+msgid "Create File in %1"
+msgstr "%1 дегенде файлды құру"
+
+#: projectmanagerviewplugin.cpp:625
+#, fuzzy
+#| msgid "File Name"
+msgid "File name:"
+msgstr "Файл атауы"
+
+#: projecttreeview.cpp:161
+msgid "&Move Here"
+msgstr "&Осында жылжыту"
+
+#: projecttreeview.cpp:167
+msgid "&Copy Here"
+msgstr "Осында &көшірмелеу"
+
+#: projecttreeview.cpp:173 projecttreeview.cpp:232
+msgid "C&ancel"
+msgstr "Қ&айту"
+
+#: projecttreeview.cpp:226
+msgid "&Add to Target"
+msgstr "Мақсатқа қ&осу"
+
+#: projecttreeview.cpp:345
+msgid "Open Configuration..."
+msgstr "Баптауын ашу..."

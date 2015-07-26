@@ -1,0 +1,171 @@
+# translation of kdevgit.po to Galician
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# mvillarino <mvillarino@users.sourceforge.net>, 2008.
+# Xosé <xosecalvo@gmail.com>, 2009, 2013.
+# Marce Villarino <mvillarino@kde-espana.org>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevgit\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-01 05:17+0000\n"
+"PO-Revision-Date: 2014-01-05 12:29+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde, development\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xosé"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xosecalvo@gmail.com"
+
+#: gitmessagehighlighter.cpp:79
+#, kde-format
+msgid "Try to keep summary length below %1 characters."
+msgstr "Tentar que a lonxitude do resumo sexa inferior a %1 caracteres."
+
+#: gitmessagehighlighter.cpp:95
+msgid "Separate summary from details with one empty line."
+msgstr "Separar o resumo dos detalles cunha liña en branco."
+
+#: gitmessagehighlighter.cpp:105
+#, kde-format
+msgid "Try to keep line length below %1 characters."
+msgstr "Tentar que a lonxitude da liña sexa inferior a %1 caracteres."
+
+#: gitplugin.cpp:64
+msgid "Git"
+msgstr "Git"
+
+#: gitplugin.cpp:64
+msgid "A plugin to support git version control systems"
+msgstr "Un engadido para admitir sistemas de control de versións git"
+
+#: gitplugin.cpp:182
+msgid "git is not installed"
+msgstr "git non está instalado"
+
+#: gitplugin.cpp:236
+msgid "Git Stashes"
+msgstr "Reservas de Git"
+
+#: gitplugin.cpp:237 stashmanagerdialog.cpp:36
+msgid "Stash Manager"
+msgstr "Xestor de Reservas"
+
+#: gitplugin.cpp:238
+msgid "Push Stash"
+msgstr "Push Reserva"
+
+#: gitplugin.cpp:239
+msgid "Pop Stash"
+msgstr "Pop Reserva"
+
+#: gitplugin.cpp:265
+#, kde-format
+msgid "error: %1"
+msgstr "erro: %1"
+
+#: gitplugin.cpp:321 gitplugin.cpp:332
+msgid "Did not specify the list of files"
+msgstr "Non se indicou a lista de ficheiros"
+
+#: gitplugin.cpp:383
+msgid "Could not revert changes"
+msgstr "Non foi posíbel desfacer os cambios"
+
+#: gitplugin.cpp:393
+msgid ""
+"The following files have uncommited changes, which will be lost. Continue?"
+msgstr ""
+
+#: gitplugin.cpp:416
+msgid "No files or message specified"
+msgstr "non se indicaron ficheiros ou mensaxe"
+
+#: gitplugin.cpp:468
+msgid "No files to remove"
+msgstr "Non hai ficheiros para eliminar"
+
+#: gitplugin.cpp:645
+msgid "There are pending changes, do you want to stash them first?"
+msgstr "Hai cambios pendentes; deséxaos pór en reserva primeiro?"
+
+#: stashmanagerdialog.cpp:108
+#, kde-format
+msgid "Are you sure you want to drop the stash '%1'?"
+msgstr "Desexa realmente eliminar a reserva «%1»?"
+
+#: stashmanagerdialog.cpp:116
+msgid "KDevelop - Git Stash"
+msgstr "KDevelop - Reserva de Git"
+
+#: stashmanagerdialog.cpp:116
+#, fuzzy
+#| msgid "Select a name for the new branch"
+msgid "Select a name for the new branch:"
+msgstr "Escolla un nome para a galla nova"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, show)
+#: stashmanagerdialog.ui:16
+msgid "Show the contents of the stash"
+msgstr "Mostra o contido do almacén temporal"
+
+#. i18n: ectx: property (text), widget (QPushButton, show)
+#: stashmanagerdialog.ui:19
+msgid "Show"
+msgstr "Mostrar"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:26
+msgid "Applies stash's patch"
+msgstr "Aplica o parche da reserva"
+
+#. i18n: ectx: property (text), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:29
+msgid "Apply"
+msgstr "Aplicar"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:36
+msgid "Applies stash's patch and drops the stash"
+msgstr "Aplica o parche da reserva e elimina a reserva"
+
+#. i18n: ectx: property (text), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:39
+msgid "Pop"
+msgstr "Pop"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:46
+msgid ""
+"Creates a new branch and applies the stash there, then it drops the stash."
+msgstr ""
+"Crea unha galla nova e aplica a reserva nela e a seguir elimina a reserva."
+
+#. i18n: ectx: property (text), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:49
+msgid "Branch"
+msgstr "Galla"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:69
+msgid "Removes the selected branch"
+msgstr "Elimina a galla escollida"
+
+#. i18n: ectx: property (text), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:72
+msgid "Drop"
+msgstr "Eliminar"

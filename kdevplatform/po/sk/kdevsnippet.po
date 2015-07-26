@@ -1,0 +1,314 @@
+# translation of kdevsnippet.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevsnippet\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-11-10 20:55+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: legacy/editrepository.cpp:75 legacy/editrepository.cpp:117
+#, kde-format
+msgid "Edit Snippet Repository %1"
+msgstr "Upraviť repozitár úryvkov %1"
+
+#: legacy/editrepository.cpp:77
+msgid "Create New Snippet Repository"
+msgstr "Vytvoriť nový repozitár úryvkov"
+
+#: legacy/editrepository.cpp:127
+msgid "<i>leave empty for general purpose snippets</i>"
+msgstr "<i>nechajte prázdne pre všeobecné úryvky</i>"
+
+#. i18n: ectx: property (text), widget (QLabel, repoNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, snippetName)
+#: legacy/editrepository.ui:29 legacy/editsnippet.ui:41
+msgid "&Name:"
+msgstr "&Názov:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, repoNameEdit)
+#: legacy/editrepository.ui:39
+msgid ""
+"The name of the repository. Must not be empty or contain forward slashes (/)."
+msgstr "Názov repozitára. Nesmie byť prázdne alebo obsahovať lomky (/)."
+
+#. i18n: ectx: property (text), widget (QLabel, repoNamespaceLabel)
+#: legacy/editrepository.ui:46
+msgid "Na&mespace:"
+msgstr "Menný priestor:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, repoNamespaceEdit)
+#: legacy/editrepository.ui:57
+msgid ""
+"<p>If non-empty this will be used as a prefix for all snippets in this "
+"repository during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Ak nie je prázdne, toto sa použije ako predpona pre všetky úryvky v tomto "
+"repozitári počas kompletizácie kódu..</p>\n"
+"<p><b>Poznámka:</b> Medzery nie sú povolené.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, repoLicenseLabel)
+#: legacy/editrepository.ui:64
+msgid "&License:"
+msgstr "&Licencia:"
+
+#. i18n: ectx: property (text), widget (QLabel, repoAuthorsLabel)
+#: legacy/editrepository.ui:77
+msgid "&Authors:"
+msgstr "Autori:"
+
+#. i18n: ectx: property (text), widget (QLabel, repoFileTypesLabel)
+#: legacy/editrepository.ui:90
+msgid "&File types:"
+msgstr "Typy súborov:"
+
+#: legacy/editsnippet.cpp:51
+msgid "Show Documentation"
+msgstr "Zobraziť dokumentáciu"
+
+#: legacy/editsnippet.cpp:104 legacy/editsnippet.cpp:184
+#, kde-format
+msgid "Edit Snippet %1 in %2"
+msgstr "Upraviť úryvok %1 v %2"
+
+#: legacy/editsnippet.cpp:117
+#, kde-format
+msgid "Create New Snippet in Repository %1"
+msgstr "Vytvoriť nový úryvok v repozitári %1"
+
+#: legacy/editsnippet.cpp:149
+msgid "Snippet name cannot contain spaces"
+msgstr "Názov úryvku nemôže obsahovať medzery"
+
+#: legacy/editsnippet.cpp:201
+msgid ""
+"The snippet contains unsaved changes. Do you want to continue and lose all "
+"changes?"
+msgstr ""
+"Úryvok obsahuje neuložené zmeny. Chcete pokračovať a stratiť všetky zmeny?"
+
+#: legacy/editsnippet.cpp:202
+msgid "Warning - Unsaved Changes"
+msgstr "Upozornenie - neuložené zmeny"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetNameEdit)
+#: legacy/editsnippet.ui:52
+msgid ""
+"<p>The name will also be used as the identifier during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Názov sa použije aj ako identifikátor počas dokončovania kódu.</p>\n"
+"<p><b>Poznámka:</b> Medzery nie sú povolené.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, snippetPrefixLabel)
+#: legacy/editsnippet.ui:59
+msgid "Display &Prefix:"
+msgstr "Zobraziť prefix:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetPrefixEdit)
+#: legacy/editsnippet.ui:69
+msgid "The display prefix will be shown during code completion."
+msgstr "Predpona displeja sa zobrazí počas ukončovania kódu."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetArgumentsLabel)
+#: legacy/editsnippet.ui:76
+msgid "Display &Arguments:"
+msgstr "Zobraziť parametre:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetArgumentsEdit)
+#: legacy/editsnippet.ui:86
+msgid "The arguments will be shown during code completion."
+msgstr "Argumenty sa zobrazia počas dokončovania kódu."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetPostfixLabel)
+#: legacy/editsnippet.ui:93
+msgid "Display P&ostfix:"
+msgstr "Zobraziť postfix:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetPostfixEdit)
+#: legacy/editsnippet.ui:103
+msgid "The postfix will be shown during code completion."
+msgstr "Prípona sa zobrazí počas ukončovania kódu."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetShortcutLabel)
+#: legacy/editsnippet.ui:110
+msgid "Shortcut:"
+msgstr "Skratka:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, snippetTab)
+#: legacy/editsnippet.ui:126
+msgid "&Snippet"
+msgstr "Úryvok"
+
+#. i18n: ectx: attribute (title), widget (QWidget, scriptTab)
+#: legacy/editsnippet.ui:131
+msgid "S&cripts"
+msgstr "Skripty"
+
+#. i18n: ectx: Menu (edit)
+#: legacy/kdevsnippet.rc:4
+msgid "&Edit"
+msgstr "&Upraviť"
+
+#: legacy/snippet.cpp:27
+msgid "<empty snippet>"
+msgstr "<prázdny úryvok>"
+
+#: legacy/snippet.cpp:89
+#, kde-format
+msgid "insert snippet %1"
+msgstr "vložiť úryvok %1"
+
+#: legacy/snippetcompletionmodel.cpp:52 legacy/snippetview.cpp:38
+#: legacy/snippetview.cpp:148 snippetplugin.cpp:45 snippetplugin.cpp:104
+msgid "Snippets"
+msgstr "Úryvky"
+
+#: legacy/snippetrepository.cpp:40
+msgid "<empty repository>"
+msgstr "<prázdny repozitár>"
+
+#: legacy/snippetrepository.cpp:219
+msgid ""
+"You have edited a data file not located in your personal data directory; as "
+"such, a renamed clone of the original data file has been created within your "
+"personal data directory."
+msgstr ""
+"Upravili ste dátový súbor mimo vášho miestneho dátového adresára, teda "
+"premenovaný klon pôvodného dátového súboru bol vytvorený vo vašom osobnom "
+"dátovom adresári."
+
+#: legacy/snippetrepository.cpp:224
+#, kde-format
+msgid "Output file '%1' could not be opened for writing"
+msgstr "Výstupný súbor '%1' nie je možné otvoriť na zápis"
+
+#: legacy/snippetrepository.cpp:253
+#, kde-format
+msgid "Cannot open snippet repository %1."
+msgstr "Nemôžem otvoriť repozitár úryvkov %1."
+
+#: legacy/snippetrepository.cpp:265
+#, kde-format
+msgid ""
+"<qt>The error <b>%4</b><br /> has been detected in the file %1 at %2/%3</qt>"
+msgstr "<qt>Chyba <b>%4</b><br /> bola detekovaná v súbore %1 na %2/%3</qt>"
+
+#: legacy/snippetrepository.cpp:273
+#, kde-format
+msgid "Invalid XML snippet file: %1"
+msgstr "Neplatný XML súbor úryvku: %1"
+
+#: legacy/snippetrepository.cpp:340
+msgid ""
+"Repository is disabled, the contained snippets will not be shown during code-"
+"completion."
+msgstr ""
+"Repozitár je zakázaný, obsiahnuté úryvky sa nezobrazia počas dokončovania "
+"kódu."
+
+#: legacy/snippetrepository.cpp:343
+msgid "Applies to all filetypes"
+msgstr "Platí pre všetky typy súborov"
+
+#: legacy/snippetrepository.cpp:345
+#, kde-format
+msgid "Applies to the following filetypes: %1"
+msgstr "Platí na nasledovné typy súborov: %1"
+
+#: legacy/snippetview.cpp:59
+msgid "Add Repository"
+msgstr "Pridať repozitár"
+
+#: legacy/snippetview.cpp:62
+msgid "Edit Repository"
+msgstr "Upraviť repozitár"
+
+#: legacy/snippetview.cpp:65
+msgid "Remove Repository"
+msgstr "Odstrániť repozitár"
+
+#: legacy/snippetview.cpp:69
+msgid "Publish Repository"
+msgstr "Publikovať repozitár"
+
+#: legacy/snippetview.cpp:77
+msgid "Add Snippet"
+msgstr "Pridať úryvok"
+
+#: legacy/snippetview.cpp:80
+msgid "Edit Snippet"
+msgstr "Upraviť úryvok"
+
+#: legacy/snippetview.cpp:83
+msgid "Remove Snippet"
+msgstr "Odstrániť úryvok"
+
+#: legacy/snippetview.cpp:89
+msgid "Get New Snippets"
+msgstr "Získať nové úryvky"
+
+#: legacy/snippetview.cpp:156
+#, kde-format
+msgid "Snippet: %1"
+msgstr "Úryvok: %1"
+
+#: legacy/snippetview.cpp:164
+#, kde-format
+msgid "Repository: %1"
+msgstr "Repozitár: %1"
+
+#: legacy/snippetview.cpp:224
+#, kde-format
+msgid "Do you really want to delete the snippet \"%1\"?"
+msgstr "Naozaj chcete vymazať úryvok \"%1\"?"
+
+#: legacy/snippetview.cpp:264
+#, kde-format
+msgid ""
+"Do you really want to delete the repository \"%1\" with all its snippets?"
+msgstr "Naozaj chcete vymazať repozitár \"%1\" so všetkými úryvkami?"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, filterText)
+#: legacy/snippetview.ui:35
+msgid "Define filter here"
+msgstr "Tu definujte filter"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, filterText)
+#: legacy/snippetview.ui:38
+msgid "Filter..."
+msgstr "Filter..."
+
+#: snippetplugin.cpp:45
+msgid ""
+"This plugin allows to store code snippets and insert them into open files"
+msgstr ""
+"Tento plugin umožňuje uložiť útržky kódu a vložiť ich do otvorených súborov"
+
+#: snippetplugin.cpp:180
+msgid "Create Snippet"
+msgstr "Vytvoriť úryvok"
+
+#: snippetplugin.cpp:218
+#, kde-format
+msgctxt "Autogenerated repository name for a programming language"
+msgid "%1 snippets"
+msgstr "%1 úryvky"

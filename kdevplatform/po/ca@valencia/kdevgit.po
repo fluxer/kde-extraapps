@@ -1,0 +1,173 @@
+# Translation of kdevgit.po to Catalan
+# Copyright (C) 2009-2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa <manutortosa@gmail.com>, 2009.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012.
+# Antoni Bella Pérez <antonibella5@orange.es>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevgit\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-01 05:17+0000\n"
+"PO-Revision-Date: 2013-11-10 14:58+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@orange.es>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#: gitmessagehighlighter.cpp:79
+#, kde-format
+msgid "Try to keep summary length below %1 characters."
+msgstr "Intenta mantindre la longitud del resum per sota de %1 caràcters."
+
+#: gitmessagehighlighter.cpp:95
+msgid "Separate summary from details with one empty line."
+msgstr "Resum separat dels detalls amb una línia en blanc."
+
+#: gitmessagehighlighter.cpp:105
+#, kde-format
+msgid "Try to keep line length below %1 characters."
+msgstr "Intenta mantindre la longitud de la línia per sota de %1 caràcters."
+
+#: gitplugin.cpp:64
+msgid "Git"
+msgstr "Git"
+
+#: gitplugin.cpp:64
+msgid "A plugin to support git version control systems"
+msgstr "Un connector per implementar el sistema de control de versions git"
+
+#: gitplugin.cpp:182
+msgid "git is not installed"
+msgstr "No està instal·lat el git"
+
+#: gitplugin.cpp:236
+msgid "Git Stashes"
+msgstr "Modificacions temporals del Git"
+
+#: gitplugin.cpp:237 stashmanagerdialog.cpp:36
+msgid "Stash Manager"
+msgstr "Gestor de modificacions temporals"
+
+#: gitplugin.cpp:238
+msgid "Push Stash"
+msgstr "Publica («Push») la modificació temporal"
+
+#: gitplugin.cpp:239
+msgid "Pop Stash"
+msgstr "Aplica («Pop») una modificació temporal"
+
+#: gitplugin.cpp:265
+#, kde-format
+msgid "error: %1"
+msgstr "error: %1"
+
+#: gitplugin.cpp:321 gitplugin.cpp:332
+msgid "Did not specify the list of files"
+msgstr "No heu indicat cap llista de fitxers"
+
+#: gitplugin.cpp:383
+msgid "Could not revert changes"
+msgstr "No es poden revertir els canvis"
+
+#: gitplugin.cpp:393
+msgid ""
+"The following files have uncommited changes, which will be lost. Continue?"
+msgstr ""
+
+#: gitplugin.cpp:416
+msgid "No files or message specified"
+msgstr "No s'ha especificat cap fitxer o missatge"
+
+#: gitplugin.cpp:468
+msgid "No files to remove"
+msgstr "No hi ha fitxers a eliminar"
+
+#: gitplugin.cpp:645
+msgid "There are pending changes, do you want to stash them first?"
+msgstr ""
+"Hi ha canvis pendents, voleu fer primer una modificació temporal («stash»)?"
+
+#: stashmanagerdialog.cpp:108
+#, kde-format
+msgid "Are you sure you want to drop the stash '%1'?"
+msgstr "Esteu segur que voleu llençar la modificació temporal «%1»?"
+
+#: stashmanagerdialog.cpp:116
+msgid "KDevelop - Git Stash"
+msgstr "KDevelop - Modificació temporal del Git"
+
+#: stashmanagerdialog.cpp:116
+#, fuzzy
+#| msgid "Select a name for the new branch"
+msgid "Select a name for the new branch:"
+msgstr "Seleccioneu un nom de la branca nova"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, show)
+#: stashmanagerdialog.ui:16
+msgid "Show the contents of the stash"
+msgstr "Mo&stra el contingut de la modificació temporal"
+
+#. i18n: ectx: property (text), widget (QPushButton, show)
+#: stashmanagerdialog.ui:19
+msgid "Show"
+msgstr "Mostra"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:26
+msgid "Applies stash's patch"
+msgstr "Aplica el pedaç de la modificació temporal"
+
+#. i18n: ectx: property (text), widget (QPushButton, apply)
+#: stashmanagerdialog.ui:29
+msgid "Apply"
+msgstr "Aplica"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:36
+msgid "Applies stash's patch and drops the stash"
+msgstr ""
+"Aplica el pedaç de la modificació temporal i llença la modificació temporal"
+
+#. i18n: ectx: property (text), widget (QPushButton, pop)
+#: stashmanagerdialog.ui:39
+msgid "Pop"
+msgstr "Pop"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:46
+msgid ""
+"Creates a new branch and applies the stash there, then it drops the stash."
+msgstr ""
+"Crea una branca nova i aplica allí la modificació temporal, després llença "
+"la modificació temporal"
+
+#. i18n: ectx: property (text), widget (QPushButton, branch)
+#: stashmanagerdialog.ui:49
+msgid "Branch"
+msgstr "Branca"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:69
+msgid "Removes the selected branch"
+msgstr "Elimina la branca seleccionada"
+
+#. i18n: ectx: property (text), widget (QPushButton, drop)
+#: stashmanagerdialog.ui:72
+msgid "Drop"
+msgstr "Llença («Drop»)"

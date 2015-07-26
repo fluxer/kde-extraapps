@@ -1,0 +1,327 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009, 2011.
+# Volkan Gezer <volkangezer@gmail.com>, 2013.
+# Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevexecutescript\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-11-10 21:39+0000\n"
+"Last-Translator: Simge <simgesezgin88@gmail.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: executescriptplugin.cpp:67
+msgid "Execute script support"
+msgstr "Betik çalıştırma desteği"
+
+#: executescriptplugin.cpp:67
+msgid "Allows running of scripts"
+msgstr "Betiklerin çalıştırılmasına izin ver"
+
+#: executescriptplugin.cpp:68
+msgid "Niko Sams"
+msgstr "Niko Sams"
+
+#: executescriptplugin.cpp:68
+msgid "Author"
+msgstr "Yazar"
+
+#: executescriptplugin.cpp:106
+msgid "No valid executable specified"
+msgstr "Çalıştırılabilir dosya belirtilmedi"
+
+#: executescriptplugin.cpp:116
+#, kde-format
+msgid ""
+"There is a quoting error in the script for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırması betiğinde alıntı hatası var. Başlatma "
+"durduruldu."
+
+#: executescriptplugin.cpp:121
+#, kde-format
+msgid ""
+"A shell meta character was included in the script for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırmasında betik desteklenmeyen bir kabuk meta "
+"karakteri içermektedir. Başlatma durduruldu."
+
+#: executescriptplugin.cpp:138
+#, kde-format
+msgid "No remote host set for launch configuration '%1'. Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırması için uzak sunucu ayarlanmamış. Başlatma "
+"durduruldu."
+
+#: executescriptplugin.cpp:161
+#, kde-format
+msgid ""
+"There is a quoting error in the arguments for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırmasında değişkenlerde alıntı hatası var. Başlatma "
+"durduruldu."
+
+#: executescriptplugin.cpp:165
+#, kde-format
+msgid ""
+"A shell meta character was included in the arguments for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırmasında değişkenler desteklenmeyen bir kabuk meta "
+"karakteri içermektedir. Başlatma durduruldu."
+
+#: executescriptplugin.cpp:218
+msgid "No valid interpreter specified"
+msgstr "Geçerli bir yorumlayıcı belirtilmedi"
+
+#: executescriptplugin.cpp:228
+#, kde-format
+msgid ""
+"There is a quoting error in the interpreter for the launch configuration "
+"'%1'. Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırmasında yorumlayıcıda alıntı hatası var. Başlatma "
+"durduruldu."
+
+#: executescriptplugin.cpp:233
+#, kde-format
+msgid ""
+"A shell meta character was included in the interpreter for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"'%1' başlatma yapılandırmasında yorumlayıcı desteklenmeyen bir kabuk meta "
+"karakter içermektedir. Başlatma durduruldu."
+
+#: scriptappconfig.cpp:102
+msgid "Type or select an interpreter"
+msgstr "Bir yorumlayıcı seç ya da yaz"
+
+#: scriptappconfig.cpp:135
+msgid "Configure Script Application"
+msgstr "Betik Uygulamasını Yapılandır"
+
+#: scriptappconfig.cpp:145
+msgid "Executes Script Applications"
+msgstr "Betik Uygulamalarını Yürütür"
+
+#: scriptappconfig.cpp:155 scriptappconfig.cpp:205
+msgid "Script Application"
+msgstr "Betik Uygulaması"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: scriptappconfig.ui:17
+msgid "Interpreter"
+msgstr "Yorumlayıcı"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: scriptappconfig.ui:32
+msgid "Script interpreter:"
+msgstr "Betik yorumlayıcı:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:57
+msgid "python"
+msgstr "python"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:62
+msgid "ruby"
+msgstr "ruby"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:67
+msgid "bash"
+msgstr "bash"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:72
+msgid "php"
+msgstr "php"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: scriptappconfig.ui:83
+msgid "Script file"
+msgstr "Betik dosyası"
+
+#. i18n: ectx: property (text), widget (QRadioButton, runCurrentFile)
+#: scriptappconfig.ui:89
+msgid "Run the file currently open in the editor"
+msgstr "Düzenleyicide açık olan dosyayı çalıştır"
+
+#. i18n: ectx: property (text), widget (QRadioButton, runFixedFile)
+#: scriptappconfig.ui:99
+msgid "Always run the same file"
+msgstr "Her zaman aynı dosyayı çalıştır"
+
+#. i18n: ectx: property (text), widget (QLabel, scriptLabel)
+#: scriptappconfig.ui:111
+msgid "Script file:"
+msgstr "Betik dosyası:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, executablePath)
+#: scriptappconfig.ui:121
+msgid "Enter the absolute path to the script to run"
+msgstr "Çalıştırılacak betiğin tam yolunu girin"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: scriptappconfig.ui:133
+msgid "Behavior"
+msgstr "Davranış"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: scriptappconfig.ui:145
+msgid "Arguments:"
+msgstr "Argümanlar:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arguments)
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, arguments)
+#: scriptappconfig.ui:155 scriptappconfig.ui:161
+msgid "Enter arguments to give to the executable"
+msgstr "Çalıştırılabilir dosyaya verilecek argümanları girin"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: scriptappconfig.ui:168
+msgid "Working Directory:"
+msgstr "Çalışma Dizini:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, workingDirectory)
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, workingDirectory)
+#: scriptappconfig.ui:178 scriptappconfig.ui:181
+msgid "Select a working directory for the executable"
+msgstr "Çalıştırılabilir dosya için bir çalışma dizini seçin"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: scriptappconfig.ui:188
+msgid "Environment:"
+msgstr "Çevre:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: scriptappconfig.ui:198
+msgid "Select an environment to be used"
+msgstr "Kullanılacak bir ortam seçin"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: scriptappconfig.ui:205
+msgid "Output Filter:"
+msgstr "Çıktı Süzgeci:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:212
+msgid ""
+"Select the filter to applied to the output. E.g. to mark errors with red text"
+msgstr ""
+"Çıktıya uygulanacak süzme yöntemini seç. Örnek; hataları kırmızı ile işaretle"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:216
+msgid "No Filter"
+msgstr "Süzme Yok"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:221
+msgid "Compiler Filter"
+msgstr "Derleyici Süzgeci"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:226
+msgid "Script Error Filter"
+msgstr "Betik Hata Süzgeci"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:231
+msgid "Static Analysis Filter"
+msgstr "Statik Analiz Süzgeci"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: scriptappconfig.ui:248
+msgid "Execute on Host"
+msgstr "Makine Üzerinde Çalıştır"
+
+#. i18n: ectx: property (text), widget (QCheckBox, remoteHostCheckbox)
+#: scriptappconfig.ui:254
+msgid "Execute on remote host"
+msgstr "Uzak istemcide çalıştır"
+
+#. i18n: ectx: property (text), widget (QLabel, remoteHostLabel)
+#: scriptappconfig.ui:266
+msgid "Remote host (ssh):"
+msgstr "Uzak Makine (ssh):"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, remoteHost)
+#: scriptappconfig.ui:279
+msgid "Enter a remote host (user@example.com)"
+msgstr "Bir uzak makine girin (kullanıcı@örnek.com)"
+
+#: scriptappjob.cpp:87
+msgid "There is no active document to launch."
+msgstr "Başlatmak için etkin belge yok."
+
+#: scriptappjob.cpp:110
+#, kde-format
+msgid ""
+"No environment group specified, looks like a broken configuration, please "
+"check run configuration '%1'. Using default environment group."
+msgstr ""
+"Hiçbir ortam grubu belirtilmemiş, yapılandırma bozuk gibi görünüyor, lütfen "
+"%1 çalıştırma yapılandırmasını kontrol edin. Varsayılan ortam grubu "
+"kullanılıyor."
+
+#: scriptappjob.cpp:186
+#, kde-format
+msgid "Starting: %1"
+msgstr "Başlatılıyor: %1"
+
+#: scriptappjob.cpp:200
+msgid "*** Killed Application ***"
+msgstr "*** Sonlandırılmış Uygulama ***"
+
+#: scriptappjob.cpp:211
+msgid "*** Exited normally ***"
+msgstr "*** Normal olarak çıkıldı ***"
+
+#: scriptappjob.cpp:213
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** Bu kod döndürülerek çıkıldı: %1 ***"
+
+#: scriptappjob.cpp:216
+msgid "*** Process aborted ***"
+msgstr "*** Süreç sonlandırıldı ***"
+
+#: scriptappjob.cpp:219
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** Bu kod döndürülerek çöktü: %1 ***"
+
+#: scriptappjob.cpp:234
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr ""
+"***%1 programı başlatılamadı. Yolun doğru belirtildiğinden emin olun***"
+
+
+
+
+#, fuzzy

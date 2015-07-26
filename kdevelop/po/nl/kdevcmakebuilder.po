@@ -1,0 +1,103 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kristof Bal <kristof.bal@gmail.com>, 2008.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2013-11-07 10:23+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: cmakebuilder.cpp:55
+msgid "CMake Builder"
+msgstr "CMake-bouwprogramma"
+
+#: cmakebuilder.cpp:56
+msgid "Support for building CMake projects"
+msgstr "Ondersteuning voor het bouwen van CMake-projecten"
+
+#: cmakebuilder.cpp:109
+msgid "No Build Directory configured, cannot build"
+msgstr "Geen bouwmap ingesteld, bouwen lukt niet"
+
+#: cmakebuilder.cpp:109
+msgid "Aborting build"
+msgstr "Bouwen afbreken"
+
+#: cmakebuilder.cpp:160
+msgid "No Build Directory configured, cannot clean"
+msgstr "Geen bouwmap ingesteld, wissen lukt niet"
+
+#: cmakebuilder.cpp:160
+msgid "Aborting clean"
+msgstr "Wissen afbreken"
+
+#: cmakebuilder.cpp:195
+msgid "No Build Directory configured, cannot install"
+msgstr "Geen bouwmap ingesteld, installeren lukt niet"
+
+#: cmakebuilder.cpp:195
+msgid "Aborting install"
+msgstr "Installeren afbreken"
+
+#: cmakebuilder.cpp:219
+msgid "No Build Directory configured, cannot configure"
+msgstr "Geen bouwmap ingesteld, instellen lukt niet"
+
+#: cmakebuilder.cpp:219
+msgid "Aborting configure"
+msgstr "Instellen afbreken"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuildersettings.ui:17
+msgid "Generator:"
+msgstr "Generator:"
+
+#: cmakejob.cpp:50 prunejob.cpp:38
+msgid "CMake"
+msgstr "CMake"
+
+#: cmakejob.cpp:137
+#, kde-format
+msgid "CMake: %1"
+msgstr "CMake: %1"
+
+#: prunejob.cpp:52
+msgid "No Build Directory configured, cannot clear builddir"
+msgstr "Geen bouwmap ingesteld, builddir wissen lukt niet"
+
+#: prunejob.cpp:58
+msgid "Wrong build directory, cannot clear the build directory"
+msgstr "Foute bouwmap, kan de bouwmap niet wissen"
+
+#: prunejob.cpp:71
+#, kde-format
+msgid "%1> rm -rf %2"
+msgstr "%1> rm -rf %2"
+
+#: prunejob.cpp:86
+msgid "** Prune successful **"
+msgstr "** Opschonen succesvol **"
+
+#: prunejob.cpp:88
+#, kde-format
+msgid "** Prune failed: %1 **"
+msgstr "** Opschonen is mislukt: %1 **"

@@ -1,0 +1,993 @@
+# translation of kdevgdb.po to Ukrainian
+# Copyright (C) 2008-2013 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevgdb\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-17 05:40+0000\n"
+"PO-Revision-Date: 2014-06-26 18:46+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: breakpointcontroller.cpp:555
+#, kde-format
+msgid "<br>Old value: %1"
+msgstr "<br>Попереднє значення: %1"
+
+#: breakpointcontroller.cpp:558
+#, kde-format
+msgid "<br>New value: %1"
+msgstr "<br>Нове значення: %1"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, DebuggerConfigWidget)
+#: debuggerconfigwidget.ui:14
+msgid "Debugger Configuration"
+msgstr "Параметри зневадника"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: debuggerconfigwidget.ui:26 debuggerplugin.cpp:416
+msgid "Debugger"
+msgstr "Зневадник"
+
+#. i18n: ectx: property (text), widget (QLabel, gdbPath_label)
+#: debuggerconfigwidget.ui:38
+msgid "Debugger executable:"
+msgstr "Виконуваний файл зневадника:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_gdbPath)
+#: debuggerconfigwidget.ui:51
+msgid "Gdb executable"
+msgstr "Файл програми gdb"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_gdbPath)
+#: debuggerconfigwidget.ui:54
+msgid ""
+"To run \"gdb\" binary from $PATH, leave this field empty. To run custom gdb, "
+"for example, for a different architecture, enter the executable name here. "
+"You can either run gdb from $PATH, but with a different name (say, \"arm-gdb"
+"\"), by typing the name here, or specify full path to the gdb executable."
+msgstr ""
+"Щоб запускати файл програми «gdb», що розміщений за шляхом у $PATH, залиште "
+"це поле порожнім. Щоб запустити нетиповий gdb, наприклад для іншої "
+"архітектури, введіть тут назву файла програми. Ви можете або запустити gdb з "
+"$PATH, але з іншою назвою (скажімо, «arm-gdb»), ввівши назву у цьому полі, "
+"або зазначити повний шлях до файла програми gdb."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, debuggingShell_label)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_debuggingShell)
+#: debuggerconfigwidget.ui:67 debuggerconfigwidget.ui:86
+msgid ""
+"<html><head/><body><p>If you want gdb to be executed by a special shell "
+"script, which for example properly sets the library path, insert it here e."
+"g.: /path/to/script.sh --scriptArguments</p><p>Note: your script'll be "
+"invoked like this: /path/to/script.sh --scriptArguments debbuger --"
+"debuggerArguments. So script.sh <span style=\" font-weight:600;\">must</"
+"span> invoke \"debugger\" executable manually.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Якщо вам потрібно, щоб gdb запускалася спеціальним "
+"скриптом, який, наприклад, встановлює належним чином шлях до бібліотек, "
+"вкажіть його тут. Приклад: /шлях/до/скрипту.sh --ПараметриСкрипту</"
+"p><p>Зауваження: скрипт буде викликано так: /шлях/до/скрипту.sh --"
+"АргументиСкрипту засіб_діагностики --АргументиЗасобуДіагностики. Отже, "
+"скрипт.sh <span style=\" font-weight:600;\">має</span> викликати виконуваний "
+"файл «засобу діагностики» вручну.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, debuggingShell_label)
+#: debuggerconfigwidget.ui:73
+msgid "&Shell script:"
+msgstr "С&крипт оболонки:"
+
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, kcfg_debuggingShell)
+#: debuggerconfigwidget.ui:89
+msgid "<html><head/><body><p><br/></p></body></html>"
+msgstr "<html><head/><body><p><br/></p></body></html>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: debuggerconfigwidget.ui:99
+msgid "Options"
+msgstr "Параметри"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: debuggerconfigwidget.ui:108
+msgid "Display static &members:"
+msgstr "Показувати &статичні члени:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_displayStaticMembers)
+#: debuggerconfigwidget.ui:123
+msgid ""
+"Displaying static members makes GDB slower in\n"
+"producing data within KDE and Qt.\n"
+"It may change the \"signature\" of the data\n"
+"which QString and friends rely on,\n"
+"but if you need to debug into these values then\n"
+"check this option."
+msgstr ""
+"Відображення статичних членів уповільнює GDB\n"
+"під час обробки даних KDE і Qt.\n"
+"Воно може змінити підпис даних,\n"
+"який потрібен QString і дружнім з ним класам,\n"
+"але, якщо вам потрібно зневадити саме ці значення,\n"
+"увімкніть цей параметр."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: debuggerconfigwidget.ui:133
+msgid "Display &demangled names:"
+msgstr "Показувати &невиправлені назви:"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_asmDemangle)
+#: debuggerconfigwidget.ui:145
+msgid ""
+"When displaying the disassembled code you\n"
+"can select to see the methods' mangled names.\n"
+"However, non-mangled names are easier to read."
+msgstr ""
+"При відображенні дизасембльованого коду\n"
+"ви можете бачити виправлені імена методів.\n"
+"Але невиправлені імена легші для читання."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: debuggerconfigwidget.ui:155
+msgid "Start Debugger with:"
+msgstr "Запускати зневадник з:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
+#: debuggerconfigwidget.ui:166
+msgid "Application Output"
+msgstr "Виведені програмою дані"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
+#: debuggerconfigwidget.ui:171
+msgid "GDB Console"
+msgstr "Консоль GDB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_startWith)
+#: debuggerconfigwidget.ui:176
+msgid "Frame Stack"
+msgstr "Стек викликів"
+
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox)
+#: debuggerconfigwidget.ui:190
+msgid ""
+"This script is intended for the actual commands needed to connect to a "
+"remotely running executable.\n"
+"\tshell sleep 5\twait for remote program to start\n"
+"\ttarget remote ...\tconnect to the remote debugger\n"
+"\tcontinue\t[optional] run debugging to the first breakpoint"
+msgstr ""
+"Цей скрипт призначено для команд, потрібних для з’єднання з віддаленою "
+"програмою.\n"
+"\tshell sleep 5\tочікувати на запуск віддаленої програми\n"
+"\ttarget remote ...\tз’єднатися з віддаленими зневадником\n"
+"\tcontinue\t[необов’язковий] почати налагодження до першої точки зупинки"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: debuggerconfigwidget.ui:193
+msgid "Remote Debugging"
+msgstr "Дистанційне налагодження"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, runShellScript_label)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runShellScript)
+#: debuggerconfigwidget.ui:199 debuggerconfigwidget.ui:215
+msgid ""
+"<html><head/><body><p>Script to start remote application</p><p></p><p>This "
+"shell script is run after the Gdb Config script has been sourced by gdb.</"
+"p><p>It's purpose is to actually start the remote process.</p><p>1) Find a "
+"way to execute a command remotely - rsh, ssh, telnet, ...</p><p>2a) Execute "
+"\"gdbserver ... application\" on target.</p><p>or if your executable "
+"contains the gdb stub:</p><p>2b) Execute \"application\" on target.</p></"
+"body></html>"
+msgstr ""
+"<html><head/><body><p>Скрипт для запуску віддаленої програми</p><p></"
+"p><p>Цей скрипт оболонки запускається після скрипту налаштовування Gdb, що "
+"постачається з gdb.</p><p>Його призначенням є запуск віддаленого процесу.</"
+"p><p>1) Визначтесь зі способом віддаленого виконання команди — rsh, ssh, "
+"telnet, ...</p><p>2а) Виконайте команду «gdbserver ... програма» на "
+"віддаленому комп’ютері.</p><p>або, якщо у вашій програмі міститься затичка "
+"gdb</p><p>2б) Виконайте команду «програма» на віддаленому комп’ютері.</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, runShellScript_label)
+#: debuggerconfigwidget.ui:202
+msgctxt "Shell script to be executed at run time"
+msgid "R&un shell script:"
+msgstr "Ви&конати скрипт оболонки:"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, configGdbScript_label)
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_configGdbScript)
+#: debuggerconfigwidget.ui:225 debuggerconfigwidget.ui:267
+msgid ""
+"<html><head/><body><p>This script is sourced by gdb when the debugging "
+"starts.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Цей скрипт читає gdb перед початком налагодження.</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, configGdbScript_label)
+#: debuggerconfigwidget.ui:228
+msgid "Gdb &config script:"
+msgstr "Скрипт &налаштування gdb:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, kcfg_runGdbScript)
+#. i18n: ectx: property (toolTip), widget (QLabel, runGdbScript_label)
+#: debuggerconfigwidget.ui:241 debuggerconfigwidget.ui:251
+msgid ""
+"<html><head/><body><p>Script to connect with remote application</p><p>For "
+"example:</p><p>\tshell sleep 5\t #wait for remote program to start</p><p>"
+"\ttarget remote ...\t#connect to the remote debugger</p><p>\tcontinue\t#"
+"[optional] run debugging to the first breakpoint.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Скрипт для встановлення з’єднання з віддаленою "
+"програмою</p><p>Приклад:</p><p>\tshell sleep 5\t #зачекати на запуск "
+"віддаленої програми</p><p>\ttarget remote ...\t#з’єднатися із засобом "
+"віддаленої діагностики</p><p>\tcontinue\t#[необов’язково] запустити засіб "
+"діагностики до першої точки зупинки.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QLabel, runGdbScript_label)
+#: debuggerconfigwidget.ui:254
+msgctxt "Gdb script to be executed at run time."
+msgid "Run &gdb script:"
+msgstr "Виконати скрипт &gdb:"
+
+#: debuggerplugin.cpp:93
+msgid "GDB Support"
+msgstr "Підтримка GDB"
+
+#: debuggerplugin.cpp:93
+msgid ""
+"This plugin provides a frontend for GDB, a source-level debugger for C, C++ "
+"and more."
+msgstr ""
+"Цей додаток надає можливість користуватися клієнтським інтерфейсом GDB, "
+"зневадника вихідного коду на C, C++ тощо."
+
+#: debuggerplugin.cpp:155
+msgid "Disassemble/Registers"
+msgstr "Дизасемблер/Регістри"
+
+#: debuggerplugin.cpp:159 gdblaunchconfig.cpp:137
+msgid "GDB"
+msgstr "GDB"
+
+#: debuggerplugin.cpp:165
+msgid "Memory"
+msgstr "Пам'ять"
+
+#: debuggerplugin.cpp:200
+msgid "Examine Core File..."
+msgstr "Дослідити файл core..."
+
+#: debuggerplugin.cpp:201
+msgid "Examine core file"
+msgstr "Дослідити файл core"
+
+#: debuggerplugin.cpp:202
+msgid ""
+"<b>Examine core file</b><p>This loads a core file, which is typically "
+"created after the application has crashed, e.g. with a segmentation fault. "
+"The core file contains an image of the program memory at the time it "
+"crashed, allowing you to do a post-mortem analysis.</p>"
+msgstr ""
+"<b>Дослідити файл core</b><p>Завантажити файл core, який було створено під "
+"час аварійної зупинки програми, наприклад внаслідок порушення сегментації. "
+"Core-файл містить образ пам’яті програми під час аварійної зупинки, що "
+"дозволяє вам виконати аналіз причин проблеми.</p>"
+
+#: debuggerplugin.cpp:212
+msgid "Attach to Process"
+msgstr "Приєднати до процесу"
+
+#: debuggerplugin.cpp:213
+msgid "Attach to process..."
+msgstr "Приєднати до процесу..."
+
+#: debuggerplugin.cpp:214
+msgid ""
+"<b>Attach to process</b><p>Attaches the debugger to a running process.</p>"
+msgstr ""
+"<b>Приєднати до процесу</b><p>Приєднує зневадник до виконуваного процесу.</p>"
+
+#: debuggerplugin.cpp:246
+msgid "KDevelop"
+msgstr "KDevelop"
+
+#: debuggerplugin.cpp:319
+#, kde-format
+msgid "Evaluate: %1"
+msgstr "Обчислити: %1"
+
+#: debuggerplugin.cpp:321
+msgid ""
+"<b>Evaluate expression</b><p>Shows the value of the expression under the "
+"cursor.</p>"
+msgstr "<b>Обчислити вираз</b><p>Показує значення виразу під курсором.</p>"
+
+#: debuggerplugin.cpp:324
+#, kde-format
+msgid "Watch: %1"
+msgstr "Спостерігати: %1"
+
+#: debuggerplugin.cpp:326
+msgid ""
+"<b>Watch expression</b><p>Adds an expression under the cursor to the "
+"Variables/Watch list.</p>"
+msgstr ""
+"<b>Спостерігати за виразом</b><p>Додає вираз під курсором у список "
+"«Спостереження і змінні».</p>"
+
+#: debuggerplugin.cpp:356
+msgid "Choose a core file to examine..."
+msgstr "Виберіть файл core для вивчення..."
+
+#: debuggerplugin.cpp:363
+#, kde-format
+msgid "Examining core file %1"
+msgstr "Досліджується файл core %1"
+
+#: debuggerplugin.cpp:369
+msgid "Debug core file"
+msgstr "Налагоджування за файлом core"
+
+#: debuggerplugin.cpp:377
+msgid "Choose a process to attach to..."
+msgstr "Виберіть процес для приєднання..."
+
+#: debuggerplugin.cpp:386
+#, kde-format
+msgid "Not attaching to process %1: cannot attach the debugger to itself."
+msgstr ""
+"Не з’єднано з процесом %1: інструмент налагоджування не можна з’єднувати з "
+"самим інструментом налагоджування."
+
+#: debuggerplugin.cpp:394
+#, kde-format
+msgid "Attaching to process %1"
+msgstr "Приєднання до процесу %1"
+
+#: debuggerplugin.cpp:400
+#, kde-format
+msgid "Debug process %1"
+msgstr "Налагоджування процесу %1"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, DebuggerTracingDialog)
+#: debuggertracingdialog.ui:13
+msgid "Tracing Configuration"
+msgstr "Налаштування трасування"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, enable)
+#: debuggertracingdialog.ui:20
+msgid ""
+"<b>Enable tracing</b>\n"
+"<p>Tracing is a mechanism to automatically print values of the chosen "
+"expressions and continue execution when breakpoint is hit. You can think of "
+"it as printf debugging that does not require modifying the source.</p>"
+msgstr ""
+"<b>Увімкнути трасування</b>\n"
+"<p>Трасування — це механізм отримання значення потрібного виразу і "
+"продовження виконання програми після точки зупинки. Трасування можна вважати "
+"способом подібним до друку виразу командою printf, що не потребує зміни "
+"вихідного коду.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enable)
+#: debuggertracingdialog.ui:23
+msgid "Enable tracing"
+msgstr "Увімкнути трасування"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: debuggertracingdialog.ui:30 memviewdlg.cpp:101
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enableCustomFormat)
+#: debuggertracingdialog.ui:40
+msgid "Custom format string"
+msgstr "Нетиповий рядок формату"
+
+#. i18n: ectx: property (text), widget (QPushButton, okButton)
+#: debuggertracingdialog.ui:47 memviewdlg.cpp:98
+msgid "OK"
+msgstr "Гаразд"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, customFormat)
+#: debuggertracingdialog.ui:79
+#, no-c-format
+msgid ""
+"<b>Custom format string</b>\n"
+"<p>Specify a C-style format string that will be used when printing the "
+"chosen expression. For example:\n"
+"<p align=\"center\"> <tt>Tracepoint 1: g = %d</tt></p>\n"
+"If custom format string is not enabled, names and values of all expressions "
+"will be printed, using \"%d\" as format specifier for all expressions."
+msgstr ""
+"<b>Нетиповий рядок формату</b>\n"
+"<p>Вкажіть рядок формату у стилі C, який використовуватиметься під час друку "
+"вибраного виразу. Наприклад:\n"
+"<p align=\"center\"> <tt>Tracepoint 1: g = %d</tt></p>\n"
+"Якщо нетиповий рядок формату не увімкнено, назви і значення всіх виразів "
+"друкуватимуться з визначенням формату у вигляді «%d»."
+
+#. i18n: ectx: property (text), widget (QLabel, expressionsLabel)
+#: debuggertracingdialog.ui:99
+msgid "Expressions to print:"
+msgstr "Вираз для виводу:"
+
+#: debugsession.cpp:157
+msgid "Debugger stopped"
+msgstr "Зневадник зупинено"
+
+#: debugsession.cpp:186
+msgid "Application interrupted"
+msgstr "Виконання програми перервано"
+
+#: debugsession.cpp:190
+msgid "Process exited"
+msgstr "Процес завершився"
+
+#: debugsession.cpp:197
+msgid "Application is running"
+msgstr "Програма виконується"
+
+#: debugsession.cpp:203
+msgid "Application is paused"
+msgstr "Виконання програми призупинено"
+
+#: debugsession.cpp:416
+msgid ""
+"<b>GDB exited abnormally</b><p>This is likely a bug in GDB. Examine the gdb "
+"output window and then stop the debugger"
+msgstr ""
+"<b>Нештатне завершення GDB</b><p>Причиною може бути вада GDB. Перевірте "
+"вивід gdb, а потім зупиніть налагодження"
+
+#: debugsession.cpp:419
+msgid "GDB exited abnormally"
+msgstr "Нештатне завершення GDB"
+
+#: debugsession.cpp:548
+#, kde-format
+msgid ""
+"<b>Gdb command sent when debugger is not running</b><br>The command was:<br> "
+"%1"
+msgstr ""
+"<b>Було надіслано команду gdb у той час коли зневадник не було запущено</"
+"b><br>Ця команда:<br> %1"
+
+#: debugsession.cpp:550
+msgid "Internal error"
+msgstr "Внутрішня помилка"
+
+#: debugsession.cpp:647
+#, kde-format
+msgid "<b>Invalid debugger command</b><br>%1"
+msgstr "<b>Некоректна команда зневаднику</b><br>%1"
+
+#: debugsession.cpp:648
+msgid "Invalid debugger command"
+msgstr "Некоректна команда зневаднику"
+
+#: debugsession.cpp:676
+#, kde-format
+msgid "Exited with return code: %1"
+msgstr "Завершення з повернутим кодом: %1"
+
+#: debugsession.cpp:678
+msgid "Exited normally"
+msgstr "Нормальне завершення"
+
+#: debugsession.cpp:686
+#, kde-format
+msgid "Exited on signal %1"
+msgstr "Вихід за сигналом %1"
+
+#: debugsession.cpp:745
+#, kde-format
+msgid "Program received signal %1 (%2)"
+msgstr "Програма отримала сигнал %1 (%2)"
+
+#: debugsession.cpp:951
+msgid "Running program"
+msgstr "Виконання програми"
+
+#: debugsession.cpp:971
+#, kde-format
+msgid ""
+"No environment group specified, looks like a broken configuration, please "
+"check run configuration '%1'. Using default environment group."
+msgstr ""
+"Не вказано групу середовища, схоже, ви припустилися помилки під час "
+"налаштування, будь ласка, перевірте налаштування запуску «%1». Буде "
+"використано типову групу середовища."
+
+#: debugsession.cpp:1019
+msgid "Warning"
+msgstr "Попередження"
+
+#: debugsession.cpp:1223
+#, kde-format
+msgid "<b>Debugger error</b><p>Debugger reported the following error:<p><tt>%1"
+msgstr ""
+"<b>Помилка зневадника</b><p>Зневадник повідомив про таку помилку:<p><tt>%1"
+
+#: debugsession.cpp:1226
+msgid "Debugger error"
+msgstr "Помилка зневадника"
+
+#: debugsession.cpp:1325
+#, kde-format
+msgid "1 command in queue\n"
+msgid_plural "%1 commands in queue\n"
+msgstr[0] "У черзі %1 команда\n"
+msgstr[1] "У черзі %1 команди\n"
+msgstr[2] "У черзі %1 команд\n"
+msgstr[3] "У черзі %1 команда\n"
+
+#: debugsession.cpp:1326
+#, kde-format
+msgctxt "Only the 0 and 1 cases need to be translated"
+msgid "1 command being processed by gdb\n"
+msgid_plural "%1 commands being processed by gdb\n"
+msgstr[0] "%1 команда обробляється у gdb\n"
+msgstr[1] "%1 команди обробляється у gdb\n"
+msgstr[2] "%1 команд обробляється у gdb\n"
+msgstr[3] "%1 команда обробляється у gdb\n"
+
+#: debugsession.cpp:1327
+#, kde-format
+msgid "Debugger state: %1\n"
+msgstr "Стан зневадника: %1\n"
+
+#: debugsession.cpp:1331
+#, kde-format
+msgid ""
+"Current command class: '%1'\n"
+"Current command text: '%2'\n"
+"Current command original text: '%3'\n"
+msgstr ""
+"Клас поточної команди: '%1'\n"
+"Текст поточної команди: '%2'\n"
+"Початковий текст поточної команди: '%3'\n"
+
+#: debugsession.cpp:1342
+msgid "Debugger status"
+msgstr "Стан зневадника"
+
+#: debugsession.cpp:1445
+#, kde-format
+msgid "<b>You need gdb 7.0.0 or higher.</b><br />You are using: %1"
+msgstr ""
+"<b>Вам слід встановити gdb версії 7.0.0 або новішої.</b><br />Ви "
+"використовуєте: %1"
+
+#: debugsession.cpp:1447
+msgid "gdb error"
+msgstr "Помилка gdb"
+
+#: debugsession.cpp:1458
+msgid "<b>Could not start debugger:</b><br />"
+msgstr "<b>Не вдалося запустити зневадник</b><br />"
+
+#: debugsession.cpp:1460 debugsession.cpp:1472
+msgid "Startup error"
+msgstr "Помилка запуску"
+
+#: debugsession.cpp:1470
+msgid "<b>Could not attach debugger:</b><br />"
+msgstr "<b>Не вдалося приєднати зневадник:</b><br />"
+
+#: disassemblewidget.cpp:66
+msgid "Address Selector"
+msgstr "Вибір адреси"
+
+#: disassemblewidget.cpp:106
+msgid "Change &address"
+msgstr "Змінити &адресу"
+
+#: disassemblewidget.cpp:110
+msgid "&Jump to Cursor"
+msgstr "Пере&йти до курсора"
+
+#: disassemblewidget.cpp:111
+msgid "Sets the execution pointer to the current cursor position."
+msgstr "Встановити точку виконання у поточній позиції курсора."
+
+#: disassemblewidget.cpp:114
+msgid "&Run to Cursor"
+msgstr "Виконати до &курсора"
+
+#: disassemblewidget.cpp:115
+msgid "Continues execution until the cursor position is reached."
+msgstr "Продовжує виконання до досягнення поточної позиції курсора."
+
+#: disassemblewidget.cpp:155
+msgid ""
+"<b>Machine code display</b><p>A machine code view into your running "
+"executable with the current instruction highlighted. You can step "
+"instruction by instruction using the debuggers toolbar buttons of \"step over"
+"\" instruction and \"step into\" instruction."
+msgstr ""
+"<b>Вікно машинного коду</b><p>Вікно машинного коду у вашій запущеній "
+"програмі з підсвічуванням поточної інструкції. Ви можете виконувати "
+"інструкцію за інструкцією, використовуючи кнопки «Перейти до наступної» "
+"інструкції і «Увійти» в інструкцію панелі інструментів зневадника."
+
+#: disassemblewidget.cpp:169
+msgid "Address"
+msgstr "Адреса"
+
+#: disassemblewidget.cpp:169
+msgid "Function"
+msgstr "Функція"
+
+#: disassemblewidget.cpp:169
+msgid "Instruction"
+msgstr "Команда"
+
+#: disassemblewidget.cpp:188
+msgid "Disassemble/Registers View"
+msgstr "Перегляд результатів дизасемблювання/регістрів"
+
+#: gdb.cpp:104
+#, kde-format
+msgid "Could not locate the debugging shell '%1'."
+msgstr "Не вдалося виявити оболонку налагодження «%1»."
+
+#: gdb.cpp:105
+msgid "Debugging Shell Not Found"
+msgstr "Оболонку налагодження не знайдено"
+
+#: gdb.cpp:351
+msgctxt "<b>Internal debugger error</b>"
+msgid ""
+"<p>The debugger component encountered internal error while processing reply "
+"from gdb. Please submit a bug report."
+msgstr ""
+"<p>У компоненті зневадника сталася внутрішня помилка під час обробки "
+"відповіді з gdb. Будь ласка, повідомте про цю ваду."
+
+#: gdb.cpp:353
+#, kde-format
+msgid ""
+"The exception is: %1\n"
+"The MI response is: %2"
+msgstr ""
+"Виключення: %1\n"
+"Відповідь макроінструкції: %2"
+
+#: gdb.cpp:356
+msgid "Internal debugger error"
+msgstr "Внутрішня помилка зневадника"
+
+#: gdb.cpp:408
+#, kde-format
+msgid ""
+"<b>Could not start debugger.</b><p>Could not run '%1'. Make sure that the "
+"path name is specified correctly."
+msgstr ""
+"<b>Не вдалося запустити зневадник.</b><p>Не вдалося виконати «%1». "
+"Перевірте, чи вірно ви вказали шлях."
+
+#: gdb.cpp:412
+msgid "Could not start debugger"
+msgstr "Не вдалося запустити зневадник"
+
+#: gdb.cpp:429
+msgid ""
+"<b>Gdb crashed.</b><p>Because of that the debug session has to be ended."
+"<br>Try to reproduce the crash with plain gdb and report a bug.<br>"
+msgstr ""
+"<b>Програма gdb завершила роботу у аварійному режимі.</b><p>Через це сеанс "
+"налагоджування не було завершено.<br>Спробуйте відтворити аварію у "
+"звичайному режимі gdb (без KDevelop) і повідомте про ваду, якщо таку буде "
+"виявлено.<br>"
+
+#: gdb.cpp:432
+msgid "Gdb crashed"
+msgstr "Роботу gdb завершено у аварійному режимі"
+
+#: gdblaunchconfig.cpp:114
+msgid "GDB Configuration"
+msgstr "Налаштування GDB"
+
+#: gdblaunchconfig.cpp:171
+msgid "Executes a Native application in GDB"
+msgstr "Виконує програму у GDB"
+
+#: gdboutputwidget.cpp:68
+msgid "GDB Output"
+msgstr "Вивід GDB"
+
+#: gdboutputwidget.cpp:69
+msgid ""
+"<b>GDB output</b><p>Shows all gdb commands being executed. You can also "
+"issue any other gdb command while debugging.</p>"
+msgstr ""
+"<b>Вивід GDB</b><p>Показує всі команди, що виконуються gdb. Ви також можете "
+"віддати будь-яку іншу команду gdb під час налагодження.</p>"
+
+#: gdboutputwidget.cpp:78
+msgid "&GDB cmd:"
+msgstr "Команда &GDB:"
+
+#: gdboutputwidget.cpp:83
+msgid "Pause execution of the app to enter gdb commands"
+msgstr "Призупинити виконання програми для введення команд gdb"
+
+#: gdboutputwidget.cpp:395 gdboutputwidget.cpp:445
+msgid "Show Internal Commands"
+msgstr "Показувати внутрішні команди"
+
+#: gdboutputwidget.cpp:402 gdboutputwidget.cpp:452
+msgid ""
+"Controls if commands issued internally by KDevelop will be shown or not."
+"<br>This option will affect only future commands, it will not add or remove "
+"already issued commands from the view."
+msgstr ""
+"Змінює стан показу внутрішніх команд, що видаються KDevelop.<br>Цей параметр "
+"стосуватиметься лише наступних команд, він не додасть і не вилучить уже "
+"віддані команди з перегляду."
+
+#: gdboutputwidget.cpp:407
+msgid "Copy All"
+msgstr "Копіювати все"
+
+#. i18n: ectx: Menu (run)
+#: kdevgdbui.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Запустити"
+
+#. i18n: ectx: ToolBar (debugToolBar)
+#: kdevgdbui.rc:16
+msgid "Debugger Toolbar"
+msgstr "Пенал налагодження"
+
+#: memviewdlg.cpp:80
+msgid "Start"
+msgstr "Почати"
+
+#: memviewdlg.cpp:86
+msgid "Amount"
+msgstr "Кількість"
+
+#: memviewdlg.cpp:125
+msgid "Memory view"
+msgstr "Перегляд пам’яті"
+
+#: memviewdlg.cpp:268
+#, kde-format
+msgid "%2 (1 byte)"
+msgid_plural "%2 (%1 bytes)"
+msgstr[0] "%2 (%1 байт)"
+msgstr[1] "%2 (%1 байти)"
+msgstr[2] "%2 (%1 байтів)"
+msgstr[3] "%2 (%1 байт)"
+
+#: memviewdlg.cpp:315
+msgid "&Reload"
+msgstr "&Перезавантажити"
+
+#: memviewdlg.cpp:324
+msgid "&Format"
+msgstr "&Формат"
+
+#: memviewdlg.cpp:327
+msgid "&Binary"
+msgstr "&Двійковий"
+
+#: memviewdlg.cpp:332
+msgid "&Octal"
+msgstr "&Вісімковий"
+
+#: memviewdlg.cpp:337
+msgid "&Decimal"
+msgstr "&Десятковий"
+
+#: memviewdlg.cpp:342
+msgid "&Hexadecimal"
+msgstr "&Шістнадцятковий"
+
+#: memviewdlg.cpp:358
+msgid "&Grouping"
+msgstr "&Групування"
+
+#: memviewdlg.cpp:361
+msgid "&0"
+msgstr "&0"
+
+#: memviewdlg.cpp:366
+msgid "&1"
+msgstr "&1"
+
+#: memviewdlg.cpp:371
+msgid "&2"
+msgstr "&2"
+
+#: memviewdlg.cpp:376
+msgid "&4"
+msgstr "&4"
+
+#: memviewdlg.cpp:381
+msgid "&8"
+msgstr "&8"
+
+#: memviewdlg.cpp:386
+msgid "1&6"
+msgstr "1&6"
+
+#: memviewdlg.cpp:401
+msgid "Write changes"
+msgstr "Записати зміни"
+
+#: memviewdlg.cpp:405
+msgid "Change memory range"
+msgstr "Змінити діапазон пам’яті"
+
+#: memviewdlg.cpp:409
+msgid "Close this view"
+msgstr "Закрити це вікно"
+
+#: memviewdlg.cpp:478
+msgid "Memory viewer"
+msgstr "Перегляд пам’яті"
+
+#: memviewdlg.cpp:482
+msgid "New memory viewer"
+msgstr "Нове вікно перегляду пам’яті"
+
+#: memviewdlg.cpp:483
+msgctxt "@info:tooltip"
+msgid "Open a new memory viewer."
+msgstr "Відкрити нове вікно перегляду пам’яті."
+
+#: processselection.cpp:38
+msgid "Attach to a process"
+msgstr "Приєднати до процесу"
+
+#: registers/converters.cpp:31
+msgid "Binary"
+msgstr "Двійковий"
+
+#: registers/converters.cpp:31
+msgid "Octal"
+msgstr "Вісімкове"
+
+#: registers/converters.cpp:31
+msgid "Decimal"
+msgstr "Десяткове"
+
+#: registers/converters.cpp:31
+msgid "Hexadecimal"
+msgstr "Шістнадцяткове"
+
+#: registers/converters.cpp:31
+msgid "Raw"
+msgstr "Без обробки"
+
+#: registers/converters.cpp:31
+msgid "Unsigned"
+msgstr "Без знаку"
+
+#: registers/registercontroller_arm.cpp:107
+#: registers/registercontroller_x86.cpp:107
+msgid "General"
+msgstr "Загальне"
+
+#: registers/registercontroller_arm.cpp:107
+#: registers/registercontroller_x86.cpp:107
+msgid "Flags"
+msgstr "Прапорці"
+
+#: registers/registercontroller_arm.cpp:107
+msgid "VFP single-word"
+msgstr "VFP, одинарне слово"
+
+#: registers/registercontroller_arm.cpp:107
+msgid "VFP double-word"
+msgstr "VFP, подвійне слово"
+
+#: registers/registercontroller_arm.cpp:107
+msgid "VFP quad-word"
+msgstr "VFP, чотири слова"
+
+#: registers/registercontroller_x86.cpp:107
+msgid "FPU"
+msgstr "FPU"
+
+#: registers/registercontroller_x86.cpp:107
+msgid "XMM"
+msgstr "XMM"
+
+#: registers/registercontroller_x86.cpp:107
+msgid "Segment"
+msgstr "Сегмент"
+
+#: registers/registersview.cpp:68
+msgid "Format"
+msgstr "Формат"
+
+#: registers/registersview.cpp:77
+msgid "Mode"
+msgstr "Режим"
+
+#: registers/registersview.cpp:213
+msgid "Update"
+msgstr "Оновити"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SelectAddress)
+#: selectaddress.ui:20
+msgid "Address selector"
+msgstr "Вибір адреси"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, SelectAddress)
+#: selectaddress.ui:23
+msgid "Select the address to disassemble around"
+msgstr "Виберіть адресу ділянки дизасемблювання"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: selectaddress.ui:29
+msgid "Select address to disassemble around"
+msgstr "Виберіть адресу ділянки дизасебмлювання"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: selectcore.ui:17
+msgid "Executable:"
+msgstr "Виконуваний файл:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: selectcore.ui:27
+msgid "Core File:"
+msgstr "Файл core:"
+
+#: selectcoredialog.cpp:32
+msgid "Select Core File"
+msgstr "Вибір файла core"
+
+#: stty.cpp:247
+msgid ""
+"Cannot use the tty* or pty* devices.\n"
+"Check the settings on /dev/tty* and /dev/pty*\n"
+"As root you may need to \"chmod ug+rw\" tty* and pty* devices and/or add the "
+"user to the tty group using \"usermod -aG tty username\"."
+msgstr ""
+"Не вдалося використати пристрої tty* або pty*.\n"
+"Перевірте параметри /dev/tty* і /dev/pty*\n"
+"Можливо, вам слід від адміністратора виконати команди «chmod ug+rw» для tty* "
+"і pty* і додати свого користувача до групи tty за допомогою команди «usermod "
+"-aG tty _користувач_»."
+
+#: stty.cpp:296
+#, kde-format
+msgid "%1 is incorrect terminal name"
+msgstr "%1 є некоректною назвою термінала"
+
+#: stty.cpp:302
+msgid "Can't create a temporary file"
+msgstr "Не вдалося створити тимчасовий файл"
+
+#: stty.cpp:341
+#, kde-format
+msgid ""
+"Can't receive %1 tty/pty. Check that %1 is actually a terminal and that it "
+"accepts these arguments: -e sh -c \"tty> %2 ;exec<&-;exec>&-;while :;do "
+"sleep 3600;done\""
+msgstr ""
+"Не вдалося отримати %1 tty/pty. Перевірте, чи є %1 терміналом і чи приймає "
+"термінал такі аргументи: -e sh -c \"tty> %2 ;exec<&-;exec>&-;while :;do "
+"sleep 3600;done\""

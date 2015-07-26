@@ -1,0 +1,124 @@
+# translation of kdevreviewboard.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2010.
+# Roman Paholík <wizzardsk@gmail.com>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevreviewboard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-26 14:20+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: reviewboardjobs.cpp:154
+#, kde-format
+msgid "JSON error: %1: %2"
+msgstr "Chyba JSON: %1: %2"
+
+#: reviewboardjobs.cpp:159
+#, kde-format
+msgid "Request Error: %1"
+msgstr "Chyba požiadavky: %1"
+
+#: reviewboardjobs.cpp:187
+#, kde-format
+msgid ""
+"Could not create the new request:\n"
+"%1"
+msgstr ""
+"Nemôžem vytvoriť novú požiadavku:\n"
+"%1"
+
+#: reviewboardjobs.cpp:225
+msgid "Could not upload the patch"
+msgstr "Nemôžem nahrať záplatu"
+
+#: reviewboardjobs.cpp:314
+msgid "Could not get reviews list"
+msgstr "Nemôžem získať zoznam revízií"
+
+#: reviewboardplugin.cpp:47
+msgid "ReviewBoard Support"
+msgstr "Podpora ReviewBoard"
+
+#: reviewboardplugin.cpp:47
+msgid "Deal with the ReviewBoard Patches"
+msgstr "Vysporiadať sa so záplatami ReviewBoard"
+
+#: reviewboardplugin.cpp:115
+#, kde-format
+msgid "<qt>You can find the new request at:<br /><a href='%1'>%1</a> </qt>"
+msgstr "<qt>Môžete nájsť nový požiadavku na:<br /><a href='%1'>%1</a> </qt>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: reviewpatch.ui:17
+msgid "Destination"
+msgstr "Cieľ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: reviewpatch.ui:26
+msgid "Server"
+msgstr "Server"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: reviewpatch.ui:36
+msgid "Base Dir:"
+msgstr "Základný adresár:"
+
+#. i18n: ectx: property (text), widget (KLineEdit, basedir)
+#: reviewpatch.ui:43
+msgid "/"
+msgstr "/"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, basedir)
+#: reviewpatch.ui:46
+msgid "Where this project was checked out from"
+msgstr "Odkiaľ bol checkoutovaný tento projekt"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: reviewpatch.ui:56
+msgid "Authentication"
+msgstr "Overenie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: reviewpatch.ui:65
+msgid "Username:"
+msgstr "Používateľ:"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, username)
+#: reviewpatch.ui:72
+msgid "User name in the specified service"
+msgstr "Meno používateľa v zadanej službe"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: reviewpatch.ui:79
+msgid "Password:"
+msgstr "Heslo:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, repositoriesBox)
+#: reviewpatch.ui:99
+msgid "Repository"
+msgstr "Repozitár"
+
+#. i18n: ectx: property (title), widget (QGroupBox, reviewsBox)
+#: reviewpatch.ui:111
+msgid "Update review"
+msgstr "Aktualizovať revíziu"
+
+#: reviewpatchdialog.cpp:110
+msgid "Repository not selected"
+msgstr "Repozitár nevybraný"

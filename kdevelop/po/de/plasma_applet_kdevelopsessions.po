@@ -1,0 +1,26 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-27 09:56+0100\n"
+"PO-Revision-Date: 2012-07-21 20:31+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: package/contents/ui/kdevelopsessions.qml:74
+msgid "KDevelop Sessions"
+msgstr "KDevelop-Sitzungen"
+
+#: package/contents/ui/kdevelopsessions.qml:94
+msgid "Arbitrary String Which Says Something"
+msgstr "Beliebige Zeichenkette, die irgendetwas besagt"

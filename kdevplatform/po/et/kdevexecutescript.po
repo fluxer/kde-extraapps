@@ -1,0 +1,321 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marek Laane <bald@smail.ee>, 2010, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-07-03 16:39+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marek Laane"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bald@smail.ee"
+
+#: executescriptplugin.cpp:67
+msgid "Execute script support"
+msgstr "Skripti käivitamise toetus"
+
+#: executescriptplugin.cpp:67
+msgid "Allows running of scripts"
+msgstr "Võimaldab käivitada skripte"
+
+#: executescriptplugin.cpp:68
+msgid "Niko Sams"
+msgstr "Niko Sams"
+
+#: executescriptplugin.cpp:68
+msgid "Author"
+msgstr "Autor"
+
+#: executescriptplugin.cpp:106
+msgid "No valid executable specified"
+msgstr "Korrektset täitmisfaili pole määratud"
+
+#: executescriptplugin.cpp:116
+#, kde-format
+msgid ""
+"There is a quoting error in the script for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"Käivitamisseadistuse \"%1\" skriptis esines tsiteerimisviga. Käivitamisest "
+"loobutakse."
+
+#: executescriptplugin.cpp:121
+#, kde-format
+msgid ""
+"A shell meta character was included in the script for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"Käivitamisseadistuse \"%1\" skripti oli kaasatud shelli metamärk, mis ei ole "
+"praegu toetatud. Käivitamisest loobutakse."
+
+#: executescriptplugin.cpp:138
+#, kde-format
+msgid "No remote host set for launch configuration '%1'. Aborting start."
+msgstr ""
+"Käivitamisseadistusele \"%1\" pole kaugmasinat määratud. Käivitamisest "
+"loobutakse."
+
+#: executescriptplugin.cpp:161
+#, kde-format
+msgid ""
+"There is a quoting error in the arguments for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"Käivitamisseadistuse \"%1\" argumentides esines tsiteerimisviga. "
+"Käivitamisest loobutakse."
+
+#: executescriptplugin.cpp:165
+#, kde-format
+msgid ""
+"A shell meta character was included in the arguments for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"Käivitamisseadistuse \"%1\" argumentidesse oli kaasatud shelli metamärk, mis "
+"ei ole praegu toetatud. Käivitamisest loobutakse."
+
+#: executescriptplugin.cpp:218
+msgid "No valid interpreter specified"
+msgstr "Korrektset interpretaatorit pole määratud"
+
+#: executescriptplugin.cpp:228
+#, kde-format
+msgid ""
+"There is a quoting error in the interpreter for the launch configuration "
+"'%1'. Aborting start."
+msgstr ""
+"Käivitamisseadistuse \"%1\" interpretaatoris esines tsiteerimisviga. "
+"Käivitamisest loobutakse."
+
+#: executescriptplugin.cpp:233
+#, kde-format
+msgid ""
+"A shell meta character was included in the interpreter for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"Käivitamisseadistuse \"%1\" interpretaatorisse oli kaasatud shelli metamärk, "
+"mis ei ole praegu toetatud. Käivitamisest loobutakse."
+
+#: scriptappconfig.cpp:102
+msgid "Type or select an interpreter"
+msgstr "Kirjuta või vali interpretaator"
+
+#: scriptappconfig.cpp:135
+msgid "Configure Script Application"
+msgstr "Skriptirakenduse seadistamine"
+
+#: scriptappconfig.cpp:145
+msgid "Executes Script Applications"
+msgstr "Skriptirakenduste käivitamine"
+
+#: scriptappconfig.cpp:155 scriptappconfig.cpp:205
+msgid "Script Application"
+msgstr "Skripti rakendus"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: scriptappconfig.ui:17
+msgid "Interpreter"
+msgstr "Interpretaator"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: scriptappconfig.ui:32
+msgid "Script interpreter:"
+msgstr "Skripti interpretaator:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:57
+msgid "python"
+msgstr "python"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:62
+msgid "ruby"
+msgstr "ruby"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:67
+msgid "bash"
+msgstr "bash"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:72
+msgid "php"
+msgstr "php"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: scriptappconfig.ui:83
+msgid "Script file"
+msgstr "Skriptifail"
+
+#. i18n: ectx: property (text), widget (QRadioButton, runCurrentFile)
+#: scriptappconfig.ui:89
+msgid "Run the file currently open in the editor"
+msgstr "Redaktoris avatud faili käivitamine"
+
+#. i18n: ectx: property (text), widget (QRadioButton, runFixedFile)
+#: scriptappconfig.ui:99
+msgid "Always run the same file"
+msgstr "Alati sama faili käivitamine"
+
+#. i18n: ectx: property (text), widget (QLabel, scriptLabel)
+#: scriptappconfig.ui:111
+msgid "Script file:"
+msgstr "Skriptifail:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, executablePath)
+#: scriptappconfig.ui:121
+msgid "Enter the absolute path to the script to run"
+msgstr "Sisesta käivitatava skripti absoluutne asukoht"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: scriptappconfig.ui:133
+msgid "Behavior"
+msgstr "Käitumine"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: scriptappconfig.ui:145
+msgid "Arguments:"
+msgstr "Argumendid:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arguments)
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, arguments)
+#: scriptappconfig.ui:155 scriptappconfig.ui:161
+msgid "Enter arguments to give to the executable"
+msgstr "Sisesta täitmisfailile antavad argumendid"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: scriptappconfig.ui:168
+msgid "Working Directory:"
+msgstr "Töökataloog:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, workingDirectory)
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, workingDirectory)
+#: scriptappconfig.ui:178 scriptappconfig.ui:181
+msgid "Select a working directory for the executable"
+msgstr "Vali täitmisfailile töökataloog"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: scriptappconfig.ui:188
+msgid "Environment:"
+msgstr "Keskkond:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: scriptappconfig.ui:198
+msgid "Select an environment to be used"
+msgstr "Vali kasutatav keskkond"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: scriptappconfig.ui:205
+msgid "Output Filter:"
+msgstr "Väljundifilter:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:212
+msgid ""
+"Select the filter to applied to the output. E.g. to mark errors with red text"
+msgstr ""
+"Vali väljundile rakendatav filter. Nt. vigade märkimiseks punase tekstiga."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:216
+msgid "No Filter"
+msgstr "Filter puudub"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:221
+msgid "Compiler Filter"
+msgstr "Kompilaatori filter"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:226
+msgid "Script Error Filter"
+msgstr "Skripti tõrgete filter"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:231
+msgid "Static Analysis Filter"
+msgstr "Staatilise analüüsi filter"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: scriptappconfig.ui:248
+msgid "Execute on Host"
+msgstr "Käivitamine masinas"
+
+#. i18n: ectx: property (text), widget (QCheckBox, remoteHostCheckbox)
+#: scriptappconfig.ui:254
+msgid "Execute on remote host"
+msgstr "Käivitamine kaugmasinas"
+
+#. i18n: ectx: property (text), widget (QLabel, remoteHostLabel)
+#: scriptappconfig.ui:266
+msgid "Remote host (ssh):"
+msgstr "Kaugmasin (ssh):"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, remoteHost)
+#: scriptappconfig.ui:279
+msgid "Enter a remote host (user@example.com)"
+msgstr "Sisesta kaugmasin (kasutaja@kuskil.ee)"
+
+#: scriptappjob.cpp:87
+msgid "There is no active document to launch."
+msgstr "Pole aktiivset dokumenti, mida käivitada."
+
+#: scriptappjob.cpp:110
+#, kde-format
+msgid ""
+"No environment group specified, looks like a broken configuration, please "
+"check run configuration '%1'. Using default environment group."
+msgstr ""
+"Keskkonnagruppi pole määratud, tundub, et tegemist on katkise seadistusega. "
+"Palun käivita kontrolliks '%1' konfigureerimine. Kasutatakse vaikimisi "
+"keskkonnagruppi."
+
+#: scriptappjob.cpp:186
+#, kde-format
+msgid "Starting: %1"
+msgstr "Käivitamine: %1"
+
+#: scriptappjob.cpp:200
+msgid "*** Killed Application ***"
+msgstr "*** Rakendus tapeti ***"
+
+#: scriptappjob.cpp:211
+msgid "*** Exited normally ***"
+msgstr "*** Väljuti normaalselt ***"
+
+#: scriptappjob.cpp:213
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** Väljuti koodiga %1 ***"
+
+#: scriptappjob.cpp:216
+msgid "*** Process aborted ***"
+msgstr "*** Protsess katkestas töö ***"
+
+#: scriptappjob.cpp:219
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** Krahh koodiga %1 ***"
+
+#: scriptappjob.cpp:234
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr ""
+"*** Programmi '%1' käivitamine nurjus. Kontrolli, kas otsingutee (path) on "
+"ikka korrektne ***"

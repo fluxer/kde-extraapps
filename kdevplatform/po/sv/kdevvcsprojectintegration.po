@@ -1,0 +1,62 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:07+0000\n"
+"PO-Revision-Date: 2013-10-06 09:36+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: vcschangesview.cpp:84
+msgid "Refresh"
+msgstr "Uppdatera"
+
+#: vcschangesviewplugin.cpp:48
+msgid "VCS Project Integration"
+msgstr "Integrering av projekt med versionskontrollsystem"
+
+#: vcschangesviewplugin.cpp:48
+msgid ""
+"This plugin provides integration between the projects and their VCS "
+"infrastructure"
+msgstr ""
+"Det här insticksprogrammet tillhandahåller integrering mellan projekten och "
+"deras VCS infrastruktur"
+
+#: vcschangesviewplugin.cpp:85
+msgid "VCS Changes"
+msgstr "Ändringar i versionskontrollsystem"
+
+#: vcschangesviewplugin.cpp:88
+msgid "Locate Current Document"
+msgstr "Hitta nuvarande dokument"
+
+#: vcschangesviewplugin.cpp:90
+msgid "Locates the current document and selects it."
+msgstr "Hittar nuvarande dokument och markerar det."
+
+#: vcschangesviewplugin.cpp:93
+msgid "Reload View"
+msgstr "Uppdatera vy"
+
+#: vcschangesviewplugin.cpp:95
+msgid "Refreshes the view for all projects, in case anything changed."
+msgstr "Uppdaterar visningen av alla projekt, ifall någonting har ändrats."

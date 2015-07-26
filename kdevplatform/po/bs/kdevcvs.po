@@ -1,0 +1,211 @@
+# Bosnian translation for kdevplatform
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the kdevplatform package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevplatform\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-01-26 14:19+0000\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-01-26 22:18+0000\n"
+"X-Generator: Launchpad (build 16451)\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Samir Ribić"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "samir.ribic@etf.unsa.ba"
+
+#: checkoutdialog.cpp:53
+msgid "Error on checkout"
+msgstr "Greška pri izdvajanju"
+
+#: checkoutdialog.cpp:53 checkoutdialog.cpp:80
+msgid "Checkout Error"
+msgstr "Greška pri izdvajanju"
+
+#: checkoutdialog.cpp:79
+#, kde-format
+msgid "Some errors occurred while checking out into %1"
+msgstr "Greške su se desile prilikom izdvajanja u %1"
+
+#. i18n: ectx: property (windowTitle), widget (KDialog, CheckoutDialogBase)
+#: checkoutdialog.ui:13
+msgid "Checkout"
+msgstr "Izdvajanje"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: checkoutdialog.ui:21
+msgid "&Local destination directory:"
+msgstr "&Lokalni odredišni direktorij:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: checkoutdialog.ui:47
+msgid "&Server path (e.g. :pserver:username@cvs.example.com:/cvsroot):"
+msgstr "&Serverska staza (e.g. :pserver:username@cvs.example.com:/cvsroot):"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: checkoutdialog.ui:67
+msgid "&Module:"
+msgstr "&Modul:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: checkoutdialog.ui:88
+msgid "Tag/Branch:"
+msgstr "Oznaka/Grana:"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, CommitDialogBase)
+#: commitdialog.ui:13
+msgid "Commit to Repository"
+msgstr "Upiši u repozitorij"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: commitdialog.ui:19
+msgid "Message"
+msgstr "Poruka"
+
+#: cvsgenericoutputview.cpp:42
+msgid "Job exited normally"
+msgstr "Program napušten normalno"
+
+#: cvsmainview.cpp:26 cvsmainview.cpp:38 cvsplugin.cpp:52 cvsplugin.cpp:92
+#: cvsplugin.cpp:472
+msgid "CVS"
+msgstr "CVS"
+
+#: cvsplugin.cpp:52
+msgid "Support for CVS version control system"
+msgstr "Podrška za CVS sistem kontrole verzija"
+
+#: cvsplugin.cpp:119
+msgid "Import Directory..."
+msgstr "Uvezi Direktorij..."
+
+#: cvsplugin.cpp:123
+msgid "Checkout..."
+msgstr "Izdvoji..."
+
+#: cvsplugin.cpp:127
+msgid "Status..."
+msgstr "Status..."
+
+#: cvsplugin.cpp:171
+msgid "Status"
+msgstr "Status"
+
+#: cvsplugin.cpp:200
+msgid "Edit"
+msgstr "Izmijeni"
+
+#: cvsplugin.cpp:204
+msgid "Unedit"
+msgstr "Poništi izmjenu"
+
+#: cvsplugin.cpp:208
+msgid "Show Editors"
+msgstr "Prikaži uređivače"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditorsViewBase)
+#: cvsplugin.cpp:256 editorsview.ui:13
+msgid "Editors"
+msgstr "Uređivači"
+
+#: editorsview.cpp:43
+msgid "Listing editors failed"
+msgstr "Uređivači listinga nisu uspjeli"
+
+#: editorsview.cpp:58
+msgid "No files from your query are marked as being edited."
+msgstr "nijedna datoteka uz vašeg upita nije označena kao mijenjana"
+
+#: editorsview.cpp:66
+msgid "User"
+msgstr "Korisnik"
+
+#: editorsview.cpp:67
+msgid "Date"
+msgstr "Datum"
+
+#: editorsview.cpp:68
+msgid "Machine"
+msgstr "Računar"
+
+#: editorsview.cpp:69
+msgid "Repository"
+msgstr "Repozitorijum"
+
+#: importdialog.cpp:54
+msgid "Error on importing"
+msgstr "Greška pri uvozu"
+
+#: importdialog.cpp:54 importdialog.cpp:84
+msgid "Import Error"
+msgstr "Greška pri uvozu"
+
+#: importdialog.cpp:83
+#, kde-format
+msgid "Some errors occurred while importing %1"
+msgstr "Neke greške su se desile prilikom uvoza %1"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ImportMetadataWidget)
+#: importmetadatawidget.ui:13
+msgid "Import"
+msgstr "Uvoz"
+
+#. i18n: ectx: property (text), widget (QLabel, labelUrl)
+#: importmetadatawidget.ui:19
+msgid "Source Directory:"
+msgstr "Izvorni direktorij:"
+
+#. i18n: ectx: property (text), widget (QLabel, repositoryLabel)
+#: importmetadatawidget.ui:35
+msgid "&Repository:"
+msgstr "&Repozitorij:"
+
+#. i18n: ectx: property (text), widget (QLabel, moduleLabel)
+#: importmetadatawidget.ui:57
+msgid "Mo&dule:"
+msgstr "Mo&dul:"
+
+#. i18n: ectx: property (text), widget (QLabel, vendorLabel)
+#: importmetadatawidget.ui:79
+msgid "&Vendor tag:"
+msgstr "Oznaka &proizvođača:"
+
+#. i18n: ectx: property (text), widget (KLineEdit, vendorTag)
+#: importmetadatawidget.ui:92
+msgid "vendor"
+msgstr "proizvođač"
+
+#. i18n: ectx: property (text), widget (QLabel, releaseLabel)
+#: importmetadatawidget.ui:105
+msgid "Re&lease tag:"
+msgstr "&Oznaka izdanja:"
+
+#. i18n: ectx: property (text), widget (KLineEdit, releaseTag)
+#: importmetadatawidget.ui:118
+msgid "start"
+msgstr "početak"
+
+#. i18n: ectx: property (text), widget (QLabel, commentLabel)
+#: importmetadatawidget.ui:131
+msgid "Co&mment:"
+msgstr "&Komentar:"
+
+#. i18n: ectx: Menu (cvs_popup)
+#: kdevcvs.rc:5
+msgctxt "@title:menu"
+msgid "CVS"
+msgstr "CVS"

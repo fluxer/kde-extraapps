@@ -1,0 +1,70 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2009, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-01 05:08+0000\n"
+"PO-Revision-Date: 2013-10-06 09:35+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: kdevdocumentview.cpp:74 kdevdocumentview.cpp:77
+#: kdevdocumentviewplugin.cpp:94
+msgid "Documents"
+msgstr "Dokument"
+
+#: kdevdocumentview.cpp:201
+msgid "Reload"
+msgstr "Uppdatera"
+
+#: kdevdocumentview.cpp:206
+msgid "Close Other Files"
+msgstr "Stäng övriga filer"
+
+#: kdevdocumentviewplugin.cpp:39
+msgid "Document View"
+msgstr "Dokumentvy"
+
+#: kdevdocumentviewplugin.cpp:39
+msgid ""
+"This plugin displays a graphical view of all documents currently loaded and "
+"separates them by mimetype."
+msgstr ""
+"Insticksprogrammet visar en grafisk vy av alla dokument som för närvarande "
+"har laddats och delar upp dem enligt Mime-typ."
+
+#. i18n: ectx: label, entry (displayMimeType), group (General Options)
+#: settings/config.kcfg:9
+msgid "Display document categories (mimetypes) in the view"
+msgstr "Visa dokumentkategorier (Mime-typer) i vyn"
+
+#. i18n: ectx: whatsthis, entry (displayMimeType), group (General Options)
+#: settings/config.kcfg:11
+msgid ""
+"If this option is set, the Document View will organize documents\n"
+"        by their mimetype."
+msgstr ""
+"Om alternativet är aktiverat, organiserar dokumentvyn dokumenten\n"
+"enligt deras Mime-typ."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_displayMimeType)
+#: settings/settingswidget.ui:38
+msgid "Display document &categories"
+msgstr "Visa dokument&kategorier"

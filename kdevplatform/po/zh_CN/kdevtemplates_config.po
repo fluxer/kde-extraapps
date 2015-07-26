@@ -1,0 +1,38 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Xuetian Weng <xweng@cs.stonybrook.edu>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-05-03 10:15+0200\n"
+"PO-Revision-Date: 2014-10-15 02:12-0400\n"
+"Last-Translator: Xuetian Weng <xweng@cs.stonybrook.edu>\n"
+"Language-Team: Chinese Simplified <kde-china@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (text), widget (KPushButton, loadButton)
+#: templatepage.ui:26
+msgid "Load Template From File"
+msgstr "从文件装入模板"
+
+#. i18n: ectx: property (text), widget (KPushButton, getNewButton)
+#: templatepage.ui:38
+msgid "Get More Templates"
+msgstr "获取更多模板"
+
+#. i18n: ectx: property (text), widget (KPushButton, shareButton)
+#: templatepage.ui:50
+msgid "Share Templates"
+msgstr "共享模板"
+
+#. i18n: ectx: property (text), widget (KPushButton, extractButton)
+#: templatepage.ui:62
+msgid "Clone Template"
+msgstr "克隆模板"

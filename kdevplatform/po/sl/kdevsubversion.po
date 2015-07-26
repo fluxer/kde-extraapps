@@ -1,0 +1,637 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-11-29 18:58+0100\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Mernik"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrejm@ubuntu.si"
+
+#: kdevsvnplugin.cpp:78 kdevsvnplugin.cpp:464
+msgid "Subversion"
+msgstr "Subversion"
+
+#: kdevsvnplugin.cpp:78
+msgid "Support for Subversion version control systems"
+msgstr "Podpora za sisteme za nadzor različic Subversion"
+
+#: kdevsvnplugin.cpp:345
+msgid "Copy..."
+msgstr "Kopiraj ..."
+
+#: kdevsvnplugin.cpp:352
+msgid "Move..."
+msgstr "Premakni ..."
+
+#: kdevsvnplugin.cpp:367 kdevsvnplugin.cpp:376 kdevsvnplugin.cpp:385
+#: kdevsvnplugin.cpp:421 kdevsvnplugin.cpp:457 kdevsvnplugin.cpp:476
+#: kdevsvnplugin.cpp:497
+msgid "Please select only one item for this operation"
+msgstr "Za to dejanje izberite le en predmet"
+
+#: kdevsvnplugin.cpp:399 kdevsvnplugin.cpp:435
+msgid "Destination file/directory"
+msgstr "Ciljna datoteka/mapa"
+
+#: kdevsvnplugin.cpp:411
+msgid "Copying only works on local files"
+msgstr "Kopiranje deluje le na krajevnih datotekah"
+
+#: kdevsvnplugin.cpp:448
+msgid "Moving only works on local files/dirs"
+msgstr "Premikanje deluje le na krajevnih datotekah/mapah"
+
+#: kdevsvnplugin.cpp:482
+msgid "Import into Subversion repository"
+msgstr "Uvozi v skladišče Subversion"
+
+#: kdevsvnplugin.cpp:503
+msgid "Checkout from Subversion repository"
+msgstr "Prevzemi iz skladišča Subversion"
+
+#: svnaddjob.cpp:90
+msgid "Subversion Add"
+msgstr "Subversion: dodaj"
+
+#: svnaddjob.cpp:103
+msgid "Not enough information to add file"
+msgstr "Ni dovolj podatkov za dodajanje datoteke"
+
+#: svnblamejob.cpp:149
+msgid "Subversion Annotate"
+msgstr "Subversion: zabeleži"
+
+#: svnblamejob.cpp:164
+msgid "Not enough information to blame location"
+msgstr "Ni dovolj podatkov za ugotovitev odgovornosti za mesto"
+
+#: svncatjob.cpp:118 svncatwidgets.cpp:20
+msgid "Subversion Cat"
+msgstr "Subversion: izpiši vsebino"
+
+#: svncatjob.cpp:131
+msgid "Not enough information to execute cat"
+msgstr "Ni dovolj podatkov za izpis vsebine"
+
+#: svncheckoutjob.cpp:106
+msgid "Subversion Checkout"
+msgstr "Subversion: prevzemi"
+
+#: svncheckoutjob.cpp:118
+msgid "Not enough information to checkout"
+msgstr "Ni dovolj podatkov za prevzem"
+
+#: svncommitjob.cpp:147
+msgid "Committing..."
+msgstr "Uveljavljanje ..."
+
+#: svncommitjob.cpp:152
+msgid "Not enough information to execute commit"
+msgstr "Ni dovolj podatkov za uveljavitev"
+
+#: svncopyjob.cpp:88 svncopywidgets.cpp:24
+msgid "Subversion Copy"
+msgstr "Subversion: kopiraj"
+
+#: svncopyjob.cpp:101
+msgid "Not enough information to copy file"
+msgstr "Ni dovolj podatkov za kopiranje datoteke"
+
+#: svndiffjob.cpp:290
+msgid "Subversion Diff"
+msgstr "Subversion: razlika"
+
+#: svndiffjob.cpp:309
+msgid "Not enough information given to execute diff"
+msgstr "Ni dovolj podatkov za izvedbo prikaza razlik"
+
+#: svnimportjob.cpp:102
+msgid "Subversion Import"
+msgstr "Subversion: uvozi"
+
+#: svnimportjob.cpp:115
+msgid "Not enough information to import"
+msgstr "Ni dovolj podatkov za uvoz"
+
+#: svninfojob.cpp:99
+msgid "Subversion Info"
+msgstr "Subversion: podrobnosti"
+
+#: svninfojob.cpp:133
+msgid "Not enough information to execute info job"
+msgstr "Ni dovolj podatkov za izpis podrobnosti"
+
+#: svninternaljobbase.cpp:90
+#, kde-format
+msgctxt "A file was marked to be added to svn"
+msgid "Added %1"
+msgstr "Dodal %1"
+
+#: svninternaljobbase.cpp:93
+#, kde-format
+msgctxt "A file was marked for deletion from svn"
+msgid "Deleted %1"
+msgstr "Izbrisal %1"
+
+#: svninternaljobbase.cpp:97
+#, kde-format
+msgctxt "A file was deleted during an svn update operation"
+msgid "Deleted %1"
+msgstr "%1 izbrisana"
+
+#: svninternaljobbase.cpp:100
+#, kde-format
+msgctxt "A file was added during an svn update operation"
+msgid "Added %1"
+msgstr "%1 dodana"
+
+#: svninternaljobbase.cpp:140
+#, kde-format
+msgid "Revision %1"
+msgstr "Predelava %1"
+
+#: svninternaljobbase.cpp:143
+#, kde-format
+msgid "Updating externals: %1"
+msgstr "Posodobitev zunanjih: %1"
+
+#: svninternaljobbase.cpp:151
+#, kde-format
+msgid "Sending %1"
+msgstr "Pošiljanje %1"
+
+#: svninternaljobbase.cpp:155
+#, kde-format
+msgid "Adding %1 using mimetype %2."
+msgstr "Dodajanje %1 z uporabo vrste mime %2."
+
+#: svninternaljobbase.cpp:157
+#, kde-format
+msgid "Adding %1."
+msgstr "Dodajanje %1."
+
+#: svninternaljobbase.cpp:161
+#, kde-format
+msgid "Deleting %1."
+msgstr "Brisanje %1."
+
+#: svninternaljobbase.cpp:164
+#, kde-format
+msgid "Replacing %1."
+msgstr "Zamenjava %1."
+
+#: svninternaljobbase.cpp:169
+msgid "Transmitting file data "
+msgstr "Prenašanje datotečnih podatkov "
+
+#: svninternaljobbase.cpp:175
+#, kde-format
+msgid "Blame finished for revision %1, path %2"
+msgstr "Izpis odgovornosti (blame) je bil končan za predelavo %1, pot %2"
+
+#: svninternaljobbase.cpp:178
+#, kde-format
+msgid "Reverted working copy %1"
+msgstr "Povrnjena delovna kopija %1"
+
+#: svninternaljobbase.cpp:181
+#, kde-format
+msgid "Reverting failed on working copy %1"
+msgstr "Povrnitev je spodletela za delovno kopijo %1"
+
+#: svninternaljobbase.cpp:184
+#, kde-format
+msgid "Copied %1"
+msgstr "Kopiral %1"
+
+#: svninternaljobbase.cpp:243
+msgid "Certificate is not yet valid."
+msgstr "Potrdilo še ni veljavno."
+
+#: svninternaljobbase.cpp:247
+msgid "Certificate has expired."
+msgstr "Potrdilo je preteklo."
+
+#: svninternaljobbase.cpp:251
+msgid "Certificate's CN (hostname) doesn't match the remote hostname."
+msgstr ""
+"CN potrdila (ime gostitelja) se ne ujema z oddaljenim imenom gostitelja."
+
+#: svninternaljobbase.cpp:255
+msgid "Certificate authority is unknown."
+msgstr "Overitelj potrdil za to potrdilo je neznan."
+
+#: svninternaljobbase.cpp:259
+msgid "Other unknown error."
+msgstr "Druga neznana napaka."
+
+#: svnjobbase.cpp:60
+#, kde-format
+msgid "Enter Login for: %1"
+msgstr "Vnesite prijavne podatke za %1"
+
+#: svnjobbase.cpp:145
+msgid "Completed"
+msgstr "Zaključeno"
+
+#: svnjobbase.cpp:165
+#, kde-format
+msgid ""
+"Error executing Job:\n"
+"%1"
+msgstr ""
+"Napaka med izvajanjem posla:\n"
+"%1"
+
+#: svnlogjob.cpp:120
+msgid "Subversion Log"
+msgstr "Subversion: dnevnik"
+
+#: svnlogjob.cpp:135
+msgid "Not enough information to log location"
+msgstr "Ni dovolj podatkov za prikaz dnevnika za mesto"
+
+#: svnmovejob.cpp:100 svnmovewidgets.cpp:22
+msgid "Subversion Move"
+msgstr "Subversion: premakni"
+
+#: svnmovejob.cpp:113
+msgid "Not enough information to move file"
+msgstr "Ni dovolj podatkov za premik datoteke"
+
+#: svnremovejob.cpp:96
+msgid "Subversion Remove"
+msgstr "Subversion: odstrani"
+
+#: svnremovejob.cpp:109
+msgid "Not enough information to execute remove job"
+msgstr "Ni dovolj podatkov za odstranitev posla"
+
+#: svnrevertjob.cpp:94 svnrevertwidgets.cpp:23
+msgid "Subversion Revert"
+msgstr "Subversion: povrni"
+
+#: svnrevertjob.cpp:107
+msgid "Not enough information to execute revert"
+msgstr "Ni dovolj podatkov za povrnitev"
+
+#: svnssldialog.cpp:29
+msgid "Ssl Server Certificate"
+msgstr "Potrdilo strežnika SSL"
+
+#: svnssldialog.cpp:32
+msgid "Trust Temporarily"
+msgstr "Zaupaj začasno"
+
+#: svnssldialog.cpp:33
+msgid "Trust Permanently"
+msgstr "Zaupaj trajno"
+
+#: svnssldialog.cpp:62
+#, kde-format
+msgid "Ssl Server Certificate: %1"
+msgstr "Potrdilo strežnika SSL: %1"
+
+#: svnstatusjob.cpp:136 svnstatuswidgets.cpp:23
+msgid "Subversion Status"
+msgstr "Subversion: stanje"
+
+#: svnstatusjob.cpp:156
+msgid "Not enough information to execute status job"
+msgstr "Ni dovolj podatkov za izpis stanja"
+
+#: svnupdatejob.cpp:128 svnupdatewidget.cpp:33
+msgid "Subversion Update"
+msgstr "Subversion: posodobi"
+
+#: svnupdatejob.cpp:141
+msgid "Not enough Information to execute update"
+msgstr "Ni dovolj podatkov za posodobitev"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, startRevWidget)
+#: ui/blameoptiondlg.ui:16 ui/diffoptiondlg.ui:36 ui/logviewoptiondlg.ui:19
+msgid "Start Revision"
+msgstr "Začetna predelava"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, endRevWidget)
+#: ui/blameoptiondlg.ui:28 ui/diffoptiondlg.ui:43 ui/logviewoptiondlg.ui:31
+msgid "End Revision"
+msgstr "Končna predelava"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutMetadataWidget)
+#: ui/checkoutmetadatawidget.ui:13
+msgid "Checkout"
+msgstr "Prevzemi"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/checkoutmetadatawidget.ui:19
+msgid "Repository Url:"
+msgstr "Naslov URL skladišča:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/checkoutmetadatawidget.ui:29
+msgid "Destination Path:"
+msgstr "Ciljna pot:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/checkoutmetadatawidget.ui:39
+msgid "Recursive:"
+msgstr "Rekurzivno:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/copyoptiondlg.ui:22 ui/moveoptiondlg.ui:22
+msgid "Requested local path:"
+msgstr "Zahtevana krajevna pot:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: ui/copyoptiondlg.ui:39 ui/moveoptiondlg.ui:39
+msgid "Source"
+msgstr "Vir"
+
+#. i18n: ectx: property (text), widget (QRadioButton, urlRadio)
+#: ui/copyoptiondlg.ui:45 ui/moveoptiondlg.ui:45
+msgid "Specify by repository URL"
+msgstr "Podajte po naslovu URL skladišča"
+
+#. i18n: ectx: property (text), widget (QRadioButton, pathRadio)
+#: ui/copyoptiondlg.ui:52 ui/moveoptiondlg.ui:52
+msgid "Specify by local working copy"
+msgstr "Podajte po krajevni delovni kopiji"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/copyoptiondlg.ui:65
+msgid "Source revision"
+msgstr "Predelava vira"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/copyoptiondlg.ui:77 ui/moveoptiondlg.ui:65
+msgid "Destination"
+msgstr "Cilj"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/copyoptiondlg.ui:89 ui/moveoptiondlg.ui:77
+msgid "Specify either the full repository URL or local working path"
+msgstr "Podajte ali poln naslov URL skladišča ali krajevno delovno pot"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/diffoptiondlg.ui:22
+msgid "Target Url"
+msgstr "Ciljni naslov URL"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurseChk)
+#: ui/diffoptiondlg.ui:50
+msgid "Non Recursive"
+msgstr "Ni rekurzivno"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nodiffDeletedChk)
+#: ui/diffoptiondlg.ui:57
+msgid "No diff deleted"
+msgstr "Ni izbrisane razlike"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreContentsChk)
+#: ui/diffoptiondlg.ui:64
+msgid "Ignore contents type"
+msgstr "Prezri vrsto vsebine"
+
+#. i18n: ectx: property (text), widget (QLabel, labelForSrc)
+#: ui/importmetadatawidget.ui:17
+msgid "Source directory:"
+msgstr "Izvorna mapa:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/importmetadatawidget.ui:24
+msgid "Repository:"
+msgstr "Skladišče:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:31
+msgid "Repository Location"
+msgstr "Mesto skladišča"
+
+#. i18n: ectx: property (statusTip), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:34
+msgid "Repository Location to import into"
+msgstr "Mesto skladišča v katerega bo uvoženo"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:37
+msgid "Choose the repository into which the source directory is imported"
+msgstr "Izberite skladišče v katerega bo uvožena izvorna mapa"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/importmetadatawidget.ui:50
+msgid "Commit Message:"
+msgstr "Sporočilo uveljavitve:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogViewOptionDlg)
+#: ui/logviewoptiondlg.ui:13
+msgid "Subversion Log View Options"
+msgstr "Možnosti prikaza dnevnika Subversion"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/logviewoptiondlg.ui:60
+msgid "Maximum number of logs to be displayed"
+msgstr "Največje število dnevnikov, ki bodo prikazani"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox1)
+#: ui/logviewoptiondlg.ui:82
+msgid "Do not show logs before branching point"
+msgstr "Ne prikaži dnevnikov pred razvejitvijo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceChk)
+#: ui/moveoptiondlg.ui:90
+msgid "Forcefully delete locally modified and/or unversioned items"
+msgstr ""
+"Nasilno izbriši krajevno spremenjene predmete in/ali predmete brez različic"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/revertoptiondlg.ui:16
+msgid "Select working copies to be reverted:"
+msgstr "Izberite delovne kopije, ki bodo povrnjene:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:30
+msgid "Select"
+msgstr "Izberi"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:35
+msgid "Text Status"
+msgstr "Stanje besedila"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:40
+msgid "Prop Status"
+msgstr "Stanje lastnosti"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:45
+msgid "Working Copy"
+msgstr "Delovna kopija"
+
+#. i18n: ectx: property (text), widget (QCheckBox, recursive)
+#: ui/revertoptiondlg.ui:53
+msgid "Recursive"
+msgstr "Rekurzivno"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revnumRadio)
+#: ui/revisionwidget.ui:28
+msgid "Specify as number:"
+msgstr "Podajte kot število:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revkindRadio)
+#: ui/revisionwidget.ui:42
+msgid "Specify as keyword:"
+msgstr "Podajte kot ključno besedo:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revdateRadio)
+#: ui/revisionwidget.ui:52
+msgid "Specify as date:"
+msgstr "Podajte kot datum:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnSSLTrustDialog)
+#: ui/ssltrustdialog.ui:13
+msgid "SSL Server Certificate"
+msgstr "Potrdilo strežnika SSL"
+
+#. i18n: ectx: property (text), widget (QLabel, msgLabel)
+#: ui/ssltrustdialog.ui:20
+msgid ""
+"There were errors validating the server certificate.\n"
+"Do you want to trust this certificate?"
+msgstr ""
+"Med preverjanjem veljavnosti potrdila strežnika je prišlo do napak.\n"
+"Ali želite zaupati temu potrdilu?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/ssltrustdialog.ui:33
+msgid "Reasons why the validation failed"
+msgstr "Razlogi zakaj je preverjanje veljavnosti spodletelo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/ssltrustdialog.ui:55
+msgid "Certificate Information"
+msgstr "Podatki potrdila"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/ssltrustdialog.ui:67
+msgid "Hostname:"
+msgstr "Ime gostitelja:"
+
+#. i18n: ectx: property (text), widget (QLabel, hostname)
+#: ui/ssltrustdialog.ui:80
+msgid "someserver"
+msgstr "nek_strežnik"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/ssltrustdialog.ui:87
+msgid "Issuer:"
+msgstr "Izdajatelj:"
+
+#. i18n: ectx: property (text), widget (QLabel, issuer)
+#: ui/ssltrustdialog.ui:100
+msgid "someissuer"
+msgstr "nek_izdajatelj"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/ssltrustdialog.ui:107
+msgid "Valid From:"
+msgstr "Veljaven od:"
+
+#. i18n: ectx: property (text), widget (QLabel, validFrom)
+#: ui/ssltrustdialog.ui:120
+msgid "validfrom"
+msgstr "veljaven_od"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/ssltrustdialog.ui:127
+msgid "Valid Until:"
+msgstr "Veljaven do:"
+
+#. i18n: ectx: property (text), widget (QLabel, validUntil)
+#: ui/ssltrustdialog.ui:140
+msgid "validuntil"
+msgstr "veljaven_do"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ui/ssltrustdialog.ui:147
+msgid "Fingerprint:"
+msgstr "Prstni odtis:"
+
+#. i18n: ectx: property (text), widget (QLabel, fingerprint)
+#: ui/ssltrustdialog.ui:160
+msgid "fingerprint"
+msgstr "prstni_odtis"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/statusoptiondlg.ui:22
+msgid "Status Requested for:"
+msgstr "Stanje zahtevano za:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/statusoptiondlg.ui:36
+msgid "Specify revision"
+msgstr "Podajte predelavo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurse)
+#: ui/statusoptiondlg.ui:48
+msgid "Non recursive"
+msgstr "Ni rekurzivno"
+
+#. i18n: ectx: property (text), widget (QCheckBox, onlyInterests)
+#: ui/statusoptiondlg.ui:55
+msgid "Retrieve only \"interesting\" entries (such as local modifications)"
+msgstr "Pridobi le \"zanimive\" vnose (kot krajevne spremembe)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, contactRepChk)
+#: ui/statusoptiondlg.ui:71
+msgid "Contact repository and augment with repository information"
+msgstr "Stopi v stik s skladiščem in razširi s podatki o skladišču"
+
+#. i18n: ectx: property (text), widget (QCheckBox, noignore)
+#: ui/statusoptiondlg.ui:78
+msgid "Do not ignore svn:ignore"
+msgstr "Ne prezri svn:ignore"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreExternalsChk)
+#: ui/statusoptiondlg.ui:85
+msgid "Ignore external items"
+msgstr "Prezri zunanje predmete"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurseChk)
+#: ui/updateoptiondlg.ui:34
+msgid "Update immediate children only (non-recursive)"
+msgstr "Posodobi samo prve podrejene (ni rekurzivno)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreexternalChk)
+#: ui/updateoptiondlg.ui:41
+msgid "Ignore external entries"
+msgstr "Prezri zunanje vnose"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/updateoptiondlg.ui:48
+msgid "Select Revision"
+msgstr "Izberite predelavo"

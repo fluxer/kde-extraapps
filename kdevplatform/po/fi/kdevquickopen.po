@@ -1,0 +1,217 @@
+# Copyright © 2011 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdevplatform package.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013.
+#
+# KDE Finnish translation sprint participants:
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevquickopen\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-04 06:03+0000\n"
+"PO-Revision-Date: 2013-12-22 13:53+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:33+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lasse Liehu"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lasse.liehu@gmail.com"
+
+#: documentationquickopenprovider.cpp:49
+#, kde-format
+msgid "Documentation in the %1"
+msgstr "Dokumentaatio lähteestä %1"
+
+#: duchainitemquickopen.cpp:52
+#, kde-format
+msgid "Not available any more: %1"
+msgstr "Ei enää saatavilla: %1"
+
+#: duchainitemquickopen.cpp:137
+msgid "Not available any more"
+msgstr "Ei enää saatavilla"
+
+#: duchainitemquickopen.cpp:145
+#, kde-format
+msgctxt "%1: function signature"
+msgid "Return: %1"
+msgstr "Paluuarvo: %1"
+
+#: duchainitemquickopen.cpp:149
+#, kde-format
+msgctxt "%1: file path"
+msgid "File: %1"
+msgstr "Tiedosto: %1"
+
+#: duchainitemquickopen.cpp:154 duchainitemquickopen.cpp:206
+#, kde-format
+msgid "Project %1"
+msgstr "Projekti: %1"
+
+#. i18n: ectx: ToolBar (quickOpenToolBar)
+#: kdevquickopen.rc:42
+msgid "Quick Open Toolbar"
+msgstr "Pika-avaustyökalurivi"
+
+#: projectfilequickopen.cpp:83 projectfilequickopen.cpp:147
+#: projectfilequickopen.cpp:154
+#, kde-format
+msgctxt "%1: project name"
+msgid "Project %1"
+msgstr "Projekti %1"
+
+#: projectfilequickopen.cpp:155
+msgid "Not parsed yet"
+msgstr "Ei vielä jäsennetty"
+
+#: projectfilequickopen.cpp:190
+msgid "none"
+msgstr "ei mitään"
+
+#: projectitemquickopen.cpp:343 projectitemquickopen.cpp:353
+#: quickopenplugin.cpp:913
+msgid "Classes"
+msgstr "Luokat"
+
+#: projectitemquickopen.cpp:344 projectitemquickopen.cpp:356
+#: quickopenplugin.cpp:910
+msgid "Functions"
+msgstr "Funktiot"
+
+#: projectitemquickopen.cpp:351 quickopenplugin.cpp:811
+#: quickopenplugin.cpp:824 quickopenplugin.cpp:831
+msgid "Project"
+msgstr "Projekti"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, QuickOpen)
+#: quickopen.ui:14 quickopenplugin.cpp:119 quickopenplugin.cpp:169
+#: quickopenplugin.cpp:928
+msgid "Quick Open"
+msgstr "Pika-avaus"
+
+#. i18n: ectx: property (text), widget (QLabel, searchLabel)
+#: quickopen.ui:31
+msgid "Search:"
+msgstr "Hae:"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, searchLine)
+#: quickopen.ui:44 quickopenplugin.cpp:1340
+msgid "Quick Open..."
+msgstr "Pika-avaus…"
+
+#. i18n: ectx: property (text), widget (QPushButton, okButton)
+#: quickopen.ui:54
+msgid "Open"
+msgstr "Avaa"
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: quickopen.ui:61
+msgid "Cancel"
+msgstr "Peru"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: quickopen.ui:91
+msgid "&Scopes:"
+msgstr "&Hakualueet:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: quickopen.ui:136
+msgid "&Items:"
+msgstr "&Alkiot"
+
+#: quickopenplugin.cpp:169
+msgid ""
+"This plugin allows quick access to project files and language-items like "
+"classes/functions."
+msgstr ""
+"Tämä liitännäinen mahdollistaa projektitiedostojen nopean haun ja "
+"kielialkiot kuten luokat/funktiot."
+
+#: quickopenplugin.cpp:734
+msgid "&Quick Open"
+msgstr "&Pika-avaus"
+
+#: quickopenplugin.cpp:740
+msgid "Quick Open &File"
+msgstr "&Tiedoston pika-avaus"
+
+#: quickopenplugin.cpp:746
+msgid "Quick Open &Class"
+msgstr "&Luokan pika-avaus"
+
+#: quickopenplugin.cpp:752
+msgid "Quick Open &Function"
+msgstr "&Funktion pika-avaus"
+
+#: quickopenplugin.cpp:758
+msgid "Quick Open &Already Open File"
+msgstr "&Avoinna olevan tiedoston pika-avaus"
+
+#: quickopenplugin.cpp:763
+msgid "Quick Open &Documentation"
+msgstr "&Dokumentaation pika-avaus"
+
+#: quickopenplugin.cpp:769
+msgid "Jump to Declaration"
+msgstr "Hyppää esittelyyn"
+
+#: quickopenplugin.cpp:775
+msgid "Jump to Definition"
+msgstr "Hyppää määrittelyyn"
+
+#: quickopenplugin.cpp:781
+msgid "Embedded Quick Open"
+msgstr "Upotettu pika-avaus"
+
+#: quickopenplugin.cpp:787
+msgid "Next Function"
+msgstr "Seuraava funktio"
+
+#: quickopenplugin.cpp:792
+msgid "Previous Function"
+msgstr "Edellinen funktio"
+
+# Tämä ei ehkä paras suomennos, mutta oli kirjoitushetkellä käytössä enkä keksinyt parempaa
+#: quickopenplugin.cpp:797 quickopenplugin.cpp:1253
+msgid "Outline"
+msgstr "Rakenne"
+
+#: quickopenplugin.cpp:811 quickopenplugin.cpp:838 quickopenplugin.cpp:997
+msgid "Includes"
+msgstr "Sisältävät"
+
+#: quickopenplugin.cpp:811
+msgid "Includers"
+msgstr "Sisällyttäjät"
+
+#: quickopenplugin.cpp:811 quickopenplugin.cpp:817 quickopenplugin.cpp:894
+#: quickopenplugin.cpp:895 quickopenplugin.cpp:919 quickopenplugin.cpp:920
+msgid "Currently Open"
+msgstr "Avoinna olevat"
+
+#: quickopenplugin.cpp:818 quickopenplugin.cpp:825 quickopenplugin.cpp:907
+msgid "Files"
+msgstr "Tiedostot"
+
+#: quickopenplugin.cpp:839 quickopenplugin.cpp:997
+msgid "Documentation"
+msgstr "Dokumentaatio"
+
+#: quickopenplugin.cpp:1341
+msgid ""
+"Search for files, classes, functions and more, allowing you to quickly "
+"navigate in your source code."
+msgstr ""
+"Hae tiedostoja, luokkia, funktioita ja muita, mahdollistaen pikaisen "
+"lähdekoodin navigoinnin"

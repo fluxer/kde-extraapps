@@ -1,0 +1,59 @@
+# Translation of kdevdocumentswitcher to Norwegian Bokmål
+#
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-04-01 14:00+0200\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Bjørn Steensrud"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bjornst@skogkatt.homelinux.org"
+
+#: documentswitcherplugin.cpp:52
+msgid "Document Switcher"
+msgstr "Dokumentbytter"
+
+#: documentswitcherplugin.cpp:52
+msgid "Switch between open documents using most-recently-used list"
+msgstr ""
+"Bytter mellom åpne dokumenter ved å bruke lista over sist brukte dokumenter"
+
+#: documentswitcherplugin.cpp:66
+msgid "Last Used Views"
+msgstr "Sist brukte visninger"
+
+#: documentswitcherplugin.cpp:69
+msgid "Opens a list to walk through the list of last used views."
+msgstr "Åpner en liste for å gå gjennom lista over de sist brukte visningene."
+
+#: documentswitcherplugin.cpp:70 documentswitcherplugin.cpp:78
+msgid "Walk through the list of last used views"
+msgstr "Gå gjennom lista over de sist brukte visningene"
+
+#: documentswitcherplugin.cpp:74
+msgid "Last Used Views (Reverse)"
+msgstr "Sist brukte visninger (omvendt)"
+
+#: documentswitcherplugin.cpp:77
+msgid "Opens a list to walk through the list of last used views in reverse."
+msgstr ""
+"Åpner en liste for å gå gjennom de sist brukte visningene i omvendt "
+"rekkefølge."

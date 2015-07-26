@@ -1,0 +1,103 @@
+# translation of kdevcmakebuilder.po to Estonian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marek Laane <bald@smail.ee>, 2009, 2010, 2011, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2014-06-11 18:41+0300\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marek Laane"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bald@smail.ee"
+
+#: cmakebuilder.cpp:55
+msgid "CMake Builder"
+msgstr "CMake'i ehitaja"
+
+#: cmakebuilder.cpp:56
+msgid "Support for building CMake projects"
+msgstr "CMake'i projektide ehitamise toetus"
+
+#: cmakebuilder.cpp:109
+msgid "No Build Directory configured, cannot build"
+msgstr "Ehituskataloogi pole määratud, ei saa ehitada"
+
+#: cmakebuilder.cpp:109
+msgid "Aborting build"
+msgstr "Ehitamisest loobumine"
+
+#: cmakebuilder.cpp:160
+msgid "No Build Directory configured, cannot clean"
+msgstr "Ehituskataloogi pole määratud, ei saa puhastada"
+
+#: cmakebuilder.cpp:160
+msgid "Aborting clean"
+msgstr "Puhastamisest loobumine"
+
+#: cmakebuilder.cpp:195
+msgid "No Build Directory configured, cannot install"
+msgstr "Ehituskataloogi pole määratud, ei saa paigaldada"
+
+#: cmakebuilder.cpp:195
+msgid "Aborting install"
+msgstr "Paigaldamisest loobumine"
+
+#: cmakebuilder.cpp:219
+msgid "No Build Directory configured, cannot configure"
+msgstr "Ehituskataloogi pole määratud, ei saa konfigureerida"
+
+#: cmakebuilder.cpp:219
+msgid "Aborting configure"
+msgstr "Konfigureerimisest loobumine"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuildersettings.ui:17
+msgid "Generator:"
+msgstr "Genereerija:"
+
+#: cmakejob.cpp:50 prunejob.cpp:38
+msgid "CMake"
+msgstr "CMake"
+
+#: cmakejob.cpp:137
+#, kde-format
+msgid "CMake: %1"
+msgstr "CMake: %1"
+
+#: prunejob.cpp:52
+msgid "No Build Directory configured, cannot clear builddir"
+msgstr "Ehituskataloogi pole määratud, ei saa seda tühjendada"
+
+#: prunejob.cpp:58
+msgid "Wrong build directory, cannot clear the build directory"
+msgstr "Vale ehituskataloog, seda ei saa tühjendada"
+
+#: prunejob.cpp:71
+#, kde-format
+msgid "%1> rm -rf %2"
+msgstr "%1> rm -rf %2"
+
+#: prunejob.cpp:86
+msgid "** Prune successful **"
+msgstr "** Eemaldamine õnnestus **"
+
+#: prunejob.cpp:88
+#, kde-format
+msgid "** Prune failed: %1 **"
+msgstr "** Eemaldamine nurjus: %1 **"

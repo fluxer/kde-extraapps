@@ -1,0 +1,636 @@
+# Translation of kdevsubversion to Norwegian Bokmål
+#
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2011-01-19 12:41+0100\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 1.1\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Bjørn Steensrud"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bjornst@skogkatt.homelinux.org"
+
+#: kdevsvnplugin.cpp:78 kdevsvnplugin.cpp:464
+msgid "Subversion"
+msgstr "Subversion"
+
+#: kdevsvnplugin.cpp:78
+msgid "Support for Subversion version control systems"
+msgstr "Støtte for Subversion versjonskontrollsystemer"
+
+#: kdevsvnplugin.cpp:345
+msgid "Copy..."
+msgstr "Kopier …"
+
+#: kdevsvnplugin.cpp:352
+msgid "Move..."
+msgstr "Flytt …"
+
+#: kdevsvnplugin.cpp:367 kdevsvnplugin.cpp:376 kdevsvnplugin.cpp:385
+#: kdevsvnplugin.cpp:421 kdevsvnplugin.cpp:457 kdevsvnplugin.cpp:476
+#: kdevsvnplugin.cpp:497
+msgid "Please select only one item for this operation"
+msgstr "Velg bare ett element for denne handlingen"
+
+#: kdevsvnplugin.cpp:399 kdevsvnplugin.cpp:435
+msgid "Destination file/directory"
+msgstr "Målfl/mappe:"
+
+#: kdevsvnplugin.cpp:411
+msgid "Copying only works on local files"
+msgstr "Kopiering virker bare for lokale filer"
+
+#: kdevsvnplugin.cpp:448
+msgid "Moving only works on local files/dirs"
+msgstr "Flytting virker bare for lokale filer/mapper"
+
+#: kdevsvnplugin.cpp:482
+msgid "Import into Subversion repository"
+msgstr "Importer inn i et Subversion-lager"
+
+#: kdevsvnplugin.cpp:503
+msgid "Checkout from Subversion repository"
+msgstr "Sjekk ut fra Subversion-lager"
+
+#: svnaddjob.cpp:90
+msgid "Subversion Add"
+msgstr "Subversion Legg til"
+
+#: svnaddjob.cpp:103
+msgid "Not enough information to add file"
+msgstr "Ikke nok informasjon for å legge til fil"
+
+#: svnblamejob.cpp:149
+msgid "Subversion Annotate"
+msgstr "Subversion Annotate"
+
+#: svnblamejob.cpp:164
+msgid "Not enough information to blame location"
+msgstr "Ikke nok informasjon for å klandre sted"
+
+#: svncatjob.cpp:118 svncatwidgets.cpp:20
+msgid "Subversion Cat"
+msgstr "Subversion Cat"
+
+#: svncatjob.cpp:131
+msgid "Not enough information to execute cat"
+msgstr "Ikke nok informasjon for å kjøre cat"
+
+#: svncheckoutjob.cpp:106
+msgid "Subversion Checkout"
+msgstr "Subversion utsjekking"
+
+#: svncheckoutjob.cpp:118
+msgid "Not enough information to checkout"
+msgstr "Ikke nok informasjon for å sjekke ut"
+
+#: svncommitjob.cpp:147
+msgid "Committing..."
+msgstr "Innleverer …"
+
+#: svncommitjob.cpp:152
+msgid "Not enough information to execute commit"
+msgstr "Ikke nok informasjon for å kjøre innlevering"
+
+#: svncopyjob.cpp:88 svncopywidgets.cpp:24
+msgid "Subversion Copy"
+msgstr "Subversion Kopier"
+
+#: svncopyjob.cpp:101
+msgid "Not enough information to copy file"
+msgstr "Ikke nok informasjon for å kopiere fil"
+
+#: svndiffjob.cpp:290
+msgid "Subversion Diff"
+msgstr "Subversion Diff"
+
+#: svndiffjob.cpp:309
+msgid "Not enough information given to execute diff"
+msgstr "Ikke nok informasjon for å kjøre diff"
+
+#: svnimportjob.cpp:102
+msgid "Subversion Import"
+msgstr "Subversion Importer"
+
+#: svnimportjob.cpp:115
+msgid "Not enough information to import"
+msgstr "Ikke nok informasjon for å importere"
+
+#: svninfojob.cpp:99
+msgid "Subversion Info"
+msgstr "Subversion Info"
+
+#: svninfojob.cpp:133
+msgid "Not enough information to execute info job"
+msgstr "Ikke nok informasjon for å kjøre info-jobb"
+
+#: svninternaljobbase.cpp:90
+#, kde-format
+msgctxt "A file was marked to be added to svn"
+msgid "Added %1"
+msgstr "Lagt til %1"
+
+#: svninternaljobbase.cpp:93
+#, kde-format
+msgctxt "A file was marked for deletion from svn"
+msgid "Deleted %1"
+msgstr "Slettet %1"
+
+#: svninternaljobbase.cpp:97
+#, kde-format
+msgctxt "A file was deleted during an svn update operation"
+msgid "Deleted %1"
+msgstr "Slettet %1"
+
+#: svninternaljobbase.cpp:100
+#, kde-format
+msgctxt "A file was added during an svn update operation"
+msgid "Added %1"
+msgstr "Lagt til %1"
+
+#: svninternaljobbase.cpp:140
+#, kde-format
+msgid "Revision %1"
+msgstr "Revisjon %1"
+
+#: svninternaljobbase.cpp:143
+#, kde-format
+msgid "Updating externals: %1"
+msgstr "Oppdaterer eksterne: %1"
+
+#: svninternaljobbase.cpp:151
+#, kde-format
+msgid "Sending %1"
+msgstr "Sender %1"
+
+#: svninternaljobbase.cpp:155
+#, kde-format
+msgid "Adding %1 using mimetype %2."
+msgstr "Legger til %1 med mimetype %2."
+
+#: svninternaljobbase.cpp:157
+#, kde-format
+msgid "Adding %1."
+msgstr "Legger til %1."
+
+#: svninternaljobbase.cpp:161
+#, kde-format
+msgid "Deleting %1."
+msgstr "Sletter %1."
+
+#: svninternaljobbase.cpp:164
+#, kde-format
+msgid "Replacing %1."
+msgstr "Erstatter %1."
+
+#: svninternaljobbase.cpp:169
+msgid "Transmitting file data "
+msgstr "Overfører fildata "
+
+#: svninternaljobbase.cpp:175
+#, kde-format
+msgid "Blame finished for revision %1, path %2"
+msgstr "Klandring ferdig for revisjon %1, sti %2"
+
+#: svninternaljobbase.cpp:178
+#, kde-format
+msgid "Reverted working copy %1"
+msgstr "Tilbakestilte arbeidskopi %1"
+
+#: svninternaljobbase.cpp:181
+#, kde-format
+msgid "Reverting failed on working copy %1"
+msgstr "Klarte ikke tilbakestille arbeidskopi %1"
+
+#: svninternaljobbase.cpp:184
+#, kde-format
+msgid "Copied %1"
+msgstr "Kopiert %1"
+
+#: svninternaljobbase.cpp:243
+msgid "Certificate is not yet valid."
+msgstr "Sertifikatet er ikke gyldig ennå."
+
+#: svninternaljobbase.cpp:247
+msgid "Certificate has expired."
+msgstr "Sertifikatet er utgått."
+
+#: svninternaljobbase.cpp:251
+msgid "Certificate's CN (hostname) doesn't match the remote hostname."
+msgstr "Sertifikatets CN (vertsnavn) passer ikke med vertsnavnet på nettet."
+
+#: svninternaljobbase.cpp:255
+msgid "Certificate authority is unknown."
+msgstr "Sertifikatutstederen er ukjent."
+
+#: svninternaljobbase.cpp:259
+msgid "Other unknown error."
+msgstr "Annen ukjent feil."
+
+#: svnjobbase.cpp:60
+#, kde-format
+msgid "Enter Login for: %1"
+msgstr "Oppgi innlogging for: %1"
+
+#: svnjobbase.cpp:145
+msgid "Completed"
+msgstr "Fullført"
+
+#: svnjobbase.cpp:165
+#, kde-format
+msgid ""
+"Error executing Job:\n"
+"%1"
+msgstr ""
+"Feil ved kjøring av jobb:\n"
+"%1"
+
+#: svnlogjob.cpp:120
+msgid "Subversion Log"
+msgstr "Subversion logg"
+
+#: svnlogjob.cpp:135
+msgid "Not enough information to log location"
+msgstr "Ikke nok informasjon for å logge sted"
+
+#: svnmovejob.cpp:100 svnmovewidgets.cpp:22
+msgid "Subversion Move"
+msgstr "Subversion Flytt"
+
+#: svnmovejob.cpp:113
+msgid "Not enough information to move file"
+msgstr "Ikke nok informasjon for å flytte fil"
+
+#: svnremovejob.cpp:96
+msgid "Subversion Remove"
+msgstr "Subversion Fjern"
+
+#: svnremovejob.cpp:109
+msgid "Not enough information to execute remove job"
+msgstr "Ikke nok informasjon for å kjøre fjern-jobb"
+
+#: svnrevertjob.cpp:94 svnrevertwidgets.cpp:23
+msgid "Subversion Revert"
+msgstr "Subversion Tilbakestill"
+
+#: svnrevertjob.cpp:107
+msgid "Not enough information to execute revert"
+msgstr "Ikke nok informasjon for å kjøre revert"
+
+#: svnssldialog.cpp:29
+msgid "Ssl Server Certificate"
+msgstr "SSL tjenersertifikat"
+
+#: svnssldialog.cpp:32
+msgid "Trust Temporarily"
+msgstr "Gi foreløpig tillit"
+
+#: svnssldialog.cpp:33
+msgid "Trust Permanently"
+msgstr "Gi permanent tillit"
+
+#: svnssldialog.cpp:62
+#, kde-format
+msgid "Ssl Server Certificate: %1"
+msgstr "SSL tjenersertifikat: %1"
+
+#: svnstatusjob.cpp:136 svnstatuswidgets.cpp:23
+msgid "Subversion Status"
+msgstr "Subversion Status"
+
+#: svnstatusjob.cpp:156
+msgid "Not enough information to execute status job"
+msgstr "Ikke nok informasjon for å kjøre status-jobb"
+
+#: svnupdatejob.cpp:128 svnupdatewidget.cpp:33
+msgid "Subversion Update"
+msgstr "Subversion Oppdater"
+
+#: svnupdatejob.cpp:141
+msgid "Not enough Information to execute update"
+msgstr "Ikke nok informasjon for å kjøre update"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, startRevWidget)
+#: ui/blameoptiondlg.ui:16 ui/diffoptiondlg.ui:36 ui/logviewoptiondlg.ui:19
+msgid "Start Revision"
+msgstr "Start revisjon"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, endRevWidget)
+#: ui/blameoptiondlg.ui:28 ui/diffoptiondlg.ui:43 ui/logviewoptiondlg.ui:31
+msgid "End Revision"
+msgstr "Slutt revisjon"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutMetadataWidget)
+#: ui/checkoutmetadatawidget.ui:13
+msgid "Checkout"
+msgstr "Sjekk ut"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/checkoutmetadatawidget.ui:19
+msgid "Repository Url:"
+msgstr "Lager-URL:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/checkoutmetadatawidget.ui:29
+msgid "Destination Path:"
+msgstr "Målsti:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/checkoutmetadatawidget.ui:39
+msgid "Recursive:"
+msgstr "Rekursivt:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/copyoptiondlg.ui:22 ui/moveoptiondlg.ui:22
+msgid "Requested local path:"
+msgstr "Ønsket lokal sti:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: ui/copyoptiondlg.ui:39 ui/moveoptiondlg.ui:39
+msgid "Source"
+msgstr "Kilde"
+
+#. i18n: ectx: property (text), widget (QRadioButton, urlRadio)
+#: ui/copyoptiondlg.ui:45 ui/moveoptiondlg.ui:45
+msgid "Specify by repository URL"
+msgstr "Oppgi ved lager-URL"
+
+#. i18n: ectx: property (text), widget (QRadioButton, pathRadio)
+#: ui/copyoptiondlg.ui:52 ui/moveoptiondlg.ui:52
+msgid "Specify by local working copy"
+msgstr "Oppgi ved lokal arbeidskopi"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/copyoptiondlg.ui:65
+msgid "Source revision"
+msgstr "Kilderevisjon"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/copyoptiondlg.ui:77 ui/moveoptiondlg.ui:65
+msgid "Destination"
+msgstr "Mål"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/copyoptiondlg.ui:89 ui/moveoptiondlg.ui:77
+msgid "Specify either the full repository URL or local working path"
+msgstr "Oppgi enten fullstendig lager-URL eller lokal arbeidssti"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/diffoptiondlg.ui:22
+msgid "Target Url"
+msgstr "Mål-URL"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurseChk)
+#: ui/diffoptiondlg.ui:50
+msgid "Non Recursive"
+msgstr "Ikke-rekursiv"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nodiffDeletedChk)
+#: ui/diffoptiondlg.ui:57
+msgid "No diff deleted"
+msgstr "Ingen diff slettet"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreContentsChk)
+#: ui/diffoptiondlg.ui:64
+msgid "Ignore contents type"
+msgstr "Ignorer innholdstype"
+
+#. i18n: ectx: property (text), widget (QLabel, labelForSrc)
+#: ui/importmetadatawidget.ui:17
+msgid "Source directory:"
+msgstr "Kildemappe:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/importmetadatawidget.ui:24
+msgid "Repository:"
+msgstr "Lager:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:31
+msgid "Repository Location"
+msgstr "Sted for lageret"
+
+#. i18n: ectx: property (statusTip), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:34
+msgid "Repository Location to import into"
+msgstr "Lagersted det skal importeres til"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:37
+msgid "Choose the repository into which the source directory is imported"
+msgstr "Velg lageret som kildemappa importeres til"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/importmetadatawidget.ui:50
+msgid "Commit Message:"
+msgstr "Innleveringsmelding:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogViewOptionDlg)
+#: ui/logviewoptiondlg.ui:13
+msgid "Subversion Log View Options"
+msgstr "Subversion valg for loggvisning"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/logviewoptiondlg.ui:60
+msgid "Maximum number of logs to be displayed"
+msgstr "Høyeste antall logger som blir vist"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox1)
+#: ui/logviewoptiondlg.ui:82
+msgid "Do not show logs before branching point"
+msgstr "Ikke vis logger før forgreningspunkt"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceChk)
+#: ui/moveoptiondlg.ui:90
+msgid "Forcefully delete locally modified and/or unversioned items"
+msgstr "Tvangsslett elementer som er endret lokalt og/eller er uten versjon"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/revertoptiondlg.ui:16
+msgid "Select working copies to be reverted:"
+msgstr "Velg arbeidskopier som skal tilbakestilles:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:30
+msgid "Select"
+msgstr "Velg"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:35
+msgid "Text Status"
+msgstr "Tekststatus"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:40
+msgid "Prop Status"
+msgstr "Egenskapstatus"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:45
+msgid "Working Copy"
+msgstr "Arbeidskopi"
+
+#. i18n: ectx: property (text), widget (QCheckBox, recursive)
+#: ui/revertoptiondlg.ui:53
+msgid "Recursive"
+msgstr "Rekursivt"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revnumRadio)
+#: ui/revisionwidget.ui:28
+msgid "Specify as number:"
+msgstr "Oppgi som tall:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revkindRadio)
+#: ui/revisionwidget.ui:42
+msgid "Specify as keyword:"
+msgstr "Oppgi som nøkkelord:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revdateRadio)
+#: ui/revisionwidget.ui:52
+msgid "Specify as date:"
+msgstr "Oppgi som dato:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnSSLTrustDialog)
+#: ui/ssltrustdialog.ui:13
+msgid "SSL Server Certificate"
+msgstr "SSL tjenersertifikat"
+
+#. i18n: ectx: property (text), widget (QLabel, msgLabel)
+#: ui/ssltrustdialog.ui:20
+msgid ""
+"There were errors validating the server certificate.\n"
+"Do you want to trust this certificate?"
+msgstr ""
+"Det oppsto feil ved validering av tjenersertifikatet.\n"
+"Vil du stole på dette sertifikatet?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/ssltrustdialog.ui:33
+msgid "Reasons why the validation failed"
+msgstr "Grunner til at valideringen mislyktes"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/ssltrustdialog.ui:55
+msgid "Certificate Information"
+msgstr "Sertifikatinformasjon"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/ssltrustdialog.ui:67
+msgid "Hostname:"
+msgstr "Vertsnavn:"
+
+#. i18n: ectx: property (text), widget (QLabel, hostname)
+#: ui/ssltrustdialog.ui:80
+msgid "someserver"
+msgstr "entjener"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/ssltrustdialog.ui:87
+msgid "Issuer:"
+msgstr "utsteder:"
+
+#. i18n: ectx: property (text), widget (QLabel, issuer)
+#: ui/ssltrustdialog.ui:100
+msgid "someissuer"
+msgstr "enutsteder"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/ssltrustdialog.ui:107
+msgid "Valid From:"
+msgstr "Gyldig fra:"
+
+#. i18n: ectx: property (text), widget (QLabel, validFrom)
+#: ui/ssltrustdialog.ui:120
+msgid "validfrom"
+msgstr "gyldigfra"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/ssltrustdialog.ui:127
+msgid "Valid Until:"
+msgstr "Gyldig til:"
+
+#. i18n: ectx: property (text), widget (QLabel, validUntil)
+#: ui/ssltrustdialog.ui:140
+msgid "validuntil"
+msgstr "gyldigtil"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ui/ssltrustdialog.ui:147
+msgid "Fingerprint:"
+msgstr "Fingeravtrykk:"
+
+#. i18n: ectx: property (text), widget (QLabel, fingerprint)
+#: ui/ssltrustdialog.ui:160
+msgid "fingerprint"
+msgstr "fingeravtrykk"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/statusoptiondlg.ui:22
+msgid "Status Requested for:"
+msgstr "Status etterspurt for:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/statusoptiondlg.ui:36
+msgid "Specify revision"
+msgstr "Oppgi revisjon"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurse)
+#: ui/statusoptiondlg.ui:48
+msgid "Non recursive"
+msgstr "Ikke-rekursiv"
+
+#. i18n: ectx: property (text), widget (QCheckBox, onlyInterests)
+#: ui/statusoptiondlg.ui:55
+msgid "Retrieve only \"interesting\" entries (such as local modifications)"
+msgstr "Hent bare «interessante» oppføringer (slik som lokale endringer)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, contactRepChk)
+#: ui/statusoptiondlg.ui:71
+msgid "Contact repository and augment with repository information"
+msgstr "Kontakt lageret og bygg på med lagerinformasjon"
+
+#. i18n: ectx: property (text), widget (QCheckBox, noignore)
+#: ui/statusoptiondlg.ui:78
+msgid "Do not ignore svn:ignore"
+msgstr "Ikke ignorer svn:ignore"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreExternalsChk)
+#: ui/statusoptiondlg.ui:85
+msgid "Ignore external items"
+msgstr "Ignorer eksterne elementer"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurseChk)
+#: ui/updateoptiondlg.ui:34
+msgid "Update immediate children only (non-recursive)"
+msgstr "Oppdater bare direkte barn (ikke-rekursivt)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreexternalChk)
+#: ui/updateoptiondlg.ui:41
+msgid "Ignore external entries"
+msgstr "Ignorer eksterne oppføringer"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/updateoptiondlg.ui:48
+msgid "Select Revision"
+msgstr "Velg revisjon"

@@ -1,0 +1,405 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Franklin Weng <franklin@mail.everfocus.com.tw>, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-07 15:30+0800\n"
+"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frank Weng (a.k.a. Franklin)"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "franklin at goodhorse dot idv dot tw"
+
+#: editexternalscript.cpp:42
+msgid ""
+"<p>Defines the command that should be executed when this script is run. "
+"Basic shell features of your platform should be available.</p>\n"
+"<p>There are a few placeholders you can use in the command:</p>\n"
+"<dl>\n"
+"  <dt><code>%u</code></dt>\n"
+"  <dd>Gets replaced by the URL of the active document.</dd>\n"
+"  <dt><code>%f</code></dt>\n"
+"  <dd>Gets replaced by the local filepath to the active document.</dd>\n"
+"  <dt><code>%n</code></dt>\n"
+"  <dd>Gets replaced by the name of the active document, including its "
+"extension.</dd>\n"
+"  <dt><code>%b</code></dt>\n"
+"  <dd>Gets replaced by the name of the active document without its extension."
+"</dd>\n"
+"  <dt><code>%d</code></dt>\n"
+"  <dd>Gets replaced by the path to the directory of the active document.</"
+"dd>\n"
+"  <dt><code>%p</code></dt>\n"
+"  <dd>Gets replaced by the URL to the project of the active document.</dd>\n"
+"  <dt><code>%s</code></dt>\n"
+"  <dd>Gets replaced with the shell escaped contents of the selection in the "
+"active document.</dd>\n"
+"  <dt><code>%i</code></dt>\n"
+"  <dd>Gets replaced with the PID of the currently running KDevelop process.</"
+"dd>\n"
+"</dl>\n"
+"<p><b>NOTE:</b>  It is your responsibility to prevent running hazardous "
+"commands that could lead to data loss.</p>\n"
+msgstr ""
+"<p>定義文稿執行時應該被執行的指令。基本的 shell 功能應該都可以用。</p>\n"
+"<p>您可以將下列取代符用於指令中：</p>\n"
+"<dl>\n"
+"<dt><code>%u</code></dt>\n"
+"<dd>會取代為作用中文件的網址。</dd>\n"
+"<dt><code>%f</code></dt>\n"
+"<dd>會取代為作用中文件的本地端路徑。</dd>\n"
+"<dt><code>%n</code></dt>\n"
+"<dd>會取代為作用中文件的名稱，包含副檔名。</dd>\n"
+"<dt><code>%b</code></dt>\n"
+"<dd>會取代為作用中文件的名稱，但不含副檔名。</dd>\n"
+"<dt><code>%d</code></dt>\n"
+"<dd>會取代為作用中文件所在目錄的路徑。</dd>\n"
+"<dt><code>%p</code></dt>\n"
+"<dd>會取代為作用中文件所屬專案的網址。</dd>\n"
+"<dt><code>%s</code></dt>\n"
+"<dd>會取代為作用中文件選取區在 shell 脫逸的內容。</dd>\n"
+"<dt><code>%i</code></dt>\n"
+"<dd>會取代為目前執行的 KDevelop 行程的代碼。</dd>\n"
+"</dl>\n"
+"<p><b>注意：</b>您必須自己小心避免執行會造成資料損失的指令。</p>\n"
+
+#: editexternalscript.cpp:68
+msgid ""
+"<p>Defines what the external script should get as input (via <code>STDIN</"
+"code>).</p>"
+msgstr "<p>定義文稿要怎麼取得輸入（透過標準輸入 stdin 傳送）。</p>"
+
+#: editexternalscript.cpp:74
+msgid ""
+"<p>Defines what should be done with the output (i.e. <code>STDOUT</code>) of "
+"the script.</p>"
+msgstr "<p>定義文稿輸出（也就是標準輸出 stdout 有東西）時應該怎麼辦。</p>"
+
+#: editexternalscript.cpp:80
+msgid ""
+"<p>Defines what should be done with the errors (i.e. <code>STDERR</code>) of "
+"the script.</p><p>Note: if the action is the same as that chosen for the "
+"output, the channels will be merged and handled together.</p>"
+msgstr ""
+"<p>定義文稿發生錯誤（也就是標準錯誤 stderr 有東西）時應該怎麼辦。</p> <p>注"
+"意：此動作若與輸出的動作一樣，則它們將會被合併在一起處理。</p>"
+
+#: editexternalscript.cpp:88
+msgid "<p>Defines the name of the script. Just for displaying purposes.</p>"
+msgstr "<p>定義文稿名稱。只是用於顯示。</p>"
+
+#: editexternalscript.cpp:94
+msgid ""
+"<p>Defines the shortcut(s) you can use to execute this external script.</p>"
+msgstr "<p>定義您要用來執行此直外部文稿用的捷徑。</p>"
+
+#: editexternalscript.cpp:100
+msgid ""
+"<p>Defines whether documents should be saved before the script gets executed."
+"</p>"
+msgstr "<p>定義是否要在文稿執行前先儲存文件。</p>"
+
+#: editexternalscript.cpp:106
+msgid ""
+"<p>Defines whether the output of the script should be shown in a toolview.</"
+"p>"
+msgstr "<p>定義是否要在工具檢視中顯示文稿的輸出。</p>"
+
+#: editexternalscript.cpp:110
+msgid ""
+"<p>Defines what type of filtering should be applied to the output. E.g. to "
+"indicate errors by red text.</p>"
+msgstr ""
+"<p>定義輸出要套用哪一種型態的過濾器。例如：將錯誤以紅色文字標記出來。</p>"
+
+#: editexternalscript.cpp:118
+msgid "Create new external script"
+msgstr "建立新的外部文稿"
+
+#: editexternalscript.cpp:120
+#, kde-format
+msgid "Edit external script '%1'"
+msgstr "編輯外部文稿 %1"
+
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: editexternalscript.ui:26
+msgid "&Name:"
+msgstr "名稱(&N)："
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, nameEdit)
+#: editexternalscript.ui:37
+msgid ""
+"<p>The name will also be used as the identifier during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>此名稱也會用作源碼補完時的識別子。</p>\n"
+"<p><b>注意：</b>不能有空白。</p>"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, nameEdit)
+#: editexternalscript.ui:40
+msgid "please insert a name"
+msgstr "請插入名稱"
+
+#. i18n: ectx: property (text), widget (QLabel, commandLabel)
+#: editexternalscript.ui:50
+msgid "&Command:"
+msgstr "指令(&C)："
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, commandEdit)
+#: editexternalscript.ui:60
+msgid "please insert a command to execute"
+msgstr "請輸入要執行的指令"
+
+#. i18n: ectx: property (text), widget (QLabel, stdinLabel)
+#: editexternalscript.ui:70
+msgid "&Input:"
+msgstr "輸入(&I)："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:81
+msgid "nothing"
+msgstr "無"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:86
+msgid "selection in current file or nothing"
+msgstr "以目前檔案中的選取區做為輸入，或是不輸入"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:91
+msgid "selection in current file or whole file"
+msgstr "以目前檔案中的選取區做為輸入，或是整個檔案"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:96
+msgid "contents of current file"
+msgstr "目前檔案的內容"
+
+#. i18n: ectx: property (text), widget (QLabel, stdoutLabel)
+#: editexternalscript.ui:107
+msgid "&Output:"
+msgstr "輸出(&O)："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:118 editexternalscript.ui:162
+msgid "ignore"
+msgstr "忽略"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:123 editexternalscript.ui:172
+msgid "insert at cursor position of current file"
+msgstr "插入目前檔案游標所在位置"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:128 editexternalscript.ui:177
+msgid "replace selection of current file or insert at cursor position"
+msgstr "取代目前檔案的選取區，或是插入目前游標的位置"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:133 editexternalscript.ui:182
+msgid "replace selection of current file or whole file"
+msgstr "取代目前檔案的選取區，或是整個檔案"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:138 editexternalscript.ui:187
+msgid "replace contents of current file"
+msgstr "取代目前檔案的內容"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:143 editexternalscript.ui:192
+msgid "create new file"
+msgstr "建立新檔案"
+
+#. i18n: ectx: property (text), widget (QLabel, stderrLabel)
+#: editexternalscript.ui:151
+msgid "Errors:"
+msgstr "錯誤："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:167
+msgid "merge with normal output"
+msgstr "與正常輸出合併"
+
+#. i18n: ectx: property (text), widget (QLabel, saveLabel)
+#: editexternalscript.ui:200
+msgid "Save &Mode:"
+msgstr "儲存模式(&M)："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:211
+msgid "save nothing"
+msgstr "不儲存"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:216
+msgid "save active document"
+msgstr "儲存作用中的文件"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:221
+msgid "save all open documents"
+msgstr "儲存所有開啟的文件"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, shortcutLabel)
+#: editexternalscript.ui:229
+msgid "<p>Defines shortcuts you can use to execute this script.</p>"
+msgstr "<p>定義您要用來執行此文稿用的捷徑。</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: editexternalscript.ui:232
+msgid "Shortcut:"
+msgstr "捷徑："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:243
+msgid "no filter"
+msgstr "沒有過濾器"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:248
+msgid "compiler filter"
+msgstr "編譯過濾器"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:253
+msgid "script error filter"
+msgstr "文稿錯誤過濾器"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:258
+msgid "static analysis error filter"
+msgstr "靜態分析過濾器"
+
+#. i18n: ectx: property (text), widget (QLabel, outputFilterLabel)
+#: editexternalscript.ui:266
+msgid "Output Filter:"
+msgstr "輸出過濾器："
+
+#. i18n: ectx: property (text), widget (QCheckBox, showOutputBox)
+#: editexternalscript.ui:273
+msgid "Show Out&put"
+msgstr "顯示輸出(&P)"
+
+#: externalscriptjob.cpp:95
+#, kde-format
+msgid ""
+"Cannot run script '%1' since it tries to access the editor contents but no "
+"document is open."
+msgstr "無法執行文稿 %1，因為它試著存取編輯器內容，但是裡面並未開啟任何文件。"
+
+#: externalscriptjob.cpp:97
+msgid "No Document Open"
+msgstr "沒有已開啟文件"
+
+#: externalscriptjob.cpp:220
+#, kde-format
+msgid "Running external script: %1"
+msgstr "執行外部文稿中：%1"
+
+#: externalscriptjob.cpp:264
+msgid "*** Killed Application ***"
+msgstr "*** 已砍掉應用程式 ***"
+
+#: externalscriptjob.cpp:344
+msgid "*** Exited normally ***"
+msgstr "*** 已正常結束 ***"
+
+#: externalscriptjob.cpp:347
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** 不正常結束，離開狀態為：%1 ***"
+
+#: externalscriptjob.cpp:350
+msgid "*** Process aborted ***"
+msgstr "*** 行程被中止 ***"
+
+#: externalscriptjob.cpp:352
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** 程式當掉，返回碼： %1 ***"
+
+#: externalscriptjob.cpp:364
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr "*** 無法啟動程式 %1。請確定路徑名稱正確。 ***"
+
+#: externalscriptplugin.cpp:56 externalscriptplugin.cpp:114
+#: externalscriptplugin.cpp:185 externalscriptview.cpp:41
+msgid "External Scripts"
+msgstr "外部文稿"
+
+#: externalscriptplugin.cpp:57
+msgid ""
+"Run external scripts or applications to manipulate the editor contents or do "
+"other arbitrary actions."
+msgstr "執行外部文稿或應用程式來運用編輯器內的內容，或是做各種動作。"
+
+#: externalscriptplugin.cpp:125
+msgid "Quick Compile"
+msgstr "快速編譯"
+
+#: externalscriptplugin.cpp:130
+msgid "Google Selection"
+msgstr "在 Google 上查詢選取區文字"
+
+#: externalscriptplugin.cpp:136
+msgid "Sort Selection"
+msgstr "排序選取區文字"
+
+#: externalscriptview.cpp:57
+msgid "Add External Script"
+msgstr "新增外部文稿"
+
+#: externalscriptview.cpp:60
+msgid "Edit External Script"
+msgstr "編輯外部文稿"
+
+#: externalscriptview.cpp:63
+msgid "Remove External Script"
+msgstr "移除外部文稿"
+
+#: externalscriptview.cpp:150
+#, kde-format
+msgid ""
+"<p>Do you really want to remove the external script configuration for <i>%1</"
+"i>?</p><p><i>Note:</i> The script itself will not be removed.</p>"
+msgstr ""
+"<p>您確定要移除為 %1 設定的外部文稿嗎？</p> <p><i>注意：</i>文稿本身不會被移"
+"除。</p>"
+
+#: externalscriptview.cpp:152
+msgid "Confirm External Script Removal"
+msgstr "確認移除外部文稿"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, filterText)
+#: externalscriptview.ui:35
+msgid "Define filter here"
+msgstr "在此定義過濾器"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, filterText)
+#: externalscriptview.ui:38
+msgid "Filter..."
+msgstr "過濾..."

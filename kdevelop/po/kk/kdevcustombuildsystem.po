@@ -1,0 +1,200 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sairan Kikkarin <sairan@computer.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-04-15 05:43+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#: configwidget.cpp:40
+msgid "Build"
+msgstr "Құру"
+
+#: configwidget.cpp:41
+msgid "Configure"
+msgstr "Баптау"
+
+#: configwidget.cpp:42
+msgid "Install"
+msgstr "Орнату"
+
+#: configwidget.cpp:43
+msgid "Clean"
+msgstr "Тазалау"
+
+#: configwidget.cpp:44
+msgid "Prune"
+msgstr "Қысқарту"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: configwidget.ui:19
+msgid "Build Directory:"
+msgstr "Құрастыру қапшығы:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, buildDir)
+#: configwidget.ui:27
+msgid ""
+"Select the directory where the tools are being executed in.\n"
+"If this is the same as the source directory you can leave it empty."
+msgstr ""
+"Бұл құрал қай каталогта орындалатынын таңдау.\n"
+"Бастапқы коды орналасқан каталогымен бірдей болса бос қалдырыңыз."
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, buildDir)
+#: configwidget.ui:33
+msgid "The directory where the tools are executed"
+msgstr "Құралдар орнындалатын каталог"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configwidget.ui:45
+msgid "Build Tools"
+msgstr "Құрастыру құралдары"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configwidget.ui:51
+msgid "Action:"
+msgstr "Амалы:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: configwidget.ui:61
+msgid "Enable:"
+msgstr "Рұқсат ету:"
+
+#. i18n: ectx: property (text), widget (QLabel, execLabel)
+#: configwidget.ui:78
+msgid "Executable:"
+msgstr "Орындалатын файл:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, actionExecutable)
+#: configwidget.ui:88
+msgid ""
+"This is the executable that should be executed when selecting the action "
+"from the Project menu"
+msgstr "Жоба мәзірінен амалды таңдап алғанда орындалатын файл"
+
+#. i18n: ectx: property (text), widget (QLabel, argLabel)
+#: configwidget.ui:98
+msgid "Arguments:"
+msgstr "Аргументтері:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, actionArguments)
+#: configwidget.ui:108
+msgid "The arguments that the tool needs to execute properly."
+msgstr "Орындалғанде керек аргументтері."
+
+#. i18n: ectx: property (text), widget (QLabel, envLabel)
+#: configwidget.ui:118
+msgid "Environment:"
+msgstr "Ортасы:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, actionEnvironment)
+#: configwidget.ui:128
+msgid "Choose a pre-configured environment for your tool"
+msgstr "Құрал қолданатын алдында бапталған ортасы"
+
+#: custombuildjob.cpp:50
+msgid "Building:"
+msgstr "Құрастыру:"
+
+#: custombuildjob.cpp:54
+msgid "Cleaning:"
+msgstr "Тазалау:"
+
+#: custombuildjob.cpp:58
+msgid "Installing:"
+msgstr "Орнату:"
+
+#: custombuildjob.cpp:62
+msgid "Configuring:"
+msgstr "Баптау:"
+
+#: custombuildjob.cpp:66
+msgid "Pruning:"
+msgstr "Қысқарту:"
+
+#: custombuildjob.cpp:90
+msgid "Undefined Build type"
+msgstr "Анықталмаған құрастыру түрі"
+
+#: custombuildjob.cpp:94
+msgid "No command given"
+msgstr "Команда жоқ"
+
+#: custombuildjob.cpp:98
+msgid "This command is disabled"
+msgstr "Бұл рұқсат етілмеген команда"
+
+#: custombuildjob.cpp:109
+msgid ""
+"The given arguments would need a real shell, this is not supported currently."
+msgstr ""
+"Келтірілген аргументер шын командалық ортаны керек қылады, бірақ оның "
+"қолдауы әлі жоқ."
+
+#: custombuildjob.cpp:154
+msgid "Failed to start command."
+msgstr "Команданы бастау жаңылысы."
+
+#: custombuildjob.cpp:157
+msgid "Command crashed."
+msgstr "Команда қирады."
+
+#: custombuildjob.cpp:160
+msgid "Unknown error executing command."
+msgstr "Команданы орындалуындағы беймәлім қате."
+
+#: custombuildjob.cpp:177
+msgid "*** Failed ***"
+msgstr "*** Жаңылыс ***"
+
+#: custombuildjob.cpp:179
+msgid "*** Finished ***"
+msgstr "*** Аяқталды ***"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: custombuildsystemconfigwidget.ui:19
+msgid "Build Configuration:"
+msgstr "Құрастыру баптауы:"
+
+#. i18n: ectx: property (text), widget (KPushButton, addConfig)
+#: custombuildsystemconfigwidget.ui:42
+msgid "Add"
+msgstr "Қосу"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeConfig)
+#: custombuildsystemconfigwidget.ui:49
+msgid "Remove"
+msgstr "Өшіру"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Custom Build System"
+msgstr "Өзгеше құрастыру жүйесі"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Support for building and managing custom build systems"
+msgstr "Өзгеше құрастыру жүйемен құрастыру мен оны басқаруын қолдау"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+msgstr "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"

@@ -1,0 +1,445 @@
+# # translation of kdevexternalscript.po into [el]
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stelios <sstavra@gmail.com>, 2011.
+# Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevexternalscript\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-03-20 23:29+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: editexternalscript.cpp:42
+msgid ""
+"<p>Defines the command that should be executed when this script is run. "
+"Basic shell features of your platform should be available.</p>\n"
+"<p>There are a few placeholders you can use in the command:</p>\n"
+"<dl>\n"
+"  <dt><code>%u</code></dt>\n"
+"  <dd>Gets replaced by the URL of the active document.</dd>\n"
+"  <dt><code>%f</code></dt>\n"
+"  <dd>Gets replaced by the local filepath to the active document.</dd>\n"
+"  <dt><code>%n</code></dt>\n"
+"  <dd>Gets replaced by the name of the active document, including its "
+"extension.</dd>\n"
+"  <dt><code>%b</code></dt>\n"
+"  <dd>Gets replaced by the name of the active document without its extension."
+"</dd>\n"
+"  <dt><code>%d</code></dt>\n"
+"  <dd>Gets replaced by the path to the directory of the active document.</"
+"dd>\n"
+"  <dt><code>%p</code></dt>\n"
+"  <dd>Gets replaced by the URL to the project of the active document.</dd>\n"
+"  <dt><code>%s</code></dt>\n"
+"  <dd>Gets replaced with the shell escaped contents of the selection in the "
+"active document.</dd>\n"
+"  <dt><code>%i</code></dt>\n"
+"  <dd>Gets replaced with the PID of the currently running KDevelop process.</"
+"dd>\n"
+"</dl>\n"
+"<p><b>NOTE:</b>  It is your responsibility to prevent running hazardous "
+"commands that could lead to data loss.</p>\n"
+msgstr ""
+"<p>Ορίζει την εντολή που θα πρέπει να εκτελεστεί όταν εκτελείται αυτό το "
+"σενάριο. Τα βασικά χαρακτηριστικά του φλοιού της πλατφόρμας σας θα πρέπει να "
+"είναι διαθέσιμα.</p>\n"
+"<p>Υπάρχουν κάποια πλαίσια που μπορείτε να χρησιμοποιήσετε στην εντολή:</p>\n"
+"<dl>\n"
+"  <dt><code>%u</code></dt>\n"
+"  <dd>Αντικαθίσταται από το URL του ενεργού εγγράφου.</dd>\n"
+"  <dt><code>%f</code></dt>\n"
+"  <dd>Αντικαθίσταται από την τοπική διαδρομή αρχείου του ενεργού εγγράφου.</"
+"dd>\n"
+"  <dt><code>%n</code></dt>\n"
+"  <dd>Αντικαθίσταται από το όνομα του ενεργού εγγράφου μαζί με την επέκταση."
+"</dd>\n"
+"  <dt><code>%b</code></dt>\n"
+"  <dd>Αντικαθίσταται από το όνομα του ενεργού εγγράφου χωρίς την επέκταση.</"
+"dd>\n"
+"  <dt><code>%d</code></dt>\n"
+"  <dd>Αντικαθίσταται από τη διαδρομή προς το κατάλογο του ενεργού εγγράφου.</"
+"dd>\n"
+"  <dt><code>%p</code></dt>\n"
+"  <dd>Αντικαθίσταται από το URL του έργου του ενεργού εγγράφου.</dd>\n"
+"  <dt><code>%s</code></dt>\n"
+"  <dd>Αντικαθίσταται από κείμενο δηλωτικό εντολών φλοιού στο ενεργό έγγραφο."
+"</dd>\n"
+"  <dt><code>%i</code></dt>\n"
+"  <dd>Αντικαθίσταται από το αναγνωριστικό της τρέχουσας διεργασίας KDevelop."
+"</dd>\n"
+"</dl>\n"
+"<p><b>ΣΗΜΕΙΩΣΗ:</b>  Είναι δική σας ευθύνη να εμποδίσετε την εκτέλεση "
+"επικίνδυνων εντολών που θα μπορούσαν να οδηγήσουν σε απώλεια δεδομένων.</p>\n"
+
+#: editexternalscript.cpp:68
+msgid ""
+"<p>Defines what the external script should get as input (via <code>STDIN</"
+"code>).</p>"
+msgstr ""
+"<p>Προσδιορίζει τα δεδομένα εισόδου (στο <code>STDIN</code> του εξωτερικού "
+"σεναρίου.</p>"
+
+#: editexternalscript.cpp:74
+msgid ""
+"<p>Defines what should be done with the output (i.e. <code>STDOUT</code>) of "
+"the script.</p>"
+msgstr ""
+"<p>Προσδιορίζει τι πρέπει να γίνει στην έξοδο (δηλ. στο <code>STDOUT</code>) "
+"του σεναρίου.</p>"
+
+#: editexternalscript.cpp:80
+msgid ""
+"<p>Defines what should be done with the errors (i.e. <code>STDERR</code>) of "
+"the script.</p><p>Note: if the action is the same as that chosen for the "
+"output, the channels will be merged and handled together.</p>"
+msgstr ""
+"<p>Προσδιορίζει τι πρέπει να γίνει με τα σφάλματα (δηλ. στο <code>STDERR</"
+"code>) του σεναρίου.</p><p>Σημείωση: αν η ενέργεια είναι η ίδια με αυτήν που "
+"επελέγη για την έξοδο, οι δίαυλοι θα συγχωνευθούν και θα αντιμετωπίζονται "
+"από κοινού.</p>"
+
+#: editexternalscript.cpp:88
+msgid "<p>Defines the name of the script. Just for displaying purposes.</p>"
+msgstr "<p>Προσδιορίζει το όνομα του σεναρίου. Απλώς για λόγους εμφάνισης.</p>"
+
+#: editexternalscript.cpp:94
+msgid ""
+"<p>Defines the shortcut(s) you can use to execute this external script.</p>"
+msgstr ""
+"<p>Προσδιορίζει τις συντομεύσεις για την εκτέλεση αυτού του εξωτερικού "
+"σεναρίου.</p>"
+
+#: editexternalscript.cpp:100
+msgid ""
+"<p>Defines whether documents should be saved before the script gets executed."
+"</p>"
+msgstr ""
+"<p>Προσδιορίζει αν τα έγγραφα θα πρέπει να αποθηκεύονται πριν από την "
+"εκτέλεση του σεναρίου.</p>"
+
+#: editexternalscript.cpp:106
+msgid ""
+"<p>Defines whether the output of the script should be shown in a toolview.</"
+"p>"
+msgstr ""
+"<p>Προσδιορίζει να η έξοδος του σεναρίου θα πρέπει να περιλαμβάνεται στην "
+"εμφάνιση εργαλείων.</p>"
+
+#: editexternalscript.cpp:110
+msgid ""
+"<p>Defines what type of filtering should be applied to the output. E.g. to "
+"indicate errors by red text.</p>"
+msgstr ""
+"<p>Καθορίζει τον τύπο φιλτραρίσματος που θα πρέπει να εφαρμοστεί στην έξοδο. "
+"Π.χ. για την ένδειξη σφαλμάτων με κόκκινο χρώμα στο κείμενο.</p>"
+
+#: editexternalscript.cpp:118
+msgid "Create new external script"
+msgstr "Δημιουργία νέου εξωτερικού σεναρίου"
+
+#: editexternalscript.cpp:120
+#, kde-format
+msgid "Edit external script '%1'"
+msgstr "Επεξεργασία εξωτερικού σεναρίου '%1'"
+
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: editexternalscript.ui:26
+msgid "&Name:"
+msgstr "Ό&νομα:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, nameEdit)
+#: editexternalscript.ui:37
+msgid ""
+"<p>The name will also be used as the identifier during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Το όνομα θα χρησιμοποιηθεί και ως αναγνωριστικό κατά την ολοκλήρωση του "
+"κώδικα.</p>\n"
+"<p><b>Σημείωση:</b> Δεν επιτρέπονται κενοί χαρακτήρες.</p>"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, nameEdit)
+#: editexternalscript.ui:40
+msgid "please insert a name"
+msgstr "παρακαλώ δώστε ένα όνομα"
+
+#. i18n: ectx: property (text), widget (QLabel, commandLabel)
+#: editexternalscript.ui:50
+msgid "&Command:"
+msgstr "Εν&τολή:"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, commandEdit)
+#: editexternalscript.ui:60
+msgid "please insert a command to execute"
+msgstr "παρακαλώ δώστε μια εντολή προς εκτέλεση"
+
+#. i18n: ectx: property (text), widget (QLabel, stdinLabel)
+#: editexternalscript.ui:70
+msgid "&Input:"
+msgstr "&Είσοδος:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:81
+msgid "nothing"
+msgstr "τίποτα"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:86
+msgid "selection in current file or nothing"
+msgstr "επιλογή στο τρέχον αρχείο ή τίποτα"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:91
+msgid "selection in current file or whole file"
+msgstr "επιλογή στο τρέχον αρχείο ή σε όλο το αρχείο"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:96
+msgid "contents of current file"
+msgstr "περιεχόμενο του τρέχοντος αρχείου"
+
+#. i18n: ectx: property (text), widget (QLabel, stdoutLabel)
+#: editexternalscript.ui:107
+msgid "&Output:"
+msgstr "Έξ&οδος:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:118 editexternalscript.ui:162
+msgid "ignore"
+msgstr "αγνοήστε"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:123 editexternalscript.ui:172
+msgid "insert at cursor position of current file"
+msgstr "εισαγάγετε στο τρέχον αρχείο στη θέση του δρομέα"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:128 editexternalscript.ui:177
+msgid "replace selection of current file or insert at cursor position"
+msgstr ""
+"αντικαταστήστε την επιλογή του τρέχοντος αρχείου ή εισαγάγετε στη θέση του "
+"δρομέα"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:133 editexternalscript.ui:182
+msgid "replace selection of current file or whole file"
+msgstr "αντικαταστήστε την επιλογή του τρέχοντος αρχείου ή όλου του αρχείου"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:138 editexternalscript.ui:187
+msgid "replace contents of current file"
+msgstr "αντικαταστήστε κείμενο από το τρέχον αρχείο"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:143 editexternalscript.ui:192
+msgid "create new file"
+msgstr "δημιουργία νέου αρχείου"
+
+#. i18n: ectx: property (text), widget (QLabel, stderrLabel)
+#: editexternalscript.ui:151
+msgid "Errors:"
+msgstr "Σφάλματα:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:167
+msgid "merge with normal output"
+msgstr "συγχώνευση με κανονική έξοδο"
+
+#. i18n: ectx: property (text), widget (QLabel, saveLabel)
+#: editexternalscript.ui:200
+msgid "Save &Mode:"
+msgstr "Τρόπος α&ποθήκευσης:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:211
+msgid "save nothing"
+msgstr "καμία αποθήκευση"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:216
+msgid "save active document"
+msgstr "αποθήκευση ενεργού εγγράφου"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:221
+msgid "save all open documents"
+msgstr "αποθήκευση όλων των ανοικτών εγγράφων"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, shortcutLabel)
+#: editexternalscript.ui:229
+msgid "<p>Defines shortcuts you can use to execute this script.</p>"
+msgstr "<p>Oρίζει τις συντομεύσεις για την εκτέλεση του σεναρίου.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: editexternalscript.ui:232
+msgid "Shortcut:"
+msgstr "Συντόμευση:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:243
+msgid "no filter"
+msgstr "χωρίς φίλτρο"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:248
+msgid "compiler filter"
+msgstr "φίλτρο μεταγλωττιστή"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:253
+msgid "script error filter"
+msgstr "φίλτρο σφαλμάτων σεναρίου"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:258
+msgid "static analysis error filter"
+msgstr "φίλτρο σφαλμάτων στατικής ανάλυσης"
+
+#. i18n: ectx: property (text), widget (QLabel, outputFilterLabel)
+#: editexternalscript.ui:266
+msgid "Output Filter:"
+msgstr "Φίλτρο εξόδου:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showOutputBox)
+#: editexternalscript.ui:273
+msgid "Show Out&put"
+msgstr "Εμφάνιση ε&ξόδου"
+
+#: externalscriptjob.cpp:95
+#, kde-format
+msgid ""
+"Cannot run script '%1' since it tries to access the editor contents but no "
+"document is open."
+msgstr ""
+"Το σενάριο '%1' δεν εκτελείται επειδή προσπαθεί να αποκτήσει πρόσβαση στο "
+"περιεχόμενο του κειμενογράφου, αλλά δεν υπάρχει ανοικτό έγγραφο."
+
+#: externalscriptjob.cpp:97
+msgid "No Document Open"
+msgstr "Δεν υπάρχει ανοικτό έγγραφο"
+
+#: externalscriptjob.cpp:220
+#, kde-format
+msgid "Running external script: %1"
+msgstr "Εκτέλεση εξωτερικού σεναρίου: %1"
+
+#: externalscriptjob.cpp:264
+msgid "*** Killed Application ***"
+msgstr "*** Τερματισμός εφαρμογής ***"
+
+#: externalscriptjob.cpp:344
+msgid "*** Exited normally ***"
+msgstr "*** Τερματίστηκε κανονικά ***"
+
+#: externalscriptjob.cpp:347
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** Τερματίστηκε με κωδικό: %1 ***"
+
+#: externalscriptjob.cpp:350
+msgid "*** Process aborted ***"
+msgstr "*** Η διεργασία εγκαταλείφθηκε ***"
+
+#: externalscriptjob.cpp:352
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** Κατάρρευση με κωδικό: %1 ***"
+
+#: externalscriptjob.cpp:364
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr ""
+"***Αδυναμία εκκίνησης του προγράμματος '%1'. Βεβαιωθείτε ότι η διαδρομή έχει "
+"οριστεί σωστά ***"
+
+#: externalscriptplugin.cpp:56 externalscriptplugin.cpp:114
+#: externalscriptplugin.cpp:185 externalscriptview.cpp:41
+msgid "External Scripts"
+msgstr "Εξωτερικά σενάρια"
+
+#: externalscriptplugin.cpp:57
+msgid ""
+"Run external scripts or applications to manipulate the editor contents or do "
+"other arbitrary actions."
+msgstr ""
+"Εκτέλεση εξωτερικών σεναρίων ή εφαρμογών για τον χειρισμό του περιεχομένου "
+"του κειμενογράφου ή για οποιεσδήποτε άλλες ενέργειες."
+
+#: externalscriptplugin.cpp:125
+#, fuzzy
+#| msgid "quick compile"
+msgid "Quick Compile"
+msgstr "γρήγορη μεταγλώττιση"
+
+#: externalscriptplugin.cpp:130
+#, fuzzy
+#| msgid "google selection"
+msgid "Google Selection"
+msgstr "επιλογή google"
+
+#: externalscriptplugin.cpp:136
+#, fuzzy
+#| msgid "sort selection"
+msgid "Sort Selection"
+msgstr "επιλογή ταξινόμησης"
+
+#: externalscriptview.cpp:57
+msgid "Add External Script"
+msgstr "Προσθήκη εξωτερικού σεναρίου"
+
+#: externalscriptview.cpp:60
+msgid "Edit External Script"
+msgstr "επεξεργασία εξωτερικού σεναρίου"
+
+#: externalscriptview.cpp:63
+msgid "Remove External Script"
+msgstr "Αφαίρεση εξωτερικού σεναρίου"
+
+#: externalscriptview.cpp:150
+#, kde-format
+msgid ""
+"<p>Do you really want to remove the external script configuration for <i>%1</"
+"i>?</p><p><i>Note:</i> The script itself will not be removed.</p>"
+msgstr ""
+"<p>Επιθυμείτε πραγματικά την αφαίρεση της διαμόρφωσης του εξωτερικού "
+"σεναρίου για το <i>%1</i>;</p><p><i>Σημείωση:</i> Το ίδιο το σενάριο δεν θα "
+"αφαιρεθεί.</p>"
+
+#: externalscriptview.cpp:152
+msgid "Confirm External Script Removal"
+msgstr "Επιβεβαιώστε την αφαίρεση του εξωτερικού σεναρίου"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, filterText)
+#: externalscriptview.ui:35
+msgid "Define filter here"
+msgstr "Προσδιορίστε φίλτρο εδώ"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, filterText)
+#: externalscriptview.ui:38
+msgid "Filter..."
+msgstr "Φίλτρο..."

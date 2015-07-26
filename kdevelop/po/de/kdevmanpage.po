@@ -1,0 +1,48 @@
+# Gerhard Stengel <gstengel@gmx.net>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevmanpage\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2011-06-26 16:30+0200\n"
+"Last-Translator: Gerhard Stengel <gstengel@gmx.net>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Gerhard Stengel"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gstengel@gmx.net"
+
+#: manpagedocumentation.cpp:56
+#, kde-format
+msgid "Could not find any documentation for '%1'"
+msgstr "Dokumentation für „%1“ kann nicht gefunden werden"
+
+#: manpagedocumentation.cpp:99
+msgid "Man Content Page"
+msgstr "Übersicht der Handbuch-Seiten"
+
+#: manpagedocumentationwidget.cpp:43
+msgid "Loading man pages ..."
+msgstr "Handbuch-Seiten werden geladen ..."
+
+#: manpageplugin.cpp:57
+msgid "ManPage"
+msgstr "Handbuch-Seiten"
+
+#: manpageplugin.cpp:58
+msgid "Check Man Page documentation"
+msgstr "Nachschlagen in Handbuch-Seiten"
+
+#: manpageplugin.cpp:77
+msgid "Man Page"
+msgstr "Handbuch-Seiten"

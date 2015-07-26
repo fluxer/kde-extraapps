@@ -1,0 +1,242 @@
+# translation of kdevappwizard.po to Italian
+#
+# Matteo Merli <merlim@libero.it>, 2001.
+# Daniele Medri <madrid@linuxmeeting.net>, 2003.
+# Giovanni Venturi <jumpyj@libero.it>, 2003, 2004.
+# Luciano Montanaro <mikelima@cirulla.net>, 2003.
+# Giovanni Venturi <jumpyj@tiscali.it>, 2003, 2004, 2005, 2006, 2007, 2008.
+# Nicola Ruggero <nicola@nxnt.org>, 2007.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2007.
+# Simone Solinas <ksolsim@gmail.com>, 2009, 2010, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevappwizard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-08-10 15:11+0200\n"
+"Last-Translator: Simone Solinas <ksolsim@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Simone Solinas"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ksolsim@gmail.com"
+
+#: appwizarddialog.cpp:27
+msgid "Create New Project"
+msgstr "Crea un nuovo progetto"
+
+#: appwizarddialog.cpp:35
+msgctxt "Page for general configuration options"
+msgid "General"
+msgstr "Generale"
+
+#: appwizarddialog.cpp:37
+msgctxt "Page for version control options"
+msgid "Version Control"
+msgstr "Controllo versione"
+
+#: appwizardplugin.cpp:70
+msgid "Project Wizard"
+msgstr "Procedura guidata progetto"
+
+#: appwizardplugin.cpp:70
+msgid "Support for creating and importing projects"
+msgstr "Supporto per la creazione e l'importazione di progetti"
+
+#: appwizardplugin.cpp:81
+msgid "New From Template..."
+msgstr "Nuovo da modello..."
+
+#: appwizardplugin.cpp:83
+msgid "Generate a new project from a template"
+msgstr "Genera un nuovo progetto da un modello"
+
+#: appwizardplugin.cpp:84
+msgid ""
+"This starts KDevelop's application wizard. It helps you to generate a "
+"skeleton for your application from a set of templates."
+msgstr ""
+"Avvia la procedura guidata di KDevelop. Questa ti aiuta a generare uno "
+"scheletro per l'applicazione da un insieme di modelli."
+
+#: appwizardplugin.cpp:114
+msgid "Could not create project from template\n"
+msgstr "Impossibile creare un progetto da un modello\n"
+
+#: appwizardplugin.cpp:114
+msgid "Failed to create project"
+msgstr "Impossibile creare progetto"
+
+#: appwizardplugin.cpp:140
+msgid "Please see the Version Control toolview"
+msgstr "Vedere la vista degli strumenti del controllo versione"
+
+#: appwizardplugin.cpp:142
+msgid "Version Control System Error"
+msgstr "Errore del sistema di controllo versione"
+
+#: appwizardplugin.cpp:158
+msgid "Could not initialize DVCS repository"
+msgstr "Impossibile inizializzare il deposito DVCS"
+
+#: appwizardplugin.cpp:166
+msgid "Could not add files to the DVCS repository"
+msgstr "Impossibile aggiungere file al deposito DVCS"
+
+#: appwizardplugin.cpp:173
+#, kde-format
+msgid "Could not import project into %1."
+msgstr "Impossibile importare il progetto in %1."
+
+#: appwizardplugin.cpp:190
+msgid "Could not import project"
+msgstr "Impossibile importare il progetto"
+
+#: appwizardplugin.cpp:198
+msgid "Could not checkout imported project"
+msgstr "Impossibile controllare il progetto importato."
+
+#: appwizardplugin.cpp:280
+msgid "Could not create new project"
+msgstr "Impossibile creare un nuovo progetto"
+
+#: appwizardplugin.cpp:406
+#, kde-format
+msgid "The file %1 cannot be created."
+msgstr "Il file %1 non può essere creato."
+
+#: appwizardplugin.cpp:500
+msgid "Project Templates"
+msgstr "Modelli di progetto"
+
+#. i18n: ectx: Menu (project)
+#: kdevappwizard.rc:5
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Progetto"
+
+#: projectselectionpage.cpp:57
+msgid "Category"
+msgstr "Categoria"
+
+#: projectselectionpage.cpp:57
+msgid "Project Type"
+msgstr "Tipo di progetto"
+
+#: projectselectionpage.cpp:68
+msgid "Get More Templates"
+msgstr "Ottieni altri modelli"
+
+#: projectselectionpage.cpp:74
+msgid "Load Template From File"
+msgstr "Carica il modello dal file"
+
+#: projectselectionpage.cpp:182
+msgid "Invalid location"
+msgstr "Posizione non valida"
+
+#: projectselectionpage.cpp:190
+msgid "Empty project name"
+msgstr "Nome progetto vuoto"
+
+#: projectselectionpage.cpp:212
+msgid "Invalid project name"
+msgstr "Nome progetto non valido"
+
+#: projectselectionpage.cpp:231
+#, kde-format
+msgid "Unable to create subdirectories, missing permissions on: %1"
+msgstr "Impossibile creare sottocartelle, mancano le autorizzazioni per: %1"
+
+#: projectselectionpage.cpp:247
+msgid "Invalid project template, please choose a leaf item"
+msgstr "Modello di progetto non valido, scegliere un modello"
+
+#: projectselectionpage.cpp:260
+msgid "Path already exists and contains files"
+msgstr "Il percorso esiste già e contiene dei file"
+
+#: projectselectionpage.cpp:303
+msgid ""
+"The specified path already exists and contains files. Are you sure you want "
+"to proceed?"
+msgstr ""
+"Il percorso specificato esiste già e contiene dei file. Sei sicuro di voler "
+"procedere?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, propertiesBox)
+#: projectselectionpage.ui:26
+msgid "Properties"
+msgstr "Proprietà"
+
+#. i18n: ectx: property (text), widget (QLabel, appNameLabel)
+#: projectselectionpage.ui:32
+msgid "Application Name:"
+msgstr "Nome dell'applicazione:"
+
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: projectselectionpage.ui:42
+msgid "Location:"
+msgstr "Posizione:"
+
+#. i18n: ectx: property (text), widget (KSqueezedTextLabel, locationValidLabel)
+#: projectselectionpage.ui:52
+msgid "KSqueezedTextLabel"
+msgstr "KSqueezedTextLabel"
+
+#: projectvcspage.cpp:42
+msgctxt "No Version Control Support chosen"
+msgid "None"
+msgstr "Nessuno"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectvcspage.ui:18
+msgid "Version Control System:"
+msgstr "Sistema di controllo versione:"
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy

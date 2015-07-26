@@ -1,0 +1,86 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-11-10 22:20+0000\n"
+"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Necdet Yücel"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "necdetyucel@gmail.com"
+
+#. i18n: ectx: Menu (run)
+#: kdevtestview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Çalıştır"
+
+#: testview.cpp:69 testview.cpp:77
+msgid "Filter..."
+msgstr "Filtrele..."
+
+#: testview.cpp:70
+msgid ""
+"Insert wildcard patterns to filter the test view for matching test suites "
+"and cases."
+msgstr ""
+"Test paketleri ve durumları ile eşleşen test görüntülerini filtrelemek için "
+"joker karakter desenleri ekleyin."
+
+#: testview.cpp:99 testviewplugin.cpp:86
+msgid "Unit Tests"
+msgstr "Birim Testleri"
+
+#: testview.cpp:120
+msgid "Show Source"
+msgstr "Kaynağı Göster"
+
+#: testview.cpp:124
+msgid "Run Selected Tests"
+msgstr "Seçili Testleri Çalıştır"
+
+#: testview.cpp:328
+#, kde-format
+msgid "Run 1 test"
+msgid_plural "Run %1 tests"
+msgstr[0] "1 test çalıştır"
+msgstr[1] "%1 test çalıştır"
+
+#: testviewplugin.cpp:42
+msgid "Unit Test View"
+msgstr "Birim Test Görünümü"
+
+#: testviewplugin.cpp:42
+msgid "Lets you see and run unit tests"
+msgstr "Birim testlerini görmenizi ve çalıştırmanızı sağlar"
+
+#: testviewplugin.cpp:75
+msgid "Run All Tests"
+msgstr "Tüm Testleri Çalıştır"
+
+#: testviewplugin.cpp:79
+msgid "Stop Running Tests"
+msgstr "Çalışan Testleri Durdur"
+
+#: testviewplugin.cpp:121
+#, kde-format
+msgid "Run 1 test in %2"
+msgid_plural "Run %1 tests in %2"
+msgstr[0] "%2 üzerinde 1 test çalıştır"
+msgstr[1] "%2 üzerinde %1 test çalıştır"

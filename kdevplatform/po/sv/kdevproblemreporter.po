@@ -1,0 +1,173 @@
+# translation of kdevproblemreporter.po to Swedish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2008, 2009.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevproblemreporter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-24 05:23+0000\n"
+"PO-Revision-Date: 2013-02-18 21:34+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: problemmodel.cpp:207
+msgctxt "@title:column source of problem"
+msgid "Source"
+msgstr "Källa"
+
+#: problemmodel.cpp:209
+msgctxt "@title:column problem description"
+msgid "Problem"
+msgstr "Problem"
+
+#: problemmodel.cpp:211
+msgctxt "@title:column file where problem was found"
+msgid "File"
+msgstr "Fil"
+
+#: problemmodel.cpp:213
+msgctxt "@title:column line number with problem"
+msgid "Line"
+msgstr "Rad"
+
+#: problemmodel.cpp:215
+msgctxt "@title:column column number with problem"
+msgid "Column"
+msgstr "Kolumn"
+
+#: problemreporterplugin.cpp:58
+msgid "Problem Reporter"
+msgstr "Problemrapporter"
+
+#: problemreporterplugin.cpp:58
+msgid "Shows errors in source code"
+msgstr "Visar fel i källkod"
+
+#: problemreporterplugin.cpp:93 problemwidget.cpp:56 problemwidget.cpp:59
+msgid "Problems"
+msgstr "Problem"
+
+#: problemreporterplugin.cpp:180
+msgid "Solve Problem"
+msgstr "Lös problem"
+
+#: problemreporterplugin.cpp:182
+#, kde-format
+msgid "Solve: %1"
+msgstr "Lös: %1 "
+
+#: problemwidget.cpp:66
+msgid "Force Full Update"
+msgstr "Tvinga fullständig uppdatering"
+
+#: problemwidget.cpp:67
+msgctxt "@info:tooltip"
+msgid "Re-parse all watched documents"
+msgstr "Tolka om alla bevakade dokument"
+
+#: problemwidget.cpp:76
+msgid "Show Imports"
+msgstr "Visa importer"
+
+#: problemwidget.cpp:77
+msgctxt "@info:tooltip"
+msgid "Display problems in imported files"
+msgstr "Visa problem i importerade filer"
+
+#: problemwidget.cpp:83
+msgid "Scope"
+msgstr "Omfattning"
+
+#: problemwidget.cpp:84
+msgctxt "@info:tooltip"
+msgid "Which files to display the problems for"
+msgstr "Vilka filer som problem ska visas för"
+
+#: problemwidget.cpp:89
+msgid "Current Document"
+msgstr "Aktuellt dokument"
+
+#: problemwidget.cpp:90
+msgctxt "@info:tooltip"
+msgid "Display problems in current document"
+msgstr "Visa problem i aktuellt dokument"
+
+#: problemwidget.cpp:93
+msgid "Open Documents"
+msgstr "Öppna dokument"
+
+#: problemwidget.cpp:94
+msgctxt "@info:tooltip"
+msgid "Display problems in all open documents"
+msgstr "Visa problem i alla öppna dokument"
+
+#: problemwidget.cpp:97
+msgid "Current Project"
+msgstr "Aktuellt projekt"
+
+#: problemwidget.cpp:98
+msgctxt "@info:tooltip"
+msgid "Display problems in current project"
+msgstr "Visa problem i aktuellt projekt"
+
+#: problemwidget.cpp:101
+msgid "All Projects"
+msgstr "Alla projekt"
+
+#: problemwidget.cpp:102
+msgctxt "@info:tooltip"
+msgid "Display problems in all projects"
+msgstr "Visa problem i alla projekt"
+
+#: problemwidget.cpp:125
+msgid "Severity"
+msgstr "Svårighetsgrad"
+
+#: problemwidget.cpp:127
+msgctxt "@info:tooltip"
+msgid "Select the lowest level of problem severity to be displayed"
+msgstr "Välj lägsta nivå av problemens svårighetsgrad att visa"
+
+#: problemwidget.cpp:130
+msgid "Error"
+msgstr "Fel"
+
+#: problemwidget.cpp:131
+msgctxt "@info:tooltip"
+msgid "Display only errors"
+msgstr "Visa bara fel"
+
+#: problemwidget.cpp:133
+msgid "Warning"
+msgstr "Varning"
+
+#: problemwidget.cpp:134
+msgctxt "@info:tooltip"
+msgid "Display errors and warnings"
+msgstr "Visa fel och varningar"
+
+#: problemwidget.cpp:136
+msgid "Hint"
+msgstr "Tips"
+
+#: problemwidget.cpp:137
+msgctxt "@info:tooltip"
+msgid "Display errors, warnings and hints"
+msgstr "Visa fel, varningar och tips"

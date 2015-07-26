@@ -1,0 +1,119 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2008.
+# Stelios <sstavra@gmail.com>, 2011.
+# Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcontextbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-11 01:26+0000\n"
+"PO-Revision-Date: 2014-03-19 20:55+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: contextbrowser.cpp:175
+msgid "Go back in context history"
+msgstr "Κινηθείτε προς τα πίσω στο ιστορικό περιεχομένου"
+
+#: contextbrowser.cpp:186
+msgid "Go forward in context history"
+msgstr "Κινηθείτε προς τα εμπρός στο ιστορικό περιεχομένου"
+
+#: contextbrowser.cpp:198
+msgid "Enable/disable source browse mode"
+msgstr "Ενεργοποίηση/απενεργοποίηση λειτουργίας περιήγησης κώδικα"
+
+#: contextbrowser.cpp:199
+msgid ""
+"When this is enabled, you can browse the source-code by clicking in the "
+"editor."
+msgstr ""
+"Αν ενεργοποιηθεί αυτή η επιλογή, μπορείτε να περιηγηθείτε στον πηγαίο κώδικα "
+"με κλικ στην επεξεργασία κειμένου."
+
+#: contextbrowser.cpp:208
+msgid "Outline"
+msgstr "Περίγραμμα"
+
+#: contextbrowser.cpp:209
+msgid "Outline..."
+msgstr "Περίγραμμα..."
+
+#: contextbrowser.cpp:210
+msgid "Navigate outline of active document, click to browse."
+msgstr "Πλοήγηση στο περίγραμμα του ενεργού εγγράφου, κάντε κλικ για εμφάνιση."
+
+#: contextbrowser.cpp:248
+msgid "&Previous Visited Context"
+msgstr "&Προηγούμενο περιεχόμενο"
+
+#: contextbrowser.cpp:254
+msgid "&Next Visited Context"
+msgstr "&Επόμενο περιεχόμενο"
+
+#: contextbrowser.cpp:260
+msgid "&Previous Use"
+msgstr "&Προηγούμενη χρήση"
+
+#: contextbrowser.cpp:266
+msgid "&Next Use"
+msgstr "&Επόμενη χρήση"
+
+#: contextbrowser.cpp:272 contextbrowser.cpp:293
+msgid "Context Browser"
+msgstr "Περιηγητής περιεχομένου"
+
+#: contextbrowser.cpp:293
+msgid ""
+"This plugin shows information about the current language context in a side "
+"view, and highlights relevant declarations and uses."
+msgstr ""
+"Αυτό το πρόσθετο εμφανίζει πληροφορίες σχετικά με την τρέχουσα γλώσσα σε μια "
+"πλευρική προβολή, και τονίζει τις σχετικές δηλώσεις και χρήσεις."
+
+#: contextbrowser.cpp:302 contextbrowser.cpp:372
+msgid "Code Browser"
+msgstr "Περιηγητής κώδικα"
+
+#: contextbrowser.cpp:315
+msgid "Find Uses"
+msgstr "Εύρεση χρήσεων"
+
+#: contextbrowser.cpp:1358
+msgid "(changed)"
+msgstr "(τροποποιήθηκε)"
+
+#: contextbrowserview.cpp:122
+msgid "Declaration menu"
+msgstr "Μενού δήλωσης"
+
+#: contextbrowserview.cpp:128
+msgid "Lock current view"
+msgstr "Κλείδωμα τρέχουσας προβολής"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcontextbrowser.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Πλοήγηση"
+
+#. i18n: ectx: ToolBar (KDevCodebrowserToolBar)
+#: kdevcontextbrowser.rc:25
+msgid "Code Browser Toolbar"
+msgstr "Γραμμή εργαλείων περιηγητή κώδικα"

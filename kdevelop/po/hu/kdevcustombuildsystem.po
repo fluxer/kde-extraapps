@@ -1,0 +1,279 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2012-12-04 19:45+0100\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Úr Balázs"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "urbalazs@gmail.com"
+
+#: configwidget.cpp:40
+msgid "Build"
+msgstr "Fordítás"
+
+#: configwidget.cpp:41
+msgid "Configure"
+msgstr "Beállítás"
+
+#: configwidget.cpp:42
+msgid "Install"
+msgstr "Telepítés"
+
+#: configwidget.cpp:43
+msgid "Clean"
+msgstr "Tisztítás"
+
+#: configwidget.cpp:44
+msgid "Prune"
+msgstr "Törlés"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: configwidget.ui:19
+msgid "Build Directory:"
+msgstr "Fordítási könyvtár:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, buildDir)
+#: configwidget.ui:27
+msgid ""
+"Select the directory where the tools are being executed in.\n"
+"If this is the same as the source directory you can leave it empty."
+msgstr ""
+"Válassza ki azt a könyvtárat, amelyben az eszközök végre legyenek hajtva.\n"
+"Ha ez ugyanaz mint a forrás könyvtár, akkor üresen hagyhatja."
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, buildDir)
+#: configwidget.ui:33
+msgid "The directory where the tools are executed"
+msgstr "Az a könyvtár, ahol az eszközöket végrehajtják"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configwidget.ui:45
+msgid "Build Tools"
+msgstr "Fordítás eszközök"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configwidget.ui:51
+msgid "Action:"
+msgstr "Művelet:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: configwidget.ui:61
+msgid "Enable:"
+msgstr "Engedélyezés:"
+
+#. i18n: ectx: property (text), widget (QLabel, execLabel)
+#: configwidget.ui:78
+msgid "Executable:"
+msgstr "Végrehajtható:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, actionExecutable)
+#: configwidget.ui:88
+msgid ""
+"This is the executable that should be executed when selecting the action "
+"from the Project menu"
+msgstr ""
+"Ez az a végrehajtható, amelyet akkor kell végrehajtani, amikor kiválasztanak "
+"egy műveletet a Projekt menüből"
+
+#. i18n: ectx: property (text), widget (QLabel, argLabel)
+#: configwidget.ui:98
+msgid "Arguments:"
+msgstr "Paraméterek:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, actionArguments)
+#: configwidget.ui:108
+msgid "The arguments that the tool needs to execute properly."
+msgstr ""
+"Azok az argumentumok, amelyekre az eszköznek szüksége van a megfelelő "
+"végrehajtáshoz."
+
+#. i18n: ectx: property (text), widget (QLabel, envLabel)
+#: configwidget.ui:118
+msgid "Environment:"
+msgstr "Környezet:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, actionEnvironment)
+#: configwidget.ui:128
+msgid "Choose a pre-configured environment for your tool"
+msgstr "Válasszon egy előkonfigurált környezetet az eszközéhez"
+
+#: custombuildjob.cpp:50
+msgid "Building:"
+msgstr "Fordítás:"
+
+#: custombuildjob.cpp:54
+msgid "Cleaning:"
+msgstr "Tisztítás:"
+
+#: custombuildjob.cpp:58
+msgid "Installing:"
+msgstr "Telepítés:"
+
+#: custombuildjob.cpp:62
+msgid "Configuring:"
+msgstr "Beállítás:"
+
+#: custombuildjob.cpp:66
+msgid "Pruning:"
+msgstr "Törlés:"
+
+#: custombuildjob.cpp:90
+msgid "Undefined Build type"
+msgstr "Nem meghatározott fordítás típus"
+
+#: custombuildjob.cpp:94
+msgid "No command given"
+msgstr "Nincs parancs megadva"
+
+#: custombuildjob.cpp:98
+msgid "This command is disabled"
+msgstr "Ez a parancs le van tiltva"
+
+#: custombuildjob.cpp:109
+msgid ""
+"The given arguments would need a real shell, this is not supported currently."
+msgstr ""
+"A megadott argumentumoknak valódi parancsértelmezőre lenne szüksége, ez "
+"jelenleg nem támogatott."
+
+#: custombuildjob.cpp:154
+msgid "Failed to start command."
+msgstr "Nem sikerült elindítani a parancsot."
+
+#: custombuildjob.cpp:157
+msgid "Command crashed."
+msgstr "A parancs összeomlott."
+
+#: custombuildjob.cpp:160
+msgid "Unknown error executing command."
+msgstr "Ismeretlen hiba végrehajtási parancs."
+
+#: custombuildjob.cpp:177
+msgid "*** Failed ***"
+msgstr "*** Meghiúsult ***"
+
+#: custombuildjob.cpp:179
+msgid "*** Finished ***"
+msgstr "*** Befejeződött ***"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: custombuildsystemconfigwidget.ui:19
+msgid "Build Configuration:"
+msgstr "Fordítás beállítás:"
+
+#. i18n: ectx: property (text), widget (KPushButton, addConfig)
+#: custombuildsystemconfigwidget.ui:42
+msgid "Add"
+msgstr "Hozzáadás"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeConfig)
+#: custombuildsystemconfigwidget.ui:49
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Custom Build System"
+msgstr "Egyéni fordítórendszer"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Support for building and managing custom build systems"
+msgstr "Fordítás és egyéni fordítórendszerek kezelésének támogatása"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+msgstr "Copyright Andreas Pakulat <apaku@gmx.de>, 2010."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy

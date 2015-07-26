@@ -1,0 +1,99 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-11-07 10:29+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kdeconfig.ui:23
+msgid "git.kde.org protocol:"
+msgstr "Protokoll für git.kde.org:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_gitProtocol)
+#: kdeconfig.ui:31
+msgid "git"
+msgstr "git"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_gitProtocol)
+#: kdeconfig.ui:36
+msgid "http"
+msgstr "http"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_gitProtocol)
+#: kdeconfig.ui:41
+msgid "ssh"
+msgstr "ssh"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_gitProtocol)
+#: kdeconfig.ui:46
+msgid "kde:"
+msgstr "kde:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: kdeconfig.ui:54
+msgid ""
+"<html><head/><body><p>URL to clone the protocol from, like:<br/>git clone "
+"git://anongit.kde.org/kdevelop<br/>git clone kde:kdevelop</p><p>For more "
+"information go <a href=\"http://community.kde.org/Sysadmin/"
+"GitKdeOrgManual#Overview_of_repository_URL_schemes\"><span style=\" text-"
+"decoration: underline; color:#0057ae;\">here</span></a>.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>URL zum Klonen des Archivs wie:<br/>git clone git://"
+"anongit.kde.org/kdevelop<br/>git clone kde:kdevelop</p><p>Weitere "
+"Informationen finden Sie <a href=\"http://community.kde.org/Sysadmin/"
+"GitKdeOrgManual#Overview_of_repository_URL_schemes\"><span style=\" text-"
+"decoration: underline; color:#0057ae;\">hier</span></a>.</p></body></html>"
+
+#: kdeproviderplugin.cpp:33
+msgid "KDE Provider"
+msgstr "KDE-Provider"
+
+#: kdeproviderplugin.cpp:33
+msgid "Easily import KDE projects"
+msgstr "Einfacher Import von KDE-Projekten"
+
+#: kdeproviderplugin.cpp:46
+msgid "KDE"
+msgstr "KDE"
+
+#: kdeproviderwidget.cpp:56
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: kdeproviderwidget.cpp:94
+msgid ""
+"The Git plugin could not be loaded which is required to download a KDE "
+"project."
+msgstr ""
+"Das Git-Modul konnte nicht geladen werden, es ist für das Herunterladen "
+"eines KDE-Projekts erforderlich."
+
+#: kdeproviderwidget.cpp:94
+msgid "KDE Provider Error"
+msgstr "KDE-Provider-Fehler"
+
+#: kdeproviderwidget.cpp:123
+msgid "General"
+msgstr "Allgemein"

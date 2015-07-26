@@ -1,0 +1,118 @@
+# Burkhard Lück <lueck@hube-lueck.de>, 2008, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010.
+# Gerhard Stengel <gstengel@gmx.net>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcontextbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-11 01:26+0000\n"
+"PO-Revision-Date: 2013-11-07 10:26+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org"
+
+#: contextbrowser.cpp:175
+msgid "Go back in context history"
+msgstr "Zurück im Kontextverlauf"
+
+#: contextbrowser.cpp:186
+msgid "Go forward in context history"
+msgstr "Nach vorne im Kontextverlauf"
+
+#: contextbrowser.cpp:198
+msgid "Enable/disable source browse mode"
+msgstr "Quelltext-Browse-Modus aktivieren/deaktivieren"
+
+#: contextbrowser.cpp:199
+msgid ""
+"When this is enabled, you can browse the source-code by clicking in the "
+"editor."
+msgstr ""
+"Ist diese Einstellung markiert, können Sie durch die Quelltexte navigieren, "
+"indem Sie in den Editor klicken."
+
+#: contextbrowser.cpp:208
+msgid "Outline"
+msgstr "Funktions-Kurzinfo"
+
+#: contextbrowser.cpp:209
+msgid "Outline..."
+msgstr "Funktions-Kurzinfo ..."
+
+#: contextbrowser.cpp:210
+msgid "Navigate outline of active document, click to browse."
+msgstr ""
+"In den Funktions-Kurzinformationen des aktiven Dokuments navigieren, zum "
+"Browsen hineinklicken."
+
+#: contextbrowser.cpp:248
+msgid "&Previous Visited Context"
+msgstr "&Zuvor betrachteter Kontext"
+
+#: contextbrowser.cpp:254
+msgid "&Next Visited Context"
+msgstr "&Nächster betrachteter Kontext"
+
+#: contextbrowser.cpp:260
+msgid "&Previous Use"
+msgstr "&Vorheriges Vorkommen"
+
+#: contextbrowser.cpp:266
+msgid "&Next Use"
+msgstr "&Nächstes Vorkommen"
+
+#: contextbrowser.cpp:272 contextbrowser.cpp:293
+msgid "Context Browser"
+msgstr "Kontext-Browser"
+
+#: contextbrowser.cpp:293
+msgid ""
+"This plugin shows information about the current language context in a side "
+"view, and highlights relevant declarations and uses."
+msgstr ""
+"Dieses Modul zeigt Informationen über den aktuellen Sprachkontext an und "
+"hebt die wichtigen Deklarationen und Vorkommen hervor."
+
+#: contextbrowser.cpp:302 contextbrowser.cpp:372
+msgid "Code Browser"
+msgstr "Quelltext-Browser"
+
+#: contextbrowser.cpp:315
+msgid "Find Uses"
+msgstr "Vorkommen suchen"
+
+#: contextbrowser.cpp:1358
+msgid "(changed)"
+msgstr "(geändert)"
+
+#: contextbrowserview.cpp:122
+msgid "Declaration menu"
+msgstr "Deklarationenmenü"
+
+#: contextbrowserview.cpp:128
+msgid "Lock current view"
+msgstr "Aktuelle Ansicht sperren"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcontextbrowser.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigation"
+
+#. i18n: ectx: ToolBar (KDevCodebrowserToolBar)
+#: kdevcontextbrowser.rc:25
+msgid "Code Browser Toolbar"
+msgstr "Quelltext-Browser-Werkzeugleiste"

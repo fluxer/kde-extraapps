@@ -1,0 +1,70 @@
+# translation of kdevclassbrowser.po to Brazilian Portuguese
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009.
+# Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>, 2011.
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevclassbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2013-11-07 09:59-0200\n"
+"Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luiz Fernando Ranghetti, André Marcelo Alvarenga"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "elchevive@opensuse.org, alvarenga@kde.org"
+
+#: allclassesfolder.cpp:37
+msgid "All projects classes"
+msgstr "Classes de todos os projetos"
+
+#: classbrowserplugin.cpp:56 classwidget.cpp:86
+msgid "Class Browser"
+msgstr "Navegador de classes"
+
+#: classbrowserplugin.cpp:56
+msgid ""
+"This plugin provides a browsable model of the currently parsed classes and "
+"other items."
+msgstr ""
+"Este plugin fornece um modelo navegável das classes atualmente analisadas e "
+"outros itens."
+
+#: classbrowserplugin.cpp:89 classbrowserplugin.cpp:139 classwidget.cpp:49
+msgid "Classes"
+msgstr "Classes"
+
+#: classbrowserplugin.cpp:92
+msgid "Find in &Class Browser"
+msgstr "Entrontrar no &navegador de classe"
+
+#: classmodelnode.cpp:379
+msgid "Base classes"
+msgstr "Classes base"
+
+#: classmodelnode.cpp:414
+msgid "Derived classes"
+msgstr "Classes derivadas"
+
+#: classwidget.cpp:69
+msgid "S&earch:"
+msgstr "P&esquisar:"
+
+#: projectfolder.cpp:30
+#, kde-format
+msgid "Classes in project %1"
+msgstr "Classes do projeto %1"

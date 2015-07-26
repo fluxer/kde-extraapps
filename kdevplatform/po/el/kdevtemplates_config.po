@@ -1,0 +1,39 @@
+# kdevtemplates_config.po translation el
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stelios <sstavra@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevtemplates_config\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-05-03 10:15+0200\n"
+"PO-Revision-Date: 2013-05-05 12:54+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (text), widget (KPushButton, loadButton)
+#: templatepage.ui:26
+msgid "Load Template From File"
+msgstr "Φόρτωση προτύπου από αρχείο"
+
+#. i18n: ectx: property (text), widget (KPushButton, getNewButton)
+#: templatepage.ui:38
+msgid "Get More Templates"
+msgstr "Ανάκτηση περισσότερων προτύπων"
+
+#. i18n: ectx: property (text), widget (KPushButton, shareButton)
+#: templatepage.ui:50
+msgid "Share Templates"
+msgstr "Κοινή χρήση προτύπων"
+
+#. i18n: ectx: property (text), widget (KPushButton, extractButton)
+#: templatepage.ui:62
+msgid "Clone Template"
+msgstr "Κλωνοποίηση προτύπων"

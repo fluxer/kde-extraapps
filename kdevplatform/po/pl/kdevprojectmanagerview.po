@@ -1,0 +1,395 @@
+# translation of kdevprojectmanagerview.po to
+# translation of kdevelop.po to
+# Version: $Revision$
+# KDevelop polish translation file.
+# Translation work:
+#       Jacek Wojdeł <wojdel@kbs.twi.tudelft.nl>
+# Corrections:
+#       Waldemar Kochaniec
+#       Jacek Stolarczyk
+#       Anna Wojdeł <ania@kbs.twi.tudelft.nl>
+#
+# Krzysztof Lichota, 2004.
+# Marta Rybczyńska <mrybczynsk@poczta.onet.pl>, 2003, 2004.
+# Marta Rybczynska <mrybczynska@poczta.onet.pl>, 2004, 2005.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2004, 2005.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2005, 2006, 2007.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008.
+# Michał Smoczyk <msmoczyk@wp.pl>, 2008.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevprojectmanagerview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-29 09:36+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#. i18n: ectx: Menu (project)
+#: kdevprojectmanagerview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Uruchom"
+
+#: projectbuildsetwidget.cpp:147
+msgid "Build Set"
+msgstr "Zestaw budowania"
+
+#: projectbuildsetwidget.cpp:148
+msgid "Remove From Build Set"
+msgstr "Usuń z zestawu budowania"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, topButton)
+#: projectbuildsetwidget.ui:32
+msgid "Move the selected items to the top"
+msgstr "Przesuń wybrane elementy na wierzch"
+
+#. i18n: ectx: property (text), widget (QToolButton, topButton)
+#. i18n: ectx: property (text), widget (QToolButton, upButton)
+#. i18n: ectx: property (text), widget (QToolButton, downButton)
+#. i18n: ectx: property (text), widget (QToolButton, bottomButton)
+#. i18n: ectx: property (text), widget (QToolButton, addItemButton)
+#. i18n: ectx: property (text), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:35 projectbuildsetwidget.ui:61
+#: projectbuildsetwidget.ui:71 projectbuildsetwidget.ui:97
+#: projectbuildsetwidget.ui:147 projectbuildsetwidget.ui:157
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, upButton)
+#: projectbuildsetwidget.ui:58
+msgid "Move the selected items up"
+msgstr "Przesuń wybrane elementy w górę"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, downButton)
+#: projectbuildsetwidget.ui:68
+msgid "Move the selected item down"
+msgstr "Przesuń wybrany element w dół"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bottomButton)
+#: projectbuildsetwidget.ui:94
+msgid "Move the selected items to the bottom"
+msgstr "Przesuń wybrane elementy na spód"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectbuildsetwidget.ui:121
+msgid "Build Sequence"
+msgstr "Sekwencja budowania"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: projectbuildsetwidget.ui:124
+msgid "These items will be built in the order they are listed."
+msgstr "Elementy te zostaną zbudowane w kolejności ich wymienienia."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, addItemButton)
+#: projectbuildsetwidget.ui:144
+msgid "Add currently selected items from project tree view to buildset."
+msgstr ""
+"Dodaj obecnie zaznaczone elementy z widoku drzewa projektu do zestawu "
+"budowania."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:154
+msgid "Remove currently selected item from buildset."
+msgstr "Usuń obecnie zaznaczone elementy z zestawu budowania."
+
+#: projectmanagerview.cpp:94
+msgid "Locate Current Document"
+msgstr "Namierz bieżący dokument"
+
+#: projectmanagerview.cpp:95
+msgid "Locates the current document in the project tree and selects it."
+msgstr "Namierza bieżący dokument w drzewie projektu i zaznacza go."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:14 projectmanagerviewplugin.cpp:151
+msgid "Projects"
+msgstr "Projekty"
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:17
+msgid "Project Manager"
+msgstr "Zarządzanie projektem"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectTreeView, projectTreeView)
+#: projectmanagerview.ui:39
+msgid "Project Overview"
+msgstr "Przegląd projektu"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectBuildSetWidget, buildSetView)
+#: projectmanagerview.ui:59
+msgid "Build Items:"
+msgstr "Elementy budowane:"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Project Management View"
+msgstr "Widok zarządzania projektem"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Toolview to do all the project management stuff"
+msgstr ""
+"Widok narzędzia, aby wykonać wszystkie czynności związane z zarządzaniem "
+"projektu"
+
+#: projectmanagerviewplugin.cpp:108
+msgid "Build all Projects"
+msgstr "Buduj wszystkie projekty"
+
+#: projectmanagerviewplugin.cpp:113
+msgid "Build Selection"
+msgstr "Buduj zestaw"
+
+#: projectmanagerviewplugin.cpp:114
+msgid "Build"
+msgstr "Buduj"
+
+#: projectmanagerviewplugin.cpp:120
+msgid "Install Selection"
+msgstr "Zainstaluj zestaw"
+
+#: projectmanagerviewplugin.cpp:121
+msgid "Install"
+msgstr "Instaluj"
+
+#: projectmanagerviewplugin.cpp:127
+msgid "Clean Selection"
+msgstr "Porządkuj zestaw"
+
+#: projectmanagerviewplugin.cpp:128
+msgid "Clean"
+msgstr "Porządkuj"
+
+#: projectmanagerviewplugin.cpp:133
+msgid "Configure Selection"
+msgstr "Ustawienia zestaw"
+
+#: projectmanagerviewplugin.cpp:134
+msgid "Configure"
+msgstr "Ustawienia"
+
+#: projectmanagerviewplugin.cpp:139
+msgid "Prune Selection"
+msgstr "Wyczyść zestaw"
+
+#: projectmanagerviewplugin.cpp:140
+msgid "Prune"
+msgstr "Wyczyść"
+
+#: projectmanagerviewplugin.cpp:241
+msgid "Create File"
+msgstr "Utwórz plik"
+
+#: projectmanagerviewplugin.cpp:247
+msgid "Create Folder"
+msgstr "Utwórz katalog"
+
+#: projectmanagerviewplugin.cpp:254
+msgctxt "@action"
+msgid "Build"
+msgstr "Buduj"
+
+#: projectmanagerviewplugin.cpp:258
+msgctxt "@action"
+msgid "Install"
+msgstr "Instaluj"
+
+#: projectmanagerviewplugin.cpp:262
+msgctxt "@action"
+msgid "Clean"
+msgstr "Porządkuj"
+
+#: projectmanagerviewplugin.cpp:266
+msgid "Add to Build Set"
+msgstr "Dodaj do zestawu budowania"
+
+#: projectmanagerviewplugin.cpp:273
+msgid "Close Project"
+msgid_plural "Close Projects"
+msgstr[0] "Zamknij projekt"
+msgstr[1] "Zamknij projekty"
+msgstr[2] "Zamknij projekty"
+
+#: projectmanagerviewplugin.cpp:279
+msgid "Reload"
+msgstr "Wczytaj ponownie"
+
+#: projectmanagerviewplugin.cpp:285
+msgid "Remove"
+msgstr "Usuń"
+
+#: projectmanagerviewplugin.cpp:289
+msgid "Rename"
+msgstr "Zmień nazwę"
+
+#: projectmanagerviewplugin.cpp:295
+msgid "Remove From Target"
+msgstr "Usuń z celu"
+
+#: projectmanagerviewplugin.cpp:489
+#, kde-format
+msgid "Create Folder in %1"
+msgstr "Utwórz katalog w %1"
+
+#: projectmanagerviewplugin.cpp:489
+msgid "Folder Name"
+msgstr "Nazwa katalogu"
+
+#: projectmanagerviewplugin.cpp:541
+#, kde-format
+msgid "Do you really want to delete this item?"
+msgid_plural "Do you really want to delete these %1 items?"
+msgstr[0] "Czy na pewno chcesz usunąć ten element ?"
+msgstr[1] "Czy na pewno usunąć te %1 elementy?"
+msgstr[2] "Czy na pewno usunąć tych %1 elementów?"
+
+#: projectmanagerviewplugin.cpp:544
+msgid "Delete Files"
+msgstr "Usuń pliki"
+
+#: projectmanagerviewplugin.cpp:597
+msgid "Rename..."
+msgstr "Zmień nazwę..."
+
+#: projectmanagerviewplugin.cpp:598
+#, kde-format
+msgid "New name for '%1':"
+msgstr "Nowa nazwa dla '%1':"
+
+#: projectmanagerviewplugin.cpp:609
+#, kde-format
+msgid "There is already a file named '%1'"
+msgstr "Już istnieje plik o nazwie '%1'"
+
+#: projectmanagerviewplugin.cpp:612
+#, kde-format
+msgid "Could not rename '%1'"
+msgstr "Nie można zmienić nazwy '%1'"
+
+#: projectmanagerviewplugin.cpp:615
+#, kde-format
+msgid "'%1' is not a valid file name"
+msgstr "'%1' nie jest prawidłową nazwą pliku"
+
+#: projectmanagerviewplugin.cpp:625
+#, kde-format
+msgid "Create File in %1"
+msgstr "Utwórz plik w %1"
+
+#: projectmanagerviewplugin.cpp:625
+msgid "File name:"
+msgstr "Nazwa pliku:"
+
+#: projecttreeview.cpp:161
+msgid "&Move Here"
+msgstr "&Przenieś tutaj"
+
+#: projecttreeview.cpp:167
+msgid "&Copy Here"
+msgstr "&Kopiuj tutaj"
+
+#: projecttreeview.cpp:173 projecttreeview.cpp:232
+msgid "C&ancel"
+msgstr "&Anuluj"
+
+#: projecttreeview.cpp:226
+msgid "&Add to Target"
+msgstr "Dod&aj do celu"
+
+#: projecttreeview.cpp:345
+msgid "Open Configuration..."
+msgstr "Otwórz ustawienia..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy

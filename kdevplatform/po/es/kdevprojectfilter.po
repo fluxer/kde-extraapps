@@ -1,0 +1,169 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-27 12:18+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: filtermodel.cpp:90
+msgid "Pattern"
+msgstr "Patrón"
+
+#: filtermodel.cpp:92
+msgid "Targets"
+msgstr "Destinos"
+
+#: filtermodel.cpp:94
+msgid "Action"
+msgstr "Acción"
+
+#: filtermodel.cpp:123
+msgid ""
+"The wildcard pattern defines whether a file or folder is included in a "
+"project or not.<br />The pattern is matched case-sensitively against the "
+"items relative path to the project root. The relative path starts with a "
+"forward slash, trailing slashes of folders are removed.<br />Patterns ending "
+"on <code>\"/\"</code> are implicitly considered to match against folders "
+"only.<br />Patterns which do not explicitly start with either <code>\"/\"</"
+"code> or <code>\"*\"</code> implicitly get <code>\"*/\"</code> prepended and "
+"thus match any item with a relative path ending on the given pattern."
+msgstr ""
+"El patrón de comodines define si un archivo o carpeta se incluye o no en un "
+"proyecto.<br />El patrón se aplica contra la ruta relativa a los elementos "
+"de la raíz del proyecto teniendo en cuenta las mayúsculas y las minúsculas. "
+"La ruta relativa comienza con una barra, mientras que el resto de barras y "
+"carpetas se eliminan.<br />Se considera que los patrones que terminan en "
+"<code>«/»</code> solo se aplican a carpetas.<br />A los patrones que no "
+"comienzan explícitamente por <code>«/»</code> ni por <code>«*»</code> se les "
+"antepone implícitamente <code>«*/»</code> para que coincidan con cualquier "
+"elemento con una ruta relativa que termine con el patrón indicado."
+
+#: filtermodel.cpp:135
+msgid ""
+"The target defines what type of item the filter is matched against.<br /"
+">Filters either apply only to files, only to folders or to both."
+msgstr ""
+"El destino defina el tipo de elemento contra el que se compara el patrón."
+"<br />Los filtros se aplican solo a archivos, solo a carpetas o a ambos."
+
+#: filtermodel.cpp:141 projectfilterkcm.cpp:67
+msgid "Files and Folders"
+msgstr "Archivos y carpetas"
+
+#: filtermodel.cpp:146 projectfilterkcm.cpp:66
+msgid "Folders"
+msgstr "Carpetas"
+
+#: filtermodel.cpp:151 projectfilterkcm.cpp:65
+msgid "Files"
+msgstr "Archivos"
+
+#: filtermodel.cpp:157
+msgid ""
+"Filters by default exclude items from the project. Inclusive patterns can be "
+"used to include items which where matched by previous exclusive patterns."
+"<br />E.g. to only include files ending on <code>\".cpp\"</code> in your "
+"project, you could exclude all files via <code>\"*\"</code> and then apply "
+"an inclusive <code>\"*.cpp\"</code> pattern."
+msgstr ""
+"Por omisión, los filtros excluyen elementos del proyecto. Se pueden usar "
+"patrones inclusivos para incluir elementos obtenidos por patrones exclusivos "
+"previos.<br />. Por ejemplo, para incluir únicamente los archivos que "
+"terminan en <code>«.cpp»</code> de su proyecto, podría excluir todos los "
+"archivos usando <code>*</code> y aplicar a continuación el patrón inclusivo "
+"<code>«*.cpp»</code>."
+
+#: filtermodel.cpp:163 projectfilterkcm.cpp:72
+msgid "Include"
+msgstr "Incluir"
+
+#: filtermodel.cpp:168 projectfilterkcm.cpp:71
+msgid "Exclude"
+msgstr "Excluir"
+
+#: projectfilterkcm.cpp:195
+msgid ""
+"A filter with an empty pattern will match all items. Use <code>\"*\"</code> "
+"to make this explicit."
+msgstr ""
+"Un filtro que contenga un patrón vacío coincidirá con todos los elementos. "
+"Use <code>«*»</code> para hacerlo explícito."
+
+#: projectfilterkcm.cpp:198
+msgid "A filter ending on <code>\"/\"</code> can never match a file."
+msgstr ""
+"Un filtro que termine por <code>«/»</code> jamás coincidirá con un archivo."
+
+#: projectfilterprovider.cpp:47
+msgid "Project Filter"
+msgstr "Filtro del proyecto"
+
+#: projectfilterprovider.cpp:48
+msgid ""
+"Configure which files and folders inside the project folder should be "
+"included or excluded."
+msgstr ""
+"Configura qué archivos y carpetas contenidos en la carpeta del proyecto se "
+"deben incluir o excluir."
+
+#: projectfilterprovider.cpp:95
+msgid "Exclude Item From Project"
+msgid_plural "Exclude Items From Project"
+msgstr[0] "Excluir elemento del proyecto"
+msgstr[1] "Excluir elementos del proyecto"
+
+#: projectfilterprovider.cpp:133
+msgid ""
+"A filter for the item was added. To undo, use the project filter settings."
+msgid_plural ""
+"A filter for the items was added. To undo, use the project filter settings."
+msgstr[0] ""
+"Se ha añadido un filtro para el elemento. Para deshacerlo, use las "
+"preferencias de filtros del proyecto."
+msgstr[1] ""
+"Se ha añadido un filtro para los elementos. Para deshacerlo, use las "
+"preferencias de filtros del proyecto."
+
+#: projectfilterprovider.cpp:135
+msgid "Project Filter Added"
+msgstr "Se ha añadido un filtro de proyecto"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: projectfiltersettings.ui:31
+msgid "Add"
+msgstr "Añadir"
+
+#. i18n: ectx: property (text), widget (QPushButton, remove)
+#: projectfiltersettings.ui:46
+msgid "Remove"
+msgstr "Eliminar"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUp)
+#: projectfiltersettings.ui:58
+msgid "Move Up"
+msgstr "Subir"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDown)
+#: projectfiltersettings.ui:70
+msgid "Move Down"
+msgstr "Bajar"

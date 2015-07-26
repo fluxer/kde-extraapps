@@ -1,0 +1,15 @@
+KDevelop IDE and Platform
+---------------------------
+General information about KDevelop: http://www.kdevelop.org/
+Compiling instructions: http://techbase.kde.org/Projects/KDevelop4/HowToCompile
+
+KDevelop Platform API Documentation
+------------------------------------
+API documentation is available from http://api.kde.org/extragear-api/kdevelop-apidocs/kdevplatform/html/index.html
+
+To build it by yourself, make sure you have the kdelibs source available
+Run
+kdelibs/doc/api/doxygen.sh --doxdatadir=kdelibs/doc/common ./
+in the KDevelop top source directory to generate the API documentation. kdelibs
+refers to the kdelibs sources that you need to have downloaded.
+

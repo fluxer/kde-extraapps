@@ -1,0 +1,113 @@
+# Translation of kdevstandardoutputview.po to Catalan
+# Copyright (C) 2009-2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa <manutortosa@gmail.com>, 2009, 2010.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2012.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevstandardoutputview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-12 13:46+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa Moreno"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevstandardoutputview.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navegació"
+
+#: outputwidget.cpp:70 standardoutputview.cpp:49
+msgid "Output View"
+msgstr "Vista de la sortida"
+
+#: outputwidget.cpp:81
+msgid "Close the currently active output view"
+msgstr "Tanca la vista de sortida actualment activa"
+
+#: outputwidget.cpp:86
+msgid "Close all other output views"
+msgstr "Tanca totes les altres vistes de sortida"
+
+#: outputwidget.cpp:96
+msgid "Previous"
+msgstr "Anterior"
+
+#: outputwidget.cpp:99
+msgid "Next"
+msgstr "Següent"
+
+#: outputwidget.cpp:107
+msgid "Select activated Item"
+msgstr "Selecciona l'ítem activat"
+
+#: outputwidget.cpp:109
+msgid "Focus when selecting Item"
+msgstr "Focus en seleccionar un ítem"
+
+#: outputwidget.cpp:135
+msgid "Search..."
+msgstr "Cerca..."
+
+#: outputwidget.cpp:137
+msgid "Enter a wild card string to filter the output view"
+msgstr ""
+"Introduïu una cadena amb comodins per filtrar la visualització de la sortida"
+
+#: standardoutputview.cpp:49
+msgid "Provides toolviews for presenting the output of running apps"
+msgstr ""
+"Proveeix vistes d'eines per presentar la sortida de les aplicacions en "
+"execució"
+
+#: standardoutputview.cpp:86
+msgid "Jump to Next Outputmark"
+msgstr "Salta a la marca de sortida següent"
+
+#: standardoutputview.cpp:92
+msgid "Jump to Previous Outputmark"
+msgstr "Salta a la marca de sortida anterior"
+
+#: standardoutputview.cpp:136
+msgctxt "@title:window"
+msgid "Build"
+msgstr "Construeix"
+
+#: standardoutputview.cpp:141
+msgctxt "@title:window"
+msgid "Run"
+msgstr "Executa"
+
+#: standardoutputview.cpp:146
+msgctxt "@title:window"
+msgid "Debug"
+msgstr "Depura"
+
+#: standardoutputview.cpp:151
+msgctxt "@title:window"
+msgid "Test"
+msgstr "Prova"
+
+#: standardoutputview.cpp:156
+msgctxt "@title:window"
+msgid "Version Control"
+msgstr "Control de versions"

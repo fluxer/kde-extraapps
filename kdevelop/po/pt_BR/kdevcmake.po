@@ -1,0 +1,360 @@
+# Translation of kdevcmake.po to Brazilian Portuguese
+# Copyright (C) 2008-2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009, 2010, 2012.
+# Luciano Pimentel <luciano.pimentel@kdemail.net>, 2009.
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2010, 2011, 2012, 2013, 2014.
+# Marcus Gama <marcus.gama@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmake\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-09 05:44+0000\n"
+"PO-Revision-Date: 2014-06-26 22:59-0300\n"
+"Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luiz Fernando Ranghetti, André Marcelo Alvarenga"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "elchevive@opensuse.org, alvarenga@kde.org"
+
+#: cmakebuilddirchooser.cpp:62
+msgid "Configure a build directory"
+msgstr "Configurar diretório de compilação"
+
+#: cmakebuilddirchooser.cpp:104
+#, kde-format
+msgid "Configure a build directory for %1"
+msgstr "Configurar diretório de compilação para %1"
+
+#: cmakebuilddirchooser.cpp:147
+msgid "You need to select a cmake binary."
+msgstr "Você deve selecionar um binário cmake."
+
+#: cmakebuilddirchooser.cpp:190
+msgid "You need to specify a build directory."
+msgstr "Você deve especificar um diretório de compilação."
+
+#: cmakebuilddirchooser.cpp:197
+msgid "Using an already created build directory."
+msgstr "Usando um diretório de compilação criado anteriormente."
+
+#: cmakebuilddirchooser.cpp:208
+msgid "Creating a new build directory."
+msgstr "Criando um novo diretório de compilação."
+
+#: cmakebuilddirchooser.cpp:214
+msgid "Build directory already configured."
+msgstr "Diretório de compilação já configurado."
+
+#: cmakebuilddirchooser.cpp:216
+#, kde-format
+msgid "This build directory is for %1, but the project directory is %2."
+msgstr "O diretório de compilação é %1, mas o diretório do projeto é %2."
+
+#: cmakebuilddirchooser.cpp:219
+msgid "You may not select a relative build directory."
+msgstr "Você não pode selecionar um diretório de compilação relativo."
+
+#: cmakebuilddirchooser.cpp:221
+msgid "The selected build directory is not empty."
+msgstr "O diretório de compilação selecionado não está vazio."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: cmakebuilddirchooser.ui:26
+msgid "CMake &Binary:"
+msgstr "&Executável do CMake:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: cmakebuilddirchooser.ui:49
+msgid "&Build Directory:"
+msgstr "&Diretório de compilação:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuilddirchooser.ui:65
+msgid "&Installation Prefix:"
+msgstr "Prefixo de &instalação:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: cmakebuilddirchooser.ui:88
+msgid "Build &type:"
+msgstr "&Tipo de compilação:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: cmakebuilddirchooser.ui:154
+msgid "Extra Arguments:"
+msgstr "Argumentos extras:"
+
+#: cmakecodecompletionmodel.cpp:195
+msgid "INVALID"
+msgstr "INVÁLIDO"
+
+#: cmakecodecompletionmodel.cpp:203
+msgid "Command"
+msgstr "Comando"
+
+#: cmakecodecompletionmodel.cpp:204
+msgid "Variable"
+msgstr "Variável"
+
+#: cmakecodecompletionmodel.cpp:205
+msgid "Macro"
+msgstr "Macro"
+
+#: cmakecodecompletionmodel.cpp:206
+msgid "Path"
+msgstr "Caminho"
+
+#: cmakecodecompletionmodel.cpp:207
+msgid "Target"
+msgstr "Alvo"
+
+#: cmakecodecompletionmodel.cpp:249
+msgid "wrong"
+msgstr "errado"
+
+#: cmakedocumentation.cpp:43
+msgid "CMake Documentation"
+msgstr "Documentação do CMake"
+
+#: cmakedocumentation.cpp:43
+msgid "Support for CMake documentation"
+msgstr "Suporte à documentação do CMake"
+
+#: cmakedocumentation.cpp:71 cmakemanager.cpp:118
+msgid "cmake is not installed"
+msgstr "O cmake não está instalado"
+
+#: cmakedocumentation.cpp:141
+#, kde-format
+msgid "<br /><em>Cache Value:</em> %1\n"
+msgstr "<br /><em>Valor em cache:</em> %1\n"
+
+#: cmakedocumentation.cpp:144
+#, kde-format
+msgid "<br /><em>Cache Documentation:</em> %1\n"
+msgstr "<br /><em>Documentação em cache:</em> %1\n"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Commands"
+msgstr "Comandos"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Variables"
+msgstr "Variáveis"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Modules"
+msgstr "Módulos"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Properties"
+msgstr "Propriedades"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Policies"
+msgstr "Políticas"
+
+#: cmakehelpdocumentation.cpp:42
+msgid "CMake Content Page"
+msgstr "Página de Conteúdo CMake"
+
+#: cmakemanager.cpp:82
+msgid "CMake Manager"
+msgstr "Gerenciador do CMake"
+
+#: cmakemanager.cpp:82
+msgid "Support for managing CMake projects"
+msgstr "Suporte ao gerenciamento de projetos em CMake"
+
+#: cmakemanager.cpp:84
+msgid "KDevelop - CMake Support"
+msgstr "KDevelop - Suporte ao CMake"
+
+#: cmakemanager.cpp:462
+msgid "Jump to Target Definition"
+msgstr "Pular para a definição do alvo"
+
+#: cmakemanager.cpp:497
+msgid "Move files and folders within CMakeLists as follows:"
+msgstr "Mover os arquivos e pastas do CMakeLists da seguinte forma:"
+
+#: cmakemanager.cpp:536
+msgid "Changes to CMakeLists failed, abort move?"
+msgstr ""
+"As alterações no CMakeLists falharam. Deseja interromper a movimentação?"
+
+#: cmakemanager.cpp:591
+msgid "Remove files and folders from CMakeLists as follows:"
+msgstr "Remover os arquivos e pastas do CMakeLists da seguinte forma:"
+
+#: cmakemanager.cpp:601
+msgid "Changes to CMakeLists failed, abort deletion?"
+msgstr "As alterações no CMakeLists falharam. Deseja interromper a exclusão?"
+
+#: cmakemanager.cpp:622
+msgid "Modify project targets as follows:"
+msgstr "Modificar os alvos dos projetos da seguinte forma:"
+
+#: cmakemanager.cpp:643
+#, kde-format
+msgid "Create folder '%1':"
+msgstr "Criar a pasta '%1':"
+
+#: cmakemanager.cpp:654
+msgid "Could not save the change."
+msgstr "Não foi possível salvar a modificação."
+
+#: cmakemanager.cpp:702
+#, kde-format
+msgid "Modify target '%1' as follows:"
+msgstr "Modificar o alvo '%1' da seguinte forma:"
+
+#: cmakemanager.cpp:709
+msgid "CMakeLists changes failed."
+msgstr "As alterações do CMakeLists foram mal-sucedidas."
+
+#: cmakemanager.cpp:721
+#, kde-format
+msgid "Rename '%1' to '%2':"
+msgstr "Renomear '%1' para '%2':"
+
+#: cmakemanager.cpp:748
+msgid "Changes to CMakeLists failed, abort rename?"
+msgstr "As alterações no CMakeLists falharam. Deseja interromper a renomeação?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakepossibleroots.ui:16
+msgid ""
+"KDevelop has found several possible root directories for your project, "
+"please select the correct one."
+msgstr ""
+"O KDevelop encontrou diversos possíveis diretórios raízes de projeto para "
+"seu projeto, por favor, selecione o correto."
+
+#: parser/cmakeprojectvisitor.cpp:2375
+#, kde-format
+msgid "%1 is a deprecated command and should not be used"
+msgstr "%1 é um comando obsoleto e não deve ser usado"
+
+#: parser/cmakeprojectvisitor.cpp:2393
+msgid "Unfinished function. "
+msgstr "Função não terminada. "
+
+#. i18n: ectx: property (text), widget (QPushButton, addBuildDir)
+#: settings/cmakebuildsettings.ui:34
+msgid "Add"
+msgstr "Adicionar"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeBuildDir)
+#: settings/cmakebuildsettings.ui:47
+msgid "Remove"
+msgstr "Remover"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: settings/cmakebuildsettings.ui:56
+msgid "Cache Values"
+msgstr "Valores em Cache"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: settings/cmakebuildsettings.ui:71
+msgid "Comment:"
+msgstr "Comentário:"
+
+#. i18n: ectx: property (text), widget (QPushButton, showAdvanced)
+#: settings/cmakebuildsettings.ui:88
+msgid "Show Advanced"
+msgstr "Exibir Avançado"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advancedBox)
+#: settings/cmakebuildsettings.ui:107 settings/cmakecachemodel.cpp:53
+msgid "Advanced"
+msgstr "Avançado"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/cmakebuildsettings.ui:116
+msgid "Configure Environment"
+msgstr "Configurar o ambiente"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: settings/cmakebuildsettings.ui:131
+msgid "Select an environment to be used"
+msgstr "Selecione o ambiente a usar"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showInternal)
+#: settings/cmakebuildsettings.ui:143
+msgid "Show Advanced Values"
+msgstr "Exibir Valores Avançados"
+
+#: settings/cmakecachemodel.cpp:49
+msgid "Name"
+msgstr "Nome"
+
+#: settings/cmakecachemodel.cpp:50
+msgid "Type"
+msgstr "Tipo"
+
+#: settings/cmakecachemodel.cpp:51
+msgid "Value"
+msgstr "Valor"
+
+#: settings/cmakecachemodel.cpp:52
+msgid "Comment"
+msgstr "Comentário"
+
+#: settings/cmakepreferences.cpp:148
+#, kde-format
+msgid ""
+"Could not write CMake settings to file '%1'.\n"
+"Check that you have write access to it"
+msgstr ""
+"Não foi possível gravar a configuração do CMake no arquivo '%1'.\n"
+"Verifique se você tem permissões de escrita para ele"
+
+#: settings/cmakepreferences.cpp:326
+#, kde-format
+msgid ""
+"The %1 directory is about to be removed in KDevelop's list.\n"
+"Do you want KDevelop to remove it in the file system as well?"
+msgstr ""
+"A pasta %1 será removida da lista do KDevelop.\n"
+"Deseja que o KDevelop também remova esta pasta do sistema de arquivos?"
+
+#: settings/cmakepreferences.cpp:332
+#, kde-format
+msgid "Could not remove: %1.\n"
+msgstr "Não foi possível remover: %1.\n"
+
+#: testing/ctestfindjob.cpp:38
+#, kde-format
+msgid "Parse test suite %1"
+msgstr "Processar o conjunto de testes %1"
+
+#: testing/ctestrunjob.cpp:93
+msgid "CTest"
+msgstr "CTest"
+
+#: testing/ctestrunjob.cpp:131
+#, kde-format
+msgctxt "running test %1, %2 test case"
+msgid "CTest %1: %2"
+msgstr "CTest %1: %2"
+
+#: testing/ctestrunjob.cpp:133
+#, kde-format
+msgctxt "running test %1, %2 number of test cases"
+msgid "CTest %2 (%1)"
+msgid_plural "CTest %2 (%1)"
+msgstr[0] "CTest %2 (%1)"
+msgstr[1] "CTest %2 (%1)"

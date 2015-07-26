@@ -1,0 +1,633 @@
+# translation of kdevsubversion.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevsubversion\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2012-02-09 20:39+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: kdevsvnplugin.cpp:78 kdevsvnplugin.cpp:464
+msgid "Subversion"
+msgstr "Subversion"
+
+#: kdevsvnplugin.cpp:78
+msgid "Support for Subversion version control systems"
+msgstr "Podpora pre verzionovacie systémy Subversion"
+
+#: kdevsvnplugin.cpp:345
+msgid "Copy..."
+msgstr "Kopírovať..."
+
+#: kdevsvnplugin.cpp:352
+msgid "Move..."
+msgstr "Posunúť..."
+
+#: kdevsvnplugin.cpp:367 kdevsvnplugin.cpp:376 kdevsvnplugin.cpp:385
+#: kdevsvnplugin.cpp:421 kdevsvnplugin.cpp:457 kdevsvnplugin.cpp:476
+#: kdevsvnplugin.cpp:497
+msgid "Please select only one item for this operation"
+msgstr "Prosím vyberte iba jednu položku pre túto operáciu"
+
+#: kdevsvnplugin.cpp:399 kdevsvnplugin.cpp:435
+msgid "Destination file/directory"
+msgstr "Cieľový súbor/adresár..."
+
+#: kdevsvnplugin.cpp:411
+msgid "Copying only works on local files"
+msgstr "Kopírovanie pracuje len s miestnymi súbormi"
+
+#: kdevsvnplugin.cpp:448
+msgid "Moving only works on local files/dirs"
+msgstr "Presun pracuje len s miestnymi súbormi/adresármi"
+
+#: kdevsvnplugin.cpp:482
+msgid "Import into Subversion repository"
+msgstr "Importovať do repozitára Subversion"
+
+#: kdevsvnplugin.cpp:503
+msgid "Checkout from Subversion repository"
+msgstr "Checkout z repozitára Subversion"
+
+#: svnaddjob.cpp:90
+msgid "Subversion Add"
+msgstr "Subversion Pridať"
+
+#: svnaddjob.cpp:103
+msgid "Not enough information to add file"
+msgstr "Nedostatočné informácie na pridanie súboru"
+
+#: svnblamejob.cpp:149
+msgid "Subversion Annotate"
+msgstr "Subversion Anotovať"
+
+#: svnblamejob.cpp:164
+msgid "Not enough information to blame location"
+msgstr "Nedostatočné informácie na vinu umiestnenia"
+
+#: svncatjob.cpp:118 svncatwidgets.cpp:20
+msgid "Subversion Cat"
+msgstr "Subversion Cat"
+
+#: svncatjob.cpp:131
+msgid "Not enough information to execute cat"
+msgstr "Nedostatočné informácie na vykonanie cat"
+
+#: svncheckoutjob.cpp:106
+msgid "Subversion Checkout"
+msgstr "Subversion Checkout"
+
+#: svncheckoutjob.cpp:118
+msgid "Not enough information to checkout"
+msgstr "Nedostatočné informácie na checkout"
+
+#: svncommitjob.cpp:147
+msgid "Committing..."
+msgstr "Odosielanie..."
+
+#: svncommitjob.cpp:152
+msgid "Not enough information to execute commit"
+msgstr "Nedostatočné informácie na vykonanie odoslania"
+
+#: svncopyjob.cpp:88 svncopywidgets.cpp:24
+msgid "Subversion Copy"
+msgstr "Subversion Kopírovať"
+
+#: svncopyjob.cpp:101
+msgid "Not enough information to copy file"
+msgstr "Nedostatočné informácie na kopírovanie súboru"
+
+#: svndiffjob.cpp:290
+msgid "Subversion Diff"
+msgstr "Subversion Diff"
+
+#: svndiffjob.cpp:309
+msgid "Not enough information given to execute diff"
+msgstr "Nedostatočné informácie na vykonanie diff"
+
+#: svnimportjob.cpp:102
+msgid "Subversion Import"
+msgstr "Subversion Import"
+
+#: svnimportjob.cpp:115
+msgid "Not enough information to import"
+msgstr "Nedostatočné informácie na import"
+
+#: svninfojob.cpp:99
+msgid "Subversion Info"
+msgstr "Subversion Info"
+
+#: svninfojob.cpp:133
+msgid "Not enough information to execute info job"
+msgstr "Nedostatočné informácie na vykonanie info úlohy"
+
+#: svninternaljobbase.cpp:90
+#, kde-format
+msgctxt "A file was marked to be added to svn"
+msgid "Added %1"
+msgstr "Pridané %1"
+
+#: svninternaljobbase.cpp:93
+#, kde-format
+msgctxt "A file was marked for deletion from svn"
+msgid "Deleted %1"
+msgstr "Vymazané %1"
+
+#: svninternaljobbase.cpp:97
+#, kde-format
+msgctxt "A file was deleted during an svn update operation"
+msgid "Deleted %1"
+msgstr "Vymazané %1"
+
+#: svninternaljobbase.cpp:100
+#, kde-format
+msgctxt "A file was added during an svn update operation"
+msgid "Added %1"
+msgstr "Pridané %1"
+
+#: svninternaljobbase.cpp:140
+#, kde-format
+msgid "Revision %1"
+msgstr "Revízia %1"
+
+#: svninternaljobbase.cpp:143
+#, kde-format
+msgid "Updating externals: %1"
+msgstr "Aktualizujem externals: %1"
+
+#: svninternaljobbase.cpp:151
+#, kde-format
+msgid "Sending %1"
+msgstr "Posielam %1"
+
+#: svninternaljobbase.cpp:155
+#, kde-format
+msgid "Adding %1 using mimetype %2."
+msgstr "Pridávam %1 pomocou mimetype %2."
+
+#: svninternaljobbase.cpp:157
+#, kde-format
+msgid "Adding %1."
+msgstr "Pridávam %1"
+
+#: svninternaljobbase.cpp:161
+#, kde-format
+msgid "Deleting %1."
+msgstr "Mažem %1"
+
+#: svninternaljobbase.cpp:164
+#, kde-format
+msgid "Replacing %1."
+msgstr "Nahrádzam %1"
+
+#: svninternaljobbase.cpp:169
+msgid "Transmitting file data "
+msgstr "Prenášam dáta súboru"
+
+#: svninternaljobbase.cpp:175
+#, kde-format
+msgid "Blame finished for revision %1, path %2"
+msgstr "Vina ukončená pre revíziu %1, cesta %2"
+
+#: svninternaljobbase.cpp:178
+#, kde-format
+msgid "Reverted working copy %1"
+msgstr "Vrátená pracovná kópia %1"
+
+#: svninternaljobbase.cpp:181
+#, kde-format
+msgid "Reverting failed on working copy %1"
+msgstr "Zlyhalo vrátenie na pracovnej kópii %1"
+
+#: svninternaljobbase.cpp:184
+#, kde-format
+msgid "Copied %1"
+msgstr "Skopírované %1"
+
+#: svninternaljobbase.cpp:243
+msgid "Certificate is not yet valid."
+msgstr "Certifikát zatiaľ nie je platný."
+
+#: svninternaljobbase.cpp:247
+msgid "Certificate has expired."
+msgstr "Certifikát vypršal."
+
+#: svninternaljobbase.cpp:251
+msgid "Certificate's CN (hostname) doesn't match the remote hostname."
+msgstr ""
+"CN (názov hostiteľa) certifikátu nezodpovedá vzdialenému názvu hostiteľa."
+
+#: svninternaljobbase.cpp:255
+msgid "Certificate authority is unknown."
+msgstr "Certifikačná autorita je neznáma."
+
+#: svninternaljobbase.cpp:259
+msgid "Other unknown error."
+msgstr "Iná neznáma chyba."
+
+#: svnjobbase.cpp:60
+#, kde-format
+msgid "Enter Login for: %1"
+msgstr "Zadajte login pre: %1"
+
+#: svnjobbase.cpp:145
+msgid "Completed"
+msgstr "Dokončené"
+
+#: svnjobbase.cpp:165
+#, kde-format
+msgid ""
+"Error executing Job:\n"
+"%1"
+msgstr ""
+"Chyba vykonávania úlohy:\n"
+"%1"
+
+#: svnlogjob.cpp:120
+msgid "Subversion Log"
+msgstr "Subversion Záznam"
+
+#: svnlogjob.cpp:135
+msgid "Not enough information to log location"
+msgstr "Nedostatočné informácie na záznam umiestnenia"
+
+#: svnmovejob.cpp:100 svnmovewidgets.cpp:22
+msgid "Subversion Move"
+msgstr "Subversion Presun"
+
+#: svnmovejob.cpp:113
+msgid "Not enough information to move file"
+msgstr "Nedostatočné informácie na presun súboru"
+
+#: svnremovejob.cpp:96
+msgid "Subversion Remove"
+msgstr "Subversion Vymazať"
+
+#: svnremovejob.cpp:109
+msgid "Not enough information to execute remove job"
+msgstr "Nedostatočné informácie na vykonanie úlohy odstránenia"
+
+#: svnrevertjob.cpp:94 svnrevertwidgets.cpp:23
+msgid "Subversion Revert"
+msgstr "Subversion Vrátiť"
+
+#: svnrevertjob.cpp:107
+msgid "Not enough information to execute revert"
+msgstr "Nedostatočné informácie na vykonanie vrátenia"
+
+#: svnssldialog.cpp:29
+msgid "Ssl Server Certificate"
+msgstr "Certifikát SSL servera"
+
+#: svnssldialog.cpp:32
+msgid "Trust Temporarily"
+msgstr "Dôverovať dočasne"
+
+#: svnssldialog.cpp:33
+msgid "Trust Permanently"
+msgstr "Dôverovať natrvalo"
+
+#: svnssldialog.cpp:62
+#, kde-format
+msgid "Ssl Server Certificate: %1"
+msgstr "Certifikát SSL servera: %1"
+
+#: svnstatusjob.cpp:136 svnstatuswidgets.cpp:23
+msgid "Subversion Status"
+msgstr "Subversion Stav"
+
+#: svnstatusjob.cpp:156
+msgid "Not enough information to execute status job"
+msgstr "Nedostatočné informácie na vykonanie úlohy stavu"
+
+#: svnupdatejob.cpp:128 svnupdatewidget.cpp:33
+msgid "Subversion Update"
+msgstr "Subversion Aktualizácia"
+
+#: svnupdatejob.cpp:141
+msgid "Not enough Information to execute update"
+msgstr "Nedostatočné informácie na vykonanie aktualizácie"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, startRevWidget)
+#: ui/blameoptiondlg.ui:16 ui/diffoptiondlg.ui:36 ui/logviewoptiondlg.ui:19
+msgid "Start Revision"
+msgstr "Začať revíziu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#. i18n: ectx: property (title), widget (QGroupBox, endRevWidget)
+#: ui/blameoptiondlg.ui:28 ui/diffoptiondlg.ui:43 ui/logviewoptiondlg.ui:31
+msgid "End Revision"
+msgstr "Ukončiť revíziu"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnCheckoutMetadataWidget)
+#: ui/checkoutmetadatawidget.ui:13
+msgid "Checkout"
+msgstr "Checkout"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/checkoutmetadatawidget.ui:19
+msgid "Repository Url:"
+msgstr "URL repozitára:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/checkoutmetadatawidget.ui:29
+msgid "Destination Path:"
+msgstr "Cieľová cesta:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/checkoutmetadatawidget.ui:39
+msgid "Recursive:"
+msgstr "Rekurzívne:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/copyoptiondlg.ui:22 ui/moveoptiondlg.ui:22
+msgid "Requested local path:"
+msgstr "Vyžadovaná miestna cesta:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: ui/copyoptiondlg.ui:39 ui/moveoptiondlg.ui:39
+msgid "Source"
+msgstr "Zdroj"
+
+#. i18n: ectx: property (text), widget (QRadioButton, urlRadio)
+#: ui/copyoptiondlg.ui:45 ui/moveoptiondlg.ui:45
+msgid "Specify by repository URL"
+msgstr "Určiť podľa URL repozitára"
+
+#. i18n: ectx: property (text), widget (QRadioButton, pathRadio)
+#: ui/copyoptiondlg.ui:52 ui/moveoptiondlg.ui:52
+msgid "Specify by local working copy"
+msgstr "Určiť podľa miestnej pracovnej kópie"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/copyoptiondlg.ui:65
+msgid "Source revision"
+msgstr "Zdrojová revízia"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: ui/copyoptiondlg.ui:77 ui/moveoptiondlg.ui:65
+msgid "Destination"
+msgstr "Cieľ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/copyoptiondlg.ui:89 ui/moveoptiondlg.ui:77
+msgid "Specify either the full repository URL or local working path"
+msgstr "Určite buď plné URL repozitára alebo miestnu pracovnú cestu"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/diffoptiondlg.ui:22
+msgid "Target Url"
+msgstr "Cieľové URL"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurseChk)
+#: ui/diffoptiondlg.ui:50
+msgid "Non Recursive"
+msgstr "Nerekurzívne"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nodiffDeletedChk)
+#: ui/diffoptiondlg.ui:57
+msgid "No diff deleted"
+msgstr "Nevymazaný žiadny rozdiel"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreContentsChk)
+#: ui/diffoptiondlg.ui:64
+msgid "Ignore contents type"
+msgstr "Ignorovať typ obsahu"
+
+#. i18n: ectx: property (text), widget (QLabel, labelForSrc)
+#: ui/importmetadatawidget.ui:17
+msgid "Source directory:"
+msgstr "Zdrojový adresár:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/importmetadatawidget.ui:24
+msgid "Repository:"
+msgstr "Repozitár:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:31
+msgid "Repository Location"
+msgstr "Umiestnenie repozitára"
+
+#. i18n: ectx: property (statusTip), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:34
+msgid "Repository Location to import into"
+msgstr "Umiestnenie repozitára na importovanie"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, dest)
+#: ui/importmetadatawidget.ui:37
+msgid "Choose the repository into which the source directory is imported"
+msgstr "Zvoľte repozitár, do ktorého saimportuje zdrojový adresár"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/importmetadatawidget.ui:50
+msgid "Commit Message:"
+msgstr "Správa odoslania:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnLogViewOptionDlg)
+#: ui/logviewoptiondlg.ui:13
+msgid "Subversion Log View Options"
+msgstr "Možnosti zobrazenia záznamu Subversion"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/logviewoptiondlg.ui:60
+msgid "Maximum number of logs to be displayed"
+msgstr "Maximálny počet zobrazovaných záznamov"
+
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox1)
+#: ui/logviewoptiondlg.ui:82
+msgid "Do not show logs before branching point"
+msgstr "Nezobrazovať záznamy pred vetviacim bodom"
+
+#. i18n: ectx: property (text), widget (QCheckBox, forceChk)
+#: ui/moveoptiondlg.ui:90
+msgid "Forcefully delete locally modified and/or unversioned items"
+msgstr "Vynútene vymazať miestne zmenené a/alebo neverzionované položky"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/revertoptiondlg.ui:16
+msgid "Select working copies to be reverted:"
+msgstr "Vyberte pracovné kópie na vrátenie:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:30
+msgid "Select"
+msgstr "Vybrať"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:35
+msgid "Text Status"
+msgstr "Stav textu"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:40
+msgid "Prop Status"
+msgstr "Stav vlastnosti"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: ui/revertoptiondlg.ui:45
+msgid "Working Copy"
+msgstr "Pracovná kópia"
+
+#. i18n: ectx: property (text), widget (QCheckBox, recursive)
+#: ui/revertoptiondlg.ui:53
+msgid "Recursive"
+msgstr "Rekurzívne"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revnumRadio)
+#: ui/revisionwidget.ui:28
+msgid "Specify as number:"
+msgstr "Určiť ako číslo:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revkindRadio)
+#: ui/revisionwidget.ui:42
+msgid "Specify as keyword:"
+msgstr "Určiť ako kľúčové slovo:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, revdateRadio)
+#: ui/revisionwidget.ui:52
+msgid "Specify as date:"
+msgstr "Určit ako dátum:"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SvnSSLTrustDialog)
+#: ui/ssltrustdialog.ui:13
+msgid "SSL Server Certificate"
+msgstr "Certifikát SSL servera"
+
+#. i18n: ectx: property (text), widget (QLabel, msgLabel)
+#: ui/ssltrustdialog.ui:20
+msgid ""
+"There were errors validating the server certificate.\n"
+"Do you want to trust this certificate?"
+msgstr ""
+"Boli chyby pri kontrole certifikátu servera.\n"
+"Chcete dôverovať tomuto certifikátu?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/ssltrustdialog.ui:33
+msgid "Reasons why the validation failed"
+msgstr "Dôvody, prečo kontrola zlyhala"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: ui/ssltrustdialog.ui:55
+msgid "Certificate Information"
+msgstr "Informácia o certifikáte"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/ssltrustdialog.ui:67
+msgid "Hostname:"
+msgstr "Názov hostiteľa:"
+
+#. i18n: ectx: property (text), widget (QLabel, hostname)
+#: ui/ssltrustdialog.ui:80
+msgid "someserver"
+msgstr "someserver"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ui/ssltrustdialog.ui:87
+msgid "Issuer:"
+msgstr "Vydavateľ:"
+
+#. i18n: ectx: property (text), widget (QLabel, issuer)
+#: ui/ssltrustdialog.ui:100
+msgid "someissuer"
+msgstr "someissuer"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: ui/ssltrustdialog.ui:107
+msgid "Valid From:"
+msgstr "Platný od:"
+
+#. i18n: ectx: property (text), widget (QLabel, validFrom)
+#: ui/ssltrustdialog.ui:120
+msgid "validfrom"
+msgstr "validfrom"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: ui/ssltrustdialog.ui:127
+msgid "Valid Until:"
+msgstr "Platný do:"
+
+#. i18n: ectx: property (text), widget (QLabel, validUntil)
+#: ui/ssltrustdialog.ui:140
+msgid "validuntil"
+msgstr "validuntil"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: ui/ssltrustdialog.ui:147
+msgid "Fingerprint:"
+msgstr "Odtlačok:"
+
+#. i18n: ectx: property (text), widget (QLabel, fingerprint)
+#: ui/ssltrustdialog.ui:160
+msgid "fingerprint"
+msgstr "odtlačok"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ui/statusoptiondlg.ui:22
+msgid "Status Requested for:"
+msgstr "Stav vyžadovaný pre:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/statusoptiondlg.ui:36
+msgid "Specify revision"
+msgstr "Určiť revíziu"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurse)
+#: ui/statusoptiondlg.ui:48
+msgid "Non recursive"
+msgstr "Nerekurzívne"
+
+#. i18n: ectx: property (text), widget (QCheckBox, onlyInterests)
+#: ui/statusoptiondlg.ui:55
+msgid "Retrieve only \"interesting\" entries (such as local modifications)"
+msgstr "Obnoviť iba \"zaujímavé\" položky (ako miestne zmeny)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, contactRepChk)
+#: ui/statusoptiondlg.ui:71
+msgid "Contact repository and augment with repository information"
+msgstr "Kontaktovať repozitár a rozšíriť s informáciami repozitára"
+
+#. i18n: ectx: property (text), widget (QCheckBox, noignore)
+#: ui/statusoptiondlg.ui:78
+msgid "Do not ignore svn:ignore"
+msgstr "Neignorovať svn:ignore"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreExternalsChk)
+#: ui/statusoptiondlg.ui:85
+msgid "Ignore external items"
+msgstr "Ignorovať externé položky"
+
+#. i18n: ectx: property (text), widget (QCheckBox, nonrecurseChk)
+#: ui/updateoptiondlg.ui:34
+msgid "Update immediate children only (non-recursive)"
+msgstr "Aktualizovať len priamych potomkov (nerekurzívne)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreexternalChk)
+#: ui/updateoptiondlg.ui:41
+msgid "Ignore external entries"
+msgstr "Ignorovať externé záznamy"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ui/updateoptiondlg.ui:48
+msgid "Select Revision"
+msgstr "Vybrať revíziu"

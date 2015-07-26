@@ -1,0 +1,118 @@
+# translation of kdevcontextbrowser.po to Swedish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2008, 2009.
+# Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcontextbrowser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-11 01:26+0000\n"
+"PO-Revision-Date: 2013-10-04 17:33+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: contextbrowser.cpp:175
+msgid "Go back in context history"
+msgstr "Gå tillbaka i sammanhangshistoriken"
+
+#: contextbrowser.cpp:186
+msgid "Go forward in context history"
+msgstr "Gå framåt i sammanhangshistoriken"
+
+#: contextbrowser.cpp:198
+msgid "Enable/disable source browse mode"
+msgstr "Aktivera eller inaktivera bläddringsläge för källkod"
+
+#: contextbrowser.cpp:199
+msgid ""
+"When this is enabled, you can browse the source-code by clicking in the "
+"editor."
+msgstr ""
+"När det är aktiverat, kan du bläddra i källkod genom att klicka i editorn."
+
+#: contextbrowser.cpp:208
+msgid "Outline"
+msgstr "Översikt"
+
+#: contextbrowser.cpp:209
+msgid "Outline..."
+msgstr "Översikt..."
+
+#: contextbrowser.cpp:210
+msgid "Navigate outline of active document, click to browse."
+msgstr "Navigera i översikt av aktivt dokument, klicka för att bläddra."
+
+#: contextbrowser.cpp:248
+msgid "&Previous Visited Context"
+msgstr "&Föregående besökta sammanhang"
+
+#: contextbrowser.cpp:254
+msgid "&Next Visited Context"
+msgstr "&Nästa besökta sammanhang"
+
+#: contextbrowser.cpp:260
+msgid "&Previous Use"
+msgstr "&Föregående användning"
+
+#: contextbrowser.cpp:266
+msgid "&Next Use"
+msgstr "&Nästa användning"
+
+#: contextbrowser.cpp:272 contextbrowser.cpp:293
+msgid "Context Browser"
+msgstr "Sammanhangsbläddraren"
+
+#: contextbrowser.cpp:293
+msgid ""
+"This plugin shows information about the current language context in a side "
+"view, and highlights relevant declarations and uses."
+msgstr ""
+"Insticksprogrammet visar information om nuvarande språksammanhang i en "
+"sidovy, och markerar relevanta deklarationer och användningar."
+
+#: contextbrowser.cpp:302 contextbrowser.cpp:372
+msgid "Code Browser"
+msgstr "Kodbläddrare"
+
+#: contextbrowser.cpp:315
+msgid "Find Uses"
+msgstr "Sök användningar"
+
+#: contextbrowser.cpp:1358
+msgid "(changed)"
+msgstr "(ändrad)"
+
+#: contextbrowserview.cpp:122
+msgid "Declaration menu"
+msgstr "Deklarationsmeny"
+
+#: contextbrowserview.cpp:128
+msgid "Lock current view"
+msgstr "Lås nuvarande vy"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcontextbrowser.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigering"
+
+#. i18n: ectx: ToolBar (KDevCodebrowserToolBar)
+#: kdevcontextbrowser.rc:25
+msgid "Code Browser Toolbar"
+msgstr "Verktygsrad för kodbläddrare"

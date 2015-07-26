@@ -1,0 +1,200 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009, 2011.
+# Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevappwizard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-11-10 17:48+0000\n"
+"Last-Translator: Simge <simgesezgin88@gmail.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir, Kaan Özdinçer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com, kaanozdincer@gmail.com"
+
+#: appwizarddialog.cpp:27
+msgid "Create New Project"
+msgstr "Yeni Proje Oluştur"
+
+#: appwizarddialog.cpp:35
+msgctxt "Page for general configuration options"
+msgid "General"
+msgstr "Genel"
+
+#: appwizarddialog.cpp:37
+msgctxt "Page for version control options"
+msgid "Version Control"
+msgstr "Sürüm Kontrol"
+
+#: appwizardplugin.cpp:70
+msgid "Project Wizard"
+msgstr "Proje Sihirbazı"
+
+#: appwizardplugin.cpp:70
+msgid "Support for creating and importing projects"
+msgstr "Proje oluşturma ve içeriye aktarma desteği"
+
+#: appwizardplugin.cpp:81
+msgid "New From Template..."
+msgstr "Şablondan Yeni..."
+
+#: appwizardplugin.cpp:83
+msgid "Generate a new project from a template"
+msgstr "Bir şablondan yeni proje oluştur"
+
+#: appwizardplugin.cpp:84
+msgid ""
+"This starts KDevelop's application wizard. It helps you to generate a "
+"skeleton for your application from a set of templates."
+msgstr ""
+"Bu KDevelop uygulama sihirbazını başlatır. Şablon kümesi arasından uygulaman "
+"için bir iskelet oluşturmana yardımcı olur."
+
+#: appwizardplugin.cpp:114
+msgid "Could not create project from template\n"
+msgstr "Şablondan yeni proje oluşturulamadı\n"
+
+#: appwizardplugin.cpp:114
+msgid "Failed to create project"
+msgstr "Proje oluşturulamadı"
+
+#: appwizardplugin.cpp:140
+msgid "Please see the Version Control toolview"
+msgstr "Lütfen sürüm kontrol araç görünümüne bakınız"
+
+#: appwizardplugin.cpp:142
+msgid "Version Control System Error"
+msgstr "Sürüm Kontrol Sistemi Hatası"
+
+#: appwizardplugin.cpp:158
+msgid "Could not initialize DVCS repository"
+msgstr "DVCS deposu başlatılamadı"
+
+#: appwizardplugin.cpp:166
+msgid "Could not add files to the DVCS repository"
+msgstr "Dosyalar DVCS deposuna eklenemedi"
+
+#: appwizardplugin.cpp:173
+#, kde-format
+msgid "Could not import project into %1."
+msgstr "Proje %1 konumuna aktarılamadı."
+
+#: appwizardplugin.cpp:190
+msgid "Could not import project"
+msgstr "Proje içeriye aktarılamadı"
+
+#: appwizardplugin.cpp:198
+msgid "Could not checkout imported project"
+msgstr "İçeriye aktarılan proje alınamadı (checkout)"
+
+#: appwizardplugin.cpp:280
+msgid "Could not create new project"
+msgstr "Yeni proje oluşturulamadı"
+
+#: appwizardplugin.cpp:406
+#, kde-format
+msgid "The file %1 cannot be created."
+msgstr "%1 dosyası oluşturulamadı."
+
+#: appwizardplugin.cpp:500
+msgid "Project Templates"
+msgstr "Proje Şablonları"
+
+#. i18n: ectx: Menu (project)
+#: kdevappwizard.rc:5
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Proje"
+
+#: projectselectionpage.cpp:57
+msgid "Category"
+msgstr "Kategori"
+
+#: projectselectionpage.cpp:57
+msgid "Project Type"
+msgstr "Proje Türü"
+
+#: projectselectionpage.cpp:68
+msgid "Get More Templates"
+msgstr "Daha Fazla Şablon Getir"
+
+#: projectselectionpage.cpp:74
+msgid "Load Template From File"
+msgstr "Dosyadan Şablon Yükle"
+
+#: projectselectionpage.cpp:182
+msgid "Invalid location"
+msgstr "Geçersiz konum"
+
+#: projectselectionpage.cpp:190
+msgid "Empty project name"
+msgstr "Boş proje adı"
+
+#: projectselectionpage.cpp:212
+msgid "Invalid project name"
+msgstr "Geçersiz proje adı"
+
+#: projectselectionpage.cpp:231
+#, kde-format
+msgid "Unable to create subdirectories, missing permissions on: %1"
+msgstr "Alt dizinler oluşturulamadı, izniniz olmayan dizin: %1"
+
+#: projectselectionpage.cpp:247
+msgid "Invalid project template, please choose a leaf item"
+msgstr "Geçersiz proje şablonu, lütfen bir sayfa ögesi seçin"
+
+#: projectselectionpage.cpp:260
+msgid "Path already exists and contains files"
+msgstr "Dizin zaten var ve dosyalar içeriyor"
+
+#: projectselectionpage.cpp:303
+msgid ""
+"The specified path already exists and contains files. Are you sure you want "
+"to proceed?"
+msgstr ""
+"Belirtilen dizin zaten var ve dosyalar içeriyor. Devam etmek istediğinizden "
+"emin misiniz?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, propertiesBox)
+#: projectselectionpage.ui:26
+msgid "Properties"
+msgstr "Özellikler"
+
+#. i18n: ectx: property (text), widget (QLabel, appNameLabel)
+#: projectselectionpage.ui:32
+msgid "Application Name:"
+msgstr "Uygulama Adı:"
+
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: projectselectionpage.ui:42
+msgid "Location:"
+msgstr "Konum:"
+
+#. i18n: ectx: property (text), widget (KSqueezedTextLabel, locationValidLabel)
+#: projectselectionpage.ui:52
+msgid "KSqueezedTextLabel"
+msgstr "KSıkışıkMetinEtiketi"
+
+#: projectvcspage.cpp:42
+msgctxt "No Version Control Support chosen"
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectvcspage.ui:18
+msgid "Version Control System:"
+msgstr "Sürüm Kontrol Sistemi:"

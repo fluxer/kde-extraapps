@@ -1,0 +1,3057 @@
+# Stephan Johach <hunsum@gmx.de>, 2003, 2004, 2005, 2006.
+# Thomas Diehl <thd@kde.org>, 2003, 2004.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007.
+# Burkhard Lück <lueck@hube-lueck.de>, 2006, 2007, 2008, 2009, 2012, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Arndt Braun <arndtbraun@googlemail.com>, 2009.
+# Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
+# Gerhard Stengel <gstengel@gmx.net>, 2010, 2011.
+# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevelop\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-19 05:35+0000\n"
+"PO-Revision-Date: 2014-07-12 10:01+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Version: KDevelop-1.1\n"
+"German messages for KDevelop\n"
+"Martin Piskernig <martin.piskernig@stuwo.at>, 1999, 2000.\n"
+"Ralf Funken <rfunken@kdevelop.de>, 2000\n"
+"Stefan Winter <StefanWinter@gmx.de>, 2001\n"
+"Stephan Johach <lucardus@onlinehome.de>, 2001\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Martin Piskernig, Ralf Funken, Stefan Winter, Stephan Johach, Frederik "
+"Schwarzer, Arndt Braun, Gerhard Stengel"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+",,kickdown@online.de, hunsum@gmx.de, schwarzer@kde.org, "
+"arndtbraun@googlemail.com, gstengel@gmx.net"
+
+#. i18n: ectx: Menu (file)
+#: katepartui.rc:4 vendor/kate/katepartui.rc:4
+msgid "&File"
+msgstr "&Datei"
+
+#. i18n: ectx: Menu (edit)
+#: katepartui.rc:13 vendor/kate/katepartui.rc:12
+msgid "&Edit"
+msgstr "&Bearbeiten"
+
+#. i18n: ectx: Menu (edit_advanced)
+#: katepartui.rc:23
+msgid "&Advanced"
+msgstr "Er&weitert"
+
+#. i18n: ectx: Menu (view)
+#: katepartui.rc:43 vendor/kate/katepartui.rc:37
+msgid "&View"
+msgstr "&Ansicht"
+
+#. i18n: ectx: Menu (codefolding)
+#: katepartui.rc:57 vendor/kate/katepartui.rc:51
+msgid "&Code Folding"
+msgstr "&Quelltextausblendung"
+
+#. i18n: ectx: Menu (tools)
+#: katepartui.rc:70 vendor/kate/katepartui.rc:64
+msgid "&Tools"
+msgstr "E&xtras"
+
+#. i18n: ectx: Menu (wordcompletion)
+#: katepartui.rc:83 vendor/kate/katepartui.rc:75
+msgid "Word Completion"
+msgstr "Wortvervollständigung"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: katepartui.rc:130 kdevelopui.rc:166 vendor/kate/katepartui.rc:123
+msgid "Main Toolbar"
+msgstr "Haupt-Werkzeugleiste"
+
+#. i18n: ectx: Menu (session)
+#: kdevelopui.rc:6
+msgctxt "@title:menu"
+msgid "Session"
+msgstr "Sitzung"
+
+#. i18n: ectx: Menu (project)
+#: kdevelopui.rc:10
+msgctxt "@title:menu"
+msgid "&Project"
+msgstr "&Projekt"
+
+#. i18n: ectx: Menu (run)
+#: kdevelopui.rc:29
+msgid "&Run"
+msgstr "&Ausführen"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevelopui.rc:53
+msgctxt "@title:menu"
+msgid "&Navigation"
+msgstr "&Navigation"
+
+#. i18n: ectx: Menu (file)
+#: kdevelopui.rc:75
+msgctxt "@title:menu"
+msgid "&File"
+msgstr "&Datei"
+
+#. i18n: ectx: Menu (edit)
+#: kdevelopui.rc:86
+msgctxt "@title:menu"
+msgid "&Edit"
+msgstr "&Bearbeiten"
+
+#. i18n: ectx: Menu (editor)
+#: kdevelopui.rc:99
+msgctxt "@title:menu"
+msgid "Editor"
+msgstr "Editor"
+
+#. i18n: ectx: Menu (code)
+#: kdevelopui.rc:104
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Quelltext"
+
+#. i18n: ectx: Menu (window)
+#: kdevelopui.rc:111
+msgctxt "@title:menu"
+msgid "&Window"
+msgstr "&Fenster"
+
+#. i18n: ectx: Menu (settings)
+#: kdevelopui.rc:151
+msgctxt "@title:menu"
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: kdevideextension.cpp:48
+msgid "Code"
+msgstr "Quelltext"
+
+#: kdevideextension.cpp:59
+msgid "KDevelop4 Project Files"
+msgstr "KDevelop-4-Projektdateien"
+
+#: main.cpp:148
+#, kde-format
+msgid "Could not open file %1."
+msgstr "Die Datei %1 kann nicht geöffnet werden."
+
+#: main.cpp:178
+msgid "Select the session to open the document in"
+msgstr "Wählen Sie die Sitzung aus, in der Sie das Dokument öffnen möchten"
+
+#: main.cpp:200
+msgid "The KDevelop Integrated Development Environment"
+msgstr "Die integrierte Entwicklungsumgebung KDevelop"
+
+#: main.cpp:201
+msgid "KDevelop"
+msgstr "KDevelop"
+
+#: main.cpp:202
+msgid "Copyright 1999-2014, The KDevelop developers"
+msgstr "Copyright 1999-2014, Die KDevelop-Entwickler"
+
+#: main.cpp:203
+msgid "Andreas Pakulat"
+msgstr "Andreas Pakulat"
+
+#: main.cpp:203
+msgid ""
+"Architecture, VCS Support, Project Management Support, QMake Projectmanager"
+msgstr ""
+"Architektur, VCS-Unterstützung, Unterstützung für Projektverwaltung, QMake-"
+"Projektverwaltung"
+
+#: main.cpp:204
+msgid "Alexander Dymo"
+msgstr "Alexander Dymo"
+
+#: main.cpp:204
+msgid "Architecture, Sublime UI, Ruby support"
+msgstr "Architektur, Sublime UI, Ruby-Unterstützung"
+
+#: main.cpp:205
+msgid "David Nolden"
+msgstr "David Nolden"
+
+#: main.cpp:205
+msgid ""
+"Definition-Use Chain, C++ Support, Code Navigation, Code Completion, Coding "
+"Assistance, Refactoring"
+msgstr ""
+"Definition-Use-Chain, C++-Unterstützung, Code-Navigation, Code-"
+"Vervollständigung, Programmierhilfen, Refaktorisierung"
+
+#: main.cpp:206
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: main.cpp:206
+msgid "Co-Maintainer, CMake Support, Run Support, Kross Support"
+msgstr "Co-Betreuer, CMake-, Run- und Kross-Unterstützung"
+
+#: main.cpp:207
+msgid "Vladimir Prus"
+msgstr "Vladimir Prus"
+
+#: main.cpp:207
+msgid "GDB integration"
+msgstr "GDB-Integration"
+
+#: main.cpp:208
+msgid "Hamish Rodda"
+msgstr "Hamish Rodda"
+
+#: main.cpp:208
+msgid "Text editor integration, definition-use chain"
+msgstr "Text-Editor-Integration, Definition-Use-Chain"
+
+#: main.cpp:209
+msgid "Amilcar do Carmo Lucas"
+msgstr "Amilcar do Carmo Lucas"
+
+#: main.cpp:209
+msgid "Website admin, API documentation, Doxygen and autoproject patches"
+msgstr ""
+"Betreuung der Webseite, API-Dokumentation, Patches für Doxygen und "
+"Autoprojekt"
+
+#: main.cpp:210
+msgid "Niko Sams"
+msgstr "Niko Sams"
+
+#: main.cpp:210
+msgid "GDB integration, Webdevelopment Plugins"
+msgstr "GDB-Integration, Module zur Web-Entwicklung"
+
+#: main.cpp:211
+msgid "Milian Wolff"
+msgstr "Milian Wolff"
+
+#: main.cpp:211
+msgid ""
+"Co-Maintainer, Generic manager, Webdevelopment Plugins, Snippets, Performance"
+msgstr ""
+"Co-Betreuer, Allgemeiner Manager, Module zur Web-Entwicklung, Textbausteine, "
+"Leistung"
+
+#: main.cpp:212
+msgid "Sven Brauch"
+msgstr "Sven Brauch"
+
+#: main.cpp:212
+msgid "Python Support, User Interface improvements"
+msgstr "Python-Unterstützung, Verbesserung der Benutzeroberfläche"
+
+#: main.cpp:214
+msgid "Matt Rogers"
+msgstr "Matt Rogers"
+
+#: main.cpp:215
+msgid "Cédric Pasteur"
+msgstr "Cédric Pasteur"
+
+#: main.cpp:215
+msgid "astyle and indent support"
+msgstr "Unterstützung für AStyle und Einrückungen"
+
+#: main.cpp:216
+msgid "Evgeniy Ivanov"
+msgstr "Evgeniy Ivanov"
+
+#: main.cpp:216
+msgid "Distributed VCS, Git, Mercurial"
+msgstr "Verteilte Versionsverwaltungssysteme, Git, Mercurial"
+
+#: main.cpp:219
+msgid "Robert Gruber"
+msgstr "Robert Gruber"
+
+#: main.cpp:219
+msgid "SnippetPart, debugger and usability patches"
+msgstr "Textbaustein-Komponente, Debugger und Verbesserung der Bedienbarkeit"
+
+#: main.cpp:220
+msgid "Dukju Ahn"
+msgstr "Dukju Ahn"
+
+#: main.cpp:220
+msgid "Subversion plugin, Custom Make Manager, Overall improvements"
+msgstr ""
+"Unterstützung für Subversion, Custom-Make-Verwaltung, allgemeine "
+"Verbesserungen"
+
+#: main.cpp:221
+msgid "Harald Fernengel"
+msgstr "Harald Fernengel"
+
+#: main.cpp:221
+msgid "Ported to Qt 3, patches, valgrind, diff and perforce support"
+msgstr ""
+"Portierung auf Qt 3, Patches, Valgrind, Unterstützung für Diff und Perforce"
+
+#: main.cpp:222
+msgid "Roberto Raggi"
+msgstr "Roberto Raggi"
+
+#: main.cpp:222
+msgid "C++ parser"
+msgstr "C++-Parser"
+
+#: main.cpp:223
+msgid "The KWrite authors"
+msgstr "Die KWrite-Autoren"
+
+#: main.cpp:223
+msgid "Kate editor component"
+msgstr "Kate-Editor-Komponente"
+
+#: main.cpp:224
+msgid "Nokia Corporation/Qt Software"
+msgstr "Nokia Corporation/Qt Software"
+
+#: main.cpp:224
+msgid "Designer code"
+msgstr "Designer-Code"
+
+#: main.cpp:226
+msgid "Contributors to older versions:"
+msgstr "Mitwirkende früherer Versionen:"
+
+#: main.cpp:227
+msgid "The KHTML authors"
+msgstr "Die KHTML-Autoren"
+
+#: main.cpp:227
+msgid "HTML documentation component"
+msgstr "Komponente für HTML-Dokumentation"
+
+#: main.cpp:228
+msgid "Bernd Gehrmann"
+msgstr "Bernd Gehrmann"
+
+#: main.cpp:228
+msgid "Initial idea, basic architecture, much initial source code"
+msgstr ""
+"Ursprüngliche Idee, grundlegende Architektur, ein Großteil des "
+"ursprünglichen Quelltextes"
+
+#: main.cpp:229
+msgid "Caleb Tennis"
+msgstr "Caleb Tennis"
+
+#: main.cpp:229
+msgid "KTabBar, bugfixes"
+msgstr "KTabBar, Fehlerkorrekturen"
+
+#: main.cpp:230
+msgid "Richard Dale"
+msgstr "Richard Dale"
+
+#: main.cpp:230
+msgid "Java & Objective C support"
+msgstr "Unterstützung für Java und Objective-C"
+
+#: main.cpp:231
+msgid "John Birch"
+msgstr "John Birch"
+
+#: main.cpp:231
+msgid "Debugger frontend"
+msgstr "Debugger-Oberfläche"
+
+#: main.cpp:232
+msgid "Sandy Meier"
+msgstr "Sandy Meier"
+
+#: main.cpp:232
+msgid "PHP support, context menu stuff"
+msgstr "PHP-Unterstützung, Kontextmenüs"
+
+#: main.cpp:233
+msgid "Kurt Granroth"
+msgstr "Kurt Granroth"
+
+#: main.cpp:233
+msgid "KDE application templates"
+msgstr "KDE-Anwendungsvorlagen"
+
+#: main.cpp:234
+msgid "Ian Reinhart Geiser"
+msgstr "Ian Reinhart Geiser"
+
+#: main.cpp:234
+msgid "Dist part, bash support, application templates"
+msgstr "Komponente für Dist, Bash-Unterstützung, Anwendungsvorlagen"
+
+#: main.cpp:235
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:235
+msgid "Several components, htdig indexing"
+msgstr "Verschiedene Komponenten, htdig-Indizierung"
+
+#: main.cpp:236
+msgid "Victor Roeder"
+msgstr "Victor Roeder"
+
+#: main.cpp:236
+msgid "Help with Automake manager and persistent class store"
+msgstr ""
+"Unterstützung bei der Automake-Verwaltung und der persistenten "
+"Klassenspeicherung"
+
+#: main.cpp:237
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: main.cpp:237
+msgid "Help with KParts infrastructure"
+msgstr "Unterstützung für die Infrastruktur von KParts"
+
+#: main.cpp:238
+msgid "Oliver Kellogg"
+msgstr "Oliver Kellogg"
+
+#: main.cpp:238
+msgid "Ada support"
+msgstr "Ada-Unterstützung"
+
+#: main.cpp:239
+msgid "Jakob Simon-Gaarde"
+msgstr "Jakob Simon-Gaarde"
+
+#: main.cpp:239
+msgid "QMake projectmanager"
+msgstr "QMake-Projektverwaltung"
+
+#: main.cpp:240
+msgid "Falk Brettschneider"
+msgstr "Falk Brettschneider"
+
+#: main.cpp:240
+msgid "MDI modes, QEditor, bugfixes"
+msgstr "MDI-Modi, QEditor, Fehlerkorrekturen"
+
+#: main.cpp:241
+msgid "Mario Scalas"
+msgstr "Mario Scalas"
+
+#: main.cpp:241
+msgid "PartExplorer, redesign of CvsPart, patches, bugs(fixes)"
+msgstr "PartExplorer, Überarbeitung des CvsPart, Patches, Fehlerkorrekturen"
+
+#: main.cpp:242
+msgid "Jens Dagerbo"
+msgstr "Jens Dagerbo"
+
+#: main.cpp:242
+msgid ""
+"Replace, Bookmarks, FileList and CTags2 plugins. Overall improvements and "
+"patches"
+msgstr ""
+"Komponenten Ersetzen und Lesezeichen, Dateiliste und CTags2, allgemeine "
+"Verbesserungen und Patches"
+
+#: main.cpp:243
+msgid "Julian Rockey"
+msgstr "Julian Rockey"
+
+#: main.cpp:243
+msgid "Filecreate part and other bits and patches"
+msgstr "Filecreate-Part und sonstiger Krimskrams"
+
+#: main.cpp:244
+msgid "Ajay Guleria"
+msgstr "Ajay Guleria"
+
+#: main.cpp:244
+msgid "ClearCase support"
+msgstr "Unterstützung für ClearCase"
+
+#: main.cpp:245
+msgid "Marek Janukowicz"
+msgstr "Marek Janukowicz"
+
+#: main.cpp:245
+msgid "Ruby support"
+msgstr "Unterstützung für Ruby"
+
+#: main.cpp:246
+msgid "Robert Moniot"
+msgstr "Robert Moniot"
+
+#: main.cpp:246
+msgid "Fortran documentation"
+msgstr "Fortran-Dokumentation"
+
+#: main.cpp:247
+msgid "Ka-Ping Yee"
+msgstr "Ka-Ping Yee"
+
+#: main.cpp:247
+msgid "Python documentation utility"
+msgstr "Hilfsprogramm für Python-Dokumentation"
+
+#: main.cpp:248
+msgid "Dimitri van Heesch"
+msgstr "Dimitri van Heesch"
+
+#: main.cpp:248
+msgid "Doxygen wizard"
+msgstr "Doxygen-Assistent"
+
+#: main.cpp:249
+msgid "Hugo Varotto"
+msgstr "Hugo Varotto"
+
+#: main.cpp:249 main.cpp:250
+msgid "Fileselector component"
+msgstr "Dateiauswahl-Komponente"
+
+#: main.cpp:250
+msgid "Matt Newell"
+msgstr "Matt Newell"
+
+#: main.cpp:251
+msgid "Daniel Engelschalt"
+msgstr "Daniel Engelschalt"
+
+#: main.cpp:251
+msgid "C++ code completion, persistent class store"
+msgstr "C++-Autovervollständigung, persistenter Klassenspeicher"
+
+#: main.cpp:252
+msgid "Stephane Ancelot"
+msgstr "Stephane Ancelot"
+
+#: main.cpp:252 main.cpp:253 main.cpp:256
+msgid "Patches"
+msgstr "Patches"
+
+#: main.cpp:253
+msgid "Jens Zurheide"
+msgstr "Jens Zurheide"
+
+#: main.cpp:254
+msgid "Luc Willems"
+msgstr "Luc Willems"
+
+#: main.cpp:254
+msgid "Help with Perl support"
+msgstr "Hilfe bei der Perl-Unterstützung"
+
+#: main.cpp:255
+msgid "Marcel Turino"
+msgstr "Marcel Turino"
+
+#: main.cpp:255
+msgid "Documentation index view"
+msgstr "Index-Ansicht für die Dokumentation"
+
+#: main.cpp:256
+msgid "Yann Hodique"
+msgstr "Yann Hodique"
+
+#: main.cpp:257
+msgid "Tobias Gläßer"
+msgstr "Tobias Gläßer"
+
+#: main.cpp:257
+msgid ""
+"Documentation Finder,  qmake projectmanager patches, usability improvements, "
+"bugfixes ... "
+msgstr ""
+"Dokumentationssuche, QMake-Projektverwaltung, Verbesserungen der "
+"Bedienbarkeit, Fehlerkorrekturen ... "
+
+#: main.cpp:258
+msgid "Andreas Koepfle"
+msgstr "Andreas Koepfle"
+
+#: main.cpp:258
+msgid "QMake project manager patches"
+msgstr "Patches zum QMake-Projektmanager"
+
+#: main.cpp:259
+msgid "Sascha Cunz"
+msgstr "Sascha Cunz"
+
+#: main.cpp:259
+msgid "Cleanup and bugfixes for qEditor, AutoMake and much other stuff"
+msgstr ""
+"Aufräumen des Quellcodes und Fehlerkorrekturen für qEditor, Automake und "
+"vieles andere."
+
+#: main.cpp:260
+msgid "Zoran Karavla"
+msgstr "Zoran Karavla"
+
+#: main.cpp:260
+msgid "Artwork for the ruby language"
+msgstr "Künstlerische Beiträge für die Ruby-Unterstützung"
+
+#: main.cpp:292
+msgid "Open KDevelop with a new session using the given name."
+msgstr "KDevelop mit einer neuen Sitzung unter dem angegebenen Namen öffnen."
+
+#: main.cpp:294
+msgid ""
+"Open KDevelop with the given session.\n"
+"You can pass either hash or the name of the session."
+msgstr ""
+"KDevelop mit der angegebenen Sitzung öffnen.\n"
+"Es kann entweder der Hashwert oder der Name der Sitzung angegeben werden."
+
+#: main.cpp:296
+msgid "Shows all available sessions and lets you select one to open."
+msgstr ""
+"Zeigt alle verfügbaren Sitzungen an und erlaubt, eine zum Öffnen auszuwählen."
+
+#: main.cpp:297
+msgid "List all available sessions on shell and lets you select one to open."
+msgstr ""
+"Zeigt alle verfügbaren Sitzungen in der Shell an und lässt Sie eine zum "
+"Öffnen auszuwählen."
+
+#: main.cpp:299
+msgid "List available sessions and quit."
+msgstr "Alle verfügbare Sitzungen anzeigen und beenden."
+
+#: main.cpp:301
+msgid "Open KDevelop and load the given project."
+msgstr "KDevelop öffnen und das angegebene Projekt laden."
+
+#: main.cpp:304
+msgid ""
+"Start debugging an application in KDevelop with the given debugger.\n"
+"The binary that should be debugged must follow - including arguments.\n"
+"Example: kdevelop --debug gdb myapp --foo bar"
+msgstr ""
+"Beginnt das Debuggen einer Anwendung in KDevelop mit dem angegebenen "
+"Debugger.\n"
+"Die zu debuggende Programmdatei muss einschließlich ihrer Argumente folgen.\n"
+"Beispiel: kdevelop --debug gdb myapp --foo bar"
+
+#: main.cpp:310
+msgid "Files to load"
+msgstr "Zu ladende Dateien"
+
+#: main.cpp:312
+msgid "Deprecated options:"
+msgstr "Veraltete Optionen:"
+
+#: main.cpp:313
+msgid "Same as -l / --list-sessions"
+msgstr "Identisch zu -l / --list-sessions"
+
+#: main.cpp:314
+msgid "Same as -n / --new-session"
+msgstr "Identisch zu -n / --new-session"
+
+#: main.cpp:326
+msgid "Available sessions (use '-s HASH' or '-s NAME' to open a specific one):"
+msgstr ""
+"Verfügbare Sitzungen (verwenden Sie „-s HASH“ oder „-s NAME“, um eine "
+"bestimmte Sitzung zu öffnen):"
+
+#: main.cpp:327
+msgid "Hash"
+msgstr "Hash"
+
+#: main.cpp:327
+msgid "Name: Opened Projects"
+msgstr "Name: geöffnete Projekte"
+
+#: main.cpp:336
+msgid "[running]"
+msgstr "[läuft]"
+
+#: main.cpp:397
+msgid "Select the session you would like to use"
+msgstr "Wählen Sie die Sitzung aus, die Sie verwenden möchten"
+
+#: main.cpp:405
+msgctxt "@info:shell"
+msgid "Specify the binary you want to debug."
+msgstr "Geben Sie die Binärdatei an, die Sie debuggen möchten."
+
+#: main.cpp:408
+#, kde-format
+msgid "Debug %1"
+msgstr "Debuggen %1"
+
+#: main.cpp:417
+#, kde-format
+msgid ""
+"A session with the name %1 exists already. Use the -s switch to open it."
+msgstr ""
+"Eine Sitzung mit dem Namen %1 existiert bereits. Verwenden Sie die Option „-"
+"s“, um sie zu öffnen."
+
+#: main.cpp:447
+#, kde-format
+msgid ""
+"Cannot open unknown session %1. See --sessions switch for available sessions "
+"or use -cs to create a new one."
+msgstr ""
+"Unbekannte Sitzung %1 kann nicht geöffnet werden. Prüfen Sie mit der Option "
+"„--session“ die verfügbaren Sitzungen oder verwenden Sie „-cs“, um eine neue "
+"Sitzung anzulegen."
+
+#: main.cpp:537
+msgid "Cannot find native launch configuration type"
+msgstr "Nativer Startkonfigurationstyp kann nicht gefunden werden"
+
+#: main.cpp:556
+#, kde-format
+msgid "Cannot find launcher %1"
+msgstr "Startprogramm %1 kann nicht gefunden werden"
+
+#: main.cpp:571
+#, kde-format
+msgid "Could not open %1"
+msgstr "%1 kann nicht geöffnet werden"
+
+#: plasma/applet/package/contents/ui/kdevelopsessions.qml:74
+msgid "KDevelop Sessions"
+msgstr "KDevelop-Sitzungen"
+
+#: plasma/applet/package/contents/ui/kdevelopsessions.qml:94
+msgid "Arbitrary String Which Says Something"
+msgstr "Beliebige Zeichenkette, die irgendetwas besagt"
+
+#: plasma/runner/kdevelopsessions.cpp:58
+msgid "Finds KDevelop sessions matching :q:."
+msgstr "Sucht nach KDevelop-Sitzungen, die auf :q: passen."
+
+#: plasma/runner/kdevelopsessions.cpp:62
+msgid "Lists all the KDevelop editor sessions in your account."
+msgstr "Listet alle KDevelop-Sitzungen ihres Benutzerkontos auf."
+
+#: plasma/runner/kdevelopsessions.cpp:142
+msgid "Open KDevelop Session"
+msgstr "KDevelop-Sitzung öffnen"
+
+#. i18n: ectx: Menu (settings)
+#: vendor/kate/katepartui.rc:104
+msgid "&Settings"
+msgstr "&Einstellungen"
+
+#: welcomepage/qml/area_code.qml:38
+msgid "Develop"
+msgstr "Entwicklung"
+
+#: welcomepage/qml/area_code.qml:43
+msgid "Getting Started"
+msgstr "Einführung"
+
+#: welcomepage/qml/area_debug.qml:35 welcomepage/qml/area_review.qml:35
+msgid "Back to code"
+msgstr "Zurück zum Quelltext"
+
+#: welcomepage/qml/area_debug.qml:55
+msgid "Configure a new Launcher"
+msgstr "Neuen Starter einrichten"
+
+#: welcomepage/qml/area_debug.qml:56
+msgid "Attach to Process"
+msgstr "An einen Prozess hängen"
+
+#: welcomepage/qml/area_debug.qml:57
+msgid "Debug your program"
+msgstr "Ihr Programm debuggen"
+
+#: welcomepage/qml/area_debug.qml:60
+msgid "Debug Area"
+msgstr "Bereich für Fehlersuche"
+
+#: welcomepage/qml/area_debug.qml:63
+msgid ""
+"On the <em>Debug</em> area you will be able to see and analyze how your "
+"program works on execution. On the <em>Run</em> menu you will find all the "
+"possible options.<br/><br/>As you can see, here you can just execute your "
+"application or debug it if you need further runtime information. You can "
+"select what is going to be run by configuring the launches and selecting the "
+"one you want to use in the <em>Current Launch Configuration</em> sub-menu."
+msgstr ""
+"Im Bereich <em>Debuggen</em> können Sie Ihr Programm betrachten oder genauer "
+"untersuchen, wie es ausgeführt wird. Im Menü <em>Ausführen</em> finden Sie "
+"alle möglichen Optionen.<br/><br/>Wie Sie sehen, können Sie Ihr Programm "
+"hier nur starten oder debuggen, falls Sie weitere Informationen zur Laufzeit "
+"benötigen. Durch Einrichten von Startkonfigurationen können Sie festlegen, "
+"was ausgeführt werden soll, und im Untermenü <em>Aktuelle "
+"Startkonfiguration</em> eine davon auswählen."
+
+#: welcomepage/qml/area_review.qml:57
+msgid "Review a Patch"
+msgstr "Patch durchsehen"
+
+#: welcomepage/qml/area_review.qml:65
+msgid "Review Area"
+msgstr "Bereich für Durchsicht"
+
+#: welcomepage/qml/area_review.qml:69
+msgid ""
+"On the <em>Review</em> area you will be able to find the tools you need to "
+"review changes in your projects, either the ones you made or some external "
+"patch.<br/> Also it will help you send the changes to the community you're "
+"contributing to, either by committing the changes, sending them by e-mail or "
+"putting them on a ReviewBoard service."
+msgstr ""
+"Im Bereich <em>Durchsicht</em> können Sie die Werkzeuge finden, die Sie zum "
+"Durchsehen von Änderungen in Ihren Projekten benötigen, sowohl für Ihre "
+"eigenen als auch für externe Patches.<br/> Außerdem gibt es Hilfsmittel, um "
+"die Änderungen durch Einspielen, Versand per E-Mail oder Hochladen zu einem "
+"Review-Board-Dienst an die Entwicklergemeinde zu verteilen."
+
+#: welcomepage/qml/Develop.qml:39
+msgid "New Project"
+msgstr "Neues Projekt"
+
+#: welcomepage/qml/Develop.qml:45
+msgid "Open project"
+msgstr "Projekt öffnen"
+
+#: welcomepage/qml/Develop.qml:51
+msgid "Fetch project"
+msgstr "Projekt holen"
+
+#: welcomepage/qml/Develop.qml:57
+msgid "Recent Projects"
+msgstr "Zuletzt geöffnete Projekte"
+
+#: welcomepage/qml/Develop.qml:89
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: welcomepage/qml/Develop.qml:101
+msgid "Sessions"
+msgstr "Sitzungen"
+
+#: welcomepage/qml/GettingStarted.qml:35
+msgid "Official Website"
+msgstr "Offizielle Webseite"
+
+#: welcomepage/qml/GettingStarted.qml:36
+msgid "Userbase"
+msgstr "Userbase"
+
+#: welcomepage/qml/GettingStarted.qml:37
+msgid "Techbase"
+msgstr "Techbase"
+
+#: welcomepage/qml/GettingStarted.qml:38
+msgid "Handbook"
+msgstr "Handbuch"
+
+#: welcomepage/qml/GettingStarted.qml:66
+msgid "Go!"
+msgstr "Los!"
+
+#: welcomepage/qml/GettingStarted.qml:73
+msgid "Documentation for KDevelop users"
+msgstr "Dokumentation für Benutzer von KDevelop"
+
+#: welcomepage/qml/GettingStarted.qml:78
+msgid "Keep up with KDevelop's development"
+msgstr "Bleiben Sie über die Entwicklung von KDevelop auf dem Laufenden"
+
+#: welcomepage/qml/GettingStarted.qml:83
+msgid "Help us improve KDevelop"
+msgstr "Helfen Sie uns, KDevelop zu verbessern"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy
+
+
+
+#, fuzzy

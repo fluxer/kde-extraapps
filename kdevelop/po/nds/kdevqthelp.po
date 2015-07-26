@@ -1,0 +1,195 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sönke Dibbern <s_dibbern@web.de>, 2009.
+# Manfred Wiese <m.j.wiese@web.de>, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevqthelp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2011-06-12 08:09+0200\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sönke Dibbern"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "s_dibbern@web.de"
+
+#: qthelpconfig.cpp:62
+#, fuzzy
+#| msgid "Modify"
+msgid "Modify Entry"
+msgstr "Ännern"
+
+#: qthelpconfig.cpp:64
+msgid "Add New Entry"
+msgstr ""
+
+#: qthelpconfig.cpp:82
+msgid "Name cannot be empty."
+msgstr "Naam mutt nich leddig wesen."
+
+#: qthelpconfig.cpp:122
+#, fuzzy
+msgctxt "Allow user to get some API documentation with GHNS"
+msgid "Get New Documentation"
+msgstr "Qt-Hülp versöken"
+
+#: qthelpconfig.cpp:253
+#, fuzzy
+msgid "Documentation provided by GHNS"
+msgstr "Dokmentatschoon al importeert"
+
+#: qthelpconfig.cpp:279
+msgid "Qt Compressed Help file is not valid."
+msgstr "Komprimeert Qt-Hülpdatei is leeg."
+
+#: qthelpconfig.cpp:288
+msgid "Documentation already imported"
+msgstr "Dokmentatschoon al importeert"
+
+#. i18n: ectx: property (title), widget (QGroupBox, qchManage)
+#: qthelpconfig.ui:20
+msgid "Manage QtHelp Documentation"
+msgstr "De Dokmentatschoon för de Qt-Hülp plegen"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, qchTable)
+#: qthelpconfig.ui:52
+msgid "Name"
+msgstr "Naam"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, qchTable)
+#: qthelpconfig.ui:57
+msgid "Path"
+msgstr "Padd"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, qchSearchDir)
+#: qthelpconfig.ui:83
+msgid "Search qch files in directory..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (KPushButton, addButton)
+#: qthelpconfig.ui:96
+msgid "Add"
+msgstr "Tofögen"
+
+#. i18n: ectx: property (text), widget (KPushButton, editButton)
+#: qthelpconfig.ui:103
+msgid "Modify"
+msgstr "Ännern"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeButton)
+#: qthelpconfig.ui:110
+msgid "Remove"
+msgstr "Wegmaken"
+
+#. i18n: ectx: property (text), widget (KPushButton, upButton)
+#: qthelpconfig.ui:117
+msgid "Move Up"
+msgstr "Na baven"
+
+#. i18n: ectx: property (text), widget (KPushButton, downButton)
+#: qthelpconfig.ui:124
+msgid "Move Down"
+msgstr "Na nerrn"
+
+#. i18n: ectx: property (text), widget (QPushButton, qchSearchDirButton)
+#: qthelpconfig.ui:144
+msgid "Choose dir"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, loadQtDocsCheckBox)
+#: qthelpconfig.ui:155
+msgid "Load Qt documentation"
+msgstr "Qt-Dokmentatschonen laden"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, QtHelpConfigEditDialog)
+#: qthelpconfigeditdialog.ui:14
+msgid "Dialog"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: qthelpconfigeditdialog.ui:20
+#, fuzzy
+#| msgid "IconName"
+msgid "Icon:"
+msgstr "Lüttbildnaam"
+
+#. i18n: ectx: property (toolTip), widget (KIconButton, qchIcon)
+#: qthelpconfigeditdialog.ui:27
+msgid "Select an icon"
+msgstr "Söök en Lüttbild ut"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: qthelpconfigeditdialog.ui:40
+#, fuzzy
+#| msgid "Name"
+msgid "Name:"
+msgstr "Naam"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, qchName)
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, qchName)
+#: qthelpconfigeditdialog.ui:47 qthelpconfigeditdialog.ui:50
+msgid "Select a name"
+msgstr "Söök en Naam ut"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: qthelpconfigeditdialog.ui:57
+#, fuzzy
+#| msgid "Path"
+msgid "Path:"
+msgstr "Padd"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, qchRequester)
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, qchRequester)
+#: qthelpconfigeditdialog.ui:70 qthelpconfigeditdialog.ui:76
+msgid "Select a QtHelp file..."
+msgstr "Söök en Qt-Hülpdatei ut..."
+
+#: qthelpdocumentation.cpp:193
+#, kde-format
+msgid "Could not find any documentation for '%1'"
+msgstr "För \"%1\" lett sik keen Dokmentatschoon finnen"
+
+#: qthelpdocumentation.cpp:290
+msgid "QtHelp Home Page"
+msgstr "QtHelp-Tohuussiet"
+
+#: qthelpplugin.cpp:38 qthelpqtdoc.cpp:94
+msgid "QtHelp"
+msgstr "QtHelp"
+
+#: qthelpplugin.cpp:38
+msgid "Check Qt Help documentation"
+msgstr "Qt-Hülp versöken"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: testqthelp/docwidget.ui:17
+msgid "Identifier to search:"
+msgstr "Beteker, den Du söken wullt:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: testqthelp/docwidget.ui:30
+msgid "Help page:"
+msgstr "Hülpsiet:"
+
+#. i18n: ectx: property (url), widget (QWebView, help)
+#: testqthelp/docwidget.ui:41
+msgid "about:blank"
+msgstr "about:blank"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: testqthelp/docwidget.ui:49
+msgid "Debug info:"
+msgstr "Fehlersöök-Informatschonen:"

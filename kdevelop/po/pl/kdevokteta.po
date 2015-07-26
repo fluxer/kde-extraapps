@@ -1,0 +1,74 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-09-11 05:32+0000\n"
+"PO-Revision-Date: 2013-01-20 10:55+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kdei18n-pl-uwagi>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#. i18n: ectx: Menu (permission)
+#: kdevokteta.rc:10
+msgctxt "@title:menu"
+msgid "Permissions"
+msgstr "Uprawnienia"
+
+#. i18n: ectx: Menu (view)
+#: kdevokteta.rc:41
+msgid "View"
+msgstr "Widok"
+
+#. i18n: ectx: Menu (bookmarks)
+#: kdevokteta.rc:59
+msgid "Bookmarks"
+msgstr "Zakładki"
+
+#. i18n: ectx: ToolBar (designerToolbar)
+#: kdevokteta.rc:90
+msgid "Designer Layout Toolbar"
+msgstr "Pasek narzędzi układu projektanta"
+
+#: oktetadocument.cpp:174
+#, kde-format
+msgid "The document \"%1\" has unsaved changes. Would you like to save them?"
+msgstr "Dokument \"%1\" ma niezapisane zmiany. Czy chcesz jest zapisać?"
+
+#: oktetadocument.cpp:175
+msgid "Close Document"
+msgstr "Zamknij dokument"
+
+#: oktetaplugin.cpp:68
+msgid "Okteta Plugin for KDevelop"
+msgstr "Wtyczka Okteta dla KDevelop"
+
+#: oktetaplugin.cpp:68
+msgid "Provides simple Hex Editing"
+msgstr "Zapewnia proste edytowanie szesnastkowe"
+
+#: oktetaplugin.cpp:124
+msgid "Hex Editor"
+msgstr "Edytor szesnastkowy"
+
+#: oktetawidget.cpp:118
+msgctxt "@action:inmenu"
+msgid "Manage Byte Array View Profiles..."
+msgstr "Zarządzanie profilami widoku macierzy bajtów..."

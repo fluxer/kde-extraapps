@@ -1,0 +1,886 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Eloy Cuadra <ecuadra@eloihr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Javier Viñal <fjvinal@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcpp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-17 05:11+0000\n"
+"PO-Revision-Date: 2014-06-27 12:16+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: codecompletion/context.cpp:883
+msgid "Initialize"
+msgstr "Inicializar"
+
+#: codecompletion/context.cpp:1338 codecompletion/context.cpp:2038
+msgid "Not Included"
+msgstr "No incluido"
+
+#: codecompletion/context.cpp:1490
+#, kde-format
+msgctxt ""
+"Here, overload is used as a programming term.  This string is used to "
+"display how many overloaded versions there are of the function whose name is "
+"the second argument."
+msgid "1 more overload of %2 (show more)"
+msgid_plural "%1 more overloads of %2 (show more)"
+msgstr[0] "1 sobrecarga más de %2 (mostrar más)"
+msgstr[1] "%1 sobrecargas más de %2 (mostrar más)"
+
+#: codecompletion/context.cpp:1614
+#, kde-format
+msgid "Connect to %1 (%2)"
+msgstr "Conectar a %1 (%2)"
+
+#: codecompletion/context.cpp:1666
+msgid "Signals/Slots"
+msgstr "Señales/slots"
+
+#: codecompletion/context.cpp:1935
+msgid "Virtual Override"
+msgstr "Redefinir virtual"
+
+#: codecompletion/context.cpp:1942
+msgctxt "@action"
+msgid "Implement Function"
+msgstr "Implementar función"
+
+#: codecompletion/context.cpp:1971 codecompletion/context.cpp:1973
+msgid "C++ Builtin"
+msgstr "C++ integrado"
+
+#: codecompletion/context.cpp:2098
+msgid "Lookahead Matches"
+msgstr "Coincidencias posteriores"
+
+#: codecompletion/implementationhelperitem.cpp:86
+msgctxt "@action C++ code completion"
+msgid "Override"
+msgstr "Redefinir"
+
+#: codecompletion/implementationhelperitem.cpp:88
+msgctxt "@action C++ code completion"
+msgid "Implement"
+msgstr "Implementar"
+
+#: codecompletion/implementationhelperitem.cpp:90
+msgctxt "@action C++ code completion"
+msgid "Create Slot"
+msgstr "Crear slot"
+
+#: codecompletion/implementationhelperitem.cpp:127
+#, kde-format
+msgid "From %1"
+msgstr "Desde %1"
+
+#: codecompletion/missingincludeitem.cpp:484
+msgid "Add include directive"
+msgstr "Añadir directiva de inclusión"
+
+#: codecompletion/missingincludeitem.cpp:489
+#, kde-format
+msgctxt "file content unknown"
+msgid "%1<unknown contents>, %2"
+msgstr "%1<unknown contents>, %2"
+
+#: codecompletion/missingincludeitem.cpp:564
+msgid "Add Forward-Declaration"
+msgstr "Añadir declaración aplazada"
+
+#: codecompletion/missingincludeitem.cpp:576
+msgid "forward-declare"
+msgstr "declaración aplazada"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update declaration signature"
+msgstr "Actualizar firma de la declaración"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update definition signature"
+msgstr "Actualizar firma de la definición"
+
+#: codegen/adaptsignatureaction.cpp:99
+#, kde-format
+msgid ""
+"Update %1\n"
+"from: %2(%3)%4\n"
+"to: %2(%5)%6"
+msgstr ""
+"Actualizar %1\n"
+"desde: %2(%3)%4\n"
+"hasta: %2(%5)%6"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "declaration"
+msgstr "declaración"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "definition"
+msgstr "definición"
+
+#: codegen/adaptsignatureaction.cpp:184
+#, kde-format
+msgid "Failed to apply changes: %1"
+msgstr "Fallo al aplicar las modificaciones: %1"
+
+#: codegen/customincludepaths.cpp:35
+msgid "Setup Custom Include Paths"
+msgstr "Configurar las rutas de inclusión personalizadas"
+
+#: codegen/makeimplementationprivate.cpp:174
+msgid "Private Class Implementation Options"
+msgstr "Opciones de implementación de clase privada"
+
+#: codegen/makeimplementationprivate.cpp:309
+msgid ""
+"Warning. It is not recommended to move initialization lists to private "
+"constructor when multiple constructors are defined."
+msgstr ""
+"Advertencia: no se recomienda mover listas de inicialización a un "
+"constructor privado cuando se definen múltiples constructores."
+
+#: codegen/simplerefactoring.cpp:76
+#, kde-format
+msgid "Rename %1"
+msgstr "Cambiar nombre de %1"
+
+#: codegen/simplerefactoring.cpp:88
+#, kde-format
+msgid "Create separate definition for %1"
+msgstr "Crear definición separada para %1"
+
+#: codegen/simplerefactoring.cpp:105 codegen/simplerefactoring.cpp:258
+msgid "No declaration under cursor"
+msgstr "Ninguna declaración bajo el cursor"
+
+#: codegen/simplerefactoring.cpp:115
+#, kde-format
+msgid "No source file available for %1."
+msgstr "No se dispone de archivo de código fuente para %1."
+
+#: codegen/simplerefactoring.cpp:127
+#, kde-format
+msgid "Failed to update DUChain for %1."
+msgstr "Fallo al actualizar la cadena DU para %1."
+
+#: codegen/simplerefactoring.cpp:131
+msgid "Declaration lost while updating."
+msgstr "Declaración perdida al actualizar."
+
+#: codegen/simplerefactoring.cpp:141
+msgid "Cannot create definition for this declaration."
+msgstr "No se puede crear la definición para esta declaración."
+
+#: codegen/simplerefactoring.cpp:146
+#, kde-format
+msgid "No document for %1"
+msgstr "No hay documento para %1"
+
+#: codegen/simplerefactoring.cpp:190
+msgid "Insertion failed"
+msgstr "Ha fallado la inserción"
+
+#: codegen/simplerefactoring.cpp:195 codegen/simplerefactoring.cpp:203
+#: codegen/simplerefactoring.cpp:334
+#, kde-format
+msgid "Applying changes failed: %1"
+msgstr "Fallo al aplicar cambios: %1"
+
+#: codegen/simplerefactoring.cpp:265
+#, kde-format
+msgid "Declaration is located in non-writeable file %1."
+msgstr "La declaración está situada en el archivo no modificable %1."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/cppnewclass.ui:16
+msgid "C++ Options"
+msgstr "Opciones de C++"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/cppnewclass.ui:22
+msgid "&Export:"
+msgstr "&Exportar:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/cppnewclass.ui:53
+msgid "&Macro:"
+msgstr "&Macro:"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_3)
+#: codegen/ui/cppoverridebuttons.ui:16
+msgid "Public"
+msgstr "Público"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_4)
+#: codegen/ui/cppoverridebuttons.ui:23
+msgid "Protected"
+msgstr "Protegido"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_5)
+#: codegen/ui/cppoverridebuttons.ui:30
+msgid "Private"
+msgstr "Privado"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_6)
+#: codegen/ui/cppoverridebuttons.ui:53
+msgid "Slot"
+msgstr "Slot"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_7)
+#: codegen/ui/cppoverridebuttons.ui:60
+msgid "Signal"
+msgstr "Señal"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/custom_include_paths.ui:23
+msgid "Storage Directory"
+msgstr "Directorio de almacenamiento"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/custom_include_paths.ui:35
+msgid ""
+"The custom include-path will be stored in a special file called \"."
+"kdev_include_paths\" stored within a source directory. The custom path will "
+"be used for all files below that directory."
+msgstr ""
+"La ruta de inclusión personalizada será almacenada en un archivo especial "
+"llamado «.kdev_include_paths», que se guarda en un directorio de código "
+"fuente. La ruta personalizada será usada en todos los archivos situados por "
+"debajo de este directorio."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/custom_include_paths.ui:47
+msgid "Storage Directory:"
+msgstr "Directorio de almacenamiento:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: codegen/ui/custom_include_paths.ui:68
+msgid "Automatic Resolution"
+msgstr "Resolución automática"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/custom_include_paths.ui:74
+msgid ""
+"If your project uses simple Makefiles, it may be possible to automatically "
+"resolve the include-paths using the make utility. For this, set up a mapping "
+"from a source- to a build-directory here."
+msgstr ""
+"Si su proyecto usa Makefiles sencillos, es posible resolver automáticamente "
+"las rutas de inclusión usando la utilidad «make». Para ello, configure aquí "
+"un mapeado entre un directorio de código fuente y otro de construcción."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: codegen/ui/custom_include_paths.ui:86
+msgid "Source Directory:"
+msgstr "Directorio de código fuente:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: codegen/ui/custom_include_paths.ui:96
+msgid "Build Directory:"
+msgstr "Directorio de construcción:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: codegen/ui/custom_include_paths.ui:111
+msgid "Custom Include Paths"
+msgstr "Rutas de inclusión personalizadas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/custom_include_paths.ui:117
+msgid ""
+"You can add a list of custom include paths here. Relative paths will be "
+"resolved from the storage directory."
+msgstr ""
+"Aquí puede añadir una lista de rutas de inclusión personalizadas. Las rutas "
+"relativas se resolverán a partir del directorio de almacenamiento."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:148
+msgid "Select a directory to include."
+msgstr "Seleccione un directorio a incluir."
+
+#. i18n: ectx: property (text), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:151
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: codegen/ui/custom_include_paths.ui:168
+msgid ""
+"Note: These settings do not affect the compiler or the project in any way, "
+"they are only used to find included headers within KDevelop."
+msgstr ""
+"Nota: Estas preferencias no afectan al compilador o al proyecto de ninguna "
+"manera; solo se usan para encontrar cabeceras incluidas dentro de KDevelop."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, PrivateImplementationDialog)
+#: codegen/ui/privateimplementation.ui:14
+msgid ""
+"Options & settings to move the private data fields of a class into a private "
+"structure"
+msgstr ""
+"Opciones y preferencias para mover los campos de datos privados de una clase "
+"a una estructura privada"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/privateimplementation.ui:42
+msgid "Private structure name:"
+msgstr "Nombre de la estructura privada:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, optionGroup)
+#: codegen/ui/privateimplementation.ui:55
+msgid "Options"
+msgstr "Opciones"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:75
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default private "
+"implementation structures are declared as <span style=\" font-style:italic;"
+"\">struct</span> to have default public access.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Check this box if you wish "
+"the private implementation structure be declared as <span style=\" font-"
+"style:italic;\">class</span> with public access.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Por defecto, las "
+"estructuras de implementación privadas se declaran como <span style=\" font-"
+"style:italic;\">struct</span> para tener acceso público por omisión.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Marque esta casilla si "
+"desea que la estructura de implementación privada sea declarada como <span "
+"style=\" font-style:italic;\">class</span> con acceso público.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:78
+msgid "Use class instead of struct"
+msgstr "Usar clase en lugar de estructura"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:97
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Move any current variables "
+"that are initialized in the constructor initializer list to the private "
+"implementation structure's constructor initializer list.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Note:</span> All references, and variables "
+"with types that do not offer default constructors are moved regardless of "
+"the state of this option.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Mover cualquier variable "
+"actual inicializada en la lista del inicializador del constructor a la lista "
+"del inicializador del constructor de la estructura de implementación privada."
+"</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Nota:</span> Todas las referencias y variables "
+"con tipos que no ofrecen constructores por defecto se mueven sin tener en "
+"cuenta el estado de esta opción.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:100
+msgid "Move Variable initialization to private structure"
+msgstr "Mover inicialización de variables a estructura privada"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:113
+msgid ""
+"Move all currently declared private methods to the private implementation "
+"structure."
+msgstr ""
+"Mover todos los métodos privados declarados a la estructura de "
+"implementación privada."
+
+#. i18n: ectx: property (text), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:116
+msgid "Move Private methods"
+msgstr "Mover métodos privados"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/privateimplementation.ui:130
+msgid "Pointer name:"
+msgstr "Nombre del puntero:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:146
+msgid ""
+"The name of the member variable that will be the pointer held to the private "
+"implementation"
+msgstr ""
+"El nombre de la variable miembro que será el puntero mantenido a la "
+"implementación privada"
+
+#. i18n: ectx: property (text), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:149
+msgid "d"
+msgstr "d"
+
+#: codegen/unresolvedincludeassistant.cpp:84
+#, kde-format
+msgid "Failed to save custom include paths in directory: %1"
+msgstr ""
+"Ha ocurrido un fallo al guardar las rutas de inclusión personalizadas en el "
+"directorio: %1"
+
+#: codegen/unresolvedincludeassistant.cpp:101
+#: codegen/unresolvedincludeassistant.cpp:144
+msgid "Add Custom Include Path"
+msgstr "Añadir ruta de inclusión personalizada"
+
+#: codegen/unresolvedincludeassistant.cpp:114
+msgid "Open Project"
+msgstr "Abrir proyecto"
+
+#: codegen/unresolvedincludeassistant.cpp:118
+#, kde-format
+msgid "Include file \"%1\" not found"
+msgstr "No se ha encontrado el archivo incluido «%1»"
+
+#: cppduchain/contextbuilder.cpp:149
+#, kde-format
+msgid "Could not resolve base class, adding it indirectly: %1"
+msgstr "No se puede resolver la clase base; se añade directamente: %1"
+
+#: cppduchain/contextbuilder.cpp:154
+#, kde-format
+msgid "Invalid base class: %1"
+msgstr "Clase base no válida: %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:113
+msgid "<b>local</b> variable"
+msgstr "variable <b>local</b>"
+
+#: cppduchain/missingdeclarationassistant.cpp:117
+#, kde-format
+msgid "Create local declaration %1"
+msgstr "Crear la declaración local %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:227
+#, kde-format
+msgctxt "%1: access, %2: identifier/signature"
+msgid "Declare %1 %2"
+msgstr "Declarar %1 %2"
+
+#: cppduchain/missingdeclarationassistant.cpp:352
+#, kde-format
+msgctxt "assistant, declare member in class identified by %1"
+msgid "member of <code>%1</code>:"
+msgstr "miembro de <code>%1</code>:"
+
+#: cppduchain/missingdeclarationassistant.cpp:358
+#, kde-format
+msgctxt "assistant, declare %1 as member of class identified by %2"
+msgid "Declare <code>'%1'</code> as member of <code>%2</code>"
+msgstr "Declarar <code>«%1»</code> como miembro de <code>%2</code>"
+
+#: cppduchain/missingdeclarationassistant.cpp:382
+#, kde-format
+msgid "Declare <code>'%1'</code> as"
+msgstr "Declarar <code>«%1»</code> como"
+
+#: cppduchain/missingdeclarationproblem.cpp:27
+#, kde-format
+msgid "Declaration not found: %1"
+msgstr "Declaración no encontrada: %1"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:52
+msgctxt "Headers included into this header"
+msgid "Includes"
+msgstr "Cabeceras"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:53
+msgctxt "Count of files this header was included into"
+msgid "Included by"
+msgstr "Incluido por"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:54
+msgctxt "Count of macros defined in this header"
+msgid "Defined macros"
+msgstr "Macros definidas"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:81
+msgid "Preprocessed Body:"
+msgstr "Cuerpo preprocesado:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:84
+msgid "Preprocessed Body: (empty)"
+msgstr "Cuerpo preprocesado: (vacío)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:87
+msgid "Body:"
+msgstr "Cuerpo:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:90
+msgid "Body: (empty)"
+msgstr "Cuerpo: (vacío)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:142
+#, kde-format
+msgctxt ""
+"%1: macro type, i.e.: 'Function macro' or just 'Macro'%2: the macro name and "
+"arguments%3 the link to the definition"
+msgid "%1: %2, defined in %3"
+msgstr "%1: %2, definido en %3"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Function macro"
+msgstr "Macro de función"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Macro"
+msgstr "Macro"
+
+#: cppduchain/usebuilder.cpp:151
+#, kde-format
+msgid "Use of deleted function: %1"
+msgstr "Uso de función borrada: %1"
+
+#: cpplanguagesupport.cpp:141
+msgid "Edit include directories"
+msgstr "Editar directorios de inclusión"
+
+#: cpplanguagesupport.cpp:175
+msgid "C++ Support"
+msgstr "Implementación de C++"
+
+#: cpplanguagesupport.cpp:175
+msgid "Support for C++ Language"
+msgstr "Implementación del lenguaje C++"
+
+#: cpplanguagesupport.cpp:220
+msgid "Files"
+msgstr "Archivos"
+
+#: cpplanguagesupport.cpp:240
+msgid "&Switch Definition/Declaration"
+msgstr "Cam&biar a definición/declaración"
+
+#: cpplanguagesupport.cpp:250
+msgid "Rename Declaration"
+msgstr "Cambiar nombre de la declaración"
+
+#: cpplanguagesupport.cpp:256
+msgid "Move into Source"
+msgstr "Mover al código fuente"
+
+#: cpplanguagesupport.cpp:810
+msgid "Emptied by preprocessor<br />"
+msgstr "Vaciado por el preprocesador<br />"
+
+#: cppparsejob.cpp:158
+msgid "Parsing included files"
+msgstr "Analizando archivos incluidos"
+
+#: cppparsejob.cpp:469
+msgid "Parsing actual file"
+msgstr "Analizando el archivo real"
+
+#: cppparsejob.cpp:581
+#, kde-format
+msgid "Not updating duchain for %1"
+msgstr "Sin actualizar la cadena DU para %1"
+
+#: cppparsejob.cpp:710
+msgid "Building uses"
+msgstr "Construyendo usos"
+
+#: cppparsejob.cpp:858
+msgid "Ready"
+msgstr "Preparado"
+
+#: includepathresolver.cpp:518
+msgid ""
+"Tried include path resolution while another resolution process was still "
+"running"
+msgstr ""
+"Se ha intentado resolver la ruta de inclusión mientras se estaba ejecutando "
+"otro proceso de resolución"
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Makefile is missing in folder \"%1\""
+msgstr "Falta el makefile en la carpeta «%1»"
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Problem while trying to resolve include paths for %1"
+msgstr "Problema al tratar de resolver rutas de inclusión para %1"
+
+#: includepathresolver.cpp:639
+#, kde-format
+msgid "Cached: %1"
+msgstr "En caché: %1"
+
+#: includepathresolver.cpp:668
+#, kde-format
+msgid "Filename %1 seems to be malformed"
+msgstr "Parece que el nombre de archivo %1 está mal formado"
+
+#: includepathresolver.cpp:806
+msgid "Failed to extract new working directory"
+msgstr "Ha ocurrido un fallo al extraer el nuevo directorio de trabajo"
+
+#: includepathresolver.cpp:806 includepathresolver.cpp:835
+#, kde-format
+msgid "Output was: %1"
+msgstr "La salida era: %1"
+
+#: includepathresolver.cpp:828 includepathresolver.cpp:831
+msgid "Recursive make call failed"
+msgstr "Ha fallado la llamada recursiva a «make»"
+
+#: includepathresolver.cpp:828
+#, kde-format
+msgid "The parameter string \"%1\" does not seem to be valid. Output was: %2."
+msgstr ""
+"Parece que la cadena del parámetro «%1» no es válida. La salida fue: %2."
+
+#: includepathresolver.cpp:831
+#, kde-format
+msgid "The directory \"%1\" does not exist. Output was: %2."
+msgstr "El directorio «%1» no existe. La salida fue: %2."
+
+#: includepathresolver.cpp:835
+msgid "Malformed recursive make call"
+msgstr "Llamada recursiva a «make» mal formada"
+
+#: includepathresolver.cpp:887
+msgid "Could not extract include paths from make output"
+msgstr "No se pueden extraer rutas de inclusión de la salida de «make»"
+
+#: includepathresolver.cpp:888
+#, kde-format
+msgid "Folder: \"%1\"  Command: \"%2\"  Output: \"%3\""
+msgstr "Carpeta: «%1» Orden: «%2» Salida: «%3»"
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcppsupport.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navegación"
+
+#. i18n: ectx: Menu (code)
+#: kdevcppsupport.rc:9
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Código"
+
+#: parser/headergen/main.cpp:240
+msgid "KDE forwarding header generator"
+msgstr "Generador de cabeceras aplazadas de KDE"
+
+#: parser/headergen/main.cpp:241
+msgid ""
+"An application which creates forwarding headers (like Qt headers) from "
+"source code."
+msgstr ""
+"Una aplicación que crea cabeceras aplazadas (como las cabeceras de Qt) en el "
+"código fuente."
+
+#: parser/headergen/main.cpp:242
+msgid "(c) 2006, Hamish Rodda"
+msgstr "© 2006, Hamish Rodda"
+
+#: parser/headergen/main.cpp:247
+msgid ""
+"KDE include directory - headers go into <placeholder>includes</placeholder>/"
+"KDE"
+msgstr ""
+"Directorio de cabeceras de KDE (las cabeceras están en "
+"<placeholder>includes</placeholder>/KDE)"
+
+#: parser/headergen/main.cpp:248
+msgid "Build information from the cmake XML generator"
+msgstr "Información de construcción del generador XML de cmake"
+
+#: parser/lexer.cpp:1106
+#, kde-format
+msgid "invalid input: %1"
+msgstr "entrada no válida: %1"
+
+#: parser/rpp/pp-engine.cpp:165
+msgid "invalid include directive"
+msgstr "directiva de inclusión no válida"
+
+#: parser/rpp/pp-engine.cpp:301
+msgid "Unterminated #if statement"
+msgstr "Sentencia #if no terminada"
+
+#: parser/rpp/pp-engine.cpp:501 parser/rpp/pp-engine.cpp:519
+#: parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "character %1"
+msgstr "carácter %1"
+
+#: parser/rpp/pp-engine.cpp:501
+#, kde-format
+msgid "Expected \"identifier\", found: %1"
+msgstr "Se esperaba «identificador», se ha encontrado: %1"
+
+#: parser/rpp/pp-engine.cpp:502 parser/rpp/pp-engine.cpp:520
+#: parser/rpp/pp-engine.cpp:556
+#, kde-format
+msgid "<h5>Token text</h5><pre>%1</pre><h5>Input</h5><pre>%2</pre>"
+msgstr "<h5>Texto del token</h5><pre>%1</pre><h5>Entrada</h5><pre>%2</pre>"
+
+#: parser/rpp/pp-engine.cpp:519 parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "Expected \")\", found %1"
+msgstr "Se esperaba «)», pero se ha encontrado %1"
+
+#: parser/rpp/pp-engine.cpp:591 parser/rpp/pp-engine.cpp:604
+msgid "Division by zero"
+msgstr "División por cero"
+
+#: parser/rpp/pp-engine.cpp:592 parser/rpp/pp-engine.cpp:605
+#, kde-format
+msgid "Input text: %1"
+msgstr "Texto de entrada: %1"
+
+#: parser/rpp/pp-engine.cpp:842
+#, kde-format
+msgid "expected ``:'' = %1"
+msgstr "se esperaba «:» = %1"
+
+#: parser/rpp/pp-engine.cpp:906 parser/rpp/pp-engine.cpp:931
+msgid "#else without #if"
+msgstr "#else sin #if"
+
+#: parser/rpp/pp-engine.cpp:969
+#, kde-format
+msgid "#endif without #if at output line %1"
+msgstr "#endif sin #if en la línea de salida %1"
+
+#: parser/rpp/pp-engine.cpp:1204
+msgid "Invalid suffix combination"
+msgstr "Combinación de sufijos no válida"
+
+#: parser/rpp/pp-engine.cpp:1220
+msgid "Invalid numeric value"
+msgstr "Valor numérico no válido"
+
+#: parser/rpp/pp-macro-expander.cpp:102
+msgid "Macro error"
+msgstr "Error de macro"
+
+#: parser/rpp/pp-macro-expander.cpp:115
+#, kde-format
+msgid "Call to macro %1 missing argument number %2"
+msgstr "La llamada a la macro %1 carece del argumento número %2"
+
+#: parser/rpp/pp-macro-expander.cpp:116
+#, kde-format
+msgid "Formals: %1"
+msgstr "Formales: %1"
+
+#: preprocessjob.cpp:464
+#, kde-format
+msgid "File was included recursively from within itself: %1"
+msgstr "El archivo ha sido incluido recursivamente desde sí mismo: %1"
+
+#: preprocessjob.cpp:606
+#, kde-format
+msgid "Included file was not found: %1"
+msgstr "No se ha encontrado el archivo incluido: %1"
+
+#: preprocessjob.cpp:607
+#, kde-format
+msgid ""
+"Searched include path:\n"
+"%1"
+msgstr ""
+"Ruta de inclusión buscada:\n"
+"%1"
+
+#: quickopen.cpp:161
+msgid "This file imports the current open document<br/>"
+msgstr "Este archivo importa el documento actual abierto<br/>"
+
+#: quickopen.cpp:166
+#, kde-format
+msgid "In include path %1"
+msgstr "En la ruta de inclusión %1"
+
+#: quickopen.cpp:170
+#, kde-format
+msgid "Included through %1 <br/>"
+msgstr "Incluido a través de %1 <br/>"
+
+#: quickopen.cpp:180
+#, kde-format
+msgid "Directory %1"
+msgstr "Directorio %1"
+
+#: quickopen.cpp:183
+#, kde-format
+msgid "In %1th include path"
+msgstr "En la ruta de inclusión número %1"
+
+#: quickopen.cpp:408 quickopen.cpp:415
+msgid "Includes"
+msgstr "Cabeceras"
+
+#: quickopen.cpp:409 quickopen.cpp:416
+msgid "Include Path"
+msgstr "Ruta de inclusión"
+
+#: quickopen.cpp:410 quickopen.cpp:417
+msgid "Includers"
+msgstr "Incluidas en"

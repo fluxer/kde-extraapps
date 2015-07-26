@@ -1,0 +1,92 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+# Frederik Schwarzer <schwarzer@kde.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-07-19 05:48+0000\n"
+"PO-Revision-Date: 2014-07-12 10:40+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Burkhard Lück"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lueck@hube-lueck.de"
+
+#: ghdialog.cpp:52
+msgid "Log out"
+msgstr "Abmelden"
+
+#: ghdialog.cpp:56
+msgid "Force sync"
+msgstr "Abgleich erzwingen"
+
+#: ghdialog.cpp:61
+msgid "Authorize"
+msgstr "Autorisieren"
+
+#: ghdialog.cpp:70
+msgid "Github Account"
+msgstr "GitHub-Konto"
+
+#: ghdialog.cpp:76
+msgid "Enter a login and a password"
+msgstr "Geben Sie einen Namen und ein Passwort ein"
+
+#: ghdialog.cpp:81 ghdialog.cpp:109 ghproviderwidget.cpp:52
+msgid "Waiting for response"
+msgstr "Es wird auf die Antwort gewartet"
+
+#: ghdialog.cpp:95
+msgid "Authentication failed! Please, try again"
+msgstr ""
+"Die Authentifizierung ist fehlgeschlagen. Bitte versuchen Sie es erneut"
+
+#: ghdialog.cpp:124
+msgid "Please, write your password here."
+msgstr "Bitte tragen Sie Ihr Passwort hier ein."
+
+#: ghproviderplugin.cpp:31
+msgid "Github Provider"
+msgstr "GitHub-Anbieter"
+
+#: ghproviderplugin.cpp:31
+msgid "Import projects from Github"
+msgstr "Projekte von GitHub importieren"
+
+#: ghproviderplugin.cpp:51
+msgid "Github"
+msgstr "GitHub"
+
+#: ghproviderwidget.cpp:65
+msgid "Search"
+msgstr "Suchen"
+
+#: ghproviderwidget.cpp:66
+msgid "You can press the Return key if you don't want to wait"
+msgstr "Drücken Sie die Eingabetaste, wenn Sie nicht warten möchten"
+
+#: ghproviderwidget.cpp:78
+msgid "Click this button to configure your Github account"
+msgstr "Drücken Sie diesen Knopf, um Ihr GitHub-Konto einzurichten"
+
+#: ghproviderwidget.cpp:110
+msgid "User"
+msgstr "Benutzer"
+
+#: ghproviderwidget.cpp:111
+msgid "Organization"
+msgstr "Organisation"

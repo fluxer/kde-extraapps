@@ -1,0 +1,316 @@
+# translation of kdevpatchreview.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevpatchreview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-01-13 06:42+0000\n"
+"PO-Revision-Date: 2014-06-26 14:20+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: libdiff2/komparemodellist.cpp:254 libdiff2/komparemodellist.cpp:282
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Žiadne modely ani rozdiely v súbore: <b>%1</b>. Nie je to platný súbor "
+"diff.</qt>"
+
+#: libdiff2/komparemodellist.cpp:263
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Nastali problémy pri použití rozdielu <b>%1</b> na súbor <b>%2</b>.</qt>"
+
+#: libdiff2/komparemodellist.cpp:293
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Nastali problémy pri použití rozdielu <b>%1</b> na priečinok <b>%2</b>.</"
+"qt>"
+
+#: libdiff2/komparemodellist.cpp:326 libdiff2/komparemodellist.cpp:634
+msgid "Could not open a temporary file."
+msgstr "Nepodarilo sa otvoriť dočasný súbor."
+
+#: libdiff2/komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Nepodaril sa zápis do dočasného súboru <b>%1</b>, súbor bol zmazaný.</qt>"
+
+#: libdiff2/komparemodellist.cpp:404
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Nepodarilo sa vytvoriť cieľový adresár <b>%1</b>.\n"
+"Súbor nebol uložený.</qt>"
+
+#: libdiff2/komparemodellist.cpp:421
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Nepodarilo sa poslať dočasný súbor na cieľové umiestnenie <b>%1</b>. "
+"Dočasný súbor je k dispozícii pod: <b>%2</b>. Môžete ho na správne miesto "
+"skopírovať ručne.</qt>"
+
+#: libdiff2/komparemodellist.cpp:486 libdiff2/komparemodellist.cpp:599
+msgid "Could not parse diff output."
+msgstr "Nepodarilo sa spracovať výstup diff."
+
+#: libdiff2/komparemodellist.cpp:502
+msgid "The files are identical."
+msgstr "Súbory sú rovnaké."
+
+#: libdiff2/komparemodellist.cpp:666
+msgid "Could not write to the temporary file."
+msgstr "Nepodaril sa zápis do dočasného súboru."
+
+#: localpatchsource.cpp:43
+msgid "Custom Patch"
+msgstr "Vlastná záplata"
+
+#. i18n: ectx: property (title), widget (QGroupBox, localPatchOptions)
+#: localpatchwidget.ui:17
+msgid "Patch"
+msgstr "Záplata"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: localpatchwidget.ui:26
+msgid "Base:"
+msgstr "Základ:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, baseDir)
+#: localpatchwidget.ui:33
+msgid "Patch base..."
+msgstr "Základ záklaty..."
+
+#. i18n: ectx: attribute (title), widget (QWidget, fileTab)
+#: localpatchwidget.ui:44
+msgid "From File"
+msgstr "Zo súboru"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, filename)
+#: localpatchwidget.ui:50
+msgid "Patch location..."
+msgstr "Umiestnenie záplaty..."
+
+#. i18n: ectx: attribute (title), widget (QWidget, commandTab)
+#: localpatchwidget.ui:58
+msgid "From Command"
+msgstr "Z príkazu"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, command)
+#: localpatchwidget.ui:64
+msgid "Command's output..."
+msgstr "Výstup príkazu..."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, applied)
+#: localpatchwidget.ui:75
+msgid "Patch is already applied on local version"
+msgstr "Záplata je už použitá na miestnej verzii"
+
+#. i18n: ectx: property (text), widget (QCheckBox, applied)
+#: localpatchwidget.ui:78
+msgid "Already applied"
+msgstr "Už použité"
+
+#: patchhighlighter.cpp:81
+msgid "<b><span style=\"color:red\">Conflict</span></b><br/>"
+msgstr "<b><span style=\"color:red\">Konflikt</span></b><br/>"
+
+#: patchhighlighter.cpp:89
+msgid "Applied.<br/>"
+msgstr "Použité.<br/>"
+
+#: patchhighlighter.cpp:92 patchhighlighter.cpp:107
+msgid "Insertion<br/>"
+msgstr "Vloženie<br/>"
+
+#: patchhighlighter.cpp:95 patchhighlighter.cpp:104
+msgid "Removal<br/>"
+msgstr "Odstránenie<br/>"
+
+#: patchhighlighter.cpp:96
+msgid "Previous:<br/>"
+msgstr "Predošlé:<br/>"
+
+#: patchhighlighter.cpp:101
+msgid "Reverted.<br/>"
+msgstr "Vrátené.<br/>"
+
+#: patchhighlighter.cpp:109
+msgid "Alternative:<br/>"
+msgstr "Alternatívne:<br/>"
+
+#: patchhighlighter.cpp:213
+#, kde-format
+msgid "Could not apply the change: Text should be \"%1\", but is \"%2\"."
+msgstr "Nemôžem použiť zmenu: Text by mal byť \"%1\", ale je \"%2\"."
+
+#: patchhighlighter.cpp:369 patchhighlighter.cpp:376
+msgid "Insertion"
+msgstr "Vloženie"
+
+#: patchhighlighter.cpp:371 patchhighlighter.cpp:378
+msgid "Removal"
+msgstr "Odstránenie"
+
+#: patchhighlighter.cpp:373 patchhighlighter.cpp:380
+msgid "Change"
+msgstr "Zmenna"
+
+#: patchreview.cpp:267 patchreview.cpp:269
+msgid "Kompare Model Update"
+msgstr "Aktualizácia modelu Kompare"
+
+#: patchreview.cpp:280 patchreview.cpp:468 patchreview.cpp:507
+msgid "Patch Review"
+msgstr "Zhodnotenie záplaty"
+
+#: patchreview.cpp:280
+msgid "Highlights code affected by a patch"
+msgstr "Zvýrazniť kód zmenený záplatou"
+
+#: patchreview.cpp:430
+msgid "Overview"
+msgstr "Prehľad"
+
+#. i18n: ectx: property (text), widget (QToolButton, finishReview)
+#: patchreview.cpp:493 patchreview.ui:134
+msgid "Finish Review"
+msgstr "Ukončiť revíziu"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditPatch)
+#: patchreview.ui:14
+msgid "Edit Patch"
+msgstr "Upraviť záplatu"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousFile)
+#: patchreview.ui:24
+msgid "Previous file"
+msgstr "Predošlý súbor"
+
+#. i18n: ectx: property (text), widget (QToolButton, previousFile)
+#. i18n: ectx: property (text), widget (QToolButton, previousHunk)
+#. i18n: ectx: property (text), widget (QToolButton, nextHunk)
+#. i18n: ectx: property (text), widget (QToolButton, nextFile)
+#: patchreview.ui:27 patchreview.ui:37 patchreview.ui:47 patchreview.ui:57
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, previousHunk)
+#: patchreview.ui:34
+msgid "Previous difference"
+msgstr "Predchádzajúci rozdiel"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextHunk)
+#: patchreview.ui:44
+msgid "Next difference"
+msgstr "Nasledujúci rozdiel"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, nextFile)
+#: patchreview.ui:54
+msgid "Next file"
+msgstr "Ďalší súbor"
+
+#. i18n: ectx: property (text), widget (QPushButton, updateButton)
+#: patchreview.ui:83
+msgid "Update"
+msgstr "Aktualizovať"
+
+#. i18n: ectx: property (text), widget (QPushButton, testsButton)
+#: patchreview.ui:90
+msgid "Run Tests"
+msgstr "Spustiť testy"
+
+#. i18n: ectx: property (text), widget (QToolButton, exportReview)
+#: patchreview.ui:117
+msgid "Export Diff..."
+msgstr "Exportovať Diff..."
+
+#. i18n: ectx: property (text), widget (QPushButton, cancelReview)
+#: patchreview.ui:127
+msgid "Cancel Review"
+msgstr "Zrušiť revíziu"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filesGroup)
+#: patchreview.ui:153
+msgid "Changes"
+msgstr "Zmeny"
+
+#: patchreviewtoolview.cpp:72
+#, kde-format
+msgctxt "%1: number of changed hunks, %2: file name"
+msgid "%2 (1 hunk)"
+msgid_plural "%2 (%1 hunks)"
+msgstr[0] "%2 (1 väzba)"
+msgstr[1] "%2 (%1 väzby)"
+msgstr[2] "%2 (%1 väzieb)"
+
+#: patchreviewtoolview.cpp:228
+msgid "Select All"
+msgstr "Vybrať všetko"
+
+#: patchreviewtoolview.cpp:230
+msgid "Deselect All"
+msgstr "Zrušiť výber"
+
+#: patchreviewtoolview.cpp:509
+msgid "Running tests: %p%"
+msgstr "Spúšťam testy: %p%"
+
+#: patchreviewtoolview.cpp:537
+#, kde-format
+msgid "Test passed"
+msgid_plural "All %1 tests passed"
+msgstr[0] "Test prešiel"
+msgstr[1] "Všetky %1 testy prešli"
+msgstr[2] "Všetkých %1 testov prešlo"
+
+#: patchreviewtoolview.cpp:541
+#, kde-format
+msgid "Test results: %1 passed, %2 failed, %3 errors"
+msgstr "Výsledky testu: %1 prešlo, %2 zlyhalo, %3 chýb"
+
+#: standardpatchexport.cpp:53
+msgid "Save As..."
+msgstr "Uložiť ako..."
+
+#: standardpatchexport.cpp:63
+msgid "Send..."
+msgstr "Poslať..."
+
+#: standardpatchexport.cpp:75
+msgid "Send to contact..."
+msgstr "Poslať do kontaktu:"
+
+#: standardpatchexport.cpp:89
+msgid "Side view (Kompare)..."
+msgstr "Bočné zobrazenie (Kompare)..."

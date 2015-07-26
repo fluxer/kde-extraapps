@@ -1,0 +1,38 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-05-03 10:15+0200\n"
+"PO-Revision-Date: 2013-09-10 22:29+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. i18n: ectx: property (text), widget (KPushButton, loadButton)
+#: templatepage.ui:26
+msgid "Load Template From File"
+msgstr "Vorlage aus Datei laden"
+
+#. i18n: ectx: property (text), widget (KPushButton, getNewButton)
+#: templatepage.ui:38
+msgid "Get More Templates"
+msgstr "Mehr Vorlagen herunterladen"
+
+#. i18n: ectx: property (text), widget (KPushButton, shareButton)
+#: templatepage.ui:50
+msgid "Share Templates"
+msgstr "Vorlagen freigeben"
+
+#. i18n: ectx: property (text), widget (KPushButton, extractButton)
+#: templatepage.ui:62
+msgid "Clone Template"
+msgstr "Vorlage klonen"

@@ -1,0 +1,322 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-29 09:39+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#: executescriptplugin.cpp:67
+msgid "Execute script support"
+msgstr "Obsługa wykonywania skryptu"
+
+#: executescriptplugin.cpp:67
+msgid "Allows running of scripts"
+msgstr "Pozwala na uruchamianie skryptów"
+
+#: executescriptplugin.cpp:68
+msgid "Niko Sams"
+msgstr "Niko Sams"
+
+#: executescriptplugin.cpp:68
+msgid "Author"
+msgstr "Autor"
+
+#: executescriptplugin.cpp:106
+msgid "No valid executable specified"
+msgstr "Nie określono poprawnego pliku wykonywalnego"
+
+#: executescriptplugin.cpp:116
+#, kde-format
+msgid ""
+"There is a quoting error in the script for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"Wystąpił błąd cytowania w skrypcie dla konfiguracji uruchamiania '%1'. "
+"Przerywanie rozpoczęcia."
+
+#: executescriptplugin.cpp:121
+#, kde-format
+msgid ""
+"A shell meta character was included in the script for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"Meta znak powłoki został dołączony w skrypcie dla konfiguracji uruchamiania "
+"'%1', nie jest to obecnie obsługiwane. Przerywanie rozpoczęcia."
+
+#: executescriptplugin.cpp:138
+#, kde-format
+msgid "No remote host set for launch configuration '%1'. Aborting start."
+msgstr ""
+"Nie ustawiono zdalnego gospodarza dla konfiguracji uruchomienia  '%1'. "
+"Przerywanie rozpoczęcia."
+
+#: executescriptplugin.cpp:161
+#, kde-format
+msgid ""
+"There is a quoting error in the arguments for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"Wystąpił błąd cytowania w argumentach dla konfiguracji uruchomienia '%1'. "
+"Przerywanie rozpoczęcia."
+
+#: executescriptplugin.cpp:165
+#, kde-format
+msgid ""
+"A shell meta character was included in the arguments for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"Meta znak powłoki został dołączony w argumentach dla konfiguracji "
+"uruchamiania '%1', nie jest to obecnie obsługiwane. Przerywanie rozpoczęcia."
+
+#: executescriptplugin.cpp:218
+msgid "No valid interpreter specified"
+msgstr "Nie określono poprawnego interpretera"
+
+#: executescriptplugin.cpp:228
+#, kde-format
+msgid ""
+"There is a quoting error in the interpreter for the launch configuration "
+"'%1'. Aborting start."
+msgstr ""
+"Wystąpił błąd cytowania w interpreterze dla konfiguracji uruchamiania '%1'. "
+"Przerywanie rozpoczęcia."
+
+#: executescriptplugin.cpp:233
+#, kde-format
+msgid ""
+"A shell meta character was included in the interpreter for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"Meta znak powłoki został dołączony w interpreterze dla konfiguracji "
+"uruchamiania '%1', nie jest to obecnie obsługiwane. Przerywanie rozpoczęcia."
+
+#: scriptappconfig.cpp:102
+msgid "Type or select an interpreter"
+msgstr "Wpisz lub wybierz program interpretujący"
+
+#: scriptappconfig.cpp:135
+msgid "Configure Script Application"
+msgstr "Konfiguruj program skryptowy"
+
+#: scriptappconfig.cpp:145
+msgid "Executes Script Applications"
+msgstr "Wykonuje programy skryptowe"
+
+#: scriptappconfig.cpp:155 scriptappconfig.cpp:205
+msgid "Script Application"
+msgstr "Program skryptowy"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: scriptappconfig.ui:17
+msgid "Interpreter"
+msgstr "Interpreter"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: scriptappconfig.ui:32
+msgid "Script interpreter:"
+msgstr "Interpreter skryptów:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:57
+msgid "python"
+msgstr "python"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:62
+msgid "ruby"
+msgstr "ruby"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:67
+msgid "bash"
+msgstr "bash"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, interpreter)
+#: scriptappconfig.ui:72
+msgid "php"
+msgstr "php"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: scriptappconfig.ui:83
+msgid "Script file"
+msgstr "Plik skryptu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, runCurrentFile)
+#: scriptappconfig.ui:89
+msgid "Run the file currently open in the editor"
+msgstr "Uruchom plik obecnie otwarty w edytorze"
+
+#. i18n: ectx: property (text), widget (QRadioButton, runFixedFile)
+#: scriptappconfig.ui:99
+msgid "Always run the same file"
+msgstr "Zawsze uruchamiaj ten sam plik"
+
+#. i18n: ectx: property (text), widget (QLabel, scriptLabel)
+#: scriptappconfig.ui:111
+msgid "Script file:"
+msgstr "Plik skryptu:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, executablePath)
+#: scriptappconfig.ui:121
+msgid "Enter the absolute path to the script to run"
+msgstr "Podaj bezwzględną ścieżkę do pliku skryptu, który chcesz uruchomić"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: scriptappconfig.ui:133
+msgid "Behavior"
+msgstr "Zachowanie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: scriptappconfig.ui:145
+msgid "Arguments:"
+msgstr "Argumenty:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arguments)
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, arguments)
+#: scriptappconfig.ui:155 scriptappconfig.ui:161
+msgid "Enter arguments to give to the executable"
+msgstr "Podaj argumenty przekazywane do pliku wykonywalnego"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: scriptappconfig.ui:168
+msgid "Working Directory:"
+msgstr "Katalog roboczy:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, workingDirectory)
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, workingDirectory)
+#: scriptappconfig.ui:178 scriptappconfig.ui:181
+msgid "Select a working directory for the executable"
+msgstr "Wybierz katalog roboczy dla tego pliku wykonywalnego"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: scriptappconfig.ui:188
+msgid "Environment:"
+msgstr "Środowisko:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: scriptappconfig.ui:198
+msgid "Select an environment to be used"
+msgstr "Wybierz wykorzystywane środowisko"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: scriptappconfig.ui:205
+msgid "Output Filter:"
+msgstr "Filtr wyjścia:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:212
+msgid ""
+"Select the filter to applied to the output. E.g. to mark errors with red text"
+msgstr ""
+"Wybierz filtr stosowany do wyjścia np. znaczący błędy czerwoną czcionką"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:216
+msgid "No Filter"
+msgstr "Brak filtra"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:221
+msgid "Compiler Filter"
+msgstr "Filtr kompilatora"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:226
+msgid "Script Error Filter"
+msgstr "Filtr błędów skryptu"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilteringMode)
+#: scriptappconfig.ui:231
+msgid "Static Analysis Filter"
+msgstr "Filtr analizy statycznej"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: scriptappconfig.ui:248
+msgid "Execute on Host"
+msgstr "Wykonaj na gospodarzu"
+
+#. i18n: ectx: property (text), widget (QCheckBox, remoteHostCheckbox)
+#: scriptappconfig.ui:254
+msgid "Execute on remote host"
+msgstr "Wykonaj na zdalnym gospodarzu"
+
+#. i18n: ectx: property (text), widget (QLabel, remoteHostLabel)
+#: scriptappconfig.ui:266
+msgid "Remote host (ssh):"
+msgstr "Zdalny gospodarz (ssh):"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, remoteHost)
+#: scriptappconfig.ui:279
+msgid "Enter a remote host (user@example.com)"
+msgstr "Podaj zdalnego gospodarza (użytkownik@przykład.com)"
+
+#: scriptappjob.cpp:87
+msgid "There is no active document to launch."
+msgstr "Nie ma aktywnego dokumentu do uruchomienia."
+
+#: scriptappjob.cpp:110
+#, kde-format
+msgid ""
+"No environment group specified, looks like a broken configuration, please "
+"check run configuration '%1'. Using default environment group."
+msgstr ""
+"Nie określono grupy środowiskowej, wygląda na to, że konfiguracja jest "
+"popsuta, proszę sprawdzić uruchomienie konfiguracji '%1'. Zdecydowano się na "
+"użycie domyślnej grupy środowiskowej."
+
+#: scriptappjob.cpp:186
+#, kde-format
+msgid "Starting: %1"
+msgstr "Uruchamianie: %1"
+
+#: scriptappjob.cpp:200
+msgid "*** Killed Application ***"
+msgstr "*** Zniszczono program ***"
+
+#: scriptappjob.cpp:211
+msgid "*** Exited normally ***"
+msgstr "*** Wyszedł normalnie ***"
+
+#: scriptappjob.cpp:213
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** Wyszedł z kodem zwrotnym: %1 ***"
+
+#: scriptappjob.cpp:216
+msgid "*** Process aborted ***"
+msgstr "*** Proces przerwany ***"
+
+#: scriptappjob.cpp:219
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** Uległ awarii bez kodu zwrotnego: %1 ***"
+
+#: scriptappjob.cpp:234
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr ""
+"*** Nie można uruchomić programu '%1'. Upewnij się, że ścieżka została "
+"określona poprawnie ***"

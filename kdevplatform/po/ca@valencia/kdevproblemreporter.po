@@ -1,0 +1,176 @@
+# Translation of kdevproblemreporter.po to Catalan
+# Copyright (C) 2009-2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa <manutortosa@gmail.com>, 2009.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2011, 2012.
+# Antoni Bella Pérez <antonibella5@orange.es>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevproblemreporter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-24 05:23+0000\n"
+"PO-Revision-Date: 2013-11-10 16:07+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@orange.es>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#: problemmodel.cpp:207
+msgctxt "@title:column source of problem"
+msgid "Source"
+msgstr "Origen"
+
+#: problemmodel.cpp:209
+msgctxt "@title:column problem description"
+msgid "Problem"
+msgstr "Problema"
+
+#: problemmodel.cpp:211
+msgctxt "@title:column file where problem was found"
+msgid "File"
+msgstr "Fitxer"
+
+#: problemmodel.cpp:213
+msgctxt "@title:column line number with problem"
+msgid "Line"
+msgstr "Línia"
+
+#: problemmodel.cpp:215
+msgctxt "@title:column column number with problem"
+msgid "Column"
+msgstr "Columna"
+
+#: problemreporterplugin.cpp:58
+msgid "Problem Reporter"
+msgstr "Notificador de problemes"
+
+#: problemreporterplugin.cpp:58
+msgid "Shows errors in source code"
+msgstr "Mostra errors del codi font"
+
+#: problemreporterplugin.cpp:93 problemwidget.cpp:56 problemwidget.cpp:59
+msgid "Problems"
+msgstr "Problemes"
+
+#: problemreporterplugin.cpp:180
+msgid "Solve Problem"
+msgstr "Soluciona problema"
+
+#: problemreporterplugin.cpp:182
+#, kde-format
+msgid "Solve: %1"
+msgstr "Resol: %1"
+
+#: problemwidget.cpp:66
+msgid "Force Full Update"
+msgstr "Força actualització completa"
+
+#: problemwidget.cpp:67
+msgctxt "@info:tooltip"
+msgid "Re-parse all watched documents"
+msgstr "Torna a analitzar tots els documents vigilats"
+
+#: problemwidget.cpp:76
+msgid "Show Imports"
+msgstr "Mostra les importacions"
+
+#: problemwidget.cpp:77
+msgctxt "@info:tooltip"
+msgid "Display problems in imported files"
+msgstr "Visualitza els problemes en els fitxers importats"
+
+#: problemwidget.cpp:83
+msgid "Scope"
+msgstr "Àmbit"
+
+#: problemwidget.cpp:84
+msgctxt "@info:tooltip"
+msgid "Which files to display the problems for"
+msgstr "Els fitxers pels que es mostraran els problemes"
+
+#: problemwidget.cpp:89
+msgid "Current Document"
+msgstr "Document actual"
+
+#: problemwidget.cpp:90
+msgctxt "@info:tooltip"
+msgid "Display problems in current document"
+msgstr "Visualitza els problemes en el document actual"
+
+#: problemwidget.cpp:93
+msgid "Open Documents"
+msgstr "Documents oberts"
+
+#: problemwidget.cpp:94
+msgctxt "@info:tooltip"
+msgid "Display problems in all open documents"
+msgstr "Visualitza els problemes en tots els documents oberts"
+
+#: problemwidget.cpp:97
+msgid "Current Project"
+msgstr "Projecte actual"
+
+#: problemwidget.cpp:98
+msgctxt "@info:tooltip"
+msgid "Display problems in current project"
+msgstr "Visualitza els problemes en el projecte actual"
+
+#: problemwidget.cpp:101
+msgid "All Projects"
+msgstr "Tots els projectes"
+
+#: problemwidget.cpp:102
+msgctxt "@info:tooltip"
+msgid "Display problems in all projects"
+msgstr "Visualitza els problemes en tots els projectes"
+
+#: problemwidget.cpp:125
+msgid "Severity"
+msgstr "Severitat"
+
+#: problemwidget.cpp:127
+msgctxt "@info:tooltip"
+msgid "Select the lowest level of problem severity to be displayed"
+msgstr "Selecciona el nivell de severitat més baix de problema a visualitzar"
+
+#: problemwidget.cpp:130
+msgid "Error"
+msgstr "Error"
+
+#: problemwidget.cpp:131
+msgctxt "@info:tooltip"
+msgid "Display only errors"
+msgstr "Visualitza només els errors"
+
+#: problemwidget.cpp:133
+msgid "Warning"
+msgstr "Avís"
+
+#: problemwidget.cpp:134
+msgctxt "@info:tooltip"
+msgid "Display errors and warnings"
+msgstr "Visualitza els errors i els avisos"
+
+#: problemwidget.cpp:136
+msgid "Hint"
+msgstr "Suggeriment"
+
+#: problemwidget.cpp:137
+msgctxt "@info:tooltip"
+msgid "Display errors, warnings and hints"
+msgstr "Visualitza els errors, els avisos i els suggeriments"

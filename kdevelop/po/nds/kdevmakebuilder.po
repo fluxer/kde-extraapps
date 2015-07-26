@@ -1,0 +1,140 @@
+# translation of kdevmakebuilder.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Manfred Wiese <m.j.wiese@web.de>, 2008, 2009, 2010, 2011, 2012.
+# Sönke Dibbern <s_dibbern@web.de>, 2008, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevmakebuilder\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-12 05:17+0000\n"
+"PO-Revision-Date: 2012-02-08 22:12+0100\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sönke Dibbern, Manfred Wiese"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "s_dibbern@web.de, m.j.wiese@web.de"
+
+#. i18n: ectx: Menu (view)
+#: kdevmakebuilder.rc:5
+msgid "View"
+msgstr "Ansicht"
+
+#: makebuilder.cpp:38
+msgid "Make Builder"
+msgstr "Make-Buumoduul"
+
+#: makebuilder.cpp:38
+msgid "Support for building Make projects"
+msgstr "Ünnerstütten för't Buen vun Make-Projekten"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: makeconfig.ui:20
+msgid "&Abort on first error:"
+msgstr "Bi eerst Fehler &afbreken:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: makeconfig.ui:40
+msgid "&Display commands but do not execute them:"
+msgstr "Befehlen &wiesen, man nich utföhren:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: makeconfig.ui:60
+msgid "Install as &root:"
+msgstr "As &Systeempleger installeren:"
+
+#. i18n: ectx: property (text), widget (QLabel, rootinstallationcommandLabel)
+#: makeconfig.ui:80
+msgid "Root installation &command:"
+msgstr "Systeempleger-Installeer&befehl:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:94
+msgid "kdesu"
+msgstr "kdesu"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:99
+msgid "kdesudo"
+msgstr "kdesudo"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, kcfg_suCommand)
+#: makeconfig.ui:104
+msgid "sudo"
+msgstr "sudo"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: makeconfig.ui:112
+msgid "&Number of simultaneous jobs:"
+msgstr "&Tall vun op eenmaal utföhrt Opgaven:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: makeconfig.ui:132
+msgid "&Make executable:"
+msgstr "&Make-Programm:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: makeconfig.ui:155
+msgid "Default make &target:"
+msgstr "&Standardteel för \"make\":"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: makeconfig.ui:175
+msgid "Additional make &options:"
+msgstr "Anner \"make\"-&Optschonen:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: makeconfig.ui:195
+#, fuzzy
+#| msgid "Active Environment &Profile:"
+msgid "Active environment &profile:"
+msgstr "Anmaakt Ümgeven&profil:"
+
+#: makejob.cpp:61
+#, fuzzy, kde-format
+#| msgid "Make: %1"
+msgid "Make (%1): %2"
+msgstr "Make: %1"
+
+#: makejob.cpp:63
+#, fuzzy, kde-format
+#| msgid "Make: %1"
+msgid "Make (%1)"
+msgstr "Make: %1"
+
+#: makejob.cpp:65
+#, fuzzy
+#| msgid "Make: %1"
+msgid "Make"
+msgstr "Make: %1"
+
+#: makejob.cpp:79
+msgid "Build item no longer available"
+msgstr "Buu-Element is nich mehr verföögbor"
+
+#: makejob.cpp:85
+msgid "Internal error: cannot build a file item"
+msgstr "Intern Fehler: En Datei-Element lett sik nich buen"
+
+
+
+
+
+
+
+
+
+
+#, fuzzy

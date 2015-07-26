@@ -1,0 +1,172 @@
+# Translation of kdevprojectfilter.po to Brazilian Portuguese
+# Copyright (C) 2013-2014 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevprojectfilter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-26 23:11-0300\n"
+"Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "André Marcelo Alvarenga"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alvarenga@kde.org"
+
+#: filtermodel.cpp:90
+msgid "Pattern"
+msgstr "Padrão"
+
+#: filtermodel.cpp:92
+msgid "Targets"
+msgstr "Destinos"
+
+#: filtermodel.cpp:94
+msgid "Action"
+msgstr "Ação"
+
+#: filtermodel.cpp:123
+msgid ""
+"The wildcard pattern defines whether a file or folder is included in a "
+"project or not.<br />The pattern is matched case-sensitively against the "
+"items relative path to the project root. The relative path starts with a "
+"forward slash, trailing slashes of folders are removed.<br />Patterns ending "
+"on <code>\"/\"</code> are implicitly considered to match against folders "
+"only.<br />Patterns which do not explicitly start with either <code>\"/\"</"
+"code> or <code>\"*\"</code> implicitly get <code>\"*/\"</code> prepended and "
+"thus match any item with a relative path ending on the given pattern."
+msgstr ""
+"O padrão de caracteres especiais define se um arquivo ou pasta está ou não "
+"incluído em um projeto.<br />O padrão é correspondido com distinção de "
+"maiúsculas e minúsculas com o caminho relativo para a raiz do projeto. O "
+"caminho relativo começa com uma barra '/', sendo que as barras finais das "
+"pastas são removidas.<br />Os padrões que terminam em <code>\"/\"</code> são "
+"considerados de forma implícita como correspondentes apenas a pastas.<br /"
+">Os padrões que não comecem explicitamente com um <code>\"/\"</code> ou "
+"<code>\"*\"</code> receberão implicitamente um <code>\"*/\"</code> antes e, "
+"por isso, poderão corresponder a qualquer item com um caminho relativo que "
+"termina no padrão indicado."
+
+#: filtermodel.cpp:135
+msgid ""
+"The target defines what type of item the filter is matched against.<br /"
+">Filters either apply only to files, only to folders or to both."
+msgstr ""
+"O destino define qual o tipo de item que o filtro corresponde.<br />Os "
+"filtros aplicam-se apenas aos arquivos, apenas às pastas ou a ambos."
+
+#: filtermodel.cpp:141 projectfilterkcm.cpp:67
+msgid "Files and Folders"
+msgstr "Arquivos e pastas"
+
+#: filtermodel.cpp:146 projectfilterkcm.cpp:66
+msgid "Folders"
+msgstr "Pastas"
+
+#: filtermodel.cpp:151 projectfilterkcm.cpp:65
+msgid "Files"
+msgstr "Arquivos"
+
+#: filtermodel.cpp:157
+msgid ""
+"Filters by default exclude items from the project. Inclusive patterns can be "
+"used to include items which where matched by previous exclusive patterns."
+"<br />E.g. to only include files ending on <code>\".cpp\"</code> in your "
+"project, you could exclude all files via <code>\"*\"</code> and then apply "
+"an inclusive <code>\"*.cpp\"</code> pattern."
+msgstr ""
+"Por padrão, os filtros excluem os itens do projeto. Os padrões inclusivos "
+"podem ser usados para incluir os itens que correspondam aos padrões "
+"anteriores.<br/>Por exemplo, para incluir apenas os arquivos que terminam em "
+"<code>\".cpp\"</code> no seu projeto, você poderia excluir todos os arquivos "
+"com <code>\"*\"</code> e depois aplicar um padrão inclusivo <code>\"*.cpp\"</"
+"code>."
+
+#: filtermodel.cpp:163 projectfilterkcm.cpp:72
+msgid "Include"
+msgstr "Incluir"
+
+#: filtermodel.cpp:168 projectfilterkcm.cpp:71
+msgid "Exclude"
+msgstr "Excluir"
+
+#: projectfilterkcm.cpp:195
+msgid ""
+"A filter with an empty pattern will match all items. Use <code>\"*\"</code> "
+"to make this explicit."
+msgstr ""
+"Um filtro com um padrão em branco irá corresponder a todos os itens. Use "
+"<code>\"*\"</code> para tornar isto explícito."
+
+#: projectfilterkcm.cpp:198
+msgid "A filter ending on <code>\"/\"</code> can never match a file."
+msgstr ""
+"Um filtro que termina em <code>\"/\"</code> nunca poderá corresponder a um "
+"arquivo."
+
+#: projectfilterprovider.cpp:47
+msgid "Project Filter"
+msgstr "Filtro de projetos"
+
+#: projectfilterprovider.cpp:48
+msgid ""
+"Configure which files and folders inside the project folder should be "
+"included or excluded."
+msgstr ""
+"Configura os arquivos e pastas, dentro da pasta do projeto, que devem ser "
+"incluídos ou excluídos."
+
+#: projectfilterprovider.cpp:95
+msgid "Exclude Item From Project"
+msgid_plural "Exclude Items From Project"
+msgstr[0] "Excluir o item do projeto"
+msgstr[1] "Excluir os itens do projeto"
+
+#: projectfilterprovider.cpp:133
+msgid ""
+"A filter for the item was added. To undo, use the project filter settings."
+msgid_plural ""
+"A filter for the items was added. To undo, use the project filter settings."
+msgstr[0] ""
+"Foi adicionado um filtro para o item. Para desfazer, use a configuração do "
+"filtro de projetos."
+msgstr[1] ""
+"Foi adicionado um filtro para os itens. Para desfazer, use a configuração do "
+"filtro de projetos."
+
+#: projectfilterprovider.cpp:135
+msgid "Project Filter Added"
+msgstr "Filtro do projeto adicionado"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: projectfiltersettings.ui:31
+msgid "Add"
+msgstr "Adicionar"
+
+#. i18n: ectx: property (text), widget (QPushButton, remove)
+#: projectfiltersettings.ui:46
+msgid "Remove"
+msgstr "Remover"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUp)
+#: projectfiltersettings.ui:58
+msgid "Move Up"
+msgstr "Mover para cima"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDown)
+#: projectfiltersettings.ui:70
+msgid "Move Down"
+msgstr "Mover para baixo"

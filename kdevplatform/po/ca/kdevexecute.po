@@ -1,0 +1,356 @@
+# Translation of kdevexecute.po to Catalan
+# Copyright (C) 2009-2014 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa <manutortosa@gmail.com>, 2009.
+# Manuel Tortosa Moreno <manutortosa@gmail.com>, 2010.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2013, 2014.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevexecute\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-01 06:16+0000\n"
+"PO-Revision-Date: 2014-06-26 22:57+0200\n"
+"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa Moreno"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#: executeplugin.cpp:64
+msgid "Execute support"
+msgstr "Implementació de l'execució"
+
+#: executeplugin.cpp:64
+msgid ""
+"This plugin allows running of programs with no instrumentor, ie. natively by "
+"the current host."
+msgstr ""
+"Aquest connector permet executar programes sense «instrumentor», és a dir, "
+"nativament per a l'amfitrió actual."
+
+#: executeplugin.cpp:102
+#, kde-format
+msgid ""
+"There is a quoting error in the arguments for the launch configuration '%1'. "
+"Aborting start."
+msgstr ""
+"Hi ha una error de citació als arguments de la configuració del llançament "
+"«%1». S'està cancel·lant."
+
+#: executeplugin.cpp:106
+#, kde-format
+msgid ""
+"A shell meta character was included in the arguments for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"S'ha inclòs un metacaràcter als arguments de la configuració de llançament "
+"«%1», això no està implementat actualment. S'està cancel·lant."
+
+#: executeplugin.cpp:135
+#, kde-format
+msgid "Couldn't resolve the dependency: %1"
+msgstr "No s'ha pogut resoldre la dependència: %1"
+
+#: executeplugin.cpp:188
+msgid "No valid executable specified"
+msgstr "No s'ha especificat un executable vàlid"
+
+#: executeplugin.cpp:198
+#, kde-format
+msgid ""
+"There is a quoting error in the executable for the launch configuration "
+"'%1'. Aborting start."
+msgstr ""
+"Hi ha una error de citació a l'executable de la configuració del llançament "
+"«%1». S'està cancel·lant."
+
+#: executeplugin.cpp:203
+#, kde-format
+msgid ""
+"A shell meta character was included in the executable for the launch "
+"configuration '%1', this is not supported currently. Aborting start."
+msgstr ""
+"S'ha inclòs un metacaràcter a l'executable de la configuració de llançament "
+"«%1», això no està implementat actualment. S'està cancel·lant."
+
+#: nativeappconfig.cpp:288
+msgid "Configure Native Application"
+msgstr "Configura l'aplicació nativa"
+
+#: nativeappconfig.cpp:308
+msgid "Native Application"
+msgstr "Aplicació nativa"
+
+#: nativeappconfig.cpp:367
+msgid "Compiled Binary"
+msgstr "Binari compilat"
+
+#: nativeappconfig.cpp:440
+msgid "Project Executables"
+msgstr "Executables del projecte"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: nativeappconfig.ui:17
+msgid "Executable"
+msgstr "Executable"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: nativeappconfig.ui:23
+msgid "Project Target:"
+msgstr "Destinació del projecte:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: nativeappconfig.ui:63
+msgid "Executable:"
+msgstr "Executable:"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, executablePath)
+#: nativeappconfig.ui:88
+msgid "Enter the executable name or absolute path to an executable file"
+msgstr ""
+"Introduïu el nom de l'executable o el camí absolut a un fitxer executable"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: nativeappconfig.ui:100
+msgid "Behavior"
+msgstr "Comportament"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: nativeappconfig.ui:106
+msgid "Arguments:"
+msgstr "Arguments:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arguments)
+#: nativeappconfig.ui:116
+msgid ""
+"<html><head/><body><p>Enter arguments to give to the executable.<br/>You can "
+"pass arguments containing space characters by putting them in double-quotes."
+"</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Introduïu els arguments per a l'executable.<br/>Podeu "
+"passar arguments que continguin espais en blanc si els poseu entre cometes "
+"dobles.</p></body></html>"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, arguments)
+#: nativeappconfig.ui:119
+msgid "Enter arguments to give to the executable"
+msgstr "Introduïu els arguments per a l'executable"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: nativeappconfig.ui:126
+msgid "Working Directory:"
+msgstr "Directori de treball:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, workingDirectory)
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, workingDirectory)
+#: nativeappconfig.ui:136 nativeappconfig.ui:139
+msgid "Select a working directory for the executable"
+msgstr "Seleccioneu un directori de treball per l'executable"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: nativeappconfig.ui:146
+msgid "Environment:"
+msgstr "Entorn:"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: nativeappconfig.ui:164
+msgid "Select an environment to be used"
+msgstr "Seleccioneu un entorn a usar"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, runInTerminal)
+#: nativeappconfig.ui:191
+msgid ""
+"<p>By default applications will be run in the background and only their "
+"output will be displayed in a toolview. This makes it impossible to interact "
+"with applications requiring user input from a terminal emulator. To run such "
+"applications, you should use an external terminal.</p>"
+msgstr ""
+"<p>Per defecte, les aplicacions s'executaran en segon pla i només es veurà "
+"la seva sortida a la vista d'eines, Això fa impossible interactuar amb les "
+"aplicacions que requereixin d'entrada d'usuari des d'un emulador de "
+"terminal. Per a executar aquestes aplicacions haureu d'utilitzar un terminal "
+"extern.</p>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, runInTerminal)
+#: nativeappconfig.ui:194
+msgid "Use External Terminal:"
+msgstr "Usa un terminal extern:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, terminal)
+#: nativeappconfig.ui:219
+#, no-c-format
+msgid ""
+"<p>Defines the command to execute the external terminal emulator. Use the "
+"following placeholders:</p>\n"
+"<dl>\n"
+"<dt><code>%exe</code></dt>\n"
+"<dd>The path to the executable selected above.</dd>\n"
+"<dt><code>%workdir</code></dt>\n"
+"<dd>The path to the working directory selected above.</dd>\n"
+"</dl>\n"
+"<p>The arguments defined above will get appended to this command.</p>"
+msgstr ""
+"<p>Defineix l'ordre per a executar l'emulador de terminal extern. Useu les "
+"variables de substitució següents:</p>\n"
+"<dl>\n"
+"<dt><code>%exe</code></dt>\n"
+"<dd>El camí a l'executable seleccionat més amunt.</dd>\n"
+"<dt><code>%workdir</code></dt>\n"
+"<dd>El camí al directori de treball seleccionat més amunt.</dd>\n"
+"</dl>\n"
+"<p>Els arguments definits més amunt s'afegiran a aquesta ordre.</p>"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: nativeappconfig.ui:247
+msgid "Dependencies"
+msgstr "Dependències"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: nativeappconfig.ui:253
+msgid "Action:"
+msgstr "Acció:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, dependencyAction)
+#: nativeappconfig.ui:263
+msgid ""
+"Specifies the action to take for the dependencies before starting the "
+"executable."
+msgstr ""
+"Especifica l'acció a prendre per a les dependències abans d'iniciar "
+"l'executable."
+
+#. i18n: ectx: property (whatsThis), widget (KComboBox, dependencyAction)
+#: nativeappconfig.ui:266
+msgid ""
+"The selected action will be run before the executable is started.  This "
+"allows there to be parts of a project, upon which the executable does not "
+"directly depend, to be built and/or installed before running the application."
+msgstr ""
+"L'acció seleccionada s'executarà abans d'iniciar l'executable. Això permet "
+"que hi hagi parts del projecte, que no depenguin directament de "
+"l'executable, que pugin ser construïdes i/o instal·lades abans d'executar "
+"l'aplicació."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, dependencyAction)
+#: nativeappconfig.ui:273
+msgid "Do Nothing"
+msgstr "No facis res"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, dependencyAction)
+#: nativeappconfig.ui:278
+msgctxt "@action"
+msgid "Build"
+msgstr "Construeix"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, dependencyAction)
+#: nativeappconfig.ui:283
+msgctxt "@action"
+msgid "Build and Install"
+msgstr "Construeix i instal·la"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: nativeappconfig.ui:291
+msgid "Targets:"
+msgstr "Objectius:"
+
+#. i18n: ectx: property (toolTip), widget (ProjectItemLineEdit, targetDependency)
+#. i18n: ectx: property (clickMessage), widget (ProjectItemLineEdit, targetDependency)
+#: nativeappconfig.ui:306 nativeappconfig.ui:309
+msgid "Enter a dependency to add to the list"
+msgstr "Introduïu una dependència per afegir-la a la llista"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, addDependency)
+#: nativeappconfig.ui:329
+msgid "Adds the listed target to the dependency list."
+msgstr "Afegeix l'objectiu llistat a la llista de dependències."
+
+#. i18n: ectx: property (toolTip), widget (KListWidget, dependencies)
+#: nativeappconfig.ui:342
+msgid "List of indirect dependent targets."
+msgstr "Llista dels objectius dependents indirectes."
+
+#. i18n: ectx: property (whatsThis), widget (KListWidget, dependencies)
+#: nativeappconfig.ui:345
+msgid ""
+"This list should contain targets that the application does not directly "
+"depend on, but for which an action needs to be taken before running the "
+"application."
+msgstr ""
+"Aquesta llista ha de contenir objectius que no depenen directament de "
+"l'aplicació, pels que s'ha de prendre una acció abans d'executar l'aplicació."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, removeDependency)
+#: nativeappconfig.ui:361
+msgid "Removes the selected dependencies from the list."
+msgstr "Elimina les dependències seleccionades de la llista."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, moveDepUp)
+#: nativeappconfig.ui:374
+msgid "Move a dependency up in the list."
+msgstr "Mou una dependència amunt a la llista."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, moveDepDown)
+#: nativeappconfig.ui:387
+msgid "Moves the selected dependency down in the list."
+msgstr "Mou la dependència seleccionada avall a la llista."
+
+#: nativeappjob.cpp:70
+#, kde-format
+msgid ""
+"No environment group specified, looks like a broken configuration, please "
+"check run configuration '%1'. Using default environment group."
+msgstr ""
+"No s'ha especificat un grup d'entorn, sembla que s'ha malmès la "
+"configuració, si us plau, comproveu la configuració d'execució «%1». S'usarà "
+"el grup d'entorn per omissió."
+
+#: nativeappjob.cpp:144
+#, kde-format
+msgid "Starting: %1"
+msgstr "S'està iniciant: %1"
+
+#: nativeappjob.cpp:158
+msgid "*** Killed Application ***"
+msgstr "*** S'ha matat l'aplicació ***"
+
+#: nativeappjob.cpp:174
+msgid "*** Exited normally ***"
+msgstr "*** S'ha sortit normalment ***"
+
+#: nativeappjob.cpp:176
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** S'ha sortit retornant el codi: %1 ***"
+
+#: nativeappjob.cpp:179
+msgid "*** Process aborted ***"
+msgstr "*** Procés cancel·lat ***"
+
+#: nativeappjob.cpp:182
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** Ha fallat retornant el codi: %1 ***"
+
+#: nativeappjob.cpp:199
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr ""
+"*** No s'ha pogut iniciar el programa «%1». Assegureu-vos que teniu el camí "
+"definit correctament ***"

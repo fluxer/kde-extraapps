@@ -1,0 +1,304 @@
+# Bosnian translation for kdevplatform
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the kdevplatform package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevplatform\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-14 22:24+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2013-01-26 22:17+0000\n"
+"X-Generator: Launchpad (build 16451)\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Samir Ribić"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "samir.ribic@etf.unsa.ba"
+
+#. i18n: ectx: Menu (project)
+#: kdevprojectmanagerview.rc:5
+msgctxt "@title:menu"
+msgid "Run"
+msgstr "Pokreni"
+
+#: projectbuildsetwidget.cpp:147
+msgid "Build Set"
+msgstr "Skup za gradnju"
+
+#: projectbuildsetwidget.cpp:148
+msgid "Remove From Build Set"
+msgstr "Ukloni iz skupa za gradnju"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, topButton)
+#: projectbuildsetwidget.ui:32
+msgid "Move the selected items to the top"
+msgstr "Pomjeri sljedeće stavke na vrh"
+
+#. i18n: ectx: property (text), widget (QToolButton, topButton)
+#. i18n: ectx: property (text), widget (QToolButton, upButton)
+#. i18n: ectx: property (text), widget (QToolButton, downButton)
+#. i18n: ectx: property (text), widget (QToolButton, bottomButton)
+#. i18n: ectx: property (text), widget (QToolButton, addItemButton)
+#. i18n: ectx: property (text), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:35 projectbuildsetwidget.ui:61
+#: projectbuildsetwidget.ui:71 projectbuildsetwidget.ui:97
+#: projectbuildsetwidget.ui:147 projectbuildsetwidget.ui:157
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, upButton)
+#: projectbuildsetwidget.ui:58
+msgid "Move the selected items up"
+msgstr "Pomjeri sljedeće stavke gore"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, downButton)
+#: projectbuildsetwidget.ui:68
+msgid "Move the selected item down"
+msgstr "Pomjeri sljedeće stavke dolje"
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, bottomButton)
+#: projectbuildsetwidget.ui:94
+msgid "Move the selected items to the bottom"
+msgstr "Pomjeri sljedeće stavke na dno"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectbuildsetwidget.ui:121
+msgid "Build Sequence"
+msgstr "Sekvenca gradnje"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#: projectbuildsetwidget.ui:124
+msgid "These items will be built in the order they are listed."
+msgstr "Ove stavke će se graditi onim redoslijedom kojim su listane."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, addItemButton)
+#: projectbuildsetwidget.ui:144
+msgid "Add currently selected items from project tree view to buildset."
+msgstr ""
+"Dodaj trenutno izabrane stavke iz prikaza strukture projekta na skup za "
+"gradnju."
+
+#. i18n: ectx: property (toolTip), widget (QToolButton, removeItemButton)
+#: projectbuildsetwidget.ui:154
+msgid "Remove currently selected item from buildset."
+msgstr "Ukloni trenutno izabrane stavke iz skupa za gradnju"
+
+#: projectmanagerview.cpp:94
+msgid "Locate Current Document"
+msgstr "Lociraj trenutni dokument"
+
+#: projectmanagerview.cpp:95
+msgid "Locates the current document in the project tree and selects it."
+msgstr "Locira trenutni dokument u stablu projekta i izabira ga"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:14 projectmanagerviewplugin.cpp:151
+msgid "Projects"
+msgstr "Projekti"
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, ProjectManagerView)
+#: projectmanagerview.ui:17
+msgid "Project Manager"
+msgstr "Rukovodilac projekta"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectTreeView, projectTreeView)
+#: projectmanagerview.ui:39
+msgid "Project Overview"
+msgstr "Pregled projekta"
+
+#. i18n: ectx: property (whatsThis), widget (ProjectBuildSetWidget, buildSetView)
+#: projectmanagerview.ui:59
+msgid "Build Items:"
+msgstr "Gradi stavke:"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Project Management View"
+msgstr "Pogled upravljanja projektom"
+
+#: projectmanagerviewplugin.cpp:57
+msgid "Toolview to do all the project management stuff"
+msgstr "Alatni pogled za cijeli rad s projektom"
+
+#: projectmanagerviewplugin.cpp:108
+msgid "Build all Projects"
+msgstr "Sagradi sve projekte"
+
+#: projectmanagerviewplugin.cpp:113
+msgid "Build Selection"
+msgstr "Sagradi izbor"
+
+#: projectmanagerviewplugin.cpp:114
+msgid "Build"
+msgstr "Izgradi"
+
+#: projectmanagerviewplugin.cpp:120
+msgid "Install Selection"
+msgstr "Instaliraj izbor"
+
+#: projectmanagerviewplugin.cpp:121
+msgid "Install"
+msgstr "Instaliraj"
+
+#: projectmanagerviewplugin.cpp:127
+msgid "Clean Selection"
+msgstr "Očisti izbor"
+
+#: projectmanagerviewplugin.cpp:128
+msgid "Clean"
+msgstr "Počisti"
+
+#: projectmanagerviewplugin.cpp:133
+msgid "Configure Selection"
+msgstr "Konfiguriši izbor"
+
+#: projectmanagerviewplugin.cpp:134
+msgid "Configure"
+msgstr "Podešavanje"
+
+#: projectmanagerviewplugin.cpp:139
+msgid "Prune Selection"
+msgstr "Skrati izbor"
+
+#: projectmanagerviewplugin.cpp:140
+msgid "Prune"
+msgstr "Kreši"
+
+#: projectmanagerviewplugin.cpp:241
+msgid "Create File"
+msgstr "Kreiraj datoteku"
+
+#: projectmanagerviewplugin.cpp:247
+msgid "Create Folder"
+msgstr "Napravi direktorij"
+
+#: projectmanagerviewplugin.cpp:254
+msgctxt "@action"
+msgid "Build"
+msgstr "Izgradi"
+
+#: projectmanagerviewplugin.cpp:258
+msgctxt "@action"
+msgid "Install"
+msgstr "Instaliraj"
+
+#: projectmanagerviewplugin.cpp:262
+msgctxt "@action"
+msgid "Clean"
+msgstr "Očisti"
+
+#: projectmanagerviewplugin.cpp:266
+msgid "Add to Build Set"
+msgstr "Dodaj u skup za gradnju"
+
+#: projectmanagerviewplugin.cpp:273
+msgid "Close Project"
+msgid_plural "Close Projects"
+msgstr[0] "Zatvori projekt"
+msgstr[1] "Zatvori projekte"
+msgstr[2] "Zatvori projekt"
+
+#: projectmanagerviewplugin.cpp:279
+msgid "Reload"
+msgstr "Ponovo učitaj"
+
+#: projectmanagerviewplugin.cpp:285
+msgid "Remove"
+msgstr "Ukloni"
+
+#: projectmanagerviewplugin.cpp:289
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: projectmanagerviewplugin.cpp:295
+msgid "Remove From Target"
+msgstr "Ukloni iz odredišta"
+
+#: projectmanagerviewplugin.cpp:489
+#, kde-format
+msgid "Create Folder in %1"
+msgstr "Kreiraj direktorij u %1"
+
+#: projectmanagerviewplugin.cpp:489
+msgid "Folder Name"
+msgstr "Ime direktorija"
+
+#: projectmanagerviewplugin.cpp:541
+#, kde-format
+msgid "Do you really want to delete this item?"
+msgid_plural "Do you really want to delete these %1 items?"
+msgstr[0] "Želite li zaista da obrišete ovu %1 stavku?"
+msgstr[1] "Želite li zaista da obrišete ove %1 stavke?"
+msgstr[2] "Želite li zaista da obrišete ovih %1 stavki?"
+
+#: projectmanagerviewplugin.cpp:544
+msgid "Delete Files"
+msgstr "Brisanje datoteka"
+
+#: projectmanagerviewplugin.cpp:597
+msgid "Rename..."
+msgstr "Preimenuj..."
+
+#: projectmanagerviewplugin.cpp:598
+#, fuzzy, kde-format
+#| msgid "New name for '%1'"
+msgid "New name for '%1':"
+msgstr "Novo ime za '%1'"
+
+#: projectmanagerviewplugin.cpp:609
+#, kde-format
+msgid "There is already a file named '%1'"
+msgstr "Već postoji datoteka s imenom '%1'"
+
+#: projectmanagerviewplugin.cpp:612
+#, kde-format
+msgid "Could not rename '%1'"
+msgstr "Ne mogu preimenovati '%1'"
+
+#: projectmanagerviewplugin.cpp:615
+#, kde-format
+msgid "'%1' is not a valid file name"
+msgstr "'%1' nije važeće ime datoteke"
+
+#: projectmanagerviewplugin.cpp:625
+#, kde-format
+msgid "Create File in %1"
+msgstr "Kreioraj datoteku u %1"
+
+#: projectmanagerviewplugin.cpp:625
+#, fuzzy
+#| msgid "File Name"
+msgid "File name:"
+msgstr "Ime datoteke"
+
+#: projecttreeview.cpp:161
+msgid "&Move Here"
+msgstr "Po&mjeri ovdje"
+
+#: projecttreeview.cpp:167
+msgid "&Copy Here"
+msgstr "&Kopiraj ovdje"
+
+#: projecttreeview.cpp:173 projecttreeview.cpp:232
+msgid "C&ancel"
+msgstr "&Odustani"
+
+#: projecttreeview.cpp:226
+msgid "&Add to Target"
+msgstr "&Dodaj u odredište"
+
+#: projecttreeview.cpp:345
+msgid "Open Configuration..."
+msgstr "Otvori konfiguraciju...."

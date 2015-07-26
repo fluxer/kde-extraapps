@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevdocumentview\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-01 05:08+0000\n"
+"PO-Revision-Date: 2013-10-05 11:46+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "José Nuno Pires"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zepires@gmail.com"
+
+#: kdevdocumentview.cpp:74 kdevdocumentview.cpp:77
+#: kdevdocumentviewplugin.cpp:94
+msgid "Documents"
+msgstr "Documentos"
+
+#: kdevdocumentview.cpp:201
+msgid "Reload"
+msgstr "Recarregar"
+
+#: kdevdocumentview.cpp:206
+msgid "Close Other Files"
+msgstr "Fechar os Outros Ficheiros"
+
+#: kdevdocumentviewplugin.cpp:39
+msgid "Document View"
+msgstr "Área de Documentos"
+
+#: kdevdocumentviewplugin.cpp:39
+msgid ""
+"This plugin displays a graphical view of all documents currently loaded and "
+"separates them by mimetype."
+msgstr ""
+"Este 'plugin' mostra uma vista gráfica sobre todos os documentos carregados "
+"de momento, separando-os por tipo MIME."
+
+#. i18n: ectx: label, entry (displayMimeType), group (General Options)
+#: settings/config.kcfg:9
+msgid "Display document categories (mimetypes) in the view"
+msgstr "Mostrar as categorias do documento (tipos MIME) na janela"
+
+#. i18n: ectx: whatsthis, entry (displayMimeType), group (General Options)
+#: settings/config.kcfg:11
+msgid ""
+"If this option is set, the Document View will organize documents\n"
+"        by their mimetype."
+msgstr ""
+"Se esta opção estiver activa, a Área de Documentos irá organizar os "
+"documentos pelo seu tipo MIME."
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_displayMimeType)
+#: settings/settingswidget.ui:38
+msgid "Display document &categories"
+msgstr "Mostrar as &categorias do documento"

@@ -1,0 +1,174 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Dimitrios Glentadakis <dglent@gmail.com>, 2012.
+# Petros Vidalis <pvidalis@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-24 05:23+0000\n"
+"PO-Revision-Date: 2012-10-04 14:36+0300\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"Language-Team: Greek <i18ngr@lists.hellug.gr>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios, Πέτρος Βιδάλης"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com, p_vidalis@hotmail.com"
+
+#: problemmodel.cpp:207
+msgctxt "@title:column source of problem"
+msgid "Source"
+msgstr "Πηγή"
+
+#: problemmodel.cpp:209
+msgctxt "@title:column problem description"
+msgid "Problem"
+msgstr "Πρόβλημα"
+
+#: problemmodel.cpp:211
+msgctxt "@title:column file where problem was found"
+msgid "File"
+msgstr "Αρχείο"
+
+#: problemmodel.cpp:213
+msgctxt "@title:column line number with problem"
+msgid "Line"
+msgstr "Γραμμή"
+
+#: problemmodel.cpp:215
+msgctxt "@title:column column number with problem"
+msgid "Column"
+msgstr "Στήλη"
+
+#: problemreporterplugin.cpp:58
+msgid "Problem Reporter"
+msgstr "Αναφορά προβλημάτων"
+
+#: problemreporterplugin.cpp:58
+msgid "Shows errors in source code"
+msgstr "Εμφάνιση σφαλμάτων στον πηγαίο κώδικα"
+
+#: problemreporterplugin.cpp:93 problemwidget.cpp:56 problemwidget.cpp:59
+msgid "Problems"
+msgstr "Προβλήματα"
+
+#: problemreporterplugin.cpp:180
+msgid "Solve Problem"
+msgstr "Επίλυση προβλήματος"
+
+#: problemreporterplugin.cpp:182
+#, kde-format
+msgid "Solve: %1"
+msgstr "Επίλυση: %1"
+
+#: problemwidget.cpp:66
+msgid "Force Full Update"
+msgstr "Εξαναγκασμός πλήρους ενημέρωσης"
+
+#: problemwidget.cpp:67
+msgctxt "@info:tooltip"
+msgid "Re-parse all watched documents"
+msgstr "Επόμενη συντακτική ανάλυση για όλα τα παρακολουθούμενα έγγραφα"
+
+#: problemwidget.cpp:76
+msgid "Show Imports"
+msgstr "Εμφάνιση εισαγωγών"
+
+#: problemwidget.cpp:77
+msgctxt "@info:tooltip"
+msgid "Display problems in imported files"
+msgstr "Εμφάνιση προβλημάτων σε αρχεία εισαγωγής"
+
+#: problemwidget.cpp:83
+msgid "Scope"
+msgstr "Εμβέλεια"
+
+#: problemwidget.cpp:84
+msgctxt "@info:tooltip"
+msgid "Which files to display the problems for"
+msgstr "Για ποια αρχεία να εμφανιστούν προβλήματα"
+
+#: problemwidget.cpp:89
+msgid "Current Document"
+msgstr "Τρέχον έγγραφο"
+
+#: problemwidget.cpp:90
+msgctxt "@info:tooltip"
+msgid "Display problems in current document"
+msgstr "Εμφάνιση προβλημάτων στο τρέχον έγγραφο"
+
+#: problemwidget.cpp:93
+#, fuzzy
+#| msgid "Open documents"
+msgid "Open Documents"
+msgstr "Άνοιγμα εγγράφων"
+
+#: problemwidget.cpp:94
+msgctxt "@info:tooltip"
+msgid "Display problems in all open documents"
+msgstr "Εμφάνιση προβλημάτων σε όλα τα ανοιχτά έγγραφα"
+
+#: problemwidget.cpp:97
+msgid "Current Project"
+msgstr "Τρέχον έργο"
+
+#: problemwidget.cpp:98
+msgctxt "@info:tooltip"
+msgid "Display problems in current project"
+msgstr "Εμφάνιση προβλημάτων στο τρέχον έργο"
+
+#: problemwidget.cpp:101
+msgid "All Projects"
+msgstr "Όλα τα έργα"
+
+#: problemwidget.cpp:102
+msgctxt "@info:tooltip"
+msgid "Display problems in all projects"
+msgstr "Εμφάνιση προβλημάτων σε όλα τα έργα"
+
+#: problemwidget.cpp:125
+msgid "Severity"
+msgstr "Αυστηρότητα"
+
+#: problemwidget.cpp:127
+msgctxt "@info:tooltip"
+msgid "Select the lowest level of problem severity to be displayed"
+msgstr "Επιλογή ελάχιστου επιπέδου αυστηρότητας για την εμφάνιση προβλημάτων"
+
+#: problemwidget.cpp:130
+msgid "Error"
+msgstr "Σφάλμα"
+
+#: problemwidget.cpp:131
+msgctxt "@info:tooltip"
+msgid "Display only errors"
+msgstr "Εμφάνιση σφαλμάτων μόνο"
+
+#: problemwidget.cpp:133
+msgid "Warning"
+msgstr "Προειδοποίηση"
+
+#: problemwidget.cpp:134
+msgctxt "@info:tooltip"
+msgid "Display errors and warnings"
+msgstr "Εμφάνιση σφαλμάτων και προειδοποιήσεων"
+
+#: problemwidget.cpp:136
+msgid "Hint"
+msgstr "Συμβουλή"
+
+#: problemwidget.cpp:137
+msgctxt "@info:tooltip"
+msgid "Display errors, warnings and hints"
+msgstr "Εμφάνιση σφαλμάτων, προειδοποιήσεων και συμβουλών"

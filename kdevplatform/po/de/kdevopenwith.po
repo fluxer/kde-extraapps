@@ -1,0 +1,62 @@
+# Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
+# Frederik Schwarzer <schwarzer@kde.org>, 2010.
+# Gerhard Stengel <gstengel@gmx.net>, 2011.
+# Burkhard Lück <lueck@hube-lueck.de>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevopenwith\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-11-07 10:29+0100\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Panagiotis Papadopoulos"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pano_90@gmx.net"
+
+#: openwithplugin.cpp:52 openwithplugin.cpp:116
+msgid "Open With"
+msgstr "Öffnen mit"
+
+#: openwithplugin.cpp:52
+msgid "This plugin allows to open files with associated external applications."
+msgstr ""
+"Dies Modul ermöglicht das Öffnen von Dateien mit zugehörigen externen "
+"Anwendungen."
+
+#: openwithplugin.cpp:120
+msgid "Embedded Editors"
+msgstr "Eingebettete Editoren"
+
+#: openwithplugin.cpp:124
+msgid "External Applications"
+msgstr "Externe Anwendungen"
+
+#: openwithplugin.cpp:128
+msgid "Open"
+msgstr "Öffnen"
+
+#: openwithplugin.cpp:174
+msgid "Default Editor"
+msgstr "Standardeditor"
+
+#: openwithplugin.cpp:240
+#, kde-format
+msgctxt "%1: mime type name, %2: app/part name"
+msgid "Do you want to open all '%1' files by default with %2?"
+msgstr "Möchten Sie alle „%1“-Dateien als Vorgabe mit %2 öffnen?"
+
+#: openwithplugin.cpp:242
+msgid "Set as default?"
+msgstr "Als Vorgabe setzen?"

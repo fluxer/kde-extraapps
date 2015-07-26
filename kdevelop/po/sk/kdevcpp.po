@@ -1,0 +1,880 @@
+# translation of kdevcpp.po to Slovak
+# Richard Fric <Richard.Fric@kdemail.net>, 2009.
+# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcpp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-12-17 05:11+0000\n"
+"PO-Revision-Date: 2014-06-26 14:21+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: codecompletion/context.cpp:883
+msgid "Initialize"
+msgstr "Inicializovať"
+
+#: codecompletion/context.cpp:1338 codecompletion/context.cpp:2038
+msgid "Not Included"
+msgstr "Nevložené"
+
+#: codecompletion/context.cpp:1490
+#, kde-format
+msgctxt ""
+"Here, overload is used as a programming term.  This string is used to "
+"display how many overloaded versions there are of the function whose name is "
+"the second argument."
+msgid "1 more overload of %2 (show more)"
+msgid_plural "%1 more overloads of %2 (show more)"
+msgstr[0] "1 ďalšie preťaženie z %2 (ukázať viac)"
+msgstr[1] "%1 ďalších preťažení z %2 (ukázať viac)"
+msgstr[2] "%1 ďalších preťažení z %2 (ukázať viac)"
+
+#: codecompletion/context.cpp:1614
+#, kde-format
+msgid "Connect to %1 (%2)"
+msgstr "Pripojiť ku %1 (%2)"
+
+#: codecompletion/context.cpp:1666
+msgid "Signals/Slots"
+msgstr "Signály/Štrbiny"
+
+#: codecompletion/context.cpp:1935
+msgid "Virtual Override"
+msgstr "Virtuálne preťaženie"
+
+#: codecompletion/context.cpp:1942
+msgctxt "@action"
+msgid "Implement Function"
+msgstr "Implementovať funkciu"
+
+#: codecompletion/context.cpp:1971 codecompletion/context.cpp:1973
+msgid "C++ Builtin"
+msgstr "C++ zabudované"
+
+#: codecompletion/context.cpp:2098
+msgid "Lookahead Matches"
+msgstr "Predvídané zhody"
+
+#: codecompletion/implementationhelperitem.cpp:86
+msgctxt "@action C++ code completion"
+msgid "Override"
+msgstr "Prepísať"
+
+#: codecompletion/implementationhelperitem.cpp:88
+msgctxt "@action C++ code completion"
+msgid "Implement"
+msgstr "Implementácia"
+
+#: codecompletion/implementationhelperitem.cpp:90
+msgctxt "@action C++ code completion"
+msgid "Create Slot"
+msgstr "Vytvoriť slot"
+
+#: codecompletion/implementationhelperitem.cpp:127
+#, kde-format
+msgid "From %1"
+msgstr "Od %1"
+
+#: codecompletion/missingincludeitem.cpp:484
+msgid "Add include directive"
+msgstr "Pridať vkladaciu direktívu"
+
+#: codecompletion/missingincludeitem.cpp:489
+#, kde-format
+msgctxt "file content unknown"
+msgid "%1<unknown contents>, %2"
+msgstr "%1<neznámy obsah>, %2"
+
+#: codecompletion/missingincludeitem.cpp:564
+msgid "Add Forward-Declaration"
+msgstr "Pridať doprednú deklaráciu"
+
+#: codecompletion/missingincludeitem.cpp:576
+msgid "forward-declare"
+msgstr "deklarovať dopredu"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update declaration signature"
+msgstr "Aktualizovať označenie deklarácie"
+
+#: codegen/adaptsignatureaction.cpp:94
+msgid "Update definition signature"
+msgstr "Aktualizovať označenie definície"
+
+#: codegen/adaptsignatureaction.cpp:99
+#, kde-format
+msgid ""
+"Update %1\n"
+"from: %2(%3)%4\n"
+"to: %2(%5)%6"
+msgstr ""
+"Aktualizovať %1\n"
+"z: %2(%3)%4\n"
+"na: %2(%5)%6"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "declaration"
+msgstr "deklarácia"
+
+#: codegen/adaptsignatureaction.cpp:100
+msgid "definition"
+msgstr "definícia"
+
+#: codegen/adaptsignatureaction.cpp:184
+#, kde-format
+msgid "Failed to apply changes: %1"
+msgstr "Zlyhalo použitie zmien: %1"
+
+#: codegen/customincludepaths.cpp:35
+msgid "Setup Custom Include Paths"
+msgstr "Nastavenie vlastných ciest vloženia"
+
+#: codegen/makeimplementationprivate.cpp:174
+msgid "Private Class Implementation Options"
+msgstr "Možnosti implementácie súkromnej triedy"
+
+#: codegen/makeimplementationprivate.cpp:309
+msgid ""
+"Warning. It is not recommended to move initialization lists to private "
+"constructor when multiple constructors are defined."
+msgstr ""
+"Varovanie. Neodporúča sa presunúť inicializačné zoznamy do súkromného "
+"konštruktora, ak sú definované viacnásobné konštruktory."
+
+#: codegen/simplerefactoring.cpp:76
+#, kde-format
+msgid "Rename %1"
+msgstr "Premenovať %1"
+
+#: codegen/simplerefactoring.cpp:88
+#, kde-format
+msgid "Create separate definition for %1"
+msgstr "Vytvoriť oddelenú definíciu pre %1"
+
+#: codegen/simplerefactoring.cpp:105 codegen/simplerefactoring.cpp:258
+msgid "No declaration under cursor"
+msgstr "Žiadna deklarácia pod kurzorom"
+
+#: codegen/simplerefactoring.cpp:115
+#, kde-format
+msgid "No source file available for %1."
+msgstr "Žiadny dostupný zdrojový súbor pre %1."
+
+#: codegen/simplerefactoring.cpp:127
+#, kde-format
+msgid "Failed to update DUChain for %1."
+msgstr "Zlyhala aktualizácia DUChain pre %1."
+
+#: codegen/simplerefactoring.cpp:131
+msgid "Declaration lost while updating."
+msgstr "Deklarácia sa stratila počas aktualizácie."
+
+#: codegen/simplerefactoring.cpp:141
+msgid "Cannot create definition for this declaration."
+msgstr "Nemožno vytvoriť definíciu pre túto deklaráciu."
+
+#: codegen/simplerefactoring.cpp:146
+#, kde-format
+msgid "No document for %1"
+msgstr "Žiadny dokument pre %1"
+
+#: codegen/simplerefactoring.cpp:190
+msgid "Insertion failed"
+msgstr "Vloženie zlyhalo"
+
+#: codegen/simplerefactoring.cpp:195 codegen/simplerefactoring.cpp:203
+#: codegen/simplerefactoring.cpp:334
+#, kde-format
+msgid "Applying changes failed: %1"
+msgstr "Použitie zmien zlyhalo: %1"
+
+#: codegen/simplerefactoring.cpp:265
+#, kde-format
+msgid "Declaration is located in non-writeable file %1."
+msgstr "Deklarácia je umiestnená v nezapisovateľnom súbore %1."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/cppnewclass.ui:16
+msgid "C++ Options"
+msgstr "Možnosti C++"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/cppnewclass.ui:22
+msgid "&Export:"
+msgstr "Exportovať:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/cppnewclass.ui:53
+msgid "&Macro:"
+msgstr "&Makro:"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_3)
+#: codegen/ui/cppoverridebuttons.ui:16
+msgid "Public"
+msgstr "Verejné"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_4)
+#: codegen/ui/cppoverridebuttons.ui:23
+msgid "Protected"
+msgstr "Chránené"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_5)
+#: codegen/ui/cppoverridebuttons.ui:30
+msgid "Private"
+msgstr "Súkromné"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_6)
+#: codegen/ui/cppoverridebuttons.ui:53
+msgid "Slot"
+msgstr "Slot"
+
+#. i18n: ectx: property (text), widget (KPushButton, kpushbutton_7)
+#: codegen/ui/cppoverridebuttons.ui:60
+msgid "Signal"
+msgstr "Signál"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: codegen/ui/custom_include_paths.ui:23
+msgid "Storage Directory"
+msgstr "Adresár úložiska"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/custom_include_paths.ui:35
+msgid ""
+"The custom include-path will be stored in a special file called \"."
+"kdev_include_paths\" stored within a source directory. The custom path will "
+"be used for all files below that directory."
+msgstr ""
+"Vlastná cesta vloženia bude uložené do zvláštneho súboru s názvom \"."
+"kdev_include_paths\" uložený v zdrojovom adresári. Vlastná cesta bude "
+"použitá pre všetky súbory v tomto adresári."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: codegen/ui/custom_include_paths.ui:47
+msgid "Storage Directory:"
+msgstr "Adresár úložiska:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: codegen/ui/custom_include_paths.ui:68
+msgid "Automatic Resolution"
+msgstr "Automatické riešenie"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: codegen/ui/custom_include_paths.ui:74
+msgid ""
+"If your project uses simple Makefiles, it may be possible to automatically "
+"resolve the include-paths using the make utility. For this, set up a mapping "
+"from a source- to a build-directory here."
+msgstr ""
+"Ak váš projekt používa jednoduché súbory Makefile, bude možné automaticky "
+"vyriešiť cesty vloženia pomocou nástroja make. K tomu sa tu nastavuje "
+"mapovanie zo zdroja do adresára zostavenia."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: codegen/ui/custom_include_paths.ui:86
+msgid "Source Directory:"
+msgstr "Zdrojový adresár:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: codegen/ui/custom_include_paths.ui:96
+msgid "Build Directory:"
+msgstr "Adresár zostavenia:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: codegen/ui/custom_include_paths.ui:111
+msgid "Custom Include Paths"
+msgstr "Vlastná cesta vloženia"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/custom_include_paths.ui:117
+msgid ""
+"You can add a list of custom include paths here. Relative paths will be "
+"resolved from the storage directory."
+msgstr ""
+"Môžete pridať zoznam vlastných ciest vloženia. Relatívne cesty budú riešené "
+"z ukladacieho adresára."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:148
+msgid "Select a directory to include."
+msgstr "Vyberte adresár na zahrnutie."
+
+#. i18n: ectx: property (text), widget (QPushButton, directorySelector)
+#: codegen/ui/custom_include_paths.ui:151
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: codegen/ui/custom_include_paths.ui:168
+msgid ""
+"Note: These settings do not affect the compiler or the project in any way, "
+"they are only used to find included headers within KDevelop."
+msgstr ""
+"Poznámka: Tieto nastavenia nemajú vplyv na kompilátor alebo projekt žiadnym "
+"spôsobom, sú použité len na vyhľadanie vložených hlavičiek v rámci KDevelop."
+
+#. i18n: ectx: property (whatsThis), widget (QWidget, PrivateImplementationDialog)
+#: codegen/ui/privateimplementation.ui:14
+msgid ""
+"Options & settings to move the private data fields of a class into a private "
+"structure"
+msgstr ""
+"Možnosti a nastavenia presunu súkromných dátových polí triedy do súkromnej "
+"štruktúry"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: codegen/ui/privateimplementation.ui:42
+msgid "Private structure name:"
+msgstr "Súkromný názov štruktúry:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, optionGroup)
+#: codegen/ui/privateimplementation.ui:55
+msgid "Options"
+msgstr "Možnosti"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:75
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default private "
+"implementation structures are declared as <span style=\" font-style:italic;"
+"\">struct</span> to have default public access.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Check this box if you wish "
+"the private implementation structure be declared as <span style=\" font-"
+"style:italic;\">class</span> with public access.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Podľa predvoľby sa "
+"súkromné ​​implementačné štruktúry deklarujú ako <span style=\" font-style:"
+"italic;\">struct</span>, aby mali predvolený verejný prístup.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Zaškrtnite toto pole, ak "
+"si želáte, aby boli súkromné implementačné štruktúry deklarované ako <span "
+"style=\" font-style:italic;\">class</span> s verejným prístupom.</p></body></"
+"html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, classOption)
+#: codegen/ui/privateimplementation.ui:78
+msgid "Use class instead of struct"
+msgstr "Použiť triedu namiesto štruktúry"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:97
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Move any current variables "
+"that are initialized in the constructor initializer list to the private "
+"implementation structure's constructor initializer list.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Note:</span> All references, and variables "
+"with types that do not offer default constructors are moved regardless of "
+"the state of this option.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Presunúť všetky aktuálne "
+"premenné, ktoré sú inicializované v zozname inicializátorov konštruktorov do "
+"zoznamu inicializátorov súkromných implementačných štruktúrnych "
+"konstruktorov.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Note:</span> Všetky referencie a premenné s "
+"typmi, ktoré neposkytujú predvolené konštruktory sú presunuté bez ohľadu na "
+"stav tejto voľby.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, variableOption)
+#: codegen/ui/privateimplementation.ui:100
+msgid "Move Variable initialization to private structure"
+msgstr "Presunúť Inicializáciu premennej do súkromnej ​​štruktúry"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:113
+msgid ""
+"Move all currently declared private methods to the private implementation "
+"structure."
+msgstr ""
+"Presunúť všetky práve deklarované súkromné ​​metódy do súkromnej "
+"implementačnej štruktúry."
+
+#. i18n: ectx: property (text), widget (QCheckBox, methodOption)
+#: codegen/ui/privateimplementation.ui:116
+msgid "Move Private methods"
+msgstr "Presunúť súkromné metódy"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: codegen/ui/privateimplementation.ui:130
+msgid "Pointer name:"
+msgstr "Názov ukazovateľa:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:146
+msgid ""
+"The name of the member variable that will be the pointer held to the private "
+"implementation"
+msgstr ""
+"Názov členskej premennej, ktorá bude ukazovateľom držaným na súkromnej "
+"implementácii"
+
+#. i18n: ectx: property (text), widget (KLineEdit, pointerName)
+#: codegen/ui/privateimplementation.ui:149
+msgid "d"
+msgstr "d"
+
+#: codegen/unresolvedincludeassistant.cpp:84
+#, kde-format
+msgid "Failed to save custom include paths in directory: %1"
+msgstr "Zlyhalo uloženie vlastných ciest vloženia v adresári: %1"
+
+#: codegen/unresolvedincludeassistant.cpp:101
+#: codegen/unresolvedincludeassistant.cpp:144
+msgid "Add Custom Include Path"
+msgstr "Pridať vlastnú cestu vloženia"
+
+#: codegen/unresolvedincludeassistant.cpp:114
+msgid "Open Project"
+msgstr "Otvoriť projekt"
+
+#: codegen/unresolvedincludeassistant.cpp:118
+#, kde-format
+msgid "Include file \"%1\" not found"
+msgstr "Vkladaný súbor \"%1\" nenájdený"
+
+#: cppduchain/contextbuilder.cpp:149
+#, kde-format
+msgid "Could not resolve base class, adding it indirectly: %1"
+msgstr "Nepodarilo sa vyriešiť základnú triedu, jej nepriame pridanie: %1"
+
+#: cppduchain/contextbuilder.cpp:154
+#, kde-format
+msgid "Invalid base class: %1"
+msgstr "Neplatná základná trieda: %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:113
+msgid "<b>local</b> variable"
+msgstr "<b>miestna</b> premenná"
+
+#: cppduchain/missingdeclarationassistant.cpp:117
+#, kde-format
+msgid "Create local declaration %1"
+msgstr "Vytvoriť lokálnu deklaráciu %1"
+
+#: cppduchain/missingdeclarationassistant.cpp:227
+#, kde-format
+msgctxt "%1: access, %2: identifier/signature"
+msgid "Declare %1 %2"
+msgstr "Declarovať %1 %2"
+
+#: cppduchain/missingdeclarationassistant.cpp:352
+#, kde-format
+msgctxt "assistant, declare member in class identified by %1"
+msgid "member of <code>%1</code>:"
+msgstr "členom <code>%1</code>:"
+
+#: cppduchain/missingdeclarationassistant.cpp:358
+#, kde-format
+msgctxt "assistant, declare %1 as member of class identified by %2"
+msgid "Declare <code>'%1'</code> as member of <code>%2</code>"
+msgstr "Deklarovať <code>'%1'</code> ako člena <code>%2</code>"
+
+#: cppduchain/missingdeclarationassistant.cpp:382
+#, kde-format
+msgid "Declare <code>'%1'</code> as"
+msgstr "Deklarovať <code>'%1'</code> ako"
+
+#: cppduchain/missingdeclarationproblem.cpp:27
+#, kde-format
+msgid "Declaration not found: %1"
+msgstr "Deklarácia nenájdená: %1"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:52
+msgctxt "Headers included into this header"
+msgid "Includes"
+msgstr "Vkladá"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:53
+msgctxt "Count of files this header was included into"
+msgid "Included by"
+msgstr "Vložené s"
+
+#: cppduchain/navigation/includenavigationcontext.cpp:54
+msgctxt "Count of macros defined in this header"
+msgid "Defined macros"
+msgstr "Definované makrá"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:81
+msgid "Preprocessed Body:"
+msgstr "Telo spracované preprocesorom:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:84
+msgid "Preprocessed Body: (empty)"
+msgstr "Telo spracované preprocesorom: (prázdne)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:87
+msgid "Body:"
+msgstr "Telo:"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:90
+msgid "Body: (empty)"
+msgstr "Telo: (prázdne)"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:142
+#, kde-format
+msgctxt ""
+"%1: macro type, i.e.: 'Function macro' or just 'Macro'%2: the macro name and "
+"arguments%3 the link to the definition"
+msgid "%1: %2, defined in %3"
+msgstr "%1: %2, definované v %3"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Function macro"
+msgstr "Funkčné makro"
+
+#: cppduchain/navigation/macronavigationcontext.cpp:143
+msgid "Macro"
+msgstr "Makro"
+
+#: cppduchain/usebuilder.cpp:151
+#, kde-format
+msgid "Use of deleted function: %1"
+msgstr "Použitie vymazanej funkcie: %1"
+
+#: cpplanguagesupport.cpp:141
+msgid "Edit include directories"
+msgstr "Upraviť zahrnuté adresáre"
+
+#: cpplanguagesupport.cpp:175
+msgid "C++ Support"
+msgstr "Podpora C++"
+
+#: cpplanguagesupport.cpp:175
+msgid "Support for C++ Language"
+msgstr "Podpora pre jazyk C++"
+
+#: cpplanguagesupport.cpp:220
+msgid "Files"
+msgstr "Súbory"
+
+#: cpplanguagesupport.cpp:240
+msgid "&Switch Definition/Declaration"
+msgstr "&Prepnúť definíciu/deklaráciu"
+
+#: cpplanguagesupport.cpp:250
+msgid "Rename Declaration"
+msgstr "Premenovať deklaráciu"
+
+#: cpplanguagesupport.cpp:256
+msgid "Move into Source"
+msgstr "Presunúť do zdroja"
+
+#: cpplanguagesupport.cpp:810
+msgid "Emptied by preprocessor<br />"
+msgstr "Vyprázdnené preprocesorom<br />"
+
+#: cppparsejob.cpp:158
+msgid "Parsing included files"
+msgstr "Analýza vkladaných súborov"
+
+#: cppparsejob.cpp:469
+msgid "Parsing actual file"
+msgstr "Analýza aktuálneho súboru"
+
+#: cppparsejob.cpp:581
+#, kde-format
+msgid "Not updating duchain for %1"
+msgstr "Neexistuje aktualizovanie duchain pre %1"
+
+#: cppparsejob.cpp:710
+msgid "Building uses"
+msgstr "Zostavenie použije"
+
+#: cppparsejob.cpp:858
+msgid "Ready"
+msgstr "Pripravený"
+
+#: includepathresolver.cpp:518
+msgid ""
+"Tried include path resolution while another resolution process was still "
+"running"
+msgstr ""
+"Pokus o riešenie cesty vloženia, zatiaľ čo stále bežal iný proces riešenia"
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Makefile is missing in folder \"%1\""
+msgstr "Makefile chýba v priečinku \"%1\""
+
+#: includepathresolver.cpp:613
+#, kde-format
+msgid "Problem while trying to resolve include paths for %1"
+msgstr "Problém pri pokuse o vyriešenie cesty vloženia pre %1"
+
+#: includepathresolver.cpp:639
+#, kde-format
+msgid "Cached: %1"
+msgstr "Prednačítané: %1"
+
+#: includepathresolver.cpp:668
+#, kde-format
+msgid "Filename %1 seems to be malformed"
+msgstr "Názov súboru %1 vyzerá byť zdeformovaný"
+
+#: includepathresolver.cpp:806
+msgid "Failed to extract new working directory"
+msgstr "Zlyhalo získanie nového pracovného adresára"
+
+#: includepathresolver.cpp:806 includepathresolver.cpp:835
+#, kde-format
+msgid "Output was: %1"
+msgstr "Výstup bol: %1"
+
+#: includepathresolver.cpp:828 includepathresolver.cpp:831
+msgid "Recursive make call failed"
+msgstr "Rekurzívne volanie make zlyhalo"
+
+#: includepathresolver.cpp:828
+#, kde-format
+msgid "The parameter string \"%1\" does not seem to be valid. Output was: %2."
+msgstr "Parameter string \"%1\" sa nezdá byť platný. Výstup bol: %2."
+
+#: includepathresolver.cpp:831
+#, kde-format
+msgid "The directory \"%1\" does not exist. Output was: %2."
+msgstr "Adresár \"%1\" neexistuje. Výstup bol: %2."
+
+#: includepathresolver.cpp:835
+msgid "Malformed recursive make call"
+msgstr "Zdeformované rekurzívne volanie make"
+
+#: includepathresolver.cpp:887
+msgid "Could not extract include paths from make output"
+msgstr "Nepodarilo sa získať cesty vloženia z výstupu make"
+
+#: includepathresolver.cpp:888
+#, kde-format
+msgid "Folder: \"%1\"  Command: \"%2\"  Output: \"%3\""
+msgstr "Priečinok: \"%1\"  Príkaz: \"%2\"  výstup: \"%3\""
+
+#. i18n: ectx: Menu (navigation)
+#: kdevcppsupport.rc:5
+msgctxt "@title:menu"
+msgid "Navigation"
+msgstr "Navigácia"
+
+#. i18n: ectx: Menu (code)
+#: kdevcppsupport.rc:9
+msgctxt "@title:menu"
+msgid "Code"
+msgstr "Kód"
+
+#: parser/headergen/main.cpp:240
+msgid "KDE forwarding header generator"
+msgstr "Dopredný hlavičkový generátor KDE"
+
+#: parser/headergen/main.cpp:241
+msgid ""
+"An application which creates forwarding headers (like Qt headers) from "
+"source code."
+msgstr ""
+"Aplikácie, ktoré tvoria dopredné hlavičky (ako hlavičky Qt) zo zdrojového "
+"kódu."
+
+#: parser/headergen/main.cpp:242
+msgid "(c) 2006, Hamish Rodda"
+msgstr "(c) 2006, Hamish Rodda"
+
+#: parser/headergen/main.cpp:247
+msgid ""
+"KDE include directory - headers go into <placeholder>includes</placeholder>/"
+"KDE"
+msgstr ""
+"adresár vloženia KDE - hlavičky idú do <placeholder>includes</placeholder>/"
+"KDE"
+
+#: parser/headergen/main.cpp:248
+msgid "Build information from the cmake XML generator"
+msgstr "Informácia zostavenia z generátora cmake XML"
+
+#: parser/lexer.cpp:1106
+#, kde-format
+msgid "invalid input: %1"
+msgstr "neplatný vstup: %1"
+
+#: parser/rpp/pp-engine.cpp:165
+msgid "invalid include directive"
+msgstr "neplatná direktíva vkladania"
+
+#: parser/rpp/pp-engine.cpp:301
+msgid "Unterminated #if statement"
+msgstr "Neukončený #if výraz"
+
+#: parser/rpp/pp-engine.cpp:501 parser/rpp/pp-engine.cpp:519
+#: parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "character %1"
+msgstr "znak %1"
+
+#: parser/rpp/pp-engine.cpp:501
+#, kde-format
+msgid "Expected \"identifier\", found: %1"
+msgstr "Očakávaný \"identifikátor\", nájdené: %1"
+
+#: parser/rpp/pp-engine.cpp:502 parser/rpp/pp-engine.cpp:520
+#: parser/rpp/pp-engine.cpp:556
+#, kde-format
+msgid "<h5>Token text</h5><pre>%1</pre><h5>Input</h5><pre>%2</pre>"
+msgstr "<h5>Token text</h5><pre>%1</pre><h5>Input</h5><pre>%2</pre>"
+
+#: parser/rpp/pp-engine.cpp:519 parser/rpp/pp-engine.cpp:555
+#, kde-format
+msgid "Expected \")\", found %1"
+msgstr "Očakáva sa \")\", našlo sa %1"
+
+#: parser/rpp/pp-engine.cpp:591 parser/rpp/pp-engine.cpp:604
+msgid "Division by zero"
+msgstr "Delenie nulou"
+
+#: parser/rpp/pp-engine.cpp:592 parser/rpp/pp-engine.cpp:605
+#, kde-format
+msgid "Input text: %1"
+msgstr "Vstupný text: %1"
+
+#: parser/rpp/pp-engine.cpp:842
+#, kde-format
+msgid "expected ``:'' = %1"
+msgstr "očakávané ``:'' = %1"
+
+#: parser/rpp/pp-engine.cpp:906 parser/rpp/pp-engine.cpp:931
+msgid "#else without #if"
+msgstr "#else bez #if"
+
+#: parser/rpp/pp-engine.cpp:969
+#, kde-format
+msgid "#endif without #if at output line %1"
+msgstr "#endif bez #if na výstupnom riadku %1"
+
+#: parser/rpp/pp-engine.cpp:1204
+msgid "Invalid suffix combination"
+msgstr "Neplatná kombinácia prípony"
+
+#: parser/rpp/pp-engine.cpp:1220
+msgid "Invalid numeric value"
+msgstr "Neplatná číselná hodnota"
+
+#: parser/rpp/pp-macro-expander.cpp:102
+msgid "Macro error"
+msgstr "Chyba makra"
+
+#: parser/rpp/pp-macro-expander.cpp:115
+#, kde-format
+msgid "Call to macro %1 missing argument number %2"
+msgstr "Volanie makra %1 s chýbajúcim argumentom číslo %2"
+
+#: parser/rpp/pp-macro-expander.cpp:116
+#, kde-format
+msgid "Formals: %1"
+msgstr "Formálne: %1"
+
+#: preprocessjob.cpp:464
+#, kde-format
+msgid "File was included recursively from within itself: %1"
+msgstr "Súbor bol vložený rekurzívne zvnútra seba samého: %1"
+
+#: preprocessjob.cpp:606
+#, kde-format
+msgid "Included file was not found: %1"
+msgstr "Vložený súbor sa nenašiel: %1"
+
+#: preprocessjob.cpp:607
+#, kde-format
+msgid ""
+"Searched include path:\n"
+"%1"
+msgstr ""
+"Prehľadaná cesta vloženia:\n"
+"%1"
+
+#: quickopen.cpp:161
+msgid "This file imports the current open document<br/>"
+msgstr "Tento súbor importuje práve otvorený dokument<br/>"
+
+#: quickopen.cpp:166
+#, kde-format
+msgid "In include path %1"
+msgstr "V ceste vloženia %1"
+
+#: quickopen.cpp:170
+#, kde-format
+msgid "Included through %1 <br/>"
+msgstr "Vložené cez %1 <br/>"
+
+#: quickopen.cpp:180
+#, kde-format
+msgid "Directory %1"
+msgstr "Adresár %1"
+
+#: quickopen.cpp:183
+#, kde-format
+msgid "In %1th include path"
+msgstr "V %1. ceste vloženia"
+
+#: quickopen.cpp:408 quickopen.cpp:415
+msgid "Includes"
+msgstr "Vkladá"
+
+#: quickopen.cpp:409 quickopen.cpp:416
+msgid "Include Path"
+msgstr "Cesta vloženia"
+
+#: quickopen.cpp:410 quickopen.cpp:417
+msgid "Includers"
+msgstr "Vkladač"

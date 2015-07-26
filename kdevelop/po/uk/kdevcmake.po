@@ -1,0 +1,359 @@
+# translation of kdevcmake.po to Ukrainian
+# Copyright (C) 2008-2013 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevcmake\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-08-09 05:44+0000\n"
+"PO-Revision-Date: 2014-06-26 18:45+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: cmakebuilddirchooser.cpp:62
+msgid "Configure a build directory"
+msgstr "Налаштувати параметри каталогу збирання"
+
+#: cmakebuilddirchooser.cpp:104
+#, kde-format
+msgid "Configure a build directory for %1"
+msgstr "Налаштувати параметри каталогу збирання для %1"
+
+#: cmakebuilddirchooser.cpp:147
+msgid "You need to select a cmake binary."
+msgstr "Вам слід вказати виконуваний файл cmake."
+
+#: cmakebuilddirchooser.cpp:190
+msgid "You need to specify a build directory."
+msgstr "Вам слід вказати каталог збирання."
+
+#: cmakebuilddirchooser.cpp:197
+msgid "Using an already created build directory."
+msgstr "Використання вже створеного каталогу збирання."
+
+#: cmakebuilddirchooser.cpp:208
+msgid "Creating a new build directory."
+msgstr "Створення нового каталогу збирання."
+
+#: cmakebuilddirchooser.cpp:214
+msgid "Build directory already configured."
+msgstr "Каталог збирання вже налаштовано."
+
+#: cmakebuilddirchooser.cpp:216
+#, kde-format
+msgid "This build directory is for %1, but the project directory is %2."
+msgstr "Цей каталог збирання належить %1, але каталог проекту — це %2."
+
+#: cmakebuilddirchooser.cpp:219
+msgid "You may not select a relative build directory."
+msgstr "Не можна вказувати відносну адресу каталогу збирання."
+
+#: cmakebuilddirchooser.cpp:221
+msgid "The selected build directory is not empty."
+msgstr "Вибраний каталог збирання не є порожнім."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: cmakebuilddirchooser.ui:26
+msgid "CMake &Binary:"
+msgstr "Ви&конуваний файл CMake:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: cmakebuilddirchooser.ui:49
+msgid "&Build Directory:"
+msgstr "Каталог &збирання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakebuilddirchooser.ui:65
+msgid "&Installation Prefix:"
+msgstr "Пре&фікс теки встановлення:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: cmakebuilddirchooser.ui:88
+msgid "Build &type:"
+msgstr "&Тип збирання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: cmakebuilddirchooser.ui:154
+msgid "Extra Arguments:"
+msgstr "Додаткові параметри:"
+
+#: cmakecodecompletionmodel.cpp:195
+msgid "INVALID"
+msgstr "НЕКОРЕКТНО"
+
+#: cmakecodecompletionmodel.cpp:203
+msgid "Command"
+msgstr "Команда"
+
+#: cmakecodecompletionmodel.cpp:204
+msgid "Variable"
+msgstr "Змінна"
+
+#: cmakecodecompletionmodel.cpp:205
+msgid "Macro"
+msgstr "Макрос"
+
+#: cmakecodecompletionmodel.cpp:206
+msgid "Path"
+msgstr "Шлях"
+
+#: cmakecodecompletionmodel.cpp:207
+msgid "Target"
+msgstr "Призначення"
+
+#: cmakecodecompletionmodel.cpp:249
+msgid "wrong"
+msgstr "помилкове"
+
+#: cmakedocumentation.cpp:43
+msgid "CMake Documentation"
+msgstr "Документація CMake"
+
+#: cmakedocumentation.cpp:43
+msgid "Support for CMake documentation"
+msgstr "Підтримка документації CMake"
+
+#: cmakedocumentation.cpp:71 cmakemanager.cpp:118
+msgid "cmake is not installed"
+msgstr "cmake не встановлено"
+
+#: cmakedocumentation.cpp:141
+#, kde-format
+msgid "<br /><em>Cache Value:</em> %1\n"
+msgstr "<br /><em>Розмір кешу:</em> %1\n"
+
+#: cmakedocumentation.cpp:144
+#, kde-format
+msgid "<br /><em>Cache Documentation:</em> %1\n"
+msgstr "<br /><em>Кеш документації:</em> %1\n"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Commands"
+msgstr "Команди"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Variables"
+msgstr "Змінні"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Modules"
+msgstr "Модулі"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Properties"
+msgstr "Властивості"
+
+#: cmakehelpdocumentation.cpp:33
+msgid "Policies"
+msgstr "Правила"
+
+#: cmakehelpdocumentation.cpp:42
+msgid "CMake Content Page"
+msgstr "Сторінка вмісту CMake"
+
+#: cmakemanager.cpp:82
+msgid "CMake Manager"
+msgstr "Інструмент керування CMake"
+
+#: cmakemanager.cpp:82
+msgid "Support for managing CMake projects"
+msgstr "Підтримка керування проектами CMake"
+
+#: cmakemanager.cpp:84
+msgid "KDevelop - CMake Support"
+msgstr "KDevelop — Підтримка CMake"
+
+#: cmakemanager.cpp:462
+msgid "Jump to Target Definition"
+msgstr "Перейти до визначення цілі"
+
+#: cmakemanager.cpp:497
+msgid "Move files and folders within CMakeLists as follows:"
+msgstr "Пересування файлів і тек у CMakeLists таким чином:"
+
+#: cmakemanager.cpp:536
+msgid "Changes to CMakeLists failed, abort move?"
+msgstr "Не вдалося внести зміни до CMakeLists, перервати пересування?"
+
+#: cmakemanager.cpp:591
+msgid "Remove files and folders from CMakeLists as follows:"
+msgstr "Вилучити записи файлів і тек з CMakeList таким чином:"
+
+#: cmakemanager.cpp:601
+msgid "Changes to CMakeLists failed, abort deletion?"
+msgstr "Не вдалося внести зміни до CMakeLists, перервати вилучення?"
+
+#: cmakemanager.cpp:622
+msgid "Modify project targets as follows:"
+msgstr "Зміна цілі збирання проекту таким чином:"
+
+#: cmakemanager.cpp:643
+#, kde-format
+msgid "Create folder '%1':"
+msgstr "Створення теки з назвою «%1»:"
+
+#: cmakemanager.cpp:654
+msgid "Could not save the change."
+msgstr "Не вдалося виконати запис файла проекту."
+
+#: cmakemanager.cpp:702
+#, kde-format
+msgid "Modify target '%1' as follows:"
+msgstr "Змінити ціль «%1» таким чином:"
+
+#: cmakemanager.cpp:709
+msgid "CMakeLists changes failed."
+msgstr "Спроба внесення змін до CMakeLists зазнала невдачі."
+
+#: cmakemanager.cpp:721
+#, kde-format
+msgid "Rename '%1' to '%2':"
+msgstr "Перейменування «%1» на «%2»:"
+
+#: cmakemanager.cpp:748
+msgid "Changes to CMakeLists failed, abort rename?"
+msgstr "Не вдалося внести зміни до CMakeLists, перервати перейменування?"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: cmakepossibleroots.ui:16
+msgid ""
+"KDevelop has found several possible root directories for your project, "
+"please select the correct one."
+msgstr ""
+"Програма KDevelop виявила декілька можливих кореневих каталогів вашого "
+"проекту, будь ласка, оберіть з них правильний."
+
+#: parser/cmakeprojectvisitor.cpp:2375
+#, kde-format
+msgid "%1 is a deprecated command and should not be used"
+msgstr "%1 є застарілою командою, вам не слід нею користуватися"
+
+#: parser/cmakeprojectvisitor.cpp:2393
+msgid "Unfinished function. "
+msgstr "Незавершена функція."
+
+#. i18n: ectx: property (text), widget (QPushButton, addBuildDir)
+#: settings/cmakebuildsettings.ui:34
+msgid "Add"
+msgstr "Додати"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeBuildDir)
+#: settings/cmakebuildsettings.ui:47
+msgid "Remove"
+msgstr "Вилучити"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: settings/cmakebuildsettings.ui:56
+msgid "Cache Values"
+msgstr "Значення кешу"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: settings/cmakebuildsettings.ui:71
+msgid "Comment:"
+msgstr "Коментар:"
+
+#. i18n: ectx: property (text), widget (QPushButton, showAdvanced)
+#: settings/cmakebuildsettings.ui:88
+msgid "Show Advanced"
+msgstr "Показувати додаткові"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advancedBox)
+#: settings/cmakebuildsettings.ui:107 settings/cmakecachemodel.cpp:53
+msgid "Advanced"
+msgstr "Додатково"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settings/cmakebuildsettings.ui:116
+msgid "Configure Environment"
+msgstr "Налаштування середовища"
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, environment)
+#: settings/cmakebuildsettings.ui:131
+msgid "Select an environment to be used"
+msgstr "Виберіть середовище, яке буде використано"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showInternal)
+#: settings/cmakebuildsettings.ui:143
+msgid "Show Advanced Values"
+msgstr "Показувати додаткові значення"
+
+#: settings/cmakecachemodel.cpp:49
+msgid "Name"
+msgstr "Назва"
+
+#: settings/cmakecachemodel.cpp:50
+msgid "Type"
+msgstr "Тип"
+
+#: settings/cmakecachemodel.cpp:51
+msgid "Value"
+msgstr "Значення"
+
+#: settings/cmakecachemodel.cpp:52
+msgid "Comment"
+msgstr "Коментар"
+
+#: settings/cmakepreferences.cpp:148
+#, kde-format
+msgid ""
+"Could not write CMake settings to file '%1'.\n"
+"Check that you have write access to it"
+msgstr ""
+"Не вдалося записати значення параметрів CMake до файла «%1».\n"
+"Перевірте, чи є у вас доступ на запис до цього файла."
+
+#: settings/cmakepreferences.cpp:326
+#, kde-format
+msgid ""
+"The %1 directory is about to be removed in KDevelop's list.\n"
+"Do you want KDevelop to remove it in the file system as well?"
+msgstr ""
+"Зараз зі списку KDevelop буде вилучено каталог %1.\n"
+"Чи бажаєте ви, щоб KDevelop вилучив цей каталог і з файлової системи?"
+
+#: settings/cmakepreferences.cpp:332
+#, kde-format
+msgid "Could not remove: %1.\n"
+msgstr "Не вдалося вилучити: %1\n"
+
+#: testing/ctestfindjob.cpp:38
+#, kde-format
+msgid "Parse test suite %1"
+msgstr "Обробка комплексу для перевірки %1"
+
+#: testing/ctestrunjob.cpp:93
+msgid "CTest"
+msgstr "CTest"
+
+#: testing/ctestrunjob.cpp:131
+#, kde-format
+msgctxt "running test %1, %2 test case"
+msgid "CTest %1: %2"
+msgstr "CTest %1: %2"
+
+#: testing/ctestrunjob.cpp:133
+#, kde-format
+msgctxt "running test %1, %2 number of test cases"
+msgid "CTest %2 (%1)"
+msgid_plural "CTest %2 (%1)"
+msgstr[0] "CTest %2 (%1)"
+msgstr[1] "CTest %2 (%1)"
+msgstr[2] "CTest %2 (%1)"
+msgstr[3] "CTest %2 (%1)"

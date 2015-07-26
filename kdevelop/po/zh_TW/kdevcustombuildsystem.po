@@ -1,0 +1,262 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2013-02-04 18:15+0800\n"
+"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"Language-Team: Chinese Traditional <kde-tw@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frank Weng (a.k.a. Franklin)"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "franklin at goodhorse dot idv dot tw"
+
+#: configwidget.cpp:40
+msgid "Build"
+msgstr "編譯"
+
+#: configwidget.cpp:41
+msgid "Configure"
+msgstr "設定"
+
+#: configwidget.cpp:42
+msgid "Install"
+msgstr "安裝"
+
+#: configwidget.cpp:43
+msgid "Clean"
+msgstr "清除"
+
+#: configwidget.cpp:44
+msgid "Prune"
+msgstr "徹底移除"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: configwidget.ui:19
+msgid "Build Directory:"
+msgstr "編譯目錄："
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, buildDir)
+#: configwidget.ui:27
+msgid ""
+"Select the directory where the tools are being executed in.\n"
+"If this is the same as the source directory you can leave it empty."
+msgstr ""
+"選擇工具要執行於哪個目錄中。\n"
+"若是與源碼目錄相同，您可以不用輸入。"
+
+#. i18n: ectx: property (clickMessage), widget (KUrlRequester, buildDir)
+#: configwidget.ui:33
+msgid "The directory where the tools are executed"
+msgstr "工具要執行的目錄"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configwidget.ui:45
+msgid "Build Tools"
+msgstr "編譯工具"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configwidget.ui:51
+msgid "Action:"
+msgstr "動作："
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: configwidget.ui:61
+msgid "Enable:"
+msgstr "開啟："
+
+#. i18n: ectx: property (text), widget (QLabel, execLabel)
+#: configwidget.ui:78
+msgid "Executable:"
+msgstr "執行檔："
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, actionExecutable)
+#: configwidget.ui:88
+msgid ""
+"This is the executable that should be executed when selecting the action "
+"from the Project menu"
+msgstr "這是從專案選單中選擇動作時要執行的執行檔"
+
+#. i18n: ectx: property (text), widget (QLabel, argLabel)
+#: configwidget.ui:98
+msgid "Arguments:"
+msgstr "引數："
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, actionArguments)
+#: configwidget.ui:108
+msgid "The arguments that the tool needs to execute properly."
+msgstr "執行此工具時需要的引數。"
+
+#. i18n: ectx: property (text), widget (QLabel, envLabel)
+#: configwidget.ui:118
+msgid "Environment:"
+msgstr "環境："
+
+#. i18n: ectx: property (toolTip), widget (KDevelop::EnvironmentSelectionWidget, actionEnvironment)
+#: configwidget.ui:128
+msgid "Choose a pre-configured environment for your tool"
+msgstr "選擇您的工具的預組態環境"
+
+#: custombuildjob.cpp:50
+msgid "Building:"
+msgstr "編譯："
+
+#: custombuildjob.cpp:54
+msgid "Cleaning:"
+msgstr "清除："
+
+#: custombuildjob.cpp:58
+msgid "Installing:"
+msgstr "安裝："
+
+#: custombuildjob.cpp:62
+msgid "Configuring:"
+msgstr "組態："
+
+#: custombuildjob.cpp:66
+msgid "Pruning:"
+msgstr "徹底清除："
+
+#: custombuildjob.cpp:90
+msgid "Undefined Build type"
+msgstr "未定義的編譯型態："
+
+#: custombuildjob.cpp:94
+msgid "No command given"
+msgstr "沒有給定指令"
+
+#: custombuildjob.cpp:98
+msgid "This command is disabled"
+msgstr "此指令已關閉"
+
+#: custombuildjob.cpp:109
+msgid ""
+"The given arguments would need a real shell, this is not supported currently."
+msgstr "指定的參數需要用 shell 執行，目前尚未支援。"
+
+#: custombuildjob.cpp:154
+msgid "Failed to start command."
+msgstr "啟動指令失敗。"
+
+#: custombuildjob.cpp:157
+msgid "Command crashed."
+msgstr "指令已崩潰。"
+
+#: custombuildjob.cpp:160
+msgid "Unknown error executing command."
+msgstr "處理指令時發生未知的錯誤。"
+
+#: custombuildjob.cpp:177
+msgid "*** Failed ***"
+msgstr "*** 已失敗 ***"
+
+#: custombuildjob.cpp:179
+msgid "*** Finished ***"
+msgstr "*** 已完成 ***"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: custombuildsystemconfigwidget.ui:19
+msgid "Build Configuration:"
+msgstr "編譯組態："
+
+#. i18n: ectx: property (text), widget (KPushButton, addConfig)
+#: custombuildsystemconfigwidget.ui:42
+msgid "Add"
+msgstr "新增"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeConfig)
+#: custombuildsystemconfigwidget.ui:49
+msgid "Remove"
+msgstr "移除"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Custom Build System"
+msgstr "自訂編譯系統"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Support for building and managing custom build systems"
+msgstr "支援建立與管理自訂編譯系統"
+
+#: custombuildsystemplugin.cpp:53
+msgid "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+msgstr "Copyright 2010 Andreas Pakulat <apaku@gmx.de>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#, fuzzy
+
+
+
+
+#, fuzzy

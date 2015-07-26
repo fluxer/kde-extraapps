@@ -1,0 +1,209 @@
+# translation of kdevappwizard.po to Français
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Joëlle Cornavin <jcorn@free.fr>, 2008, 2009.
+# Joëlle Cornavin <jcorn@free.fr>, 2010, 2013.
+# xavier <xavier.besnard@neuf.fr>, 2013.
+# Vincent PINON <vpinon@april.org>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevappwizard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-09-02 17:14+0200\n"
+"Last-Translator: Vincent PINON <vpinon@april.org>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr"
+
+#: appwizarddialog.cpp:27
+msgid "Create New Project"
+msgstr "Créer un nouveau projet"
+
+#: appwizarddialog.cpp:35
+msgctxt "Page for general configuration options"
+msgid "General"
+msgstr "Général"
+
+#: appwizarddialog.cpp:37
+msgctxt "Page for version control options"
+msgid "Version Control"
+msgstr "Contrôle de versions"
+
+#: appwizardplugin.cpp:70
+msgid "Project Wizard"
+msgstr "Assistant de projet"
+
+#: appwizardplugin.cpp:70
+msgid "Support for creating and importing projects"
+msgstr "Prise en charge de la création et de l'importation de projets"
+
+#: appwizardplugin.cpp:81
+msgid "New From Template..."
+msgstr "Créer partir d'un modèle..."
+
+#: appwizardplugin.cpp:83
+msgid "Generate a new project from a template"
+msgstr "Génère un nouveau projet à partir d'un modèle"
+
+#: appwizardplugin.cpp:84
+msgid ""
+"This starts KDevelop's application wizard. It helps you to generate a "
+"skeleton for your application from a set of templates."
+msgstr ""
+"Cette commande démarre l'assistant d'applications de KDevelop. Il vous "
+"aidera dans la génération d'un squelette pour votre application à partir "
+"d'un ensemble de modèles."
+
+#: appwizardplugin.cpp:114
+msgid "Could not create project from template\n"
+msgstr "Impossible de créer le projet à partir d'un modèle\n"
+
+#: appwizardplugin.cpp:114
+msgid "Failed to create project"
+msgstr "Impossible de créer le projet"
+
+#: appwizardplugin.cpp:140
+msgid "Please see the Version Control toolview"
+msgstr "Veuillez voir l'affichage de l'outil de contrôle de versions"
+
+#: appwizardplugin.cpp:142
+msgid "Version Control System Error"
+msgstr "Erreur du système de contrôle de versions"
+
+#: appwizardplugin.cpp:158
+msgid "Could not initialize DVCS repository"
+msgstr "Impossible d'initialiser le dépôt « DVCS »"
+
+#: appwizardplugin.cpp:166
+msgid "Could not add files to the DVCS repository"
+msgstr "Impossible d'ajouter des fichiers au dépôt « DVCS »"
+
+#: appwizardplugin.cpp:173
+#, kde-format
+msgid "Could not import project into %1."
+msgstr "Impossible d'importer le projet dans %1."
+
+#: appwizardplugin.cpp:190
+msgid "Could not import project"
+msgstr "Impossible d'importer un projet"
+
+#: appwizardplugin.cpp:198
+msgid "Could not checkout imported project"
+msgstr "Impossible d'extraire un projet importé"
+
+#: appwizardplugin.cpp:280
+msgid "Could not create new project"
+msgstr "Impossible de créer un nouveau projet"
+
+#: appwizardplugin.cpp:406
+#, kde-format
+msgid "The file %1 cannot be created."
+msgstr "Impossible de créer le fichier %1."
+
+#: appwizardplugin.cpp:500
+msgid "Project Templates"
+msgstr "Modèles de projets"
+
+#. i18n: ectx: Menu (project)
+#: kdevappwizard.rc:5
+msgctxt "@title:menu"
+msgid "Project"
+msgstr "Projet"
+
+#: projectselectionpage.cpp:57
+msgid "Category"
+msgstr "Catégorie"
+
+#: projectselectionpage.cpp:57
+msgid "Project Type"
+msgstr "Type de projet"
+
+#: projectselectionpage.cpp:68
+msgid "Get More Templates"
+msgstr "Obtenir plus de modèles"
+
+#: projectselectionpage.cpp:74
+msgid "Load Template From File"
+msgstr "Charger un modèle depuis un fichier"
+
+#: projectselectionpage.cpp:182
+msgid "Invalid location"
+msgstr "Emplacement non valable"
+
+#: projectselectionpage.cpp:190
+msgid "Empty project name"
+msgstr "Nom de projet vide"
+
+#: projectselectionpage.cpp:212
+msgid "Invalid project name"
+msgstr "Nom de projet non valable"
+
+#: projectselectionpage.cpp:231
+#, kde-format
+msgid "Unable to create subdirectories, missing permissions on: %1"
+msgstr ""
+"Impossible de créer des sous-dossiers, les droits d'accès sont manquants "
+"sur : %1"
+
+#: projectselectionpage.cpp:247
+msgid "Invalid project template, please choose a leaf item"
+msgstr "Modèle de projet non valable. Veuillez choisir un élément final."
+
+#: projectselectionpage.cpp:260
+msgid "Path already exists and contains files"
+msgstr "L'emplacement existe déjà et contient des fichiers"
+
+#: projectselectionpage.cpp:303
+msgid ""
+"The specified path already exists and contains files. Are you sure you want "
+"to proceed?"
+msgstr ""
+"L'emplacement spécifié existe déjà et contient des fichiers. Voulez-vous "
+"vraiment continuer ?"
+
+#. i18n: ectx: property (title), widget (QGroupBox, propertiesBox)
+#: projectselectionpage.ui:26
+msgid "Properties"
+msgstr "Propriétés"
+
+#. i18n: ectx: property (text), widget (QLabel, appNameLabel)
+#: projectselectionpage.ui:32
+msgid "Application Name:"
+msgstr "Nom de l'application :"
+
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: projectselectionpage.ui:42
+msgid "Location:"
+msgstr "Emplacement :"
+
+#. i18n: ectx: property (text), widget (KSqueezedTextLabel, locationValidLabel)
+#: projectselectionpage.ui:52
+msgid "KSqueezedTextLabel"
+msgstr "Étiquette de texte KSqueezed"
+
+#: projectvcspage.cpp:42
+msgctxt "No Version Control Support chosen"
+msgid "None"
+msgstr "Aucun"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: projectvcspage.ui:18
+msgid "Version Control System:"
+msgstr "Système de contrôle de versions :"

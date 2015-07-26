@@ -1,0 +1,67 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Frederik Schwarzer <schwarzer@kde.org>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-07-12 10:21+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Frederik Schwarzer"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "schwarzer@kde.org"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: appletselector.ui:17
+msgid "Select what widgets you want to have:"
+msgstr "Wählen Sie die gewünschten Miniprogramme aus:"
+
+#: dashboard.cpp:122
+msgid "Background"
+msgstr "Hintergrund"
+
+#: dashboardcorona.cpp:75
+msgctxt "@action"
+msgid "Share"
+msgstr "Freigeben"
+
+#: kdevprojectdashboard.cpp:35
+msgid "Project Dashboard"
+msgstr "Projekt-Dashboard"
+
+#: kdevprojectdashboard.cpp:36
+msgid ""
+"This plugin shows relevant information of some project when it's invoked"
+msgstr "Diese Modul zeigt wichtige Informationen für Projekte"
+
+#: kdevprojectdashboard.cpp:80
+msgid "Show Dashboard"
+msgstr "Dashboard anzeigen"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: plasmoids/projectfileplasmoid/config.ui:17
+msgid "Relative Path:"
+msgstr "Relativer Pfad:"
+
+#: plasmoids/projectfileplasmoid/projectfileelement.cpp:76
+#, kde-format
+msgid "Project File: %1"
+msgstr "Projektdatei: %1"
+
+#: plasmoids/projectfileplasmoid/projectfileelement.cpp:96
+msgid "File"
+msgstr "Datei"

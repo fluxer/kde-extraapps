@@ -1,0 +1,174 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-06-29 09:36+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#: filtermodel.cpp:90
+msgid "Pattern"
+msgstr "Wzorzec"
+
+#: filtermodel.cpp:92
+msgid "Targets"
+msgstr "Cele"
+
+#: filtermodel.cpp:94
+msgid "Action"
+msgstr "Działanie"
+
+#: filtermodel.cpp:123
+msgid ""
+"The wildcard pattern defines whether a file or folder is included in a "
+"project or not.<br />The pattern is matched case-sensitively against the "
+"items relative path to the project root. The relative path starts with a "
+"forward slash, trailing slashes of folders are removed.<br />Patterns ending "
+"on <code>\"/\"</code> are implicitly considered to match against folders "
+"only.<br />Patterns which do not explicitly start with either <code>\"/\"</"
+"code> or <code>\"*\"</code> implicitly get <code>\"*/\"</code> prepended and "
+"thus match any item with a relative path ending on the given pattern."
+msgstr ""
+"Wzorzec z symbolami wieloznacznymi określa czy plik lub katalog jest czy nie "
+"jest uwzględniany w projekcie.<br />Wzorzec jest dopasowywany z "
+"uwzględnieniem wielkości liter do ścieżki względnej elementu względem "
+"ścieżki katalogu głównego projektu. Ścieżka względna zaczyna się od "
+"ukośnika, końcowe ukośniki katalogów zostają usunięte.<br />Wzorce kończące "
+"się na <code>\"/\"</code> traktuje się jednoznacznie jako te, które "
+"dopasowują się tylko do katalogów.<br /> Wzorce, które nie zaczynają "
+"się jednoznacznie od <code>\"/\"</code> lub <code>\"*\"</code> zostają "
+"jednoznacznie poprzedzone <code>\"*/\"</code> i przez to dopasowują się do "
+"każdej pozycji zakończonej ścieżką względną kończącą się danym wzorcem."
+
+#: filtermodel.cpp:135
+msgid ""
+"The target defines what type of item the filter is matched against.<br /"
+">Filters either apply only to files, only to folders or to both."
+msgstr ""
+"Cel określa z jakim rodzajem elementu jest porównywany filtr.<br />Filtry "
+"stosują się albo tylko do plików, tylko do katalogów lub do obu."
+
+#: filtermodel.cpp:141 projectfilterkcm.cpp:67
+msgid "Files and Folders"
+msgstr "Pliki i katalogi"
+
+#: filtermodel.cpp:146 projectfilterkcm.cpp:66
+msgid "Folders"
+msgstr "Katalogi"
+
+#: filtermodel.cpp:151 projectfilterkcm.cpp:65
+msgid "Files"
+msgstr "Pliki"
+
+#: filtermodel.cpp:157
+msgid ""
+"Filters by default exclude items from the project. Inclusive patterns can be "
+"used to include items which where matched by previous exclusive patterns."
+"<br />E.g. to only include files ending on <code>\".cpp\"</code> in your "
+"project, you could exclude all files via <code>\"*\"</code> and then apply "
+"an inclusive <code>\"*.cpp\"</code> pattern."
+msgstr ""
+"Filtry domyślnie wykluczają elementy z projektu. Wzorce uwzględniające "
+"mogą zostać użyte, aby uwzględnić elementy, które został dopasowane przez "
+"poprzednie wykluczające wzorce.<br />Np. aby w twoim projekcie uwzględnić "
+"tylko pliki kończące się na <code>\".cpp\"</code>, możesz wyodrębnić pliki "
+"przez <code>\"*\"</code> a następnie zastosować wzorzec uwzględniający <code>"
+"\"*.cpp\"</code>."
+
+#: filtermodel.cpp:163 projectfilterkcm.cpp:72
+msgid "Include"
+msgstr "Uwzględnij"
+
+#: filtermodel.cpp:168 projectfilterkcm.cpp:71
+msgid "Exclude"
+msgstr "Wyklucz"
+
+#: projectfilterkcm.cpp:195
+msgid ""
+"A filter with an empty pattern will match all items. Use <code>\"*\"</code> "
+"to make this explicit."
+msgstr ""
+"Filtr z pustym wzorcem dopasuje się do wszystkich elementów. Użyj <code>\"*"
+"\"</code>, aby określić to jednoznacznie."
+
+#: projectfilterkcm.cpp:198
+msgid "A filter ending on <code>\"/\"</code> can never match a file."
+msgstr ""
+"Filtr kończący się na <code>\"/\"</code> nigdy nie dopasuje się do pliku."
+
+#: projectfilterprovider.cpp:47
+msgid "Project Filter"
+msgstr "Filtr projektu"
+
+#: projectfilterprovider.cpp:48
+msgid ""
+"Configure which files and folders inside the project folder should be "
+"included or excluded."
+msgstr ""
+"Ustaw jakie pliki i katalogi wewnątrz katalogu projektu mają być "
+"uwzględniane albo wykluczane."
+
+#: projectfilterprovider.cpp:95
+msgid "Exclude Item From Project"
+msgid_plural "Exclude Items From Project"
+msgstr[0] "Wyklucz element z projektu"
+msgstr[1] "Wyklucz elementy z projektu"
+msgstr[2] "Wyklucz elementy z projektu"
+
+#: projectfilterprovider.cpp:133
+msgid ""
+"A filter for the item was added. To undo, use the project filter settings."
+msgid_plural ""
+"A filter for the items was added. To undo, use the project filter settings."
+msgstr[0] ""
+"Filtr dla elementu został dodany. Aby cofnąć, użyj ustawień filtra projektu."
+msgstr[1] ""
+"Filtry dla elementów zostały dodane. Aby cofnąć, użyj ustawień filtra "
+"projektu."
+msgstr[2] ""
+"Filtry dla elementów zostały dodane. Aby cofnąć, użyj ustawień filtra "
+"projektu."
+
+#: projectfilterprovider.cpp:135
+msgid "Project Filter Added"
+msgstr "Dodano filtr projektu"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: projectfiltersettings.ui:31
+msgid "Add"
+msgstr "Dodaj"
+
+#. i18n: ectx: property (text), widget (QPushButton, remove)
+#: projectfiltersettings.ui:46
+msgid "Remove"
+msgstr "Usuń"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveUp)
+#: projectfiltersettings.ui:58
+msgid "Move Up"
+msgstr "Przesuń w górę"
+
+#. i18n: ectx: property (text), widget (QPushButton, moveDown)
+#: projectfiltersettings.ui:70
+msgid "Move Down"
+msgstr "Przesuń w dół"

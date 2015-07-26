@@ -1,0 +1,323 @@
+# Translation of kdevsnippet.po to Catalan
+# Copyright (C) 2009-2014 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009, 2010.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2010, 2011, 2012, 2014.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevsnippet\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-11-07 05:06+0000\n"
+"PO-Revision-Date: 2014-11-16 13:34+0100\n"
+"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manuel Tortosa"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "manutortosa@gmail.com"
+
+#: legacy/editrepository.cpp:75 legacy/editrepository.cpp:117
+#, kde-format
+msgid "Edit Snippet Repository %1"
+msgstr "Edita el repositori de retalls %1"
+
+#: legacy/editrepository.cpp:77
+msgid "Create New Snippet Repository"
+msgstr "Crea un repositori nou de retalls"
+
+#: legacy/editrepository.cpp:127
+msgid "<i>leave empty for general purpose snippets</i>"
+msgstr "<i>Deixeu-ho buit per a retalls d'ús general</i>"
+
+#. i18n: ectx: property (text), widget (QLabel, repoNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, snippetName)
+#: legacy/editrepository.ui:29 legacy/editsnippet.ui:41
+msgid "&Name:"
+msgstr "&Nom:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, repoNameEdit)
+#: legacy/editrepository.ui:39
+msgid ""
+"The name of the repository. Must not be empty or contain forward slashes (/)."
+msgstr ""
+"El nom del repositori. No ha de ser buit o contenir barres inverses (/)."
+
+#. i18n: ectx: property (text), widget (QLabel, repoNamespaceLabel)
+#: legacy/editrepository.ui:46
+msgid "Na&mespace:"
+msgstr "Espai de no&ms:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, repoNamespaceEdit)
+#: legacy/editrepository.ui:57
+msgid ""
+"<p>If non-empty this will be used as a prefix for all snippets in this "
+"repository during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Si no és buit, s'utilitzarà com a prefix per a tots els retalls en aquest "
+"repositori durant la compleció de codi.</p>\n"
+"<p><b>Nota:</b> No es permeten espais.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, repoLicenseLabel)
+#: legacy/editrepository.ui:64
+msgid "&License:"
+msgstr "&Llicència:"
+
+#. i18n: ectx: property (text), widget (QLabel, repoAuthorsLabel)
+#: legacy/editrepository.ui:77
+msgid "&Authors:"
+msgstr "&Autors:"
+
+#. i18n: ectx: property (text), widget (QLabel, repoFileTypesLabel)
+#: legacy/editrepository.ui:90
+msgid "&File types:"
+msgstr "Tipus de &fitxers:"
+
+#: legacy/editsnippet.cpp:51
+msgid "Show Documentation"
+msgstr "Mostra la documentació"
+
+#: legacy/editsnippet.cpp:104 legacy/editsnippet.cpp:184
+#, kde-format
+msgid "Edit Snippet %1 in %2"
+msgstr "Edita el retall %1 a %2"
+
+#: legacy/editsnippet.cpp:117
+#, kde-format
+msgid "Create New Snippet in Repository %1"
+msgstr "Crea un retall nou en el repositori %1"
+
+#: legacy/editsnippet.cpp:149
+msgid "Snippet name cannot contain spaces"
+msgstr "El nom del retall no pot contenir espais"
+
+#: legacy/editsnippet.cpp:201
+msgid ""
+"The snippet contains unsaved changes. Do you want to continue and lose all "
+"changes?"
+msgstr ""
+"El retall conté canvis sense desar. Voleu continuar i perdre tots els canvis?"
+
+#: legacy/editsnippet.cpp:202
+msgid "Warning - Unsaved Changes"
+msgstr "Avís - Canvis sense desar"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetNameEdit)
+#: legacy/editsnippet.ui:52
+msgid ""
+"<p>The name will also be used as the identifier during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Aquest nom també es pot usar com a identificador durant la compleció de "
+"codi.</p>\n"
+"<p><b>Nota:</b> No es permeten espais.</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, snippetPrefixLabel)
+#: legacy/editsnippet.ui:59
+msgid "Display &Prefix:"
+msgstr "Mostra el &prefix:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetPrefixEdit)
+#: legacy/editsnippet.ui:69
+msgid "The display prefix will be shown during code completion."
+msgstr "El prefix visualitzat es mostrarà durant la compleció de codi."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetArgumentsLabel)
+#: legacy/editsnippet.ui:76
+msgid "Display &Arguments:"
+msgstr "Mostra els &arguments:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetArgumentsEdit)
+#: legacy/editsnippet.ui:86
+msgid "The arguments will be shown during code completion."
+msgstr "Els arguments visualitzats es mostraran durant la compleció de codi."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetPostfixLabel)
+#: legacy/editsnippet.ui:93
+msgid "Display P&ostfix:"
+msgstr "Mostra el s&ufix:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, snippetPostfixEdit)
+#: legacy/editsnippet.ui:103
+msgid "The postfix will be shown during code completion."
+msgstr "El sufix visualitzat es mostrarà durant la compleció de codi."
+
+#. i18n: ectx: property (text), widget (QLabel, snippetShortcutLabel)
+#: legacy/editsnippet.ui:110
+msgid "Shortcut:"
+msgstr "Drecera:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, snippetTab)
+#: legacy/editsnippet.ui:126
+msgid "&Snippet"
+msgstr "&Retall"
+
+#. i18n: ectx: attribute (title), widget (QWidget, scriptTab)
+#: legacy/editsnippet.ui:131
+msgid "S&cripts"
+msgstr "S&cripts"
+
+#. i18n: ectx: Menu (edit)
+#: legacy/kdevsnippet.rc:4
+msgid "&Edit"
+msgstr "&Edita"
+
+#: legacy/snippet.cpp:27
+msgid "<empty snippet>"
+msgstr "<retall buit>"
+
+#: legacy/snippet.cpp:89
+#, kde-format
+msgid "insert snippet %1"
+msgstr "insereix el retall %1"
+
+#: legacy/snippetcompletionmodel.cpp:52 legacy/snippetview.cpp:38
+#: legacy/snippetview.cpp:148 snippetplugin.cpp:45 snippetplugin.cpp:104
+msgid "Snippets"
+msgstr "Retalls"
+
+#: legacy/snippetrepository.cpp:40
+msgid "<empty repository>"
+msgstr "<repositori buit>"
+
+#: legacy/snippetrepository.cpp:219
+msgid ""
+"You have edited a data file not located in your personal data directory; as "
+"such, a renamed clone of the original data file has been created within your "
+"personal data directory."
+msgstr ""
+"Heu editat un fitxer de dades que no està ubicat en el vostre directori de "
+"dades personal; per tant, s'ha creat una còpia reanomenada del fitxer de "
+"dades original en el vostre directori personal de dades."
+
+#: legacy/snippetrepository.cpp:224
+#, kde-format
+msgid "Output file '%1' could not be opened for writing"
+msgstr "No s'ha pogut obrir el fitxer de sortida «%1» per escriptura"
+
+#: legacy/snippetrepository.cpp:253
+#, kde-format
+msgid "Cannot open snippet repository %1."
+msgstr "No s'ha pogut obrir el repositori de retalls %1."
+
+#: legacy/snippetrepository.cpp:265
+#, kde-format
+msgid ""
+"<qt>The error <b>%4</b><br /> has been detected in the file %1 at %2/%3</qt>"
+msgstr "<qt>S'ha detectat l'error <b>%4</b><br /> en el fitxer %1 a %2/%3</qt>"
+
+#: legacy/snippetrepository.cpp:273
+#, kde-format
+msgid "Invalid XML snippet file: %1"
+msgstr "Fitxer XML de retall no vàlid: %1"
+
+#: legacy/snippetrepository.cpp:340
+msgid ""
+"Repository is disabled, the contained snippets will not be shown during code-"
+"completion."
+msgstr ""
+"El repositori està deshabilitat, els retalls que conté no es mostraran "
+"durant la compleció de codi."
+
+#: legacy/snippetrepository.cpp:343
+msgid "Applies to all filetypes"
+msgstr "Aplica a tots els tipus de fitxers"
+
+#: legacy/snippetrepository.cpp:345
+#, kde-format
+msgid "Applies to the following filetypes: %1"
+msgstr "Aplica als següents tipus de fitxers: %1"
+
+#: legacy/snippetview.cpp:59
+msgid "Add Repository"
+msgstr "Afegeix un repositori"
+
+#: legacy/snippetview.cpp:62
+msgid "Edit Repository"
+msgstr "Edita el repositori"
+
+#: legacy/snippetview.cpp:65
+msgid "Remove Repository"
+msgstr "Elimina el repositori"
+
+#: legacy/snippetview.cpp:69
+msgid "Publish Repository"
+msgstr "Publica al repositori"
+
+#: legacy/snippetview.cpp:77
+msgid "Add Snippet"
+msgstr "Afegeix un retall"
+
+#: legacy/snippetview.cpp:80
+msgid "Edit Snippet"
+msgstr "Edita el retall"
+
+#: legacy/snippetview.cpp:83
+msgid "Remove Snippet"
+msgstr "Elimina el retall"
+
+#: legacy/snippetview.cpp:89
+msgid "Get New Snippets"
+msgstr "Obtén retalls nous"
+
+#: legacy/snippetview.cpp:156
+#, kde-format
+msgid "Snippet: %1"
+msgstr "Retall: %1"
+
+#: legacy/snippetview.cpp:164
+#, kde-format
+msgid "Repository: %1"
+msgstr "Repositori: %1"
+
+#: legacy/snippetview.cpp:224
+#, kde-format
+msgid "Do you really want to delete the snippet \"%1\"?"
+msgstr "Realment voleu suprimir el retall «%1»?"
+
+#: legacy/snippetview.cpp:264
+#, kde-format
+msgid ""
+"Do you really want to delete the repository \"%1\" with all its snippets?"
+msgstr "Realment voleu suprimir el repositori «%1» amb tots els seus retalls?"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, filterText)
+#: legacy/snippetview.ui:35
+msgid "Define filter here"
+msgstr "Definiu aquí el filtre"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, filterText)
+#: legacy/snippetview.ui:38
+msgid "Filter..."
+msgstr "Filtre..."
+
+#: snippetplugin.cpp:45
+msgid ""
+"This plugin allows to store code snippets and insert them into open files"
+msgstr ""
+"Aquest connector permet desar retalls de codi i inserir-los als fitxers "
+"oberts"
+
+#: snippetplugin.cpp:180
+msgid "Create Snippet"
+msgstr "Crea un retall"
+
+#: snippetplugin.cpp:218
+#, kde-format
+msgctxt "Autogenerated repository name for a programming language"
+msgid "%1 snippets"
+msgstr "%1 retalls"

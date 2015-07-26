@@ -1,0 +1,430 @@
+# Finnish messages for kdevexternalscript.
+# Copyright © 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdevelop package.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2009.
+#
+# KDE Finnish translation sprint participants:
+# Author: Lliehu
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevexternalscript\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-06-26 05:39+0000\n"
+"PO-Revision-Date: 2014-11-08 01:01+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:20:30+0000\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Jorma Karvonen, Lasse Liehu"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "karvonen.jorma@gmail.com, lasse.liehu@gmail.com"
+
+#: editexternalscript.cpp:42
+msgid ""
+"<p>Defines the command that should be executed when this script is run. "
+"Basic shell features of your platform should be available.</p>\n"
+"<p>There are a few placeholders you can use in the command:</p>\n"
+"<dl>\n"
+"  <dt><code>%u</code></dt>\n"
+"  <dd>Gets replaced by the URL of the active document.</dd>\n"
+"  <dt><code>%f</code></dt>\n"
+"  <dd>Gets replaced by the local filepath to the active document.</dd>\n"
+"  <dt><code>%n</code></dt>\n"
+"  <dd>Gets replaced by the name of the active document, including its "
+"extension.</dd>\n"
+"  <dt><code>%b</code></dt>\n"
+"  <dd>Gets replaced by the name of the active document without its extension."
+"</dd>\n"
+"  <dt><code>%d</code></dt>\n"
+"  <dd>Gets replaced by the path to the directory of the active document.</"
+"dd>\n"
+"  <dt><code>%p</code></dt>\n"
+"  <dd>Gets replaced by the URL to the project of the active document.</dd>\n"
+"  <dt><code>%s</code></dt>\n"
+"  <dd>Gets replaced with the shell escaped contents of the selection in the "
+"active document.</dd>\n"
+"  <dt><code>%i</code></dt>\n"
+"  <dd>Gets replaced with the PID of the currently running KDevelop process.</"
+"dd>\n"
+"</dl>\n"
+"<p><b>NOTE:</b>  It is your responsibility to prevent running hazardous "
+"commands that could lead to data loss.</p>\n"
+msgstr ""
+"<p>Määrittää komennon, joka suoritetaan, kun skripti käynnistetään. Alustasi "
+"peruskomentotulkkiominaisuuksien pitäisi olla käytettävissä.</p>\n"
+"<p>Voit käyttää komennossa muutamia korvauksia:</p>\n"
+"<dl>\n"
+"  <dt><code>%u</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston verkko-osoitteella.</dd>\n"
+"  <dt><code>%f</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston paikallisella tiedostopolulla.</dd>\n"
+"  <dt><code>%n</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston tiedostopäätteellisellä nimellä.</dd>\n"
+"  <dt><code>%b</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston tiedostopäätteettömällä nimellä.</dd>\n"
+"  <dt><code>%d</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston kansiopolulla.</dd>\n"
+"  <dt><code>%p</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston projektin verkko-osoitteella.</dd>\n"
+"  <dt><code>%s</code></dt>\n"
+"  <dd>Korvautuu aktiivisen tiedoston nykyisellä valinnalla siten, että "
+"komentotulkin erikoismerkit on varustettu koodinvaihtomerkein.</dd>\n"
+"  <dt><code>%i</code></dt>\n"
+"  <dd>Korvautuu parhaillaan suoritettavan KDevelop-prosessin PIDillä.</dd>\n"
+"</dl>\n"
+"<p><b>HUOMAA:</b>  On omalla vastuullasi estää sellaisten riskikomentojen "
+"suorittaminen, jotka voisivat johtaa tietojen katoamiseen.</p>\n"
+
+#: editexternalscript.cpp:68
+msgid ""
+"<p>Defines what the external script should get as input (via <code>STDIN</"
+"code>).</p>"
+msgstr ""
+"<p>Määrittää mitä ulkoisen skriptin pitäisi saada syötteenä (via "
+"<code>STDIN</code>).</p>"
+
+#: editexternalscript.cpp:74
+msgid ""
+"<p>Defines what should be done with the output (i.e. <code>STDOUT</code>) of "
+"the script.</p>"
+msgstr ""
+"<p>Määrittää mitä tehtäisiin tulosteelle (ts. <code>STDOUT</code>) / skripti."
+"</p>"
+
+#: editexternalscript.cpp:80
+msgid ""
+"<p>Defines what should be done with the errors (i.e. <code>STDERR</code>) of "
+"the script.</p><p>Note: if the action is the same as that chosen for the "
+"output, the channels will be merged and handled together.</p>"
+msgstr ""
+"<p>Määrittää mitä tehtäisiin virheille (ts. <code>STDERR</code>) / skripti.</"
+"p><p>Huomaa: jos toiminto on sama kuin tuo, joka valittiin tulosteelle, "
+"kanavat yhdistetään ja käsitellään yhdessä.</p>"
+
+#: editexternalscript.cpp:88
+msgid "<p>Defines the name of the script. Just for displaying purposes.</p>"
+msgstr "<p>Määrittää skriptin nimen. Vain näyttämistarkoituksiin.</p>"
+
+#: editexternalscript.cpp:94
+msgid ""
+"<p>Defines the shortcut(s) you can use to execute this external script.</p>"
+msgstr ""
+"<p>Määrittää pikanäppäimen, jota voit käyttää tämän ulkoisen skriptin "
+"suorittamiseen.</p>"
+
+#: editexternalscript.cpp:100
+msgid ""
+"<p>Defines whether documents should be saved before the script gets executed."
+"</p>"
+msgstr ""
+"<p>Määrittää, että tallennetaanko tiedostot ennen skriptin suoritusta.</p>"
+
+#: editexternalscript.cpp:106
+msgid ""
+"<p>Defines whether the output of the script should be shown in a toolview.</"
+"p>"
+msgstr "<p>Määrittää, että näytetäänkö skriptin tuloste työkalunäkymässä.</p>"
+
+#: editexternalscript.cpp:110
+msgid ""
+"<p>Defines what type of filtering should be applied to the output. E.g. to "
+"indicate errors by red text.</p>"
+msgstr ""
+"<p>Määrittää tulosteen suodatustavan. Esimerkiksi virheiden punaiseksi "
+"värittämistä varten.</p>"
+
+#: editexternalscript.cpp:118
+msgid "Create new external script"
+msgstr "Luo uusi ulkoinen komentojono"
+
+#: editexternalscript.cpp:120
+#, kde-format
+msgid "Edit external script '%1'"
+msgstr "Muokkaa ulkoista komentojonoa ”%1”"
+
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: editexternalscript.ui:26
+msgid "&Name:"
+msgstr "&Nimi:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, nameEdit)
+#: editexternalscript.ui:37
+msgid ""
+"<p>The name will also be used as the identifier during code completion.</p>\n"
+"<p><b>Note:</b> No spaces allowed.</p>"
+msgstr ""
+"<p>Nimeä käytetään myös tunnisteena koodin täydennyksessä.</p>\n"
+"<p><b>Huomaa:</b> Välilyönnit eivät ole sallittuja.</p>"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, nameEdit)
+#: editexternalscript.ui:40
+msgid "please insert a name"
+msgstr "lisää nimi"
+
+#. i18n: ectx: property (text), widget (QLabel, commandLabel)
+#: editexternalscript.ui:50
+msgid "&Command:"
+msgstr "&Komento:"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, commandEdit)
+#: editexternalscript.ui:60
+msgid "please insert a command to execute"
+msgstr "lisää suoritettava komento"
+
+#. i18n: ectx: property (text), widget (QLabel, stdinLabel)
+#: editexternalscript.ui:70
+msgid "&Input:"
+msgstr "&Syöte:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:81
+msgid "nothing"
+msgstr "ei mitään"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:86
+msgid "selection in current file or nothing"
+msgstr "valinta nykyisessä tiedostossa tai ei mitään"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:91
+msgid "selection in current file or whole file"
+msgstr "valinta nykyisesä tiedostossa tai koko tiedostossa"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdinCombo)
+#: editexternalscript.ui:96
+msgid "contents of current file"
+msgstr "nykyisen tiedoston sisältö"
+
+#. i18n: ectx: property (text), widget (QLabel, stdoutLabel)
+#: editexternalscript.ui:107
+msgid "&Output:"
+msgstr "T&uloste:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:118 editexternalscript.ui:162
+msgid "ignore"
+msgstr "ohita"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:123 editexternalscript.ui:172
+msgid "insert at cursor position of current file"
+msgstr "lisää nykyisen tiedoston kohdistinsijaintiin"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:128 editexternalscript.ui:177
+msgid "replace selection of current file or insert at cursor position"
+msgstr "korvaa nykyisen tiedoston valinta tai lisää kohdistinsijaintiin"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:133 editexternalscript.ui:182
+msgid "replace selection of current file or whole file"
+msgstr "korvaa nykyisen tiedoston valinta tai koko tiedosto"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:138 editexternalscript.ui:187
+msgid "replace contents of current file"
+msgstr "korvaa nykyisen tiedoston sisältö"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stdoutCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:143 editexternalscript.ui:192
+msgid "create new file"
+msgstr "luo uusi tiedosto"
+
+#. i18n: ectx: property (text), widget (QLabel, stderrLabel)
+#: editexternalscript.ui:151
+msgid "Errors:"
+msgstr "Virheet:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, stderrCombo)
+#: editexternalscript.ui:167
+msgid "merge with normal output"
+msgstr "yhdistä normaaliin tulosteeseen"
+
+#. i18n: ectx: property (text), widget (QLabel, saveLabel)
+#: editexternalscript.ui:200
+msgid "Save &Mode:"
+msgstr "Tallenna &tila:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:211
+msgid "save nothing"
+msgstr "älä tallenna mitään"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:216
+msgid "save active document"
+msgstr "tallenna aktiivinen tiedosto"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, saveCombo)
+#: editexternalscript.ui:221
+msgid "save all open documents"
+msgstr "tallenna kaikki avoimet tiedostot"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, shortcutLabel)
+#: editexternalscript.ui:229
+msgid "<p>Defines shortcuts you can use to execute this script.</p>"
+msgstr ""
+"<p>Määrittää pikanäppäimen, jota voit käyttää tämän skriptin suorittamiseen."
+"</p>"
+
+#. i18n: ectx: property (text), widget (QLabel, shortcutLabel)
+#: editexternalscript.ui:232
+msgid "Shortcut:"
+msgstr "Pikanäppäin:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:243
+msgid "no filter"
+msgstr "ei suodatinta"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:248
+msgid "compiler filter"
+msgstr "kääntäjäsuodatin"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:253
+msgid "script error filter"
+msgstr "skriptivirhesuodatin"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, outputFilterCombo)
+#: editexternalscript.ui:258
+msgid "static analysis error filter"
+msgstr "staattisen analyysin virhesuodatin"
+
+#. i18n: ectx: property (text), widget (QLabel, outputFilterLabel)
+#: editexternalscript.ui:266
+msgid "Output Filter:"
+msgstr "Tulostesuodatin:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, showOutputBox)
+#: editexternalscript.ui:273
+msgid "Show Out&put"
+msgstr "Näytä tul&oste"
+
+#: externalscriptjob.cpp:95
+#, kde-format
+msgid ""
+"Cannot run script '%1' since it tries to access the editor contents but no "
+"document is open."
+msgstr ""
+"Ei voi suorittaa skriptiä ”%1”, koska se yrittää lukea muokkaimen sisältöä, "
+"mutta yhtään tiedostoa ei ole avoinna."
+
+#: externalscriptjob.cpp:97
+msgid "No Document Open"
+msgstr "Ei avointa tiedostoa"
+
+#: externalscriptjob.cpp:220
+#, kde-format
+msgid "Running external script: %1"
+msgstr "Suoritetaan ulkoinen skripti: %1"
+
+#: externalscriptjob.cpp:264
+msgid "*** Killed Application ***"
+msgstr "*** Sovellus tapettiin ***"
+
+#: externalscriptjob.cpp:344
+msgid "*** Exited normally ***"
+msgstr "*** Päättyi normaalisti ***"
+
+#: externalscriptjob.cpp:347
+#, kde-format
+msgid "*** Exited with return code: %1 ***"
+msgstr "*** Päättyi paluuarvolla: %1 ***"
+
+#: externalscriptjob.cpp:350
+msgid "*** Process aborted ***"
+msgstr "*** Prosessi keskeytettiin ***"
+
+#: externalscriptjob.cpp:352
+#, kde-format
+msgid "*** Crashed with return code: %1 ***"
+msgstr "*** Kaatui paluuarvolla: %1 ***"
+
+#: externalscriptjob.cpp:364
+#, kde-format
+msgid ""
+"*** Could not start program '%1'. Make sure that the path is specified "
+"correctly ***"
+msgstr ""
+"*** Ei voitu käynnistää ohjelmaa ”%1”. Varmista, että määritetty polku on "
+"oikea ***"
+
+#: externalscriptplugin.cpp:56 externalscriptplugin.cpp:114
+#: externalscriptplugin.cpp:185 externalscriptview.cpp:41
+msgid "External Scripts"
+msgstr "Ulkoiset skriptit"
+
+#: externalscriptplugin.cpp:57
+msgid ""
+"Run external scripts or applications to manipulate the editor contents or do "
+"other arbitrary actions."
+msgstr ""
+"Suorittaa ulkoisia skriptejä tai sovelluksia editorisisällön "
+"manipuloimiseksi tai muiden satunnaisten tehtävien tekemiseksi."
+
+#: externalscriptplugin.cpp:125
+msgid "Quick Compile"
+msgstr "Käännä nopeasti"
+
+#: externalscriptplugin.cpp:130
+msgid "Google Selection"
+msgstr "Googlaa valinta"
+
+#: externalscriptplugin.cpp:136
+msgid "Sort Selection"
+msgstr "Lajittele valinta"
+
+#: externalscriptview.cpp:57
+msgid "Add External Script"
+msgstr "Lisää ulkoinen skripti"
+
+#: externalscriptview.cpp:60
+msgid "Edit External Script"
+msgstr "Muokkaa ulkoista skriptiä"
+
+#: externalscriptview.cpp:63
+msgid "Remove External Script"
+msgstr "Poista ulkoinen skripti"
+
+#: externalscriptview.cpp:150
+#, kde-format
+msgid ""
+"<p>Do you really want to remove the external script configuration for <i>%1</"
+"i>?</p><p><i>Note:</i> The script itself will not be removed.</p>"
+msgstr ""
+"<p>Haluatko varmasti poistaa ulkoisen skriptiasetuksen kohteelle <i>%1</i>?</"
+"p><p><i>Huomaa:</i> Itse skriptiä ei poisteta.</p>"
+
+#: externalscriptview.cpp:152
+msgid "Confirm External Script Removal"
+msgstr "Vahvista ulkoisen skriptin poistaminen"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, filterText)
+#: externalscriptview.ui:35
+msgid "Define filter here"
+msgstr "Määritä suodatin tässä"
+
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, filterText)
+#: externalscriptview.ui:38
+msgid "Filter..."
+msgstr "Suodata…"
