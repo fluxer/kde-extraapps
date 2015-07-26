@@ -61,6 +61,7 @@ macro_optional_add_subdirectory (svgpart)
 macro_optional_add_subdirectory (thumbnailers)
 macro_optional_add_subdirectory (yakuake)
 macro_optional_add_subdirectory (kdevplatform)
-macro_optional_add_subdirectory (kdevelop)
+# FIXME: bootstrap fails because of kdevplatform not being found
+# macro_optional_add_subdirectory (kdevelop)
 
 macro_display_feature_log()

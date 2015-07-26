@@ -37,9 +37,7 @@ if("${_isSystemLibDir}" STREQUAL "-1")
 endif("${_isSystemLibDir}" STREQUAL "-1")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-# find_package(KDevPlatform COMPONENTS INTERFACES REQUIRED)
-include(ExternalProject)
-ExternalProject_Add(KDevPlatform SOURCE_DIR "${CMAKE_SOURCE_DIR}/kdevplatform")
+find_package(KDevPlatform REQUIRED)
 
 include_directories(${KDEVPLATFORM_INCLUDE_DIR})
 
