@@ -21,4 +21,4 @@ bcp --boost="$boost" boost/shared_array.hpp boost/concept_check.hpp \
     boost/scoped_ptr.hpp boost/circular_buffer.hpp boost/scoped_array.hpp \
     boost/shared_ptr.hpp boost/enable_shared_from_this.hpp boost/weak_ptr.hpp \
     boost/bind.hpp boost/multi_index_container.hpp \
-    boost/multi_index/member.hpp miniboost/
+    boost/multi_index/member.hpp boost/multi_index/ordered_index.hpp miniboost/
