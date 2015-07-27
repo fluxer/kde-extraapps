@@ -461,9 +461,6 @@ void Pastebin::createConfigurationInterface(KConfigDialog *parent)
     connect(parent, SIGNAL(applyClicked()), this, SLOT(configAccepted()));
     parent->addPage(general, i18n("General"), Applet::icon());
 
-    uiConfig.ghnsButton->setIcon(KIcon("get-hot-new-stuff"));
-    connect(uiConfig.ghnsButton, SIGNAL(clicked()), this, SLOT(getNewStuff()));
-
     refreshConfigDialog();
     uiConfig.textServer->setCurrentItem(cg.readEntry("TextProvider", getDefaultTextServer()));
     uiConfig.imageServer->setCurrentItem(cg.readEntry("ImageProvider", m_imgServers.keys().at(0)));
