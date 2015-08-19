@@ -11,9 +11,9 @@
 
 #include <QtCore/QDateTime>
 #include <QtGui/QFont>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
-#include <QtXml/QXmlSimpleReader>
+#include <QtXml/qdom.h>
+#include <QtXml/qdom.h>
+#include <QtXml/qxml.h>
 
 #include <kglobal.h>
 #include <klocale.h>

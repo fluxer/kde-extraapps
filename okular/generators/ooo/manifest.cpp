@@ -11,7 +11,7 @@
 #include "debug.h"
 
 #include <QBuffer>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <KFilterDev>
 #include <KLocale>

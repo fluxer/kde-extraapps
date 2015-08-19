@@ -16,9 +16,9 @@
 #include <QtGui/QTextFrame>
 #include <QtGui/QTextList>
 #include <QtGui/QTextTableCell>
-#include <QtXml/QDomElement>
-#include <QtXml/QDomText>
-#include <QtXml/QXmlSimpleReader>
+#include <QtXml/qdom.h>
+#include <QtXml/qdom.h>
+#include <QtXml/qxml.h>
 
 #include <core/action.h>
 #include <core/annotations.h>

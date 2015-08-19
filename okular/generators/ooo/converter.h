@@ -10,8 +10,8 @@
 #ifndef OOO_CONVERTER_H
 #define OOO_CONVERTER_H
 
-#include <QtGui/QTextCharFormat>
-#include <QtXml/QDomDocument>
+#include <QtGui/qtextformat.h>
+#include <QtXml/qdom.h>
 
 #include <core/textdocumentgenerator.h>
 

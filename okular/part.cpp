@@ -705,6 +705,7 @@ void Part::setupViewerActions()
 
     m_aboutBackend = ac->addAction("help_about_backend");
     m_aboutBackend->setText(i18n("About Backend"));
+    m_aboutBackend->setIcon(KIcon("preferences-plugin"));
     m_aboutBackend->setEnabled( false );
     connect(m_aboutBackend, SIGNAL(triggered()), this, SLOT(slotAboutBackend()));
 
