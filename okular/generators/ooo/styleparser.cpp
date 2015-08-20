@@ -12,7 +12,6 @@
 #include <QtCore/QDateTime>
 #include <QtGui/QFont>
 #include <QtXml/qdom.h>
-#include <QtXml/qdom.h>
 #include <QtXml/qxml.h>
 
 #include <kglobal.h>
