@@ -157,7 +157,7 @@ void TabbedViewWidget::removePage(QWidget *page)
 {
     int index = KTabWidget::indexOf(page);
     m_model->beginRemoveRows(QModelIndex(), index, index);
-    KTabWidget::removePage(page);
+    KTabWidget::removeTab(index);
     m_model->endRemoveRows();
 }
 
