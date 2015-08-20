@@ -256,7 +256,8 @@ void TabLogViewsWidget::closeTab() {
 
 	d->tabLogManagers.removeAll(currentTabLogManager);
 
-	removePage(currentTabLogManager->logManager()->usedView());
+        int position=indexOf(currentTabLogManager->logManager()->usedView());
+        removeTab(position);
 	if (count()==1) {
 		setTabBarHidden(true);
 	}
