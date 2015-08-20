@@ -59,13 +59,14 @@ include_directories(${CMAKE_SOURCE_DIR}/src/common)
 set(CORE_RCS ${CORE_RCS} ${CMAKE_CURRENT_SOURCE_DIR}/sql.qrc)
 qt4_add_resources(SOURCES ${CORE_RCS})
 
-add_library(mod_core STATIC ${SOURCES})
+add_library(mod_core OBJECT ${SOURCES})
 
-target_link_libraries(mod_core
-    mod_common
+set(CORE_LIBRARIES
+    ${CORE_LIBRARIES}
     ${LIBS}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTSCRIPT_LIBRARY}
     ${QT_QTSQL_LIBRARY}
+    PARENT_SCOPE
 )

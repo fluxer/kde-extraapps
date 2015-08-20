@@ -60,13 +60,15 @@ set(SOURCES ${SOURCES} logbacktrace_unix.cpp)
 
 qt4_add_resources(SOURCES ${COMMON_RCS})
 
-add_library(mod_common STATIC ${SOURCES})
+add_library(mod_common OBJECT ${SOURCES})
 
-target_link_libraries(mod_common
+set(COMMON_LIBRARIES
+    ${COMMON_LIBRARIES}
     ${CMAKE_DL_LIBS}
     ${EXECINFO_LIBRARIES}
     ${ZLIB_LIBRARIES}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
+    PARENT_SCOPE
 )
 
