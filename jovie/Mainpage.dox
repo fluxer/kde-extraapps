@@ -1,0 +1,11 @@
+/** \file kdeaccessibility/jovie/Mainpage.dox
+    \brief The main page of the doxygen generated API Documentation
+*/
+/** @mainpage Jovie
+
+Jovie brings text-to-speech KDE.  
+\section Introduction Introduction
+
+Jovie -- The KDE Text-to-Speech Application -- is a subsystem within the KDE desktop for conversion of text to audible speech. Jovie is currently under development and aims to become the standard subsystem for all KDE applications to provide speech output. 
+
+*/

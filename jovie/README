@@ -1,0 +1,95 @@
+Jovie -- KDE Text-to-Speech -- is a subsystem within the KDE desktop
+for conversion of text to audible speech. Jovie is currently under
+development and aims to become the standard subsystem for all KDE
+applications to provide speech output. Currently, Jovie consists of
+the following components:
+
+Jovie
+  The KDE Text-to-Speech Deamon, a system tray application that runs in
+the background, providing TTS support to KDE applications. Applications
+initiate TTS by making D-Bus calls to Jovie.
+
+kttsjobmgr
+  A KPart for managing in-progress speech jobs.
+
+kcmkttsd
+  A KControl module for configuring the KTTS System. kcmkttsd runs in the
+KDE Control Center or start it with the command "kcmshell4 kcmkttsd".
+
+ktexteditor_kttsd
+  A plugin for the KDE Advanced Text Editor that permits you to speak an entire
+text file or any portion of a file.
+
+khmtl-plugin
+  A plugin for Konqueror that permits you to speak all or any portion of an
+HTML web page.  (Note: this component is in kdebase/konqueror/kttsplugin)
+
+Original Author: José Pablo Ezequiel "Pupeno" Fernández <pupeno@kde.org>
+Current Maintainer: Jeremy Whiting <jpwhiting@kde.org>
+Contributors:
+  Olaf Schmidt <ojschmidt@kde.org>
+  Gunnar Schmi Dt <gunnar@schmi-dt.de>
+  Paul Giannaros <ceruleanblaze@gmail.com>
+  Jorge Luis Arzola <arzolacub@hotmail.com>
+  David Powell <achiestdragon@gmail.com>
+
+User features:
+  * Speak contents of a text file.
+  * Speak KDE notification events (KNotify).
+  * Speak all or part of the text of a web page in Konqueror.
+  * Speak all or part of the text in Kate text editor, including
+    instances where Kate is embedded in another KDE application.
+  * Filter plugins for converting chat emoticons to speakable words,
+    fix mispronunciations, and convert xhtml to SSML.
+
+Programmer features:
+  * Priority system for screen reader outputs, warnings and messages,
+    while still playing regular texts.
+  * Plugin-based architecture for support of a wide variety of speech
+    synthesis engines and drivers.
+  * Permit generation of speech from the command line (or via shell scripts)
+    using the KDE D-Bus utilities.
+  * Provide a lightweight and easily usable interface for applications
+    to generate speech output.
+  * Applications need not be concerned about contention over the speech device.
+  * FUTURE: Provide support for speech markup languages, such as VoiceXML, Sable,
+    Java Speech Markup Language (JSML), and Speech Markup Meta-language (SMML).
+  * FUTURE: Provide limited support for embedded speech markers.
+  * Asynchronous to prevent system blocking.
+
+Requirements
+------------
+KDE 3.2 or greater and a speech synthesis engine, such as Festival.  Festival
+can be obtained from http://www.cstr.ed.ac.uk/projects/festival/.  Festival
+is distributed with most Linux distros.  Check your distro CDs.  Also works
+with Hadifix, Epos, Festival Lite (flite), FreeTTS, or any command that can
+speak text.
+
+Optional Components
+-------------------
+  * The xsltproc utility is needed for SSML support.
+
+See the Jovie Handbook
+
+  (http://accessibility.kde.org/developer/kttsd/handbook/index.html)
+
+for complete instructions on installing, compiling, configuring, and using
+Jovie.
+
+Support
+-------
+The Jovie website is
+
+  http://accessibility.kde.org/developer/kttsd
+
+In addition to the KDE Bugzilla database (bugs.kde.org), discussions for KTTSD
+currently take place in the kde-accessibility mailing list.  Subscribe at
+https://mail.kde.org/mailman/listinfo/kde-accessibility.  Developers
+also hang out in IRC (irc.kde.org channel #kde-accessibility).
+
+Directories
+-----------
+libkttsd           Library for KTTSD.  Defines the interface for plugins for KTTSD.  Must be built second.
+jovie              Application for managing Speech jobs.  Wrapper for kcmkttsmgr plus a system tray icon.
+icons              Icon for kttsmgr and KTTSD.
+kcmkttsmgr         A KControl module for managing KTTSD.  Run using "kcmshell kcmkttsd".
