@@ -156,8 +156,8 @@ Dynamic::AlbumPlayBias::matchingTracks( const Meta::TrackList& playlist,
 
     Meta::TrackList albumTracks = album->tracks();
 
-    if( albumTracks.count() == 1 ||
-        ( sameTrack( track, albumTracks.last() ) && m_follow != DontCare) )
+    if( ( albumTracks.count() <= 1 ) ||
+        ( m_follow != DontCare && sameTrack( track, albumTracks.last() ) ) )
         return Dynamic::TrackSet( universe, false );
 
     // we assume that the album tracks are sorted by cd and track number which
