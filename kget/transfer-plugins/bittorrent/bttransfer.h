@@ -57,7 +57,7 @@ class BTTransfer : public Transfer, public bt::MonitorInterface
 
         void deinit(Transfer::DeleteOptions options);
 
-        //Job virtual functions        
+        //Job virtual functions
         void start();
         void stop();
         virtual int elapsedTime() const;

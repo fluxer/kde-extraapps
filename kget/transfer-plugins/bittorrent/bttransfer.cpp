@@ -81,15 +81,16 @@ void BTTransfer::deinit(Transfer::DeleteOptions options)
     }
     if (options & Transfer::DeleteTemporaryFiles) {
         QDir tmpDir(m_tmp);
-        kDebug(5001) << m_tmp + m_source.fileName().remove(".torrent");
-        tmpDir.rmdir(m_source.fileName().remove(".torrent") + "/dnd");
-        tmpDir.cd(m_source.fileName().remove(".torrent"));
+        QString fileName = m_source.fileName().remove(".torrent");
+        kDebug(5001) << m_tmp + fileName;
+        tmpDir.rmdir(fileName + "/dnd");
+        tmpDir.cd(fileName);
         QStringList list = tmpDir.entryList();
         foreach (const QString &file, list) {
             tmpDir.remove(file);
         }
         tmpDir.cdUp();
-        tmpDir.rmdir(m_source.fileName().remove(".torrent"));
+        tmpDir.rmdir(fileName);
 
         //only remove the .torrent file if it was downloaded by KGet
         if (!m_tmpTorrentFile.isEmpty()) {
@@ -424,7 +425,7 @@ void BTTransfer::btTransferInit(const KUrl &src, const QByteArray &data)
     bt::Uint16 i = 0;
     while (!bt::Globals::instance().initTCPServer(BittorrentSettings::port() + i) && i < 10)
         i++;
-    
+
     if (i == 10) {
         setError(i18n("Cannot initialize port..."), SmallIcon("dialog-cancel"));
         setTransferChange(Tc_Status);
