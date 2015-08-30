@@ -24,7 +24,7 @@ macro_log_feature(SPEECHD_FOUND "speechd" "Speech Dispatcher provides a high-lev
 if (SPEECHD_FOUND)
     if(NOT Q_WS_X11)
         message(FATAL_ERROR "Jovie requires a X11-based system.")
-    endif (Q_WS_X11)
+    endif()
 
     configure_file (config-jovie.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-jovie.h )
 
