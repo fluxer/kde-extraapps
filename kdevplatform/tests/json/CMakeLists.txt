@@ -6,7 +6,7 @@ set(kdevplatformjsontests_LIB_SRCS
     testsuite.cpp
 )
 
-kde4_add_library(kdevplatformjsontests SHARED ${kdevplatformjsontests_LIB_SRCS})
+add_library(kdevplatformjsontests SHARED ${kdevplatformjsontests_LIB_SRCS})
 target_link_libraries(kdevplatformjsontests
   LINK_PRIVATE
     ${QJSON_LIBRARIES}

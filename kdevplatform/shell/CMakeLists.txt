@@ -1,7 +1,9 @@
 
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9501 )
 add_subdirectory(settings)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 set(kdevplatformshell_LIB_SRCS
     workingsetcontroller.cpp
@@ -56,6 +58,11 @@ set(kdevplatformshell_LIB_SRCS
     progresswidget/progressdialog.cpp
 
     areadisplay.cpp
+
+    sessiondialog.ui
+    projectinfopage.ui
+    launchconfigurationdialog.ui
+    projectsourcepage.ui
 )
 
 # Check if KTE is new enough to have the EditVIMode view mode flag
@@ -66,15 +73,7 @@ if(HAVE_EDITVIMODE)
     add_definitions("-DKTEXTEDITOR_HAS_VIMODE=1")
 endif(HAVE_EDITVIMODE)
 
-set(kdevplatformshell_UI
-    sessiondialog.ui
-    projectinfopage.ui
-    launchconfigurationdialog.ui
-    projectsourcepage.ui
-)
-
-kde4_add_ui_files( kdevplatformshell_LIB_SRCS ${kdevplatformshell_UI} )
-kde4_add_library(kdevplatformshell SHARED ${kdevplatformshell_LIB_SRCS})
+add_library(kdevplatformshell SHARED ${kdevplatformshell_LIB_SRCS})
 target_link_libraries(kdevplatformshell LINK_PUBLIC
     sublime
     kdevplatformoutputview

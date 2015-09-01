@@ -17,7 +17,7 @@ set(ksystemlog_cron_sources
 	cronFactory.cpp
 )
 
-kde4_add_library(ksystemlog_cron STATIC ${ksystemlog_cron_sources})
+add_library(ksystemlog_cron STATIC ${ksystemlog_cron_sources})
 
 add_dependencies(
 	ksystemlog_cron

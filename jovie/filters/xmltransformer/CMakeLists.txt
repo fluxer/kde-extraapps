@@ -2,13 +2,14 @@
 
 ########### next target ###############
 
-set(jovie_xmltransformerplugin_PART_SRCS xmltransformerconf.cpp xmltransformerproc.cpp xmltransformerplugin.cpp )
-
-kde4_add_ui_files(jovie_xmltransformerplugin_PART_SRCS xmltransformerconfwidget.ui )
+set(jovie_xmltransformerplugin_PART_SRCS
+    xmltransformerconf.cpp
+    xmltransformerproc.cpp
+    xmltransformerplugin.cpp
+    xmltransformerconfwidget.ui
+)
 
 kde4_add_plugin(jovie_xmltransformerplugin ${jovie_xmltransformerplugin_PART_SRCS})
-
-
 
 target_link_libraries(jovie_xmltransformerplugin  ${KDE4_KIO_LIBS} kttsd )
 

@@ -2,9 +2,10 @@ project(CharacterRunner)
 
 # We add our source code here
 set(krunner_charrunner_SRCS charrunner.cpp)
-set(kcm_krunner_charrunner_SRCS charrunner_config.cpp)
-
-kde4_add_ui_files(kcm_krunner_charrunner_SRCS charrunner_config.ui)
+set(kcm_krunner_charrunner_SRCS
+    charrunner_config.cpp
+    charrunner_config.ui
+)
 kde4_add_plugin(kcm_krunner_charrunner ${kcm_krunner_charrunner_SRCS})
 target_link_libraries(kcm_krunner_charrunner
     ${KDE4_KDECORE_LIBS}

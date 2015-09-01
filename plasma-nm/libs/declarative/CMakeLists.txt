@@ -11,7 +11,7 @@ set(plasma_networkmanagement_qml_plugins_SRCS
    qmlplugins.cpp
 )
 
-kde4_add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
+add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
 
 target_link_libraries(plasmanetworkmanagementplugins
     plasmanetworkmanagement-internal

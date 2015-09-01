@@ -160,7 +160,12 @@ set(gwenviewlib_SRCS
     zoomwidget.cpp
     sorteddirmodel.cpp
     ${GV_JPEG_DIR}/transupp.c
-    )
+    crop/cropwidget.ui
+    documentview/messageview.ui
+    print/printoptionspage.ui
+    redeyereduction/redeyereductionwidget.ui
+    resize/resizeimagewidget.ui
+)
 
 set_source_files_properties(
     exiv2imageloader.cpp
@@ -168,25 +173,12 @@ set_source_files_properties(
     timeutils.cpp
     PROPERTIES
     COMPILE_FLAGS "${KDE4_ENABLE_EXCEPTIONS}"
-    )
+)
 
-kde4_add_ui_files(gwenviewlib_SRCS
-    crop/cropwidget.ui
-    documentview/messageview.ui
-    print/printoptionspage.ui
-    redeyereduction/redeyereductionwidget.ui
-    resize/resizeimagewidget.ui
-    )
+kde4_add_kcfg_files(gwenviewlib_SRCS gwenviewconfig.kcfgc)
 
-kde4_add_kcfg_files(gwenviewlib_SRCS
-    gwenviewconfig.kcfgc
-    )
-
-kde4_add_library(gwenviewlib SHARED ${gwenviewlib_SRCS})
+add_library(gwenviewlib SHARED ${gwenviewlib_SRCS})
 set_target_properties(gwenviewlib PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
-if (WIN32)
-    set_target_properties(gwenviewlib PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)
-endif()
 
 target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
@@ -199,9 +191,6 @@ target_link_libraries(gwenviewlib
     ${PNG_LIBRARIES}
     ${LCMS2_LIBRARIES}
     ${KDCRAW_LIBRARIES}
-    )
-if (WIN32)
-    target_link_libraries(gwenviewlib ${EXPAT_LIBRARIES})
-endif()
+)
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})

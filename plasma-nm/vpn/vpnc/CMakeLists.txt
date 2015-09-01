@@ -3,9 +3,10 @@ set(vpnc_SRCS
     vpncwidget.cpp
     vpncadvancedwidget.cpp
     vpncauth.cpp
+    vpnc.ui
+    vpncadvanced.ui
+    vpncauth.ui
 )
-
-kde4_add_ui_files(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
 

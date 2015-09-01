@@ -15,11 +15,10 @@ set(ksystemlog_xsession_sources
 	xsessionItemBuilder.cpp
 	xsessionLogMode.cpp
 	xsessionFactory.cpp
+	xsessionConfigurationWidgetBase.ui
 )
 
-kde4_add_ui_files(ksystemlog_xsession_sources xsessionConfigurationWidgetBase.ui )
-
-kde4_add_library(ksystemlog_xsession STATIC ${ksystemlog_xsession_sources})
+add_library(ksystemlog_xsession STATIC ${ksystemlog_xsession_sources})
 
 add_dependencies(
 	ksystemlog_xsession

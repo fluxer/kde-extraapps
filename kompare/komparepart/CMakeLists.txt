@@ -12,10 +12,9 @@ set( komparepart_PART_SRCS
      kompareprefdlg.cpp
      komparesaveoptionsbase.cpp
      komparesaveoptionswidget.cpp
-     kompareview.cpp )
-
-
-kde4_add_ui_files(komparepart_PART_SRCS komparesaveoptionsbase.ui )
+     kompareview.cpp
+     komparesaveoptionsbase.ui
+)
 
 kde4_add_plugin(komparepart ${komparepart_PART_SRCS})
 

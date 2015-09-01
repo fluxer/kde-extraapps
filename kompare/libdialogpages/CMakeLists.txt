@@ -10,7 +10,7 @@ set(dialogpages_PART_SRCS
 	viewpage.cpp )
 
 
-kde4_add_library(komparedialogpages SHARED ${dialogpages_PART_SRCS})
+add_library(komparedialogpages SHARED ${dialogpages_PART_SRCS})
 
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../libkomparediff2 )
 

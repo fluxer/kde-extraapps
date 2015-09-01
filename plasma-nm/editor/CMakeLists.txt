@@ -3,17 +3,12 @@ include_directories(${PROJECT_SOURCE_DIR}/libs/editor
                     ${PROJECT_SOURCE_DIR}/libs/models)
 
 set(connectioneditor_SRCS
-   main.cpp
-   connectioneditor.cpp
+    main.cpp
+    connectioneditor.cpp
+    connectioneditor.ui
 )
 
-kde4_add_app_icon(connectioneditor_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/network-defaultroute.png" )
-
-kde4_add_ui_files(connectioneditor_SRCS
-    ui/connectioneditor.ui
-)
-
-kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
+add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
 
 target_link_libraries(kde-nm-connection-editor
     plasmanetworkmanagement-internal

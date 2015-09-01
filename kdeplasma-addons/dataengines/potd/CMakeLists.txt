@@ -16,7 +16,7 @@ set(potd_provider_core_SRCS
 	potdprovider.cpp
 )
 
-kde4_add_library( plasmapotdprovidercore SHARED ${potd_provider_core_SRCS} )
+add_library( plasmapotdprovidercore SHARED ${potd_provider_core_SRCS} )
 target_link_libraries( plasmapotdprovidercore ${KDE4_KDEUI_LIBS} )
 set_target_properties( plasmapotdprovidercore PROPERTIES VERSION 1.0.0 SOVERSION 1 )
 

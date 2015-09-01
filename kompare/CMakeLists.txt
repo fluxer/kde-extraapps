@@ -29,9 +29,7 @@ kompare_shell.cpp
 kompareurldialog.cpp
 )
 
-kde4_add_app_icon(kompare_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pics/hi*-app-kompare.png")
-
-kde4_add_executable(kompare ${kompare_SRCS})
+add_executable(kompare ${kompare_SRCS})
 
 target_link_libraries(kompare  kompareinterface komparediff2 komparedialogpages ${KDE4_KTEXTEDITOR_LIBS} )
 

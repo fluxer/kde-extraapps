@@ -1,4 +1,4 @@
-kde4_add_library(kfilemetadata SHARED
+add_library(kfilemetadata SHARED
     extractionresult.cpp
     extractorplugin.cpp
     extractorpluginmanager.cpp

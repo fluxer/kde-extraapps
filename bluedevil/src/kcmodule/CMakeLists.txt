@@ -4,9 +4,8 @@ set(kcm_bluedeviltransfer_PART_SRCS
     bluedeviltransfer.cpp
     systemcheck.cpp
     kded.cpp
+    transfer.ui
 )
-
-kde4_add_ui_files(kcm_bluedeviltransfer_PART_SRCS_UI transfer.ui)
 
 kde4_add_kcfg_files(kcm_bluedeviltransfer_PART_SRCS
                     ../settings/filereceiversettings.kcfgc
@@ -22,7 +21,7 @@ qt4_add_dbus_interface(kcm_bluedeviltransfer_PART_SRCS
 
 kde4_add_plugin(kcm_bluedevildevices ${kcm_bluedevildevices_PART_SRCS})
 kde4_add_plugin(kcm_bluedeviladapters ${kcm_bluedeviladapters_PART_SRCS})
-kde4_add_plugin(kcm_bluedeviltransfer ${kcm_bluedeviltransfer_PART_SRCS} ${kcm_bluedeviltransfer_PART_SRCS_UI})
+kde4_add_plugin(kcm_bluedeviltransfer ${kcm_bluedeviltransfer_PART_SRCS})
 
 qt4_automoc(${kcm_bluedevildevices}
             ${kcm_bluedeviladapters}

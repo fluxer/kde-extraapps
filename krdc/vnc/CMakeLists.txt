@@ -12,9 +12,6 @@ if(LIBVNCSERVER_FOUND)
         vncclientthread.cpp
         vncviewfactory.cpp
         vncview.cpp
-    )
-
-    kde4_add_ui_files(vncplugin_SRCS
         vncpreferences.ui
     )
 

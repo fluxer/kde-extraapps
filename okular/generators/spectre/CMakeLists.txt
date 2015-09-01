@@ -11,9 +11,6 @@ include_directories(
 set(okularGenerator_ghostview_SRCS
    generator_ghostview.cpp
    rendererthread.cpp
-)
-
-kde4_add_ui_files(okularGenerator_ghostview_SRCS
    conf/gssettingswidget.ui
 )
 

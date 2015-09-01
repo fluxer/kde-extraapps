@@ -1,8 +1,6 @@
 project(life)
 
-set(life_SRCS life.cpp)
-
-kde4_add_ui_files(life_SRCS lifeConfig.ui)
+set(life_SRCS life.cpp lifeConfig.ui)
 kde4_add_plugin(plasma_applet_life ${life_SRCS})
 target_link_libraries(plasma_applet_life
                       ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS})

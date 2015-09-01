@@ -61,16 +61,12 @@ qt4_add_dbus_adaptor(plasma_lancelot_application_SRCS org.kde.lancelot.xml
 set(
    plasma_lancelot_SRCS
    main.cpp
+   LancelotConfigBase.ui
 
    ${plasma_lancelot_application_SRCS}
 )
 
-kde4_add_ui_files(
-   plasma_lancelot_SRCS
-   ui/LancelotConfigBase.ui
-)
-
-kde4_add_executable(lancelot-menu ${plasma_lancelot_SRCS})
+add_executable(lancelot-menu ${plasma_lancelot_SRCS})
 
 target_link_libraries(
    lancelot-menu

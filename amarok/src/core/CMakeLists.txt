@@ -103,7 +103,7 @@ set(libcore_LIB_SRCS
     ${libcore_transcoding_SRCS}
 )
 
-kde4_add_library(amarokcore SHARED ${libcore_LIB_SRCS})
+add_library(amarokcore SHARED ${libcore_LIB_SRCS})
 
 target_link_libraries(amarokcore
     amarokshared

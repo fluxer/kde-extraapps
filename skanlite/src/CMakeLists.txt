@@ -1,12 +1,16 @@
 include_directories(${CMAKE_SOURCE_DIR}/libksane)
 
-set(skanlite_SRCS main.cpp skanlite.cpp ImageViewer.cpp KSaneImageSaver.cpp SaveLocation.cpp)
+set(skanlite_SRCS
+    main.cpp
+    skanlite.cpp
+    ImageViewer.cpp
+    KSaneImageSaver.cpp
+    SaveLocation.cpp
+    settings.ui
+    SaveLocation.ui
+)
 
-kde4_add_ui_files(skanlite_SRCS settings.ui SaveLocation.ui)
-
-kde4_add_app_icon(skanlite_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/scanner.png")
-
-kde4_add_executable(skanlite ${skanlite_SRCS})
+add_executable(skanlite ${skanlite_SRCS})
 
 target_link_libraries(skanlite ${KDE4_KIO_LIBS} ${PNG_LIBRARY} ksane)
 

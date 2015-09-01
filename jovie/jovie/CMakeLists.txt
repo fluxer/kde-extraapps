@@ -18,7 +18,7 @@ set(jovie_SRCS
 
 qt4_add_dbus_adaptor(jovie_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml jovie.h Jovie)
 
-kde4_add_executable(jovie_bin ${jovie_SRCS})
+add_executable(jovie_bin ${jovie_SRCS})
 
 set_target_properties(jovie_bin PROPERTIES OUTPUT_NAME jovie)
 

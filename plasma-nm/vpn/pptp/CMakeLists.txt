@@ -1,10 +1,11 @@
 set(pptp_SRCS
-   pptp.cpp
-   pptpwidget.cpp
-   pptpauth.cpp
-   )
-
-kde4_add_ui_files(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
+    pptp.cpp
+    pptpwidget.cpp
+    pptpauth.cpp
+    pptpprop.ui
+    pptpadvanced.ui
+    pptpauth.ui
+)
 
 kde4_add_plugin(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 

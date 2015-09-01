@@ -4,9 +4,11 @@ set(l2tp_SRCS
     l2tpauth.cpp
     l2tpadvancedwidget.cpp
     l2tppppwidget.cpp
+    l2tp.ui
+    l2tpadvanced.ui
+    l2tpauth.ui
+    l2tpppp.ui
 )
-
-kde4_add_ui_files(l2tp_SRCS l2tp.ui l2tpadvanced.ui l2tpauth.ui l2tpppp.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_l2tpui ${l2tp_SRCS})
 

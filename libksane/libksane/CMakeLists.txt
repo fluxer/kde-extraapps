@@ -34,7 +34,7 @@ SET(ksane_LIB_SRCS
     options/ksane_opt_combo.cpp
     )
 
-KDE4_ADD_LIBRARY(ksane SHARED ${ksane_LIB_SRCS})
+add_library(ksane SHARED ${ksane_LIB_SRCS})
 
 TARGET_LINK_LIBRARIES(ksane ${KDE4_KDEUI_LIBS}
                             ${SANE_LIBRARY}
@@ -46,7 +46,7 @@ OPTION(COMPILE_VIEWER_TESTAPP "Compile a small test application for the viewer")
 
 IF (COMPILE_VIEWER_TESTAPP)
     message("Compile testapp")
-    kde4_add_executable(viewer_test ksane_viewer.cpp ksane_viewer_test.cpp selectionitem.cpp)
+    add_executable(viewer_test ksane_viewer.cpp ksane_viewer_test.cpp selectionitem.cpp)
     target_link_libraries(viewer_test ${KDE4_KDEUI_LIBS})
 ENDIF()
 

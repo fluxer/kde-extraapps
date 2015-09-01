@@ -8,7 +8,7 @@ set( compilerprovider_SRCS
         ../debugarea.cpp
     )
 
-kde4_add_library( kdevcompilerprovider SHARED
+add_library( kdevcompilerprovider SHARED
         ${compilerprovider_SRCS})
 
 target_link_libraries( kdevcompilerprovider LINK_PRIVATE

@@ -2,10 +2,7 @@
 project(plasma-incomingmsg)
 
 # We add our source code here
-set(incomingmsg_SRCS incomingmsg.cpp)
-
-# Now make sure all files get to the right place
-kde4_add_ui_files(incomingmsg_SRCS widget.ui)
+set(incomingmsg_SRCS incomingmsg.cpp widget.ui)
 kde4_add_plugin(plasma_applet_incomingmsg ${incomingmsg_SRCS})
 
 target_link_libraries(plasma_applet_incomingmsg

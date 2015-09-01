@@ -4,13 +4,10 @@ set(queuemanager_SRCS
     main.cpp
     PrintQueue.cpp
     PrintQueueUi.cpp
-)
-
-kde4_add_ui_files(queuemanager_SRCS
     PrintQueueUi.ui
 )
 
-kde4_add_executable(kde-print-queue
+add_executable(kde-print-queue
     ${queuemanager_SRCS}
 )
 

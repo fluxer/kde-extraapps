@@ -2,9 +2,9 @@ set(openswan_SRCS
     openswan.cpp
     openswanwidget.cpp
     openswanauth.cpp
+    openswan.ui 
+    openswanauth.ui
 )
-
-kde4_add_ui_files(openswan_SRCS openswan.ui openswanauth.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_openswanui ${openswan_SRCS})
 

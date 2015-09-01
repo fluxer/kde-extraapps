@@ -29,19 +29,19 @@ set(filelight_PART_SRCS
     fileTree.cpp
     localLister.cpp
     remoteLister.cpp
-    summaryWidget.cpp)
-
-kde4_add_ui_files(filelight_PART_SRCS dialog.ui)
+    summaryWidget.cpp
+    dialog.ui
+)
 
 kde4_add_plugin(filelightpart ${filelight_PART_SRCS})
 
 target_link_libraries(filelightpart radialmap
-                      ${KDE4_KDECORE_LIBS}
-                      ${KDE4_KPARTS_LIBS}
-                      ${KDE4_KDEUI_LIBS}
-                      ${KDE4_KIO_LIBS}
-                      ${KDE4_KFILE_LIBS}
-                      ${KDE4_SOLID_LIBS})
-
+    ${KDE4_KDECORE_LIBS}
+    ${KDE4_KPARTS_LIBS}
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${KDE4_KFILE_LIBS}
+    ${KDE4_SOLID_LIBS}
+)
 
 install(TARGETS filelightpart DESTINATION ${PLUGIN_INSTALL_DIR})

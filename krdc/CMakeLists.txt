@@ -80,6 +80,7 @@ set(krdc_SRCS
     tabbedviewwidget.cpp
     mainwindow.cpp
     main.cpp
+    config/general.ui
 )
 
 if(TelepathyQt4_FOUND)
@@ -88,13 +89,7 @@ if(TelepathyQt4_FOUND)
     )
 endif()
 
-kde4_add_ui_files(krdc_SRCS
-    config/general.ui
-)
-
-kde4_add_app_icon(krdc_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/apps/krdc.png")
-
-kde4_add_executable(krdc ${krdc_SRCS})
+add_executable(krdc ${krdc_SRCS})
 
 target_link_libraries(krdc
     ${KDE4_KFILE_LIBS}

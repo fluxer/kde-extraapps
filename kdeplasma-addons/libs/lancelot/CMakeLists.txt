@@ -81,7 +81,7 @@ set(lancelot_LIB_SRCS
         # models/PassagewayViewModels.cpp
 )
 
-kde4_add_library(lancelot SHARED ${lancelot_LIB_SRCS})
+add_library(lancelot SHARED ${lancelot_LIB_SRCS})
 
 target_link_libraries(
    lancelot

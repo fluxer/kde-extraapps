@@ -2,9 +2,6 @@ set(kcm_print_SRCS
     PrinterDelegate.cpp
     PrinterDescription.cpp
     PrintKCM.cpp
-)
-
-kde4_add_ui_files(kcm_print_SRCS
     PrintKCM.ui
     PrinterDescription.ui
 )

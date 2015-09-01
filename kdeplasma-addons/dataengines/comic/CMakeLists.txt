@@ -16,7 +16,7 @@ set(comic_provider_core_SRCS
   comicprovider.cpp
 )
 
-kde4_add_library( plasmacomicprovidercore SHARED ${comic_provider_core_SRCS} )
+add_library( plasmacomicprovidercore SHARED ${comic_provider_core_SRCS} )
 target_link_libraries( plasmacomicprovidercore PRIVATE ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KROSSCORE_LIBS} )
 target_link_libraries( plasmacomicprovidercore PUBLIC ${KDE4_KDECORE_LIBS})
 set_target_properties(

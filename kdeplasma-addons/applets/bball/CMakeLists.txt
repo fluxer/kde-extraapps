@@ -1,8 +1,6 @@
 project(bball)
 
-set(bball_SRCS bball.cpp)
-
-kde4_add_ui_files(bball_SRCS bballConfig.ui)
+set(bball_SRCS bball.cpp bballConfig.ui)
 
 kde4_add_plugin(plasma_applet_bball ${bball_SRCS})
 

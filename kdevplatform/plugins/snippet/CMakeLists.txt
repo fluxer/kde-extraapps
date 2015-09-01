@@ -15,14 +15,11 @@ set(kdevsnippet_PART_SRCS
     legacy/snippet.cpp
     legacy/editrepository.cpp
     legacy/editsnippet.cpp
-)
-set(kdevsnippet_PART_UI
     legacy/snippetview.ui
     legacy/editrepository.ui
     legacy/editsnippet.ui
 )
 
-kde4_add_ui_files(kdevsnippet_PART_SRCS ${kdevsnippet_PART_UI})
 kde4_add_plugin(kdevsnippet ${kdevsnippet_PART_SRCS})
 target_link_libraries(kdevsnippet ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KNEWSTUFF3_LIBS}
 kdevplatformlanguage kdevplatforminterfaces)

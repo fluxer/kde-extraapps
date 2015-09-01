@@ -2,15 +2,13 @@ project(webslice)
 
 include_directories( ${QT_INCLUDES} )
 
-
-
 set(webslice_SRCS
     main.cpp
     kgraphicswebslice.cpp
     kwebslice.cpp
 )
 
-KDE4_ADD_EXECUTABLE(webslice ${webslice_SRCS})
+add_executable(webslice ${webslice_SRCS})
 
 target_link_libraries(webslice
     ${QT_QTCORE_LIBRARY}

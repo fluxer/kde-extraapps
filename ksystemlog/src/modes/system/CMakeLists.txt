@@ -15,7 +15,7 @@ set(ksystemlog_system_sources
 	systemLogMode.cpp
 )
 
-kde4_add_library(ksystemlog_system STATIC ${ksystemlog_system_sources})
+add_library(ksystemlog_system STATIC ${ksystemlog_system_sources})
 
 add_dependencies(
 	ksystemlog_system 

@@ -1,8 +1,9 @@
 
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9513 )
 
-add_subdirectory(tests)
-
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 ########### next target ###############
 
@@ -21,9 +22,6 @@ set(kdevcvs_PART_SRCS
     cvslogjob.cpp
     cvsdiffjob.cpp
     cvsstatusjob.cpp
-)
-
-set(kdevcvs_PART_UI
     cvsmainview.ui
     cvsgenericoutputview.ui
     editorsview.ui
@@ -32,7 +30,6 @@ set(kdevcvs_PART_UI
     checkoutdialog.ui
 )
 
-kde4_add_ui_files(kdevcvs_PART_SRCS ${kdevcvs_PART_UI})
 kde4_add_plugin(kdevcvs ${kdevcvs_PART_SRCS})
 
 target_link_libraries(kdevcvs

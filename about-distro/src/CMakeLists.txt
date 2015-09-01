@@ -4,9 +4,8 @@ set(kcm_SRCS
     main.cpp
     Module.cpp
     OSRelease.cpp
+    Module.ui
 )
-
-kde4_add_ui_files(kcm_SRCS Module.ui)
 
 kde4_add_plugin(kcm_about_distro ${kcm_SRCS})
 

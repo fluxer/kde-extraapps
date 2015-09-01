@@ -7,13 +7,13 @@ add_subdirectory( talkerchooser )
 
 ########### next target ###############
 
-set(testfilter_SRCS main.cpp )
+if(ENABLE_TESTING)
+    set(testfilter_SRCS main.cpp )
 
+    add_executable(testfilter TEST ${testfilter_SRCS})
 
-kde4_add_executable(testfilter TEST ${testfilter_SRCS})
-
-target_link_libraries(testfilter  ${KDE4_KDEUI_LIBS} kttsd )
-
+    target_link_libraries(testfilter  ${KDE4_KDEUI_LIBS} kttsd )
+endif()
 
 ########### install files ###############
 

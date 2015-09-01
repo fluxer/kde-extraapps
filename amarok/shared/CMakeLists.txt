@@ -30,7 +30,7 @@ set( amarokshared_tag_helpers_SRCS
     tag_helpers/VorbisCommentTagHelper.cpp
 )
 
-kde4_add_library( amarokshared SHARED
+add_library( amarokshared SHARED
     ${amarokshared_SRCS}
     ${amarokshared_collectionscanner_SRCS}
     ${amarokshared_tag_helpers_SRCS} )

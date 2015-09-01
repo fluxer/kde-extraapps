@@ -32,7 +32,7 @@ set(ksystemlog_cups_sources
 	
 )
 
-kde4_add_library(ksystemlog_cups STATIC ${ksystemlog_cups_sources})
+add_library(ksystemlog_cups STATIC ${ksystemlog_cups_sources})
 
 add_dependencies(
 	ksystemlog_cups

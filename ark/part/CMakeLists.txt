@@ -1,16 +1,14 @@
 set(arkpart_PART_SRCS
-	part.cpp
-	infopanel.cpp
-	arkviewer.cpp
-	archivemodel.cpp
-	archiveview.cpp
-	jobtracker.cpp
-    )
+    part.cpp
+    infopanel.cpp
+    arkviewer.cpp
+    archivemodel.cpp
+    archiveview.cpp
+    jobtracker.cpp
+    infopanel.ui jobtracker.ui
+)
 
 qt4_add_dbus_adaptor(arkpart_PART_SRCS dnddbusinterface.xml part.h Ark::Part)
-
-kde4_add_ui_files(arkpart_PART_SRCS infopanel.ui )
-kde4_add_ui_files(arkpart_PART_SRCS jobtracker.ui )
 
 kde4_add_plugin(arkpart ${arkpart_PART_SRCS})
 

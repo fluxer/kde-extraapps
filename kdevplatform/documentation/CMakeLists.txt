@@ -5,10 +5,10 @@ set(kdevplatformdocumentation_LIB_SRCS
     standarddocumentationview.cpp
     documentationfindwidget.cpp
     documentationview.cpp
+    documentationfindwidget.ui
 )
 
-kde4_add_ui_files(kdevplatformdocumentation_LIB_SRCS documentationfindwidget.ui)
-kde4_add_library(kdevplatformdocumentation SHARED ${kdevplatformdocumentation_LIB_SRCS})
+add_library(kdevplatformdocumentation SHARED ${kdevplatformdocumentation_LIB_SRCS})
 
 install(TARGETS kdevplatformdocumentation EXPORT KDevPlatformTargets ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

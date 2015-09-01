@@ -12,7 +12,7 @@ set( outputviewinterfaces_LIB_SRCS
     outputjob.cpp
     outputexecutejob.cpp
 )
-kde4_add_library( kdevplatformoutputview SHARED ${outputviewinterfaces_LIB_SRCS} )
+add_library( kdevplatformoutputview SHARED ${outputviewinterfaces_LIB_SRCS} )
 target_link_libraries(kdevplatformoutputview LINK_PUBLIC
     ${KDE4_KDEUI_LIBS}
 )
@@ -37,4 +37,6 @@ install(TARGETS kdevplatformoutputview EXPORT KDevPlatformTargets ${INSTALL_TARG
           outputexecutejob.h
           DESTINATION ${INCLUDE_INSTALL_DIR}/kdevplatform/outputview COMPONENT Devel)
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()

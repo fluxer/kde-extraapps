@@ -129,7 +129,7 @@ set(kmix_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
    core/volume.cpp
    )
 
-kde4_add_executable( kmix ${kmix_SRCS})
+add_executable( kmix ${kmix_SRCS})
 
 target_link_libraries(kmix ${KDE4_SOLID_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
@@ -212,7 +212,7 @@ set(kmixctrl_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
 # gui/guiprofile.cpp
 
 
-kde4_add_executable( kmixctrl ${kmixctrl_SRCS})
+add_executable( kmixctrl ${kmixctrl_SRCS})
 
 target_link_libraries(kmixctrl ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 

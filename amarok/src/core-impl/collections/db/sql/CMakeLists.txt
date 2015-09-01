@@ -19,7 +19,7 @@ set( amarok_collection-sqlcollection_SRCS
     device/smb/SmbDeviceHandler.cpp
 )
 
-kde4_add_library(amarok-sqlcollection SHARED ${amarok_collection-sqlcollection_SRCS})
+add_library(amarok-sqlcollection SHARED ${amarok_collection-sqlcollection_SRCS})
 
 target_link_libraries(amarok-sqlcollection
     ${KDE4_KDECORE_LIBS}

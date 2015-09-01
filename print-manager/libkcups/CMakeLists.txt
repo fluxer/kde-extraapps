@@ -14,13 +14,10 @@ set(libkcups_SRCS
     PrinterSortFilterModel.cpp
     JobModel.cpp
     JobSortFilterModel.cpp
-)
-
-kde4_add_ui_files(libkcups_SRCS
     SelectMakeModel.ui
 )
 
-kde4_add_library(kcupslib SHARED ${libkcups_SRCS})
+add_library(kcupslib SHARED ${libkcups_SRCS})
 target_link_libraries(kcupslib
     ${KDE4_KIO_LIBS}
     ${CUPS_LIB}

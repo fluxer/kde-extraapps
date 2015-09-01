@@ -23,16 +23,8 @@ set(plasma_applet_lancelot_launcher_SRCS
    LancelotApplet.cpp
    LancelotAppletConfig.cpp
    ../application/LancelotConfig.cpp
-)
-
-kde4_add_ui_files(
-   plasma_applet_lancelot_launcher_SRCS
    LancelotAppletConfigBase.ui
-)
-
-kde4_add_ui_files(
-   plasma_applet_lancelot_launcher_SRCS
-   ../application/ui/LancelotConfigBase.ui
+   ../application/LancelotConfigBase.ui
 )
 
 kde4_add_plugin(plasma_applet_lancelot_launcher ${plasma_applet_lancelot_launcher_SRCS})

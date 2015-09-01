@@ -30,10 +30,6 @@ set(amarok_service_magnatune_PART_SRCS
     MagnatuneStore.cpp
     MagnatuneUrlRunner.cpp
     MagnatuneXmlParser.cpp
-
-)
-
-kde4_add_ui_files( amarok_service_magnatune_PART_SRCS
     MagnatuneDownloadDialogBase.ui
     MagnatuneNeedUpdateWidget.ui
     MagnatuneRedownloadDialogBase.ui
@@ -58,18 +54,20 @@ install(TARGETS amarok_service_magnatunestore DESTINATION ${PLUGIN_INSTALL_DIR} 
 set(kcm_amarok_service_magnatune_PART_SRCSS
     MagnatuneSettingsModule.cpp
     MagnatuneConfig.cpp
+    MagnatuneConfigWidget.ui
 )
-
-kde4_add_ui_files( kcm_amarok_service_magnatune_PART_SRCSS MagnatuneConfigWidget.ui )
-
 
 kde4_add_plugin( kcm_amarok_service_magnatunestore ${kcm_amarok_service_magnatune_PART_SRCSS} )
 
-
-target_link_libraries( kcm_amarok_service_magnatunestore  ${KDE4_KUTILS_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${KDE4_KDECORE_LIBRARY} ${KDE4_KDEUI_LIBS} )
+target_link_libraries(kcm_amarok_service_magnatunestore
+    ${KDE4_KUTILS_LIBS}
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${KDE4_KDECORE_LIBRARY}
+    ${KDE4_KDEUI_LIBS}
+)
 
 install(TARGETS kcm_amarok_service_magnatunestore  DESTINATION ${PLUGIN_INSTALL_DIR})
-
 
 ########### install files ###############
 

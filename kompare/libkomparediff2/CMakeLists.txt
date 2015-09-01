@@ -8,23 +8,24 @@ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories (${PROJECT_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
 set(komparediff2_SRCS
-	kompareprocess.cpp 
-	komparemodellist.cpp 
-	diffmodellist.cpp 
-	diffmodel.cpp 
-	difference.cpp 
-	diffhunk.cpp 
-	diffsettings.cpp
-	settingsbase.cpp
-	parser.cpp 
-	parserbase.cpp 
-	cvsdiffparser.cpp 
-	diffparser.cpp 
-	perforceparser.cpp 
-	stringlistpair.cpp)
+    kompareprocess.cpp 
+    komparemodellist.cpp 
+    diffmodellist.cpp 
+    diffmodel.cpp 
+    difference.cpp 
+    diffhunk.cpp 
+    diffsettings.cpp
+    settingsbase.cpp
+    parser.cpp 
+    parserbase.cpp 
+    cvsdiffparser.cpp 
+    diffparser.cpp 
+    perforceparser.cpp 
+    stringlistpair.cpp
+)
 
 
-kde4_add_library(komparediff2 SHARED ${komparediff2_SRCS})
+add_library(komparediff2 SHARED ${komparediff2_SRCS})
 
 target_link_libraries(komparediff2 ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
 
@@ -33,7 +34,9 @@ SOVERSION ${GENERIC_LIB_SOVERSION} )
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 install(FILES
     diff2export.h

@@ -45,7 +45,7 @@ if(LIBXML2_FOUND AND CURL_FOUND)
                 Mp3tunesHarmonyDaemon
             )
 
-            kde4_add_executable(amarokmp3tunesharmonydaemon NOGUI
+            add_executable(amarokmp3tunesharmonydaemon NOGUI
                 ${amarok_service_mp3tunes_harmony_PART_SRCS}
             )
 

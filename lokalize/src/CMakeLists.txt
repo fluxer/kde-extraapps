@@ -109,9 +109,7 @@ set(lokalize_SRCS
     catalog/gettext/gettextexport.cpp
     catalog/xliff/xliffstorage.cpp
     catalog/ts/tsstorage.cpp
-)
 
-kde4_add_ui_files(lokalize_SRCS
     prefs/prefs_identity.ui
     prefs/prefs_editor.ui
     prefs/prefs_appearance.ui
@@ -151,10 +149,7 @@ qt4_add_dbus_adaptor(lokalize_SRCS project/org.kde.lokalize.ProjectOverview.xml
                      project/projecttab.h ProjectTab)
 
 
-
-kde4_add_app_icon(lokalize_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-app-lokalize.png")
-
-kde4_add_executable(lokalize ${lokalize_SRCS})
+add_executable(lokalize ${lokalize_SRCS})
 
 target_link_libraries(lokalize
     ${KDE4_KPARTS_LIBS}

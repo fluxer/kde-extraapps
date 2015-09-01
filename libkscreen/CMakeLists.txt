@@ -63,7 +63,9 @@ include_directories(${PROJECT_SOURCE_DIR}/src ${CMAKE_BINARY_DIR} ${CMAKE_CURREN
 
 add_subdirectory(src)
 add_subdirectory(backends)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 configure_file(${libkscreen_SOURCE_DIR}/LibKScreenConfig.cmake.in
                ${libkscreen_BINARY_DIR}/LibKScreenConfig.cmake

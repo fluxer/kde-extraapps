@@ -1,16 +1,10 @@
-add_subdirectory(dvcs/tests)
-add_subdirectory(models/tests)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(dvcs/tests)
+    add_subdirectory(models/tests)
+    add_subdirectory(tests)
+endif()
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=9509)
-
-set(kdevplatformvcs_UIS
-    widgets/vcscommitdialog.ui
-    widgets/vcseventwidget.ui
-    widgets/vcsdiffwidget.ui
-    dvcs/ui/dvcsimportmetadatawidget.ui
-    dvcs/ui/branchmanager.ui
-)
 
 set(kdevplatformvcs_LIB_SRCS
     vcsjob.cpp
@@ -43,10 +37,14 @@ set(kdevplatformvcs_LIB_SRCS
     dvcs/ui/revhistory/commitlogmodel.cpp
     interfaces/ibasicversioncontrol.cpp
     interfaces/icontentawareversioncontrol.cpp
+    widgets/vcscommitdialog.ui
+    widgets/vcseventwidget.ui
+    widgets/vcsdiffwidget.ui
+    dvcs/ui/dvcsimportmetadatawidget.ui
+    dvcs/ui/branchmanager.ui
 )
 
-kde4_add_ui_files(kdevplatformvcs_LIB_SRCS ${kdevplatformvcs_UIS})
-kde4_add_library(kdevplatformvcs SHARED ${kdevplatformvcs_LIB_SRCS})
+add_library(kdevplatformvcs SHARED ${kdevplatformvcs_LIB_SRCS})
 target_link_libraries(kdevplatformvcs LINK_PUBLIC
     kdevplatformoutputview
     kdevplatforminterfaces

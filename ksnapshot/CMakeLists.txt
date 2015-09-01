@@ -35,7 +35,8 @@ set(ksnapshot_file_SRCS
 
 set(ksnapshot_SRCS
    main.cpp
-   ksnapshot.cpp 
+   ksnapshot.cpp
+   ksnapshotwidget.ui
    ${ksnapshot_file_SRCS})
 
 if (KIPI_FOUND)
@@ -49,12 +50,7 @@ endif (KIPI_FOUND)
 
 qt4_add_dbus_adaptor(ksnapshot_SRCS org.kde.ksnapshot.xml ksnapshot.h KSnapshot)
 
-
-kde4_add_ui_files(ksnapshot_SRCS ksnapshotwidget.ui)
-
-kde4_add_app_icon(ksnapshot_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-ksnapshot.png")
-
-kde4_add_executable(ksnapshot ${ksnapshot_SRCS})
+add_executable(ksnapshot ${ksnapshot_SRCS})
 
 target_link_libraries(ksnapshot ${KDE4_KIO_LIBS} ${X11_LIBRARIES})
 
@@ -73,10 +69,10 @@ install(TARGETS ksnapshot ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 set(kbackgroundsnapshot_SRCS
    kbackgroundsnapshot.cpp
-   ${ksnapshot_file_SRCS})
+   ${ksnapshot_file_SRCS}
+)
 
-
-kde4_add_executable(kbackgroundsnapshot ${kbackgroundsnapshot_SRCS})
+add_executable(kbackgroundsnapshot ${kbackgroundsnapshot_SRCS})
 
 target_link_libraries(kbackgroundsnapshot ${KDE4_KIO_LIBS} ${X11_LIBRARIES})
 

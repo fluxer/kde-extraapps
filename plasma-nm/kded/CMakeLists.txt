@@ -9,8 +9,6 @@ if (WITH_MODEMMANAGER_SUPPORT)
         bluetoothmonitor.cpp
         modemmonitor.cpp
         pindialog.cpp
-    )
-    kde4_add_ui_files(kded_networkmanagement_SRCS
         pinwidget.ui
         passworddialog.ui
 
@@ -22,8 +20,6 @@ else()
         secretagent.cpp
         service.cpp
         bluetoothmonitor.cpp
-    )
-    kde4_add_ui_files(kded_networkmanagement_SRCS
         passworddialog.ui
     )
 endif()

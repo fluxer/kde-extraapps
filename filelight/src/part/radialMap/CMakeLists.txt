@@ -25,7 +25,7 @@ set(radialmap_STAT_SRCS
     widgetEvents.cpp
     labels.cpp)
 
-kde4_add_library(radialmap ${radialmap_STAT_SRCS} )
+add_library(radialmap ${radialmap_STAT_SRCS} )
 
 set_target_properties(radialmap PROPERTIES COMPILE_FLAGS -fPIC)
 

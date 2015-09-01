@@ -34,9 +34,6 @@ set(okularGenerator_poppler_PART_SRCS
    annots.cpp
    synctex/synctex_parser.c
    synctex/synctex_parser_utils.c
-)
-
-kde4_add_ui_files(okularGenerator_poppler_PART_SRCS
    conf/pdfsettingswidget.ui
 )
 

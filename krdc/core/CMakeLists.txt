@@ -9,7 +9,7 @@ set(krdccore_SRCS
 
 kde4_add_kcfg_files(krdccore_SRCS settings.kcfgc)
 
-kde4_add_library(krdccore SHARED ${krdccore_SRCS})
+add_library(krdccore SHARED ${krdccore_SRCS})
 
 target_link_libraries(krdccore ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 

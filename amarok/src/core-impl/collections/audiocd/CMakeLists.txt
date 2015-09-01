@@ -21,9 +21,8 @@ set(amarok_collection-audiocdcollection_PART_SRCS
     handler/AudioCdHandler.cpp
     support/AudioCdDeviceInfo.cpp
     support/AudioCdConnectionAssistant.cpp
+    FormatSelectionDialog.ui
 )
-
-kde4_add_ui_files(amarok_collection-audiocdcollection_PART_SRCS FormatSelectionDialog.ui)
 
 kde4_add_plugin(amarok_collection-audiocdcollection ${amarok_collection-audiocdcollection_PART_SRCS})
 

@@ -9,9 +9,7 @@ include(KDE4Defaults)
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
 
-set(pothumbnail_SRCS pocreator.cpp)
-
-kde4_add_ui_files(pothumbnail_SRCS pocreatorform.ui)
+set(pothumbnail_SRCS pocreator.cpp pocreatorform.ui)
 
 kde4_add_kcfg_files(pothumbnail_SRCS pocreatorsettings.kcfgc)
 

@@ -3,9 +3,9 @@ include_directories(
 )
 
 set(kget_mirrorsearchfactory_PART_SRCS
-  mirrors.cpp
-  mirrorsearchtransferdatasource.cpp
-  mirrorsearchfactory.cpp
+    mirrors.cpp
+    mirrorsearchtransferdatasource.cpp
+    mirrorsearchfactory.cpp
 )
 
 kde4_add_kcfg_files(kget_mirrorsearchfactory_PART_SRCS mirrorsearchsettings.kcfgc)
@@ -20,12 +20,9 @@ install(FILES kget_mirrorsearchfactory.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
 ###Build KCM-Module
 set(kcm_kget_mirrorsearchfactory_PART_SRCS
-  dlgmirrorsearch.cpp
-)
-
-kde4_add_ui_files(kcm_kget_mirrorsearchfactory_PART_SRCS
-  dlgmirrorsearch.ui 
-  dlgengineediting.ui
+    dlgmirrorsearch.cpp
+    dlgmirrorsearch.ui 
+    dlgengineediting.ui
 )
 
 kde4_add_kcfg_files(kcm_kget_mirrorsearchfactory_PART_SRCS mirrorsearchsettings.kcfgc)

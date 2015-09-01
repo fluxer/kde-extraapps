@@ -24,11 +24,13 @@ set(videoplayer_app_SRCS
     loadView.cpp
     ../mpris2/mpris2.cpp
     ../mpris2/mediaplayer2.cpp
-    ../mpris2/mediaplayer2player.cpp )
+    ../mpris2/mediaplayer2player.cpp
+    videoSettingsWidget.ui
+    loadView.ui
+    audioView2.ui
+)
 
-kde4_add_ui_files(videoplayer_app_SRCS videoSettingsWidget.ui loadView.ui audioView2.ui)
-
-kde4_add_executable(dragon ${videoplayer_app_SRCS} )
+add_executable(dragon ${videoplayer_app_SRCS} )
 
 target_link_libraries(dragon
     ${KDE4_KIO_LIBS}

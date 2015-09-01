@@ -6,15 +6,12 @@ include_directories(
 )
 
 set(kget_metalinkfactory_PART_SRCS
-  metalinkfactory.cpp
-  abstractmetalink.cpp
-  metalinkxml.cpp
-  metalinkhttp.cpp
-  fileselectiondlg.cpp
-  ../../ui/metalinkcreator/metalinker.cpp
-)
-
-kde4_add_ui_files(kget_metalinkfactory_PART_SRCS
+    metalinkfactory.cpp
+    abstractmetalink.cpp
+    metalinkxml.cpp
+    metalinkhttp.cpp
+    fileselectiondlg.cpp
+    ../../ui/metalinkcreator/metalinker.cpp
     fileselection.ui
 )
 
@@ -30,11 +27,8 @@ install(FILES kget_metalinkfactory.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
 ###Build KCM-Module
 set(kcm_kget_metalinkfactory_PART_SRCS
-dlgmetalink.cpp
-)
-
-kde4_add_ui_files(kcm_kget_metalinkfactory_PART_SRCS
-dlgmetalink.ui
+    dlgmetalink.cpp
+    dlgmetalink.ui
 )
 
 kde4_add_kcfg_files(kcm_kget_metalinkfactory_PART_SRCS metalinksettings.kcfgc)

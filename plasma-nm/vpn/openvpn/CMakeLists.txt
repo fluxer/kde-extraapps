@@ -3,9 +3,10 @@ set(openvpn_SRCS
     openvpnwidget.cpp
     openvpnauth.cpp
     openvpnadvancedwidget.cpp
+    openvpn.ui
+    openvpnauth.ui
+    openvpnadvanced.ui
 )
-
-kde4_add_ui_files(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 

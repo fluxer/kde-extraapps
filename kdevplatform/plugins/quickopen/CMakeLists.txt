@@ -1,7 +1,9 @@
 
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9520 )
 
-add_subdirectory( tests )
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 ########### next target ###############
 
@@ -16,14 +18,9 @@ set(kdevquickopen_PART_SRCS
     expandingtree/expandingdelegate.cpp
     expandingtree/expandingtree.cpp
     expandingtree/expandingwidgetmodel.cpp
-)
-
-set (
-    kdevquickopen_UI
     quickopen.ui
 )
 
-kde4_add_ui_files(kdevquickopen_PART_SRCS ${kdevquickopen_UI})
 kde4_add_plugin(kdevquickopen ${kdevquickopen_PART_SRCS})
 target_link_libraries(kdevquickopen kdevplatformlanguage kdevplatforminterfaces kdevplatformproject ${KDE4_KDEUI_LIBS} ${KDE4_KTEXTEDITOR_LIBS} kdevplatformutil)
 

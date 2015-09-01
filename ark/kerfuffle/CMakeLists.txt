@@ -7,18 +7,18 @@ set(kerfuffle_SRCS
     archive.cpp
     archiveinterface.cpp
     jobs.cpp
-	extractiondialog.cpp
-	adddialog.cpp
-	queries.cpp
-	addtoarchive.cpp
-	cliinterface.cpp
-   )
+    extractiondialog.cpp
+    adddialog.cpp
+    queries.cpp
+    addtoarchive.cpp
+    cliinterface.cpp
+    extractiondialog.ui
+    adddialog.ui
+)
 
 kde4_add_kcfg_files(kerfuffle_SRCS settings.kcfgc)
 
-kde4_add_ui_files(kerfuffle_SRCS extractiondialog.ui adddialog.ui )
-
-kde4_add_library(kerfuffle SHARED ${kerfuffle_SRCS})
+add_library(kerfuffle SHARED ${kerfuffle_SRCS})
 
 target_link_libraries(kerfuffle ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBS})
 if (NOT WIN32)
@@ -32,7 +32,7 @@ install(TARGETS kerfuffle ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES kerfufflePlugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
 install(FILES ark.kcfg                DESTINATION ${KCFG_INSTALL_DIR})
 
-if (QJSON_FOUND)
+if (QJSON_FOUND AND ENABLE_TESTING)
   # This is a hack to make QJSON work with both 0.7.1 (the latest stable)
   # and the current master (b440550), which uses a different casing for
   # the CMake variables.
@@ -47,4 +47,4 @@ if (QJSON_FOUND)
   endif (QJSON_LIBRARIES AND QJSON_INCLUDE_DIR)
 
   add_subdirectory(tests)
-endif (QJSON_FOUND)
+endif ()

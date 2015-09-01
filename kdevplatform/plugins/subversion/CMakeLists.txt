@@ -1,7 +1,9 @@
 
 project(KDevSubversionPlugin)
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 add_subdirectory(icons)
 
 add_definitions( ${KDE4_ENABLE_EXCEPTIONS} -DKDE_DEFAULT_DEBUG_AREA=9510 )
@@ -72,15 +74,11 @@ set(kdevsubversion_PART_SRCS
     svncheckoutmetadatawidget.cpp
     svnclient.cpp
     svnlocationwidget.cpp
+    ssltrustdialog.ui
+    importmetadatawidget.ui
+    checkoutmetadatawidget.ui
 )
 
-set(kdevsubversion_PART_UI
-    ui/ssltrustdialog.ui
-    ui/importmetadatawidget.ui
-    ui/checkoutmetadatawidget.ui
-)
-
-kde4_add_ui_files(kdevsubversion_PART_SRCS ${kdevsubversion_PART_UI})
 kde4_add_plugin(kdevsubversion ${kdevsubversion_PART_SRCS} ${kdevsubversion_JOB_SRCS} ${kdevsubversion_WRAPPER_SRCS})
 
 target_link_libraries(kdevsubversion

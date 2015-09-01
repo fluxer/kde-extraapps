@@ -60,7 +60,7 @@ set(kdevcppduchain_LIB_SRCS
 #       Its only purpose is to support the plugin without needing to add all source files
 #       to the plugin target
 
-kde4_add_library(kdev4cppduchain SHARED ${kdevcppduchain_LIB_SRCS})
+add_library(kdev4cppduchain SHARED ${kdevcppduchain_LIB_SRCS})
 target_link_libraries(kdev4cppduchain LINK_PRIVATE
 		${KDEVPLATFORM_LANGUAGE_LIBRARIES} 
 		${KDEVPLATFORM_INTERFACES_LIBRARIES} 

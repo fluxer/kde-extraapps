@@ -7,8 +7,7 @@ include_directories(
     ${KDE4_INCLUDES}
     )
 
-set(notes_SRCS notes.cpp textedit.cpp)
-kde4_add_ui_files(notes_SRCS config.ui)
+set(notes_SRCS notes.cpp textedit.cpp config.ui)
 
 kde4_add_plugin(plasma_applet_notes ${notes_SRCS})
 target_link_libraries(plasma_applet_notes

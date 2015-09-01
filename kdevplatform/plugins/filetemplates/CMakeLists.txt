@@ -13,16 +13,14 @@ set(kdevfiletemplates_PART_SRCS
     templateoptionspage.cpp
     templateselectionpage.cpp
     testcasespage.cpp
-)
 
-kde4_add_ui_files(kdevfiletemplates_PART_SRCS
     templatepreviewtoolview.ui
-    ui/licensechooser.ui
-    ui/newclass.ui
-    ui/outputlocation.ui
-    ui/overridevirtuals.ui
-    ui/templateselection.ui
-    ui/testcases.ui
+    licensechooser.ui
+    newclass.ui
+    outputlocation.ui
+    overridevirtuals.ui
+    templateselection.ui
+    testcases.ui
 )
 
 kde4_add_plugin(kdevfiletemplates ${kdevfiletemplates_PART_SRCS})
@@ -80,7 +78,7 @@ main.cpp
     testcasespage.cpp
 )
 
-kde4_add_executable(testfiletemplates ${test_srcs})
+add_executable(testfiletemplates ${test_srcs})
 
 target_link_libraries(testfiletemplates
     ${KDE4_KDECORE_LIBS}

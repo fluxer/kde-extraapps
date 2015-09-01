@@ -22,7 +22,9 @@ target_link_libraries(kdevcodeutils
 )
 
 add_subdirectory(doc_templates)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 install(TARGETS kdevcodeutils DESTINATION ${PLUGIN_INSTALL_DIR} )
 

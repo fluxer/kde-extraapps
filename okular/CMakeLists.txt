@@ -25,7 +25,10 @@ add_subdirectory( plasma )
 add_subdirectory( ui )
 add_subdirectory( shell )
 add_subdirectory( generators )
-add_subdirectory( tests )
+
+if(ENABLE_TESTING)
+    add_subdirectory( tests )
+endif()
 
 include(OkularConfigureChecks.cmake)
 include(MacroWriteBasicCMakeVersionFile)
@@ -64,10 +67,8 @@ set(okularcore_SRCS
    core/utils.cpp
    core/view.cpp
    core/fileprinter.cpp
-)
-
-kde4_add_ui_files(okularcore_SRCS
    conf/textdocumentsettings.ui
+   core/chooseenginewidget.ui
 )
 
 install( FILES
@@ -104,13 +105,9 @@ install( FILES
            interfaces/viewerinterface.h
          DESTINATION ${INCLUDE_INSTALL_DIR}/okular/interfaces COMPONENT Devel)
 
-kde4_add_ui_files(okularcore_SRCS
-   core/chooseenginewidget.ui
-)
-
 kde4_add_kcfg_files(okularcore_SRCS ${PROJECT_SOURCE_DIR}/conf/settings_core.kcfgc )
 
-kde4_add_library(okularcore SHARED ${okularcore_SRCS})
+add_library(okularcore SHARED ${okularcore_SRCS})
 
 target_link_libraries(okularcore ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBRARY} ${MATH_LIB} ${KDE4_THREADWEAVER_LIBRARY} )
 
@@ -175,9 +172,6 @@ set(okularpart_SRCS
    ui/toolaction.cpp
    ui/tts.cpp
    ui/videowidget.cpp
-)
-
-kde4_add_ui_files(okularpart_SRCS
    conf/dlgaccessibilitybase.ui
    conf/dlgeditorbase.ui
    conf/dlggeneralbase.ui

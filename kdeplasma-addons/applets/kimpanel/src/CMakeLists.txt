@@ -12,9 +12,9 @@ set(plasma_applet_kimpanel_SRCS
     icongridlayout.cpp
     paintutils.cpp
     dummywidget.cpp
+    config.ui
 )
 
-kde4_add_ui_files(plasma_applet_kimpanel_SRCS config.ui)
 kde4_add_kcfg_files(plasma_applet_kimpanel_SRCS kimpanelconfig.kcfgc)
 kde4_add_plugin(plasma_applet_kimpanel ${plasma_applet_kimpanel_SRCS})
 target_link_libraries(plasma_applet_kimpanel

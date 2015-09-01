@@ -20,7 +20,7 @@ set(ksystemlog_apache_sources
 	apacheAccessLogMode.cpp
 )
 
-kde4_add_library(ksystemlog_apache STATIC ${ksystemlog_apache_sources})
+add_library(ksystemlog_apache STATIC ${ksystemlog_apache_sources})
 
 add_dependencies(
 	ksystemlog_apache

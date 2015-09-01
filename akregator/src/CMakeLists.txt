@@ -12,14 +12,12 @@ include_directories(
 
 set(akregator_SRCS main.cpp mainwindow.cpp)
 
-kde4_add_app_icon(akregator_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hi*-app-akregator.png")
-
-kde4_add_executable(akregator ${akregator_SRCS})
+add_executable(akregator ${akregator_SRCS})
 
 target_link_libraries(akregator
-  ${KDE4_KPARTS_LIBS}
-  akregatorprivate
-  akregatorinterfaces
+    ${KDE4_KPARTS_LIBS}
+    akregatorprivate
+    akregatorinterfaces
 )
 
 install(TARGETS akregator ${INSTALL_TARGETS_DEFAULT_ARGS})
@@ -27,101 +25,98 @@ install(TARGETS akregator ${INSTALL_TARGETS_DEFAULT_ARGS})
 ########### next target ###############
 
 set(akregatorprivate_LIB_SRCS
-  aboutdata.cpp
-  trayicon.cpp
-  article.cpp
-  feed.cpp
-  feedlist.cpp
-  treenode.cpp
-  treenodevisitor.cpp
-  utils.cpp
-  feediconmanager.cpp
-  notificationmanager.cpp
-  articlejobs.cpp
-  folder.cpp
-  kernel.cpp
-  subscriptionlistjobs.cpp
-  fetchqueue.cpp
-  frame.cpp
-  framemanager.cpp
-  browserrun.cpp
-  openurlrequest.cpp
-  actionmanager.cpp
-  actions.cpp
+    aboutdata.cpp
+    trayicon.cpp
+    article.cpp
+    feed.cpp
+    feedlist.cpp
+    treenode.cpp
+    treenodevisitor.cpp
+    utils.cpp
+    feediconmanager.cpp
+    notificationmanager.cpp
+    articlejobs.cpp
+    folder.cpp
+    kernel.cpp
+    subscriptionlistjobs.cpp
+    fetchqueue.cpp
+    frame.cpp
+    framemanager.cpp
+    browserrun.cpp
+    openurlrequest.cpp
+    actionmanager.cpp
+    actions.cpp
 )
 
-kde4_add_library(akregatorprivate ${LIBRARY_TYPE} ${akregatorprivate_LIB_SRCS})
+add_library(akregatorprivate ${LIBRARY_TYPE} ${akregatorprivate_LIB_SRCS})
 
 target_link_libraries(akregatorprivate
-  ${KDE4_KDEUI_LIBS}
-  ${KDE4_KPARTS_LIBS}
-  akregatorinterfaces
-  syndication
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_KPARTS_LIBS}
+    akregatorinterfaces
+    syndication
 )
 
 set_target_properties(akregatorprivate
-  PROPERTIES VERSION ${GENERIC_LIB_VERSION}
-  SOVERSION ${GENERIC_LIB_SOVERSION}
+    PROPERTIES VERSION ${GENERIC_LIB_VERSION}
+    SOVERSION ${GENERIC_LIB_SOVERSION}
 )
 install(TARGETS akregatorprivate ${INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 ########### next target ###############
 
 set(akregator_utils_SRCS
-  utils/filtercolumnsproxymodel.cpp
+    utils/filtercolumnsproxymodel.cpp
 )
 
 set(akregatorpart_PART_SRCS
-  ${akregator_utils_SRCS}
-  deletesubscriptioncommand.cpp
-  abstractselectioncontroller.cpp
-  articlematcher.cpp
-  articlemodel.cpp
-  pluginmanager.cpp
-  selectioncontroller.cpp
-  subscriptionlistmodel.cpp
-  searchbar.cpp
-  articlelistview.cpp
-  actionmanagerimpl.cpp
-  createfeedcommand.cpp
-  createfoldercommand.cpp
-  expireitemscommand.cpp
-  articleviewer.cpp
-  articleformatter.cpp
-  addfeeddialog.cpp
-  loadfeedlistcommand.cpp
-  editsubscriptioncommand.cpp
-  importfeedlistcommand.cpp
-  feedpropertiesdialog.cpp
-  tabwidget.cpp
-  akregator_part.cpp
-  mainwidget.cpp
-  subscriptionlistview.cpp
-  subscriptionlistdelegate.cpp
-  dummystorage/storagedummyimpl.cpp
-  dummystorage/storagefactorydummyimpl.cpp
-  dummystorage/feedstoragedummyimpl.cpp
-  speechclient.cpp
+    ${akregator_utils_SRCS}
+    deletesubscriptioncommand.cpp
+    abstractselectioncontroller.cpp
+    articlematcher.cpp
+    articlemodel.cpp
+    pluginmanager.cpp
+    selectioncontroller.cpp
+    subscriptionlistmodel.cpp
+    searchbar.cpp
+    articlelistview.cpp
+    actionmanagerimpl.cpp
+    createfeedcommand.cpp
+    createfoldercommand.cpp
+    expireitemscommand.cpp
+    articleviewer.cpp
+    articleformatter.cpp
+    addfeeddialog.cpp
+    loadfeedlistcommand.cpp
+    editsubscriptioncommand.cpp
+    importfeedlistcommand.cpp
+    feedpropertiesdialog.cpp
+    tabwidget.cpp
+    akregator_part.cpp
+    mainwidget.cpp
+    subscriptionlistview.cpp
+    subscriptionlistdelegate.cpp
+    dummystorage/storagedummyimpl.cpp
+    dummystorage/storagefactorydummyimpl.cpp
+    dummystorage/feedstoragedummyimpl.cpp
+    speechclient.cpp
+    addfeedwidgetbase.ui
+    feedpropertieswidgetbase.ui
 )
 
 qt4_add_dbus_interfaces(akregatorpart_PART_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml)
 qt4_add_dbus_adaptor(akregatorpart_PART_SRCS org.kde.akregator.part.xml akregator_part.h Akregator::Part)
 
-kde4_add_ui_files(akregatorpart_PART_SRCS
-  addfeedwidgetbase.ui
-  feedpropertieswidgetbase.ui
-)
-
 kde4_add_plugin(akregatorpart ${akregatorpart_PART_SRCS})
 
 target_link_libraries(akregatorpart
-  akregatorinterfaces
-  akregatorprivate
-  ${KDE4_KCMUTILS_LIBS}
-  ${KDE4_KNOTIFYCONFIG_LIBS}
-  ${KDE4_SOLID_LIBRARY}
-  ${KDE4_KPARTS_LIBS}
-  syndication
+    akregatorinterfaces
+    akregatorprivate
+    ${KDE4_KCMUTILS_LIBS}
+    ${KDE4_KNOTIFYCONFIG_LIBS}
+    ${KDE4_SOLID_LIBRARY}
+    ${KDE4_KPARTS_LIBS}
+    syndication
 )
 
 install(TARGETS akregatorpart DESTINATION ${PLUGIN_INSTALL_DIR})

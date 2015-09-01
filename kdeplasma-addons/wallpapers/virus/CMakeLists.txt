@@ -7,8 +7,8 @@ set(virus_SRCS
     backgroundlistmodel.cpp
     alife.cpp
     itemsview.cpp
+    virusconfig.ui
 )
-kde4_add_ui_files(virus_SRCS virusconfig.ui)
 
 set(ksmserver_xml ${KDEBASE_WORKSPACE_SOURCE_DIR}/ksmserver/org.kde.KSMServerInterface.xml)
 qt4_add_dbus_interface(image_SRCS ${ksmserver_xml} ksmserver_interface)

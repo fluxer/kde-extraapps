@@ -1,10 +1,10 @@
 set(strongswan_SRCS
-   strongswan.cpp
-   strongswanwidget.cpp
-   strongswanauth.cpp
-   )
-
-kde4_add_ui_files(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
+    strongswan.cpp
+    strongswanwidget.cpp
+    strongswanauth.cpp
+    strongswanprop.ui
+    strongswanauth.ui
+)
 
 kde4_add_plugin(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
 

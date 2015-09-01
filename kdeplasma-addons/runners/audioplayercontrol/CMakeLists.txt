@@ -5,9 +5,9 @@ set(krunner_audioplayercontrol_SRCS
 
 set(kcm_krunner_audioplayercontrol_SRCS
     audioplayercontrolrunner_config.cpp
+    audioplayercontrolrunner_config.ui
 )
 
-kde4_add_ui_files(kcm_krunner_audioplayercontrol_SRCS audioplayercontrolrunner_config.ui)
 kde4_add_plugin(kcm_krunner_audioplayercontrol ${kcm_krunner_audioplayercontrol_SRCS})
 target_link_libraries(kcm_krunner_audioplayercontrol
     ${KDE4_KDECORE_LIBS}

@@ -20,7 +20,7 @@ set(kdevplatformproject_LIB_SRCS
 )
 
 
-kde4_add_library(kdevplatformproject SHARED ${kdevplatformproject_LIB_SRCS})
+add_library(kdevplatformproject SHARED ${kdevplatformproject_LIB_SRCS})
 target_link_libraries(kdevplatformproject LINK_PUBLIC
     kdevplatforminterfaces
 )
@@ -33,7 +33,9 @@ target_link_libraries(kdevplatformproject LINK_PRIVATE
 set_target_properties(kdevplatformproject PROPERTIES VERSION ${KDEVPLATFORM_LIB_VERSION} SOVERSION ${KDEVPLATFORM_LIB_SOVERSION})
 install(TARGETS kdevplatformproject EXPORT KDevPlatformTargets ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 ########### install files ###############
 

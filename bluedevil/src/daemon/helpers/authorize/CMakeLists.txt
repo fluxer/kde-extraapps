@@ -3,7 +3,7 @@ set(authorize_SRCS
     authorize.cpp
 )
 
-kde4_add_executable(bluedevil-authorize ${authorize_SRCS})
+add_executable(bluedevil-authorize ${authorize_SRCS})
 
 target_link_libraries(bluedevil-authorize
                       ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} bluedevil)

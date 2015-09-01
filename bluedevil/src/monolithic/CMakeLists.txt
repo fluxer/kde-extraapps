@@ -5,7 +5,7 @@ set(monolithic_SRCS
 
 qt4_add_dbus_interface(monolithic_SRCS org.bluez.Audio.xml audio_interface)
 
-kde4_add_executable(bluedevil-monolithic ${monolithic_SRCS})
+add_executable(bluedevil-monolithic ${monolithic_SRCS})
 
 target_link_libraries(bluedevil-monolithic ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} bluedevil)
 

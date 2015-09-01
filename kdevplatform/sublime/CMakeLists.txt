@@ -1,6 +1,8 @@
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9504 )
 add_subdirectory(examples)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 ########### next target ###############
 
@@ -27,7 +29,7 @@ set(sublime_LIB_SRCS
     idealbuttonbarwidget.cpp
 )
 
-kde4_add_library(sublime SHARED ${sublime_LIB_SRCS})
+add_library(sublime SHARED ${sublime_LIB_SRCS})
 target_link_libraries(sublime
         LINK_PRIVATE ${KDE4_KDEUI_LIBS}
         LINK_PUBLIC ${KDE4_KPARTS_LIBS})

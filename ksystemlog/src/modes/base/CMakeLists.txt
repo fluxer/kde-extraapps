@@ -14,14 +14,12 @@ set(ksystemlog_base_mode_sources
 	logLevelSelectionDialog.cpp
 	genericConfiguration.cpp
 	syslogAnalyzer.cpp
+    fileListBase.ui
+    multipleFileListBase.ui
+    logLevelSelectionDialogBase.ui 
 )
 
-kde4_add_ui_files(ksystemlog_base_mode_sources fileListBase.ui )
-kde4_add_ui_files(ksystemlog_base_mode_sources multipleFileListBase.ui )
-
-kde4_add_ui_files(ksystemlog_base_mode_sources logLevelSelectionDialogBase.ui )
-
-kde4_add_library(ksystemlog_base_mode STATIC ${ksystemlog_base_mode_sources})
+add_library(ksystemlog_base_mode STATIC ${ksystemlog_base_mode_sources})
 
 add_dependencies(
 	ksystemlog_base_mode 

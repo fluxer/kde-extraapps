@@ -15,7 +15,7 @@ set(ksystemlog_daemon_sources
 	daemonFactory.cpp
 )
 
-kde4_add_library(ksystemlog_daemon STATIC ${ksystemlog_daemon_sources})
+add_library(ksystemlog_daemon STATIC ${ksystemlog_daemon_sources})
 
 add_dependencies(
 	ksystemlog_daemon

@@ -1,9 +1,7 @@
 include_directories( ../..
                     ../../..)
 
-set( tabs_applet_SRCS TabsApplet.cpp TabsView.cpp TabsItem.cpp )
-
-kde4_add_ui_files( tabs_applet_SRCS TabsSettings.ui ReloadEditDialog.ui )
+set( tabs_applet_SRCS TabsApplet.cpp TabsView.cpp TabsItem.cpp TabsSettings.ui ReloadEditDialog.ui )
 kde4_add_plugin( amarok_context_applet_tabs ${tabs_applet_SRCS} )
 target_link_libraries( amarok_context_applet_tabs
     amarokcore

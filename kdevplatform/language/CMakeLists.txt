@@ -1,9 +1,11 @@
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9505 )
 
-add_subdirectory(highlighting/tests)
-add_subdirectory(duchain/tests)
-add_subdirectory(backgroundparser/tests)
-add_subdirectory(codegen/tests)
+if(ENABLE_TESTING)
+    add_subdirectory(highlighting/tests)
+    add_subdirectory(duchain/tests)
+    add_subdirectory(backgroundparser/tests)
+    add_subdirectory(codegen/tests)
+endif()
 
 set(kdevplatformlanguage_LIB_SRCS
     assistant/staticassistantsmanager.cpp
@@ -147,13 +149,12 @@ set(kdevplatformlanguage_LIB_SRCS
 
     checks/dataaccessrepository.cpp checks/dataaccess.cpp
     checks/controlflowgraph.cpp checks/controlflownode.cpp
+
+    codegen/basicrefactoring.ui
+    codegen/progressdialogs/refactoringdialog.ui
 )
 
-kde4_add_ui_files(kdevplatformlanguage_LIB_SRCS
-    codegen/basicrefactoring.ui
-    codegen/progressdialogs/refactoringdialog.ui)
-
-kde4_add_library(kdevplatformlanguage SHARED ${kdevplatformlanguage_LIB_SRCS})
+add_library(kdevplatformlanguage SHARED ${kdevplatformlanguage_LIB_SRCS})
 target_link_libraries(kdevplatformlanguage LINK_PUBLIC
         kdevplatforminterfaces
 )

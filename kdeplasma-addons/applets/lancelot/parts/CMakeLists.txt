@@ -18,10 +18,6 @@ set(plasma_applet_lancelot_part_SRCS
    LancelotPart.cpp
    PartsMergedModel.cpp
    LancelotPartConfig.cpp
-)
-
-kde4_add_ui_files(
-   plasma_applet_lancelot_part_SRCS
    LancelotPartConfigBase.ui
 )
 

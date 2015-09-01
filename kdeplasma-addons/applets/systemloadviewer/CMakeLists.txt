@@ -1,21 +1,11 @@
 project(systemloadviewer)
 
-# building separately or as part of kdebase ?
-if(NOT KDE4_FOUND)
-   find_package(KDE4 4.14.3 REQUIRED)
-
-   include_directories(
-   ${CMAKE_CURRENT_BINARY_DIR}
-   ${KDE4_INCLUDES} 
-   )
-endif(NOT KDE4_FOUND)
-
 set(systemloadviewer_SRCS
-    systemloadviewer.cpp)
+    systemloadviewer.cpp
+    generalconfig.ui
+    coloursconfig.ui
+)
 
-#find_package(KDE4 4.14.3 REQUIRED)
-
-kde4_add_ui_files(systemloadviewer_SRCS generalconfig.ui coloursconfig.ui)
 kde4_add_plugin(plasma-applet_systemloadviewer ${systemloadviewer_SRCS})
 target_link_libraries(plasma-applet_systemloadviewer
                       ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS})

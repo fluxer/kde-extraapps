@@ -3,7 +3,7 @@ set(quickopentestbase_SRCS
     ../projectfilequickopen.cpp
 )
 
-kde4_add_library(quickopentestbase ${quickopentestbase_SRCS})
+add_library(quickopentestbase ${quickopentestbase_SRCS})
 target_link_libraries(quickopentestbase
     ${KDE4_KDECORE_LIBS}
     ${QT_QTTEST_LIBRARY}

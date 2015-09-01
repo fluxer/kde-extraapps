@@ -11,19 +11,17 @@ set(wizard_SRCS
     pages/ssppairing.cpp
     pages/fail.cpp
     pages/success.cpp
+
+    pages/discover.ui
+    pages/nopairing.ui
+    pages/legacypairing.ui
+    pages/keyboardpairing.ui
+    pages/ssppairing.ui
+    pages/fail.ui
+    pages/success.ui
 )
 
-kde4_add_ui_files(wizard_SRCS
-            pages/discover.ui
-            pages/nopairing.ui
-            pages/legacypairing.ui
-            pages/keyboardpairing.ui
-            pages/ssppairing.ui
-            pages/fail.ui
-            pages/success.ui
-)
-
-kde4_add_executable(bluedevil-wizard ${wizard_SRCS})
+add_executable(bluedevil-wizard ${wizard_SRCS})
 
 target_link_libraries(bluedevil-wizard
                       ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} bluedevil)

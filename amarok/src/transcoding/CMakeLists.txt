@@ -15,13 +15,10 @@ set(amarok_transcoding_SRCS
     TranscodingPropertyWidget.cpp
     TranscodingPropertySliderWidget.cpp
     TranscodingSelectConfigWidget.cpp
-)
-
-kde4_add_ui_files(amarok_transcoding_SRCS
     TranscodingAssistantDialog.ui
 )
 
-kde4_add_library(amarok-transcoding SHARED ${amarok_transcoding_SRCS})
+add_library(amarok-transcoding SHARED ${amarok_transcoding_SRCS})
 
 target_link_libraries(amarok-transcoding
     ${KDE4_KDECORE_LIBS}
@@ -33,10 +30,6 @@ target_link_libraries(amarok-transcoding
     ${CMAKE_THREAD_LIBS_INIT}
     amarokcore
 )
-
-if(APPLE)
-    SET_TARGET_PROPERTIES(amarok-transcoding PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-endif(APPLE)
 
 set_target_properties(amarok-transcoding PROPERTIES VERSION 1.0.0 SOVERSION 1 )
 install(TARGETS amarok-transcoding ${INSTALL_TARGETS_DEFAULT_ARGS} )

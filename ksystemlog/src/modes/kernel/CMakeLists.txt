@@ -13,7 +13,7 @@ set(ksystemlog_kernel_sources
 	kernelItemBuilder.cpp
 )
 
-kde4_add_library(ksystemlog_kernel STATIC ${ksystemlog_kernel_sources})
+add_library(ksystemlog_kernel STATIC ${ksystemlog_kernel_sources})
 
 add_dependencies(
 	ksystemlog_kernel 

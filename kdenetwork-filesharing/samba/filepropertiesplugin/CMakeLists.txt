@@ -1,9 +1,11 @@
 ########### next target ###############
 
-set(sambausershareplugin_PART_SRCS sambausershareplugin.cpp delegate.cpp model.cpp)
-
-kde4_add_ui_files(sambausershareplugin_PART_SRCS sambausershareplugin.ui)
-
+set(sambausershareplugin_PART_SRCS
+    sambausershareplugin.cpp
+    delegate.cpp
+    model.cpp
+    sambausershareplugin.ui
+)
 
 kde4_add_plugin(sambausershareplugin ${sambausershareplugin_PART_SRCS})
 

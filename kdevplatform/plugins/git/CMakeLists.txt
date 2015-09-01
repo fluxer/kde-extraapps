@@ -4,7 +4,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${git_SOURCE_DIR}/cmake)
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=9525)
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 add_subdirectory(icons)
 
 set(kdevgit_PART_SRCS
@@ -15,9 +17,9 @@ set(kdevgit_PART_SRCS
     gitplugin.cpp
     gitjob.cpp
     gitplugincheckinrepositoryjob.cpp
+    stashmanagerdialog.ui
 )
 
-kde4_add_ui_files(kdevgit_PART_SRCS stashmanagerdialog.ui)
 kde4_add_plugin(kdevgit ${kdevgit_PART_SRCS})
 
 target_link_libraries(kdevgit

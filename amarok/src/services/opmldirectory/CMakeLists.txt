@@ -15,9 +15,8 @@
             OpmlDirectoryInfoParser.cpp
             OpmlDirectoryModel.cpp
             OpmlDirectoryView.cpp
+            AddOpmlWidget.ui
         )
-
-        kde4_add_ui_files( amarok_service_opmldirectory_PART_SRCS AddOpmlWidget.ui )
 
         kde4_add_plugin(amarok_service_opmldirectory ${amarok_service_opmldirectory_PART_SRCS})
         target_link_libraries(amarok_service_opmldirectory

@@ -15,9 +15,6 @@ set(addprinter_SRCS
     PageChoosePPD.cpp
     PageAddPrinter.cpp
     AddPrinterAssistant.cpp
-)
-
-kde4_add_ui_files(addprinter_SRCS
     PageDestinations.ui
     ChooseLpd.ui
     ChooseSamba.ui
@@ -29,7 +26,7 @@ kde4_add_ui_files(addprinter_SRCS
     PageAddPrinter.ui
 )
 
-kde4_add_executable(kde-add-printer
+add_executable(kde-add-printer
     ${addprinter_SRCS}
 )
 

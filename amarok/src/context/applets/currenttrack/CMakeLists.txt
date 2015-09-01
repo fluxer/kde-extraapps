@@ -6,13 +6,13 @@ include_directories(
     ${Amarok_SOURCE_DIR}/src
     )
 
-set( currenttrack_SRCS
-     CurrentTrack.cpp
-     ${Amarok_SOURCE_DIR}/src/context/widgets/RecentlyPlayedListWidget.cpp
-     ${Amarok_SOURCE_DIR}/src/widgets/PixmapViewer.cpp
-     )
+set(currenttrack_SRCS
+    CurrentTrack.cpp
+    ${Amarok_SOURCE_DIR}/src/context/widgets/RecentlyPlayedListWidget.cpp
+    ${Amarok_SOURCE_DIR}/src/widgets/PixmapViewer.cpp
+    currentTrackSettings.ui
+)
 
-kde4_add_ui_files( currenttrack_SRCS currentTrackSettings.ui )
 kde4_add_plugin(amarok_context_applet_currenttrack ${currenttrack_SRCS})
 if(APPLE)
    SET_TARGET_PROPERTIES(amarok_context_applet_currenttrack PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")

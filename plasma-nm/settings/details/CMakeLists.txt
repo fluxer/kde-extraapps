@@ -1,9 +1,6 @@
 set(plasmanetworkmanagement_config_widgets_SRCS
     detailkeyseditor.cpp
     detailkeyseditordesignfactory.cpp
-)
-
-kde4_add_ui_files(plasmanetworkmanagement_config_widgets_SRCS
     detailkeyswidget.ui
 )
 

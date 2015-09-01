@@ -11,7 +11,7 @@ set (krfbprivate_SRCS
      framebufferplugin.cpp
 )
 
-kde4_add_library (krfbprivate
+add_library (krfbprivate
                   SHARED
                   ${krfbprivate_SRCS}
 )
@@ -52,19 +52,23 @@ if(KTP_FOUND)
     include_directories(${KTP_INCLUDE_DIR})
 endif()
 
-set (krfb_SRCS
-     connectiondialog.cpp
-     events.cpp
-     framebuffermanager.cpp
-     main.cpp
-     mainwindow.cpp
-     sockethelpers.cpp
-     trayicon.cpp
-     rfbservermanager.cpp
-     rfbserver.cpp
-     rfbclient.cpp
-     invitationsrfbserver.cpp
-     invitationsrfbclient.cpp
+set(krfb_SRCS
+    connectiondialog.cpp
+    events.cpp
+    framebuffermanager.cpp
+    main.cpp
+    mainwindow.cpp
+    sockethelpers.cpp
+    trayicon.cpp
+    rfbservermanager.cpp
+    rfbserver.cpp
+    rfbclient.cpp
+    invitationsrfbserver.cpp
+    invitationsrfbclient.cpp
+    configtcp.ui
+    configsecurity.ui
+    connectionwidget.ui
+    mainwidget.ui
 )
 
 if(TelepathyQt4_FOUND)
@@ -72,27 +76,13 @@ if(TelepathyQt4_FOUND)
          ${krfb_SRCS}
          tubesrfbserver.cpp
          tubesrfbclient.cpp
+         tubesconnectionwidget.ui
     )
 endif()
 
-kde4_add_kcfg_files (krfb_SRCS
-                     krfbconfig.kcfgc
-)
+kde4_add_kcfg_files (krfb_SRCS krfbconfig.kcfgc)
 
-kde4_add_ui_files (krfb_SRCS
-                   ui/configtcp.ui
-                   ui/configsecurity.ui
-                   ui/connectionwidget.ui
-                   ui/mainwidget.ui
-)
-
-if(TelepathyQt4_FOUND)
-    kde4_add_ui_files(krfb_SRCS ui/tubesconnectionwidget.ui)
-endif()
-
-kde4_add_executable (krfb
-                     ${krfb_SRCS}
-)
+add_executable (krfb ${krfb_SRCS})
 
 target_link_libraries (krfb
                        krfbprivate

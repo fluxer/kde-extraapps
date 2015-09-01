@@ -1,10 +1,30 @@
 set(tasks_SRCS
-    windowtaskitem.cpp tasks.cpp taskitemlayout.cpp abstracttaskitem.cpp taskgroupitem.cpp applauncheritem.cpp
-    jobmanager.cpp dockmanager.cpp dockitem.cpp dockhelper.cpp dockconfig.cpp mediabuttons.cpp unity.cpp unityitem.cpp 
-    dbusstatus.cpp recentdocuments.cpp
-    tooltips/tooltipcontent.cpp tooltips/tooltip.cpp tooltips/tooltipmanager.cpp tooltips/windowpreview.cpp
-    tooltips/dialogshadows.cpp tooltips/dialogshadows_p.h
-    )
+    windowtaskitem.cpp
+    tasks.cpp
+    taskitemlayout.cpp
+    abstracttaskitem.cpp
+    taskgroupitem.cpp
+    applauncheritem.cpp
+    jobmanager.cpp
+    dockmanager.cpp
+    dockitem.cpp
+    dockhelper.cpp
+    dockconfig.cpp
+    mediabuttons.cpp
+    unity.cpp
+    unityitem.cpp 
+    dbusstatus.cpp
+    recentdocuments.cpp
+    tooltips/tooltipcontent.cpp
+    tooltips/tooltip.cpp
+    tooltips/tooltipmanager.cpp
+    tooltips/windowpreview.cpp
+    tooltips/dialogshadows.cpp
+    tooltips/dialogshadows_p.h
+    appearanceconfig.ui
+    behaviourconfig.ui
+    dockconfig.ui
+)
 
 # Generate DBUS XML files, would like to use
 # qt4_generate_dbus_interface(${CMAKE_CURRENT_SOURCE_DIR}/dockmanager.h net.launchpad.DockManager.xml)
@@ -47,7 +67,6 @@ ENDMACRO(QT4_ADD_DBUS_INTERFACE_EX)
 
 qt4_add_dbus_interface_ex(tasks_SRCS org.freedesktop.MediaPlayer.player.xml playerv1interface dbusstatus.h)
 
-kde4_add_ui_files(tasks_SRCS appearanceconfig.ui behaviourconfig.ui dockconfig.ui)
 kde4_add_plugin(plasma_applet_icontasks ${tasks_SRCS})
 
 target_link_libraries(plasma_applet_icontasks ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS} ${DBUSMENUQT_LIBRARIES} ${KDE4WORKSPACE_TASKMANAGER_LIBS})

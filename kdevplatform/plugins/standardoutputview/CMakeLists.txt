@@ -1,7 +1,9 @@
 
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9522 )
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 ########### next target ###############
 

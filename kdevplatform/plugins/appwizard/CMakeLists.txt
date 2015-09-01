@@ -10,14 +10,9 @@ set(kdevappwizard_PART_SRCS
     projectselectionpage.cpp
     projecttemplatesmodel.cpp
     projectvcspage.cpp
-)
-
-set(kdevappwizard_PART_UI
     projectselectionpage.ui
     projectvcspage.ui
 )
-
-kde4_add_ui_files(kdevappwizard_PART_SRCS ${kdevappwizard_PART_UI})
 
 kde4_add_plugin(kdevappwizard ${kdevappwizard_PART_SRCS})
 target_link_libraries(kdevappwizard

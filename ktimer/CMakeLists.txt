@@ -16,13 +16,9 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     set( CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS} )
 endif()
 
-set(ktimer_SRCS main.cpp ktimer.cpp )
+set(ktimer_SRCS main.cpp ktimer.cpp prefwidget.ui )
 
-kde4_add_ui_files(ktimer_SRCS prefwidget.ui )
-
-kde4_add_app_icon(ktimer_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-ktimer.png")
-
-kde4_add_executable(ktimer ${ktimer_SRCS})
+add_executable(ktimer ${ktimer_SRCS})
 
 target_link_libraries(ktimer  ${KDE4_KIO_LIBS})
 

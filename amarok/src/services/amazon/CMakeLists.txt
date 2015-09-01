@@ -28,9 +28,6 @@ set( amarok_service_amazonstore_PART_SRCS
     AmazonStore.cpp
     AmazonUrlRunner.cpp
     AmazonWantCountryWidget.cpp
-)
-
-kde4_add_ui_files( amarok_service_amazonstore_PART_SRCS
     AmazonConfigWidget.ui
     AmazonShoppingCartDialog.ui
     AmazonWantCountryWidget.ui
@@ -56,9 +53,8 @@ install(TARGETS amarok_service_amazonstore DESTINATION ${PLUGIN_INSTALL_DIR} )
 set(kcm_amarok_service_amazonstore_PART_SRCSS
     AmazonSettingsModule.cpp
     AmazonConfig.cpp
+    AmazonConfigWidget.ui
 )
-
-kde4_add_ui_files( kcm_amarok_service_amazonstore_PART_SRCSS AmazonConfigWidget.ui )
 
 kde4_add_plugin( kcm_amarok_service_amazonstore ${kcm_amarok_service_amazonstore_PART_SRCSS} )
 

@@ -6,10 +6,7 @@ set(ark_SRCS
     mainwindow.cpp
    )
 
-# For Mac and Windows.
-kde4_add_app_icon(ark_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/icons/hi*-apps-ark.png")
-
-kde4_add_executable( ark ${ark_SRCS} )
+add_executable( ark ${ark_SRCS} )
 
 target_link_libraries( ark kerfuffle ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBS} )
 

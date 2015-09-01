@@ -10,13 +10,11 @@ include_directories( ../..
 ########### next target ################
 
 set(amarok_collection-umscollection_PART_SRCS
-  UmsCollection.cpp
-  UmsCollectionLocation.cpp
-  UmsTranscodeCapability.cpp
-  podcasts/UmsPodcastProvider.cpp
-  podcasts/UmsPodcastMeta.cpp)
-
-kde4_add_ui_files(amarok_collection-umscollection_PART_SRCS
+    UmsCollection.cpp
+    UmsCollectionLocation.cpp
+    UmsTranscodeCapability.cpp
+    podcasts/UmsPodcastProvider.cpp
+    podcasts/UmsPodcastMeta.cpp
     UmsConfiguration.ui
 )
 

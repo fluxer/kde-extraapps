@@ -3,8 +3,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} )
 
 set(microblog_SRCS
     microblog.cpp
-    postwidget.cpp)
-kde4_add_ui_files(microblog_SRCS configuration.ui)
+    postwidget.cpp
+    configuration.ui
+)
 
 kde4_add_plugin(plasma_applet_microblog ${microblog_SRCS})
 target_link_libraries(plasma_applet_microblog ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS})

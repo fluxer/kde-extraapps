@@ -10,9 +10,6 @@ set(paste_SRCS
     appkey.cpp
     pastemacroexpander.cpp
     addmacro.cpp
-)
-
-kde4_add_ui_files(paste_SRCS
     list.ui
     snippetconfig.ui
     autopasteconfig.ui

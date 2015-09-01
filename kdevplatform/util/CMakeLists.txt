@@ -23,22 +23,18 @@ set(kdevplatformutil_LIB_SRCS
     placeholderitemproxymodel.cpp
     projecttestjob.cpp
     path.cpp
+    # runoptions.ui
 )
 
-set (kdevplatformutil_LIB_UI
-    runoptions.ui
-)
-
-if(NOT WIN32)
-    add_subdirectory(dbus_socket_transformer)
-endif(NOT WIN32)
+add_subdirectory(dbus_socket_transformer)
 
 add_subdirectory(duchainify)
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
-kde4_add_ui_files(kdevplatformutil_LIB_SRCS ${kdevplatformutil_LIB_US})
-kde4_add_library(kdevplatformutil SHARED ${kdevplatformutil_LIB_SRCS})
+add_library(kdevplatformutil SHARED ${kdevplatformutil_LIB_SRCS})
 target_link_libraries(kdevplatformutil LINK_PUBLIC
     ${KDE4_KDEUI_LIBS}
 )

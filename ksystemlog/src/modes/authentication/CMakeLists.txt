@@ -16,7 +16,7 @@ set(ksystemlog_authentication_sources
 	authenticationFactory.cpp
 )
 
-kde4_add_library(ksystemlog_authentication STATIC ${ksystemlog_authentication_sources})
+add_library(ksystemlog_authentication STATIC ${ksystemlog_authentication_sources})
 
 add_dependencies(
 	ksystemlog_authentication

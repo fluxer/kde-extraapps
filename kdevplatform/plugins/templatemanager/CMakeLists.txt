@@ -2,9 +2,9 @@
 set(kdevtemplatemanager_config_SRCS
     templateconfig.cpp
     templatepage.cpp 
+    templateconfig.ui
+    templatepage.ui
 )
-
-kde4_add_ui_files(kdevtemplatemanager_config_SRCS templateconfig.ui templatepage.ui)
 
 kde4_add_plugin( kdevtemplatemanager_config ${kdevtemplatemanager_config_SRCS} )
 

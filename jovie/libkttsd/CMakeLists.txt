@@ -9,7 +9,7 @@ set(kttsd_LIB_SRCS
    filterconf.cpp 
    talkerlistmodel.cpp ) 
 
-kde4_add_library(kttsd SHARED ${kttsd_LIB_SRCS})
+add_library(kttsd SHARED ${kttsd_LIB_SRCS})
 
 target_link_libraries(kttsd
     ${SPEECHD_LIBRARIES}

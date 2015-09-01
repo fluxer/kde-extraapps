@@ -139,7 +139,7 @@ qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.transfer.xml dbus/dbustrans
 qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.verifier.xml dbus/dbusverifierwrapper.h DBusVerifierWrapper)
 
 
-kde4_add_library(kgetcore SHARED ${kgetcore_SRCS})
+add_library(kgetcore SHARED ${kgetcore_SRCS})
 
 target_link_libraries(kgetcore ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS})
 
@@ -209,11 +209,7 @@ set(kget_SRCS ${kget_adaptor_SRCS} ${kget_transfer_adaptor_SRCS}
    main.cpp
 
    extensions/webinterface/httpserver.cpp
-)
 
-qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h DBusKGetWrapper)
-
-kde4_add_ui_files(kget_SRCS
    conf/dlgadvanced.ui
    conf/dlgappearance.ui
    conf/dlggroups.ui
@@ -242,9 +238,9 @@ kde4_add_ui_files(kget_SRCS
    ui/signaturedlg.ui
 )
 
-kde4_add_app_icon(kget_SRCS "ui/icons/hi*-apps-kget.png")
+qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h DBusKGetWrapper)
 
-kde4_add_executable(kget ${kget_SRCS})
+add_executable(kget ${kget_SRCS})
 
 target_link_libraries(kget ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBRARY} ${KDE4_KIO_LIBRARY} ${KDE4_KCMUTILS_LIBRARY} kgetcore ${KDE4_KNOTIFYCONFIG_LIBS})
 if(QCA2_FOUND)

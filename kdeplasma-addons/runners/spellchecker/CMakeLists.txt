@@ -4,9 +4,9 @@ set(krunner_spellcheckrunner_SRCS
 
 set(kcm_krunner_spellcheck_SRCS
     spellcheck_config.cpp
+    spellcheck_config.ui
 )
 
-kde4_add_ui_files(kcm_krunner_spellcheck_SRCS spellcheck_config.ui)
 kde4_add_plugin(kcm_krunner_spellcheck ${kcm_krunner_spellcheck_SRCS})
 target_link_libraries(kcm_krunner_spellcheck 
     ${KDE4_KDECORE_LIBS}

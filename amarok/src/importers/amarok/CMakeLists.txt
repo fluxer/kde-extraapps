@@ -9,9 +9,8 @@ set( amarok_importer-amarok_PART_SRCS
     AmarokProvider.cpp
     AmarokEmbeddedSqlConnection.cpp
     AmarokTrack.cpp
+    AmarokConfigWidget.ui
 )
-
-kde4_add_ui_files( amarok_importer-amarok_PART_SRCS AmarokConfigWidget.ui )
 
 kde4_add_plugin( amarok_importer-amarok ${amarok_importer-amarok_PART_SRCS} )
 

@@ -9,7 +9,7 @@ add_subdirectory( images )
 set( amarok_service_lastfm_shared_SRCS
     LastFmServiceConfig.cpp
 )
-kde4_add_library( amarok_service_lastfm_shared SHARED ${amarok_service_lastfm_shared_SRCS} )
+add_library( amarok_service_lastfm_shared SHARED ${amarok_service_lastfm_shared_SRCS} )
 target_link_libraries( amarok_service_lastfm_shared
     amarokcore
     ${KDE4_KDECORE_LIBS}

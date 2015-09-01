@@ -1,32 +1,12 @@
 project(kcalc)
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4 4.14.3 REQUIRED)
-    include(KDE4Defaults)
-    include_directories(${KDE4_INCLUDES})
-
-    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-
-    # If definitions like -D_GNU_SOURCE are needed for these checks they
-    # should be added to _KDE4_PLATFORM_DEFINITIONS when it is originally
-    # defined outside this file.  Here we include these definitions in
-    # CMAKE_REQUIRED_DEFINITIONS so they will be included in the build of
-    # checks below.
-    set( CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS} )
-
-    set(GMP_REQUIRED TRUE)
-else()
-    set(GMP_REQUIRED FALSE)
-endif()
-
 set (CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" ${CMAKE_SOURCE_DIR}/cmake/modules)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  ${KDE4_ENABLE_EXCEPTIONS}")
 
 add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 find_package(GMP)
-macro_log_feature( GMP_FOUND "GMP" "The GNU Multiple Precision Arithmetic Library" "http://gmplib.org/" ${GMP_REQUIRED} "" "Required for building KCalc.")
+macro_log_feature( GMP_FOUND "GMP" "The GNU Multiple Precision Arithmetic Library" "http://gmplib.org/" FALSE "" "Required for building KCalc.")
 
 include(CheckTypeSize)
 include(CheckIncludeFiles)
@@ -62,20 +42,17 @@ set(kcalc_SRCS ${libknumber_la_SRCS}
    kcalc_const_menu.cpp 
    kcalc_core.cpp 
    kcalcdisplay.cpp 
-   stats.cpp )
-
-kde4_add_ui_files(kcalc_SRCS
+   stats.cpp
    kcalc.ui
    constants.ui
    colors.ui
    fonts.ui
-   general.ui)
+   general.ui
+)
 
 kde4_add_kcfg_files(kcalc_SRCS kcalc_settings.kcfgc )
 
-kde4_add_app_icon(kcalc_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/apps/accessories-calculator.png")
-
-kde4_add_executable( kcalc ${kcalc_SRCS})
+add_executable( kcalc ${kcalc_SRCS})
 
 target_link_libraries(kcalc ${QT_QTXML_LIBRARY} ${KDE4_KDEUI_LIBS} ${GMP_LIBRARIES} ${MPFR_LIBRARIES})
 

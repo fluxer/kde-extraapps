@@ -12,13 +12,10 @@ set(comic_SRCS
     comicsaver.cpp
     stripselector.cpp
     activecomicmodel.cpp
-)
-
-kde4_add_ui_files(comic_SRCS
-                  comicSettings.ui
-                  appearanceSettings.ui
-                  advancedsettings.ui
-                  comicarchivedialog.ui
+    comicSettings.ui
+    appearanceSettings.ui
+    advancedsettings.ui
+    comicarchivedialog.ui
 )
 
 kde4_add_plugin(plasma_applet_comic ${comic_SRCS})

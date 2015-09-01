@@ -217,7 +217,7 @@ set(libktorrent_SRC
 
 # kde4_add_ui_files(libktorrent_SRC ${libktorrent_UI})
 # kde4_add_kcfg_files(libktorrent_SRC settings.kcfgc)
-kde4_add_library(ktorrent SHARED ${libktorrent_SRC})
+add_library(ktorrent SHARED ${libktorrent_SRC})
 
 target_link_libraries(ktorrent PRIVATE ${KDE4_KIO_LIBS} ${GMP_LIBRARIES} ${KDE4_SOLID_LIBS} ${LIBGCRYPT_LIBRARIES} ${QCA2_LIBRARIES})
 target_link_libraries(ktorrent PUBLIC ${KDE4_KDEUI_LIBS})

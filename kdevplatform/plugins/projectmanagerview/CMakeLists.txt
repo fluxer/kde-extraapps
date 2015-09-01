@@ -11,9 +11,9 @@ set(kdevprojectmanagerview_PLUGIN_SRCS
     projectbuildsetwidget.cpp
     vcsoverlayproxymodel.cpp
     projectmodelitemdelegate.cpp
+    projectbuildsetwidget.ui
+    projectmanagerview.ui
 )
-
-kde4_add_ui_files( kdevprojectmanagerview_PLUGIN_SRCS projectbuildsetwidget.ui projectmanagerview.ui )
 
 kde4_add_plugin(kdevprojectmanagerview ${kdevprojectmanagerview_PLUGIN_SRCS})
 target_link_libraries(kdevprojectmanagerview ${KDE4_KDEUI_LIBS} ${KDE4_KTEXTEDITOR_LIBS}

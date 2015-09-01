@@ -4,9 +4,8 @@ set(weather_SRCS
     weatherwallpaper.cpp
     backgrounddelegate.cpp
     backgroundlistmodel.cpp
+    weatherAdvanced.ui
 )
-
-kde4_add_ui_files(weather_SRCS weatherAdvanced.ui)
 
 kde4_add_plugin(plasma_wallpaper_weather ${weather_SRCS})
 target_link_libraries(plasma_wallpaper_weather ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KNEWSTUFF3_LIBS} ${KDE4_THREADWEAVER_LIBRARY} plasmaweather)

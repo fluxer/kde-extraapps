@@ -94,41 +94,34 @@ set(kgpg_transaction_SRCS
 )
 
 set(kgpg_SRCS ${core_SRCS} ${kgpg_editor_SRCS} ${kgpg_model_SRCS} ${kgpg_transaction_SRCS}
-   selectpublickeydialog.cpp
-   selectsecretkey.cpp
-   kgpgoptions.cpp
-   keysmanager.cpp
-   kgpg.cpp
-   main.cpp
-   kgpgkeygenerate.cpp
-   kgpginterface.cpp
-   kgpgtextinterface.cpp
-   gpgproc.cpp
-   klinebufferedprocess.cpp
-   keyservers.cpp
-   detailedconsole.cpp
-   keyinfodialog.cpp
-   newkey.cpp
-   keyexport.cpp
-   conf_encryption.cpp
-   kgpgrevokewidget.cpp
-   keytreeview.cpp
-   groupedit.cpp
-   sourceselect.cpp
-   kgpgchangekey.cpp
-   kgpgfirstassistant.cpp
-   kgpgexternalactions.cpp
-   selectexpirydate.cpp
-   caff.cpp
-   foldercompressjob.cpp
-   misc.cpp
-)
-
-qt4_add_dbus_adaptor( kgpg_SRCS org.kde.kgpg.Key.xml keysmanager.h KeysManager)
-
-QT4_ADD_DBUS_INTERFACE(kgpg_SRCS org.kde.kgpg.Key.xml kgpg_interface )
-
-kde4_add_ui_files(kgpg_SRCS
+    selectpublickeydialog.cpp
+    selectsecretkey.cpp
+    kgpgoptions.cpp
+    keysmanager.cpp
+    kgpg.cpp
+    main.cpp
+    kgpgkeygenerate.cpp
+    kgpginterface.cpp
+    kgpgtextinterface.cpp
+    gpgproc.cpp
+    klinebufferedprocess.cpp
+    keyservers.cpp
+    detailedconsole.cpp
+    keyinfodialog.cpp
+    newkey.cpp
+    keyexport.cpp
+    conf_encryption.cpp
+    kgpgrevokewidget.cpp
+    keytreeview.cpp
+    groupedit.cpp
+    sourceselect.cpp
+    kgpgchangekey.cpp
+    kgpgfirstassistant.cpp
+    kgpgexternalactions.cpp
+    selectexpirydate.cpp
+    caff.cpp
+    foldercompressjob.cpp
+    misc.cpp
     adduid.ui
     conf_gpg.ui
     searchres.ui
@@ -147,11 +140,13 @@ kde4_add_ui_files(kgpg_SRCS
     sourceselect.ui
 )
 
-kde4_add_app_icon(kgpg_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app*-kgpg.png")
+qt4_add_dbus_adaptor( kgpg_SRCS org.kde.kgpg.Key.xml keysmanager.h KeysManager)
+
+QT4_ADD_DBUS_INTERFACE(kgpg_SRCS org.kde.kgpg.Key.xml kgpg_interface )
 
 kde4_add_kcfg_files(kgpg_SRCS kgpgsettings.kcfgc )
 
-kde4_add_executable(kgpg ${kgpg_SRCS})
+add_executable(kgpg ${kgpg_SRCS})
 
 if (KGPG_DEBUG_TRANSACTIONS)
 	get_target_property(KGPG_FLAGS kgpg COMPILE_DEFINITIONS)

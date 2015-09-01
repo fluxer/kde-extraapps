@@ -13,7 +13,7 @@ set(ksystemlog_open_sources
 )
 
 
-kde4_add_library(ksystemlog_open STATIC ${ksystemlog_open_sources})
+add_library(ksystemlog_open STATIC ${ksystemlog_open_sources})
 
 add_dependencies(
 	ksystemlog_open 

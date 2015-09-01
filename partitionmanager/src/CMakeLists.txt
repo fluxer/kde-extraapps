@@ -30,11 +30,9 @@ file(GLOB partitionmanagerprivate_SRCS
 
 file(GLOB partitionmanagerprivate_UIFILES config/*.ui gui/*.ui)
 
-kde4_add_ui_files(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
-
 kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
-kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
+add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS} ${partitionmanagerprivate_UIFILES})
 
 target_link_libraries(partitionmanagerprivate libfatlabel ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS})
 
@@ -44,9 +42,7 @@ install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 file(GLOB partitionmanager_SRCS	main.cpp)
 
-kde4_add_app_icon(partitionmanager_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-partitionmanager.png")
-
-kde4_add_executable(partitionmanager ${partitionmanager_SRCS})
+add_executable(partitionmanager ${partitionmanager_SRCS})
 
 target_link_libraries(partitionmanager partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 

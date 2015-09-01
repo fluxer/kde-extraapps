@@ -22,7 +22,7 @@ add_subdirectory( images )
 
 set(libampache_account_login_SRCS
     AmpacheAccountLogin.cpp)
-kde4_add_library(ampache_account_login SHARED ${libampache_account_login_SRCS})
+add_library(ampache_account_login SHARED ${libampache_account_login_SRCS})
 target_link_libraries(ampache_account_login
     amaroklib
     amarokcore
@@ -73,13 +73,15 @@ install(TARGETS ampache_account_login DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS
 
 ########### next target ###############
 
-        set(kcm_amarok_service_ampache_PART_SRCSS AddServerDialog.cpp AmpacheSettings.cpp AmpacheConfig.cpp )
+        set(kcm_amarok_service_ampache_PART_SRCSS
+            AddServerDialog.cpp
+            AmpacheSettings.cpp
+            AmpacheConfig.cpp
+            AmpacheConfigWidget.ui
+            NewServerWidget.ui
+        )
 
-        kde4_add_ui_files( kcm_amarok_service_ampache_PART_SRCSS AmpacheConfigWidget.ui NewServerWidget.ui )
-
-
-        kde4_add_plugin( kcm_amarok_service_ampache ${kcm_amarok_service_ampache_PART_SRCSS} )
-
+        kde4_add_plugin(kcm_amarok_service_ampache ${kcm_amarok_service_ampache_PART_SRCSS} )
 
         target_link_libraries( kcm_amarok_service_ampache
             ampache_account_login ${KDE4_KUTILS_LIBS} ${QT_QTCORE_LIBRARY}

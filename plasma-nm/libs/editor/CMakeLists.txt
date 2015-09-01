@@ -38,16 +38,7 @@ set(plasmanetworkmanagement_libeditor_SRCS
     vpnuiplugin.cpp
 
     ../uiutils.cpp
-)
 
-if (WITH_MODEMMANAGER_SUPPORT)
-    set(plasmanetworkmanagement_libeditor_SRCS
-        ${plasmanetworkmanagement_libeditor_SRCS}
-        widgets/mobileconnectionwizard.cpp
-        mobileproviders.cpp)
-endif()
-
-kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     settings/ui/802-1x.ui
     settings/ui/bond.ui
     settings/ui/bridge.ui
@@ -74,7 +65,15 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     connectiondetaileditor.ui
 )
 
-kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
+if (WITH_MODEMMANAGER_SUPPORT)
+    set(plasmanetworkmanagement_libeditor_SRCS
+        ${plasmanetworkmanagement_libeditor_SRCS}
+        widgets/mobileconnectionwizard.cpp
+        mobileproviders.cpp)
+endif()
+
+
+add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}

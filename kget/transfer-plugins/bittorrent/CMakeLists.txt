@@ -32,15 +32,12 @@ set(kget_bittorrentfactory_PART_SRCS
     advanceddetails/trackermodel.cpp
     advanceddetails/webseedsmodel.cpp
     advanceddetails/webseedstab.cpp
-    )
-
-kde4_add_ui_files(kget_bittorrentfactory_PART_SRCS
     btdetailswidgetfrm.ui
     scandlg.ui
     advanceddetails/chunkdownloadview.ui
     advanceddetails/trackerview.ui
     advanceddetails/webseedstab.ui
-    )
+)
 
 kde4_add_kcfg_files(kget_bittorrentfactory_PART_SRCS bittorrentsettings.kcfgc)
 kde4_add_plugin(kget_bittorrentfactory ${kget_bittorrentfactory_PART_SRCS})
@@ -52,11 +49,8 @@ install(FILES kget_bittorrentfactory.desktop DESTINATION ${SERVICES_INSTALL_DIR}
 ###Build KCM-Module
 set(kcm_kget_bittorrentfactory_PART_SRCS
     btsettingswidget.cpp
-    )
-
-kde4_add_ui_files(kcm_kget_bittorrentfactory_PART_SRCS
     btsettingswidget.ui
-    )
+)
 
 kde4_add_kcfg_files(kcm_kget_bittorrentfactory_PART_SRCS bittorrentsettings.kcfgc)
 kde4_add_plugin(kcm_kget_bittorrentfactory ${kcm_kget_bittorrentfactory_PART_SRCS})

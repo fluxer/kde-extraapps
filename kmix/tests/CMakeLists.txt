@@ -12,7 +12,7 @@ qt4_add_dbus_adaptor( kmix_adaptor_SRCS
 set(profiletest_SRCS profiletest.cpp )
 
 
-kde4_add_executable(profiletest ${profiletest_SRCS} 
+add_executable(profiletest ${profiletest_SRCS} 
     ${CMAKE_CURRENT_SOURCE_DIR}/../gui/guiprofile.cpp 
     ${CMAKE_CURRENT_SOURCE_DIR}/../core/MasterControl.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../core/mixer.cpp
@@ -37,7 +37,7 @@ endif (PULSEAUDIO_FOUND)
 ########### next target ###############
 set(dialogtest_SRCS dialogtest.cpp )
 
-kde4_add_executable( dialogtest ${dialogtest_SRCS} )
+add_executable( dialogtest ${dialogtest_SRCS} )
     
 target_link_libraries(dialogtest  ${KDE4_KDEUI_LIBS} )
 

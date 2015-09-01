@@ -36,12 +36,10 @@ set(ksystemlog_lib_sources
 	multipleActions.cpp
 	
 	levelPrintPage.cpp
-
+    logViewSearchWidgetBase.ui
 )
 
-kde4_add_ui_files(ksystemlog_lib_sources logViewSearchWidgetBase.ui)
-
-kde4_add_library(ksystemlog_lib STATIC ${ksystemlog_lib_sources})
+add_library(ksystemlog_lib STATIC ${ksystemlog_lib_sources})
 
 add_dependencies(
 	ksystemlog_lib 

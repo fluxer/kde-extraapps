@@ -22,9 +22,6 @@ install(FILES kget_multisegkiofactory.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 ###Build KCM-Module
 set(kcm_kget_multisegkiofactory_PART_SRCS
   dlgmultisegkio.cpp
-)
-
-kde4_add_ui_files(kcm_kget_multisegkiofactory_PART_SRCS
   dlgmultisegkio.ui
 )
 

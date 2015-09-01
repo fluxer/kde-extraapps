@@ -3,8 +3,13 @@
 project(timer)
 
 # We add our source code here
-set(timer_SRCS timer.cpp timerdigit.cpp customtimeeditor.cpp)
-kde4_add_ui_files(timer_SRCS timerConfig.ui predefinedTimersConfig.ui)
+set(timer_SRCS
+    timer.cpp
+    timerdigit.cpp
+    customtimeeditor.cpp
+    timerConfig.ui
+    predefinedTimersConfig.ui
+)
 
 # Now make sure all files get to the right place
 kde4_add_plugin(plasma_applet_timer ${timer_SRCS})

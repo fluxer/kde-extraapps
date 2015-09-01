@@ -9,14 +9,14 @@ set(frame_SRCS
     picture.cpp
     imagescaler.cpp
     imageloader.cpp
-    configdialog.cpp)
-
-kde4_add_ui_files(frame_SRCS imageSettings.ui appearanceSettings.ui)
+    configdialog.cpp
+    imageSettings.ui
+    appearanceSettings.ui
+)
 
 macro_bool_to_01(KEXIV2_FOUND HAVE_KEXIV2)
 
 kde4_add_plugin(plasma_applet_frame ${frame_SRCS})
-
 
 if(HAVE_KEXIV2)
     include_directories( ${KEXIV2_INCLUDE_DIR} )

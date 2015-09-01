@@ -25,5 +25,5 @@ kdevcmake_add_test(cmakemanagertest ${KDEVPLATFORM_LANGUAGE_LIBRARIES} ${KDEVPLA
 # kdevcmake_add_test(ctestfindsuitestest ${KDEVPLATFORM_LANGUAGE_LIBRARIES} ${KDEVPLATFORM_TESTS_LIBRARIES})
 
 # this is not a unit test but a testing tool, kept here for convenience
-kde4_add_executable(kdevprojectopen kdevprojectopen.cpp)
+add_executable(kdevprojectopen kdevprojectopen.cpp)
 target_link_libraries(kdevprojectopen ${KDE4_KDECORE_LIBS} ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_TESTS_LIBRARIES} kdev4cmakecommon)

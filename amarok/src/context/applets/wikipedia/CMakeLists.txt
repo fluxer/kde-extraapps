@@ -1,18 +1,13 @@
 project(context-currenttrack)
 
-set( wiki_SRCS WikipediaApplet.cpp )
+set( wiki_SRCS WikipediaApplet.cpp wikipediaGeneralSettings.ui wikipediaLanguageSettings.ui)
 
 include_directories(${Amarok_SOURCE_DIR}/src
                     ${Amarok_SOURCE_DIR}/src/context
                     ${Amarok_SOURCE_DIR}/src/network
                     )
 
-kde4_add_ui_files( wiki_SRCS wikipediaGeneralSettings.ui wikipediaLanguageSettings.ui )
-
 kde4_add_plugin(amarok_context_applet_wikipedia ${wiki_SRCS})
-if(APPLE)
-   SET_TARGET_PROPERTIES(amarok_context_applet_wikipedia PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-endif(APPLE)
 target_link_libraries(amarok_context_applet_wikipedia
     amarokcore
     amaroklib

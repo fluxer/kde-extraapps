@@ -45,7 +45,9 @@ include_directories(
 )
 
 add_subdirectory(src)
-add_subdirectory(autotests)
+if(ENABLE_TESTING)
+    add_subdirectory(autotests)
+endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/KFileMetaDataConfig.cmake.in
                ${CMAKE_CURRENT_BINARY_DIR}/KFileMetaDataConfig.cmake @ONLY)

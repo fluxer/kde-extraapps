@@ -129,9 +129,6 @@ set(libconfigdialog_SRCS
     configdialog/dialogs/ScriptsConfig.cpp
     configdialog/dialogs/ScriptSelector.cpp
     configdialog/dialogs/DatabaseConfig.cpp
-)
-
-kde4_add_ui_files(libconfigdialog_SRCS
     configdialog/dialogs/CollectionConfig.ui
     configdialog/dialogs/GeneralConfig.ui
     configdialog/dialogs/MetadataConfig.ui
@@ -388,9 +385,6 @@ set(libplaylist_SRCS
     playlist/proxymodels/SortFilterProxy.cpp
     playlist/proxymodels/SortScheme.cpp
     playlist/proxymodels/SearchProxy.cpp
-)
-
-kde4_add_ui_files(libplaylist_SRCS
     playlist/PlaylistQueueEditor.ui
 )
 
@@ -505,9 +499,6 @@ set(apg_SRCS
     playlistgenerator/constraints/TagMatch.cpp
     playlistgenerator/constraints/TagMatchSupport.cpp
     playlistgenerator/constraints/TrackSpreader.cpp
-)
-
-kde4_add_ui_files(apg_SRCS
     playlistgenerator/ConstraintGroupEditWidget.ui
     playlistgenerator/PresetEditDialog.ui
     playlistgenerator/constraints/CheckpointEditWidget.ui
@@ -529,11 +520,8 @@ if( CMAKE_BUILD_TYPE_TOLOWER MATCHES debug )
     set(network_access_SRCS
         ${network_access_SRCS}
         network/NetworkAccessViewer.cpp
-        )
-
-    kde4_add_ui_files(network_access_SRCS
         network/NetworkRequests.ui
-        )
+    )
 endif( CMAKE_BUILD_TYPE_TOLOWER MATCHES debug )
 
 #####################################################################
@@ -564,9 +552,6 @@ set( statsyncing_SRCS
     statsyncing/ui/ConfigureProviderDialog.cpp
     statsyncing/ui/MatchedTracksPage.cpp
     statsyncing/ui/TrackDelegate.cpp
-)
-
-kde4_add_ui_files( statsyncing_SRCS
     statsyncing/ui/ChooseProvidersPage.ui
     statsyncing/ui/MatchedTracksPage.ui
 )
@@ -734,6 +719,19 @@ set(amaroklib_LIB_SRCS
     GlobalCollectionActions.cpp
     GlobalCurrentTrackActions.cpp
     moodbar/MoodbarManager.cpp
+    aboutdialog/OcsPersonItem.ui
+    dialogs/EditFilterDialog.ui
+    dialogs/EqualizerDialog.ui
+    dialogs/MusicBrainzTagger.ui
+    dialogs/TagDialogBase.ui
+    dialogs/TagGuessOptions.ui
+    dialogs/OrganizeCollectionOptions.ui
+    dialogs/OrganizeCollectionDialogBase.ui
+    playlist/layouts/PlaylistLayoutEditDialog.ui
+    core-impl/podcasts/sql/PodcastSettingsBase.ui
+    core-impl/podcasts/sql/SqlPodcastProviderSettingsWidget.ui
+    core-impl/podcasts/sql/PodcastFilenameLayoutConfigWidget.ui
+    browsers/playlistbrowser/PodcastCategoryBase.ui
 )
 
 if( LIBMYGPO_QT_FOUND )
@@ -834,23 +832,7 @@ set( amaroklib_DEPENDS "amarok-transcoding" ) # depends on generated ui_*.h file
 kde4_add_kcfg_files(amaroklib_LIB_SRCS amarokconfig.kcfgc)
 add_custom_target(amarokconfig_h DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/amarokconfig.h)
 
-kde4_add_ui_files(amaroklib_LIB_SRCS
-    aboutdialog/OcsPersonItem.ui
-    dialogs/EditFilterDialog.ui
-    dialogs/EqualizerDialog.ui
-    dialogs/MusicBrainzTagger.ui
-    dialogs/TagDialogBase.ui
-    dialogs/TagGuessOptions.ui
-    dialogs/OrganizeCollectionOptions.ui
-    dialogs/OrganizeCollectionDialogBase.ui
-    playlist/layouts/PlaylistLayoutEditDialog.ui
-    core-impl/podcasts/sql/PodcastSettingsBase.ui
-    core-impl/podcasts/sql/SqlPodcastProviderSettingsWidget.ui
-    core-impl/podcasts/sql/PodcastFilenameLayoutConfigWidget.ui
-    browsers/playlistbrowser/PodcastCategoryBase.ui
-)
-
-kde4_add_library(amaroklib SHARED ${amaroklib_LIB_SRCS} ${AMAROK_MPRIS1_ADAPTOR_SRCS})
+add_library(amaroklib SHARED ${amaroklib_LIB_SRCS} ${AMAROK_MPRIS1_ADAPTOR_SRCS})
 
 target_link_libraries(amaroklib
     ${KDE4_KDEUI_LIBS}
@@ -891,7 +873,7 @@ if( QCA2_FOUND )
 endif( QCA2_FOUND )
 
 
-if(KDE4_BUILD_TESTS)
+if(ENABLE_TESTING)
     target_link_libraries(amaroklib ${QT_QTTEST_LIBRARY})
 endif()
 
@@ -905,19 +887,9 @@ install(TARGETS amaroklib ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 set( amarok_SRCS main.cpp )
 
-kde4_add_app_icon(amarok_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../images/hi*-app-amarok.png)
-
 find_package(X11)
 
-kde4_add_executable(amarok ${amarok_SRCS})
-if(APPLE)
-    set_target_properties(amarok PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-    set(MACOSX_BUNDLE_BUNDLE_NAME "Amarok 2")
-    set(MACOSX_BUNDLE_BUNDLE_VERSION "2.8.0-git")
-    set(MACOSX_BUNDLE_COPYRIGHT "Amarok Team")
-    set_target_properties(amarok PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${MAC_FILES_DIR}/Info.plist.template)
-    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/amarok.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
-endif(APPLE)
+add_executable(amarok ${amarok_SRCS})
 
 target_link_libraries(amarok ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} amarokcore amaroklib ${X11_LIBRARIES})
 install(TARGETS amarok ${INSTALL_TARGETS_DEFAULT_ARGS})

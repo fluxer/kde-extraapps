@@ -73,13 +73,14 @@ set(kuser_SRCS
 	ku_usersystem.cpp
 	ku_groupsystem.cpp
 	ku_selectconn.cpp
+	ku_filessettings.ui
+	ku_generalsettings.ui
+	ku_passwordpolicy.ui
 )
 
 kde4_add_kcfg_files(kuser_SRCS ku_prefs.kcfgc)
 
-kde4_add_ui_files(kuser_SRCS ku_filessettings.ui ku_generalsettings.ui ku_passwordpolicy.ui)
-
-kde4_add_executable(kuser ${kuser_SRCS})
+add_executable(kuser ${kuser_SRCS})
 
 target_link_libraries(kuser ${KDE4_KIO_LIBS} ${KDE4_KLDAP_LIBS} kntlm)
 if(HAVE_CRYPT_LIBRARY)

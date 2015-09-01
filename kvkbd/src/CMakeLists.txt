@@ -33,7 +33,7 @@ QT4_ADD_DBUS_ADAPTOR(kvkbd_SRCS org.kde.kvkbd.Kvkbd.xml
 QT4_ADD_DBUS_ADAPTOR(kvkbd_SRCS org.kde.kvkbd.Dock.xml
                        kbddock.h KbdDock)
 
-kde4_add_executable(kvkbd ${kvkbd_SRCS} ${kvkbd_RC_SRCS} ${kvkbd_RESOURCES_RCC})
+add_executable(kvkbd ${kvkbd_SRCS} ${kvkbd_RC_SRCS} ${kvkbd_RESOURCES_RCC})
 
 target_link_libraries(kvkbd ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_LIBRARIES} X11 Xtst)
 

@@ -1,7 +1,9 @@
 find_package(Threads)
 find_library(RT_LIBRARY rt)
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9502 )
 set(kdevplatforminterfaces_LIB_SRCS
@@ -51,7 +53,7 @@ set(kdevplatforminterfaces_LIB_SRCS
 )
 configure_file(ipluginversion.h.in ${CMAKE_CURRENT_BINARY_DIR}/ipluginversion.h)
 
-kde4_add_library(kdevplatforminterfaces SHARED ${kdevplatforminterfaces_LIB_SRCS})
+add_library(kdevplatforminterfaces SHARED ${kdevplatforminterfaces_LIB_SRCS})
 target_link_libraries(kdevplatforminterfaces LINK_PUBLIC
     ${KDE4_KPARTS_LIBS}
     ${KDE4_KTEXTEDITOR_LIBS}

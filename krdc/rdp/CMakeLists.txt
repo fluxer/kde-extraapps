@@ -14,9 +14,6 @@ if(HAVE_XFREERDP)
         rdphostpreferences.cpp
         rdpviewfactory.cpp
         rdpview.cpp
-    )
-
-    kde4_add_ui_files(rdpplugin_SRCS
         rdppreferences.ui
     )
 

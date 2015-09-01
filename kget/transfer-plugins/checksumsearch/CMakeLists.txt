@@ -20,13 +20,10 @@ install(FILES kget_checksumsearchfactory.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
 ###Build KCM-Module
 set(kcm_kget_checksumsearchfactory_PART_SRCS
-checksumsearch.cpp
-dlgchecksumsearch.cpp
-)
-
-kde4_add_ui_files(kcm_kget_checksumsearchfactory_PART_SRCS
-checksumsearch.ui
-checksumsearchadddlg.ui
+    checksumsearch.cpp
+    dlgchecksumsearch.cpp
+    checksumsearch.ui
+    checksumsearchadddlg.ui
 )
 
 kde4_add_kcfg_files(kcm_kget_checksumsearchfactory_PART_SRCS checksumsearchsettings.kcfgc)

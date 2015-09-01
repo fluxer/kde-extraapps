@@ -103,7 +103,7 @@ endif (NOT EXISTS ${kopete_xml})
 qt4_add_dbus_interface(lancelot_datamodels_LIB_SRCS ${kopete_xml} kopete_interface)
 
 
-kde4_add_library(lancelot-datamodels SHARED ${lancelot_datamodels_LIB_SRCS})
+add_library(lancelot-datamodels SHARED ${lancelot_datamodels_LIB_SRCS})
 
 target_link_libraries(
    lancelot-datamodels

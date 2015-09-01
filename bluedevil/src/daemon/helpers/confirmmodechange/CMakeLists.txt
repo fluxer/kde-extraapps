@@ -3,7 +3,7 @@ set(confirmmodechange_SRCS
     confirmmodechange.cpp
 )
 
-kde4_add_executable(bluedevil-confirmmodechange ${confirmmodechange_SRCS})
+add_executable(bluedevil-confirmmodechange ${confirmmodechange_SRCS})
 
 target_link_libraries(bluedevil-confirmmodechange
                       ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS})

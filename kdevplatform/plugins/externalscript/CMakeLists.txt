@@ -7,14 +7,9 @@ set(kdevexternalscript_PART_SRCS
     externalscriptjob.cpp
     editexternalscript.cpp
     externalscriptdebug.cpp
-)
-
-set(kdevexternalscript_PART_UI
     externalscriptview.ui
     editexternalscript.ui
 )
-
-kde4_add_ui_files(kdevexternalscript_PART_SRCS ${kdevexternalscript_PART_UI})
 
 kde4_add_plugin(kdevexternalscript ${kdevexternalscript_PART_SRCS})
 
