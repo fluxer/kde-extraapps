@@ -38,7 +38,7 @@ if(IPOD_FOUND AND WITH_IPOD)
     support/IphoneMountPoint.cpp
     support/IpodDeviceHelper.cpp
     support/IpodTranscodeCapability.cpp
-    support/IpodConfiguration.ui
+    IpodConfiguration.ui
   )
 
   link_directories(${IPOD_LIBRARY_DIRS})
