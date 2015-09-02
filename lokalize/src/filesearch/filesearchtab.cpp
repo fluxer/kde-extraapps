@@ -410,7 +410,7 @@ QVariant FileSearchModel::data(const QModelIndex& item, int role) const
                 result.insert(sl.start+sl.len, endBld);
                 result.insert(sl.start, startBld);
             }
-             /* !isApproved(sr.state/*, Project::instance()->local()->role())*/
+             /* !isApproved(sr.state, Project::instance()->local()->role()) */
             QString escaped=convertToHtml(result, item.column()==FileSearchModel::Target && !sr.isApproved);
 
             escaped.replace(startBld, startBldTag);

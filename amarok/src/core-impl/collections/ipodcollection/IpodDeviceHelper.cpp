@@ -19,6 +19,7 @@
 #include "core/support/Debug.h"
 
 #include <KLocalizedString>
+#include <KLocale>
 
 #include <QFile>
 #include <QFileInfo>

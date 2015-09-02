@@ -21,6 +21,8 @@
 #include "core/collections/Collection.h"
 #include "core/meta/Observer.h"
 
+#include <KDialog>
+
 #include <QMutex>
 #include <QSharedPointer>
 #include <QTimer>

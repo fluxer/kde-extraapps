@@ -24,16 +24,18 @@
 #include "ui_openconnectauth.h"
 
 #include <KDialog>
-#include <QPushButton>
-#include <QString>
-#include <QLabel>
-#include <QEventLoop>
-#include <QFormLayout>
 #include <KLineEdit>
 #include <KDialogButtonBox>
 #include <KPushButton>
 #include <KComboBox>
 #include <KDebug>
+#include <KLocale>
+
+#include <QPushButton>
+#include <QString>
+#include <QLabel>
+#include <QEventLoop>
+#include <QFormLayout>
 #include <QDomDocument>
 #include <QMutex>
 #include <QWaitCondition>

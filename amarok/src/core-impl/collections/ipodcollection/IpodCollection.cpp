@@ -21,9 +21,9 @@
 #include "IpodPlaylistProvider.h"
 #include "jobs/IpodWriteDatabaseJob.h"
 #include "jobs/IpodParseTracksJob.h"
-#include "support/IphoneMountPoint.h"
-#include "support/IpodDeviceHelper.h"
-#include "support/IpodTranscodeCapability.h"
+#include "IphoneMountPoint.h"
+#include "IpodDeviceHelper.h"
+#include "IpodTranscodeCapability.h"
 
 #include "core/capabilities/ActionsCapability.h"
 #include "core/interfaces/Logger.h"
