@@ -38,9 +38,6 @@ if(IPOD_FOUND AND WITH_IPOD)
     support/IphoneMountPoint.cpp
     support/IpodDeviceHelper.cpp
     support/IpodTranscodeCapability.cpp
-  )
-
-  kde4_add_ui_files(amarok_collection-ipodcollection_PART_SRCS
     support/IpodConfiguration.ui
   )
 

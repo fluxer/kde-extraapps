@@ -22,9 +22,6 @@ install(FILES kget_mmsfactory.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 ###Build KCM-Module
 set(kcm_kget_mmsfactory_PART_SRCS
   dlgmms.cpp
-)
-
-kde4_add_ui_files(kcm_kget_mmsfactory_PART_SRCS
   dlgmms.ui
 )
 kde4_add_kcfg_files(kcm_kget_mmsfactory_PART_SRCS mmssettings.kcfgc)

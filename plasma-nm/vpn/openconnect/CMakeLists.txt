@@ -23,9 +23,8 @@ if (OPENCONNECT_FOUND)
         openconnectwidget.cpp
         openconnectauth.cpp
         openconnectauthworkerthread.cpp
-        )
-
-        kde4_add_ui_files(openconnect_SRCS openconnectprop.ui openconnectauth.ui)
+        openconnectprop.ui
+        openconnectauth.ui)
 
         kde4_add_plugin(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 
