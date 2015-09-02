@@ -68,7 +68,7 @@ endif()
 
 install(TARGETS gwenview ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES gwenviewui.rcm DESTINATION ${DATA_INSTALL_DIR}/gwenview)
+install(FILES gwenviewui.rc DESTINATION ${DATA_INSTALL_DIR}/gwenview)
 
 install(PROGRAMS gwenview.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 

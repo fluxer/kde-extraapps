@@ -172,12 +172,12 @@ install(TARGETS lokalize ${INSTALL_TARGETS_DEFAULT_ARGS} )
 ########### install files ###############
 
 install( PROGRAMS lokalize.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES prefs/lokalize.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+install( FILES lokalize.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES
         editorui.rc
         lokalizemainwindowui.rc
         scriptsui.rc
-        project/projectmanagerui.rc
+        projectmanagerui.rc
         tm/translationmemoryrui.rc
         filesearch/filesearchtabui.rc
         lokalize.notifyrc
