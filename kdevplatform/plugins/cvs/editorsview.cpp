@@ -15,6 +15,7 @@
 #include <QRegExp>
 #include <KDebug>
 #include <KMessageBox>
+#include <KLocale>
 
 #include "cvsplugin.h"
 #include "cvsjob.h"

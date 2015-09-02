@@ -15,6 +15,7 @@
 
 #include "keyexport.h"
 #include <KMessageBox>
+#include <KLocale>
 
 KeyExport::KeyExport(QWidget *parent, const QStringList &keyservers)
 	: KDialog(parent),

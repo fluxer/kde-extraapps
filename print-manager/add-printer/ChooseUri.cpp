@@ -23,10 +23,10 @@
 
 #include <KCupsRequest.h>
 
-#include <KUrl>
 #include <QStringBuilder>
-
+#include <KUrl>
 #include <KDebug>
+#include <KLocale>
 
 ChooseUri::ChooseUri(QWidget *parent) :
     GenericPage(parent),

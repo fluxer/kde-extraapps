@@ -34,6 +34,7 @@
 #include <kio/jobuidelegate.h>
 #include <kio/copyjob.h>
 #include <ktemporaryfile.h>
+#include <klocale.h>
 
 #include <QFile>
 #include <QTreeWidget>

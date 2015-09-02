@@ -33,6 +33,7 @@
 #include <KConfigGroup>
 #include <KFilePlacesModel>
 #include <KGlobal>
+#include <KLocale>
 
 #include <QFileInfo>
 #include <QStandardItemModel>

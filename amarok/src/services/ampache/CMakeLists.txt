@@ -57,7 +57,7 @@ install(TARGETS ampache_account_login DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS
             ${KDE4_KDECORE_LIBS}
             ${KDE4_KDEUI_LIBS}
             ${KDE4_KIO_LIBS}
-            ${KDE4_THREADWEAVER_LIBRARIES}
+            ${KDE4_THREADWEAVER_LIBS}
             ${QT_QTXML_LIBRARY}
             ${KDE4_SOLID_LIBS}
         )

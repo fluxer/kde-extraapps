@@ -25,7 +25,7 @@
             ${KDE4_KDECORE_LIBS}
             ${KDE4_KDEUI_LIBS}
             ${KDE4_KIO_LIBS}
-            ${KDE4_THREADWEAVER_LIBRARIES}
+            ${KDE4_THREADWEAVER_LIBS}
         )
 
         install(TARGETS amarok_service_opmldirectory DESTINATION ${PLUGIN_INSTALL_DIR} )

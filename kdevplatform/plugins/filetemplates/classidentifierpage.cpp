@@ -21,6 +21,8 @@
 
 #include "ui_newclass.h"
 
+#include <klocale.h>
+
 struct ClassIdentifierPagePrivate
 {
     ClassIdentifierPagePrivate()

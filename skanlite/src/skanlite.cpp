@@ -45,6 +45,7 @@
 #include <kdeversion.h>
 #include <kio/netaccess.h>
 #include <KTemporaryFile>
+#include <KLocale>
 
 #include <errno.h>
 

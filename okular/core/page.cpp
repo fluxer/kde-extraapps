@@ -194,6 +194,7 @@ void Page::setBoundingBox( const NormalizedRect& bbox )
     // Allow tiny rounding errors (happens during rotation)
     static const double epsilon = 0.00001;
     Q_ASSERT( bbox.left >= -epsilon && bbox.top >= -epsilon && bbox.right <= 1 + epsilon && bbox.bottom <= 1 + epsilon );
+    Q_UNUSED(epsilon);
 
     d->m_boundingBox = bbox & NormalizedRect( 0., 0., 1., 1. );
     d->m_isBoundingBoxKnown = true;

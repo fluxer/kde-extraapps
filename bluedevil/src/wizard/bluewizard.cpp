@@ -36,6 +36,7 @@
 #include <KPushButton>
 #include <kdebug.h>
 #include <KProcess>
+#include <KLocale>
 
 BlueWizard::BlueWizard(const KUrl &url) : QWizard(), m_device(0), m_manualPin(false)
 {

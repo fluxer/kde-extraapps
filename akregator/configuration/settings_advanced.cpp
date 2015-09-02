@@ -28,6 +28,7 @@
 #include "storagefactoryregistry.h"
 
 #include <KComboBox>
+#include <KLocale>
 
 #include <QPushButton>
 #include <QStringList>

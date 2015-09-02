@@ -16,7 +16,7 @@ target_link_libraries( amarok_collection-playdarcollection
                        amaroklib
                        ${QJSON_LIBRARIES}
                        ${KDE4_KDECORE_LIBS}
-                       ${KDE4_THREADWEAVER_LIBRARIES}
+                       ${KDE4_THREADWEAVER_LIBS}
                        ${KDE4_KIO_LIBS} )
 
 install(TARGETS amarok_collection-playdarcollection DESTINATION ${PLUGIN_INSTALL_DIR} )

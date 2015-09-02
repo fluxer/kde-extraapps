@@ -28,7 +28,8 @@
 #include <kdebug.h>
 #include <kmenu.h>
 #include <KAction>
-
+#include <KDialog>
+#include <KLocale>
 
 #include <interfaces/iplugin.h>
 #include <interfaces/icore.h>

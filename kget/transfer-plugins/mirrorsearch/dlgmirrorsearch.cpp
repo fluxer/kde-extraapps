@@ -13,6 +13,8 @@
 #include "kget_export.h"
 #include "mirrorsearchsettings.h"
 
+#include <klocale.h>
+
 DlgEngineEditing::DlgEngineEditing(QWidget *parent)
     : KDialog(parent)
 {

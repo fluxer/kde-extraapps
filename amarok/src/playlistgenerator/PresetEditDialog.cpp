@@ -25,6 +25,8 @@
 
 #include "core/support/Debug.h"
 
+#include <KLocale>
+
 #include <QMenu>
 #include <QMenuBar>
 #include <QSignalMapper>

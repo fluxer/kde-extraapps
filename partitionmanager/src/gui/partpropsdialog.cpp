@@ -33,6 +33,7 @@
 #include <kglobalsettings.h>
 #include <kpushbutton.h>
 #include <klineedit.h>
+#include <klocale.h>
 
 #include <QtAlgorithms>
 

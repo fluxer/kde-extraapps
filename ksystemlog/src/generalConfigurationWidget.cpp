@@ -29,6 +29,7 @@
 #include <klocale.h>
 #include <kiconloader.h>
 #include <kstandarddirs.h>
+#include <kicon.h>
 
 #include "logging.h"
 #include "defaults.h"

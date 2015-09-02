@@ -30,6 +30,7 @@
 #include "util/capacity.h"
 
 #include <kdebug.h>
+#include <klocale.h>
 
 #include <config.h>
 

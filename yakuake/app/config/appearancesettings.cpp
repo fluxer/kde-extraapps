@@ -31,6 +31,7 @@
 #include <KStandardDirs>
 #include <KTar>
 #include <KUrl>
+#include <KLocale>
 
 #include <QFile>
 #include <QStandardItemModel>

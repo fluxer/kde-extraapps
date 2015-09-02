@@ -24,8 +24,9 @@
 #include "playlist/PlaylistDefines.h"
 
 #include <KMessageBox>
-
 #include <KInputDialog>
+#include <KLocale>
+
 #include <QLineEdit>
 
 Playlist::PlaylistLayoutEditDialog::PlaylistLayoutEditDialog( QWidget *parent )

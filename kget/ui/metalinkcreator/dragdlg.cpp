@@ -25,6 +25,8 @@
 
 #include <QtGui/QCheckBox>
 #include <QtGui/QSortFilterProxyModel>
+#include <KDialog>
+#include <KLocale>
 
 DragDlg::DragDlg(KGetMetalink::Resources *resources, KGetMetalink::CommonData *commonData, QSortFilterProxyModel *countrySort, QSortFilterProxyModel *languageSort, QWidget *parent)
   : KGetSaveSizeDialog("DragDlg", parent),

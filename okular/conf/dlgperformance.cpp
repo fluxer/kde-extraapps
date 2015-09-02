@@ -11,6 +11,7 @@
 
 #include <qfont.h>
 #include <kiconloader.h>
+#include <klocale.h>
 
 #include "ui_dlgperformancebase.h"
 

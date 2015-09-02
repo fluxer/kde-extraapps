@@ -28,6 +28,8 @@
 
 #include <KUser>
 #include <KAcceleratorManager>
+#include <KDialog>
+#include <KLocale>
 
 ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),

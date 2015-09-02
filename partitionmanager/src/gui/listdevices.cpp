@@ -27,6 +27,7 @@
 #include <kmenu.h>
 #include <kactioncollection.h>
 #include <kdebug.h>
+#include <kiconloader.h>
 
 class ListDeviceWidgetItem : public QListWidgetItem
 {

@@ -26,6 +26,7 @@
 #include <KJob>
 #include <KMessageBox>
 #include <KDebug>
+#include <KLocale>
 
 #include "../dvcsjob.h"
 #include "../dvcsplugin.h"

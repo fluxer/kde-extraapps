@@ -22,6 +22,8 @@
 #include "playlist/PlaylistActions.h"
 #include "playlist/PlaylistModelStack.h"
 
+#include <kicon.h>
+
 static const int s_idRole = Qt::UserRole;
 static const int s_myType = QListWidgetItem::UserType;
 

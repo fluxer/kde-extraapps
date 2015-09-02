@@ -25,7 +25,7 @@
 
 #include <KGlobalAccel>
 #include <KActionCollection>
-
+#include <KLocale>
 
 FirstRunDialog::FirstRunDialog(MainWindow* mainWindow) : KDialog(mainWindow)
 {

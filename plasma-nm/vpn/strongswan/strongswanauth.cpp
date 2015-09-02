@@ -25,6 +25,7 @@
 
 #include <KDialog>
 #include <KMessageBox>
+#include <KLocale>
 #include <QString>
 #include <QProcessEnvironment>
 

@@ -45,6 +45,7 @@
 #include <QGroupBox>
 
 #include <KDebug>
+#include <KLocale>
 
 #include <ctype.h>
 

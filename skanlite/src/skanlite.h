@@ -25,6 +25,7 @@
 
 #include <libksane/ksane.h>
 #include <QDir>
+#include <KDialog>
 
 #include "ui_settings.h"
 #include "ImageViewer.h"

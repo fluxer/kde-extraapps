@@ -62,7 +62,7 @@ target_link_libraries(kdevplatforminterfaces LINK_PRIVATE
     ${KDE4_KNOTIFYCONFIG_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_KCMUTILS_LIBS}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
 )
 if( RT_LIBRARY )
     target_link_libraries( kdevplatforminterfaces LINK_PRIVATE ${RT_LIBRARY} )

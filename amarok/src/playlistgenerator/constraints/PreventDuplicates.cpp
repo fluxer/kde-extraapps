@@ -22,6 +22,8 @@
 
 #include "core/meta/Meta.h"
 
+#include <KLocale>
+
 #include <QSet>
 
 #include <math.h>

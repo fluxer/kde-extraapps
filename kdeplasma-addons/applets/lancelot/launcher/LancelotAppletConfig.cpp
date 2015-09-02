@@ -21,6 +21,7 @@
 #include "lancelot_interface.h"
 
 #include <KIconDialog>
+#include <KLocale>
 
 void LancelotAppletConfig::setupUi(QWidget * widget)
 {

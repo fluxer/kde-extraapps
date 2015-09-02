@@ -17,6 +17,7 @@
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
+#include <klocale.h>
 
 #include <interfaces/icore.h>
 #include <interfaces/iprojectcontroller.h>

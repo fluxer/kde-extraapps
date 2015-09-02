@@ -39,28 +39,28 @@ set(plasmanetworkmanagement_libeditor_SRCS
 
     ../uiutils.cpp
 
-    settings/ui/802-1x.ui
-    settings/ui/bond.ui
-    settings/ui/bridge.ui
-    settings/ui/bt.ui
-    settings/ui/cdma.ui
-    settings/ui/connectionwidget.ui
-    settings/ui/gsm.ui
-    settings/ui/infiniband.ui
-    settings/ui/ipv4.ui
-    settings/ui/ipv6.ui
-    settings/ui/ppp.ui
-    settings/ui/pppoe.ui
-    settings/ui/vlan.ui
-    settings/ui/wificonnectionwidget.ui
-    settings/ui/wifisecurity.ui
-    settings/ui/wimax.ui
-    settings/ui/wiredconnectionwidget.ui
-    settings/ui/wiredsecurity.ui
+    settings/802-1x.ui
+    settings/bond.ui
+    settings/bridge.ui
+    settings/bt.ui
+    settings/cdma.ui
+    settings/connectionwidget.ui
+    settings/gsm.ui
+    settings/infiniband.ui
+    settings/ipv4.ui
+    settings/ipv6.ui
+    settings/ppp.ui
+    settings/pppoe.ui
+    settings/vlan.ui
+    settings/wificonnectionwidget.ui
+    settings/wifisecurity.ui
+    settings/wimax.ui
+    settings/wiredconnectionwidget.ui
+    settings/wiredsecurity.ui
 
-    widgets/ui/advancedpermissionswidget.ui
-    widgets/ui/ipv4routes.ui
-    widgets/ui/ipv6routes.ui
+    widgets/advancedpermissionswidget.ui
+    widgets/ipv4routes.ui
+    widgets/ipv6routes.ui
 
     connectiondetaileditor.ui
 )

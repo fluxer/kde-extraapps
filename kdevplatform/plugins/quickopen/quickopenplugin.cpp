@@ -31,6 +31,7 @@
 #include <QScrollBar>
 #include <QCheckBox>
 #include <QMetaObject>
+#include <QTime>
 
 #include <kbuttongroup.h>
 #include <klocale.h>
@@ -44,6 +45,7 @@
 #include <kaction.h>
 #include <kshortcut.h>
 #include <kdebug.h>
+#include <kconfiggroup.h>
 
 #include <interfaces/ilanguage.h>
 #include <interfaces/icore.h>

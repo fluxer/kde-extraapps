@@ -24,6 +24,7 @@
 #include "settings.h"
 
 #include <QDesktopWidget>
+#include <KLocale>
 
 WindowSettings::WindowSettings(QWidget* parent) : QWidget(parent)
 {

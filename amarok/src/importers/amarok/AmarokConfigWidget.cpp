@@ -16,6 +16,8 @@
 
 #include "AmarokConfigWidget.h"
 
+#include <KLocale>
+
 #include <QDir>
 #include <QLayout>
 

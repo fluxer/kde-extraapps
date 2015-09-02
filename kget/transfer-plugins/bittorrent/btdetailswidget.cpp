@@ -14,6 +14,7 @@
 #include "ui_btdetailswidgetfrm.h"
 
 #include <kdebug.h>
+#include <klocale.h>
 
 BTDetailsWidget::BTDetailsWidget(BTTransferHandler * transfer)
   : m_transfer(transfer)

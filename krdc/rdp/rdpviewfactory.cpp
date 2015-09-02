@@ -25,6 +25,7 @@
 
 #include <KDebug>
 #include <KStandardDirs>
+#include <KLocale>
 
 KRDC_PLUGIN_EXPORT(RdpViewFactory)
 

@@ -67,8 +67,8 @@ set(okularcore_SRCS
    core/utils.cpp
    core/view.cpp
    core/fileprinter.cpp
-   conf/textdocumentsettings.ui
    core/chooseenginewidget.ui
+   core/textdocumentsettings.ui
 )
 
 install( FILES

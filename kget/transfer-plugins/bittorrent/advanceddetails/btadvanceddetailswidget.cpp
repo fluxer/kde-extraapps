@@ -28,6 +28,7 @@
 #include <kdialog.h>
 #include <ktabwidget.h>
 #include <ktitlewidget.h>
+#include <klocale.h>
 #include <QGridLayout>
 
 using namespace kt;

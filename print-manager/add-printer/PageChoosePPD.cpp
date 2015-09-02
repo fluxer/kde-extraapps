@@ -27,12 +27,12 @@
 #include <KCupsRequest.h>
 
 #include <KTemporaryFile>
+#include <KDebug>
+#include <KLocale>
 
 #include <QFileInfo>
 #include <QFile>
 #include <QStringBuilder>
-
-#include <KDebug>
 
 PageChoosePPD::PageChoosePPD(const QVariantHash &args, QWidget *parent) :
     GenericPage(parent),

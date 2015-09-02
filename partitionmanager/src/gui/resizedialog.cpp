@@ -30,6 +30,7 @@
 #include "util/capacity.h"
 
 #include <kdebug.h>
+#include <klocale.h>
 
 /** Creates a new ResizeDialog
 	@param parent pointer to the parent widget

@@ -22,6 +22,9 @@
 #include "playlistgenerator/Constraint.h"
 #include "playlistgenerator/ConstraintFactory.h"
 
+#include <KLocale>
+#include <KGlobal>
+
 #include <stdlib.h>
 #include <math.h>
 

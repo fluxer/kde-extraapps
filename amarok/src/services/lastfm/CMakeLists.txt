@@ -50,7 +50,7 @@ target_link_libraries( amarok_service_lastfm
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_SOLID_LIBRARY}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTNETWORK_LIBRARY}
 )
 install( TARGETS amarok_service_lastfm DESTINATION ${PLUGIN_INSTALL_DIR} )

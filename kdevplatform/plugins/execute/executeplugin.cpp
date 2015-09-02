@@ -31,6 +31,7 @@
 #include <kparts/mainwindow.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
+#include <kconfiggroup.h>
 
 #include <interfaces/icore.h>
 #include <interfaces/iruncontroller.h>

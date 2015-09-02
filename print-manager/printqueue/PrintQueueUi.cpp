@@ -39,6 +39,7 @@
 
 #include <KMessageBox>
 #include <KDebug>
+#include <KLocale>
 
 #define PRINTER_ICON_SIZE 92
 

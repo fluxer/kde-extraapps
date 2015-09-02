@@ -12,6 +12,7 @@
 #define DLGWEBINTERFACE_H
 
 #include <QWidget>
+#include <KDialog>
 
 #include "ui_dlgwebinterface.h"
 

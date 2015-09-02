@@ -22,6 +22,7 @@
 #include "settings.h"
 
 #include <KConfigDialog>
+#include <KLocale>
 
 IntegrationPreferences::IntegrationPreferences(KConfigDialog *parent, Qt::WindowFlags f)
   : QWidget(parent, f)

@@ -31,6 +31,7 @@
 #include <KMessageBox>
 #include <KPasswordDialog>
 #include <KShell>
+#include <KLocale>
 
 #include <QX11EmbedContainer>
 #include <QEvent>

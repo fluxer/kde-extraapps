@@ -29,6 +29,8 @@
 #include <QRegExpValidator>
 
 #include <KDebug>
+#include <KLocale>
+#include <KIcon>
 #include <kpixmapsequenceoverlaypainter.h>
 
 #include <bluedevil/bluedevil.h>

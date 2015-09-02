@@ -29,6 +29,7 @@
 #include <QtGui/QSortFilterProxyModel>
 #include <QtGui/QStandardItemModel>
 #include <QtGui/QStringListModel>
+#include <KLocale>
 
 KGET_EXPORT_PLUGIN_CONFIG(DlgChecksumSettingsWidget)
 

@@ -13,6 +13,7 @@
 
 #include <kplugininfo.h>
 #include <kdebug.h>
+#include <kicon.h>
 
 #include "core.h"
 #include "plugincontroller.h"

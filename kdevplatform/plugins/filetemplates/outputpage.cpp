@@ -26,6 +26,7 @@
 #include <KIntNumInput>
 #include <KDebug>
 #include <KFileDialog>
+#include <KLocale>
 
 #include <QSignalMapper>
 #include <QLabel>

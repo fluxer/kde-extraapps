@@ -24,6 +24,8 @@
 #include "core/support/Amarok.h"
 #include "core/support/Debug.h"
 
+#include <KLocale>
+
 EqualizerDialog * EqualizerDialog::s_instance = 0;
 
 EqualizerDialog::EqualizerDialog( QWidget* parent )

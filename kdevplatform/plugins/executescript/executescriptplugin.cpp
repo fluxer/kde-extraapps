@@ -23,6 +23,7 @@
 #include "executescriptplugin.h"
 
 #include <QApplication>
+#include <QTime>
 
 #include <klocale.h>
 #include <kpluginfactory.h>
@@ -32,6 +33,7 @@
 #include <kparts/mainwindow.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
+#include <kconfiggroup.h>
 
 #include <interfaces/icore.h>
 #include <interfaces/iruncontroller.h>

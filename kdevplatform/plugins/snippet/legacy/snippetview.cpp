@@ -16,6 +16,7 @@
 #include <KMessageBox>
 #include <KAction>
 #include <KDebug>
+#include <KLocale>
 
 #include "snippet.h"
 #include "snippetplugin.h"

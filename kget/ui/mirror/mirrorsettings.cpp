@@ -22,6 +22,7 @@
 #include "core/transferhandler.h"
 
 #include <QtGui/QSortFilterProxyModel>
+#include <KLocale>
 
 MirrorAddDlg::MirrorAddDlg(MirrorModel *model, QWidget *parent, Qt::WFlags flags)
   : KDialog(parent, flags),

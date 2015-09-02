@@ -18,21 +18,46 @@
 ############################################
 
 file(GLOB partitionmanagerprivate_SRCS
-	backend/*.cpp
-	core/*.cpp
-	util/*.cpp
-	ops/*.cpp
-	jobs/*.cpp
-	fs/*.cpp
-	gui/*.cpp
-	config/*.cpp
+    backend/*.cpp
+    core/*.cpp
+    util/*.cpp
+    ops/*.cpp
+    jobs/*.cpp
+    fs/*.cpp
+    gui/*.cpp
+    config/*.cpp
 )
 
-file(GLOB partitionmanagerprivate_UIFILES config/*.ui gui/*.ui)
+set(partitionmanagerprivate_UIFILES
+    config/configurepageadvanced.ui
+    config/configurepagefilesystemcolors.ui
+    config/configurepagegeneral.ui
+
+    gui/applyprogressdetailswidgetbase.ui
+    gui/editmountpointdialogwidgetbase.ui
+    gui/partpropswidgetbase.ui
+    gui/applyprogressdialogwidgetbase.ui
+    gui/filesystemsupportdialogwidgetbase.ui
+    gui/sizedetailswidgetbase.ui
+    gui/createpartitiontablewidgetbase.ui
+    gui/listdevicesbase.ui
+    gui/sizedialogwidgetbase.ui
+    gui/decryptluksdialogwidgetbase.ui
+    gui/listoperationsbase.ui
+    gui/smartdialogwidgetbase.ui
+    gui/devicepropswidgetbase.ui
+    gui/mainwindowbase.ui
+    gui/treelogbase.ui
+    gui/editmountoptionsdialogwidgetbase.ui
+    gui/partitionmanagerwidgetbase.ui
+)
 
 kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
-add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS} ${partitionmanagerprivate_UIFILES})
+# FIXME: why is that needed?
+qt4_wrap_ui(partitionmanagerprivate_SRCS gui/partpropswidgetbase.ui)
+
+add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
 target_link_libraries(partitionmanagerprivate libfatlabel ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS})
 

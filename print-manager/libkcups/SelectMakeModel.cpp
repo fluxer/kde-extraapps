@@ -38,6 +38,7 @@
 
 #include <KMessageBox>
 #include <KDebug>
+#include <KLocale>
 
 // Marshall the MyStructure data into a D-Bus argument
 QDBusArgument &operator<<(QDBusArgument &argument, const DriverMatch &driverMatch)

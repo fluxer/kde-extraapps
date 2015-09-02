@@ -25,6 +25,7 @@
 
 #include <QPainter>
 #include <KDebug>
+#include <KLocale>
 
 ChooseSerial::ChooseSerial(QWidget *parent) :
     GenericPage(parent),

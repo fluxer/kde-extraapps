@@ -28,11 +28,12 @@
 #include <QDesktopServices>
 #include <QtGui/QVBoxLayout>
 
-#include <KUrl>
+#include <kurl.h>
+#include <klocale.h>
 #include <kfiledialog.h>
 #include <kurlrequester.h>
 #include <kpixmapsequenceoverlaypainter.h>
-#include <KDebug>
+#include <kdebug.h>
 
 #include <bluedevil/bluedevil.h>
 

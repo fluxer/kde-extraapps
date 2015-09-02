@@ -17,6 +17,7 @@
 
 #include "appkey.h"
 #include <KWindowSystem>
+#include <KLocale>
 
 AppKey::AppKey(QWidget *parent)
     : KDialog(parent)

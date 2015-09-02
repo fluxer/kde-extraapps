@@ -86,7 +86,7 @@ target_link_libraries(kdevplatformshell LINK_PRIVATE
     ${KDE4_KPARTS_LIBS}
     ${KDE4_KNOTIFYCONFIG_LIBS}
     ${KDE4_KTEXTEDITOR_LIBS}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTDECLARATIVE_LIBRARIES}
     kdevplatforminterfaces
     kdevplatformproject

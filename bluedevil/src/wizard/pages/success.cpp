@@ -25,6 +25,7 @@
 #include "bluewizard.h"
 
 #include <KDebug>
+#include <KIcon>
 #include <KLocalizedString>
 
 #include <bluedevil/bluedevildevice.h>

@@ -23,6 +23,7 @@
 
 #include <KComboBox>
 #include <KDebug>
+#include <KLocale>
 
 PrinterBehavior::PrinterBehavior(const QString &destName, bool isClass, QWidget *parent) :
     PrinterPage(parent),

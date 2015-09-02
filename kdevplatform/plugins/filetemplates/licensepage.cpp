@@ -24,6 +24,8 @@
 #include <KEMailSettings>
 #include <KComponentData>
 #include <KMessageBox>
+#include <KLocale>
+#include <KConfigGroup>
 
 #include <QDirIterator>
 

@@ -36,6 +36,7 @@
 #include <QStringBuilder>
 
 #include <KDebug>
+#include <KLocale>
 
 // system-config-printer --setup-printer='file:/tmp/printout' --devid='MFG:Ricoh;MDL:Aficio SP C820DN'
 PageDestinations::PageDestinations(const QVariantHash &args, QWidget *parent) :

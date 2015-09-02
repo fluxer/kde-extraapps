@@ -18,7 +18,7 @@ set(yakuake_SRCS
     config/skinlistdelegate.cpp
     firstrundialog.ui
     config/windowsettings.ui
-    config/behaviorsettings.ui
+    behaviorsettings.ui
     config/appearancesettings.ui
 )
 

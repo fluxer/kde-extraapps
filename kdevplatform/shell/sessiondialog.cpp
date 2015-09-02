@@ -22,6 +22,7 @@ Boston, MA 02110-1301, USA.
 
 #include <kcolorscheme.h>
 #include <kglobalsettings.h>
+#include <klocale.h>
 
 #include "core.h"
 #include "sessioncontroller.h"

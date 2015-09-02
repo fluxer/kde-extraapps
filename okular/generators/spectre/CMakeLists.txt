@@ -11,7 +11,7 @@ include_directories(
 set(okularGenerator_ghostview_SRCS
    generator_ghostview.cpp
    rendererthread.cpp
-   conf/gssettingswidget.ui
+   gssettingswidget.ui
 )
 
 kde4_add_kcfg_files(okularGenerator_ghostview_SRCS conf/gssettings.kcfgc )

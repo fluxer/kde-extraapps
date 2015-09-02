@@ -29,8 +29,8 @@
 #include <KPixmapSequence>
 #include <KPushButton>
 #include <KMessageBox>
-
 #include <KDebug>
+#include <KLocale>
 
 ModifyPrinter::ModifyPrinter(const QString &destName, bool isClass, QWidget *parent) :
     PrinterPage(parent),

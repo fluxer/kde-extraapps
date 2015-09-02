@@ -97,7 +97,7 @@ if(LIBXML2_FOUND AND CURL_FOUND)
             amaroklib
             ${KDE4_KDECORE_LIBS}
             ${KDE4_KDEUI_LIBS}
-            ${KDE4_THREADWEAVER_LIBRARIES}
+            ${KDE4_THREADWEAVER_LIBS}
             ${LIBXML2_LIBRARIES}
             ${CURL_LIBRARIES}
             ${QT_QTNETWORK_LIBRARY}

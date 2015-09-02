@@ -32,8 +32,9 @@
 #include <ksambasharedata.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <KPluginFactory>
-#include <KPluginLoader>
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
+#include <klocale.h>
 
 #include "sambausershareplugin.h"
 #include "model.h"

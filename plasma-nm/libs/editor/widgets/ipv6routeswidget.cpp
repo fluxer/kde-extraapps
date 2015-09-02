@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <KDebug>
 #include <KAcceleratorManager>
+#include <KLocale>
 
 #include "ui_ipv6routes.h"
 

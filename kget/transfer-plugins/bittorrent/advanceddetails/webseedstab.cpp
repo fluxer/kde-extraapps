@@ -21,6 +21,8 @@
 #include "webseedstab.h"
 #include <QHeaderView>
 #include <kmessagebox.h>
+#include <klocale.h>
+#include <kconfiggroup.h>
 #include <interfaces/torrentinterface.h>
 #include <interfaces/webseedinterface.h>
 #include "webseedsmodel.h"

@@ -24,6 +24,7 @@
 #include <NetworkManagerQt/Utils>
 
 #include <KDebug>
+#include <KLocale>
 
 #include "uiutils.h"
 

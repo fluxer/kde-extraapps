@@ -21,6 +21,7 @@
 
 #include <KIcon>
 #include <KPushButton>
+#include <KLocale>
 
 using namespace Transcoding;
 

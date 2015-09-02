@@ -1,5 +1,7 @@
 project(LancelotMenu)
 
+set(CMAKE_AUTOUIC OFF)
+
 #########################################################
 # Checking for Composite Begin                          #
 #########################################################
@@ -61,10 +63,10 @@ qt4_add_dbus_adaptor(plasma_lancelot_application_SRCS org.kde.lancelot.xml
 set(
    plasma_lancelot_SRCS
    main.cpp
-   LancelotConfigBase.ui
-
    ${plasma_lancelot_application_SRCS}
 )
+
+qt4_wrap_ui(plasma_lancelot_SRCS LancelotConfigBase.ui)
 
 add_executable(lancelot-menu ${plasma_lancelot_SRCS})
 

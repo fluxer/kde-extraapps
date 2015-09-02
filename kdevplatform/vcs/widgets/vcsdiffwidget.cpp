@@ -24,6 +24,7 @@
 
 #include <ktextedit.h>
 #include <kdebug.h>
+#include <klocale.h>
 
 #include <interfaces/icore.h>
 #include <interfaces/iruncontroller.h>

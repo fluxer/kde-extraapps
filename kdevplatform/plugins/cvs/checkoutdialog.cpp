@@ -12,6 +12,7 @@
 
 #include <KMessageBox>
 #include <KDebug>
+#include <KLocale>
 
 #include <interfaces/icore.h>
 #include <interfaces/iruncontroller.h>

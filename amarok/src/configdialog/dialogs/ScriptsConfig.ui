@@ -136,6 +136,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <includes>
+  <include location="global">kdialog.h</include>
+ </includes>
  <resources/>
  <connections/>
 </ui>

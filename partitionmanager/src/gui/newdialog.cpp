@@ -31,6 +31,7 @@
 #include "util/helpers.h"
 
 #include <kdebug.h>
+#include <klocale.h>
 
 #include <QtAlgorithms>
 

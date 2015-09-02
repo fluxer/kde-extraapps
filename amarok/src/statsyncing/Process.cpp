@@ -33,6 +33,8 @@
 #include "statsyncing/ui/MatchedTracksPage.h"
 
 #include <ThreadWeaver/Weaver>
+#include <KDialog>
+#include <KLocale>
 
 using namespace StatSyncing;
 

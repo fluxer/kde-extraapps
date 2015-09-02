@@ -26,6 +26,8 @@
 
 #include "MetaValues.h"
 
+#include <klocale.h>
+
 MetadataConfig::MetadataConfig( QWidget *parent )
     : ConfigDialogBase( parent )
 {

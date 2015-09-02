@@ -21,6 +21,7 @@
 #include "documentationfindwidget.h"
 #include "ui_documentationfindwidget.h"
 #include <QDebug>
+#include <KIcon>
 
 using namespace KDevelop;
 

@@ -129,7 +129,7 @@ set(libconfigdialog_SRCS
     configdialog/dialogs/ScriptsConfig.cpp
     configdialog/dialogs/ScriptSelector.cpp
     configdialog/dialogs/DatabaseConfig.cpp
-    configdialog/dialogs/CollectionConfig.ui
+    dialogs/CollectionConfig.ui
     configdialog/dialogs/GeneralConfig.ui
     configdialog/dialogs/MetadataConfig.ui
     configdialog/dialogs/ExcludedLabelsDialog.ui
@@ -844,7 +844,7 @@ target_link_libraries(amaroklib
     ${KDE4_PLASMA_LIBS}
     ${KDE4_SOLID_LIBRARY}
     ${KDE4_KTEXTEDITOR_LIBS}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTSCRIPT_LIBRARY}
     ${QT_QTSCRIPTTOOLS_LIBRARY}
     ${QT_QTSQL_LIBRARY}

@@ -28,6 +28,8 @@
 #include <KWindowSystem>
 #include <KDebug>
 #include <KGlobalSettings>
+#include <KIconLoader>
+#include <KIcon>
 
 #include <Plasma/Delegate>
 #include <Plasma/Theme>

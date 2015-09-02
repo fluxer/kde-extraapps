@@ -26,6 +26,7 @@
 
 #include <kmenu.h>
 #include <kactioncollection.h>
+#include <kiconloader.h>
 
 /** Creates a new ListOperations instance.
 	@param parent the parent widget

@@ -34,6 +34,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KGlobalSettings>
 #include <KIcon>
 #include <KMimeType>
+#include <KLocale>
 
 // Local
 #include <gvcore.h>

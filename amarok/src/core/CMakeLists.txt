@@ -111,7 +111,7 @@ target_link_libraries(amarokcore
     ${CMAKE_THREAD_LIBS_INIT}
     ${KDE4_KIO_LIBS}
     ${KDE4_SOLID_LIBRARY}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_CORE_LIBRARY}
 )
 

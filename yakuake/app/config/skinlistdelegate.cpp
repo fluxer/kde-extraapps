@@ -26,6 +26,7 @@
 #include <QModelIndex>
 #include <QPainter>
 
+#include <KLocale>
 
 #define MARGIN 3
 #define ICON 32

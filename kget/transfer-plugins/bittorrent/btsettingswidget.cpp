@@ -14,6 +14,7 @@
 
 #include <kdebug.h>
 #include <kfiledialog.h>
+#include <klocale.h>
 
 KGET_EXPORT_PLUGIN_CONFIG(BTSettingsWidget)
 

@@ -24,6 +24,7 @@
 #include <QStringList>
 
 #include <kdebug.h>
+#include <klocale.h>
 
 EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringList& options) :
 	KDialog(parent),

@@ -26,8 +26,9 @@
 #include <QPainter>
 #include <KCategorizedSortFilterProxyModel>
 #include <KCategoryDrawer>
-
 #include <KDebug>
+#include <KLocale>
+#include <KIconLoader>
 
 PageAddPrinter::PageAddPrinter(QWidget *parent) :
     GenericPage(parent),

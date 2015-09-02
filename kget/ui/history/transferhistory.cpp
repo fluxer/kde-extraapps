@@ -28,6 +28,7 @@
 #include <QStandardItem>
 #include <QVariant>
 
+#include <KLocale>
 #include <KDebug>
 #include <KStandardDirs>
 #include <KMessageBox>

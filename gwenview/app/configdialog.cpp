@@ -21,10 +21,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // Self
 #include "configdialog.h"
 
-// Qt
-
 // KDE
 #include <KGlobalSettings>
+#include <KLocale>
 
 // Local
 #include "ui_generalconfigpage.h"

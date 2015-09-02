@@ -91,7 +91,7 @@ target_link_libraries(kdevsubversion
                     kdevplatformoutputview
                     kdevplatformproject
                     kdevplatformlanguage
-                    ${KDE4_THREADWEAVER_LIBRARIES}
+                    ${KDE4_THREADWEAVER_LIBS}
                     ${KDE4_KPARTS_LIBRARY}
                     )
 

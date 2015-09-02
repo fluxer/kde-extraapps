@@ -19,6 +19,7 @@
 #include "appkey.h"
 #include "configdata.h"
 #include <KDebug>
+#include <KLocale>
 #include <QCheckBox>
 #include <QPointer>
 

@@ -29,6 +29,7 @@
 #include <QWidget>
 #include <kdemacros.h>
 #include <KLocale>
+#include <KGlobal>
 
 #include "pocreatorsettings.h"
 #include "ui_pocreatorform.h"

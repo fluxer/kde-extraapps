@@ -72,12 +72,13 @@ set(lokalize_SRCS
     mergemode/mergeview.cpp
     alttransview.cpp
     common/diff.cpp
-    project/project.cpp
-    project/projectmodel.cpp
-    project/projectwidget.cpp
-    project/projecttab.cpp
 
-    prefs/prefs.cpp
+    project.cpp
+    projectmodel.cpp
+    projectwidget.cpp
+    projecttab.cpp
+
+    prefs.cpp
 
     webquery/webqueryview.cpp
     webquery/webquerycontroller.cpp
@@ -110,13 +111,13 @@ set(lokalize_SRCS
     catalog/xliff/xliffstorage.cpp
     catalog/ts/tsstorage.cpp
 
-    prefs/prefs_identity.ui
-    prefs/prefs_editor.ui
-    prefs/prefs_appearance.ui
-    prefs/prefs_tm.ui
-    project/prefs_project_advanced.ui
-    project/prefs_project_local.ui
-    project/prefs_projectmain.ui
+    prefs_identity.ui
+    prefs_editor.ui
+    prefs_appearance.ui
+    prefs_tm.ui
+    prefs_project_advanced.ui
+    prefs_project_local.ui
+    prefs_projectmain.ui
     glossary/termedit.ui
     filesearch/filesearchoptions.ui
     filesearch/massreplaceoptions.ui
@@ -129,9 +130,9 @@ set(lokalize_SRCS
 )
 
 kde4_add_kcfg_files(lokalize_SRCS
-    prefs/prefs_lokalize.kcfgc
-    project/projectbase.kcfgc
-    project/projectlocal.kcfgc
+    prefs_lokalize.kcfgc
+    projectbase.kcfgc
+    projectlocal.kcfgc
 )
 
 #qt4_add_dbus_interface(lokalize_SRCS org.kde.lokalize.MainWindow.xml lokainterface)
@@ -143,10 +144,10 @@ qt4_add_dbus_adaptor(lokalize_SRCS filesearch/org.kde.lokalize.FileSearch.xml
                      filesearch/filesearchtab.h FileSearchTab)
 qt4_add_dbus_adaptor(lokalize_SRCS tm/org.kde.lokalize.TranslationMemory.xml
                      tm/tmtab.h TM::TMTab)
-qt4_add_dbus_adaptor(lokalize_SRCS project/org.kde.lokalize.Project.xml
-                     project/project.h Project)
-qt4_add_dbus_adaptor(lokalize_SRCS project/org.kde.lokalize.ProjectOverview.xml
-                     project/projecttab.h ProjectTab)
+qt4_add_dbus_adaptor(lokalize_SRCS org.kde.lokalize.Project.xml
+                     project.h Project)
+qt4_add_dbus_adaptor(lokalize_SRCS org.kde.lokalize.ProjectOverview.xml
+                     projecttab.h ProjectTab)
 
 
 add_executable(lokalize ${lokalize_SRCS})

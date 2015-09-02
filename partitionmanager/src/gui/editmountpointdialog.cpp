@@ -26,6 +26,7 @@
 #include <kdebug.h>
 #include <kguiitem.h>
 #include <kstandardguiitem.h>
+#include <klocale.h>
 
 EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 	KDialog(parent),

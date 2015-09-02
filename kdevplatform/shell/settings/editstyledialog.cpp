@@ -21,6 +21,7 @@ Boston, MA 02110-1301, USA.
 
 #include <QVBoxLayout>
 #include <KMessageBox>
+#include <KLocale>
 #include <ktexteditor/document.h>
 #include <ktexteditor/view.h>
 #include <ktexteditor/editor.h>

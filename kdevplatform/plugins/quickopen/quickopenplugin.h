@@ -24,6 +24,7 @@
 
 #include <QtCore/QVariant>
 #include <QtCore/QTimer>
+#include <QtCore/QDateTime>
 #include <QtGui/QMenu>
 
 #include <interfaces/iplugin.h>

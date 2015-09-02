@@ -13,6 +13,7 @@
 #include "settings.h"
 
 #include <KMessageBox>
+#include <KLocale>
 #include <kwallet.h>
 
 DlgWebinterface::DlgWebinterface(KDialog *parent)

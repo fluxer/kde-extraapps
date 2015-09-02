@@ -12,6 +12,8 @@
 
 #include "cvsjob.h"
 
+#include <KLocale>
+
 CvsGenericOutputView::CvsGenericOutputView(CvsJob* job, QWidget* parent)
     : QWidget(parent), Ui::CvsGenericOutputViewBase()
 {

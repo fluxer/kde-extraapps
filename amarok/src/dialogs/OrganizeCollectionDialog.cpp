@@ -31,6 +31,7 @@
 
 #include <KColorScheme>
 #include <KInputDialog>
+#include <KLocale>
 
 #include <QApplication>
 #include <QDesktopWidget>

@@ -18,6 +18,7 @@
 
 #include "core/KGpgKeyNode.h"
 
+#include <KLocale>
 #include <QDir>
 
 KgpgRevokeWidget::KgpgRevokeWidget(QWidget* parent)

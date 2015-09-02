@@ -27,6 +27,7 @@
 #include <KPluginFactory>
 #include <KMessageBox>
 #include <KStandardDirs>
+#include <KLocale>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/VpnSetting>

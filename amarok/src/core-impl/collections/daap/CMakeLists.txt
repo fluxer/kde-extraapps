@@ -24,7 +24,7 @@ target_link_libraries(amarok_collection-daapcollection
     amaroklib
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${KDE4_KDNSSD_LIBS}
     ${KDE4_SOLID_LIBS}
     ${QT_QTNETWORK_LIBRARY}

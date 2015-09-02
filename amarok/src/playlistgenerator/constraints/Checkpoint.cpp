@@ -26,6 +26,7 @@
 #include "core-impl/collections/support/CollectionManager.h"
 
 #include <KUrl>
+#include <KLocale>
 
 #include <algorithm>
 #include <climits>

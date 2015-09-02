@@ -24,6 +24,8 @@
 #include "core/collections/QueryMaker.h"
 #include "core/support/Debug.h"
 
+#include <KLocale>
+
 #include <QList>
 #include <QString>
 #include <QtGlobal>

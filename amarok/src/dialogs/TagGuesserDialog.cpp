@@ -28,6 +28,8 @@
 #include "MetaValues.h"
 #include "TagsFromFileNameGuesser.h"
 
+#include <KLocale>
+
 #include <QBoxLayout>
 
 #define album_color       Qt::red

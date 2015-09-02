@@ -27,6 +27,7 @@
 #include <QStringBuilder>
 
 #include <KDebug>
+#include <KLocale>
 
 ChooseLpd::ChooseLpd(QWidget *parent) :
     GenericPage(parent),

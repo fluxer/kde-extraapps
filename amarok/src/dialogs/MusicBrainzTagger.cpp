@@ -33,6 +33,7 @@
 #include "ui_MusicBrainzTagger.h"
 
 #include <KIcon>
+#include <KLocale>
 
 #include <QSortFilterProxyModel>
 #include <QToolBar>

@@ -47,9 +47,6 @@ set(SOURCES
     titlesetter.cpp
     topicwidget.cpp
     verticaldock.cpp
-)
-
-set(FORMS
     bufferviewwidget.ui
     bufferwidget.ui
     channellistdlg.ui
@@ -97,21 +94,15 @@ if (QT_QTDBUS_FOUND)
 endif()
 
 if(HAVE_SSL)
-  set(SOURCES ${SOURCES} sslinfodlg.cpp)
-  set(FORMS ${FORMS} sslinfodlg.ui)
+  set(SOURCES ${SOURCES} sslinfodlg.cpp sslinfodlg.ui)
 endif(HAVE_SSL)
 
 if (INDICATEQT_FOUND)
     add_definitions(-DHAVE_INDICATEQT)
     include_directories(${INDICATEQT_INCLUDE_DIRS})
-    list(APPEND SOURCES indicatornotificationbackend.cpp)
-    list(APPEND FORMS   indicatornotificationconfigwidget.ui)
+    list(APPEND SOURCES indicatornotificationbackend.cpp indicatornotificationconfigwidget.ui)
     list(APPEND LIBS ${INDICATEQT_LIBRARIES})
 endif()
-
-foreach(FORM ${FORMS})
-  set(FORMPATH ${FORMPATH} ui/${FORM})
-endforeach(FORM ${FORMS})
 
 # handle settingspages
 include(settingspages/settingspages.cmake)
@@ -133,8 +124,6 @@ include_directories(${PROJECT_SOURCE_DIR}/src/common
                     ${PROJECT_SOURCE_DIR}/src/uisupport
 
 )
-
-qt4_wrap_ui(UI ${FORMPATH} ${SPFRM})
 
 add_library(mod_qtui OBJECT ${SOURCES} ${SPSRC} ${UI})
 

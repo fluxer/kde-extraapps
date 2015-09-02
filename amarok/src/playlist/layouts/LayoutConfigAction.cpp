@@ -25,6 +25,7 @@
 #include "MainWindow.h"
 
 #include <KStandardDirs>
+#include <KLocale>
 
 #include <QLabel>
 #include <QComboBox>

@@ -41,7 +41,7 @@ target_link_libraries(amarok_collection-mtpcollection
     ${KDE4_KIO_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_SOLID_LIBRARY}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTGUI_LIBRARY}
     ${MTP_LIBRARIES}
 )

@@ -24,6 +24,8 @@
 #include "widgettextcaptureconfig.h"
 #include "ui_widgettextcaptureconfig.h"
 
+#include <KLocale>
+
 WidgetTextCaptureConfig::WidgetTextCaptureConfig(QWidget* parent)
  : KDialog(parent)
  , ui(new Ui_WidgetTextCapture)

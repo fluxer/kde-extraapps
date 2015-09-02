@@ -27,8 +27,8 @@
 #include <QStringBuilder>
 
 #include <KUrl>
-
 #include <KDebug>
+#include <KLocale>
 
 ChooseSamba::ChooseSamba(QWidget *parent) :
     GenericPage(parent),

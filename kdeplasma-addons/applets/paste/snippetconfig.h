@@ -19,6 +19,7 @@
 #define SNIPPETCONFIG_HEADER
 
 #include <QWidget>
+#include <KLocale>
 #include "ui_snippetconfig.h"
 
 class QListWidgetItem;

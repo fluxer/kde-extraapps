@@ -26,6 +26,8 @@
 #include <Plasma/Package>
 #include <Plasma/Wallpaper>
 
+#include <KDialog>
+
 #include "ui_weatherAdvanced.h"
 
 class QPropertyAnimation;

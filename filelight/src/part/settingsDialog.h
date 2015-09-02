@@ -27,6 +27,7 @@
 #include <QtCore/QTimer>
 #include <QtGui/QCloseEvent>
 
+#include <kdialog.h>
 
 class SettingsDialog : public KDialog, public Ui::Dialog
 {

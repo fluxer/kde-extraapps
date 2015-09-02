@@ -33,6 +33,7 @@
 #include <KToolInvocation>
 #include <KMenu>
 #include <KDebug>
+#include <KLocale>
 
 #define PRINTER_ICON_SIZE 128
 

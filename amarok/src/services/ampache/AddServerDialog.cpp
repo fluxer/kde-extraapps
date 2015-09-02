@@ -21,6 +21,8 @@
 #include "AmpacheAccountLogin.h"
 #include "ui_NewServerWidget.h"
 
+#include <KLocale>
+
 AddServerDialog::AddServerDialog()
     : KDialog()
     , m_widgets( new Ui::NewServerWidget )
