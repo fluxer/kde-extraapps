@@ -148,7 +148,7 @@ LocationTable::AnchorInTable LocationTable::anchorForOffset(std::size_t offset, 
   }
 
   m_currentOffset = m_offsetTable.lowerBound(offset);
-  //kDebug() << k_funcinfo << offset << "found" << m_currentOffset.key();
+  //kDebug() << offset << "found" << m_currentOffset.key();
   if (m_currentOffset == constEnd)
     --m_currentOffset;
 
