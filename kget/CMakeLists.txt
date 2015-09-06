@@ -252,3 +252,5 @@ if (QGPGME_FOUND)
 endif(QGPGME_FOUND)
 
 install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
+
+install(FILES kget.notifyrc DESTINATION ${DATA_INSTALL_DIR}/kget)
