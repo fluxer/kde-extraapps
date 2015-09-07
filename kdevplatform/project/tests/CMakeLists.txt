@@ -1,6 +1,3 @@
-# The executables go into the tests dir
-set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
-
 # also needed for the plugin, so the plugincontrollertest knows the binary dir
 #add_definitions( -DBUILD_DIR="\\"${KDevPlatform_BINARY_DIR}\\"" )
 include_directories(
@@ -9,12 +6,12 @@ include_directories(
     ${KDevPlatform_SOURCE_DIR}/project
 )
 
-set( projectmodeltest_SRCS
+set(projectmodeltest_SRCS
     projectmodeltest.cpp
 )
 
-kde4_add_unit_test(projectmodeltest ${projectmodeltest_SRCS})
-target_link_libraries(projectmodeltest
+kde4_add_test(kdevplatform-projectmodeltest ${projectmodeltest_SRCS})
+target_link_libraries(kdevplatform-projectmodeltest
     ${QT_QTTEST_LIBRARY}
     kdevplatforminterfaces
     kdevplatformproject
@@ -22,11 +19,11 @@ target_link_libraries(projectmodeltest
     kdevplatformtests
 )
 
-set( projectmodelperformancetest_SRCS
+set(projectmodelperformancetest_SRCS
     projectmodelperformancetest.cpp
 )
-add_executable(projectmodelperformancetest ${projectmodelperformancetest_SRCS})
-target_link_libraries(projectmodelperformancetest
+kde4_add_manual_test(kdevplatform-projectmodelperformancetest ${projectmodelperformancetest_SRCS})
+target_link_libraries(kdevplatform-projectmodelperformancetest
     ${QT_QTTEST_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     kdevplatforminterfaces

@@ -47,6 +47,6 @@ set(filedeletertest_SRCS
     ../core/filedeleter.cpp
 )
 
-kde4_add_unit_test(kget-filedeletertest ${filedeletertest_SRCS})
+kde4_add_test(kget-filedeletertest ${filedeletertest_SRCS})
 
 target_link_libraries(kget-filedeletertest ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})

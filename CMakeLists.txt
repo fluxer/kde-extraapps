@@ -61,6 +61,7 @@ macro_optional_add_subdirectory (skanlite)
 macro_optional_add_subdirectory (svgpart)
 macro_optional_add_subdirectory (thumbnailers)
 macro_optional_add_subdirectory (yakuake)
+# FIXME: half of the tests of kdevplatform are noop
 macro_optional_add_subdirectory (kdevplatform)
 # FIXME: bootstrap fails because of kdevplatform not being found
 # macro_optional_add_subdirectory (kdevelop)

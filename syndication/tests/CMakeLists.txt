@@ -10,27 +10,27 @@ include_directories(
 set(testlibsyndication_SRCS testlibsyndication.cpp )
 
 
-add_executable(testlibsyndication NOGUI TEST ${testlibsyndication_SRCS})
+kde4_add_manual_test(testlibsyndication ${testlibsyndication_SRCS})
 
-target_link_libraries(testlibsyndication  syndication ${KDE4_KDECORE_LIBS} )
+target_link_libraries(testlibsyndication syndication ${KDE4_KDECORE_LIBS} )
 
 ########### next target ###############
 
 set(testloader_SRCS testloader.cpp )
 
 
-add_executable(testloader TEST ${testloader_SRCS})
+kde4_add_manual_test(testloader ${testloader_SRCS})
 
-target_link_libraries(testloader  syndication ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} )
+target_link_libraries(testloader syndication ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} )
 
 ########### next target ###############
 
 set(testpersonimpl_SRCS testpersonimpl.cpp )
 
 
-kde4_add_unit_test(testpersonimpl TESTNAME libsyndication-testpersonimpl  ${testpersonimpl_SRCS})
+kde4_add_test(syndication-testpersonimpl  ${testpersonimpl_SRCS})
 
-target_link_libraries(testpersonimpl  syndication ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} )
+target_link_libraries(syndication-testpersonimpl syndication ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} )
 
 ########### next target ###############
 

@@ -1,4 +1,4 @@
 set(datacheckertest_SRCS datacheckertest.cpp)
 
-kde4_add_unit_test(datacheckertest TESTNAME datacheckertest ${datacheckertest_SRCS})
-target_link_libraries( datacheckertest ${QT_QTTEST_LIBRARY} testlib ktorrent)
+kde4_add_test(libktorrent-datacheckertest ${datacheckertest_SRCS})
+target_link_libraries(libktorrent-datacheckertest ${QT_QTTEST_LIBRARY} testlib ktorrent)

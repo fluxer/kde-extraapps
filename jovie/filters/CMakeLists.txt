@@ -10,7 +10,7 @@ add_subdirectory( talkerchooser )
 if(ENABLE_TESTING)
     set(testfilter_SRCS main.cpp )
 
-    add_executable(testfilter TEST ${testfilter_SRCS})
+    kde4_add_manual_test(testfilter ${testfilter_SRCS})
 
     target_link_libraries(testfilter  ${KDE4_KDEUI_LIBS} kttsd )
 endif()

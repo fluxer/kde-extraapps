@@ -1,7 +1,5 @@
 include_directories(..)
 
-set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
-
 set(interactiveDiffTest_SRCS
     interactivedifftest.cpp
     ../perforceparser.cpp
@@ -18,9 +16,9 @@ set(interactiveDiffTest_SRCS
     ../stringlistpair.cpp
 )
 
-kde4_add_unit_test(interactiveDiffTest ${interactiveDiffTest_SRCS})
-set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
-target_link_libraries(interactiveDiffTest
+kde4_add_test(kompare-interactiveDiffTest ${interactiveDiffTest_SRCS})
+set_target_properties(kompare-interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
+target_link_libraries(kompare-interactiveDiffTest
     ${QT_QTTEST_LIBRARY}
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KPARTS_LIBS}
@@ -32,9 +30,9 @@ set(levenshteinTest_SRCS
     ../stringlistpair.cpp
 )
 
-kde4_add_unit_test(levenshteintest ${levenshteinTest_SRCS})
-set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
-target_link_libraries(levenshteintest
+kde4_add_test(kompare-levenshteintest ${levenshteinTest_SRCS})
+set_target_properties(kompare-levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
+target_link_libraries(kompare-levenshteintest
     ${QT_QTTEST_LIBRARY}
     ${QT_QTCORE_LIBRARY}
 )
