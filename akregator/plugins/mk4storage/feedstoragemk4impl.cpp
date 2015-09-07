@@ -33,7 +33,8 @@
 #include <mk4.h>
 
 #include <qdom.h>
-#include <QFile>
+#include <qfile.h>
+#include <qstringlist.h>
 
 #include <kdebug.h>
 #include <kglobal.h>
