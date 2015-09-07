@@ -11,9 +11,6 @@ set( kcm_customdefinesandincludes_SRCS
         ../debugarea.cpp
         compilersmodel.cpp
         compilerswidget.cpp
-   )
-
-kde4_add_ui_files( kcm_customdefinesandincludes_SRCS
         batchedit.ui
         includeswidget.ui
         defineswidget.ui

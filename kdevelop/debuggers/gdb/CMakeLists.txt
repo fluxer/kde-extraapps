@@ -12,14 +12,12 @@ function(add_debuggable_executable target)
     set_target_properties(${target} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} ${_flags}")
 endfunction()
 
-if(NOT APPLE)
 macro_optional_find_package(KDE4Workspace)
 
 macro_log_feature( KDE4WORKSPACE_FOUND
 "KDE 4 Workspace" "KDE 4 Workspace libraries" "kdebase/workspace" FALSE
 "" "Required for building the process selection dialog for attaching GDB to a running process."
 )
-endif(NOT APPLE)
 
 if(KDE4WORKSPACE_FOUND)
     include_directories(
@@ -41,9 +39,7 @@ add_subdirectory(printers)
 
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9012 )
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 #add_subdirectory(tests)
 
@@ -81,6 +77,11 @@ set(kdevgdb_PART_SRCS
     registers/registercontroller_arm.cpp
     registers/modelsmanager.cpp
     registers/converters.cpp
+    debuggertracingdialog.ui
+    debuggerconfigwidget.ui
+    selectcore.ui
+    selectaddress.ui
+    registers/registersview.ui
 )
 
 if(KDE4WORKSPACE_FOUND)
@@ -90,15 +91,6 @@ if(KDE4WORKSPACE_FOUND)
     )
 endif(KDE4WORKSPACE_FOUND)
 
-set(kdevgdb_PART_UI
-    debuggertracingdialog.ui
-    debuggerconfigwidget.ui
-    selectcore.ui
-    selectaddress.ui
-    registers/registersview.ui
-)
-
-kde4_add_ui_files(kdevgdb_PART_SRCS ${kdevgdb_PART_UI})
 kde4_add_plugin(kdevgdb ${kdevgdb_PART_SRCS})
 target_link_libraries(kdevgdb ${KDEVPLATFORM_SUBLIME_LIBRARIES}
     ${KDEVPLATFORM_INTERFACES_LIBRARIES}
@@ -144,6 +136,9 @@ set(gdbtest_PART_SRCS
     registers/registercontroller_arm.cpp
     registers/modelsmanager.cpp
     registers/converters.cpp
+    debuggertracingdialog.ui
+    selectaddress.ui
+    registers/registersview.ui
 )
 
 if(KDE4WORKSPACE_FOUND)
@@ -153,12 +148,7 @@ if(KDE4WORKSPACE_FOUND)
     )
 endif(KDE4WORKSPACE_FOUND)
 
-kde4_add_ui_files(gdbtest_PART_SRCS
-    debuggertracingdialog.ui
-    selectaddress.ui
-    registers/registersview.ui
-)
-kde4_add_unit_test(gdbtest ${gdbtest_PART_SRCS})
+kde4_add_test(gdbtest ${gdbtest_PART_SRCS})
 target_link_libraries(gdbtest
     ${QT_QTTEST_LIBRARY}
     ${KDEVPLATFORM_SHELL_LIBRARIES}

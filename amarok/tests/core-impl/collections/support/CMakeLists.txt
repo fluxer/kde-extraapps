@@ -30,7 +30,7 @@ target_link_libraries(testmemoryquerymaker
     amaroklib
     ${KDE4_KDECORE_LIBS}
     ${QT_QTGUI_LIBRARY}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTTEST_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${GOOGLEMOCK_LIBRARIES})

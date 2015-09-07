@@ -26,7 +26,7 @@ macro(add_database_test test_target test_sources)
         amarokshared
         ${KDE4_KDECORE_LIBS}
         ${KDE4_KIO_LIBS}
-        ${KDE4_THREADWEAVER_LIBRARIES}
+        ${KDE4_THREADWEAVER_LIBS}
         ${KDE4_KDEUI_LIBS}
         ${QT_QTTEST_LIBRARY}
         ${QT_QTCORE_LIBRARY}

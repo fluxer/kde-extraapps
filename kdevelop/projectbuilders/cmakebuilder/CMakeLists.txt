@@ -32,16 +32,11 @@ configure_file(kdevcmakebuilder.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kdevcm
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakebuilder.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
 ########### next target ###############
 
-set( cmakebuilder_cfg_SRCS
+set(cmakebuilder_cfg_SRCS
     cmakebuilderpreferences.cpp
-)
-
-set( cmakebuilder_cfg_UI
     cmakebuildersettings.ui
 )
 
-
-kde4_add_ui_files( cmakebuilder_cfg_SRCS ${cmakebuilder_cfg_UI} )
 kde4_add_kcfg_files( cmakebuilder_cfg_SRCS cmakebuilderconfig.kcfgc )
 
 kde4_add_plugin( kcm_kdev_cmakebuilder ${cmakebuilder_cfg_SRCS} )

@@ -1,11 +1,13 @@
 add_subdirectory(kcm_widget)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 add_subdirectory(compilerprovider)
 
-set( kdevdefinesandincludesmanager_SRCS
-        definesandincludesmanager.cpp
-        debugarea.cpp
-    )
+set(kdevdefinesandincludesmanager_SRCS
+    definesandincludesmanager.cpp
+    debugarea.cpp
+)
 
 kde4_add_plugin( kdevdefinesandincludesmanager
         ${kdevdefinesandincludesmanager_SRCS})

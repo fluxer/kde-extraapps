@@ -20,6 +20,7 @@
 
 #include <KAction>
 #include <kfiledialog.h>
+#include <klocale.h>
 
 #include <QFileInfo>
 

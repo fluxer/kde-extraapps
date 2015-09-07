@@ -25,6 +25,7 @@
 #include <KDebug>
 #include <KLineEdit>
 #include <KAction>
+#include <KLocale>
 
 #include "ui_configwidget.h"
 #include <util/environmentgrouplist.h>

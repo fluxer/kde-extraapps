@@ -16,4 +16,4 @@ set( testplaylistobserver_SRCS
      ${AMAROK_SOURCE_TREE}/core/playlists/Playlist.cpp
      )
 kde4_add_unit_test( testplaylistobserver ${testplaylistobserver_SRCS} )
-target_link_libraries( testplaylistobserver ${KDE4_THREADWEAVER_LIBRARIES} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTCORE_LIBRARY} amarokcore amaroklib )
+target_link_libraries( testplaylistobserver ${KDE4_THREADWEAVER_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTCORE_LIBRARY} amarokcore amaroklib )

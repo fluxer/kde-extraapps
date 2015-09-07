@@ -1,8 +1,6 @@
 project(makebuilder)
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9037 )
 
-
-
 ########### next target ###############
 
 set(kdevmakebuilder_LIB_SRCS
@@ -26,14 +24,9 @@ install(TARGETS kdevmakebuilder DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 set( makebuilder_cfg_SRCS
     makebuilderpreferences.cpp
-)
-
-set( makebuilder_cfg_UI
     makeconfig.ui
 )
 
-
-kde4_add_ui_files( makebuilder_cfg_SRCS ${makebuilder_cfg_UI} )
 kde4_add_kcfg_files( makebuilder_cfg_SRCS makebuilderconfig.kcfgc )
 kde4_add_plugin( kcm_kdev_makebuilder ${makebuilder_cfg_SRCS} )
 target_link_libraries( kcm_kdev_makebuilder ${KDE4_KIO_LIBS} ${KDEVPLATFORM_INTERFACES_LIBRARIES} ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_UTIL_LIBRARIES} )

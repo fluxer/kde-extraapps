@@ -26,6 +26,7 @@
 #include <kpluginfactory.h>
 #include <KDebug>
 #include <KAboutData>
+#include <KUrl>
 #include <interfaces/icore.h>
 
 using namespace KDevelop;

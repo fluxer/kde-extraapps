@@ -23,6 +23,7 @@
 #include <KDebug>
 #include <KProcess>
 #include <KMessageBox>
+#include <KLocale>
 #include <KStandardDirs>
 #include "ui_cmakebuilddirchooser.h"
 

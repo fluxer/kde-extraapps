@@ -8,7 +8,7 @@ set( testimporterscommon_LIBS
     amarokcore
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTSQL_LIBRARY}
     ${QT_QTTEST_LIBRARY}
     ${GOOGLEMOCK_LIBRARIES}

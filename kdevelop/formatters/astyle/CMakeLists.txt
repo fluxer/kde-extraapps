@@ -9,13 +9,9 @@ set(kdevastyle_PART_SRCS
     lib/ASEnhancer.cpp
     lib/ASFormatter.cpp
     lib/ASResource.cpp
-)
-
-set(astyle_preferences_UI
     astyle_preferences.ui
 )
 
-kde4_add_ui_files(kdevastyle_PART_SRCS ${astyle_preferences_UI} )
 kde4_add_plugin(kdevastyle ${kdevastyle_PART_SRCS})
 target_link_libraries(kdevastyle
     ${KDE4_KDECORE_LIBS}
@@ -32,4 +28,6 @@ install(TARGETS kdevastyle DESTINATION ${PLUGIN_INSTALL_DIR} )
 configure_file(kdevastyle.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kdevastyle.desktop)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdevastyle.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()

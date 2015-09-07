@@ -27,6 +27,6 @@ target_link_libraries( testproxylogger
     ${KDE4_KDECORE_LIBS}
     ${QT_QTTEST_LIBRARY}
     ${QT_QTCORE_LIBRARY}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${GOOGLEMOCK_LIBRARIES}
     ${CMAKE_DL_LIBS})

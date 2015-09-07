@@ -28,4 +28,6 @@ if(BUILD_kdev_msvcdefinehelper)
                                          LIBRARY DESTINATION lib)
 endif(BUILD_kdev_msvcdefinehelper)
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()

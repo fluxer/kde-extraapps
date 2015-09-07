@@ -27,6 +27,7 @@
 #include <kpluginloader.h>
 #include <KUrl>
 #include <KMessageBox>
+#include <KLocale>
 #include <kio/netaccess.h>
 #include <kio/deletejob.h>
 #include <KDebug>

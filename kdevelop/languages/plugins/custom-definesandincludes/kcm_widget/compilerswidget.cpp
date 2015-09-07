@@ -24,6 +24,7 @@
 #include "compilerswidget.h"
 
 #include <KAction>
+#include <KLocale>
 #include <QMenu>
 #include <QSignalMapper>
 

@@ -1,5 +1,9 @@
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9045 )
-add_subdirectory(tests)
+
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
+
 set(kdevqthelp_SRCS
     qthelpplugin.cpp
     qthelpproviderabstract.cpp
@@ -24,9 +28,6 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdevqthelp.desktop DESTINATION ${SERVI
 set(kdevqthelp_config_SRCS
     qthelpconfig.cpp
     qthelp_config_shared.cpp
-)
-
-kde4_add_ui_files(kdevqthelp_config_SRCS
     qthelpconfig.ui
     qthelpconfigeditdialog.ui
 )

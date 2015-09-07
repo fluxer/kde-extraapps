@@ -1,13 +1,15 @@
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 set(kdevkdeprovider_PART_SRCS kdeprojectsmodel.cpp
     kdeproviderwidget.cpp
     kdeproviderplugin.cpp
     kdeprojectsmodel.cpp
     kdeprojectsreader.cpp
+    kdeconfig.ui
 )
 kde4_add_kcfg_files(kdevkdeprovider_PART_SRCS kdeconfig.kcfgc)
-kde4_add_ui_files(kdevkdeprovider_PART_SRCS kdeconfig.ui)
 
 kde4_add_plugin(kdevkdeprovider ${kdevkdeprovider_PART_SRCS})
 target_link_libraries(kdevkdeprovider ${KDE4_KDEUI_LIBS} ${KDEVPLATFORM_INTERFACES_LIBRARIES} ${KDEVPLATFORM_VCS_LIBRARIES})

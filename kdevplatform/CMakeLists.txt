@@ -15,9 +15,6 @@ set(KDEVPLATFORM_LIB_SOVERSION 8)
 cmake_minimum_required(VERSION 2.8.9)
 project(KDevPlatform)
 
-# FIXME: tests are broken
-set(ENABLE_TESTING OFF)
-
 set(CMAKE_MODULE_PATH ${KDevPlatform_SOURCE_DIR}/cmake/modules)
 
 set(KDE_MIN_VERSION "4.7.0")

@@ -4,7 +4,9 @@ remove_definitions( -DKDE_DEFAULT_DEBUG_AREA=9007 )
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9040 )
 
 add_subdirectory(rpp)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 #add_subdirectory(headergen)
 
 ########### next target ###############

@@ -10,7 +10,10 @@ add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9007 )
 
 add_subdirectory(parser)
 add_subdirectory(cppduchain)
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
+
 ########### next target ###############
 
 set(kdevcpplanguagesupport_PART_SRCS
@@ -40,14 +43,10 @@ set(kdevcpplanguagesupport_PART_SRCS
     codegen/customincludepaths.cpp
     codegen/cppclasshelper.cpp
 #     codegen/makeimplementationprivate.cpp
-)
 
-set(kdevcpplanguagesupport_LIB_UI
-    codegen/ui/custom_include_paths.ui
-#     codegen/ui/privateimplementation.ui
+    codegen/custom_include_paths.ui
+#     codegen/privateimplementation.ui
 )
-
-kde4_add_ui_files(kdevcpplanguagesupport_PART_SRCS ${kdevcpplanguagesupport_LIB_UI})
 
 option(BUILD_kdev_includepathresolver "Build the includepath resolver debugging tool" OFF)
 if(BUILD_kdev_includepathresolver)
@@ -73,7 +72,7 @@ target_link_libraries(kdevcpplanguagesupport
     ${KDEVPLATFORM_LANGUAGE_LIBRARIES}
     ${KDEVPLATFORM_PROJECT_LIBRARIES}
     ${KDEVPLATFORM_UTIL_LIBRARIES}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KTEXTEDITOR_LIBS}
 )

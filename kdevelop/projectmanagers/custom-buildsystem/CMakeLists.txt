@@ -7,7 +7,9 @@ include_directories( ${KDE4_INCLUDES} ${KDEVPLATFORM_INCLUDE_DIR})
 add_definitions( ${QT_DEFINITIONS} ${KDE4_DEFINITIONS} )
 
 ## Unittests
-add_subdirectory( tests )
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 ## KDevelop Plugin
 set( custom_SRCS custombuildsystemplugin.cpp custombuildjob.cpp )
@@ -25,11 +27,9 @@ set( custom_kcm_SRCS
         custombuildsystemconfigwidget.cpp
         kcm_custombuildsystem.cpp
         debugarea.cpp
-   )
-kde4_add_ui_files( custom_kcm_SRCS
-                        configwidget.ui
-                        custombuildsystemconfigwidget.ui
-                 )
+        configwidget.ui
+        custombuildsystemconfigwidget.ui
+)
 kde4_add_kcfg_files( custom_kcm_SRCS kcfg_custombuildsystemconfig.kcfgc )
 kde4_add_plugin( kcm_kdevcustombuildsystem ${custom_kcm_SRCS} )
 target_link_libraries( kcm_kdevcustombuildsystem ${KDE4_KIO_LIBS} ${KDEVPLATFORM_INTERFACES_LIBRARIES} ${KDEVPLATFORM_LANGUAGE_LIBRARIES} ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_UTIL_LIBRARIES} )

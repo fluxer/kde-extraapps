@@ -30,7 +30,7 @@ target_link_libraries(testmasterslavesynchronizationjob
                         ${KDE4_KIO_LIBS}
                         ${KDE4_SOLID_LIBRARY}
                         ${QT_QTGUI_LIBRARY}
-                        ${KDE4_THREADWEAVER_LIBRARIES}
+                        ${KDE4_THREADWEAVER_LIBS}
                         ${QT_QTTEST_LIBRARY}
                         ${QT_QTCORE_LIBRARY}
                         ${GOOGLEMOCK_LIBRARIES})
@@ -56,7 +56,7 @@ target_link_libraries(testunionjob
                         ${KDE4_KDEUI_LIBS}
                         ${KDE4_SOLID_LIBRARY}
                         ${QT_QTGUI_LIBRARY}
-                        ${KDE4_THREADWEAVER_LIBRARIES}
+                        ${KDE4_THREADWEAVER_LIBS}
                         ${QT_QTTEST_LIBRARY}
                         ${QT_QTCORE_LIBRARY}
                         ${GOOGLEMOCK_LIBRARIES})
@@ -82,7 +82,7 @@ target_link_libraries(testonewaysynchronizationjob
                         ${KDE4_KDEUI_LIBS}
                         ${KDE4_SOLID_LIBRARY}
                         ${QT_QTGUI_LIBRARY}
-                        ${KDE4_THREADWEAVER_LIBRARIES}
+                        ${KDE4_THREADWEAVER_LIBS}
                         ${QT_QTTEST_LIBRARY}
                         ${QT_QTCORE_LIBRARY}
                         ${GOOGLEMOCK_LIBRARIES})

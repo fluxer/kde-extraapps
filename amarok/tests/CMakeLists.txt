@@ -78,7 +78,7 @@ target_link_libraries(testdebug ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} amarok
 
 set( testenginecontroller_SRCS TestEngineController.cpp )
 kde4_add_unit_test( testenginecontroller ${testenginecontroller_SRCS} )
-target_link_libraries( testenginecontroller ${KDE4_THREADWEAVER_LIBRARIES} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} amaroklib amarokcore )
+target_link_libraries( testenginecontroller ${KDE4_THREADWEAVER_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} amaroklib amarokcore )
 
 #------------------------ Test Expression -----------------------------
 

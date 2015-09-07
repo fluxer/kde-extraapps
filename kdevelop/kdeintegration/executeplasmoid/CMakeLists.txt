@@ -11,17 +11,13 @@ include_directories(
 
 ########### next target ###############
 
-set(kdevexecuteplasmoid_PART_UIS
-    plasmoidexecutionconfig.ui
-)
-
 set(kdevexecuteplasmoid_PART_SRCS
     executeplasmoidplugin.cpp
     plasmoidexecutionconfig.cpp
     plasmoidexecutionjob.cpp
+    plasmoidexecutionconfig.ui
 )
 
-kde4_add_ui_files( kdevexecuteplasmoid_PART_SRCS ${kdevexecuteplasmoid_PART_UIS} )
 kde4_add_plugin(kdevexecuteplasmoid ${kdevexecuteplasmoid_PART_SRCS}  )
 target_link_libraries(kdevexecuteplasmoid 
     ${KDE4_KDEUI_LIBS}

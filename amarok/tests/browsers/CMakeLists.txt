@@ -26,7 +26,7 @@ target_link_libraries(testsinglecollectiontreeitemmodel
                         ${KDE4_KDECORE_LIBS}
                         ${KDE4_KDEUI_LIBS}
                         ${QT_QTGUI_LIBRARY}
-                        ${KDE4_THREADWEAVER_LIBRARIES}
+                        ${KDE4_THREADWEAVER_LIBS}
                         ${QT_QTTEST_LIBRARY}
                         ${QT_QTCORE_LIBRARY}
                         ${GOOGLEMOCK_LIBRARIES})

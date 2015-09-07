@@ -19,6 +19,7 @@
 #include "defineswidget.h"
 
 #include <KAction>
+#include <KLocale>
 
 #include "ui_defineswidget.h"
 #include "definesmodel.h"

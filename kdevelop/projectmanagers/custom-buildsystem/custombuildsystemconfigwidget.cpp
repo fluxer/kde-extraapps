@@ -17,10 +17,10 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>. *
  ************************************************************************/
 
-#include "custombuildsystemconfigwidget.h"
-
 #include <KConfig>
+#include <KConfigGroup>
 
+#include "custombuildsystemconfigwidget.h"
 #include "ui_custombuildsystemconfigwidget.h"
 #include "configconstants.h"
 

@@ -4,7 +4,9 @@
 remove_definitions( -DKDE_DEFAULT_DEBUG_AREA=9007 )
 add_definitions( -DKDE_DEFAULT_DEBUG_AREA=9041 )
 
-add_subdirectory(tests)
+if(ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()
 
 include_directories(
     ${cpp_SOURCE_DIR}

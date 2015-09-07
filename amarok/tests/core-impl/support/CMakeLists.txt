@@ -8,5 +8,5 @@ target_link_libraries( testtrackloader
     ${KDE4_KDECORE_LIBS}
     ${QT_QTTEST_LIBRARY}
     ${QT_QTCORE_LIBRARY}
-    ${KDE4_THREADWEAVER_LIBRARIES}
+    ${KDE4_THREADWEAVER_LIBS}
 )

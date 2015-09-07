@@ -37,7 +37,27 @@ if("${_isSystemLibDir}" STREQUAL "-1")
 endif("${_isSystemLibDir}" STREQUAL "-1")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-find_package(KDevPlatform REQUIRED)
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(kdevplatform REQUIRED)
+else()
+    set(KDEVPLATFORM_INCLUDE_DIR
+        ${CMAKE_SOURCE_DIR}/kdevplatform
+        ${CMAKE_SOURCE_DIR}/kdevplatform/plugins
+        ${CMAKE_BINARY_DIR}/kdevplatform
+    )
+    set(KDEVPLATFORM_INTERFACES_LIBRARIES kdevplatforminterfaces)
+    set(KDEVPLATFORM_SHELL_LIBRARIES kdevplatformshell)
+    set(KDEVPLATFORM_UTIL_LIBRARIES kdevplatformutil)
+    set(KDEVPLATFORM_LANGUAGE_LIBRARIES kdevplatformlanguage)
+    set(KDEVPLATFORM_DOCUMENTATION_LIBRARIES kdevplatformdocumentation)
+    set(KDEVPLATFORM_DEBUGGER_LIBRARIES kdevplatformdebugger)
+    set(KDEVPLATFORM_TESTS_LIBRARIES kdevplatformtests)
+    set(KDEVPLATFORM_JSONTESTS_LIBRARIES kdevplatformjsontests)
+    set(KDEVPLATFORM_PROJECT_LIBRARIES kdevplatformproject)
+    set(KDEVPLATFORM_VCS_LIBRARIES kdevplatformvcs)
+    set(KDEVPLATFORM_OUTPUTVIEW_LIBRARIES kdevplatformoutputview)
+    set(KDEVPLATFORM_SUBLIME_LIBRARIES sublime)
+endif()
 
 include_directories(${KDEVPLATFORM_INCLUDE_DIR})
 

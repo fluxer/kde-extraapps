@@ -23,6 +23,7 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <kicon.h>
+#include <kconfiggroup.h>
 #include <interfaces/ilaunchconfiguration.h>
 #include <interfaces/icore.h>
 #include <interfaces/iprojectcontroller.h>
