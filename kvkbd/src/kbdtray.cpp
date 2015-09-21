@@ -24,11 +24,8 @@
 #include <KToggleAction>
 #include <KToggleAction>
 #include <KLocalizedString>
-#include <KIcon>
 #include <KIconLoader>
-#include <KCmdLineArgs>
 #include <KHelpMenu>
-#include <KMenu>
 #include <KFontDialog>
 #include <KUniqueApplication>
 
@@ -49,9 +46,6 @@ KbdTray::~KbdTray()
 {
 
 }
-
-
-
 
 QMenu* KbdTray::getContextMenu()
 {

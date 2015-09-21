@@ -34,38 +34,34 @@ static const char version[] = "0.7.2";
 
 void findLoginWindow()
 {
-	unsigned int numkids, i, scrn;
-	Window r, p;
-	Window *kids=0;
-	//XWindowAttributes attr;
-	Window root;
-	Display *dipsy=0;
-	char *win_name=0;
+    unsigned int numkids, i, scrn;
+    Window r, p;
+    Window *kids=0;
+    //XWindowAttributes attr;
+    Window root;
+    Display *dipsy=0;
+    char *win_name=0;
 
-	dipsy = XOpenDisplay(0);
-	if (!dipsy)return;
+    dipsy = XOpenDisplay(0);
+    if (!dipsy) return;
 
-	scrn = DefaultScreen(dipsy);
-	root = RootWindow(dipsy, scrn);
-	
-	XQueryTree(dipsy, root, &r, &p, &kids, &numkids);
-		
+    scrn = DefaultScreen(dipsy);
+    root = RootWindow(dipsy, scrn);
 
-	for (i = 0; i < numkids;  ++i)
-	{
-			XFetchName(dipsy, kids[i], &win_name);
-			QString c(win_name);
-			
-			if (c=="kvkbd.login")
- 			{
- 				long wid = kids[i];
-				XDestroyWindow(dipsy,wid);
-				XFlush(dipsy);
-				i=numkids;
- 			}
-			XFree(win_name);
-	} 
-	XCloseDisplay(dipsy);
+    XQueryTree(dipsy, root, &r, &p, &kids, &numkids);
+
+    for (i = 0; i < numkids;  ++i) {
+        XFetchName(dipsy, kids[i], &win_name);
+        QString c(win_name);
+        if (c=="kvkbd.login") {
+            long wid = kids[i];
+            XDestroyWindow(dipsy,wid);
+            XFlush(dipsy);
+            i=numkids;
+        }
+        XFree(win_name);
+    }
+    XCloseDisplay(dipsy);
 }
 
 int main(int argc, char **argv)

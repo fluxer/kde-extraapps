@@ -72,8 +72,6 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
 
     KConfigGroup cfg = KGlobal::config()->group("");
 
-    
-    
     if (!is_login) {
       widget->setAttribute(Qt::WA_ShowWithoutActivating);
       widget->setAttribute(Qt::WA_DeleteOnClose, false);
@@ -149,8 +147,7 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     cmenu->addAction(stickyModKeysAction);
     connect(stickyModKeysAction,SIGNAL(triggered(bool)), this, SLOT(setStickyModKeys(bool)));
     widget->setProperty("stickyModKeys", stickyModKeys);
-    
-    
+
     QFont font = cfg.readEntry("font", widget->font());
     widget->setFont(font);
 
@@ -190,50 +187,44 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     pos.setY(pos.y()-dock->height());
 
     QRect dockGeometry(pos, dock->size());
-    
+
     QRect c_dock_geometry = cfg.readEntry("dockGeometry", dockGeometry);
     if (!screenGeometry.contains(c_dock_geometry, true)) {
-	c_dock_geometry = dockGeometry;
+        c_dock_geometry = dockGeometry;
     }
     dock->setGeometry(c_dock_geometry);
-    
+
     widget->show();
 
-    
     bool extensionVisible = cfg.readEntry("extentVisible", QVariant(true)).toBool();
     if (!extensionVisible) {
         toggleExtension();
     }
 
-    
-    
     setQuitOnLastWindowClosed (is_login);
-    
+
     connect(this, SIGNAL(aboutToQuit()), this, SLOT(storeConfig()));
     emit fontUpdated(widget->font());
 
     if (dockVisible && !is_login) {
-      dock->show();
+        dock->show();
     }
-    
+
     xkbd->start();
 
     if (!is_login) {
-      bool vis = cfg.readEntry("visible", QVariant(true)).toBool();
-      if (!vis ) {
-	
-	widget->showMinimized();
-	
-      }
-      widget->setWindowTitle("kvkbd");
-      tray->show();
-    }
-    else {
-	QTimer *timer = new QTimer(this);
-	timer->setInterval(1000);
-	connect(timer, SIGNAL(timeout()), widget, SLOT(raise()));
-	timer->start();
-	widget->setWindowTitle("kvkbd.login");
+        bool vis = cfg.readEntry("visible", QVariant(true)).toBool();
+        if (!vis ) {
+            widget->showMinimized();
+        }
+        widget->setWindowTitle("kvkbd");
+        tray->show();
+    } else {
+        QTimer *timer = new QTimer(this);
+        timer->setInterval(1000);
+        connect(timer, SIGNAL(timeout()), widget, SLOT(raise()));
+        timer->start();
+        widget->setWindowTitle("kvkbd.login");
     }
 
 }
@@ -246,15 +237,15 @@ KvkbdApp::~KvkbdApp()
 void KvkbdApp::storeConfig()
 {
     KConfigGroup cfg = KGlobal::config()->group("");
-    
+
     cfg.writeEntry("visible", widget->isVisible());
     cfg.writeEntry("geometry", widget->geometry());
     cfg.writeEntry("locked", widget->isLocked());
     cfg.writeEntry("stickyModKeys", widget->property("stickyModKeys"));
-    
+
     cfg.writeEntry("showdock", dock->isVisible());
     cfg.writeEntry("dockGeometry", dock->geometry());
-    
+
     cfg.writeEntry("layout", widget->property("layout"));
     cfg.writeEntry("colors", widget->property("colors"));
     cfg.writeEntry("font", widget->font());
@@ -293,8 +284,8 @@ void KvkbdApp::chooseFont()
 
     QFont widgetFont = widget->font();
 
-    int result = KFontDialog::getFont( widgetFont, KFontChooser::NoDisplayFlags, widget );
-    if ( result == KFontDialog::Accepted ) {
+    int result = KFontDialog::getFont(widgetFont, KFontChooser::NoDisplayFlags, widget);
+    if (result == KFontDialog::Accepted) {
 
         widget->setFont(widgetFont);
         emit fontUpdated(widgetFont);
@@ -358,7 +349,7 @@ void KvkbdApp::partLoaded(MainWidget *vPart, int total_rows, int total_cols)
     QObject::connect(xkbd, SIGNAL(layoutUpdated(int,QString)), vPart, SLOT(updateLayout(int,QString)));
     QObject::connect(xkbd, SIGNAL(groupStateChanged(const ModifierGroupStateMap&)), vPart, SLOT(updateGroupState(const ModifierGroupStateMap&)));
     QObject::connect(xkbd, SIGNAL(keyProcessComplete(unsigned int)), this, SLOT(keyProcessComplete(unsigned int)));
-    
+
     QObject::connect(this, SIGNAL(textSwitch(bool)), vPart, SLOT(textSwitch(bool)));
     QObject::connect(this, SIGNAL(fontUpdated(const QFont&)), vPart, SLOT(updateFont(const QFont&)));
 
@@ -368,7 +359,7 @@ void KvkbdApp::partLoaded(MainWidget *vPart, int total_rows, int total_cols)
 void KvkbdApp::keyProcessComplete(unsigned int)
 {
     if (widget->property("stickyModKeys").toBool()) return;
-    
+
     QListIterator<VButton *> itr(modKeys);
     while (itr.hasNext()) {
         VButton *mod = itr.next();
@@ -383,8 +374,8 @@ void KvkbdApp::buttonAction(const QString &action)
 
     if (QString::compare(action , "toggleVisibility")==0) {
         if (!is_login) {
-	  widget->toggleVisibility();
-	}
+            widget->toggleVisibility();
+        }
     }
     else if (QString::compare(action , "toggleExtension")==0) {
 
