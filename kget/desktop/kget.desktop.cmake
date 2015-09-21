@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=kget -caption %c %i %U
+Exec=kget --icon '%i' --caption '%c' %U
 Icon=kget
 Terminal=false
 MimeType=@SUPPORTED_KGET_MIMETYPES@
