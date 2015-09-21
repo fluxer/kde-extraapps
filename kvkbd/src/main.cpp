@@ -83,16 +83,16 @@ int main(int argc, char **argv)
     options.add("loginhelper", ki18n("Stand alone version for use with KDM or XDM.\n"
                                      "See Kvkbd Handbook for information on how to use this option."));
     KCmdLineArgs::addCmdLineOptions(options);
+    KUniqueApplication::addCmdLineOptions();
 
-    bool is_login = KCmdLineArgs::parsedArgs()->isSet("loginhelper");
+    const bool is_login = KCmdLineArgs::parsedArgs()->isSet("loginhelper");
     if (!is_login) {
       findLoginWindow();
     }
-	
+
     KvkbdApp app(is_login);
 
     return app.exec();
-    
 }
 
 
