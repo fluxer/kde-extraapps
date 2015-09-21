@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=kcolorchooser
+Exec=kcolorchooser --icon '%i' --caption '%c'
 Icon=kcolorchooser
 Terminal=false
 X-DocPath=fundamentals/index.html#colors

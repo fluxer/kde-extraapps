@@ -149,7 +149,7 @@ Comment[uk]=Керуйте дисками, розділами та файлов�
 Comment[x-test]=xxManage disks, partitions and file systemsxx
 Comment[zh_CN]=管理磁盘、分区和文件系统
 Comment[zh_TW]=管理磁碟、分割區與檔案系統
-Exec=partitionmanager
+Exec=partitionmanager --icon '%i' --caption '%c'
 Icon=partitionmanager
 Categories=System;Filesystem;KDE;Qt;
 

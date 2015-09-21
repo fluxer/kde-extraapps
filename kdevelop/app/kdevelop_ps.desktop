@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=kdevelop --ps
+Exec=kdevelop --icon '%i' --caption '%c' --ps
 MimeType=application/x-kdevelop;
 Icon=kdevelop
 Terminal=false

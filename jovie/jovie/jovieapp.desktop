@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=jovie
+Exec=jovie --icon '%i' --caption '%c'
 Icon=preferences-desktop-text-to-speech
 ServiceTypes=DBUS/Text-to-Speech
 X-DBUS-StartupType=Unique
