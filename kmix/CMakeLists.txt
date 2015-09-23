@@ -26,10 +26,7 @@ alsa_configure_file(${CMAKE_BINARY_DIR}/config-alsa.h)
 add_definitions (${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS} )
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=67100)
 
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
-if(MSVC)
-    include_directories( ${TAGLIB_INCLUDES} )
-endif(MSVC)
+include_directories(${KDE4_INCLUDES} ${GLIB2_INCLUDE_DIR} /usr/lib/oss/include)
 
 
 include(CheckCXXSourceCompiles)
@@ -43,10 +40,7 @@ check_cxx_source_compiles("
 " HAVE_STD_TR1_SHARED_PTR)
 
 
-configure_file (config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
-
-
-include_directories( ${GLIB2_INCLUDE_DIR} /usr/lib/oss/include)
+configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 
 add_subdirectory( pics ) 
 add_subdirectory( profiles ) 
@@ -54,13 +48,11 @@ add_subdirectory( profiles )
 
 if (PULSEAUDIO_FOUND)
   add_definitions(-DHAVE_PULSE)
-
   include_directories(${PULSEAUDIO_INCLUDE_DIR})
 endif (PULSEAUDIO_FOUND)
 
 if (CANBERRA_FOUND)
   add_definitions(-DHAVE_CANBERRA)
-
   include_directories(${CANBERRA_INCLUDE_DIRS})
 endif (CANBERRA_FOUND)
 
@@ -129,7 +121,7 @@ set(kmix_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
    core/volume.cpp
    )
 
-add_executable( kmix ${kmix_SRCS})
+add_executable(kmix ${kmix_SRCS})
 
 target_link_libraries(kmix ${KDE4_SOLID_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
@@ -212,7 +204,7 @@ set(kmixctrl_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
 # gui/guiprofile.cpp
 
 
-add_executable( kmixctrl ${kmixctrl_SRCS})
+add_executable(kmixctrl ${kmixctrl_SRCS})
 
 target_link_libraries(kmixctrl ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
