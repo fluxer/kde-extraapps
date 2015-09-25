@@ -31,7 +31,6 @@
 
 #include <KDebug>
 
-
 #include <kde_file.h>
 
 const int SPEEDTIMER = 1000;//1 second...

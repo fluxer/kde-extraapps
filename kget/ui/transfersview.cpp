@@ -117,6 +117,14 @@ void TransfersView::rowsInserted(const QModelIndex & parent, int start, int end)
 
     QTreeView::rowsInserted(parent, start, end);
 
+    // sadly it has to be done again, copy from setModel() above
+    QByteArray loadedState = QByteArray::fromBase64(Settings::headerState().toAscii());
+    if (loadedState.isEmpty()) {
+        setColumnWidth(0 , 230);
+    } else {
+        header()->restoreState(loadedState);
+    }
+
     setExpanded(parent, true);
     toggleMainGroup();
 }
@@ -234,7 +242,7 @@ void TransfersView::slotItemCollapsed(const QModelIndex & index)
 
     if(!item)
         return;
-    
+
     if(item->isGroup()) {
         TransferGroupHandler * groupHandler = item->asGroup()->groupHandler();
         QList<TransferHandler *> transfers = groupHandler->transfers();
