@@ -17,6 +17,10 @@
 #define DEBUG_PREFIX "UpnpCollectionFactory"
 #include "UpnpCollectionFactory.h"
 
+#include <QtDBus/qdbusmetatype.h>
+#include <QtDBus/qdbusinterface.h>
+#include <QtDBus/qdbusreply.h>
+
 #include <kio/jobclasses.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>

@@ -30,6 +30,8 @@
 
 #include <QStringList>
 #include <QTimer>
+#include <QFileInfo>
+#include <QDir>
 
 #include <KLocale>
 #include <kdatetime.h>
