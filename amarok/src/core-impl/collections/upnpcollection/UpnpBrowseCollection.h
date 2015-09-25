@@ -21,6 +21,7 @@
 #include "MemoryCollection.h"
 #include "core/capabilities/CollectionScanCapability.h"
 
+#include <QQueue>
 #include <QMap>
 #include <QHash>
 #include <QHostInfo>
