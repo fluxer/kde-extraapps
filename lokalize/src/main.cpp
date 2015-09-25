@@ -44,12 +44,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-
 #include <threadweaver/ThreadWeaver.h>
-
-
-
-
 
 static const char version[] = LOKALIZE_VERSION;
 static const char description[] =
@@ -91,8 +86,9 @@ int main(int argc, char **argv)
     qAddPostRoutine(&cleanupSpellers);
 
     // see if we are starting with session management
-    if (app.isSessionRestored())
+    if (app.isSessionRestored()) {
         kRestoreMainWindows<LokalizeMainWindow>();
+    }
     else
     {
         // no session.. just start up normally
