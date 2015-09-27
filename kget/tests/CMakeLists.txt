@@ -12,9 +12,9 @@ qt4_add_dbus_interface(kget_test_transfers_SRCS ../dbus/org.kde.kget.main.xml kg
 qt4_add_dbus_interface(kget_test_transfers_SRCS ../dbus/org.kde.kget.transfer.xml transfer_interface)
 qt4_add_dbus_interface(kget_test_transfers_SRCS ../dbus/org.kde.kget.verifier.xml verifier_interface)
 
-kde4_add_test(kget_test_transfers ${kget_test_transfers_SRCS})
+kde4_add_test(kget-test_transfers ${kget_test_transfers_SRCS})
 
-target_link_libraries(kget_test_transfers ${QT_QTTEST_LIBRARY} ${KDE4_KIO_LIBS} kgetcore)
+target_link_libraries(kget-test_transfers ${QT_QTTEST_LIBRARY} ${KDE4_KIO_LIBS} kgetcore)
 
 
 #===========Verifier===========
