@@ -124,6 +124,7 @@ void TransfersView::rowsInserted(const QModelIndex & parent, int start, int end)
     } else {
         header()->restoreState(loadedState);
     }
+    populateHeaderActions();
 
     setExpanded(parent, true);
     toggleMainGroup();
