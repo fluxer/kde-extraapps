@@ -1,7 +1,6 @@
 [Desktop Entry]
 Exec=kmix --icon '%i' --caption '%c'
 X-DocPath=kmix/index.html
-OnlyShowIn=KDE;
 Type=Application
 Terminal=false
 Icon=kmix
