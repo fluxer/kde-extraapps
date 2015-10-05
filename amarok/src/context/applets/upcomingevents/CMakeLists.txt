@@ -6,26 +6,21 @@ include_directories(
     ${Amarok_SOURCE_DIR}/src
     )
 
-set( upcomingEvents_SRCS
-     LastFmEvent.cpp
-     LastFmEventXmlParser.cpp
-     UpcomingEventsApplet.cpp
-     UpcomingEventsWidget.cpp
-     UpcomingEventsStack.cpp
-     UpcomingEventsStackItem.cpp
-     UpcomingEventsMapWidget.cpp
-     UpcomingEventsCalendarWidget.cpp
-     )
+set(upcomingEvents_SRCS
+    LastFmEvent.cpp
+    LastFmEventXmlParser.cpp
+    UpcomingEventsApplet.cpp
+    UpcomingEventsWidget.cpp
+    UpcomingEventsStack.cpp
+    UpcomingEventsStackItem.cpp
+    UpcomingEventsMapWidget.cpp
+    UpcomingEventsCalendarWidget.cpp
+    upcomingEventsGeneralSettings.ui
+    upcomingEventsVenueSettings.ui
+)
 
-kde4_add_ui_files( upcomingEvents_SRCS
-                   upcomingEventsGeneralSettings.ui
-                   upcomingEventsVenueSettings.ui
-                   )
 kde4_add_plugin(amarok_context_applet_upcomingEvents ${upcomingEvents_SRCS})
 
-if(APPLE)
-   SET_TARGET_PROPERTIES(amarok_context_applet_upcomingEvents PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-endif(APPLE)
 target_link_libraries(amarok_context_applet_upcomingEvents
     amarokcore
     amaroklib

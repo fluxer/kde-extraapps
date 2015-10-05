@@ -6,13 +6,14 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/src
     )
 
-set( similarArtists_SRCS SimilarArtist.cpp ArtistWidget.cpp SimilarArtistsApplet.cpp)
-kde4_add_ui_files( similarArtists_SRCS similarArtistsSettings.ui)
+set(similarArtists_SRCS
+    SimilarArtist.cpp
+    ArtistWidget.cpp
+    SimilarArtistsApplet.cpp
+    similarArtistsSettings.ui
+)
 
 kde4_add_plugin(amarok_context_applet_similarArtists ${similarArtists_SRCS})
-if(APPLE)
-   SET_TARGET_PROPERTIES(amarok_context_applet_similarArtists PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-endif(APPLE)
 target_link_libraries(amarok_context_applet_similarArtists
     amarokcore
     amaroklib

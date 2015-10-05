@@ -59,8 +59,8 @@ install( TARGETS amarok_service_lastfm DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 set(kcm_amarok_service_lastfm_PART_SRCS
     LastFmServiceSettings.cpp
+    LastFmConfigWidget.ui
 )
-kde4_add_ui_files( kcm_amarok_service_lastfm_PART_SRCS LastFmConfigWidget.ui )
 kde4_add_plugin( kcm_amarok_service_lastfm ${kcm_amarok_service_lastfm_PART_SRCS} )
 target_link_libraries( kcm_amarok_service_lastfm
     amarok_service_lastfm_shared

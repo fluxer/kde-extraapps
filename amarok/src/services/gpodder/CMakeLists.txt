@@ -51,9 +51,8 @@ include_directories(
          set(kcm_amarok_service_gpodder_PART_SRCS
             GpodderServiceSettings.cpp
             GpodderServiceConfig.cpp
+            GpodderConfigWidget.ui
          )
-
-         kde4_add_ui_files( kcm_amarok_service_gpodder_PART_SRCS GpodderConfigWidget.ui )
 
          kde4_add_plugin( kcm_amarok_service_gpodder ${kcm_amarok_service_gpodder_PART_SRCS} )
 
