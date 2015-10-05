@@ -35,6 +35,7 @@
 #include <Plasma/Containment>
 #include <Plasma/View>
 
+#include <QAnimationGroup>
 #include <QMouseEvent>
 #include <QGraphicsView>
 #include <QQueue>

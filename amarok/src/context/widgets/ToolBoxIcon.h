@@ -73,7 +73,6 @@ private:
     bool m_hovering;
 
     const qreal m_baseOpacity;
-    QWeakPointer<Plasma::Animation> m_animHighLight;
 
     QGraphicsSimpleTextItem *m_text;
     QBrush m_defaultTextBrush;

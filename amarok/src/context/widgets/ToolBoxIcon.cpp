@@ -20,8 +20,6 @@
 #include "core/support/Debug.h"
 #include "PaletteHandler.h"
 
-#include <Plasma/Animator>
-#include <Plasma/Animation>
 #include <plasma/paintutils.h>
 
 #include <KColorScheme>
@@ -133,49 +131,17 @@ ToolBoxIcon::boundingRect() const
 void
 ToolBoxIcon::hoverEnterEvent( QGraphicsSceneHoverEvent *event )
 {
-    Plasma::Animation *animation = m_animHighLight.data();
-    if( !animation )
-    {
-        animation = Plasma::Animator::create( Plasma::Animator::FadeAnimation );
-        animation->setTargetWidget( this );
-        animation->setProperty( "startOpacity", 1.0 - m_baseOpacity );
-        animation->setProperty( "targetOpacity", 1.0 );
-        animation->setProperty( "duration", 240 );
-        m_animHighLight = animation;
-    }
-    else
-        animation->stop();
-
     m_hovering = true;
     m_defaultTextBrush = m_text->brush();
     m_text->setBrush( The::paletteHandler()->palette().highlightedText() );
-    animation->setDirection( QAbstractAnimation::Forward );
-    animation->setEasingCurve( QEasingCurve::InQuad );
-    animation->start( QAbstractAnimation::KeepWhenStopped );
     Plasma::IconWidget::hoverEnterEvent( event );
 }
 
 void
 ToolBoxIcon::hoverLeaveEvent( QGraphicsSceneHoverEvent *event )
 {
-    Plasma::Animation *animation = m_animHighLight.data();
-    if( !animation )
-    {
-        animation = Plasma::Animator::create( Plasma::Animator::FadeAnimation );
-        animation->setTargetWidget( this );
-        animation->setProperty( "startOpacity", 1.0 - m_baseOpacity );
-        animation->setProperty( "targetOpacity", 1.0 );
-        animation->setProperty( "duration", 240 );
-        m_animHighLight = animation;
-    }
-    else
-        animation->stop();
-
     m_hovering = false;
     m_text->setBrush( m_defaultTextBrush );
-    animation->setDirection( QAbstractAnimation::Backward );
-    animation->setEasingCurve( QEasingCurve::OutQuad );
-    animation->start( QAbstractAnimation::DeleteWhenStopped );
     Plasma::IconWidget::hoverLeaveEvent( event );
 }
 
