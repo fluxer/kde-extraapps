@@ -58,6 +58,9 @@
 #include <QProcess>
 #include <QString>
 #include <QMap>
+#include <QFileInfo>
+#include <QBuffer>
+#include <QDir>
 
 #include <kdebug.h>
 #include <kglobal.h>

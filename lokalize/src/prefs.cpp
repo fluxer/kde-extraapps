@@ -56,6 +56,7 @@
 #include <QBoxLayout>
 #include <QDragEnterEvent>
 #include <QDropEvent>
+#include <QTimer>
 
 //#include <sonnet/configwidget.h>
 
