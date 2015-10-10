@@ -28,9 +28,6 @@
 #include <KDebug>
 #include <KGlobalSettings>
 
-#include <Plasma/Animation>
-#include <Plasma/Animator>
-
 Fifteen::Fifteen(QGraphicsItem* parent, int size)
     : QGraphicsWidget(parent),
       m_size(0), // this will immediately get overwritten by setSize(size) below, but needs an initial value
@@ -368,36 +365,12 @@ void Fifteen::movePiece(Piece *piece, int newX, int newY)
     int width = contentsRect().width() / m_size;
     int height = contentsRect().height() / m_size;
     QPointF pos = QPointF(newX * width, newY * height);
-
-    // stop and delete any existing animation
-    Plasma::Animation *animation = m_animations.value(piece).data();
-    if (animation) {
-        if (animation->state() == QAbstractAnimation::Running) {
-            animation->stop();
-        }
-        delete animation;
-        animation = NULL;
-    }
-    animation = Plasma::Animator::create(Plasma::Animator::SlideAnimation, this);
-    animation->setTargetWidget(piece);
-    animation->setProperty("easingCurve", QEasingCurve::InOutQuad);
-    animation->setProperty("movementDirection", Plasma::Animation::MoveAny);
-    animation->setProperty("distancePointF", pos - piece->pos());
-    m_animations[piece] = animation;
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 void Fifteen::toggleBlank(bool show)
 {
-    if (show) {
-        if (!m_blank->isVisible()) {
-            Plasma::Animation *animation = Plasma::Animator::create(Plasma::Animator::FadeAnimation, this);
-            animation->setProperty("startOpacity", 0.0);
-            animation->setProperty("targetOpacity", 1.0);
-            animation->setTargetWidget(m_blank);
-            animation->start(QAbstractAnimation::DeleteWhenStopped);
-            m_blank->show();
-        }
+    if (show && !m_blank->isVisible()) {
+        m_blank->show();
     } else {
         m_blank->hide();
     }

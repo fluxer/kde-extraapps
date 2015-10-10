@@ -31,7 +31,6 @@
 #include <KLocalizedString>
 #include <KPushButton>
 #include <KStandardDirs>
-#include <Plasma/Animator>
 #include <Plasma/Theme>
 
 // Libplasmaweather includes

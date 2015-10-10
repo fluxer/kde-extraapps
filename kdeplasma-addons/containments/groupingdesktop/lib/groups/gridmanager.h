@@ -28,7 +28,6 @@ class QGraphicsLinearLayout;
 
 namespace Plasma {
     class ToolButton;
-    class Animation;
 }
 
 class GridManager : public QGraphicsWidget
@@ -63,7 +62,6 @@ class GridManager : public QGraphicsWidget
         Plasma::ToolButton *m_newRowCol2;
         Plasma::ToolButton *m_delRowCol;
         Plasma::ToolButton *m_delRowCol2;
-        Plasma::Animation *m_fadeAnim;
         bool m_replace;
 };
 

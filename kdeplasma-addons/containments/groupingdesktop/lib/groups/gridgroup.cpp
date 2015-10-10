@@ -33,8 +33,6 @@
 #include <Plasma/Theme>
 #include <Plasma/PaintUtils>
 #include <Plasma/ToolButton>
-#include <Plasma/Animator>
-#include <Plasma/Animation>
 
 #include "spacer.h"
 #include "gridmanager.h"
@@ -594,15 +592,7 @@ bool GridGroup::eventFilter(QObject *obj, QEvent *event)
                 QPointF p(child->mapFromScene(static_cast<QGraphicsSceneMouseEvent *>(event)->scenePos()));
                 checkCorner(p, child);
 
-                Plasma::Animation *anim = Plasma::Animator::create(Plasma::Animator::GeometryAnimation);
-                if (anim) {
-                    child->removeEventFilter(this);
-                    anim->setTargetWidget(child);
-                    anim->setProperty("startGeometry", geom);
-                    anim->setProperty("targetGeometry", child->geometry());
-                    anim->start(QAbstractAnimation::DeleteWhenStopped);
-                    connect(anim, SIGNAL(finished()), this, SLOT(resizeDone()));
-                }
+                child->installEventFilter(this);
 
                 m_showGrid = false;
                 update();
@@ -616,12 +606,6 @@ bool GridGroup::eventFilter(QObject *obj, QEvent *event)
     }
 
     return AbstractGroup::eventFilter(obj, event);
-}
-
-void GridGroup::resizeDone()
-{
-    Plasma::Animation *anim = static_cast<Plasma::Animation *>(sender());
-    anim->targetWidget()->installEventFilter(this);
 }
 
 void GridGroup::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

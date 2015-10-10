@@ -34,7 +34,6 @@
 #include <KIcon>
 
 // Plasma
-#include <Plasma/Animator>
 #include <Plasma/FrameSvg>
 #include <Plasma/ScrollBar>
 #include <Plasma/Svg>

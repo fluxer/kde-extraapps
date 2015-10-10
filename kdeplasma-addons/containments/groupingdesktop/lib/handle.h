@@ -24,7 +24,6 @@
 #include <QtCore/QObject>
 #include <QtGui/QGraphicsObject>
 
-#include <Plasma/Animator>
 #include <Plasma/Svg>
 
 class QGraphicsView;

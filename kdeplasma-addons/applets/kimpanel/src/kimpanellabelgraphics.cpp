@@ -28,8 +28,6 @@
 
 // Plasma
 #include <Plasma/Theme>
-#include <Plasma/Animator>
-#include <Plasma/Animation>
 #include <Plasma/PaintUtils>
 
 KimpanelLabelGraphics::KimpanelLabelGraphics(RenderType type, QGraphicsItem *parent)

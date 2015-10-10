@@ -21,7 +21,6 @@
 #include <KStandardDirs>
 
 #include <Plasma/Theme>
-#include <Plasma/Animator>
 #include "backgroundlistmodel.h"
 #include "backgrounddelegate.h"
 //#include "ksmserver_interface.h"

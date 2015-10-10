@@ -32,8 +32,6 @@
 
 #include <Plasma/Containment>
 #include <Plasma/FrameSvg>
-#include <Plasma/Animator>
-#include <Plasma/Animation>
 
 #include "groupingcontainment.h"
 #include "freehandle.h"
@@ -86,14 +84,6 @@ void AbstractGroupPrivate::destroyGroup()
     delete q;
 }
 
-void AbstractGroupPrivate::startDestroyAnimation()
-{
-    Plasma::Animation *zoomAnim = Plasma::Animator::create(Plasma::Animator::ZoomAnimation);
-    q->connect(zoomAnim, SIGNAL(finished()), q, SLOT(destroyGroup()));
-    zoomAnim->setTargetWidget(q);
-    zoomAnim->start();
-}
-
 void AbstractGroupPrivate::appletDestroyed(Plasma::Applet *applet)
 {
     if (applets.contains(applet)) {
@@ -107,7 +97,7 @@ void AbstractGroupPrivate::appletDestroyed(Plasma::Applet *applet)
         emit q->configNeedsSaving();
 
         if (destroying && (q->children().count() == 0)) {
-            startDestroyAnimation();
+            destroyGroup();
             destroying = false;
         }
     }
@@ -129,7 +119,7 @@ void AbstractGroupPrivate::subGroupDestroyed(AbstractGroup *subGroup)
         emit q->configNeedsSaving();
 
         if (destroying && (q->children().count() == 0)) {
-            startDestroyAnimation();
+            destroyGroup();
             destroying = false;
         }
     }
@@ -480,7 +470,7 @@ void AbstractGroup::destroy()
     d->destroying = true;
 
     if (children().count() == 0) {
-        d->startDestroyAnimation();
+        d->destroyGroup();
         return;
     }
 

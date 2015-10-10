@@ -55,7 +55,6 @@ class GridGroup : public AbstractGroup
         void removeRowOrColumn();
         void appletRemoved(Plasma::Applet *applet);
         void subGroupRemoved(AbstractGroup *group);
-        void resizeDone();
 
     private:
         void updateChild(QGraphicsWidget *child);

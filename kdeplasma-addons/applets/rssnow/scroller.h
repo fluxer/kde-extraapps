@@ -26,7 +26,6 @@
 #include <QWeakPointer>
 #include <QAbstractAnimation>
 #include <plasma/plasma_export.h>
-#include <plasma/animator.h>
 #include <plasma/dataengine.h>
 
 
