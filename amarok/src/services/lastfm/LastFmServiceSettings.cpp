@@ -29,6 +29,7 @@
 
 #include <KMessageBox>
 #include <KPluginFactory>
+#include <KLocale>
 
 #include <QCryptographicHash>
 #include <QRegExpValidator>

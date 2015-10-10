@@ -28,6 +28,7 @@
 #include <QDomDocument>
 #include <QLocale>
 #include <QXmlStreamReader>
+#include <QSet>
 
 class QNetworkReply;
 
