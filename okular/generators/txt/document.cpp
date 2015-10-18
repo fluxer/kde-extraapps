@@ -12,7 +12,6 @@
 #include <QDataStream>
 #include <QTextCodec>
 
-#include <kencodingprober.h>
 #include <kdebug.h>
 
 #include "document.h"
@@ -42,30 +41,6 @@ Document::~Document()
 
 QString Document::toUnicode( const QByteArray &array )
 {
-    QByteArray encoding;
-    KEncodingProber prober(KEncodingProber::Universal);
-    int charsFeeded = 0;
-    int chunkSize = 3000; // ~= number of symbols in page.
-
-    // Try to detect encoding.
-    while ( encoding.isEmpty() && charsFeeded < array.size() )
-    {
-        prober.feed( array.mid( charsFeeded, chunkSize ) );
-        charsFeeded += chunkSize;
-
-        if (prober.confidence() >= 0.5)
-        {
-            encoding = prober.encoding();
-            break;
-        }
-    }
-
-    if ( encoding.isEmpty() )
-    {
-        return QString();
-    }
-
-    kDebug() << "Detected" << prober.encoding() << "encoding"
-             << "based on" << charsFeeded << "chars";
-    return QTextCodec::codecForName( encoding )->toUnicode( array );
+    QTextCodec *codec = QTextCodec::codecForUtfText(array);
+    return codec->toUnicode( array );
 }
