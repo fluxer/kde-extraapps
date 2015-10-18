@@ -22,9 +22,9 @@
 #include <QRegExp>
 #include <QTextDocument>
 #include <QTextStream>
+#include <QTextCodec>
 
 #include <klocale.h>
-#include <kencodingprober.h>
 
 #include <language/duchain/indexedstring.h>
 #include <interfaces/icore.h>
@@ -42,19 +42,11 @@ GrepOutputItem::List grepFile(const QString &filename, const QRegExp &re)
     if(!file.open(QIODevice::ReadOnly))
         return res;
     int lineno = 0;
-    
-    
-    // detect encoding (unicode files can be feed forever, stops when confidence reachs 99%
-    KEncodingProber prober;
-    while(!file.atEnd() && prober.state() == KEncodingProber::Probing && prober.confidence() < 0.99) {
-        prober.feed(file.read(0xFF));
-    }
-        
+
     // reads file with detected encoding
     file.seek(0);
     QTextStream stream(&file);
-    if(prober.confidence()>0.7)
-        stream.setCodec(prober.encoding());
+    stream.setAutoDetectUnicode(true);
     while( !stream.atEnd() )
     {
         QString data = stream.readLine();
