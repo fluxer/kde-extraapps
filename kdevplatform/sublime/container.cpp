@@ -239,7 +239,7 @@ Container::Container(QWidget *parent)
     connect(d->tabBar, SIGNAL(wheelDelta(int)), this, SLOT(wheelScroll(int)));
     connect(d->tabBar, SIGNAL(contextMenu(int,QPoint)), this, SLOT(contextMenu(int,QPoint)));
     connect(d->tabBar, SIGNAL(mouseMiddleClick(int)), this, SLOT(requestClose(int)));
-    connect(d->tabBar, SIGNAL(mouseDoubleClick(int)), this, SLOT(doubleClickTriggered(int)));
+    connect(d->tabBar, SIGNAL(tabDoubleClick(int)), this, SLOT(doubleClickTriggered(int)));
     connect(d->documentListMenu, SIGNAL(triggered(QAction*)), this, SLOT(documentListActionTriggered(QAction*)));
 
     KConfigGroup group = KGlobal::config()->group("UiSettings");
