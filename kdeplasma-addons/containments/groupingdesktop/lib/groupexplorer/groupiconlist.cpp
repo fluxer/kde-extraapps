@@ -35,6 +35,8 @@
 #include <KIcon>
 #include <KPushButton>
 
+#include <Plasma/Animation>
+#include <Plasma/Animator>
 #include <Plasma/Containment>
 #include <Plasma/Corona>
 #include <Plasma/ItemBackground>
@@ -63,6 +65,10 @@ GroupIconList::GroupIconList(Plasma::Location loc, QGraphicsItem *parent)
     m_arrowsSvg->setContainsMultipleImages(true);
     m_arrowsSvg->resize(KIconLoader::SizeSmall, KIconLoader::SizeSmall);
 
+    m_slide = Plasma::Animator::create(Plasma::Animator::SlideAnimation);
+    m_slide->setEasingCurve(QEasingCurve::Linear);
+    connect(m_slide, SIGNAL(finished()), this, SLOT(scrollStepFinished()));
+
     //init arrows
     m_upLeftArrow = new Plasma::ToolButton(this);
     m_upLeftArrow->setPreferredSize(IconSize(KIconLoader::Panel), IconSize(KIconLoader::Panel));
@@ -80,6 +86,8 @@ GroupIconList::GroupIconList(Plasma::Location loc, QGraphicsItem *parent)
     m_listWidget = new QGraphicsWidget(m_scrollWidget);
     m_listWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_listLayout = new QGraphicsLinearLayout(m_listWidget);
+
+    m_slide->setTargetWidget(m_listWidget);
 
     m_listWidget->installEventFilter(this);
     m_scrollWidget->installEventFilter(this);
@@ -108,6 +116,7 @@ GroupIconList::GroupIconList(Plasma::Location loc, QGraphicsItem *parent)
 
 GroupIconList::~GroupIconList()
 {
+    delete m_slide;
 }
 
 bool GroupIconList::eventFilter(QObject *obj, QEvent *event)
@@ -303,7 +312,16 @@ void GroupIconList::scrollTo(int index)
 
     m_firstItemIndex = index;
 
-    scrollStepFinished();
+    m_slide->stop();
+
+    if (m_orientation == Qt::Horizontal) {
+        m_slide->setProperty("movementDirection", Plasma::Animation::MoveLeft);
+    } else {
+        m_slide->setProperty("movementDirection", Plasma::Animation::MoveUp);
+    }
+
+    m_slide->setProperty("distance", move);
+    m_slide->start();
 
     manageArrows();
 }
@@ -325,8 +343,11 @@ void GroupIconList::scrollStepFinished()
     m_scrollingDueToWheel = false;
 
     //keep scrolling if the button is held down
-    if (m_upLeftArrow->isEnabled() && m_upLeftArrow->isDown()) {
-        scrollUpLeft();
+    bool movingLeftUp = m_slide->property("distance").value<qreal>() < 0;
+    if (movingLeftUp) {
+        if (m_upLeftArrow->isEnabled() && m_upLeftArrow->isDown()) {
+            scrollUpLeft();
+        }
     } else if (m_downRightArrow->isEnabled() && m_downRightArrow->isDown()) {
         scrollDownRight();
     }

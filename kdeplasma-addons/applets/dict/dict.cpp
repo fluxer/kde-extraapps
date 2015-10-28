@@ -34,12 +34,14 @@
 #include <KLineEdit>
 #include <KTextBrowser>
 
+#include <Plasma/Animator>
 #include <Plasma/IconWidget>
 #include <Plasma/LineEdit>
 #include <Plasma/TextBrowser>
 #include <Plasma/Theme>
 #include <Plasma/ToolTipContent>
 #include <Plasma/ToolTipManager>
+#include <plasma/animations/animation.h>
 
 #define AUTO_DEFINE_TIMEOUT 500
 
@@ -163,6 +165,13 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     m_graphicsWidget = new QGraphicsWidget(this);
     m_graphicsWidget->setLayout(m_layout);
     m_graphicsWidget->setPreferredSize(500, 200);
+
+    Animation *zoomAnim =
+        Plasma::Animator::create(Plasma::Animator::ZoomAnimation);
+    zoomAnim->setTargetWidget(m_wordEdit);
+    zoomAnim->setProperty("zoom", 1.0);
+    zoomAnim->setProperty("duration", 350);
+    zoomAnim->start(QAbstractAnimation::DeleteWhenStopped);
 
     return m_graphicsWidget;
 }

@@ -33,6 +33,7 @@
 // Plasma Includes
 #include <Plasma/Theme>
 #include <Plasma/Service>
+#include <Plasma/Animator>
 #include <Plasma/TreeView>
 #include <Plasma/TabBar>
 #include <Plasma/Label>

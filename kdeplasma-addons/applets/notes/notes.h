@@ -109,6 +109,7 @@ class Notes : public Plasma::PopupApplet
         TopWidget *m_topWidget;
 
         QParallelAnimationGroup *m_buttonAnimGroup;
+        Plasma::Animation *m_buttonAnim[6];
 };
 
 #endif

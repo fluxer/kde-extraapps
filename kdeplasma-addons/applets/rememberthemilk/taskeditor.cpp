@@ -31,6 +31,8 @@
 #include <QStringList>
 
 #include <Plasma/Theme>
+#include <Plasma/Animator>
+#include <Plasma/Animation>
 #include <Plasma/IconWidget>
 #include <Plasma/Service>
 
@@ -212,7 +214,28 @@ void TaskEditor::startAnimation(QSizeF endSize, bool show) {
     fullSize = endSize;
     resize(fullSize);
 
-    animationFinished();
+    Plasma::Animation *animation = m_fadeAnimation.data();
+    if (!animation) {
+      animation = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+      animation->setTargetWidget(this);
+      animation->setProperty("startValue", 0.0);
+      animation->setProperty("endValue", 1.0);
+      animation->setProperty("duration", 100);
+      m_fadeAnimation = animation;
+      connect(animation, SIGNAL(finished()), this, SLOT(animationFinished()));
+    } else if (animation->state() == QAbstractAnimation::Running) {
+      animation->pause();
+    }
+
+    if (show) {
+      animation->setProperty("easingCurve", QEasingCurve::InQuad);
+      animation->setProperty("direction", QAbstractAnimation::Forward);
+      animation->start(QAbstractAnimation::KeepWhenStopped);
+    } else {
+      animation->setProperty("easingCurve", QEasingCurve::OutQuad);
+      animation->setProperty("direction", QAbstractAnimation::Backward);
+      animation->start(QAbstractAnimation::DeleteWhenStopped);
+    }
 }
 
 void TaskEditor::animationFinished() {

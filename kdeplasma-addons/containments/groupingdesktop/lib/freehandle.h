@@ -26,6 +26,7 @@
 #include <QWeakPointer>
 #include <QPropertyAnimation>
 
+#include <Plasma/Animator>
 #include <Plasma/Svg>
 
 #include "handle.h"

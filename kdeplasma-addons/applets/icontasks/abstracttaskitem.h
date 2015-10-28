@@ -42,6 +42,9 @@ class QTextLayout;
 class QString;
 class QAction;
 
+// Plasma
+#include <Plasma/Animator>
+
 class Tasks;
 class TaskGroupItem;
 class LayoutWidget;

@@ -35,6 +35,8 @@
 #include <netwm.h>
 
 #include <Plasma/Corona>
+#include <Plasma/Animator>
+#include <Plasma/Animation>
 #include <Plasma/WindowEffects>
 
 #include "abstractgroup.h"
@@ -408,7 +410,14 @@ void GroupingContainmentPrivate::onWidgetMoved(QGraphicsWidget *widget)
         QRectF newGeom(widget->geometry());
 
         if (geom != newGeom) {
-            widgetMovedAnimationComplete();
+            Plasma::Animation *anim = Plasma::Animator::create(Plasma::Animator::GeometryAnimation);
+            if (anim) {
+                q->connect(anim, SIGNAL(finished()), q, SLOT(widgetMovedAnimationComplete()));
+                anim->setTargetWidget(widget);
+                anim->setProperty("startGeometry", geom);
+                anim->setProperty("targetGeometry", newGeom);
+                anim->start(QAbstractAnimation::DeleteWhenStopped);
+            }
         } else {
             blockSceneEventFilter = false;
         }
@@ -614,6 +623,12 @@ void GroupingContainment::addGroup(AbstractGroup *group, const QPointF &pos)
 
     if (!d->loading && !pos.isNull()) {
         d->manageGroup(group, pos);
+        Plasma::Animation *anim = Plasma::Animator::create(Plasma::Animator::AppearAnimation);
+        if (anim) {
+            anim->setTargetWidget(group);
+            anim->setDirection(QAbstractAnimation::Backward);
+            anim->start(QAbstractAnimation::DeleteWhenStopped);
+        }
     }
 
     group->installEventFilter(this);

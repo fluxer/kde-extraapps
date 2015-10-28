@@ -42,6 +42,8 @@
 #include <KStandardAction>
 #include <KAction>
 
+#include <Plasma/Animator>
+#include <Plasma/Animation>
 #include <Plasma/PushButton>
 #include <Plasma/Theme>
 
@@ -668,6 +670,18 @@ void Notes::createTextFormatingWidgets()
 
     m_buttonAnimGroup = new QParallelAnimationGroup(this);
 
+    for (int i = 0; i < 6; i++){
+        m_buttonAnim[i] = Plasma::Animator::create(Plasma::Animator::FadeAnimation, this);
+        m_buttonAnimGroup->addAnimation(m_buttonAnim[i]);
+    }
+
+    m_buttonAnim[0]->setTargetWidget(m_buttonBold);
+    m_buttonAnim[1]->setTargetWidget(m_buttonItalic);
+    m_buttonAnim[2]->setTargetWidget(m_buttonUnderline);
+    m_buttonAnim[3]->setTargetWidget(m_buttonStrikeThrough);
+    m_buttonAnim[4]->setTargetWidget(m_buttonCenter);
+    m_buttonAnim[5]->setTargetWidget(m_buttonFill);
+
     showOptions(false);
     connect(m_buttonOption->nativeWidget(), SIGNAL(toggled(bool)), this, SLOT(showOptions(bool)));
 
@@ -677,6 +691,14 @@ void Notes::createTextFormatingWidgets()
 void Notes::showOptions(bool show)
 {
     m_buttonOption->nativeWidget()->setDown(show);
+
+    qreal targetOpacity = show ? 1 : 0;
+    qreal startOpacity = 1 - targetOpacity;
+
+    for (int i = 0; i < 6; i++){
+        m_buttonAnim[i]->setProperty("startOpacity", startOpacity);
+        m_buttonAnim[i]->setProperty("targetOpacity", targetOpacity);
+    }
 
     m_buttonAnimGroup->start();
 }

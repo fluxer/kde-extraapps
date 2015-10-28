@@ -27,7 +27,9 @@
 
 #include <Plasma/Theme>
 #include <Plasma/PaintUtils>
+#include <Plasma/Animator>
 #include <Plasma/ToolButton>
+#include <Plasma/Animation>
 
 static const int SIZE = 30;
 
@@ -64,6 +66,12 @@ GridManager::GridManager(QGraphicsItem *parent)
 
     //FIXME: QGraphicsLayout is bugged and it won't lay out the items until a resize is called.
     resize(50, 50);
+
+    m_fadeAnim = Plasma::Animator::create(Plasma::Animator::FadeAnimation);
+    m_fadeAnim->setTargetWidget(this);
+    m_fadeAnim->setProperty("startOpacity", 0);
+    m_fadeAnim->setProperty("targetOpacity", 1);
+    connect(m_fadeAnim, SIGNAL(finished()), this, SLOT(animationFinished()));
 
     connect(m_newRowCol, SIGNAL(clicked()), this, SIGNAL(newClicked()));
     connect(m_delRowCol, SIGNAL(clicked()), this, SIGNAL(deleteClicked()));
@@ -112,7 +120,8 @@ void GridManager::setLocation(Plasma::Location location)
 
     if (isVisible()) {
         m_replace = true;
-        animationFinished();
+        m_fadeAnim->setDirection(QAbstractAnimation::Backward);
+        m_fadeAnim->start();
     } else {
         place();
     }
@@ -169,21 +178,28 @@ void GridManager::place()
 void GridManager::showAnimated()
 {
     show();
-    animationFinished();
+
+    m_fadeAnim->setDirection(QAbstractAnimation::Forward);
+    m_fadeAnim->start();
 }
 
 void GridManager::hideAnimated()
 {
     m_location = Plasma::Floating;
     m_replace = false;
-    animationFinished();
+    m_fadeAnim->setDirection(QAbstractAnimation::Backward);
+    m_fadeAnim->start();
 }
 
 void GridManager::animationFinished()
 {
+    if (m_fadeAnim->direction() == QAbstractAnimation::Backward) {
+        hide();
+
         if (m_replace) {
             place();
         }
+    }
 }
 
 void GridManager::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)

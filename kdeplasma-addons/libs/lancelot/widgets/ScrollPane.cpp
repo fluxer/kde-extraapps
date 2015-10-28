@@ -21,6 +21,7 @@
 #include "ScrollBar.h"
 #include "Widget.h"
 
+#include <Plasma/Animator>
 #include <QGraphicsSceneWheelEvent>
 
 #include <lancelot/layouts/FullBorderLayout.h>
