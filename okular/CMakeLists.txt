@@ -5,8 +5,6 @@ include(KDE4Defaults)
 include(MacroLibrary)
 include(MacroOptionalAddSubdirectory)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake/modules)
-
 macro_optional_find_package(QImageBlitz)
 macro_log_feature(QIMAGEBLITZ_FOUND "QImageBlitz" "An image effects library" "http://sourceforge.net/projects/qimageblitz" TRUE "kdesupport" "Required to build Okular.")
 

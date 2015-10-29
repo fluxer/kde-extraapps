@@ -1,7 +1,5 @@
 project(kmix)
 
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
-
 find_package(KDE4 4.14.3 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)

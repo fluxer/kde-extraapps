@@ -1,7 +1,5 @@
 project(kgpg)
 
-set (CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" ${PROJECT_SOURCE_DIR}/cmake/modules)
-
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     find_package(KDE4 4.14.3 REQUIRED)
     include( KDE4Defaults )

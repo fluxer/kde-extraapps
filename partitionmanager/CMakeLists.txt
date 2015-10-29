@@ -19,8 +19,6 @@ project(partitionmanager)
 
 cmake_minimum_required(VERSION 2.6.2)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/")
-
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 

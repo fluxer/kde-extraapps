@@ -11,7 +11,6 @@ if(POLICY CMP0017)
   cmake_policy(SET CMP0017 NEW)
 endif()
 
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 enable_testing()
 find_package(Qt4 REQUIRED)
 find_package(KDE4 4.14.3 REQUIRED)

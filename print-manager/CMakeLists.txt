@@ -1,7 +1,5 @@
 project(print-manager)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/)
-
 find_package(KDE4 4.14.3 REQUIRED)
 find_package(CUPS "1.5" REQUIRED)
 include (MacroLibrary)

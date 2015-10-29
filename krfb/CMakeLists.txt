@@ -26,12 +26,6 @@ if(NOT INSIDE_KDENETWORK)
     include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 endif(NOT INSIDE_KDENETWORK)
 
-set(IS_KTP_INTERNAL_MODULE TRUE)
-set(CMAKE_MODULE_PATH
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules"
-    ${CMAKE_MODULE_PATH}
-)
-
 find_package(LibVNCServer REQUIRED)
 
 macro_optional_find_package(TelepathyQt4)

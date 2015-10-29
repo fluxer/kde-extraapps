@@ -3,15 +3,17 @@ add_subdirectory(plasma)
 ########### next target ###############
 
 find_package(SharedMimeInfo REQUIRED)
-macro_optional_find_package(KDeclarative)
 
-set(kdevelop_SRCS  main.cpp kdevideextension.cpp splash.cpp)
-if(KDECLARATIVE_FOUND)
-    set(kdevelop_SRCS ${kdevelop_SRCS}
-                   welcomepage/sessionsmodel.cpp welcomepage/welcomepageview.cpp welcomepage/uihelper.cpp)
-    add_definitions(-DWITH_WELCOMEPAGE)
-    qt4_add_resources(kdevelop_SRCS welcomepage/welcomepage.qrc)
-endif(KDECLARATIVE_FOUND)
+set(kdevelop_SRCS
+    main.cpp
+    kdevideextension.cpp
+    splash.cpp
+    welcomepage/sessionsmodel.cpp
+    welcomepage/welcomepageview.cpp
+    welcomepage/uihelper.cpp
+)
+add_definitions(-DWITH_WELCOMEPAGE)
+qt4_add_resources(kdevelop_SRCS welcomepage/welcomepage.qrc)
 
 add_executable(kdevelop ${kdevelop_SRCS} )
 
