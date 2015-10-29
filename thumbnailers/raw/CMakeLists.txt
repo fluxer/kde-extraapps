@@ -10,7 +10,13 @@ kde4_add_plugin(rawthumbnail ${rawthumbnail_SRCS})
 
 
 ## includes and linking
-target_link_libraries(rawthumbnail ${KDE4_KIO_LIBS} ${KDCRAW_LIBRARIES} ${KEXIV2_LIBRARIES} ${QT_QTGUI_LIBRARY} ${KDE4_KDECORE_LIBS})
+target_link_libraries(rawthumbnail
+    ${KDE4_KIO_LIBS}
+    ${KDE4_KDCRAW_LIBS}
+    ${KDE4_KEXIV2_LIBS}
+    ${KDE4_KDECORE_LIBS}
+    ${QT_QTGUI_LIBRARY}
+)
 
 ## install the plugin
 install(TARGETS rawthumbnail DESTINATION ${PLUGIN_INSTALL_DIR})
