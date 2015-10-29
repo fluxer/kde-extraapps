@@ -40,7 +40,10 @@ TARGET_LINK_LIBRARIES(ksane ${KDE4_KDEUI_LIBS}
                             ${SANE_LIBRARY}
                      )
 
-SET_TARGET_PROPERTIES(ksane PROPERTIES VERSION ${KSANE_LIB_SO_VERSION_STRING} SOVERSION ${KSANE_LIB_SO_CUR_VERSION})
+SET_TARGET_PROPERTIES(ksane PROPERTIES
+    VERSION ${KSANE_LIB_SO_VERSION_STRING}
+    SOVERSION ${KSANE_LIB_SO_CUR_VERSION}
+)
 
 OPTION(COMPILE_VIEWER_TESTAPP "Compile a small test application for the viewer")
 
@@ -52,26 +55,37 @@ ENDIF()
 
 INSTALL(TARGETS ksane ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-CONFIGURE_FILE(../cmake/templates/KSaneConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake @ONLY)
+CONFIGURE_FILE(
+    ../cmake/templates/KSaneConfig.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake
+    @ONLY
+)
 
-# Check if compilation is done through digiKam SC or not. If yes, do not install header files.
-IF (NOT DIGIKAMSC_COMPILE_LIBKSANE)
+INSTALL(
+    FILES
+    ksane.h
+    libksane_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/version.h
+    DESTINATION ${INCLUDE_INSTALL_DIR}/libksane
+    COMPONENT Devel
+)
 
-    INSTALL(FILES ksane.h
-                libksane_export.h
-                ${CMAKE_CURRENT_BINARY_DIR}/version.h
-            DESTINATION ${INCLUDE_INSTALL_DIR}/libksane COMPONENT Devel)
+CONFIGURE_FILE(
+    ${PROJECT_SOURCE_DIR}/cmake/templates/libksane.pc.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc
+)
+INSTALL(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc
+    DESTINATION ${LIB_INSTALL_DIR}/pkgconfig
+)
 
-    CONFIGURE_FILE(${PROJECT_SOURCE_DIR}/cmake/templates/libksane.pc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc)
-    CONFIGURE_FILE(${PROJECT_SOURCE_DIR}/cmake/templates/libksane.lsm.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/libksane.lsm)
-    INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig )
+# Install find cmake script to the system for client applications.
 
-    # Install find cmake script to the system for client applications.
-
-    INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake
-        DESTINATION ${LIB_INSTALL_DIR}/cmake/KSane)
-
-ENDIF()
+INSTALL(
+    FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake
+    DESTINATION ${LIB_INSTALL_DIR}/cmake/KSane
+)
 
 KDE4_INSTALL_ICONS(${ICON_INSTALL_DIR})
 

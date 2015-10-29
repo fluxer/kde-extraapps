@@ -59,8 +59,12 @@ SET(KSANE_LIB_SO_VERSION_STRING "${KSANE_LIB_SO_CUR_VERSION}.${KSANE_LIB_SO_REV_
 
 ADD_DEFINITIONS(-DKDE_DEFAULT_DEBUG_AREA=51004) 
 
-CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libksane/version.h.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/libksane/version.h)
+CONFIGURE_FILE(
+    ${CMAKE_CURRENT_SOURCE_DIR}/libksane/version.h.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/libksane/version.h
+)
 
 # =======================================================
 
 ADD_SUBDIRECTORY(libksane)
+ADD_SUBDIRECTORY(ksaneplugin)
