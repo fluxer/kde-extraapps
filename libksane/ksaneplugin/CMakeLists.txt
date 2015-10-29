@@ -1,6 +1,9 @@
 project(ksaneplugin)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../libksane)
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../libksane
+    ${CMAKE_CURRENT_SOURCE_DIR}/..
+)
 add_definitions(
     ${QT_QTDBUS_DEFINITIONS}
     -DQT_USE_FAST_CONCATENATION

@@ -274,7 +274,7 @@ namespace KSaneIface
                 else if (m_params.depth == 8) {
                     for (int i=0; i<read_bytes; i++) {
                         index = m_frameRead * 4;
-                        if ((index + 2) >m_img->numBytes()) {
+                        if ((index + 2) >m_img->byteCount()) {
                             // resize the image
                             *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                             imgBits = m_img->bits();
@@ -291,7 +291,7 @@ namespace KSaneIface
                     for (int i=0; i<read_bytes; i++) {
                         if (m_frameRead%2 == 0) {
                             index = m_frameRead * 2;
-                            if ((index + 2) > m_img->numBytes()) {
+                            if ((index + 2) > m_img->byteCount()) {
                                 // resize the image
                                 *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                 imgBits = m_img->bits();
@@ -357,7 +357,7 @@ namespace KSaneIface
                 case SANE_FRAME_RED:
                     if (m_params.depth == 8) {
                         for (int i=0; i<read_bytes; i++) {
-                            if (index_red8_to_argb8(m_frameRead) > m_img->numBytes()) {
+                            if (index_red8_to_argb8(m_frameRead) > m_img->byteCount()) {
                                 // resize the image
                                 *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                 imgBits = m_img->bits();
@@ -371,7 +371,7 @@ namespace KSaneIface
                     else if (m_params.depth == 16) {
                         for (int i=0; i<read_bytes; i++) {
                             if (m_frameRead%2 == 0) {
-                                if (index_red16_to_argb8(m_frameRead) > m_img->numBytes()) {
+                                if (index_red16_to_argb8(m_frameRead) > m_img->byteCount()) {
                                     // resize the image
                                     *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                     imgBits = m_img->bits();
@@ -388,7 +388,7 @@ namespace KSaneIface
                 case SANE_FRAME_GREEN:
                     if (m_params.depth == 8) {
                         for (int i=0; i<read_bytes; i++) {
-                            if (index_green8_to_argb8(m_frameRead) > m_img->numBytes()) {
+                            if (index_green8_to_argb8(m_frameRead) > m_img->byteCount()) {
                                 // resize the image
                                 *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                 imgBits = m_img->bits();
@@ -402,7 +402,7 @@ namespace KSaneIface
                     else if (m_params.depth == 16) {
                         for (int i=0; i<read_bytes; i++) {
                             if (m_frameRead%2 == 0) {
-                                if (index_green16_to_argb8(m_frameRead) > m_img->numBytes()) {
+                                if (index_green16_to_argb8(m_frameRead) > m_img->byteCount()) {
                                     // resize the image
                                     *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                     imgBits = m_img->bits();
@@ -419,7 +419,7 @@ namespace KSaneIface
                 case SANE_FRAME_BLUE:
                     if (m_params.depth == 8) {
                         for (int i=0; i<read_bytes; i++) {
-                            if (index_blue8_to_argb8(m_frameRead) > m_img->numBytes()) {
+                            if (index_blue8_to_argb8(m_frameRead) > m_img->byteCount()) {
                                 // resize the image
                                 *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                 imgBits = m_img->bits();
@@ -433,7 +433,7 @@ namespace KSaneIface
                     else if (m_params.depth == 16) {
                         for (int i=0; i<read_bytes; i++) {
                             if (m_frameRead%2 == 0) {
-                                if (index_blue16_to_argb8(m_frameRead) > m_img->numBytes()) {
+                                if (index_blue16_to_argb8(m_frameRead) > m_img->byteCount()) {
                                     // resize the image
                                     *m_img = m_img->copy(0, 0, m_img->width(), m_img->height() + m_img->width());
                                     imgBits = m_img->bits();
