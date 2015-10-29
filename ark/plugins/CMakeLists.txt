@@ -1,6 +1,6 @@
-if (LibArchive_FOUND)
+if(LibArchive_FOUND)
     add_subdirectory( libarchive )
-endif (LibArchive_FOUND)
+endif()
 
 add_subdirectory( clirarplugin )
 add_subdirectory( libsinglefileplugin )

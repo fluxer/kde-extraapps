@@ -1,6 +1,6 @@
 ########### next target ###############
 
-set(SUPPORTED_KARCHIVE_MIMETYPES "application/zip;application/x-zip-compressed;application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;")
+set(SUPPORTED_KARCHIVE_MIMETYPES "application/zip;application/x-bzip;application/x-gzip;application/x-zip-compressed;application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;application/x-gzip-compressed-tar;")
 
 set(kerfuffle_karchive_SRCS karchiveplugin.cpp)
 
@@ -9,8 +9,8 @@ kde4_add_plugin(kerfuffle_karchive ${kerfuffle_karchive_SRCS})
 target_link_libraries(kerfuffle_karchive  ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} kerfuffle )
 
 configure_file(
-            ${CMAKE_CURRENT_SOURCE_DIR}/kerfuffle_karchive.desktop.cmake
-            ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle_karchive.desktop
+    ${CMAKE_CURRENT_SOURCE_DIR}/kerfuffle_karchive.desktop.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle_karchive.desktop
 )
 
 ########### install files ###############
