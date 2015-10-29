@@ -198,10 +198,7 @@ else() # not WIN32
 
       exec_program( ${_GPGMECONFIG_EXECUTABLE} ARGS --version OUTPUT_VARIABLE GPGME_VERSION )
 
-      set( _GPGME_MIN_VERSION "1.0.0" )
-      macro_ensure_version( ${_GPGME_MIN_VERSION} ${GPGME_VERSION} _GPGME_INSTALLED_VERSION_OK )
-
-      if ( NOT _GPGME_INSTALLED_VERSION_OK )
+      if("${GPGME_VERSION}" VERSION_LESS "1.0.0")
 
         message( STATUS "The installed version of gpgme is too old: ${GPGME_VERSION} (required: >= ${_GPGME_MIN_VERSION})" )
 

@@ -29,12 +29,7 @@ macro_log_feature(QJSON_FOUND "QJSon" "Used for various Internet runners, for pa
 macro_optional_find_package(QtOAuth)
 macro_log_feature(QTOAUTH_FOUND "QtOAuth" "QtOAuth Library - required to build the Plasma Microblog DataEngine" "https://github.com/ayoy/qoauth" FALSE "" "Needed for building Plasma Microblog DataEngine")
 
-macro_optional_depend_package(Marble "Marble")
-if (DEPEND_PACKAGE_Marble)
-  macro_optional_find_package(Marble)
-else (DEPEND_PACKAGE_Marble)
-  set (MARBLE_FOUND FALSE)
-endif (DEPEND_PACKAGE_Marble)
+macro_optional_find_package(Marble)
 macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" FALSE "" "RECOMMENDED: Marble is used to provide a desktop globe wallpaper for Plasma.")
 
 macro_optional_find_package(DBusMenuQt)

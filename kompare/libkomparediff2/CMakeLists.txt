@@ -55,11 +55,7 @@ install(FILES
 # Config.cmake file.
 configure_file( "${PROJECT_SOURCE_DIR}/LibKompareDiff2Config.cmake.in" "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake" @ONLY )
 
-if(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
-    set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/libkomparediff2")
-else(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
-    set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/libkomparediff2")
-endif(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
+set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/libkomparediff2")
 
 install( FILES
         "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake"
