@@ -209,7 +209,11 @@ bool App::x11EventFilter(XEvent* event)
 {
     if (event->xany.window == QX11Info::appRootWindow()) {
         if (event->type == KeyPress) {
+#ifndef XK_XKB_KEYS
             KeySym sym = XKeycodeToKeysym(QX11Info::display(), event->xkey.keycode, 0);
+#else
+            KeySym sym = XkbKeycodeToKeysym(QX11Info::display(), event->xkey.keycode, 0);
+#endif
             uint state = event->xkey.state & USED_MASK;
             bool forward;
             if ((forward = m_triggersList.contains(qMakePair<uint, uint>(sym, state)))
