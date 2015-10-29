@@ -29,10 +29,8 @@ target_link_libraries(kdevelop
     ${KDE4_THREADWEAVER_LIBS}
 
     ${QT_QTDECLARATIVE_LIBRARIES}
+    ${KDE4_KDECLARATIVE_LIBS}
 )
-if(KDECLARATIVE_FOUND)
-    target_link_libraries(kdevelop ${KDECLARATIVE_LIBRARY})
-endif(KDECLARATIVE_FOUND)
 
 install(TARGETS kdevelop ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
