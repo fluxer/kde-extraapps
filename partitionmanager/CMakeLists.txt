@@ -31,7 +31,6 @@ add_definitions(-DVERSION="${VERSION}")
 
 find_package(KDE4 4.14.3 REQUIRED)
 
-find_package(MSGFMT REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)

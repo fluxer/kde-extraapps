@@ -184,13 +184,13 @@ target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_PHONON_LIBS}
+    ${KDE4_KDCRAW_LIBS}
     ${JPEG_LIBRARY}
     ${EXIV2_LIBRARIES}
     ${QT_QTOPENGL_LIBRARY}
     ${X11_X11_LIB}
     ${PNG_LIBRARIES}
     ${LCMS2_LIBRARIES}
-    ${KDCRAW_LIBRARIES}
 )
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})

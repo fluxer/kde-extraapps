@@ -1,5 +1,3 @@
-include( KDELibsDependencies ) # for KDE version
-
 add_subdirectory( applets )
 add_subdirectory( engines )
 add_subdirectory( containments )

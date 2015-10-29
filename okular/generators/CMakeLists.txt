@@ -8,9 +8,6 @@ macro_log_feature(HAVE_POPPLER_0_12_1 "Poppler-Qt4" "A PDF rendering library" "h
 macro_optional_find_package(LibSpectre)
 macro_log_feature(LIBSPECTRE_FOUND "libspectre" "A PostScript rendering library" "http://libspectre.freedesktop.org/wiki/" FALSE "${LIBSPECTRE_MINIMUM_VERSION}" "Support for PS files in okular.")
 
-macro_optional_find_package(Kexiv2)
-macro_log_feature(KEXIV2_FOUND "LibKExiv2" "Wrapper around Exiv2 library" "http://www.digikam.org/sharedlibs" FALSE "" "Support for image files")
-
 macro_optional_find_package(DjVuLibre)
 macro_log_feature(DJVULIBRE_FOUND "DjVuLibre" "A library for dealing with DjVu formatted files" "http://djvulibre.djvuzone.org" FALSE "3.5.17" "Support for DjVu files in okular.")
 
@@ -41,9 +38,7 @@ if(LIBSPECTRE_FOUND)
   add_subdirectory(spectre)
 endif(LIBSPECTRE_FOUND)
 
-if(KEXIV2_FOUND)
-  add_subdirectory( kimgio )
-endif(KEXIV2_FOUND)
+add_subdirectory( kimgio )
 
 if(DJVULIBRE_FOUND)
   add_subdirectory(djvu)

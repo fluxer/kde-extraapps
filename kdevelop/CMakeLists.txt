@@ -84,7 +84,6 @@ include_directories(${KDevelop_SOURCE_DIR} ${KDevelop_BINARY_DIR} ${KDE4_INCLUDE
 # create config.h
 configure_file (config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
-add_subdirectory(cmake)
 add_subdirectory(pics)
 add_subdirectory(app)
 add_subdirectory(formatters)
