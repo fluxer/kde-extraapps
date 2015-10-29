@@ -618,7 +618,7 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
 	if (action == NULL || action->parent() != devicesMenu)
 		return;
 
-	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
+	foreach (QAction* entry, devicesMenu->findChildren<QAction*>())
 		entry->setChecked(entry == action);
 
 	listDevices().setSelectedDevice(action->data().toString());
@@ -628,7 +628,7 @@ void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
 {
 	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
 
-	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
+	foreach (QAction* entry, devicesMenu->findChildren<QAction*>())
 		entry->setChecked(entry->data().toString() == device_node);
 }
 
