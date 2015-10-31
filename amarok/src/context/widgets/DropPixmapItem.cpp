@@ -63,7 +63,7 @@ void DropPixmapItem::dropEvent(QGraphicsSceneDragDropEvent* event)
     if( event->mimeData()->hasImage() )
     {
         debug() << "mimeData has image";
-        emit imageDropped( qVariantValue< QPixmap >( event->mimeData()->imageData() ) );
+        emit imageDropped( qvariant_cast< QPixmap >( event->mimeData()->imageData() ) );
     }
 }
 

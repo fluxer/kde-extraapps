@@ -666,7 +666,7 @@ void TranslationUnitTextEdit::insertFromMimeData(const QMimeData* source)
         QByteArray data=source->data("application/x-lokalize-xliff+xml");
         QDataStream in(&data,QIODevice::ReadOnly);
         in>>v;
-        //qWarning()<<"ins"<<qVariantValue<CatalogString>(v).string<<qVariantValue<CatalogString>(v).ranges.size();
+        //qWarning()<<"ins"<<qvariant_cast<CatalogString>(v).string<<qvariant_cast<CatalogString>(v).ranges.size();
 
         int start=0;
         m_catalog->beginMacro(i18nc("@item Undo action item","Insert text with markup"));
@@ -688,7 +688,7 @@ void TranslationUnitTextEdit::insertFromMimeData(const QMimeData* source)
             start=textCursor().position();
         }
 
-        insertCatalogString(qVariantValue<CatalogString>(v), start);
+        insertCatalogString(qvariant_cast<CatalogString>(v), start);
         m_catalog->endMacro();
     }
     else

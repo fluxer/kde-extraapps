@@ -167,7 +167,7 @@ void VcsEventModel::jobReceivedResults(KJob* job)
     {
         if( qVariantCanConvert<KDevelop::VcsEvent>( v ) )
         {
-            newevents << qVariantValue<KDevelop::VcsEvent>( v );
+            newevents << qvariant_cast<KDevelop::VcsEvent>( v );
         }
     }
     d->m_rev = newevents.last().revision();
