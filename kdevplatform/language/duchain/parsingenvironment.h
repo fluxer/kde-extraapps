@@ -124,7 +124,7 @@ typedef KSharedPtr<ParsingEnvironmentFile> ParsingEnvironmentFilePointer;
  *
  * \warning Access to this class must be serialized through du-chain locking
  * */
-class KDEVPLATFORMLANGUAGE_EXPORT ParsingEnvironmentFile : public DUChainBase, public KShared
+class KDEVPLATFORMLANGUAGE_EXPORT ParsingEnvironmentFile : public DUChainBase, public QSharedData
 {
   public:
     virtual ~ParsingEnvironmentFile();

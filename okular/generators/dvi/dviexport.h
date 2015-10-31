@@ -30,7 +30,7 @@ class KProcess;
 class QStringList;
 
 
-class DVIExport: public QObject, public KShared
+class DVIExport: public QObject, public QSharedData
 {
   Q_OBJECT
 public:

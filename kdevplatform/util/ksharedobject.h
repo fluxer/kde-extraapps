@@ -58,7 +58,7 @@ struct FakeAtomic {
     QSharedData& m_real;
 };
 
-struct KSharedObject : public KShared {
+struct KSharedObject : public QSharedData {
   inline KSharedObject(QObject& object) : ref(object, *this) {
   }
   
