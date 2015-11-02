@@ -43,8 +43,6 @@
 #include <solid/opticaldrive.h>
 
 #include <KConfigGroup>
-#include <KEncodingProber>
-
 #include <KSharedConfig>
 
 #include <QDir>
@@ -161,10 +159,8 @@ AudioCdCollection::infoFetchComplete( KJob *job )
     KIO::StoredTransferJob *tjob = static_cast<KIO::StoredTransferJob*>( job );
     QString cddbInfo = tjob->data();
 
-    KEncodingProber prober;
-    KEncodingProber::ProberState result = prober.feed( tjob->data() );
-    if( result != KEncodingProber::NotMe )
-        cddbInfo = QTextCodec::codecForName( prober.encoding() )->toUnicode( tjob->data() );
+    QTextCodec *codec = QTextCodec::codecForUtfText( cddbInfo );
+    cddbInfo = codec->toUnicode( cddbInfo );
 
     debug() << "Encoding: " << prober.encoding();
     debug() << "got cddb info: " << cddbInfo;

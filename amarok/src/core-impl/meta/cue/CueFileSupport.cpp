@@ -20,8 +20,6 @@
 #include "core/support/Debug.h"
 #include "core-impl/meta/timecode/TimecodeMeta.h"
 
-#include <KEncodingProber>
-
 #include <QDir>
 #include <QFile>
 #include <QTextCodec>
@@ -70,13 +68,10 @@ CueFileItemMap CueFileSupport::loadCueFile( const KUrl &cuefile, const KUrl &tra
         {
             QTextStream stream ( &file );
             QString line;
-            KEncodingProber prober;
 
-            KEncodingProber::ProberState result = prober.feed( file.readAll() );
             file.seek( 0 );
 
-            if( result != KEncodingProber::NotMe )
-                stream.setCodec( QTextCodec::codecForName( prober.encoding() ) );
+            stream.setAutoDetectUnicode(true);
 
             debug() << "Encoding: " << prober.encoding();
 
