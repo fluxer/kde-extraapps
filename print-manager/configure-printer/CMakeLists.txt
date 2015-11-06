@@ -18,13 +18,21 @@ qt4_add_dbus_adaptor(configureprinter_SRCS
     ConfigurePrinterInterface
 )
 
-configure_file(org.kde.ConfigurePrinter.service.in org.kde.ConfigurePrinter.service)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.ConfigurePrinter.service DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+configure_file(
+    org.kde.ConfigurePrinter.service.in
+    org.kde.ConfigurePrinter.service
+)
+
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.ConfigurePrinter.service
+    DESTINATION ${DBUS_SERVICES_INSTALL_DIR}
+)
 
 add_executable(configure-printer ${configureprinter_SRCS})
+
 target_link_libraries(configure-printer
     ${KDE4_KIO_LIBS}
-    ${CUPS_LIB}
+    ${CUPS_LIBRARIES}
     kcupslib
 )
 

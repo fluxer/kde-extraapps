@@ -20,7 +20,7 @@ set(libkcups_SRCS
 add_library(kcupslib SHARED ${libkcups_SRCS})
 target_link_libraries(kcupslib
     ${KDE4_KIO_LIBS}
-    ${CUPS_LIB}
+    ${CUPS_LIBRARIES}
 )
 
 install(TARGETS kcupslib ${INSTALL_TARGETS_DEFAULT_ARGS})

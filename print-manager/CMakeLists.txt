@@ -1,21 +1,19 @@
 project(print-manager)
 
-find_package(KDE4 4.14.3 REQUIRED)
-find_package(CUPS "1.5" REQUIRED)
-include (MacroLibrary)
-
+find_package(Cups "1.5" REQUIRED)
+include(MacroLibrary)
 
 # Print-Manager version
 set(PM_VERSION "0.3.0" CACHE STRING "Print Manager version")
 
 # Generate config.h
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake
-               ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config.h
+)
 
-include(KDE4Defaults)
-
-add_definitions(${QT_DEFINITIONS} ${KDE_DEFINITIONS})
-include_directories(${CMAKE_SOURCE_DIR}
+include_directories(
+    ${CMAKE_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${KDE4_INCLUDES}
