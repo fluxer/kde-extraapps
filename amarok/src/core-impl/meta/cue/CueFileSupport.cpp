@@ -73,8 +73,6 @@ CueFileItemMap CueFileSupport::loadCueFile( const KUrl &cuefile, const KUrl &tra
 
             stream.setAutoDetectUnicode(true);
 
-            debug() << "Encoding: " << prober.encoding();
-
             while ( !stream.atEnd() )
             {
                 line = stream.readLine().simplified();

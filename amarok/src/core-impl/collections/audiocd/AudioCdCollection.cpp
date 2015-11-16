@@ -162,7 +162,6 @@ AudioCdCollection::infoFetchComplete( KJob *job )
     QTextCodec *codec = QTextCodec::codecForUtfText( cddbInfo );
     cddbInfo = codec->toUnicode( cddbInfo );
 
-    debug() << "Encoding: " << prober.encoding();
     debug() << "got cddb info: " << cddbInfo;
     if (cddbInfo.length() == 0) {
         job->deleteLater();
