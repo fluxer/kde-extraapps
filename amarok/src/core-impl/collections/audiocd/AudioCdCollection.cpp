@@ -159,9 +159,6 @@ AudioCdCollection::infoFetchComplete( KJob *job )
     KIO::StoredTransferJob *tjob = static_cast<KIO::StoredTransferJob*>( job );
     QString cddbInfo = tjob->data();
 
-    QTextCodec *codec = QTextCodec::codecForUtfText( cddbInfo );
-    cddbInfo = codec->toUnicode( cddbInfo );
-
     debug() << "got cddb info: " << cddbInfo;
     if (cddbInfo.length() == 0) {
         job->deleteLater();

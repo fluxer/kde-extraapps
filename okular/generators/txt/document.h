@@ -17,8 +17,5 @@ namespace Txt
         public:
             Document( const QString &fileName );
             ~Document();
-
-        private:
-            QString toUnicode( const QByteArray &array );
     };
 }

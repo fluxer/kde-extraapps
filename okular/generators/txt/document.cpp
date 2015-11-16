@@ -32,15 +32,10 @@ Document::Document( const QString &fileName )
     }
 
     const QByteArray buffer = plainFile.readAll();
-    setPlainText( toUnicode(buffer) );
+    QTextCodec *codec = QTextCodec::codecForUtfText(buffer);
+    setPlainText( codec->toUnicode( buffer ) );
 }
 
 Document::~Document()
 {
-}
-
-QString Document::toUnicode( const QByteArray &array )
-{
-    QTextCodec *codec = QTextCodec::codecForUtfText(array);
-    return codec->toUnicode( array );
 }
