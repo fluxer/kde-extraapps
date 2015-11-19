@@ -75,9 +75,8 @@
  */
 
 KMixWindow::KMixWindow(bool invisible) :
-    KXmlGuiWindow(0,
-        Qt::WindowFlags(
-            KDE_DEFAULT_WINDOWFLAGS | Qt::WindowContextHelpButtonHint)), m_multiDriverMode(false), // -<- I never-ever want the multi-drivermode to be activated by accident
+    KXmlGuiWindow(0, Qt::WindowContextHelpButtonHint),
+    m_multiDriverMode(false), // -<- I never-ever want the multi-drivermode to be activated by accident
     m_dockWidget(), m_dsm(0), m_dontSetDefaultCardOnStart(false)
 {
   setObjectName(QLatin1String("KMixWindow"));

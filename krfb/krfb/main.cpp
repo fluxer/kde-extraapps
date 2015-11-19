@@ -28,6 +28,7 @@
 #include <KLocale>
 #include <KMessageBox>
 #include <KNotification>
+#include <kdeversion.h>
 
 #include <QtGui/QPixmap>
 #include <QtGui/qwindowdefs.h>
