@@ -1,10 +1,5 @@
 project(ksnapshot)
 
-find_package(KDE4 4.14.3 REQUIRED)
-
-include(KDE4Defaults)
-include(MacroLibrary)
-
 macro_optional_find_package(Kipi)
 
 add_definitions (${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS})

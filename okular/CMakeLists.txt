@@ -1,12 +1,12 @@
 project(okular)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-include(MacroLibrary)
-include(MacroOptionalAddSubdirectory)
-
 macro_optional_find_package(QImageBlitz)
-macro_log_feature(QIMAGEBLITZ_FOUND "QImageBlitz" "An image effects library" "http://sourceforge.net/projects/qimageblitz" TRUE "kdesupport" "Required to build Okular.")
+set_package_properties(QImageBlitz PROPERTIES
+    DESCRIPTION "An image effects library"
+    URL "http://sourceforge.net/projects/qimageblitz"
+    PURPOSE "Required to build Okular."
+    TYPE REQUIRED
+)
 
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)

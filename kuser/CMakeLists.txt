@@ -1,11 +1,5 @@
 project(kuser)
 
-# search packages used by KDE
-find_package(KDE4 4.14.3 REQUIRED)
-include (KDE4Defaults)
-include (MacroLibrary)
-
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions( -DQT_NO_CAST_FROM_ASCII )
 add_definitions( -DQT_NO_CAST_TO_ASCII )
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
@@ -52,30 +46,27 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ku_config.h.cmake ${CMAKE_CURRENT_BIN
 
 
 set(kuser_SRCS
-	ku_mainwidget.cpp
-	ku_mainview.cpp
-	ku_edituser.cpp
-	ku_editgroup.cpp
-	ku_usermodel.cpp
-	ku_groupmodel.cpp
-	ku_deluser.cpp
-	ku_user.cpp
-	ku_group.cpp
-	ku_main.cpp
-	ku_misc.cpp
-	ku_pwdlg.cpp
-	ku_adduser.cpp
-	ku_configdlg.cpp
-	ku_global.cpp
-	sid.cpp
-	ku_userfiles.cpp
-	ku_groupfiles.cpp
-	ku_usersystem.cpp
-	ku_groupsystem.cpp
-	ku_selectconn.cpp
-	ku_filessettings.ui
-	ku_generalsettings.ui
-	ku_passwordpolicy.ui
+    ku_mainwidget.cpp
+    ku_mainview.cpp
+    ku_edituser.cpp
+    ku_editgroup.cpp
+    ku_usermodel.cpp
+    ku_groupmodel.cpp
+    ku_deluser.cpp
+    ku_user.cpp
+    ku_group.cpp
+    ku_main.cpp
+    ku_misc.cpp
+    ku_pwdlg.cpp
+    ku_adduser.cpp
+    ku_configdlg.cpp
+    ku_global.cpp
+    sid.cpp
+    ku_userfiles.cpp
+    ku_groupfiles.cpp
+    ku_usersystem.cpp
+    ku_groupsystem.cpp
+    ku_selectconn.cpp
 )
 
 kde4_add_kcfg_files(kuser_SRCS ku_prefs.kcfgc)

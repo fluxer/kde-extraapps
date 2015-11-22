@@ -1,9 +1,5 @@
 project(kmix)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-include(MacroLibrary)
-
 # Do not yet REQUIRE Phonon. Hint: As long as we do not find_package(), ${KDE4_PHONON_LIBS} will be empty below, but that should not hurt.
 #find_package(Phonon REQUIRED)
 
