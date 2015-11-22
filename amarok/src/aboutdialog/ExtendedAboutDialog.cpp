@@ -41,6 +41,7 @@
 #include <kstandarddirs.h>
 #include <ktextbrowser.h>
 #include <ktitlewidget.h>
+#include <kdeversion.h>
 #include <solid/networking.h>
 
 
