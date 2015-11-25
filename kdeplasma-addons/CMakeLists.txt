@@ -2,10 +2,6 @@ project(kdeplasma-addons)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
 
-find_package(KDE4 4.14.3 REQUIRED)
-include (KDE4Defaults)
-include(MacroLibrary)
-
 macro_optional_find_package(KDE4Workspace)
 macro_log_feature(KDE4WORKSPACE_FOUND "kdebase workspace" "KDE base workspace libraries" "http://www.kde.org" FALSE "" "Needed for building several Plasma plugins")
 

@@ -12,13 +12,9 @@ set(KDEVPLATFORM_LIB_SOVERSION 8)
 
 ################################################################################
 
-cmake_minimum_required(VERSION 2.8.9)
 project(KDevPlatform)
 
 set(CMAKE_MODULE_PATH ${KDevPlatform_SOURCE_DIR}/cmake/modules)
-
-set(KDE_MIN_VERSION "4.7.0")
-find_package(KDE4 4.7.0 REQUIRED)
 
 find_package(Grantlee 0.1.7)
 find_package(QJSON)
@@ -30,10 +26,6 @@ if (QJSON_VERSION VERSION_LESS "0.7.2")
     set(QJSON_LIBRARIES   ${qjson_LIBRARIES})
     set(QJSON_INCLUDE_DIR ${qjson_INCLUDE_DIR})
 endif()
-
-include (KDE4Defaults)
-include (MacroWriteBasicCMakeVersionFile)
-include (MacroLibrary)
 
 # Make sure that we're having RPATH on our installed libs, else using kdevelop
 # from prefixes like $HOME/kdevelop breaks

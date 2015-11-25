@@ -1,10 +1,5 @@
 project(gwenview)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-include(MacroLibrary)
-include(MacroOptionalAddSubdirectory)
-
 ## Dependencies
 find_package(JPEG)
 macro_log_feature(JPEG_FOUND "libjpeg" "JPEG image manipulation support" "http://libjpeg.sourceforge.net/" TRUE)

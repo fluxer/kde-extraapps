@@ -19,8 +19,6 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Tell CMake about or own modules
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-find_package(KDE4 4.14.3 REQUIRED)
-include( KDE4Defaults )
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES})
 
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
@@ -61,9 +59,6 @@ endif()
 # Set up Qt
 #####################################################################
 
-message(STATUS "Building for Qt4...")
-set(QT_MIN_VERSION "4.6.0")
-
 # Select a Qt installation here, if you don't want to use system Qt
 if(QT_PATH)
     # FindQt4 will look for the qmake binary in $PATH, so we just prepend QT_PATH
@@ -75,8 +70,6 @@ endif()
 # Note that you can forcefully disable optional packages
 # using -DCMAKE_DISABLE_FIND_PACKAGE_<PkgName>=TRUE
 #####################################################################
-
-find_package(Qt4 ${QT_MIN_VERSION} QUIET REQUIRED)
 
 add_feature_info("QtDBus module" QT_QTDBUS_FOUND "Needed for supporting D-Bus-based notifications and tray icon, used by most modern desktop environments")
 if (QT_QTDBUS_FOUND)

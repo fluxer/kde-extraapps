@@ -1,5 +1,3 @@
-find_package(KDE4 REQUIRED)
-find_package(Qt4 COMPONENTS QtGui QtCore QtXml REQUIRED)
 find_package(LibXslt REQUIRED)
 
 include(${QT_USE_FILE})

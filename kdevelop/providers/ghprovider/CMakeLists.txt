@@ -1,9 +1,6 @@
 
 project(ghprovider)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include (KDE4Defaults)
-
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
 if(NOT QJSON_FOUND)
     message("Could not find QJson" FATAL_ERROR)

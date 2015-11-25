@@ -5,17 +5,12 @@ set(libkscreen_VERSION_RELEASE 4)
 set(libkscreen_VERSION "${libkscreen_VERSION_MAJOR}.${libkscreen_VERSION_MINOR}.${libkscreen_VERSION_RELEASE}")
 add_definitions(-DLIBKSCREEN_VERSION="${libkscreen_VERSION}")
 
-cmake_minimum_required(VERSION 2.8.0)
-
 if(POLICY CMP0017)
   cmake_policy(SET CMP0017 NEW)
 endif()
 
 enable_testing()
-find_package(Qt4 REQUIRED)
-find_package(KDE4 4.14.3 REQUIRED)
 find_package(QJSON 0.8 REQUIRED)
-include(KDE4Defaults)
 add_definitions(${KDE4_DEFINITIONS})
 include(CheckCXXCompilerFlag)
 

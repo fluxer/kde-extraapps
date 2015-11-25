@@ -1,10 +1,5 @@
 project(AudioThumbs)
 
-cmake_minimum_required(VERSION 2.6.2)
-
-find_package(KDE4 REQUIRED)
-include (KDE4Defaults)
-
 set(WITH_TAGLIB ON CACHE BOOL "build with TagLib")
 set(WITH_FLAC ON CACHE BOOL "build with FLAC")
 

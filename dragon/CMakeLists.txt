@@ -1,9 +1,5 @@
 project(DragonPlayer)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-include(MacroLibrary)
-
 include_directories(${KDE4_INCLUDES})
 
 include_directories(
@@ -12,7 +8,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src/app
     ${CMAKE_CURRENT_BINARY_DIR}
-    )
+)
 
 include(CheckIncludeFiles)
 check_include_files(unistd.h HAVE_UNISTD_H)

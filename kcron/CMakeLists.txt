@@ -1,10 +1,5 @@
 project(kcron)
 
-find_package(KDE4 4.14.3 REQUIRED)
-
-include(KDE4Defaults)
-include(MacroLibrary)
-
 include(CheckIncludeFile)
 include(CheckIncludeFiles)
 include(CheckSymbolExists)

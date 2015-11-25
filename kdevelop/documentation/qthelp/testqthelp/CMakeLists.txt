@@ -1,9 +1,5 @@
 project(testqthelp)
 
-cmake_minimum_required(VERSION 2.6)
-
-find_package(Qt4 4.5.0 COMPONENTS QtCore QtGui QtHelp QtWebKit REQUIRED)
-
 include_directories(${QT_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR})
 set(testqthelp_SRCS docwidget.cpp main.cpp)
 qt4_wrap_ui(testqthelp_SRCS docwidget.ui)

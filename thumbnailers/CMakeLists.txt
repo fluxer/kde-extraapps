@@ -1,10 +1,5 @@
 project(kdegraphics-thumbnailers)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-include(MacroLibrary)
-include(MacroOptionalAddSubdirectory)
-
 add_definitions(
     ${QT_DEFINITIONS}
     ${KDE4_DEFINITIONS}
@@ -22,7 +17,6 @@ set_package_properties(GettextPO PROPERTIES
 )
 
 macro_optional_add_subdirectory(audio)
-
 macro_optional_add_subdirectory(ps)
 macro_optional_add_subdirectory(raw)
 

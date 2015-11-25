@@ -7,18 +7,9 @@ set( KDEVPLATFORM_VERSION "1.${KDEVELOP_VERSION_MINOR}.${KDEVELOP_VERSION_PATCH}
 
 ################################################################################
 
-cmake_minimum_required(VERSION 2.8.9)
-
 project(KDevelop)
 
 set(CMAKE_MODULE_PATH ${KDevelop_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
-
-set(KDE_MIN_VERSION "4.7.0")
-find_package(KDE4 4.7.0 REQUIRED)
-
-include (KDE4Defaults)
-include (MacroLibrary)
-include (MacroOptionalAddSubdirectory)
 
 find_package(QJSON)
 # QJSON <=0.7.1 provides variables with lower case prefix, see bug 331426

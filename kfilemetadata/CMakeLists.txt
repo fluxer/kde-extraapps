@@ -1,10 +1,5 @@
 project(kfilemetadata)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-
-set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules" ${CMAKE_MODULE_PATH})
-
 find_package(PopplerQt4 0.12.1)
 set_package_properties(PopplerQt4 PROPERTIES DESCRIPTION "A PDF rendering library"
                        URL "http://poppler.freedesktop.org" TYPE OPTIONAL

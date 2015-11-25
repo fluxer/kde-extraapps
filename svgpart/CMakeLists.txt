@@ -1,15 +1,11 @@
 project(svgpart)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-include(MacroLibrary)
-
 add_definitions(${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories(${QDBUS_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
 set(svgpart_SRCS
-	svgpart.cpp
-	)
+    svgpart.cpp
+)
 
 kde4_add_plugin(svgpart ${svgpart_SRCS})
 

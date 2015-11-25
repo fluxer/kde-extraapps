@@ -1,9 +1,5 @@
 project(libbluedevil)
 
-cmake_minimum_required(VERSION 2.6.4)
-
-find_package(Qt4 REQUIRED)
-
 include(CheckCXXCompilerFlag)
 include(GNUInstallDirs)
 

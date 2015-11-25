@@ -2,7 +2,6 @@ project(Amarok-Update-Signer)
 
 cmake_minimum_required(VERSION 2.6.2)
 
-find_package(Qt4 REQUIRED)
 find_package(KDE4 REQUIRED) #Needed for the QCA2 check to work
 find_package(QCA2 REQUIRED)
 
