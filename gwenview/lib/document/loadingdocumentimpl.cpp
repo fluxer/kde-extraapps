@@ -47,15 +47,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 // Local
 #include "animateddocumentloadedimpl.h"
-#include "cms/cmsprofile.h"
 #include "document.h"
 #include "documentloadedimpl.h"
 #include "emptydocumentimpl.h"
 #include "exiv2imageloader.h"
 #include "gvdebug.h"
 #include "imageutils.h"
-#include "jpegcontent.h"
-#include "jpegdocumentloadedimpl.h"
 #include "orientation.h"
 #include "svgdocumentloadedimpl.h"
 #include "urlutils.h"
@@ -99,9 +96,7 @@ struct LoadingDocumentImplPrivate
     QByteArray mFormat;
     QSize mImageSize;
     Exiv2::Image::AutoPtr mExiv2Image;
-    std::auto_ptr<JpegContent> mJpegContent;
     QImage mImage;
-    Cms::Profile::Ptr mCmsProfile;
 
     /**
      * Determine kind of document and switch to an implementation if it is not
@@ -193,9 +188,6 @@ struct LoadingDocumentImplPrivate
         if (KDcrawIface::KDcraw::rawFilesList().contains(QString(mFormatHint))) {
             QByteArray previewData;
 
-            // if the image is in format supported by dcraw, fetch its embedded preview
-            mJpegContent.reset(new JpegContent());
-
             // use KDcraw for getting the embedded preview
             // KDcraw functionality cloned locally (temp. solution)
             bool ret = KDcrawIface::KDcraw::loadEmbeddedPreview(previewData, buffer);
@@ -255,29 +247,7 @@ struct LoadingDocumentImplPrivate
             mExiv2Image = loader.popImage();
         }
 
-        if (mFormat == "jpeg" && mExiv2Image.get()) {
-            mJpegContent.reset(new JpegContent());
-        }
-
-        if (mJpegContent.get()) {
-            if (!mJpegContent->loadFromData(mData, mExiv2Image.get()) &&
-                !mJpegContent->loadFromData(mData)) {
-                kWarning() << "Unable to use preview of " << q->document()->url().fileName();
-                return false;
-            }
-            // Use the size from JpegContent, as its correctly transposed if the
-            // image has been rotated
-            mImageSize = mJpegContent->size();
-
-            mCmsProfile = Cms::Profile::loadFromExiv2Image(mExiv2Image.get());
-
-        }
-
         LOG("mImageSize" << mImageSize);
-
-        if (!mCmsProfile) {
-            mCmsProfile = Cms::Profile::loadFromImageData(mData, mFormat);
-        }
 
         return true;
     }
@@ -309,12 +279,6 @@ struct LoadingDocumentImplPrivate
         if (!ok) {
             LOG("QImageReader::read() failed");
             return;
-        }
-
-        if (mJpegContent.get() && GwenviewConfig::applyExifOrientation()) {
-            Gwenview::Orientation orientation = mJpegContent->orientation();
-            QMatrix matrix = ImageUtils::transformMatrix(orientation);
-            mImage = mImage.transformed(matrix);
         }
 
         if (reader.supportsAnimation()
@@ -482,7 +446,6 @@ void LoadingDocumentImpl::slotMetaInfoLoaded()
     setDocumentFormat(d->mFormat);
     setDocumentImageSize(d->mImageSize);
     setDocumentExiv2Image(d->mExiv2Image);
-    setDocumentCmsProfile(d->mCmsProfile);
 
     d->mMetaInfoLoaded = true;
     emit metaInfoLoaded();
@@ -532,15 +495,9 @@ void LoadingDocumentImpl::slotImageLoaded()
     LOG("Loaded a full image");
     setDocumentImage(d->mImage);
     DocumentLoadedImpl* impl;
-    if (d->mJpegContent.get()) {
-        impl = new JpegDocumentLoadedImpl(
-            document(),
-            d->mJpegContent.release());
-    } else {
-        impl = new DocumentLoadedImpl(
-            document(),
-            d->mData);
-    }
+    impl = new DocumentLoadedImpl(
+        document(),
+        d->mData);
     switchToImpl(impl);
 }
 

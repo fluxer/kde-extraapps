@@ -30,7 +30,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Local
 #include <lib/about.h>
-#include <lib/imageformats/imageformats.h>
 #include "importdialog.h"
 
 int main(int argc, char *argv[])
@@ -64,8 +63,6 @@ int main(int argc, char *argv[])
     }
     QString deviceUdi = args->isSet("udi") ? args->getOption("udi") : QString();
     args->clear();
-
-    Gwenview::ImageFormats::registerPlugins();
 
     Gwenview::ImportDialog* dialog = new Gwenview::ImportDialog();
     dialog->show();

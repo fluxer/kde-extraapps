@@ -1,66 +1,17 @@
 project(gwenviewlib)
 
-# Extract version of libjpeg so that we can use the appropriate dir
-# See bug #227313
-message(STATUS "Looking for libjpeg version in ${JPEG_INCLUDE_DIR}/jpeglib.h")
-file(READ "${JPEG_INCLUDE_DIR}/jpeglib.h" jpeglib_h_content)
-string(REGEX MATCH "#define +JPEG_LIB_VERSION +([0-9]+)" "\\1" jpeglib_version "${jpeglib_h_content}")
-set(jpeglib_version ${CMAKE_MATCH_1})
 
-if ("${jpeglib_version}" STREQUAL "")
-    message(STATUS "No version defined in ${JPEG_INCLUDE_DIR}/jpeglib.h, looking for jconfig.h")
-    # libjpeg-turbo keeps JPEG_LIB_VERSION in jconfig.h, not jpeglib.h :/
-    find_file(JCONFIG_H jconfig.h
-        PATHS "${JPEG_INCLUDE_DIR}"
-        PATH_SUFFIXES "${CMAKE_LIBRARY_ARCHITECTURE}"
-        )
-    if (NOT EXISTS "${JCONFIG_H}")
-        message(FATAL_ERROR "Could not find jconfig.h. This file comes with libjpeg. You can specify its path with -DJCONFIG_H=/path/to/jconfig.h.")
-    endif()
-    message(STATUS "Found jconfig.h: ${JCONFIG_H}")
-    message(STATUS "Looking for libjpeg version in ${JCONFIG_H}")
-    file(READ "${JCONFIG_H}" jconfig_h_content)
-    string(REGEX MATCH "#define +JPEG_LIB_VERSION +([0-9]+)" "\\1" jpeglib_version "${jconfig_h_content}")
-    set(jpeglib_version ${CMAKE_MATCH_1})
-endif()
-
-if ("${jpeglib_version}" LESS 80)
-    set(GV_JPEG_DIR libjpeg-62)
-endif()
-
-if ("${jpeglib_version}" EQUAL 80)
-    set(GV_JPEG_DIR libjpeg-80)
-endif()
-
-if ("${jpeglib_version}" EQUAL 90)
-    set(GV_JPEG_DIR libjpeg-90)
-endif()
-
-if ("${GV_JPEG_DIR}" STREQUAL "")
-    message(FATAL_ERROR "Unknown libjpeg version: ${jpeglib_version}")
-endif()
-
-message(STATUS "libjpeg version: ${jpeglib_version}")
-
-add_definitions(-Dlibjpeg_EXPORTS)
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/${GV_JPEG_DIR}
+    # For config-gwenview.h
+    ${CMAKE_CURRENT_BINARY_DIR}/..
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${CMAKE_CURRENT_BINARY_DIR}
     ${EXIV2_INCLUDE_DIR}
     ${JPEG_INCLUDE_DIR}
     ${PNG_INCLUDE_DIRS}
-    )
-
-# For config-gwenview.h
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}/..
-    )
+)
 
 set(gwenviewlib_SRCS
-    cms/iccjpeg.c
-    cms/cmsprofile.cpp
-    cms/cmsprofile_png.cpp
     contextmanager.cpp
     crop/cropwidget.cpp
     crop/cropimageoperation.cpp
@@ -72,7 +23,6 @@ set(gwenviewlib_SRCS
     document/documentfactory.cpp
     document/documentloadedimpl.cpp
     document/emptydocumentimpl.cpp
-    document/jpegdocumentloadedimpl.cpp
     document/loadingdocumentimpl.cpp
     document/loadingjob.cpp
     document/savejob.cpp
@@ -113,15 +63,10 @@ set(gwenviewlib_SRCS
     hud/hudtheme.cpp
     hud/hudwidget.cpp
     graphicswidgetfloater.cpp
-    imageformats/imageformats.cpp
-    imageformats/jpegplugin.cpp
-    imageformats/jpeghandler.cpp
     imagemetainfomodel.cpp
     imagescaler.cpp
     imageutils.cpp
     invisiblebuttongroup.cpp
-    iodevicejpegsourcemanager.cpp
-    jpegcontent.cpp
     kindproxymodel.cpp
     memoryutils.cpp
     mimetypeutils.cpp
@@ -159,12 +104,6 @@ set(gwenviewlib_SRCS
     zoomslider.cpp
     zoomwidget.cpp
     sorteddirmodel.cpp
-    ${GV_JPEG_DIR}/transupp.c
-    crop/cropwidget.ui
-    documentview/messageview.ui
-    print/printoptionspage.ui
-    redeyereduction/redeyereductionwidget.ui
-    resize/resizeimagewidget.ui
 )
 
 set_source_files_properties(

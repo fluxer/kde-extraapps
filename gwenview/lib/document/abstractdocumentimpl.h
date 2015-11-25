@@ -110,7 +110,6 @@ protected:
     void setDocumentFormat(const QByteArray& format);
     void setDocumentExiv2Image(Exiv2::Image::AutoPtr);
     void setDocumentDownSampledImage(const QImage&, int invertedZoom);
-    void setDocumentCmsProfile(Cms::Profile::Ptr profile);
     void setDocumentErrorString(const QString&);
     void switchToImpl(AbstractDocumentImpl*  impl);
 

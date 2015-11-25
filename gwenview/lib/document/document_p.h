@@ -61,7 +61,6 @@ struct DocumentPrivate
     ImageMetaInfoModel mImageMetaInfoModel;
     QUndoStack mUndoStack;
     QString mErrorString;
-    Cms::Profile::Ptr mCmsProfile;
     /** @} */
 
     void scheduleImageLoading(int invertedZoom);

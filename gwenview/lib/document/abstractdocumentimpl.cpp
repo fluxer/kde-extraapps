@@ -92,9 +92,4 @@ void AbstractDocumentImpl::setDocumentErrorString(const QString& string)
     d->mDocument->setErrorString(string);
 }
 
-void AbstractDocumentImpl::setDocumentCmsProfile(Cms::Profile::Ptr profile)
-{
-    d->mDocument->setCmsProfile(profile);
-}
-
 } // namespace

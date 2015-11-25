@@ -23,7 +23,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Local
 #include "imageutils.h"
-#include "jpegcontent.h"
 #include "gwenviewconfig.h"
 #include "exiv2imageloader.h"
 
@@ -66,69 +65,15 @@ bool ThumbnailContext::load(const QString &pixPath, int pixelSize)
     QByteArray formatHint = pixPath.section('.', -1).toAscii().toLower();
     QImageReader reader(pixPath);
 
-    JpegContent content;
     QByteArray format;
     QByteArray data;
     QBuffer buffer;
     int previewRatio = 1;
 
-    // raw images deserve special treatment
-    if (KDcrawIface::KDcraw::rawFilesList().contains(QString(formatHint))) {
-        // use KDCraw to extract the preview
-        bool ret = KDcrawIface::KDcraw::loadEmbeddedPreview(data, pixPath);
-
-        // We need QImage. Loading JpegContent from QImage - exif lost
-        // Loading QImage from JpegContent - unimplemented, would go with loadFromData
-        if (!ret || !originalImage.loadFromData(data) || qMin(originalImage.width(), originalImage.height()) < MIN_PREV_SIZE) {
-            // if the emebedded preview loading failed or gets just a small image, load
-            // half preview instead. That's slower...
-            if (!KDcrawIface::KDcraw::loadHalfPreview(data, pixPath)) {
-                kWarning() << "unable to get preview for " << pixPath.toUtf8().constData();
-                return false;
-            }
-            previewRatio = 2;
-        }
-
-        // And we need JpegContent too because of EXIF (orientation!).
-        if (!content.loadFromData(data)) {
-            kWarning() << "unable to load preview for " << pixPath.toUtf8().constData();
-            return false;
-        }
-
-        buffer.setBuffer(&data);
-        buffer.open(QIODevice::ReadOnly);
-        reader.setDevice(&buffer);
-        reader.setFormat(formatHint);
-    } else {
-        if (!reader.canRead()) {
-            reader.setDecideFormatFromContent(true);
-            // Set filename again, otherwise QImageReader won't restart from scratch
-            reader.setFileName(pixPath);
-        }
-
-        if (reader.format() == "jpeg" && GwenviewConfig::applyExifOrientation()) {
-            content.load(pixPath);
-        }
-    }
-
-    // If there's jpeg content (from jpg or raw files), try to load an embedded thumbnail, if available.
-    // If applyExifOrientation is not set, don't use the
-    // embedded thumbnail since it might be rotated differently
-    // than the actual image
-    if (!content.rawData().isEmpty() && GwenviewConfig::applyExifOrientation()) {
-        QImage thumbnail = content.thumbnail();
-        orientation = content.orientation();
-
-        if (qMax(thumbnail.width(), thumbnail.height()) >= pixelSize) {
-            mImage = thumbnail;
-            if (orientation != NORMAL && orientation != NOT_AVAILABLE) {
-                QMatrix matrix = ImageUtils::transformMatrix(orientation);
-                mImage = mImage.transformed(matrix);
-            }
-            mOriginalWidth = content.size().width();
-            mOriginalHeight = content.size().height();
-            return true;
-        }
+    if (!reader.canRead()) {
+        reader.setDecideFormatFromContent(true);
+        // Set filename again, otherwise QImageReader won't restart from scratch
+        reader.setFileName(pixPath);
     }
 
     // Generate thumbnail from full image

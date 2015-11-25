@@ -38,7 +38,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Local
 #include <lib/about.h>
-#include <lib/imageformats/imageformats.h>
 #include "mainwindow.h"
 
 class StartHelper
@@ -127,7 +126,6 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions(options);
 
     KApplication app;
-    Gwenview::ImageFormats::registerPlugins();
 
     // startHelper must live for the whole life of the application
     StartHelper startHelper;

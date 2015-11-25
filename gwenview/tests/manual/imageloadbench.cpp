@@ -6,8 +6,6 @@
 #include <QImageReader>
 #include <QtCore/qdatetime.h>
 
-#include <lib/imageformats/imageformats.h>
-
 const int ITERATIONS = 2;
 const QSize SCALED_SIZE(1280, 800);
 
@@ -53,7 +51,6 @@ int main(int argc, char** argv)
 
     qDebug() << "Using Qt loader";
     bench(&buffer, "qt.png");
-    Gwenview::ImageFormats::registerPlugins();
     qDebug() << "Using Gwenview loader";
     bench(&buffer, "gv.png");
 
