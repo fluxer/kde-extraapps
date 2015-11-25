@@ -31,6 +31,8 @@
 
 #include <kdebug.h>
 
+#include "libkscreen-config.h"
+
 using namespace KScreen;
 
 XRandRConfig::XRandRConfig()

@@ -3,7 +3,13 @@ set(libkscreen_VERSION_MAJOR 1)
 set(libkscreen_VERSION_MINOR 0)
 set(libkscreen_VERSION_RELEASE 4)
 set(libkscreen_VERSION "${libkscreen_VERSION_MAJOR}.${libkscreen_VERSION_MINOR}.${libkscreen_VERSION_RELEASE}")
-add_definitions(-DLIBKSCREEN_VERSION="${libkscreen_VERSION}")
+set(LIBKSCREEN_VERSION "${libkscreen_VERSION}")
+
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/libkscreen-config.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/libkscreen-config.h
+    @ONLY
+)
 
 if(POLICY CMP0017)
   cmake_policy(SET CMP0017 NEW)
