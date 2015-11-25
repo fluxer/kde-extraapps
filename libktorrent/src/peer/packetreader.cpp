@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include "packetreader.h"
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <util/log.h>
 #include <util/file.h>
 #include <util/functions.h>

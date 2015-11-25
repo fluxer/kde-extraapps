@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "peermanager.h"
 
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <QFile>
 #include <QList>
 #include <QSet>

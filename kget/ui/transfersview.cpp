@@ -22,7 +22,7 @@
 #include <KMenu>
 #include <KRun>
 
-#include <QDropEvent>
+#include <QtGui/qevent.h>
 #include <QHeaderView>
 #include <QSignalMapper>
 #include <QHBoxLayout>

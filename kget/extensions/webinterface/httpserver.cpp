@@ -26,7 +26,7 @@
 #include <QTcpSocket>
 #include <QFile>
 #include <QDir>
-#include <QHttpRequestHeader>
+#include <QtNetwork/qhttp.h>
 #include <QDateTime>
 
 HttpServer::HttpServer(QWidget *parent)

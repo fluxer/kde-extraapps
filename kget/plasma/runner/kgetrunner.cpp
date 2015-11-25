@@ -14,7 +14,7 @@
 #include "kgetrunner.h"
 #include <QDBusInterface>
 #include <QDBusPendingCall>
-#include <QDBusPendingCallWatcher>
+#include <QtDBus/qdbuspendingcall.h>
 #include <QDBusPendingReply>
 #include <QDBusConnectionInterface>
 #include <QTimer>

@@ -16,7 +16,7 @@
 #include "../kget_export.h"
 
 #include <QPixmap>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <kurl.h>
 #include <kio/global.h>

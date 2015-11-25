@@ -29,8 +29,8 @@
 
 #include <QApplication>
 #include <QPainter>
-#include <QMouseEvent>
-#include <QModelIndex>
+#include <QtGui/qevent.h>
+#include <QtCore/qabstractitemmodel.h>
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QGroupBox>

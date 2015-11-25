@@ -13,10 +13,10 @@
 #define DROPTARGET_H
 
 #include <QWidget>
-#include <QDragEnterEvent>
-#include <QMouseEvent>
-#include <QDropEvent>
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
+
+
+
 
 #include "core/transfer.h"
 

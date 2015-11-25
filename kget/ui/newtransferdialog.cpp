@@ -30,7 +30,7 @@
 #include <QtCore/QTimer>
 
 #include <KLocale>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <KColorScheme>
 #include <KDebug>
 #include <KFileDialog>

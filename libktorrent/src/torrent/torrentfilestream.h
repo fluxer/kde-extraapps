@@ -22,7 +22,7 @@
 #define BT_TORRENTFILESTREAM_H
 
 #include <QIODevice>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QSharedPointer>
 #include <ktorrent_export.h>
 #include <util/bitset.h>

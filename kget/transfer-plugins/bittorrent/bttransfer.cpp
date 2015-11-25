@@ -40,7 +40,7 @@
 #include <KMessageBox>
 
 #include <QFile>
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QFileInfo>
 #include <QDir>
 

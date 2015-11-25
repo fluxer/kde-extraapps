@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
 #include "taskmanager.h"
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <util/log.h>
 #include "nodelookup.h"
 #include "dht.h"

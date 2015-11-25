@@ -32,7 +32,7 @@
 #include <QPainter>
 #include <QHBoxLayout>
 #include <QGraphicsProxyWidget>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QLabel>
 #include <QPushButton>
 #include <QProgressBar>

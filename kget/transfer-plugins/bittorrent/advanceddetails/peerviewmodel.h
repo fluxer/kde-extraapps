@@ -23,7 +23,7 @@
 
 #include <kicon.h>
 #include <QList>
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <interfaces/peerinterface.h>
 
 namespace kt

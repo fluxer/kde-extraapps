@@ -22,7 +22,7 @@
 #include <QtCore/QDir>
 #include <QtCore/QTimer>
 #include <QtCore/QVarLengthArray>
-#include <QtXml/QDomText>
+#include <QtXml/qdom.h>
 
 #include <KIO/FileJob>
 #include <KLocale>

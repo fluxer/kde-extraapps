@@ -46,7 +46,7 @@
 #include <KWindowSystem>
 
 #include <QTextStream>
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QApplication>
 #include <QClipboard>
 #include <QAbstractItemView>

@@ -26,7 +26,7 @@
 #include <KDebug>
 
 #include <QtCore/QFile>
-#include <QDomElement>
+#include <QtXml/qdom.h>
 
 TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
                          Scheduler * scheduler, const KUrl & source, const KUrl & dest,

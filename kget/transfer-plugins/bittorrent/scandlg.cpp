@@ -19,7 +19,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include "scandlg.h"
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kstandardguiitem.h>

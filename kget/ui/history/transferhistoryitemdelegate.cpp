@@ -17,10 +17,10 @@
 #include <QAbstractItemModel>
 #include <QAction>
 #include <QApplication>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 #include <QMenu>
-#include <QModelIndex>
-#include <QMouseEvent>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtGui/qevent.h>
 #include <QPainter>
 
 #include <KDebug>

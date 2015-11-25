@@ -25,7 +25,7 @@
 #include <KLocale>
 #include <KMessageBox>
 
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 #ifdef HAVE_QGPGME
 #include <gpgme++/context.h>

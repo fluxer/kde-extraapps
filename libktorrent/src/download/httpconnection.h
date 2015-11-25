@@ -23,7 +23,7 @@
 
 #include <QMutex>
 #include <QTimer>
-#include <QHttpRequestHeader>
+#include <QtNetwork/qhttp.h>
 #include <kurl.h>
 #include <net/streamsocket.h>
 #include <net/addressresolver.h>

@@ -14,7 +14,7 @@
 #include "settings.h"
 
 #include <QDateTime>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QList>
 #include <QThread>

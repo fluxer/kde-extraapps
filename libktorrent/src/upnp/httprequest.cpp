@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include <QTimer>
 #include <QHostAddress>
-#include <QHttpResponseHeader>
+#include <QtNetwork/qhttp.h>
 #include <QStringList>
 #include <klocale.h>
 #include <util/log.h>

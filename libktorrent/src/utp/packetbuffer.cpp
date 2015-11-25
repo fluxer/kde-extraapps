@@ -21,7 +21,7 @@
 #include "packetbuffer.h"
 #include <list>
 #include <QMutex>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include "utpprotocol.h"
 
 namespace utp

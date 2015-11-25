@@ -20,7 +20,7 @@
 #ifndef DBUSVERIFIERWRAPPER_H
 #define DBUSVERIFIERWRAPPER_H
 
-#include <QDBusVariant>
+#include <QtDBus/qdbusextratypes.h>
 #include <kio/global.h>
 
 class Verifier;

@@ -25,7 +25,7 @@
 #include <ktabwidget.h>
 
 #include <Solid/Networking>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 #include "kuiserverjobs.h"
 #include "scheduler.h"

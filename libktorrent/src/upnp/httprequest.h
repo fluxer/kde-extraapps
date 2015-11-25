@@ -24,7 +24,7 @@
 #include <QTcpSocket>
 #include <interfaces/exitoperation.h>
 #include <util/constants.h>
-#include <QHttpResponseHeader>
+#include <QtNetwork/qhttp.h>
 
 
 namespace bt

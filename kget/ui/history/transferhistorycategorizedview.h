@@ -14,7 +14,7 @@
 #include "ui/history/transferhistorycategorizeddelegate.h"
 
 #include <QWidget>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 class QDate;
 class QStandardItemModel;

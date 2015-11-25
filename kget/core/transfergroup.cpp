@@ -22,7 +22,7 @@
 
 #include <QFile>
 #include <QDateTime>
-#include <QDomElement>
+#include <QtXml/qdom.h>
 
 
 TransferGroup::TransferGroup(TransferTreeModel * model, Scheduler * parent, const QString & name)

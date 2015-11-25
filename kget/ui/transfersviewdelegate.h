@@ -16,7 +16,7 @@
 #include <KExtendableItemDelegate>
 
 #include <QToolButton>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 class QHBoxLayout;
 class QButtonGroup;

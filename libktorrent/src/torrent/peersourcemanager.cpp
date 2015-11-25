@@ -21,7 +21,7 @@
 #include <qfile.h>
 #include <qtextstream.h>
 #include <klocale.h>
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 // #include <functions.h>
 #include <util/log.h>
 #include <torrent/globals.h>

@@ -24,7 +24,7 @@
 #include "generalwidget.h"
 
 #include <QtCore/QTimer>
-#include <QtGui/QDragEnterEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QLabel>
 #include <QtGui/QSortFilterProxyModel>
 #include <QtGui/QStandardItemModel>

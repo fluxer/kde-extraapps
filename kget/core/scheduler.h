@@ -14,7 +14,7 @@
 
 #include <QObject>
 #include <QMap>
-#include <QTimerEvent>
+#include <QtCore/qcoreevent.h>
 
 #include "core/job.h"
 #include "core/jobqueue.h"

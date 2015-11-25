@@ -20,7 +20,7 @@
  ***************************************************************************/
 #include "httpconnection.h"
 #include <QTimer>
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <kurl.h>
 #include <klocale.h>
 #include <net/socketmonitor.h>

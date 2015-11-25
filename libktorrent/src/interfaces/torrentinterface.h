@@ -21,7 +21,7 @@
 #define BTTORRENTINTERFACE_H
 
 #include <QSharedPointer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <ktorrent_export.h>
 #include <util/constants.h>
 #include <interfaces/trackerslist.h>

@@ -25,7 +25,7 @@
 #include <torrent/torrent.h>
 #include <diskio/piecedata.h>
 #include <QString>
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <QSet>
 
 

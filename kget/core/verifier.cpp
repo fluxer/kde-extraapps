@@ -25,7 +25,7 @@
 
 #include <QtCore/QFile>
 #include <QtCore/QScopedPointer>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 #include <KCodecs>
 #include <KDebug>

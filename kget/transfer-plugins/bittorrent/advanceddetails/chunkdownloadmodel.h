@@ -21,7 +21,7 @@
 #ifndef KTCHUNKDOWNLOADMODEL_H
 #define KTCHUNKDOWNLOADMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <interfaces/chunkdownloadinterface.h>
 
 

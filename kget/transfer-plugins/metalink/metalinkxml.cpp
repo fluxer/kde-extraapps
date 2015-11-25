@@ -36,7 +36,7 @@
 #include <KStandardDirs>
 
 #include <QtCore/QFile>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 MetalinkXml::MetalinkXml(TransferGroup * parent, TransferFactory * factory,
                          Scheduler * scheduler, const KUrl & source, const KUrl & dest,

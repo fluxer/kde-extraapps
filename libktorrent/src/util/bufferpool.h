@@ -25,7 +25,7 @@
 #include <list>
 #include <boost/shared_array.hpp>
 #include <QMutex>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QSharedPointer>
 #include <ktorrent_export.h>
 #include <util/constants.h>

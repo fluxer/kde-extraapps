@@ -20,8 +20,8 @@
 #include <kiconloader.h>
 #include <klocale.h>
 
-#include <QDomElement>
-#include <QTime>
+#include <QtXml/qdom.h>
+#include <QtCore/qdatetime.h>
 
 
 struct StatusStrings

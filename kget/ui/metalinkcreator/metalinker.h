@@ -24,8 +24,8 @@
 
 #include <KIO/Job>
 #include <KUrl>
-#include <QDate>
-#include <QDomElement>
+#include <QtCore/qdatetime.h>
+#include <QtXml/qdom.h>
 #include <QtCore/QEventLoop>
 #include <QtCore/QString>
 #include <QtCore/QObject>

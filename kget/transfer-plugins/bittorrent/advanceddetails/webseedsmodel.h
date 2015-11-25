@@ -21,7 +21,7 @@
 #ifndef KTWEBSEEDSMODEL_H
 #define KTWEBSEEDSMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <util/constants.h>
 
 namespace bt

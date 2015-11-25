@@ -12,9 +12,9 @@
 #ifndef _TESTTRANSFERS_H
 #define _TESTTRANSFERS_H
 
-#include <QDBusVariant>
+#include <QtDBus/qdbusextratypes.h>
 #include <QtTest/QtTest>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 class KTempDir;
 class OrgKdeKgetTransferInterface;

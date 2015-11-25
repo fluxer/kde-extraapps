@@ -19,7 +19,7 @@
 
 #include "mirrormodel.h"
 
-#include <QtCore/QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtGui/QSpinBox>
 
 #include <KComboBox>

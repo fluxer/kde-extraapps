@@ -17,7 +17,7 @@
 #include "transfermultisegkio.h"
 #include "multisegkiodatasource.h"
 
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 #include <kdebug.h>
 

@@ -23,7 +23,7 @@
 
 #include <QList>
 #include <KUrl>
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <interfaces/trackerinterface.h>
 
 namespace bt

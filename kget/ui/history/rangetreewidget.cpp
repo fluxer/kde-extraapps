@@ -15,17 +15,17 @@
 #include <KDebug>
 
 #include <QApplication>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 #include <QFont>
 #include <QHeaderView>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QLinearGradient>
+#include <QtGui/qbrush.h>
 #include <QList>
 #include <QPainter>
 #include <QPalette>
 #include <QStyledItemDelegate>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 #include <QVariant>

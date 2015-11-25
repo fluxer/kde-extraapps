@@ -24,7 +24,7 @@
 #define DBUSKGETWRAPPER
 
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class MainWindow;
 class TransferHandler;

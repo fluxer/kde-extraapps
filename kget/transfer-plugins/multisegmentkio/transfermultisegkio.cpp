@@ -28,7 +28,7 @@
 #include <KMessageBox>
 #include <kdebug.h>
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QFile>
 
 TransferMultiSegKio::TransferMultiSegKio(TransferGroup *parent, TransferFactory *factory,

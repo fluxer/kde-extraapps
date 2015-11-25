@@ -27,13 +27,13 @@
 #include <plasma/widgets/iconwidget.h>
 #include <plasma/widgets/meter.h>
 
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsLinearLayout>
-#include <QDropEvent>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QProgressBar>
 #include <QGraphicsProxyWidget>
 #include <QPainter>
+#include <QProcess>
 #include <QtDBus/QDBusConnectionInterface>
 #include <KUrl>
 #include <KLocale>

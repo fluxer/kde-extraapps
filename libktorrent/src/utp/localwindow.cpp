@@ -20,7 +20,7 @@
 
 #include "localwindow.h"
 #include "utpprotocol.h"
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <util/log.h>
 
 using namespace bt;

@@ -21,7 +21,7 @@
 #define MMSTRANSFER_H
 
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <kio/deletejob.h>
 #include "core/kget.h"
 #include "mmsdownload.h"

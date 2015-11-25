@@ -13,7 +13,7 @@
 
 #include "core/transferhandler.h"
 
-#include <QDBusVariant>
+#include <QtDBus/qdbusextratypes.h>
 
 class TransferHandler;
 

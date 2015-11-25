@@ -36,7 +36,7 @@
 #include <KStandardDirs>
 
 #include <QtCore/QFile>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 /**
 * @return Hex value from a base64 value

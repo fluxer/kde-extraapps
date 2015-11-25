@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 #include "portlist.h"
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 namespace net
 {

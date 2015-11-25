@@ -46,7 +46,7 @@
 #include "kget_export.h"
 
 #include <QObject>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 /**
  * Bump this number whenever the plugin framework gets 

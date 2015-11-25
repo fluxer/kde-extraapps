@@ -22,7 +22,7 @@
 #define BTPIECEDATA_H
 
 #include <ktorrent_export.h>
-#include <QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 #include <util/constants.h>
 #ifndef Q_WS_WIN
 #include <util/signalcatcher.h>

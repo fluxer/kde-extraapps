@@ -37,7 +37,7 @@
 #include "upnpdescriptionparser.h"
 #include "soap.h"
 #include "httprequest.h"
-#include <QDomElement>
+#include <QtXml/qdom.h>
 
 using namespace net;
 

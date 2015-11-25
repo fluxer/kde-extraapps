@@ -21,7 +21,7 @@
 
 #include <kross/core/manager.h>
 #include <kross/core/action.h>
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QString>
 

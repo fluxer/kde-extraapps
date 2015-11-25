@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "kbucket.h"
 #include <netinet/in.h>
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <QHash>
 #include <util/file.h>
 #include <util/log.h>

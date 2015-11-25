@@ -11,9 +11,9 @@
 
 #include <kcategorizedsortfilterproxymodel.h>
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QVariant>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 #include <QUrl>
 
 #include <KLocale>

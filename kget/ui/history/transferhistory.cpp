@@ -23,9 +23,9 @@
 #include <QFontMetrics>
 #include <QLineEdit>
 #include <QMenu>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QProgressBar>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QVariant>
 
 #include <KLocale>

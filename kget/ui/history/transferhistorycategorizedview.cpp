@@ -18,9 +18,9 @@
 
 #include <QGridLayout>
 #include <QLineEdit>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QStandardItemModel>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QVariant>
 
 TransferHistoryCategorizedView::TransferHistoryCategorizedView(QWidget *parent)
