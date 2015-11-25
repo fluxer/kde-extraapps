@@ -31,8 +31,8 @@
 
 #include <kpColorCells.h>
 
-#include <QContextMenuEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
+
 #include <QScrollBar>
 
 #include <KColorDialog>

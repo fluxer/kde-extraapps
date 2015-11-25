@@ -22,7 +22,7 @@
 #include "documentchangetracker.h"
 
 #include <QMutex>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <kdebug.h>
 #include <ktexteditor/document.h>

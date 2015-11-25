@@ -23,7 +23,7 @@
 #ifndef SELECTFILESPAGE_H
 #define SELECTFILESPAGE_H
 
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class QWizard;
 class KFileWidget;

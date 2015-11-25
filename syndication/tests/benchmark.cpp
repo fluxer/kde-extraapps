@@ -31,7 +31,7 @@
 #include <QtCore/QFile>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
-#include <QtCore/QTime>
+#include <QtCore/qdatetime.h>
 #include <QtCore/QTextStream>
 
 #include <iostream>

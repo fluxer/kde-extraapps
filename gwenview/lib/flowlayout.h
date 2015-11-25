@@ -42,7 +42,7 @@
 
 #include <QLayout>
 #include <QRect>
-#include <QWidgetItem>
+#include <QtGui/qlayoutitem.h>
 
 class GWENVIEWLIB_EXPORT FlowLayout : public QLayout
 {

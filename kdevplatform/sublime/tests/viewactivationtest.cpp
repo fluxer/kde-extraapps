@@ -23,7 +23,7 @@
 #include <QListView>
 #include <QTextEdit>
 #include <QDockWidget>
-#include <QFocusEvent>
+#include <QtGui/qevent.h>
 
 #include <sublime/view.h>
 #include <sublime/area.h>

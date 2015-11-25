@@ -22,7 +22,7 @@
 #define ABSTRACTUI_H
 
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 //#include "message.h"
 
 class MessageFilter;

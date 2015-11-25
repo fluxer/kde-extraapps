@@ -34,7 +34,7 @@
 #define TMMANAGER_H
 
 #include <kmainwindow.h>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QTimer>
 
 class QTreeView;

@@ -27,7 +27,7 @@
 #include "templatedeclaration.h"
 #include "templateparameterdeclaration.h"
 #include "typeutils.h"
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include "adlhelper.h"
 #include "typeconversion.h"
 #include <language/duchain/persistentsymboltable.h>

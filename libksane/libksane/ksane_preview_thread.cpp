@@ -29,7 +29,7 @@
 #include "moc_ksane_preview_thread.cpp"
 
 #include <KDebug>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 
 namespace KSaneIface

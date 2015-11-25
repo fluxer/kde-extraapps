@@ -21,7 +21,7 @@
 #include <QStringList>
 
 #include "mi/gdbmi.h"
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace GDBDebugger
 {

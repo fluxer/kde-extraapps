@@ -26,7 +26,7 @@
 #include <ktexteditor/view.h>
 #include <ktexteditor/document.h>
 #include <cpptypes.h>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include "helpers.h"
 #include "model.h"
 #include <language/duchain/declaration.h>

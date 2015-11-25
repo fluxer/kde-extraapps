@@ -23,7 +23,7 @@
 #include <interfaces/iplugin.h>
 #include <interfaces/contextmenuextension.h>
 
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 /**
  * @short Implements a context menu extension in an editor context which provides

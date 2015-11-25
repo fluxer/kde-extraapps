@@ -25,7 +25,7 @@
 
 #include <QTimer>
 #include <QStringList>
-#include <QFocusEvent>
+#include <QtGui/qevent.h>
 #include <QStringList>
 #include <QTextEdit>
 

@@ -22,10 +22,10 @@
 
 #include <QHash>
 #include <QLabel>
-#include <QResizeEvent>
-#include <QWheelEvent>
+
+#include <QtGui/qevent.h>
 #include <QVBoxLayout>
-#include <QMouseEvent>
+
 #include <QFrame>
 #include <QTreeWidget>
 #include <QStyledItemDelegate>

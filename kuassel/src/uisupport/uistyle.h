@@ -22,10 +22,11 @@
 #define UISTYLE_H_
 
 #include <QDataStream>
-#include <QFontMetricsF>
+#include <QRect>
+#include <QFontMetrics>
 #include <QHash>
 #include <QIcon>
-#include <QTextCharFormat>
+#include <QtGui/qtextformat.h>
 #include <QTextLayout>
 #include <QPalette>
 #include <QVector>

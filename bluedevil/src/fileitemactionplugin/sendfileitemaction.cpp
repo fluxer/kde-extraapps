@@ -24,7 +24,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QWidget>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 #include <KIcon>
 #include <KPluginFactory>

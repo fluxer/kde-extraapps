@@ -24,7 +24,7 @@
 #include "converters.h"
 
 #include <QMenu>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QSignalMapper>
 
 #include <KDebug>

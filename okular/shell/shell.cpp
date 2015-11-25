@@ -44,7 +44,7 @@
 #include <kwindowsystem.h>
 #include <ktabwidget.h>
 #include <kxmlguifactory.h>
-#include <QDragMoveEvent>
+#include <QtGui/qevent.h>
 #include <QTabBar>
 
 // local includes

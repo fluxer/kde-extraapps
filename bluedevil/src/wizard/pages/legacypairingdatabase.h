@@ -25,7 +25,7 @@
 #define LEGACYPAIRINGDATABASE_H
 
 #include "ui_nopairing.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 class KPixmapSequenceOverlayPainter;

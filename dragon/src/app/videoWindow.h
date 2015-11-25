@@ -24,7 +24,7 @@
 
 #include "codeine.h"
 
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <QWidget>
 
 #include <Phonon/Path>

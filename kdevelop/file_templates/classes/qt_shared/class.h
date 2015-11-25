@@ -3,7 +3,7 @@
 
 {% block includes %}
 {{ block.super }}
-#include <QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 {% endblock %}
 
 {% block forward_declarations %}

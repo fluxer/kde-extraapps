@@ -22,7 +22,7 @@
 
 #include <QDBusConnection>
 #include <QDBusPendingCall>
-#include <QDBusPendingCallWatcher>
+#include <QtDBus/qdbuspendingcall.h>
 #include <QDBusServiceWatcher>
 
 #include <KDebug>

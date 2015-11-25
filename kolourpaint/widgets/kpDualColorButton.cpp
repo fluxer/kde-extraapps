@@ -32,7 +32,7 @@
 #include <kpDualColorButton.h>
 
 #include <QBitmap>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 
 #include <KColorDialog>

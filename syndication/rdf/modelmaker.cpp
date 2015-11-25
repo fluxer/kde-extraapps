@@ -29,7 +29,7 @@
 #include "sequence.h"
 #include "statement.h"
 
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 #include <QtCore/QString>
 
 namespace Syndication {

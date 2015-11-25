@@ -29,7 +29,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QListView>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 using namespace KDevelop;
 

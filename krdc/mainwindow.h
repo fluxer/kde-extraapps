@@ -140,7 +140,7 @@ private:
 
 #include <QApplication>
 #include <QDesktopWidget>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 class MinimizePixel : public QWidget
 {

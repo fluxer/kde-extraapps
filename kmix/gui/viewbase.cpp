@@ -23,7 +23,7 @@
 
 // QT
 #include <qcursor.h>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 // KDE
 #include <kaction.h>

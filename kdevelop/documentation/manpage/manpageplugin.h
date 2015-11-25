@@ -26,7 +26,7 @@
 #include <interfaces/iplugin.h>
 #include <interfaces/idocumentationprovider.h>
 
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <QProgressBar>
 
 class ManPageDocumentation;

@@ -25,7 +25,7 @@
 
 #include "ui_connecting.h"
 
-#include <QtGui/QWizardPage>
+#include <QtGui/qwizard.h>
 
 class ConnectingPage : public QWizardPage,
 public Ui::Connecting

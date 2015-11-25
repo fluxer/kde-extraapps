@@ -24,8 +24,8 @@
 #include "tools.h"
 
 #include <QtCore/QByteArray>
-#include <QtXml/QDomDocument>
-#include <QtXml/QXmlSimpleReader>
+#include <QtXml/qdom.h>
+#include <QtXml/qxml.h>
 
 namespace Syndication {
 

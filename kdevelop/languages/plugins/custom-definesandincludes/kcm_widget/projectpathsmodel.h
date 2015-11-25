@@ -19,7 +19,7 @@
 #ifndef PROJECTPATHSMODEL_H
 #define PROJECTPATHSMODEL_H
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QList>
 
 #include <KUrl>

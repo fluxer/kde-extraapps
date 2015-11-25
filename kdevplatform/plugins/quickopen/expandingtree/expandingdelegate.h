@@ -24,8 +24,8 @@
 
 #include <QtGui/QItemDelegate>
 #include <QItemDelegate>
-#include <QtGui/QTextLine>
-#include <QModelIndex>
+#include <QtGui/qtextlayout.h>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPoint>
 
 class KateRenderer;

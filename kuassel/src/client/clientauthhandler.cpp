@@ -22,7 +22,7 @@
 
 // TODO: support system application proxy (new in Qt 4.6)
 
-#include <QtEndian>
+#include <QtCore/qendian.h>
 
 #ifdef HAVE_SSL
     #include <QSslSocket>

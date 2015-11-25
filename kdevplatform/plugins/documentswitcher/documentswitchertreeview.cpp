@@ -18,7 +18,7 @@
  ***************************************************************************/
 #include "documentswitchertreeview.h"
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 #include <kdebug.h>
 

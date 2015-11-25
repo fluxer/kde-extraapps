@@ -31,6 +31,7 @@
 #include <QFileInfo>
 #include <QtDBus/QtDBus>
 #include <QStandardItemModel>
+#include <QTimer>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>

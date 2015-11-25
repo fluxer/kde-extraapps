@@ -18,11 +18,11 @@
 #include <QtCore/QDateTime>
 #include <QtGui/QAbstractTextDocumentLayout>
 #include <QtGui/QFont>
-#include <QtGui/QTextBlock>
-#include <QtGui/QTextCharFormat>
+#include <QtGui/qtextobject.h>
+#include <QtGui/qtextformat.h>
 #include <QtGui/QTextCursor>
 #include <QtGui/QTextDocument>
-#include <QtGui/QTextFrame>
+
 
 #include <QtGui/QLabel>
 

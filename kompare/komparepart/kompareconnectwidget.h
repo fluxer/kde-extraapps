@@ -22,8 +22,8 @@
 
 #include <QtGui/QWidget>
 #include <QtGui/QSplitter>
-#include <QtGui/QPaintEvent>
-#include <QtGui/QMouseEvent>
+#include <QtGui/qevent.h>
+
 #include <QVBoxLayout>
 #include <QtGui/QLabel>
 

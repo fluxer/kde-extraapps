@@ -33,7 +33,7 @@
 #include <kio/renamedialog.h>
 
 #include <QApplication>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace Kerfuffle
 {

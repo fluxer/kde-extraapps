@@ -24,7 +24,7 @@
 #include <QDBusConnection>
 #include <QPainter>
 #include <QWidget>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 #include <KIconLoader>
 #include <KLocale>

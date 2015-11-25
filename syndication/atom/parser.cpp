@@ -27,12 +27,12 @@
 
 #include <documentsource.h>
 
-#include <QtXml/QDomAttr>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
-#include <QtXml/QDomNamedNodeMap>
-#include <QtXml/QDomNode>
-#include <QtXml/QDomNodeList>
+
+
+
+#include <QtXml/qdom.h>
+
+#include <QtXml/qdom.h>
 
 #include <QtCore/QHash>
 #include <QtCore/QRegExp>

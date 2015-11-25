@@ -22,7 +22,7 @@
 
 #include <QAction>
 #include <QMenu>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 #include <KIcon>
 

@@ -23,7 +23,7 @@
 
 #include <QString>
 #include <QStringList>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 
 #include <QPushButton>
 

@@ -29,7 +29,7 @@
 
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <KMessageBox>
 #include <QMenu>
 

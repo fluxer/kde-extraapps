@@ -31,7 +31,7 @@
 #include <syndication/global.h>
 #include <syndication/mapper.h>
 
-#include <QtXml/QDomDocument>
+#include <QtXml/qdom.h>
 #include <QtCore/QHash>
 #include <QtCore/QString>
 

@@ -40,12 +40,12 @@
 #include <QPainter>
 #include <QStyle>
 #include <QApplication>
-#include <QStyleOptionButton>
+#include <QtGui/qstyleoption.h>
 #include <QMimeData>
 #include <QMetaType>
 
 #include <QMenu>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QToolTip>
 
 // static int im_count=0;

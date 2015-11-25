@@ -12,7 +12,7 @@
 // qt/kde includes
 #include <qapplication.h>
 #include <QItemDelegate>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QTextDocument>
 #include <qvariant.h>
 

@@ -24,7 +24,7 @@
 #include <grantlee/filter.h>
 
 #include <QObject>
-#include <QtPlugin>
+#include <QtCore/qplugin.h>
 
 namespace KDevelop {
 

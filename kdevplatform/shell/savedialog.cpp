@@ -22,7 +22,7 @@
 
 #include <QLabel>
 #include <QListWidget>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QVBoxLayout>
 
 #include <klocale.h>

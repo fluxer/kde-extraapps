@@ -22,6 +22,7 @@
 #include "obexd_file_transfer.h"
 #include "kdedobexftp.h"
 #include "version.h"
+#include <QTimer>
 #include <KDebug>
 #include <KComponentData>
 #include <KCmdLineArgs>

@@ -49,7 +49,7 @@ IdealDockWidget::IdealDockWidget(IdealController *controller, Sublime::MainWindo
             this, SLOT(contextMenuRequested(QPoint)));
 
     QAbstractButton *closeButton =
-    qFindChild<QAbstractButton *>(this, QLatin1String("qt_dockwidget_closebutton"));
+    this->findChild<QAbstractButton *>(QLatin1String("qt_dockwidget_closebutton"));
 
     if (closeButton) {
     disconnect(closeButton, SIGNAL(clicked()), 0, 0);

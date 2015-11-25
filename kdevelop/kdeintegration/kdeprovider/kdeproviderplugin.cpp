@@ -19,7 +19,7 @@
  */
 
 #include "kdeproviderplugin.h"
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 #include <kpluginfactory.h>
 #include <kpluginloader.h>

@@ -18,7 +18,7 @@
 
 #include <QAction>
 #include <QStackedWidget>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QItemDelegate>
 #include <QTreeView>
 

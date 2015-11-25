@@ -25,7 +25,7 @@
 
 #include <climits>
 
-#include <QtCore/QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <ktexteditor/range.h>
 

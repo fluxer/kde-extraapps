@@ -29,7 +29,7 @@
  */
 
 #include "overlaywidget.h"
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 #include <QEvent>
 
 using namespace KDevelop;

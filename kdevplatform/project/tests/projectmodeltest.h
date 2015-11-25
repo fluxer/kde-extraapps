@@ -21,7 +21,7 @@
 #define KDEVELOP_PROJECT_PROJECTMODELTEST_INCLUDED
 
 #include <QtCore/QObject>
-#include <QtCore/QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 class ProjectProxyModel;
 namespace KDevelop

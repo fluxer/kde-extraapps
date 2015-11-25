@@ -20,7 +20,7 @@
 #ifndef GLOBALCONFIG_H
 #define GLOBALCONFIG_H
 
-#include <Qt>
+#include <QtCore/qnamespace.h>
 #include <QSet>
 
 #include <KConfigSkeleton>

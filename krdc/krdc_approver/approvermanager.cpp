@@ -25,7 +25,7 @@
 #include "approvermanager.h"
 #include "approver.h"
 
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 #include <QDBusConnection>
 
 #include <KApplication>

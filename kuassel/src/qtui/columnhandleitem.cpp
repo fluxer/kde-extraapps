@@ -23,7 +23,7 @@
 
 #include <QApplication>
 #include <QCursor>
-#include <QGraphicsSceneHoverEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPainter>
 #include <QPalette>
 

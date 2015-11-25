@@ -22,12 +22,12 @@
 #include <QClipboard>
 #include <QDesktopServices>
 #include <QDrag>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QIcon>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMimeData>
-#include <QPersistentModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QUrl>
 
 #  include <KMenuBar>

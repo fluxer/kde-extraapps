@@ -21,7 +21,7 @@
 #include "svnimportjob.h"
 #include "svnimportjob_p.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QFileInfo>
 
 #include <klocale.h>

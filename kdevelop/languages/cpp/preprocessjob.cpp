@@ -25,7 +25,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QByteArray>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QReadWriteLock>
 
 #include <kdebug.h>

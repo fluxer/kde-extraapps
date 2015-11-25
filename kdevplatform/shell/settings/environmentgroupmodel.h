@@ -20,7 +20,7 @@ Boston, MA 02110-1301, USA.
 #ifndef KDEVPLATFORM_ENVIRONMENTGROUPMODEL_H
 #define KDEVPLATFORM_ENVIRONMENTGROUPMODEL_H
 
-#include <QtCore/QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtCore/QStringList>
 #include "util/environmentgrouplist.h"
 

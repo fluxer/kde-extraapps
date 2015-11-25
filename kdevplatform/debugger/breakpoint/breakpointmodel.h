@@ -22,7 +22,7 @@
 #ifndef KDEVPLATFORM_BREAKPOINTMODEL_H
 #define KDEVPLATFORM_BREAKPOINTMODEL_H
 
-#include <QtCore/QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <KDE/KTextEditor/MarkInterface>
 #include "breakpoint.h"

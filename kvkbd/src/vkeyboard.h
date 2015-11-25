@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include <QMap>
-#include <QMapIterator>
+#include <QtCore/qmap.h>
 #include <QList>
 #include <QChar>
 

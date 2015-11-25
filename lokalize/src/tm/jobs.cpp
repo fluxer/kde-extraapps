@@ -1658,8 +1658,8 @@ void UpdateJob::run ()
 
 //BEGIN TMX
 
-#include <QXmlDefaultHandler>
-#include <QXmlSimpleReader>
+
+#include <QtXml/qxml.h>
 
 /**
 	@author Nick Shaforostoff <shafff@ukr.net>
@@ -1912,7 +1912,7 @@ void ImportTmxJob::run()
 
 
 
-#include <QXmlStreamWriter>
+#include <QtCore/qxmlstream.h>
 
 ExportTmxJob::ExportTmxJob(const QString& filename,//const KUrl& url,
                      const QString& dbName,

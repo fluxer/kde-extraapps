@@ -20,7 +20,7 @@
 
 #include <QLayout>
 #include <QStandardItemModel>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 #include <kpluginfactory.h>
 #include <KConfigDialogManager>

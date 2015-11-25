@@ -21,7 +21,7 @@
 #include <QMap>
 #include <QList>
 #include <QEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 
 #include <kdebug.h>

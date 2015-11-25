@@ -69,8 +69,8 @@
 #include <kio/copyjob.h>
 #include <ktemporaryfile.h>
 
-#include <QCloseEvent>
-#include <QReadLocker>
+#include <QtGui/qevent.h>
+#include <QtCore/qreadwritelock.h>
 #include <QPointer>
 #include <QFile>
 #include <QDateTime>

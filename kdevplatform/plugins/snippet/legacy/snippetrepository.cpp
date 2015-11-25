@@ -19,8 +19,8 @@
 #include <KIcon>
 #include <KDebug>
 
-#include <QDomDocument>
-#include <QDomElement>
+
+#include <QtXml/qdom.h>
 #include <KStandardDirs>
 
 #include <KMessageBox>

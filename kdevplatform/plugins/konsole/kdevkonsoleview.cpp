@@ -16,7 +16,7 @@
 #include <QFrame>
 #include <QLayout>
 #include <QVBoxLayout>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 #include <QUuid>
 

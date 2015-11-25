@@ -32,10 +32,10 @@
 #include <klocale.h>
 #include <kaction.h>
 #include <QMenu>
-#include <QMouseEvent>
+
 
 using namespace GlossaryNS;
-//#include <QShortcutEvent>
+//#include <QtGui/qevent.h>
 
 
 // TermLabel::TermLabel(QAction* action/*const QString& shortcutQWidget* parent,Qt::Key key,const QString& termTransl*/)

@@ -12,7 +12,7 @@
 
 #include <QtCore/QList>
 #include <QtCore/QMetaType>
-#include <QtCore/QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 #include <QtCore/QString>
 
 #include "okular_export.h"

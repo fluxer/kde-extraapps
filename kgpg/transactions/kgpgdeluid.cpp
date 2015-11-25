@@ -17,7 +17,7 @@
 #include "core/kgpgkey.h"
 #include "core/KGpgKeyNode.h"
 
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 KGpgDelUid::KGpgDelUid(QObject *parent, const KGpgSignableNode *uid)
 	: KGpgUidTransaction(parent, uid->getParentKeyNode()->getId(), uid->getId()),

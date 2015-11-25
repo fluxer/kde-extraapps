@@ -34,7 +34,7 @@
 
 #include <climits>
 
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 //---------------------------------------------------------------------
 

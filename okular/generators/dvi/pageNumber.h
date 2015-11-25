@@ -10,7 +10,7 @@
 #ifndef PAGENUMBER_H
 #define PAGENUMBER_H
 
-#include <QGlobalStatic>
+#include <QtCore/qglobal.h>
 
 
 /** \brief Class to represent a page number

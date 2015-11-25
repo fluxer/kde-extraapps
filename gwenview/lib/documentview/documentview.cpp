@@ -27,14 +27,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
 #include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsSceneWheelEvent>
-#include <QMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
+
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QPropertyAnimation>
 #include <QScrollBar>
 #include <QVBoxLayout>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 // KDE
 #include <KDebug>

@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtEndian>
+#include <QtCore/qendian.h>
 
 #include <QHostAddress>
 #include <QTimer>

@@ -18,7 +18,7 @@
  */
 
 
-#include <QtGui/QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QtCore/QTimer>
 #include <ghlineedit.h>
 

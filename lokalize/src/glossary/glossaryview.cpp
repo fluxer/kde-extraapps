@@ -46,11 +46,11 @@
 #include <kurl.h>
 #include <kaction.h>
 
-#include <QDragEnterEvent>
-#include <QTime>
+#include <QtGui/qevent.h>
+#include <QtCore/qdatetime.h>
 #include <QSet>
 #include <QScrollArea>
-// #include <QShortcutEvent>
+// 
 #include <QPushButton>
 
 

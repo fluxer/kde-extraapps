@@ -25,7 +25,7 @@
 
 
 #include <QList>
-#include <QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 
 #include "globals.h"
 #include "ku_prefs.h"

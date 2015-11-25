@@ -12,7 +12,7 @@
 #ifndef __SNIPPET_H__
 #define __SNIPPET_H__
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 
 class SnippetRepository;
 class KAction;

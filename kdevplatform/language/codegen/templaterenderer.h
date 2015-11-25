@@ -21,7 +21,7 @@
 #ifndef KDEVPLATFORM_TEMPLATERENDERER_H
 #define KDEVPLATFORM_TEMPLATERENDERER_H
 
-#include <QVariantHash>
+#include <QtCore/qvariant.h>
 
 #include "../languageexport.h"
 

@@ -28,7 +28,7 @@
 #include <kjob.h>
 #include <QDir>
 #include <QUrl>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QVector>
 
 namespace ThreadWeaver{class Job;}

@@ -39,7 +39,7 @@
 
 
 //BEGIN PhasesModel
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSplitter>
 #include <QStackedLayout>
 

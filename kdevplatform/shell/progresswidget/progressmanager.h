@@ -24,7 +24,7 @@
 #include <QString>
 #include <QMap>
 #include <QHash>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QPointer>
 namespace Akonadi {
 class AgentInstance;

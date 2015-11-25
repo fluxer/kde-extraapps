@@ -28,7 +28,7 @@
 #include <KParts/ReadOnlyPart>
 #include <KService>
 
-#include <QtCore/QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class ArkViewer : public KDialog
 {

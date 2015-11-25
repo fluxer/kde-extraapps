@@ -35,7 +35,7 @@ class MyTreeView;
 
 #include <QHash>
 #include <QDockWidget>
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 
 class BinUnitsView: public QDockWidget
 {

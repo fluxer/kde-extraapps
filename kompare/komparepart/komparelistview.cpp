@@ -23,9 +23,9 @@
 #include <QtGui/QPainter>
 #include <QtCore/QRegExp>
 #include <QtCore/QTimer>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QWheelEvent>
+
+
+#include <QtGui/qevent.h>
 #include <QtGui/QScrollBar>
 
 #include <kdebug.h>

@@ -32,7 +32,7 @@
 #include <KConfigGroup>
 
 #include <QFileInfo>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 using namespace KDevelop;
 typedef SourceFileTemplate::ConfigOption ConfigOption;

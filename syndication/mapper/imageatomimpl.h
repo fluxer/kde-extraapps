@@ -25,7 +25,7 @@
 
 #include <image.h>
 
-#include <QtCore/QMultiMap>
+#include <QtCore/qmap.h>
 #include <QtCore/QString>
 
 namespace Syndication {

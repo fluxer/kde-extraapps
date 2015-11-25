@@ -20,7 +20,7 @@
 #include <KUrl>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QDebug>
 #include <vcs/vcslocation.h>
 

@@ -42,10 +42,10 @@
 #include <KLocale>
 
 #include <QApplication>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QHeaderView>
 #include <QMenu>
-#include <QPaintEvent>
+
 #include <QPalette>
 #include <QScrollBar>
 

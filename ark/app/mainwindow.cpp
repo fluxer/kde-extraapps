@@ -40,9 +40,9 @@
 #include <KShortcutsDialog>
 #include <KXMLGUIFactory>
 
-#include <QDragEnterEvent>
-#include <QDragMoveEvent>
-#include <QWeakPointer>
+#include <QtGui/qevent.h>
+
+#include <QtCore/qsharedpointer.h>
 
 static bool isValidArchiveDrag(const QMimeData *data)
 {

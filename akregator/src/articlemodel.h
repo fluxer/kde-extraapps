@@ -24,7 +24,7 @@
 #ifndef AKREGATOR_ARTICLEMODEL_H
 #define AKREGATOR_ARTICLEMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QList>
 
 #include "akregator_export.h"

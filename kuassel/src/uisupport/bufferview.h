@@ -24,7 +24,7 @@
 #include <QAction>
 #include <QMenu>
 #include <QDockWidget>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QStyledItemDelegate>
 #include <QTreeView>
 #include <QPointer>

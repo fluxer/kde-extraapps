@@ -22,7 +22,7 @@
 #define TEXTITEM_H
 
 #include <QGraphicsWidget>
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 
 /**
  * A QGV text widget which will automatically change its font size based on 

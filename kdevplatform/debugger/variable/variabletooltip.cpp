@@ -28,7 +28,7 @@
 #include <QApplication>
 #include <QEvent>
 #include <QStandardItemModel>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>

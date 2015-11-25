@@ -38,7 +38,7 @@
 #include <QtGui/QWidget>
 #include <QtGui/QPainter>
 #include <QtGui/QBoxLayout>
-#include <QtGui/QPaintEvent>
+#include <QtGui/qevent.h>
 
 SystemCheck::SystemCheck(QWidget *parent)
     : QObject(parent)

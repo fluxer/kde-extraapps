@@ -20,7 +20,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QVector>
 #include <QtGui/QPrinter>
-#include <QtXml/QDomDocument>
+#include <QtXml/qdom.h>
 
 #include <kmimetype.h>
 

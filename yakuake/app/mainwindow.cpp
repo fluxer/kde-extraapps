@@ -52,6 +52,7 @@
 #include <QDesktopWidget>
 #include <QPainter>
 #include <QWhatsThis>
+#include <QVarLengthArray>
 #include <QtDBus/QtDBus>
 
 #if defined(Q_WS_X11)
@@ -726,7 +727,7 @@ void MainWindow::applySettings()
 
     m_animationTimer.setInterval(10);
 
-    m_tabBar->setShown(Settings::showTabBar());
+    m_tabBar->setVisible(Settings::showTabBar());
 
     setKeepOpen(Settings::keepOpen());
 

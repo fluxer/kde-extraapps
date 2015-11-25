@@ -20,7 +20,7 @@
 
 #include "basichandler.h"
 
-#include <QMetaMethod>
+#include <QtCore/qmetaobject.h>
 
 #include <KDebug>
 

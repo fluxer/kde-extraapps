@@ -19,7 +19,7 @@
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
 #include <QtGui/QLabel>
-#include <QtGui/QShowEvent>
+#include <QtGui/qevent.h>
 #include <QtNetwork/QTcpSocket>
 
 #include <KProcess>

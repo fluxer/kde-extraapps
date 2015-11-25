@@ -3,7 +3,7 @@
 
 #include <interfaces/iplugin.h>
 #include <interfaces/itemplateprovider.h>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 class KUrl;
 namespace KDevelop

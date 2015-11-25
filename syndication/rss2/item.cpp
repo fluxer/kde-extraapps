@@ -30,7 +30,7 @@
 #include <specificitemvisitor.h>
 #include <tools.h>
 
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 #include <QtCore/QString>
 #include <QtCore/QList>
 

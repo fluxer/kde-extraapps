@@ -31,8 +31,8 @@
 
 #include <kpTransparentColorCell.h>
 
-#include <QContextMenuEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
+
 #include <QPainter>
 
 #include <KIconLoader>

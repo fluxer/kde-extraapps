@@ -22,8 +22,8 @@
 #include "cliplugin.h"
 
 #include "kerfuffle/kerfuffle_export.h"
-#include <QDate>
-#include <QTime>
+
+#include <QtCore/qdatetime.h>
 #include <kdebug.h>
 
 using namespace Kerfuffle;

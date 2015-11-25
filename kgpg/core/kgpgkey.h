@@ -16,7 +16,7 @@
 #define KGPGKEY_H
 
 #include <gpgme.h>
-#include <QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 #include <QSharedData>
 #include <QPointer>
 #include <QObject>

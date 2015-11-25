@@ -24,7 +24,7 @@
 #include "bluedevildbustypes.h"
 
 #include <QObject>
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 namespace BlueDevil {
 class Adapter;

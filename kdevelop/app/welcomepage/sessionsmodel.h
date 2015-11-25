@@ -19,7 +19,7 @@
 #ifndef SESSIONSMODEL_H
 #define SESSIONSMODEL_H
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <shell/sessioncontroller.h>
 
 class SessionsModel : public QAbstractListModel

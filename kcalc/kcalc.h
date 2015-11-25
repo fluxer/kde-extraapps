@@ -55,7 +55,7 @@ class KCalcConstMenu;
 #include "ui_constants.h"
 #include "ui_colors.h"
 
-#include <QFlags>
+#include <QtCore/qglobal.h>
 
 #include <kxmlguiwindow.h>
 

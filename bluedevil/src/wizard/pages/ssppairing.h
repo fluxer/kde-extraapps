@@ -25,7 +25,7 @@
 #define SSPPAIRINGPAGE_H
 
 #include "ui_ssppairing.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 #include <QDBusMessage>
 
 class BlueWizard;

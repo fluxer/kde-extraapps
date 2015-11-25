@@ -32,8 +32,8 @@
 #include <kdebug.h>
 
 #include <QFile>
-#include <QXmlSimpleReader>
-#include <QXmlStreamReader>
+#include <QtXml/qxml.h>
+#include <QtCore/qxmlstream.h>
 #include <QBuffer>
 #include <QApplication>
 

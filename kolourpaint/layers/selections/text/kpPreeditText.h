@@ -30,7 +30,7 @@
 #define kpPreeditText_H
 
 #include <QColor>
-#include <QInputMethodEvent>
+#include <QtGui/qevent.h>
 #include <QPoint>
 
 class kpPreeditText

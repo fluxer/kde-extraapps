@@ -61,7 +61,7 @@
 #include <klocale.h>
 
 #include <QProcess>
-#include <QSysInfo>
+#include <QtCore/qglobal.h>
 #include <QTemporaryFile>
 
 #include <cstdlib>
@@ -378,7 +378,7 @@ QString dvifile::convertPDFtoPS(const QString &PDFFilename, QString *converrorms
 
   // Use pdf2ps to do the conversion
   QProcess pdf2ps;
-  pdf2ps.setReadChannelMode(QProcess::MergedChannels);
+  pdf2ps.setProcessChannelMode(QProcess::MergedChannels);
   pdf2ps.start("pdf2ps",
                QStringList() << PDFFilename << convertedFileName,
                QIODevice::ReadOnly|QIODevice::Text);

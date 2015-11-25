@@ -29,7 +29,7 @@
 #include "note.h"
 
 #include <KDialog>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVector>
 #include <QMap>
 

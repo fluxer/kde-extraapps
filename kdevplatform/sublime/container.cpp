@@ -23,7 +23,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QStylePainter>
 #include <QtGui/QStackedWidget>
-#include <QtGui/QStyleOptionTabBarBase>
+#include <QtGui/qstyleoption.h>
 #include <QtGui/QToolButton>
 #include <QtGui/qstyle.h>
 
@@ -43,7 +43,7 @@
 #include "view.h"
 #include "document.h"
 #include <QEvent>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include "urldocument.h"
 #include <ksqueezedtextlabel.h>
 

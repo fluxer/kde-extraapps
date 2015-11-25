@@ -25,7 +25,7 @@
 #include <tools.h>
 
 #include <QtCore/QByteArray>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 

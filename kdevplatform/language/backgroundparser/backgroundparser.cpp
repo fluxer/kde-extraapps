@@ -28,9 +28,9 @@
 #include <QTimer>
 #include <QMutex>
 #include <QWaitCondition>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QThread>
-#include <QtCore/QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <kdebug.h>
 #include <kglobal.h>

@@ -18,7 +18,7 @@
 #ifndef _bigEndianByteReader_H
 #define _bigEndianByteReader_H
 
-#include <QGlobalStatic>
+#include <QtCore/qglobal.h>
 
 
 class bigEndianByteReader {

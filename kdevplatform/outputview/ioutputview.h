@@ -22,7 +22,7 @@
 #define KDEVPLATFORM_IOUTPUTVIEW_H
 
 #include <QtCore/QMetaType>
-#include <QtCore/QFlags>
+#include <QtCore/qglobal.h>
 #include <KDE/KIcon>
 
 #include "outputviewexport.h"

@@ -20,7 +20,7 @@
 #ifndef _KU_USERMODEL_H_
 #define _KU_USERMODEL_H_
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSortFilterProxyModel>
 
 #include "ku_user.h"

@@ -42,7 +42,7 @@
 
 #include <QTimer>
 #include <QMenu>
-#include <QDragEnterEvent>
+#include <QtGui/qevent.h>
 
 #include <QLabel>
 #include <QHBoxLayout>

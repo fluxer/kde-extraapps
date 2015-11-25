@@ -21,7 +21,7 @@
 #ifndef EVENTMANAGER_H
 #define EVENTMANAGER_H
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 
 #include "types.h"
 

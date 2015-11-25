@@ -20,7 +20,7 @@
 
 #include "codeutilsplugin.h"
 
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 #include <KLocale>
 #include <KPluginFactory>

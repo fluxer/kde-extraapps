@@ -11,7 +11,7 @@
 #define _OKULAR_TEXTDOCUMENTGENERATOR_P_H_
 
 #include <QtGui/QAbstractTextDocumentLayout>
-#include <QtGui/QTextBlock>
+#include <QtGui/qtextobject.h>
 #include <QtGui/QTextDocument>
 
 #include "action.h"

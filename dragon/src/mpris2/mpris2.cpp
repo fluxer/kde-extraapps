@@ -25,7 +25,7 @@
 
 #include <QDBusConnection>
 #include <QDBusMessage>
-#include <QMetaClassInfo>
+#include <QtCore/qmetaobject.h>
 #include <QStringList>
 
 #include <unistd.h>

@@ -32,8 +32,8 @@
 
 #include <documentsource.h>
 
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomNodeList>
+
+#include <QtXml/qdom.h>
 #include <QtCore/QHash>
 #include <QtCore/QList>
 #include <QtCore/QMap>

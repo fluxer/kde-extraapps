@@ -20,7 +20,7 @@
 
 #include "vcseventmodel.h"
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVariant>
 #include <QDateTime>
 #include <QList>
@@ -165,7 +165,7 @@ void VcsEventModel::jobReceivedResults(KJob* job)
     QList<KDevelop::VcsEvent> newevents;
     foreach( const QVariant &v, l )
     {
-        if( qVariantCanConvert<KDevelop::VcsEvent>( v ) )
+        if( v.canConvert<KDevelop::VcsEvent>( ) )
         {
             newevents << qvariant_cast<KDevelop::VcsEvent>( v );
         }

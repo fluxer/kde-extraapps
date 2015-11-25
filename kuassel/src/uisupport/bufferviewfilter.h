@@ -22,8 +22,8 @@
 #define BUFFERVIEWFILTER_H_
 
 #include <QAction>
-#include <QDropEvent>
-#include <QFlags>
+#include <QtGui/qevent.h>
+#include <QtCore/qglobal.h>
 #include <QPointer>
 #include <QSet>
 #include <QSortFilterProxyModel>

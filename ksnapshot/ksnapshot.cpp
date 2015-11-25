@@ -31,11 +31,11 @@
 #include <QMenu>
 #include <QDesktopWidget>
 #include <QVarLengthArray>
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
 #include <QDrag>
-#include <QMouseEvent>
+
 #include <QPainter>
-#include <QtCore/QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusConnectionInterface>
 #include <QtDBus/QDBusInterface>

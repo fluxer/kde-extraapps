@@ -24,8 +24,8 @@
 
 #include <kurl.h>
 
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
+
+#include <QtXml/qdom.h>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 #include <QtCore/QTextStream>

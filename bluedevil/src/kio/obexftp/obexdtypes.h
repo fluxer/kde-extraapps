@@ -20,9 +20,9 @@
 #define OBEXD_TYPES_H
 
 #include <QtCore/QList>
-#include <QtCore/QVariantMap>
-#include <QVariantMap>
-#include <QDBusObjectPath>
+#include <QtCore/qvariant.h>
+
+#include <QtDBus/qdbusextratypes.h>
 
 typedef QList<QVariantMap> QVariantMapList;
 Q_DECLARE_METATYPE(QVariantMapList);

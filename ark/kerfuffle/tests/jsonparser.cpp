@@ -29,7 +29,7 @@
 
 #include <KDebug>
 
-#include <QtCore/QLatin1String>
+#include <QtCore/qstring.h>
 
 #include <qjson/parser.h>
 

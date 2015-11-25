@@ -30,8 +30,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
 #include <QHBoxLayout>
-#include <QMouseEvent>
-#include <QTime>
+#include <QtGui/qevent.h>
+#include <QtCore/qdatetime.h>
 
 // KDE
 #include <KDebug>

@@ -23,7 +23,7 @@
  
 #include <QPushButton>
 #include <QString>
-#include <QStyleOptionButton>
+#include <QtGui/qstyleoption.h>
 #include "utilexport.h"
  
 namespace KDevelop {

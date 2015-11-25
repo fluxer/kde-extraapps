@@ -107,9 +107,13 @@ kde4_add_kcfg_files(okularcore_SRCS ${PROJECT_SOURCE_DIR}/conf/settings_core.kcf
 
 add_library(okularcore SHARED ${okularcore_SRCS})
 
-target_link_libraries(okularcore ${KDE4_KIO_LIBS} ${KDE4_PHONON_LIBRARY} ${MATH_LIB} ${KDE4_THREADWEAVER_LIBRARY} )
-
-target_link_libraries(okularcore kscreen)
+target_link_libraries(okularcore
+    ${KDE4_KIO_LIBS}
+    ${KDE4_PHONON_LIBRARY}
+    ${MATH_LIB}
+    ${KDE4_THREADWEAVER_LIBRARY}
+    kscreen
+)
 
 set_target_properties(okularcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
 

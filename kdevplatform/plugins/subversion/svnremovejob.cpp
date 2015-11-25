@@ -21,7 +21,7 @@
 #include "svnremovejob.h"
 #include "svnremovejob_p.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <kdebug.h>
 #include <klocale.h>

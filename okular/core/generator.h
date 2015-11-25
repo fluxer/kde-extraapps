@@ -20,8 +20,8 @@
 
 #include <QtCore/QList>
 #include <QtCore/QObject>
-#include <QtCore/QSharedDataPointer>
-#include <QtCore/QSizeF>
+#include <QtCore/qshareddata.h>
+#include <QtCore/qsize.h>
 #include <QtCore/QString>
 #include <QtCore/QVariant>
 #include <QtCore/QVector>

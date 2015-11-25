@@ -33,9 +33,9 @@
 #include <kapplication.h>
 #include <kstandarddirs.h>
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QFile>
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <QTimer>
 #include <QSqlDatabase>
 #include <QSqlQuery>

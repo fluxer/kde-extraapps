@@ -29,10 +29,10 @@
 #include "moc_ksane_viewer.cpp"
 #include "selectionitem.h"
 
-#include <QGraphicsPixmapItem>
+
 #include <QGraphicsScene>
-#include <QGraphicsRectItem>
-#include <QWheelEvent>
+#include <QtGui/qgraphicsitem.h>
+#include <QtGui/qevent.h>
 #include <QScrollBar>
 #include <QAction>
 #include <QList>

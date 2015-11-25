@@ -21,7 +21,7 @@
 #include "abstractsqlstorage.h"
 #include "quassel.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QSqlDriver>
 #include <QSqlError>
 #include <QSqlField>

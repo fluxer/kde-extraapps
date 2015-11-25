@@ -22,7 +22,7 @@
 #define NETWORKEVENT_H
 
 #include <QStringList>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 #include "event.h"
 #include "network.h"

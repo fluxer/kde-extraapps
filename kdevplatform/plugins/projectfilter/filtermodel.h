@@ -22,7 +22,7 @@
 #ifndef FILTERMODEL_H
 #define FILTERMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 
 #include "filter.h"
 

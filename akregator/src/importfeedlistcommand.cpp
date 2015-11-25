@@ -32,7 +32,7 @@
 #include <KInputDialog>
 #include <KLocalizedString>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QPointer>
 #include <QTimer>
 

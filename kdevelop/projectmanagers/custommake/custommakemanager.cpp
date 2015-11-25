@@ -24,7 +24,7 @@
 #include <language/duchain/indexedstring.h>
 
 #include <QDir>
-#include <QFileInfoList>
+#include <QtCore/qfileinfo.h>
 #include <QFile>
 #include <QApplication>
 

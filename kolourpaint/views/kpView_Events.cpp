@@ -39,8 +39,8 @@
 #include <KDebug>
 #endif
 
-#include <QKeyEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
+
 
 #include <kpTool.h>
 

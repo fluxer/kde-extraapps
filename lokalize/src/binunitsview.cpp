@@ -29,7 +29,7 @@
 
 #include <klocale.h>
 #include <krun.h>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QMenu>
 #include <kfiledialog.h>
 #include <kdirwatch.h>

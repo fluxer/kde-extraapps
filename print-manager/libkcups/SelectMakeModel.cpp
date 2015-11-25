@@ -28,7 +28,7 @@
 
 #include <QStandardItemModel>
 #include <QLineEdit>
-#include <QItemSelection>
+#include <QtGui/qitemselectionmodel.h>
 #include <QStringBuilder>
 
 #include <QtDBus/QDBusMessage>

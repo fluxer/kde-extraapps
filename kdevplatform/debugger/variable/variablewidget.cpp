@@ -22,8 +22,8 @@
 #include <QRegExp>
 #include <QCursor>
 #include <QHBoxLayout>
-#include <QKeyEvent>
-#include <QFocusEvent>
+#include <QtGui/qevent.h>
+
 #include <QVBoxLayout>
 #include <QPoint>
 #include <QClipboard>

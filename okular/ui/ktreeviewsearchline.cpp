@@ -25,7 +25,7 @@
 #include <QtCore/QTimer>
 #include <QtCore/QRegExp>
 #include <QtGui/QApplication>
-#include <QtGui/QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>

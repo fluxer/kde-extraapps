@@ -21,7 +21,7 @@
 #include "clickablelabel.h"
 
 #include <KDebug>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 ClickableLabel::ClickableLabel(QWidget *parent)
     : QLabel(parent)

@@ -25,7 +25,7 @@
 #include "core/images.h"
 
 #include <KLocale>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 
 using namespace KgpgCore;
 

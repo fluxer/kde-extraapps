@@ -23,7 +23,7 @@
 
 #ifndef DOMROUTINES_H
 #define DOMROUTINES_H
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 void setText(QDomElement element, QString text);
 

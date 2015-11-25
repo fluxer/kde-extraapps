@@ -39,7 +39,7 @@ extern "C"
 #include <QtGui/QWidget>
 #include <QCheckBox>
 #include <QTimer>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QProgressBar>
 
 // KDE includes

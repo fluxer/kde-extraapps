@@ -30,6 +30,7 @@
 #include <KCupsRequest.h>
 
 #include <QThread>
+#include <QPointer>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusServiceWatcher>

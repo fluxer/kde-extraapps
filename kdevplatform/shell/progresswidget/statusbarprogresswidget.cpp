@@ -46,7 +46,7 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QStackedWidget>

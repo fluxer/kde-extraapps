@@ -36,7 +36,7 @@
 #include <QToolTip>
 #include <QApplication>
 #include <QClipboard>
-#include <QFocusEvent>
+#include <QtGui/qevent.h>
 #include <QMenu>
 #include <khistorycombobox.h>
 #include <KIcon>

@@ -24,7 +24,7 @@
 #ifndef COMPILERMODEL_H
 #define COMPILERMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QHash>
 
 #include "../compilerprovider/icompiler.h"

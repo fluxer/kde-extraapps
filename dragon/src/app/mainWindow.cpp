@@ -51,13 +51,13 @@
 #include <QActionGroup>
 #include <QDesktopWidget>
 #include <QDockWidget>
-#include <QDragEnterEvent>
-#include <QDropEvent>
+#include <QtGui/qevent.h>
+
 #include <QEvent>        //::stateChanged()
-#include <QKeyEvent>
+
 #include <QLabel>
 #include <QLayout>      //ctor
-#include <QMouseEvent>
+
 #include <QObject>
 #include <QTimer>
 #include <QStackedWidget>

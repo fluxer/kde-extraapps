@@ -29,7 +29,7 @@ fontEncoding::fontEncoding(const QString &encName)
   _isValid = false;
   // Use kpsewhich to find the encoding file.
   QProcess kpsewhich;
-  kpsewhich.setReadChannelMode(QProcess::MergedChannels);
+  kpsewhich.setProcessChannelMode(QProcess::MergedChannels);
 
   kpsewhich.start("kpsewhich",
                   QStringList() << encName,

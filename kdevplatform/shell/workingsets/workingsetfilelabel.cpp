@@ -18,7 +18,7 @@
 
 #include "workingsetfilelabel.h"
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 using namespace KDevelop;
 

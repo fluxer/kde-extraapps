@@ -23,7 +23,7 @@
 
 //Qt includes
 
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 
 
 #include <QBrush>

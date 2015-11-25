@@ -19,7 +19,7 @@
 
 #include "snapshottimer.h"
 #include <QPainter>
-#include <QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QToolTip>
 #include <QApplication>
 #include <QDesktopWidget>

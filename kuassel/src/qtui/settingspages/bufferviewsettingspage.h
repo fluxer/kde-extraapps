@@ -25,7 +25,7 @@
 #include "ui_bufferviewsettingspage.h"
 #include "ui_buffervieweditdlg.h"
 
-#include <QItemSelection>
+#include <QtGui/qitemselectionmodel.h>
 
 class BufferViewConfig;
 

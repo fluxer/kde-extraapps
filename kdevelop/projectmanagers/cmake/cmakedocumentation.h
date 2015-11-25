@@ -24,7 +24,7 @@
 #include <QString>
 #include <QMap>
 #include <QStringList>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <interfaces/iplugin.h>
 #include "icmakedocumentation.h"
 

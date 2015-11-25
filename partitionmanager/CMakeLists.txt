@@ -20,13 +20,6 @@ project(partitionmanager)
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
-set(VERSION_MAJOR "1")
-set(VERSION_MINOR "1")
-set(VERSION_RELEASE "1")
-set(VERSION_SUFFIX "")
-set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
-add_definitions(-DVERSION="${VERSION}")
-
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)

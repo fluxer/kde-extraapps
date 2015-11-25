@@ -39,7 +39,7 @@
 #include <kaction.h>
 #include <threadweaver/ThreadWeaver.h>
 
-#include <QDragEnterEvent>
+#include <QtGui/qevent.h>
 #include <QFile>
 #include <QToolTip>
 

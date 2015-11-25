@@ -20,7 +20,7 @@
 
 #include "cmakecodecompletionmodel.h"
 #include <QVariant>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <kurl.h>
 #include <language/duchain/duchain.h>
 #include <language/duchain/duchainlock.h>

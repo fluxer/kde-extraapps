@@ -21,7 +21,7 @@
 #ifndef KDEVPLATFORM_SPINLOCK_H
 #define KDEVPLATFORM_SPINLOCK_H
 
-#include <QAtomicInt>
+#include <QtCore/qatomic.h>
 #include <QMutex>
 #include <QWaitCondition>
 #include <sys/time.h>

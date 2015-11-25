@@ -37,11 +37,13 @@
 #include <QButtonGroup>
 #include <QClipboard>
 #include <QShortcut>
-#include <QDragEnterEvent>
+#include <QtGui/qevent.h>
 #include <QSortFilterProxyModel>
 #include <QStyledItemDelegate>
 #include <QStringBuilder>
 #include <QTextDocument>
+#include <QTextCodec>
+#include <QStringListModel>
 
 #include <KColorScheme>
 #include <kactioncategory.h>
@@ -51,7 +53,6 @@
 #include <kxmlguifactory.h>
 #include <threadweaver/ThreadWeaver.h>
 #include <fastsizehintitemdelegate.h>
-#include <QStringListModel>
 
 
 using namespace TM;

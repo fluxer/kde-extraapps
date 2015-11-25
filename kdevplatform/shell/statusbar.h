@@ -20,7 +20,7 @@
 #ifndef KDEVPLATFORM_STATUSBAR_H
 #define KDEVPLATFORM_STATUSBAR_H
 
-#include <QtCore/QTime>
+#include <QtCore/qdatetime.h>
 #include <QtCore/QMap>
 
 #include <KDE/KStatusBar>

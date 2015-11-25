@@ -61,7 +61,7 @@ static KAboutData createPluginAboutData()
 		"pmlibpartedbackendplugin",
 		NULL,
 		ki18nc("@title", "LibParted Backend Plugin"),
-		QString("%1, libparted version: %2").arg(VERSION).arg(ped_get_version()).toUtf8(),
+		QString("%1, libparted version: %2").arg(KDE_VERSION_STRING).arg(ped_get_version()).toUtf8(),
 		ki18n("KDE Partition Manager backend for libparted."),
 		KAboutData::License_GPL,
 		ki18n("Copyright 2008,2009,2010 Volker Lanz"));

@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "kcalcdisplay.h"
 
 #include <QClipboard>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QStyle>
 #include <QStyleOption>

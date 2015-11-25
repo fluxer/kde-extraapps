@@ -25,7 +25,7 @@
 
 #include <QtGui/QMenu>
 #include <QtGui/QHeaderView>
-#include <QtGui/QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 #include "interfaces/contextmenuextension.h"
 #include "interfaces/icore.h"

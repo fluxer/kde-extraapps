@@ -16,8 +16,8 @@
 #include <QtCore/QVariant>
 #include <QtCore/QUuid>
 #include <QtGui/QPixmap>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
+
+#include <QtXml/qdom.h>
 
 #include <kdebug.h>
 
@@ -45,7 +45,7 @@
 #include <limits>
 
 #ifdef PAGE_PROFILE
-#include <QtCore/QTime>
+#include <QtCore/qdatetime.h>
 #endif
 
 using namespace Okular;

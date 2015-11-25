@@ -30,7 +30,7 @@
 #include "bluedevil/bluezagentmanager1.h"
 
 #include <QtCore/QHash>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include <QtDBus/QDBusConnectionInterface>
 

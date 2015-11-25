@@ -19,7 +19,7 @@
 #ifndef INCLUDESMODEL_H
 #define INCLUDESMODEL_H
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QStringList>
 
 class IncludesModel : public QAbstractListModel

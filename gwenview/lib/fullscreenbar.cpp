@@ -27,7 +27,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <QDesktopWidget>
 #include <QBitmap>
 #include <QEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QLayout>
 #include <QTimeLine>
 #include <QTimer>

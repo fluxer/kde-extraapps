@@ -36,7 +36,7 @@
 #include <QObject>
 #include <qcursor.h>
 #include <QCheckBox>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QLabel>
 #include <qpixmap.h>
 #include <qwmatrix.h>

@@ -19,7 +19,7 @@
 #ifndef KDEVPLATFORM_PLUGIN_QUICKOPENMODEL_H
 #define KDEVPLATFORM_PLUGIN_QUICKOPENMODEL_H
 
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <QString>
 #include <QAbstractItemModel>
 #include <QSet>

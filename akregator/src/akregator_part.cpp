@@ -70,7 +70,7 @@
 #include <QTextStream>
 #include <QTimer>
 #include <QWidget>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include "partadaptor.h"
 
 #include <memory>

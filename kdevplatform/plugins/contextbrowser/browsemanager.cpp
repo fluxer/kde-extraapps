@@ -20,7 +20,7 @@
  */
 
 #include "browsemanager.h"
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QToolButton>
 #include <kdebug.h>
 #include <ktexteditor/view.h>

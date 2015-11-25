@@ -33,7 +33,7 @@
 #include <KShell>
 #include <KLocale>
 
-#include <QX11EmbedContainer>
+#include <QtGui/qx11embed_x11.h>
 #include <QEvent>
 
 RdpView::RdpView(QWidget *parent,

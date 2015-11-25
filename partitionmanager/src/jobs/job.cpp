@@ -28,7 +28,7 @@
 #include "util/report.h"
 
 #include <QIcon>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <kdebug.h>
 #include <klocale.h>

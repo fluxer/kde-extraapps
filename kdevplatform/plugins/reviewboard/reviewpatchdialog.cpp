@@ -19,7 +19,7 @@
  */
 
 #include "reviewpatchdialog.h"
-#include <Qt>
+#include <QtCore/qnamespace.h>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 #include <KDebug>

@@ -28,7 +28,7 @@
 #include <QtCore/QMap>
 #include <QtCore/QObject>
 #include <QtCore/QSharedPointer>
-#include <QtCore/QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <QtGui/QWidget>
 

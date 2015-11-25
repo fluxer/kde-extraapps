@@ -26,7 +26,7 @@
 #include <KLocalizedString>
 #include <QAbstractItemModel>
 #include <QDebug>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QIcon>
 
 using namespace KDevelop;

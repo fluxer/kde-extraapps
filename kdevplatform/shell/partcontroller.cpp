@@ -25,7 +25,7 @@
 
 #include <QFile>
 #include <QTimer>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QApplication>
 
 #include <kdebug.h>

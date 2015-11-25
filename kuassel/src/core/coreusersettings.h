@@ -26,7 +26,7 @@
 #include "network.h"
 #include "types.h"
 
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class CoreUserSettings : public CoreSettings
 {

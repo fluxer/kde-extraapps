@@ -26,7 +26,7 @@
 #ifndef GDB_DEBUGSESSION_H
 #define GDB_DEBUGSESSION_H
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QScopedPointer>
 
 #include <KConfigGroup>

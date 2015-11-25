@@ -23,8 +23,8 @@
 
 #include <QWidget>
 
-#include <QDropEvent>
-#include <QDragEnterEvent>
+
+#include <QtGui/qevent.h>
 #include <QFileInfo>
 
 #include <QPushButton>

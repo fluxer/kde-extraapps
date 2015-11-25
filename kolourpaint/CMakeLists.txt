@@ -1,8 +1,5 @@
 project(kolourpaint)
 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
-
 find_package(QImageBlitz REQUIRED)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 

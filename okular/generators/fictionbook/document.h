@@ -13,7 +13,7 @@
 #include <QtCore/QByteArray>
 #include <QtCore/QMap>
 #include <QtCore/QString>
-#include <QtXml/QDomDocument>
+#include <QtXml/qdom.h>
 
 namespace FictionBook {
 

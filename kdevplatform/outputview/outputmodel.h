@@ -25,7 +25,7 @@
 #include "outputviewexport.h"
 #include "ioutputviewmodel.h"
 
-#include <QtCore/QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 
 class KUrl;
 

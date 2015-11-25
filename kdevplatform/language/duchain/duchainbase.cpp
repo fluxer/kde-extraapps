@@ -19,7 +19,7 @@
 
 #include "duchainbase.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QThreadStorage>
 
 #include "duchainpointer.h"

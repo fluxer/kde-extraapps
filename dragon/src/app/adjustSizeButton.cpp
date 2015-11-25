@@ -31,7 +31,7 @@
 #include <QLabel>
 #include <QLayout>
 #include <QPainter>
-#include <QTimerEvent>
+#include <QtCore/qcoreevent.h>
 
 #include "extern.h"
 #include "theStream.h"

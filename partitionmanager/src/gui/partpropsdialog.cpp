@@ -35,7 +35,7 @@
 #include <klineedit.h>
 #include <klocale.h>
 
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 /** Creates a new PartPropsDialog
 	@param parent pointer to the parent widget

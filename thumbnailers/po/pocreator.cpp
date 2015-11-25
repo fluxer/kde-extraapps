@@ -24,7 +24,7 @@
 #include <gettext-po.h>
 #include <QColor>
 #include <QImage>
-#include <QLatin1String>
+#include <QtCore/qstring.h>
 #include <QPainter>
 #include <QWidget>
 #include <kdemacros.h>

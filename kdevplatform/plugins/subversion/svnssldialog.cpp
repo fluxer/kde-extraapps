@@ -9,7 +9,7 @@
  ***************************************************************************/
 
 #include "svnssldialog.h"
-#include <QtGui/QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 #include <klocale.h>
 
 #include "ui_ssltrustdialog.h"

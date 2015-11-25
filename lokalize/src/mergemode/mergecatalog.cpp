@@ -28,7 +28,7 @@
 #include <kdebug.h>
 #include <klocalizedstring.h>
 #include <QMultiHash>
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 
 

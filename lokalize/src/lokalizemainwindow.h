@@ -32,7 +32,7 @@
 
 #include <QPointer>
 #include <QMap>
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 
 class QMdiSubWindow;

@@ -23,7 +23,7 @@
 
 #include "projectexport.h"
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QStringList>
 
 class KConfigGroup;

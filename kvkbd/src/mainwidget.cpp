@@ -1,6 +1,6 @@
 #include "mainwidget.h"
 
-#include <QObjectList>
+#include <QtCore/qobject.h>
 #include <QList>
 
 #include "vbutton.h"

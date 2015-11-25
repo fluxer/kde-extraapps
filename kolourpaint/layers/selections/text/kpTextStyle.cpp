@@ -29,6 +29,7 @@
 #include <kpTextStyle.h>
 
 #include <qdatastream.h>
+#include <qrect.h>
 #include <qfont.h>
 #include <qfontmetrics.h>
 

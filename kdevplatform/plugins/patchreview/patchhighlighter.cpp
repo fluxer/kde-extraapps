@@ -34,7 +34,7 @@
 #include <interfaces/iuicontroller.h>
 
 #include <QApplication>
-#include <QTextCharFormat>
+#include <QtGui/qtextformat.h>
 #include <QWidget>
 #include <QTextDocument>
 #include <QPointer>

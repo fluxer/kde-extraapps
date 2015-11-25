@@ -31,8 +31,8 @@
 #include <ktextedit.h>
 #include <kglobalsettings.h>
 
-#include <QShowEvent>
-#include <QHideEvent>
+#include <QtGui/qevent.h>
+
 #include <QAction>
 #include <QMenu>
 #include <QBoxLayout>

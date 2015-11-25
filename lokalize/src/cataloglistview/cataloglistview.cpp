@@ -31,10 +31,10 @@
 #include <klineedit.h>
 #include <KConfigGroup>
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QTreeView>
 #include <QHeaderView>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QAction>
@@ -44,7 +44,7 @@
 #include <QMdiSubWindow>
 #include <QMdiArea>
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 class CatalogTreeView: public QTreeView
 {

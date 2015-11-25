@@ -22,7 +22,7 @@
 #define DRAGONPLAYER_MPRIS2_H
 
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class Mpris2 : public QObject
 {

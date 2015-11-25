@@ -20,7 +20,7 @@ Boston, MA 02110-1301, USA.
 #include "environmentgroupmodel.h"
 #include <QtCore/QVariant>
 #include <QtCore/QStringList>
-#include <QtCore/QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <kdebug.h>
 #include <KLocalizedString>

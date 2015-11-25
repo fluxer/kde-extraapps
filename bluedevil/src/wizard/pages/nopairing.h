@@ -26,7 +26,7 @@
 
 #include "ui_nopairing.h"
 #include <QWizard>
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 class KPixmapSequenceOverlayPainter;

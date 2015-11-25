@@ -32,8 +32,8 @@
 #include <kpColorToolBar.h>
 
 #include <QBoxLayout>
-#include <QDragEnterEvent>
-#include <QDragMoveEvent>
+#include <QtGui/qevent.h>
+
 
 #include <KColorMimeData>
 #include <kdebug.h>

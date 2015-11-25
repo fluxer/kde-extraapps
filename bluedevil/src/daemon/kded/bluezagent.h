@@ -24,7 +24,7 @@
 #define BLUEZAGENT_H
 
 #include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 #include <QtDBus/QDBusAbstractAdaptor>
 
 class QProcess;

@@ -23,7 +23,7 @@
 #define KDEVPLATFORM_TREEMODEL_H
 
 #include <QtCore/QAbstractItemModel>
-#include <QtCore/QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtCore/QVariant>
 #include <QtCore/QVector>
 #include <QtCore/QString>

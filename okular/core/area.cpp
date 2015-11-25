@@ -10,7 +10,7 @@
 #include "area.h"
 
 #include <QtCore/QRect>
-#include <QtGui/QPolygonF>
+#include <QtGui/qpolygon.h>
 #include <kdebug.h>
 
 #include <math.h>

@@ -30,7 +30,7 @@
 #include "theStream.h"
 
 #include <QActionGroup>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QLabel>
 #include <QTimer>
 #include <QVBoxLayout>

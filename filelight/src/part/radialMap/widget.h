@@ -25,11 +25,11 @@
 #include <KJob>
 #include <KUrl>
 
-#include <QtGui/QDragEnterEvent>
-#include <QtGui/QDropEvent>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QPaintEvent>
-#include <QtGui/QResizeEvent>
+#include <QtGui/qevent.h>
+
+
+
+
 #include <QtGui/QWidget>
 #include <QtCore/QTimer>
 

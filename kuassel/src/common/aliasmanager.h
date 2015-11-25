@@ -21,7 +21,7 @@
 #ifndef ALIASMANAGER_H
 #define ALIASMANAGER_H
 
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include "bufferinfo.h"
 #include "syncableobject.h"

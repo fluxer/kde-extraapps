@@ -30,7 +30,7 @@
 #include "nxhostpreferences.h"
 #include "nxresumesessions.h"
 
-#include <QX11EmbedContainer>
+#include <QtGui/qx11embed_x11.h>
 
 #define TCP_PORT_NX 22
 

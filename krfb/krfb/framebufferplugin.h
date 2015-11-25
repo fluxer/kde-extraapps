@@ -23,7 +23,7 @@
 
 #include <kdemacros.h>
 
-#include <QtCore/QVariantList>
+#include <QtCore/qvariant.h>
 
 #include <QtGui/QWidget>
 

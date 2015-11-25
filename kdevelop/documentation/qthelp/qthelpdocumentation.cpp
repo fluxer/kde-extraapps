@@ -24,7 +24,7 @@
 #include <KLocale>
 #include <KIcon>
 #include <QTreeView>
-#include <QHelpContentModel>
+#include <QtHelp/qhelpcontentwidget.h>
 #include <QHeaderView>
 #include <QMenu>
 #include <interfaces/icore.h>

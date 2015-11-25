@@ -22,7 +22,7 @@
 #define DRAGONPLAYER_MEDIAPLAYRER2PLAYER_H
 
 #include <QDBusAbstractAdaptor>
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 #include <Phonon/MediaSource>
 

@@ -34,7 +34,7 @@
 #include <math.h>
 
 #include <QPainter>
-#include <QPolygonF>
+#include <QtGui/qpolygon.h>
 
 #include <kdebug.h>
 

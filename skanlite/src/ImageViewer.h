@@ -26,7 +26,7 @@
 #define IMAGE_VIEWER_H
 
 #include <QGraphicsView>
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 
 class ImageViewer : public QGraphicsView
 {

@@ -26,7 +26,7 @@
 #include <QMap>
 #include <QFileInfo>
 #include <QMutex>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QDebug>
 
 QString enhanceLangCode(const QString& langCode)

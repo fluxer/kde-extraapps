@@ -21,7 +21,7 @@
 #include <ktexteditor/document.h>
 #include <klocale.h>
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QTextDocument>
 #include <interfaces/icore.h>
 #include <interfaces/idocumentcontroller.h>

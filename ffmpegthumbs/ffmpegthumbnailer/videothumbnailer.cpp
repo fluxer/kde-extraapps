@@ -25,7 +25,7 @@
 #include <cmath>
 #include <qglobal.h>
 #include <sys/stat.h>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 
 using namespace std;

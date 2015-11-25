@@ -25,7 +25,7 @@
 
 #include <QList>
 #include <QStringList>
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 #include <kcompositejob.h>
 #include <KFileItemList>

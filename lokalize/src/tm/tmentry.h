@@ -28,7 +28,7 @@
 #include "catalogstring.h"
 
 #include <QString>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 
 namespace TM {
 

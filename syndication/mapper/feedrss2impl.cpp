@@ -29,9 +29,9 @@
 #include <rss2/item.h>
 
 #include <QtCore/QList>
-#include <QtCore/QMultiMap>
+#include <QtCore/qmap.h>
 #include <QtCore/QString>
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 
 namespace Syndication {
 

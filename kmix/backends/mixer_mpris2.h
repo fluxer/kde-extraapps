@@ -25,7 +25,7 @@
 #include <QString>
 #include <QtDBus>
 #include <QDBusInterface>
-#include <QDBusPendingCallWatcher>
+#include <QtDBus/qdbuspendingcall.h>
 #include <QMap>
 #include <QMutex>
 #include <QWaitCondition>

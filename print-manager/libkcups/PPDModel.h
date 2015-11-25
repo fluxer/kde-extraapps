@@ -22,7 +22,7 @@
 #define PPD_MODEL_H
 
 #include <QStandardItemModel>
-#include <QVariantHash>
+#include <QtCore/qvariant.h>
 
 struct DriverMatch{
     QString ppd;

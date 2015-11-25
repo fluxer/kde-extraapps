@@ -20,7 +20,7 @@
 #ifndef RECEIVE_FILE_JOB_H
 #define RECEIVE_FILE_JOB_H
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QDBusMessage>
 
 #include <KJob>

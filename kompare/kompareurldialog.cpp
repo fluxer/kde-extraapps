@@ -16,7 +16,7 @@
 **
 ***************************************************************************/
 #include "kompareurldialog.h"
-#include <QShowEvent>
+#include <QtGui/qevent.h>
 
 #include <QGroupBox>
 

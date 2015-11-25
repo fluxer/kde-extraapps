@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QPoint>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 class DragWidget : public QWidget
 {

@@ -32,7 +32,7 @@
 #include <documentvisitor.h>
 #include <tools.h>
 
-#include <QtXml/QDomElement>
+#include <QtXml/qdom.h>
 #include <QtCore/QList>
 #include <QtCore/QString>
 

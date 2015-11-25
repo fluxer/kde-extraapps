@@ -22,7 +22,7 @@
 #define PRINT_QUEUE_UI_H
 
 #include <KDialog>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QToolButton>
 
 namespace Ui {

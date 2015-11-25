@@ -42,8 +42,8 @@
 #include <kaction.h>
 #include <kmessagebox.h>
 
-#include <QTime>
-#include <QDragEnterEvent>
+#include <QtCore/qdatetime.h>
+#include <QtGui/qevent.h>
 #include <QFileInfo>
 #include <QDir>
 #include <QSignalMapper>

@@ -21,8 +21,8 @@
 #define THEMELOADER_H
 
 #include <QObject>
-#include <QDomNode>
-#include <QDomNamedNodeMap>
+
+#include <QtXml/qdom.h>
 #include <QVariant>
 #include <QMap>
 #include <QMenu>

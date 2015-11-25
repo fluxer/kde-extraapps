@@ -21,7 +21,7 @@
 #ifndef MULTILINEEDIT_H_
 #define MULTILINEEDIT_H_
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QHash>
 
 #include <KTextEdit>

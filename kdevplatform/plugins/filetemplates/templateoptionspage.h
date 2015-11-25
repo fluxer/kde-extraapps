@@ -21,7 +21,7 @@
 #define KDEVPLATFORM_PLUGIN_TEMPLATEOPTIONSPAGE_H
 
 #include <QWidget>
-#include <QVariantHash>
+#include <QtCore/qvariant.h>
 
 
 

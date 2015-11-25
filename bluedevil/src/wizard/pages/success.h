@@ -25,7 +25,7 @@
 #define SUCCESS_H
 
 #include "ui_success.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 

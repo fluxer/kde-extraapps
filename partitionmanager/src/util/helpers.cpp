@@ -119,7 +119,7 @@ KAboutData* createPartitionManagerAboutData()
 		"partitionmanager",
 		NULL,
 		ki18nc("@title", "<application>KDE Partition Manager</application>"),
-		VERSION,
+		KDE_VERSION_STRING,
 		ki18nc("@title", "Manage your disks, partitions and file systems"),
 		KAboutData::License_GPL,
 		ki18nc("@info:credit", "© 2008-2013 Volker Lanz")

@@ -20,7 +20,7 @@
 #include "KPrintManagerConfigPlugin.h"
 #include "ClassListWidget.h"
 
-#include <QtPlugin>
+#include <QtCore/qplugin.h>
 
 #include <KGlobal>
 

@@ -22,7 +22,7 @@
 #ifndef CUSTOMDEFINESANDINCLUDESMANAGER_H
 #define CUSTOMDEFINESANDINCLUDESMANAGER_H
 
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <QVector>
 
 #include <interfaces/iplugin.h>

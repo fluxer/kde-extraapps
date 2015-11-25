@@ -21,7 +21,7 @@
 #include "gitmessagehighlighter.h"
 
 #include <QtCore/QString>
-#include <QtGui/QTextCharFormat>
+#include <QtGui/qtextformat.h>
 #include <QtGui/QTextEdit>
 #include <KDE/KLocalizedString>
 

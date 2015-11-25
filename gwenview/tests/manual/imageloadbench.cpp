@@ -4,7 +4,7 @@
 #include <QFile>
 #include <QImage>
 #include <QImageReader>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <lib/imageformats/imageformats.h>
 

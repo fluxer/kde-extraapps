@@ -39,7 +39,7 @@
 #include <QLabel>
 #include <QStringListModel>
 #include <QLineEdit>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 void TextEdit::keyPressEvent(QKeyEvent* keyEvent)
 {

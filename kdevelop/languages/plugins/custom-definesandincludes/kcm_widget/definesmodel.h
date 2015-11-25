@@ -19,7 +19,7 @@
 #ifndef DEFINESMODEL_H
 #define DEFINESMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QHash>
 
 #include <language/interfaces/idefinesandincludesmanager.h>

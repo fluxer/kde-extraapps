@@ -25,8 +25,8 @@
 #define FloppyData_included
 
 #include <kdialog.h>
-#include <QKeyEvent>
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
+
 #include <kconfig.h>
 
 class QCheckBox;

@@ -22,7 +22,7 @@
 
 #include <QPainter>
 #include <QStyle>
-#include <QStyleOptionFrame>
+#include <QtGui/qstyleoption.h>
 
 #  include <KColorDialog>
 

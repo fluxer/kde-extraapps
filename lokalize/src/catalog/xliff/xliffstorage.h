@@ -23,8 +23,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define XLIFFSTORAGE_H
 
 #include "catalogstorage.h"
-#include <QDomNodeList>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
+
 #include <QVector>
 #include <QMap>
 // class QDomDocument;

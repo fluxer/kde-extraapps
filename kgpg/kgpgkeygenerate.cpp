@@ -24,7 +24,7 @@
 #include <KLocale>
 #include <KMessageBox>
 #include <QGroupBox>
-#include <QIntValidator>
+#include <QtGui/qvalidator.h>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWhatsThis>

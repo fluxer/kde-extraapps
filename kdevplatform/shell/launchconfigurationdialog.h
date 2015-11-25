@@ -23,7 +23,7 @@
 #include <QtCore/QAbstractItemModel>
 #include <QtCore/QMap>
 #include <QtCore/QList>
-#include <QtGui/QItemEditorCreatorBase>
+#include <QtGui/qitemeditorfactory.h>
 
 #include <kdialog.h>
 #include <kcombobox.h>

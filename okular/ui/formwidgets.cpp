@@ -11,7 +11,7 @@
 #include "pageviewutils.h"
 
 #include <qbuttongroup.h>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QMenu>
 #include <QEvent>
 #include <klineedit.h>

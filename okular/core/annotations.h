@@ -15,8 +15,8 @@
 #include <QtCore/QLinkedList>
 #include <QtCore/QRect>
 #include <QtGui/QFont>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
+
+#include <QtXml/qdom.h>
 
 #include "okular_export.h"
 #include "area.h"

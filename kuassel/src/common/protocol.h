@@ -23,7 +23,7 @@
 
 #include <QByteArray>
 #include <QDateTime>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 namespace Protocol {
 

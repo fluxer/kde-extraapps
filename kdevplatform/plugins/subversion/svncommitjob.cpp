@@ -22,7 +22,7 @@
 #include "svncommitjob.h"
 #include "svncommitjob_p.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <ThreadWeaver.h>
 #include <QStandardItemModel>

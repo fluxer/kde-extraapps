@@ -30,7 +30,7 @@
 #include <KAboutData>
 #include <KDebug>
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 int main(int argc, char **argv)
 {

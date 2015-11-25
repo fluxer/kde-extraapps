@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Qt
 #include <QFile>
 #include <QTextStream>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 // System
 #ifdef Q_OS_WIN

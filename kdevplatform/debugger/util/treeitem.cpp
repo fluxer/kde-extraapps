@@ -22,7 +22,7 @@
 #include "treeitem.h"
 
 #include <QStringList>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 #include "treemodel.h"
 

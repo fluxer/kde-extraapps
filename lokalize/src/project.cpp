@@ -37,7 +37,7 @@
 #include "qamodel.h"
 
 #include <QTimer>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <kurl.h>
 #include <kdirlister.h>

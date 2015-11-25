@@ -8,7 +8,7 @@
  ***************************************************************************/
 
 
-#include <QtGui/QTextFrame>
+#include <QtGui/qtextobject.h>
 
 #include "converter.h"
 #include "document.h"

@@ -21,9 +21,9 @@
 
 #include "qthelpprovider.h"
 
-#include <QHelpIndexModel>
+#include <QtHelp/qhelpindexwidget.h>
 #include <QTemporaryFile>
-#include <QHelpContentModel>
+#include <QtHelp/qhelpcontentwidget.h>
 
 #include <KDebug>
 #include <KStandardDirs>

@@ -29,7 +29,7 @@
 #include <kcolorscheme.h>
 
 #include <QHash>
-#include <QTextCharFormat>
+#include <QtGui/qtextformat.h>
 
 
 class QTextDocument;

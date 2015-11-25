@@ -20,8 +20,8 @@
 
 #include "identity.h"
 
-#include <QMetaProperty>
-#include <QVariantMap>
+#include <QtCore/qmetaobject.h>
+#include <QtCore/qvariant.h>
 #include <QString>
 
 #include <KLocale>

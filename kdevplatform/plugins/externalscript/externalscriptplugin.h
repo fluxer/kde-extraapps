@@ -23,9 +23,9 @@
 #define KDEVPLATFORM_PLUGIN_EXTERNALSCRIPTPLUGIN_H
 
 #include <interfaces/iplugin.h>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <KConfigGroup>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 class ExternalScriptItem;
 

@@ -13,14 +13,6 @@ set(kdevfiletemplates_PART_SRCS
     templateoptionspage.cpp
     templateselectionpage.cpp
     testcasespage.cpp
-
-    templatepreviewtoolview.ui
-    licensechooser.ui
-    newclass.ui
-    outputlocation.ui
-    overridevirtuals.ui
-    templateselection.ui
-    testcases.ui
 )
 
 kde4_add_plugin(kdevfiletemplates ${kdevfiletemplates_PART_SRCS})
@@ -63,7 +55,7 @@ DESTINATION ${DATA_INSTALL_DIR}/kdevcodegen/licenses
 ################
 
 set(test_srcs
-main.cpp
+    main.cpp
     templatepreview.cpp
 
     classidentifierpage.cpp

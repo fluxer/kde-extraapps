@@ -12,7 +12,7 @@
 
 #include "appwizardpagewidget.h"
 #include "appwizarddialog.h"
-#include <QRegExpValidator>
+#include <QtGui/qvalidator.h>
 
 namespace KDevelop
 {

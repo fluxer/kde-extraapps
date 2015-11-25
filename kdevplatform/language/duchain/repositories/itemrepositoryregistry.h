@@ -21,7 +21,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QMutex>
-#include <QtCore/QAtomicInt>
+#include <QtCore/qatomic.h>
 #include <QtCore/QMap>
 
 #include <language/languageexport.h>

@@ -27,7 +27,7 @@
 #include "jobs.h"
 
 #include <QSortFilterProxyModel>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 class QFileSystemModel;
 class QPersistentModelIndex;
 

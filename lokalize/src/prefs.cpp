@@ -54,8 +54,8 @@
 #include <threadweaver/ThreadWeaver.h>
 
 #include <QBoxLayout>
-#include <QDragEnterEvent>
-#include <QDropEvent>
+#include <QtGui/qevent.h>
+
 #include <QTimer>
 
 //#include <sonnet/configwidget.h>

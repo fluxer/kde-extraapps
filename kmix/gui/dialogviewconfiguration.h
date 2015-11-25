@@ -32,7 +32,7 @@ class QScrollArea;
 class QVBoxLayout;
 
 // QT DND
-#include <QDragEnterEvent>
+#include <QtGui/qevent.h>
 #include <QMimeData>
 
 // KDE

@@ -24,7 +24,7 @@
 #include <QCoreApplication>
 #include <QNetworkProxy>
 #include <QUuid>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include <KLocale>
 

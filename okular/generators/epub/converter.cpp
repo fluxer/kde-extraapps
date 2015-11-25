@@ -11,7 +11,7 @@
 
 #include <QtGui/QAbstractTextDocumentLayout>
 #include <QtGui/QTextDocument>
-#include <QtGui/QTextFrame>
+#include <QtGui/qtextobject.h>
 #include <QTextDocumentFragment>
 #include <QFileInfo>
 #include <QApplication> // Because of the HACK

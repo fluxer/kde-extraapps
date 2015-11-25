@@ -21,8 +21,8 @@
 #ifndef _HIGHLIGHTSETTINGSPAGE_H_
 #define _HIGHLIGHTSETTINGSPAGE_H_
 
-#include <QVariantList>
-#include <QTableWidgetItem>
+#include <QtCore/qvariant.h>
+#include <QtGui/qtablewidget.h>
 
 #include <KLocale>
 

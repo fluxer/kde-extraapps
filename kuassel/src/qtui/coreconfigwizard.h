@@ -23,7 +23,7 @@
 
 #include <QHash>
 #include <QWizard>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include "ui_coreconfigwizardintropage.h"
 #include "ui_coreconfigwizardadminuserpage.h"

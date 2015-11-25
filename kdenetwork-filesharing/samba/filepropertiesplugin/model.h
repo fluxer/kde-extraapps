@@ -22,7 +22,7 @@
 #define model_h
 
 #include <QStringList>
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <ksambasharedata.h>
 
 class KSambaShareData;

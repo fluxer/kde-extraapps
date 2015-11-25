@@ -37,7 +37,7 @@
 #include "catalogitem_private.h"
 
 #include <kdebug.h>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 using namespace GettextCatalog;
 

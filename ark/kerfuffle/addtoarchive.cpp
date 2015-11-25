@@ -41,7 +41,7 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QTimer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace Kerfuffle
 {

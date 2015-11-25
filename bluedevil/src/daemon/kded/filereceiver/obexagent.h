@@ -21,7 +21,7 @@
 
 #include <QDBusMessage>
 #include <QDBusAbstractAdaptor>
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 #include <KComponentData>
 

@@ -24,7 +24,7 @@
 #include <QDataStream>
 #include <QMetaType>
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include "signalproxy.h"
 

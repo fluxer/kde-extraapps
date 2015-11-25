@@ -20,7 +20,7 @@
 
 #include <QIcon>
 #include <QLayout>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QMenu>
 #include <QScrollBar>
 

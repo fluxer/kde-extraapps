@@ -24,7 +24,7 @@
 #include "nxresumesessions.h"
 
 #include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 #include <QVBoxLayout>
 
 #include <KTitleWidget>

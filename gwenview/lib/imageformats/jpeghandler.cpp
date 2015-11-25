@@ -167,7 +167,7 @@ static bool loadJpeg(QImage* image, QIODevice* ioDevice, QSize scaledSize)
         break;
     case 1: // B&W image
         *image = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_Indexed8);
-        image->setNumColors(256);
+        image->setColorCount(256);
         for (int i = 0; i < 256; ++i) {
             image->setColor(i, qRgba(i, i, i, 255));
         }
@@ -331,7 +331,7 @@ static bool write_jpeg_image(const QImage &sourceImage, QIODevice *device, int s
         case 1:
         case 8:
             gray = true;
-            for (int i = image.numColors(); gray && i--;) {
+            for (int i = image.colorCount(); gray && i--;) {
                 gray = gray & (qRed(cmap[i]) == qGreen(cmap[i]) &&
                                qRed(cmap[i]) == qBlue(cmap[i]));
             }

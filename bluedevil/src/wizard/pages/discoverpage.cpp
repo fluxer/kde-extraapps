@@ -22,11 +22,11 @@
 #include "../bluewizard.h"
 #include "../wizardagent.h"
 
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QListView>
 #include <QLabel>
 #include <QTimer>
-#include <QRegExpValidator>
+#include <QtGui/qvalidator.h>
 
 #include <KDebug>
 #include <KLocale>

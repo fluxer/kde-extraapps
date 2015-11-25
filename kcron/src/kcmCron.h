@@ -21,7 +21,7 @@
 #include <QPixmap>
 #include <QString>
 #include <QWidget>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <QStringList>
 
 #include <kcmodule.h>

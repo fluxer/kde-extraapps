@@ -24,8 +24,8 @@
 #include "ircuser.h"
 #include "util.h"
 
-#include <QMapIterator>
-#include <QHashIterator>
+#include <QtCore/qmap.h>
+#include <QtCore/qhash.h>
 #include <QTextCodec>
 
 #include <KDebug>

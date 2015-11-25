@@ -22,7 +22,7 @@
 
 #include <QDebug>
 #include <QDesktopWidget>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QGridLayout>
 #include <QMessageBox>

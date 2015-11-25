@@ -40,7 +40,7 @@
 #include <kpView.h>
 #include <kpViewManager.h>
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 #include <QClipboard>
 

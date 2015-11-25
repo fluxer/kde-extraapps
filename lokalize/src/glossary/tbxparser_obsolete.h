@@ -24,7 +24,7 @@
 #ifndef TBXPARSER_H
 #define TBXPARSER_H
 
-#include <QXmlDefaultHandler>
+#include <QtXml/qxml.h>
 
 #include "glossary.h"
 

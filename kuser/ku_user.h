@@ -24,7 +24,7 @@
 #include <sys/types.h>
 
 
-#include <QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 
 #include "globals.h"
 #include "ku_prefs.h"

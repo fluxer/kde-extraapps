@@ -44,7 +44,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QTimer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 BatchExtract::BatchExtract(QObject* parent)
     : KCompositeJob(parent),

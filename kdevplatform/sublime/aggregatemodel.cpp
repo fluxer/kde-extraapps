@@ -18,7 +18,7 @@
  ***************************************************************************/
 #include "aggregatemodel.h"
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QStandardItemModel>
 
 #include <kdebug.h>

@@ -19,7 +19,7 @@
 #include "aggregatemodeltest.h"
 
 #include <QtTest/QtTest>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QStandardItemModel>
 
 #include <sublime/aggregatemodel.h>

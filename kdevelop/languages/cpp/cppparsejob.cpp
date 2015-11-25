@@ -37,7 +37,7 @@
 #include <QFile>
 #include <QByteArray>
 #include <QReadWriteLock>
-#include <QReadLocker>
+#include <QtCore/qreadwritelock.h>
 
 #include <KDebug>
 #include <KLocale>

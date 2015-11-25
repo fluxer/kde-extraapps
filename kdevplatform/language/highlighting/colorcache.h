@@ -25,7 +25,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QList>
 #include <QtGui/QColor>
-#include <QtCore/QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include "../languageexport.h"
 

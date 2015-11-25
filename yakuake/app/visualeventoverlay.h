@@ -23,7 +23,7 @@
 
 
 #include <QRect>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QWidget>
 
 

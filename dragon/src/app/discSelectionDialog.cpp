@@ -24,7 +24,7 @@
 #include "videoWindow.h"
 
 #include <QLabel>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QVBoxLayout>
 
 #include <KListWidget>

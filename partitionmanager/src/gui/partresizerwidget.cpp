@@ -28,12 +28,12 @@
 #include "fs/filesystem.h"
 
 #include <QPainter>
-#include <QMouseEvent>
-#include <QPaintEvent>
-#include <QResizeEvent>
-#include <QStyleOptionToolBar>
-#include <QStyleOptionFrameV3>
-#include <QStyleOptionButton>
+
+#include <QtGui/qevent.h>
+
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qstyleoption.h>
+
 
 #include <kdebug.h>
 #include <kcolorscheme.h>

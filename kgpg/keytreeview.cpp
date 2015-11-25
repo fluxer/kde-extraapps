@@ -27,8 +27,8 @@
 #include <KConfigGroup>
 #include <KLocale>
 #include <KMessageBox>
-#include <QDragMoveEvent>
-#include <QDropEvent>
+
+#include <QtGui/qevent.h>
 #include <QHeaderView>
 
 KeyTreeView::KeyTreeView(QWidget *parent, KeyListProxyModel *model)

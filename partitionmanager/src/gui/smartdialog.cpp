@@ -41,7 +41,7 @@
 #include <kglobalsettings.h>
 #include <kglobal.h>
 
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 #include <QTextStream>
 #include <QTextDocument>
 #include <qglobal.h>

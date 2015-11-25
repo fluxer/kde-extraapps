@@ -21,7 +21,7 @@
 #define KDEVPLATFORM_DOCUMENTATIONVIEW_H
 
 #include <QWidget>
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <KToolBar>
 #include <interfaces/idocumentation.h>
 #include "documentationexport.h"

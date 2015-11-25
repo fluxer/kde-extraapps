@@ -25,7 +25,7 @@
 #ifndef REMOTEDESKTOPSMODEL_H
 #define REMOTEDESKTOPSMODEL_H
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <KDateTime>
 
 #ifdef BUILD_ZEROCONF

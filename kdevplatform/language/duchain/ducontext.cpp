@@ -21,7 +21,7 @@
 
 #include <limits>
 
-#include <QMutableLinkedListIterator>
+#include <QtCore/qlist.h>
 #include <QSet>
 
 #include <ktexteditor/document.h>

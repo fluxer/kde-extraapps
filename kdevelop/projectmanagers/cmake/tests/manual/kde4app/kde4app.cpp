@@ -7,7 +7,7 @@
 #include "kde4appview.h"
 #include "settings.h"
 
-#include <QtGui/QDropEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QPainter>
 #include <QtGui/QPrinter>
 

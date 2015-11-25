@@ -25,9 +25,9 @@
 #include <KGlobalSettings>
 
 #include <QApplication>
-#include <QDragEnterEvent>
-#include <QDragMoveEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
+
+
 
 ArchiveView::ArchiveView(QWidget *parent)
         : QTreeView(parent)

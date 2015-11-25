@@ -29,7 +29,7 @@
 #include <KParts/StatusBarExtension>
 #include <KTempDir>
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 class ArchiveModel;
 class InfoPanel;

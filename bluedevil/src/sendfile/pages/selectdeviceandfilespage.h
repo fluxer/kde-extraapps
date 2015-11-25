@@ -25,7 +25,7 @@
 
 #include "ui_selectfilediscover.h"
 
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class KUrl;
 class QWizard;

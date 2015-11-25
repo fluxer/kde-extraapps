@@ -21,7 +21,7 @@
 #include "ksnapshotpreview.h"
 
 #include <QPainter>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPixmap>
 
 #include <KDebug>

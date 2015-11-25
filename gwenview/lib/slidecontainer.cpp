@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Qt
 #include <QEvent>
 #include <QPropertyAnimation>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 namespace Gwenview
 {

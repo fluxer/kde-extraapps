@@ -39,7 +39,7 @@
 #include <QFont>
 #include <QList>
 #include <QPainter>
-#include <QTextCharFormat>
+#include <QtGui/qtextformat.h>
 
 #include <KDebug>
 

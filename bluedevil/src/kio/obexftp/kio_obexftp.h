@@ -25,7 +25,7 @@
 #include "kdedobexftp.h"
 
 #include <QtCore/QObject>
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 #include <QEventLoop>
 
 #include <kio/slavebase.h>

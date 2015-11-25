@@ -27,7 +27,7 @@
 
 #include <KIO/Job>
 
-#include <QListIterator>
+#include <QtCore/qlist.h>
 
 // id and name for man section
 typedef QPair<QString, QString> ManSection;

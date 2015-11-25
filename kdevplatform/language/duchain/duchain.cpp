@@ -25,10 +25,10 @@
 #include <QtCore/QCoreApplication>
 #include <QApplication>
 #include <QtCore/QHash>
-#include <QtCore/QMultiMap>
+#include <QtCore/qmap.h>
 #include <QtCore/QTimer>
 #include <QtCore/QReadWriteLock>
-#include <QtCore/QAtomicInt>
+#include <QtCore/qatomic.h>
 #include <QtCore/QThread>
 #include <QtCore/QWaitCondition>
 #include <QtCore/QMutex>

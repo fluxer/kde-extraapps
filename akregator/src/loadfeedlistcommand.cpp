@@ -32,7 +32,7 @@
 #include <KRandom>
 
 #include <QDateTime>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QPointer>
 #include <QString>

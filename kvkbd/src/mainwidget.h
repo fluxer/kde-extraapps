@@ -5,7 +5,7 @@
 #include <QString>
 #include <QFont>
 #include <QSize>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 #include "vkeyboard.h"
 

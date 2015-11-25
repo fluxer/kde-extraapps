@@ -10,7 +10,7 @@
 #ifndef _OKULAR_SIDE_REVIEWS_H_
 #define _OKULAR_SIDE_REVIEWS_H_
 
-#include <QtCore/QModelIndexList>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtCore/QVector>
 #include <QtGui/QWidget>
 

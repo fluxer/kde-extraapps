@@ -20,7 +20,7 @@
 #include "languagecontroller.h"
 
 #include <QHash>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <kmimetype.h>
 

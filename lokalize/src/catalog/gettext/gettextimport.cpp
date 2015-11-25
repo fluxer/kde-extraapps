@@ -40,7 +40,7 @@
 //#include <resources.h>
 
 #include <QFile>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QFileInfo>
 #include <QRegExp>
 #include <QTextCodec>

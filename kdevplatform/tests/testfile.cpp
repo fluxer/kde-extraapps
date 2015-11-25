@@ -23,7 +23,7 @@
 #include "testproject.h"
 
 #include <KTemporaryFile>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QTest>
 
 #include <language/duchain/duchainlock.h>

@@ -28,7 +28,7 @@
 #include "projectlocal.h"
 
 #include <QString>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 
 class Catalog;
 struct Phase

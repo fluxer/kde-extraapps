@@ -23,7 +23,7 @@
 
 #include <QApplication>
 #include <QEvent>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 MouseOverToolBar::MouseOverToolBar( QWidget *parent )
       : KToolBar( parent )

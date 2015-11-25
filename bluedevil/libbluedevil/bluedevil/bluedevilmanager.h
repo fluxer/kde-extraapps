@@ -26,7 +26,7 @@
 #include <bluedevil/bluedevil_export.h>
 
 #include <QtCore/QObject>
-#include <QtDBus/QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 namespace BlueDevil {
 

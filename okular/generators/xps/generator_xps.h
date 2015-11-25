@@ -24,11 +24,11 @@
 #include <core/textpage.h>
 
 #include <QColor>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFontDatabase>
 #include <QImage>
-#include <QXmlStreamReader>
-#include <QXmlDefaultHandler>
+#include <QtCore/qxmlstream.h>
+#include <QtXml/qxml.h>
 #include <QStack>
 #include <QVariant>
 

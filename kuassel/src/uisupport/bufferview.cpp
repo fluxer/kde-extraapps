@@ -22,7 +22,7 @@
 
 #include <QApplication>
 #include <QAction>
-#include <QFlags>
+#include <QtCore/qglobal.h>
 #include <QHeaderView>
 #include <QLineEdit>
 #include <QMenu>

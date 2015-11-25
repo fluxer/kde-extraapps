@@ -26,8 +26,8 @@
 #include <kdebug.h>
 
 #include <QDir>
-#include <QDate>
-#include <QTime>
+
+#include <QtCore/qdatetime.h>
 
 CliPlugin::CliPlugin(QObject *parent, const QVariantList &args)
     : CliInterface(parent, args),

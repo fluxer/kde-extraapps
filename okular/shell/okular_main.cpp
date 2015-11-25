@@ -17,6 +17,7 @@
 #include "shell.h"
 #include <kapplication.h>
 #include <klocale.h>
+#include <QTemporaryFile>
 #include <QtDBus/qdbusinterface.h>
 #include <QTextStream>
 #include <kwindowsystem.h>

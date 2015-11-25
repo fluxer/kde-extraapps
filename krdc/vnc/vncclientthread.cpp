@@ -28,7 +28,7 @@
 #include <netinet/tcp.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QThreadStorage>
 #include <QTimer>
 

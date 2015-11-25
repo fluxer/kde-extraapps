@@ -22,8 +22,8 @@
 #ifndef dbustypes_H
 #define dbustypes_H
 
-#include <QVariantMap>
-#include <QDBusObjectPath>
+#include <QtCore/qvariant.h>
+#include <QtDBus/qdbusextratypes.h>
 
 typedef QMap<QString,QVariantMap> QVariantMapMap;
 Q_DECLARE_METATYPE(QVariantMapMap)

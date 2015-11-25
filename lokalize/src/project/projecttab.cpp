@@ -37,7 +37,7 @@
 #include <kstatusbar.h>
 #include <khbox.h>
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QMenu>
 #include <QVBoxLayout>
 #include <QShortcut>

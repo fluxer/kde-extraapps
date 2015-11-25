@@ -27,7 +27,7 @@
 #include <bluedevil/bluedevil.h>
 
 #include <QtCore/QAbstractItemModel>
-
+#include <QtCore/QTimer>
 #include <QtGui/QFontMetrics>
 #include <QtGui/QLabel>
 #include <QtGui/QPainter>

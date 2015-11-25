@@ -33,7 +33,7 @@
 #include <QMenu>
 #include <QApplication>
 #include <QClipboard>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 #include <KAction>
 #include <KStandardAction>

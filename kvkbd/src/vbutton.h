@@ -5,9 +5,9 @@
 #include <QRect>
 #include <QSize>
 #include <QString>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QTimer>
-#include <QDomNode>
+#include <QtXml/qdom.h>
 #include "x11keyboard.h"
 
 class VButton : public QPushButton

@@ -21,7 +21,7 @@
 #define KDEVPLATFORM_MAIN_H
 
 #include <QObject>
-#include <QAtomicInt>
+#include <QtCore/qatomic.h>
 #include <language/duchain/topducontext.h>
 
 namespace KDevelop {

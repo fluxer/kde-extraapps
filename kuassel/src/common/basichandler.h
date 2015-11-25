@@ -25,7 +25,7 @@
 #include <QString>
 #include <QStringList>
 #include <QHash>
-#include <QGenericArgument>
+#include <QtCore/qobjectdefs.h>
 
 class BasicHandler : public QObject
 {

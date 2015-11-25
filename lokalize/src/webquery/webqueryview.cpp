@@ -50,13 +50,13 @@
 #include <ktextbrowser.h>
 #include <kaction.h>
 
-#include <QDragEnterEvent>
-#include <QTime>
+#include <QtGui/qevent.h>
+#include <QtCore/qdatetime.h>
 #include <QSplitter>
 #include <QSignalMapper>
 #include <QTimer>
 
-// #include <QShortcutEvent>
+// 
 #include "myactioncollectionview.h"
 
 using namespace Kross;

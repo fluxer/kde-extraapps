@@ -23,7 +23,7 @@
 #include "sublime/holdupdates.h"
 #include "util/kdevstringhandler.h"
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QDebug>
 #include <QTimer>
 #include <QDeclarativeContext>

@@ -34,8 +34,8 @@
 #include <kpViewPrivate.h>
 
 #include <QPainter>
-#include <QPaintEvent>
-#include <QTime>
+#include <QtGui/qevent.h>
+#include <QtCore/qdatetime.h>
 #include <QScrollBar>
 
 #include <KDebug>

@@ -23,7 +23,7 @@
 #ifndef KDEVPLATFORM_PARSEJOB_H
 #define KDEVPLATFORM_PARSEJOB_H
 
-#include <QtCore/QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <KDE/KUrl>
 
 #include <threadweaver/JobSequence.h>

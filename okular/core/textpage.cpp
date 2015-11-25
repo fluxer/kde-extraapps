@@ -20,7 +20,7 @@
 
 #include <cstring>
 
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <QVarLengthArray>
 
 using namespace Okular;

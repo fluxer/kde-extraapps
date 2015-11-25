@@ -24,9 +24,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // Qt
 #include <qmath.h>
 #include <QApplication>
-#include <QFlags>
-#include <QGraphicsSceneMouseEvent>
-#include <QMouseEvent>
+#include <QtCore/qglobal.h>
+#include <QtGui/qgraphicssceneevent.h>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QRect>
 #include <QScrollBar>

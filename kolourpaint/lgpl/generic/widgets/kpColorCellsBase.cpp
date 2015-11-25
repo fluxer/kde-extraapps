@@ -25,12 +25,12 @@
 
 #include <kpColorCellsBase.h>
 
-#include <QDragEnterEvent>
-#include <QDragMoveEvent>
-#include <QDropEvent>
+#include <QtGui/qevent.h>
+
+
 #include <QHeaderView>
 #include <QItemDelegate>
-#include <QMouseEvent>
+
 #include <QPainter>
 #include <QImage>
 

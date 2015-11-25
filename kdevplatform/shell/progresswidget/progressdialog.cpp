@@ -38,7 +38,7 @@
 #include <KStandardGuiItem>
 
 #include <QApplication>
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
 #include <QEvent>
 #include <QFrame>
 #include <QLabel>

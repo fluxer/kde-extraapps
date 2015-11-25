@@ -25,7 +25,7 @@
 #include "ImageViewer.h"
 #include "moc_ImageViewer.cpp"
 
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QGraphicsScene>
 #include <QScrollBar>
 #include <QAction>

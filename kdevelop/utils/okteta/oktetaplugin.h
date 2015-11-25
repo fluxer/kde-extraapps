@@ -28,7 +28,7 @@
 // KDev
 #include <interfaces/iplugin.h>
 // Qt
-#include <QtCore/QVariantList>
+#include <QtCore/qvariant.h>
 
 class KUrl;
 

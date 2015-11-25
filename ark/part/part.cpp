@@ -61,12 +61,12 @@
 #include <QHeaderView>
 #include <QMenu>
 #include <QMimeData>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QScopedPointer>
 #include <QSplitter>
 #include <QTimer>
 #include <QVBoxLayout>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QtDBus/QtDBus>
 
 using namespace Kerfuffle;

@@ -30,7 +30,7 @@
 
 #include <QFile>
 #include <QFileInfo>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 //this is a widget for dispaying the rcently played items in a list. It is subclassed so that we can hook up a context menu
 RecentlyPlayedList::RecentlyPlayedList(QWidget *parent)

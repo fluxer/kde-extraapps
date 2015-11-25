@@ -15,7 +15,7 @@
 #include <QTreeWidgetItemIterator>
 #include <QVBoxLayout>
 #include <QPixmap>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QAction>
 
 #include <klocale.h>

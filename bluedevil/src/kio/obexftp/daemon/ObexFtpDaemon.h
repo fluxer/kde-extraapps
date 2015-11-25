@@ -21,7 +21,7 @@
 
 #include "../obexdtypes.h"
 
-#include <QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 #include <kdedmodule.h>
 
 class KJob;

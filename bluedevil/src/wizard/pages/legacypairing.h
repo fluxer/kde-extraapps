@@ -25,7 +25,7 @@
 #define LEGACYPAIRING_H
 
 #include "ui_legacypairing.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 class KPixmapSequenceOverlayPainter;

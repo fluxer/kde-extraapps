@@ -23,7 +23,7 @@
 #define LOG_VIEW_WIDGET_ITEM_H
 
 
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 
 
 #include "globals.h"

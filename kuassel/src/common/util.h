@@ -24,7 +24,7 @@
 #include <QDir>
 #include <QVariant>
 #include <QString>
-#include <QMetaMethod>
+#include <QtCore/qmetaobject.h>
 
 // TODO Use versions from Network instead
 QString nickFromMask(QString mask);

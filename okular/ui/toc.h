@@ -12,7 +12,7 @@
 
 #include <qwidget.h>
 #include "core/observer.h"
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 #include "okular_part_export.h"
 

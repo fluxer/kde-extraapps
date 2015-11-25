@@ -19,7 +19,7 @@
 
 #include "autoorientedsplitter.h"
 
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 using namespace KDevelop;
 

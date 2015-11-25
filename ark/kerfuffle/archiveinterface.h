@@ -34,7 +34,7 @@
 #include <QObject>
 #include <QStringList>
 #include <QString>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 namespace Kerfuffle
 {

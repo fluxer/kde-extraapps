@@ -23,7 +23,7 @@
 
 #include <kcomponentdata.h>
 #include <core.h>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace KDevelop
 {

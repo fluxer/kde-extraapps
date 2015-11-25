@@ -11,7 +11,7 @@
 #include "openprojectpage.h"
 
 #include <QtCore/QDir>
-#include <QtCore/QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QHeaderView>
 

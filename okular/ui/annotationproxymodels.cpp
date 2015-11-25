@@ -10,7 +10,7 @@
 #include "annotationproxymodels.h"
 
 #include <QtCore/QList>
-#include <QtGui/QItemSelection>
+#include <QtGui/qitemselectionmodel.h>
 
 #include <kicon.h>
 

@@ -26,7 +26,7 @@
 #include <QToolButton>
 #include <QItemSelectionModel>
 #include <QStringListModel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QStandardItemModel>
 
 #include <kdebug.h>

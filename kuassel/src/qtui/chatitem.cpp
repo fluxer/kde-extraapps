@@ -22,7 +22,7 @@
 #include <QClipboard>
 #include <QDesktopServices>
 #include <QFontMetrics>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QIcon>
 #include <QPainter>
 #include <QPalette>

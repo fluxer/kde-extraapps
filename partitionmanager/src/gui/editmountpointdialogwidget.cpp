@@ -201,7 +201,7 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 			device = findBlkIdDevice("LABEL", QString(device).remove("LABEL="));
 		}
 		else if (device.startsWith('/'))
-			device = QFile::symLinkTarget(device);
+			device = QFile::readLink(device);
 
 		if (!device.isEmpty())
 		{

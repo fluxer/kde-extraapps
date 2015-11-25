@@ -33,7 +33,7 @@
 #include <KUrl>
 
 #include <QDockWidget>
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <state.h>
 #include <phase.h>
 

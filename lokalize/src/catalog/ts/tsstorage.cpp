@@ -28,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QProcess>
 #include <QString>
 #include <QMap>
-#include <QDomDocument>
-#include <QTime>
+#include <QtXml/qdom.h>
+#include <QtCore/qdatetime.h>
 #include <QPair>
 #include <QList>
 
@@ -38,7 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kglobal.h>
 #include <klocale.h>
 #include <kdatetime.h>
-#include <QXmlSimpleReader>
+#include <QtXml/qxml.h>
 
 static const char* const noyes[]={"no","yes"};
 

@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "kcalc_const_menu.h"
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <kdebug.h>
 #include <klocale.h>

@@ -25,6 +25,7 @@
 #include <QApplication>
 #include <QFileInfo>
 #include <QDir>
+#include <QTemporaryFile>
 
 #include <KGlobal>
 #include <KSharedConfig>

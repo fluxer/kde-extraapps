@@ -28,7 +28,7 @@
 
 #include <KConfigGroup>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QWidget>
 
 class KPushButton;

@@ -30,7 +30,7 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QStringList>
-#include <QtDBus/QDBusObjectPath>
+#include <QtDBus/qdbusextratypes.h>
 
 namespace BlueDevil {
 

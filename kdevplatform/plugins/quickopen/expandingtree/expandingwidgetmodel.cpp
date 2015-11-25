@@ -21,7 +21,7 @@
 #include "expandingwidgetmodel.h"
 
 #include <QTreeView>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QBrush>
 
 #include <ktexteditor/codecompletionmodel.h>

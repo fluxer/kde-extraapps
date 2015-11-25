@@ -27,7 +27,7 @@
 #include "project.h"
 
 #include <KLocale>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QAction>
 

@@ -20,7 +20,7 @@
 #ifndef MONOLITHIC_H
 #define MONOLITHIC_H
 
-#include <QtCore/QMultiMap>
+#include <QtCore/qmap.h>
 
 #include <kstatusnotifieritem.h>
 

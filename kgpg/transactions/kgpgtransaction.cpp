@@ -26,7 +26,7 @@
 #include <QByteArray>
 #include <QPointer>
 #include <QStringList>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QWidget>
 
 class KGpgTransactionPrivate {

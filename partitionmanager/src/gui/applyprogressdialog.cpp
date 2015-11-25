@@ -31,10 +31,10 @@
 #include "util/report.h"
 #include "util/htmlreport.h"
 
-#include <QCloseEvent>
-#include <QTime>
+
+#include <QtCore/qdatetime.h>
 #include <QFont>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QFile>
 
 #include <kapplication.h>

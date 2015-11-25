@@ -24,7 +24,7 @@
 
 #include <QMenu>
 #include <QCursor>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QSignalMapper>
 #include <QHeaderView>
 

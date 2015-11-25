@@ -24,7 +24,7 @@
 
 #include <threadweaver/DependencyPolicy.h>
 
-#include <QtCore/QMultiMap>
+#include <QtCore/qmap.h>
 
 namespace KDevelop
 {

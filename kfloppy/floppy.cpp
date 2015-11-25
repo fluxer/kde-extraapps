@@ -34,8 +34,8 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QGridLayout>
-#include <QKeyEvent>
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
+
 #include <QtDBus/QtDBus>
 #include <kconfig.h>
 

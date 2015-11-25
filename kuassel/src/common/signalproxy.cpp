@@ -20,8 +20,8 @@
 
 #include <QCoreApplication>
 #include <QHostAddress>
-#include <QMetaMethod>
-#include <QMetaProperty>
+
+#include <QtCore/qmetaobject.h>
 #include <QThread>
 
 #ifdef HAVE_SSL

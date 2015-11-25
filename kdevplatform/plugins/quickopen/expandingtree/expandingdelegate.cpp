@@ -21,10 +21,10 @@
 
 #include "expandingdelegate.h"
 
-#include <QtGui/QTextLine>
+#include <QtGui/qtextlayout.h>
 #include <QtGui/QPainter>
 #include <QtGui/QBrush>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QTreeView>
 #include <QApplication>
 
@@ -49,7 +49,7 @@ if (option.showDecorationSelected && (option.state & QStyle::State_Selected)) {
         return option.palette.brush(cg, QPalette::Highlight).color();
     } else {
         QVariant value = index.data(Qt::BackgroundRole);
-        if (qVariantCanConvert<QBrush>(value))
+        if (value.canConvert<QBrush>())
 	    return qvariant_cast<QBrush>(value).color();
     }
     

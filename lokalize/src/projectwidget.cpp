@@ -35,10 +35,10 @@
 
 #include <QTreeView>
 #include <QTimer>
-#include <QMouseEvent>
-#include <QKeyEvent>
+
+#include <QtGui/qevent.h>
 #include <QPainter>
-#include <QLinearGradient>
+#include <QtGui/qbrush.h>
 #include <QHeaderView>
 #include <QItemDelegate>
 #include <QStyledItemDelegate>

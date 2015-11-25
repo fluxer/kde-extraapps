@@ -16,6 +16,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA   *
  *************************************************************************************/
 
+#include <QtCore/qdebug.h>
+
 #include "bluedevilmanager.h"
 #include "bluedevilmanager_p.h"
 #include "bluedeviladapter.h"

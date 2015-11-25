@@ -22,10 +22,10 @@
 #include <QMessageBox>
 #include <QString>
 #include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
-#include <QDomNode>
-#include <QDomNodeList>
+
+
+
+#include <QtXml/qdom.h>
 #include <QFileInfo>
 #include <QDir>
 #include <QMenu>

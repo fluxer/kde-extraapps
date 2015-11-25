@@ -25,7 +25,7 @@
 #include "dragwidget.h"
 
 #include <QPixmap>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 
 class KbdDock : public DragWidget

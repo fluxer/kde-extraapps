@@ -29,7 +29,7 @@
 #define KSANE_VIEWER_H
 
 #include <QGraphicsView>
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 
 namespace KSaneIface
 {

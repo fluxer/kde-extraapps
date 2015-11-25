@@ -45,7 +45,7 @@ static KAboutData createPluginAboutData()
 		"pmdummybackendplugin",
 		NULL,
 		ki18nc("@title", "Dummy Backend Plugin"),
-		QString(VERSION).toUtf8(),
+		KDE_VERSION_STRING,
 		ki18n("KDE Partition Manager dummy backend."),
 		KAboutData::License_GPL,
 		ki18n("Copyright 2010 Volker Lanz"));

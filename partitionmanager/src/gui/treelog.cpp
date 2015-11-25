@@ -38,7 +38,7 @@
 
 #include <QFile>
 #include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 #include <QDateTime>
 #include <QTextStream>
 

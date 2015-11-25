@@ -20,7 +20,7 @@
 
 #include "vcsitemeventmodel.h"
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVariant>
 #include <QList>
 

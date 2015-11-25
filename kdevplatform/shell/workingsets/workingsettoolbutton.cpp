@@ -19,7 +19,7 @@
 #include "workingsettoolbutton.h"
 
 #include <QMenu>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 #include <KLocalizedString>
 #include <KColorUtils>

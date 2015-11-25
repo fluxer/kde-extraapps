@@ -26,12 +26,12 @@
 
 #include <QStringList>
 #include <QMultiHash>
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSortFilterProxyModel>
 #include <QList>
 #include <QSet>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 /**
  * Classes for TBX Glossary handling

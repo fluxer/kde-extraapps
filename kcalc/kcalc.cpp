@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QApplication>
 #include <QCursor>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QShortcut>
 #include <QStyle>
 

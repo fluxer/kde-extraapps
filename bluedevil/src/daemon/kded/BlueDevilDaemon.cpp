@@ -25,7 +25,8 @@
 
 #include "filereceiver/filereceiver.h"
 
-#include <QtCore/QProcess>
+#include <QTimer>
+#include <QProcess>
 #include <QDBusServiceWatcher>
 #include <QDBusMetaType>
 

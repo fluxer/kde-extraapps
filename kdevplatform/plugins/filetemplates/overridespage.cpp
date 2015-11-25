@@ -29,7 +29,7 @@
 #include <language/duchain/classfunctiondeclaration.h>
 
 #include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 #include <QHeaderView>
 
 using namespace KDevelop;

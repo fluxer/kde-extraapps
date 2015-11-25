@@ -26,8 +26,8 @@
 #define QAMODEL_H
 
 #include "rule.h"
-#include <QAbstractListModel>
-#include <QDomDocument>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtXml/qdom.h>
 
 class QaModel: public QAbstractListModel
 {

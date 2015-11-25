@@ -19,7 +19,7 @@
 #include "regiongrabber.h"
 
 #include <QPainter>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QToolTip>

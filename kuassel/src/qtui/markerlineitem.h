@@ -21,7 +21,7 @@
 #ifndef MARKERLINEITEM_H_
 #define MARKERLINEITEM_H_
 
-#include <QGraphicsObject>
+#include <QtGui/qgraphicsitem.h>
 
 #include "chatscene.h"
 

@@ -24,7 +24,7 @@
 #define SUBLIME_IDEAL_H
 
 #include <QtGui/QAction>
-#include <QtGui/QActionEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QToolButton>
 #include <QtGui/QDockWidget>
 #include <QtGui/QStyleOption>

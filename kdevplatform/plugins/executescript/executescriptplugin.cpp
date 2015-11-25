@@ -23,7 +23,7 @@
 #include "executescriptplugin.h"
 
 #include <QApplication>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <klocale.h>
 #include <kpluginfactory.h>

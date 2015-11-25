@@ -51,8 +51,6 @@
 #include <kmessagebox.h>
 #include <knotification.h>
 #include <kapplication.h>
-
-
 #include <kio/netaccess.h>
 #include <kaction.h>
 #include <kactioncollection.h>
@@ -64,18 +62,15 @@
 #include <kurl.h>
 #include <kmenu.h>
 #include <kfiledialog.h>
-
+#include <kdialog.h>
 #include <kross/core/action.h>
-
 #include <threadweaver/ThreadWeaver.h>
 
-
+#include <QTimer>
 #include <QActionGroup>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenuBar>
-#include <kdialog.h>
-
 
 
 LokalizeMainWindow::LokalizeMainWindow()

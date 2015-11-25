@@ -27,7 +27,7 @@
 #ifndef SELECTIONITEM_H
 #define SELECTIONITEM_H
 
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QPainter>
 
 namespace KSaneIface

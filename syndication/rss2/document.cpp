@@ -31,7 +31,7 @@
 #include <documentvisitor.h>
 #include <tools.h>
 
-#include <QtXml/QDomDocument>
+#include <QtXml/qdom.h>
 #include <QtCore/QList>
 #include <QtCore/QSet>
 #include <QtCore/QString>

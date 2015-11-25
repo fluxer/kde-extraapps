@@ -27,7 +27,7 @@
 
 #include "projectfilter.h"
 
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 namespace KDevelop {
 

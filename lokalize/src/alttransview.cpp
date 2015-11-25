@@ -24,7 +24,7 @@
 #define KDE_NO_DEBUG_OUTPUT
 
 #include "alttransview.h"
-#include <QDragEnterEvent>
+#include <QtGui/qevent.h>
 
 #include "diff.h"
 #include "catalog.h"
@@ -40,7 +40,7 @@
 #include <kaction.h>
 
 #include <QSignalMapper>
-//#include <QTime>
+//#include <QtCore/qdatetime.h>
 #include <QFileInfo>
 #include <QToolTip>
 

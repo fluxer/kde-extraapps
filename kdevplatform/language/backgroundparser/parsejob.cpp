@@ -30,7 +30,7 @@
 #include <QFile>
 #include <QByteArray>
 #include <QMutex>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QApplication>
 
 #include <kdebug.h>

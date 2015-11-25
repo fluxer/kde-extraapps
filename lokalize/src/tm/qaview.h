@@ -27,7 +27,7 @@
 
 #include <QDockWidget>
 #include <QTreeView>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 #include "rule.h"
 

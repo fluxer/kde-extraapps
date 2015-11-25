@@ -11,8 +11,8 @@
 
 #include <QtGui/QAbstractTextDocumentLayout>
 #include <QtGui/QTextDocument>
-#include <QtGui/QTextBlock>
-#include <QtGui/QTextFrame>
+#include <QtGui/qtextobject.h>
+
 #include <QtGui/QTextDocumentFragment>
 #include <QtCore/QDebug>
 #include <QtCore/QFile>

@@ -33,10 +33,10 @@
 
 #include <QDir>
 #include <QFont>
-#include <QLatin1String>
+#include <QDateTime>
 #include <QList>
 #include <QMimeData>
-#include <QPersistentModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPixmap>
 #include <QtDBus/QtDBus>
 

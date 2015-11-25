@@ -40,7 +40,7 @@
 #include <qdom.h>
 #include <QHash>
 #include <QSet>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <cassert>
 

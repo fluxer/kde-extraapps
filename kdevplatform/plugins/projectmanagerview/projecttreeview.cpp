@@ -24,7 +24,7 @@
 
 #include <QtGui/QHeaderView>
 #include <QtCore/QDebug>
-#include <QtGui/QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 #include <QAbstractProxyModel>
 #include <QItemDelegate>

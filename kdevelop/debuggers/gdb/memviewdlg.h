@@ -20,7 +20,7 @@
 
 #include <kdialog.h>
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 #include "gdbglobal.h"
 

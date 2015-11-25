@@ -26,8 +26,8 @@
 #include <bluedevil/bluedevil_export.h>
 
 #include <QtCore/QObject>
-#include <QtDBus/QDBusObjectPath>
-#include <QtDBus/QDBusPendingCallWatcher>
+#include <QtDBus/qdbusextratypes.h>
+#include <QtDBus/qdbuspendingcall.h>
 
 namespace BlueDevil {
 

@@ -20,12 +20,12 @@
 
 #include <QByteArray>
 #include <QFile>
-#include <QDomDocument>
-#include <QDomElement>
+
+#include <QtXml/qdom.h>
 #include <QDir>
 #include <QTextStream>
-#include <QMultiMap>
-#include <QMapIterator>
+
+#include <QtCore/qmap.h>
 #include <QSet>
 
 #include <kdebug.h>

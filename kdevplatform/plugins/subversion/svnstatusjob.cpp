@@ -22,7 +22,7 @@
 #include "svnstatusjob_p.h"
 
 #include <QFileInfo>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <klocale.h>
 #include <kurl.h>

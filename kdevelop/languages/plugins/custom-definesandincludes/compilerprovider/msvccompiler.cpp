@@ -26,7 +26,7 @@
 #include "msvccompiler.h"
 
 #include <QDir>
-#include <QProcessEnvironment>
+#include <QtCore/qprocess.h>
 
 #include <KProcess>
 

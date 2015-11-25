@@ -19,7 +19,7 @@
 #ifndef KDEVPLATFORM_SUBLIMEAREAINDEX_H
 #define KDEVPLATFORM_SUBLIMEAREAINDEX_H
 
-#include <QtCore/Qt>
+#include <QtCore/qnamespace.h>
 #include <QtCore/QList>
 
 #include <KDE/KConfigGroup>

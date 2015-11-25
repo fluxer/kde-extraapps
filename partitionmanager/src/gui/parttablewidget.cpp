@@ -22,7 +22,7 @@
 
 #include "core/partitiontable.h"
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 #include <kdebug.h>
 #include <klocale.h>

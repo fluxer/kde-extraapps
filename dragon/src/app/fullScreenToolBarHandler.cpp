@@ -25,7 +25,7 @@
 #include "mainWindow.h"
 
 #include <QEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPoint>
 
 #include <KDebug>

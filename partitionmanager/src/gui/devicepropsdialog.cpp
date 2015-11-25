@@ -36,7 +36,7 @@
 #include <kglobal.h>
 #include <kglobalsettings.h>
 
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 #include <QPointer>
 
 /** Creates a new DevicePropsDialog

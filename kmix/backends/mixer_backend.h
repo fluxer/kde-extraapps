@@ -23,7 +23,7 @@
 #define MIXER_BACKEND_H
 
 #include <QString>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QTimer>
 
 //#include "core/mixer.h"

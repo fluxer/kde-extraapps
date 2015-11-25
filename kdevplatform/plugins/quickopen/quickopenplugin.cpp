@@ -26,12 +26,12 @@
 #include <QtGui/QTreeView>
 #include <QtGui/QHeaderView>
 #include <QDialog>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 #include <QScrollBar>
 #include <QCheckBox>
 #include <QMetaObject>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <kbuttongroup.h>
 #include <klocale.h>

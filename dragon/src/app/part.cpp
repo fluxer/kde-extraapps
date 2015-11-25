@@ -36,7 +36,7 @@
 
 #include <QSlider>
 #include <QTimer>
-#include <QTimerEvent>
+#include <QtCore/qcoreevent.h>
 #include <QVBoxLayout>
 
 K_PLUGIN_FACTORY(CodeineFactory, registerPlugin<Dragon::Part>();)

@@ -27,7 +27,7 @@
 #include <KMessageBox>
 
 #include <QtGui/QRadioButton>
-#include <QtGui/QCloseEvent>
+#include <QtGui/qevent.h>
 #include <QtCore/QDir>
 
 SettingsDialog::SettingsDialog(QWidget *parent) : KDialog(parent)

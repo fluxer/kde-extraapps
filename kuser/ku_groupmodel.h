@@ -20,7 +20,7 @@
 #ifndef _KU_GROUPMODEL_H_
 #define _KU_GROUPMODEL_H_
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSortFilterProxyModel>
 
 #include "ku_group.h"

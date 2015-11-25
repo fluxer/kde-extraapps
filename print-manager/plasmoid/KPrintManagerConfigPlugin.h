@@ -21,7 +21,11 @@
 #define KPRINT_MANAGER_CONFIG_H
 
 #include <QObject>
-#include <QDesignerCustomWidgetInterface>
+#ifdef QT_KATIE
+#include <QtUiTools/customwidget.h>
+#else
+#include <QtDesigner/customwidget.h>
+#endif
 
 class KPrintManagerConfigPlugin : public QObject, public QDesignerCustomWidgetInterface
 {

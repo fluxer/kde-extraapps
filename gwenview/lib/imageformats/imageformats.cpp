@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Include QImageIOPlugin to get qRegisterStaticPluginInstanceFunction(), which
 // does not come with QPluginLoader.
-#include <QImageIOPlugin>
+#include <QtGui/qimageiohandler.h>
 
 // KDE
 

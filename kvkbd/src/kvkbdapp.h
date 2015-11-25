@@ -24,8 +24,8 @@
 #include <QAction>
 #include <QSignalMapper>
 #include <QGridLayout>
-#include <QDomNode>
-#include <QDomNamedNodeMap>
+
+#include <QtXml/qdom.h>
 
 #include "resizabledragwidget.h"
 #include "mainwidget.h"

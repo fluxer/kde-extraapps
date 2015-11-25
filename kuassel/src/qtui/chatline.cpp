@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include <QDateTime>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QString>
 #include <QtGui>
 

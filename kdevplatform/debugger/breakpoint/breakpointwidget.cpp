@@ -27,7 +27,7 @@
 #include <QTableView>
 #include <QHeaderView>
 #include <QMenu>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 #include <KIcon>
 #include <KLocalizedString>

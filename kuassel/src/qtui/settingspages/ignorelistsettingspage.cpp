@@ -20,7 +20,7 @@
 
 #include <QHeaderView>
 #include <QItemSelectionModel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPainter>
 #include <QMessageBox>
 #include <QString>

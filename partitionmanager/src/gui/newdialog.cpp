@@ -33,7 +33,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 /** Creates a NewDialog
 	@param parent the parent widget

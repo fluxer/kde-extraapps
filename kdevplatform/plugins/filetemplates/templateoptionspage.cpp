@@ -27,7 +27,7 @@
 #include <KIntNumInput>
 #include <KDebug>
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QGroupBox>
 #include <QVBoxLayout>
 #include <QFormLayout>

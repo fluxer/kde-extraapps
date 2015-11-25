@@ -27,9 +27,9 @@ License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Qt
 #include <QApplication>
 #include <QEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QSplitter>
-#include <QStyleOptionToolButton>
+#include <QtGui/qstyleoption.h>
 #include <QStylePainter>
 #include <QTimeLine>
 

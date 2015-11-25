@@ -26,7 +26,7 @@
 #include <QObject>
 #include <QString>
 #include <QUrl>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <QHelpEngine>
 
 

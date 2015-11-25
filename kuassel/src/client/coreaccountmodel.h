@@ -21,7 +21,7 @@
 #ifndef COREACCOUNTMODEL_H_
 #define COREACCOUNTMODEL_H_
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QUuid>
 
 #include "coreaccount.h"

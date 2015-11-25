@@ -25,7 +25,7 @@
 #ifndef CMD_H
 #define CMD_H
 
-#include <QUndoCommand>
+#include <QtGui/qundostack.h>
 
 #include "pos.h"
 #include "note.h"

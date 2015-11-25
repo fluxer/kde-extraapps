@@ -25,7 +25,7 @@
 #define KEYBOARDPAIRING_H
 
 #include "ui_keyboardpairing.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 class KPixmapSequenceOverlayPainter;

@@ -67,34 +67,54 @@ remove_definitions( -DQT_NO_STL )
 
 add_library( kdev4cmakecommon SHARED ${cmakecommon_SRCS} )
 target_link_libraries( kdev4cmakecommon LINK_PRIVATE ${KDE4_KDEUI_LIBS}
-                        ${KDE4_KTEXTEDITOR_LIBS} ${KDEVPLATFORM_INTERFACES_LIBRARIES} ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_UTIL_LIBRARIES}
+                        ${KDE4_KTEXTEDITOR_LIBS} ${KDEVPLATFORM_INTERFACES_LIBRARIES}
+                        ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_UTIL_LIBRARIES}
                         ${QT_QTSCRIPT_LIBRARY} ${KDEVPLATFORM_LANGUAGE_LIBRARIES}
                         )
 
 kde4_add_plugin( kdevcmakemanager ${cmakemanager_SRCS} )
-target_link_libraries( kdevcmakemanager ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDEVPLATFORM_UTIL_LIBRARIES}
+target_link_libraries( kdevcmakemanager ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS}
+                        ${KDEVPLATFORM_UTIL_LIBRARIES}
                         ${KDEVPLATFORM_INTERFACES_LIBRARIES} kdev4cmakecommon
                         ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_LANGUAGE_LIBRARIES}
                         ${KDEVPLATFORM_OUTPUTVIEW_LIBRARIES} ${KDE4_KTEXTEDITOR_LIBS})
 
+if(QT_QTWEBKIT_FOUND)
 kde4_add_plugin( kdevcmakedocumentation ${cmakedoc_SRCS} )
 target_link_libraries( kdevcmakedocumentation
                         ${KDEVPLATFORM_INTERFACES_LIBRARIES} kdev4cmakecommon
-                        ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_LANGUAGE_LIBRARIES}
+                        ${KDEVPLATFORM_PROJECT_LIBRARIES}
+                        ${KDEVPLATFORM_LANGUAGE_LIBRARIES}
                         ${KDEVPLATFORM_DOCUMENTATION_LIBRARIES}
-                        ${KDE4_KTEXTEDITOR_LIBS} ${QT_QTWEBKIT_LIBRARY})
+                        ${KDE4_KTEXTEDITOR_LIBS}
+                        ${QT_QTWEBKIT_LIBRARY})
+endif()
 
 kde4_add_plugin( kcm_kdevcmake_settings ${cmakesettings_SRCS} )
-target_link_libraries( kcm_kdevcmake_settings ${KDE4_KIO_LIBS}
-                       ${KDEVPLATFORM_INTERFACES_LIBRARIES} ${KDEVPLATFORM_PROJECT_LIBRARIES} ${KDEVPLATFORM_UTIL_LIBRARIES}
+target_link_libraries( kcm_kdevcmake_settings
+                       ${KDE4_KIO_LIBS}
+                       ${KDEVPLATFORM_INTERFACES_LIBRARIES}
+                       ${KDEVPLATFORM_PROJECT_LIBRARIES}
+                       ${KDEVPLATFORM_UTIL_LIBRARIES}
                        ${KDE4_KIO_LIBRARY} kdev4cmakecommon )
 
 install(TARGETS kdevcmakemanager DESTINATION ${PLUGIN_INSTALL_DIR} )
-install(TARGETS kdevcmakedocumentation DESTINATION ${PLUGIN_INSTALL_DIR} )
 install(TARGETS kcm_kdevcmake_settings DESTINATION ${PLUGIN_INSTALL_DIR} )
 install(TARGETS kdev4cmakecommon ${INSTALL_TARGETS_DEFAULT_ARGS} )
 configure_file(kdevcmakemanager.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakemanager.desktop)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakemanager.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
-configure_file(kdevcmakedocumentation.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakedocumentation.desktop)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakedocumentation.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
 install(FILES kcm_kdevcmake_settings.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+if(QT_QTWEBKIT_FOUND)
+    install(
+        TARGETS kdevcmakedocumentation
+        DESTINATION ${PLUGIN_INSTALL_DIR}
+    )
+    configure_file(
+        kdevcmakedocumentation.desktop.cmake
+        ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakedocumentation.desktop
+    )
+    install(
+        FILES ${CMAKE_CURRENT_BINARY_DIR}/kdevcmakedocumentation.desktop
+        DESTINATION ${SERVICES_INSTALL_DIR}
+    )
+endif()

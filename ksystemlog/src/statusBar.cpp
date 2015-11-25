@@ -24,7 +24,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <kicon.h>
 #include <kglobal.h>

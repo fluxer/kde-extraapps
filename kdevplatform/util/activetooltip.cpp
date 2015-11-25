@@ -24,7 +24,7 @@
 #include <QPalette>
 #include <QApplication>
 #include <QEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <limits>
 #include <kdebug.h>
 #include <qdesktopwidget.h>

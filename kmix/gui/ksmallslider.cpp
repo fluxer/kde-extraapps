@@ -30,9 +30,9 @@
 #include <qpainter.h>
 #include <QColor>
 #include <qbrush.h>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <qstyle.h>
-#include <QStyleOptionSlider>
+#include <QtGui/qstyleoption.h>
 
 #include "kglobalsettings.h"
 #include "core/mixer.h"

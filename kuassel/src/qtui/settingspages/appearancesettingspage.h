@@ -23,7 +23,7 @@
 
 #include <QHash>
 #include <QList>
-#include <QTextCharFormat>
+#include <QtGui/qtextformat.h>
 
 #include "settings.h"
 #include "settingspage.h"

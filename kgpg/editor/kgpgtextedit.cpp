@@ -29,8 +29,8 @@
 
 #include <KLocale>
 #include <KMessageBox>
-#include <QDragEnterEvent>
-#include <QDropEvent>
+#include <QtGui/qevent.h>
+
 #include <QFile>
 #include <QTextCodec>
 #include <QTextStream>

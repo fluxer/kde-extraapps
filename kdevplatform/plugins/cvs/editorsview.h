@@ -12,7 +12,7 @@
 #define KDEVPLATFORM_PLUGIN_EDITORSVIEW_H
 
 #include <QDialog>
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <KJob>
 
 #include "ui_editorsview.h"

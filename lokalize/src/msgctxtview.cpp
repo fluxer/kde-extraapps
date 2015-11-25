@@ -38,7 +38,7 @@
 #include <kcombobox.h>
 #include <kpushbutton.h>
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QTimer>
 #include <QBoxLayout>
 #include <QStackedLayout>

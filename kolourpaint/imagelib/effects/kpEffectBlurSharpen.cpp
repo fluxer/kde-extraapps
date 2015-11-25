@@ -42,7 +42,7 @@
 
 
 #if DEBUG_KP_EFFECT_BLUR_SHARPEN
-    #include <QTime>
+    #include <QtCore/qdatetime.h>
 #endif
 
 

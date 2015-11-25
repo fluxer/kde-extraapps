@@ -26,7 +26,7 @@
 #include <QApplication>
 #include <QImage>
 #include <QPainter>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 #ifdef QTONLY
     #include <QMessageBox>

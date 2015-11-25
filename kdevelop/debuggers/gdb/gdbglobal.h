@@ -18,7 +18,7 @@
 #ifndef _GDBGLOBAL_H_
 #define _GDBGLOBAL_H_
 
-#include <QFlags>
+#include <QtCore/qglobal.h>
 
 namespace GDBDebugger
 {

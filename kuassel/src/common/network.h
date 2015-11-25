@@ -26,7 +26,7 @@
 #include <QList>
 #include <QNetworkProxy>
 #include <QHash>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 #include <QPointer>
 #include <QMutex>
 #include <QByteArray>

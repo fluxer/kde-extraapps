@@ -21,7 +21,7 @@
 
 #include <QPainter>
 #include <QPaintEngine>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QToolTip>

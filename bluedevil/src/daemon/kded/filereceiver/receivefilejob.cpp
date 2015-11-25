@@ -23,13 +23,14 @@
 #include "obex_session.h"
 #include "dbus_properties.h"
 
-#include <KIcon>
+#include <QDir>
 #include <QDBusConnection>
 
 #include <bluedevil/bluedevilmanager.h>
 #include <bluedevil/bluedeviladapter.h>
 #include <bluedevil/bluedevildevice.h>
 
+#include <KIcon>
 #include <KDebug>
 #include <KIO/Job>
 #include <kio/copyjob.h>

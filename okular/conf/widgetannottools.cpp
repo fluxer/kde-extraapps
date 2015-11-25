@@ -24,10 +24,10 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QLabel>
 #include <QtGui/QListWidget>
-#include <QtGui/QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QtGui/QStackedWidget>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
+
+#include <QtXml/qdom.h>
 
 #include "core/annotations.h"
 #include "ui/annotationwidgets.h"

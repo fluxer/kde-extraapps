@@ -22,7 +22,7 @@
 
 #include <QPainter>
 #include <QTimer>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 
 #include <core/bookmarkmanager.h>
 #include <core/document.h>

@@ -24,7 +24,7 @@
 
 #include "debugcontroller.h"
 
-#include <QtCore/QMetaEnum>
+#include <QtCore/qmetaobject.h>
 
 #include <KDE/KLocale>
 #include <KDE/KDebug>

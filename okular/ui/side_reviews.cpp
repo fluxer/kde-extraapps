@@ -13,7 +13,7 @@
 #include <QtCore/QStringList>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLayout>
-#include <QtGui/QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QPainter>
 #include <QtGui/QSizePolicy>
 #include <QtGui/QTextDocument>

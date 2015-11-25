@@ -48,8 +48,8 @@
 //#include <qtl.h>
 
 #include <QDateTime>
-#include <QDomDocument>
-#include <QDomElement>
+
+#include <QtXml/qdom.h>
 #include <QHash>
 #include <QIcon>
 #include <QList>

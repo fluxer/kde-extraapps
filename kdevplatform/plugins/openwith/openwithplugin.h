@@ -22,7 +22,7 @@
 #define KDEVPLATFORM_PLUGIN_OPENWITHPLUGIN_H
 
 #include <interfaces/iplugin.h>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <kservice.h>
 
 #include "iopenwith.h"

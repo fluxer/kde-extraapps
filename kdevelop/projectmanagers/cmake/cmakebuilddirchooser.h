@@ -22,7 +22,7 @@
 #define CMAKEBUILDDIRCHOOSER_H
 
 #include <KDialog>
-#include <QFlags>
+#include <QtCore/qglobal.h>
 #include <kurl.h>
 
 #include "cmakeexport.h"

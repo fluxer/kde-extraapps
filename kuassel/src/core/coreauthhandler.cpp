@@ -23,6 +23,7 @@
 #ifdef HAVE_SSL
 #  include <QSslSocket>
 #endif
+#include <QtCore/qendian.h>
 
 #include "core.h"
 

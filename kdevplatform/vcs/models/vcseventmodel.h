@@ -21,7 +21,7 @@
 #ifndef KDEVPLATFORM_VCSEVENTMODEL_H
 #define KDEVPLATFORM_VCSEVENTMODEL_H
 
-#include <QtCore/QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 
 #include "../vcsexport.h"
 

@@ -19,7 +19,7 @@
  */
 
 #include "reviewboardplugin.h"
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 #include <KPluginFactory>
 #include <KPluginLoader>

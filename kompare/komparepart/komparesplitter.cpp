@@ -28,12 +28,12 @@
 #include <QtGui/QApplication>
 #include <QtGui/QPainter>
 #include <QtGui/QPixmap>
-#include <QtGui/QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QGridLayout>
-#include <QtGui/QResizeEvent>
-#include <QtCore/QChildEvent>
+
+#include <QtCore/qcoreevent.h>
 #include <QtCore/QEvent>
-#include <QtGui/QWheelEvent>
+
 
 // kde
 #include <kdebug.h>

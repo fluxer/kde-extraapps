@@ -42,11 +42,11 @@
 #include <QtGui/QClipboard>
 #include <QtGui/QPainter>
 #include <QtCore/QTimer>      //::resizeEvent()
-#include <QtGui/QDropEvent>
-#include <QtGui/QPaintEvent>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QDragEnterEvent>
+
+
+
+
+#include <QtGui/qevent.h>
 #include <QtGui/QToolTip>
 
 #include <cmath>         //::segmentAt()

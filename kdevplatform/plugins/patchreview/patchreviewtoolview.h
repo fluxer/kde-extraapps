@@ -16,7 +16,7 @@
 
 #include <QWidget>
 #include <QPointer>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <ui_patchreview.h>
 #include <interfaces/ipatchsource.h>
 

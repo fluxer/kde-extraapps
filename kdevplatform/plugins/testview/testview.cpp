@@ -47,7 +47,7 @@
 #include <KConfigGroup>
 
 #include <QStandardItemModel>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QHeaderView>
 #include <QVBoxLayout>
 

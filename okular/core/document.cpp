@@ -23,7 +23,7 @@
 #endif
 
 // qt/kde/system includes
-#include <QtCore/QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
@@ -34,7 +34,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QPrinter>
 #include <QtGui/QPrintDialog>
-#include <QUndoCommand>
+#include <QtGui/qundostack.h>
 
 #include <kaboutdata.h>
 #include <kauthorized.h>

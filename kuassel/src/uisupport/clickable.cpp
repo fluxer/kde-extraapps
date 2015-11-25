@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include <QDesktopServices>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QUrl>
 
 #include "buffermodel.h"

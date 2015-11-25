@@ -20,7 +20,7 @@
 #define DISCOVERPAGE_H
 
 #include "ui_discover.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 

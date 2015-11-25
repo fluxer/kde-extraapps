@@ -34,7 +34,7 @@
 #include <qbitmap.h>
 #include <qcolor.h>
 #include <qevent.h>
-#include <QHelpEvent>
+#include <QtGui/qevent.h>
 #include <qimage.h>
 #include <qpainter.h>
 #include <qpixmap.h>

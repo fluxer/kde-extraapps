@@ -23,7 +23,7 @@
 
 #include <QThread>
 #include <QTimer>
-#include <QVariantHash>
+#include <QtCore/qvariant.h>
 #include <QStringList>
 #include <QWidget>
 

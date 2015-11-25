@@ -22,7 +22,7 @@
 #include "projectmanagerview.h"
 
 #include <QtGui/QHeaderView>
-#include <QtGui/QKeyEvent>
+#include <QtGui/qevent.h>
 
 #include <kiconloader.h>
 #include <kdebug.h>

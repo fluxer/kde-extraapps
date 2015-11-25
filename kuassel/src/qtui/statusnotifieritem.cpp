@@ -23,9 +23,10 @@
 
 #ifdef HAVE_DBUS
 
+#include <QMetaObject>
 #include <QApplication>
 #include <QMenu>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QTextDocument>
 
 #include "quassel.h"

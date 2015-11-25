@@ -31,7 +31,7 @@
 #include <KGlobalSettings>
 #include <kio/netaccess.h>
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPixmap>
 #include <QDesktopWidget>
 

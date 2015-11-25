@@ -19,7 +19,7 @@
 #include "itemrepositoryregistry.h"
 
 #include <QtCore/QDir>
-#include <QtCore/QProcessEnvironment>
+#include <QtCore/qprocess.h>
 #include <QtCore/QCoreApplication>
 #include <QtDBus/QDBusConnection>
 

@@ -24,8 +24,8 @@
 #include <QWidget>
 #include <QAbstractItemModel>
 #include <QItemSelectionModel>
-#include <QModelIndex>
-#include <QItemSelection>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtGui/qitemselectionmodel.h>
 #include <QAbstractItemDelegate>
 #include <QPointer>
 

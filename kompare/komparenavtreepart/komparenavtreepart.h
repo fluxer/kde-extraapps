@@ -23,7 +23,7 @@
 
 #include <QtGui/QSplitter>
 #include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 
 #include <kparts/part.h>
 #include <kompare.h>

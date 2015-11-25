@@ -39,7 +39,7 @@
 #include <QTreeView>
 #include <QClipboard>
 #include <QShortcut>
-#include <QDragEnterEvent>
+#include <QtGui/qevent.h>
 #include <QSortFilterProxyModel>
 #include <QStyledItemDelegate>
 #include <QStringBuilder>

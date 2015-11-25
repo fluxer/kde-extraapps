@@ -26,7 +26,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
-#include <QShowEvent>
+#include <QtGui/qevent.h>
 #include <QAction>
 #include <QMenu>
 #include <KIcon>

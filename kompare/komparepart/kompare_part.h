@@ -22,7 +22,7 @@
 
 #include <kparts/factory.h>
 #include <kparts/part.h>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <kompare.h>
 
 #include "kompareinterface.h"

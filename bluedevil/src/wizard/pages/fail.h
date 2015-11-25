@@ -25,7 +25,7 @@
 #define FAIL_H
 
 #include "ui_fail.h"
-#include <QWizardPage>
+#include <QtGui/qwizard.h>
 
 class BlueWizard;
 class KPixmapSequenceOverlayPainter;

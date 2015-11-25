@@ -22,7 +22,7 @@
 #include "referencecounting.h"
 #include <QMutex>
 #include <QMap>
-#include <QAtomicInt>
+#include <QtCore/qatomic.h>
 #include <kdebug.h>
 #include "repositories/itemrepository.h"
 #include <util/spinlock.h>

@@ -24,7 +24,7 @@
 #include <kdialog.h>
 
 #include <QTimer>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QString>
 
 class OperationRunner;

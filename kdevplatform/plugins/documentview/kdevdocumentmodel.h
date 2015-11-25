@@ -21,7 +21,7 @@
 #ifndef KDEVPLATFORM_PLUGIN_KDEVDOCUMENTMODEL_H
 #define KDEVPLATFORM_PLUGIN_KDEVDOCUMENTMODEL_H
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QStandardItemModel>
 #include <interfaces/idocumentcontroller.h>
 #include <interfaces/idocument.h>

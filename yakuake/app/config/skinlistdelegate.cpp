@@ -23,7 +23,7 @@
 #include "appearancesettings.h"
 
 #include <QApplication>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPainter>
 
 #include <KLocale>

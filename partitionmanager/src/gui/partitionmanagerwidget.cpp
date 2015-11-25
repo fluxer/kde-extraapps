@@ -57,7 +57,7 @@
 
 #include <QCursor>
 #include <QPointer>
-#include <QReadLocker>
+#include <QtCore/qreadwritelock.h>
 
 #include <config.h>
 

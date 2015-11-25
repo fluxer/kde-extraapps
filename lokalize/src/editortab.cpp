@@ -89,7 +89,7 @@
 
 
 #include <QDir>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <threadweaver/ThreadWeaver.h>
 
 

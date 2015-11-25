@@ -39,7 +39,7 @@
 // Qt
 #include <QCursor>
 #include <QLabel>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QObject>
 #include <QBoxLayout>
 

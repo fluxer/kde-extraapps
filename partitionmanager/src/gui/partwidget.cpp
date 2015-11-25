@@ -26,7 +26,7 @@
 #include "fs/filesystem.h"
 
 #include <QPainter>
-#include <QStyleOptionButton>
+#include <QtGui/qstyleoption.h>
 #include <QApplication>
 #include <QPlastiqueStyle>
 

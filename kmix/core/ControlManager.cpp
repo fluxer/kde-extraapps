@@ -20,7 +20,7 @@
 #include "ControlManager.h"
 #include "core/GlobalConfig.h"
 
-#include <QMutableListIterator>
+#include <QtCore/qlist.h>
 
 #include <KDebug>
 

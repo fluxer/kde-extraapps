@@ -22,7 +22,7 @@
 #include "dviPageInfo.h"
 
 #include <math.h>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <kconfig.h>
 #include <kglobal.h>
 #include <klocale.h>

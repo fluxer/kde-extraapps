@@ -30,8 +30,8 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPoint>
-#include <QMouseEvent>
-#include <QWheelEvent>
+
+#include <QtGui/qevent.h>
 
 #ifdef Q_WS_X11
 #include <X11/Xlib.h>

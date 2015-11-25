@@ -42,7 +42,7 @@
 #include <QtGui/QApplication>
 #include <QtCore/QByteArray>
 #include <QtCore/QList>
-#include <QtGui/QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QLayout>
 
 struct Disk

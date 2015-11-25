@@ -38,7 +38,7 @@
 #include <QLabel>
 #include <QWidget>
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 
 int Terminal::m_availableTerminalId = 0;

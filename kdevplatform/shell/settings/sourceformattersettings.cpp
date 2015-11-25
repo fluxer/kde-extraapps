@@ -21,7 +21,7 @@ Boston, MA 02110-1301, USA.
 
 #include <QVBoxLayout>
 #include <QList>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QInputDialog>
 #include <KMessageBox>
 #include <KIconLoader>

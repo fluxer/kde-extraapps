@@ -24,7 +24,7 @@
 #include "discoverwidget.h"
 #include "ui_discover.h"
 
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QListView>
 #include <QLabel>
 #include <QTimer>

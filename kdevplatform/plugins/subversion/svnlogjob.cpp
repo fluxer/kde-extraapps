@@ -21,7 +21,7 @@
 #include "svnlogjob.h"
 #include "svnlogjob_p.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <klocale.h>
 #include <kdebug.h>

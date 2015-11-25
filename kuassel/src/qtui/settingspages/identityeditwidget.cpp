@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QDragEnterEvent>
-#include <QDropEvent>
+#include <QtGui/qevent.h>
+
 #include <QFileDialog>
 #include <QMimeData>
 #include <QUrl>

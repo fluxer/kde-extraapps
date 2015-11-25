@@ -13,9 +13,9 @@
 #include <QtCore/QUrl>
 #include <QtGui/QTextCursor>
 #include <QtGui/QTextDocument>
-#include <QtGui/QTextFrame>
+#include <QtGui/qtextobject.h>
 #include <QtGui/QTextList>
-#include <QtGui/QTextTableCell>
+#include <QtGui/qtexttable.h>
 #include <QtXml/qdom.h>
 #include <QtXml/qdom.h>
 #include <QtXml/qxml.h>

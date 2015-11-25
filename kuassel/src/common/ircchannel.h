@@ -25,7 +25,7 @@
 #include <QSet>
 #include <QString>
 #include <QStringList>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include "syncableobject.h"
 

@@ -28,7 +28,7 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QTimer>
 #include <QValidator>
-#include <QRegExpValidator>
+#include <QtGui/qvalidator.h>
 #include <QRegExp>
 
 #include <KIcon>

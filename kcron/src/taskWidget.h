@@ -12,7 +12,7 @@
 #ifndef TASK_WIDGET_H
 #define TASK_WIDGET_H
 
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 
 class CTTask;
 class TasksWidget;

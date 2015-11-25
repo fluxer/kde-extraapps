@@ -23,7 +23,7 @@
 
 #include <KDEDModule>
 
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 class NewPrinterNotification;
 class PrintManagerKded : public KDEDModule

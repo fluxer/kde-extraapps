@@ -22,7 +22,7 @@
 #define INTERFACE_H
 
 #include <QStringList>
-#include <QtPlugin>
+#include <QtCore/qplugin.h>
 
 class Interface
 {

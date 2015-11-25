@@ -19,7 +19,7 @@
 #ifndef KIO_GET_FILE_JOB_H
 #define KIO_GET_FILE_JOB_H
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QVariant>
 
 #include <KJob>

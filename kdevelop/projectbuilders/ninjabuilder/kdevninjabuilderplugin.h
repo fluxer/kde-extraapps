@@ -22,7 +22,7 @@
 #include <interfaces/iplugin.h>
 #include <project/interfaces/iprojectbuilder.h>
 #include <KUrl>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 class NinjaJob;
 

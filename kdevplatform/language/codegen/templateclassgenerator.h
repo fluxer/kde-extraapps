@@ -21,7 +21,7 @@
 #define KDEVPLATFORM_TEMPLATECLASSGENERATOR_H
 
 #include <QHash>
-#include <QVariantHash>
+#include <QtCore/qvariant.h>
 
 #include "../languageexport.h"
 #include <language/duchain/duchainpointer.h>

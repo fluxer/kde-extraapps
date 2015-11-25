@@ -79,7 +79,7 @@
 #include <QClipboard>
 #include <QSplitter>
 #include <QTextDocument>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QTimer>
 
 #include <algorithm>

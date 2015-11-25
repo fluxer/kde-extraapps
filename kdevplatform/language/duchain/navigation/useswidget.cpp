@@ -33,7 +33,7 @@
 #include <interfaces/idocumentcontroller.h>
 #include <interfaces/iprojectcontroller.h>
 #include <qtextdocument.h>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 #include <language/duchain/duchainutils.h>
 #include <language/codegen/coderepresentation.h>
 #include <interfaces/iproject.h>

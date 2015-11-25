@@ -21,7 +21,7 @@ Boston, MA 02110-1301, USA.
 #define KDEVPLATFORM_SESSIONDIALOG_H
 
 #include <kdialog.h>
-#include <QtCore/QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 
 namespace Ui
 {

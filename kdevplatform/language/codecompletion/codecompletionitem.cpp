@@ -21,7 +21,7 @@
 
 #include "codecompletionitem.h"
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <ktexteditor/codecompletionmodel.h>
 #include <ktexteditor/range.h>

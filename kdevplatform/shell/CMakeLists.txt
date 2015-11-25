@@ -97,7 +97,8 @@ target_link_libraries(kdevplatformshell LINK_PRIVATE
 )
 set_target_properties(kdevplatformshell PROPERTIES VERSION ${KDEVPLATFORM_LIB_VERSION} SOVERSION ${KDEVPLATFORM_LIB_SOVERSION})
 
-install(FILES
+install(
+    FILES
     mainwindow.h
     plugincontroller.h
     shellextension.h
@@ -119,7 +120,8 @@ install(FILES
     selectioncontroller.h
     runcontroller.h
     launchconfiguration.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/kdevplatform/shell COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/kdevplatform/shell
+    COMPONENT Devel
 )
 
 install(TARGETS kdevplatformshell EXPORT KDevPlatformTargets ${INSTALL_TARGETS_DEFAULT_ARGS} )

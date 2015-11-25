@@ -21,7 +21,7 @@
 #ifndef CONFIGURE_DIALOG_H
 #define CONFIGURE_DIALOG_H
 
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
 #include <KPageDialog>
 
 class PrinterPage;

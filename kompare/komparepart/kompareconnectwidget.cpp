@@ -24,9 +24,9 @@
 #include <QtGui/QPixmap>
 #include <QtGui/QStyle>
 #include <QtCore/QTimer>
-#include <QtGui/QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QFrame>
-#include <QtGui/QMouseEvent>
+
 
 #include <kdebug.h>
 

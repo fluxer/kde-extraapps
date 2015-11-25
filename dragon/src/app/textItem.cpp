@@ -23,7 +23,7 @@
 #include <KDebug>
 
 #include <QTextDocument>
-#include <QSizeF>
+#include <QtCore/qsize.h>
 #include <QWidget>
 
 ExpandingTextItem::ExpandingTextItem(QGraphicsWidget* parent)

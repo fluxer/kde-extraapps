@@ -30,7 +30,7 @@
 
 #include <KDialog>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 #include <QSize>
 

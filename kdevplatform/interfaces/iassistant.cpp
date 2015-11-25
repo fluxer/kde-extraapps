@@ -20,7 +20,7 @@
 #include "icore.h"
 
 #include <KAction>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QTextEdit>
 #include <QThread>
 

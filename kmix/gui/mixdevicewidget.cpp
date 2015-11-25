@@ -32,7 +32,7 @@
 #include <kdebug.h>
 
 #include <qcursor.h>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <qpixmap.h>
 #include <qwmatrix.h>
 

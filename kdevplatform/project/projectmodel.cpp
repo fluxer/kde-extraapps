@@ -39,7 +39,7 @@
 #include <KMessageBox>
 #include <kio/udsentry.h>
 #include <kio/netaccess.h>
-#include <QMetaClassInfo>
+#include <QtCore/qmetaobject.h>
 #include <QThread>
 
 #include "path.h"

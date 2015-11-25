@@ -25,8 +25,8 @@
 
 #include <documentsource.h>
 
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
+
+#include <QtXml/qdom.h>
 #include <QtCore/QString>
 
 namespace Syndication {

@@ -31,7 +31,7 @@
 #include <QApplication>
 #include <QBitmap>
 #include <QDesktopWidget>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QTimer>
 

@@ -21,7 +21,7 @@
 
 #include "pathmappings.h"
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QTableView>

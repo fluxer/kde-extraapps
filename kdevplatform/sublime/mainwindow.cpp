@@ -254,7 +254,7 @@ void MainWindow::loadSettings()
     // What follows is copy-paste from applyMainWindowSettings.  Unfortunately,
     // we don't really want that one to try restoring window size, and we also
     // cannot stop it from doing that in any clean way.
-    QStatusBar* sb = qFindChild<KStatusBar *>(this);
+    QStatusBar* sb = this->findChild<KStatusBar *>();
     if (sb) {
         QString entry = cg.readEntry("StatusBar", "Enabled");
         if ( entry == "Disabled" )
@@ -263,7 +263,7 @@ void MainWindow::loadSettings()
            sb->show();
     }
 
-    QMenuBar* mb = qFindChild<KMenuBar *>(this);
+    QMenuBar* mb = this->findChild<KMenuBar *>();
     if (mb) {
         QString entry = cg.readEntry ("MenuBar", "Enabled");
         if ( entry == "Disabled" )

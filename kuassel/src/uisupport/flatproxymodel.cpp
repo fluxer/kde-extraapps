@@ -20,7 +20,7 @@
 
 #include "flatproxymodel.h"
 
-#include <QItemSelection>
+#include <QtGui/qitemselectionmodel.h>
 #include <KDebug>
 
 FlatProxyModel::FlatProxyModel(QObject *parent)

@@ -34,7 +34,7 @@
 #include <qtoolbox.h>
 #include <QTextEdit>
 #include <QHBoxLayout>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QGridLayout>
 #include <QVBoxLayout>
 

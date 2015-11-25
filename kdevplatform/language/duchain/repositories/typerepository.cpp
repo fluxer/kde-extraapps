@@ -20,7 +20,7 @@
 
 #include <QHash>
 #include <QMutex>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include "../types/typesystemdata.h"
 #include "../types/typeregister.h"

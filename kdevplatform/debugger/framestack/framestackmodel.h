@@ -21,7 +21,7 @@
 #ifndef KDEVPLATFORM_FRAMESTACKMODEL_H
 #define KDEVPLATFORM_FRAMESTACKMODEL_H
 
-#include <QtCore/QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtCore/QHash>
 
 #include <KDE/KUrl>

@@ -21,7 +21,7 @@
 //
 //#include <qcursor.h>
 //#include <QLabel>
-//#include <QMouseEvent>
+//#include <QtGui/qevent.h>
 //#include <QObject>
 //
 //#include <klocale.h>

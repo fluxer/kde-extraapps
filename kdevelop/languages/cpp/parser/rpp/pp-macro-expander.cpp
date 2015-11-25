@@ -22,8 +22,8 @@
 
 #include "pp-macro-expander.h"
 
-#include <QDate>
-#include <QTime>
+
+#include <QtCore/qdatetime.h>
 
 #include <kdebug.h>
 #include <klocale.h> 

@@ -24,8 +24,8 @@
 #ifndef KDEVPLATFORM_DEBUGCONTROLLER_H
 #define KDEVPLATFORM_DEBUGCONTROLLER_H
 
-#include <QtCore/QVariantList>
-#include <QWeakPointer>
+#include <QtCore/qvariant.h>
+#include <QtCore/qsharedpointer.h>
 #include <KDE/KXMLGUIClient>
 #include <KDE/KTextEditor/MarkInterface>
 

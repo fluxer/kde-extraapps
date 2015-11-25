@@ -23,7 +23,7 @@
 #include <QPoint>
 #include <QPainter>
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 
 #include <iostream>
