@@ -21,7 +21,7 @@
 #include "topdevelopersview.h"
 
 #include <QPen>
-#include <QLinearGradient>
+#include <QtGui/qbrush.h>
 
 #include <KIcon>
 #include <KColorUtils>

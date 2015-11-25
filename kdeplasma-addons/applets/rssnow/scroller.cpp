@@ -30,8 +30,8 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QList>
-#include <QStyleOptionGraphicsItem>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPropertyAnimation>
 #include <plasma/widgets/iconwidget.h>
 #define BTN_SIZE 20

@@ -23,8 +23,8 @@
 
 #include <QPainter>
 #include <QPixmap>
-#include <QStyleOptionGraphicsItem>
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsLinearLayout>
 #include <QPen>
 #include <QCheckBox>

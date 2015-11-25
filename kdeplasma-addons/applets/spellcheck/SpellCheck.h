@@ -21,8 +21,8 @@
 #ifndef SPELLCHECK_HEADER
 #define SPELLCHECK_HEADER
 
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
+
 
 #include <KTextEdit>
 

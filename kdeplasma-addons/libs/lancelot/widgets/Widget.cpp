@@ -22,7 +22,7 @@
 
 #include <QApplication>
 #include <QVariant>
-#include <QtGui/QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QtGui/QPainter>
 
 #include <lancelot/lancelot.h>

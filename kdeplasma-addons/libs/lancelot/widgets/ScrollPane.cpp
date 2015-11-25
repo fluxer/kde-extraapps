@@ -22,7 +22,7 @@
 #include "Widget.h"
 
 #include <Plasma/Animator>
-#include <QGraphicsSceneWheelEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <lancelot/layouts/FullBorderLayout.h>
 

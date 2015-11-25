@@ -21,7 +21,7 @@
 
 #include <QPainter>
 #include <QSignalMapper>
-#include <QGraphicsSceneMoveEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <KDebug>
 

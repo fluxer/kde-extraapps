@@ -22,7 +22,7 @@
 
 #include <Plasma/Applet>
 #include <QTimer>
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 class ShowDesktop : public Plasma::Applet
 {

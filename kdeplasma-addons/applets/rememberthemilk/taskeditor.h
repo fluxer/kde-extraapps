@@ -35,8 +35,8 @@ namespace Plasma {
 
 #include <QGraphicsGridLayout>
 #include <QGraphicsWidget>
-#include <QModelIndex>
-#include <QWeakPointer>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtCore/qsharedpointer.h>
 
 class TaskEditor : public QGraphicsWidget
 {

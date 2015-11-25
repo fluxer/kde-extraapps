@@ -21,9 +21,9 @@
 #include "piece.h"
 
 #include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QFontMetrics>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <KDebug>
 #include <KGlobalSettings>

@@ -21,7 +21,7 @@
 #define POTDPROVIDER_H
 
 #include <QtCore/QObject>
-#include <QtCore/QDate>
+#include <QtCore/qdatetime.h>
 
 #include <kpluginfactory.h>
 

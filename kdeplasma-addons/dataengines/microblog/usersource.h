@@ -23,7 +23,7 @@
 
 #include <QList>
 #include <QPair>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <KUrl>
 

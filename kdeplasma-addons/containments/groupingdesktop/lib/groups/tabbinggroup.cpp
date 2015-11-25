@@ -22,7 +22,7 @@
 
 #include <QtGui/QGraphicsLinearLayout>
 #include <QtGui/QGraphicsView>
-#include <QtGui/QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QtCore/QTimer>
 
 #include <KConfigDialog>

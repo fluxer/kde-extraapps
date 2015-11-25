@@ -23,7 +23,7 @@
 #include "tooltip.h"
 
 #include <QGraphicsWidget>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <plasma/popupapplet.h>
 #include <plasma/dataengine.h>
 

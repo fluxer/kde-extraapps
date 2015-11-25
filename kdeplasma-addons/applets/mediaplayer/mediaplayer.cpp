@@ -25,7 +25,7 @@
 
 #include <QGraphicsProxyWidget>
 #include <QGraphicsLinearLayout>
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QDBusConnection>
 #include <QTimer>
 

@@ -26,7 +26,7 @@
 
 #include <QtGui/QGraphicsGridLayout>
 #include <QtGui/QGraphicsLinearLayout>
-#include <QtGui/QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QtGui/QScrollBar>
 #include <QtGui/QToolButton>
 #include <QtGui/QMenu>

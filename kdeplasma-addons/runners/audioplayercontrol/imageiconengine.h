@@ -19,7 +19,7 @@
 #ifndef IMAGEICONENGINE_H
 #define IMAGEICONENGINE_H
 
-#include <QtGui/QIconEngineV2>
+#include <QtGui/qiconengine.h>
 #include <QtGui/QIcon>
 
 class ImageIconEngine : public QIconEngineV2

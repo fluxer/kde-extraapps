@@ -21,7 +21,7 @@
 #include "ActionListView_p.h"
 
 #include <QApplication>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <KDebug>
 

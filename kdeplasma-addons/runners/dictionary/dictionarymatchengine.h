@@ -9,7 +9,7 @@
 #include <QHash>
 #include <QReadWriteLock>
 #include <QMutex>
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 
 namespace Plasma
 {

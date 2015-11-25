@@ -23,7 +23,7 @@
 #include <limits.h>
 
 // Qt
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QLabel>
 
 #include <QGraphicsLinearLayout>

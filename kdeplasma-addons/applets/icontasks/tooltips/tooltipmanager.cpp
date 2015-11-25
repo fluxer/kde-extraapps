@@ -27,7 +27,7 @@
 #include <QTimer>
 #include <QGridLayout>
 #include <QGraphicsView>
-#include <QGraphicsSceneHoverEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 //KDE
 #include <kwindowsystem.h>

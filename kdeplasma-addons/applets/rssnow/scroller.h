@@ -23,7 +23,7 @@
 #include "feeddata.h"
 #include <QList>
 #include <QGraphicsWidget>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QAbstractAnimation>
 #include <plasma/plasma_export.h>
 #include <plasma/animator.h>

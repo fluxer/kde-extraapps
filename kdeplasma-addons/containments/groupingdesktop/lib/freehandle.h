@@ -23,7 +23,7 @@
 
 #include <QtCore/QObject>
 #include <QTimer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QPropertyAnimation>
 
 #include <Plasma/Animator>

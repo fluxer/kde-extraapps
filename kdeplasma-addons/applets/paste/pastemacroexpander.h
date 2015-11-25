@@ -20,7 +20,7 @@
 
 #include <KWordMacroExpander>
 #include <QStringList>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 #include <QHash>
 
 class MacroParam

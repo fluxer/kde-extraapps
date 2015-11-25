@@ -22,7 +22,7 @@
 
 #include <QFont>
 #include <QGraphicsWidget>
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 
 #include <Plasma/Svg>
 

@@ -24,7 +24,7 @@
 #include "icongridlayout.h"
 
 // Qt
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsWidget>
 #include <QMenu>
 #include <QSignalMapper>

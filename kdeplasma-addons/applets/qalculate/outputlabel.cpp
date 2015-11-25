@@ -18,7 +18,7 @@
 */
 
 #include "outputlabel.h"
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 OutputLabel::OutputLabel(QGraphicsWidget *parent): Plasma::Label(parent)
 {

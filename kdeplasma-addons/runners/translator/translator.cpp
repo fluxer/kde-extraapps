@@ -32,7 +32,7 @@
 #include <QtCore/QPair>
 #include <QtCore/QObject>
 #include <QtCore/QList>
-#include <QtCore/QListIterator>
+#include <QtCore/qlist.h>
 #include <QtGui/QClipboard>
 #include <qjson/parser.h>
 #include <Plasma/RunnerContext>

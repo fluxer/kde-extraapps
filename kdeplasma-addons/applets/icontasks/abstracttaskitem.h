@@ -31,9 +31,9 @@
 #include "taskmanager/taskgroup.h"
 
 // Qt
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QIcon>
-#include <QFocusEvent>
+#include <QtGui/qevent.h>
 #include <QGraphicsWidget>
 #include <QPropertyAnimation>
 

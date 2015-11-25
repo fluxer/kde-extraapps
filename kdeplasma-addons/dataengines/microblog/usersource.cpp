@@ -24,7 +24,7 @@
 #include <KIO/Job>
 
 #include <qjson/parser.h>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 class UserSourcePrivate {
 

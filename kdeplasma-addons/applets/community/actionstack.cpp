@@ -22,7 +22,7 @@
 #include "actionstack.h"
 
 #include <Plasma/TabBar>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include "contactlist.h"
 #include "requestfriendshipwidget.h"
 #include "sendmessagewidget.h"

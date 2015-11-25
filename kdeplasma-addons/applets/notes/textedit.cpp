@@ -23,7 +23,7 @@
 
 #include <QtCore/QTextStream>
 #include <QtGui/QGraphicsGridLayout>
-#include <QtGui/QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QtGui/QScrollBar>
 #include <QtGui/QMenu>
 

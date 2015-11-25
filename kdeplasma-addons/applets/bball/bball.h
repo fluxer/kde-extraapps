@@ -22,7 +22,7 @@
 #define bball_HEADER
 
 #include <QtCore/QBasicTimer>
-#include <QtCore/QTime>
+#include <QtCore/qdatetime.h>
 #include <QtGui/QVector2D>
 #include <KConfigDialog>
 

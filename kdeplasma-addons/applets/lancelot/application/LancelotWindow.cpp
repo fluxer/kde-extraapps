@@ -22,7 +22,7 @@
 #include <QDesktopWidget>
 #include <QGraphicsItem>
 #include <QGraphicsView>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusReply>
 

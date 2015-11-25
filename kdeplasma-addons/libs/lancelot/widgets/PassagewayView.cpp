@@ -20,7 +20,7 @@
 #include "PassagewayView.h"
 
 #include <QApplication>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsView>
 #include <QWidget>
 #include <QPointer>

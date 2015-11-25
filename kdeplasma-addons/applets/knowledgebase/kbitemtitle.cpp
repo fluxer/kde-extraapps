@@ -21,7 +21,7 @@
 #include "kbitemtitle.h"
 
 //Qt
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 using namespace Plasma;
 

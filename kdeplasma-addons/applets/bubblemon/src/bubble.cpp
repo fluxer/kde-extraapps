@@ -22,10 +22,10 @@
 #include <QtCore/QTimer>
 #include <QtCore/QPropertyAnimation>
 #include <QtGui/QPainter>
-#include <QtGui/QStyleOptionGraphicsItem>
-#include <QtGui/QGraphicsSceneResizeEvent>
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QtGui/QStandardItemModel>
-#include <QtGui/QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QtGui/QSortFilterProxyModel>
 
 #include <Plasma/Theme>

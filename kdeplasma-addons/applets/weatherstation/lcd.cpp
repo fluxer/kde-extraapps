@@ -21,9 +21,9 @@
 #include <QPainter>
 #include <QDir>
 #include <QGraphicsLinearLayout>
-#include <QGraphicsSceneHoverEvent>
-#include <QGraphicsSceneMouseEvent>
-#include <QDomDocument>
+#include <QtGui/qgraphicssceneevent.h>
+
+#include <QtXml/qdom.h>
 #include <QCursor>
 #include <QSvgRenderer>
 #include <KDebug>

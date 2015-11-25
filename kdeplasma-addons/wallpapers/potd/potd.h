@@ -21,7 +21,7 @@
 #define COLOR_HEADER
 
 #include <QRunnable>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <Plasma/Wallpaper>
 #include <Plasma/DataEngine>

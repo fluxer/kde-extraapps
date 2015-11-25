@@ -24,10 +24,10 @@
 #include "header.h"
 
 //QT
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsLinearLayout>
 #include <QTimer>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QLineEdit>
 

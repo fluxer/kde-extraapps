@@ -13,7 +13,7 @@
 #include <QApplication>
 #include <QPainter>
 #include <QTextDocument>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <KDebug>
 #include <KGlobalSettings>

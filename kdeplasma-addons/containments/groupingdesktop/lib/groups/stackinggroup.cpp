@@ -19,7 +19,7 @@
 
 #include "stackinggroup.h"
 
-#include <QtGui/QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPainter>
 
 #include <Plasma/PaintUtils>

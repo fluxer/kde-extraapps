@@ -23,7 +23,7 @@
 #include <QGraphicsWidget>
 #include <QPainter>
 #include <QPixmap>
-#include <QPointF>
+#include <QtCore/qpoint.h>
 
 class QGraphicsSceneMouseEvent;
 class QStyleOptionGraphicsItem;

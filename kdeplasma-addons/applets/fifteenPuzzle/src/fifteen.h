@@ -22,7 +22,7 @@
 
 #include <QGraphicsWidget>
 #include <QHash>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <Plasma/Svg>
 

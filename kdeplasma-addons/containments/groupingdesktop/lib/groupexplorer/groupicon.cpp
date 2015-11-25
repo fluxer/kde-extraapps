@@ -24,8 +24,8 @@
 #include <QApplication>
 #include <QCursor>
 #include <QFontMetrics>
-#include <QGraphicsSceneMouseEvent>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qgraphicssceneevent.h>
+#include <QtGui/qstyleoption.h>
 #include <QPainter>
 
 #include <KIconLoader>

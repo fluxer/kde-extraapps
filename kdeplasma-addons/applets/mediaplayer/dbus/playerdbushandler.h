@@ -21,7 +21,7 @@
 #define PLAYERDBUSHANDLER_HEADER
 
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 #include <QDBusArgument>
 
 #include <phonon/mediaobject.h>

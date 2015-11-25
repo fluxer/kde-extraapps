@@ -24,7 +24,7 @@
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusMetaType>
 #include <QtDBus/QDBusPendingReply>
-#include <QtDBus/QDBusPendingCallWatcher>
+#include <QtDBus/qdbuspendingcall.h>
 #include <QtDBus/QDBusMessage>
 
 #include <KMessageBox>

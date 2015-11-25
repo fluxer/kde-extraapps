@@ -25,7 +25,7 @@
 
 #include <Plasma/Applet>
 #include <QTimer>
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 
 class ShowDashboard : public Plasma::Applet

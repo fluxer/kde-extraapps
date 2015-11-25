@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <marble/SunLocator.h>
 #include <marble/ViewportParams.h>
 
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QStandardItemModel>
 #include <QTimer>
 

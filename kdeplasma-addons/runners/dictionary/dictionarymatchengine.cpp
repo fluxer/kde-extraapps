@@ -5,7 +5,7 @@
 #include "dictionarymatchengine.h"
 #include <Plasma/AbstractRunner>
 #include <QThread>
-#include <QMetaMethod>
+#include <QtCore/qmetaobject.h>
 #include <KDebug>
 
 DictionaryMatchEngine::DictionaryMatchEngine(Plasma::DataEngine *dictionaryEngine, QObject *parent)

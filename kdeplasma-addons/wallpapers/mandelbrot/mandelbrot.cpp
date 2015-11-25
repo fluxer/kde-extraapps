@@ -20,7 +20,7 @@
 #include <iostream>
 
 #include <cmath>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <kfiledialog.h>
 #include <QByteArray>
 #include <QBuffer>

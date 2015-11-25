@@ -20,7 +20,7 @@
 #include "Serializator.h"
 
 #include <QMap>
-#include <QMapIterator>
+#include <QtCore/qmap.h>
 #include <QString>
 #include <QStringList>
 #include <QUrl>

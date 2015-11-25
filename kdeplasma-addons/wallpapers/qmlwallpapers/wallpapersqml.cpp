@@ -28,7 +28,7 @@
 #include <QDeclarativeEngine>
 #include <QDeclarativeItem>
 #include <QDeclarativeComponent>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsScene>
 #include <QPainter>
 #include <QListView>

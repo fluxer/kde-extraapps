@@ -20,7 +20,7 @@
 
 #include "kdeobservatoryconfigprojects.h"
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 
 #include <KDialog>
 #include <KMessageBox>

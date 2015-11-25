@@ -21,7 +21,7 @@
 #define TASKITEM_H
 
 #include <QGraphicsWidget>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <Plasma/Theme>
 #include <Plasma/Svg>
 

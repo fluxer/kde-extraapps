@@ -26,7 +26,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QMap>
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 class RTM::RequestPrivate
 {

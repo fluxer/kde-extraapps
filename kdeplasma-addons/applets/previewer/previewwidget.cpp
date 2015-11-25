@@ -20,9 +20,9 @@
 #include "previewitemmodel.h"
 
 // Qt
-#include <QGraphicsSceneWheelEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPainter>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QPropertyAnimation>
 
 // KDE

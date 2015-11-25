@@ -19,8 +19,8 @@
 
 #include "blackboardwidget.h"
 
-#include <QGraphicsSceneMouseEvent>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qgraphicssceneevent.h>
+#include <QtGui/qstyleoption.h>
 #include <QPainter>
 #include <QTimer>
 

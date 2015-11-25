@@ -21,8 +21,8 @@
 #define RTM_TASK_H
 
 // Qt Includes
-#include <QDate>
-#include <QTime>
+
+#include <QtCore/qdatetime.h>
 #include <QDateTime>
 #include <QString>
 #include <QObject>

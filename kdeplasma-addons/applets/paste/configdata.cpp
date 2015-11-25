@@ -21,7 +21,7 @@
 #include <KSaveFile>
 #include <KDebug>
 #include <KDirWatch>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QTextStream>
 

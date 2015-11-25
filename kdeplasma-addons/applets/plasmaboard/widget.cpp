@@ -38,10 +38,10 @@
 
 #include <QDBusConnection>
 #include <QFile>
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPainter>
 #include <QSignalMapper>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QTimer>
 #include <plasma/containment.h>
 #include <plasma/corona.h>

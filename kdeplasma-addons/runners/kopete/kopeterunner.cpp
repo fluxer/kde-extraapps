@@ -21,7 +21,7 @@
 #include "kopeterunner.h"
 
 // Qt includes
-#include <QtCore/QHashIterator>
+#include <QtCore/qhash.h>
 #include <QtCore/QUuid>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusConnectionInterface>

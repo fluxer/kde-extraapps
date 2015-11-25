@@ -43,7 +43,7 @@
 #include <QGraphicsWidget>
 #include <QGraphicsLinearLayout>
 #include <QLabel>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 
 K_EXPORT_PLASMA_APPLET(qalculate, QalculateApplet)

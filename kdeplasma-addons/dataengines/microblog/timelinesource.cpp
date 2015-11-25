@@ -24,7 +24,7 @@
 #include "tweetjob.h"
 
 #include <QFile>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <qjson/parser.h>
 

@@ -24,7 +24,7 @@
 //Qt
 #include <QGraphicsLinearLayout>
 #include <QGraphicsGridLayout>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 //KDE
 #include <KDebug>

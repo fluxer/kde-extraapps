@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "customtimeeditor.h"
-#include <QTimeEdit>
+#include <QtGui/qdatetimeedit.h>
 #include <klineedit.h>
 #include <klocale.h>
 

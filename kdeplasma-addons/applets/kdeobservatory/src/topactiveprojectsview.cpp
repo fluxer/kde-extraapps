@@ -22,7 +22,7 @@
 
 #include <QPen>
 #include <QFontMetrics>
-#include <QLinearGradient>
+#include <QtGui/qbrush.h>
 
 #include <KIcon>
 #include <KColorUtils>

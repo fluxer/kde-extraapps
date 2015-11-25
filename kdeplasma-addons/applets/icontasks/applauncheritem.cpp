@@ -30,7 +30,7 @@
 #include "taskmanager/groupmanager.h"
 
 // Qt
-#include <QGraphicsSceneContextMenuEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsView>
 
 // KDE

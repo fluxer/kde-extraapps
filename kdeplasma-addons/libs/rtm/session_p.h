@@ -34,11 +34,11 @@
 #include <QCryptographicHash>
 #include <QBuffer>
 #include <QCoreApplication>
-#include <QDomDocument>
-#include <QDomNode>
-#include <QDomElement>
-#include <QDomNodeList>
-#include <QtDebug>
+
+
+
+#include <QtXml/qdom.h>
+#include <QtCore/qdebug.h>
 #include <QTimer>
 
 #ifndef QTONLY

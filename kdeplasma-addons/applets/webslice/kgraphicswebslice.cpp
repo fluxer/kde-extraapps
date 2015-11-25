@@ -21,7 +21,7 @@
 #include "kgraphicswebslice.h"
 
 #include <qdebug.h>
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <qgraphicswebview.h>
 #include <qlabel.h>
 #include <qtimer.h>

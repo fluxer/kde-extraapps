@@ -23,7 +23,7 @@
 #include <QTimer>
 #include <QTimeLine>
 #include <QGraphicsScene>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QGraphicsProxyWidget>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsItemAnimation>

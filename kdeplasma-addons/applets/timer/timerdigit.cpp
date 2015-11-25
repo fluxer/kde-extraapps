@@ -19,7 +19,7 @@
 
 #include "timerdigit.h"
 
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 TimerDigit::TimerDigit(Plasma::Svg *svg, int seconds, QGraphicsItem *parent)
     : SvgWidget(svg, "0", parent)

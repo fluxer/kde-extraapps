@@ -25,7 +25,7 @@
 #include "BaseModel.h"
 #include <solid/device.h>
 #include <solid/storageaccess.h>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 namespace Lancelot {
 namespace Models {

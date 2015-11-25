@@ -24,7 +24,7 @@
 #include "tooltipmanager.h"
 #include <QPainter>
 #include <QVarLengthArray>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QFontMetrics>
 
 #include <kwindowsystem.h>

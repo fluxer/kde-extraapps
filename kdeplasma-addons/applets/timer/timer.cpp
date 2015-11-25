@@ -22,7 +22,7 @@
 #include <QSequentialAnimationGroup>
 #include <QPropertyAnimation>
 #include <QtCore/QEasingCurve>
-#include <QtGui/QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <KAuthorized>
 #include <KConfigDialog>

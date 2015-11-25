@@ -19,8 +19,8 @@
 #define PREVIEWWIDGET_H
 
 #include <QGraphicsWidget>
-#include <QStyleOptionViewItem>
-#include <QWeakPointer>
+#include <QtGui/qstyleoption.h>
+#include <QtCore/qsharedpointer.h>
 
 #include <KFileItemDelegate>
 #include <KUrl>

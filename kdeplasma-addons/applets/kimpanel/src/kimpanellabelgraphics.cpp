@@ -21,7 +21,7 @@
 #include "kimpanellabelgraphics.h"
 
 // Qt
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 // KDE
 #include <KWindowSystem>

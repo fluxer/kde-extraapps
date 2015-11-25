@@ -19,11 +19,11 @@
  ***************************************************************************/
 
 #include "bball.h"
-#include <QtCore/QSizeF>
+#include <QtCore/qsize.h>
 #include <QtGui/QPainter>
 #include <QtGui/QDesktopWidget>
 #include <QtGui/QGraphicsScene>
-#include <QtGui/QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <KSharedConfig>
 #include <KLocale>
 #include <KStandardDirs>

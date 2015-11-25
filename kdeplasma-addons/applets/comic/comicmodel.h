@@ -21,7 +21,7 @@
 #ifndef COMICMODEL_H
 #define COMICMODEL_H
 
-#include <QtCore/QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <Plasma/DataEngine>
 

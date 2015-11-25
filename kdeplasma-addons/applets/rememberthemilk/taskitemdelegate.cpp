@@ -27,7 +27,7 @@
 #include <Plasma/Svg>
 
 #include <QColor>
-#include <QLinearGradient>
+#include <QtGui/qbrush.h>
 #include <QCheckBox>
 
 #include <KDebug>

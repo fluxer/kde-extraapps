@@ -26,7 +26,7 @@
 #include <KApplication>
 #include <KAboutData>
 #include <KCmdLineArgs>
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 #include <KIO/Job>
 #include <KIO/NetAccess>

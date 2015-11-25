@@ -33,9 +33,9 @@
 #include <QApplication>
 #include <QFileInfo>
 #include <QGraphicsLinearLayout>
-#include <QGraphicsSceneContextMenuEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsView>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QTextLayout>
 #include <QVarLengthArray>
 #include <QPropertyAnimation>

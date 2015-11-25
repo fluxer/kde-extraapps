@@ -18,7 +18,7 @@
 #ifndef PREVIEWDIALOG_H
 #define PREVIEWDIALOG_H
 
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 
 // Plasma
 #include <plasma/dialog.h>

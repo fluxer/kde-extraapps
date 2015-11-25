@@ -23,10 +23,10 @@
 
 #include <qmath.h>
 #include <QtGui/QPainter>
-#include <QtGui/QGraphicsSceneResizeEvent>
-#include <QtGui/QGraphicsSceneHoverEvent>
+#include <QtGui/qgraphicssceneevent.h>
+
 #include <QtGui/QGraphicsLinearLayout>
-#include <QtGui/QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 
 #include <KIcon>
 

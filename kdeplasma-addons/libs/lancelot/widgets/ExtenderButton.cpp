@@ -23,7 +23,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QIcon>
-#include <QRectF>
+#include <QtCore/qrect.h>
 #include <QTimer>
 #include <QPointer>
 

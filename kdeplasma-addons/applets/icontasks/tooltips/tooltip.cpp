@@ -26,12 +26,12 @@
 #include <QBitmap>
 #include <QGridLayout>
 #include <QLabel>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QPalette>
 #include <QTextDocument>
 #include <QPropertyAnimation>
-#include <QTextBlock>
+#include <QtGui/qtextobject.h>
 #include <QToolButton>
 #ifdef Q_WS_X11
 #include <QX11Info>

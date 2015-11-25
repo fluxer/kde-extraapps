@@ -20,14 +20,14 @@
 #include "request.h"
 #include "request_p.h"
 
-#include <QTime>
-#include <QMapIterator>
+#include <QtCore/qdatetime.h>
+#include <QtCore/qmap.h>
 #include <QDateTime>
 #include <QCryptographicHash>
 #include <QCoreApplication>
 #include <QStringList>
 
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 #include <QTimer>
 
 RTM::Request::Request()

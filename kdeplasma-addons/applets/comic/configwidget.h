@@ -26,7 +26,7 @@
 #include "ui_comicSettings.h"
 
 #include <QtGui/QWidget>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 #include <Plasma/DataEngine>
 

@@ -31,8 +31,8 @@
 #include <QtGui/QGraphicsLinearLayout>
 #include <QtGui/QGraphicsScene>
 #include <QtGui/QGraphicsView>
-#include <QtGui/QGraphicsSceneMouseEvent>
-#include <QtGui/QGraphicsSceneWheelEvent>
+#include <QtGui/qgraphicssceneevent.h>
+
 #include <QtGui/QSortFilterProxyModel>
 #include <QtDeclarative/QDeclarativeEngine>
 #include <QtDeclarative/QDeclarativeContext>

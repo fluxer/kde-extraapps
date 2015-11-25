@@ -21,7 +21,7 @@
 #define XMLREADERS_H
 
 #include <QDateTime>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include "rtm.h"
 #include "list.h"

@@ -23,7 +23,7 @@
 #include <QtCore/QTimer>
 #include <QtGui/QGraphicsView>
 #include <QtGui/QGraphicsScene>
-#include <QtGui/QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <KConfigDialog>
 #include <KWindowSystem>

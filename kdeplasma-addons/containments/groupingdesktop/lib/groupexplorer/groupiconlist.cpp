@@ -24,7 +24,7 @@
 
 #include <cmath>
 
-#include <QGraphicsSceneWheelEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsView>
 #include <QHash>
 #include <QToolButton>

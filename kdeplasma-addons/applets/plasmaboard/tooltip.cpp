@@ -19,7 +19,7 @@
 
 #include "tooltip.h"
 #include <QPainter>
-#include <QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QPalette>
 #include <QLabel>
 #include <QHBoxLayout>

@@ -23,7 +23,7 @@
 #include <lancelot/lancelot_export.h>
 
 #include "BaseModel.h"
-#include <QXmlStreamWriter>
+#include <QtCore/qxmlstream.h>
 
 namespace Lancelot {
 namespace Models {

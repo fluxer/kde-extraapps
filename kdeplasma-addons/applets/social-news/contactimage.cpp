@@ -22,7 +22,7 @@
 //Qt
 #include <QGraphicsWidget>
 #include <QPainter>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 
 // KDE
 #include <KIcon>

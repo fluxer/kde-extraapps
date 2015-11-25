@@ -21,7 +21,7 @@
 
 //Qt
 #include <QGraphicsGridLayout>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QLabel>
 
 //KDE

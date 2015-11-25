@@ -21,7 +21,7 @@
 #ifndef FILEWATCHERTEXTITEM_H
 #define FILEWATCHERTEXTITEM_H
 
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 
 class FileWatcherTextItem : public QGraphicsTextItem
 {

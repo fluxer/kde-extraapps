@@ -24,7 +24,7 @@ class QGraphicsWidget;
 class QGraphicsSceneWheelEvent;
 class QKeyEvent;
 #include <QObject>
-#include <QPointF>
+#include <QtCore/qpoint.h>
 #include <QtCore/QAbstractAnimation>
 
 

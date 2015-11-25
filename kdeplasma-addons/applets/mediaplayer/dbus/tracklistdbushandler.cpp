@@ -21,6 +21,8 @@
 
 #include <kdebug.h>
 
+#include <QDateTime>
+
 #include <Phonon/MediaObject>
 #include <Phonon/MediaSource>
 

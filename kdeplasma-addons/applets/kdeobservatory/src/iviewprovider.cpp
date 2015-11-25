@@ -21,7 +21,7 @@
 #include "iviewprovider.h"
 
 #include <QGraphicsLinearLayout>
-#include <QGraphicsRectItem>
+#include <QtGui/qgraphicsitem.h>
 
 #include <Plasma/Frame>
 

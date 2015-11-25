@@ -26,7 +26,7 @@
 #include "ui_behaviourconfig.h"
 
 // Qt
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QTimer>
 #include <QSize>
 

@@ -21,7 +21,7 @@
 #define CUSTOMTIMEEDITOR_H
 
 #include <keditlistwidget.h>
-#include <QTime>
+#include <QtCore/qdatetime.h>
 
 class QTimeEdit;
 class KLineEdit;

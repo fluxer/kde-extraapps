@@ -22,7 +22,7 @@
 #include "previewwidget.h"
 
 // Qt
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QDesktopWidget>
 #include <QApplication>
 #include <QLabel>

@@ -30,7 +30,7 @@
 #include <KDebug>
 
 #include <QtGui/QPainter>
-#include <QtGui/QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QtDBus/QDBusInterface>
 
 SystemLoadViewer::SystemLoadViewer(QObject *parent, const QVariantList &args)

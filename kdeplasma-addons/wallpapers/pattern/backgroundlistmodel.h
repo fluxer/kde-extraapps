@@ -11,7 +11,7 @@
 #ifndef BACKGROUNDLISTMODEL_H
 #define BACKGROUNDLISTMODEL_H
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPixmap>
 #include <QRunnable>
 #include <QThread>

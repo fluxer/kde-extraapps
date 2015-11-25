@@ -20,8 +20,8 @@
 #include <QTextCodec>
 #include <QFile>
 #include <QProcess>
-#include <QDate>
-#include <QTime>
+
+#include <QtCore/qdatetime.h>
 
 #include <KIO/NetAccess>
 #include <KDebug>

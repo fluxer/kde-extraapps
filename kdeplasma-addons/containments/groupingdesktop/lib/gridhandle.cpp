@@ -21,7 +21,7 @@
 
 #include <QtGui/QPainter>
 #include <QtGui/QGraphicsScene>
-#include <QtGui/QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <KDebug>
 #include <KIconLoader>

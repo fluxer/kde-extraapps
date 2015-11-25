@@ -23,7 +23,7 @@
 
 #include <QtCore/QRegExp>
 #include <QtGui/QImage>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <KDebug>
 #include <kio/job.h>

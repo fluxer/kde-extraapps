@@ -19,7 +19,7 @@
 
 #include "fileWatcherTextItem.h"
 
-#include <QRectF>
+#include <QtCore/qrect.h>
 
 FileWatcherTextItem::FileWatcherTextItem(QGraphicsItem * parent)
     : QGraphicsTextItem(parent)

@@ -32,12 +32,12 @@
 #include <QBuffer>
 #include <QCoreApplication>
 
-#include <QDomDocument>
-#include <QDomNode>
-#include <QDomElement>
-#include <QDomNodeList>
 
-#include <QtDebug>
+
+
+#include <QtXml/qdom.h>
+
+#include <QtCore/qdebug.h>
 
 RTM::Session::Session(QString apiKey, QString sharedSecret, RTM::Permissions permissions, QString token, QObject* parent)
   : QObject(parent),

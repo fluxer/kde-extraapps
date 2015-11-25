@@ -29,7 +29,7 @@
 #include "task_p.h"
 
 #include <QCoreApplication>
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 #include <QNetworkReply>
 
 

@@ -21,7 +21,7 @@
 
 #include <QAction>
 #include <QGraphicsLinearLayout>
-#include <QGraphicsSceneContextMenuEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <KLocale>
 #include <KDebug>

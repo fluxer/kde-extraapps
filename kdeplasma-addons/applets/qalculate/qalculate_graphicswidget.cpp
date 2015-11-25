@@ -14,7 +14,7 @@
 
 #include "qalculate_graphicswidget.h"
 
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 QalculateGraphicsWidget::QalculateGraphicsWidget(QGraphicsItem* parent, Qt::WindowFlags wFlags): QGraphicsWidget(parent, wFlags)
 {

@@ -23,7 +23,7 @@
 #include <kdebug.h>
 #include <kicon.h>
 #include <QPainter>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QGraphicsWidget>
 #include <plasma/svg.h>
 

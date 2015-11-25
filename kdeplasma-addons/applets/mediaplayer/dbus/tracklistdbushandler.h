@@ -20,7 +20,7 @@
 
 #include <QObject>
 
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 namespace Phonon
 {

@@ -42,7 +42,7 @@
 #include <QClipboard>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsScene>
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QFile>
 #include <QBuffer>
 #include <QPainter>

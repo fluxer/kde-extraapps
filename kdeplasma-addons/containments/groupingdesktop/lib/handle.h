@@ -22,7 +22,7 @@
 #define HANDLE_P_H
 
 #include <QtCore/QObject>
-#include <QtGui/QGraphicsObject>
+#include <QtGui/qgraphicsitem.h>
 
 #include <Plasma/Animator>
 #include <Plasma/Svg>

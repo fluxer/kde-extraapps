@@ -19,13 +19,13 @@
 
 #include "auth.h"
 
-#include <QHashIterator>
+#include <QtCore/qhash.h>
 #include <QCryptographicHash>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QCoreApplication>
 
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 #include <QVBoxLayout>
 
 #include "request.h"

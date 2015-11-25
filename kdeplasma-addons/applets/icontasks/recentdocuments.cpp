@@ -35,10 +35,10 @@
 #include <KServiceTypeTrader>
 #include <KService>
 #include <KMimeType>
-#include <QtXml/QDomDocument>
-#include <QtXml/QDomElement>
-#include <QtXml/QDomNode>
-#include <QtXml/QDomText>
+
+
+
+#include <QtXml/qdom.h>
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QDateTime>

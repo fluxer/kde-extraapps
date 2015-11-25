@@ -21,9 +21,9 @@
 #include <QtCore/qglobal.h>
 #include <QtCore/qmetatype.h>
 #include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsSceneWheelEvent>
-#include <QTime>
+#include <QtGui/qgraphicssceneevent.h>
+
+#include <QtCore/qdatetime.h>
 #include <QGraphicsWidget>
 #include <QPoint>
 #include <QPropertyAnimation>

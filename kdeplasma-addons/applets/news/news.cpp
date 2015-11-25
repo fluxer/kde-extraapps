@@ -17,10 +17,10 @@
 
 #include "news.h"
 
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QFile>
 #include <QColor>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QGraphicsLinearLayout>
 #include <QWebFrame>
 #include <QWebPage>

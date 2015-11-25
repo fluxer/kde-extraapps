@@ -21,7 +21,7 @@
 #include "groupingcontainment_p.h"
 
 #include <QtGui/QGraphicsScene>
-#include <QtGui/QGraphicsSceneContextMenuEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QtGui/QGraphicsLinearLayout>
 #include <QtGui/QAction>
 #include <QtGui/QGraphicsView>

@@ -21,9 +21,9 @@
 #define TASKITEMDELEGATE_H
 
 #include <QPainter>
-#include <QStyleOptionViewItem>
+#include <QtGui/qstyleoption.h>
 #include <QStyledItemDelegate>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 #include "taskitem.h"
 

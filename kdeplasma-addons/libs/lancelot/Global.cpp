@@ -21,7 +21,7 @@
 #include "Global_p.h"
 
 #include <QMetaObject>
-#include <QMetaProperty>
+#include <QtCore/qmetaobject.h>
 #include <QMutex>
 
 #include <KGlobal>

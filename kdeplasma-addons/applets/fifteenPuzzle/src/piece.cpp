@@ -24,7 +24,7 @@
 
 #include <QPen>
 #include <QPainter>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QFontMetrics>
 
 #include <KDebug>

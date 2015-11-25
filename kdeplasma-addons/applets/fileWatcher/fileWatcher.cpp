@@ -21,7 +21,7 @@
 
 #include "fileWatcher.h"
 
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 #include <KDirWatch>
 #include <QFile>
 #include <QStringList>

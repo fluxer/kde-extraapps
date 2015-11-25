@@ -21,7 +21,7 @@
 #include <QGraphicsView>
 #include <QGraphicsProxyWidget>
 #include <QGraphicsLinearLayout>
-#include <QGraphicsSceneWheelEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QApplication>
 #include <QSlider>
 #include <QVBoxLayout>

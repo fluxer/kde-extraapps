@@ -18,7 +18,7 @@
 #ifndef PREVIEWITEMMODEL_H
 #define PREVIEWITEMMODEL_H
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QList>
 #include <QUrl>
 

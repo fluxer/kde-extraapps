@@ -21,7 +21,7 @@
 #include "ExtenderButton.h"
 
 #include <QTimer>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QBasicTimer>
 
 #define SINGLE_SHOT_INTERVAL 50

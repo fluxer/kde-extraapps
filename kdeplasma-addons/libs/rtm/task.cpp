@@ -20,7 +20,7 @@
 #include "task.h"
 #include "task_p.h"
 
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 #include "request.h"
 #include "session.h"

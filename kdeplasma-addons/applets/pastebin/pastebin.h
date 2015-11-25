@@ -35,7 +35,7 @@
 #include <QClipboard>
 #include <QTimer>
 #include <QPen>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class QSignalMapper;
 class KAction;

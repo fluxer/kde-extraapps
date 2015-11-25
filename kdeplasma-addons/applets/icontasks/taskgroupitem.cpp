@@ -27,8 +27,8 @@
 #include "unity.h"
 
 // Qt
-#include <QGraphicsSceneContextMenuEvent>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qgraphicssceneevent.h>
+#include <QtGui/qstyleoption.h>
 #include <QGraphicsView>
 #include <QApplication>
 #include <QGraphicsLinearLayout>
