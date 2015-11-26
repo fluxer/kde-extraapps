@@ -22,20 +22,21 @@
 **************************************************************************** */
 
 #include "termlabel.h"
-
 #include "glossarywindow.h"
+
+#include <QEvent>
+#ifndef QT_KATIE
+#include <QMouseEvent>
+#endif
+#include <QMenu>
 
 #include <klineedit.h>
 #include <kdialog.h>
-
 #include <kdebug.h>
 #include <klocale.h>
 #include <kaction.h>
-#include <QMenu>
-
 
 using namespace GlossaryNS;
-//#include <QtGui/qevent.h>
 
 
 // TermLabel::TermLabel(QAction* action/*const QString& shortcutQWidget* parent,Qt::Key key,const QString& termTransl*/)
