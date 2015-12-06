@@ -1,0 +1,4 @@
+Right now the new project page is broken due to use of now gone proxy model
+from kdelibs. Two solutions:
+ - send us a patch
+ - wait for the fix
