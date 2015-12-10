@@ -56,16 +56,16 @@
 #include <KLocale>
 
 #include <QClipboard>
-#include <QContextMenuEvent>
-#include <QDropEvent>
-#include <QItemSelection>
-#include <QKeyEvent>
+
+
+#include <QtGui/qitemselectionmodel.h>
+#include <QtGui/qevent.h>
 #include <QListView>
-#include <QModelIndex>
-#include <QMouseEvent>
+#include <QtCore/qabstractitemmodel.h>
+
 #include <QPainter>
 #include <QPalette>
-#include <QPersistentModelIndex>
+
 #include <QScrollBar>
 #include <QTimer>
 

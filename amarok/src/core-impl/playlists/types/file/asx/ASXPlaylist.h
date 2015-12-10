@@ -17,7 +17,7 @@
 
 #include "core-impl/playlists/types/file/PlaylistFile.h"
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 
 namespace Playlists {
 /**

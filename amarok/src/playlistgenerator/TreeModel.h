@@ -20,7 +20,7 @@
 #include "core/meta/forward_declarations.h"
 
 #include <QAbstractItemModel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVariant>
 
 class ConstraintNode;

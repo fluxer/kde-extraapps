@@ -17,8 +17,8 @@
 #ifndef QSHAREDDATAPOINTERMISC
 #define QSHAREDDATAPOINTERMISC
 
-#include <QExplicitlySharedDataPointer>
-#include <QSharedDataPointer>
+#include <QtCore/qsharedpointer.h>
+#include <QtCore/qshareddata.h>
 
 /**
  * @brief QSharedDataPointerMisc.h

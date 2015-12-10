@@ -21,7 +21,7 @@
 #include "AmazonMeta.h"
 
 #include <QString>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 #include <kio/job.h>
 #include <kio/jobclasses.h>

@@ -19,7 +19,7 @@
 
 #include "core/meta/forward_declarations.h"
 
-#include <QGLWidget>
+#include <QtOpenGL/qgl.h>
 
 
 class CoverBling : public QGLWidget

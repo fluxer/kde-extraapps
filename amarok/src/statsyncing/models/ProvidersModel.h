@@ -19,7 +19,7 @@
 
 #include "statsyncing/Provider.h"
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSet>
 #include <QSharedPointer>
 

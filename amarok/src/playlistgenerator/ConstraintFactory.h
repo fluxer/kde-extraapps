@@ -17,7 +17,7 @@
 #ifndef APG_CONSTRAINT_FACTORY
 #define APG_CONSTRAINT_FACTORY
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QHash>
 #include <QPair>
 #include <QString>

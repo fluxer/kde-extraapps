@@ -24,7 +24,7 @@
 #include "MusicBrainzMeta.h"
 
 #include <QStringList>
-#include <QVariantList>
+#include <QtCore/qvariant.h>
 
 MusicBrainzXmlParser::MusicBrainzXmlParser( QString &doc )
     : ThreadWeaver::Job()

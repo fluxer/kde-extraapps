@@ -24,7 +24,7 @@
 #include <KToggleAction>
 #include <KSelectAction>
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <Phonon/Global>
 

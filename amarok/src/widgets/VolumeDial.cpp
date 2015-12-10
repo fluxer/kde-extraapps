@@ -19,9 +19,9 @@
 #include "PaletteHandler.h"
 #include "SvgHandler.h"
 
-#include <QConicalGradient>
+#include <QtGui/qbrush.h>
 #include <QCoreApplication>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QToolBar>
 #include <QToolTip>

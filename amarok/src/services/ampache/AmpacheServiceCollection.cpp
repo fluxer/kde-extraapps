@@ -22,7 +22,7 @@
 #include <KLocale>
 #include <threadweaver/ThreadWeaver.h>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QNetworkReply>
 
 using namespace Collections;

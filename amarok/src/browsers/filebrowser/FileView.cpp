@@ -48,7 +48,7 @@
 #include <KMenu>
 #include <KUrl>
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QFileSystemModel>
 #include <QItemDelegate>
 #include <QPainter>

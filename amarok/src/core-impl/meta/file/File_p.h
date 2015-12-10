@@ -37,7 +37,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QObject>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QSet>
 #include <QString>
 

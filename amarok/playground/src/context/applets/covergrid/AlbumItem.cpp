@@ -20,9 +20,9 @@
 #include "core/meta/Meta.h"
 #include "playlist/PlaylistController.h"
 
-#include <QGraphicsPixmapItem>
-#include <QStyleOptionGraphicsItem>
-#include <QPaintEvent>
+#include <QtGui/qgraphicsitem.h>
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QPalette>
 #include <QImage>

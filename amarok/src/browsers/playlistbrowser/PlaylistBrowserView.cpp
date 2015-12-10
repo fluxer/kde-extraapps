@@ -39,8 +39,8 @@
 #include <KGlobalSettings>
 #include <KMenu>
 
-#include <QKeyEvent>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
+
 #include <QCheckBox>
 #include <QLabel>
 

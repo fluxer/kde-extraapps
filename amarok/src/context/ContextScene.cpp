@@ -26,7 +26,7 @@
 #include <plasma/containment.h>
 #include <plasma/theme.h>
 
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 
 namespace Context

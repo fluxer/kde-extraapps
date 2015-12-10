@@ -21,7 +21,7 @@
 #include "core/meta/forward_declarations.h"
 
 #include <QObject>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QString>
 
 namespace Collections {

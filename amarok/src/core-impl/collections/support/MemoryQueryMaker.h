@@ -23,7 +23,7 @@
 #include "MemoryCollection.h"
 #include "core/collections/QueryMaker.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 
 namespace ThreadWeaver

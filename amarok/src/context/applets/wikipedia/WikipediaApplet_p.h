@@ -31,7 +31,7 @@
 #include <Plasma/Svg>
 #include <Plasma/SvgWidget>
 
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QStack>
 #include <QWebFrame>
 #include <QWebPage>

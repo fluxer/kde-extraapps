@@ -24,14 +24,14 @@
 
 #include <KLocale>
 
-#include <QDomDocument>
-#include <QDomElement>
-#include <QDomNode>
+
+#include <QtXml/qdom.h>
+
 #include <QLabel>
 #include <QNetworkReply>
-#include <QTimeEdit>
+#include <QtGui/qdatetimeedit.h>
 #include <QVBoxLayout>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <XmlQuery.h>
 

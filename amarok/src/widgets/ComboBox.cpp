@@ -17,7 +17,7 @@
 
 #include "ComboBox.h"
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 namespace Amarok
 {

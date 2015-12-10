@@ -21,7 +21,7 @@
 
 #include <KDialog>
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPoint>
 #include <QSortFilterProxyModel>
 

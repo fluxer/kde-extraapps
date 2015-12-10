@@ -21,8 +21,8 @@
 #include "BookmarkPopup.h"
 
 #include <QEvent>
-#include <QMouseEvent>
-#include <QPaintEvent>
+
+#include <QtGui/qevent.h>
 #include <QWidget>
 #include <QPoint>
 

@@ -19,12 +19,12 @@
 #include "PaletteHandler.h"
 
 #include <QApplication>
-#include <QTextBlock>
+#include <QtGui/qtextobject.h>
 #include <KTextBrowser>
 #include <Plasma/Svg>
 #include <Plasma/SvgWidget>
 
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 LyricsBrowser::LyricsBrowser( QGraphicsWidget *parent )
     : Plasma::TextBrowser( parent )

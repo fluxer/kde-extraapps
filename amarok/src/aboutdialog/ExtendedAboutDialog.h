@@ -30,7 +30,7 @@
 
 #include <KAboutData>
 #include <kdialog.h>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class AMAROK_EXPORT ExtendedAboutDialog : public KDialog
 {

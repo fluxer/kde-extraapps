@@ -29,7 +29,7 @@
 
 #include <QDir>
 #include <QMenu>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 BrowserBreadcrumbWidget::BrowserBreadcrumbWidget( QWidget * parent )
     : KHBox( parent)

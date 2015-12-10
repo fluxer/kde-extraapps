@@ -37,7 +37,7 @@
 #include <KGlobalSettings>
 
 #include <QAction>
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QFontMetrics>
 #include <QMenu>
 #include <QStyle>

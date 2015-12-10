@@ -23,7 +23,7 @@
 #include "core/meta/forward_declarations.h"
 #include "playlist/PlaylistController.h"
 
-#include <QModelIndex>
+#include <QAbstractItemModel>
 #include <QMutex>
 #include <QSet>
 

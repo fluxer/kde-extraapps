@@ -34,7 +34,7 @@
 #include <QFormLayout>
 #include <QLabel>
 #include <QList>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 Dynamic::BiasPtr
 Dynamic::AbstractBiasFactory::createFromXml( QXmlStreamReader *reader )

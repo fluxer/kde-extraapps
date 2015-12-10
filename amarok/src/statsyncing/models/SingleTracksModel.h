@@ -20,7 +20,7 @@
 #include "statsyncing/Track.h"
 #include "statsyncing/models/CommonModel.h"
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 
 namespace StatSyncing
 {

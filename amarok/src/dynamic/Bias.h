@@ -29,7 +29,7 @@
 #include <QRect>
 #include <QWidget>
 #include <QSharedData>
-#include <QExplicitlySharedDataPointer>
+#include <QtCore/qsharedpointer.h>
 
 class QPainter;
 class QXmlStreamReader;

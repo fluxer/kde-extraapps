@@ -17,7 +17,7 @@
 #ifndef TESTDYNAMICMODEL_H
 #define TESTDYNAMICMODEL_H
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QtTest/QTest>
 
 class TestDynamicModel : public QObject

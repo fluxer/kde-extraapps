@@ -22,7 +22,7 @@
 #include <cmath>
 
 #include <QPainter>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 
 BlockAnalyzer* BlockAnalyzer::instance = 0;

@@ -24,7 +24,7 @@
 #include "core/support/Amarok.h"
 #include "core/support/Debug.h"
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QPixmap>
 
 using namespace Context;

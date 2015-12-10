@@ -22,7 +22,7 @@
 
 #include "FileType.h"
 
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 #include <QSharedPointer>
 #include <QSignalSpy>
 

@@ -24,7 +24,7 @@
 
 #include "amarok_export.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <Phonon/Path>
 #include <Phonon/Effect>

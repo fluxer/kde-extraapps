@@ -22,7 +22,7 @@
 #include "core/meta/TrackEditor.h"
 #include "core/support/Debug.h"
 
-#include <QTime>
+#include <QtCore/qdatetime.h>
 #include <QChar>
 #include <QFile>
 

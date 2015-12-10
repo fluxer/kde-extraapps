@@ -21,7 +21,7 @@
 
 #include <plasma/layouts/layoutitem.h>
 
-#include <QGraphicsRectItem>
+#include <QtGui/qgraphicsitem.h>
 
 namespace Context
 {

@@ -19,7 +19,7 @@
 
 #include "context/engines/tabs/TabsInfo.h"
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 
 class TabsItem : public QStandardItem
 {

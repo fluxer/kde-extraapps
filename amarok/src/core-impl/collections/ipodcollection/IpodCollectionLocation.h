@@ -23,7 +23,7 @@
 #include "core/collections/CollectionLocation.h"
 #include "core/playlists/Playlist.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 
 class IpodCollectionLocation : public Collections::CollectionLocation

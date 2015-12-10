@@ -31,8 +31,8 @@
 
 #include <QPainter>
 #include <QBuffer>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 // -------- AbstractBias -------------
 

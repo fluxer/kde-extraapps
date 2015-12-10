@@ -26,7 +26,7 @@
 #include <KLocalizedString>
 #include <KStandardDirs>
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QDesktopServices>
 #include <QMenu>
 #include <QSortFilterProxyModel>

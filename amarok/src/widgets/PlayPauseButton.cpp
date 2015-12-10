@@ -20,7 +20,7 @@
 
 #include <KLocale>
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 
 

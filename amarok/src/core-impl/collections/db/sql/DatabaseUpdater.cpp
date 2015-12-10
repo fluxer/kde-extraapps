@@ -24,7 +24,7 @@
 #include <QDateTime>
 #include <QDir>
 #include <QFile>
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <QTextStream>
 
 #include <KGlobal>

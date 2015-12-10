@@ -23,7 +23,7 @@
 #include "core-impl/meta/default/DefaultMetaTypes.h"
 #include "core-impl/support/UrlStatisticsStore.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QString>
 
 using namespace MetaStream;

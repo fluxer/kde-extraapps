@@ -18,7 +18,7 @@
 #define GROUPINGPROXY_H
 
 #include <QAbstractProxyModel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QMultiHash>
 #include <QStringList>
 #include <QIcon>

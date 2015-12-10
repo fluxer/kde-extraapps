@@ -23,7 +23,7 @@
 #include <kcmdlineargs.h>
 #include <klocale.h>
 #include <QApplication>
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 int main( int argc, char *argv[] )
 {

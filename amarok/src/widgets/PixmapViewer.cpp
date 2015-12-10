@@ -22,11 +22,11 @@
 #include <KApplication>
 
 #include <QDesktopWidget>
-#include <QMouseEvent>
+
 #include <QLabel>
 #include <QPixmap>
 #include <QPainter>
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 
 
 PixmapViewer::PixmapViewer( QWidget *parent, const QPixmap &pix, int screenNumber )

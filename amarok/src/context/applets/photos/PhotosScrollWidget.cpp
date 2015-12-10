@@ -27,7 +27,7 @@
 
 // QT
 #include <QGraphicsItem>
-#include <QGraphicsSceneHoverEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QList>
 #include <QPixmap>
 #include <QPixmapCache>

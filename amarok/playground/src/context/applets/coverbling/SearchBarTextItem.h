@@ -14,7 +14,7 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.                           *
  ****************************************************************************************/
 
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 class QKeyEvent;
 
 class SearchBarTextItem : public QGraphicsTextItem

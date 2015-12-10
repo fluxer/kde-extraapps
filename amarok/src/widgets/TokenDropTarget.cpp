@@ -23,7 +23,7 @@
 
 #include <KLocale>
 
-#include <QDropEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QVBoxLayout>
 

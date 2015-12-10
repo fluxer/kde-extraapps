@@ -26,8 +26,8 @@
 #include "playlist/view/PlaylistViewCommon.h"
 
 #include <QListView>
-#include <QModelIndex>
-#include <QPersistentModelIndex>
+#include <QtCore/qabstractitemmodel.h>
+
 #include <QRect>
 
 #include <QAction>

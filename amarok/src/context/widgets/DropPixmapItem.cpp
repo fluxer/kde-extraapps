@@ -20,7 +20,7 @@
 
 #include "core/support/Debug.h"
 
-#include <QGraphicsSceneDragDropEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QMimeData>
 
 DropPixmapItem::DropPixmapItem( QGraphicsItem* parent )

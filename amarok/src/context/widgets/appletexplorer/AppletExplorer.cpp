@@ -35,10 +35,10 @@
 
 #include <QGraphicsLinearLayout>
 #include <QGraphicsScene>
-#include <QGraphicsSceneWheelEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsProxyWidget>
 #include <QLabel>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QSignalMapper>
 
 namespace Context

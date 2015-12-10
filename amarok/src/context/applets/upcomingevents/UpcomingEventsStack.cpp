@@ -22,7 +22,7 @@
 
 #include <QGraphicsLinearLayout>
 #include <QSet>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class UpcomingEventsStackPrivate
 {

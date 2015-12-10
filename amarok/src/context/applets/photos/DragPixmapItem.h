@@ -21,7 +21,7 @@
 
 #include <KUrl>
 
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 
 //forward
 class QGraphicsSceneMouseEvent;

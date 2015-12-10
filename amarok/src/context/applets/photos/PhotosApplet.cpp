@@ -38,7 +38,7 @@
 // Qt
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QGraphicsWidget>
 
 PhotosApplet::PhotosApplet( QObject* parent, const QVariantList& args )

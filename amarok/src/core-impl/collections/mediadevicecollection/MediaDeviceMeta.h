@@ -23,8 +23,8 @@
 #include "core-impl/collections/mediadevicecollection/support/mediadevicecollection_export.h"
 
 #include <QList>
-#include <QMultiMap>
-#include <QWeakPointer>
+#include <QtCore/qmap.h>
+#include <QtCore/qsharedpointer.h>
 
 namespace Collections {
     class MediaDeviceCollection;

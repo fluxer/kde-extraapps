@@ -32,7 +32,7 @@
 #include <QMimeData>
 #include <QPainter>
 #include <QStyle>
-#include <QStyleOptionFocusRect>
+#include <QtGui/qstyleoption.h>
 
 BreadcrumbItemButton::BreadcrumbItemButton( QWidget *parent )
     : Amarok::ElidingButton( parent )

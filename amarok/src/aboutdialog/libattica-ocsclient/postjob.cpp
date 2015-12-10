@@ -24,7 +24,7 @@
 #include <kio/job.h>
 #include <klocale.h>
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QDebug>
 #include <QTimer>
 using namespace AmarokAttica;

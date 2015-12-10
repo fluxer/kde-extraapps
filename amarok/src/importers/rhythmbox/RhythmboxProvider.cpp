@@ -20,10 +20,10 @@
 #include "core/support/Debug.h"
 
 #include <QFile>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QTemporaryFile>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 using namespace StatSyncing;
 

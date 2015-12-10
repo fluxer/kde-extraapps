@@ -22,7 +22,7 @@
 
 #include <QRegExp>
 #include <QSet>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include "core/support/Debug.h"
 #include <KLocalizedString>

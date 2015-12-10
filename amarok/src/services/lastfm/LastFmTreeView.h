@@ -24,7 +24,7 @@
 
 #include <QList>
 #include <QMutex>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class LastFmTreeModel;
 

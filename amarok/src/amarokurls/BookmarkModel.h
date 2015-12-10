@@ -22,7 +22,7 @@
 #include <KSharedPtr>
 
 #include <QAbstractItemModel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVariant>
 
 

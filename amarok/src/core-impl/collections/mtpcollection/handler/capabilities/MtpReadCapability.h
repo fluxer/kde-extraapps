@@ -21,7 +21,7 @@
 #include "mediadevicecollection_export.h"
 #include "ReadCapability.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 
 namespace Meta {

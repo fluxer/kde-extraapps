@@ -29,8 +29,8 @@
 
 #include <Plasma/DataContainer>
 
-#include <QHashIterator>
-#include <QXmlStreamReader>
+#include <QtCore/qhash.h>
+#include <QtCore/qxmlstream.h>
 
 using namespace Context;
 

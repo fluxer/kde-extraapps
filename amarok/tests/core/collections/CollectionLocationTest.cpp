@@ -24,7 +24,7 @@
 #include "MockCollectionLocationDelegate.h"
 
 #include <QMutex>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 #include <KCmdLineArgs>
 #include <KGlobal>

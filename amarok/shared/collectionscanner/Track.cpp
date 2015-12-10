@@ -31,8 +31,8 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 bool CollectionScanner::Track::s_useCharsetDetector = false;
 

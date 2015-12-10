@@ -19,7 +19,7 @@
 
 #include "amarok_export.h"
 
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 /**
 An abstract base class for observers that wants to be notified when here is new contex information available about an active service

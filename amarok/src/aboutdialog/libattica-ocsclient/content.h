@@ -23,7 +23,7 @@
 
 #include <QtCore/QList>
 #include <QtCore/QMap>
-#include <QtCore/QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 
 #include "atticaclient_export.h"
 

@@ -22,7 +22,7 @@
 #include "GpodderServiceModel.h"
 #include <mygpo-qt/PodcastList.h>
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 class GpodderPodcastRequestHandler : public QObject
 {

@@ -23,7 +23,7 @@
 #include <QIcon>
 #include <QObject>
 #include <QString>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class QScriptEngine;
 class QScriptValue;

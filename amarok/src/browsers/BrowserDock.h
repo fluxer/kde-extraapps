@@ -25,7 +25,7 @@
 
 #include <KVBox>
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 /**
 The base widget that contains all other browsers, organized in a dig down interface

@@ -32,7 +32,7 @@
 #include <KLocale>
 
 #include <QCryptographicHash>
-#include <QRegExpValidator>
+#include <QtGui/qvalidator.h>
 
 #include <XmlQuery.h>
 

@@ -23,7 +23,7 @@
 #include <qdom.h>
 #include <QScopedPointer>
 #include <QString>
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QMap>
 
 #include <threadweaver/Job.h>

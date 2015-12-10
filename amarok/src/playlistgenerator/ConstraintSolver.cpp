@@ -35,7 +35,7 @@
 
 #include <KRandom>
 #include <QHash>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QStringList>
 #include <QTimer>
 #include <threadweaver/ThreadWeaver.h>

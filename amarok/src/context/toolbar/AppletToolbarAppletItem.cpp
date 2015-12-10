@@ -29,8 +29,8 @@
 
 #include <QAction>
 #include <QPainter>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicssceneevent.h>
+#include <QtGui/qgraphicsitem.h>
 #include <QPropertyAnimation>
 
 

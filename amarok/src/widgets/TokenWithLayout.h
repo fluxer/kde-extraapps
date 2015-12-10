@@ -19,7 +19,7 @@
 
 #include "widgets/Token.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class LayoutEditDialog;
 

@@ -24,7 +24,7 @@
 #include <QStringList>
 #include <QTest>
 #include <QVariant>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class OrderedSqlStorageMock
 {

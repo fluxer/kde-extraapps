@@ -41,7 +41,7 @@
 #include <KSaveFile>
 #include <KStandardDirs>
 
-#include <QCloseEvent>
+#include <QtGui/qevent.h>
 #include <QDir>
 #include <QFormLayout>
 #include <QFrame>

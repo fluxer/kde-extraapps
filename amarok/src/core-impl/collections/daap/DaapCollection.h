@@ -26,7 +26,7 @@
 #include <QMap>
 #include <QHash>
 #include <QHostInfo>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QtGlobal>
 #include <QSharedPointer>
 

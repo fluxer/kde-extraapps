@@ -23,8 +23,8 @@
 
 #include <QDebug>
 #include <QFileInfo>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 // constructor is needed to put albums in a hash
 CollectionScanner::Album::Album()

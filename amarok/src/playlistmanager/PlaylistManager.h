@@ -27,7 +27,7 @@
 #include "SyncedPlaylist.h"
 #include "SyncRelationStorage.h"
 
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <QList>
 
 class KJob;

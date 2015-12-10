@@ -16,8 +16,8 @@
 
 #include "SimpleWritableTrack.h"
 
-#include <QReadLocker>
-#include <QWriteLocker>
+
+#include <QtCore/qreadwritelock.h>
 
 using namespace StatSyncing;
 

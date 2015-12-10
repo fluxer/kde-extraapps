@@ -22,7 +22,7 @@
 #include <QMetaType>
 #include <QMutex>
 #include <QPair>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QQueue>
 #include <QTimer>
 

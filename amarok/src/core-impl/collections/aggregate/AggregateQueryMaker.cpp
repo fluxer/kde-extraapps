@@ -24,7 +24,7 @@
 #include "core-impl/collections/support/MemoryCustomValue.h"
 #include "core-impl/collections/support/MemoryQueryMakerHelper.h"
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QMetaObject>
 
 using namespace Collections;

@@ -19,8 +19,8 @@
 
 #include "context/Applet.h"
 
-#include <QGraphicsObject>
-#include <QWeakPointer>
+#include <QtGui/qgraphicsitem.h>
+#include <QtCore/qsharedpointer.h>
 
 class LabelOverlayButton;
 class QGraphicsBlurEffect;

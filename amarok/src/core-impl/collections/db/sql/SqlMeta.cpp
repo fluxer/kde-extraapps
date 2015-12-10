@@ -50,9 +50,9 @@
 #include <QFile>
 #include <QMultiHash>
 #include <QReadWriteLock>
-#include <QReadLocker>
-#include <QWriteLocker>
-#include <QMutexLocker>
+
+#include <QtCore/qreadwritelock.h>
+#include <QtCore/qmutex.h>
 #include <QCryptographicHash>
 
 #include <KCodecs>

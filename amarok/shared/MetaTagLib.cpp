@@ -36,8 +36,8 @@
 #include <QFileInfo>
 #include <QCryptographicHash>
 #include <QMutex>
-#include <QMutexLocker>
-#include <QTime>
+#include <QtCore/qmutex.h>
+#include <QtCore/qdatetime.h>
 #include <QDebug>
 
 #include "FileTypeResolver.h"

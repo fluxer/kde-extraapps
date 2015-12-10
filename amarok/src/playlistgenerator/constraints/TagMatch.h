@@ -23,7 +23,7 @@
 
 #include "core/meta/forward_declarations.h"
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QBitArray>
 #include <QHash>
 #include <QString>

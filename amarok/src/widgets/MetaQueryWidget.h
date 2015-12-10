@@ -22,7 +22,7 @@
 #define AMAROK_METAQUERY_H
 
 #include <QWidget>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include "core/meta/forward_declarations.h"
 #include "core/meta/support/MetaConstants.h"
 

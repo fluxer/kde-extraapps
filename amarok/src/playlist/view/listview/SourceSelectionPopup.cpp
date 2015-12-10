@@ -22,7 +22,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QListWidget>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QVBoxLayout>
 
 namespace Playlist {

@@ -23,7 +23,7 @@
 
 #include <KLocale>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 using namespace Meta;
 

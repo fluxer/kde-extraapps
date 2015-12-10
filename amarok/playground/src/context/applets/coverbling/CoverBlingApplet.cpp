@@ -43,11 +43,11 @@
 
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
-#include <QGraphicsSimpleTextItem>
+
 #include <QGraphicsWidget>
 #include <QLabel>
 #include <QPixmap>
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 #include <KStandardDirs>
 #include <QDesktopWidget>
 

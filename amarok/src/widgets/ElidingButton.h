@@ -19,7 +19,7 @@
 #define ELIDINGBUTTON_H
 
 #include <QPushButton>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 #include <QSize>
 #include <QSizePolicy>
 

@@ -47,10 +47,10 @@
 #include <QEvent>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QMouseEvent>
+
 #include <QPainter>
-#include <QPaintEvent>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
+
 #include <QSlider>
 #include <QTimer>
 #include <QVBoxLayout>

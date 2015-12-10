@@ -16,7 +16,7 @@
 
 
 #include "SearchBarTextItem.h"
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QTextDocument>
 
 SearchBarTextItem::SearchBarTextItem( QGraphicsItem* parent, QGraphicsScene* scene )

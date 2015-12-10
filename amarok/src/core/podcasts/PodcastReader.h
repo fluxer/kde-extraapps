@@ -23,7 +23,7 @@
 #include "core/podcasts/PodcastMeta.h"
 
 #include <QDateTime>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QObject>
 #include <QStack>
 #include <QRegExp>

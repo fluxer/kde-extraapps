@@ -28,11 +28,11 @@
 
 #include <QtGui/QPainter>
 #include <QtGui/QPixmap>
-#include <QtGui/QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QtGui/QImage>
 #include <QtGui/QIcon>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsSceneHoverEvent>
+
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <kiconeffect.h>
 #include <kiconloader.h>

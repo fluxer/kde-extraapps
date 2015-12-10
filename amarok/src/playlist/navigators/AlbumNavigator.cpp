@@ -28,7 +28,7 @@
 #include "core/support/Debug.h"
 #include "core/meta/Meta.h"
 
-#include <QtAlgorithms> // For qStableSort
+#include <QtCore/qalgorithms.h> // For qStableSort
 
 
 void

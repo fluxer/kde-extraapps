@@ -15,7 +15,7 @@
  ***************************************************************************************/
 #include "UpnpCache.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <KDateTime>
 #include "upnptypes.h"

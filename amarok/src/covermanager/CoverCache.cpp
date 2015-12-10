@@ -21,11 +21,11 @@
 
 #include <QDir>
 #include <QImage>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QPixmapCache>
 #include <QReadWriteLock>
-#include <QReadLocker>
-#include <QWriteLocker>
+
+#include <QtCore/qreadwritelock.h>
 
 #include <KStandardDirs>
 #include <KLocale>

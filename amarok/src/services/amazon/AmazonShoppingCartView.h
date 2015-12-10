@@ -17,7 +17,7 @@
 #ifndef AMAZONSHOPPINGCARTVIEW_H
 #define AMAZONSHOPPINGCARTVIEW_H
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QListView>
 
 class AmazonShoppingCartView : public QListView

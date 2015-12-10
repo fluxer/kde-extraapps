@@ -42,9 +42,9 @@
 #include <KMenu>
 
 #include <QAction>
-#include <QKeyEvent>
-#include <QMouseEvent>
-#include <QModelIndex>
+#include <QtGui/qevent.h>
+
+#include <QtCore/qabstractitemmodel.h>
 #include <QToolTip>
 
 PlaylistBrowserNS::DynamicView::DynamicView( QWidget *parent )

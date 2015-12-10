@@ -36,8 +36,8 @@
 #include <QDir>
 #include <QFile>
 #include <QDateTime>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 #include <QSharedMemory>
 #include <QByteArray>
 #include <QTextStream>

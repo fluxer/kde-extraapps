@@ -16,7 +16,7 @@
 
 #include "LineEdit.h"
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 
 namespace Amarok
 {

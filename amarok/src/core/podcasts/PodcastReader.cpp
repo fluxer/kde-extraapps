@@ -28,7 +28,7 @@
 #include <KDateTime>
 
 #include <QTextDocument>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 #include <QSet>
 
 using namespace Podcasts;

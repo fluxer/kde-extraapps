@@ -28,7 +28,7 @@
 #include <KVBox>
 #include <Phonon/Global>
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class CollectionWidget;
 class SlimToolbar;

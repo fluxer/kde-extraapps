@@ -37,9 +37,9 @@
 #include <QHash>
 #include <QPainter>
 #include <QPalette>
-#include <QReadLocker>
-#include <QStyleOptionSlider>
-#include <QWriteLocker>
+
+#include <QtGui/qstyleoption.h>
+#include <QtCore/qreadwritelock.h>
 
 
 namespace The {

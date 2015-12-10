@@ -30,7 +30,7 @@
 
 #include <QCoreApplication>
 #include <QStringList>
-#include <QTime>
+#include <QDateTime>
 #include <QTextStream>
 
 /**

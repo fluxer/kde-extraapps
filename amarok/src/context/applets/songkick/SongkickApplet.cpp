@@ -29,9 +29,9 @@
 #include <KStandardDirs>
 
 #include <QAction>
-#include <QGraphicsSimpleTextItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QGraphicsProxyWidget>
-#include <QLinearGradient>
+#include <QtGui/qbrush.h>
 #include <QTextBrowser>
 #include <QPainter>
 #include <QPoint>

@@ -44,7 +44,7 @@
 #include <KStandardGuiItem>
 
 #include <QActionGroup>
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QMetaObject>
 #include <QRect>
 #include <QSortFilterProxyModel>

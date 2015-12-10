@@ -19,7 +19,7 @@
 
 #include "widgets/AmarokDockWidget.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class KVBox;
 class QResizeEvent;

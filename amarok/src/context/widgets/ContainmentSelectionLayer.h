@@ -24,9 +24,9 @@
 #include <KIcon>
 
 #include <QGraphicsItem>
-#include <QGraphicsSceneHoverEvent>
-#include <QGraphicsSceneMouseEvent>
-#include <QGraphicsSimpleTextItem>
+#include <QtGui/qgraphicssceneevent.h>
+
+#include <QtGui/qgraphicsitem.h>
 
 /**
  * @class ContainmentSelectionLayer

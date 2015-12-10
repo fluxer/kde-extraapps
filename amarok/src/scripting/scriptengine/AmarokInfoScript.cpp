@@ -23,7 +23,7 @@
 
 #include <KIconLoader>
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QScriptEngine>
 
 using namespace AmarokScript;

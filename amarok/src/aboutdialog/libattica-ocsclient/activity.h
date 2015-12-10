@@ -22,7 +22,7 @@
 #define ATTICA_ACTIVITY_H
 
 #include <QtCore/QList>
-#include <QtCore/QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 
 #include "atticaclient_export.h"
 

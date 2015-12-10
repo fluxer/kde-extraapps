@@ -33,10 +33,10 @@
 #include <QRadioButton>
 #include <QSlider>
 #include <QStyle>
-#include <QStyleOptionFrame>
+#include <QtGui/qstyleoption.h>
 #include <QToolButton>
 
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 class HintingLineEdit : public QLineEdit
 {

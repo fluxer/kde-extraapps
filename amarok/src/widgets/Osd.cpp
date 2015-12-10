@@ -40,7 +40,7 @@
 #include <KWindowSystem>
 
 #include <QDesktopWidget>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QPixmap>
 #include <QRegExp>

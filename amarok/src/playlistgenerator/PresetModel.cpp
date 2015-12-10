@@ -34,8 +34,8 @@
 #include <QAbstractItemModel>
 #include <QDesktopServices>
 #include <QDialog>
-#include <QDomDocument>
-#include <QDomElement>
+
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QList>
 #include <QVariant>

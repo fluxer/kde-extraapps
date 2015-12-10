@@ -23,7 +23,7 @@
 
 #include <QFile>
 #include <QFileInfo>
-#include <QtDebug>
+#include <QDebug>
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wnon-virtual-dtor"

@@ -22,9 +22,9 @@
 #include "core/meta/support/MetaConstants.h"
 #include "core/support/Debug.h"
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QMetaObject>
-#include <QHashIterator>
+#include <QtCore/qhash.h>
 
 //this class might cause SqlQueryMaker to generate very large SQL statements
 //see http://dev.mysql.com/doc/refman/5.0/en/packet-too-large.html

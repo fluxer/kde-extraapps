@@ -31,7 +31,7 @@
 #include <ThreadWeaver/Thread>
 
 #include <QHash>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 #include <cmath>
 

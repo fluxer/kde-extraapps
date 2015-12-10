@@ -24,7 +24,7 @@
 
 #include <QAction>
 #include <QAbstractItemModel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVariant>
 
 #define PLAYLIST_DB_VERSION 1

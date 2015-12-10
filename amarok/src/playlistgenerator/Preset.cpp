@@ -32,7 +32,7 @@
 
 #include <KLocale>
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 
 #include <ThreadWeaver/Weaver>
 

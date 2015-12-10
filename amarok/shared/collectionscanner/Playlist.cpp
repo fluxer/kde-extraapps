@@ -21,8 +21,8 @@
 #include "utils.h"
 
 #include <QDir>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 CollectionScanner::Playlist::Playlist( const QString &path )
 {

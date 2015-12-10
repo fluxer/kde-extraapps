@@ -25,11 +25,11 @@
 #include <KIcon>
 #include <KLocale>
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QLayout>
 #include <QPainter>
 #include <QPushButton>
-#include <QTimerEvent>
+#include <QtCore/qcoreevent.h>
 
 Wrench::Wrench( QWidget *parent ) : QLabel( parent )
 {

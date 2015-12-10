@@ -27,7 +27,7 @@
 #include <KUrl>
 
 #include <QHash>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QString>
 
 namespace Amarok {

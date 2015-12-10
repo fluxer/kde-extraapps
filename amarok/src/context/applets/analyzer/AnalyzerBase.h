@@ -25,7 +25,7 @@
 
 #include "fht.h"     //stack allocated
 
-#include <QGLWidget>
+#include <QtOpenGL/qgl.h>
 
 #include <vector>    //included for convenience
 

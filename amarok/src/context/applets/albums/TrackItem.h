@@ -19,7 +19,7 @@
 
 #include "core/meta/Observer.h"
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 #include <QMutex>
 
 class TrackItem : public QStandardItem, public Meta::Observer

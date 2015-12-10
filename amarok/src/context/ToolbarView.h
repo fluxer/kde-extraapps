@@ -18,7 +18,7 @@
 #define AMAROK_CONTEXT_TOOLBAR_VIEW
 
 #include <QGraphicsView>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class QGraphicsScene;
 class QWidget;

@@ -55,7 +55,7 @@
 #include <QTimer>    //search filter timer
 #include <QToolButton>
 #include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QtGui/qtreewidget.h>
 
 static QString artistToSelectInInitFunction;
 CoverManager *CoverManager::s_instance = 0;

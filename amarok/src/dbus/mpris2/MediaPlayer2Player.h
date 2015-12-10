@@ -25,9 +25,9 @@
 
 #include "core/meta/forward_declarations.h"
 
-#include <QDBusObjectPath>
-#include <QModelIndex>
-#include <QVariantMap>
+#include <QtDBus/qdbusextratypes.h>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtCore/qvariant.h>
 
 namespace Amarok
 {

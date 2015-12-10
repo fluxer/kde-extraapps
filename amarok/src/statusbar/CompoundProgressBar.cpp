@@ -22,7 +22,7 @@
 #include <KLocale>
 
 #include <QLayout>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 CompoundProgressBar::CompoundProgressBar( QWidget *parent )
         : ProgressBar( parent )

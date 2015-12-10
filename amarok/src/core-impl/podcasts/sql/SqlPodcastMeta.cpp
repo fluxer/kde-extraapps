@@ -30,7 +30,7 @@
 #include "core-impl/meta/file/FileTrackProvider.h"
 #include "core-impl/podcasts/sql/SqlPodcastProvider.h"
 
-#include <QDate>
+#include <QtCore/qdatetime.h>
 #include <QFile>
 
 using namespace Podcasts;

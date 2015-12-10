@@ -23,7 +23,7 @@
 #include <mygpo-qt/TagList.h>
 
 #include <QList>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QVariant>
 
 class GpodderServiceModel;

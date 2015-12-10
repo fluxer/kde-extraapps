@@ -34,8 +34,8 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QTimer>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 QString
 Dynamic::TagMatchBiasFactory::i18nName() const

@@ -27,7 +27,7 @@
 #include <QGraphicsWidget>
 #include <QObject>
 #include <QTimer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 enum ArrowDirection {
     LEFT,

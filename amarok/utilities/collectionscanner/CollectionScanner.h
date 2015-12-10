@@ -28,7 +28,7 @@
 #include <QHash>
 #include <QSet>
 #include <QStringList>
-#include <QXmlStreamWriter>
+#include <QtCore/qxmlstream.h>
 
 namespace CollectionScanner
 {

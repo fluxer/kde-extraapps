@@ -33,7 +33,7 @@
 #include <QString>
 #include <QMutex>
 #include <QWaitCondition>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 namespace CollectionScanner {
     class Directory;

@@ -42,8 +42,8 @@
 #include <QByteArray>
 #include <QDataStream>
 #include <QMimeData>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 #include <klocale.h>
 

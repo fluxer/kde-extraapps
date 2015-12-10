@@ -28,8 +28,8 @@
 
 #include <QComboBox>
 #include <QFormLayout>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 QString
 Dynamic::AlbumPlayBiasFactory::i18nName() const

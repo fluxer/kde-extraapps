@@ -22,7 +22,7 @@
 #include "NetworkAccessManagerProxy.h"
 #include "PhotosInfo.h"
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 using namespace Context;
 

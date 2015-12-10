@@ -32,8 +32,8 @@
 #include <QVBoxLayout>
 
 #include <QTimer>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 #include <KLocale>
 

@@ -29,7 +29,7 @@
 #include "core/support/Amarok.h"
 #include "playlist/proxymodels/AbstractModel.h"
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 #include <QHash>
 
 #include <KLocale>

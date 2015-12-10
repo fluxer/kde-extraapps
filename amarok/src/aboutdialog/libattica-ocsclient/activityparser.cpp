@@ -23,7 +23,7 @@
 
 #include <QtCore/QDateTime>
 #include <QRegExp>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 
 using namespace AmarokAttica;

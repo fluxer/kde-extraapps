@@ -19,7 +19,7 @@
 
 #include "core/support/Amarok.h"
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 
 /**
 *	MVC Model Class for displaying a Label List

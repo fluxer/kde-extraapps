@@ -17,7 +17,7 @@
 #include "ProxyLogger.h"
 
 #include <QCoreApplication>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QNetworkReply>
 
 ProxyLogger::ProxyLogger()

@@ -22,7 +22,7 @@
 #endif
 
 #include <kcmdlineargs.h>
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 Mp3tunesHarmonyDaemon::Mp3tunesHarmonyDaemon( QString identifier )
    : QCoreApplication( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() )

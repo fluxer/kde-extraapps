@@ -31,7 +31,7 @@
 #include <KIO/Job>
 #include <KLocale>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 
 using namespace Context;
 

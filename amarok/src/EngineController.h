@@ -32,7 +32,7 @@
 #include <QObject>
 #include <QSemaphore>
 #include <QStringList>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <Phonon/Path>
 #include <Phonon/MediaController>

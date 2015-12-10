@@ -41,12 +41,12 @@
 
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
-#include <QGraphicsSceneContextMenuEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QHeaderView>
 #include <QPainter>
 #include <QScrollBar>
 #include <QTreeView>
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 
 // Subclassed to override the access level of some methods.
 // The AlbumsTreeView and the AlbumsView are so highly coupled that this is acceptable, imo.

@@ -36,8 +36,8 @@
 #include <QDateTime>
 #include <QFileInfo>
 
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 CollectionScanner::Directory::Directory( const QString &path,
                                          CollectionScanner::ScanningState *state,

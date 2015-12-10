@@ -28,7 +28,7 @@
 #include "core-impl/meta/stream/Stream.h"
 #include "core-impl/meta/timecode/TimecodeTrackProvider.h"
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QMetaObject>
 
 #include <QCoreApplication>

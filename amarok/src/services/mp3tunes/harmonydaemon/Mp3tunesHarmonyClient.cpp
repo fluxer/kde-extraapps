@@ -15,7 +15,7 @@
  ****************************************************************************************/
 
 #include "Mp3tunesHarmonyClient.h"
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 Mp3tunesHarmonyClient::Mp3tunesHarmonyClient()
 {}
 

@@ -23,7 +23,7 @@
 #include <KStringHandler>
 
 #include <QFont>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 TrackItem::TrackItem()
     : QStandardItem()

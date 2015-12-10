@@ -22,7 +22,7 @@
 
 #include <QList>
 #include <QMap>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QMutex>
 
 /**

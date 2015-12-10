@@ -19,7 +19,7 @@
 
 #include <kurl.h>
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <qmap.h>
 #include <QString>
 

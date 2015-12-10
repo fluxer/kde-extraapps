@@ -39,11 +39,11 @@
 
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
-#include <QGraphicsSimpleTextItem>
+
 #include <QGraphicsWidget>
 #include <QLabel>
 #include <QPixmap>
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 #include <QGraphicsGridLayout>
 
 CoverGridApplet::CoverGridApplet( QObject* parent, const QVariantList& args )

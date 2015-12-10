@@ -22,7 +22,7 @@
 #include "core/meta/forward_declarations.h"
 
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 #include <QDBusArgument>
 
 namespace Mpris1 {

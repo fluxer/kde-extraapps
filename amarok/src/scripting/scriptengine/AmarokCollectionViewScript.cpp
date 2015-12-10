@@ -32,7 +32,7 @@
 
 #include <KMenu>
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QScriptEngine>
 
 Q_DECLARE_METATYPE( QAction* )

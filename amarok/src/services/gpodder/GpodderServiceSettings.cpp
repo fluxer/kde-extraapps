@@ -35,7 +35,7 @@
 #include <QHostInfo>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
-#include <QRegExpValidator>
+#include <QtGui/qvalidator.h>
 #include <QVBoxLayout>
 
 K_PLUGIN_FACTORY( GpodderServiceSettingsFactory, registerPlugin<GpodderServiceSettings>(); )

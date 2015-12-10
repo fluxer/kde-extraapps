@@ -34,7 +34,7 @@
 
 #include <QDateTime>
 #include <QLabel>
-#include <QListIterator>
+#include <QtCore/qlist.h>
 #include <QMap>
 #include <QSet>
 #include <QVariant>

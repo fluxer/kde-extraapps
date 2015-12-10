@@ -18,7 +18,7 @@
 
 #include <QDBusMessage>
 #include <QDBusConnection>
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 Mp3tunesAmarokClient::Mp3tunesAmarokClient() : Mp3tunesHarmonyClient()
 {}

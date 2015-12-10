@@ -26,7 +26,7 @@
 
 #include <KIcon>
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <typeinfo>
 

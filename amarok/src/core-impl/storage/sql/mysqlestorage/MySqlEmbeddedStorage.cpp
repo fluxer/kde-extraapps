@@ -26,7 +26,7 @@
 #include <QDir>
 #include <QVarLengthArray>
 #include <QVector>
-#include <QAtomicInt>
+#include <QtCore/qatomic.h>
 
 #include <mysql.h>
 

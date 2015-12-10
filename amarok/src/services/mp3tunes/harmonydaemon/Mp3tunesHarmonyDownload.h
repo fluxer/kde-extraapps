@@ -18,7 +18,7 @@
 #define MP3TUNESHARMONYDOWNLOAD_H
 
 #include <QString>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 extern "C" {
    // Get libmp3tunes declarations
     #include "../libmp3tunes/harmony.h"

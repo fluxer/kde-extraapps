@@ -23,7 +23,7 @@
 #define AMAROK_PLAYLISTVIEWCOMMON_H
 
 #include <QAction>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPoint>
 
 namespace Playlist

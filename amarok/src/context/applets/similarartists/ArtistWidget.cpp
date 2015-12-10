@@ -40,7 +40,7 @@
 
 //Qt
 #include <QDesktopServices>
-#include <QFontMetricsF>
+#include <QtGui/qfontmetrics.h>
 #include <QGraphicsGridLayout>
 #include <QGraphicsLinearLayout>
 #include <QLabel>

@@ -23,7 +23,7 @@
 
 #include "core/meta/forward_declarations.h"
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QHash>
 #include <QList>
 #include <QObject>

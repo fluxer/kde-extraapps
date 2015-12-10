@@ -20,7 +20,7 @@
 #define LAYOUTITEMCONFIG_H
 
 #include <QList>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QString>
 
 namespace Playlist {

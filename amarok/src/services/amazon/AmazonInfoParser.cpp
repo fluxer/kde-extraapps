@@ -22,7 +22,7 @@
 #include "core/interfaces/Logger.h"
 #include "core/support/Components.h"
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QTemporaryFile>
 
 #include <KStandardDirs>

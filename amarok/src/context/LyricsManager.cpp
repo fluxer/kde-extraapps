@@ -26,8 +26,8 @@
 
 #include <KLocale>
 
-#include <QGraphicsTextItem>
-#include <QXmlStreamReader>
+#include <QtGui/qgraphicsitem.h>
+#include <QtCore/qxmlstream.h>
 #include <QTextDocument>
 
 ////////////////////////////////////////////////////////////////

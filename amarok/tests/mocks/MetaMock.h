@@ -22,7 +22,7 @@
 #include "core/meta/support/MetaConstants.h"
 
 #include <QDateTime>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 /**
   * This class provides simple mocks for meta classes.

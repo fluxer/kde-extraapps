@@ -23,7 +23,7 @@
 #include "core/support/Debug.h"
 #include "amarokconfig.h"
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QThreadStorage>
 #include <QVarLengthArray>
 

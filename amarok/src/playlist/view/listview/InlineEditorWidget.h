@@ -21,7 +21,7 @@
 
 #include <KHBox>
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSplitter>
 
 /**

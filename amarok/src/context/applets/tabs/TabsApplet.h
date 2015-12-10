@@ -27,7 +27,7 @@
 
 // Qt
 #include <QGraphicsLinearLayout>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class TabsView;
 

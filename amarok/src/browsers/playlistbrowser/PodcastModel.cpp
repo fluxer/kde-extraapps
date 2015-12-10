@@ -33,7 +33,7 @@
 
 #include <QAction>
 #include <QInputDialog>
-#include <QListIterator>
+#include <QtCore/qlist.h>
 #include <typeinfo>
 
 using namespace Podcasts;

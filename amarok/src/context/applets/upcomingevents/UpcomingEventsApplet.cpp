@@ -41,7 +41,7 @@
 
 #include <QDesktopServices>
 #include <QGraphicsLinearLayout>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 UpcomingEventsApplet::UpcomingEventsApplet( QObject* parent, const QVariantList& args )
     : Context::Applet( parent, args )

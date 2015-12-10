@@ -21,7 +21,7 @@
 // for CollectionManager::CollectionStatus that cannont be fwd-declared
 #include "core-impl/collections/support/CollectionManager.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QDateTime>
 
 class QTimer;

@@ -21,7 +21,7 @@
 #ifndef ATTICA_CATEGORY_H
 #define ATTICA_CATEGORY_H
 
-#include <QtCore/QSharedDataPointer>
+#include <QtCore/qshareddata.h>
 #include <QtCore/QList>
 
 #include "atticaclient_export.h"

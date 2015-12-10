@@ -17,7 +17,7 @@
 #include "FramedLabel.h"
 
 #include <QPainter>
-#include <QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QStyleOption>
 
 FramedLabel::FramedLabel( QWidget *parent, Qt::WindowFlags f )

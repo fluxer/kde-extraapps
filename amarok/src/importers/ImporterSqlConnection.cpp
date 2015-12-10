@@ -20,7 +20,7 @@
 
 #include <ThreadWeaver/Thread>
 
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>

@@ -24,9 +24,9 @@
 #include <QAction>
 #include <QMap>
 #include <QObject>
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QMetaType>
-#include <QModelIndexList>
+#include <QtCore/qabstractitemmodel.h>
 #include <QScriptValue>
 
 class CollectionTreeItemModelBase;

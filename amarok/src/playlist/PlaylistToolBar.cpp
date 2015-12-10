@@ -22,7 +22,7 @@
 #include <KLocalizedString>
 
 #include <QToolButton>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 namespace Playlist {
 

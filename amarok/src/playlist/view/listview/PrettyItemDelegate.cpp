@@ -46,9 +46,9 @@
 #include <KWindowSystem>
 
 #include <QAction>
-#include <QFontMetricsF>
+#include <QtGui/qfontmetrics.h>
 #include <QPainter>
-#include <QStyleOptionSlider>
+#include <QtGui/qstyleoption.h>
 #include <QTimeLine>
 #include <QTimer>
 

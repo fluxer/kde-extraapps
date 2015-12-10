@@ -24,7 +24,7 @@
 #include <KGlobalSettings>
 
 #include <QAction>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QToolTip>
 #include <QApplication>

@@ -20,7 +20,7 @@
 #include "core/collections/QueryMaker.h"
 
 #include <QList>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 namespace Collections {
     class QueryMaker;

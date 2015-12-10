@@ -30,7 +30,7 @@
 #include <KLocale>
 
 #include <QHBoxLayout>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 ProgressWidget::ProgressWidget( QWidget *parent )
         : QWidget( parent )

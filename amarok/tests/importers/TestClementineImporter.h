@@ -19,7 +19,7 @@
 
 #include "TestImporterBase.h"
 
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class TestClementineImporter : public TestImporterBase
 {

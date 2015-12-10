@@ -27,7 +27,7 @@
 
 #include <QLabel>
 #include <QFontMetrics>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 TimeLabel::TimeLabel(QWidget* parent)
     : QLabel( " 0:00:00 ", parent )

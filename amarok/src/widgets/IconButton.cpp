@@ -17,10 +17,10 @@
 #include "IconButton.h"
 #include "SvgHandler.h"
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QSizePolicy>
-#include <QTimerEvent>
+#include <QtCore/qcoreevent.h>
 #include <QToolBar>
 
 IconButton::IconButton( QWidget *parent ) : QWidget( parent )

@@ -29,9 +29,9 @@
 
 #include <QLabel>
 #include <QList>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QObject>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class CoverFoundItem;
 class CoverFoundSideBar;

@@ -25,7 +25,7 @@
 #include "core/support/Components.h"
 #include "core/support/Debug.h"
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QNetworkRequest>
 #include <QtCrypto>
 

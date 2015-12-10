@@ -23,8 +23,8 @@
 
 #include <QFile>
 #include <QDateTime>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 #include <QDebug>
 CollectionScanner::BatchFile::BatchFile()

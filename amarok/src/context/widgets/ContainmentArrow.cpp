@@ -20,7 +20,7 @@
 
 #include <KStandardDirs>
 #include <QPainter>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 #include <Plasma/Animation>
 #include <Plasma/Animator>

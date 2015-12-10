@@ -22,7 +22,7 @@
 #include <QList>
 #include <QSet>
 #include <QStack>
-#include <QtAlgorithms>
+#include <QtCore/qalgorithms.h>
 
 #include <KRandomSequence>
 #include <KSortableList>

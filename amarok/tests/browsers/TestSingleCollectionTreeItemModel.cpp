@@ -26,7 +26,7 @@
 #include "mocks/MockArtist.h"
 
 #include <QApplication>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSet>
 #include <QStringList>
 

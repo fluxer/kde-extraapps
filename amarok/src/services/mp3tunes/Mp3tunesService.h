@@ -24,7 +24,7 @@
 #include "Mp3tunesWorkers.h"
 #include "harmonydaemon/Mp3tunesHarmonyDownload.h"
 #include "Mp3tunesHarmonyHandler.h"
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class Mp3tunesServiceFactory: public ServiceFactory
 {

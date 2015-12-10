@@ -25,7 +25,7 @@
 
 #include <KIcon>
 
-#include <QReadLocker>
+#include <QtCore/qreadwritelock.h>
 #include <QTimer>
 
 using namespace Collections;

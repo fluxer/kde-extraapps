@@ -18,7 +18,7 @@
 #define BOOKMARKPOPUP_H
 
 #include <QLineEdit>
-#include <QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QTimer>
 #include <QWidget>
 

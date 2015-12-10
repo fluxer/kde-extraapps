@@ -25,7 +25,7 @@
 #include <KHBox>
 #include <KLocale>
 
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QLabel>
 #include <QMenu>
 #include <QToolBar>

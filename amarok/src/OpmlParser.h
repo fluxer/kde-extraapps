@@ -21,12 +21,12 @@
 #include "amarok_export.h"
 #include "OpmlOutline.h"
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QMap>
 #include <QStack>
 #include <QString>
 #include <QStringList>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <kjob.h>
 #include <KUrl>

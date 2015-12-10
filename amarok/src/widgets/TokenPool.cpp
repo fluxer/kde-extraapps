@@ -21,7 +21,7 @@
 
 #include <KApplication>
 
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 #include "core/support/Debug.h"
 

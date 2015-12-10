@@ -29,8 +29,8 @@
 #include <QGraphicsScene>
 #include <QPainter>
 #include <QPalette>
-#include <QStyleOptionGraphicsItem>
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsLinearLayout>
 #include <QSizePolicy>
 

@@ -28,7 +28,7 @@
 #include <QAction>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QToolBar>
 
 PlaylistBrowserNS::APGCategory::APGCategory( QWidget* )

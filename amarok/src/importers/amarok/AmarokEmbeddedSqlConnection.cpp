@@ -22,7 +22,7 @@
 
 #include <QEventLoop>
 #include <QFileSystemWatcher>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 #include <QStringList>
 #include <QTemporaryFile>
 

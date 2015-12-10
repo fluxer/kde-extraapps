@@ -23,7 +23,7 @@
 #include "core/meta/forward_declarations.h"
 
 #include <QBitArray>
-#include <QExplicitlySharedDataPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QHash>
 #include <QMetaType>
 #include <QSharedData>

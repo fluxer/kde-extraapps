@@ -18,7 +18,7 @@
 
 #include "core/support/Debug.h"
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QTimer>
 
 using namespace AmarokScript;

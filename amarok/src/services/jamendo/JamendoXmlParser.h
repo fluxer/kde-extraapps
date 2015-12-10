@@ -21,11 +21,11 @@
 
 #include <threadweaver/Job.h>
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QMap>
 #include <QString>
 #include <QStringList>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 /**
 * Parser for the XML file from http://imgjam.com/data/dbdump_artistalbumtrack.xml.gz

@@ -19,7 +19,7 @@
 
 #include "AmazonCollection.h"
 
-#include <QAbstractTableModel>
+#include <QtCore/qabstractitemmodel.h>
 
 class AmazonItemTreeModel : public QAbstractTableModel
 {

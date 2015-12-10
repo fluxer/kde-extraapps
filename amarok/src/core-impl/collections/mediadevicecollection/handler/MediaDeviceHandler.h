@@ -36,7 +36,7 @@
 #include <QAction>
 #include <QObject>
 #include <QMap>
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 
 class QString;
 class QMutex;

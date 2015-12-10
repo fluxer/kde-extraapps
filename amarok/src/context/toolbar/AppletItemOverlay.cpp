@@ -32,7 +32,7 @@
 #include <QGraphicsLinearLayout>
 #include <QGraphicsWidget>
 #include <QPainter>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 #include <QTimer>
 #include <QToolButton>
 

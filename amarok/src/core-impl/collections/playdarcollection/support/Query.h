@@ -21,7 +21,7 @@
 #include "core/meta/forward_declarations.h"
 #include "../PlaydarMeta.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class KJob;
 

@@ -21,10 +21,10 @@
 
 #include <plasma/widgets/iconwidget.h>
 
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPainter>
-#include <QTextLine>
-#include <QWeakPointer>
+#include <QtGui/qtextlayout.h>
+#include <QtCore/qsharedpointer.h>
 
 class QPainterPath;
 

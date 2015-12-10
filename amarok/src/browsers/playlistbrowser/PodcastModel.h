@@ -24,8 +24,8 @@
 #include "playlist/PlaylistModelStack.h"
 
 #include <QAbstractItemModel>
-#include <QModelIndex>
-#include <QPersistentModelIndex>
+#include <QtCore/qabstractitemmodel.h>
+
 #include <QVariant>
 
 namespace PlaylistBrowserNS {

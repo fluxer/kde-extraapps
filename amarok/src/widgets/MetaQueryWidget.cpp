@@ -34,7 +34,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QListView>
-#include <QTimeEdit>
+#include <QtGui/qdatetimeedit.h>
 
 #include <KComboBox>
 #include <KIcon>

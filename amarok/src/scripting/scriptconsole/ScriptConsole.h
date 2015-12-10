@@ -21,7 +21,7 @@
 #include <QDockWidget>
 #include <QScriptEngineAgent>
 #include <QtScriptTools/QScriptEngineDebugger>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace KTextEditor{
     class Editor;

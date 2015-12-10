@@ -22,7 +22,7 @@
 #include <QDateTime>
 #include <QList>
 #include <QString>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <KSharedPtr>
 #include <KUrl>

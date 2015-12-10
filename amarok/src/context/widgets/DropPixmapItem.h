@@ -23,7 +23,7 @@
 #include <KUrl>
 
 #include <QGraphicsLayoutItem>
-#include <QGraphicsPixmapItem>
+#include <QtGui/qgraphicsitem.h>
 
 //forward
 class QGraphicsSceneDragDropEvent;

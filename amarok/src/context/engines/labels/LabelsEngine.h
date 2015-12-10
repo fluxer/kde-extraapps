@@ -25,7 +25,7 @@
 
 #include <QMap>
 #include <QTimer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 using namespace Context;
 

@@ -17,7 +17,7 @@
 #ifndef TEST_IMPORTER_BASE
 #define TEST_IMPORTER_BASE
 
-#include <QExplicitlySharedDataPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QObject>
 #include <QSet>
 

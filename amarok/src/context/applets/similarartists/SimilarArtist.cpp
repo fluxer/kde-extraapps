@@ -16,7 +16,7 @@
 
 #include "SimilarArtist.h"
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 SimilarArtist::SimilarArtist() {}
 

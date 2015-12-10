@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include <QString>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace Collections
 {

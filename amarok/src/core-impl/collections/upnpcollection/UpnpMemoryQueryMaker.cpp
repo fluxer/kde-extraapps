@@ -18,7 +18,7 @@
 
 #include "UpnpMemoryQueryMaker.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include "core/support/Debug.h"
 #include "UpnpBrowseCollection.h"

@@ -31,7 +31,7 @@
 #include "PlaylistBrowserView.h"
 #include "widgets/PrettyTreeRoles.h"
 
-#include <QModelIndexList>
+#include <QtCore/qabstractitemmodel.h>
 #include <QTextBrowser>
 
 #include <KAction>

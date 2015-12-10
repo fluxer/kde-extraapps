@@ -21,7 +21,7 @@
 
 #include <QSize>
 #include <QObject>
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 
 class AlbumItem : public QObject, public QStandardItem, public Meta::Observer
 {

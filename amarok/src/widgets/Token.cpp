@@ -29,7 +29,7 @@
 
 #include <QPixmap>
 #include <QMimeData>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 #include <QDrag>
 
 

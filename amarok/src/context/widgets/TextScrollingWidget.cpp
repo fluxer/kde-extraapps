@@ -23,9 +23,9 @@
 #include <Plasma/FrameSvg>
 
 #include <QFont>
-#include <QFontMetricsF>
-#include <QGraphicsSimpleTextItem>
-#include <QGraphicsSceneHoverEvent>
+#include <QtGui/qfontmetrics.h>
+#include <QtGui/qgraphicsitem.h>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QPainter>
 #include <QTimer>
 #include <QPropertyAnimation>

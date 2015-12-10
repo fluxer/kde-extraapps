@@ -31,7 +31,7 @@
 #include <KUrl>
 
 #include <QDir>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QStringList>
 

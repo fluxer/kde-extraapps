@@ -20,7 +20,7 @@
 #include "ScanningState.h"
 
 #include <QBuffer>
-#include <QtDebug>
+#include <QDebug>
 
 #ifdef Q_CC_MSVC
 #define __PRETTY_FUNCTION__ __FUNCSIG__

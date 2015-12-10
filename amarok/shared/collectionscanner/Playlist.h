@@ -23,8 +23,8 @@
 #include "amarokshared_export.h"
 
 #include <QString>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 namespace CollectionScanner
 {

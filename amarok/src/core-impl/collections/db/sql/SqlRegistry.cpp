@@ -26,8 +26,8 @@
 #include "core-impl/collections/db/MountPointManager.h"
 #include "scanner/GenericScanManager.h"
 
-#include <QMutableHashIterator>
-#include <QMutexLocker>
+#include <QtCore/qhash.h>
+#include <QtCore/qmutex.h>
 
 SqlRegistry::SqlRegistry( Collections::SqlCollection* collection )
     : QObject( 0 )

@@ -23,10 +23,10 @@
 
 #include <KDialog>
 
-#include <QDropEvent>
+#include <QtGui/qevent.h>
 #include <QLabel>
 #include <QListWidget>
-#include <QListWidgetItem>
+#include <QtGui/qlistwidget.h>
 #include <QAction>
 
 namespace Amarok { class LineEdit; }

@@ -27,7 +27,7 @@
 #include <KIO/NetAccess>
 
 #include <QDir>
-#include <QWeakPointer>
+#include <QSharedPointer>
 
 class QColor;
 class QDateTime;

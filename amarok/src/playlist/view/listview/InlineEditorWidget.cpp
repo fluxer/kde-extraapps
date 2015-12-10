@@ -32,11 +32,11 @@
 
 #include <QEvent>
 #include <QBoxLayout>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPainter>
-#include <QPaintEvent>
+
 
 using namespace Playlist;
 

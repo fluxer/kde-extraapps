@@ -25,9 +25,9 @@
 #include "network/NetworkAccessManagerProxy.h"
 
 // Qt
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QLocale>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 #include <QSet>
 
 class QNetworkReply;

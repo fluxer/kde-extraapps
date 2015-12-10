@@ -23,9 +23,9 @@
 #include <Plasma/Applet>
 
 #include <QFont>
-#include <QRectF>
+#include <QtCore/qrect.h>
 #include <QString>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class QPainter;
 class QPropertyAnimation;

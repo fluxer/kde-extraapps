@@ -17,7 +17,7 @@
 #ifndef AMAROK_ALBUMSDEFS_H
 #define AMAROK_ALBUMSDEFS_H
 
-#include <QStandardItem>
+#include <QtGui/qstandarditemmodel.h>
 
 enum AlbumsModelItemTypes
 {

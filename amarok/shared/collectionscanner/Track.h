@@ -26,8 +26,8 @@
 
 #include <QString>
 #include <QDateTime>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 namespace CollectionScanner
 {

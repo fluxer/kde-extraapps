@@ -26,7 +26,7 @@
 #include <QMap>
 #include <QSet>
 #include <QString>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 #include <QWidget>
 
 namespace StatSyncing

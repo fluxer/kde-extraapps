@@ -30,7 +30,7 @@
 
 #include <KDateTime>
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 AMAROK_EXPORT_DATAENGINE( upcomingEvents, UpcomingEventsEngine )
 

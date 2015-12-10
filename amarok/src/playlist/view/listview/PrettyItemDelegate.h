@@ -24,7 +24,7 @@
 #include "core/meta/forward_declarations.h"
 #include "playlist/layouts/LayoutItemConfig.h"
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QStyledItemDelegate>
 
 class InlineEditorWidget;

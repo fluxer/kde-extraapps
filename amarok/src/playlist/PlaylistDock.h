@@ -23,7 +23,7 @@
 #include "view/listview/PrettyListView.h"
 #include "widgets/AmarokDockWidget.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class KActionCollection;
 class KActionMenu;

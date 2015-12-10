@@ -28,7 +28,7 @@
 #include <QByteArray>
 #include <QDateTime>
 #include <QDataStream>
-#include <QHttpResponseHeader>
+#include <QtNetwork/qhttp.h>
 #include <QVariant>
 
 #include <threadweaver/ThreadWeaver.h>

@@ -21,7 +21,7 @@
 
 #include "categoryparser.h"
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 using namespace AmarokAttica;
 

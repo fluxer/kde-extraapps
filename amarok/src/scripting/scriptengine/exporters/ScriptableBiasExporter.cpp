@@ -26,8 +26,8 @@
 #include <QCoreApplication>
 #include <QScriptEngine>
 #include <QThread>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 using namespace AmarokScript;
 

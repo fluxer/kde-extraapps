@@ -27,8 +27,8 @@
 
 #include <KIcon>
 
-#include <QAbstractListModel>
-#include <QListIterator>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtCore/qlist.h>
 
 #include <typeinfo>
 

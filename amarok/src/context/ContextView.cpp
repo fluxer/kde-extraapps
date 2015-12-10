@@ -43,7 +43,7 @@
 #include <Phonon/AudioOutput>
 #include <QParallelAnimationGroup>
 #include <QSequentialAnimationGroup>
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 
 namespace Context
 {

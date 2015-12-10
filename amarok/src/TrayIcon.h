@@ -25,7 +25,7 @@
 #include "core/support/SmartPointerList.h"
 
 #include <QAction>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace Amarok {
 

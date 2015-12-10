@@ -18,7 +18,7 @@
 #include "AnimatedLabelStack.h"
 
 #include <QPainter>
-#include <QPaintEvent>
+#include <QtGui/qevent.h>
 #include <QTimer>
 
 static const int frameTime = 50;

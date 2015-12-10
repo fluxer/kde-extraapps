@@ -22,7 +22,7 @@
 #include "contentparser.h"
 
 #include <QtCore/QDateTime>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 using namespace AmarokAttica;
 

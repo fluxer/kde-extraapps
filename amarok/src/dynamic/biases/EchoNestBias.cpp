@@ -28,16 +28,16 @@
 #include <KIO/Job>
 #include <klocalizedstring.h>
 
-#include <QDomDocument>
-#include <QDomNode>
+
+#include <QtXml/qdom.h>
 #include <QFile>
 #include <QLabel>
 #include <QPixmap>
 #include <QRadioButton>
 #include <QTimer>
 #include <QVBoxLayout>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 QString
 Dynamic::EchoNestBiasFactory::i18nName() const

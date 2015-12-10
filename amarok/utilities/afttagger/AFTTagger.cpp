@@ -39,7 +39,7 @@
 #include <xiphcomment.h>
 #pragma GCC diagnostic pop
 
-#include <QtDebug>
+#include <QDebug>
 #include <QCryptographicHash>
 #include <QDir>
 #include <QFileInfo>

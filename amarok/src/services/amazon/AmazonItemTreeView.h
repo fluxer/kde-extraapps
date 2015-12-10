@@ -22,8 +22,8 @@
 #include "widgets/PrettyTreeView.h"
 
 #include <QAction>
-#include <QContextMenuEvent>
-#include <QModelIndex>
+#include <QtGui/qevent.h>
+#include <QtCore/qabstractitemmodel.h>
 #include <QTreeView>
 
 class PopupDropper;

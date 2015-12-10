@@ -52,7 +52,7 @@
 
 #include <QAction>
 #include <QTimer>
-#include <QDate>
+#include <QtCore/qdatetime.h>
 #include <QStringList>
 #include <QTextDocument>
 

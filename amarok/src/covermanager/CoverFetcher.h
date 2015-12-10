@@ -26,7 +26,7 @@
 
 #include <QHash>
 #include <QObject>      //baseclass
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QStringList>  //stack allocated
 
 class CoverFetchQueue;

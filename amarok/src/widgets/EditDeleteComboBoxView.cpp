@@ -19,8 +19,8 @@
 #include "core/support/Debug.h"
 #include "EditDeleteDelegate.h"
 
-#include <QModelIndex>
-#include <QMouseEvent>
+#include <QtCore/qabstractitemmodel.h>
+#include <QtGui/qevent.h>
 
 EditDeleteComboBoxView::EditDeleteComboBoxView( QWidget* parent )
  : QListView( parent )

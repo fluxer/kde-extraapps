@@ -21,7 +21,7 @@
 #include "core/support/Debug.h"
 
 #include <QFile>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 #include <KLocale>
 #include <kio/job.h>

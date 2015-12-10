@@ -37,7 +37,7 @@
 
 #include <QObject>
 #include <QMap>
-#include <QMultiMap>
+#include <QtCore/qmap.h>
 #include <QMutex>
 #include <QSet>
 

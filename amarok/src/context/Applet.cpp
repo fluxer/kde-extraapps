@@ -34,7 +34,7 @@
 #include <QGraphicsLayout>
 #include <QGraphicsScene>
 #include <QFontMetrics>
-#include <QMetaMethod>
+#include <QtCore/qmetaobject.h>
 #include <QPainter>
 #include <QPropertyAnimation>
 

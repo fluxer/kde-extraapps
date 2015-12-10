@@ -28,7 +28,7 @@
 #include "context/popupdropper/libpud/PopupDropperItem.h"
 
 #include <QHeaderView>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 #include <kstandarddirs.h>
 

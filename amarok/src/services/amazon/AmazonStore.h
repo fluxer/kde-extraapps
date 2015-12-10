@@ -29,7 +29,7 @@
 #include "ServiceSqlRegistry.h"
 
 #include <QComboBox>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QPushButton>
 #include <QSpinBox>
 #include <QString>

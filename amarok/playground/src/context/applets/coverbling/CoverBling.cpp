@@ -29,7 +29,7 @@
 #include <GL/glext.h>
 #endif
 #include <QGLFormat>
-#include <QGLWidget>
+#include <QtOpenGL/qgl.h>
 #include <QTimer>
 
 #include <climits>

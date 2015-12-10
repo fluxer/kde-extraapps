@@ -21,7 +21,7 @@
 #include <cmath>
 
 #include <QPainter>
-#include <QResizeEvent>
+#include <QtGui/qevent.h>
 
 
 ASCIIAnalyzer* ASCIIAnalyzer::instance = 0;

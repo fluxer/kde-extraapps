@@ -35,8 +35,8 @@
 #include <QStyle>
 #include <QStyleOption>
 #include <QWidget>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 QString
 Dynamic::PartBiasFactory::i18nName() const

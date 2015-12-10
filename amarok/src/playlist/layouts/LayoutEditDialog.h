@@ -18,7 +18,7 @@
 #define LAYOUTEDITDIALOG_H
 
 #include <QDialog>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class HintingLineEdit;
 class QLineEdit;

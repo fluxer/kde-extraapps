@@ -25,7 +25,7 @@
 
 #include <QTimer>
 #include <QFileInfo>
-#include <QMutexLocker>
+#include <QtCore/qmutex.h>
 
 static const int WATCH_INTERVAL = 60 * 1000; // = 60 seconds
 static const int DELAYED_SCAN_INTERVAL = 2 * 1000; // = 2 seconds

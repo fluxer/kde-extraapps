@@ -30,7 +30,7 @@
 #include <QtDBus/QDBusConnection>
 
 #include <QtCore/QStringList>
-#include <QtCore/QVariantMap>
+#include <QtCore/qvariant.h>
 
 class PropertiesChangedAdaptor : public QDBusAbstractAdaptor
 {

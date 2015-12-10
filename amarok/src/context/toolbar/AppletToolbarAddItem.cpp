@@ -26,11 +26,11 @@
 #include <KIcon>
 
 #include <QAction>
-#include <QGraphicsSceneResizeEvent>
-#include <QGraphicsSimpleTextItem>
+#include <QtGui/qgraphicssceneevent.h>
+#include <QtGui/qgraphicsitem.h>
 #include <QPainter>
-#include <QSizeF>
-#include <QStyleOptionGraphicsItem>
+#include <QtCore/qsize.h>
+#include <QtGui/qstyleoption.h>
 
 #define MARGIN           10
 #define TOOLBAR_X_OFFSET  5

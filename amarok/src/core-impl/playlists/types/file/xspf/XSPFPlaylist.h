@@ -20,7 +20,7 @@
 
 #include "core-impl/playlists/types/file/PlaylistFile.h"
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QTextStream>
 
 namespace Playlists

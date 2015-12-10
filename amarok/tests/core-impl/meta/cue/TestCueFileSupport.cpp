@@ -19,7 +19,7 @@
 #include "config-amarok-test.h"
 #include "core-impl/meta/cue/CueFileSupport.h"
 
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 
 #include <QtTest/QTest>
 

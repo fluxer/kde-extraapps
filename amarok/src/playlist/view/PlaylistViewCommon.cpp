@@ -34,7 +34,7 @@
 #include <KMenu>
 
 #include <QObject>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 Playlist::ViewCommon::ViewCommon()
     : m_stopAfterTrackAction( 0 )

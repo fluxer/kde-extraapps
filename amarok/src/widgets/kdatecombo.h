@@ -19,7 +19,7 @@
 
 #include <QtGui/QWidget>
 #include <QtGui/QComboBox>
-#include <QtCore/QDate>
+#include <QtCore/qdatetime.h>
 
 /**
   *@author Beppe Grimaldi

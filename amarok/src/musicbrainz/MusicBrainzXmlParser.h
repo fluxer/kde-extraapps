@@ -20,9 +20,9 @@
 
 #include <ThreadWeaver/Job>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QStringList>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 class MusicBrainzXmlParser : public ThreadWeaver::Job
 {

@@ -29,8 +29,8 @@
 #include "core-impl/collections/support/MemoryMatcher.h"
 
 #include <QSet>
-#include <QAtomicInt>
-#include <QDomDocument>
+#include <QtCore/qatomic.h>
+#include <QtXml/qdom.h>
 
 using namespace Collections;
 

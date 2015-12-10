@@ -21,8 +21,8 @@
 
 #include <QFile>
 #include <QTemporaryFile>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 using namespace StatSyncing;
 

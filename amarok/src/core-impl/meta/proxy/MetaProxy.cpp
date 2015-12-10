@@ -28,7 +28,7 @@
 #include <QCoreApplication>
 #include <QThread>
 #include <QTimer>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 using namespace MetaProxy;
 

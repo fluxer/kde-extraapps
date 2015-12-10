@@ -26,9 +26,9 @@
 // Qt
 #include <QApplication>
 #include <QGraphicsBlurEffect>
-#include <QGraphicsSceneHoverEvent>
-#include <QGraphicsPixmapItem>
-#include <QGraphicsTextItem>
+#include <QtGui/qgraphicssceneevent.h>
+
+#include <QtGui/qgraphicsitem.h>
 #include <QPainter>
 #include <QPixmap>
 #include <QPropertyAnimation>

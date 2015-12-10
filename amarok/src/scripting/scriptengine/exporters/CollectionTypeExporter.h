@@ -26,7 +26,7 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 namespace Collections
 {

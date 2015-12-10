@@ -26,8 +26,8 @@
 #include <KConfig>
 
 #include <QPainter>
-#include <QStyleOptionGraphicsItem>
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qstyleoption.h>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsScene>
 #include <QGraphicsView>

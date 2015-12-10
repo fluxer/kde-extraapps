@@ -41,7 +41,7 @@
 #include <ThreadWeaver/Weaver>
 
 #include <QTemporaryFile>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 #include <gpod/itdb.h>
 

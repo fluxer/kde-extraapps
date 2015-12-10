@@ -26,7 +26,7 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDrag>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QMimeData>
 #include <QPoint>
 

@@ -37,7 +37,7 @@
 #include "widgets/SearchWidget.h"
 
 #include <QDesktopServices>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QTemporaryFile>
 #include <QToolBar>
 

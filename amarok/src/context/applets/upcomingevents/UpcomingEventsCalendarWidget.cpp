@@ -26,7 +26,7 @@
 
 #include <QAction>
 #include <QCalendarWidget>
-#include <QTextCharFormat>
+#include <QtGui/qtextformat.h>
 #include <QTimer>
 
 class UpcomingEventsCalendarWidgetPrivate

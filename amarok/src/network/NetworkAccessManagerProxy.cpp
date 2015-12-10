@@ -28,9 +28,9 @@
 
 #include <KProtocolManager>
 
-#include <QMetaMethod>
+#include <QtCore/qmetaobject.h>
 #include <QNetworkReply>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 NetworkAccessManagerProxy *NetworkAccessManagerProxy::s_instance = 0;
 

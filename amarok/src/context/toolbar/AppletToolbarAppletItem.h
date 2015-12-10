@@ -21,7 +21,7 @@
 
 #include "AppletToolbarBase.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class QPropertyAnimation;
 class QPalette;

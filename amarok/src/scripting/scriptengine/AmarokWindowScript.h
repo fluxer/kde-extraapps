@@ -23,7 +23,7 @@
 #include <QObject>
 #include <QPalette>
 #include <QString>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class EventFilter;
 class KMenu;

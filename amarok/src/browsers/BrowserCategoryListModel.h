@@ -17,7 +17,7 @@
 #ifndef BROWSERCATEGORYLISTMODEL_H
 #define BROWSERCATEGORYLISTMODEL_H
 
-#include <QAbstractListModel>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <QList>
 

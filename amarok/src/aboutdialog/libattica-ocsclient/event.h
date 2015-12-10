@@ -24,7 +24,7 @@
 
 #include "atticaclient_export.h"
 
-#include <QtCore/QDate>
+#include <QtCore/qdatetime.h>
 #include <QtCore/QList>
 #include <QtCore/QMap>
 

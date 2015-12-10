@@ -18,7 +18,7 @@
 
 #include "SafeFileSaver.h"
 
-#include <QtDebug>
+#include <QDebug>
 #include <QCryptographicHash>
 #include <QFile>
 #include <QFileInfo>

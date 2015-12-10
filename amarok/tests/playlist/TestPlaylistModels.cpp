@@ -30,7 +30,7 @@
 
 #include <KStandardDirs>
 
-#include <QtDebug>
+#include <QtCore/qdebug.h>
 #include <QtTest/QTest>
 #include <qtest_kde.h>
 

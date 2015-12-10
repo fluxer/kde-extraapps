@@ -27,7 +27,7 @@
 
 #include <QLayout>
 #include <QRect>
-#include <QWidgetItem>
+#include <QtGui/qlayoutitem.h>
 
 
 

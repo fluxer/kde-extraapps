@@ -23,7 +23,7 @@
 
 #include <plasma/corona.h>
 
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 
 namespace Context
 {

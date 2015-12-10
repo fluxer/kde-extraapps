@@ -23,7 +23,7 @@
 #include <KUrl>
 
 #include <QStringList>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 class CoverFetchPayload;
 class CoverFetchSearchPayload;

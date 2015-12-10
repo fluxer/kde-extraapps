@@ -24,7 +24,7 @@
 
 #include <QList>
 #include <QPair>
-#include <QUndoCommand>
+#include <QUndoStack>
 
 namespace Playlist
 {

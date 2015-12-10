@@ -22,7 +22,7 @@
 
 #include "knowledgebaseparser.h"
 
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 using namespace AmarokAttica;
 

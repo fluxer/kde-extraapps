@@ -22,7 +22,7 @@
 #include <threadweaver/Job.h>
 #include <KUrl>
 
-#include <QXmlStreamWriter>
+#include <QtCore/qxmlstream.h>
 
 class AMAROK_EXPORT OpmlWriter : public ThreadWeaver::Job
 {

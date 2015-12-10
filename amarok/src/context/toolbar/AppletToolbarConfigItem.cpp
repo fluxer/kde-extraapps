@@ -26,7 +26,7 @@
 #include <QAction>
 #include <QPainter>
 #include <QSizePolicy>
-#include <QStyleOptionGraphicsItem>
+#include <QtGui/qstyleoption.h>
 
 Context::AppletToolbarConfigItem::AppletToolbarConfigItem( QGraphicsItem* parent )
     : AppletToolbarBase( parent )

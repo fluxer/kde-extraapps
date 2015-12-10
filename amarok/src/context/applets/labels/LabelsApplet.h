@@ -26,7 +26,7 @@
 #include <ui_labelsBlacklistSettings.h>
 #include <ui_labelsReplacementSettings.h>
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 
 class LabelGraphicsItem;
 class KComboBox;

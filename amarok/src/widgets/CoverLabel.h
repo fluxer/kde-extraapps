@@ -21,7 +21,7 @@
 #define AMAROK_COVERLABEL_H
 
 #include <QLabel>
-#include <QMouseEvent>
+#include <QtGui/qevent.h>
 
 class CoverLabel : public QLabel
 {

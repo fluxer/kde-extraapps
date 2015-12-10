@@ -31,12 +31,12 @@
 #include <QAction>
 #include <QFontMetrics>
 #include <QGraphicsLinearLayout>
-#include <QGraphicsSceneResizeEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QLabel>
 #include <QPainter>
 #include <QSignalMapper>
-#include <QStyleOptionGraphicsItem>
-#include <QWeakPointer>
+#include <QtGui/qstyleoption.h>
+#include <QtCore/qsharedpointer.h>
 
 class UpcomingEventsStackItemToolBox : public QGraphicsWidget
 {

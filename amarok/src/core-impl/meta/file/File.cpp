@@ -42,7 +42,7 @@
 #include <QAction>
 #include <QFileInfo>
 #include <QList>
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QString>
 
 using namespace MetaFile;

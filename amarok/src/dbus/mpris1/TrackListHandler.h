@@ -19,7 +19,7 @@
 #define MPRIS1_TRACKLIST_HANDLER_H
 
 #include <QObject>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 namespace Mpris1
 {

@@ -21,7 +21,7 @@
 
 #include <KSharedPtr>
 
-#include <QDomElement>
+#include <QtXml/qdom.h>
 #include <QObject>
 #include <QSharedData>
 

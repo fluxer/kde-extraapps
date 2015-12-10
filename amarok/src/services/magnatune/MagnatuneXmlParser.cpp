@@ -25,7 +25,7 @@
 #include <KLocale>
 #include <threadweaver/Job.h>
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QFile>
 
 using namespace Meta;

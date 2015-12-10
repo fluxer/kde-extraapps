@@ -52,9 +52,9 @@
 #include <KMenu>
 #include <KMessageBox> // NOTE: for delete dialog, will move to CollectionCapability later
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 #include <QHash>
-#include <QMouseEvent>
+
 #include <QSortFilterProxyModel>
 #include <QScrollBar>
 

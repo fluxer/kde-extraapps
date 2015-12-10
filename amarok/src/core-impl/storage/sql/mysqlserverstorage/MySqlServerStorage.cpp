@@ -23,7 +23,7 @@
 
 #include <core/support/Debug.h>
 
-#include <QAtomicInt>
+#include <QtCore/qatomic.h>
 
 #include <mysql.h>
 

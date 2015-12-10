@@ -34,7 +34,7 @@
 
 #include <QApplication>
 #include <QThread>
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 
 
 /** Defines the used plugin version number.

@@ -23,7 +23,7 @@
 #include <KIcon>
 
 #include <QString>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 namespace StatSyncing
 {

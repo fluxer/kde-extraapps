@@ -31,10 +31,10 @@
 
 #include <QFrame>
 #include <QHeaderView>
-#include <QHelpEvent>
-#include <QKeyEvent>
-#include <QMouseEvent>
-#include <QModelIndex>
+
+#include <QtGui/qevent.h>
+
+#include <QtCore/qabstractitemmodel.h>
 #include <QPoint>
 #include <QToolTip>
 

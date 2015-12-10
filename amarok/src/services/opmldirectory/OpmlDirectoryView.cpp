@@ -22,7 +22,7 @@
 
 #include <KMenu>
 
-#include <QContextMenuEvent>
+#include <QtGui/qevent.h>
 
 OpmlDirectoryView::OpmlDirectoryView( QWidget *parent ) :
     Amarok::PrettyTreeView(parent)

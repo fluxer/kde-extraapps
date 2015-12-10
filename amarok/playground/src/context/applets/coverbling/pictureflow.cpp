@@ -33,7 +33,7 @@
 #include <QCache>
 #include <QHash>
 #include <QImage>
-#include <QKeyEvent>
+#include <QtGui/qevent.h>
 #include <QPainter>
 #include <QPixmap>
 #include <QTimer>

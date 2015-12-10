@@ -18,9 +18,9 @@
 
 #include "importers/ImporterSqlConnection.h"
 
-#include <QReadLocker>
+
 #include <QStringList>
-#include <QWriteLocker>
+#include <QtCore/qreadwritelock.h>
 
 using namespace StatSyncing;
 

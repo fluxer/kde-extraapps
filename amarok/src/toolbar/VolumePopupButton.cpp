@@ -29,7 +29,7 @@
 #include <QLabel>
 #include <QMenu>
 #include <QToolBar>
-#include <QWheelEvent>
+#include <QtGui/qevent.h>
 #include <QWidgetAction>
 
 

@@ -26,7 +26,7 @@
 #include "core/support/Debug.h"
 
 #include <QTimer>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 AMAROK_EXPORT_DATAENGINE( similarArtists, SimilarArtistsEngine )
 

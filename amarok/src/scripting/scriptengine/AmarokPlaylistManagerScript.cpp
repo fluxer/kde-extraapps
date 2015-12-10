@@ -21,7 +21,7 @@
 #include "scripting/scriptengine/exporters/PlaylistProviderExporter.h"
 #include "scripting/scriptengine/ScriptingDefines.h"
 
-#include <QMetaEnum>
+#include <QtCore/qmetaobject.h>
 #include <QScriptEngine>
 
 using namespace AmarokScript;

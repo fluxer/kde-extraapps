@@ -28,7 +28,7 @@
 #include "core/meta/forward_declarations.h"
 
 #include <QHash>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 namespace Playlist
 {

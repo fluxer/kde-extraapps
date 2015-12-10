@@ -28,7 +28,7 @@
 #include <kdemacros.h>
 
 #include <QObject>
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 class QNetworkReply;
 
 #ifdef MAKE_AMPACHE_ACCOUNT_LOGIN_LIB

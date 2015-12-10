@@ -23,8 +23,8 @@
 
 #include "DBusAbstractAdaptor.h"
 
-#include <QDBusObjectPath>
-#include <QVariantMap>
+#include <QtDBus/qdbusextratypes.h>
+#include <QtCore/qvariant.h>
 
 namespace Amarok
 {

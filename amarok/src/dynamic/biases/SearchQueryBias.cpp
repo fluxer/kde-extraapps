@@ -33,8 +33,8 @@
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include <QXmlStreamReader>
-#include <QXmlStreamWriter>
+
+#include <QtCore/qxmlstream.h>
 
 
 QString

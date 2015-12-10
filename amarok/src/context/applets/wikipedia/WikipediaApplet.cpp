@@ -47,7 +47,7 @@
 #include <QProgressBar>
 #include <QTextStream>
 #include <QWebPage>
-#include <QXmlStreamReader>
+#include <QtCore/qxmlstream.h>
 
 void
 WikipediaAppletPrivate::parseWikiLangXml( const QByteArray &data )

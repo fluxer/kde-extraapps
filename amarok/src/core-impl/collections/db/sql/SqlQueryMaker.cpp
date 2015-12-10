@@ -25,7 +25,7 @@
 #include "core/support/Debug.h"
 #include "core-impl/collections/db/MountPointManager.h"
 
-#include <QWeakPointer>
+#include <QtCore/qsharedpointer.h>
 #include <QStack>
 
 #include <threadweaver/Job.h>

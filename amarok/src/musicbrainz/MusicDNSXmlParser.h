@@ -17,7 +17,7 @@
 #ifndef MUSICDNSXMLPARSER_H
 #define MUSICDNSXMLPARSER_H
 
-#include <QDomDocument>
+#include <QtXml/qdom.h>
 #include <QStringList>
 
 #include <threadweaver/Job.h>

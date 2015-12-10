@@ -28,8 +28,8 @@
 #include <QSqlDatabase>
 #include <QString>
 #include <QVariant>
-#include <QVariantList>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
+
 
 namespace StatSyncing
 {

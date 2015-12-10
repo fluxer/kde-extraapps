@@ -22,7 +22,7 @@
 #include <plasma/containment.h>
 
 #include <QAction>
-#include <QRectF>
+#include <QtCore/qrect.h>
 
 namespace Context
 {

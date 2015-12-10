@@ -23,7 +23,7 @@
 #include <QList>
 #include <QMap>
 #include <QObject>
-#include <QRectF>
+#include <QRect>
 #include <QTimeLine>
 #include <QTimer>
 

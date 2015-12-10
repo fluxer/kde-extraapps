@@ -28,7 +28,7 @@
 #include <QString>
 #include <QVariant>
 #include <QMap>
-#include <QVariantMap>
+#include <QtCore/qvariant.h>
 
 namespace Playdar
 {

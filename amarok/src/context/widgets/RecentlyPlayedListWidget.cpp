@@ -30,10 +30,10 @@
 #include <Plasma/IconWidget>
 
 #include <QApplication>
-#include <QFontMetricsF>
+#include <QtGui/qfontmetrics.h>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
-#include <QGraphicsSceneMouseEvent>
+#include <QtGui/qgraphicssceneevent.h>
 #include <QLabel>
 #include <QStringList>
 #include <QVariant>

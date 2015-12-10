@@ -17,7 +17,7 @@
 #ifndef STATSYNCING_CONFIG_H
 #define STATSYNCING_CONFIG_H
 
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 #include <QSet>
 
 class QIcon;

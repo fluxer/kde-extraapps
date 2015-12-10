@@ -26,7 +26,7 @@
 #include "core/playlists/Playlist.h"
 
 #include <QQueue>
-#include <QModelIndex>
+#include <QtCore/qabstractitemmodel.h>
 
 #include <Phonon/Global>
 
