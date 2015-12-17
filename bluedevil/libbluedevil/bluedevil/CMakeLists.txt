@@ -18,7 +18,9 @@ QT4_ADD_DBUS_INTERFACE(libbluedevil_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/bluez/org.f
 
 QT4_ADD_DBUS_INTERFACE(libbluedevil_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/bluez/org.bluez.Adapter1.xml bluezadapter1)
 QT4_ADD_DBUS_INTERFACE(libbluedevil_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/bluez/org.bluez.AgentManager1.xml bluezagentmanager1)
-QT4_ADD_DBUS_INTERFACE(libbluedevil_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/bluez/org.bluez.Device1.xml bluezdevice1)
+set(dbusbluezdevice1_xml ${CMAKE_CURRENT_SOURCE_DIR}/bluez/org.bluez.Device1.xml)
+set_source_files_properties(${dbusbluezdevice1_xml} PROPERTIES INCLUDE "QtGui/QVector4D")
+QT4_ADD_DBUS_INTERFACE(libbluedevil_SRCS ${dbusbluezdevice1_xml} bluezdevice1)
 
 QT4_AUTOMOC(${libbluedevil_SRCS})
 
