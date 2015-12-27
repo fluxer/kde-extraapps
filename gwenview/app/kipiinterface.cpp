@@ -154,35 +154,14 @@ private:
 
         const KFileMetaInfoItem& mii = metaInfo.item("http://freedesktop.org/standards/xesam/1.0/core#orientation");
         bool ok = false;
-        const Orientation orientation = (Orientation)mii.value().toInt(&ok);
+        const int orientation = mii.value().toInt(&ok);
         if (!ok) {
             return 0;
-        }
-
-        switch (orientation) {
-        case NOT_AVAILABLE:
-        case NORMAL:
-            return 0;
-
-        case ROT_90:
-            return 90;
-
-        case ROT_180:
-            return 180;
-
-        case ROT_270:
-            return 270;
-
-        case HFLIP:
-        case VFLIP:
-        case TRANSPOSE:
-        case TRANSVERSE:
+        } else if(orientation != 0 || orientation != 90
+            || orientation != 180 || orientation != 270) {
             kWarning() << "Can't represent an orientation value of" << orientation << "as an angle (" << _url << ')';
             return 0;
         }
-
-        kWarning() << "Don't know how to handle an orientation value of" << orientation << '(' << _url << ')';
-        return 0;
     }
 
     QVariantMap mAttributes;
