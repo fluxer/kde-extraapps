@@ -47,7 +47,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include "kipiimagecollectionselector.h"
 #include "kipiuploadwidget.h"
 #include <lib/contextmanager.h>
-#include <lib/jpegcontent.h>
 #include <lib/mimetypeutils.h>
 #include <lib/timeutils.h>
 #include <lib/sorteddirmodel.h>
@@ -141,13 +140,8 @@ private:
 
     QString comment() const
     {
-        if (!_url.isLocalFile()) return QString();
-
-        JpegContent content;
-        bool ok = content.load(_url.toLocalFile());
-        if (!ok) return QString();
-
-        return content.comment();
+#warning dummy comment support, is exiv2 support not enough?
+        return QString();
     }
 
     int orientation() const
