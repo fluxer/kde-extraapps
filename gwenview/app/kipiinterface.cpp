@@ -160,10 +160,13 @@ private:
         } else if(orientation != 0 || orientation != 90
             || orientation != 180 || orientation != 270) {
             kWarning() << "Can't represent an orientation value of" << orientation << "as an angle (" << _url << ')';
-            return 0;
+            return 0; {
+        } else {
+            return orientation;
         }
     }
 
+#warning unreachable attributes reset?
     QVariantMap mAttributes;
 };
 
