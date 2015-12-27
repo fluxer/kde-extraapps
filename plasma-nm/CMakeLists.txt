@@ -65,4 +65,3 @@ add_subdirectory(vpn)
 add_subdirectory(settings)
 
 include(MacroOptionalAddSubdirectory)
-macro_optional_add_subdirectory( po )
