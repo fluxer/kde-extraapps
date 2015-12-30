@@ -16,7 +16,6 @@ set(mandelbrot_SRCS
     detectSSE2.cpp
     mix.cpp
 )
-kde4_add_ui_files(mandelbrot_SRCS config.ui)
 
 # The x86-specific stuff below does not mean that this code is non-portable!
 # The idea is that x86 (32bit) is the ONLY major architecture on which vectorization (SSE2) may or may not be available.
