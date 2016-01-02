@@ -1,8 +1,6 @@
 project(Amarok)
 
-cmake_minimum_required(VERSION 2.6.2)
-
-set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules )
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
 message(STATUS "${CMAKE_MODULE_PATH}")
 
@@ -67,11 +65,11 @@ endif()
 if(WITH_DESKTOP_UI)
     add_definitions(-DDESKTOP_UI)
 endif()
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fmessage-length=0")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fmessage-length=0")
 if (CMAKE_COMPILER_IS_GNUCXX)
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
     if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--as-needed")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--as-needed")
     endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 endif (CMAKE_COMPILER_IS_GNUCXX)
 
@@ -80,15 +78,14 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}/shared
 )
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")  # Require C++11
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")  # Require C++11
 
 # WORKAROUND for Clang bug: http://llvm.org/bugs/show_bug.cgi?id=15651
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND WIN32)
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-delayed-template-parsing")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-delayed-template-parsing")
 endif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND WIN32)
 
 
-include( KDE4Defaults )
 include( MacroBoolTo01 )
 include( MacroLibrary )
 add_definitions( ${QT_DEFINITIONS} ${KDE4_DEFINITIONS} )
@@ -128,8 +125,6 @@ add_subdirectory( shared )
 
 if( WITH_PLAYER )
     include(MacroLogFeature)
-
-    macro_log_feature( KDE4_FOUND "kdelibs" "The toolkit Amarok uses to build" "http://www.kde.org" TRUE ${KDE_MIN_VERSION} "" )
 
     macro_log_feature( QT_QTOPENGL_FOUND "QtOpenGL" "Required for the spectrum analyzer" "http://qt-project.org" FALSE "" "" )
 

@@ -1,27 +1,5 @@
 project(krfb)
 
-if(NOT INSIDE_KDENETWORK)
-    message("Not building inside KDENetwork, loading KDE CMake Macros.")
-
-    find_package(KDE4 4.14.3 REQUIRED)
-
-    include(KDE4Defaults)
-    include(MacroLibrary)
-
-    include(CheckIncludeFile)
-    include(CheckIncludeFiles)
-    include(CheckSymbolExists)
-    include(CheckFunctionExists)
-    include(CheckLibraryExists)
-    include(CheckPrototypeExists)
-    include(CheckTypeSize)
-
-    set(CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS})
-    add_definitions(${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS})
-    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-    include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
-endif(NOT INSIDE_KDENETWORK)
-
 find_package(LibVNCServer REQUIRED)
 
 macro_optional_find_package(TelepathyQt4)
@@ -33,15 +11,16 @@ macro_log_feature(KTP_FOUND "KTP" "KDE Telepathy" "https://projects.kde.org/proj
 macro_bool_to_01(X11_Xdamage_FOUND HAVE_XDAMAGE)
 macro_bool_to_01(X11_XShm_FOUND HAVE_XSHM)
 
-include_directories ("${CMAKE_CURRENT_BINARY_DIR}/krfb"
-                     "${CMAKE_CURRENT_SOURCE_DIR}/krfb"
-                     "${CMAKE_CURRENT_SOURCE_DIR}/krfb/ui"
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}/krfb
+    ${CMAKE_CURRENT_SOURCE_DIR}/krfb
+    ${CMAKE_CURRENT_SOURCE_DIR}/krfb/ui
 )
 
 if(Q_WS_X11)
-  if(NOT X11_XTest_FOUND)
-    message(FATAL_ERROR "krfb requires the libXtst (http://xorg.freedesktop.org) to be built")
-  endif(NOT X11_XTest_FOUND)
+    if(NOT X11_XTest_FOUND)
+        message(FATAL_ERROR "krfb requires the libXtst (http://xorg.freedesktop.org) to be built")
+    endif(NOT X11_XTest_FOUND)
 endif(Q_WS_X11)
 
 add_subdirectory(krfb)

@@ -1,4 +1,4 @@
-# Main CMake file for building Quassel IRC
+# Main CMake file for building Kuassel IRC
 #
 # See INSTALL for possible CMake options (or read the code, Luke)
 #####################################################################
@@ -6,14 +6,12 @@
 # General setup
 #####################################################################
 
-cmake_minimum_required(VERSION 2.8.9)
 project(KuasselIRC)
 
 # Version
 set(QUASSEL_VERSION_STRING "0.12")
 
 # General conveniences
-set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Tell CMake about or own modules
@@ -171,13 +169,3 @@ add_subdirectory(pics)
 #####################################################################
 
 add_subdirectory(src)
-
-# Set up and display feature summary
-#####################################################################
-
-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    feature_summary(WHAT ALL
-                INCLUDE_QUIET_PACKAGES
-                FATAL_ON_MISSING_REQUIRED_PACKAGES
-    )
-endif()
