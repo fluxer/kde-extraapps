@@ -199,8 +199,6 @@ void ExplorerWindow::syncToGraphicsWidget()
 {
     m_adjustViewTimer->stop();
     if (m_view && m_graphicsWidget) {
-        QSize prevSize = size();
-
         //set the sizehints correctly:
         int left, top, right, bottom;
         getContentsMargins(&left, &top, &right, &bottom);
