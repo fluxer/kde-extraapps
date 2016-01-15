@@ -73,7 +73,7 @@ kde4_add_kcfg_files(kuser_SRCS ku_prefs.kcfgc)
 
 add_executable(kuser ${kuser_SRCS})
 
-target_link_libraries(kuser ${KDE4_KIO_LIBS} ${KDE4_KLDAP_LIBS} kntlm)
+target_link_libraries(kuser ${KDE4_KIO_LIBS} ${KDE4_KLDAP_LIBS})
 if(HAVE_CRYPT_LIBRARY)
 	target_link_libraries(kuser crypt)
 endif(HAVE_CRYPT_LIBRARY)
