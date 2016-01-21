@@ -25,7 +25,7 @@
 #include <kdeversion.h>
 #include <kio/thumbcreator.h>
 
-class PoCreator : public ThumbCreatorV2
+class PoCreator : public ThumbCreator
 {
     public:
         explicit PoCreator();
