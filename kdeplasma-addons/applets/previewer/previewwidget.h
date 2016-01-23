@@ -31,7 +31,11 @@ class FrameSvg;
 class Svg;
 }
 
+#ifndef QT_KATIE
 class QStyleOptionViewItemV4;
+#else
+class QStyleOptionViewItem;
+#endif
 class KUrl;
 class QGraphicsSceneWheelEvent;
 class QGraphicsSceneResizeEvent;

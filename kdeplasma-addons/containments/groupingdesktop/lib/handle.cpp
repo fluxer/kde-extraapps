@@ -68,7 +68,7 @@ Handle::Handle(GroupingContainment *parent, AbstractGroup *group)
         m_widget(group),
         m_currentView(group->view())
 {
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setAcceptTouchEvents(true);
 }
 
@@ -144,7 +144,7 @@ void Handle::switchContainment(GroupingContainment *containment, const QPointF &
         Applet *applet = m_applet;
         m_applet = 0; //make sure we don't try to act on the applet again
         applet->removeSceneEventFilter(this);
-        setAcceptsHoverEvents(false);
+        setAcceptHoverEvents(false);
 //         forceDisappear(); //takes care of event filter and killing handle
         applet->disconnect(this); //make sure the applet doesn't tell us to do anything
         //applet->setZValue(m_zValue);
@@ -153,7 +153,7 @@ void Handle::switchContainment(GroupingContainment *containment, const QPointF &
         AbstractGroup *group = m_group;
         m_group = 0; //make sure we don't try to act on the applet again
         group->removeSceneEventFilter(this);
-        setAcceptsHoverEvents(false);
+        setAcceptHoverEvents(false);
 //         forceDisappear(); //takes care of event filter and killing handle
         group->disconnect(this); //make sure the applet doesn't tell us to do anything
         //applet->setZValue(m_zValue);
