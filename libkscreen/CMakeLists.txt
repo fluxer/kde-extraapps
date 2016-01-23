@@ -16,7 +16,6 @@ if(POLICY CMP0017)
 endif()
 
 enable_testing()
-find_package(QJSON 0.8 REQUIRED)
 add_definitions(${KDE4_DEFINITIONS})
 include(CheckCXXCompilerFlag)
 
@@ -34,8 +33,10 @@ set_package_properties(X11_XCB PROPERTIES DESCRIPTION "XCB extension to work wit
     PURPOSE "Needed to build XRandR 1.1 backend"
 )
 
-# Required to build on Gentoo
-link_directories(${QJSON_LIBRARY_DIRS})
+if(ENABLE_TESTING)
+    find_package(QJSON 0.8 REQUIRED)
+    link_directories(${QJSON_LIBRARY_DIRS})
+endif()
 
 check_cxx_compiler_flag(-fvisibility=hidden _HAVE_VISIBILITY)
 if (_HAVE_VISIBILITY AND NOT WIN32)
