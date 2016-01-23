@@ -27,6 +27,9 @@ macro_log_feature(QTOAUTH_FOUND "QtOAuth" "QtOAuth Library - required to build t
 macro_optional_find_package(Marble)
 macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" FALSE "" "RECOMMENDED: Marble is used to provide a desktop globe wallpaper for Plasma.")
 
+macro_optional_find_package(QImageBlitz)
+macro_log_feature(QIMAGEBLITZ_FOUND "QImageBlitz" "QImageBlitz library" "http://download.kde.org/stable/qimageblitz/" FALSE "" "RECOMMENDED: QImageBlitz is used to provide a pattern wallpaper for Plasma.")
+
 macro_optional_find_package(DBusMenuQt)
 macro_log_feature(DBUSMENUQT_FOUND "DBusMenuQt" "DBusMenu Qt" "https://launchpad.net/libdbusmenu-qt/" FALSE "" "Needed for Unity support in IconTasks.")
 

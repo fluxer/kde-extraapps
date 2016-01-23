@@ -1,7 +1,5 @@
 project(plasma-wallpaper-pattern)
 
-find_package(QImageBlitz REQUIRED)
-
 include_directories(${QIMAGEBLITZ_INCLUDES})
 
 set(pattern_SRCS
