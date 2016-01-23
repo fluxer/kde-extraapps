@@ -110,13 +110,15 @@ kpEffectsDialog::kpEffectsDialog (bool actOnSelection,
     // TODO: What about translations?
     // sync: order in selectEffect().
     m_effectsComboBox->addItem (i18n ("Balance"));
-    m_effectsComboBox->addItem (i18n ("Emboss"));
-    m_effectsComboBox->addItem (i18n ("Flatten"));
     m_effectsComboBox->addItem (i18n ("Histogram Equalizer"));
     m_effectsComboBox->addItem (i18n ("Hue, Saturation, Value"));
     m_effectsComboBox->addItem (i18n ("Invert"));
     m_effectsComboBox->addItem (i18n ("Reduce Colors"));
+#ifdef HAVE_QIMAGEBLITZ
     m_effectsComboBox->addItem (i18n ("Soften & Sharpen"));
+    m_effectsComboBox->addItem (i18n ("Emboss"));
+    m_effectsComboBox->addItem (i18n ("Flatten"));
+#endif
 
     label->setBuddy (m_effectsComboBox);
     effectContainer->setStretchFactor (m_effectsComboBox, 1);
@@ -243,32 +245,34 @@ void kpEffectsDialog::selectEffect (int which)
         break;
 
     case 1:
-        CREATE_EFFECT_WIDGET (kpEffectEmbossWidget);
-        break;
-
-    case 2:
-        CREATE_EFFECT_WIDGET (kpEffectFlattenWidget);
-        break;
-    
-    case 3:
         CREATE_EFFECT_WIDGET (kpEffectToneEnhanceWidget);
         break;
 
-    case 4:
+    case 2:
         CREATE_EFFECT_WIDGET (kpEffectHSVWidget);
         break;
 
-    case 5:
+    case 3:
         CREATE_EFFECT_WIDGET (kpEffectInvertWidget);
         break;
 
-    case 6:
+    case 4:
         CREATE_EFFECT_WIDGET (kpEffectReduceColorsWidget);
+        break;
+
+#ifdef HAVE_QIMAGEBLITZ
+    case 5:
+        CREATE_EFFECT_WIDGET (kpEffectEmbossWidget);
+        break;
+
+    case 6:
+        CREATE_EFFECT_WIDGET (kpEffectFlattenWidget);
         break;
 
     case 7:
         CREATE_EFFECT_WIDGET (kpEffectBlurSharpenWidget);
         break;
+#endif
     }
 #undef CREATE_EFFECT_WIDGET
 

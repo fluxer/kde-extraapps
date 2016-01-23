@@ -1,6 +1,6 @@
 project(kolourpaint)
 
-find_package(QImageBlitz REQUIRED)
+find_package(QImageBlitz)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 include_directories(
@@ -60,7 +60,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/toolbars/options
 
     ${KDE4_INCLUDES}
-    ${QIMAGEBLITZ_INCLUDES}
 )
 
 add_subdirectory( pics )
@@ -99,11 +98,8 @@ create_license(${CMAKE_CURRENT_SOURCE_DIR}/COPYING ${CMAKE_CURRENT_BINARY_DIR}/k
 
 set(kolourpaint_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectBalanceCommand.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectBlurSharpenCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectClearCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectCommandBase.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectEmbossCommand.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectFlattenCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectGrayscaleCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectHSVCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectInvertCommand.cpp
@@ -164,9 +160,6 @@ set(kolourpaint_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/generic/widgets/kpResizeSignallingLabel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/generic/widgets/kpSubWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectBalance.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectBlurSharpen.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectEmboss.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectFlatten.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectGrayscale.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectHSV.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectInvert.cpp
@@ -278,9 +271,6 @@ set(kolourpaint_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/colorSimilarity/kpColorSimilarityHolder.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/colorSimilarity/kpColorSimilarityToolBarItem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectBalanceWidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectBlurSharpenWidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectEmbossWidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectFlattenWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectHSVWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectInvertWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectReduceColorsWidget.cpp
@@ -308,8 +298,24 @@ set(kolourpaint_lgpl_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/lgpl/generic/kpUrlFormatter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lgpl/generic/kpColorCollection.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/lgpl/generic/widgets/kpColorCellsBase.cpp
-    )
+)
 
+if(QIMAGEBLITZ_FOUND)
+    set(kolourpaint_SRCS
+        ${kolourpaint_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectBlurSharpenCommand.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectEmbossCommand.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/commands/imagelib/effects/kpEffectFlattenCommand.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectBlurSharpenWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectEmbossWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/imagelib/effects/kpEffectFlattenWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectBlurSharpen.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectEmboss.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/imagelib/effects/kpEffectFlatten.cpp
+    )
+    include_directories(${QIMAGEBLITZ_INCLUDES})
+    add_definitions(-DHAVE_QIMAGEBLITZ)
+endif()
 
 #
 # LGPL Library
@@ -331,8 +337,10 @@ install(TARGETS kolourpaint_lgpl ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 add_executable(kolourpaint ${kolourpaint_SRCS})
 
-target_link_libraries(kolourpaint ${KDE4_KIO_LIBS} ${KDE4_KPRINTUTILS_LIBS}
-${QIMAGEBLITZ_LIBRARIES} kolourpaint_lgpl)
+target_link_libraries(kolourpaint ${KDE4_KIO_LIBS} ${KDE4_KPRINTUTILS_LIBS} kolourpaint_lgpl)
+if(QIMAGEBLITZ_FOUND)
+    target_link_libraries(kolourpaint ${QIMAGEBLITZ_LIBRARIES})
+endif()
 
 install(TARGETS kolourpaint ${INSTALL_TARGETS_DEFAULT_ARGS})
 
