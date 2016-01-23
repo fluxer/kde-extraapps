@@ -33,7 +33,7 @@ ContainmentSelectionLayer::ContainmentSelectionLayer( QGraphicsItem *parent )
     , m_mouseHover( 0 )
 {
     m_containment = static_cast<Plasma::Containment *>( parent );
-    setAcceptsHoverEvents( true );
+    setAcceptHoverEvents( true );
     m_zoomInText = new QGraphicsSimpleTextItem( i18n( "Zoom In" ), this );
     
     QFont font;

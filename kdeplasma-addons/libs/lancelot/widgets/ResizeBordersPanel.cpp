@@ -35,7 +35,7 @@ public:
         BorderItem(QGraphicsItem * parent = 0, ResizeBordersPanel::Private * d = 0, int position = 0)
             : Widget(parent), m_position(position), m_d(d)
         {
-            setAcceptsHoverEvents(true);
+            setAcceptHoverEvents(true);
         }
 
     protected:

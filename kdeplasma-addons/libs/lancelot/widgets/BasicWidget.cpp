@@ -67,7 +67,7 @@ class BasicWidget::Private {
 
     void init(BasicWidget * parent)
     {
-        parent->setAcceptsHoverEvents(true);
+        parent->setAcceptHoverEvents(true);
         // parent->resize(140, 38);
         parent->setGroupByName("BasicWidget");
     }

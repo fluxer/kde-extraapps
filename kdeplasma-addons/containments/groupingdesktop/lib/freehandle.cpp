@@ -112,7 +112,7 @@ void FreeHandle::init()
     connect(m_leaveTimer, SIGNAL(timeout()), this, SLOT(leaveTimeout()));
     connect(widget(), SIGNAL(destroyed(QObject*)), this, SLOT(widgetDestroyed()));
 
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     m_hoverTimer->start();
 
     //icons
@@ -1005,7 +1005,7 @@ void FreeHandle::startFading(FadeType anim, const QPointF &hoverPos, bool preser
 
 void FreeHandle::forceDisappear()
 {
-    setAcceptsHoverEvents(false);
+    setAcceptHoverEvents(false);
     startFading(FadeOut, m_entryPos);
 }
 

@@ -109,7 +109,7 @@ Notes::Notes(QObject *parent, const QVariantList &args)
     setAspectRatioMode(Plasma::IgnoreAspectRatio);
     setHasConfigurationInterface(true);
     setAcceptDrops(true);
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setBackgroundHints(Plasma::Applet::NoBackground);
     m_saveTimer.setSingleShot(true);
     connect(&m_saveTimer, SIGNAL(timeout()), this, SLOT(saveNote()));

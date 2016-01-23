@@ -47,7 +47,7 @@ WebSlice::WebSlice(QObject *parent, const QVariantList &args)
     setPopupIcon("internet-web-browser");
     setAspectRatioMode(Plasma::IgnoreAspectRatio );
     setAcceptDrops(true);
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
 
     setMinimumSize(64, 64);
     resize(800, 600);

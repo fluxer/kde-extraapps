@@ -52,7 +52,7 @@ Scroller::Scroller(QGraphicsItem *parent) :
 {
 
     setAcceptedMouseButtons(Qt::LeftButton);
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
 
     m_hovered = false;

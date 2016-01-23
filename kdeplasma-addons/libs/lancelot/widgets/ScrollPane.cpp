@@ -92,7 +92,7 @@ public:
 ScrollPane::ScrollPane(QGraphicsItem * parent) //>
     : Widget(parent), d(new Private(this))
 {
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     d->layout = new /*FlipLayout <*/ FullBorderLayout /*>*/ (this);
     // d->layout->setParentLayoutItem(this);
 
@@ -104,7 +104,7 @@ ScrollPane::ScrollPane(QGraphicsItem * parent) //>
     d->horizontal->setZValue(1);
 
     d->centerContainer = new QGraphicsWidget(this);
-    d->centerContainer->setAcceptsHoverEvents(true);
+    d->centerContainer->setAcceptHoverEvents(true);
     d->centerContainer->setFlag(QGraphicsItem::ItemClipsChildrenToShape);
 
     connect (d->vertical, SIGNAL(valueChanged(int)),

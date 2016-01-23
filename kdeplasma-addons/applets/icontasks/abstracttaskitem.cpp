@@ -354,7 +354,7 @@ AbstractTaskItem::AbstractTaskItem(QGraphicsWidget *parent, Tasks *applet)
     m_layoutAnimation->setDuration(250);
 
     setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
     setFlag(QGraphicsItem::ItemIsFocusable);

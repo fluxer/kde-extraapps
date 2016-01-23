@@ -194,7 +194,7 @@ LancelotApplet::LancelotApplet(QObject * parent,
 {
     setHasConfigurationInterface(true);
     setBackgroundHints(NoBackground);
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
 
     d->waitClick.setInterval(500); // 1/2 sec
     d->waitClick.setSingleShot(true);
@@ -282,7 +282,7 @@ void LancelotApplet::iconSizeChanged(int group)
 void LancelotApplet::init()
 {
     d->lancelot->addClient();
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     loadConfig();
     applyConfig();
     connect(

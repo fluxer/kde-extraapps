@@ -56,7 +56,7 @@ Handle::Handle(GroupingContainment *parent, Plasma::Applet *applet)
         m_widget(applet),
         m_currentView(applet->view())
 {
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setAcceptTouchEvents(true);
 }
 

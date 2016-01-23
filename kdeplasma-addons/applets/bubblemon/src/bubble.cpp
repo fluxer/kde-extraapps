@@ -57,7 +57,7 @@ Bubble::Bubble(QObject *parent, const QVariantList &args)
 
     connect(m_svg, SIGNAL(repaintNeeded()), this, SLOT(repaintNeeded()));
 
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setAspectRatioMode(Plasma::Square);
     setBackgroundHints(NoBackground);
     

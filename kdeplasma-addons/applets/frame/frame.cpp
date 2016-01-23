@@ -64,7 +64,7 @@ Frame::Frame(QObject *parent, const QVariantList &args)
 {
     setHasConfigurationInterface(true);
     setAcceptDrops(true);
-    setAcceptsHoverEvents(true);
+    setAcceptHoverEvents(true);
     setCacheMode(QGraphicsItem::DeviceCoordinateCache);
     resize(400, 300);
     //make size()==contentssize(), resolves auto-shrinking once for all

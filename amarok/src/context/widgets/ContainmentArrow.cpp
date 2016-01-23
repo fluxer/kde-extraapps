@@ -45,7 +45,7 @@ ContainmentArrow::ContainmentArrow( QGraphicsItem *parent, int direction ) :
     setFlag( ItemClipsToShape, false );
     setFlag( ItemClipsChildrenToShape, false );
     setFlag( ItemIgnoresTransformations, true );
-    setAcceptsHoverEvents( true );
+    setAcceptHoverEvents( true );
 
     m_timer = new QTimer( this );
     connect( m_timer, SIGNAL(timeout()), this, SLOT(timeToHide()) );
