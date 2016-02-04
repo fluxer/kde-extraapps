@@ -24,6 +24,7 @@
 #include <QGraphicsView>
 #include <QIcon>
 #include <QtCore/qrect.h>
+#include <QBasicTimer>
 #include <QTimer>
 #include <QPointer>
 
