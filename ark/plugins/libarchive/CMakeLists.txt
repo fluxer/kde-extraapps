@@ -1,7 +1,7 @@
 include_directories(${LibArchive_INCLUDE_DIRS})
 
 ########### next target ###############
-set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "application/x-deb;application/x-cd-image;application/x-bcpio;application/x-cpio;application/x-cpio-compressed;application/x-sv4cpio;application/x-sv4crc;application/x-rpm;application/x-source-rpm;application/vnd.ms-cab-compressed;application/x-servicepack;")
+set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "application/x-archive;application/x-deb;application/x-cd-image;application/x-bcpio;application/x-cpio;application/x-cpio-compressed;application/x-sv4cpio;application/x-sv4crc;application/x-rpm;application/x-source-rpm;application/vnd.ms-cab-compressed;application/x-servicepack;")
 set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "application/x-tar;application/x-compressed-tar;application/x-bzip;application/x-gzip;application/x-bzip-compressed-tar;application/x-gzip-compressed-tar;application/x-tarz;application/x-xz-compressed-tar;application/x-lzma-compressed-tar;application/x-java-archive;application/zip;application/x-7z-compressed;")
 
 configure_file(

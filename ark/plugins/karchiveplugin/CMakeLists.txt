@@ -1,6 +1,6 @@
 ########### next target ###############
 
-set(SUPPORTED_KARCHIVE_MIMETYPES "application/zip;application/x-bzip;application/x-gzip;application/x-zip-compressed;application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;application/x-gzip-compressed-tar;")
+set(SUPPORTED_KARCHIVE_MIMETYPES "application/x-archive;application/zip;application/x-bzip;application/x-gzip;application/x-zip-compressed;application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;application/x-gzip-compressed-tar;")
 
 set(kerfuffle_karchive_SRCS karchiveplugin.cpp)
 
