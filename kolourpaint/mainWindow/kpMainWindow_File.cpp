@@ -430,13 +430,10 @@ KUrl::List kpMainWindow::askForOpenURLs(const QString &caption, bool allowMultip
 {
     QStringList mimeTypes = KImageIO::mimeTypes (KImageIO::Reading);
 #if DEBUG_KP_MAIN_WINDOW
-    QStringList sortedMimeTypes = mimeTypes;
-    sortedMimeTypes.sort ();
     kDebug () << "kpMainWindow::askForURLs(allowMultiple="
                << allowMultipleURLs
                << ")" << endl
-               << "\tmimeTypes=" << mimeTypes << endl
-               << "\tsortedMimeTypes=" << sortedMimeTypes << endl;
+               << "\tmimeTypes=" << mimeTypes << endl;
 #endif
     QString filter = mimeTypes.join (" ");
 

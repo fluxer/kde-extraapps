@@ -19,7 +19,6 @@
 
 
 #include <kapplication.h>
-#include <kimageio.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>

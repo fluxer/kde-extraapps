@@ -40,7 +40,6 @@
 
 #include <kdebug.h>
 #include <kglobal.h>
-#include <kimageio.h>
 #include <klocale.h>
 
 #include <kpColor.h>

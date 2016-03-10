@@ -53,8 +53,8 @@ NotificationsConfig::NotificationsConfig( QWidget* parent )
 
     connect( m_osdPreview, SIGNAL(positionChanged()), SLOT(slotPositionChanged()) );
 
-    const int numScreens = QApplication::desktop()->numScreens();
-    for( int i = 0; i < numScreens; i++ )
+    const int screenCount = QApplication::desktop()->screenCount();
+    for( int i = 0; i < screenCount; i++ )
         kcfg_OsdScreen->addItem( QString::number( i ) );
 
     connect( kcfg_OsdTextColor,        SIGNAL(changed(QColor)),

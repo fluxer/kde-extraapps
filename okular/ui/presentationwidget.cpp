@@ -194,14 +194,14 @@ PresentationWidget::PresentationWidget( QWidget * parent, Okular::Document * doc
     m_topBar->addAction( eraseDrawingAct );
     addAction( eraseDrawingAct );
     QDesktopWidget *desktop = QApplication::desktop();
-    if ( desktop->numScreens() > 1 )
+    if ( desktop->screenCount() > 1 )
     {
         m_topBar->addSeparator();
         m_screenSelect = new KSelectAction( KIcon( "video-display" ), i18n( "Switch Screen" ), m_topBar );
         m_screenSelect->setToolBarMode( KSelectAction::MenuMode );
         m_screenSelect->setToolButtonPopupMode( QToolButton::InstantPopup );
         m_topBar->addAction( m_screenSelect );
-        const int screenCount = desktop->numScreens();
+        const int screenCount = desktop->screenCount();
         for ( int i = 0; i < screenCount; ++i )
         {
             QAction *act = m_screenSelect->addAction( i18nc( "%1 is the screen number (0, 1, ...)", "Screen %1", i ) );
@@ -1230,7 +1230,7 @@ void PresentationWidget::recalcGeometry()
     {
         screen = desktop->primaryScreen();
     }
-    else if ( preferenceScreen >= 0 && preferenceScreen < desktop->numScreens() )
+    else if ( preferenceScreen >= 0 && preferenceScreen < desktop->screenCount() )
     {
         screen = preferenceScreen;
     }

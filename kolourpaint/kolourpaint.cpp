@@ -30,7 +30,6 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
-#include <kimageio.h>
 #include <klocale.h>
 #include <KMessageBox>
 

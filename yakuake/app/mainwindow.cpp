@@ -596,7 +596,8 @@ void MainWindow::updateScreenMenu()
     action->setData(0);
     action->setChecked(Settings::screen() == 0);
 
-    for (int i = 1; i <= KApplication::desktop()->numScreens(); i++)
+    const int screencount = KApplication::desktop()->screenCount();
+    for (int i = 1; i <= screencount; i++)
     {
         action = m_screenMenu->addAction(i18nc("@item:inmenu", "Screen <numid>%1</numid>", i));
         action->setCheckable(true);
@@ -605,7 +606,7 @@ void MainWindow::updateScreenMenu()
     }
 
     action = m_screenMenu->menuAction();
-    action->setVisible(KApplication::desktop()->numScreens() > 1);
+    action->setVisible(screencount > 1);
 }
 
 void MainWindow::updateWindowSizeMenus()
@@ -1268,7 +1269,7 @@ QRect MainWindow::getDesktopGeometry()
 
     int currentDesktop = KWindowSystem::windowInfo(winId(), NET::WMDesktop).desktop();
 
-    if (KApplication::desktop()->numScreens() > 1)
+    if (KApplication::desktop()->screenCount() > 1)
     {
         const QList<WId> allWindows = KWindowSystem::windows();
         QList<WId> offScreenWindows;

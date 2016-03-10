@@ -149,7 +149,7 @@ KSnapshot::KSnapshot(QWidget *parent,  KSnapshotObject::CaptureMode mode )
     connect(this, SIGNAL(user1Clicked()), SLOT(slotCopy()));
     connect(mainWidget->comboMode, SIGNAL(activated(int)), SLOT(slotModeChanged(int)));
 
-    if (qApp->desktop()->numScreens() < 2) {
+    if (qApp->desktop()->screenCount() < 2) {
         mainWidget->comboMode->removeItem(CurrentScreen);
     }
 

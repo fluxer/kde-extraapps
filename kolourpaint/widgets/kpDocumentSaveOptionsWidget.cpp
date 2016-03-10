@@ -727,7 +727,6 @@ void kpDocumentSaveOptionsWidget::updatePreview ()
         // Leave <image> as invalid.
         // TODO: This code path has not been well tested.
         //       Will we trigger divide by zero errors in "m_previewDialog"?
-        // KDE3: Backport any fixes to KDE 3.
     }
 
     // REFACTOR: merge with kpDocument::getPixmapFromFile()
