@@ -68,12 +68,14 @@ Shell::Shell( const QString &serializedOptions )
   // this routine will find and load our Part.  it finds the Part by
   // name which is a bad idea usually.. but it's alright in this
   // case since our Part is made for this Shell
-  m_partFactory = KPluginLoader("okularpart").factory();
+  KPluginLoader loader("okularpart");
+  m_partFactory = loader.factory();
   if (!m_partFactory)
   {
     // if we couldn't find our Part, we exit since the Shell by
     // itself can't do anything useful
     m_isValid = false;
+    kWarning() << loader.errorString();
     KMessageBox::error(this, i18n("Unable to find the Okular component."));
     return;
   }
