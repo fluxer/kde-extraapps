@@ -3,7 +3,7 @@ include (MacroLogFeature)
 set(LIBSPECTRE_MINIMUM_VERSION "0.2")
 
 macro_optional_find_package(Poppler)
-macro_log_feature(HAVE_POPPLER_0_12_1 "Poppler-Qt4" "A PDF rendering library" "http://poppler.freedesktop.org" FALSE "0.12.1" "Support for PDF files in okular.")
+macro_log_feature(POPPLER_FOUND "Poppler-Qt4" "A PDF rendering library" "http://poppler.freedesktop.org" FALSE "0.12.1" "Support for PDF files in okular.")
 
 macro_optional_find_package(LibSpectre)
 macro_log_feature(LIBSPECTRE_FOUND "libspectre" "A PostScript rendering library" "http://libspectre.freedesktop.org/wiki/" FALSE "${LIBSPECTRE_MINIMUM_VERSION}" "Support for PS files in okular.")
@@ -30,9 +30,9 @@ macro_log_feature(QMOBIPOCKET_FOUND "libqmobipocket" "A library for reading Mobi
 
 # let's enable the generators properly configured
 
-if(POPPLER_FOUND AND HAVE_POPPLER_0_12_1)
+if(POPPLER_FOUND)
   add_subdirectory(poppler)
-endif(POPPLER_FOUND AND HAVE_POPPLER_0_12_1)
+endif(POPPLER_FOUND)
 
 if(LIBSPECTRE_FOUND)
   add_subdirectory(spectre)
