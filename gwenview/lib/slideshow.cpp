@@ -162,16 +162,9 @@ struct SlideShowPrivate
 
     void doStart()
     {
-        if (MimeTypeUtils::urlKind(mCurrentUrl) == MimeTypeUtils::KIND_VIDEO) {
-            LOG("mState = WaitForEndOfUrl");
-            // Just in case
-            mTimer->stop();
-            mState = WaitForEndOfUrl;
-        } else {
-            LOG("mState = Started");
-            mTimer->start();
-            mState = Started;
-        }
+        LOG("mState = Started");
+        mTimer->start();
+        mState = Started;
     }
 };
 

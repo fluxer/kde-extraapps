@@ -56,7 +56,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include "orientation.h"
 #include "svgdocumentloadedimpl.h"
 #include "urlutils.h"
-#include "videodocumentloadedimpl.h"
 #include "gwenviewconfig.h"
 
 namespace Gwenview
@@ -122,10 +121,6 @@ struct LoadingDocumentImplPrivate
         case MimeTypeUtils::KIND_SVG_IMAGE:
             return false;
 
-        case MimeTypeUtils::KIND_VIDEO:
-            q->switchToImpl(new VideoDocumentLoadedImpl(q->document()));
-            return true;
-
         default:
             q->setDocumentErrorString(
                 i18nc("@info", "Gwenview cannot display documents of type %1.", mimeType)
@@ -157,9 +152,6 @@ struct LoadingDocumentImplPrivate
 
         case MimeTypeUtils::KIND_SVG_IMAGE:
             q->switchToImpl(new SvgDocumentLoadedImpl(q->document(), mData));
-            break;
-
-        case MimeTypeUtils::KIND_VIDEO:
             break;
 
         default:

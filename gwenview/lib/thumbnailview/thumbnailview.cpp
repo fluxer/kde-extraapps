@@ -582,14 +582,7 @@ void ThumbnailView::setBrokenThumbnail(const KFileItem& item)
     }
     Thumbnail& thumbnail = it.value();
     MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
-    if (kind == MimeTypeUtils::KIND_VIDEO) {
-        // Special case for videos because our kde install may come without
-        // support for video thumbnails so we show the mimetype icon instead of
-        // a broken image icon
-        ThumbnailGroup::Enum group = ThumbnailGroup::fromPixelSize(d->mThumbnailSize.height());
-        QPixmap pix = item.pixmap(ThumbnailGroup::pixelSize(group));
-        thumbnail.initAsIcon(pix);
-    } else if (kind == MimeTypeUtils::KIND_DIR) {
+    if (kind == MimeTypeUtils::KIND_DIR) {
         // Special case for folders because ThumbnailProvider does not return a
         // thumbnail if there is no images
         thumbnail.mWaitingForThumbnail = false;

@@ -455,13 +455,6 @@ void ThumbnailProvider::checkThumbnail()
                 size = QSize(width, height);
             } else {
                 kWarning() << "Thumbnail for" << mOriginalUri << "does not contain correct image size information";
-                // Don't try to determine the size of a video, it probably won't work and
-                // will cause high I/O usage with big files (bug #307007).
-                if (MimeTypeUtils::urlKind(mCurrentUrl) == MimeTypeUtils::KIND_VIDEO) {
-                    emitThumbnailLoaded(thumb, QSize());
-                    determineNextIcon();
-                    return;
-                }
                 KFileMetaInfo fmi(mCurrentUrl);
                 if (fmi.isValid()) {
                     KFileMetaInfoItem item = fmi.item("Dimensions");

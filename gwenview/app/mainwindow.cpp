@@ -547,8 +547,7 @@ struct MainWindow::Private
             MimeTypeUtils::KIND_DIR
             | MimeTypeUtils::KIND_ARCHIVE
             | MimeTypeUtils::KIND_RASTER_IMAGE
-            | MimeTypeUtils::KIND_SVG_IMAGE
-            | MimeTypeUtils::KIND_VIDEO);
+            | MimeTypeUtils::KIND_SVG_IMAGE);
 
         connect(mDirModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
                 q, SLOT(slotDirModelNewItems()));
@@ -1364,7 +1363,6 @@ void MainWindow::toggleSlideShow()
             switch (kind) {
             case MimeTypeUtils::KIND_SVG_IMAGE:
             case MimeTypeUtils::KIND_RASTER_IMAGE:
-            case MimeTypeUtils::KIND_VIDEO:
                 list << item.url();
                 break;
             default:
@@ -1441,7 +1439,6 @@ void MainWindow::toggleMenuBar()
 void MainWindow::loadConfig()
 {
     d->mDirModel->setBlackListedExtensions(GwenviewConfig::blackListedExtensions());
-    d->mDirModel->adjustKindFilter(MimeTypeUtils::KIND_VIDEO, GwenviewConfig::listVideos());
 
     d->mFileOpenRecentAction->loadEntries(KConfigGroup(KGlobal::config(), "Recent Files"));
     d->mStartMainPage->loadConfig();

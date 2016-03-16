@@ -52,7 +52,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/documentview/rasterimageview.h>
 #include <lib/documentview/rasterimageviewadapter.h>
 #include <lib/documentview/svgviewadapter.h>
-#include <lib/documentview/videoviewadapter.h>
 #include <lib/hud/hudbutton.h>
 #include <lib/hud/hudwidget.h>
 #include <lib/graphicswidgetfloater.h>
@@ -358,11 +357,6 @@ void DocumentView::createAdapterForDocument()
         break;
     case MimeTypeUtils::KIND_SVG_IMAGE:
         adapter = new SvgViewAdapter;
-        break;
-    case MimeTypeUtils::KIND_VIDEO:
-        adapter = new VideoViewAdapter;
-        connect(adapter, SIGNAL(videoFinished()),
-                SIGNAL(videoFinished()));
         break;
     case MimeTypeUtils::KIND_UNKNOWN:
         adapter = new MessageViewAdapter;

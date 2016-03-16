@@ -158,9 +158,6 @@ Kind mimeTypeKind(const QString& mimeType)
     if (svgImageMimeTypes().contains(mimeType)) {
         return KIND_SVG_IMAGE;
     }
-    if (mimeType.startsWith(QLatin1String("video/"))) {
-        return KIND_VIDEO;
-    }
     if (mimeType.startsWith(QLatin1String("inode/directory"))) {
         return KIND_DIR;
     }
