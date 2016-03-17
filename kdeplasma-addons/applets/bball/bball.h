@@ -24,15 +24,11 @@
 #include <QtCore/QBasicTimer>
 #include <QtCore/qdatetime.h>
 #include <QtGui/QVector2D>
-#include <KConfigDialog>
 
+#include <KConfigDialog>
+#include <KMediaPlayer>
 #include <Plasma/Applet>
 #include <Plasma/Svg>
-
-#include <Phonon/MediaObject>
-#include <Phonon/Path>
-#include <Phonon/AudioOutput>
-#include <Phonon/Global>
 
 #include "ui_bballConfig.h"
 
@@ -111,8 +107,7 @@ private:
 
     Ui::bballConfig ui;
 
-    Phonon::MediaObject * m_soundPlayer;
-    Phonon::AudioOutput * m_audioOutput;
+    KAudioPlayer * m_soundPlayer;
 };
 
 K_EXPORT_PLASMA_APPLET (BbalL, bballApplet)
