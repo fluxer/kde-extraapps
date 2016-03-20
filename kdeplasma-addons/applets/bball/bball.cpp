@@ -58,8 +58,7 @@ bballApplet::bballApplet(QObject * parent, const QVariantList & args):
     m_angle(0),
     m_angularVelocity(0),
     m_mousePressed(false),
-    m_soundPlayer(0),
-    m_audioOutput(0)
+    m_soundPlayer(0)
 {
     setHasConfigurationInterface(true);
     //TODO figure out why it is not good enough to set it here
@@ -265,15 +264,13 @@ void bballApplet::configurationChanged()
         if (KIO::NetAccess::exists(ui.soundFile->url(), KIO::NetAccess::SourceSide, NULL)) {
             m_sound_url = ui.soundFile->url().path();
             cg.writeEntry("SoundURL", m_sound_url);
-            if (m_soundPlayer)
-                m_soundPlayer->setCurrentSource(m_sound_url);
         } else
             KMessageBox::error(0, i18n("The given sound could not be loaded. The sound will not be changed."));
     }
     m_sound_volume = ui.soundVolume->value();
     cg.writeEntry("SoundVolume", m_sound_volume);
-    if (m_audioOutput)
-        m_audioOutput->setVolume(m_sound_volume);
+    if (m_soundPlayer)
+        m_soundPlayer->setVolume(m_sound_volume);
 
     // Misc
     m_auto_bounce_enabled = ui.autoBounceEnabled->checkState() == Qt::Checked;
@@ -410,16 +407,12 @@ void bballApplet::playBoingSound()
 
     // create the player if missing
     if (!m_soundPlayer) {
-        m_soundPlayer = new Phonon::MediaObject(this);
-        m_soundPlayer->setCurrentSource(m_sound_url);
-        m_audioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
-        m_audioOutput->setVolume(m_sound_volume);
-        createPath(m_soundPlayer, m_audioOutput);
+        m_soundPlayer = new KAudioPlayer(this);
+        m_soundPlayer->setVolume(m_sound_volume);
     }
 
     // play the sound
-    m_soundPlayer->seek(0);
-    m_soundPlayer->play();
+    m_soundPlayer->load(m_sound_url);
 }
 
 void bballApplet::syncGeometry()

@@ -52,8 +52,7 @@ enum Kind {
     KIND_ARCHIVE      = 1 << 2,
     KIND_FILE         = 1 << 3,
     KIND_RASTER_IMAGE = 1 << 4,
-    KIND_SVG_IMAGE    = 1 << 5,
-    KIND_VIDEO        = 1 << 6
+    KIND_SVG_IMAGE    = 1 << 5
 };
 Q_DECLARE_FLAGS(Kinds, Kind)
 

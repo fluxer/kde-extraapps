@@ -27,7 +27,6 @@ set(gwenviewlib_SRCS
     document/loadingjob.cpp
     document/savejob.cpp
     document/svgdocumentloadedimpl.cpp
-    document/videodocumentloadedimpl.cpp
     documentview/abstractdocumentviewadapter.cpp
     documentview/abstractimageview.cpp
     documentview/abstractrasterimageviewtool.cpp
@@ -40,7 +39,6 @@ set(gwenviewlib_SRCS
     documentview/rasterimageview.cpp
     documentview/rasterimageviewadapter.cpp
     documentview/svgviewadapter.cpp
-    documentview/videoviewadapter.cpp
     about.cpp
     abstractimageoperation.cpp
     disabledactionshortcutmonitor.cpp

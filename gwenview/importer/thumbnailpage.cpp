@@ -104,10 +104,7 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
         mRecursiveDirModel = new RecursiveDirModel(q);
 
         KindProxyModel* kindProxyModel = new KindProxyModel(q);
-        kindProxyModel->setKindFilter(
-            MimeTypeUtils::KIND_RASTER_IMAGE
-            | MimeTypeUtils::KIND_SVG_IMAGE
-            | MimeTypeUtils::KIND_VIDEO);
+        kindProxyModel->setKindFilter(MimeTypeUtils::KIND_RASTER_IMAGE | MimeTypeUtils::KIND_SVG_IMAGE);
         kindProxyModel->setSourceModel(mRecursiveDirModel);
 
         QSortFilterProxyModel *sortModel = new QSortFilterProxyModel(q);
