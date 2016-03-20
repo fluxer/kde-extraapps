@@ -54,10 +54,6 @@ if(QT_QTWEBKIT_FOUND)
   add_subdirectory(rememberthemilk)
 endif(QT_QTWEBKIT_FOUND)
 
-if(PHONON_FOUND)
-  add_subdirectory(mediaplayer)
-endif(PHONON_FOUND)
-
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/qalculate/cmake_modules)
 macro_optional_find_package(Qalculate)
 if ( QALCULATE_FOUND )
