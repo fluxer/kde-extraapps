@@ -173,10 +173,10 @@ bool GraphicalUi::checkMainWidgetVisibility(bool perform)
 
             NET::WindowType type = info2.windowType(NET::NormalMask | NET::DesktopMask
                 | NET::DockMask | NET::ToolbarMask | NET::MenuMask | NET::DialogMask
-                | NET::TopMenuMask | NET::UtilityMask | NET::SplashMask);
+                | NET::UtilityMask | NET::SplashMask);
 
-            if (type == NET::Dock || type == NET::TopMenu)
-                continue;  // obscured by dock or topmenu -> ignore
+            if (type == NET::Dock)
+                continue;  // obscured by dock -> ignore
 
             if (perform) {
                 KWindowSystem::raiseWindow(mainWidget()->winId());
