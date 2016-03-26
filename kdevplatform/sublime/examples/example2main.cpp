@@ -19,9 +19,9 @@
 #include "example2main.h"
 
 #include <QMenu>
+#include <QMenuBar>
 
 #include <kdebug.h>
-#include <kmenubar.h>
 
 #include <sublime/area.h>
 #include <sublime/view.h>

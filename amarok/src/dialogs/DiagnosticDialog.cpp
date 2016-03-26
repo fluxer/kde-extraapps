@@ -42,7 +42,7 @@ DiagnosticDialog::DiagnosticDialog( const KAboutData *aboutData, QWidget *parent
 
     m_textBox = new QPlainTextEdit( generateReport( aboutData ), this );
 
-    setPlainCaption( i18nc( "%1 is the program name", "%1 Diagnostics", aboutData->programName() ) );
+    setWindowTitle( i18nc( "%1 is the program name", "%1 Diagnostics", aboutData->programName() ) );
 
     setButtons( Close | User1 );
     setButtonText( User1, i18n( "Copy to Clipboard" ) );

@@ -26,7 +26,7 @@
 #include "core/support/Debug.h"
 #include "Mp3tunesConfig.h"
 
-#include <KMenuBar>
+#include <QMenuBar>
 #include <KMessageBox>
 #include <threadweaver/ThreadWeaver.h>
 

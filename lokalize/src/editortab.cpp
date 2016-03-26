@@ -57,7 +57,6 @@
 #include <klocale.h>
 #include <kicon.h>
 #include <ktoolbarpopupaction.h>
-#include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kdebug.h>
 

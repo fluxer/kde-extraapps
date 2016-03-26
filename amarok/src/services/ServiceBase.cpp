@@ -26,8 +26,8 @@
 #include "widgets/SearchWidget.h"
 
 #include <KHBox>
-#include <KMenuBar>
 
+#include <QMenuBar>
 #include <QFrame>
 #include <QLabel>
 
@@ -156,7 +156,7 @@ ServiceBase::ServiceBase( const QString &name, ServiceFactory *parent, bool useC
     m_filterModel->setSortCaseSensitivity( Qt::CaseInsensitive );
     m_filterModel->setFilterCaseSensitivity( Qt::CaseInsensitive );
 
-    m_menubar = new KMenuBar( m_topPanel );
+    m_menubar = new QMenuBar( m_topPanel );
     // Make sure we do not expose this menubar outside to ensure it does not
     // replace the main menubar when Amarok is used with Plasma Menubar
     m_menubar->setNativeMenuBar( false );

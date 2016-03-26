@@ -33,6 +33,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <QTimer>
 #include <QUndoGroup>
 #include <QVBoxLayout>
+#include <QMenuBar>
 
 // KDE
 #include <KIO/NetAccess>
@@ -45,7 +46,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KFileDialog>
 #include <KFileItem>
 #include <KLocale>
-#include <KMenuBar>
 #include <KMessageBox>
 #include <KNotificationRestrictions>
 #include <KProtocolManager>

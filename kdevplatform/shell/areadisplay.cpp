@@ -27,9 +27,9 @@
 #include <interfaces/iuicontroller.h>
 
 #include <KLocalizedString>
-#include <KMenuBar>
 
 #include <QMenu>
+#include <QMenuBar>
 #include <QToolButton>
 #include <QHBoxLayout>
 #include <QLabel>

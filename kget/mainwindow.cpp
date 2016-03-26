@@ -45,7 +45,6 @@
 #include <knotifyconfigwidget.h>
 #include <kfiledialog.h>
 #include <ktoolinvocation.h>
-#include <kmenubar.h>
 #include <kiconloader.h>
 #include <kstandardaction.h>
 #include <klocale.h>
@@ -57,6 +56,7 @@
 #include "core/verifier.h"
 #include <QClipboard>
 #include <QTimer>
+#include <QMenuBar>
 #include <QtTest/QtTest>
 
 MainWindow::MainWindow(bool showMainwindow, bool startWithoutAnimation, bool doTesting, QWidget *parent)
@@ -87,7 +87,7 @@ MainWindow::MainWindow(bool showMainwindow, bool startWithoutAnimation, bool doT
 
     // restore position, size and visibility
     move( Settings::mainPosition() );
-    setPlainCaption(i18n("KGet"));
+    setWindowTitle(i18n("KGet"));
     
     init();
 
@@ -514,9 +514,9 @@ void MainWindow::slotUpdateTitlePercent()
 {
     int percent = transfersPercent();
     if (percent != -1) {
-        setPlainCaption(i18nc("window title including overall download progress in percent", "KGet - %1%", percent));
+        setWindowTitle(i18nc("window title including overall download progress in percent", "KGet - %1%", percent));
     } else {
-        setPlainCaption(i18n("KGet"));
+        setWindowTitle(i18n("KGet"));
     }
 }
 

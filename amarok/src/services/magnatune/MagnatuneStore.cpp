@@ -39,7 +39,6 @@
 #include "widgets/SearchWidget.h"
 
 #include <KAction>
-#include <KMenuBar>
 #include <KStandardDirs>  //locate()
 #include <KTemporaryFile>
 #include <KUrl>

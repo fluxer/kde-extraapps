@@ -38,7 +38,6 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <KMenu>
-#include <KMenuBar>
 #include <krecentfilesaction.h>
 
 #include <kpAbstractImageSelection.h>

@@ -22,8 +22,6 @@
 #include <kglobal.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
-
-#include <kmenubar.h>
 #include <kstandardshortcut.h>
 #include <kmessagebox.h>
 #include <kconfig.h>

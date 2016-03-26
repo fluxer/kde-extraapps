@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtGui/qevent.h>
 #include <QShortcut>
 #include <QStyle>
+#include <QMenuBar>
 
 #include <kaboutdata.h>
 #include <kacceleratormanager.h>
@@ -47,7 +48,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kglobal.h>
 #include <kglobalsettings.h>
 #include <kmenu.h>
-#include <kmenubar.h>
 #include <knumvalidator.h>
 #include <kpushbutton.h>
 #include <kstandardaction.h>

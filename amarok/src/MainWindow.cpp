@@ -75,7 +75,6 @@
 #include <KMessageBox>
 #include <KLocale>
 #include <KMenu>
-#include <KMenuBar>
 #include <KBugReport>
 #include <KStandardAction>
 #include <KStandardDirs>
@@ -92,6 +91,7 @@
 #include <QList>
 #include <QStyle>
 #include <QVBoxLayout>
+#include <QMenuBar>
 
 #include <iostream>
 
@@ -152,7 +152,7 @@ MainWindow::MainWindow()
     PERF_LOG( "Created actions" )
 
     The::paletteHandler()->setPalette( palette() );
-    setPlainCaption( i18n( AMAROK_CAPTION ) );
+    setWindowTitle( i18n( AMAROK_CAPTION ) );
 
     init();  // We could as well move the code from init() here, but meh.. getting a tad long
 
@@ -1135,18 +1135,6 @@ MainWindow::createMenus()
 
     m_settingsMenu.data()->addAction( Amarok::actionCollection()->action( KStandardAction::name( KStandardAction::ShowMenubar ) ) );
 
-    //TODO use KStandardAction or KXmlGuiWindow
-
-    // the phonon-coreaudio  backend has major issues with either the VolumeFaderEffect itself
-    // or with it in the pipeline. track playback stops every ~3-4 tracks, and on tracks >5min it
-    // stops at about 5:40. while we get this resolved upstream, don't make playing amarok such on osx.
-    // so we disable replaygain on osx
-
-#ifndef Q_WS_MAC
-    m_settingsMenu.data()->addAction( Amarok::actionCollection()->action("replay_gain_mode") );
-    m_settingsMenu.data()->addSeparator();
-#endif
-
     m_settingsMenu.data()->addAction( Amarok::actionCollection()->action( KStandardAction::name( KStandardAction::KeyBindings ) ) );
     m_settingsMenu.data()->addAction( Amarok::actionCollection()->action( KStandardAction::name( KStandardAction::Preferences ) ) );
     //END Settings menu
@@ -1210,13 +1198,13 @@ MainWindow::changeEvent( QEvent *event )
 void
 MainWindow::slotStopped()
 {
-    setPlainCaption( i18n( AMAROK_CAPTION ) );
+    setWindowTitle( i18n( AMAROK_CAPTION ) );
 }
 
 void
 MainWindow::slotPaused()
 {
-    setPlainCaption( i18n( "Paused  ::  %1", i18n( AMAROK_CAPTION ) ) );
+    setWindowTitle( i18n( "Paused  ::  %1", i18n( AMAROK_CAPTION ) ) );
 }
 
 void
@@ -1229,7 +1217,7 @@ void
 MainWindow::slotMetadataChanged( Meta::TrackPtr track )
 {
     if( track )
-        setPlainCaption( i18n( "%1 - %2  ::  %3", track->artist() ? track->artist()->prettyName() : i18n( "Unknown" ), track->prettyName(), i18n( AMAROK_CAPTION ) ) );
+        setWindowTitle( i18n( "%1 - %2  ::  %3", track->artist() ? track->artist()->prettyName() : i18n( "Unknown" ), track->prettyName(), i18n( AMAROK_CAPTION ) ) );
 }
 
 CollectionWidget *

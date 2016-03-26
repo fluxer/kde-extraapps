@@ -28,13 +28,13 @@
 #include <qradiobutton.h>
 #include <QCursor>
 #include <QString>
+#include <QMenuBar>
 
 // include files for KDE
 #include <KConfigSkeleton>
 #include <kcombobox.h>
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kmenubar.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kaction.h>

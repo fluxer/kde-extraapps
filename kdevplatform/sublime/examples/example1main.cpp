@@ -27,7 +27,6 @@
 
 #include <kurl.h>
 #include <kdebug.h>
-#include <kmenubar.h>
 
 #include <sublime/view.h>
 #include <sublime/area.h>

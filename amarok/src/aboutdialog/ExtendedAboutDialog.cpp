@@ -89,7 +89,7 @@ ExtendedAboutDialog::ExtendedAboutDialog(const KAboutData *aboutData, const OcsD
     }
     m_ocsData = *ocsData;
 
-    setPlainCaption(i18n("About %1", aboutData->programName()));
+    setWindowTitle(i18n("About %1", aboutData->programName()));
     setButtons(KDialog::Close);
     setDefaultButton(KDialog::Close);
     setModal(false);

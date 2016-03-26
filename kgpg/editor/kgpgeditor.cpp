@@ -37,7 +37,6 @@
 #include <KFindDialog>
 #include <KIcon>
 #include <KLocale>
-#include <KMenuBar>
 #include <KMessageBox>
 #include <KRecentFilesAction>
 #include <KShortcut>
@@ -45,6 +44,7 @@
 #include <KTemporaryFile>
 #include <KToggleAction>
 #include <KToolBar>
+#include <QMenuBar>
 #include <QPainter>
 #include <QTextCodec>
 #include <QTextStream>

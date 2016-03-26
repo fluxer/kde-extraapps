@@ -43,7 +43,6 @@ Boston, MA 02110-1301, USA.
 #include <kxmlguifactory.h>
 #include <ktoggleaction.h>
 #include <KWindowSystem>
-#include <KMenuBar>
 
 #include <sublime/area.h>
 #include "shellextension.h"

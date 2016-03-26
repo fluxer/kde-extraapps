@@ -29,7 +29,6 @@
 #include <KAction>
 #include <KActionCollection>
 #include <KHelpMenu>
-#include <KMenuBar>
 #include <KShortcutsDialog>
 #include <KStatusBar>
 #include <KToggleFullScreenAction>

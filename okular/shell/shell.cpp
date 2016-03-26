@@ -34,7 +34,6 @@
 #include <kurl.h>
 #include <kdebug.h>
 #include <klocale.h>
-#include <kmenubar.h>
 #include <kio/netaccess.h>
 #include <krecentfilesaction.h>
 #include <kservicetypetrader.h>
@@ -46,6 +45,7 @@
 #include <kxmlguifactory.h>
 #include <QtGui/qevent.h>
 #include <QTabBar>
+#include <QMenuBar>
 
 // local includes
 #include "kdocumentviewer.h"

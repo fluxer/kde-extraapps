@@ -40,8 +40,8 @@
 #include <kdebug.h>
 #include <kglobal.h>
 #include <klocale.h>
-#include <kmenubar.h>
 #include <KToggleAction>
+#include <QMenuBar>
 
 #include <kpAbstractImageSelection.h>
 #include <kpColor.h>

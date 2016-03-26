@@ -29,7 +29,6 @@
 #include <kdebug.h>
 #include <kdialog.h>
 #include <klocale.h>
-#include <kmenubar.h>
 #include <ksettings/dialog.h>
 #include <ksettings/dispatcher.h>
 #include <kcmultidialog.h>

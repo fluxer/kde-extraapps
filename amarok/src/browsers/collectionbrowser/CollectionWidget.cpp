@@ -39,7 +39,6 @@
 #include <KIcon>
 #include <KLocale>
 #include <KMenu>
-#include <KMenuBar>
 #include <KStandardDirs>
 #include <KStandardGuiItem>
 

@@ -267,7 +267,7 @@ void KGetLinkView::slotStartLeech()
 
 void KGetLinkView::setPageUrl( const QString& url )
 {
-    setPlainCaption( i18n( "Links in: %1 - KGet", url ) );
+    setWindowTitle( i18n( "Links in: %1 - KGet", url ) );
 }
 
 void KGetLinkView::importUrl(const QString &url)

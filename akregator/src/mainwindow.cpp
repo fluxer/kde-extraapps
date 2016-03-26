@@ -39,10 +39,10 @@
 #include <KStandardAction>
 #include <KStatusBar>
 #include <KPluginLoader>
-#include <KMenuBar>
 #include <KXMLGUIFactory>
 #include <KToolBar>
 #include <KPluginFactory>
+#include <QMenuBar>
 
 using namespace Akregator;
 

@@ -268,7 +268,7 @@ public:
 LoadedPluginsDialog::LoadedPluginsDialog( QWidget* parent )
     : KDialog( parent )
 {
-    setPlainCaption(i18n("Loaded Plugins"));
+    setWindowTitle(i18n("Loaded Plugins"));
     setButtons(KDialog::Close);
     setDefaultButton(KDialog::Close);
     

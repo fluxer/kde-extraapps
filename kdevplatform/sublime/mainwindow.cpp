@@ -26,12 +26,12 @@
 #include <KDE/KConfigGroup>
 #include <KDE/KToolBar>
 #include <KDE/KWindowSystem>
+#include <KDE/KStatusBar>
+#include <KDE/KLocalizedString>
 
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
-#include <KDE/KStatusBar>
-#include <KDE/KMenuBar>
-#include <KLocalizedString>
+#include <QtGui/QMenuBar>
 
 #include "area.h"
 #include "view.h"
@@ -263,7 +263,7 @@ void MainWindow::loadSettings()
            sb->show();
     }
 
-    QMenuBar* mb = this->findChild<KMenuBar *>();
+    QMenuBar* mb = this->menuBar();
     if (mb) {
         QString entry = cg.readEntry ("MenuBar", "Enabled");
         if ( entry == "Disabled" )

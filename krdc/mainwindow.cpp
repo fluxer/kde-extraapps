@@ -48,7 +48,6 @@
 #include <KLineEdit>
 #include <KLocale>
 #include <KMenu>
-#include <KMenuBar>
 #include <KMessageBox>
 #include <KNotifyConfigWidget>
 #include <KPluginInfo>
@@ -72,6 +71,7 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include <QMenuBar>
 
 MainWindow::MainWindow(QWidget *parent)
         : KXmlGuiWindow(parent),

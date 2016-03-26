@@ -30,7 +30,6 @@
 
 #include <KAction>
 #include <KFileDialog>
-#include <KMenuBar>
 #include <KRun>
 #include <KShell>
 #include <KStandardDirs>
@@ -40,6 +39,7 @@
 #include <QDesktopServices>
 #include <QToolBar>
 #include <QToolButton>
+#include <QMenuBar>
 
 #include <typeinfo>
 

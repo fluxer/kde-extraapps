@@ -45,7 +45,6 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kicon.h>
-#include <kmenubar.h>
 #include <kstatusbar.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
@@ -70,7 +69,6 @@
 #include <QActionGroup>
 #include <QMdiArea>
 #include <QMdiSubWindow>
-#include <QMenuBar>
 
 
 LokalizeMainWindow::LokalizeMainWindow()

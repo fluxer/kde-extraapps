@@ -35,10 +35,10 @@
 #include <QQueue>
 #include <QSortFilterProxyModel>
 #include <QSplitter>
+#include <QMenuBar>
 
 class ServiceBase;
 class SearchWidget;
-class KMenuBar;
 /**
 A virtual base class for factories for creating and handling the different types of service plugins
 
@@ -335,7 +335,7 @@ protected:
 
     InfoParserBase * m_infoParser;
 
-    KMenuBar *m_menubar;
+    QMenuBar *m_menubar;
     QMenu *m_filterMenu;
     SearchWidget * m_searchWidget;
 

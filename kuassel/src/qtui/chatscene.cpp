@@ -30,9 +30,6 @@
 #include <QtCore/qabstractitemmodel.h>
 #include <QUrl>
 
-#  include <KMenuBar>
-
-
 #include "chatitem.h"
 #include "chatline.h"
 #include "chatlinemodelitem.h"

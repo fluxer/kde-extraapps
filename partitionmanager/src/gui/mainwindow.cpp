@@ -54,7 +54,6 @@
 #include <kactioncollection.h>
 #include <ktoolbar.h>
 #include <kstatusbar.h>
-#include <kmenubar.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
 #include <kcomponentdata.h>

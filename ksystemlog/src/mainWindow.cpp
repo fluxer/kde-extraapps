@@ -32,30 +32,18 @@
 #include <kmainwindow.h>
 #include <kmessagebox.h>
 #include <ktabwidget.h>
-
 #include <kactionmenu.h>
-
 #include <kglobal.h>
 #include <klocale.h>
-
 #include <kiconloader.h>
-
 #include <kservice.h>
 #include <kservicetypetrader.h>
-
 #include <ktoggleaction.h>
-#include <kmenubar.h>
-
-
 #include <kfiledialog.h>
-
 #include <kconfig.h>
-
 #include <kurl.h>
 #include <kurlrequesterdialog.h>
-
 #include <kedittoolbar.h>
-
 #include <kstandardshortcut.h>
 #include <kaction.h>
 #include <kstandardaction.h>
