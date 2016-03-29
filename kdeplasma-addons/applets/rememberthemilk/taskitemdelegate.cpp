@@ -27,8 +27,9 @@
 #include <Plasma/Svg>
 
 #include <QColor>
-#include <QtGui/qbrush.h>
+#include <QBrush>
 #include <QCheckBox>
+#include <QDateTime>
 
 #include <KDebug>
 

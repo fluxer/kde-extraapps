@@ -23,6 +23,7 @@
 #include <plasma/abstractrunner.h>
 
 #include <KIcon>
+#include <KUrl>
 
 class QDBusPendingCallWatcher;
 

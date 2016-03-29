@@ -21,6 +21,7 @@
 
 #include <Plasma/Theme>
 
+#include <QtCore/QDateTime>
 #include <QtGui/QPainter>
 
 ComicData::ComicData()

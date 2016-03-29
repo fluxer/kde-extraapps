@@ -24,6 +24,7 @@
 #include "core/meta/forward_declarations.h"
 
 #include <QList>
+#include <KUrl>
 
 class CollectionTreeItemModelBase;
 class QAction;

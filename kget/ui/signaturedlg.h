@@ -23,6 +23,8 @@
 #include "ui_signaturedlg.h"
 #include "../core/basedialog.h"
 
+#include <KUrl>
+
 class FileModel;
 class Signature;
 class TransferHandler;

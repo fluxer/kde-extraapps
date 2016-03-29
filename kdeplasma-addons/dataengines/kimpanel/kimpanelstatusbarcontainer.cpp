@@ -22,6 +22,8 @@
 #include "kimpanelagent.h"
 #include "kimpaneldataengine.h"
 
+#include <QDateTime>
+
 KimpanelStatusBarContainer::KimpanelStatusBarContainer(QObject* parent, PanelAgent* panelAgent):
     DataContainer(parent),
     m_panelAgent(panelAgent)

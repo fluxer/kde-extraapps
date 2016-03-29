@@ -21,6 +21,7 @@
 #include <KNotification>
 #include <KIconLoader>
 #include <KDebug>
+#include <KUrl>
 
 const QString KGET_DBUS_SERVICE = "org.kde.kget";
 const QString KGET_DBUS_PATH = "/KGet";

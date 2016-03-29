@@ -21,7 +21,8 @@
 #include "taskitem.h"
 #include "taskmodel.h"
 
-#include "kdebug.h"
+#include <KDebug>
+#include <QDateTime>
 
 TaskSortFilter::TaskSortFilter(TaskModel *model, QObject* parent)
   : QSortFilterProxyModel(parent),

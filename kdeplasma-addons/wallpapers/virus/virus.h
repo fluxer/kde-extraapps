@@ -13,6 +13,7 @@
 #define VIRUS_HEADER
 
 #include <QTimer>
+#include <QDateTime>
 #include <QPixmap>
 #include <QStringList>
 

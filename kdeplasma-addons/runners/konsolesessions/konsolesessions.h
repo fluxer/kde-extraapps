@@ -23,6 +23,7 @@
 #include <plasma/abstractrunner.h>
 
 #include <KIcon>
+#include <QDateTime>
 
 class KonsoleSessions : public Plasma::AbstractRunner {
     Q_OBJECT

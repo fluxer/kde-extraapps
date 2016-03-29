@@ -21,6 +21,7 @@
 #define RENAMEFILE_H
 
 #include <KDialog>
+#include <KUrl>
 
 #include "ui_renamefile.h"
 

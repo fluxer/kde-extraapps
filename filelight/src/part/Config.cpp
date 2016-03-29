@@ -26,6 +26,7 @@
 #include <KGlobal>
 #include <KSharedConfig>
 #include <KSharedPtr>
+#include <QFont>
 
 bool Config::scanAcrossMounts;
 bool Config::scanRemoteMounts;
