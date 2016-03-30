@@ -146,7 +146,7 @@ QSize BackgroundListModel::bestSize(Plasma::Package *package) const
         return QSize();
     }
 
-    KFileMetaInfo info(image, QString(), KFileMetaInfo::TechnicalInfo);
+    KFileMetaInfo info(image, KFileMetaInfo::TechnicalInfo);
     QSize size(info.item(QLatin1String( "http://freedesktop.org/standards/xesam/1.0/core#width" )).value().toInt(),
                info.item(QLatin1String( "http://freedesktop.org/standards/xesam/1.0/core#height" )).value().toInt());
 

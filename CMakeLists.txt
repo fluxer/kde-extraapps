@@ -18,7 +18,6 @@ include_directories ( ${CMAKE_SOURCE_DIR}/miniboost ${CMAKE_CURRENT_BINARY_DIR}/
 
 macro_optional_add_subdirectory (about-distro)
 macro_optional_add_subdirectory (akregator)
-macro_optional_add_subdirectory (amarok)
 macro_optional_add_subdirectory (syndication)
 macro_optional_add_subdirectory (ark)
 macro_optional_add_subdirectory (bluedevil)
