@@ -1,5 +1,0 @@
-add_subdirectory( amarok )
-add_subdirectory( banshee )
-add_subdirectory( clementine )
-add_subdirectory( itunes )
-add_subdirectory( rhythmbox )
