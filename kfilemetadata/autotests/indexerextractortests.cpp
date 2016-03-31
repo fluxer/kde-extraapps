@@ -27,6 +27,7 @@
 #include "simpleresult.h"
 #include "indexerextractortestsconfig.h"
 #include "extractors/plaintextextractor.h"
+#include "extractorpluginmanager.h"
 
 using namespace KFileMetaData;
 
@@ -62,6 +63,13 @@ void IndexerExtractorTests::benchMarkPlainTextExtractor()
     }
 }
 
+void IndexerExtractorTests::benchMarkManager()
+{
+    QBENCHMARK {
+        testImageExtractor();
+    }
+}
+
 void IndexerExtractorTests::testPlainTextExtractor()
 {
     QScopedPointer<ExtractorPlugin> plugin(new PlainTextExtractor(this, QVariantList()));
@@ -83,6 +91,22 @@ void IndexerExtractorTests::testPlainTextExtractor()
 
     content.replace(QLatin1Char('\n'), QLatin1Char(' '));
     QCOMPARE(result.text(), content);
+}
+
+void IndexerExtractorTests::testImageExtractor()
+{
+    QScopedPointer<ExtractorPluginManager> manager(new ExtractorPluginManager(this));
+    ExtractorPlugin* plugin = manager->fetchExtractors("image/png").first();
+
+    SimpleResult result(testFilePath("tux.png"), "image/png");
+    plugin->extract(&result);
+
+    QCOMPARE(result.types().size(), 1);
+    QCOMPARE(result.types().first(), Type::Image);
+
+    QCOMPARE(result.properties().size(), 2);
+    QCOMPARE(result.properties().value(Property::Width), QVariant("386"));
+    QCOMPARE(result.properties().value(Property::Height), QVariant("395"));
 }
 
 QTEST_KDEMAIN_CORE(IndexerExtractorTests)

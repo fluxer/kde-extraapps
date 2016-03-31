@@ -34,8 +34,8 @@ install(FILES
     types.h
     typeinfo.h
     kfilemetadata_export.h
-
-    DESTINATION ${INCLUDE_INSTALL_DIR}/kfilemetadata COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/kfilemetadata
+    COMPONENT Devel
 )
 
 add_subdirectory(extractors)
