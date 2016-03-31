@@ -141,7 +141,7 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
                 kDebug(OkularDebug) << "Mediaobject:" << data->m_player;
                 int newid = newId();
                 m_mapper.setMapping( data->m_player, newid );
-                data->m_player->load(QString("memory://%1").arg(filedata.data()) );
+                data->m_player->load( filedata );
                 m_playing.insert( newid, data );
                 valid = true;
             }
