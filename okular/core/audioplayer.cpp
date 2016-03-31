@@ -15,10 +15,7 @@
 #include <qdir.h>
 #include <kdebug.h>
 #include <krandom.h>
-#include <Phonon/Path>
-#include <phonon/audiooutput.h>
-#include <phonon/abstractmediastream.h>
-#include <phonon/mediaobject.h>
+#include <kmediaplayer.h>
 
 // local includes
 #include "action.h"
@@ -56,30 +53,22 @@ class PlayData
 {
 public:
     PlayData()
-        : m_mediaobject( 0 ), m_output( 0 ), m_buffer( 0 )
+        : m_player( 0 )
     {
     }
 
     void play()
     {
-        if ( m_buffer )
-        {
-            m_buffer->open( QIODevice::ReadOnly );
-        }
-        m_mediaobject->play();
+        m_player->play();
     }
 
     ~PlayData()
     {
-        m_mediaobject->stop();
-        delete m_mediaobject;
-        delete m_output;
-        delete m_buffer;
+        m_player->stop();
+        delete m_player;
     }
 
-    Phonon::MediaObject * m_mediaobject;
-    Phonon::AudioOutput * m_output;
-    QBuffer * m_buffer;
+    KAudioPlayer * m_player;
     SoundInfo m_info;
 };
 
@@ -112,10 +101,8 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
 {
     kDebug() ;
     PlayData * data = new PlayData();
-    data->m_output = new Phonon::AudioOutput( Phonon::NotificationCategory );
-    data->m_output->setVolume( si.volume );
-    data->m_mediaobject = new Phonon::MediaObject();
-    Phonon::createPath(data->m_mediaobject, data->m_output);
+    data->m_player = new KAudioPlayer();
+    // data->m_player->setVolume( si.volume );
     data->m_info = si;
     bool valid = false;
 
@@ -128,7 +115,7 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
             if ( !url.isEmpty() )
             {
                 int newid = newId();
-                m_mapper.setMapping( data->m_mediaobject, newid );
+                m_mapper.setMapping( data->m_player, newid );
                 KUrl newurl;
                 if ( KUrl::isRelativeUrl( url ) )
                 {
@@ -139,7 +126,7 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
                 {
                     newurl = url;
                 }
-                data->m_mediaobject->setCurrentSource( newurl );
+                data->m_player->load( newurl.prettyUrl() );
                 m_playing.insert( newid, data );
                 valid = true;
             }
@@ -151,12 +138,10 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
             kDebug(OkularDebug) << "Embedded," << filedata.length();
             if ( !filedata.isEmpty() )
             {
-                kDebug(OkularDebug) << "Mediaobject:" << data->m_mediaobject;
+                kDebug(OkularDebug) << "Mediaobject:" << data->m_player;
                 int newid = newId();
-                m_mapper.setMapping( data->m_mediaobject, newid );
-                data->m_buffer = new QBuffer();
-                data->m_buffer->setData( filedata );
-                data->m_mediaobject->setCurrentSource( Phonon::MediaSource( data->m_buffer ) );
+                m_mapper.setMapping( data->m_player, newid );
+                data->m_player->load(QString("memory://%1").arg(filedata.data()) );
                 m_playing.insert( newid, data );
                 valid = true;
             }
@@ -170,7 +155,7 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
     }
     if ( data )
     {
-        QObject::connect( data->m_mediaobject, SIGNAL(finished()), &m_mapper, SLOT(map()) );
+        QObject::connect( data->m_player, SIGNAL(finished()), &m_mapper, SLOT(map()) );
         kDebug(OkularDebug) << "PLAY";
         data->play();
         m_state = AudioPlayer::PlayingState;
@@ -200,7 +185,7 @@ void AudioPlayerPrivate::finished( int id )
     }
     else
     {
-        m_mapper.removeMappings( it.value()->m_mediaobject );
+        m_mapper.removeMappings( it.value()->m_player );
         delete it.value();
         m_playing.erase( it );
         m_state = AudioPlayer::StoppedState;

@@ -9,22 +9,19 @@
 
 #include "snapshottaker.h"
 
-#include <phonon/mediaobject.h>
-#include <phonon/videowidget.h>
-
 #include <QtGui/QImage>
 
 #include <KUrl>
 
 SnapshotTaker::SnapshotTaker( const QString &url, QObject *parent )
     : QObject( parent )
-    , m_player( new Phonon::VideoPlayer( Phonon::NoCategory, 0 ) )
+    , m_player( new KMediaPlayer )
 {
-    m_player->load( KUrl(url) );
+    m_player->load( url );
     m_player->hide();
 
-    connect(m_player->mediaObject(), SIGNAL(stateChanged(Phonon::State, Phonon::State)),
-            this, SLOT(stateChanged(Phonon::State, Phonon::State)));
+    connect(m_player, SIGNAL(paused(bool)),
+            this, SLOT(stateChanged(bool)));
 
     m_player->play();
 }
@@ -35,12 +32,12 @@ SnapshotTaker::~SnapshotTaker()
     delete m_player;
 }
 
-void SnapshotTaker::stateChanged(Phonon::State newState, Phonon::State)
+void SnapshotTaker::stateChanged(bool paused)
 {
-    if (newState == Phonon::PlayingState) {
-        const QImage image = m_player->videoWidget()->snapshot();
-        if (!image.isNull())
-            emit finished( image );
+    if (paused) {
+        QPixmap pixmap = QPixmap::grabWidget(m_player);
+        if (!pixmap.isNull())
+            emit finished( pixmap.toImage() );
 
         m_player->stop();
         deleteLater();

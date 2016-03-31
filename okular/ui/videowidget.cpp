@@ -24,10 +24,7 @@
 
 #include <kicon.h>
 #include <klocale.h>
-
-#include <phonon/mediaobject.h>
-#include <phonon/seekslider.h>
-#include <phonon/videoplayer.h>
+#include <kmediawidget.h>
 
 #include "core/annotations.h"
 #include "core/area.h"
@@ -76,7 +73,7 @@ public:
     void setPosterImage( const QImage& );
     void takeSnapshot();
     void videoStopped();
-    void stateChanged(Phonon::State, Phonon::State);
+    void stateChanged(bool paused);
 
     // slots
     void finished();
@@ -86,8 +83,9 @@ public:
     Okular::Movie *movie;
     Okular::Document *document;
     Okular::NormalizedRect geom;
-    Phonon::VideoPlayer *player;
-    Phonon::SeekSlider *seekSlider;
+    KMediaPlayer *player;
+#warning implemenet seek support
+    // Phonon::SeekSlider *seekSlider;
     QToolBar *controlBar;
     QAction *playPauseAction;
     QAction *stopAction;
@@ -116,12 +114,12 @@ void VideoWidget::Private::load()
     {
         newurl = url;
     }
-    player->load( newurl );
+    player->load( newurl.prettyUrl() );
 
-    connect( player->mediaObject(), SIGNAL( stateChanged( Phonon::State, Phonon::State ) ),
-             q, SLOT( stateChanged( Phonon::State, Phonon::State ) ) );
+    connect( player, SIGNAL( paused( bool ) ),
+             q, SLOT( stateChanged( bool ) ) );
 
-    seekSlider->setEnabled( true );
+    // seekSlider->setEnabled( true );
 }
 
 void VideoWidget::Private::setupPlayPauseAction( PlayPauseMode mode )
@@ -217,9 +215,9 @@ void VideoWidget::Private::setPosterImage( const QImage &image )
     posterImagePage->setPixmap( QPixmap::fromImage( image ) );
 }
 
-void VideoWidget::Private::stateChanged( Phonon::State newState, Phonon::State )
+void VideoWidget::Private::stateChanged( bool paused )
 {
-    if ( newState == Phonon::PlayingState )
+    if ( !paused )
         pageLayout->setCurrentIndex( 0 );
 }
 
@@ -237,7 +235,7 @@ VideoWidget::VideoWidget( const Okular::Annotation *annotation, Okular::Movie *m
     mainlay->setMargin( 0 );
     mainlay->setSpacing( 0 );
 
-    d->player = new Phonon::VideoPlayer( Phonon::NoCategory, playerPage );
+    d->player = new KMediaPlayer( playerPage );
     d->player->installEventFilter( playerPage );
     mainlay->addWidget( d->player );
 
@@ -255,15 +253,15 @@ VideoWidget::VideoWidget( const Okular::Annotation *annotation, Okular::Movie *m
         this, SLOT(stop()) );
     d->stopAction->setEnabled( false );
     d->controlBar->addSeparator();
-    d->seekSlider = new Phonon::SeekSlider( d->player->mediaObject(), d->controlBar );
-    d->seekSliderAction = d->controlBar->addWidget( d->seekSlider );
-    d->seekSlider->setEnabled( false );
+    // d->seekSlider = new Phonon::SeekSlider( d->player->mediaObject(), d->controlBar );
+    // d->seekSliderAction = d->controlBar->addWidget( d->seekSlider );
+    // d->seekSlider->setEnabled( false );
 
-    Phonon::SeekSlider *verticalSeekSlider = new Phonon::SeekSlider( d->player->mediaObject(), 0 );
-    verticalSeekSlider->setMaximumHeight( 100 );
-    d->seekSliderMenuAction = createToolBarButtonWithWidgetPopup(
-        d->controlBar, verticalSeekSlider, KIcon( "player-time" ) );
-    d->seekSliderMenuAction->setVisible( false );
+    // Phonon::SeekSlider *verticalSeekSlider = new Phonon::SeekSlider( d->player->mediaObject(), 0 );
+    // verticalSeekSlider->setMaximumHeight( 100 );
+    // d->seekSliderMenuAction = createToolBarButtonWithWidgetPopup(
+    //    d->controlBar, verticalSeekSlider, KIcon( "player-time" ) );
+    // d->seekSliderMenuAction->setVisible( false );
 
     d->controlBar->setVisible( movie->showControls() );
 
@@ -429,6 +427,7 @@ bool VideoWidget::event( QEvent * event )
 
 void VideoWidget::resizeEvent( QResizeEvent * event )
 {
+/*
     const QSize &s = event->size();
     int usedSpace = d->seekSlider->geometry().left() + d->seekSlider->iconSize().width();
     // try to give the slider at least 30px of space
@@ -442,6 +441,8 @@ void VideoWidget::resizeEvent( QResizeEvent * event )
         d->seekSliderAction->setVisible( true );
         d->seekSliderMenuAction->setVisible( false );
     }
+*/
+    Q_UNUSED(event);
 }
 
 #include "moc_videowidget.cpp"

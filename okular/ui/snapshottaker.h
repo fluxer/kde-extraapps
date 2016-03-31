@@ -10,7 +10,7 @@
 #ifndef SNAPSHOTTAKER_H
 #define SNAPSHOTTAKER_H
 
-#include <phonon/videoplayer.h>
+#include <KMediaPlayer>
 
 #include <QtCore/QObject>
 
@@ -28,10 +28,10 @@ class SnapshotTaker : public QObject
         void finished( const QImage &image );
 
     private Q_SLOTS:
-        void stateChanged(Phonon::State, Phonon::State);
+        void stateChanged(bool paused);
 
     private:
-        Phonon::VideoPlayer *m_player;
+        KMediaPlayer *m_player;
 };
 
 #endif

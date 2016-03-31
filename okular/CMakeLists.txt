@@ -112,6 +112,7 @@ target_link_libraries(okularcore
     ${KDE4_PHONON_LIBRARY}
     ${MATH_LIB}
     ${KDE4_THREADWEAVER_LIBRARY}
+    KDE4::kmediaplayer
     kscreen
 )
 
