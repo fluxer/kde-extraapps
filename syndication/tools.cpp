@@ -112,7 +112,8 @@ QString dateTimeToString(time_t date)
 
 QString calcMD5Sum(const QString& str)
 {
-    return QLatin1String(QCryptographicHash::hash(str.toUtf8(), QCryptographicHash::Md5).toHex());
+    QByteArray hash = QCryptographicHash::hash(str.toUtf8(), QCryptographicHash::Md5);
+    return QLatin1String(hash.toHex().constData());
 }
 
 QString resolveEntities(const QString& str)
