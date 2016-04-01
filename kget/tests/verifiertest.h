@@ -23,10 +23,6 @@
 #include <QStringList>
 #include <KUrl>
 
-#ifdef HAVE_QCA2
-#include <QtCrypto>
-#endif
-
 class KTempDir;
 
 class VerfierTest : public QObject
@@ -59,9 +55,6 @@ class VerfierTest : public QObject
         bool expectedResult(bool expected, const QString &type);
 
     private:
-#ifdef HAVE_QCA2
-        QCA::Initializer m_qcaInit;
-#endif //HAVE_QCA2
         QScopedPointer<KTempDir> m_tempDir;
         KUrl m_file;
         const QStringList m_supported;

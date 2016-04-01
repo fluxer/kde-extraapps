@@ -24,19 +24,17 @@
 #include "personimpl.h"
 
 #include <kcharsets.h>
-#include <kcodecs.h>
 #include <kdatetime.h>
 
 #include <QtCore/QByteArray>
 #include <QtCore/QDateTime>
 #include <QtCore/QRegExp>
 #include <QtCore/QString>
+#include <QtCore/QCryptographicHash>
 
 #include <kdebug.h>
 
 namespace Syndication {
-
-KMD5 md5Machine;
 
 unsigned int calcHash(const QString& str)
 {
@@ -114,9 +112,7 @@ QString dateTimeToString(time_t date)
 
 QString calcMD5Sum(const QString& str)
 {
-    md5Machine.reset();
-    md5Machine.update(str.toUtf8());
-    return QLatin1String(md5Machine.hexDigest().constData());
+    return QLatin1String(QCryptographicHash::hash(str.toUtf8(), QCryptographicHash::Md5).toHex());
 }
 
 QString resolveEntities(const QString& str)

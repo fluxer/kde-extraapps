@@ -32,10 +32,10 @@
 #include <QFile>
 #include <QImage>
 #include <QPixmap>
+#include <QCryptographicHash>
 
 // KDE
 #include <KApplication>
-#include <KCodecs>
 #include <KDebug>
 #include <kde_file.h>
 #include <KFileItem>
@@ -74,9 +74,9 @@ static QString generateOriginalUri(const KUrl& url_)
 
 static QString generateThumbnailPath(const QString& uri, ThumbnailGroup::Enum group)
 {
-    KMD5 md5(QFile::encodeName(uri));
+    QByteArray md5 = QCryptographicHash::hash(QFile::encodeName(uri), QCryptographicHash::Md5);
     QString baseDir = ThumbnailProvider::thumbnailBaseDir(group);
-    return baseDir + QString(QFile::encodeName(md5.hexDigest())) + ".png";
+    return baseDir + QString(QFile::encodeName(md5.toHex())) + ".png";
 }
 
 //------------------------------------------------------------------------

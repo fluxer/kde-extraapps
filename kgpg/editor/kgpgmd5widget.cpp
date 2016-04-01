@@ -13,12 +13,12 @@
 #include <QClipboard>
 #include <QLabel>
 #include <QFile>
+#include <QCryptographicHash>
 
 #include <KApplication>
 #include <KMessageBox>
 #include <KLineEdit>
 #include <KLocale>
-#include <KCodecs>
 #include <KLed>
 
 
@@ -31,14 +31,14 @@ Md5Widget::Md5Widget(QWidget *parent, const KUrl &url)
     setButtonText(Apply, i18n("Compare MD5 with Clipboard"));
 
     QFile f(url.path());
-    KMD5 checkfile;
+    QCryptographicHash checkfile(QCryptographicHash::Md5);
 
     if (f.open(QIODevice::ReadOnly)) {
-	checkfile.update(f);
-	f.close();
+        checkfile.addData(f.readAll());
+        f.close();
     }
 
-    m_md5sum = QLatin1String( checkfile.hexDigest().constData() );
+    m_md5sum = QLatin1String( checkfile.result().toHex() );
 
     QWidget *page = new QWidget(this);
 

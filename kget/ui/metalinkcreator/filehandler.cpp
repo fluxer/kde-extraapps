@@ -92,7 +92,7 @@ void FileHandlerThread::run()
                     return;
                 }
 
-                const QString hash = Verifier::checksum(url, type, &abort);
+                const QString hash = Verifier::checksum(url, type);
                 if (!hash.isEmpty()) {
                     file.verification.hashes[type] = hash;
                 }
@@ -104,7 +104,7 @@ void FileHandlerThread::run()
                         return;
                     }
 
-                    const PartialChecksums partialChecksums = Verifier::partialChecksums(url, type, 0, &abort);
+                    const PartialChecksums partialChecksums = Verifier::partialChecksums(url, type, 0);
                     if (partialChecksums.isValid()) {
                         KGetMetalink::Pieces pieces;
                         pieces.type = type;

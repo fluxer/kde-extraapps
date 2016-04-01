@@ -36,7 +36,7 @@ struct VerifierPrivate
 
     ~VerifierPrivate();
 
-    static QString calculatePartialChecksum(QFile *file, const QString &type, KIO::fileoffset_t startOffset, int pieceLength, KIO::filesize_t fileSize = 0, bool *abortPtr = 0);
+    static QString calculatePartialChecksum(QFile *file, const QString &type, KIO::fileoffset_t startOffset, int pieceLength, KIO::filesize_t fileSize = 0);
     QStringList orderChecksumTypes(Verifier::ChecksumStrength strength) const;
 
 
@@ -53,8 +53,10 @@ struct VerifierPrivate
 
     static const QStringList SUPPORTED;
     static const QString MD5;
-    static const int DIGGESTLENGTH[];
     static const int MD5LENGTH;
+    static const QString SHA1;
+    static const int SHA1LENGTH;
+    static const int DIGGESTLENGTH[];
     static const int PARTSIZE;
 };
 

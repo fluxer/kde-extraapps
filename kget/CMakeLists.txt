@@ -16,9 +16,6 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 macro_optional_find_package(Sqlite)
 macro_log_feature(SQLITE_FOUND "SQLite" "SQLite is a Binary-Database" "" FALSE "" "Needed for the SQLite-Backend of the KGet-History and the Kopete-Statistic-Plugin")
 
-macro_optional_find_package(QCA2)
-macro_log_feature(QCA2_FOUND "QCA2" "Qt Cryptographic Architecture" "http://delta.affinix.com/qca" FALSE "2.0.0" "Needed for the KGet bittorrent-plugin and some Kopete plugins")
-
 macro_optional_find_package(QGpgme)
 macro_log_feature(QGPGME_FOUND "QGpgME" "The QGpgME library" "http://www.kde.org" FALSE "" "QGpgME is required to have signature verifying support in KGet.")
 
@@ -38,11 +35,6 @@ add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5001)
 if(CMAKE_BUILD_TYPE MATCHES debugfull)
      add_definitions(-DDEBUG)
 endif(CMAKE_BUILD_TYPE MATCHES debugfull)
-
-if(QCA2_FOUND)
-    add_definitions(-DHAVE_QCA2)
-    include_directories(${QCA2_INCLUDE_DIR})
-endif(QCA2_FOUND)
 
 if(QGPGME_FOUND)
     add_definitions(-DHAVE_QGPGME)
@@ -141,10 +133,6 @@ if (SQLITE_FOUND)
   target_link_libraries(kgetcore ${QT_QTSQL_LIBRARY})
 endif (SQLITE_FOUND)
 
-if (QCA2_FOUND)
-    target_link_libraries(kgetcore ${QCA2_LIBRARIES})
-endif (QCA2_FOUND)
-
 if (QGPGME_FOUND)
     target_link_libraries(kgetcore ${QGPGME_LIBRARIES})
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
@@ -233,9 +221,6 @@ qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h
 add_executable(kget ${kget_SRCS})
 
 target_link_libraries(kget ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBRARY} ${KDE4_KIO_LIBRARY} ${KDE4_KCMUTILS_LIBRARY} kgetcore ${KDE4_KNOTIFYCONFIG_LIBS})
-if(QCA2_FOUND)
-  target_link_libraries(kget ${QCA2_LIBRARIES})
-endif(QCA2_FOUND)
 
 if (QGPGME_FOUND)
   target_link_libraries(kget ${QGPGME_LIBRARIES})

@@ -25,20 +25,19 @@
 
 #include <QtCore/QFile>
 #include <QtCore/QScopedPointer>
+#include <QtCore/QCryptographicHash>
 #include <QtXml/qdom.h>
 
-#include <KCodecs>
 #include <KDebug>
 
-#ifdef HAVE_QCA2
-#include <QtCrypto>
-#endif
-
 //TODO use mutable to make some methods const?
-const QStringList VerifierPrivate::SUPPORTED = (QStringList() << "sha512" << "sha384" << "sha256" << "ripmed160" << "sha1" << "md5" << "md4");
+// TODO: implement md4 support
+const QStringList VerifierPrivate::SUPPORTED = (QStringList() << "sha1" << "md5" << "md4");
 const QString VerifierPrivate::MD5 = QString("md5");
-const int VerifierPrivate::DIGGESTLENGTH[] = {128, 96, 64, 40, 40, 32, 32};
 const int VerifierPrivate::MD5LENGTH = 32;
+const QString VerifierPrivate::SHA1 = QString("sha1");
+const int VerifierPrivate::SHA1LENGTH = 40;
+const int VerifierPrivate::DIGGESTLENGTH[] = {40, 32, 32};
 const int VerifierPrivate::PARTSIZE = 500 * 1024;
 
 VerifierPrivate::~VerifierPrivate()
@@ -47,7 +46,7 @@ VerifierPrivate::~VerifierPrivate()
     qDeleteAll(partialSums.begin(), partialSums.end());
 }
 
-QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &type, KIO::fileoffset_t startOffset, int pieceLength, KIO::filesize_t fileSize, bool *abortPtr)
+QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &type, KIO::fileoffset_t startOffset, int pieceLength, KIO::filesize_t fileSize)
 {
     if (!file)
     {
@@ -64,19 +63,9 @@ QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &ty
         pieceLength = fileSize - startOffset;
     }
 
-#ifdef HAVE_QCA2
-    QCA::Hash hash(type);
-
-    //it can be that QCA2 does not support md5, e.g. when Qt is compiled locally
-    KMD5 md5Hash;
-    const bool useMd5 = (type == MD5);
-#else //NO QCA2
-    if (type != MD5)
-    {
+    if (type != MD5 && type != SHA1) {
         return QString();
     }
-    KMD5 hash;
-#endif //HAVE_QCA2
 
     //we only read 512kb each time, to save RAM
     int numData = pieceLength / PARTSIZE;
@@ -84,9 +73,15 @@ QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &ty
 
     if (!numData && !dataRest)
     {
-        QString();
+        return QString();
     }
 
+    QCryptographicHash *hash = 0;
+    if (type == MD5) {
+        hash = new QCryptographicHash(QCryptographicHash::Md5);
+    } else if (type == SHA1) {
+        hash = new QCryptographicHash(QCryptographicHash::Sha1);
+    }
     int k = 0;
     for (k = 0; k < numData; ++k)
     {
@@ -95,21 +90,8 @@ QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &ty
             return QString();
         }
 
-        if (abortPtr && *abortPtr)
-        {
-            return QString();
-        }
-
         QByteArray data = file->read(PARTSIZE);
-#ifdef HAVE_QCA2
-        if (useMd5) {
-            md5Hash.update(data);
-        } else {
-            hash.update(data);
-        }
-#else //NO QCA2
-        hash.update(data);
-#endif //HAVE_QCA2
+        hash->addData(data);
     }
 
     //now read the rest
@@ -121,22 +103,10 @@ QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &ty
         }
 
         QByteArray data = file->read(dataRest);
-#ifdef HAVE_QCA2
-        if (useMd5) {
-            md5Hash.update(data);
-        } else {
-            hash.update(data);
-        }
-#else //NO QCA2
-        hash.update(data);
-#endif //HAVE_QCA2
+        hash->addData(data);
     }
 
-#ifdef HAVE_QCA2
-    return (useMd5 ? QString(md5Hash.hexDigest()) : QString(QCA::arrayToHex(hash.final().toByteArray())));
-#else //NO QCA2
-    return QString(hash.hexDigest());
-#endif //HAVE_QCA2
+    return QString(hash->result().toHex());
 }
 
 QStringList VerifierPrivate::orderChecksumTypes(Verifier::ChecksumStrength strength) const
@@ -216,20 +186,9 @@ VerificationModel *Verifier::model()
 QStringList Verifier::supportedVerficationTypes()
 {
     QStringList supported;
-#ifdef HAVE_QCA2
-    QStringList supportedTypes = QCA::Hash::supportedTypes();
-    for (int i = 0; i < VerifierPrivate::SUPPORTED.count(); ++i)
-    {
-        if (supportedTypes.contains(VerifierPrivate::SUPPORTED.at(i)))
-        {
-            supported << VerifierPrivate::SUPPORTED.at(i);
-        }
-    }
-#endif //HAVE_QCA2
-
     if (!supported.contains(VerifierPrivate::MD5))
     {
-        supported << VerifierPrivate::MD5;
+        supported << VerifierPrivate::MD5 << VerifierPrivate::SHA1;
     }
 
     return supported;
@@ -238,17 +197,11 @@ QStringList Verifier::supportedVerficationTypes()
 
 int Verifier::diggestLength(const QString &type)
 {
-    if (type == VerifierPrivate::MD5)
-    {
+    if (type == VerifierPrivate::MD5) {
         return VerifierPrivate::MD5LENGTH;
+    } else if (type == VerifierPrivate::SHA1) {
+        return VerifierPrivate::SHA1LENGTH;
     }
-
-#ifdef HAVE_QCA2
-    if (QCA::isSupported(type.toLatin1()))
-    {
-        return VerifierPrivate::DIGGESTLENGTH[VerifierPrivate::SUPPORTED.indexOf(type)];
-    }
-#endif //HAVE_QCA2
 
     return 0;
 }
@@ -395,7 +348,7 @@ void Verifier::brokenPieces() const
     d->thread.findBrokenPieces(pair.first, checksums, length, d->dest);
 }
 
-QString Verifier::checksum(const KUrl &dest, const QString &type, bool *abortPtr)
+QString Verifier::checksum(const KUrl &dest, const QString &type)
 {
     QStringList supported = supportedVerficationTypes();
     if (!supported.contains(type))
@@ -410,42 +363,19 @@ QString Verifier::checksum(const KUrl &dest, const QString &type, bool *abortPtr
     }
 
     if (type == VerifierPrivate::MD5) {
-        KMD5 hash;
-        hash.update(file);
-        QString final = QString(hash.hexDigest());
+        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md5);
         file.close();
-        return final;
+        return hash.toHex();
+    } else if (type == VerifierPrivate::SHA1) {
+        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Sha1);
+        file.close();
+        return hash.toHex();
     }
-
-
-#ifdef HAVE_QCA2
-    QCA::Hash hash(type);
-
-    //BEGIN taken from qca_basic.h and slightly adopted to allow abort
-    char buffer[1024];
-    int len;
-
-    while ((len=file.read(reinterpret_cast<char*>(buffer), sizeof(buffer))) > 0)
-    {
-        hash.update(buffer, len);
-        if (abortPtr && *abortPtr)
-        {
-            hash.final();
-            file.close();
-            return QString();
-        }
-    }
-    //END
-
-    QString final = QString(QCA::arrayToHex(hash.final().toByteArray()));
-    file.close();
-    return final;
-#endif //HAVE_QCA2
 
     return QString();
 }
 
-PartialChecksums Verifier::partialChecksums(const KUrl &dest, const QString &type, KIO::filesize_t length, bool *abortPtr)
+PartialChecksums Verifier::partialChecksums(const KUrl &dest, const QString &type, KIO::filesize_t length)
 {
     QStringList checksums;
 
@@ -496,7 +426,7 @@ PartialChecksums Verifier::partialChecksums(const KUrl &dest, const QString &typ
     //create all the checksums for the pieces
     for (int i = 0; i < numPieces; ++i)
     {
-        QString hash = VerifierPrivate::calculatePartialChecksum(&file, type, length * i, length, fileSize, abortPtr);
+        QString hash = VerifierPrivate::calculatePartialChecksum(&file, type, length * i, length, fileSize);
         if (hash.isEmpty())
         {
             file.close();
