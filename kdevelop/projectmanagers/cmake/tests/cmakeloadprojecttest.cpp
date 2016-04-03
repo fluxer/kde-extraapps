@@ -174,7 +174,7 @@ CMakeProjectData CMakeLoadProjectTest::parseProject( const QString& sourcedir )
     data.vm.insert("CMAKE_CURRENT_BINARY_DIR", QStringList(sourcedir));
     data.vm.insert("CMAKE_CURRENT_LIST_FILE", QStringList(projectfile));
     data.vm.insert("CMAKE_CURRENT_SOURCE_DIR", QStringList(sourcedir));
-    data.vm.insert("KDE4_BUILD_TESTS", QStringList("True"));
+    data.vm.insert("ENABLE_TESTING", QStringList("True"));
 
     CMakeProjectVisitor v(projectfile, ref);
     v.setVariableMap(&data.vm);

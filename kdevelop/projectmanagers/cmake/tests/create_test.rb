@@ -112,7 +112,7 @@ target_link_libraries( #{targetName}
   kdevplatform
   kdevcmakecommon )
 add_test( #{targetName} ${EXECUTABLE_OUTPUT_PATH}/#{targetName} )
-endif(KDE4_BUILD_TESTS)
+endif(ENABLE_TESTING)
 
 CMAKE_EOF
 
@@ -128,7 +128,7 @@ puts "Adding build system bits to CMakeLists.txt"
 cmakeList = File.new("CMakeLists.txt", "r+")
 oldCMakeText = cmakeList.read;
 cmakeList.close;
-oldCMakeText.gsub!(/endif\(KDE4_BUILD_TESTS\)/, cmakeText)
+oldCMakeText.gsub!(/endif\(ENABLE_TESTING\)/, cmakeText)
 cmakeList = File.new("CMakeLists.txt", "w")
 cmakeList.write(oldCMakeText)
 
