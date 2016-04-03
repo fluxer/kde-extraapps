@@ -285,13 +285,15 @@ bool MovieDecoder::getVideoPacket()
 
 void MovieDecoder::getScaledVideoFrame(int scaledSize, bool maintainAspectRatio, VideoFrame& videoFrame)
 {
+#ifdef FF_API_DEINTERLACE
     if (m_pFrame->interlaced_frame) {
         avpicture_deinterlace((AVPicture*) m_pFrame, (AVPicture*) m_pFrame, m_pVideoCodecContext->pix_fmt,
                               m_pVideoCodecContext->width, m_pVideoCodecContext->height);
     }
+#endif
 
     int scaledWidth, scaledHeight;
-    convertAndScaleFrame(PIX_FMT_RGB24, scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
+    convertAndScaleFrame(AV_PIX_FMT_RGB24, scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
 
     videoFrame.width = scaledWidth;
     videoFrame.height = scaledHeight;
@@ -302,7 +304,7 @@ void MovieDecoder::getScaledVideoFrame(int scaledSize, bool maintainAspectRatio,
     memcpy((&(videoFrame.frameData.front())), m_pFrame->data[0], videoFrame.lineSize * videoFrame.height);
 }
 
-void MovieDecoder::convertAndScaleFrame(PixelFormat format, int scaledSize, bool maintainAspectRatio, int& scaledWidth, int& scaledHeight)
+void MovieDecoder::convertAndScaleFrame(AVPixelFormat format, int scaledSize, bool maintainAspectRatio, int& scaledWidth, int& scaledHeight)
 {
     calculateDimensions(scaledSize, maintainAspectRatio, scaledWidth, scaledHeight);
     SwsContext* scaleContext = sws_getContext(m_pVideoCodecContext->width, m_pVideoCodecContext->height,
@@ -355,7 +357,7 @@ void MovieDecoder::calculateDimensions(int squareSize, bool maintainAspectRatio,
     }
 }
 
-void MovieDecoder::createAVFrame(AVFrame** avFrame, quint8** frameBuffer, int width, int height, PixelFormat format)
+void MovieDecoder::createAVFrame(AVFrame** avFrame, quint8** frameBuffer, int width, int height, AVPixelFormat format)
 {
     *avFrame = av_frame_alloc();
 

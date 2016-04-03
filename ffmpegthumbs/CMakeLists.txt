@@ -1,5 +1,14 @@
 project(ffmpegthumbs)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.14.3 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+endif()
+
 find_package(FFmpeg COMPONENTS AVCODEC AVFORMAT SWSCALE)
 
 include_directories(
@@ -23,14 +32,20 @@ set(ffmpegthumbs_PART_SRCS
 
 kde4_add_plugin(ffmpegthumbs ${ffmpegthumbs_PART_SRCS})
 
-target_link_libraries(ffmpegthumbs  ${KDE4_KIO_LIBS} ${AVUTIL_LIBRARIES} ${AVFORMAT_LIBRARIES} ${AVCODEC_LIBRARIES} ${SWSCALE_LIBRARIES} )
+target_link_libraries(ffmpegthumbs
+    ${KDE4_KIO_LIBS}
+    ${AVUTIL_LIBRARIES}
+    ${AVFORMAT_LIBRARIES}
+    ${AVCODEC_LIBRARIES}
+    ${SWSCALE_LIBRARIES}
+)
 
 install(TARGETS ffmpegthumbs DESTINATION ${PLUGIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install(FILES  ffmpegthumbs.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES ffmpegthumbs.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
-if (KDE4_BUILD_TESTS)
+if(ENABLE_TESTING)
     add_subdirectory(tests)
-endif (KDE4_BUILD_TESTS)
+endif()
