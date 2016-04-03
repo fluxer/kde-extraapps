@@ -319,7 +319,6 @@ class OKULAR_EXPORT NormalizedRect
          */
         double bottom;
 };
-KDE_DUMMY_QHASH_FUNCTION(NormalizedRect)
 
 /**
  * @short NormalizedRect that contains a reference to an object.
