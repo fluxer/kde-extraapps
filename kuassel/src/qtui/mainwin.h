@@ -115,6 +115,7 @@ private slots:
     void showIgnoreList(QString newRule = QString());
     void showShortcutsDlg();
     void showNewTransferDlg(const ClientTransfer *transfer);
+    void showTipOfDay();
     void onFullScreenToggled();
 
     void handleCoreConnectionError(const QString &errorMsg);
