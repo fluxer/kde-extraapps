@@ -1,12 +1,10 @@
-add_subdirectory(comic)
-
 if (QCA2_FOUND AND QJSON_FOUND AND QTOAUTH_FOUND)
       add_subdirectory(microblog)
-endif(QCA2_FOUND AND QJSON_FOUND AND QTOAUTH_FOUND)
+endif()
 
 if(LIBATTICA_FOUND)
   add_subdirectory(ocs)
-endif(LIBATTICA_FOUND)
+endif()
 
 add_subdirectory(potd)
 add_subdirectory(rememberthemilk)
