@@ -35,7 +35,6 @@
 #include <QtCore/QByteArray>
 
 #include <kde_file.h>
-#include <dirent.h>
 #ifdef Q_OS_SOLARIS
 #include <sys/vfstab.h>
 #elif !defined(Q_WS_WIN)
@@ -148,16 +147,8 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         return cwd;
     }
 
-#ifdef _MSC_VER
-//use a wider struct on win for nice handling of files larger than 2 GB
-#undef KDE_struct_stat
-#undef KDE_lstat
-#define KDE_struct_stat struct _stat64
-#define KDE_lstat kdewin32_stat64
-#endif
-
     KDE_struct_stat statbuf;
-    dirent *ent;
+    kde_struct_dirent *ent;
     while ((ent = KDE_readdir(dir)))
     {
         if (m_parent->m_abort)
