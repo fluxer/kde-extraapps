@@ -31,7 +31,6 @@
 
 // forward declarations
 class KJob;
-class KImageCache;
 
 namespace KIO
 {

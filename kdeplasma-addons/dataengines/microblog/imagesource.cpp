@@ -25,12 +25,10 @@
 #include <QPainterPath>
 
 #include <KIO/Job>
-#include <KImageCache>
 
 ImageSource::ImageSource(QObject* parent)
     : Plasma::DataContainer(parent),
-      m_runningJobs(0),
-      m_imageCache(0)
+      m_runningJobs(0)
 {
     setObjectName(QLatin1String("UserImages"));
 }
@@ -44,28 +42,12 @@ void ImageSource::loadImage(const QString &who, const KUrl &url)
     if (who.isEmpty()) {
         return;
     }
-    if (!m_imageCache) {
-        m_imageCache = new KImageCache("plasma_engine_preview", 10485760); // Re-use previewengine's cache
-    }
 
     // Make sure we only start one job per user
     if (m_loadedPersons.contains(who)) {
         return;
     }
 
-    const QString cacheKey = who + "@" + url.pathOrUrl();
-
-    // Check if the image is in the cache, if so return it
-    QImage preview = QImage(QSize(48, 48), QImage::Format_ARGB32_Premultiplied);
-    preview.fill(Qt::transparent);
-    if (m_imageCache->findImage(cacheKey, &preview)) {
-        // cache hit
-        //kDebug() << "cache hit: " << cacheKey;
-        setData(who, polishImage(preview));
-        emit dataChanged();
-        checkForUpdate();
-        return;
-    }
     if (!url.isValid()) {
         return;
     }
@@ -118,8 +100,6 @@ void ImageSource::result(KJob *job)
         emit dataChanged();
         KIO::TransferJob* kiojob = dynamic_cast<KIO::TransferJob*>(job);
         const QString cacheKey = who + "@" + kiojob->url().pathOrUrl();
-
-        m_imageCache->insertImage(cacheKey, img);
     }
 
     m_jobs.remove(job);
