@@ -747,8 +747,9 @@ bool LibArchiveInterface::writeFile(const QString& fileName, struct archive* arc
     //          or something may have caused it to follow symlinks, in
     //          which case stat() will be called. To avoid this, we
     //          call lstat() ourselves.
-    KDE_struct_stat st;
-    KDE_lstat(QFile::encodeName(fileName).constData(), &st);
+#warning using struct stat instead of QT_STATBUF until libarchive can handle struct stat64
+    struct stat st;
+    ::lstat(QFile::encodeName(fileName).constData(), &st);
 
     struct archive_entry *entry = archive_entry_new();
     archive_entry_set_pathname(entry, QFile::encodeName(relativeName).constData());
