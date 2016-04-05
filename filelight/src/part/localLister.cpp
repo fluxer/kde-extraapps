@@ -148,7 +148,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
     }
 
     KDE_struct_stat statbuf;
-    kde_struct_dirent *ent;
+    KDE_struct_dirent *ent;
     while ((ent = KDE_readdir(dir)))
     {
         if (m_parent->m_abort)
