@@ -895,11 +895,13 @@ const QHash<int, int> &SignalProxy::ExtendedMetaObject::receiveMap()
             methodName = methodName.replace("request", "receive");
             params = params.left(params.count() - 1) + ", " + returnTypeName + ")";
 
-            signature = QMetaObject::normalizedSignature(methodName + params);
+            QByteArray signaturename = methodName + params;
+            signature = QMetaObject::normalizedSignature(signaturename.data());
             receiverId = _meta->indexOfSlot(signature);
 
             if (receiverId == -1) {
-                signature = QMetaObject::normalizedSignature(methodName + "(" + returnTypeName + ")");
+                signaturename = methodName + "(" + returnTypeName + ")";
+                signature = QMetaObject::normalizedSignature(signaturename.data());
                 receiverId = _meta->indexOfSlot(signature);
             }
 
