@@ -17,11 +17,19 @@
 
 project(partitionmanager)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
+pkg_check_modules(UUID REQUIRED uuid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
 add_definitions(${KDE4_ENABLE_EXCEPTIONS})
@@ -30,4 +38,3 @@ include_directories(${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
 add_subdirectory(lib)
 add_subdirectory(src)
-add_subdirectory(icons)

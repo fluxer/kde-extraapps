@@ -53,7 +53,7 @@ public:
 
     Store() : folder(0), parent(0) {}
     Store(const KUrl &u, const QString &name, Store *s)
-            : url(u), folder(new Folder(name.toUtf8() + '/')), parent(s) {}
+            : url(u), folder(new Folder(name.toUtf8().data() + '/')), parent(s) {}
 
 
     Store* propagate()

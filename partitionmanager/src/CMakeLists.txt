@@ -26,36 +26,11 @@ file(GLOB partitionmanagerprivate_SRCS
     fs/*.cpp
     gui/*.cpp
     config/*.cpp
-)
-
-set(partitionmanagerprivate_UIFILES
-    config/configurepageadvanced.ui
-    config/configurepagefilesystemcolors.ui
-    config/configurepagegeneral.ui
-
-    gui/applyprogressdetailswidgetbase.ui
-    gui/editmountpointdialogwidgetbase.ui
-    gui/partpropswidgetbase.ui
-    gui/applyprogressdialogwidgetbase.ui
-    gui/filesystemsupportdialogwidgetbase.ui
-    gui/sizedetailswidgetbase.ui
-    gui/createpartitiontablewidgetbase.ui
-    gui/listdevicesbase.ui
-    gui/sizedialogwidgetbase.ui
-    gui/decryptluksdialogwidgetbase.ui
-    gui/listoperationsbase.ui
-    gui/smartdialogwidgetbase.ui
-    gui/devicepropswidgetbase.ui
-    gui/mainwindowbase.ui
-    gui/treelogbase.ui
-    gui/editmountoptionsdialogwidgetbase.ui
-    gui/partitionmanagerwidgetbase.ui
+    # to generate the UI header it includes
+    gui/partpropswidget.h
 )
 
 kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
-
-# FIXME: why is that needed?
-qt4_wrap_ui(partitionmanagerprivate_SRCS gui/partpropswidgetbase.ui)
 
 add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
