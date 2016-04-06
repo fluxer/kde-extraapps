@@ -1,21 +1,10 @@
 project(ark)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
-
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4 4.14.3 REQUIRED)
-    include( KDE4Defaults )
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
     include_directories(${KDE4_INCLUDES})
-
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-
-    # If definitions like -D_GNU_SOURCE are needed for these checks they
-    # should be added to _KDE4_PLATFORM_DEFINITIONS when it is originally
-    # defined outside this file.  Here we include these definitions in
-    # CMAKE_REQUIRED_DEFINITIONS so they will be included in the build of
-    # checks below.
-    set( CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS} )
 endif()
 
 include( MacroLibrary )

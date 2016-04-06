@@ -1,5 +1,12 @@
 project(kfilemetadata)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 find_package(PopplerQt4 0.12.1)
 set_package_properties(PopplerQt4 PROPERTIES DESCRIPTION "A PDF rendering library"
                        URL "http://poppler.freedesktop.org" TYPE OPTIONAL

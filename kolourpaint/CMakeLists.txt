@@ -1,7 +1,13 @@
 project(kolourpaint)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 find_package(QImageBlitz)
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/commands

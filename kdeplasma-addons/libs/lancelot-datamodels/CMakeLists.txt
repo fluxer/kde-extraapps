@@ -1,10 +1,5 @@
 project(liblancelot-datamodels)
 
-find_package(KDE4 4.14.3 REQUIRED)
-
-include (KDE4Defaults)
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-
 find_package(Lancelot REQUIRED)
 
 set (ADDITIONAL_LINK_LIBRARIES)

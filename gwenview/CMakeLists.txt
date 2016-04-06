@@ -1,5 +1,12 @@
 project(gwenview)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 ## Dependencies
 find_package(JPEG)
 macro_log_feature(JPEG_FOUND "libjpeg" "JPEG image manipulation support" "http://libjpeg.sourceforge.net/" TRUE)
@@ -21,21 +28,11 @@ macro_log_feature(LIBKONQ_FOUND "libkonq" "Standard file management features" "h
 
 ## Global settings
 
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-add_definitions(
-    ${QT_DEFINITIONS}
-    ${QT_QTDBUS_DEFINITIONS}
-    ${KDE4_DEFINITIONS}
-    )
-
 include_directories(
     ${QDBUS_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}
-    ${CMAKE_BINARY_DIR}
-    ${KDE4_INCLUDES}
     ${EXIV2_INCLUDE_DIR}
     ${KDCRAW_INCLUDE_DIR}
-    )
+)
 
 ## dirs to build
 add_subdirectory(lib)

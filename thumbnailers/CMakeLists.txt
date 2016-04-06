@@ -1,12 +1,11 @@
 project(kdegraphics-thumbnailers)
 
-add_definitions(
-    ${QT_DEFINITIONS}
-    ${KDE4_DEFINITIONS}
-    -DQT_USE_FAST_CONCATENATIO
-    -DQT_USE_FAST_OPERATOR_PLUS
-)
-include_directories(${KDE4_INCLUDES})
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
 
 macro_optional_find_package(GettextPO)
 

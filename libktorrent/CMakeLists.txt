@@ -1,17 +1,15 @@
 project(LIBKTORRENT)
 
-find_package(KDE4 4.14.3 REQUIRED)
-find_package(KDE4Internal REQUIRED)
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 find_package(GMP REQUIRED)
 find_package(QCA2 REQUIRED)
-
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules;${CMAKE_MODULE_PATH}")
 find_package(LibGcrypt REQUIRED)
-
-# set some default settings
-include(KDE4Defaults)
-enable_testing()
-set(BUILD_TESTING ON)
 
 # make some more macros available
 include (MacroLibrary)

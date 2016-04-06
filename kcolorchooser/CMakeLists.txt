@@ -1,9 +1,10 @@
 project(kcolorchooser)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4 4.14.3 REQUIRED)
+    find_package(KDE4 4.18.0 REQUIRED)
     include(KDE4Defaults)
-    include(MacroLibrary)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
 add_definitions (${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS})

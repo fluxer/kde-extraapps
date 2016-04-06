@@ -1,16 +1,5 @@
 project(plasma-kdecommitsengine)
- 
-find_package(KDE4 4.14.3 REQUIRED)
-include(KDE4Defaults)
- 
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
-include_directories(
-   ${CMAKE_SOURCE_DIR}
-   ${CMAKE_BINARY_DIR}
-   ${KDE4_INCLUDES}
-   )
- 
 set(kdecommits_engine_SRCS
     src/kdepresets.cpp
     src/kdecommitsengine.cpp

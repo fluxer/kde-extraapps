@@ -1,19 +1,15 @@
 project(ffmpegthumbs)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4 4.14.3 REQUIRED)
+    find_package(KDE4 4.18.0 REQUIRED)
     include(KDE4Defaults)
     include_directories(${KDE4_INCLUDES})
-
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-    add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 endif()
 
 find_package(FFmpeg COMPONENTS AVCODEC AVFORMAT SWSCALE)
 
 include_directories(
-    ${KDE4_INCLUDES}
-    ${CMAKE_CURRENT_BINARY_DIR}
     ${PC_AVCODEC_INCLUDEDIR}
     ${PC_AVFORMAT_INCLUDEDIR}
     ${FFMPEG_INCLUDE_DIR}

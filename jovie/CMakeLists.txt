@@ -1,14 +1,22 @@
 project(kttsd)
 
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-add_definitions( -DQT_NO_CAST_FROM_ASCII )
-add_definitions( -DQT_NO_CAST_TO_ASCII )
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.18.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
 
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES})
+add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII)
+
+include_directories(${CMAKE_SOURCE_DIR})
 
 macro_optional_find_package(Speechd)
-macro_log_feature(SPEECHD_FOUND "speechd" "Speech Dispatcher provides a high-level device independent layer for speech synthesis" "http://www.freebsoft.org/speechd" FALSE "" "Jovie requires speech dispatcher.")
+set_package_properties(Speechd PROPERTIES
+    URL "http://www.freebsoft.org/speechd"
+    DESCRIPTION "Speech Dispatcher provides a high-level device independent layer for speech synthesis"
+    PURPOSE "Jovie requires speech dispatcher."
+)
 
 if (SPEECHD_FOUND)
     if(NOT Q_WS_X11)
