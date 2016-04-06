@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
 		version, ki18n(description), KAboutData::License_BSD,
 		ki18n("(c) 2000, Waldo Bastian"));
   aboutData.addAuthor(ki18n("Waldo Bastian"),KLocalizedString(), "bastian@kde.org");
-  aboutData.setProductName("kdelibs/kdeui");
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KCmdLineOptions options;

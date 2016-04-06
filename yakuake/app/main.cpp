@@ -41,8 +41,6 @@ int main (int argc, char *argv[])
         ki18n(0),
         "http://yakuake.kde.org/");
 
-    aboutData.setProductName("yakuake");
-
     aboutData.addAuthor(ki18nc("@info:credit", "Eike Hein"),
         ki18nc("@info:credit", "Maintainer, Lead Developer"), "hein@kde.org");
     aboutData.addAuthor(ki18nc("@info:credit", "Francois Chazal"),
