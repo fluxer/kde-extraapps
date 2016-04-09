@@ -26,6 +26,7 @@
 #include <QWidget>
 
 #include <KConfigGroup>
+#include <KUrl>
 
 #include "../debuggerexport.h"
 

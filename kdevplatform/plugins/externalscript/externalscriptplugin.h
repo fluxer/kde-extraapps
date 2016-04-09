@@ -24,8 +24,9 @@
 
 #include <interfaces/iplugin.h>
 #include <QtCore/qvariant.h>
-#include <KConfigGroup>
 #include <QtCore/qabstractitemmodel.h>
+#include <KConfigGroup>
+#include <KUrl>
 
 class ExternalScriptItem;
 

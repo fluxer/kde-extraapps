@@ -28,6 +28,7 @@
 #include <KConfigGroup>
 
 #include <QDirIterator>
+#include <QDateTime>
 
 namespace KDevelop {
 

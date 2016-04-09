@@ -24,6 +24,7 @@
 #include <KColorScheme>
 #include <kdebug.h>
 #include <QMenu>
+#include <QDateTime>
 
 #include <interfaces/icore.h>
 #include <interfaces/isession.h>

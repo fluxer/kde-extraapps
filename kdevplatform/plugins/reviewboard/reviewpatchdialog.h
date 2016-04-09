@@ -21,6 +21,7 @@
 #ifndef KDEVPLATFORM_PLUGIN_REVIEWPATCHDIALOG_H
 #define KDEVPLATFORM_PLUGIN_REVIEWPATCHDIALOG_H
 #include <KDialog>
+#include <KUrl>
 
 class QItemSelection;
 class QModelIndex;

@@ -4,8 +4,8 @@
 #include <interfaces/iplugin.h>
 #include <interfaces/itemplateprovider.h>
 #include <QtCore/qvariant.h>
+#include <KUrl>
 
-class KUrl;
 namespace KDevelop
 {
 class TemplatesModel;

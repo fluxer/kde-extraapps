@@ -24,6 +24,7 @@ Boston, MA 02110-1301, USA.
 #include <QtCore/QDir>
 #include <QtCore/QStringList>
 #include <QtCore/QTimer>
+#include <QtCore/QDateTime>
 
 #include <kglobal.h>
 #include <kcmdlineargs.h>
