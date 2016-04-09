@@ -58,9 +58,6 @@
 #include <kicon.h>
 #include <kfilterdev.h>
 #include <kfilterbase.h>
-#if 0
-#include <knewstuff2/engine.h>
-#endif
 #include <kdeprintdialog.h>
 #include <kprintpreview.h>
 #include <kbookmarkmenu.h>

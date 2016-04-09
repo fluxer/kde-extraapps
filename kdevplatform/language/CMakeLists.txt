@@ -162,7 +162,6 @@ target_link_libraries(kdevplatformlanguage LINK_PRIVATE
         ${KDE4_KPARTS_LIBS}
         ${KDE4_KTEXTEDITOR_LIBS}
         ${KDE4_THREADWEAVER_LIBS}
-        ${KDE4_KNEWSTUFF3_LIBS}
         kdevplatformutil
         ${Grantlee_CORE_LIBRARIES}
 )

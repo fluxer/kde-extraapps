@@ -14,7 +14,7 @@ set(kdevexternalscript_PART_SRCS
 kde4_add_plugin(kdevexternalscript ${kdevexternalscript_PART_SRCS})
 
 target_link_libraries(kdevexternalscript
-    ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KNEWSTUFF3_LIBS}
+    ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KPARTS_LIBS}
     kdevplatformlanguage kdevplatforminterfaces kdevplatformproject
     kdevplatformutil kdevplatformoutputview
 )
