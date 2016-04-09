@@ -20,6 +20,7 @@
 #include "ContactsKopete.h"
 
 #include <QDBusServiceWatcher>
+#include <QBasicTimer>
 
 #include <KDebug>
 #include <KIcon>

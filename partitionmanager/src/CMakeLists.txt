@@ -40,9 +40,7 @@ install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ############################################
 
-file(GLOB partitionmanager_SRCS	main.cpp)
-
-add_executable(partitionmanager ${partitionmanager_SRCS})
+add_executable(partitionmanager main.cpp)
 
 target_link_libraries(partitionmanager partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 
@@ -54,4 +52,3 @@ install(PROGRAMS partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 ############################################
 
 add_subdirectory(plugins)
-

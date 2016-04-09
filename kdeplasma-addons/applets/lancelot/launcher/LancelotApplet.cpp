@@ -24,6 +24,8 @@
 #include <QDBusReply>
 #include <QDBusConnection>
 #include <QGraphicsLinearLayout>
+#include <QSignalMapper>
+#include <QTimer>
 
 #include <KDebug>
 #include <KIcon>
