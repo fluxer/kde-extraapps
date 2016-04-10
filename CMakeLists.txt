@@ -59,9 +59,5 @@ macro_optional_add_subdirectory (skanlite)
 macro_optional_add_subdirectory (svgpart)
 macro_optional_add_subdirectory (thumbnailers)
 macro_optional_add_subdirectory (yakuake)
-# FIXME: tests for those bellow are broken
-set(ENABLE_TESTING OFF)
-macro_optional_add_subdirectory (kdevplatform)
-macro_optional_add_subdirectory (kdevelop)
 
 macro_display_feature_log()

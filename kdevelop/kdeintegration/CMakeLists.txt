@@ -1,2 +1,0 @@
-macro_optional_add_subdirectory(kdeprovider)
-macro_optional_add_subdirectory(executeplasmoid)

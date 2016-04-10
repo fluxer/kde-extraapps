@@ -1,4 +1,0 @@
-File=cmakebuilderconfig.kcfg
-ClassName=CMakeBuilderSettings
-Singleton=true
-Mutators=true

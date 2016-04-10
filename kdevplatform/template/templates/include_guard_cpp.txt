@@ -1,1 +1,0 @@
-{% for ns in namespaces %}{{ ns|upper }}_{% endfor %}{{ name|upper }}_H

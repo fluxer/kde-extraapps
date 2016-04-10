@@ -1,7 +1,0 @@
-macro_optional_add_subdirectory(plugins)
-macro_optional_add_subdirectory(cpp)
-#macro_optional_add_subdirectory(cmake)
-#add_subdirectory(fake)
-#add_subdirectory(csharp)
-#add_subdirectory(java)
-#add_subdirectory(ruby)
