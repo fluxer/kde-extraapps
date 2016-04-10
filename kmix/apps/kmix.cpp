@@ -1276,7 +1276,7 @@ void
 KMixWindow::slotKdeAudioSetupExec()
 {
   QStringList args;
-  args << "kcmshell4" << "kcm_phonon";
+  args << "kcmshell4" << "kcmplayer";
   forkExec(args);
 }
 
@@ -1287,8 +1287,7 @@ KMixWindow::forkExec(const QStringList& args)
   if (pid == 0)
     {
       static const QString startErrorMessage(
-          i18n(
-              "The helper application is either not installed or not working."));
+          i18n("The helper application is either not installed or not working."));
       QString msg;
       msg += startErrorMessage;
       msg += "\n(";
