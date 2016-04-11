@@ -1,22 +1,25 @@
-
-include_directories( ${SPEECHD_INCLUDE_DIR} )
+include_directories(${SPEECHD_INCLUDE_DIR})
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=2400)
 
 ########### next target ###############
 
 set(jovie_SRCS
-   main.cpp
-   jovie.cpp
-   speaker.cpp
-   appdata.cpp
-   ssmlconvert.cpp
-   filtermgr.cpp
-   talkermgr.cpp
-   jovietrayicon.cpp
+    main.cpp
+    jovie.cpp
+    speaker.cpp
+    appdata.cpp
+    ssmlconvert.cpp
+    filtermgr.cpp
+    talkermgr.cpp
+    jovietrayicon.cpp
 )
 
-qt4_add_dbus_adaptor(jovie_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml jovie.h Jovie)
+qt4_add_dbus_adaptor(jovie_SRCS
+    ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml
+    jovie.h
+    Jovie
+)
 
 add_executable(jovie_bin ${jovie_SRCS})
 
@@ -27,13 +30,27 @@ target_link_libraries(jovie_bin
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
-    kttsd )
+    kttsd
+)
 
-install(TARGETS jovie_bin  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS jovie_bin ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install( FILES SSMLtoPlainText.xsl  DESTINATION  ${DATA_INSTALL_DIR}/jovie/xslt/ )
-install( FILES jovie.desktop kttsd.desktop DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS jovieapp.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install(
+    FILES SSMLtoPlainText.xsl
+    DESTINATION ${DATA_INSTALL_DIR}/jovie/xslt
+)
+
+install(
+    FILES
+    jovie.desktop
+    kttsd.desktop
+    DESTINATION ${SERVICES_INSTALL_DIR}
+)
+
+install(
+    PROGRAMS jovieapp.desktop
+    DESTINATION ${XDG_APPS_INSTALL_DIR}
+)
 

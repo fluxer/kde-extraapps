@@ -1,5 +1,3 @@
-
-
 ########### next target ###############
 
 set(jovie_stringreplacerplugin_PART_SRCS
@@ -8,15 +6,16 @@ set(jovie_stringreplacerplugin_PART_SRCS
     stringreplacerproc.cpp
     stringreplacerplugin.cpp 
     cdataescaper.cpp
-    stringreplacerconfwidget.ui
-    editreplacementwidget.ui
 )
 
 kde4_add_plugin(jovie_stringreplacerplugin ${jovie_stringreplacerplugin_PART_SRCS})
 
-target_link_libraries(jovie_stringreplacerplugin  ${KDE4_KIO_LIBS} ${QT_QTXML_LIBRARY} kttsd)
+target_link_libraries(jovie_stringreplacerplugin ${KDE4_KIO_LIBS} ${QT_QTXML_LIBRARY} kttsd)
 
-install(TARGETS jovie_stringreplacerplugin DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(
+    TARGETS jovie_stringreplacerplugin
+    DESTINATION ${PLUGIN_INSTALL_DIR}
+)
 
 ########### test cdata escaper ##########
 
@@ -32,7 +31,8 @@ endif()
 
 ########### install files ###############
 
-install(FILES
+install(
+    FILES
     abbreviations.xml
     chat.xml
     chat-de.xml
@@ -41,8 +41,13 @@ install(FILES
     polish_festival_unspeakables.xml
     kmail.xml
     festival_unspeakable_chars.xml
-    qt2plaintext.xml DESTINATION ${DATA_INSTALL_DIR}/jovie/stringreplacer/)
+    qt2plaintext.xml
+    DESTINATION ${DATA_INSTALL_DIR}/jovie/stringreplacer
+)
 
-install(FILES jovie_stringreplacerplugin.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install(
+    FILES jovie_stringreplacerplugin.desktop
+    DESTINATION  ${SERVICES_INSTALL_DIR}
+)
 
 

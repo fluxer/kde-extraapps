@@ -18,20 +18,25 @@ set_package_properties(Speechd PROPERTIES
     PURPOSE "Jovie requires speech dispatcher."
 )
 
-if (SPEECHD_FOUND)
+if(SPEECHD_FOUND)
     if(NOT Q_WS_X11)
         message(FATAL_ERROR "Jovie requires a X11-based system.")
     endif()
 
-    configure_file (config-jovie.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-jovie.h )
+    configure_file(
+        config-jovie.h.cmake
+        ${CMAKE_CURRENT_BINARY_DIR}/config-jovie.h
+    )
 
-    include_directories(${CMAKE_CURRENT_BINARY_DIR}/libkttsd ${CMAKE_CURRENT_SOURCE_DIR}/libkttsd)
+    include_directories(
+        ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_BINARY_DIR}/libkttsd
+        ${CMAKE_CURRENT_SOURCE_DIR}/libkttsd
+    )
 
-    add_subdirectory( libkttsd )
-    add_subdirectory( filters )
-    add_subdirectory( jovie )
-    add_subdirectory( kcmkttsmgr )
-    add_subdirectory( icons )
-endif (SPEECHD_FOUND)
-
-# macro_display_feature_log()
+    add_subdirectory(libkttsd)
+    add_subdirectory(filters)
+    add_subdirectory(jovie)
+    add_subdirectory(kcmkttsmgr)
+    add_subdirectory(icons)
+endif()
