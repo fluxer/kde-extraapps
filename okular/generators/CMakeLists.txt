@@ -3,7 +3,7 @@ include (MacroLogFeature)
 set(LIBSPECTRE_MINIMUM_VERSION "0.2")
 
 macro_optional_find_package(Poppler)
-macro_log_feature(POPPLER_FOUND "Poppler-Qt4" "A PDF rendering library" "http://poppler.freedesktop.org" FALSE "0.12.1" "Support for PDF files in okular.")
+macro_log_feature(POPPLER_FOUND "Poppler-Qt4" "A PDF rendering library" "http://poppler.freedesktop.org" FALSE "0.28.0" "Support for PDF files in okular.")
 
 macro_optional_find_package(LibSpectre)
 macro_log_feature(LIBSPECTRE_FOUND "libspectre" "A PostScript rendering library" "http://libspectre.freedesktop.org/wiki/" FALSE "${LIBSPECTRE_MINIMUM_VERSION}" "Support for PS files in okular.")

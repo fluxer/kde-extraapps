@@ -34,7 +34,6 @@ set(okularGenerator_poppler_PART_SRCS
    annots.cpp
    synctex/synctex_parser.c
    synctex/synctex_parser_utils.c
-   pdfsettingswidget.ui
 )
 
 kde4_add_kcfg_files(okularGenerator_poppler_PART_SRCS conf/pdfsettings.kcfgc )

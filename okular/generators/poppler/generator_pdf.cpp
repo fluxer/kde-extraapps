@@ -48,9 +48,7 @@
 
 #include <config-okular-poppler.h>
 
-#ifdef HAVE_POPPLER_0_20
-#  include <poppler-media.h>
-#endif
+#include <poppler-media.h>
 
 #include "annots.h"
 #include "formfields.h"
@@ -58,9 +56,7 @@
 
 Q_DECLARE_METATYPE(Poppler::Annotation*)
 Q_DECLARE_METATYPE(Poppler::FontInfo)
-#ifdef HAVE_POPPLER_0_20
 Q_DECLARE_METATYPE(const Poppler::LinkMovie*)
-#endif
 
 static const int defaultPageWidth = 595;
 static const int defaultPageHeight = 842;
@@ -82,9 +78,6 @@ class PDFOptionsPage : public QWidget
            layout->addWidget(m_forceRaster);
            layout->addStretch(1);
 
-#if defined(Q_WS_WIN) || !defined(HAVE_POPPLER_0_20)
-           m_printAnnots->setVisible( false );
-#endif
            setPrintAnnots( true ); // Default value
        }
 
@@ -180,10 +173,8 @@ Okular::Movie* createMovieFromPopplerMovie( const Poppler::MovieObject *popplerM
     movie->setShowControls( popplerMovie->showControls() );
     movie->setPlayMode( (Okular::Movie::PlayMode)popplerMovie->playMode() );
     movie->setAutoPlay( false ); // will be triggered by external MovieAnnotation
-#ifdef HAVE_POPPLER_0_22
     movie->setShowPosterImage( popplerMovie->showPosterImage() );
     movie->setPosterImage( popplerMovie->posterImage() );
-#endif
     return movie;
 }
 
@@ -198,9 +189,7 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
     const Poppler::LinkBrowse *popplerLinkBrowse;
     const Poppler::LinkAction *popplerLinkAction;
     const Poppler::LinkSound *popplerLinkSound;
-#ifdef HAVE_POPPLER_0_20
     const Poppler::LinkMovie *popplerLinkMovie;
-#endif
     Okular::DocumentViewport viewport;
 
     bool deletePopplerLink = true;
@@ -251,7 +240,6 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
         }
         break;
 
-#ifdef HAVE_POPPLER_0_20
         case Poppler::Link::Movie:
         {
             deletePopplerLink = false; // we'll delete it inside resolveMediaLinkReferences() after we have resolved all references
@@ -280,7 +268,6 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
             link = movieAction;
         }
         break;
-#endif
     }
 
     if ( deletePopplerLink )
@@ -342,13 +329,11 @@ static KAboutData createAboutData()
 
 OKULAR_EXPORT_PLUGIN(PDFGenerator, createAboutData())
 
-#ifdef HAVE_POPPLER_0_16
 static void PDFGeneratorPopplerDebugFunction(const QString &message, const QVariant &closure)
 {
     Q_UNUSED(closure);
     kDebug() << "[Poppler]" << message;
 }
-#endif
 
 PDFGenerator::PDFGenerator( QObject *parent, const QVariantList &args )
     : Generator( parent, args ), pdfdoc( 0 ),
@@ -369,11 +354,9 @@ PDFGenerator::PDFGenerator( QObject *parent, const QVariantList &args )
     setFeature( ReadRawData );
     setFeature( TiledRendering );
 
-#ifdef HAVE_POPPLER_0_16
     // You only need to do it once not for each of the documents but it is cheap enough
     // so doing it all the time won't hurt either
     Poppler::setDebugErrorFunction(PDFGeneratorPopplerDebugFunction, QVariant());
-#endif
 }
 
 PDFGenerator::~PDFGenerator()
@@ -862,7 +845,6 @@ void resolveMediaLinks( Okular::Action *action, enum Okular::Annotation::SubType
 
 void PDFGenerator::resolveMediaLinkReference( Okular::Action *action )
 {
-#ifdef HAVE_POPPLER_0_20
     if ( !action )
         return;
 
@@ -870,8 +852,6 @@ void PDFGenerator::resolveMediaLinkReference( Okular::Action *action )
         return;
 
     resolveMediaLinks<Poppler::LinkMovie, Okular::MovieAction, Poppler::MovieAnnotation, Okular::MovieAnnotation>( action, Okular::Annotation::AMovie, annotationsHash );
-
-#endif
 }
 
 void PDFGenerator::resolveMediaLinkReferences( Okular::Page *page )
@@ -1036,10 +1016,8 @@ bool PDFGenerator::print( QPrinter& printer )
     psConverter->setForceRasterize(forceRasterize);
     psConverter->setTitle(pstitle);
 
-#ifdef HAVE_POPPLER_0_20
     if (!printAnnots)
         psConverter->setPSOptions(psConverter->psOptions() | Poppler::PSConverter::HideAnnotations );
-#endif
 
     userMutex()->lock();
     if (psConverter->convert())
@@ -1121,12 +1099,8 @@ QVariant PDFGenerator::metaData( const QString & key, const QVariant & option ) 
     }
     else if ( key == "HasUnsupportedXfaForm" )
     {
-#ifdef HAVE_POPPLER_0_22
         QMutexLocker ml(userMutex());
         return pdfdoc->formType() == Poppler::Document::XfaForm;
-#else
-        return false;
-#endif
     }
     return QVariant();
 }
@@ -1156,12 +1130,10 @@ bool PDFGenerator::reparseConfig()
 
 void PDFGenerator::addPages( KConfigDialog *dlg )
 {
-#ifdef HAVE_POPPLER_0_24
     Ui_PDFSettingsWidget pdfsw;
     QWidget* w = new QWidget(dlg);
     pdfsw.setupUi(w);
     dlg->addPage(w, PDFSettings::self(), i18n("PDF"), "application-pdf", i18n("PDF Backend Configuration") );
-#endif
 }
 
 bool PDFGenerator::setDocumentRenderHints()
@@ -1179,11 +1151,8 @@ bool PDFGenerator::setDocumentRenderHints()
 }
     SET_HINT("GraphicsAntialias", true, Poppler::Document::Antialiasing)
     SET_HINT("TextAntialias", true, Poppler::Document::TextAntialiasing)
-#ifdef HAVE_POPPLER_0_12_1
     SET_HINT("TextHinting", false, Poppler::Document::TextHinting)
-#endif
 #undef SET_HINT
-#ifdef HAVE_POPPLER_0_24
     // load thin line mode
     const int thinLineMode = PDFSettings::enhanceThinLines();
     const bool enableThinLineSolid = thinLineMode == PDFSettings::EnumEnhanceThinLines::Solid;
@@ -1198,7 +1167,6 @@ bool PDFGenerator::setDocumentRenderHints()
       pdfdoc->setRenderHint(Poppler::Document::ThinLineShape, enableShapeLineSolid);
       changed = true;
     }
-#endif
     return changed;
 }
 
@@ -1347,7 +1315,6 @@ void PDFGenerator::addSynopsisChildren( QDomNode * parent, QDomNode * parentDest
 
 void PDFGenerator::addAnnotations( Poppler::Page * popplerPage, Okular::Page * page )
 {
-#ifdef HAVE_POPPLER_0_28
     QSet<Poppler::Annotation::SubType> subtypes;
     subtypes << Poppler::Annotation::AFileAttachment
         << Poppler::Annotation::ASound
@@ -1363,9 +1330,6 @@ void PDFGenerator::addAnnotations( Poppler::Page * popplerPage, Okular::Page * p
         << Poppler::Annotation::ACaret;
 
     QList<Poppler::Annotation*> popplerAnnotations = popplerPage->annotations( subtypes );
-#else
-    QList<Poppler::Annotation*> popplerAnnotations = popplerPage->annotations();
-#endif
 
     foreach(Poppler::Annotation *a, popplerAnnotations)
     {
@@ -1375,7 +1339,6 @@ void PDFGenerator::addAnnotations( Poppler::Page * popplerPage, Okular::Page * p
         {
             page->addAnnotation(newann);
 
-#ifdef HAVE_POPPLER_0_22
             if ( a->subType() == Poppler::Annotation::AScreen )
             {
                 Poppler::ScreenAnnotation *annotScreen = static_cast<Poppler::ScreenAnnotation*>( a );
@@ -1410,7 +1373,6 @@ void PDFGenerator::addAnnotations( Poppler::Page * popplerPage, Okular::Page * p
                 if ( pageClosingLink )
                     widgetAnnotation->setAdditionalAction( Okular::Annotation::PageClosing, createLinkFromPopplerLink( pageClosingLink ) );
             }
-#endif
 
             if ( !doDelete )
                 annotationsHash.insert( newann, a );
@@ -1757,13 +1719,8 @@ bool PDFGenerator::supportsOption( SaveOption option ) const
     {
         case SaveChanges:
         {
-            // Saving files with /Encrypt is not supported before Poppler 0.22
-#ifndef HAVE_POPPLER_0_22
-            QMutexLocker locker( userMutex() );
-            return pdfdoc->isEncrypted() ? false : true;
-#else
+            // Saving files with /Encrypt is supported after Poppler 0.22
             return true;
-#endif
         }
         default: ;
     }
@@ -1780,16 +1737,12 @@ bool PDFGenerator::save( const QString &fileName, SaveOptions options, QString *
 
     QMutexLocker locker( userMutex() );
     bool success = pdfConv->convert();
-#ifdef HAVE_POPPLER_0_12_1
     if (!success)
     {
         switch (pdfConv->lastError())
         {
             case Poppler::BaseConverter::NotSupportedInputFileError:
-#ifndef HAVE_POPPLER_0_22
-                // This can only happen with Poppler before 0.22
-                *errorText = i18n("Saving files with /Encrypt is not supported.");
-#endif
+                // This can only happen with Poppler before 0.22 and /Encrypt
             break;
 
             case Poppler::BaseConverter::NoError:
@@ -1802,7 +1755,6 @@ bool PDFGenerator::save( const QString &fileName, SaveOptions options, QString *
             break;
         }
     }
-#endif
     delete pdfConv;
     return success;
 }
