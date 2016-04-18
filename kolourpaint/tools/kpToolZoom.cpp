@@ -35,6 +35,7 @@
 
 #include <kdebug.h>
 #include <klocale.h>
+#include <kicon.h>
 
 #include <kpDefs.h>
 #include <kpDocument.h>

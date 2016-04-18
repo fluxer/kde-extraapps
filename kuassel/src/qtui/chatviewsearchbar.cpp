@@ -20,7 +20,7 @@
 
 #include "chatviewsearchbar.h"
 
-#include <QIcon>
+#include <KIcon>
 
 #include "action.h"
 #include "actioncollection.h"

@@ -36,6 +36,7 @@
 #include <kmimetype.h>
 #include <ktemporaryfile.h>
 #include <kstandardaction.h>
+#include <kicon.h>
 
 #include "difference.h"
 #include "diffhunk.h"

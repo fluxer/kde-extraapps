@@ -23,7 +23,7 @@
 #include <QDesktopServices>
 #include <QDrag>
 #include <QtGui/qgraphicssceneevent.h>
-#include <QIcon>
+#include <KIcon>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMimeData>

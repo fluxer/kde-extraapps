@@ -22,6 +22,7 @@
 #include "historyAction.h"
 
 #include <KAction>
+#include <KIcon>
 #include <KActionCollection>
 #include <KConfig>
 #include <KConfigGroup>

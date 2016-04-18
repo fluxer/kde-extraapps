@@ -24,6 +24,9 @@
 #include "mdwmoveaction.h"
 #include "core/mixdevice.h"
 
+// KDE
+#include <KIcon>
+
 // Qt
 #include <QString>
 

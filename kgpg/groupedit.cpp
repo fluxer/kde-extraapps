@@ -21,6 +21,7 @@
 
 #include <KAction>
 #include <KActionCollection>
+#include <KIcon>
 #include <QHeaderView>
 #include <QSortFilterProxyModel>
 

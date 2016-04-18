@@ -47,6 +47,7 @@
 #include <KFileDialog>
 #include <KShell>
 #include <KFilterProxySearchLine>
+#include <QTimer>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>

@@ -22,9 +22,6 @@
 #include <QMessageBox>
 #include <QString>
 #include <QFile>
-
-
-
 #include <QtXml/qdom.h>
 #include <QFileInfo>
 #include <QDir>
@@ -33,8 +30,8 @@
 #include <KUniqueApplication>
 #include <KStandardDirs>
 #include <KAction>
+#include <KIcon>
 #include <KToggleAction>
-
 
 #include <iostream>
 using namespace std;

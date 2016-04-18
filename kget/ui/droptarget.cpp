@@ -339,7 +339,7 @@ void DropTarget::toggleSticky()
     pop_sticky->setChecked(Settings::dropSticky());
 
     if ( Settings::dropSticky() )
-        KWindowSystem::setState(winId(), KWindowSystem::SkipTaskbar | KWindowSystem::StaysOnTop | KWindowSystem::Sticky);
+        KWindowSystem::setState(winId(), KWindowSystem::SkipTaskbar | KWindowSystem::KeepAbove | KWindowSystem::Sticky);
     else
         KWindowSystem::clearState(winId(), KWindowSystem::Sticky);
 }

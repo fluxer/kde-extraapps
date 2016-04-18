@@ -19,9 +19,10 @@
 #include "monolithic.h"
 #include "audio_interface.h"
 
-#include <KDebug>
+#include <kdebug.h>
 #include <kmenu.h>
 #include <kaction.h>
+#include <kicon.h>
 #include <kprocess.h>
 #include <ktoolinvocation.h>
 #include <klocalizedstring.h>

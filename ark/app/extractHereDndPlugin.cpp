@@ -28,6 +28,7 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KLocale>
+#include <KIcon>
 #include <kfileitemlistproperties.h>
 
 K_PLUGIN_FACTORY(ExtractHerePluginFactory,

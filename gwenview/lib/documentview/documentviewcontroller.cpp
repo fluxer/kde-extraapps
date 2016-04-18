@@ -31,6 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // KDE
 #include <KAction>
+#include <KIcon>
 #include <KActionCategory>
 #include <KDebug>
 #include <KLocale>

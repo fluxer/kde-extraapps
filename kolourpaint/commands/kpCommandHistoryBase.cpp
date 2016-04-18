@@ -47,6 +47,7 @@
 #include <ktoolbarpopupaction.h>
 #include <kactioncollection.h>
 #include <kconfiggroup.h>
+#include <kicon.h>
 
 #include <kpCommand.h>
 #include <kpCommandEnvironment.h>

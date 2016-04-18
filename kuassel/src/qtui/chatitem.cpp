@@ -23,7 +23,7 @@
 #include <QDesktopServices>
 #include <QFontMetrics>
 #include <QtGui/qgraphicssceneevent.h>
-#include <QIcon>
+#include <KIcon>
 #include <QPainter>
 #include <QPalette>
 #include <QTextLayout>

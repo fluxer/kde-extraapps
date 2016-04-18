@@ -43,6 +43,7 @@
 #include <kactionmenu.h>
 #include <ktoolbarpopupaction.h>
 #include <kaction.h>
+#include <kguiitem.h>
 #include <KToggleAction>
 #include <kactioncollection.h>
 #include <kdebug.h>

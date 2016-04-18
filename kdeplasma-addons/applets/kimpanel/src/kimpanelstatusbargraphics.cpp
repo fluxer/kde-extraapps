@@ -32,6 +32,7 @@
 
 // KDE
 #include <KIcon>
+#include <KIconLoader>
 #include <Plasma/ToolTipContent>
 #include <Plasma/ToolTipManager>
 #include <Plasma/PaintUtils>

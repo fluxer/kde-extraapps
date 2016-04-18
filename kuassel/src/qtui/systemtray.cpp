@@ -28,9 +28,10 @@
 #include "client.h"
 #include "qtui.h"
 
-#  include <KMenu>
-#  include <KWindowInfo>
-#  include <KWindowSystem>
+#include <KIcon>
+#include <KMenu>
+#include <KWindowInfo>
+#include <KWindowSystem>
 
 SystemTray::SystemTray(QWidget *parent)
     : QObject(parent),

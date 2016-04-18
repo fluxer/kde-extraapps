@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QIcon>
+#include <KIcon>
 #include <QLayout>
 #include <QtGui/qevent.h>
 #include <QMenu>
