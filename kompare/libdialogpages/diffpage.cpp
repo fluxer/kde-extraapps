@@ -40,7 +40,6 @@
 #include <kservicetypetrader.h>
 #include <ktabwidget.h>
 
-#include <kparts/componentfactory.h>
 #include <kregexpeditorinterface.h>
 #include <kglobal.h>
 
