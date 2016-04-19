@@ -206,6 +206,7 @@ void MainWindow::openArchive()
 {
     Interface *iface = qobject_cast<Interface*>(m_part);
     Q_ASSERT(iface);
+    Q_UNUSED(iface);
     const KUrl url = KFileDialog::getOpenUrl(KUrl("kfiledialog:///ArkOpenDir"),
                                        Kerfuffle::supportedMimeTypes().join( QLatin1String( " " )),
                                        this);
@@ -243,6 +244,7 @@ void MainWindow::newArchive()
 {
     Interface *iface = qobject_cast<Interface*>(m_part);
     Q_ASSERT(iface);
+    Q_UNUSED(iface);
 
     const QStringList mimeTypes = Kerfuffle::supportedWriteMimeTypes();
 
