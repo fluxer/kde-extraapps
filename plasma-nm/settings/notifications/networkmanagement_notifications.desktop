@@ -69,6 +69,5 @@ Exec=kcmshell4 networkmanagement_notifications
 Icon=preferences-desktop-notification
 X-KDE-ServiceTypes=KCModule
 X-KDE-Library=networkmanagement_notifications
-X-KDE-FactoryName=networkmanagement_notifications
 Categories=Qt;KDE;X-KDE-settings-system;
 Visible=false;
