@@ -19,7 +19,7 @@ if (ZLIB_FOUND)
 
 	kde4_add_plugin(kerfuffle_libgz ${kerfuffle_libgz_SRCS})
 
-	target_link_libraries(kerfuffle_libgz ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} kerfuffle )
+	target_link_libraries(kerfuffle_libgz ${KDE4_KDECORE_LIBS} kerfuffle )
 
 	install(TARGETS kerfuffle_libgz DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -39,7 +39,7 @@ if (BZIP2_FOUND)
 
 	kde4_add_plugin(kerfuffle_libbz2 ${kerfuffle_libbz2_SRCS})
 
-	target_link_libraries(kerfuffle_libbz2 ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} kerfuffle )
+	target_link_libraries(kerfuffle_libbz2 ${KDE4_KDECORE_LIBS} kerfuffle )
 
 	install(TARGETS kerfuffle_libbz2 DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -59,7 +59,7 @@ if (LIBLZMA_FOUND)
 
 	kde4_add_plugin(kerfuffle_libxz ${kerfuffle_libxz_SRCS})
 
-	target_link_libraries(kerfuffle_libxz ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} kerfuffle )
+	target_link_libraries(kerfuffle_libxz ${KDE4_KDECORE_LIBS} kerfuffle )
 
 	install(TARGETS kerfuffle_libxz DESTINATION ${PLUGIN_INSTALL_DIR} )
 

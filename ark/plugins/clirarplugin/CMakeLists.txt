@@ -6,7 +6,7 @@ set(kerfuffle_clirar_SRCS cliplugin.cpp)
 
 kde4_add_plugin(kerfuffle_clirar ${kerfuffle_clirar_SRCS})
 
-target_link_libraries(kerfuffle_clirar  ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} kerfuffle )
+target_link_libraries(kerfuffle_clirar  ${KDE4_KDECORE_LIBS} kerfuffle )
 
 configure_file(
             ${CMAKE_CURRENT_SOURCE_DIR}/kerfuffle_clirar.desktop.cmake
