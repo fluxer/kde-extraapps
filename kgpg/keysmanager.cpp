@@ -202,10 +202,6 @@ KeysManager::KeysManager(QWidget *parent)
 	m_sendEmail->setIcon(KIcon(QLatin1String("mail-send")));
 	m_sendEmail->setText(i18n("Send Ema&il"));
 
-	QAction *newContact = actionCollection()->addAction(QLatin1String("add_kab"), this, SLOT(addToKAB()));
-	newContact->setIcon(KIcon( QLatin1String( "contact-new" )));
-	newContact->setText(i18n("&Create New Contact in Address Book"));
-
 	createGroup = actionCollection()->addAction(QLatin1String("create_group"), this, SLOT(createNewGroup()));
 	createGroup->setIcon(Images::group());
 

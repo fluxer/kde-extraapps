@@ -193,12 +193,6 @@ private slots:
     void slotSendEmail();
     void slotedit();
 
-    /**
-     * @brief add or change the addressbook entry
-     * @param job the search job
-     *
-     * This handles the result of the search started in addToKAB().
-     */
     void editGroup();
     void createNewGroup();
     void deleteGroup();
