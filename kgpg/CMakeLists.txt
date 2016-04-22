@@ -112,22 +112,6 @@ set(kgpg_SRCS ${core_SRCS} ${kgpg_editor_SRCS} ${kgpg_model_SRCS} ${kgpg_transac
     caff.cpp
     foldercompressjob.cpp
     misc.cpp
-    adduid.ui
-    conf_gpg.ui
-    searchres.ui
-    groupedit.ui
-    conf_ui2.ui
-    conf_servers.ui
-    conf_misc.ui
-    newkey.ui
-    keyexport.ui
-    conf_encryption.ui
-    kgpgKeyInfo.ui
-    kgpgkeygenerate.ui
-    kgpgrevokewidget.ui
-    keyserver.ui
-    conf_decryption.ui
-    sourceselect.ui
 )
 
 qt4_add_dbus_adaptor( kgpg_SRCS org.kde.kgpg.Key.xml keysmanager.h KeysManager)
