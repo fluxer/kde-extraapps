@@ -189,7 +189,7 @@ QString Project::absolutePath(const QString& possiblyRelPath) const
 
 void Project::populateDirModel()
 {
-    if (KDE_ISUNLIKELY( m_path.isEmpty() || !QFile::exists(poDir()) ))
+    if (Q_UNLIKELY( m_path.isEmpty() || !QFile::exists(poDir()) ))
         return;
 
     KUrl potUrl;
@@ -264,7 +264,7 @@ void Project::save()
 
 ProjectModel* Project::model()
 {
-    if (KDE_ISUNLIKELY(!m_model))
+    if (Q_UNLIKELY(!m_model))
         m_model=new ProjectModel(this);
 
     return m_model;

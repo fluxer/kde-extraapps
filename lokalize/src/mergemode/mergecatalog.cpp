@@ -163,7 +163,7 @@ static QString strip(QString source)
 int MergeCatalog::loadFromUrl(const KUrl& url)
 {
     int errorLine=Catalog::loadFromUrl(url);
-    if (KDE_ISUNLIKELY( errorLine!=0 ))
+    if (Q_UNLIKELY( errorLine!=0 ))
         return errorLine;
 
     //now calc the entry mapping

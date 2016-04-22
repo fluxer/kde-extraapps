@@ -77,7 +77,7 @@ const QString& CatalogItem::msgid(const int form) const
 
 const QString& CatalogItem::msgstr(const int form) const
 {
-    if (KDE_ISLIKELY (form<d->_msgstrPlural.size()))
+    if (Q_LIKELY (form<d->_msgstrPlural.size()))
         return d->_msgstrPlural.at(form);
     else
         return d->_msgstrPlural.last();

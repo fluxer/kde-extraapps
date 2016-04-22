@@ -186,7 +186,7 @@ void MergeView::cleanup()
 
 void MergeView::mergeOpen(KUrl url)
 {
-    if (KDE_ISUNLIKELY( !m_baseCatalog->numberOfEntries() ))
+    if (Q_UNLIKELY( !m_baseCatalog->numberOfEntries() ))
         return;
 
     if (url==m_baseCatalog->url())
@@ -221,7 +221,7 @@ void MergeView::mergeOpen(KUrl url)
     m_mergeCatalog=new MergeCatalog(this,m_baseCatalog);
     emit mergeCatalogPointerChanged(m_mergeCatalog);
     int errorLine=m_mergeCatalog->loadFromUrl(url);
-    if (KDE_ISLIKELY( errorLine==0 ))
+    if (Q_LIKELY( errorLine==0 ))
     {
         if (m_pos.entry>0)
             emit signalPriorChangedAvailable(m_pos.entry>m_mergeCatalog->firstChangedIndex());
@@ -256,7 +256,7 @@ void MergeView::mergeOpen(KUrl url)
 
 int MergeView::pluralFormsAvailableForward()
 {
-    if(KDE_ISLIKELY( m_pos.entry==-1 || !m_mergeCatalog->isPlural(m_pos.entry) ))
+    if(Q_LIKELY( m_pos.entry==-1 || !m_mergeCatalog->isPlural(m_pos.entry) ))
         return -1;
 
     int formLimit=qMin(m_baseCatalog->numberOfPluralForms(),m_mergeCatalog->numberOfPluralForms());//just sanity check
@@ -271,7 +271,7 @@ int MergeView::pluralFormsAvailableForward()
 
 int MergeView::pluralFormsAvailableBackward()
 {
-    if(KDE_ISLIKELY( m_pos.entry==-1 || !m_mergeCatalog->isPlural(m_pos.entry) ))
+    if(Q_LIKELY( m_pos.entry==-1 || !m_mergeCatalog->isPlural(m_pos.entry) ))
         return -1;
 
     DocPosition pos=m_pos;
@@ -285,22 +285,22 @@ int MergeView::pluralFormsAvailableBackward()
 
 void MergeView::gotoPrevChanged()
 {
-    if (KDE_ISUNLIKELY( !m_mergeCatalog ))
+    if (Q_UNLIKELY( !m_mergeCatalog ))
         return;
 
     DocPosition pos;
 
     //first, check if there any plural forms waiting to be synced
     int form=pluralFormsAvailableBackward();
-    if (KDE_ISUNLIKELY( form!=-1 ))
+    if (Q_UNLIKELY( form!=-1 ))
     {
         pos=m_pos;
         pos.form=form;
     }
-    else if(KDE_ISUNLIKELY( (pos.entry=m_mergeCatalog->prevChangedIndex(m_pos.entry)) == -1 ))
+    else if(Q_UNLIKELY( (pos.entry=m_mergeCatalog->prevChangedIndex(m_pos.entry)) == -1 ))
         return;
 
-    if (KDE_ISUNLIKELY( m_mergeCatalog->isPlural(pos.entry)&&form==-1 ))
+    if (Q_UNLIKELY( m_mergeCatalog->isPlural(pos.entry)&&form==-1 ))
         pos.form=qMin(m_baseCatalog->numberOfPluralForms(),m_mergeCatalog->numberOfPluralForms())-1;
 
     emit gotoEntry(pos,0);
@@ -313,24 +313,24 @@ void MergeView::gotoNextChangedApproved()
 
 void MergeView::gotoNextChanged(bool approvedOnly)
 {
-    if (KDE_ISUNLIKELY( !m_mergeCatalog ))
+    if (Q_UNLIKELY( !m_mergeCatalog ))
         return;
 
     DocPosition pos=m_pos;
 
     //first, check if there any plural forms waiting to be synced
     int form=pluralFormsAvailableForward();
-    if (KDE_ISUNLIKELY( form!=-1 ))
+    if (Q_UNLIKELY( form!=-1 ))
     {
         pos=m_pos;
         pos.form=form;
     }
-    else if(KDE_ISUNLIKELY( (pos.entry=m_mergeCatalog->nextChangedIndex(m_pos.entry)) == -1 ))
+    else if(Q_UNLIKELY( (pos.entry=m_mergeCatalog->nextChangedIndex(m_pos.entry)) == -1 ))
         return;
 
     while (approvedOnly && !m_mergeCatalog->isApproved(pos.entry))
     {
-        if(KDE_ISUNLIKELY( (pos.entry=m_mergeCatalog->nextChangedIndex(pos.entry)) == -1 ))
+        if(Q_UNLIKELY( (pos.entry=m_mergeCatalog->nextChangedIndex(pos.entry)) == -1 ))
             return;      
     }
 
@@ -360,7 +360,7 @@ void MergeView::mergeAccept()
 
 void MergeView::mergeAcceptAllForEmpty()
 {
-    if(KDE_ISUNLIKELY(!m_mergeCatalog)) return;
+    if(Q_UNLIKELY(!m_mergeCatalog)) return;
 
     bool update=m_mergeCatalog->differentEntries().contains(m_pos.entry);
 

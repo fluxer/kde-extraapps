@@ -447,7 +447,7 @@ void TranslationUnitTextEdit::contentsChanged(int offset, int charsRemoved, int 
 
 
     const QString& editText=toPlainText();
-    if (KDE_ISUNLIKELY( m_currentPos.entry==-1 || editText==_oldMsgstr ))
+    if (Q_UNLIKELY( m_currentPos.entry==-1 || editText==_oldMsgstr ))
     {
         //kWarning()<<"stopping"<<m_currentPos.entry<<editText<<_oldMsgstr;
         return;
@@ -553,7 +553,7 @@ void TranslationUnitTextEdit::contentsChanged(int offset, int charsRemoved, int 
 
 bool TranslationUnitTextEdit::removeTargetSubstring(int delStart, int delLen, bool refresh)
 {
-    if (KDE_ISUNLIKELY( m_currentPos.entry==-1 ))
+    if (Q_UNLIKELY( m_currentPos.entry==-1 ))
         return false;
 
     if (!::removeTargetSubstring(m_catalog, m_currentPos, delStart, delLen))
@@ -782,7 +782,7 @@ void TranslationUnitTextEdit::keyPressEvent(QKeyEvent *keyEvent)
         //only for cases when:
         //-BkSpace was hit and cursor was atStart
         //-Del was hit and cursor was atEnd
-        if (KDE_ISUNLIKELY( !m_catalog->isApproved(m_currentPos.entry) && !textCursor().hasSelection() )
+        if (Q_UNLIKELY( !m_catalog->isApproved(m_currentPos.entry) && !textCursor().hasSelection() )
                             && ((textCursor().atStart()&&keyEvent->key()==Qt::Key_Backspace)
                                  ||(textCursor().atEnd()&&keyEvent->key()==Qt::Key_Delete) ))
             requestToggleApprovement();
@@ -1182,7 +1182,7 @@ void TranslationUnitTextEdit::doTag(bool immediate)
     }
     else
     {
-        if (KDE_ISUNLIKELY( Project::instance()->markup().isEmpty() ))
+        if (Q_UNLIKELY( Project::instance()->markup().isEmpty() ))
             return;
 
         //QRegExp tag("(<[^>]*>)+|\\&\\w+\\;");

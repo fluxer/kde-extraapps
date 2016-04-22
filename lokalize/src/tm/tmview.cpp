@@ -297,7 +297,7 @@ void TMView::slotBatchSelectDone(ThreadWeaver::Job* /*j*/)
             ///m_catalog->push(new InsTextCmd(m_catalog,pos,entry.target));
             insertCatalogString(m_catalog, pos, entry.target, 0);
 
-            if (KDE_ISUNLIKELY( m_pos.entry==pos.entry&&pos.form==m_pos.form ))
+            if (Q_UNLIKELY( m_pos.entry==pos.entry&&pos.form==m_pos.form ))
                 emit refreshRequested();
 
         }
@@ -509,7 +509,7 @@ void TMView::slotSuggestionsCame(ThreadWeaver::Job* j)
 
         //str.replace('&',"&amp;"); TODO check
         html+="<br>";
-        if (KDE_ISLIKELY( i<m_actions.size() ))
+        if (Q_LIKELY( i<m_actions.size() ))
         {
             m_actions.at(i)->setStatusTip(entry.target.string);
             html+=QString("[%1] ").arg(m_actions.at(i)->shortcut().toString());
@@ -530,7 +530,7 @@ void TMView::slotSuggestionsCame(ThreadWeaver::Job* j)
         html+=i?"<br></p>":"</p>";
         cur.insertHtml(html);
 
-        if (KDE_ISUNLIKELY( ++i>=limit ))
+        if (Q_UNLIKELY( ++i>=limit ))
             break;
 
         cur.insertBlock(i%2?blockFormatAlternate:blockFormatBase);
@@ -973,7 +973,7 @@ nono
 
 void TMView::slotUseSuggestion(int i)
 {
-    if (KDE_ISUNLIKELY( i>=m_entries.size() ))
+    if (Q_UNLIKELY( i>=m_entries.size() ))
         return;
 
     CatalogString target=targetAdapted(m_entries.at(i), m_catalog->sourceWithTags(m_pos));
@@ -986,7 +986,7 @@ void TMView::slotUseSuggestion(int i)
     foreach (InlineTag tag, target.tags)
         kWarning()<<"tag"<<tag.start<<tag.end;
 #endif
-    if (KDE_ISUNLIKELY( target.isEmpty() ))
+    if (Q_UNLIKELY( target.isEmpty() ))
         return;
 
     m_catalog->beginMacro(i18nc("@item Undo action","Use translation memory suggestion"));

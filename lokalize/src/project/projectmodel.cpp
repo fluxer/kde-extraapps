@@ -1288,7 +1288,7 @@ static KFileMetaInfo cachedMetaInfo(const KFileItem& file)
     {
         QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE",dbName);
         db.setDatabaseName(KStandardDirs::locateLocal("appdata", dbName+".sqlite"));
-        if (KDE_ISUNLIKELY( !db.open() ))
+        if (Q_UNLIKELY( !db.open() ))
             return KFileMetaInfo(file.url());
         initDataBase(db);
     }
@@ -1346,7 +1346,7 @@ static KFileMetaInfo cachedMetaInfo(const KFileItem& file)
     query.bindValue(0, qHash(file.localPath()));
     query.bindValue(1, result);
     query.bindValue(2, file.time(KFileItem::ModificationTime).dateTime());
-    if (KDE_ISUNLIKELY(!query.exec()))
+    if (Q_UNLIKELY(!query.exec()))
         qWarning() <<"metainfo cache acquiring error: " <<query.lastError().text();
 
     return info;

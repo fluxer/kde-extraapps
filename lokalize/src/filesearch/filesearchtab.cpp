@@ -211,7 +211,7 @@ void SearchJob::run()
     foreach(const QString& path, files)
     {
         Catalog catalog(thread());
-        if (KDE_ISUNLIKELY(catalog.loadFromUrl(KUrl::fromPath(path), KUrl(), &m_size)!=0))
+        if (Q_UNLIKELY(catalog.loadFromUrl(KUrl::fromPath(path), KUrl(), &m_size)!=0))
             continue;
 
         //QVector<FileSearchResult> catalogResults;

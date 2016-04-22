@@ -45,7 +45,7 @@ void DBFilesModel::cleanupDBFilesModel()
 
 DBFilesModel* DBFilesModel::instance()
 {
-    if (KDE_ISUNLIKELY( _instance==0 )) {
+    if (Q_UNLIKELY( _instance==0 )) {
         _instance=new DBFilesModel;
         qAddPostRoutine(DBFilesModel::cleanupDBFilesModel);
     }
@@ -155,9 +155,9 @@ void DBFilesModel::calcStats(const QModelIndex& parent, int start, int end)
     {
         QModelIndex index=QSortFilterProxyModel::index(start++, 0, parent);
         QString res=index.data().toString();
-        if (KDE_ISUNLIKELY(res==projectID && (!projectDB || data(*projectDB).toString()!=projectID)))
+        if (Q_UNLIKELY(res==projectID && (!projectDB || data(*projectDB).toString()!=projectID)))
             projectDB=new QPersistentModelIndex(index);//TODO if user switches the project
-//         if (KDE_ISLIKELY( QSqlDatabase::contains(res) ))
+//         if (Q_LIKELY( QSqlDatabase::contains(res) ))
 //             continue;
         openDB(res, DbType(index.data(NameRole).toString().endsWith(remoteTmExtension)));
     }

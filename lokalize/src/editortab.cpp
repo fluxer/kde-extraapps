@@ -504,7 +504,7 @@ void EditorTab::setupActions()
 
     int copyShortcut=Qt::CTRL+Qt::Key_Space;
     QString systemLang=KGlobal::locale()->language();
-    if (KDE_ISUNLIKELY( systemLang.startsWith("ko")
+    if (Q_UNLIKELY( systemLang.startsWith("ko")
         || systemLang.startsWith("ja")
         || systemLang.startsWith("zh")
                     ))

@@ -167,8 +167,8 @@ QString GNUPluralForms(const QString& lang)
     int i=NUM_LANG_WITH_INFO;
     while(--i>=0 && l!=langsWithPInfo[i])
         ;
-    //if (KDE_ISLIKELY( langsWithPInfo[i]))
-    if (KDE_ISLIKELY( i>=0 ))
+    //if (Q_LIKELY( langsWithPInfo[i]))
+    if (Q_LIKELY( i>=0 ))
         return QString::fromLatin1(pInfo[i]);
 
 
@@ -187,7 +187,7 @@ QString GNUPluralForms(const QString& lang)
     msginit.start("msginit", arguments);
 
     msginit.waitForStarted(5000);
-    if (KDE_ISUNLIKELY( msginit.state()!=QProcess::Running ))
+    if (Q_UNLIKELY( msginit.state()!=QProcess::Running ))
     {
         //kWarning()<<"msginit error";
         return def;
@@ -214,7 +214,7 @@ QString GNUPluralForms(const QString& lang)
                   );
     msginit.closeWriteChannel();
 
-    if (KDE_ISUNLIKELY( !msginit.waitForFinished(5000) ))
+    if (Q_UNLIKELY( !msginit.waitForFinished(5000) ))
     {
         kWarning()<<"msginit error";
         return def;
@@ -223,7 +223,7 @@ QString GNUPluralForms(const QString& lang)
 
     QByteArray result = msginit.readAll();
     int pos = result.indexOf("Plural-Forms: ");
-    if (KDE_ISUNLIKELY( pos==-1 ))
+    if (Q_UNLIKELY( pos==-1 ))
     {
         //kWarning()<<"msginit error"<<result;
         return def;
@@ -231,7 +231,7 @@ QString GNUPluralForms(const QString& lang)
     pos+=14;
 
     int end = result.indexOf('"',pos);
-    if (KDE_ISUNLIKELY( pos==-1 ))
+    if (Q_UNLIKELY( pos==-1 ))
     {
         //kWarning()<<"msginit error"<<result;
         return def;
@@ -275,7 +275,7 @@ void updateHeader(QString& header,
             found=true;
         }
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
     QString dateTimeString = KDateTime::currentLocalDateTime().toString("%Y-%m-%d %H:%M%z");
@@ -286,7 +286,7 @@ void updateHeader(QString& header,
         found=it->contains(poRevDate);
         if (found && forSaving) *it = temp;
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
     temp="Project-Id-Version: "%CatalogProjectId%"\\n";
@@ -298,7 +298,7 @@ void updateHeader(QString& header,
         if (found && it->contains("PACKAGE VERSION"))
             *it = temp;
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
     
@@ -366,7 +366,7 @@ void updateHeader(QString& header,
 
     temp="Language-Team: "%language%" <"%mailingList%'>';
     temp+="\\n";
-    if (KDE_ISLIKELY( found ))
+    if (Q_LIKELY( found ))
         (*ait) = temp;
     else
         headerList.append(temp);
@@ -380,7 +380,7 @@ void updateHeader(QString& header,
             *it=temp;
         //if (found) qWarning()<<"got explicit lang code:"<<langCodeRegExp.cap(1);
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
     temp="Content-Type: text/plain; charset="%codec->name()%"\\n";
@@ -389,7 +389,7 @@ void updateHeader(QString& header,
         found=it->contains(QRegExp("^ *Content-Type:.*"));
         if (found) *it=temp;
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
 
@@ -408,7 +408,7 @@ void updateHeader(QString& header,
         found=it->contains(QRegExp("^ *MIME-Version:"));
         if (found) *it = temp;
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
 
@@ -469,7 +469,7 @@ void updateHeader(QString& header,
         found=it->contains(QRegExp("^ *X-Generator:.*"));
         if (found) *it = temp;
     }
-    if (KDE_ISUNLIKELY( !found ))
+    if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
     //m_header.setMsgstr( headerList.join( "\n" ) );
