@@ -64,6 +64,8 @@ void RotationJob::run()
     QTransform matrix = rotationMatrix( mOldRotation, mNewRotation );
 
     mRotatedImage = mImage.transformed( matrix );
+
+    emit done(this);
 }
 
 QTransform RotationJob::rotationMatrix( Rotation from, Rotation to )

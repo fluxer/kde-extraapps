@@ -10,10 +10,9 @@
 #ifndef _OKULAR_ROTATIONJOB_P_H_
 #define _OKULAR_ROTATIONJOB_P_H_
 
+#include <QtCore/QThread>
 #include <QtGui/QImage>
 #include <QtGui/QTransform>
-
-#include <threadweaver/Job.h>
 
 #include "core/global.h"
 #include "core/area.h"
@@ -23,7 +22,7 @@ namespace Okular {
 class DocumentObserver;
 class PagePrivate;
 
-class RotationJob : public ThreadWeaver::Job
+class RotationJob : public QThread
 {
     Q_OBJECT
 
@@ -40,6 +39,9 @@ class RotationJob : public ThreadWeaver::Job
         NormalizedRect rect() const;
 
         static QTransform rotationMatrix( Rotation from, Rotation to );
+
+    Q_SIGNALS:
+        void done(QThread*);
 
     protected:
         virtual void run();

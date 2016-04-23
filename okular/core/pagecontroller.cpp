@@ -11,7 +11,6 @@
 
 // qt/kde includes
 #include <kglobal.h>
-#include <threadweaver/ThreadWeaver.h>
 
 // local includes
 #include "page_p.h"
@@ -30,12 +29,12 @@ PageController::~PageController()
 
 void PageController::addRotationJob(RotationJob *job)
 {
-    connect( job, SIGNAL(done(ThreadWeaver::Job*)),
-             this, SLOT(imageRotationDone(ThreadWeaver::Job*)) );
-    ThreadWeaver::Weaver::instance()->enqueue(job);
+    connect( job, SIGNAL(done(QThread*)),
+             this, SLOT(imageRotationDone(QThread*)) );
+    job->start();
 }
 
-void PageController::imageRotationDone(ThreadWeaver::Job *j)
+void PageController::imageRotationDone(QThread *j)
 {
     RotationJob *job = static_cast< RotationJob * >( j );
 

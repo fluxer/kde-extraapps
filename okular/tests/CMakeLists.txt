@@ -9,7 +9,7 @@ kde4_add_test(okular-parttest parttest.cpp )
 target_link_libraries(okular-parttest ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} okularpart okularcore )
 
 kde4_add_test(okular-documenttest documenttest.cpp )
-target_link_libraries(okular-documenttest ${KDE4_KDECORE_LIBS} ${KDE4_THREADWEAVER_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} okularcore )
+target_link_libraries(okular-documenttest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} okularcore )
 
 kde4_add_test(okular-searchtest searchtest.cpp )
 target_link_libraries(okular-searchtest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} okularcore )

@@ -9,7 +9,7 @@
 
 #include <qtest_kde.h>
 
-#include <threadweaver/ThreadWeaver.h>
+#include <QLinkedList>
 
 #include "../core/document.h"
 #include "../core/generator.h"
@@ -41,9 +41,6 @@ void DocumentTest::testCloseDuringRotationJob()
     m_document->openDocument( testFile, KUrl(), mime );
     m_document->setRotation( 1 );
 
-    // Tell ThreadWeaver not to start any new job
-    ThreadWeaver::Weaver::instance()->suspend();
-
     // Request a pixmap. A RotationJob will be enqueued but not started
     Okular::PixmapRequest *pixmapReq = new Okular::PixmapRequest(
         dummyDocumentObserver, 0, 100, 100, 1, Okular::PixmapRequest::NoFeature );
@@ -52,9 +49,7 @@ void DocumentTest::testCloseDuringRotationJob()
     // Delete the document
     delete m_document;
 
-    // Resume job processing and wait for the RotationJob to finish
-    ThreadWeaver::Weaver::instance()->resume();
-    ThreadWeaver::Weaver::instance()->finish();
+    // Wait for the RotationJob to finish
     qApp->processEvents();
 }
 

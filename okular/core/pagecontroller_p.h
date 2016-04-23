@@ -10,11 +10,7 @@
 #ifndef _OKULAR_PAGECONTROLLER_P_H_
 #define _OKULAR_PAGECONTROLLER_P_H_
 
-#include <QtCore/QObject>
-
-namespace ThreadWeaver {
-    class Job;
-}
+#include <QtCore/QThread>
 
 namespace Okular {
 
@@ -37,7 +33,7 @@ class PageController : public QObject
         void rotationFinished( int page, Okular::Page *okularPage );
 
     private slots:
-        void imageRotationDone(ThreadWeaver::Job*);
+        void imageRotationDone(QThread*);
 };
 
 }
