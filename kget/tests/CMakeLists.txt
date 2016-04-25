@@ -20,7 +20,7 @@ target_link_libraries(kget-test_transfers ${QT_QTTEST_LIBRARY} ${KDE4_KIO_LIBS} 
 #===========Verifier===========
 kde4_add_test(kget-verifiertest verifiertest.cpp)
 
-target_link_libraries(kget-verifiertest ${QT_QTTEST_LIBRARY} ${KDE4_KDECORE_LIBS} ${QCA2_LIBRARIES} kgetcore)
+target_link_libraries(kget-verifiertest ${QT_QTTEST_LIBRARY} ${KDE4_KDECORE_LIBS} kgetcore)
 
 
 #===========Scheduler===========
