@@ -23,6 +23,7 @@
 
 #include <libkdcraw/kdcraw.h>
 #include <libkexiv2/kexiv2.h>
+#include <kdemacros.h>
 
 extern "C"
 {

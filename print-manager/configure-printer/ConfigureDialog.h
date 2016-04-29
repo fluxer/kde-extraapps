@@ -23,10 +23,12 @@
 
 #include <QtGui/qevent.h>
 #include <KPageDialog>
+#include <kdemacros.h>
 
 class PrinterPage;
 class ModifyPrinter;
 class PrinterOptions;
+
 class KDE_EXPORT ConfigureDialog : public KPageDialog
 {
     Q_OBJECT

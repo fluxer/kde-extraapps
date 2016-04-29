@@ -31,9 +31,9 @@
 #include <KCmdLineArgs>
 #include <KAboutData>
 #include <KProcess>
-
 #include <KApplication>
 #include <KLocale>
+#include <kdemacros.h>
 
 extern "C" int KDE_EXPORT kdemain(int argc, char **argv)
 {

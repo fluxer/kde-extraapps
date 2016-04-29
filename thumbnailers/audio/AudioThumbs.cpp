@@ -43,6 +43,7 @@
 #include <FLAC++/metadata.h>
 
 #include <kmimetype.h>
+#include <kdemacros.h>
 
 extern "C"
 {

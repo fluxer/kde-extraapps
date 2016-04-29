@@ -23,6 +23,7 @@
 #define BLUEDEVILDAEMON_H
 
 #include <kdedmodule.h>
+#include <kdemacros.h>
 #include <QMap>
 #include <QStringList>
 

@@ -28,6 +28,7 @@
 #include <KLocale>
 #include <KDebug>
 #include <KPluginLoader>
+#include <KPluginFactory>
 #include <KMessageBox>
 #include <KSharedConfig>
 

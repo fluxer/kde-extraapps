@@ -31,6 +31,7 @@
 #include <KTemporaryFile>
 #include <KMimeType>
 #include <KApplication>
+#include <kdemacros.h>
 #include "obexdtypes.h"
 #include "transferfilejob.h"
 

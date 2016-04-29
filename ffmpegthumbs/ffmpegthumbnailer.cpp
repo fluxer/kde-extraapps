@@ -16,6 +16,7 @@
 
 #include "ffmpegthumbnailer.h"
 #include <kdebug.h>
+#include <kdemacros.h>
 #include <QImage>
 
 extern "C"

@@ -23,6 +23,7 @@
 
 #include <QtDBus/qdbusextratypes.h>
 #include <kdedmodule.h>
+#include <kdemacros.h>
 
 class KJob;
 class QDBusMessage;

@@ -26,6 +26,7 @@
 #include <QTimer>
 
 #include <KPixmapSequenceOverlayPainter>
+#include <kdemacros.h>
 
 class KCupsRequest;
 class KDE_EXPORT ClassListWidget : public QListView
