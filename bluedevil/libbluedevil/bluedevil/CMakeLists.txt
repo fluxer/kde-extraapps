@@ -22,8 +22,6 @@ set(dbusbluezdevice1_xml ${CMAKE_CURRENT_SOURCE_DIR}/bluez/org.bluez.Device1.xml
 set_source_files_properties(${dbusbluezdevice1_xml} PROPERTIES INCLUDE "QtGui/QVector4D")
 QT4_ADD_DBUS_INTERFACE(libbluedevil_SRCS ${dbusbluezdevice1_xml} bluezdevice1)
 
-QT4_AUTOMOC(${libbluedevil_SRCS})
-
 add_library(bluedevil SHARED ${libbluedevil_SRCS})
 
 target_link_libraries(bluedevil ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY})

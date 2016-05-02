@@ -26,8 +26,6 @@ target_link_libraries(kio_obexftp
   ${QT_QTDBUS_LIBRARY}
 )
 
-QT4_AUTOMOC(${kio_obexftp_SRCS})
-
 install(TARGETS kio_obexftp DESTINATION ${PLUGIN_INSTALL_DIR})
 
 ########### install files ###############

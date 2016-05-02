@@ -19,8 +19,6 @@ set(okular_SRCS
     
 kde4_add_kcfg_files(okular_SRCS ${PROJECT_SOURCE_DIR}/conf/settings.kcfgc )
 
-qt4_automoc(${okular_SRCS})
-
 add_library(okularplugin SHARED ${okular_SRCS})
 target_link_libraries(okularplugin
         ${QT_QTCORE_LIBRARY}
