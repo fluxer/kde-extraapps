@@ -21,6 +21,7 @@
 
 extern "C" {
 #include <libswscale/swscale.h>
+#include <libavutil/imgutils.h>
 }
 
 using namespace std;
@@ -93,7 +94,12 @@ void MovieDecoder::destroy()
     }
 
     if (m_pPacket) {
+// https://github.com/FFmpeg/FFmpeg/commit/ce70f28a1732c74a9cd7fec2d56178750bd6e457
+#ifdef FF_API_AVPACKET_OLD_API
         av_free_packet(m_pPacket);
+#else
+        av_packet_unref(m_pPacket);
+#endif
         delete m_pPacket;
         m_pPacket = NULL;
     }
@@ -264,7 +270,12 @@ bool MovieDecoder::getVideoPacket()
     int attempts = 0;
 
     if (m_pPacket) {
+// https://github.com/FFmpeg/FFmpeg/commit/ce70f28a1732c74a9cd7fec2d56178750bd6e457
+#ifdef FF_API_AVPACKET_OLD_API
         av_free_packet(m_pPacket);
+#else
+        av_packet_unref(m_pPacket);
+#endif
         delete m_pPacket;
     }
 
@@ -275,7 +286,12 @@ bool MovieDecoder::getVideoPacket()
         if (framesAvailable) {
             frameDecoded = m_pPacket->stream_index == m_VideoStream;
             if (!frameDecoded) {
+// https://github.com/FFmpeg/FFmpeg/commit/ce70f28a1732c74a9cd7fec2d56178750bd6e457
+#ifdef FF_API_AVPACKET_OLD_API
                 av_free_packet(m_pPacket);
+#else
+                av_packet_unref(m_pPacket);
+#endif
             }
         }
     }
@@ -361,9 +377,19 @@ void MovieDecoder::createAVFrame(AVFrame** avFrame, quint8** frameBuffer, int wi
 {
     *avFrame = av_frame_alloc();
 
+// https://github.com/FFmpeg/FFmpeg/commit/dca23ffbc7568c9af5c5fbaa86e6a0761ecae50c
+#ifdef FF_API_AVPICTURE
     int numBytes = avpicture_get_size(format, width, height);
+#else
+    int numBytes = av_image_get_buffer_size(format, width, height, 1);
+#endif
     *frameBuffer = reinterpret_cast<quint8*>(av_malloc(numBytes));
+// https://github.com/FFmpeg/FFmpeg/commit/dca23ffbc7568c9af5c5fbaa86e6a0761ecae50c
+#ifdef FF_API_AVPICTURE
     avpicture_fill((AVPicture*) *avFrame, *frameBuffer, format, width, height);
+#else
+    av_image_fill_arrays ((*avFrame)->data, (*avFrame)->linesize, *frameBuffer, format, width, height, 1);
+#endif // FF_API_AVPICTURE
 }
 
 }
