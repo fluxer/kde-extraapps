@@ -230,7 +230,7 @@ void XRandRConfig::applyKScreenConfig(KScreen::Config *config)
             << "ModeId:" << currentOutput->currentModeId()
             << "Mode: " << currentOutput->currentMode()
             << "Output: " << currentOutput->id();
-            kDebug() << kRealBacktrace(256);
+            kDebug() << kBacktrace(256);
             printConfig(config);
             printInternalCond();
             return;
