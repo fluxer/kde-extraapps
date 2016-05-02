@@ -22,9 +22,10 @@
 #include <QDesktopWidget>
 #include <QGraphicsItem>
 #include <QGraphicsView>
-#include <QtGui/qstyleoption.h>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusReply>
+#include <QProcess>
+#include <qstyleoption.h>
+#include <QDBusInterface>
+#include <QDBusReply>
 
 #include <KAboutApplicationDialog>
 #include <KActionCollection>
@@ -34,7 +35,6 @@
 #include <KDebug>
 #include <KGlobalAccel>
 #include <KLineEdit>
-#include <KProcess>
 #include <KRecentDocument>
 #include <KShortcutsDialog>
 #include <KStandardAction>
@@ -1159,7 +1159,7 @@ void LancelotWindow::showAboutDialog()
 
 void LancelotWindow::showMenuEditor()
 {
-    KProcess::execute("kmenuedit");
+    QProcess::execute("kmenuedit");
 }
 
 void LancelotWindow::hideImmediate()

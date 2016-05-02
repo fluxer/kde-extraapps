@@ -19,11 +19,11 @@
 #include "monolithic.h"
 #include "audio_interface.h"
 
+#include <QProcess>
 #include <kdebug.h>
 #include <kmenu.h>
 #include <kaction.h>
 #include <kicon.h>
-#include <kprocess.h>
 #include <ktoolinvocation.h>
 #include <klocalizedstring.h>
 #include <krun.h>
@@ -254,9 +254,7 @@ void Monolithic::actionTriggered()
 
 void Monolithic::sendFile()
 {
-    KProcess process;
-    process.setProgram("bluedevil-sendfile");
-    process.startDetached();
+    QProcess::startDetached("bluedevil-sendfile");
 }
 
 void Monolithic::browseDevices()
@@ -267,19 +265,16 @@ void Monolithic::browseDevices()
 
 void Monolithic::addDevice()
 {
-    KProcess process;
-    process.setProgram("bluedevil-wizard");
-    process.startDetached();
+    QProcess::startDetached("bluedevil-wizard");
 }
 
 void Monolithic::configBluetooth()
 {
-    KProcess process;
     QStringList args;
     args << "bluedevildevices";
     args << "bluedeviltransfer";
     args << "bluedeviladapters";
-    process.startDetached("kcmshell4", args);
+    QProcess::startDetached("kcmshell4", args);
 }
 
 void Monolithic::toggleBluetooth()
