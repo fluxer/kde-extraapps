@@ -29,7 +29,7 @@
 #include "settings.h"
 
 #include <algorithm>
-#include <boost/bind/bind.hpp>
+#include <boost/bind.hpp>
 
 #include <QtCore/QFileInfo>
 #include <QtGui/QCheckBox>

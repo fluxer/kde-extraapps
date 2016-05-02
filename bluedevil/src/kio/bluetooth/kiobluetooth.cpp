@@ -30,7 +30,6 @@
 #include <KComponentData>
 #include <KCmdLineArgs>
 #include <KAboutData>
-#include <KProcess>
 #include <KApplication>
 #include <KLocale>
 #include <kdemacros.h>

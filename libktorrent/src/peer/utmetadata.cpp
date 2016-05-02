@@ -50,7 +50,7 @@ namespace bt
 		{
 			BDecoder dec(tmp,false,2);
 			node = dec.decode();
-			if (!node || !node->getType() == BNode::DICT)
+			if (!node || node->getType() != BNode::DICT)
 			{
 				delete node;
 				return;

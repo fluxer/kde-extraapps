@@ -216,7 +216,6 @@ Part::Part( QWidget *parentWidget, QObject *parent, const QVariantList& )
     m_extension = new BrowserExtension(this, "ak_extension");
 
     connect(Kernel::self()->frameManager(), SIGNAL(signalCaptionChanged(QString)), this, SIGNAL(setWindowCaption(QString)));
-    connect(Kernel::self()->frameManager(), SIGNAL(signalStatusText(QString)), this, SLOT(slotSetStatusText(QString)));
     connect(Kernel::self()->frameManager(), SIGNAL(signalLoadingProgress(int)), m_extension, SIGNAL(loadingProgress(int)));
     connect(Kernel::self()->frameManager(), SIGNAL(signalCanceled(QString)), this, SIGNAL(canceled(QString)));
     connect(Kernel::self()->frameManager(), SIGNAL(signalStarted()), this, SLOT(slotStarted()));
