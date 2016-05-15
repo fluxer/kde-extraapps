@@ -5,7 +5,6 @@ include(CheckIncludeFiles)
 include(CheckSymbolExists)
 include(CheckFunctionExists)
 include(CheckLibraryExists)
-include(CheckPrototypeExists)
 include(CheckTypeSize)
 
 set(CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS})
