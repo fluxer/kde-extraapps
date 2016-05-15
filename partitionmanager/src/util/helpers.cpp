@@ -59,7 +59,7 @@ void registerMetaTypes()
 static QString suCommand()
 {
 	KStandardDirs d;
-	const char* candidates[] = { "kdesu", "kdesudo", "gksudo", "gksu" };
+	const char* candidates[] = { "kdesudo", "gksudo", "gksu" };
 	QString rval;
 
 	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
@@ -85,12 +85,6 @@ bool checkPermissions()
 			QStringList argList;
 
 			const QString suCmd = suCommand();
-
-			// kdesu broke backward compatibility at some point and now only works with "-c";
-			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
-			// without. kdesu maintainers won't fix their app, so we need to work around that here.
-			if (suCmd.indexOf("kdesu") != -1)
-				argList << "-c";
 
 			argList << args->allArguments().join(" ") + " --dontsu";
 
