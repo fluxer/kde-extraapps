@@ -183,7 +183,7 @@ KttsFilterProc* FilterMgr::loadFilterPlugin(const QString& desktopEntryName)
                 return NULL;
             }
         }
-        //KLibFactory *factory = KLibLoader::self()->factory(offers[0]->library().toLatin1());
+        //KPluginFactory *factory = KLibLoader::self()->factory(offers[0]->library().toLatin1());
         //if(factory){
         //    // If the factory is created successfully, instantiate the KttsFilterConf class for the
         //    // specific plug in to get the plug in configuration object.

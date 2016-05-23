@@ -130,7 +130,7 @@ void TalkerMgr::loadTalkers(KConfig* c)
 //    QStringList talkerIDsList = config.readEntry("TalkerIDs", QStringList());
 //    if (!talkerIDsList.isEmpty())
 //    {
-//        KLibFactory *factory;
+//        KPluginFactory *factory;
 //        QStringList::ConstIterator itEnd(talkerIDsList.constEnd());
 //        for( QStringList::ConstIterator it = talkerIDsList.constBegin(); it != itEnd; ++it )
 //        {
@@ -375,7 +375,7 @@ bool TalkerMgr::autoconfigureTalker(const QString& langCode, KConfig* config)
     //        QString desktopEntryName = offers[i]->desktopEntryName();
 
     //        // Load the plugin.
-    //        KLibFactory *factory = KLibLoader::self()->factory(offers[0]->library().toLatin1());
+    //        KPluginFactory *factory = KLibLoader::self()->factory(offers[0]->library().toLatin1());
     //        if (factory)
     //        {
     //            // If the factory is created successfully, instantiate the PlugInConf class for the
