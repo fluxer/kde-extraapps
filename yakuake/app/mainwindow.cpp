@@ -1314,7 +1314,7 @@ QRect MainWindow::getDesktopGeometry()
             }
         }
 
-        return KWindowSystem::workArea(offScreenWindows, currentDesktop).intersect(screenGeometry);
+        return KWindowSystem::workArea(offScreenWindows, currentDesktop).intersected(screenGeometry);
     }
 
     return KWindowSystem::workArea(currentDesktop);

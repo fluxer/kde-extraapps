@@ -209,7 +209,7 @@ void ExplorerWindow::syncToGraphicsWidget()
         } else {
             return;
         }
-        QSize maxSize = KWindowSystem::workArea().intersect(screenRect).size();
+        QSize maxSize = KWindowSystem::workArea().intersected(screenRect).size();
 
         QSize windowSize;
         if (m_location == Plasma::LeftEdge || m_location == Plasma::RightEdge) {

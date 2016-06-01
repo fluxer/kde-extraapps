@@ -942,7 +942,7 @@ void PageViewAnnotator::routePaint( QPainter * painter, const QRect & paintRect 
     // TODO: Clip annotation painting to cropped page.
 
     // transform cliprect from absolute to item relative coords
-    QRect annotRect = paintRect.intersect( m_lastDrawnRect );
+    QRect annotRect = paintRect.intersected( m_lastDrawnRect );
     annotRect.translate( -itemRect.topLeft() );
 
     // use current engine for painting (in virtual page coordinates)

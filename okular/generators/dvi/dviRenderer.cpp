@@ -208,7 +208,7 @@ void dviRenderer::drawPage(RenderedDocumentPagePixmap* page)
     while (hi.linkText == hj.linkText && hi.baseline == hj.baseline)
     {
       merged = true;
-      hi.box = hi.box.unite(hj.box);
+      hi.box = hi.box.united(hj.box);
 
       j++;
       if (j == page->hyperLinkList.end())

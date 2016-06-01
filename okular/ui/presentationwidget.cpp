@@ -742,7 +742,7 @@ void PresentationWidget::paintEvent( QPaintEvent * pe )
     }
 
     // check painting rect consistancy
-    QRect r = pe->rect().intersect( QRect( QPoint( 0, 0 ), geometry().size() ) );
+    QRect r = pe->rect().intersected( QRect( QPoint( 0, 0 ), geometry().size() ) );
     if ( r.isNull() )
         return;
 
@@ -773,7 +773,7 @@ void PresentationWidget::paintEvent( QPaintEvent * pe )
             pixPainter.drawPixmap( QPoint(0,0), m_lastRenderedPixmap, r );
 
             // then blend the overlay (a piece of) over the background
-            QRect ovr = m_overlayGeometry.intersect( r );
+            QRect ovr = m_overlayGeometry.intersected( r );
             pixPainter.drawPixmap( ovr.left() - r.left(), ovr.top() - r.top(),
                 m_lastRenderedOverlay, ovr.left() - m_overlayGeometry.left(),
                 ovr.top() - m_overlayGeometry.top(), ovr.width(), ovr.height() );
@@ -799,7 +799,7 @@ void PresentationWidget::paintEvent( QPaintEvent * pe )
             drawing.paint( &painter, geom.width(), geom.height() );
 
         if ( m_drawingEngine && m_drawingRect.intersects( pe->rect() ) )
-            m_drawingEngine->paint( &painter, geom.width(), geom.height(), m_drawingRect.intersect( pe->rect() ) );
+            m_drawingEngine->paint( &painter, geom.width(), geom.height(), m_drawingRect.intersected( pe->rect() ) );
 
         painter.restore();
     }

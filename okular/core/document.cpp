@@ -4172,7 +4172,7 @@ bool Document::saveDocumentArchive( const QString &fileName )
     QString docPath = d->m_docFileName;
     const QFileInfo fi( docPath );
     if ( fi.isSymLink() )
-        docPath = fi.symLinkTarget();
+        docPath = fi.readLink();
 
     KZip okularArchive( fileName );
     if ( !okularArchive.open( QIODevice::WriteOnly ) )

@@ -152,7 +152,7 @@ public:
                 item->show();
                 transform.reset();
                 if (!viewport.contains(itemGeometry)) {
-                    QRectF clip = viewport.intersect(itemGeometry);
+                    QRectF clip = viewport.intersected(itemGeometry);
                     transform.translate(0, clip.top() -
                             itemGeometry.top());
                     transform.scale(1, clip.height() /
