@@ -264,15 +264,6 @@ class Files
         void load(const QDomElement &e);
         void save(QDomElement &e) const;
 
-// #ifdef HAVE_NEPOMUK//TODO wha this now?
-//         /**
-//          * Return all Nepomuk-properties that can be extracted of Files
-//          * @Note only Files is being looked at, not each File it contains, so
-//          * you only get the general metadata for all Files
-//         */
-//         QHash<QUrl, Nepomuk::Variant> properties() const;
-// #endif //HAVE_NEPOMUK
-
         void clear();
 
         QList<File> files;

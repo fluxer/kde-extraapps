@@ -29,7 +29,6 @@ class TransferFactory;
 class TransferGroup;
 class Scheduler;
 class TransferTreeModel;
-class NepomukHandler;
 class FileModel;
 class Verifier;
 
@@ -127,7 +126,6 @@ class KGET_EXPORT Transfer : public Job
         /**
          * This function is called after the creation of a Transfer
          * In transfer plugins you can put here whatever needs to be initialized
-         * @note this function creates a NepomukHandler
          */
         virtual void init();
 

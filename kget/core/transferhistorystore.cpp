@@ -146,7 +146,6 @@ TransferHistoryStore *TransferHistoryStore::getStore()
             return new SQLiteStore(KStandardDirs::locateLocal("appdata", "transferhistory.db"));
             break;
 #endif
-        case TransferHistoryStore::Nepomuk:
         case TransferHistoryStore::Xml:
         default:
             return new XmlStore(KStandardDirs::locateLocal("appdata", "transferhistory.kgt"));

@@ -36,8 +36,6 @@ GroupSettingsDialog::GroupSettingsDialog(QWidget *parent, TransferGroupHandler *
 
     ui.regExpEdit->setText(group->regExp().pattern());
 
-    ui.nepomukWidget->hide();
-
     connect(this, SIGNAL(accepted()), SLOT(save()));
 }
 

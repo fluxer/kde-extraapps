@@ -623,13 +623,6 @@ bool KGetMetalink::Metalink::isValid() const
     return files.isValid();
 }
 
-// #ifdef HAVE_NEPOMUK
-// QHash<QUrl, Nepomuk::Variant> KGetMetalink::Files::properties() const
-// {
-//     return data.properties();
-// }
-// #endif //HAVE_NEPOMUK
-
 void KGetMetalink::Metalink::load(const QDomElement &e)
 {
     QDomDocument doc = e.ownerDocument();
