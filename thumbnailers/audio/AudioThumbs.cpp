@@ -77,7 +77,11 @@ bool ATCreator::create ( const QString &path, int /*w*/, int /*h*/, QImage &img 
         TagLib::ID3v2::AttachedPictureFrame *pic;
         pic = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(fList.front());
         if (!pic->picture().isEmpty()) {
+#ifndef QT_KATIE
             img.loadFromData((const uchar *) pic->picture().data(),pic->picture().size());
+#else
+            img.loadFromData(pic->picture().data(),pic->picture().size());
+#endif
             bRet = true;
         }
 

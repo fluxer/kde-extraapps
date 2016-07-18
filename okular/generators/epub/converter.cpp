@@ -388,7 +388,11 @@ QTextDocument* Converter::convert( const QString &fileName )
             block = _cursor->block();
             QImage image;
             mSectionMap.insert(link, block);
+#ifndef QT_KATIE
             if (image.loadFromData((unsigned char *)data, size)) {
+#else
+            if (image.loadFromData(data, size)) {
+#endif
               mTextDocument->addResource(QTextDocument::ImageResource,
                                          QUrl(link), image);
               _cursor->insertImage(link);
