@@ -47,14 +47,14 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <kurl.h>
-#include <ktextbrowser.h>
 #include <kaction.h>
 
-#include <QtGui/qevent.h>
-#include <QtCore/qdatetime.h>
+#include <QEvent>
+#include <QDateTime>
 #include <QSplitter>
 #include <QSignalMapper>
 #include <QTimer>
+#include <QTextBrowser>
 
 // 
 #include "myactioncollectionview.h"
@@ -65,7 +65,7 @@ WebQueryView::WebQueryView(QWidget* parent,Catalog* catalog,const QVector<KActio
         : QDockWidget ( i18n("Web Queries"), parent)
         , m_catalog(catalog)
         , m_splitter(new QSplitter(this))
-        , m_browser(new KTextBrowser(m_splitter))
+        , m_browser(new QTextBrowser(m_splitter))
         , ui_queryControl(new Ui_QueryControl)
         , m_actions(actions)
 

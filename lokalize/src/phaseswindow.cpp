@@ -28,9 +28,9 @@
 
 #include <klocale.h>
 #include <KPushButton>
-#include <KTextBrowser>
 #include <KComboBox>
 
+#include <QTextBrowser>
 #include <QTreeView>
 #include <QStringListModel>
 #include <QVBoxLayout>
@@ -193,7 +193,7 @@ PhasesWindow::PhasesWindow(Catalog* catalog, QWidget *parent)
  , m_catalog(catalog)
  , m_model(new PhasesModel(catalog, this))
  , m_view(new MyTreeView(this))
- , m_browser(new KTextBrowser(this))
+ , m_browser(new QTextBrowser(this))
  , m_editor(0)
 {
     connect(this, SIGNAL(accepted()), SLOT(handleResult()));

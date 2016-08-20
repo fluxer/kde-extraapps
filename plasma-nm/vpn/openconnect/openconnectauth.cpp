@@ -510,7 +510,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         QHBoxLayout *horizontalLayout;
         QLabel *icon;
         QLabel *infoText;
-        KTextBrowser *certificate;
+        QTextBrowser *certificate;
 
         verticalLayout = new QVBoxLayout(widget);
         horizontalLayout = new QHBoxLayout(widget);
@@ -532,7 +532,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 
         verticalLayout->addLayout(horizontalLayout);
 
-        certificate = new KTextBrowser(widget);
+        certificate = new QTextBrowser(widget);
         certificate->setTextInteractionFlags(Qt::TextSelectableByMouse);
         certificate->setOpenLinks(false);
 

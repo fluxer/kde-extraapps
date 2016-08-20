@@ -33,22 +33,22 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-#include <ktextbrowser.h>
 #include <ktextedit.h>
 #include <kcombobox.h>
 #include <kpushbutton.h>
 
-#include <QtCore/qdatetime.h>
+#include <QDateTime>
 #include <QTimer>
 #include <QBoxLayout>
 #include <QStackedLayout>
 #include <QLabel>
 #include <QStringListModel>
 #include <QLineEdit>
+#include <QTextBrowser>
 
 MsgCtxtView::MsgCtxtView(QWidget* parent, Catalog* catalog)
     : QDockWidget (i18nc("@title toolview name","Unit metadata"), parent)
-    , m_browser(new KTextBrowser(this))
+    , m_browser(new QTextBrowser(this))
     , m_editor(0)
     , m_catalog(catalog)
     , m_hasInfo(false)

@@ -30,7 +30,7 @@
 #include <QMap>
 #include <QDockWidget>
 
-class KTextBrowser;
+class QTextBrowser;
 class Catalog;
 class NoteEditor;
 class QStackedLayout;
@@ -62,7 +62,7 @@ signals:
     void escaped();
 
 private:
-    KTextBrowser* m_browser;
+    QTextBrowser* m_browser;
     NoteEditor* m_editor;
     QStackedLayout* m_stackedLayout;
 

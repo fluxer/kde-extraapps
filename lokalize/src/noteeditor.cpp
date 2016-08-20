@@ -30,7 +30,6 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <ktextedit.h>
-#include <ktextbrowser.h>
 #include <kcombobox.h>
 #include <kpushbutton.h>
 
@@ -39,7 +38,8 @@
 #include <QLabel>
 #include <QStringListModel>
 #include <QLineEdit>
-#include <QtGui/qevent.h>
+#include <QEvent>
+#include <QTextBrowser>
 
 void TextEdit::keyPressEvent(QKeyEvent* keyEvent)
 {
@@ -121,7 +121,7 @@ void NoteEditor::setNoteAuthors(const QStringList& authors)
 }
 
 
-int displayNotes(KTextBrowser* browser, const QVector<Note>& notes, int active, bool multiple)
+int displayNotes(QTextBrowser* browser, const QVector<Note>& notes, int active, bool multiple)
 {
     QTextCursor t=browser->textCursor();
     t.movePosition(QTextCursor::End);

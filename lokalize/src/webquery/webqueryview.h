@@ -40,7 +40,7 @@ class Catalog;
 // class FlowLayout;
 // class QHBoxLayout;
 class QSplitter;
-class KTextBrowser;
+class QTextBrowser;
 class QDragEnterEvent;
 class QDropEvent;
 class QEvent;
@@ -85,7 +85,7 @@ private:
 //     QWidget* m_generalBrowser;
     Catalog* m_catalog;
     QSplitter* m_splitter;
-    KTextBrowser* m_browser;
+    QTextBrowser* m_browser;
 //     QHBoxLayout* m_boxLayout;
 //     FlowLayout *m_flowLayout;
     Ui_QueryControl* ui_queryControl;

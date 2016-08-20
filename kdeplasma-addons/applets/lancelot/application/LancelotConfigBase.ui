@@ -302,7 +302,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0" colspan="2">
-        <widget class="KTextBrowser" name="textUsageStatistics">
+        <widget class="QTextBrowser" name="textUsageStatistics">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -378,11 +378,6 @@ p, li { white-space: pre-wrap; }
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KTextBrowser</class>
-   <extends>QTextBrowser</extends>
-   <header>ktextbrowser.h</header>
-  </customwidget>
   <customwidget>
    <class>KTabWidget</class>
    <extends>QTabWidget</extends>

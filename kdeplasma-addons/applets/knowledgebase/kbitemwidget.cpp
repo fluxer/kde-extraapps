@@ -32,7 +32,6 @@
 #include <KIcon>
 #include <KIconLoader>
 #include <KToolInvocation>
-#include <KTextBrowser>
 
 // Plasma
 #include <Plasma/Theme>

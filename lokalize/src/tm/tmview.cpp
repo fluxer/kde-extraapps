@@ -36,14 +36,14 @@
 #include <klocale.h>
 #include <kdebug.h>
 #include <threadweaver/ThreadWeaver.h>
-#include <ktextbrowser.h>
 #include <kglobalsettings.h>
 #include <kpassivepopup.h>
 #include <kaction.h>
 #include <kmessagebox.h>
 
-#include <QtCore/qdatetime.h>
-#include <QtGui/qevent.h>
+#include <QTextBrowser>
+#include <QDateTime>
+#include <QEvent>
 #include <QFileInfo>
 #include <QDir>
 #include <QSignalMapper>
@@ -135,7 +135,7 @@ static DiffInfo getDiffInfo(const QString& diff)
 
 void TextBrowser::mouseDoubleClickEvent(QMouseEvent* event)
 {
-    KTextBrowser::mouseDoubleClickEvent(event);
+    QTextBrowser::mouseDoubleClickEvent(event);
 
     QString sel=textCursor().selectedText();
     if (!(sel.isEmpty()||sel.contains(' ')))

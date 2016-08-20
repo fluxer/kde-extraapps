@@ -31,10 +31,10 @@
 class QStringListModel;
 class QLabel;
 class KComboBox;
-class KTextBrowser;
+class QTextBrowser;
 class TextEdit;
 
-int displayNotes(KTextBrowser* m_browser, const QVector<Note>& notes, int active=0, bool multiple=true);
+int displayNotes(QTextBrowser* m_browser, const QVector<Note>& notes, int active=0, bool multiple=true);
 
 class NoteEditor: public QWidget
 {

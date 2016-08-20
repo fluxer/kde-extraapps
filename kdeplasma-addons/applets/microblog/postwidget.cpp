@@ -27,7 +27,6 @@
 
 #include <KDateTime>
 #include <KColorScheme>
-#include <KTextBrowser>
 
 #include <Plasma/Label>
 #include <Plasma/IconWidget>

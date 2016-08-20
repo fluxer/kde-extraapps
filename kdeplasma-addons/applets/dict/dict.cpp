@@ -32,7 +32,6 @@
 #include <KConfigDialog>
 #include <KConfigGroup>
 #include <KLineEdit>
-#include <KTextBrowser>
 
 #include <Plasma/Animator>
 #include <Plasma/IconWidget>

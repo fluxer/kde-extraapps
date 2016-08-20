@@ -37,7 +37,7 @@ class QStackedLayout;
 class NoteEditor;
 class PhasesModel;
 class MyTreeView;
-class KTextBrowser;
+class QTextBrowser;
 class PhasesWindow: public KDialog
 {
 Q_OBJECT
@@ -57,7 +57,7 @@ private:
     Catalog* m_catalog;
     PhasesModel* m_model;
     MyTreeView* m_view;
-    KTextBrowser* m_browser;
+    QTextBrowser* m_browser;
     NoteEditor* m_editor;
     QWidget* m_noteView;
     QStackedLayout* m_stackedLayout;

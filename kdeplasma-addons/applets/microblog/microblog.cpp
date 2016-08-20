@@ -34,7 +34,6 @@
 #include <KIcon>
 #include <KMessageBox>
 #include <KStringHandler>
-#include <KTextBrowser>
 #include <KTextEdit>
 #include <KWallet/Wallet>
 #include <KToolInvocation>
