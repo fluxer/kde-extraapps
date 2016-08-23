@@ -33,14 +33,13 @@
 
 #include <qicon.h>
 #include <qtoolbutton.h>
-#include <QObject>
 #include <qcursor.h>
-#include <QCheckBox>
-#include <QtGui/qevent.h>
-#include <QLabel>
+#include <qcheckbox.h>
+#include <qevent.h>
+#include <qlabel.h>
 #include <qpixmap.h>
-#include <qwmatrix.h>
-#include <QBoxLayout>
+#include <qmatrix.h>
+#include <qboxlayout.h>
 
 #include "core/ControlManager.h"
 #include "core/mixer.h"

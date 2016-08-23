@@ -32,9 +32,9 @@
 #include <kdebug.h>
 
 #include <qcursor.h>
-#include <QtGui/qevent.h>
+#include <qevent.h>
 #include <qpixmap.h>
-#include <qwmatrix.h>
+#include <qmatrix.h>
 
 #include "core/mixer.h"
 #include "core/mixertoolbox.h"
