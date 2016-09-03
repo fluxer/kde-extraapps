@@ -27,20 +27,6 @@
 #include "qtui.h"
 #include "qtuistyle.h"
 
-// This Struct is taken from Harfbuzz. We use it only to calc it's size.
-// we use a shared memory region so we do not have to malloc a buffer area for every line
-typedef struct {
-    /*HB_LineBreakType*/ unsigned lineBreakType  : 2;
-    /*HB_Bool*/ unsigned whiteSpace              : 1;     /* A unicode whitespace character, except NBSP, ZWNBSP */
-    /*HB_Bool*/ unsigned charStop                : 1;     /* Valid cursor position (for left/right arrow) */
-    /*HB_Bool*/ unsigned wordBoundary            : 1;
-    /*HB_Bool*/ unsigned sentenceBoundary        : 1;
-    unsigned unused                  : 2;
-} HB_CharAttributes_Dummy;
-
-unsigned char *ChatLineModelItem::TextBoundaryFinderBuffer = (unsigned char *)malloc(512 * sizeof(HB_CharAttributes_Dummy));
-int ChatLineModelItem::TextBoundaryFinderBufferSize = 512 * (sizeof(HB_CharAttributes_Dummy) / sizeof(unsigned char));
-
 // ****************************************
 // the actual ChatLineModelItem
 // ****************************************
@@ -178,8 +164,7 @@ void ChatLineModelItem::computeWrapList() const
         return;
 
     QList<ChatLineModel::Word> wplist; // use a temp list which we'll later copy into a QVector for efficiency
-    QTextBoundaryFinder finder(QTextBoundaryFinder::Line, _styledMsg.plainContents().unicode(), length,
-        TextBoundaryFinderBuffer, TextBoundaryFinderBufferSize);
+    QTextBoundaryFinder finder(QTextBoundaryFinder::Line, _styledMsg.plainContents().unicode(), length);
 
     int idx;
     int oldidx = 0;
