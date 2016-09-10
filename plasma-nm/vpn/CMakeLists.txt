@@ -1,9 +1,0 @@
-include_directories(${PROJECT_SOURCE_DIR}/libs/editor/widgets)
-
-add_subdirectory(vpnc)
-add_subdirectory(openvpn)
-add_subdirectory(l2tp)
-add_subdirectory(pptp)
-add_subdirectory(openswan)
-add_subdirectory(openconnect)
-add_subdirectory(strongswan)
