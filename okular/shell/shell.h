@@ -65,7 +65,7 @@ public:
 public slots:
   void slotQuit();
   
-  Q_SCRIPTABLE Q_NOREPLY void tryRaise();
+  Q_SCRIPTABLE void tryRaise();
   Q_SCRIPTABLE bool openDocument( const QString& url, const QString &serializedOptions = QString() );
   Q_SCRIPTABLE bool canOpenDocs( int numDocs, int desktop );
 

@@ -135,8 +135,8 @@ class OKULAR_PART_EXPORT Part : public KParts::ReadWritePart, public Okular::Doc
         bool openNewFilesInTabs() const;
 
     public slots:                // dbus
-        Q_SCRIPTABLE Q_NOREPLY void goToPage(uint page);
-        Q_SCRIPTABLE Q_NOREPLY void openDocument( const QString &doc );
+        Q_SCRIPTABLE void goToPage(uint page);
+        Q_SCRIPTABLE void openDocument( const QString &doc );
         Q_SCRIPTABLE uint pages();
         Q_SCRIPTABLE uint currentPage();
         Q_SCRIPTABLE QString currentDocument();
@@ -149,8 +149,8 @@ class OKULAR_PART_EXPORT Part : public KParts::ReadWritePart, public Okular::Doc
         Q_SCRIPTABLE void slotGotoFirst();
         Q_SCRIPTABLE void slotGotoLast();
         Q_SCRIPTABLE void slotTogglePresentation();
-        Q_SCRIPTABLE Q_NOREPLY void reload();
-        Q_SCRIPTABLE Q_NOREPLY void enableStartWithPrint();
+        Q_SCRIPTABLE void reload();
+        Q_SCRIPTABLE void enableStartWithPrint();
 
     signals:
         void enablePrintAction(bool enable);

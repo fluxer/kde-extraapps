@@ -20,6 +20,8 @@
 #ifndef CONFIGURE_PRINTER_INTERFACE_H
 #define CONFIGURE_PRINTER_INTERFACE_H
 
+#include <QtCore/QHash>
+#include <QtCore/QObject>
 #include <QtDBus/QDBusContext>
 
 class QTimer;
