@@ -23,6 +23,7 @@
 #define _LOG_VIEW_COLUMNS_H_
 
 #include <QList>
+#include <QDataStream>
 
 class LogViewColumn;
 class QStringList;
