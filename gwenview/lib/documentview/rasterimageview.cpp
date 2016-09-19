@@ -35,9 +35,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QTimer>
 #include <QtCore/qsharedpointer.h>
 
-// LCMS2
-#include <lcms2.h>
-
 
 namespace Gwenview
 {

@@ -20,9 +20,6 @@ macro_log_feature(EXIV2_FOUND "Exiv2" "Image metadata support" "http://www.exiv2
 macro_optional_find_package(Kipi)
 macro_log_feature(KIPI_FOUND "libkipi" "Provides various image manipulation and export features" "http://www.kipi-plugins.org" FALSE)
 
-find_package(LCMS2)
-macro_log_feature(LCMS2_FOUND "LittleCMS" "Color management engine" "http://www.littlecms.com" TRUE "2.0")
-
 find_package(LibKonq)
 macro_log_feature(LIBKONQ_FOUND "libkonq" "Standard file management features" "http://www.kde.org" TRUE)
 

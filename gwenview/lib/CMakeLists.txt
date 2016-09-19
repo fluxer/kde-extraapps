@@ -127,7 +127,6 @@ target_link_libraries(gwenviewlib
     ${QT_QTOPENGL_LIBRARY}
     ${X11_X11_LIB}
     ${PNG_LIBRARIES}
-    ${LCMS2_LIBRARIES}
 )
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})
