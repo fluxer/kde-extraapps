@@ -124,9 +124,13 @@ target_link_libraries(gwenviewlib
     ${KDE4_KDCRAW_LIBS}
     ${JPEG_LIBRARY}
     ${EXIV2_LIBRARIES}
-    ${QT_QTOPENGL_LIBRARY}
     ${X11_X11_LIB}
     ${PNG_LIBRARIES}
 )
+
+if(QT_QTOPENGL_FOUND)
+    add_definitions(-DHAVE_OPENGL)
+    target_link_libraries(gwenviewlib ${QT_QTOPENGL_LIBRARY})
+endif()
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})

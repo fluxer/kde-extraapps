@@ -33,10 +33,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Qt
 #include <QEvent>
-#include <QGL>
 #include <QGraphicsScene>
 #include <QPropertyAnimation>
 #include <QTimer>
+#if defined(HAVE_OPENGL)
+#  include <QGL>
+#endif
 
 // libc
 #include <qmath.h>
@@ -91,6 +93,7 @@ DocumentViewContainer::DocumentViewContainer(QWidget* parent)
 {
     d->q = this;
     d->mScene = new QGraphicsScene(this);
+#if defined(HAVE_OPENGL)
     if (GwenviewConfig::animationMethod() == DocumentView::GLAnimation) {
         QGLWidget* glWidget = new QGLWidget;
         if (glWidget->isValid()) {
@@ -100,6 +103,7 @@ DocumentViewContainer::DocumentViewContainer(QWidget* parent)
             delete glWidget;
         }
     }
+#endif
     setScene(d->mScene);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -310,11 +314,15 @@ void DocumentViewContainer::slotFadeInFinished(DocumentView* view)
 
 void DocumentViewContainer::slotConfigChanged()
 {
+#if defined(HAVE_OPENGL)
     bool currentlyGL = qobject_cast<QGLWidget*>(viewport());
     bool wantGL = GwenviewConfig::animationMethod() == DocumentView::GLAnimation;
     if (currentlyGL != wantGL) {
         setViewport(wantGL ? new QGLWidget() : new QWidget());
     }
+#else
+    setViewport(new QWidget());
+#endif
 }
 
 void DocumentViewContainer::showMessageWidget(QGraphicsWidget* widget, Qt::Alignment align)
