@@ -124,7 +124,7 @@ void KCalcButton::slotSetAccelDisplayMode(bool flag) {
 	QKeySequence current_shortcut = shortcut();
 
 	if (flag) {
-		setText(QString(shortcut()));
+		setText(shortcut().toString());
 	} else {
 		setText(mode_[mode_flags_].label);
 	}
