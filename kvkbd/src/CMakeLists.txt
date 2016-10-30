@@ -1,5 +1,3 @@
-find_package(LibXslt REQUIRED)
-
 include(${QT_USE_FILE})
 
 include_directories( ${KDE4_INCLUDES}  ${QT_INCLUDES} )
