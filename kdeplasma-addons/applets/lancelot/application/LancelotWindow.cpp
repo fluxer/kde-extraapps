@@ -1128,7 +1128,7 @@ void LancelotWindow::configureMenu()
         return;
     }
 
-    KConfigSkeleton * nullManager = new KConfigSkeleton(0);
+    KConfigSkeleton * nullManager = new KConfigSkeleton();
     dialog = new KConfigDialog(this, dialogID, nullManager);
     dialog->setFaceType(KPageDialog::Auto);
     dialog->setWindowTitle(i18n("Configure Lancelot menu"));

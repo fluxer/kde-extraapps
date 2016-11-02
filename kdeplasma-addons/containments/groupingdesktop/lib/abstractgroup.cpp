@@ -783,7 +783,7 @@ void AbstractGroup::showConfigurationInterface()
         return;
     }
 
-    KConfigSkeleton *nullManager = new KConfigSkeleton(0);
+    KConfigSkeleton *nullManager = new KConfigSkeleton();
     KConfigDialog *dialog = new KConfigDialog(0, d->configDialogId(), nullManager);
     dialog->setFaceType(KPageDialog::Auto);
     dialog->setWindowTitle(i18n("Group Configuration"));

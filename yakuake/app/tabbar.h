@@ -52,7 +52,7 @@ class TabBar : public QWidget
 
 
     public slots:
-        void addTab(int sessionId, const QString& title = 0);
+        void addTab(int sessionId, const QString& title = QString());
         void removeTab(int sessionId = -1);
 
         void interactiveRename(int sessionId);

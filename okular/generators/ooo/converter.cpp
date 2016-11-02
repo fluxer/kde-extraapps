@@ -252,7 +252,7 @@ bool Converter::convertHeader( QTextCursor *cursor, const QDomElement &element )
     child = child.nextSibling();
   }
 
-  emit addTitle( element.attribute( "outline-level", 0 ).toInt(), element.text(), cursor->block() );
+  emit addTitle( element.attribute( "outline-level", QString("0") ).toInt(), element.text(), cursor->block() );
 
   return true;
 }

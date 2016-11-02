@@ -113,7 +113,7 @@ class SessionStack : public QStackedWidget
 
 
     signals:
-        void sessionAdded(int sessionId, const QString& title = 0);
+        void sessionAdded(int sessionId, const QString& title = QString());
         void sessionRaised(int sessionId);
         void sessionRemoved(int sessionId);
 

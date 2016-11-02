@@ -173,7 +173,7 @@ static const AttrDetails* attrDetails()
 		{ 242,  i18nc("SMART attr name", "Total LBAs Read"), i18nc("SMART attr description", "Total LBAs Read")  },
 		{ 250,  i18nc("SMART attr name", "Read Error Retry Rate"), i18nc("SMART attr description", "Number of errors while reading from a disk")  },
 		{ 254,  i18nc("SMART attr name", "Free Fall Protection"), i18nc("SMART attr description", "Number of &quot;Free Fall Events&quot; detected") },
-		{ -1, NULL, NULL }
+		{ -1, QString(), QString() }
 	};
 
 	return details;
