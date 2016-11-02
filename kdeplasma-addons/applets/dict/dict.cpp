@@ -107,8 +107,8 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     m_wordEdit->show();
 
     m_defBrowser = new Plasma::TextBrowser();
-    m_defBrowser->nativeWidget()->setNotifyClick(true);
-    connect(m_defBrowser->nativeWidget(),SIGNAL(urlClick(QString)),this,SLOT(linkDefine(QString)));
+    m_defBrowser->nativeWidget()->setOpenLinks(true);
+    connect(m_defBrowser->nativeWidget(),SIGNAL(anchorClicked(QUrl)),this,SLOT(linkDefine(QUrl)));
     syncTheme();
     connect(Plasma::Theme::defaultTheme(), SIGNAL(themeChanged()), SLOT(updateColors()));
     m_defBrowser->hide();
@@ -144,7 +144,7 @@ QGraphicsWidget *DictApplet::graphicsWidget()
 
     dataEngine(m_dataEngine)->connectSource(QLatin1String( "list-dictionaries" ), this);
 
-    //connect(m_defEdit, SIGNAL(linkActivated(QString)), this, SLOT(linkDefine(QString)));
+    //connect(m_defEdit, SIGNAL(anchorClicked(QUrl)), this, SLOT(linkDefine(QUrl)));
 
 //  This is the fix for links/selecting text
     //QGraphicsItem::GraphicsItemFlags flags = m_defEdit->flags();
@@ -196,10 +196,10 @@ void DictApplet::configChanged()
     }
 }
 
-void DictApplet::linkDefine(const QString &text)
+void DictApplet::linkDefine(const QUrl &url)
 {
     //kDebug() <<"ACTIVATED";
-    m_wordEdit->setText(text);
+    m_wordEdit->setText(url.toString());
     define();
 }
 

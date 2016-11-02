@@ -180,7 +180,7 @@ void TaskGroupItem::activateOrIconify()
     foreach (AbstractGroupableItem * item, items) {
         TaskManager::TaskItem *task = qobject_cast<TaskManager::TaskItem *>(item);
         if (task) {
-            if (task->task()->isIconified()) {
+            if (task->task()->isMinimized()) {
                 ++ iconified;
             }
 

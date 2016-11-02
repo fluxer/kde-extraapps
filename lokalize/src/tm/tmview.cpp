@@ -43,7 +43,7 @@
 
 #include <QTextBrowser>
 #include <QDateTime>
-#include <QEvent>
+#include <QDragEnterEvent>
 #include <QFileInfo>
 #include <QDir>
 #include <QSignalMapper>
