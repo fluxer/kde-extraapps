@@ -150,7 +150,7 @@ KGpgItemModel::data(const QModelIndex &index, int role) const
 		KgpgKeyTrust t = node->getTrust();
 
 		switch (role) {
-		case Qt::BackgroundColorRole:
+		case Qt::BackgroundRole:
 			switch (t) {
 			case TRUST_INVALID:
 			case TRUST_DISABLED:
