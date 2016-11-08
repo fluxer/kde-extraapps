@@ -20,6 +20,7 @@
 
 #include "wizardagent.h"
 
+#include <QFile>
 #include <QDBusMessage>
 #include <bluedevil/bluedevil.h>
 #include <KDebug>

@@ -53,7 +53,9 @@
 #include <qapplication.h>
 #include <qlist.h>
 #include <qtimer.h>
+#ifndef QT_NO_IM
 #include <QInputContext>
+#endif
 
 #include <kdebug.h>
 
@@ -162,12 +164,14 @@ void kpViewManager::setTextCursorPosition (int row, int col)
     restoreQueueUpdates ();
     restoreFastUpdates ();
 
+#ifndef QT_NO_IM
     if (d->viewUnderCursor) {
         QInputContext *inputContext = d->viewUnderCursor->inputContext ();
         if (inputContext) {
             inputContext->update ();
         }
     }
+#endif
 }
 
 

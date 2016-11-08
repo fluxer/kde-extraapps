@@ -278,7 +278,7 @@ void NewPrinterNotification::setupPrinter()
     // in this case the printer was not added
     QStringList args;
     args << "--new-printer-from-device";
-    args << sender()->property(PRINTER_NAME).toString() % QLatin1Char('/') % sender()->property(DEVICE_ID).toString();
+    args << sender()->property(PRINTER_NAME).toString() + QLatin1Char('/') + sender()->property(DEVICE_ID).toString();
     KToolInvocation::kdeinitExec(QLatin1String("kde-add-printer"), args);
 }
 
