@@ -389,7 +389,6 @@ PageView::PageView( QWidget *parent, Okular::Document *document )
 //    setCornerWidget( resizeButton );
 //    resizeButton->setEnabled( false );
     // connect(...);
-    setAttribute( Qt::WA_InputMethodEnabled, true );
 
     d->magnifierView = new MagnifierView(document, this);
     d->magnifierView->hide();
@@ -1763,11 +1762,6 @@ void PageView::keyReleaseEvent( QKeyEvent * e )
         d->scrollIncrement = 0;
         d->autoScrollTimer->stop();
     }
-}
-
-void PageView::inputMethodEvent( QInputMethodEvent * e )
-{
-    Q_UNUSED(e)
 }
 
 static QPoint rotateInRect( const QPoint &rotated, Okular::Rotation rotation )
