@@ -37,6 +37,7 @@ namespace bt
 		QSharedPointer<BufferPool> ptr = pool.toStrongRef();
 		if (ptr)
 			ptr->release(data, cap);
+                data.reset();
 	}
 
 	BufferPool::BufferPool()
