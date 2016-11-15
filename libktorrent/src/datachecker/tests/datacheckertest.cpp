@@ -13,7 +13,6 @@
 #include <datachecker/singledatachecker.h>
 #include <datachecker/multidatachecker.h>
 #include <testlib/dummytorrentcreator.h>
-#include <boost/concept_check.hpp>
 
 
 using namespace bt;

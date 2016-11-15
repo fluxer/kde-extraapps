@@ -32,9 +32,6 @@
 #include <util/circularbuffer.h>
 #include <util/timer.h>
 #include <utp/remotewindow.h>
-#include <boost/concept_check.hpp>
-
-
 
 
 namespace utp

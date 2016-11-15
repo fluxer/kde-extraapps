@@ -24,13 +24,10 @@
 
 #include <QTimer>
 #include <KApplication>
-#include <boost/scoped_ptr.hpp>
 #include <torrent/torrentcontrol.h>
 #include <interfaces/queuemanagerinterface.h>
 
 class KUrl;
-
-typedef boost::scoped_ptr<bt::TorrentControl> TorrentControlPtr;
 
 class KTCLI : public KApplication,public bt::QueueManagerInterface
 {
@@ -59,7 +56,7 @@ public slots:
 	
 private:
 	QTimer timer;
-	TorrentControlPtr tc;
+	bt::TorrentControl* tc;
 	int updates;
 };
 

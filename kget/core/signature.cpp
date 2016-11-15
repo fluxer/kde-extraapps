@@ -33,6 +33,8 @@
 #include <qgpgme/dataprovider.h>
 
 #include <QtCore/QFile>
+
+#include <memory> // for std::shared_ptr
 #endif
 
 #ifdef HAVE_QGPGME
@@ -82,7 +84,7 @@ GpgME::VerificationResult SignaturePrivate::verify(const KUrl &dest, const QByte
         return result;
     }
 
-    boost::shared_ptr<QFile> qFile(new QFile(dest.pathOrUrl()));
+    std::shared_ptr<QFile> qFile(new QFile(dest.pathOrUrl()));
     qFile->open(QIODevice::ReadOnly);
     QGpgME::QIODeviceDataProvider *file = new QGpgME::QIODeviceDataProvider(qFile);
     GpgME::Data dFile(file);

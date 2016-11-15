@@ -42,12 +42,13 @@ KTCLI::KTCLI() : tc(new TorrentControl()),updates(0)
 	qsrand(time(0));
 	bt::SetClientInfo("ktcli",bt::MAJOR,bt::MINOR,bt::RELEASE,bt::NORMAL,"KT");
 	bt::InitLog("ktcli.log",false,true,false);
-	connect(tc.get(),SIGNAL(finished(bt::TorrentInterface*)),this,SLOT(finished(bt::TorrentInterface*)));
+	connect(tc,SIGNAL(finished(bt::TorrentInterface*)),this,SLOT(finished(bt::TorrentInterface*)));
 	connect(this,SIGNAL(aboutToQuit()),this,SLOT(shutdown()));
 }
 
 KTCLI::~KTCLI()
 {
+    delete tc;
 }
 
 bool KTCLI::start()

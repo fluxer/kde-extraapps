@@ -15,7 +15,7 @@
 #include "settings.h"
 
 #include <algorithm>
-#include <boost/bind.hpp>
+#include <functional>
 
 #include <KDebug>
 
@@ -64,7 +64,7 @@ void Scheduler::setHasNetworkConnection(bool hasConnection)
                 m_failureCheckTimer = 0;
             }
             foreach (JobQueue *queue, m_queues) {
-                std::for_each(queue->begin(), queue->end(), boost::bind(&Job::stop, _1));
+                std::for_each(queue->begin(), queue->end(), std::bind(&Job::stop, std::placeholders::_1));
             }
         }
     }
@@ -233,12 +233,12 @@ void Scheduler::jobChangedEvent(Job * job, JobFailure failure)
 
 void Scheduler::start()
 {
-    std::for_each(m_queues.begin(), m_queues.end(), boost::bind(&JobQueue::setStatus, _1, JobQueue::Running));
+    std::for_each(m_queues.begin(), m_queues.end(), std::bind(&JobQueue::setStatus, std::placeholders::_1, JobQueue::Running));
 }
 
 void Scheduler::stop()
 {
-    std::for_each(m_queues.begin(), m_queues.end(), boost::bind(&JobQueue::setStatus, _1, JobQueue::Stopped));
+    std::for_each(m_queues.begin(), m_queues.end(), std::bind(&JobQueue::setStatus, std::placeholders::_1, JobQueue::Stopped));
 }
 
 void Scheduler::updateQueue( JobQueue * queue )

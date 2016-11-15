@@ -20,9 +20,9 @@
 #include "rpcserver.h"
 #include <QHostAddress>
 #include <QThread>
+#include <QScopedPointer>
 #include <unistd.h>
 #include <string.h>
-#include <boost/scoped_ptr.hpp>
 #include <net/portlist.h>
 #include <util/log.h>
 #include <util/error.h>
@@ -88,13 +88,13 @@ namespace dht
 			{
 				// read and decode the packet
 				BDecoder bdec(ptr->get(), ptr->size(), false);
-				boost::scoped_ptr<BNode> n(bdec.decode());
+				QScopedPointer<BNode> n(bdec.decode());
 
-				if (!n || n->getType() != BNode::DICT)
+				if (!n || n.data()->getType() != BNode::DICT)
 					return;
 
 				// try to make a RPCMsg of it
-				RPCMsg::Ptr msg = factory.build((BDictNode*)n.get(), this);
+				RPCMsg::Ptr msg = factory.build((BDictNode*)n.data(), this);
 				if (msg)
 				{
 					if (addr.ipVersion() == 6 && addr.isIPv4Mapped())

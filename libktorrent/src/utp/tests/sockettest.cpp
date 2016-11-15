@@ -24,7 +24,6 @@
 #include <utp/utpserver.h>
 #include <utp/utpsocket.h>
 #include <torrent/globals.h>
-#include <boost/concept_check.hpp>
 
 using namespace utp;
 

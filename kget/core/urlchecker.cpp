@@ -29,7 +29,7 @@
 #include "settings.h"
 
 #include <algorithm>
-#include <boost/bind.hpp>
+#include <functional>
 
 #include <QtCore/QFileInfo>
 #include <QtGui/QCheckBox>
@@ -114,7 +114,8 @@ void UrlChecker::removeDuplicates(KUrl::List &urls)
 {
     std::sort(urls.begin(), urls.end(), lessThan());//sort the urls, to find duplicates fast
     urls.erase(std::unique(urls.begin(), urls.end(),
-               boost::bind(&KUrl::equals, _1, _2, KUrl::CompareWithoutTrailingSlash | KUrl::AllowEmptyPath)), urls.end());
+               std::bind(&KUrl::equals, std::placeholders::_1, std::placeholders::_2,
+                         KUrl::CompareWithoutTrailingSlash | KUrl::AllowEmptyPath)), urls.end());
 }
 
 UrlChecker::UrlError UrlChecker::checkUrl(const KUrl &url, const UrlChecker::UrlType type, bool showNotification)
