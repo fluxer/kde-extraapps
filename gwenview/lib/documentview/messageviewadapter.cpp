@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Local
 #include <lib/document/document.h>
-#include <lib/ui_messageview.h>
+#include <ui_messageview.h>
 
 namespace Gwenview
 {
