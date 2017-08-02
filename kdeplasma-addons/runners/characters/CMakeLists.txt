@@ -1,11 +1,15 @@
 project(CharacterRunner)
 
+# avoid putting the generated files in target specific
+# directory which is the case when automated
+set(CMAKE_AUTOUIC OFF)
+
 # We add our source code here
 set(krunner_charrunner_SRCS charrunner.cpp)
 set(kcm_krunner_charrunner_SRCS
     charrunner_config.cpp
-    charrunner_config.ui
 )
+qt4_wrap_ui(kcm_krunner_charrunner_SRCS charrunner_config.ui)
 kde4_add_plugin(kcm_krunner_charrunner ${kcm_krunner_charrunner_SRCS})
 target_link_libraries(kcm_krunner_charrunner
     ${KDE4_KDECORE_LIBS}
@@ -13,7 +17,7 @@ target_link_libraries(kcm_krunner_charrunner
     ${KDE4_KCMUTILS_LIBS} 
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
-    )
+)
 
 # Now make sure all files get to the right place
 kde4_add_plugin(krunner_charrunner ${krunner_charrunner_SRCS})
