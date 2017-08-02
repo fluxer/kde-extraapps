@@ -12,7 +12,7 @@ include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
 
 ########### Subfolders ##########
 
-add_subdirectory(src) 
+add_subdirectory(src)
 add_subdirectory(src/lib)
 add_subdirectory(src/config)
  

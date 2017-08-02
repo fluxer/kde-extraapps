@@ -14,9 +14,16 @@ set(ksystemlog_base_mode_sources
 	logLevelSelectionDialog.cpp
 	genericConfiguration.cpp
 	syslogAnalyzer.cpp
+)
+
+# avoid putting the generated files in target specific
+# directory which is the case when automated
+set(CMAKE_AUTOUIC OFF)
+
+qt4_wrap_ui(ksystemlog_base_mode_sources
     fileListBase.ui
     multipleFileListBase.ui
-    logLevelSelectionDialogBase.ui 
+    logLevelSelectionDialogBase.ui
 )
 
 add_library(ksystemlog_base_mode STATIC ${ksystemlog_base_mode_sources})

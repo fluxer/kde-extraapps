@@ -36,6 +36,13 @@ set(ksystemlog_lib_sources
 	multipleActions.cpp
 	
 	levelPrintPage.cpp
+)
+
+# avoid putting the generated files in target specific
+# directory which is the case when automated
+set(CMAKE_AUTOUIC OFF)
+
+qt4_wrap_ui(ksystemlog_lib_sources
     logViewSearchWidgetBase.ui
 )
 

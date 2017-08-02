@@ -35,9 +35,6 @@ set(ksystemlog_sources
     tabLogViewsWidget.cpp
     tabLogManager.cpp
     statusBar.cpp
-    detailDialogBase.ui
-    loggerDialogBase.ui
-    generalConfigurationWidgetBase.ui
 )
 
 add_executable(ksystemlog ${ksystemlog_sources})

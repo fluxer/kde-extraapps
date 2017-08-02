@@ -26,8 +26,33 @@ file(GLOB partitionmanagerprivate_SRCS
     fs/*.cpp
     gui/*.cpp
     config/*.cpp
-    # to generate the UI header it includes
-    gui/partpropswidget.h
+)
+
+# avoid putting the generated files in target specific
+# directory which is the case when automated
+set(CMAKE_AUTOUIC OFF)
+
+qt4_wrap_ui(partitionmanagerprivate_SRCS
+    config/configurepageadvanced.ui
+    config/configurepagefilesystemcolors.ui
+    config/configurepagegeneral.ui
+    gui/smartdialogwidgetbase.ui
+    gui/decryptluksdialogwidgetbase.ui
+    gui/devicepropswidgetbase.ui
+    gui/mainwindowbase.ui
+    gui/treelogbase.ui
+    gui/partitionmanagerwidgetbase.ui
+    gui/partpropswidgetbase.ui
+    gui/listdevicesbase.ui
+    gui/applyprogressdetailswidgetbase.ui
+    gui/filesystemsupportdialogwidgetbase.ui
+    gui/sizedetailswidgetbase.ui
+    gui/createpartitiontablewidgetbase.ui
+    gui/listoperationsbase.ui
+    gui/sizedialogwidgetbase.ui
+    gui/editmountpointdialogwidgetbase.ui
+    gui/editmountoptionsdialogwidgetbase.ui
+    gui/applyprogressdialogwidgetbase.ui
 )
 
 kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
