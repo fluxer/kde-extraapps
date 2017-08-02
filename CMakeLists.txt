@@ -13,13 +13,10 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${KDE4_INCLUDES}
-    ${CMAKE_SOURCE_DIR}/miniboost
     ${CMAKE_CURRENT_BINARY_DIR}/syndication
 )
 
 macro_optional_add_subdirectory(about-distro)
-macro_optional_add_subdirectory(akregator)
-macro_optional_add_subdirectory(syndication)
 macro_optional_add_subdirectory(ark)
 macro_optional_add_subdirectory(bluedevil)
 macro_optional_add_subdirectory(dragon)
@@ -35,7 +32,6 @@ macro_optional_add_subdirectory(kfilemetadata)
 macro_optional_add_subdirectory(lokalize)
 macro_optional_add_subdirectory(libksane)
 macro_optional_add_subdirectory(libkscreen)
-macro_optional_add_subdirectory(libktorrent)
 macro_optional_add_subdirectory(kcharselect)
 macro_optional_add_subdirectory(kcolorchooser)
 macro_optional_add_subdirectory(kfloppy)
@@ -60,5 +56,11 @@ macro_optional_add_subdirectory(skanlite)
 macro_optional_add_subdirectory(svgpart)
 macro_optional_add_subdirectory(thumbnailers)
 macro_optional_add_subdirectory(yakuake)
+
+# include directories for projects that require boost
+include_directories(${CMAKE_SOURCE_DIR}/miniboost AFTER)
+macro_optional_add_subdirectory(libktorrent)
+macro_optional_add_subdirectory(akregator)
+macro_optional_add_subdirectory(syndication)
 
 macro_display_feature_log()
