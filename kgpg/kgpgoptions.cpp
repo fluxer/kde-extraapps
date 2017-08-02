@@ -35,7 +35,6 @@
 #include <QFile>
 #include <QTextStream>
 #include <QVBoxLayout>
-#include <kdefakes.h>
 
 using namespace KgpgCore;
 
