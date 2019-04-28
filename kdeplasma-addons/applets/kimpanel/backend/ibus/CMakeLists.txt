@@ -22,9 +22,8 @@ if(IBUS_FOUND AND GLIB2_FOUND AND GIO_FOUND AND GOBJECT_FOUND)
             ibus15/main.cpp
             ibus15/panel.cpp
             ibus15/propertymanager.cpp)
-        qt4_wrap_cpp(plasma_applet_kimpanel_MOCS ibus15/app.h)
         add_definitions(-DQT_NO_KEYWORDS)
-        add_executable(kimpanel-ibus-panel ${kimpanel_ibus_panel_SRCS} ${plasma_applet_kimpanel_MOCS})
+        add_executable(kimpanel-ibus-panel ${kimpanel_ibus_panel_SRCS})
         target_link_libraries(kimpanel-ibus-panel ${IBUS_LIBRARIES} ${GLIB2_LIBRARIES} ${GIO_LIBRARIES} ${GOBJECT_LIBRARIES}  ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${X11_X11_LIB} ${QT_QTGUI_LIBRARY})
     endif()
     install(TARGETS kimpanel-ibus-panel DESTINATION ${LIBEXEC_INSTALL_DIR})
