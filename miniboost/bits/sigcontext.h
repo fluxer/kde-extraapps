@@ -1,4 +1,4 @@
-/* Copyright (C) 2002-2017 Free Software Foundation, Inc.
+/* Copyright (C) 2002-2018 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -22,6 +22,8 @@
 # error "Never use <bits/sigcontext.h> directly; include <signal.h> instead."
 #endif
 
+#include <bits/types.h>
+
 #define FP_XSTATE_MAGIC1	0x46505853U
 #define FP_XSTATE_MAGIC2	0x46505845U
 #define FP_XSTATE_MAGIC2_SIZE	sizeof(FP_XSTATE_MAGIC2)
@@ -32,7 +34,7 @@ struct _fpx_sw_bytes
   __uint32_t extended_size;
   __uint64_t xstate_bv;
   __uint32_t xstate_size;
-  __uint32_t padding[7];
+  __uint32_t __glibc_reserved1[7];
 };
 
 struct _fpreg
@@ -45,7 +47,7 @@ struct _fpxreg
 {
   unsigned short significand[4];
   unsigned short exponent;
-  unsigned short padding[3];
+  unsigned short __glibc_reserved1[3];
 };
 
 struct _xmmreg
@@ -74,10 +76,10 @@ struct _fpstate
   /* FXSR FPU environment.  */
   __uint32_t		_fxsr_env[6];
   __uint32_t		mxcsr;
-  __uint32_t		reserved;
+  __uint32_t		__glibc_reserved1;
   struct _fpxreg	_fxsr_st[8];
   struct _xmmreg	_xmm[8];
-  __uint32_t		padding[56];
+  __uint32_t		__glibc_reserved2[56];
 };
 
 #ifndef sigcontext_struct
@@ -131,7 +133,7 @@ struct _fpstate
   __uint32_t		mxcr_mask;
   struct _fpxreg	_st[8];
   struct _xmmreg	_xmm[16];
-  __uint32_t		padding[24];
+  __uint32_t		__glibc_reserved1[24];
 };
 
 struct sigcontext
@@ -175,8 +177,8 @@ struct sigcontext
 struct _xsave_hdr
 {
   __uint64_t xstate_bv;
-  __uint64_t reserved1[2];
-  __uint64_t reserved2[5];
+  __uint64_t __glibc_reserved1[2];
+  __uint64_t __glibc_reserved2[5];
 };
 
 struct _ymmh_state
