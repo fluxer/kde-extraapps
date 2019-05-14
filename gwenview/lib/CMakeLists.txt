@@ -10,6 +10,10 @@ include_directories(
     ${JPEG_INCLUDE_DIR}
     ${PNG_INCLUDE_DIRS}
 )
+add_definitions(
+    ${EXIV2_DEFINITIONS}
+    ${KDE4_ENABLE_EXCEPTIONS}
+)
 
 set(gwenviewlib_SRCS
     contextmanager.cpp
@@ -109,7 +113,6 @@ set_source_files_properties(
     imagemetainfomodel.cpp
     timeutils.cpp
     PROPERTIES
-    COMPILE_FLAGS "${KDE4_ENABLE_EXCEPTIONS}"
 )
 
 kde4_add_kcfg_files(gwenviewlib_SRCS gwenviewconfig.kcfgc)
