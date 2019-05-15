@@ -41,8 +41,8 @@
 
 LancelotApplication * LancelotApplication::m_application = NULL;
 
-LancelotApplication::LancelotApplication(int argc, char **argv)
-    : KUniqueApplication(argc, argv), window(0),
+LancelotApplication::LancelotApplication(bool configUnique)
+    : KUniqueApplication(configUnique), window(0),
     m_clientsNumber(0), m_lastID(-1)
 {
     init();
@@ -107,7 +107,7 @@ int LancelotApplication::main(int argc, char **argv)
                 dpy->colormap());
 #else
     LancelotApplication::m_application =
-        new LancelotApplication(argc, argv);
+        new LancelotApplication();
 #endif // LANCELOT_HAVE_COMPOSITING
 
     return LancelotApplication::m_application->exec();

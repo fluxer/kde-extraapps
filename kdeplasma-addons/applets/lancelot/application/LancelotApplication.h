@@ -72,7 +72,7 @@ protected:
 private:
     static LancelotApplication * m_application;
 
-    LancelotApplication(int argc, char **argv);
+    LancelotApplication(bool configUnique = false);
     LancelotApplication(Display * display,
         Qt::HANDLE visual = 0,
         Qt::HANDLE colormap = 0,

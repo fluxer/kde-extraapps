@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
    options.add("restore", ki18n("Restore default volumes"));
    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-   KApplication app( false );
+   QCoreApplication app (argc, argv);
 
    GlobalConfig::init();
 

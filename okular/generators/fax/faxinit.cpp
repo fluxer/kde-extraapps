@@ -317,11 +317,11 @@ FillTable(struct tabent *T, int Size, const struct proto *P, int State)
 void
 fax_init_tables(void)
 {
-    static bool already_initialized = 0;
+    static bool already_initialized = false;
     if (already_initialized)
-	return;
+        return;
 
-    ++already_initialized;
+    already_initialized = true;
 
     FillTable(MainTable, 7, Pass, S_Pass);
     FillTable(MainTable, 7, Horiz, S_Horiz);
