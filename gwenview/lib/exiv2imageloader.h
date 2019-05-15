@@ -29,12 +29,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 // Exiv2
 #include <string.h>
-#include <exiv2/image.hpp>
+#include <exiv2/exiv2.hpp>
 
 // Local
 
-class QByteArray;
-class QString;
+#include <QByteArray>
+#include <QString>
 
 namespace Gwenview
 {

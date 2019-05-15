@@ -10,10 +10,6 @@ include_directories(
     ${JPEG_INCLUDE_DIR}
     ${PNG_INCLUDE_DIRS}
 )
-add_definitions(
-    ${EXIV2_DEFINITIONS}
-    ${KDE4_ENABLE_EXCEPTIONS}
-)
 
 set(gwenviewlib_SRCS
     contextmanager.cpp
