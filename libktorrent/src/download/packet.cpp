@@ -134,7 +134,7 @@ namespace bt
 	QString Packet::debugString() const
 	{
 		if (!data)
-			return QString::null;
+			return QString();
 		
 		switch (data[4])
 		{

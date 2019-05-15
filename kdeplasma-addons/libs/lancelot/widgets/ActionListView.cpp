@@ -229,7 +229,7 @@ CustomListItem * ActionListViewItemFactory::itemForIndex(int index,
                     item->setDescription(m_model->title(index));
                 } else {
                     item->setTitle(m_model->title(index));
-                    item->setDescription(QString::null);
+                    item->setDescription(QString());
                 }
                 break;
 
@@ -244,7 +244,7 @@ CustomListItem * ActionListViewItemFactory::itemForIndex(int index,
                     item->setTitle(m_model->title(index));
                 }
 
-                item->setDescription(QString::null);
+                item->setDescription(QString());
                 break;
 
             case ActionListView::SingleLineDescriptionFirst:
@@ -258,12 +258,12 @@ CustomListItem * ActionListViewItemFactory::itemForIndex(int index,
                     item->setTitle(m_model->title(index));
                 }
 
-                item->setDescription(QString::null);
+                item->setDescription(QString());
                 break;
 
             case ActionListView::OnlyName:
                 item->setTitle(m_model->title(index));
-                item->setDescription(QString::null);
+                item->setDescription(QString());
                 break;
 
             case ActionListView::OnlyDescription:
@@ -272,7 +272,7 @@ CustomListItem * ActionListViewItemFactory::itemForIndex(int index,
                 } else {
                     item->setTitle(m_model->title(index));
                 }
-                item->setDescription(QString::null);
+                item->setDescription(QString());
                 break;
 
 

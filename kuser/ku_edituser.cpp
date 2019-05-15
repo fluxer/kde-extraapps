@@ -670,13 +670,13 @@ void KU_EditUser::mergeUser( const KU_User &user, KU_User &newuser )
       ( leshell->currentIndex() == 0 && !ismoreshells ) ||
       ( leshell->currentIndex() == 1 && ismoreshells ) ) {
 
-      newuser.setShell( QString::null );	//krazy:exclude=nullstrassign for old broken gcc
+      newuser.setShell( QString() );	//krazy:exclude=nullstrassign for old broken gcc
     } else {
   // TODO: Check shell.
       newuser.setShell( leshell->currentText() );
     }
   } else
-    newuser.setShell( QString::null );	//krazy:exclude=nullstrassign for old broken gcc
+    newuser.setShell( QString() );	//krazy:exclude=nullstrassign for old broken gcc
 
   newuser.setDisabled( (cbdisabled->checkState() == Qt::PartiallyChecked) ? user.getDisabled() : cbdisabled->isChecked() );
 

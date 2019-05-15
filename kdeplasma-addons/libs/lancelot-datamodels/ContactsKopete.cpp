@@ -94,7 +94,7 @@ ContactsKopete::ContactsKopete()
 
     // other
 
-    kopeteServiceOwnerChanged(QString::null, QString::null, QString::null);
+    kopeteServiceOwnerChanged(QString(), QString(), QString());
 
     load();
 }

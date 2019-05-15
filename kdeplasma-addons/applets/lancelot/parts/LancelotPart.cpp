@@ -636,8 +636,8 @@ void LancelotPart::showSearchBox(bool value)
 void LancelotPart::resetSearch()
 {
     kDebug();
-    m_searchText->setText(QString::null);
-    search(QString::null);
+    m_searchText->setText(QString());
+    search(QString());
 }
 
 void LancelotPart::listSizeChanged()

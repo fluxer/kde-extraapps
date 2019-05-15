@@ -111,7 +111,7 @@ private:
     QChar next()
     {
         if (m_index >= m_s.size()) {
-            return QChar::Null;
+            return QChar();
         }
         return m_s.at(m_index);
     }

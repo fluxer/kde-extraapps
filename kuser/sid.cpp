@@ -31,7 +31,7 @@ uint SID::mAlgRidBase = 1000;
 
 SID::SID()
 {
-  mRid = 0; mSid = QString::null; mDom = QString::null;	//krazy:exclude=nullstrassign for old broken gcc
+  mRid = 0; mSid = QString(); mDom = QString();	//krazy:exclude=nullstrassign for old broken gcc
 }
 
 SID::SID( const SID &sid )

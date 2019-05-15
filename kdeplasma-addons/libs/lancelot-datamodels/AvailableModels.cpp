@@ -47,78 +47,78 @@ AvailableModels::AvailableModels()
     // Applications model
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Favorite applications"), QString::null,
+           i18n("Favorite applications"), QString(),
            KIcon("favorites"),
            "FavoriteApplications");
 
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Applications category..."), QString::null,
+           i18n("Applications category..."), QString(),
            KIcon("plasmaapplet-shelf"),
            "Applications");
 
     // Places
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Places"), QString::null,
+           i18n("Places"), QString(),
            KIcon("folder"),
            "Places");
 
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Folder..."), QString::null,
+           i18n("Folder..."), QString(),
            KIcon("folder"),
            "Folder");
 
     // Devices
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Removable devices"), QString::null,
+           i18n("Removable devices"), QString(),
            KIcon("media-optical"),
            "Devices/Removable");
 
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Fixed devices"), QString::null,
+           i18n("Fixed devices"), QString(),
            KIcon("drive-harddisk"),
            "Devices/Fixed");
 
     // System applications
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("System tools"), QString::null,
+           i18n("System tools"), QString(),
            KIcon("computer"),
            "System");
 
     // Documents
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("New documents"), QString::null,
+           i18n("New documents"), QString(),
            KIcon("document-new"),
            "NewDocuments");
 
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Open documents"), QString::null,
+           i18n("Open documents"), QString(),
            KIcon("document-edit"),
            "OpenDocuments");
 
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Recent documents"), QString::null,
+           i18n("Recent documents"), QString(),
            KIcon("document-open-recent"),
            "RecentDocuemnts");
 
     // Contacts
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Online contacts"), QString::null,
+           i18n("Online contacts"), QString(),
            KIcon("kopete"),
            "Contacts");
 
     item->children <<
         new StandardActionTreeModel::Item(
-           i18n("Unread messages"), QString::null,
+           i18n("Unread messages"), QString(),
            KIcon("kmail"),
            "Messages");
 
@@ -159,7 +159,7 @@ QString AvailableModels::serializedDataForItem(int index)
     }
 
     if (data["model"] == "Folder ") {
-        return QString::null;
+        return QString();
     }
 
     return Serializator::serialize(data);

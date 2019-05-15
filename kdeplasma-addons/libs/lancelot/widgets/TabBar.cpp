@@ -220,7 +220,7 @@ void TabBar::addTab(const QString & id, const QIcon & icon, const QString & titl
     }
 
     Lancelot::ExtenderButton * button = new ExtenderButton(
-        icon, title, QString::null, this);
+        icon, title, QString(), this);
     d->tabs[id] = button;
     d->tabButtons.append(button);
 

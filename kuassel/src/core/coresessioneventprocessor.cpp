@@ -122,9 +122,9 @@ void CoreSessionEventProcessor::processIrcEventAuthenticate(IrcEvent *e)
     if (net->identityPtr()->sslCert().isNull()) {
 #endif
         QString construct = net->saslAccount();
-        construct.append(QChar(QChar::Null));
+        construct.append(QChar());
         construct.append(net->saslAccount());
-        construct.append(QChar(QChar::Null));
+        construct.append(QChar());
         construct.append(net->saslPassword());
         QByteArray saslData = QByteArray(construct.toLatin1().toBase64());
         saslData.prepend("AUTHENTICATE ");

@@ -645,7 +645,7 @@ void KSnapshot::closeEvent( QCloseEvent * e )
     saveDialogSize(cg);
 
     KUrl url = filename;
-    url.setPass(QString::null); //krazy:exclude=nullstrassign for old broken gcc
+    url.setPass(QString()); //krazy:exclude=nullstrassign for old broken gcc
     conf.writePathEntry("filename", url.url());
 
     conf.sync();

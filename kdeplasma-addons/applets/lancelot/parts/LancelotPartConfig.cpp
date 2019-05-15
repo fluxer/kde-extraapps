@@ -149,7 +149,7 @@ void LancelotPartConfig::addItem(const QString & itemData)
     if (itemData.isEmpty()) return;
 
     int index = listModels->count() - 1;
-    listModels->insertItem(index, QString::null);
+    listModels->insertItem(index, QString());
     setItemData(listModels->item(index) , itemData);
 
     listModels->clearSelection();

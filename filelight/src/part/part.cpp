@@ -149,7 +149,7 @@ Part::openUrl(const KUrl &u)
 
     //TODO everyone hates dialogs, instead render the text in big fonts on the Map
     //TODO should have an empty KUrl until scan is confirmed successful
-    //TODO probably should set caption to QString::null while map is unusable
+    //TODO probably should set caption to QString() while map is unusable
 
 #define KMSG(s) KMessageBox::information(widget(), s)
 

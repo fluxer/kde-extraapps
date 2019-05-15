@@ -168,7 +168,7 @@ bool KTCLI::loadFromDir(const QString& path)
 {
 	try
 	{
-		tc->init(this, path + "/torrent", path, QString::null);
+		tc->init(this, path + "/torrent", path, QString());
 		tc->createFiles();
 		return true;
 	}

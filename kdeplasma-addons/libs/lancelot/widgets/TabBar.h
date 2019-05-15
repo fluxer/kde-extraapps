@@ -95,7 +95,7 @@ public:
      * @param title tab title
      */
     void addTab(const QString & id, const QIcon & icon, const QString & title,
-            const QString & mimeType = QString::null, const QString & mimeData = QString::null);
+            const QString & mimeType = QString(), const QString & mimeData = QString());
 
     /**
      * Removes the specified tab

@@ -194,7 +194,7 @@ void KU_MainView::useradd()
 */
   if ( samba ) rid = SID::uid2rid( uid );
   bool ok;
-  QString name = KInputDialog::getText( QString::null,	//krazy:exclude=nullstrassign for old broken gcc
+  QString name = KInputDialog::getText( QString(),	//krazy:exclude=nullstrassign for old broken gcc
     i18n("Please type the name of the new user:"),
     QString(), &ok );
 
