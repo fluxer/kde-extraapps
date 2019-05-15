@@ -68,7 +68,7 @@ static QString generateOriginalUri(const KUrl& url_)
 {
     KUrl url = url_;
     // Don't include the password if any
-    url.setPass(QString::null); //krazy:exclude=nullstrassign for old broken gcc
+    url.setPass(QString());
     return url.url();
 }
 
@@ -132,7 +132,9 @@ static void moveThumbnailHelper(const QString& oldUri, const QString& newUri, Th
     if (!thumb.load(oldPath)) {
         return;
     }
+#ifndef QT_NO_IMAGE_TEXT
     thumb.setText("Thumb::URI", newUri);
+#endif
     thumb.save(newPath, "png");
     QFile::remove(QFile::encodeName(oldPath));
 }
@@ -407,10 +409,12 @@ QImage ThumbnailProvider::loadThumbnailFromCache() const
         }
         int size = ThumbnailGroup::pixelSize(ThumbnailGroup::Normal);
         image = largeImage.scaled(size, size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+#ifndef QT_NO_IMAGE_TEXT
         Q_FOREACH(const QString& key, largeImage.textKeys()) {
             QString text = largeImage.text(key);
             image.setText(key, text);
         }
+#endif
         sThumbnailWriter->queueThumbnail(mThumbnailPath, image);
     }
 
@@ -440,6 +444,7 @@ void ThumbnailProvider::checkThumbnail()
     LOG("Stat thumb" << mThumbnailPath);
 
     QImage thumb = loadThumbnailFromCache();
+#ifndef QT_NO_IMAGE_TEXT
     KIO::filesize_t fileSize = thumb.text(QLatin1String("Thumb::Size")).toULongLong();
     if (!thumb.isNull()) {
         if (thumb.text(QLatin1String("Thumb::URI")) == mOriginalUri &&
@@ -472,6 +477,7 @@ void ThumbnailProvider::checkThumbnail()
             return;
         }
     }
+#endif
 
     // Thumbnail not found or not valid
     if (MimeTypeUtils::fileItemKind(mCurrentItem) == MimeTypeUtils::KIND_RASTER_IMAGE) {

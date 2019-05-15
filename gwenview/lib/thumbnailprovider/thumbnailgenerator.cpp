@@ -245,6 +245,7 @@ void ThumbnailGenerator::run()
 
 void ThumbnailGenerator::cacheThumbnail()
 {
+#ifndef QT_NO_IMAGE_TEXT
     mImage.setText("Thumb::URI"          , mOriginalUri);
     mImage.setText("Thumb::MTime"        , QString::number(mOriginalTime));
     mImage.setText("Thumb::Size"         , QString::number(mOriginalFileSize));
@@ -252,6 +253,7 @@ void ThumbnailGenerator::cacheThumbnail()
     mImage.setText("Thumb::Image::Width" , QString::number(mOriginalWidth));
     mImage.setText("Thumb::Image::Height", QString::number(mOriginalHeight));
     mImage.setText("Software"            , "Gwenview");
+#endif
 
     emit thumbnailReadyToBeCached(mThumbnailPath, mImage);
 }
