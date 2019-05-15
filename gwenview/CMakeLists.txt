@@ -25,6 +25,11 @@ include_directories(
     ${KDCRAW_INCLUDE_DIR}
 )
 
+add_definitions(
+    ${EXIV2_DEFINITIONS}
+    ${KDE4_ENABLE_EXCEPTIONS}
+)
+
 ## dirs to build
 add_subdirectory(lib)
 add_subdirectory(app)
