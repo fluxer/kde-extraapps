@@ -717,7 +717,7 @@ void Akregator::MainWidget::slotArticleSelected(const Akregator::Article& articl
 
 void Akregator::MainWidget::slotMouseButtonPressed(int button, const KUrl& url)
 {
-    if (button != Qt::MidButton)
+    if (button != Qt::MiddleButton)
         return;
 
     if (!url.isValid())

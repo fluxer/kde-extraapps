@@ -80,7 +80,7 @@ QString AppLauncherItem::windowClass() const
 
 void AppLauncherItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    if ((event->button() == Qt::LeftButton || (event->button() == Qt::MidButton && Tasks::MC_NewInstance == m_applet->middleClick())) &&
+    if ((event->button() == Qt::LeftButton || (event->button() == Qt::MiddleButton && Tasks::MC_NewInstance == m_applet->middleClick())) &&
             boundingRect().contains(event->pos())) {
         m_launcher->launch();
     }

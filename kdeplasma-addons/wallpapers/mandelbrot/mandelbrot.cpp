@@ -235,26 +235,26 @@ void Mandelbrot::mousePressEvent(QGraphicsSceneMouseEvent *event)
     if(m_lock) return;
     m_mousePressPos = m_mouseLastMovePos = event->pos();
     m_mousePressedButtons = event->buttons();
-    if(event->buttons() & (Qt::LeftButton|Qt::MidButton)) event->accept();
+    if(event->buttons() & (Qt::LeftButton|Qt::MiddleButton)) event->accept();
 }
 
 void Mandelbrot::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     event->ignore();
     if(m_lock) return;
-    if(m_mousePressedButtons & (Qt::LeftButton|Qt::MidButton)) event->accept();
+    if(m_mousePressedButtons & (Qt::LeftButton|Qt::MiddleButton)) event->accept();
 }
 
 void Mandelbrot::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     event->ignore();
     if(m_lock) return;
-    if(event->buttons() & (Qt::LeftButton|Qt::MidButton)) event->accept();
+    if(event->buttons() & (Qt::LeftButton|Qt::MiddleButton)) event->accept();
 
     QPointF delta = event->pos() - m_mouseLastMovePos;
     m_mouseLastMovePos = event->pos();
 
-    if(event->buttons() & Qt::MidButton)
+    if(event->buttons() & Qt::MiddleButton)
     {
         zoomView(m_mousePressPos, std::exp(MOUSE_MMB_SPEED * qreal(delta.y()) / height()));
     }

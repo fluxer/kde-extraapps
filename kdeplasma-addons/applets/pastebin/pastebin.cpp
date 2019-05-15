@@ -552,7 +552,7 @@ void Pastebin::mousePressEvent(QGraphicsSceneMouseEvent *event)
     } else {
         openLink(false);
     }
-    if (event->button() == Qt::MidButton) {
+    if (event->button() == Qt::MiddleButton) {
         if (m_actionState == Idle) {
             // paste clipboard content
             postClipboard(true);
@@ -565,7 +565,7 @@ void Pastebin::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void Pastebin::mouseReleaseEvent(QGraphicsSceneMouseEvent * event)
 {
-    if (!m_url.isEmpty() && event->button() == Qt::MidButton && m_actionState == IdleSuccess) {
+    if (!m_url.isEmpty() && event->button() == Qt::MiddleButton && m_actionState == IdleSuccess) {
         copyToClipboard(m_url);
     }
 }

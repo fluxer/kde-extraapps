@@ -162,7 +162,7 @@ void ArticleViewer::slotOpenUrlRequestDelayed(const KUrl& url, const KParts::Ope
                 break;
         }
     }
-    else if (m_part->button() == Qt::MidButton)
+    else if (m_part->button() == Qt::MiddleButton)
     {
         switch (Settings::mMBBehaviour())
         {

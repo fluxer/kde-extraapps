@@ -666,7 +666,7 @@ bool QueryResultDelegate::editorEvent(QEvent* event,
     else if (event->type()==QEvent::MouseButtonRelease)
     {
         QMouseEvent* mEvent=static_cast<QMouseEvent*>(event);
-        if (mEvent->button()==Qt::MidButton)
+        if (mEvent->button()==Qt::MiddleButton)
         {
         }
     }

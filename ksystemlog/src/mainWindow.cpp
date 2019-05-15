@@ -749,7 +749,7 @@ void MainWindow::selectLogModeAction(QAction* action) {
 
 	/*
 	//If the user uses the middle button OR left button + shift OR left button + control : = it opens the log in a new tab
-	if (state==Qt::MidButton || (state==Qt::ControlModifier+Qt::LeftButton) || (state==Qt::ShiftModifier+Qt::LeftButton))
+	if (state==Qt::MiddleButton || (state==Qt::ControlModifier+Qt::LeftButton) || (state==Qt::ShiftModifier+Qt::LeftButton))
 		createTab();
 	*/
 

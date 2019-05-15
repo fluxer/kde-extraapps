@@ -386,7 +386,7 @@ void ArticleListView::mousePressEvent( QMouseEvent *ev )
     // let's push the event, so we can use currentIndex() to get the newly selected article..
     QTreeView::mousePressEvent( ev );
 
-    if( ev->button() == Qt::MidButton ) {
+    if( ev->button() == Qt::MiddleButton ) {
         QModelIndex idx( currentIndex() );
         const KUrl url = currentIndex().data( ArticleModel::LinkRole ).value<KUrl>();
 

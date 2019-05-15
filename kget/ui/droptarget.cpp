@@ -283,7 +283,7 @@ void DropTarget::mousePressEvent(QMouseEvent * e)
                               i18n("Hide Main Window") );
         popupMenu->popup(e->globalPos());
     }
-    else if (e->button() == Qt::MidButton)
+    else if (e->button() == Qt::MiddleButton)
     {
         //Here we paste the transfer
         QString newtransfer = QApplication::clipboard()->text();

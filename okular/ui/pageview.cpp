@@ -1662,7 +1662,7 @@ void PageView::keyPressEvent( QKeyEvent * e )
     e->accept();
 
     // if performing a selection or dyn zooming, disable keys handling
-    if ( ( d->mouseSelecting && e->key() != Qt::Key_Escape ) || ( QApplication::mouseButtons () & Qt::MidButton ) )
+    if ( ( d->mouseSelecting && e->key() != Qt::Key_Escape ) || ( QApplication::mouseButtons () & Qt::MiddleButton ) )
         return;
 
     // if viewport is moving, disable keys handling
@@ -1836,7 +1836,7 @@ void PageView::mouseMoveEvent( QMouseEvent * e )
         return;
 
     // if holding mouse mid button, perform zoom
-    if ( e->buttons() & Qt::MidButton )
+    if ( e->buttons() & Qt::MiddleButton )
     {
         int mouseY = e->globalPos().y();
         int deltaY = d->mouseMidLastY - mouseY;
@@ -2017,7 +2017,7 @@ void PageView::mousePressEvent( QMouseEvent * e )
         return;
 
     // if performing a selection or dyn zooming, disable mouse press
-    if ( d->mouseSelecting || ( e->button() != Qt::MidButton && ( e->buttons() & Qt::MidButton) ) || d->viewportMoveActive )
+    if ( d->mouseSelecting || ( e->button() != Qt::MiddleButton && ( e->buttons() & Qt::MiddleButton) ) || d->viewportMoveActive )
         return;
 
     // if the page is scrolling, stop it
@@ -2028,7 +2028,7 @@ void PageView::mousePressEvent( QMouseEvent * e )
     }
 
     // if pressing mid mouse button while not doing other things, begin 'continuous zoom' mode
-    if ( e->button() == Qt::MidButton )
+    if ( e->button() == Qt::MiddleButton )
     {
         d->mouseMidLastY = e->globalPos().y();
         setCursor( Qt::SizeVerCursor );
@@ -2265,7 +2265,7 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
     const QPoint eventPos = contentAreaPoint( e->pos() );
 
     // handle mode indepent mid buttom zoom
-    if ( e->button() == Qt::MidButton )
+    if ( e->button() == Qt::MiddleButton )
     {
         // request pixmaps since it was disabled during drag
         slotRequestVisiblePixmaps();
@@ -4278,7 +4278,7 @@ void PageView::slotRequestVisiblePixmaps( int newValue )
 {
     // if requests are blocked (because raised by an unwanted event), exit
     if ( d->blockPixmapsRequest || d->viewportMoveActive ||
-         ( QApplication::mouseButtons () & Qt::MidButton ) )
+         ( QApplication::mouseButtons () & Qt::MiddleButton ) )
         return;
 
     // precalc view limits for intersecting with page coords inside the loop

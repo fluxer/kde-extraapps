@@ -662,7 +662,7 @@ void AbstractTaskItem::windowPreviewActivated(WId id, Qt::MouseButtons buttons, 
                 }
             }
         }
-    } else if (buttons & Qt::MidButton) {
+    } else if (buttons & Qt::MiddleButton) {
         switch (m_applet->middleClick()) {
         case Tasks::MC_Close: {
             if (parentGroup()) {
@@ -813,7 +813,7 @@ void AbstractTaskItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
             activate();
         }
         break;
-    case Qt::MidButton:
+    case Qt::MiddleButton:
         middleClick();
         break;
     default:

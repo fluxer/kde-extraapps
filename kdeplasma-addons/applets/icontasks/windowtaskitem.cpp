@@ -126,7 +126,7 @@ QString WindowTaskItem::windowClass() const
 
 void WindowTaskItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (event->buttons() & Qt::MidButton) {
+    if (event->buttons() & Qt::MiddleButton) {
         if (isGrouped() && parentGroup()) {
             parentGroup()->collapse();
         }

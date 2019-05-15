@@ -204,7 +204,7 @@ bool kpTool::currentPointCardinallyNextToLast () const
 int kpTool::mouseButton (Qt::MouseButtons mouseButtons)
 {
     // we have nothing to do with mid-buttons
-    if (mouseButtons & Qt::MidButton)
+    if (mouseButtons & Qt::MiddleButton)
         return -1;
 
     // both left & right together is quite meaningless...

@@ -278,7 +278,7 @@ void RadialMap::Widget::mousePressEvent(QMouseEvent *e)
 section_two:
             const QRect rect(e->x() - 20, e->y() - 20, 40, 40);
 
-            if (!isDir || e->button() == Qt::MidButton) {
+            if (!isDir || e->button() == Qt::MiddleButton) {
                 // KIconEffect::visualActivate(this, rect); // TODO: recreate this
                 new KRun(url, this, true); //FIXME see above
             }
