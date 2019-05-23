@@ -22,6 +22,7 @@
 #define MICROBLOG_H
 
 #include <QMap>
+#include <QTimer>
 
 #include <KTimeZone>
 

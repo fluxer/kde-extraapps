@@ -23,10 +23,11 @@
 
 #include <kcmodule.h>
 
+QT_BEGIN_NAMESPACE
+class Ui_Transfer;
+QT_END_NAMESPACE
+
 class SystemCheck;
-namespace Ui {
-    class Transfer;
-}
 namespace BlueDevil {
     class Adapter;
 }
@@ -51,7 +52,7 @@ private Q_SLOTS:
 
 private:
     SystemCheck *m_systemCheck;
-    Ui::Transfer *m_uiTransfer;
+    Ui_Transfer *m_uiTransfer;
     bool m_restartNeeded;
 };
 

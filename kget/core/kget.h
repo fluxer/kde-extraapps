@@ -35,6 +35,7 @@
 
 #include <QDomElement>
 #include <QAbstractItemView>
+#include <QTimer>
 
 class KComboBox;
 

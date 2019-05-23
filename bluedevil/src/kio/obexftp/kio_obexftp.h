@@ -27,6 +27,7 @@
 #include <QtCore/QObject>
 #include <QtDBus/qdbusextratypes.h>
 #include <QEventLoop>
+#include <QTimer>
 
 #include <kio/slavebase.h>
 

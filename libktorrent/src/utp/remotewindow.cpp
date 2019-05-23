@@ -23,6 +23,7 @@
 #include "connection.h"
 #include <util/log.h>
 #include <util/functions.h>
+#include <qmath.h>
 
 using namespace bt;
 

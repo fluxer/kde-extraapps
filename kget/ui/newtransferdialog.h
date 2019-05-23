@@ -16,6 +16,7 @@
 
 #include <KDialog>
 #include <KUrl>
+#include <QTimer>
 
 #include "ui_newtransferwidget.h"
 

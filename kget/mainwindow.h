@@ -23,6 +23,8 @@
 #include "core/transfer.h"
 #include "core/transfergroup.h"
 
+#include <QTimer>
+
 class ViewsContainer;
 class DropTarget;
 class DBusKgetWrapper;

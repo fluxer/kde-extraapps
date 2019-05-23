@@ -26,10 +26,9 @@
 
 #include "ui_lifeConfig.h"
 
-namespace Ui
-{
-    class lifeConfig;
-}
+QT_BEGIN_NAMESPACE
+class Ui_lifeConfig;
+QT_END_NAMESPACE
 
 class Life : public Plasma::Applet
 {
@@ -75,7 +74,7 @@ class Life : public Plasma::Applet
         bool m_reflectVertical;
         bool m_reflectHorizontal;
 
-        Ui::lifeConfig ui;
+        Ui_lifeConfig ui;
         QTimer timer;
 };
 

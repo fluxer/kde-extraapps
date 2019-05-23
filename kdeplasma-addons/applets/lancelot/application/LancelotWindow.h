@@ -49,7 +49,7 @@ namespace Plasma
     class LineEdit;
 }
 
-class LancelotWindow: public QGraphicsView, public Ui::LancelotWindowBase
+class LancelotWindow: public QGraphicsView, public Ui_LancelotWindowBase
 {
     Q_OBJECT
 public:

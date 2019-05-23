@@ -23,9 +23,9 @@
 
 #include <KCModule>
 
-namespace Ui {
-    class Module;
-}
+QT_BEGIN_NAMESPACE
+class Ui_Module;
+QT_END_NAMESPACE
 
 class Module : public KCModule
 {
@@ -63,7 +63,7 @@ private:
     /**
      * UI
      */
-    Ui::Module *ui;
+    Ui_Module *ui;
 };
 
 #endif // MODULE_H

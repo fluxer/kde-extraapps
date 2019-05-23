@@ -64,10 +64,12 @@ class Kolourpicker : public Plasma::Applet
         QString m_color_format;
 };
 
+QT_BEGIN_NAMESPACE
 inline uint qHash(const QColor &color)
 {
     return qHash(color.name());
 }
+QT_END_NAMESPACE
 
 K_EXPORT_PLASMA_APPLET(kolourpicker, Kolourpicker)
 
