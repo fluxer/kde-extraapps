@@ -27,8 +27,8 @@
 
 #include <kurl.h>
     
-class QPaintDevice;
-class QString;
+#include <QPaintDevice>
+#include <QString>
 
 namespace Akregator {
 

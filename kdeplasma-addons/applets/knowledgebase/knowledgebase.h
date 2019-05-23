@@ -26,8 +26,8 @@
 
 #include "ui_knowledgeBaseConfig.h"
 
-class QGraphicsLinearLayout;
-class QTimer;
+#include <QGraphicsLinearLayout>
+#include <QTimer>
 
 namespace Plasma
 {

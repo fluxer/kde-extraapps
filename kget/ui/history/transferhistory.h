@@ -16,9 +16,9 @@
 
 #include "ui_transferhistory.h"
 
-class QFileSystemWatcher;
-class QModelIndex;
-class QProgressBar;
+#include <QFileSystemWatcher>
+#include <QModelIndex>
+#include <QProgressBar>
 class KLineEdit;
 class KPushButton;
 class TransferHistoryStore;

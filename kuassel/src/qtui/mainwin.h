@@ -44,9 +44,9 @@ class SystemTray;
 class ChatMonitorView;
 class TopicWidget;
 
-class QMenu;
-class QLabel;
-class QToolBar;
+#include <QMenu>
+#include <QLabel>
+#include <QToolBar>
 class KHelpMenu;
 
 //!\brief The main window of Quassel's QtUi.

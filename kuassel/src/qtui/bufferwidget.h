@@ -25,7 +25,7 @@
 
 #include "abstractbuffercontainer.h"
 
-class QGraphicsItem;
+#include <QGraphicsItem>
 class ChatView;
 class ChatViewSearchBar;
 class ChatViewSearchController;

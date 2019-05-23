@@ -24,7 +24,7 @@
 #include <QApplication>
 #include <QtGui/QStyledItemDelegate>
 
-class QPainter;
+#include <QPainter>
 
 /**
  * Delegate for displaying the printers

@@ -26,8 +26,8 @@
 #include "compressor.h"
 #include "protocol.h"
 
-class QObject;
-class QTcpSocket;
+#include <QObject>
+#include <QTcpSocket>
 
 class AuthHandler;
 class RemotePeer;

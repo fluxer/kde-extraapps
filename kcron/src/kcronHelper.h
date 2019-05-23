@@ -15,8 +15,8 @@
 #include <QPixmap>
 #include <QString>
 
-class QComboBox;
-class QTextEdit;
+#include <QComboBox>
+#include <QTextEdit>
 
 class CrontabWidget;
 

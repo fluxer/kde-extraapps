@@ -27,8 +27,8 @@ namespace Plasma {
     class Svg;
 }
 
-class QGraphicsProxyWidget;
-class QGraphicsLinearLayout;
+#include <QGraphicsProxyWidget>
+#include <QGraphicsLinearLayout>
 
 class KGetBarApplet : public KGetApplet
 {

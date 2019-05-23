@@ -30,7 +30,7 @@
 #include <boost/shared_ptr.hpp>
 #include <vector>
 
-class QString;
+#include <QString>
 
 namespace Akregator
 {

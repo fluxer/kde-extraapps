@@ -27,7 +27,7 @@
 #include "abstractnotificationbackend.h"
 #include "settingspage.h"
 
-class QCheckBox;
+#include <QCheckBox>
 
 class DockManagerNotificationBackend : public AbstractNotificationBackend
 {

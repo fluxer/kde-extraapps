@@ -36,8 +36,8 @@
 #include <kpDocumentSaveOptions.h>
 
 
-class QAction;
-class QActionGroup;
+#include <QAction>
+#include <QActionGroup>
 
 class KSelectAction;
 class KToggleAction;

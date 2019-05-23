@@ -28,7 +28,7 @@
 
 #include <QWidget>
 
-class QTimer;
+#include <QTimer>
 class BlueWizard;
 
 namespace BlueDevil {

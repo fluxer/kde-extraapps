@@ -32,8 +32,8 @@
 #include "logLevel.h"
 
 class LogViewWidget;
-class QDateTime;
-class QStringList;
+#include <QDateTime>
+#include <QStringList>
 class LogViewWidgetItem;
 
 class LogLinePrivate;

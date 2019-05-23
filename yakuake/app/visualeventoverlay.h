@@ -30,7 +30,7 @@
 class SessionStack;
 class Terminal;
 
-class QTimer;
+#include <QTimer>
 
 
 class EventRect : public QRect

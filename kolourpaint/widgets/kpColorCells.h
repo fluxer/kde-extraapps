@@ -35,7 +35,7 @@
 #include <kpColorCellsBase.h>
 
 
-class QDropEvent;
+#include <QDropEvent>
 
 class kpColorCollection;
 

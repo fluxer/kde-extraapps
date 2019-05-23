@@ -30,7 +30,7 @@ namespace KGetMetalink
     class File;
 }
 
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 class VerificationModel;
 class UrlWidget;
 

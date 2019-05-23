@@ -26,7 +26,7 @@
 #include "../core/basedialog.h"
 
 class FileModel;
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 class TransferHandler;
 class Verifier;
 class VerificationModel;

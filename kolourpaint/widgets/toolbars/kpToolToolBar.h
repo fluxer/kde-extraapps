@@ -36,11 +36,11 @@
 #include <KToolBar>
 
 
-class QAbstractButton;
-class QBoxLayout;
-class QButtonGroup;
-class QGridLayout;
-class QWidget;
+#include <QAbstractButton>
+#include <QBoxLayout>
+#include <QButtonGroup>
+#include <QGridLayout>
+#include <QWidget>
 
 class kpTool;
 class kpToolButton;

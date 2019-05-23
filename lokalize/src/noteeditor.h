@@ -28,10 +28,10 @@
 
 #include <KTextEdit>
 #include <QPlainTextEdit>
-class QStringListModel;
-class QLabel;
+#include <QStringListModel>
+#include <QLabel>
 class KComboBox;
-class QTextBrowser;
+#include <QTextBrowser>
 class TextEdit;
 
 int displayNotes(QTextBrowser* m_browser, const QVector<Note>& notes, int active=0, bool multiple=true);

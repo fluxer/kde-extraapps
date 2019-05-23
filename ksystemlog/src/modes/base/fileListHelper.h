@@ -27,8 +27,8 @@
 
 #include <kurl.h>
 
-class QAction;
-class QPushButton;
+#include <QAction>
+#include <QPushButton>
 
 /**
  * Class which maintains common behavior between 

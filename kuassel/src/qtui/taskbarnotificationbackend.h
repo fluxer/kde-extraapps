@@ -25,8 +25,8 @@
 
 #include "settingspage.h"
 
-class QCheckBox;
-class QSpinBox;
+#include <QCheckBox>
+#include <QSpinBox>
 
 class TaskbarNotificationBackend : public AbstractNotificationBackend
 {

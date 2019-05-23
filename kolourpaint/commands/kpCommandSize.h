@@ -33,9 +33,9 @@
 #include <kpImage.h>
 
 
-class QImage;
-class QPolygon;
-class QString;
+#include <QImage>
+#include <QPolygon>
+#include <QString>
 
 class kpAbstractSelection;
 

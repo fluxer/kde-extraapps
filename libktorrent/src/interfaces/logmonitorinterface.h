@@ -22,7 +22,7 @@
 
 #include <ktorrent_export.h>
 
-class QString;
+#include <QString>
 
 namespace bt
 {

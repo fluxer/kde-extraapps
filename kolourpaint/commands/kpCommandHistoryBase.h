@@ -36,7 +36,7 @@
 
 #include <kpCommandSize.h>
 
-class QAction;
+#include <QAction>
 
 class KActionCollection;
 class KToolBarPopupAction;

@@ -15,7 +15,7 @@
 
 #include <klineedit.h>
 
-class QTimer;
+#include <QTimer>
 class KPixmapSequenceWidget;
 
 /**

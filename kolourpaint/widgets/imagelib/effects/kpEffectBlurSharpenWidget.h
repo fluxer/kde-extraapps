@@ -36,7 +36,7 @@
 #include <kpEffectBlurSharpen.h>
 
 
-class QLabel;
+#include <QLabel>
 
 class KIntNumInput;
 

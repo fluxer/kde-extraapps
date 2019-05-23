@@ -25,7 +25,7 @@
 
 #include <Plasma/DataEngine>
 
-class QGraphicsWidget;
+#include <QGraphicsWidget>
 
 namespace Plasma
 {

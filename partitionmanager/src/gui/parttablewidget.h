@@ -29,8 +29,8 @@
 class PartWidget;
 class PartitionTable;
 
-class QResizeEvent;
-class QMouseEvent;
+#include <QResizeEvent>
+#include <QMouseEvent>
 
 /** Widget that represents a PartitionTable.
 	@author Volker Lanz <vl@fidra.de>

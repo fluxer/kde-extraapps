@@ -32,7 +32,7 @@ namespace Plasma
 class IconWidget;
 }
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 class KimpanelInputPanel;
 class KimpanelStatusBarGraphics;
 class Kimpanel : public Plasma::Applet

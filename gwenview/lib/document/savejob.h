@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Local
 #include <lib/document/documentjob.h>
 
-class QByteArray;
+#include <QByteArray>
 class KUrl;
 
 namespace Gwenview

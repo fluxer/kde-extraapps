@@ -29,7 +29,7 @@
 #include "discoverwidget.h"
 
 class WizardAgent;
-class QStringList;
+#include <QStringList>
 class SendFilesJob;
 namespace BlueDevil {
     class Device;

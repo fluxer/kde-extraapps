@@ -31,7 +31,7 @@
 
 #include <kdebug.h>
 
-class QTreeWidget;
+#include <QTreeWidget>
 
 /** A tree for formatted log output.
 	@author Volker Lanz <vl@fidra.de>

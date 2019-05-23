@@ -40,7 +40,7 @@
 #include <QRegExp>
 class Catalog;
 class WebQueryView;
-class QTextCodec;
+#include <QTextCodec>
 class KJob;
 
 struct CatalogData

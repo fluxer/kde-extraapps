@@ -25,8 +25,8 @@
 
 #include "ui_kgpgKeyInfo.h"
 
-class QCheckBox;
-class QGroupBox;
+#include <QCheckBox>
+#include <QGroupBox>
 
 class KPushButton;
 class KUrlLabel;

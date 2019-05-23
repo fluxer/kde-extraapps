@@ -24,7 +24,7 @@
 #include <QIcon>
 
 class Action;
-class QMenu;
+#include <QMenu>
 
 class SystemTray : public QObject
 {

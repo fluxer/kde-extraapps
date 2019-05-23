@@ -25,11 +25,11 @@
 
 #include "ui_settings.h"
 
-class QTimeLine;
-class QGraphicsSceneResizeEvent;
-class QTimer;
-class QStandardItemModel;
-class QPropertyAnimation;
+#include <QTimeLine>
+#include <QGraphicsSceneResizeEvent>
+#include <QTimer>
+#include <QStandardItemModel>
+#include <QPropertyAnimation>
 
 namespace Plasma {
     class Svg;

@@ -35,9 +35,9 @@
 #include <QtDBus/qdbusextratypes.h>
 
 
-class QMdiSubWindow;
-class QMdiArea;
-class QActionGroup;
+#include <QMdiSubWindow>
+#include <QMdiArea>
+#include <QActionGroup>
 class KAction;
 class KRecentFilesAction;
 class EditorTab;

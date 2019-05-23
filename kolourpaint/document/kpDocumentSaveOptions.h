@@ -30,8 +30,8 @@
 #define KP_DOCUMENT_SAVE_OPTIONS_H
 
 
-class QImage;
-class QString;
+#include <QImage>
+#include <QString>
 
 class KConfigGroup;
 

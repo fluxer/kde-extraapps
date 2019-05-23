@@ -16,7 +16,7 @@
 
 #include <QtCore/QSize>
 
-class QImage;
+#include <QImage>
 
 namespace Okular {
 

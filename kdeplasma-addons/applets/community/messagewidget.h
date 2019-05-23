@@ -27,7 +27,7 @@
 
 
 class ContactImage;
-class QGraphicsGridLayout;
+#include <QGraphicsGridLayout>
 
 namespace Plasma {
     class IconWidget;

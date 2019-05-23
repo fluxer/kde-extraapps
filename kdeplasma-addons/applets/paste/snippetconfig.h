@@ -22,7 +22,7 @@
 #include <KLocale>
 #include "ui_snippetconfig.h"
 
-class QListWidgetItem;
+#include <QListWidgetItem>
 class ConfigData;
 
 class SnippetConfig : public QWidget, public Ui::SnippetConfig

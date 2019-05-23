@@ -23,7 +23,7 @@
 #include "ksnapshotobject.h"
 #include <QObject>
 
-class QPixmap;
+#include <QPixmap>
 
 class KBackgroundSnapshot: public QObject, public KSnapshotObject
 {

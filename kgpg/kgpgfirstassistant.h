@@ -21,8 +21,8 @@
 
 #include <KAssistantDialog>
 
-class QCheckBox;
-class QLabel;
+#include <QCheckBox>
+#include <QLabel>
 class KPageWidgetItem;
 class KUrlRequester;
 class KComboBox;

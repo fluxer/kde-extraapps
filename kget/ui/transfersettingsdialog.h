@@ -16,7 +16,7 @@
 #include "../core/basedialog.h"
 
 class FileModel;
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 class RenameFile;
 class TransferHandler;
 

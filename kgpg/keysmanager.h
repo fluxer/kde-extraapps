@@ -30,7 +30,7 @@
 #include <solid/networking.h>
 
 class KJob;
-class QEvent;
+#include <QEvent>
 
 class KSelectAction;
 class KStatusBar;

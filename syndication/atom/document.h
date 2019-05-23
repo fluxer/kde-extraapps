@@ -28,7 +28,7 @@
 
 #include <ctime>
 
-template <class T> class QList;
+#include <QList>
 
 namespace Syndication {
 

@@ -29,9 +29,9 @@
 #include "ui_timerConfig.h"
 #include "timerdigit.h"
 
-class QGraphicsSceneMouseEvent;
-class QActionGroup;
-class QAbstractAnimation;
+#include <QGraphicsSceneMouseEvent>
+#include <QActionGroup>
+#include <QAbstractAnimation>
 
 namespace Plasma
 {

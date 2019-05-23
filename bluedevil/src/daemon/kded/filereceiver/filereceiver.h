@@ -24,7 +24,7 @@
 
 #include "obex_agent_manager.h"
 
-class QDBusPendingCallWatcher;
+#include <QDBusPendingCallWatcher>
 class FileReceiver : public QObject
 {
     Q_OBJECT

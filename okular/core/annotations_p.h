@@ -19,7 +19,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QColor>
 
-class QTransform;
+#include <QTransform>
 
 namespace Okular {
 

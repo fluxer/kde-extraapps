@@ -27,10 +27,10 @@
 #include "fontinfo.h"
 #include "generator.h"
 
-class QUndoStack;
-class QEventLoop;
-class QFile;
-class QTimer;
+#include <QUndoStack>
+#include <QEventLoop>
+#include <QFile>
+#include <QTimer>
 class KTemporaryFile;
 
 struct AllocatedPixmap;

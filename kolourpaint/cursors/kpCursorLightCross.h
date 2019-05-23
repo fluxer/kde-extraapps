@@ -30,7 +30,7 @@
 #define KP_CURSOR_LIGHT_CROSS_H
 
 
-class QCursor;
+#include <QCursor>
 
 
 const QCursor *kpCursorLightCrossCreate ();

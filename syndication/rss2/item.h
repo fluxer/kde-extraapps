@@ -30,9 +30,9 @@
 
 #include <ctime>
 
-class QDomElement;
-class QString;
-template <class T> class QList;
+#include <QDomElement>
+#include <QString>
+#include <QList>
 
 namespace Syndication {
 

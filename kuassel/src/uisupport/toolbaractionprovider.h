@@ -23,7 +23,7 @@
 
 #include "networkmodelcontroller.h"
 
-class QToolBar;
+#include <QToolBar>
 
 class ToolBarActionProvider : public NetworkModelController
 {

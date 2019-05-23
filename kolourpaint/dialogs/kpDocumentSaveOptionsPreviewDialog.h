@@ -35,11 +35,11 @@
 #include <kpSubWindow.h>
 
 
-class QCloseEvent;
-class QImage;
-class QLabel;
-class QMoveEvent;
-class QResizeEvent;
+#include <QCloseEvent>
+#include <QImage>
+#include <QLabel>
+#include <QMoveEvent>
+#include <QResizeEvent>
 
 class kpResizeSignallingLabel;
 

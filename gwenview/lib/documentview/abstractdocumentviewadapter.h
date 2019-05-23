@@ -32,9 +32,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Local
 #include <lib/document/document.h>
 
-class QCursor;
-class QGraphicsWidget;
-class QRectF;
+#include <QCursor>
+#include <QGraphicsWidget>
+#include <QRectF>
 
 namespace Gwenview
 {

@@ -30,7 +30,7 @@
 #include <QtCore/QMap>
 
 typedef QMap<QString, QString> QStringMap;
-class QString;
+#include <QString>
 
 class XHTMLToSSMLParser : public QXmlDefaultHandler {
 

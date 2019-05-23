@@ -22,7 +22,7 @@
 
 #include "abstractgroup.h"
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 class Spacer;
 class GridManager;

@@ -38,8 +38,8 @@
 #include <kpCommandSize.h>
 
 
-class QPoint;
-class QStringList;
+#include <QPoint>
+#include <QStringList>
 
 
 class kpDocumentMetaInfo

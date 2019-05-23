@@ -19,10 +19,10 @@
 #ifndef PLASMA_KINETICSCROLLING_H
 #define PLASMA_KINETICSCROLLING_H
 
-class QGraphicsSceneMouseEvent;
-class QGraphicsWidget;
-class QGraphicsSceneWheelEvent;
-class QKeyEvent;
+#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsWidget>
+#include <QGraphicsSceneWheelEvent>
+#include <QKeyEvent>
 #include <QObject>
 #include <QtCore/qpoint.h>
 #include <QtCore/QAbstractAnimation>

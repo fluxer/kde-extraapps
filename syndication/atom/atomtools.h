@@ -23,7 +23,7 @@
 #ifndef SYNDICATION_ATOM_TOOLS_H
 #define SYNDICATION_ATOM_TOOLS_H
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 

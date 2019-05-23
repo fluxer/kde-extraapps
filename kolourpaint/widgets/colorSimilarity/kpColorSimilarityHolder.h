@@ -30,7 +30,7 @@
 #define kpColorSimilarityHolder_H
 
 
-class QString;
+#include <QString>
 
 
 class kpColorSimilarityHolder

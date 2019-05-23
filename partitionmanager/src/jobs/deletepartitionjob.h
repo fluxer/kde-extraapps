@@ -27,7 +27,7 @@ class Partition;
 class Device;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Delete a Partition.
 	@author Volker Lanz <vl@fidra.de>

@@ -33,8 +33,8 @@
 #include <kpSubWindow.h>
 
 
-class QMoveEvent;
-class QResizeEvent;
+#include <QMoveEvent>
+#include <QResizeEvent>
 
 class kpMainWindow;
 class kpThumbnailView;

@@ -12,7 +12,7 @@
 
 #include <QtCore/QString>
 
-class QStringList;
+#include <QStringList>
 
 class UnrarFlavour
 {

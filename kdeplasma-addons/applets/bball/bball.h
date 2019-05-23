@@ -32,8 +32,8 @@
 
 #include "ui_bballConfig.h"
 
-class QGraphicsSceneMouseEvent;
-class QSizeF;
+#include <QGraphicsSceneMouseEvent>
+#include <QSizeF>
 
 class bballApplet : public Plasma::Applet
 {

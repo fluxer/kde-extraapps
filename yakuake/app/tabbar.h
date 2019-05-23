@@ -35,8 +35,8 @@ class KLineEdit;
 class KMenu;
 class KPushButton;
 
-class QToolButton;
-class QLabel;
+#include <QToolButton>
+#include <QLabel>
 
 
 class TabBar : public QWidget

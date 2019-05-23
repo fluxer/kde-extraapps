@@ -37,8 +37,8 @@ namespace KParts{
 }
 
 class KMenu;
-class QGraphicsSceneDragDropEvent;
-class QGraphicsWidget;
+#include <QGraphicsSceneDragDropEvent>
+#include <QGraphicsWidget>
 class KUrl;
 class PreviewDialog;
 class PreviewWidget;

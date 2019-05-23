@@ -14,7 +14,7 @@
 #include "part.h"
 #include "settings.h"
 
-class QWidget;
+#include <QWidget>
 class KConfigSkeleton;
 
 class DlgGeneral;

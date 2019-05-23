@@ -38,16 +38,16 @@
 #include <kpImage.h>
 
 
-class QAction;
-class QActionGroup;
-class QDragEnterEvent;
-class QDropEvent;
-class QMenu;
-class QMoveEvent;
-class QPoint;
-class QRect;
-class QSize;
-class QStringList;
+#include <QAction>
+#include <QActionGroup>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMenu>
+#include <QMoveEvent>
+#include <QPoint>
+#include <QRect>
+#include <QSize>
+#include <QStringList>
 
 class KConfigGroup;
 class KFontAction;
@@ -55,7 +55,7 @@ class KFontSizeAction;
 class KSelectAction;
 class KToggleAction;
 class KToolBar;
-class QPrinter;
+#include <QPrinter>
 class KRecentFilesAction;
 class KScanDialog;
 class KToggleFullScreenAction;

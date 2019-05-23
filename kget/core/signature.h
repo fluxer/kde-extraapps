@@ -24,7 +24,7 @@
 
 #include <KUrl>
 
-class QDomElement;
+#include <QDomElement>
 
 #ifdef HAVE_QGPGME
 #include <gpgme++/verificationresult.h>

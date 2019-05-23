@@ -13,7 +13,7 @@
 
 #include <QObject>
 
-class QStandardItem;
+#include <QStandardItem>
 
 class TransferHistoryCategorizedDelegate : public QObject
 {

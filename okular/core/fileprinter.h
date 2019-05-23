@@ -21,7 +21,7 @@
 #include "okular_export.h"
 #include "generator.h"
 
-class QSize;
+#include <QSize>
 
 namespace Okular {
 

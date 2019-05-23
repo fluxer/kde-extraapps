@@ -21,12 +21,12 @@
 #ifndef ViewSliders_h
 #define ViewSliders_h
 
-class QBoxLayout;
+#include <QBoxLayout>
 #include <QFrame>
 #include <QHash>
-class QLabel;
+#include <QLabel>
 #include <QPushButton>
-class QWidget;
+#include <QWidget>
 
 class Mixer;
 #include "viewbase.h"

@@ -10,7 +10,7 @@
 #ifndef OKULAR_SOURCEREFERENCE_P_H
 #define OKULAR_SOURCEREFERENCE_P_H
 
-class QString;
+#include <QString>
 
 namespace Okular
 {

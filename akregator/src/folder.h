@@ -29,9 +29,9 @@
 #include "akregator_export.h"
 #include "treenode.h"
 
-class QDomDocument;
-class QDomElement;
-template <class T> class QList;
+#include <QDomDocument>
+#include <QDomElement>
+#include <QList>
 
 namespace Akregator {
 

@@ -25,7 +25,7 @@
 #include "settingspage.h"
 #include "systemtray.h"
 
-class QCheckBox;
+#include <QCheckBox>
 
 class SystrayNotificationBackend : public AbstractNotificationBackend
 {

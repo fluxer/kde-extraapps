@@ -28,8 +28,8 @@
 
 
 class ContactImage;
-class QGraphicsGridLayout;
-class QGraphicsLinearLayout;
+#include <QGraphicsGridLayout>
+#include <QGraphicsLinearLayout>
 
 namespace Plasma {
     class IconWidget;

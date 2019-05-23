@@ -24,8 +24,8 @@
 #include "ui_dragdlg.h"
 #include "ui_commondata.h"
 
-class QCheckBox;
-class QSortFilterProxyModel;
+#include <QCheckBox>
+#include <QSortFilterProxyModel>
 class UrlWidget;
 
 namespace KGetMetalink

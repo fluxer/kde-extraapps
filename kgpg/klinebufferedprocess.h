@@ -16,7 +16,7 @@
 
 #include <KProcess>
 
-class QByteArray;
+#include <QByteArray>
 class KLineBufferedProcessPrivate;
 
 /**

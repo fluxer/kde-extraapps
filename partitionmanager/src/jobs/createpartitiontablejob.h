@@ -26,7 +26,7 @@
 class Device;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Create a PartitionTable.
 	@author Volker Lanz <vl@fidra.de>

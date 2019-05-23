@@ -31,11 +31,11 @@
 
 #include <KXMLGUIClient>
 
-class QStackedLayout;
+#include <QStackedLayout>
 class ProjectWidget;
 class KLineEdit;
-class QContextMenuEvent;
-class QProgressBar;
+#include <QContextMenuEvent>
+#include <QProgressBar>
 
 /**
  * Project Overview Tab

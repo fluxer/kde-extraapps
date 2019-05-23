@@ -22,8 +22,8 @@
 
 #include <Plasma/SvgWidget>
 
-class QGraphicsItem;
-class QGraphicsSceneWheelEvent;
+#include <QGraphicsItem>
+#include <QGraphicsSceneWheelEvent>
 
 namespace Plasma
 {

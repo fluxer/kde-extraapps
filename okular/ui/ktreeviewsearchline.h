@@ -24,8 +24,8 @@
 
 #include <klineedit.h>
 
-class QModelIndex;
-class QTreeView;
+#include <QModelIndex>
+#include <QTreeView>
 
 /**
  * This class makes it easy to add a search line for filtering the items in

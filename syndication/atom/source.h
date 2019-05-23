@@ -27,10 +27,10 @@
 
 #include <ctime>
 
-class QDomElement;
-class QString;
+#include <QDomElement>
+#include <QString>
 
-template <class T> class QList;
+#include <QList>
 
 namespace Syndication {
 namespace Atom {

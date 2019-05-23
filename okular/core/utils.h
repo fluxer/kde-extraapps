@@ -13,9 +13,9 @@
 #include "okular_export.h"
 #include "area.h"
 
-class QRect;
-class QImage;
-class QWidget;
+#include <QRect>
+#include <QImage>
+#include <QWidget>
 
 namespace Okular
 {

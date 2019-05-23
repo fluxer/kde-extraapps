@@ -33,7 +33,7 @@
 
 
 class Scroller;
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 class News : public Plasma::Applet
 {

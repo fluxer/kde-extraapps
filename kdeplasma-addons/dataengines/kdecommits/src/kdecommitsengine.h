@@ -23,7 +23,7 @@
 
 #include <Plasma/DataEngine>
 
-class QNetworkReply;
+#include <QNetworkReply>
 class CommitCollector;
 
 class KdeCommitsEngine : public Plasma::DataEngine

@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Qt
 #include <QObject>
 
-class QAction;
+#include <QAction>
 
 namespace Gwenview
 {

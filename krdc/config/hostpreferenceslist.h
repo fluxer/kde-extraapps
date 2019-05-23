@@ -33,7 +33,7 @@
 
 class KPushButton;
 
-class QListWidget;
+#include <QListWidget>
 
 class HostPreferencesList : public QWidget
 {

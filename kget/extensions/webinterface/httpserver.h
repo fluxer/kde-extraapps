@@ -13,7 +13,7 @@
 
 #include <QWidget>
 
-class QTcpServer;
+#include <QTcpServer>
 
 namespace KWallet {
     class Wallet;

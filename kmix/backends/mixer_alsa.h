@@ -26,8 +26,8 @@
 #include <QHash>
 
 // Forward QT includes
-class QString;
-class QSocketNotifier;
+#include <QString>
+#include <QSocketNotifier>
 
 #include "mixer_backend.h"
 

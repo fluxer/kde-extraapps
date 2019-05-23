@@ -20,7 +20,7 @@
 #include "kgpgsigntransactionhelper.h"
 
 class KGpgSignableNode;
-class QString;
+#include <QString>
 
 /**
  * @brief transaction class to sign a single user id of a key

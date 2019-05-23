@@ -35,7 +35,7 @@
 
 #include <QtCore/QString>
 
-template <class T> class QList;
+#include <QList>
 
 namespace Syndication {
 namespace RDF {

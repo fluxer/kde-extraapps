@@ -24,8 +24,8 @@
 
 #include <syndication/ksyndication_export.h>
 
-class QDomDocument;
-class QDomElement;
+#include <QDomDocument>
+#include <QDomElement>
 
 namespace boost {
     template <class T> class shared_ptr;

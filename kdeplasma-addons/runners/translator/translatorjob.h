@@ -21,8 +21,8 @@
 
 #include <QtNetwork/QNetworkReply>
 
-class QNetworkReply;
-class QNetworkAccessManager;
+#include <QNetworkReply>
+#include <QNetworkAccessManager>
 
 class TranslatorJob :  public QObject
 {

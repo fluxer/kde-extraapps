@@ -12,11 +12,11 @@
 
 #include <QtCore/QString>
 
-class QColor;
-class QImage;
-class QPixmap;
-class QSize;
-class QWidget;
+#include <QColor>
+#include <QImage>
+#include <QPixmap>
+#include <QSize>
+#include <QWidget>
 class KIconLoader;
 
 namespace Okular {

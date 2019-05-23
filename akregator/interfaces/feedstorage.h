@@ -27,8 +27,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QList>
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 
 namespace Akregator {

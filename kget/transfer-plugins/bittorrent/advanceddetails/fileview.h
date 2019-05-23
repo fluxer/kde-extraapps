@@ -25,7 +25,7 @@
 #include <ksharedconfig.h>
 
 class KMenu;
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 
 namespace bt
 {

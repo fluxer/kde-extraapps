@@ -26,7 +26,7 @@
 #include "transfer.h"
 #include "peer.h"
 
-class QTcpSocket;
+#include <QTcpSocket>
 
 class CoreTransfer : public Transfer
 {

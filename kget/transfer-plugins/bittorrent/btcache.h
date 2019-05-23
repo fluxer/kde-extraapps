@@ -17,7 +17,7 @@
 #include <QString>
 #include <QByteArray>
 
-class QStringList;
+#include <QStringList>
 class KJob;
 
 namespace bt

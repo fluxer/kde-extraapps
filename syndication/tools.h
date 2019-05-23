@@ -31,8 +31,8 @@
 
 #include <ctime>
 
-class QByteArray;
-class QString;
+#include <QByteArray>
+#include <QString>
 
 namespace Syndication {
 

@@ -25,7 +25,7 @@
 #include "authhandler.h"
 #include "coreaccount.h"
 
-class QSslSocket;
+#include <QSslSocket>
 
 class RemotePeer;
 

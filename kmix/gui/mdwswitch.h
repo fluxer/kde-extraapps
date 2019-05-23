@@ -27,10 +27,10 @@
 //#include "core/volume.h"
 //#include <qpixmap.h>
 //
-//class QBoxLayout;
-//class QLabel;
+//#include <QBoxLayout>
+//#include <QLabel>
 //
-//class QCheckBox;
+//#include <QCheckBox>
 //class KAction;
 //
 //class MixDevice;

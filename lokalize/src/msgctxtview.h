@@ -30,10 +30,10 @@
 #include <QMap>
 #include <QDockWidget>
 
-class QTextBrowser;
+#include <QTextBrowser>
 class Catalog;
 class NoteEditor;
-class QStackedLayout;
+#include <QStackedLayout>
 
 class MsgCtxtView: public QDockWidget
 {

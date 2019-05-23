@@ -21,8 +21,8 @@ class GPGProc;
 class KGpgSignTransactionHelper;
 class KGpgTransactionPrivate;
 class KUrl;
-class QByteArray;
-class QProcess;
+#include <QByteArray>
+#include <QProcess>
 
 /**
  * @brief Process one GnuPG operation

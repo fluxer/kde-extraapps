@@ -29,7 +29,7 @@
 #include "catalogstring.h"
 
 #include <KTextEdit>
-class QMouseEvent;
+#include <QMouseEvent>
 class SyntaxHighlighter;//TODO rename
 class KCompletionBox;
 class MyCompletionBox;

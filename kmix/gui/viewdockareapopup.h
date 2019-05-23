@@ -23,11 +23,11 @@
 
 #include "viewbase.h"
 
-class QBoxLayout;
-class QFrame;
-class QGridLayout;
+#include <QBoxLayout>
+#include <QFrame>
+#include <QGridLayout>
 #include <QPushButton>
-class QWidget;
+#include <QWidget>
 
 class KIcon;
 

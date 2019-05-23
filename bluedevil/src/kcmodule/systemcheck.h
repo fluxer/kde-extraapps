@@ -22,7 +22,7 @@
 #define BLUEDEVIL_SYSTEM_CHECK_H
 #include <QtCore/QObject>
 
-class QVBoxLayout;
+#include <QVBoxLayout>
 
 class KDED;
 class KMessageWidget;

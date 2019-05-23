@@ -16,10 +16,10 @@
 #include <QSortFilterProxyModel>
 #include <QTreeView>
 
-class QStandardItem;
-class QStandardItemModel;
-class QSortFilterProxyModel;
-class QVariant;
+#include <QStandardItem>
+#include <QStandardItemModel>
+#include <QSortFilterProxyModel>
+#include <QVariant>
 class RangeDelegate;
 
 /**

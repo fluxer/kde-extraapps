@@ -23,8 +23,8 @@
 #include <plasma/wallpaper.h>
 #include <QtDeclarative/QDeclarativeComponent>
 
-class QModelIndex;
-class QDeclarativeItem;
+#include <QModelIndex>
+#include <QDeclarativeItem>
 
 class WallpaperQml : public Plasma::Wallpaper
 {

@@ -30,7 +30,7 @@
 #include "chatscene.h"
 #include "message.h"
 
-class QGraphicsItem;
+#include <QGraphicsItem>
 class ChatLine;
 class SearchHighlightItem;
 

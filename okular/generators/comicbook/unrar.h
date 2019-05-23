@@ -14,7 +14,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QStringList>
 
-class QEventLoop;
+#include <QEventLoop>
 class KTempDir;
 class KPtyProcess;
 

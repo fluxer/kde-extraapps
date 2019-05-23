@@ -24,7 +24,7 @@
 #include <QRunnable>
 #include <QString>
 
-class QImage;
+#include <QImage>
 
 class ImageLoader : public QObject, public QRunnable
 {

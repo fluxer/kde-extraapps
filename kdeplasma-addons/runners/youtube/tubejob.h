@@ -24,8 +24,8 @@
 
 #include <KUrl>
 
-class QNetworkReply;
-class QNetworkAccessManager;
+#include <QNetworkReply>
+#include <QNetworkAccessManager>
 
 class TubeJob : public QObject
 {

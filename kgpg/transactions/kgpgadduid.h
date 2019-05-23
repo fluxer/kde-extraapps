@@ -18,7 +18,7 @@
 
 #include "kgpgeditkeytransaction.h"
 
-class QString;
+#include <QString>
 
 /**
  * @brief add a new user id to a key pair

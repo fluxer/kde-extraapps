@@ -17,7 +17,7 @@
 #include "kgpgtransaction.h"
 
 class KGpgKeyNode;
-class QString;
+#include <QString>
 
 /**
  * @brief helper class for key signing transactions

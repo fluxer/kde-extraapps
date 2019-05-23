@@ -24,7 +24,7 @@
 #include "komparesaveoptionsbase.h"
 
 class DiffSettings;
-class QButtonGroup;
+#include <QButtonGroup>
 
 class KompareSaveOptionsWidget : public KompareSaveOptionsBase, public KompareFunctions
 {

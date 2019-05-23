@@ -30,11 +30,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 // Local
 
-class QKeyEvent;
-class QGraphicsSceneHoverEvent;
-class QGraphicsSceneMouseEvent;
-class QGraphicsSceneWheelEvent;
-class QPainter;
+#include <QKeyEvent>
+#include <QGraphicsSceneHoverEvent>
+#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsSceneWheelEvent>
+#include <QPainter>
 
 namespace Gwenview
 {

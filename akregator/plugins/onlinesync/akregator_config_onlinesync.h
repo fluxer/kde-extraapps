@@ -27,7 +27,7 @@
 #include <KCModule>
 #include <QVariant>
 
-class QWidget;
+#include <QWidget>
 namespace feedsync {
     class ConfigurationWidget;
 }

@@ -21,7 +21,7 @@
 
 #include "kgpgtransaction.h"
 
-class QProcess;
+#include <QProcess>
 
 /**
  * @brief export one or more keys from keyring

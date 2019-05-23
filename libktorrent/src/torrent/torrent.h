@@ -31,7 +31,7 @@
 #include <ktorrent_export.h>
 #include "torrentfile.h"
 
-class QTextCodec;
+#include <QTextCodec>
 
 
 namespace bt

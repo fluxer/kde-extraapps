@@ -25,7 +25,7 @@
 #include <core/document.h>
 #include <core/view.h>
 
-class QTimer;
+#include <QTimer>
 
 class DocumentItem;
 

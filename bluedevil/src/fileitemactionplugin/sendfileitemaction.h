@@ -26,9 +26,9 @@
 
 #include "kded_bluedevil.h"
 
-class QAction;
+#include <QAction>
 class KFileItemListProperties;
-class QWidget;
+#include <QWidget>
 
 class SendFileItemAction : public KAbstractFileItemActionPlugin
 {

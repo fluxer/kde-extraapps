@@ -27,7 +27,7 @@
 #include <QtDBus/qdbusextratypes.h>
 #include <QtDBus/QDBusAbstractAdaptor>
 
-class QProcess;
+#include <QProcess>
 namespace BlueDevil {
     class Adapter;
 };

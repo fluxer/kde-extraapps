@@ -28,12 +28,12 @@
 
 #include <ctime>
 
-class QDomDocument;
-class QDomElement;
-class QString;
+#include <QDomDocument>
+#include <QDomElement>
+#include <QString>
 
-template <class T> class QList;
-template <class T> class QSet;
+#include <QList>
+#include <QSet>
 
 namespace Syndication {
 namespace RSS2 {

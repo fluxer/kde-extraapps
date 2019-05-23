@@ -36,8 +36,8 @@
 #include <kpTool.h>
 
 
-class QPoint;
-class QString;
+#include <QPoint>
+#include <QString>
 
 class kpColor;
 class kpToolFlowCommand;

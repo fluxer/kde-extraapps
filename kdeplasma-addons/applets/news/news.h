@@ -26,7 +26,7 @@
 namespace Plasma {
   class WebView;
 }
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 class News : public Plasma::PopupApplet
 {

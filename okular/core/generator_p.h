@@ -16,8 +16,8 @@
 #include <QtCore/QThread>
 #include <QtGui/QImage>
 
-class QEventLoop;
-class QMutex;
+#include <QEventLoop>
+#include <QMutex>
 
 namespace Okular {
 

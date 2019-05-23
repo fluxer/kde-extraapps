@@ -33,7 +33,7 @@ class Device;
 class Partition;
 class CoreBackend;
 
-class QTextStream;
+#include <QTextStream>
 
 /** The partition table (a.k.a Disk Label)
 

@@ -38,11 +38,11 @@
 #include <kpPixmapFX.h>
 
 
-class QImage;
-class QPolygon;
-class QPoint;
-class QRect;
-class QSize;
+#include <QImage>
+#include <QPolygon>
+#include <QPoint>
+#include <QRect>
+#include <QSize>
 
 
 //

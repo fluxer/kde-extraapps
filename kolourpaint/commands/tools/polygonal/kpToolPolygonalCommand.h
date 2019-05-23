@@ -34,8 +34,8 @@
 #include <kpToolPolygonalBase.h>
 
 
-class QPolygon;
-class QRect;
+#include <QPolygon>
+#include <QRect>
 
 class kpColor;
 

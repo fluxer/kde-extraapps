@@ -30,8 +30,8 @@
 
 #include <ctime>
 
-class QDomElement;
-class QString;
+#include <QDomElement>
+#include <QString>
 
 namespace Syndication {
 

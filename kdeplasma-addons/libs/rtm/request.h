@@ -24,7 +24,7 @@
 
 #include "rtm.h"
 
-class QNetworkReply;
+#include <QNetworkReply>
 
 namespace RTM {
 

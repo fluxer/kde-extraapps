@@ -14,11 +14,11 @@
 
 #include "core/annotations.h"
 
-class QCheckBox;
-class QComboBox;
-class QDoubleSpinBox;
-class QLabel;
-class QWidget;
+#include <QCheckBox>
+#include <QComboBox>
+#include <QDoubleSpinBox>
+#include <QLabel>
+#include <QWidget>
 class KColorButton;
 class KIntNumInput;
 class KFontRequester;

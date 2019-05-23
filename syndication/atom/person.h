@@ -25,8 +25,8 @@
 
 #include <syndication/elementwrapper.h>
 
-class QDomElement;
-class QString;
+#include <QDomElement>
+#include <QString>
 
 namespace Syndication {
 namespace Atom {

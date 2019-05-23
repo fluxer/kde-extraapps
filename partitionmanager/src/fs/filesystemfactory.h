@@ -28,7 +28,7 @@
 #include <QMap>
 #include <qglobal.h>
 
-class QString;
+#include <QString>
 
 /** Factory to create instances of FileSystem.
 	@author Volker Lanz <vl@fidra.de>

@@ -28,8 +28,8 @@
 #include "akregator_export.h"
 #include <QtCore/QObject>
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 namespace Akregator {
 namespace Backend {

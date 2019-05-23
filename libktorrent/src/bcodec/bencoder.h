@@ -23,7 +23,7 @@
 #include <ktorrent_export.h>
 #include <util/file.h>
 
-class QIODevice;
+#include <QIODevice>
 
 namespace bt
 {

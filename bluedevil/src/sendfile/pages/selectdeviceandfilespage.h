@@ -28,7 +28,7 @@
 #include <QtGui/qwizard.h>
 
 class KUrl;
-class QWizard;
+#include <QWizard>
 class KFileDialog;
 namespace BlueDevil {
     class Device;

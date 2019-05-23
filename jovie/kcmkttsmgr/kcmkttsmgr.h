@@ -47,8 +47,8 @@
 #include "kspeechinterface.h"
 
 class KttsFilterConf;
-class QTreeWidget;
-class QTreeWidgetItem;
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 class KAboutData;
 class KConfig;
 class KttsJobMgr;

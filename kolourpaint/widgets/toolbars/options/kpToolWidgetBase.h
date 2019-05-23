@@ -38,7 +38,7 @@
 #include <qwidget.h>
 
 
-class QMouseEvent;
+#include <QMouseEvent>
 
 
 // TODO: This is a crazy and overcomplicated class that invents its own (buggy)

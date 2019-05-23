@@ -17,9 +17,9 @@
 #include "pageviewutils.h"
 #include "annotationtools.h"
 
-class QKeyEvent;
-class QMouseEvent;
-class QPainter;
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QPainter>
 
 namespace Okular
 {

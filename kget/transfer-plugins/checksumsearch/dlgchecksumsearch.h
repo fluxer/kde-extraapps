@@ -30,9 +30,9 @@
 #include <KCModule>
 #include <KDialog>
 
-class QSortFilterProxyModel;
-class QStandardItemModel;
-class QStringListModel;
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QStringListModel>
 
 class ChecksumSearchAddDlg : public KDialog
 {

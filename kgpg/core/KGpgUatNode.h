@@ -26,7 +26,7 @@
 
 class KGpgExpandableNode;
 class KGpgKeyNode;
-class QPixmap;
+#include <QPixmap>
 
 class KGpgUatNodePrivate;
 

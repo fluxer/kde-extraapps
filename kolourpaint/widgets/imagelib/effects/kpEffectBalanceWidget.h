@@ -34,7 +34,7 @@
 #include <kpImage.h>
 
 
-class QLabel;
+#include <QLabel>
 
 class KComboBox;
 class KIntNumInput;

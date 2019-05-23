@@ -15,7 +15,7 @@
 #include <cmath>
 #include <math.h>
 
-class QString;
+#include <QString>
 
 #define mm_per_cm 10.0
 #define mm_per_m 1000.0

@@ -37,7 +37,7 @@
 #include <kpColor.h>
 
 
-class QBoxLayout;
+#include <QBoxLayout>
 
 class kpColorCells;
 class kpColorPalette;

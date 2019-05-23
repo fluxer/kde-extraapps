@@ -25,9 +25,9 @@
 #include <Plasma/Applet>
 
 
-class QGraphicsView;
-class QSlider;
-class QWidget;
+#include <QGraphicsView>
+#include <QSlider>
+#include <QWidget>
 
 class Magnifique : public Plasma::Applet
 {

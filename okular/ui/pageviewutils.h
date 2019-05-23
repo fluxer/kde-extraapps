@@ -20,9 +20,9 @@
 
 #include "core/area.h"
 
-class QAction;
-class QLabel;
-class QTimer;
+#include <QAction>
+#include <QLabel>
+#include <QTimer>
 class FormWidgetIface;
 class PageView;
 class VideoWidget;

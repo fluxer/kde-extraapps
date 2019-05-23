@@ -30,8 +30,8 @@
 #define kpEffectFlatten_H
 
 
-class QColor;
-class QImage;
+#include <QColor>
+#include <QImage>
 
 
 class kpEffectFlatten

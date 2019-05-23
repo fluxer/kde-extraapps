@@ -27,7 +27,7 @@
 #include "logMode.h"
 #include "logFile.h"
 
-class QProgressBar;
+#include <QProgressBar>
 class LoadingBarPrivate;
 
 /**

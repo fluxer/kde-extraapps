@@ -33,7 +33,7 @@
 #include <kpPixmapFX.h>
 
 
-class QDataStream;
+#include <QDataStream>
 
 class kpAbstractImageSelection;
 

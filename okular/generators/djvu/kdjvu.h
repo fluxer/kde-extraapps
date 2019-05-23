@@ -18,8 +18,8 @@
 #include <qvariant.h>
 #include <qvector.h>
 
-class QDomDocument;
-class QFile;
+#include <QDomDocument>
+#include <QFile>
 
 #ifndef MINIEXP_H
 typedef struct miniexp_s* miniexp_t;

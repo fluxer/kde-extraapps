@@ -24,7 +24,7 @@
 #include <Plasma/Frame>
 #include <Plasma/DataEngine>
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 class ContactImage;
 

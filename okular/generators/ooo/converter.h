@@ -17,8 +17,8 @@
 
 #include "styleinformation.h"
 
-class QDomElement;
-class QDomText;
+#include <QDomElement>
+#include <QDomText>
 
 namespace OOO {
 

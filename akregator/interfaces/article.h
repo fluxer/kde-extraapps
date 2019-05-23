@@ -33,10 +33,10 @@
 
 #include <boost/shared_ptr.hpp>
 
-class QDateTime;
-class QString;
+#include <QDateTime>
+#include <QString>
 
-template <class T> class QList;
+#include <QList>
 
 typedef unsigned int uint;
 

@@ -13,7 +13,7 @@
 #include <QImage>
 #include "framebuffer.h"
 
-class QTimer;
+#include <QTimer>
 /**
     @author Alessandro Praduroux <pradu@pradu.it>
 */

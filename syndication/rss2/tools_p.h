@@ -23,8 +23,8 @@
 #ifndef SYNDICATION_RSS2_TOOLS_P_H
 #define SYNDICATION_RSS2_TOOLS_P_H
 
-class QString;
-template <class T> class QList;
+#include <QString>
+#include <QList>
 
 namespace Syndication {
 

@@ -16,8 +16,8 @@
 
 #include "core/area.h"  // for NormalizedPoint
 
-class QPainter;
-class QRect;
+#include <QPainter>
+#include <QRect>
 namespace Okular {
     class DocumentObserver;
     class Page;

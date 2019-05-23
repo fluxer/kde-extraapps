@@ -20,8 +20,8 @@
 #include <KTextEdit>
 #include <KUrl>
 
-class QDragEnterEvent;
-class QDropEvent;
+#include <QDragEnterEvent>
+#include <QDropEvent>
 
 class KGpgItemModel;
 class KeysManager;

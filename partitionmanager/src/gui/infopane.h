@@ -26,8 +26,8 @@
 class Partition;
 class Device;
 
-class QGridLayout;
-class QString;
+#include <QGridLayout>
+#include <QString>
 
 /** Show information about Partitions and Devices
 

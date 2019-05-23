@@ -28,7 +28,7 @@
 
 #include "abstractcliparser.h"
 
-class QFile;
+#include <QFile>
 
 class Quassel
 {

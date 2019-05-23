@@ -35,8 +35,8 @@ class KAction;
 class KComboBox;
 
 // Qt
-class QBoxLayout;
-class QLabel;
+#include <QBoxLayout>
+#include <QLabel>
 
 #include "gui/mixdevicewidget.h"
 

@@ -28,7 +28,7 @@
 #include <QtCore/QMap>
 #include <QSet>
 
-class QDBusServiceWatcher;
+#include <QDBusServiceWatcher>
 class OrgMprisMediaPlayer2PlayerInterface;
 class OrgFreedesktopMediaPlayerInterface;
 

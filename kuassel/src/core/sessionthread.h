@@ -29,7 +29,7 @@
 class CoreSession;
 class InternalPeer;
 class RemotePeer;
-class QIODevice;
+#include <QIODevice>
 
 class SessionThread : public QThread
 {

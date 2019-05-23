@@ -32,15 +32,15 @@ class Svg;
 }
 
 #ifndef QT_KATIE
-class QStyleOptionViewItemV4;
+#include <QStyleOptionViewItemV4>
 #else
-class QStyleOptionViewItem;
+#include <QStyleOptionViewItem>
 #endif
 class KUrl;
-class QGraphicsSceneWheelEvent;
-class QGraphicsSceneResizeEvent;
+#include <QGraphicsSceneWheelEvent>
+#include <QGraphicsSceneResizeEvent>
 class KFileItem;
-class QPropertyAnimation;
+#include <QPropertyAnimation>
 
 class PreviewWidget : public QGraphicsWidget
 {

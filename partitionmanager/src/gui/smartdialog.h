@@ -26,9 +26,9 @@
 class Device;
 class SmartDialogWidget;
 
-class QWidget;
-class QString;
-class QPoint;
+#include <QWidget>
+#include <QString>
+#include <QPoint>
 
 /** Show SMART properties.
 

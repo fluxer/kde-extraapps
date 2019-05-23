@@ -24,7 +24,7 @@
 #include "diff2export.h"
 #include "marker.h"
 
-class QString;
+#include <QString>
 
 namespace Diff2
 {

@@ -28,8 +28,8 @@
 
 #include "ksyndication_export.h"
 
-class QByteArray;
-class QDomDocument;
+#include <QByteArray>
+#include <QDomDocument>
 
 namespace Syndication {
 

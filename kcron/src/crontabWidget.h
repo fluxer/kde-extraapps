@@ -17,7 +17,7 @@
 #include "tasksWidget.h"
 #include "variablesWidget.h"
 
-class QHBoxLayout;
+#include <QHBoxLayout>
 
 class KActionCollection;
 

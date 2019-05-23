@@ -22,9 +22,9 @@ class Document;
 
 class MiniBar;
 class HoverButton;
-class QIntValidator;
-class QLabel;
-class QToolBar;
+#include <QIntValidator>
+#include <QLabel>
+#include <QToolBar>
 
 // [private widget] lineEdit for entering/validating page numbers
 class PagesEdit : public KLineEdit

@@ -24,7 +24,7 @@
 #include <net/packetsocket.h>
 #include <ktorrent_export.h>
 
-class QString;
+#include <QString>
 
 using bt::Uint8;
 using bt::Uint16;

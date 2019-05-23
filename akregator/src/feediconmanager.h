@@ -31,8 +31,8 @@
 
 class KUrl;
 
-class QIcon;
-class QString;
+#include <QIcon>
+#include <QString>
 
 namespace Akregator {
 

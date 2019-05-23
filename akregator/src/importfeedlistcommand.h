@@ -29,7 +29,7 @@
 
 #include <boost/weak_ptr.hpp>
 
-class QDomDocument;
+#include <QDomDocument>
 
 namespace Akregator {
 

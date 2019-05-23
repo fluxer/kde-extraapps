@@ -27,7 +27,7 @@
 #include <Plasma/Animator>
 #include <Plasma/Svg>
 
-class QGraphicsView;
+#include <QGraphicsView>
 
 namespace Plasma
 {

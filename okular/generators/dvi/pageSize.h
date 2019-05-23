@@ -16,8 +16,8 @@
 
 #include <QObject>
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 
 /* \brief This class represents physical page sizes.

@@ -23,8 +23,8 @@
 
 #include <qgraphicswebview.h>
 
-class QGraphicsSceneResizeEvent;
-class QUrl;
+#include <QGraphicsSceneResizeEvent>
+#include <QUrl>
 class QWebFrame;
 
 /**

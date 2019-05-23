@@ -25,7 +25,7 @@
 
 #include <KComponentData>
 
-class QDBusMessage;
+#include <QDBusMessage>
 class ObexAgent : public QDBusAbstractAdaptor
 {
     Q_OBJECT

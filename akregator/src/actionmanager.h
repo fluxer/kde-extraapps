@@ -29,9 +29,9 @@
 
 #include "akregator_export.h"
 
-class QAction;
+#include <QAction>
 
-class QWidget;
+#include <QWidget>
 
 namespace Akregator {
 

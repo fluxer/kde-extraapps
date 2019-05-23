@@ -30,7 +30,7 @@
 
 #include "logFileReader.h"
 
-class QProcess;
+#include <QProcess>
 
 class ProcessOutputLogFileReaderPrivate;
 

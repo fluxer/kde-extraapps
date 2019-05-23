@@ -22,12 +22,12 @@
 #include "pagebase.h"
 #include "dialogpagesexport.h"
 
-class QCheckBox;
-class QDialog;
-class QSpinBox;
-class QStringList;
-class QButtonGroup;
-class QGroupBox;
+#include <QCheckBox>
+#include <QDialog>
+#include <QSpinBox>
+#include <QStringList>
+#include <QButtonGroup>
+#include <QGroupBox>
 
 class KLineEdit;
 class KEditListWidget;

@@ -30,7 +30,7 @@
 #define kpEffectInvert_H
 
 
-class QImage;
+#include <QImage>
 
 
 class kpEffectInvert

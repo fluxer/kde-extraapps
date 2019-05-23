@@ -31,9 +31,9 @@
 #include <qlist.h>
 #include <qpixmap.h>
 
-class QBoxLayout;
-class QToolButton;
-class QLabel;
+#include <QBoxLayout>
+#include <QToolButton>
+#include <QLabel>
 
 class KAction;
 class KMenu;

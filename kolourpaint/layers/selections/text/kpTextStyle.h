@@ -35,9 +35,9 @@
 #include <kpColor.h>
 
 
-class QDataStream;
-class QFont;
-class QFontMetrics;
+#include <QDataStream>
+#include <QFont>
+#include <QFontMetrics>
 
 
 class kpTextStyle

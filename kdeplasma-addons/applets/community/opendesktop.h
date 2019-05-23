@@ -43,7 +43,7 @@ class LoginWidget;
 class KConfigDialog;
 class MessageCounter;
 class MessageList;
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 struct GeoLocation {
     QString country;

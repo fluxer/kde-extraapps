@@ -27,7 +27,7 @@
 
 #include <syndication/specificitem.h>
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 

@@ -29,7 +29,7 @@
 
 #include <QtCore/QObject>
 
-class QWidget;
+#include <QWidget>
 
 namespace Akregator {
 

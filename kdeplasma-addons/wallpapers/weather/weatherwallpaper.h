@@ -30,8 +30,8 @@
 
 #include "ui_weatherAdvanced.h"
 
-class QPropertyAnimation;
-class QStandardItemModel;
+#include <QPropertyAnimation>
+#include <QStandardItemModel>
 
 class KFileDialog;
 

@@ -10,7 +10,7 @@
 #ifndef _OKULAR_UTILS_P_H_
 #define _OKULAR_UTILS_P_H_
 
-class QIODevice;
+#include <QIODevice>
 
 namespace Okular
 {

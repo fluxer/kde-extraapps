@@ -39,9 +39,9 @@ class KAboutData;
 class KAction;
 class KJob;
 
-class QAction;
-class QSplitter;
-class QTreeView;
+#include <QAction>
+#include <QSplitter>
+#include <QTreeView>
 
 namespace Ark
 {

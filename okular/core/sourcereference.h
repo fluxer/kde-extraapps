@@ -12,7 +12,7 @@
 
 #include "okular_export.h"
 
-class QString;
+#include <QString>
 
 namespace Okular {
 

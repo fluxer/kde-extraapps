@@ -37,9 +37,9 @@
 #include <QPen>
 #include <QtCore/qsharedpointer.h>
 
-class QSignalMapper;
+#include <QSignalMapper>
 class KAction;
-class QPropertyAnimation;
+#include <QPropertyAnimation>
 
 namespace Plasma
 {

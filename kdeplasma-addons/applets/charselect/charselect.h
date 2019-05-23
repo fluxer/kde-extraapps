@@ -23,7 +23,7 @@
 #include <Plasma/PopupApplet>
 
 class KCharSelect;
-class QGraphicsGridLayout;
+#include <QGraphicsGridLayout>
 class KLineEdit;
 class KPushButton;
 

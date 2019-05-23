@@ -27,7 +27,7 @@ class Partition;
 class Device;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Create a Partition.
 	@author Volker Lanz <vl@fidra.de>

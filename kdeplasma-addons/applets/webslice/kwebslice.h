@@ -23,7 +23,7 @@
 
 #include <qgraphicsview.h>
 
-class QUrl;
+#include <QUrl>
 
 /**
  * @class KWebSlice

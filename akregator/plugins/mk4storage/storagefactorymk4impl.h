@@ -27,8 +27,8 @@
 
 #include "storagefactory.h"
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 namespace Akregator {
 namespace Backend {

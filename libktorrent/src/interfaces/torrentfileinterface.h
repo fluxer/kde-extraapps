@@ -25,7 +25,7 @@
 #include <ktorrent_export.h>
 #include <util/constants.h>
 
-class QTextCodec;
+#include <QTextCodec>
 
 namespace bt
 {

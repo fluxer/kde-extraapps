@@ -41,7 +41,7 @@ namespace Plasma
     class WebView;
 }
 
-class QSignalMapper;
+#include <QSignalMapper>
 
 class ContactImage;
 class StyleSheet;

@@ -33,10 +33,10 @@
 #include <kpTransformPreviewDialog.h>
 
 
-class QGroupBox;
-class QImage;
-class QTimer;
-class QVBoxLayout;
+#include <QGroupBox>
+#include <QImage>
+#include <QTimer>
+#include <QVBoxLayout>
 
 class KComboBox;
 

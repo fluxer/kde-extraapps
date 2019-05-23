@@ -23,7 +23,7 @@
 
 #include <kdialog.h>
 
-class QCheckBox;
+#include <QCheckBox>
 class KLineEdit;
 
 namespace BlueDevil {

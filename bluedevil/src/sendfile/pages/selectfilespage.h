@@ -25,7 +25,7 @@
 
 #include <QtGui/qwizard.h>
 
-class QWizard;
+#include <QWizard>
 class KFileWidget;
 
 class SelectFilesPage : public QWizardPage

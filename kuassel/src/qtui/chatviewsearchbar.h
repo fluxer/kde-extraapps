@@ -26,7 +26,7 @@
 #include <QWidget>
 #include <QTimer>
 
-class QAction;
+#include <QAction>
 
 class ChatViewSearchBar : public QWidget
 {

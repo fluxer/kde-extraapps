@@ -37,7 +37,7 @@ using TaskManager::AbstractGroupableItem;
 
 class TaskItemLayout;
 class DropIndicator;
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

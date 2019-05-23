@@ -40,7 +40,7 @@
 // Plasma
 #include <Plasma/Applet>
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 
 namespace Plasma

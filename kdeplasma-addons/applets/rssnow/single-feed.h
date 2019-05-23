@@ -25,7 +25,7 @@
 #include <QGraphicsWidget>
 #include <QTextDocument>
 
-class QRect;
+#include <QRect>
 
 namespace Plasma {
     class Svg;

@@ -21,12 +21,12 @@
 #ifndef DIALOGCHOOSEBACKENDS_H
 #define DIALOGCHOOSEBACKENDS_H
 
-class QButtonGroup;
+#include <QButtonGroup>
 
 #include <qcheckbox.h>
 #include <QList>
-class QScrollArea;
-class QVBoxLayout;
+#include <QScrollArea>
+#include <QVBoxLayout>
 
 class KComboBox;
 #include <kdialog.h>

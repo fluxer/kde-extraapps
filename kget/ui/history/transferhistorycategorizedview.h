@@ -16,8 +16,8 @@
 #include <QWidget>
 #include <QtCore/qabstractitemmodel.h>
 
-class QDate;
-class QStandardItemModel;
+#include <QDate>
+#include <QStandardItemModel>
 class KCategorizedView;
 class KCategoryDrawer;
 class KCategorizedSortFilterProxyModel;

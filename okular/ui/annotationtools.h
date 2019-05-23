@@ -17,9 +17,9 @@
 
 #include "core/area.h"
 
-class QMouseEvent;
+#include <QMouseEvent>
 class QTabletEvent;
-class QPainter;
+#include <QPainter>
 class PageViewItem;
 namespace Okular {
 class Annotation;

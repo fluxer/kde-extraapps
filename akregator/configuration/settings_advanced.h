@@ -29,8 +29,8 @@
 
 #include <QHash>
 
-class QString;
-class QWidget;
+#include <QString>
+#include <QWidget>
 
 namespace Akregator {
 

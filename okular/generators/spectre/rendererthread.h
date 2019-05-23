@@ -18,7 +18,7 @@
 
 #include <libspectre/spectre.h>
 
-class QImage;
+#include <QImage>
 class GSGenerator;
 
 namespace Okular

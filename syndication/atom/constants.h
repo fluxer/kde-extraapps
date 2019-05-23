@@ -24,7 +24,7 @@
 
 #include <syndication/ksyndication_export.h>
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 namespace Atom {

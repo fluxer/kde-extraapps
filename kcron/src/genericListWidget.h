@@ -18,8 +18,8 @@
 #include "cthost.h"
 
 class GenericListWidgetPrivate;
-class QKeyEvent;
-class QAction;
+#include <QKeyEvent>
+#include <QAction>
 
 class CrontabWidget;
 

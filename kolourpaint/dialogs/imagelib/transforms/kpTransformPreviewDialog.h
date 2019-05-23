@@ -35,9 +35,9 @@
 #include <kdialog.h>
 
 
-class QLabel;
-class QGridLayout;
-class QGroupBox;
+#include <QLabel>
+#include <QGridLayout>
+#include <QGroupBox>
 
 class kpColor;
 class kpDocument;

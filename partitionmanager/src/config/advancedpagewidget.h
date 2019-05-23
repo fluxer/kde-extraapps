@@ -27,7 +27,7 @@
 
 #include <QWidget>
 
-class QString;
+#include <QString>
 class KComboBox;
 
 class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced

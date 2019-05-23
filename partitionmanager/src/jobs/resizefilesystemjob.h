@@ -27,7 +27,7 @@ class Partition;
 class Device;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Resize a FileSystem.
 

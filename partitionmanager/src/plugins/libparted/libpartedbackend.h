@@ -40,7 +40,7 @@ class OperationStack;
 
 class Device;
 class KPluginFactory;
-class QString;
+#include <QString>
 
 /** Backend plugin for libparted.
 

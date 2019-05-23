@@ -20,8 +20,8 @@
 
 #include "kgpgtextorfiletransaction.h"
 
-class QProcess;
-class QStringList;
+#include <QProcess>
+#include <QStringList>
 
 /**
  * @brief decrypt the given text or files

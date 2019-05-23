@@ -30,8 +30,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <QToolButton>
 #include <QWidget>
 
-class QGraphicsWidget;
-class QPalette;
+#include <QGraphicsWidget>
+#include <QPalette>
 
 class KActionCollection;
 

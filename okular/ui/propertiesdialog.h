@@ -17,8 +17,8 @@
 
 #include "core/fontinfo.h"
 
-class QLabel;
-class QProgressBar;
+#include <QLabel>
+#include <QProgressBar>
 class FontsListModel;
 class KSqueezedTextLabel;
 

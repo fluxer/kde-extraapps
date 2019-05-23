@@ -29,7 +29,7 @@
 #include <QSet>
 
 
-class QStringList;
+#include <QStringList>
 
 namespace bt
 {

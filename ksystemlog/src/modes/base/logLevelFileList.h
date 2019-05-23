@@ -24,7 +24,7 @@
 
 #include "fileList.h"
 
-class QPushButton;
+#include <QPushButton>
 class LogLevel;
 
 

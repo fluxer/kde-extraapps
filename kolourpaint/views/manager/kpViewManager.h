@@ -33,10 +33,10 @@
 #include <QObject>
 
 
-class QCursor;
-class QRegion;
-class QRect;
-class QTimer;
+#include <QCursor>
+#include <QRegion>
+#include <QRect>
+#include <QTimer>
 
 class kpDocument;
 class kpView;

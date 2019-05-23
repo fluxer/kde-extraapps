@@ -17,7 +17,7 @@
 class TransferHandler;
 class TransferGroupHandler;
 class KMenu;
-class QWidget;
+#include <QWidget>
 
 namespace ContextMenu
 {

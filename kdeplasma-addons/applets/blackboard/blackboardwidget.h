@@ -25,8 +25,8 @@
 #include <QPixmap>
 #include <QtCore/qpoint.h>
 
-class QGraphicsSceneMouseEvent;
-class QStyleOptionGraphicsItem;
+#include <QGraphicsSceneMouseEvent>
+#include <QStyleOptionGraphicsItem>
 
 namespace Plasma
 {

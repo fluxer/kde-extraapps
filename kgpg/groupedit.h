@@ -21,7 +21,7 @@
 class GroupEditProxyModel;
 class KGpgNode;
 class KGpgItemModel;
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 
 /**
  * @brief shows a widget that let's you change the keys that are part of a key group

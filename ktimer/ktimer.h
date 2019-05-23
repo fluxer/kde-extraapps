@@ -24,7 +24,7 @@
 #include <QProcess>
 #include "ui_prefwidget.h"
 
-class QTreeWidgetItem;
+#include <QTreeWidgetItem>
 class KConfig;
 
 class KTimerJob : public QObject {

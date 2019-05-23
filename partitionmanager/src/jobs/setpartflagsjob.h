@@ -29,7 +29,7 @@ class Device;
 class Partition;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Set a Partition's flags.
 

@@ -33,7 +33,7 @@
 #include <kpToolEnvironment.h>
 
 
-class QMenu;
+#include <QMenu>
 
 class kpImageSelectionTransparency;
 class kpTextStyle;

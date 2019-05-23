@@ -24,8 +24,8 @@
 
 #include <syndication/elementwrapper.h>
 
-class QString;
-class QDomElement;
+#include <QString>
+#include <QDomElement>
 
 namespace Syndication {
 namespace RSS2 {

@@ -23,7 +23,7 @@
 
 #include <KJob>
 
-class QDBusPendingCallWatcher;
+#include <QDBusPendingCallWatcher>
 class OrgBluezObexClient1Interface;
 class CreateSessionJob : public KJob
 {

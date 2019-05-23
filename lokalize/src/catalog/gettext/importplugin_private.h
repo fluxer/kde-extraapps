@@ -40,7 +40,7 @@
 #include <QLinkedList>
 #include <QTextCodec>
 
-class QTextCodec;
+#include <QTextCodec>
 namespace GettextCatalog {
 class GettextStorage;
 

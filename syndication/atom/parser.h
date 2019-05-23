@@ -25,8 +25,8 @@
 
 #include <syndication/abstractparser.h>
 
-class QString;
-template <class T, class U> class QHash;
+#include <QString>
+#include <QHash>
 
 namespace Syndication {
 

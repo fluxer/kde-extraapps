@@ -23,9 +23,9 @@
 
 #include <QWidget>
 
-class QCheckBox;
-class QComboBox;
-class QSpinBox;
+#include <QCheckBox>
+#include <QComboBox>
+#include <QSpinBox>
 
 //! A SettingsPage is a page in the settings dialog.
 /** The SettingsDlg provides suitable standard buttons, such as Ok, Apply, Cancel, Restore Defaults and Reset.

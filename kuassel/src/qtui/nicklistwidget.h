@@ -32,7 +32,7 @@
 
 class Buffer;
 class NickView;
-class QDockWidget;
+#include <QDockWidget>
 
 class NickListWidget : public AbstractItemView
 {

@@ -29,7 +29,7 @@
 
 #include <QSortFilterProxyModel>
 
-class QSpacerItem;
+#include <QSpacerItem>
 
 class ChannelListDlg : public QDialog
 {

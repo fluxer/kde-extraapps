@@ -23,10 +23,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <kparts/part.h>
 
 
-class QGraphicsScene;
-class QGraphicsSvgItem;
-class QGraphicsView;
-class QSvgRenderer;
+#include <QGraphicsScene>
+#include <QGraphicsSvgItem>
+#include <QGraphicsView>
+#include <QSvgRenderer>
 
 class SvgPart : public KParts::ReadOnlyPart {
 	Q_OBJECT

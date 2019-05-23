@@ -25,7 +25,7 @@
 
 #include <QSqlDatabase>
 
-class QSqlQuery;
+#include <QSqlQuery>
 
 class SqliteStorage : public AbstractSqlStorage
 {

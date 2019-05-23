@@ -17,8 +17,8 @@
 #define ICON_SIZE 40
 #define PADDING 5
 
-class QAction;
-class QModelIndex;
+#include <QAction>
+#include <QModelIndex>
 
 class TransferHistoryItemDelegate : public QStyledItemDelegate
 {

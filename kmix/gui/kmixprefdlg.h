@@ -27,14 +27,14 @@
 
 class KMixPrefWidget;
 
-class QBoxLayout;
-class QCheckBox;
-class QFrame;
+#include <QBoxLayout>
+#include <QCheckBox>
+#include <QFrame>
 #include <QGridLayout>
-class QLabel;
-class QRadioButton;
-class QShowEvent;
-class QWidget;
+#include <QLabel>
+#include <QRadioButton>
+#include <QShowEvent>
+#include <QWidget>
 
 #include "core/GlobalConfig.h"
 #include "gui/dialogchoosebackends.h"

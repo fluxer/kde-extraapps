@@ -21,7 +21,7 @@
 
 #define HTMLREPORT__H
 
-class QString;
+#include <QString>
 
 class HtmlReport
 {

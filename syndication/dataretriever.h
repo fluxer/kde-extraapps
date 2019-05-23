@@ -23,7 +23,7 @@ namespace KIO
 class KJob;
 class KUrl;
 
-class QByteArray;
+#include <QByteArray>
 
 namespace Syndication
 {

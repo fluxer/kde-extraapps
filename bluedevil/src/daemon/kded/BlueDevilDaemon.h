@@ -30,7 +30,7 @@
 typedef QMap <QString, QString> DeviceInfo;
 typedef QMap<QString, DeviceInfo > QMapDeviceInfo;
 
-class QDBusPendingCallWatcher;
+#include <QDBusPendingCallWatcher>
 namespace BlueDevil {
     class Adapter;
     class Device;

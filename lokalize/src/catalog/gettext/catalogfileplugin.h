@@ -36,9 +36,9 @@
 #include <kdemacros.h>
 #include <QList>
 #include <QTextCodec>
-class QIODevice;
-class QString;
-class QStringList;
+#include <QIODevice>
+#include <QString>
+#include <QStringList>
 
 namespace GettextCatalog {
 

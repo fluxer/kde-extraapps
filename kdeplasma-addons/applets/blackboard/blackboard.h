@@ -24,7 +24,7 @@
 
 #include "blackboardwidget.h"
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 class BlackBoard : public Plasma::Applet
 {

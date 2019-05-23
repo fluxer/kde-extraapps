@@ -53,7 +53,7 @@
 #include <QSet>
 #include <QTimer>
 
-class QTextCodec;
+#include <QTextCodec>
 class CatalogStorage;
 class Catalog;
 

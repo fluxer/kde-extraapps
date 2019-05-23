@@ -28,7 +28,7 @@
 #include "protocol.h"
 #include "signalproxy.h"
 
-class QTimer;
+#include <QTimer>
 
 class AuthHandler;
 

@@ -17,10 +17,10 @@
 class KLineEdit;
 class KComboBox;
 class KPushButton;
-class QLabel;
-class QListWidget;
-class QListWidgetItem;
-class QGroupBox;
+#include <QLabel>
+#include <QListWidget>
+#include <QListWidgetItem>
+#include <QGroupBox>
 class AnnotationWidget;
 
 namespace Okular

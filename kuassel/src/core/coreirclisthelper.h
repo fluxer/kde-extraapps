@@ -25,7 +25,7 @@
 
 #include "coresession.h"
 
-class QTimerEvent;
+#include <QTimerEvent>
 
 class CoreIrcListHelper : public IrcListHelper
 {

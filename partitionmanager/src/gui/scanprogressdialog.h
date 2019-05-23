@@ -23,7 +23,7 @@
 
 #include <kprogressdialog.h>
 
-class QShowEvent;
+#include <QShowEvent>
 
 class ScanProgressDialog : public KProgressDialog
 {

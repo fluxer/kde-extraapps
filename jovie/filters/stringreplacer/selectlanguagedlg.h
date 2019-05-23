@@ -34,7 +34,7 @@
 #include <klocale.h>
 #include <kdemacros.h>
 
-class QTableWidget;
+#include <QTableWidget>
 
 class KDE_EXPORT SelectLanguageDlg : public KDialog
 {

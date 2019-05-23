@@ -31,7 +31,7 @@
 
 class Report;
 
-class QString;
+#include <QString>
 
 namespace FS
 {

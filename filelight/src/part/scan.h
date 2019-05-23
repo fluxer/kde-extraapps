@@ -26,7 +26,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QMutex>
 
-class QThread;
+#include <QThread>
 class Folder;
 template<class T> class Chain;
 

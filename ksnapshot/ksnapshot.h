@@ -39,7 +39,7 @@
 #include <config-ksnapshot.h>
 
 class KSnapshotWidget;
-class QMenu;
+#include <QMenu>
 
 #ifdef KIPI_FOUND
 #include "ksnapshotimagecollectionshared.h"

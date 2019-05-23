@@ -35,8 +35,8 @@ class Catalog;
 class LedsWidget;
 class TranslationUnitTextEdit;
 class KTabBar;
-class QContextMenuEvent;
-class QDragEnterEvent;
+#include <QContextMenuEvent>
+#include <QDragEnterEvent>
 
 /**
  * This is the main view class for Lokalize Editor.
@@ -119,7 +119,7 @@ private slots:
 
 
 class KLed;
-class QLabel;
+#include <QLabel>
 class LedsWidget:public QWidget
 {
 Q_OBJECT

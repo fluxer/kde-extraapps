@@ -34,8 +34,8 @@
 
 #include <QSize>
 
-class QCheckBox;
-class QWidget;
+#include <QCheckBox>
+#include <QWidget>
 class KConfig;
 class KConfigGroup;
 

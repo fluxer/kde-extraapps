@@ -30,8 +30,8 @@
 
 #include "ui_configuration.h"
 
-class QGraphicsLinearLayout;
-class QGraphicsAnchorLayout;
+#include <QGraphicsLinearLayout>
+#include <QGraphicsAnchorLayout>
 class KColorScheme;
 class PostWidget;
 

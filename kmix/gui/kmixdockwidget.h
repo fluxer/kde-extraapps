@@ -23,8 +23,8 @@
 #ifndef KMIXDOCKWIDGET_H
 #define KMIXDOCKWIDGET_H
 
-class QString;
-class QWidgetAction;
+#include <QString>
+#include <QWidgetAction>
 
 class KToggleAction;
 #include <kstatusnotifieritem.h>

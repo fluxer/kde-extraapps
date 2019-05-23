@@ -29,9 +29,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Local
 
-class QDropEvent;
-class QModelIndex;
-class QToolButton;
+#include <QDropEvent>
+#include <QModelIndex>
+#include <QToolButton>
 
 class KActionCollection;
 class KUrlNavigator;

@@ -22,7 +22,7 @@
 #include "pagebase.h"
 #include "dialogpagesexport.h"
 
-class QGroupBox;
+#include <QGroupBox>
 
 class KComboBox;
 class KUrlComboBox;

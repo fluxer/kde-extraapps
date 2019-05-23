@@ -24,7 +24,7 @@
 #include <qmap.h>
 #include <util/constants.h>
 
-class QString;
+#include <QString>
 
 namespace bt
 {

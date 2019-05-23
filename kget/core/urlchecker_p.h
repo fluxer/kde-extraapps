@@ -22,7 +22,7 @@
 
 #include <KDialog>
 
-class QCheckBox;
+#include <QCheckBox>
 
 /**
  * Asks if existing transfers should be overwritten

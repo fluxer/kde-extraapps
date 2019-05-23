@@ -33,10 +33,10 @@
 #include <kpToolFlowBase.h>
 
 
-class QPoint;
-class QRect;
-class QString;
-class QTimer;
+#include <QPoint>
+#include <QRect>
+#include <QString>
+#include <QTimer>
 
 class kpToolWidgetSpraycanSize;
 

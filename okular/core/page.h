@@ -17,7 +17,7 @@
 #include "global.h"
 #include "textpage.h"
 
-class QPixmap;
+#include <QPixmap>
 
 class PagePainter;
 

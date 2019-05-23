@@ -29,8 +29,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KUrl>
 #include <KFileItem>
 
-class QItemSelectionModel;
-class QModelIndex;
+#include <QItemSelectionModel>
+#include <QModelIndex>
 
 namespace Gwenview
 {

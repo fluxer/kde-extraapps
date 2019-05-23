@@ -31,7 +31,7 @@ namespace KGetMetalink
 
 class MirrorModel;
 class MirrorProxyModel;
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 
 class UrlWidget : public QObject
 {

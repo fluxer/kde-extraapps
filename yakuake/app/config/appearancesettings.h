@@ -30,8 +30,8 @@
 
 class SkinListDelegate;
 
-class QStandardItem;
-class QStandardItemModel;
+#include <QStandardItem>
+#include <QStandardItemModel>
 
 class AppearanceSettings : public QWidget, private Ui::AppearanceSettings
 {

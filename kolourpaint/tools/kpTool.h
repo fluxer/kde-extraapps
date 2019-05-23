@@ -43,13 +43,13 @@
 #endif
 
 
-class QFocusEvent;
-class QIcon;
+#include <QFocusEvent>
+#include <QIcon>
 class QInputMethodEvent;
-class QKeyEvent;
-class QMouseEvent;
-class QImage;
-class QWheelEvent;
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QImage>
+#include <QWheelEvent>
 
 class KShortcut;
 

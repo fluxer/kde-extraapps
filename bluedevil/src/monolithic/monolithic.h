@@ -29,7 +29,7 @@ namespace BlueDevil {
     class Device;
 }
 
-class QAction;
+#include <QAction>
 class KAction;
 
 using namespace BlueDevil;

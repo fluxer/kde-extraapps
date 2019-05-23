@@ -40,12 +40,12 @@
 #include <kpPixmapFX.h>
 #undef environ
 
-class QImage;
-class QIODevice;
-class QPixmap;
-class QPoint;
-class QRect;
-class QSize;
+#include <QImage>
+#include <QIODevice>
+#include <QPixmap>
+#include <QPoint>
+#include <QRect>
+#include <QSize>
 
 class kpColor;
 class kpDocumentEnvironment;

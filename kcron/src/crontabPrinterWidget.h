@@ -15,7 +15,7 @@
 
 #include <QWidget>
 
-class QCheckBox;
+#include <QCheckBox>
 
 /**
  *Give the user the option to print the crontab file.

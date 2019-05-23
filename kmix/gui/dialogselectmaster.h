@@ -21,12 +21,12 @@
 #ifndef DIALOGSELECTMASTER_H
 #define DIALOGSELECTMASTER_H
 
-class QButtonGroup;
+#include <QButtonGroup>
 class KComboBox;
 #include <qradiobutton.h>
-class QScrollArea;
+#include <QScrollArea>
 #include <kvbox.h>
-class QVBoxLayout;
+#include <QVBoxLayout>
 
 #include <kdialog.h>
 

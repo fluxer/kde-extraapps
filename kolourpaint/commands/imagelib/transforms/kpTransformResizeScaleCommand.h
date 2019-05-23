@@ -39,7 +39,7 @@
 #include <kpImage.h>
 
 
-class QSize;
+#include <QSize>
 
 class kpAbstractSelection;
 

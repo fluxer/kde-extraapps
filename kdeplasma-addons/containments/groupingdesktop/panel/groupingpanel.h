@@ -23,8 +23,8 @@
 
 #include "../lib/groupingcontainment.h"
 
-class QAction;
-class QGraphicsLinearLayout;
+#include <QAction>
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

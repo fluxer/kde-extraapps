@@ -47,7 +47,7 @@ class PushButton;
 class OutputLabel;
 
 class QalculateGraphicsWidget;
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 class QalculateSettings;
 class QalculateEngine;
 class QalculateHistory;

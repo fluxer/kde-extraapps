@@ -33,7 +33,7 @@
 #include <kpEffectWidgetBase.h>
 
 
-class QRadioButton;
+#include <QRadioButton>
 
 
 class kpEffectReduceColorsWidget : public kpEffectWidgetBase

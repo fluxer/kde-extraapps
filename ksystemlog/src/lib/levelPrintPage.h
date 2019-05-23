@@ -25,11 +25,11 @@
 #include <QWidget>
 #include <QString>
 
-class QButtonGroup;
-class QVBoxLayout;
-class QGridLayout;
-class QCheckBox;
-class QLabel;
+#include <QButtonGroup>
+#include <QVBoxLayout>
+#include <QGridLayout>
+#include <QCheckBox>
+#include <QLabel>
 
 /**
  @author Bojan Djurkovic

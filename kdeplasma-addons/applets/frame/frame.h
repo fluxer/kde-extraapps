@@ -34,7 +34,7 @@
 #include <plasma/animator.h>
 
 class ConfigDialog;
-class QGraphicsSceneDragDropEvent;
+#include <QGraphicsSceneDragDropEvent>
 class SlideShow;
 
 namespace Plasma

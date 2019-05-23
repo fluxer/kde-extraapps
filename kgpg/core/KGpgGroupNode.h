@@ -22,8 +22,8 @@
 #include "KGpgExpandableNode.h"
 #include "KGpgKeyNode.h"
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 class KGpgGroupNodePrivate;
 

@@ -21,7 +21,7 @@
 #include <kurl.h>
 #include <kio/global.h>
 
-class QDomElement;
+#include <QDomElement>
 
 class Signature;
 class TransferHandler;

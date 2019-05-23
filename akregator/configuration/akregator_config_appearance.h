@@ -30,7 +30,7 @@
 
 #include <QVariant>
 
-class QWidget;
+#include <QWidget>
 
 
 class KCMAkregatorAppearanceConfig : public KCModule

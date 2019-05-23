@@ -34,7 +34,7 @@
 #undef environ  // macro on win32
 
 
-class QString;
+#include <QString>
 
 class kpAbstractImageSelection;
 class kpAbstractSelection;

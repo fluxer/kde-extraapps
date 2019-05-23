@@ -34,9 +34,9 @@ class Partition;
 class PartWidget;
 class Device;
 
-class QWidget;
-class QLabel;
-class QPoint;
+#include <QWidget>
+#include <QLabel>
+#include <QPoint>
 
 /** The central widget for the application.
 

@@ -12,8 +12,8 @@
 
 #include <core/textdocumentgenerator.h>
 
-class QDomElement;
-class QTextCursor;
+#include <QDomElement>
+#include <QTextCursor>
 
 namespace FictionBook {
 

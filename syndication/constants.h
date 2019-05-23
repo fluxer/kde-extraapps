@@ -25,7 +25,7 @@
 
 #include "ksyndication_export.h"
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 

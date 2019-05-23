@@ -28,8 +28,8 @@
 
 #include <QPointer>
 
-class QModelIndex;
-class QPoint;
+#include <QModelIndex>
+#include <QPoint>
 
 class KJob;
 

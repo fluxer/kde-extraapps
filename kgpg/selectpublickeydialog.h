@@ -24,8 +24,8 @@
 #include <KVBox>
 #include <QKeySequence>
 
-class QCheckBox;
-class QTableView;
+#include <QCheckBox>
+#include <QTableView>
 
 class KLineEdit;
 class KHBox;

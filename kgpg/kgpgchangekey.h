@@ -22,7 +22,7 @@
 
 class KGpgKeyNode;
 class KGpgTransaction;
-class QWidget;
+#include <QWidget>
 
 /**
  * @short A class for changing several properties of a key at once

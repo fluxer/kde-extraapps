@@ -29,7 +29,7 @@
 #define LIBKTORRENT_RELEASE 1
 #define LIBKTORRENT_VERSION ((LIBKTORRENT_MAJOR << 16) | (LIBKTORRENT_MINOR << 8) | LIBKTORRENT_RELEASE)
 
-class QString;
+#include <QString>
 
 namespace bt 
 {

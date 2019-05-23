@@ -29,10 +29,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KUrl>
 
 class KFileItem;
-class QDragEnterEvent;
-class QDragMoveEvent;
-class QDropEvent;
-class QPixmap;
+#include <QDragEnterEvent>
+#include <QDragMoveEvent>
+#include <QDropEvent>
+#include <QPixmap>
 
 namespace Gwenview
 {

@@ -34,8 +34,8 @@
 #include <KConfigGroup>
 
 class AbstractTaskItem;
-class QTimer;
-class QAction;
+#include <QTimer>
+#include <QAction>
 class DBusMenuImporter;
 
 class UnityItem : public QObject

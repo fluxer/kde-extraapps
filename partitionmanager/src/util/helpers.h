@@ -26,10 +26,10 @@
 #include "fs/filesystem.h"
 
 class KAboutData;
-class QString;
-class QIcon;
-class QPoint;
-class QTreeWidget;
+#include <QString>
+#include <QIcon>
+#include <QPoint>
+#include <QTreeWidget>
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT void registerMetaTypes();
 LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkPermissions();

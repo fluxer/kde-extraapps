@@ -23,8 +23,8 @@
 
 #include "types.h"
 
-class QString;
-class QDataStream;
+#include <QString>
+#include <QDataStream>
 
 class BufferInfo
 {

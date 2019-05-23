@@ -23,8 +23,8 @@
 #include "difference.h"
 #include "diffmodellist.h"
 
-class QStringList;
-class QString;
+#include <QStringList>
+#include <QString>
 
 namespace Diff2
 {

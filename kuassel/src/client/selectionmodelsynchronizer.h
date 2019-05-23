@@ -24,7 +24,7 @@
 #include <QObject>
 #include <QItemSelectionModel>
 
-class QAbstractItemModel;
+#include <QAbstractItemModel>
 
 class SelectionModelSynchronizer : public QObject
 {

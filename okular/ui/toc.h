@@ -16,9 +16,9 @@
 
 #include "okular_part_export.h"
 
-class QDomNode;
-class QModelIndex;
-class QTreeView;
+#include <QDomNode>
+#include <QModelIndex>
+#include <QTreeView>
 class KTreeViewSearchLine;
 class TOCModel;
 

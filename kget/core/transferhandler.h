@@ -19,7 +19,7 @@
 #include "transfergroup.h"
 #include "../kget_export.h"
 
-class QAction;
+#include <QAction>
 class KPassivePopup;
 
 class KGetKJobAdapter;

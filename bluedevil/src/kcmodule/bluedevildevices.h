@@ -29,8 +29,8 @@ class SystemCheck;
 class DeviceDetails;
 class BluetoothDevicesModel;
 
-class QListView;
-class QCheckBox;
+#include <QListView>
+#include <QCheckBox>
 
 class KPushButton;
 

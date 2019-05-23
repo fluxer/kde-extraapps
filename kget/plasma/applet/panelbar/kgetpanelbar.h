@@ -23,9 +23,9 @@
 #include "common/kgetapplet.h"
 #include <plasma/dataengine.h>
 
-class QGraphicsProxyWidget;
-class QGraphicsLinearLayout;
-class QProgressBar;
+#include <QGraphicsProxyWidget>
+#include <QGraphicsLinearLayout>
+#include <QProgressBar>
 
 namespace Plasma {
     class Dialog;

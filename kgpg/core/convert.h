@@ -26,8 +26,8 @@
 
 #include <gpgme.h>
 
-class QString;
-class QPixmap;
+#include <QString>
+#include <QPixmap>
 
 namespace KgpgCore
 {

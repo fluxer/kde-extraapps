@@ -40,7 +40,7 @@ class ColumnHandleItem;
 class MarkerLineItem;
 class WebPreviewItem;
 
-class QGraphicsSceneMouseEvent;
+#include <QGraphicsSceneMouseEvent>
 
 class ChatScene : public QGraphicsScene
 {

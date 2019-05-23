@@ -12,8 +12,8 @@
 
 #include <KDialog>
 
-class QCheckBox;
-class QTableView;
+#include <QCheckBox>
+#include <QTableView>
 
 class KComboBox;
 

@@ -37,10 +37,10 @@
 #include <QGraphicsWidget>
 #include <QPropertyAnimation>
 
-class QTextOption;
-class QTextLayout;
-class QString;
-class QAction;
+#include <QTextOption>
+#include <QTextLayout>
+#include <QString>
+#include <QAction>
 
 // Plasma
 #include <Plasma/Animator>

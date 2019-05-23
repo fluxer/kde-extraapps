@@ -30,7 +30,7 @@
 #include <kmenu.h>
 #include <kstatusnotifieritem.h>
 #include "talkercode.h"
-class QEvent;
+#include <QEvent>
 class KAction;
 
 /**

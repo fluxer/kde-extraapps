@@ -36,10 +36,10 @@ namespace KGetMetalink
 class CountryModel;
 class GeneralWidget;
 class LanguageModel;
-class QDragEnterEvent;
-class QShowEvent;
-class QSortFilterProxyModel;
-class QStandardItemModel;
+#include <QDragEnterEvent>
+#include <QShowEvent>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
 
 class FileWidget : public QWidget
 {

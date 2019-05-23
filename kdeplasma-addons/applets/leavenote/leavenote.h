@@ -28,7 +28,7 @@
 
 #include "ui_widget.h"
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

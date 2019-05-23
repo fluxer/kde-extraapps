@@ -38,7 +38,7 @@
 #include <kolourpaint_lgpl_export.h>
 
 
-class QString;
+#include <QString>
 
 class KUrl;
 

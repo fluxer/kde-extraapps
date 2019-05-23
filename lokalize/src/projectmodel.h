@@ -37,7 +37,7 @@
 #include "project.h"
 #include "projectlocal.h"
 
-class QTimer;
+#include <QTimer>
 class UpdateStatsJob;
 namespace ThreadWeaver {class Weaver;}
 

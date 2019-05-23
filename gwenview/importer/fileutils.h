@@ -21,8 +21,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #ifndef FILEUTILS_H
 #define FILEUTILS_H
 
-class QString;
-class QWidget;
+#include <QString>
+#include <QWidget>
 class KUrl;
 
 namespace Gwenview

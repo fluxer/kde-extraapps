@@ -26,7 +26,7 @@
 #include "ui_mirrorsettings.h"
 #include "ui_mirroradddlg.h"
 
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 class TransferHandler;
 
 class MirrorAddDlg : public KDialog

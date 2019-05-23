@@ -13,7 +13,7 @@
 #include <QUrl>
 #include <QVariant>
 
-class QFile;
+#include <QFile>
 namespace Mobipocket {
 class Document;
 class QFileStream;

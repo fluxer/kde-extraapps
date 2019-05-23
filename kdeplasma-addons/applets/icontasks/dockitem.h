@@ -32,9 +32,9 @@
 #include <KUrl>
 
 class AbstractTaskItem;
-class QAction;
-class QTimer;
-class QMenu;
+#include <QAction>
+#include <QTimer>
+#include <QMenu>
 
 class DockItem : public QObject, protected QDBusContext
 {

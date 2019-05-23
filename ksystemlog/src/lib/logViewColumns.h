@@ -26,7 +26,7 @@
 #include <QDataStream>
 
 class LogViewColumn;
-class QStringList;
+#include <QStringList>
 class LogViewColumnsPrivate;
 
 class LogViewColumns {

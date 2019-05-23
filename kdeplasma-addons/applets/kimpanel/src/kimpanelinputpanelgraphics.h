@@ -33,7 +33,7 @@ namespace Plasma
 class IconWidget;
 }
 
-class QBitmap;
+#include <QBitmap>
 class KimpanelInputPanelGraphics : public QGraphicsWidget
 {
     Q_OBJECT

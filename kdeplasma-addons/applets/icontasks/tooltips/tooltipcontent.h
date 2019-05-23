@@ -33,8 +33,8 @@
 #define PLASMA_EXPORT
 #endif
 
-class QTextDocument;
-class QGraphicsWidget;
+#include <QTextDocument>
+#include <QGraphicsWidget>
 
 /**
  * This provides the content for a tooltip.

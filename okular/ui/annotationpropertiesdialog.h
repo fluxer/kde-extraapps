@@ -12,8 +12,8 @@
 
 #include <kpagedialog.h>
 
-class QLabel;
-class QLineEdit;
+#include <QLabel>
+#include <QLineEdit>
 class AnnotationWidget;
 
 namespace Okular {

@@ -26,7 +26,7 @@
 
 #include <ctime>
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 namespace RDF {

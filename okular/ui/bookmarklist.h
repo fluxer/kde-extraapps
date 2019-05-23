@@ -14,9 +14,9 @@
 
 #include "core/observer.h"
 
-class QAction;
-class QTreeWidget;
-class QTreeWidgetItem;
+#include <QAction>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 class KTreeWidgetSearchLine;
 class KUrl;
 class BookmarkItem;

@@ -15,7 +15,7 @@
 
 #include <kaction.h>
 
-class QToolButton;
+#include <QToolButton>
 
 class ToolAction : public KAction
 {

@@ -18,8 +18,8 @@
 #include <QToolButton>
 #include <QtCore/qabstractitemmodel.h>
 
-class QHBoxLayout;
-class QButtonGroup;
+#include <QHBoxLayout>
+#include <QButtonGroup>
 
 class TransferHandler;
 class TransferObserver;

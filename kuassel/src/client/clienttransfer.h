@@ -25,7 +25,7 @@
 
 #include "transfer.h"
 
-class QFile;
+#include <QFile>
 
 class ClientTransfer : public Transfer
 {

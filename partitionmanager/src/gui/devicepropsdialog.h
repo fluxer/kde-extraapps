@@ -26,8 +26,8 @@
 class Device;
 class DevicePropsWidget;
 
-class QWidget;
-class QString;
+#include <QWidget>
+#include <QString>
 
 /** Show Device properties.
 

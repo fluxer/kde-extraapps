@@ -220,7 +220,7 @@ private:
 
 
 class Folder;
-class QString;
+#include <QString>
 
 class File
 {

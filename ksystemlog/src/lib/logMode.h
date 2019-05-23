@@ -34,7 +34,7 @@ class LogModeItemBuilder;
 class LogModeConfiguration;
 class LogModeConfigurationWidget;
 
-class QAction;
+#include <QAction>
 
 
 //TODO Do not let this class visible to other classes (except sub-classes)

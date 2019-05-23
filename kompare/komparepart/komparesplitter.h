@@ -22,11 +22,11 @@
 
 #include "komparemodellist.h"
 
-class QSplitterHandle;
-class QTimer;
-class QScrollBar;
-class QWheelEvent;
-class QKeyEvent;
+#include <QSplitterHandle>
+#include <QTimer>
+#include <QScrollBar>
+#include <QWheelEvent>
+#include <QKeyEvent>
 
 namespace Diff2 {
 class DiffModel;

@@ -27,10 +27,10 @@
 // Qt
 #include <QString>
 
-class QLabel;
+#include <QLabel>
 #include <qlist.h>
 #include <QVBoxLayout>
-class QPushButton;
+#include <QPushButton>
 #include <QTimer>
 class KTabWidget;
 

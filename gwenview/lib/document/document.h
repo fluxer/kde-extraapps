@@ -36,11 +36,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Local
 #include <lib/mimetypeutils.h>
 
-class QImage;
-class QRect;
-class QSize;
-class QSvgRenderer;
-class QUndoStack;
+#include <QImage>
+#include <QRect>
+#include <QSize>
+#include <QSvgRenderer>
+#include <QUndoStack>
 
 class KJob;
 class KUrl;

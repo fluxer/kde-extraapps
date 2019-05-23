@@ -28,7 +28,7 @@
 
 #include <QVariant>
 
-class QWidget;
+#include <QWidget>
 
 class KCMAkregatorBrowserConfig : public KCModule
 {

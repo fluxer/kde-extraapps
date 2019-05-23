@@ -12,7 +12,7 @@
 
 #include <QFileInfo>
 
-class QString;
+#include <QString>
 
 
 class DVI_SourceFileSplitter

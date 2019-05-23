@@ -30,7 +30,7 @@
 
 #include "picture.h"
 
-class QTimer;
+#include <QTimer>
 
 class SlideShow : public QObject
 {

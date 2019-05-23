@@ -22,7 +22,7 @@
 #include <KDialog>
 
 class KComboBox;
-class QVBoxLayout;
+#include <QVBoxLayout>
 
 class AddMacro : public KDialog
 {

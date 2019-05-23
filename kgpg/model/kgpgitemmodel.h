@@ -39,7 +39,7 @@ class KGpgExpandableNode;
 class KGpgGroupNode;
 class KGpgGroupMemberNode;
 class KGpgRootNode;
-class QColor;
+#include <QColor>
 
 class KGpgItemModel : public QAbstractItemModel
 {

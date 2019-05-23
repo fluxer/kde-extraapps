@@ -28,9 +28,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Local
 
-class QModelIndex;
-class QPalette;
-class QShowEvent;
+#include <QModelIndex>
+#include <QPalette>
+#include <QShowEvent>
 
 class KUrl;
 

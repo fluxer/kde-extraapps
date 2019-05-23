@@ -31,10 +31,10 @@
 
 #include "ui_config.h"
 
-class QGraphicsLinearLayout;
-class QSizeF;
-class QContextMenuEvent;
-class QParallelAnimationGroup;
+#include <QGraphicsLinearLayout>
+#include <QSizeF>
+#include <QContextMenuEvent>
+#include <QParallelAnimationGroup>
 
 class TopWidget;
 class NotesTextEdit;

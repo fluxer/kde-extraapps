@@ -25,7 +25,7 @@
 
 #include "types.h"
 
-class QModelIndex;
+#include <QModelIndex>
 
 class Clickable
 {

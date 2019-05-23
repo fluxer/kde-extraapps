@@ -25,7 +25,7 @@
 #include <KIcon>
 #include <KUrl>
 
-class QDBusPendingCallWatcher;
+#include <QDBusPendingCallWatcher>
 
 class AudioPlayerControlRunner : public Plasma::AbstractRunner
 {

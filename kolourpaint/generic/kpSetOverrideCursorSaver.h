@@ -30,7 +30,7 @@
 #define kpSetOverrideCursorSaver_H
 
 
-class QCursor;
+#include <QCursor>
 
 
 //

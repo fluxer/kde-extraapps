@@ -30,11 +30,11 @@
 #include <QListView>
 #include <QStringListModel>
 
-class QListView;
+#include <QListView>
 //class KTextEdit;
 class KLineEdit;
 class KComboBox;
-//class QStringListModel;
+//#include <QStringListModel>
 
 
 class AuxTextEdit: public KTextEdit

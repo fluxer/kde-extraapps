@@ -16,8 +16,8 @@ namespace Okular {
 class Document;
 }
 
-class QAction;
-class QMenu;
+#include <QAction>
+#include <QMenu>
 
 class SearchLineEdit;
 

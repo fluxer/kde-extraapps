@@ -38,12 +38,12 @@
 //#include <QList>
 class Catalog;
 // class FlowLayout;
-// class QHBoxLayout;
-class QSplitter;
-class QTextBrowser;
-class QDragEnterEvent;
-class QDropEvent;
-class QEvent;
+// #include <QHBoxLayout>
+#include <QSplitter>
+#include <QTextBrowser>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QEvent>
 class KAction;
 class Ui_QueryControl;
 #include <QVector>

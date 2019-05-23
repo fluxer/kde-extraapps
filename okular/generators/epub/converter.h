@@ -15,7 +15,7 @@
 
 #include "epubdocument.h"
 
-class QTextCursor;
+#include <QTextCursor>
 
 namespace Epub {
   class Converter : public Okular::TextDocumentConverter

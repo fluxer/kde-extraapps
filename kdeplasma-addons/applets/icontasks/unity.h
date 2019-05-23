@@ -31,7 +31,7 @@
 
 class AbstractTaskItem;
 class UnityItem;
-class QDBusServiceWatcher;
+#include <QDBusServiceWatcher>
 
 class Unity : public QObject, protected QDBusContext
 {

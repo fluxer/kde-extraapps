@@ -25,7 +25,7 @@ class LatexRenderer;
 
 class KTextEdit;
 class MovableTitle;
-class QMenu;
+#include <QMenu>
 
 class AnnotWindow : public QFrame
 {

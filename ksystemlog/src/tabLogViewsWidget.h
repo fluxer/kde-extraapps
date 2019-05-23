@@ -25,8 +25,8 @@
 #include <ktabwidget.h>
 #include <QList>
 
-class QString;
-class QIcon;
+#include <QString>
+#include <QIcon>
 
 class LogManager;
 class TabLogManager;

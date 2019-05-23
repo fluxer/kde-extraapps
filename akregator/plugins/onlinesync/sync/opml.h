@@ -30,7 +30,7 @@
 
 #include <QFile>
 
-class QDomDocument;
+#include <QDomDocument>
 
 namespace feedsync
 {

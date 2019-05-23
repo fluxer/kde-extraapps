@@ -22,8 +22,8 @@
 #include "pagebase.h"
 #include "dialogpagesexport.h"
 
-class QFontComboBox;
-class QSpinBox;
+#include <QFontComboBox>
+#include <QSpinBox>
 
 class KColorButton;
 class KTabWidget;

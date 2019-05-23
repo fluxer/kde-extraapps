@@ -32,8 +32,8 @@
 #include "torrent.h"
 #include "globals.h"
 
-class QStringList;
-class QString;
+#include <QStringList>
+#include <QString>
 class KJob;
 
 

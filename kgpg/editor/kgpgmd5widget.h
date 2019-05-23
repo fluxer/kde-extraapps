@@ -15,7 +15,7 @@
 #include <KDialog>
 #include <KUrl>
 
-class QLabel;
+#include <QLabel>
 
 class KLed;
 

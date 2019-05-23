@@ -12,8 +12,8 @@
 
 #include "formatproperty.h"
 
-class QDomDocument;
-class QDomElement;
+#include <QDomDocument>
+#include <QDomElement>
 
 namespace OOO {
 

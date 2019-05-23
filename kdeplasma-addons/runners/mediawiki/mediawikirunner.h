@@ -27,7 +27,7 @@ class KIcon;
 #include <KIcon>
 #include <QWaitCondition>
 
-class QWaitCondition;
+#include <QWaitCondition>
 
 #include "mediawiki.h"
 

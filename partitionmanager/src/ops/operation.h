@@ -32,8 +32,8 @@ class Job;
 class OperationRunner;
 class Report;
 
-class QString;
-class QIcon;
+#include <QString>
+#include <QIcon>
 
 /** Base class of all Operations.
 

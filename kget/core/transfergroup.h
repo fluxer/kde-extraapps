@@ -23,7 +23,7 @@
 #include "transfer.h"
 
 
-class QDomElement;
+#include <QDomElement>
 
 class TransferGroupHandler;
 class TransferTreeModel;

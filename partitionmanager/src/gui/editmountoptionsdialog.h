@@ -24,9 +24,9 @@
 #include <kdialog.h>
 
 class EditMountOptionsDialogWidget;
-class QStringList;
-class QString;
-class QWidget;
+#include <QStringList>
+#include <QString>
+#include <QWidget>
 
 class EditMountOptionsDialog : public KDialog
 {

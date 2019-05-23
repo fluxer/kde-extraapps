@@ -14,7 +14,7 @@
 
 #include <kconfigdialog.h>
 
-class QWidget;
+#include <QWidget>
 class KConfigSkeleton;
 class KTabWidget;
 

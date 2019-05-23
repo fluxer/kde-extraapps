@@ -33,8 +33,8 @@
 class KTextEdit;
 class Catalog;
 class MergeCatalog;
-class QDragEnterEvent;
-class QDropEvent;
+#include <QDragEnterEvent>
+#include <QDropEvent>
 
 
 

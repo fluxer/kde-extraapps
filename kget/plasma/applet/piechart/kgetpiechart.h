@@ -23,8 +23,8 @@
 #include "common/kgetapplet.h"
 #include <plasma/dataengine.h>
 
-class QGraphicsLinearLayout;
-class QGraphicsWidget;
+#include <QGraphicsLinearLayout>
+#include <QGraphicsWidget>
 
 namespace Plasma {
     class Svg;

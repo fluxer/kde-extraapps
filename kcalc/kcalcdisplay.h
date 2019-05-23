@@ -28,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class CalcEngine;
 class KAction;
-class QTimer;
-class QStyleOptionFrame;
+#include <QTimer>
+#include <QStyleOptionFrame>
 
 #define NUM_STATUS_TEXT 4
 

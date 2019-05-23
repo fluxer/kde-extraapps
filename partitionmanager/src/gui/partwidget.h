@@ -27,8 +27,8 @@
 
 class Partition;
 
-class QPaintEvent;
-class QResizeEvent;
+#include <QPaintEvent>
+#include <QResizeEvent>
 
 /** Widget that represents a Partition.
 

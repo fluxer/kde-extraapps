@@ -28,8 +28,8 @@
 #include <QObject>
 #include <qglobal.h>
 
-class QString;
-class QIcon;
+#include <QString>
+#include <QIcon>
 
 class CopySource;
 class CopyTarget;

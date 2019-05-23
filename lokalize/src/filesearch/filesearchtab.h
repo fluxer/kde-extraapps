@@ -37,12 +37,12 @@
 #include <state.h>
 #include <phase.h>
 
-class QLabel;
+#include <QLabel>
 class QaView;
-class QStringListModel;
-class QComboBox;
-class QTreeView;
-class QSortFilterProxyModel;
+#include <QStringListModel>
+#include <QComboBox>
+#include <QTreeView>
+#include <QSortFilterProxyModel>
 
 namespace ThreadWeaver{class Job;}
 namespace ThreadWeaver{class JobCollection;}

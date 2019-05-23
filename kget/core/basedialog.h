@@ -23,7 +23,7 @@
 #include "../kget_export.h"
 #include <KDialog>
 
-class QCheckBox;
+#include <QCheckBox>
 
 /**
  * Subclass to make sure that the size of the dialog is

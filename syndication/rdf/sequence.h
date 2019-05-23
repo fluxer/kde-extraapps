@@ -27,7 +27,7 @@
 
 #include <boost/shared_ptr.hpp>
 
-template <class T> class QList;
+#include <QList>
 
 namespace Syndication {
 namespace RDF {

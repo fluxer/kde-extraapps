@@ -25,8 +25,8 @@
 
 #include <KCupsRequest.h>
 
-class QToolButton;
-class QSortFilterProxyModel;
+#include <QToolButton>
+#include <QSortFilterProxyModel>
 
 namespace Ui {
     class PrinterDescription;

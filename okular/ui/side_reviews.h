@@ -16,7 +16,7 @@
 
 #include "core/observer.h"
 
-class QModelIndex;
+#include <QModelIndex>
 
 namespace Okular {
 class Annotation;

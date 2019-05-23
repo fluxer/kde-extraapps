@@ -17,8 +17,8 @@
 
 #include <QSize>
 
-class QPaintDevice;
-class QString;
+#include <QPaintDevice>
+#include <QString>
 
 
 /** \brief This class represents physical page sizes.

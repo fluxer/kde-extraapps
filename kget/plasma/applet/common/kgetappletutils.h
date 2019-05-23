@@ -24,11 +24,11 @@
 
 #include <QGraphicsProxyWidget>
 
-class QDBusConnectionInterface;
-class QGraphicsLinearLayout;
-class QGraphicsWidget;
-class QPainter;
-class QRect;
+#include <QDBusConnectionInterface>
+#include <QGraphicsLinearLayout>
+#include <QGraphicsWidget>
+#include <QPainter>
+#include <QRect>
 
 namespace Plasma {
     class Svg;

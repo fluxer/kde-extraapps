@@ -25,8 +25,8 @@
 #include <QRect>
 #include <QPolygon>
 
-class QPaintEvent;
-class QMouseEvent;
+#include <QPaintEvent>
+#include <QMouseEvent>
 
 class FreeRegionGrabber : public QWidget
 {

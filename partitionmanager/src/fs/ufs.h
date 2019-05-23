@@ -27,7 +27,7 @@
 
 #include <qglobal.h>
 
-class QString;
+#include <QString>
 
 namespace FS
 {

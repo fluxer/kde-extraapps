@@ -11,8 +11,8 @@
 #define OKULAR_TESTINGUTILS_H
 
 template<class T >
-class QLinkedList;
-class QString;
+#include <QLinkedList>
+#include <QString>
 
 namespace Okular {
 class NormalizedPoint;

@@ -30,7 +30,7 @@
 #define kpColorSimilarityCubeRenderer_H
 
 
-class QPaintDevice;
+#include <QPaintDevice>
 
 
 class kpColorSimilarityCubeRenderer

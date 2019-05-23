@@ -30,7 +30,7 @@
 #define KP_CURSOR_PROVIDER_H
 
 
-class QCursor;
+#include <QCursor>
 
 
 class kpCursorProvider

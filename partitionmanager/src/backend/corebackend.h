@@ -33,7 +33,7 @@ class PartitionTable;
 
 class KAboutData;
 
-class QString;
+#include <QString>
 
 /**
   * Interface class for backend plugins.

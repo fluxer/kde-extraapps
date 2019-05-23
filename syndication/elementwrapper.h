@@ -28,8 +28,8 @@
 
 #include "ksyndication_export.h"
 
-class QDomElement;
-template <class T> class QList;
+#include <QDomElement>
+#include <QList>
 
 namespace Syndication {
 

@@ -33,11 +33,11 @@
 #include <QVector>
 #include <QMap>
 
-class QStackedLayout;
+#include <QStackedLayout>
 class NoteEditor;
 class PhasesModel;
 class MyTreeView;
-class QTextBrowser;
+#include <QTextBrowser>
 class PhasesWindow: public KDialog
 {
 Q_OBJECT

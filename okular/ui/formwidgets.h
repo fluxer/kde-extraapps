@@ -22,12 +22,12 @@
 #include <kurlrequester.h>
 
 class ComboEdit;
-class QMenu;
-class QButtonGroup;
+#include <QMenu>
+#include <QButtonGroup>
 class FormWidgetIface;
 class PageViewItem;
 class RadioButtonEdit;
-class QEvent;
+#include <QEvent>
 
 namespace Okular {
 class Action;

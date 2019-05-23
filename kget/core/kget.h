@@ -33,8 +33,8 @@
 #include "transfer.h"
 #include "transfergrouphandler.h"
 
-class QDomElement;
-class QAbstractItemView;
+#include <QDomElement>
+#include <QAbstractItemView>
 
 class KComboBox;
 

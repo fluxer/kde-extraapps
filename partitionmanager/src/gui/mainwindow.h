@@ -39,10 +39,10 @@ class InfoPane;
 
 class KActionCollection;
 
-class QWidget;
-class QLabel;
-class QCloseEvent;
-class QEvent;
+#include <QWidget>
+#include <QLabel>
+#include <QCloseEvent>
+#include <QEvent>
 
 /** The application's main window.
 

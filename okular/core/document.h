@@ -24,7 +24,7 @@
 
 #include <kmimetype.h>
 
-class QPrintDialog;
+#include <QPrintDialog>
 class KComponentData;
 class KBookmark;
 class KConfigDialog;

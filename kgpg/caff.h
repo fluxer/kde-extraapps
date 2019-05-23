@@ -18,7 +18,7 @@
 
 #include <QObject>
 
-class QStringList;
+#include <QStringList>
 
 class KGpgCaffPrivate;
 

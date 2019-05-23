@@ -41,14 +41,14 @@
 #include <kpColor.h>
 
 
-class QColor;
-class QImage;
-class QMatrix;
-class QPen;
-class QImage;
-class QPoint;
-class QPolygon;
-class QRect;
+#include <QColor>
+#include <QImage>
+#include <QMatrix>
+#include <QPen>
+#include <QImage>
+#include <QPoint>
+#include <QPolygon>
+#include <QRect>
 
 
 class kpAbstractSelection;

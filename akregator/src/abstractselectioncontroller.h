@@ -29,10 +29,10 @@
 #include <boost/shared_ptr.hpp>
 #include <vector>
 
-class QAbstractItemView;
-class QItemSelectionModel;
-class QPoint;
-class QModelIndex;
+#include <QAbstractItemView>
+#include <QItemSelectionModel>
+#include <QPoint>
+#include <QModelIndex>
 
 namespace Akregator {
 

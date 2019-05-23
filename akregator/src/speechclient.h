@@ -28,8 +28,8 @@
 #include "kspeechinterface.h"
 #include <QObject>
 
-class QString;
-template <class T> class QList;
+#include <QString>
+#include <QList>
 
 namespace Akregator
 {

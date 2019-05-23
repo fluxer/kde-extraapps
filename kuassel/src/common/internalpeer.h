@@ -25,7 +25,7 @@
 #include "protocol.h"
 #include "signalproxy.h"
 
-class QEvent;
+#include <QEvent>
 
 class InternalPeer : public Peer
 {

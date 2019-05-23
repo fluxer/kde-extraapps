@@ -27,11 +27,11 @@
 
 #include "ksyndication_export.h"
 
-class QDomElement;
+#include <QDomElement>
 
-template <class T> class QList;
-template <class K, class T> class QMultiMap;
-class QString;
+#include <QList>
+#include <QMultiMap>
+#include <QString>
 
 namespace Syndication {
 

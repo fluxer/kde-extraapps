@@ -59,8 +59,8 @@ class FileSystem;
 
 class Report;
 
-class QString;
-class QTextStream;
+#include <QString>
+#include <QTextStream>
 
 /** A partition or some unallocated space on a Device.
 

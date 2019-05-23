@@ -31,8 +31,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 class KJob;
 class KUrl;
 
-class QAbstractItemModel;
-class QPalette;
+#include <QAbstractItemModel>
+#include <QPalette>
 
 namespace Gwenview
 {

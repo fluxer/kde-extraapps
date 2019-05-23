@@ -22,8 +22,8 @@
 
 #include "abstractgroup.h"
 
-class QGraphicsLinearLayout;
-class QGraphicsSceneResizeEvent;
+#include <QGraphicsLinearLayout>
+#include <QGraphicsSceneResizeEvent>
 
 namespace Plasma {
     class ScrollWidget;

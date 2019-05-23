@@ -30,8 +30,8 @@
 
 #include "ui_widget.h"
 
-class QGraphicsLinearLayout;
-class QDBusObjectPath;
+#include <QGraphicsLinearLayout>
+#include <QDBusObjectPath>
 
 namespace Plasma
 {

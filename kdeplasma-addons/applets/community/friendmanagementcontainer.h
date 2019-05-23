@@ -30,7 +30,7 @@
 
 
 class FriendManagementWidget;
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 class FriendManagementContainer : public QGraphicsWidget
 {

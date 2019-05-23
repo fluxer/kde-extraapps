@@ -23,7 +23,7 @@
 #include <util/constants.h>
 #include <ktorrent_export.h>
 
-class QString;
+#include <QString>
 
 #ifdef CopyFile
 #undef CopyFile

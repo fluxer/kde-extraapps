@@ -26,7 +26,7 @@
 class KCmdLineArgs;
 class KeysManager;
 class KGpgExternalActions;
-class QString;
+#include <QString>
 
 static const char * const EMailTemplateText=I18N_NOOP(
     "Hi,\n\nplease find attached the user id '%UIDNAME%' of your key %KEYID% signed by me. "

@@ -31,7 +31,7 @@
 #include "projectmodel.h"
 
 class SortFilterProxyModel;
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 
 /**
  * This class is considered a 'view',

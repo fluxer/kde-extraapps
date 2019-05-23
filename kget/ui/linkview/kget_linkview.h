@@ -16,8 +16,8 @@
 
 #include "ui_importlinkdialog.h"
 
-class QAction;
-class QModelIndex;
+#include <QAction>
+#include <QModelIndex>
 class LinkImporter;
 class KGetSortFilterProxyModel;
 

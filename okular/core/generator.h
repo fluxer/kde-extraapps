@@ -33,10 +33,10 @@
     K_PLUGIN_FACTORY( classname ## Factory, registerPlugin< classname >(); ) \
     K_EXPORT_PLUGIN( classname ## Factory( aboutdata ) )
 
-class QByteArray;
-class QMutex;
-class QPrinter;
-class QPrintDialog;
+#include <QByteArray>
+#include <QMutex>
+#include <QPrinter>
+#include <QPrintDialog>
 class KIcon;
 
 namespace Okular {

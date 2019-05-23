@@ -23,7 +23,7 @@
 class BitSet;
 class KioDownload;
 class TransferDataSource;
-class QTimer;
+#include <QTimer>
 class Signature;
 class Verifier;
 

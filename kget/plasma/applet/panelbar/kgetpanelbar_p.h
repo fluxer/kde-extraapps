@@ -25,8 +25,8 @@
 #include <QMap>
 #include "transfer_interface.h"
 
-class QProgressBar;
-class QGridLayout;
+#include <QProgressBar>
+#include <QGridLayout>
 
 class KGetPanelBar::Private : public Plasma::Dialog
 {

@@ -28,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Qt
 
-class QAction;
-class QGraphicsWidget;
+#include <QAction>
+#include <QGraphicsWidget>
 
 namespace Gwenview
 {

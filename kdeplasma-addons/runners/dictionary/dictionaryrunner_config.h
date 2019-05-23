@@ -7,7 +7,7 @@
 
 
 #include <KCModule>
-class QLineEdit;
+#include <QLineEdit>
 
 static const char CONFIG_TRIGGERWORD[] = "triggerWord";
 

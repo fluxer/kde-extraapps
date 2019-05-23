@@ -30,8 +30,8 @@ class MessageModel;
 class AbstractMessageProcessor;
 class AbstractActionProvider;
 
-class QAction;
-class QMenu;
+#include <QAction>
+#include <QMenu>
 
 class AbstractUi : public QObject
 {

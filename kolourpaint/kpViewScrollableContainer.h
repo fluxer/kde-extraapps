@@ -36,15 +36,15 @@
 #include <qsize.h>
 
 
-class QCursor;
-class QDragMoveEvent;
-class QEvent;
-class QKeyEvent;
-class QMouseEvent;
-class QPaintEvent;
-class QRect;
-class QResizeEvent;
-class QTimer;
+#include <QCursor>
+#include <QDragMoveEvent>
+#include <QEvent>
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QPaintEvent>
+#include <QRect>
+#include <QResizeEvent>
+#include <QTimer>
 
 class kpView;
 class kpOverlay;

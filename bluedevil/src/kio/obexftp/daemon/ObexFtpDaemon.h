@@ -26,8 +26,8 @@
 #include <kdemacros.h>
 
 class KJob;
-class QDBusMessage;
-class QDBusPendingCallWatcher;
+#include <QDBusMessage>
+#include <QDBusPendingCallWatcher>
 
 class KDE_EXPORT ObexFtpDaemon : public KDEDModule
 {

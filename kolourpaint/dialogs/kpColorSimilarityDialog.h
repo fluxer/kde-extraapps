@@ -33,7 +33,7 @@
 #include <kdialog.h>
 
 
-class QLabel;
+#include <QLabel>
 
 class KIntNumInput;
 

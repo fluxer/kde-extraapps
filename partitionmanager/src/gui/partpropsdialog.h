@@ -31,8 +31,8 @@
 class Device;
 class PartPropsWidget;
 
-class QWidget;
-class QString;
+#include <QWidget>
+#include <QString>
 
 
 /** Show Partition properties.

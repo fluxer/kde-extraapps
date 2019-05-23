@@ -12,8 +12,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 namespace Okular
 {

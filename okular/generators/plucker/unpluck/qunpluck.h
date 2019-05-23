@@ -20,7 +20,7 @@
 
 class Context;
 class RecordNode;
-class QTextDocument;
+#include <QTextDocument>
 
 namespace Okular {
 class Action;

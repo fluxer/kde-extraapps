@@ -25,8 +25,8 @@
 #include "ui_itemviewsettingspage.h"
 
 class ColorButton;
-class QSignalMapper;
-class QTreeWidgetItem;
+#include <QSignalMapper>
+#include <QTreeWidgetItem>
 
 class ItemViewSettingsPage : public SettingsPage
 {

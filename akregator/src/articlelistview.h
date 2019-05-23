@@ -36,9 +36,9 @@
 
 class KUrl;
 
-class QContextMenuEvent;
-class QPaintEvent;
-template <class T> class QList;
+#include <QContextMenuEvent>
+#include <QPaintEvent>
+#include <QList>
 
 namespace Akregator {
 

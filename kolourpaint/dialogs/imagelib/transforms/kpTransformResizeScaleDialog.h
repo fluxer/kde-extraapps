@@ -35,9 +35,9 @@
 #include <kpTransformResizeScaleCommand.h>
 
 
-class QCheckBox;
-class QGroupBox;
-class QToolButton;
+#include <QCheckBox>
+#include <QGroupBox>
+#include <QToolButton>
 
 class KComboBox;
 class KDoubleNumInput;

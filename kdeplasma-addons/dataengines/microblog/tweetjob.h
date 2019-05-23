@@ -30,7 +30,7 @@
 #include <Plasma/ServiceJob>
 
 // forward declarations
-//class QXmlStreamReader;
+//#include <QXmlStreamReader>
 
 class KJob;
 

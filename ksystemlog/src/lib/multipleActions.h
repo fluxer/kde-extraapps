@@ -33,7 +33,7 @@
 
 #include "logModeAction.h"
 
-class QAction;
+#include <QAction>
 
 /**
  * This class is used by LogModeFactory to provide multiple actions

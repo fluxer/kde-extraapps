@@ -30,7 +30,7 @@
 class KAction;
 class KActionCollection;
 
-class QWidget;
+#include <QWidget>
 
 namespace Akregator {
 

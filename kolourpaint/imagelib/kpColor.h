@@ -33,7 +33,7 @@
 #include <qcolor.h>
 
 
-class QDataStream;
+#include <QDataStream>
 
 
 //

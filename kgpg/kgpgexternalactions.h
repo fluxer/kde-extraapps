@@ -29,8 +29,8 @@ class KGpgTextInterface;
 class KJob;
 class KShortcut;
 class KTemporaryFile;
-class QFont;
-class QString;
+#include <QFont>
+#include <QString>
 
 /**
  * @brief handle actions called from outside the application

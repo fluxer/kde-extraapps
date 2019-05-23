@@ -35,9 +35,9 @@
 #include <QToolButton>
 
 
-class QKeyEvent;
-class QMouseEvent;
-class QTimer;
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QTimer>
 
 
 class kpColorSimilarityToolBarItem : public QToolButton,

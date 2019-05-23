@@ -29,8 +29,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <lib/document/abstractdocumenteditor.h>
 #include <lib/document/abstractdocumentimpl.h>
 
-class QByteArray;
-class QIODevice;
+#include <QByteArray>
+#include <QIODevice>
 
 class KUrl;
 

@@ -23,7 +23,7 @@
 #include "kompare.h"
 #include "diff2export.h"
 
-class QWidget;
+#include <QWidget>
 class KConfig;
 
 class DIFF2_EXPORT SettingsBase : public QObject

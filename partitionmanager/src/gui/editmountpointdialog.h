@@ -26,8 +26,8 @@
 class EditMountPointDialogWidget;
 class Partition;
 
-class QWidget;
-class QString;
+#include <QWidget>
+#include <QString>
 
 class EditMountPointDialog : public KDialog
 {

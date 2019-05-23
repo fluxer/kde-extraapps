@@ -35,8 +35,8 @@
 #include <QIcon>
 #include <QList>
 
-class QDomElement;
-class QString;
+#include <QDomElement>
+#include <QString>
 
 namespace Akregator {
 

@@ -23,7 +23,7 @@
 #include <keditlistwidget.h>
 #include <QtCore/qdatetime.h>
 
-class QTimeEdit;
+#include <QTimeEdit>
 class KLineEdit;
 /**
 	@author

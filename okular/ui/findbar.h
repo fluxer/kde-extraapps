@@ -12,7 +12,7 @@
 
 #include <qwidget.h>
 
-class QAction;
+#include <QAction>
 class SearchLineWidget;
 
 namespace Okular {

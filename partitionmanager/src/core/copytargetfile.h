@@ -26,7 +26,7 @@
 #include <qglobal.h>
 #include <QFile>
 
-class QString;
+#include <QString>
 
 /** A file to copy to.
 

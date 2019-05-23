@@ -24,8 +24,8 @@
 
 #include <Plasma/Plasma>
 
-class QBoxLayout;
-class QGraphicsWidget;
+#include <QBoxLayout>
+#include <QGraphicsWidget>
 
 namespace Plasma
 {

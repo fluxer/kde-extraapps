@@ -30,7 +30,7 @@
 #include <Plasma/IconWidget>
 #include "icongridlayout.h"
 
-class QSignalMapper;
+#include <QSignalMapper>
 class IconGridLayout;
 
 class DelayedSignalContainer : public QObject

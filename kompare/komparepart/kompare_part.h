@@ -27,8 +27,8 @@
 
 #include "kompareinterface.h"
 
-class QPrinter;
-class QWidget;
+#include <QPrinter>
+#include <QWidget>
 
 class KTemporaryFile;
 class KUrl;

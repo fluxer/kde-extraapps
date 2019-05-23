@@ -23,7 +23,7 @@
 
 #include <QObject>
 
-class QTcpSocket;
+#include <QTcpSocket>
 
 typedef struct z_stream_s *z_streamp;
 

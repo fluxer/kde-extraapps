@@ -32,11 +32,11 @@ class KPushButton;
 class KLineEdit;
 class KComboBox;
 
-class QWidget;
-class QSpinBox;
-class QCheckBox;
-class QStringList;
-class QFile;
+#include <QWidget>
+#include <QSpinBox>
+#include <QCheckBox>
+#include <QStringList>
+#include <QFile>
 
 class MountEntry;
 

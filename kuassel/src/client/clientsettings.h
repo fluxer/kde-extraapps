@@ -25,8 +25,8 @@
 
 #include "types.h"
 
-class QHostAddress;
-class QSslSocket;
+#include <QHostAddress>
+#include <QSslSocket>
 
 class ClientSettings : public Settings
 {

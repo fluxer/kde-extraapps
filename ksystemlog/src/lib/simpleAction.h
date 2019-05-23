@@ -30,7 +30,7 @@
 
 #include "logModeAction.h"
 
-class QAction;
+#include <QAction>
 
 class SimpleAction : public LogModeAction {
 	

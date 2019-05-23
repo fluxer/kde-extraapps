@@ -17,7 +17,7 @@
 
 class KUrl;
 class PageNumber;
-class QPainter;
+#include <QPainter>
 
 
 class pageInfo

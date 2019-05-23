@@ -31,7 +31,7 @@
 
 
 class ContactWidget;
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

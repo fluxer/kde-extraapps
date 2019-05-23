@@ -27,8 +27,8 @@
 
 #include "akregator_export.h"
 
-class QAction;
-class QObject;
+#include <QAction>
+#include <QObject>
 
 class KUrl;
 

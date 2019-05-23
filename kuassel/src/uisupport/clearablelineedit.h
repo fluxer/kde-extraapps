@@ -23,7 +23,7 @@
 
 #include <QLineEdit>
 
-class QToolButton;
+#include <QToolButton>
 
 class ClearableLineEdit : public QLineEdit
 {

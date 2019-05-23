@@ -23,7 +23,7 @@
 
 #include "../../remotepeer.h"
 
-class QDataStream;
+#include <QDataStream>
 
 class DataStreamPeer : public RemotePeer
 {

@@ -30,7 +30,7 @@
 #include <QWidget>
 
 class Operation;
-class QPoint;
+#include <QPoint>
 class KActionCollection;
 
 /** A list of pending operations.

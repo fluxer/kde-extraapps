@@ -18,7 +18,7 @@
 
 #include "kgpgeditkeytransaction.h"
 
-class QString;
+#include <QString>
 
 class KGpgAddPhoto: public KGpgEditKeyTransaction {
 	Q_OBJECT

@@ -26,8 +26,8 @@
 #include "ui_fileWatcherConfig.h"
 #include "ui_filtersConfig.h"
 
-class QFile;
-class QTextDocument;
+#include <QFile>
+#include <QTextDocument>
 class KDirWatch;
 class FileWatcherTextItem;
 

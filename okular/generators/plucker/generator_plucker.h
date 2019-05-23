@@ -17,7 +17,7 @@
 
 #include "qunpluck.h"
 
-class QTextDocument;
+#include <QTextDocument>
 
 class PluckerGenerator : public Okular::Generator
 {

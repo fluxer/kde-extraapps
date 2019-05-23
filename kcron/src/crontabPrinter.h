@@ -18,7 +18,7 @@
 
 #include "crontabPrinterWidget.h"
 
-class QString;
+#include <QString>
 
 class CrontabWidget;
 

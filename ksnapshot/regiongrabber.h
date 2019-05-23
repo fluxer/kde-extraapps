@@ -25,9 +25,9 @@
 #include <QVector>
 #include <QRect>
 
-class QPaintEvent;
-class QResizeEvent;
-class QMouseEvent;
+#include <QPaintEvent>
+#include <QResizeEvent>
+#include <QMouseEvent>
 
 class RegionGrabber : public QWidget
 {

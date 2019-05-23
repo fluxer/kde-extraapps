@@ -30,7 +30,7 @@
 #define kpTransformCropPrivate_H
 
 
-class QString;
+#include <QString>
 
 class kpCommand;
 class kpMainWindow;

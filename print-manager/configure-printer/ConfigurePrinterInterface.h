@@ -24,8 +24,8 @@
 #include <QtCore/QObject>
 #include <QtDBus/QDBusContext>
 
-class QTimer;
-class QWidget;
+#include <QTimer>
+#include <QWidget>
 class ConfigurePrinterInterface : public QObject, protected QDBusContext
 {
     Q_OBJECT

@@ -35,9 +35,9 @@
 #include <QVariant>
 
 
-class QKeyEvent;
-class QPoint;
-class QRect;
+#include <QKeyEvent>
+#include <QPoint>
+#include <QRect>
 
 class kpAbstractSelection;
 class kpAbstractSelectionContentCommand;

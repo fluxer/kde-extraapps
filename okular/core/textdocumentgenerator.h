@@ -17,8 +17,8 @@
 #include "textdocumentsettings.h"
 #include "../interfaces/configinterface.h"
 
-class QTextBlock;
-class QTextDocument;
+#include <QTextBlock>
+#include <QTextDocument>
 
 namespace Okular {
 

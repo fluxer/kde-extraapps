@@ -18,8 +18,8 @@
 #include <KUrl>
 
 class KTemporaryFile;
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 #include "transactions/kgpgencrypt.h"
 

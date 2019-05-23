@@ -27,7 +27,7 @@
 
 #include "plasma_potd_export.h"
 
-class QImage;
+#include <QImage>
 
 #define POTDPROVIDER_EXPORT_PLUGIN( classname, componentName, catalogName ) \
     K_PLUGIN_FACTORY( classname ## Factory, registerPlugin< classname >(); ) \

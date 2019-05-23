@@ -32,7 +32,7 @@ class Buffer;
 class ChatLine;
 class ChatScene;
 class MessageFilter;
-class QMenu;
+#include <QMenu>
 
 class ChatView : public QGraphicsView, public AbstractChatView
 {

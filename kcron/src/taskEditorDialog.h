@@ -25,11 +25,11 @@
 #include <ktitlewidget.h>
 #include <kmimetype.h>
 
-class QLabel;
-class QLineEdit;
-class QCheckBox;
-class QGridLayout;
-class QHBoxLayout;
+#include <QLabel>
+#include <QLineEdit>
+#include <QCheckBox>
+#include <QGridLayout>
+#include <QHBoxLayout>
 
 class KUrlRequester;
 

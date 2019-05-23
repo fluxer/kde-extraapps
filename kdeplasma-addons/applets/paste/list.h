@@ -21,9 +21,9 @@
 #include <Plasma/Dialog>
 #include "ui_list.h"
 
-class QStandardItemModel;
+#include <QStandardItemModel>
 class ConfigData;
-class QWidget;
+#include <QWidget>
 
 class ListForm : public QWidget, public Ui::ListForm
 {

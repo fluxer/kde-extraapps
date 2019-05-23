@@ -33,7 +33,7 @@
 #include <kpNamedCommand.h>
 
 
-class QRect;
+#include <QRect>
 
 //class kpImage;
 class kpMainWindow;

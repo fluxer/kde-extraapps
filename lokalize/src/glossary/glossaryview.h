@@ -30,12 +30,12 @@
 //#include <QList>
 class Catalog;
 class FlowLayout;
-class QDragEnterEvent;
-class QDropEvent;
-class QEvent;
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QEvent>
 class KAction;
-class QFrame;
-class QScrollArea;
+#include <QFrame>
+#include <QScrollArea>
 #include <QVector>
 
 namespace GlossaryNS {

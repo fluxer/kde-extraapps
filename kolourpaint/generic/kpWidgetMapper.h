@@ -30,9 +30,9 @@
 #define KP_WIDGET_MAPPER_H
 
 
-class QWidget;
-class QPoint;
-class QRect;
+#include <QWidget>
+#include <QPoint>
+#include <QRect>
 
 
 namespace kpWidgetMapper

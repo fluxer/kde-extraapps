@@ -35,8 +35,8 @@ class DockConfig;
 class AbstractTaskItem;
 class KConfigDialog;
 class KConfigGroup;
-class QTimer;
-class QDBusServiceWatcher;
+#include <QTimer>
+#include <QDBusServiceWatcher>
 
 class DockManager : public QObject
 {

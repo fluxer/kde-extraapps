@@ -23,8 +23,8 @@
 
 #include <X11/XKBlib.h>
 
-class QChar;
-class QString;
+#include <QChar>
+#include <QString>
 
 namespace Helpers
 {

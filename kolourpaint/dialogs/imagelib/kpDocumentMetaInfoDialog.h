@@ -33,7 +33,7 @@
 #include <kdialog.h>
 
 
-class QTableWidgetItem;
+#include <QTableWidgetItem>
 
 class kpDocumentMetaInfo;
 

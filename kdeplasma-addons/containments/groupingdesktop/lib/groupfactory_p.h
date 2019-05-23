@@ -29,7 +29,7 @@
 
 #include "groupinfo.h"
 
-class QGraphicsItem;
+#include <QGraphicsItem>
 class AbstractGroup;
 
 typedef AbstractGroup *(*CreatorFunction)(QGraphicsItem *);

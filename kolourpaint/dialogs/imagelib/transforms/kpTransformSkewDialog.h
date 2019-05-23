@@ -36,7 +36,7 @@
 #include <kpTransformPreviewDialog.h>
 
 
-class QPixmap;
+#include <QPixmap>
 
 class KIntNumInput;
 

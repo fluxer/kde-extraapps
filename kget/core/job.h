@@ -27,7 +27,7 @@
 
 #include <QPixmap>
 
-class QDomNode;
+#include <QDomNode>
 
 class Scheduler;
 class JobQueue;

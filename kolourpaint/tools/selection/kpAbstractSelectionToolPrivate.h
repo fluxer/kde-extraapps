@@ -35,7 +35,7 @@
 #include <kpAbstractSelectionTool.h>
 
 
-class QTimer;
+#include <QTimer>
 
 class kpAbstractSelectionContentCommand;
 class kpToolSelectionMoveCommand;

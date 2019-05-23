@@ -28,7 +28,7 @@
 
 class Device;
 class KPluginFactory;
-class QString;
+#include <QString>
 
 /** Dummy backend plugin that doesn't really do anything.
 

@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KCALC_H_
 
 class Constants;
-class QButtonGroup;
+#include <QButtonGroup>
 class KToggleAction;
 class KCalcConstMenu;
 

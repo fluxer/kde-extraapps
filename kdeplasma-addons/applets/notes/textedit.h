@@ -26,7 +26,7 @@
 
 #include "ui_config.h"
 
-class QContextMenuEvent;
+#include <QContextMenuEvent>
 
 namespace Plasma
 {

@@ -18,9 +18,9 @@
 #include "core/observer.h"
 #include "core/pagetransition.h"
 
-class QLineEdit;
-class QToolBar;
-class QTimer;
+#include <QLineEdit>
+#include <QToolBar>
+#include <QTimer>
 class KActionCollection;
 class KSelectAction;
 class SmoothPathEngine;

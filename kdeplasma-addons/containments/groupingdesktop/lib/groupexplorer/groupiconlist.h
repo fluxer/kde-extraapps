@@ -27,7 +27,7 @@
 
 #include <Plasma/Plasma>
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

@@ -21,7 +21,7 @@
 #include <KDialog>
 
 class KDatePicker;
-class QCheckBox;
+#include <QCheckBox>
 
 /**
  * @brief shows a dialog to choose expiry date

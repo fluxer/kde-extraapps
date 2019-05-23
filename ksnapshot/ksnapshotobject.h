@@ -28,10 +28,10 @@
 
 #include <KUrl>
 #include <QPixmap>
-class QWidget;
+#include <QWidget>
 class RegionGrabber;
 class FreeRegionGrabber;
-class QString;
+#include <QString>
 
 class KSnapshotObject
 {

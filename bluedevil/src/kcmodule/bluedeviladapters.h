@@ -25,12 +25,12 @@
 
 #include <kcmodule.h>
 
-class QVBoxLayout;
-class QRadioButton;
-class QSlider;
-class QLabel;
-class QCheckBox;
-class QFormLayout;
+#include <QVBoxLayout>
+#include <QRadioButton>
+#include <QSlider>
+#include <QLabel>
+#include <QCheckBox>
+#include <QFormLayout>
 
 class KLineEdit;
 

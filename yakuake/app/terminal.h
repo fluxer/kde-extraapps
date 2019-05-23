@@ -25,7 +25,7 @@
 #include <KParts/Part>
 
 
-class QKeyEvent;
+#include <QKeyEvent>
 
 class TerminalInterface;
 

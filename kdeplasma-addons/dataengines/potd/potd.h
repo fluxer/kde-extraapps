@@ -24,7 +24,7 @@
 
 class PotdProvider;
 
-class QTimer;
+#include <QTimer>
 
 /**
  * This class provides the Pictures of The Day from various online websites.

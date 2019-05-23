@@ -30,7 +30,7 @@
 #include "ui_createidentitydlg.h"
 #include "ui_saveidentitiesdlg.h"
 
-class QAbstractItemModel;
+#include <QAbstractItemModel>
 
 class IdentitiesSettingsPage : public SettingsPage
 {

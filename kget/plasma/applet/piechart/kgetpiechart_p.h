@@ -28,7 +28,7 @@
 #include <KColorCollection>
 #include <KIO/Job>
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

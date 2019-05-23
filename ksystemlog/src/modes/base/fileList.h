@@ -29,7 +29,7 @@
 
 #include "ui_fileListBase.h"
 
-class QVBoxLayout;
+#include <QVBoxLayout>
 
 class FileList : public QWidget, public Ui::FileListBase {
 

@@ -20,8 +20,8 @@
 
 #include "core/transfer.h"
 
-class QAction;
-class QTimer;
+#include <QAction>
+#include <QTimer>
 class KMenu;
 
 class MainWindow;

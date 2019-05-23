@@ -28,7 +28,7 @@
 
 #include <QtCore/QMap>
 
-class QString;
+#include <QString>
 
 typedef QMap<QString, QString> AttributeToValueMap;
 

@@ -37,7 +37,7 @@
 #include <QtCore/qabstractitemmodel.h>
 #include <QTimer>
 
-class QTreeView;
+#include <QTreeView>
 
 #include "ui_dbparams.h"
 #include <kdialog.h>

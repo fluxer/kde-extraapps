@@ -30,7 +30,7 @@
 #include <QWidget>
 
 class Device;
-class QPoint;
+#include <QPoint>
 class KActionCollection;
 
 /** A list of devices.

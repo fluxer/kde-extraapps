@@ -19,7 +19,7 @@
 #include "../kget_export.h"
 #include "kget.h"
 
-class QAction;
+#include <QAction>
 
 class QObjectInterface;
 class TransferGroupObserver;

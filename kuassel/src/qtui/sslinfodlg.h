@@ -26,7 +26,7 @@
 
 #include "ui_sslinfodlg.h"
 
-class QSslSocket;
+#include <QSslSocket>
 
 // ========================================
 //  SslInfoDialog

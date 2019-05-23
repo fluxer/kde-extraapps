@@ -36,7 +36,7 @@ class DocumentWidget;
 class dvifile;
 class dviRenderer;
 class ghostscript_interface;
-class QEventLoop;
+#include <QEventLoop>
 class KProgressDialog;
 class PreBookmark;
 class TeXFontDefinition;

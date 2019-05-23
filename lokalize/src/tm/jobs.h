@@ -31,7 +31,7 @@
 #include <kurl.h>
 #include <QString>
 #include <QSqlDatabase>
-class QSqlQuery;
+#include <QSqlQuery>
 
 /**
  * Translation Memory classes. see initDb() function for the database scheme

@@ -27,7 +27,7 @@
 
 #include <syndication/specificdocument.h>
 
-template <class T> class QList;
+#include <QList>
 
 namespace Syndication {
 namespace RDF {

@@ -33,7 +33,7 @@
 #include <kpEffectWidgetBase.h>
 
 
-class QCheckBox;
+#include <QCheckBox>
 
 
 class kpEffectInvertWidget : public kpEffectWidgetBase

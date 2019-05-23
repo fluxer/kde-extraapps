@@ -40,7 +40,7 @@
 
 #include "logMode.h"
 
-class QWidget;
+#include <QWidget>
 
 class OpenLogMode : public LogMode {
 	

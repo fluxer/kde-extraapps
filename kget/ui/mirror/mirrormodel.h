@@ -26,7 +26,7 @@
 #include <KIcon>
 #include <KUrl>
 
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 
 class MirrorDelegate : public QStyledItemDelegate
 {

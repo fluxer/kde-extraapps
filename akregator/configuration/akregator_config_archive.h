@@ -30,7 +30,7 @@
 
 #include "akregatorconfig.h"
 
-class QButtonGroup;
+#include <QButtonGroup>
 
 class KCMAkregatorArchiveConfig : public KCModule
 {

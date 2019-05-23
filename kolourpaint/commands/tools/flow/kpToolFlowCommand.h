@@ -33,8 +33,8 @@
 #include <kpNamedCommand.h>
 
 
-class QPoint;
-class QRect;
+#include <QPoint>
+#include <QRect>
 
 
 class kpToolFlowCommand : public kpNamedCommand

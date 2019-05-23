@@ -42,8 +42,8 @@ class KConfig;
 class KFileItem;
 class KConfigGroup;
 
-class QDomDocument;
-class QSplitter;
+#include <QDomDocument>
+#include <QSplitter>
 
 namespace Akregator {
 

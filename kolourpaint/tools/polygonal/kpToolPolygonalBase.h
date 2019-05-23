@@ -44,10 +44,10 @@
 #include <kpToolWidgetFillStyle.h>
 
 
-class QPoint;
-class QPolygon;
-class QRect;
-class QString;
+#include <QPoint>
+#include <QPolygon>
+#include <QRect>
+#include <QString>
 
 class kpView;
 

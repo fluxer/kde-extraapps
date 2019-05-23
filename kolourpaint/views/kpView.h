@@ -35,15 +35,15 @@
 #include <kpDefs.h>
 
 
-class QDragEnterEvent;
-class QDragLeaveEvent;
-class QEvent;
-class QFocusEvent;
-class QKeyEvent;
-class QMouseEvent;
-class QPaintEvent;
-class QPixmap;
-class QResizeEvent;
+#include <QDragEnterEvent>
+#include <QDragLeaveEvent>
+#include <QEvent>
+#include <QFocusEvent>
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QPaintEvent>
+#include <QPixmap>
+#include <QResizeEvent>
 
 class kpAbstractSelection;
 class kpDocument;

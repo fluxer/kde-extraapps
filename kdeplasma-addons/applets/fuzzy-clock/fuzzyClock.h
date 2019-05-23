@@ -26,8 +26,8 @@
 
 #include "ui_fuzzyClockConfig.h"
 
-class QTime;
-class QDate;
+#include <QTime>
+#include <QDate>
 
 class KLocalizedString;
 

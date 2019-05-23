@@ -19,7 +19,7 @@
 #include <QStringList>
 
 class KGpgKeyNode;
-class QString;
+#include <QString>
 
 /**
  * GnuPG interface functions

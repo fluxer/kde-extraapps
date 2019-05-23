@@ -12,7 +12,7 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
-class QImage;
+#include <QImage>
 
 bool TranscribePalmImageToJPEG( unsigned char *image_in, QImage &image );
 bool TranscribeMultiImageRecord( plkr_Document *doc, QImage &image, unsigned char *bytes );

@@ -23,13 +23,13 @@
 
 // QT
 #include <QCheckBox>
-class QLabel;
+#include <QLabel>
 #include <QGridLayout>
-class QHBoxLayout;
+#include <QHBoxLayout>
 #include <qlist.h>
 #include <QListWidget>
-class QScrollArea;
-class QVBoxLayout;
+#include <QScrollArea>
+#include <QVBoxLayout>
 
 // QT DND
 #include <QtGui/qevent.h>
@@ -45,7 +45,7 @@ class QVBoxLayout;
 
 class DialogViewConfigurationItem : public QListWidgetItem
 {
- friend class QDataStream;
+ friend #include <QDataStream>
 
 
  public:

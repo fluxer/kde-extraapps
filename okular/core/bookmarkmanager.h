@@ -14,7 +14,7 @@
 
 #include "okular_export.h"
 
-class QAction;
+#include <QAction>
 class KUrl;
 
 namespace Okular {

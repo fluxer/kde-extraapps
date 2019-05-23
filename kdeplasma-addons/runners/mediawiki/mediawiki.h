@@ -25,7 +25,7 @@
 #include <QList>
 #include <QUrl>
 
-class QNetworkReply;
+#include <QNetworkReply>
 
 /**
  * Searches MediaWiki based wikis like wikipedia and techbase.

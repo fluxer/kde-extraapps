@@ -25,7 +25,7 @@
 
 #include <syndication/rdf/property.h>
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 namespace RDF {

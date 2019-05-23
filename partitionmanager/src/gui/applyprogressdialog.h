@@ -35,9 +35,9 @@ class ApplyProgressDetailsWidget;
 class Report;
 
 
-class QTreeWidgetItem;
-class QCloseEvent;
-class QKeyEvent;
+#include <QTreeWidgetItem>
+#include <QCloseEvent>
+#include <QKeyEvent>
 
 /** Show progress.
 

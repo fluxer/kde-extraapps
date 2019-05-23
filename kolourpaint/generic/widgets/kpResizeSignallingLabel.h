@@ -33,7 +33,7 @@
 #include <qlabel.h>
 
 
-class QResizeEvent;
+#include <QResizeEvent>
 
 
 class kpResizeSignallingLabel : public QLabel

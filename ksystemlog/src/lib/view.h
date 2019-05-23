@@ -30,8 +30,8 @@
 #include "logViewColumn.h"
 #include "logViewColumns.h"
 
-class QDropEvent;
-class QDragEnterEvent;
+#include <QDropEvent>
+#include <QDragEnterEvent>
 
 
 class LoadingBar;

@@ -25,7 +25,7 @@
 
 #include <QObject>
 
-class QString;
+#include <QString>
 
 class LogManager;
 

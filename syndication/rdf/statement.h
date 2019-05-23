@@ -26,7 +26,7 @@
 
 #include <boost/shared_ptr.hpp>
 
-class QString;
+#include <QString>
 
 namespace Syndication {
 namespace RDF {

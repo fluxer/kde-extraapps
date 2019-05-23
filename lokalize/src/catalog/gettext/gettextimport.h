@@ -41,7 +41,7 @@
 #include <QStringList>
 #include <QTextStream>
 
-class QTextCodec;
+#include <QTextCodec>
 
 namespace GettextCatalog {
 

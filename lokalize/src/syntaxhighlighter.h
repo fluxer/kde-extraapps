@@ -32,7 +32,7 @@
 #include <QtGui/qtextformat.h>
 
 
-class QTextDocument;
+#include <QTextDocument>
 
 class SyntaxHighlighter : public Sonnet::Highlighter
 {

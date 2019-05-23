@@ -27,9 +27,9 @@
 #include "actioncollection.h"
 #include "messagefilter.h"
 
-class QComboBox;
-class QDialogButtonBox;
-class QLineEdit;
+#include <QComboBox>
+#include <QDialogButtonBox>
+#include <QLineEdit>
 
 class NetworkModelController : public QObject
 {

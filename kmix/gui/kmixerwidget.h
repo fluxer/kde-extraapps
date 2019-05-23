@@ -25,7 +25,7 @@
 #include <vector>
 
 #include <QWidget>
-class QString;
+#include <QString>
 
 
 #include "core/ControlManager.h"

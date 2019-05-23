@@ -44,9 +44,9 @@ class RemoteView;
 class SystemTrayIcon;
 class TabbedViewWidget;
 
-class QScrollArea;
-class QModelIndex;
-class QTableView;
+#include <QScrollArea>
+#include <QModelIndex>
+#include <QTableView>
 
 #ifdef TELEPATHY_SUPPORT
 class TubesManager;

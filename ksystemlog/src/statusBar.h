@@ -25,7 +25,7 @@
 
 #include <kstatusbar.h>
 
-class QString;
+#include <QString>
 
 
 

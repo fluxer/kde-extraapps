@@ -24,7 +24,7 @@
 
 class KJob;
 class KUrl;
-class QObject;
+#include <QObject>
 
 /**
  * The FileDeleter is a wrapper around KIO ensuring that always

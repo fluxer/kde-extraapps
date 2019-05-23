@@ -29,8 +29,8 @@
 
 #include <boost/shared_ptr.hpp>
 
-class QByteArray;
-class QDomElement;
+#include <QByteArray>
+#include <QDomElement>
 
 namespace Syndication {
 namespace Atom {

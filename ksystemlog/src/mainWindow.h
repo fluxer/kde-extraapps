@@ -32,7 +32,7 @@
 
 #include <ktoggleaction.h>
 
-class QAction;
+#include <QAction>
 
 class LogManager;
 class LogMode;

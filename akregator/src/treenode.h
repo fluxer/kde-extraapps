@@ -31,13 +31,13 @@
 
 class KJob;
 
-class QDomDocument;
-class QDomElement;
-class QIcon;
-class QPoint;
-class QString;
-class QStringList;
-template <class T> class QList;
+#include <QDomDocument>
+#include <QDomElement>
+#include <QIcon>
+#include <QPoint>
+#include <QString>
+#include <QStringList>
+#include <QList>
 
 namespace Akregator
 {

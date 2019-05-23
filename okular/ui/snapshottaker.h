@@ -14,7 +14,7 @@
 
 #include <QtCore/QObject>
 
-class QImage;
+#include <QImage>
 
 class SnapshotTaker : public QObject
 {

@@ -13,7 +13,7 @@
 
 #include <QHash>
 
-class QString;
+#include <QString>
 
 
 class fontEncodingPool {

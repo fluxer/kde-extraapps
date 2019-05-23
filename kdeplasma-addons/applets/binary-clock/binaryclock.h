@@ -27,8 +27,8 @@
 
 #include "ui_clockConfig.h"
 
-class QTime;
-class QColor;
+#include <QTime>
+#include <QColor>
 
 namespace Plasma {
     class DataEngine;

@@ -27,7 +27,7 @@
 
 #include "quassel.h"
 
-class QMetaMethod;
+#include <QMetaMethod>
 
 // MIBenum values from http://www.iana.org/assignments/character-sets/character-sets.xml#table-character-sets-1
 static QList<int> utf8DetectionBlacklist = QList<int>()

@@ -25,8 +25,8 @@
 
 #include <QWidget>
 
-class QStringList;
-class QPlainTextEdit;
+#include <QStringList>
+#include <QPlainTextEdit>
 
 class EditMountOptionsDialogWidget : public QWidget, public Ui::EditMountOptionsDialogWidgetBase
 {

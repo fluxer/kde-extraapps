@@ -23,7 +23,7 @@
 
 #include "kompare.h"
 
-class QTextDecoder;
+#include <QTextDecoder>
 
 class DiffSettings;
 

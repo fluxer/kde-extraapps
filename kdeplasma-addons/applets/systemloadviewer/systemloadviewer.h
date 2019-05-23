@@ -30,11 +30,11 @@
 #include "ui_coloursconfig.h"
 #include "ui_generalconfig.h"
 
-class QString;
-class QSizeF;
-class QPainter;
-class QStyleOptionGraphicsItem;
-class QPoint;
+#include <QString>
+#include <QSizeF>
+#include <QPainter>
+#include <QStyleOptionGraphicsItem>
+#include <QPoint>
 
 class SystemLoadViewer : public Plasma::Applet
 {

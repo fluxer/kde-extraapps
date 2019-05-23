@@ -20,8 +20,8 @@
 #include "global.h"
 #include "okular_export.h"
 
-class QPolygonF;
-class QRect;
+#include <QPolygonF>
+#include <QRect>
 
 namespace Okular {
 

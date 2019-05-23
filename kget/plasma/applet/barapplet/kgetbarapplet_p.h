@@ -29,8 +29,8 @@ namespace Plasma
     class ScrollWidget;
 }
 
-class QGraphicsProxyWidget;
-class QProgressBar;
+#include <QGraphicsProxyWidget>
+#include <QProgressBar>
 
 class KGetBarApplet::Private : public QGraphicsWidget
 {

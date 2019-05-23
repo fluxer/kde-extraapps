@@ -29,8 +29,8 @@
 
 #include "../kget_export.h"
 
-class QDomElement;
-class QFile;
+#include <QDomElement>
+#include <QFile>
 class TransferHandler;
 class VerificationModel;
 class VerifierPrivate;

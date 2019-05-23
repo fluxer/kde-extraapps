@@ -28,7 +28,7 @@ License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // KDE
 
-class QSplitter;
+#include <QSplitter>
 
 namespace KSaneIface {
 

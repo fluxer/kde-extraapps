@@ -20,8 +20,8 @@
 
 #include <QtGlobal>
 
-class QString;
-class QKeySequence;
+#include <QString>
+#include <QKeySequence>
 
 class SendKeys
 {

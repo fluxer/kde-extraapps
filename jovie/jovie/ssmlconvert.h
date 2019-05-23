@@ -27,8 +27,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QStringList>
 
-class QProcess;
-class QString;
+#include <QProcess>
+#include <QString>
 
 /**
   * @class SsmlConvert

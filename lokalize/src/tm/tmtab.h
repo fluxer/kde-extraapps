@@ -37,10 +37,10 @@
 class QaView;
 class Ui_QueryOptions;
 class KLineEdit;
-class QComboBox;
-class QTreeView;
-class QSortFilterProxyModel;
-class QCheckBox;
+#include <QComboBox>
+#include <QTreeView>
+#include <QSortFilterProxyModel>
+#include <QCheckBox>
 
 
 namespace ThreadWeaver{class Job;}

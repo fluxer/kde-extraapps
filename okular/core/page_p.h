@@ -22,7 +22,7 @@
 #include "global.h"
 #include "area.h"
 
-class QColor;
+#include <QColor>
 
 namespace Okular {
 

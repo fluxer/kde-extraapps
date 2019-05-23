@@ -36,8 +36,8 @@
 
 class Catalog;
 class KAction;
-class QDropEvent;
-class QDragEnterEvent;
+#include <QDropEvent>
+#include <QDragEnterEvent>
 
 namespace ThreadWeaver{class Job;}
 

@@ -26,7 +26,7 @@
 class Partition;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Check a FileSystem.
 	@author Volker Lanz <vl@fidra.de>

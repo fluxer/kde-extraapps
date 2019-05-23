@@ -28,7 +28,7 @@
 
 class Partition;
 class PartWidget;
-class QWidget;
+#include <QWidget>
 
 /** Base class for all widgets that need to position Partitions.
 	@author Volker Lanz <vl@fidra.de>

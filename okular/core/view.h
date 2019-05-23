@@ -12,8 +12,8 @@
 
 #include "okular_export.h"
 
-class QString;
-class QVariant;
+#include <QString>
+#include <QVariant>
 
 namespace Okular {
 

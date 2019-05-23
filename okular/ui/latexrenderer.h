@@ -15,8 +15,8 @@
 
 #include <QStringList>
 
-class QString;
-class QColor;
+#include <QString>
+#include <QColor>
 
 namespace GuiUtils
 {

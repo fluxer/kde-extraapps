@@ -27,7 +27,7 @@
 
 #include <ktabwidget.h>
 
-class QString;
+#include <QString>
 
 namespace Akregator
 {

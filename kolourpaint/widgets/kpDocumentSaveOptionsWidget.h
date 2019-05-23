@@ -39,9 +39,9 @@
 
 
 class KComboBox;
-class QImage;
-class QLabel;
-class QTimer;
+#include <QImage>
+#include <QLabel>
+#include <QTimer>
 
 class KIntNumInput;
 class KPushButton;

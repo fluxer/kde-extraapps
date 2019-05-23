@@ -28,14 +28,14 @@
 #include "mergecatalog.h"
 
 #include <QDockWidget>
-class QTreeView;
+#include <QTreeView>
 class CatalogTreeFilterModel;
 class CatalogTreeModel;
 class Catalog;
 class KLineEdit;
-class QMenu;
-class QAction;
-class QModelIndex;
+#include <QMenu>
+#include <QAction>
+#include <QModelIndex>
 class CatalogTreeView;
 
 class CatalogView: public QDockWidget

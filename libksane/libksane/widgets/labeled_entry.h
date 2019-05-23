@@ -34,7 +34,7 @@
  *@author Kåre Särs
  */
 
-class QPushButton;
+#include <QPushButton>
 class KLineEdit;
 
 namespace KSaneIface

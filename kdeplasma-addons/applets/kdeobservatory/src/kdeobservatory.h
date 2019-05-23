@@ -26,11 +26,11 @@
 #include <Plasma/PopupApplet>
 #include <Plasma/DataEngine>
 
-class QTimer;
-class QTimeLine;
-class QNetworkReply;
-class QGraphicsLinearLayout;
-class QGraphicsItemAnimation;
+#include <QTimer>
+#include <QTimeLine>
+#include <QNetworkReply>
+#include <QGraphicsLinearLayout>
+#include <QGraphicsItemAnimation>
 
 class IViewProvider;
 class KdeObservatoryConfigViews;

@@ -30,9 +30,9 @@
 #include "ignorelistmodel.h"
 #include "clientignorelistmanager.h"
 
-class QEvent;
-class QPainter;
-class QAbstractItemModel;
+#include <QEvent>
+#include <QPainter>
+#include <QAbstractItemModel>
 
 // the delegate is used to draw the checkbox in column 0
 class IgnoreListDelegate : public QStyledItemDelegate

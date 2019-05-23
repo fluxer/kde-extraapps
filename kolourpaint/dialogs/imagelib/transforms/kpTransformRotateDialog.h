@@ -37,8 +37,8 @@
 #include <kpTransformPreviewDialog.h>
 
 
-class QButtonGroup;
-class QRadioButton;
+#include <QButtonGroup>
+#include <QRadioButton>
 
 class KIntNumInput;
 

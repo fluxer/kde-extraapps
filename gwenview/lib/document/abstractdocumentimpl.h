@@ -31,8 +31,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <lib/document/document.h>
 #include <lib/orientation.h>
 
-class QImage;
-class QRect;
+#include <QImage>
+#include <QRect>
 
 namespace Gwenview
 {

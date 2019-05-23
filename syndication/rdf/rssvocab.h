@@ -24,8 +24,8 @@
 
 #include <syndication/ksyndication_export.h>
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 namespace boost {
     template <class T> class shared_ptr;

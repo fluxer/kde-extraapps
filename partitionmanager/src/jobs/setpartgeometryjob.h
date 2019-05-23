@@ -29,7 +29,7 @@ class Partition;
 class Device;
 class Report;
 
-class QString;
+#include <QString>
 
 /** Set a Partition's geometry.
 

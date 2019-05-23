@@ -23,8 +23,8 @@
 // Plasma
 #include <plasma/dialog.h>
 
-class QLabel;
-class QPixmap;
+#include <QLabel>
+#include <QPixmap>
 
 class PreviewDialog : public Plasma::Dialog
 {

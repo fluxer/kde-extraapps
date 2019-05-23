@@ -30,7 +30,7 @@
 #include "types.h"
 #include "selectionmodelsynchronizer.h"
 
-class QAbstractItemView;
+#include <QAbstractItemView>
 
 class BufferModel : public QSortFilterProxyModel
 {

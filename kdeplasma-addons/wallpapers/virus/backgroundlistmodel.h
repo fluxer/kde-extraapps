@@ -20,7 +20,7 @@
 
 #include <Plasma/Wallpaper>
 
-class QEventLoop;
+#include <QEventLoop>
 class KProgressDialog;
 
 namespace Plasma

@@ -31,7 +31,7 @@
 #include "chunk.h"
 
 
-class QStringList;
+#include <QStringList>
 
 namespace bt
 {

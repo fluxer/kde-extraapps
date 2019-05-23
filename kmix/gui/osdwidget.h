@@ -26,8 +26,8 @@
 
 #include <QPixmap>
 
-class QTimer;
-class QGraphicsWidget;
+#include <QTimer>
+#include <QGraphicsWidget>
 
 namespace Plasma
 {

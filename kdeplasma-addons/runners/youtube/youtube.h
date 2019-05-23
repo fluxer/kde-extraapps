@@ -27,8 +27,8 @@
 
 #include <KUrl>
 
-class QNetworkAccessManager;
-class QNetworkReply;
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 class YouTube : public Plasma::AbstractRunner {
     Q_OBJECT

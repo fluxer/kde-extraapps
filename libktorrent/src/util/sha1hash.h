@@ -24,7 +24,7 @@
 #include <ktorrent_export.h>
 #include "constants.h"
 
-class QString;
+#include <QString>
 
 namespace bt
 {

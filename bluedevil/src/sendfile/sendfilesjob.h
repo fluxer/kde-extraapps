@@ -35,7 +35,7 @@ namespace BlueDevil
     class Device;
 }
 
-class QDBusPendingCallWatcher;
+#include <QDBusPendingCallWatcher>
 class OrgBluezObexClient1Interface;
 class OrgBluezObexObjectPush1Interface;
 class OrgFreedesktopDBusPropertiesInterface;

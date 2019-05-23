@@ -26,9 +26,9 @@
 
 #include <KIO/Job>
 
-class QEvent;
-class QDropEvent;
-class QGraphicsLinearLayout;
+#include <QEvent>
+#include <QDropEvent>
+#include <QGraphicsLinearLayout>
 class ErrorWidget;
 
 namespace Plasma

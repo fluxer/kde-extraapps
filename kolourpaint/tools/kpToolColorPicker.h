@@ -34,8 +34,8 @@
 #include <kpTool.h>
 
 
-class QPoint;
-class QRect;
+#include <QPoint>
+#include <QRect>
 
 
 class kpToolColorPicker : public kpTool

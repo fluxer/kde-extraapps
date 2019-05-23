@@ -24,7 +24,7 @@
 #include "torrentfilemodel.h"
 #include <util/bitset.h>
 
-class QSortFilterProxyModel;
+#include <QSortFilterProxyModel>
 
 namespace bt
 {

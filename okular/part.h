@@ -32,10 +32,10 @@
 
 #include <QtDBus/QtDBus>
 
-class QAction;
-class QWidget;
-class QPrinter;
-class QMenu;
+#include <QAction>
+#include <QWidget>
+#include <QPrinter>
+#include <QMenu>
 
 class KUrl;
 class KConfigDialog;

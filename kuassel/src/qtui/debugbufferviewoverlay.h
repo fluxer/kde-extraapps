@@ -23,9 +23,9 @@
 
 #include "ui_debugbufferviewoverlay.h"
 
-class QLabel;
-class QLineEdit;
-class QTextEdit;
+#include <QLabel>
+#include <QLineEdit>
+#include <QTextEdit>
 
 class DebugBufferViewOverlay : public QWidget
 {

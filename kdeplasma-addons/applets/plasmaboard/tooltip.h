@@ -24,9 +24,9 @@
 #include <Plasma/FrameSvg>
 #include <Plasma/WindowEffects>
 
-class QWidget;
-class QLabel;
-class QHBoxLayout;
+#include <QWidget>
+#include <QLabel>
+#include <QHBoxLayout>
 
 class Tooltip : public QWidget
 {

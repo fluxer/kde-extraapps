@@ -33,7 +33,7 @@
 class KIcon;
 class SingleFeedItem;
 class FeedData;
-class QPropertyAnimation;
+#include <QPropertyAnimation>
 
 namespace Plasma
 {

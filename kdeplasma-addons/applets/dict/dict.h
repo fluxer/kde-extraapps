@@ -24,10 +24,10 @@
 #include <Plasma/PopupApplet>
 #include <Plasma/DataEngine>
 
-class QTimer;
+#include <QTimer>
 class CheckableStringListModel;
 
-class QGraphicsLinearLayout;
+#include <QGraphicsLinearLayout>
 
 namespace Plasma
 {

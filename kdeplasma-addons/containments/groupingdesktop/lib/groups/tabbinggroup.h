@@ -25,8 +25,8 @@
 
 #include "ui_tabbinggroup_config.h"
 
-class QGraphicsLinearLayout;
-class QGraphicsProxyWidget;
+#include <QGraphicsLinearLayout>
+#include <QGraphicsProxyWidget>
 
 class KConfigDialog;
 

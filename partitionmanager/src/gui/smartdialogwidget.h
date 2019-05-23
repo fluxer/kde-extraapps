@@ -23,8 +23,8 @@
 
 #include "ui_smartdialogwidgetbase.h"
 
-class QStyledItemDelegate;
-class QPoint;
+#include <QStyledItemDelegate>
+#include <QPoint>
 
 /** Central widget in the SmartDialogWidget
 	@author Volker Lanz <vl@fidra.de>

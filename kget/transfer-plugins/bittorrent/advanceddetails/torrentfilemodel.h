@@ -25,8 +25,8 @@
 #include <QAbstractItemModel>
 #include <util/constants.h>
 
-class QTreeView;
-class QSortFilterProxyModel;
+#include <QTreeView>
+#include <QSortFilterProxyModel>
 
 namespace bt
 {

@@ -11,7 +11,7 @@
 
 #include "area.h"
 
-class QPixmap;
+#include <QPixmap>
 
 namespace Okular {
 

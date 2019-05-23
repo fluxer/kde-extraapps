@@ -27,8 +27,8 @@
 
 #include "akregator_export.h"
 
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 namespace Akregator {
 

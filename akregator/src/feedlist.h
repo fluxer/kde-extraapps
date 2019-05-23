@@ -33,11 +33,11 @@
 
 #include <boost/shared_ptr.hpp>
 
-class QDomDocument;
-class QDomNode;
-template <class T> class QList;
-template <class K,class T> class QHash;
-class QString;
+#include <QDomDocument>
+#include <QDomNode>
+#include <QList>
+#include <QHash>
+#include <QString>
 
 class KJob;
 

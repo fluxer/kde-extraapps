@@ -13,10 +13,10 @@
 #include <QtCore/QVector>
 #include <QtGui/QColor>
 
-class QTextBlockFormat;
-class QTextCharFormat;
-class QTextFormat;
-class QTextListFormat;
+#include <QTextBlockFormat>
+#include <QTextCharFormat>
+#include <QTextFormat>
+#include <QTextListFormat>
 class QTextTableFormat;
 
 namespace OOO {

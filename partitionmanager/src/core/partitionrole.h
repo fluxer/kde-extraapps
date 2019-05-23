@@ -25,7 +25,7 @@
 
 #include <qglobal.h>
 
-class QString;
+#include <QString>
 
 /** A Partition's role.
 

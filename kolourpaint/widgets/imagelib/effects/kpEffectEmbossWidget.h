@@ -34,7 +34,7 @@
 #include <kpEffectWidgetBase.h>
 
 
-class QCheckBox;
+#include <QCheckBox>
 
 class KIntNumInput;
 

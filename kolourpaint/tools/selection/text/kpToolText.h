@@ -33,7 +33,7 @@
 #include <kpAbstractSelectionTool.h>
 
 
-class QKeyEvent;
+#include <QKeyEvent>
 
 class kpColor;
 class kpTextStyle;

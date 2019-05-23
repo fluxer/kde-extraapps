@@ -25,8 +25,8 @@
 
 #include "core/kgpgkey.h"
 
-class QDragMoveEvent;
-class QDropEvent;
+#include <QDragMoveEvent>
+#include <QDropEvent>
 
 class KGpgNode;
 class KeyListProxyModel;

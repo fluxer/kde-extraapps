@@ -30,9 +30,9 @@ class Device;
 
 class NewDialog;
 
-class QPaintEvent;
-class QResizeEvent;
-class QMouseEvent;
+#include <QPaintEvent>
+#include <QResizeEvent>
+#include <QMouseEvent>
 
 /** Widget that allows the user to resize a Partition.
 	@author Volker Lanz <vl@fidra.de>

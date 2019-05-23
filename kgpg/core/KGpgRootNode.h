@@ -23,8 +23,8 @@
 #include "KGpgKeyNode.h"
 
 class KGpgGroupNode;
-class QString;
-class QStringList;
+#include <QString>
+#include <QStringList>
 
 /**
  * @brief The parent of all key data objects

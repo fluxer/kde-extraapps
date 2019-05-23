@@ -36,7 +36,7 @@
 #include <kpNamedCommand.h>
 
 
-class QTimer;
+#include <QTimer>
 
 class kpAbstractSelection;
 

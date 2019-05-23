@@ -53,7 +53,7 @@ class SignalProxy;
 
 struct NetworkInfo;
 
-class QScriptEngine;
+#include <QScriptEngine>
 
 class CoreSession : public QObject
 {

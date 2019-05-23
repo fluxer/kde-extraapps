@@ -36,8 +36,8 @@ class AlphaNumKey;
 class BoardKey;
 class DualKey;
 class FuncKey;
-class QSignalMapper;
-class QTimer;
+#include <QSignalMapper>
+#include <QTimer>
 class StickyKey;
 class SwitchKey;
 

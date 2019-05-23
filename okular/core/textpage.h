@@ -16,7 +16,7 @@
 #include "okular_export.h"
 #include "global.h"
 
-class QTransform;
+#include <QTransform>
 
 namespace Okular {
 

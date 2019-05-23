@@ -13,8 +13,8 @@
 #include <qwidget.h>
 #include <KUrl>
 
-class QIcon;
-class QListWidgetItem;
+#include <QIcon>
+#include <QListWidgetItem>
 
 class Sidebar : public QWidget
 {

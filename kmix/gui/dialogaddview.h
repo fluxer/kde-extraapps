@@ -21,13 +21,13 @@
 #ifndef DIALOGADDVIEW_H
 #define DIALOGADDVIEW_H
 
-class QButtonGroup;
+#include <QButtonGroup>
 #include <QStringList>
 class KComboBox;
 #include <qradiobutton.h>
-class QScrollArea;
+#include <QScrollArea>
 #include <kvbox.h>
-class QVBoxLayout;
+#include <QVBoxLayout>
 
 #include <kdialog.h>
 

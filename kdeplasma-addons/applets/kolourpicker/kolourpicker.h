@@ -17,8 +17,8 @@
 #include <QString>
 #include <QColor>
 
-class QMenu;
-class QWidget;
+#include <QMenu>
+#include <QWidget>
 
 namespace Plasma
 {

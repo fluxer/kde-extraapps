@@ -32,8 +32,8 @@
 
 class KConfigDialog;
 class KPushButton;
-class QCheckBox;
-class QListWidgetItem;
+#include <QCheckBox>
+#include <QListWidgetItem>
 
 class DockConfigItemDelegate : public KWidgetItemDelegate
 {

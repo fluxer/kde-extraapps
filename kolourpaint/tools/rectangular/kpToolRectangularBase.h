@@ -34,9 +34,9 @@
 #include <kpTool.h>
 
 
-class QPoint;
-class QRect;
-class QString;
+#include <QPoint>
+#include <QRect>
+#include <QString>
 
 class kpColor;
 

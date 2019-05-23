@@ -29,14 +29,14 @@
 
 #include <kconfig.h>
 
-class QCheckBox;
-class QLineEdit;
-class QLabel;
-class QRadioButton;
-class QComboBox;
-class QGroupBox;
+#include <QCheckBox>
+#include <QLineEdit>
+#include <QLabel>
+#include <QRadioButton>
+#include <QComboBox>
+#include <QGroupBox>
 
-class QProgressBar;
+#include <QProgressBar>
 class KPushButton;
 class KHelpMenu;
 class KFAction;

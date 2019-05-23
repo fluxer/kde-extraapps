@@ -22,12 +22,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 #include <lib/gwenviewlib_export.h>
 
-class QColor;
-class QPainterPath;
-class QPixmap;
-class QRect;
-class QRectF;
-class QSize;
+#include <QColor>
+#include <QPainterPath>
+#include <QPixmap>
+#include <QRect>
+#include <QRectF>
+#include <QSize>
 
 namespace Gwenview
 {

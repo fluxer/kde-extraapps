@@ -22,9 +22,9 @@
 
 #include "groupingcontainment.h"
 
-class QGraphicsWidget;
-class QGraphicsLinearLayout;
-class QAction;
+#include <QGraphicsWidget>
+#include <QGraphicsLinearLayout>
+#include <QAction>
 
 class KMenu;
 

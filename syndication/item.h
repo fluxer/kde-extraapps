@@ -30,9 +30,9 @@
 
 #include <ctime>
 
-class QDomElement;
-template <class T> class QList;
-template <class K, class T> class QMultiMap;
+#include <QDomElement>
+#include <QList>
+#include <QMultiMap>
 
 namespace Syndication {
 

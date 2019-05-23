@@ -33,10 +33,10 @@
 #include <kpEnvironmentBase.h>
 
 
-class QActionGroup;
-class QPoint;
-class QRect;
-class QString;
+#include <QActionGroup>
+#include <QPoint>
+#include <QRect>
+#include <QString>
 
 class KActionCollection;
 
