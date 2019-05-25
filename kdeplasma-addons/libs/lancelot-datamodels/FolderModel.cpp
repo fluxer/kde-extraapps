@@ -223,7 +223,7 @@ void FolderModel::dataDropped(int where, const QMimeData * mimeData)
         KUrl url = KUrl(QString(mimeData->data("text/uri-list")));
 
         for (int i = 0; i < size(); i++) {
-            if (url.path() == itemAt(i).data) {
+            if (url.path() == itemAt(i).data.toString()) {
                 from = i;
                 break;
             }

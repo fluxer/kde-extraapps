@@ -99,7 +99,7 @@ void GeneralConfigurationWidget::addDateFormatExample() {
 
 void GeneralConfigurationWidget::readConfig() {
 	for (int i=0; i<startupLogMode->count(); ++i) {
-		if (KSystemLogConfig::startupLogMode() == startupLogMode->itemData(i)) {
+		if (KSystemLogConfig::startupLogMode() == startupLogMode->itemData(i).toString()) {
 			startupLogMode->setCurrentIndex(i);
 			break;
 		}

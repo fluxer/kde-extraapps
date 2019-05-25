@@ -25,7 +25,7 @@
 #include <KZip>
 
 #include <QtXml/qdom.h>
-#include <QtCore/qxmlstream.h>
+#include <QXmlStreamReader>
 
 using namespace KFileMetaData;
 

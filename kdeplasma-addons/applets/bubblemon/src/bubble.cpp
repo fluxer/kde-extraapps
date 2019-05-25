@@ -20,12 +20,11 @@
 
 #include <QtCore/QTimeLine>
 #include <QtCore/QTimer>
-#include <QtCore/QPropertyAnimation>
+#include <QPropertyAnimation>
 #include <QtGui/QPainter>
 #include <QtGui/qstyleoption.h>
 #include <QtGui/qgraphicssceneevent.h>
 #include <QtGui/QStandardItemModel>
-#include <QtGui/qstandarditemmodel.h>
 #include <QtGui/QSortFilterProxyModel>
 
 #include <Plasma/Theme>

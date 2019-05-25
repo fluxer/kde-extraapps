@@ -20,6 +20,7 @@
 #include "XbelModel.h"
 #include <KIcon>
 #include <QFile>
+#include <QXmlStreamReader>
 
 namespace Lancelot {
 namespace Models {

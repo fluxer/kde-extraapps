@@ -21,6 +21,7 @@
 #define EXPLORERWINDOW_H
 
 #include <QWidget>
+#include <QTimer>
 
 #include <Plasma/Plasma>
 

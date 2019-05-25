@@ -23,7 +23,8 @@
 #include "tooltip.h"
 
 #include <QGraphicsWidget>
-#include <QtCore/qxmlstream.h>
+#include <QSignalMapper>
+#include <QTimer>
 #include <plasma/popupapplet.h>
 #include <plasma/dataengine.h>
 
@@ -36,8 +37,6 @@ class AlphaNumKey;
 class BoardKey;
 class DualKey;
 class FuncKey;
-#include <QSignalMapper>
-#include <QTimer>
 class StickyKey;
 class SwitchKey;
 
@@ -224,9 +223,11 @@ private:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(PlasmaboardWidget::StateActions)
 
+QT_BEGIN_NAMESPACE
 inline uint qHash(const QSize &key)
 {
     return qHash(key.width()) + qHash(key.height());
 }
+QT_END_NAMESPACE
 
 #endif /* WIDGET_H */

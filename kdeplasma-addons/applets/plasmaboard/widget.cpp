@@ -43,6 +43,7 @@
 #include <QSignalMapper>
 #include <QtGui/qstyleoption.h>
 #include <QTimer>
+#include <QXmlStreamReader>
 #include <plasma/containment.h>
 #include <plasma/corona.h>
 #include <plasma/theme.h>

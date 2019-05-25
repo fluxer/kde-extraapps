@@ -26,7 +26,9 @@
 
 #include <KDialog>
 
+QT_BEGIN_NAMESPACE
 class Ui_WidgetTextCapture;
+QT_END_NAMESPACE
 
 class WidgetTextCaptureConfig: public KDialog
 {

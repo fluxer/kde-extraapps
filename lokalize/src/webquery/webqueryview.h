@@ -35,18 +35,19 @@
 
 #include <pos.h>
 #include <QDockWidget>
-//#include <QList>
-class Catalog;
-// class FlowLayout;
-// #include <QHBoxLayout>
+#include <QVector>
 #include <QSplitter>
 #include <QTextBrowser>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QEvent>
+
 class KAction;
+class Catalog;
+
+QT_BEGIN_NAMESPACE
 class Ui_QueryControl;
-#include <QVector>
+QT_END_NAMESPACE
 
 #define WEBQUERY_SHORTCUTS 10
 /**

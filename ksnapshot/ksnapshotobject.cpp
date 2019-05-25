@@ -175,10 +175,12 @@ bool KSnapshotObject::saveImage( QIODevice *device, const QByteArray &format )
 	imgWriter.setQuality( 85 );
     }
 
+#ifndef QT_NO_IMAGE_TEXT
     if ( !title.isEmpty() )
 	imgWriter.setText( i18n("Title"), title );
     if ( !windowClass.isEmpty() )
 	imgWriter.setText( i18n("Window Class"), windowClass );
+#endif
 
     QImage snap = snapshot.toImage();
     return imgWriter.write( snap );

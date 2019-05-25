@@ -24,8 +24,8 @@
 #include <QGraphicsSceneWheelEvent>
 #include <QKeyEvent>
 #include <QObject>
-#include <QtCore/qpoint.h>
-#include <QtCore/QAbstractAnimation>
+#include <QPoint>
+#include <QAbstractAnimation>
 
 
 namespace Plasma

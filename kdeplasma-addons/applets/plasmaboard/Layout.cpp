@@ -19,7 +19,7 @@
 
 #include "Layout.h"
 #include <QFile>
-#include <QtCore/qxmlstream.h>
+#include <QXmlStreamReader>
 #include <KLocale>
 
 Layout::Layout(QString path)

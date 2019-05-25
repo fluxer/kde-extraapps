@@ -45,7 +45,7 @@
 
 class DialogViewConfigurationItem : public QListWidgetItem
 {
- friend #include <QDataStream>
+ friend class QDataStream;
 
 
  public:

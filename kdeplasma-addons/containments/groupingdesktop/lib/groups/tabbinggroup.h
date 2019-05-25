@@ -27,6 +27,7 @@
 
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
+#include <QTimer>
 
 class KConfigDialog;
 

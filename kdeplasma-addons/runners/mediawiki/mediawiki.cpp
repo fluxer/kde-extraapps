@@ -23,7 +23,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
-#include <QtCore/qxmlstream.h>
+#include <QXmlStreamReader>
 #include <QTimer>
 
 #include <KDebug>

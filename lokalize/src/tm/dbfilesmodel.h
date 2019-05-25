@@ -29,7 +29,7 @@
 #include <QSortFilterProxyModel>
 #include <QtCore/qdatetime.h>
 #include <QFileSystemModel>
-class QPersistentModelIndex;
+#include <QPersistentModelIndex>
 
 namespace ThreadWeaver{class Job;}
 

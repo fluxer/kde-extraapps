@@ -51,11 +51,12 @@ static UINT cxWindowBorder, cyWindowBorder;
 static
 const int minSize = 8;
 
-static
-bool operator< ( const QRect& r1, const QRect& r2 )
+QT_BEGIN_NAMESPACE
+static inline bool operator< ( const QRect& r1, const QRect& r2 )
 {
     return r1.width() * r1.height() < r2.width() * r2.height();
 }
+QT_END_NAMESPACE
 
 // Recursively iterates over the window w and its children, thereby building
 // a tree of window descriptors. Windows in non-viewable state or with height

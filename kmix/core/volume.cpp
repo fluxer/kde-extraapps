@@ -26,6 +26,7 @@
 
 #include <kdebug.h>
 #include <klocalizedstring.h>
+#include <qmath.h>
 
 float Volume::VOLUME_STEP_DIVISOR = 20;
 float Volume::VOLUME_PAGESTEP_DIVISOR = 10;

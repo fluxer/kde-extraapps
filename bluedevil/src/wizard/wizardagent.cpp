@@ -22,6 +22,7 @@
 
 #include <QFile>
 #include <QDBusMessage>
+#include <QXmlStreamReader>
 #include <bluedevil/bluedevil.h>
 #include <KDebug>
 #include <KAboutData>

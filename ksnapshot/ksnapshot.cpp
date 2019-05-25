@@ -35,7 +35,7 @@
 #include <QDrag>
 
 #include <QPainter>
-#include <QtCore/qxmlstream.h>
+#include <QXmlStreamReader>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusConnectionInterface>
 #include <QtDBus/QDBusInterface>
