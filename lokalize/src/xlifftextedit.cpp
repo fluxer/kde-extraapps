@@ -34,7 +34,6 @@
 
 #include <kcompletionbox.h>
 
-#include <QStringBuilder>
 #include <QPixmap>
 #include <QPushButton>
 #include <QPainter>
@@ -1135,9 +1134,9 @@ bool TranslationUnitTextEdit::event(QEvent *event)
         bool nospell=langCode.isEmpty();
         if (nospell)
             langCode=m_part==DocPosition::Source?m_catalog->sourceLangCode():m_catalog->targetLangCode();
-        QString tip=KGlobal::locale()->languageCodeToName(langCode)%" ("%langCode%")";
+        QString tip=KGlobal::locale()->languageCodeToName(langCode)+" ("+langCode+")";
         if (nospell)
-            tip+=" - "%i18n("no spellcheck available");
+            tip+=" - "+i18n("no spellcheck available");
         QToolTip::showText(helpEvent->globalPos(), tip);
     }
     return KTextEdit::event(event);

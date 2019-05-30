@@ -35,6 +35,7 @@
 #include <solid/networking.h>
 
 #include <QWidget>
+#include <QTimer>
 
 #include <boost/shared_ptr.hpp>
 

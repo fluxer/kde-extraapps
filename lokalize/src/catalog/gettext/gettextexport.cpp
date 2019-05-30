@@ -44,7 +44,6 @@
 #include <QList>
 #include <QTextStream>
 #include <QEventLoop>
-#include <QStringBuilder>
 
 #include <ksavefile.h>
 #include <kapplication.h>
@@ -121,7 +120,7 @@ ConversionStatus GettextExportPlugin::save(QIODevice* device,
             const int forms = catalog->numberOfPluralForms();
             for ( int i = 0; i < forms; ++i )
             {
-                QString keyword = "msgstr[" % QString::number( i ) % ']';
+                QString keyword = "msgstr[" + QString::number( i ) + ']';
                 writeKeyword( stream, keyword, catalogItem.msgstr(i), true, catalogItem.prependEmptyForMsgstr() );
             }
         }

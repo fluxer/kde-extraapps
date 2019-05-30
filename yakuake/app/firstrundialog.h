@@ -22,13 +22,13 @@
 #ifndef FIRSTRUNDIALOG_H
 #define FIRSTRUNDIALOG_H
 
-
 #include <KDialog>
 
-
 class MainWindow;
-class Ui_FirstRunDialog;
 
+QT_BEGIN_NAMESPACE
+class Ui_FirstRunDialog;
+QT_END_NAMESPACE
 
 class FirstRunDialog : public KDialog
 {

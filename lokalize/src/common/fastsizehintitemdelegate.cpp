@@ -25,7 +25,6 @@
 #include "fastsizehintitemdelegate.h"
 
 #include <QPainter>
-#include <QStringBuilder>
 #include <QTextDocument>
 
 FastSizeHintItemDelegate::FastSizeHintItemDelegate(QObject *parent, const QVector<bool>& slc, const QVector<bool>& rtc)
@@ -126,7 +125,7 @@ QString convertToHtml(QString str, bool italics)
     str=Qt::convertFromPlainText(str); //FIXME use another routine (this has bugs)
 
     if (italics)
-        str="<p><i>" % QString::fromRawData(str.unicode()+3, str.length()-3-4) % "</i></p>";
+        str="<p><i>" + QString::fromRawData(str.unicode()+3, str.length()-3-4) + "</i></p>";
 
     return str;
 }

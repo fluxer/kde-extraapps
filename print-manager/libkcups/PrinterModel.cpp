@@ -374,7 +374,7 @@ void PrinterModel::updateDest(QStandardItem *destItem, const KCupsPrinter &print
     }
 
     int markerChangeTime = printer.markerChangeTime();
-    if (markerChangeTime != destItem->data(DestMarkerChangeTime)) {
+    if (markerChangeTime != destItem->data(DestMarkerChangeTime).toInt()) {
         destItem->setData(printer.markerChangeTime(), DestMarkerChangeTime);
         QVariantHash markers;
         markers["marker-change-time"] = printer.markerChangeTime();

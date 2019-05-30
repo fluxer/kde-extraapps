@@ -29,7 +29,6 @@
 #include <kicon.h>
 #include <klocale.h>
 
-#include <QStringBuilder>
 #include <QCoreApplication>
 #include <QSortFilterProxyModel>
 
@@ -106,7 +105,7 @@ QVariant LanguageListModel::data(const QModelIndex& index, int role) const
         const QString& code=stringList().at(index.row());
         if (code.isEmpty()) return code;
         //kDebug()<<"languageCodeToName"<<code;
-        return QVariant::fromValue<QString>(KGlobal::locale()->languageCodeToName(code)%" ("%code%")");
+        return QVariant::fromValue<QString>(KGlobal::locale()->languageCodeToName(code)+" ("+code+")");
     }
     return QStringListModel::data(index, role);
 }

@@ -29,7 +29,10 @@
 #include <kprogressdialog.h>
 #include <kio/job.h>
 
+QT_BEGIN_NAMESPACE
 class Ui_KU_FilesSettings;
+QT_END_NAMESPACE
+
 namespace KIO { class Job; }
 
 class KU_ConfigDlg : public KConfigDialog {
