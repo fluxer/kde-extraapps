@@ -932,19 +932,14 @@ void Part::clearLastShownSourceLocation()
 
 bool Part::isWatchFileModeEnabled() const
 {
-    return !m_watcher->isStopped();
+    return true;
 }
 
 void Part::setWatchFileModeEnabled(bool enabled)
 {
-    if ( enabled && m_watcher->isStopped() )
-    {
-        m_watcher->startScan();
-    }
-    else if( !enabled && !m_watcher->isStopped() )
+    if( !enabled && isWatchFileModeEnabled() )
     {
         m_dirtyHandler->stop();
-        m_watcher->stopScan();
     }
 }
 

@@ -1787,6 +1787,7 @@ static QPoint rotateInRect( const QPoint &rotated, Okular::Rotation rotation )
     return ret;
 }
 
+#ifndef QT_NO_TABLET
 void PageView::tabletEvent( QTabletEvent * e )
 {
     // Ignore tablet events that we don't care about
@@ -1824,6 +1825,7 @@ void PageView::tabletEvent( QTabletEvent * e )
         e->ignore();
     }
 }
+#endif // QT_NO_TABLET
 
 void PageView::mouseMoveEvent( QMouseEvent * e )
 {

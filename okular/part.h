@@ -36,6 +36,7 @@
 #include <QWidget>
 #include <QPrinter>
 #include <QMenu>
+#include <QTimer>
 
 class KUrl;
 class KConfigDialog;

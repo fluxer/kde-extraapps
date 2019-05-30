@@ -133,7 +133,9 @@ Q_OBJECT
         void wheelEvent( QWheelEvent* );
 
         void paintEvent( QPaintEvent *e );
+#ifndef QT_NO_TABLET
         void tabletEvent (QTabletEvent *e );
+#endif
         void mouseMoveEvent( QMouseEvent *e );
         void mousePressEvent( QMouseEvent *e );
         void mouseReleaseEvent( QMouseEvent *e );

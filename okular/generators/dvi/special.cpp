@@ -23,6 +23,7 @@
 #include <QFontDatabase>
 #include <QImage>
 #include <QPainter>
+#include <QPen>
 
 //#define DEBUG_SPECIAL
 

@@ -12,7 +12,9 @@
 
 #include <qwidget.h>
 
+QT_BEGIN_NAMESPACE
 class Ui_DlgPerformanceBase;
+QT_END_NAMESPACE
 
 class DlgPerformance : public QWidget
 {

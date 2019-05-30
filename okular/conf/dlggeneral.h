@@ -14,7 +14,9 @@
 
 #include "part.h"
 
+QT_BEGIN_NAMESPACE
 class Ui_DlgGeneralBase;
+QT_END_NAMESPACE
 
 class DlgGeneral : public QWidget
 {

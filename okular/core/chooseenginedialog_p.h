@@ -15,7 +15,9 @@
 #include <kdialog.h>
 #include <kmimetype.h>
 
+QT_BEGIN_NAMESPACE
 class Ui_ChooseEngineWidget;
+QT_END_NAMESPACE
 
 class ChooseEngineDialog : public KDialog
 {

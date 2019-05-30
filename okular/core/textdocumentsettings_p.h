@@ -12,7 +12,10 @@
 #define _OKULAR_TEXTDOCUMENTSETTINGS_P_H_
 
 class KFontRequester;
+
+QT_BEGIN_NAMESPACE
 class Ui_TextDocumentSettings;
+QT_END_NAMESPACE
 
 namespace Okular {
 

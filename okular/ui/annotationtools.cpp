@@ -47,6 +47,7 @@ void AnnotatorEngine::decodeEvent( const QMouseEvent * mouseEvent, EventType * e
         *button = AnnotatorEngine::Right;
 }
 
+#ifndef QT_NO_TABLET
 void AnnotatorEngine::decodeEvent( const QTabletEvent * tabletEvent, EventType * eventType, Button * button )
 {
     switch ( tabletEvent->type() )
@@ -72,6 +73,7 @@ void AnnotatorEngine::decodeEvent( const QTabletEvent * tabletEvent, EventType *
             break;
     }
 }
+#endif // QT_NO_TABLET
 
 AnnotatorEngine::~AnnotatorEngine()
 {

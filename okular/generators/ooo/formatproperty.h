@@ -17,7 +17,7 @@
 #include <QTextCharFormat>
 #include <QTextFormat>
 #include <QTextListFormat>
-class QTextTableFormat;
+#include <QTextTableFormat>
 
 namespace OOO {
 

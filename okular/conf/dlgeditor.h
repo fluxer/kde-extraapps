@@ -13,7 +13,9 @@
 #include <qhash.h>
 #include <qwidget.h>
 
+QT_BEGIN_NAMESPACE
 class Ui_DlgEditorBase;
+QT_END_NAMESPACE
 
 class DlgEditor : public QWidget
 {

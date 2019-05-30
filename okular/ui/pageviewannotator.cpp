@@ -787,6 +787,7 @@ QCursor PageViewAnnotator::cursor() const
     return m_engine->cursor();
 }
 
+#ifndef QT_NO_TABLET
 QRect PageViewAnnotator::performRouteMouseOrTabletEvent(const AnnotatorEngine::EventType & eventType, const AnnotatorEngine::Button & button,
                                                         const QPointF & pos, PageViewItem * item )
 {
@@ -864,6 +865,7 @@ QRect PageViewAnnotator::performRouteMouseOrTabletEvent(const AnnotatorEngine::E
 
     return modifiedRect;
 }
+#endif // QT_NO_TABLET
 
 QRect PageViewAnnotator::routeMouseEvent( QMouseEvent * e, PageViewItem * item )
 {
@@ -876,6 +878,7 @@ QRect PageViewAnnotator::routeMouseEvent( QMouseEvent * e, PageViewItem * item )
     return performRouteMouseOrTabletEvent( eventType, button, e->posF(), item );
 }
 
+#ifndef QT_NO_TABLET
 QRect PageViewAnnotator::routeTabletEvent( QTabletEvent * e, PageViewItem * item, const QPoint & localOriginInGlobal )
 {
     // Unlike routeMouseEvent, routeTabletEvent must explicitly ignore events it doesn't care about so that
@@ -908,6 +911,7 @@ QRect PageViewAnnotator::routeTabletEvent( QTabletEvent * e, PageViewItem * item
     const QPointF localPosF = globalPosF - localOriginInGlobal;
     return performRouteMouseOrTabletEvent( eventType, button, localPosF, item );
 }
+#endif // QT_NO_TABLET
 
 bool PageViewAnnotator::routeKeyEvent( QKeyEvent * event )
 {

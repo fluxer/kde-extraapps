@@ -13,7 +13,9 @@
 #include <qlist.h>
 #include <qwidget.h>
 
+QT_BEGIN_NAMESPACE
 class Ui_DlgAccessibilityBase;
+QT_END_NAMESPACE
 
 class DlgAccessibility : public QWidget
 {

@@ -76,7 +76,9 @@ class PageViewAnnotator : public QObject
         QCursor cursor() const;
 
         QRect routeMouseEvent( QMouseEvent * event, PageViewItem * item );
+#ifndef QT_NO_TABLET
         QRect routeTabletEvent( QTabletEvent * event, PageViewItem * item, const QPoint & localOriginInGlobal );
+#endif
         QRect performRouteMouseOrTabletEvent( const AnnotatorEngine::EventType & eventType, const AnnotatorEngine::Button & button,
                                               const QPointF & pos, PageViewItem * item );
         bool routeKeyEvent( QKeyEvent * event );

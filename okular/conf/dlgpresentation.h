@@ -12,7 +12,9 @@
 
 #include <qwidget.h>
 
+QT_BEGIN_NAMESPACE
 class Ui_DlgPresentationBase;
+QT_END_NAMESPACE
 
 class DlgPresentation : public QWidget
 {
