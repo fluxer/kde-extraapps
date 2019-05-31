@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPainter>
+#include <QPen>
 
 #include "moc_kcalc_bitset.cpp"
 

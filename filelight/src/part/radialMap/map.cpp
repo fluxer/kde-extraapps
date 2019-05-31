@@ -24,6 +24,7 @@
 #include <QtGui/QFont>           //ctor
 #include <QtGui/QFontMetrics>    //ctor
 #include <QtGui/QPainter>
+#include <QtGui/QPen>
 
 #include <KCursor>         //make()
 #include <KDebug>

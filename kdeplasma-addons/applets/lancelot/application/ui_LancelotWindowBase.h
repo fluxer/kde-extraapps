@@ -8,19 +8,19 @@
 
 /* Includes */
 
-#include<QSize>
+#include <QSize>
 #include <lancelot/layouts/NodeLayout.h>
 #include <lancelot/layouts/CardLayout.h>
-#include<QIcon>
-#include<lancelot/widgets/Panel.h>
-#include<lancelot/widgets/ExtenderButton.h>
-#include<lancelot/widgets/TabBar.h>
-#include<QString>
-#include<lancelot/lancelot.h>
+#include <QIcon>
+#include <lancelot/widgets/Panel.h>
+#include <lancelot/widgets/ExtenderButton.h>
+#include <lancelot/widgets/TabBar.h>
+#include <QString>
+#include <lancelot/lancelot.h>
 #include <lancelot/layouts/FlipLayout.h>
-#include<lancelot/widgets/ActionListView.h>
+#include <lancelot/widgets/ActionListView.h>
 #include <lancelot/layouts/FullBorderLayout.h>
-#include<lancelot/widgets/PassagewayView.h>
+#include <lancelot/widgets/PassagewayView.h>
 
 /* Defines */
 #define SYSTEM_HEIGHT 28
@@ -29,7 +29,7 @@
 #define SECTIONS_WIDTH 128
 
 
-namespace Ui {
+namespace LUi {
 
 class LancelotWindowBase
 {
