@@ -33,8 +33,6 @@
 #include <KLocale>
 #include <KMessageBox>
 
-#include <QStringBuilder>
-
 JobModel::JobModel(QObject *parent) :
     QStandardItemModel(parent),
     m_jobRequest(0),
@@ -332,7 +330,7 @@ void JobModel::insertJob(int pos, const KCupsJob &job)
 
     QString pages = QString::number(job.pages());
     if (job.processedPages()) {
-        pages = QString::number(job.processedPages()) % QLatin1Char('/') % QString::number(job.processedPages());
+        pages = QString::number(job.processedPages()) + QLatin1Char('/') + QString::number(job.processedPages());
     }
     if (statusItem->data(RoleJobPages) != pages) {
         statusItem->setData(pages, RoleJobPages);
@@ -368,7 +366,7 @@ void JobModel::updateJob(int pos, const KCupsJob &job)
 
     QString pages = QString::number(job.pages());
     if (job.processedPages()) {
-        pages = QString::number(job.processedPages()) % QLatin1Char('/') % QString::number(job.processedPages());
+        pages = QString::number(job.processedPages()) + QLatin1Char('/') + QString::number(job.processedPages());
     }
     if (item(pos, ColStatus)->data(RoleJobPages) != pages) {
         item(pos, ColStatus)->setData(pages, RoleJobPages);

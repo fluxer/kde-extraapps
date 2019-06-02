@@ -52,7 +52,7 @@ bool EventRect::operator==(const EventRect& eventRect) const
     if (m_eventType != eventRect.eventType())
         return false;
 
-    return ::operator==(*this, eventRect);
+    return QT_PREPEND_NAMESPACE(operator==(*this, eventRect));
 }
 
 bool EventRect::operator<(const EventRect& eventRect) const

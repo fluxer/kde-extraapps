@@ -21,8 +21,6 @@
 #include "KIppRequest.h"
 #include "KIppRequest_p.h"
 
-#include <QStringBuilder>
-
 #include <KDebug>
 
 KIppRequest::KIppRequest() :
@@ -186,9 +184,9 @@ QString KIppRequest::assembleUrif(const QString &name, bool isClass)
 
     QString destination;
     if (isClass) {
-        destination = QLatin1String("/classes/") % name;
+        destination = QLatin1String("/classes/") + name;
     } else {
-        destination = QLatin1String("/printers/") % name;
+        destination = QLatin1String("/printers/") + name;
     }
 
     httpAssembleURIf(HTTP_URI_CODING_ALL, uri, sizeof(uri), "ipp", cupsUser(), "localhost",

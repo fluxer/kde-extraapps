@@ -40,7 +40,6 @@
 #include <QtGui/qevent.h>
 #include <QSortFilterProxyModel>
 #include <QStyledItemDelegate>
-#include <QStringBuilder>
 #include <QTextDocument>
 #include <QTextCodec>
 #include <QStringListModel>
@@ -102,9 +101,9 @@ void TMDBModel::setFilter(const QString& source, const QString& target,
         escapedSource.replace('%',"\b%");escapedSource.replace('_',"\b_");
         escapedTarget.replace('%',"\b%");escapedTarget.replace('_',"\b_");
         if (!escapedSource.isEmpty())
-            sourceQuery="AND source_strings.source "%invertSourceStr%"LIKE '%"+escapedSource+"%' ESCAPE '\b' ";
+            sourceQuery="AND source_strings.source " + invertSourceStr + "LIKE '%" + escapedSource + "%' ESCAPE '\b' ";
         if (!escapedTarget.isEmpty())
-            targetQuery="AND target_strings.target "%invertTargetStr%"LIKE '%"+escapedTarget+"%' ESCAPE '\b' ";
+            targetQuery="AND target_strings.target " + invertTargetStr + "LIKE '%" + escapedTarget + "%' ESCAPE '\b' ";
     }
     else if (m_queryType==WordOrder)
     {
@@ -121,13 +120,13 @@ void TMDBModel::setFilter(const QString& source, const QString& target,
     else
     {
         if (!escapedSource.isEmpty())
-            sourceQuery="AND source_strings.source "%invertSourceStr%"GLOB '"%escapedSource%"' ";
+            sourceQuery="AND source_strings.source " + invertSourceStr + "GLOB '" + escapedSource + "' ";
         if (!escapedTarget.isEmpty())
-            targetQuery="AND target_strings.target "%invertTargetStr%"GLOB '"%escapedTarget%"' ";
+            targetQuery="AND target_strings.target " + invertTargetStr + "GLOB '" + escapedTarget + "' ";
 
     }
     if (!filemask.isEmpty())
-        fileQuery="AND files.path GLOB '"%escapedFilemask%"' ";
+        fileQuery="AND files.path GLOB '" + escapedFilemask + "' ";
 
     QString fromPart="FROM main JOIN source_strings ON (source_strings.id=main.source) "
                      "JOIN target_strings ON (target_strings.id=main.target), files "
@@ -328,7 +327,7 @@ QVariant TMResultsSortFilterProxyModel::data(const QModelIndex& index, int role)
     {
         int pos=re.indexIn(string);
         if (pos!=-1)
-            return string.replace(pos, re.matchedLength(), "<b>" % re.cap(0) % "</b>");
+            return string.replace(pos, re.matchedLength(), "<b>" + re.cap(0) + "</b>");
     }
 
     //StartLen sl=m_highlightDataForSourceRow.value(source_row).at(index.column());

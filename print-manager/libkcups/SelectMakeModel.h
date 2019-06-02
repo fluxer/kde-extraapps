@@ -29,9 +29,9 @@
 #include "KCupsConnection.h"
 #include "PPDModel.h"
 
-namespace Ui {
-    class SelectMakeModel;
-}
+QT_BEGIN_NAMESPACE
+class Ui_SelectMakeModel;
+QT_END_NAMESPACE
 
 class KCupsRequest;
 class KDE_EXPORT SelectMakeModel : public QWidget
@@ -65,7 +65,7 @@ private:
     void selectMakeModelPPD();
     void selectRecommendedPPD();
 
-    Ui::SelectMakeModel *ui;
+    Ui_SelectMakeModel *ui;
     PPDModel *m_sourceModel;
     KCupsRequest *m_ppdRequest;
     ReturnArguments m_ppds;

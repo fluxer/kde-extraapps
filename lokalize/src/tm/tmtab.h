@@ -33,19 +33,20 @@
 
 #include <QSqlQueryModel>
 #include <QSqlDatabase>
-
-class QaView;
-class Ui_QueryOptions;
-class KLineEdit;
 #include <QComboBox>
 #include <QTreeView>
 #include <QSortFilterProxyModel>
 #include <QCheckBox>
 
-
 namespace ThreadWeaver{class Job;}
 
+class QaView;
+class KLineEdit;
 class TMResultsSortFilterProxyModel;
+
+QT_BEGIN_NAMESPACE
+class Ui_QueryOptions;
+QT_END_NAMESPACE
 
 namespace TM {
 class TMDBModel;

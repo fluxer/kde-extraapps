@@ -20,10 +20,7 @@
 
 #include "PPDModel.h"
 
-#include <QStringBuilder>
-
 #include <KLocale>
-
 #include <KDebug>
 
 PPDModel::PPDModel(QObject *parent) :
@@ -107,9 +104,9 @@ QStandardItem *PPDModel::createPPDItem(const QVariantHash &ppd, bool recommended
 
     QString text;
     if (recommended) {
-        text = makeAndModel %
-                QLatin1String(" (") %
-                naturalLanguage %
+        text = makeAndModel +
+                QLatin1String(" (") +
+                naturalLanguage +
                 QLatin1Char(')');
     } else {
         // Removes the Make part of the string
@@ -118,9 +115,9 @@ QStandardItem *PPDModel::createPPDItem(const QVariantHash &ppd, bool recommended
         }
 
         // Create the PPD
-        text = makeAndModel.trimmed() %
-                QLatin1String(" (") %
-                naturalLanguage %
+        text = makeAndModel.trimmed() +
+                QLatin1String(" (") +
+                naturalLanguage +
                 QLatin1Char(')');
     }
     ret->setText(text);

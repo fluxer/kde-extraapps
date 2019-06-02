@@ -32,7 +32,7 @@
 
 PageAddPrinter::PageAddPrinter(QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::PageAddPrinter)
+    ui(new Ui_PageAddPrinter)
 {
     ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);

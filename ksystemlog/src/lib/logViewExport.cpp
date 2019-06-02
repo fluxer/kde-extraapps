@@ -23,8 +23,9 @@
 
 #include <QPainter>
 #include <QClipboard>
-#include <QtGui/QPrinter>
-#include <QtGui/QPrintDialog>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPen>
 
 #include <kapplication.h>
 #include <klocale.h>

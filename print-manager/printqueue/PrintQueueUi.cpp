@@ -32,8 +32,6 @@
 #include <QToolBar>
 #include <QMenu>
 #include <QByteArray>
-#include <QStringBuilder>
-
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusMessage>
 
@@ -45,7 +43,7 @@
 
 PrintQueueUi::PrintQueueUi(const KCupsPrinter &printer, QWidget *parent) :
     KDialog(parent),
-    ui(new Ui::PrintQueueUi),
+    ui(new Ui_PrintQueueUi),
     m_destName(printer.name()),
     m_preparingMenu(false),
     m_printerPaused(false),
@@ -72,7 +70,7 @@ PrintQueueUi::PrintQueueUi(const KCupsPrinter &printer, QWidget *parent) :
     if (printer.info().isEmpty()) {
         m_title = printer.name();
     } else {
-        m_title = printer.name() % QLatin1String(" - ") % printer.info();
+        m_title = printer.name() + QLatin1String(" - ") + printer.info();
     }
     setWindowTitle(m_title);
     setButtons(0);
@@ -425,7 +423,7 @@ void PrintQueueUi::getAttributesFinished()
     if (printer.info().isEmpty()) {
         m_title = printer.name();
     } else {
-        m_title = printer.name() % QLatin1String(" - ") % printer.info();
+        m_title = printer.name() + QLatin1String(" - ") + printer.info();
     }
 
     // get printer-state

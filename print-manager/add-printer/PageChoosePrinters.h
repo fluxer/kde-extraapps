@@ -23,9 +23,9 @@
 
 #include "GenericPage.h"
 
-namespace Ui {
-    class PageChoosePrinters;
-}
+QT_BEGIN_NAMESPACE
+class Ui_PageChoosePrinters;
+QT_END_NAMESPACE
 
 class PageChoosePrinters : public GenericPage
 {
@@ -39,7 +39,7 @@ public:
     bool canProceed() const;
 
 private:
-    Ui::PageChoosePrinters *ui;
+    Ui_PageChoosePrinters *ui;
 };
 
 #endif

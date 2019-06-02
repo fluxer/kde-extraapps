@@ -294,45 +294,45 @@ void PrinterModel::updateDest(QStandardItem *destItem, const KCupsPrinter &print
 
     // store the printer state
     KCupsPrinter::Status state = printer.state();
-    if (state != destItem->data(DestState)) {
+    if (state != qvariant_cast<KCupsPrinter::Status>(destItem->data(DestState))) {
         destItem->setData(state, DestState);
     }
     kDebug() << state << printer.name();
 
     // store if the printer is accepting jobs
     bool accepting = printer.isAcceptingJobs();
-    if (accepting != destItem->data(DestIsAcceptingJobs)) {
+    if (accepting != destItem->data(DestIsAcceptingJobs).toBool()) {
         destItem->setData(accepting, DestIsAcceptingJobs);
     }
 
     // store the printer status message
     QString status = destStatus(state, printer.stateMsg(), accepting);
-    if (status != destItem->data(DestStatus)) {
+    if (status != destItem->data(DestStatus).toString()) {
         destItem->setData(status, DestStatus);
     }
 
     bool paused = (state == KCupsPrinter::Stopped || !accepting);
-    if (paused != destItem->data(DestIsPaused)) {
+    if (paused != destItem->data(DestIsPaused).toBool()) {
         destItem->setData(paused, DestIsPaused);
     }
 
     // store if the printer is shared
     bool shared = printer.isShared();
-    if (shared != destItem->data(DestIsShared)) {
+    if (shared != destItem->data(DestIsShared).toBool()) {
         destItem->setData(shared, DestIsShared);
     }
 
     // store if the printer is a class
     // the printer-type param is a flag
     bool isClass = printer.isClass();
-    if (isClass != destItem->data(DestIsClass)) {
+    if (isClass != destItem->data(DestIsClass).toBool()) {
         destItem->setData(isClass, DestIsClass);
     }
 
     // store if the printer type
     // the printer-type param is a flag
     uint printerType = printer.type();
-    if (printerType != destItem->data(DestType)) {
+    if (printerType != destItem->data(DestType).toUInt()) {
         destItem->setData(printerType, DestType);
         destItem->setData(printerType & CUPS_PRINTER_REMOTE, DestRemote);
     }
@@ -363,13 +363,13 @@ void PrinterModel::updateDest(QStandardItem *destItem, const KCupsPrinter &print
 
     // store the printer kind
     QString kind = printer.makeAndModel();
-    if (kind != destItem->data(DestKind)) {
+    if (kind != destItem->data(DestKind).toString()) {
         destItem->setData(kind, DestKind);
     }
 
     // store the printer commands
     QStringList commands = printer.commands();
-    if (commands != destItem->data(DestCommands)) {
+    if (commands != destItem->data(DestCommands).toStringList()) {
         destItem->setData(commands, DestCommands);
     }
 

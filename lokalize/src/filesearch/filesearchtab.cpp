@@ -42,7 +42,6 @@
 #include <QtGui/qevent.h>
 #include <QSortFilterProxyModel>
 #include <QStyledItemDelegate>
-#include <QStringBuilder>
 #include <QPainter>
 #include <QTextDocument>
 #include <QHeaderView>
@@ -434,7 +433,7 @@ QVariant FileSearchModel::data(const QModelIndex& item, int role) const
 void FileSearchModel::setReplacePreview(const QRegExp& s, const QString& r)
 {
     m_replaceWhat=s;
-    m_replaceWith="_ST_" % r % "_END_";
+    m_replaceWith="_ST_" + r + "_END_";
     
     emit dataChanged(index(0, Target), index(rowCount()-1, Target));
 }

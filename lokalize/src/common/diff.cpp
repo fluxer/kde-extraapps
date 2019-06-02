@@ -31,7 +31,6 @@
 #include <QVector>
 #include <QStringList>
 #include <QStringMatcher>
-#include <QStringBuilder>
 #include <QLinkedList>
 
 #include <kdebug.h>
@@ -387,7 +386,7 @@ static void prepareLists(QString str, QStringList& main, QStringList& space, con
     //i tried that but it failed:
     if (!markup.isEmpty())
         markup+='|';
-    QRegExp rxSplit('('%markup%"\\W+|\\d+)+");
+    QRegExp rxSplit('(' + markup + "\\W+|\\d+)+");
 
     main=str.split(rxSplit,QString::SkipEmptyParts);
     main.prepend("\t");//little hack
@@ -453,9 +452,9 @@ QString userVisibleWordDiff(const QString& str1ForMatching,
 
     if (options&Html)
     {
-        res.replace("{KBABELADD}","<font style=\"background-color:"%Settings::addColor().name()%";color:black\">");
+        res.replace("{KBABELADD}","<font style=\"background-color:" + Settings::addColor().name() + ";color:black\">");
         res.replace("{/KBABELADD}","</font>");
-        res.replace("{KBABELDEL}","<font style=\"background-color:"%Settings::delColor().name()%";color:black\">");
+        res.replace("{KBABELDEL}","<font style=\"background-color:" + Settings::delColor().name() + ";color:black\">");
         res.replace("{/KBABELDEL}","</font>");
         res.replace("\\n","\\n<br>");
     }

@@ -23,9 +23,9 @@
 
 #include "GenericPage.h"
 
-namespace Ui {
-    class PageAddPrinter;
-}
+QT_BEGIN_NAMESPACE
+class Ui_PageAddPrinter;
+QT_END_NAMESPACE
 
 class PageAddPrinter : public GenericPage
 {
@@ -48,7 +48,7 @@ private slots:
     void on_nameLE_textChanged(const QString &text);
 
 private:
-    Ui::PageAddPrinter *ui;
+    Ui_PageAddPrinter *ui;
 };
 
 #endif

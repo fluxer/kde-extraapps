@@ -28,10 +28,12 @@
 #include <QToolButton>
 #include <QSortFilterProxyModel>
 
-namespace Ui {
-    class PrinterDescription;
-}
 class PrintQueueModel;
+
+QT_BEGIN_NAMESPACE
+class Ui_PrinterDescription;
+QT_END_NAMESPACE
+
 class PrinterDescription : public QWidget
 {
     Q_OBJECT
@@ -73,7 +75,7 @@ private slots:
     void requestFinished();
 
 private:
-    Ui::PrinterDescription *ui;
+    Ui_PrinterDescription *ui;
     QString m_destName;
     bool m_isClass;
     bool m_isShared;

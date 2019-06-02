@@ -30,7 +30,6 @@
 
 #include <QProcess>
 #include <QString>
-#include <QStringBuilder>
 #include <QMap>
 #include <QTextCodec>
 
@@ -263,8 +262,8 @@ void updateHeader(QString& header,
     bool found=false;
     authorNameEmail=Settings::authorName();
     if (!Settings::authorEmail().isEmpty())
-        authorNameEmail+=(" <"%Settings::authorEmail()%'>');
-    temp="Last-Translator: "%authorNameEmail%"\\n";
+        authorNameEmail+=(" <" + Settings::authorEmail() + '>');
+    temp="Last-Translator: " + authorNameEmail + "\\n";
 
     QRegExp lt("^ *Last-Translator:.*");
     for ( it = headerList.begin(),found=false; it != headerList.end() && !found; ++it )
@@ -279,7 +278,7 @@ void updateHeader(QString& header,
         headerList.append(temp);
 
     QString dateTimeString = KDateTime::currentLocalDateTime().toString("%Y-%m-%d %H:%M%z");
-    temp="PO-Revision-Date: "%dateTimeString%"\\n";
+    temp="PO-Revision-Date: " + dateTimeString + "\\n";
     QRegExp poRevDate("^ *PO-Revision-Date:.*");
     for ( it = headerList.begin(),found=false; it != headerList.end() && !found; ++it )
     {
@@ -289,7 +288,7 @@ void updateHeader(QString& header,
     if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
-    temp="Project-Id-Version: "%CatalogProjectId%"\\n";
+    temp="Project-Id-Version: " + CatalogProjectId + "\\n";
     //temp.replace( "@PACKAGE@", packageName());
     QRegExp projectIdVer("^ *Project-Id-Version:.*");
     for ( it = headerList.begin(),found=false; it != headerList.end() && !found; ++it )
@@ -364,7 +363,7 @@ void updateHeader(QString& header,
 
 
 
-    temp="Language-Team: "%language%" <"%mailingList%'>';
+    temp="Language-Team: " + language + " <" + mailingList + '>';
     temp+="\\n";
     if (Q_LIKELY( found ))
         (*ait) = temp;
@@ -372,7 +371,7 @@ void updateHeader(QString& header,
         headerList.append(temp);
 
     QRegExp langCodeRegExp("^ *Language: *([^ \\\\]*)");
-    temp="Language: "%langCode%"\\n";
+    temp="Language: " + langCode + "\\n";
     for ( it = headerList.begin(),found=false; it != headerList.end() && !found; ++it )
     {
         found=(langCodeRegExp.indexIn(*it)!=-1);
@@ -383,7 +382,7 @@ void updateHeader(QString& header,
     if (Q_UNLIKELY( !found ))
         headerList.append(temp);
 
-    temp="Content-Type: text/plain; charset="%codec->name()%"\\n";
+    temp="Content-Type: text/plain; charset=" + codec->name() + "\\n";
     for ( it = headerList.begin(),found=false; it != headerList.end() && !found; ++it )
     {
         found=it->contains(QRegExp("^ *Content-Type:.*"));
@@ -574,7 +573,7 @@ void updateHeader(QString& header,
 //                        return;
     QStringList foundAuthors;
 
-    temp="# "%authorNameEmail%", "%QDate::currentDate().toString("yyyy")%'.';
+    temp="# " + authorNameEmail + ", " + QDate::currentDate().toString("yyyy") + '.';
 
     // ### TODO: it would be nice if the entry could start with "COPYRIGHT" and have the "(C)" symbol (both not mandatory)
     QRegExp regexpAuthorYear( "^#.*(<.+@.+>)?,\\s*([\\d]+[\\d\\-, ]*|YEAR)" );
@@ -652,9 +651,9 @@ void updateHeader(QString& header,
                     //update years
                     const int index = (*ait).lastIndexOf( QRegExp("[\\d]+[\\d\\-, ]*") );
                     if ( index == -1 )
-                        (*ait)+=", "%cy;
+                        (*ait)+=", " + cy;
                     else
-                        ait->insert(index+1, ", "%cy);
+                        ait->insert(index+1, ", " + cy);
                 }
                 else
                     kDebug() << "INTERNAL ERROR: author found but iterator dangling!";

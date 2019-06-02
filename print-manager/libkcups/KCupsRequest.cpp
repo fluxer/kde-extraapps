@@ -19,14 +19,11 @@
  ***************************************************************************/
 
 #include "KCupsRequest.h"
-
 #include "KIppRequest.h"
 #include "KCupsJob.h"
 #include "KCupsPrinter.h"
-
 #include <KLocale>
 #include <KDebug>
-#include <QStringBuilder>
 
 #include <cups/adminutil.h>
 #include <cups/ppd.h>
@@ -409,15 +406,15 @@ void KCupsRequest::printTestPage(const QString &printerName, bool isClass)
     if (datadir.isEmpty()) {
         datadir = CUPS_DATADIR;
     }
-    filename = datadir % QLatin1String("/data/testprint");
+    filename = datadir + QLatin1String("/data/testprint");
 
     /*
      * Point to the printer/class...
      */
     if (isClass) {
-        resource = QLatin1String("/classes/") % printerName;
+        resource = QLatin1String("/classes/") + printerName;
     } else {
-        resource = QLatin1String("/printers/") % printerName;
+        resource = QLatin1String("/printers/") + printerName;
     }
 
     KIppRequest request(IPP_PRINT_JOB, resource.toUtf8(), filename);

@@ -27,7 +27,6 @@
 #include <config.h>
 
 #include <QCoreApplication>
-#include <QStringBuilder>
 #include <QDBusConnection>
 #include <QByteArray>
 

@@ -32,7 +32,7 @@
 
 PageChoosePrinters::PageChoosePrinters(const QVariantHash &args, QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::PageChoosePrinters)
+    ui(new Ui_PageChoosePrinters)
 {
     ui->setupUi(this);
 

@@ -28,11 +28,13 @@
 
 #include <KCupsServer.h>
 
-namespace Ui {
-    class PrintKCM;
-}
 class KCupsRequest;
 class PrinterModel;
+
+QT_BEGIN_NAMESPACE
+class Ui_PrintKCM;
+QT_END_NAMESPACE
+
 class PrintKCM : public KCModule
 {
     Q_OBJECT
@@ -55,7 +57,7 @@ private slots:
     void systemPreferencesTriggered();
 
 private:
-    Ui::PrintKCM *ui;
+    Ui_PrintKCM *ui;
     PrinterModel *m_model;
     int m_lastError;
 

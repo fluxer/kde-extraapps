@@ -38,7 +38,6 @@
 #include <phase.h>
 
 #include <QLabel>
-class QaView;
 #include <QStringListModel>
 #include <QComboBox>
 #include <QTreeView>
@@ -47,10 +46,14 @@ class QaView;
 namespace ThreadWeaver{class Job;}
 namespace ThreadWeaver{class JobCollection;}
 
+class QaView;
 class FileSearchModel;
 class SearchFileListView;
 class MassReplaceView;
+
+QT_BEGIN_NAMESPACE
 class Ui_FileSearchOptions;
+QT_END_NAMESPACE
 
 /**
  * Global file search/repalce tab
@@ -213,7 +216,9 @@ private:
     QStringListModel* m_model;
 };
 
+QT_BEGIN_NAMESPACE
 class Ui_MassReplaceOptions;
+QT_END_NAMESPACE
 
 class MassReplaceView: public QDockWidget
 {

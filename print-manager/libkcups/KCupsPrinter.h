@@ -30,7 +30,7 @@
 class KDE_EXPORT KCupsPrinter
 {
     Q_GADGET
-    Q_ENUMS(Attribute)
+    Q_ENUMS(Status)
 public:
     typedef enum {
         Idle = 3,
@@ -90,5 +90,6 @@ private:
 typedef QList<KCupsPrinter> KCupsPrinters;
 Q_DECLARE_METATYPE(KCupsPrinters)
 Q_DECLARE_METATYPE(KCupsPrinter)
+Q_DECLARE_METATYPE(KCupsPrinter::Status)
 
 #endif // KCUPSPRINTER_H

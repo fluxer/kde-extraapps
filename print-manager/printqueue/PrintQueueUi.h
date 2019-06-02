@@ -25,13 +25,14 @@
 #include <QtCore/qabstractitemmodel.h>
 #include <QToolButton>
 
-namespace Ui {
-    class PrintQueueUi;
-}
-
 class KCupsPrinter;
 class JobSortFilterModel;
 class JobModel;
+
+QT_BEGIN_NAMESPACE
+class Ui_PrintQueueUi;
+QT_END_NAMESPACE
+
 class PrintQueueUi : public KDialog
 {
     Q_OBJECT
@@ -74,7 +75,7 @@ private:
     void setState(int state, const QString &message);
     void modifyJob(int action, const QString &destName = QString());
 
-    Ui::PrintQueueUi *ui;
+    Ui_PrintQueueUi *ui;
     QToolButton *m_filterJobs;
     JobSortFilterModel *m_proxyModel;
     JobModel *m_model;

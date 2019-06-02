@@ -26,6 +26,7 @@
 #include <QDesktopWidget>
 #include <QToolTip>
 #include <QTimer>
+#include <QPen>
 #include <klocale.h>
 #include <KWindowSystem>
 

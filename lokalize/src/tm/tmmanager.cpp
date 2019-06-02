@@ -41,7 +41,6 @@
 
 #include <QTimer>
 #include <QSortFilterProxyModel>
-#include <QStringBuilder>
 #include <kfiledialog.h>
 #include <kdebug.h>
 // #include <kstandarddirs.h>
@@ -197,7 +196,7 @@ void DBPropertiesDialog::accept()
 
     if (connectionBox->isVisible())
     {
-        QFile rdb(KStandardDirs::locateLocal("appdata", name->text() % REMOTETM_DATABASE_EXTENSION));
+        QFile rdb(KStandardDirs::locateLocal("appdata", name->text() + REMOTETM_DATABASE_EXTENSION));
         if (!rdb.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
             return;
 

@@ -27,7 +27,6 @@
 
 #include <QCoreApplication>
 #include <QFileSystemModel>
-#include <QStringBuilder>
 
 #include <threadweaver/ThreadWeaver.h>
 #include <kstandarddirs.h>
@@ -116,7 +115,7 @@ QVariant DBFilesModel::headerData(int section, Qt::Orientation orientation, int 
 
 void DBFilesModel::openDB(const QString& name)
 {
-    if (QFileInfo(KStandardDirs::locateLocal("appdata", name % REMOTETM_DATABASE_EXTENSION)).exists())
+    if (QFileInfo(KStandardDirs::locateLocal("appdata", name + REMOTETM_DATABASE_EXTENSION)).exists())
         openDB(name, TM::Remote);
     else
         openDB(name, TM::Local);

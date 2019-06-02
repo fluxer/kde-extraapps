@@ -125,12 +125,6 @@ void KioLogFileReader::dataReceived(KIO::Job* job, const QByteArray& data) {
 	if (d->totalRead < d->fileJob->size()) {
 		d->fileJob->read(READ_SIZE);
 	}
-	else {
-		logDebug() << "Entire file read, beginning file watching..." << endl;
-		d->fileWatch->startScan();
-
-	}
-
 
 	//logDebug() << "Data received : " << d->buffer << endl;
 

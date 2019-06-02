@@ -41,7 +41,7 @@ Q_DECLARE_METATYPE(QList<int>)
 
 PrinterDescription::PrinterDescription(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::PrinterDescription),
+    ui(new Ui_PrinterDescription),
     m_isClass(false),
     m_markerChangeTime(0)
 {

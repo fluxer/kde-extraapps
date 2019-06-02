@@ -47,7 +47,7 @@ K_EXPORT_PLUGIN(PrintKCMFactory("kcm_print", "print-manager"))
 
 PrintKCM::PrintKCM(QWidget *parent, const QVariantList &args) :
     KCModule(PrintKCMFactory::componentData(), parent, args),
-    ui(new Ui::PrintKCM),
+    ui(new Ui_PrintKCM),
     m_lastError(-1), // Force the error to run on the first time
     m_serverRequest(0)
 {

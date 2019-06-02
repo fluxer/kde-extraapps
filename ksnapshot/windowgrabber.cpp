@@ -30,7 +30,7 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPoint>
-
+#include <QPen>
 #include <QtGui/qevent.h>
 
 #ifdef Q_WS_X11
