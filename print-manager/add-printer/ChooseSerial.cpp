@@ -29,7 +29,7 @@
 
 ChooseSerial::ChooseSerial(QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::ChooseSerial),
+    ui(new Ui_ChooseSerial),
     m_rx("\\?baud=(\\d+)"),
     m_isValid(false)
 {

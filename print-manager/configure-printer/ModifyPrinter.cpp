@@ -34,7 +34,7 @@
 
 ModifyPrinter::ModifyPrinter(const QString &destName, bool isClass, QWidget *parent) :
     PrinterPage(parent),
-    ui(new Ui::ModifyPrinter),
+    ui(new Ui_ModifyPrinter),
     m_destName(destName),
     m_isClass(isClass),
     m_changes(0)

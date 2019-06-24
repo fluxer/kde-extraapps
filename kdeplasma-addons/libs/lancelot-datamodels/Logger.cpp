@@ -151,7 +151,7 @@ void Logger::Private::openFile()
     file = new QFile(Logger::path());
     if (file->open(QIODevice::WriteOnly | QIODevice::Unbuffered | QIODevice::Append)) {
         stream = new QDataStream(file);
-        stream->setVersion(QDataStream::Qt_4_0);
+        stream->setVersion(QDataStream::Qt_4_8);
     } else {
         KNotification * notify = new KNotification("ErrorOpeningLog");
         notify->setText(i18n("Failed to open the log file. Logging is disabled."));

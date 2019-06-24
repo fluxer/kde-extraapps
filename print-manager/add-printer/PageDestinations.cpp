@@ -33,7 +33,6 @@
 #include <NoSelectionRectDelegate.h>
 
 #include <QItemSelectionModel>
-#include <QStringBuilder>
 
 #include <KDebug>
 #include <KLocale>
@@ -41,7 +40,7 @@
 // system-config-printer --setup-printer='file:/tmp/printout' --devid='MFG:Ricoh;MDL:Aficio SP C820DN'
 PageDestinations::PageDestinations(const QVariantHash &args, QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::PageDestinations),
+    ui(new Ui_PageDestinations),
     m_chooseLpd(new ChooseLpd(this)),
     m_chooseSamba(new ChooseSamba(this)),
     m_chooseSerial(new ChooseSerial(this)),
@@ -307,7 +306,7 @@ QVariantHash PageDestinations::selectedItemValues() const
             QVariant aux = ui->connectionsCB->itemData(ui->connectionsCB->currentIndex());
             KCupsPrinter printer = aux.value<KCupsPrinter>();
             KUrl url = uri.toString();
-            url.setPath(QLatin1String("printers/") % printer.name());
+            url.setPath(QLatin1String("printers/") + printer.name());
             ret[KCUPS_DEVICE_URI] = url.url();
             ret[KCUPS_DEVICE_ID] = index.data(DevicesModel::DeviceId);
             ret[KCUPS_PRINTER_INFO] = printer.info();

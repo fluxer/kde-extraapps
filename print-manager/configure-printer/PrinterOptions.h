@@ -28,9 +28,9 @@
 #include <QAbstractButton>
 #include <QHash>
 
-namespace Ui {
-    class PrinterOptions;
-}
+QT_BEGIN_NAMESPACE
+class Ui_PrinterOptions;
+QT_END_NAMESPACE
 
 class PrinterOptions : public PrinterPage
 {
@@ -62,7 +62,7 @@ private:
 
     void createGroups();
 
-    Ui::PrinterOptions *ui;
+    Ui_PrinterOptions *ui;
     QString m_destName;
     bool m_isClass;
     bool m_isRemote;

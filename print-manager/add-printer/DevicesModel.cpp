@@ -26,7 +26,6 @@
 #include <KMessageBox>
 
 #include <QHostInfo>
-#include <QStringBuilder>
 #include <QDBusMetaType>
 #include <QDBusConnection>
 
@@ -241,7 +240,7 @@ QStandardItem *DevicesModel::createItem(const QString &device_class,
     if (!device_make_and_model.isEmpty() &&
             !grouped &&
             device_make_and_model.compare(QLatin1String("unknown"), Qt::CaseInsensitive)) {
-        text = device_info % QLatin1String(" (") % device_make_and_model % QLatin1Char(')');
+        text = device_info + QLatin1String(" (") + device_make_and_model + QLatin1Char(')');
     } else {
         text = device_info;
     }

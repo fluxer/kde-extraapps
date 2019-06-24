@@ -24,7 +24,6 @@
 #include <KCupsRequest.h>
 
 #include <QPainter>
-#include <QStringBuilder>
 
 #include <KUrl>
 #include <KDebug>
@@ -32,7 +31,7 @@
 
 ChooseSamba::ChooseSamba(QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::ChooseSamba)
+    ui(new Ui_ChooseSamba)
 {
     ui->setupUi(this);
 
@@ -62,11 +61,11 @@ QVariantHash ChooseSamba::values() const
     QString address = ui->addressLE->text().trimmed();
     KUrl url;
     if (address.startsWith(QLatin1String("//"))) {
-        url = QLatin1String("smb:") % address;
+        url = QLatin1String("smb:") + address;
     } else if (address.startsWith(QLatin1String("/"))) {
-        url = QLatin1String("smb:/") % address;
+        url = QLatin1String("smb:/") + address;
     } else if (address.startsWith(QLatin1String("://"))) {
-        url = QLatin1String("smb") % address;
+        url = QLatin1String("smb") + address;
     } else if (address.startsWith(QLatin1String("smb://"))) {
         url = address;
     } else if (!KUrl(address).protocol().isEmpty() &&
@@ -74,7 +73,7 @@ QVariantHash ChooseSamba::values() const
         url = address;
         url.setProtocol(QLatin1String("smb"));
     } else {
-        url = QLatin1String("smb://") % address;
+        url = QLatin1String("smb://") + address;
     }
 
     kDebug() << 1 << url;

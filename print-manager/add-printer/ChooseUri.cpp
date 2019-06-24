@@ -22,15 +22,13 @@
 #include "ui_ChooseUri.h"
 
 #include <KCupsRequest.h>
-
-#include <QStringBuilder>
 #include <KUrl>
 #include <KDebug>
 #include <KLocale>
 
 ChooseUri::ChooseUri(QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::ChooseUri)
+    ui(new Ui_ChooseUri)
 {
     ui->setupUi(this);
 
@@ -58,7 +56,7 @@ void ChooseUri::setValues(const QVariantHash &args)
         ui->addressLE->clear();
         visible = true;
     } else if (url.protocol().isEmpty() && url.authority().isEmpty()) {
-        ui->addressLE->setText(url.url() % QLatin1String("://"));
+        ui->addressLE->setText(url.url() + QLatin1String("://"));
     } else {
         ui->addressLE->setText(url.url());
     }

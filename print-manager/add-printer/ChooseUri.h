@@ -27,9 +27,10 @@
 
 #include <KUrl>
 
-namespace Ui {
-    class ChooseUri;
-}
+QT_BEGIN_NAMESPACE
+class Ui_ChooseUri;
+QT_END_NAMESPACE
+
 class ChooseUri : public GenericPage
 {
     Q_OBJECT
@@ -64,7 +65,7 @@ private slots:
 private:
     KUrl parsedURL(const QString &text) const;
 
-    Ui::ChooseUri *ui;
+    Ui_ChooseUri *ui;
 };
 
 #endif

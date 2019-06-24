@@ -27,7 +27,7 @@
 
 PrinterBehavior::PrinterBehavior(const QString &destName, bool isClass, QWidget *parent) :
     PrinterPage(parent),
-    ui(new Ui::PrinterBehavior),
+    ui(new Ui_PrinterBehavior),
     m_destName(destName),
     m_isClass(isClass),
     m_changes(0)

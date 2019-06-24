@@ -187,13 +187,13 @@ void krfb_rfbSetCursorPosition(rfbScreenInfoPtr screen, rfbClientPtr client, int
     /* Inform all clients about this cursor movement. */
     iterator = rfbGetClientIterator(screen);
     while ((cl = rfbClientIteratorNext(iterator)) != NULL) {
-        cl->cursorWasMoved = TRUE;
+        cl->cursorWasMoved = true;
     }
     rfbReleaseClientIterator(iterator);
 
     /* The cursor was moved by this client, so don't send CursorPos. */
     if (client) {
-        client->cursorWasMoved = FALSE;
+        client->cursorWasMoved = false;
     }
 }
 

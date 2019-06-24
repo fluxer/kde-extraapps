@@ -27,9 +27,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-    class ModifyPrinter;
-}
+QT_BEGIN_NAMESPACE
+class Ui_ModifyPrinter;
+QT_END_NAMESPACE
 
 class ModifyPrinter : public PrinterPage
 {
@@ -68,7 +68,7 @@ private slots:
     void modelChanged();
 
 private:
-    Ui::ModifyPrinter *ui;
+    Ui_ModifyPrinter *ui;
     QString m_destName, m_make, m_makeAndModel;
     bool m_isClass;
     QVariantHash m_changedValues;

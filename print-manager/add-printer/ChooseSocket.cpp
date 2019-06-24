@@ -23,7 +23,6 @@
 
 #include <KCupsRequest.h>
 
-#include <QStringBuilder>
 #include <QPainter>
 
 #include <KDebug>
@@ -31,7 +30,7 @@
 
 ChooseSocket::ChooseSocket(QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::ChooseSocket),
+    ui(new Ui_ChooseSocket),
     m_isValid(false)
 {
     ui->setupUi(this);
@@ -68,7 +67,7 @@ void ChooseSocket::setValues(const QVariantHash &args)
 QVariantHash ChooseSocket::values() const
 {
     QVariantHash ret = m_args;
-    KUrl url = KUrl(QLatin1String("socket://") % ui->addressLE->text());
+    KUrl url = KUrl(QLatin1String("socket://") + ui->addressLE->text());
     url.setPort(ui->portISB->value());
     ret[KCUPS_DEVICE_URI] = url.prettyUrl();
     return ret;

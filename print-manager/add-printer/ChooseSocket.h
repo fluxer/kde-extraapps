@@ -23,9 +23,10 @@
 
 #include "GenericPage.h"
 
-namespace Ui {
-    class ChooseSocket;
-}
+QT_BEGIN_NAMESPACE
+class Ui_ChooseSocket;
+QT_END_NAMESPACE
+
 class ChooseSocket : public GenericPage
 {
     Q_OBJECT
@@ -42,7 +43,7 @@ private slots:
     void on_addressLE_textChanged(const QString &text);
 
 private:
-    Ui::ChooseSocket *ui;
+    Ui_ChooseSocket *ui;
     bool m_isValid;
 };
 

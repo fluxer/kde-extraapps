@@ -31,6 +31,7 @@
 #include <KMessageBox>
 #include <KWindowSystem>
 #include <KMimeType>
+#include <QFile>
 #include <QApplication>
 #include <QtDBus/QtDBus>
 

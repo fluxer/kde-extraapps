@@ -28,9 +28,9 @@
 
 #include <QLabel>
 
-namespace Ui {
-    class PageDestinations;
-}
+QT_BEGIN_NAMESPACE
+class Ui_PageDestinations;
+QT_END_NAMESPACE
 
 class DevicesModel;
 class ChooseLpd;
@@ -67,7 +67,7 @@ private:
     QVariantHash selectedItemValues() const;
     void setCurrentPage(QWidget *widget, const QVariantHash &args);
 
-    Ui::PageDestinations *ui;
+    Ui_PageDestinations *ui;
     DevicesModel *m_model;
 
     QString m_currentUri;

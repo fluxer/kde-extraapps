@@ -26,9 +26,9 @@
 #include "KCupsRequest.h"
 #include <QWidget>
 
-namespace Ui {
-    class PrinterBehavior;
-}
+QT_BEGIN_NAMESPACE
+class Ui_PrinterBehavior;
+QT_END_NAMESPACE
 
 class PrinterBehavior : public PrinterPage
 {
@@ -53,7 +53,7 @@ private:
     QString operationPolicyString(const QString &policy) const;
     QString jobSheetsString(const QString &policy) const;
 
-    Ui::PrinterBehavior *ui;
+    Ui_PrinterBehavior *ui;
     QString m_destName;
     bool m_isClass;
     QVariantHash m_changedValues;

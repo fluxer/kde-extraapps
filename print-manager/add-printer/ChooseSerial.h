@@ -25,9 +25,9 @@
 
 #include <QRegExp>
 
-namespace Ui {
-    class ChooseSerial;
-}
+QT_BEGIN_NAMESPACE
+class Ui_ChooseSerial;
+QT_END_NAMESPACE
 
 class ChooseSerial : public GenericPage
 {
@@ -44,7 +44,7 @@ public slots:
     void load();
 
 private:
-    Ui::ChooseSerial *ui;
+    Ui_ChooseSerial *ui;
     QRegExp m_rx;
     bool m_isValid;
 };

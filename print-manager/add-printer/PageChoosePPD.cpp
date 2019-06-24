@@ -32,11 +32,10 @@
 
 #include <QFileInfo>
 #include <QFile>
-#include <QStringBuilder>
 
 PageChoosePPD::PageChoosePPD(const QVariantHash &args, QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::PageChoosePPD),
+    ui(new Ui_PageChoosePPD),
     m_isValid(false)
 {
     ui->setupUi(this);
@@ -83,7 +82,7 @@ void PageChoosePPD::setValues(const QVariantHash &args)
         QString deviceURI = args[KCUPS_DEVICE_URI].toString();
 
         // If
-        KUrl url(deviceURI % QLatin1String(".ppd"));
+        KUrl url(deviceURI + QLatin1String(".ppd"));
         if (url.protocol() == QLatin1String("ipp")) {
             KTemporaryFile *tempFile = new KTemporaryFile;
             tempFile->setPrefix("print-manager");
@@ -119,7 +118,7 @@ void PageChoosePPD::setValues(const QVariantHash &args)
                     if (make.isNull()) {
                         makeAndModel = pair.section(QLatin1Char(':'), 1);
                     } else {
-                        makeAndModel = make % QLatin1Char(' ') % pair.section(QLatin1Char(':'), 1);
+                        makeAndModel = make + QLatin1Char(' ') + pair.section(QLatin1Char(':'), 1);
                     }
                     break;
                 }

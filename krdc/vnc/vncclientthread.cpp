@@ -29,12 +29,11 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <QtCore/qmutex.h>
-#include <QThreadStorage>
 #include <QTimer>
 
 //for detecting intel AMT KVM vnc server
 static const QString INTEL_AMT_KVM_STRING= "Intel(r) AMT KVM";
-static QThreadStorage<VncClientThread **> instances;
+static thread_local VncClientThread ** instances;
 
 // Dispatch from this static callback context to the member context.
 rfbBool VncClientThread::newclientStatic(rfbClient *cl)
@@ -84,7 +83,7 @@ rfbCredential *VncClientThread::credentialHandlerStatic(rfbClient *cl, int crede
 // Dispatch from this static callback context to the member context.
 void VncClientThread::outputHandlerStatic(const char *format, ...)
 {
-    VncClientThread **t = instances.localData();
+    VncClientThread **t = instances;
 
     va_list args;
     va_start(args, format);
@@ -454,7 +453,7 @@ void VncClientThread::run()
 
     VncClientThread **threadTls = new VncClientThread *();
     *threadTls = this;
-    instances.setLocalData(threadTls);
+    instances = threadTls;
     while (!m_stopped) { // try to connect as long as the server allows
         locker.relock();
         m_passwordError = false;

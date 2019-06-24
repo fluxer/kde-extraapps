@@ -23,9 +23,10 @@
 
 #include "GenericPage.h"
 
-namespace Ui {
-    class ChooseLpd;
-}
+QT_BEGIN_NAMESPACE
+class Ui_ChooseLpd;
+QT_END_NAMESPACE
+
 class ChooseLpd : public GenericPage
 {
     Q_OBJECT
@@ -45,7 +46,7 @@ private slots:
     void checkSelected();
 
 private:
-    Ui::ChooseLpd *ui;
+    Ui_ChooseLpd *ui;
     bool m_isValid;
 };
 

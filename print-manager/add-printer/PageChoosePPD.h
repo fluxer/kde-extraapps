@@ -27,9 +27,9 @@
 
 #include <KIO/Job>
 
-namespace Ui {
-    class PageChoosePPD;
-}
+QT_BEGIN_NAMESPACE
+class Ui_PageChoosePPD;
+QT_END_NAMESPACE
 
 class SelectMakeModel;
 class PageChoosePPD : public GenericPage
@@ -52,7 +52,7 @@ private slots:
 private:
     void removeTempPPD();
 
-    Ui::PageChoosePPD *ui;
+    Ui_PageChoosePPD *ui;
     bool m_isValid;
     SelectMakeModel *m_selectMM;
     QStackedLayout *m_layout;

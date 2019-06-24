@@ -53,7 +53,7 @@
 
 PrinterOptions::PrinterOptions(const QString &destName, bool isClass, bool isRemote, QWidget *parent) :
     PrinterPage(parent),
-    ui(new Ui::PrinterOptions),
+    ui(new Ui_PrinterOptions),
     m_destName(destName),
     m_isClass(isClass),
     m_isRemote(isRemote),
@@ -273,7 +273,7 @@ QWidget* PrinterOptions::pickBoolean(ppd_option_t *option, const QString &keywor
 void PrinterOptions::radioBtClicked(QAbstractButton *button)
 {
     QObject *radioGroup = sender();
-    bool isDifferent = radioGroup->property(DEFAULT_CHOICE).toString() != button->property("choice");
+    bool isDifferent = radioGroup->property(DEFAULT_CHOICE).toString() != button->property("choice").toString();
 
     if (isDifferent != radioGroup->property("different").toBool()) {
         // it's different from the last time so add or remove changes
@@ -361,7 +361,7 @@ QWidget* PrinterOptions::pickOne(ppd_option_t *option, const QString &keyword, Q
 void PrinterOptions::currentIndexChangedCB(int index)
 {
     KComboBox *comboBox = qobject_cast<KComboBox*>(sender());
-    bool isDifferent = comboBox->property(DEFAULT_CHOICE).toString() != comboBox->itemData(index);
+    bool isDifferent = comboBox->property(DEFAULT_CHOICE).toString() != comboBox->itemData(index).toString();
 
     if (isDifferent != comboBox->property("different").toBool()) {
         // it's different from the last time so add or remove changes

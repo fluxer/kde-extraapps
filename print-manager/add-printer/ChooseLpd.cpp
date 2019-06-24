@@ -24,14 +24,13 @@
 #include <KCupsRequest.h>
 
 #include <QPainter>
-#include <QStringBuilder>
 
 #include <KDebug>
 #include <KLocale>
 
 ChooseLpd::ChooseLpd(QWidget *parent) :
     GenericPage(parent),
-    ui(new Ui::ChooseLpd),
+    ui(new Ui_ChooseLpd),
     m_isValid(false)
 {
     ui->setupUi(this);
@@ -68,7 +67,7 @@ void ChooseLpd::setValues(const QVariantHash &args)
 QVariantHash ChooseLpd::values() const
 {
     QVariantHash ret = m_args;
-    ret[KCUPS_DEVICE_URI] = static_cast<QString>(QLatin1String("lpd://") % ui->addressLE->text());
+    ret[KCUPS_DEVICE_URI] = static_cast<QString>(QLatin1String("lpd://") + ui->addressLE->text());
     return ret;
 }
 
@@ -76,7 +75,7 @@ bool ChooseLpd::canProceed() const
 {
     bool allow = false;
     if (!ui->addressLE->text().isEmpty()) {
-        KUrl url = KUrl(QLatin1String("lpd://") % ui->addressLE->text());
+        KUrl url = KUrl(QLatin1String("lpd://") + ui->addressLE->text());
         allow = url.isValid();
     }
     return allow;

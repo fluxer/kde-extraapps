@@ -23,9 +23,10 @@
 
 #include "GenericPage.h"
 
-namespace Ui {
-    class ChooseSamba;
-}
+QT_BEGIN_NAMESPACE
+class Ui_ChooseSamba;
+QT_END_NAMESPACE
+
 class ChooseSamba : public GenericPage
 {
     Q_OBJECT
@@ -45,7 +46,7 @@ private slots:
     void checkSelected();
 
 private:
-    Ui::ChooseSamba *ui;
+    Ui_ChooseSamba *ui;
 };
 
 #endif
