@@ -1910,7 +1910,7 @@ void ImportTmxJob::run()
 
 
 
-#include <QtCore/qxmlstream.h>
+#include <qxmlstream.h>
 
 ExportTmxJob::ExportTmxJob(const QString& filename,//const KUrl& url,
                      const QString& dbName,

@@ -40,7 +40,7 @@ public:
 
 public Q_SLOTS:
     Q_SCRIPTABLE bool isOnline();
-    Q_SCRIPTABLE QString session(const QString &address, const QString &target, const QDBusMessage &msg);
+    Q_SCRIPTABLE QString session(const QString &address, const QString &target, QDBusMessage msg);
     Q_SCRIPTABLE bool cancelTransfer(const QString &transfer);
 
 private Q_SLOTS:

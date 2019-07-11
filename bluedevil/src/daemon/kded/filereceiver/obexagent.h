@@ -36,7 +36,7 @@ class ObexAgent : public QDBusAbstractAdaptor
         virtual ~ObexAgent();
 
     public Q_SLOTS:
-        QString AuthorizePush(const QDBusObjectPath &path, const QDBusMessage &msg);
+        QString AuthorizePush(const QDBusObjectPath &path, QDBusMessage msg);
 
         void Release();
         void Cancel();

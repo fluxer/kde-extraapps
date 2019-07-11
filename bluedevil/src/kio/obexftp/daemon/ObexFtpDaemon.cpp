@@ -123,7 +123,7 @@ bool ObexFtpDaemon::isOnline()
     return d->m_status == Private::Online;
 }
 
-QString ObexFtpDaemon::session(const QString &address, const QString &target, const QDBusMessage& msg)
+QString ObexFtpDaemon::session(const QString &address, const QString &target, QDBusMessage msg)
 {
     if (d->m_sessionMap.contains(address)) {
         return d->m_sessionMap[address];

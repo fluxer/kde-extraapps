@@ -41,7 +41,7 @@ ObexAgent::~ObexAgent()
 
 }
 
-QString ObexAgent::AuthorizePush(const QDBusObjectPath& path, const QDBusMessage &msg)
+QString ObexAgent::AuthorizePush(const QDBusObjectPath& path, QDBusMessage msg)
 {
     kDebug(dblue());
 

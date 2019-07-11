@@ -33,7 +33,7 @@
 
 #include <QFile>
 #include <QtXml/qxml.h>
-#include <QtCore/qxmlstream.h>
+#include <qxmlstream.h>
 #include <QBuffer>
 #include <QApplication>
 

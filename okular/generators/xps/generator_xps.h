@@ -27,7 +27,7 @@
 #include <QtXml/qdom.h>
 #include <QFontDatabase>
 #include <QImage>
-#include <QtCore/qxmlstream.h>
+#include <qxmlstream.h>
 #include <QtXml/qxml.h>
 #include <QStack>
 #include <QVariant>
