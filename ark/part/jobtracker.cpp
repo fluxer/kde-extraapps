@@ -99,6 +99,7 @@ void JobTracker::resetUi()
     m_ui->informationLabel->hide();
     m_ui->progressBar->setMaximum(0);
     m_ui->progressBar->setMinimum(0);
+    m_ui->progressBar->hide();
 }
 
 QWidget* JobTracker::widget(KJob *)
