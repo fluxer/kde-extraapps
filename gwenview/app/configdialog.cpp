@@ -106,7 +106,6 @@ ConfigDialog::ConfigDialog(QWidget* parent)
     widget = setupPage(d->mAdvancedConfigPage);
     pageItem = addPage(widget, i18n("Advanced"));
     pageItem->setIcon(KIcon("preferences-other"));
-    d->mAdvancedConfigPage.cacheHelpLabel->setFont(KGlobalSettings::smallestReadableFont());
 
     updateViewBackgroundFrame();
 }

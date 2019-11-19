@@ -149,10 +149,6 @@
         <default>3./2.</default>
         </entry>
 
-        <entry name="DeleteThumbnailCacheOnExit" type="Bool">
-            <default>false</default>
-        </entry>
-
         <entry name="Sorting" type="Enum">
             <choices name="Gwenview::Sorting::Enum">
                 <choice name="Sorting::Name"/>

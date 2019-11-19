@@ -41,6 +41,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KIconLoader>
 #include <KGlobalSettings>
 #include <KPixmapSequence>
+#include <kio/previewjob.h>
 
 // Local
 #include "abstractdocumentinfoprovider.h"
@@ -50,7 +51,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "mimetypeutils.h"
 #include "urlutils.h"
 #include <lib/gvdebug.h>
-#include <lib/thumbnailprovider/thumbnailprovider.h>
 
 namespace Gwenview
 {
@@ -90,13 +90,11 @@ struct Thumbnail
     Thumbnail(const QPersistentModelIndex& index_, const KDateTime& mtime)
         : mIndex(index_)
         , mModificationTime(mtime)
-        , mFileSize(0)
         , mRough(true)
         , mWaitingForThumbnail(true) {}
 
     Thumbnail()
-        : mFileSize(0)
-        , mRough(true)
+        : mRough(true)
         , mWaitingForThumbnail(true) {}
 
     /**
@@ -130,7 +128,6 @@ struct Thumbnail
     void prepareForRefresh(const KDateTime& mtime)
     {
         mModificationTime = mtime;
-        mFileSize = 0;
         mGroupPix = QPixmap();
         mAdjustedPix = QPixmap();
         mFullSize = QSize();
@@ -150,8 +147,6 @@ struct Thumbnail
     /// Real size of the full image, invalid unless the thumbnail
     /// represents a raster image (not an icon)
     QSize mRealFullSize;
-    /// File size of the full image
-    KIO::filesize_t mFileSize;
     /// Whether mAdjustedPix represents has been scaled using fast or smooth
     /// transformation
     bool mRough;
@@ -178,7 +173,8 @@ struct ThumbnailViewPrivate
     QTimer mSmoothThumbnailTimer;
 
     QPixmap mWaitingThumbnail;
-    QPointer<ThumbnailProvider> mThumbnailProvider;
+    QPointer<KIO::PreviewJob> mThumbnailProvider;
+    KFileItemList mThumbnailQueue;
 
     PersistentModelIndexSet mBusyIndexSet;
     KPixmapSequence mBusySequence;
@@ -200,8 +196,17 @@ struct ThumbnailViewPrivate
     void scheduleThumbnailGeneration()
     {
         if (mThumbnailProvider) {
-            mThumbnailProvider->removePendingItems();
+            QObject::disconnect(mThumbnailProvider, 0 , q, 0);
+            delete mThumbnailProvider;
         }
+        mThumbnailProvider = new KIO::PreviewJob(mThumbnailQueue, mThumbnailSize);
+        mThumbnailQueue.clear();
+
+        QObject::connect(mThumbnailProvider, SIGNAL(gotPreview(KFileItem,QPixmap)),
+                            q, SLOT(setThumbnail(KFileItem,QPixmap)));
+        QObject::connect(mThumbnailProvider, SIGNAL(failed(KFileItem)),
+                            q, SLOT(setBrokenThumbnail(KFileItem)));
+        mThumbnailProvider->start();
         mSmoothThumbnailQueue.clear();
         mScheduledThumbnailGenerationTimer.start();
     }
@@ -216,16 +221,7 @@ struct ThumbnailViewPrivate
         QSize fullSize;
         mDocumentInfoProvider->thumbnailForDocument(url, group, &pix, &fullSize);
         mThumbnailForUrl[url] = Thumbnail(QPersistentModelIndex(index), KDateTime::currentLocalDateTime());
-        q->setThumbnail(item, pix, fullSize, 0);
-    }
-
-    void appendItemsToThumbnailProvider(const KFileItemList& list)
-    {
-        if (mThumbnailProvider) {
-            ThumbnailGroup::Enum group = ThumbnailGroup::fromPixelSize(mThumbnailSize.width());
-            mThumbnailProvider->setThumbnailGroup(group);
-            mThumbnailProvider->appendItems(list);
-        }
+        q->setThumbnail(item, pix);
     }
 
     void roughAdjustThumbnail(Thumbnail* thumbnail)
@@ -357,20 +353,6 @@ void ThumbnailView::setModel(QAbstractItemModel* newModel)
             SIGNAL(rowsRemovedSignal(QModelIndex,int,int)));
 }
 
-void ThumbnailView::setThumbnailProvider(ThumbnailProvider* thumbnailProvider)
-{
-    GV_RETURN_IF_FAIL(d->mThumbnailProvider != thumbnailProvider);
-    if (thumbnailProvider) {
-        connect(thumbnailProvider, SIGNAL(thumbnailLoaded(KFileItem,QPixmap,QSize,qulonglong)),
-                         SLOT(setThumbnail(KFileItem,QPixmap,QSize,qulonglong)));
-        connect(thumbnailProvider, SIGNAL(thumbnailLoadingFailed(KFileItem)),
-                         SLOT(setBrokenThumbnail(KFileItem)));
-    } else {
-        disconnect(d->mThumbnailProvider, 0 , this, 0);
-    }
-    d->mThumbnailProvider = thumbnailProvider;
-}
-
 void ThumbnailView::updateThumbnailSize()
 {
     QSize value = d->mThumbnailSize;
@@ -489,8 +471,13 @@ void ThumbnailView::rowsAboutToBeRemoved(const QModelIndex& parent, int start, i
         itemList.append(item);
     }
 
+    foreach (const KFileItem &item, itemList) {
+        d->mThumbnailQueue.removeAll(item);
+    }
     if (d->mThumbnailProvider) {
-        d->mThumbnailProvider->removeItems(itemList);
+        foreach (const KFileItem &item, itemList) {
+            d->mThumbnailProvider->removeItem(item.url());
+        }
     }
 
     // Removing rows might make new images visible, make sure their thumbnail
@@ -526,7 +513,7 @@ void ThumbnailView::dataChanged(const QModelIndex& topLeft, const QModelIndex& b
             // currently visible, and do not yet have a thumbnail for the
             // modified url.
             KDateTime mtime = item.time(KFileItem::ModificationTime);
-            if (it->mModificationTime != mtime || it->mFileSize != item.size()) {
+            if (it->mModificationTime != mtime) {
                 // dataChanged() is called when the file changes but also when
                 // the model fetched additional data such as semantic info. To
                 // avoid needless refreshes, we only trigger a refresh if the
@@ -553,12 +540,15 @@ void ThumbnailView::emitIndexActivatedIfNoModifiers(const QModelIndex& index)
     }
 }
 
-void ThumbnailView::setThumbnail(const KFileItem& item, const QPixmap& pixmap, const QSize& size, qulonglong fileSize)
+void ThumbnailView::setThumbnail(const KFileItem& item, const QPixmap& pixmap)
 {
     ThumbnailForUrl::iterator it = d->mThumbnailForUrl.find(item.url());
     if (it == d->mThumbnailForUrl.end()) {
         return;
     }
+
+    QSize size = pixmap.size();
+
     Thumbnail& thumbnail = it.value();
     thumbnail.mGroupPix = pixmap;
     thumbnail.mAdjustedPix = QPixmap();
@@ -566,7 +556,6 @@ void ThumbnailView::setThumbnail(const KFileItem& item, const QPixmap& pixmap, c
     thumbnail.mFullSize = size.isValid() ? size : QSize(largeGroupSize, largeGroupSize);
     thumbnail.mRealFullSize = size;
     thumbnail.mWaitingForThumbnail = false;
-    thumbnail.mFileSize = fileSize;
 
     update(thumbnail.mIndex);
     if (d->mScaleMode != ScaleToFit) {
@@ -867,7 +856,8 @@ void ThumbnailView::generateThumbnailsForItems()
     }
 
     if (!itemMap.isEmpty()) {
-        d->appendItemsToThumbnailProvider(itemMap.values());
+        d->mThumbnailQueue << itemMap.values();
+        d->scheduleThumbnailGeneration();
     }
 }
 
@@ -878,9 +868,8 @@ void ThumbnailView::updateThumbnail(const QModelIndex& index)
     if (d->mDocumentInfoProvider && d->mDocumentInfoProvider->isModified(url)) {
         d->updateThumbnailForModifiedDocument(index);
     } else {
-        KFileItemList list;
-        list << item;
-        d->appendItemsToThumbnailProvider(list);
+        d->mThumbnailQueue << item;
+        d->scheduleThumbnailGeneration();
     }
 }
 
@@ -919,7 +908,7 @@ void ThumbnailView::smoothNextThumbnail()
         return;
     }
 
-    if (d->mThumbnailProvider && d->mThumbnailProvider->isRunning()) {
+    if (d->mThumbnailProvider) {
         // give mThumbnailProvider priority over smoothing
         d->mSmoothThumbnailTimer.start(SMOOTH_DELAY);
         return;
@@ -948,7 +937,6 @@ void ThumbnailView::reloadThumbnail(const QModelIndex& index)
         kWarning() << "Invalid url for index" << index;
         return;
     }
-    ThumbnailProvider::deleteImageThumbnail(url);
     ThumbnailForUrl::Iterator it = d->mThumbnailForUrl.find(url);
     if (it == d->mThumbnailForUrl.end()) {
         return;

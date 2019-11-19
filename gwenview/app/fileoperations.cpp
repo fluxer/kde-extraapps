@@ -38,7 +38,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Local
 #include <lib/document/documentfactory.h>
-#include <lib/thumbnailprovider/thumbnailprovider.h>
 
 namespace Gwenview
 {
@@ -207,7 +206,6 @@ void rename(const KUrl& oldUrl, QWidget* parent)
         job->ui()->showErrorMessage();
         return;
     }
-    ThumbnailProvider::moveThumbnail(oldUrl, newUrl);
 }
 
 } // namespace

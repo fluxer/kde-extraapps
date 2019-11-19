@@ -47,7 +47,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <importerconfigdialog.h>
 #include <serializedurlmap.h>
 #include <ui_thumbnailpage.h>
-#include <lib/thumbnailprovider/thumbnailprovider.h>
 
 namespace Gwenview
 {
@@ -92,8 +91,6 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
 
     RecursiveDirModel* mRecursiveDirModel;
     QAbstractItemModel* mFinalModel;
-
-    ThumbnailProvider mThumbnailProvider;
 
     QPushButton* mImportSelectedButton;
     QPushButton* mImportAllButton;
@@ -179,7 +176,6 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
         mSlider->updateToolTip();
         mThumbnailView->setThumbnailAspectRatio(DEFAULT_THUMBNAIL_ASPECT_RATIO);
         mThumbnailView->setThumbnailWidth(thumbnailSize);
-        mThumbnailView->setThumbnailProvider(&mThumbnailProvider);
 
         QObject::connect(
             mThumbnailView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),

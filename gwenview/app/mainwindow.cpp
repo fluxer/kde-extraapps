@@ -97,7 +97,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <lib/slideshow.h>
 #include <lib/signalblocker.h>
 #include <lib/sorteddirmodel.h>
-#include <lib/thumbnailprovider/thumbnailprovider.h>
 #include <lib/thumbnailview/thumbnailbarview.h>
 #include <lib/thumbnailview/thumbnailview.h>
 #include <lib/urlutils.h>
@@ -168,7 +167,6 @@ struct MainWindow::Private
     ThumbnailView* mActiveThumbnailView;
     DocumentInfoProvider* mDocumentInfoProvider;
     ThumbnailViewHelper* mThumbnailViewHelper;
-    QPointer<ThumbnailProvider> mThumbnailProvider;
     BrowseMainPage* mBrowseMainPage;
     StartMainPage* mStartMainPage;
     SideBar* mSideBar;
@@ -727,13 +725,8 @@ struct MainWindow::Private
     void assignThumbnailProviderToThumbnailView(ThumbnailView* thumbnailView)
     {
         GV_RETURN_IF_FAIL(thumbnailView);
-        if (mActiveThumbnailView) {
-            mActiveThumbnailView->setThumbnailProvider(0);
-        }
-        thumbnailView->setThumbnailProvider(mThumbnailProvider);
         mActiveThumbnailView = thumbnailView;
         if (mActiveThumbnailView->isVisible()) {
-            mThumbnailProvider->stop();
             mActiveThumbnailView->generateThumbnailsForItems();
         }
     }
@@ -766,7 +759,6 @@ MainWindow::MainWindow()
     d->mGvCore = new GvCore(this, d->mDirModel);
     d->mPreloader = new Preloader(this);
     d->mNotificationRestrictions = 0;
-    d->mThumbnailProvider = new ThumbnailProvider();
     d->mActiveThumbnailView = 0;
     d->initDirModel();
     d->setupWidgets();
@@ -793,13 +785,6 @@ MainWindow::MainWindow()
 
 MainWindow::~MainWindow()
 {
-    if (GwenviewConfig::deleteThumbnailCacheOnExit()) {
-        const QString dir = ThumbnailProvider::thumbnailBaseDir();
-        if (QFile::exists(dir)) {
-            KIO::NetAccess::del(KUrl::fromPath(dir), this);
-        }
-    }
-    delete d->mThumbnailProvider;
     delete d;
 }
 
@@ -1047,7 +1032,6 @@ void MainWindow::openDirUrl(const KUrl& url)
         urlToSelect.setPath(pathToSelect);
         d->mContextManager->setUrlToSelect(urlToSelect);
     }
-    d->mThumbnailProvider->stop();
     d->mContextManager->setCurrentDirUrl(url);
     d->mGvCore->addUrlToRecentFolders(url);
     d->mViewMainPage->reset();

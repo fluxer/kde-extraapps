@@ -39,7 +39,6 @@ namespace Gwenview
 
 class AbstractDocumentInfoProvider;
 class AbstractThumbnailViewHelper;
-class ThumbnailProvider;
 
 struct ThumbnailViewPrivate;
 class GWENVIEWLIB_EXPORT ThumbnailView : public QListView
@@ -97,8 +96,6 @@ public:
     bool isBusy(const QModelIndex& index) const;
 
     virtual void setModel(QAbstractItemModel* model);
-
-    void setThumbnailProvider(ThumbnailProvider* thumbnailProvider);
 
     /**
      * Publish this method so that delegates can call it.
@@ -185,7 +182,7 @@ protected Q_SLOTS:
 private Q_SLOTS:
     void showContextMenu();
     void emitIndexActivatedIfNoModifiers(const QModelIndex&);
-    void setThumbnail(const KFileItem&, const QPixmap&, const QSize&, qulonglong fileSize);
+    void setThumbnail(const KFileItem&, const QPixmap&);
     void setBrokenThumbnail(const KFileItem&);
 
     /**
