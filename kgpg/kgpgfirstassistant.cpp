@@ -330,6 +330,12 @@ KGpgFirstAssistant::runKeyGenerate() const
 }
 
 QString
+KGpgFirstAssistant::getGpgBinaryPath() const
+{
+        return m_gpgBinary;
+}
+
+QString
 KGpgFirstAssistant::getConfigPath() const
 {
 	return m_confPath;
@@ -354,10 +360,11 @@ KGpgFirstAssistant::getAutoStart() const
 void
 KGpgFirstAssistant::slotBinaryChanged(const QString &binary)
 {
-	if (binary.isEmpty()) {
-		setValid(page_binary, false);
-		return;
-	}
+    if (binary.isEmpty()) {
+        setValid(page_binary, false);
+        m_gpgBinary.clear();
+        return;
+    }
 
 	m_gpgVersion = GPGProc::gpgVersionString(binary);
 	setValid(page_binary, !m_gpgVersion.isEmpty());
@@ -368,6 +375,7 @@ KGpgFirstAssistant::slotBinaryChanged(const QString &binary)
 			txtGpgVersion->setText(i18n("Your GnuPG version (%1) seems to be too old.<br />Compatibility with versions before 1.4.0 is no longer guaranteed.", m_gpgVersion));
 		} else {
 			txtGpgVersion->setText(i18n("You have GnuPG version: %1", m_gpgVersion));
+                        m_gpgBinary = binary;
 		}
 	}
 }

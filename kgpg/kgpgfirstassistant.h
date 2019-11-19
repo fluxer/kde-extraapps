@@ -53,6 +53,7 @@ private:
 	KUrlRequester *pathURL;
 	
 	QString m_gpgVersion;
+        QString m_gpgBinary;
 	QString m_confPath;
 
 	void findConfigPath();
@@ -68,6 +69,11 @@ public:
 	 * @return if user requests dialog to be started
 	 */
 	bool runKeyGenerate() const;
+        /**
+         * @brief get user selected GnuPG binary path
+         * @return path to users GnuPG binary
+         */
+        QString getGpgBinaryPath() const;
 	/**
 	 * @brief get user selected GnuPG home directory
 	 * @return path to users GnuPG directory

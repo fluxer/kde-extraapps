@@ -463,6 +463,7 @@ void KGpgExternalActions::startAssistant()
 
 void KGpgExternalActions::slotSaveOptionsPath()
 {
+        KGpgSettings::setGpgBinaryPath(m_assistant->getGpgBinaryPath());
 	KGpgSettings::setAutoStart(m_assistant->getAutoStart());
 	KGpgSettings::setGpgConfigPath(m_assistant->getConfigPath());
 	KGpgSettings::setFirstRun(false);
