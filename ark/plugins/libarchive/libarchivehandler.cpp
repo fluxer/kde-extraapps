@@ -631,7 +631,7 @@ void LibArchiveInterface::emitEntryFromArchiveEntry(struct archive_entry *aentry
 {
     ArchiveEntry e;
 
-    e[FileName] = QDir::fromNativeSeparators(QString::fromWCharArray(archive_entry_pathname_w(aentry)));
+    e[FileName] = QDir::fromNativeSeparators(QString::fromUtf8(archive_entry_pathname_utf8(aentry)));
     e[InternalID] = e[FileName];
 
     const QString owner = QString::fromAscii(archive_entry_uname(aentry));
