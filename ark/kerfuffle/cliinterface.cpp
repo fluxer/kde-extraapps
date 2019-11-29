@@ -453,16 +453,13 @@ void CliInterface::readStdout(bool handleAll)
     //queries (such as file exists, wrong password) on a new line, but
     //freeze waiting for input. So we check for errors on the last line in
     //all cases.
-    // TODO: QLatin1String() might not be the best choice here.
-    //       The call to handleLine() at the end of the method uses
-    //       QString::fromLocal8Bit(), for example.
     // TODO: The same check methods are called in handleLine(), this
     //       is suboptimal.
     bool foundErrorMessage =
-        (checkForErrorMessage(QLatin1String( lines.last() ), WrongPasswordPatterns) ||
-         checkForErrorMessage(QLatin1String( lines.last() ), ExtractionFailedPatterns) ||
-         checkForPasswordPromptMessage(QLatin1String(lines.last())) ||
-         checkForFileExistsMessage(QLatin1String( lines.last() )));
+        (checkForErrorMessage(QString::fromLocal8Bit( lines.last() ), WrongPasswordPatterns) ||
+         checkForErrorMessage(QString::fromLocal8Bit( lines.last() ), ExtractionFailedPatterns) ||
+         checkForPasswordPromptMessage(QString::fromLocal8Bit(lines.last())) ||
+         checkForFileExistsMessage(QString::fromLocal8Bit( lines.last() )));
 
     if (foundErrorMessage) {
         handleAll = true;

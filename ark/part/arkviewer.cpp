@@ -120,7 +120,7 @@ void ArkViewer::view(const QString& fileName, QWidget *parent)
                 i18nc("@title:window", "Cannot Preview File"),
                 KGuiItem(i18nc("@action:button", "Preview as Text"), KIcon(QLatin1String("text-plain"))),
                 KStandardGuiItem::cancel(),
-                QString(QLatin1String("PreviewAsText_%1")).arg(mimeType->name()));
+                QString::fromLatin1("PreviewAsText_%1").arg(mimeType->name()));
         }
         else {
             // No defined MIME type, or the default application/octet-stream.
@@ -203,7 +203,7 @@ bool ArkViewer::viewInInternalViewer(const QString& fileName, const KMimeType::P
 
     KVBox *headerRight = new KVBox(header);
     headerLayout->addWidget(headerRight);
-    new QLabel(QString(QLatin1String( "<qt><b>%1</b></qt>" ))
+    new QLabel(QString::fromLatin1( "<qt><b>%1</b></qt>" )
                .arg(fileUrl.fileName()), headerRight
               );
     new QLabel(mimeType->comment(), headerRight);
@@ -248,11 +248,11 @@ KService::Ptr ArkViewer::getViewer(const KMimeType::Ptr &mimeType)
     }
 
     // Try to get a read-only kpart for the internal viewer
-    KService::List offers = KMimeTypeTrader::self()->query(mimeType->name(), QString::fromLatin1("KParts/ReadOnlyPart"));
+    KService::List offers = KMimeTypeTrader::self()->query(mimeType->name(), QLatin1String("KParts/ReadOnlyPart"));
 
     // If we can't find a kpart, try to get an external application
     if (offers.size() == 0) {
-        offers = KMimeTypeTrader::self()->query(mimeType->name(), QString::fromLatin1("Application"));
+        offers = KMimeTypeTrader::self()->query(mimeType->name(), QLatin1String("Application"));
     }
 
     if (offers.size() > 0) {

@@ -123,7 +123,7 @@ bool LibArchiveInterface::list()
 
     if (result != ARCHIVE_EOF) {
         emit error(i18nc("@info", "The archive reading failed with the following error: <message>%1</message>",
-                   QLatin1String( archive_error_string(arch_reader.data()))));
+                   QString::fromAscii( archive_error_string(arch_reader.data()))));
         return false;
     }
 
@@ -404,7 +404,7 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
 
         if (ret != ARCHIVE_OK) {
             emit error(i18nc("@info", "Setting the compression method failed with the following error: <message>%1</message>",
-                       QLatin1String(archive_error_string(arch_writer.data()))));
+                       QString::fromAscii(archive_error_string(arch_writer.data()))));
 
             return false;
         }
@@ -432,19 +432,19 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
             }
             break;
         default:
-            emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_filter_name(arch_reader.data(), 0))));
+            emit error(i18n("The compression type '%1' is not supported by Ark.", QString::fromAscii(archive_filter_name(arch_reader.data(), 0))));
             return false;
         }
 
         if (ret != ARCHIVE_OK) {
-            emit error(i18nc("@info", "Setting the compression method failed with the following error: <message>%1</message>", QLatin1String(archive_error_string(arch_writer.data()))));
+            emit error(i18nc("@info", "Setting the compression method failed with the following error: <message>%1</message>", QString::fromAscii(archive_error_string(arch_writer.data()))));
             return false;
         }
     }
 
     ret = archive_write_open_filename(arch_writer.data(), QFile::encodeName(tempFilename));
     if (ret != ARCHIVE_OK) {
-        emit error(i18nc("@info", "Opening the archive for writing failed with the following error: <message>%1</message>", QLatin1String(archive_error_string(arch_writer.data()))));
+        emit error(i18nc("@info", "Opening the archive for writing failed with the following error: <message>%1</message>", QString::fromAscii(archive_error_string(arch_writer.data()))));
         return false;
     }
 
@@ -579,18 +579,18 @@ bool LibArchiveInterface::deleteFiles(const QVariantList& files)
         }
         break;
     default:
-        emit error(i18n("The compression type '%1' is not supported by Ark.", QLatin1String(archive_filter_name(arch_reader.data(), 0))));
+        emit error(i18n("The compression type '%1' is not supported by Ark.", QString::fromAscii(archive_filter_name(arch_reader.data(), 0))));
         return false;
     }
 
     if (ret != ARCHIVE_OK) {
-        emit error(i18nc("@info", "Setting the compression method failed with the following error: <message>%1</message>", QLatin1String(archive_error_string(arch_writer.data()))));
+        emit error(i18nc("@info", "Setting the compression method failed with the following error: <message>%1</message>", QString::fromAscii(archive_error_string(arch_writer.data()))));
         return false;
     }
 
     ret = archive_write_open_filename(arch_writer.data(), QFile::encodeName(tempFilename));
     if (ret != ARCHIVE_OK) {
-        emit error(i18nc("@info", "Opening the archive for writing failed with the following error: <message>%1</message>", QLatin1String(archive_error_string(arch_writer.data()))));
+        emit error(i18nc("@info", "Opening the archive for writing failed with the following error: <message>%1</message>", QString::fromAscii(archive_error_string(arch_writer.data()))));
         return false;
     }
 
@@ -648,7 +648,7 @@ void LibArchiveInterface::emitEntryFromArchiveEntry(struct archive_entry *aentry
     e[IsDirectory] = S_ISDIR(archive_entry_mode(aentry));
 
     if (archive_entry_symlink(aentry)) {
-        e[Link] = QLatin1String( archive_entry_symlink(aentry) );
+        e[Link] = QString::fromAscii( archive_entry_symlink(aentry) );
     }
 
     e[Timestamp] = QDateTime::fromTime_t(archive_entry_mtime(aentry));
