@@ -287,7 +287,6 @@ void SqliteStorage::setUserSetting(UserId userId, const QString &settingName, co
 {
     QByteArray rawData;
     QDataStream out(&rawData, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_2);
     out << data;
 
     QSqlDatabase db = logDb();
@@ -329,7 +328,6 @@ QVariant SqliteStorage::getUserSetting(UserId userId, const QString &settingName
         if (query.first()) {
             QByteArray rawData = query.value(0).toByteArray();
             QDataStream in(&rawData, QIODevice::ReadOnly);
-            in.setVersion(QDataStream::Qt_4_2);
             in >> data;
         }
     }
