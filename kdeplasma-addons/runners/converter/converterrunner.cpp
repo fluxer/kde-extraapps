@@ -182,8 +182,8 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
     UnitCategory* category = converter.categoryForUnit(unit1);
     bool found = false;
     if (category->id() == InvalidCategory) {
-        foreach (category, converter.categories()) {
-            foreach (const QString& s, category->allUnits()) {
+        foreach (const UnitCategory *cat, converter.categories()) {
+            foreach (const QString& s, cat->allUnits()) {
                 if (s.compare(unit1, Qt::CaseInsensitive) == 0) {
                     found = true;
                     break;

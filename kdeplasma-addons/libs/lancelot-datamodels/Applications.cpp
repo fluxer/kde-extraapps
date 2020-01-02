@@ -105,9 +105,14 @@ void Applications::Private::load()
                 continue;
 
             bool found = false;
-            Applications * model;
-            foreach (model, submodelsOld) {
+            foreach (Applications *model, submodelsOld) {
                 if (serviceGroup->relPath() == model->d->root) {
+                    submodelsOld.removeAll(model);
+                    submodels.append(model);
+                    model->d->load();
+                    // TODO: Find a way to delete the remaining
+                    // items in submodelsOld - can't delete now
+                    // because some action list could use the model
                     found = true;
                     break;
                 }
@@ -118,13 +123,6 @@ void Applications::Private::load()
                     serviceGroup->caption().replace('&', "&&"),
                     KIcon(serviceGroup->icon())
                 ));
-            } else {
-                submodelsOld.removeAll(model);
-                submodels.append(model);
-                model->d->load();
-                // TODO: Find a way to delete the remaining
-                // items in submodelsOld - can't delete now
-                // because some action list could use the model
             }
 
             // appName = serviceGroup->comment();
