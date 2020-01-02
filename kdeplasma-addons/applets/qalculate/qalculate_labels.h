@@ -40,7 +40,7 @@ public:
 
 private:
     const QalculateSettings *m_qalculateSettings;
-    vector<MathStructure> result_parts;
+    std::vector<MathStructure> result_parts;
     bool in_matrix;
 };
 
