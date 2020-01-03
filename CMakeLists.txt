@@ -16,6 +16,14 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}/syndication
 )
 
+find_package(Boost)
+set_package_properties(Boost PROPERTIES
+    DESCRIPTION "Free peer-reviewed portable C++ source libraries"
+    URL "https://www.boost.org/"
+    TYPE RECOMMENDED
+    PURPOSE "Required to build libktorrent, akregator and syndication"
+)
+
 macro_optional_add_subdirectory(about-distro)
 macro_optional_add_subdirectory(ark)
 macro_optional_add_subdirectory(bluedevil)
@@ -57,7 +65,11 @@ macro_optional_add_subdirectory(thumbnailers)
 macro_optional_add_subdirectory(yakuake)
 
 # include directories for projects that require boost
-include_directories(${CMAKE_SOURCE_DIR}/miniboost AFTER)
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+else()
+    include_directories(AFTER ${CMAKE_SOURCE_DIR}/miniboost)
+endif()
 macro_optional_add_subdirectory(libktorrent)
 macro_optional_add_subdirectory(akregator)
 macro_optional_add_subdirectory(syndication)
