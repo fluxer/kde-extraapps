@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2018 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2019 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -1165,6 +1165,9 @@ int getentropy (void *__buffer, size_t __length) __wur;
 #if __USE_FORTIFY_LEVEL > 0 && defined __fortify_function
 # include <bits/unistd.h>
 #endif
+
+/* System-specific extensions.  */
+#include <bits/unistd_ext.h>
 
 __END_DECLS
 
