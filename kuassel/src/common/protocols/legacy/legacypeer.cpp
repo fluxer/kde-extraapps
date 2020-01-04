@@ -59,7 +59,6 @@ void LegacyPeer::setSignalProxy(::SignalProxy *proxy)
 void LegacyPeer::processMessage(const QByteArray &msg)
 {
     QDataStream stream(msg);
-    stream.setVersion(QDataStream::Qt_4_2);
 
     QVariant item;
     if (_useCompression) {
@@ -78,7 +77,6 @@ void LegacyPeer::processMessage(const QByteArray &msg)
         rawItem = qUncompress(rawItem);
 
         QDataStream itemStream(&rawItem, QIODevice::ReadOnly);
-        itemStream.setVersion(QDataStream::Qt_4_2);
         itemStream >> item;
     }
     else {
@@ -102,12 +100,10 @@ void LegacyPeer::writeMessage(const QVariant &item)
 {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_2);
 
     if (_useCompression) {
         QByteArray rawItem;
         QDataStream itemStream(&rawItem, QIODevice::WriteOnly);
-        itemStream.setVersion(QDataStream::Qt_4_2);
         itemStream << item;
 
         rawItem = qCompress(rawItem);

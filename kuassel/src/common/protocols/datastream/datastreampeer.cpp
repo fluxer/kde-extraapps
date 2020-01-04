@@ -58,7 +58,6 @@ quint16 DataStreamPeer::enabledFeatures() const
 void DataStreamPeer::processMessage(const QByteArray &msg)
 {
     QDataStream stream(msg);
-    stream.setVersion(QDataStream::Qt_4_2);
     QVariantList list;
     stream >> list;
     if (stream.status() != QDataStream::Ok) {
@@ -91,7 +90,6 @@ void DataStreamPeer::writeMessage(const QVariantList &sigProxyMsg)
 {
     QByteArray data;
     QDataStream msgStream(&data, QIODevice::WriteOnly);
-    msgStream.setVersion(QDataStream::Qt_4_2);
     msgStream << sigProxyMsg;
 
     writeMessage(data);
