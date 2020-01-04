@@ -299,7 +299,7 @@ void FreeRegionGrabber::grabRect()
         if (pt.paintEngine()->hasFeature(QPaintEngine::PorterDuff)) {
             pt.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform, true);
 #ifndef QT_NO_OPENGL
-            pst.setRenderHints(QPainter::HighQualityAntialiasing, true);
+            pt.setRenderHints(QPainter::HighQualityAntialiasing, true);
 #endif
             pt.setBrush(Qt::black);
             pt.setPen(QPen(QBrush(Qt::black), 0.5));
