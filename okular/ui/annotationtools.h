@@ -20,7 +20,7 @@
 #include <QMouseEvent>
 #include <QPainter>
 #ifndef QT_NO_TABLET
-#include <QTabeltEvent>
+#include <QTabletEvent>
 #endif
 
 class PageViewItem;
