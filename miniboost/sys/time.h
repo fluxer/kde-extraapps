@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2018 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2019 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -159,9 +159,9 @@ extern int futimesat (int __fd, const char *__file,
 # define timerisset(tvp)	((tvp)->tv_sec || (tvp)->tv_usec)
 # define timerclear(tvp)	((tvp)->tv_sec = (tvp)->tv_usec = 0)
 # define timercmp(a, b, CMP) 						      \
-  (((a)->tv_sec == (b)->tv_sec) ? 					      \
-   ((a)->tv_usec CMP (b)->tv_usec) : 					      \
-   ((a)->tv_sec CMP (b)->tv_sec))
+  (((a)->tv_sec == (b)->tv_sec) 					      \
+   ? ((a)->tv_usec CMP (b)->tv_usec) 					      \
+   : ((a)->tv_sec CMP (b)->tv_sec))
 # define timeradd(a, b, result)						      \
   do {									      \
     (result)->tv_sec = (a)->tv_sec + (b)->tv_sec;			      \

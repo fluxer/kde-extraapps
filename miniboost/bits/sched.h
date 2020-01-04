@@ -1,6 +1,6 @@
 /* Definitions of constants and data structure for POSIX 1003.1b-1993
    scheduling interface.
-   Copyright (C) 1996-2018 Free Software Foundation, Inc.
+   Copyright (C) 1996-2019 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -85,6 +85,9 @@ extern int unshare (int __flags) __THROW;
 
 /* Get index of currently used CPU.  */
 extern int sched_getcpu (void) __THROW;
+
+/* Get currently used CPU and NUMA node.  */
+extern int getcpu (unsigned int *, unsigned int *) __THROW;
 
 /* Switch process to namespace of type NSTYPE indicated by FD.  */
 extern int setns (int __fd, int __nstype) __THROW;

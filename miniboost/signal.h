@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2018 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2019 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -369,6 +369,9 @@ extern int __libc_current_sigrtmax (void) __THROW;
 
 #define SIGRTMIN        (__libc_current_sigrtmin ())
 #define SIGRTMAX        (__libc_current_sigrtmax ())
+
+/* System-specific extensions.  */
+#include <bits/signal_ext.h>
 
 __END_DECLS
 
