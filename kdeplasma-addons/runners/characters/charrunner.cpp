@@ -79,7 +79,6 @@ void CharacterRunner::match(Plasma::RunnerContext &context)
 
     //make special caracter out of the hex.-code
     specChar=QString();
-    specChar.toUtf8();
     specChar[0]=hex;
 
     //create match
