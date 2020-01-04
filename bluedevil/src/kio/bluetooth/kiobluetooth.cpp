@@ -34,6 +34,8 @@
 #include <KLocale>
 #include <kdemacros.h>
 
+#include <sys/stat.h>
+
 extern "C" int KDE_EXPORT kdemain(int argc, char **argv)
 {
     KAboutData about("kiobluetooth", "bluedevil", ki18n("kiobluetooth"), bluedevil_version);

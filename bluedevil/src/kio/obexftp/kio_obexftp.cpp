@@ -36,6 +36,7 @@
 #include "transferfilejob.h"
 
 #include <unistd.h>
+#include <sys/stat.h>
 
 Q_DECLARE_METATYPE(DeviceInfo)
 
