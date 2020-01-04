@@ -109,9 +109,8 @@ Skanlite::Skanlite(const QString &device, QWidget *parent)
     m_filter16BitList << "image/png";
     //m_filter16BitList << "image/tiff";
 
-    QString mime;
     QStringList type;
-    foreach (mime , m_filterList) {
+    foreach (const QString &mime , m_filterList) {
         type = KImageIO::typeForMime(mime);
         if (type.size() > 0) {
             m_typeList << type.first();
