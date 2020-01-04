@@ -3,6 +3,6 @@ ClassName=Config
 Singleton=true
 Mutators=true
 Visibility=LIBPARTITIONMANAGERPRIVATE_EXPORT
-IncludeFiles=\"util/libpartitionmanagerexport.h\"
+IncludeFiles=util/libpartitionmanagerexport.h
 ItemAccessors=true
 SetUserTexts=true
