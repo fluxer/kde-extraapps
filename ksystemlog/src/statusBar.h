@@ -26,7 +26,7 @@
 #include <kstatusbar.h>
 
 #include <QString>
-
+#include <QTime>
 
 
 namespace KSystemLog {
