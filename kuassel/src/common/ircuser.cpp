@@ -77,8 +77,7 @@ QDateTime IrcUser::idleTime()
 QStringList IrcUser::channels() const
 {
     QStringList chanList;
-    IrcChannel *channel;
-    foreach(channel, _channels) {
+    foreach(const IrcChannel *channel, _channels) {
         chanList << channel->name();
     }
     return chanList;
