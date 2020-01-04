@@ -84,14 +84,14 @@ KGpgDelUid::setUids(const KGpgSignableNode::const_List &uids)
 	else
 		parent = nd->getParentKeyNode();
 
-	foreach (nd, m_uids.mid(1)) {
-		Q_ASSERT((nd->getParentKeyNode() == parent) || (nd == parent));
+	foreach (const KGpgSignableNode *ndit, m_uids.mid(1)) {
+		Q_ASSERT((ndit->getParentKeyNode() == parent) || (ndit == parent));
 
 		args.append(QLatin1String( "uid" ));
-		if (nd->getType() & KgpgCore::ITYPE_PAIR)
+		if (ndit->getType() & KgpgCore::ITYPE_PAIR)
 			args.append(QLatin1String("1"));
 		else
-			args.append(nd->getId());
+			args.append(ndit->getId());
 		args.append(QLatin1String( "deluid" ));
 	}
 
