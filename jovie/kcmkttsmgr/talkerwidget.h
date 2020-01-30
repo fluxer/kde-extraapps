@@ -32,10 +32,12 @@
 
 #include "../libkttsd/talkercode.h"
 
+QT_BEGIN_NAMESPACE
 namespace Ui
 {
     class TalkerWidget;
 }
+QT_END_NAMESPACE
 
 class TalkerWidget : public QWidget
 {

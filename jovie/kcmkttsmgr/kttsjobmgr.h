@@ -38,10 +38,12 @@ class KttsJobMgrBrowserExtension;
 class JobInfo;
 class JobInfoListModel;
 
+QT_BEGIN_NAMESPACE
 namespace Ui
 {
     class kttsjobmgr;
 }
+QT_END_NAMESPACE
 
 class KttsJobMgr:
   public QWidget
