@@ -48,7 +48,10 @@ struct GSRendererThreadRequest
     int orientation;
     bool platformFonts;
 };
+
+QT_BEGIN_NAMESPACE
 Q_DECLARE_TYPEINFO(GSRendererThreadRequest, Q_MOVABLE_TYPE);
+QT_END_NAMESPACE
 
 class GSRendererThread : public QThread
 {
