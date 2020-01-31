@@ -77,8 +77,8 @@ public:
 
 public Q_SLOTS:
     Q_SCRIPTABLE unsigned int AddMenuItem(QMap<QString, QVariant> hints);
-    Q_NOREPLY void RemoveMenuItem(unsigned int id);
-    Q_NOREPLY void UpdateDockItem(QMap<QString, QVariant> hints);
+    void RemoveMenuItem(unsigned int id);
+    void UpdateDockItem(QMap<QString, QVariant> hints);
 
 private Q_SLOTS:
     void menuActivated();
