@@ -40,11 +40,7 @@ K_GLOBAL_STATIC(Unity, unity)
 
 static QString urlToId(const KUrl &url)
 {
-    QString desktopEntry = url.fileName();
-    if (desktopEntry.startsWith("kde4-")) {
-        desktopEntry = desktopEntry.mid(5);
-    }
-    return QLatin1String("application://") + desktopEntry;
+    return QLatin1String("application://") + url.fileName();
 }
 
 Unity * Unity::self()

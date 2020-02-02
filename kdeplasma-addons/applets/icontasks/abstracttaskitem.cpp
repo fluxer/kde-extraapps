@@ -596,9 +596,6 @@ QString AbstractTaskItem::mediaButtonKey()
     QString desktopEntry;
     if (lUrl.isValid()) {
         desktopEntry = lUrl.fileName().remove(".desktop").toLower();
-        if (desktopEntry.startsWith("kde4-")) {
-            desktopEntry = desktopEntry.mid(5);
-        }
     }
 
     if (MediaButtons::self()->isMediaApp(desktopEntry)) {
