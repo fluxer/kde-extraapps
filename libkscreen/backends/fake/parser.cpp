@@ -23,17 +23,52 @@
 #include <QtCore/QFile>
 #include <KDebug>
 
-#include <qjson/parser.h>
-#include <qjson/qobjecthelper.h>
+#ifndef QT_KATIE
+#  include <qjson/parser.h>
+#  include <qjson/qobjecthelper.h>
+#else
+#  include <QJsonDocument>
+#  include <QMetaProperty>
+#endif
 
 using namespace KScreen;
+
+#ifdef QT_KATIE
+static void qvariant2qobject(const QVariantMap &map, QObject *object)
+{
+    const QMetaObject *metaobject = object->metaObject();
+
+    for (QVariantMap::const_iterator iter = map.constBegin(),
+        end = map.constEnd(); iter != end; iter++) {
+        int pIdx = metaobject->indexOfProperty(iter.key().toLatin1());
+
+        if ( pIdx < 0 ) {
+            continue;
+        }
+
+        QMetaProperty metaproperty = metaobject->property( pIdx );
+        QVariant::Type type = metaproperty.type();
+        QVariant v(iter.value());
+        if (v.canConvert(type)) {
+            v.convert(type);
+            metaproperty.write(object, v);
+        } else if (metaproperty.typeName() == QLatin1String("QVariant")) {
+            metaproperty.write(object, v);
+        }
+    }
+}
+#endif
 
 Config* Parser::fromJson(const QByteArray& data)
 {
     Config *config =  new Config();
-    QJson::Parser parser;
 
+#ifndef QT_KATIE
+    QJson::Parser parser;
     QVariantMap json = parser.parse(data).toMap();
+#else
+    QVariantMap json = QJsonDocument::fromJson(data).toVariant().toMap();
+#endif
 
     Screen* screen = Parser::screenFromJson(json["screen"].toMap());
 
@@ -87,7 +122,11 @@ Output* Parser::outputFromJson(const QVariant& data)
     }
     output->setPreferredModes(preferredModes);
 
+#ifndef QT_KATIE
     QJson::QObjectHelper::qvariant2qobject(map, output);
+#else
+    qvariant2qobject(map, output);
+#endif
 
     Mode *mode;
     ModeList modelist;
@@ -151,7 +190,12 @@ Mode* Parser::modeFromJson(const QVariant& data)
     QVariantMap map = data.toMap();
     Mode *mode = new Mode;
     mode->setId(map["id"].toString());
+
+#ifndef QT_KATIE
     QJson::QObjectHelper::qvariant2qobject(map, mode);
+#else
+    qvariant2qobject(map, mode);
+#endif
 
     mode->setSize(Parser::sizeFromJson(map["size"].toMap()));
 

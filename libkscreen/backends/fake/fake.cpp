@@ -27,7 +27,11 @@
 #include <QtCore/QFile>
 #include <QtCore/qplugin.h>
 
-#include <qjson/parser.h>
+#ifndef QT_KATIE
+#  include <qjson/parser.h>
+#else
+#  include <QJsonDocument>
+#endif
 
 Q_EXPORT_PLUGIN2(Fake, Fake)
 
@@ -69,8 +73,12 @@ Edid *Fake::edid(int outputId) const
     QFile file(QString(qgetenv("TEST_DATA")));
     file.open(QIODevice::ReadOnly);
 
+#ifndef QT_KATIE
     QJson::Parser parser;
     QVariantMap json = parser.parse(file.readAll()).toMap();
+#else
+    QVariantMap json = QJsonDocument::fromJson(file.readAll()).toVariant().toMap();
+#endif
 
     QList <QVariant> outputs = json["outputs"].toList();
     Q_FOREACH(const QVariant &value, outputs) {
