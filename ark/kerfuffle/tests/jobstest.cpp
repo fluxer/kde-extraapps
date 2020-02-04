@@ -114,14 +114,13 @@ void JobsTest::startAndWaitForResult(KJob *job)
 
 void JobsTest::testExtractedFilesSize()
 {
-    Kerfuffle::ListJob *listJob;
 
     JSONArchiveInterface *noSizeIface =
         createArchiveInterface(QLatin1String(KDESRCDIR "data/archive001.json"));
     JSONArchiveInterface *sizeIface =
         createArchiveInterface(QLatin1String(KDESRCDIR "data/archive002.json"));
 
-    listJob = new Kerfuffle::ListJob(noSizeIface, this);
+    Kerfuffle::ListJob *listJob = new Kerfuffle::ListJob(noSizeIface, this);
     listJob->setAutoDelete(false);
     startAndWaitForResult(listJob);
 

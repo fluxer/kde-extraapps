@@ -28,10 +28,13 @@
 #include "kerfuffle/archiveinterface.h"
 
 #include <KDebug>
+#include <QString>
 
-#include <QtCore/qstring.h>
-
-#include <qjson/parser.h>
+#ifndef QT_KATIE
+#  include <qjson/parser.h>
+#else
+#  include <QJsonDocument>
+#endif
 
 typedef QMap<QString, Kerfuffle::EntryMetaDataType> ArchiveProperties;
 
@@ -73,6 +76,7 @@ JSONParser::~JSONParser()
 
 JSONParser::JSONArchive JSONParser::parse(const QString &json)
 {
+#ifndef QT_KATIE
     bool ok;
     QJson::Parser parser;
 
@@ -82,12 +86,22 @@ JSONParser::JSONArchive JSONParser::parse(const QString &json)
         kDebug() << "Line" << parser.errorLine() << ":" << parser.errorString();
         return JSONParser::JSONArchive();
     }
+#else
+    QJsonParseError error;
+    const QVariant result = QJsonDocument::fromJson(json.toUtf8(), &error).toVariant();
+
+    if (error.error != QJsonParseError::NoError) {
+        kDebug() << "Line" << error.offset << ":" << error.errorString();
+        return JSONParser::JSONArchive();
+    }
+#endif
 
     return createJSONArchive(result);
 }
 
 JSONParser::JSONArchive JSONParser::parse(QIODevice *json)
 {
+#ifndef QT_KATIE
     bool ok;
     QJson::Parser parser;
 
@@ -97,6 +111,15 @@ JSONParser::JSONArchive JSONParser::parse(QIODevice *json)
         kDebug() << "Line" << parser.errorLine() << ":" << parser.errorString();
         return JSONParser::JSONArchive();
     }
+#else
+    QJsonParseError error;
+    const QVariant result = QJsonDocument::fromJson(json->readAll(), &error).toVariant();
+
+    if (error.error != QJsonParseError::NoError) {
+        kDebug() << "Line" << error.offset << ":" << error.errorString();
+        return JSONParser::JSONArchive();
+    }
+#endif
 
     return createJSONArchive(result);
 }
