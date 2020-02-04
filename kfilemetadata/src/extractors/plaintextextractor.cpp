@@ -47,8 +47,7 @@ void PlainTextExtractor::extract(ExtractionResult* result)
     }
 
     while (std::getline(fstream, line)) {
-        QByteArray arr = QByteArray::fromRawData(line.c_str(), line.size());
-        result->append(QString::fromUtf8(arr));
+        result->append(QString::fromUtf8(line.c_str(), line.size()));
 
         lines += 1;
     }
