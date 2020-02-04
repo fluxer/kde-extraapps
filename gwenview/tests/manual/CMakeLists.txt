@@ -18,19 +18,3 @@ set(imageloadbench_SRCS
 kde4_add_manual_test(imageloadbench ${imageloadbench_SRCS})
 
 target_link_libraries(imageloadbench ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} gwenviewlib)
-
-# thumbnailgen
-set(thumbnailgen_SRCS
-    thumbnailgen.cpp
-    ../auto/testutils.cpp # FIXME: Move testutils.cpp to test/
-    )
-
-kde4_add_manual_test(thumbnailgen ${thumbnailgen_SRCS})
-
-target_link_libraries(thumbnailgen
-    ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
-    ${QT_QTTEST_LIBRARY}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    gwenviewlib)
