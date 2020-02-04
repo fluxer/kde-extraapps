@@ -4,7 +4,6 @@ include_directories(
    ${CMAKE_CURRENT_BINARY_DIR}
    ${CMAKE_BINARY_DIR}
    ${KDE4_INCLUDES}
-   ${QIMAGEBLITZ_INCLUDES}
 )
 
 set(okular_SRCS
@@ -28,7 +27,6 @@ target_link_libraries(okularplugin
         ${KDE4_KDECORE_LIBRARY}
         ${KDE4_KDEUI_LIBRARY}
         ${KDE4_KIO_LIBRARY}
-        ${QIMAGEBLITZ_LIBRARIES}
         okularcore
         )
 

@@ -18,7 +18,7 @@
 #include <kiconloader.h>
 #include <kdebug.h>
 #include <QApplication>
-#include <qimageblitz.h>
+#include <kiconeffect.h>
 
 // system includes
 #include <math.h>
@@ -350,8 +350,9 @@ void PagePainter::paintCroppedPageOnPainter( QPainter * destPainter, const Okula
                     backImage.invertPixels(QImage::InvertRgb);
                     break;
                 case Okular::SettingsCore::EnumRenderMode::Recolor:
-                    // Recolor image using Blitz::flatten with dither:0
-                    Blitz::flatten( backImage, Okular::Settings::recolorForeground(), Okular::Settings::recolorBackground() );
+                    // Recolor image using KIconEffect with dither:0.5
+                    KIconEffect::toMonochrome(backImage, Okular::Settings::recolorForeground(),
+                        Okular::Settings::recolorBackground(), 0.5);
                     break;
                 case Okular::SettingsCore::EnumRenderMode::BlackWhite:
                     // Manual Gray and Contrast

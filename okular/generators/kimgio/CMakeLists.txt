@@ -1,7 +1,6 @@
 include_directories(
    ${CMAKE__SOURCE_DIR}/../..
    ${CMAKE_BINARY_DIR}
-   ${QIMAGEBLITZ_INCLUDES}
    ${KEXIV2_INCLUDE_DIR}
 )
 
@@ -34,7 +33,6 @@ if(ENABLE_TESTING)
         ${KDE4_KIO_LIBS}
         ${QT_QTGUI_LIBRARY}
         ${QT_QTTEST_LIBRARY}
-        ${QIMAGEBLITZ_LIBRARIES}
         okularcore
     )
 endif()

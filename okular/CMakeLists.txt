@@ -1,20 +1,11 @@
 project(okular)
 
-macro_optional_find_package(QImageBlitz)
-set_package_properties(QImageBlitz PROPERTIES
-    DESCRIPTION "An image effects library"
-    URL "http://sourceforge.net/projects/qimageblitz"
-    PURPOSE "Required to build Okular."
-    TYPE REQUIRED
-)
-
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}
    ${CMAKE_CURRENT_BINARY_DIR}
    ${KDE4_INCLUDES}
-   ${QIMAGEBLITZ_INCLUDES}
    ${CMAKE_SOURCE_DIR}/libkscreen
    ${CMAKE_SOURCE_DIR}
 )
@@ -188,7 +179,7 @@ qt4_add_dbus_interfaces(okularpart_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpe
 
 kde4_add_plugin(okularpart SHARED ${okularpart_SRCS})
 
-target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${QIMAGEBLITZ_LIBRARIES} ${KDE4_PHONON_LIBRARY} ${KDE4_SOLID_LIBRARY})
+target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${KDE4_PHONON_LIBRARY} ${KDE4_SOLID_LIBRARY})
 
 install(TARGETS okularpart DESTINATION ${PLUGIN_INSTALL_DIR})
 
