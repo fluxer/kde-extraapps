@@ -30,11 +30,17 @@
 #include <QtCore/QTimer>
 #include <QtCore/QWaitCondition>
 #include <QtCore/QEventLoop>
-#include <qfile.h>
+#include <QtCore/QFile>
 #include <QtGui/QIcon>
-#include <qpushbutton.h>
-#include <qjson/parser.h>
+#include <QtGui/QPushButton>
+
 #include <solid/networking.h>
+
+#ifndef QT_KATIE
+#  include <qjson/parser.h>
+#else
+#  include <QJsonDocument>
+#endif
 
 //TODO: I'd really *love* to be able to embed a video *inside* krunner. you know how sexy that'd be? answer: very much.
 //but seeing as youtube doesn't fully support html5 (only for non-ad'ed videos), i guess i'll have to hold off on it?
@@ -94,8 +100,12 @@ void YouTube::run(const Plasma::RunnerContext &context, const Plasma::QueryMatch
 
 void YouTube::parseJson(const QByteArray& data, Plasma::RunnerContext &context)
 {
+#ifndef QT_KATIE
     QJson::Parser parser;
     const QVariantMap resultsMap = parser.parse(data).toMap();
+#else
+    const QVariantMap resultsMap = QJsonDocument::fromJson(data).toVariant().toMap();
+#endif
 
     QVariantMap related = resultsMap.value("feed").toMap();
 

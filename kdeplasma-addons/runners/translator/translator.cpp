@@ -32,13 +32,16 @@
 #include <QtCore/QPair>
 #include <QtCore/QObject>
 #include <QtCore/QList>
-#include <QtCore/qlist.h>
+#include <QtCore/QEventLoop>
 #include <QtGui/QClipboard>
-#include <qjson/parser.h>
+
 #include <Plasma/RunnerContext>
 
-
-#include <QtCore/QEventLoop>
+#ifndef QT_KATIE
+#  include <qjson/parser.h>
+#else
+#  include <QJsonDocument>
+#endif
 
 Translator::Translator(QObject* parent, const QVariantList& args)
     : Plasma::AbstractRunner(parent, args)
@@ -126,6 +129,7 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
     jsonData = jsonData.replace(QRegExp(",{2,2}"), ",\"\",");
 //  kDebug() << jsonData;
 
+#ifndef QT_KATIE
     QJson::Parser parser;
     bool ok;
 
@@ -133,6 +137,14 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
     if (!ok) {
         return;
     }
+#else
+    QJsonParseError error;
+    QVariantList json = QJsonDocument::fromJson(jsonData.toUtf8(), &error).toVariant().toList();
+    if (error.error != QJsonParseError::NoError) {
+        return;
+    }
+#endif
+
     bool oldVersion = true;
     QMultiMap<int, QPair<QString, double> > sentences;
 
