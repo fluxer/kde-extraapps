@@ -787,7 +787,6 @@ QCursor PageViewAnnotator::cursor() const
     return m_engine->cursor();
 }
 
-#ifndef QT_NO_TABLET
 QRect PageViewAnnotator::performRouteMouseOrTabletEvent(const AnnotatorEngine::EventType & eventType, const AnnotatorEngine::Button & button,
                                                         const QPointF & pos, PageViewItem * item )
 {
@@ -865,7 +864,6 @@ QRect PageViewAnnotator::performRouteMouseOrTabletEvent(const AnnotatorEngine::E
 
     return modifiedRect;
 }
-#endif // QT_NO_TABLET
 
 QRect PageViewAnnotator::routeMouseEvent( QMouseEvent * e, PageViewItem * item )
 {
