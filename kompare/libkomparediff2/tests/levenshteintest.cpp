@@ -28,6 +28,7 @@
 
 using namespace Diff2;
 
+QT_BEGIN_NAMESPACE
 namespace QTest {
 
 template<> char* toString(const Marker& marker)
@@ -44,6 +45,7 @@ template<> char* toString(const Marker& marker)
 }
 
 }
+QT_END_NAMESPACE
 
 void LevenshteinTest::testFirstEmptyString()
 {
