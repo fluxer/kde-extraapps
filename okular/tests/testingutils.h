@@ -10,7 +10,6 @@
 #ifndef OKULAR_TESTINGUTILS_H
 #define OKULAR_TESTINGUTILS_H
 
-template<class T >
 #include <QLinkedList>
 #include <QString>
 

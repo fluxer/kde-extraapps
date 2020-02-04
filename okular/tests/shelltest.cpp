@@ -13,6 +13,7 @@
 
 #include "../shell/shellutils.h"
 
+QT_BEGIN_NAMESPACE
 namespace QTest
 {
 template<>
@@ -21,6 +22,7 @@ char* toString( const KUrl& url )
     return qstrdup( url.url().toLocal8Bit() );
 }
 }
+QT_END_NAMESPACE
 
 static const KUrl makeUrlFromCwd( const QString& u, const QString& ref = QString() )
 {
