@@ -104,6 +104,10 @@ void PartTest::testFowardPDF()
 {
     QFETCH(QString, dir);
 
+    if (KStandardDirs::findExe("pdflatex").isEmpty()) {
+        QSKIP("pdflatex not available", SkipAll);
+    }
+
     QVariantList dummyArgs;
     Okular::Part part(NULL, NULL, dummyArgs, KGlobal::mainComponent());
 
