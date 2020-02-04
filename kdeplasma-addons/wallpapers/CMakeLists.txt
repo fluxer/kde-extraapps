@@ -8,7 +8,4 @@ if(MARBLE_FOUND)
     add_subdirectory(marble)
 endif()
 
-if(QIMAGEBLITZ_FOUND)
-    add_subdirectory(pattern)
-endif()
-
+add_subdirectory(pattern)

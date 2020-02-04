@@ -23,14 +23,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pattern.h"
 
-#include "qimageblitz.h"
-
 #include <QFileInfo>
 #include <QPainter>
 #include <QTimer>
 
 #include <KDebug>
 #include <KStandardDirs>
+#include <KIconEffect>
+
 #include "backgroundlistmodel.h"
 #include "backgrounddelegate.h"
 
@@ -104,7 +104,8 @@ QWidget * PatternWallpaper::createConfigurationInterface(QWidget * parent)
 
 QPixmap PatternWallpaper::generatePattern(QImage &image) const
 {
-    return QPixmap::fromImage(Blitz::flatten(image, m_fgColor, m_bgColor));
+    KIconEffect::toMonochrome(image, m_fgColor, m_bgColor, 0.5);
+    return QPixmap::fromImage(image);
 }
 
 QPixmap PatternWallpaper::generatePattern(const QString &patternFile, const QColor &fg, const QColor &bg) const
@@ -117,7 +118,8 @@ QPixmap PatternWallpaper::generatePattern(const QString &patternFile, const QCol
         return QPixmap();
     }
 
-    return QPixmap::fromImage(Blitz::flatten(img, fg, bg));
+    KIconEffect::toMonochrome(img, fg, bg, 0.5);
+    return QPixmap::fromImage(img);
 }
 
 void PatternWallpaper::save(KConfigGroup & config)

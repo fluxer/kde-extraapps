@@ -1,7 +1,5 @@
 project(plasma-wallpaper-pattern)
 
-include_directories(${QIMAGEBLITZ_INCLUDES})
-
 set(pattern_SRCS
     pattern.cpp
     backgrounddelegate.cpp
@@ -11,7 +9,7 @@ set(pattern_SRCS
 )
 
 kde4_add_plugin(plasma_wallpaper_pattern ${pattern_SRCS})
-target_link_libraries(plasma_wallpaper_pattern ${QIMAGEBLITZ_LIBRARIES} ${KDE4_PLASMA_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS})
+target_link_libraries(plasma_wallpaper_pattern ${KDE4_PLASMA_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS})
 
 install(TARGETS plasma_wallpaper_pattern DESTINATION ${PLUGIN_INSTALL_DIR})
 install(FILES plasma-wallpaper-pattern.desktop DESTINATION ${SERVICES_INSTALL_DIR})
