@@ -22,6 +22,8 @@
 #include <QObject>
 #include <QFile>
 #include <QTextStream>
+#include <QTimer>
+
 #include <util/log.h>
 #include <utp/connection.h>
 #include <utp/utpsocket.h>

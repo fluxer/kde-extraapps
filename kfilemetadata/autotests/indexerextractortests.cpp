@@ -23,6 +23,8 @@
 #include "indexerextractortests.h"
 
 #include <QtTest>
+#include <QTemporaryFile>
+
 #include "qtest_kde.h"
 #include "simpleresult.h"
 #include "indexerextractortestsconfig.h"

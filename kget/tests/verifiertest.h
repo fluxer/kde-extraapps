@@ -21,6 +21,7 @@
 #define KGET_VERIFIER_TEST_H
 
 #include <QStringList>
+#include <QScopedPointer>
 #include <KUrl>
 
 class KTempDir;

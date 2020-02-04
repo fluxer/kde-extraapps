@@ -19,8 +19,11 @@
  ***************************************************************************/
 
 #include <QtTest>
+#include <QFileInfo>
+#include <QDir>
 #include <KGlobal>
 #include <KLocale>
+
 #include <util/log.h>
 #include <util/error.h>
 #include <util/functions.h>

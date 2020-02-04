@@ -19,6 +19,8 @@
  ***************************************************************************/
 #include <QtTest>
 #include <QObject>
+#include <QTimer>
+
 #include <util/log.h>
 #include <utp/utpserver.h>
 #include <utp/utpsocket.h>

@@ -20,11 +20,14 @@
 
 #include <QtTest>
 #include <QObject>
+#include <QTemporaryFile>
+#include <QTextStream>
+#include <KSharedConfig>
+#include <KConfigGroup>
+
 #include <time.h>
 #include <util/log.h>
 #include <torrent/statsfile.h>
-#include <KSharedConfig>
-#include <KConfigGroup>
 
 using namespace bt;
 

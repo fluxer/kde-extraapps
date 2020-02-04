@@ -2,8 +2,10 @@
 
 #include <QtTest>
 #include <QObject>
+#include <QFile>
 #include <KGlobal>
 #include <KLocale>
+
 #include <unistd.h>
 #include <time.h>
 #include <util/log.h>

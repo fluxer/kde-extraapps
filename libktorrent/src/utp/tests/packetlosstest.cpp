@@ -20,6 +20,8 @@
 
 #include <QtTest>
 #include <QObject>
+#include <QTimer>
+
 #include <util/log.h>
 #include <utp/connection.h>
 #include <utp/utpsocket.h>
