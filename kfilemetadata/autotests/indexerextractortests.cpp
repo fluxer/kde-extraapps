@@ -98,10 +98,13 @@ void IndexerExtractorTests::testPlainTextExtractor()
 void IndexerExtractorTests::testImageExtractor()
 {
     QScopedPointer<ExtractorPluginManager> manager(new ExtractorPluginManager(this));
-    ExtractorPlugin* plugin = manager->fetchExtractors("image/png").first();
+    QList<ExtractorPlugin*> extractors = manager->fetchExtractors("image/png");
+    if (extractors.isEmpty()) {
+        QSKIP("No extractors for image/png", SkipAll);
+    }
 
     SimpleResult result(testFilePath("tux.png"), "image/png");
-    plugin->extract(&result);
+    extractors.first()->extract(&result);
 
     QCOMPARE(result.types().size(), 1);
     QCOMPARE(result.types().first(), Type::Image);
