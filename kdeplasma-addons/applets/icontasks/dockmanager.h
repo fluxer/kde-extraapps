@@ -26,6 +26,7 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QMap>
+#include <QtCore/QSet>
 #include <QtDBus/QtDBus>
 #include <KUrl>
 
