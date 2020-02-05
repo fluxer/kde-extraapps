@@ -1,11 +1,10 @@
 include_directories( 
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src/config
-    ${CMAKE_CURRENT_BINARY_DIR}/../src/config
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src/lib
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src/modes/system
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src/modes/kernel
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_BINARY_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/lib
+    ${CMAKE_SOURCE_DIR}/src/modes/system
+    ${CMAKE_SOURCE_DIR}/src/modes/kernel
 )
 
 macro(ksystemlog_unit_tests)
@@ -15,21 +14,16 @@ macro(ksystemlog_unit_tests)
             testUtil.cpp
         )
 
-        qt4_add_resources( unitTest_sources testResources.qrc )
+        qt4_add_resources(unitTest_sources testResources.qrc)
 
         kde4_add_test(ksystemlog-${unitTest} ${unitTest_sources})
 
         target_link_libraries(ksystemlog-${unitTest} 
-            ${QT_AND_KDECORE_LIBS} 
             ${QT_QTTEST_LIBRARY}
             ${KDE4_KDEUI_LIBS}
             ${KDE4_KIO_LIBS}
             ${KDE4_KDECORE_LIBS} 
-            ksystemlog_lib
-            ksystemlog_base_mode
-            ksystemlog_config
-            ksystemlog_system
-            ksystemlog_kernel
+            ksystemlog_library
         )
     endforeach(unitTest)
 endmacro(ksystemlog_unit_tests)
