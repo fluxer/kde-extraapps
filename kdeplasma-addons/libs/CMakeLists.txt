@@ -1,6 +1,4 @@
-
 add_subdirectory(plasmaweather)
-add_subdirectory(rtm)
 add_subdirectory(lancelot)
 
 if(KDE4WORKSPACE_FOUND)

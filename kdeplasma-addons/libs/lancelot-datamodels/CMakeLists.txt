@@ -2,37 +2,10 @@ project(liblancelot-datamodels)
 
 find_package(Lancelot REQUIRED)
 
-set (ADDITIONAL_LINK_LIBRARIES)
-
-########### are akonadi and pimlibs available? ##########
-
-# find_package(KdepimLibs)
-
-if (KDEPIMLIBS_FOUND)
-   set( LANCELOT_DATAMODELS_HAS_PIMLIBS 1 )
-
-   include_directories(
-      ${KDEPIMLIBS_INCLUDE_DIRS}
-   )
-
-   set (ADDITIONAL_LINK_LIBRARIES
-        ${ADDITIONAL_LINK_LIBRARIES}
-   )
-endif(KDEPIMLIBS_FOUND)
-
-macro_log_feature(LANCELOT_DATAMODELS_HAS_PIMLIBS
-   "Akonadi and KDE PIM Libs"
-   "Support for unread messages model"
-   "http://www.kde.org/"
-   FALSE
-   ""
-   "STRONGLY_RECOMMENDED: Akonadi and KDE PIM libraries are required for messages datamodel and kmail support"
+configure_file(
+    config-lancelot-datamodels.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config-lancelot-datamodels.h
 )
-
-configure_file(config-lancelot-datamodels.h.cmake
-   ${CMAKE_CURRENT_BINARY_DIR}/config-lancelot-datamodels.h )
-
-
 
 ########### define variables ##########
 
@@ -108,7 +81,6 @@ target_link_libraries(
    ${KDE4_SOLID_LIBS}
    ${KDE4WORKSPACE_TASKMANAGER_LIBRARY}
    ${LANCELOT_LIBS}
-   ${ADDITIONAL_LINK_LIBRARIES}
    kworkspace
 )
 

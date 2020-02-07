@@ -1,5 +1,3 @@
-include_directories(${KERFUFFLE_QJSON_INCLUDE_DIR})
-
 set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 
 set(JSONINTERFACE_SOURCES
@@ -16,7 +14,6 @@ macro(KERFUFFLE_UNIT_TESTS)
             kerfuffle
             ${KDE4_KDEUI_LIBS}
             ${QT_QTTEST_LIBRARY}
-            ${KERFUFFLE_QJSON_LIBRARIES}
         )
     endforeach(_testname)
 endmacro(KERFUFFLE_UNIT_TESTS)

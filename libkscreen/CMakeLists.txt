@@ -33,11 +33,6 @@ set_package_properties(X11_XCB PROPERTIES DESCRIPTION "XCB extension to work wit
     PURPOSE "Needed to build XRandR 1.1 backend"
 )
 
-if(ENABLE_TESTING)
-    find_package(QJSON 0.8 REQUIRED)
-    link_directories(${QJSON_LIBRARY_DIRS})
-endif()
-
 check_cxx_compiler_flag(-fvisibility=hidden _HAVE_VISIBILITY)
 if (_HAVE_VISIBILITY AND NOT WIN32)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
