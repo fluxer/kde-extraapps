@@ -1,6 +1,6 @@
 ## install the cmake files
 
-# set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modules )
+# set(module_install_dir ${KDE4_DATA_INSTALL_DIR}/cmake/modules )
 #
 # set(cmakeFiles
 #                FindLancelot.cmake

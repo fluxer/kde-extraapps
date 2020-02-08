@@ -1,1 +1,1 @@
-install(FILES krdc.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES krdc.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})

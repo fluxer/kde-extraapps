@@ -16,4 +16,4 @@ set(utp_HDR
     packetbuffer.h
 )
 
-install(FILES ${utp_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/utp COMPONENT Devel)
+install(FILES ${utp_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/utp COMPONENT Devel)

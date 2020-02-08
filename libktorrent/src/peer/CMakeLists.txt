@@ -20,7 +20,7 @@ set (peer_HDR
 )
 
 
-install(FILES ${peer_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/peer COMPONENT Devel)
+install(FILES ${peer_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/peer COMPONENT Devel)
 
 if(ENABLE_TESTING)
     add_subdirectory(tests)

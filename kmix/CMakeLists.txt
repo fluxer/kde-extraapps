@@ -137,7 +137,7 @@ if (CANBERRA_FOUND)
   target_link_libraries(kmix ${CANBERRA_LIBRARIES})
 endif (CANBERRA_FOUND)
 
-install(TARGETS kmix  DESTINATION ${LIB_INSTALL_DIR} )
+install(TARGETS kmix  DESTINATION ${KDE4_LIB_INSTALL_DIR} )
 
 install(TARGETS kmix  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
@@ -177,12 +177,12 @@ if (CANBERRA_FOUND)
   target_link_libraries(kded_kmixd ${CANBERRA_LIBRARIES})
 endif (CANBERRA_FOUND)
 
-install(TARGETS kded_kmixd DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kded_kmixd DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 #target_link_libraries( kmixd kded_kmixd )
-#install(TARGETS kmixd DESTINATION ${PLUGIN_INSTALL_DIR} )
+#install(TARGETS kmixd DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
-install( FILES kmixd.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/kded )
+install( FILES kmixd.desktop  DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/kded )
 
 ########### next target ###############
 
@@ -223,16 +223,16 @@ endif (CANBERRA_FOUND)
 ########### next target ###############
 add_subdirectory( plasma )
 
-install( TARGETS kmixctrl  DESTINATION ${LIB_INSTALL_DIR} )
+install( TARGETS kmixctrl  DESTINATION ${KDE4_LIB_INSTALL_DIR} )
 
 install( TARGETS kmixctrl ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-install( PROGRAMS kmix.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( PROGRAMS apps/kmixremote DESTINATION ${BIN_INSTALL_DIR} )
-install( FILES restore_kmix_volumes.desktop  DESTINATION ${AUTOSTART_INSTALL_DIR})
-install( FILES kmix_autostart.desktop  DESTINATION ${AUTOSTART_INSTALL_DIR})
-install( FILES kmixui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kmix )
-install( FILES kmixctrl_restore.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES dbus/org.kde.kmix.control.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
-install( FILES dbus/org.kde.kmix.mixer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
-install( FILES dbus/org.kde.kmix.mixset.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install( PROGRAMS kmix.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS apps/kmixremote DESTINATION ${KDE4_BIN_INSTALL_DIR} )
+install( FILES restore_kmix_volumes.desktop  DESTINATION ${KDE4_AUTOSTART_INSTALL_DIR})
+install( FILES kmix_autostart.desktop  DESTINATION ${KDE4_AUTOSTART_INSTALL_DIR})
+install( FILES kmixui.rc  DESTINATION  ${KDE4_DATA_INSTALL_DIR}/kmix )
+install( FILES kmixctrl_restore.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( FILES dbus/org.kde.kmix.control.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR} )
+install( FILES dbus/org.kde.kmix.mixer.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR} )
+install( FILES dbus/org.kde.kmix.mixset.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR} )

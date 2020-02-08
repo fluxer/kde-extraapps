@@ -41,11 +41,11 @@ if(LIBVNCSERVER_FOUND)
 
     add_dependencies(kcm_krdc_vncplugin krdc_vncplugin)
 
-    install(TARGETS kcm_krdc_vncplugin DESTINATION ${PLUGIN_INSTALL_DIR})
-    install(TARGETS krdc_vncplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+    install(TARGETS kcm_krdc_vncplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+    install(TARGETS krdc_vncplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
-    install(FILES krdc_vnc.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-    install(FILES krdc_vnc_config.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+    install(FILES krdc_vnc.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+    install(FILES krdc_vnc_config.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-    install(FILES vnc.protocol DESTINATION ${SERVICES_INSTALL_DIR})
+    install(FILES vnc.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 endif(LIBVNCSERVER_FOUND)

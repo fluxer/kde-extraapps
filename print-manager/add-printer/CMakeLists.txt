@@ -37,4 +37,4 @@ target_link_libraries(kde-add-printer
     kcupslib
 )
 
-install(TARGETS kde-add-printer DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kde-add-printer DESTINATION ${KDE4_BIN_INSTALL_DIR})

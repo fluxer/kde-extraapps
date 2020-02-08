@@ -35,5 +35,5 @@ target_link_libraries(kded_bluedevil
     bluedevil
 )
 
-install(TARGETS kded_bluedevil DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES bluedevil.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
+install(TARGETS kded_bluedevil DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES bluedevil.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/kded)

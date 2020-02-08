@@ -29,18 +29,18 @@ kde4_add_plugin(kerfuffle_libarchive ${kerfuffle_libarchive_SRCS})
 
 target_link_libraries(kerfuffle_libarchive ${KDE4_KDECORE_LIBS} ${LibArchive_LIBRARIES} kerfuffle)
 
-install(TARGETS kerfuffle_libarchive  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS kerfuffle_libarchive  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
 
 ########### install files ###############
 
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle_libarchive.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle_libarchive_readonly.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
 
 set(SUPPORTED_ARK_MIMETYPES "${SUPPORTED_ARK_MIMETYPES}${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}" PARENT_SCOPE)

@@ -1,3 +1,3 @@
 
-install(FILES pdfsettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES pdfsettings.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
 

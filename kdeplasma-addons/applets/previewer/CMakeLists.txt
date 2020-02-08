@@ -20,17 +20,17 @@ target_link_libraries(plasma_applet_previewer
  
 
 install(TARGETS plasma_applet_previewer
-        DESTINATION ${PLUGIN_INSTALL_DIR})
+        DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
  
 install(FILES plasma-applet-previewer.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-install(FILES preview.desktop DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
+install(FILES preview.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/ServiceMenus)
 
 install(FILES
         previewer-16.svgz
         previewer-22.svgz
-        DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
+        DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
 
-kde4_install_icons(${ICON_INSTALL_DIR})
+kde4_install_icons(${KDE4_ICON_INSTALL_DIR})
 

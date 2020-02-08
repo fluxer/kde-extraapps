@@ -153,4 +153,4 @@ install( FILES abstractparser.h
                specificitemvisitor.h
                syndication.h
                tools.h
-         DESTINATION ${INCLUDE_INSTALL_DIR}/syndication COMPONENT Devel)
+         DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/syndication COMPONENT Devel)

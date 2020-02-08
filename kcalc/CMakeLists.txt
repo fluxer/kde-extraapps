@@ -59,9 +59,9 @@ install(TARGETS kcalc  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS kcalc.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
-install( FILES kcalc.kcfg  DESTINATION ${KCFG_INSTALL_DIR})
-install( FILES kcalcui.rc  DESTINATION ${DATA_INSTALL_DIR}/kcalc)
-install( FILES scienceconstants.xml  DESTINATION ${DATA_INSTALL_DIR}/kcalc)
+install( PROGRAMS kcalc.desktop  DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install( FILES kcalc.kcfg  DESTINATION ${KDE4_KCFG_INSTALL_DIR})
+install( FILES kcalcui.rc  DESTINATION ${KDE4_DATA_INSTALL_DIR}/kcalc)
+install( FILES scienceconstants.xml  DESTINATION ${KDE4_DATA_INSTALL_DIR}/kcalc)
 
-kde4_install_icons( ${ICON_INSTALL_DIR}   )
+kde4_install_icons( ${KDE4_ICON_INSTALL_DIR}   )

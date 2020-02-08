@@ -17,7 +17,7 @@
 
 ############################################
 
-install(FILES pmcorebackendplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES pmcorebackendplugin.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR})
 
 option(PARTMAN_LIBPARTEDBACKEND "Build the libparted backend plugin." ON)
 

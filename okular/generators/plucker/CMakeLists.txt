@@ -25,11 +25,11 @@ kde4_add_plugin(okularGenerator_plucker ${okularGenerator_plucker_SRCS} ${qunplu
 
 target_link_libraries(okularGenerator_plucker okularcore ${KDE4_KIO_LIBS} ${MATH_LIB} ${JPEG_LIBRARY} ${ZLIB_LIBRARY})
 
-install(TARGETS okularGenerator_plucker DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_plucker DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_plucker.desktop okularPlucker.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_plucker.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_plucker.desktop okularPlucker.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_plucker.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 

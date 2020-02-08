@@ -18,8 +18,8 @@ target_link_libraries(akregator_config_general
     ${KDE4_KIO_LIBS}
 )
 
-install(FILES akregator_config_general.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS akregator_config_general DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES akregator_config_general.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(TARGETS akregator_config_general DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### next target ###############
 
@@ -35,8 +35,8 @@ target_link_libraries(akregator_config_appearance
     ${KDE4_KIO_LIBS}
 )
 
-install(FILES akregator_config_appearance.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS akregator_config_appearance DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES akregator_config_appearance.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(TARGETS akregator_config_appearance DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### next target ###############
 
@@ -52,8 +52,8 @@ target_link_libraries(akregator_config_archive
     ${KDE4_KIO_LIBS}
 )
 
-install(FILES akregator_config_archive.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS akregator_config_archive DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES akregator_config_archive.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(TARGETS akregator_config_archive DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### next target ###############
 
@@ -69,8 +69,8 @@ target_link_libraries(akregator_config_browser
     ${KDE4_KIO_LIBS}
 )
 
-install(FILES akregator_config_browser.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS akregator_config_browser DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES akregator_config_browser.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(TARGETS akregator_config_browser DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### next target ###############
 
@@ -87,5 +87,5 @@ target_link_libraries(akregator_config_advanced
     ${KDE4_KIO_LIBS}
 )
 
-install(FILES akregator_config_advanced.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS akregator_config_advanced DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES akregator_config_advanced.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(TARGETS akregator_config_advanced DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

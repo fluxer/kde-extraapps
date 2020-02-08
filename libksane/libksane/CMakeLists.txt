@@ -66,7 +66,7 @@ INSTALL(
     ksane.h
     libksane_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/version.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/libksane
+    DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libksane
     COMPONENT Devel
 )
 
@@ -76,7 +76,7 @@ CONFIGURE_FILE(
 )
 INSTALL(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc
-    DESTINATION ${LIB_INSTALL_DIR}/pkgconfig
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}/pkgconfig
 )
 
 # Install find cmake script to the system for client applications.
@@ -84,8 +84,8 @@ INSTALL(
 INSTALL(
     FILES
     ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake
-    DESTINATION ${LIB_INSTALL_DIR}/cmake/KSane
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}/cmake/KSane
 )
 
-KDE4_INSTALL_ICONS(${ICON_INSTALL_DIR})
+KDE4_INSTALL_ICONS(${KDE4_ICON_INSTALL_DIR})
 

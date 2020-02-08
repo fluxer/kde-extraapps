@@ -26,8 +26,8 @@ target_link_libraries(kio_obexftp
   ${QT_QTDBUS_LIBRARY}
 )
 
-install(TARGETS kio_obexftp DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kio_obexftp DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install(FILES obexftp.protocol DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES obexftp.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

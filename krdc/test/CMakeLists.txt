@@ -20,7 +20,7 @@ if(BUILD_TEST)
         ${KDE4_KDEUI_LIBS}
         krdccore
     )
-    install(TARGETS krdc_testplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+    install(TARGETS krdc_testplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
-    install(FILES krdc_test.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+    install(FILES krdc_test.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 endif(BUILD_TEST)

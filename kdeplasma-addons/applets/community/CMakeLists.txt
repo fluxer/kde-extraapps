@@ -36,8 +36,8 @@ target_link_libraries(
     ${QT_QTWEBKIT_LIBRARY}
 )
 
-install(TARGETS plasma_applet_opendesktop DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-applet-opendesktop.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS plasma_applet_opendesktop DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-applet-opendesktop.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-install(FILES user.css DESTINATION ${DATA_INSTALL_DIR}/plasma-applet-opendesktop/)
+install(FILES user.css DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma-applet-opendesktop/)
 

@@ -18,10 +18,10 @@ configure_file(
     ${CMAKE_CURRENT_BINARY_DIR}/ark_part.desktop
 )
 
-install(TARGETS arkpart  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS arkpart  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/ark_part.desktop     DESTINATION ${SERVICES_INSTALL_DIR} )
-install( FILES ark_part.rc          DESTINATION ${DATA_INSTALL_DIR}/ark )
+install( FILES ${CMAKE_CURRENT_BINARY_DIR}/ark_part.desktop     DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
+install( FILES ark_part.rc          DESTINATION ${KDE4_DATA_INSTALL_DIR}/ark )

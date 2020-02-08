@@ -57,6 +57,6 @@ target_link_libraries(kcm_cron
     ${KDE4_KIO_LIBS}
 )
 
-install(TARGETS  kcm_cron  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS  kcm_cron  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
-install(FILES kcm_cron.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install(FILES kcm_cron.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )

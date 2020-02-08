@@ -171,8 +171,8 @@ install(TARGETS lokalize ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS lokalize.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES lokalize.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+install( PROGRAMS lokalize.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
+install( FILES lokalize.kcfg  DESTINATION  ${KDE4_KCFG_INSTALL_DIR} )
 install( FILES
         editorui.rc
         lokalizemainwindowui.rc
@@ -181,4 +181,4 @@ install( FILES
         tm/translationmemoryrui.rc
         filesearch/filesearchtabui.rc
         lokalize.notifyrc
-        DESTINATION  ${DATA_INSTALL_DIR}/lokalize )
+        DESTINATION  ${KDE4_DATA_INSTALL_DIR}/lokalize )

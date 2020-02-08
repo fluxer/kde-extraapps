@@ -32,4 +32,4 @@ target_link_libraries(kuassel
     ${QT_QTMAIN_LIBRARY}
 )
 
-install(TARGETS kuassel RUNTIME DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kuassel RUNTIME DESTINATION ${KDE4_BIN_INSTALL_DIR})

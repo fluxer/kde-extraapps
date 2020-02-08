@@ -44,12 +44,12 @@ if(LIBNXCL_FOUND)
 
     add_dependencies(kcm_krdc_nxplugin krdc_nxplugin)
 
-    install(TARGETS kcm_krdc_nxplugin DESTINATION ${PLUGIN_INSTALL_DIR})
-    install(TARGETS krdc_nxplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+    install(TARGETS kcm_krdc_nxplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+    install(TARGETS krdc_nxplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
-    install(FILES krdc_nx.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-    install(FILES krdc_nx_config.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+    install(FILES krdc_nx.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+    install(FILES krdc_nx_config.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-    install(FILES nx.protocol DESTINATION ${SERVICES_INSTALL_DIR})
-    install(FILES default.dsa.key DESTINATION ${DATA_INSTALL_DIR}/krdc)
+    install(FILES nx.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+    install(FILES default.dsa.key DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc)
 endif(LIBNXCL_FOUND)

@@ -25,10 +25,10 @@ target_link_libraries(plasma_applet_kimpanel
                       )
 
 install(TARGETS plasma_applet_kimpanel
-        DESTINATION ${PLUGIN_INSTALL_DIR})
+        DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(FILES plasma-applet-kimpanel.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(FILES kimpanelconfig.kcfg
-         DESTINATION ${KCFG_INSTALL_DIR})
+         DESTINATION ${KDE4_KCFG_INSTALL_DIR})

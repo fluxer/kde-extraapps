@@ -19,7 +19,7 @@ target_link_libraries(kcm_kttsd ${KDE4_KIO_LIBS} ${SPEECHD_LIBRARIES} kttsd)
 
 install(
     TARGETS kcm_kttsd
-    DESTINATION ${PLUGIN_INSTALL_DIR}
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 
@@ -27,12 +27,12 @@ install(
 
 install(
     FILES kcmkttsd.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
 
 install(
     FILES kcmkttsd_testmessage.desktop
-    DESTINATION ${DATA_INSTALL_DIR}/jovie
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/jovie
 )
 
 

@@ -21,9 +21,9 @@ if (ZLIB_FOUND)
 
 	target_link_libraries(kerfuffle_libgz ${KDE4_KDECORE_LIBS} kerfuffle )
 
-	install(TARGETS kerfuffle_libgz DESTINATION ${PLUGIN_INSTALL_DIR} )
+	install(TARGETS kerfuffle_libgz DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
-	install( FILES kerfuffle_libgz.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+	install( FILES kerfuffle_libgz.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 endif (ZLIB_FOUND)
 
 #
@@ -41,9 +41,9 @@ if (BZIP2_FOUND)
 
 	target_link_libraries(kerfuffle_libbz2 ${KDE4_KDECORE_LIBS} kerfuffle )
 
-	install(TARGETS kerfuffle_libbz2 DESTINATION ${PLUGIN_INSTALL_DIR} )
+	install(TARGETS kerfuffle_libbz2 DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
-	install( FILES kerfuffle_libbz2.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+	install( FILES kerfuffle_libbz2.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 endif (BZIP2_FOUND)
 
 #
@@ -61,9 +61,9 @@ if (LIBLZMA_FOUND)
 
 	target_link_libraries(kerfuffle_libxz ${KDE4_KDECORE_LIBS} kerfuffle )
 
-	install(TARGETS kerfuffle_libxz DESTINATION ${PLUGIN_INSTALL_DIR} )
+	install(TARGETS kerfuffle_libxz DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
-	install( FILES kerfuffle_libxz.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+	install( FILES kerfuffle_libxz.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 endif (LIBLZMA_FOUND)
 
 set(SUPPORTED_ARK_MIMETYPES "${SUPPORTED_ARK_MIMETYPES}${SUPPORTED_LIBSINGLEFILE_MIMETYPES}" PARENT_SCOPE)

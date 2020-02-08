@@ -36,11 +36,11 @@ target_link_libraries(ffmpegthumbs
     ${SWSCALE_LIBRARIES}
 )
 
-install(TARGETS ffmpegthumbs DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS ffmpegthumbs DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install(FILES ffmpegthumbs.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES ffmpegthumbs.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 if(ENABLE_TESTING)
     add_subdirectory(tests)

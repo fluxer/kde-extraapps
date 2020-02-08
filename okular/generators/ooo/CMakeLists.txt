@@ -31,11 +31,11 @@ if (QCA2_FOUND)
   target_link_libraries(okularGenerator_ooo okularcore ${QCA2_LIBRARIES})
 endif (QCA2_FOUND)
 
-install(TARGETS okularGenerator_ooo DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_ooo DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_ooo.desktop okularOoo.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_ooo.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_ooo.desktop okularOoo.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_ooo.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 

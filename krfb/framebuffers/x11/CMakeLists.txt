@@ -22,10 +22,10 @@ target_link_libraries (krfb_framebuffer_x11
 )
 
 install (TARGETS krfb_framebuffer_x11
-         DESTINATION ${PLUGIN_INSTALL_DIR}
+         DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 install (FILES krfb_framebuffer_x11.desktop
-         DESTINATION ${SERVICES_INSTALL_DIR}
+         DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
 

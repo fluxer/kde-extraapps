@@ -29,7 +29,7 @@ set (dht_HDR
     rpcmsgfactory.h
 )
 
-install(FILES ${dht_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/dht COMPONENT Devel)
+install(FILES ${dht_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/dht COMPONENT Devel)
 
 if(ENABLE_TESTING)
     add_subdirectory(tests)

@@ -29,8 +29,8 @@ target_link_libraries(kcm_bluedeviltransfer ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY}
 
 install(TARGETS kcm_bluedevildevices
                 kcm_bluedeviladapters
-                kcm_bluedeviltransfer DESTINATION ${PLUGIN_INSTALL_DIR})
+                kcm_bluedeviltransfer DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(FILES bluedevildevices.desktop
               bluedeviladapters.desktop
-              bluedeviltransfer.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+              bluedeviltransfer.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

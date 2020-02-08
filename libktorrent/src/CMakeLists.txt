@@ -265,10 +265,10 @@ set (migrate_HDR
 
 
 
-install(FILES ${bcodec_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/bcodec COMPONENT Devel)
-install(FILES ${interfaces_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/interfaces COMPONENT Devel)
-install(FILES ${migrate_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/migrate COMPONENT Devel)
-install(FILES ${ktorrent_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent COMPONENT Devel)
+install(FILES ${bcodec_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/bcodec COMPONENT Devel)
+install(FILES ${interfaces_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/interfaces COMPONENT Devel)
+install(FILES ${migrate_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/migrate COMPONENT Devel)
+install(FILES ${ktorrent_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent COMPONENT Devel)
 
 add_subdirectory(torrent)
 add_subdirectory(datachecker)

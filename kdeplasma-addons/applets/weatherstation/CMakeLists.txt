@@ -16,9 +16,9 @@ target_link_libraries(plasma_applet_weatherstation
     ${KDE4WORKSPACE_WEATHERION_LIBRARY}
     ${QT_QTDECLARATIVE_LIBRARY})
 
-install(TARGETS plasma_applet_weatherstation DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasma_applet_weatherstation DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES plasma-applet-weatherstation.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(FILES
     lcd2.svgz
@@ -26,6 +26,6 @@ install(FILES
     lcd_digits.svgz
     wind_arrows.svgz
     weather_icons.svgz
-    DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/weatherstation/)
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/weatherstation/)
 
-install(DIRECTORY package/ DESTINATION ${DATA_INSTALL_DIR}/plasma/packages/org.kde.lcdweather)
+install(DIRECTORY package/ DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma/packages/org.kde.lcdweather)

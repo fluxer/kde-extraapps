@@ -2,7 +2,7 @@ install(FILES
     title.skin
     tabs.skin
     icon.png
-    DESTINATION ${DATA_INSTALL_DIR}/yakuake/skins/default)
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/yakuake/skins/default)
 
 install(FILES
     tabs/back_image.png
@@ -20,7 +20,7 @@ install(FILES
     tabs/separator.png
     tabs/unselected_back.png
     tabs/lock.png
-    DESTINATION ${DATA_INSTALL_DIR}/yakuake/skins/default/tabs)
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/yakuake/skins/default/tabs)
 
 install(FILES
     title/back.png
@@ -35,4 +35,4 @@ install(FILES
     title/quit_over.png
     title/quit_up.png
     title/right.png
-    DESTINATION ${DATA_INSTALL_DIR}/yakuake/skins/default/title)
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/yakuake/skins/default/title)

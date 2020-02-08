@@ -14,5 +14,5 @@ target_link_libraries( plasma_applet_bookmarks
     ${KDE4_KIO_LIBS}
 )
 
-install( TARGETS plasma_applet_bookmarks  DESTINATION ${PLUGIN_INSTALL_DIR})
-install( FILES plasma-applet-bookmarks.desktop  DESTINATION ${SERVICES_INSTALL_DIR} )
+install( TARGETS plasma_applet_bookmarks  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install( FILES plasma-applet-bookmarks.desktop  DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )

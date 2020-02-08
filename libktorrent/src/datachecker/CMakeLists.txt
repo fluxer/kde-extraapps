@@ -11,6 +11,6 @@ set (datachecker_HDR
 )
 
 install(FILES ${datachecker_HDR}
-    DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/datachecker
+    DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/datachecker
     COMPONENT Devel
 )

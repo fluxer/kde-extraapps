@@ -36,12 +36,12 @@ kde4_add_plugin(plasma_applet_plasmaboard ${plasmaboard_SRCS})
 target_link_libraries(plasma_applet_plasmaboard 
                 ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS} ${X11_XTest_LIB} ${X11_X11_LIB} ${X11_LIBS})
  
-install(TARGETS plasma_applet_plasmaboard DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasma_applet_plasmaboard DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(FILES plasma_applet_plasmaboard.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 add_subdirectory(layouts)
         
 #install(FILES plasmaboard_key.svg
-#	DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
+#	DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)

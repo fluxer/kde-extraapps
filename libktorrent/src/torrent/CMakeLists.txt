@@ -17,7 +17,7 @@ set(torrent_HDR
     torrentfilestream.h
 )
 
-install(FILES ${torrent_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/torrent COMPONENT Devel)
+install(FILES ${torrent_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/torrent COMPONENT Devel)
 
 if(ENABLE_TESTING)
     add_subdirectory(tests)

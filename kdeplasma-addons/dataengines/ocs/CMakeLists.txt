@@ -14,6 +14,6 @@ kde4_add_plugin(plasma_engine_ocs ${ocs_engine_SRCS})
 target_link_libraries(plasma_engine_ocs ${LIBATTICA_LIBRARIES} ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS}
   ${KDE4_PLASMA_LIBS} ${KDE4_SOLID_LIBS}  ${QT_QTNETWORK_LIBRARY} )
 
-install(TARGETS plasma_engine_ocs DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-dataengine-ocs.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
-install(FILES ocsPerson.operations DESTINATION ${DATA_INSTALL_DIR}/plasma/services)
+install(TARGETS plasma_engine_ocs DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-dataengine-ocs.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
+install(FILES ocsPerson.operations DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma/services)

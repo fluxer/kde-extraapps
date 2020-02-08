@@ -15,7 +15,7 @@ configure_file(
 
 ########### install files ###############
 
-install(TARGETS kerfuffle_karchive  DESTINATION ${PLUGIN_INSTALL_DIR} )
-install( FILES kerfuffle_karchive.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install(TARGETS kerfuffle_karchive  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
+install( FILES kerfuffle_karchive.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
 
 set(SUPPORTED_ARK_MIMETYPES "${SUPPORTED_ARK_MIMETYPES}${SUPPORTED_KARCHIVE_MIMETYPES}" PARENT_SCOPE)

@@ -16,4 +16,4 @@ target_link_libraries(kde-print-queue
     kcupslib
 )
 
-install(TARGETS kde-print-queue DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kde-print-queue DESTINATION ${KDE4_BIN_INSTALL_DIR})

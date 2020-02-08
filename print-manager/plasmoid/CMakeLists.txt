@@ -9,8 +9,8 @@ target_link_libraries(printmanagerwidget
     kcupslib
 )
 
-install(TARGETS printmanagerwidget DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/designer)
+install(TARGETS printmanagerwidget DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}/plugins/designer)
 
 # QML Stuff
-install(FILES package/metadata.desktop DESTINATION ${SERVICES_INSTALL_DIR} RENAME plasma-applet-printmanager.desktop)
-install(DIRECTORY package/ DESTINATION ${DATA_INSTALL_DIR}/plasma/plasmoids/org.kde.printmanager)
+install(FILES package/metadata.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} RENAME plasma-applet-printmanager.desktop)
+install(DIRECTORY package/ DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma/plasmoids/org.kde.printmanager)

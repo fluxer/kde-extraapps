@@ -64,7 +64,7 @@ if (NOT EXISTS ${screensaver_xml})
 endif (NOT EXISTS ${screensaver_xml})
 qt4_add_dbus_interface(lancelot_datamodels_LIB_SRCS ${screensaver_xml} screensaver_interface)
 
-set(kopete_xml ${DBUS_INTERFACES_INSTALL_DIR}/org.kde.Kopete.xml)
+set(kopete_xml ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.Kopete.xml)
 if (NOT EXISTS ${kopete_xml})
    set(kopete_xml external/org.kde.Kopete.xml)
 endif (NOT EXISTS ${kopete_xml})
@@ -113,7 +113,7 @@ set(lancelot_datamodels_LIB_INCLUDES
 
 install(FILES
    ${lancelot_datamodels_LIB_INCLUDES}
-   DESTINATION ${INCLUDE_INSTALL_DIR}/lancelot-datamodels COMPONENT Devel
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/lancelot-datamodels COMPONENT Devel
 )
 
 install(FILES
@@ -136,6 +136,6 @@ install(FILES
    Lancelot/Models/SystemActions
    Lancelot/Models/SystemServices
    Lancelot/Models/XbelModel
-   DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Lancelot/Models COMPONENT Devel
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/KDE/Lancelot/Models COMPONENT Devel
 )
 

@@ -22,5 +22,5 @@ set_target_properties(akregatorinterfaces PROPERTIES
 )
 
 install(TARGETS akregatorinterfaces ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES akregator.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES akregator.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
 

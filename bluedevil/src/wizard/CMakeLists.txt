@@ -27,5 +27,5 @@ target_link_libraries(bluedevil-wizard
                       ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} bluedevil)
 
 install(TARGETS bluedevil-wizard ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES bluedevil-wizard.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES pin-code-database.xml DESTINATION ${DATA_INSTALL_DIR}/bluedevilwizard)
+install(FILES bluedevil-wizard.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(FILES pin-code-database.xml DESTINATION ${KDE4_DATA_INSTALL_DIR}/bluedevilwizard)

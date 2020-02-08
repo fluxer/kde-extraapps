@@ -18,10 +18,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-install(FILES filelightpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(PROGRAMS filelight.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES filelightrc DESTINATION ${CONFIG_INSTALL_DIR})
-install(FILES filelightpartui.rc DESTINATION ${DATA_INSTALL_DIR}/filelightpart)
-install(FILES filelightui.rc DESTINATION ${DATA_INSTALL_DIR}/filelight)
+install(FILES filelightpart.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(PROGRAMS filelight.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(FILES filelightrc DESTINATION ${KDE4_CONFIG_INSTALL_DIR})
+install(FILES filelightpartui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/filelightpart)
+install(FILES filelightui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/filelight)
 
-kde4_install_icons(${ICON_INSTALL_DIR})
+kde4_install_icons(${KDE4_ICON_INSTALL_DIR})

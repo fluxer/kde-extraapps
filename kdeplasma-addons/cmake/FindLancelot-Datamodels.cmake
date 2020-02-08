@@ -38,13 +38,13 @@ if (NOT Lancelot_Datamodels_FIND_QUIETLY)
    find_path(LANCELOT_DATAMODELS_INCLUDE_DIR NAMES lancelot-datamodels/BaseModel.h
       PATHS
       ${KDE4_INCLUDE_DIR}
-      ${INCLUDE_INSTALL_DIR}
+      ${KDE4_INCLUDE_INSTALL_DIR}
    )
 
    find_library(LANCELOT_DATAMODELS_LIBS NAMES lancelot-datamodels
       PATHS
       ${KDE4_LIB_DIR}
-      ${LIB_INSTALL_DIR}
+      ${KDE4_LIB_INSTALL_DIR}
    )
 
    include(FindPackageHandleStandardArgs)

@@ -37,11 +37,11 @@ kde4_add_plugin(okularGenerator_poppler ${okularGenerator_poppler_PART_SRCS})
 
 target_link_libraries(okularGenerator_poppler ${POPPLER_QT4_LIBRARIES} okularcore ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY} ${ZLIB_LIBRARIES})
 
-install(TARGETS okularGenerator_poppler DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_poppler DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_poppler.desktop okularPoppler.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_pdf.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_poppler.desktop okularPoppler.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_pdf.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 

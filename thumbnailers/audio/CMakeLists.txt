@@ -9,6 +9,6 @@ kde4_add_plugin(AudioThumbs ${AudioThumbs_SRCS})
 
 target_link_libraries(AudioThumbs ${KDE4_KIO_LIBS} ${TAGLIB_LIBRARIES} ${FLAC_LIBRARIES})
 
-install(TARGETS AudioThumbs DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS AudioThumbs DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
-install(FILES  AudioThumbs.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES  AudioThumbs.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

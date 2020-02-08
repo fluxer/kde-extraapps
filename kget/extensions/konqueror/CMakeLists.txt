@@ -10,9 +10,9 @@ kde4_add_plugin(kget_browser_integration ${kget_browser_integration_SRCS})
 
 target_link_libraries(kget_browser_integration ${KDE4_KPARTS_LIBS} ${KDE4_KIO_LIBRARY})
 
-install(TARGETS kget_browser_integration DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kget_browser_integration DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${DATA_INSTALL_DIR}/dolphinpart/kpartplugins)
-install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins)
+install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${KDE4_DATA_INSTALL_DIR}/dolphinpart/kpartplugins)
+install(FILES kget_plug_in.rc kget_plug_in.desktop DESTINATION ${KDE4_DATA_INSTALL_DIR}/kwebkitpart/kpartplugins)

@@ -17,12 +17,12 @@ kde4_add_plugin(okularGenerator_fb ${okularGenerator_fb_PART_SRCS})
 
 target_link_libraries(okularGenerator_fb okularcore ${KDE4_KIO_LIBS} ${QT_QTXML_LIBRARY})
 
-install(TARGETS okularGenerator_fb DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_fb DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_fb.desktop okularFb.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_fb.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_fb.desktop okularFb.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_fb.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 
-kde4_install_icons(${DATA_INSTALL_DIR}/okular/icons)
+kde4_install_icons(${KDE4_DATA_INSTALL_DIR}/okular/icons)

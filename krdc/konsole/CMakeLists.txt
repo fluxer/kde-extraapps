@@ -14,7 +14,7 @@ if(BUILD_KONSOLE)
         ${KDE4_KPARTS_LIBS}
         krdccore
     )
-    install(TARGETS krdc_konsoleplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+    install(TARGETS krdc_konsoleplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
-    install(FILES krdc_konsole.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+    install(FILES krdc_konsole.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 endif(BUILD_KONSOLE)

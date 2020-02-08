@@ -13,7 +13,7 @@ target_link_libraries(plasma_applet_knowledgebase
                       ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
  
 install(TARGETS plasma_applet_knowledgebase
-        DESTINATION ${PLUGIN_INSTALL_DIR})
+        DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
  
 install(FILES plasma-applet-knowledgebase.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

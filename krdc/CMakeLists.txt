@@ -79,16 +79,16 @@ endif()
 target_link_libraries(krdc ${KDE4_KDNSSD_LIBS})
 
 install(TARGETS krdc ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES krdcui.rc DESTINATION ${DATA_INSTALL_DIR}/krdc)
-install(PROGRAMS krdc.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES pointcursor.png pointcursormask.png DESTINATION ${DATA_INSTALL_DIR}/krdc/pics)
+install(FILES krdcui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc)
+install(PROGRAMS krdc.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(FILES pointcursor.png pointcursormask.png DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc/pics)
 
 if(TelepathyQt4_FOUND)
     configure_file(org.freedesktop.Telepathy.Client.krdc_rfb_handler.service.in
                     ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
-            DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+            DESTINATION ${KDE4_DBUS_SERVICES_INSTALL_DIR})
 
-    install(FILES krdc_rfb_handler.client DESTINATION ${SHARE_INSTALL_PREFIX}/telepathy/clients/)
+    install(FILES krdc_rfb_handler.client DESTINATION ${KDE4_SHARE_INSTALL_PREFIX}/telepathy/clients/)
 endif()
 

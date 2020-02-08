@@ -15,14 +15,14 @@ target_link_libraries(plasma_applet_notes
             )
 install(
     TARGETS plasma_applet_notes
-    DESTINATION ${PLUGIN_INSTALL_DIR}
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
     )
 
 install(
     FILES plasma-notes-default.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
     )
 
 install(
     FILES notes.svgz
-    DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)

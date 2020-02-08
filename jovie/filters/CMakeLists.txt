@@ -18,5 +18,5 @@ endif()
 
 install(
     FILES jovie_filterplugin.desktop
-    DESTINATION ${SERVICETYPES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
 )

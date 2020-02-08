@@ -10,4 +10,4 @@ add_executable(bluedevil-monolithic ${monolithic_SRCS})
 target_link_libraries(bluedevil-monolithic ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} bluedevil)
 
 install(TARGETS bluedevil-monolithic ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES bluedevil-monolithic.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES bluedevil-monolithic.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})

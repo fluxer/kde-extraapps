@@ -24,6 +24,6 @@ install(FILES
         syndicationinfo.h
         syndicationvocab.h
         textinput.h
-        DESTINATION ${INCLUDE_INSTALL_DIR}/syndication/rdf
+        DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/syndication/rdf
         COMPONENT Devel
 )

@@ -92,7 +92,7 @@ set_target_properties(lancelot-menu PROPERTIES OUTPUT_NAME lancelot)
 
 install(TARGETS lancelot-menu ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-install(FILES lancelot.notifyrc DESTINATION ${DATA_INSTALL_DIR}/lancelot)
+install(FILES lancelot.notifyrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/lancelot)
 
-install(FILES lancelot.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES lancelot.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 

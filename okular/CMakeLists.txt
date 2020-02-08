@@ -83,7 +83,7 @@ install( FILES
            core/fileprinter.h
            core/observer.h
            ${CMAKE_CURRENT_BINARY_DIR}/settings_core.h
-         DESTINATION ${INCLUDE_INSTALL_DIR}/okular/core COMPONENT Devel)
+         DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/okular/core COMPONENT Devel)
 
 install( FILES
            interfaces/configinterface.h
@@ -91,7 +91,7 @@ install( FILES
            interfaces/printinterface.h
            interfaces/saveinterface.h
            interfaces/viewerinterface.h
-         DESTINATION ${INCLUDE_INSTALL_DIR}/okular/interfaces COMPONENT Devel)
+         DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/okular/interfaces COMPONENT Devel)
 
 kde4_add_kcfg_files(okularcore_SRCS ${PROJECT_SOURCE_DIR}/conf/settings_core.kcfgc )
 
@@ -107,9 +107,9 @@ set_target_properties(okularcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVER
 
 install(TARGETS okularcore ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-install(FILES conf/okular.kcfg DESTINATION ${KCFG_INSTALL_DIR})
-install(FILES conf/okular_core.kcfg DESTINATION ${KCFG_INSTALL_DIR})
-install(FILES core/okularGenerator.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES conf/okular.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
+install(FILES conf/okular_core.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
+install(FILES core/okularGenerator.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR})
 
 # okularpart
 
@@ -178,13 +178,13 @@ kde4_add_plugin(okularpart SHARED ${okularpart_SRCS})
 
 target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${KDE4_SOLID_LIBRARY})
 
-install(TARGETS okularpart DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES okular_part.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES part.rc part-viewermode.rc DESTINATION ${DATA_INSTALL_DIR}/okular )
+install( FILES okular_part.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( FILES part.rc part-viewermode.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular )
 
 ########### cmake files #################
 
@@ -192,5 +192,5 @@ macro_write_basic_cmake_version_file(${CMAKE_CURRENT_BINARY_DIR}/OkularConfigVer
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/OkularConfig.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/OkularConfigVersion.cmake
-        DESTINATION ${LIB_INSTALL_DIR}/cmake/Okular )
+        DESTINATION ${KDE4_LIB_INSTALL_DIR}/cmake/Okular )
 

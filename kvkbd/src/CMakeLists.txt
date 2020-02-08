@@ -36,4 +36,4 @@ target_link_libraries(kvkbd ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_LIBRARI
 
 install(TARGETS kvkbd ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install( FILES kvkbd.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES kvkbd.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )

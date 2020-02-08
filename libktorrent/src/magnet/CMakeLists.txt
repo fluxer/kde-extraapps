@@ -8,4 +8,4 @@ set (magnet_HDR
     metadatadownload.h
 )
 
-install(FILES ${magnet_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/magnet COMPONENT Devel)
+install(FILES ${magnet_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/magnet COMPONENT Devel)

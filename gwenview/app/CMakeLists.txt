@@ -68,8 +68,8 @@ endif()
 
 install(TARGETS gwenview ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES gwenviewui.rc DESTINATION ${DATA_INSTALL_DIR}/gwenview)
+install(FILES gwenviewui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/gwenview)
 
-install(PROGRAMS gwenview.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS gwenview.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 
-install(FILES slideshow.desktop DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
+install(FILES slideshow.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/ServiceMenus)

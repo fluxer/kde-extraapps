@@ -20,12 +20,12 @@ install(
     TARGETS
         krunner_kopete
     DESTINATION
-        ${PLUGIN_INSTALL_DIR}
+        ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 install(
     FILES
         plasma-runner-kopete.desktop
     DESTINATION
-        ${SERVICES_INSTALL_DIR}
+        ${KDE4_SERVICES_INSTALL_DIR}
 )

@@ -21,10 +21,10 @@ target_link_libraries(plasma_engine_kdeobservatory
                       ${KDE4_PLASMA_LIBS})
  
 install(TARGETS plasma_engine_kdeobservatory
-        DESTINATION ${PLUGIN_INSTALL_DIR})
+        DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
  
 install(FILES plasma-engine-kdeobservatory.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(FILES src/kdeobservatory.operations
-        DESTINATION ${DATA_INSTALL_DIR}/plasma/services)
+        DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma/services)

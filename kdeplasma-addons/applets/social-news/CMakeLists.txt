@@ -15,7 +15,7 @@ target_link_libraries(
     ${KDE4_PLASMA_LIBS}
 )
 
-install(TARGETS plasma_applet_opendesktop_activities DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-applet-opendesktop-activities.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS plasma_applet_opendesktop_activities DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-applet-opendesktop-activities.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-install(FILES plasma-applet-opendesktop-activities.notifyrc DESTINATION ${DATA_INSTALL_DIR}/plasma-applet-opendesktop-activities/)
+install(FILES plasma-applet-opendesktop-activities.notifyrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma-applet-opendesktop-activities/)

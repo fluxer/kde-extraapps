@@ -19,7 +19,7 @@ target_link_libraries(rawthumbnail
 )
 
 ## install the plugin
-install(TARGETS rawthumbnail DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES rawthumbnail.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS rawthumbnail DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES rawthumbnail.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 

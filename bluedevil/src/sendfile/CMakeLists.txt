@@ -28,4 +28,4 @@ target_link_libraries(bluedevil-sendfile
                       ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS} bluedevil)
 
 install(TARGETS bluedevil-sendfile DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES bluedevil-sendfile.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES bluedevil-sendfile.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})

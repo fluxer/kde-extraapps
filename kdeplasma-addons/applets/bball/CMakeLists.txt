@@ -13,17 +13,17 @@ target_link_libraries(plasma_applet_bball
 
 install(
     TARGETS plasma_applet_bball
-    DESTINATION ${PLUGIN_INSTALL_DIR}
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 install(
     FILES plasma-applet-bball.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
 
 install(
     FILES bball.svgz football.svgz bounce.ogg
-    DESTINATION ${DATA_INSTALL_DIR}/bball/
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/bball/
 )
 
-kde4_install_icons(${ICON_INSTALL_DIR})
+kde4_install_icons(${KDE4_ICON_INSTALL_DIR})

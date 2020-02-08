@@ -35,7 +35,7 @@ install (TARGETS krfbprivate
 
 install (FILES
          krfb-framebuffer.desktop
-         DESTINATION ${SERVICETYPES_INSTALL_DIR}
+         DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
 )
 
 #####################################
@@ -125,7 +125,7 @@ if(TelepathyQt4_FOUND)
     configure_file(org.freedesktop.Telepathy.Client.krfb_rfb_handler.service.in
                    org.freedesktop.Telepathy.Client.krfb_rfb_handler.service)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krfb_rfb_handler.service
-            DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+            DESTINATION ${KDE4_DBUS_SERVICES_INSTALL_DIR})
 
     install(FILES krfb_rfb_handler.client DESTINATION ${CMAKE_INSTALL_PREFIX}/share/telepathy/clients/)
 endif()
@@ -133,10 +133,10 @@ endif()
 ########### install files ###############
 
 install (PROGRAMS krfb.desktop
-         DESTINATION ${XDG_APPS_INSTALL_DIR}
+         DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
 )
 
 install (FILES krfb.notifyrc
-         DESTINATION ${DATA_INSTALL_DIR}/krfb
+         DESTINATION ${KDE4_DATA_INSTALL_DIR}/krfb
 )
  

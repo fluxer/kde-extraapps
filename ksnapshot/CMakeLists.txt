@@ -77,6 +77,6 @@ install(TARGETS kbackgroundsnapshot ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 
-install(PROGRAMS ksnapshot.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES org.kde.ksnapshot.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
-kde4_install_icons(${ICON_INSTALL_DIR} )
+install(PROGRAMS ksnapshot.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(FILES org.kde.ksnapshot.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR} )
+kde4_install_icons(${KDE4_ICON_INSTALL_DIR} )

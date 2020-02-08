@@ -53,11 +53,11 @@ if (FREETYPE_FOUND)
    target_link_libraries(okularGenerator_dvi ${FREETYPE_LIBRARIES})
 endif (FREETYPE_FOUND)
 
-install(TARGETS okularGenerator_dvi DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_dvi DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_dvi.desktop okularDvi.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_dvi.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_dvi.desktop okularDvi.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_dvi.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 

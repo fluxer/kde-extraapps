@@ -15,5 +15,5 @@ target_link_libraries(plasma_wallpaper_marble
     ${KDE4_KDECORE_LIBS}
 )
 
-install(TARGETS plasma_wallpaper_marble DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-wallpaper-marble.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS plasma_wallpaper_marble DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-wallpaper-marble.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

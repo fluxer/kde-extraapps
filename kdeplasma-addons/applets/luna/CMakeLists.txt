@@ -6,12 +6,12 @@ target_link_libraries(plasma_applet_luna
                       ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS})
  
 install(TARGETS plasma_applet_luna
-        DESTINATION ${PLUGIN_INSTALL_DIR})
+        DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
  
 install(FILES plasma-applet-luna.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(FILES luna.svgz
-    DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
 
-kde4_install_icons(${ICON_INSTALL_DIR})
+kde4_install_icons(${KDE4_ICON_INSTALL_DIR})

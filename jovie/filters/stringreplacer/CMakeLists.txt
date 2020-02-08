@@ -14,7 +14,7 @@ target_link_libraries(jovie_stringreplacerplugin ${KDE4_KIO_LIBS} ${QT_QTXML_LIB
 
 install(
     TARGETS jovie_stringreplacerplugin
-    DESTINATION ${PLUGIN_INSTALL_DIR}
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 ########### test cdata escaper ##########
@@ -42,12 +42,12 @@ install(
     kmail.xml
     festival_unspeakable_chars.xml
     qt2plaintext.xml
-    DESTINATION ${DATA_INSTALL_DIR}/jovie/stringreplacer
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/jovie/stringreplacer
 )
 
 install(
     FILES jovie_stringreplacerplugin.desktop
-    DESTINATION  ${SERVICES_INSTALL_DIR}
+    DESTINATION  ${KDE4_SERVICES_INSTALL_DIR}
 )
 
 

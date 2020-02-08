@@ -176,5 +176,5 @@ endif()
 
 install(TARGETS ksystemlog ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(PROGRAMS ksystemlog.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES ksystemlogui.rc DESTINATION ${DATA_INSTALL_DIR}/ksystemlog)
+install(PROGRAMS ksystemlog.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(FILES ksystemlogui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/ksystemlog)

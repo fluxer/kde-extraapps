@@ -1,4 +1,4 @@
 install(
     FILES zoom.png
-    DESTINATION ${DATA_INSTALL_DIR}/gwenview/cursors/
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/gwenview/cursors/
     )

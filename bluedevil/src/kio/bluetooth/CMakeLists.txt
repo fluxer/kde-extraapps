@@ -14,5 +14,5 @@ target_link_libraries(kio_bluetooth
 )
 
 ########### install files ###############
-install(TARGETS kio_bluetooth DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES bluetooth.protocol DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS kio_bluetooth DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES bluetooth.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

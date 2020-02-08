@@ -99,7 +99,7 @@ set(lancelot_LIB_INCLUDES
 
 install(FILES
    ${lancelot_LIB_INCLUDES}
-   DESTINATION ${INCLUDE_INSTALL_DIR}/lancelot COMPONENT Devel
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/lancelot COMPONENT Devel
 )
 
 install(FILES
@@ -117,7 +117,7 @@ install(FILES
    widgets/PopupMenu.h
    widgets/ScrollPane.h
    widgets/ScrollBar.h
-   DESTINATION ${INCLUDE_INSTALL_DIR}/lancelot/widgets COMPONENT Devel)
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/lancelot/widgets COMPONENT Devel)
 
 install(FILES
    layouts/FullBorderLayout.h
@@ -125,7 +125,7 @@ install(FILES
    layouts/CardLayout.h
    layouts/ColumnLayout.h
    layouts/FlipLayout.h
-   DESTINATION ${INCLUDE_INSTALL_DIR}/lancelot/layouts COMPONENT Devel)
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/lancelot/layouts COMPONENT Devel)
 
 install(FILES
    models/ActionListModel.h
@@ -140,7 +140,7 @@ install(FILES
 
    # models/ActionListViewModels.h
    # models/PassagewayViewModels.h
-   DESTINATION ${INCLUDE_INSTALL_DIR}/lancelot/models COMPONENT Devel)
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/lancelot/models COMPONENT Devel)
 
 install(FILES
    Lancelot/ActionListModel
@@ -171,7 +171,7 @@ install(FILES
    Lancelot/StandardActionListModel
    Lancelot/StandardActionTreeModel
    Lancelot/Widget
-   DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Lancelot COMPONENT Devel)
+   DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/KDE/Lancelot COMPONENT Devel)
 
 # tests
 # add_subdirectory(tests)

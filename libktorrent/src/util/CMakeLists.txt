@@ -32,4 +32,4 @@ set (util_HDR ${util_HDR}
     signalcatcher.h
 )
 
-install(FILES ${util_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/util COMPONENT Devel)
+install(FILES ${util_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/util COMPONENT Devel)

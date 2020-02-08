@@ -13,7 +13,7 @@ target_link_libraries(plasma_applet_weather
     ${QT_QTDECLARATIVE_LIBRARY}
     ${KDE4_KUNITCONVERSION_LIBS})
 
-install(TARGETS plasma_applet_weather DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-applet-weather.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(FILES wind-arrows.svgz DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/weather/)
-install(DIRECTORY package/ DESTINATION ${DATA_INSTALL_DIR}/plasma/packages/org.kde.weather)
+install(TARGETS plasma_applet_weather DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-applet-weather.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(FILES wind-arrows.svgz DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/weather/)
+install(DIRECTORY package/ DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma/packages/org.kde.weather)

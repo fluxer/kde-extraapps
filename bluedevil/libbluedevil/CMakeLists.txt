@@ -1,7 +1,9 @@
 project(libbluedevil)
 
+find_package(KDE4 REQUIRED)
+include(KDE4Defaults)
+
 include(CheckCXXCompilerFlag)
-include(GNUInstallDirs)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -15,15 +17,9 @@ if (_HAVE_VISIBILITY AND NOT WIN32)
   endif (_HAVE_VISIBILITY_INLINES)
 endif (_HAVE_VISIBILITY AND NOT WIN32)
 
-#
-### lib64/32 support kde like
-#
-set(BIN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/bin)
-set(LIB_INSTALL_DIR ${CMAKE_INSTALL_FULL_LIBDIR})
-
-set(INSTALL_TARGETS_DEFAULT_ARGS  RUNTIME DESTINATION "${BIN_INSTALL_DIR}"
-                                  LIBRARY DESTINATION "${LIB_INSTALL_DIR}"
-                                  ARCHIVE DESTINATION "${LIB_INSTALL_DIR}" COMPONENT Devel )
+set(INSTALL_TARGETS_DEFAULT_ARGS  RUNTIME DESTINATION "${KDE4_BIN_INSTALL_DIR}"
+                                  LIBRARY DESTINATION "${KDE4_LIB_INSTALL_DIR}"
+                                  ARCHIVE DESTINATION "${KDE4_LIB_INSTALL_DIR}" COMPONENT Devel )
 
 
 set(GENERIC_LIB_VERSION "2.1")

@@ -20,6 +20,6 @@ target_link_libraries(kded_obexftpdaemon
     ${KDE4_KFILE_LIBS}
 )
 
-install(TARGETS kded_obexftpdaemon DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES obexftpdaemon.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
+install(TARGETS kded_obexftpdaemon DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES obexftpdaemon.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/kded)
 

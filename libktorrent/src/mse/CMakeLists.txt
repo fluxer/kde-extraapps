@@ -11,4 +11,4 @@ set (mse_HDR
     encryptedpacketsocket.h
 )
 
-install(FILES ${mse_HDR} DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/mse COMPONENT Devel)
+install(FILES ${mse_HDR} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/mse COMPONENT Devel)

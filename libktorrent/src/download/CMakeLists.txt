@@ -13,6 +13,6 @@ set (download_HDR
 )
 
 install(FILES ${download_HDR}
-    DESTINATION ${INCLUDE_INSTALL_DIR}/libktorrent/download
+    DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libktorrent/download
     COMPONENT Devel
 )

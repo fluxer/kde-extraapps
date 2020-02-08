@@ -30,7 +30,7 @@ target_link_libraries(okularplugin
         okularcore
         )
 
-install(TARGETS okularplugin DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/okular)
-install(FILES qmldir DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/okular)
+install(TARGETS okularplugin DESTINATION ${KDE4_IMPORTS_INSTALL_DIR}/org/kde/okular)
+install(FILES qmldir DESTINATION ${KDE4_IMPORTS_INSTALL_DIR}/org/kde/okular)
 
 #add_subdirectory(test)

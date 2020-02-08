@@ -12,12 +12,12 @@ target_link_libraries(krdc_rfb_approver ${KDE4_KDEUI_LIBS}
 )
 
 install(TARGETS krdc_rfb_approver ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES krdc_rfb_approver.notifyrc DESTINATION ${DATA_INSTALL_DIR}/krdc_rfb_approver)
+install(FILES krdc_rfb_approver.notifyrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc_rfb_approver)
 
 configure_file(org.freedesktop.Telepathy.Client.krdc_rfb_approver.service.in
                 ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service
-        DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_DBUS_SERVICES_INSTALL_DIR})
 
 # FIXME any better macro for ${XDG_DATA_DIRS} ?
-install(FILES krdc_rfb_approver.client DESTINATION ${SHARE_INSTALL_PREFIX}/telepathy/clients/)
+install(FILES krdc_rfb_approver.client DESTINATION ${KDE4_SHARE_INSTALL_PREFIX}/telepathy/clients/)

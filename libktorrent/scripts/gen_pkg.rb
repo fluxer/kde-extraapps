@@ -95,7 +95,7 @@ for lang in i18nlangs
       Dir.mkdir( dest )
       makefile = File.new( "#{dest}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC )
       makefile << "file(GLOB _po_files *.po)\n"
-      makefile << "GETTEXT_PROCESS_PO_FILES( #{lang} ALL INSTALL_DESTINATION ${LOCALE_INSTALL_DIR} ${_po_files} )\n"
+      makefile << "GETTEXT_PROCESS_PO_FILES( #{lang} ALL INSTALL_DESTINATION ${KDE4_LOCALE_INSTALL_DIR} ${_po_files} )\n"
       makefile.close()
       topmakefile << "add_subdirectory( #{lang} )\n"
     end

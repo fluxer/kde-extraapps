@@ -4,4 +4,4 @@
 set(CLIENT_RCS ${CLIENT_RCS} ${CMAKE_CURRENT_SOURCE_DIR}/pics.qrc PARENT_SCOPE)
 # install(FILES qt-logo.png
 #               quassel-large.png
-#         DESTINATION ${DATA_INSTALL_DIR}/quassel/pics)
+#         DESTINATION ${KDE4_DATA_INSTALL_DIR}/quassel/pics)

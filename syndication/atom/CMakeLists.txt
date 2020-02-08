@@ -12,6 +12,6 @@ install(FILES
         parser.h
         person.h
         source.h
-        DESTINATION ${INCLUDE_INSTALL_DIR}/syndication/atom
+        DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/syndication/atom
         COMPONENT Devel
 )

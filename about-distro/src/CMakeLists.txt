@@ -15,5 +15,5 @@ target_link_libraries(kcm_about_distro
     ${KDE4_SOLID_LIBRARY}
 )
 
-install(TARGETS kcm_about_distro DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES about-distro.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS kcm_about_distro DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES about-distro.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

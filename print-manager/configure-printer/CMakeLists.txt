@@ -25,7 +25,7 @@ configure_file(
 
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.ConfigurePrinter.service
-    DESTINATION ${DBUS_SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_DBUS_SERVICES_INSTALL_DIR}
 )
 
 add_executable(configure-printer ${configureprinter_SRCS})
@@ -36,4 +36,4 @@ target_link_libraries(configure-printer
     kcupslib
 )
 
-install(TARGETS configure-printer DESTINATION ${LIBEXEC_INSTALL_DIR})
+install(TARGETS configure-printer DESTINATION ${KDE4_LIBEXEC_INSTALL_DIR})

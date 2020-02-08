@@ -15,7 +15,7 @@ configure_file(
 
 ########### install files ###############
 
-install(TARGETS kerfuffle_clilha  DESTINATION ${PLUGIN_INSTALL_DIR} )
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle_clilha.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install(TARGETS kerfuffle_clilha  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
+install( FILES ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle_clilha.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
 
 set(SUPPORTED_ARK_MIMETYPES "${SUPPORTED_ARK_MIMETYPES}${SUPPORTED_CLILHA_MIMETYPES}" PARENT_SCOPE)

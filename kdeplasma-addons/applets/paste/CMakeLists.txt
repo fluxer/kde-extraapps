@@ -20,5 +20,5 @@ kde4_add_plugin(plasma_applet_paste ${paste_SRCS})
 target_link_libraries(plasma_applet_paste
         ${X11_X11_LIB} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_PLASMA_LIBS})
 
-install(TARGETS plasma_applet_paste DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-applet-paste.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS plasma_applet_paste DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-applet-paste.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

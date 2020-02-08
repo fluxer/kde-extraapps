@@ -41,16 +41,16 @@ install(TARGETS kompare ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     PROGRAMS kompare.desktop
-    DESTINATION  ${XDG_APPS_INSTALL_DIR}
+    DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR}
 )
 install(
     FILES kompareui.rc
-    DESTINATION  ${DATA_INSTALL_DIR}/kompare
+    DESTINATION  ${KDE4_DATA_INSTALL_DIR}/kompare
 )
 install(
     FILES
     komparenavigationpart.desktop
     kompareviewpart.desktop
-    DESTINATION  ${SERVICETYPES_INSTALL_DIR}
+    DESTINATION  ${KDE4_SERVICETYPES_INSTALL_DIR}
 )
 

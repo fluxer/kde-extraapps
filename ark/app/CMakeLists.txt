@@ -26,10 +26,10 @@ configure_file(
 )
 
 install( TARGETS ark  ${INSTALL_TARGETS_DEFAULT_ARGS} )
-install(FILES ark_addtoservicemenu.desktop ${CMAKE_CURRENT_BINARY_DIR}/ark_servicemenu.desktop DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
-install( PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/ark.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+install(FILES ark_addtoservicemenu.desktop ${CMAKE_CURRENT_BINARY_DIR}/ark_servicemenu.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/ServiceMenus)
+install( PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/ark.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR} )
 install( FILES ${CMAKE_CURRENT_SOURCE_DIR}/ark.appdata.xml DESTINATION share/appdata )
-install( FILES arkui.rc    DESTINATION ${DATA_INSTALL_DIR}/ark )
+install( FILES arkui.rc    DESTINATION ${KDE4_DATA_INSTALL_DIR}/ark )
 
 ########### konqueror ark_extract_here plugin ###############
 macro_optional_find_package( LibKonq )
@@ -41,7 +41,7 @@ if (LIBKONQ_FOUND)
    kde4_add_plugin(extracthere WITH_PREFIX ${extracthere_SRCS})
    target_link_libraries(extracthere kerfuffle ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} ${LIBKONQ_LIBRARY} )
    include_directories(${LIBKONQ_INCLUDE_DIR})
-   install( TARGETS extracthere DESTINATION ${PLUGIN_INSTALL_DIR} )
-   install( FILES ${CMAKE_CURRENT_BINARY_DIR}/ark_dndextract.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+   install( TARGETS extracthere DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
+   install( FILES ${CMAKE_CURRENT_BINARY_DIR}/ark_dndextract.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 endif (LIBKONQ_FOUND)
 

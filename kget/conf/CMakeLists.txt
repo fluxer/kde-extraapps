@@ -1,1 +1,1 @@
-install(FILES kget.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES kget.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})

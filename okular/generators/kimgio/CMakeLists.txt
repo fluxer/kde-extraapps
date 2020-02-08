@@ -18,7 +18,7 @@ target_link_libraries(okularGenerator_kimgio
     ${KDE4_KEXIV2_LIBS}
     ${QT_QTXML_LIBRARY}
 )
-install(TARGETS okularGenerator_kimgio DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_kimgio DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 if(ENABLE_TESTING)
     set( kimgiotest_SRCS tests/kimgiotest.cpp
@@ -39,7 +39,7 @@ endif()
 
 ########### install files ###############
 
-install( FILES libokularGenerator_kimgio.desktop okularKimgio.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_kimgio.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_kimgio.desktop okularKimgio.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_kimgio.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 
-#install( FILES gui.rc DESTINATION ${DATA_INSTALL_DIR}/okular_kimgio )
+#install( FILES gui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular_kimgio )

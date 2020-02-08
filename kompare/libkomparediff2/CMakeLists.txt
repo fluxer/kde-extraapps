@@ -45,13 +45,13 @@ install(FILES
     marker.h
     kompare.h
     diffhunk.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/libkomparediff2  COMPONENT Devel
+    DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libkomparediff2  COMPONENT Devel
 )
 
 # Config.cmake file.
 configure_file( "${PROJECT_SOURCE_DIR}/LibKompareDiff2Config.cmake.in" "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake" @ONLY )
 
-set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/libkomparediff2")
+set(_LibKompareDiff2_CONFIG_DEST "${KDE4_LIB_INSTALL_DIR}/cmake/libkomparediff2")
 
 install( FILES
         "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake"

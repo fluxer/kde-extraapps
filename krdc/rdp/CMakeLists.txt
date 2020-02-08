@@ -38,12 +38,12 @@ if(HAVE_XFREERDP)
 
     add_dependencies(kcm_krdc_rdpplugin krdc_rdpplugin)
 
-    install(TARGETS kcm_krdc_rdpplugin DESTINATION ${PLUGIN_INSTALL_DIR})
-    install(TARGETS krdc_rdpplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+    install(TARGETS kcm_krdc_rdpplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+    install(TARGETS krdc_rdpplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
-    install(FILES krdc_rdp.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-    install(FILES krdc_rdp_config.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+    install(FILES krdc_rdp.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+    install(FILES krdc_rdp_config.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-    install(FILES rdp.protocol DESTINATION ${SERVICES_INSTALL_DIR})
-    install(FILES smb2rdc.desktop DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
+    install(FILES rdp.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+    install(FILES smb2rdc.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR}/ServiceMenus)
 endif(HAVE_XFREERDP)

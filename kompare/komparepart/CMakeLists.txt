@@ -22,13 +22,13 @@ kde4_add_plugin(komparepart ${komparepart_PART_SRCS})
 
 target_link_libraries(komparepart  ${KDE4_KPARTS_LIBS} komparedialogpages komparediff2 kompareinterface )
 
-install(TARGETS komparepart  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS komparepart  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 
 
 ########### install files ###############
 
-install( FILES komparepart.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES komparepartui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kompare )
+install( FILES komparepart.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( FILES komparepartui.rc  DESTINATION  ${KDE4_DATA_INSTALL_DIR}/kompare )
 
 
 

@@ -19,9 +19,9 @@ target_link_libraries(plasma_engine_kimpanel
                       ${KDE4_PLASMA_LIBS})
 
 install(TARGETS plasma_engine_kimpanel
-        DESTINATION ${PLUGIN_INSTALL_DIR})
+        DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(FILES plasma-dataengine-kimpanel.desktop
-        DESTINATION ${SERVICES_INSTALL_DIR})
+        DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
-install(FILES kimpanel.operations DESTINATION ${DATA_INSTALL_DIR}/plasma/services)
+install(FILES kimpanel.operations DESTINATION ${KDE4_DATA_INSTALL_DIR}/plasma/services)

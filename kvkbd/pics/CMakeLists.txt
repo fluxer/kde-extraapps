@@ -1,1 +1,1 @@
-install( FILES tray.png DESTINATION ${DATA_INSTALL_DIR}/kvkbd/pics)
+install( FILES tray.png DESTINATION ${KDE4_DATA_INSTALL_DIR}/kvkbd/pics)

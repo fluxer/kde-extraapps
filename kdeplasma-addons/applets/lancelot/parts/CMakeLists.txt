@@ -33,18 +33,18 @@ target_link_libraries(
 
 install(
    TARGETS plasma_applet_lancelot_part
-   DESTINATION ${PLUGIN_INSTALL_DIR}
+   DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 install(
    FILES plasma-applet-lancelot-part.desktop
-   DESTINATION ${SERVICES_INSTALL_DIR}
+   DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
 
 install(
    FILES lancelotpart-mime.xml
-   DESTINATION ${XDG_MIME_INSTALL_DIR}
+   DESTINATION ${KDE4_XDG_MIME_INSTALL_DIR}
 )
 
-update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
+update_xdg_mimetypes(${KDE4_XDG_MIME_INSTALL_DIR})
 

@@ -11,11 +11,11 @@ if(POPPLER_QT4_FOUND)
 
     install(
     FILES kfilemetadata_popplerextractor.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR})
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
     install(
     TARGETS kfilemetadata_popplerextractor
-    DESTINATION ${PLUGIN_INSTALL_DIR})
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 endif(POPPLER_QT4_FOUND)
 
@@ -32,11 +32,11 @@ if(TAGLIB_FOUND)
 
     install(
     FILES kfilemetadata_taglibextractor.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR})
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
     install(
     TARGETS kfilemetadata_taglibextractor
-    DESTINATION ${PLUGIN_INSTALL_DIR})
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 endif(TAGLIB_FOUND)
 
@@ -57,11 +57,11 @@ if(EXIV2_FOUND)
 
     install(
     FILES kfilemetadata_exiv2extractor.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR})
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
     install(
     TARGETS kfilemetadata_exiv2extractor
-    DESTINATION ${PLUGIN_INSTALL_DIR})
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 endif(EXIV2_FOUND)
 
@@ -79,11 +79,11 @@ if(FFMPEG_FOUND)
 
     install(
     FILES kfilemetadata_ffmpegextractor.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR})
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
     install(
     TARGETS kfilemetadata_ffmpegextractor
-    DESTINATION ${PLUGIN_INSTALL_DIR})
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 endif(FFMPEG_FOUND)
 
@@ -101,11 +101,11 @@ if(EPUB_FOUND)
 
     install(
     FILES kfilemetadata_epubextractor.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR})
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
     install(
     TARGETS kfilemetadata_epubextractor
-    DESTINATION ${PLUGIN_INSTALL_DIR})
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 endif(EPUB_FOUND)
 
@@ -121,11 +121,11 @@ target_link_libraries( kfilemetadata_plaintextextractor
 
 install(
 FILES kfilemetadata_plaintextextractor.desktop
-DESTINATION ${SERVICES_INSTALL_DIR})
+DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(
 TARGETS kfilemetadata_plaintextextractor
-DESTINATION ${PLUGIN_INSTALL_DIR})
+DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 #
 # ODF
@@ -140,11 +140,11 @@ target_link_libraries(kfilemetadata_odfextractor
 
 install(
 FILES kfilemetadata_odfextractor.desktop
-DESTINATION ${SERVICES_INSTALL_DIR})
+DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(
 TARGETS kfilemetadata_odfextractor
-DESTINATION ${PLUGIN_INSTALL_DIR})
+DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 #
 # Office 2007
@@ -159,11 +159,11 @@ target_link_libraries(kfilemetadata_office2007extractor
 
 install(
 FILES kfilemetadata_office2007extractor.desktop
-DESTINATION ${SERVICES_INSTALL_DIR})
+DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(
 TARGETS kfilemetadata_office2007extractor
-DESTINATION ${PLUGIN_INSTALL_DIR})
+DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 #
 # Office (binary formats)
@@ -178,11 +178,11 @@ target_link_libraries(kfilemetadata_officeextractor
 
 install(
 FILES kfilemetadata_officeextractor.desktop
-DESTINATION ${SERVICES_INSTALL_DIR})
+DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(
 TARGETS kfilemetadata_officeextractor
-DESTINATION ${PLUGIN_INSTALL_DIR})
+DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 #
 # Mobipocket
@@ -199,9 +199,9 @@ if (QMOBIPOCKET_FOUND)
 
     install(
     FILES kfilemetadata_mobiextractor.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR})
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
     install(
     TARGETS kfilemetadata_mobiextractor
-    DESTINATION ${PLUGIN_INSTALL_DIR})
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 endif(QMOBIPOCKET_FOUND)

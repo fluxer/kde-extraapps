@@ -21,12 +21,12 @@ kde4_add_plugin(okularGenerator_ghostview ${okularGenerator_ghostview_SRCS})
 
 target_link_libraries(okularGenerator_ghostview okularcore ${LIBSPECTRE_LIBRARY} ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY})
 
-install(TARGETS okularGenerator_ghostview DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_ghostview DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_ghostview.desktop okularGhostview.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_ghostview.desktop DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_ghostview.desktop okularGhostview.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_ghostview.desktop DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 
-kde4_install_icons(${DATA_INSTALL_DIR}/okular/icons)
+kde4_install_icons(${KDE4_DATA_INSTALL_DIR}/okular/icons)

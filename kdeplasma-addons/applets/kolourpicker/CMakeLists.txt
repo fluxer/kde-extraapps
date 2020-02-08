@@ -21,5 +21,5 @@ if(KOLOURPICKER_X11_LIB)
    target_link_libraries(plasma_applet_kolourpicker ${X11_X11_LIB})
 endif(KOLOURPICKER_X11_LIB)
 
-install(TARGETS plasma_applet_kolourpicker DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-kolourpicker-default.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS plasma_applet_kolourpicker DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-kolourpicker-default.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

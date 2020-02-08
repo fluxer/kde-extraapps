@@ -16,7 +16,7 @@ kde4_add_plugin(plasma_engine_mixer ${mixer_engine_SRCS})
 target_link_libraries(plasma_engine_mixer ${KDE4_KDECORE_LIBS}
 	${KDE4_PLASMA_LIBS})
 
-install(TARGETS plasma_engine_mixer DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-engine-mixer.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS plasma_engine_mixer DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(FILES plasma-engine-mixer.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 install(FILES mixer.operations DESTINATION
-	${DATA_INSTALL_DIR}/plasma/services)
+	${KDE4_DATA_INSTALL_DIR}/plasma/services)

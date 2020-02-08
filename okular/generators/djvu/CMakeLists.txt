@@ -17,12 +17,12 @@ kde4_add_plugin(okularGenerator_djvu ${okularGenerator_djvu_SRCS})
 
 target_link_libraries(okularGenerator_djvu okularcore ${DJVULIBRE_LIBRARY} ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY})
 
-install(TARGETS okularGenerator_djvu DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS okularGenerator_djvu DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 
 ########### install files ###############
 
-install( FILES libokularGenerator_djvu.desktop okularDjvu.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_djvu.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( FILES libokularGenerator_djvu.desktop okularDjvu.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
+install( PROGRAMS okularApplication_djvu.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
 
 

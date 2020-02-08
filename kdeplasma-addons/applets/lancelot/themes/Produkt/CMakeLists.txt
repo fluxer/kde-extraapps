@@ -1,6 +1,6 @@
 FILE(GLOB lancelot_svgs *.svgz)
-install( FILES ${lancelot_svgs}  DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/Produkt/lancelot/ )
+install( FILES ${lancelot_svgs}  DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/Produkt/lancelot/ )
 
 FILE(GLOB lancelot_configs *.config)
-install( FILES ${lancelot_configs}  DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/Produkt/lancelot/ )
+install( FILES ${lancelot_configs}  DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/Produkt/lancelot/ )
 

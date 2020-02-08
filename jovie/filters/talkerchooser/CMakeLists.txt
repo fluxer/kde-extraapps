@@ -13,17 +13,17 @@ target_link_libraries(jovie_talkerchooserplugin ${KDE4_KIO_LIBS} kttsd)
 
 install(
     TARGETS jovie_talkerchooserplugin
-    DESTINATION ${PLUGIN_INSTALL_DIR}
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 ########### install files ###############
 
 install(
     FILES female_notifications_rc
-    DESTINATION ${DATA_INSTALL_DIR}/jovie/talkerchooser
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/jovie/talkerchooser
 )
 
 install(
     FILES jovie_talkerchooserplugin.desktop
-    DESTINATION ${SERVICES_INSTALL_DIR}
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
