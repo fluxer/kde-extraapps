@@ -3,19 +3,20 @@ project(kmix)
 # Do not yet REQUIRE Phonon. Hint: As long as we do not find_package(), ${KDE4_PHONON_LIBS} will be empty below, but that should not hurt.
 #find_package(Phonon REQUIRED)
 
-find_package(Alsa)
+macro_optional_find_package(Alsa)
+macro_log_feature(ALSA_FOUND "Alsa" "Advanced Linux Sound Architecture"
+    "https://alsa-project.org/wiki/Main_Page" FALSE "" "ALSA is needed for kmix sound feedback")
 
 set(PA_VER "0.9.16")
 macro_optional_find_package(PulseAudio "${PA_VER}")
 macro_log_feature(PULSEAUDIO_FOUND "PulseAudio" "PulseAudio Audio Server"
     "http://www.pulseaudio.org/" FALSE "${PA_VER}" "libpulse is needed to let KMix control PulseAudio")
+
 find_package(GLIB2)
+
 macro_optional_find_package(Canberra)
 macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library"
     "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
-
-alsa_configure_file(${CMAKE_BINARY_DIR}/config-alsa.h)
-
 
 add_definitions (${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS} )
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=67100)
@@ -39,6 +40,11 @@ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 add_subdirectory( pics ) 
 add_subdirectory( profiles ) 
 #add_subdirectory( tests )
+
+if (ALSA_FOUND)
+  add_definitions(-DHAVE_ALSA)
+  include_directories(${ALSA_INCLUDES})
+endif (ALSA_FOUND)
 
 if (PULSEAUDIO_FOUND)
   add_definitions(-DHAVE_PULSE)
@@ -67,10 +73,10 @@ set(kmix_backend_SRCS
    backends/mixer_mpris2.cpp
    )
 
-if (HAVE_LIBASOUND2)
+if (ALSA_FOUND)
   set(kmix_backend_SRCS ${kmix_backend_SRCS}
       backends/mixer_alsa9.cpp )
-endif (HAVE_LIBASOUND2)
+endif (ALSA_FOUND)
 
 if (PULSEAUDIO_FOUND)
   set(kmix_backend_SRCS ${kmix_backend_SRCS}
@@ -119,9 +125,9 @@ add_executable(kmix ${kmix_SRCS})
 
 target_link_libraries(kmix ${KDE4_SOLID_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
-if (HAVE_LIBASOUND2)
-    target_link_libraries(kmix ${ASOUND_LIBRARY})
-endif (HAVE_LIBASOUND2)
+if (ALSA_FOUND)
+    target_link_libraries(kmix ${ALSA_LIBRARIES})
+endif (ALSA_FOUND)
 
 if (PULSEAUDIO_FOUND)
     target_link_libraries(kmix ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
@@ -159,9 +165,9 @@ kde4_add_plugin(kded_kmixd ${kded_kmixd_SRCS})
 
 target_link_libraries(kded_kmixd ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
-if (HAVE_LIBASOUND2)
-    target_link_libraries(kded_kmixd ${ASOUND_LIBRARY})
-endif (HAVE_LIBASOUND2)
+if (ALSA_FOUND)
+    target_link_libraries(kded_kmixd ${ALSA_LIBRARIES})
+endif (ALSA_FOUND)
 
 if (PULSEAUDIO_FOUND)
     target_link_libraries(kded_kmixd ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
@@ -202,9 +208,9 @@ add_executable(kmixctrl ${kmixctrl_SRCS})
 
 target_link_libraries(kmixctrl ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_PHONON_LIBS})
 
-if (HAVE_LIBASOUND2)
-    target_link_libraries(kmixctrl ${ASOUND_LIBRARY})
-endif (HAVE_LIBASOUND2)
+if (ALSA_FOUND)
+    target_link_libraries(kmixctrl ${ALSA_LIBRARIES})
+endif (ALSA_FOUND)
 
 if (PULSEAUDIO_FOUND)
     target_link_libraries(kmixctrl ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})

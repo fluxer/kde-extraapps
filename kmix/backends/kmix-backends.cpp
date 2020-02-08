@@ -23,7 +23,6 @@
 /* This code is being #include'd from mixer.cpp */
 
 #include <config.h>
-#include <config-alsa.h>
 
 #include "mixer_backend.h"
 #include "core/mixer.h"
@@ -97,7 +96,7 @@ MixerFactory g_mixerFactories[] = {
     { PULSE_getMixer, PULSE_getDriverName },
 #endif
 
-#if defined(HAVE_LIBASOUND2)
+#if defined(HAVE_ALSA)
     { ALSA_getMixer, ALSA_getDriverName },
 #endif
 
