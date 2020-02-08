@@ -6,7 +6,6 @@ include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}
    ${CMAKE_CURRENT_BINARY_DIR}
    ${KDE4_INCLUDES}
-   ${CMAKE_SOURCE_DIR}/libkscreen
    ${CMAKE_SOURCE_DIR}
 )
 
@@ -100,10 +99,8 @@ add_library(okularcore SHARED ${okularcore_SRCS})
 
 target_link_libraries(okularcore
     ${KDE4_KIO_LIBS}
-    ${KDE4_PHONON_LIBRARY}
     ${MATH_LIB}
     KDE4::kmediaplayer
-    kscreen
 )
 
 set_target_properties(okularcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
@@ -179,7 +176,7 @@ qt4_add_dbus_interfaces(okularpart_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpe
 
 kde4_add_plugin(okularpart SHARED ${okularpart_SRCS})
 
-target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${KDE4_PHONON_LIBRARY} ${KDE4_SOLID_LIBRARY})
+target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${KDE4_SOLID_LIBRARY})
 
 install(TARGETS okularpart DESTINATION ${PLUGIN_INSTALL_DIR})
 

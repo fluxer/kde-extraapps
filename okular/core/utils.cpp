@@ -18,17 +18,8 @@
 #include <QIODevice>
 
 #ifdef Q_WS_X11
-  #include "config-okular.h"
-  #include <libkscreen/src/config.h>
-  #include <libkscreen/src/edid.h>
   #include <QX11Info>
 #endif
-
-#ifdef Q_WS_MAC
-#include <ApplicationServices/ApplicationServices.h>
-#include <IOKit/graphics/IOGraphicsLib.h>
-#endif
-
 
 
 using namespace Okular;
@@ -61,7 +52,6 @@ QRect Utils::rotateRect( const QRect & source, int width, int height, int orient
 }
 
 #if defined(Q_WS_X11)
-
 double Utils::dpiX()
 {
     return QX11Info::appDpiX();
@@ -98,74 +88,16 @@ QSizeF Utils::realDpi(QWidget* widgetOnScreen)
 {
     if (widgetOnScreen)
     {
-        // Firstly try to retrieve DPI via LibKScreen
-        KScreen::Config* config = KScreen::Config::current();
-        if (config) {
-            KScreen::OutputList outputs = config->outputs();
-            QPoint globalPos = widgetOnScreen->parentWidget() ?
-                        widgetOnScreen->mapToGlobal(widgetOnScreen->pos()):
-                        widgetOnScreen->pos();
-            QRect widgetRect(globalPos, widgetOnScreen->size());
-
-            KScreen::Output* selectedOutput = 0;
-            int maxArea = 0;
-            Q_FOREACH(KScreen::Output *output, outputs)
-            {
-                if (output->currentMode())
-                {
-                    QRect outputRect(output->pos(),output->currentMode()->size());
-                    QRect intersection = outputRect.intersected(widgetRect);
-                    int area = intersection.width()*intersection.height();
-                    if (area > maxArea)
-                    {
-                        maxArea = area;
-                        selectedOutput = output;
-                    }
-                }
-            }
-
-            if (selectedOutput)
-            {
-                kDebug() << "Found widget at output #" << selectedOutput->id();
-                QRect outputRect(selectedOutput->pos(),selectedOutput->currentMode()->size());
-                QSize szMM = selectedOutput->sizeMm();
-                kDebug() << "Output size is (mm) " << szMM;
-                kDebug() << "Output rect is " << outputRect;
-                if (selectedOutput->edid()) {
-                    kDebug() << "EDID WxH (cm): " << selectedOutput->edid()->width()  << 'x' << selectedOutput->edid()->height();
-                }
-                if (szMM.width() > 0 && szMM.height() > 0 && outputRect.width() > 0 && outputRect.height() > 0
-                    && selectedOutput->edid()
-                    && qAbs(static_cast<int>(selectedOutput->edid()->width()*10) - szMM.width()) < 10
-                    && qAbs(static_cast<int>(selectedOutput->edid()->height()*10) - szMM.height()) < 10)
-                {
-                    // sizes in EDID seem to be consistent
-                    QSizeF res(static_cast<qreal>(outputRect.width())*25.4/szMM.width(),
-                              static_cast<qreal>(outputRect.height())*25.4/szMM.height());
-                    if (!selectedOutput->isHorizontal())
-                    {
-                        kDebug() << "Output is vertical, transposing DPI rect";
-                        res.transpose();
-                    }
-                    if (qAbs(res.width() - res.height()) / qMin(res.height(), res.width()) < 0.05) {
-                        return res;
-                    } else {
-                        kDebug() << "KScreen calculation returned a non square dpi." << res << ". Falling back";
-                    }
-                }
-            }
-            else
-            {
-                kDebug() << "Didn't find a KScreen selectedOutput to calculate DPI. Falling back";
-            }
-        }
-        else
-        {
-            kDebug() << "Didn't find a KScreen config to calculate DPI. Falling back";
+        // Firstly try to retrieve DPI via QWidget::x11Info()
+        const QX11Info &info = widgetOnScreen->x11Info();
+        QSizeF res = QSizeF(info.appDpiX(info.screen()), info.appDpiY(info.screen()));
+        if (qAbs(res.width() - res.height()) / qMin(res.height(), res.width()) < 0.05) {
+            return res;
+        } else {
+            kDebug() << "QX11Info calculation from widget returned a non square dpi." << res << ". Falling back";
         }
     }
-    // this is also fallback for LibKScreen branch if KScreen::Output
-    // for particular widget was not found
+    // Fallback if particular widget is invalid or calculation was not square
     QSizeF res = QSizeF(realDpiX(), realDpiY());
     if (qAbs(res.width() - res.height()) / qMin(res.height(), res.width()) < 0.05) {
         return res;
@@ -182,95 +114,6 @@ QSizeF Utils::realDpi(QWidget* widgetOnScreen)
     
     res = QSizeF(72, 72);
     return res;
-}
-
-#elif defined(Q_WS_MAC)
-    /*
-     * Code copied from http://developer.apple.com/qa/qa2001/qa1217.html
-     */
-    //    Handy utility function for retrieving an int from a CFDictionaryRef
-    static int GetIntFromDictionaryForKey( CFDictionaryRef desc, CFStringRef key )
-    {
-        CFNumberRef value;
-        int num = 0;
-        if ( (value = (CFNumberRef)CFDictionaryGetValue(desc, key)) == NULL || CFGetTypeID(value) != CFNumberGetTypeID())
-            return 0;
-        CFNumberGetValue(value, kCFNumberIntType, &num);
-        return num;
-    }
-
-    static CGDisplayErr GetDisplayDPI( CFDictionaryRef displayModeDict, CGDirectDisplayID displayID,
-                                       double *horizontalDPI, double *verticalDPI )
-    {
-        CGDisplayErr err = kCGErrorFailure;
-        io_connect_t displayPort;
-        CFDictionaryRef displayDict;
-
-        //    Grab a connection to IOKit for the requested display
-        displayPort = CGDisplayIOServicePort( displayID );
-        if ( displayPort != MACH_PORT_NULL )
-        {
-            //    Find out what IOKit knows about this display
-            displayDict = IODisplayCreateInfoDictionary(displayPort, 0);
-            if ( displayDict != NULL )
-            {
-                const double mmPerInch = 25.4;
-                double horizontalSizeInInches =
-                    (double)GetIntFromDictionaryForKey(displayDict,
-                                                       CFSTR(kDisplayHorizontalImageSize)) / mmPerInch;
-                double verticalSizeInInches =
-                    (double)GetIntFromDictionaryForKey(displayDict,
-                                                       CFSTR(kDisplayVerticalImageSize)) / mmPerInch;
-
-                //    Make sure to release the dictionary we got from IOKit
-                CFRelease(displayDict);
-
-                // Now we can calculate the actual DPI
-                // with information from the displayModeDict
-                *horizontalDPI =
-                    (double)GetIntFromDictionaryForKey( displayModeDict, kCGDisplayWidth )
-                    / horizontalSizeInInches;
-                *verticalDPI = (double)GetIntFromDictionaryForKey( displayModeDict,
-                        kCGDisplayHeight ) / verticalSizeInInches;
-                err = CGDisplayNoErr;
-            }
-        }
-        return err;
-    }
-
-double Utils::dpiX()
-{
-    double x,y;
-    CGDisplayErr err = GetDisplayDPI( CGDisplayCurrentMode(kCGDirectMainDisplay),
-                                      kCGDirectMainDisplay,
-                                      &x, &y );
-
-    return err == CGDisplayNoErr ? x : 72.0;
-}
-
-double Utils::dpiY()
-{
-    double x,y;
-    CGDisplayErr err = GetDisplayDPI( CGDisplayCurrentMode(kCGDirectMainDisplay),
-                                      kCGDirectMainDisplay,
-                                      &x, &y );
-
-    return err == CGDisplayNoErr ? y : 72.0;
-}
-
-double Utils::realDpiX()
-{
-    return dpiX();
-}
-
-double Utils::realDpiY()
-{
-    return dpiY();
-}
-
-QSizeF Utils::realDpi(QWidget*)
-{
-    return QSizeF(realDpiX(), realDpiY());
 }
 #else
 
@@ -298,7 +141,7 @@ QSizeF Utils::realDpi(QWidget*)
 {
     return QSizeF(realDpiX(), realDpiY());
 }
-#endif
+#endif // Q_WS_X11
 
 inline static bool isWhite( QRgb argb ) {
     return ( argb & 0xFFFFFF ) == 0xFFFFFF; // ignore alpha
