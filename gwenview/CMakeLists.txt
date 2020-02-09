@@ -8,8 +8,10 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 ## Dependencies
-find_package(Exiv2)
-macro_log_feature(EXIV2_FOUND "Exiv2" "Image metadata support" "http://www.exiv2.org" TRUE "0.19")
+find_package(Exiv2 0.19)
+set_package_properties(Exiv2 PROPERTIES DESCRIPTION "Image Tag reader"
+                       URL "http://www.exiv2.org" TYPE REQUIRED
+                       PURPOSE "Support for image metadata")
 
 macro_optional_find_package(Kipi)
 macro_log_feature(KIPI_FOUND "libkipi" "Provides various image manipulation and export features" "http://www.kipi-plugins.org" FALSE)
