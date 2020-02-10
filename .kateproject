@@ -1,0 +1,4 @@
+{
+	"name": "kde-extraapps" ,
+	"files": [ { "git": 1 } ]
+}
