@@ -1,22 +1,25 @@
 PROJECT(libksane)
 
-MESSAGE(STATUS "----------------------------------------------------------------------------------")
-MESSAGE(STATUS "Starting CMake configuration for: libksane")
-
-# building separately or as part of kdegraphics ?
-IF(NOT KDE4_FOUND)
-    FIND_PACKAGE(KDE4 REQUIRED)
-ENDIF(NOT KDE4_FOUND)
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.19.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
 
 # Check if sane API is available.
 FIND_PACKAGE(Sane REQUIRED)
-macro_log_feature(SANE_FOUND "SANE development toolkit" "Scanner Access Now Easy (SANE) development package" "http://www.sane-project.org" TRUE "" "Needed by libksane")
+macro_log_feature(SANE_FOUND "SANE development toolkit"
+    "Scanner Access Now Easy (SANE) development package"
+    "http://www.sane-project.org"
+    TRUE "" "Needed by libksane"
+)
 
-ADD_DEFINITIONS (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-INCLUDE_DIRECTORIES (${CMAKE_SOURCE_DIR}
-                     ${CMAKE_BINARY_DIR}
-                     ${KDE4_INCLUDES}
-                     ${CMAKE_CURRENT_BINARY_DIR}/libksane)
+INCLUDE_DIRECTORIES(
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}/libksane
+)
 
 # =======================================================
 # Information to update before to release this library.

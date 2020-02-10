@@ -1,20 +1,39 @@
 project(krdc)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.19.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 macro_optional_find_package(LibVNCServer)
-macro_log_feature(LIBVNCSERVER_FOUND "libvncserver" "VNC server / client library" "http://libvncserver.sourceforge.net/" FALSE "0.9.8" "Needed to build VNC client support in KRDC")
+macro_log_feature(LIBVNCSERVER_FOUND "libvncserver"
+    "VNC server / client library"
+    "http://libvncserver.sourceforge.net/"
+    FALSE "0.9.8" "Needed to build VNC client support in KRDC"
+)
 
 find_program(FREERDP_EXECUTABLE xfreerdp)
 if(FREERDP_EXECUTABLE)
     set(FREERDP_EXECUTABLE_FOUND true)
 endif(FREERDP_EXECUTABLE)
-macro_log_feature(FREERDP_EXECUTABLE_FOUND "freerdp" "A free Remote Desktop Protocol (RDP) Implementation" "http://www.freerdp.com" FALSE "1.0.2" "Needed for RDP support in KRDC (at runtime)")
+macro_log_feature(FREERDP_EXECUTABLE_FOUND "freerdp"
+    "A free Remote Desktop Protocol (RDP) Implementation"
+    "http://www.freerdp.com"
+    FALSE "1.0.2" "Needed for RDP support in KRDC (at runtime)"
+)
 
 # NX support is not ready for KDE 4.2; disabled (uwolfer)
 # macro_optional_find_package(LibNXCL)
 # macro_log_feature(LIBNXCL_FOUND "libnxcl" "NX X compression client library" "http://svn.berlios.de/svnroot/repos/freenx/trunk/freenx-client/nxcl/" FALSE "1.0" "Needed to build Krdc with NX support")
 
 macro_optional_find_package(TelepathyQt4)
-macro_log_feature(TelepathyQt4_FOUND "telepathy-qt" "Telepathy Qt Bindings" "http://telepathy.freedesktop.org" FALSE "0.9" "Needed to build Telepathy Tubes support.")
+macro_log_feature(TelepathyQt4_FOUND "telepathy-qt"
+    "Telepathy Qt Bindings"
+    "http://telepathy.freedesktop.org"
+    FALSE "0.9" "Needed to build Telepathy Tubes support."
+)
 
 if(TelepathyQt4_FOUND)
     add_definitions(-DTELEPATHY_SUPPORT)
@@ -38,8 +57,10 @@ if(TelepathyQt4_FOUND)
     add_subdirectory(krdc_approver)
 endif()
 
-add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5010)
-add_definitions(-DBUILD_ZEROCONF)
+add_definitions(
+    -DKDE_DEFAULT_DEBUG_AREA=5010
+    -DBUILD_ZEROCONF
+)
 
 set(krdc_SRCS
     config/hostpreferenceslist.cpp

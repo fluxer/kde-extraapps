@@ -1,5 +1,12 @@
 project(kompare)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.19.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 add_subdirectory( libkomparediff2 )
 add_subdirectory( interfaces )
 add_subdirectory( libdialogpages )
@@ -15,7 +22,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/komparepart
     ${CMAKE_CURRENT_SOURCE_DIR}/libkomparediff2
 )
-
 
 ########### next target ###############
 
@@ -41,11 +47,11 @@ install(TARGETS kompare ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     PROGRAMS kompare.desktop
-    DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR}
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
 )
 install(
     FILES kompareui.rc
-    DESTINATION  ${KDE4_DATA_INSTALL_DIR}/kompare
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/kompare
 )
 install(
     FILES
@@ -53,4 +59,3 @@ install(
     kompareviewpart.desktop
     DESTINATION  ${KDE4_SERVICETYPES_INSTALL_DIR}
 )
-

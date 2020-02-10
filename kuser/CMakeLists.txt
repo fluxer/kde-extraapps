@@ -1,13 +1,17 @@
 project(kuser)
 
-add_definitions( -DQT_NO_CAST_FROM_ASCII )
-add_definitions( -DQT_NO_CAST_TO_ASCII )
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.19.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
 
-include_directories (${QDBUS_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 include(CheckFunctionExists)
 include(CheckLibraryExists)
+include(CheckIncludeFiles)
 
 include(TestBigEndian)
 
@@ -79,7 +83,6 @@ if(HAVE_CRYPT_LIBRARY)
 endif(HAVE_CRYPT_LIBRARY)
 
 install(TARGETS kuser ${INSTALL_TARGETS_DEFAULT_ARGS})
-
 
 ########### install files ###############
 

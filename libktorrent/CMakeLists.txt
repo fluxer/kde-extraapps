@@ -1,12 +1,5 @@
 project(LIBKTORRENT)
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
-    find_package(KDE4 4.19.0 REQUIRED)
-    include(KDE4Defaults)
-    include_directories(${KDE4_INCLUDES})
-    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-endif()
-
 find_package(GMP REQUIRED)
 find_package(QCA2 REQUIRED)
 find_package(LibGcrypt REQUIRED)
@@ -22,9 +15,7 @@ include(CheckFunctionExists)
 include(CheckTypeSize) #XFS
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
-add_definitions( ${KDE4_DEFINITIONS} )
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-include_directories(${KDE4_INCLUDES} ${LIBKTORRENT_BINARY_DIR}	${LIBKTORRENT_SOURCE_DIR} ${GMP_INCLUDE_DIR})
+include_directories(${LIBKTORRENT_BINARY_DIR} ${LIBKTORRENT_SOURCE_DIR} ${GMP_INCLUDE_DIR})
 
 set(LIBKTORRENT_VERSION "1.1dev")
 

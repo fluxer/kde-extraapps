@@ -15,9 +15,8 @@ target_link_libraries(ktimer  ${KDE4_KIO_LIBS})
 
 install(TARGETS ktimer  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-
 ########### install files ###############
 
-install( PROGRAMS ktimer.desktop  DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(PROGRAMS ktimer.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 
-kde4_install_icons( ${KDE4_ICON_INSTALL_DIR}   )
+kde4_install_icons(${KDE4_ICON_INSTALL_DIR})

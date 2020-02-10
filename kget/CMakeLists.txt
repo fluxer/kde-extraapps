@@ -7,8 +7,7 @@ include(CheckFunctionExists)
 include(CheckLibraryExists)
 include(CheckTypeSize)
 
-add_definitions(${QT_DEFINITIONS})
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 macro_optional_find_package(Sqlite)
 macro_log_feature(SQLITE_FOUND "SQLite" "SQLite is a Binary-Database" "" FALSE "" "Needed for the SQLite-Backend of the KGet-History and the Kopete-Statistic-Plugin")
@@ -29,9 +28,9 @@ set(kget_adaptor_SRCS
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5001) 
 
-if(CMAKE_BUILD_TYPE MATCHES debugfull)
+if(CMAKE_BUILD_TYPE MATCHES Debug)
      add_definitions(-DDEBUG)
-endif(CMAKE_BUILD_TYPE MATCHES debugfull)
+endif()
 
 if(QGPGME_FOUND)
     add_definitions(-DHAVE_QGPGME)
@@ -135,7 +134,11 @@ if (QGPGME_FOUND)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
 endif(QGPGME_FOUND)
 
-set_target_properties(kgetcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+set_target_properties(kgetcore PROPERTIES
+    VERSION ${GENERIC_LIB_VERSION}
+    SOVERSION ${GENERIC_LIB_SOVERSION}
+)
+
 install(TARGETS kgetcore ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 

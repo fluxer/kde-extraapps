@@ -1,5 +1,12 @@
 project(kmix)
 
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    find_package(KDE4 4.19.0 REQUIRED)
+    include(KDE4Defaults)
+    include_directories(${KDE4_INCLUDES})
+    add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+endif()
+
 macro_optional_find_package(Alsa)
 macro_log_feature(ALSA_FOUND "Alsa" "Advanced Linux Sound Architecture"
     "https://alsa-project.org/wiki/Main_Page" FALSE "" "ALSA is needed for kmix sound feedback")
@@ -13,10 +20,9 @@ macro_optional_find_package(Canberra)
 macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library"
     "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
 
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=67100)
 
-include_directories(${KDE4_INCLUDES} /usr/lib/oss/include)
+include_directories(/usr/lib/oss/include)
 
 
 include(CheckCXXSourceCompiles)

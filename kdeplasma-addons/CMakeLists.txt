@@ -25,9 +25,7 @@ macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" 
 macro_optional_find_package(DBusMenuQt)
 macro_log_feature(DBUSMENUQT_FOUND "DBusMenuQt" "DBusMenu Qt" "https://launchpad.net/libdbusmenu-qt/" FALSE "" "Needed for Unity support in IconTasks.")
 
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories(
-    ${KDE4_INCLUDES}
     ${KDE4WORKSPACE_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/libs
 )

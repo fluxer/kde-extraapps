@@ -34,7 +34,12 @@ pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
 add_definitions(${KDE4_ENABLE_EXCEPTIONS})
 
-include_directories(${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
+include_directories(
+    ${UUID_INCLUDE_DIRS}
+    ${BLKID_INCLUDE_DIRS}
+    lib/
+    src/
+)
 
 add_subdirectory(lib)
 add_subdirectory(src)

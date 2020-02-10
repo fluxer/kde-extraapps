@@ -1,7 +1,5 @@
 project(KSystemLog)
 
-project(ark)
-
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     find_package(KDE4 4.19.0 REQUIRED)
     include(KDE4Defaults)

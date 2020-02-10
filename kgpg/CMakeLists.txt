@@ -11,7 +11,7 @@ endif()
 find_package( Gpgme REQUIRED )
 
 add_subdirectory(icons)
-include_directories(${KDE4_INCLUDES} ${GPGME_INCLUDES})
+include_directories(${GPGME_INCLUDES})
 
 option(KGPG_DEBUG_TRANSACTIONS "show commands and results of gpg calls in debug log" Off)
 
