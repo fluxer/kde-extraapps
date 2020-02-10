@@ -217,7 +217,13 @@ qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h
 
 add_executable(kget ${kget_SRCS})
 
-target_link_libraries(kget ${QT_QTTEST_LIBRARY} ${KDE4_KDEUI_LIBRARY} ${KDE4_KIO_LIBRARY} ${KDE4_KCMUTILS_LIBRARY} kgetcore ${KDE4_KNOTIFYCONFIG_LIBS})
+target_link_libraries(kget
+    ${KDE4_KDEUI_LIBRARY}
+    ${KDE4_KIO_LIBRARY}
+    ${KDE4_KCMUTILS_LIBRARY}
+    ${KDE4_KNOTIFYCONFIG_LIBS}
+    kgetcore
+)
 
 if (QGPGME_FOUND)
   target_link_libraries(kget ${QGPGME_LIBRARIES})

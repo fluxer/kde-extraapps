@@ -19,7 +19,7 @@ include_directories(
 
 if(Q_WS_X11)
     if(NOT X11_XTest_FOUND)
-        message(FATAL_ERROR "krfb requires the libXtst (http://xorg.freedesktop.org) to be built")
+        message(FATAL_ERROR "krfb requires the libXTest (http://xorg.freedesktop.org) to be built")
     endif(NOT X11_XTest_FOUND)
 endif(Q_WS_X11)
 

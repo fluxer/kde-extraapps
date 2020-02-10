@@ -69,10 +69,16 @@ qt4_add_dbus_interface_ex(tasks_SRCS org.freedesktop.MediaPlayer.player.xml play
 
 kde4_add_plugin(plasma_applet_icontasks ${tasks_SRCS})
 
-target_link_libraries(plasma_applet_icontasks ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS} ${DBUSMENUQT_LIBRARIES} ${KDE4WORKSPACE_TASKMANAGER_LIBS})
+target_link_libraries(plasma_applet_icontasks
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_PLASMA_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${DBUSMENUQT_LIBRARIES}
+    ${KDE4WORKSPACE_TASKMANAGER_LIBS}
+)
 
 if(Q_WS_X11)
-    target_link_libraries(plasma_applet_icontasks ${X11_LIBRARIES})
+    target_link_libraries(plasma_applet_icontasks ${X11_X11_LIB})
 endif(Q_WS_X11)
 
 include_directories(${CMAKE_BINARY_DIR} ${DBUSMENUQT_INCLUDE_DIR})

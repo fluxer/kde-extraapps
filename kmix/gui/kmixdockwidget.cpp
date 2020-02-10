@@ -152,7 +152,7 @@ void KMixDockWidget::createMenuActions()
     connect(action, SIGNAL(triggered(bool)), _kmixMainWindow, SLOT(slotSelectMaster()));
     menu->addAction( action );
 
-    //Context menu entry to access phonon settings
+    //Context menu entry to access media settings
     menu->addAction(_kmixMainWindow->actionCollection()->action("launch_kdesoundsetup"));
 }
 
