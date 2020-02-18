@@ -7,8 +7,6 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
-
 macro_optional_find_package(KDE4Workspace)
 macro_log_feature(KDE4WORKSPACE_FOUND "kdebase workspace" "KDE base workspace libraries" "http://www.kde.org" FALSE "" "Needed for building several Plasma plugins")
 
@@ -36,5 +34,4 @@ add_subdirectory(dataengines)
 add_subdirectory(runners)
 add_subdirectory(wallpapers)
 add_subdirectory(containments)
-add_subdirectory(cmake)
 
