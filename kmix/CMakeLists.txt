@@ -47,7 +47,6 @@ if (ALSA_FOUND)
     include_directories(${ALSA_INCLUDES})
 endif (ALSA_FOUND)
 
-message(STATUS "PULSEAUDIO_DEFINITIONS: ${PULSEAUDIO_DEFINITIONS}")
 if (PULSEAUDIO_FOUND)
     add_definitions(-DHAVE_PULSE ${PULSEAUDIO_DEFINITIONS})
     include_directories(${PULSEAUDIO_INCLUDE_DIR})
