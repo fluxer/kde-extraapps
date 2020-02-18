@@ -1,4 +1,3 @@
-add_subdirectory(mandelbrot)
 add_subdirectory(potd)
 add_subdirectory(virus)
 add_subdirectory(weather)
