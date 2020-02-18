@@ -72,4 +72,4 @@ macro_optional_add_subdirectory(libktorrent)
 macro_optional_add_subdirectory(akregator)
 macro_optional_add_subdirectory(syndication)
 
-macro_display_feature_log()
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
