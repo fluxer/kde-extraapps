@@ -2,13 +2,15 @@ project(plasma-qalculate)
 
 set(CMAKE_CXX_FLAGS "${KDE4_ENABLE_EXCEPTIONS} -Wno-deprecated")	
  
+include_directories(${QALCULATE_INCLUDE_DIR})
+
 # We add our source code here
 set(qalculate_SRCS 
-	qalculate_applet.cpp
-	qalculate_labels.cpp
-	qalculate_settings.cpp
-	qalculate_engine.cpp
-	qalculate_history.cpp
+    qalculate_applet.cpp
+    qalculate_labels.cpp
+    qalculate_settings.cpp
+    qalculate_engine.cpp
+    qalculate_history.cpp
     outputlabel.cpp
     qalculate_graphicswidget.cpp    
 )
@@ -16,7 +18,12 @@ set(qalculate_SRCS
 # Now make sure all files get to the right place
 kde4_add_plugin(plasma_applet_qalculate ${qalculate_SRCS})
 target_link_libraries(plasma_applet_qalculate 
-${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${KDE4_KIO_LIBS} ${QALCULATE_LIBRARIES} ${CLN_LIBRARIES})
+    ${KDE4_PLASMA_LIBS}
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_SOLID_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${QALCULATE_LIBRARIES}
+)
  
 install(TARGETS plasma_applet_qalculate
         DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
