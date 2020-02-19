@@ -246,7 +246,7 @@ Application: KMix (kmix), signal: Segmentation fault
 	foreach ( Mixer* mixer, _mixers )
 	{
 //		kDebug() << "ADD? mixerId=" << mixer->id();
-		shared_ptr<MixDevice>dockMD = mixer->getLocalMasterMD();
+		std::shared_ptr<MixDevice>dockMD = mixer->getLocalMasterMD();
 		if ( !dockMD && mixer->size() > 0 )
 		{
 			// If we have no dock device yet, we will take the first available mixer device.
@@ -268,7 +268,7 @@ Application: KMix (kmix), signal: Segmentation fault
 	// Add all application streams
 	foreach ( Mixer* mixer2 , _mixers )
 	{
-		foreach ( shared_ptr<MixDevice> md, mixer2->getMixSet() )
+		foreach ( std::shared_ptr<MixDevice> md, mixer2->getMixSet() )
 		{
 			if (md->isApplicationStream())
 			{
@@ -280,7 +280,7 @@ Application: KMix (kmix), signal: Segmentation fault
 }
 
 
-QWidget* ViewDockAreaPopup::add(shared_ptr<MixDevice> md)
+QWidget* ViewDockAreaPopup::add(std::shared_ptr<MixDevice> md)
 {
   bool vertical = (GlobalConfig::instance().data.getTraypopupOrientation() == Qt::Vertical); // I am wondering whether using vflags for this would still make sense
   /*

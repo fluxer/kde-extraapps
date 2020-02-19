@@ -150,7 +150,7 @@ void ViewBase::updateMediaPlaybackIcons()
 void ViewBase::createDeviceWidgets()
 {
   _setMixSet();
-    foreach ( shared_ptr<MixDevice> md, _mixSet )
+    foreach ( std::shared_ptr<MixDevice> md, _mixSet )
     {
         QWidget* mdw = add(md); // a) Let the View implementation do its work
         _mdws.append(mdw); // b) Add it to the local list
@@ -275,7 +275,7 @@ void ViewBase::resetMdws()
       while (!_mdws.isEmpty())
 	      delete _mdws.takeFirst();
 
-      // _mixSet contains shared_ptr instances, so clear() should be enough to prevent mem leak
+      // _mixSet contains std::shared_ptr instances, so clear() should be enough to prevent mem leak
       _mixSet.clear(); // Clean up our _mixSet so we can reapply our GUIProfile
 }
 
@@ -345,7 +345,7 @@ void ViewBase::load(KConfig *config)
 			if (qmdw->inherits("MixDeviceWidget"))
 			{
 				MixDeviceWidget* mdw = (MixDeviceWidget*) qmdw;
-				shared_ptr<MixDevice> md = mdw->mixDevice();
+				std::shared_ptr<MixDevice> md = mdw->mixDevice();
 				QString devgrp = md->configGroupName(grp);
 				KConfigGroup devcg = config->group(devgrp);
 
@@ -452,7 +452,7 @@ void ViewBase::save(KConfig *config)
 		if (qmdw->inherits("MixDeviceWidget"))
 		{
 			MixDeviceWidget* mdw = (MixDeviceWidget*) qmdw;
-			shared_ptr<MixDevice> md = mdw->mixDevice();
+			std::shared_ptr<MixDevice> md = mdw->mixDevice();
 
 			//kDebug(67100) << "  grp=" << grp.toAscii();
 			//kDebug(67100) << "  mixer=" << view->id().toAscii();

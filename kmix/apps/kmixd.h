@@ -21,14 +21,10 @@
 #ifndef KMIXD_H
 #define KMIXD_H
 
-
-#include <config.h>
-
 // Qt
 #include <QString>
 #include <QtDBus/QtDBus> 
-
-#include <qlist.h>
+#include <QList>
 #include <QTimer>
 
 // KDE

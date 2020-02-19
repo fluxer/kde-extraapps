@@ -152,7 +152,7 @@ void MixDevice::init(  Mixer* mixer, const QString& id, const QString& name, con
  * You must not use this MixDevice after calling close().
  * <br>
  * The necessity stems from a memory leak due to object cycle (MixDevice<->DBusControlWrapper), so the reference
- * counting shared_ptr has no chance to clean up. See Bug 309464 for background information.
+ * counting std::shared_ptr has no chance to clean up. See Bug 309464 for background information.
  */
 void MixDevice::close()
 {
@@ -167,11 +167,11 @@ MediaController* MixDevice::getMediaController()
 }
 
 
-shared_ptr<MixDevice> MixDevice::addToPool()
+std::shared_ptr<MixDevice> MixDevice::addToPool()
 {
 //	kDebug() << "id=" <<  _mixer->id() << ":" << _id;
-    shared_ptr<MixDevice> thisSharedPtr(this);
-    //shared_ptr<MixDevice> thisSharedPtr = ControlPool::instance()->add(fullyQualifiedId, this);
+    std::shared_ptr<MixDevice> thisSharedPtr(this);
+    // std::shared_ptr<MixDevice> thisSharedPtr = ControlPool::instance()->add(fullyQualifiedId, this);
     _dbusControlWrapper = new DBusControlWrapper( thisSharedPtr, dbusPath() );
 	return thisSharedPtr;
 }

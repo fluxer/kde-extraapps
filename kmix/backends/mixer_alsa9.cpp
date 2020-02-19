@@ -228,7 +228,7 @@ int Mixer_ALSA::open()
             qDeleteAll(enumList); // clear temporary list
        	}
 
-       	shared_ptr<MixDevice> md = mdNew->addToPool();
+       	std::shared_ptr<MixDevice> md = mdNew->addToPool();
         m_mixDevices.append( md );
          
 
@@ -740,7 +740,7 @@ unsigned int Mixer_ALSA::enumIdHW(const QString& id) {
 
 
 int
-Mixer_ALSA::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
+Mixer_ALSA::readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
     Volume& volumePlayback = md->playbackVolume();
     Volume& volumeCapture  = md->captureVolume();
@@ -834,7 +834,7 @@ Mixer_ALSA::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
         // Refresh the capture switch information of *all* controls of this card.
         // Doing it for all is necessary, because enabling one record source often
         // automatically disables another record source (due to the hardware design)
-        foreach ( shared_ptr<MixDevice> md, m_mixDevices )
+        foreach ( std::shared_ptr<MixDevice> md, m_mixDevices )
         {
             bool isRecsrc =  isRecsrcHW( md->id() );
             // kDebug() << "Mixer::setRecordSource(): isRecsrcHW(" <<  md->id() << ") =" <<  isRecsrc;
@@ -849,7 +849,7 @@ Mixer_ALSA::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
 }
 
 int
-Mixer_ALSA::writeVolumeToHW( const QString& id, shared_ptr<MixDevice> md )
+Mixer_ALSA::writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
     Volume& volumePlayback = md->playbackVolume();
     Volume& volumeCapture  = md->captureVolume();

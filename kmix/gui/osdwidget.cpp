@@ -99,7 +99,7 @@ OSDWidget::~OSDWidget()
 void OSDWidget::controlsChange(int changeType)
 {
   ControlChangeType::Type type = ControlChangeType::fromInt(changeType);
-    shared_ptr<MixDevice> master = Mixer::getGlobalMasterMD();
+    std::shared_ptr<MixDevice> master = Mixer::getGlobalMasterMD();
   switch (type )
   {
     case ControlChangeType::Volume:

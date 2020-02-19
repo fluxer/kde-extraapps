@@ -305,7 +305,7 @@ void DialogViewConfiguration::createPage()
       QWidget *qw = mdws[i];
       if ( qw->inherits("MixDeviceWidget") ) {
             MixDeviceWidget *mdw = static_cast<MixDeviceWidget*>(qw);
-            shared_ptr<MixDevice> md = mdw->mixDevice();
+            std::shared_ptr<MixDevice> md = mdw->mixDevice();
             QString mdName = md->readableName();
 
             int splitted = -1;

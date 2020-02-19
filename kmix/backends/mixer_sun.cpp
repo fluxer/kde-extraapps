@@ -252,7 +252,7 @@ QString Mixer_SUN::errorText( int mixer_error )
 // FUNCTION    : Mixer::readVolumeFromHW
 // DESCRIPTION : Read the audio information from the driver.
 //======================================================================
-int Mixer_SUN::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
+int Mixer_SUN::readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
    audio_info_t audioinfo;
    int devnum = id2num(id);
@@ -314,7 +314,7 @@ int Mixer_SUN::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
 // FUNCTION    : Mixer::writeVolumeToHW
 // DESCRIPTION : Write the specified audio settings to the hardware.
 //======================================================================
-int Mixer_SUN::writeVolumeToHW( const QString& id, shared_ptr<MixDevice> md )
+int Mixer_SUN::writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
    uint_t gain;
    uchar_t balance;

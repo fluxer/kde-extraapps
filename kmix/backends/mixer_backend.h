@@ -93,9 +93,9 @@ protected:
   void readSetFromHWforceUpdate() const;
 
   /// Volume Read
-  virtual int readVolumeFromHW( const QString& id, shared_ptr<MixDevice> ) = 0;
+  virtual int readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> ) = 0;
   /// Volume Write
-  virtual int writeVolumeToHW( const QString& id, shared_ptr<MixDevice> ) = 0;
+  virtual int writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> ) = 0;
 
   /// Enums
   virtual void setEnumIdHW(const QString& id, unsigned int);
@@ -111,7 +111,7 @@ protected:
   /// Overwrite in the backend if the backend can see changes without polling
   virtual bool needsPolling() { return true; }
 
-  shared_ptr<MixDevice> recommendedMaster();
+  std::shared_ptr<MixDevice> recommendedMaster();
 
   /**
    * Return a translated error text for the given error number.
@@ -143,7 +143,7 @@ protected:
    ******************************************************************************************/
   bool m_isOpen;
   // The MixDevice that would qualify best as MasterDevice (according to the taste of the Backend developer)
-  shared_ptr<MixDevice> m_recommendedMaster;
+  std::shared_ptr<MixDevice> m_recommendedMaster;
    // The Mixer is stored her only for one reason: The backend creates the MixDevice's, and it has shown
    // that it is helpful if the MixDevice's know their corresponding Mixer. KMix lived 10 years without that,
    // but just believe me. It's *really* better, for example, you can put controls of different soundcards in

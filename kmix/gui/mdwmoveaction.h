@@ -30,7 +30,7 @@ class MDWMoveAction : public KAction
     Q_OBJECT
 
     public:
-        MDWMoveAction(shared_ptr<MixDevice> md, QObject *parent);
+        MDWMoveAction(std::shared_ptr<MixDevice> md, QObject *parent);
         ~MDWMoveAction();
 
     signals:
@@ -40,7 +40,7 @@ class MDWMoveAction : public KAction
         void triggered(bool checked);
 
    private:
-        shared_ptr<MixDevice> m_mixDevice;
+        std::shared_ptr<MixDevice> m_mixDevice;
 };
 
 #endif

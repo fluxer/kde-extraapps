@@ -84,7 +84,7 @@ public:
     /**
      * Creates a suitable representation for the given MixDevice.
      */
-    virtual QWidget* add(shared_ptr<MixDevice>) = 0;
+    virtual QWidget* add(std::shared_ptr<MixDevice>) = 0;
 
     // This method is called after a configuration update (show/hide controls, split/unsplit).
     virtual void configurationUpdate() = 0;

@@ -38,7 +38,7 @@ public:
     ViewSliders(QWidget* parent, QString id, Mixer* mixer, ViewBase::ViewFlags vflags, QString guiProfileId, KActionCollection *actColl);
     virtual ~ViewSliders();
 
-    virtual QWidget* add(shared_ptr<MixDevice>);
+    virtual QWidget* add(std::shared_ptr<MixDevice>);
     virtual void constructionFinished();
     virtual void configurationUpdate();
 

@@ -25,11 +25,11 @@
 #include <QMap>
 
 
-shared_ptr<MixDevice> ControlPool::TheEmptyDevice; // = shared_ptr<MixDevice>(ControlPool::TheEmptyDevicePtr);
+std::shared_ptr<MixDevice> ControlPool::TheEmptyDevice; // = std::shared_ptr<MixDevice>(ControlPool::TheEmptyDevicePtr);
 
 ControlPool::ControlPool()
 {
-	pool = new QMap<QString, shared_ptr<MixDevice> >();
+	pool = new QMap<QString, std::shared_ptr<MixDevice> >();
 }
 
 ControlPool* ControlPool::_instance = 0;
@@ -51,9 +51,9 @@ ControlPool* ControlPool::instance()
  * @return
  */
 
-shared_ptr<MixDevice> ControlPool::add(const QString& key, MixDevice* md)
+std::shared_ptr<MixDevice> ControlPool::add(const QString& key, MixDevice* md)
 {
-	shared_ptr<MixDevice> controlFromPool(get(key));
+	std::shared_ptr<MixDevice> controlFromPool(get(key));
 	if ( controlFromPool.get() != 0)
 	{
 		kDebug() << "----ControlPool already cached key=" << key;
@@ -62,7 +62,7 @@ shared_ptr<MixDevice> ControlPool::add(const QString& key, MixDevice* md)
 
 	// else: Add the control to the pool
 	kDebug() << "----ControlPool add key=" << key;
-	shared_ptr<MixDevice> mdShared(md);
+	std::shared_ptr<MixDevice> mdShared(md);
 	pool->insert(key, mdShared);
 	return mdShared;
 
@@ -76,8 +76,8 @@ shared_ptr<MixDevice> ControlPool::add(const QString& key, MixDevice* md)
  * @param key
  * @return The Control wrapped in QSharedPointer. If not found, a QSharedPointer that points to null.
  */
-shared_ptr<MixDevice> ControlPool::get(const QString& key)
+std::shared_ptr<MixDevice> ControlPool::get(const QString& key)
 {
-	shared_ptr<MixDevice> mixDeviceShared = pool->value(key, TheEmptyDevice);
+	std::shared_ptr<MixDevice> mixDeviceShared = pool->value(key, TheEmptyDevice);
 	return mixDeviceShared;
 }

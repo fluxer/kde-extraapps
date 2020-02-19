@@ -215,7 +215,7 @@ int Mixer_OSS4::open()
 			bool masterChosen = false;
 			bool masterHeuristicAvailable = false;
 			bool saveAsMasterHeuristc = false;
-			shared_ptr<MixDevice> masterHeuristic;
+			std::shared_ptr<MixDevice> masterHeuristic;
 
 			oss_mixext ext;
 			ext.dev = m_devnum;
@@ -340,7 +340,7 @@ int Mixer_OSS4::open()
 									name,
 									cType);
                                         
-                                        shared_ptr<MixDevice> md = md_ptr->addToPool();
+                                        std::shared_ptr<MixDevice> md = md_ptr->addToPool();
                                         m_mixDevices.append(md);
 					
 					if(isCapture)
@@ -375,7 +375,7 @@ int Mixer_OSS4::open()
 								      name,
 								      cType);
                                         
-                                        shared_ptr<MixDevice> md = md_ptr->addToPool();
+                                        std::shared_ptr<MixDevice> md = md_ptr->addToPool();
                                         m_mixDevices.append(md);
 					
 					if(isCapture)
@@ -413,7 +413,7 @@ int Mixer_OSS4::open()
 							 	      name,
 								      cType);
                                         
-                                        shared_ptr<MixDevice> md = md_ptr->addToPool();
+                                        std::shared_ptr<MixDevice> md = md_ptr->addToPool();
                                         m_mixDevices.append(md);
 
                                         if(isCapture)
@@ -457,7 +457,7 @@ int Mixer_OSS4::open()
 						}
 						md_ptr->addEnums(enumValuesRef);
                                         
-                                                shared_ptr<MixDevice> md = md_ptr->addToPool();
+                                                std::shared_ptr<MixDevice> md = md_ptr->addToPool();
                                                 m_mixDevices.append(md);
 					}
 				}
@@ -537,7 +537,7 @@ bool Mixer_OSS4::prepareUpdateFromHW()
 	return true;
 }
 
-int Mixer_OSS4::readVolumeFromHW(const QString& id, shared_ptr<MixDevice> md)
+int Mixer_OSS4::readVolumeFromHW(const QString& id, std::shared_ptr<MixDevice> md)
 {
 	oss_mixext extinfo;
 	oss_mixer_value mv;
@@ -603,7 +603,7 @@ int Mixer_OSS4::readVolumeFromHW(const QString& id, shared_ptr<MixDevice> md)
 	return 0;
 }
 
-int Mixer_OSS4::writeVolumeToHW(const QString& id, shared_ptr<MixDevice> md)
+int Mixer_OSS4::writeVolumeToHW(const QString& id, std::shared_ptr<MixDevice> md)
 {
 	int volume = 0;
 

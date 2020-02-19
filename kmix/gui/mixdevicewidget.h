@@ -45,14 +45,14 @@ class MixDeviceWidget
       Q_OBJECT
 
 public:
-    MixDeviceWidget( shared_ptr<MixDevice> md,
+    MixDeviceWidget( std::shared_ptr<MixDevice> md,
                      bool small, Qt::Orientation orientation,
                      QWidget* parent, ViewBase*, ProfControl * );
     virtual ~MixDeviceWidget();
 
     void addActionToPopup( KAction *action );
 
-    shared_ptr<MixDevice> mixDevice() { return m_mixdevice; }
+    std::shared_ptr<MixDevice> mixDevice() { return m_mixdevice; }
 
     virtual void setColors( QColor high, QColor low, QColor back );
     virtual void setIcons( bool value );
@@ -81,7 +81,7 @@ protected slots:
 
 protected:
 
-      shared_ptr<MixDevice>  m_mixdevice;
+      std::shared_ptr<MixDevice>  m_mixdevice;
       KActionCollection*   _mdwActions;
       KActionCollection*   _mdwPopupActions;
       ViewBase*            m_view;

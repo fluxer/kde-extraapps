@@ -74,7 +74,7 @@ Mixer_Backend::~Mixer_Backend()
 
 void Mixer_Backend::freeMixDevices()
 {
-	foreach (shared_ptr<MixDevice> md, m_mixDevices)
+	foreach (std::shared_ptr<MixDevice> md, m_mixDevices)
 		md->close();
 
 	m_mixDevices.clear();
@@ -174,7 +174,7 @@ void Mixer_Backend::readSetFromHW()
 
 	int ret = Mixer::OK_UNCHANGED;
 
-	foreach (shared_ptr<MixDevice> md, m_mixDevices )
+	foreach (std::shared_ptr<MixDevice> md, m_mixDevices )
 	{
 	  //bool debugMe = (md->id() == "PCM:0" );
 	  bool debugMe = false;
@@ -242,7 +242,7 @@ void Mixer_Backend::readSetFromHW()
  * first device in the device list. Backends can override this (i.e. the ALSA Backend does so).
  * The users preference is NOT returned by this method - see the Mixer class for that.
  */
-shared_ptr<MixDevice> Mixer_Backend::recommendedMaster()
+std::shared_ptr<MixDevice> Mixer_Backend::recommendedMaster()
 {
 	if ( m_recommendedMaster )
 	{

@@ -41,14 +41,14 @@ class DBusControlWrapper : public QObject
 	Q_PROPERTY(bool hasCaptureSwitch READ hasCaptureSwitch)
 
 	public:
-		DBusControlWrapper(shared_ptr<MixDevice> parent, const QString& path);
+		DBusControlWrapper(std::shared_ptr<MixDevice> parent, const QString& path);
 		~DBusControlWrapper();
 
 		void increaseVolume();
 		void decreaseVolume();
 		void toggleMute();
 	private:
-		shared_ptr<MixDevice> m_md;
+		std::shared_ptr<MixDevice> m_md;
 		
 		QString id();
 		QString readableName();

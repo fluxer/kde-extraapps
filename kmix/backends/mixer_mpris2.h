@@ -121,8 +121,8 @@ public:
 
   virtual int open();
   virtual int close();
-  virtual int readVolumeFromHW( const QString& id, shared_ptr<MixDevice> );
-  virtual int writeVolumeToHW( const QString& id, shared_ptr<MixDevice> );
+  virtual int readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> );
+  virtual int writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> );
   virtual void setEnumIdHW(const QString& id, unsigned int);
   virtual unsigned int enumIdHW(const QString& id);
   virtual bool moveStream( const QString& id, const QString& destId );
@@ -164,7 +164,7 @@ private:
 //    void asyncAddMprisControl(QString busDestination);
 //    void messageQueueThreadLoop();
     int addAllRunningPlayersAndInitHotplug();
-    void volumeChangedInternal(shared_ptr<MixDevice> md, int volumePercentage);
+    void volumeChangedInternal(std::shared_ptr<MixDevice> md, int volumePercentage);
 	QString busDestinationToControlId(const QString& busDestination);
 	MixDevice::ChannelType getChannelTypeFromPlayerId(const QString& id);
 

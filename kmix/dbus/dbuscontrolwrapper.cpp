@@ -24,7 +24,7 @@
 #include "core/mixer.h"
 #include "core/volume.h"
 
-DBusControlWrapper::DBusControlWrapper(shared_ptr<MixDevice> parent, const QString& path)
+DBusControlWrapper::DBusControlWrapper(std::shared_ptr<MixDevice> parent, const QString& path)
 	: QObject(0)
 {
 //	kDebug() << "QDBusConnection for control created" << path;

@@ -42,7 +42,7 @@ public:
     ViewDockAreaPopup(QWidget* parent, QString id, ViewBase::ViewFlags vflags, QString guiProfileId, KMixWindow *dockW);
     virtual ~ViewDockAreaPopup();
 
-    virtual QWidget* add(shared_ptr<MixDevice> md);
+    virtual QWidget* add(std::shared_ptr<MixDevice> md);
     virtual void constructionFinished();
     virtual void refreshVolumeLevels();
      virtual void showContextMenu();

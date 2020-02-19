@@ -930,14 +930,14 @@ KMixWindow::unplugged(const QString& udi)
             }
           MixerToolBox::instance()->removeMixer(mixer);
           // Check whether the Global Master disappeared, and select a new one if necessary
-          shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+          std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
           if (globalMasterMixerDestroyed || md.get() == 0)
             {
               // We don't know what the global master should be now.
               // So lets play stupid, and just select the recommended master of the first device
               if (Mixer::mixers().count() > 0)
                 {
-                  shared_ptr<MixDevice> master =
+                  std::shared_ptr<MixDevice> master =
                       ((Mixer::mixers())[0])->getLocalMasterMD();
                   if (master.get() != 0)
                     {
@@ -1102,7 +1102,7 @@ KMixWindow::increaseOrDecreaseVolume(bool increase)
   Mixer* mixer = Mixer::getGlobalMasterMixer(); // only needed for the awkward construct below
   if (mixer == 0)
     return; // e.g. when no soundcard is available
-  shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+  std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
   if (md.get() == 0)
     return; // shouldn't happen, but lets play safe
 
@@ -1131,7 +1131,7 @@ KMixWindow::showVolumeDisplay()
   Mixer* mixer = Mixer::getGlobalMasterMixer();
   if (mixer == 0)
     return; // e.g. when no soundcard is available
-  shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+  std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
   if (md.get() == 0)
     return; // shouldn't happen, but lets play safe
     
@@ -1162,7 +1162,7 @@ void KMixWindow::slotMute()
 	Mixer* mixer = Mixer::getGlobalMasterMixer();
 	if (mixer == 0)
 		return; // e.g. when no soundcard is available
-	shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+	std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
 	if (md.get() == 0)
 		return; // shouldn't happen, but lets play safe
 	md->toggleMute();

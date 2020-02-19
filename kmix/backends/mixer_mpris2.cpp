@@ -120,7 +120,7 @@ void Mixer_MPRIS2::watcherMediaControl(QDBusPendingCallWatcher* watcher)
  * readVolumeFromHW() should be used only for hotplug (and even that should go away). Everything should operate via
  * the slot volumeChanged in the future.
  */
-int Mixer_MPRIS2::readVolumeFromHW( const QString& /*id*/, shared_ptr<MixDevice> /*md*/)
+int Mixer_MPRIS2::readVolumeFromHW( const QString& /*id*/, std::shared_ptr<MixDevice> /*md*/)
 {
 	// Everything is done by notifications => no code neccessary
 	return Mixer::OK_UNCHANGED;
@@ -135,7 +135,7 @@ int Mixer_MPRIS2::readVolumeFromHW( const QString& /*id*/, shared_ptr<MixDevice>
  */
 void Mixer_MPRIS2::playbackStateChanged(MPrisControl* mad, MediaController::PlayState playState)
 {
-	shared_ptr<MixDevice> md = m_mixDevices.get(mad->getId());
+	std::shared_ptr<MixDevice> md = m_mixDevices.get(mad->getId());
 	md->getMediaController()->setPlayState(playState);
 	QMetaObject::invokeMethod(this, "announceGUI", Qt::QueuedConnection);
 //	ControlManager::instance().announce(_mixer->id(), ControlChangeType::GUI, QString("MixerMPRIS2.playbackStateChanged"));
@@ -150,14 +150,14 @@ void Mixer_MPRIS2::playbackStateChanged(MPrisControl* mad, MediaController::Play
  */
 void Mixer_MPRIS2::volumeChanged(MPrisControl* mad, double newVolume)
 {
-	shared_ptr<MixDevice> md = m_mixDevices.get(mad->getId());
+	std::shared_ptr<MixDevice> md = m_mixDevices.get(mad->getId());
 	int volInt = newVolume *100;
 	if (GlobalConfig::instance().data.debugVolume)
 		kDebug() << "changed" << volInt;
 	volumeChangedInternal(md, volInt);
 }
 
-void Mixer_MPRIS2::volumeChangedInternal(shared_ptr<MixDevice> md, int volumePercentage)
+void Mixer_MPRIS2::volumeChangedInternal(std::shared_ptr<MixDevice> md, int volumePercentage)
 {
 	if ( md->isVirtuallyMuted() && volumePercentage == 0)
 	{
@@ -193,7 +193,7 @@ signal sender=:1.125 -> dest=(null destination) serial=503 path=/org/mpris/Media
  * @param md
  * @return
  */
-int Mixer_MPRIS2::writeVolumeToHW( const QString& id, shared_ptr<MixDevice> md )
+int Mixer_MPRIS2::writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
 	Volume& vol = md->playbackVolume();
 	double volFloat = 0;
@@ -591,7 +591,7 @@ void Mixer_MPRIS2::newMediaPlayer(QString name, QString oldOwner, QString newOwn
 			}
 
 			// -2- Remove MixDevice from internal list
-			shared_ptr<MixDevice> md = m_mixDevices.get(id);
+			std::shared_ptr<MixDevice> md = m_mixDevices.get(id);
 			if (md)
 			{
 				// We know about the player that is unregistering => remove internally

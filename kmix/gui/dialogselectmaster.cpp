@@ -161,14 +161,14 @@ void DialogSelectMaster::createPage(Mixer* mixer)
     m_vboxForScrollView = new KVBox(); //m_scrollableChannelSelector->viewport()
 
 
-    shared_ptr<MixDevice> master = mixer->getLocalMasterMD();
+    std::shared_ptr<MixDevice> master = mixer->getLocalMasterMD();
     QString masterKey = ( master.get() != 0 ) ? master->id() : "----noMaster---"; // Use non-matching name as default
 
     const MixSet& mixset = mixer->getMixSet();
     MixSet& mset = const_cast<MixSet&>(mixset);
     for( int i=0; i< mset.count(); ++i )
     {
-    	shared_ptr<MixDevice> md = mset[i];
+    	std::shared_ptr<MixDevice> md = mset[i];
         // Create a RadioButton for each MixDevice (excluding Enum's)
         if ( md->playbackVolume().hasVolume() )
         {

@@ -135,7 +135,7 @@ void KMixDockWidget::createMenuActions()
     if ( menu == 0)
     	return; // We do not use a menu
 
-    shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+    std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
     if ( md.get() != 0 && md->hasMuteSwitch() ) {
         // Put "Mute" selector in context menu
         KToggleAction *action = actionCollection()->add<KToggleAction>( "dock_mute" );
@@ -159,7 +159,7 @@ void KMixDockWidget::createMenuActions()
 void
 KMixDockWidget::setVolumeTip()
 {
-    shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+    std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
     QString tip;
     int virtualToolTipValue = 0;
 
@@ -197,7 +197,7 @@ KMixDockWidget::setVolumeTip()
 
 void KMixDockWidget::updatePixmap()
 {
-	shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+	std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
 
     char newPixmapType;
     if ( !md )
@@ -308,7 +308,7 @@ void KMixDockWidget::activate(const QPoint &pos)
 void
 KMixDockWidget::trayWheelEvent(int delta,Qt::Orientation wheelOrientation)
 {
-	shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+	std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
 	if ( md.get() == 0 )
 		return;
 
@@ -343,7 +343,7 @@ KMixDockWidget::trayWheelEvent(int delta,Qt::Orientation wheelOrientation)
 void
 KMixDockWidget::dockMute()
 {
-    shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+    std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
     if ( md )
     {
         md->toggleMute();
@@ -374,7 +374,7 @@ void KMixDockWidget::contextMenuAboutToShow()
 
 void KMixDockWidget::updateDockMuteAction ( KToggleAction* dockMuteAction )
 {  
-    shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+    std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
     if ( md && dockMuteAction != 0 )
     {
     	Volume& vol = md->playbackVolume().hasVolume() ? md->playbackVolume() : md->captureVolume();

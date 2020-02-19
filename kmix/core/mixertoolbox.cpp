@@ -256,7 +256,7 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
       // not one defined in the kmixrc.
       // So lets just set the first card as master card.
       if ( Mixer::mixers().count() > 0 ) {
-    	  shared_ptr<MixDevice> master = Mixer::mixers().first()->getLocalMasterMD();
+    	  std::shared_ptr<MixDevice> master = Mixer::mixers().first()->getLocalMasterMD();
          if ( master ) {
              QString controlId = master->id();
              Mixer::setGlobalMaster( Mixer::mixers().first()->id(), controlId, true);
@@ -266,7 +266,7 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
    else {
       // setGlobalMaster was already set after reading the configuration.
       // So we must make the local master consistent
-	  shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+	  std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
       QString mdID = md->id();
       md->mixer()->setLocalMasterMD(mdID);
    }

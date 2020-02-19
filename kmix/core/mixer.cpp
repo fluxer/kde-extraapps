@@ -234,7 +234,7 @@ void Mixer::volumeLoad( KConfig *config )
    // set new settings
    for(int i=0; i<_mixerBackend->m_mixDevices.count() ; i++ )
    {
-	   shared_ptr<MixDevice> md = _mixerBackend->m_mixDevices[i];
+	   std::shared_ptr<MixDevice> md = _mixerBackend->m_mixDevices[i];
 	   if ( md.get() == 0 )
 		   continue;
 
@@ -267,7 +267,7 @@ bool Mixer::openIfValid()
     if ( ok )
     {
         recreateId();
-        shared_ptr<MixDevice> recommendedMaster = _mixerBackend->recommendedMaster();
+        std::shared_ptr<MixDevice> recommendedMaster = _mixerBackend->recommendedMaster();
         if ( recommendedMaster.get() != 0 )
         {
             QString recommendedMasterStr = recommendedMaster->id();
@@ -305,9 +305,9 @@ unsigned int Mixer::size() const
   return _mixerBackend->m_mixDevices.count();
 }
 
-shared_ptr<MixDevice> Mixer::operator[](int num)
+std::shared_ptr<MixDevice> Mixer::operator[](int num)
 {
-	shared_ptr<MixDevice> md =  _mixerBackend->m_mixDevices.at( num );
+	std::shared_ptr<MixDevice> md =  _mixerBackend->m_mixDevices.at( num );
 	return md;
 }
 
@@ -364,7 +364,7 @@ void Mixer::setBalance(int balance)
 
    m_balance = balance;
 
-   shared_ptr<MixDevice> master = getLocalMasterMD();
+   std::shared_ptr<MixDevice> master = getLocalMasterMD();
    if ( master.get() == 0 )
    {
       // no master device available => return
@@ -523,23 +523,23 @@ MasterControl& Mixer::getGlobalMasterPreferred()
 }
 
 
-shared_ptr<MixDevice> Mixer::getGlobalMasterMD()
+std::shared_ptr<MixDevice> Mixer::getGlobalMasterMD()
 {
    return getGlobalMasterMD(true);
 }
 
 
-shared_ptr<MixDevice> Mixer::getGlobalMasterMD(bool fallbackAllowed)
+std::shared_ptr<MixDevice> Mixer::getGlobalMasterMD(bool fallbackAllowed)
 {
-	shared_ptr<MixDevice> mdRet;
-	shared_ptr<MixDevice> firstDevice;
+	std::shared_ptr<MixDevice> mdRet;
+	std::shared_ptr<MixDevice> firstDevice;
 	Mixer *mixer = fallbackAllowed ?
 		   Mixer::getGlobalMasterMixer() : Mixer::getGlobalMasterMixerNoFalback();
 
 	if ( mixer == 0 )
 		return mdRet;
 
-	foreach (shared_ptr<MixDevice> md, mixer->_mixerBackend->m_mixDevices )
+	foreach (std::shared_ptr<MixDevice> md, mixer->_mixerBackend->m_mixDevices )
 	{
 		if ( md.get() == 0 )
 			continue; // invalid
@@ -565,7 +565,7 @@ shared_ptr<MixDevice> Mixer::getGlobalMasterMD(bool fallbackAllowed)
 
 
 
-shared_ptr<MixDevice> Mixer::getLocalMasterMD()
+std::shared_ptr<MixDevice> Mixer::getLocalMasterMD()
 {
   return find( _masterDevicePK );
 }
@@ -576,12 +576,12 @@ void Mixer::setLocalMasterMD(QString &devPK)
 }
 
 
-shared_ptr<MixDevice> Mixer::find(const QString& mixdeviceID)
+std::shared_ptr<MixDevice> Mixer::find(const QString& mixdeviceID)
 {
 
-	shared_ptr<MixDevice> mdRet;
+	std::shared_ptr<MixDevice> mdRet;
 
-	foreach (shared_ptr<MixDevice> md, _mixerBackend->m_mixDevices )
+	foreach (std::shared_ptr<MixDevice> md, _mixerBackend->m_mixDevices )
 	{
 		if ( md.get() == 0 )
 			continue; // invalid
@@ -596,11 +596,11 @@ shared_ptr<MixDevice> Mixer::find(const QString& mixdeviceID)
 }
 
 
-shared_ptr<MixDevice> Mixer::getMixdeviceById( const QString& mixdeviceID )
+std::shared_ptr<MixDevice> Mixer::getMixdeviceById( const QString& mixdeviceID )
 {
 	kDebug() << "id=" << mixdeviceID << "md=" << _mixerBackend->m_mixDevices.get(mixdeviceID).get()->id();
 	return _mixerBackend->m_mixDevices.get(mixdeviceID);
-//	shared_ptr<MixDevice> md;
+//	std::shared_ptr<MixDevice> md;
 //   int num = _mixerBackend->id2num(mixdeviceID);
 //   if ( num!=-1 && num < (int)size() )
 //   {
@@ -617,7 +617,7 @@ shared_ptr<MixDevice> Mixer::getMixdeviceById( const QString& mixdeviceID )
    - It is fast               (no copying of Volume objects required)
    - It is easy to understand ( read - modify - commit )
 */
-void Mixer::commitVolumeChange(shared_ptr<MixDevice> md)
+void Mixer::commitVolumeChange(std::shared_ptr<MixDevice> md)
 {
 	_mixerBackend->writeVolumeToHW(md->id(), md);
 	if (md->isEnum())
@@ -671,7 +671,7 @@ void Mixer::decreaseVolume( const QString& mixdeviceID )
 void Mixer::increaseOrDecreaseVolume( const QString& mixdeviceID, bool decrease )
 {
 
-	shared_ptr<MixDevice> md= getMixdeviceById( mixdeviceID );
+    std::shared_ptr<MixDevice> md= getMixdeviceById( mixdeviceID );
     if (md.get() != 0)
     {
         Volume& volP=md->playbackVolume();

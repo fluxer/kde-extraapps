@@ -30,7 +30,7 @@
 // Qt
 #include <QString>
 
-MDWMoveAction::MDWMoveAction(shared_ptr<MixDevice> md, QObject *parent)
+MDWMoveAction::MDWMoveAction(std::shared_ptr<MixDevice> md, QObject *parent)
  : KAction(parent), m_mixDevice(md)
 {
    Q_ASSERT(md);

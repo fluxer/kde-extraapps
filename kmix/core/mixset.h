@@ -25,7 +25,7 @@
 
 #include "core/mixdevice.h"
 
-class MixSet : public QList <shared_ptr<MixDevice> >
+class MixSet : public QList <std::shared_ptr<MixDevice> >
 {
    public:
 	~MixSet();
@@ -36,7 +36,7 @@ class MixSet : public QList <shared_ptr<MixDevice> >
       QString name() { return m_name; }
       void setName( const QString &name );
       
-      shared_ptr<MixDevice> get(QString id);
+      std::shared_ptr<MixDevice> get(QString id);
 
       void removeById(QString id);
 

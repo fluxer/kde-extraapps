@@ -21,20 +21,16 @@
 #ifndef KMIX_H
 #define KMIX_H
 
-
-#include <config.h>
-
 // Qt
 #include <QString>
-
 #include <QLabel>
 #include <qlist.h>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QTimer>
-class KTabWidget;
 
 // KDE
+class KTabWidget;
 class KAccel;
 class KAction;
 #include <kxmlguiwindow.h>

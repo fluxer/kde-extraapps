@@ -320,7 +320,7 @@ int Mixer_OSS::setRecsrcToOSS( const QString& id, bool on )
     {
         for(int i=0; i< m_mixDevices.count() ; i++ )
         {
-        	shared_ptr<MixDevice> md = m_mixDevices[i];
+            std::shared_ptr<MixDevice> md = m_mixDevices[i];
             bool isRecsrc =  ( (recsrcMask & ( 1<<devnum)) != 0 );
             md->setRecSource(isRecsrc);
         } // for all controls
@@ -347,7 +347,7 @@ void Mixer_OSS::errormsg(int mixer_error)
 }
 
 
-int Mixer_OSS::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
+int Mixer_OSS::readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
 	int ret = 0;
 
@@ -448,7 +448,7 @@ int Mixer_OSS::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
 
 
 
-int Mixer_OSS::writeVolumeToHW( const QString& id, shared_ptr<MixDevice> md)
+int Mixer_OSS::writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> md)
 {
     int volume;
     int devnum = id2num(id);

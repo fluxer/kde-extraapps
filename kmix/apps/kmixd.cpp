@@ -158,7 +158,7 @@ void KMixD::saveBaseConfig()
    if ( mixerMasterCard != 0 ) {
       config.writeEntry( "MasterMixer", mixerMasterCard->id() );
    }
-   shared_ptr<MixDevice> mdMaster = Mixer::getGlobalMasterMD();
+   std::shared_ptr<MixDevice> mdMaster = Mixer::getGlobalMasterMD();
    if ( mdMaster ) {
       config.writeEntry( "MasterMixerDevice", mdMaster->id() );
    }
@@ -288,12 +288,12 @@ void KMixD::unplugged( const QString& udi)
 
             MixerToolBox::instance()->removeMixer(mixer);
             // Check whether the Global Master disappeared, and select a new one if necessary
-            shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
+            std::shared_ptr<MixDevice> md = Mixer::getGlobalMasterMD();
             if ( globalMasterMixerDestroyed || md.get() == 0 ) {
                 // We don't know what the global master should be now.
                 // So lets play stupid, and just select the recommended master of the first device
                 if ( Mixer::mixers().count() > 0 ) {
-                	shared_ptr<MixDevice> master = ((Mixer::mixers())[0])->getLocalMasterMD();
+                    std::shared_ptr<MixDevice> master = ((Mixer::mixers())[0])->getLocalMasterMD();
                     if ( master.get() != 0 ) {
                         QString localMaster = master->id();
                         Mixer::setGlobalMaster( ((Mixer::mixers())[0])->id(), localMaster, false);

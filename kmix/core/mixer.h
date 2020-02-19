@@ -65,7 +65,7 @@ public:
     static int numDrivers();
     QString getDriverName();
 
-    shared_ptr<MixDevice>  find(const QString& devPK);
+    std::shared_ptr<MixDevice>  find(const QString& devPK);
     static Mixer* findMixer( const QString& mixer_id);
 
     void volumeSave( KConfig *config );
@@ -76,12 +76,12 @@ public:
 
     /// Returns a pointer to the mix device with the given number
     // TODO remove this method. Only used by ViewDockAreaPopup: dockMD = (*mixer)[0];
-    shared_ptr<MixDevice> operator[](int val_i_num);
+    std::shared_ptr<MixDevice> operator[](int val_i_num);
 
     /// Returns a pointer to the mix device whose type matches the value
     /// given by the parameter and the array MixerDevNames given in
     /// mixer_oss.cpp (0 is Volume, 4 is PCM, etc.)
-    shared_ptr<MixDevice> getMixdeviceById( const QString& deviceID );
+    std::shared_ptr<MixDevice> getMixdeviceById( const QString& deviceID );
 
     /// Open/grab the mixer for further intraction
     bool openIfValid();
@@ -146,8 +146,8 @@ public:
     At the moment it is only used for selecting the Mixer to use in KMix's DockIcon.
     ******************************************/
     static void setGlobalMaster(QString ref_card, QString ref_control, bool preferred);
-    static shared_ptr<MixDevice> getGlobalMasterMD();
-    static shared_ptr<MixDevice> getGlobalMasterMD(bool fallbackAllowed);
+    static std::shared_ptr<MixDevice> getGlobalMasterMD();
+    static std::shared_ptr<MixDevice> getGlobalMasterMD(bool fallbackAllowed);
     static Mixer* getGlobalMasterMixer();
     static Mixer* getGlobalMasterMixerNoFalback();
     static MasterControl& getGlobalMasterPreferred();
@@ -155,7 +155,7 @@ public:
     /******************************************
     The recommended master of this Mixer.
     ******************************************/
-    shared_ptr<MixDevice> getLocalMasterMD();
+    std::shared_ptr<MixDevice> getLocalMasterMD();
     void setLocalMasterMD(QString&);
 
     /// get the actual MixSet
@@ -179,7 +179,7 @@ public:
    virtual int mediaNext(QString id) { return _mixerBackend->mediaNext(id); };
 
     
-    void commitVolumeChange( shared_ptr<MixDevice> md );
+    void commitVolumeChange( std::shared_ptr<MixDevice> md );
 
 public slots:
     void readSetFromHWforceUpdate() const;

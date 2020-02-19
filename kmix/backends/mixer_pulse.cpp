@@ -828,7 +828,7 @@ void Mixer_PULSE::pulseControlsReconfigured(QString mixerId)
 void Mixer_PULSE::updateRecommendedMaster(devmap* map)
 {
     unsigned int prio = 0;
-    shared_ptr<MixDevice> res;
+    std::shared_ptr<MixDevice> res;
     MixSet::iterator iter;
 
     for (iter = m_mixDevices.begin(); iter != m_mixDevices.end(); ++iter) {
@@ -876,7 +876,7 @@ void Mixer_PULSE::removeWidget(int index)
 
     // We need to find the MixDevice that goes with this widget and remove it.
     MixSet::iterator iter;
-    shared_ptr<MixDevice> md;
+    std::shared_ptr<MixDevice> md;
     for (iter = m_mixDevices.begin(); iter != m_mixDevices.end(); ++iter)
     {
         if ((*iter)->id() == id)
@@ -1158,7 +1158,7 @@ int Mixer_PULSE::id2num(const QString& id) {
     return num;
 }
 
-int Mixer_PULSE::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
+int Mixer_PULSE::readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
     devmap *map = get_widget_map(m_devnum, id);
 
@@ -1176,7 +1176,7 @@ int Mixer_PULSE::readVolumeFromHW( const QString& id, shared_ptr<MixDevice> md )
     return 0;
 }
 
-int Mixer_PULSE::writeVolumeToHW( const QString& id, shared_ptr<MixDevice> md )
+int Mixer_PULSE::writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
     devmap::iterator iter;
     if (KMIXPA_PLAYBACK == m_devnum)

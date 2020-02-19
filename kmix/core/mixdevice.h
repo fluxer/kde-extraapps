@@ -21,22 +21,15 @@
 #ifndef MixDevice_h
 #define MixDevice_h
 
-#include "config.h"
-
-#if defined(HAVE_STD_SHARED_PTR)
 #include <memory>
-using std::shared_ptr;
-#elif defined(HAVE_STD_TR1_SHARED_PTR)
-#include <tr1/memory>
-using std::tr1::shared_ptr;
-#endif
 
 //KMix
 #include "core/MediaController.h"
+#include "core/volume.h"
+
 class Mixer;
 class MixSet;
 class ProfControl;
-#include "core/volume.h"
 class DBusControlWrapper;
 
 // KDE
@@ -127,7 +120,7 @@ public:
 
    void close();
 
-   shared_ptr<MixDevice> addToPool();
+   std::shared_ptr<MixDevice> addToPool();
 
    const QString& iconName() const { return _iconName; }
 

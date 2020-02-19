@@ -116,7 +116,7 @@ void ViewSliders::controlsChange(int changeType)
 }
 
 
-QWidget* ViewSliders::add(shared_ptr<MixDevice> md)
+QWidget* ViewSliders::add(std::shared_ptr<MixDevice> md)
 {
     MixDeviceWidget *mdw;
     Qt::Orientation orientation = GlobalConfig::instance().data.getToplevelOrientation();
@@ -239,7 +239,7 @@ void ViewSliders::_setMixSet()
 	_layoutMDW->addWidget(emptyStreamHint);
 
 #ifdef TEST_MIXDEVICE_COMPOSITE
-	QList<shared_ptr<MixDevice> > mds;  // For temporary test
+	QList<std::shared_ptr<MixDevice> > mds;  // For temporary test
 #endif
 
 	// This method iterates the controls from the Profile
@@ -263,7 +263,7 @@ void ViewSliders::_setMixSet()
 			// The following for-loop could be simplified by using a std::find_if
 			for ( int i=0; i<mixset.count(); i++ )
 			{
-				shared_ptr<MixDevice> md = mixset[i];
+				std::shared_ptr<MixDevice> md = mixset[i];
 
 				if ( md->id().contains(idRegexp) )
 				{
