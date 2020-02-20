@@ -9,18 +9,18 @@ endif()
 
 find_package(LibVNCServer REQUIRED)
 
-macro_optional_find_package(TelepathyQt4)
-macro_log_feature(TelepathyQt4_FOUND "telepathy-qt"
-    "Telepathy Qt Bindings"
-    "http://telepathy.freedesktop.org"
-    FALSE "0.9" "Needed to build Telepathy Tubes support."
+macro_optional_find_package(TelepathyQt4 0.9)
+set_package_properties(TelepathyQt4 PROPERTIES
+    DESCRIPTION "Telepathy Qt Bindings"
+    URL "http://telepathy.freedesktop.org"
+    PURPOSE "Needed to build Telepathy Tubes support"
 )
 
 macro_optional_find_package(KTp)
-macro_log_feature(KTP_FOUND "KTP"
-    "KDE Telepathy"
-    "https://projects.kde.org/projects/extragear/network/telepathy"
-    FALSE "" "Needed to build KDE IM Contacts Display in KRFB."
+set_package_properties(KTp PROPERTIES
+    DESCRIPTION "KDE Telepathy"
+    URL "https://projects.kde.org/projects/extragear/network/telepathy"
+    PURPOSE "Needed to build KDE IM Contacts Display in KRFB"
 )
 
 macro_bool_to_01(X11_Xdamage_FOUND HAVE_XDAMAGE)

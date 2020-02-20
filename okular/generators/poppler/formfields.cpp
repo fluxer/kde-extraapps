@@ -13,8 +13,6 @@
 
 #include <poppler-qt4.h>
 
-#include <config-okular-poppler.h>
-
 extern Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink);
 
 PopplerFormFieldButton::PopplerFormFieldButton( Poppler::FormFieldButton * field )

@@ -10,7 +10,11 @@ endif()
 include(MacroLibrary)
 
 macro_optional_find_package(LibArchive 3.0.3)
-macro_log_feature(LibArchive_FOUND "LibArchive" "A library for dealing with a wide variety of archive file formats" "http://code.google.com/p/libarchive/" FALSE "" "Required for among others tar, tar.gz, tar.bz2 formats in Ark.")
+set_package_properties(LibArchive PROPERTIES
+    DESCRIPTION "A library for dealing with a wide variety of archive file formats"
+    URL "http://code.google.com/p/libarchive/"
+    PURPOSE "Required for among others tar, tar.gz, tar.bz2 formats in Ark"
+)
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII)
 include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_BINARY_DIR})

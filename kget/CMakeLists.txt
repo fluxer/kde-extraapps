@@ -10,13 +10,31 @@ include(CheckTypeSize)
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 macro_optional_find_package(Sqlite)
-macro_log_feature(SQLITE_FOUND "SQLite" "SQLite is a Binary-Database" "" FALSE "" "Needed for the SQLite-Backend of the KGet-History and the Kopete-Statistic-Plugin")
+set_package_properties(Sqlite PROPERTIES
+    DESCRIPTION "SQLite is a Binary-Database"
+    PURPOSE "Needed for the SQLite-Backend of the KGet-History and the Kopete-Statistic-Plugin"
+)
 
 macro_optional_find_package(QGpgme)
-macro_log_feature(QGPGME_FOUND "QGpgME" "The QGpgME library" "http://www.kde.org" FALSE "" "QGpgME is required to have signature verifying support in KGet.")
+set_package_properties(QGpgme PROPERTIES
+    DESCRIPTION "The QGpgME library"
+    URL "http://www.kde.org"
+    PURPOSE "QGpgME is required to have signature verifying support in KGet"
+)
 
 macro_optional_find_package(LibMms)
-macro_log_feature(LIBMMS_FOUND "libmms" "Library to read mms streams" "http://libmms.sourceforge.net" FALSE "" "Needed to build KGet mms support.")
+set_package_properties(LibMms PROPERTIES
+    DESCRIPTION "Library to read mms streams"
+    URL "http://libmms.sourceforge.net"
+    PURPOSE "Needed to build KGet mms support"
+)
+
+macro_optional_find_package(KDE4Workspace)
+set_package_properties(KDE4Workspace PROPERTIES
+    DESCRIPTION "KDE base workspace libraries"
+    URL "http://fluxer.github.io/katana/"
+    PURPOSE "Allows 'shutdown after downloads completed' in KGet"
+)
 
 set(kget_adaptor_SRCS
     dbus/dbuskgetwrapper.cpp
@@ -48,11 +66,9 @@ if(ENABLE_TESTING)
     add_subdirectory(tests)
 endif()
 
-macro_optional_find_package(KDE4Workspace)
-macro_log_feature(KDE4WORKSPACE_FOUND "KDE4Workspace" "KDE4 workspace libraries, part of kdebase-workspace" "http://www.kde.org" FALSE "" "Allows 'shutdown after downloads completed' in kget")
 if(KDE4WORKSPACE_FOUND)
     add_definitions(-DHAVE_KWORKSPACE)
-	include_directories(${KDE4WORKSPACE_INCLUDE_DIR})
+    include_directories(${KDE4WORKSPACE_INCLUDE_DIR})
 endif(KDE4WORKSPACE_FOUND)
 
 include_directories(
@@ -116,7 +132,6 @@ kde4_add_kcfg_files(kgetcore_SRCS conf/settings.kcfgc)
 qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.transfer.xml dbus/dbustransferwrapper.h DBusTransferWrapper)
 qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.verifier.xml dbus/dbusverifierwrapper.h DBusVerifierWrapper)
 
-
 add_library(kgetcore SHARED ${kgetcore_SRCS})
 
 target_link_libraries(kgetcore ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS})
@@ -140,7 +155,6 @@ set_target_properties(kgetcore PROPERTIES
 )
 
 install(TARGETS kgetcore ${INSTALL_TARGETS_DEFAULT_ARGS})
-
 
 # kget
 
@@ -229,7 +243,7 @@ target_link_libraries(kget
 )
 
 if (QGPGME_FOUND)
-  target_link_libraries(kget ${QGPGME_LIBRARIES})
+    target_link_libraries(kget ${QGPGME_LIBRARIES})
 endif(QGPGME_FOUND)
 
 install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})

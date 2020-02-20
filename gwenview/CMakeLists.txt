@@ -9,15 +9,25 @@ endif()
 
 ## Dependencies
 find_package(Exiv2 0.19)
-set_package_properties(Exiv2 PROPERTIES DESCRIPTION "Image Tag reader"
-                       URL "http://www.exiv2.org" TYPE REQUIRED
-                       PURPOSE "Support for image metadata")
+set_package_properties(Exiv2 PROPERTIES
+    DESCRIPTION "Image Tag reader"
+    URL "http://www.exiv2.org"
+    PURPOSE "Support for image metadata"
+    TYPE REQUIRED
+)
 
 macro_optional_find_package(Kipi)
-macro_log_feature(KIPI_FOUND "libkipi" "Provides various image manipulation and export features" "http://www.kipi-plugins.org" FALSE)
+set_package_properties(Kipi PROPERTIES
+    URL "https://github.com/KDE/kipi-plugins"
+    PURPOSE "Provides various image manipulation and export features"
+)
 
 find_package(LibKonq)
-macro_log_feature(LIBKONQ_FOUND "libkonq" "Standard file management features" "http://www.kde.org" TRUE)
+set_package_properties(LibKonq PROPERTIES
+    URL "http://fluxer.github.io/katana/"
+    PURPOSE "Standard file management features"
+    TYPE REQUIRED
+)
 
 ## Global settings
 
@@ -45,4 +55,7 @@ add_subdirectory(images)
 add_subdirectory(cursors)
 add_subdirectory(color-schemes)
 
-configure_file(config-gwenview.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-gwenview.h)
+configure_file(
+    config-gwenview.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config-gwenview.h
+)

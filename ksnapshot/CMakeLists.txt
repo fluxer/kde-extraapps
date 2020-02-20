@@ -8,54 +8,64 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 macro_optional_find_package(Kipi)
-
+set_package_properties(Kipi PROPERTIES
+    URL "https://github.com/KDE/kipi-plugins"
+    PURPOSE "Provides various image manipulation and export features"
+)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 set(HAVE_X11_EXTENSIONS_SHAPE_H ${X11_Xshape_FOUND})
+add_feature_info(
+    "Support for capturing border"
+    HAVE_X11_EXTENSIONS_SHAPE_H
+    "X11 Shape Extension (shape.h)"
+)
+
 set(HAVE_X11_EXTENSIONS_XFIXES_H ${X11_Xfixes_FOUND})
-macro_log_feature(HAVE_X11_EXTENSIONS_XFIXES_H "X11 Fixes Extension (xfixes.h)"
+add_feature_info(
     "Support for capturing the cursor"
-    "http://www.x.org/"
-    FALSE "" ""
+    HAVE_X11_EXTENSIONS_XFIXES_H
+    "X11 Fixes Extension (xfixes.h)"
 )
 
 if (KIPI_FOUND)
-        include_directories(${KIPI_INCLUDE_DIR})
-endif (KIPI_FOUND)
-macro_log_feature(KIPI_FOUND "KIPI plugins"
-    "Provides various image export features, such as printing, emailing and uploading"
-    "http://www.kipi-plugins.org/"
-    FALSE "" ""
-)
+    include_directories(${KIPI_INCLUDE_DIR})
+endif()
 
-configure_file(config-ksnapshot.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksnapshot.h)
+configure_file(
+    config-ksnapshot.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config-ksnapshot.h
+)
 
 ########### next target ###############
 
 set(ksnapshot_file_SRCS
-   expblur.cpp
-	regiongrabber.cpp
-        freeregiongrabber.cpp
-	snapshottimer.cpp
-	windowgrabber.cpp
-	ksnapshotobject.cpp
-	ksnapshotpreview.cpp)
+    expblur.cpp
+    regiongrabber.cpp
+    freeregiongrabber.cpp
+    snapshottimer.cpp
+    windowgrabber.cpp
+    ksnapshotobject.cpp
+    ksnapshotpreview.cpp
+)
 
 set(ksnapshot_SRCS
-   main.cpp
-   ksnapshot.cpp
-   ksnapshotwidget.ui
-   ${ksnapshot_file_SRCS})
+    main.cpp
+    ksnapshot.cpp
+    ksnapshotwidget.ui
+    ${ksnapshot_file_SRCS}
+)
 
 if (KIPI_FOUND)
-set(ksnapshot_SRCS
-    kipiinterface.cpp
-    ksnapshotimagecollectionshared.cpp
-    ksnapshotinfoshared.cpp
-    kipiimagecollectionselector.cpp
-    ${ksnapshot_SRCS})
-endif (KIPI_FOUND)
+    set(ksnapshot_SRCS
+        kipiinterface.cpp
+        ksnapshotimagecollectionshared.cpp
+        ksnapshotinfoshared.cpp
+        kipiimagecollectionselector.cpp
+        ${ksnapshot_SRCS}
+    )
+endif()
 
 qt4_add_dbus_adaptor(ksnapshot_SRCS org.kde.ksnapshot.xml ksnapshot.h KSnapshot)
 
@@ -69,7 +79,7 @@ endif (X11_Xfixes_FOUND)
 
 if (KIPI_FOUND)
     target_link_libraries(ksnapshot ${KIPI_LIBRARIES})
-endif (KIPI_FOUND)
+endif()
 
 install(TARGETS ksnapshot ${INSTALL_TARGETS_DEFAULT_ARGS})
 

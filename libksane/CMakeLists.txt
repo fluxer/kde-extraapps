@@ -8,11 +8,12 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 # Check if sane API is available.
-FIND_PACKAGE(Sane REQUIRED)
-macro_log_feature(SANE_FOUND "SANE development toolkit"
-    "Scanner Access Now Easy (SANE) development package"
-    "http://www.sane-project.org"
-    TRUE "" "Needed by libksane"
+find_package(Sane)
+set_package_properties(Sane PROPERTIES
+    DESCRIPTION "Scanner Access Now Easy (SANE) development package"
+    URL "http://www.sane-project.org"
+    PURPOSE "Needed by libksane"
+    TYPE REQUIRED
 )
 
 INCLUDE_DIRECTORIES(

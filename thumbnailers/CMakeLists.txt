@@ -17,7 +17,7 @@ set_package_properties(GettextPO PROPERTIES
 macro_optional_find_package(Taglib)
 set_package_properties(Taglib PROPERTIES
     DESCRIPTION "Id3 tag reader"
-    URL "http://developer.kde.org/~wheeler/taglib.html"
+    URL "https://taglib.org/"
     PURPOSE "Required to build the audio thumbnailer"
 )
 

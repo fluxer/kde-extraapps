@@ -19,7 +19,6 @@
 #include "annots.h"
 #include "generator_pdf.h"
 #include "popplerembeddedfile.h"
-#include "config-okular-poppler.h"
 
 Q_DECLARE_METATYPE( Poppler::Annotation* )
 

@@ -1,13 +1,5 @@
 add_subdirectory( conf )
 
-set(CMAKE_REQUIRED_INCLUDES ${POPPLER_QT4_INCLUDE_DIR} ${QT_INCLUDE_DIR})
-set(CMAKE_REQUIRED_LIBRARIES ${POPPLER_QT4_LIBRARIES} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY})
-
-configure_file(
-   ${CMAKE_CURRENT_SOURCE_DIR}/config-okular-poppler.h.cmake
-   ${CMAKE_CURRENT_BINARY_DIR}/config-okular-poppler.h
-)
-
 include_directories(
    ${CMAKE_BINARY_DIR}/okular
    ${CMAKE_CURRENT_SOURCE_DIR}/../..
@@ -16,6 +8,7 @@ include_directories(
 
 ########### next target ###############
 
+# for syntex, properties already set in the parent directory
 find_package(ZLIB REQUIRED)
 
 include_directories(
@@ -35,13 +28,25 @@ kde4_add_kcfg_files(okularGenerator_poppler_PART_SRCS conf/pdfsettings.kcfgc )
 
 kde4_add_plugin(okularGenerator_poppler ${okularGenerator_poppler_PART_SRCS})
 
-target_link_libraries(okularGenerator_poppler ${POPPLER_QT4_LIBRARIES} okularcore ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY} ${ZLIB_LIBRARIES})
+target_link_libraries(okularGenerator_poppler
+    ${KDE4_KDEUI_LIBS}
+    ${QT_QTXML_LIBRARY}
+    ${ZLIB_LIBRARIES}
+    ${POPPLER_QT4_LIBRARIES}
+    okularcore
+)
 
 install(TARGETS okularGenerator_poppler DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
-
 ########### install files ###############
 
-install( FILES libokularGenerator_poppler.desktop okularPoppler.desktop  DESTINATION  ${KDE4_SERVICES_INSTALL_DIR} )
-install( PROGRAMS okularApplication_pdf.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
+install(
+    FILES libokularGenerator_poppler.desktop okularPoppler.desktop
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
+)
+
+install(
+    PROGRAMS okularApplication_pdf.desktop
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
+)
 

@@ -1,8 +1,28 @@
 project(LIBKTORRENT)
 
-find_package(GMP REQUIRED)
-find_package(QCA2 REQUIRED)
-find_package(LibGcrypt REQUIRED)
+find_package(GMP)
+set_package_properties(GMP PROPERTIES
+    DESCRIPTION "The GNU Multiple Precision Arithmetic Library"
+    URL "http://gmplib.org/"
+    PURPOSE "Required for building libktorrent"
+    TYPE REQUIRED
+)
+
+find_package(QCA2)
+set_package_properties(QCA2 PROPERTIES
+    DESCRIPTION "Qt Cryptographic Architecture"
+    URL "https://github.com/fluxer/qca"
+    PURPOSE "Support for encrypted OpenDocument Text documents in Okular"
+    TYPE REQUIRED
+)
+
+find_package(LibGcrypt)
+set_package_properties(LibGcrypt PROPERTIES
+    DESCRIPTION "General purpose cryptographic library based on the code from GnuPG"
+    URL "https://gnupg.org/gcrypt/"
+    PURPOSE "Required for building libktorrent"
+    TYPE REQUIRED
+)
 
 # make some more macros available
 include (MacroLibrary)

@@ -22,7 +22,7 @@ set(QUASSEL_VERSION_STRING "0.12")
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Tell CMake about or own modules
-set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -46,72 +46,43 @@ endif()
 # Options and variables that can be set on the command line
 #####################################################################
 
-# Handle with care
-set(QT_PATH "" CACHE PATH "Path to a Qt4 installation to use instead of the system Qt (e.g. for static builds)")
-
-# For static builds, arbitrary extra libs might need to be linked
-# Define a comma-separated list here
-# e.g. for pgsql, we need -DLINK_EXTRA=pq;crypt
-set(LINK_EXTRA "" CACHE STRING "Semicolon-separated list of libraries to be linked")
-if (LINK_EXTRA)
-    string(REPLACE "," ";" LINK_EXTRA ${LINK_EXTRA})
-    link_libraries(${LINK_EXTRA})
-endif()
-
-# Set up Qt
-#####################################################################
-
-# Select a Qt installation here, if you don't want to use system Qt
-if(QT_PATH)
-    # FindQt4 will look for the qmake binary in $PATH, so we just prepend QT_PATH
-    set(ENV{PATH} ${QT_PATH}/bin:$ENV{PATH})
-endif()
-
 # Find package dependencies
 #
 # Note that you can forcefully disable optional packages
 # using -DCMAKE_DISABLE_FIND_PACKAGE_<PkgName>=TRUE
 #####################################################################
 
-add_feature_info("QtDBus module" QT_QTDBUS_FOUND "Needed for supporting D-Bus-based notifications and tray icon, used by most modern desktop environments")
-if (QT_QTDBUS_FOUND)
-    find_package(dbusmenu-qt QUIET CONFIG)
-    set_package_properties(dbusmenu-qt PROPERTIES
-        TYPE RECOMMENDED
-        URL "https://launchpad.net/libdbusmenu-qt"
-        DESCRIPTION "a library implementing the DBusMenu specification"
-        PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
-    )
-endif()
+macro_optional_find_package(DBusMenuQt)
+set_package_properties(DBusMenuQt PROPERTIES
+    DESCRIPTION "Library that provides a Qt implementation of the DBusMenu spec"
+    URL "https://github.com/fluxer/libdbusmenu-qt"
+    PURPOSE "Required for having a context menu for the D-Bus-based tray icon"
+)
 
-find_package(IndicateQt QUIET)
-set_package_properties(IndicateQt PROPERTIES TYPE OPTIONAL
-    URL "https://launchpad.net/libindicate-qt/"
+macro_optional_find_package(IndicateQt)
+set_package_properties(IndicateQt PROPERTIES
     DESCRIPTION "a library to raise flags on DBus for other components of the desktop to pick up and visualize"
-    PURPOSE     "Provides integration into the Ayatana notification system used by e.g. Ubuntu"
+    URL "https://launchpad.net/libindicate-qt/"
+    PURPOSE "Provides integration into the Ayatana notification system used by e.g. Ubuntu"
 )
 
-find_package(QCA2 QUIET)
-set_package_properties(QCA2 PROPERTIES TYPE RECOMMENDED
-    URL "https://projects.kde.org/projects/kdesupport/qca"
+macro_optional_find_package(QCA2)
+set_package_properties(QCA2 PROPERTIES
     DESCRIPTION "Qt Cryptographic Architecture"
-    PURPOSE     "Required for encryption support"
+    URL "https://github.com/fluxer/qca"
+    PURPOSE "Required for encryption support"
 )
 
-# Non-Qt-based packages
-
-# zlib for compression, however we can always fall back to miniz
-find_package(ZLIB QUIET REQUIRED)
-set_package_properties(ZLIB PROPERTIES TYPE RECOMMENDED
+find_package(ZLIB)
+set_package_properties(ZLIB PROPERTIES
+    DESCRIPTION "General purpose data compression library"
     URL "http://www.zlib.net"
-    DESCRIPTION "a popular compression library"
-    PURPOSE     "Use the most common library for protocol compression, instead of the bundled miniz implementation"
+    PURPOSE "Required for protocol compression"
+    TYPE REQUIRED
 )
 
-
-# Execinfo is needed for generating backtraces
-find_package(ExecInfo QUIET)
-set_package_properties(ExecInfo PROPERTIES TYPE OPTIONAL
+macro_optional_find_package(ExecInfo QUIET)
+set_package_properties(ExecInfo PROPERTIES
     DESCRIPTION "a library for inspecting backtraces"
     PURPOSE "Used for generating backtraces in case of a crash"
 )

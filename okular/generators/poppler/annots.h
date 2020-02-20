@@ -16,7 +16,6 @@
 #include <qmutex.h>
 
 #include "core/annotations.h"
-#include "config-okular-poppler.h"
 
 extern Okular::Annotation* createAnnotationFromPopplerAnnotation( Poppler::Annotation *ann, bool * doDelete );
 

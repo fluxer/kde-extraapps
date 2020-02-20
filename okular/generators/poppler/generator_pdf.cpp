@@ -46,8 +46,6 @@
 #include "ui_pdfsettingswidget.h"
 #include "pdfsettings.h"
 
-#include <config-okular-poppler.h>
-
 #include <poppler-media.h>
 
 #include "annots.h"
