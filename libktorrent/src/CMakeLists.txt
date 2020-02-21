@@ -215,7 +215,6 @@ set(libktorrent_SRC
 	version.cpp
 )
 
-# kde4_add_ui_files(libktorrent_SRC ${libktorrent_UI})
 # kde4_add_kcfg_files(libktorrent_SRC settings.kcfgc)
 add_library(ktorrent SHARED ${libktorrent_SRC})
 

@@ -14,9 +14,6 @@ if(LIBNXCL_FOUND)
         nxview.cpp
         nxcallbacks.cpp
         nxresumesessions.cpp
-    )
-
-    kde4_add_ui_files(nxplugin_SRCS
         nxpreferences.ui
         nxresumesessions.ui
     )

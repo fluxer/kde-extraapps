@@ -1,8 +1,11 @@
+find_package(LibAttica REQUIRED 0.1.0)
 
-find_package(LibAttica REQUIRED)
-
-include_directories( ${KDE4_INCLUDES} ${QT_INCLUDES} ${LIBATTICA_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/lib )
-link_directories(${LIBATTICA_LIBRARY_DIRS})
+include_directories(
+    ${KDE4_INCLUDES}
+    ${QT_INCLUDES}
+    ${LIBATTICA_INCLUDE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/lib
+)
 
 set(ocs_engine_SRCS
    servicejobwrapper.cpp
@@ -11,8 +14,14 @@ set(ocs_engine_SRCS
 )
 
 kde4_add_plugin(plasma_engine_ocs ${ocs_engine_SRCS})
-target_link_libraries(plasma_engine_ocs ${LIBATTICA_LIBRARIES} ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS}
-  ${KDE4_PLASMA_LIBS} ${KDE4_SOLID_LIBS}  ${QT_QTNETWORK_LIBRARY} )
+target_link_libraries(plasma_engine_ocs
+    ${KDE4_KDECORE_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${KDE4_PLASMA_LIBS}
+    ${KDE4_SOLID_LIBS}
+    ${QT_QTNETWORK_LIBRARY}
+    ${LIBATTICA_LIBRARIES}
+)
 
 install(TARGETS plasma_engine_ocs DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES plasma-dataengine-ocs.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )

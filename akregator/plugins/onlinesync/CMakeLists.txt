@@ -11,16 +11,15 @@ include_directories(
 ########### next target ###############
 
 set(kcm_akronlinesyncconfig_SRCS
-  akregator_config_onlinesync.cpp
-  ui/configurationdialog.cpp
-  ui/configurationwidget.cpp
-  ui/configurationdialogadd.cpp
+    akregator_config_onlinesync.cpp
+    ui/configurationdialog.cpp
+    ui/configurationwidget.cpp
+    ui/configurationdialogadd.cpp
+    ui/configurationwidget.ui
+    ui/configurationdialogadd.ui
 )
 
 kde4_add_kcfg_files(kcm_akronlinesyncconfig_SRCS onlinesyncsettings.kcfgc)
-
-kde4_add_ui_files(kcm_akronlinesyncconfig_SRCS ui/configurationwidget.ui)
-kde4_add_ui_files(kcm_akronlinesyncconfig_SRCS ui/configurationdialogadd.ui)
 
 kde4_add_plugin(akregator_config_onlinesync ${kcm_akronlinesyncconfig_SRCS})
 
@@ -36,20 +35,17 @@ install(TARGETS akregator_config_onlinesync DESTINATION ${KDE4_PLUGIN_INSTALL_DI
 ########### next target ###############
 
 set(akregator_onlinesync_plugin_SRCS
-  sync/feedsync.cpp
-  sync/subscriptionlist.cpp
-  sync/akregator.cpp
-  sync/googlereader.cpp
-  sync/opml.cpp
-  ui/configurationdialog.cpp
-  ui/configurationwidget.cpp
-  ui/configurationdialogadd.cpp
-  onlinesyncplugin.cpp
-)
-
-kde4_add_ui_files(akregator_onlinesync_plugin_SRCS
-  ui/configurationwidget.ui
-  ui/configurationdialogadd.ui
+    sync/feedsync.cpp
+    sync/subscriptionlist.cpp
+    sync/akregator.cpp
+    sync/googlereader.cpp
+    sync/opml.cpp
+    ui/configurationdialog.cpp
+    ui/configurationwidget.cpp
+    ui/configurationdialogadd.cpp
+    onlinesyncplugin.cpp
+    ui/configurationwidget.ui
+    ui/configurationdialogadd.ui
 )
 
 kde4_add_kcfg_files(akregator_onlinesync_plugin_SRCS onlinesyncsettings.kcfgc)

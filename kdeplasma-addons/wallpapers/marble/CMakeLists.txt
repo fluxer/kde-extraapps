@@ -4,9 +4,9 @@ include_directories(${MARBLE_INCLUDE_DIR})
 
 set(marble_SRCS
     marble.cpp
+    config.ui
 )
 
-kde4_add_ui_files(marble_SRCS config.ui)
 kde4_add_plugin(plasma_wallpaper_marble ${marble_SRCS})
 
 target_link_libraries(plasma_wallpaper_marble

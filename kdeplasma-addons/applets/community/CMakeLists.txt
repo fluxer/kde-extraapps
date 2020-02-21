@@ -23,9 +23,10 @@ set(opendesktop_SRCS
     contactimage.cpp
     stylesheet.cpp
     contactlist.cpp
+    opendesktopConfig.ui
+    opendesktopLocationConfig.ui
 )
 
-kde4_add_ui_files(opendesktop_SRCS opendesktopConfig.ui opendesktopLocationConfig.ui )
 kde4_add_plugin(plasma_applet_opendesktop ${opendesktop_SRCS})
 
 target_link_libraries(
