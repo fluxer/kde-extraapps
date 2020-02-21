@@ -68,7 +68,6 @@ endif()
 
 if(KDE4WORKSPACE_FOUND)
     add_definitions(-DHAVE_KWORKSPACE)
-    include_directories(${KDE4WORKSPACE_INCLUDE_DIR})
 endif(KDE4WORKSPACE_FOUND)
 
 include_directories(

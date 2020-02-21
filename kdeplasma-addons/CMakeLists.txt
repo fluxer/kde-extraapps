@@ -50,7 +50,6 @@ set_package_properties(Qalculate PROPERTIES
 )
 
 include_directories(
-    ${KDE4WORKSPACE_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/libs
 )
 
