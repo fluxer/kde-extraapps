@@ -17,7 +17,7 @@ set_package_properties(KDE4Workspace PROPERTIES
 macro_optional_find_package(LibAttica 0.1.1)
 set_package_properties(LibAttica PROPERTIES
     DESCRIPTION "Attica Library"
-    URL "http://websvn.kde.org/trunk/kdesupport/attica/"
+    URL "https://github.com/fluxer/attica"
     PURPOSE "Needed for building the Open Collaboration Services plasma dataengine and applets"
 )
 
