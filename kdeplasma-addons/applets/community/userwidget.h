@@ -38,7 +38,7 @@ namespace Plasma
     class IconWidget;
     class Label;
     class Frame;
-    class WebView;
+    class TextBrowser;
 }
 
 #include <QSignalMapper>
@@ -88,7 +88,7 @@ class UserWidget : public Plasma::Frame
         QGraphicsGridLayout* m_layout;
         ContactImage* m_image;
         Plasma::Label* m_nameLabel;
-        Plasma::WebView* m_infoView;
+        Plasma::TextBrowser* m_infoView;
         // The user id to display
         QString m_id;
         // our id

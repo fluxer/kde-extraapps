@@ -21,7 +21,6 @@
 
 //Qt
 #include <QGraphicsGridLayout>
-#include <QWebPage>
 #include <QLabel>
 #include <QSignalMapper>
 
@@ -37,7 +36,7 @@
 #include <Plasma/Theme>
 #include <Plasma/IconWidget>
 #include <Plasma/Label>
-#include <Plasma/WebView>
+#include <Plasma/TextBrowser>
 
 // own
 #include "contactimage.h"
@@ -105,7 +104,7 @@ void UserWidget::buildDialog()
     m_layout->addItem(m_nameLabel, 0, 1, 1, 1, Qt::AlignTop);
 
 
-    m_infoView = new WebView(this);
+    m_infoView = new TextBrowser(this);
     m_infoView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     //m_infoView->nativeWidget()->setFont(KGlobalSettings::smallestReadableFont());
     //m_infoView->nativeWidget()->setWordWrap(true);
@@ -237,7 +236,7 @@ void UserWidget::updateColors()
         if (m_css) {
             m_nameLabel->setStyleSheet(m_css->styleSheet());
         }
-        m_infoView->page()->setPalette(p);
+        m_infoView->setPalette(p);
     }
     update();
     // kDebug() << "CSS:" << m_css->styleSheet();
@@ -313,7 +312,7 @@ void UserWidget::setInfo()
         if (m_css) {
             html = (QString("<style>%1</style>%2").arg(m_css->styleSheet(), html));
         }
-        m_infoView->setHtml(html);
+        m_infoView->setText(html);
     }
 }
 
