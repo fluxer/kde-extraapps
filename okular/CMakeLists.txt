@@ -22,7 +22,6 @@ if(ENABLE_TESTING)
 endif()
 
 include(OkularConfigureChecks.cmake)
-include(MacroWriteBasicCMakeVersionFile)
 
 set(MATH_LIB m)
 
@@ -194,15 +193,3 @@ install(TARGETS okularpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(FILES okular_part.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 install(FILES part.rc part-viewermode.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular)
-
-########### cmake files #################
-
-macro_write_basic_cmake_version_file(${CMAKE_CURRENT_BINARY_DIR}/OkularConfigVersion.cmake 0 11 80)
-
-install(
-    FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/OkularConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/OkularConfigVersion.cmake
-    DESTINATION ${KDE4_LIB_INSTALL_DIR}/cmake/Okular
-)
-
