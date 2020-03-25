@@ -14,7 +14,7 @@ set_package_properties(PopplerQt4 PROPERTIES
     PURPOSE "Support for PDF files"
 )
 
-macro_optional_find_package(Taglib)
+macro_optional_find_package(Taglib 1.4)
 set_package_properties(Taglib PROPERTIES
     DESCRIPTION "Id3 tag reader"
     URL "https://taglib.org/"

@@ -14,7 +14,7 @@ set_package_properties(GettextPO PROPERTIES
     PURPOSE "Required to build the PO thumbnailer"
 )
 
-macro_optional_find_package(Taglib)
+macro_optional_find_package(Taglib 1.4)
 set_package_properties(Taglib PROPERTIES
     DESCRIPTION "Id3 tag reader"
     URL "https://taglib.org/"
