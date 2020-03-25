@@ -21,7 +21,7 @@ set_package_properties(Boost PROPERTIES
     DESCRIPTION "Free peer-reviewed portable C++ source libraries"
     URL "https://www.boost.org/"
     TYPE RECOMMENDED
-    PURPOSE "Required to build libktorrent, akregator and syndication"
+    PURPOSE "Required to build libktorrent, kget, syndication and akregator"
 )
 
 macro_optional_add_subdirectory(about-distro)
@@ -41,7 +41,6 @@ macro_optional_add_subdirectory(lokalize)
 macro_optional_add_subdirectory(libksane)
 macro_optional_add_subdirectory(kcolorchooser)
 macro_optional_add_subdirectory(kfloppy)
-macro_optional_add_subdirectory(kget)
 macro_optional_add_subdirectory(kgpg)
 macro_optional_add_subdirectory(kmix)
 macro_optional_add_subdirectory(kompare)
@@ -62,14 +61,12 @@ macro_optional_add_subdirectory(svgpart)
 macro_optional_add_subdirectory(thumbnailers)
 macro_optional_add_subdirectory(yakuake)
 
-# include directories for projects that require boost
+# projects that require boost
 if(Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-else()
-    include_directories(AFTER ${CMAKE_SOURCE_DIR}/miniboost)
+    macro_optional_add_subdirectory(libktorrent)
+    macro_optional_add_subdirectory(kget)
+    macro_optional_add_subdirectory(syndication)
+    macro_optional_add_subdirectory(akregator)
 endif()
-macro_optional_add_subdirectory(libktorrent)
-macro_optional_add_subdirectory(akregator)
-macro_optional_add_subdirectory(syndication)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
