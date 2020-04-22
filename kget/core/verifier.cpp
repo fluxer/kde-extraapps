@@ -25,7 +25,7 @@
 
 #include <QtCore/QFile>
 #include <QtCore/QScopedPointer>
-#include <QtCore/QCryptographicHash>
+#include <QCryptographicHash>
 #include <QtXml/qdom.h>
 
 #include <KDebug>

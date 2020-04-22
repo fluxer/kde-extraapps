@@ -30,7 +30,7 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QRegExp>
 #include <QtCore/QString>
-#include <QtCore/QCryptographicHash>
+#include <QCryptographicHash>
 
 #include <kdebug.h>
 
