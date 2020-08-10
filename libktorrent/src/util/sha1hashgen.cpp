@@ -20,17 +20,13 @@
 #include "sha1hashgen.h"
 #include <stdio.h>
 #include <string.h>
-#include <arpa/inet.h>
-#include <QtCrypto>
 #include "functions.h"
 
 
 
 namespace bt
 {
-	static QCA::Initializer qca_init;
-
-	SHA1HashGen::SHA1HashGen() : h(new QCA::Hash("sha1"))
+	SHA1HashGen::SHA1HashGen() : h(new QCryptographicHash(QCryptographicHash::Sha1))
 	{
 		memset(result,9,20);
 	}
@@ -43,24 +39,24 @@ namespace bt
 
 	SHA1Hash SHA1HashGen::generate(const Uint8* data,Uint32 len)
 	{
-		h->update((const char*)data,len);
-		return SHA1Hash((const bt::Uint8*)h->final().constData());
+		h->addData((const char*)data,len);
+		return SHA1Hash((const bt::Uint8*)h->result().constData());
 	}
 	
 	void SHA1HashGen::start()
 	{
-		h->clear();
+		h->reset();
 	}
 		
 	void SHA1HashGen::update(const Uint8* data,Uint32 len)
 	{
-		h->update((const char*)data,len);
+		h->addData((const char*)data,len);
 	}
 		
 	 
 	void SHA1HashGen::end()
 	{
-		memcpy(result,h->final().constData(),20);
+		memcpy(result,h->result().constData(),20);
 	}
 		
 

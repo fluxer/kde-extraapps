@@ -2,7 +2,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-ktorrent.h.cmake ${CMAKE_BINAR
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-include_directories(${LIBGCRYPT_INCLUDE_DIR} ${QCA2_INCLUDE_DIR})
+include_directories(${LIBGCRYPT_INCLUDE_DIR})
 remove_definitions(-DQT_NO_HTTP)
 
 set(libktorrent_SRC
@@ -218,7 +218,7 @@ set(libktorrent_SRC
 # kde4_add_kcfg_files(libktorrent_SRC settings.kcfgc)
 add_library(ktorrent SHARED ${libktorrent_SRC})
 
-target_link_libraries(ktorrent PRIVATE ${KDE4_KIO_LIBS} ${GMP_LIBRARIES} ${KDE4_SOLID_LIBS} ${LIBGCRYPT_LIBRARIES} ${QCA2_LIBRARIES})
+target_link_libraries(ktorrent PRIVATE ${KDE4_KIO_LIBS} ${GMP_LIBRARIES} ${KDE4_SOLID_LIBS} ${LIBGCRYPT_LIBRARIES})
 target_link_libraries(ktorrent PUBLIC ${KDE4_KDEUI_LIBS})
 set_target_properties(ktorrent PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
 install(TARGETS ktorrent  ${INSTALL_TARGETS_DEFAULT_ARGS} )

@@ -8,14 +8,6 @@ set_package_properties(GMP PROPERTIES
     TYPE REQUIRED
 )
 
-find_package(QCA2)
-set_package_properties(QCA2 PROPERTIES
-    DESCRIPTION "Qt Cryptographic Architecture"
-    URL "https://github.com/fluxer/qca"
-    PURPOSE "Support for encrypted OpenDocument Text documents in Okular"
-    TYPE REQUIRED
-)
-
 find_package(LibGcrypt)
 set_package_properties(LibGcrypt PROPERTIES
     DESCRIPTION "General purpose cryptographic library based on the code from GnuPG"

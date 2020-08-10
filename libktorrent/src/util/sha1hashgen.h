@@ -24,10 +24,7 @@
 #include "constants.h"
 #include "sha1hash.h"
 
-namespace QCA
-{
-	class Hash;
-}
+#include <QCryptographicHash>
 
 namespace bt
 {
@@ -81,7 +78,7 @@ namespace bt
 		SHA1Hash get() const;
 		
 	private:
-		QCA::Hash* h;
+		QCryptographicHash* h;
 		Uint8 result[20];
 	};
 
