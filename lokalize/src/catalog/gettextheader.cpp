@@ -307,12 +307,6 @@ void updateHeader(QString& header,
     QString language; //initialized with preexisting value or later
     QString mailingList; //initialized with preexisting value or later
 
-    static KConfig* allLanguagesConfig=0;
-    if (!allLanguagesConfig)
-    {
-      allLanguagesConfig = new KConfig("all_languages", KConfig::NoGlobals, "locale");
-      allLanguagesConfig->setLocale(QString());
-    }
     QRegExp langTeamRegExp("^ *Language-Team:.*");
     for ( it = headerList.begin(),found=false; it != headerList.end() && !found; ++it )
     {
@@ -323,11 +317,8 @@ void updateHeader(QString& header,
             QMap<QString,QString> map;
             foreach (const QString &runningLangCode, KGlobal::locale()->allLanguagesList())
             {
-                KConfigGroup cg(allLanguagesConfig, runningLangCode);
-                map[cg.readEntry("Name")]=runningLangCode;
+                map[KGlobal::locale()->languageCodeToName(runningLangCode)]=runningLangCode;
             }
-            if (map.size()<16) //may be just "en_US" and ""
-                kWarning()<<"seems that all_languages file is missing (usually located under /usr/share/locale)";
 
             QRegExp re("^ *Language-Team: *(.*) *<([^>]*)>");
             if (re.indexIn(*it) != -1 )
@@ -347,8 +338,7 @@ void updateHeader(QString& header,
     if (language.isEmpty())
     {
         //language=locale.languageCodeToName(d->_langCode);
-        KConfigGroup cg(allLanguagesConfig, langCode);
-        language=cg.readEntry("Name");
+        language=KGlobal::locale()->languageCodeToName(langCode);
         if (language.isEmpty())
             language=langCode;
     }
