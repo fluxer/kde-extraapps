@@ -28,13 +28,25 @@ set_package_properties(FLAC++ PROPERTIES
     PURPOSE "Required to build the audio thumbnailer"
 )
 
+macro_optional_find_package(FFmpegThumbnailer)
+set_package_properties(FFmpegThumbnailer PROPERTIES
+    DESCRIPTION "Lightweight video thumbnailer that can be used by file managers to create thumbnails for video files"
+    URL "https://github.com/dirkvdb/ffmpegthumbnailer"
+    PURPOSE "Required to build the video thumbnailer"
+)
+
 if(TAGLIB_FOUND AND FLAC_FOUND)
     macro_optional_add_subdirectory(audio)
 endif()
+
 macro_optional_add_subdirectory(ps)
+
 macro_optional_add_subdirectory(raw)
 
 if(GETTEXTPO_FOUND)
     macro_optional_add_subdirectory(po)
 endif(GETTEXTPO_FOUND)
 
+if(FFMPEGTHUMBNAILER_FOUND)
+    macro_optional_add_subdirectory(ffmpegthumbs)
+endif()

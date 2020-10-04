@@ -39,15 +39,17 @@ FFMpegThumbnailer::~FFMpegThumbnailer()
 
 bool FFMpegThumbnailer::create(const QString& path, int width, int /*heigth*/, QImage& img)
 {
+    std::vector<uint8_t> pixelBuffer;
+
     m_Thumbnailer.setThumbnailSize(width);
     // 20% seek inside the video to generate the preview
     m_Thumbnailer.setSeekPercentage(20);
     //Smart frame selection is very slow compared to the fixed detection
     //TODO: Use smart detection if the image is single colored.
     //m_Thumbnailer.setSmartFrameSelection(true);
-    m_Thumbnailer.generateThumbnail(path, img);
+    m_Thumbnailer.generateThumbnail(std::string(path.toUtf8()), Png, pixelBuffer);
 
-    return !img.isNull();
+    return img.loadFromData(reinterpret_cast<char*>(&pixelBuffer.front()), pixelBuffer.size(), "PNG");
 }
 
 ThumbCreator::Flags FFMpegThumbnailer::flags() const

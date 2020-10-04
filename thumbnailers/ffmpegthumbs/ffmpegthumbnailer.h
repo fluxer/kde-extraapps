@@ -14,27 +14,27 @@
 //    along with this program; if not, write to the Free Software
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-#ifndef HISTOGRAM_H
-#define HISTOGRAM_H
+#ifndef KFFMPEG_THUMBNAILER_H
+#define KFFMPEG_THUMBNAILER_H
 
-#include <string.h>
+#include <QObject>
+#include <kio/thumbcreator.h>
 
-namespace ffmpegthumbnailer
+#include <libffmpegthumbnailer/videothumbnailer.h>
+#include <libffmpegthumbnailer/filmstripfilter.h>
+
+class FFMpegThumbnailer : public QObject, public ThumbCreator
 {
+    Q_OBJECT
+public:
+    FFMpegThumbnailer();
+    virtual ~FFMpegThumbnailer();
+    virtual bool create(const QString& path, int width, int height, QImage& img);
+    virtual Flags flags() const;
 
-template <typename T>
-struct Histogram {
-    T r[256];
-    T g[256];
-    T b[256];
-
-    Histogram() {
-        memset(r, 0, 255 * sizeof(T));
-        memset(g, 0, 255 * sizeof(T));
-        memset(b, 0, 255 * sizeof(T));
-    }
+private:
+    ffmpegthumbnailer::VideoThumbnailer    m_Thumbnailer;
+    ffmpegthumbnailer::FilmStripFilter     m_FilmStrip;
 };
-
-}
 
 #endif
