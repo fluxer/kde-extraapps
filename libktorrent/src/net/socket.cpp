@@ -335,7 +335,7 @@ namespace net
 
 		if (m_ip_version == 4)
 		{
-#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || defined(Q_OS_NETBSD) || defined(Q_OS_BSD4)
+#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD) || defined(Q_OS_NETBSD)
 			unsigned int c = type_of_service;
 #else
 			unsigned char c = type_of_service;
