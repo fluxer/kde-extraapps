@@ -30,5 +30,3 @@ if(Q_WS_X11)
 endif(Q_WS_X11)
 
 install(TARGETS yakuake ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-install(FILES yakuake.knsrc DESTINATION ${KDE4_CONFIG_INSTALL_DIR})

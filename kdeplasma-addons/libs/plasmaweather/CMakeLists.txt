@@ -22,5 +22,3 @@ set_target_properties(plasmaweather PROPERTIES VERSION ${GENERIC_LIB_VERSION} SO
 install(TARGETS plasmaweather ${INSTALL_TARGETS_DEFAULT_ARGS})
 # nothing outside of kdeplasma-addons uses this library, and the API is not stable -> do not install headers!
 #install(FILES ${plasmaweather_HEADERS} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/plasmaweather COMPONENT Devel)
-
-install(FILES plasmaweather.knsrc DESTINATION ${KDE4_CONFIG_INSTALL_DIR})

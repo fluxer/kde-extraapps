@@ -193,7 +193,6 @@ class OKULAR_PART_EXPORT Part : public KParts::ReadWritePart, public Okular::Doc
         void slotFindPrev();
         void slotSaveFileAs();
         void slotSaveCopyAs();
-        void slotGetNewStuff();
         void slotNewConfig();
         void slotShowMenu(const Okular::Page *page, const QPoint &point);
         void slotShowProperties();

@@ -42,10 +42,3 @@ install(FILES
    DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular/pics)
 # install misc images
 
-# newstuff
-if (FALSE)
-install(FILES
-   okular.knsrc
-   DESTINATION ${KDE4_CONFIG_INSTALL_DIR})
-endif (FALSE)
-
