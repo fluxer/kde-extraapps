@@ -627,19 +627,15 @@ ExportFormat ExportFormat::standardFormat( StandardExportFormat type )
     {
         case PlainText:
             return ExportFormat( KIcon( "text-x-generic" ), i18n( "Plain &Text..." ), KMimeType::mimeType( "text/plain" ) );
-            break;
         case PDF:
             return ExportFormat( KIcon( "application-pdf" ), i18n( "PDF" ), KMimeType::mimeType( "application/pdf" ) );
-            break;
         case OpenDocumentText:
             return ExportFormat(
                 KIcon( "application-vnd.oasis.opendocument.text" ),
                 i18nc( "This is the document format", "OpenDocument Text" ),
                 KMimeType::mimeType( "application/vnd.oasis.opendocument.text" ) );
-	    break;
         case HTML:
             return ExportFormat( KIcon( "text-html" ), i18nc( "This is the document format", "HTML" ), KMimeType::mimeType( "text/html" ) );
-            break;
     }
     return ExportFormat();
 }
