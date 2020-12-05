@@ -1,0 +1,9 @@
+[Desktop Entry]
+Icon=applications-engineering
+Name=KEmu
+GenericName=KEmu
+Comment=Simple QEMU frontend for KDE
+Exec=kemu --icon '%i' --caption '%c' %U
+Terminal=false
+Type=Application
+Categories=Qt;KDE;
