@@ -12,6 +12,13 @@ if("${LibArchive_VERSION}" VERSION_GREATER "3.1.2")
     set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/x-lz4;")
     set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-lz4;")
 endif()
+if("${LibArchive_VERSION}" VERSION_GREATER "3.3.2")
+    set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/zstd;application/x-zstd;application/x-zstd-compressed-tar")
+    set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/zstd;application/x-zstd;application/x-zstd-compressed-tar")
+endif()
+if("${LibArchive_VERSION}" VERSION_GREATER "3.3.3")
+    set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/vnd.rar;")
+endif()
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/kerfuffle_libarchive_readonly.desktop.cmake
