@@ -1,5 +1,5 @@
-/*  This file is part of the KDE libraries
-    Copyright (C) 2016 Ivailo Monev <xakepa10@gmail.com>
+/*  This file is part of KEmu
+    Copyright (C) 2016-2021 Ivailo Monev <xakepa10@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
     KAboutData aboutData("kemu", 0, ki18n("KEmu"),
                          "1.0.0", ki18n("Simple QEMU frontend for KDE."),
                          KAboutData::License_GPL_V2,
-                         ki18n("(c) 2016 Ivailo Monev"),
+                         ki18n("(c) 2016-2021 Ivailo Monev"),
                          KLocalizedString(),
                         "http://github.com/fluxer/katana"
                         );
