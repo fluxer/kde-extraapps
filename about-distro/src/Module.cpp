@@ -24,8 +24,6 @@
 #include <QShortcut>
 
 #include <KAboutData>
-#include <KConfig>
-#include <KConfigGroup>
 #include <KDebug>
 #include <KIcon>
 #include <KPluginFactory>
@@ -52,6 +50,8 @@ static qlonglong calculateTotalRam()
     if (sysinfo(&info) == 0)
         // manpage "sizes are given as multiples of mem_unit bytes"
         ret = info.totalram * info.mem_unit;
+#else
+# warning calculateTotalRam() not implemented for this OS
 #endif
     return ret;
 }
@@ -62,14 +62,15 @@ Module::Module(QWidget *parent, const QVariantList &args) :
 {
     KAboutData *about = new KAboutData("kcm-about-distro", 0,
                                        ki18n("About Distribution"),
-                                       "1.1.0",
+                                       "1.2.0",
                                        KLocalizedString(),
                                        KAboutData::License_GPL_V3,
-                                       ki18n("Copyright 2012-2014 Harald Sitter"),
+                                       ki18n("Copyright 2012-2014 Harald Sitter\nCopyright 2021 Ivailo Monev"),
                                        KLocalizedString(), QByteArray(),
-                                       "apachelogger@ubuntu.com");
+                                       "xakepa10@gmail.com");
 
     about->addAuthor(ki18n("Harald Sitter"), ki18n("Author"), "apachelogger@ubuntu.com");
+    about->addAuthor(ki18n("Ivailo Monev"), ki18n("Current maintainer"), "xakepa10@gmail.com");
     setAboutData(about);
 
     ui->setupUi(this);
@@ -83,9 +84,6 @@ Module::Module(QWidget *parent, const QVariantList &args) :
 
     // We have no help so remove the button from the buttons.
     setButtons(buttons() ^ KCModule::Help ^ KCModule::Default ^ KCModule::Apply);
-
-    QShortcut *shortcut = new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_G), this);
-    connect(shortcut, SIGNAL(activated()), this, SLOT(onStyle()));
 }
 
 Module::~Module()
@@ -95,25 +93,14 @@ Module::~Module()
 
 void Module::load()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kcm-about-distrorc");
-    KConfigGroup cg = KConfigGroup(config, "General");
+    OSRelease os;
 
-    QString logoPath = cg.readEntry("LogoPath", QString());
-    QPixmap logo;
-    if (logoPath.isEmpty())
-        logo = KIcon("start-here-kde").pixmap(128, 128);
-    else
-        logo = QPixmap(logoPath);
+    QPixmap logo = KIcon(os.logo).pixmap(128, 128);
     ui->logoLabel->setPixmap(logo);
 
-    OSRelease os;
-    // We allow overriding of the OS name for branding purposes.
-    // For example OS Ubuntu may be rebranded as Kubuntu. Also Kubuntu Active
-    // as a product brand is different from Kubuntu.
-    QString distroName = cg.readEntry("Name", os.prettyName);
-    ui->nameVersionLabel->setText(QString("%1 %2").arg(distroName, os.versionId));
+    ui->nameVersionLabel->setText(QString("%1 %2").arg(os.prettyName, os.versionId));
 
-    QString url = cg.readEntry("Website", os.homeUrl);
+    QString url = os.homeUrl;
     if (url.isEmpty())
         ui->urlLabel->hide();
     else
@@ -123,13 +110,13 @@ void Module::load()
     ui->qtLabel->setText(qVersion());
 
     struct utsname utsName;
-    if(uname(&utsName) != 0) {
+    if(::uname(&utsName) != 0) {
         ui->kernel->hide();
         ui->kernelLabel->hide();
     } else
         ui->kernelLabel->setText(utsName.release);
 
-    const int bits = QT_POINTER_SIZE == 8 ? 64 : 32;
+    const int bits = (QT_POINTER_SIZE == 8 ? 64 : 32);
     ui->bitsLabel->setText(i18nc("@label %1 is the CPU bit width (e.g. 32 or 64)",
                                  "<numid>%1</numid>-bit", bits));
 

@@ -35,7 +35,7 @@ static void setVar(QString *var, const QString &value)
     if (error != KShell::NoError) { // Failed to parse.
         return;
     }
-    *var = args.join(QChar(' '));
+    *var = args.join(QLatin1String(" "));
 }
 
 static void setVar(QStringList *var, const QString &value)
@@ -50,7 +50,7 @@ static void setVar(QStringList *var, const QString &value)
     //       is required to not contain spaces even if more advanced shell escaping
     //       is also allowed...
     QString value_ = value;
-    if (value_.at(0) == QChar('"') && value_.at(value_.size()-1) == QChar('"')) {
+    if (value_.at(0) == QLatin1Char('"') && value_.at(value_.size()-1) == QLatin1Char('"')) {
         value_.remove(0, 1);
         value_.remove(-1, 1);
     }
@@ -62,65 +62,55 @@ static void setVar(QStringList *var, const QString &value)
     *var = args;
 }
 
+// https://www.freedesktop.org/software/systemd/man/os-release.html
 OSRelease::OSRelease()
 {
-    QFile file("/etc/os-release");
     // NOTE: The os-release specification defines default values for specific
     //       fields which means that even if we can not read the os-release file
     //       we have sort of expected default values to use.
     // TODO: it might still be handy to indicate to the outside whether
     //       fallback values are being used or not.
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
 
     // Set default values for non-optional fields.
-    name = QLatin1String("Linux");
-    id = QLatin1String("linux");
+    logo = QLatin1String("start-here-kde");
     prettyName = QLatin1String("Linux");
 
-    QString line;
-    QStringList comps;
-    while (!file.atEnd()) {
-        line = file.readLine();
+    static const QStringList OSReleaseFiles = QStringList()
+        << QLatin1String("/etc/os-release")
+        << QLatin1String("/usr/lib/os-release");
 
-        if (line.startsWith(QChar('#'))) {
-            // Comment line
+    foreach (const QString &releaseFile, OSReleaseFiles) {
+        QFile file(releaseFile);
+        if (!file.exists()) {
             continue;
         }
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
 
-        comps = line.split(QChar('='));
+        while (!file.atEnd()) {
+            QString line = file.readLine();
+            if (line.startsWith(QLatin1Char('#'))) {
+                // Comment line
+                continue;
+            }
 
-        if (comps.size() != 2) {
-            // Invalid line.
-            continue;
+            QStringList comps = line.split(QLatin1Char('='));
+            if (comps.size() != 2) {
+                // Invalid line.
+                continue;
+            }
+
+            QString key = comps.at(0);
+            QString value = comps.at(1).trimmed();
+            if (key == QLatin1String("LOGO")) {
+                setVar(&logo, value);
+            } else if (key == QLatin1String("VERSION_ID")) {
+                setVar(&versionId, value);
+            } else if (key == QLatin1String("PRETTY_NAME")) {
+                setVar(&prettyName, value);
+            } else if (key == QLatin1String("HOME_URL")) {
+                setVar(&homeUrl, value);
+            }
+            // only these above are used right now
         }
-
-        QString key = comps.at(0);
-        QString value = comps.at(1).trimmed();
-        if (key == QLatin1String("NAME"))
-            setVar(&name, value);
-        else if (key == QLatin1String("VERSION"))
-            setVar(&version, value);
-        else if (key == QLatin1String("ID"))
-            setVar(&id, value);
-        else if (key == QLatin1String("ID_LIKE"))
-            setVar(&idLike, value);
-        else if (key == QLatin1String("VERSION_ID"))
-            setVar(&versionId, value);
-        else if (key == QLatin1String("PRETTY_NAME"))
-            setVar(&prettyName, value);
-        else if (key == QLatin1String("ANSI_COLOR"))
-            setVar(&ansiColor, value);
-        else if (key == QLatin1String("CPE_NAME"))
-            setVar(&cpeName, value);
-        else if (key == QLatin1String("HOME_URL"))
-            setVar(&homeUrl, value);
-        else if (key == QLatin1String("SUPPORT_URL"))
-            setVar(&supportUrl, value);
-        else if (key == QLatin1String("BUG_REPORT_URL"))
-            setVar(&bugReportUrl, value);
-        else if (key == QLatin1String("BUILD_ID"))
-            setVar(&buildId, value);
-        // os-release explicitly allows for vendor specific aditions. We have no
-        // interest in those right now.
     }
 }

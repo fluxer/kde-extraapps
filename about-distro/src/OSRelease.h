@@ -29,19 +29,10 @@ class OSRelease
 public:
     OSRelease();
 
-    QString name;
-    QString version;
-    QString id;
-    QStringList idLike;
+    QString logo;
     QString versionId;
     QString prettyName;
-    QString ansiColor;
-    QString cpeName;
-    // TODO: url struct or map?
     QString homeUrl;
-    QString supportUrl;
-    QString bugReportUrl;
-    QString buildId;
 };
 
 #endif // OSRELEASE_H
