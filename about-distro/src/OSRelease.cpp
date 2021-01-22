@@ -26,6 +26,8 @@
 #include <KLocalizedString>
 #include <KShell>
 
+#include <sys/utsname.h>
+
 static void setVar(QString *var, const QString &value) 
 {
     // Values may contain quotation marks, strip them as we have no use for them.
@@ -73,7 +75,9 @@ OSRelease::OSRelease()
 
     // Set default values for non-optional fields.
     logo = QLatin1String("start-here-kde");
-    prettyName = QLatin1String("Linux");
+    struct utsname utsName;
+    ::uname(&utsName);
+    prettyName = QString::fromLatin1(utsName.sysname);
 
     static const QStringList OSReleaseFiles = QStringList()
         << QLatin1String("/etc/os-release")
