@@ -94,7 +94,7 @@ set_package_properties(ExecInfo PROPERTIES
 # Check for SSL support in Qt
 # As there's no easy way to get Qt's configuration in particular for Qt5, let's just compile
 # a small test program checking the defines. This works for both Qt4 and Qt5.
-cmake_push_check_state(RESET)
+cmake_reset_check_state()
 set(CMAKE_REQUIRED_INCLUDES ${QT_INCLUDES})
 check_cxx_source_compiles("
     #include \"qglobal.h\"
@@ -103,7 +103,7 @@ check_cxx_source_compiles("
     #endif
     int main() {}"
     HAVE_SSL)
-cmake_pop_check_state()
+cmake_reset_check_state()
 
 if (HAVE_SSL)
     add_definitions(-DHAVE_SSL)
