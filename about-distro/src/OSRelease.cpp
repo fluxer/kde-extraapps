@@ -40,30 +40,6 @@ static void setVar(QString *var, const QString &value)
     *var = args.join(QLatin1String(" "));
 }
 
-static void setVar(QStringList *var, const QString &value)
-{
-    // Instead of passing the verbatim value we manually strip any initial quotes
-    // and then run it through KShell. At this point KShell will actually split
-    // by spaces giving us the final QStringList.
-    // NOTE: Splitting like this does not actually allow escaped substrings to
-    //       be handled correctly, so "kitteh \"french fries\"" would result in
-    //       three list entries. I'd argue that if someone makes an id like that
-    //       they are at fault for the bogus parsing here though as id explicitly
-    //       is required to not contain spaces even if more advanced shell escaping
-    //       is also allowed...
-    QString value_ = value;
-    if (value_.at(0) == QLatin1Char('"') && value_.at(value_.size()-1) == QLatin1Char('"')) {
-        value_.remove(0, 1);
-        value_.remove(-1, 1);
-    }
-    KShell::Errors error;
-    QStringList args = KShell::splitArgs(value_, KShell::NoOptions, &error);
-    if (error != KShell::NoError) { // Failed to parse.
-        return;
-    }
-    *var = args;
-}
-
 // https://www.freedesktop.org/software/systemd/man/os-release.html
 OSRelease::OSRelease()
 {
