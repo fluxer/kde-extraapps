@@ -180,7 +180,7 @@ void KEmuMainWindow::createHardDisk()
             QProcess imageProcess(this);
             imageProcess.setProcessChannelMode(QProcess::MergedChannels);
             imageProcess.start(qemuImg, QStringList() << "create" << "-f" << "raw"
-                << diskPath << QByteArray(QByteArray::number(diskSize) + QByteArray("M")));
+                << diskPath << QString(QString::number(diskSize) + QLatin1String("M")));
             imageProcess.waitForFinished();
             if (imageProcess.exitCode() == 0) {
                 QMessageBox::information(this, i18n("Success"),
@@ -351,8 +351,8 @@ void KEmuMainWindow::startStopMachine()
             }
             machineArgs << "-vga" << m_kemuui->videoComboBox->currentText();
             machineArgs << "-soundhw" << m_kemuui->audioComboBox->currentText();
-            machineArgs << "-m" << QByteArray::number(m_kemuui->RAMInput->value());
-            machineArgs << "-smp" << QByteArray::number(m_kemuui->CPUInput->value());
+            machineArgs << "-m" << QString::number(m_kemuui->RAMInput->value());
+            machineArgs << "-smp" << QString::number(m_kemuui->CPUInput->value());
             if (m_kemuui->KVMCheckBox->isEnabled() && m_kemuui->KVMCheckBox->isChecked()) {
                 machineArgs << "-enable-kvm";
             }

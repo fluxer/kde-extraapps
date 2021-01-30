@@ -24,9 +24,9 @@
 int main(int argc, char** argv)
 {
     KAboutData aboutData("kemu", 0, ki18n("KEmu"),
-                         "1.0.0", ki18n("Simple QEMU frontend for KDE."),
+                         "1.1.0", ki18n("Simple QEMU frontend for KDE."),
                          KAboutData::License_GPL_V2,
-                         ki18n("(c) 2016-2021 Ivailo Monev"),
+                         ki18n("(c) 2016 Ivailo Monev"),
                          KLocalizedString(),
                         "http://github.com/fluxer/katana"
                         );
