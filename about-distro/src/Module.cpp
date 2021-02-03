@@ -33,9 +33,7 @@
 #include <solid/device.h>
 #include <solid/processor.h>
 
-#ifdef Q_OS_LINUX
-#include <sys/sysinfo.h>
-#endif
+#include <unistd.h>
 #include <sys/utsname.h>
 
 #include "OSRelease.h"
@@ -45,13 +43,12 @@ K_PLUGIN_FACTORY_DECLARATION(KcmAboutDistroFactory);
 static qlonglong calculateTotalRam()
 {
     qlonglong ret = -1;
-#ifdef Q_OS_LINUX
-    struct sysinfo info;
-    if (sysinfo(&info) == 0)
-        // manpage "sizes are given as multiples of mem_unit bytes"
-        ret = info.totalram * info.mem_unit;
+#if defined(_SC_PHYS_PAGES) && defined(_SC_PAGESIZE)
+    ret = sysconf(_SC_PHYS_PAGES);
+    ret *= sysconf(_SC_PAGESIZE);
+    ret /= 1.03;
 #else
-# warning calculateTotalRam() not implemented for this OS
+# warning calculateTotalRam() not implemented
 #endif
     return ret;
 }
