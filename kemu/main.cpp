@@ -1,5 +1,5 @@
 /*  This file is part of KEmu
-    Copyright (C) 2016-2021 Ivailo Monev <xakepa10@gmail.com>
+    Copyright (C) 2016 Ivailo Monev <xakepa10@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public

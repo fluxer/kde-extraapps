@@ -1,5 +1,5 @@
 /*  This file is part of KEmu
-    Copyright (C) 2016-2021 Ivailo Monev <xakepa10@gmail.com>
+    Copyright (C) 2016 Ivailo Monev <xakepa10@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -66,18 +66,18 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
     connect(m_kemuui->startStopButton, SIGNAL(clicked()), this, SLOT(startStopMachine()));
     connect(m_kemuui->machinesList, SIGNAL(removed(QString)), this, SLOT(removeMachine(QString)));
 
-    QStringList addedbins;
-    foreach (const QString path, KStandardDirs::systemPaths()) {
-        const QString trimmedpath = path.trimmed();
-        if (trimmedpath.isEmpty()) {
+    QStringList addedBins;
+    foreach(const QString path, KStandardDirs::systemPaths()) {
+        const QString trimmedPath = path.trimmed();
+        if (trimmedPath.isEmpty()) {
             continue;
         }
-        QDir pathdir(trimmedpath);
-        foreach(const QString bin, pathdir.entryList()) {
-            if (!bin.startsWith("qemu-system-") || addedbins.contains(bin)) {
+        QDir pathDir(trimmedPath);
+        foreach(const QString bin, pathDir.entryList()) {
+            if (!bin.startsWith("qemu-system-") || addedBins.contains(bin)) {
                 continue;
             }
-            addedbins.append(bin);
+            addedBins.append(bin);
             m_installed = true;
             m_kemuui->systemComboBox->addItem(bin);
         }
@@ -87,17 +87,17 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
 #ifndef QT_KATIE
     foreach(const QString machine, m_settings->childGroups()) {
 #else
-    QStringList addedmachines;
+    QStringList addedMachines;
     foreach(const QString key, m_settings->keys()) {
         const int sepindex = key.indexOf("/");
         if (sepindex < 1) {
             continue;
         }
         QString machine = key.left(sepindex);
-        if (addedmachines.contains(machine)) {
+        if (addedMachines.contains(machine)) {
             continue;
         }
-        addedmachines.append(machine);
+        addedMachines.append(machine);
 #endif
         if (m_settings->value(machine + "/enable").toBool() == true) {
             m_kemuui->machinesList->insertItem(machine);
@@ -117,14 +117,14 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
         return;
     }
 
-    QFileInfo kvmdev("/dev/kvm");
-    if (!kvmdev.exists()) {
+    QFileInfo kvmDev("/dev/kvm");
+    if (!kvmDev.exists()) {
         const QString modprobeBin = KStandardDirs::findExe("modprobe");
         if (!modprobeBin.isEmpty()) {
             QProcess modprobe(this);
             modprobe.start(modprobeBin, QStringList() << "-b" << "kvm");
             modprobe.waitForFinished();
-            if (!kvmdev.exists()) {
+            if (!kvmDev.exists()) {
                 QMessageBox::warning(this, i18n("KVM not available"), i18n("KVM not available"));
             }
         } else {
@@ -204,11 +204,11 @@ void KEmuMainWindow::updateStatus()
         statusBar()->showMessage(i18n("No machines running"));
     } else {
         QString machineNames;
-        bool firstmachine = true;
+        bool firstMachine = true;
         foreach (const QString name, m_machines.keys()) {
-            if (firstmachine) {
+            if (firstMachine) {
                 machineNames += name;
-                firstmachine = false;
+                firstMachine = false;
             } else {
                 machineNames += ", " + name;
             }
@@ -261,7 +261,7 @@ void KEmuMainWindow::machineLoad(const QString machine)
     const QString audio = m_settings->value(machine + "/audio", "ac97").toString();
     const int audioIndex = m_kemuui->audioComboBox->findText(audio);
     m_kemuui->audioComboBox->setCurrentIndex(audioIndex);
-    m_kemuui->RAMInput->setValue(m_settings->value(machine + "/ram", 32).toInt());
+    m_kemuui->RAMInput->setValue(m_settings->value(machine + "/ram", 512).toInt());
     m_kemuui->CPUInput->setValue(m_settings->value(machine + "/cpu", 1).toInt());
     m_kemuui->KVMCheckBox->setChecked(m_settings->value(machine + "/kvm", false).toBool());
     m_kemuui->ACPICheckBox->setChecked(m_settings->value(machine + "/acpi", false).toBool());
@@ -275,8 +275,8 @@ void KEmuMainWindow::machineChanged(QItemSelection ignored, QItemSelection ignor
     Q_UNUSED(ignored2);
     const QString machine = m_kemuui->machinesList->currentText();
     if (!machine.isEmpty()) {
-        QFileInfo kvmdev("/dev/kvm");
-        m_kemuui->KVMCheckBox->setEnabled(kvmdev.exists());
+        QFileInfo kvmDev("/dev/kvm");
+        m_kemuui->KVMCheckBox->setEnabled(kvmDev.exists());
 
         m_kemuui->startStopButton->setEnabled(m_installed);
         m_kemuui->groupBox->setEnabled(true);
