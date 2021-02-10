@@ -76,52 +76,26 @@ JSONParser::~JSONParser()
 
 JSONParser::JSONArchive JSONParser::parse(const QString &json)
 {
-#ifndef QT_KATIE
-    bool ok;
-    QJson::Parser parser;
+    QJsonDocument jsondoc = QJsonDocument::fromJson(json.toUtf8());
 
-    const QVariant result = parser.parse(json.toUtf8(), &ok);
-
-    if (!ok) {
-        kDebug() << "Line" << parser.errorLine() << ":" << parser.errorString();
+    if (jsondoc.isNull()) {
+        kWarning() << jsondoc.errorString();
         return JSONParser::JSONArchive();
     }
-#else
-    QJsonParseError error;
-    const QVariant result = QJsonDocument::fromJson(json.toUtf8(), &error).toVariant();
 
-    if (error.error != QJsonParseError::NoError) {
-        kDebug() << "Line" << error.offset << ":" << error.errorString();
-        return JSONParser::JSONArchive();
-    }
-#endif
-
-    return createJSONArchive(result);
+    return createJSONArchive(jsondoc.toVariant());
 }
 
 JSONParser::JSONArchive JSONParser::parse(QIODevice *json)
 {
-#ifndef QT_KATIE
-    bool ok;
-    QJson::Parser parser;
+    QJsonDocument jsondoc = QJsonDocument::fromJson(json->readAll());
 
-    const QVariant result = parser.parse(json, &ok);
-
-    if (!ok) {
-        kDebug() << "Line" << parser.errorLine() << ":" << parser.errorString();
+    if (jsondoc.isNull()) {
+        kWarning() << jsondoc.errorString();
         return JSONParser::JSONArchive();
     }
-#else
-    QJsonParseError error;
-    const QVariant result = QJsonDocument::fromJson(json->readAll(), &error).toVariant();
 
-    if (error.error != QJsonParseError::NoError) {
-        kDebug() << "Line" << error.offset << ":" << error.errorString();
-        return JSONParser::JSONArchive();
-    }
-#endif
-
-    return createJSONArchive(result);
+    return createJSONArchive(jsondoc.toVariant());
 }
 
 JSONParser::JSONArchive JSONParser::createJSONArchive(const QVariant &json)

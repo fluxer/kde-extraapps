@@ -33,15 +33,11 @@
 #include <QtCore/QObject>
 #include <QtCore/QList>
 #include <QtCore/QEventLoop>
+#include <QtCore/QJsonDocument>
 #include <QtGui/QClipboard>
 
 #include <Plasma/RunnerContext>
 
-#ifndef QT_KATIE
-#  include <qjson/parser.h>
-#else
-#  include <QJsonDocument>
-#endif
 
 Translator::Translator(QObject* parent, const QVariantList& args)
     : Plasma::AbstractRunner(parent, args)
@@ -129,21 +125,10 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
     jsonData = jsonData.replace(QRegExp(",{2,2}"), ",\"\",");
 //  kDebug() << jsonData;
 
-#ifndef QT_KATIE
-    QJson::Parser parser;
-    bool ok;
-
-    QVariantList json = parser.parse(jsonData.toUtf8(), &ok).toList();
-    if (!ok) {
+    QJsonDocument jsondoc = QJsonDocument::fromJson(jsonData.toUtf8());
+    if (jsondoc.isNull()) {
         return;
     }
-#else
-    QJsonParseError error;
-    QVariantList json = QJsonDocument::fromJson(jsonData.toUtf8(), &error).toVariant().toList();
-    if (error.error != QJsonParseError::NoError) {
-        return;
-    }
-#endif
 
     bool oldVersion = true;
     QMultiMap<int, QPair<QString, double> > sentences;
@@ -151,7 +136,7 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
     QList<Plasma::QueryMatch> matches;
     // we are going recursively through the nested json-arry
     // level0 contains the data of the outer array, level1 of the next one and so on
-    foreach (const QVariant& level0, json) {
+    foreach (const QVariant& level0, jsondoc.toVariant().toList()) {
         QVariantList listLevel0 = level0.toList();
         if (listLevel0.isEmpty()) {
             continue;
