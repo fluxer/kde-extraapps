@@ -76,7 +76,7 @@ protected:
 private:
     inline QSettings::Format format()
     {
-        return QSettings::NativeFormat;
+        return QSettings::IniFormat;
     }
 
 

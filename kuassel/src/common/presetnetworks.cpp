@@ -40,7 +40,14 @@ QStringList PresetNetworks::names(bool onlyDefault)
     }
     if (!_networksIniPath.isEmpty()) {
         QSettings s(_networksIniPath, QSettings::IniFormat);
-        QStringList networks = s.childGroups();
+        QStringList networks;
+        foreach (const QString &key, s.keys()) {
+            QStringList splitkey = key.split(QLatin1Char('/'), QString::SkipEmptyParts);
+            if (splitkey.size() < 1) {
+                continue;
+            }
+            networks << splitkey.at(0);
+        }
         if (!networks.isEmpty()) {
             // we sort the list case-insensitive
             QMap<QString, QString> sorted;
