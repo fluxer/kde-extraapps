@@ -97,9 +97,8 @@ void SessionSettings::removeKey(const QString &key)
 void SessionSettings::cleanup()
 {
     QStringList sessions = localChildGroups();
-    QString str;
     SessionSettings s(sessionId());
-    foreach(str, sessions) {
+    foreach(const QString &str, sessions) {
         // load session and check age
         s.setSessionId(str);
         if (s.sessionAge() > 3) {
@@ -144,9 +143,8 @@ void SessionSettings::setSessionAge(int age)
 void SessionSettings::sessionAging()
 {
     QStringList sessions = localChildGroups();
-    QString str;
     SessionSettings s(sessionId());
-    foreach(str, sessions) {
+    foreach(const QString &str, sessions) {
         // load session and check age
         s.setSessionId(str);
         s.setSessionAge(s.sessionAge()+1);
