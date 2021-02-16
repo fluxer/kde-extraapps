@@ -465,9 +465,9 @@ Volume* Mixer_ALSA::addVolume(snd_mixer_elem_t *elem, bool capture)
     bool hasCommonSwitch = snd_mixer_selem_has_common_switch ( elem );
 
     bool hasSwitch = hasCommonSwitch |
-        capture
+        (capture
         ? snd_mixer_selem_has_capture_switch ( elem )
-        : snd_mixer_selem_has_playback_switch ( elem );
+        : snd_mixer_selem_has_playback_switch ( elem ));
 
     if ( hasVolume || hasSwitch ) {
         //kDebug() << "Add somthing with chn=" << chn << ", capture=" << capture;

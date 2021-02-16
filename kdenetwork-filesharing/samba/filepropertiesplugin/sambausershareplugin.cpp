@@ -213,7 +213,7 @@ void SambaUserSharePlugin::applyChanges()
         // Something strange happened, Bob
         KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
             i18n("<qt>System error.</qt>"));
-    } else if (!result == KSambaShareData::UserShareOk) {
+    } else if (result != KSambaShareData::UserShareOk) {
         // Something strange happened, Bob
         KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
             i18n("<qt>Unexpected error occurred.</qt>"));
