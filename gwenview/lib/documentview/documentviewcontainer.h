@@ -91,7 +91,6 @@ private:
 private Q_SLOTS:
     void slotFadeInFinished(DocumentView*);
     void pretendFadeInFinished();
-    void slotConfigChanged();
 };
 
 } // namespace

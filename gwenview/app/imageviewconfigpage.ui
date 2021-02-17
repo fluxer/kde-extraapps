@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>385</height>
+    <height>392</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -241,61 +241,7 @@
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
-     <property name="buddy">
-      <cstring>glAnimationRadioButton</cstring>
-     </property>
     </widget>
-   </item>
-   <item row="8" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout_9">
-     <item>
-      <widget class="QRadioButton" name="glAnimationRadioButton">
-       <property name="text">
-        <string>OpenGL</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_7">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item row="9" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout_8">
-     <item>
-      <widget class="QRadioButton" name="softwareAnimationRadioButton">
-       <property name="text">
-        <string>Software</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_8">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
    </item>
    <item row="10" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -442,6 +388,30 @@
      </property>
     </spacer>
    </item>
+   <item row="8" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <widget class="QRadioButton" name="softwareAnimationRadioButton">
+       <property name="text">
+        <string>Software</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
   </layout>
  </widget>
  <customwidgets>
@@ -463,7 +433,6 @@
   <tabstop>mouseWheelScrollRadioButton</tabstop>
   <tabstop>mouseWheelBrowseRadioButton</tabstop>
   <tabstop>kcfg_EnlargeSmallerImages</tabstop>
-  <tabstop>glAnimationRadioButton</tabstop>
   <tabstop>softwareAnimationRadioButton</tabstop>
   <tabstop>noAnimationRadioButton</tabstop>
   <tabstop>horizontalRadioButton</tabstop>

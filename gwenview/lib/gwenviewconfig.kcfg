@@ -124,7 +124,6 @@
             <choices name="Gwenview::DocumentView::AnimationMethod">
                 <choice name="DocumentView::NoAnimation"/>
                 <choice name="DocumentView::SoftwareAnimation"/>
-                <choice name="DocumentView::GLAnimation"/>
             </choices>
             <default>DocumentView::SoftwareAnimation</default>
         </entry>

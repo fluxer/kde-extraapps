@@ -73,8 +73,7 @@ public:
 
     enum AnimationMethod {
         NoAnimation,
-        SoftwareAnimation,
-        GLAnimation
+        SoftwareAnimation
     };
 
     /**

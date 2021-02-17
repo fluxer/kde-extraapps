@@ -126,9 +126,4 @@ target_link_libraries(gwenviewlib
     ${PNG_LIBRARIES}
 )
 
-if(QT_QTOPENGL_FOUND)
-    add_definitions(-DHAVE_OPENGL)
-    target_link_libraries(gwenviewlib ${QT_QTOPENGL_LIBRARY})
-endif()
-
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})
