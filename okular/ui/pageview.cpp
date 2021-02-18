@@ -2047,18 +2047,6 @@ void PageView::mousePressEvent( QMouseEvent * e )
         return;
     }
 
-    // trigger history navigation for additional mouse buttons
-    if ( e->button() == Qt::XButton1 )
-    {
-        emit mouseBackButtonClick();
-        return;
-    }
-    if ( e->button() == Qt::XButton2 )
-    {
-        emit mouseForwardButtonClick();
-        return;
-    }
-
     // update press / 'start drag' mouse position
     d->mousePressPos = e->globalPos();
 

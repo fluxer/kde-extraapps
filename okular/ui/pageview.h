@@ -120,8 +120,6 @@ Q_OBJECT
 
     signals:
         void rightClick( const Okular::Page *, const QPoint & );
-        void mouseBackButtonClick();
-        void mouseForwardButtonClick();
         void escPressed();
 
     protected:

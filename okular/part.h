@@ -299,8 +299,6 @@ class OKULAR_PART_EXPORT Part : public KParts::ReadWritePart, public Okular::Doc
         KAction *m_nextPage;
         KAction *m_beginningOfDocument;
         KAction *m_endOfDocument;
-        KAction *m_historyBack;
-        KAction *m_historyNext;
         KAction *m_addBookmark;
         KAction *m_renameBookmark;
         KAction *m_prevBookmark;
