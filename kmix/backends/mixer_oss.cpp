@@ -31,7 +31,7 @@
 #include <sys/stat.h>
 
 // Since we're guaranteed an OSS setup here, let's make life easier
-#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+#if !defined(Q_OS_NETBSD) && !defined(Q_OS_OPENBSD)
 	#include <sys/soundcard.h>
 #else
 	#include <soundcard.h>

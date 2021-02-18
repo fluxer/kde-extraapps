@@ -52,7 +52,7 @@ QStringList UserPermissionModel::getUsersList() const
     unsigned int defminuid;
     unsigned int defmaxuid;
 
-#ifdef __linux__
+#ifdef Q_OS_LINUX
     struct stat st;
     if (!stat("/etc/debian_version", &st)) { /* debian */
         defminuid = 1000;

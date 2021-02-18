@@ -29,22 +29,11 @@
 
 
 
-#if defined(sun) || defined(__sun__)
+#if defined(Q_OS_SOLARIS)
 #define SUN_MIXER
-#endif
-
-#ifdef __linux__
-
+#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(Q_OS_DRAGONFLY) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
 #define OSS_MIXER
 #endif
-
-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(_UNIXWARE)
-#define OSS_MIXER
-#endif
-
-#if defined(hpux)
-#error "The HP/UX port is not maintained anymore, an no official part of KMix / KDE at this point of time! Please contact the current KMix maintainer if you would like to maintain the port."
-#endif // hpux
 
 // PORTING: add #ifdef PLATFORM , commands , #endif, add your new mixer below
 
@@ -59,12 +48,12 @@
 #if defined(OSS_MIXER)
 #include "backends/mixer_oss.cpp"
 
-#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+#if !defined(Q_OS_NETBSD) && !defined(Q_OS_OPENBSD)
 #include <sys/soundcard.h>
 #else
 #include <soundcard.h>
 #endif
-#if !defined(__FreeBSD__) && (SOUND_VERSION >= 0x040000)
+#if !defined(Q_OS_FREEBSD) && (SOUND_VERSION >= 0x040000)
 #define OSS4_MIXER
 #endif
 #endif

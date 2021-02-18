@@ -24,6 +24,8 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
+#include <qglobal.h>
+
 /**
  * \file debug.h
  *
@@ -51,10 +53,10 @@
 // to one known kind.
 //
 //
-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+#if defined(Q_OS_FREEBSD) || defined(Q_OS_DRAGONFLY) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
 #define ANY_BSD	(1)
 #else
-#if defined(linux) || defined(LINUX) || defined (__linux) || defined(__linux__)
+#if defined(Q_OS_LINUX)
 #define ANY_LINUX (1)
 #endif
 #endif
