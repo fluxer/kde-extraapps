@@ -1,5 +1,9 @@
 project(kde-thumbnailer-po)
 
+include_directories(
+    ${GETTEXTPO_INCLUDE_DIR}
+)
+
 set(pothumbnail_SRCS pocreator.cpp)
 
 kde4_add_kcfg_files(pothumbnail_SRCS pocreatorsettings.kcfgc)
