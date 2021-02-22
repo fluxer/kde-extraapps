@@ -971,10 +971,6 @@ Mixer_PULSE::Mixer_PULSE(Mixer *mixer, int devnum) : Mixer_Backend(mixer, devnum
     if ( devnum == -1 )
         m_devnum = 0;
 
-    QString pulseenv = qgetenv("KMIX_PULSEAUDIO_DISABLE");
-    if (pulseenv.toInt())
-        s_pulseActive = INACTIVE;
-
     // We require a glib event loop
     if (!QByteArray(QAbstractEventDispatcher::instance()->metaObject()->className()).contains("EventDispatcherGlib")) {
         kDebug(67100) << "Disabling PulseAudio integration for lack of GLib event loop";
