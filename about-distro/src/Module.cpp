@@ -46,7 +46,6 @@ static qlonglong calculateTotalRam()
 #if defined(_SC_PHYS_PAGES) && defined(_SC_PAGESIZE)
     ret = sysconf(_SC_PHYS_PAGES);
     ret *= sysconf(_SC_PAGESIZE);
-    ret /= 1.03;
 #else
 # warning calculateTotalRam() not implemented
 #endif
