@@ -102,7 +102,7 @@ bool AudioPlayerPrivate::play( const SoundInfo& si )
     kDebug() ;
     PlayData * data = new PlayData();
     data->m_player = new KAudioPlayer();
-    // data->m_player->setVolume( si.volume );
+    data->m_player->setVolume( float(si.volume) );
     data->m_info = si;
     bool valid = false;
 
