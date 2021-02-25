@@ -18,7 +18,7 @@
 
 #include <KAboutData>
 #include <KCmdLineArgs>
-#include <KApplication>
+#include <KUniqueApplication>
 #include "kemumainwindow.h"
 
 int main(int argc, char** argv)
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
                         "xakepa10@gmail.com");
     aboutData.setProgramIconName(QLatin1String("applications-engineering"));
     KCmdLineArgs::init(argc, argv, &aboutData);
-    KApplication *kemuapp = new KApplication();
+    KUniqueApplication *kemuapp = new KUniqueApplication();
     KEmuMainWindow *kemuwindow = new KEmuMainWindow();
     kemuwindow->show();
     return kemuapp->exec();
