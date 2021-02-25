@@ -32,7 +32,6 @@ Tray::Tray(MainWindow * parent)
     cm->addAction( parent->actionCollection()->action("start_all_download") );
     cm->addAction( parent->actionCollection()->action("stop_all_download") );
     cm->addSeparator();
-    cm->addAction( parent->actionCollection()->action("konqueror_integration") );
     cm->addAction( parent->actionCollection()->action("options_configure") );
 
     // Set up basic tray parameters

@@ -7,17 +7,10 @@
     <x>0</x>
     <y>0</y>
     <width>558</width>
-    <height>324</height>
+    <height>293</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QCheckBox" name="kcfg_KonquerorIntegration">
-     <property name="text">
-      <string>Use as download manager for Konqueror</string>
-     </property>
-    </widget>
-   </item>
    <item>
     <widget class="QGroupBox" name="kcfg_AutoPaste">
      <property name="title">

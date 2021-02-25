@@ -1,2 +1,1 @@
-add_subdirectory(konqueror)
 add_subdirectory(webinterface)

@@ -36,9 +36,6 @@
   </group>
 
   <group name="Advanced">
-    <entry name="KonquerorIntegration" type="Bool">
-      <default>false</default>
-    </entry>
     <entry name="AutoPaste" type="Bool">
       <default>false</default>
     </entry>

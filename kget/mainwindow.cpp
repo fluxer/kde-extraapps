@@ -103,8 +103,6 @@ MainWindow::~MainWindow()
     KGet::save();
 
     slotSaveMyself();
-    // reset konqueror integration (necessary if user enabled / disabled temporarily integration from tray)
-    slotKonquerorIntegration( Settings::konquerorIntegration() );
     // the following call saves options set in above dtors
     Settings::self()->writeConfig();
 
@@ -219,12 +217,6 @@ void MainWindow::setupActions()
                                          "on and off.\nWhen set, KGet will periodically scan "
                                          "the clipboard for URLs and paste them automatically."));
     connect(m_autoPasteAction, SIGNAL(triggered()), SLOT(slotToggleAutoPaste()));
-
-    m_konquerorIntegration = new KToggleAction(KIcon("konqueror"),
-                                               i18n("Use KGet as Konqueror Download Manager"), actionCollection());
-    actionCollection()->addAction("konqueror_integration", m_konquerorIntegration);
-    connect(m_konquerorIntegration, SIGNAL(triggered(bool)), SLOT(slotTrayKonquerorIntegration(bool)));
-    m_konquerorIntegration->setChecked(Settings::konquerorIntegration());
 
     // local - Destroys all sub-windows and exits
     KStandardAction::quit(this, SLOT(slotQuit()), actionCollection());
@@ -427,16 +419,6 @@ void MainWindow::init()
     m_drop = new DropTarget(this);
 
     if (Settings::firstRun()) {
-        if (KMessageBox::questionYesNoCancel(this ,i18n("This is the first time you have run KGet.\n"
-                                             "Would you like to enable KGet as the download manager for Konqueror?"),
-                                             i18n("Konqueror Integration"), KGuiItem(i18n("Enable")),
-                                             KGuiItem(i18n("Do Not Enable")))
-                                             == KMessageBox::Yes) {
-            Settings::setKonquerorIntegration(true);
-            m_konquerorIntegration->setChecked(Settings::konquerorIntegration());
-            slotKonquerorIntegration(true);
-        }
-
         m_drop->setDropTargetVisible(false);
 
         // reset the FirstRun config option
@@ -987,9 +969,6 @@ void MainWindow::slotNewConfig()
         m_dock = 0;
     }
 
-    slotKonquerorIntegration(Settings::konquerorIntegration());
-    m_konquerorIntegration->setChecked(Settings::konquerorIntegration());
-
     if (clipboardTimer) {
         if (Settings::autoPaste())
             clipboardTimer->start(1000);
@@ -1066,33 +1045,6 @@ void MainWindow::slotCheckClipboard()
             }
         }
     }
-}
-
-void MainWindow::slotTrayKonquerorIntegration(bool enable)
-{
-    slotKonquerorIntegration(enable);
-    if (!enable && Settings::konquerorIntegration())
-    {
-        KGet::showNotification(this, "notification",
-                                     i18n("KGet has been temporarily disabled as download manager for Konqueror. "
-            "If you want to disable it forever, go to Settings->Advanced and disable \"Use "
-            "as download manager for Konqueror\"."),
-                                     "dialog-info");
-        /*KMessageBox::information(this,
-            i18n("KGet has been temporarily disabled as download manager for Konqueror. "
-            "If you want to disable it forever, go to Settings->Advanced and disable \"Use "
-            "as download manager for Konqueror\"."),
-            i18n("Konqueror Integration disabled"),
-            "KonquerorIntegrationDisabled");*/
-    }
-}
-
-void MainWindow::slotKonquerorIntegration(bool konquerorIntegration)
-{
-    KConfig cfgKonqueror("konquerorrc", KConfig::NoGlobals);
-    cfgKonqueror.group("HTML Settings").writeEntry("DownloadManager",
-                                                   QString(konquerorIntegration ? "kget" : QString()));
-    cfgKonqueror.sync();
 }
 
 void MainWindow::slotShowMenubar()

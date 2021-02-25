@@ -82,8 +82,6 @@ private slots:
     void slotStopDownload();
     void slotConfigureNotifications();
     void slotToggleAutoPaste();
-    void slotTrayKonquerorIntegration(bool);
-    void slotKonquerorIntegration( bool );
     void slotShowMenubar();
     void slotTransferGroupSettings();
     void slotTransferSettings();
@@ -143,7 +141,6 @@ private:
     // actions
     KToggleAction * m_autoPasteAction;
     KToggleAction * m_menubarAction;
-    KToggleAction * m_konquerorIntegration;
 
     // for autopaste function
     QString lastClipboard;
