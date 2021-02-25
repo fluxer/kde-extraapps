@@ -20,7 +20,9 @@
 #include "core/device.h"
 
 #include "core/partitiontable.h"
-#include "core/smartstatus.h"
+#if defined(HAVE_LIBATASMART)
+#  include "core/smartstatus.h"
+#endif
 
 #include "util/capacity.h"
 
@@ -95,8 +97,10 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 	m_Cylinders(cylinders),
 	m_LogicalSectorSize(sectorSize),
 	m_PhysicalSectorSize(getPhysicalSectorSize(devicenode)),
-	m_IconName(iconname.isEmpty() ? "drive-harddisk" : iconname),
-	m_SmartStatus(new SmartStatus(devicenode))
+	m_IconName(iconname.isEmpty() ? "drive-harddisk" : iconname)
+#if defined(HAVE_LIBATASMART)
+	, m_SmartStatus(new SmartStatus(devicenode))
+#endif
 {
 }
 

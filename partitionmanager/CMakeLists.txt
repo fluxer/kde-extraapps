@@ -29,7 +29,13 @@ set(CMAKE_USE_RELATIVE_PATHS OFF)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(UUID REQUIRED uuid)
-pkg_check_modules(LIBATASMART REQUIRED libatasmart)
+
+macro_optional_find_package(LibATASmart)
+set_package_properties(LibArchive PROPERTIES
+    DESCRIPTION "ATA S.M.A.R.T. reading and parsing library"
+    URL "http://0pointer.de/blog/projects/being-smart.html"
+    PURPOSE "Required for ATA S.M.A.R.T. status support"
+)
 
 add_definitions(${KDE4_ENABLE_EXCEPTIONS})
 

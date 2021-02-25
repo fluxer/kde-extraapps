@@ -20,11 +20,15 @@
 #include "gui/devicepropsdialog.h"
 #include "gui/devicepropswidget.h"
 
-#include "gui/smartdialog.h"
+#if defined(HAVE_LIBATASMART)
+#  include "gui/smartdialog.h"
+#endif
 
 #include "core/device.h"
 #include "core/partitiontable.h"
-#include "core/smartstatus.h"
+#if defined(HAVE_LIBATASMART)
+#  include "core/smartstatus.h"
+#endif
 
 #include "util/capacity.h"
 #include "util/helpers.h"
@@ -111,6 +115,7 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
 	dialogWidget().type().setText(type);
 
+#if defined(HAVE_LIBATASMART)
 	if (device().smartStatus().isValid())
 	{
 		if (device().smartStatus().status())
@@ -125,6 +130,7 @@ void DevicePropsDialog::setupDialog()
 		}
 	}
 	else
+#endif
 	{
 		dialogWidget().smartStatusText().setText(i18nc("@label", "(unknown)"));
 		dialogWidget().smartStatusIcon().setVisible(false);
@@ -160,7 +166,9 @@ bool DevicePropsDialog::sectorBasedAlignment() const
 
 void DevicePropsDialog::onButtonSmartMore(bool)
 {
+#if defined(HAVE_LIBATASMART)
 	QPointer<SmartDialog> dlg = new SmartDialog(this, device());
 	dlg->exec();
 	delete dlg;
+#endif
 }

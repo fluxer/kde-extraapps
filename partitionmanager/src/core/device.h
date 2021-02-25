@@ -25,7 +25,6 @@
 
 #include <QString>
 #include <QObject>
-#include <qglobal.h>
 
 class PartitionTable;
 class CreatePartitionTableOperation;
@@ -73,8 +72,10 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		void setIconName(const QString& name) { m_IconName = name; }
 		const QString& iconName() const { return m_IconName; } /**< @return suggested icon name for this Device */
 
+#if defined(HAVE_LIBATASMART)
 		SmartStatus& smartStatus() { return *m_SmartStatus; }
 		const SmartStatus& smartStatus() const { return *m_SmartStatus; }
+#endif
 
 		QString prettyName() const;
 
@@ -91,7 +92,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		qint32 m_LogicalSectorSize;
 		qint32 m_PhysicalSectorSize;
 		QString m_IconName;
+#if defined(HAVE_LIBATASMART)
 		SmartStatus* m_SmartStatus;
+#endif
 };
 
 #endif

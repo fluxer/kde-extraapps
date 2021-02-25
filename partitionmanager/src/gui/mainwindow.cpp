@@ -24,7 +24,9 @@
 #include "gui/createpartitiontabledialog.h"
 #include "gui/filesystemsupportdialog.h"
 #include "gui/devicepropsdialog.h"
-#include "gui/smartdialog.h"
+#if defined(HAVE_LIBATASMART)
+#  include "gui/smartdialog.h"
+#endif
 
 #include "config/configureoptionsdialog.h"
 
@@ -33,7 +35,9 @@
 
 #include "core/device.h"
 #include "core/partition.h"
-#include "core/smartstatus.h"
+#if defined(HAVE_LIBATASMART)
+#  include "core/smartstatus.h"
+#endif
 
 #include "ops/operation.h"
 #include "ops/createpartitiontableoperation.h"
@@ -234,11 +238,13 @@ void MainWindow::setupActions()
 	importPartitionTable->setStatusTip(i18nc("@info:status", "Import a partition table from a text file."));
 	importPartitionTable->setIcon(BarIcon("document-import"));
 
+#if defined(HAVE_LIBATASMART)
 	KAction* smartStatusDevice = actionCollection()->addAction("smartStatusDevice", this, SLOT(onSmartStatusDevice()));
 	smartStatusDevice->setEnabled(false);
 	smartStatusDevice->setText(i18nc("@action:inmenu", "SMART Status"));
 	smartStatusDevice->setToolTip(i18nc("@info:tooltip", "Show SMART status"));
 	smartStatusDevice->setStatusTip(i18nc("@info:status", "Show the device's SMART status if supported"));
+#endif
 
 	KAction* propertiesDevice = actionCollection()->addAction("propertiesDevice", this, SLOT(onPropertiesDevice()));
 	propertiesDevice->setEnabled(false);
@@ -396,7 +402,9 @@ void MainWindow::enableActions()
 	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
 	actionCollection()->action("exportPartitionTable")->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && operationStack().size() == 0);
 	actionCollection()->action("importPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+#if defined(HAVE_LIBATASMART)
 	actionCollection()->action("smartStatusDevice")->setEnabled(pmWidget().selectedDevice() != NULL && pmWidget().selectedDevice()->smartStatus().isValid());
+#endif
 	actionCollection()->action("propertiesDevice")->setEnabled(pmWidget().selectedDevice() != NULL);
 
 	actionCollection()->action("undoOperation")->setEnabled(operationStack().size() > 0);
@@ -979,6 +987,7 @@ void MainWindow::onConfigureOptions()
 
 void MainWindow::onSmartStatusDevice()
 {
+#if defined(HAVE_LIBATASMART)
 	Q_ASSERT(pmWidget().selectedDevice());
 
 	if (pmWidget().selectedDevice())
@@ -987,6 +996,7 @@ void MainWindow::onSmartStatusDevice()
 		dlg->exec();
 		delete dlg;
 	}
+#endif
 }
 
 void MainWindow::onPropertiesDevice(const QString&)
