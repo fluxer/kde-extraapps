@@ -14,6 +14,9 @@ set_package_properties(Alsa PROPERTIES
     PURPOSE "Needed for KMix sound feedback"
 )
 
+# NetBSD
+find_library(LIBOSSAUDIO_LIBRARY NAMES ossaudio)
+
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=67100)
 
 include_directories(/usr/lib/oss/include)
@@ -95,9 +98,13 @@ target_link_libraries(kmix
     ${QT_QTXML_LIBRARY}
 )
 
-if (ALSA_FOUND)
+if(ALSA_FOUND)
     target_link_libraries(kmix ${ALSA_LIBRARIES})
-endif (ALSA_FOUND)
+endif()
+
+if(LIBOSSAUDIO_LIBRARY)
+    target_link_libraries(kmix ${LIBOSSAUDIO_LIBRARY})
+endif()
 
 install(
     TARGETS kmix
@@ -133,9 +140,13 @@ target_link_libraries(kded_kmixd
     ${QT_QTXML_LIBRARY}
 )
 
-if (ALSA_FOUND)
+if(ALSA_FOUND)
     target_link_libraries(kded_kmixd ${ALSA_LIBRARIES})
-endif (ALSA_FOUND)
+endif()
+
+if(LIBOSSAUDIO_LIBRARY)
+    target_link_libraries(kded_kmixd ${LIBOSSAUDIO_LIBRARY})
+endif()
 
 install(TARGETS kded_kmixd DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
@@ -172,9 +183,13 @@ target_link_libraries(kmixctrl
     ${QT_QTXML_LIBRARY}
 )
 
-if (ALSA_FOUND)
+if(ALSA_FOUND)
     target_link_libraries(kmixctrl ${ALSA_LIBRARIES})
-endif (ALSA_FOUND)
+endif()
+
+if(LIBOSSAUDIO_LIBRARY)
+    target_link_libraries(kmixctrl ${LIBOSSAUDIO_LIBRARY})
+endif()
 
 ########### next target ###############
 add_subdirectory( plasma )
