@@ -17,6 +17,7 @@ SnapshotTaker::SnapshotTaker( const QString &url, QObject *parent )
     : QObject( parent )
     , m_player( new KMediaPlayer )
 {
+    m_player->setPlayerID("okularpart_snapshot");
     m_player->load( url );
     m_player->hide();
 

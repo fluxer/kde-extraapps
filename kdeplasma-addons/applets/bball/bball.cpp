@@ -408,6 +408,7 @@ void bballApplet::playBoingSound()
     // create the player if missing
     if (!m_soundPlayer) {
         m_soundPlayer = new KAudioPlayer(this);
+        m_soundPlayer->setPlayerID("plasma_applet_bball");
         m_soundPlayer->setVolume(m_sound_volume);
     }
 

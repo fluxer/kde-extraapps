@@ -236,6 +236,7 @@ VideoWidget::VideoWidget( const Okular::Annotation *annotation, Okular::Movie *m
     mainlay->setSpacing( 0 );
 
     d->player = new KMediaPlayer( playerPage );
+    d->player->setPlayerID("okulartpart_video");
     d->player->installEventFilter( playerPage );
     mainlay->addWidget( d->player );
 

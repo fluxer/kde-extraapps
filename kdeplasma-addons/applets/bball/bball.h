@@ -22,8 +22,10 @@
 #define bball_HEADER
 
 #include <QtCore/QBasicTimer>
-#include <QtCore/qdatetime.h>
+#include <QtCore/QDateTime>
 #include <QtGui/QVector2D>
+#include <QGraphicsSceneMouseEvent>
+#include <QSizeF>
 
 #include <KConfigDialog>
 #include <KMediaPlayer>
@@ -31,9 +33,6 @@
 #include <Plasma/Svg>
 
 #include "ui_bballConfig.h"
-
-#include <QGraphicsSceneMouseEvent>
-#include <QSizeF>
 
 class bballApplet : public Plasma::Applet
 {
