@@ -14,20 +14,6 @@ set_package_properties(Alsa PROPERTIES
     PURPOSE "Needed for KMix sound feedback"
 )
 
-macro_optional_find_package(PulseAudio 0.9.16)
-set_package_properties(PulseAudio PROPERTIES
-    DESCRIPTION "PulseAudio Audio Server"
-    URL "http://www.pulseaudio.org/"
-    PURPOSE "Needed to let KMix control PulseAudio"
-)
-
-macro_optional_find_package(Canberra)
-set_package_properties(Canberra PROPERTIES
-    DESCRIPTION "libcanberra audio library"
-    URL "http://0pointer.de/lennart/projects/libcanberra/"
-    PURPOSE "Needed for KMix sound feedback"
-)
-
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=67100)
 
 include_directories(/usr/lib/oss/include)
@@ -40,17 +26,6 @@ if (ALSA_FOUND)
     add_definitions(-DHAVE_ALSA)
     include_directories(${ALSA_INCLUDES})
 endif (ALSA_FOUND)
-
-if (PULSEAUDIO_FOUND)
-    add_definitions(-DHAVE_PULSE ${PULSEAUDIO_DEFINITIONS})
-    include_directories(${PULSEAUDIO_INCLUDE_DIR})
-endif (PULSEAUDIO_FOUND)
-
-if (CANBERRA_FOUND)
-    add_definitions(-DHAVE_CANBERRA)
-    include_directories(${CANBERRA_INCLUDE_DIRS})
-endif (CANBERRA_FOUND)
-
 
 set(kmix_adaptor_SRCS
 	dbus/dbusmixerwrapper.cpp
@@ -72,11 +47,6 @@ if (ALSA_FOUND)
     set(kmix_backend_SRCS ${kmix_backend_SRCS}
         backends/mixer_alsa9.cpp )
 endif (ALSA_FOUND)
-
-if (PULSEAUDIO_FOUND)
-    set(kmix_backend_SRCS ${kmix_backend_SRCS}
-        backends/mixer_pulse.cpp )
-endif (PULSEAUDIO_FOUND)
 
 set(kmix_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
     apps/main.cpp 
@@ -129,14 +99,6 @@ if (ALSA_FOUND)
     target_link_libraries(kmix ${ALSA_LIBRARIES})
 endif (ALSA_FOUND)
 
-if (PULSEAUDIO_FOUND)
-    target_link_libraries(kmix ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY})
-endif (PULSEAUDIO_FOUND)
-
-if (CANBERRA_FOUND)
-    target_link_libraries(kmix ${CANBERRA_LIBRARIES})
-endif (CANBERRA_FOUND)
-
 install(
     TARGETS kmix
     DESTINATION ${KDE4_LIB_INSTALL_DIR}
@@ -174,14 +136,6 @@ target_link_libraries(kded_kmixd
 if (ALSA_FOUND)
     target_link_libraries(kded_kmixd ${ALSA_LIBRARIES})
 endif (ALSA_FOUND)
-
-if (PULSEAUDIO_FOUND)
-    target_link_libraries(kded_kmixd ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY})
-endif (PULSEAUDIO_FOUND)
-
-if (CANBERRA_FOUND)
-    target_link_libraries(kded_kmixd ${CANBERRA_LIBRARIES})
-endif (CANBERRA_FOUND)
 
 install(TARGETS kded_kmixd DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
@@ -221,14 +175,6 @@ target_link_libraries(kmixctrl
 if (ALSA_FOUND)
     target_link_libraries(kmixctrl ${ALSA_LIBRARIES})
 endif (ALSA_FOUND)
-
-if (PULSEAUDIO_FOUND)
-    target_link_libraries(kmixctrl ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY})
-endif (PULSEAUDIO_FOUND)
-
-if (CANBERRA_FOUND)
-    target_link_libraries(kmixctrl ${CANBERRA_LIBRARIES})
-endif (CANBERRA_FOUND)
 
 ########### next target ###############
 add_subdirectory( plasma )

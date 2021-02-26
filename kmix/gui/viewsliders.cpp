@@ -330,7 +330,6 @@ void ViewSliders::_setMixSet()
 
 void ViewSliders::constructionFinished() {
     configurationUpdate();
-    //if ( !pulseaudioPresent() ) // TODO 11 Dynamic view configuration
     if ( !isDynamic() )
     {
 		_configureViewButton = createConfigureViewButton();

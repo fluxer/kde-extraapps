@@ -280,24 +280,19 @@ KMixWindow::initActionsLate()
 void
 KMixWindow::initActionsAfterInitMixer()
 {
-	// Only show the new tab widget if Pulseaudio is not used. Hint: The Pulseaudio backend always
-	// runs with 4 fixed Tabs.
-	if (!Mixer::pulseaudioPresent())
-    {
-      QPixmap cornerNewPM = KIconLoader::global()->loadIcon("tab-new", KIconLoader::Toolbar, KIconLoader::SizeSmall);
-      QPushButton* _cornerLabelNew = new QPushButton();
-      _cornerLabelNew->setIcon(cornerNewPM);
-      //cornerLabelNew->setSizePolicy(QSizePolicy());
-      m_wsMixers->setCornerWidget(_cornerLabelNew, Qt::TopLeftCorner);
-      connect(_cornerLabelNew, SIGNAL(clicked()), SLOT (newView()));
-    }
+    QPixmap cornerNewPM = KIconLoader::global()->loadIcon("tab-new", KIconLoader::Toolbar, KIconLoader::SizeSmall);
+    QPushButton* _cornerLabelNew = new QPushButton();
+    _cornerLabelNew->setIcon(cornerNewPM);
+    //cornerLabelNew->setSizePolicy(QSizePolicy());
+    m_wsMixers->setCornerWidget(_cornerLabelNew, Qt::TopLeftCorner);
+    connect(_cornerLabelNew, SIGNAL(clicked()), SLOT (newView()));
 }
 
 void
 KMixWindow::initPrefDlg()
 {
-	KMixPrefDlg* prefDlg = KMixPrefDlg::createInstance(this, GlobalConfig::instance());
-	connect(prefDlg, SIGNAL(kmixConfigHasChanged()), SLOT(applyPrefs()));
+    KMixPrefDlg* prefDlg = KMixPrefDlg::createInstance(this, GlobalConfig::instance());
+    connect(prefDlg, SIGNAL(kmixConfigHasChanged()), SLOT(applyPrefs()));
 }
 
 void
@@ -533,7 +528,6 @@ KMixWindow::loadBaseConfig()
   preferredMixersInSoundMenu = config.readEntry("Soundmenu.Mixers", preferredMixersInSoundMenu);
   GlobalConfig::instance().setMixersForSoundmenu(preferredMixersInSoundMenu.toSet());
 
-  setBeepOnVolumeChange(gcd.volumeFeedback);
   m_startVisible = config.readEntry("Visible", false);
   m_multiDriverMode = config.readEntry("MultiDriver", false);
   m_defaultCardOnStart = config.readEntry("DefaultCardOnStart", "");
@@ -1056,9 +1050,8 @@ KMixWindow::addMixerWidget(const QString& mixer_ID, QString guiprofId, int inser
 
 void KMixWindow::updateTabsClosable()
 {
-    // Pulseaudio runs with 4 fixed tabs - don't allow to close them.
-    // Also do not allow to close the last view
-    m_wsMixers->setTabsClosable(!Mixer::pulseaudioPresent() && m_wsMixers->count() > 1);
+    // Ddo not allow to close the last view
+    m_wsMixers->setTabsClosable(m_wsMixers->count() > 1);
 }
 
 bool KMixWindow::queryClose()
@@ -1245,18 +1238,6 @@ void KMixWindow::applyPrefs()
 	// Remove saveConfig() IF aa changes have been migrated to GlobalConfig.
 	// Currently there is still stuff like "show menu bar".
 	saveConfig();
-}
-
-/**
- * Sets whether a beep on volume change should be done.
- * This method store the value internally and also propagates
- * this to the Mixer core.
- *
- * @param beep true, if a beep should be changed
- */
-void KMixWindow::setBeepOnVolumeChange(bool beep)
-{
-	Mixer::setBeepOnVolumeChange(beep);
 }
 
 void

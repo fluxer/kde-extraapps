@@ -140,7 +140,7 @@ QString Mixer_Backend::getName() const
  */
 QString Mixer_Backend::getId() const
 {
-	return m_mixerName; // Backwards compatibility. PulseAudio overrides it.
+	return m_mixerName; // Backwards compatibility.
 }
 
 /**

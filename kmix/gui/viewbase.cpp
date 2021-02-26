@@ -258,25 +258,14 @@ bool ViewBase::isDynamic() const
   return false;
 }
 
-bool ViewBase::pulseaudioPresent() const
-{
-  foreach (Mixer* mixer , _mixers )
-  {
-	  if ( mixer->getDriverName() == "PulseAudio" )
-		  return true;
-  }
-  return false;
-}
-
-
 void ViewBase::resetMdws()
 {
-      // We need to delete the current MixDeviceWidgets so we can redraw them
-      while (!_mdws.isEmpty())
-	      delete _mdws.takeFirst();
+    // We need to delete the current MixDeviceWidgets so we can redraw them
+    while (!_mdws.isEmpty())
+        delete _mdws.takeFirst();
 
-      // _mixSet contains std::shared_ptr instances, so clear() should be enough to prevent mem leak
-      _mixSet.clear(); // Clean up our _mixSet so we can reapply our GUIProfile
+    // _mixSet contains std::shared_ptr instances, so clear() should be enough to prevent mem leak
+    _mixSet.clear(); // Clean up our _mixSet so we can reapply our GUIProfile
 }
 
 
@@ -298,7 +287,6 @@ int ViewBase::visibleControls()
 void ViewBase::configureView()
 {
     Q_ASSERT( !isDynamic() );
-    Q_ASSERT( !pulseaudioPresent() );
     
     DialogViewConfiguration* dvc = new DialogViewConfiguration(0, *this);
     dvc->show();

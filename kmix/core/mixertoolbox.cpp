@@ -148,7 +148,7 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
       }
       
 
-      bool regularBackend =  driverName != "MPRIS2"  && driverName != "PulseAudio";
+      bool regularBackend =  driverName != "MPRIS2";
       if (regularBackend && regularBackendFound)
       {
     	  // Only accept one regular backend => skip this one
@@ -189,12 +189,6 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
 				 if ( driverName == "MPRIS2" )
 				 {
 					 backendMprisFound = true;
-				 }
-				 else if ( driverName == "PulseAudio" )
-				 {
-					 // PulseAudio is not useful together with MPRIS2. Treat it as "single"
-					 if ( foundSomethingAndLastControlReached )
-						 autodetectionFinished = true;
 				 }
 				 else
 				 {

@@ -158,12 +158,6 @@ protected:
 signals:
   void controlChanged( void ); // TODO remove?
 
-public slots:
-/**
- * Re-initialize. Currently only implemented by PulseAudio backend, and this slot might get moved there
- */
-  virtual void reinit() {};
-
 protected:
   void freeMixDevices();
 

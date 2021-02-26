@@ -37,11 +37,6 @@ public:
 	bool showLabels;
 	bool showOSD;
 
-	bool volumeFeedback;
-
-	bool volumeOverdrive; // whether more than recommended volume (typically 0dB) is allowed
-	bool beepOnVolumeChange;
-
 	// Startup
 	bool allowAutostart;
 	bool showDockWidget;

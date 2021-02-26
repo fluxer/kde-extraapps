@@ -22,23 +22,17 @@ add_executable(profiletest ${profiletest_SRCS}
     ${CMAKE_CURRENT_SOURCE_DIR}/../core/mixset.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../core/kmixdevicemanager.cpp 
     ${kmix_adaptor_SRCS}
-    )
+)
 
-target_link_libraries(profiletest  ${KDE4_KDECORE_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY} )
+target_link_libraries(profiletest ${KDE4_KDECORE_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY})
 
 if (ALSA_FOUND)
     target_link_libraries(profiletest ${ALSA_LIBRARIES})
 endif (ALSA_FOUND)
 
-if (PULSEAUDIO_FOUND)
-    target_link_libraries(profiletest ${PULSEAUDIO_LIBRARY} ${PULSEAUDIO_MAINLOOP_LIBRARY} ${GLIB2_LIBRARIES})
-endif (PULSEAUDIO_FOUND)
-
 ########### next target ###############
-set(dialogtest_SRCS dialogtest.cpp )
+set(dialogtest_SRCS dialogtest.cpp)
 
-add_executable( dialogtest ${dialogtest_SRCS} )
+add_executable(dialogtest ${dialogtest_SRCS})
     
-target_link_libraries(dialogtest  ${KDE4_KDEUI_LIBS} )
-
-
+target_link_libraries(dialogtest ${KDE4_KDEUI_LIBS})

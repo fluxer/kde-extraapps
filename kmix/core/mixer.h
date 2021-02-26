@@ -116,9 +116,6 @@ public:
     // Returns the name of the driver, e.g. "OSS" or "ALSA0.9"
     static QString driverName(int num);
 
-    static void setBeepOnVolumeChange(bool m_beepOnVolumeChange);
-    static bool getBeepOnVolumeChange() { return m_beepOnVolumeChange; }
-
     /**
      * Returns an unique ID of the Mixer. It currently looks like "<soundcard_descr>::<hw_number>:<driver>"
      */
@@ -170,7 +167,6 @@ public:
     virtual bool isDynamic();
 
     static bool dynamicBackendsPresent();
-    static bool pulseaudioPresent();
 
     virtual bool moveStream( const QString id, const QString& destId );
 
@@ -205,8 +201,6 @@ private:
     static MasterControl _globalMasterPreferred;
 
     bool m_dynamic;
-
-    static bool m_beepOnVolumeChange;
 
 };
 

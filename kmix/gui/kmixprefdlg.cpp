@@ -126,7 +126,7 @@ void KMixPrefDlg::createStartupTab()
 	addWidgetToLayout(m_onLogin, layoutStartupTab, 10, i18n("Restore all volume levels and switches."), "startkdeRestore");
 
 	dynamicControlsRestoreWarning = new QLabel(
-		i18n("Dynamic controls from Pulseaudio and MPRIS2 will not be restored."), m_startupTab);
+		i18n("Dynamic controls from MPRIS2 will not be restored."), m_startupTab);
 	dynamicControlsRestoreWarning->setEnabled(false);
 	addWidgetToLayout(dynamicControlsRestoreWarning, layoutStartupTab, 10, "", "");
 
@@ -187,25 +187,6 @@ void KMixPrefDlg::createGeneralTab()
 	QBoxLayout* layout = new QVBoxLayout(m_generalTab);
 	layout->setMargin(0);
 	layout->setSpacing(KDialog::spacingHint());
-
-	// --- Behavior ---------------------------------------------------------
-	QLabel* label = new QLabel(i18n("Behavior"), m_generalTab);
-	layout->addWidget(label);
-
-	// [CONFIG]
-	m_beepOnVolumeChange = new QCheckBox(i18n("Volume Feedback"), m_generalTab);
-	addWidgetToLayout(m_beepOnVolumeChange, layout, 10, "", "VolumeFeedback");
-
-	volumeFeedbackWarning = new QLabel(i18n("Volume feedback is only available for Pulseaudio."), m_generalTab);
-	volumeFeedbackWarning->setEnabled(false);
-	addWidgetToLayout(volumeFeedbackWarning, layout, 20, "", "");
-
-	// [CONFIG]
-	m_volumeOverdrive = new QCheckBox(i18n("Volume Overdrive"), m_generalTab);
-	addWidgetToLayout(m_volumeOverdrive, layout, 10, i18nc("@info:tooltip", "Raise volume maximum to 150% (PulseAudio only)"), "VolumeOverdrive");
-	volumeOverdriveWarning = new QLabel(i18n("You must restart KMix for this setting to take effect."), m_generalTab);
-	volumeOverdriveWarning->setEnabled(false);
-	addWidgetToLayout(volumeOverdriveWarning, layout, 20, "", "");
 
 	// --- Visual ---------------------------------------------------------
 	QLabel* label2 = new QLabel(i18n("Visual"), m_generalTab);
@@ -379,16 +360,6 @@ void KMixPrefDlg::showEvent(QShowEvent * event)
 
 	// As GUI can change, the warning will only been shown on demand
 	dynamicControlsRestoreWarning->setVisible(Mixer::dynamicBackendsPresent());
-
-	// Pulseaudio supports volume feedback. Disable the configuaration option for all other backends
-	// and show a warning.
-	bool volumeFeebackAvailable = Mixer::pulseaudioPresent();
-	volumeFeedbackWarning->setVisible(!volumeFeebackAvailable);
-	m_beepOnVolumeChange->setDisabled(!volumeFeebackAvailable);
-
-	bool overdriveAvailable = volumeFeebackAvailable; // "shortcut" for Mixer::pulseaudioPresent() (see above)
-	m_volumeOverdrive->setVisible(overdriveAvailable);
-	volumeOverdriveWarning->setVisible(overdriveAvailable);
 
 	QString autostartConfigFilename = KGlobal::dirs()->findResource("autostart", QString("kmix_autostart.desktop"));
 	kDebug()

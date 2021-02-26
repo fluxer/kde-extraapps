@@ -394,8 +394,6 @@ void ViewDockAreaPopup::refreshVolumeLevels()
 
 void ViewDockAreaPopup::configureView()
 {
-//    Q_ASSERT( !pulseaudioPresent() );
-
 //    QSet<QString> currentlyActiveMixersInDockArea;
 //	foreach ( Mixer* mixer, _mixers )
 //	{

@@ -40,7 +40,6 @@
 QList<Mixer *> Mixer::s_mixers;
 MasterControl Mixer::_globalMasterCurrent;
 MasterControl Mixer::_globalMasterPreferred;
-bool Mixer::m_beepOnVolumeChange = false;
 
 int Mixer::numDrivers()
 {
@@ -76,17 +75,6 @@ bool Mixer::dynamicBackendsPresent()
   }
   return false;
 }
-
-bool Mixer::pulseaudioPresent()
-{
-  foreach ( Mixer* mixer, Mixer::mixers() )
-  {
-    if ( mixer->getDriverName() == "PulseAudio" )
-      return true;
-  }
-  return false;
-}
-
 
 Mixer::Mixer( QString& ref_driverName, int device )
     : m_balance(0), _mixerBackend(0L), m_dynamic(false)
@@ -345,11 +333,6 @@ QString Mixer::translateKernelToWhatsthis(const QString &kernelName)
 }
 
 /* ------- WRAPPER METHODS. END -------------------------------- */
-
-void Mixer::setBeepOnVolumeChange(bool beepOnVolumeChange)
-{
-	m_beepOnVolumeChange = beepOnVolumeChange;
-}
 
 int Mixer::balance() const {
     return m_balance;

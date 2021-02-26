@@ -28,7 +28,6 @@
 #include <QString>
 
 
-
 #if defined(Q_OS_SOLARIS)
 #define SUN_MIXER
 #elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(Q_OS_DRAGONFLY) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
@@ -70,17 +69,10 @@ QString MPRIS2_getDriverName();
 Mixer_Backend* ALSA_getMixer(Mixer *mixer, int device );
 QString ALSA_getDriverName();
 
-Mixer_Backend* PULSE_getMixer(Mixer *mixer, int device );
-QString PULSE_getDriverName();
-
 MixerFactory g_mixerFactories[] = {
 
 #if defined(SUN_MIXER)
     { SUN_getMixer, SUN_getDriverName },
-#endif
-
-#if defined(HAVE_PULSE)
-    { PULSE_getMixer, PULSE_getDriverName },
 #endif
 
 #if defined(HAVE_ALSA)

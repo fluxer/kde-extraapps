@@ -108,10 +108,6 @@ private:
 	QCheckBox *m_onLogin;
 	QCheckBox *allowAutostart;
 	QLabel *allowAutostartWarning;
-	QCheckBox *m_beepOnVolumeChange;
-	QCheckBox *m_volumeOverdrive;
-	QLabel *volumeFeedbackWarning;
-	QLabel *volumeOverdriveWarning;
 
 	QBoxLayout *layoutControlsTab;
 	DialogChooseBackends* dvc;

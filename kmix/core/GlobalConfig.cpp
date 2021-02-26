@@ -29,8 +29,6 @@ GlobalConfig::GlobalConfig() :
 	// General
 	addItemBool("Tickmarks", data.showTicks, true);
 	addItemBool("Labels", data.showLabels, true);
-	addItemBool("VolumeOverdrive", data.volumeOverdrive, false);
-	addItemBool("VolumeFeedback", data.beepOnVolumeChange, true);
 	ItemString* is = addItemString("Orientation", data.orientationMainGUIString, "Vertical");
 	kDebug() << is->name() << is->value();
 	addItemString("Orientation.TrayPopup", data.orientationTrayPopupString, QLatin1String("Vertical"));
@@ -43,7 +41,6 @@ GlobalConfig::GlobalConfig() :
 
 	// Startup
 	addItemBool("AutoStart", data.allowAutostart, true);
-	addItemBool("VolumeFeedback", data.volumeFeedback, true);
 	addItemBool("startkdeRestore", data.startkdeRestore, true);
 
 	// Debug options: Not in dialog

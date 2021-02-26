@@ -40,11 +40,8 @@ int main(int argc, char *argv[])
 
    // Author Policy: Long-term maintainers and backend writers/maintainers go in the Authors list.
    aboutData.addAuthor(ki18n("Christian Esken")   , ki18n("Original author and current maintainer"), "esken@kde.org");
-   aboutData.addAuthor(ki18n("Colin Guthrie")     , ki18n("PulseAudio support"), "colin@mageia.org");
    aboutData.addAuthor(ki18n("Helio Chissini de Castro"), ki18n("ALSA 0.9x port"), "helio@kde.org" );
    aboutData.addAuthor(ki18n("Brian Hanson")      , ki18n("Solaris support"), "bhanson@hotmail.com");
-// The HP/UX port is not maintained anymore, and no official part of KMix anymore
-// aboutData.addAuthor(ki18n("Helge Deller")      , ki18n("HP/UX port"), "deller@gmx.de");
 // The initial support was for ALSA 0.5. The new code is not based on it IIRC.
 // aboutData.addAuthor(ki18n("Nick Lopez")        , ki18n("Initial ALSA port"), "kimo_sabe@usa.net");
 

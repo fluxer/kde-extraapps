@@ -70,7 +70,6 @@ KMixWindow : public KXmlGuiWindow
    void initWidgets();
    //void setErrorMixerWidget();
 
-   void setBeepOnVolumeChange(bool beep);
    void fixConfigAfterRead();
 
    virtual bool queryClose();
