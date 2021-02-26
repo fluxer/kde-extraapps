@@ -9,7 +9,7 @@ kde4_add_plugin(kio_bluetooth ${kio_bluetooth_PART_SRCS})
 
 target_link_libraries(kio_bluetooth
   ${KDE4_KDECORE_LIBS}
-  ${KDE4_KIO_LIBRARY}
+  ${KDE4_KIO_LIBS}
   ${KDE4_KDEUI_LIBS}
 )
 

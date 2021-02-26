@@ -14,21 +14,21 @@ set(okular_SRCS
     pageitem.cpp
     documentitem.cpp
     thumbnailitem.cpp
-    )
+)
     
 kde4_add_kcfg_files(okular_SRCS ${PROJECT_SOURCE_DIR}/conf/settings.kcfgc )
 
 add_library(okularplugin SHARED ${okular_SRCS})
 target_link_libraries(okularplugin
-        ${QT_QTCORE_LIBRARY}
-        ${QT_QTGUI_LIBRARY}
-        ${QT_QTDECLARATIVE_LIBRARY}
-        ${QT_QTXML_LIBRARY}
-        ${KDE4_KDECORE_LIBRARY}
-        ${KDE4_KDEUI_LIBRARY}
-        ${KDE4_KIO_LIBRARY}
-        okularcore
-        )
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${QT_QTDECLARATIVE_LIBRARY}
+    ${QT_QTXML_LIBRARY}
+    ${KDE4_KDECORE_LIBS}
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_KIO_LIBS}
+    okularcore
+)
 
 install(TARGETS okularplugin DESTINATION ${KDE4_IMPORTS_INSTALL_DIR}/org/kde/okular)
 install(FILES qmldir DESTINATION ${KDE4_IMPORTS_INSTALL_DIR}/org/kde/okular)

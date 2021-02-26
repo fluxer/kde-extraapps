@@ -22,7 +22,7 @@ kde4_add_plugin(kio_obexftp ${kio_obexftp_SRCS})
 
 target_link_libraries(kio_obexftp
   ${KDE4_KDECORE_LIBS}
-  ${KDE4_KIO_LIBRARY}
+  ${KDE4_KIO_LIBS}
   ${QT_QTDBUS_LIBRARY}
 )
 

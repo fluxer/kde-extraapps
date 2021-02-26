@@ -234,9 +234,9 @@ qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h
 add_executable(kget ${kget_SRCS})
 
 target_link_libraries(kget
-    ${KDE4_KDEUI_LIBRARY}
-    ${KDE4_KIO_LIBRARY}
-    ${KDE4_KCMUTILS_LIBRARY}
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${KDE4_KCMUTILS_LIBS}
     ${KDE4_KNOTIFYCONFIG_LIBS}
     kgetcore
 )

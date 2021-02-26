@@ -114,7 +114,7 @@ target_link_libraries(akregatorpart
     akregatorprivate
     ${KDE4_KCMUTILS_LIBS}
     ${KDE4_KNOTIFYCONFIG_LIBS}
-    ${KDE4_SOLID_LIBRARY}
+    ${KDE4_SOLID_LIBS}
     ${KDE4_KPARTS_LIBS}
     syndication
 )

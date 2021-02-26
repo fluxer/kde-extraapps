@@ -24,7 +24,10 @@ set(wizard_SRCS
 add_executable(bluedevil-wizard ${wizard_SRCS})
 
 target_link_libraries(bluedevil-wizard
-                      ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBS} bluedevil)
+    ${KDE4_KIO_LIBS}
+    ${KDE4_KDEUI_LIBS}
+    bluedevil
+)
 
 install(TARGETS bluedevil-wizard ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES bluedevil-wizard.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})

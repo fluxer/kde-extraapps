@@ -17,7 +17,7 @@ kde4_add_plugin(okularGenerator_comicbook ${okularGenerator_comicbook_PART_SRCS}
 
 target_link_libraries(okularGenerator_comicbook  okularcore ${KDE4_KIO_LIBS} )
 if (UNIX)
-   target_link_libraries(okularGenerator_comicbook ${KDE4_KPTY_LIBRARY})
+   target_link_libraries(okularGenerator_comicbook ${KDE4_KPTY_LIBS})
 endif (UNIX)
 
 install(TARGETS okularGenerator_comicbook DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

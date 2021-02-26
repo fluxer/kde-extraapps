@@ -9,7 +9,7 @@ endif(NOT WIN32)
 if(HUNSPELL_FOUND)
     add_definitions(-DHAVE_HUNSPELL)
     include_directories(
-	${HUNSPELL_INCLUDE_DIR}
+        ${HUNSPELL_INCLUDE_DIR}
     )
 endif(HUNSPELL_FOUND)
 
@@ -159,7 +159,7 @@ target_link_libraries(lokalize
     ${KDE4_KIO_LIBS}
     ${KDE4_KFILE_LIBS}
     ${KDE4_KDEUI_LIBS}
-    ${KDE4_THREADWEAVER_LIBRARY}
+    ${KDE4_THREADWEAVER_LIBS}
     ${QT_QTSQL_LIBRARY}
 )
 if(HUNSPELL_FOUND)

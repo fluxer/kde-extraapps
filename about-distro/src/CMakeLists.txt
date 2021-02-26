@@ -10,9 +10,9 @@ set(kcm_SRCS
 kde4_add_plugin(kcm_about_distro ${kcm_SRCS})
 
 target_link_libraries(kcm_about_distro
-    ${KDE4_KDEUI_LIBRARY}
+    ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
-    ${KDE4_SOLID_LIBRARY}
+    ${KDE4_SOLID_LIBS}
 )
 
 install(TARGETS kcm_about_distro DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
