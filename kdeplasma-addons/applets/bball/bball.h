@@ -22,13 +22,14 @@
 #define bball_HEADER
 
 #include <QtCore/QBasicTimer>
+#include <QtCore/QElapsedTimer>
 #include <QtCore/QDateTime>
 #include <QtGui/QVector2D>
 #include <QGraphicsSceneMouseEvent>
+#include <QtDBus/QDBusInterface>
 #include <QSizeF>
 
 #include <KConfigDialog>
-#include <KMediaPlayer>
 #include <Plasma/Applet>
 #include <Plasma/Svg>
 
@@ -39,6 +40,7 @@ class bballApplet : public Plasma::Applet
     Q_OBJECT
 public:
     bballApplet(QObject * parent, const QVariantList & args);
+    ~bballApplet();
 
     // ::Plasma::Applet
     void init();
@@ -78,8 +80,9 @@ private:
     qreal m_gravity, m_friction, m_restitution;
 
     bool m_sound_enabled;
-    int m_sound_volume;
     QString m_sound_url;
+    QElapsedTimer m_sound_throttle;
+    QDBusInterface *m_sound_player;
 
     bool m_auto_bounce_enabled;
     qreal m_auto_bounce_strength;
@@ -105,8 +108,6 @@ private:
     QPointF m_prevMouseScenePos;
 
     Ui::bballConfig ui;
-
-    KAudioPlayer * m_soundPlayer;
 };
 
 K_EXPORT_PLASMA_APPLET (BbalL, bballApplet)

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>546</width>
-    <height>437</height>
+    <height>384</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -160,17 +160,7 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="2" colspan="2">
-    <widget class="QSlider" name="soundVolume">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="12" column="1">
+   <item row="11" column="1">
     <widget class="QLabel" name="soundFileLabel">
      <property name="enabled">
       <bool>false</bool>
@@ -186,7 +176,7 @@
      </property>
     </widget>
    </item>
-   <item row="12" column="2" colspan="2">
+   <item row="11" column="2" colspan="2">
     <widget class="KUrlRequester" name="soundFile">
      <property name="enabled">
       <bool>false</bool>
@@ -199,7 +189,7 @@
      </property>
     </widget>
    </item>
-   <item row="13" column="0" colspan="2">
+   <item row="12" column="0" colspan="2">
     <widget class="QLabel" name="label_9">
      <property name="font">
       <font>
@@ -212,7 +202,7 @@
      </property>
     </widget>
    </item>
-   <item row="18" column="2">
+   <item row="17" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -306,30 +296,14 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="1">
-    <widget class="QLabel" name="soundVolumeLabel">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Volume:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="buddy">
-      <cstring>soundVolume</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="15" column="2">
+   <item row="14" column="2">
     <widget class="QCheckBox" name="autoBounceEnabled">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="15" column="1">
+   <item row="14" column="1">
     <widget class="QLabel" name="label_10">
      <property name="text">
       <string>Auto bounce:</string>
@@ -342,7 +316,7 @@
      </property>
     </widget>
    </item>
-   <item row="17" column="1">
+   <item row="16" column="1">
     <widget class="QLabel" name="autoBounceStrengthLabel">
      <property name="enabled">
       <bool>false</bool>
@@ -374,7 +348,7 @@
      </property>
     </spacer>
    </item>
-   <item row="17" column="2">
+   <item row="16" column="2">
     <widget class="QSlider" name="autoBounceStrength">
      <property name="enabled">
       <bool>false</bool>
@@ -497,38 +471,6 @@
     <hint type="destinationlabel">
      <x>92</x>
      <y>219</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>soundEnabled</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>soundVolumeLabel</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>130</x>
-     <y>103</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>63</x>
-     <y>157</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>soundEnabled</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>soundVolume</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>284</x>
-     <y>101</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>289</x>
-     <y>151</y>
     </hint>
    </hints>
   </connection>

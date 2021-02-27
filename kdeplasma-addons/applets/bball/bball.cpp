@@ -19,11 +19,10 @@
  ***************************************************************************/
 
 #include "bball.h"
-#include <QtCore/qsize.h>
+
 #include <QtGui/QPainter>
 #include <QtGui/QDesktopWidget>
 #include <QtGui/QGraphicsScene>
-#include <QtGui/qgraphicssceneevent.h>
 #include <KSharedConfig>
 #include <KLocale>
 #include <KStandardDirs>
@@ -31,10 +30,6 @@
 #include <KMessageBox>
 
 #include <stdlib.h>
-
-#ifdef Q_CC_MSVC
-#include <iso646.h>
-#endif
 
 // default values
 static const int initial_ball_radius = 64;
@@ -50,15 +45,14 @@ bballApplet::bballApplet(QObject * parent, const QVariantList & args):
     m_friction(0.03),
     m_restitution(0.8),
     m_sound_enabled(false),
-    m_sound_volume(100),
+    m_sound_player(0),
     m_auto_bounce_enabled(false),
     m_auto_bounce_strength(0),
     // more status
     m_radius(initial_ball_radius),
     m_angle(0),
     m_angularVelocity(0),
-    m_mousePressed(false),
-    m_soundPlayer(0)
+    m_mousePressed(false)
 {
     setHasConfigurationInterface(true);
     //TODO figure out why it is not good enough to set it here
@@ -68,6 +62,13 @@ bballApplet::bballApplet(QObject * parent, const QVariantList & args):
     // this can be caught in constraintsEvent with Plasma::FormFactorConstraint
     setBackgroundHints(NoBackground);
     resize(contentSizeHint());
+}
+
+bballApplet::~bballApplet()
+{
+    if (m_sound_player) {
+        m_sound_player->deleteLater();
+    }
 }
 
 void bballApplet::init()
@@ -126,9 +127,6 @@ void bballApplet::createConfigurationInterface(KConfigDialog *parent)
 
     // Sound
     ui.soundEnabled->setChecked(m_sound_enabled);
-    ui.soundVolumeLabel->setEnabled(m_sound_enabled);
-    ui.soundVolume->setEnabled(m_sound_enabled);
-    ui.soundVolume->setSliderPosition(m_sound_volume);
     ui.soundFileLabel->setEnabled(m_sound_enabled);
     ui.soundFile->setEnabled(m_sound_enabled);
     ui.soundFile->setUrl(KUrl::fromPath(m_sound_url));
@@ -148,7 +146,6 @@ void bballApplet::createConfigurationInterface(KConfigDialog *parent)
     connect(ui.friction, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
     connect(ui.resitution, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
     connect(ui.soundEnabled, SIGNAL(stateChanged(int)), parent, SLOT(settingsModified()));
-    connect(ui.soundVolume, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
     connect(ui.soundFile, SIGNAL(textChanged(QString)), parent, SLOT(settingsModified()));
     connect(ui.autoBounceEnabled, SIGNAL(stateChanged(int)), parent, SLOT(settingsModified()));
     connect(ui.autoBounceStrength, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
@@ -267,10 +264,6 @@ void bballApplet::configurationChanged()
         } else
             KMessageBox::error(0, i18n("The given sound could not be loaded. The sound will not be changed."));
     }
-    m_sound_volume = ui.soundVolume->value();
-    cg.writeEntry("SoundVolume", m_sound_volume);
-    if (m_soundPlayer)
-        m_soundPlayer->setVolume(m_sound_volume);
 
     // Misc
     m_auto_bounce_enabled = ui.autoBounceEnabled->checkState() == Qt::Checked;
@@ -306,7 +299,6 @@ void bballApplet::configChanged()
     // Sound
     m_sound_enabled = cg.readEntry("SoundEnabled", false);
     m_sound_url = cg.readEntry("SoundURL", KStandardDirs::locate ("data", QLatin1String( "bball/bounce.ogg" )));
-    m_sound_volume = cg.readEntry("SoundVolume", 100);
 
     // Misc
     m_auto_bounce_enabled = cg.readEntry("AutoBounceEnabled", false);
@@ -402,18 +394,18 @@ void bballApplet::updatePhysics()
 
 void bballApplet::playBoingSound()
 {
-    if (!m_sound_enabled || m_velocity.x() == 0.0 || m_velocity.y() == 0.0)
+    // TODO: throttle based on sound duration, configurable or both?
+    if (!m_sound_enabled || m_velocity.isNull() || !m_sound_throttle.hasExpired(300))
         return;
 
     // create the player if missing
-    if (!m_soundPlayer) {
-        m_soundPlayer = new KAudioPlayer(this);
-        m_soundPlayer->setPlayerID("plasma_applet_bball");
-        m_soundPlayer->setVolume(m_sound_volume);
+    if (!m_sound_player) {
+        m_sound_player = new QDBusInterface("org.kde.kded", "/modules/kaudioplayer", "org.kde.kaudioplayer");
     }
 
+    m_sound_throttle.restart();
     // play the sound
-    m_soundPlayer->load(m_sound_url);
+    m_sound_player->call("play", m_sound_url);
 }
 
 void bballApplet::syncGeometry()
