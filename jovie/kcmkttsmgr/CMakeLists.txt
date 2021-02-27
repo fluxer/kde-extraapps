@@ -10,7 +10,7 @@ set(kcm_kttsd_PART_SRCS
 )
 
 qt4_add_dbus_interfaces(kcm_kttsd_PART_SRCS
-    ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml
+    ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSpeech.xml
 )
 
 kde4_add_plugin(kcm_kttsd ${kcm_kttsd_PART_SRCS})

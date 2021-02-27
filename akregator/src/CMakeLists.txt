@@ -104,7 +104,7 @@ set(akregatorpart_PART_SRCS
     feedpropertieswidgetbase.ui
 )
 
-qt4_add_dbus_interfaces(akregatorpart_PART_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml)
+qt4_add_dbus_interfaces(akregatorpart_PART_SRCS ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSpeech.xml)
 qt4_add_dbus_adaptor(akregatorpart_PART_SRCS org.kde.akregator.part.xml akregator_part.h Akregator::Part)
 
 kde4_add_plugin(akregatorpart ${akregatorpart_PART_SRCS})

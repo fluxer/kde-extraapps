@@ -16,7 +16,7 @@ set(jovie_SRCS
 )
 
 qt4_add_dbus_adaptor(jovie_SRCS
-    ${KDE4_DBUS_INTERFACES_DIR}/org.kde.KSpeech.xml
+    ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSpeech.xml
     jovie.h
     Jovie
 )
