@@ -8,7 +8,6 @@ target_link_libraries(plasma_applet_bball
     ${KDE4_PLASMA_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
-    kmediaplayer
 )
 
 install(
