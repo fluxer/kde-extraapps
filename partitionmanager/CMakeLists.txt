@@ -31,7 +31,7 @@ pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(UUID REQUIRED uuid)
 
 macro_optional_find_package(LibATASmart)
-set_package_properties(LibArchive PROPERTIES
+set_package_properties(LibATASmart PROPERTIES
     DESCRIPTION "ATA S.M.A.R.T. reading and parsing library"
     URL "http://0pointer.de/blog/projects/being-smart.html"
     PURPOSE "Required for ATA S.M.A.R.T. status support"
