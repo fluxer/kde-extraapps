@@ -1,0 +1,38 @@
+version: 4.20.0-{branch}-{build}
+image: Ubuntu2004
+clone_depth: 1
+cache:
+  - /home/appveyor/.ccache
+
+build_script:
+- sh: >-
+    sudo apt-get update -qq
+
+    sudo apt-get install -qq wget
+
+    sudo wget https://raw.githubusercontent.com/fluxer/katana-ubuntu/master/katana.list -O /etc/apt/sources.list.d/katana.list
+
+    sudo apt-get update -qq
+
+    sudo apt-get install -qq cmake katie-dev katana-baseapps \
+        katana-workspace strigi xorg-dev zlib1g-dev libgpgme-dev libsqlite3-dev \
+        libacl1-dev libattr1-dev libarchive-dev libasound2-dev libatasmart-dev \
+        libavcodec-dev libavformat-dev libavutil-dev libblkid-dev libcups2-dev \
+        libdjvulibre-dev libepub-dev libexiv2-dev libflac++-dev libfreetype6-dev \
+        libgcrypt20-dev libgettextpo-dev libglib2.0-dev libgmp-dev libmms-dev \
+        libhunspell-dev libjpeg-dev libpng-dev libparted-dev libqalculate-dev \
+        libraw-dev libsane-dev libspectre-dev libspeechd-dev libswscale-dev \
+        libtag1-dev libtiff5-dev uuid-dev libudev-dev libscim-dev \
+        libvncserver-dev libxcb-randr0-dev freerdp2-dev libibus-1.0-dev \
+        libboost-dev libffmpegthumbnailer-dev qca-katie libbz2-dev \
+        libdbusmenu-katie libpoppler-katie ccache
+
+    export PATH="/usr/lib/ccache/:$PATH"
+
+    mkdir build
+
+    cd build
+
+    cmake ../ -Wno-dev
+
+    make -j $(nproc || echo 1)
