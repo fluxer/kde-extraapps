@@ -33,6 +33,6 @@ build_script:
 
     cd build
 
-    cmake ../ -Wno-dev
+    cmake ../ -Wno-dev -DBUILD_kuassel=FALSE
 
     make -j $(nproc || echo 1)
