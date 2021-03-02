@@ -2,7 +2,6 @@ include_directories(
    ../
 )
 
-add_definitions(-DDO_KGET_TEST)
 set(kget_test_transfers_SRCS
     testkget.cpp
     testtransfers.cpp

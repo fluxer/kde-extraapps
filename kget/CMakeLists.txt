@@ -50,6 +50,13 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
      add_definitions(-DDEBUG)
 endif()
 
+# TODO: utterly broken
+set(KGET_TESTING FALSE)
+
+if(KGET_TESTING)
+    add_definitions(-DDO_KGET_TEST)
+endif()
+
 if(QGPGME_FOUND)
     add_definitions(-DHAVE_QGPGME)
     include_directories(${QGPGME_INCLUDE_DIR})
@@ -62,7 +69,7 @@ add_subdirectory(transfer-plugins)
 add_subdirectory(extensions)
 add_subdirectory(desktop)
 add_subdirectory(plasma)
-if(ENABLE_TESTING)
+if(KGET_TESTING)
     add_subdirectory(tests)
 endif()
 
@@ -240,6 +247,12 @@ target_link_libraries(kget
     ${KDE4_KNOTIFYCONFIG_LIBS}
     kgetcore
 )
+
+if (KGET_TESTING)
+    target_link_libraries(kget
+        ${QT_QTTEST_LIBRARY}
+    )
+endif()
 
 if (QGPGME_FOUND)
     target_link_libraries(kget ${QGPGME_LIBRARIES})
