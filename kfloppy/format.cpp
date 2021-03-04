@@ -34,22 +34,6 @@
 #include <kdebug.h>
 #include <kstandarddirs.h>
 
-static QString extPath = QString();
-
-/* static */ QString findExecutable(const QString &e)
-{
-	if (extPath.isEmpty())
-	{
-            QString path = QLatin1String( qgetenv("PATH") );
-		if (!path.isEmpty()) path.append(QLatin1String( ":" ));
-		path.append(QLatin1String( "/usr/sbin:/sbin" ));
-		extPath = path;
-	}
-
-	return KGlobal::dirs()->findExe(e, extPath);
-}
-
-
 KFAction::KFAction(QObject *parent) :
 	QObject(parent)
 {
@@ -395,7 +379,7 @@ FDFormat::FDFormat(QObject *p) :
 
 /* static */ bool FDFormat::runtimeCheck()
 {
-	fdformatName = findExecutable(QLatin1String( "fdformat" ));
+	fdformatName = KStandardDirs::findRootExe(QLatin1String( "fdformat" ));
 	return (!fdformatName.isEmpty());
 }
 
@@ -562,7 +546,7 @@ DDZeroOut::DDZeroOut(QObject *p) :
 
 /* static */ bool DDZeroOut::runtimeCheck()
 {
-    m_ddName = findExecutable(QLatin1String( "dd" ));
+    m_ddName = KStandardDirs::findRootExe(QLatin1String( "dd" ));
     return (!m_ddName.isEmpty());
 }
 
@@ -637,9 +621,9 @@ FATFilesystem::FATFilesystem(QObject *parent) :
 	DEBUGSETUP;
 
 #ifdef ANY_BSD
-	newfs_fat = findExecutable(QLatin1String( "newfs_msdos" ));
+	newfs_fat = KStandardDirs::findRootExe(QLatin1String( "newfs_msdos" ));
 #elif defined(ANY_LINUX)
-	newfs_fat = findExecutable(QLatin1String( "mkdosfs" ));
+	newfs_fat = KStandardDirs::findRootExe(QLatin1String( "mkdosfs" ));
 #else
 	return false;
 #endif
@@ -757,7 +741,7 @@ UFSFilesystem::UFSFilesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 
-	newfs = findExecutable(QLatin1String( "newfs" ));
+	newfs = KStandardDirs::findRootExe(QLatin1String( "newfs" ));
 
 	return !newfs.isEmpty();
 }
@@ -815,7 +799,7 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 
-	newfs = findExecutable(QLatin1String( "mke2fs" ));
+	newfs = KStandardDirs::findRootExe(QLatin1String( "mke2fs" ));
 
 	return !newfs.isEmpty();
 }
@@ -913,7 +897,7 @@ MinixFilesystem::MinixFilesystem(QObject *parent) :
 {
 	DEBUGSETUP;
 
-	newfs = findExecutable(QLatin1String( "mkfs.minix" ));
+	newfs = KStandardDirs::findRootExe(QLatin1String( "mkfs.minix" ));
 
 	return !newfs.isEmpty();
 }

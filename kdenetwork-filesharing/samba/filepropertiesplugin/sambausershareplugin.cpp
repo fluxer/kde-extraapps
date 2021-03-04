@@ -65,8 +65,7 @@ SambaUserSharePlugin::SambaUserSharePlugin(QObject *parent, const QList<QVariant
     properties->setFileSharingPage(vbox);
 
     // smbd is usually found as /usr/sbin/smbd
-    const QString exePath = "/usr/sbin:/usr/bin:/sbin:/bin";
-    if (KStandardDirs::findExe("smbd", exePath).isEmpty()) {
+    if (KStandardDirs::findRootExe("smbd").isEmpty()) {
 
         QWidget *widget = new QWidget(vbox);
         QVBoxLayout *vLayout = new QVBoxLayout(widget);
