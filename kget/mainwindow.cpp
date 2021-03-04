@@ -35,7 +35,8 @@
 #include "ui/metalinkcreator/metalinkcreator.h"
 #include "extensions/webinterface/httpserver.h"
 #ifdef DO_KGET_TEST
-    #include "tests/testkget.h"
+#  include "tests/testkget.h"
+#  include <QtTest/QtTest>
 #endif
 
 #include <kapplication.h>
@@ -57,7 +58,6 @@
 #include <QClipboard>
 #include <QTimer>
 #include <QMenuBar>
-#include <QtTest/QtTest>
 
 MainWindow::MainWindow(bool showMainwindow, bool startWithoutAnimation, bool doTesting, QWidget *parent)
     : KXmlGuiWindow( parent ),
