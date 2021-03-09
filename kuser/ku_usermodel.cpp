@@ -33,10 +33,7 @@ int KU_UserModel::columnCount( const QModelIndex & parent ) const
 {
   Q_UNUSED(parent)
 
-  if ( KU_Global::users()->getCaps() & KU_Users::Cap_Samba ) 
-    return 11;
-  else
-    return 5;
+  return 5;
 }
 
 QVariant KU_UserModel::headerData( int section, Qt::Orientation orientation, int role ) const
@@ -50,12 +47,6 @@ QVariant KU_UserModel::headerData( int section, Qt::Orientation orientation, int
     case 2: return(i18n("Full Name"));
     case 3: return(i18n("Home Directory"));
     case 4: return(i18n("Login Shell"));
-    case 5: return(i18n("Domain SID"));
-    case 6: return(i18n("RID"));
-    case 7: return(i18n("Samba Login Script"));
-    case 8: return(i18n("Samba Profile Path"));
-    case 9: return(i18n("Samba Home Drive"));
-    case 10: return(i18n("Samba Home Path"));
     default: return QVariant();
   }
 }
@@ -73,13 +64,6 @@ QVariant KU_UserModel::data( const QModelIndex & index, int role ) const
         case 2: return user.getFullName();
         case 3: return user.getHomeDir();
         case 4: return user.getShell();
-        case 5: return user.getSID().getDOM();
-        case 6: return user.getCaps() & KU_User::Cap_Samba ?
-          QString::number( user.getSID().getRID() ) : QString();
-        case 7: return user.getLoginScript();
-        case 8: return user.getProfilePath();
-        case 9: return user.getHomeDrive();
-        case 10: return user.getHomePath();
         default: return QVariant();
       }
     case Qt::ForegroundRole:

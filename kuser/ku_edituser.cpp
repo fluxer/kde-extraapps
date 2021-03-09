@@ -398,7 +398,6 @@ void KU_EditUser::selectuser()
   ismoreshells = false;
   user = one ? mUser : KU_Global::users()->at(mSelected[0]);
   olduid = user.getUID();
-  oldrid = user.getSID().getRID();
   oldshell = user.getShell();
   lstchg = user.getLastChange();
   QDateTime datetime;

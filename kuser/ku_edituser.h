@@ -87,7 +87,6 @@ protected:
   bool ischanged;
   bool isgchanged;
   uid_t olduid;
-  uint oldrid;
   QString oldshell;
   QString  primaryGroup;
   bool  primaryGroupWasOn;

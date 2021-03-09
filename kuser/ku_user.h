@@ -35,59 +35,47 @@ class KU_Users;
 class KU_User_Private: public QSharedData
 {
 public:
-KU_User_Private();
+    KU_User_Private();
 
-int Caps;
-QString Name;
-QString Surname;
-QString Email;
-QString Pwd;
-QString HomeDir;
-QString Shell;
-QString FullName;
-uid_t UID;
-uid_t GID;
-bool Disabled;
+    int Caps;
+    QString Name;
+    QString Surname;
+    QString Email;
+    QString Pwd;
+    QString HomeDir;
+    QString Shell;
+    QString FullName;
+    uid_t UID;
+    uid_t GID;
+    bool Disabled;
 
-//gecos
-//--BSD gecos
-QString Office;
-QString WorkPhone;
-QString HomePhone;
-QString Class;
-//--BSD end
-QString Office1;
-QString Office2;
-QString Address;
+    //gecos
+    //--BSD gecos
+    QString Office;
+    QString WorkPhone;
+    QString HomePhone;
+    QString Class;
+    //--BSD end
+    QString Office1;
+    QString Office2;
+    QString Address;
 
-//shadow
-QString SPwd;
-time_t Expire;
-time_t LastChange;
-int Min;
-int Max;
-int Warn;
-int Inactive;
-int Flag;
+    //shadow
+    QString SPwd;
+    time_t Expire;
+    time_t LastChange;
+    int Min;
+    int Max;
+    int Warn;
+    int Inactive;
+    int Flag;
 
-//samba
-QString LMPwd;
-QString NTPwd;
-QString LoginScript;
-QString ProfilePath;
-QString HomeDrive;
-QString HomePath;
-QString Workstations;
-QString Domain;
-class SID SID;
-class SID PGSID;
-
-//Administrative
-bool CreateHome;
-bool CreateMailBox;
-bool CopySkel;
-bool DeleteHome;
-bool DeleteMailBox;
+    //Administrative
+    bool CreateHome;
+    bool CreateMailBox;
+    bool CopySkel;
+    bool DeleteHome;
+    bool DeleteMailBox;
 };
 
 class KU_User {
@@ -138,18 +126,6 @@ public:
   KU_PROPERTY(int,Inactive);
   KU_PROPERTY(int,Flag);
 
-//samba
-  KU_PROPERTY(QString, LMPwd);
-  KU_PROPERTY(QString, NTPwd);
-  KU_PROPERTY(QString, LoginScript);
-  KU_PROPERTY(QString, ProfilePath);
-  KU_PROPERTY(QString, HomeDrive);
-  KU_PROPERTY(QString, HomePath);
-  KU_PROPERTY(QString, Workstations);
-  KU_PROPERTY(QString, Domain);
-  KU_PROPERTY(SID, SID);
-  KU_PROPERTY(SID, PGSID);
-
 //Administrative
   KU_PROPERTY(bool, CreateHome);
   KU_PROPERTY(bool, CreateMailBox);
@@ -180,9 +156,8 @@ public:
     Cap_Passwd = 2,
     Cap_Shadow = 4,
     Cap_InetOrg = 8,
-    Cap_Samba = 16,
-    Cap_Disable_POSIX = 32,
-    Cap_BSD = 64
+    Cap_Disable_POSIX = 16,
+    Cap_BSD = 32
   };
   typedef QList<KU_User> AddList;
   typedef QList<int> DelList;
@@ -200,9 +175,6 @@ public:
 
   int lookup(const QString & name) const;
   int lookup(uid_t uid) const;
-  int lookup_sam( const SID &sid ) const;
-  int lookup_sam( const QString &sid ) const;
-  int lookup_sam( uint rid ) const;
 
   void add( const KU_User &user );
   void del( int index );
@@ -220,11 +192,6 @@ public:
   * It should return the first available UID, or KU_Users::NO_FREE if no more UID.
   */
   virtual uid_t first_free() const;
-  /**
-  * May be reimplemented in descendant classes.
-  * It should return the first available user RID, or 0 if no more RID.
-  */
-  virtual uint first_free_sam() const;
   /**
   * Must be reimplemented in various backends. It should encode @param password
   * into the appropriate fields in @param user.

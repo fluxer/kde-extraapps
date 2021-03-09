@@ -33,10 +33,7 @@ int KU_GroupModel::columnCount( const QModelIndex & parent ) const
 {
   Q_UNUSED(parent)
 
-  if ( KU_Global::groups()->getCaps() & KU_Users::Cap_Samba ) 
-    return 7;
-  else
-    return 2;
+  return 2;
 }
 
 QVariant KU_GroupModel::headerData( int section, Qt::Orientation orientation, int role ) const
@@ -47,11 +44,6 @@ QVariant KU_GroupModel::headerData( int section, Qt::Orientation orientation, in
   switch ( section ) {
     case 0: return(i18n("GID"));
     case 1: return(i18n("Group Name"));
-    case 2: return(i18n("Domain SID"));
-    case 3: return(i18n("RID"));
-    case 4: return(i18n("Type"));
-    case 5: return(i18n("Display Name"));
-    case 6: return(i18n("Description"));
     default: return QVariant();
   }
 }
@@ -65,24 +57,7 @@ QVariant KU_GroupModel::data( const QModelIndex & index, int role ) const
       switch( index.column() ) {
         case 0: return QString::number( group.getGID() );
         case 1: return group.getName();
-        case 2: return ( group.getCaps() & KU_Group::Cap_Samba ) ? 
-          group.getSID().getDOM() : QString();
-        case 3: return ( group.getCaps() & KU_Group::Cap_Samba ) ?
-          QString::number( group.getSID().getRID() ) : QString();
-        case 4: 
-	  if ( group.getCaps() & KU_Group::Cap_Samba ) {
-            switch ( group.getType() ) {
-              case 2: return i18n("Domain");
-              case 4: return i18n("Local");
-              case 5: return i18n("Builtin");
-              default: return i18n("Unknown");
-             }
-           } else {
-             return QVariant();
-           }
-        case 5: return group.getDisplayName();
-        case 6: return group.getDesc();
-      }	
+      }
   }
   return QVariant();
 }

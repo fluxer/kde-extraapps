@@ -42,14 +42,7 @@ KU_EditGroup::KU_EditGroup(const KU_Group &group, bool add,
 
   mAdd = add;
   mOldName = group.getName();
-  SID sid = group.getSID();
   ro = KU_Global::groups()->getCaps() & KU_Groups::Cap_ReadOnly;
-  mSamba = KU_Global::groups()->getCaps() & KU_Groups::Cap_Samba;
-
-  RID rid;
-  rid.rid = 512; rid.name = i18n("Domain Admins"); rid.desc = i18n("Admins"); mRids.append( rid );
-  rid.rid = 513; rid.name = i18n("Domain Users"); rid.desc = i18n("Users");  mRids.append( rid );
-  rid.rid = 514; rid.name = i18n("Domain Guests"); rid.desc = i18n("Guests"); mRids.append( rid );
 
   QFrame *page = new QFrame( this );
   QGridLayout *layout = new QGridLayout( page );
@@ -73,25 +66,6 @@ KU_EditGroup::KU_EditGroup(const KU_Group &group, bool add,
   layout->addWidget( lb, 0, 0 );
   layout->addWidget( legid, 0, 1, 1, 2 );
 
-  if ( mSamba ) {
-    lb = new QLabel( page );
-    lb->setText(i18n("Group rid:"));
-    lerid = new KComboBox( page );
-    lerid->setEditable( !ro );
-    QList<RID>::Iterator it;
-    for ( it = mRids.begin(); it != mRids.end(); ++it ) {
-      lerid->addItem( QString::number( (*it).rid ) + QLatin1String( " - " ) + (*it).name );
-    }
-
-    lerid->lineEdit()->setText( QString::number( sid.getRID() ) );
-    lerid->setValidator (new QIntValidator(this) );
-    lerid->setEnabled( mAdd );
-    connect( lerid, SIGNAL(activated(int)), SLOT(ridSelected(int)) );
-    lb->setBuddy( lerid );
-    layout->addWidget( lb, 1, 0 );
-    layout->addWidget( lerid, 1, 1, 1, 2 );
-  }
-
   lb = new QLabel( page );
   lb->setText(i18n("Group name:"));
 
@@ -104,65 +78,6 @@ KU_EditGroup::KU_EditGroup(const KU_Group &group, bool add,
   lb->setBuddy( legrpname );
   layout->addWidget( lb, 2, 0 );
   layout->addWidget( legrpname, 2, 1, 1, 2 );
-
-  if ( mSamba ) {
-    lb = new QLabel( page );
-    lb->setText(i18n("Description:"));
-    ledesc = new KLineEdit(page);
-    ledesc->setText( group.getDesc() );
-    ledesc->setReadOnly( ro );
-    lb->setBuddy( ledesc );
-    layout->addWidget( lb, 3, 0 );
-    layout->addWidget( ledesc, 3, 1, 1, 2 );
-
-    lb = new QLabel( page );
-    lb->setText(i18n("Display name:"));
-    ledispname = new KLineEdit(page);
-    ledispname->setText( group.getDisplayName() );
-    ledispname->setReadOnly( ro );
-    lb->setBuddy( ledispname );
-    layout->addWidget( lb, 4, 0 );
-    layout->addWidget( ledispname, 4, 1, 1, 2 );
-
-    lb = new QLabel( page );
-    lb->setText(i18n("Type:"));
-    letype = new KComboBox( page );
-    letype->addItem( i18n("Domain") );
-    letype->addItem( i18n("Local") );
-    letype->addItem( i18n("Builtin") );
-    switch ( group.getType() ) {
-      case 2:
-        letype->setCurrentIndex( 0 );
-        break;
-      case 4:
-        letype->setCurrentIndex( 1 );
-        break;
-      case 5:
-        letype->setCurrentIndex( 2 );
-        break;
-    }
-    lb->setBuddy( letype );
-    layout->addWidget( lb, 5, 0 );
-    layout->addWidget( letype, 5, 1, 1, 2 );
-
-    lb = new QLabel( page );
-    lb->setText(i18n("Domain SID:"));
-    ledomsid = new KLineEdit(page);
-    ledomsid->setText( sid.getDOM() );
-    ledomsid->setReadOnly( ro );
-    lb->setBuddy( ledomsid );
-    layout->addWidget( lb, 6, 0 );
-    layout->addWidget( ledomsid, 6, 1, 1, 2 );
-
-    cbsamba = new QCheckBox( i18n("Disable Samba group information"), page );
-    layout->addWidget( cbsamba, 7, 0, 1, 3 );
-    connect( cbsamba, SIGNAL(toggled(bool)), ledesc, SLOT(setDisabled(bool)) );
-    connect( cbsamba, SIGNAL(toggled(bool)), ledispname, SLOT(setDisabled(bool)) );
-    connect( cbsamba, SIGNAL(toggled(bool)), letype, SLOT(setDisabled(bool)) );
-    connect( cbsamba, SIGNAL(toggled(bool)), ledomsid, SLOT(setDisabled(bool)) );
-    if ( mAdd ) connect( cbsamba, SIGNAL(toggled(bool)), lerid, SLOT(setDisabled(bool)) );
-    if ( !mAdd ) cbsamba->setChecked( !( group.getCaps() & KU_Group::Cap_Samba ) );
-  }
 
   QStringList sl;
 
@@ -225,14 +140,6 @@ KU_EditGroup::~KU_EditGroup()
 {
 }
 
-void KU_EditGroup::ridSelected( int index )
-{
-  lerid->lineEdit()->setText( QString::number( mRids[ index ].rid ) );
-  legrpname->setText( mRids[ index ].name );
-  ledesc->setText( mRids[ index ].desc );
-  ledispname->setText( mRids[ index ].name );
-}
-
 void KU_EditGroup::addClicked()
 {
   int i = 0;
@@ -268,13 +175,7 @@ void KU_EditGroup::accept()
     return;
   }
 
-  SID sid;
   gid_t gid = legid->text().toInt();
-
-  if ( mSamba && !cbsamba->isChecked() ) {
-    sid.setDOM( ledomsid->text() );
-    sid.setRID( lerid->currentText() );
-  }
 
   if ( legrpname->text().isEmpty() ) {
     KMessageBox::sorry( 0,
@@ -291,11 +192,6 @@ void KU_EditGroup::accept()
   }
 
   if ( mAdd ) {
-    if ( mSamba && !cbsamba->isChecked() && KU_Global::groups()->lookup_sam( sid ) != -1 ) {
-      KMessageBox::sorry( 0,
-        i18n("Group with SID %1 already exists.", sid.getSID() ) );
-      return;
-    }
     if ( KU_Global::groups()->lookup(gid) != -1 ) {
       KMessageBox::sorry( 0,
         i18n("Group with gid %1 already exists.", gid) );
@@ -305,29 +201,6 @@ void KU_EditGroup::accept()
 
   mGroup.setName( legrpname->text() );
   mGroup.setGID( gid );
-  if ( mSamba && !cbsamba->isChecked() ) {
-    mGroup.setCaps ( KU_Group::Cap_Samba );
-    mGroup.setSID( sid );
-    switch ( letype->currentIndex() ) {
-      case 0:
-        mGroup.setType( 2 );
-        break;
-      case 1:
-        mGroup.setType( 4 );
-        break;
-      case 2:
-        mGroup.setType( 5 );
-        break;
-    }
-    mGroup.setDesc( ledesc->text() );
-    mGroup.setDisplayName( ledispname->text() );
-  } else {
-    mGroup.setCaps( 0 );
-    mGroup.setSID( SID( QString() ) );	//krazy:exclude=nullstrassign for old broken gcc
-    mGroup.setDesc( QString() );		//krazy:exclude=nullstrassign for old broken gcc
-    mGroup.setDisplayName( QString() );	//krazy:exclude=nullstrassign for old broken gcc
-    mGroup.setType( 0 );
-  }
 
   for( int i = 0; i < m_list_in->topLevelItemCount(); i++ ) {
     QTreeWidgetItem *item = m_list_in->topLevelItem( i );

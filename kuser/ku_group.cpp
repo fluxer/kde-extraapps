@@ -28,7 +28,6 @@ KU_Group_Private::KU_Group_Private()
 {
   Pwd = QString::fromLatin1("*");
   GID = 0;
-  Type = 2;
   Caps = 0;
 }
 
@@ -68,12 +67,6 @@ KU_PROPERTY_IMPL(KU_Group,int, Caps)
 KU_PROPERTY_IMPL(KU_Group,QString, Name)
 KU_PROPERTY_IMPL(KU_Group,QString, Pwd)
 KU_PROPERTY_IMPL(KU_Group,gid_t, GID )
-
-  //Samba
-KU_PROPERTY_IMPL(KU_Group,SID, SID)
-KU_PROPERTY_IMPL(KU_Group,int, Type)
-KU_PROPERTY_IMPL(KU_Group,QString, DisplayName)
-KU_PROPERTY_IMPL(KU_Group,QString, Desc)
 
 bool KU_Group::lookup_user(const QString &name) const
 {
@@ -130,30 +123,6 @@ int KU_Groups::lookup(gid_t gid) const
   return -1;
 }
 
-int KU_Groups::lookup_sam( const SID &sid ) const
-{
-  for ( int i = 0; i<count(); i++ ) {
-    if ( at(i).getSID() == sid ) return i;
-  }
-  return -1;
-}
-
-int KU_Groups::lookup_sam( const QString &sid ) const
-{
-  for ( int i = 0; i<count(); i++ ) {
-    if ( at(i).getSID().getSID() == sid ) return i;
-  }
-  return -1;
-}
-
-int KU_Groups::lookup_sam( uint rid ) const
-{
-  for ( int i = 0; i<count(); i++ ) {
-    if ( at(i).getSID().getRID() == rid ) return i;
-  }
-  return -1;
-}
-
 gid_t KU_Groups::first_free() const
 {
   gid_t t;
@@ -165,24 +134,8 @@ gid_t KU_Groups::first_free() const
   return NO_FREE;
 }
 
-uint KU_Groups::first_free_sam() const
-{
-  uint t;
-
-  for (t = 30000; t<65534; t++)
-    if (lookup_sam(t) == -1)
-      return t;
-
-  return 0;
-}
-
 KU_Groups::~KU_Groups()
 {
-}
-
-const QString &KU_Groups::getDOMSID() const
-{
-  return domsid;
 }
 
 void KU_Groups::add(const KU_Group &group)

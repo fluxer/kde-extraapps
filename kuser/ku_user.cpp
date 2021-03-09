@@ -135,18 +135,6 @@ KU_PROPERTY_IMPL(KU_User,int,Warn)
 KU_PROPERTY_IMPL(KU_User,int,Inactive)
 KU_PROPERTY_IMPL(KU_User,int,Flag)
 
-//samba
-KU_PROPERTY_IMPL(KU_User,QString, LMPwd)
-KU_PROPERTY_IMPL(KU_User,QString, NTPwd)
-KU_PROPERTY_IMPL(KU_User,QString, LoginScript)
-KU_PROPERTY_IMPL(KU_User,QString, ProfilePath)
-KU_PROPERTY_IMPL(KU_User,QString, HomeDrive)
-KU_PROPERTY_IMPL(KU_User,QString, HomePath)
-KU_PROPERTY_IMPL(KU_User,QString, Workstations)
-KU_PROPERTY_IMPL(KU_User,QString, Domain)
-KU_PROPERTY_IMPL(KU_User,SID, SID)
-KU_PROPERTY_IMPL(KU_User,SID, PGSID)
-
 //Administrative
 KU_PROPERTY_IMPL(KU_User,bool, CreateHome)
 KU_PROPERTY_IMPL(KU_User,bool, CreateMailBox)
@@ -437,30 +425,6 @@ int KU_Users::lookup(uid_t uid) const
   return -1;
 }
 
-int KU_Users::lookup_sam( const SID &sid ) const
-{
-  for ( int i = 0; i<count(); i++ ) {
-    if ( at(i).getSID() == sid ) return i;
-  }
-  return -1;
-}
-
-int KU_Users::lookup_sam( const QString &sid ) const
-{
-  for ( int i = 0; i<count(); i++ ) {
-    if ( at(i).getSID().getSID() == sid ) return i;
-  }
-  return -1;
-}
-
-int KU_Users::lookup_sam( uint rid ) const
-{
-  for ( int i = 0; i<count(); i++ ) {
-    if ( at(i).getSID().getRID() == rid ) return i;
-  }
-  return -1;
-}
-
 uid_t KU_Users::first_free() const
 {
   uid_t t;
@@ -470,17 +434,6 @@ uid_t KU_Users::first_free() const
       return t;
 
   return NO_FREE;
-}
-
-uint KU_Users::first_free_sam() const
-{
-  uint t;
-
-  for (t = 1000; t<65534; t++)
-    if (lookup_sam(t) == -1)
-      return t;
-
-  return 0;
 }
 
 void KU_Users::add(const KU_User &user)

@@ -34,20 +34,12 @@
 class KU_Group_Private : public QSharedData
 {
 public:
-KU_Group_Private();
-
-int Caps;
-
-QString Name;
-QString Pwd;
-gid_t GID;
-QStringList users;
-
-  //Samba
-class SID SID;
-int Type;
-QString DisplayName;
-QString Desc;
+    KU_Group_Private();
+    int Caps;
+    QString Name;
+    QString Pwd;
+    gid_t GID;
+    QStringList users;
 };
 
 class KU_Group {
@@ -56,24 +48,13 @@ public:
   KU_Group(KU_Group *group);
   ~KU_Group();
 
-  enum Cap {
-    Cap_Samba = 1
-  };
-
   bool operator==(const KU_Group &other) const;
   void copy(const KU_Group *group);
 
   KU_PROPERTY(int, Caps);
-
   KU_PROPERTY(QString, Name);
   KU_PROPERTY(QString, Pwd);
   KU_PROPERTY(gid_t, GID );
-
-  //Samba
-  KU_PROPERTY(SID, SID);
-  KU_PROPERTY(int, Type);
-  KU_PROPERTY(QString, DisplayName);
-  KU_PROPERTY(QString, Desc);
 
   bool addUser(const QString &name);
   bool removeUser(const QString &name);
@@ -90,8 +71,7 @@ public:
   enum Cap {
     Cap_ReadOnly = 1,
     Cap_Passwd = 2,
-    Cap_Shadow = 4,
-    Cap_Samba = 8
+    Cap_Shadow = 4
   };
 
   typedef QList<KU_Group> AddList;
@@ -106,13 +86,9 @@ public:
   virtual ~KU_Groups();
 
   int getCaps() const { return caps; }
-  const QString &getDOMSID() const;
 
   int lookup( const QString &name ) const;
   int lookup( gid_t gid ) const;
-  int lookup_sam( const SID &sid ) const;
-  int lookup_sam( const QString &sid ) const;
-  int lookup_sam( uint rid ) const;
 
   void add(const KU_Group &group);
   void del(int index);
@@ -125,7 +101,6 @@ public:
   };
 
   virtual gid_t first_free() const;
-  virtual uint first_free_sam() const;
   virtual bool reload() = 0;
   virtual bool dbcommit() = 0;
 
@@ -141,7 +116,6 @@ protected:
   DelList mDel;
   ModList mMod;
   int caps;
-  QString domsid;
 };
 
 #endif // _KU_GROUP_H_

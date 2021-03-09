@@ -179,20 +179,12 @@ void KU_MainView::useradd()
 
   setCurrentIndex(0);
 
-  uid_t uid, rid = 0;
-  bool samba = users->getCaps() & KU_Users::Cap_Samba;
+  uid_t uid = 0;
 
   if ((uid = users->first_free()) == KU_Users::NO_FREE) {
     KMessageBox::sorry( 0, i18n("You have run out of uid space.") );
     return;
   }
-/*
-  if ( samba && (rid = users->first_free_sam()) == 0) {
-    KMessageBox::sorry( 0, i18n("You have run out of user RID space.") );
-    return;
-  }
-*/
-  if ( samba ) rid = SID::uid2rid( uid );
   bool ok;
   QString name = KInputDialog::getText( QString(),	//krazy:exclude=nullstrassign for old broken gcc
     i18n("Please type the name of the new user:"),
@@ -205,25 +197,13 @@ void KU_MainView::useradd()
     return;
   }
 
-  user.setCaps( samba ? KU_User::Cap_POSIX | KU_User::Cap_Samba : KU_User::Cap_POSIX );
+  user.setCaps( KU_User::Cap_POSIX );
   user.setUID( uid );
   user.setName( name );
 
-  if ( samba ) {
-    SID sid;
-    sid.setDOM( users->getDOMSID() );
-    sid.setRID( rid );
-    user.setSID( sid );
-    user.setProfilePath( KU_Global::kcfg()->samprofilepath().replace( QLatin1String( "%U" ),name,Qt::CaseInsensitive ) );
-    user.setHomePath( KU_Global::kcfg()->samhomepath().replace( QLatin1String( "%U" ), name,Qt::CaseInsensitive ) );
-    user.setHomeDrive( KU_Global::kcfg()->samhomedrive() );
-    user.setLoginScript( KU_Global::kcfg()->samloginscript() );
-    user.setDomain( KU_Global::kcfg()->samdomain() );
-  }
-
   user.setShell( KU_Global::kcfg()->shell() );
   user.setHomeDir( KU_Global::kcfg()->homepath().replace( QLatin1String( "%U" ), name,Qt::CaseInsensitive ) );
-  if ( users->getCaps() & KU_Users::Cap_Shadow || samba ) {
+  if ( users->getCaps() & KU_Users::Cap_Shadow ) {
     user.setLastChange( now() );
   }
 
@@ -262,29 +242,17 @@ void KU_MainView::useradd()
         gid = groups->first_free();
       }
       kDebug() << "private group GID: " << gid;
-      uid_t rid = 0;
-//      if ( samba ) rid = KU_Global::getGroups().first_free_sam();
-      if ( samba ) rid = SID::gid2rid( gid );
-      if ( gid == KU_Groups::NO_FREE || ( samba && rid == 0 ) ) {
+      if ( gid == KU_Groups::NO_FREE ) {
         groups->cancelMods();
         return;
       }
       group.setGID( gid );
-      if ( samba && ( user.getCaps() & KU_User::Cap_Samba ) ) {
-        SID sid;
-        sid.setDOM( groups->getDOMSID() );
-        sid.setRID( rid );
-        group.setSID( sid );
-        group.setDisplayName( user.getName() );
-        group.setCaps( KU_Group::Cap_Samba );
-      }
       group.setName( user.getName() );
       groups->add( group );
     } else {
       group = groups->at(index);
     }
     user.setGID( group.getGID() );
-    user.setPGSID( group.getSID() );
   }
   users->doCreate(&user);
   users->add( user );
@@ -389,13 +357,6 @@ void KU_MainView::grpadd()
 */
   KU_Group group;
   group.setGID(gid);
-  if ( groups->getCaps() & KU_Groups::Cap_Samba ) {
-    uid_t rid = SID::gid2rid( gid );
-    SID sid;
-    sid.setRID( rid );
-    sid.setDOM( groups->getDOMSID() );
-    group.setSID( sid );
-  }
   KU_EditGroup egdlg( group, true );
 
   if ( egdlg.exec() == QDialog::Rejected ) {
@@ -415,17 +376,6 @@ void KU_MainView::grpedit()
 
   KU_Group group = groups->at(index);
 
-  kDebug() << "The SID for group " << group.getName() << " is: '" << group.getSID().getSID() << "'";
-  if ( ( groups->getCaps() & KU_Groups::Cap_Samba ) &&
-       ( group.getCaps() & KU_Group::Cap_Samba ) &&
-         group.getSID().isEmpty() ) {
-    SID sid;
-    sid.setDOM( groups->getDOMSID() );
-//    sid.setRID( KU_Global::getGroups().first_free_sam() );
-    sid.setRID( SID::gid2rid( group.getGID() ) );
-    group.setSID( sid );
-    kDebug() << "The new SID for group " << group.getName() << " is: " << sid.getSID();
-  }
   KU_EditGroup egdlg( group, false );
 
   if ( egdlg.exec() == QDialog::Accepted ) {

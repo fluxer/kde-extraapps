@@ -51,26 +51,14 @@ public slots:
 protected slots:
   void addClicked();
   void delClicked();
-  void ridSelected( int index );
 
 private:
-  bool mSamba, mAdd;
+  bool mAdd;
   bool ro;
   KU_Group mGroup;
   QTreeWidget *m_list_in,*m_list_notin;
   KLineEdit   *legrpname;
   KLineEdit   *legid;
-  KComboBox   *lerid;
-  KLineEdit   *ledispname;
-  KLineEdit   *ledesc;
-  KLineEdit   *ledomsid;
-  KComboBox   *letype;
-  QCheckBox   *cbsamba;
   QString mOldName;
-  typedef struct _RID {
-    uint rid;
-    QString name,desc;
-  } RID;
-  QList<RID> mRids;
 };
 #endif // _KU_EDITGROUP_H_
