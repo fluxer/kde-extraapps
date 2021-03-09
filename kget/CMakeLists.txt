@@ -9,12 +9,6 @@ include(CheckTypeSize)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-macro_optional_find_package(Sqlite)
-set_package_properties(Sqlite PROPERTIES
-    DESCRIPTION "SQLite is a Binary-Database"
-    PURPOSE "Needed for the SQLite-Backend of the KGet-History and the Kopete-Statistic-Plugin"
-)
-
 macro_optional_find_package(QGpgme)
 set_package_properties(QGpgme PROPERTIES
     DESCRIPTION "The QGpgME library"
@@ -84,13 +78,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-if(SQLITE_FOUND)
-    add_definitions(-DHAVE_SQLITE)
-endif(SQLITE_FOUND)
-
-
-remove_definitions(-DQT_NO_HTTP)
-
 # kgetcore
 
 set(kgetcore_SRCS
@@ -140,15 +127,15 @@ qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.verifier.xml dbus/dbusverif
 
 add_library(kgetcore SHARED ${kgetcore_SRCS})
 
-target_link_libraries(kgetcore ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS})
+target_link_libraries(kgetcore
+    ${KDE4_KIO_LIBS}
+    ${KDE4_SOLID_LIBS}
+    ${QT_QTSQL_LIBRARY}
+)
 
 if (KDE4WORKSPACE_FOUND)
     target_link_libraries(kgetcore ${KDE4WORKSPACE_KWORKSPACE_LIBS})
 endif (KDE4WORKSPACE_FOUND)
-
-if (SQLITE_FOUND)
-  target_link_libraries(kgetcore ${QT_QTSQL_LIBRARY})
-endif (SQLITE_FOUND)
 
 if (QGPGME_FOUND)
     target_link_libraries(kgetcore ${QGPGME_LIBRARIES})

@@ -10,6 +10,7 @@
 */
 #include "core/transferhistorystore.h"
 #include "core/transferhistorystore_xml_p.h"
+#include "core/transferhistorystore_sqlite_p.h"
 #include "core/transfer.h"
 #include "settings.h"
 
@@ -19,15 +20,10 @@
 #include <QList>
 #include <QThread>
 #include <QTimer>
-
-#ifdef HAVE_SQLITE
-    #include "core/transferhistorystore_sqlite_p.h"
-    #include <QSqlDatabase>
-    #include <QSqlError>
-    #include <QSqlQuery>
-    #include <QSqlRecord>
-#endif
-
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QSqlRecord>
 
 #include <KDebug>
 #include <kio/global.h>
@@ -142,10 +138,8 @@ TransferHistoryStore *TransferHistoryStore::getStore()
     switch(Settings::historyBackend())
     {
         case TransferHistoryStore::SQLite:
-#ifdef HAVE_SQLITE
             return new SQLiteStore(KStandardDirs::locateLocal("appdata", "transferhistory.db"));
             break;
-#endif
         case TransferHistoryStore::Xml:
         default:
             return new XmlStore(KStandardDirs::locateLocal("appdata", "transferhistory.kgt"));
@@ -387,7 +381,6 @@ void XmlStore::slotDeleteElement()
     emit loadFinished();
 }
 
-#ifdef HAVE_SQLITE
 SQLiteStore::SQLiteStore(const QString &database) : TransferHistoryStore(),
     m_dbName(database),
     m_sql()
@@ -521,11 +514,7 @@ void SQLiteStore::createTables()
         kDebug(5001) << query.lastError().text();
     }
 }
-#endif
-
 
 #include "moc_transferhistorystore.cpp"
 #include "moc_transferhistorystore_xml_p.cpp"
-#ifdef HAVE_SQLITE
-    #include "moc_transferhistorystore_sqlite_p.cpp"
-#endif
+#include "moc_transferhistorystore_sqlite_p.cpp"
