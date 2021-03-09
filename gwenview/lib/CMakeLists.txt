@@ -7,8 +7,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${CMAKE_CURRENT_BINARY_DIR}
     ${EXIV2_INCLUDE_DIR}
-    ${JPEG_INCLUDE_DIR}
-    ${PNG_INCLUDE_DIRS}
 )
 
 set(gwenviewlib_SRCS
@@ -120,10 +118,8 @@ target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_KDCRAW_LIBS}
-    ${JPEG_LIBRARY}
     ${EXIV2_LIBRARIES}
     ${X11_X11_LIB}
-    ${PNG_LIBRARIES}
 )
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})
