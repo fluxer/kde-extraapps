@@ -19,7 +19,7 @@ build_script:
     sudo apt-get update -qq
 
     sudo apt-get install -qq cmake katie-dev katana-baseapps \
-        katana-workspace strigi xorg-dev zlib1g-dev libgpgme-dev libsqlite3-dev \
+        katana-workspace strigi xorg-dev zlib1g-dev libgpgme-dev \
         libacl1-dev libattr1-dev libarchive-dev libasound2-dev libatasmart-dev \
         libavcodec-dev libavformat-dev libavutil-dev libblkid-dev libcups2-dev \
         libdjvulibre-dev libepub-dev libexiv2-dev libflac++-dev libfreetype6-dev \
