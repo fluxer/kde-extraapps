@@ -11,6 +11,7 @@
 #include "debug.h"
 
 #include <QBuffer>
+#include <QCryptographicHash>
 #include <qxmlstream.h>
 
 #include <KFilterDev>
@@ -232,10 +233,11 @@ bool Manifest::testIfEncrypted( const QString &filename )
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
 #ifdef QCA2
-  QCA::SymmetricKey key = QCA::PBKDF2( "sha1" ).makeKey( QCA::Hash( "sha1" ).hash( m_password.toLocal8Bit() ),
-							 QCA::InitializationVector( entry->salt() ),
-							 16, //128 bit key
-							 entry->iterationCount() );
+  const QByteArray passhash = QCryptographicHash::hash(m_password.toLocal8Bit(), QCryptographicHash::Sha1 );
+  QCA::SymmetricKey key = QCA::PBKDF2( "sha1" ).makeKey( passhash,
+                                                         QCA::InitializationVector( entry->salt() ),
+                                                         16, //128 bit key
+                                                         entry->iterationCount() );
 
   QCA::Cipher decoder( "blowfish", QCA::Cipher::CFB, QCA::Cipher::DefaultPadding,
 		       QCA::Decode, key, QCA::InitializationVector( entry->initialisationVector() ) );
@@ -244,9 +246,9 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 
   QByteArray csum;
   if ( entry->checksumType() == "SHA1/1K" ) {
-    csum = QCA::Hash( "sha1").hash( decryptedData->left(1024) ).toByteArray();
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
   } else if ( entry->checksumType() == "SHA1" ) {
-    csum = QCA::Hash( "sha1").hash( *decryptedData ).toByteArray();
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
   } else {
     kDebug(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
@@ -266,6 +268,8 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 
 QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fileData )
 {
+  // TODO: SHA-256 checksum type support:
+  // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
 #ifdef QCA2
   ManifestEntry *entry = entryByName( filename );
 
