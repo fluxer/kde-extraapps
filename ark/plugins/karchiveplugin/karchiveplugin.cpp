@@ -31,6 +31,8 @@
 #include <QFileInfo>
 #include <QSet>
 
+#include <sys/stat.h>
+
 KArchiveInterface::KArchiveInterface(QObject *parent, const QVariantList &args)
         : ReadWriteArchiveInterface(parent, args), m_archive(0)
 {
