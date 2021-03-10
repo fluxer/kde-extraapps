@@ -52,13 +52,10 @@ class VideoWidget : public QWidget
         void stop();
 
     protected:
-        /* reimp */ bool eventFilter( QObject * object, QEvent * event );
         /* reimp */ bool event( QEvent * event );
-        /* reimp */ void resizeEvent( QResizeEvent * event );
 
     private:
         Q_PRIVATE_SLOT( d, void finished() )
-        Q_PRIVATE_SLOT( d, void playOrPause() )
         Q_PRIVATE_SLOT( d, void setPosterImage( const QImage& ) )
         Q_PRIVATE_SLOT( d, void stateChanged( bool paused ) )
 
