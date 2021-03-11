@@ -174,7 +174,8 @@ int main(int argc, char *argv[])
     setenv("XDG_CONFIG_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config") ), 1);
     unsetenv("KDE_COLOR_DEBUG");
     QFile::remove(QDir::homePath() + QString::fromLatin1("/.kde-unit-test/share/config/qttestrc")); 
-    KAboutData aboutData( QByteArray("qttest"), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") ); 
+    // set to okular so that the part.rc file is found
+    KAboutData aboutData( QByteArray("okular"), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") );
     KComponentData cData(&aboutData);
     QApplication app( argc, argv );
     app.setApplicationName( QLatin1String("qttest") );
