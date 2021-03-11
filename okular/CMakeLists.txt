@@ -182,7 +182,7 @@ kde4_add_kcfg_files(okularpart_SRCS ${PROJECT_SOURCE_DIR}/conf/settings.kcfgc )
 
 qt4_add_dbus_interfaces(okularpart_SRCS ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSpeech.xml)
 
-kde4_add_plugin(okularpart SHARED ${okularpart_SRCS})
+kde4_add_plugin(okularpart ${okularpart_SRCS})
 
 target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${KDE4_SOLID_LIBS})
 
