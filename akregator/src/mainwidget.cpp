@@ -727,9 +727,6 @@ void Akregator::MainWidget::slotMouseButtonPressed(int button, const KUrl& url)
 
     switch (Settings::mMBBehaviour())
     {
-        case Settings::EnumMMBBehaviour::OpenInExternalBrowser:
-            req.setOptions(OpenUrlRequest::ExternalBrowser);
-            break;
         case Settings::EnumMMBBehaviour::OpenInBackground:
             req.setOptions(OpenUrlRequest::NewTab);
             req.setOpenInBackground(true);
@@ -754,7 +751,6 @@ void Akregator::MainWidget::slotOpenHomepage()
     if (url.isValid())
     {
         OpenUrlRequest req(feed->htmlUrl());
-        req.setOptions(OpenUrlRequest::ExternalBrowser);
         Kernel::self()->frameManager()->slotOpenUrlRequest(req);
     }
 }
@@ -772,32 +768,8 @@ void Akregator::MainWidget::slotOpenArticleInBrowser(const Akregator::Article& a
     if (!article.isNull() && article.link().isValid())
     {
         OpenUrlRequest req(article.link());
-        req.setOptions(OpenUrlRequest::ExternalBrowser);
         Kernel::self()->frameManager()->slotOpenUrlRequest(req);
     }
-}
-
-
-void Akregator::MainWidget::openSelectedArticles( bool openInBackground )
-{
-    const QList<Article> articles = m_selectionController->selectedArticles();
-
-    Q_FOREACH( const Akregator::Article& article, articles )
-    {
-        const KUrl url = article.link();
-        if ( !url.isValid() )
-          continue;
-
-        OpenUrlRequest req( url );
-        req.setOptions( OpenUrlRequest::NewTab );
-        if( openInBackground ) {
-            req.setOpenInBackground( true );
-            Kernel::self()->frameManager()->slotOpenUrlRequest( req, false /*don't use settings for open in background*/ );
-        } else {
-            Kernel::self()->frameManager()->slotOpenUrlRequest( req );
-        }
-    }
-
 }
 
 void Akregator::MainWidget::slotCopyLinkAddress()
@@ -1036,15 +1008,21 @@ void MainWidget::slotNetworkStatusChanged(Solid::Networking::Status status)
   }
 }
 
-void Akregator::MainWidget::slotOpenSelectedArticles()
-{
-    openSelectedArticles( false );
-}
-
-
 void Akregator::MainWidget::slotOpenSelectedArticlesInBackground()
 {
-    openSelectedArticles( true );
+    const QList<Article> articles = m_selectionController->selectedArticles();
+
+    Q_FOREACH( const Akregator::Article& article, articles )
+    {
+        const KUrl url = article.link();
+        if ( !url.isValid() )
+            continue;
+
+        OpenUrlRequest req( url );
+        req.setOptions( OpenUrlRequest::NewTab );
+        req.setOpenInBackground( true );
+        Kernel::self()->frameManager()->slotOpenUrlRequest( req );
+    }
 }
 
 

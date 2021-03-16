@@ -183,9 +183,8 @@
   </entry>
   <entry key="LMB Behaviour" type="Enum" >
    <whatsthis>What the click with left mouse button should do.</whatsthis>
-   <default>OpenInInternalBrowser</default>
+   <default>OpenInExternalBrowser</default>
    <choices>
-    <choice name="OpenInInternalBrowser" />
     <choice name="OpenInBackground" />
     <choice name="OpenInExternalBrowser" />
    </choices>
@@ -194,7 +193,6 @@
    <whatsthis>What the click with middle mouse button should do.</whatsthis>
    <default>OpenInExternalBrowser</default>
    <choices>
-    <choice name="OpenInInternalBrowser" />
     <choice name="OpenInBackground" />
     <choice name="OpenInExternalBrowser" />
    </choices>

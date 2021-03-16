@@ -3,67 +3,19 @@
  <author>Gary Cramblitt</author>
  <class>Akregator::SettingsBrowser</class>
  <widget class="QWidget" name="Akregator::SettingsBrowser">
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,1">
-   <item>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="LMBlabel">
-       <property name="text">
-        <string>Left mouse click:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="KComboBox" name="kcfg_LMBBehaviour">
-       <item>
-        <property name="text">
-         <string>Open in Tab</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Open in Background Tab</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Open in External Browser</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="MMBlabel">
-       <property name="text">
-        <string>Middle mouse click:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="KComboBox" name="kcfg_MMBBehaviour">
-       <item>
-        <property name="text">
-         <string>Open in Tab</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Open in Background Tab</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Open in External Browser</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </item>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>334</width>
+    <height>169</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
    <item>
     <widget class="QGroupBox" name="externalBrowserGroupBox">
      <property name="title">
-      <string>External Browsing</string>
+      <string>Browser</string>
      </property>
      <layout class="QGridLayout">
       <item row="1" column="1">
@@ -97,37 +49,10 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="tabsGroupBox">
-     <property name="title">
-      <string>Tabs</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QCheckBox" name="kcfg_AlwaysShowTabBar">
-        <property name="text">
-         <string>Always show the tab bar</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="kcfg_CloseButtonOnTabs">
-        <property name="text">
-         <string>Show close button on each tab</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QCheckBox" name="kcfg_NewWindowInTab">
-        <property name="text">
-         <string>Open links in new tab instead of in new window</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
@@ -143,11 +68,6 @@
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -26,7 +26,6 @@
 #include "akregatorconfig.h"
 #include "frame.h"
 #include "actionmanager.h"
-#include "browserrun.h"
 #include "openurlrequest.h"
 
 #include <kaction.h>
@@ -36,6 +35,7 @@
 #include <kconfiggroup.h>
 #include <ktoolinvocation.h>
 #include <kparts/event.h>
+#include <krun.h>
 
 #include <QtCore/QStringList>
 #include <QtGui/QApplication>
@@ -274,8 +274,10 @@ void FrameManager::openUrl(OpenUrlRequest& request)
         emit signalSelectFrame(request.frameId());
 }
 
-void FrameManager::openInExternalBrowser(const OpenUrlRequest& request)
+void FrameManager::slotOpenUrlRequest(OpenUrlRequest& request )
 {
+    kDebug() <<"FrameManager::slotOpenUrlRequest():" << request.debugInfo();
+
     KUrl url = request.url();
     if (!url.isValid())
         return;
@@ -297,40 +299,6 @@ void FrameManager::openInExternalBrowser(const OpenUrlRequest& request)
         KToolInvocation::self()->invokeBrowser(url.url(), "0");
     else
         KRun::runUrl(url, request.args().mimeType(), 0 /*window*/, false, false);
-}
-
-void FrameManager::slotOpenUrlRequest(OpenUrlRequest& request, bool useOpenInBackgroundSetting )
-{
-    kDebug() <<"FrameManager::slotOpenUrlRequest():" << request.debugInfo();
-
-    if (request.options() == OpenUrlRequest::ExternalBrowser)
-    {
-        openInExternalBrowser(request);
-        return;
-    }
-
-    if( useOpenInBackgroundSetting ) {
-        // Honour user's preference for foreground/background tabs
-        if (request.options() == OpenUrlRequest::NewTab ||
-                request.browserArgs().newTab())
-        {
-            request.setOpenInBackground(Settings::lMBBehaviour() ==
-                                        Settings::EnumLMBBehaviour::OpenInBackground);
-        }
-    }
-
-    // if no service type is set, determine it using BrowserRun.
-    if (request.args().mimeType().isEmpty())
-    {
-        BrowserRun* run = new BrowserRun(request, m_mainWin);
-        connect(run, SIGNAL(signalFoundMimeType(Akregator::OpenUrlRequest&)),
-                this, SLOT(openUrl(Akregator::OpenUrlRequest&)) );
-    }
-    else // serviceType is already set, so we open the page synchronously.
-    {
-        openUrl(request);
-    }
-
 }
 
 void FrameManager::slotBrowserBackAboutToShow()

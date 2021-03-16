@@ -152,9 +152,6 @@ void ArticleViewer::slotOpenUrlRequestDelayed(const KUrl& url, const KParts::Ope
     {
         switch (Settings::lMBBehaviour())
         {
-            case Settings::EnumLMBBehaviour::OpenInExternalBrowser:
-                req.setOptions(OpenUrlRequest::ExternalBrowser);
-                break;
             case Settings::EnumLMBBehaviour::OpenInBackground:
                 req.setOpenInBackground(true);
                 break;
@@ -166,9 +163,6 @@ void ArticleViewer::slotOpenUrlRequestDelayed(const KUrl& url, const KParts::Ope
     {
         switch (Settings::mMBBehaviour())
         {
-            case Settings::EnumMMBBehaviour::OpenInExternalBrowser:
-                req.setOptions(OpenUrlRequest::ExternalBrowser);
-                break;
             case Settings::EnumMMBBehaviour::OpenInBackground:
                 req.setOpenInBackground(true);
                 break;
@@ -267,7 +261,6 @@ void ArticleViewer::slotOpenLinkInBackgroundTab()
 void ArticleViewer::slotOpenLinkInBrowser()
 {
     OpenUrlRequest req(m_url);
-    req.setOptions(OpenUrlRequest::ExternalBrowser);
     emit signalOpenUrlRequest(req);
 }
 

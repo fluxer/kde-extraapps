@@ -280,12 +280,6 @@ void ActionManagerImpl::initMainWidget(MainWidget* mainWidget)
     connect(sqf, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotToggleShowQuickFilter()));
     sqf->setChecked( Settings::showQuickFilter() );
 
-    action = coll->addAction("article_open" );
-    action->setIcon(KIcon("tab-new"));
-    action->setText(i18n("Open in Tab"));
-    connect(action, SIGNAL(triggered(bool)), d->mainWidget, SLOT(slotOpenSelectedArticles()));
-    action->setShortcuts(KShortcut( "Shift+Return" ));
-
     action = coll->addAction("article_open_in_background" );
     action->setIcon(KIcon("tab-new"));
     action->setText(i18n("Open in Background Tab"));

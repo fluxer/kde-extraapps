@@ -64,7 +64,7 @@ class AKREGATOR_EXPORT FrameManager : public QObject
         void slotRemoveFrame(int frameId);
 
         void slotChangeFrame(int frameId);
-        void slotOpenUrlRequest(Akregator::OpenUrlRequest& request,bool useOpenInBackgroundSetting = true );
+        void slotOpenUrlRequest(Akregator::OpenUrlRequest& request);
 
         void slotBrowserBack();
         void slotBrowserForward();
@@ -96,11 +96,6 @@ class AKREGATOR_EXPORT FrameManager : public QObject
         void signalIconChanged(const QIcon&);
         void signalLoadingProgress(int);
         void signalStatusText(const QString&);
-
-    private:
-
-
-        void openInExternalBrowser(const OpenUrlRequest& request);
 
     private slots:
         void openUrl(Akregator::OpenUrlRequest& request);

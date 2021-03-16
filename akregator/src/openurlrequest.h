@@ -50,8 +50,7 @@ class AKREGATOR_EXPORT OpenUrlRequest
         enum Options
         {
             None=0, /**< no explicit options, use default */
-            NewTab, /**< open in new tab */
-            ExternalBrowser /**< open in external browser */
+            NewTab=1 /**< open in new tab */
         };
 
         explicit OpenUrlRequest(const KUrl& url=KUrl());

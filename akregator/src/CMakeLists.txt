@@ -42,7 +42,6 @@ set(akregatorprivate_LIB_SRCS
     fetchqueue.cpp
     frame.cpp
     framemanager.cpp
-    browserrun.cpp
     openurlrequest.cpp
     actionmanager.cpp
     actions.cpp

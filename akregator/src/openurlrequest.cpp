@@ -89,8 +89,6 @@ OpenUrlRequest::Options OpenUrlRequest::options() const
     {
         if (Settings::newWindowInTab())
             return (NewTab);
-        else
-            return (ExternalBrowser);
     }
 
     return m_options;
