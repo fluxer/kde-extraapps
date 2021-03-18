@@ -23,6 +23,7 @@
 #include <QListWidgetItem>
 #include <QSettings>
 #include <QProcess>
+#include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
 class Ui_KEmuWindow;
@@ -38,6 +39,9 @@ public:
 public slots:
     void createHardDisk();
     void quit();
+
+protected:
+    virtual void closeEvent(QCloseEvent *event);
 
 private slots:
     void machineLoad(const QString machine);

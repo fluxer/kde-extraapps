@@ -198,6 +198,22 @@ void KEmuMainWindow::quit()
     qApp->quit();
 }
 
+void KEmuMainWindow::closeEvent(QCloseEvent *event)
+{
+    const int running = m_machines.size();
+    if (running != 0) {
+        const QMessageBox::StandardButton answer = QMessageBox::question(this,
+            i18n("Stop machines and quit?"),
+            i18n("There are still %1 machines running, do you really want to quit?", running),
+            QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+        if (answer != QMessageBox::Yes) {
+            event->ignore();
+            return;
+        }
+    }
+    event->accept();
+}
+
 void KEmuMainWindow::updateStatus()
 {
     if (m_machines.size() == 0) {
