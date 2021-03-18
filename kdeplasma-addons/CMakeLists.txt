@@ -14,13 +14,6 @@ set_package_properties(KDE4Workspace PROPERTIES
     PURPOSE "Needed for building several Plasma plugins"
 )
 
-macro_optional_find_package(LibAttica 0.1.1)
-set_package_properties(LibAttica PROPERTIES
-    DESCRIPTION "Attica Library"
-    URL "https://github.com/fluxer/attica"
-    PURPOSE "Needed for building the Open Collaboration Services plasma dataengine and applets"
-)
-
 macro_optional_find_package(OpenGL)
 set_package_properties(OpenGL PROPERTIES
     DESCRIPTION "API for developing portable, interactive 2D and 3D graphics applications"
