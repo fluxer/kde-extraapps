@@ -151,10 +151,6 @@ QString PasteMacroExpander::password(const QString& args)
         charCount = qMax(a[0].trimmed().toInt(), 8);
     }
 
-    if (a.count() < 2) {
-        chars = characterSets.join("");
-    }
-
     if (a.count() > 1) {
         chars += (a[1].trimmed() == "true") ? characterSets[0] : "";
     }
@@ -169,6 +165,13 @@ QString PasteMacroExpander::password(const QString& args)
 
     if (a.count() > 4) {
         chars += (a[4].trimmed() == "true") ? characterSets[3] : "";
+    }
+
+    // no arguments
+    if (chars.isEmpty()) {
+        chars = characterSets[0];
+        chars += characterSets[1];
+        chars += characterSets[2];
     }
 
     const int setSize = chars.count();
