@@ -80,7 +80,7 @@ void FlickrProvider::Private::pageRequestFinished( KJob *_job )
                     /* To be sure, decrement the date to two days earlier... @TODO */
                     mActualDate = mActualDate.addDays(-2);
 
-                            KUrl url( QLatin1String( "http://api.flickr.com/services/rest/?api_key=a902f4e74cf1e7bce231742d8ffb46b4&method=flickr.interestingness.getList&date=" ) + mActualDate.toString( Qt::ISODate) );
+                            KUrl url( QLatin1String( "http://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&method=flickr.interestingness.getList&date=" ) + mActualDate.toString( Qt::ISODate) );
                             KIO::StoredTransferJob *pageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
                             mParent->connect( pageJob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
                     return;
