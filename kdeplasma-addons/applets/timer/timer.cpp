@@ -265,9 +265,9 @@ void Timer::createConfigurationInterface(KConfigDialog *parent)
     connect(ui.hideSecondsCheckBox, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     connect(ui.showMessageCheckBox, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     connect(ui.runCommandCheckBox, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
-    connect(ui.titleLineEdit, SIGNAL(userTextChanged(QString)), parent, SLOT(settingsModified()));
-    connect(ui.messageLineEdit, SIGNAL(userTextChanged(QString)), parent, SLOT(settingsModified()));
-    connect(ui.commandLineEdit, SIGNAL(userTextChanged(QString)), parent, SLOT(settingsModified()));
+    connect(ui.titleLineEdit, SIGNAL(textChanged(QString)), parent, SLOT(settingsModified()));
+    connect(ui.messageLineEdit, SIGNAL(textChanged(QString)), parent, SLOT(settingsModified()));
+    connect(ui.commandLineEdit, SIGNAL(textChanged(QString)), parent, SLOT(settingsModified()));
     connect(predefinedTimersUi.defaulttimers , SIGNAL(changed()), parent, SLOT(settingsModified()));
 }
 

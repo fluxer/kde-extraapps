@@ -75,7 +75,7 @@ void Paste::createConfigurationInterface(KConfigDialog *parent)
     connect(parent, SIGNAL(applyClicked()), this, SLOT(configAccepted()));
     connect(parent, SIGNAL(okClicked()), this, SLOT(configAccepted()));
     connect(m_snippetConfig->textEdit, SIGNAL(textChanged()), parent, SLOT(settingsModified()));
-    connect(m_snippetConfig->nameEdit, SIGNAL(userTextChanged(QString)), parent, SLOT(settingsModified()));
+    connect(m_snippetConfig->nameEdit, SIGNAL(textChanged(QString)), parent, SLOT(settingsModified()));
     connect(m_snippetConfig->list, SIGNAL(itemSelectionChanged()), parent, SLOT(settingsModified()));
     connect(m_snippetConfig->addMacroButton, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     connect(m_snippetConfig->addButton, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
