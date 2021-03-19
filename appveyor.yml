@@ -28,7 +28,7 @@ build_script:
         libsane-dev libspectre-dev libspeechd-dev libswscale-dev \
         libtag1-dev libtiff5-dev uuid-dev libudev-dev libscim-dev \
         libvncserver-dev libxcb-randr0-dev freerdp2-dev libibus-1.0-dev \
-        libboost-dev libffmpegthumbnailer-dev qca-katie libbz2-dev \
+        libboost-dev libffmpegthumbnailer-dev libgcrypt20-dev libbz2-dev \
         libdbusmenu-katie libpoppler-katie ccache
 
     export PATH="/usr/lib/ccache/:$PATH"
