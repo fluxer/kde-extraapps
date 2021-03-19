@@ -61,40 +61,7 @@ bool RAWCreator::create(const QString &path, int width, int height, QImage &img)
         {
             //We managed reading the EXIF info, rotate the image
             //according to the EXIF orientation flag
-            KExiv2Iface::KExiv2::ImageOrientation orient=exiv.getImageOrientation();
-
-            //Rotate according to the EXIF orientation flag
-            switch(orient)
-            {
-                case KExiv2Iface::KExiv2::ORIENTATION_UNSPECIFIED:
-                case KExiv2Iface::KExiv2::ORIENTATION_NORMAL:
-                    break; //we do nothing
-                case KExiv2Iface::KExiv2::ORIENTATION_HFLIP:
-                    preview = preview.mirrored(true,false);
-                    break;
-                case KExiv2Iface::KExiv2::ORIENTATION_ROT_180:
-                    preview = preview.transformed(QMatrix().rotate(180));
-                    break;
-                case KExiv2Iface::KExiv2::ORIENTATION_VFLIP:
-                    preview = preview.mirrored(false,true);
-                    break;
-                case KExiv2Iface::KExiv2::ORIENTATION_ROT_90_HFLIP:
-                    preview = preview.mirrored(true,false);
-                    preview = preview.transformed(QMatrix().rotate(90));
-                    break;
-                case KExiv2Iface::KExiv2::ORIENTATION_ROT_90:
-                    preview = preview.transformed(QMatrix().rotate(90));
-                    break;
-                case KExiv2Iface::KExiv2::ORIENTATION_ROT_90_VFLIP:
-                    preview = preview.mirrored(false,true);
-                    preview = preview.transformed(QMatrix().rotate(90));
-                    break;
-                case KExiv2Iface::KExiv2::ORIENTATION_ROT_270:
-                    preview = preview.transformed(QMatrix().rotate(270));
-                    break;
-                default:
-                    break;
-            }
+            exiv.rotateExifQImage(preview, exiv.getImageOrientation());
         }
 
         //Scale the image as requested by the thumbnailer
