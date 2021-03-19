@@ -167,7 +167,7 @@ QString PasteMacroExpander::password(const QString& args)
         chars += (a[4].trimmed() == "true") ? characterSets[3] : "";
     }
 
-    // no arguments
+    // no character set arguments
     if (chars.isEmpty()) {
         chars = characterSets[0];
         chars += characterSets[1];
