@@ -204,12 +204,12 @@ QChar mapToUnicode(const unsigned int &keysym)
  *     # Take only values that have a Unicode equivalent
  *     grep "/\* U+" | \
  *     # Extract the codes (in parentheses)
- *     sed -r "s/^.*0x(\w*)\s.*U\+(\w+)\s.*$/map[0x\1] = QChar( 0x\2 );/" | \
+ *     sed -r "s/^.*0x(\w*)\s.*U\+(\w+)\s.*$/    map[0x\1] = QChar(0x\2);/" | \
  *     # Remove all codes starting with 0x00 (less than 0x100)
  *     # or with 0x100 (larger than 0x1000100)
- *     grep -v -E "^map\[0x1?00" | \
+ *     grep -v -E "^    map\[0x1?00" | \
  *     # Put some order to ease manual lookup
- *    sort
+ * sort
  */
 void initialiseMap(QHash<unsigned int, QChar>& map)
 {
@@ -701,6 +701,7 @@ void initialiseMap(QHash<unsigned int, QChar>& map)
     map[0x0ad2] = QChar(0x201C);
     map[0x0ad3] = QChar(0x201D);
     map[0x0ad4] = QChar(0x211E);
+    map[0x0ad5] = QChar(0x2030);
     map[0x0ad6] = QChar(0x2032);
     map[0x0ad7] = QChar(0x2033);
     map[0x0ad9] = QChar(0x271D);
