@@ -1,2 +1,0 @@
-ALTER TABLE buffer
-ADD COLUMN key TEXT

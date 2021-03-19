@@ -1,2 +1,0 @@
-INSERT INTO network (networkid, userid, networkname, identityid, encodingcodec, decodingcodec, userandomserver, perform, useautoidentify, autoidentifyservice, autoidentifypassword, useautoreconnect, autoreconnectinterval, autoreconnectretries, rejoinchannels)
-SELECT networkid, userid, networkname, identityid, encodingcodec, decodingcodec, userandomserver, perform, useautoidentify, autoidentifyservice, autoidentifypassword, useautoreconnect, autoreconnectinterval, autoreconnectretries, rejoinchannels FROM networkold;
