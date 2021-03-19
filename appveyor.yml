@@ -37,6 +37,6 @@ build_script:
 
     cd build
 
-    cmake ../ -Wno-dev -DBUILD_kuassel=FALSE
+    cmake ../ -Wno-dev
 
     make -j $(nproc || echo 1)
