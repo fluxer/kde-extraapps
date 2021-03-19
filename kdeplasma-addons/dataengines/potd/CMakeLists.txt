@@ -54,17 +54,6 @@ target_link_libraries( plasma_potd_epodprovider plasmapotdprovidercore ${KDE4_KI
 install( TARGETS plasma_potd_epodprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 install( FILES epodprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 
-
-set( potd_osei_provider_SRCS
-	oseiprovider.cpp
-)
-
-kde4_add_plugin( plasma_potd_oseiprovider ${potd_osei_provider_SRCS} )
-target_link_libraries( plasma_potd_oseiprovider plasmapotdprovidercore ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} )
-install( TARGETS plasma_potd_oseiprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
-install( FILES oseiprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
-
-
 set( potd_wcpotd_provider_SRCS
 	wcpotdprovider.cpp
 )
