@@ -54,13 +54,13 @@ void EpodProvider::Private::pageRequestFinished(KJob *_job)
 
     const QString data = QString::fromUtf8( job->data() );
 
-    const QString pattern( QLatin1String( "http://epod.usra.edu/.a/*-pi" ) );
+    const QString pattern( QLatin1String( "https://epod.usra.edu/.a/*-pi" ) );
     QRegExp exp( pattern );
     exp.setPatternSyntax(QRegExp::Wildcard);
 
     int pos = exp.indexIn( data ) + pattern.length();
-    const QString sub = data.mid( pos-4, pattern.length()+6);
-    KUrl url( QString(QLatin1String( "http://epod.usra.edu/.a/%1-pi" )) .arg(sub)  );
+    const QString sub = data.mid( pos-4, pattern.length()+5);
+    KUrl url( QString(QLatin1String( "https://epod.usra.edu/.a/%1-pi" )) .arg(sub)  );
     KIO::StoredTransferJob *imageJob = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
     QObject::connect(imageJob, SIGNAL(finished(KJob*)), mParent, SLOT(imageRequestFinished(KJob*)) );
 }
@@ -69,8 +69,8 @@ void EpodProvider::Private::imageRequestFinished( KJob *_job)
 {
     KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob *>(_job);
     if ( job->error() ) {
-	emit mParent->error( mParent );
-	return;
+        emit mParent->error( mParent );
+        return;
     }
 
     // FIXME: this really should be done in a thread as this can block
@@ -81,7 +81,7 @@ void EpodProvider::Private::imageRequestFinished( KJob *_job)
 EpodProvider::EpodProvider( QObject *parent, const QVariantList &args )
     : PotdProvider( parent, args ), d( new Private( this ) )
 {
-    KUrl url( QLatin1String( "http://epod.usra.edu/blog/" ) );
+    KUrl url( QLatin1String( "https://epod.usra.edu/blog/" ) );
     KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
 
     connect( job, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
