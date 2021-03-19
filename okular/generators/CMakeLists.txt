@@ -61,11 +61,12 @@ set_package_properties(QMobipocket PROPERTIES
     PURPOSE "Support for Mobipocket documents in Okular"
 )
 
-macro_optional_find_package(QCA2 2.0.0)
-set_package_properties(QCA2 PROPERTIES
-    DESCRIPTION "Qt Cryptographic Architecture"
-    URL "https://github.com/fluxer/qca"
-    PURPOSE "Support for encrypted OpenDocument Text documents in Okular"
+macro_optional_find_package(LibGcrypt)
+set_package_properties(LibGcrypt PROPERTIES
+    DESCRIPTION "General purpose cryptographic library based on the code from GnuPG"
+    URL "https://gnupg.org/gcrypt/"
+    PURPOSE "Support encrypted Open Document in Okular"
+    TYPE REQUIRED
 )
 
 # let's enable the generators properly configured

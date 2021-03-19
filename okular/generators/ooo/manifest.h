@@ -14,10 +14,6 @@
 #include <QtCore/QMap>
 #include <QtCore/QString>
 
-#ifdef QCA2
-#include <QtCrypto>
-#endif
-
 namespace OOO {
 
 /**
@@ -234,13 +230,13 @@ class Manifest
     */
     void checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData );
 
-#ifdef QCA2
-    QCA::Initializer m_init;
-#endif
     const QString m_odfFileName;
     QMap<QString, ManifestEntry*> mEntries;
     bool m_haveGoodPassword;
     QString m_password;
+#ifdef HAVE_GCRPYT
+    bool m_init;
+#endif
 };
 
 }

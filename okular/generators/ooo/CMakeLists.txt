@@ -3,10 +3,10 @@ include_directories(
    ${CMAKE_CURRENT_SOURCE_DIR}/../..
 )
 
-if ( QCA2_FOUND )
-   include_directories( ${QCA2_INCLUDE_DIR} )
-   add_definitions( -DQCA2 )
-endif( QCA2_FOUND )
+if ( LIBGCRYPT_FOUND )
+   include_directories( ${LIBGCRYPT_INCLUDE_DIR} )
+   add_definitions( -DHAVE_GCRPYT )
+endif( LIBGCRYPT_FOUND )
 
 ########### next target ###############
 
@@ -30,9 +30,9 @@ target_link_libraries(okularGenerator_ooo
     ${QT_QTNETWORK_LIBRARY}
     okularcore
 )
-if (QCA2_FOUND)
-    target_link_libraries(okularGenerator_ooo okularcore ${QCA2_LIBRARIES})
-endif (QCA2_FOUND)
+if (LIBGCRYPT_FOUND)
+    target_link_libraries(okularGenerator_ooo okularcore ${LIBGCRYPT_LIBRARIES})
+endif (LIBGCRYPT_FOUND)
 
 install(TARGETS okularGenerator_ooo DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 

@@ -18,6 +18,11 @@
 #include <KLocale>
 #include <KMessageBox>
 
+#ifdef HAVE_GCRPYT
+#include <gcrypt.h>
+#endif
+
+
 using namespace OOO;
 
 //---------------------------------------------------------------------
@@ -126,7 +131,14 @@ QByteArray ManifestEntry::salt() const
 
 Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, const QString &password )
   : m_odfFileName( odfFileName ), m_haveGoodPassword( false ), m_password( password )
+#ifdef HAVE_GCRPYT
+  , m_init(false)
+#endif
 {
+#ifdef HAVE_GCRPYT
+  // TODO: what version is required for blowfish, sha1 and sha256 support?
+  m_init = gcry_check_version("1.2.3");
+#endif
   // I don't know why the parser barfs on this.
   QByteArray manifestCopy = manifestData;
   manifestCopy.replace(QByteArray("DOCTYPE manifest:manifest"), QByteArray("DOCTYPE manifest"));
@@ -232,28 +244,48 @@ bool Manifest::testIfEncrypted( const QString &filename )
 
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
-#ifdef QCA2
-  const QByteArray passhash = QCryptographicHash::hash(m_password.toLocal8Bit(), QCryptographicHash::Sha1 );
-  QCA::SymmetricKey key = QCA::PBKDF2( "sha1" ).makeKey( passhash,
-                                                         QCA::InitializationVector( entry->salt() ),
-                                                         16, //128 bit key
-                                                         entry->iterationCount() );
-
-  QCA::Cipher decoder( "blowfish", QCA::Cipher::CFB, QCA::Cipher::DefaultPadding,
-		       QCA::Decode, key, QCA::InitializationVector( entry->initialisationVector() ) );
-  *decryptedData = decoder.update( QCA::MemoryRegion(fileData) ).toByteArray();
-  *decryptedData += decoder.final().toByteArray();
-
-  QByteArray csum;
-  if ( entry->checksumType() == "SHA1/1K" ) {
-    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
-  } else if ( entry->checksumType() == "SHA1" ) {
-    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
+  // NOTE: apparently LibreOffice encrypts the document to protect someone from writing to it,
+  // given that Okular does not support writing to the document the code bellow may be meaningless
+#ifdef HAVE_GCRPYT
+  // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
+#warning initialization vector and salt are not taken into account
+  bool issha256 = false;
+  QString checksumtype = entry->checksumType();
+  QByteArray passhash;
+  if ( checksumtype == "SHA1" || checksumtype == "SHA1/1K" ) {
+    passhash = QCryptographicHash::hash( m_password.toLocal8Bit(), QCryptographicHash::Sha1 );
+  } else if ( checksumtype == "SHA256" || checksumtype == "SHA256/1K" ) {
+    passhash = QCryptographicHash::hash( m_password.toLocal8Bit(), QCryptographicHash::Sha256 );
+    issha256 = true;
   } else {
     kDebug(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
     m_haveGoodPassword = true;
     return;
+  }
+
+  gcry_cipher_hd_t dec;
+  gcry_cipher_open( &dec, GCRY_CIPHER_BLOWFISH, GCRY_CIPHER_MODE_CFB, 0 );
+  gcry_cipher_setkey( dec, passhash.constData(), passhash.size() );
+
+  // buffer size must be multiple of the hashing algorithm block size
+  unsigned int decbufflen = fileData.size() * gcry_md_get_algo_dlen( issha256 ? GCRY_MD_SHA256 : GCRY_MD_SHA1 );
+  unsigned char decbuff[decbufflen];
+  ::memset(decbuff, 0, decbufflen * sizeof(unsigned char));
+  gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
+  gcry_cipher_final( dec );
+
+  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), decbufflen );
+
+  QByteArray csum;
+  if ( checksumtype == "SHA1/1K" ) {
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
+  } else if ( checksumtype == "SHA1" ) {
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
+  } else if ( checksumtype == "SHA256/1K") {
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
+  } else if ( checksumtype == "SHA256") {
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
   }
 
   if ( entry->checksum() == csum ) {
@@ -268,25 +300,11 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 
 QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fileData )
 {
-  // TODO: SHA-256 checksum type support:
-  // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
-#ifdef QCA2
+#ifdef HAVE_GCRPYT
   ManifestEntry *entry = entryByName( filename );
 
-  if ( ! QCA::isSupported( "sha1" ) ) {
-    KMessageBox::error( 0, i18n("This document is encrypted, and crypto support is compiled in, but a hashing plugin could not be located") );
-    // in the hope that it wasn't really encrypted...
-    return QByteArray( fileData );
-  }
-
-  if ( ! QCA::isSupported( "pbkdf2(sha1)") )  {
-    KMessageBox::error( 0, i18n("This document is encrypted, and crypto support is compiled in, but a key derivation plugin could not be located") );
-    // in the hope that it wasn't really encrypted...
-    return QByteArray( fileData );
-  }
-
-  if ( ! QCA::isSupported( "blowfish-cfb") )  {
-    KMessageBox::error( 0, i18n("This document is encrypted, and crypto support is compiled in, but a cipher plugin could not be located") );
+  if ( !m_init ) {
+    KMessageBox::error( 0, i18n("This document is encrypted but decryptor could not be initialized") );
     // in the hope that it wasn't really encrypted...
     return QByteArray( fileData );
   }
