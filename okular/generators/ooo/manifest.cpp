@@ -136,8 +136,8 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
 #endif
 {
 #ifdef HAVE_GCRPYT
-  // TODO: what version is required for blowfish, sha1 and sha256 support?
-  m_init = gcry_check_version("1.2.3");
+  // the minimum that supports SHA256
+  m_init = gcry_check_version("1.1.8");
 #endif
   // I don't know why the parser barfs on this.
   QByteArray manifestCopy = manifestData;
