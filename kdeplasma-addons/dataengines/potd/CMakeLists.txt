@@ -53,12 +53,3 @@ kde4_add_plugin( plasma_potd_epodprovider ${potd_epod_provider_SRCS} )
 target_link_libraries( plasma_potd_epodprovider plasmapotdprovidercore ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY})
 install( TARGETS plasma_potd_epodprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 install( FILES epodprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
-
-set( potd_wcpotd_provider_SRCS
-	wcpotdprovider.cpp
-)
-
-kde4_add_plugin( plasma_potd_wcpotdprovider ${potd_wcpotd_provider_SRCS} )
-target_link_libraries( plasma_potd_wcpotdprovider plasmapotdprovidercore ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} )
-install( TARGETS plasma_potd_wcpotdprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
-install( FILES wcpotdprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
