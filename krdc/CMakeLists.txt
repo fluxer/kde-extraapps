@@ -14,14 +14,6 @@ set_package_properties(LibVNCServer PROPERTIES
     PURPOSE "Needed to build VNC client support in KRDC"
 )
 
-# v1.0.2 required
-find_program(FREERDP_EXECUTABLE xfreerdp)
-add_feature_info(
-    "RDP support in KRDC (at runtime)"
-    FREERDP_EXECUTABLE
-    "A free Remote Desktop Protocol (RDP) Implementation"
-)
-
 # NX support is not ready for KDE 4.2; disabled (uwolfer)
 # macro_optional_find_package(LibNXCL)
 # macro_log_feature(LIBNXCL_FOUND "libnxcl" "NX X compression client library" "http://svn.berlios.de/svnroot/repos/freenx/trunk/freenx-client/nxcl/" FALSE "1.0" "Needed to build Krdc with NX support")
@@ -31,6 +23,13 @@ set_package_properties(TelepathyQt4 PROPERTIES
     DESCRIPTION "Telepathy Qt Bindings"
     URL "http://telepathy.freedesktop.org"
     PURPOSE "Needed to build Telepathy Tubes support"
+)
+
+# v1.0.2 required
+find_program(FREERDP_EXECUTABLE xfreerdp)
+add_feature_info(xfreerdp
+    FREERDP_EXECUTABLE
+    "A free Remote Desktop Protocol (RDP) Implementation"
 )
 
 if(TelepathyQt4_FOUND)

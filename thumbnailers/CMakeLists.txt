@@ -35,18 +35,17 @@ set_package_properties(FFmpegThumbnailer PROPERTIES
     PURPOSE "Required to build the video thumbnailer"
 )
 
+add_subdirectory(ps)
+add_subdirectory(raw)
+
 if(TAGLIB_FOUND AND FLAC_FOUND)
-    macro_optional_add_subdirectory(audio)
+    add_subdirectory(audio)
 endif()
 
-macro_optional_add_subdirectory(ps)
-
-macro_optional_add_subdirectory(raw)
-
 if(GETTEXTPO_FOUND)
-    macro_optional_add_subdirectory(po)
-endif(GETTEXTPO_FOUND)
+    add_subdirectory(po)
+endif()
 
 if(FFMPEGTHUMBNAILER_FOUND)
-    macro_optional_add_subdirectory(ffmpegthumbs)
+    add_subdirectory(ffmpegthumbs)
 endif()

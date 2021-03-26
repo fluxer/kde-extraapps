@@ -53,12 +53,6 @@ install(
 
 ########### konqueror ark_extract_here plugin ###############
 
-macro_optional_find_package(LibKonq)
-set_package_properties(LibKonq PROPERTIES
-    DESCRIPTION "libkonq library"
-    PURPOSE "Need to integrate in konqueror"
-)
-
 if (LibKonq_FOUND)
     include_directories(${LIBKONQ_INCLUDE_DIR})
 
