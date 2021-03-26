@@ -246,35 +246,47 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 {
 #ifdef HAVE_GCRPYT
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
-#warning initialization vector and salt are not taken into account
   QString checksumtype = entry->checksumType().toLower();
   const int hashindex = checksumtype.indexOf('#');
   checksumtype = checksumtype.mid(hashindex + 1);
 
-  bool issha256 = false;
-  QByteArray passhash;
+  const QByteArray bytepass = m_password.toLocal8Bit();
+  const QByteArray salt = entry->salt();
+  int algorithmlength = gcry_md_get_algo_dlen( GCRY_MD_SHA1 );
+  QByteArray keyhash;
   if ( checksumtype == "sha1" || checksumtype == "sha1-1k" ) {
-    passhash = QCryptographicHash::hash( m_password.toLocal8Bit(), QCryptographicHash::Sha1 );
+    keyhash.resize(algorithmlength);
+    gcry_kdf_derive(bytepass.constData(), bytepass.size(),
+                    GCRY_KDF_PBKDF2, GCRY_MD_SHA1,
+                    salt.constData(), salt.size(),
+                    entry->iterationCount(), algorithmlength, keyhash.data());
   } else if ( checksumtype == "sha256" || checksumtype == "sha256-1k" ) {
-    passhash = QCryptographicHash::hash( m_password.toLocal8Bit(), QCryptographicHash::Sha256 );
-    issha256 = true;
+    algorithmlength = gcry_md_get_algo_dlen( GCRY_MD_SHA256 );
+    keyhash.resize(algorithmlength);
+    gcry_kdf_derive(bytepass.constData(), bytepass.size(),
+                    GCRY_KDF_PBKDF2, GCRY_MD_SHA256,
+                    salt.constData(), salt.size(),
+                    entry->iterationCount(), algorithmlength, keyhash.data());
   } else {
-    kDebug(OooDebug) << "unknown checksum type: " << entry->checksumType();
+    kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
     m_haveGoodPassword = true;
     return;
   }
 
+  const QByteArray initializationvector = entry->initialisationVector();
   gcry_cipher_hd_t dec;
   gcry_cipher_open( &dec, GCRY_CIPHER_BLOWFISH, GCRY_CIPHER_MODE_CFB, 0 );
-  gcry_cipher_setkey( dec, passhash.constData(), passhash.size() );
+  gcry_cipher_setkey( dec, keyhash.constData(), keyhash.size() );
+  gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
 
   // buffer size must be multiple of the hashing algorithm block size
-  unsigned int decbufflen = fileData.size() * gcry_md_get_algo_dlen( issha256 ? GCRY_MD_SHA256 : GCRY_MD_SHA1 );
+  unsigned int decbufflen = fileData.size() * algorithmlength;
   unsigned char decbuff[decbufflen];
   ::memset(decbuff, 0, decbufflen * sizeof(unsigned char));
   gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
   gcry_cipher_final( dec );
+  gcry_cipher_close( dec );
 
   *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), decbufflen );
 
@@ -288,6 +300,8 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   } else if ( checksumtype == "sha256") {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
   }
+
+  // qDebug() << Q_FUNC_INFO << entry->checksum().toHex() << csum.toHex();
 
   if ( entry->checksum() == csum ) {
     m_haveGoodPassword = true;
