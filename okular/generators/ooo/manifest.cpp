@@ -244,17 +244,18 @@ bool Manifest::testIfEncrypted( const QString &filename )
 
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
-  // NOTE: apparently LibreOffice encrypts the document to protect someone from writing to it,
-  // given that Okular does not support writing to the document the code bellow may be meaningless
 #ifdef HAVE_GCRPYT
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
 #warning initialization vector and salt are not taken into account
+  QString checksumtype = entry->checksumType().toLower();
+  const int hashindex = checksumtype.indexOf('#');
+  checksumtype = checksumtype.mid(hashindex + 1);
+
   bool issha256 = false;
-  QString checksumtype = entry->checksumType();
   QByteArray passhash;
-  if ( checksumtype == "SHA1" || checksumtype == "SHA1/1K" ) {
+  if ( checksumtype == "sha1" || checksumtype == "sha1-1k" ) {
     passhash = QCryptographicHash::hash( m_password.toLocal8Bit(), QCryptographicHash::Sha1 );
-  } else if ( checksumtype == "SHA256" || checksumtype == "SHA256/1K" ) {
+  } else if ( checksumtype == "sha256" || checksumtype == "sha256-1k" ) {
     passhash = QCryptographicHash::hash( m_password.toLocal8Bit(), QCryptographicHash::Sha256 );
     issha256 = true;
   } else {
@@ -278,13 +279,13 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), decbufflen );
 
   QByteArray csum;
-  if ( checksumtype == "SHA1/1K" ) {
+  if ( checksumtype == "sha1-1k" ) {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
-  } else if ( checksumtype == "SHA1" ) {
+  } else if ( checksumtype == "sha1" ) {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
-  } else if ( checksumtype == "SHA256/1K") {
+  } else if ( checksumtype == "sha256-1k") {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
-  } else if ( checksumtype == "SHA256") {
+  } else if ( checksumtype == "sha256") {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
   }
 
