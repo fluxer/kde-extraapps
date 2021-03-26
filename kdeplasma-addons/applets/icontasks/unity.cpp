@@ -237,7 +237,7 @@ void Unity::serviceOwnerChanged(const QString &name, const QString &oldOwner, co
 
 void Unity::sycocaChanged(const QStringList &types)
 {
-    if (types.contains("apps")) {
+    if (types.contains("apps") || types.contains("xdgdata-apps")) {
         QMap<QString, UnityItem *>::ConstIterator it(m_items.constBegin()),
              end(m_items.constEnd());
 

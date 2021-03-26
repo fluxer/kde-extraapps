@@ -156,7 +156,7 @@ void MediaButtons::setEnabled(bool en)
 
 void MediaButtons::sycocaChanged(const QStringList &types)
 {
-    if (types.contains("apps")) {
+    if (types.contains("apps") || types.contains("xdgdata-apps")) {
         updateApps();
     }
 }

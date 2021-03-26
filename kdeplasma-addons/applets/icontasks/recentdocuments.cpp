@@ -250,7 +250,7 @@ void RecentDocuments::modified(const QString &path)
 
 void RecentDocuments::sycocaChanged(const QStringList &types)
 {
-    if (types.contains("apps")) {
+    if (types.contains("apps") || types.contains("xdgdata-apps")) {
         m_apps.clear();
         QList<File>::Iterator it(m_files.begin()),
               end(m_files.end());
