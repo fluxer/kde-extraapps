@@ -65,9 +65,6 @@ public:
             // is called for the first time, like here).
             KStartupInfo::setNewStartupId(kget, startupId());
 #endif
-#ifdef Q_WS_WIN
-            KWindowSystem::forceActiveWindow(kget->winId());
-#endif
             //END
 
         }

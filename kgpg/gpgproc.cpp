@@ -348,12 +348,7 @@ QString GPGProc::getGpgHome(const QString &binary)
 
 	// Third try: guess what it is.
 	if (gpgHome.isEmpty()) {
-#ifdef Q_OS_WIN32	//krazy:exclude=cpp
-		gpgHome = qgetenv("APPDATA") + QLatin1String( "/gnupg/" );
-		gpgHome.replace(QLatin1Char( '\\' ), QLatin1Char( '/' ));
-#else
 		gpgHome = QDir::homePath() + QLatin1String( "/.gnupg/" );
-#endif
 	}
 
 	gpgHome.replace(QLatin1String( "//" ), QLatin1String( "/" ));

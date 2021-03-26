@@ -25,6 +25,7 @@
 #include "fileTree.h"
 #include "scan.h"
 
+#include <kde_file.h>
 #include <KDebug>
 #include <Solid/StorageVolume>
 #include <Solid/StorageAccess>
@@ -34,18 +35,23 @@
 #include <QtCore/QFile>
 #include <QtCore/QByteArray>
 
-#include <kde_file.h>
-#ifdef Q_OS_SOLARIS
-#include <sys/vfstab.h>
-#elif !defined(Q_WS_WIN)
-#include <fstab.h>
-#endif
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <errno.h>
+
+#ifdef Q_OS_SOLARIS
+#include <sys/vfstab.h>
+#else
+#include <fstab.h>
+#endif
 
 #ifdef HAVE_MNTENT_H
 #include <mntent.h>
+#endif
+
+#ifndef S_BLKSIZE
+#define S_BLKSIZE 512
 #endif
 
 namespace Filelight
@@ -95,12 +101,6 @@ LocalLister::run()
     kDebug() << "Thread terminating ...";
 }
 
-#ifndef S_BLKSIZE
-#define S_BLKSIZE 512
-#endif
-
-
-#include <errno.h>
 static void
 outputError(QByteArray path)
 {
@@ -125,10 +125,8 @@ outputError(QByteArray path)
         out("Bad file descriptor");
     case EFAULT:
         out("Bad address");
-#ifndef Q_WS_WIN
     case ELOOP: //NOTE shouldn't ever happen
         out("Too many symbolic links encountered while traversing the path");
-#endif
     case ENAMETOOLONG:
         out("File name too long");
     }
@@ -176,11 +174,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         }
 
         if (S_ISREG(statbuf.st_mode)) //file
-#ifndef Q_WS_WIN
             cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE));
-#else
-            cwd->append(ent->d_name, statbuf.st_size);
-#endif
 
         else if (S_ISDIR(statbuf.st_mode)) //folder
         {

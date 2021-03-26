@@ -34,11 +34,7 @@ KLineBufferedProcessPrivate::KLineBufferedProcessPrivate(KLineBufferedProcess *p
  : m_newlineInStdout(-1),
    m_newlineInStderr(-1),
    m_parent(parent),
-#ifdef Q_OS_WIN32	//krazy:exclude=cpp
-   m_lineEnd("\r\n")
-#else
    m_lineEnd("\n")
-#endif
 {
 }
 

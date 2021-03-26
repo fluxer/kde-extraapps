@@ -342,11 +342,7 @@ PDFGenerator::PDFGenerator( QObject *parent, const QVariantList &args )
     setFeature( Threaded );
     setFeature( TextExtraction );
     setFeature( FontInfo );
-#ifdef Q_OS_WIN32
-    setFeature( PrintNative );
-#else
     setFeature( PrintPostscript );
-#endif
     if ( Okular::FilePrinter::ps2pdfAvailable() )
         setFeature( PrintToFile );
     setFeature( ReadRawData );
@@ -919,33 +915,6 @@ void PDFGenerator::requestFontData(const Okular::FontInfo &font, QByteArray *dat
 #define DUMMY_QPRINTER_COPY
 bool PDFGenerator::print( QPrinter& printer )
 {
-#ifdef Q_WS_WIN
-    QPainter painter;
-    painter.begin(&printer);
-
-    QList<int> pageList = Okular::FilePrinter::pageList( printer, pdfdoc->numPages(),
-                                                         document()->currentPage() + 1,
-                                                         document()->bookmarkedPageList() );
-    for ( int i = 0; i < pageList.count(); ++i )
-    {
-        if ( i != 0 )
-            printer.newPage();
-
-        const int page = pageList.at( i ) - 1;
-        userMutex()->lock();
-        Poppler::Page *pp = pdfdoc->page( page );
-        if (pp)
-        {
-            QImage img = pp->renderToImage(  printer.physicalDpiX(), printer.physicalDpiY() );
-            painter.drawImage( painter.window(), img, QRectF(0, 0, img.width(), img.height()) );
-            delete pp;
-        }
-        userMutex()->unlock();
-    }
-    painter.end();
-    return true;
-
-#else
 #ifdef DUMMY_QPRINTER_COPY
     // Get the real page size to pass to the ps generator
     QPrinter dummy( QPrinter::PrinterResolution );
@@ -1043,7 +1012,6 @@ bool PDFGenerator::print( QPrinter& printer )
     tf.close();
 
     return false;
-#endif
 }
 
 QVariant PDFGenerator::metaData( const QString & key, const QVariant & option ) const
