@@ -313,16 +313,16 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  const unsigned int algorithmlength = gcry_md_get_algo_dlen( gcryptkeyalgorithm );
-  unsigned char keybuff[algorithmlength];
-  ::memset( keybuff, 0, algorithmlength * sizeof(unsigned char) );
+  const int keysize = entry->keySize();
+  char keybuff[keysize];
+  ::memset( keybuff, 0, keysize * sizeof(char) );
   const QByteArray salt = entry->salt();
   // password must be UTF-8 encoded
   const QByteArray utf8pass = m_password.toUtf8();
   gpg_error_t gcrypterror = gcry_kdf_derive(utf8pass.constData(), utf8pass.size(),
                                             GCRY_KDF_PBKDF2, gcryptkeyalgorithm,
                                             salt.constData(), salt.size(),
-                                            entry->iterationCount(), algorithmlength, keybuff);
+                                            entry->iterationCount(), keysize, keybuff);
   if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_kdf_derive: " << gcry_strerror(gcrypterror);
     return;
@@ -353,7 +353,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     gcryptmode = GCRY_CIPHER_MODE_CBC;
   // according to the spec "blowfish" is Blowfish-CFB but just in case match "-cfb" suffixed one
   // too, OpenOffice refers to it as "Blowfish CFB"
-  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb" || algorithm == "blowfish cfb") {
+  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb" || algorithm == "blowfish cfb" ) {
     gcryptalgorithm = GCRY_CIPHER_BLOWFISH;
     gcryptmode = GCRY_CIPHER_MODE_CFB;
   } else {
@@ -371,7 +371,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  gcrypterror = gcry_cipher_setkey( dec, keybuff, algorithmlength );
+  gcrypterror = gcry_cipher_setkey( dec, keybuff, keysize );
   if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_setkey: " << gcry_strerror(gcrypterror);
     gcry_cipher_close( dec );
@@ -385,25 +385,18 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  // buffer size must be multiple of the key algorithm block size
-  const unsigned int decbufflen = fileData.size() * algorithmlength;
-  unsigned char decbuff[decbufflen];
-  ::memset( decbuff, 0, decbufflen * sizeof(unsigned char) );
+  const int decbufflen = entry->size();
+  char decbuff[decbufflen];
+  ::memset( decbuff, 0, decbufflen * sizeof(char) );
   gcrypterror = gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
   if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_decrypt: " << gcry_strerror(gcrypterror);
     gcry_cipher_close( dec );
     return;
   }
-  gcrypterror = gcry_cipher_final( dec );
-  if ( gcrypterror != 0 ) {
-    kWarning(OooDebug) << "gcry_cipher_final: " << gcry_strerror(gcrypterror);
-    gcry_cipher_close( dec );
-    return;
-  }
   gcry_cipher_close( dec );
 
-  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), entry->size() );
+  *decryptedData = QByteArray( decbuff, decbufflen );
 
   QByteArray csum;
   QString checksumtype = entry->checksumType().toLower();
@@ -414,17 +407,17 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   //
   // OpenOffice suports SHA1 and SHA256, for reference:
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
-  if ( checksumtype == "sha1-1k" || checksumtype == "sha1/1k") {
+  if ( checksumtype == "sha1-1k" || checksumtype == "sha1/1k" ) {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
   } else if ( checksumtype == "sha1" ) {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
-  } else if ( checksumtype == "sha256-1k" || checksumtype == "sha256/1k") {
+  } else if ( checksumtype == "sha256-1k" || checksumtype == "sha256/1k" ) {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
-  } else if ( checksumtype == "sha256") {
+  } else if ( checksumtype == "sha256" ) {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
-  } else if ( checksumtype == "sha512-1k" || checksumtype == "sha512/1k") {
+  } else if ( checksumtype == "sha512-1k" || checksumtype == "sha512/1k" ) {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha512 );
-  } else if ( checksumtype == "sha512") {
+  } else if ( checksumtype == "sha512" ) {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha512 );
   } else {
     kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
