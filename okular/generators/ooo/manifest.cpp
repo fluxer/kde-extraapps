@@ -156,7 +156,6 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
 #endif
 {
 #ifdef HAVE_GCRPYT
-  // TODO: review minimum version requirement once the decryptor implementation is working
   m_init = gcry_check_version("1.5.0");
 #endif
   // I don't know why the parser barfs on this.
@@ -213,6 +212,7 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
 	currentEntry->setKeyDerivationName( kdfAttributes.value("manifest:key-derivation-name").toString() );
 	currentEntry->setIterationCount( kdfAttributes.value("manifest:iteration-count").toString() );
 	currentEntry->setSalt( kdfAttributes.value("manifest:salt").toString() );
+        currentEntry->setKeySize( kdfAttributes.value("manifest:key-size").toString() );
       } else if ( xml.name().toString() == "start-key-generation" ) {
         if (currentEntry == 0) {
           kWarning(OooDebug) << "Got start-key-generation without valid file-entry at line" << xml.lineNumber();
@@ -220,7 +220,6 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
         }
         QXmlStreamAttributes kdfAttributes = xml.attributes();
         currentEntry->setKeyGenerationName( kdfAttributes.value("manifest:start-key-generation-name").toString() );
-        currentEntry->setKeySize( kdfAttributes.value("manifest:key-size").toString() );
       } else {
 	// handle other StartDocument types here 
 	kWarning(OooDebug) << "Unexpected start document type: " << xml.name().toString();
@@ -270,9 +269,8 @@ bool Manifest::testIfEncrypted( const QString &filename )
   return false;
 }
 
-#if 0
 // libgcrypt alternative of QCryptographicHash, produces same results
-static QByteArray ghash(const QByteArray &data, const int algorithm)
+static QByteArray gcrypthash(const QByteArray &data, const int algorithm)
 {
     const int algorithmlength = gcry_md_get_algo_dlen( algorithm );
     gcry_md_hd_t context;
@@ -283,12 +281,11 @@ static QByteArray ghash(const QByteArray &data, const int algorithm)
     gcry_md_close( context );
     return result;
 }
-#endif
 
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
 #ifdef HAVE_GCRPYT
-  // qDebug() << entry->keyGenerationName() << entry->algorithm() << entry->checksumType();
+  // kDebug(OooDebug) << entry->keyGenerationName() << entry->algorithm() << entry->checksumType();
 
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
   QString keygenerationname = entry->keyGenerationName().toLower();
@@ -317,10 +314,11 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   char keybuff[keysize];
   ::memset( keybuff, 0, keysize * sizeof(char) );
   const QByteArray salt = entry->salt();
-  // password must be UTF-8 encoded
-  const QByteArray utf8pass = m_password.toUtf8();
+  // password must be UTF-8 encoded and hashed
+  const QByteArray utf8pass = gcrypthash(m_password.toUtf8(), gcryptkeyalgorithm);
+  // the key is always SHA1 derived
   gpg_error_t gcrypterror = gcry_kdf_derive(utf8pass.constData(), utf8pass.size(),
-                                            GCRY_KDF_PBKDF2, gcryptkeyalgorithm,
+                                            GCRY_KDF_PBKDF2, GCRY_MD_SHA1,
                                             salt.constData(), salt.size(),
                                             entry->iterationCount(), keysize, keybuff);
   if ( gcrypterror != 0 ) {
@@ -408,17 +406,17 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   // OpenOffice suports SHA1 and SHA256, for reference:
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( checksumtype == "sha1-1k" || checksumtype == "sha1/1k" ) {
-    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
+    csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA1 );
   } else if ( checksumtype == "sha1" ) {
-    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
+    csum = gcrypthash( *decryptedData, GCRY_MD_SHA1 );
   } else if ( checksumtype == "sha256-1k" || checksumtype == "sha256/1k" ) {
-    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
+    csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA256 );
   } else if ( checksumtype == "sha256" ) {
-    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
+    csum = gcrypthash( *decryptedData, GCRY_MD_SHA256 );
   } else if ( checksumtype == "sha512-1k" || checksumtype == "sha512/1k" ) {
-    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha512 );
+    csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA512 );
   } else if ( checksumtype == "sha512" ) {
-    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha512 );
+    csum = gcrypthash( *decryptedData, GCRY_MD_SHA512 );
   } else {
     kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
@@ -426,7 +424,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  // qDebug() << entry->checksum().toHex() << csum.toHex();
+  // kDebug(OooDebug) << entry->checksum().toHex() << csum.toHex();
 
   m_haveGoodPassword = (entry->checksum() == csum);
 #else
