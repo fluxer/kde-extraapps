@@ -157,6 +157,7 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
 {
 #ifdef HAVE_GCRPYT
   // the minimum that supports SHA256
+  // TODO: review minimum version requirement once the decryptor implementation is working
   m_init = gcry_check_version("1.1.8");
 #endif
   // I don't know why the parser barfs on this.
@@ -317,7 +318,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   unsigned char keybuff[algorithmlength];
   ::memset( keybuff, 0, algorithmlength * sizeof(unsigned char) );
   const QByteArray salt = entry->salt();
-  // password should be UTF-8 encoded
+  // password must be UTF-8 encoded
   const QByteArray utf8pass = m_password.toUtf8();
   gpg_error_t gcrypterror = gcry_kdf_derive(utf8pass.constData(), utf8pass.size(),
                                             GCRY_KDF_PBKDF2, gcryptkeyalgorithm,
@@ -385,7 +386,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  // buffer size must be multiple of the hashing algorithm block size
+  // buffer size must be multiple of the key algorithm block size
   const unsigned int decbufflen = fileData.size() * algorithmlength;
   unsigned char decbuff[decbufflen];
   ::memset( decbuff, 0, decbufflen * sizeof(unsigned char) );
