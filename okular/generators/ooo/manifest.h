@@ -172,6 +172,38 @@ class ManifestEntry
     */
     QByteArray salt() const;
 
+    /**
+       Set the key generation name
+
+       \param keyGenerationName the name of the key generation.
+
+       This is only required for files with encryption
+    */
+    void setKeyGenerationName( const QString &keyGenerationName );
+
+    /**
+       Get the generation name for the key
+
+       This is only meaningful for files with encryption
+    */
+    QString keyGenerationName() const;
+
+    /**
+       Set the key size
+
+       \param keySize the size of the key generation.
+
+       This is only required for files with encryption
+    */
+    void setKeySize( const QString &keySize );
+
+    /**
+       Get the size for the key
+
+       This is only meaningful for files with encryption
+    */
+    int keySize() const;
+
  private:
    const QString m_fileName;
    QString m_mimeType;
@@ -183,6 +215,8 @@ class ManifestEntry
    QString m_keyDerivationName;
    int m_iterationCount;
    QByteArray m_salt;
+   QString m_keyGenerationName;
+   int m_keySize;
 };
 
 

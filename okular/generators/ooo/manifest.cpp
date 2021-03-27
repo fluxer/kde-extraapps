@@ -127,6 +127,26 @@ QByteArray ManifestEntry::salt() const
   return m_salt;
 }
 
+void ManifestEntry::setKeyGenerationName( const QString &keyGenerationName )
+{
+  m_keyGenerationName = keyGenerationName;
+}
+
+QString ManifestEntry::keyGenerationName() const
+{
+  return m_keyGenerationName;
+}
+
+void ManifestEntry::setKeySize( const QString &keySize )
+{
+  m_keySize = keySize.toInt();
+}
+
+int ManifestEntry::keySize() const
+{
+  return m_keySize;
+}
+
 //---------------------------------------------------------------------
 
 Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, const QString &password )
@@ -193,6 +213,14 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
 	currentEntry->setKeyDerivationName( kdfAttributes.value("manifest:key-derivation-name").toString() );
 	currentEntry->setIterationCount( kdfAttributes.value("manifest:iteration-count").toString() );
 	currentEntry->setSalt( kdfAttributes.value("manifest:salt").toString() );
+      } else if ( xml.name().toString() == "start-key-generation" ) {
+        if (currentEntry == 0) {
+          kWarning(OooDebug) << "Got start-key-generation without valid file-entry at line" << xml.lineNumber();
+          continue;
+        }
+        QXmlStreamAttributes kdfAttributes = xml.attributes();
+        currentEntry->setKeyGenerationName( kdfAttributes.value("manifest:start-key-generation-name").toString() );
+        currentEntry->setKeySize( kdfAttributes.value("manifest:key-size").toString() );
       } else {
 	// handle other StartDocument types here 
 	kWarning(OooDebug) << "Unexpected start document type: " << xml.name().toString();
