@@ -294,8 +294,8 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   ::memset( keybuff, 0, algorithmlength * sizeof(unsigned char) );
   const QByteArray salt = entry->salt();
   // password should be UTF-8 encoded
-  const QByteArray bytepass = m_password.toUtf8();
-  gpg_error_t gcrypterror = gcry_kdf_derive(bytepass.constData(), bytepass.size(),
+  const QByteArray utf8pass = m_password.toUtf8();
+  gpg_error_t gcrypterror = gcry_kdf_derive(utf8pass.constData(), utf8pass.size(),
                                             GCRY_KDF_PBKDF2, gcryptkeyalgorithm,
                                             salt.constData(), salt.size(),
                                             entry->iterationCount(), algorithmlength, keybuff);
@@ -336,12 +336,14 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   gcrypterror = gcry_cipher_setkey( dec, keybuff, algorithmlength );
   if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_setkey: " << gcry_strerror(gcrypterror);
+    gcry_cipher_close( dec );
     return;
   }
 
   gcrypterror = gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
   if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_setiv: " << gcry_strerror(gcrypterror);
+    gcry_cipher_close( dec );
     return;
   }
 
@@ -349,8 +351,18 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   unsigned int decbufflen = fileData.size() * algorithmlength;
   unsigned char decbuff[decbufflen];
   ::memset( decbuff, 0, decbufflen * sizeof(unsigned char) );
-  gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
-  gcry_cipher_final( dec );
+  gcrypterror = gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
+  if ( gcrypterror != 0 ) {
+    kWarning(OooDebug) << "gcry_cipher_decrypt: " << gcry_strerror(gcrypterror);
+    gcry_cipher_close( dec );
+    return;
+  }
+  gcrypterror = gcry_cipher_final( dec );
+  if ( gcrypterror != 0 ) {
+    kWarning(OooDebug) << "gcry_cipher_final: " << gcry_strerror(gcrypterror);
+    gcry_cipher_close( dec );
+    return;
+  }
   gcry_cipher_close( dec );
 
   const int size = entry->size().toInt();
