@@ -156,9 +156,8 @@ Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, 
 #endif
 {
 #ifdef HAVE_GCRPYT
-  // the minimum that supports SHA256
   // TODO: review minimum version requirement once the decryptor implementation is working
-  m_init = gcry_check_version("1.1.8");
+  m_init = gcry_check_version("1.5.0");
 #endif
   // I don't know why the parser barfs on this.
   QByteArray manifestCopy = manifestData;

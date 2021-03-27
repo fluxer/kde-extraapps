@@ -75,7 +75,8 @@ set_package_properties(QMobipocket PROPERTIES
     PURPOSE "Support for Mobipocket documents in Okular"
 )
 
-macro_optional_find_package(LibGcrypt 1.1.8)
+# v1.5.0+ required for gcry_kdf_derive()
+macro_optional_find_package(LibGcrypt 1.5.0)
 set_package_properties(LibGcrypt PROPERTIES
     DESCRIPTION "General purpose cryptographic library based on the code from GnuPG"
     URL "https://gnupg.org/gcrypt/"
