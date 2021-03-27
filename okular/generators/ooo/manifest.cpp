@@ -270,9 +270,26 @@ bool Manifest::testIfEncrypted( const QString &filename )
   return false;
 }
 
+#if 0
+// libgcrypt alternative of QCryptographicHash, produces same results
+static QByteArray ghash(const QByteArray &data, const int algorithm)
+{
+    const int algorithmlength = gcry_md_get_algo_dlen( algorithm );
+    gcry_md_hd_t context;
+    gcry_md_open( &context, algorithm, 0 );
+    gcry_md_write( context, data.constData(), data.size() );
+    unsigned char *md = gcry_md_read( context, algorithm );
+    QByteArray result( reinterpret_cast<char*>(md), algorithmlength);
+    gcry_md_close( context );
+    return result;
+}
+#endif
+
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
 #ifdef HAVE_GCRPYT
+  // qDebug() << entry->keyGenerationName() << entry->algorithm() << entry->checksumType();
+
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
   QString keygenerationname = entry->keyGenerationName().toLower();
   const int keygenerationhashindex = keygenerationname.indexOf('#');
@@ -280,6 +297,9 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   int gcryptkeyalgorithm = GCRY_MD_NONE;
   // libreoffice suports SHA1 and SHA512, for reference:
   // libreoffice/oox/source/crypto/AgileEngine.cxx
+  //
+  // OpenOffice suports SHA1 and SHA256, for reference:
+  // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( keygenerationname == "sha1" ) {
     gcryptkeyalgorithm = GCRY_MD_SHA1;
   } else if ( keygenerationname == "sha256" ) {
@@ -315,17 +335,25 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   int gcryptmode = GCRY_CIPHER_MODE_NONE;
   // libreoffice suports AES128-ECB, AES128-CBC and AES256-CBC, for reference:
   // libreoffice/oox/source/crypto/CryptTools.cxx
+  //
+  // OpenOffice supports AES128-CBC, AES192-CBC, AES256-CBC and Blowfish-CFB, for reference:
+  // openoffice/main/package/source/package/manifest/ManifestExport.cxx
+  // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( algorithm == "aes128-ecb" ) {
     gcryptalgorithm = GCRY_CIPHER_AES128;
     gcryptmode = GCRY_CIPHER_MODE_ECB;
   } else if ( algorithm == "aes128-cbc" ) {
     gcryptalgorithm = GCRY_CIPHER_AES128;
     gcryptmode = GCRY_CIPHER_MODE_CBC;
+  } else if ( algorithm == "aes192-cbc" ) {
+    gcryptalgorithm = GCRY_CIPHER_AES192;
+    gcryptmode = GCRY_CIPHER_MODE_CBC;
   } else if ( algorithm == "aes256-cbc" ) {
     gcryptalgorithm = GCRY_CIPHER_AES256;
     gcryptmode = GCRY_CIPHER_MODE_CBC;
-  // according to the spec "blowfish" is Blowfish CFB but just in case match "-cfb" suffixed one too
-  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb") {
+  // according to the spec "blowfish" is Blowfish-CFB but just in case match "-cfb" suffixed one
+  // too, OpenOffice refers to it as "Blowfish CFB"
+  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb" || algorithm == "blowfish cfb") {
     gcryptalgorithm = GCRY_CIPHER_BLOWFISH;
     gcryptmode = GCRY_CIPHER_MODE_CFB;
   } else {
@@ -358,7 +386,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   }
 
   // buffer size must be multiple of the hashing algorithm block size
-  unsigned int decbufflen = fileData.size() * algorithmlength;
+  const unsigned int decbufflen = fileData.size() * algorithmlength;
   unsigned char decbuff[decbufflen];
   ::memset( decbuff, 0, decbufflen * sizeof(unsigned char) );
   gcrypterror = gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
@@ -383,15 +411,18 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   checksumtype = checksumtype.mid(checksumhashindex + 1);
   // libreoffice suports SHA1, SHA256 and SHA512, for reference:
   // libreoffice/oox/source/crypto/CryptTools.cxx
-  if ( checksumtype == "sha1-1k" ) {
+  //
+  // OpenOffice suports SHA1 and SHA256, for reference:
+  // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
+  if ( checksumtype == "sha1-1k" || checksumtype == "sha1/1k") {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
   } else if ( checksumtype == "sha1" ) {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
-  } else if ( checksumtype == "sha256-1k") {
+  } else if ( checksumtype == "sha256-1k" || checksumtype == "sha256/1k") {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
   } else if ( checksumtype == "sha256") {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
-  } else if ( checksumtype == "sha512-1k") {
+  } else if ( checksumtype == "sha512-1k" || checksumtype == "sha512/1k") {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha512 );
   } else if ( checksumtype == "sha512") {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha512 );
@@ -402,13 +433,9 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  // qDebug() << Q_FUNC_INFO << entry->checksum().toHex() << csum.toHex();
+  // qDebug() << entry->checksum().toHex() << csum.toHex();
 
-  if ( entry->checksum() == csum ) {
-    m_haveGoodPassword = true;
-  } else {
-    m_haveGoodPassword = false;
-  }
+  m_haveGoodPassword = (entry->checksum() == csum);
 #else
   m_haveGoodPassword = false;
 #endif
