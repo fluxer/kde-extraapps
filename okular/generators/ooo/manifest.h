@@ -66,7 +66,7 @@ class ManifestEntry
 
        This is only meaningful for files with encryption
     */
-    QString size() const;
+    int size() const;
 
     /**
        Set the checksum type.
@@ -207,7 +207,7 @@ class ManifestEntry
  private:
    const QString m_fileName;
    QString m_mimeType;
-   QString m_size;
+   int m_size;
    QString m_checksumType;
    QByteArray m_checksum;
    QString m_algorithm;

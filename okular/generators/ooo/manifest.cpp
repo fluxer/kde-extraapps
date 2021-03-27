@@ -39,7 +39,7 @@ void ManifestEntry::setMimeType( const QString &mimeType )
 
 void ManifestEntry::setSize( const QString &size )
 {
-  m_size = size;
+  m_size = size.toInt();
 }
 
 QString ManifestEntry::fileName() const
@@ -52,7 +52,7 @@ QString ManifestEntry::mimeType() const
   return m_mimeType;
 }
 
-QString ManifestEntry::size() const
+int ManifestEntry::size() const
 {
   return m_size;
 }
@@ -278,10 +278,14 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   const int keygenerationhashindex = keygenerationname.indexOf('#');
   keygenerationname = keygenerationname.mid(keygenerationhashindex + 1);
   int gcryptkeyalgorithm = GCRY_MD_NONE;
+  // libreoffice suports SHA1 and SHA512, for reference:
+  // libreoffice/oox/source/crypto/AgileEngine.cxx
   if ( keygenerationname == "sha1" ) {
     gcryptkeyalgorithm = GCRY_MD_SHA1;
   } else if ( keygenerationname == "sha256" ) {
     gcryptkeyalgorithm = GCRY_MD_SHA256;
+  } else if ( keygenerationname == "sha512" ) {
+    gcryptkeyalgorithm = GCRY_MD_SHA512;
   } else {
     kWarning(OooDebug) << "unknown key generation name: " << entry->keyGenerationName();
     // we can only assume it will be OK.
@@ -309,9 +313,15 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   algorithm = algorithm.mid(algorithmhashindex + 1);
   int gcryptalgorithm = GCRY_CIPHER_NONE;
   int gcryptmode = GCRY_CIPHER_MODE_NONE;
-  // TODO: what other algorithms are used by applications?
-  // default of libreoffice
-  if ( algorithm == "aes256-cbc" ) {
+  // libreoffice suports AES128-ECB, AES128-CBC and AES256-CBC, for reference:
+  // libreoffice/oox/source/crypto/CryptTools.cxx
+  if ( algorithm == "aes128-ecb" ) {
+    gcryptalgorithm = GCRY_CIPHER_AES128;
+    gcryptmode = GCRY_CIPHER_MODE_ECB;
+  } else if ( algorithm == "aes128-cbc" ) {
+    gcryptalgorithm = GCRY_CIPHER_AES128;
+    gcryptmode = GCRY_CIPHER_MODE_CBC;
+  } else if ( algorithm == "aes256-cbc" ) {
     gcryptalgorithm = GCRY_CIPHER_AES256;
     gcryptmode = GCRY_CIPHER_MODE_CBC;
   // according to the spec "blowfish" is Blowfish CFB but just in case match "-cfb" suffixed one too
@@ -365,13 +375,14 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   }
   gcry_cipher_close( dec );
 
-  const int size = entry->size().toInt();
-  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), size );
+  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), entry->size() );
 
   QByteArray csum;
   QString checksumtype = entry->checksumType().toLower();
   const int checksumhashindex = checksumtype.indexOf('#');
   checksumtype = checksumtype.mid(checksumhashindex + 1);
+  // libreoffice suports SHA1, SHA256 and SHA512, for reference:
+  // libreoffice/oox/source/crypto/CryptTools.cxx
   if ( checksumtype == "sha1-1k" ) {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
   } else if ( checksumtype == "sha1" ) {
@@ -380,6 +391,10 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
   } else if ( checksumtype == "sha256") {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
+  } else if ( checksumtype == "sha512-1k") {
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha512 );
+  } else if ( checksumtype == "sha512") {
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha512 );
   } else {
     kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
