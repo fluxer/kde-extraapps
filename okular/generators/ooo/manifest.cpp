@@ -247,8 +247,8 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 #ifdef HAVE_GCRPYT
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
   QString checksumtype = entry->checksumType().toLower();
-  const int hashindex = checksumtype.indexOf('#');
-  checksumtype = checksumtype.mid(hashindex + 1);
+  const int checksumhashindex = checksumtype.indexOf('#');
+  checksumtype = checksumtype.mid(checksumhashindex + 1);
 
   const QByteArray bytepass = m_password.toLocal8Bit();
   const QByteArray salt = entry->salt();
@@ -274,9 +274,30 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  const QByteArray initializationvector = entry->initialisationVector();
+  QString algorithm = entry->algorithm().toLower();
+  const int algorithmhashindex = algorithm.indexOf('#');
+  algorithm = algorithm.mid(algorithmhashindex + 1);
+  int gcryptalgorithm = GCRY_CIPHER_NONE;
+  int gcryptmode = GCRY_CIPHER_MODE_NONE;
+  // TODO: what other algorithms are used by applications?
+  // default of libreoffice
+  if ( algorithm == "aes256-cbc" ) {
+    gcryptalgorithm = GCRY_CIPHER_AES256;
+    gcryptmode = GCRY_CIPHER_MODE_CBC;
+  // according to the spec "blowfish" is Blowfish CFB but just in case match "-cfb" suffixed one too
+  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb" ) {
+    gcryptalgorithm = GCRY_CIPHER_BLOWFISH;
+    gcryptmode = GCRY_CIPHER_MODE_CFB;
+  } else {
+    kWarning(OooDebug) << "unknown algorithm: " << entry->algorithm();
+    // we can only assume it will be OK.
+    m_haveGoodPassword = true;
+    return;
+  }
+
+  QByteArray initializationvector = entry->initialisationVector();
   gcry_cipher_hd_t dec;
-  gcry_cipher_open( &dec, GCRY_CIPHER_BLOWFISH, GCRY_CIPHER_MODE_CFB, 0 );
+  gcry_cipher_open( &dec, gcryptalgorithm, gcryptmode, 0 );
   gcry_cipher_setkey( dec, keyhash.constData(), keyhash.size() );
   gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
 
@@ -288,7 +309,8 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   gcry_cipher_final( dec );
   gcry_cipher_close( dec );
 
-  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), decbufflen );
+  const int size = entry->size().toInt();
+  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), size);
 
   QByteArray csum;
   if ( checksumtype == "sha1-1k" ) {
