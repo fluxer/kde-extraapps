@@ -274,33 +274,32 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 {
 #ifdef HAVE_GCRPYT
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
-  QString checksumtype = entry->checksumType().toLower();
-  const int checksumhashindex = checksumtype.indexOf('#');
-  checksumtype = checksumtype.mid(checksumhashindex + 1);
-
-  // password should be UTF-8 encoded
-  const QByteArray bytepass = m_password.toUtf8();
-  const QByteArray salt = entry->salt();
-  int gcrypthashalgorithm = GCRY_MD_NONE;
-  if ( checksumtype == "sha1" || checksumtype == "sha1-1k" ) {
-    gcrypthashalgorithm = GCRY_MD_SHA1;
-  } else if ( checksumtype == "sha256" || checksumtype == "sha256-1k" ) {
-    gcrypthashalgorithm = GCRY_MD_SHA256;
+  QString keygenerationname = entry->keyGenerationName().toLower();
+  const int keygenerationhashindex = keygenerationname.indexOf('#');
+  keygenerationname = keygenerationname.mid(keygenerationhashindex + 1);
+  int gcryptkeyalgorithm = GCRY_MD_NONE;
+  if ( keygenerationname == "sha1" ) {
+    gcryptkeyalgorithm = GCRY_MD_SHA1;
+  } else if ( keygenerationname == "sha256" ) {
+    gcryptkeyalgorithm = GCRY_MD_SHA256;
   } else {
-    kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
+    kWarning(OooDebug) << "unknown key generation name: " << entry->keyGenerationName();
     // we can only assume it will be OK.
     m_haveGoodPassword = true;
     return;
   }
 
-  const unsigned int algorithmlength = gcry_md_get_algo_dlen( gcrypthashalgorithm );
+  const unsigned int algorithmlength = gcry_md_get_algo_dlen( gcryptkeyalgorithm );
   unsigned char keybuff[algorithmlength];
-  ::memset(keybuff, 0, algorithmlength * sizeof(unsigned char));
+  ::memset( keybuff, 0, algorithmlength * sizeof(unsigned char) );
+  const QByteArray salt = entry->salt();
+  // password should be UTF-8 encoded
+  const QByteArray bytepass = m_password.toUtf8();
   gpg_error_t gcrypterror = gcry_kdf_derive(bytepass.constData(), bytepass.size(),
-                                            GCRY_KDF_PBKDF2, gcrypthashalgorithm,
+                                            GCRY_KDF_PBKDF2, gcryptkeyalgorithm,
                                             salt.constData(), salt.size(),
                                             entry->iterationCount(), algorithmlength, keybuff);
-  if (gcrypterror != 0) {
+  if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_kdf_derive: " << gcry_strerror(gcrypterror);
     return;
   }
@@ -329,19 +328,19 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   const QByteArray initializationvector = entry->initialisationVector();
   gcry_cipher_hd_t dec;
   gcrypterror = gcry_cipher_open( &dec, gcryptalgorithm, gcryptmode, 0 );
-  if (gcrypterror != 0) {
+  if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_open: " << gcry_strerror(gcrypterror);
     return;
   }
 
   gcrypterror = gcry_cipher_setkey( dec, keybuff, algorithmlength );
-  if (gcrypterror != 0) {
+  if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_setkey: " << gcry_strerror(gcrypterror);
     return;
   }
 
   gcrypterror = gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
-  if (gcrypterror != 0) {
+  if ( gcrypterror != 0 ) {
     kWarning(OooDebug) << "gcry_cipher_setiv: " << gcry_strerror(gcrypterror);
     return;
   }
@@ -349,15 +348,18 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   // buffer size must be multiple of the hashing algorithm block size
   unsigned int decbufflen = fileData.size() * algorithmlength;
   unsigned char decbuff[decbufflen];
-  ::memset(decbuff, 0, decbufflen * sizeof(unsigned char));
+  ::memset( decbuff, 0, decbufflen * sizeof(unsigned char) );
   gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
   gcry_cipher_final( dec );
   gcry_cipher_close( dec );
 
   const int size = entry->size().toInt();
-  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), size);
+  *decryptedData = QByteArray( reinterpret_cast<char*>(decbuff), size );
 
   QByteArray csum;
+  QString checksumtype = entry->checksumType().toLower();
+  const int checksumhashindex = checksumtype.indexOf('#');
+  checksumtype = checksumtype.mid(checksumhashindex + 1);
   if ( checksumtype == "sha1-1k" ) {
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
   } else if ( checksumtype == "sha1" ) {
@@ -366,6 +368,11 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
   } else if ( checksumtype == "sha256") {
     csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
+  } else {
+    kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
+    // we can only assume it will be OK.
+    m_haveGoodPassword = true;
+    return;
   }
 
   // qDebug() << Q_FUNC_INFO << entry->checksum().toHex() << csum.toHex();
