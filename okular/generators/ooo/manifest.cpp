@@ -278,27 +278,30 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   const int checksumhashindex = checksumtype.indexOf('#');
   checksumtype = checksumtype.mid(checksumhashindex + 1);
 
-  const QByteArray bytepass = m_password.toLocal8Bit();
+  // password should be UTF-8 encoded
+  const QByteArray bytepass = m_password.toUtf8();
   const QByteArray salt = entry->salt();
-  int algorithmlength = gcry_md_get_algo_dlen( GCRY_MD_SHA1 );
-  QByteArray keyhash;
+  int gcrypthashalgorithm = GCRY_MD_NONE;
   if ( checksumtype == "sha1" || checksumtype == "sha1-1k" ) {
-    keyhash.resize(algorithmlength);
-    gcry_kdf_derive(bytepass.constData(), bytepass.size(),
-                    GCRY_KDF_PBKDF2, GCRY_MD_SHA1,
-                    salt.constData(), salt.size(),
-                    entry->iterationCount(), algorithmlength, keyhash.data());
+    gcrypthashalgorithm = GCRY_MD_SHA1;
   } else if ( checksumtype == "sha256" || checksumtype == "sha256-1k" ) {
-    algorithmlength = gcry_md_get_algo_dlen( GCRY_MD_SHA256 );
-    keyhash.resize(algorithmlength);
-    gcry_kdf_derive(bytepass.constData(), bytepass.size(),
-                    GCRY_KDF_PBKDF2, GCRY_MD_SHA256,
-                    salt.constData(), salt.size(),
-                    entry->iterationCount(), algorithmlength, keyhash.data());
+    gcrypthashalgorithm = GCRY_MD_SHA256;
   } else {
     kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
     m_haveGoodPassword = true;
+    return;
+  }
+
+  const unsigned int algorithmlength = gcry_md_get_algo_dlen( gcrypthashalgorithm );
+  unsigned char keybuff[algorithmlength];
+  ::memset(keybuff, 0, algorithmlength * sizeof(unsigned char));
+  gpg_error_t gcrypterror = gcry_kdf_derive(bytepass.constData(), bytepass.size(),
+                                            GCRY_KDF_PBKDF2, gcrypthashalgorithm,
+                                            salt.constData(), salt.size(),
+                                            entry->iterationCount(), algorithmlength, keybuff);
+  if (gcrypterror != 0) {
+    kWarning(OooDebug) << "gcry_kdf_derive: " << gcry_strerror(gcrypterror);
     return;
   }
 
@@ -313,7 +316,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     gcryptalgorithm = GCRY_CIPHER_AES256;
     gcryptmode = GCRY_CIPHER_MODE_CBC;
   // according to the spec "blowfish" is Blowfish CFB but just in case match "-cfb" suffixed one too
-  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb" ) {
+  } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb") {
     gcryptalgorithm = GCRY_CIPHER_BLOWFISH;
     gcryptmode = GCRY_CIPHER_MODE_CFB;
   } else {
@@ -323,11 +326,25 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  QByteArray initializationvector = entry->initialisationVector();
+  const QByteArray initializationvector = entry->initialisationVector();
   gcry_cipher_hd_t dec;
-  gcry_cipher_open( &dec, gcryptalgorithm, gcryptmode, 0 );
-  gcry_cipher_setkey( dec, keyhash.constData(), keyhash.size() );
-  gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
+  gcrypterror = gcry_cipher_open( &dec, gcryptalgorithm, gcryptmode, 0 );
+  if (gcrypterror != 0) {
+    kWarning(OooDebug) << "gcry_cipher_open: " << gcry_strerror(gcrypterror);
+    return;
+  }
+
+  gcrypterror = gcry_cipher_setkey( dec, keybuff, algorithmlength );
+  if (gcrypterror != 0) {
+    kWarning(OooDebug) << "gcry_cipher_setkey: " << gcry_strerror(gcrypterror);
+    return;
+  }
+
+  gcrypterror = gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
+  if (gcrypterror != 0) {
+    kWarning(OooDebug) << "gcry_cipher_setiv: " << gcry_strerror(gcrypterror);
+    return;
+  }
 
   // buffer size must be multiple of the hashing algorithm block size
   unsigned int decbufflen = fileData.size() * algorithmlength;
