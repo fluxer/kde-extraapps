@@ -269,6 +269,7 @@ bool Manifest::testIfEncrypted( const QString &filename )
   return false;
 }
 
+#ifdef HAVE_GCRPYT
 // libgcrypt alternative of QCryptographicHash, produces same results
 static QByteArray gcrypthash(const QByteArray &data, const int algorithm)
 {
@@ -281,6 +282,7 @@ static QByteArray gcrypthash(const QByteArray &data, const int algorithm)
     gcry_md_close( context );
     return result;
 }
+#endif
 
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
@@ -315,9 +317,9 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   ::memset( keybuff, 0, keysize * sizeof(char) );
   const QByteArray salt = entry->salt();
   // password must be UTF-8 encoded and hashed
-  const QByteArray utf8pass = gcrypthash(m_password.toUtf8(), gcryptkeyalgorithm);
+  const QByteArray passwordhash = gcrypthash(m_password.toUtf8(), gcryptkeyalgorithm);
   // the key is always SHA1 derived
-  gpg_error_t gcrypterror = gcry_kdf_derive(utf8pass.constData(), utf8pass.size(),
+  gpg_error_t gcrypterror = gcry_kdf_derive(passwordhash.constData(), passwordhash.size(),
                                             GCRY_KDF_PBKDF2, GCRY_MD_SHA1,
                                             salt.constData(), salt.size(),
                                             entry->iterationCount(), keysize, keybuff);
