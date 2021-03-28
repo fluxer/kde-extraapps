@@ -294,10 +294,10 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   const int keygenerationhashindex = keygenerationname.indexOf('#');
   keygenerationname = keygenerationname.mid(keygenerationhashindex + 1);
   int gcryptkeyalgorithm = GCRY_MD_NONE;
-  // libreoffice suports SHA1 and SHA512, for reference:
+  // libreoffice supports SHA1 and SHA512, for reference:
   // libreoffice/oox/source/crypto/AgileEngine.cxx
   //
-  // OpenOffice suports SHA1 and SHA256, for reference:
+  // OpenOffice supports SHA1 and SHA256, for reference:
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( keygenerationname == "sha1" ) {
     gcryptkeyalgorithm = GCRY_MD_SHA1;
@@ -333,7 +333,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   algorithm = algorithm.mid(algorithmhashindex + 1);
   int gcryptalgorithm = GCRY_CIPHER_NONE;
   int gcryptmode = GCRY_CIPHER_MODE_NONE;
-  // libreoffice suports AES128-ECB, AES128-CBC and AES256-CBC, for reference:
+  // libreoffice supports AES128-ECB, AES128-CBC and AES256-CBC, for reference:
   // libreoffice/oox/source/crypto/CryptTools.cxx
   //
   // OpenOffice supports AES128-CBC, AES192-CBC, AES256-CBC and Blowfish-CFB, for reference:
@@ -402,10 +402,10 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   QString checksumtype = entry->checksumType().toLower();
   const int checksumhashindex = checksumtype.indexOf('#');
   checksumtype = checksumtype.mid(checksumhashindex + 1);
-  // libreoffice suports SHA1, SHA256 and SHA512, for reference:
+  // libreoffice supports SHA1, SHA256 and SHA512, for reference:
   // libreoffice/oox/source/crypto/CryptTools.cxx
   //
-  // OpenOffice suports SHA1 and SHA256, for reference:
+  // OpenOffice supports SHA1 and SHA256, for reference:
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( checksumtype == "sha1-1k" || checksumtype == "sha1/1k" ) {
     csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA1 );
