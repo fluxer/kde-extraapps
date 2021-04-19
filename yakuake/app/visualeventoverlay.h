@@ -23,15 +23,13 @@
 
 
 #include <QRect>
-#include <QtCore/qdatetime.h>
+#include <QDateTime>
 #include <QWidget>
+#include <QTimer>
 
 
 class SessionStack;
 class Terminal;
-
-#include <QTimer>
-
 
 class EventRect : public QRect
 {

@@ -232,7 +232,7 @@ void DocumentViewContainer::updateLayout()
 
             if (animated) {
                 if (d->mViews.contains(view)) {
-                    if (rect != view->geometry()) {
+                    if (rect != view->geometry().toRect()) {
                         if (d->mAddedViews.isEmpty() && d->mRemovedViews.isEmpty()) {
                             // View moves because of a resize
                             view->moveTo(rect);

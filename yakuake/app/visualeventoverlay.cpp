@@ -27,7 +27,6 @@
 #include <KColorScheme>
 
 #include <QPainter>
-#include <QTimer>
 
 
 EventRect::EventRect(const QPoint& topLeft, const QPoint& bottomRight, EventType type,
@@ -52,7 +51,11 @@ bool EventRect::operator==(const EventRect& eventRect) const
     if (m_eventType != eventRect.eventType())
         return false;
 
+#if QT_VERSION >= 0x041000
+    return QRect::operator==(eventRect);
+#else
     return QT_PREPEND_NAMESPACE(operator==(*this, eventRect));
+#endif
 }
 
 bool EventRect::operator<(const EventRect& eventRect) const
