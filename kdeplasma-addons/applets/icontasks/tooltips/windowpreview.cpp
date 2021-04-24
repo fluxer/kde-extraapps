@@ -171,7 +171,7 @@ QSize WindowPreview::sizeHint() const
     bool havePreviews = WindowEffects::isEffectAvailable(WindowEffects::WindowPreview);
 
     if (havePreviews) {
-        if (!m_windowSizes.size() == 0) {
+        if (m_windowSizes.size() == 0) {
             m_windowSizes = WindowEffects::windowSizes(m_windowIds);
         }
 
