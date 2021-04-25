@@ -93,7 +93,7 @@ please report the problem."));
  */
 unsigned long num(FILE *fp, int size)
 {
-  register long x = 0;
+  long x = 0;
 
   while (size--) x = (x << 8) | one(fp);
   return x;
@@ -101,7 +101,7 @@ unsigned long num(FILE *fp, int size)
 
 long snum(FILE *fp, int size)
 {
-  register long x;
+  long x;
 
 #ifdef __STDC__
   x = (signed char) getc(fp);

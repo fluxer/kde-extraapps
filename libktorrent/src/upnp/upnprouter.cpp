@@ -132,7 +132,7 @@ namespace bt
 		else if (name == "modelName")
 			modelName = value;
 		else if (name == "modelNumber")
-			modelNumber == value;
+			modelNumber = value;
 	}
 	
 	///////////////////////////////////////
