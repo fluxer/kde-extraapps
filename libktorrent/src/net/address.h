@@ -20,6 +20,7 @@
 #ifndef NETADDRESS_H
 #define NETADDRESS_H
 
+#include <sys/socket.h> // sockaddr_storage
 #include <netinet/in.h>
 #include <QHostAddress>
 #include <util/constants.h>
