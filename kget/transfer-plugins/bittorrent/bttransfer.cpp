@@ -312,8 +312,11 @@ void BTTransfer::updateTorrent()
 
     ChangesFlags changesFlags = 0;
 
-    if (m_downloadedSize != (m_downloadedSize = torrent->getStats().bytes_downloaded))
+    if (m_downloadedSize != torrent->getStats().bytes_downloaded)
+    {
+        m_downloadedSize = torrent->getStats().bytes_downloaded;
         changesFlags |= Tc_DownloadedSize;
+    }
 
     if (m_uploadSpeed != static_cast<int>(torrent->getStats().upload_rate))
     {
