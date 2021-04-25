@@ -605,23 +605,32 @@ void VncClientThread::clientSetKeepalive()
         return;
     }
 
+    // TCP_KEEPIDLE, TCP_KEEPINTVL and TCP_KEEPCNT are introduced in Linux 2.4
+    // however NetBSD for example also implements the options
+#ifdef TCP_KEEPIDLE
     optval = m_keepalive.intervalSeconds;
     if (setsockopt(cl->sock, IPPROTO_TCP, TCP_KEEPIDLE, &optval, optlen) < 0) {
         kError(5011) << "setsockopt(TCP_KEEPIDLE)" << strerror(errno);
         return;
     }
+#endif
 
+#ifdef TCP_KEEPINTVL
     optval = m_keepalive.intervalSeconds;
     if (setsockopt(cl->sock, IPPROTO_TCP, TCP_KEEPINTVL, &optval, optlen) < 0) {
         kError(5011) << "setsockopt(TCP_KEEPINTVL)" << strerror(errno);
         return;
     }
+#endif
 
+#ifdef TCP_KEEPCNT
     optval = m_keepalive.failedProbes;
     if(setsockopt(cl->sock, IPPROTO_TCP, TCP_KEEPCNT, &optval, optlen) < 0) {
         kError(5011) << "setsockopt(TCP_KEEPCNT)" << strerror(errno);
         return;
     }
+#endif
+
     m_keepalive.set = true;
     kDebug(5011) << "TCP keepalive set";
 }
