@@ -170,7 +170,7 @@ void gradient( QPainter &p, bool hor, const QRect &rect, const QColor &ca, const
    int rDiff, gDiff, bDiff;
    int rca, gca, bca, rcb, gcb, bcb;
 
-   register int x, y;
+   int x, y;
 
    if ((rect.width()<=0) || (rect.height()<=0)) return;
 
@@ -178,9 +178,9 @@ void gradient( QPainter &p, bool hor, const QRect &rect, const QColor &ca, const
    gDiff = (gcb = cb.green()) - (gca = ca.green());
    bDiff = (bcb = cb.blue())  - (bca = ca.blue());
 
-   register int rl = rca << 16;
-   register int gl = gca << 16;
-   register int bl = bca << 16;
+   int rl = rca << 16;
+   int gl = gca << 16;
+   int bl = bca << 16;
 
    int rcdelta = ((1<<16) / ((!hor) ? rect.height() : rect.width())) * rDiff;
    int gcdelta = ((1<<16) / ((!hor) ? rect.height() : rect.width())) * gDiff;
@@ -319,10 +319,10 @@ void KSmallSlider::wheelEvent( QWheelEvent * qwe)
 
     int inc = ( maximum() - minimum() ) / Volume::VOLUME_STEP_DIVISOR;
     if ( inc < 1)
-    	inc = 1;
+        inc = 1;
 
     //kDebug(67100) << "KSmallslider::wheelEvent() inc=" << inc << "delta=" << e->delta();
-	int newVal;
+    int newVal;
 
     if ( !decrease ) {
        newVal = QAbstractSlider::value() + inc;
@@ -350,7 +350,7 @@ void KSmallSlider::moveSlider( int pos )
 
     if ( newVal != value() ) {
         setValue( newVal );
-	emit valueChanged(newVal);
+        emit valueChanged(newVal);
         // probably done by Qt: emit valueChanged( value() ); //  Only for external use
         // probably we need update() here
     }
