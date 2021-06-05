@@ -182,15 +182,16 @@ QString KIppRequest::assembleUrif(const QString &name, bool isClass)
 {
     char  uri[HTTP_MAX_URI]; // printer URI
 
-    QString destination;
+    QByteArray resourcef;
     if (isClass) {
-        destination = QLatin1String("/classes/") + name;
+        resourcef = "/classes/%s";
     } else {
-        destination = QLatin1String("/printers/") + name;
+        resourcef = "/printers/%s";
     }
+    const QByteArray destination = name.toUtf8();
 
     httpAssembleURIf(HTTP_URI_CODING_ALL, uri, sizeof(uri), "ipp", cupsUser(), "localhost",
-                     ippPort(), destination.toUtf8());
+                     ippPort(), resourcef.constData(), destination.constData());
     return uri;
 }
 
