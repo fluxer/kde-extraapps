@@ -35,20 +35,10 @@
 #include <QtCore/QFile>
 #include <QtCore/QByteArray>
 
-#include <sys/stat.h>
+#include <sys/stat.h> // S_BLKSIZE
 #include <sys/types.h>
 #include <unistd.h>
 #include <errno.h>
-
-#ifdef Q_OS_SOLARIS
-#include <sys/vfstab.h>
-#else
-#include <fstab.h>
-#endif
-
-#ifdef HAVE_MNTENT_H
-#include <mntent.h>
-#endif
 
 #ifndef S_BLKSIZE
 #define S_BLKSIZE 512
