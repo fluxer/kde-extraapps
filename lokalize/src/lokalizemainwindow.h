@@ -41,8 +41,6 @@
 class KAction;
 class KRecentFilesAction;
 class EditorTab;
-class MultiEditorAdaptor;
-class ProjectScriptingPlugin;
 namespace TM {class TMTab;}
 class FileSearchTab;
 
@@ -52,7 +50,7 @@ class FileSearchTab;
  * Sets up actions, and maintains their connection with active subwindow via ActionProxy
  * As such, it handles the menus, toolbars, and status bars.
  *
- * It is known as Lokalize in kross scripts and as
+ * It is known as Lokalize in scripts and as
  * '/ThisIsWhatYouWant : org.kde.Lokalize.MainWindow' in qdbusviewer
  *
  * @author Nick Shaforostoff <shafff@ukr.net>
@@ -81,10 +79,8 @@ private slots:
     void applyToBeActiveSubWindow();
     void projectLoaded();
     void projectSettingsChanged();
-    void loadProjectScripts();
 
     void editorClosed(QObject* obj);
-    void resetMultiEditorAdaptor();
 
     void openProject(const KUrl& url){openProject(url.path());}//convenience overload for recent projects action
     void openProject(){openProject(QString());}
@@ -156,32 +152,11 @@ private:
 
     QByteArray m_lastEditorState;
 
-    //used for kross API
-    EditorTab* m_spareEditor;
-    MultiEditorAdaptor* m_multiEditorAdaptor;
-    ProjectScriptingPlugin* m_projectScriptingPlugin;
-
     //using QPointer switches it.value() to 0 before we get to destroyed() handler
     //typedef QMap<KUrl, QPointer<QMdiSubWindow> > FileToEditor;
     typedef QMap<KUrl, QMdiSubWindow*> FileToEditor;
     FileToEditor m_fileToEditor;
 };
-
-
-#include <kross/ui/plugin.h>
-
-class ProjectScriptingPlugin: public Kross::ScriptingPlugin
-{
-Q_OBJECT
-public:
-    ProjectScriptingPlugin(QObject* lokalize, QObject* editor);
-    ~ProjectScriptingPlugin();
-    void setDOMDocument (const QDomDocument &document, bool merge = false);
-
-private slots:
-    void doAutoruns();
-};
-
 
 class DelayedFileOpener: public QObject
 {

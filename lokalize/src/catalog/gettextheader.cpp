@@ -172,7 +172,6 @@ QString GNUPluralForms(const QString& lang)
 
 
     //BEGIN alternative
-    // NOTE does this work under M$ OS?
     qWarning()<<"gonna call msginit";
     QString def="nplurals=2; plural=n != 1;";
 

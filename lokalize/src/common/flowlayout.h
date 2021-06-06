@@ -40,7 +40,7 @@
 class KAction;
 
 /**
- * used in glossary and kross views
+ * used in glossary
  *
  * copied from 'pretty' docs
  */
@@ -51,7 +51,6 @@ public:
     enum User
     {
         glossary,
-        webquery,
         standard
     };
 

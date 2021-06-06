@@ -1,14 +1,10 @@
 deps (in order of importance):
--qt 4.5, with sqlite plugin
--kdelibs 4.3
+-katie 4.10, with sqlite plugin
+-kdelibs 4.20
 -kdesdk strigi analyzer plugins (for project overview)
--libhunspell (for stemming)
--krosspython
--python-qt4
--python-kde4 (or recommend)
--python-dbus
+-hunspell (for stemming)
 -translate-toolkit (odf2xliff)
 -python-lxml (explicitly for odf2xliff)
 -poxml
--gettext (used by converting and merging scripts +as a fallback for getting plural expressions for langs)
+-gettext (msginit used when creating new PO files)
 -subversion (for autofetching KDE translations in new project wizard)

@@ -25,10 +25,7 @@
 #define PREFS_H
 
 #include <QLineEdit>
-class KEditListWidget;
 class KLienEdit;
-
-namespace Kross {class ActionCollectionView;}
 
 /**
  * Singleton that manages cfgs for Lokalize and projects
@@ -55,16 +52,11 @@ public slots:
     void projectConfigure();
     
     void reflectProjectConfigChange();
-    
-    void reflectRelativePathsHack();
 
 signals:
     void generalSettingsChanged();
 
 private:
-    KEditListWidget* m_scriptsRelPrefWidget; //HACK to get relative filenames in the project file
-    KEditListWidget* m_scriptsPrefWidget;
-    Kross::ActionCollectionView* m_projectActionsView;
     QWidget* m_mainWindowPtr;
 
 private:
@@ -100,21 +92,5 @@ public:
 public slots:
     void setLangCode(int);
 };
-
-#include <kross/ui/view.h>
-class ScriptsView: public Kross::ActionCollectionView
-{
-Q_OBJECT
-public:
-    ScriptsView(QWidget* parent);
-
-// public slots:
-//     void addScsetText(const QString&);
-
-    void dragEnterEvent(QDragEnterEvent* event);
-    void dropEvent(QDropEvent* event);
-
-};
-
 
 #endif

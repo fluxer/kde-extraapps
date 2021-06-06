@@ -153,7 +153,7 @@ public slots:
 private:
     int m_filerOptions;
     bool m_individualRejectFilterEnable;
-    QVector<bool> m_individualRejectFilter; //used from kross scripts
+    QVector<bool> m_individualRejectFilter;
     MergeCatalog* m_mergeCatalog;
 };
 

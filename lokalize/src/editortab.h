@@ -77,7 +77,7 @@ public:
  *
  * This class can be called a dispatcher for one message catalog.
  *
- * It is accessible via Lokalize.currentEditor() from kross scripts and via
+ * It is accessible via Lokalize.currentEditor() from scripts and via
  * '/ThisIsWhatYouWant/Editor/# : org.kde.Lokalize.Editor' from qdbusviewer
  *
  * @author Nick Shaforostoff <shafff@ukr.net>

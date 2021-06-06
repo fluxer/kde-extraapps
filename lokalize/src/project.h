@@ -29,8 +29,6 @@
 #include <QList>
 #include "projectbase.h"
 
-#define WEBQUERY_ENABLE
-
 class ProjectModel;
 class ProjectLocal;
 namespace GlossaryNS{class Glossary;}
@@ -40,14 +38,13 @@ namespace TM{class TMManagerWin;}
 /**
  * Singleton object that represents project.
  * It is shared between EditorWindow 'mainwindows' that use the same project file.
- * Keeps project's KDirModel, Glossary and kross::actions
+ * Keeps project's KDirModel and Glossary
  *
  * GUI for config handling is implemented in prefs.cpp
  *
  * @short Singleton object that represents project
  */
 
-///////// * Also provides list of web-query scripts
 class Project: public ProjectBase
 {
     Q_OBJECT

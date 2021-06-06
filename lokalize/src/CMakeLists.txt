@@ -23,7 +23,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/cataloglistview
     ${CMAKE_CURRENT_SOURCE_DIR}/project
     ${CMAKE_CURRENT_SOURCE_DIR}/glossary
-    ${CMAKE_CURRENT_SOURCE_DIR}/webquery
     ${CMAKE_CURRENT_SOURCE_DIR}/tm
     ${CMAKE_CURRENT_SOURCE_DIR}/filesearch
     ${CMAKE_CURRENT_SOURCE_DIR}/mergemode
@@ -80,9 +79,6 @@ set(lokalize_SRCS
 
     prefs.cpp
 
-    webquery/webqueryview.cpp
-    webquery/webquerycontroller.cpp
-    webquery/myactioncollectionview.cpp
     tools/widgettextcaptureconfig.cpp
 
     filesearch/filesearchtab.cpp
@@ -125,7 +121,6 @@ set(lokalize_SRCS
     tm/managedatabases.ui
     tm/dbparams.ui
     kaider_findextension.ui
-    webquery/querycontrol.ui
     tools/widgettextcaptureconfig.ui
 )
 
@@ -154,8 +149,6 @@ add_executable(lokalize ${lokalize_SRCS})
 
 target_link_libraries(lokalize
     ${KDE4_KPARTS_LIBS}
-    ${KDE4_KROSSCORE_LIBS}
-    ${KDE4_KROSSUI_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_KFILE_LIBS}
     ${KDE4_KDEUI_LIBS}

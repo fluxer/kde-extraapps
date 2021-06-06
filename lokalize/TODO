@@ -1,12 +1,10 @@
 -edit: \"
 -autosaving(KAutoSaveFile ??)
--projects: svn, filtering via script
+-projects: svn
 -interaction between instances (dbus)
 -settings: configurable highlight regexps
 -search: dont replace in tags
--scripts on save, for source file opening
 -db: several, msgctxt
--webquery: close langs
 
 -xliff
 -integration with dictionary

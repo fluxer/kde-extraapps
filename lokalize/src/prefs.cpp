@@ -44,13 +44,9 @@
 #include <kicon.h>
 #include <kstatusbar.h>
 #include <kdebug.h>
-#include <keditlistwidget.h>
 #include <kurl.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
-#include <kross/core/manager.h>
-#include <kross/core/actioncollection.h>
-#include <kross/ui/model.h>
 #include <threadweaver/ThreadWeaver.h>
 
 #include <QBoxLayout>
@@ -80,7 +76,6 @@ SettingsController* SettingsController::instance()
 SettingsController::SettingsController()
     : QObject(Project::instance())
     , dirty(false)
-    , m_projectActionsView(0)
     , m_mainWindowPtr(0)
 {}
 
@@ -158,26 +153,6 @@ void SettingsController::showSettingsDialog()
 
 
 
-
-ScriptsView::ScriptsView(QWidget* parent):Kross::ActionCollectionView(parent)
-{
-    setAcceptDrops(true);
-}
-
-void ScriptsView::dragEnterEvent(QDragEnterEvent* event)
-{
-    if (!event->mimeData()->urls().isEmpty() && event->mimeData()->urls().first().path().endsWith(QLatin1String(".rc")))
-        event->accept();
-}
-
-void ScriptsView::dropEvent(QDropEvent* event)
-{
-    Kross::ActionCollectionModel* scriptsModel=static_cast<Kross::ActionCollectionModel*>(model());
-    foreach(const QUrl& url, event->mimeData()->urls())
-        if (url.path().endsWith(".rc"))
-            scriptsModel->rootCollection()->readXmlFile(url.path());
-}
-
 bool SettingsController::ensureProjectIsLoaded()
 {
     if (Project::instance()->isLoaded())
@@ -221,13 +196,6 @@ bool SettingsController::projectCreate()
     if (path.isEmpty())
         return false;
 
-    if (m_projectActionsView && m_projectActionsView->model())
-    {
-        //ActionCollectionModel is known to be have bad for the usecase of reinitializing krossplugin
-        m_projectActionsView->model()->deleteLater();
-        m_projectActionsView->setModel(0);
-    }
-
     //TODO ask-n-save
     Project::instance()->load(path);
     Project::instance()->setDefaults(); //NOTE will this be an obstacle?
@@ -240,8 +208,6 @@ void SettingsController::projectConfigure()
 {
     if (KConfigDialog::showDialog("project_settings"))
     {
-        if (!m_projectActionsView->model())
-            m_projectActionsView->setModel(new Kross::ActionCollectionModel(m_projectActionsView,Kross::Manager::self().actionCollection()->collection(Project::instance()->kind())));
         return;
     }
 
@@ -297,26 +263,6 @@ void SettingsController::projectConfigure()
     ui_project_advanced.altDir->setUrl(p.altTransDir());
     dialog->addPage(w, i18nc("@title:tab","Advanced"), "applications-development-translation");
 
-    //Scripts
-    w = new QWidget(dialog);
-    QVBoxLayout* layout = new QVBoxLayout(w);
-    layout->setSpacing(6);
-    layout->setMargin(11);
-
-
-    //m_projectActionsEditor=new Kross::ActionCollectionEditor(Kross::Manager::self().actionCollection()->collection(Project::instance()->projectID()),w);
-    m_projectActionsView=new ScriptsView(w);
-    layout->addWidget(m_projectActionsView);
-    m_projectActionsView->setModel(new Kross::ActionCollectionModel(w,Kross::Manager::self().actionCollection()->collection(Project::instance()->kind())));
-
-    QHBoxLayout* btns = new QHBoxLayout();
-    layout->addLayout(btns);
-    btns->addWidget(m_projectActionsView->createButton(w, "edit"));
-
-
-    dialog->addPage(w, i18nc("@title:tab","Scripts"), "preferences-system-windows-actions");
-
-
     w = new QWidget(dialog);
     Ui_prefs_project_local ui_prefs_project_local;
     ui_prefs_project_local.setupUi(w);
@@ -335,17 +281,6 @@ void SettingsController::reflectProjectConfigChange()
 {
     //TODO check target language change: reflect changes in TM and glossary
     TM::DBFilesModel::instance()->openDB(Project::instance()->projectID());
-}
-
-void SettingsController::reflectRelativePathsHack()
-{
-    //m_scriptsRelPrefWidget->clear();
-    QStringList actionz(m_scriptsPrefWidget->items());
-    QString projectDir(Project::instance()->projectDir());
-    int i=actionz.size();
-    while(--i>=0)
-        actionz[i]=KUrl::relativePath(projectDir,actionz.at(i));
-    m_scriptsRelPrefWidget->setItems(actionz);
 }
 
 void LangCodeSaver::setLangCode(int index)

@@ -31,17 +31,12 @@
 
 #include "completionstorage.h"
 
-#define WEBQUERY_ENABLE
-
 //views
 #include "msgctxtview.h"
 #include "alttransview.h"
 #include "mergeview.h"
 #include "cataloglistview.h"
 #include "glossaryview.h"
-#ifdef WEBQUERY_ENABLE
-#include "webqueryview.h"
-#endif
 #include "tmview.h"
 #include "binunitsview.h"
 
@@ -375,42 +370,6 @@ void EditorTab::setupActions()
     addDockWidget(Qt::BottomDockWidgetArea, binUnitsView);
     edit->addAction( QLatin1String("showbinunitsview_action"), binUnitsView->toggleViewAction() );
     connect(m_view,SIGNAL(binaryUnitSelectRequested(QString)),binUnitsView,SLOT(selectUnit(QString)));
-
-
-//#ifdef WEBQUERY_ENABLE
-#if 0
-    QVector<KAction*> wqactions(WEBQUERY_SHORTCUTS);
-    Qt::Key wqlist[WEBQUERY_SHORTCUTS]=
-        {
-            Qt::Key_1,
-            Qt::Key_2,
-            Qt::Key_3,
-            Qt::Key_4,
-            Qt::Key_5,
-            Qt::Key_6,
-            Qt::Key_7,
-            Qt::Key_8,
-            Qt::Key_9,
-            Qt::Key_0,
-        };
-    KAction* wqaction;
-    for (i=0;i<WEBQUERY_SHORTCUTS;++i)
-    {
-//         action->setVisible(false);
-        wqaction=actionCollection()->addAction(QString("webquery_insert_%1").arg(i));
-        wqaction->setShortcut(Qt::CTRL+Qt::ALT+wqlist[i]);
-        //wqaction->setShortcut(Qt::META+wqlist[i]);
-        wqaction->setText(i18nc("@action:inmenu","Insert WebQuery result # %1",i));
-        wqactions[i]=wqaction;
-    }
-    WebQueryView* _webQueryView = new WebQueryView(this,m_catalog,wqactions);
-    addDockWidget(Qt::BottomDockWidgetArea, _webQueryView);
-    actionCollection()->addAction( QLatin1String("showwebqueryview_action"), _webQueryView->toggleViewAction() );
-    connect (this,SIGNAL(signalNewEntryDisplayed(DocPosition)),_webQueryView,SLOT(slotNewEntryDisplayed(DocPosition)));
-    connect (_webQueryView,SIGNAL(textInsertRequested(QString)),m_view,SLOT(insertTerm(QString)));
-#endif
-
-
 //END dockwidgets
 
 

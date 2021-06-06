@@ -29,17 +29,12 @@
 #include "jobs.h"
 #include "filesearchtab.h"
 #include "prefs_lokalize.h"
-
-// #define WEBQUERY_ENABLE
-
 #include "project.h"
 #include "projectmodel.h"
 #include "projectlocal.h"
 #include "prefs.h"
 
 #include "tools/widgettextcaptureconfig.h"
-
-#include "multieditoradaptor.h"
 
 #include <kglobal.h>
 #include <kstandarddirs.h>
@@ -62,7 +57,6 @@
 #include <kmenu.h>
 #include <kfiledialog.h>
 #include <kdialog.h>
-#include <kross/core/action.h>
 #include <threadweaver/ThreadWeaver.h>
 
 #include <QTimer>
@@ -79,11 +73,7 @@ LokalizeMainWindow::LokalizeMainWindow()
  , m_translationMemorySubWindow(0)
  , m_editorActions(new QActionGroup(this))
  , m_managerActions(new QActionGroup(this))
- , m_spareEditor(new EditorTab(this,false))
- , m_multiEditorAdaptor(new MultiEditorAdaptor(m_spareEditor))
- , m_projectScriptingPlugin(0)
 {
-    m_spareEditor->hide();
     m_mdiArea->setViewMode(QMdiArea::TabbedView);
     m_mdiArea->setActivationOrder(QMdiArea::ActivationHistoryOrder);
     m_mdiArea->setDocumentMode(true);
@@ -143,7 +133,6 @@ LokalizeMainWindow::~LokalizeMainWindow()
     KConfig config;
     KConfigGroup stateGroup(&config,"State");
     saveProjectState(stateGroup);
-    m_multiEditorAdaptor->deleteLater();
 }
 
 void LokalizeMainWindow::slotSubWindowActivated(QMdiSubWindow* w)
@@ -168,22 +157,6 @@ void LokalizeMainWindow::slotSubWindowActivated(QMdiSubWindow* w)
             EditorState state=w->state();
             m_lastEditorState=state.dockWidgets.toBase64();
         }
-            /*
-
-            KMenu* projectActions=static_cast<KMenu*>(factory()->container("project_actions",this));
-            QList<QAction*> actionz=projectActions->actions();
-
-            int i=actionz.size();
-            //projectActions->menuAction()->setVisible(i);
-            //kWarning()<<"adding object"<<actionz.at(0);
-            while(--i>=0)
-            {
-                disconnect(w, SIGNAL(signalNewEntryDisplayed()),actionz.at(i),SLOT(signalNewEntryDisplayed()));
-                //static_cast<Kross::Action*>(actionz.at(i))->addObject(static_cast<EditorWindow*>( editor )->adaptor(),"Editor",Kross::ChildrenInterface::AutoConnectSignals);
-                //static_cast<Kross::Action*>(actionz.at(i))->trigger();
-            }
-        }
-*/
     }
     LokalizeSubwindowBase* editor=static_cast<LokalizeSubwindowBase2*>( w->widget() );
     if (qobject_cast<EditorTab*>(editor))
@@ -193,22 +166,6 @@ void LokalizeMainWindow::slotSubWindowActivated(QMdiSubWindow* w)
 
         EditorState state=w->state();
         m_lastEditorState=state.dockWidgets.toBase64();
-
-        m_multiEditorAdaptor->setEditorTab(w);
-//         connect(m_multiEditorAdaptor,SIGNAL(srcFileOpenRequested(QString,int)),this,SLOT(showTM()));
-/*
-        KMenu* projectActions=static_cast<KMenu*>(factory()->container("project_actions",this));
-        QList<QAction*> actionz=projectActions->actions();
-
-        int i=actionz.size();
-        //projectActions->menuAction()->setVisible(i);
-        //kWarning()<<"adding object"<<actionz.at(0);
-        while(--i>=0)
-        {
-            connect(w, SIGNAL(signalNewEntryDisplayed()),actionz.at(i),SLOT(signalNewEntryDisplayed()));
-            //static_cast<Kross::Action*>(actionz.at(i))->addObject(static_cast<EditorWindow*>( editor )->adaptor(),"Editor",Kross::ChildrenInterface::AutoConnectSignals);
-            //static_cast<Kross::Action*>(actionz.at(i))->trigger();
-        }*/
 
         QTabBar* tw = m_mdiArea->findChild<QTabBar*>();
         if(tw) tw->setTabToolTip(tw->currentIndex(), w->currentUrl().toLocalFile());
@@ -329,11 +286,6 @@ EditorTab* LokalizeMainWindow::fileOpen(KUrl url, int entry, bool setAsActive, c
     sw->setAttribute(Qt::WA_DeleteOnClose,true);
     emit editorAdded();
     return w;
-}
-
-void LokalizeMainWindow::resetMultiEditorAdaptor()
-{
-    m_multiEditorAdaptor->setEditorTab(m_spareEditor); //it will be reparented shortly if there are other editors
 }
 
 void LokalizeMainWindow::editorClosed(QObject* obj)
@@ -756,93 +708,6 @@ void LokalizeMainWindow::widgetTextCapture()
 
 //#include "plugin.h"
 #include "mainwindowadaptor.h"
-#include <kross/core/actioncollection.h>
-#include <kross/core/manager.h>
-
-using namespace Kross;
-
-class MyScriptingPlugin: public Kross::ScriptingPlugin
-{
-public:
-    MyScriptingPlugin(QObject* lokalize,QObject* editor)
-        : Kross::ScriptingPlugin(lokalize)
-    {
-        addObject(lokalize,"Lokalize");
-        addObject(Project::instance(),"Project");
-        addObject(editor,"Editor");
-        setXMLFile("scriptsui.rc",true);
-    }
-    ~MyScriptingPlugin(){}
-};
-
-#define PROJECTRCFILE "scripts.rc"
-#define PROJECTRCFILEDIR  Project::instance()->projectDir()+"/lokalize-scripts"
-#define PROJECTRCFILEPATH Project::instance()->projectDir()+"/lokalize-scripts" "/" PROJECTRCFILE
-//TODO be lazy creating scripts dir
-ProjectScriptingPlugin::ProjectScriptingPlugin(QObject* lokalize, QObject* editor)
- : Kross::ScriptingPlugin(Project::instance()->kind(),
-                          PROJECTRCFILEPATH,
-                          Project::instance()->kind(), lokalize)
-{
-    if (Project::instance()->projectDir().isEmpty())
-        return;
-
-    QString filepath=PROJECTRCFILEPATH;
-    if (!QFile::exists(filepath))
-    {
-        KUrl dir = KUrl(filepath).directory();
-        KIO::NetAccess::mkdir(dir, 0);
-        QFile f(filepath);
-        f.open(QIODevice::WriteOnly);
-        QTextStream out(&f);
-        out <<"<!-- see help for the syntax -->";
-        f.close();
-    }
-
-    //kWarning()<<Kross::Manager::self().hasInterpreterInfo("python");
-    addObject(lokalize,"Lokalize",ChildrenInterface::AutoConnectSignals);
-    addObject(Project::instance(),"Project",ChildrenInterface::AutoConnectSignals);
-    addObject(editor,"Editor",ChildrenInterface::AutoConnectSignals);
-    setXMLFile("scriptsui.rc",true);
-}
-
-void ProjectScriptingPlugin::setDOMDocument (const QDomDocument &document, bool merge)
-{
-    Kross::ScriptingPlugin::setDOMDocument(document, merge);
-    QTimer::singleShot(0,this, SLOT(doAutoruns()));
-}
-
-void ProjectScriptingPlugin::doAutoruns()
-{
-    Kross::ActionCollection* collection=Kross::Manager::self().actionCollection()->collection(Project::instance()->kind());
-    if (!collection) return;
-    foreach(const QString &collectionname, collection->collections())
-    {
-        Kross::ActionCollection* c = collection->collection(collectionname);
-        if(!c->isEnabled()) continue;
-
-        foreach(Kross::Action* action, c->actions())
-        {
-            if (action->property("autorun").toBool())
-                action->trigger();
-            if (action->property("first-run").toBool() && Project::local()->firstRun())
-                action->trigger();
-        }
-    }
-}
-
-ProjectScriptingPlugin::~ProjectScriptingPlugin()
-{
-    Kross::ActionCollection* collection=Kross::Manager::self().actionCollection()->collection(Project::instance()->kind());
-    if (!collection) return;
-
-    QString scriptsrc=PROJECTRCFILE;
-    QDir rcdir(PROJECTRCFILEDIR);
-    kWarning()<<rcdir.entryList(QStringList("*.rc"),QDir::Files);
-    foreach(const QString& rc, QDir(PROJECTRCFILEDIR).entryList(QStringList("*.rc"),QDir::Files))
-        if (rc!=scriptsrc)
-            kWarning()<<rc<<collection->readXmlFile(rcdir.absoluteFilePath(rc));
-}
 
 /*
 void LokalizeMainWindow::checkForProjectAlreadyOpened()
@@ -868,43 +733,12 @@ void LokalizeMainWindow::registerDBusAdaptor()
     QDBusConnection::sessionBus().unregisterObject("/KDebug",QDBusConnection::UnregisterTree);
 
     //kWarning()<<QDBusConnection::sessionBus().interface()->registeredServiceNames().value();
-#ifndef Q_WS_MAC
-    //TODO really fix!!!
-    guiFactory()->addClient(new MyScriptingPlugin(this,m_multiEditorAdaptor));
-#endif
-
-    //KMenu* projectActions=static_cast<KMenu*>(factory()->container("project_actions",this));
 
 /*
     KActionCollection* actionCollection = mWindow->actionCollection();
     actionCollection->action("file_save")->setEnabled(canSave);
     actionCollection->action("file_save_as")->setEnabled(canSave);
 */
-}
-
-void LokalizeMainWindow::loadProjectScripts()
-{
-    qWarning()<<"loadProjectScripts() 1111"<<Project::instance()->poDir();
-    if (m_projectScriptingPlugin)
-    {
-        qWarning()<<"loadProjectScripts() 222";
-        guiFactory()->removeClient(m_projectScriptingPlugin);
-        delete m_projectScriptingPlugin;
-    }
-
-    qWarning()<<"loadProjectScripts() 333";
-    //a HACK to get new .rc files shown w/o requiring a restart
-    m_projectScriptingPlugin=new ProjectScriptingPlugin(this,m_multiEditorAdaptor);
-
-    //guiFactory()->addClient(m_projectScriptingPlugin);
-    //guiFactory()->removeClient(m_projectScriptingPlugin);
-
-    delete m_projectScriptingPlugin;
-    qWarning()<<"loadProjectScripts() 444";
-    m_projectScriptingPlugin=new ProjectScriptingPlugin(this,m_multiEditorAdaptor);
-    qWarning()<<"loadProjectScripts() 555";
-    guiFactory()->addClient(m_projectScriptingPlugin);
-    qWarning()<<"loadProjectScripts() 666";
 }
 
 int LokalizeMainWindow::lookupInTranslationMemory(DocPosition::Part part, const QString& text)
@@ -976,32 +810,6 @@ QString LokalizeMainWindow::dbusName(){return QString("org.kde.lokalize-%1").arg
 void LokalizeMainWindow::busyCursor(bool busy){busy?QApplication::setOverrideCursor(Qt::WaitCursor):QApplication::restoreOverrideCursor();}
 // void LokalizeMainWindow::processEvents(){QCoreApplication::processEvents();}
 
-
-MultiEditorAdaptor::MultiEditorAdaptor(EditorTab *parent)
- : EditorAdaptor(parent)
-{
-    setObjectName("MultiEditorAdaptor");
-    connect(parent,SIGNAL(destroyed(QObject*)),this,SLOT(handleParentDestroy(QObject*)));
-}
-
-void MultiEditorAdaptor::setEditorTab(EditorTab* e)
-{
-    if (parent())
-        disconnect(parent(),SIGNAL(destroyed(QObject*)),this,SLOT(handleParentDestroy(QObject*)));
-    if (e)
-        connect(e,SIGNAL(destroyed(QObject*)),this,SLOT(handleParentDestroy(QObject*)));
-    setParent(e);
-    setAutoRelaySignals(false);
-    setAutoRelaySignals(true);
-}
-
-void MultiEditorAdaptor::handleParentDestroy(QObject* p)
-{
-    Q_UNUSED(p);
-    kWarning()<<"avoiding destroying m_multiEditorAdaptor";
-    setParent(0);
-}
-
 //END DBus interface
 
 
@@ -1028,4 +836,3 @@ void DelayedFileOpener::doOpen()
 #include "moc_lokalizemainwindow.cpp"
  //these have to be included somewhere ;)
 #include "moc_lokalizesubwindowbase.cpp"
-#include "moc_multieditoradaptor.cpp"
