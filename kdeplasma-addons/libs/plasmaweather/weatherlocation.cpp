@@ -87,7 +87,7 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
         city.truncate(city.indexOf(QLatin1Char( ',' )) - 1);
 
     if (!city.isEmpty()) {
-        d->validator.validate(QLatin1String( "bbcukmet" ), city, true);
+        d->validator.validate(QLatin1String( "wettercom" ), city, true);
         return;
     }
 

@@ -27,7 +27,7 @@ class WeatherValidator::Private
 public:
     Private()
         : dataengine(0),
-          ion(QLatin1String( "bbcukmet" ))
+          ion(QLatin1String( "wettercom" ))
     {}
 
     Plasma::DataEngine* dataengine;
