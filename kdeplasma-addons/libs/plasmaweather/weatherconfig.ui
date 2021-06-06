@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>408</width>
-    <height>357</height>
+    <height>303</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -36,52 +36,6 @@
     <number>0</number>
    </property>
    <item row="0" column="0">
-    <widget class="QLabel" name="providerLabel_2">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Providers</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="KPushButton" name="ghnsProviderButton">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>&amp;Get New Providers...</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_8">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0">
     <widget class="QLabel" name="locationLabel">
      <property name="font">
       <font>
@@ -94,7 +48,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="1" column="0">
     <widget class="QLabel" name="cityLabel">
      <property name="minimumSize">
       <size>
@@ -113,7 +67,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="1" column="1">
     <layout class="QHBoxLayout" name="locationlayout">
      <property name="spacing">
       <number>0</number>
@@ -136,7 +90,7 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="1">
+   <item row="2" column="1">
     <layout class="QHBoxLayout" name="locationSearchLayout">
      <property name="spacing">
       <number>0</number>
@@ -169,7 +123,7 @@
      </item>
     </layout>
    </item>
-   <item row="5" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="intervalLabel">
      <property name="minimumSize">
       <size>
@@ -188,7 +142,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
+   <item row="3" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <property name="spacing">
       <number>0</number>
@@ -230,7 +184,7 @@
      </item>
     </layout>
    </item>
-   <item row="6" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="unitsLabel">
      <property name="font">
       <font>
@@ -243,7 +197,7 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
+   <item row="5" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <property name="spacing">
       <number>0</number>
@@ -273,7 +227,7 @@
      </item>
     </layout>
    </item>
-   <item row="7" column="0">
+   <item row="5" column="0">
     <widget class="QLabel" name="temperatureLabel">
      <property name="minimumSize">
       <size>
@@ -292,7 +246,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="0">
+   <item row="6" column="0">
     <widget class="QLabel" name="pressureLabel">
      <property name="minimumSize">
       <size>
@@ -311,7 +265,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
+   <item row="6" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_6">
      <property name="spacing">
       <number>0</number>
@@ -341,7 +295,7 @@
      </item>
     </layout>
    </item>
-   <item row="9" column="0">
+   <item row="7" column="0">
     <widget class="QLabel" name="speedLabel">
      <property name="minimumSize">
       <size>
@@ -360,7 +314,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
+   <item row="7" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_7">
      <property name="spacing">
       <number>0</number>
@@ -390,7 +344,7 @@
      </item>
     </layout>
    </item>
-   <item row="10" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="visibilityLabel">
      <property name="minimumSize">
       <size>
@@ -409,7 +363,7 @@
      </property>
     </widget>
    </item>
-   <item row="10" column="1">
+   <item row="8" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_8">
      <property name="spacing">
       <number>0</number>
@@ -439,7 +393,7 @@
      </item>
     </layout>
    </item>
-   <item row="11" column="0">
+   <item row="9" column="0">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
