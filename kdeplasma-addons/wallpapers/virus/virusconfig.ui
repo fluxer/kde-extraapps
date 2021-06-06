@@ -193,16 +193,6 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="m_newStuff">
-       <property name="toolTip">
-        <string>Download new wallpapers</string>
-       </property>
-       <property name="text">
-        <string>Get New Wallpapers...</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </item>
   </layout>

@@ -161,7 +161,6 @@ QWidget* Virus::createConfigurationInterface(QWidget* parent)
     }
     connect(m_uiVirus.m_resizeMethod, SIGNAL(currentIndexChanged(int)),
             this, SLOT(positioningChanged(int)));
-    m_uiVirus.m_newStuff->setIcon(KIcon(QLatin1String( "get-hot-new-stuff" )));
 
     m_uiVirus.m_color->setColor(m_color);
     connect(m_uiVirus.m_color, SIGNAL(changed(QColor)), this, SLOT(colorChanged(QColor)));
@@ -174,8 +173,6 @@ QWidget* Virus::createConfigurationInterface(QWidget* parent)
 
     m_uiVirus.m_showCells->setChecked(alife.showCells());
     connect(m_uiVirus.m_showCells, SIGNAL(stateChanged(int)), this, SLOT(showCellsChanged(int)));
-
-    connect(m_uiVirus.m_newStuff, SIGNAL(clicked()), this, SLOT(getNewWallpaper()));
 
     connect(this, SIGNAL(settingsChanged(bool)), parent, SLOT(settingsChanged(bool)));
 
