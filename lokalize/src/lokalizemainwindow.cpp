@@ -266,7 +266,6 @@ EditorTab* LokalizeMainWindow::fileOpen(KUrl url, int entry, bool setAsActive, c
 
     m_openRecentFileAction->addUrl(w->currentUrl());
     connect(sw, SIGNAL(destroyed(QObject*)),this,SLOT(editorClosed(QObject*)));
-    connect(w, SIGNAL(aboutToBeClosed()),this,SLOT(resetMultiEditorAdaptor()));
     connect(w, SIGNAL(fileOpenRequested(KUrl,QString,QString)),this,SLOT(fileOpen(KUrl,QString,QString)));
     connect(w, SIGNAL(tmLookupRequested(QString,QString)),this,SLOT(lookupInTranslationMemory(QString,QString)));
 
@@ -687,8 +686,6 @@ void LokalizeMainWindow::projectLoaded()
     }
 
     projectSettingsChanged();
-
-    QTimer::singleShot(0,this,SLOT(loadProjectScripts()));
 }
 
 void LokalizeMainWindow::projectSettingsChanged()
