@@ -169,7 +169,6 @@ install( FILES lokalize.kcfg  DESTINATION  ${KDE4_KCFG_INSTALL_DIR} )
 install( FILES
         editorui.rc
         lokalizemainwindowui.rc
-        scriptsui.rc
         projectmanagerui.rc
         tm/translationmemoryrui.rc
         filesearch/filesearchtabui.rc
