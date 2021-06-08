@@ -162,7 +162,6 @@ void SambaUserSharePlugin::applyChanges()
         result = shareData.remove();
     }
 
-#warning "the error reporting could use some love"
     // Some error types that do not apply but may in the future:
     // UserSharePathNotDirectory
     if (result == KSambaShareData::UserShareExceedMaxShares) {
@@ -171,11 +170,11 @@ void SambaUserSharePlugin::applyChanges()
     } else if (result == KSambaShareData::UserShareNameInvalid) {
         // Is that even supposed to happend?
         KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
-            i18n("<qt>The username for sharing is invalid.</qt>"));
+            i18n("<qt>The name for sharing is invalid.</qt>"));
     } else if (result == KSambaShareData::UserShareNameInUse) {
         // Is that even supposed to happend?
         KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
-            i18n("<qt>The username for sharing is already in use.</qt>"));
+            i18n("<qt>The name for sharing is already in use.</qt>"));
     } else if (result == KSambaShareData::UserSharePathInvalid) {
         // Is that even supposed to happend?
         KMessageBox::sorry(qobject_cast<KPropertiesDialog *>(this),
