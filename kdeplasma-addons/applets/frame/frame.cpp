@@ -180,7 +180,7 @@ void Frame::configChanged()
     m_frameColor = cg.readEntry("frameColor", QColor(70, 90, 130)); //theme?
     m_frame = cg.readEntry("frame", false);
     m_shadow = cg.readEntry("shadow", true);
-    m_roundCorners = cg.readEntry("roundCorners", false);
+    m_roundCorners = cg.readEntry("roundCorners", true);
     m_slideShow = cg.readEntry("slideshow", false);
     m_random = cg.readEntry("random", false);
     m_recursiveSlideShow = cg.readEntry("recursive slideshow", false);
