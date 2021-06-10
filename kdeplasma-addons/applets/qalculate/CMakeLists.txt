@@ -1,6 +1,6 @@
 project(plasma-qalculate)
 
-set(CMAKE_CXX_FLAGS "${KDE4_ENABLE_EXCEPTIONS} -Wno-deprecated")	
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
  
 include_directories(${QALCULATE_INCLUDE_DIR})
 
