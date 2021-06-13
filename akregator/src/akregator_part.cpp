@@ -656,35 +656,21 @@ void Part::initFonts()
 
     KConfigGroup conf( Settings::self()->config(), "HTML Settings");
 
-    KConfig _konq( "konquerorrc", KConfig::NoGlobals  );
-    KConfigGroup konq(&_konq, "HTML Settings");
-
     if (!conf.hasKey("MinimumFontSize"))
     {
-        int minfs;
-        if (konq.hasKey("MinimumFontSize"))
-            minfs = konq.readEntry("MinimumFontSize", 8);
-        else
-            minfs = std::max( KGlobalSettings::generalFont().pointSize() - 2, 4 );
+        const int minfs = std::max( KGlobalSettings::generalFont().pointSize() - 2, 4 );
         Settings::setMinimumFontSize(minfs);
     }
 
     if (!conf.hasKey("MediumFontSize"))
     {
-        int medfs;
-        if (konq.hasKey("MediumFontSize"))
-            medfs = konq.readEntry("MediumFontSize", 12);
-        else
-            medfs = KGlobalSettings::generalFont().pointSize();
+        const int medfs = KGlobalSettings::generalFont().pointSize();
         Settings::setMediumFontSize(medfs);
     }
 
     if (!conf.hasKey("UnderlineLinks"))
     {
-        bool underline = true;
-        if (konq.hasKey("UnderlineLinks"))
-            underline = konq.readEntry("UnderlineLinks", false);
-        Settings::setUnderlineLinks(underline);
+        Settings::setUnderlineLinks(true);
     }
 }
 
