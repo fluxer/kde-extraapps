@@ -42,11 +42,6 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_SOURCE_DIR}/ark.appdata.xml
-    DESTINATION share/appdata
-)
-
-install(
     FILES arkui.rc
     DESTINATION ${KDE4_DATA_INSTALL_DIR}/ark
 )

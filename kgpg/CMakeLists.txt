@@ -157,10 +157,6 @@ install(
     DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
 )
 install(
-    FILES kgpg.appdata.xml
-    DESTINATION share/appdata/
-)
-install(
     FILES kgpg.kcfg
     DESTINATION ${KDE4_KCFG_INSTALL_DIR}
 )
