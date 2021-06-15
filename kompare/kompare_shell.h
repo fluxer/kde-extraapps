@@ -131,7 +131,7 @@ private:
 
 	KParts::ReadWritePart*      m_viewPart;
 	KParts::ReadOnlyPart*         m_navTreePart;
-	KTextEditor::Document*      m_textViewPart;
+	KTextEditor::Document*      m_textViewDoc;
 	KTextEditor::View*          m_textView;
 // 	KTextEditor::EditInterface* m_textEditIface;
 

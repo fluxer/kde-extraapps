@@ -20,6 +20,7 @@
 #include <QtCore/QTextStream>
 #include <QtGui/QDockWidget>
 
+#include <ktexteditor/editorchooser.h>
 #include <ktexteditor/document.h>
 #include <ktexteditor/view.h>
 #include <kdebug.h>
@@ -47,7 +48,7 @@
 
 KompareShell::KompareShell()
 	: KParts::MainWindow( ),
-	m_textViewPart( 0 ),
+	m_textViewDoc( 0 ),
 	m_textViewWidget( 0 )
 {
 	if ( !initialGeometrySet() )
@@ -397,15 +398,13 @@ void KompareShell::slotShowTextView()
 		m_textViewWidget = new QDockWidget( i18n( "Text View" ), this );
 		m_textViewWidget->setObjectName( "Text View" );
 // 		m_textViewWidget = createDockWidget( i18n("Text View"), SmallIcon( "text-x-generic") );
-		m_textViewPart = KServiceTypeTrader::createInstanceFromQuery<KTextEditor::Document>(
-		                 QString::fromLatin1("KTextEditor/Document"),
-		                 this, this, QString(), QVariantList(), &error );
-		if ( m_textViewPart )
+		m_textViewDoc = KTextEditor::EditorChooser::editor()->createDocument( this );
+		if ( m_textViewDoc )
 		{
-			m_textView = qobject_cast<KTextEditor::View*>( m_textViewPart->createView( this ) );
+			m_textView = m_textViewDoc->createView( this );
 			m_textViewWidget->setWidget( static_cast<QWidget*>(m_textView) );
-	 		m_textViewPart->setHighlightingMode( "Diff" );
-	 		m_textViewPart->setText( m_diffString );
+	 		m_textViewDoc->setHighlightingMode( "Diff" );
+	 		m_textViewDoc->setText( m_diffString );
 		}
 		m_textViewWidget->show();
 		connect( m_textViewWidget, SIGNAL(visibilityChanged(bool)), SLOT(slotVisibilityChanged(bool)) );
@@ -426,8 +425,8 @@ void KompareShell::slotVisibilityChanged( bool visible )
 
 void KompareShell::slotSetDiffString( const QString& diffString )
 {
- 	if ( m_textViewPart )
- 		m_textViewPart->setText( diffString );
+ 	if ( m_textViewDoc )
+ 		m_textViewDoc->setText( diffString );
 	m_diffString = diffString;
 }
 
