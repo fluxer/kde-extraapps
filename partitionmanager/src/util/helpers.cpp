@@ -58,13 +58,12 @@ void registerMetaTypes()
 
 static QString suCommand()
 {
-	KStandardDirs d;
 	const char* candidates[] = { "kdesudo", "gksudo", "gksu" };
 	QString rval;
 
 	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
 	{
-		rval = d.locate("exe", candidates[i]);
+		rval = KStandardDirs::findExe(candidates[i]);
 		if (QFileInfo(rval).isExecutable())
 			return rval;
 	}
