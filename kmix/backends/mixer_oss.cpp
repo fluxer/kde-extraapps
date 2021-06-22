@@ -32,9 +32,9 @@
 
 // Since we're guaranteed an OSS setup here, let's make life easier
 #if !defined(Q_OS_NETBSD) && !defined(Q_OS_OPENBSD)
-	#include <sys/soundcard.h>
+    #include <sys/soundcard.h>
 #else
-	#include <soundcard.h>
+    #include <soundcard.h>
 #endif
 
 
@@ -65,7 +65,8 @@ const char* MixerDevNames[32]={
     I18N_NOOP("PhoneOut"), I18N_NOOP("Video"),      I18N_NOOP("Radio"),
     I18N_NOOP("Monitor"),  I18N_NOOP("3D-depth"),   I18N_NOOP("3D-center"),
     I18N_NOOP("unknown"),  I18N_NOOP("unknown"),    I18N_NOOP("unknown"),
-    I18N_NOOP("unknown") , I18N_NOOP("unused") };
+    I18N_NOOP("unknown") , I18N_NOOP("unused")
+};
 
 const MixDevice::ChannelType MixerChannelTypes[32] = {
     MixDevice::VOLUME,   MixDevice::BASS,       MixDevice::TREBLE,
@@ -78,23 +79,23 @@ const MixDevice::ChannelType MixerChannelTypes[32] = {
     MixDevice::EXTERNAL, MixDevice::VIDEO,      MixDevice::EXTERNAL,
     MixDevice::EXTERNAL, MixDevice::VOLUME,     MixDevice::VOLUME,
     MixDevice::UNKNOWN,  MixDevice::UNKNOWN,    MixDevice::UNKNOWN,
-    MixDevice::UNKNOWN,  MixDevice::UNKNOWN };
+    MixDevice::UNKNOWN,  MixDevice::UNKNOWN
+};
 
 Mixer_Backend* OSS_getMixer( Mixer* mixer, int device )
 {
-  Mixer_Backend *l_mixer;
-  l_mixer = new Mixer_OSS( mixer, device );
-  return l_mixer;
+    Mixer_Backend *l_mixer;
+    l_mixer = new Mixer_OSS( mixer, device );
+    return l_mixer;
 }
 
-Mixer_OSS::Mixer_OSS(Mixer* mixer, int device) :
-	Mixer_Backend(mixer, device)
+Mixer_OSS::Mixer_OSS(Mixer* mixer, int device)
+    : Mixer_Backend(mixer, device)
 {
-	if (device == -1)
-	{
-		m_devnum = 0;
-	}
-	m_fd = -1; // point to an invalid FD
+    if (device == -1) {
+        m_devnum = 0;
+    }
+    m_fd = -1; // point to an invalid FD
 }
 
 Mixer_OSS::~Mixer_OSS()
@@ -106,19 +107,18 @@ int Mixer_OSS::open()
 {
     QString finalDeviceName;
     finalDeviceName = deviceName( m_devnum );
-  kDebug() << "OSS open() " << finalDeviceName;
-    if ((m_fd= ::open( finalDeviceName.toAscii().data(), O_RDWR)) < 0)
-    {
-        if ( errno == EACCES )
-        return Mixer::ERR_PERM;
-        else {
+    kDebug() << "OSS open() " << finalDeviceName;
+    if ((m_fd= ::open( finalDeviceName.toAscii().data(), O_RDWR)) < 0) {
+        if ( errno == EACCES ) {
+            return Mixer::ERR_PERM;
+        } else {
             finalDeviceName = deviceNameDevfs( m_devnum );
-            if ((m_fd= ::open( finalDeviceName.toAscii().data(), O_RDWR)) < 0)
-            {
-                if ( errno == EACCES )
+            if ((m_fd= ::open( finalDeviceName.toAscii().data(), O_RDWR)) < 0) {
+                if ( errno == EACCES ) {
                     return Mixer::ERR_PERM;
-                    else
-                return Mixer::ERR_OPEN;
+                } else {
+                    return Mixer::ERR_OPEN;
+                }
             }
         }
     }
@@ -130,62 +130,63 @@ int Mixer_OSS::open()
         msg += "'. Hotplugging not possible";
         kDebug(67100) << msg;
     }
-      int devmask, recmask, i_recsrc, stereodevs;
-      // Mixer is open. Now define properties
-      if (ioctl(m_fd, SOUND_MIXER_READ_DEVMASK, &devmask) == -1)
+    int devmask, recmask, i_recsrc, stereodevs;
+    // Mixer is open. Now define properties
+    if (ioctl(m_fd, SOUND_MIXER_READ_DEVMASK, &devmask) == -1) {
         return Mixer::ERR_READ;
-      if (ioctl(m_fd, SOUND_MIXER_READ_RECMASK, &recmask) == -1)
+    }
+    if (ioctl(m_fd, SOUND_MIXER_READ_RECMASK, &recmask) == -1) {
         return Mixer::ERR_READ;
-      if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &i_recsrc) == -1)
+    }
+    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &i_recsrc) == -1) {
         return Mixer::ERR_READ;
-      if (ioctl(m_fd, SOUND_MIXER_READ_STEREODEVS, &stereodevs) == -1)
+    }
+    if (ioctl(m_fd, SOUND_MIXER_READ_STEREODEVS, &stereodevs) == -1) {
         return Mixer::ERR_READ;
+    }
 
-          int idx = 0;
-          while( devmask && idx < MAX_MIXDEVS )
-            {
-              if( devmask & ( 1 << idx ) ) // device active?
-                {
-                  Volume playbackVol( 100, 1, true, false );
-		  playbackVol.addVolumeChannel(VolumeChannel(Volume::LEFT));
-		  if ( stereodevs & ( 1 << idx ) )
-		    playbackVol.addVolumeChannel(VolumeChannel(Volume::RIGHT));
-
-                  QString id;
-                  id.setNum(idx);
-                  MixDevice* md = new MixDevice(
-                                   _mixer,
-                                   id,
-                                   i18n(MixerDevNames[idx]),
-                                   MixerChannelTypes[idx]);
-                  md->addPlaybackVolume(playbackVol);
-
-                  // Tutorial: Howto add a simple capture switch
-                  if ( recmask & ( 1 << idx ) ) {
-                     // can be captured => add capture volume, with no capture volume
-                     Volume captureVol( 100, 1, true, true );
-                     md->addCaptureVolume(captureVol);
-                 }
-
-                  m_mixDevices.append( md->addToPool() );
-                }
-              idx++;
+    int idx = 0;
+    while( devmask && idx < MAX_MIXDEVS ) {
+        if( devmask & ( 1 << idx ) ) { // device active?
+            Volume playbackVol( 100, 1, true, false );
+            playbackVol.addVolumeChannel(VolumeChannel(Volume::LEFT));
+            if ( stereodevs & ( 1 << idx ) ) {
+                playbackVol.addVolumeChannel(VolumeChannel(Volume::RIGHT));
             }
 
-#if defined(SOUND_MIXER_INFO)
-      struct mixer_info l_mix_info;
-      if (ioctl(m_fd, SOUND_MIXER_INFO, &l_mix_info) != -1)
-        {
-    	  registerCard(l_mix_info.name);
-        }
-      else
-#endif
-      {
-    	  registerCard("OSS Audio Mixer");
-      }
+            QString id;
+            id.setNum(idx);
+            MixDevice* md = new MixDevice(
+                            _mixer,
+                            id,
+                            i18n(MixerDevNames[idx]),
+                            MixerChannelTypes[idx]);
+            md->addPlaybackVolume(playbackVol);
 
-      m_isOpen = true;
-      return 0;
+            // Tutorial: Howto add a simple capture switch
+            if ( recmask & ( 1 << idx ) ) {
+                // can be captured => add capture volume, with no capture volume
+                Volume captureVol( 100, 1, true, true );
+                md->addCaptureVolume(captureVol);
+            }
+
+            m_mixDevices.append( md->addToPool() );
+        }
+        idx++;
+    }
+
+#if defined(SOUND_MIXER_INFO)
+    struct mixer_info l_mix_info;
+    if (ioctl(m_fd, SOUND_MIXER_INFO, &l_mix_info) != -1) {
+        registerCard(l_mix_info.name);
+    } else
+#endif
+    {
+        registerCard("OSS Audio Mixer");
+    }
+
+    m_isOpen = true;
+    return 0;
 }
 
 int Mixer_OSS::close()
@@ -200,87 +201,89 @@ int Mixer_OSS::close()
 
 QString Mixer_OSS::deviceName(int devnum)
 {
-  switch (devnum) {
-  case 0:
-    return QString("/dev/mixer");
-    break;
-
-  default:
-    QString devname("/dev/mixer%1");
-    return devname.arg(devnum);
-  }
+    switch (devnum) {
+        case 0: {
+            return QString("/dev/mixer");
+            break;
+        }
+        default: {
+            QString devname("/dev/mixer%1");
+            return devname.arg(devnum);
+        }
+    }
 }
 
 QString Mixer_OSS::deviceNameDevfs(int devnum)
 {
-  switch (devnum) {
-  case 0:
-    return QString("/dev/sound/mixer");
-    break;
-
-  default:
-    QString devname("/dev/sound/mixer");
-    devname += ('0'+devnum);
-    return devname;
-  }
+    switch (devnum) {
+        case 0: {
+            return QString("/dev/sound/mixer");
+            break;
+        }
+        default: {
+            QString devname("/dev/sound/mixer");
+            devname += ('0'+devnum);
+            return devname;
+        }
+    }
 }
 
 QString Mixer_OSS::errorText(int mixer_error)
 {
-  QString l_s_errmsg;
-  switch (mixer_error)
-    {
-    case Mixer::ERR_PERM:
-      l_s_errmsg = i18n("kmix: You do not have permission to access the mixer device.\n" \
-                        "Login as root and do a 'chmod a+rw /dev/mixer*' to allow the access.");
-      break;
-    case Mixer::ERR_OPEN:
-      l_s_errmsg = i18n("kmix: Mixer cannot be found.\n" \
-                        "Please check that the soundcard is installed and the\n" \
-                        "soundcard driver is loaded.\n" \
-                        "On Linux you might need to use 'insmod' to load the driver.\n" \
-                        "Use 'soundon' when using commercial OSS.");
-      break;
-    default:
-      l_s_errmsg = Mixer_Backend::errorText(mixer_error);
-      break;
+    QString l_s_errmsg;
+    switch (mixer_error) {
+        case Mixer::ERR_PERM: {
+            l_s_errmsg = i18n("kmix: You do not have permission to access the mixer device.\n" \
+                              "Login as root and do a 'chmod a+rw /dev/mixer*' to allow the access.");
+            break;
+        }
+        case Mixer::ERR_OPEN: {
+            l_s_errmsg = i18n("kmix: Mixer cannot be found.\n" \
+                              "Please check that the soundcard is installed and the\n" \
+                              "soundcard driver is loaded.\n" \
+                              "On Linux you might need to use 'insmod' to load the driver.\n" \
+                              "Use 'soundon' when using commercial OSS.");
+            break;
+        }
+        default: {
+            l_s_errmsg = Mixer_Backend::errorText(mixer_error);
+            break;
+        }
     }
-  return l_s_errmsg;
+    return l_s_errmsg;
 }
 
 
 void print_recsrc(int recsrc)
 {
-	int i;
+    int i;
 
-	QString msg;
-	for (i = 0; i < SOUND_MIXER_NRDEVICES; i++)
-	{
-		if ((1 << i) & recsrc) 
-		  msg += '+';
-		else
-		  msg += '.';
-	}	
-	kDebug() << msg;
+    QString msg;
+    for (i = 0; i < SOUND_MIXER_NRDEVICES; i++) {
+        if ((1 << i) & recsrc) {
+            msg += '+';
+        } else {
+            msg += '.';
+        }
+    }
+    kDebug() << msg;
 }
 
 int Mixer_OSS::setRecsrcToOSS( const QString& id, bool on )
 {
     int i_recsrc; //, oldrecsrc;
     int devnum = id2num(id);
-    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &i_recsrc) == -1)
-    {
+    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &i_recsrc) == -1) {
         errormsg(Mixer::ERR_READ);
         return Mixer::ERR_READ;
     }
 
-//    oldrecsrc = i_recsrc = on ?
-//             (i_recsrc | (1 << devnum )) :
-//             (i_recsrc & ~(1 << devnum ));
+    //    oldrecsrc = i_recsrc = on ?
+    //             (i_recsrc | (1 << devnum )) :
+    //             (i_recsrc & ~(1 << devnum ));
 
     // Change status of record source(s)
-    if (ioctl(m_fd, SOUND_MIXER_WRITE_RECSRC, &i_recsrc) == -1)
-    {
+    if (ioctl(m_fd, SOUND_MIXER_WRITE_RECSRC, &i_recsrc) == -1) {
         errormsg (Mixer::ERR_WRITE);
         // don't return here. It is much better to re-read the capture switch states.
     }
@@ -299,41 +302,39 @@ int Mixer_OSS::setRecsrcToOSS( const QString& id, bool on )
     // If the record source is supposed to be on, but wasn't set, explicitly
     // set the record source. Not all cards support multiple record sources.
     // As a result, we also need to do the read & write again.
-    if (((i_recsrc & ( 1<<devnum)) == 0) && on)
-    {
+    if (((i_recsrc & ( 1<<devnum)) == 0) && on) {
        // Setting the new device failed => Try to enable it *exclusively*
 
-//       oldrecsrc = i_recsrc = 1 << devnum;
+        // oldrecsrc = i_recsrc = 1 << devnum;
 
-       if (ioctl(m_fd, SOUND_MIXER_WRITE_RECSRC, &i_recsrc) == -1)
-         errormsg (Mixer::ERR_WRITE);
-       if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &i_recsrc) == -1)
-         errormsg(Mixer::ERR_READ);
+        if (ioctl(m_fd, SOUND_MIXER_WRITE_RECSRC, &i_recsrc) == -1) {
+            errormsg (Mixer::ERR_WRITE);
+        }
+        if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &i_recsrc) == -1) {
+            errormsg(Mixer::ERR_READ);
+        }
     }
 
     // Re-read status of record source(s). Just in case the hardware/driver has
     // some limitaton (like exclusive switches)
     int recsrcMask;
-    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &recsrcMask) == -1)
+    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &recsrcMask) == -1) {
         errormsg(Mixer::ERR_READ);
-    else
-    {
-        for(int i=0; i< m_mixDevices.count() ; i++ )
-        {
+    } else {
+        for(int i=0; i< m_mixDevices.count() ; i++ ) {
             std::shared_ptr<MixDevice> md = m_mixDevices[i];
             bool isRecsrc =  ( (recsrcMask & ( 1<<devnum)) != 0 );
             md->setRecSource(isRecsrc);
         } // for all controls
     } // reading newrecsrcmask is OK
-    
-    return Mixer::OK;
 
+    return Mixer::OK;
 }
 
 
 int Mixer_OSS::id2num(const QString& id)
 {
-	return id.toInt();
+    return id.toInt();
 }
 
 /**
@@ -341,109 +342,99 @@ int Mixer_OSS::id2num(const QString& id)
  */
 void Mixer_OSS::errormsg(int mixer_error)
 {
-	QString l_s_errText;
-	l_s_errText = errorText(mixer_error);
-	kError() << l_s_errText << "\n";
+    QString l_s_errText;
+    l_s_errText = errorText(mixer_error);
+    kError() << l_s_errText << "\n";
 }
 
 
 int Mixer_OSS::readVolumeFromHW( const QString& id, std::shared_ptr<MixDevice> md )
 {
-	int ret = 0;
+    int ret = 0;
 
-	// --- VOLUME ---
-	Volume& vol = md->playbackVolume();
-	int devnum = id2num(id);
+    // --- VOLUME ---
+    Volume& vol = md->playbackVolume();
+    int devnum = id2num(id);
 
 
-	bool controlChanged = false;
+    bool controlChanged = false;
 
-	if ( vol.hasVolume() ) {
-		int volume;
-		if (ioctl(m_fd, MIXER_READ( devnum ), &volume) == -1)
-		{
-			/* Oops, can't read mixer */
-			errormsg(Mixer::ERR_READ);
-			ret = Mixer::ERR_READ;
-		}
-		else
-		{
+    if ( vol.hasVolume() ) {
+        int volume;
+        if (ioctl(m_fd, MIXER_READ( devnum ), &volume) == -1) {
+            /* Oops, can't read mixer */
+            errormsg(Mixer::ERR_READ);
+            ret = Mixer::ERR_READ;
+        } else {
+            int volLeft  = (volume & 0x7f);
+            int volRight = ((volume>>8) & 0x7f);
 
-			int volLeft  = (volume & 0x7f);
-			int volRight = ((volume>>8) & 0x7f);
-//
-//			if ( md->id() == "0" )
-//				kDebug() << md->id() << ": " << "volLeft=" << volLeft << ", volRight" << volRight;
+            // if ( md->id() == "0" )
+            //     kDebug() << md->id() << ": " << "volLeft=" << volLeft << ", volRight" << volRight;
 
-			bool isMuted = volLeft==0 && ( vol.count() < 2 || volRight==0 ); // muted is "left and right muted" or "left muted when mono"
-			md->setMuted( isMuted );
-			if ( ! isMuted ) {
-				// Muted is represented in OSS by value 0. We don't want to write the value 0 as a volume,
-				// but instead we only mark it muted (see setMuted() above).
+            bool isMuted = volLeft==0 && ( vol.count() < 2 || volRight==0 ); // muted is "left and right muted" or "left muted when mono"
+            md->setMuted( isMuted );
+            if ( ! isMuted ) {
+                // Muted is represented in OSS by value 0. We don't want to write the value 0 as a volume,
+                // but instead we only mark it muted (see setMuted() above).
 
-		        foreach (VolumeChannel vc, vol.getVolumes() )
-		        {
-		               long volOld = 0;
-		               long volNew = 0;
-		               switch(vc.chid) {
-	                   case Volume::LEFT:
-	                	   volOld =  vol.getVolume(Volume::LEFT);
-	                	   volNew  = volLeft;
-	                	   vol.setVolume( Volume::LEFT, volNew );
-	                	   break;
-	                   case Volume::RIGHT:
-	                	   volOld =  vol.getVolume(Volume::RIGHT);
-	                	   volNew  = volRight;
-	                	   vol.setVolume( Volume::RIGHT, volNew );
-	                	   break;
-					   default:
-						   // not supported by OSSv3
-						   break;
-		               }
+                foreach (VolumeChannel vc, vol.getVolumes() ) {
+                    long volOld = 0;
+                    long volNew = 0;
+                    switch(vc.chid) {
+                        case Volume::LEFT: {
+                            volOld =  vol.getVolume(Volume::LEFT);
+                            volNew  = volLeft;
+                            vol.setVolume( Volume::LEFT, volNew );
+                            break;
+                        }
+                        case Volume::RIGHT: {
+                            volOld =  vol.getVolume(Volume::RIGHT);
+                            volNew  = volRight;
+                            vol.setVolume( Volume::RIGHT, volNew );
+                            break;
+                        }
+                        default: {
+                            // not supported by OSSv3
+                            break;
+                        }
+                    }
 
-		               if ( volOld != volNew ) {
-		            	   controlChanged = true;
-		            	   //if ( md->id() == "0" ) kDebug() << "changed";
-		               }
-		        } // foreach
-			} // muted
-		}
-	}
-
+                    if ( volOld != volNew ) {
+                        controlChanged = true;
+                        //if ( md->id() == "0" ) kDebug() << "changed";
+                    }
+                } // foreach
+            } // muted
+        }
+    }
 
     // --- RECORD SWITCH ---
     //Volume& captureVol = md->captureVolume();
     int recsrcMask;
-    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &recsrcMask) == -1)
+    if (ioctl(m_fd, SOUND_MIXER_READ_RECSRC, &recsrcMask) == -1) {
         ret = Mixer::ERR_READ;
-    else
-	{
-		bool isRecsrcOld = md->isRecSource();
+    } else {
+        bool isRecsrcOld = md->isRecSource();
         // test if device bit is set in record bit mask
         bool isRecsrc =  ( (recsrcMask & ( 1<<devnum)) != 0 );
         md->setRecSource(isRecsrc);
-		if ( isRecsrcOld != isRecsrc )
-			controlChanged = true;
-		
+        if ( isRecsrcOld != isRecsrc ) {
+            controlChanged = true;
+        }
     }
 
-	if ( ret== 0)
-	{
-		if ( controlChanged )
-		{
-			//kDebug() << "FINE! " << ret;
-			return Mixer::OK;
-		}
-		else
-		{
-			return Mixer::OK_UNCHANGED;
-		}
-	}
-	else
-	{
-		//kDebug() << "SHIT! " << ret;
-		return ret;
-	}
+    if ( ret== 0) {
+        if ( controlChanged ) {
+            //kDebug() << "FINE! " << ret;
+            return Mixer::OK;
+        } else {
+            return Mixer::OK_UNCHANGED;
+        }
+    } else {
+        //kDebug() << "SHIT! " << ret;
+        return ret;
+    }
 }
 
 
@@ -454,30 +445,32 @@ int Mixer_OSS::writeVolumeToHW( const QString& id, std::shared_ptr<MixDevice> md
     int devnum = id2num(id);
 
     Volume& vol = md->playbackVolume();
-    if( md->isMuted() )
+    if( md->isMuted() ) {
        volume = 0;
-    else
-    {
-        if ( vol.getVolumes().count() > 1 )
+    } else {
+        if ( vol.getVolumes().count() > 1 ) {
             volume = (vol.getVolume(Volume::LEFT) + (vol.getVolume(Volume::RIGHT)<<8));
-        else
+        } else {
             volume = vol.getVolume(Volume::LEFT);
+        }
     }
     
-    if (ioctl(m_fd, MIXER_WRITE( devnum ), &volume) == -1)
+    if (ioctl(m_fd, MIXER_WRITE( devnum ), &volume) == -1) {
         return Mixer::ERR_WRITE;
+    }
 
     setRecsrcToOSS( id, md->isRecSource() );
-
 
     return 0;
 }
 
-QString OSS_getDriverName() {
-   return "OSS";
+QString OSS_getDriverName()
+{
+    return "OSS";
 }
 
-QString Mixer_OSS::getDriverName() {
-   return "OSS";
+QString Mixer_OSS::getDriverName()
+{
+    return "OSS";
 }
 
