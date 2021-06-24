@@ -179,18 +179,22 @@ FileOpsContextManagerItem::FileOpsContextManagerItem(ContextManager* manager, QL
 
     d->mCopyToAction = file->addAction("file_copy_to", this, SLOT(copyTo()));
     d->mCopyToAction->setText(i18nc("Verb", "Copy To..."));
+    d->mCopyToAction->setIcon(KIcon("edit-copy"));
     d->mCopyToAction->setShortcut(Qt::Key_F7);
 
     d->mMoveToAction = file->addAction("file_move_to", this, SLOT(moveTo()));
     d->mMoveToAction->setText(i18nc("Verb", "Move To..."));
+    d->mMoveToAction->setIcon(KIcon("edit-node"));
     d->mMoveToAction->setShortcut(Qt::Key_F8);
 
     d->mLinkToAction = file->addAction("file_link_to", this, SLOT(linkTo()));
     d->mLinkToAction->setText(i18nc("Verb: create link to the file where user wants", "Link To..."));
+    d->mLinkToAction->setIcon(KIcon("edit-link"));
     d->mLinkToAction->setShortcut(Qt::Key_F9);
 
     d->mRenameAction = file->addAction("file_rename", this, SLOT(rename()));
     d->mRenameAction->setText(i18nc("Verb", "Rename..."));
+    d->mRenameAction->setIcon(KIcon("edit-rename"));
     d->mRenameAction->setShortcut(Qt::Key_F2);
 
     d->mTrashAction = file->addAction("file_trash", this, SLOT(trash()));
