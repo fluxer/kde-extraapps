@@ -43,7 +43,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KUrl>
 
 // Local
-#include "archiveutils.h"
 #include "contextbarbutton.h"
 #include "itemeditor.h"
 #include "paintutils.h"
@@ -349,9 +348,9 @@ struct PreviewItemDelegatePrivate
 
         // FIXME: Duplicated from drawText
         const KFileItem fileItem = fileItemForIndex(index);
-        const bool isDirOrArchive = ArchiveUtils::fileItemIsDirOrArchive(fileItem);
+        const bool isDir = fileItem.isDir();
         if (mDetails & PreviewItemDelegate::DateDetail) {
-            if (!ArchiveUtils::fileItemIsDirOrArchive(fileItem)) {
+            if (!isDir) {
                 const KDateTime dt = TimeUtils::dateTimeForFileItem(fileItem);
                 const QString text = KGlobal::locale()->formatDateTime(dt);
                 elided |= isTextElided(text);
@@ -359,7 +358,7 @@ struct PreviewItemDelegatePrivate
             }
         }
 
-        if (!isDirOrArchive && (mDetails & PreviewItemDelegate::ImageSizeDetail)) {
+        if (!isDir && (mDetails & PreviewItemDelegate::ImageSizeDetail)) {
             QSize fullSize;
             QPixmap thumbnailPix = mView->thumbnailForIndex(index, &fullSize);
             if (fullSize.isValid()) {
@@ -369,7 +368,7 @@ struct PreviewItemDelegatePrivate
             }
         }
 
-        if (!isDirOrArchive && (mDetails & PreviewItemDelegate::FileSizeDetail)) {
+        if (!isDir && (mDetails & PreviewItemDelegate::FileSizeDetail)) {
             const KIO::filesize_t size = fileItem.size();
             if (size > 0) {
                 const QString text = KIO::convertSize(size);
@@ -485,7 +484,7 @@ struct PreviewItemDelegatePrivate
     void updateImageButtons()
     {
         const KFileItem item = fileItemForIndex(mIndexUnderCursor);
-        const bool isImage = !ArchiveUtils::fileItemIsDirOrArchive(item);
+        const bool isImage = !item.isDir();
         mFullScreenButton->setEnabled(isImage);
         mRotateLeftButton->setEnabled(isImage);
         mRotateRightButton->setEnabled(isImage);
@@ -618,7 +617,7 @@ void PreviewItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
     QPixmap thumbnailPix = d->mView->thumbnailForIndex(index, &fullSize);
     const KFileItem fileItem = fileItemForIndex(index);
     const bool opaque = !thumbnailPix.hasAlphaChannel();
-    const bool isDirOrArchive = ArchiveUtils::fileItemIsDirOrArchive(fileItem);
+    const bool isDir = fileItem.isDir();
     QRect rect = option.rect;
     const bool selected = option.state & QStyle::State_Selected;
     const bool underMouse = option.state & QStyle::State_MouseOver;
@@ -722,18 +721,18 @@ void PreviewItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
         rect.top() + 2 * ITEM_MARGIN + thumbnailHeight,
         rect.width() - 2 * ITEM_MARGIN,
         d->mView->fontMetrics().height());
-    if (isDirOrArchive || (d->mDetails & PreviewItemDelegate::FileNameDetail)) {
+    if (isDir || (d->mDetails & PreviewItemDelegate::FileNameDetail)) {
         d->drawText(painter, textRect, fgColor, index.data().toString());
         textRect.moveTop(textRect.bottom());
     }
 
-    if (!isDirOrArchive && (d->mDetails & PreviewItemDelegate::DateDetail)) {
+    if (!isDir && (d->mDetails & PreviewItemDelegate::DateDetail)) {
         const KDateTime dt = TimeUtils::dateTimeForFileItem(fileItem);
         d->drawText(painter, textRect, fgColor, KGlobal::locale()->formatDateTime(dt));
         textRect.moveTop(textRect.bottom());
     }
 
-    if (!isDirOrArchive && (d->mDetails & PreviewItemDelegate::ImageSizeDetail)) {
+    if (!isDir && (d->mDetails & PreviewItemDelegate::ImageSizeDetail)) {
         if (fullSize.isValid()) {
             const QString text = QString("%1x%2").arg(fullSize.width()).arg(fullSize.height());
             d->drawText(painter, textRect, fgColor, text);
@@ -741,7 +740,7 @@ void PreviewItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
         }
     }
 
-    if (!isDirOrArchive && (d->mDetails & PreviewItemDelegate::FileSizeDetail)) {
+    if (!isDir && (d->mDetails & PreviewItemDelegate::FileSizeDetail)) {
         const KIO::filesize_t size = fileItem.size();
         if (size > 0) {
             const QString st = KIO::convertSize(size);

@@ -69,7 +69,6 @@ void DocumentDirFinder::slotItemsAdded(const KUrl& dir, const KFileItemList& lis
         MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
         switch (kind) {
         case MimeTypeUtils::KIND_DIR:
-        case MimeTypeUtils::KIND_ARCHIVE:
             if (d->mFoundDirUrl.isValid()) {
                 // This is the second dir we find, stop now
                 finish(dir, MultipleDirsFound);

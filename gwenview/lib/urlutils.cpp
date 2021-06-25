@@ -35,7 +35,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KUrl>
 
 // Local
-#include <archiveutils.h>
 #include <mimetypeutils.h>
 
 namespace Gwenview
@@ -98,19 +97,7 @@ KUrl fixUserEnteredUrl(const KUrl& in)
     QFileInfo info(in.toLocalFile());
     QString path = info.absoluteFilePath();
 
-    KUrl out = KUrl::fromPath(path);
-    QString mimeType = MimeTypeUtils::urlMimeType(out);
-
-    const QString protocol = ArchiveUtils::protocolForMimeType(mimeType);
-
-    if (!protocol.isEmpty()) {
-        KUrl tmp = out;
-        tmp.setProtocol(protocol);
-        if (KProtocolManager::supportsListing(tmp)) {
-            out = tmp;
-        }
-    }
-    return out;
+    return KUrl::fromPath(path);
 }
 
 } // namespace

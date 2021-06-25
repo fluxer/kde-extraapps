@@ -36,7 +36,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KLocale>
 
 // Local
-#include <lib/archiveutils.h>
 #include <lib/kindproxymodel.h>
 #include <lib/gwenviewconfig.h>
 #include <lib/recursivedirmodel.h>
@@ -321,7 +320,7 @@ void ThumbnailPage::importList(const QModelIndexList& list)
     d->mUrlList.clear();
     Q_FOREACH(const QModelIndex & index, list) {
         KFileItem item = itemForIndex(index);
-        if (!ArchiveUtils::fileItemIsDirOrArchive(item)) {
+        if (!item.isDir()) {
             d->mUrlList << item.url();
         }
         // FIXME: Handle dirs (do we want to import recursively?)

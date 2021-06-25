@@ -51,7 +51,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/gwenviewconfig.h>
 #include <lib/sorteddirmodel.h>
 #include <lib/sorting.h>
-#include <lib/archiveutils.h>
 #include <lib/thumbnailview/previewitemdelegate.h>
 #include <lib/thumbnailview/thumbnailview.h>
 #include <ui_browsemainpage.h>
@@ -201,7 +200,7 @@ struct BrowseMainPagePrivate : public Ui_BrowseMainPage
         for (int row = start; row <= end; ++row) {
             QModelIndex index = mDirModel->index(row, 0, parent);
             KFileItem item = mDirModel->itemForIndex(index);
-            if (!ArchiveUtils::fileItemIsDirOrArchive(item)) {
+            if (!item.isDir()) {
                 ++count;
             }
         }

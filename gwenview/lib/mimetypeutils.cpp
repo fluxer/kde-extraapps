@@ -38,7 +38,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KImageIO>
 
 // Local
-#include <archiveutils.h>
 #include <gvdebug.h>
 
 namespace Gwenview
@@ -160,9 +159,6 @@ Kind mimeTypeKind(const QString& mimeType)
     }
     if (mimeType.startsWith(QLatin1String("inode/directory"))) {
         return KIND_DIR;
-    }
-    if (!ArchiveUtils::protocolForMimeType(mimeType).isEmpty()) {
-        return KIND_ARCHIVE;
     }
 
     return KIND_FILE;

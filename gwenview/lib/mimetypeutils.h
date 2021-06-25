@@ -49,10 +49,9 @@ GWENVIEWLIB_EXPORT QString urlMimeTypeByContent(const KUrl&);
 enum Kind {
     KIND_UNKNOWN      = 0,
     KIND_DIR          = 1,
-    KIND_ARCHIVE      = 1 << 2,
-    KIND_FILE         = 1 << 3,
-    KIND_RASTER_IMAGE = 1 << 4,
-    KIND_SVG_IMAGE    = 1 << 5
+    KIND_FILE         = 1 << 2,
+    KIND_RASTER_IMAGE = 1 << 3,
+    KIND_SVG_IMAGE    = 1 << 4
 };
 Q_DECLARE_FLAGS(Kinds, Kind)
 

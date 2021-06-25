@@ -34,7 +34,7 @@ namespace Gwenview
 
 struct DocumentOnlyProxyModelPrivate;
 /**
- * A proxy model which lists items which are neither dirs nor archives.
+ * A proxy model which lists items which are not dirs.
  * Only works with models which expose a KDirModel::FileItemRole.
  */
 class GWENVIEWLIB_EXPORT DocumentOnlyProxyModel : public QSortFilterProxyModel

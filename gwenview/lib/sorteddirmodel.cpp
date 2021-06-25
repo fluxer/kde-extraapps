@@ -29,7 +29,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KDirLister>
 
 // Local
-#include <lib/archiveutils.h>
 #include <lib/timeutils.h>
 #include <KDirModel>
 
@@ -182,7 +181,7 @@ bool SortedDirModel::filterAcceptsRow(int row, const QModelIndex& parent) const
         return false;
     }
 
-    if (kind != MimeTypeUtils::KIND_DIR && kind != MimeTypeUtils::KIND_ARCHIVE) {
+    if (kind != MimeTypeUtils::KIND_DIR) {
         int dotPos = fileItem.name().lastIndexOf('.');
         if (dotPos >= 1) {
             QString extension = fileItem.name().mid(dotPos + 1).toLower();
@@ -221,11 +220,11 @@ bool SortedDirModel::lessThan(const QModelIndex& left, const QModelIndex& right)
     const KFileItem leftItem = itemForSourceIndex(left);
     const KFileItem rightItem = itemForSourceIndex(right);
 
-    const bool leftIsDirOrArchive = ArchiveUtils::fileItemIsDirOrArchive(leftItem);
-    const bool rightIsDirOrArchive = ArchiveUtils::fileItemIsDirOrArchive(rightItem);
+    const bool leftIsDir = leftItem.isDir();
+    const bool rightIsDir = rightItem.isDir();
 
-    if (leftIsDirOrArchive != rightIsDirOrArchive) {
-        return leftIsDirOrArchive;
+    if (leftIsDir != rightIsDir) {
+        return leftIsDir;
     }
 
     if (sortRole() != KDirModel::ModifiedTime) {
@@ -247,7 +246,7 @@ bool SortedDirModel::hasDocuments() const
     for (int row = 0; row < count; ++row) {
         const QModelIndex idx = index(row, 0);
         const KFileItem item = itemForIndex(idx);
-        if (!ArchiveUtils::fileItemIsDirOrArchive(item)) {
+        if (!item.isDir()) {
             return true;
         }
     }

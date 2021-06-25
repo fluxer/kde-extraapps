@@ -84,7 +84,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "thumbnailviewhelper.h"
 #include "browsemainpage.h"
 #include <lib/hud/hudbuttonbox.h>
-#include <lib/archiveutils.h>
 #include <lib/contextmanager.h>
 #include <lib/disabledactionshortcutmonitor.h>
 #include <lib/document/documentfactory.h>
@@ -543,7 +542,6 @@ struct MainWindow::Private
     {
         mDirModel->setKindFilter(
             MimeTypeUtils::KIND_DIR
-            | MimeTypeUtils::KIND_ARCHIVE
             | MimeTypeUtils::KIND_RASTER_IMAGE
             | MimeTypeUtils::KIND_SVG_IMAGE);
 
@@ -565,11 +563,11 @@ struct MainWindow::Private
         mThumbnailBarModel->setSourceModel(mDirModel);
     }
 
-    bool indexIsDirOrArchive(const QModelIndex& index) const
+    bool indexIsDir(const QModelIndex& index) const
     {
         Q_ASSERT(index.isValid());
         KFileItem item = mDirModel->itemForIndex(index);
-        return ArchiveUtils::fileItemIsDirOrArchive(item);
+        return item.isDir();
     }
 
     void goTo(const QModelIndex& index)
@@ -586,7 +584,7 @@ struct MainWindow::Private
         mPreloadDirectionIsForward = offset > 0;
         QModelIndex index = mContextManager->selectionModel()->currentIndex();
         index = mDirModel->index(index.row() + offset, 0);
-        if (index.isValid() && !indexIsDirOrArchive(index)) {
+        if (index.isValid() && !indexIsDir(index)) {
             goTo(index);
         }
     }
@@ -600,7 +598,7 @@ struct MainWindow::Private
                 return;
             }
 
-            if (!indexIsDirOrArchive(index)) {
+            if (!indexIsDir(index)) {
                 break;
             }
         }
@@ -893,16 +891,8 @@ void MainWindow::slotThumbnailViewIndexActivated(const QModelIndex& index)
         // Item is a dir, open it
         openDirUrl(item.url());
     } else {
-        QString protocol = ArchiveUtils::protocolForMimeType(item.mimetype());
-        if (!protocol.isEmpty()) {
-            // Item is an archive, tweak url then open it
-            KUrl url = item.url();
-            url.setProtocol(protocol);
-            openDirUrl(url);
-        } else {
-            // Item is a document, switch to view mode
-            d->mViewAction->trigger();
-        }
+        // Item is a document, switch to view mode
+        d->mViewAction->trigger();
     }
 }
 
@@ -933,7 +923,7 @@ void MainWindow::openSelectedDocuments()
 
     Q_FOREACH(const QModelIndex& index, list) {
         KFileItem item = d->mDirModel->itemForIndex(index);
-        if (!item.isNull() && !ArchiveUtils::fileItemIsDirOrArchive(item)) {
+        if (!item.isNull() && !item.isDir()) {
             KUrl url = item.url();
             if (!firstDocumentIndex.isValid()) {
                 firstDocumentIndex = index;
@@ -1107,7 +1097,7 @@ void MainWindow::slotSelectionChanged()
             item = d->mDirModel->itemForIndex(index);
         }
         QUndoGroup* undoGroup = DocumentFactory::instance()->undoGroup();
-        if (!item.isNull() && !ArchiveUtils::fileItemIsDirOrArchive(item)) {
+        if (!item.isNull() && !item.isDir()) {
             KUrl url = item.url();
             Document::Ptr doc = DocumentFactory::instance()->load(url);
             undoGroup->addStack(doc->undoStack());
@@ -1197,12 +1187,12 @@ void MainWindow::updatePreviousNextActions()
     bool hasPrevious;
     bool hasNext;
     QModelIndex currentIndex = d->mContextManager->selectionModel()->currentIndex();
-    if (currentIndex.isValid() && !d->indexIsDirOrArchive(currentIndex)) {
+    if (currentIndex.isValid() && !d->indexIsDir(currentIndex)) {
         int row = currentIndex.row();
         QModelIndex prevIndex = d->mDirModel->index(row - 1, 0);
         QModelIndex nextIndex = d->mDirModel->index(row + 1, 0);
-        hasPrevious = prevIndex.isValid() && !d->indexIsDirOrArchive(prevIndex);
-        hasNext = nextIndex.isValid() && !d->indexIsDirOrArchive(nextIndex);
+        hasPrevious = prevIndex.isValid() && !d->indexIsDir(prevIndex);
+        hasNext = nextIndex.isValid() && !d->indexIsDir(nextIndex);
     } else {
         hasPrevious = false;
         hasNext = false;
@@ -1481,7 +1471,7 @@ void MainWindow::preloadNextUrl()
     }
 
     KFileItem item = d->mDirModel->itemForIndex(index);
-    if (!ArchiveUtils::fileItemIsDirOrArchive(item)) {
+    if (!item.isDir()) {
         KUrl url = item.url();
         if (url.isLocalFile()) {
             QSize size = d->mViewStackedWidget->size();

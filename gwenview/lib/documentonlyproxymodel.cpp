@@ -21,9 +21,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Self
 #include "moc_documentonlyproxymodel.cpp"
 
-// Local
-#include <lib/archiveutils.h>
-
 // KDE
 #include <KDirModel>
 
@@ -52,7 +49,7 @@ bool DocumentOnlyProxyModel::filterAcceptsRow(int row, const QModelIndex &parent
 {
     const QModelIndex index = sourceModel()->index(row, 0, parent);
     const KFileItem fileItem = index.data(KDirModel::FileItemRole).value<KFileItem>();
-    return !ArchiveUtils::fileItemIsDirOrArchive(fileItem);
+    return !fileItem.isDir();
 }
 
 

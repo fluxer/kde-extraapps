@@ -40,7 +40,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Local
 #include "imagemetainfodialog.h"
 #include "sidebar.h"
-#include <lib/archiveutils.h>
 #include <lib/contextmanager.h>
 #include <lib/eventwatcher.h>
 #include <lib/gvdebug.h>
@@ -302,7 +301,7 @@ void InfoContextManagerItem::updateSideBarContent()
     }
 
     KFileItem item = itemList.first();
-    if (itemList.count() == 1 && !ArchiveUtils::fileItemIsDirOrArchive(item)) {
+    if (itemList.count() == 1 && !item.isDir()) {
         fillOneFileGroup(item);
     } else {
         fillMultipleItemsGroup(itemList);
