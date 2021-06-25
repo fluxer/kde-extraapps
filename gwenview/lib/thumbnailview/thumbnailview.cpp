@@ -65,9 +65,11 @@ namespace Gwenview
 #endif
 
 /** How many msec to wait before starting to smooth thumbnails */
-const int SMOOTH_DELAY = 500;
+static const int THUMBNAIL_DELAY = 500;
 
-const int WHEEL_ZOOM_MULTIPLIER = 4;
+static const int WHEEL_ZOOM_MULTIPLIER = 4;
+
+static const QSize maxThumbSize(ThumbnailView::MaxThumbnailSize, ThumbnailView::MaxThumbnailSize);
 
 static KFileItem fileItemForIndex(const QModelIndex& index)
 {
@@ -169,9 +171,6 @@ struct ThumbnailViewPrivate
     ThumbnailForUrl mThumbnailForUrl;
     QTimer mScheduledThumbnailGenerationTimer;
 
-    UrlQueue mSmoothThumbnailQueue;
-    QTimer mSmoothThumbnailTimer;
-
     QPixmap mWaitingThumbnail;
     QPointer<KIO::PreviewJob> mThumbnailProvider;
     KFileItemList mThumbnailQueue;
@@ -195,11 +194,12 @@ struct ThumbnailViewPrivate
 
     void scheduleThumbnailGeneration()
     {
-        if (mThumbnailProvider) {
-            QObject::disconnect(mThumbnailProvider, 0 , q, 0);
-            delete mThumbnailProvider;
+        while (mThumbnailProvider) {
+            qApp->processEvents();
         }
-        mThumbnailProvider = new KIO::PreviewJob(mThumbnailQueue, mThumbnailSize);
+
+        mScheduledThumbnailGenerationTimer.stop();
+        mThumbnailProvider = new KIO::PreviewJob(mThumbnailQueue, maxThumbSize);
         mThumbnailQueue.clear();
 
         QObject::connect(mThumbnailProvider, SIGNAL(gotPreview(KFileItem,QPixmap)),
@@ -207,8 +207,6 @@ struct ThumbnailViewPrivate
         QObject::connect(mThumbnailProvider, SIGNAL(failed(KFileItem)),
                             q, SLOT(setBrokenThumbnail(KFileItem)));
         mThumbnailProvider->start();
-        mSmoothThumbnailQueue.clear();
-        mScheduledThumbnailGenerationTimer.start();
     }
 
     void updateThumbnailForModifiedDocument(const QModelIndex& index)
@@ -306,13 +304,9 @@ ThumbnailView::ThumbnailView(QWidget* parent)
     setHorizontalScrollMode(ScrollPerPixel);
 
     d->mScheduledThumbnailGenerationTimer.setSingleShot(true);
-    d->mScheduledThumbnailGenerationTimer.setInterval(500);
+    d->mScheduledThumbnailGenerationTimer.setInterval(THUMBNAIL_DELAY);
     connect(&d->mScheduledThumbnailGenerationTimer, SIGNAL(timeout()),
             SLOT(generateThumbnailsForItems()));
-
-    d->mSmoothThumbnailTimer.setSingleShot(true);
-    connect(&d->mSmoothThumbnailTimer, SIGNAL(timeout()),
-            SLOT(smoothNextThumbnail()));
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, SIGNAL(customContextMenuRequested(QPoint)),
@@ -372,10 +366,6 @@ void ThumbnailView::updateThumbnailSize()
     painter.end();
     d->mWaitingThumbnail = pix;
 
-    // Stop smoothing
-    d->mSmoothThumbnailTimer.stop();
-    d->mSmoothThumbnailQueue.clear();
-
     // Clear adjustedPixes
     ThumbnailForUrl::iterator
     it = d->mThumbnailForUrl.begin(),
@@ -389,7 +379,7 @@ void ThumbnailView::updateThumbnailSize()
     if (d->mScaleMode != ScaleToFit) {
         scheduleDelayedItemsLayout();
     }
-    d->scheduleThumbnailGeneration();
+    d->mScheduledThumbnailGenerationTimer.start();
 }
 
 void ThumbnailView::setThumbnailWidth(int width)
@@ -466,16 +456,9 @@ void ThumbnailView::rowsAboutToBeRemoved(const QModelIndex& parent, int start, i
 
         QUrl url = item.url();
         d->mThumbnailForUrl.remove(url);
-        d->mSmoothThumbnailQueue.removeAll(url);
 
-        itemList.append(item);
-    }
-
-    foreach (const KFileItem &item, itemList) {
         d->mThumbnailQueue.removeAll(item);
-    }
-    if (d->mThumbnailProvider) {
-        foreach (const KFileItem &item, itemList) {
+        if (d->mThumbnailProvider) {
             d->mThumbnailProvider->removeItem(item.url());
         }
     }
@@ -569,17 +552,10 @@ void ThumbnailView::setBrokenThumbnail(const KFileItem& item)
     if (it == d->mThumbnailForUrl.end()) {
         return;
     }
+
     Thumbnail& thumbnail = it.value();
-    MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
-    if (kind == MimeTypeUtils::KIND_DIR) {
-        // Special case for folders because ThumbnailProvider does not return a
-        // thumbnail if there is no images
-        thumbnail.mWaitingForThumbnail = false;
-        return;
-    } else {
-        thumbnail.initAsIcon(DesktopIcon("image-missing", 48));
-        thumbnail.mFullSize = thumbnail.mGroupPix.size();
-    }
+    thumbnail.initAsIcon(DesktopIcon("image-missing", 48));
+    thumbnail.mFullSize = thumbnail.mGroupPix.size();
     update(thumbnail.mIndex);
 }
 
@@ -603,17 +579,14 @@ QPixmap ThumbnailView::thumbnailForIndex(const QModelIndex& index, QSize* fullSi
     }
     Thumbnail& thumbnail = it.value();
 
-    // If dir or archive, generate a thumbnail from fileitem pixmap
+    // If dir, generate a thumbnail from fileitem pixmap
     MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
-    if (kind == MimeTypeUtils::KIND_ARCHIVE || kind == MimeTypeUtils::KIND_DIR) {
+    if (kind == MimeTypeUtils::KIND_DIR) {
         int groupSize = ThumbnailGroup::pixelSize(ThumbnailGroup::fromPixelSize(d->mThumbnailSize.height()));
         if (thumbnail.mGroupPix.isNull() || thumbnail.mGroupPix.height() < groupSize) {
             QPixmap pix = item.pixmap(groupSize);
             thumbnail.initAsIcon(pix);
-            if (kind == MimeTypeUtils::KIND_ARCHIVE) {
-                // No thumbnails for archives
-                thumbnail.mWaitingForThumbnail = false;
-            } else if (!d->mCreateThumbnailsForRemoteUrls && !UrlUtils::urlIsFastLocalFile(url)) {
+            if (!d->mCreateThumbnailsForRemoteUrls && !UrlUtils::urlIsFastLocalFile(url)) {
                 // If we don't want thumbnails for remote urls, use
                 // "folder-remote" icon for remote folders, so that they do
                 // not look like regular folders
@@ -639,12 +612,7 @@ QPixmap ThumbnailView::thumbnailForIndex(const QModelIndex& index, QSize* fullSi
     if (thumbnail.mAdjustedPix.isNull()) {
         d->roughAdjustThumbnail(&thumbnail);
     }
-    if (thumbnail.mRough && !d->mSmoothThumbnailQueue.contains(url)) {
-        d->mSmoothThumbnailQueue.enqueue(url);
-        if (!d->mSmoothThumbnailTimer.isActive()) {
-            d->mSmoothThumbnailTimer.start(SMOOTH_DELAY);
-        }
-    }
+
     if (fullSize) {
         *fullSize = thumbnail.mRealFullSize;
     }
@@ -729,16 +697,10 @@ void ThumbnailView::keyPressEvent(QKeyEvent* event)
     }
 }
 
-void ThumbnailView::resizeEvent(QResizeEvent* event)
-{
-    QListView::resizeEvent(event);
-    d->scheduleThumbnailGeneration();
-}
-
 void ThumbnailView::showEvent(QShowEvent* event)
 {
     QListView::showEvent(event);
-    d->scheduleThumbnailGeneration();
+    d->mScheduledThumbnailGenerationTimer.start();
     QTimer::singleShot(0, this, SLOT(scrollToSelectedIndex()));
 }
 
@@ -773,12 +735,6 @@ void ThumbnailView::selectionChanged(const QItemSelection& selected, const QItem
     emit selectionChangedSignal(selected, deselected);
 }
 
-void ThumbnailView::scrollContentsBy(int dx, int dy)
-{
-    QListView::scrollContentsBy(dx, dy);
-    d->scheduleThumbnailGeneration();
-}
-
 void ThumbnailView::generateThumbnailsForItems()
 {
     if (!isVisible() || !model()) {
@@ -798,12 +754,6 @@ void ThumbnailView::generateThumbnailsForItems()
 
         // Filter out remote items if necessary
         if (!d->mCreateThumbnailsForRemoteUrls && !url.isLocalFile()) {
-            continue;
-        }
-
-        // Filter out archives
-        MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
-        if (kind == MimeTypeUtils::KIND_ARCHIVE) {
             continue;
         }
 
@@ -834,6 +784,7 @@ void ThumbnailView::generateThumbnailsForItems()
             distance = itemRect.top() * visibleRect.width() + itemRect.left();
             // Make sure directory thumbnails are generated after image thumbnails:
             // Distance is between visibleSurface and 2 * visibleSurface
+            MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
             if (kind == MimeTypeUtils::KIND_DIR) {
                 distance = distance + visibleSurface;
             }
@@ -902,34 +853,6 @@ QPixmap ThumbnailView::busySequenceCurrentPixmap() const
     return d->mBusySequence.frameAt(d->mBusyAnimationTimeLine->currentFrame());
 }
 
-void ThumbnailView::smoothNextThumbnail()
-{
-    if (d->mSmoothThumbnailQueue.isEmpty()) {
-        return;
-    }
-
-    if (d->mThumbnailProvider) {
-        // give mThumbnailProvider priority over smoothing
-        d->mSmoothThumbnailTimer.start(SMOOTH_DELAY);
-        return;
-    }
-
-    KUrl url = d->mSmoothThumbnailQueue.dequeue();
-    ThumbnailForUrl::Iterator it = d->mThumbnailForUrl.find(url);
-    GV_RETURN_IF_FAIL2(it != d->mThumbnailForUrl.end(), url << "not in mThumbnailForUrl.");
-
-    Thumbnail& thumbnail = it.value();
-    thumbnail.mAdjustedPix = d->scale(thumbnail.mGroupPix, Qt::SmoothTransformation);
-    thumbnail.mRough = false;
-
-    GV_RETURN_IF_FAIL2(thumbnail.mIndex.isValid(), "index for" << url << "is invalid.");
-    update(thumbnail.mIndex);
-
-    if (!d->mSmoothThumbnailQueue.isEmpty()) {
-        d->mSmoothThumbnailTimer.start(0);
-    }
-}
-
 void ThumbnailView::reloadThumbnail(const QModelIndex& index)
 {
     KUrl url = urlForIndex(index);
@@ -937,12 +860,13 @@ void ThumbnailView::reloadThumbnail(const QModelIndex& index)
         kWarning() << "Invalid url for index" << index;
         return;
     }
+
     ThumbnailForUrl::Iterator it = d->mThumbnailForUrl.find(url);
     if (it == d->mThumbnailForUrl.end()) {
         return;
     }
     d->mThumbnailForUrl.erase(it);
-    generateThumbnailsForItems();
+    d->mScheduledThumbnailGenerationTimer.start();
 }
 
 void ThumbnailView::setCreateThumbnailsForRemoteUrls(bool createRemoteThumbs)

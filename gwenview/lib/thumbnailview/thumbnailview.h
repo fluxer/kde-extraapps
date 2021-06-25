@@ -163,10 +163,6 @@ protected:
 
     virtual void keyPressEvent(QKeyEvent*);
 
-    virtual void resizeEvent(QResizeEvent*);
-
-    virtual void scrollContentsBy(int dx, int dy);
-
     virtual void showEvent(QShowEvent*);
 
     virtual void wheelEvent(QWheelEvent*);
@@ -199,8 +195,6 @@ private Q_SLOTS:
      * Cause a repaint of all busy indexes
      */
     void updateBusyIndexes();
-
-    void smoothNextThumbnail();
 
 private:
     friend struct ThumbnailViewPrivate;
