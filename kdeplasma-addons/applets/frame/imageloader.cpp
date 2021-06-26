@@ -40,22 +40,20 @@ ImageLoader::ImageLoader(const QString &path)
 #endif
 }
 
-QImage ImageLoader::correctRotation(const QImage& image, const QString &path)
+void ImageLoader::correctRotation(QImage& image, const QString &path)
 {
 #ifdef HAVE_KEXIV2
     if (!image.isNull()) {
-        QImage tempImage(image);
         KExiv2Iface::KExiv2 exiv(path);
-        exiv.rotateExifQImage(tempImage, exiv.getImageOrientation());
-        return tempImage;
+        exiv.rotateExifQImage(image, exiv.getImageOrientation());
 #endif
     }
-    return image;
 }
 
 void ImageLoader::run()
 {
-    QImage img = correctRotation(QImage(m_path), m_path);
+    QImage img(m_path);
+    correctRotation(img, m_path);
     emit loaded(img);
 }
 
