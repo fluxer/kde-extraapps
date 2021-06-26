@@ -27,9 +27,7 @@
 // Qt includes.
 #include <QtCore/QObject>
 #include <QtCore/QStringList>
-
-// KDE includes.
-#include <kprocess.h>
+#include <QtCore/QProcess>
 
 // KTTS includes.
 #include "filterproc.h"
@@ -168,7 +166,7 @@ private:
     // Processing state.
     int m_state;
     // xsltproc process.
-    KProcess* m_xsltProc;
+    QProcess* m_xsltProc;
     // Input and Output filenames.
     QString m_inFilename;
     QString m_outFilename;

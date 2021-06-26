@@ -37,9 +37,7 @@
 
 // KTTSD includes.
 #include <config-jovie.h>
-#ifdef OPENTTS_FOUND
-#include <opentts/libopentts.h>
-#elif defined(SPEECHD_FOUND)
+#if defined(SPEECHD_FOUND)
 #include <libspeechd.h>
 #endif
 

@@ -229,9 +229,9 @@ bool SSMLConvert::transform(const QString &text, const QString &xsltFilename) {
     m_outFilename = outFile.fileName();
 
     /// Spawn an xsltproc process to apply our stylesheet to our SSML file.
-    QStringList args;
     m_xsltProc = new QProcess;
-    args << QLatin1String( "-o" ) << m_outFilename  << QLatin1String( "--novalid" )
+    QStringList xsltProcArgs= QStringList()
+        << QLatin1String( "-o" ) << m_outFilename  << QLatin1String( "--novalid" )
         << m_xsltFilename << m_inFilename;
     // Warning: This won't compile under KDE 3.2.  See FreeTTS::argsToStringList().
     // kDebug() << "SSMLConvert::transform: executing command: " <<
@@ -239,10 +239,10 @@ bool SSMLConvert::transform(const QString &text, const QString &xsltFilename) {
 
     connect(m_xsltProc, SIGNAL(finished(int,QProcess::ExitStatus)),
         this, SLOT(slotProcessExited()));
-    m_xsltProc->start(QLatin1String("xsltproc"), args);
-    if (m_xsltProc->state() != QProcess::Running && m_xsltProc->state() != QProcess::Starting)
+    m_xsltProc->start(QLatin1String("xsltproc"), xsltProcArgs);
+    if (!m_xsltProc->waitForStarted())
     {
-        kDebug() << "SSMLConvert::transform: Error starting xsltproc";
+        kWarning() << "SSMLConvert::transform: Error starting xsltproc";
         return false;
     }
     m_state = tsTransforming;

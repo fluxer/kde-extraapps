@@ -218,11 +218,11 @@ bool XmlTransformerProc::asyncConvert(const QString& inputText, TalkerCode* talk
     m_outFilename = outFile.fileName();
 
     /// Spawn an xsltproc process to apply our stylesheet to input file.
-    m_xsltProc = new KProcess;
-    m_xsltProc->setOutputChannelMode(KProcess::SeparateChannels);
-    *m_xsltProc << m_xsltprocPath;
-    *m_xsltProc << QLatin1String("-o") << m_outFilename  << QLatin1String("--novalid")
-            << m_xsltFilePath << m_inFilename;
+    m_xsltProc = new QProcess;
+    m_xsltProc->setProcessChannelMode(QProcess::SeparateChannels);
+    const QStringList xsltProcArgs = QStringList()
+        << QLatin1String("-o") << m_outFilename  << QLatin1String("--novalid")
+        << m_xsltFilePath << m_inFilename;
     // Warning: This won't compile under KDE 3.2.  See FreeTTS::argsToStringList().
     // kDebug() << "SSMLConvert::transform: executing command: " <<
     //     m_xsltProc->args() << endl;
@@ -234,10 +234,10 @@ bool XmlTransformerProc::asyncConvert(const QString& inputText, TalkerCode* talk
             this, SLOT(slotReceivedStdout()));
     connect(m_xsltProc, SIGNAL(readyReadStandardError()),
             this, SLOT(slotReceivedStderr()));
-    m_xsltProc->start();
+    m_xsltProc->start(m_xsltprocPath, xsltProcArgs);
     if (!m_xsltProc->waitForStarted())
     {
-        kDebug() << "XmlTransformerProc::convert: Error starting xsltproc";
+        kWarning() << "XmlTransformerProc::convert: Error starting xsltproc";
         m_state = fsIdle;
         return false;
     }
