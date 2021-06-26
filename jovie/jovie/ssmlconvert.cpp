@@ -229,7 +229,7 @@ bool SSMLConvert::transform(const QString &text, const QString &xsltFilename) {
     m_outFilename = outFile.fileName();
 
     /// Spawn an xsltproc process to apply our stylesheet to our SSML file.
-	QStringList args;
+    QStringList args;
     m_xsltProc = new QProcess;
     args << QLatin1String( "-o" ) << m_outFilename  << QLatin1String( "--novalid" )
         << m_xsltFilename << m_inFilename;
@@ -239,7 +239,8 @@ bool SSMLConvert::transform(const QString &text, const QString &xsltFilename) {
 
     connect(m_xsltProc, SIGNAL(finished(int,QProcess::ExitStatus)),
         this, SLOT(slotProcessExited()));
-    if (!m_xsltProc->execute(QLatin1String("xsltproc"), args))
+    m_xsltProc->start(QLatin1String("xsltproc"), args);
+    if (m_xsltProc->state() != QProcess::Running && m_xsltProc->state() != QProcess::Starting)
     {
         kDebug() << "SSMLConvert::transform: Error starting xsltproc";
         return false;
