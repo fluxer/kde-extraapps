@@ -26,10 +26,6 @@
 #include "filterconf.h"
 #include "moc_filterconf.cpp"
 
-// C++ library includes.
-#include <stdlib.h>
-#include <sys/param.h>
-
 // Qt includes.
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
@@ -44,9 +40,6 @@
 KttsFilterConf::KttsFilterConf( QWidget *parent, const QVariantList &) : QWidget(parent){
     //setObjectName( QLatin1String( name ) );
     // kDebug() << "KttsFilterConf::KttsFilterConf: Running";
-    QString systemPath(QLatin1String( qgetenv("PATH" ) ));
-    // kDebug() << "Path is " << systemPath;
-    m_path = systemPath.split( QLatin1Char( ':' ));
 }
 
 /**
@@ -120,47 +113,3 @@ QString KttsFilterConf::userPlugInName() { return QString(); }
  * @return          True if this filter is a SBD.
  */
 bool KttsFilterConf::isSBD() { return false; }
-
-/**
-* Return the full path to any program in the $PATH environmental variable
-* @param name        The name of the file to search for.
-* @returns           The path to the file on success, a blank QString
-*                    if it is not found.
-*/
-QString KttsFilterConf::getLocation(const QString &name) {
-    // Iterate over the path and see if 'name' exists in it. Return the
-    // full path to it if it does. Else return an empty QString.
-    if (QFile::exists(name)) return name;
-    // kDebug() << "KttsFilterConf::getLocation: Searching for " << name << " in the path..";
-    // kDebug() << m_path;
-    for(QStringList::iterator it = m_path.begin(); it != m_path.end(); ++it) {
-        QString fullName = *it;
-        fullName += QLatin1Char( '/' );
-        fullName += name;
-        // The user either has the directory of the file in the path...
-        if(QFile::exists(fullName)) {
-            // kDebug() << "KttsFilterConf:getLocation: " << fullName;
-            return fullName;
-        }
-        // ....Or the file itself
-        else if(QFileInfo(*it).baseName().append(QString(QLatin1String( "." )).append(QFileInfo(*it).suffix())) == name) {
-            // kDebug() << "KttsFilterConf:getLocation: " << fullName;
-            return fullName;
-        }
-    }
-    return QString();
-}
-
-/*static*/ QString KttsFilterConf::realFilePath(const QString &filename)
-{
-    char *realpath_buffer;
-
-    /* If the path contains symlinks, get the real name */
-    if ((realpath_buffer = realpath( QFile::encodeName(filename).data(), NULL)) != NULL) {
-        //succes, use result from realpath
-        QString result = QFile::decodeName(realpath_buffer);
-        free(realpath_buffer);
-        return result;
-    }
-    return filename;
-}

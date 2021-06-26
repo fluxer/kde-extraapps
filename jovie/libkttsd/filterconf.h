@@ -111,8 +111,6 @@ class KDE_EXPORT KttsFilterConf : public QWidget{
          */
         virtual bool isSBD();
 
-        static QString realFilePath(const QString &filename);
-
     public slots:
         /**
         * This slot is used internally when the configuration is changed.  It is
@@ -130,19 +128,6 @@ class KDE_EXPORT KttsFilterConf : public QWidget{
         * It should be emitted whenever user changes something in the configuration widget.
         */
         void changed(bool);
-
-    protected:
-        /**
-        * Searches the $PATH variable for any file. If that file exists in the PATH, or
-        * is contained in any directory in the PATH, it returns the full path to it.
-        * @param name        The name of the file to search for.
-        * @returns           The path to the file on success, a blank QString
-        *                    if it is not found.
-        */
-        QString getLocation(const QString &name);
-
-        /// The system path in a QStringList.
-        QStringList m_path;
 };
 
 #endif  //FILTERCONF_H

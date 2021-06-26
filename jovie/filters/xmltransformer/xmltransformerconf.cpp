@@ -95,8 +95,8 @@ void XmlTransformerConf::save(KConfig* c, const QString& configGroup){
     // kDebug() << "XmlTransformerConf::save: Running";
     KConfigGroup config( c, configGroup );
     config.writeEntry( "UserFilterName", nameLineEdit->text() );
-    config.writeEntry( "XsltFilePath", realFilePath( xsltPath->url().path() ) );
-    config.writeEntry( "XsltprocPath", realFilePath( xsltprocPath->url().path() ) );
+    config.writeEntry( "XsltFilePath", KStandardDirs::realFilePath( xsltPath->url().path() ) );
+    config.writeEntry( "XsltprocPath", KStandardDirs::realFilePath( xsltprocPath->url().path() ) );
     config.writeEntry( "RootElement", rootElementLineEdit->text() );
     config.writeEntry( "DocType", doctypeLineEdit->text() );
     config.writeEntry( "AppID", appIdLineEdit->text().remove(QLatin1Char( ' ' )) );
@@ -143,13 +143,13 @@ bool XmlTransformerConf::supportsMultiInstance() { return true; }
  */
 QString XmlTransformerConf::userPlugInName()
 {
-    QString filePath = realFilePath(xsltprocPath->url().path());
+    QString filePath = KStandardDirs::realFilePath(xsltprocPath->url().path());
     if (filePath.isEmpty()) return QString();
-    if (getLocation(filePath).isEmpty()) return QString();
+    if (KStandardDirs::findExe(filePath).isEmpty()) return QString();
 
-    filePath = realFilePath(xsltPath->url().path());
+    filePath = KStandardDirs::realFilePath(xsltPath->url().path());
     if (filePath.isEmpty()) return QString();
-    if (getLocation(filePath).isEmpty()) return QString();
+    if (KStandardDirs::findExe(filePath).isEmpty()) return QString();
     if (!QFileInfo(filePath).isFile()) return QString();
 
     return nameLineEdit->text();

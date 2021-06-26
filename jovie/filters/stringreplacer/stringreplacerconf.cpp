@@ -251,7 +251,7 @@ void StringReplacerConf::save(KConfig* c, const QString& configGroup){
     if ( errMsg.isEmpty() )
     {
         KConfigGroup config( c, configGroup );
-        config.writeEntry( "WordListFile", realFilePath(wordsFilename) );
+        config.writeEntry( "WordListFile", KStandardDirs::realFilePath(wordsFilename) );
     }
     else
         kDebug() << "StringReplacerConf::save: " << errMsg;
