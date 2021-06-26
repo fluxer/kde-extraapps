@@ -30,7 +30,6 @@ public:
     OSRelease();
 
     QString logo;
-    QString versionId;
     QString prettyName;
     QString homeUrl;
 };

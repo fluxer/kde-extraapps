@@ -27,8 +27,7 @@
 #include <KDebug>
 #include <KIcon>
 #include <KPluginFactory>
-#include <KStandardDirs>
-#include <KToolInvocation>
+#include <KMimeType>
 
 #include <solid/device.h>
 #include <solid/processor.h>
@@ -91,16 +90,28 @@ void Module::load()
 {
     OSRelease os;
 
-    QPixmap logo = KIcon(os.logo).pixmap(128, 128);
-    ui->logoLabel->setPixmap(logo);
+    QString logoString;
+    if (!os.logo.isEmpty()) {
+        kDebug() << "using logo from OS information" << os.logo;
+        logoString = os.logo;
+    } else if (!os.homeUrl.isEmpty()) {
+        kDebug() << "checking home URL for icon" << os.homeUrl;
+        logoString = KMimeType::favIconForUrl(KUrl(os.homeUrl));
+    }
 
-    ui->nameVersionLabel->setText(QString("%1 %2").arg(os.prettyName, os.versionId));
+    if (logoString.isEmpty()) {
+        kDebug() << "fallback to start-here-kde icon";
+        logoString = QLatin1String("start-here-kde");
+    }
+    QPixmap logoPixmap = KIcon(logoString).pixmap(128, 128);
+    ui->logoLabel->setPixmap(logoPixmap);
 
-    QString url = os.homeUrl;
-    if (url.isEmpty())
+    ui->nameVersionLabel->setText(os.prettyName);
+
+    if (os.homeUrl.isEmpty())
         ui->urlLabel->hide();
     else
-        ui->urlLabel->setText(QString("<a href='%1'>%1</a>").arg(url));
+        ui->urlLabel->setText(QString("<a href='%1'>%1</a>").arg(os.homeUrl));
 
     ui->kdeLabel->setText(QLatin1String(KDE::versionString()));
     ui->qtLabel->setText(qVersion());
