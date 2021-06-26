@@ -19,6 +19,12 @@ set_package_properties(Speechd PROPERTIES
     TYPE REQUIRED
 )
 
+find_program(XSLTPROC_EXECUTABLE NAMES xsltproc)
+add_feature_info(xsltproc
+    XSLTPROC_EXECUTABLE
+    "SSML support in Jovie"
+)
+
 if(NOT Q_WS_X11)
     message(FATAL_ERROR "Jovie requires a X11-based system.")
 endif()
