@@ -8,17 +8,11 @@ if(LibSpectre_FOUND)
     add_subdirectory(spectre)
 endif()
 
-add_subdirectory(kimgio)
-
 if(DjVuLibre_FOUND)
     add_subdirectory(djvu)
 endif()
 
 add_subdirectory(dvi)
-
-if(TIFF_FOUND)
-    add_subdirectory(tiff)
-endif()
 
 add_subdirectory(xps)
 

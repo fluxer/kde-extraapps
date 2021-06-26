@@ -178,7 +178,6 @@ Type=Application
 Categories=Qt;KDE;Graphics;Viewer;Photography;
 MimeType=inode/directory;image/gif;image/jpeg;image/jp2;image/png;image/bmp;image/x-eps;image/x-ico;image/x-portable-bitmap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-portable-graymap;image/tiff;image/x-psd;image/x-webp;image/webp;image/svg+xml;image/svg+xml-compressed
 X-DocPath=gwenview/index.html
-# InitialPreference should be greater than Okular so that Gwenview is the
-# primary application associated with images, but less than Konqueror or Dolphin
-# so that Gwenview is not the primary applications for folders.
+# InitialPreference should be less than Dolphin so that Gwenview is not the
+# primary applications for folders.
 InitialPreference=8

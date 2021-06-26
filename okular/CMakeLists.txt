@@ -33,13 +33,6 @@ set_package_properties(DjVuLibre PROPERTIES
     PURPOSE "Support for DjVu files in Okular"
 )
 
-macro_optional_find_package(TIFF)
-set_package_properties(TIFF PROPERTIES
-    DESCRIPTION "A library for reading and writing TIFF formatted files"
-    URL "http://www.remotesensing.org/libtiff"
-    PURPOSE "Support for TIFF files in Okular"
-)
-
 macro_optional_find_package(Freetype)
 set_package_properties(Freetype PROPERTIES
     DESCRIPTION "A font rendering engine"
