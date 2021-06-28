@@ -211,7 +211,6 @@ add_executable(partitionmanager main.cpp)
 target_link_libraries(partitionmanager partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/partitionmanager.appdata.xml DESTINATION share/appdata)
 install(FILES gui/partitionmanagerui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/partitionmanager)
 install(PROGRAMS partitionmanager.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 
