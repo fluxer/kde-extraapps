@@ -13,8 +13,6 @@ include(CheckFunctionExists)
 include(CheckLibraryExists)
 include(CheckIncludeFiles)
 
-include(TestBigEndian)
-
 add_subdirectory(pics)
 add_subdirectory(toolbar)
 add_subdirectory(icon)
@@ -43,8 +41,6 @@ set(CMAKE_REQUIRED_INCLUDES grp.h)
 check_function_exists(fgetgrent HAVE_FGETGRENT)
 set(CMAKE_REQUIRED_INCLUDES shadow.h)
 check_function_exists(fgetspent HAVE_FGETSPENT)
-
-test_big_endian(WORDS_BIGENDIAN)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ku_config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/ku_config.h)
 
