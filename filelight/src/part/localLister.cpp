@@ -19,6 +19,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ***********************************************************************/
 
+#include "config-filelight.h"
+
 #include "localLister.h"
 
 #include "Config.h"
@@ -148,12 +150,19 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         QByteArray new_path = path;
         new_path += ent->d_name;
 
+#ifdef HAVE_DIRENT_D_TYPE
+        if (ent->d_type != DT_DIR && ent->d_type != DT_REG) {
+            continue;
+        }
+#endif
+
         //get file information
         if (KDE_lstat(new_path, &statbuf) == -1) {
             outputError(new_path);
             continue;
         }
 
+#ifndef HAVE_DIRENT_D_TYPE // anything that is not file/directory is filtered above
         if (S_ISLNK(statbuf.st_mode) ||
                 S_ISCHR(statbuf.st_mode) ||
                 S_ISBLK(statbuf.st_mode) ||
@@ -162,6 +171,7 @@ LocalLister::scan(const QByteArray &path, const QByteArray &dirname)
         {
             continue;
         }
+#endif
 
         if (S_ISREG(statbuf.st_mode)) //file
             cwd->append(ent->d_name, (statbuf.st_blocks * S_BLKSIZE));

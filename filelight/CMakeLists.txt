@@ -29,7 +29,19 @@ endif()
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII)
 
-include_directories(src)
+include(CheckStructHasMember)
+
+check_struct_has_member("struct dirent" d_type dirent.h HAVE_DIRENT_D_TYPE)
+
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/config-filelight.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config-filelight.h
+)
+
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
 
 add_subdirectory(src)
 add_subdirectory(misc)
