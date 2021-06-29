@@ -240,8 +240,8 @@ bool
 Part::start(const KUrl &url)
 {
     if (!m_started) {
-        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(message(QString)));
-        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clear()));
+        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(QString)));
+        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clearMessage()));
         m_started = true;
     }
 
