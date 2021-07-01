@@ -7,8 +7,8 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-macro_optional_find_package(Alsa)
-set_package_properties(Alsa PROPERTIES
+macro_optional_find_package(ALSA)
+set_package_properties(ALSA PROPERTIES
     DESCRIPTION "Advanced Linux Sound Architecture"
     URL "https://alsa-project.org/wiki/Main_Page"
     PURPOSE "Needed for KMix sound feedback"
@@ -27,29 +27,36 @@ add_subdirectory( profiles )
 
 if (ALSA_FOUND)
     add_definitions(-DHAVE_ALSA)
-    include_directories(${ALSA_INCLUDES})
+    include_directories(${ALSA_INCLUDE_DIR})
 endif (ALSA_FOUND)
 
 set(kmix_adaptor_SRCS
-	dbus/dbusmixerwrapper.cpp
-	dbus/dbusmixsetwrapper.cpp
-	dbus/dbuscontrolwrapper.cpp)
-qt4_add_dbus_adaptor( kmix_adaptor_SRCS dbus/org.kde.kmix.control.xml
-	dbus/dbuscontrolwrapper.h DBusControlWrapper )
-qt4_add_dbus_adaptor( kmix_adaptor_SRCS dbus/org.kde.kmix.mixer.xml
-	dbus/dbusmixerwrapper.h DBusMixerWrapper )
-qt4_add_dbus_adaptor( kmix_adaptor_SRCS dbus/org.kde.kmix.mixset.xml
-	dbus/dbusmixsetwrapper.h DBusMixSetWrapper )
+    dbus/dbusmixerwrapper.cpp
+    dbus/dbusmixsetwrapper.cpp
+    dbus/dbuscontrolwrapper.cpp
+)
+qt4_add_dbus_adaptor( kmix_adaptor_SRCS
+    dbus/org.kde.kmix.control.xml
+    dbus/dbuscontrolwrapper.h DBusControlWrapper
+)
+qt4_add_dbus_adaptor( kmix_adaptor_SRCS
+    dbus/org.kde.kmix.mixer.xml
+    dbus/dbusmixerwrapper.h DBusMixerWrapper
+)
+qt4_add_dbus_adaptor( kmix_adaptor_SRCS
+    dbus/org.kde.kmix.mixset.xml
+    dbus/dbusmixsetwrapper.h DBusMixSetWrapper
+)
 
 set(kmix_backend_SRCS
     backends/mixer_backend.cpp
     backends/mixer_mpris2.cpp
 )
 
-if (ALSA_FOUND)
+if(ALSA_FOUND)
     set(kmix_backend_SRCS ${kmix_backend_SRCS}
         backends/mixer_alsa9.cpp )
-endif (ALSA_FOUND)
+endif()
 
 set(kmix_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
     apps/main.cpp 
