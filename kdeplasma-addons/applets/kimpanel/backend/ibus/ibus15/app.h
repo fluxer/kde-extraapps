@@ -32,7 +32,7 @@ class App : public QApplication {
     Q_OBJECT
 public:
     typedef QPair< uint, uint > TriggerKey;
-    App(int argc, char** argv);
+    App(int &argc, char** argv);
     virtual ~App();
     void finalize();
     virtual bool x11EventFilter(XEvent* event );
