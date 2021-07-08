@@ -22,7 +22,7 @@
 //KDE-Includes
 #include <plasma/abstractrunner.h>
 
-K_EXPORT_RUNNER_CONFIG(CharacterRunner, CharacterRunnerConfig)
+K_EXPORT_RUNNER_CONFIG(charrunner, CharacterRunnerConfig)
 
 CharacterRunnerConfigForm::CharacterRunnerConfigForm(QWidget* parent) : QWidget(parent)
 {
@@ -30,7 +30,7 @@ CharacterRunnerConfigForm::CharacterRunnerConfigForm(QWidget* parent) : QWidget(
 }
 
 CharacterRunnerConfig::CharacterRunnerConfig(QWidget* parent, const QVariantList& args) :
-        KCModule(ConfigFactory::componentData(), parent, args)
+        KCModule(CharacterRunnerConfigFactory::componentData(), parent, args)
 {
     m_ui = new CharacterRunnerConfigForm(this);
 

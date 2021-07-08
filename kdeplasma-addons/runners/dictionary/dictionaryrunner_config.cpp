@@ -10,7 +10,7 @@
 K_EXPORT_RUNNER_CONFIG(dictionary, DictionaryRunnerConfig)
 
 DictionaryRunnerConfig::DictionaryRunnerConfig(QWidget* parent, const QVariantList& args) :
-	KCModule(ConfigFactory::componentData(), parent, args)
+	KCModule(DictionaryRunnerConfigFactory::componentData(), parent, args)
 {
 	QFormLayout *layout = new QFormLayout;
 	m_triggerWord = new QLineEdit;

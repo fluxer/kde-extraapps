@@ -36,7 +36,7 @@ SpellCheckConfigForm::SpellCheckConfigForm(QWidget* parent) : QWidget(parent)
 }
 
 SpellCheckConfig::SpellCheckConfig(QWidget* parent, const QVariantList& args) :
-        KCModule(ConfigFactory::componentData(), parent, args)
+        KCModule(SpellCheckConfigFactory::componentData(), parent, args)
 {
     m_ui = new SpellCheckConfigForm(this);
 

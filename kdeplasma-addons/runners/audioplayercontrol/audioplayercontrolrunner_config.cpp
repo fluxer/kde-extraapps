@@ -33,7 +33,7 @@ AudioPlayerControlRunnerConfigForm::AudioPlayerControlRunnerConfigForm(QWidget* 
 }
 
 AudioPlayerControlRunnerConfig::AudioPlayerControlRunnerConfig(QWidget* parent, const QVariantList& args) :
-        KCModule(ConfigFactory::componentData(), parent, args)
+        KCModule(AudioPlayerControlRunnerConfigFactory::componentData(), parent, args)
 {
     m_ui = new AudioPlayerControlRunnerConfigForm(this);
 

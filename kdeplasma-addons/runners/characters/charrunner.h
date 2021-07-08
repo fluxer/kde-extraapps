@@ -40,6 +40,6 @@ class CharacterRunner : public Plasma::AbstractRunner
     QList<QString> m_codes;
 };
 
-K_EXPORT_PLASMA_RUNNER(CharacterRunner, CharacterRunner)
+K_EXPORT_PLASMA_RUNNER(charrunner, CharacterRunner)
 
 #endif
