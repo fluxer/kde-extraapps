@@ -31,7 +31,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
-#if defined(Q_OS_LINUX) && !defined(__FreeBSD_kernel__)
+#if defined(Q_OS_LINUX)
 #include <asm/ioctls.h>
 #endif
 

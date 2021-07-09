@@ -162,35 +162,33 @@ void KSaneOption::readValue() {}
 SANE_Word KSaneOption::toSANE_Word(unsigned char *data)
 {
     SANE_Word tmp;
-    // if __BYTE_ORDER is not defined we get #if 0 == 0
-    #if __BYTE_ORDER == __LITTLE_ENDIAN
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
     tmp  = (data[0]&0xff);
     tmp += ((SANE_Word)(data[1]&0xff))<<8;
     tmp += ((SANE_Word)(data[2]&0xff))<<16;
     tmp += ((SANE_Word)(data[3]&0xff))<<24;
-    #else
+#else
     tmp  = (data[3]&0xff);
     tmp += ((SANE_Word)(data[2]&0xff))<<8;
     tmp += ((SANE_Word)(data[1]&0xff))<<16;
     tmp += ((SANE_Word)(data[0]&0xff))<<24;
-    #endif
+#endif
     return tmp;
 }
 
 void KSaneOption::fromSANE_Word(unsigned char *data, SANE_Word from)
 {
-    // if __BYTE_ORDER is not defined we get #if 0 == 0
-    #if __BYTE_ORDER == __LITTLE_ENDIAN
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
     data[0] = (from & 0x000000FF);
     data[1] = (from & 0x0000FF00)>>8;
     data[2] = (from & 0x00FF0000)>>16;
     data[3] = (from & 0xFF000000)>>24;
-    #else
+#else
     data[3] = (from & 0x000000FF);
     data[2] = (from & 0x0000FF00)>>8;
     data[1] = (from & 0x00FF0000)>>16;
     data[0] = (from & 0xFF000000)>>24;
-    #endif
+#endif
 }
 
 bool KSaneOption::getMinValue(float &) {return false;}

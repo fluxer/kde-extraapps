@@ -141,9 +141,7 @@ void MDWSlider::addGlobalShortcut(KAction* action, const QString& label, bool dy
 	if (!dynamicControl)
 	{
 		// virtual / dynamic controls won't get shortcuts
-		//     #ifdef __GNUC__
 		//     #warning GLOBAL SHORTCUTS ARE NOW ASSIGNED TO ALL CONTROLS, as enableGlobalShortcut(), has not been committed
-		//     #endif
 		//   b->enableGlobalShortcut();
 		// enableGlobalShortcut() is not there => use workaround
 		action->setGlobalShortcut(dummyShortcut);

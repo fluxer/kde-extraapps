@@ -354,9 +354,7 @@ void testingModulus() {
 	checkResult("KNumber(12) % KNumber(0)", KNumber(-12) % KNumber(0), QLatin1String("nan"), KNumber::TYPE_ERROR);
 	checkResult("KNumber(-12) % KNumber(0)", KNumber(-12) % KNumber(0), QLatin1String("nan"), KNumber::TYPE_ERROR);
 
-#ifdef __GNUC__
 	#warning test for other types
-#endif
 }
 
 void testingAndOr() {
@@ -370,9 +368,7 @@ void testingAndOr() {
 	checkResult("KNumber(1023) & KNumber(255)", KNumber(1023) & KNumber(255), QLatin1String("255"), KNumber::TYPE_INTEGER);
 	checkResult("KNumber(1023) | KNumber(255)", KNumber(1023) | KNumber(255), QLatin1String("1023"), KNumber::TYPE_INTEGER);
 
-#ifdef __GNUC__
 	#warning test for other types
-#endif
 }
 
 

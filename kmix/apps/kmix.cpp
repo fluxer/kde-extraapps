@@ -372,9 +372,7 @@ KMixWindow::saveConfig()
   saveBaseConfig();
   saveViewConfig();
   saveVolumes();
-#ifdef __GNUC_
-#warn We must Sync here, or we will lose configuration data. The reson for that is unknown.
-#endif
+#warning We must Sync here, or we will lose configuration data. The reson for that is unknown.
 
   // TODO cesken The reason for not writing might be that we have multiple cascaded KConfig objects. I must migrate to KSharedConfig !!!
   KGlobal::config()->sync();
