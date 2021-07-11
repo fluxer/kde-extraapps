@@ -51,8 +51,6 @@ int main(int argc, char **argv)
   KCmdLineArgs::addCmdLineOptions( ksnapshot_options() ); // Add our own options.
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-  // This is one of the applications that requires the "native" / X11 graphics backend to work.
-  QApplication::setGraphicsSystem("native");
   KApplication app;
 
   // Create top level window
