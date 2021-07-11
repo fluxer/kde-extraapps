@@ -76,6 +76,12 @@ set_package_properties(LibGcrypt PROPERTIES
     PURPOSE "Support encrypted Open Document in Okular"
 )
 
+find_program(GHOSTSCRIPT_EXECUTABLE NAMES gs)
+add_feature_info(okular_gs
+    GHOSTSCRIPT_EXECUTABLE
+    "PostScript support in Okular"
+)
+
 add_subdirectory( plasma )
 add_subdirectory( ui )
 add_subdirectory( shell )

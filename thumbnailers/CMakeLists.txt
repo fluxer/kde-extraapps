@@ -35,6 +35,12 @@ set_package_properties(FFmpegThumbnailer PROPERTIES
     PURPOSE "Required to build the video thumbnailer"
 )
 
+find_program(GHOSTSCRIPT_EXECUTABLE NAMES gs)
+add_feature_info(thumbnailer_gs
+    GHOSTSCRIPT_EXECUTABLE
+    "PostScript, PDF and DvI support in thumbnailer"
+)
+
 add_subdirectory(ps)
 add_subdirectory(raw)
 
