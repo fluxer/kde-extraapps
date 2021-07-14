@@ -421,9 +421,7 @@ void testingSqrt() {
 	checkResult("KNumber(-27).cbrt()", KNumber(-27).cbrt(), QLatin1String("-3"), KNumber::TYPE_INTEGER);
 	checkResult("KNumber(\"27/8\").cbrt()", KNumber(QLatin1String("27/8")).cbrt(), QLatin1String("3/2"), KNumber::TYPE_FRACTION);
 	checkResult("KNumber(\"-8/27\").cbrt()", KNumber(QLatin1String("-8/27")).cbrt(), QLatin1String("-2/3"), KNumber::TYPE_FRACTION);
-#ifdef __GNUC__
-	#warning need to check non-perfect cube roots
-#endif
+#warning need to check non-perfect cube roots
 	checkResult("KNumber(2).cbrt()", KNumber(2).cbrt(), QLatin1String("1.25992104989"), KNumber::TYPE_FLOAT);
 	checkResult("KNumber(\"2/3\").cbrt()", KNumber(QLatin1String("2/3")).cbrt(), QLatin1String("0.873580464736"), KNumber::TYPE_FLOAT);
 	checkResult("KNumber(\"0.25\").cbrt()", KNumber(QLatin1String("0.25")).cbrt(), QLatin1String("0.629960524947"), KNumber::TYPE_FLOAT);
