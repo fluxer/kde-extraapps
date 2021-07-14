@@ -2,6 +2,8 @@
 #include <QPainter>
 #include <QStyleOption>
 
+#include <limits.h>
+
 DummyWidget::DummyWidget(QGraphicsWidget* parent) : QGraphicsWidget(parent)
 {
     setMinimumSize(0, 0);
