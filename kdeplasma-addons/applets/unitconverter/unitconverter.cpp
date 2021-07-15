@@ -31,8 +31,6 @@
 #include <Plasma/Frame>
 #include <KUnitConversion/UnitCategory>
 
-using namespace KUnitConversion;
-
 ComboBox::ComboBox(QGraphicsWidget* parent)
     : Plasma::ComboBox(parent)
 {
@@ -44,8 +42,8 @@ void ComboBox::mousePressEvent(QGraphicsSceneMouseEvent* event)
     Plasma::ComboBox::mousePressEvent(event);
 }
 
-Q_DECLARE_METATYPE(UnitPtr)
-Q_DECLARE_METATYPE(UnitCategory*)
+Q_DECLARE_METATYPE(KUnitConversion::UnitPtr)
+Q_DECLARE_METATYPE(KUnitConversion::UnitCategory*)
 
 UnitConverter::UnitConverter(QObject *parent, const QVariantList &args)
 : Plasma::PopupApplet(parent, args)
@@ -73,14 +71,14 @@ void UnitConverter::init()
 void UnitConverter::sltCategoryChanged(int index)
 {
     Q_UNUSED(index);
-    UnitCategory* category =
-            m_pCmbCategory->nativeWidget()->itemData(index).value<UnitCategory*>();
-    QList<UnitPtr> units = category->units();
-    UnitPtr defaultUnit = category->defaultUnit();
+    KUnitConversion::UnitCategory* category =
+            m_pCmbCategory->nativeWidget()->itemData(index).value<KUnitConversion::UnitCategory*>();
+    QList<KUnitConversion::UnitPtr> units = category->units();
+    KUnitConversion::UnitPtr defaultUnit = category->defaultUnit();
     m_pCmbUnit1->clear();
     m_pCmbUnit2->clear();
     int i = 0;
-    foreach (const UnitPtr& unit, units) {
+    foreach (const KUnitConversion::UnitPtr& unit, units) {
         m_pCmbUnit1->nativeWidget()->addItem(QString("%1 (%2)")
                 .arg(unit->description()).arg(unit->symbol()), QVariant::fromValue(unit));
         m_pCmbUnit2->nativeWidget()->addItem(QString("%1 (%2)")
@@ -130,13 +128,13 @@ void UnitConverter::sltValueChangedReverse(const QString &sNewValue)
 /// Calculates from left to right
 void UnitConverter::calculate()
 {
-    UnitPtr in = m_pCmbUnit1->nativeWidget()->itemData(
-            m_pCmbUnit1->nativeWidget()->currentIndex()).value<UnitPtr>();
-    UnitPtr out = m_pCmbUnit2->nativeWidget()->itemData(
-            m_pCmbUnit2->nativeWidget()->currentIndex()).value<UnitPtr>();
+    KUnitConversion::UnitPtr in = m_pCmbUnit1->nativeWidget()->itemData(
+            m_pCmbUnit1->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
+    KUnitConversion::UnitPtr out = m_pCmbUnit2->nativeWidget()->itemData(
+            m_pCmbUnit2->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
     if (!in.isNull() && !out.isNull()) {
-        Value dblValueIn(m_pTxtValue1->text().toDouble(), in);
-        Value dblValueOut = dblValueIn.convertTo(out->id());
+        KUnitConversion::Value dblValueIn(m_pTxtValue1->text().toDouble(), in);
+        KUnitConversion::Value dblValueOut = dblValueIn.convertTo(out->id());
         QRegExp decimalCheck("^\\d+\\.0$");
         QRegExp onlyDecimal("^\\d+$");
         if(decimalCheck.exactMatch(m_pTxtValue1->text()) && onlyDecimal.exactMatch(QString::number(dblValueOut.number()))) {
@@ -151,13 +149,13 @@ void UnitConverter::calculate()
 /// Calculates from right to left
 void UnitConverter::calculateReverse()
 {
-    UnitPtr in = m_pCmbUnit2->nativeWidget()->itemData(
-            m_pCmbUnit2->nativeWidget()->currentIndex()).value<UnitPtr>();
-    UnitPtr out = m_pCmbUnit1->nativeWidget()->itemData(
-            m_pCmbUnit1->nativeWidget()->currentIndex()).value<UnitPtr>();
+    KUnitConversion::UnitPtr in = m_pCmbUnit2->nativeWidget()->itemData(
+            m_pCmbUnit2->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
+    KUnitConversion::UnitPtr out = m_pCmbUnit1->nativeWidget()->itemData(
+            m_pCmbUnit1->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
     if (!in.isNull() && !out.isNull()) {
-        Value dblValueIn(m_pTxtValue2->text().toDouble(), in);
-        Value dblValueOut = dblValueIn.convertTo(out->id());
+        KUnitConversion::Value dblValueIn(m_pTxtValue2->text().toDouble(), in);
+        KUnitConversion::Value dblValueOut = dblValueIn.convertTo(out->id());
         QRegExp decimalCheck("^\\d+\\.0$");
         QRegExp onlyDecimal("^\\d+$");
         if(decimalCheck.exactMatch(m_pTxtValue2->text()) && onlyDecimal.exactMatch(QString::number(dblValueOut.number()))) {
@@ -207,7 +205,7 @@ QGraphicsWidget *UnitConverter::graphicsWidget()
         pGridLayout->addItem(m_pInfo, 4, 0, 1, 2);
         pGridLayout->setRowStretchFactor(5, 1);
 
-        foreach (UnitCategory* category, m_converter.categories()) {
+        foreach (KUnitConversion::UnitCategory* category, m_converter.categories()) {
             m_pCmbCategory->nativeWidget()->addItem(category->name(), QVariant::fromValue(category));
         }
         m_pCmbCategory->nativeWidget()->model()->sort(0);

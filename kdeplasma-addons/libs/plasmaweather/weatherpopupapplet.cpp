@@ -30,8 +30,6 @@
 #include "weatherconfig.h"
 #include "weatherlocation.h"
 
-using namespace KUnitConversion;
-
 class WeatherPopupApplet::Private
 {
 public:
@@ -53,19 +51,19 @@ public:
     WeatherConfig *weatherConfig;
     Plasma::DataEngine *weatherEngine;
     Plasma::DataEngine *timeEngine;
-    Converter converter;
-    UnitPtr temperatureUnit;
-    UnitPtr speedUnit;
-    UnitPtr pressureUnit;
-    UnitPtr visibilityUnit;
+    KUnitConversion::Converter converter;
+    KUnitConversion::UnitPtr temperatureUnit;
+    KUnitConversion::UnitPtr speedUnit;
+    KUnitConversion::UnitPtr pressureUnit;
+    KUnitConversion::UnitPtr visibilityUnit;
     int updateInterval;
     QString source;
     WeatherLocation *location;
 
     QString conditionIcon;
     QString tend;
-    Value pressure;
-    Value temperature;
+    KUnitConversion::Value pressure;
+    KUnitConversion::Value temperature;
     double latitude;
     double longitude;
     QTimer *busyTimer;
@@ -104,7 +102,7 @@ public:
         }
     }
 
-    qreal tendency(const Value& pressure, const QString& tendency)
+    qreal tendency(const KUnitConversion::Value& pressure, const QString& tendency)
     {
         qreal t;
 
@@ -113,7 +111,7 @@ public:
         } else if (tendency.toLower() == QLatin1String( "falling" )) {
             t = -0.75;
         } else {
-            t = Value(tendency.toDouble(), pressure.unit()).convertTo(Kilopascal).number();
+            t = KUnitConversion::Value(tendency.toDouble(), pressure.unit()).convertTo(KUnitConversion::Kilopascal).number();
         }
         return t;
     }
@@ -124,8 +122,8 @@ public:
         if (!pressure.isValid()) {
             return QLatin1String( "weather-none-available" );
         }
-        qreal temp = temperature.convertTo(Celsius).number();
-        qreal p = pressure.convertTo(Kilopascal).number();
+        qreal temp = temperature.convertTo(KUnitConversion::Celsius).number();
+        qreal p = pressure.convertTo(KUnitConversion::Kilopascal).number();
         qreal t = tendency(pressure, tend);
 
         // This is completely unscientific so if anyone have a better formula for this :-)
@@ -178,7 +176,7 @@ public:
         return result;
     }
 
-    UnitPtr unit(const QString& unit)
+    KUnitConversion::UnitPtr unit(const QString& unit)
     {
         if (!unit.isEmpty() && unit[0].isDigit()) {
             return converter.unit(unit.toInt());
@@ -305,12 +303,12 @@ void WeatherPopupApplet::dataUpdated(const QString& source,
 
     d->conditionIcon = data[QLatin1String( "Condition Icon" )].toString();
     if (data[QLatin1String( "Pressure" )].toString() != QLatin1String( "N/A" )) {
-        d->pressure = Value(data[QLatin1String( "Pressure" )].toDouble(), data[QLatin1String( "Pressure Unit" )].toInt());
+        d->pressure = KUnitConversion::Value(data[QLatin1String( "Pressure" )].toDouble(), data[QLatin1String( "Pressure Unit" )].toInt());
     } else {
-        d->pressure = Value();
+        d->pressure = KUnitConversion::Value();
     }
     d->tend = data[QLatin1String( "Pressure Tendency" )].toString();
-    d->temperature = Value(data[QLatin1String( "Temperature" )].toDouble(), data[QLatin1String( "Temperature Unit" )].toInt());
+    d->temperature = KUnitConversion::Value(data[QLatin1String( "Temperature" )].toDouble(), data[QLatin1String( "Temperature Unit" )].toInt());
     d->latitude = data[QLatin1String( "Latitude" )].toDouble();
     d->longitude = data[QLatin1String( "Longitude" )].toDouble();
     setAssociatedApplicationUrls(KUrl(data.value(QLatin1String( "Credit Url" )).toString()));
@@ -320,22 +318,22 @@ void WeatherPopupApplet::dataUpdated(const QString& source,
     setBusy(false);
 }
 
-UnitPtr WeatherPopupApplet::pressureUnit()
+KUnitConversion::UnitPtr WeatherPopupApplet::pressureUnit()
 {
     return d->pressureUnit;
 }
 
-UnitPtr WeatherPopupApplet::temperatureUnit()
+KUnitConversion::UnitPtr WeatherPopupApplet::temperatureUnit()
 {
     return d->temperatureUnit;
 }
 
-UnitPtr WeatherPopupApplet::speedUnit()
+KUnitConversion::UnitPtr WeatherPopupApplet::speedUnit()
 {
     return d->speedUnit;
 }
 
-UnitPtr WeatherPopupApplet::visibilityUnit()
+KUnitConversion::UnitPtr WeatherPopupApplet::visibilityUnit()
 {
     return d->visibilityUnit;
 }

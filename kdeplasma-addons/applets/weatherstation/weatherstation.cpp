@@ -39,8 +39,6 @@
 
 #include "lcd.h"
 
-using namespace KUnitConversion;
-
 WeatherStation::WeatherStation(QObject *parent, const QVariantList &args)
     : WeatherPopupApplet(parent, args)
     , m_declarativeWidget(0)
@@ -151,12 +149,12 @@ void WeatherStation::configChanged()
     WeatherPopupApplet::configChanged();
 }
 
-Value WeatherStation::value(const QString& value, int unit)
+KUnitConversion::Value WeatherStation::value(const QString& value, int unit)
 {
     if (value.isEmpty() || value == "N/A") {
-        return Value();
+        return KUnitConversion::Value();
     }
-    return Value(value.toDouble(), unit);
+    return KUnitConversion::Value(value.toDouble(), unit);
 }
 
 void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine::Data &data)
@@ -167,7 +165,7 @@ void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine
         return;
 
     QString v = data["Temperature"].toString();
-    Value temp = value(v, data["Temperature Unit"].toInt());
+    KUnitConversion::Value temp = value(v, data["Temperature Unit"].toInt());
     setTemperature(temp, (v.indexOf('.') > -1));
 
     setPressure(conditionIcon(), value(data["Pressure"].toString(),
@@ -187,7 +185,7 @@ void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine
         setToolTip(data["Place"].toString());
 }
 
-QString WeatherStation::fitValue(const Value& value, int digits)
+QString WeatherStation::fitValue(const KUnitConversion::Value& value, int digits)
 {
     if (!value.isValid()) {
         return "-";
@@ -248,11 +246,11 @@ QString WeatherStation::fromCondition(const QString& rawCondition)
     return id;
 }
 
-void WeatherStation::setPressure(const QString& condition, const Value& pressure,
+void WeatherStation::setPressure(const QString& condition, const KUnitConversion::Value& pressure,
                                  const QString& tendencyString)
 {
     QString currentCondition = "weather:" + fromCondition(condition);
-    Value value = pressure.convertTo(pressureUnit());
+    KUnitConversion::Value value = pressure.convertTo(pressureUnit());
     QString s = fitValue(value, 5);
 
     qreal t;
@@ -274,10 +272,10 @@ void WeatherStation::setPressure(const QString& condition, const Value& pressure
     emit pressureChanged(currentCondition, s, value.unit()->symbol(), direction);
 }
 
-void WeatherStation::setTemperature(const Value& temperature, bool hasDigit)
+void WeatherStation::setTemperature(const KUnitConversion::Value& temperature, bool hasDigit)
 {
     hasDigit = hasDigit || (temperatureUnit() != temperature.unit());
-    Value v = temperature.convertTo(temperatureUnit());
+    KUnitConversion::Value v = temperature.convertTo(temperatureUnit());
     QString temp = hasDigit ? fitValue(v, 3) : QString::number(v.number());
 
     m_lcdPanel->setLabel("temperature-unit-label", v.unit()->symbol());
@@ -305,9 +303,9 @@ void WeatherStation::setToolTip(const QString& place)
     Plasma::ToolTipManager::self()->setContent(this, ttc);
 }
 
-void WeatherStation::setWind(const Value& speed, const QString& dir)
+void WeatherStation::setWind(const KUnitConversion::Value& speed, const QString& dir)
 {
-    Value value = speed.convertTo(speedUnit());
+    KUnitConversion::Value value = speed.convertTo(speedUnit());
     QString s = fitValue(value, 3);
     QString direction = dir;
 

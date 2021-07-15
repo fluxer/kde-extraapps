@@ -33,7 +33,6 @@
 #include "weathervalidator.h"
 #include "weatheri18ncatalog.h"
 #include "ui_weatherconfig.h"
-using namespace KUnitConversion;
 
 class WeatherConfig::Private
 {
@@ -111,20 +110,20 @@ WeatherConfig::WeatherConfig(QWidget *parent)
 
     d->dlg = qobject_cast<KDialog*>(parent);
     d->ui.setupUi(this);
-    d->ui.temperatureComboBox->addItem(i18n("Celsius \302\260C"), Celsius);
-    d->ui.temperatureComboBox->addItem(i18n("Fahrenheit \302\260F"), Fahrenheit);
-    d->ui.temperatureComboBox->addItem(i18n("Kelvin K"), Kelvin);
-    d->ui.pressureComboBox->addItem(i18n("Hectopascals hPa"), Hectopascal);
-    d->ui.pressureComboBox->addItem(i18n("Kilopascals kPa"), Kilopascal);
-    d->ui.pressureComboBox->addItem(i18n("Millibars mbar"), Millibar);
-    d->ui.pressureComboBox->addItem(i18n("Inches of Mercury inHg"), InchesOfMercury);
-    d->ui.speedComboBox->addItem(i18n("Meters per Second m/s"), MeterPerSecond);
-    d->ui.speedComboBox->addItem(i18n("Kilometers per Hour km/h"), KilometerPerHour);
-    d->ui.speedComboBox->addItem(i18n("Miles per Hour mph"), MilePerHour);
-    d->ui.speedComboBox->addItem(i18n("Knots kt"), Knot);
-    d->ui.speedComboBox->addItem(i18n("Beaufort scale bft"), Beaufort);
-    d->ui.visibilityComboBox->addItem(i18n("Kilometers"), Kilometer);
-    d->ui.visibilityComboBox->addItem(i18n("Miles"), Mile);
+    d->ui.temperatureComboBox->addItem(i18n("Celsius \302\260C"), KUnitConversion::Celsius);
+    d->ui.temperatureComboBox->addItem(i18n("Fahrenheit \302\260F"), KUnitConversion::Fahrenheit);
+    d->ui.temperatureComboBox->addItem(i18n("Kelvin K"), KUnitConversion::Kelvin);
+    d->ui.pressureComboBox->addItem(i18n("Hectopascals hPa"), KUnitConversion::Hectopascal);
+    d->ui.pressureComboBox->addItem(i18n("Kilopascals kPa"), KUnitConversion::Kilopascal);
+    d->ui.pressureComboBox->addItem(i18n("Millibars mbar"), KUnitConversion::Millibar);
+    d->ui.pressureComboBox->addItem(i18n("Inches of Mercury inHg"), KUnitConversion::InchesOfMercury);
+    d->ui.speedComboBox->addItem(i18n("Meters per Second m/s"), KUnitConversion::MeterPerSecond);
+    d->ui.speedComboBox->addItem(i18n("Kilometers per Hour km/h"), KUnitConversion::KilometerPerHour);
+    d->ui.speedComboBox->addItem(i18n("Miles per Hour mph"), KUnitConversion::MilePerHour);
+    d->ui.speedComboBox->addItem(i18n("Knots kt"), KUnitConversion::Knot);
+    d->ui.speedComboBox->addItem(i18n("Beaufort scale bft"), KUnitConversion::Beaufort);
+    d->ui.visibilityComboBox->addItem(i18n("Kilometers"), KUnitConversion::Kilometer);
+    d->ui.visibilityComboBox->addItem(i18n("Miles"), KUnitConversion::Mile);
 
     connect(d->ui.changeButton, SIGNAL(clicked()), this, SLOT(changePressed()));
 
