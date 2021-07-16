@@ -3,14 +3,6 @@
 include_directories(${PLASMACLOCK_INCLUDE_DIR})
 
 add_subdirectory(bball)
-if(KDE4WORKSPACE_FOUND)
-  add_subdirectory(binary-clock)
-  add_subdirectory(fuzzy-clock)
-  add_subdirectory(weather)
-  if(DBUSMENUQT_FOUND)
-    add_subdirectory(icontasks)
- endif()
-endif(KDE4WORKSPACE_FOUND)
 add_subdirectory(blackboard)
 add_subdirectory(bookmarks)
 add_subdirectory(bubblemon)
@@ -28,25 +20,29 @@ add_subdirectory(nowplaying)
 add_subdirectory(previewer)
 add_subdirectory(rssnow)
 add_subdirectory(spellcheck)
-add_subdirectory(showdashboard)
 add_subdirectory(timer)
-
 add_subdirectory(eyes)
-
 add_subdirectory(unitconverter)
 add_subdirectory(weatherstation)
-
 add_subdirectory(dict)
-
-if ( QALCULATE_FOUND )
-    add_subdirectory(qalculate)
-endif( QALCULATE_FOUND )
-
 add_subdirectory(incomingmsg)
 add_subdirectory(showdesktop)
 add_subdirectory(paste)
 add_subdirectory(plasmaboard)
 add_subdirectory(systemloadviewer)
+
+if(KDE4WORKSPACE_FOUND)
+  add_subdirectory(binary-clock)
+  add_subdirectory(fuzzy-clock)
+  add_subdirectory(weather)
+  if(DBUSMENUQT_FOUND)
+    add_subdirectory(icontasks)
+ endif()
+endif(KDE4WORKSPACE_FOUND)
+
+if ( QALCULATE_FOUND )
+    add_subdirectory(qalculate)
+endif( QALCULATE_FOUND )
 
 if (Q_WS_X11)
    if (X11_Xrender_FOUND)
