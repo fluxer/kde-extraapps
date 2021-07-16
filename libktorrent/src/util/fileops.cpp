@@ -90,7 +90,11 @@ namespace bt
 {
 	void MakeDir(const QString & dir,bool nothrow)
 	{
-		QDir d(dir);
+                QString nosep = dir;
+                if (nosep.endsWith(bt::DirSeparator())) {
+                    nosep.chop(1);
+                }
+		QDir d(nosep);
 		if (d.exists())
 			return;
 		
