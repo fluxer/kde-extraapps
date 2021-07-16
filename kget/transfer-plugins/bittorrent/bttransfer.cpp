@@ -448,14 +448,16 @@ void BTTransfer::btTransferInit(const KUrl &src, const QByteArray &data)
     {
         torrent = new bt::TorrentControl();
 
-        if (!BittorrentSettings::tmpDir().isEmpty() && QFileInfo(BittorrentSettings::tmpDir()).isDir())
+        QString settingstmp = KUrl(BittorrentSettings::tmpDir()).toLocalFile(KUrl::AddTrailingSlash);
+        if (!BittorrentSettings::tmpDir().isEmpty() && QFileInfo(settingstmp).isDir())
         {
-            m_tmp = BittorrentSettings::tmpDir();
+            m_tmp = settingstmp;
         }
 
         m_ready = true;
 
-        kDebug() << "Source:" << m_source.path() << "Destination:" << m_dest.path();
+        kDebug() << "Source:" << m_source.path() << "Destination:" << m_dest.directory();
+        kDebug() << "Temp:" << m_tmp << "Settings temp:" << settingstmp;
         torrent->init(0, file.readAll(), m_tmp + m_source.fileName().remove(".torrent"), KUrl(m_dest.directory()).toLocalFile());
 
         m_dest = torrent->getStats().output_path;
