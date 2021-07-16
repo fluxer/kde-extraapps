@@ -8,13 +8,13 @@ set(weatherstation_SRCS
 
 kde4_add_plugin(plasma_applet_weatherstation ${weatherstation_SRCS})
 target_link_libraries(plasma_applet_weatherstation
-    ${KDE4_KUNITCONVERSION_LIBS}
-    plasmaweather
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_PLASMA_LIBS}
     ${KDE4WORKSPACE_WEATHERION_LIBRARY}
-    ${QT_QTDECLARATIVE_LIBRARY})
+    ${QT_QTDECLARATIVE_LIBRARY}
+    plasmaweather
+)
 
 install(TARGETS plasma_applet_weatherstation DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES plasma-applet-weatherstation.desktop

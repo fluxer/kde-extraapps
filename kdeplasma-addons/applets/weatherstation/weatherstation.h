@@ -19,7 +19,7 @@
 #ifndef WEATHERSTATION_HEADER
 #define WEATHERSTATION_HEADER
 
-#include <KUnitConversion/Value>
+#include <kunitconversion.h>
 
 #include <Plasma/PopupApplet>
 #include <Plasma/DataEngine>
@@ -71,16 +71,17 @@ signals:
     void windChanged(QString direction, QString speed, QString unit);
 
 protected:
-    void setWind(const KUnitConversion::Value& speed, const QString& direction);
-    void setPressure(const QString& condition, const KUnitConversion::Value& pressure,
+    void setWind(const QString& speed, const QString& direction);
+    void setPressure(const QString& condition, const QString& pressure,
                      const QString& tendency);
-    void setTemperature(const KUnitConversion::Value& temperature, bool hasDigit);
+    void setTemperature(const QString& temperature, bool hasDigit);
     void setHumidity(QString humidity);
     void setToolTip(const QString& place);
 
-    QString fitValue(const KUnitConversion::Value& value, int digits);
     QString fromCondition(const QString& condition);
-    KUnitConversion::Value value(const QString& value, int unit);
+    QString tempValue(const QString& value, int unit);
+    QString presValue(const QString& value, int unit);
+    QString veloValue(const QString& value, int unit);
 
 private:
     void setLCDIcon();

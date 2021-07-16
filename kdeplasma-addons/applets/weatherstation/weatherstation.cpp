@@ -27,7 +27,6 @@
 #include <KConfigDialog>
 #include <KConfigGroup>
 #include <KToolInvocation>
-#include <KUnitConversion/Converter>
 
 #include <Plasma/Containment>
 #include <Plasma/Theme>
@@ -149,12 +148,37 @@ void WeatherStation::configChanged()
     WeatherPopupApplet::configChanged();
 }
 
-KUnitConversion::Value WeatherStation::value(const QString& value, int unit)
+QString WeatherStation::tempValue(const QString& value, int unit)
 {
     if (value.isEmpty() || value == "N/A") {
-        return KUnitConversion::Value();
+        return QString();
     }
-    return KUnitConversion::Value(value.toDouble(), unit);
+    KTemperature temp(value.toDouble(), static_cast<KTemperature::KTempUnit>(unit));
+    KTemperature totemp(0.0, temperatureUnit());
+    const double tempvalue = temp.convertTo(totemp.unitEnum());
+    return KTemperature(KTemperature::round(tempvalue, 1), totemp.unitEnum()).toString();
+}
+
+QString WeatherStation::presValue(const QString& value, int unit)
+{
+    if (value.isEmpty() || value == "N/A") {
+        return QString();
+    }
+    KPressure pres(value.toDouble(), static_cast<KPressure::KPresUnit>(unit));
+    KPressure topres(0.0, pressureUnit());
+    const double presvalue = pres.convertTo(topres.unitEnum());
+    return KPressure(KPressure::round(presvalue, 1), topres.unitEnum()).toString();
+}
+
+QString WeatherStation::veloValue(const QString& value, int unit)
+{
+    if (value.isEmpty() || value == "N/A") {
+        return QString();
+    }
+    KVelocity velo(value.toDouble(), static_cast<KVelocity::KVeloUnit>(unit));
+    KVelocity tovelo(0.0, speedUnit());
+    const double velovalue = velo.convertTo(tovelo.unitEnum());
+    return KVelocity(KVelocity::round(velovalue, 1), tovelo.unitEnum()).toString();
 }
 
 void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine::Data &data)
@@ -165,16 +189,16 @@ void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine
         return;
 
     QString v = data["Temperature"].toString();
-    KUnitConversion::Value temp = value(v, data["Temperature Unit"].toInt());
+    QString temp = tempValue(v, data["Temperature Unit"].toInt());
     setTemperature(temp, (v.indexOf('.') > -1));
 
-    setPressure(conditionIcon(), value(data["Pressure"].toString(),
+    setPressure(conditionIcon(), presValue(data["Pressure"].toString(),
                 data["Pressure Unit"].toInt()),
                 data["Pressure Tendency"].toString());
 
     setHumidity(data["Humidity"].toString());
 
-    setWind(value(data["Wind Speed"].toString(), data["Wind Speed Unit"].toInt()),
+    setWind(veloValue(data["Wind Speed"].toString(), data["Wind Speed Unit"].toInt()),
             data["Wind Direction"].toString());
 
     emit providerLabelChanged(data["Credit"].toString());
@@ -183,22 +207,6 @@ void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine
 
     if (m_showToolTip)
         setToolTip(data["Place"].toString());
-}
-
-QString WeatherStation::fitValue(const KUnitConversion::Value& value, int digits)
-{
-    if (!value.isValid()) {
-        return "-";
-    }
-    double v = value.number();
-    int mainDigits = (int)floor(log10(fabs(v))) + 1;
-    int precision = 0;
-
-    mainDigits += ((v < 0) ? 1 : 0); // minus sign
-    if (mainDigits < digits) {
-        precision = 1;
-    }
-    return QString::number(v, 'f', precision);
 }
 
 QString WeatherStation::fromCondition(const QString& rawCondition)
@@ -246,12 +254,10 @@ QString WeatherStation::fromCondition(const QString& rawCondition)
     return id;
 }
 
-void WeatherStation::setPressure(const QString& condition, const KUnitConversion::Value& pressure,
+void WeatherStation::setPressure(const QString& condition, const QString& pressure,
                                  const QString& tendencyString)
 {
     QString currentCondition = "weather:" + fromCondition(condition);
-    KUnitConversion::Value value = pressure.convertTo(pressureUnit());
-    QString s = fitValue(value, 5);
 
     qreal t;
     if (tendencyString.toLower() == "rising") {
@@ -269,20 +275,16 @@ void WeatherStation::setPressure(const QString& condition, const KUnitConversion
         direction = "down";
     }
 
-    emit pressureChanged(currentCondition, s, value.unit()->symbol(), direction);
+    emit pressureChanged(currentCondition, pressure, pressureUnit(), direction);
 }
 
-void WeatherStation::setTemperature(const KUnitConversion::Value& temperature, bool hasDigit)
+void WeatherStation::setTemperature(const QString& temperature, bool hasDigit)
 {
-    hasDigit = hasDigit || (temperatureUnit() != temperature.unit());
-    KUnitConversion::Value v = temperature.convertTo(temperatureUnit());
-    QString temp = hasDigit ? fitValue(v, 3) : QString::number(v.number());
-
-    m_lcdPanel->setLabel("temperature-unit-label", v.unit()->symbol());
-    m_lcdPanel->setNumber("temperature", temp);
+    m_lcdPanel->setLabel("temperature-unit-label", temperatureUnit());
+    m_lcdPanel->setNumber("temperature", temperature);
     setLCDIcon();
 
-    emit temperatureChanged(temp, v.unit()->symbol());
+    emit temperatureChanged(temperature, temperatureUnit());
 }
 
 void WeatherStation::setHumidity(QString humidity)
@@ -303,16 +305,14 @@ void WeatherStation::setToolTip(const QString& place)
     Plasma::ToolTipManager::self()->setContent(this, ttc);
 }
 
-void WeatherStation::setWind(const KUnitConversion::Value& speed, const QString& dir)
+void WeatherStation::setWind(const QString& speed, const QString& dir)
 {
-    KUnitConversion::Value value = speed.convertTo(speedUnit());
-    QString s = fitValue(value, 3);
     QString direction = dir;
 
     if (dir == "N/A")
         direction = "";
 
-    emit windChanged(direction, s, value.unit()->symbol());
+    emit windChanged(direction, speed, speedUnit());
 }
 
 void WeatherStation::clicked()

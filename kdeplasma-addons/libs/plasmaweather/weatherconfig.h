@@ -67,22 +67,22 @@ public:
     /**
      * Sets temperature unit
      **/
-    void setTemperatureUnit(int unit);
+    void setTemperatureUnit(const QString& unit);
 
     /**
      * Sets pressure unit
      **/
-    void setPressureUnit(int unit);
+    void setPressureUnit(const QString& unit);
 
     /**
      * Sets speed unit
      **/
-    void setSpeedUnit(int unit);
+    void setSpeedUnit(const QString& unit);
 
     /**
      * Sets visibility unit
      **/
-    void setVisibilityUnit(int unit);
+    void setVisibilityUnit(const QString& unit);
 
     /**
      * @return ion source to use
@@ -97,22 +97,22 @@ public:
     /**
      * @return temperature unit
      **/
-    int temperatureUnit() const;
+    QString temperatureUnit() const;
 
     /**
      * @return pressure unit
      **/
-    int pressureUnit() const;
+    QString pressureUnit() const;
 
     /**
      * @return speed unit
      **/
-    int speedUnit() const;
+    QString speedUnit() const;
 
     /**
      * @return visibility unit
      **/
-    int visibilityUnit() const;
+    QString visibilityUnit() const;
 
     /**
      * Sets header labels visible/hidden

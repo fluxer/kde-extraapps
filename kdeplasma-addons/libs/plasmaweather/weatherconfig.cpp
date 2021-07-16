@@ -28,7 +28,7 @@
 #include <kpixmapsequencewidget.h>
 //#include <KPixmapSequenceWidget>
 
-#include <KUnitConversion/Converter>
+#include <kunitconversion.h>
 
 #include "weathervalidator.h"
 #include "weatheri18ncatalog.h"
@@ -110,20 +110,22 @@ WeatherConfig::WeatherConfig(QWidget *parent)
 
     d->dlg = qobject_cast<KDialog*>(parent);
     d->ui.setupUi(this);
-    d->ui.temperatureComboBox->addItem(i18n("Celsius \302\260C"), KUnitConversion::Celsius);
-    d->ui.temperatureComboBox->addItem(i18n("Fahrenheit \302\260F"), KUnitConversion::Fahrenheit);
-    d->ui.temperatureComboBox->addItem(i18n("Kelvin K"), KUnitConversion::Kelvin);
-    d->ui.pressureComboBox->addItem(i18n("Hectopascals hPa"), KUnitConversion::Hectopascal);
-    d->ui.pressureComboBox->addItem(i18n("Kilopascals kPa"), KUnitConversion::Kilopascal);
-    d->ui.pressureComboBox->addItem(i18n("Millibars mbar"), KUnitConversion::Millibar);
-    d->ui.pressureComboBox->addItem(i18n("Inches of Mercury inHg"), KUnitConversion::InchesOfMercury);
-    d->ui.speedComboBox->addItem(i18n("Meters per Second m/s"), KUnitConversion::MeterPerSecond);
-    d->ui.speedComboBox->addItem(i18n("Kilometers per Hour km/h"), KUnitConversion::KilometerPerHour);
-    d->ui.speedComboBox->addItem(i18n("Miles per Hour mph"), KUnitConversion::MilePerHour);
-    d->ui.speedComboBox->addItem(i18n("Knots kt"), KUnitConversion::Knot);
-    d->ui.speedComboBox->addItem(i18n("Beaufort scale bft"), KUnitConversion::Beaufort);
-    d->ui.visibilityComboBox->addItem(i18n("Kilometers"), KUnitConversion::Kilometer);
-    d->ui.visibilityComboBox->addItem(i18n("Miles"), KUnitConversion::Mile);
+    for (int i = 0; i < KTemperature::UnitCount; i++) {
+        KTemperature::KTempUnit unit = static_cast<KTemperature::KTempUnit>(i);
+        d->ui.temperatureComboBox->addItem(KTemperature::unitDescription(unit), unit);
+    }
+    for (int i = 0; i < KPressure::UnitCount; i++) {
+        KPressure::KPresUnit unit = static_cast<KPressure::KPresUnit>(i);
+        d->ui.pressureComboBox->addItem(KPressure::unitDescription(unit), unit);
+    }
+    for (int i = 0; i < KVelocity::UnitCount; i++) {
+        KVelocity::KVeloUnit unit = static_cast<KVelocity::KVeloUnit>(i);
+        d->ui.speedComboBox->addItem(KVelocity::unitDescription(unit), unit);
+    }
+    for (int i = 0; i < KLength::UnitCount; i++) {
+        KLength::KLengUnit unit = static_cast<KLength::KLengUnit>(i);
+        d->ui.visibilityComboBox->addItem(KLength::unitDescription(unit), unit);
+    }
 
     connect(d->ui.changeButton, SIGNAL(clicked()), this, SLOT(changePressed()));
 
@@ -225,39 +227,35 @@ void WeatherConfig::setUpdateInterval(int interval)
     d->ui.updateIntervalSpinBox->setSuffix(ki18np(" minute", " minutes"));
 }
 
-void WeatherConfig::setTemperatureUnit(int unit)
+void WeatherConfig::setTemperatureUnit(const QString &unit)
 {
-    int index = d->ui.temperatureComboBox->findData(unit);
-
-    if (index != -1) {
-        d->ui.temperatureComboBox->setCurrentIndex(index);
+    KTemperature temp(0.0, unit);
+    if (temp.unitEnum() != KTemperature::Invalid) {
+        d->ui.temperatureComboBox->setCurrentIndex(static_cast<int>(temp.unitEnum()));
     }
 }
 
-void WeatherConfig::setPressureUnit(int unit)
+void WeatherConfig::setPressureUnit(const QString &unit)
 {
-    int index = d->ui.pressureComboBox->findData(unit);
-
-    if (index != -1) {
-        d->ui.pressureComboBox->setCurrentIndex(index);
+    KPressure pres(0.0, unit);
+    if (pres.unitEnum() != KPressure::Invalid) {
+        d->ui.pressureComboBox->setCurrentIndex(static_cast<int>(pres.unitEnum()));
     }
 }
 
-void WeatherConfig::setSpeedUnit(int unit)
+void WeatherConfig::setSpeedUnit(const QString &unit)
 {
-    int index = d->ui.speedComboBox->findData(unit);
-
-    if (index != -1) {
-        d->ui.speedComboBox->setCurrentIndex(index);
+    KVelocity velo(0.0, unit);
+    if (velo.unitEnum() != KVelocity::Invalid) {
+        d->ui.pressureComboBox->setCurrentIndex(static_cast<int>(velo.unitEnum()));
     }
 }
 
-void WeatherConfig::setVisibilityUnit(int unit)
+void WeatherConfig::setVisibilityUnit(const QString &unit)
 {
-    int index = d->ui.visibilityComboBox->findData(unit);
-
-    if (index != -1) {
-        d->ui.visibilityComboBox->setCurrentIndex(index);
+    KLength leng(0.0, unit);
+    if (leng.unitEnum() != KLength::Invalid) {
+        d->ui.pressureComboBox->setCurrentIndex(static_cast<int>(leng.unitEnum()));
     }
 }
 
@@ -283,24 +281,28 @@ int WeatherConfig::updateInterval() const
     return d->ui.updateIntervalSpinBox->value();
 }
 
-int WeatherConfig::temperatureUnit() const
+QString WeatherConfig::temperatureUnit() const
 {
-    return d->ui.temperatureComboBox->itemData(d->ui.temperatureComboBox->currentIndex()).toInt();
+    KTemperature temp(0.0, static_cast<KTemperature::KTempUnit>(d->ui.temperatureComboBox->currentIndex()));
+    return temp.unit();
 }
 
-int WeatherConfig::pressureUnit() const
+QString WeatherConfig::pressureUnit() const
 {
-    return d->ui.pressureComboBox->itemData(d->ui.pressureComboBox->currentIndex()).toInt();
+    KPressure pres(0.0, static_cast<KPressure::KPresUnit>(d->ui.pressureComboBox->currentIndex()));
+    return pres.unit();
 }
 
-int WeatherConfig::speedUnit() const
+QString WeatherConfig::speedUnit() const
 {
-    return d->ui.speedComboBox->itemData(d->ui.speedComboBox->currentIndex()).toInt();
+    KVelocity velo(0.0, static_cast<KVelocity::KVeloUnit>(d->ui.speedComboBox->currentIndex()));
+    return velo.unit();
 }
 
-int WeatherConfig::visibilityUnit() const
+QString WeatherConfig::visibilityUnit() const
 {
-    return d->ui.visibilityComboBox->itemData(d->ui.visibilityComboBox->currentIndex()).toInt();
+    KLength leng(0.0, static_cast<KLength::KLengUnit>(d->ui.visibilityComboBox->currentIndex()));
+    return leng.unit();
 }
 
 void WeatherConfig::setConfigurableUnits(const ConfigurableUnits units)

@@ -20,7 +20,6 @@
 #ifndef WEATHERPOPUPAPPLET_HEADER
 #define WEATHERPOPUPAPPLET_HEADER
 
-#include <KUnitConversion/Unit>
 #include <Plasma/PopupApplet>
 #include <Plasma/DataEngine>
 
@@ -53,22 +52,22 @@ class PLASMAWEATHER_EXPORT WeatherPopupApplet : public Plasma::PopupApplet
         /**
          * @return pressure unit
          **/
-        KUnitConversion::UnitPtr pressureUnit();
+        QString pressureUnit();
 
         /**
          * @return temperature unit
          **/
-        KUnitConversion::UnitPtr temperatureUnit();
+        QString temperatureUnit();
 
         /**
          * @return speed unit
          **/
-        KUnitConversion::UnitPtr speedUnit();
+        QString speedUnit();
 
         /**
          * @return visibility unit
          **/
-        KUnitConversion::UnitPtr visibilityUnit();
+        QString visibilityUnit();
 
         /**
          * @return condition icon with guessed value if it was empty

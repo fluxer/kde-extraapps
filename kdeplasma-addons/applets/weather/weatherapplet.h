@@ -67,7 +67,7 @@ private:
     void updateFiveDaysModel(const Plasma::DataEngine::Data &data);
     void updateDetailsModel(const Plasma::DataEngine::Data &data);
     void updateNoticesModel(const Plasma::DataEngine::Data &data);
-    QString convertTemperature(KUnitConversion::UnitPtr format, QString value,
+    QString convertTemperature(const QString &format, const QString &value,
                                int type, bool rounded = false, bool degreesOnly = false);
 
     Plasma::DeclarativeWidget *m_declarativeWidget;
