@@ -59,7 +59,7 @@ public:
             if (type == GetString && number) {
                 break;
             }
-            if(current == QLatin1Char( CONVERSION_CHAR )) {
+            if (current == QLatin1Char(CONVERSION_CHAR)) {
                 break;
             }
             ++m_index;
@@ -175,17 +175,12 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
     }
     unit2 = cmd.rest();
 
-    bool unit1valid = false;
-    QString description;
-    QStringList suggestions;
-    double unit1value = value.toDouble();
+    const double unit1value = value.toDouble();
 
     // qDebug() << Q_FUNC_INFO << unit1 << unit2 << unit1value;
 
     KTemperature temp(unit1value, unit1);
     if (temp.unitEnum() != KTemperature::Invalid) {
-        description = KTemperature::description();
-        unit1valid = true;
         KTemperature temp2(0.0, unit2);
         if (temp2.unitEnum() != KTemperature::Invalid) {
             const double result = temp.convertTo(temp2.unitEnum());
@@ -198,87 +193,91 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
             return;
         }
         for (int i = 0; i < KTemperature::UnitCount; i++) {
-            suggestions.append(temp.unitDescription(static_cast<KTemperature::KTempUnit>(i)));
-        }
-    }
-
-    if (!unit1valid) {
-        suggestions.clear();
-        description = KVelocity::description();
-        KVelocity velo(unit1value, unit1);
-        if (velo.unitEnum() != KVelocity::Invalid) {
-            unit1valid = true;
-            KVelocity velo2(0.0, unit2);
-            if (velo2.unitEnum() != KVelocity::Invalid) {
-                const double result = velo.convertTo(velo2.unitEnum());
-                Plasma::QueryMatch match(this);
-                match.setType(Plasma::QueryMatch::InformationalMatch);
-                match.setIcon(KIcon(QLatin1String("edit-copy")));
-                match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), velo2.unit()));
-                match.setData(result);
-                context.addMatch(term, match);
-                return;
-            }
-            for (int i = 0; i < KVelocity::UnitCount; i++) {
-                suggestions.append(velo.unitDescription(static_cast<KVelocity::KVeloUnit>(i)));
-            }
-        }
-    }
-
-    if (!unit1valid) {
-        suggestions.clear();
-        description = KPressure::description();
-        KPressure pres(unit1value, unit1);
-        if (pres.unitEnum() != KPressure::Invalid) {
-            unit1valid = true;
-            KPressure pres2(0.0, unit2);
-            if (pres2.unitEnum() != KPressure::Invalid) {
-                const double result = pres.convertTo(pres2.unitEnum());
-                Plasma::QueryMatch match(this);
-                match.setType(Plasma::QueryMatch::InformationalMatch);
-                match.setIcon(KIcon(QLatin1String("edit-copy")));
-                match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), pres2.unit()));
-                match.setData(result);
-                context.addMatch(term, match);
-                return;
-            }
-            for (int i = 0; i < KPressure::UnitCount; i++) {
-                suggestions.append(pres.unitDescription(static_cast<KPressure::KPresUnit>(i)));
-            }
-        }
-    }
-
-    if (!unit1valid) {
-        suggestions.clear();
-        description = KLength::description();
-        KLength leng(unit1value, unit1);
-        if (leng.unitEnum() != KLength::Invalid) {
-            unit1valid = true;
-            KLength leng2(0.0, unit2);
-            if (leng2.unitEnum() != KLength::Invalid) {
-                const double result = leng.convertTo(leng2.unitEnum());
-                Plasma::QueryMatch match(this);
-                match.setType(Plasma::QueryMatch::InformationalMatch);
-                match.setIcon(KIcon(QLatin1String("edit-copy")));
-                match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), leng2.unit()));
-                match.setData(result);
-                context.addMatch(term, match);
-                return;
-            }
-            for (int i = 0; i < KLength::UnitCount; i++) {
-                suggestions.append(leng.unitDescription(static_cast<KLength::KLengUnit>(i)));
-            }
-        }
-    }
-
-    // suggest the units
-    if (unit1valid) {
-        foreach (const QString &unit, suggestions) {
+            KTemperature itemp(0.0, static_cast<KTemperature::KTempUnit>(i));
+            const double result = temp.convertTo(itemp.unitEnum());
             Plasma::QueryMatch match(this);
             match.setType(Plasma::QueryMatch::CompletionMatch);
-            match.setIcon(KIcon(QLatin1String("ktip"))); // non-standard
-            match.setText(unit);
-            match.setData(description);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), itemp.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
+        }
+        return;
+    }
+
+    KVelocity velo(unit1value, unit1);
+    if (velo.unitEnum() != KVelocity::Invalid) {
+        KVelocity velo2(0.0, unit2);
+        if (velo2.unitEnum() != KVelocity::Invalid) {
+            const double result = velo.convertTo(velo2.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::InformationalMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), velo2.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
+            return;
+        }
+        for (int i = 0; i < KVelocity::UnitCount; i++) {
+            KVelocity ivelo(0.0, static_cast<KVelocity::KVeloUnit>(i));
+            const double result = velo.convertTo(ivelo.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), ivelo.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
+        }
+        return;
+    }
+
+    KPressure pres(unit1value, unit1);
+    if (pres.unitEnum() != KPressure::Invalid) {
+        KPressure pres2(0.0, unit2);
+        if (pres2.unitEnum() != KPressure::Invalid) {
+            const double result = pres.convertTo(pres2.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::InformationalMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), pres2.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
+            return;
+        }
+        for (int i = 0; i < KPressure::UnitCount; i++) {
+            KPressure ipres(0.0, static_cast<KPressure::KPresUnit>(i));
+            const double result = pres.convertTo(ipres.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), ipres.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
+        }
+        return;
+    }
+
+    KLength leng(unit1value, unit1);
+    if (leng.unitEnum() != KLength::Invalid) {
+        KLength leng2(0.0, unit2);
+        if (leng2.unitEnum() != KLength::Invalid) {
+            const double result = leng.convertTo(leng2.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::InformationalMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), leng2.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
+            return;
+        }
+        for (int i = 0; i < KLength::UnitCount; i++) {
+            KLength ileng(0.0, static_cast<KLength::KLengUnit>(i));
+            const double result = leng.convertTo(ileng.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), ileng.unit()));
+            match.setData(result);
             context.addMatch(term, match);
         }
     }

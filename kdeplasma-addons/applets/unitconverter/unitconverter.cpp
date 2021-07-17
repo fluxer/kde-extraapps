@@ -29,7 +29,7 @@
 #include <Plasma/LineEdit>
 #include <Plasma/Label>
 #include <Plasma/Frame>
-#include <KUnitConversion/UnitCategory>
+#include <kunitconversion.h>
 
 ComboBox::ComboBox(QGraphicsWidget* parent)
     : Plasma::ComboBox(parent)
@@ -42,12 +42,10 @@ void ComboBox::mousePressEvent(QGraphicsSceneMouseEvent* event)
     Plasma::ComboBox::mousePressEvent(event);
 }
 
-Q_DECLARE_METATYPE(KUnitConversion::UnitPtr)
-Q_DECLARE_METATYPE(KUnitConversion::UnitCategory*)
-
 UnitConverter::UnitConverter(QObject *parent, const QVariantList &args)
-: Plasma::PopupApplet(parent, args)
-, m_widget(0), m_bCalculateReverse(false)
+    : Plasma::PopupApplet(parent, args)
+    , m_widget(0)
+    , m_bCalculateReverse(false)
 {
     KGlobal::locale()->insertCatalog("libconversion");
     setAspectRatioMode(Plasma::IgnoreAspectRatio);
@@ -70,33 +68,49 @@ void UnitConverter::init()
 
 void UnitConverter::sltCategoryChanged(int index)
 {
-    Q_UNUSED(index);
-    KUnitConversion::UnitCategory* category =
-            m_pCmbCategory->nativeWidget()->itemData(index).value<KUnitConversion::UnitCategory*>();
-    QList<KUnitConversion::UnitPtr> units = category->units();
-    KUnitConversion::UnitPtr defaultUnit = category->defaultUnit();
     m_pCmbUnit1->clear();
     m_pCmbUnit2->clear();
-    int i = 0;
-    foreach (const KUnitConversion::UnitPtr& unit, units) {
-        m_pCmbUnit1->nativeWidget()->addItem(QString("%1 (%2)")
-                .arg(unit->description()).arg(unit->symbol()), QVariant::fromValue(unit));
-        m_pCmbUnit2->nativeWidget()->addItem(QString("%1 (%2)")
-                .arg(unit->description()).arg(unit->symbol()), QVariant::fromValue(unit));
-        if (unit == defaultUnit) {
-            m_pCmbUnit1->nativeWidget()->setCurrentIndex(i);
-            m_pCmbUnit2->nativeWidget()->setCurrentIndex(i);
+    switch (index) {
+        case 0: {
+            m_pInfo->setText(KTemperature::description());
+            for (int i = 0; i < KTemperature::UnitCount; i++) {
+                const QString description = KTemperature::unitDescription(static_cast<KTemperature::KTempUnit>(i));
+                m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
+                m_pCmbUnit2->nativeWidget()->addItem(description, QVariant::fromValue(i));
+            }
+            break;
         }
-        ++i;
+        case 1: {
+            m_pInfo->setText(KVelocity::description());
+            for (int i = 0; i < KVelocity::UnitCount; i++) {
+                const QString description = KVelocity::unitDescription(static_cast<KVelocity::KVeloUnit>(i));
+                m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
+                m_pCmbUnit2->nativeWidget()->addItem(description, QVariant::fromValue(i));
+            }
+            break;
+        }
+        case 2: {
+            m_pInfo->setText(KPressure::description());
+            for (int i = 0; i < KPressure::UnitCount; i++) {
+                const QString description = KPressure::unitDescription(static_cast<KPressure::KPresUnit>(i));
+                m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
+                m_pCmbUnit2->nativeWidget()->addItem(description, QVariant::fromValue(i));
+            }
+            break;
+        }
+        case 3: {
+            m_pInfo->setText(KLength::description());
+            for (int i = 0; i < KLength::UnitCount; i++) {
+                const QString description = KLength::unitDescription(static_cast<KLength::KLengUnit>(i));
+                m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
+                m_pCmbUnit2->nativeWidget()->addItem(description, QVariant::fromValue(i));
+            }
+            break;
+        }
     }
-    m_pCmbUnit1->nativeWidget()->model()->sort(0);
-    m_pCmbUnit2->nativeWidget()->model()->sort(0);
-    if (!category->description().isEmpty()) {
-        m_pInfo->setText(QString("<a href=\"%2\">%1</a>")
-                .arg(category->description()).arg(category->url().prettyUrl()));
-    } else {
-        m_pInfo->setText(QString());
-    }
+
+    m_pCmbUnit1->nativeWidget()->setCurrentIndex(0);
+    m_pCmbUnit2->nativeWidget()->setCurrentIndex(0);
     calculate();
 }
 
@@ -105,8 +119,7 @@ void UnitConverter::sltUnitChanged(int index)
     Q_UNUSED(index);
     if ( m_bCalculateReverse ) {
         calculateReverse();
-    }
-    else {
+    } else {
         calculate();
     }
 }
@@ -128,20 +141,32 @@ void UnitConverter::sltValueChangedReverse(const QString &sNewValue)
 /// Calculates from left to right
 void UnitConverter::calculate()
 {
-    KUnitConversion::UnitPtr in = m_pCmbUnit1->nativeWidget()->itemData(
-            m_pCmbUnit1->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
-    KUnitConversion::UnitPtr out = m_pCmbUnit2->nativeWidget()->itemData(
-            m_pCmbUnit2->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
-    if (!in.isNull() && !out.isNull()) {
-        KUnitConversion::Value dblValueIn(m_pTxtValue1->text().toDouble(), in);
-        KUnitConversion::Value dblValueOut = dblValueIn.convertTo(out->id());
-        QRegExp decimalCheck("^\\d+\\.0$");
-        QRegExp onlyDecimal("^\\d+$");
-        if(decimalCheck.exactMatch(m_pTxtValue1->text()) && onlyDecimal.exactMatch(QString::number(dblValueOut.number()))) {
-           QString addZero = QString::number(dblValueOut.number()) + ".0";
-           m_pTxtValue2->setText(addZero);
-        } else {
-           m_pTxtValue2->setText(QString::number(dblValueOut.number(), 'g', 15));
+    const int fromindex = m_pCmbUnit1->nativeWidget()->currentIndex();
+    const int toindex = m_pCmbUnit2->nativeWidget()->currentIndex();
+    switch (m_pCmbCategory->nativeWidget()->currentIndex()) {
+        case 0: {
+            KTemperature temp(m_pTxtValue1->text().toDouble(), static_cast<KTemperature::KTempUnit>(fromindex));
+            KTemperature totemp(0.0, static_cast<KTemperature::KTempUnit>(toindex));
+            m_pTxtValue2->setText(QString::number(temp.convertTo(totemp.unitEnum())));
+            break;
+        }
+        case 1: {
+            KVelocity velo(m_pTxtValue1->text().toDouble(), static_cast<KVelocity::KVeloUnit>(fromindex));
+            KVelocity tovelo(0.0, static_cast<KVelocity::KVeloUnit>(toindex));
+            m_pTxtValue2->setText(QString::number(velo.convertTo(tovelo.unitEnum())));
+            break;
+        }
+        case 2: {
+            KPressure pres(m_pTxtValue1->text().toDouble(), static_cast<KPressure::KPresUnit>(fromindex));
+            KPressure topres(0.0, static_cast<KPressure::KPresUnit>(toindex));
+            m_pTxtValue2->setText(QString::number(pres.convertTo(topres.unitEnum())));
+            break;
+        }
+        case 3: {
+            KLength leng(m_pTxtValue1->text().toDouble(), static_cast<KLength::KLengUnit>(fromindex));
+            KLength toleng(0.0, static_cast<KLength::KLengUnit>(toindex));
+            m_pTxtValue2->setText(QString::number(leng.convertTo(toleng.unitEnum())));
+            break;
         }
     }
 }
@@ -149,20 +174,32 @@ void UnitConverter::calculate()
 /// Calculates from right to left
 void UnitConverter::calculateReverse()
 {
-    KUnitConversion::UnitPtr in = m_pCmbUnit2->nativeWidget()->itemData(
-            m_pCmbUnit2->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
-    KUnitConversion::UnitPtr out = m_pCmbUnit1->nativeWidget()->itemData(
-            m_pCmbUnit1->nativeWidget()->currentIndex()).value<KUnitConversion::UnitPtr>();
-    if (!in.isNull() && !out.isNull()) {
-        KUnitConversion::Value dblValueIn(m_pTxtValue2->text().toDouble(), in);
-        KUnitConversion::Value dblValueOut = dblValueIn.convertTo(out->id());
-        QRegExp decimalCheck("^\\d+\\.0$");
-        QRegExp onlyDecimal("^\\d+$");
-        if(decimalCheck.exactMatch(m_pTxtValue2->text()) && onlyDecimal.exactMatch(QString::number(dblValueOut.number()))) {
-           QString addZero = QString::number(dblValueOut.number()) + ".0";
-           m_pTxtValue1->setText(addZero);
-        } else {
-           m_pTxtValue1->setText(QString::number(dblValueOut.number(), 'g', 15));
+    const int fromindex = m_pCmbUnit2->nativeWidget()->currentIndex();
+    const int toindex = m_pCmbUnit1->nativeWidget()->currentIndex();
+    switch (m_pCmbCategory->nativeWidget()->currentIndex()) {
+        case 0: {
+            KTemperature temp(m_pTxtValue2->text().toDouble(), static_cast<KTemperature::KTempUnit>(fromindex));
+            KTemperature totemp(0.0, static_cast<KTemperature::KTempUnit>(toindex));
+            m_pTxtValue1->setText(QString::number(temp.convertTo(totemp.unitEnum())));
+            break;
+        }
+        case 1: {
+            KVelocity velo(m_pTxtValue2->text().toDouble(), static_cast<KVelocity::KVeloUnit>(fromindex));
+            KVelocity tovelo(0.0, static_cast<KVelocity::KVeloUnit>(toindex));
+            m_pTxtValue1->setText(QString::number(velo.convertTo(tovelo.unitEnum())));
+            break;
+        }
+        case 2: {
+            KPressure pres(m_pTxtValue2->text().toDouble(), static_cast<KPressure::KPresUnit>(fromindex));
+            KPressure topres(0.0, static_cast<KPressure::KPresUnit>(toindex));
+            m_pTxtValue1->setText(QString::number(pres.convertTo(topres.unitEnum())));
+            break;
+        }
+        case 3: {
+            KLength leng(m_pTxtValue2->text().toDouble(), static_cast<KLength::KLengUnit>(fromindex));
+            KLength toleng(0.0, static_cast<KLength::KLengUnit>(toindex));
+            m_pTxtValue1->setText(QString::number(leng.convertTo(toleng.unitEnum())));
+            break;
         }
     }
 }
@@ -205,10 +242,10 @@ QGraphicsWidget *UnitConverter::graphicsWidget()
         pGridLayout->addItem(m_pInfo, 4, 0, 1, 2);
         pGridLayout->setRowStretchFactor(5, 1);
 
-        foreach (KUnitConversion::UnitCategory* category, m_converter.categories()) {
-            m_pCmbCategory->nativeWidget()->addItem(category->name(), QVariant::fromValue(category));
-        }
-        m_pCmbCategory->nativeWidget()->model()->sort(0);
+        m_pCmbCategory->nativeWidget()->addItem(KTemperature::description(), QVariant::fromValue(0));
+        m_pCmbCategory->nativeWidget()->addItem(KVelocity::description(), QVariant::fromValue(1));
+        m_pCmbCategory->nativeWidget()->addItem(KPressure::description(), QVariant::fromValue(2));
+        m_pCmbCategory->nativeWidget()->addItem(KLength::description(), QVariant::fromValue(3));
 
         connect(m_pTxtValue1->nativeWidget(), SIGNAL(textEdited(QString)),
                 this, SLOT(sltValueChanged(QString)));

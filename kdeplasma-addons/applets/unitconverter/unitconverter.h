@@ -23,7 +23,6 @@
 
 #include <Plasma/PopupApplet>
 #include <Plasma/ComboBox>
-#include <KUnitConversion/Converter>
 
 namespace Plasma {
     class ComboBox;
@@ -78,7 +77,6 @@ class UnitConverter : public Plasma::PopupApplet
         Plasma::LineEdit *m_pTxtValue2;
         Plasma::Label    *m_pInfo;
         int               m_iCategory;
-        KUnitConversion::Converter m_converter;
         bool              m_bCalculateReverse;
 };
 
