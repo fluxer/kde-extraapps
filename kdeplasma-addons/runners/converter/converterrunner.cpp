@@ -22,8 +22,7 @@
 #include <KIcon>
 #include <KDebug>
 #include <KToolInvocation>
-#include <KUnitConversion/Converter>
-#include <KUnitConversion/UnitCategory>
+#include <kunitconversion.h>
 
 #define CONVERSION_CHAR QLatin1Char( '>' )
 
@@ -169,82 +168,119 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
     const QString s = cmd.get(StringParser::GetString);
 
     if (!s.isEmpty() && !m_separators.contains(s)) {
-        unit1 += QLatin1Char( ' ' ) + s;
+        unit1 += QLatin1Char(' ') + s;
     }
     if (s.isEmpty() || !m_separators.contains(s)) {
         cmd.pass(m_separators);
     }
     unit2 = cmd.rest();
 
-    KUnitConversion::Converter converter;
-    KUnitConversion::UnitCategory* category = converter.categoryForUnit(unit1);
-    bool found = false;
-    if (category->id() == KUnitConversion::InvalidCategory) {
-        foreach (const KUnitConversion::UnitCategory *cat, converter.categories()) {
-            foreach (const QString& s, cat->allUnits()) {
-                if (s.compare(unit1, Qt::CaseInsensitive) == 0) {
-                    found = true;
-                    break;
-                }
-            }
-            if (found) {
-                break;
-            }
-        }
-        if (!found) {
+    bool unit1valid = false;
+    QString description;
+    QStringList suggestions;
+    double unit1value = value.toDouble();
+
+    // qDebug() << Q_FUNC_INFO << unit1 << unit2 << unit1value;
+
+    KTemperature temp(unit1value, unit1);
+    if (temp.unitEnum() != KTemperature::Invalid) {
+        description = KTemperature::description();
+        unit1valid = true;
+        KTemperature temp2(0.0, unit2);
+        if (temp2.unitEnum() != KTemperature::Invalid) {
+            const double result = temp.convertTo(temp2.unitEnum());
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::InformationalMatch);
+            match.setIcon(KIcon(QLatin1String("edit-copy")));
+            match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), temp2.unit()));
+            match.setData(result);
+            context.addMatch(term, match);
             return;
         }
+        for (int i = 0; i < KTemperature::UnitCount; i++) {
+            suggestions.append(temp.unitDescription(static_cast<KTemperature::KTempUnit>(i)));
+        }
     }
 
-    QList<KUnitConversion::UnitPtr> units;
-
-    if (!unit2.isEmpty()) {
-        KUnitConversion::UnitPtr u = category->unit(unit2);
-        if (!u.isNull() && u->isValid()) {
-            units.append(u);
-            config().writeEntry(category->name(), u->symbol());
-        } else {
-            const QStringList unitStrings = category->allUnits();
-            QSet<KUnitConversion::UnitPtr> matchingUnits;
-            foreach (const QString& s, unitStrings) {
-                if (s.startsWith(unit2, Qt::CaseInsensitive)) {
-                    matchingUnits << category->unit(s);
-                }
+    if (!unit1valid) {
+        suggestions.clear();
+        description = KVelocity::description();
+        KVelocity velo(unit1value, unit1);
+        if (velo.unitEnum() != KVelocity::Invalid) {
+            unit1valid = true;
+            KVelocity velo2(0.0, unit2);
+            if (velo2.unitEnum() != KVelocity::Invalid) {
+                const double result = velo.convertTo(velo2.unitEnum());
+                Plasma::QueryMatch match(this);
+                match.setType(Plasma::QueryMatch::InformationalMatch);
+                match.setIcon(KIcon(QLatin1String("edit-copy")));
+                match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), velo2.unit()));
+                match.setData(result);
+                context.addMatch(term, match);
+                return;
             }
-            units = matchingUnits.toList();
-            if (units.count() == 1) {
-                config().writeEntry(category->name(), units[0]->symbol());
+            for (int i = 0; i < KVelocity::UnitCount; i++) {
+                suggestions.append(velo.unitDescription(static_cast<KVelocity::KVeloUnit>(i)));
             }
         }
-    } else {
-        units = category->mostCommonUnits();
-        KUnitConversion::UnitPtr u = category->unit(config().readEntry(category->name()));
-        if (!u.isNull() && units.indexOf(u) < 0) {
-            units << u;
+    }
+
+    if (!unit1valid) {
+        suggestions.clear();
+        description = KPressure::description();
+        KPressure pres(unit1value, unit1);
+        if (pres.unitEnum() != KPressure::Invalid) {
+            unit1valid = true;
+            KPressure pres2(0.0, unit2);
+            if (pres2.unitEnum() != KPressure::Invalid) {
+                const double result = pres.convertTo(pres2.unitEnum());
+                Plasma::QueryMatch match(this);
+                match.setType(Plasma::QueryMatch::InformationalMatch);
+                match.setIcon(KIcon(QLatin1String("edit-copy")));
+                match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), pres2.unit()));
+                match.setData(result);
+                context.addMatch(term, match);
+                return;
+            }
+            for (int i = 0; i < KPressure::UnitCount; i++) {
+                suggestions.append(pres.unitDescription(static_cast<KPressure::KPresUnit>(i)));
+            }
         }
     }
 
-    KUnitConversion::UnitPtr u1 = category->unit(unit1);
-    foreach (const KUnitConversion::UnitPtr& u, units) {
-        if (u1 == u) {
-            continue;
+    if (!unit1valid) {
+        suggestions.clear();
+        description = KLength::description();
+        KLength leng(unit1value, unit1);
+        if (leng.unitEnum() != KLength::Invalid) {
+            unit1valid = true;
+            KLength leng2(0.0, unit2);
+            if (leng2.unitEnum() != KLength::Invalid) {
+                const double result = leng.convertTo(leng2.unitEnum());
+                Plasma::QueryMatch match(this);
+                match.setType(Plasma::QueryMatch::InformationalMatch);
+                match.setIcon(KIcon(QLatin1String("edit-copy")));
+                match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), leng2.unit()));
+                match.setData(result);
+                context.addMatch(term, match);
+                return;
+            }
+            for (int i = 0; i < KLength::UnitCount; i++) {
+                suggestions.append(leng.unitDescription(static_cast<KLength::KLengUnit>(i)));
+            }
         }
-        KUnitConversion::Value v = category->convert(KUnitConversion::Value(value.toDouble(), u1), u);
-        Plasma::QueryMatch match(this);
-        match.setType(Plasma::QueryMatch::InformationalMatch);
-        match.setIcon(KIcon(QLatin1String( "edit-copy" )));
-        match.setText(QString(QLatin1String( "%1 (%2)" )).arg(v.toString()).arg(u->symbol()));
-        match.setData(v.number());
-        context.addMatch(term, match);
     }
 
-    if (units.count() > 0 && !category->description().isEmpty()) {
-        Plasma::QueryMatch match(this);
-        match.setType(Plasma::QueryMatch::PossibleMatch);
-        match.setIcon(KIcon(QLatin1String( "document-open-remote" )));
-        match.setText(category->description());
-        match.setData(category->url().prettyUrl());
-        context.addMatch(term, match);
+    // suggest the units
+    if (unit1valid) {
+        foreach (const QString &unit, suggestions) {
+            Plasma::QueryMatch match(this);
+            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setIcon(KIcon(QLatin1String("ktip"))); // non-standard
+            match.setText(unit);
+            match.setData(description);
+            context.addMatch(term, match);
+        }
     }
 }
 
