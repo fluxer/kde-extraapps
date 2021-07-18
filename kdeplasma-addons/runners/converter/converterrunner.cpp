@@ -286,6 +286,8 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
 void ConverterRunner::run(const Plasma::RunnerContext &context, const Plasma::QueryMatch &match)
 {
     Q_UNUSED(context)
+#warning TODO: notify the user that the data has been copied to the clipboard
+    // other runners silently do the same (e.g. spellcheck), how would the user know what just happened?
     const QString data = match.data().toString();
     QApplication::clipboard()->setText(data);
 }
