@@ -196,7 +196,7 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
             KTemperature itemp(0.0, static_cast<KTemperature::KTempUnit>(i));
             const double result = temp.convertTo(itemp.unitEnum());
             Plasma::QueryMatch match(this);
-            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setType(Plasma::QueryMatch::PossibleMatch);
             match.setIcon(KIcon(QLatin1String("edit-copy")));
             match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), itemp.unit()));
             match.setData(result);
@@ -222,7 +222,7 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
             KVelocity ivelo(0.0, static_cast<KVelocity::KVeloUnit>(i));
             const double result = velo.convertTo(ivelo.unitEnum());
             Plasma::QueryMatch match(this);
-            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setType(Plasma::QueryMatch::PossibleMatch);
             match.setIcon(KIcon(QLatin1String("edit-copy")));
             match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), ivelo.unit()));
             match.setData(result);
@@ -248,7 +248,7 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
             KPressure ipres(0.0, static_cast<KPressure::KPresUnit>(i));
             const double result = pres.convertTo(ipres.unitEnum());
             Plasma::QueryMatch match(this);
-            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setType(Plasma::QueryMatch::PossibleMatch);
             match.setIcon(KIcon(QLatin1String("edit-copy")));
             match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), ipres.unit()));
             match.setData(result);
@@ -274,7 +274,7 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
             KLength ileng(0.0, static_cast<KLength::KLengUnit>(i));
             const double result = leng.convertTo(ileng.unitEnum());
             Plasma::QueryMatch match(this);
-            match.setType(Plasma::QueryMatch::CompletionMatch);
+            match.setType(Plasma::QueryMatch::PossibleMatch);
             match.setIcon(KIcon(QLatin1String("edit-copy")));
             match.setText(QString::fromLatin1("%1 (%2)").arg(QString::number(result), ileng.unit()));
             match.setData(result);
@@ -287,11 +287,7 @@ void ConverterRunner::run(const Plasma::RunnerContext &context, const Plasma::Qu
 {
     Q_UNUSED(context)
     const QString data = match.data().toString();
-    if (data.startsWith(QLatin1String("http://"))) {
-        KToolInvocation::invokeBrowser(data);
-    } else {
-        QApplication::clipboard()->setText(data);
-    }
+    QApplication::clipboard()->setText(data);
 }
 
 #include "moc_converterrunner.cpp"
