@@ -34,15 +34,6 @@
 #include <Plasma/DeclarativeWidget>
 #include <Plasma/Package>
 
-#include <cmath>
-
-template <typename T>
-T clampValue(T value, int decimals)
-{
-    const T mul = std::pow(static_cast<T>(10), decimals);
-    return int(value * mul) / mul;
-}
-
 bool isValidIconName(const QString &icon)
 {
     return !icon.isEmpty() &&
@@ -154,7 +145,7 @@ QString WeatherApplet::convertTemperature(const QString &format, const QString &
             return i18nc("temperature, unit", "%1%2", tempNumber, unit);
         }
     } else {
-        float formattedTemp = clampValue(number, 1);
+        float formattedTemp = KUnitConversion::round(number, 1);
         if (degreesOnly) {
             return i18nc("temperature, unit", "%1%2", formattedTemp, i18nc("Degree, unit symbol", "°"));
         } else {
@@ -368,7 +359,7 @@ void WeatherApplet::updateDetailsModel(const Plasma::DataEngine::Data &data)
         const KPressure topres(0.0, pressureUnit());
         const double number = pres.convertTo(topres.unitEnum());
         row["text"] = i18nc("pressure, unit","Pressure: %1 %2",
-                            clampValue(number, 2), topres.unit());
+                            KUnitConversion::round(number, 2), topres.unit());
         m_detailsModel << row;
     }
 
@@ -386,7 +377,7 @@ void WeatherApplet::updateDetailsModel(const Plasma::DataEngine::Data &data)
             const KLength toleng(0.0, visibilityUnit());
             const double number = leng.convertTo(toleng.unitEnum());
             row["text"] = i18nc("distance, unit","Visibility: %1 %2",
-                                clampValue(number, 1), toleng.unit());
+                                KUnitConversion::round(number, 1), toleng.unit());
         } else {
             row["text"] = i18nc("visibility from distance", "Visibility: %1", data["Visibility"].toString());
         }
@@ -410,7 +401,7 @@ void WeatherApplet::updateDetailsModel(const Plasma::DataEngine::Data &data)
             const KVelocity tovelo(0.0, speedUnit());
             const double number = velo.convertTo(tovelo.unitEnum());
             row["text"] = i18nc("wind direction, speed","%1 %2 %3", data["Wind Direction"].toString(),
-                                clampValue(number, 1), tovelo.unit());
+                                KUnitConversion::round(number, 1), tovelo.unit());
         } else {
             row["text"] = i18nc("Wind condition","Calm");
         }
@@ -425,7 +416,7 @@ void WeatherApplet::updateDetailsModel(const Plasma::DataEngine::Data &data)
         const KVelocity tovelo(0.0, speedUnit());
         const double number = velo.convertTo(tovelo.unitEnum());
         row["text"] = i18nc("winds exceeding wind speed briefly", "Wind Gust: %1 %2",
-                            clampValue(number, 1), tovelo.unit());
+                            KUnitConversion::round(number, 1), tovelo.unit());
         m_detailsModel << row;
     }
 }
