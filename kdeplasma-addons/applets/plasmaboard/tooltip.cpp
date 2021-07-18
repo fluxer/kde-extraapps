@@ -78,22 +78,9 @@ void Tooltip::resizeEvent(QResizeEvent *event)
     updateMask();
 }
 
-void Tooltip::showEvent(QShowEvent * event)
-{
-    Q_UNUSED(event);
-    Plasma::WindowEffects::overrideShadow(winId(), true);
-}
-
 void Tooltip::updateMask()
 {
-    const bool translucency = Plasma::Theme::defaultTheme()->windowTranslucencyEnabled();
-    Plasma::WindowEffects::enableBlurBehind(winId(), translucency,
-                                            translucency ? frame->mask() : QRegion());
-    if (translucency) {
-        clearMask();
-    } else {
-        setMask(frame->mask());
-    }
+    setMask(frame->mask());
 }
 
 void Tooltip::paintEvent(QPaintEvent * event)

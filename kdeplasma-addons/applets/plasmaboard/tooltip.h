@@ -39,7 +39,6 @@ public:
 protected:
     void paintEvent(QPaintEvent * event);
     void resizeEvent(QResizeEvent *event);
-    void showEvent(QShowEvent * event);
 
 public Q_SLOTS:
     void setColors();
