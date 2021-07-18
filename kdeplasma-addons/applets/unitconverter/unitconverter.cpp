@@ -47,7 +47,6 @@ UnitConverter::UnitConverter(QObject *parent, const QVariantList &args)
     , m_widget(0)
     , m_bCalculateReverse(false)
 {
-    KGlobal::locale()->insertCatalog("libconversion");
     setAspectRatioMode(Plasma::IgnoreAspectRatio);
     setPopupIcon("accessories-calculator");
     resize(400, 300);
