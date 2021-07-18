@@ -43,8 +43,6 @@ public:
     KvkbdApp(bool loginhelper=false);
     ~KvkbdApp();
 
-    
-
 public slots:
     void keyProcessComplete(unsigned int);
     
@@ -55,12 +53,9 @@ public slots:
     void chooseFont();
     void autoResizeFont(bool mode);
     void setStickyModKeys(bool mode);
-   
     
     void partLoaded(MainWidget *vPart, int total_rows, int total_cols);
     void buttonLoaded(VButton *btn);
-
-    
     
 protected:
 

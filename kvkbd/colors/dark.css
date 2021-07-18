@@ -4,7 +4,6 @@ QWidget[name="main"] {
 }
 
 VButton {
-
     margin:1px;
     padding:0px;
     border-style: outset;
@@ -21,7 +20,6 @@ VButton {
 }
 
 VButton:pressed {
-    
     border-style: inset;
 }
 VButton:checked {
@@ -36,10 +34,10 @@ VButton:hover {
 }
 
 VButton[action="toggleExtension"] {
-  background-color:gray;
-  border-color: gray;
+    background-color:gray;
+    border-color: gray;
 }
 VButton[action="toggleVisibility"] {
-  background-color:red;
-  border-color:red;
+    background-color:red;
+    border-color:red;
 }

@@ -11,9 +11,6 @@ public:
     explicit ResizableDragWidget(QWidget *parent = 0);
     ~ResizableDragWidget();
 
-
-
-
 protected:
     virtual void mouseMoveEvent(QMouseEvent * e);
     virtual void mousePressEvent(QMouseEvent * e);

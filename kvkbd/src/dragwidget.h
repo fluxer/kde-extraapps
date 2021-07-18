@@ -26,7 +26,6 @@ protected:
 
     virtual void paintEvent(QPaintEvent *e);
 
-
     QPoint dragPoint;
     QPoint gpress;
     

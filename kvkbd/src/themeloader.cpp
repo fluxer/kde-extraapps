@@ -65,8 +65,7 @@ void ThemeLoader::loadTheme(QString& themeName)
             if (QString::compare(themeName, "standart")==0) {
                 loading = false;
                 kapp->quit();
-            }
-            else {
+            } else {
                 themeName="standart";
             }
         }
@@ -74,36 +73,45 @@ void ThemeLoader::loadTheme(QString& themeName)
 }
 void ThemeLoader::loadColorFile(const QString& fileName)
 {
+    lastcolorstyle = fileName;
+
     QFile themeFile;
 
     themeFile.setFileName(fileName);
 
     if (!themeFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-
         QMessageBox::information(0, "Error", QString("Unable to open css file: %1").arg(themeFile.fileName()));
         return;
     }
 
-    ((QWidget*)parent())->setStyleSheet(themeFile.readAll());
+    QString themeData = themeFile.readAll();
+    if (!(QWidget*)parent()->property("blurBackground").toBool()) {
+        themeData = themeData.replace(",30%);", ");");
+    }
+
+    ((QWidget*)parent())->setStyleSheet(themeData);
     ((QWidget*)parent())->setProperty("colors", fileName);
     themeFile.close();
     
     ((QWidget*)parent())->repaint();
     
     emit colorStyleChanged();
-    
-    
 }
+
 void ThemeLoader::loadColorStyle()
 {
-
     QAction *action = (QAction*)QObject::sender();
    
     QFileInfo info(action->data().toString());
     
-    this->loadColorFile(info.absoluteFilePath());
-
+    loadColorFile(info.absoluteFilePath());
 }
+
+void ThemeLoader::reloadColorStyle()
+{
+    loadColorFile(lastcolorstyle);
+}
+
 void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedStyle)
 {
     KStandardDirs kdirs;
@@ -119,10 +127,6 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
     item->setData(":/theme/standart.css");
     colors->addAction(item);
     color_group->addAction(item);
-    
-    
-
-
 
     colors->setTitle("Color Style");
     colors->setIcon(KIcon("preferences-desktop-color"));
@@ -158,21 +162,20 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
     }
 
     QString selectedStyle = configSelectedStyle;
-    if (selectedStyle.length()<1) {
-	selectedStyle = DEFAULT_CSS;
+    if (selectedStyle.length() < 1) {
+        selectedStyle = DEFAULT_CSS;
     }
     QAction *selectedAction = 0;
     
     QListIterator<QAction*> itrActions(color_group->actions());
     while (itrActions.hasNext()) {
         QAction *item = itrActions.next();
-	
-	if (item->data().toString() == selectedStyle) {
-	    item->setChecked(true);
-	    selectedAction = item;
-	}
-      
-	
+
+        if (item->data().toString() == selectedStyle) {
+            item->setChecked(true);
+            selectedAction = item;
+        }
+
         connect(item, SIGNAL(triggered(bool)), this, SLOT(loadColorStyle()));
     }
     
@@ -190,8 +193,6 @@ int ThemeLoader::loadLayout(const QString& themeName, const QString& path)
 
 
     QFile themeFile;
-
-
 
     QDomDocument doc;
 
@@ -236,7 +237,6 @@ int ThemeLoader::loadLayout(const QString& themeName, const QString& path)
         //cout  << "heights[" << qPrintable(hintName) << "]=>"<< height << endl;
     }
 
-
     wList = docElem.elementsByTagName("spacingHints");
     wNode = wList.at(0);
     nList = (wNode.toElement()).elementsByTagName("item");
@@ -247,7 +247,6 @@ int ThemeLoader::loadLayout(const QString& themeName, const QString& path)
         spacingMap.insert(hintName, width);
         //cout  << "spacing[" << qPrintable(hintName) << "]=>"<< width << endl;
     }
-
 
     wList = docElem.elementsByTagName("part");
     wNode = wList.at(0);
@@ -274,8 +273,6 @@ int ThemeLoader::loadLayout(const QString& themeName, const QString& path)
         }
     }
 
-
-
     return 0;
 }
 bool ThemeLoader::applyProperty(VButton *btn, const QString& attributeName, QDomNamedNodeMap *attributes, QVariant defaultValue)
@@ -286,8 +283,7 @@ bool ThemeLoader::applyProperty(VButton *btn, const QString& attributeName, QDom
     if (attributeValue.length()>0) {
         btn->setProperty(qPrintable(attributeName), attributeValue);
         ret = true;
-    }
-    else {
+    } else {
         if (defaultValue.toString().length()>0) {
             btn->setProperty(qPrintable(attributeName), defaultValue);
             ret = true;
@@ -332,7 +328,6 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
             rowHeight = heightMap.value(rowHeightHint);
         }
 
-
         for (int b=0; b<key_list.count(); b++) {
             QDomNode node = key_list.at(b);
             QDomNamedNodeMap attributes = node.attributes();
@@ -367,7 +362,6 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
                     btn->setText(btn->property("label").toString());
                 }
 
-
                 applyProperty(btn, "group_label", &attributes);
 
                 applyProperty(btn, "group_toggle", &attributes);
@@ -376,7 +370,7 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
 
                 applyProperty(btn, "colorGroup", &attributes, "normal");
 
-		applyProperty(btn, "tooltip", &attributes);
+                applyProperty(btn, "tooltip", &attributes);
 
                 QString modifier = attributes.namedItem("modifier").toAttr().value();
                 if (modifier.toInt()>0) {
@@ -411,8 +405,7 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
                 sx+=buttonWidth+rowSpacingX;
 
                 emit buttonLoaded(btn);
-            }
-            else if (node.toElement().tagName()=="spacing") {
+            } else if (node.toElement().tagName()=="spacing") {
 
                 QString widthHint = attributes.namedItem("width").toAttr().value();
                 QString heightHint = attributes.namedItem("height").toAttr().value();
@@ -451,9 +444,6 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
     vPart->setBaseSize(max_sx, max_sy);
 
     emit partLoaded(vPart, total_rows, total_cols);
-    
-
-
 }
 
 #include "moc_themeloader.cpp"

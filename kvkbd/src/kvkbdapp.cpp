@@ -114,7 +114,7 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     autoResizeAction->setChecked(autoResizeEnabled);
     widget->setProperty("autoresfont", autoResizeEnabled);
     cmenu->addAction(autoResizeAction);
-    connect(autoResizeAction,SIGNAL(triggered(bool)), this, SLOT(autoResizeFont(bool)));
+    connect(autoResizeAction, SIGNAL(triggered(bool)), this, SLOT(autoResizeFont(bool)));
 
 
     bool blur = cfg.readEntry("blurBackground", QVariant(true)).toBool();
@@ -123,9 +123,9 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     blurBackgroundAction->setChecked(blur);
     cmenu->addAction(blurBackgroundAction);
     widget->blurBackground(blur);
-    connect(blurBackgroundAction,SIGNAL(triggered(bool)), widget, SLOT(blurBackground(bool)));
+    connect(blurBackgroundAction, SIGNAL(triggered(bool)), widget, SLOT(blurBackground(bool)));
     dock->blurBackground(blur);
-    connect(blurBackgroundAction,SIGNAL(triggered(bool)), dock, SLOT(blurBackground(bool)));
+    connect(blurBackgroundAction, SIGNAL(triggered(bool)), dock, SLOT(blurBackground(bool)));
     widget->blurBackground(blur);
     dock->blurBackground(blur);
 
@@ -133,19 +133,19 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     KToggleAction *showDockAction = new KToggleAction(i18nc("@action:inmenu", "Show Dock"), this);
     showDockAction->setChecked(dockVisible);
     cmenu->addAction(showDockAction);
-    connect(showDockAction,SIGNAL(triggered(bool)), dock, SLOT(setVisible(bool)));
+    connect(showDockAction, SIGNAL(triggered(bool)), dock, SLOT(setVisible(bool)));
 
     bool isLocked = cfg.readEntry("locked", QVariant(false)).toBool();
     KToggleAction *lockOnScreenAction = new KToggleAction(i18nc("@action:inmenu", "Lock on Screen"), this);
     lockOnScreenAction->setChecked(isLocked);
     cmenu->addAction(lockOnScreenAction);
-    connect(lockOnScreenAction,SIGNAL(triggered(bool)), widget, SLOT(setLocked(bool)));
+    connect(lockOnScreenAction, SIGNAL(triggered(bool)), widget, SLOT(setLocked(bool)));
 
     bool stickyModKeys = cfg.readEntry("stickyModKeys", QVariant(false)).toBool();
     KToggleAction *stickyModKeysAction = new KToggleAction(i18nc("@action:inmenu", "Sticky Modifier Keys"), this);
     stickyModKeysAction->setChecked(stickyModKeys);
     cmenu->addAction(stickyModKeysAction);
-    connect(stickyModKeysAction,SIGNAL(triggered(bool)), this, SLOT(setStickyModKeys(bool)));
+    connect(stickyModKeysAction, SIGNAL(triggered(bool)), this, SLOT(setStickyModKeys(bool)));
     widget->setProperty("stickyModKeys", stickyModKeys);
 
     QFont font = cfg.readEntry("font", widget->font());
@@ -157,6 +157,7 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     cmenu->addMenu(colors);
     connect(themeLoader, SIGNAL(colorStyleChanged()), widget, SLOT(repaint()));
     connect(themeLoader, SIGNAL(colorStyleChanged()), dock, SLOT(repaint()));
+    connect(blurBackgroundAction, SIGNAL(triggered(bool)), themeLoader, SLOT(reloadColorStyle()));
 
     KHelpMenu *helpMenu = new KHelpMenu(widget, KCmdLineArgs::aboutData());
     cmenu->addMenu((QMenu*)helpMenu->menu());
@@ -164,7 +165,6 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     QString themeName = cfg.readEntry("layout", "standart");
     themeLoader->loadTheme(themeName);
     widget->setProperty("layout", themeName);
-
 
     QSize defaultSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
     QDesktopWidget *pDesktop = QApplication::desktop();
@@ -306,8 +306,7 @@ void KvkbdApp::buttonLoaded(VButton *btn)
 {
     if (btn->property("modifier").toBool() == true) {
         modKeys.append(btn);
-    }
-    else {
+    } else {
         QObject::connect(btn, SIGNAL(keyClick(unsigned int)), xkbd, SLOT(processKeyPress(unsigned int)) );
     }
     QString bAction = btn->property("action").toString();

@@ -41,7 +41,6 @@ public:
 
     void loadTheme(QString& themeName);
     
-    
     void loadColorFile(const QString& fileName);
     
     int loadLayout(const QString& themeName, const QString& path);
@@ -58,12 +57,15 @@ protected:
     
 public slots:
     void loadColorStyle();
+    void reloadColorStyle();
     
 signals:
-
     void partLoaded(MainWidget *vPart, int total_rows, int total_cols);
     void buttonLoaded(VButton *btn);
     void colorStyleChanged();
+
+private:
+    QString lastcolorstyle;
 };
 
 #endif // THEMELOADER_H

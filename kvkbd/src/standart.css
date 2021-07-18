@@ -1,10 +1,8 @@
 QWidget[name="main"] {
-    background-color:rgba(0,0,0,20%);
-
+    background-color:rgba(0,0,0,30%);
 }
 
 VButton {
-
     margin:1px;
     padding:0px;
     border-style: outset;
@@ -13,15 +11,12 @@ VButton {
     
     font-size:13px;
     font-weight:bold;
-    
 }
 
 VButton:pressed {
-    
     border-style: inset;
 }
 VButton:checked {
-    
     border-style: inset;
     border-width:2px;
 }
@@ -32,7 +27,6 @@ VButton:hover {
 VButton[colorGroup="normal"] {
     border-color: #97c5d5;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #97c5d5, stop: 1 #c7f5f5);
-
 }
 VButton[colorGroup="system"] {
     border-color: #e8a8a5;
@@ -63,14 +57,14 @@ VButton[colorGroup="numeric"] {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #9faaca, stop: 1 #9faaca);
 }
 VButton[action="toggleExtension"] {
-  background-color:gray;
-  border-color: gray;
+    background-color:gray;
+    border-color: gray;
 }
 VButton[action="toggleVisibility"] {
-  background-color:red;
-  border-color:red;
+    background-color:red;
+    border-color:red;
 }
 VButton[colorGroup="nextLayout"] {
-  background-color:none;
-  border:none;
+    background-color:none;
+    border:none;
 }
