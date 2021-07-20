@@ -194,6 +194,9 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
         }
         for (int i = 0; i < KTemperature::UnitCount; i++) {
             KTemperature itemp(0.0, static_cast<KTemperature::KTempUnit>(i));
+            if (itemp.unitEnum() == temp.unitEnum()) {
+                continue;
+            }
             const double result = temp.convertTo(itemp.unitEnum());
             Plasma::QueryMatch match(this);
             match.setType(Plasma::QueryMatch::PossibleMatch);
@@ -220,6 +223,9 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
         }
         for (int i = 0; i < KVelocity::UnitCount; i++) {
             KVelocity ivelo(0.0, static_cast<KVelocity::KVeloUnit>(i));
+            if (ivelo.unitEnum() == velo.unitEnum()) {
+                continue;
+            }
             const double result = velo.convertTo(ivelo.unitEnum());
             Plasma::QueryMatch match(this);
             match.setType(Plasma::QueryMatch::PossibleMatch);
@@ -246,6 +252,9 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
         }
         for (int i = 0; i < KPressure::UnitCount; i++) {
             KPressure ipres(0.0, static_cast<KPressure::KPresUnit>(i));
+            if (ipres.unitEnum() == pres.unitEnum()) {
+                continue;
+            }
             const double result = pres.convertTo(ipres.unitEnum());
             Plasma::QueryMatch match(this);
             match.setType(Plasma::QueryMatch::PossibleMatch);
@@ -272,6 +281,9 @@ void ConverterRunner::match(Plasma::RunnerContext &context)
         }
         for (int i = 0; i < KLength::UnitCount; i++) {
             KLength ileng(0.0, static_cast<KLength::KLengUnit>(i));
+            if (ileng.unitEnum() == leng.unitEnum()) {
+                continue;
+            }
             const double result = leng.convertTo(ileng.unitEnum());
             Plasma::QueryMatch match(this);
             match.setType(Plasma::QueryMatch::PossibleMatch);
