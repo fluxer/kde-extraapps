@@ -54,7 +54,7 @@ namespace FS
 		m_Create = findExternal("mkfs.btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Check = findExternal("btrfsck", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Grow = (m_Check != cmdSupportNone && findExternal("btrfs")) ? cmdSupportFileSystem : cmdSupportNone;
-		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUsed = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_SetLabel = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
@@ -107,11 +107,11 @@ namespace FS
 
 	qint64 btrfs::readUsedCapacity(const QString& deviceNode) const
 	{
-		ExternalCommand cmd("btrfs-debug-tree", QStringList() << deviceNode);
+		ExternalCommand cmd(QLatin1String("btrfs"), QStringList() << QLatin1String("filesystem") << QLatin1String("show") << QLatin1String("--raw") << deviceNode);
 
 		if (cmd.run())
 		{
-			QRegExp rxBytesUsed(" bytes used (\\d+)");
+			QRegExp rxBytesUsed(QLatin1String(" used (\\d+) path ") + deviceNode);
 
 			if (rxBytesUsed.indexIn(cmd.output()) != -1)
 				return rxBytesUsed.cap(1).toLongLong();
