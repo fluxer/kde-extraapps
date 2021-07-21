@@ -28,7 +28,7 @@ using namespace bt;
 namespace utp
 {
 
-	OutputQueue::OutputQueue() : mutex(QMutex::Recursive)
+	OutputQueue::OutputQueue()
 	{
 	}
 
@@ -38,7 +38,7 @@ namespace utp
 
 	int OutputQueue::add(const PacketBuffer & packet, Connection::WPtr conn)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		queue.append(Entry(packet, conn));
 		return queue.size();
 	}
@@ -46,7 +46,7 @@ namespace utp
 	void OutputQueue::send(net::ServerSocket* sock)
 	{
 		QList<Connection::WPtr> to_close;
-		QMutexLocker lock(&mutex);
+		std::unique_lock<std::recursive_mutex> lock(mutex);
 		try
 		{
 			// Keep sending until the output queue is empty or the socket

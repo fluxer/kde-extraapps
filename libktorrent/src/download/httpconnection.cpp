@@ -36,7 +36,6 @@ namespace bt
 	HttpConnection::HttpConnection() :
 		sock(0),
 		state(IDLE),
-		mutex(QMutex::Recursive),
 		request(0),
 		using_proxy(false),
 		response_code(0)
@@ -77,31 +76,31 @@ namespace bt
 	
 	const QString HttpConnection::getStatusString() const
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return status;
 	}
 	
 	bool HttpConnection::ok() const 
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return state != ERROR;
 	}
 		
 	bool HttpConnection::connected() const 
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return state == ACTIVE;
 	}
 	
 	bool HttpConnection::closed() const
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return state == CLOSED || (sock && !sock->socketDevice()->ok());
 	}
 	
 	bool HttpConnection::ready() const
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return !request;
 	}
 	
@@ -142,7 +141,7 @@ namespace bt
 
 	void HttpConnection::onDataReady(Uint8* buf,Uint32 size)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		
 		if (state != ERROR && request)
 		{
@@ -168,7 +167,7 @@ namespace bt
 	
 	void HttpConnection::dataSent()
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (state == ACTIVE && request)
 		{
 			request->buffer.clear();
@@ -179,7 +178,7 @@ namespace bt
 	
 	void HttpConnection::connectFinished(bool succeeded)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (state == CONNECTING)
 		{
 			if (succeeded)
@@ -250,7 +249,7 @@ namespace bt
 	
 	bool HttpConnection::get(const QString & host,const QString & path,bt::Uint64 start,bt::Uint64 len)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (state == ERROR || request)
 			return false;
 			
@@ -265,7 +264,7 @@ namespace bt
 	
 	bool HttpConnection::getData(QByteArray & data)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (!request)
 			return false;
 		
@@ -319,7 +318,7 @@ namespace bt
 	
 	void HttpConnection::connectTimeout()
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (state == CONNECTING)
 		{
 			status = i18n("Error: failed to connect, server not responding");
@@ -330,7 +329,7 @@ namespace bt
 	
 	void HttpConnection::replyTimeout()
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (!request || !request->response_header_received)
 		{
 			status = i18n("Error: request timed out");

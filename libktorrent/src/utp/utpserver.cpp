@@ -67,7 +67,6 @@ namespace utp
 			p(p),
 			running(false),
 			utp_thread(0),
-			mutex(QMutex::Recursive),
 			create_sockets(true),
 			tos(0),
 			mtc(new MainThreadCall(p))
@@ -187,7 +186,7 @@ namespace utp
 
 	void UTPServer::Private::wakeUpPollPipes(utp::Connection::Ptr conn, bool readable, bool writeable)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		for (PollPipePairItr itr = poll_pipes.begin();itr != poll_pipes.end();itr++)
 		{
 			PollPipePair* pp = itr->second;
@@ -202,7 +201,7 @@ namespace utp
 
 	void UTPServer::Private::dataReceived(bt::Buffer::Ptr buffer, const net::Address& addr)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		//Out(SYS_UTP|LOG_NOTICE) << "UTP: received " << ba << " bytes packet from " << addr.toString() << endl;
 		try
 		{
@@ -416,7 +415,7 @@ namespace utp
 		if (d->sockets.isEmpty() || addr.port() == 0)
 			return Connection::WPtr();
 
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		quint16 recv_conn_id = qrand() % 32535;
 		while (d->connections.contains(recv_conn_id))
 			recv_conn_id = qrand() % 32535;
@@ -457,7 +456,7 @@ namespace utp
 
 	void UTPServer::preparePolling(net::Poll* p, net::Poll::Mode mode, utp::Connection::Ptr conn)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		PollPipePair* pair = d->poll_pipes.find(p);
 		if (!pair)
 		{
@@ -511,7 +510,7 @@ namespace utp
 
 	void UTPServer::cleanup()
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		QMap<quint16, Connection::Ptr>::iterator i = d->connections.begin();
 		while (i != d->connections.end())
 		{
@@ -526,7 +525,7 @@ namespace utp
 
 	void UTPServer::checkTimeouts()
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 
 		TimeValue now;
 		QMap<quint16, Connection::Ptr>::iterator itr = d->connections.begin();

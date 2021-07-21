@@ -120,7 +120,7 @@ namespace net
 		Uint32 up_gid;
 		Uint32 down_gid; // group id which this torrent belongs to, group 0 means the default group
 		SocketDevice* sock;
-		mutable QMutex mutex;
+		mutable std::recursive_mutex mutex;
 	};
 
 }

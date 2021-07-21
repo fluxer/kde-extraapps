@@ -21,10 +21,11 @@
 #define BTCACHEFILE_H
 
 #include <QMap>
-#include <QMutex>
 #include <QFile>
 #include <QSharedPointer>
 #include <util/constants.h>
+
+#include <mutex>
 
 namespace bt
 {
@@ -150,7 +151,7 @@ namespace bt
 			Mode mode;
 		};
 		QMap<void*,Entry> mappings; // mappings where offset wasn't a multiple of 4K
-		mutable QMutex mutex;
+		std::recursive_mutex mutex;
 		bool manual_close;
 	};
 

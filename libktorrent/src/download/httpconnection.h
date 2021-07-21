@@ -21,12 +21,13 @@
 #ifndef BTHTTPCONNECTION_H
 #define BTHTTPCONNECTION_H
 
-#include <QMutex>
 #include <QTimer>
 #include <QtNetwork/qhttp.h>
 #include <kurl.h>
 #include <net/streamsocket.h>
 #include <net/addressresolver.h>
+
+#include <mutex>
 
 class KUrl;
 
@@ -154,7 +155,7 @@ namespace bt
 		
 		net::StreamSocket* sock;
 		State state;
-		mutable QMutex mutex;
+		mutable std::recursive_mutex mutex;
 		HttpGet* request;
 		bool using_proxy;
 		QString status;

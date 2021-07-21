@@ -103,7 +103,7 @@ namespace utp
 		bool running;
 		QMap<quint16, Connection::Ptr> connections;
 		UTPServerThread* utp_thread;
-		QMutex mutex;
+		std::recursive_mutex mutex;
 		bt::PtrMap<net::Poll*, PollPipePair> poll_pipes;
 		bool create_sockets;
 		bt::Uint8 tos;

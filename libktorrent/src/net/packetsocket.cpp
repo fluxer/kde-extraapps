@@ -57,7 +57,7 @@ namespace net
 	
 	Packet::Ptr PacketSocket::selectPacket()
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		Packet::Ptr ret(0);
 		// this function should ensure that between
 		// each data packet at least 3 control packets are sent
@@ -104,7 +104,7 @@ namespace net
 			if (ret > 0)
 			{
 				written += ret;
-				QMutexLocker locker(&mutex);
+				std::lock_guard<std::recursive_mutex> locker(mutex);
 				if (curr_packet->getType() == PIECE)
 				{
 					up_speed->onData(ret, now);
@@ -119,7 +119,7 @@ namespace net
 				// packet sent, so remove it
 				if (curr_packet->getType() == PIECE)
 				{
-					QMutexLocker locker(&mutex);
+					std::lock_guard<std::recursive_mutex> locker(mutex);
 					if (!data_packets.empty())
 						data_packets.pop_front();
 					// reset ctrl_packets_sent so the next packet should be a ctrl packet
@@ -127,7 +127,7 @@ namespace net
 				}
 				else
 				{
-					QMutexLocker locker(&mutex);
+					std::lock_guard<std::recursive_mutex> locker(mutex);
 					if (!control_packets.empty())
 						control_packets.pop_front();
 					ctrl_packets_sent++;
@@ -146,7 +146,7 @@ namespace net
 	
 	void PacketSocket::addPacket(Packet::Ptr packet)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		if (packet->getType() == PIECE)
 			data_packets.push_back(packet);
 		else
@@ -157,7 +157,7 @@ namespace net
 	
 	bool PacketSocket::bytesReadyToWrite() const
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return !data_packets.empty() || !control_packets.empty();
 	}
 
@@ -168,7 +168,7 @@ namespace net
 	
 	Uint32 PacketSocket::dataBytesUploaded()
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		Uint32 ret = uploaded_data_bytes;
 		uploaded_data_bytes = 0;
 		return ret;
@@ -176,7 +176,7 @@ namespace net
 
 	void PacketSocket::clearPieces(bool reject)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		
 		std::list<Packet::Ptr>::iterator i = data_packets.begin();
 		while (i != data_packets.end())
@@ -198,7 +198,7 @@ namespace net
 	
 	void PacketSocket::doNotSendPiece(const bt::Request& req, bool reject)
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		std::list<Packet::Ptr>::iterator i = data_packets.begin();
 		while (i != data_packets.end())
 		{
@@ -221,7 +221,7 @@ namespace net
 
 	Uint32 PacketSocket::numPendingPieceUploads() const
 	{
-		QMutexLocker locker(&mutex);
+		std::lock_guard<std::recursive_mutex> locker(mutex);
 		return data_packets.size();
 	}
 

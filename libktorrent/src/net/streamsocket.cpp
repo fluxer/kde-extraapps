@@ -36,7 +36,7 @@ namespace net
 	
 	void StreamSocket::addData(const QByteArray& data)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		buffer.append(data);
 		net::SocketMonitor::instance().signalPacketReady();
 	}
@@ -44,7 +44,7 @@ namespace net
 
 	bool StreamSocket::bytesReadyToWrite() const
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		return !buffer.isEmpty() || sock->state() == net::SocketDevice::CONNECTING;
 	}
 
@@ -52,7 +52,7 @@ namespace net
 	{
 		Q_UNUSED(now);
 		
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (sock->state() == net::SocketDevice::CONNECTING)
 		{
 			bool ok = sock->connectSuccesFull();

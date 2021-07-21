@@ -36,7 +36,7 @@ namespace net
 	class SocketMonitor::Private
 	{
 	public:
-		Private(SocketMonitor* p) : mutex(QMutex::Recursive),ut(0),dt(0),next_group_id(1)
+		Private(SocketMonitor* p) : ut(0),dt(0),next_group_id(1)
 		{
 			dt = new DownloadThread(p);
 			ut = new UploadThread(p);
@@ -49,7 +49,7 @@ namespace net
 		
 		void shutdown();
 		
-		QMutex mutex;
+		std::recursive_mutex mutex;
 		UploadThread* ut;
 		DownloadThread* dt;
 		Uint32 next_group_id;
@@ -143,7 +143,7 @@ namespace net
 	
 	void SocketMonitor::add(TrafficShapedSocket* sock)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		
 		if (!d->dt || !d->ut)
 			return;
@@ -166,7 +166,7 @@ namespace net
 	
 	void SocketMonitor::remove(TrafficShapedSocket* sock)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		if (sockets.size() == 0)
 			return;
 		
@@ -181,7 +181,7 @@ namespace net
 	
 	Uint32 SocketMonitor::newGroup(GroupType type,Uint32 limit,Uint32 assured_rate)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		if (!d->dt || !d->ut)
 			return 0;
 		
@@ -196,7 +196,7 @@ namespace net
 		
 	void SocketMonitor::setGroupLimit(GroupType type,Uint32 gid,Uint32 limit)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		if (!d->dt || !d->ut)
 			return;
 		
@@ -208,7 +208,7 @@ namespace net
 	
 	void SocketMonitor::setGroupAssuredRate(GroupType type,Uint32 gid,Uint32 as)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		if (!d->dt || !d->ut)
 			return;
 		
@@ -220,7 +220,7 @@ namespace net
 		
 	void SocketMonitor::removeGroup(GroupType type,Uint32 gid)
 	{
-		QMutexLocker lock(&d->mutex);
+		std::lock_guard<std::recursive_mutex> lock(d->mutex);
 		if (!d->dt || !d->ut)
 			return;
 		

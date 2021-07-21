@@ -37,8 +37,7 @@ namespace net
         rdr(0),
         up_gid(0),
         down_gid(0),
-        sock(sock),
-        mutex(QMutex::Recursive)
+        sock(sock)
     {
         down_speed = new Speed();
         up_speed = new Speed();
@@ -47,8 +46,7 @@ namespace net
     TrafficShapedSocket::TrafficShapedSocket(int fd, int ip_version) :
         rdr(0),
         up_gid(0),
-        down_gid(0),
-        mutex(QMutex::Recursive)
+        down_gid(0)
     {
         sock = new Socket(fd, ip_version);
         down_speed = new Speed();
@@ -58,8 +56,7 @@ namespace net
     TrafficShapedSocket::TrafficShapedSocket(bool tcp, int ip_version) :
         rdr(0),
         up_gid(0),
-        down_gid(0),
-        mutex(QMutex::Recursive)
+        down_gid(0)
     {
         Socket* socket = new Socket(tcp, ip_version);
 

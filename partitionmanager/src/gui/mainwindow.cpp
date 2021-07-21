@@ -457,7 +457,7 @@ void MainWindow::on_m_OperationStack_operationsChanged()
 
 void MainWindow::on_m_OperationStack_devicesChanged()
 {
-	QMutexLocker lockDevices(&operationStack().mutex());
+	std::lock_guard<std::recursive_mutex> lockDevices(operationStack().mutex());
 
 	listDevices().updateDevices(operationStack().previewDevices());
 
@@ -578,7 +578,7 @@ void MainWindow::on_m_DeviceScanner_progress(const QString& device_node, int per
 
 void MainWindow::on_m_DeviceScanner_finished()
 {
-	QMutexLocker lockDevices(&operationStack().mutex());
+	std::lock_guard<std::recursive_mutex> lockDevices(operationStack().mutex());
 
 	scanProgressDialog().setProgress(100);
 

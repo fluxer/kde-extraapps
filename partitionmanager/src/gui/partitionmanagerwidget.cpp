@@ -184,7 +184,7 @@ Partition* PartitionManagerWidget::selectedPartition()
 
 void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
 {
-	QMutexLocker lockDevices(&operationStack().mutex());
+	std::lock_guard<std::recursive_mutex> lockDevices(operationStack().mutex());
 
 	foreach(Device* d, operationStack().previewDevices())
 		if (d->deviceNode() == device_node)

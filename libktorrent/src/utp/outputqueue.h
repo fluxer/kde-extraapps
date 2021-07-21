@@ -65,7 +65,7 @@ namespace utp
 		};
 
 		QList<Entry> queue;
-		QMutex mutex;
+		std::recursive_mutex mutex;
 	};
 
 }

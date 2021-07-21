@@ -23,7 +23,8 @@
 
 #include <QObject>
 #include <QList>
-#include <QMutex>
+
+#include <mutex>
 
 class Device;
 class Partition;
@@ -70,7 +71,7 @@ class OperationStack : public QObject
 
 		Device* findDeviceForPartition(const Partition* p);
 
-		QMutex& mutex() { return m_Mutex; }
+		std::recursive_mutex& mutex() { return m_Mutex; }
 
 	protected:
 		void clearDevices();
@@ -87,7 +88,7 @@ class OperationStack : public QObject
 	private:
 		Operations m_Operations;
 		mutable Devices m_PreviewDevices;
-		QMutex m_Mutex;
+		std::recursive_mutex m_Mutex;
 };
 
 #endif

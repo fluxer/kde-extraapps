@@ -56,7 +56,7 @@
 namespace bt
 {
 
-	CacheFile::CacheFile() : fptr(0),max_size(0),file_size(0),mutex(QMutex::Recursive)
+	CacheFile::CacheFile() : fptr(0),max_size(0),file_size(0)
 	{
 		read_only = false;
 		manual_close = false;
@@ -99,7 +99,7 @@ namespace bt
 	
 	void CacheFile::open(const QString & path,Uint64 size)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		// only set the path and the max size, we only open the file when it is needed
 		this->path = path;
 		max_size = size;
@@ -107,7 +107,7 @@ namespace bt
 		
 	void* CacheFile::map(MMappeable* thing,Uint64 off,Uint32 size,Mode mode)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		// reopen the file if necessary
 		if (!fptr)
 		{
@@ -266,7 +266,7 @@ namespace bt
 	void CacheFile::unmap(void* ptr,Uint32 size)
 	{
 		int ret = 0;
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 #ifdef Q_OS_WIN
 		if (!fptr)
 			return;
@@ -305,7 +305,7 @@ namespace bt
 
 	void CacheFile::aboutToClose()
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (!fptr)
 			return;
 		//Out(SYS_DIO|LOG_NOTICE) << "CacheFile " << path << " : about to be closed" << endl;
@@ -349,7 +349,7 @@ namespace bt
 		
 	void CacheFile::close()
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		
 		if (!fptr)
 			return;
@@ -364,7 +364,7 @@ namespace bt
 	
 	void CacheFile::read(Uint8* buf,Uint32 size,Uint64 off)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		bool close_again = false;
 		
 		// reopen the file if necessary
@@ -399,7 +399,7 @@ namespace bt
 	
 	void CacheFile::write(const Uint8* buf,Uint32 size,Uint64 off)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		bool close_again = false;
 		
 		// reopen the file if necessary
@@ -456,7 +456,7 @@ namespace bt
 		
 	void CacheFile::preallocate(PreallocationThread* prealloc)
 	{
-		QMutexLocker lock(&mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		
 		if (FileSize(path) == max_size)
 		{
