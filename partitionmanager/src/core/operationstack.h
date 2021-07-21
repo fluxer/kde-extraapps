@@ -23,9 +23,7 @@
 
 #include <QObject>
 #include <QList>
-#include <QReadWriteLock>
-
-#include <qglobal.h>
+#include <QMutex>
 
 class Device;
 class Partition;
@@ -72,7 +70,7 @@ class OperationStack : public QObject
 
 		Device* findDeviceForPartition(const Partition* p);
 
-		QReadWriteLock& lock() { return m_Lock; }
+		QMutex& mutex() { return m_Mutex; }
 
 	protected:
 		void clearDevices();
@@ -89,7 +87,7 @@ class OperationStack : public QObject
 	private:
 		Operations m_Operations;
 		mutable Devices m_PreviewDevices;
-		QReadWriteLock m_Lock;
+		QMutex m_Mutex;
 };
 
 #endif

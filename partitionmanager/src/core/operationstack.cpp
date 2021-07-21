@@ -51,7 +51,7 @@ OperationStack::OperationStack(QObject* parent) :
 	QObject(parent),
 	m_Operations(),
 	m_PreviewDevices(),
-	m_Lock(QReadWriteLock::Recursive)
+	m_Mutex(QMutex::Recursive)
 {
 }
 
@@ -488,7 +488,7 @@ void OperationStack::clearOperations()
 /** Clears the list of Devices. */
 void OperationStack::clearDevices()
 {
-	QWriteLocker lockDevices(&lock());
+	QMutexLocker lockDevices(&mutex());
 
 	qDeleteAll(previewDevices());
 	previewDevices().clear();
@@ -501,7 +501,7 @@ void OperationStack::clearDevices()
 */
 Device* OperationStack::findDeviceForPartition(const Partition* p)
 {
-	QReadLocker lockDevices(&lock());
+	QMutexLocker lockDevices(&mutex());
 
 	foreach (Device* d, previewDevices())
 	{
@@ -529,7 +529,7 @@ void OperationStack::addDevice(Device* d)
 {
 	Q_ASSERT(d);
 
-	QWriteLocker lockDevices(&lock());
+	QMutexLocker lockDevices(&mutex());
 
 	previewDevices().append(d);
 	emit devicesChanged();
@@ -542,7 +542,7 @@ static bool deviceLessThan(const Device* d1, const Device* d2)
 
 void OperationStack::sortDevices()
 {
-	QWriteLocker lockDevices(&lock());
+	QMutexLocker lockDevices(&mutex());
 
 	qSort(previewDevices().begin(), previewDevices().end(), deviceLessThan);
 
