@@ -27,13 +27,11 @@ KGET_EXPORT_PLUGIN(BTTransferFactory)
 BTTransferFactory::BTTransferFactory(QObject *parent, const QVariantList &args)
   : TransferFactory(parent, args)
 {
-#if LIBKTORRENT_VERSION >= 0x010100
     if (!bt::InitLibKTorrent())
     {
         kError(5001) << "Failed to initialize libktorrent";
         KGet::showNotification(0, "error", i18n("Cannot initialize libktorrent. Torrent support might not work."));
     }
-#endif
 }
 
 BTTransferFactory::~BTTransferFactory()
