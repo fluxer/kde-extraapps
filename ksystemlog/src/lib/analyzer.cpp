@@ -41,7 +41,7 @@ Analyzer::Analyzer(LogMode* logMode) :
 	
 	parsingPaused = false;
 	
-	insertionLocking = new QMutex(QMutex::Recursive);
+	insertionLocking = new QMutex();
 }
 
 Analyzer::~Analyzer() {
@@ -127,7 +127,7 @@ void Analyzer::logFileChanged(LogFileReader* logFileReader, ReadingMode readingM
 	}
 
 	logDebug() << "Locking file modifications of " << logFileReader->logFile().url().path() << endl;
-	insertionLocking->lock();
+	QMutexLocker locker(insertionLocking);
 	logDebug() << "Unlocking file modifications of " << logFileReader->logFile().url().path() << endl;
 
 	QTime benchmark;
@@ -167,8 +167,6 @@ void Analyzer::logFileChanged(LogFileReader* logFileReader, ReadingMode readingM
 	emit statusBarChanged( i18n("Log file '%1' has changed.", logFileReader->logFile().url().path()) );
 
 	logDebug() << "Updating log files in " << benchmark.elapsed() << " ms" << endl;
-
-	insertionLocking->unlock();
 }
 
 int Analyzer::insertLines(const QStringList& bufferedLines, const LogFile& logFile, ReadingMode readingMode) {
