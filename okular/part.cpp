@@ -1265,7 +1265,7 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
 
                     // look for the pass in that folder
                     QString retrievedPass;
-                    if ( !wallet->readPassword( walletKey, retrievedPass ) )
+                    if ( wallet->readPassword( walletKey, retrievedPass ) == 0)
                         password = retrievedPass;
                 }
                 triedWallet = true;
