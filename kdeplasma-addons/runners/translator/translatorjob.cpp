@@ -19,31 +19,31 @@
 #include "translatorjob.h"
 
 TranslatorJob::TranslatorJob(const QString &text, const QPair<QString, QString> &language)
-: m_manager(0)
+    : m_manager(0)
 {
-	m_manager = new QNetworkAccessManager(this);
-	
-	QNetworkRequest request(QUrl("http://www.google.com/translate_a/t"));
-	request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-	
-	QUrl postData;
-	postData.addQueryItem("client", "t");
-	postData.addQueryItem("sl", language.first);
-	postData.addQueryItem("tl",language.second);
-	postData.addQueryItem("text", text);
-	
-	m_manager -> post(request, postData.encodedQuery());
-	connect(m_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(jobCompleted(QNetworkReply*)));
+    m_manager = new QNetworkAccessManager(this);
+
+    QNetworkRequest request(QUrl("http://www.google.com/translate_a/t"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+
+    QUrl postData;
+    postData.addQueryItem("client", "t");
+    postData.addQueryItem("sl", language.first);
+    postData.addQueryItem("tl", language.second);
+    postData.addQueryItem("text", text);
+
+    m_manager->post(request, postData.encodedQuery());
+    connect(m_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(jobCompleted(QNetworkReply*)));
 }
 
 void TranslatorJob::jobCompleted(QNetworkReply* reply)
 {
-	m_result = QString::fromUtf8(reply->readAll());
-	reply->deleteLater();
-	emit finished();
+    m_result = QString::fromUtf8(reply->readAll());
+    reply->deleteLater();
+    emit finished();
 }
 
 QString TranslatorJob::result() const
 {
-	return m_result;
+    return m_result;
 }

@@ -42,7 +42,7 @@ Q_SIGNALS:
 private:
     bool parseTerm(const QString &, QString &, QPair<QString, QString> &);
     void parseResult(const QString &, Plasma::RunnerContext &, const QString &);
-	static const QSet<QString> supportedLanguages;
+    static const QSet<QString> supportedLanguages;
 };
 
 K_EXPORT_PLASMA_RUNNER(translator, Translator)

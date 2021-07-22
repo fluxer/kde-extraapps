@@ -119,11 +119,11 @@ bool Translator::parseTerm(const QString& term, QString& text, QPair<QString, QS
 void Translator::parseResult(const QString &result, Plasma::RunnerContext& context, const QString &text)
 {
     QString jsonData = result;
-//  jsonData contains arrays like this: ["foo",,"bar"]
-//  but this is not valid JSON for QJSON, it expects empty strings: ["foo","","bar"]
+    //  jsonData contains arrays like this: ["foo",,"bar"]
+    //  but this is not valid JSON for QJSON, it expects empty strings: ["foo","","bar"]
     jsonData = jsonData.replace(QRegExp(",{3,3}"), ",\"\",\"\",");
     jsonData = jsonData.replace(QRegExp(",{2,2}"), ",\"\",");
-//  kDebug() << jsonData;
+    //  kDebug() << jsonData;
 
     QJsonDocument jsondoc = QJsonDocument::fromJson(jsonData.toUtf8());
     if (jsondoc.isNull()) {
@@ -134,7 +134,7 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
     QMultiMap<int, QPair<QString, double> > sentences;
 
     QList<Plasma::QueryMatch> matches;
-    // we are going recursively through the nested json-arry
+    // we are going recursively through the nested json-array
     // level0 contains the data of the outer array, level1 of the next one and so on
     foreach (const QVariant& level0, jsondoc.toVariant().toList()) {
         QVariantList listLevel0 = level0.toList();
@@ -152,7 +152,7 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
 
                 // The JSON we get from Google has not always the same structure.
                 // There is a version with addiotanal information like synonyms and frequency,
-                // this is called newVersion oldVersion doesn't cointain something like this.
+                // this is called newVersion oldVersion doesn't contain something like this.
 
                 bool foundWordNew = (listLevel2.size() > 1) && (!listLevel2.at(1).toList().isEmpty());
                 bool foundWordOld = (listLevel2.size() == 4) && (oldVersion == true) && (listLevel2.at(1).toDouble() > 0);
@@ -227,7 +227,7 @@ void Translator::parseResult(const QString &result, Plasma::RunnerContext& conte
     context.addMatches(context.query(), matches);
 }
 
-// https://developers.google.com/translate/v2/using_rest?hl=de#language-params
+// https://cloud.google.com/translate/docs/basic/translating-text#language-params
 
 const QSet<QString> Translator::supportedLanguages = QSet<QString>() << "af" << "sq" << "ar" << "az"
         << "eu" << "bn" << "be" << "bg" << "ca" << "zh-CN" << "zh-TW" << "hr" << "cs"

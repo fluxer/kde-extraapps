@@ -28,19 +28,19 @@ class TranslatorJob :  public QObject
 {
     Q_OBJECT
 public:
-	TranslatorJob(const QString &, const QPair<QString, QString> &);
+    TranslatorJob(const QString &, const QPair<QString, QString> &);
     QString result() const;
-	void start();
+    void start();
 
 private Q_SLOTS:
-	void jobCompleted(QNetworkReply *);
+    void jobCompleted(QNetworkReply *);
 
 Q_SIGNALS:
-	void finished();
+    void finished();
 
 private:
-	QNetworkAccessManager *m_manager;
-	QString m_result;
+    QNetworkAccessManager *m_manager;
+    QString m_result;
 };
 
 #endif
