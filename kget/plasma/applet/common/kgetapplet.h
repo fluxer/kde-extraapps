@@ -102,6 +102,13 @@ protected:
     {
         KIO::filesize_t size;
         KIO::filesize_t downloadedSize;
+        // source cannot be retrieved once transfer is gone from the D-Bus interface
+        QString source;
+
+        // required by QHash
+        inline bool operator==(const Data& other) const {
+            return (size == other.size && downloadedSize == other.downloadedSize && source == other.source);
+        }
     };
 
     ProxyWidget *m_proxyWidget;

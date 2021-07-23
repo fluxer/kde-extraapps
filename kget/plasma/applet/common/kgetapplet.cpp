@@ -204,8 +204,9 @@ void KGetApplet::transferAdded(const QVariantMap &transfer)
 
         added.append(newTransfer);
 
-        m_transfers[newTransfer].downloadedSize = newTransfer->downloadedSize();
         m_transfers[newTransfer].size = newTransfer->totalSize();
+        m_transfers[newTransfer].downloadedSize = newTransfer->downloadedSize();
+        m_transfers[newTransfer].source = newTransfer->source();
         m_downloadedSize += m_transfers[newTransfer].downloadedSize;
         m_totalSize += m_transfers[newTransfer].size;
     }
@@ -219,24 +220,19 @@ void KGetApplet::transferAdded(const QVariantMap &transfer)
 
 void KGetApplet::transferRemoved(const QVariantMap &transfer)
 {
-    Q_UNUSED(transfer)
-
     QList<OrgKdeKgetTransferInterface*> removed;
 
-    QHash<OrgKdeKgetTransferInterface*, Data>::iterator it;
-    QHash<OrgKdeKgetTransferInterface*, Data>::iterator itEnd = m_transfers.end();
-    for (it = m_transfers.begin(); it != itEnd; ) {
-        const KUrl url = KUrl(it.key()->source().value());
-        //if the protocol is empty that means, that the transer does not exist anymore
-        if (url.protocol().isEmpty()) {
-            removed.append(it.key());
+    foreach (const QVariant &it, transfer.keys()) {
+        foreach (const Data &it2, m_transfers.values()) {
+            OrgKdeKgetTransferInterface* iface = m_transfers.key(it2);
+            if (it.toString() == it2.source) {
+                removed.append(iface);
 
-            m_downloadedSize -= m_transfers[it.key()].downloadedSize;
-            m_totalSize -= m_transfers[it.key()].size;
+                m_downloadedSize -= m_transfers[iface].downloadedSize;
+                m_totalSize -= m_transfers[iface].size;
 
-            it = m_transfers.erase(it);
-        } else {
-            ++it;
+                m_transfers.remove(iface);
+            }
         }
     }
 
@@ -258,6 +254,7 @@ void KGetApplet::slotUpdateTransfer(int transferChange)
 
             m_transfers[transfer].size = transfer->totalSize();
             m_transfers[transfer].downloadedSize = transfer->downloadedSize();
+            m_transfers[transfer].source = transfer->source();
             m_totalSize += m_transfers[transfer].size;
             m_downloadedSize += m_transfers[transfer].downloadedSize;
 
