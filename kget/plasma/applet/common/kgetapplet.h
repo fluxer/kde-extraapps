@@ -115,6 +115,7 @@ protected:
     QHash<OrgKdeKgetTransferInterface*, Data> m_transfers;
     static const QString KGET_DBUS_SERVICE;
     static const QString KGET_DBUS_PATH;
+    static const int POLL_INTERVAL;
 };
 
 #endif

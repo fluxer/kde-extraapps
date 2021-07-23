@@ -46,6 +46,7 @@ const int ProxyWidget::SPACING = 4;
 
 const QString KGetApplet::KGET_DBUS_SERVICE = "org.kde.kget";
 const QString KGetApplet::KGET_DBUS_PATH = "/KGet";
+const int KGetApplet::POLL_INTERVAL = 1500;
 
 ProxyWidget::ProxyWidget(QGraphicsWidget * parent) 
   : QGraphicsWidget(parent),
@@ -143,7 +144,7 @@ void KGetApplet::init()
     setPopupIcon("kget");
     m_engine = dataEngine("kget");
     if (m_engine) {
-        m_engine->connectSource("KGet", this);
+        m_engine->connectSource("KGet", this, POLL_INTERVAL);
     } else {
         kDebug(5001) << "KGet Engine could not be loaded";
     }
