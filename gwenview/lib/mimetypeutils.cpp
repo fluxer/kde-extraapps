@@ -62,24 +62,22 @@ static void resolveAliasInList(QStringList* list)
     }
 }
 
-static void addRawMimeTypes(QStringList* list)
+const QStringList& rawImageMimeTypes()
 {
     // need to invent more intelligent way to whitelist raws
-    *list += "image/x-nikon-nef";
-    *list += "image/x-nikon-nrw";
-    *list += "image/x-canon-cr2";
-    *list += "image/x-canon-crw";
-    *list += "image/x-pentax-pef";
-    *list += "image/x-adobe-dng";
-    *list += "image/x-sony-arw";
-    *list += "image/x-minolta-mrw";
-    *list += "image/x-panasonic-raw";
-    *list += "image/x-panasonic-raw2";
-    *list += "image/x-samsung-srw";
-    *list += "image/x-olympus-orf";
-    *list += "image/x-fuji-raf";
-    *list += "image/x-kodak-dcr";
-    *list += "image/x-sigma-x3f";
+    static QStringList list;
+    if (list.isEmpty()) {
+        list << "image/x-nikon-nef" << "image/x-nikon-nrw"
+             << "image/x-canon-cr2" << "image/x-canon-crw"
+             << "image/x-pentax-pef" << "image/x-adobe-dng"
+             << "image/x-sony-arw" << "image/x-minolta-mrw"
+             << "image/x-panasonic-raw" << "image/x-panasonic-raw2"
+             << "image/x-samsung-srw" << "image/x-olympus-orf"
+             << "image/x-fuji-raf" << "image/x-kodak-dcr"
+             << "image/x-sigma-x3f";
+        resolveAliasInList(&list);
+    }
+    return list;
 }
 
 const QStringList& rasterImageMimeTypes()
@@ -92,7 +90,7 @@ const QStringList& rasterImageMimeTypes()
         Q_FOREACH(const QString& mimeType, svgImageMimeTypes()) {
             list.removeOne(mimeType);
         }
-        addRawMimeTypes(&list);
+        list += rawImageMimeTypes();
     }
     return list;
 }
