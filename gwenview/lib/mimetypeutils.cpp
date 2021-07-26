@@ -74,6 +74,7 @@ const QStringList& rawImageMimeTypes()
              << "image/x-panasonic-raw" << "image/x-panasonic-raw2"
              << "image/x-samsung-srw" << "image/x-olympus-orf"
              << "image/x-fuji-raf" << "image/x-kodak-dcr"
+             << "image/x-kodak-kdc" << "image/x-kodak-k25"
              << "image/x-sigma-x3f";
         resolveAliasInList(&list);
     }
