@@ -68,41 +68,22 @@ private:
       */
     bool startPlayer() const;
 
-    /** Returns the position of the song @c song in the playlist
-      * @return the position of the song, -1 if the song is not in it
-      */
-    int posInPlaylist(const KUrl& url);
-
     /** Tests, if text and reg match
       * @param text the string
       * @param reg the regular expression
       * @return @c true if they match, @c false in any other case
       */
-    bool equals(const QString &text, QRegExp reg);
+    static bool equals(const QString &text, QRegExp reg);
 
     /** Looks for the number in the command term (it isn't case sensitive)
       * @param text the term
       * @param character the separator
       * @return the number as int
       */
-    int getNumber(const QString& term, const char character);
-
-    /** Searches the collection for term (it searches in artist,
-      * album and title)
-      * @param term the term to search for, it will be split at whitespaces
-      * and it will be searched after every part
-      * @param actionNames contains the actions (play, append, queue) separated with a QLatin1Char( ',' )
-      * @return a list of Plasma::QueryMatch, where every element is for one match
-      */
-    QList<Plasma::QueryMatch> searchCollectionFor(const QString& term, const QString& actionNames);
-
-    /** @return the index of the selected song in the player's playlist */
-    int currentSong();
+    static int getNumber(const QString& term, const char character);
 
 private slots:
     void prep();
-    void songsInPlaylist(QDBusPendingCallWatcher *call);
-    void prevNextSongAvailable(QDBusPendingCallWatcher *call);
 
 private:
     /** The player this runner controls */
@@ -113,8 +94,6 @@ private:
     QString m_comPlay;
     /** Command for append a song */
     QString m_comAppend;
-    /** Command for queue a song */
-    QString m_comQueue;
     /** Command for pause playing */
     QString m_comPause;
     /** Command for stop playing */
@@ -123,31 +102,13 @@ private:
     QString m_comNext;
     /** Command for playing the previous song */
     QString m_comPrev;
-    /** Command for mute */
-    QString m_comMute;
-    /** Commnd for increase the volume */
-    QString m_comIncrease;
-    /** Command for decrease the volume */
-    QString m_comDecrease;
     /** Command for changing the volume */
     QString m_comVolume;
     /** Command for quit the player */
     QString m_comQuit;
 
-    /** How much to increase */
-    int m_increaseBy;
-
-    /** How much to decrease */
-    int m_decreaseBy;
-
     /** The number of songs in the playlist */
     int m_songsInPlaylist;
-
-    /** The current track, as set on prep */
-    int m_currentTrack;
-
-    /** Search the collection */
-    bool m_searchCollection : 1;
 
     /** Use the commands */
     bool m_useCommands : 1;

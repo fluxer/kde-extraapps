@@ -47,10 +47,5 @@ public slots:
 
 private:
     AudioPlayerControlRunnerConfigForm* m_ui;
-
-private slots:
-    /** Is called, if the current index of the player combobox changed */
-    void onPlayerChanged(int index);
-    void onPlayerChanged(QString text);
 };
 #endif // AUDIOPLAYERCONTROLRUNNERCONFIG_H

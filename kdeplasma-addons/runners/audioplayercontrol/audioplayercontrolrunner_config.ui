@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>452</width>
-    <height>544</height>
+    <height>354</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -32,25 +32,11 @@
         <item>
          <widget class="KComboBox" name="player_combo">
           <property name="toolTip">
-           <string>The collection search is only available for Amarok.
-You may add another player. That player has to support the MPRIS specification.</string>
+           <string>You may add another player. That player has to support the MPRISv2 specification.</string>
           </property>
          </widget>
         </item>
        </layout>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="searchCollection">
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
-        </property>
-        <property name="text">
-         <string>Search &amp;collection</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
       </item>
       <item>
        <widget class="QGroupBox" name="commands">
@@ -122,39 +108,6 @@ You may add another player. That player has to support the MPRIS specification.<
             <widget class="KLineEdit" name="append_edit">
              <property name="toolTip">
               <string>Use: append &lt;term&gt; (where &lt;term&gt; matches to artist, title or album)</string>
-             </property>
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="queue_layout">
-           <item>
-            <widget class="QLabel" name="queue_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>Q&amp;ueue a song:</string>
-             </property>
-             <property name="buddy">
-              <cstring>queue_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="queue_edit">
-             <property name="toolTip">
-              <string>Use: queue &lt;term&gt; (where &lt;term&gt; matches to artist, title or album)</string>
              </property>
              <property name="locale">
               <locale language="English" country="UnitedStates"/>
@@ -320,7 +273,7 @@ You may add another player. That player has to support the MPRIS specification.<
             <widget class="KLineEdit" name="volume_edit">
              <property name="toolTip">
               <string>The numbers are automatically added at the end:
-Amarok:Volume=10</string>
+Player:Volume=10</string>
              </property>
              <property name="locale">
               <locale language="English" country="UnitedStates"/>
@@ -333,154 +286,6 @@ Amarok:Volume=10</string>
              </property>
              <property name="clickMessage">
               <string/>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="up_layout">
-           <item>
-            <widget class="QLabel" name="up_label1">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>&amp;Increase volume by</string>
-             </property>
-             <property name="buddy">
-              <cstring>up_value</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KIntSpinBox" name="up_value">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="maximum">
-              <number>100</number>
-             </property>
-             <property name="value">
-              <number>0</number>
-             </property>
-             <property name="base">
-              <number>10</number>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="up_label2">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="up_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="down_layout">
-           <item>
-            <widget class="QLabel" name="down_label1">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>&amp;Decrease volume by</string>
-             </property>
-             <property name="buddy">
-              <cstring>down_value</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KIntSpinBox" name="down_value">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="maximum">
-              <number>100</number>
-             </property>
-             <property name="value">
-              <number>0</number>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="down_label2">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="down_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="mute_layout">
-           <item>
-            <widget class="QLabel" name="mute_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>&amp;Mute:</string>
-             </property>
-             <property name="buddy">
-              <cstring>mute_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="mute_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
              </property>
              <property name="showClearButton" stdset="0">
               <bool>true</bool>
@@ -548,21 +353,14 @@ Amarok:Volume=10</string>
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>searchCollection</tabstop>
   <tabstop>commands</tabstop>
   <tabstop>play_edit</tabstop>
   <tabstop>append_edit</tabstop>
-  <tabstop>queue_edit</tabstop>
   <tabstop>pause_edit</tabstop>
   <tabstop>stop_edit</tabstop>
   <tabstop>prev_edit</tabstop>
   <tabstop>next_edit</tabstop>
   <tabstop>volume_edit</tabstop>
-  <tabstop>up_value</tabstop>
-  <tabstop>up_edit</tabstop>
-  <tabstop>down_value</tabstop>
-  <tabstop>down_edit</tabstop>
-  <tabstop>mute_edit</tabstop>
   <tabstop>quit_edit</tabstop>
  </tabstops>
  <resources/>
