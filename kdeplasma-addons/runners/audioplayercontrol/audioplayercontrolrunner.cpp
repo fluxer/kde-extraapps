@@ -19,7 +19,6 @@
  */
 
 #include "audioplayercontrolrunner.h"
-#include "imageiconengine.h"
 #include "audioplayercontrolconfigkeys.h"
 
 #include <QtCore/QElapsedTimer>
