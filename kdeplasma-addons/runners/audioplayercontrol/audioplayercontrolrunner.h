@@ -58,22 +58,10 @@ private:
                                    const QString &id, const KIcon &icon,
                                    const QVariantList &data, const float &relevance);
 
-    /** Tests if the player is running
-      * @return @c true if the DBus interface of the player is availalbe, @c false in any other case
-      */
-    bool playerRunning() const;
-
     /** Starts the player detached from the current progress if it isn't started already.
       * @return @c true if it was successful, @c false in any other case
       */
-    bool startPlayer() const;
-
-    /** Tests, if text and reg match
-      * @param text the string
-      * @param reg the regular expression
-      * @return @c true if they match, @c false in any other case
-      */
-    static bool equals(const QString &text, QRegExp reg);
+    bool startPlayer();
 
     /** Looks for the number in the command term (it isn't case sensitive)
       * @param text the term
@@ -107,20 +95,26 @@ private:
     /** Command for quit the player */
     QString m_comQuit;
 
-    /** The number of songs in the playlist */
-    int m_songsInPlaylist;
-
     /** Use the commands */
-    bool m_useCommands : 1;
+    bool m_useCommands;
 
     /** The running state of the player */
-    bool m_running : 1;
+    bool m_running;
+
+    /** @c true if player can play song */
+    bool m_canPlay;
 
     /** @c true if a next song is available */
-    bool m_nextSongAvailable : 1;
+    bool m_canGoNext;
 
     /** @c true if a previous song is available */
-    bool m_prevSongAvailable : 1;
+    bool m_canGoPrevious;
+
+    /** The playback state of the player */
+    QString m_playbackStatus;
+
+    /** The player identity */
+    QString m_identity;
 };
 
 K_EXPORT_PLASMA_RUNNER(audioplayercontrol, AudioPlayerControlRunner)

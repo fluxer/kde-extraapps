@@ -20,7 +20,10 @@
 
 #include "audioplayercontrolrunner.h"
 #include "imageiconengine.h"
+#include "audioplayercontrolconfigkeys.h"
 
+#include <QtCore/QElapsedTimer>
+#include <QtCore/QCoreApplication>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusMetaType>
 #include <QtDBus/QDBusPendingReply>
@@ -32,10 +35,6 @@
 #include <KIcon>
 #include <KRun>
 #include <KUrl>
-
-#include "audioplayercontrolconfigkeys.h"
-
-Q_DECLARE_METATYPE(QList<QVariantMap>)
 
 /** The variable PLAY contains the action label for play */
 static const QString PLAY(QLatin1String("play"));
@@ -57,8 +56,6 @@ AudioPlayerControlRunner::AudioPlayerControlRunner(QObject *parent, const QVaria
     setObjectName(QLatin1String("Audio Player Control Runner"));
     setSpeed(AbstractRunner::SlowSpeed);
 
-    qDBusRegisterMetaType<QList<QVariantMap> >();
-
     connect(this, SIGNAL(prepare()), this, SLOT(prep()));
 
     reloadConfiguration();
@@ -71,29 +68,28 @@ AudioPlayerControlRunner::~AudioPlayerControlRunner()
 void AudioPlayerControlRunner::prep()
 {
     m_running = false;
-    m_songsInPlaylist = 0;
-    m_nextSongAvailable = false;
-    m_prevSongAvailable = false;
+    m_canPlay = false;
+    m_canGoNext = false;
+    m_canGoPrevious = false;
+    m_playbackStatus = QString();
+    m_identity = m_player;
 
     QDBusInterface player(QString::fromLatin1("org.mpris.MediaPlayer2.%1").arg(m_player),
         QLatin1String("/org/mpris/MediaPlayer2"), QLatin1String("org.mpris.MediaPlayer2.Player"));
     m_running = player.isValid();
 
     if (m_running) {
-        QDBusInterface trackList(QString::fromLatin1("org.mpris.MediaPlayer2.%1").arg(m_player),
-            QLatin1String("/org/mpris/MediaPlayer2"), QLatin1String("org.mpris.MediaPlayer2.TrackList"));
-        m_songsInPlaylist = qvariant_cast<TrackListType>(trackList.property("Tracks")).size();
-
-        // NOTE: Audacious implements both properties but not org.mpris.MediaPlayer2.TrackList, the
-        // properties also are set to true even if there is only one track in the playlist - what
-        // to do with that?
-        // NOTE: VLC implements org.mpris.MediaPlayer2.TrackList but not the properties - what to
-        // do with that?
-        if (m_songsInPlaylist > 0) {
-            m_nextSongAvailable = player.property("CanGoNext").toBool();
-            m_prevSongAvailable = player.property("CanGoPrevious").toBool();
-        }
+        QDBusInterface mediaplayer2(QString::fromLatin1("org.mpris.MediaPlayer2.%1").arg(m_player),
+            QLatin1String("/org/mpris/MediaPlayer2"), QLatin1String("org.mpris.MediaPlayer2"));
+        m_identity = mediaplayer2.property("Identity").toString();
+        m_playbackStatus = player.property("PlaybackStatus").toString();
+        // NOTE: Bogus values set by Audacious for the properties bellow
+        m_canPlay = player.property("CanPlay").toBool();
+        m_canGoNext = player.property("CanGoNext").toBool();
+        m_canGoPrevious = player.property("CanGoPrevious").toBool();
     }
+
+    // qDebug() << Q_FUNC_INFO << m_running << m_canPlay << m_canGoNext << m_canGoPrevious << m_playbackStatus;
 }
 
 void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
@@ -106,83 +102,77 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
 
     QList<Plasma::QueryMatch> matches;
 
-    if (m_useCommands) {
+    if (m_useCommands && context.isValid() ) {
         QVariantList playcontrol;
         playcontrol  << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2.Player");
 
-        /* The commands */
-
         // Play
-        // TODO: does not make sense if already playing (not paused)
-        if (context.isValid() && m_comPlay.startsWith(term, Qt::CaseInsensitive) &&
-            (!m_running || m_songsInPlaylist)) {
+        if (m_comPlay.startsWith(term, Qt::CaseInsensitive) &&
+            (!m_running || (m_canPlay && m_playbackStatus != QLatin1String("Playing")))) {
             QVariantList data = playcontrol;
             data << QLatin1String("Play") << NONE << QLatin1String("start");
-            matches << createMatch(this, i18n("Start playing"), i18n("Audio player control"), QLatin1String("play"),
-                                   KIcon(QLatin1String("media-playback-start")), data, 1.0);
+            matches << createMatch(this, i18n("Start playing"), i18n("Audio player control"),
+                QLatin1String("play"), KIcon(QLatin1String("media-playback-start")), data, 1.0);
         }
 
-        if (!context.isValid() || !m_running) {
-            // The interface of the player is not availalbe, so the rest of the commands
-            // is not needed
+        if (!m_running) {
+            // The interface of the player is not availalbe, so the rest of the commands is not needed
             context.addMatches(term,matches);
             return;
         }
 
-        if (context.isValid() && m_songsInPlaylist) {
-            // The playlist isn't empty
-            // Next song
-            if (m_comNext.startsWith(term, Qt::CaseInsensitive) && m_nextSongAvailable) {
-                QVariantList data = playcontrol;
-                data << QLatin1String("Next") << NONE << QLatin1String("nostart");
-                matches << createMatch(this, i18n("Play next song"), i18n("Audio player control"),
-                                       QLatin1String("next"), KIcon(QLatin1String("media-skip-forward")), data, 1.0);
-            }
+        // Next song
+        if (m_comNext.startsWith(term, Qt::CaseInsensitive) && m_canGoNext) {
+            QVariantList data = playcontrol;
+            data << QLatin1String("Next") << NONE << QLatin1String("nostart");
+            matches << createMatch(this, i18n("Play next song"), i18n("Audio player control"),
+                QLatin1String("next"), KIcon(QLatin1String("media-skip-forward")), data, 1.0);
+        }
 
-            // Previous song
-            if (context.isValid() && m_comPrev.startsWith(term, Qt::CaseInsensitive) && m_prevSongAvailable) {
-                QVariantList data = playcontrol;
-                data << QLatin1String("Previous") << NONE << QLatin1String("nostart");
-                matches << createMatch(this, i18n("Play previous song"), i18n("Audio player control") ,
-                                       QLatin1String("previous"), KIcon(QLatin1String("media-skip-backward")), data, 1.0);
-            }
-        } // --- if (m_songsInPlaylist)
+        // Previous song
+        if (m_comPrev.startsWith(term, Qt::CaseInsensitive) && m_canGoPrevious) {
+            QVariantList data = playcontrol;
+            data << QLatin1String("Previous") << NONE << QLatin1String("nostart");
+            matches << createMatch(this, i18n("Play previous song"), i18n("Audio player control") ,
+                QLatin1String("previous"), KIcon(QLatin1String("media-skip-backward")), data, 1.0);
+        }
 
         // Pause
-        // TODO: does not make sense if not playing (paused)
-        if (context.isValid() && m_comPause.startsWith(term, Qt::CaseInsensitive)) {
+        if (m_comPause.startsWith(term, Qt::CaseInsensitive) && m_playbackStatus == QLatin1String("Playing")) {
             QVariantList data = playcontrol;
             data << QLatin1String("Pause") << NONE << QLatin1String("nostart");
             matches << createMatch(this, i18n("Pause playing"), i18n("Audio player control"),
-                                   QLatin1String("pause"), KIcon(QLatin1String("media-playback-pause")), data, 1.0);
+                QLatin1String("pause"), KIcon(QLatin1String("media-playback-pause")), data, 1.0);
         }
 
         // Stop
-        if (context.isValid() && m_comStop.startsWith(term, Qt::CaseInsensitive)) {
+        if (m_comStop.startsWith(term, Qt::CaseInsensitive) && m_playbackStatus == QLatin1String("Playing")) {
             QVariantList data = playcontrol;
             data << QLatin1String("Stop") << NONE << QLatin1String("nostart");
             matches << createMatch(this, i18n("Stop playing"), i18n("Audio player control"),
-                                   QLatin1String("stop"), KIcon(QLatin1String("media-playback-stop")), data, 1.0);
+                QLatin1String("stop"), KIcon(QLatin1String("media-playback-stop")), data, 1.0);
         }
 
         // Set volume to
-        if (context.isValid() && equals(term, QRegExp(m_comVolume + QLatin1String(" \\d{1,2}0{0,1}") ) ) ) {
+        QRegExp volumeRegxp(m_comVolume + QLatin1String(" \\d{1,2}0{0,1}"));
+        volumeRegxp.setCaseSensitivity(Qt::CaseInsensitive);
+        if (volumeRegxp.exactMatch(term)) {
             QVariantList data = playcontrol;
             int newVolume = getNumber(term , ' ');
             data << QLatin1String("Volume") << NONE << QLatin1String("nostart") << (newVolume / 100.0);
             matches << createMatch(this, i18n("Set volume to %1%" , newVolume),
-                                   QLatin1String("volume"), i18n("Audio player control"), KIcon(QLatin1String("audio-volume-medium")), data, 1.0);
+                QLatin1String("volume"), i18n("Audio player control"), KIcon(QLatin1String("audio-volume-medium")), data, 1.0);
         }
 
         // Quit player
-        if (context.isValid() && m_comQuit.startsWith(term, Qt::CaseInsensitive)) {
+        if (m_comQuit.startsWith(term, Qt::CaseInsensitive)) {
             QVariantList data;
-            data  << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2") << QLatin1String("Quit") << NONE
-            << QLatin1String("nostart");
-            matches << createMatch(this, i18n("Quit %1", m_player), QLatin1String(""),
-                                   QLatin1String("quit"), KIcon(QLatin1String("application-exit")), data, 1.0);
+            data  << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2")
+                << QLatin1String("Quit") << NONE << QLatin1String("nostart");
+            matches << createMatch(this, i18n("Quit %1", m_identity), QLatin1String(""),
+                QLatin1String("quit"), KIcon(QLatin1String("application-exit")), data, 1.0);
         }
-    } // --- if (m_useCommands)
+    }
 
     context.addMatches(term, matches);
 }
@@ -200,7 +190,7 @@ void AudioPlayerControlRunner::run(const Plasma::RunnerContext &context, const P
         }
     }
 
-    // special case for properties
+    // Special case for properties
     if (data[2].toString().compare(QLatin1String("Volume")) == 0) {
         QDBusInterface player(QString::fromLatin1("org.mpris.MediaPlayer2.%1").arg(m_player),
             data[0].toString(), data[1].toString());
@@ -253,7 +243,7 @@ void AudioPlayerControlRunner::reloadConfiguration()
     m_comVolume = grp.readEntry(CONFIG_VOLUME, i18n("volume"));
     m_comQuit = grp.readEntry(CONFIG_QUIT, i18n("quit"));
 
-    /* Adding the syntaxes for helping the user */
+    // Adding the syntaxes for helping the user
     QList<Plasma::RunnerSyntax> syntaxes;
 
     syntaxes << Plasma::RunnerSyntax(m_comPlay, i18n("Plays a song from playlist"));
@@ -281,36 +271,35 @@ Plasma::QueryMatch AudioPlayerControlRunner::createMatch(Plasma::AbstractRunner*
     return match;
 }
 
-bool AudioPlayerControlRunner::playerRunning() const
+bool AudioPlayerControlRunner::startPlayer()
 {
-    return m_running;
-}
-
-bool AudioPlayerControlRunner::startPlayer() const
-{
-    if (playerRunning()) {
+    if (m_running) {
         return true;
     }
 
-    if (!KRun::run(m_player, KUrl::List(), 0)) {
-        //We couldn't start the player
-        KMessageBox::error(0, i18n("%1 not found", m_player),
+    if (!KRun::run(m_player, KUrl::List(), Q_NULLPTR)) {
+        // We couldn't start the player
+        KMessageBox::error(Q_NULLPTR, i18n("%1 not found", m_player),
             i18n("%1 was not found so the runner is unable to work.", m_player));
         return false;
     }
 
-    /*while (!playerRunning()) {
-        //Waiting for the player's interface to appear
-        ;
-    }*/
+    QElapsedTimer waitTimeout;
+    waitTimeout.start();
+    while (!m_running && waitTimeout.elapsed() < 30000) {
+        // Waiting for the player's interface to appear
+        QDBusInterface player(QString::fromLatin1("org.mpris.MediaPlayer2.%1").arg(m_player),
+            QLatin1String("/org/mpris/MediaPlayer2"), QLatin1String("org.mpris.MediaPlayer2.Player"));
+        m_running = player.isValid();
+        QCoreApplication::processEvents();
+    }
 
-    return true;
-}
+    if (m_running) {
+        prep();
+        return true;
+    }
 
-bool AudioPlayerControlRunner::equals(const QString &text, QRegExp reg)
-{
-    reg.setCaseSensitivity(Qt::CaseInsensitive);
-    return reg.exactMatch(text);
+    return false;
 }
 
 int AudioPlayerControlRunner::getNumber(const QString& term, const char character)
