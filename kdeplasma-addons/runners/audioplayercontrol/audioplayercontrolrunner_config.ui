@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>452</width>
-    <height>354</height>
+    <width>421</width>
+    <height>318</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -39,293 +39,255 @@
        </layout>
       </item>
       <item>
-       <widget class="QGroupBox" name="commands">
-        <property name="locale">
-         <locale language="English" country="UnitedStates"/>
+       <widget class="QFrame" name="frame">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
-        <property name="title">
-         <string>Use Command&amp;s</string>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <layout class="QHBoxLayout" name="play_layout">
-           <item>
-            <widget class="QLabel" name="play_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>Pla&amp;y:</string>
-             </property>
-             <property name="buddy">
-              <cstring>play_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="play_edit">
-             <property name="toolTip">
-              <string>Can be used as &quot;Play&quot; for playing and &quot;Play &lt;song&gt;&quot; for playing a song that matches to &lt;song&gt; (in title, artist and album)</string>
-             </property>
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="6" column="0">
+          <widget class="QLabel" name="next_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>&amp;Next song:</string>
+           </property>
+           <property name="buddy">
+            <cstring>next_edit</cstring>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="append_layout">
-           <item>
-            <widget class="QLabel" name="append_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>Ap&amp;pend a song:</string>
-             </property>
-             <property name="buddy">
-              <cstring>append_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="append_edit">
-             <property name="toolTip">
-              <string>Use: append &lt;term&gt; (where &lt;term&gt; matches to artist, title or album)</string>
-             </property>
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <item row="4" column="0">
+          <widget class="QLabel" name="stop_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>S&amp;top:</string>
+           </property>
+           <property name="buddy">
+            <cstring>stop_edit</cstring>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="pause_layout">
-           <item>
-            <widget class="QLabel" name="pause_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>P&amp;ause:</string>
-             </property>
-             <property name="buddy">
-              <cstring>pause_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="pause_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <item row="5" column="0">
+          <widget class="QLabel" name="prev_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>Previ&amp;ous song:</string>
+           </property>
+           <property name="buddy">
+            <cstring>prev_edit</cstring>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="stop_layout">
-           <item>
-            <widget class="QLabel" name="stop_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>S&amp;top:</string>
-             </property>
-             <property name="buddy">
-              <cstring>stop_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="stop_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <item row="2" column="1">
+          <widget class="KLineEdit" name="append_edit">
+           <property name="toolTip">
+            <string>Use: append &lt;term&gt; (where &lt;term&gt; matches to artist, title or album)</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="prev_layout">
-           <item>
-            <widget class="QLabel" name="prev_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>Previ&amp;ous song:</string>
-             </property>
-             <property name="buddy">
-              <cstring>prev_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="prev_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <item row="8" column="0">
+          <widget class="QLabel" name="quit_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>Quit player:</string>
+           </property>
+           <property name="buddy">
+            <cstring>quit_edit</cstring>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="next_layout">
-           <item>
-            <widget class="QLabel" name="next_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>&amp;Next song:</string>
-             </property>
-             <property name="buddy">
-              <cstring>next_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="next_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <item row="0" column="0">
+          <widget class="QLabel" name="play_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>Pla&amp;y:</string>
+           </property>
+           <property name="buddy">
+            <cstring>play_edit</cstring>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="volume_layout">
-           <item>
-            <widget class="QLabel" name="volume_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>Set &amp;volume:</string>
-             </property>
-             <property name="buddy">
-              <cstring>volume_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="volume_edit">
-             <property name="toolTip">
-              <string>The numbers are automatically added at the end:
+         <item row="4" column="1">
+          <widget class="KLineEdit" name="stop_edit">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="volume_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>Set &amp;volume:</string>
+           </property>
+           <property name="buddy">
+            <cstring>volume_edit</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="KLineEdit" name="play_edit">
+           <property name="toolTip">
+            <string>Can be used as &quot;Play&quot; for playing and &quot;Play &lt;song&gt;&quot; for playing a song that matches to &lt;song&gt; (in title, artist and album)</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="pause_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>P&amp;ause:</string>
+           </property>
+           <property name="buddy">
+            <cstring>pause_edit</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="append_label">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string>Ap&amp;pend a song:</string>
+           </property>
+           <property name="buddy">
+            <cstring>append_edit</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="KLineEdit" name="volume_edit">
+           <property name="toolTip">
+            <string>The numbers are automatically added at the end:
 Player:Volume=10</string>
-             </property>
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="clickMessage">
-              <string/>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+           </property>
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="clickMessage">
+            <string/>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
-         <item>
-          <layout class="QHBoxLayout" name="quit_layout">
-           <item>
-            <widget class="QLabel" name="quit_label">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string>Quit player:</string>
-             </property>
-             <property name="buddy">
-              <cstring>quit_edit</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="KLineEdit" name="quit_edit">
-             <property name="locale">
-              <locale language="English" country="UnitedStates"/>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="urlDropsEnabled">
-              <bool>false</bool>
-             </property>
-             <property name="showClearButton" stdset="0">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <item row="8" column="1">
+          <widget class="KLineEdit" name="quit_edit">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="KLineEdit" name="prev_edit">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="KLineEdit" name="pause_edit">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="KLineEdit" name="next_edit">
+           <property name="locale">
+            <locale language="English" country="UnitedStates"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="urlDropsEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="showClearButton" stdset="0">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -352,17 +314,6 @@ Player:Volume=10</string>
    <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
- <tabstops>
-  <tabstop>commands</tabstop>
-  <tabstop>play_edit</tabstop>
-  <tabstop>append_edit</tabstop>
-  <tabstop>pause_edit</tabstop>
-  <tabstop>stop_edit</tabstop>
-  <tabstop>prev_edit</tabstop>
-  <tabstop>next_edit</tabstop>
-  <tabstop>volume_edit</tabstop>
-  <tabstop>quit_edit</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

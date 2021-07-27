@@ -26,8 +26,6 @@
 #include <KIcon>
 #include <KUrl>
 
-#include <QDBusPendingCallWatcher>
-
 class AudioPlayerControlRunner : public Plasma::AbstractRunner
 {
     Q_OBJECT
@@ -78,7 +76,6 @@ private:
     /** The player this runner controls */
     QString m_player;
 
-    //The commands
     /** Command for play a song */
     QString m_comPlay;
     /** Command for append a song */
@@ -95,9 +92,6 @@ private:
     QString m_comVolume;
     /** Command for quit the player */
     QString m_comQuit;
-
-    /** Use the commands */
-    bool m_useCommands;
 
     /** The running state of the player */
     bool m_running;

@@ -36,6 +36,7 @@
 #include <KRun>
 #include <KUrl>
 
+// TODO: rewrite append feature to add URL to the tracks list via org.mpris.MediaPlayer2.TrackList.AddTrack
 /** The variable PLAY contains the action label for play */
 static const QString PLAY(QLatin1String("play"));
 /** The variable APPEND contains the action label for append */
@@ -102,7 +103,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
 
     QList<Plasma::QueryMatch> matches;
 
-    if (m_useCommands && context.isValid() ) {
+    if (context.isValid() ) {
         QVariantList playcontrol;
         playcontrol  << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2.Player");
 
@@ -116,8 +117,8 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         }
 
         if (!m_running) {
-            // The interface of the player is not availalbe, so the rest of the commands is not needed
-            context.addMatches(term,matches);
+            // The interface of the player is not availalbe, so the rest of the commands are not needed
+            context.addMatches(term, matches);
             return;
         }
 
@@ -167,7 +168,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         // Quit player
         if (m_comQuit.startsWith(term, Qt::CaseInsensitive)) {
             QVariantList data;
-            data  << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2")
+            data << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2")
                 << QLatin1String("Quit") << NONE << QLatin1String("nostart");
             matches << createMatch(this, i18n("Quit %1", m_identity), QLatin1String(""),
                 QLatin1String("quit"), KIcon(QLatin1String("application-exit")), data, 1.0);
@@ -214,7 +215,7 @@ QList<QAction*> AudioPlayerControlRunner::actionsForMatch(const Plasma::QueryMat
     QList<QAction*> ret;
     QVariantList data = match.data().value<QVariantList>();
 
-    if (data.length() > 3 && data[3].toString().compare(NONE)) {
+    if (data.length() > 3 && data[3].toString().compare(NONE) == 0) {
         if (!action(PLAY)) {
             addAction(PLAY, KIcon(QLatin1String("media-playback-start")), i18n("Play"));
             addAction(APPEND, KIcon(QLatin1String("media-track-add-amarok")), i18n("Append to playlist"));
@@ -233,7 +234,6 @@ void AudioPlayerControlRunner::reloadConfiguration()
 {
     KConfigGroup grp = config();
     m_player = grp.readEntry(CONFIG_PLAYER, "vlc");
-    m_useCommands = grp.readEntry(CONFIG_COMMANDS, true);
     m_comPlay = grp.readEntry(CONFIG_PLAY, i18n("play"));
     m_comAppend = grp.readEntry(CONFIG_APPEND, i18n("append"));
     m_comPause = grp.readEntry(CONFIG_PAUSE, i18n("pause"));

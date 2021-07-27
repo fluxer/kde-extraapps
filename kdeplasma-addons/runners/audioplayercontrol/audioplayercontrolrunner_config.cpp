@@ -41,7 +41,6 @@ AudioPlayerControlRunnerConfig::AudioPlayerControlRunnerConfig(QWidget* parent, 
     QGridLayout* layout = new QGridLayout(this);
     layout->addWidget(m_ui, 0, 0);
 
-    connect(m_ui->commands, SIGNAL(clicked(bool)),this,SLOT(changed()));
     connect(m_ui->player_combo, SIGNAL(currentIndexChanged(int)), this, SLOT(changed()));
     connect(m_ui->player_combo, SIGNAL(editTextChanged(QString)), this, SLOT(changed()));
     connect(m_ui->play_edit, SIGNAL(textChanged(QString)), this, SLOT(changed()));
@@ -81,7 +80,6 @@ void AudioPlayerControlRunnerConfig::load()
     } else {
         m_ui->player_combo->setCurrentIndex(index);
     }
-    m_ui->commands->setChecked(grp.readEntry(CONFIG_COMMANDS,true));
     m_ui->play_edit->setText(grp.readEntry(CONFIG_PLAY , i18n("play")));
     m_ui->append_edit->setText(grp.readEntry(CONFIG_APPEND, i18n("append")));
     m_ui->pause_edit->setText(grp.readEntry(CONFIG_PAUSE, i18n("pause")));
@@ -101,7 +99,6 @@ void AudioPlayerControlRunnerConfig::save()
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig(QLatin1String("krunnerrc"));
     KConfigGroup grp = cfg->group("Runners");
     grp = KConfigGroup(&grp, "Audio Player Control Runner");
-    grp.writeEntry(CONFIG_COMMANDS,m_ui->commands->isChecked());
     grp.writeEntry(CONFIG_PLAY, m_ui->play_edit->text());
     grp.writeEntry(CONFIG_APPEND, m_ui->append_edit->text());
     grp.writeEntry(CONFIG_PAUSE, m_ui->pause_edit->text());
@@ -127,7 +124,6 @@ void AudioPlayerControlRunnerConfig::defaults()
     KCModule::defaults();
 
     m_ui->player_combo->setCurrentIndex(m_ui->player_combo->findData(QLatin1String("vlc")));
-    m_ui->commands->setChecked(true);
     m_ui->play_edit->setText(i18n("Play"));
     m_ui->append_edit->setText(i18n("Append"));
     m_ui->pause_edit->setText(i18n("Pause")) ;
