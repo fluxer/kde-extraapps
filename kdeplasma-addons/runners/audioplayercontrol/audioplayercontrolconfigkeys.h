@@ -1,5 +1,6 @@
 /*
  *   Copyright (C) 2009 Jan G. Marker <jangerrit@weiler-marker.com>
+ *   Copyright (C) 2021 Ivailo Monev <xakepa10@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License version 2 as

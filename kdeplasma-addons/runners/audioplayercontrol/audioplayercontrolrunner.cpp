@@ -2,6 +2,7 @@
  *   Copyright (C) 2008 Bruno Virlet <bvirlet@kdemail.net>
  *   Copyright (C) 2009 Ryan P. Bitanga <ryan.bitanga@gmail.com>
  *   Copyright (C) 2009 Jan G. Marker <jangerrit@weiler-marker.com>
+ *   Copyright (C) 2021 Ivailo Monev <xakepa10@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License version 2 as
@@ -88,7 +89,7 @@ void AudioPlayerControlRunner::prep()
         m_canGoPrevious = player.property("CanGoPrevious").toBool();
     }
 
-    // qDebug() << Q_FUNC_INFO << m_running << m_canPlay << m_canGoNext << m_canGoPrevious << m_playbackStatus;
+    // qDebug() << Q_FUNC_INFO << m_running << m_canPlay << m_canGoNext << m_canGoPrevious << m_playbackStatus << m_identity;
 }
 
 void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
