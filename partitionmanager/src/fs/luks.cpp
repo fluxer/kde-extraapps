@@ -78,7 +78,7 @@ namespace FS
 
 	FileSystem::SupportTool luks::supportToolName() const
 	{
-		return SupportTool("cryptsetup", KUrl("https://code.google.com/p/cryptsetup/"));
+		return SupportTool("cryptsetup", KUrl("https://gitlab.com/cryptsetup/cryptsetup"));
 	}
 
 	qint64 luks::minCapacity() const
