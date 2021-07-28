@@ -20,7 +20,7 @@
 
 #include <kurl.h>
 
-#include "diff2export.h"
+#include "komparediff2_export.h"
 
 // Forward declaration needed
 class KTempDir;
@@ -142,7 +142,7 @@ namespace Kompare
 /*
 ** This should be removed and put somewhere else
 */
-class DIFF2_EXPORT KompareFunctions
+class KOMPAREDIFF2_EXPORT KompareFunctions
 {
 public:
 	static QString constructRelativePath( const QString& from, const QString& to )

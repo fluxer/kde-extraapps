@@ -1,5 +1,10 @@
 project(weatherapplet)
 
+include_directories(
+    # for plasmaweather_export.h
+    ${kdeplasma-addons_BINARY_DIR}/libs/plasmaweather
+)
+
 set(weatherapplet_SRCS
     weatherapplet.cpp)
 

@@ -18,7 +18,7 @@
 #include <kdemacros.h>
 
 /* export statements for unix */
-#ifdef MAKE_KGETCORE_LIB
+#ifdef kgetcore_EXPORTS
 # define KGET_EXPORT KDE_EXPORT
 #else
 # define KGET_EXPORT KDE_IMPORT

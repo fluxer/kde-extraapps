@@ -19,14 +19,14 @@
 #define SETTINGSBASE_H
 
 #include <QtCore/QObject>
+#include <QWidget>
 
 #include "kompare.h"
-#include "diff2export.h"
+#include "komparediff2_export.h"
 
-#include <QWidget>
 class KConfig;
 
-class DIFF2_EXPORT SettingsBase : public QObject
+class KOMPAREDIFF2_EXPORT SettingsBase : public QObject
 {
 Q_OBJECT
 public:

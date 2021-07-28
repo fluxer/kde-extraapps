@@ -20,7 +20,7 @@
 #define FILESPAGE_H
 
 #include "pagebase.h"
-#include "dialogpagesexport.h"
+#include "komparedialogpages_export.h"
 
 #include <QGroupBox>
 
@@ -30,7 +30,7 @@ class KUrlRequester;
 
 class FilesSettings;
 
-class DIALOGPAGES_EXPORT FilesPage : public PageBase
+class KOMPAREDIALOGPAGES_EXPORT FilesPage : public PageBase
 {
 Q_OBJECT
 public:

@@ -32,7 +32,7 @@
 #else
     #include <KUrl>
     #include <KWallet/Wallet>
-    #include <krdc_export.h>
+    #include "krdccore_export.h"
 #endif
 
 #include <QWidget>

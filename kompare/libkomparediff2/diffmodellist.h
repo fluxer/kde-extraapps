@@ -21,7 +21,7 @@
 #include <QtCore/QList> // include for the base class
 
 #include "diffmodel.h"
-#include "diff2export.h"
+#include "komparediff2_export.h"
 
 namespace Diff2
 {
@@ -29,7 +29,7 @@ namespace Diff2
 typedef QList<DiffModel*>::Iterator DiffModelListIterator;
 typedef QList<DiffModel*>::ConstIterator DiffModelListConstIterator;
 
-class DIFF2_EXPORT DiffModelList : public QList<DiffModel*>
+class KOMPAREDIFF2_EXPORT DiffModelList : public QList<DiffModel*>
 {
 public:
 	DiffModelList() {}

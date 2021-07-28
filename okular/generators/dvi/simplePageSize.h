@@ -11,15 +11,12 @@
 #ifndef SIMPLEPAGESIZE_H
 #define SIMPLEPAGESIZE_H
 
-#include "kviewshell_export.h"
-
 #include "length.h"
 
 #include <QSize>
-
 #include <QPaintDevice>
 #include <QString>
-
+#include <kdemacros.h>
 
 /** \brief This class represents physical page sizes.
 

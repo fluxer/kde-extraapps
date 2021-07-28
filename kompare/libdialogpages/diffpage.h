@@ -20,7 +20,7 @@
 #define DIFFPAGE_H
 
 #include "pagebase.h"
-#include "dialogpagesexport.h"
+#include "komparedialogpages_export.h"
 
 #include <QCheckBox>
 #include <QDialog>
@@ -37,7 +37,7 @@ class KUrlRequester;
 
 class DiffSettings;
 
-class DIALOGPAGES_EXPORT DiffPage : public PageBase
+class KOMPAREDIALOGPAGES_EXPORT DiffPage : public PageBase
 {
 Q_OBJECT
 public:

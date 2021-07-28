@@ -141,7 +141,6 @@ install(
     core/form.h
     core/generator.h
     core/global.h
-    core/okular_export.h
     core/page.h
     core/pagesize.h
     core/pagetransition.h
@@ -156,6 +155,7 @@ install(
     core/fileprinter.h
     core/observer.h
     ${CMAKE_CURRENT_BINARY_DIR}/settings_core.h
+    ${CMAKE_CURRENT_BINARY_DIR}/okular_export.h
     DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/okular/core
     COMPONENT Devel
 )
@@ -181,7 +181,12 @@ target_link_libraries(okularcore
     KDE4::kmediaplayer
 )
 
-set_target_properties(okularcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+set_target_properties(okularcore PROPERTIES
+    VERSION ${GENERIC_LIB_VERSION}
+    SOVERSION ${GENERIC_LIB_SOVERSION}
+)
+
+generate_export_header(okularcore BASE_NAME okular)
 
 install(TARGETS okularcore ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
@@ -254,7 +259,15 @@ qt4_add_dbus_interfaces(okularpart_SRCS ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.
 
 kde4_add_plugin(okularpart ${okularpart_SRCS})
 
-target_link_libraries(okularpart okularcore ${KDE4_KPARTS_LIBS} ${KDE4_KPRINTUTILS_LIBS} ${MATH_LIB} ${KDE4_SOLID_LIBS})
+target_link_libraries(okularpart
+    ${KDE4_KPARTS_LIBS}
+    ${KDE4_KPRINTUTILS_LIBS}
+    ${MATH_LIB}
+    ${KDE4_SOLID_LIBS}
+    okularcore
+)
+
+generate_export_header(okularpart)
 
 install(TARGETS okularpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 

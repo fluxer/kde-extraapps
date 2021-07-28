@@ -23,9 +23,9 @@
 
 #include "kompare.h"
 #include "settingsbase.h"
-#include "diff2export.h"
+#include "komparediff2_export.h"
 
-class DIFF2_EXPORT  DiffSettings : public SettingsBase
+class KOMPAREDIFF2_EXPORT  DiffSettings : public SettingsBase
 {
 Q_OBJECT
 public:

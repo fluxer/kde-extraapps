@@ -21,7 +21,7 @@
 #include <qvector.h>
 
 #include <kdebug.h>
-#include "diff2export.h"
+#include "komparediff2_export.h"
 #include "marker.h"
 
 #include <QString>
@@ -29,7 +29,7 @@
 namespace Diff2
 {
 
-class DIFF2_EXPORT DifferenceString
+class KOMPAREDIFF2_EXPORT DifferenceString
 {
 public:
 	DifferenceString()
@@ -118,7 +118,7 @@ typedef QVector<DifferenceString*> DifferenceStringList;
 typedef QVector<DifferenceString*>::iterator DifferenceStringListIterator;
 typedef QVector<DifferenceString*>::const_iterator DifferenceStringListConstIterator;
 
-class DIFF2_EXPORT Difference : public QObject
+class KOMPAREDIFF2_EXPORT Difference : public QObject
 {
 	Q_OBJECT
 public:

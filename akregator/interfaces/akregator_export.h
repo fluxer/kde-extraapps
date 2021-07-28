@@ -24,10 +24,7 @@
 #include <kdemacros.h>
 
 #ifndef AKREGATOR_EXPORT
-# if defined(KDEPIM_STATIC_LIBS)
-   /* No export/import for static libraries */
-#  define AKREGATOR_EXPORT
-# elif defined(MAKE_AKREGATORINTERFACES_LIB) || defined(MAKE_AKREGATORPRIVATE_LIB)
+# if defined(akregatorinterfaces_EXPORTS) || defined(akregatorprivate_EXPORTS)
    /* We are building this library */ 
 #  define AKREGATOR_EXPORT KDE_EXPORT
 # else
@@ -37,10 +34,7 @@
 #endif
 
 #ifndef AKREGATORPART_EXPORT
-# if defined(KDEPIM_STATIC_LIBS)
-   /* No export/import for static libraries */
-#  define AKREGATORPART_EXPORT
-# elif defined(MAKE_AKREGATORPART_LIB)
+# if defined(akregatorpart_EXPORTS)
    /* We are building this library */ 
 #  define AKREGATORPART_EXPORT KDE_EXPORT
 # else
@@ -50,10 +44,7 @@
 #endif
 
 #ifndef AKREGATORINTERFACES_EXPORT
-# if defined(KDEPIM_STATIC_LIBS)
-   /* No export/import for static libraries */
-#  define AKREGATORINTERFACES_EXPORT
-# elif defined(MAKE_AKREGATORINTERFACES_LIB)
+# if defined(akregatorinterfaces_EXPORTS)
    /* We are building this library */
 #  define AKREGATORINTERFACES_EXPORT KDE_EXPORT
 # else

@@ -23,7 +23,7 @@
 
 #include "diffhunk.h"
 #include "kompare.h"
-#include "diff2export.h"
+#include "komparediff2_export.h"
 
 namespace Diff2
 {
@@ -31,7 +31,7 @@ namespace Diff2
 class DiffHunk;
 class Difference;
 
-class DIFF2_EXPORT DiffModel : public QObject
+class KOMPAREDIFF2_EXPORT DiffModel : public QObject
 {
 	Q_OBJECT
 public:

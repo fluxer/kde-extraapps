@@ -1,5 +1,10 @@
 project(plasma-weatherstation)
 
+include_directories(
+    # for plasmaweather_export.h
+    ${kdeplasma-addons_BINARY_DIR}/libs/plasmaweather
+)
+
 set(weatherstation_SRCS
     weatherstation.cpp
     lcd.cpp

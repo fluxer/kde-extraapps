@@ -16,7 +16,11 @@ configure_file(version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/version.h)
 
 find_package(SharedMimeInfo REQUIRED)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR} libbluedevil)
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}/libbluedevil
+    ${CMAKE_CURRENT_SOURCE_DIR}/libbluedevil
+)
 
 add_subdirectory(src)
 

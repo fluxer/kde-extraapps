@@ -35,6 +35,9 @@ include_directories(
     ${QDBUS_INCLUDE_DIRS}
     ${EXIV2_INCLUDE_DIR}
     ${KDCRAW_INCLUDE_DIR}
+    # for gwenview_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}/lib
 )
 
 add_definitions(

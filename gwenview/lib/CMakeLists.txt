@@ -113,6 +113,8 @@ set_target_properties(gwenviewlib PROPERTIES
     SOVERSION ${GENERIC_LIB_SOVERSION}
 )
 
+generate_export_header(gwenviewlib)
+
 target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}

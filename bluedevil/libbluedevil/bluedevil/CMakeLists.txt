@@ -31,16 +31,20 @@ set_target_properties(bluedevil PROPERTIES
    SOVERSION ${GENERIC_LIB_SOVERSION}
 )
 
+generate_export_header(bluedevil)
+
 install(TARGETS bluedevil ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES bluedevilmanager.h
-              bluedeviladapter.h
-              bluedevildevice.h
-              bluedevil_export.h
-              bluedevil.h
-              bluedevilutils.h DESTINATION include/bluedevil)
+install(
+    FILES
+    bluedevilmanager.h
+    bluedeviladapter.h
+    bluedevildevice.h
+    bluedevil.h
+    bluedevilutils.h
+    ${CMAKE_CURRENT_BINARY_DIR}/bluedevil_export.h
+    DESTINATION include/bluedevil
+)
 
-if(NOT WIN32) # pkgconfig file
-   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/bluedevil.pc.in ${CMAKE_CURRENT_BINARY_DIR}/bluedevil.pc @ONLY)
-   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/bluedevil.pc DESTINATION ${KDE4_LIB_INSTALL_DIR}/pkgconfig)
-endif(NOT WIN32)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/bluedevil.pc.in ${CMAKE_CURRENT_BINARY_DIR}/bluedevil.pc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/bluedevil.pc DESTINATION ${KDE4_LIB_INSTALL_DIR}/pkgconfig)

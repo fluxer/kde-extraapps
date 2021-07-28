@@ -1,4 +1,7 @@
-include_directories(${CMAKE_SOURCE_DIR}/libksane)
+include_directories(
+    ${CMAKE_SOURCE_DIR}/libksane
+    ${CMAKE_BINARY_DIR}/libksane/libksane
+)
 
 set(skanlite_SRCS
     main.cpp

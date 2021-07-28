@@ -34,7 +34,9 @@
 #include <QObject>
 #include <QStringList>
 #include <QString>
-#include <QtCore/qvariant.h>
+#include <QVariant>
+#include <kdemacros.h>
+#include <kpluginfactory.h>
 
 namespace Kerfuffle
 {
@@ -134,5 +136,9 @@ public:
 };
 
 } // namespace Kerfuffle
+
+#define KERFUFFLE_EXPORT_PLUGIN(p) \
+    K_PLUGIN_FACTORY( ArkPluginFactory, registerPlugin< p >(); ) \
+    K_EXPORT_PLUGIN( ArkPluginFactory("p") )
 
 #endif // ARCHIVEINTERFACE_H

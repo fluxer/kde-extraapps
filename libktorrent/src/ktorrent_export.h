@@ -24,7 +24,7 @@
 #include <kdemacros.h>
 
 #ifndef KTORRENT_EXPORT
-# if defined(MAKE_KTORRENT_LIB) || defined(MAKE_KGET_BITTORRENTFACTORY_LIB)
+# if defined(ktorrent_EXPORTS) || defined(kget_bittorrentfactory_EXPORTS)
    /* We are building this library */ 
 #  define KTORRENT_EXPORT KDE_EXPORT
 # else

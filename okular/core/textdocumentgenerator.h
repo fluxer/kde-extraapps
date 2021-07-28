@@ -178,7 +178,7 @@ class OKULAR_EXPORT TextDocumentGenerator : public Generator, public Okular::Con
          * @note the generator will take ownership of the converter, so you
          *       don't have to delete it yourself
          */
-        KDE_DEPRECATED TextDocumentGenerator( TextDocumentConverter *converter, QObject *parent, const QVariantList &args );
+        OKULAR_DEPRECATED_EXPORT TextDocumentGenerator( TextDocumentConverter *converter, QObject *parent, const QVariantList &args );
         virtual ~TextDocumentGenerator();
 
         // [INHERITED] load a document and fill up the pagesVector

@@ -23,7 +23,12 @@ target_link_libraries(kerfuffle
     ${KDE4_KPTY_LIBS}
 )
 
-set_target_properties(kerfuffle PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+set_target_properties(kerfuffle PROPERTIES
+    VERSION ${GENERIC_LIB_VERSION}
+    SOVERSION ${GENERIC_LIB_SOVERSION}
+)
+
+generate_export_header(kerfuffle)
 
 install(TARGETS kerfuffle ${INSTALL_TARGETS_DEFAULT_ARGS})
 

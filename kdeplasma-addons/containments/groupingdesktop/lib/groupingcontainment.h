@@ -22,7 +22,7 @@
 
 #include <Plasma/Containment>
 
-#include "groupingcontainment_export.h"
+#include "plasma_groupingcontainment_export.h"
 
 class AbstractGroup;
 class GroupingContainmentPrivate;

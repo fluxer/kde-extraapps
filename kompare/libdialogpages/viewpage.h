@@ -20,7 +20,7 @@
 #define VIEWPAGE_H
 
 #include "pagebase.h"
-#include "dialogpagesexport.h"
+#include "komparedialogpages_export.h"
 
 #include <QFontComboBox>
 #include <QSpinBox>
@@ -30,7 +30,7 @@ class KTabWidget;
 
 class ViewSettings;
 
-class DIALOGPAGES_EXPORT ViewPage : public PageBase
+class KOMPAREDIALOGPAGES_EXPORT ViewPage : public PageBase
 {
 Q_OBJECT
 public:

@@ -48,6 +48,11 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_BINARY_DIR})
 
 set(SUPPORTED_ARK_MIMETYPES "")
 
+include_directories(
+    # for kerfuffle_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/kerfuffle
+)
+
 add_subdirectory(plugins)
 add_subdirectory(kerfuffle)
 add_subdirectory(part)

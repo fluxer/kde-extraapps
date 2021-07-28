@@ -1,6 +1,6 @@
 set(potd_engine_SRCS
-	cachedprovider.cpp
-	potd.cpp
+    cachedprovider.cpp
+    potd.cpp
 )
 
 kde4_add_plugin(plasma_engine_potd ${potd_engine_SRCS} )
@@ -13,11 +13,13 @@ install(FILES plasma-dataengine-potd.desktop DESTINATION ${KDE4_SERVICES_INSTALL
 ########### plugin core library ############
 
 set(potd_provider_core_SRCS
-	potdprovider.cpp
+    potdprovider.cpp
 )
 
-add_library( plasmapotdprovidercore SHARED ${potd_provider_core_SRCS} )
-target_link_libraries( plasmapotdprovidercore ${KDE4_KDEUI_LIBS} )
+add_library(plasmapotdprovidercore SHARED ${potd_provider_core_SRCS})
+target_link_libraries(plasmapotdprovidercore ${KDE4_KDEUI_LIBS})
+
+generate_export_header(plasmapotdprovidercore BASE_NAME plasma_potd)
 
 install( TARGETS plasmapotdprovidercore ${INSTALL_TARGETS_DEFAULT_ARGS} )
 install( FILES plasma_potdprovider.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR} )

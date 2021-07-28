@@ -1,5 +1,10 @@
 project(plasma-wallpaper-weather)
 
+include_directories(
+    # for plasmaweather_export.h
+    ${kdeplasma-addons_BINARY_DIR}/libs/plasmaweather
+)
+
 set(weather_SRCS
     weatherwallpaper.cpp
     backgrounddelegate.cpp

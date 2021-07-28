@@ -114,7 +114,7 @@ public:
     * @return 'true' if all goes well and 'false' if no device is open. */
     bool closeDevice();
     
-    KDE_DEPRECATED bool makeQImage(const QByteArray &, int, int, int, ImageFormat, QImage &);
+    LIBKSANE_DEPRECATED_EXPORT bool makeQImage(const QByteArray &, int, int, int, ImageFormat, QImage &);
      
     /**
      * This is a convenience method that can be used to create a QImage from the image data

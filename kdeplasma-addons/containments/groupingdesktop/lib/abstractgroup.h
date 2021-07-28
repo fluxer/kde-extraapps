@@ -25,7 +25,7 @@
 
 #include "groupinfo.h"
 #include "groupfactory_p.h"
-#include "groupingcontainment_export.h"
+#include "plasma_groupingcontainment_export.h"
 
 class KConfigGroup;
 

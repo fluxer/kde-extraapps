@@ -16,10 +16,12 @@ add_subdirectory( pics )
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/komparepart
+    ${CMAKE_CURRENT_BINARY_DIR}/libdialogpages
     ${CMAKE_CURRENT_SOURCE_DIR}/libdialogpages
     ${CMAKE_CURRENT_SOURCE_DIR}/interfaces
     ${CMAKE_CURRENT_SOURCE_DIR}/komparenavtreepart
     ${CMAKE_CURRENT_SOURCE_DIR}/komparepart
+    ${CMAKE_CURRENT_BINARY_DIR}/libkomparediff2
     ${CMAKE_CURRENT_SOURCE_DIR}/libkomparediff2
 )
 

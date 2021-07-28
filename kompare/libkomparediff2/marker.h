@@ -22,11 +22,11 @@
 #define MARKER_H
 
 #include <QList>
-#include "diff2export.h"
+#include "komparediff2_export.h"
 
 namespace Diff2 {
 
-class DIFF2_EXPORT Marker
+class KOMPAREDIFF2_EXPORT Marker
 {
 public:
     enum Type { Start = 0, End = 1 };

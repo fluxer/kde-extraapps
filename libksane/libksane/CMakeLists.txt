@@ -32,18 +32,21 @@ SET(ksane_LIB_SRCS
     options/ksane_opt_slider.cpp
     options/ksane_opt_fslider.cpp
     options/ksane_opt_combo.cpp
-    )
+)
 
 add_library(ksane SHARED ${ksane_LIB_SRCS})
 
-TARGET_LINK_LIBRARIES(ksane ${KDE4_KDEUI_LIBS}
-                            ${SANE_LIBRARY}
-                     )
+TARGET_LINK_LIBRARIES(ksane
+    ${KDE4_KDEUI_LIBS}
+    ${SANE_LIBRARY}
+)
 
 SET_TARGET_PROPERTIES(ksane PROPERTIES
     VERSION ${KSANE_LIB_SO_VERSION_STRING}
     SOVERSION ${KSANE_LIB_SO_CUR_VERSION}
 )
+
+generate_export_header(ksane BASE_NAME libksane)
 
 OPTION(COMPILE_VIEWER_TESTAPP "Compile a small test application for the viewer")
 
@@ -64,7 +67,7 @@ CONFIGURE_FILE(
 INSTALL(
     FILES
     ksane.h
-    libksane_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/libksane_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/version.h
     DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libksane
     COMPONENT Devel

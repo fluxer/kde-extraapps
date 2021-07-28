@@ -1,5 +1,10 @@
 
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../libdiff2 ${CMAKE_CURRENT_SOURCE_DIR}/../komparepart ${CMAKE_CURRENT_SOURCE_DIR}/../libkomparediff2 )
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../libdiff2
+    ${CMAKE_CURRENT_SOURCE_DIR}/../komparepart
+    ${CMAKE_CURRENT_BINARY_DIR}/../libkomparediff2
+    ${CMAKE_CURRENT_SOURCE_DIR}/../libkomparediff2
+)
 
 
 ########### next target ###############
