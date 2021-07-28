@@ -17,9 +17,6 @@ target_link_libraries(okular-searchtest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY}
 kde4_add_test(okular-annotationstest annotationstest.cpp )
 target_link_libraries(okular-annotationstest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} okularcore )
 
-kde4_add_test(okular-urldetecttest urldetecttest.cpp )
-target_link_libraries(okular-urldetecttest ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY} )
-
 kde4_add_test(okular-editannotationcontentstest editannotationcontentstest.cpp testingutils.cpp)
 target_link_libraries(okular-editannotationcontentstest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} ${QT_QTXML_LIBRARY} okularcore )
 

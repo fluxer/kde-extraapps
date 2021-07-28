@@ -82,7 +82,6 @@
 #include "core/tile.h"
 #include "settings.h"
 #include "settings_core.h"
-#include "url_utils.h"
 #include "magnifierview.h"
 
 static int pageflags = PagePainter::Accessibility | PagePainter::EnhanceLinks |
@@ -2814,10 +2813,10 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                         {
                             addWebShortcutsMenu( &menu, d->selectedText() );
                         }
-                        const QString url = UrlUtils::getUrl( d->selectedText() );
-                        if ( !url.isEmpty() )
+                        const KUrl url = KUrl::fromUserInput( d->selectedText() );
+                        if ( url.isValid() )
                         {
-                            const QString squeezedText = KStringHandler::rsqueeze( url, 30 );
+                            const QString squeezedText = KStringHandler::rsqueeze( url.prettyUrl(), 30 );
                             httpLink = menu.addAction( i18n( "Go to '%1'", squeezedText ) );
                         }
                         QAction *choice = menu.exec( e->globalPos() );
@@ -2832,7 +2831,7 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                                 d->tts()->say( text );
                             }
                             else if ( choice == httpLink )
-                                new KRun( KUrl( url ), this );
+                                new KRun( url, this );
                         }
                     }
                 }
