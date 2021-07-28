@@ -74,7 +74,7 @@ protected:
     void setWind(const QString& speed, const QString& direction);
     void setPressure(const QString& condition, const QString& pressure,
                      const QString& tendency);
-    void setTemperature(const QString& temperature, bool hasDigit);
+    void setTemperature(const QString& temperature);
     void setHumidity(QString humidity);
     void setToolTip(const QString& place);
 

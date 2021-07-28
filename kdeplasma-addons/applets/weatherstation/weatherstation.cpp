@@ -156,7 +156,7 @@ QString WeatherStation::tempValue(const QString& value, int unit)
     KTemperature temp(value.toDouble(), static_cast<KTemperature::KTempUnit>(unit));
     KTemperature totemp(0.0, temperatureUnit());
     const double tempvalue = temp.convertTo(totemp.unitEnum());
-    return KTemperature(KTemperature::round(tempvalue, 1), totemp.unitEnum()).toString();
+    return QString::number(KUnitConversion::round(tempvalue, 1));
 }
 
 QString WeatherStation::presValue(const QString& value, int unit)
@@ -167,7 +167,7 @@ QString WeatherStation::presValue(const QString& value, int unit)
     KPressure pres(value.toDouble(), static_cast<KPressure::KPresUnit>(unit));
     KPressure topres(0.0, pressureUnit());
     const double presvalue = pres.convertTo(topres.unitEnum());
-    return KPressure(KPressure::round(presvalue, 1), topres.unitEnum()).toString();
+    return QString::number(KUnitConversion::round(presvalue, 1));
 }
 
 QString WeatherStation::veloValue(const QString& value, int unit)
@@ -178,7 +178,7 @@ QString WeatherStation::veloValue(const QString& value, int unit)
     KVelocity velo(value.toDouble(), static_cast<KVelocity::KVeloUnit>(unit));
     KVelocity tovelo(0.0, speedUnit());
     const double velovalue = velo.convertTo(tovelo.unitEnum());
-    return KVelocity(KVelocity::round(velovalue, 1), tovelo.unitEnum()).toString();
+    return QString::number(KUnitConversion::round(velovalue, 1));
 }
 
 void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine::Data &data)
@@ -190,7 +190,7 @@ void WeatherStation::dataUpdated(const QString& source, const Plasma::DataEngine
 
     QString v = data["Temperature"].toString();
     QString temp = tempValue(v, data["Temperature Unit"].toInt());
-    setTemperature(temp, (v.indexOf('.') > -1));
+    setTemperature(temp);
 
     setPressure(conditionIcon(), presValue(data["Pressure"].toString(),
                 data["Pressure Unit"].toInt()),
@@ -278,7 +278,7 @@ void WeatherStation::setPressure(const QString& condition, const QString& pressu
     emit pressureChanged(currentCondition, pressure, pressureUnit(), direction);
 }
 
-void WeatherStation::setTemperature(const QString& temperature, bool hasDigit)
+void WeatherStation::setTemperature(const QString& temperature)
 {
     m_lcdPanel->setLabel("temperature-unit-label", temperatureUnit());
     m_lcdPanel->setNumber("temperature", temperature);
