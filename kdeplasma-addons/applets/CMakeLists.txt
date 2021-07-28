@@ -28,7 +28,6 @@ add_subdirectory(dict)
 add_subdirectory(incomingmsg)
 add_subdirectory(showdesktop)
 add_subdirectory(paste)
-add_subdirectory(plasmaboard)
 add_subdirectory(systemloadviewer)
 
 if(KDE4WORKSPACE_FOUND)
