@@ -149,7 +149,7 @@ private slots:
 					outgoing[i]->prepare(&poller,net::Poll::OUTPUT);
 			}
 				
-			QVERIFY(poller.poll(1000) > 0);
+			QVERIFY(poller.poll(3000) > 0);
 			for (int i = 0;i < NUM_SOCKETS;i++)
 			{
 				if (bs.get(i) || !outgoing[i]->ready(&poller,net::Poll::OUTPUT))
