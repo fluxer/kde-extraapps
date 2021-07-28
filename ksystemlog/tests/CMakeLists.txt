@@ -1,10 +1,10 @@
 include_directories( 
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_BINARY_DIR}/src
-    ${CMAKE_SOURCE_DIR}/src/lib
-    ${CMAKE_SOURCE_DIR}/src/modes/system
-    ${CMAKE_SOURCE_DIR}/src/modes/kernel
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src
+    ${CMAKE_CURRENT_BINARY_DIR}/../src
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src/lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src/modes/system
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src/modes/kernel
 )
 
 macro(ksystemlog_unit_tests)

@@ -14,6 +14,12 @@ include(CheckFunctionExists)
 include(CheckLibraryExists)
 include(CheckTypeSize)
 
+
+if(ENABLE_TESTING)
+    set(CMAKE_C_VISIBILITY_PRESET "default")
+    set(CMAKE_CXX_VISIBILITY_PRESET "default")
+endif()
+
 ########### Subfolders ##########
 
 add_subdirectory(src)

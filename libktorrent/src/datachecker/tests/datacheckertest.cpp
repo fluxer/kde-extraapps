@@ -1,7 +1,6 @@
 #include <unistd.h>
 #include <time.h>
 
-#define QT_GUI_LIB
 #include <QtTest>
 #include <QEventLoop>
 #include <KLocale>

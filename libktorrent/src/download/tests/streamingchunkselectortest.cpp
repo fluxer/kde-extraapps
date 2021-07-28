@@ -1,5 +1,3 @@
-#define QT_GUI_LIB
-
 #include <time.h>
 #include <QtTest>
 #include <KGlobal>

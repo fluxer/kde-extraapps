@@ -1,5 +1,3 @@
-#define QT_GUI_LIB
-
 #include <QtTest>
 #include <QObject>
 #include <QFile>
