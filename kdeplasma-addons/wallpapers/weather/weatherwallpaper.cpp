@@ -325,7 +325,6 @@ void WeatherWallpaper::showAdvancedDialog()
                 this, SLOT(positioningChanged(int)));
 
         m_advancedUi.m_color->setColor(m_color);
-        m_advancedUi.m_newStuff->setIcon(KIcon(QLatin1String( "get-hot-new-stuff" )));
         connect(m_advancedUi.m_color, SIGNAL(changed(QColor)), this, SLOT(colorChanged(QColor)));
     }
     KDialog::centerOnScreen(m_advancedDialog);

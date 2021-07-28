@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>384</width>
-    <height>198</height>
+    <width>283</width>
+    <height>187</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -71,16 +71,6 @@
            </property>
            <property name="text">
             <string>...</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="m_newStuff">
-           <property name="toolTip">
-            <string>Download new wallpapers</string>
-           </property>
-           <property name="text">
-            <string>Get New Wallpapers...</string>
            </property>
           </widget>
          </item>
