@@ -58,12 +58,6 @@ ENDIF()
 
 INSTALL(TARGETS ksane ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-CONFIGURE_FILE(
-    ../cmake/templates/KSaneConfig.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake
-    @ONLY
-)
-
 INSTALL(
     FILES
     ksane.h
@@ -71,23 +65,6 @@ INSTALL(
     ${CMAKE_CURRENT_BINARY_DIR}/version.h
     DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/libksane
     COMPONENT Devel
-)
-
-CONFIGURE_FILE(
-    ${PROJECT_SOURCE_DIR}/cmake/templates/libksane.pc.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc
-)
-INSTALL(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/libksane.pc
-    DESTINATION ${KDE4_LIB_INSTALL_DIR}/pkgconfig
-)
-
-# Install find cmake script to the system for client applications.
-
-INSTALL(
-    FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/KSaneConfig.cmake
-    DESTINATION ${KDE4_LIB_INSTALL_DIR}/cmake/KSane
 )
 
 KDE4_INSTALL_ICONS(${KDE4_ICON_INSTALL_DIR})

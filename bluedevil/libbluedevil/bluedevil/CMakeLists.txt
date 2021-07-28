@@ -45,6 +45,3 @@ install(
     ${CMAKE_CURRENT_BINARY_DIR}/bluedevil_export.h
     DESTINATION include/bluedevil
 )
-
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/bluedevil.pc.in ${CMAKE_CURRENT_BINARY_DIR}/bluedevil.pc @ONLY)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/bluedevil.pc DESTINATION ${KDE4_LIB_INSTALL_DIR}/pkgconfig)
