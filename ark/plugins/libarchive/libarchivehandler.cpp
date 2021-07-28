@@ -646,6 +646,9 @@ void LibArchiveInterface::emitEntryFromArchiveEntry(struct archive_entry *aentry
 
     e[Size] = (qlonglong)archive_entry_size(aentry);
     e[IsDirectory] = S_ISDIR(archive_entry_mode(aentry));
+#if ARCHIVE_VERSION_NUMBER >= 3002000
+    e[IsPasswordProtected] = archive_entry_is_encrypted(aentry);
+#endif
 
     if (archive_entry_symlink(aentry)) {
         e[Link] = QString::fromAscii( archive_entry_symlink(aentry) );
