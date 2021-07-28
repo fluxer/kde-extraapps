@@ -51,7 +51,7 @@ namespace bt
 		 * @param len The length
 		 * @return The SHA1 hash
 		 */
-		SHA1Hash generate(const Uint8* data,Uint32 len);
+		static SHA1Hash generate(const Uint8* data,Uint32 len);
 		
 		/**
 		 * Start SHA1 hash generation in chunks.

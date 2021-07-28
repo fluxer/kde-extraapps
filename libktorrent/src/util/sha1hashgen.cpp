@@ -39,8 +39,9 @@ namespace bt
 
 	SHA1Hash SHA1HashGen::generate(const Uint8* data,Uint32 len)
 	{
-		h->addData((const char*)data,len);
-		return SHA1Hash((const bt::Uint8*)h->result().constData());
+		QCryptographicHash hash(QCryptographicHash::Sha1);
+		hash.addData((const char*)data,len);
+		return SHA1Hash((const bt::Uint8*)hash.result().constData());
 	}
 	
 	void SHA1HashGen::start()
