@@ -335,6 +335,9 @@ void WeatherWallpaper::showAdvancedDialog()
 void WeatherWallpaper::colorChanged(const QColor& color)
 {
     m_color = color;
+
+    emit settingsChanged(true);
+
     loadImage();
 }
 
@@ -358,6 +361,8 @@ void WeatherWallpaper::pictureChanged(int index)
         m_weatherMap[conditionIndexValue] = b->path();
     }
 
+    emit settingsChanged(true);
+
     loadImage();
 }
 
@@ -377,6 +382,8 @@ void WeatherWallpaper::conditionChanged(int index)
             fillMetaInfo(b);
         }
     }
+
+    emit settingsChanged(true);
 }
 
 void WeatherWallpaper::positioningChanged(int index)
@@ -389,6 +396,8 @@ void WeatherWallpaper::positioningChanged(int index)
     if (m_model) {
         m_model->setResizeMethod(m_resizeMethod);
     }
+
+    emit settingsChanged(true);
 }
 
 void WeatherWallpaper::fillMetaInfo(Plasma::Package *b)
