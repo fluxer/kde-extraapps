@@ -185,7 +185,6 @@ QVariant BackgroundListModel::data(const QModelIndex &index, int role) const
 
         return title;
     }
-    break;
 
     case BackgroundDelegate::ScreenshotRole: {
         if (m_previews.contains(b)) {
@@ -212,11 +211,9 @@ QVariant BackgroundListModel::data(const QModelIndex &index, int role) const
         const_cast<BackgroundListModel *>(this)->m_previews.insert(b, pix);
         return pix;
     }
-    break;
 
     case BackgroundDelegate::AuthorRole:
         return b->metadata().author();
-    break;
 
     case BackgroundDelegate::ResolutionRole:{
         QSize size = bestSize(b);
@@ -227,12 +224,12 @@ QVariant BackgroundListModel::data(const QModelIndex &index, int role) const
 
         return QString();
     }
-    break;
 
     default:
         return QVariant();
-    break;
     }
+
+    return QVariant();
 }
 
 void BackgroundListModel::showPreview(const KFileItem &item, const QPixmap &preview)
