@@ -27,7 +27,6 @@
 #include <QPropertyAnimation>
 
 // KDE includes
-#include <KDebug>
 #include <KFileDialog>
 #include <KLocalizedString>
 #include <KPushButton>
@@ -589,18 +588,7 @@ void WeatherWallpaper::dataUpdated(const QString &source, const Plasma::DataEngi
         return;
     }
 
-    m_condition = data[QLatin1String("Condition Icon")].toString();
-    // qDebug() << Q_FUNC_INFO << source << m_condition;
-    if (m_condition.isEmpty() || m_condition == QLatin1String("weather-none-available")) {
-        const QString todayforecast = data[QLatin1String("Short Forecast Day 0")].toString();
-        const QStringList splitforecast = todayforecast.split(QLatin1Char('|'));
-        if (splitforecast.size() == 6) {
-            m_condition = splitforecast.at(1);
-        } else if (!splitforecast.isEmpty()) {
-            kWarning() << "forecast data has changed";
-        }
-        // qDebug() << Q_FUNC_INFO << splitforecast << m_condition;
-    }
+    m_condition = data[QLatin1String( "Condition Icon" )].toString();
 
     loadImage();
 }
