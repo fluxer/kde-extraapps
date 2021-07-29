@@ -75,12 +75,12 @@ protected slots:
     void configWidgetDestroyed();
     void advancedDialogDestroyed();
     void locationReady(const QString &source);
+    void calculateGeometry();
 
 protected:
     void init(const KConfigGroup & config);
     void fillMetaInfo(Plasma::Package *b);
     bool setMetadata(QLabel *label, const QString &text);
-    void calculateGeometry();
     void renderWallpaper(const QString& image = QString());
 
 private slots:

@@ -54,6 +54,7 @@ WeatherWallpaper::WeatherWallpaper(QObject * parent, const QVariantList & args )
     , m_animation(0)
     , m_model(0)
 {
+    connect(this, SIGNAL(renderHintsChanged()), this, SLOT(calculateGeometry()));
     connect(this, SIGNAL(renderCompleted(QImage)), this, SLOT(updateBackground(QImage)));
 }
 
