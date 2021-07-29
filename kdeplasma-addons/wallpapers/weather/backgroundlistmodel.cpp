@@ -263,7 +263,7 @@ void BackgroundListModel::initProgressDialog(KProgressDialog *progress)
 {
     progress->setAllowCancel(false);
     progress->setModal(true);
-    progress->setLabelText(i18n("Finding images for the wallpaper slideshow."));
+    progress->setLabelText(i18n("Finding images for the weather wallpaper."));
     progress->progressBar()->setRange(0, 0);
 }
 
@@ -287,12 +287,12 @@ QList<Plasma::Package *> BackgroundListModel::findAllBackgrounds(Plasma::Wallpap
     QSet<QString> validPackages;
     foreach (const QString &packagePath, packages) {
         QCoreApplication::processEvents();
-        progress->setLabelText(i18n("Finding images for the wallpaper slideshow.") + QLatin1String( "\n\n" ) +
+        progress->setLabelText(i18n("Finding images for the weather wallpaper.") + QLatin1String("\n\n") +
                                i18n("Testing %1 for a Wallpaper package", packagePath));
         Plasma::PackageStructure::Ptr structure = Plasma::Wallpaper::packageStructure(structureParent);
         Plasma::Package *pkg = new Plasma::Package(path + packagePath, structure);
         if (pkg->isValid() && (!container || !container->contains(pkg->path()))) {
-            progress->setLabelText(i18n("Finding images for the wallpaper slideshow.") + QLatin1String( "\n\n" ) +
+            progress->setLabelText(i18n("Finding images for the weather wallpaper.") + QLatin1String("\n\n") +
                                    i18n("Adding wallpaper package in %1", packagePath));
             res.append(pkg);
             //kDebug() << "    adding valid package:" << packagePath;
@@ -314,7 +314,7 @@ QList<Plasma::Package *> BackgroundListModel::findAllBackgrounds(Plasma::Wallpap
         QCoreApplication::processEvents();
         if (!container || !container->contains(wp.filePath())) {
             //kDebug() << "     adding image file" << wp.filePath();
-            progress->setLabelText(i18n("Finding images for the wallpaper slideshow.") + QLatin1String( "\n\n" ) +
+            progress->setLabelText(i18n("Finding images for the weather wallpaper.") + QLatin1String("\n\n") +
                                    i18n("Adding image %1", wp.filePath()));
             Plasma::PackageStructure::Ptr structure = Plasma::Wallpaper::packageStructure(structureParent);
             res.append(new Plasma::Package(wp.filePath(), structure));
