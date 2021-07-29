@@ -31,7 +31,6 @@ BackgroundListModel::BackgroundListModel(float ratio, Plasma::Wallpaper *listene
       m_listener(listener),
       m_structureParent(listener),
       m_ratio(ratio),
-      m_size(0,0),
       m_resizeMethod(Plasma::Wallpaper::ScaledResize)
 {
     connect(&m_dirwatch, SIGNAL(deleted(QString)), this, SLOT(removeBackground(QString)));
@@ -339,11 +338,6 @@ QList<Plasma::Package *> BackgroundListModel::findAllBackgrounds(Plasma::Wallpap
     //kDebug() << "completed.";
     delete myProgress;
     return res;
-}
-
-void BackgroundListModel::setWallpaperSize(QSize size)
-{
-    m_size = size;
 }
 
 void BackgroundListModel::setResizeMethod(Plasma::Wallpaper::ResizeMethod resizeMethod)

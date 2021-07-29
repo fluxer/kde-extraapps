@@ -49,7 +49,6 @@ public:
                                                        KProgressDialog *progress = 0);
     static void initProgressDialog(KProgressDialog *dialog);
 
-    void setWallpaperSize(QSize size);
     void setResizeMethod(Plasma::Wallpaper::ResizeMethod resizeMethod);
 
 protected Q_SLOTS:
@@ -69,7 +68,6 @@ private:
     float m_ratio;
     KDirWatch m_dirwatch;
 
-    QSize m_size;
     Plasma::Wallpaper::ResizeMethod m_resizeMethod;
 };
 

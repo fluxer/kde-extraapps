@@ -274,7 +274,6 @@ void WeatherWallpaper::showAdvancedDialog()
         qreal ratio = m_size.isEmpty() ? 1.0 : m_size.width() / qreal(m_size.height());
         m_model = new BackgroundListModel(ratio, this, m_advancedDialog);
         m_model->setResizeMethod(m_resizeMethod);
-        m_model->setWallpaperSize(m_size);
         m_model->reload(m_usersWallpapers);
         m_advancedUi.m_wallpaperView->setModel(m_model);
         m_advancedUi.m_wallpaperView->setItemDelegate(new BackgroundDelegate(m_advancedUi.m_wallpaperView->view(),
