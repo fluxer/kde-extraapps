@@ -26,9 +26,9 @@ build_script:
         libgcrypt20-dev libgettextpo-dev libglib2.0-dev libgmp-dev libmms-dev \
         libhunspell-dev libjpeg-dev libpng-dev libparted-dev libqalculate-dev \
         libsane-dev libspectre-dev libspeechd-dev libswscale-dev libtag1-dev \
-        uuid-dev libudev-dev libscim-dev libvncserver-dev libxcb-randr0-dev \
-        freerdp2-dev libibus-1.0-dev libboost-dev libffmpegthumbnailer-dev \
-        libbz2-dev xsltproc libdbusmenu-katie libpoppler-katie ccache
+        uuid-dev libudev-dev libvncserver-dev libxcb-randr0-dev freerdp2-dev \
+        libboost-dev libffmpegthumbnailer-dev libbz2-dev xsltproc \
+        libdbusmenu-katie libpoppler-katie ccache
 
     export PATH="/usr/lib/ccache/:$PATH"
 
