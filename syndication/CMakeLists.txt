@@ -28,7 +28,7 @@ set(librss2local_SRCS
     rss2/source.cpp
     rss2/textinput.cpp
     rss2/tools_p.cpp
-	)
+)
 
 
 set(librdflocal_la_SRCS
