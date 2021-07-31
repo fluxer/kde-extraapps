@@ -38,9 +38,6 @@
 #include "utpserverthread.h"
 #include "utpsocket.h"
 
-#ifdef Q_WS_WIN
-#include <util/win32.h>
-#endif
 
 
 using namespace bt;

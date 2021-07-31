@@ -20,9 +20,7 @@
  ***************************************************************************/
 #include <KLocale>
 #include <util/log.h>
-#ifndef Q_WS_WIN
 #include <util/signalcatcher.h>
-#endif
 #include "piecedata.h"
 #include "chunk.h"
 #include <util/file.h>
@@ -68,9 +66,7 @@ namespace bt
 		if(read_only)
 			throw bt::Error(i18n("Unable to write to a piece mapped read only"));
 
-#ifndef Q_WS_WIN
 		BUS_ERROR_WPROTECT();
-#endif
 		memcpy(ptr + off, buf, buf_size);
 		return buf_size;
 	}
@@ -81,9 +77,7 @@ namespace bt
 		if(off + to_read > len || !ptr)
 			return 0;
 
-#ifndef Q_WS_WIN
 		BUS_ERROR_RPROTECT();
-#endif
 		memcpy(buf, ptr + off, to_read);
 		return to_read;
 	}
@@ -93,9 +87,7 @@ namespace bt
 		if(off + size > len || !ptr)
 			return 0;
 
-#ifndef Q_WS_WIN
 		BUS_ERROR_RPROTECT();
-#endif
 		return file.write(ptr + off, size);
 	}
 
@@ -107,9 +99,7 @@ namespace bt
 		if(read_only)
 			throw bt::Error(i18n("Unable to write to a piece mapped read only"));
 
-#ifndef Q_WS_WIN
 		BUS_ERROR_WPROTECT();
-#endif
 		return file.read(ptr + off, size);
 	}
 
@@ -118,9 +108,7 @@ namespace bt
 		if(!ptr)
 			return;
 
-#ifndef Q_WS_WIN
 		BUS_ERROR_RPROTECT();
-#endif
 		hg.update(ptr, len);
 	}
 
@@ -129,9 +117,7 @@ namespace bt
 		if(!ptr)
 			return SHA1Hash();
 
-#ifndef Q_WS_WIN
 		BUS_ERROR_RPROTECT();
-#endif
 		return SHA1Hash::generate(ptr, len);
 	}
 

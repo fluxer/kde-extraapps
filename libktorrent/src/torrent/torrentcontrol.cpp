@@ -290,7 +290,6 @@ namespace bt
 			if (moveCompleted)
 				moveToCompletedDir();
 		}
-#ifndef Q_WS_WIN
 		catch (BusError & e)
 		{
 			Out(SYS_DIO | LOG_IMPORTANT) << "Caught SIGBUS " << endl;
@@ -299,7 +298,6 @@ namespace bt
 			else
 				onIOError(i18n("Error writing to disk, do you have enough diskspace?"));
 		}
-#endif
 		catch (Error & e)
 		{
 			onIOError(e.toString());

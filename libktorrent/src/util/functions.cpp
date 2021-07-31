@@ -274,23 +274,6 @@ namespace bt
 		}
 	}
 
-#ifdef Q_WS_WIN
-	static bool InitWindowsSocketsAPI()
-	{
-		static bool initialized = false;
-		if (initialized)
-			return true;
-
-		WSADATA wsaData;
-		WORD wVersionRequested = MAKEWORD(2, 2);
-		int err = WSAStartup( wVersionRequested, &wsaData );
-		if (err != 0) 
-			return false;
-
-		initialized = true;
-		return true;
-	}
-#endif
 
 	static bool InitGCrypt()
 	{
@@ -321,9 +304,6 @@ namespace bt
 	{
 		MaximizeLimits();
 		bool ret = InitGCrypt();
-#ifdef Q_WS_WIN
-		ret = InitWindowsSocketsAPI() && ret;
-#endif
 		return ret;
 	}
 

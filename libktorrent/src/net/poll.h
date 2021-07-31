@@ -27,9 +27,6 @@
 #include <util/constants.h>
 #include <ktorrent_export.h>
 
-#ifdef Q_WS_WIN
-#include <util/win32.h>
-#endif
 
 struct pollfd;
 

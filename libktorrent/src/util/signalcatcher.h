@@ -21,7 +21,6 @@
 #ifndef BT_SIGNALCATCHER_H
 #define BT_SIGNALCATCHER_H
 
-#ifndef Q_WS_WIN
 
 #include <ktorrent_export.h>
 #include <signal.h>
@@ -99,6 +98,5 @@ namespace bt
 /// Before reading from memory mapped data, call this macro to ensure that SIGBUS signals are caught and properly dealt with
 #define BUS_ERROR_RPROTECT() BusErrorGuard bus_error_guard; if (sigsetjmp(bt::sigbus_env, 1)) throw bt::BusError(false)
 
-#endif
 
 #endif // BT_SIGNALCATCHER_H

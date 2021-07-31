@@ -22,10 +22,8 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#ifndef Q_WS_WIN
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
-#endif
 #include <arpa/inet.h>
 #include <QStringList>
 #include <QFile>
@@ -260,11 +258,7 @@ namespace bt
 		inet_aton("239.255.255.250",&mreq.imr_multiaddr);
 		mreq.imr_interface.s_addr = htonl(INADDR_ANY);
 		
-#ifndef Q_WS_WIN
 		if (setsockopt(fd,IPPROTO_IP,IP_ADD_MEMBERSHIP,&mreq,sizeof(struct ip_mreq)) < 0)
-#else
-		if (setsockopt(fd,IPPROTO_IP,IP_ADD_MEMBERSHIP,(char *)&mreq,sizeof(struct ip_mreq)) < 0)
-#endif
 		{
 			Out(SYS_PNP|LOG_NOTICE) << "Failed to join multicast group 239.255.255.250" << endl; 
 		} 
@@ -278,11 +272,7 @@ namespace bt
 		inet_aton("239.255.255.250",&mreq.imr_multiaddr);
 		mreq.imr_interface.s_addr = htonl(INADDR_ANY);
 		
-#ifndef Q_WS_WIN
 		if (setsockopt(fd,IPPROTO_IP,IP_DROP_MEMBERSHIP,&mreq,sizeof(struct ip_mreq)) < 0)
-#else
-		if (setsockopt(fd,IPPROTO_IP,IP_DROP_MEMBERSHIP,(char *)&mreq,sizeof(struct ip_mreq)) < 0)
-#endif
 		{
 			Out(SYS_PNP|LOG_NOTICE) << "Failed to leave multicast group 239.255.255.250" << endl; 
 		} 

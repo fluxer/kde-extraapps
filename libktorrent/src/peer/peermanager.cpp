@@ -144,11 +144,7 @@ namespace bt
 
 	void PeerManager::setMaxTotalConnections(Uint32 max)
 	{
-#ifndef Q_WS_WIN
 		Uint32 sys_max = bt::MaxOpenFiles() - 50; // leave about 50 free for regular files
-#else
-		Uint32 sys_max = 9999; // there isn't a real limit on windows
-#endif
 		max_total_connections = max;
 		if(max == 0 || max_total_connections > sys_max)
 			max_total_connections = sys_max;

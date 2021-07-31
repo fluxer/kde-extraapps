@@ -21,11 +21,7 @@
 #include "poll.h"
 #include <util/log.h>
 
-#ifndef Q_WS_WIN
 #include <sys/poll.h>
-#else
-#include <util/win32.h>
-#endif
 
 using namespace bt;
 
@@ -95,11 +91,7 @@ namespace net
 			return 0;
 		
 		int ret = 0;
-#ifndef Q_WS_WIN
 		ret = ::poll(&fd_vec[0],num_sockets,timeout);
-#else
-		ret = ::mingw_poll(&fd_vec[0],num_sockets,timeout);
-#endif
 		
 		std::map<int,PollClient::Ptr>::iterator itr = poll_clients.begin();
 		while (itr != poll_clients.end())

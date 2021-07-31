@@ -23,7 +23,6 @@
 #include "signalcatcher.h"
 #include "log.h"
 
-#ifndef Q_WS_WIN
 
 namespace bt
 {
@@ -139,4 +138,3 @@ namespace bt
 
 }
 
-#endif

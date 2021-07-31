@@ -22,9 +22,7 @@
 #include "chunk.h"
 #include "cache.h"
 #include "piecedata.h"
-#ifndef Q_WS_WIN
 #include <util/signalcatcher.h>
-#endif
 
 namespace bt
 {

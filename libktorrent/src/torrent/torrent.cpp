@@ -40,19 +40,10 @@ namespace bt
 	static QString SanityzeName(const QString & name)
 	{
 		QString ret = name;
-#ifdef Q_WS_WIN
-		char invalid[] = {'<','>',':','"','/','\\','|','?','*'};
-		for (int i = 0;i < 9;i++)
-		{
-			if (ret.contains(invalid[i]))
-				ret = ret.replace(invalid[i],'_');
-		}
-#else
 		if (ret.endsWith("/"))
 			ret = ret.left(ret.length() - 1);
 		if (ret.startsWith("/"))
 			ret = ret.mid(1);
-#endif
 		// Don't allow directory traversal things in names
 		if (ret.contains("/") || ret.contains(".."))
 		{

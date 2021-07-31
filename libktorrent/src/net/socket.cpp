@@ -47,12 +47,6 @@
 
 #include <util/log.h>
 
-#ifdef Q_WS_WIN
-#include <util/win32.h>
-#define SHUT_RDWR SD_BOTH
-#undef errno
-#define errno WSAGetLastError()
-#endif
 #include <kdebug.h>
 using namespace bt;
 
@@ -102,11 +96,7 @@ namespace net
 		if (m_fd >= 0)
 		{
 			shutdown(m_fd, SHUT_RDWR);
-#ifdef Q_WS_WIN
-			::closesocket(m_fd);
-#else
 			::close(m_fd);
-#endif
 		}
 	}
 	
@@ -133,11 +123,7 @@ namespace net
 		if (m_fd >= 0)
 		{
 			shutdown(m_fd, SHUT_RDWR);
-#ifdef Q_WS_WIN
-			::closesocket(m_fd);
-#else
 			::close(m_fd);
-#endif
 			m_fd = -1;
 			m_state = CLOSED;
 		}
@@ -145,16 +131,11 @@ namespace net
 	
 	void Socket::setBlocking(bool on)
 	{
-#ifndef Q_WS_WIN
 		int flag = fcntl(m_fd, F_GETFL, 0);
 		if (!on)
 			fcntl(m_fd, F_SETFL, flag | O_NONBLOCK);
 		else
 			fcntl(m_fd, F_SETFL, flag & ~O_NONBLOCK);
-#else
-		u_long b = on ? 1 : 0;
-		ioctlsocket(m_fd, FIONBIO, &b);
-#endif
 	}
 		
 	bool Socket::connectTo(const Address & a)
@@ -164,11 +145,7 @@ namespace net
 		a.toSocketAddress(&ss, len);
 		if (::connect(m_fd,(struct sockaddr*)&ss,len) < 0)
 		{
-#ifndef Q_WS_WIN
 			if (errno == EINPROGRESS)
-#else
-			if (errno == WSAEINVAL || errno == WSAEALREADY || errno == WSAEWOULDBLOCK)
-#endif
 			{
 			//	Out(SYS_CON|LOG_DEBUG) << "Socket is connecting" << endl;
 				m_state = CONNECTING;
@@ -194,11 +171,7 @@ namespace net
 	bool Socket::bind(const net::Address& addr, bool also_listen)
 	{
 		int val = 1;
-#ifndef Q_WS_WIN
 		if (setsockopt(m_fd,SOL_SOCKET,SO_REUSEADDR,&val,sizeof(int)) < 0)
-#else
-		if (setsockopt(m_fd,SOL_SOCKET,SO_REUSEADDR,(char *)&val,sizeof(int)) < 0)
-#endif 
 		{
 			Out(SYS_CON|LOG_NOTICE) << QString("Failed to set the reuseaddr option : %1").arg(strerror(errno)) << endl;
 		}
@@ -230,11 +203,7 @@ namespace net
 
 	int Socket::send(const bt::Uint8* buf,int len)
 	{
-#ifndef Q_WS_WIN        
 		int ret = ::send(m_fd,buf,len,MSG_NOSIGNAL);
-#else
-		int ret = ::send(m_fd,(char *)buf,len,MSG_NOSIGNAL);
-#endif
 		if (ret < 0)
 		{
 			if (errno != EAGAIN && errno != EWOULDBLOCK)
@@ -249,11 +218,7 @@ namespace net
 	
 	int Socket::recv(bt::Uint8* buf,int max_len)
 	{
-#ifndef Q_WS_WIN
 		int ret = ::recv(m_fd,buf,max_len,0);
-#else
-		int ret = ::recv(m_fd,(char *)buf,max_len,0);
-#endif
 		if (ret < 0)
 		{
 			if (errno != EAGAIN && errno != EWOULDBLOCK)
@@ -296,11 +261,7 @@ namespace net
 	{
 		struct sockaddr_storage ss;
 		socklen_t slen = sizeof(ss);
-#ifndef Q_WS_WIN
 		int ret = ::recvfrom(m_fd,buf,max_len,0,(struct sockaddr*)&ss,&slen);
-#else
-		int ret = ::recvfrom(m_fd,(char *)buf,max_len,0,(struct sockaddr*)&ss,&slen);
-#endif
 		if (ret < 0)
 		{
 			Out(SYS_CON|LOG_DEBUG) << "Receive error : " << QString(strerror(errno)) << endl;
@@ -340,11 +301,7 @@ namespace net
 #else
 			unsigned char c = type_of_service;
 #endif
-#ifndef Q_WS_WIN
 			if (setsockopt(m_fd,IPPROTO_IP,IP_TOS,&c,sizeof(c)) < 0)
-#else
-			if (setsockopt(m_fd,IPPROTO_IP,IP_TOS,(char *)&c,sizeof(c)) < 0)
-#endif
 			{
 				Out(SYS_CON|LOG_NOTICE) << QString("Failed to set TOS to %1 : %2")
 						.arg((int)type_of_service).arg(strerror(errno)) << endl;
@@ -370,11 +327,7 @@ namespace net
 	Uint32 Socket::bytesAvailable() const
 	{
 		int ret = 0;
-#ifndef Q_WS_WIN		
 		if (ioctl(m_fd,FIONREAD,&ret) < 0)
-#else
-		if (ioctlsocket(m_fd,FIONREAD,(u_long*)&ret) < 0)
-#endif
 			return 0;
 		
 		return ret;
@@ -387,11 +340,7 @@ namespace net
 		
 		int err = 0;
 		socklen_t len = sizeof(int);
-#ifndef Q_WS_WIN
 		if (getsockopt(m_fd,SOL_SOCKET,SO_ERROR,&err,&len) < 0)
-#else
-		if (getsockopt(m_fd,SOL_SOCKET,SO_ERROR,(char *)&err,&len) < 0)
-#endif
 			return false;
 		
 		if (err == 0)

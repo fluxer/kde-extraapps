@@ -155,7 +155,6 @@ namespace bt
 			growFile(to_write);
 		}
 		
-#ifndef Q_WS_WIN
 		int fd = fptr->handle();
 		Uint32 page_size = sysconf(_SC_PAGESIZE);
 		if (off % page_size > 0)
@@ -213,28 +212,6 @@ namespace bt
 				return ptr;
 			}
 		}
-#else // Q_WS_WIN
-		char* ptr = (char*)fptr->map(off,size);
-		
-		if (!ptr) 
-		{
-			Out(SYS_DIO|LOG_DEBUG) << "mmap failed3 : " << fptr->handle() << " " << QString(strerror(errno)) << endl;
-			Out(SYS_DIO|LOG_DEBUG) << off << " " << size << endl;
-			return 0;
-		}
-		else
-		{
-			CacheFile::Entry e;
-			e.thing = thing;
-			e.offset = off;
-			e.ptr = ptr;
-			e.diff = 0;
-			e.size = size;
-			e.mode = mode;
-			mappings.insert(ptr,e);
-			return ptr;
-		}
-#endif
 	}
 	
 	void CacheFile::growFile(Uint64 to_write)

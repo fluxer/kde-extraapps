@@ -44,9 +44,6 @@
 #include "file.h"
 #include "array.h"
 #include "functions.h"
-#ifdef Q_WS_WIN
-#include "win32.h"
-#endif
 
 #include "limits.h"
 
@@ -75,12 +72,10 @@ typedef	int64_t		__s64;
 #define O_LARGEFILE 0
 #endif
 
-#ifndef Q_WS_WIN
 # ifdef Q_OS_LINUX
 # include <mntent.h>
 # endif
 #include <sys/statvfs.h>
-#endif
 #ifdef CopyFile
 #undef CopyFile
 #endif
@@ -113,9 +108,7 @@ namespace bt
 	{
 		QStringList sl = dir.split(bt::DirSeparator(),QString::SkipEmptyParts);
 		QString ctmp;
-#ifndef Q_WS_WIN
 		ctmp += bt::DirSeparator();
-#endif
 
 		for (int i = 0;i < sl.count();i++)
 		{
@@ -142,9 +135,7 @@ namespace bt
 	{
 		QStringList sl = file.split(bt::DirSeparator());
 		QString ctmp;
-#ifndef Q_WS_WIN
 		ctmp += bt::DirSeparator();
-#endif
 		
 		for (int i = 0;i < sl.count() - 1;i++)
 		{
@@ -455,17 +446,6 @@ namespace bt
 
 			return false;
 		}
-#elif defined(Q_WS_WIN)
-#ifdef UNICODE
-		LPCWSTR tpath = (LPCWSTR)path.utf16();
-#else
-		const char *tpath = path.toLocal8Bit();
-#endif
-		if(GetDiskFreeSpaceEx(tpath, (PULARGE_INTEGER)&bytes_free, NULL, NULL)) {
-			return true;
-		} else {
-			return false;
-		}
 #else
 		return false;
 #endif
@@ -588,7 +568,6 @@ namespace bt
 	Uint64 DiskUsage(const QString& filename)
 	{
 		Uint64 ret = 0;
-#ifndef Q_WS_WIN
 #ifdef HAVE_STAT64
 		struct stat64 sb;
 		if (stat64(QFile::encodeName(filename),&sb) == 0)
@@ -599,19 +578,12 @@ namespace bt
 		{
 			ret = (Uint64)sb.st_blocks * 512;
 		}
-#else
-		DWORD high = 0;
-		DWORD low = GetCompressedFileSize((LPWSTR)filename.utf16(),&high);
-		if (low != INVALID_FILE_SIZE)
-			ret = (high * MAXDWORD) + low;
-#endif
 		return ret;
 	}
 	
 	Uint64 DiskUsage(int fd)
 	{
 		Uint64 ret = 0;
-#ifndef Q_WS_WIN
 #ifdef HAVE_FSTAT64
 		struct stat64 sb;
 		if (fstat64(fd,&sb) == 0)
@@ -622,11 +594,6 @@ namespace bt
 		{
 			ret = (Uint64)sb.st_blocks * 512;
 		}
-#else
-		struct _BY_HANDLE_FILE_INFORMATION info;
-		GetFileInformationByHandle((void *)&fd,&info);
-		ret = (info.nFileSizeHigh * MAXDWORD) + info.nFileSizeLow;
-#endif
 		return ret;
 	}
 

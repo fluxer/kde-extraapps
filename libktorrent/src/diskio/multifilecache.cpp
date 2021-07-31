@@ -30,9 +30,6 @@
 #include <util/functions.h>
 #include <util/error.h>
 #include <util/log.h>
-#ifdef Q_WS_WIN
-#include <util/win32.h>
-#endif
 #include <torrent/torrent.h>
 #include "cache.h"
 #include "chunk.h"
@@ -345,7 +342,6 @@ namespace bt
 		for(Uint32 i = 0; i < tor.getNumFiles(); i++)
 		{
 			TorrentFile & tf = tor.getFile(i);
-#ifndef Q_WS_WIN
 			// check if the filename is to long
 			if(FileNameToLong(tf.getPathOnDisk()))
 			{
@@ -362,7 +358,6 @@ namespace bt
 				tf.setPathOnDisk(s);
 				shortened_names.insert(s);
 			}
-#endif
 			touch(tf);
 			if(!tf.doNotDownload())
 				mount_points.insert(tf.getMountPoint());
