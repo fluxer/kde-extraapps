@@ -42,7 +42,6 @@ add_feature_info(thumbnailer_gs
 )
 
 add_subdirectory(ps)
-add_subdirectory(raw)
 
 if(TAGLIB_FOUND AND FLAC++_FOUND)
     add_subdirectory(audio)
