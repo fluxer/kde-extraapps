@@ -27,7 +27,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KJobUiDelegate>
 #include <KIO/NetAccess>
 #include <qtest_kde.h>
-#include <libkdcraw/kdcraw.h>
 
 // Local
 #include "../lib/abstractimageoperation.h"
@@ -83,15 +82,6 @@ void DocumentTest::testLoad()
     MimeTypeUtils::Kind expectedKind = MimeTypeUtils::Kind(expectedKindInt);
 
     KUrl url = urlForTestFile(fileName);
-
-    // testing RAW loading. For raw, QImage directly won't work -> load it using KDCRaw
-    QByteArray mFormatHint = url.fileName().section('.', -1).toAscii().toLower();
-    if (KDcrawIface::KDcraw::rawFilesList().contains(QString(mFormatHint))) {
-        if (!KDcrawIface::KDcraw::loadEmbeddedPreview(expectedImage, url.toLocalFile())) {
-            QSKIP("Not running this test: failed to get expectedImage. Try running ./fetch_testing_raw.sh\
- in the tests/data directory and then rerun the tests.", SkipSingle);
-        }
-    }
 
     if (expectedKind != MimeTypeUtils::KIND_SVG_IMAGE) {
         if (expectedImage.isNull()) {
@@ -372,10 +362,6 @@ void DocumentTest::testLoadRotated()
 
     // RAW preview on rotated image
     url = urlForTestFile("dsd_1838.nef");
-    if (!KDcrawIface::KDcraw::loadEmbeddedPreview(image, url.toLocalFile())) {
-        QSKIP("Not running this test: failed to get image. Try running ./fetch_testing_raw.sh\
- in the tests/data directory and then rerun the tests.", SkipSingle);
-    }
     matrix = ImageUtils::transformMatrix(ROT_270);
     image = image.transformed(matrix);
 

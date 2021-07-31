@@ -118,7 +118,6 @@ generate_export_header(gwenviewlib)
 target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}
-    ${KDE4_KDCRAW_LIBS}
     ${EXIV2_LIBRARIES}
     ${X11_X11_LIB}
 )

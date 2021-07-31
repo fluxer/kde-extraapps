@@ -4,7 +4,6 @@ macro(gv_add_unit_test _test)
         ${KDE4_KIO_LIBS}
         ${KDE4_KDEUI_LIBS}
         ${KDE4_KDECORE_LIBS}
-        ${KDE4_KDCRAW_LIBS}
         ${QT_QTTEST_LIBRARY}
         ${QT_QTCORE_LIBRARY}
         ${QT_QTGUI_LIBRARY}

@@ -43,7 +43,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <KMimeType>
 #include <KProtocolInfo>
 #include <KUrl>
-#include <libkdcraw/kdcraw.h>
 
 // Local
 #include "animateddocumentloadedimpl.h"
@@ -177,58 +176,31 @@ struct LoadingDocumentImplPrivate
         buffer.setBuffer(&mData);
         buffer.open(QIODevice::ReadOnly);
 
-        if (KDcrawIface::KDcraw::rawFilesList().contains(QString(mFormatHint))) {
-            QByteArray previewData;
+        QImageReader reader(&buffer, mFormatHint);
+        mImageSize = reader.size();
 
-            // use KDcraw for getting the embedded preview
-            // KDcraw functionality cloned locally (temp. solution)
-            bool ret = KDcrawIface::KDcraw::loadEmbeddedPreview(previewData, buffer);
-
-            QImage originalImage;
-            if (!ret || !originalImage.loadFromData(previewData) || qMin(originalImage.width(), originalImage.height()) < MIN_PREV_SIZE) {
-                // if the embedded preview loading failed or gets just a small image, load
-                // half preview instead. That's slower but it works even for images containing
-                // small (160x120px) or none embedded preview.
-                if (!KDcrawIface::KDcraw::loadHalfPreview(previewData, buffer)) {
-                    kWarning() << "unable to get half preview for " << q->document()->url().fileName();
-                    return false;
-                }
+        if (!reader.canRead()) {
+            kWarning() << "QImageReader::read() using format hint" << mFormatHint << "failed:" << reader.errorString();
+            if (buffer.pos() != 0) {
+                kWarning() << "A bad Qt image decoder moved the buffer to" << buffer.pos() << "in a call to canRead()! Rewinding.";
+                buffer.seek(0);
             }
-
-            buffer.close();
-
-            // now it's safe to replace mData with the jpeg data
-            mData = previewData;
-
-            // need to fill mFormat so gwenview can tell the type when trying to save
-            mFormat = mFormatHint;
-        } else {
-            QImageReader reader(&buffer, mFormatHint);
-            mImageSize = reader.size();
-
+            reader.setFormat(QByteArray());
+            // Set buffer again, otherwise QImageReader won't restart from scratch
+            reader.setDevice(&buffer);
             if (!reader.canRead()) {
-                kWarning() << "QImageReader::read() using format hint" << mFormatHint << "failed:" << reader.errorString();
-                if (buffer.pos() != 0) {
-                    kWarning() << "A bad Qt image decoder moved the buffer to" << buffer.pos() << "in a call to canRead()! Rewinding.";
-                    buffer.seek(0);
-                }
-                reader.setFormat(QByteArray());
-                // Set buffer again, otherwise QImageReader won't restart from scratch
-                reader.setDevice(&buffer);
-                if (!reader.canRead()) {
-                    kWarning() << "QImageReader::read() without format hint failed:" << reader.errorString();
-                    return false;
-                }
-                kWarning() << "Image format is actually" << reader.format() << "not" << mFormatHint;
+                kWarning() << "QImageReader::read() without format hint failed:" << reader.errorString();
+                return false;
             }
+            kWarning() << "Image format is actually" << reader.format() << "not" << mFormatHint;
+        }
 
-            mFormat = reader.format();
+        mFormat = reader.format();
 
-            if (mFormat == "jpg") {
-                // if mFormatHint was "jpg", then mFormat is "jpg", but the rest of
-                // Gwenview code assumes JPEG images have "jpeg" format.
-                mFormat = "jpeg";
-            }
+        if (mFormat == "jpg") {
+            // if mFormatHint was "jpg", then mFormat is "jpg", but the rest of
+            // Gwenview code assumes JPEG images have "jpeg" format.
+            mFormat = "jpeg";
         }
 
         LOG("mFormat" << mFormat);
