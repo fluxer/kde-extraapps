@@ -13,9 +13,7 @@ set(frame_SRCS
 
 kde4_add_plugin(plasma_applet_frame ${frame_SRCS})
 
-include_directories( ${KEXIV2_INCLUDE_DIR} )
-set_source_files_properties(picture.cpp imageloader.cpp PROPERTIES
-                            COMPILE_FLAGS -DHAVE_KEXIV2)
+include_directories(${KEXIV2_INCLUDE_DIR})
 target_link_libraries(plasma_applet_frame
     ${KDE4_PLASMA_LIBS}
     ${KDE4_KIO_LIBS}

@@ -21,32 +21,18 @@
 
 #include <QImage>
 #include <kdebug.h>
-
-#ifdef HAVE_KEXIV2
-#include <libkexiv2/kexiv2.h>
-#endif
+#include <kexiv2.h>
 
 ImageLoader::ImageLoader(const QString &path)
 {
     m_path = path;
-#ifdef HAVE_KEXIV2 
-    // prevets crashes due the xmp library not having a thread safe init
-    // may get fixed in future version of exiv2 according to devs
-    // FIXME: due to not knowing when it is safe to *uninitialize* exiv2 since others
-    // may be using it, this may ultimately result in a small one-time memory leak;
-    // either we need to know all users of KExiv2, or the thread safety issue needs
-    // to get fixed.
-    KExiv2Iface::KExiv2::initializeExiv2();
-#endif
 }
 
 void ImageLoader::correctRotation(QImage& image, const QString &path)
 {
-#ifdef HAVE_KEXIV2
     if (!image.isNull()) {
-        KExiv2Iface::KExiv2 exiv(path);
-        exiv.rotateExifQImage(image, exiv.getImageOrientation());
-#endif
+        KExiv2 exiv(path);
+        exiv.rotateImage(image);
     }
 }
 
