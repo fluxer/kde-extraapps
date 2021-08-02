@@ -21,7 +21,6 @@
 #define AUDIOPLAYERCONTROLRUNNERCONFIGKEYS_H
 
 static const char * CONFIG_PLAY = "com_play";
-static const char * CONFIG_APPEND = "com_append";
 static const char * CONFIG_PAUSE = "com_pause";
 static const char * CONFIG_NEXT = "com_next";
 static const char * CONFIG_PREV = "com_prev";

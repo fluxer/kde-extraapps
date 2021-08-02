@@ -44,7 +44,6 @@ AudioPlayerControlRunnerConfig::AudioPlayerControlRunnerConfig(QWidget* parent, 
     connect(m_ui->player_combo, SIGNAL(currentIndexChanged(int)), this, SLOT(changed()));
     connect(m_ui->player_combo, SIGNAL(editTextChanged(QString)), this, SLOT(changed()));
     connect(m_ui->play_edit, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-    connect(m_ui->append_edit, SIGNAL(textChanged(QString)),this,SLOT(changed()));
     connect(m_ui->pause_edit, SIGNAL(textChanged(QString)), this, SLOT(changed()));
     connect(m_ui->next_edit, SIGNAL(textChanged(QString)), this, SLOT(changed()));
     connect(m_ui->prev_edit, SIGNAL(textChanged(QString)), this, SLOT(changed()));
@@ -81,7 +80,6 @@ void AudioPlayerControlRunnerConfig::load()
         m_ui->player_combo->setCurrentIndex(index);
     }
     m_ui->play_edit->setText(grp.readEntry(CONFIG_PLAY , i18n("play")));
-    m_ui->append_edit->setText(grp.readEntry(CONFIG_APPEND, i18n("append")));
     m_ui->pause_edit->setText(grp.readEntry(CONFIG_PAUSE, i18n("pause")));
     m_ui->next_edit->setText(grp.readEntry(CONFIG_NEXT, i18nc("next song", "next")));
     m_ui->prev_edit->setText(grp.readEntry(CONFIG_PREV , i18nc("previous song", "prev")));
@@ -100,7 +98,6 @@ void AudioPlayerControlRunnerConfig::save()
     KConfigGroup grp = cfg->group("Runners");
     grp = KConfigGroup(&grp, "Audio Player Control Runner");
     grp.writeEntry(CONFIG_PLAY, m_ui->play_edit->text());
-    grp.writeEntry(CONFIG_APPEND, m_ui->append_edit->text());
     grp.writeEntry(CONFIG_PAUSE, m_ui->pause_edit->text());
     grp.writeEntry(CONFIG_STOP, m_ui->stop_edit->text());
     grp.writeEntry(CONFIG_PREV, m_ui->prev_edit->text());
@@ -125,7 +122,6 @@ void AudioPlayerControlRunnerConfig::defaults()
 
     m_ui->player_combo->setCurrentIndex(m_ui->player_combo->findData(QLatin1String("vlc")));
     m_ui->play_edit->setText(i18n("Play"));
-    m_ui->append_edit->setText(i18n("Append"));
     m_ui->pause_edit->setText(i18n("Pause")) ;
     m_ui->next_edit->setText(i18n("Next"));
     m_ui->prev_edit->setText(i18n("Prev"));

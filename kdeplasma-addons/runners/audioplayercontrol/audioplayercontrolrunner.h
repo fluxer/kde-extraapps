@@ -36,7 +36,6 @@ public:
 
     void match(Plasma::RunnerContext &context);
     void run(const Plasma::RunnerContext &context, const Plasma::QueryMatch &match);
-    QList<QAction*> actionsForMatch(const Plasma::QueryMatch &match);
 
     void reloadConfiguration();
 
@@ -78,8 +77,6 @@ private:
 
     /** Command for play a song */
     QString m_comPlay;
-    /** Command for append a song */
-    QString m_comAppend;
     /** Command for pause playing */
     QString m_comPause;
     /** Command for stop playing */

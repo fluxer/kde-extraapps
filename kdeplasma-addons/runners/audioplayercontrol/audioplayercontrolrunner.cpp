@@ -36,18 +36,8 @@
 #include <KRun>
 #include <KUrl>
 
-// TODO: rewrite append feature to add URL to the tracks list via org.mpris.MediaPlayer2.TrackList.AddTrack
-/** The variable PLAY contains the action label for play */
-static const QString PLAY(QLatin1String("play"));
-/** The variable APPEND contains the action label for append */
-static const QString APPEND(QLatin1String("append"));
-/** The variable NONE says that no action is needed */
-static const QString NONE(QLatin1String("none"));
-
 // for reference:
 // https://specifications.freedesktop.org/mpris-spec/latest/
-
-typedef QList<QDBusObjectPath> TrackListType;
 
 AudioPlayerControlRunner::AudioPlayerControlRunner(QObject *parent, const QVariantList& args)
     : Plasma::AbstractRunner(parent, args)
@@ -111,7 +101,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         if (m_comPlay.startsWith(term, Qt::CaseInsensitive) &&
             (!m_running || (m_canPlay && m_playbackStatus != QLatin1String("Playing")))) {
             QVariantList data = playcontrol;
-            data << QLatin1String("Play") << NONE << QLatin1String("start");
+            data << QLatin1String("Play") << QLatin1String("start");
             matches << createMatch(this, i18n("Start playing"), i18n("Audio player control"),
                 QLatin1String("play"), KIcon(QLatin1String("media-playback-start")), data, 1.0);
         }
@@ -125,7 +115,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         // Next song
         if (m_comNext.startsWith(term, Qt::CaseInsensitive) && m_canGoNext) {
             QVariantList data = playcontrol;
-            data << QLatin1String("Next") << NONE << QLatin1String("nostart");
+            data << QLatin1String("Next") << QLatin1String("nostart");
             matches << createMatch(this, i18n("Play next song"), i18n("Audio player control"),
                 QLatin1String("next"), KIcon(QLatin1String("media-skip-forward")), data, 1.0);
         }
@@ -133,7 +123,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         // Previous song
         if (m_comPrev.startsWith(term, Qt::CaseInsensitive) && m_canGoPrevious) {
             QVariantList data = playcontrol;
-            data << QLatin1String("Previous") << NONE << QLatin1String("nostart");
+            data << QLatin1String("Previous") << QLatin1String("nostart");
             matches << createMatch(this, i18n("Play previous song"), i18n("Audio player control") ,
                 QLatin1String("previous"), KIcon(QLatin1String("media-skip-backward")), data, 1.0);
         }
@@ -141,7 +131,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         // Pause
         if (m_comPause.startsWith(term, Qt::CaseInsensitive) && m_playbackStatus == QLatin1String("Playing")) {
             QVariantList data = playcontrol;
-            data << QLatin1String("Pause") << NONE << QLatin1String("nostart");
+            data << QLatin1String("Pause") << QLatin1String("nostart");
             matches << createMatch(this, i18n("Pause playing"), i18n("Audio player control"),
                 QLatin1String("pause"), KIcon(QLatin1String("media-playback-pause")), data, 1.0);
         }
@@ -149,7 +139,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         // Stop
         if (m_comStop.startsWith(term, Qt::CaseInsensitive) && m_playbackStatus == QLatin1String("Playing")) {
             QVariantList data = playcontrol;
-            data << QLatin1String("Stop") << NONE << QLatin1String("nostart");
+            data << QLatin1String("Stop") << QLatin1String("nostart");
             matches << createMatch(this, i18n("Stop playing"), i18n("Audio player control"),
                 QLatin1String("stop"), KIcon(QLatin1String("media-playback-stop")), data, 1.0);
         }
@@ -160,7 +150,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         if (volumeRegxp.exactMatch(term)) {
             QVariantList data = playcontrol;
             int newVolume = getNumber(term , ' ');
-            data << QLatin1String("Volume") << NONE << QLatin1String("nostart") << (newVolume / 100.0);
+            data << QLatin1String("Volume") << QLatin1String("nostart") << (newVolume / 100.0);
             matches << createMatch(this, i18n("Set volume to %1%" , newVolume),
                 QLatin1String("volume"), i18n("Audio player control"), KIcon(QLatin1String("audio-volume-medium")), data, 1.0);
         }
@@ -169,7 +159,7 @@ void AudioPlayerControlRunner::match(Plasma::RunnerContext &context)
         if (m_comQuit.startsWith(term, Qt::CaseInsensitive)) {
             QVariantList data;
             data << QLatin1String("/org/mpris/MediaPlayer2") << QLatin1String("org.mpris.MediaPlayer2")
-                << QLatin1String("Quit") << NONE << QLatin1String("nostart");
+                << QLatin1String("Quit") << QLatin1String("nostart");
             matches << createMatch(this, i18n("Quit %1", m_identity), QLatin1String(""),
                 QLatin1String("quit"), KIcon(QLatin1String("application-exit")), data, 1.0);
         }
@@ -184,7 +174,7 @@ void AudioPlayerControlRunner::run(const Plasma::RunnerContext &context, const P
 
     QVariantList data = match.data().value<QVariantList>();
 
-    if (data[4].toString().compare(QLatin1String("start")) == 0) {
+    if (data[3].toString().compare(QLatin1String("start")) == 0) {
         // The players's interface isn't available but it should be started
         if (!startPlayer()) {
             return;
@@ -195,7 +185,7 @@ void AudioPlayerControlRunner::run(const Plasma::RunnerContext &context, const P
     if (data[2].toString().compare(QLatin1String("Volume")) == 0) {
         QDBusInterface player(QString::fromLatin1("org.mpris.MediaPlayer2.%1").arg(m_player),
             data[0].toString(), data[1].toString());
-        player.setProperty(data[2].toByteArray(), data[5]);
+        player.setProperty(data[2].toByteArray(), data[4]);
         return;
     }
 
@@ -203,31 +193,11 @@ void AudioPlayerControlRunner::run(const Plasma::RunnerContext &context, const P
         data[0].toString(), data[1].toString(), data[2].toString());
     kDebug() << msg;
     QVariantList args;
-    for (int i = 5; data.length() > i;++i) {
+    for (int i = 4; data.length() > i;++i) {
         args << data[i];
     }
     msg.setArguments(args);
     QDBusConnection::sessionBus().call(msg, QDBus::NoBlock);
-}
-
-QList<QAction*> AudioPlayerControlRunner::actionsForMatch(const Plasma::QueryMatch &match)
-{
-    QList<QAction*> ret;
-    QVariantList data = match.data().value<QVariantList>();
-
-    if (data.length() > 3 && data[3].toString().compare(NONE) == 0) {
-        if (!action(PLAY)) {
-            addAction(PLAY, KIcon(QLatin1String("media-playback-start")), i18n("Play"));
-            addAction(APPEND, KIcon(QLatin1String("media-track-add-amarok")), i18n("Append to playlist"));
-        }
-
-        const QStringList actions = data[3].toString().split(QLatin1Char( ',' ));
-        for (int i = 0; i < actions.length(); ++i) {
-            ret << action(actions[i]);
-        }
-    }
-
-    return ret;
 }
 
 void AudioPlayerControlRunner::reloadConfiguration()
@@ -235,7 +205,6 @@ void AudioPlayerControlRunner::reloadConfiguration()
     KConfigGroup grp = config();
     m_player = grp.readEntry(CONFIG_PLAYER, "vlc");
     m_comPlay = grp.readEntry(CONFIG_PLAY, i18n("play"));
-    m_comAppend = grp.readEntry(CONFIG_APPEND, i18n("append"));
     m_comPause = grp.readEntry(CONFIG_PAUSE, i18n("pause"));
     m_comNext = grp.readEntry(CONFIG_NEXT, i18n("next"));
     m_comPrev = grp.readEntry(CONFIG_PREV, i18n("prev"));
