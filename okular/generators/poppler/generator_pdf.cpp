@@ -195,7 +195,7 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
     switch(popplerLink->linkType())
     {
         case Poppler::Link::None:
-        break;
+            break;
 
         case Poppler::Link::Goto:
         {
@@ -211,23 +211,23 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
             {
                 link = new Okular::GotoAction(popplerLinkGoto->fileName(), destName);
             }
+            break;
         }
-        break;
 
         case Poppler::Link::Execute:
             popplerLinkExecute = static_cast<const Poppler::LinkExecute *>(popplerLink);
             link = new Okular::ExecuteAction( popplerLinkExecute->fileName(), popplerLinkExecute->parameters() );
-        break;
+            break;
 
         case Poppler::Link::Browse:
             popplerLinkBrowse = static_cast<const Poppler::LinkBrowse *>(popplerLink);
             link = new Okular::BrowseAction( popplerLinkBrowse->url() );
-        break;
+            break;
 
         case Poppler::Link::Action:
             popplerLinkAction = static_cast<const Poppler::LinkAction *>(popplerLink);
             link = new Okular::DocumentAction( (Okular::DocumentAction::DocumentActionType)popplerLinkAction->actionType() );
-        break;
+            break;
 
         case Poppler::Link::Sound:
         {
@@ -235,8 +235,8 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
             Poppler::SoundObject *popplerSound = popplerLinkSound->sound();
             Okular::Sound *sound = createSoundFromPopplerSound( popplerSound );
             link = new Okular::SoundAction( popplerLinkSound->volume(), popplerLinkSound->synchronous(), popplerLinkSound->repeat(), popplerLinkSound->mix(), sound );
+            break;
         }
-        break;
 
         case Poppler::Link::Movie:
         {
@@ -264,8 +264,8 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
             Okular::MovieAction *movieAction = new Okular::MovieAction( operation );
             movieAction->setNativeId( QVariant::fromValue( popplerLinkMovie ) );
             link = movieAction;
+            break;
         }
-        break;
     }
 
     if ( deletePopplerLink )
@@ -482,10 +482,10 @@ void PDFGenerator::loadPages(QVector<Okular::Page*> &pagesVector, int rotation, 
             Okular::Rotation orientation = Okular::Rotation0;
             switch (p->orientation())
             {
-            case Poppler::Page::Landscape: orientation = Okular::Rotation90; break;
-            case Poppler::Page::UpsideDown: orientation = Okular::Rotation180; break;
-            case Poppler::Page::Seascape: orientation = Okular::Rotation270; break;
-            case Poppler::Page::Portrait: orientation = Okular::Rotation0; break;
+                case Poppler::Page::Landscape: orientation = Okular::Rotation90; break;
+                case Poppler::Page::UpsideDown: orientation = Okular::Rotation180; break;
+                case Poppler::Page::Seascape: orientation = Okular::Rotation270; break;
+                case Poppler::Page::Portrait: orientation = Okular::Rotation0; break;
             }
             if (rotation % 2 == 1)
             qSwap(w,h);
@@ -614,39 +614,29 @@ static Okular::FontInfo::FontType convertPopplerFontInfoTypeToOkularFontInfoType
     {
         case Poppler::FontInfo::Type1:
             return Okular::FontInfo::Type1;
-            break;
         case Poppler::FontInfo::Type1C:
             return Okular::FontInfo::Type1C;
-            break;
         case Poppler::FontInfo::Type3:
             return Okular::FontInfo::Type3;
-            break;
         case Poppler::FontInfo::TrueType:
             return Okular::FontInfo::TrueType;
-            break;
         case Poppler::FontInfo::CIDType0:
             return Okular::FontInfo::CIDType0;
-            break;
         case Poppler::FontInfo::CIDType0C:
             return Okular::FontInfo::CIDType0C;
-            break;
         case Poppler::FontInfo::CIDTrueType:
             return Okular::FontInfo::CIDTrueType;
-            break;
         case Poppler::FontInfo::Type1COT:
             return Okular::FontInfo::Type1COT;
-            break;
         case Poppler::FontInfo::TrueTypeOT:
             return Okular::FontInfo::TrueTypeOT;
-            break;
         case Poppler::FontInfo::CIDType0COT:
             return Okular::FontInfo::CIDType0COT;
-            break;
         case Poppler::FontInfo::CIDTrueTypeOT:
             return Okular::FontInfo::CIDTrueTypeOT;
-            break;
         case Poppler::FontInfo::unknown:
-        default: ;
+        default:
+            break;
      }
      return Okular::FontInfo::Unknown;
 }
@@ -739,7 +729,8 @@ bool PDFGenerator::isAllowed( Okular::Permission permission ) const
         case Okular::AllowFillForms:
             b = pdfdoc->okToFillForm();
             break;
-        default: ;
+        default:
+            break;
     }
     return b;
 }
@@ -1440,7 +1431,8 @@ void PDFGenerator::addFormFields( Poppler::Page * popplerPage, Okular::Page * pa
             case Poppler::FormField::FormChoice:
                 of = new PopplerFormFieldChoice( static_cast<Poppler::FormFieldChoice*>( f ) );
                 break;
-            default: ;
+            default:
+                break;
         }
         if ( of )
             // form field created, good - it will take care of the Poppler::FormField
@@ -1632,7 +1624,8 @@ void PDFGenerator::fillViewportFromSourceReference( Okular::DocumentViewport & v
     int i = 0;
     for( i = 0; i < nameLength; ++i )
     {
-        if ( !name[i].isDigit() ) break;
+        if ( !name[i].isDigit() )
+            break;
     }
     lineString = name.left( i );
     name = name.mid( i );
@@ -1709,16 +1702,16 @@ bool PDFGenerator::save( const QString &fileName, SaveOptions options, QString *
         {
             case Poppler::BaseConverter::NotSupportedInputFileError:
                 // This can only happen with Poppler before 0.22 and /Encrypt
-            break;
+                break;
 
             case Poppler::BaseConverter::NoError:
             case Poppler::BaseConverter::FileLockedError:
                 // we can't get here
-            break;
+                break;
 
             case Poppler::BaseConverter::OpenOutputError:
                 // the default text message is good for this case
-            break;
+                break;
         }
     }
     delete pdfConv;
