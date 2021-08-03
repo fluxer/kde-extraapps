@@ -56,10 +56,11 @@ bool Document::open( const QString &fileName )
 
     const KMimeType::Ptr mime = KMimeType::findByFileContent( fileName );
 
+    // qDebug() << Q_FUNC_INFO << mime->name();
     /**
      * We have a zip archive
      */
-    if ( mime->is( "application/x-cbz" ) || mime->name() == "application/zip" ) {
+    if ( mime->is( "application/x-cbz" ) || mime->is( "application/zip" ) ) {
         mArchive = new KZip( fileName );
 
         if ( !processArchive() ) {
@@ -68,14 +69,14 @@ bool Document::open( const QString &fileName )
     /**
      * We have a TAR archive
      */
-    } else if ( mime->is( "application/x-cbt" ) || mime->name() == "application/x-gzip" ||
-                mime->name() == "application/x-tar" || mime->name() == "application/x-bzip" ) {
+    } else if ( mime->is( "application/x-cbt" ) || mime->is( "application/x-gzip" ) ||
+                mime->is( "application/x-tar" ) || mime->is( "application/x-bzip" ) ) {
         mArchive = new KTar( fileName );
 
         if ( !processArchive() ) {
             return false;
         }
-    } else if ( mime->is( "application/x-cbr" ) || mime->name() == "application/x-rar" ) {
+    } else if ( mime->is( "application/x-cbr" ) || mime->is( "application/x-rar" ) ) {
         if ( !Unrar::isAvailable() ) {
             mLastErrorString = i18n( "Cannot open document, unrar was not found." );
             return false;
