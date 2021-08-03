@@ -63,20 +63,5 @@ public:
     void setRemoteHost(const QString & host);
 };
 
-//*********
-
-#ifdef KRFB_WITH_TELEPATHY_TUBES
-# include "ui_tubesconnectionwidget.h"
-
-class TubesConnectionDialog : public ConnectionDialog<Ui::TubesConnectionWidget>
-{
-    Q_OBJECT
-public:
-    TubesConnectionDialog(QWidget *parent);
-    void setContactName(const QString & name);
-};
-
-#endif // KRFB_WITH_TELEPATHY_TUBES
-
 #endif // CONNECTIONDIALOG_H
 

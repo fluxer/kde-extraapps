@@ -19,24 +19,12 @@ set_package_properties(LibVNCServer PROPERTIES
 # macro_optional_find_package(LibNXCL)
 # macro_log_feature(LIBNXCL_FOUND "libnxcl" "NX X compression client library" "http://svn.berlios.de/svnroot/repos/freenx/trunk/freenx-client/nxcl/" FALSE "1.0" "Needed to build Krdc with NX support")
 
-macro_optional_find_package(TelepathyQt4 0.9)
-set_package_properties(TelepathyQt4 PROPERTIES
-    DESCRIPTION "Telepathy Qt Bindings"
-    URL "http://telepathy.freedesktop.org"
-    PURPOSE "Needed to build Telepathy Tubes support"
-)
-
 # v1.0.2 required
 find_program(FREERDP_EXECUTABLE xfreerdp)
 add_feature_info(xfreerdp
     FREERDP_EXECUTABLE
     "A free Remote Desktop Protocol (RDP) Implementation"
 )
-
-if(TelepathyQt4_FOUND)
-    add_definitions(-DTELEPATHY_SUPPORT)
-    include_directories(${TELEPATHY_QT4_INCLUDE_DIR})
-endif()
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -50,10 +38,6 @@ add_subdirectory(vnc)
 add_subdirectory(nx)
 add_subdirectory(rdp)
 add_subdirectory(test)
-
-if(TelepathyQt4_FOUND)
-    add_subdirectory(krdc_approver)
-endif()
 
 add_definitions(
     -DKDE_DEFAULT_DEBUG_AREA=5010
@@ -73,12 +57,6 @@ set(krdc_SRCS
     main.cpp
 )
 
-if(TelepathyQt4_FOUND)
-    set(krdc_SRCS ${krdc_SRCS}
-        tubesmanager.cpp
-    )
-endif()
-
 add_executable(krdc ${krdc_SRCS})
 
 target_link_libraries(krdc
@@ -89,25 +67,9 @@ target_link_libraries(krdc
     krdccore
 )
 
-if(TelepathyQt4_FOUND)
-    target_link_libraries(krdc
-        ${TELEPATHY_QT4_LIBRARIES}
-    )
-endif()
-
 target_link_libraries(krdc ${KDE4_KDNSSD_LIBS})
 
 install(TARGETS krdc ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES krdcui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc)
 install(PROGRAMS krdc.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 install(FILES pointcursor.png pointcursormask.png DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc/pics)
-
-if(TelepathyQt4_FOUND)
-    configure_file(org.freedesktop.Telepathy.Client.krdc_rfb_handler.service.in
-                    ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
-            DESTINATION ${KDE4_DBUS_SERVICES_INSTALL_DIR})
-
-    install(FILES krdc_rfb_handler.client DESTINATION ${KDE4_SHARE_INSTALL_PREFIX}/telepathy/clients/)
-endif()
-

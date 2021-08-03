@@ -33,10 +33,6 @@
 #include <QtGui/QPixmap>
 #include <QtGui/qwindowdefs.h>
 
-#ifdef KRFB_WITH_TELEPATHY_TUBES
-# include "tubesrfbserver.h"
-#endif
-
 #include <signal.h>
 #include <X11/extensions/XTest.h>
 
@@ -71,9 +67,6 @@ int main(int argc, char *argv[])
                                "(c) 2000-2001, Const Kaplinsky\n"
                                "(c) 2000, Tridia Corporation\n"
                                "(c) 1999, AT&T Laboratories Boston\n"));
-    aboutData.addAuthor(ki18n("George Goldberg"),
-                        ki18n("Telepathy tubes support"),
-                        "george.goldberg@collabora.co.uk");
     aboutData.addAuthor(ki18n("George Kiagiadakis"),
                         KLocalizedString(),
                         "george.kiagiadakis@collabora.co.uk");
@@ -103,10 +96,6 @@ int main(int argc, char *argv[])
 
     //init the core
     InvitationsRfbServer::init();
-
-#ifdef KRFB_WITH_TELEPATHY_TUBES
-    TubesRfbServer::init();
-#endif
 
     //init the GUI
     MainWindow mainWindow;

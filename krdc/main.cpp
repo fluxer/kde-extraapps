@@ -55,7 +55,6 @@ int main(int argc, char **argv)
                         "bradh@frogmouth.net");
     aboutData.addCredit(ki18n("LibVNCServer / LibVNCClient developers"), ki18n("VNC client library"),
                         "libvncserver-common@lists.sf.net", "http://libvncserver.sourceforge.net/");
-    aboutData.addAuthor(ki18n("Abner Silva"), ki18n("Telepathy Tubes Integration"), "abner.silva@kdemail.net");
 
     KCmdLineArgs::init(argc, argv, &aboutData);
 

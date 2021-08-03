@@ -30,6 +30,12 @@
 
 #include <KService>
 #include <KXmlGuiWindow>
+#include <QScrollArea>
+#include <QModelIndex>
+#include <QTableView>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QtGui/qevent.h>
 
 class KComboBox;
 class KLineEdit;
@@ -43,14 +49,6 @@ class RemoteDesktopsModel;
 class RemoteView;
 class SystemTrayIcon;
 class TabbedViewWidget;
-
-#include <QScrollArea>
-#include <QModelIndex>
-#include <QTableView>
-
-#ifdef TELEPATHY_SUPPORT
-class TubesManager;
-#endif
 
 class MainWindow : public KXmlGuiWindow
 {
@@ -132,15 +130,8 @@ private:
     QTableView *m_dockWidgetTableView;
     QTableView *m_newConnectionTableView;
     RemoteDesktopsModel *m_remoteDesktopsModel;
-#ifdef TELEPATHY_SUPPORT
-    TubesManager *m_tubesManager;
-#endif
     QWidget *m_newConnectionWidget;
 };
-
-#include <QApplication>
-#include <QDesktopWidget>
-#include <QtGui/qevent.h>
 
 class MinimizePixel : public QWidget
 {
@@ -161,8 +152,6 @@ protected:
             emit rightClicked();
     }
 };
-
-#include <QScrollArea>
 
 class RemoteViewScrollArea : public QScrollArea
 {

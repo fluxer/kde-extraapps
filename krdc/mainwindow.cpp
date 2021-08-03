@@ -35,10 +35,6 @@
 #include "tabbedviewwidget.h"
 #include "hostpreferences.h"
 
-#ifdef TELEPATHY_SUPPORT
-#include "tubesmanager.h"
-#endif
-
 #include <KAction>
 #include <KActionCollection>
 #include <KActionMenu>
@@ -83,9 +79,6 @@ MainWindow::MainWindow(QWidget *parent)
         m_systemTrayIcon(0),
         m_dockWidgetTableView(0),
         m_newConnectionTableView(0),
-#ifdef TELEPATHY_SUPPORT
-        m_tubesManager(0),
-#endif
         m_newConnectionWidget(0)
 {
     loadAllPlugins();
@@ -243,12 +236,6 @@ void MainWindow::loadAllPlugins()
             continue;
         }
     }
-
-#ifdef TELEPATHY_SUPPORT
-    /* Start tube handler */
-    m_tubesManager = new TubesManager(this);
-    connect(m_tubesManager, SIGNAL(newConnection(KUrl)), SLOT(newConnection(KUrl)));
-#endif
 }
 
 RemoteViewFactory *MainWindow::createPluginFromService(const KService::Ptr &service)
@@ -583,9 +570,6 @@ void MainWindow::disconnectHost()
     view->startQuitting();  // some deconstructors can't properly quit, so quit early
     m_tabWidget->removePage(widgetToDelete);
     widgetToDelete->deleteLater();
-#ifdef TELEPATHY_SUPPORT
-    m_tubesManager->closeTube(view->url());
-#endif
 
     // if closing the last connection, create new connection tab
     if (m_tabWidget->count() == 0) {
@@ -606,9 +590,6 @@ void MainWindow::closeTab(QWidget *widget)
         RemoteView *view = m_remoteViewMap.value(widget);
         m_remoteViewMap.remove(m_remoteViewMap.key(view));
         view->startQuitting();
-#ifdef TELEPATHY_SUPPORT
-        m_tubesManager->closeTube(view->url());
-#endif
         widget->deleteLater();
     }
 
