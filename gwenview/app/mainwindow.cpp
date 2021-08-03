@@ -18,7 +18,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
 #include "moc_mainwindow.cpp"
-#include <config-gwenview.h>
 
 // Qt
 #include <QApplication>
@@ -72,10 +71,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "gvcore.h"
 #include "imageopscontextmanageritem.h"
 #include "infocontextmanageritem.h"
-#ifdef KIPI_FOUND
-#include "kipiexportaction.h"
-#include "kipiinterface.h"
-#endif
 #include "preloader.h"
 #include "savebar.h"
 #include "sidebar.h"
@@ -176,9 +171,6 @@ struct MainWindow::Private
     SlideShow* mSlideShow;
     Preloader* mPreloader;
     bool mPreloadDirectionIsForward;
-#ifdef KIPI_FOUND
-    KIPIInterface* mKIPIInterface;
-#endif
 
     QActionGroup* mViewModeActionGroup;
     KRecentFilesAction* mFileOpenRecentAction;
@@ -193,9 +185,6 @@ struct MainWindow::Private
     KToggleFullScreenAction* mFullScreenAction;
     KAction* mToggleSlideShowAction;
     KToggleAction* mShowMenuBarAction;
-#ifdef KIPI_FOUND
-    KIPIExportAction* mKIPIExportAction;
-#endif
 
     SortedDirModel* mDirModel;
     DocumentOnlyProxyModel* mThumbnailBarModel;
@@ -468,11 +457,6 @@ struct MainWindow::Private
 
         view->addAction(KStandardAction::ConfigureToolbars, q,
                         SLOT(configureToolbars()));
-
-#ifdef KIPI_FOUND
-        mKIPIExportAction = new KIPIExportAction(q);
-        actionCollection->addAction("kipi_export", mKIPIExportAction);
-#endif
     }
 
     void setupUndoActions()
@@ -774,10 +758,6 @@ MainWindow::MainWindow()
     connect(DocumentFactory::instance(), SIGNAL(modifiedDocumentListChanged()),
             SLOT(slotModifiedDocumentListChanged()));
 
-#ifdef KIPI_FOUND
-    d->mKIPIInterface = new KIPIInterface(this);
-    d->mKIPIExportAction->setKIPIInterface(d->mKIPIInterface);
-#endif
     setAutoSaveSettings();
 }
 

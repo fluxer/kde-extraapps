@@ -70,13 +70,6 @@
 #include "ksnapshotpreview.h"
 #include "ui_ksnapshotwidget.h"
 
-#ifdef KIPI_FOUND
-#include <libkipi/plugin.h>
-#include <libkipi/version.h>
-#include "kipiinterface.h"
-#include <KAction>
-#endif
-
 #ifdef HAVE_X11_EXTENSIONS_XFIXES_H
 #include <X11/extensions/Xfixes.h>
 #include <X11/Xatom.h>
@@ -164,16 +157,6 @@ KSnapshot::KSnapshot(QWidget *parent,  KSnapshotObject::CaptureMode mode )
     grabber->grabMouse();
 
     KConfigGroup conf(KGlobal::config(), "GENERAL");
-
-#ifdef KIPI_FOUND
-#if(KIPI_VERSION >= 0x020000)
-    mPluginLoader = new KIPI::PluginLoader();
-    mPluginLoader->setInterface(new KIPIInterface(this));
-    mPluginLoader->init();
-#else
-    mPluginLoader = new KIPI::PluginLoader(QStringList(), new KIPIInterface(this), "");
-#endif
-#endif
 
 #ifdef HAVE_X11_EXTENSIONS_XFIXES_H
     {
@@ -533,45 +516,6 @@ void KSnapshot::slotPopulateOpenMenu()
                                                        KIcon(service->icon()),
                                                        name, this));
     }
-
-
-#ifdef KIPI_FOUND
-    KIPI::PluginLoader::PluginList pluginList = mPluginLoader->pluginList();
-
-    Q_FOREACH(KIPI::PluginLoader::Info* pluginInfo, pluginList) {
-        if (!pluginInfo->shouldLoad()) {
-            continue;
-        }
-        KIPI::Plugin* plugin = pluginInfo->plugin();
-        if (!plugin) {
-            kWarning() << "Plugin from library" << pluginInfo->library() << "failed to load";
-            continue;
-        }
-
-        plugin->setup(this);
-
-        QList<KAction*> actions = plugin->actions();
-        QSet<KAction*> exportActions;
-        Q_FOREACH(KAction* action, actions) {
-            KIPI::Category category = plugin->category(action);
-            if(category == KIPI::ExportPlugin) {
-                exportActions << action;
-            } else if (category == KIPI::ImagesPlugin) {
-                // Horrible hack. Why are the print images and the e-mail images plugins in the same category as rotate and edit metadata!?
-                if( pluginInfo->library().contains("kipiplugin_printimages") || pluginInfo->library().contains("kipiplugin_sendimages")) {
-                    exportActions << action;
-                }
-            }
-        }
-
-        Q_FOREACH(KAction* action, exportActions) {
-            openMenu->addAction(action);
-        }
-
-//        FIXME: Port
-//            plugin->actionCollection()->readShortcutSettings();
-    }
-#endif
 
     openMenu->addSeparator();
     KService::Ptr none;

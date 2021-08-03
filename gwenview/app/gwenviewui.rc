@@ -61,9 +61,6 @@
         <Separator/>
         <Action name="go_start_page"/>
     </Menu>
-    <Menu name="plugins">
-        <text>&amp;Plugins</text>
-    </Menu>
     <Menu name="settings" noMerge="1">
         <text>&amp;Settings</text>
         <!--
@@ -91,8 +88,6 @@
     <Separator/>
     <Action name="rotate_left" />
     <Action name="rotate_right" />
-    <Separator/>
-    <Action name="kipi_export" />
 </ToolBar>
 
 </kpartgui>

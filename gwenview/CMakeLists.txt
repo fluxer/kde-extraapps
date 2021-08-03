@@ -17,12 +17,6 @@ set_package_properties(Exiv2 PROPERTIES
     TYPE REQUIRED
 )
 
-macro_optional_find_package(Kipi)
-set_package_properties(Kipi PROPERTIES
-    URL "https://github.com/KDE/kipi-plugins"
-    PURPOSE "Provides various image manipulation and export features"
-)
-
 find_package(LibKonq)
 set_package_properties(LibKonq PROPERTIES
     URL "http://fluxer.github.io/katana/"
@@ -57,8 +51,3 @@ add_subdirectory(icons)
 add_subdirectory(images)
 add_subdirectory(cursors)
 add_subdirectory(color-schemes)
-
-configure_file(
-    config-gwenview.h.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/config-gwenview.h
-)

@@ -28,6 +28,7 @@
 #include <QAction>
 #include <QTimer>
 #include <QPixmap>
+#include <QMenu>
 
 #include <kglobalsettings.h>
 #include <kdialog.h>
@@ -39,13 +40,6 @@
 #include <config-ksnapshot.h>
 
 class KSnapshotWidget;
-#include <QMenu>
-
-#ifdef KIPI_FOUND
-#include "ksnapshotimagecollectionshared.h"
-#include <libkipi/pluginloader.h>
-#endif
-
 class KSnapshotServiceAction : public QAction
 {
     Q_OBJECT
@@ -143,11 +137,6 @@ private:
     bool includeAlpha;
     QPolygon lastFreeRegion;
     QRect lastRegion;
-
-#ifdef KIPI_FOUND
-    KIPI::PluginLoader* mPluginLoader;
-    friend KUrl::List KSnapshotImageCollectionShared::images();
-#endif
 };
 
 #endif // KSNAPSHOT_H

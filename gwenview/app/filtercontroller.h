@@ -21,8 +21,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #ifndef FILTERCONTROLLER_H
 #define FILTERCONTROLLER_H
 
-#include <config-gwenview.h>
-
 // Qt
 #include <QList>
 #include <QObject>

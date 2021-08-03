@@ -65,9 +65,6 @@
             <default>false</default>
         </entry>
 
-        <entry name="DefaultExportPluginText" type="String">
-        </entry>
-
         <entry name="SideBarPage" type="String">
             <default>information</default>
         </entry>

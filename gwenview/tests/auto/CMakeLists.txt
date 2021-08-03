@@ -16,9 +16,6 @@ include_directories(
     ${importer_SOURCE_DIR}
 )
 
-# For config-gwenview.h
-include_directories(${gwenview_BINARY_DIR})
-
 gv_add_unit_test(imagescalertest testutils.cpp)
 gv_add_unit_test(paintutilstest)
 gv_add_unit_test(documenttest testutils.cpp)

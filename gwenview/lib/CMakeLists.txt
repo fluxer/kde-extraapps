@@ -2,8 +2,6 @@ project(gwenviewlib)
 
 
 include_directories(
-    # For config-gwenview.h
-    ${CMAKE_CURRENT_BINARY_DIR}/..
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${CMAKE_CURRENT_BINARY_DIR}
     ${EXIV2_INCLUDE_DIR}

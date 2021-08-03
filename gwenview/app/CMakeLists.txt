@@ -2,13 +2,9 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${EXIV2_INCLUDE_DIR}
     ${LIBKONQ_INCLUDE_DIR}
-    # For lib/gwenviewconfig.h and config-gwenview.h
+    # For lib/gwenviewconfig.h
     ${CMAKE_CURRENT_BINARY_DIR}/..
 )
-
-if(KIPI_FOUND)
-    include_directories(${KIPI_INCLUDE_DIR})
-endif()
 
 set(gwenview_SRCS
     abstractcontextmanageritem.cpp
@@ -41,30 +37,15 @@ set(gwenview_SRCS
     browsemainpage.ui
 )
 
-if(KIPI_FOUND)
-    set(gwenview_SRCS
-        ${gwenview_SRCS}
-        kipiexportaction.cpp
-        kipiimagecollectionselector.cpp
-        kipiinterface.cpp
-        kipiuploadwidget.cpp
-    )
-endif()
-
 add_executable(gwenview ${gwenview_SRCS})
 
 target_link_libraries(gwenview
     ${KDE4_KFILE_LIBS}
-    gwenviewlib
     ${KDE4_KIO_LIBS}
     ${LIBKONQ_LIBRARY}
     ${QT_QTCORE_LIBRARY}
-    ${KDE4_KIO_LIBS}
+    gwenviewlib
 )
-
-if(KIPI_FOUND)
-    target_link_libraries(gwenview ${KIPI_LIBRARIES})
-endif()
 
 install(TARGETS gwenview ${INSTALL_TARGETS_DEFAULT_ARGS})
 
