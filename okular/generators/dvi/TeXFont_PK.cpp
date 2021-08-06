@@ -550,167 +550,165 @@ void TeXFont_PK::read_PK_char(unsigned int ch)
   // simpler -even if somewhat slower approach and detect the ordering
   // at runtime. That should of course be changed in the future.
 
-  if (QSysInfo::ByteOrder == QSysInfo::BigEndian) {
-    // Routine for big Endian machines. Applies e.g. to Motorola and
-    // (Ultra-)Sparc processors.
+#if Q_BYTE_ORDER == Q_BIG_ENDIAN
+  // Routine for big Endian machines. Applies e.g. to Motorola and
+  // (Ultra-)Sparc processors.
 
 #ifdef DEBUG_PK
-    kDebug(kvs::dvi) << "big Endian byte ordering";
+  kDebug(kvs::dvi) << "big Endian byte ordering";
 #endif
 
-    if (PK_dyn_f == 14) {        /* get raster by bits */
-      memset(characterBitmaps[ch]->bits, 0, (int) characterBitmaps[ch]->h * bytes_wide);
-      for (i = 0; i < (int) characterBitmaps[ch]->h; i++) {        /* get all rows */
-        cp = ADD(characterBitmaps[ch]->bits, i * bytes_wide);
-        row_bit_pos = 32;
-        for (j = 0; j < (int) characterBitmaps[ch]->w; j++) {    /* get one row */
-          if (--PK_bitpos < 0) {
-            word = one(fp);
-            PK_bitpos = 7;
-          }
-          if (--row_bit_pos < 0) {
-            cp++;
-            row_bit_pos = 32 - 1;
-          }
-          if (word & (1 << PK_bitpos))
-            *cp |= 1 << row_bit_pos;
+  if (PK_dyn_f == 14) {        /* get raster by bits */
+    memset(characterBitmaps[ch]->bits, 0, (int) characterBitmaps[ch]->h * bytes_wide);
+    for (i = 0; i < (int) characterBitmaps[ch]->h; i++) {        /* get all rows */
+      cp = ADD(characterBitmaps[ch]->bits, i * bytes_wide);
+      row_bit_pos = 32;
+      for (j = 0; j < (int) characterBitmaps[ch]->w; j++) {    /* get one row */
+        if (--PK_bitpos < 0) {
+          word = one(fp);
+          PK_bitpos = 7;
         }
+        if (--row_bit_pos < 0) {
+          cp++;
+          row_bit_pos = 32 - 1;
+        }
+        if (word & (1 << PK_bitpos))
+          *cp |= 1 << row_bit_pos;
       }
-    } else {                /* get packed raster */
-      rows_left = characterBitmaps[ch]->h;
-      h_bit = characterBitmaps[ch]->w;
-      PK_repeat_count = 0;
-      word_weight = 32;
-      word = 0;
-      while (rows_left > 0) {
-        count = PK_packed_num(fp);
-        while (count > 0) {
-          if (count < word_weight && count < h_bit) {
-            h_bit -= count;
-            word_weight -= count;
+    }
+  } else {                /* get packed raster */
+    rows_left = characterBitmaps[ch]->h;
+    h_bit = characterBitmaps[ch]->w;
+    PK_repeat_count = 0;
+    word_weight = 32;
+    word = 0;
+    while (rows_left > 0) {
+      count = PK_packed_num(fp);
+      while (count > 0) {
+        if (count < word_weight && count < h_bit) {
+          h_bit -= count;
+          word_weight -= count;
+          if (paint_switch)
+            word |= bit_masks[count] << word_weight;
+          count = 0;
+        } else
+          if (count >= h_bit && h_bit <= word_weight) {
             if (paint_switch)
-              word |= bit_masks[count] << word_weight;
-            count = 0;
-          } else
-            if (count >= h_bit && h_bit <= word_weight) {
-              if (paint_switch)
-                word |= bit_masks[h_bit] << (word_weight - h_bit);
-              *cp++ = word;
-              /* "output" row(s) */
-              for (i = PK_repeat_count * bytes_wide / 4; i > 0; --i) {
-                *cp = *SUB(cp, bytes_wide);
-                ++cp;
-              }
-              rows_left -= PK_repeat_count + 1;
-              PK_repeat_count = 0;
-              word = 0;
-              word_weight = 32;
-              count -= h_bit;
-              h_bit = characterBitmaps[ch]->w;
-            } else {
-              if (paint_switch)
-                word |= bit_masks[word_weight];
-              *cp++ = word;
-              word = 0;
-              count -= word_weight;
-              h_bit -= word_weight;
-              word_weight = 32;
+              word |= bit_masks[h_bit] << (word_weight - h_bit);
+            *cp++ = word;
+            /* "output" row(s) */
+            for (i = PK_repeat_count * bytes_wide / 4; i > 0; --i) {
+              *cp = *SUB(cp, bytes_wide);
+              ++cp;
             }
-        }
-        paint_switch = 1 - paint_switch;
+            rows_left -= PK_repeat_count + 1;
+            PK_repeat_count = 0;
+            word = 0;
+            word_weight = 32;
+            count -= h_bit;
+            h_bit = characterBitmaps[ch]->w;
+          } else {
+            if (paint_switch)
+              word |= bit_masks[word_weight];
+            *cp++ = word;
+            word = 0;
+            count -= word_weight;
+            h_bit -= word_weight;
+            word_weight = 32;
+          }
       }
-      if (cp != ((quint32 *) (characterBitmaps[ch]->bits + bytes_wide * characterBitmaps[ch]->h)))
-        oops(i18n("Wrong number of bits stored:  char. %1, font %2", ch, parent->filename));
-      if (rows_left != 0 || h_bit != characterBitmaps[ch]->w)
-        oops(i18n("Bad pk file (%1), too many bits", parent->filename));
+      paint_switch = 1 - paint_switch;
     }
+    if (cp != ((quint32 *) (characterBitmaps[ch]->bits + bytes_wide * characterBitmaps[ch]->h)))
+      oops(i18n("Wrong number of bits stored:  char. %1, font %2", ch, parent->filename));
+    if (rows_left != 0 || h_bit != characterBitmaps[ch]->w)
+      oops(i18n("Bad pk file (%1), too many bits", parent->filename));
+  }
 
-    // The data in the bitmap is now in the processor's bit order,
-    // that is, big endian. Since XWindows needs little endian, we
-    // need to change the bit order now.
-    unsigned char* bitmapData = (unsigned char*) characterBitmaps[ch]->bits;
-    unsigned char* endOfData  = bitmapData + characterBitmaps[ch]->bytes_wide*characterBitmaps[ch]->h;
-    while(bitmapData < endOfData) {
-      *bitmapData = bitflip[*bitmapData];
-      bitmapData++;
-    }
-
-  } else {
-
+  // The data in the bitmap is now in the processor's bit order,
+  // that is, big endian. Since XWindows needs little endian, we
+  // need to change the bit order now.
+  unsigned char* bitmapData = (unsigned char*) characterBitmaps[ch]->bits;
+  unsigned char* endOfData  = bitmapData + characterBitmaps[ch]->bytes_wide*characterBitmaps[ch]->h;
+  while(bitmapData < endOfData) {
+    *bitmapData = bitflip[*bitmapData];
+    bitmapData++;
+  }
+#else // Q_BYTE_ORDER
     // Routines for small Endian start here. This applies e.g. to
     // Intel and Alpha processors.
 
 #ifdef DEBUG_PK
-    kDebug(kvs::dvi) << "small Endian byte ordering";
+  kDebug(kvs::dvi) << "small Endian byte ordering";
 #endif
 
-    if (PK_dyn_f == 14) {        /* get raster by bits */
-      memset(characterBitmaps[ch]->bits, 0, (int) characterBitmaps[ch]->h * bytes_wide);
-      for (i = 0; i < (int) characterBitmaps[ch]->h; i++) {        /* get all rows */
-        cp = ADD(characterBitmaps[ch]->bits, i * bytes_wide);
-        row_bit_pos = -1;
-        for (j = 0; j < (int) characterBitmaps[ch]->w; j++) {    /* get one row */
-          if (--PK_bitpos < 0) {
-            word = one(fp);
-            PK_bitpos = 7;
-          }
-          if (++row_bit_pos >= 32) {
-            cp++;
-            row_bit_pos = 0;
-          }
-          if (word & (1 << PK_bitpos))
-            *cp |= 1 << row_bit_pos;
+  if (PK_dyn_f == 14) {        /* get raster by bits */
+    memset(characterBitmaps[ch]->bits, 0, (int) characterBitmaps[ch]->h * bytes_wide);
+    for (i = 0; i < (int) characterBitmaps[ch]->h; i++) {        /* get all rows */
+      cp = ADD(characterBitmaps[ch]->bits, i * bytes_wide);
+      row_bit_pos = -1;
+      for (j = 0; j < (int) characterBitmaps[ch]->w; j++) {    /* get one row */
+        if (--PK_bitpos < 0) {
+          word = one(fp);
+          PK_bitpos = 7;
         }
-      }
-    } else {                /* get packed raster */
-      rows_left = characterBitmaps[ch]->h;
-      h_bit = characterBitmaps[ch]->w;
-      PK_repeat_count = 0;
-      word_weight = 32;
-      word = 0;
-      while (rows_left > 0) {
-        count = PK_packed_num(fp);
-        while (count > 0) {
-          if (count < word_weight && count < h_bit) {
-            if (paint_switch)
-              word |= bit_masks[count] << (32 - word_weight);
-            h_bit -= count;
-            word_weight -= count;
-            count = 0;
-          } else
-            if (count >= h_bit && h_bit <= word_weight) {
-              if (paint_switch)
-                word |= bit_masks[h_bit] << (32 - word_weight);
-              *cp++ = word;
-              /* "output" row(s) */
-              for (i = PK_repeat_count * bytes_wide / 4; i > 0; --i) {
-                *cp = *SUB(cp, bytes_wide);
-                ++cp;
-              }
-              rows_left -= PK_repeat_count + 1;
-              PK_repeat_count = 0;
-              word = 0;
-              word_weight = 32;
-              count -= h_bit;
-              h_bit = characterBitmaps[ch]->w;
-            } else {
-              if (paint_switch)
-                word |= bit_masks[word_weight] << (32 - word_weight);
-              *cp++ = word;
-              word = 0;
-              count -= word_weight;
-              h_bit -= word_weight;
-              word_weight = 32;
-            }
+        if (++row_bit_pos >= 32) {
+          cp++;
+          row_bit_pos = 0;
         }
-        paint_switch = 1 - paint_switch;
+        if (word & (1 << PK_bitpos))
+          *cp |= 1 << row_bit_pos;
       }
-      if (cp != ((quint32 *) (characterBitmaps[ch]->bits + bytes_wide * characterBitmaps[ch]->h)))
-        oops(i18n("Wrong number of bits stored:  char. %1, font %2", ch, parent->filename));
-      if (rows_left != 0 || h_bit != characterBitmaps[ch]->w)
-        oops(i18n("Bad pk file (%1), too many bits", parent->filename));
     }
-  } // endif: big or small Endian?
+  } else {                /* get packed raster */
+    rows_left = characterBitmaps[ch]->h;
+    h_bit = characterBitmaps[ch]->w;
+    PK_repeat_count = 0;
+    word_weight = 32;
+    word = 0;
+    while (rows_left > 0) {
+      count = PK_packed_num(fp);
+      while (count > 0) {
+        if (count < word_weight && count < h_bit) {
+          if (paint_switch)
+            word |= bit_masks[count] << (32 - word_weight);
+          h_bit -= count;
+          word_weight -= count;
+          count = 0;
+        } else
+          if (count >= h_bit && h_bit <= word_weight) {
+            if (paint_switch)
+              word |= bit_masks[h_bit] << (32 - word_weight);
+            *cp++ = word;
+            /* "output" row(s) */
+            for (i = PK_repeat_count * bytes_wide / 4; i > 0; --i) {
+              *cp = *SUB(cp, bytes_wide);
+              ++cp;
+            }
+            rows_left -= PK_repeat_count + 1;
+            PK_repeat_count = 0;
+            word = 0;
+            word_weight = 32;
+            count -= h_bit;
+            h_bit = characterBitmaps[ch]->w;
+          } else {
+            if (paint_switch)
+              word |= bit_masks[word_weight] << (32 - word_weight);
+            *cp++ = word;
+            word = 0;
+            count -= word_weight;
+            h_bit -= word_weight;
+            word_weight = 32;
+          }
+      }
+      paint_switch = 1 - paint_switch;
+    }
+    if (cp != ((quint32 *) (characterBitmaps[ch]->bits + bytes_wide * characterBitmaps[ch]->h)))
+      oops(i18n("Wrong number of bits stored:  char. %1, font %2", ch, parent->filename));
+    if (rows_left != 0 || h_bit != characterBitmaps[ch]->w)
+      oops(i18n("Bad pk file (%1), too many bits", parent->filename));
+  }
+#endif // Q_BYTE_ORDER
 }
 
 
