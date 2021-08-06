@@ -246,9 +246,9 @@ bool AudioPlayerControlRunner::startPlayer()
         return true;
     }
 
-    if (!KRun::run(m_player, KUrl::List(), Q_NULLPTR)) {
+    if (!KRun::run(m_player, KUrl::List(), nullptr)) {
         // We couldn't start the player
-        KMessageBox::error(Q_NULLPTR, i18n("%1 not found", m_player),
+        KMessageBox::error(nullptr, i18n("%1 not found", m_player),
             i18n("%1 was not found so the runner is unable to work.", m_player));
         return false;
     }

@@ -92,7 +92,7 @@ KU_PrefsBase *KU_Global::kcfg()
   return mCfg;
 }
 
-KU_Users *KU_Global::mUsers = Q_NULLPTR;
-KU_Groups *KU_Global::mGroups = Q_NULLPTR;
+KU_Users *KU_Global::mUsers = nullptr;
+KU_Groups *KU_Global::mGroups = nullptr;
 
-KU_PrefsBase *KU_Global::mCfg = Q_NULLPTR;
+KU_PrefsBase *KU_Global::mCfg = nullptr;
