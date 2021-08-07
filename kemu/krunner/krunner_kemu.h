@@ -21,9 +21,6 @@
 
 #include <plasma/abstractrunner.h>
 
-#include <KIcon>
-#include <KUrl>
-
 class KEmuControlRunner : public Plasma::AbstractRunner
 {
     Q_OBJECT

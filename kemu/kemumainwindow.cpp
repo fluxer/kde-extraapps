@@ -153,6 +153,7 @@ KEmuMainWindow::~KEmuMainWindow()
         m_settings->sync();
     }
     m_settings->deleteLater();
+    m_interface->deleteLater();
     delete m_kemuui;
 }
 

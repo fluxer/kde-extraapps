@@ -29,7 +29,7 @@ KEmuControlRunner::KEmuControlRunner(QObject *parent, const QVariantList& args)
 {
     Q_UNUSED(args);
 
-    setObjectName(QLatin1String("QEMU virtual machine manager runner"));
+    setObjectName("QEMU virtual machine manager runner");
     setSpeed(AbstractRunner::SlowSpeed);
 
     connect(this, SIGNAL(prepare()), this, SLOT(prep()));
@@ -64,7 +64,7 @@ void KEmuControlRunner::match(Plasma::RunnerContext &context)
             if (!isrunning) {
                 Plasma::QueryMatch match(this);
                 match.setType(Plasma::QueryMatch::PossibleMatch);
-                match.setIcon(KIcon(QLatin1String("system-run")));
+                match.setIcon(KIcon("system-run"));
                 match.setText(i18n("Start %1 virtual machine", machine));
                 match.setData(QStringList() << "start" << machine);
                 context.addMatch(term, match);
@@ -76,7 +76,7 @@ void KEmuControlRunner::match(Plasma::RunnerContext &context)
             if (isrunning) {
                 Plasma::QueryMatch match(this);
                 match.setType(Plasma::QueryMatch::PossibleMatch);
-                match.setIcon(KIcon(QLatin1String("system-shutdown")));
+                match.setIcon(KIcon("system-shutdown"));
                 match.setText(i18n("Stop %1 virtual machine", machine));
                 match.setData(QStringList() << "stop" << machine);
                 context.addMatch(term, match);
