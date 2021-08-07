@@ -30,7 +30,6 @@
 
 #include <QVector>
 #include <QStringList>
-#include <QStringMatcher>
 #include <QLinkedList>
 
 #include <kdebug.h>
