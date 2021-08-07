@@ -30,6 +30,7 @@ K_EXPORT_PLUGIN(KEmuModuleFactory("kemu"))
 KEmuModule::KEmuModule(QObject *parent, const QList<QVariant>&)
     : KDEDModule(parent)
 {
+    KGlobal::locale()->insertCatalog("kemu");
 }
 
 KEmuModule::~KEmuModule()

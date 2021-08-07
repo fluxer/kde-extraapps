@@ -33,6 +33,8 @@ KEmuControlRunner::KEmuControlRunner(QObject *parent, const QVariantList& args)
     setSpeed(AbstractRunner::SlowSpeed);
 
     connect(this, SIGNAL(prepare()), this, SLOT(prep()));
+
+    KGlobal::locale()->insertCatalog("kemu");
 }
 
 KEmuControlRunner::~KEmuControlRunner()
