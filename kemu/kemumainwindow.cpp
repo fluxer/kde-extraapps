@@ -25,7 +25,6 @@
 #include <KStandardDirs>
 #include <KStatusBar>
 #include <KDebug>
-#include <ksettings.h>
 #include <QApplication>
 #include <QMessageBox>
 #include <QThread>
@@ -34,7 +33,8 @@
 #include "ui_kemu.h"
 
 KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
-    : KXmlGuiWindow(parent, flags), m_loading(false), m_installed(false), m_kemuui(new Ui_KEmuWindow)
+    : KXmlGuiWindow(parent, flags), m_loading(false), m_installed(false), m_kemuui(new Ui_KEmuWindow),
+    m_interface(new QDBusInterface("org.kde.kded", "/modules/kemu", "org.kde.kemu"))
 {
     m_kemuui->setupUi(this);
 
@@ -84,9 +84,6 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
     }
 
     m_settings = new KSettings("kemu", KSettings::SimpleConfig);
-#ifndef QT_KATIE
-    foreach(const QString machine, m_settings->childGroups()) {
-#else
     QStringList addedMachines;
     foreach(const QString key, m_settings->keys()) {
         const int sepindex = key.indexOf("/");
@@ -98,7 +95,6 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
             continue;
         }
         addedMachines.append(machine);
-#endif
         if (m_settings->value(machine + "/enable").toBool() == true) {
             m_kemuui->machinesList->insertItem(machine);
             machineLoad(machine);
@@ -142,6 +138,10 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
     connect(m_kemuui->KVMCheckBox, SIGNAL(stateChanged(int)), this, SLOT(machineSave(int)));
     connect(m_kemuui->ACPICheckBox, SIGNAL(stateChanged(int)), this, SLOT(machineSave(int)));
     connect(m_kemuui->argumentsLineEdit, SIGNAL(textChanged(QString)), this, SLOT(machineSave(QString)));
+
+    connect(m_interface, SIGNAL(started(QString)), this, SLOT(machineStarted(QString)));
+    connect(m_interface, SIGNAL(stopped(int,QString)), this, SLOT(machineStopped(int,QString)));
+    connect(m_interface, SIGNAL(error(QString)), this, SLOT(machineError(QString)));
 }
 
 KEmuMainWindow::~KEmuMainWindow()
@@ -150,16 +150,9 @@ KEmuMainWindow::~KEmuMainWindow()
     const QString lastSelected = m_kemuui->machinesList->currentText();
     if (!lastSelected.isEmpty()) {
         m_settings->setValue("lastselected", lastSelected);
+        m_settings->sync();
     }
-    m_settings->sync();
     m_settings->deleteLater();
-    foreach(QProcess* machineProcess, m_machines) {
-        const QString machine = m_machines.key(machineProcess);
-        kDebug() << "stopping machine" << machine;
-        machineProcess->terminate();
-        machineProcess->deleteLater();
-        m_machines.remove(machine);
-    }
     delete m_kemuui;
 }
 
@@ -198,30 +191,15 @@ void KEmuMainWindow::quit()
     qApp->quit();
 }
 
-void KEmuMainWindow::closeEvent(QCloseEvent *event)
-{
-    const int running = m_machines.size();
-    if (running != 0) {
-        const QMessageBox::StandardButton answer = QMessageBox::question(this,
-            i18n("Stop machines and quit?"),
-            i18n("There are still %1 machines running, do you really want to quit?", running),
-            QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-        if (answer != QMessageBox::Yes) {
-            event->ignore();
-            return;
-        }
-    }
-    event->accept();
-}
-
 void KEmuMainWindow::updateStatus()
 {
-    if (m_machines.size() == 0) {
+    const QStringList running = m_interface->call("running").arguments().at(0).toStringList();
+    if (running.size() == 0) {
         statusBar()->showMessage(i18n("No machines running"));
     } else {
         QString machineNames;
         bool firstMachine = true;
-        foreach (const QString name, m_machines.keys()) {
+        foreach (const QString name, running) {
             if (firstMachine) {
                 machineNames += name;
                 firstMachine = false;
@@ -229,8 +207,20 @@ void KEmuMainWindow::updateStatus()
                 machineNames += ", " + name;
             }
         }
-        const QString statusText = i18n("Machines running: %1 (%2)", machineNames, m_machines.size());
+        const QString statusText = i18n("Machines running: %1 (%2)", machineNames, running.size());
         statusBar()->showMessage(statusText);
+    }
+
+    const QString machine = m_kemuui->machinesList->currentText();
+    const bool isrunning = m_interface->call("isRunning", machine).arguments().at(0).toBool();
+    if (isrunning) {
+        kDebug() << "machine is running" << machine;
+        m_kemuui->startStopButton->setText(i18n("Stop"));
+        m_kemuui->startStopButton->setIcon(KIcon("system-shutdown"));
+    } else {
+        kDebug() << "machine is stopped" << machine;
+        m_kemuui->startStopButton->setText(i18n("Start"));
+        m_kemuui->startStopButton->setIcon(KIcon("system-run"));
     }
 }
 
@@ -261,7 +251,6 @@ void KEmuMainWindow::machineSave(int ignored)
     machineSave(QString());
 }
 
-
 void KEmuMainWindow::machineLoad(const QString machine)
 {
     m_loading = true;
@@ -283,6 +272,8 @@ void KEmuMainWindow::machineLoad(const QString machine)
     m_kemuui->ACPICheckBox->setChecked(m_settings->value(machine + "/acpi", false).toBool());
     m_kemuui->argumentsLineEdit->setText(m_settings->value(machine + "/args").toString());
     m_loading = false;
+
+    updateStatus();
 }
 
 void KEmuMainWindow::machineChanged(QItemSelection ignored, QItemSelection ignored2)
@@ -296,15 +287,6 @@ void KEmuMainWindow::machineChanged(QItemSelection ignored, QItemSelection ignor
 
         m_kemuui->startStopButton->setEnabled(m_installed);
         m_kemuui->groupBox->setEnabled(true);
-        if (m_machines.contains(machine)) {
-            kDebug() << "machine is running" << machine;
-            m_kemuui->startStopButton->setText(i18n("Stop"));
-            m_kemuui->startStopButton->setIcon(KIcon("system-shutdown"));
-        } else {
-            kDebug() << "machine is stopped" << machine;
-            m_kemuui->startStopButton->setText(i18n("Start"));
-            m_kemuui->startStopButton->setIcon(KIcon("system-run"));
-        }
         machineLoad(machine);
     } else {
         m_kemuui->startStopButton->setEnabled(false);
@@ -312,21 +294,27 @@ void KEmuMainWindow::machineChanged(QItemSelection ignored, QItemSelection ignor
     }
 }
 
-void KEmuMainWindow::machineFinished(int exitCode, QProcess::ExitStatus exitStatus)
+void KEmuMainWindow::machineStarted(const QString machine)
 {
-    QProcess *machineProcess = qobject_cast<QProcess*>(sender());
-    disconnect(machineProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-        this, SLOT(machineFinished(int,QProcess::ExitStatus)));
+    Q_UNUSED(machine);
+
+    updateStatus();
+}
+
+void KEmuMainWindow::machineStopped(int exitCode, const QString error)
+{
     if (exitCode != 0) {
         QMessageBox::warning(this, i18n("QEMU error"),
-            i18n("An error occured:\n%1", QString(machineProcess->readAll())));
+            i18n("An error occured:\n%1", error));
     }
-    m_kemuui->startStopButton->setText(i18n("Start"));
-    m_kemuui->startStopButton->setIcon(KIcon("system-run"));
-    const QString machine = m_machines.key(machineProcess);
-    m_machines.remove(machine);
-    machineProcess->deleteLater();
 
+    updateStatus();
+}
+
+void KEmuMainWindow::machineError(const QString error)
+{
+    QMessageBox::warning(this, i18n("KEmu error"),
+        i18n("An error occured:\n%1", error));
     updateStatus();
 }
 
@@ -341,69 +329,27 @@ void KEmuMainWindow::startStopMachine()
 {
     const QString machine = m_kemuui->machinesList->currentText();
     if (!machine.isEmpty()) {
-        if (m_machines.contains(machine)) {
+        const bool isrunning = m_interface->call("isRunning", machine).arguments().at(0).toBool();
+        if (isrunning) {
             kDebug() << "stopping machine" << machine;
-            QProcess* machineProcess = m_machines.take(machine);
-            machineProcess->terminate();
-            machineProcess->deleteLater();
-            m_kemuui->startStopButton->setText(i18n("Start"));
-            m_kemuui->startStopButton->setIcon(KIcon("system-run"));
+            m_interface->call("stop", machine);
         } else {
             kDebug() << "starting machine" << machine;
-            QStringList machineArgs;
-            machineArgs << "-name" << machine;
-            const QString CDRom = m_kemuui->CDROMInput->url().prettyUrl();
-            if (!CDRom.isEmpty()) {
-                machineArgs << "-cdrom" << CDRom;
-            }
-            const QString HardDisk = m_kemuui->HardDiskInput->url().prettyUrl();
-            if (!HardDisk.isEmpty()) {
-                machineArgs << "-hda" << HardDisk;
-            }
-            if (CDRom.isEmpty() && HardDisk.isEmpty()) {
-                QMessageBox::warning(this, i18n("Requirements not met"),
-                    i18n("Either CD-ROM or Hard Disk image must be set"));
-                return;
-            }
-            machineArgs << "-vga" << m_kemuui->videoComboBox->currentText();
-            machineArgs << "-soundhw" << m_kemuui->audioComboBox->currentText();
-            machineArgs << "-m" << QString::number(m_kemuui->RAMInput->value());
-            machineArgs << "-smp" << QString::number(m_kemuui->CPUInput->value());
-            if (m_kemuui->KVMCheckBox->isEnabled() && m_kemuui->KVMCheckBox->isChecked()) {
-                machineArgs << "-enable-kvm";
-            }
-            if (!m_kemuui->ACPICheckBox->isChecked()) {
-                machineArgs << "-no-acpi";
-            }
-            const QString extraArgs = m_kemuui->argumentsLineEdit->text();
-            if (!extraArgs.isEmpty()) {
-                foreach (const QString argument, extraArgs.split(" ")) {
-                    machineArgs << argument;
-                }
-            }
-            QProcess* machineProcess = new QProcess(this);
-            machineProcess->setProcessChannelMode(QProcess::MergedChannels);
-            m_kemuui->startStopButton->setText(i18n("Stop"));
-            m_kemuui->startStopButton->setIcon(KIcon("system-shutdown"));
-            m_machines.insert(machine, machineProcess);
-            connect(machineProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-                this, SLOT(machineFinished(int,QProcess::ExitStatus)));
-            machineProcess->start(m_kemuui->systemComboBox->currentText(), machineArgs);
+            m_interface->call("start", machine);
         }
-
-        updateStatus();
     }
 }
 
 void KEmuMainWindow::removeMachine(const QString machine)
 {
-    if (m_machines.contains(machine)) {
+    const bool isrunning = m_interface->call("isRunning", machine).arguments().at(0).toBool();
+    if (isrunning) {
         kDebug() << "stopping machine" << machine;
-        QProcess* machineProcess = m_machines.take(machine);
-        machineProcess->terminate();
-        machineProcess->deleteLater();
+        m_interface->call("stop", machine);
     }
     kDebug() << "removing machine" << machine;
     m_settings->setValue(machine + "/enable", false);
     m_settings->sync();
+
+    updateStatus();
 }

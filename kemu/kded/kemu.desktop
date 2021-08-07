@@ -1,0 +1,11 @@
+[Desktop Entry]
+Icon=applications-engineering
+Name=QEMU virtual machine manager
+Comment=QEMU virtual machine manager service
+Type=Service
+X-KDE-ServiceTypes=KDEDModule
+X-KDE-Library=kemu
+X-KDE-DBus-ModuleName=kemu
+X-KDE-Kded-autoload=false
+X-KDE-Kded-load-on-demand=true
+OnlyShowIn=KDE;

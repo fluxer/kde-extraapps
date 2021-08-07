@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Control QEMU virtual machines
+Comment=Allows to control virtual machines
+X-KDE-ServiceTypes=Plasma/Runner
+Type=Service
+Icon=applications-engineering
+X-KDE-Library=krunner_kemu
+X-KDE-PluginInfo-Author=Ivailo Monev
+X-KDE-PluginInfo-Email=xakepa10@gmail.com
+X-KDE-PluginInfo-Name=QEMU virtual machine manager runner
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true

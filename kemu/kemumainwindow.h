@@ -21,9 +21,10 @@
 
 #include <KXmlGuiWindow>
 #include <QListWidgetItem>
-#include <QSettings>
 #include <QProcess>
 #include <QCloseEvent>
+#include <QDBusInterface>
+#include <ksettings.h>
 
 QT_BEGIN_NAMESPACE
 class Ui_KEmuWindow;
@@ -40,15 +41,14 @@ public slots:
     void createHardDisk();
     void quit();
 
-protected:
-    virtual void closeEvent(QCloseEvent *event);
-
 private slots:
     void machineLoad(const QString machine);
     void machineSave(const QString ignored);
     void machineSave(int ignored);
     void machineChanged(QItemSelection ignored, QItemSelection ignored2);
-    void machineFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    void machineStarted(const QString machine);
+    void machineStopped(int exitCode, const QString error);
+    void machineError(const QString error);
     void addMachine(const QString machine);
     void startStopMachine();
     void removeMachine(const QString machine);
@@ -59,8 +59,8 @@ private:
     bool m_loading;
     bool m_installed;
     Ui_KEmuWindow *m_kemuui;
-    QSettings *m_settings;
-    QHash<QString,QProcess*> m_machines;
+    KSettings *m_settings;
+    QDBusInterface *m_interface;
 };
 
 #endif // KEMUMAINWINDOW_H
