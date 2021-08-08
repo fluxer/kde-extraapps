@@ -21,13 +21,6 @@ set_package_properties(Taglib PROPERTIES
     PURPOSE "Required to build the audio thumbnailer"
 )
 
-macro_optional_find_package(FLAC++)
-set_package_properties(FLAC++ PROPERTIES
-    DESCRIPTION "Free Lossless Audio Codec"
-    URL "https://xiph.org/flac/"
-    PURPOSE "Required to build the audio thumbnailer"
-)
-
 macro_optional_find_package(FFmpegThumbnailer)
 set_package_properties(FFmpegThumbnailer PROPERTIES
     DESCRIPTION "Lightweight video thumbnailer that can be used by file managers to create thumbnails for video files"
@@ -43,7 +36,7 @@ add_feature_info(thumbnailer_gs
 
 add_subdirectory(ps)
 
-if(TAGLIB_FOUND AND FLAC++_FOUND)
+if(TAGLIB_FOUND)
     add_subdirectory(audio)
 endif()
 

@@ -40,8 +40,6 @@
 #include <taglib/oggfile.h>
 #include <taglib/vorbisfile.h>
 
-#include <FLAC++/metadata.h>
-
 #include <kmimetype.h>
 #include <kdemacros.h>
 
