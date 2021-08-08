@@ -31,8 +31,10 @@
 #include <KDebug>
 
 //TODO use mutable to make some methods const?
-// TODO: implement md4 support
+// TODO: implement sha256 and sha512 support
 const QStringList VerifierPrivate::SUPPORTED = (QStringList() << "sha1" << "md5" << "md4");
+const QString VerifierPrivate::MD4 = QString("md4");
+const int VerifierPrivate::MD4LENGTH = 16;
 const QString VerifierPrivate::MD5 = QString("md5");
 const int VerifierPrivate::MD5LENGTH = 32;
 const QString VerifierPrivate::SHA1 = QString("sha1");
@@ -63,7 +65,7 @@ QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &ty
         pieceLength = fileSize - startOffset;
     }
 
-    if (type != MD5 && type != SHA1) {
+    if (type != MD4 && type != MD5 && type != SHA1) {
         return QString();
     }
 
@@ -77,7 +79,9 @@ QString VerifierPrivate::calculatePartialChecksum(QFile *file, const QString &ty
     }
 
     QCryptographicHash *hash = 0;
-    if (type == MD5) {
+    if (type == MD4) {
+        hash = new QCryptographicHash(QCryptographicHash::Md4);
+    } else if (type == MD5) {
         hash = new QCryptographicHash(QCryptographicHash::Md5);
     } else if (type == SHA1) {
         hash = new QCryptographicHash(QCryptographicHash::Sha1);
@@ -186,9 +190,9 @@ VerificationModel *Verifier::model()
 QStringList Verifier::supportedVerficationTypes()
 {
     QStringList supported;
-    if (!supported.contains(VerifierPrivate::MD5))
+    if (!supported.contains(VerifierPrivate::MD4))
     {
-        supported << VerifierPrivate::MD5 << VerifierPrivate::SHA1;
+        supported << VerifierPrivate::MD4 << VerifierPrivate::MD5 << VerifierPrivate::SHA1;
     }
 
     return supported;
@@ -197,7 +201,9 @@ QStringList Verifier::supportedVerficationTypes()
 
 int Verifier::diggestLength(const QString &type)
 {
-    if (type == VerifierPrivate::MD5) {
+    if (type == VerifierPrivate::MD4) {
+        return VerifierPrivate::MD4LENGTH;
+    } else if (type == VerifierPrivate::MD5) {
         return VerifierPrivate::MD5LENGTH;
     } else if (type == VerifierPrivate::SHA1) {
         return VerifierPrivate::SHA1LENGTH;
@@ -362,7 +368,11 @@ QString Verifier::checksum(const KUrl &dest, const QString &type)
         return QString();
     }
 
-    if (type == VerifierPrivate::MD5) {
+    if (type == VerifierPrivate::MD4) {
+        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md4);
+        file.close();
+        return hash.toHex();
+    } else if (type == VerifierPrivate::MD5) {
         QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md5);
         file.close();
         return hash.toHex();
