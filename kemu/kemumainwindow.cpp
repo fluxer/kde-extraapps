@@ -115,16 +115,18 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
 
     QFileInfo kvmDev("/dev/kvm");
     if (!kvmDev.exists()) {
+#ifdef Q_OS_LINUX
         const QString modprobeBin = KStandardDirs::findRootExe("modprobe");
         if (!modprobeBin.isEmpty()) {
             QProcess modprobe(this);
             modprobe.start(modprobeBin, QStringList() << "-b" << "kvm");
             modprobe.waitForFinished();
-            if (!kvmDev.exists()) {
-                QMessageBox::warning(this, i18n("KVM not available"), i18n("KVM not available"));
-            }
         } else {
             kDebug() << "modprobe not found";
+        }
+#endif
+        if (!kvmDev.exists()) {
+            QMessageBox::warning(this, i18n("KVM not available"), i18n("KVM not available"));
         }
     }
 
