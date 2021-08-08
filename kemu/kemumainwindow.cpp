@@ -115,7 +115,7 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
 
     QFileInfo kvmDev("/dev/kvm");
     if (!kvmDev.exists()) {
-        const QString modprobeBin = KStandardDirs::findExe("modprobe");
+        const QString modprobeBin = KStandardDirs::findRootExe("modprobe");
         if (!modprobeBin.isEmpty()) {
             QProcess modprobe(this);
             modprobe.start(modprobeBin, QStringList() << "-b" << "kvm");
