@@ -58,7 +58,10 @@ struct VerifierPrivate
     static const int MD5LENGTH;
     static const QString SHA1;
     static const int SHA1LENGTH;
-    static const int DIGGESTLENGTH[];
+    static const QString SHA256;
+    static const int SHA256LENGTH;
+    static const QString SHA512;
+    static const int SHA512LENGTH;
     static const int PARTSIZE;
 };
 
