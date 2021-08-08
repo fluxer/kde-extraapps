@@ -36,8 +36,8 @@ KEmuControlRunner::KEmuControlRunner(QObject *parent, const QVariantList& args)
 
     setIgnoredTypes(Plasma::RunnerContext::FileSystem | Plasma::RunnerContext::NetworkLocation);
 
-    addSyntax(Plasma::RunnerSyntax("vm start :q:", i18n("Starts :q: virtual machine")));
-    addSyntax(Plasma::RunnerSyntax("vm stop :q:", i18n("Stops :q: virtual machine")));
+    addSyntax(Plasma::RunnerSyntax("vm start", i18n("Starts virtual machine")));
+    addSyntax(Plasma::RunnerSyntax("vm stop", i18n("Stops virtual machine")));
 }
 
 KEmuControlRunner::~KEmuControlRunner()
@@ -53,7 +53,7 @@ void KEmuControlRunner::match(Plasma::RunnerContext &context)
 
     QDBusInterface interface("org.kde.kded", "/modules/kemu", "org.kde.kemu");
     const QStringList machines = interface.call("machines").arguments().at(0).toStringList();
-    if (term.startsWith("vm start")) {
+    if (term == "vm start") {
         foreach (const QString &machine, machines) {
             const bool isrunning = interface.call("isRunning", machine).arguments().at(0).toBool();
             if (!isrunning) {
@@ -65,7 +65,7 @@ void KEmuControlRunner::match(Plasma::RunnerContext &context)
                 context.addMatch(term, match);
             }
         }
-    } else if (term.startsWith("vm stop")) {
+    } else if (term == "vm stop") {
         foreach (const QString &machine, machines) {
             const bool isrunning = interface.call("isRunning", machine).arguments().at(0).toBool();
             if (isrunning) {
