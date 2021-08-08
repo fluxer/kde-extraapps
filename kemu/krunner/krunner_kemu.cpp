@@ -32,23 +32,16 @@ KEmuControlRunner::KEmuControlRunner(QObject *parent, const QVariantList& args)
     setObjectName("QEMU virtual machine manager runner");
     setSpeed(AbstractRunner::SlowSpeed);
 
-    connect(this, SIGNAL(prepare()), this, SLOT(prep()));
-
     KGlobal::locale()->insertCatalog("kemu");
+
+    setIgnoredTypes(Plasma::RunnerContext::FileSystem | Plasma::RunnerContext::NetworkLocation);
+
+    addSyntax(Plasma::RunnerSyntax("vm start :q:", i18n("Starts :q: virtual machine")));
+    addSyntax(Plasma::RunnerSyntax("vm stop :q:", i18n("Stops :q: virtual machine")));
 }
 
 KEmuControlRunner::~KEmuControlRunner()
 {
-}
-
-void KEmuControlRunner::prep()
-{
-    QList<Plasma::RunnerSyntax> syntaxes;
-
-    syntaxes << Plasma::RunnerSyntax("vm start :q:", i18n("Starts virtual machine"));
-    syntaxes << Plasma::RunnerSyntax("vm stop :q:", i18n("Stops virtual machine"));
-
-    setSyntaxes(syntaxes);
 }
 
 void KEmuControlRunner::match(Plasma::RunnerContext &context)
