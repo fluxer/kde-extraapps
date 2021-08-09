@@ -90,7 +90,7 @@ void KCMAkregatorArchiveConfig::setArchiveMode( int mode )
     if ( b )
         b->setChecked( true );
     else
-        kWarning( "No button for %d registered, ignoring call", mode );
+        kWarning() << "No button for" << mode << "registered, ignoring call";
 }
 
 int KCMAkregatorArchiveConfig::archiveMode() const {
