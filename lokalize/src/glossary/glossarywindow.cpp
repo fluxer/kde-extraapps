@@ -559,4 +559,4 @@ void TermListView::rmTerms()
 }
 
 
-#include "glossarywindow.moc"
+#include "moc_glossarywindow.cpp"
