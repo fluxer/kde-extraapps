@@ -33,7 +33,7 @@
 //TODO use mutable to make some methods const?
 const QStringList VerifierPrivate::SUPPORTED = (QStringList() << "sha512" << "sha256" << "sha1" << "md5" << "md4");
 const QString VerifierPrivate::MD4 = QString("md4");
-const int VerifierPrivate::MD4LENGTH = 16;
+const int VerifierPrivate::MD4LENGTH = 32;
 const QString VerifierPrivate::MD5 = QString("md5");
 const int VerifierPrivate::MD5LENGTH = 32;
 const QString VerifierPrivate::SHA1 = QString("sha1");
