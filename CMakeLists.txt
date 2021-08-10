@@ -21,7 +21,7 @@ set_package_properties(Boost PROPERTIES
     DESCRIPTION "Free peer-reviewed portable C++ source libraries"
     URL "https://www.boost.org/"
     TYPE RECOMMENDED
-    PURPOSE "Required to build libktorrent, kget, syndication and akregator"
+    PURPOSE "Required to build syndication and akregator"
 )
 
 macro_optional_add_subdirectory(about-distro)
@@ -40,6 +40,7 @@ macro_optional_add_subdirectory(libksane)
 macro_optional_add_subdirectory(kcolorchooser)
 macro_optional_add_subdirectory(kemu)
 macro_optional_add_subdirectory(kfloppy)
+macro_optional_add_subdirectory(kget)
 macro_optional_add_subdirectory(kgpg)
 macro_optional_add_subdirectory(kmix)
 macro_optional_add_subdirectory(kompare)
@@ -60,8 +61,6 @@ macro_optional_add_subdirectory(yakuake)
 
 # projects that require boost
 if(Boost_FOUND)
-    macro_optional_add_subdirectory(libktorrent)
-    macro_optional_add_subdirectory(kget)
     macro_optional_add_subdirectory(syndication)
     macro_optional_add_subdirectory(akregator)
 endif()

@@ -1217,14 +1217,15 @@ void KGet::setHasNetworkConnection(bool hasConnection)
 KGetPlugin * KGet::createPluginFromService( const KService::Ptr &service )
 {
     //try to load the specified library
-    KPluginFactory *factory = KPluginLoader(service->library()).factory();
+    KPluginLoader loader(service->library());
+    KPluginFactory *factory = loader.factory();
 
     if (!factory)
     {
         KGet::showNotification(m_mainWindow, "error",
                                i18n("Plugin loader could not load the plugin: %1.", service->library()),
                                "dialog-info");
-        kError(5001) << "KPluginFactory could not load the plugin:" << service->library();
+        kError(5001) << "KPluginFactory could not load the plugin:" << service->library() << loader.errorString();
         return 0;
     }
     KGetPlugin * plugin = factory->create< TransferFactory >(KGet::m_mainWindow);

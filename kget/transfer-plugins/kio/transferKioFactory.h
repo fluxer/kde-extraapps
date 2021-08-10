@@ -28,8 +28,6 @@ class TransferKioFactory : public TransferFactory
                                    TransferGroup * parent, Scheduler * scheduler,
                                    const QDomElement * e = 0 );
 
-        QString displayName(){return "HTTP(s) / FTP(s)";}
-        
         bool isSupported(const KUrl &url) const;
         QStringList addsProtocols() const;
 };

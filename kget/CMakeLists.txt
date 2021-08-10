@@ -23,6 +23,13 @@ set_package_properties(LibMms PROPERTIES
     PURPOSE "Needed to build KGet mms support"
 )
 
+macro_optional_find_package(LibTorrent)
+set_package_properties(LibTorrent PROPERTIES
+    DESCRIPTION "Feature complete C++ bittorrent implementation focusing on efficiency and scalability"
+    URL "https://libtorrent.org/"
+    PURPOSE "Needed to build KGet torrent support"
+)
+
 macro_optional_find_package(KDE4Workspace)
 set_package_properties(KDE4Workspace PROPERTIES
     DESCRIPTION "KDE base workspace libraries"

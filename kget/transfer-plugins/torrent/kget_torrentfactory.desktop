@@ -1,0 +1,24 @@
+[Desktop Entry]
+# service definition
+Type=Service
+X-KDE-ServiceTypes=KGet/Plugin
+Icon=application-x-bittorrent
+
+# standard fields
+Name=Torrent
+Comment=Torrent downloader plugin
+
+# options for library loader
+X-KDE-Library=kget_torrentfactory
+X-KDE-KGet-plugintype=TransferFactory
+X-KDE-KGet-rank=200
+X-KDE-KGet-framework-version=1
+
+X-KDE-PluginInfo-Author=Ivailo Monev
+X-KDE-PluginInfo-Email=xakepa10@gmail.com
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Category=Service
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Name=kget_torrent_plugin
+

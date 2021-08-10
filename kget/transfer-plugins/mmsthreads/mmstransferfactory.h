@@ -45,9 +45,6 @@ class MmsTransferFactory : public TransferFactory
         const QList<KAction *> actions(TransferHandler *handler = 0);
 
         bool isSupported(const KUrl &url) const;
-
-        QString displayName(){return "mms";}
-
 };
 
 #endif

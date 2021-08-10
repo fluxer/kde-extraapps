@@ -1,5 +1,0 @@
-ClassName=BittorrentSettings
-File=kget_bittorrentfactory.kcfg
-Mutators=true
-Singleton=true
-Visibility=KDE_EXPORT
