@@ -27,13 +27,15 @@
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/magnet_uri.hpp>
 
+static const int LTPollInveral = 1000;
+
 TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory,
                          Scheduler* scheduler, const KUrl &source, const KUrl &dest,
                          const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
     m_timerid(0), m_ltsession(nullptr)
 {
-    setCapabilities(Transfer::Cap_Resuming);
+    setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming);
 
     // FIXME: once downloaded and KGet is restarted transfer is not seeded
 
@@ -43,22 +45,34 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
         | lt::alert::error_notification
         | lt::alert::progress_notification
         | lt::alert::stats_notification);
-    // TODO: configurable limits
-#if 0
-    ltsettings.set_int(settings_pack::connections_limit, 60);
-    ltsettings.set_int(settings_pack::download_rate_limit, 2048);
-    ltsettings.set_int(settings_pack::upload_rate_limit, 1024);
-#endif
 
     m_ltsession = new lt::session(ltsettings);
 }
 
 TransferTorrent::~TransferTorrent()
 {
+    if (m_lthandle.is_valid()) {
+        m_lthandle.save_resume_data();
+    }
+
     if (m_timerid != 0) {
         killTimer(m_timerid);
     }
+
     delete m_ltsession;
+}
+
+void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
+{
+    kDebug(5001) << "TransferTorrent::setSpeedLimits: upload limit" << uploadLimit;
+    kDebug(5001) << "TransferTorrent::setSpeedLimits: download limit" << downloadLimit;
+
+    if (!m_lthandle.is_valid()) {
+        kWarning(5001) << "TransferTorrent::setSpeedLimits: handle is not valid";
+    }
+
+    m_lthandle.set_upload_limit(uploadLimit * 1024);
+    m_lthandle.set_download_limit(downloadLimit * 1024);
 }
 
 void TransferTorrent::start()
@@ -113,13 +127,18 @@ void TransferTorrent::start()
         return;
     }
 
+    kDebug(5001) << "TransferTorrent::start: upload limit" << m_uploadLimit;
+    kDebug(5001) << "TransferTorrent::start: download limit" << m_downloadLimit;
+
     ltparams.save_path = destination.constData();
     m_lthandle = m_ltsession->add_torrent(ltparams);
+    m_lthandle.set_upload_limit(m_uploadLimit * 1024);
+    m_lthandle.set_download_limit(m_downloadLimit * 1024);
 
     setStatus(Job::Running);
     setTransferChange(Transfer::Tc_Status, true);
 
-    m_timerid = startTimer(1000);
+    m_timerid = startTimer(LTPollInveral);
 }
 
 void TransferTorrent::stop()
@@ -170,7 +189,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
             m_percent = (ltstatus.progress * 100.0);
             m_downloadedSize = ltstatus.total_done;
             m_downloadSpeed = ltstatus.download_rate;
-            m_uploadedSize = ltstatus.all_time_upload;
+            m_uploadedSize = (ltstatus.total_upload + ltstatus.all_time_upload);
             m_uploadSpeed = ltstatus.upload_rate;
 
             kDebug(5001) << "TransferTorrent::timerEvent: percent" << m_percent;
@@ -217,13 +236,13 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
 
             m_lthandle.save_resume_data();
 
-            // TODO: keep alive only if seeding is enabled
             setStatus(Job::FinishedKeepAlive);
             setTransferChange(Transfer::Tc_Status, true);
         } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
             kError(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
 
             killTimer(m_timerid);
+            m_timerid = 0;
 
             // TODO: translate the error message
             setStatus(Job::Aborted, ltalert->message().c_str(), SmallIcon("dialog-error"));

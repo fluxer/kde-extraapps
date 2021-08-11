@@ -47,6 +47,8 @@ public:
 protected:
     // QObject reimplementation
     void timerEvent(QTimerEvent *event) final;
+    // Transfer reimplementation
+    void setSpeedLimits(int uploadLimit, int downloadLimit) final;
 
 private:
     int m_timerid;
