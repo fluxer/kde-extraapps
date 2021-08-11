@@ -48,8 +48,8 @@ Transfer* TransferTorrentFactory::createTransfer(const KUrl &srcUrl, const KUrl 
 
 bool TransferTorrentFactory::isSupported(const KUrl &url) const
 {
-    const QString stringurl = url.url();
-    return (stringurl.startsWith("magnet:") || stringurl.endsWith(".torrent"));
+    const QString urlstring = url.url();
+    return (urlstring.startsWith("magnet:") || urlstring.endsWith(".torrent"));
 }
 
 QStringList TransferTorrentFactory::addsProtocols() const

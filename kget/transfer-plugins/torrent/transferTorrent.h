@@ -29,19 +29,24 @@
 class TransferTorrent : public Transfer
 {
     Q_OBJECT
+    // Transfer reimplementations
 public:
     TransferTorrent(TransferGroup* parent, TransferFactory* factory,
                     Scheduler* scheduler, const KUrl &src, const KUrl &dest,
                     const QDomElement* e = 0);
     ~TransferTorrent();
 
-public slots:
-    void start();
-    void stop();
-    void deinit(Transfer::DeleteOptions options);
+public:
+    void deinit(Transfer::DeleteOptions options) final;
+
+    // Job reimplementations
+    void start() final;
+    void stop() final;
+    bool isWorking() const final;
 
 protected:
-    void timerEvent(QTimerEvent *event);
+    // QObject reimplementation
+    void timerEvent(QTimerEvent *event) final;
 
 private:
     int m_timerid;

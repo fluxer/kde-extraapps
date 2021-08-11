@@ -43,15 +43,19 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
         | lt::alert::error_notification
         | lt::alert::progress_notification
         | lt::alert::stats_notification);
-    // TODO: configurable download/upload/connections limit
-    // ltsettings.set_int(settings_pack::connections_limit, 60);
+    // TODO: configurable limits
+#if 0
+    ltsettings.set_int(settings_pack::connections_limit, 60);
+    ltsettings.set_int(settings_pack::download_rate_limit, 2048);
+    ltsettings.set_int(settings_pack::upload_rate_limit, 1024);
+#endif
 
     m_ltsession = new lt::session(ltsettings);
 }
 
 TransferTorrent::~TransferTorrent()
 {
-    if (m_timerid) {
+    if (m_timerid != 0) {
         killTimer(m_timerid);
     }
     delete m_ltsession;
@@ -60,6 +64,7 @@ TransferTorrent::~TransferTorrent()
 void TransferTorrent::start()
 {
     if (status() == Job::Finished) {
+        kDebug(5001) << "TransferTorrent::start: transfer is already finished";
         return;
     }
 
@@ -69,8 +74,8 @@ void TransferTorrent::start()
     const QString sourcestring = sourceurl.url();
     const QByteArray destination = Transfer::directory().toLocalFile().toLocal8Bit();
 
-    kDebug(5001) << "TransferTorrent::start" << "source" << sourceurl;
-    kDebug(5001) << "TransferTorrent::start" << "destination" << destination;
+    kDebug(5001) << "TransferTorrent::start: source" << sourceurl;
+    kDebug(5001) << "TransferTorrent::start: destination" << destination;
 
     lt::add_torrent_params ltparams;
     if (sourcestring.startsWith("magnet:")) {
@@ -84,27 +89,27 @@ void TransferTorrent::start()
 
             // TODO: translate the error message
             setStatus(Job::Aborted, lterror.message().c_str(), SmallIcon("dialog-error"));
-            setTransferChange(Transfer::Tc_Status);
+            setTransferChange(Transfer::Tc_Status, true);
             return;
         }
     } else if (sourcestring.endsWith(".torrent")) {
         const QByteArray source = sourceurl.toLocalFile().toLocal8Bit();
 
-        ltparams.ti = boost::make_shared<lt::torrent_info>(std::string(source.constData()), 0);
+        ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
         if (!ltparams.ti->is_valid()) {
             kError(5001) << "TransferTorrent::start: invalid torrent file";
 
             setStatus(Job::Aborted, i18n("Invalid torrent file"), SmallIcon("dialog-error"));
-            setTransferChange(Transfer::Tc_Status);
+            setTransferChange(Transfer::Tc_Status, true);
             return;
         }
         m_totalSize = ltparams.ti->total_size();
-        setTransferChange(Transfer::Tc_TotalSize);
+        setTransferChange(Transfer::Tc_TotalSize, true);
     } else {
         kError(5001) << "TransferTorrent::start: invalid source" << sourceurl;
 
         setStatus(Job::Aborted, i18n("Invalid source URL"), SmallIcon("dialog-error"));
-        setTransferChange(Transfer::Tc_Status);
+        setTransferChange(Transfer::Tc_Status, true);
         return;
     }
 
@@ -112,7 +117,7 @@ void TransferTorrent::start()
     m_lthandle = m_ltsession->add_torrent(ltparams);
 
     setStatus(Job::Running);
-    setTransferChange(Transfer::Tc_Status);
+    setTransferChange(Transfer::Tc_Status, true);
 
     m_timerid = startTimer(1000);
 }
@@ -133,7 +138,7 @@ void TransferTorrent::stop()
     m_downloadSpeed = 0;
     m_uploadSpeed = 0;
     setStatus(Job::Stopped);
-    setTransferChange(Transfer::Tc_Status | Transfer::Tc_DownloadSpeed | Transfer::Tc_UploadSpeed);
+    setTransferChange(Transfer::Tc_Status | Transfer::Tc_DownloadSpeed | Transfer::Tc_UploadSpeed, true);
 }
 
 void TransferTorrent::deinit(Transfer::DeleteOptions options)
@@ -141,82 +146,96 @@ void TransferTorrent::deinit(Transfer::DeleteOptions options)
     // TODO: delete resume data?
 }
 
+bool TransferTorrent::isWorking() const
+{
+    return (m_timerid != 0);
+}
+
 void TransferTorrent::timerEvent(QTimerEvent *event)
 {
-    if (event->timerId() == m_timerid) {
-        kDebug(5001) << "TransferTorrent::timerEvent";
-
-        std::vector<lt::alert*> ltalerts;
-        m_ltsession->pop_alerts(&ltalerts);
-
-        foreach (lt::alert const* ltalert, ltalerts) {
-            if (lt::alert_cast<lt::state_update_alert>(ltalert)) {
-                lt::torrent_status ltstatus = m_lthandle.status();
-
-                m_percent = (ltstatus.progress * 100.0);
-                m_downloadedSize = ltstatus.total_done;
-                m_downloadSpeed = ltstatus.download_rate;
-                m_uploadedSize = ltstatus.all_time_upload;
-                m_uploadSpeed = ltstatus.upload_rate;
-
-                kDebug(5001) << "TransferTorrent::timerEvent: percent" << m_percent;
-                kDebug(5001) << "TransferTorrent::timerEvent: downloaded size" << m_downloadedSize;
-                kDebug(5001) << "TransferTorrent::timerEvent: download speed" << m_downloadSpeed;
-                kDebug(5001) << "TransferTorrent::timerEvent: upload size" << m_uploadedSize;
-                kDebug(5001) << "TransferTorrent::timerEvent: upload speed" << m_uploadSpeed;
-
-                switch (ltstatus.state) {
-                    case lt::torrent_status::queued_for_checking:
-                    case lt::torrent_status::checking_files:
-                    case lt::torrent_status::checking_resume_data: {
-                        setStatus(Job::Running, i18n("Checking..."));
-                        setTransferChange(Transfer::Tc_Status);
-                        break;
-                    }
-                    case lt::torrent_status::allocating: {
-                        setStatus(Job::Running, i18n("Allocating disk space..."));
-                        setTransferChange(Transfer::Tc_Status);
-                        break;
-                    }
-                    case lt::torrent_status::seeding: {
-                        setStatus(Job::FinishedKeepAlive, i18n("Seeding..."));
-                        setTransferChange(Transfer::Tc_Status);
-                        break;
-                    }
-                }
-
-                setTransferChange(
-                    Transfer::Tc_Percent
-                    | Transfer::Tc_DownloadedSize | Transfer::Tc_DownloadSpeed
-                    | Transfer::Tc_UploadedSize | Transfer::Tc_UploadSpeed
-                );
-            } else if (lt::alert_cast<lt::torrent_finished_alert>(ltalert)) {
-                kDebug(5001) << "TransferTorrent::timerEvent: transfer finished";
-
-                m_lthandle.save_resume_data();
-
-                // TODO: keep alive only if seeding is enabled
-                setStatus(Job::FinishedKeepAlive);
-                setTransferChange(Transfer::Tc_Status);
-            } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
-                kError(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
-
-                killTimer(m_timerid);
-
-                // TODO: translate the error message
-                setStatus(Job::Aborted, ltalert->message().c_str(), SmallIcon("dialog-error"));
-                setTransferChange(Transfer::Tc_Status);
-            } else {
-                kDebug(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
-            }
-        }
-
-        m_ltsession->post_torrent_updates();
-
-        event->accept();
+    if (event->timerId() != m_timerid) {
+        event->ignore();
         return;
     }
-    event->ignore();
+
+    kDebug(5001) << "TransferTorrent::timerEvent";
+
+    std::vector<lt::alert*> ltalerts;
+    m_ltsession->pop_alerts(&ltalerts);
+
+    foreach (lt::alert const* ltalert, ltalerts) {
+        if (lt::alert_cast<lt::state_update_alert>(ltalert)) {
+            const lt::torrent_status ltstatus = m_lthandle.status();
+
+            m_percent = (ltstatus.progress * 100.0);
+            m_downloadedSize = ltstatus.total_done;
+            m_downloadSpeed = ltstatus.download_rate;
+            m_uploadedSize = ltstatus.all_time_upload;
+            m_uploadSpeed = ltstatus.upload_rate;
+
+            kDebug(5001) << "TransferTorrent::timerEvent: percent" << m_percent;
+            kDebug(5001) << "TransferTorrent::timerEvent: downloaded size" << m_downloadedSize;
+            kDebug(5001) << "TransferTorrent::timerEvent: download speed" << m_downloadSpeed;
+            kDebug(5001) << "TransferTorrent::timerEvent: upload size" << m_uploadedSize;
+            kDebug(5001) << "TransferTorrent::timerEvent: upload speed" << m_uploadSpeed;
+
+            switch (ltstatus.state) {
+                case lt::torrent_status::queued_for_checking:
+                case lt::torrent_status::checking_files:
+                case lt::torrent_status::checking_resume_data: {
+                    setStatus(Job::Running, i18n("Checking..."));
+                    setTransferChange(Transfer::Tc_Status, true);
+                    break;
+                }
+                case lt::torrent_status::allocating: {
+                    setStatus(Job::Running, i18n("Allocating disk space..."));
+                    setTransferChange(Transfer::Tc_Status, true);
+                    break;
+                }
+                case lt::torrent_status::finished:
+                case lt::torrent_status::seeding: {
+                    setStatus(Job::FinishedKeepAlive, i18n("Seeding..."));
+                    setTransferChange(Transfer::Tc_Status, true);
+                    break;
+                }
+                case lt::torrent_status::downloading_metadata:
+                case lt::torrent_status::downloading: {
+                    setStatus(Job::Running);
+                    setTransferChange(Transfer::Tc_Status, true);
+                    break;
+                }
+            }
+
+            setTransferChange(
+                Transfer::Tc_Percent
+                | Transfer::Tc_DownloadedSize | Transfer::Tc_DownloadSpeed
+                | Transfer::Tc_UploadedSize | Transfer::Tc_UploadSpeed
+                , true
+            );
+        } else if (lt::alert_cast<lt::torrent_finished_alert>(ltalert)) {
+            kDebug(5001) << "TransferTorrent::timerEvent: transfer finished";
+
+            m_lthandle.save_resume_data();
+
+            // TODO: keep alive only if seeding is enabled
+            setStatus(Job::FinishedKeepAlive);
+            setTransferChange(Transfer::Tc_Status, true);
+        } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
+            kError(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
+
+            killTimer(m_timerid);
+
+            // TODO: translate the error message
+            setStatus(Job::Aborted, ltalert->message().c_str(), SmallIcon("dialog-error"));
+            setTransferChange(Transfer::Tc_Status, true);
+        } else {
+            kDebug(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
+        }
+    }
+
+    m_ltsession->post_torrent_updates();
+
+    event->accept();
 }
 
 #include "moc_transferTorrent.cpp"
