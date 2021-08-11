@@ -27,8 +27,8 @@ build_script:
         libhunspell-dev libjpeg-dev libpng-dev libparted-dev libqalculate-dev \
         libsane-dev libspectre-dev libspeechd-dev libswscale-dev libtag1-dev \
         uuid-dev libudev-dev libvncserver-dev libxcb-randr0-dev freerdp2-dev \
-        libboost-dev libffmpegthumbnailer-dev libbz2-dev xsltproc \
-        libdbusmenu-katie libpoppler-katie ccache
+        libboost-dev libffmpegthumbnailer-dev libbz2-dev libtorrent-rasterbar-dev \
+        xsltproc libdbusmenu-katie libpoppler-katie ccache
 
     export PATH="/usr/lib/ccache/:$PATH"
 
