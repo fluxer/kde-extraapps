@@ -42,7 +42,10 @@ public:
     // Job reimplementations
     void start() final;
     void stop() final;
+    bool isStalled() const final;
     bool isWorking() const final;
+    // Transfer reimplementation
+    QList<KUrl> files() const final;
 
 protected:
     // QObject reimplementation

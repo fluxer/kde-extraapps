@@ -27,7 +27,7 @@
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/magnet_uri.hpp>
 
-static const int LTPollInveral = 1000;
+static const int LTPollInterval = 1000;
 
 TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory,
                          Scheduler* scheduler, const KUrl &source, const KUrl &dest,
@@ -67,18 +67,14 @@ void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
     kDebug(5001) << "TransferTorrent::setSpeedLimits: upload limit" << uploadLimit;
     kDebug(5001) << "TransferTorrent::setSpeedLimits: download limit" << downloadLimit;
 
-    if (!m_lthandle.is_valid()) {
-        kWarning(5001) << "TransferTorrent::setSpeedLimits: handle is not valid";
-    }
-
     m_lthandle.set_upload_limit(uploadLimit * 1024);
     m_lthandle.set_download_limit(downloadLimit * 1024);
 }
 
 void TransferTorrent::start()
 {
-    if (status() == Job::Finished) {
-        kDebug(5001) << "TransferTorrent::start: transfer is already finished";
+    if (status() == Job::Running) {
+        kDebug(5001) << "TransferTorrent::start: transfer is already started";
         return;
     }
 
@@ -138,7 +134,7 @@ void TransferTorrent::start()
     setStatus(Job::Running);
     setTransferChange(Transfer::Tc_Status, true);
 
-    m_timerid = startTimer(LTPollInveral);
+    m_timerid = startTimer(LTPollInterval);
 }
 
 void TransferTorrent::stop()
@@ -162,12 +158,49 @@ void TransferTorrent::stop()
 
 void TransferTorrent::deinit(Transfer::DeleteOptions options)
 {
-    // TODO: delete resume data?
+    kDebug(5001) << "TransferTorrent::deinit: options" << options;
+
+    Q_ASSERT(m_ltsession);
+    if (options & Transfer::DeleteFiles) {
+        m_ltsession->remove_torrent(m_lthandle, lt::session_handle::delete_files);
+    }
+
+    if (options & Transfer::DeleteTemporaryFiles) {
+        m_ltsession->remove_torrent(m_lthandle, lt::session_handle::delete_partfile);
+    }
+}
+
+bool TransferTorrent::isStalled() const
+{
+    kDebug(5001) << "TransferTorrent::isStalled";
+
+    const lt::torrent_status ltstatus = m_lthandle.status();
+    return (status() == Job::Running && downloadSpeed() == 0 && ltstatus.state == lt::torrent_status::finished);
 }
 
 bool TransferTorrent::isWorking() const
 {
+    kDebug(5001) << "TransferTorrent::isWorking";
+
     return (m_timerid != 0);
+}
+
+// TODO: model for the files
+QList<KUrl> TransferTorrent::files() const
+{
+    kDebug(5001) << "TransferTorrent::files";
+
+    QList<KUrl> result;
+
+    const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
+    if (ltstorage.is_valid()) {
+        for (int i = 0; i < ltstorage.num_files(); i++) {
+            result.append(KUrl(ltstorage.file_path(i).c_str()));
+        }
+    }
+
+    kDebug(5001) << "TransferTorrent::files: result" << result;
+    return result;
 }
 
 void TransferTorrent::timerEvent(QTimerEvent *event)
@@ -179,6 +212,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
 
     kDebug(5001) << "TransferTorrent::timerEvent";
 
+    Q_ASSERT(m_ltsession);
     std::vector<lt::alert*> ltalerts;
     m_ltsession->pop_alerts(&ltalerts);
 
