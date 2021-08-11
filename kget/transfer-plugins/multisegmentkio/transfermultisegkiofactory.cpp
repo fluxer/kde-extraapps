@@ -46,23 +46,6 @@ Transfer * TransferMultiSegKioFactory::createTransfer( const KUrl &srcUrl, const
     return 0;
 }
 
-TransferHandler * TransferMultiSegKioFactory::createTransferHandler(Transfer * transfer, Scheduler * scheduler)
-{
-    return new TransferHandler(transfer, scheduler);
-}
-
-QWidget * TransferMultiSegKioFactory::createDetailsWidget( TransferHandler * transfer )
-{
-    Q_UNUSED(transfer)
-    return 0;   //Temporary!!
-}
-
-const QList<KAction *> TransferMultiSegKioFactory::actions(TransferHandler *handler)
-{
-    Q_UNUSED(handler)
-    return QList<KAction *>();
-}
-
  TransferDataSource * TransferMultiSegKioFactory::createTransferDataSource(const KUrl &srcUrl, const QDomElement &type, QObject *parent)
 {
     kDebug(5001);

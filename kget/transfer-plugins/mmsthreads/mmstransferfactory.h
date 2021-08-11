@@ -38,12 +38,6 @@ class MmsTransferFactory : public TransferFactory
                                    TransferGroup * parent, Scheduler * scheduler,
                                    const QDomElement * e = 0 );
 
-        TransferHandler * createTransferHandler(Transfer * transfer,
-                                                Scheduler * scheduler) {return new TransferHandler(transfer, scheduler);}
-        QWidget * createDetailsWidget( TransferHandler * transfer );
-
-        const QList<KAction *> actions(TransferHandler *handler = 0);
-
         bool isSupported(const KUrl &url) const;
 };
 

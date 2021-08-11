@@ -47,18 +47,6 @@ Transfer * MmsTransferFactory::createTransfer( const KUrl &srcUrl, const KUrl &d
     return 0;
 }
 
-QWidget * MmsTransferFactory::createDetailsWidget( TransferHandler * transfer )
-{
-    Q_UNUSED(transfer)
-    return 0;   //Temporary!!
-}
-
-const QList<KAction *> MmsTransferFactory::actions(TransferHandler *handler)
-{
-    Q_UNUSED(handler)
-    return QList<KAction *>();
-}
-
 bool MmsTransferFactory::isSupported(const KUrl &url) const
 {
     QString prot = url.protocol();
