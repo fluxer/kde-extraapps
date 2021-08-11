@@ -20,6 +20,7 @@
 #define TRANSFER_TORRENT_H
 
 #include "core/transfer.h"
+#include "core/filemodel.h"
 
 #include <QTimerEvent>
 
@@ -44,8 +45,9 @@ public:
     void stop() final;
     bool isStalled() const final;
     bool isWorking() const final;
-    // Transfer reimplementation
+    // Transfer reimplementations
     QList<KUrl> files() const final;
+    FileModel* fileModel() final;
 
 protected:
     // QObject reimplementation
@@ -57,6 +59,7 @@ private:
     int m_timerid;
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;
+    FileModel* m_filemodel;
 };
 
 #endif // TRANSFER_TORRENT_H

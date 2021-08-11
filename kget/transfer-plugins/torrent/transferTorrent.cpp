@@ -33,7 +33,7 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
                          Scheduler* scheduler, const KUrl &source, const KUrl &dest,
                          const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
-    m_timerid(0), m_ltsession(nullptr)
+    m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr)
 {
     setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming);
 
@@ -185,22 +185,57 @@ bool TransferTorrent::isWorking() const
     return (m_timerid != 0);
 }
 
-// TODO: model for the files
 QList<KUrl> TransferTorrent::files() const
 {
     kDebug(5001) << "TransferTorrent::files";
 
     QList<KUrl> result;
 
-    const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
-    if (ltstorage.is_valid()) {
-        for (int i = 0; i < ltstorage.num_files(); i++) {
-            result.append(KUrl(ltstorage.file_path(i).c_str()));
+    if (m_lthandle.torrent_file()) {
+        const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
+        if (ltstorage.is_valid()) {
+            for (int i = 0; i < ltstorage.num_files(); i++) {
+                result.append(KUrl(ltstorage.file_path(i).c_str()));
+            }
         }
     }
 
     kDebug(5001) << "TransferTorrent::files: result" << result;
     return result;
+}
+
+FileModel* TransferTorrent::fileModel()
+{
+    kDebug(5001) << "TransferTorrent::fileModel";
+
+    if (!m_filemodel) {
+        m_filemodel = new FileModel(TransferTorrent::files(), m_dest.upUrl(), this);
+
+        // TODO: disable downloading based on check state
+        // TODO: file state should not be based on global transfer state
+        if (m_lthandle.torrent_file()) {
+            const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
+            if (ltstorage.is_valid()) {
+                for (int i = 0; i < ltstorage.num_files(); i++) {
+                    const KUrl filepath = KUrl(ltstorage.file_path(i).c_str());
+
+                    const Qt::CheckState filestate = Qt::Checked;
+                    QModelIndex fileindex = m_filemodel->index(filepath, FileItem::File);
+                    m_filemodel->setData(fileindex, filestate, Qt::CheckStateRole);
+
+                    const Job::Status filestatus = Transfer::status();
+                    QModelIndex statusindex = m_filemodel->index(filepath, FileItem::Status);
+                    m_filemodel->setData(statusindex, filestatus);
+
+                    const qlonglong filesize = ltstorage.file_size(i);
+                    QModelIndex sizeindex = m_filemodel->index(filepath, FileItem::Size);
+                    m_filemodel->setData(sizeindex, filesize);
+                }
+            }
+        }
+    }
+
+    return m_filemodel;
 }
 
 void TransferTorrent::timerEvent(QTimerEvent *event)
