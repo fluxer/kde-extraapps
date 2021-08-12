@@ -24,6 +24,7 @@
 
 #include <QTimerEvent>
 
+#include <vector>
 #include <libtorrent/session.hpp>
 #include <libtorrent/torrent_handle.hpp>
 
@@ -42,6 +43,8 @@ public:
     void deinit(Transfer::DeleteOptions options) final;
     QList<KUrl> files() const final;
     FileModel* fileModel() final;
+    void save(const QDomElement &element) final;
+    void load(const QDomElement *element) final;
 
     // Job reimplementations
     void start() final;
@@ -55,11 +58,17 @@ protected:
     // Transfer reimplementation
     void setSpeedLimits(int uploadLimit, int downloadLimit) final;
 
+private Q_SLOTS:
+    void slotDelayedStart();
+    void slotCheckStateChanged();
+
 private:
     int m_timerid;
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;
     FileModel* m_filemodel;
+    std::vector<int> m_priorities;
+    bool m_recreatefilemodel;
 };
 
 #endif // TRANSFER_TORRENT_H
