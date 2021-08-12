@@ -38,16 +38,16 @@ public:
     ~TransferTorrent();
 
 public:
+    void init() final;
     void deinit(Transfer::DeleteOptions options) final;
+    QList<KUrl> files() const final;
+    FileModel* fileModel() final;
 
     // Job reimplementations
     void start() final;
     void stop() final;
     bool isStalled() const final;
     bool isWorking() const final;
-    // Transfer reimplementations
-    QList<KUrl> files() const final;
-    FileModel* fileModel() final;
 
 protected:
     // QObject reimplementation

@@ -337,8 +337,6 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
 {
     setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming);
 
-    // FIXME: once downloaded and KGet is restarted transfer is not seeded
-
     lt::settings_pack ltsettings;
     ltsettings.set_int(lt::settings_pack::alert_mask,
         lt::alert::status_notification
@@ -516,7 +514,7 @@ FileModel* TransferTorrent::fileModel()
     kDebug(5001) << "TransferTorrent::fileModel";
 
     if (!m_filemodel) {
-        m_filemodel = new FileModel(TransferTorrent::files(), m_dest.upUrl(), this);
+        m_filemodel = new FileModel(files(), directory(), this);
 
         // TODO: disable downloading based on check state
         // TODO: file state should not be based on global transfer state
@@ -543,6 +541,19 @@ FileModel* TransferTorrent::fileModel()
     }
 
     return m_filemodel;
+}
+
+void TransferTorrent::init()
+{
+    kDebug(5001) << "TransferTorrent::init";
+
+    // start even if transfer is finished so that torrent is seeded
+    const bool shouldstart = (policy() != Job::Stop);
+    if (shouldstart) {
+        start();
+    }
+
+    kDebug(5001) << "TransferTorrent::init: should start" << shouldstart;
 }
 
 void TransferTorrent::timerEvent(QTimerEvent *event)

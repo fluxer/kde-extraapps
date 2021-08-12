@@ -65,6 +65,7 @@ class KGET_EXPORT Transfer : public Job
             Tc_Group          = 0x00008000,
             Tc_Selection      = 0x00010000
         };
+        typedef int ChangesFlags;
 
         enum Capability
         {
@@ -96,7 +97,6 @@ class KGET_EXPORT Transfer : public Job
             DeleteFiles = 0x00000002
         };
         Q_DECLARE_FLAGS(DeleteOptions, DeleteOption)
-        typedef int ChangesFlags;
 
         Transfer(TransferGroup * parent, TransferFactory * factory,
                  Scheduler * scheduler, const KUrl & src, const KUrl & dest,
