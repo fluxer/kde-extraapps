@@ -439,12 +439,10 @@ void TransferTorrent::start()
     }
 
     ltparams.save_path = destination.constData();
+    ltparams.file_priorities = m_priorities;
+    ltparams.upload_limit = (m_uploadLimit * 1024);
+    ltparams.download_limit = (m_downloadLimit * 1024);
     m_lthandle = m_ltsession->add_torrent(ltparams);
-    m_lthandle.set_upload_limit(m_uploadLimit * 1024);
-    m_lthandle.set_download_limit(m_downloadLimit * 1024);
-    if (m_priorities.size() > 0) {
-        m_lthandle.prioritize_files(m_priorities);
-    }
 
     setStatus(Job::Running);
     setTransferChange(Transfer::Tc_Status, true);
@@ -563,11 +561,13 @@ void TransferTorrent::slotCheckStateChanged()
         const QModelIndex fileindex = m_filemodel->index(url, FileItem::File);
         const int checkstate = m_filemodel->data(fileindex, Qt::CheckStateRole).toInt();
         if (checkstate != int(Qt::Unchecked)) {
-            m_lthandle.file_priority(counter, LTPriorities::NormalPriority);
             kDebug(5001) << "will downloand" << url;
+
+            m_lthandle.file_priority(counter, LTPriorities::NormalPriority);
         } else {
-            m_lthandle.file_priority(counter, LTPriorities::Disabled);
             kDebug(5001) << "will not downloand" << url;
+
+            m_lthandle.file_priority(counter, LTPriorities::Disabled);
         }
         counter++;
     }
@@ -599,7 +599,7 @@ void TransferTorrent::load(const QDomElement *element)
     if (element) {
         const QStringList priorities = element->attribute("FilePriorities").split(",");
         foreach (const QString priority, priorities) {
-            m_priorities.push_back(priority.toInt());
+            m_priorities.push_back(boost::uint8_t(priority.toInt()));
         }
     }
 }

@@ -67,7 +67,7 @@ private:
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;
     FileModel* m_filemodel;
-    std::vector<int> m_priorities;
+    std::vector<boost::uint8_t> m_priorities;
     bool m_recreatefilemodel;
 };
 
