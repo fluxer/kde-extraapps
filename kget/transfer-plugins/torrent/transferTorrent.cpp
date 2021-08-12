@@ -368,9 +368,6 @@ TransferTorrent::~TransferTorrent()
 
 void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
 {
-    kDebug(5001) << "TransferTorrent::setSpeedLimits: upload limit" << uploadLimit;
-    kDebug(5001) << "TransferTorrent::setSpeedLimits: download limit" << downloadLimit;
-
     m_lthandle.set_upload_limit(uploadLimit * 1024);
     m_lthandle.set_download_limit(downloadLimit * 1024);
 }
@@ -378,18 +375,15 @@ void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
 void TransferTorrent::start()
 {
     if (status() == Job::Running) {
-        kDebug(5001) << "TransferTorrent::start: transfer is already started";
         return;
     }
-
-    kDebug(5001) << "TransferTorrent::start";
 
     const KUrl sourceurl = source();
     const QString sourcestring = sourceurl.url();
     const QByteArray destination = directory().toLocalFile().toLocal8Bit();
 
-    kDebug(5001) << "TransferTorrent::start: source" << sourceurl;
-    kDebug(5001) << "TransferTorrent::start: destination" << destination;
+    kDebug(5001) << "source" << sourceurl;
+    kDebug(5001) << "destination" << destination;
 
     lt::add_torrent_params ltparams;
     if (sourcestring.startsWith("magnet:")) {
@@ -403,7 +397,7 @@ void TransferTorrent::start()
 #else
         if (lterror != lt::errors::no_error) {
 #endif
-            kError(5001) << "TransferTorrent::start" << lterror.message().c_str();
+            kError(5001) << lterror.message().c_str();
 
             const QString errormesssage = translatelterror(lterror);
             setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -416,7 +410,7 @@ void TransferTorrent::start()
 
         ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
         if (!ltparams.ti->is_valid()) {
-            kError(5001) << "TransferTorrent::start: invalid torrent file";
+            kError(5001) << "invalid torrent file";
 
             const QString errormesssage = i18n("Invalid torrent file");
             setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -427,7 +421,7 @@ void TransferTorrent::start()
         m_totalSize = ltparams.ti->total_size();
         setTransferChange(Transfer::Tc_TotalSize, true);
     } else {
-        kError(5001) << "TransferTorrent::start: invalid source" << sourceurl;
+        kError(5001) << "invalid source" << sourceurl;
 
         const QString errormesssage = i18n("Invalid source URL");
         setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -435,9 +429,6 @@ void TransferTorrent::start()
         setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
         return;
     }
-
-    kDebug(5001) << "TransferTorrent::start: upload limit" << m_uploadLimit;
-    kDebug(5001) << "TransferTorrent::start: download limit" << m_downloadLimit;
 
     ltparams.save_path = destination.constData();
     m_lthandle = m_ltsession->add_torrent(ltparams);
@@ -457,8 +448,6 @@ void TransferTorrent::stop()
         return;
     }
 
-    kDebug(5001) << "TransferTorrent::stop";
-
     if (m_timerid != 0) {
         killTimer(m_timerid);
         m_timerid = 0;
@@ -472,8 +461,6 @@ void TransferTorrent::stop()
 
 void TransferTorrent::deinit(Transfer::DeleteOptions options)
 {
-    kDebug(5001) << "TransferTorrent::deinit: options" << options;
-
     Q_ASSERT(m_ltsession);
     if (options & Transfer::DeleteFiles && m_lthandle.is_valid()) {
         m_ltsession->remove_torrent(m_lthandle, lt::session_handle::delete_files);
@@ -486,23 +473,17 @@ void TransferTorrent::deinit(Transfer::DeleteOptions options)
 
 bool TransferTorrent::isStalled() const
 {
-    kDebug(5001) << "TransferTorrent::isStalled";
-
     const lt::torrent_status ltstatus = m_lthandle.status();
     return (status() == Job::Running && downloadSpeed() == 0 && ltstatus.state == lt::torrent_status::finished);
 }
 
 bool TransferTorrent::isWorking() const
 {
-    kDebug(5001) << "TransferTorrent::isWorking";
-
     return (m_timerid != 0);
 }
 
 QList<KUrl> TransferTorrent::files() const
 {
-    kDebug(5001) << "TransferTorrent::files";
-
     QList<KUrl> result;
 
     if (m_lthandle.torrent_file()) {
@@ -514,14 +495,11 @@ QList<KUrl> TransferTorrent::files() const
         }
     }
 
-    kDebug(5001) << "TransferTorrent::files: result" << result;
     return result;
 }
 
 FileModel* TransferTorrent::fileModel()
 {
-    kDebug(5001) << "TransferTorrent::fileModel";
-
     if (!m_filemodel) {
         m_filemodel = new FileModel(files(), directory(), this);
 
@@ -554,15 +532,11 @@ FileModel* TransferTorrent::fileModel()
 
 void TransferTorrent::init()
 {
-    kDebug(5001) << "TransferTorrent::init";
-
     // start even if transfer is finished so that torrent is seeded
     const bool shouldstart = (policy() != Job::Stop);
     if (shouldstart) {
         start();
     }
-
-    kDebug(5001) << "TransferTorrent::init: should start" << shouldstart;
 }
 
 void TransferTorrent::timerEvent(QTimerEvent *event)
@@ -571,8 +545,6 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
         event->ignore();
         return;
     }
-
-    kDebug(5001) << "TransferTorrent::timerEvent";
 
     Q_ASSERT(m_ltsession);
     std::vector<lt::alert*> ltalerts;
@@ -587,12 +559,6 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
             m_downloadSpeed = ltstatus.download_rate;
             m_uploadedSize = (ltstatus.total_upload + ltstatus.all_time_upload);
             m_uploadSpeed = ltstatus.upload_rate;
-
-            kDebug(5001) << "TransferTorrent::timerEvent: percent" << m_percent;
-            kDebug(5001) << "TransferTorrent::timerEvent: downloaded size" << m_downloadedSize;
-            kDebug(5001) << "TransferTorrent::timerEvent: download speed" << m_downloadSpeed;
-            kDebug(5001) << "TransferTorrent::timerEvent: upload size" << m_uploadedSize;
-            kDebug(5001) << "TransferTorrent::timerEvent: upload speed" << m_uploadSpeed;
 
             switch (ltstatus.state) {
                 case lt::torrent_status::queued_for_checking:
@@ -628,14 +594,12 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
                 , true
             );
         } else if (lt::alert_cast<lt::torrent_finished_alert>(ltalert)) {
-            kDebug(5001) << "TransferTorrent::timerEvent: transfer finished";
-
             m_lthandle.save_resume_data();
 
             setStatus(Job::FinishedKeepAlive);
             setTransferChange(Transfer::Tc_Status, true);
         } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
-            kError(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
+            kError(5001) << ltalert->message().c_str();
 
             const lt::torrent_error_alert* lterror = lt::alert_cast<lt::torrent_error_alert>(ltalert);
 
@@ -646,8 +610,6 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
             setError(errormesssage, SmallIcon("dialog-error"), Job::ManualSolve);
             setLog(errormesssage, Transfer::Log_Error);
             setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
-        } else {
-            kDebug(5001) << "TransferTorrent::timerEvent" << ltalert->message().c_str();
         }
     }
 
