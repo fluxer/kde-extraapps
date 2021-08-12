@@ -524,13 +524,14 @@ FileModel* TransferTorrent::fileModel()
                     const KUrl fileurl = KUrl(ltstorage.file_path(i).c_str());
 
                     Job::Status filestatus = status();
-                    const int ltpriority = m_lthandle.file_priority(i);
                     // priority has no effect on finished/seeded torrents
+                    const int ltpriority = (m_priorities.size() > i ? m_priorities.at(i) : LTPriorities::NormalPriority);
                     const lt::torrent_status ltstatus = m_lthandle.status();
                     if (ltstatus.state == lt::torrent_status::seeding || ltstatus.state == lt::torrent_status::finished) {
                         filestatus = Job::Finished;
-                        // TODO: disable checkbox via custom file model class
-                    } else if (ltpriority == LTPriorities::Disabled) {
+                        // TODO: disable checkbox via custom file model class for finished/seeded files
+                    }
+                    if (ltpriority == LTPriorities::Disabled) {
                         filestatus = Job::Stopped;
                     }
 
@@ -557,17 +558,20 @@ void TransferTorrent::slotCheckStateChanged()
     Q_ASSERT(m_filemodel);
 
     int counter = 0;
+    m_priorities.clear();
     foreach (const KUrl &url, files()) {
         const QModelIndex fileindex = m_filemodel->index(url, FileItem::File);
         const int checkstate = m_filemodel->data(fileindex, Qt::CheckStateRole).toInt();
         if (checkstate != int(Qt::Unchecked)) {
             kDebug(5001) << "will downloand" << url;
 
+            m_priorities.push_back(LTPriorities::NormalPriority);
             m_lthandle.file_priority(counter, LTPriorities::NormalPriority);
         } else {
             kDebug(5001) << "will not downloand" << url;
 
             m_lthandle.file_priority(counter, LTPriorities::Disabled);
+            m_priorities.push_back(LTPriorities::Disabled);
         }
         counter++;
     }
@@ -577,9 +581,8 @@ void TransferTorrent::save(const QDomElement &element)
 {
     QDomElement elementcopy = element;
     QString prioritiesstring;
-    const std::vector<int> priorities = m_lthandle.file_priorities();
-    for (int i = 0; i < priorities.size(); i++) {
-        const int priority = priorities.at(i);
+    for (int i = 0; i < m_priorities.size(); i++) {
+        const boost::uint8_t priority = m_priorities.at(i);
         if (i == 0) {
             prioritiesstring.append(QString::number(priority));
         } else {
