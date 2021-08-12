@@ -27,6 +27,11 @@
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/magnet_uri.hpp>
 
+// NOTE: error_code comparison is bogus and breaks translatelterror() too,
+// possibly silently fixed via:
+// https://github.com/boostorg/system/commit/2fa0a00583a3a791092568d2ade793314181926e
+#define BOOST_ERROR_EQUAL_OPERATOR_IS_BORKED
+
 static const int LTPollInterval = 1000;
 
 static QString translatelterror(lt::error_code lterror)
@@ -393,7 +398,11 @@ void TransferTorrent::start()
         lt::error_code lterror = lt::errors::no_error;
         lt::parse_magnet_uri(source.constData(), ltparams, lterror);
 
+#ifdef BOOST_ERROR_EQUAL_OPERATOR_IS_BORKED
+        if (lterror) {
+#else
         if (lterror != lt::errors::no_error) {
+#endif
             kError(5001) << "TransferTorrent::start" << lterror.message().c_str();
 
             const QString errormesssage = translatelterror(lterror);
@@ -517,7 +526,7 @@ FileModel* TransferTorrent::fileModel()
         m_filemodel = new FileModel(files(), directory(), this);
 
         // TODO: disable downloading based on check state
-        // TODO: file state should not be based on global transfer state
+        // TODO: file status should not be based on global transfer status
         if (m_lthandle.torrent_file()) {
             const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
             if (ltstorage.is_valid()) {
