@@ -28,6 +28,8 @@
 #include <libtorrent/session.hpp>
 #include <libtorrent/torrent_handle.hpp>
 
+class TorrentFileModel;
+
 class TransferTorrent : public Transfer
 {
     Q_OBJECT
@@ -66,7 +68,7 @@ private:
     int m_timerid;
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;
-    FileModel* m_filemodel;
+    TorrentFileModel* m_filemodel;
     std::vector<boost::uint8_t> m_priorities;
     bool m_recreatefilemodel;
 };
