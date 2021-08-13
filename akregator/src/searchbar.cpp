@@ -42,7 +42,6 @@
 #include <QTimer>
 
 
-using namespace boost;
 using namespace Akregator;
 using namespace Akregator::Filters;
 
@@ -57,7 +56,7 @@ public:
     KLineEdit* searchLine;
     KComboBox* searchCombo;
     int delay;
-    std::vector<shared_ptr<const AbstractMatcher> > matchers;
+    std::vector<boost::shared_ptr<const AbstractMatcher> > matchers;
     void triggerTimer() {
         if (timer.isActive())
             timer.stop();
@@ -163,7 +162,7 @@ void SearchBar::slotSearchComboChanged(int /*index*/)
     d->triggerTimer();
 }
 
-std::vector<shared_ptr<const AbstractMatcher> > SearchBar::matchers() const {
+std::vector<boost::shared_ptr<const AbstractMatcher> > SearchBar::matchers() const {
     return d->matchers;
 }
 

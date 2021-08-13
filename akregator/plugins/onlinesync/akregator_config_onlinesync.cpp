@@ -33,7 +33,6 @@
 #include <QVBoxLayout>
 
 using namespace Akregator;
-using namespace feedsync;
 
 K_PLUGIN_FACTORY( KCMAkregatorOnlineSyncConfigFactory, registerPlugin<KCMAkregatorOnlineSyncConfig>(); )
 K_EXPORT_PLUGIN( KCMAkregatorOnlineSyncConfigFactory( "kcmakronlinesyncconfig" ) )

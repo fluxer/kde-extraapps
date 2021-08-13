@@ -40,7 +40,6 @@
 
 #include <cassert>
 
-using namespace boost;
 using namespace Akregator;
 using namespace Akregator::Backend;
 
@@ -50,7 +49,7 @@ public:
     explicit Private( LoadFeedListCommand* qq ) : q( qq ), storage( 0 ) {}
     void handleDocument( const QDomDocument& doc );
     QString createBackup( const QString& path, bool* ok );
-    void emitResult( const shared_ptr<FeedList>& list );
+    void emitResult( const boost::shared_ptr<FeedList>& list );
     void doLoad();
 
     QString fileName;
@@ -58,13 +57,13 @@ public:
     Storage* storage;
 };
 
-void LoadFeedListCommand::Private::emitResult( const shared_ptr<FeedList>& list ) {
+void LoadFeedListCommand::Private::emitResult( const boost::shared_ptr<FeedList>& list ) {
     emit q->result( list );
     q->done();
 }
 
 void LoadFeedListCommand::Private::handleDocument( const QDomDocument& doc ) {
-    shared_ptr<FeedList> feedList( new FeedList( storage ) );
+    boost::shared_ptr<FeedList> feedList( new FeedList( storage ) );
     if ( !feedList->readFromOpml( doc ) ) {
         bool backupCreated;
         const QString backupFile = createBackup( fileName, &backupCreated );

@@ -75,8 +75,6 @@
 
 #include <memory>
 
-using namespace boost;
-
 namespace {
 
     static QDomDocument createDefaultFeedList() {
@@ -408,7 +406,7 @@ bool Part::writeToTextFile( const QString& data, const QString& filename ) const
     return file.finalize();
 }
 
-void Part::feedListLoaded( const shared_ptr<FeedList>& list ) {
+void Part::feedListLoaded( const boost::shared_ptr<FeedList>& list ) {
     assert( !m_standardListLoaded );
     m_mainWidget->setFeedList( list );
     m_standardListLoaded = list != 0;

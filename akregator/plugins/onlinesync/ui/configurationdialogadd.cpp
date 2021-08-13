@@ -26,9 +26,6 @@
 
 #include <kdebug.h>
 
-
-using namespace feedsync;
-
 ConfigurationDialogAdd::ConfigurationDialogAdd( QWidget *parent) : KDialog(parent)
 {
     kDebug();

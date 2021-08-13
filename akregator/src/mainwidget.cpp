@@ -86,9 +86,7 @@
 #include <memory>
 #include <cassert>
 
-using namespace boost;
 using namespace Akregator;
-using namespace Solid;
 
 Akregator::MainWidget::~MainWidget()
 {
@@ -257,7 +255,7 @@ Akregator::MainWidget::MainWidget( Part *part, QWidget *parent, ActionManagerImp
     m_markReadTimer->setSingleShot(true);
     connect(m_markReadTimer, SIGNAL(timeout()), this, SLOT(slotSetCurrentArticleReadDelayed()) );
 
-    setFeedList( shared_ptr<FeedList>( new FeedList( Kernel::self()->storage() ) ) );
+    setFeedList( boost::shared_ptr<FeedList>( new FeedList( Kernel::self()->storage() ) ) );
 
     if ( !Settings::resetQuickFilterOnNodeChange() )
     {
@@ -284,7 +282,7 @@ void Akregator::MainWidget::slotOnShutdown()
     }
 
     Kernel::self()->fetchQueue()->slotAbort();
-    setFeedList( shared_ptr<FeedList>() );
+    setFeedList( boost::shared_ptr<FeedList>() );
 
     delete m_feedListManagementInterface;
     delete m_feedListView; // call delete here, so that the header settings will get saved
@@ -364,11 +362,11 @@ void MainWidget::importFeedList( const QDomDocument& doc )
     cmd.release()->start();
 }
 
-void Akregator::MainWidget::setFeedList( const shared_ptr<FeedList>& list )
+void Akregator::MainWidget::setFeedList( const boost::shared_ptr<FeedList>& list )
 {
     if ( list == m_feedList )
         return;
-    const shared_ptr<FeedList> oldList = m_feedList;
+    const boost::shared_ptr<FeedList> oldList = m_feedList;
 
     m_feedList = list;
     if ( m_feedList ) {
@@ -388,7 +386,7 @@ void Akregator::MainWidget::setFeedList( const shared_ptr<FeedList>& list )
     slotDeleteExpiredArticles();
 }
 
-void Akregator::MainWidget::deleteExpiredArticles( const shared_ptr<FeedList>& list )
+void Akregator::MainWidget::deleteExpiredArticles( const boost::shared_ptr<FeedList>& list )
 {
     if ( !list )
         return;

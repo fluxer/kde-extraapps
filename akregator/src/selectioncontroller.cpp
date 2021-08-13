@@ -37,7 +37,6 @@
 #include <QAbstractItemView>
 #include <QMenu>
 
-using namespace boost;
 using namespace Akregator;
 
 namespace {
@@ -79,7 +78,7 @@ Akregator::SelectionController::SelectionController( QObject* parent )
     m_feedList(),
     m_feedSelector(),
     m_articleLister( 0 ),
-    m_subscriptionModel ( new SubscriptionListModel( shared_ptr<FeedList>(), this ) ),
+    m_subscriptionModel ( new SubscriptionListModel( boost::shared_ptr<FeedList>(), this ) ),
     m_folderExpansionHandler( 0 ),
     m_articleModel( 0 ),
     m_selectedSubscription()
@@ -159,7 +158,7 @@ Akregator::TreeNode* Akregator::SelectionController::selectedSubscription() cons
     return ::subscriptionForIndex( m_feedSelector->selectionModel()->currentIndex(), m_feedList.get() );
 }
 
-void Akregator::SelectionController::setFeedList( const shared_ptr<FeedList>& list )
+void Akregator::SelectionController::setFeedList( const boost::shared_ptr<FeedList>& list )
 {
     if ( m_feedList == list )
         return;

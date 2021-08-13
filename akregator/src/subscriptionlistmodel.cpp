@@ -43,9 +43,7 @@
 
 #include <cassert>
 
-using namespace boost;
 using namespace Akregator;
-using namespace Syndication;
 
 #define AKREGATOR_TREENODE_MIMETYPE "akregator/treenode-id"
 
@@ -56,20 +54,20 @@ namespace {
     {
         switch ( err )
         {
-            case Timeout:
+            case Syndication::Timeout:
                 return i18n( "Timeout on remote server" );
-            case UnknownHost:
+            case Syndication::UnknownHost:
                 return i18n( "Unknown host" );
-            case FileNotFound:
+            case Syndication::FileNotFound:
                 return i18n( "Feed file not found on remote server" );
-            case InvalidXml:
+            case Syndication::InvalidXml:
                 return i18n( "Could not read feed (invalid XML)" );
-            case XmlNotAccepted:
+            case Syndication::XmlNotAccepted:
                 return i18n( "Could not read feed (unknown format)" );
-            case InvalidFormat:
+            case Syndication::InvalidFormat:
                 return i18n( "Could not read feed (invalid feed)" );
-            case Success:
-            case Aborted:
+            case Syndication::Success:
+            case Syndication::Aborted:
             default:
                 return QString();
         }
@@ -81,7 +79,7 @@ namespace {
     }
 }
 
-Akregator::SubscriptionListModel::SubscriptionListModel( const shared_ptr<const FeedList>& feedList, QObject* parent ) : QAbstractItemModel( parent ), m_feedList( feedList ), m_beganRemoval( false )
+Akregator::SubscriptionListModel::SubscriptionListModel( const boost::shared_ptr<const FeedList>& feedList, QObject* parent ) : QAbstractItemModel( parent ), m_feedList( feedList ), m_beganRemoval( false )
 {
     if ( !m_feedList )
         return;
@@ -358,7 +356,7 @@ void FolderExpansionHandler::setModel( Akregator::SubscriptionListModel* model )
     m_model = model;
 }
 
-void FolderExpansionHandler::setFeedList( const shared_ptr<FeedList>& feedList )
+void FolderExpansionHandler::setFeedList( const boost::shared_ptr<FeedList>& feedList )
 {
     m_feedList = feedList;
 }

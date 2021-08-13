@@ -60,9 +60,7 @@
 
 #include <memory>
 
-using Syndication::ItemPtr;
 using namespace Akregator;
-using namespace boost;
 
 class Akregator::Feed::Private
 {
@@ -466,9 +464,9 @@ void Akregator::Feed::appendArticles(const Syndication::FeedPtr feed)
     bool changed = false;
     const bool notify = useNotification() || Settings::useNotifications();
 
-    QList<ItemPtr> items = feed->items();
-    QList<ItemPtr>::ConstIterator it = items.constBegin();
-    QList<ItemPtr>::ConstIterator en = items.constEnd();
+    QList<Syndication::ItemPtr> items = feed->items();
+    QList<Syndication::ItemPtr>::ConstIterator it = items.constBegin();
+    QList<Syndication::ItemPtr>::ConstIterator en = items.constEnd();
 
 
     int nudge=0;

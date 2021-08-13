@@ -40,7 +40,6 @@
 
 #include <cassert>
 
-using namespace boost;
 using namespace Akregator;
 
 class ImportFeedListCommand::Private
@@ -51,7 +50,7 @@ public:
 
     void doImport();
 
-    weak_ptr<FeedList> targetList;
+    boost::weak_ptr<FeedList> targetList;
     QDomDocument document;
     ImportFeedListCommand::RootFolderOption rootFolderOption;
     QString importedRootFolderName;
@@ -68,7 +67,7 @@ ImportFeedListCommand::Private::Private( ImportFeedListCommand* qq )
 
 void ImportFeedListCommand::Private::doImport()
 {
-    const shared_ptr<FeedList> target = targetList.lock();
+    const boost::shared_ptr<FeedList> target = targetList.lock();
 
     if ( !target )
     {
@@ -127,7 +126,7 @@ ImportFeedListCommand::~ImportFeedListCommand()
     delete d;
 }
 
-void ImportFeedListCommand::setTargetList( const weak_ptr<FeedList>& feedList )
+void ImportFeedListCommand::setTargetList( const boost::weak_ptr<FeedList>& feedList )
 {
     d->targetList = feedList;
 }

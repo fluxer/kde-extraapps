@@ -37,7 +37,6 @@
 
 #include <cassert>
 
-using namespace boost;
 using namespace Akregator;
 
 class ExpireItemsCommand::Private
@@ -50,7 +49,7 @@ public:
     void addDeleteJobForFeed( Feed* feed );
     void jobFinished( KJob* );
 
-    weak_ptr<FeedList> m_feedList;
+    boost::weak_ptr<FeedList> m_feedList;
     QVector<int> m_feeds;
     QSet<KJob*> m_jobs;
 };
@@ -82,7 +81,7 @@ void ExpireItemsCommand::Private::jobFinished( KJob* job )
 void ExpireItemsCommand::Private::createDeleteJobs()
 {
     assert( m_jobs.isEmpty() );
-    const shared_ptr<FeedList> feedList = m_feedList.lock();
+    const boost::shared_ptr<FeedList> feedList = m_feedList.lock();
 
     if ( m_feeds.isEmpty() || !feedList )
     {
@@ -109,12 +108,12 @@ ExpireItemsCommand::~ExpireItemsCommand()
     delete d;
 }
 
-void ExpireItemsCommand::setFeedList( const weak_ptr<FeedList>& feedList )
+void ExpireItemsCommand::setFeedList( const boost::weak_ptr<FeedList>& feedList )
 {
     d->m_feedList = feedList;
 }
 
-weak_ptr<FeedList> ExpireItemsCommand::feedList() const
+boost::weak_ptr<FeedList> ExpireItemsCommand::feedList() const
 {
     return d->m_feedList;
 }

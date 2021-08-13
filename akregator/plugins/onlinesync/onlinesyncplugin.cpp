@@ -33,7 +33,6 @@
 #include <KConfigGroup>
 
 using namespace Akregator;
-using namespace feedsync;
 
 K_PLUGIN_FACTORY(OnlineSyncPluginFactory,
                  registerPlugin<Akregator::OnlineSyncPluginIface>();

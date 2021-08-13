@@ -41,9 +41,6 @@
 
 #include <cassert>
 
-using namespace boost;
-using namespace Syndication;
-
 namespace {
 
 QString buildTitle(const QString& description)
@@ -84,7 +81,7 @@ struct Article::Private : public Shared
 {
     Private();
     Private( const QString& guid, Feed* feed, Backend::FeedStorage* archive );
-    Private( const ItemPtr& article, Feed* feed, Backend::FeedStorage* archive );
+    Private( const Syndication::ItemPtr& article, Feed* feed, Backend::FeedStorage* archive );
 
     /** The status of the article is stored in an int, the bits having the
         following meaning:
@@ -110,11 +107,11 @@ struct Article::Private : public Shared
     int status;
     uint hash;
     QDateTime pubDate;
-    mutable shared_ptr<const Enclosure> enclosure;
+    mutable boost::shared_ptr<const Syndication::Enclosure> enclosure;
 };
 
 namespace {
-    class EnclosureImpl : public Enclosure
+    class EnclosureImpl : public Syndication::Enclosure
     {
     public:
         EnclosureImpl( const QString& url, const QString& type, uint length ) : m_url( url ), m_type( type ), m_length( length ) {}
@@ -151,18 +148,18 @@ Article::Private::Private( const QString& guid_, Feed* feed_, Backend::FeedStora
 {
 }
 
-Article::Private::Private( const ItemPtr& article, Feed* feed_, Backend::FeedStorage* archive_ )
+Article::Private::Private( const Syndication::ItemPtr& article, Feed* feed_, Backend::FeedStorage* archive_ )
   : feed( feed_ ),
     archive( archive_ ),
     status ( New ),
     hash( 0 )
 {
     assert( archive );
-    const QList<PersonPtr> authorList = article->authors();
+    const QList<Syndication::PersonPtr> authorList = article->authors();
 
     QString author;
 
-    const PersonPtr firstAuthor = !authorList.isEmpty() ? authorList.first() : PersonPtr();
+    const Syndication::PersonPtr firstAuthor = !authorList.isEmpty() ? authorList.first() : Syndication::PersonPtr();
 
     hash = Utils::calcHash(article->title() + article->description() + article->content() + article->link() + author);
 
@@ -195,7 +192,7 @@ Article::Private::Private( const ItemPtr& article, Feed* feed_, Backend::FeedSto
             archive->setAuthorUri(guid, firstAuthor->uri() );
             archive->setAuthorEMail(guid, firstAuthor->email() );
         }
-        const QList<EnclosurePtr> encs = article->enclosures();
+        const QList<Syndication::EnclosurePtr> encs = article->enclosures();
         if ( !encs.isEmpty() )
         {
             archive->setEnclosure(guid, encs[0]->url(), encs[0]->type(), encs[0]->length());
@@ -225,7 +222,7 @@ Article::Private::Private( const ItemPtr& article, Feed* feed_, Backend::FeedSto
         }
     }
 
-    const QList<EnclosurePtr> encs = article->enclosures();
+    const QList<Syndication::EnclosurePtr> encs = article->enclosures();
     if (!encs.isEmpty())
     {
         archive->setEnclosure(guid, encs[0]->url(), encs[0]->type(), encs[0]->length());
@@ -242,11 +239,11 @@ Article::Article( const QString& guid, Feed* feed ) : d( new Private( guid, feed
 {
 }
 
-Article::Article( const ItemPtr& article, Feed* feed ) : d( new Private( article, feed, feed->storage()->archiveFor( feed->xmlUrl() ) ) )
+Article::Article( const Syndication::ItemPtr& article, Feed* feed ) : d( new Private( article, feed, feed->storage()->archiveFor( feed->xmlUrl() ) ) )
 {
 }
 
-Article::Article( const ItemPtr& article, Backend::FeedStorage* archive ) : d( new Private( article, 0, archive ) )
+Article::Article( const Syndication::ItemPtr& article, Backend::FeedStorage* archive ) : d( new Private( article, 0, archive ) )
 {
 }
 
@@ -513,7 +510,7 @@ QDateTime Article::pubDate() const
     return d->pubDate;
 }
 
-shared_ptr<const Enclosure> Article::enclosure() const
+boost::shared_ptr<const Syndication::Enclosure> Article::enclosure() const
 {
     if ( !d->enclosure )
     {

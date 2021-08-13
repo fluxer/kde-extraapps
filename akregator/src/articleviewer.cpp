@@ -69,7 +69,6 @@
 #include <memory>
 #include <cassert>
 
-using namespace boost;
 using namespace Akregator;
 using namespace Akregator::Filters;
 
@@ -338,7 +337,7 @@ bool ArticleViewer::openUrl(const KUrl& url)
     }
 }
 
-void ArticleViewer::setFilters(const std::vector< shared_ptr<const AbstractMatcher> >& filters )
+void ArticleViewer::setFilters(const std::vector< boost::shared_ptr<const AbstractMatcher> >& filters )
 {
     if ( filters == m_filters )
         return;
@@ -361,7 +360,7 @@ void ArticleViewer::slotUpdateCombinedView()
 
    int num = 0;
 
-   const std::vector< shared_ptr<const AbstractMatcher> >::const_iterator filterEnd = m_filters.end();
+   const std::vector< boost::shared_ptr<const AbstractMatcher> >::const_iterator filterEnd = m_filters.end();
 
    Q_FOREACH( const Article& i, m_articles )
    {

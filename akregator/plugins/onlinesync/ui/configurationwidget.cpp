@@ -28,8 +28,6 @@
 #include <kdebug.h>
 #include <QPointer>
 
-using namespace feedsync;
-
 ConfigurationWidget::ConfigurationWidget( QWidget *parent ) : QWidget( parent )
 {
     kDebug();

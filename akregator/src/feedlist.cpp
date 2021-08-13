@@ -44,8 +44,6 @@
 
 #include <cassert>
 
-using namespace boost;
-
 namespace Akregator {
 
 class FeedList::Private
@@ -492,12 +490,12 @@ KJob* FeedList::createMarkAsReadJob() {
     return d->rootNode ? d->rootNode->createMarkAsReadJob() : 0;
 }
 
-FeedListManagementImpl::FeedListManagementImpl( const shared_ptr<FeedList>& list ) : m_feedList( list )
+FeedListManagementImpl::FeedListManagementImpl( const boost::shared_ptr<FeedList>& list ) : m_feedList( list )
 {
 
 }
 
-void FeedListManagementImpl::setFeedList( const shared_ptr<FeedList>& list )
+void FeedListManagementImpl::setFeedList( const boost::shared_ptr<FeedList>& list )
 {
     m_feedList = list;
 }

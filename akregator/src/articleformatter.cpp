@@ -39,12 +39,10 @@
 #include <QPalette>
 #include <QString>
 
-using namespace boost;
-using namespace Syndication;
 using namespace Akregator;
 
 namespace {
-    QString formatEnclosure( const Enclosure& enclosure )
+    QString formatEnclosure( const Syndication::Enclosure& enclosure )
     {
         if ( enclosure.isNull() )
             return QString();

@@ -36,7 +36,6 @@
 #include <cassert>
 
 using namespace Akregator;
-using namespace boost;
 
 namespace {
 
@@ -83,7 +82,7 @@ public:
     void startEdit();
     void jobFinished();
 
-    shared_ptr<FeedList> m_list;
+    boost::shared_ptr<FeedList> m_list;
     int m_subscriptionId;
     SubscriptionListView* m_subscriptionListView;
 };
@@ -109,7 +108,7 @@ EditSubscriptionCommand::~EditSubscriptionCommand()
     delete d;
 }
 
-void EditSubscriptionCommand::setSubscription( const shared_ptr<FeedList>& feedList, int subId )
+void EditSubscriptionCommand::setSubscription( const boost::shared_ptr<FeedList>& feedList, int subId )
 {
     d->m_list = feedList;
     d->m_subscriptionId = subId;
@@ -120,7 +119,7 @@ int EditSubscriptionCommand::subscriptionId() const
     return d->m_subscriptionId;
 }
 
-shared_ptr<FeedList> EditSubscriptionCommand::feedList() const
+boost::shared_ptr<FeedList> EditSubscriptionCommand::feedList() const
 {
     return d->m_list;
 }
