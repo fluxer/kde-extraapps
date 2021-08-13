@@ -47,6 +47,8 @@ public:
     FileModel* fileModel() final;
     void save(const QDomElement &element) final;
     void load(const QDomElement *element) final;
+    QHash<KUrl, QPair<bool, int> > availableMirrors(const KUrl &file) const final;
+    void setAvailableMirrors(const KUrl &file, const QHash<KUrl, QPair<bool, int> > &mirrors) final;
 
     // Job reimplementations
     void start() final;

@@ -26,6 +26,7 @@
 #include <libtorrent/add_torrent_params.hpp>
 #include <libtorrent/alert_types.hpp>
 #include <libtorrent/torrent_info.hpp>
+#include <libtorrent/announce_entry.hpp>
 #include <libtorrent/magnet_uri.hpp>
 
 // NOTE: error_code comparison is bogus and breaks translatelterror() too,
@@ -380,7 +381,7 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
     : Transfer(parent, factory, scheduler, source, dest, e),
     m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr)
 {
-    setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming);
+    setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming | Transfer::Cap_MultipleMirrors);
 
     lt::settings_pack ltsettings;
     ltsettings.set_int(lt::settings_pack::alert_mask,
@@ -410,6 +411,36 @@ void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
 {
     m_lthandle.set_upload_limit(uploadLimit * 1024);
     m_lthandle.set_download_limit(downloadLimit * 1024);
+}
+
+QHash<KUrl, QPair<bool, int> > TransferTorrent::availableMirrors(const KUrl &file) const
+{
+    Q_UNUSED(file);
+
+    QHash<KUrl, QPair<bool, int> > result;
+
+    const std::vector<lt::announce_entry> lttrackers = m_lthandle.trackers();
+    foreach (const lt::announce_entry &lttracker, lttrackers) {
+        result.insert(KUrl(lttracker.url.c_str()), QPair<bool,int>(true, 1));
+    }
+
+    return result;
+}
+
+void TransferTorrent::setAvailableMirrors(const KUrl &file, const QHash<KUrl, QPair<bool, int> > &mirrors)
+{
+    Q_UNUSED(file);
+
+    std::vector<lt::announce_entry> lttrackers;
+    foreach (const KUrl &fileurl, mirrors.keys()) {
+        const QPair<bool, int> mirrorpair = mirrors.value(fileurl);
+        if (mirrorpair.first == true) {
+            const QByteArray filestring = fileurl.prettyUrl().toLocal8Bit();
+            lttrackers.push_back(lt::announce_entry(filestring.constData()));
+        }
+    }
+
+    m_lthandle.replace_trackers(lttrackers);
 }
 
 void TransferTorrent::start()
