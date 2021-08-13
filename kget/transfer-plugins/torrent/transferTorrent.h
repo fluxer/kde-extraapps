@@ -70,7 +70,6 @@ private:
     lt::torrent_handle m_lthandle;
     TorrentFileModel* m_filemodel;
     std::vector<boost::uint8_t> m_priorities;
-    bool m_recreatefilemodel;
 };
 
 #endif // TRANSFER_TORRENT_H

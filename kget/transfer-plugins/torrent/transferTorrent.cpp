@@ -345,15 +345,14 @@ static QString translatelterror(lt::error_code lterror)
 class TorrentFileModel : public FileModel
 {
 public:
-    TorrentFileModel(const QList<KUrl> &files, const KUrl &destDirectory, QObject *parent, const Job::Status status);
+    TorrentFileModel(const QList<KUrl> &files, const KUrl &destDirectory, QObject *parent);
     Qt::ItemFlags flags(const QModelIndex &index) const final;
 
-private:
-    Job::Status m_status;
+    Job::Status transferstatus;
 };
 
-TorrentFileModel::TorrentFileModel(const QList<KUrl> &files, const KUrl &destDirectory, QObject *parent, const Job::Status status)
-    : FileModel(files, destDirectory, parent), m_status(status)
+TorrentFileModel::TorrentFileModel(const QList<KUrl> &files, const KUrl &destDirectory, QObject *parent)
+    : FileModel(files, destDirectory, parent)
 {
 }
 
@@ -363,10 +362,13 @@ Qt::ItemFlags TorrentFileModel::flags(const QModelIndex &index) const
         return 0;
     }
 
-    // TODO: this really should be done for other transfer plugins too, it does
-    // not make sense to disable file transfers once it is already finished
-    if (m_status == Job::Finished || m_status == Job::FinishedKeepAlive) {
-        return 0;
+    if (index.column() == FileItem::File) {
+        // TODO: this really should be done for other transfer plugins too, it does not make sense
+        // to disable file transfer once it is already finished
+        // TODO: this does not (and cannot) account for parent item (directory) flags
+        if (transferstatus == Job::Finished || transferstatus == Job::FinishedKeepAlive) {
+            return Qt::ItemIsSelectable;
+        }
     }
 
     return FileModel::flags(index);
@@ -376,7 +378,7 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
                          Scheduler* scheduler, const KUrl &source, const KUrl &dest,
                          const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
-    m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr), m_recreatefilemodel(false)
+    m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr)
 {
     setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming);
 
@@ -539,43 +541,40 @@ QList<KUrl> TransferTorrent::files() const
 
 FileModel* TransferTorrent::fileModel()
 {
-    if (m_recreatefilemodel && m_filemodel) {
-        delete m_filemodel;
-        m_filemodel = nullptr;
-    }
     if (!m_filemodel) {
-        const Job::Status transferstatus = status();
-        m_filemodel = new TorrentFileModel(files(), directory(), this, transferstatus);
+        m_filemodel = new TorrentFileModel(files(), directory(), this);
         connect(m_filemodel, SIGNAL(checkStateChanged()), this, SLOT(slotCheckStateChanged()));
+    }
 
-        if (m_lthandle.torrent_file()) {
-            const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
-            if (ltstorage.is_valid()) {
-                for (int i = 0; i < ltstorage.num_files(); i++) {
-                    const KUrl fileurl = KUrl(ltstorage.file_path(i).c_str());
+    const Job::Status transferstatus = status();
+    m_filemodel->transferstatus = transferstatus;
+    if (m_lthandle.torrent_file()) {
+        const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
+        if (ltstorage.is_valid()) {
+            for (int i = 0; i < ltstorage.num_files(); i++) {
+                const KUrl fileurl = KUrl(ltstorage.file_path(i).c_str());
 
-                    Job::Status filestatus = transferstatus;
-                    // priority has no effect on finished/seeded torrents
-                    const int ltpriority = (m_priorities.size() > i ? m_priorities.at(i) : LTPriorities::NormalPriority);
-                    const lt::torrent_status ltstatus = m_lthandle.status();
-                    if (ltstatus.state == lt::torrent_status::seeding || ltstatus.state == lt::torrent_status::finished) {
-                        filestatus = Job::Finished;
-                    }
-                    if (ltpriority == LTPriorities::Disabled) {
-                        filestatus = Job::Stopped;
-                    }
-
-                    const Qt::CheckState filestate = (ltpriority == LTPriorities::Disabled ? Qt::Unchecked : Qt::Checked);
-                    QModelIndex fileindex = m_filemodel->index(fileurl, FileItem::File);
-                    m_filemodel->setData(fileindex, filestate, Qt::CheckStateRole);
-
-                    QModelIndex statusindex = m_filemodel->index(fileurl, FileItem::Status);
-                    m_filemodel->setData(statusindex, filestatus);
-
-                    const qlonglong filesize = ltstorage.file_size(i);
-                    QModelIndex sizeindex = m_filemodel->index(fileurl, FileItem::Size);
-                    m_filemodel->setData(sizeindex, filesize);
+                Job::Status filestatus = transferstatus;
+                // priority has no effect on finished/seeded torrents
+                const int ltpriority = (m_priorities.size() > i ? m_priorities.at(i) : LTPriorities::NormalPriority);
+                const lt::torrent_status ltstatus = m_lthandle.status();
+                if (ltstatus.state == lt::torrent_status::seeding || ltstatus.state == lt::torrent_status::finished) {
+                    filestatus = Job::Finished;
                 }
+                if (ltpriority == LTPriorities::Disabled) {
+                    filestatus = Job::Stopped;
+                }
+
+                const Qt::CheckState filestate = (ltpriority == LTPriorities::Disabled ? Qt::Unchecked : Qt::Checked);
+                QModelIndex fileindex = m_filemodel->index(fileurl, FileItem::File);
+                m_filemodel->setData(fileindex, filestate, Qt::CheckStateRole);
+
+                QModelIndex statusindex = m_filemodel->index(fileurl, FileItem::Status);
+                m_filemodel->setData(statusindex, filestatus);
+
+                const qlonglong filesize = ltstorage.file_size(i);
+                QModelIndex sizeindex = m_filemodel->index(fileurl, FileItem::Size);
+                m_filemodel->setData(sizeindex, filesize);
             }
         }
     }
@@ -707,9 +706,6 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
                 , true
             );
         } else if (lt::alert_cast<lt::torrent_finished_alert>(ltalert)) {
-            // see note in TransferTorrent::fileModel()
-            m_recreatefilemodel = true;
-
             m_lthandle.save_resume_data();
 
             setStatus(Job::FinishedKeepAlive);
