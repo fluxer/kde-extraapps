@@ -731,7 +731,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
                 case lt::torrent_status::finished:
                 case lt::torrent_status::seeding: {
                     setStatus(Job::FinishedKeepAlive, i18n("Seeding..."));
-                    setTransferChange(Transfer::Tc_Status, true);
+                    setTransferChange(Transfer::Tc_Status, false);
                     break;
                 }
                 case lt::torrent_status::downloading_metadata:
