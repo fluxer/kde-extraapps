@@ -139,7 +139,6 @@ TransferHistoryStore *TransferHistoryStore::getStore()
     {
         case TransferHistoryStore::SQLite:
             return new SQLiteStore(KStandardDirs::locateLocal("appdata", "transferhistory.db"));
-            break;
         case TransferHistoryStore::Xml:
         default:
             return new XmlStore(KStandardDirs::locateLocal("appdata", "transferhistory.kgt"));
