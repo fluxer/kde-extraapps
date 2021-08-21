@@ -26,7 +26,6 @@
 #include "akregatorconfig.h"
 #include "akregator_part.h"
 #include "articlelistview.h"
-#include "articleviewer.h"
 #include "feed.h"
 #include "fetchqueue.h"
 #include "folder.h"
@@ -112,7 +111,6 @@ public:
     ArticleListView* articleList;
     SubscriptionListView* subscriptionListView;
     MainWidget* mainWidget;
-    ArticleViewer* articleViewer;
     Part* part;
     TrayIcon* trayIcon;
     KActionMenu* tagMenu;
@@ -136,7 +134,6 @@ ActionManagerImpl::ActionManagerImpl(Part* part, QObject* parent ) : ActionManag
     d->subscriptionListView = 0;
     d->articleList = 0;
     d->trayIcon = 0;
-    d->articleViewer = 0;
     d->mainWidget = 0;
     d->tabWidget = 0;
     d->tagMenu = 0;
@@ -399,14 +396,6 @@ void ActionManagerImpl::initMainWidget(MainWidget* mainWidget)
     connect(action, SIGNAL(triggered(bool)), mainWidget, SLOT(slotSendFile()));
 
     setArticleActionsEnabled( false );
-}
-
-void ActionManagerImpl::initArticleViewer(ArticleViewer* articleViewer)
-{
-    if (d->articleViewer)
-        return;
-    else
-        d->articleViewer = articleViewer;
 }
 
 void ActionManagerImpl::initArticleListView(ArticleListView* articleList)

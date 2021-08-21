@@ -29,7 +29,6 @@
 #include <QWidget>
 #include <QProgressBar>
 
-#include <kparts/browserextension.h>
 #include <kconfiggroup.h>
 
 #include "akregator_export.h"

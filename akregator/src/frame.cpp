@@ -32,7 +32,6 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kurl.h>
-#include <kparts/browserextension.h>
 #include <kparts/part.h>
 
 namespace Akregator {

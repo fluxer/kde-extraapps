@@ -28,7 +28,6 @@
 #include "actionmanagerimpl.h"
 #include "addfeeddialog.h"
 #include "articlelistview.h"
-#include "articleviewer.h"
 #include "articlejobs.h"
 #include "akregatorconfig.h"
 #include "akregator_part.h"

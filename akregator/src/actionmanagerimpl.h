@@ -35,7 +35,6 @@ class KActionCollection;
 namespace Akregator {
 
 class ArticleListView;
-class ArticleViewer;
 class FrameManager;
 class MainWidget;
 class Part;
@@ -60,7 +59,6 @@ class ActionManagerImpl : public ActionManager
         virtual QWidget* container(const char* name);
 
         void initMainWidget(MainWidget* mainWidget);
-        void initArticleViewer(ArticleViewer* articleViewer);
         void initArticleListView(ArticleListView* articleList);
         void initSubscriptionListView(SubscriptionListView* subscriptionListView);
         void initTabWidget(TabWidget* tabWidget);

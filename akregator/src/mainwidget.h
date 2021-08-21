@@ -51,7 +51,6 @@ namespace Akregator {
 class AbstractSelectionController;
 class ActionManagerImpl;
 class ArticleListView;
-class ArticleViewer;
 class Folder;
 class FeedList;
 class FeedListManagementImpl;
