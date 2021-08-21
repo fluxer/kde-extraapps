@@ -46,16 +46,8 @@
 
 using namespace Akregator;
 
-BrowserInterface::BrowserInterface( MainWindow *shell, const char *name )
-    : KParts::BrowserInterface( shell )
-{
-    setObjectName(QLatin1String(name));
-    m_shell = shell;
-}
-
 MainWindow::MainWindow( QWidget* parent, Qt::WindowFlags f )
     : KParts::MainWindow( parent, f )
-    , m_browserIface( new BrowserInterface( this, "browser_interface" ) )
     , m_part()
     , m_statusLabel( new KSqueezedTextLabel( this ) )
 {
@@ -110,7 +102,6 @@ bool MainWindow::loadPart()
     connect(m_part, SIGNAL(setWindowCaption(QString)), this, SLOT(setCaption(QString)) );
 
     createGUI(m_part);
-    browserExtension(m_part)->setBrowserInterface(m_browserIface);
     setAutoSaveSettings();
     return true;
 }
@@ -163,11 +154,6 @@ void MainWindow::optionsConfigureToolbars()
 void MainWindow::applyNewToolbarConfig()
 {
     applyMainWindowSettings(KGlobal::config()->group( autoSaveGroup()) );
-}
-
-KParts::BrowserExtension *MainWindow::browserExtension(KParts::ReadOnlyPart *p)
-{
-    return KParts::BrowserExtension::childObject( p );
 }
 
 void MainWindow::slotQuit()

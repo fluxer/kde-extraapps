@@ -151,18 +151,6 @@ static const KAboutData &createAboutData()
 K_PLUGIN_FACTORY(AkregatorFactory, registerPlugin<Part>();)
 K_EXPORT_PLUGIN(AkregatorFactory(createAboutData()))
 
-BrowserExtension::BrowserExtension(Part *p, const char *name)
-            : KParts::BrowserExtension( p)
-{
-    setObjectName(name);
-    m_part=p;
-}
-
-void BrowserExtension::saveSettings()
-{
-    m_part->saveSettings();
-}
-
 Part::Part( QWidget *parentWidget, QObject *parent, const QVariantList& )
     : inherited(parent)
     , m_standardListLoaded(false)
@@ -216,10 +204,8 @@ Part::Part( QWidget *parentWidget, QObject *parent, const QVariantList& )
     ActionManager::setInstance(m_actionManager);
 
     m_mainWidget = new Akregator::MainWidget(this, parentWidget, m_actionManager, "akregator_view");
-    m_extension = new BrowserExtension(this, "ak_extension");
 
     connect(Kernel::self()->frameManager(), SIGNAL(signalCaptionChanged(QString)), this, SIGNAL(setWindowCaption(QString)));
-    connect(Kernel::self()->frameManager(), SIGNAL(signalLoadingProgress(int)), m_extension, SIGNAL(loadingProgress(int)));
     connect(Kernel::self()->frameManager(), SIGNAL(signalCanceled(QString)), this, SIGNAL(canceled(QString)));
     connect(Kernel::self()->frameManager(), SIGNAL(signalStarted()), this, SLOT(slotStarted()));
     connect(Kernel::self()->frameManager(), SIGNAL(signalCompleted()), this, SIGNAL(completed()));

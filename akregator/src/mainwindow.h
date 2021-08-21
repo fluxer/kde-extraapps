@@ -27,8 +27,6 @@
 
 #include <kapplication.h>
 #include <kparts/mainwindow.h>
-#include <kparts/browserinterface.h>
-#include <kparts/browserextension.h>
 #include <kio/job.h>
 
 #include <QPointer>
@@ -40,18 +38,6 @@ namespace Akregator
 
 class Part;
 class MainWindow;
-
-class BrowserInterface : public KParts::BrowserInterface
-{
-    Q_OBJECT
-
-public:
-    BrowserInterface(Akregator::MainWindow *shell, const char *name );
-
-private:
-    Akregator::MainWindow *m_shell;
-};
-
 
 /**
  * This is the application "Shell".  It has a menubar, toolbar, and
@@ -99,10 +85,6 @@ protected:
 protected slots:
     void slotQuit();
 
-private:
-
-    KParts::BrowserExtension *browserExtension(KParts::ReadOnlyPart *p);
-
 private slots:
 
     void optionsConfigureKeys();
@@ -111,8 +93,6 @@ private slots:
     void slotOnShutdown();
 
 private:
-    BrowserInterface *m_browserIface;
-
     QPointer<Akregator::Part> m_part;
     KSqueezedTextLabel *m_statusLabel;
 };

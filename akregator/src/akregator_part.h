@@ -28,9 +28,9 @@
 
 #include <QPointer>
 #include <QVector>
+#include <QTimer>
 
 #include <kurl.h>
-#include <kparts/browserextension.h>
 #include <kparts/part.h>
 
 #include <boost/shared_ptr.hpp>
@@ -38,8 +38,6 @@
 class KConfigGroup;
 class KUrl;
 class KCMultiDialog;
-
-#include <QTimer>
 
 namespace Akregator {
 
@@ -55,18 +53,6 @@ class LoadFeedListCommand;
 class MainWidget;
 class Part;
 class TrayIcon;
-
-class BrowserExtension : public KParts::BrowserExtension
-{
-    Q_OBJECT
-
-    public:
-        explicit BrowserExtension(Part *p, const char *name=0);
-    public slots:
-        void saveSettings();
-    private:
-        Part *m_part;
-};
 
 /**
     This is a RSS Aggregator "Part". It does all the real work.
@@ -218,8 +204,6 @@ class Part : public KParts::ReadOnlyPart
         bool m_standardListLoaded;
         bool m_shuttingDown;
         bool m_doCrashSave;
-
-        KParts::BrowserExtension *m_extension;
 
         QTimer* m_autosaveTimer;
         /** did we backup the feed list already? */
