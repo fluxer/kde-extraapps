@@ -26,9 +26,7 @@
 
 #include <QString>
 
-namespace boost {
-    template <class T> class shared_ptr;
-}
+#include <boost/shared_ptr.hpp>
 
 namespace Syndication {
 

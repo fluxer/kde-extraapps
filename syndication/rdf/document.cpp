@@ -41,8 +41,6 @@
 #include <QtCore/QStringList>
 #include <QtCore/QVector>
 
-using namespace boost;
-
 namespace Syndication {
 namespace RDF {
 
@@ -58,7 +56,7 @@ class Document::Private
     mutable bool itemTitlesGuessed;
     mutable bool itemDescriptionContainsMarkup;
     mutable bool itemDescGuessed;
-    shared_ptr<Model::ModelPrivate> modelPrivate;
+    boost::shared_ptr<Model::ModelPrivate> modelPrivate;
 };
 
 Document::Document() : Syndication::SpecificDocument(),

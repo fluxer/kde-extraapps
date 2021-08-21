@@ -34,8 +34,6 @@
 
 #include <boost/weak_ptr.hpp>
 
-using namespace boost;
-
 namespace Syndication {
 namespace RDF {
 
@@ -44,7 +42,7 @@ class Resource::ResourcePrivate
     public:
 
         QString uri;
-        weak_ptr<Model::ModelPrivate> model;
+        boost::weak_ptr<Model::ModelPrivate> model;
         bool isAnon;
         unsigned int id;
 
@@ -107,7 +105,7 @@ bool Resource::hasProperty(PropertyPtr property) const
 {
     if (!d)
         return false;
-    const shared_ptr<Model::ModelPrivate> m = d->model.lock();
+    const boost::shared_ptr<Model::ModelPrivate> m = d->model.lock();
     if (!m)
         return false;
     return m->resourceHasProperty(this, property);
@@ -118,7 +116,7 @@ StatementPtr Resource::property(PropertyPtr property) const
     StatementPtr ptr(new Statement());
     if (!d)
         return ptr;
-    const shared_ptr<Model::ModelPrivate> m = d->model.lock();
+    const boost::shared_ptr<Model::ModelPrivate> m = d->model.lock();
     if (!m)
         return ptr;
     return m->resourceProperty(this, property);
@@ -128,7 +126,7 @@ QList<StatementPtr> Resource::properties(PropertyPtr property) const
 {
     if (!d)
         return QList<StatementPtr>();
-    const shared_ptr<Model::ModelPrivate> m = d->model.lock();
+    const boost::shared_ptr<Model::ModelPrivate> m = d->model.lock();
     if (!m)
         return QList<StatementPtr>();
 
@@ -162,7 +160,7 @@ Model Resource::model() const
     if (!d)
         return Model();
 
-    const shared_ptr<Model::ModelPrivate> mp = d->model.lock();
+    const boost::shared_ptr<Model::ModelPrivate> mp = d->model.lock();
 
     Model m;
 

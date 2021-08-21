@@ -31,8 +31,6 @@
 
 #include <boost/weak_ptr.hpp>
 
-using namespace boost;
-
 namespace Syndication {
 namespace RDF {
 
@@ -43,7 +41,7 @@ class Statement::StatementPrivate
         uint subjectID;
         uint predicateID;
         uint objectID;
-        weak_ptr<Model::ModelPrivate> model;
+        boost::weak_ptr<Model::ModelPrivate> model;
 
         bool operator==(const StatementPrivate& other) const
         {
@@ -100,25 +98,25 @@ bool Statement::isNull() const
 
 ResourcePtr Statement::subject() const
 {
-    const shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : shared_ptr<Model::ModelPrivate>();
+    const boost::shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : boost::shared_ptr<Model::ModelPrivate>();
     return m ? m->resourceByID(d->subjectID) : ResourcePtr(new Resource);
 }
 
 PropertyPtr Statement::predicate() const
 {
-    const shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : shared_ptr<Model::ModelPrivate>();
+    const boost::shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : boost::shared_ptr<Model::ModelPrivate>();
     return m ? m->propertyByID(d->predicateID) : PropertyPtr( new Property() );
 }
 
 NodePtr Statement::object() const
 {
-    const shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : shared_ptr<Model::ModelPrivate>();
+    const boost::shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : boost::shared_ptr<Model::ModelPrivate>();
     return m ? m->nodeByID(d->objectID) : NodePtr( LiteralPtr( new Literal() ) );
 }
 
 ResourcePtr Statement::asResource() const
 {
-    const shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : shared_ptr<Model::ModelPrivate>();
+    const boost::shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : boost::shared_ptr<Model::ModelPrivate>();
 
     if (isNull() || !m || !m->nodeByID(d->objectID)->isResource())
         return ResourcePtr(new Resource);
@@ -131,7 +129,7 @@ QString Statement::asString() const
     if (isNull())
         return QString();
 
-    const shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : shared_ptr<Model::ModelPrivate>();
+    const boost::shared_ptr<Model::ModelPrivate> m = d ? d->model.lock() : boost::shared_ptr<Model::ModelPrivate>();
     return m ? m->nodeByID(d->objectID)->text() : QString();
 }
 
