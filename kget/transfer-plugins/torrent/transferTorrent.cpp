@@ -510,7 +510,7 @@ void TransferTorrent::start()
     ltparams.file_priorities = m_priorities;
 #else
     std::vector<lt::download_priority_t> priorities;
-    for (const boost::uint8_t priority: m_priorities) {
+    foreach (const boost::uint8_t priority, m_priorities) {
         priorities.push_back(lt::download_priority_t(priority));
     }
     ltparams.file_priorities = priorities;
@@ -720,12 +720,12 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
                 case lt::torrent_status::checking_files:
                 case lt::torrent_status::checking_resume_data: {
                     setStatus(Job::Running, i18n("Checking..."));
-                    setTransferChange(Transfer::Tc_Status, true);
+                    setTransferChange(Transfer::Tc_Status, false);
                     break;
                 }
                 case lt::torrent_status::allocating: {
                     setStatus(Job::Running, i18n("Allocating disk space..."));
-                    setTransferChange(Transfer::Tc_Status, true);
+                    setTransferChange(Transfer::Tc_Status, false);
                     break;
                 }
                 case lt::torrent_status::finished:
@@ -737,7 +737,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
                 case lt::torrent_status::downloading_metadata:
                 case lt::torrent_status::downloading: {
                     setStatus(Job::Running);
-                    setTransferChange(Transfer::Tc_Status, true);
+                    setTransferChange(Transfer::Tc_Status, false);
                     break;
                 }
             }
