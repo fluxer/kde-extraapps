@@ -101,25 +101,30 @@ namespace {
         mainFolder.setAttribute("text","KDE");
         body.appendChild(mainFolder);
 
-        QDomElement dot = doc.createElement( "outline" );
-        dot.setAttribute("text",i18n("KDE Dot News"));
-        dot.setAttribute("xmlUrl","http://www.kde.org/dotkdeorg.rdf");
-        mainFolder.appendChild(dot);
+        QDomElement katie = doc.createElement( "outline" );
+        katie.setAttribute("text",i18n("Katie"));
+        katie.setAttribute("xmlUrl","https://github.com/fluxer/katie/commits.atom");
+        mainFolder.appendChild(katie);
 
-        QDomElement planetkde = doc.createElement( "outline" );
-        planetkde.setAttribute("text",i18n("Planet KDE"));
-        planetkde.setAttribute("xmlUrl","http://planetkde.org/rss20.xml");
-        mainFolder.appendChild(planetkde);
+        QDomElement kdelibs = doc.createElement("outline");
+        kdelibs.setAttribute("text",i18n("Libraries"));
+        kdelibs.setAttribute("xmlUrl","https://github.com/fluxer/kdelibs/commits.atom");
+        mainFolder.appendChild(kdelibs);
 
-        QDomElement apps = doc.createElement( "outline" );
-        apps.setAttribute("text",i18n("KDE Apps"));
-        apps.setAttribute("xmlUrl","http://www.kde.org/dot/kde-apps-content.rdf");
-        mainFolder.appendChild(apps);
+        QDomElement kde_baseapps = doc.createElement("outline");
+        kde_baseapps.setAttribute("text",i18n("Base applications"));
+        kde_baseapps.setAttribute("xmlUrl","https://github.com/fluxer/kde-baseapps/commits.atom");
+        mainFolder.appendChild(kde_baseapps);
 
-        QDomElement look = doc.createElement( "outline" );
-        look.setAttribute("text",i18n("KDE Look"));
-        look.setAttribute("xmlUrl","http://www.kde.org/kde-look-content.rdf");
-        mainFolder.appendChild(look);
+        QDomElement kde_workspace = doc.createElement("outline");
+        kde_workspace.setAttribute("text",i18n("Workspace"));
+        kde_workspace.setAttribute("xmlUrl","https://github.com/fluxer/kde-workspace/commits.atom");
+        mainFolder.appendChild(kde_workspace);
+
+        QDomElement kde_extraapps = doc.createElement("outline");
+        kde_extraapps.setAttribute("text",i18n("Extra applications"));
+        kde_extraapps.setAttribute("xmlUrl","https://github.com/fluxer/kde-extraapps/commits.atom");
+        mainFolder.appendChild(kde_extraapps);
 
         // Linux feeds
         QDomElement linuxFolder = doc.createElement( "outline" );
@@ -128,7 +133,7 @@ namespace {
 
         QDomElement linuxFeeds = doc.createElement( "outline" );
         linuxFeeds.setAttribute("text",i18n("Linux.com"));
-        linuxFeeds.setAttribute("xmlUrl","https://www.linux.com/rss/feeds.php");
+        linuxFeeds.setAttribute("xmlUrl","https://www.linux.com/feed/");
         linuxFolder.appendChild(linuxFeeds);
 
         return doc;
