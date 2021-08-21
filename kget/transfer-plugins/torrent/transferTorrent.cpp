@@ -479,7 +479,11 @@ void TransferTorrent::start()
     } else if (sourcestring.endsWith(".torrent")) {
         const QByteArray source = sourceurl.toLocalFile().toLocal8Bit();
 
+#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
         ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
+#else
+        ltparams.ti = std::make_shared<lt::torrent_info>(std::string(source.constData()));
+#endif
         if (!ltparams.ti->is_valid()) {
             kError(5001) << "invalid torrent file";
 
@@ -502,7 +506,15 @@ void TransferTorrent::start()
     }
 
     ltparams.save_path = destination.constData();
+#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
     ltparams.file_priorities = m_priorities;
+#else
+    std::vector<lt::download_priority_t> priorities;
+    for (const boost::uint8_t priority: m_priorities) {
+        priorities.push_back(lt::download_priority_t(priority));
+    }
+    ltparams.file_priorities = priorities;
+#endif
     ltparams.upload_limit = (m_uploadLimit * 1024);
     ltparams.download_limit = (m_downloadLimit * 1024);
     m_lthandle = m_ltsession->add_torrent(ltparams);
