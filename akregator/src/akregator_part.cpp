@@ -106,22 +106,22 @@ namespace {
         katie.setAttribute("xmlUrl","https://github.com/fluxer/katie/commits.atom");
         mainFolder.appendChild(katie);
 
-        QDomElement kdelibs = doc.createElement("outline");
+        QDomElement kdelibs = doc.createElement( "outline" );
         kdelibs.setAttribute("text",i18n("Libraries"));
         kdelibs.setAttribute("xmlUrl","https://github.com/fluxer/kdelibs/commits.atom");
         mainFolder.appendChild(kdelibs);
 
-        QDomElement kde_baseapps = doc.createElement("outline");
+        QDomElement kde_baseapps = doc.createElement( "outline" );
         kde_baseapps.setAttribute("text",i18n("Base applications"));
         kde_baseapps.setAttribute("xmlUrl","https://github.com/fluxer/kde-baseapps/commits.atom");
         mainFolder.appendChild(kde_baseapps);
 
-        QDomElement kde_workspace = doc.createElement("outline");
+        QDomElement kde_workspace = doc.createElement( "outline" );
         kde_workspace.setAttribute("text",i18n("Workspace"));
         kde_workspace.setAttribute("xmlUrl","https://github.com/fluxer/kde-workspace/commits.atom");
         mainFolder.appendChild(kde_workspace);
 
-        QDomElement kde_extraapps = doc.createElement("outline");
+        QDomElement kde_extraapps = doc.createElement( "outline" );
         kde_extraapps.setAttribute("text",i18n("Extra applications"));
         kde_extraapps.setAttribute("xmlUrl","https://github.com/fluxer/kde-extraapps/commits.atom");
         mainFolder.appendChild(kde_extraapps);

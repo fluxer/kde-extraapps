@@ -33,8 +33,8 @@ public:
     ~TransferTorrentFactory();
 
     Transfer* createTransfer(const KUrl &srcUrl, const KUrl &destUrl,
-                                TransferGroup* parent, Scheduler* scheduler,
-                                const QDomElement* e = 0);
+                             TransferGroup* parent, Scheduler* scheduler,
+                             const QDomElement* e = 0);
     bool isSupported(const KUrl &url) const;
     QStringList addsProtocols() const;
 };

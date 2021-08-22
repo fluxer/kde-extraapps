@@ -376,8 +376,8 @@ Qt::ItemFlags TorrentFileModel::flags(const QModelIndex &index) const
 }
 
 TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory,
-                         Scheduler* scheduler, const KUrl &source, const KUrl &dest,
-                         const QDomElement* e)
+                                 Scheduler* scheduler, const KUrl &source, const KUrl &dest,
+                                 const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
     m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr)
 {
@@ -682,8 +682,7 @@ void TransferTorrent::load(const QDomElement *element)
 void TransferTorrent::init()
 {
     // start even if transfer is finished so that torrent is seeded
-    const bool shouldstart = (policy() != Job::Stop);
-    if (shouldstart) {
+    if (policy() != Job::Stop) {
         // do it after load(), this is racy
         QTimer::singleShot(2000, this, SLOT(slotDelayedStart()));
     }
