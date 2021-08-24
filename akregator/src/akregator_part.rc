@@ -78,7 +78,6 @@
     <Action name="feed_stop"/>
     <Action name="feed_mark_all_as_read"/>
     <Action name="article_tagmenu"/>
-    <DefineGroup name="pageviewer_operations" />
     <Merge/>
   </ToolBar>
 

@@ -123,6 +123,7 @@ install(TARGETS akregatorpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(PROGRAMS akregator.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 install(FILES akregator_part.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(FILES akregator_part.rc akregator.notifyrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/akregator)
 install(FILES akregator_plugin.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR})
 install(FILES akregator_shell.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/akregator)
 install(FILES feed.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
