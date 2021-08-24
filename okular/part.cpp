@@ -240,10 +240,6 @@ static Okular::EmbedMode detectEmbedMode( QWidget *parentWidget, QObject *parent
               || parent->objectName() == QLatin1String( "okular/okular__Shell" ) ) )
         return Okular::NativeShellMode;
 
-    if ( parent
-         && ( QByteArray( "KWebKitPart" ) == parent->metaObject()->className() ) )
-        return Okular::KWebKitPartMode;
-
     Q_FOREACH ( const QVariant &arg, args )
     {
         if ( arg.type() == QVariant::String )
