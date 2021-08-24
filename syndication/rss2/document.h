@@ -23,17 +23,16 @@
 #ifndef SYNDICATION_RSS2_DOCUMENT_H
 #define SYNDICATION_RSS2_DOCUMENT_H
 
-#include <syndication/specificdocument.h>
-#include <syndication/elementwrapper.h>
-
-#include <ctime>
-
 #include <QDomDocument>
 #include <QDomElement>
 #include <QString>
-
 #include <QList>
 #include <QSet>
+#include <memory>
+#include <ctime>
+
+#include <syndication/specificdocument.h>
+#include <syndication/elementwrapper.h>
 
 namespace Syndication {
 namespace RSS2 {
@@ -311,7 +310,7 @@ class SYNDICATION_EXPORT Document : public Syndication::SpecificDocument,
         explicit Document(const QDomElement& element);
 
         class DocumentPrivate;
-        boost::shared_ptr<DocumentPrivate> d;
+        std::shared_ptr<DocumentPrivate> d;
 
 };
 

@@ -24,15 +24,13 @@
 #define SYNDICATION_ITEM_H
 
 #include <QtCore/QString>
-#include <boost/shared_ptr.hpp>
-
-#include "ksyndication_export.h"
-
-#include <ctime>
-
 #include <QDomElement>
 #include <QList>
 #include <QMultiMap>
+#include <boost/shared_ptr.hpp>
+#include <ctime>
+
+#include "ksyndication_export.h"
 
 namespace Syndication {
 

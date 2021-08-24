@@ -24,9 +24,10 @@
 #define SYNDICATION_RDF_LITERAL_H
 
 #include <QtCore/QString>
-#include <syndication/rdf/node.h>
-
+#include <memory>
 #include <boost/shared_ptr.hpp>
+
+#include <syndication/rdf/node.h>
 
 namespace Syndication {
 namespace RDF {
@@ -154,8 +155,7 @@ class SYNDICATION_EXPORT Literal : public Node
 
     private:
         class LiteralPrivate;
-        typedef boost::shared_ptr<LiteralPrivate> LiteralPrivatePtr;
-        LiteralPrivatePtr d;
+        std::shared_ptr<LiteralPrivate> d;
 };
 
 

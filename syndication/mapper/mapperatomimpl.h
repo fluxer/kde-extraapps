@@ -31,15 +31,14 @@
 #include <mapper.h>
 
 
-
 namespace Syndication {
 
 /** @internal */
 class AtomMapper : public Mapper<Feed>
 {
-    boost::shared_ptr<Feed> map(SpecificDocumentPtr doc) const
+    FeedPtr map(SpecificDocumentPtr doc) const
     {
-        return boost::shared_ptr<Feed>(new FeedAtomImpl(boost::static_pointer_cast<Atom::FeedDocument>(doc)));
+        return FeedPtr(new FeedAtomImpl(boost::static_pointer_cast<Atom::FeedDocument>(doc)));
     }
 };
 

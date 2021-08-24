@@ -23,14 +23,12 @@
 #ifndef SYNDICATION_ATOM_CONTENT_H
 #define SYNDICATION_ATOM_CONTENT_H
 
-#include <syndication/elementwrapper.h>
-
 #include <QtCore/QString>
-
-#include <boost/shared_ptr.hpp>
-
 #include <QByteArray>
 #include <QDomElement>
+#include <memory>
+
+#include <syndication/elementwrapper.h>
 
 namespace Syndication {
 namespace Atom {
@@ -193,7 +191,7 @@ class SYNDICATION_EXPORT Content : public ElementWrapper
 
     private:
         class ContentPrivate;
-        boost::shared_ptr<ContentPrivate> d;
+        std::shared_ptr<ContentPrivate> d;
 };
 
 } // namespace Atom

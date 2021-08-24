@@ -24,12 +24,11 @@
 #define SYNDICATION_DOCUMENTSOURCE_H
 
 #include <QtCore/QString>
-#include <boost/shared_ptr.hpp>
-
-#include "ksyndication_export.h"
-
 #include <QByteArray>
 #include <QDomDocument>
+#include <memory>
+
+#include "ksyndication_export.h"
 
 namespace Syndication {
 
@@ -134,7 +133,7 @@ class SYNDICATION_EXPORT DocumentSource
     private:
 
         class DocumentSourcePrivate;
-        boost::shared_ptr<DocumentSourcePrivate> d;
+        std::shared_ptr<DocumentSourcePrivate> d;
 };
 
 } // namespace Syndication

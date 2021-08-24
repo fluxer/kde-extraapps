@@ -23,13 +23,12 @@
 #ifndef SYNDICATION_RDF_RESOURCE_H
 #define SYNDICATION_RDF_RESOURCE_H
 
-#include <syndication/rdf/node.h>
-
+#include <QString>
+#include <QList>
+#include <memory>
 #include <boost/shared_ptr.hpp>
 
-#include <QString>
-
-#include <QList>
+#include <syndication/rdf/node.h>
 
 namespace Syndication {
 namespace RDF {
@@ -205,8 +204,7 @@ class SYNDICATION_EXPORT Resource : public Node
     private:
 
         class ResourcePrivate;
-        typedef boost::shared_ptr<ResourcePrivate> ResourcePrivatePtr;
-        ResourcePrivatePtr d;
+        std::shared_ptr<ResourcePrivate> d;
 };
 
 } // namespace RDF

@@ -20,6 +20,10 @@
  *
  */
 
+#include <QtXml/qdom.h>
+#include <QtCore/QString>
+#include <QtCore/QList>
+
 #include <rss2/item.h>
 #include <rss2/category.h>
 #include <rss2/enclosure.h>
@@ -30,10 +34,6 @@
 #include <specificitemvisitor.h>
 #include <tools.h>
 
-#include <QtXml/qdom.h>
-#include <QtCore/QString>
-#include <QtCore/QList>
-
 namespace Syndication {
 namespace RSS2 {
 
@@ -41,15 +41,15 @@ class Item::ItemPrivate
 {
     public:
         
-        boost::shared_ptr<Document> doc;
+        DocumentPtr doc;
 };
 
-Item::Item(boost::shared_ptr<Document> doc) : ElementWrapper(), d(new ItemPrivate)
+Item::Item(DocumentPtr doc) : ElementWrapper(), d(new ItemPrivate)
 {
     d->doc = doc;
 }
 
-Item::Item(const QDomElement& element, boost::shared_ptr<Document> doc) : ElementWrapper(element), d(new ItemPrivate)
+Item::Item(const QDomElement& element, DocumentPtr doc) : ElementWrapper(element), d(new ItemPrivate)
 {
     d->doc = doc;
 }

@@ -22,8 +22,10 @@
 #ifndef SYNDICATION_RDF_RESOURCEWRAPPER_H
 #define SYNDICATION_RDF_RESOURCEWRAPPER_H
 
-#include <syndication/ksyndication_export.h>
+#include <memory>
 #include <boost/shared_ptr.hpp>
+
+#include <syndication/ksyndication_export.h>
 
 namespace Syndication {
 namespace RDF {
@@ -102,7 +104,7 @@ class SYNDICATION_EXPORT ResourceWrapper
     private:
 
         class ResourceWrapperPrivate;
-        boost::shared_ptr<ResourceWrapperPrivate> d;
+        std::shared_ptr<ResourceWrapperPrivate> d;
 };
 
 } // namespace RDF

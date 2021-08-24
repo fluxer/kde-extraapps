@@ -23,12 +23,11 @@
 #ifndef SYNDICATION_ATOM_DOCUMENT_H
 #define SYNDICATION_ATOM_DOCUMENT_H
 
-#include <syndication/specificdocument.h>
-#include <syndication/elementwrapper.h>
-
+#include <QList>
 #include <ctime>
 
-#include <QList>
+#include <syndication/specificdocument.h>
+#include <syndication/elementwrapper.h>
 
 namespace Syndication {
 

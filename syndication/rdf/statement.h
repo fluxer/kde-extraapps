@@ -22,11 +22,11 @@
 #ifndef SYNDICATION_RDF_STATEMENT_H
 #define SYNDICATION_RDF_STATEMENT_H
 
-#include <syndication/rdf/property.h>
-
+#include <QString>
+#include <memory>
 #include <boost/shared_ptr.hpp>
 
-#include <QString>
+#include <syndication/rdf/property.h>
 
 namespace Syndication {
 namespace RDF {
@@ -128,7 +128,7 @@ class SYNDICATION_EXPORT Statement
 
     private:
         class StatementPrivate;
-        boost::shared_ptr<StatementPrivate> d;
+        std::shared_ptr<StatementPrivate> d;
 };
 
 

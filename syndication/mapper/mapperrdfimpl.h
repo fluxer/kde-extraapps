@@ -31,16 +31,14 @@
 #include <feed.h>
 #include <mapper.h>
 
-
-
 namespace Syndication {
 
 /** @internal */
 class RDFMapper : public Mapper<Feed>
 {
-    boost::shared_ptr<Feed> map(SpecificDocumentPtr doc) const
+    FeedPtr map(SpecificDocumentPtr doc) const
     {
-        return boost::shared_ptr<Feed>(new FeedRDFImpl(boost::static_pointer_cast<RDF::Document>(doc)));
+        return FeedPtr(new FeedRDFImpl(boost::static_pointer_cast<RDF::Document>(doc)));
     }
 };
 

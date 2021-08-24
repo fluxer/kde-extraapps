@@ -23,15 +23,13 @@
 #ifndef SYNDICATION_FEED_H
 #define SYNDICATION_FEED_H
 
-#include <boost/shared_ptr.hpp>
-
-#include "ksyndication_export.h"
-
 #include <QDomElement>
-
 #include <QList>
 #include <QMultiMap>
 #include <QString>
+#include <boost/shared_ptr.hpp>
+
+#include "ksyndication_export.h"
 
 namespace Syndication {
 

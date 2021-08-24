@@ -22,12 +22,12 @@
 #ifndef SYNDICATION_RDF_SEQUENCE_H
 #define SYNDICATION_RDF_SEQUENCE_H
 
-#include <syndication/ksyndication_export.h>
-#include <syndication/rdf/resource.h>
-
+#include <QList>
+#include <memory>
 #include <boost/shared_ptr.hpp>
 
-#include <QList>
+#include <syndication/ksyndication_export.h>
+#include <syndication/rdf/resource.h>
 
 namespace Syndication {
 namespace RDF {
@@ -110,7 +110,7 @@ class SYNDICATION_EXPORT Sequence : public Resource
     private:
 
         class SequencePrivate;
-        boost::shared_ptr<SequencePrivate> d;
+        std::shared_ptr<SequencePrivate> d;
 };
 
 } // namespace RDF

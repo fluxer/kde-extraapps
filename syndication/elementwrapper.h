@@ -23,13 +23,11 @@
 #define SYNDICATION_ELEMENTWRAPPER_H
 
 #include <QtCore/QString>
-
-#include <boost/shared_ptr.hpp>
-
-#include "ksyndication_export.h"
-
 #include <QDomElement>
 #include <QList>
+#include <memory>
+
+#include "ksyndication_export.h"
 
 namespace Syndication {
 
@@ -293,7 +291,7 @@ class SYNDICATION_EXPORT ElementWrapper
     private:
 
         class ElementWrapperPrivate;
-        boost::shared_ptr<ElementWrapperPrivate> d;
+        std::shared_ptr<ElementWrapperPrivate> d;
 };
 
 } // namespace Syndication

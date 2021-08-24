@@ -22,20 +22,18 @@
 #ifndef SYNDICATION_RDF_MODEL_H
 #define SYNDICATION_RDF_MODEL_H
 
+#include <QtCore/QString>
+#include <QList>
+#include <boost/shared_ptr.hpp>
+
 #include <syndication/rdf/document.h>
 #include <syndication/rdf/resource.h>
 #include <syndication/rdf/statement.h>
-
 #include <syndication/rdf/literal.h>
 #include <syndication/rdf/node.h>
 #include <syndication/rdf/property.h>
 #include <syndication/rdf/sequence.h>
-#include <boost/shared_ptr.hpp>
 #include <syndication/ksyndication_export.h>
-
-#include <QtCore/QString>
-
-#include <QList>
 
 namespace Syndication {
 namespace RDF {
