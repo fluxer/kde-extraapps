@@ -97,34 +97,34 @@ namespace {
         root.appendChild(body);
 
         // KDE feeds
-        QDomElement mainFolder = doc.createElement( "outline" );
-        mainFolder.setAttribute("text","KDE");
-        body.appendChild(mainFolder);
+        QDomElement kdeFolder = doc.createElement( "outline" );
+        kdeFolder.setAttribute("text","KDE");
+        body.appendChild(kdeFolder);
 
         QDomElement katie = doc.createElement( "outline" );
         katie.setAttribute("text",i18n("Katie"));
         katie.setAttribute("xmlUrl","https://github.com/fluxer/katie/commits.atom");
-        mainFolder.appendChild(katie);
+        kdeFolder.appendChild(katie);
 
         QDomElement kdelibs = doc.createElement( "outline" );
         kdelibs.setAttribute("text",i18n("Libraries"));
         kdelibs.setAttribute("xmlUrl","https://github.com/fluxer/kdelibs/commits.atom");
-        mainFolder.appendChild(kdelibs);
+        kdeFolder.appendChild(kdelibs);
 
         QDomElement kde_baseapps = doc.createElement( "outline" );
         kde_baseapps.setAttribute("text",i18n("Base applications"));
         kde_baseapps.setAttribute("xmlUrl","https://github.com/fluxer/kde-baseapps/commits.atom");
-        mainFolder.appendChild(kde_baseapps);
+        kdeFolder.appendChild(kde_baseapps);
 
         QDomElement kde_workspace = doc.createElement( "outline" );
         kde_workspace.setAttribute("text",i18n("Workspace"));
         kde_workspace.setAttribute("xmlUrl","https://github.com/fluxer/kde-workspace/commits.atom");
-        mainFolder.appendChild(kde_workspace);
+        kdeFolder.appendChild(kde_workspace);
 
         QDomElement kde_extraapps = doc.createElement( "outline" );
         kde_extraapps.setAttribute("text",i18n("Extra applications"));
         kde_extraapps.setAttribute("xmlUrl","https://github.com/fluxer/kde-extraapps/commits.atom");
-        mainFolder.appendChild(kde_extraapps);
+        kdeFolder.appendChild(kde_extraapps);
 
         // Linux feeds
         QDomElement linuxFolder = doc.createElement( "outline" );
@@ -135,6 +135,51 @@ namespace {
         linuxFeeds.setAttribute("text",i18n("Linux.com"));
         linuxFeeds.setAttribute("xmlUrl","https://www.linux.com/feed/");
         linuxFolder.appendChild(linuxFeeds);
+
+        // FreeBSD feeds
+        QDomElement freebsdFolder = doc.createElement( "outline" );
+        freebsdFolder.setAttribute("text","FreeBSD");
+        body.appendChild(freebsdFolder);
+
+        QDomElement freebsdFeeds = doc.createElement( "outline" );
+        freebsdFeeds.setAttribute("text",i18n("FreeBSD.org"));
+        freebsdFeeds.setAttribute("xmlUrl","https://www.freebsd.org/news/feed.xml");
+        freebsdFolder.appendChild(freebsdFeeds);
+
+        // OpenBSD feeds
+        QDomElement openbsdFolder = doc.createElement( "outline" );
+        openbsdFolder.setAttribute("text","OpenBSD");
+        body.appendChild(openbsdFolder);
+
+        QDomElement openbsdPorts = doc.createElement( "outline" );
+        openbsdPorts.setAttribute("text",i18n("OpenBSD ports"));
+        openbsdPorts.setAttribute("xmlUrl","https://openports.se/rss/all");
+        openbsdFolder.appendChild(openbsdPorts);
+
+        // NetBSD feeds
+        QDomElement netbsdFolder = doc.createElement( "outline" );
+        netbsdFolder.setAttribute("text","NetBSD");
+        body.appendChild(netbsdFolder);
+
+        QDomElement netbsdNews = doc.createElement( "outline" );
+        netbsdNews.setAttribute("text",i18n("News"));
+        netbsdNews.setAttribute("xmlUrl","http://www.netbsd.org/changes/rss-netbsd.xml");
+        netbsdFolder.appendChild(netbsdNews);
+
+        QDomElement netbsdCodeChanges = doc.createElement( "outline" );
+        netbsdCodeChanges.setAttribute("text",i18n("Code changes"));
+        netbsdCodeChanges.setAttribute("xmlUrl","http://www.netbsd.org/changes/rss-netbsd-internals.xml");
+        netbsdFolder.appendChild(netbsdCodeChanges);
+
+        QDomElement netbsdFreshPackages = doc.createElement( "outline" );
+        netbsdFreshPackages.setAttribute("text",i18n("Fresh packages"));
+        netbsdFreshPackages.setAttribute("xmlUrl","http://www.netbsd.org/changes/rss-netbsd-pkgs.xml");
+        netbsdFolder.appendChild(netbsdFreshPackages);
+
+        QDomElement netbsdSecurityAdvisories = doc.createElement( "outline" );
+        netbsdSecurityAdvisories.setAttribute("text",i18n("Security advisories"));
+        netbsdSecurityAdvisories.setAttribute("xmlUrl","http://www.netbsd.org/support/security/rss-advisories.xml");
+        netbsdFolder.appendChild(netbsdSecurityAdvisories);
 
         return doc;
     }
