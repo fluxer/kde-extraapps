@@ -68,40 +68,33 @@ bool ATCreator::create ( const QString &path, int /*w*/, int /*h*/, QImage &img 
 
     KMimeType::Ptr type = KMimeType::findByPath(path, 0, true);
 
-    if (type->name() == "audio/mpeg") {
+    if (type->is("audio/mpeg")) {
         TagLib::MPEG::File mp3File(path.toUtf8());
         TagLib::ID3v2::Tag *mp3Tag = mp3File.ID3v2Tag();
         TagLib::ID3v2::FrameList fList = mp3Tag->frameList("APIC");
         TagLib::ID3v2::AttachedPictureFrame *pic;
         pic = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(fList.front());
         if (!pic->picture().isEmpty()) {
-#ifndef QT_KATIE
-            img.loadFromData((const uchar *) pic->picture().data(),pic->picture().size());
-#else
             img.loadFromData(pic->picture().data(),pic->picture().size());
-#endif
             bRet = true;
         }
 
-    } else if (type->name() == "audio/flac" || type->name() == "audio/x-flac") {
+    } else if (type->is("audio/flac") || type->is("audio/x-flac")) {
         TagLib::FLAC::File ff(path.toUtf8());
         TagLib::List<TagLib::FLAC::Picture *> coverList;
 
         if (!ff.pictureList().isEmpty()) {
             coverList.append(ff.pictureList().front());
             TagLib::ByteVector coverData = coverList.front()->data();
-            QByteArray data;
-            data.setRawData(coverData.data(),coverData.size());
-            img.loadFromData(data);
+            img.loadFromData(coverData.data(),coverData.size());
             bRet = true;
             return bRet;
         }
 
-    } else if (type->name() == "audio/mp4") {
+    } else if (type->is("audio/mp4")) {
         TagLib::MP4::File mp4file(path.toUtf8());
         TagLib::MP4::Tag *tag = mp4file.tag();
         TagLib::MP4::ItemListMap map=tag->itemListMap();
-        QByteArray data;
 
         if (!map.isEmpty()) {
             for (TagLib::MP4::ItemListMap::ConstIterator it = map.begin(); it != map.end(); ++it) {
@@ -110,65 +103,36 @@ bool ATCreator::create ( const QString &path, int /*w*/, int /*h*/, QImage &img 
                         TagLib::MP4::CoverArt cover=coverList[0];
 
                         TagLib::ByteVector coverData=cover.data();
-                        data.setRawData(coverData.data(),coverData.size());
-                        img.loadFromData(data);
+                        img.loadFromData(coverData.data(),coverData.size());
 
                         bRet = true;
                         return bRet;
                   }
               }
          }
-    } else if (type->name() == "audio/x-vorbis+ogg" || type->name() == "audio/ogg") {
-	// this part from Coquillo audio tag editor
+    } else if (type->is("audio/x-vorbis+ogg") || type->is("audio/ogg")) {
         TagLib::Ogg::Vorbis::File file(path.toUtf8());
         TagLib::Ogg::XiphComment *tag = file.tag();
 
-        if (tag->contains("METADATA_BLOCK_PICTURE")) {
-            TagLib::StringList blocks = tag->fieldListMap()["METADATA_BLOCK_PICTURE"];
+        TagLib::List<TagLib::FLAC::Picture*> picturelist = tag->pictureList();
+        for (int i = 0; i < picturelist.size(); i++) {
+            // qDebug() << Q_FUNC_INFO << picturelist[i]->code();
+            switch (picturelist[i]->code()) {
+                case TagLib::FLAC::Picture::FrontCover:
+                case TagLib::FLAC::Picture::BackCover:
+                case TagLib::FLAC::Picture::Media: {
+                    break;
+                }
+                default: {
+                    continue;
+                    break;
+                }
+            }
 
-            for (uint i = 0; i < blocks.size(); i++) {
-                QByteArray data = QByteArray::fromBase64(blocks[i].toCString());
-                QDataStream s(&data, QIODevice::ReadOnly);
-
-                int type;
-                uint mimelen;
-                int descrlen;
-                int datalen;
-
-                int w;
-                int h;
-                int c;
-                int ic;
-
-                char * mime;
-                char * descr;
-                char * pic;
-
-                s >> type;
-                s >> mimelen;
-
-                mime = new char[mimelen+1];
-                s.readRawData(mime, mimelen);
-
-                mime[mimelen] = 0;
-
-                s >> descrlen;
-
-                descr = new char[descrlen+1];
-                s.readRawData(descr, descrlen);
-
-                descr[descrlen] = 0;
-
-                s >> w >> h >> c >> ic >> datalen;
-
-                if (!datalen)
-                  return false;
-
-                pic = new char[datalen];
-                s.readRawData(pic, datalen);
-                img = QImage::fromData(QByteArray(pic, datalen));
-
+            img.loadFromData(picturelist[i]->data().data(), picturelist[i]->data().size());
+            if (!img.isNull()) {
                 bRet = true;
+                break;
             }
         }
     }
