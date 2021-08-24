@@ -4127,9 +4127,9 @@ Document::OpenResult Document::openDocumentArchive( const QString & docFile, con
 
     QString tempFileName = archiveData->document.fileName();
     {
-    std::auto_ptr< QIODevice > docEntryDevice( static_cast< const KZipFileEntry * >( docEntry )->createDevice() );
-    copyQIODevice( docEntryDevice.get(), &archiveData->document );
-    archiveData->document.close();
+        std::auto_ptr< QIODevice > docEntryDevice( static_cast< const KZipFileEntry * >( docEntry )->createDevice() );
+        copyQIODevice( docEntryDevice.get(), &archiveData->document );
+        archiveData->document.close();
     }
 
     const KArchiveEntry * metadataEntry = mainDir->entry( metadataFileName );

@@ -13,6 +13,7 @@
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
 #include <QtCore/QRegExp>
+#include <QtCore/QScopedPointer>
 
 #include <kdebug.h>
 #include <kglobal.h>
@@ -25,8 +26,6 @@
 #endif
 
 #include "unrarflavours.h"
-
-#include <memory>
 
 struct UnrarHelper
 {
@@ -164,11 +163,11 @@ QIODevice* Unrar::createDevice( const QString &fileName ) const
     if ( !isSuitableVersionAvailable() )
         return 0;
 
-    std::auto_ptr< QFile> file( new QFile( mTempDir->name() + fileName ) );
+    QScopedPointer< QFile> file( new QFile( mTempDir->name() + fileName ) );
     if ( !file->open( QIODevice::ReadOnly ) )
         return 0;
 
-    return file.release();
+    return file.take();
 }
 
 bool Unrar::isAvailable()

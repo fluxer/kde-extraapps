@@ -14,8 +14,7 @@
 #include <QtCore/QDirIterator>
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
-
-#include <memory>
+#include <QtCore/QScopedPointer>
 
 Directory::Directory()
 {
@@ -58,10 +57,10 @@ QStringList Directory::list() const
 
 QIODevice* Directory::createDevice( const QString &path ) const
 {
-    std::auto_ptr<QFile> file( new QFile( path ) );
+    QScopedPointer<QFile> file( new QFile( path ) );
     if ( !file->open( QIODevice::ReadOnly ) )
-        return 0;
+        return nullptr;
 
-    return file.release();
+    return file.take();
 }
 
