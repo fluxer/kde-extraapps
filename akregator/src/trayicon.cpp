@@ -73,15 +73,15 @@ void TrayIcon::slotSetUnread(int unread)
     this->setToolTip( m_defaultIcon.name(), i18n("Akregator"), unread == 0 ? i18n("There are no unread articles")  : i18np( "1 unread article", "%1 unread articles", unread ) );
     setStatus( unread > 0 ? KStatusNotifierItem::Active : KStatusNotifierItem::Passive );
 
+    // adapted from KMSystemTray::updateCount()
+    int oldWidth = KIconLoader::SizeSmallMedium;
+
     if (unread <= 0 || !Settings::enableTrayIconUnreadArticleCount())
     {
-        setIconByName( m_defaultIcon.name() );
+        setIconByPixmap( m_defaultIcon.pixmap( oldWidth, oldWidth ) );
     }
     else
     {
-        // adapted from KMSystemTray::updateCount()
-        int oldWidth = KIconLoader::SizeSmallMedium;
-
         QString countStr = QString::number( unread );
         QFont f = KGlobalSettings::generalFont();
         f.setBold(true);
