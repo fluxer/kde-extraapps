@@ -37,51 +37,38 @@ using namespace std;
 #define DEFAULT_WIDTH 	105
 #define DEFAULT_HEIGHT 	35
 
-KbdDock::KbdDock(const WId& window) : DragWidget(0), wID(window)
+KbdDock::KbdDock(const WId& window)
+    : DragWidget(0), wID(window)
 {
-    
     setAttribute(Qt::WA_AlwaysShowToolTips);
     setAttribute(Qt::WA_DeleteOnClose, false);
-    
     setWindowFlags( Qt::ToolTip | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint );
-
     setFocusPolicy(Qt::NoFocus);
-    
     setToolTip(i18nc("@info:tooltip Displayed on the movable dock", "Toggle keyboard visibility"));
-    
-    
-    
+
     resize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-    
     raise();
 }
 
 KbdDock::~KbdDock()
 {
-
-  
 }
 
 void KbdDock::paintEvent(QPaintEvent *)
 {
-  
     QPixmap pix = QPixmap::grabWindow(wID);
-    
     QPainter p(this);
-
     p.drawPixmap(0, 0, pix.scaled(width(), height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-
 }
 
 
 
 void KbdDock::mouseReleaseEvent(QMouseEvent *ev)
 {
-  
-     if (dragged && !moved) {
-      emit requestVisibility();
-     }
+    if (dragged && !moved) {
+        emit requestVisibility();
+    }
 
-     DragWidget::mouseReleaseEvent(ev);
-     raise();
+    DragWidget::mouseReleaseEvent(ev);
+    raise();
 }
