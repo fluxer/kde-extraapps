@@ -31,8 +31,8 @@
 
 #include "dockadaptor.h"
 
-#define DEFAULT_WIDTH 	105
-#define DEFAULT_HEIGHT 	35
+#define DEFAULT_WIDTH 105
+#define DEFAULT_HEIGHT 35
 
 KbdDock::KbdDock(const WId& window)
     : DragWidget(0), wID(window)

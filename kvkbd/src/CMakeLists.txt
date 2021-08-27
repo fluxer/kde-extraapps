@@ -1,6 +1,4 @@
-include(${QT_USE_FILE})
-
-include_directories(${KDE4_INCLUDES}  ${QT_INCLUDES})
+include_directories(${KDE4_INCLUDES} ${QT_INCLUDES})
 
 set(kvkbd_SRCS vkeyboard.cpp 
     x11keyboard.cpp
