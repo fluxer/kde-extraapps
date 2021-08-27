@@ -31,9 +31,6 @@
 
 #include "dockadaptor.h"
 
-#include <iostream>
-using namespace std;
-
 #define DEFAULT_WIDTH 	105
 #define DEFAULT_HEIGHT 	35
 
