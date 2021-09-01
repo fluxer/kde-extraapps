@@ -15,13 +15,6 @@ set_package_properties(KDE4Workspace PROPERTIES
     PURPOSE "Needed for building several Plasma plugins"
 )
 
-macro_optional_find_package(OpenGL)
-set_package_properties(OpenGL PROPERTIES
-    DESCRIPTION "API for developing portable, interactive 2D and 3D graphics applications"
-    URL "http://mesa3d.sourceforge.net"
-    PURPOSE "Used in applications ranging from graphics and modellers to screensavers and video players"
-)
-
 macro_optional_find_package(Marble)
 set_package_properties(Marble PROPERTIES
     DESCRIPTION "Desktop Globe"
