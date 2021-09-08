@@ -141,10 +141,15 @@ namespace {
         freebsdFolder.setAttribute("text","FreeBSD");
         body.appendChild(freebsdFolder);
 
-        QDomElement freebsdFeeds = doc.createElement( "outline" );
-        freebsdFeeds.setAttribute("text",i18n("FreeBSD.org"));
-        freebsdFeeds.setAttribute("xmlUrl","https://www.freebsd.org/news/feed.xml");
-        freebsdFolder.appendChild(freebsdFeeds);
+        QDomElement freebsdNews = doc.createElement( "outline" );
+        freebsdNews.setAttribute("text",i18n("News"));
+        freebsdNews.setAttribute("xmlUrl","https://www.freebsd.org/news/feed.xml");
+        freebsdFolder.appendChild(freebsdNews);
+
+        QDomElement freebsdSecurityAdvisories = doc.createElement( "outline" );
+        freebsdSecurityAdvisories.setAttribute("text",i18n("Security advisories"));
+        freebsdSecurityAdvisories.setAttribute("xmlUrl","https://www.freebsd.org/security/feed.xml");
+        freebsdFolder.appendChild(freebsdSecurityAdvisories);
 
         // OpenBSD feeds
         QDomElement openbsdFolder = doc.createElement( "outline" );
