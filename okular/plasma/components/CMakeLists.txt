@@ -20,13 +20,14 @@ kde4_add_kcfg_files(okular_SRCS ${PROJECT_SOURCE_DIR}/conf/settings.kcfgc )
 
 add_library(okularplugin SHARED ${okular_SRCS})
 target_link_libraries(okularplugin
-    ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
-    ${QT_QTDECLARATIVE_LIBRARY}
-    ${QT_QTXML_LIBRARY}
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${QT_QTDECLARATIVE_LIBRARY}
+    ${QT_QTSVG_LIBRARY}
+    ${QT_QTXML_LIBRARY}
     okularcore
 )
 
