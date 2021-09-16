@@ -49,22 +49,19 @@ class BlackBoardWidget : public QGraphicsWidget
 
         void setBrushColor(QColor color);
 
-    protected:
-        bool event(QEvent *event);
-
     public Q_SLOTS:
         void saveImage();
-	void erase();
-	
+        void erase();
+
     private Q_SLOTS:
-    	void loadImage();
-	
+        void loadImage();
+
     private:
         QString imagePath();
       
-	void drawSegment(QPointF point0, QPointF point1, qreal penRadius);
+        void drawSegment(QPointF point0, QPointF point1, qreal penRadius);
         bool m_changed;
-	Plasma::Applet *m_parentApplet;
+        Plasma::Applet *m_parentApplet;
         QString m_id;
         QColor m_color;
         QPixmap m_pixmap;

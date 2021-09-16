@@ -69,7 +69,6 @@ class FreeHandle : public Handle
         void hoverMoveEvent(QGraphicsSceneHoverEvent *event);
         void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
         bool sceneEventFilter(QGraphicsItem *watched, QEvent *event);
-        bool sceneEvent(QEvent*);
 
     private Q_SLOTS:
         void setFadeAnimation(qreal progress);

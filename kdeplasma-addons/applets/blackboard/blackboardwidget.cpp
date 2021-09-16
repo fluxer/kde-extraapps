@@ -36,7 +36,6 @@ BlackBoardWidget::BlackBoardWidget(Plasma::Applet *parent)
       : QGraphicsWidget(parent)
 {
     m_changed = false;
-    setAcceptTouchEvents(true);
     m_parentApplet = parent;
     
     m_color = QColor(Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor));
@@ -94,31 +93,6 @@ void BlackBoardWidget::drawSegment(QPointF point0, QPointF point1, qreal penRadi
 
     update(x,y,w,h);
     m_changed = true;  
-}
-
-bool BlackBoardWidget::event(QEvent *event)
-{
-    switch (event->type()) {
-    case QEvent::TouchBegin:
-    case QEvent::TouchUpdate:
-    case QEvent::TouchEnd: {
-        QList<QTouchEvent::TouchPoint> touchPoints = static_cast<QTouchEvent *>(event)->touchPoints();
-        foreach (const QTouchEvent::TouchPoint &touchPoint, touchPoints) {
-            switch (touchPoint.state()) {
-            case Qt::TouchPointStationary:
-                // don't do anything if this touch point hasn't moved
-                continue;
-            default:
-                drawSegment(touchPoint.lastPos(), touchPoint.pos(), 3*touchPoint.pressure());
-                break;
-            }
-        }
-        break;
-    }
-    default:
-        return QGraphicsWidget::event(event);
-    }
-    return true;
 }
 
 void BlackBoardWidget::mouseMoveEvent(QGraphicsSceneMouseEvent * event)

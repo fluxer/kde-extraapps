@@ -57,7 +57,6 @@ Handle::Handle(GroupingContainment *parent, Plasma::Applet *applet)
         m_currentView(applet->view())
 {
     setAcceptHoverEvents(true);
-    setAcceptTouchEvents(true);
 }
 
 Handle::Handle(GroupingContainment *parent, AbstractGroup *group)
@@ -69,7 +68,6 @@ Handle::Handle(GroupingContainment *parent, AbstractGroup *group)
         m_currentView(group->view())
 {
     setAcceptHoverEvents(true);
-    setAcceptTouchEvents(true);
 }
 
 Handle::~Handle()
