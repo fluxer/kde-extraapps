@@ -456,68 +456,85 @@ void TransferTorrent::start()
     kDebug(5001) << "source" << sourceurl;
     kDebug(5001) << "destination" << destination;
 
-    lt::add_torrent_params ltparams;
-    if (sourcestring.startsWith("magnet:")) {
-        const QByteArray source = sourcestring.toLocal8Bit();
+    try {
+        lt::add_torrent_params ltparams;
+        if (sourcestring.startsWith("magnet:")) {
+            const QByteArray source = sourcestring.toLocal8Bit();
 
-        lt::error_code lterror = lt::errors::no_error;
-        lt::parse_magnet_uri(source.constData(), ltparams, lterror);
+            lt::error_code lterror = lt::errors::no_error;
+            lt::parse_magnet_uri(source.constData(), ltparams, lterror);
 
 #ifdef BOOST_ERROR_EQUAL_OPERATOR_IS_BORKED
-        if (lterror) {
+            if (lterror) {
 #else
-        if (lterror != lt::errors::no_error) {
+            if (lterror != lt::errors::no_error) {
 #endif
-            kError(5001) << lterror.message().c_str();
+                kError(5001) << lterror.message().c_str();
 
-            const QString errormesssage = translatelterror(lterror);
-            setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
-            setLog(errormesssage, Transfer::Log_Error);
-            setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
-            return;
-        }
-    } else if (sourcestring.endsWith(".torrent")) {
-        const QByteArray source = sourceurl.toLocalFile().toLocal8Bit();
+                const QString errormesssage = translatelterror(lterror);
+                setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
+                setLog(errormesssage, Transfer::Log_Error);
+                setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
+                return;
+            }
+        } else if (sourcestring.endsWith(".torrent")) {
+            const QByteArray source = sourceurl.toLocalFile().toLocal8Bit();
 
 #if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
-        ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
+            ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
 #else
-        ltparams.ti = std::make_shared<lt::torrent_info>(std::string(source.constData()));
+            ltparams.ti = std::make_shared<lt::torrent_info>(std::string(source.constData()));
 #endif
-        if (!ltparams.ti->is_valid()) {
-            kError(5001) << "invalid torrent file";
+            if (!ltparams.ti->is_valid()) {
+                kError(5001) << "invalid torrent file";
 
-            const QString errormesssage = i18n("Invalid torrent file");
+                const QString errormesssage = i18n("Invalid torrent file");
+                setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
+                setLog(errormesssage, Transfer::Log_Error);
+                setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
+                return;
+            }
+            m_totalSize = ltparams.ti->total_size();
+            setTransferChange(Transfer::Tc_TotalSize, true);
+        } else {
+            kError(5001) << "invalid source" << sourceurl;
+
+            const QString errormesssage = i18n("Invalid source URL");
             setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
             setLog(errormesssage, Transfer::Log_Error);
             setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
             return;
         }
-        m_totalSize = ltparams.ti->total_size();
-        setTransferChange(Transfer::Tc_TotalSize, true);
-    } else {
-        kError(5001) << "invalid source" << sourceurl;
 
-        const QString errormesssage = i18n("Invalid source URL");
+        ltparams.save_path = destination.constData();
+#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
+        ltparams.file_priorities = m_priorities;
+#else
+        std::vector<lt::download_priority_t> priorities;
+        foreach (const boost::uint8_t priority, m_priorities) {
+            priorities.push_back(lt::download_priority_t(priority));
+        }
+        ltparams.file_priorities = priorities;
+#endif
+        ltparams.upload_limit = (m_uploadLimit * 1024);
+        ltparams.download_limit = (m_downloadLimit * 1024);
+        m_lthandle = m_ltsession->add_torrent(ltparams);
+    } catch(lt::libtorrent_exception &err) {
+        const QString errormesssage = QString::fromStdString(err.what());
         setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
         setLog(errormesssage, Transfer::Log_Error);
         setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
         return;
+    } catch(std::exception &err) {
+        const QString errormesssage = QString::fromStdString(err.what());
+        setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
+        setLog(errormesssage, Transfer::Log_Error);
+        setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
+        return;
+    } catch (...) {
+        kWarning() << "exception raised";
+        return;
     }
-
-    ltparams.save_path = destination.constData();
-#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
-    ltparams.file_priorities = m_priorities;
-#else
-    std::vector<lt::download_priority_t> priorities;
-    foreach (const boost::uint8_t priority, m_priorities) {
-        priorities.push_back(lt::download_priority_t(priority));
-    }
-    ltparams.file_priorities = priorities;
-#endif
-    ltparams.upload_limit = (m_uploadLimit * 1024);
-    ltparams.download_limit = (m_downloadLimit * 1024);
-    m_lthandle = m_ltsession->add_torrent(ltparams);
 
     setStatus(Job::Running);
     setTransferChange(Transfer::Tc_Status, true);

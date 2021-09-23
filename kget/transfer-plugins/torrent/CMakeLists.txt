@@ -20,6 +20,10 @@ target_link_libraries(kget_torrentfactory
     kgetcore
 )
 
+set_target_properties(kget_torrentfactory PROPERTIES
+    COMPILE_FLAGS "${KDE4_ENABLE_EXCEPTIONS}"
+)
+
 install(
     TARGETS kget_torrentfactory
     DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
