@@ -107,6 +107,7 @@ void JsonStore::saveItems(const QList<TransferHistoryItem> &items)
         if (dbFile.write(dbData.constData(), dbData.size()) != dbData.size()) {
             kWarning(5001) << "could not write data to" << m_dbName;;
         }
+
         dbFile.close();
     } else {
         kWarning(5001) << "could not open" << m_dbName;
@@ -117,12 +118,24 @@ void JsonStore::saveItems(const QList<TransferHistoryItem> &items)
 
 void JsonStore::deleteItem(const TransferHistoryItem &item)
 {
-    QVariantMap dbMap = m_dbDoc.toVariant().toMap();
+    QFile dbFile(m_dbName);
+    if (dbFile.open(QFile::WriteOnly)) {
+        QVariantMap dbMap = m_dbDoc.toVariant().toMap();
 
-    dbMap.remove(item.source());
-    m_dbDoc = QJsonDocument::fromVariant(dbMap);
+        dbMap.remove(item.source());
+        m_dbDoc = QJsonDocument::fromVariant(dbMap);
 
-    m_items.removeAll(item);
+        m_items.removeAll(item);
+
+        const QByteArray dbData = m_dbDoc.toJson();
+        if (dbFile.write(dbData.constData(), dbData.size()) != dbData.size()) {
+            kWarning(5001) << "could not write data to" << m_dbName;;
+        }
+
+        dbFile.close();
+    } else {
+        kWarning(5001) << "could not open" << m_dbName;
+    }
 
     emit deleteFinished();
 }
