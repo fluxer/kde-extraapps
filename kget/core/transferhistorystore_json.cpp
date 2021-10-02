@@ -49,7 +49,7 @@ void JsonStore::load()
             const QStringList dbKeys = dbMap.keys();
 
             int counter = 1;
-            foreach (const QString key, dbKeys) {
+            foreach (const QString &key, dbKeys) {
                 const QVariantMap keyMap = dbMap.value(key).toMap();
 
                 TransferHistoryItem item;
