@@ -537,7 +537,10 @@ void TransferTorrent::start()
         setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
         return;
     } catch (...) {
-        kWarning() << "exception raised";
+        const QString errormesssage = i18n("Exception raised");
+        setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
+        setLog(errormesssage, Transfer::Log_Error);
+        setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
         return;
     }
 
