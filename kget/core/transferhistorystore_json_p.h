@@ -17,27 +17,32 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef TRANSFER_TORRENT_FACTORY_H
-#define TRANSFER_TORRENT_FACTORY_H
+#ifndef TRANSFERHISTORYSTORE_JSON_P_H
+#define TRANSFERHISTORYSTORE_JSON_P_H
 
-#include "core/plugin/transferfactory.h"
+#include "transferhistorystore.h"
 
-class Transfer;
-class TransferGroup;
-class Scheduler;
+#include <QList>
+#include <QJsonDocument>
 
-class TransferTorrentFactory : public TransferFactory
+class TransferHistoryItem;
+class JsonStore : public TransferHistoryStore
 {
     Q_OBJECT
 public:
-    TransferTorrentFactory(QObject *parent, const QVariantList &args);
-    ~TransferTorrentFactory();
+    JsonStore(const QString &database);
+    ~JsonStore();
 
-    Transfer* createTransfer(const KUrl &srcUrl, const KUrl &destUrl,
-                             TransferGroup* parent, Scheduler* scheduler,
-                             const QDomElement* e = 0);
-    bool isSupported(const KUrl &url) const;
-    QStringList addsProtocols() const;
+public slots:
+    void load();
+    void clear();
+    void saveItem(const TransferHistoryItem &item);
+    void saveItems(const QList<TransferHistoryItem> &items);
+    void deleteItem(const TransferHistoryItem &item);
+
+private:
+    QString m_dbName;
+    QJsonDocument m_dbDoc;
 };
 
-#endif // TRANSFER_TORRENT_FACTORY_H
+#endif

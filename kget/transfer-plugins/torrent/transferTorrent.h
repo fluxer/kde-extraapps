@@ -1,4 +1,5 @@
-/*  This file is part of the KDE libraries
+/*  This file is part of the KDE project
+
     Copyright (C) 2021 Ivailo Monev <xakepa10@gmail.com>
 
     This library is free software; you can redistribute it and/or

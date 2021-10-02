@@ -20,8 +20,6 @@
 #include "pluginselector.h"
 #include "verificationpreferences.h"
 
-#include <QSqlDatabase>
-
 #include <klocale.h>
 #include <ktabwidget.h>
 
@@ -50,10 +48,8 @@ PreferencesDialog::PreferencesDialog(QWidget * parent, KConfigSkeleton * skeleto
     dlgAdv.setupUi(advanced);
 
     // history backend entries
+    dlgAdv.kcfg_HistoryBackend->addItem(i18n("Json"), QVariant(TransferHistoryStore::Json));
     dlgAdv.kcfg_HistoryBackend->addItem(i18n("Xml"), QVariant(TransferHistoryStore::Xml));
-    if (QSqlDatabase::isDriverAvailable("QSQLITE")) {
-        dlgAdv.kcfg_HistoryBackend->addItem(i18n("Sqlite"), QVariant(TransferHistoryStore::SQLite));
-    }
 
 #ifdef HAVE_KWORKSPACE
     dlgAdv.kcfg_AfterFinishAction->addItem(i18n("Turn Off Computer"), QVariant(KGet::Shutdown));

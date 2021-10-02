@@ -117,6 +117,8 @@ set(kgetcore_SRCS
    core/bitset.cpp
    core/download.cpp
    core/transferhistorystore.cpp
+   core/transferhistorystore_xml.cpp
+   core/transferhistorystore_json.cpp
    core/linkimporter.cpp
    dbus/dbustransferwrapper.cpp
    dbus/dbusverifierwrapper.cpp
@@ -144,7 +146,6 @@ add_library(kgetcore SHARED ${kgetcore_SRCS})
 target_link_libraries(kgetcore
     ${KDE4_KIO_LIBS}
     ${KDE4_SOLID_LIBS}
-    ${QT_QTSQL_LIBRARY}
 )
 
 if (KDE4WORKSPACE_FOUND)
