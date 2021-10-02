@@ -1,5 +1,0 @@
-File=projectbase.kcfg
-ClassName=ProjectBase
-Singleton=false
-Mutators=true
-GlobalEnums=true
