@@ -520,7 +520,11 @@ void TransferTorrent::start()
         ltparams.upload_limit = (m_uploadLimit * 1024);
         ltparams.download_limit = (m_downloadLimit * 1024);
         m_lthandle = m_ltsession->add_torrent(ltparams);
+#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
     } catch(lt::libtorrent_exception &err) {
+#else
+    } catch(boost::system::system_error &err) {
+#endif
         const QString errormesssage = QString::fromStdString(err.what());
         setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
         setLog(errormesssage, Transfer::Log_Error);
