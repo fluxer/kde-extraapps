@@ -30,7 +30,6 @@
 
 #include <kaction.h>
 #include <KCharMacroExpander>
-#include <kprocess.h>
 #include <kshell.h>
 #include <kconfiggroup.h>
 #include <ktoolinvocation.h>
@@ -38,6 +37,7 @@
 #include <krun.h>
 
 #include <QtCore/QStringList>
+#include <QtCore/QProcess>
 #include <QtGui/QApplication>
 
 namespace Akregator {
@@ -287,10 +287,11 @@ void FrameManager::slotOpenUrlRequest(OpenUrlRequest& request )
         QHash<QChar,QString> map;
         map.insert(QLatin1Char('u'), url.url());
         const QString cmd = KMacroExpander::expandMacrosShellQuote(Settings::externalBrowserCustomCommand(), map);
-        const QStringList args = KShell::splitArgs(cmd);
+        QStringList args = KShell::splitArgs(cmd);
         if (!args.isEmpty())
         {
-            KProcess::startDetached(args);
+            const QString program = args.takeFirst();
+            QProcess::startDetached(program, args);
             return;
         }
     }
