@@ -26,7 +26,6 @@
 
 #include <KDebug>
 #include <KLocale>
-#include <KProcess>
 #include <KTempDir>
 #include <KTemporaryFile>
 #include <KToolInvocation>

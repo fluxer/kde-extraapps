@@ -29,8 +29,8 @@
 #include <KInputDialog>
 #include <KLocale>
 #include <KMessageBox>
-#include <KProcess>
 #include <KStandardDirs>
+#include <QProcess>
 #include <QCheckBox>
 #include <QFile>
 #include <QTextStream>
@@ -168,9 +168,11 @@ void kgpgOptions::slotChangeHome()
 				if (!QFile::exists(gpgbin))
 					gpgbin = QLatin1String( "gpg" );
 
-				KProcess p;
-				p << gpgbin << QLatin1String( "--homedir" ) << gpgHome << QLatin1String( "--no-tty" ) << QLatin1String( "--list-secret-keys" );
-				p.execute();
+				const QStringList gpgargs = QStringList()
+					<< QLatin1String( "--homedir" )
+					<< gpgHome << QLatin1String( "--no-tty" )
+					<< QLatin1String( "--list-secret-keys" );
+				QProcess::execute(gpgbin, gpgargs);
 				// end of creating config file
 
 				confPath = QLatin1String( "gpg.conf" );

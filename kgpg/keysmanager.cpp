@@ -1519,18 +1519,17 @@ void KeysManager::slotShowPhoto()
 	KGpgKeyNode *parent = und->getParentKeyNode();
 	KService::Ptr ptr = list.first();
 
-	KProcess p;
-	p << KGpgSettings::gpgBinaryPath()
-			<< QLatin1String("--no-tty")
-			<< QLatin1String("--photo-viewer")
-			<< (ptr->desktopEntryName() + QLatin1String( " %i" ))
-			<< QLatin1String("--edit-key")
-			<< parent->getId()
-			<< QLatin1String("uid")
-			<< und->getId()
-			<< QLatin1String("showphoto")
-			<< QLatin1String("quit");
-	p.startDetached();
+	const QStringList gpgargs = QStringList()
+		<< QLatin1String("--no-tty")
+		<< QLatin1String("--photo-viewer")
+		<< (ptr->desktopEntryName() + QLatin1String( " %i" ))
+		<< QLatin1String("--edit-key")
+		<< parent->getId()
+		<< QLatin1String("uid")
+		<< und->getId()
+		<< QLatin1String("showphoto")
+		<< QLatin1String("quit");
+	QProcess::startDetached(KGpgSettings::gpgBinaryPath(), gpgargs);
 }
 
 void KeysManager::defaultAction(const QModelIndex &index)
