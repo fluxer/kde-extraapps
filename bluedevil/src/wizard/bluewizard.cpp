@@ -30,12 +30,11 @@
 #include <QApplication>
 #include <QDBusConnection>
 #include <QWizard>
-#include <QString>
+#include <QProcess>
 
 #include <bluedevil/bluedevil.h>
 #include <KPushButton>
-#include <kdebug.h>
-#include <KProcess>
+#include <KDebug>
 #include <KLocale>
 
 BlueWizard::BlueWizard(const KUrl &url) : QWizard(), m_device(0), m_manualPin(false)
@@ -117,9 +116,7 @@ QByteArray BlueWizard::deviceAddress() const
 
 void BlueWizard::restartWizard()
 {
-    KProcess proc;
-    proc.setProgram("bluedevil-wizard");
-    proc.startDetached();
+    QProcess::startDetached("bluedevil-wizard");
 
     qApp->quit();
 }

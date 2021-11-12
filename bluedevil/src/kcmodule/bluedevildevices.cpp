@@ -28,6 +28,7 @@
 
 #include <QtCore/QAbstractItemModel>
 #include <QtCore/QTimer>
+#include <QtCore/QProcess>
 #include <QtGui/QFontMetrics>
 #include <QtGui/QLabel>
 #include <QtGui/QPainter>
@@ -39,7 +40,6 @@
 
 #include <kicon.h>
 #include <kdialog.h>
-#include <kprocess.h>
 #include <klineedit.h>
 #include <kaboutdata.h>
 #include <kmessagebox.h>
@@ -538,9 +538,7 @@ void KCMBlueDevilDevices::disconnectDevice()
 
 void KCMBlueDevilDevices::launchWizard()
 {
-    KProcess wizard;
-    wizard.setProgram("bluedevil-wizard");
-    wizard.startDetached();
+    QProcess::startDetached("bluedevil-wizard");
 }
 
 void KCMBlueDevilDevices::usableAdapterChanged(Adapter *adapter)

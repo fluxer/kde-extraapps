@@ -24,13 +24,13 @@
 #include <QMenu>
 #include <QAction>
 #include <QWidget>
-#include <QtCore/qvariant.h>
+#include <QVariant>
+#include <QProcess>
 
 #include <KIcon>
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KDebug>
-#include <KProcess>
 #include <KLocalizedString>
 
 K_PLUGIN_FACTORY(SendFileItemActionFactory, registerPlugin<SendFileItemAction>();)
@@ -100,22 +100,19 @@ void SendFileItemAction::deviceTriggered()
         args.append("-f" + url.path());
     }
     kDebug() << args;
-    KProcess process;
-    process.setProgram("bluedevil-sendfile", args);
-    process.startDetached();
+
+    QProcess::startDetached("bluedevil-sendfile", args);
 }
 
 void SendFileItemAction::otherTriggered()
 {
-    kDebug();
     QStringList args;
 
     KUrl::List fileList =  m_fileItemInfos.urlList();
     Q_FOREACH(const KUrl &url,  fileList) {
         args.append("-f" + url.path());
     }
+    kDebug() << args;
 
-    KProcess process;
-    process.setProgram("bluedevil-sendfile", args);
-    process.startDetached();
+    QProcess::startDetached("bluedevil-sendfile", args);
 }
