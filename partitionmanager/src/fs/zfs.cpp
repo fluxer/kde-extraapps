@@ -49,6 +49,7 @@ namespace FS
 	{
 		m_SetLabel = findExternal("zpool", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 
+		m_GetUsed = findExternal("zfs", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
 		m_Backup = cmdSupportCore;
 		m_GetUUID = cmdSupportCore;
@@ -57,7 +58,7 @@ namespace FS
 	bool zfs::supportToolFound() const
 	{
 		return
-// 			m_GetUsed != cmdSupportNone &&
+			m_GetUsed != cmdSupportNone &&
 			m_GetLabel != cmdSupportNone &&
 			m_SetLabel != cmdSupportNone &&
 // 			m_Create != cmdSupportNone &&
@@ -84,6 +85,28 @@ namespace FS
 	qint64 zfs::maxCapacity() const
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+	}
+
+	qint64 zfs::maxLabelLength() const
+	{
+		// for reference:
+		// https://www.freebsd.org/cgi/man.cgi?query=zfs
+		return (256 * 50);
+	}
+
+	qint64 zfs::readUsedCapacity(const QString& deviceNode) const
+	{
+		Q_UNUSED(deviceNode)
+		qint64 result = -1;
+		ExternalCommand cmd("zfs", QStringList() << "list" << "-H" << "-p" << "-o" << "used" << this->label());
+		if (cmd.start() && cmd.waitFor()) {
+			bool ok = false;
+			result = cmd.output().toLongLong(&ok);
+			if (!ok) {
+				result = -1;
+			}
+		}
+		return result;
 	}
 
 	bool zfs::remove(Report& report, const QString& deviceNode) const

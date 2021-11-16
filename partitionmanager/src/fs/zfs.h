@@ -44,6 +44,7 @@ namespace FS
 		public:
 			static void init();
 
+			virtual qint64 readUsedCapacity(const QString& deviceNode) const;
 			virtual bool remove(Report& report, const QString& deviceNode) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 
@@ -62,6 +63,7 @@ namespace FS
 
 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
+			virtual qint64 maxLabelLength() const;
 			virtual SupportTool supportToolName() const;
 			virtual bool supportToolFound() const;
 
