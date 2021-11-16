@@ -381,13 +381,13 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 
 		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, node, availableFlags(pedPartition), mountPoint, mounted, activeFlags(pedPartition));
 
-		readSectorsUsed(pedDisk, d, *part, mountPoint);
-
 		if (fs->supportGetLabel() != FileSystem::cmdSupportNone)
 			fs->setLabel(fs->readLabel(part->deviceNode()));
 
 		if (fs->supportGetUUID() != FileSystem::cmdSupportNone)
 			fs->setUUID(fs->readUUID(part->deviceNode()));
+
+		readSectorsUsed(pedDisk, d, *part, mountPoint);
 
 		parent->append(part);
 		partitions.append(part);
