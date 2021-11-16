@@ -45,6 +45,7 @@ namespace FS
 			static void init();
 
 			virtual qint64 readUsedCapacity(const QString& deviceNode) const;
+			virtual bool check(Report& report, const QString& deviceNode) const;
 			virtual bool remove(Report& report, const QString& deviceNode) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 

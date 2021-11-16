@@ -48,8 +48,10 @@ namespace FS
 	void zfs::init()
 	{
 		m_SetLabel = findExternal("zpool", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = m_SetLabel;
 
 		m_GetUsed = findExternal("zfs", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
+
 		m_GetLabel = cmdSupportCore;
 		m_Backup = cmdSupportCore;
 		m_GetUUID = cmdSupportCore;
@@ -62,7 +64,7 @@ namespace FS
 			m_GetLabel != cmdSupportNone &&
 			m_SetLabel != cmdSupportNone &&
 // 			m_Create != cmdSupportNone &&
-// 			m_Check != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
 // 			m_UpdateUUID != cmdSupportNone &&
 // 			m_Grow != cmdSupportNone &&
 // 			m_Shrink != cmdSupportNone &&
@@ -107,6 +109,13 @@ namespace FS
 			}
 		}
 		return result;
+	}
+
+	bool zfs::check(Report& report, const QString& deviceNode) const
+	{
+		Q_UNUSED(deviceNode)
+		ExternalCommand cmd(report, "zpool", QStringList() << "scrub" << "-w" << this->label());
+		return cmd.run(-1) && (cmd.exitCode() == 0);
 	}
 
 	bool zfs::remove(Report& report, const QString& deviceNode) const
