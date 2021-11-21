@@ -74,9 +74,7 @@ JSONParser::JSONArchive JSONParser::parse(const QString &json)
     QJsonDocument jsondoc = QJsonDocument::fromJson(json.toUtf8());
 
     if (jsondoc.isNull()) {
-#if QT_VERSION >= 0x041000
         kWarning() << jsondoc.errorString();
-#endif
         return JSONParser::JSONArchive();
     }
 
@@ -88,9 +86,7 @@ JSONParser::JSONArchive JSONParser::parse(QIODevice *json)
     QJsonDocument jsondoc = QJsonDocument::fromJson(json->readAll());
 
     if (jsondoc.isNull()) {
-#if QT_VERSION >= 0x041000
         kWarning() << jsondoc.errorString();
-#endif
         return JSONParser::JSONArchive();
     }
 

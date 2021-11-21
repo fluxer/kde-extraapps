@@ -91,11 +91,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_tabWidget->setMovable(true);
     m_tabWidget->setTabPosition((KTabWidget::TabPosition) Settings::tabPosition());
 
-#if QT_VERSION >= 0x040500
     m_tabWidget->setTabsClosable(Settings::tabCloseButton());
-#else
-    m_tabWidget->setCloseButtonEnabled(Settings::tabCloseButton());
-#endif
 
     connect(m_tabWidget, SIGNAL(closeRequest(QWidget*)), SLOT(closeTab(QWidget*)));
 
@@ -885,11 +881,7 @@ void MainWindow::updateConfiguration()
 
     m_tabWidget->setTabBarHidden((m_tabWidget->count() <= 1 && !Settings::showTabBar()) || m_fullscreenWindow);
     m_tabWidget->setTabPosition((KTabWidget::TabPosition) Settings::tabPosition());
-#if QT_VERSION >= 0x040500
     m_tabWidget->setTabsClosable(Settings::tabCloseButton());
-#else
-    m_tabWidget->setCloseButtonEnabled(Settings::tabCloseButton());
-#endif
     disconnect(m_tabWidget, SIGNAL(mouseMiddleClick(QWidget*)), this, SLOT(closeTab(QWidget*))); // just be sure it is not connected twice
     if (Settings::tabMiddleClick())
         connect(m_tabWidget, SIGNAL(mouseMiddleClick(QWidget*)), SLOT(closeTab(QWidget*)));

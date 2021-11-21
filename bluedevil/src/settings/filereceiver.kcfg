@@ -4,7 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
     http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <!-- Includes -->
-    <include>QDesktopServices</include>
+    <include>QStandardPaths</include>
     <kcfgfile name="bluedevilreceiverrc"/>
 
     <group name="General">
@@ -15,7 +15,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
         </entry>
         <entry name="saveUrl" type="Url" key="saveUrl">
             <label>Save received files to:</label>
-            <default code="true">QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation)</default>
+            <default code="true">QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)</default>
         </entry>
         <entry name="autoAccept" type="int" key="autoAccept">
             <label>Whether allow to modify shared files</label>

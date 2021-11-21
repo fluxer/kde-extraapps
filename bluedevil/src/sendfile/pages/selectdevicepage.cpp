@@ -25,7 +25,7 @@
 #include "../sendfilewizard.h"
 
 #include <QLabel>
-#include <QDesktopServices>
+#include <QStandardPaths>
 #include <QtGui/QVBoxLayout>
 
 #include <KUrl>
