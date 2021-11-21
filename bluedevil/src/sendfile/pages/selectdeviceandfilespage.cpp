@@ -24,8 +24,8 @@
 #include "discoverwidget.h"
 #include "../sendfilewizard.h"
 
-#include <QLabel>
-#include <QDesktopServices>
+#include <QtCore/QDir>
+#include <QtGui/QLabel>
 #include <QtGui/QVBoxLayout>
 
 #include <kurl.h>
@@ -74,7 +74,7 @@ void SelectDeviceAndFilesPage::openFileDialog()
     //Don't worry MLaurent, I'm not going to check the pointer before delete it :)
     delete m_dialog;
 
-    m_dialog = new KFileDialog(KUrl(QDesktopServices::storageLocation(QDesktopServices::HomeLocation)), "*", this);
+    m_dialog = new KFileDialog(KUrl(QDir::homePath()), "*", this);
     m_dialog->setMode(KFile::Files);
 
     connect(m_dialog, SIGNAL(selectionChanged()), this, SLOT(selectionChanged()));
