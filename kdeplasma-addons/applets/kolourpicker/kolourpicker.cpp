@@ -103,6 +103,8 @@ class ColorIconEngine : public QIconEngine
         virtual void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state);
         virtual QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state);
 
+        virtual QIconEngine *clone() const;
+
     public:
         QColor m_color;
 };
@@ -134,6 +136,11 @@ QPixmap ColorIconEngine::pixmap(const QSize &size, QIcon::Mode mode, QIcon::Stat
     paint(&p, pix.rect(), mode, state);
     p.end();
     return pix;
+}
+
+QIconEngine* ColorIconEngine::clone() const
+{
+    return new ColorIconEngine(m_color);
 }
 
 class ColorIcon : public QIcon
