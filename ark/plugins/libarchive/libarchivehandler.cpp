@@ -43,6 +43,10 @@
 #include <QList>
 #include <QStringList>
 
+#if ARCHIVE_VERSION_NUMBER >= 4000000
+#  warning TODO: check for missing ARCHIVE_FILTER_* alternatives
+#endif
+
 struct LibArchiveInterface::ArchiveReadCustomDeleter
 {
     static inline void cleanup(struct archive *a)
@@ -397,6 +401,36 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
         } else if (filename().right(2).toUpper() == QLatin1String( "7Z" )) {
             kDebug() << "Detected 7z compression for new file";
             ret = archive_write_set_format_7zip(arch_writer.data());
+#ifdef ARCHIVE_FILTER_LZOP
+        } else if (filename().right(3).toUpper() == QLatin1String( "LZO" )) {
+            kDebug() << "Detected LZO compression for new file";
+            ret = archive_write_add_filter_lzop(arch_writer.data());
+#endif
+#ifdef ARCHIVE_FILTER_LRZIP
+        } else if (filename().right(3).toUpper() == QLatin1String( "LRZ" )) {
+            kDebug() << "Detected lrzip compression for new file";
+            ret = archive_write_add_filter_lrzip(arch_writer.data());
+#endif
+#ifdef ARCHIVE_FILTER_LZ4
+        } else if (filename().right(3).toUpper() == QLatin1String( "LZ4" )) {
+            kDebug() << "Detected LZ4 compression for new file";
+            ret = archive_write_add_filter_lz4(arch_writer.data());
+#endif
+#ifdef ARCHIVE_FILTER_ZSTD
+        } else if (filename().right(3).toUpper() == QLatin1String( "ZST" )) {
+            kDebug() << "Detected ZSTD compression for new file";
+            ret = archive_write_add_filter_zstd(arch_writer.data());
+#endif
+#ifdef ARCHIVE_FILTER_LZIP
+        } else if (filename().right(2).toUpper() == QLatin1String( "LZ" )) {
+            kDebug() << "Detected Lzip compression for new file";
+            ret = archive_write_add_filter_lzip(arch_writer.data());
+#endif
+#ifdef ARCHIVE_FILTER_COMPRESS
+        } else if (filename().right(1).toUpper() == QLatin1String( "Z" )) {
+            kDebug() << "Detected Z compression for new file";
+            ret = archive_write_add_filter_compress(arch_writer.data());
+#endif
         } else {
             kDebug() << "Falling back to gzip";
             ret = archive_write_add_filter_gzip(arch_writer.data());
@@ -422,6 +456,36 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
         case ARCHIVE_FILTER_LZMA:
             ret = archive_write_add_filter_lzma(arch_writer.data());
             break;
+#ifdef ARCHIVE_FILTER_LZOP
+        case ARCHIVE_FILTER_LZOP:
+            ret = archive_write_add_filter_lzop(arch_writer.data());
+            break;
+#endif
+#ifdef ARCHIVE_FILTER_LRZIP
+        case ARCHIVE_FILTER_LRZIP:
+            ret = archive_write_add_filter_lrzip(arch_writer.data());
+            break;
+#endif
+#ifdef ARCHIVE_FILTER_LZ4
+        case ARCHIVE_FILTER_LZ4:
+            ret = archive_write_add_filter_lz4(arch_writer.data());
+            break;
+#endif
+#ifdef ARCHIVE_FILTER_ZSTD
+        case ARCHIVE_FILTER_ZSTD:
+            ret = archive_write_add_filter_zstd(arch_writer.data());
+            break;
+#endif
+#ifdef ARCHIVE_FILTER_LZIP
+        case ARCHIVE_FILTER_LZIP:
+            ret = archive_write_add_filter_lzip(arch_writer.data());
+            break;
+#endif
+#ifdef ARCHIVE_FILTER_COMPRESS
+        case ARCHIVE_FILTER_COMPRESS:
+            ret = archive_write_add_filter_compress(arch_writer.data());
+            break;
+#endif
         case ARCHIVE_FILTER_NONE:
             if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
                 ret = archive_write_set_format_zip(arch_writer.data());
@@ -569,6 +633,36 @@ bool LibArchiveInterface::deleteFiles(const QVariantList& files)
     case ARCHIVE_FILTER_LZMA:
         ret = archive_write_add_filter_lzma(arch_writer.data());
         break;
+#ifdef ARCHIVE_FILTER_LZOP
+    case ARCHIVE_FILTER_LZOP:
+        ret = archive_write_add_filter_lzop(arch_writer.data());
+        break;
+#endif
+#ifdef ARCHIVE_FILTER_LRZIP
+    case ARCHIVE_FILTER_LRZIP:
+        ret = archive_write_add_filter_lrzip(arch_writer.data());
+        break;
+#endif
+#ifdef ARCHIVE_FILTER_LZ4
+    case ARCHIVE_FILTER_LZ4:
+        ret = archive_write_add_filter_lz4(arch_writer.data());
+        break;
+#endif
+#ifdef ARCHIVE_FILTER_ZSTD
+    case ARCHIVE_FILTER_ZSTD:
+        ret = archive_write_add_filter_zstd(arch_writer.data());
+        break;
+#endif
+#ifdef ARCHIVE_FILTER_LZIP
+    case ARCHIVE_FILTER_LZIP:
+        ret = archive_write_add_filter_lzip(arch_writer.data());
+        break;
+#endif
+#ifdef ARCHIVE_FILTER_COMPRESS
+    case ARCHIVE_FILTER_COMPRESS:
+        ret = archive_write_add_filter_compress(arch_writer.data());
+        break;
+#endif
     case ARCHIVE_FILTER_NONE:
         if (filename().right(3).toUpper() == QLatin1String( "ZIP" )) {
             ret = archive_write_set_format_zip(arch_writer.data());

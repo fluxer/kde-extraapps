@@ -1,16 +1,16 @@
 include_directories(${LibArchive_INCLUDE_DIRS})
 
 ########### next target ###############
-set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "application/x-archive;application/x-xar;application/x-deb;application/x-cd-image;application/x-bcpio;application/x-cpio;application/x-cpio-compressed;application/x-sv4cpio;application/x-sv4crc;application/x-rpm;application/x-source-rpm;application/vnd.ms-cab-compressed;application/x-servicepack;")
-set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "application/x-xar;application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;application/x-gzip-compressed-tar;application/x-tarz;application/x-xz-compressed-tar;application/x-lzma-compressed-tar;application/x-java-archive;application/zip;application/x-7z-compressed;")
+set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "application/x-archive;application/x-xar;application/x-deb;application/x-cd-image;application/x-bcpio;application/x-cpio;application/x-cpio-compressed;application/x-sv4cpio;application/x-sv4crc;application/x-rpm;application/x-source-rpm;application/vnd.ms-cab-compressed;application/x-servicepack;application/x-compress;application/x-lzip;")
+set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "application/x-xar;application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;application/x-gzip-compressed-tar;application/x-tarz;application/x-xz-compressed-tar;application/x-lzma-compressed-tar;application/x-java-archive;application/zip;application/x-7z-compressed;application/x-compress;application/x-lzip;")
 
 if("${LibArchive_VERSION}" VERSION_GREATER "3.0.4")
-    set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/x-lzop;")
-    set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-lzop;")
+    set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/x-lzop;application/x-lrzip;")
+    set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-lzop;application/x-lrzip;")
 endif()
 if("${LibArchive_VERSION}" VERSION_GREATER "3.1.2")
-    set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/x-lz4;")
-    set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-lz4;")
+    set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/x-lz4;application/x-lz4-compressed-tar;")
+    set(SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES "${SUPPORTED_LIBARCHIVE_READWRITE_MIMETYPES}application/x-lz4;application/x-lz4-compressed-tar;")
 endif()
 if("${LibArchive_VERSION}" VERSION_GREATER "3.3.2")
     set(SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES "${SUPPORTED_LIBARCHIVE_READONLY_MIMETYPES}application/zstd;application/x-zstd;application/x-zstd-compressed-tar;")
