@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "knumber_float.h"
 #include "knumber_fraction.h"
 #include "knumber_error.h"
-#include <QScopedArrayPointer>
 #include <QDebug>
 
 namespace detail {
@@ -754,7 +753,7 @@ QString knumber_fraction::toString(int precision) const {
             }
 
             const size_t size = gmp_snprintf(NULL, 0, "%Zd %Zd/%Zd", integer_part_1.mpz_, num, mpq_denref(mpq_)) + 1;
-            QScopedArrayPointer<char> buf(new char[size]);
+            KNUMBER_BUFFER(buf, size);
             gmp_snprintf(&buf[0], size, "%Zd %Zd/%Zd", integer_part_1.mpz_, num, mpq_denref(mpq_));
 
             mpz_clear(num);
@@ -767,7 +766,7 @@ QString knumber_fraction::toString(int precision) const {
             mpq_get_num(num, mpq_);
 
             const size_t size = gmp_snprintf(NULL, 0, "%Zd/%Zd", num, mpq_denref(mpq_)) + 1;
-            QScopedArrayPointer<char> buf(new char[size]);
+            KNUMBER_BUFFER(buf, size);
             gmp_snprintf(&buf[0], size, "%Zd/%Zd", num, mpq_denref(mpq_));
 
             mpz_clear(num);

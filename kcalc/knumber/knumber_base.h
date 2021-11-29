@@ -28,6 +28,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtGlobal>
 #include <QString>
 
+#define KNUMBER_BUFFER(buffername, buffersize) \
+    Q_ASSERT_X(buffersize >= 1, Q_FUNC_INFO, "buffer size is negative or zero"); \
+    char buffername[buffersize]; \
+    ::memset(buffername, 0, buffersize * sizeof(char));
+
 namespace detail {
 
 class knumber_error;
