@@ -25,18 +25,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QAbstractButton>
 
 class BitButton : public QAbstractButton {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	explicit BitButton(QWidget *parent = 0);
-	bool isOn() const;
-	void setOn(bool value);
+    explicit BitButton(QWidget *parent = 0);
+    bool isOn() const;
+    void setOn(bool value);
 
 protected:
-	void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event);
 
 private:
-	bool on_;
+    bool on_;
 };
 
 #endif

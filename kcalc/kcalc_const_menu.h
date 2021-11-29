@@ -1,7 +1,7 @@
 /*
 Copyright (C) 2001 - 2013 Evan Teran
                           evan.teran@gmail.com
-						  
+                          
 Copyright (C) 2003 - 2005 Klaus Niederkrueger
                           kniederk@math.uni-koeln.de
 
@@ -26,11 +26,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QString>
 
 enum ConstantCategory {
-	Mathematics     = 1,
-	Electromagnetic = 2,
-	Nuclear         = 4,
-	Thermodynamics  = 8,
-	Gravitation     = 16
+    Mathematics     = 1,
+    Electromagnetic = 2,
+    Nuclear         = 4,
+    Thermodynamics  = 8,
+    Gravitation     = 16
 };
 
 struct science_constant {

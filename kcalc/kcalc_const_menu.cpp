@@ -1,7 +1,7 @@
 /*
 Copyright (C) 2001 - 2013 Evan Teran
                           evan.teran@gmail.com
-						  
+                          
 Copyright (C) 2003 - 2005 Klaus Niederkrueger
                           kniederk@math.uni-koeln.de
 
@@ -28,33 +28,33 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kstandarddirs.h>
 
 namespace {
-	QList<science_constant> Constants;
-	
-	ConstantCategory stringToCategory(const QString &s) {
-    	if (s == QLatin1String("mathematics")) {
-        	return Mathematics;
-		}
+    QList<science_constant> Constants;
+    
+    ConstantCategory stringToCategory(const QString &s) {
+        if (s == QLatin1String("mathematics")) {
+            return Mathematics;
+        }
 
-    	if (s == QLatin1String("electromagnetism")) {
-        	return Electromagnetic;
-		}
+        if (s == QLatin1String("electromagnetism")) {
+            return Electromagnetic;
+        }
 
-    	if (s == QLatin1String("nuclear")) {
-        	return Nuclear;
-		}
+        if (s == QLatin1String("nuclear")) {
+            return Nuclear;
+        }
 
-    	if (s == QLatin1String("thermodynamics")) {
-        	return Thermodynamics;
-		}
+        if (s == QLatin1String("thermodynamics")) {
+            return Thermodynamics;
+        }
 
-    	if (s == QLatin1String("gravitation")) {
-        	return Gravitation;
-		}
+        if (s == QLatin1String("gravitation")) {
+            return Gravitation;
+        }
 
-		kDebug() << "Invalid Category For Constant: " << s;
-		return Mathematics;
-	}
-	
+        kDebug() << "Invalid Category For Constant: " << s;
+        return Mathematics;
+    }
+    
 }
 
 
@@ -90,7 +90,7 @@ void KCalcConstMenu::init_consts() {
 
             QString tmp_str_category = e.attributeNode(QLatin1String("category")).value();
 
-			tmp_const.category  = stringToCategory(tmp_str_category);
+            tmp_const.category  = stringToCategory(tmp_str_category);
             tmp_const.whatsthis = e.firstChildElement(QLatin1String("description")).text();
 
             Constants.append(tmp_const);

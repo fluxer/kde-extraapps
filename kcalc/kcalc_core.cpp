@@ -7,7 +7,7 @@ Copyright (C) 2003 - 2005 Klaus Niederkrueger
 
 Copyright (C) 1996 - 2000 Bernd Johannes Wuebben
                           wuebben@kde.org
-						  
+                          
 Copyright (C) 1995        Martin Bartlett
 
 This program is free software; you can redistribute it and/or
@@ -32,19 +32,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 namespace {
 
 KNumber Deg2Rad(const KNumber &x) {
-	return x * (KNumber::Pi() / KNumber(180));
+    return x * (KNumber::Pi() / KNumber(180));
 }
 
 KNumber Gra2Rad(const KNumber &x) {
-	return x * (KNumber::Pi() / KNumber(200));
+    return x * (KNumber::Pi() / KNumber(200));
 }
 
 KNumber Rad2Deg(const KNumber &x) {
-	 return x * (KNumber(180) / KNumber::Pi());
+     return x * (KNumber(180) / KNumber::Pi());
 }
 
 KNumber Rad2Gra(const KNumber &x) {
-	return x * (KNumber(200) / KNumber::Pi());
+    return x * (KNumber(200) / KNumber::Pi());
 }
 
 bool error_;
@@ -94,7 +94,7 @@ KNumber ExecIntDiv(const KNumber &left_op, const KNumber &right_op) {
 }
 
 KNumber ExecBinom(const KNumber &left_op, const KNumber &right_op) {
-	return left_op.bin(right_op);
+    return left_op.bin(right_op);
 }
 
 KNumber ExecPower(const KNumber &left_op, const KNumber &right_op) {
@@ -177,8 +177,8 @@ CalcEngine::CalcEngine() : percent_mode_(false) {
 }
 
 KNumber CalcEngine::lastOutput(bool &error) const {
-	error = error_;
-	return last_number_;
+    error = error_;
+    return last_number_;
 }
 
 void CalcEngine::ArcCosDeg(const KNumber &input)
@@ -407,10 +407,10 @@ void CalcEngine::CosDeg(const KNumber &input)
         last_number_ = KNumber::NaN;
         return;
     }
-	
+    
     KNumber trunc_input = moveIntoDegInterval(input);
     
-	if (trunc_input.type() == KNumber::TYPE_INTEGER) {
+    if (trunc_input.type() == KNumber::TYPE_INTEGER) {
         KNumber mult = trunc_input / KNumber(90);
         if (mult.type() == KNumber::TYPE_INTEGER) {
             if (mult == KNumber::Zero)
@@ -425,7 +425,7 @@ void CalcEngine::CosDeg(const KNumber &input)
             return;
         }
     }
-		
+        
     trunc_input = Deg2Rad(trunc_input);
     last_number_ = trunc_input.cos();
 }
@@ -436,7 +436,7 @@ void CalcEngine::CosRad(const KNumber &input)
         last_number_ = KNumber::NaN;
         return;
     }
-	
+    
     last_number_ = input.cos();
 }
 
@@ -472,10 +472,10 @@ void CalcEngine::CosHyp(const KNumber &input)
     if (input.type() == KNumber::TYPE_ERROR) {
         if (input == KNumber::NaN)         last_number_ = KNumber::NaN;
         if (input == KNumber::PosInfinity) last_number_ = KNumber::PosInfinity;
-		// YES, this should be *positive* infinity. We mimic the behavior of 
-		// libc which says the following for cosh
-		//
-		// "If x is positive infinity or negative infinity, positive infinity is returned."
+        // YES, this should be *positive* infinity. We mimic the behavior of 
+        // libc which says the following for cosh
+        //
+        // "If x is positive infinity or negative infinity, positive infinity is returned."
         if (input == KNumber::NegInfinity) last_number_ = KNumber::PosInfinity;
         return;
     }
@@ -524,7 +524,7 @@ void CalcEngine::Factorial(const KNumber &input)
         last_number_ = KNumber::NaN;
         return;
     }
-	
+    
     last_number_ = input.integerPart().factorial();
 }
 
@@ -536,7 +536,7 @@ void CalcEngine::Gamma(const KNumber &input)
         last_number_ = KNumber::NaN;
         return;
     }
-	
+    
     last_number_ = input.tgamma();
 }
 
@@ -802,14 +802,14 @@ void CalcEngine::TangensGrad(const KNumber &input)
 
 void CalcEngine::TangensHyp(const KNumber &input)
 {
-	if (input.type() == KNumber::TYPE_ERROR) {
-		if (input == KNumber::NaN)         last_number_ = KNumber::NaN;
-		if (input == KNumber::PosInfinity) last_number_ = KNumber::One;
-		if (input == KNumber::NegInfinity) last_number_ = KNumber::NegOne;
-		return;
-	}
+    if (input.type() == KNumber::TYPE_ERROR) {
+        if (input == KNumber::NaN)         last_number_ = KNumber::NaN;
+        if (input == KNumber::PosInfinity) last_number_ = KNumber::One;
+        if (input == KNumber::NegInfinity) last_number_ = KNumber::NegOne;
+        return;
+    }
 
-	last_number_ = input.tanh();
+    last_number_ = input.tanh();
 }
 
 KNumber CalcEngine::evalOperation(const KNumber &arg1, Operation operation, const KNumber &arg2)
@@ -859,7 +859,7 @@ bool CalcEngine::evalStack()
         if (Operator[tmp_node.operation].precedence <=
                 Operator[tmp_node2.operation].precedence) {
             if (tmp_node2.operation == FUNC_BRACKET) continue;
-			const KNumber tmp_result = evalOperation(tmp_node2.number, tmp_node2.operation, tmp_node.number);
+            const KNumber tmp_result = evalOperation(tmp_node2.number, tmp_node2.operation, tmp_node.number);
             tmp_node.number = tmp_result;
         } else {
             stack_.push(tmp_node2);

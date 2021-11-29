@@ -58,7 +58,7 @@ enum NumBase {
 
 
 class KCalcDisplay : public QFrame {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit KCalcDisplay(QWidget *parent = 0);

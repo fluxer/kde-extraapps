@@ -1,7 +1,7 @@
 /*
 Copyright (C) 2001 - 2013 Evan Teran
                           evan.teran@gmail.com
-						  
+                          
 Copyright (C) 2003 - 2005 Klaus Niederkrueger
                           kniederk@math.uni-koeln.de
 
@@ -34,9 +34,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 enum ButtonModeFlags {
-	ModeNormal     = 0,
-	ModeShift      = 1,
-	ModeHyperbolic = 2
+    ModeNormal     = 0,
+    ModeShift      = 1,
+    ModeHyperbolic = 2
 };
 
 
@@ -45,10 +45,10 @@ enum ButtonModeFlags {
 class ButtonMode {
 public:
     ButtonMode() {
-	}
-	
+    }
+    
     ButtonMode(const QString &label, const QString &tooltip) : label(label), tooltip(tooltip) {
-	}
+    }
 
     QString label;
     QString tooltip;
@@ -56,7 +56,7 @@ public:
 
 
 class KCalcButton : public KPushButton {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit KCalcButton(QWidget *parent);

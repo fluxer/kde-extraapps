@@ -27,22 +27,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QButtonGroup>
 
 class KCalcBitset : public QFrame {
-	Q_OBJECT
-	
+    Q_OBJECT
+    
 public:
-	explicit KCalcBitset(QWidget *parent = 0);
-	quint64 getValue() const;
+    explicit KCalcBitset(QWidget *parent = 0);
+    quint64 getValue() const;
 
 public slots:
-	void setValue(quint64 value);
-	void slotToggleBit(int bit);
+    void setValue(quint64 value);
+    void slotToggleBit(int bit);
 
 signals:
-	void valueChanged(quint64 value);
+    void valueChanged(quint64 value);
 
 private:
-	QButtonGroup *bit_button_group_;
-	quint64       value_;
+    QButtonGroup *bit_button_group_;
+    quint64       value_;
 };
 
 #endif

@@ -119,14 +119,14 @@ private:
     void setupMainActions();
     void setupStatusbar();
     void setupKeys();
-	void setupNumberKeys();
-	void setupRightKeypad();
-	void setupNumericKeypad();
-	void setupLogicKeys();
-	void setupScientificKeys();
-	void setupStatisticKeys();
-	void setupConstantsKeys();
-	void setupMiscKeys();
+    void setupNumberKeys();
+    void setupRightKeypad();
+    void setupNumericKeypad();
+    void setupLogicKeys();
+    void setupScientificKeys();
+    void setupStatisticKeys();
+    void setupConstantsKeys();
+    void setupMiscKeys();
     void keyPressEvent(QKeyEvent *e);
     void keyReleaseEvent(QKeyEvent *e);
     void setPrecision();
@@ -134,14 +134,14 @@ private:
     void setBase();
 
     void updateDisplay(UpdateFlags flags);
-	
+    
     // button sets
     void showMemButtons(bool toggled);
     void showStatButtons(bool toggled);
     void showScienceButtons(bool toggled);
     void showLogicButtons(bool toggled);
-	
-	KCalcConstMenu *createConstantsMenu();
+    
+    KCalcConstMenu *createConstantsMenu();
 
 protected slots:
     void changeButtonNames();
@@ -205,7 +205,7 @@ protected slots:
     void slotStatClearDataclicked();
     void slotHyptoggled(bool flag);
     void slotConstclicked(int);
-	void slotBackspaceclicked();
+    void slotBackspaceclicked();
 
     void slotConstantToDisplay(const science_constant &const_chosen);
     void slotChooseScientificConst0(const science_constant &);
@@ -225,14 +225,14 @@ private:
         AngleField,
         MemField
     };
-	
+    
     enum AngleMode {
         DegMode = 0,
         RadMode,
         GradMode
     };
     
-	enum BaseMode {
+    enum BaseMode {
         BinMode = 2,
         OctMode = 8,
         DecMode = 10,
@@ -246,7 +246,7 @@ private:
 
     int angle_mode_; // angle modes for trigonometric values
 
-	KCalcConstMenu* constants_menu_;
+    KCalcConstMenu* constants_menu_;
 
     Constants*          constants_; // this is the dialog for configuring const buttons
 

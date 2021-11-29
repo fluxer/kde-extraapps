@@ -30,19 +30,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //------------------------------------------------------------------------------
 BitButton::BitButton(QWidget *parent) : QAbstractButton(parent), on_(false) {
 
-	// too many bits for tab focus
-	setFocusPolicy(Qt::ClickFocus);
+    // too many bits for tab focus
+    setFocusPolicy(Qt::ClickFocus);
 
-	// size button by font
-	QSize size = fontMetrics().size(0, QLatin1String("M"));
-	
-	if (size.width() < size.height()) {
-		size.setHeight(size.width());
-	} else {
-		size.setWidth(size.height());
-	}
-	
-	setFixedSize(size.expandedTo(QApplication::globalStrut()));
+    // size button by font
+    QSize size = fontMetrics().size(0, QLatin1String("M"));
+    
+    if (size.width() < size.height()) {
+        size.setHeight(size.width());
+    } else {
+        size.setWidth(size.height());
+    }
+    
+    setFixedSize(size.expandedTo(QApplication::globalStrut()));
 }
 
 //------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ BitButton::BitButton(QWidget *parent) : QAbstractButton(parent), on_(false) {
 //------------------------------------------------------------------------------
 bool BitButton::isOn() const {
 
-	return on_;
+    return on_;
 }
 
 //------------------------------------------------------------------------------
@@ -60,6 +60,6 @@ bool BitButton::isOn() const {
 //------------------------------------------------------------------------------
 void BitButton::setOn(bool value) {
 
-	on_ = value;
-	update();
+    on_ = value;
+    update();
 }
