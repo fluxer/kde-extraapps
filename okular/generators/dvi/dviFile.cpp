@@ -335,8 +335,6 @@ dvifile::~dvifile()
 
 void dvifile::renumber()
 {
-  dviData.detach();
-
   // Write the page number to the file, taking good care of byte
   // orderings.
   for(int i=1; i<=total_pages; i++) {
