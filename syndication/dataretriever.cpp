@@ -123,7 +123,6 @@ void FileRetriever::slotData(KIO::Job *, const QByteArray &data)
 void FileRetriever::slotResult(KJob *job)
 {
     QByteArray data = d->buffer->buffer();
-    data.detach();
 
     delete d->buffer;
     d->buffer = NULL;
