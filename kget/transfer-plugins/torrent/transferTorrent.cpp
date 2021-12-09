@@ -410,8 +410,12 @@ TransferTorrent::~TransferTorrent()
 
 void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
 {
-    m_lthandle.set_upload_limit(uploadLimit * 1024);
-    m_lthandle.set_download_limit(downloadLimit * 1024);
+    if (m_lthandle.is_valid()) {
+        m_lthandle.set_upload_limit(uploadLimit * 1024);
+        m_lthandle.set_download_limit(downloadLimit * 1024);
+    } else {
+        kDebug(5001) << "torrent handle is not valid";
+    }
 }
 
 QHash<KUrl, QPair<bool, int> > TransferTorrent::availableMirrors(const KUrl &file) const
@@ -420,9 +424,13 @@ QHash<KUrl, QPair<bool, int> > TransferTorrent::availableMirrors(const KUrl &fil
 
     QHash<KUrl, QPair<bool, int> > result;
 
-    const std::vector<lt::announce_entry> lttrackers = m_lthandle.trackers();
-    foreach (const lt::announce_entry &lttracker, lttrackers) {
-        result.insert(KUrl(lttracker.url.c_str()), QPair<bool,int>(true, 1));
+    if (m_lthandle.is_valid()) {
+        const std::vector<lt::announce_entry> lttrackers = m_lthandle.trackers();
+        foreach (const lt::announce_entry &lttracker, lttrackers) {
+            result.insert(KUrl(lttracker.url.c_str()), QPair<bool,int>(true, 1));
+        }
+    } else {
+        kDebug(5001) << "torrent handle is not valid";
     }
 
     return result;
@@ -441,7 +449,11 @@ void TransferTorrent::setAvailableMirrors(const KUrl &file, const QHash<KUrl, QP
         }
     }
 
-    m_lthandle.replace_trackers(lttrackers);
+    if (m_lthandle.is_valid()) {
+        m_lthandle.replace_trackers(lttrackers);
+    } else {
+        kDebug(5001) << "torrent handle is not valid";
+    }
 }
 
 void TransferTorrent::start()
@@ -582,6 +594,10 @@ void TransferTorrent::deinit(Transfer::DeleteOptions options)
 
 bool TransferTorrent::isStalled() const
 {
+    if (!m_lthandle.is_valid()) {
+        kDebug(5001) << "torrent handle is not valid";
+        return true;
+    }
     const lt::torrent_status ltstatus = m_lthandle.status();
     return (status() == Job::Running && downloadSpeed() == 0 && ltstatus.state == lt::torrent_status::finished);
 }
@@ -595,7 +611,7 @@ QList<KUrl> TransferTorrent::files() const
 {
     QList<KUrl> result;
 
-    if (m_lthandle.torrent_file()) {
+    if (m_lthandle.is_valid() && m_lthandle.torrent_file()) {
         const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
         if (ltstorage.is_valid()) {
             for (int i = 0; i < ltstorage.num_files(); i++) {
@@ -616,7 +632,7 @@ FileModel* TransferTorrent::fileModel()
 
     const Job::Status transferstatus = status();
     m_filemodel->transferstatus = transferstatus;
-    if (m_lthandle.torrent_file()) {
+    if (m_lthandle.is_valid() && m_lthandle.torrent_file()) {
         const lt::file_storage ltstorage = m_lthandle.torrent_file()->files();
         if (ltstorage.is_valid()) {
             for (int i = 0; i < ltstorage.num_files(); i++) {
