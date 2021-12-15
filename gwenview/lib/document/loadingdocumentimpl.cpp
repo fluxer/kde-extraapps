@@ -248,6 +248,11 @@ struct LoadingDocumentImplPrivate
         if (reader.supportsAnimation()
                 && reader.nextImageDelay() > 0 // Assume delay == 0 <=> only one frame
            ) {
+            if (reader.imageCount() > 0) {
+                LOG("Really an animated image");
+                mAnimated = true;
+                return;
+            }
             /*
              * QImageReader is not really helpful to detect animated gif:
              * - QImageReader::imageCount() returns 0
