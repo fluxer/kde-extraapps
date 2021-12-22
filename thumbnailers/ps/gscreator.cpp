@@ -548,9 +548,10 @@ bool GSCreator::getEPSIPreview(const QString &path, long start, long
   // skip over the rest of the BeginPreview comment
   while ((offset < previewsize) &&
          previewstr[offset] != '\n' &&
-	 previewstr[offset] != '\r') offset++;
+        previewstr[offset] != '\r') offset++;
   while ((offset < previewsize) && previewstr[offset] != '%') offset++;
 
+#if QT_VERSION < 0x041200
   unsigned int imagedepth;
   switch (depth) {
   case 1:
@@ -570,11 +571,13 @@ bool GSCreator::getEPSIPreview(const QString &path, long start, long
 
   if (imagedepth <= 8) {
     for (unsigned int gray = 0; gray < colors; gray++) {
-      unsigned int grayvalue = (255U * (colors - 1 - gray)) /
-	(colors - 1);
+      unsigned int grayvalue = (255U * (colors - 1 - gray)) / (colors - 1);
       img.setColor(gray, qRgb(grayvalue, grayvalue, grayvalue));
     }
   }
+#else
+  QImage img(width, height, QImage::Format_RGB32);
+#endif
 
   const unsigned int bits_per_scan_line = width * depth;
   unsigned int bytes_per_scan_line = bits_per_scan_line / 8;
@@ -586,8 +589,7 @@ bool GSCreator::getEPSIPreview(const QString &path, long start, long
     if (offset >= previewsize)
       return false;
 
-    while (!isxdigit(previewstr[offset].toLatin1()) &&
-	   offset < previewsize)
+    while (!isxdigit(previewstr[offset].toLatin1()) && offset < previewsize)
       offset++;
 
     bool ok = false;
@@ -618,7 +620,10 @@ bool GSCreator::getEPSIPreview(const QString &path, long start, long
     }
   }
 
+#if QT_VERSION < 0x041200
   outimg = img.convertToFormat(QImage::Format_RGB32).scaled(imgwidth, imgheight, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-
+#else
+  outimg = img.scaled(imgwidth, imgheight, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+#endif
   return true;
 }
