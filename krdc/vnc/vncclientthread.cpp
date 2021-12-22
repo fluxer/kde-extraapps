@@ -94,6 +94,7 @@ void VncClientThread::outputHandlerStatic(const char *format, ...)
 void VncClientThread::setClientColorDepth(rfbClient* cl, VncClientThread::ColorDepth cd)
 {
     switch(cd) {
+#if QT_VERSION < 0x041200
     case bpp8:
         if (m_colorTable.isEmpty()) {
             m_colorTable.resize(256);
@@ -116,6 +117,7 @@ void VncClientThread::setClientColorDepth(rfbClient* cl, VncClientThread::ColorD
         cl->format.greenMax = 7;
         cl->format.blueMax = 3;
         break;
+#endif // QT_VERSION < 0x041200
     case bpp16:
         cl->format.depth = 16;
         cl->format.bitsPerPixel = 16;
@@ -187,10 +189,12 @@ void VncClientThread::updatefb(int x, int y, int w, int h)
     const int width = cl->width, height = cl->height;
     QImage img;
     switch(colorDepth()) {
+#if QT_VERSION < 0x041200
     case bpp8:
         img = QImage(cl->frameBuffer, width, height, QImage::Format_Indexed8);
         img.setColorTable(m_colorTable);
         break;
+#endif
     case bpp16:
         img = QImage(cl->frameBuffer, width, height, QImage::Format_RGB16);
         break;
