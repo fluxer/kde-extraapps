@@ -45,18 +45,6 @@ PartWidget::PartWidget(QWidget* parent, const Partition* p) :
 	m_Active(false)
 {
 	setFont(KGlobalSettings::smallestReadableFont());
-
-	// Check if user is running a GTK style; in that case, use plastique as a fallback
-	// style for the PartWidget to work around GTK styles not showing the FS colors
-	// correctly.
-	// Inspired by Aurélien Gâteau's similar workaround in Gwenview (230aebbd)
-	if (qstrcmp(QApplication::style()->metaObject()->className(), "QGtkStyle") == 0)
-	{
-		QStyle* style = new QPlastiqueStyle();
-		style->setParent(this);
-		setStyle(style);
-	}
-	
 	init(p);
 }
 

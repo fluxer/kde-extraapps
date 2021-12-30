@@ -120,12 +120,6 @@ static void initViewPalette(QAbstractItemView* view, const QColor& fgColor)
     view->setPalette(palette);
 }
 
-static bool styleIsGtkBased()
-{
-    const char* name = QApplication::style()->metaObject()->className();
-    return qstrcmp(name, "QGtkStyle") == 0;
-}
-
 StartMainPage::StartMainPage(QWidget* parent, GvCore* gvCore)
 : QFrame(parent)
 , d(new StartMainPagePrivate)
@@ -135,14 +129,6 @@ StartMainPage::StartMainPage(QWidget* parent, GvCore* gvCore)
     d->mSearchUiInitialized = false;
 
     d->setupUi(this);
-    if (styleIsGtkBased()) {
-        // Gtk-based styles do not apply the correct background color on tabs.
-        // As a workaround, use the Plastique style instead.
-        QStyle* fix = new QPlastiqueStyle();
-        fix->setParent(this);
-        d->mHistoryWidget->tabBar()->setStyle(fix);
-        d->mPlacesTagsWidget->tabBar()->setStyle(fix);
-    }
     setFrameStyle(QFrame::NoFrame);
 
     // Bookmark view
