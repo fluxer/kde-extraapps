@@ -294,7 +294,11 @@ private:
     KZip * m_xpsArchive;
 
     QMap<QString, int> m_fontCache;
+#if QT_VERSION < 0x041200
     QFontDatabase m_fontDatabase;
+#else
+    QStringList m_fonts;
+#endif
 };
 
 

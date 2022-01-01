@@ -29,7 +29,9 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kurl.h>
+#include <ktemporaryfile.h>
 #include <QBuffer>
+#include <QFileInfo>
 #include <QImageReader>
 #include <QMutex>
 
@@ -1496,6 +1498,7 @@ QFont XpsFile::getFontByName( const QString &fileName, float size )
         return QFont();
     }
 
+#if QT_VERSION < 0x041200
     const QStringList fontFamilies = m_fontDatabase.applicationFontFamilies( index );
     if ( fontFamilies.isEmpty() ) {
       kWarning(XpsDebug) << "The unexpected has happened. No font family for a known font:" << fileName << index;
@@ -1509,6 +1512,9 @@ QFont XpsFile::getFontByName( const QString &fileName, float size )
     }
     const QString fontStyle =  fontStyles[0];
     return m_fontDatabase.font(fontFamily, fontStyle, qRound(size));
+#else
+    return QFont(m_fonts.at(index));
+#endif
 }
 
 int XpsFile::loadFontByName( const QString &fileName )
@@ -1522,6 +1528,7 @@ int XpsFile::loadFontByName( const QString &fileName )
 
     QByteArray fontData = readFileOrDirectoryParts( fontFile ); // once per file, according to the docs
 
+#if QT_VERSION < 0x041200
     int result = m_fontDatabase.addApplicationFontFromData( fontData );
     if (-1 == result) {
         // Try to deobfuscate font
@@ -1551,8 +1558,25 @@ int XpsFile::loadFontByName( const QString &fileName )
         }
     }
 
-
     // kDebug(XpsDebug) << "Loaded font: " << m_fontDatabase.applicationFontFamilies( result );
+#else
+    int result = -1;
+    KTemporaryFile tempfile;
+    tempfile.setSuffix(QFileInfo(fileName).suffix());
+    if (!tempfile.open()) {
+        return result;
+    }
+
+    if (tempfile.write(fontData) != fontData.size()) {
+        return result;
+    }
+
+    tempfile.setAutoRemove(false);
+    m_fonts.append(tempfile.fileName());
+    result = (m_fonts.size() - 1);
+
+    // kDebug(XpsDebug) << "Saved font: " << tempfile.fileName();
+#endif // QT_VERSION
 
     return result; // a font ID
 }
@@ -1901,7 +1925,13 @@ XpsFile::XpsFile() : m_docInfo( 0 )
 XpsFile::~XpsFile()
 {
     m_fontCache.clear();
+#if QT_VERSION < 0x041200
     m_fontDatabase.removeAllApplicationFonts();
+#else
+    foreach (const QString &fontfile, m_fonts) {
+        QFile::remove(fontfile);
+    }
+#endif
 }
 
 
@@ -1954,6 +1984,7 @@ bool XpsFile::loadDocument(const QString &filename)
             }
         }
     }
+
     if ( relXml.error() ) {
         kDebug(XpsDebug) << "Could not parse _rels/.rels: " << relXml.errorString();
         return false;
