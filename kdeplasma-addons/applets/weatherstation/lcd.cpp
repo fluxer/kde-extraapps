@@ -220,22 +220,6 @@ class LCD::Private
             //kDebug() << groups;
             delete device;
         }
-
-        QFont fitText(QPainter *p, const QString& text, const QRectF& rect)
-        {
-            QFont result = Plasma::Theme::defaultTheme()->font(Plasma::Theme::DefaultFont);
-
-            while (result.pointSizeF() - 0.5  > 0.0) {
-                QFontMetrics fm(result, p->device());
-                QSizeF size = fm.tightBoundingRect(text).size();
-                //kDebug() << size << rect.size() << result.pointSizeF();
-                if (size.width() <= rect.size().width() && size.height() <= rect.size().height()) {
-                    break;
-                }
-                result.setPointSizeF(result.pointSizeF() - 0.5);
-            }
-            return result;
-        }
 };
 
 QMap<QChar, QStringList> LCD::Private::sevenSegmentDigits;
