@@ -100,20 +100,17 @@ void TrayIcon::slotSetUnread(int unread)
         overlayImg.fill( Qt::transparent );
 
         QPainter p(&overlayImg);
-        p.setFont(f);
         KColorScheme scheme(QPalette::Active, KColorScheme::View);
 
-        fm = QFontMetrics(f);
-        QRect boundingRect = fm.tightBoundingRect(countStr);
-        boundingRect.adjust(0, 0, 0, 2);
-        boundingRect.setHeight(qMin(boundingRect.height(), oldWidth));
-        boundingRect.moveTo((oldWidth - boundingRect.width()) / 2,
-                            ((oldWidth - boundingRect.height()) / 2) - 1);
+        QFont of(f);
+        of.setPointSizeF(pointSize * 1.24);
+        p.setFont(of);
         p.setOpacity(0.7);
-        p.setBrush(scheme.background(KColorScheme::LinkBackground));
-        p.setPen(scheme.background(KColorScheme::LinkBackground).color());
-        p.drawRoundedRect(boundingRect, 2.0, 2.0);
+        p.setBrush(Qt::NoBrush);
+        p.setPen(scheme.shade(KColorScheme::ShadowShade));
+        p.drawText(overlayImg.rect(), Qt::AlignCenter, countStr);
 
+        p.setFont(f);
         p.setBrush(Qt::NoBrush);
         p.setPen(scheme.foreground(KColorScheme::LinkText).color());
         p.setOpacity(1.0);
