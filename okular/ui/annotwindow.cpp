@@ -107,7 +107,7 @@ public:
         QString latextext = i18n ( "This annotation may contain LaTeX code.\nClick here to render." );
         latexButton->setText( latextext );
         latexButton->setAutoRaise( true );
-        s = QFontMetrics( latexButton->font() ).boundingRect(0, 0, this->width(), this->height(), 0, latextext ).size() + QSize( 8, 8 );
+        s = QFontMetrics( latexButton->font() ).boundingRect(QRect(0, 0, this->width(), this->height()), 0, latextext ).size() + QSize( 8, 8 );
         latexButton->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed );
         latexButton->setFixedSize( s );
         latexButton->setCheckable( true );

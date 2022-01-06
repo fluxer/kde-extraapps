@@ -302,7 +302,7 @@ QRect PageViewMessage::computeTextRect( const QString & message, int extra_width
        really smaller than the container.
      */
     const int boundingWidth = qobject_cast<QAbstractScrollArea*>(parentWidget())->viewport()->width() - 20 - ( extra_width > 0 ? 2 + extra_width : 0 ) - 2*charSize;
-    QRect textRect = fontMetrics().boundingRect( 0, 0, boundingWidth, 0,
+    QRect textRect = fontMetrics().boundingRect(QRect(0, 0, boundingWidth, 0),
                      Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap, message );
     textRect.translate( -textRect.left(), -textRect.top() );
     textRect.adjust( 0, 0, 2, 2 );
