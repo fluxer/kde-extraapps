@@ -1703,7 +1703,7 @@ Okular::TextPage* XpsPage::textPage()
 
                 int lastWidth = 0;
                 for (int i = 0; i < text.length(); i++) {
-                    int width = metrics.width( text, i + 1 );
+                    int width = metrics.width( text.mid(0, i + 1));
 
                     Okular::NormalizedRect * rect = new Okular::NormalizedRect( (origin.x() + lastWidth) / m_pageSize.width(),
                                                                                 (origin.y() - metrics.height()) / m_pageSize.height(),
