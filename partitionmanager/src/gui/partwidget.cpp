@@ -26,9 +26,8 @@
 #include "fs/filesystem.h"
 
 #include <QPainter>
-#include <QtGui/qstyleoption.h>
+#include <QStyleOptionButton>
 #include <QApplication>
-#include <QPlastiqueStyle>
 
 #include <kdebug.h>
 #include <kglobalsettings.h>
