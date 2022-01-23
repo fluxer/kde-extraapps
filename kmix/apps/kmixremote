@@ -7,6 +7,8 @@
 # Mute
 #################################################################################
 
+qdbusbin="false"
+
 usage()
 {
   echo "Usage:"
@@ -29,7 +31,7 @@ exit_with_error()
 # Prints the mixer DBUS ID's on the console. leaving out the "/Mixers/" prefix
 listMixers()
 {
-  qdbus org.kde.kmix /Mixers org.freedesktop.DBus.Properties.Get org.kde.KMix.MixSet mixers | cut -f3 -d/
+  $qdbusbin org.kde.kmix /Mixers org.freedesktop.DBus.Properties.Get org.kde.KMix.MixSet mixers | cut -f3 -d/
   errorCode=$?
   if test $errorCode != 0; then
     echo "Error $errorCode listing mixers. KMix is not running."
@@ -39,7 +41,7 @@ listMixers()
 # Prints the mixer control DBUS ID's of the given mixer on the console. leaving out the "/Mixers/" prefix
 listControls()
 {
-  qdbus org.kde.kmix $1 org.freedesktop.DBus.Properties.Get org.kde.KMix.Mixer controls  | cut -f4 -d/
+  $qdbusbin org.kde.kmix $1 org.freedesktop.DBus.Properties.Get org.kde.KMix.Mixer controls  | cut -f4 -d/
   errorCode=$?
   if test $errorCode != 0; then
     echo "Error $errorCode listing controls. KMix is not running."
@@ -48,19 +50,24 @@ listControls()
 
 command=""
 
-if ! type qdbus >/dev/null  2>&1 ; then
+if type qdbus-katie >/dev/null  2>&1 ; then
+  qdbusbin="qdbus-katie"
+elif type qdbus >/dev/null  2>&1 ; then
+  qdbusbin="qdbus"
+else
   exit_with_error "$0 requires qdbus, but it cannot be found. Please install or check \$PATH"
 fi
 
 # Read args
 while true; do
   arg=$1
-  shift
   if test -z "$arg"; then
     break
-  elif test "x--master" = "x$arg"; then
-    mixer="$(qdbus org.kde.kmix /Mixers org.kde.KMix.MixSet.currentMasterMixer)"
-    control="$(qdbus org.kde.kmix /Mixers org.kde.KMix.MixSet.currentMasterControl)"
+  fi
+  shift
+  if test "x--master" = "x$arg"; then
+    mixer="$($qdbusbin org.kde.kmix /Mixers org.kde.KMix.MixSet.currentMasterMixer)"
+    control="$($qdbusbin org.kde.kmix /Mixers org.kde.KMix.MixSet.currentMasterControl)"
   elif test "x--help" = "x$arg" -o "x-h" = "x$arg"; then
     usage
     exit 0
@@ -114,13 +121,13 @@ targetControl="/Mixers/${mixer}/${control}"
 # --- EXECUTE PHASE --------------------------------------------------------------------------------------------------
 if test "xget" = "x$command"; then
   # GET
-  qdbus org.kde.kmix $targetControl org.freedesktop.DBus.Properties.Get org.kde.KMix.Control volume
+  $qdbusbin org.kde.kmix $targetControl org.freedesktop.DBus.Properties.Get org.kde.KMix.Control volume
 elif test "xset" = "x$command"; then
   # SET
-  qdbus org.kde.kmix $targetControl org.freedesktop.DBus.Properties.Set org.kde.KMix.Control volume $genericArg
+  $qdbusbin org.kde.kmix $targetControl org.freedesktop.DBus.Properties.Set org.kde.KMix.Control volume $genericArg
 elif test "xmute" = "x$command"; then
   # MUTE
-  qdbus org.kde.kmix $targetControl org.freedesktop.DBus.Properties.Set org.kde.KMix.Control mute $genericArg
+  $qdbusbin org.kde.kmix $targetControl org.freedesktop.DBus.Properties.Set org.kde.KMix.Control mute $genericArg
 else
   exit_with_error "No such command '$command'"
 fi
