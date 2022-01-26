@@ -113,17 +113,11 @@ struct CropWidgetPrivate : public Ui_CropWidget
 
     void addSectionHeaderToComboBox(const QString& title)
     {
-        // Insert a line
-        ratioComboBox->insertSeparator(ratioComboBox->count());
-
         // Insert our section header
-        // This header is made of a separator with a text. We reset
-        // Qt::AccessibleDescriptionRole to the header text otherwise QComboBox
-        // delegate will draw a separator line instead of our text.
+        // This header is made of a separator with a text
         int index = ratioComboBox->count();
         ratioComboBox->insertSeparator(index);
         ratioComboBox->setItemText(index, title);
-        ratioComboBox->setItemData(index, title, Qt::AccessibleDescriptionRole);
         ratioComboBox->setItemData(index, Qt::AlignHCenter, Qt::TextAlignmentRole);
     }
 

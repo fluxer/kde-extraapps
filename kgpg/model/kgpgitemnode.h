@@ -19,6 +19,10 @@
 #ifndef KGPGITEMNODE_H
 #define KGPGITEMNODE_H
 
+#include <QtCore/qglobal.h>
+
+#define KGPG_TRUST_ROLE int(Qt::ItemDataRole::UserRole + 1)
+
 #include <core/KGpgExpandableNode.h>
 #include <core/KGpgGroupMemberNode.h>
 #include <core/KGpgGroupNode.h>

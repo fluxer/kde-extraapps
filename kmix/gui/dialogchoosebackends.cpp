@@ -100,10 +100,6 @@ void DialogChooseBackends::createPage(const QSet<QString>& mixerIds)
 	m_buttonGroupForScrollView = new QButtonGroup(this); // invisible QButtonGroup
 	m_scrollableChannelSelector = new QScrollArea(m_mainFrame);
 
-#ifndef QT_NO_ACCESSIBILITY
-	m_scrollableChannelSelector->setAccessibleName(i18n("Select Mixers"));
-#endif
-
 	_layout->addWidget(m_scrollableChannelSelector);
 
 	m_vboxForScrollView = new KVBox();

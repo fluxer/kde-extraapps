@@ -151,10 +151,6 @@ void DialogSelectMaster::createPage(Mixer* mixer)
 
     m_scrollableChannelSelector = new QScrollArea(m_mainFrame);
 
-#ifndef QT_NO_ACCESSIBILITY
-    m_scrollableChannelSelector->setAccessibleName( i18n("Select Master Channel") );
-#endif
-
 //    m_scrollableChannelSelector->viewport()->setBackgroundRole(QPalette::Background);
     _layout->addWidget(m_scrollableChannelSelector);
 

@@ -172,7 +172,7 @@ KGpgItemModel::data(const QModelIndex &index, int role) const
 			default:
 				return KGpgSettings::colorUnknown();
 			}
-		case Qt::AccessibleTextRole:
+		case KGPG_TRUST_ROLE:
 			return Convert::toString(t);
 		}
 		break;

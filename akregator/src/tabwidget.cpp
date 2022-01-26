@@ -113,10 +113,6 @@ TabWidget::TabWidget(QWidget * parent)
     d->tabsClose->adjustSize();
     d->tabsClose->setToolTip( i18n("Close the current tab"));
 
-#ifndef QT_NO_ACCESSIBILITY
-    d->tabsClose->setAccessibleName( i18n( "Close tab" ) );
-#endif
-
     setCornerWidget( d->tabsClose, Qt::TopRightCorner );
     d->updateTabBarVisibility();    
 }
