@@ -15,7 +15,7 @@
 
 // qt/kde/system includes
 #include <QtCore/QHash>
-#include <QtCore/QLinkedList>
+#include <QtCore/QList>
 #include <QtCore/QMap>
 #include <QtCore/QMutex>
 #include <QtCore/QPointer>
@@ -201,17 +201,17 @@ class DocumentPrivate
         qint64 m_docSize;
 
         // viewport stuff
-        QLinkedList< DocumentViewport > m_viewportHistory;
-        QLinkedList< DocumentViewport >::iterator m_viewportIterator;
+        QList< DocumentViewport > m_viewportHistory;
+        QList< DocumentViewport >::iterator m_viewportIterator;
         DocumentViewport m_nextDocumentViewport; // see Link::Goto for an explanation
         QString m_nextDocumentDestination;
 
         // observers / requests / allocator stuff
         QSet< DocumentObserver * > m_observers;
-        QLinkedList< PixmapRequest * > m_pixmapRequestsStack;
-        QLinkedList< PixmapRequest * > m_executingPixmapRequests;
+        QList< PixmapRequest * > m_pixmapRequestsStack;
+        QList< PixmapRequest * > m_executingPixmapRequests;
         QMutex m_pixmapRequestsMutex;
-        QLinkedList< AllocatedPixmap * > m_allocatedPixmaps;
+        QList< AllocatedPixmap * > m_allocatedPixmaps;
         qulonglong m_allocatedPixmapsTotalMemory;
         QList< int > m_allocatedTextPagesFifo;
         int m_maxAllocatedTextPages;

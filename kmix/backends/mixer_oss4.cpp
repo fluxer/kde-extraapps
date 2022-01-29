@@ -32,7 +32,7 @@
 #include <sys/stat.h>
 
 #include <klocale.h>
-#include <QLinkedList>
+#include <QList>
 #include <QRegExp>
 
 Mixer_Backend* OSS4_getMixer(Mixer *mixer, int device)

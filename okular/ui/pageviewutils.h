@@ -176,7 +176,7 @@ class PageViewToolBar : public QWidget
         // animated widget controls
         enum Side { Left = 0, Top = 1, Right = 2, Bottom = 3 };
 
-        void setItems( const QLinkedList<AnnotationToolItem> &items );
+        void setItems( const QList<AnnotationToolItem> &items );
         void setSide( Side side );
 
         void showAndAnimate();

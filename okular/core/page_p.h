@@ -12,7 +12,7 @@
 #define _OKULAR_PAGE_PRIVATE_H_
 
 // qt/kde includes
-#include <qlinkedlist.h>
+#include <qlist.h>
 #include <qmap.h>
 #include <qtransform.h>
 #include <qstring.h>
@@ -134,7 +134,7 @@ class PagePrivate
         TextPage * m_text;
         PageTransition * m_transition;
         HighlightAreaRect *m_textSelections;
-        QLinkedList< FormField * > formfields;
+        QList< FormField * > formfields;
         Action * m_openingAction;
         Action * m_closingAction;
         double m_duration;

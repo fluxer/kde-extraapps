@@ -67,7 +67,7 @@ class AnnotationPrivate
 
         Okular::Annotation::Style m_style;
         Okular::Annotation::Window m_window;
-        QLinkedList< Okular::Annotation::Revision > m_revisions;
+        QList< Okular::Annotation::Revision > m_revisions;
 
         Annotation::DisposeDataFunction m_disposeFunc;
         QVariant m_nativeId;

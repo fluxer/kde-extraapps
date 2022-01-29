@@ -26,7 +26,7 @@
 #include <KDebug>
 #include <KDirLister>
 
-#include <QtCore/QLinkedList>
+#include <QtCore/QList>
 #include <QtCore/QTimer>
 #include <QtGui/QWidget>
 
@@ -40,7 +40,7 @@ namespace Filelight
 
 class Store {
 public:
-    typedef QLinkedList<Store*> List;
+    typedef QList<Store*> List;
 
     /// location of the folder
     const KUrl url;

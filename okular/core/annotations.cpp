@@ -42,11 +42,11 @@ static bool isLeftOfVector( const NormalizedPoint& a, const NormalizedPoint& b, 
  *
  * Does piecewise comparison and selects the distance to the closest segment
  */
-static double distanceSqr( double x, double y, double xScale, double yScale, const QLinkedList<NormalizedPoint>& path )
+static double distanceSqr( double x, double y, double xScale, double yScale, const QList<NormalizedPoint>& path )
 {
     double distance = DBL_MAX;
     double thisDistance;
-    QLinkedList<NormalizedPoint>::const_iterator i = path.constBegin();
+    QList<NormalizedPoint>::const_iterator i = path.constBegin();
     NormalizedPoint lastPoint = *i;
 
     for (++i; i != path.constEnd(); ++i) {
@@ -500,7 +500,7 @@ AnnotationPrivate::~AnnotationPrivate()
     if ( m_revisions.isEmpty() )
         return;
 
-    QLinkedList< Annotation::Revision >::iterator it = m_revisions.begin(), end = m_revisions.end();
+    QList< Annotation::Revision >::iterator it = m_revisions.begin(), end = m_revisions.end();
     for ( ; it != end; ++it )
         delete (*it).annotation();
 }
@@ -660,13 +660,13 @@ const Annotation::Window & Annotation::window() const
     return d->m_window;
 }
 
-QLinkedList< Annotation::Revision > & Annotation::revisions()
+QList< Annotation::Revision > & Annotation::revisions()
 {
     Q_D( Annotation );
     return d->m_revisions;
 }
 
-const QLinkedList< Annotation::Revision > & Annotation::revisions() const
+const QList< Annotation::Revision > & Annotation::revisions() const
 {
     Q_D( const Annotation );
     return d->m_revisions;
@@ -783,7 +783,7 @@ void Annotation::store( QDomNode & annNode, QDomDocument & document ) const
         return;
 
     // add all revisions as children of revisions element
-    QLinkedList< Revision >::const_iterator it = d->m_revisions.begin(), end = d->m_revisions.end();
+    QList< Revision >::const_iterator it = d->m_revisions.begin(), end = d->m_revisions.end();
     for ( ; it != end; ++it )
     {
         // create revision element
@@ -1271,8 +1271,8 @@ class Okular::LineAnnotationPrivate : public Okular::AnnotationPrivate
         virtual void setAnnotationProperties( const QDomNode& node );
         virtual AnnotationPrivate* getNewAnnotationPrivate();
 
-        QLinkedList<NormalizedPoint> m_linePoints;
-        QLinkedList<NormalizedPoint> m_transformedLinePoints;
+        QList<NormalizedPoint> m_linePoints;
+        QList<NormalizedPoint> m_transformedLinePoints;
         LineAnnotation::TermStyle m_lineStartStyle;
         LineAnnotation::TermStyle m_lineEndStyle;
         bool m_lineClosed : 1;
@@ -1297,19 +1297,19 @@ LineAnnotation::~LineAnnotation()
 {
 }
 
-void LineAnnotation::setLinePoints( const QLinkedList<NormalizedPoint> &points )
+void LineAnnotation::setLinePoints( const QList<NormalizedPoint> &points )
 {
     Q_D( LineAnnotation );
     d->m_linePoints = points;
 }
 
-QLinkedList<NormalizedPoint> LineAnnotation::linePoints() const
+QList<NormalizedPoint> LineAnnotation::linePoints() const
 {
     Q_D( const LineAnnotation );
     return d->m_linePoints;
 }
 
-QLinkedList<NormalizedPoint> LineAnnotation::transformedLinePoints() const
+QList<NormalizedPoint> LineAnnotation::transformedLinePoints() const
 {
     Q_D( const LineAnnotation );
     return d->m_transformedLinePoints;
@@ -1448,7 +1448,7 @@ void LineAnnotation::store( QDomNode & node, QDomDocument & document ) const
     int points = d->m_linePoints.count();
     if ( points > 1 )
     {
-        QLinkedList<NormalizedPoint>::const_iterator it = d->m_linePoints.begin(), end = d->m_linePoints.end();
+        QList<NormalizedPoint>::const_iterator it = d->m_linePoints.begin(), end = d->m_linePoints.end();
         while ( it != end )
         {
             const NormalizedPoint & p = *it;
@@ -1465,7 +1465,7 @@ void LineAnnotationPrivate::transform( const QTransform &matrix )
 {
     AnnotationPrivate::transform( matrix );
 
-    QMutableLinkedListIterator<NormalizedPoint> it( m_transformedLinePoints );
+    QMutableListIterator<NormalizedPoint> it( m_transformedLinePoints );
     while ( it.hasNext() )
         it.next().transform( matrix );
 }
@@ -1474,7 +1474,7 @@ void LineAnnotationPrivate::baseTransform( const QTransform &matrix )
 {
     AnnotationPrivate::baseTransform( matrix );
 
-    QMutableLinkedListIterator<NormalizedPoint> it( m_linePoints );
+    QMutableListIterator<NormalizedPoint> it( m_linePoints );
     while ( it.hasNext() )
         it.next().transform( matrix );
 }
@@ -1490,7 +1490,7 @@ void LineAnnotationPrivate::translate( const NormalizedPoint &coord )
 {
     AnnotationPrivate::translate( coord );
 
-    QMutableLinkedListIterator<NormalizedPoint> it( m_linePoints );
+    QMutableListIterator<NormalizedPoint> it( m_linePoints );
     while ( it.hasNext() )
     {
         NormalizedPoint& p = it.next();
@@ -1560,7 +1560,7 @@ AnnotationPrivate* LineAnnotationPrivate::getNewAnnotationPrivate()
 
 double LineAnnotationPrivate::distanceSqr( double x, double y, double xScale, double yScale )
 {
-    QLinkedList<NormalizedPoint> transformedLinePoints = m_transformedLinePoints;
+    QList<NormalizedPoint> transformedLinePoints = m_transformedLinePoints;
 
     if ( m_lineClosed ) // Close the path
         transformedLinePoints.append( transformedLinePoints.first() );
@@ -1737,7 +1737,7 @@ double GeomAnnotationPrivate::distanceSqr( double x, double y, double xScale, do
             if ( m_geomInnerColor.isValid() )
                 return AnnotationPrivate::distanceSqr( x, y, xScale, yScale );
 
-            QLinkedList<NormalizedPoint> edges;
+            QList<NormalizedPoint> edges;
             edges << NormalizedPoint( m_transformedBoundary.left, m_transformedBoundary.top );
             edges << NormalizedPoint( m_transformedBoundary.right, m_transformedBoundary.top );
             edges << NormalizedPoint( m_transformedBoundary.right, m_transformedBoundary.bottom );
@@ -2026,7 +2026,7 @@ double HighlightAnnotationPrivate::distanceSqr( double x, double y, double xScal
     double outsideDistance = DBL_MAX;
     foreach ( const HighlightAnnotation::Quad& quad, m_highlightQuads )
     {
-        QLinkedList<NormalizedPoint> pathPoints;
+        QList<NormalizedPoint> pathPoints;
 
         //first, we check if the point is within the area described by the 4 quads
         //this is the case, if the point is always on one side of each segments delimiting the polygon:
@@ -2157,8 +2157,8 @@ class Okular::InkAnnotationPrivate : public Okular::AnnotationPrivate
         virtual void setAnnotationProperties( const QDomNode& node );
         virtual AnnotationPrivate* getNewAnnotationPrivate();
 
-        QList< QLinkedList<NormalizedPoint> > m_inkPaths;
-        QList< QLinkedList<NormalizedPoint> > m_transformedInkPaths;
+        QList< QList<NormalizedPoint> > m_inkPaths;
+        QList< QList<NormalizedPoint> > m_transformedInkPaths;
 };
 
 InkAnnotation::InkAnnotation()
@@ -2175,19 +2175,19 @@ InkAnnotation::~InkAnnotation()
 {
 }
 
-void InkAnnotation::setInkPaths( const QList< QLinkedList<NormalizedPoint> > &paths )
+void InkAnnotation::setInkPaths( const QList< QList<NormalizedPoint> > &paths )
 {
     Q_D( InkAnnotation );
     d->m_inkPaths = paths;
 }
 
-QList< QLinkedList<NormalizedPoint> > InkAnnotation::inkPaths() const
+QList< QList<NormalizedPoint> > InkAnnotation::inkPaths() const
 {
     Q_D( const InkAnnotation );
     return d->m_inkPaths;
 }
 
-QList< QLinkedList<NormalizedPoint> > InkAnnotation::transformedInkPaths() const
+QList< QList<NormalizedPoint> > InkAnnotation::transformedInkPaths() const
 {
     Q_D( const InkAnnotation );
     return d->m_transformedInkPaths;
@@ -2212,13 +2212,13 @@ void InkAnnotation::store( QDomNode & node, QDomDocument & document ) const
     if ( d->m_inkPaths.count() < 1 )
         return;
 
-    QList< QLinkedList<NormalizedPoint> >::const_iterator pIt = d->m_inkPaths.begin(), pEnd = d->m_inkPaths.end();
+    QList< QList<NormalizedPoint> >::const_iterator pIt = d->m_inkPaths.begin(), pEnd = d->m_inkPaths.end();
     for ( ; pIt != pEnd; ++pIt )
     {
         QDomElement pathElement = document.createElement( "path" );
         inkElement.appendChild( pathElement );
-        const QLinkedList<NormalizedPoint> & path = *pIt;
-        QLinkedList<NormalizedPoint>::const_iterator iIt = path.begin(), iEnd = path.end();
+        const QList<NormalizedPoint> & path = *pIt;
+        QList<NormalizedPoint>::const_iterator iIt = path.begin(), iEnd = path.end();
         for ( ; iIt != iEnd; ++iIt )
         {
             const NormalizedPoint & point = *iIt;
@@ -2233,7 +2233,7 @@ void InkAnnotation::store( QDomNode & node, QDomDocument & document ) const
 double InkAnnotationPrivate::distanceSqr( double x, double y, double xScale, double yScale )
 {
     double distance = DBL_MAX;
-    foreach ( const QLinkedList<NormalizedPoint>& path, m_transformedInkPaths )
+    foreach ( const QList<NormalizedPoint>& path, m_transformedInkPaths )
     {
         const double thisDistance = ::distanceSqr( x, y, xScale, yScale, path );
         if ( thisDistance < distance )
@@ -2248,7 +2248,7 @@ void InkAnnotationPrivate::transform( const QTransform &matrix )
 
     for ( int i = 0; i < m_transformedInkPaths.count(); ++i )
     {
-        QMutableLinkedListIterator<NormalizedPoint> it( m_transformedInkPaths[ i ] );
+        QMutableListIterator<NormalizedPoint> it( m_transformedInkPaths[ i ] );
         while ( it.hasNext() )
             it.next().transform( matrix );
     }
@@ -2260,7 +2260,7 @@ void InkAnnotationPrivate::baseTransform( const QTransform &matrix )
 
     for ( int i = 0; i < m_inkPaths.count(); ++i )
     {
-        QMutableLinkedListIterator<NormalizedPoint> it( m_inkPaths[ i ] );
+        QMutableListIterator<NormalizedPoint> it( m_inkPaths[ i ] );
         while ( it.hasNext() )
             it.next().transform( matrix );
     }
@@ -2279,7 +2279,7 @@ void InkAnnotationPrivate::translate( const NormalizedPoint &coord )
 
     for ( int i = 0; i < m_inkPaths.count(); ++i )
     {
-        QMutableLinkedListIterator<NormalizedPoint> it( m_inkPaths[ i ] );
+        QMutableListIterator<NormalizedPoint> it( m_inkPaths[ i ] );
         while ( it.hasNext() )
         {
             NormalizedPoint& p = it.next();
@@ -2314,7 +2314,7 @@ void InkAnnotationPrivate::setAnnotationProperties( const QDomNode& node )
                 continue;
 
             // build each path parsing 'point' subnodes
-            QLinkedList<NormalizedPoint> path;
+            QList<NormalizedPoint> path;
             QDomNode pointNode = pathElement.firstChild();
             while ( pointNode.isElement() )
             {

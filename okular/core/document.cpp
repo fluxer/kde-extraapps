@@ -377,7 +377,7 @@ void DocumentPrivate::cleanupPixmapMemory( qulonglong memoryToFree )
 
     // Store pages that weren't completely removed
 
-    QLinkedList< AllocatedPixmap * > pixmapsToKeep;
+    QList< AllocatedPixmap * > pixmapsToKeep;
     while (memoryToFree > 0)
     {
         int clean_hits = 0;
@@ -428,9 +428,9 @@ void DocumentPrivate::cleanupPixmapMemory( qulonglong memoryToFree )
  */
 AllocatedPixmap * DocumentPrivate::searchLowestPriorityPixmap( bool unloadableOnly, bool thenRemoveIt, DocumentObserver *observer )
 {
-    QLinkedList< AllocatedPixmap * >::iterator pIt = m_allocatedPixmaps.begin();
-    QLinkedList< AllocatedPixmap * >::iterator pEnd = m_allocatedPixmaps.end();
-    QLinkedList< AllocatedPixmap * >::iterator farthestPixmap = pEnd;
+    QList< AllocatedPixmap * >::iterator pIt = m_allocatedPixmaps.begin();
+    QList< AllocatedPixmap * >::iterator pEnd = m_allocatedPixmaps.end();
+    QList< AllocatedPixmap * >::iterator farthestPixmap = pEnd;
     const int currentViewportPage = (*m_viewportIterator).pageNumber;
 
     /* Find the pixmap that is farthest from the current viewport */
@@ -1251,7 +1251,7 @@ void DocumentPrivate::saveDocumentInfo() const
             rotationNode.appendChild( doc.createTextNode( QString::number( (int)m_rotation ) ) );
         }
         // <general info><history> ... </history> save history up to OKULAR_HISTORY_SAVEDSTEPS viewports
-        QLinkedList< DocumentViewport >::const_iterator backIterator = m_viewportIterator;
+        QList< DocumentViewport >::const_iterator backIterator = m_viewportIterator;
         if ( backIterator != m_viewportHistory.constEnd() )
         {
             // go back up to OKULAR_HISTORY_SAVEDSTEPS steps from the current viewportIterator
@@ -1264,7 +1264,7 @@ void DocumentPrivate::saveDocumentInfo() const
             generalInfo.appendChild( historyNode );
 
             // add old[backIterator] and present[viewportIterator] items
-            QLinkedList< DocumentViewport >::const_iterator endIt = m_viewportIterator;
+            QList< DocumentViewport >::const_iterator endIt = m_viewportIterator;
             ++endIt;
             while ( backIterator != endIt )
             {
@@ -1572,7 +1572,7 @@ void DocumentPrivate::refreshPixmaps( int pageNumber )
     if ( !page )
         return;
 
-    QLinkedList< Okular::PixmapRequest * > requestedPixmaps;
+    QList< Okular::PixmapRequest * > requestedPixmaps;
     QMap< DocumentObserver*, PagePrivate::PixmapObject >::ConstIterator it = page->d->m_pixmaps.constBegin(), itEnd = page->d->m_pixmaps.constEnd();
     for ( ; it != itEnd; ++it )
     {
@@ -2345,8 +2345,8 @@ void Document::closeDocument()
 
      // remove requests left in queue
     d->m_pixmapRequestsMutex.lock();
-    QLinkedList< PixmapRequest * >::const_iterator sIt = d->m_pixmapRequestsStack.constBegin();
-    QLinkedList< PixmapRequest * >::const_iterator sEnd = d->m_pixmapRequestsStack.constEnd();
+    QList< PixmapRequest * >::const_iterator sIt = d->m_pixmapRequestsStack.constBegin();
+    QList< PixmapRequest * >::const_iterator sEnd = d->m_pixmapRequestsStack.constEnd();
     for ( ; sIt != sEnd; ++sIt )
         delete *sIt;
     d->m_pixmapRequestsStack.clear();
@@ -2493,8 +2493,8 @@ void Document::removeObserver( DocumentObserver * pObserver )
             (*it)->deletePixmap( pObserver );
 
         // [MEM] free observer's allocation descriptors
-        QLinkedList< AllocatedPixmap * >::iterator aIt = d->m_allocatedPixmaps.begin();
-        QLinkedList< AllocatedPixmap * >::iterator aEnd = d->m_allocatedPixmaps.end();
+        QList< AllocatedPixmap * >::iterator aIt = d->m_allocatedPixmaps.begin();
+        QList< AllocatedPixmap * >::iterator aEnd = d->m_allocatedPixmaps.end();
         while ( aIt != aEnd )
         {
             AllocatedPixmap * p = *aIt;
@@ -2819,12 +2819,12 @@ QString Document::pageSizeString(int page) const
     return QString();
 }
 
-void Document::requestPixmaps( const QLinkedList< PixmapRequest * > & requests )
+void Document::requestPixmaps( const QList< PixmapRequest * > & requests )
 {
     requestPixmaps( requests, RemoveAllPrevious );
 }
 
-void Document::requestPixmaps( const QLinkedList< PixmapRequest * > & requests, PixmapRequestFlags reqOptions )
+void Document::requestPixmaps( const QList< PixmapRequest * > & requests, PixmapRequestFlags reqOptions )
 {
     if ( requests.isEmpty() )
         return;
@@ -2832,7 +2832,7 @@ void Document::requestPixmaps( const QLinkedList< PixmapRequest * > & requests, 
     if ( !d->m_pageController )
     {
         // delete requests..
-        QLinkedList< PixmapRequest * >::const_iterator rIt = requests.constBegin(), rEnd = requests.constEnd();
+        QList< PixmapRequest * >::const_iterator rIt = requests.constBegin(), rEnd = requests.constEnd();
         for ( ; rIt != rEnd; ++rIt )
             delete *rIt;
         // ..and return
@@ -2844,13 +2844,13 @@ void Document::requestPixmaps( const QLinkedList< PixmapRequest * > & requests, 
     DocumentObserver *requesterObserver = requests.first()->observer();
     QSet< int > requestedPages;
     {
-        QLinkedList< PixmapRequest * >::const_iterator rIt = requests.constBegin(), rEnd = requests.constEnd();
+        QList< PixmapRequest * >::const_iterator rIt = requests.constBegin(), rEnd = requests.constEnd();
         for ( ; rIt != rEnd; ++rIt )
             requestedPages.insert( (*rIt)->pageNumber() );
     }
     const bool removeAllPrevious = reqOptions & RemoveAllPrevious;
     d->m_pixmapRequestsMutex.lock();
-    QLinkedList< PixmapRequest * >::iterator sIt = d->m_pixmapRequestsStack.begin(), sEnd = d->m_pixmapRequestsStack.end();
+    QList< PixmapRequest * >::iterator sIt = d->m_pixmapRequestsStack.begin(), sEnd = d->m_pixmapRequestsStack.end();
     while ( sIt != sEnd )
     {
         if ( (*sIt)->observer() == requesterObserver
@@ -2865,7 +2865,7 @@ void Document::requestPixmaps( const QLinkedList< PixmapRequest * > & requests, 
     }
 
     // 2. [ADD TO STACK] add requests to stack
-    QLinkedList< PixmapRequest * >::const_iterator rIt = requests.constBegin(), rEnd = requests.constEnd();
+    QList< PixmapRequest * >::const_iterator rIt = requests.constBegin(), rEnd = requests.constEnd();
     for ( ; rIt != rEnd; ++rIt )
     {
         // set the 'page field' (see PixmapRequest) and check if it is valid
@@ -3244,7 +3244,7 @@ void Document::setPrevViewport()
 void Document::setNextViewport()
 // restore next viewport from the history
 {
-    QLinkedList< DocumentViewport >::const_iterator nextIterator = d->m_viewportIterator;
+    QList< DocumentViewport >::const_iterator nextIterator = d->m_viewportIterator;
     ++nextIterator;
     if ( nextIterator != d->m_viewportHistory.end() )
     {
@@ -4306,8 +4306,8 @@ void DocumentPrivate::requestDone( PixmapRequest * req )
 #endif
 
     // [MEM] 1.1 find and remove a previous entry for the same page and id
-    QLinkedList< AllocatedPixmap * >::iterator aIt = m_allocatedPixmaps.begin();
-    QLinkedList< AllocatedPixmap * >::iterator aEnd = m_allocatedPixmaps.end();
+    QList< AllocatedPixmap * >::iterator aIt = m_allocatedPixmaps.begin();
+    QList< AllocatedPixmap * >::iterator aEnd = m_allocatedPixmaps.end();
     for ( ; aIt != aEnd; ++aIt )
         if ( (*aIt)->page == req->pageNumber() && (*aIt)->observer == req->observer() )
         {

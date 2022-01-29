@@ -9,7 +9,7 @@
 
 #include <qtest_kde.h>
 
-#include <QLinkedList>
+#include <QList>
 
 #include "../core/document.h"
 #include "../core/generator.h"
@@ -44,7 +44,7 @@ void DocumentTest::testCloseDuringRotationJob()
     // Request a pixmap. A RotationJob will be enqueued but not started
     Okular::PixmapRequest *pixmapReq = new Okular::PixmapRequest(
         dummyDocumentObserver, 0, 100, 100, 1, Okular::PixmapRequest::NoFeature );
-    m_document->requestPixmaps( QLinkedList<Okular::PixmapRequest*>() << pixmapReq );
+    m_document->requestPixmaps( QList<Okular::PixmapRequest*>() << pixmapReq );
 
     // Delete the document
     delete m_document;

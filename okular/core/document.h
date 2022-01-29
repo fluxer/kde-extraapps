@@ -362,7 +362,7 @@ class OKULAR_EXPORT Document : public QObject
          *
          * The same as requestPixmaps( requests, RemoveAllPrevious );
          */
-        void requestPixmaps( const QLinkedList<PixmapRequest*> &requests );
+        void requestPixmaps( const QList<PixmapRequest*> &requests );
 
         /**
          * Sends @p requests for pixmap generation.
@@ -371,7 +371,7 @@ class OKULAR_EXPORT Document : public QObject
          *
          * @since 0.7 (KDE 4.1)
          */
-        void requestPixmaps( const QLinkedList<PixmapRequest*> &requests, PixmapRequestFlags reqOptions );
+        void requestPixmaps( const QList<PixmapRequest*> &requests, PixmapRequestFlags reqOptions );
 
         /**
          * Sends a request for text page generation for the given page @p number.

@@ -288,7 +288,7 @@ void DjVuGenerator::loadPages( QVector<Okular::Page*> & pagesVector, int rotatio
         userMutex()->unlock();
         if ( !links.isEmpty() )
         {
-            QLinkedList<Okular::ObjectRect *> rects;
+            QList<Okular::ObjectRect *> rects;
             QList<KDjVu::Link*>::ConstIterator it = links.constBegin();
             QList<KDjVu::Link*>::ConstIterator itEnd = links.constEnd();
             for ( ; it != itEnd; ++it )
@@ -438,7 +438,7 @@ Okular::Annotation* DjVuGenerator::convertKDjVuAnnotation( int w, int h, KDjVu::
             QRect rect = QRect( a, b ).normalized();
             newlineann->setBoundingRectangle( Okular::NormalizedRect( Okular::Utils::rotateRect( rect, w, h, 0 ), w, h ) );
             // line points
-            QLinkedList<Okular::NormalizedPoint> points;
+            QList<Okular::NormalizedPoint> points;
             points.append( Okular::NormalizedPoint( a.x(), a.y(), w, h ) );
             points.append( Okular::NormalizedPoint( b.x(), b.y(), w, h ) );
             newlineann->setLinePoints( points );

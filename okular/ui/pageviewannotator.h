@@ -12,7 +12,7 @@
 
 #include <qobject.h>
 #include <qdom.h>
-#include <qlinkedlist.h>
+#include <qlist.h>
 
 #include "pageviewutils.h"
 #include "annotationtools.h"
@@ -104,7 +104,7 @@ class PageViewAnnotator : public QObject
         PageViewToolBar * m_toolBar;
         AnnotatorEngine * m_engine;
         QDomElement m_toolsDefinition;
-        QLinkedList<AnnotationToolItem> m_items;
+        QList<AnnotationToolItem> m_items;
         bool m_textToolsEnabled;
         bool m_toolsEnabled;
         bool m_continuousMode;

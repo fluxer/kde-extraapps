@@ -12,7 +12,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QDateTime>
-#include <QtCore/QLinkedList>
+#include <QtCore/QList>
 #include <QtCore/QRect>
 #include <QtGui/QFont>
 
@@ -588,12 +588,12 @@ class OKULAR_EXPORT Annotation
         /**
          * Returns a reference to the revision list of the annotation.
          */
-        QLinkedList< Revision > & revisions();
+        QList< Revision > & revisions();
 
         /**
          * Returns a reference to the revision list of the annotation.
          */
-        const QLinkedList< Revision > & revisions() const;
+        const QList< Revision > & revisions() const;
 
         /**
          * Sets the "native" @p id of the annotation.
@@ -902,18 +902,18 @@ class OKULAR_EXPORT LineAnnotation : public Annotation
         /**
          * Sets the normalized line @p points of the line annotation.
          */
-        void setLinePoints( const QLinkedList<NormalizedPoint> &points );
+        void setLinePoints( const QList<NormalizedPoint> &points );
 
         /**
          * Returns the normalized line points of the line annotation.
          */
-        QLinkedList<NormalizedPoint> linePoints() const;
+        QList<NormalizedPoint> linePoints() const;
 
         /**
          * Returns the transformed (e.g. rotated) normalized line points
          * of the line annotation.
          */
-        QLinkedList<NormalizedPoint> transformedLinePoints() const;
+        QList<NormalizedPoint> transformedLinePoints() const;
 
         /**
          * Sets the line starting @p style of the line annotation.
@@ -1283,18 +1283,18 @@ class OKULAR_EXPORT InkAnnotation : public Annotation
         /**
          * Sets the @p paths of points for the ink annotation.
          */
-        void setInkPaths( const QList< QLinkedList<NormalizedPoint> > &paths );
+        void setInkPaths( const QList< QList<NormalizedPoint> > &paths );
 
         /**
          * Returns the paths of points of the ink annotation.
          */
-        QList< QLinkedList<NormalizedPoint> > inkPaths() const;
+        QList< QList<NormalizedPoint> > inkPaths() const;
 
         /**
          * Returns the paths of transformed (e.g. rotated) points of
          * the ink annotation.
          */
-        QList< QLinkedList<NormalizedPoint> > transformedInkPaths() const;
+        QList< QList<NormalizedPoint> > transformedInkPaths() const;
 
         /**
          * Returns the sub type of the ink annotation.

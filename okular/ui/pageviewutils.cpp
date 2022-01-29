@@ -485,7 +485,7 @@ public:
 
     // background pixmap and buttons
     QPixmap backgroundPixmap;
-    QLinkedList< ToolBarButton * > buttons;
+    QList< ToolBarButton * > buttons;
 };
 
 PageViewToolBar::PageViewToolBar( PageView * parent, QWidget * anchorWidget )
@@ -514,19 +514,19 @@ PageViewToolBar::~PageViewToolBar()
     delete d;
 }
 
-void PageViewToolBar::setItems( const QLinkedList<AnnotationToolItem> &items )
+void PageViewToolBar::setItems( const QList<AnnotationToolItem> &items )
 {
     // delete buttons if already present
     if ( !d->buttons.isEmpty() )
     {
-        QLinkedList< ToolBarButton * >::iterator it = d->buttons.begin(), end = d->buttons.end();
+        QList< ToolBarButton * >::iterator it = d->buttons.begin(), end = d->buttons.end();
         for ( ; it != end; ++it )
             delete *it;
         d->buttons.clear();
     }
 
     // create new buttons for given items
-    QLinkedList<AnnotationToolItem>::const_iterator it = items.begin(), end = items.end();
+    QList<AnnotationToolItem>::const_iterator it = items.begin(), end = items.end();
     for ( ; it != end; ++it )
     {
         ToolBarButton * button = new ToolBarButton( this, *it );
@@ -591,7 +591,7 @@ void PageViewToolBar::selectButton( int id )
         button = *(d->buttons.begin() + id);
     else
     {
-        QLinkedList< ToolBarButton * >::const_iterator it = d->buttons.begin(), end = d->buttons.end();
+        QList< ToolBarButton * >::const_iterator it = d->buttons.begin(), end = d->buttons.end();
         for ( ; !button && it != end; ++it )
             if ( (*it)->isChecked() )
                 button = *it;
@@ -786,7 +786,7 @@ void ToolBarPrivate::buildToolBar()
     // 6. reposition buttons (in rows/col grid)
     int gridX = 0,
         gridY = 0;
-    QLinkedList< ToolBarButton * >::const_iterator it = buttons.begin(), end = buttons.end();
+    QList< ToolBarButton * >::const_iterator it = buttons.begin(), end = buttons.end();
     for ( ; it != end; ++it )
     {
         ToolBarButton * button = *it;
@@ -821,7 +821,7 @@ void ToolBarPrivate::reposition()
     q->move( currentPosition );
 
     // repaint all buttons (to update background)
-    QLinkedList< ToolBarButton * >::const_iterator it = buttons.begin(), end = buttons.end();
+    QList< ToolBarButton * >::const_iterator it = buttons.begin(), end = buttons.end();
     for ( ; it != end; ++it )
         (*it)->update();
 }
@@ -910,7 +910,7 @@ void ToolBarPrivate::selectButton( ToolBarButton * button )
     if ( button )
     {
         // deselect other buttons
-        QLinkedList< ToolBarButton * >::const_iterator it = buttons.begin(), end = buttons.end();
+        QList< ToolBarButton * >::const_iterator it = buttons.begin(), end = buttons.end();
         for ( ; it != end; ++it )
             if ( *it != button )
                 (*it)->setChecked( false );
@@ -921,14 +921,14 @@ void ToolBarPrivate::selectButton( ToolBarButton * button )
 
 void PageViewToolBar::setToolsEnabled( bool on )
 {
-    QLinkedList< ToolBarButton * >::const_iterator it = d->buttons.begin(), end = d->buttons.end();
+    QList< ToolBarButton * >::const_iterator it = d->buttons.begin(), end = d->buttons.end();
     for ( ; it != end; ++it )
         (*it)->setEnabled( on );
 }
 
 void PageViewToolBar::setTextToolsEnabled( bool on )
 {
-    QLinkedList< ToolBarButton * >::const_iterator it = d->buttons.begin(), end = d->buttons.end();
+    QList< ToolBarButton * >::const_iterator it = d->buttons.begin(), end = d->buttons.end();
     for ( ; it != end; ++it )
         if ( (*it)->isText() )
             (*it)->setEnabled( on );

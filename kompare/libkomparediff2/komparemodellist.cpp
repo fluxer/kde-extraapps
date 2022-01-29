@@ -24,7 +24,7 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
-#include <QtCore/QLinkedList>
+#include <QtCore/QList>
 
 #include <kaction.h>
 #include <kactioncollection.h>
@@ -1042,13 +1042,13 @@ bool KompareModelList::blendFile( DiffModel* model, const QString& fileContents 
 	int srcLineNo = 1, destLineNo = 1;
 
 	QStringList list = split( fileContents );
-	QLinkedList<QString> lines;
+	QList<QString> lines;
 	foreach (const QString &str, list) {
 		lines.append(str);
 	}
 
-	QLinkedList<QString>::ConstIterator linesIt = lines.begin();
-	QLinkedList<QString>::ConstIterator lEnd    = lines.end();
+	QList<QString>::ConstIterator linesIt = lines.begin();
+	QList<QString>::ConstIterator lEnd    = lines.end();
 
 	DiffHunkList* hunks = model->hunks();
 	kDebug(8101) << "Hunks in hunklist: " << hunks->count() << endl;

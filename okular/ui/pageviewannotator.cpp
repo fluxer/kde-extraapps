@@ -424,7 +424,7 @@ class PolyLineEngine : public AnnotatorEngine
                 //add note
                 Okular::LineAnnotation * la = new Okular::LineAnnotation();
                 ann = la;
-                QLinkedList<Okular::NormalizedPoint> list;
+                QList<Okular::NormalizedPoint> list;
                 for ( int i = 0; i < points.count(); ++i )
                     list.append( points[ i ] );
 

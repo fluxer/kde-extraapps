@@ -325,7 +325,7 @@ Document::OpenResult TextDocumentGenerator::loadDocumentWithPassword( const QStr
 
     const QSize size = d->mDocument->pageSize().toSize();
 
-    QVector< QLinkedList<Okular::ObjectRect*> > objects( d->mDocument->pageCount() );
+    QVector< QList<Okular::ObjectRect*> > objects( d->mDocument->pageCount() );
     for ( int i = 0; i < d->mLinkInfos.count(); ++i ) {
         const TextDocumentGeneratorPrivate::LinkInfo &info = d->mLinkInfos.at( i );
 
@@ -338,7 +338,7 @@ Document::OpenResult TextDocumentGenerator::loadDocumentWithPassword( const QStr
                                                              Okular::ObjectRect::Action, info.link ) );
     }
 
-    QVector< QLinkedList<Okular::Annotation*> > annots( d->mDocument->pageCount() );
+    QVector< QList<Okular::Annotation*> > annots( d->mDocument->pageCount() );
     for ( int i = 0; i < d->mAnnotationInfos.count(); ++i ) {
         const TextDocumentGeneratorPrivate::AnnotationInfo &info = d->mAnnotationInfos[ i ];
         annots[ info.page ].append( info.annotation );
@@ -351,7 +351,7 @@ Document::OpenResult TextDocumentGenerator::loadDocumentWithPassword( const QStr
         if ( !objects.at( i ).isEmpty() ) {
             page->setObjectRects( objects.at( i ) );
         }
-        QLinkedList<Okular::Annotation*>::ConstIterator annIt = annots.at( i ).begin(), annEnd = annots.at( i ).end();
+        QList<Okular::Annotation*>::ConstIterator annIt = annots.at( i ).begin(), annEnd = annots.at( i ).end();
         for ( ; annIt != annEnd; ++annIt ) {
             page->addAnnotation( *annIt );
         }

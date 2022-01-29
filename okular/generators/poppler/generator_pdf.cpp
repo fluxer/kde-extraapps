@@ -277,9 +277,9 @@ Okular::Action* createLinkFromPopplerLink(const Poppler::Link *popplerLink)
 /**
  * Note: the function will take ownership of the popplerLink objects.
  */
-static QLinkedList<Okular::ObjectRect*> generateLinks( const QList<Poppler::Link*> &popplerLinks )
+static QList<Okular::ObjectRect*> generateLinks( const QList<Poppler::Link*> &popplerLinks )
 {
-    QLinkedList<Okular::ObjectRect*> links;
+    QList<Okular::ObjectRect*> links;
     foreach(const Poppler::Link *popplerLink, popplerLinks)
     {
         QRectF linkArea = popplerLink->linkArea();
@@ -1416,7 +1416,7 @@ void PDFGenerator::addTransition( Poppler::Page * pdfPage, Okular::Page * page )
 void PDFGenerator::addFormFields( Poppler::Page * popplerPage, Okular::Page * page )
 {
     QList<Poppler::FormField*> popplerFormFields = popplerPage->formFields();
-    QLinkedList<Okular::FormField*> okularFormFields;
+    QList<Okular::FormField*> okularFormFields;
     foreach( Poppler::FormField *f, popplerFormFields )
     {
         Okular::FormField * of = 0;
@@ -1548,7 +1548,7 @@ void PDFGenerator::loadPdfSync( const QString & filePath, QVector<Okular::Page*>
 
     }
 
-    QVector< QLinkedList< Okular::SourceRefObjectRect * > > refRects( pagesVector.size() );
+    QVector< QList< Okular::SourceRefObjectRect * > > refRects( pagesVector.size() );
     foreach ( const pdfsyncpoint& pt, points )
     {
         // drop pdfsync points not completely valid

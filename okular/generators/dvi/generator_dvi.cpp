@@ -168,9 +168,9 @@ void DviGenerator::fillViewportFromAnchor( Okular::DocumentViewport &vp,
     vp.rePos.pos = Okular::DocumentViewport::Center;
 }
 
-QLinkedList<Okular::ObjectRect*> DviGenerator::generateDviLinks( const dviPageInfo *pageInfo )
+QList<Okular::ObjectRect*> DviGenerator::generateDviLinks( const dviPageInfo *pageInfo )
 {
-    QLinkedList<Okular::ObjectRect*> dviLinks;
+    QList<Okular::ObjectRect*> dviLinks;
 
     int pageWidth = pageInfo->width, pageHeight = pageInfo->height;
     
@@ -535,7 +535,7 @@ void DviGenerator::loadPages( QVector< Okular::Page * > &pagesVector )
 
     // filling the pages with the source references rects
     const QVector<DVI_SourceFileAnchor>& sourceAnchors = m_dviRenderer->sourceAnchors();
-    QVector< QLinkedList< Okular::SourceRefObjectRect * > > refRects( numofpages );
+    QVector< QList< Okular::SourceRefObjectRect * > > refRects( numofpages );
     foreach ( const DVI_SourceFileAnchor& sfa, sourceAnchors )
     {
         if ( sfa.page < 1 || (int)sfa.page > numofpages )

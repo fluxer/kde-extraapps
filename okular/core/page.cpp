@@ -52,9 +52,9 @@ using namespace Okular;
 
 static const double distanceConsideredEqual = 25; // 5px
 
-static void deleteObjectRects( QLinkedList< ObjectRect * >& rects, const QSet<ObjectRect::ObjectType>& which )
+static void deleteObjectRects( QList< ObjectRect * >& rects, const QSet<ObjectRect::ObjectType>& which )
 {
-    QLinkedList< ObjectRect * >::iterator it = rects.begin(), end = rects.end();
+    QList< ObjectRect * >::iterator it = rects.begin(), end = rects.end();
     for ( ; it != end; )
         if ( which.contains( (*it)->objectType() ) )
         {
@@ -252,7 +252,7 @@ bool Page::hasObjectRect( double x, double y, double xScale, double yScale ) con
     if ( m_rects.isEmpty() )
         return false;
 
-    QLinkedList< ObjectRect * >::const_iterator it = m_rects.begin(), end = m_rects.end();
+    QList< ObjectRect * >::const_iterator it = m_rects.begin(), end = m_rects.end();
     for ( ; it != end; ++it )
         if ( (*it)->distanceSqr( x, y, xScale, yScale ) < distanceConsideredEqual )
             return true;
@@ -269,7 +269,7 @@ bool Page::hasHighlights( int s_id ) const
     if ( s_id == -1 )
         return true;
     // iterate on the highlights list to find an entry by id
-    QLinkedList< HighlightAreaRect * >::const_iterator it = m_highlights.begin(), end = m_highlights.end();
+    QList< HighlightAreaRect * >::const_iterator it = m_highlights.begin(), end = m_highlights.end();
     for ( ; it != end; ++it )
         if ( (*it)->s_id == s_id )
             return true;
@@ -393,11 +393,11 @@ void PagePrivate::rotateAt( Rotation orientation )
      * Rotate the object rects on the page.
      */
     const QTransform matrix = rotationMatrix();
-    QLinkedList< ObjectRect * >::const_iterator objectIt = m_page->m_rects.begin(), end = m_page->m_rects.end();
+    QList< ObjectRect * >::const_iterator objectIt = m_page->m_rects.begin(), end = m_page->m_rects.end();
     for ( ; objectIt != end; ++objectIt )
         (*objectIt)->transform( matrix );
 
-    QLinkedList< HighlightAreaRect* >::const_iterator hlIt = m_page->m_highlights.begin(), hlItEnd = m_page->m_highlights.end();
+    QList< HighlightAreaRect* >::const_iterator hlIt = m_page->m_highlights.begin(), hlItEnd = m_page->m_highlights.end();
     for ( ; hlIt != hlItEnd; ++hlIt )
     {
         (*hlIt)->transform( RotationJob::rotationMatrix( oldRotation, m_rotation ) );
@@ -422,7 +422,7 @@ void PagePrivate::changeSize( const PageSize &size )
 const ObjectRect * Page::objectRect( ObjectRect::ObjectType type, double x, double y, double xScale, double yScale ) const
 {
     // Walk list in reverse order so that annotations in the foreground are preferred
-    QLinkedListIterator< ObjectRect * > it( m_rects );
+    QListIterator< ObjectRect * > it( m_rects );
     it.toBack();
     while ( it.hasPrevious() )
     {
@@ -434,11 +434,11 @@ const ObjectRect * Page::objectRect( ObjectRect::ObjectType type, double x, doub
     return 0;
 }
 
-QLinkedList< const ObjectRect * > Page::objectRects( ObjectRect::ObjectType type, double x, double y, double xScale, double yScale ) const
+QList< const ObjectRect * > Page::objectRects( ObjectRect::ObjectType type, double x, double y, double xScale, double yScale ) const
 {
-    QLinkedList< const ObjectRect * > result;
+    QList< const ObjectRect * > result;
 
-    QLinkedListIterator< ObjectRect * > it( m_rects );
+    QListIterator< ObjectRect * > it( m_rects );
     it.toBack();
     while ( it.hasPrevious() )
     {
@@ -456,7 +456,7 @@ const ObjectRect* Page::nearestObjectRect( ObjectRect::ObjectType type, double x
     ObjectRect * res = 0;
     double minDistance = std::numeric_limits<double>::max();
 
-    QLinkedList< ObjectRect * >::const_iterator it = m_rects.constBegin(), end = m_rects.constEnd();
+    QList< ObjectRect * >::const_iterator it = m_rects.constBegin(), end = m_rects.constEnd();
     for ( ; it != end; ++it )
     {
         if ( (*it)->objectType() == type )
@@ -480,7 +480,7 @@ const PageTransition * Page::transition() const
     return d->m_transition;
 }
 
-QLinkedList< Annotation* > Page::annotations() const
+QList< Annotation* > Page::annotations() const
 {
     return m_annotations;
 }
@@ -500,7 +500,7 @@ const Action * Page::pageAction( PageAction action ) const
     return 0;
 }
 
-QLinkedList< FormField * > Page::formFields() const
+QList< FormField * > Page::formFields() const
 {
     return d->formfields;
 }
@@ -552,7 +552,7 @@ void Page::setTextPage( TextPage * textPage )
     }
 }
 
-void Page::setObjectRects( const QLinkedList< ObjectRect * > & rects )
+void Page::setObjectRects( const QList< ObjectRect * > & rects )
 {
     QSet<ObjectRect::ObjectType> which;
     which << ObjectRect::Action << ObjectRect::Image;
@@ -563,7 +563,7 @@ void Page::setObjectRects( const QLinkedList< ObjectRect * > & rects )
      */
     const QTransform matrix = d->rotationMatrix();
 
-    QLinkedList< ObjectRect * >::const_iterator objectIt = rects.begin(), end = rects.end();
+    QList< ObjectRect * >::const_iterator objectIt = rects.begin(), end = rects.end();
     for ( ; objectIt != end; ++objectIt )
         (*objectIt)->transform( matrix );
 
@@ -592,7 +592,7 @@ void PagePrivate::setTextSelections( RegularAreaRect *r, const QColor & color )
     }
 }
 
-void Page::setSourceReferences( const QLinkedList< SourceRefObjectRect * > & refRects )
+void Page::setSourceReferences( const QList< SourceRefObjectRect * > & refRects )
 {
     deleteSourceReferences();
     foreach( SourceRefObjectRect * rect, refRects )
@@ -654,13 +654,13 @@ bool Page::removeAnnotation( Annotation * annotation )
     if ( !d->m_doc->m_parent->canRemovePageAnnotation(annotation) )
         return false;
 
-    QLinkedList< Annotation * >::iterator aIt = m_annotations.begin(), aEnd = m_annotations.end();
+    QList< Annotation * >::iterator aIt = m_annotations.begin(), aEnd = m_annotations.end();
     for ( ; aIt != aEnd; ++aIt )
     {
         if((*aIt) && (*aIt)->uniqueName()==annotation->uniqueName())
         {
             int rectfound = false;
-            QLinkedList< ObjectRect * >::iterator it = m_rects.begin(), end = m_rects.end();
+            QList< ObjectRect * >::iterator it = m_rects.begin(), end = m_rects.end();
             for ( ; it != end && !rectfound; ++it )
                 if ( ( (*it)->objectType() == ObjectRect::OAnnotation ) && ( (*it)->object() == (*aIt) ) )
                 {
@@ -699,11 +699,11 @@ void Page::setPageAction( PageAction action, Action * link )
     }
 }
 
-void Page::setFormFields( const QLinkedList< FormField * >& fields )
+void Page::setFormFields( const QList< FormField * >& fields )
 {
     qDeleteAll( d->formfields );
     d->formfields = fields;
-    QLinkedList< FormField * >::const_iterator it = d->formfields.begin(), itEnd = d->formfields.end();
+    QList< FormField * >::const_iterator it = d->formfields.begin(), itEnd = d->formfields.end();
     for ( ; it != itEnd; ++it )
     {
         (*it)->d_ptr->setDefault();
@@ -750,7 +750,7 @@ void Page::deleteRects()
 void PagePrivate::deleteHighlights( int s_id )
 {
     // delete highlights by ID
-    QLinkedList< HighlightAreaRect* >::iterator it = m_page->m_highlights.begin(), end = m_page->m_highlights.end();
+    QList< HighlightAreaRect* >::iterator it = m_page->m_highlights.begin(), end = m_page->m_highlights.end();
     while ( it != end )
     {
         HighlightAreaRect* highlight = *it;
@@ -780,7 +780,7 @@ void Page::deleteAnnotations()
     // delete ObjectRects of type Annotation
     deleteObjectRects( m_rects, QSet<ObjectRect::ObjectType>() << ObjectRect::OAnnotation );
     // delete all stored annotations
-    QLinkedList< Annotation * >::const_iterator aIt = m_annotations.begin(), aEnd = m_annotations.end();
+    QList< Annotation * >::const_iterator aIt = m_annotations.begin(), aEnd = m_annotations.end();
     for ( ; aIt != aEnd; ++aIt )
         delete *aIt;
     m_annotations.clear();
@@ -837,7 +837,7 @@ void PagePrivate::restoreLocalContents( const QDomNode & pageNode )
                 continue;
 
             QHash<int, FormField*> hashedforms;
-            QLinkedList< FormField * >::const_iterator fIt = formfields.begin(), fItEnd = formfields.end();
+            QList< FormField * >::const_iterator fIt = formfields.begin(), fItEnd = formfields.end();
             for ( ; fIt != fItEnd; ++fIt )
             {
                 hashedforms[(*fIt)->id()] = (*fIt);
@@ -906,7 +906,7 @@ void PagePrivate::saveLocalContents( QDomNode & parentNode, QDomDocument & docum
         QDomElement annotListElement = document.createElement( "annotationList" );
 
         // add every annotation to the annotationList
-        QLinkedList< Annotation * >::const_iterator aIt = m_page->m_annotations.constBegin(), aEnd = m_page->m_annotations.constEnd();
+        QList< Annotation * >::const_iterator aIt = m_page->m_annotations.constBegin(), aEnd = m_page->m_annotations.constEnd();
         for ( ; aIt != aEnd; ++aIt )
         {
             // get annotation
@@ -934,7 +934,7 @@ void PagePrivate::saveLocalContents( QDomNode & parentNode, QDomDocument & docum
         QDomElement formListElement = document.createElement( "forms" );
 
         // add every form data to the formList
-        QLinkedList< FormField * >::const_iterator fIt = formfields.constBegin(), fItEnd = formfields.constEnd();
+        QList< FormField * >::const_iterator fIt = formfields.constBegin(), fItEnd = formfields.constEnd();
         for ( ; fIt != fItEnd; ++fIt )
         {
             // get the form field

@@ -310,7 +310,7 @@ void PageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     const int priority = m_isThumbnail ? THUMBNAILS_PRIO : PAGEVIEW_PRIO;
 
     if (m_intentionalDraw) {
-        QLinkedList<Okular::PixmapRequest *> requestedPixmaps;
+        QList<Okular::PixmapRequest *> requestedPixmaps;
         requestedPixmaps.push_back(new Okular::PixmapRequest(observer, m_viewPort.pageNumber, width(), height(), priority, Okular::PixmapRequest::Asynchronous));
         const Okular::Document::PixmapRequestFlag prf = m_isThumbnail ? Okular::Document::NoOption : Okular::Document::RemoveAllPrevious;
         m_documentItem.data()->document()->requestPixmaps(requestedPixmaps, prf);

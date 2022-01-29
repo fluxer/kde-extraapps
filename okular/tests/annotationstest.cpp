@@ -76,7 +76,7 @@ void AnnotationTest::testDistance_data()
 
     // lines
     Okular::LineAnnotation *line = new Okular::LineAnnotation;
-    line->setLinePoints( QLinkedList< Okular::NormalizedPoint >()
+    line->setLinePoints( QList< Okular::NormalizedPoint >()
         << Okular::NormalizedPoint( 0.1, 0.1 )
         << Okular::NormalizedPoint( 0.9, 0.1 )
     );

@@ -102,7 +102,7 @@ struct PresentationFrame
     const Okular::Page * page;
     QRect geometry;
     QHash< Okular::Movie *, VideoWidget * > videoWidgets;
-    QLinkedList< SmoothPath > drawings;
+    QList< SmoothPath > drawings;
 };
 
 
@@ -321,8 +321,8 @@ void PresentationWidget::notifySetup( const QVector< Okular::Page * > & pageSet,
     {
         PresentationFrame * frame = new PresentationFrame();
         frame->page = *setIt;
-        const QLinkedList< Okular::Annotation * > annotations = (*setIt)->annotations();
-        QLinkedList< Okular::Annotation * >::const_iterator aIt = annotations.begin(), aEnd = annotations.end();
+        const QList< Okular::Annotation * > annotations = (*setIt)->annotations();
+        QList< Okular::Annotation * >::const_iterator aIt = annotations.begin(), aEnd = annotations.end();
         for ( ; aIt != aEnd; ++aIt )
         {
             Okular::Annotation * a = *aIt;
@@ -1261,7 +1261,7 @@ void PresentationWidget::requestPixmaps()
     // operation will take long: set busy cursor
     QApplication::setOverrideCursor( QCursor( Qt::BusyCursor ) );
     // request the pixmap
-    QLinkedList< Okular::PixmapRequest * > requests;
+    QList< Okular::PixmapRequest * > requests;
     requests.push_back( new Okular::PixmapRequest( this, m_frameIndex, pixW, pixH, PRESENTATION_PRIO, Okular::PixmapRequest::NoFeature ) );
     // restore cursor
     QApplication::restoreOverrideCursor();

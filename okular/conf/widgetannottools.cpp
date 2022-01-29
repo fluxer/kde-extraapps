@@ -507,7 +507,7 @@ void EditAnnotToolDialog::createStubAnnotation()
     else if ( toolType == ToolStraightLine )
     {
         Okular::LineAnnotation * la = new Okular::LineAnnotation();
-        la->setLinePoints( QLinkedList<Okular::NormalizedPoint>() <<
+        la->setLinePoints( QList<Okular::NormalizedPoint>() <<
                                 Okular::NormalizedPoint(0,0) <<
                                 Okular::NormalizedPoint(1,0) );
         la->style().setColor( QColor( 0xff, 0xe0, 0x00 ) );
@@ -516,7 +516,7 @@ void EditAnnotToolDialog::createStubAnnotation()
     else if ( toolType == ToolPolygon )
     {
         Okular::LineAnnotation * la = new Okular::LineAnnotation();
-        la->setLinePoints( QLinkedList<Okular::NormalizedPoint>() <<
+        la->setLinePoints( QList<Okular::NormalizedPoint>() <<
                                 Okular::NormalizedPoint(0,0) <<
                                 Okular::NormalizedPoint(1,0) <<
                                 Okular::NormalizedPoint(1,1) );

@@ -10,7 +10,7 @@
 #ifndef OKULAR_TESTINGUTILS_H
 #define OKULAR_TESTINGUTILS_H
 
-#include <QLinkedList>
+#include <QList>
 #include <QString>
 
 namespace Okular {
@@ -29,7 +29,7 @@ namespace TestingUtils
      * Returns true if the pairwise comparison coordinates of points in @p points1 and @p points2 are almost
      * equal (according to qFuzzyCompare)
      */
-    bool pointListsAlmostEqual( QLinkedList< Okular::NormalizedPoint > points1, QLinkedList< Okular::NormalizedPoint > points2 );
+    bool pointListsAlmostEqual( QList< Okular::NormalizedPoint > points1, QList< Okular::NormalizedPoint > points2 );
 
     /*
      * The AnnotationDisposeWatcher class provides a static disposeAnnotation function
