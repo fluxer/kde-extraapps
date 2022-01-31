@@ -91,7 +91,7 @@ static bool attachExistingInstance(const QStringList &paths, const QString &seri
                 return false;
 
             const size_t bufSize = 1024*1024;
-            QScopedPointer<char,QScopedPointerArrayDeleter<char> > buf( new char[bufSize] );
+            QByteArray buf( bufSize, Qt::Uninitialized );
             size_t bytes;
             do
             {
