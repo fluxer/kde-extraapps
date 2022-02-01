@@ -494,14 +494,15 @@ void PreviewWidget::paint(QPainter *painter,
     painter->save();
     QFont font = KGlobalSettings::smallestReadableFont();
     font.setBold(true);
+    QFontMetrics fontmetrics(font);
     painter->setFont(font);
     painter->setPen(Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor));
     painter->drawText(QRect(39, 3, contentsRect.width() - 39, 30), Qt::AlignBottom | Qt::AlignLeft,
                       ' ' + i18n("Previewer"));
-    int length = opt->fontMetrics.width(i18n("Previewer") + "  ");
+    int length = fontmetrics.width(i18n("Previewer") + "  ");
     font.setBold(false);
     painter->setFont(KGlobalSettings::smallestReadableFont());
-    QString elidedHint = opt->fontMetrics.elidedText(i18n("Drop files on me to preview them."), Qt::ElideRight, contentsRect.width() - 39 - length - 3);
+    QString elidedHint = fontmetrics.elidedText(i18n("Drop files on me to preview them."), Qt::ElideRight, contentsRect.width() - 39 - length - 3);
     painter->drawText(QRect(39 + length + 3, 3, contentsRect.width() - 39 - length - 3, 30),
                       Qt::AlignBottom | Qt::AlignLeft,
                       elidedHint);
