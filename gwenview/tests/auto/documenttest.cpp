@@ -83,10 +83,8 @@ void DocumentTest::testLoad()
 
     KUrl url = urlForTestFile(fileName);
 
-    if (expectedKind != MimeTypeUtils::KIND_SVG_IMAGE) {
-        if (expectedImage.isNull()) {
-            QSKIP("Not running this test: QImage failed to load the test image", SkipSingle);
-        }
+    if (expectedImage.isNull()) {
+        QSKIP("Not running this test: QImage failed to load the test image", SkipSingle);
     }
 
     Document::Ptr doc = DocumentFactory::instance()->load(url);

@@ -53,7 +53,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include "gvdebug.h"
 #include "imageutils.h"
 #include "orientation.h"
-#include "svgdocumentloadedimpl.h"
 #include "urlutils.h"
 #include "gwenviewconfig.h"
 
@@ -136,6 +135,7 @@ struct LoadingDocumentImplPrivate
 
         switch (q->document()->kind()) {
         case MimeTypeUtils::KIND_RASTER_IMAGE:
+        case MimeTypeUtils::KIND_SVG_IMAGE:
             // The hint is used to:
             // - Speed up loadMetaInfo(): QImageReader will try to decode the
             //   image using plugins matching this format first.
@@ -147,10 +147,6 @@ struct LoadingDocumentImplPrivate
                 .section('.', -1).toAscii().toLower();
             mMetaInfoFuture = QtConcurrent::run(this, &LoadingDocumentImplPrivate::loadMetaInfo);
             mMetaInfoFutureWatcher.setFuture(mMetaInfoFuture);
-            break;
-
-        case MimeTypeUtils::KIND_SVG_IMAGE:
-            q->switchToImpl(new SvgDocumentLoadedImpl(q->document(), mData));
             break;
 
         default:

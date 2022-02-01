@@ -51,7 +51,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <lib/documentview/messageviewadapter.h>
 #include <lib/documentview/rasterimageview.h>
 #include <lib/documentview/rasterimageviewadapter.h>
-#include <lib/documentview/svgviewadapter.h>
 #include <lib/hud/hudbutton.h>
 #include <lib/hud/hudwidget.h>
 #include <lib/graphicswidgetfloater.h>
@@ -353,10 +352,8 @@ void DocumentView::createAdapterForDocument()
     AbstractDocumentViewAdapter* adapter = 0;
     switch (documentKind) {
     case MimeTypeUtils::KIND_RASTER_IMAGE:
-        adapter = new RasterImageViewAdapter;
-        break;
     case MimeTypeUtils::KIND_SVG_IMAGE:
-        adapter = new SvgViewAdapter;
+        adapter = new RasterImageViewAdapter;
         break;
     case MimeTypeUtils::KIND_UNKNOWN:
         adapter = new MessageViewAdapter;

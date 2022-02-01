@@ -557,9 +557,4 @@ bool Document::isBusy() const
     return !d->mJobQueue.isEmpty();
 }
 
-QSvgRenderer* Document::svgRenderer() const
-{
-    return d->mImpl->svgRenderer();
-}
-
 } // namespace

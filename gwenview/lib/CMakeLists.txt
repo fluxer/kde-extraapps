@@ -22,7 +22,6 @@ set(gwenviewlib_SRCS
     document/loadingdocumentimpl.cpp
     document/loadingjob.cpp
     document/savejob.cpp
-    document/svgdocumentloadedimpl.cpp
     documentview/abstractdocumentviewadapter.cpp
     documentview/abstractimageview.cpp
     documentview/abstractrasterimageviewtool.cpp
@@ -34,7 +33,6 @@ set(gwenviewlib_SRCS
     documentview/messageviewadapter.cpp
     documentview/rasterimageview.cpp
     documentview/rasterimageviewadapter.cpp
-    documentview/svgviewadapter.cpp
     about.cpp
     abstractimageoperation.cpp
     disabledactionshortcutmonitor.cpp
@@ -116,7 +114,7 @@ generate_export_header(gwenviewlib)
 target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}
-    ${QT_QTSVG_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
     ${EXIV2_LIBRARIES}
     ${X11_X11_LIB}
 )
