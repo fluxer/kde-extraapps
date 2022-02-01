@@ -38,7 +38,20 @@ install(FILES
    DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular/pics)
 # install annotation stamps
 install(FILES
-   stamps.svg
-   DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular/pics)
+   stamps/asis.png
+   stamps/forpublicrelease.png
+   stamps/experimental.png
+   stamps/departmental.png
+   stamps/confidential.png
+   stamps/final.png
+   stamps/sold.png
+   stamps/topsecret.png
+   stamps/approved.png
+   stamps/notforpublicrelease.png
+   stamps/expired.png
+   stamps/forcomment.png
+   stamps/notapproved.png
+   stamps/draft.png
+   DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular/pics/stamps)
 # install misc images
 

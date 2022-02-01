@@ -263,7 +263,7 @@ target_link_libraries(okularpart
     ${KDE4_KPARTS_LIBS}
     ${KDE4_KPRINTUTILS_LIBS}
     ${KDE4_SOLID_LIBS}
-    ${QT_QTSVG_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
     ${MATH_LIB}
     okularcore
 )

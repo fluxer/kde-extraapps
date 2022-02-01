@@ -10,8 +10,6 @@
 #include "guiutils.h"
 
 // qt/kde includes
-#include <qpainter.h>
-#include <qsvgrenderer.h>
 #include <qtextdocument.h>
 #include <kfiledialog.h>
 #include <kglobal.h>
@@ -25,38 +23,7 @@
 #include "core/annotations.h"
 #include "core/document.h"
 
-#include <memory>
-
-struct GuiUtilsHelper
-{
-    GuiUtilsHelper()
-    {
-    }
-
-    QSvgRenderer* svgStamps();
-
-    QList<KIconLoader *> il;
-    std::auto_ptr< QSvgRenderer > svgStampFile;
-};
-
-QSvgRenderer* GuiUtilsHelper::svgStamps()
-{
-    if ( !svgStampFile.get() )
-    {
-        const QString stampFile = KStandardDirs::locate( "data", "okular/pics/stamps.svg" );
-        if ( !stampFile.isEmpty() )
-        {
-            svgStampFile.reset( new QSvgRenderer( stampFile ) );
-            if ( !svgStampFile->isValid() )
-            {
-                svgStampFile.reset();
-            }
-        }
-    }
-    return svgStampFile.get();
-}
-
-K_GLOBAL_STATIC( GuiUtilsHelper, s_data )
+K_GLOBAL_STATIC( QList<KIconLoader *>, s_data )
 
 namespace GuiUtils {
 
@@ -162,17 +129,9 @@ QString prettyToolTip( const Okular::Annotation * ann )
 QPixmap loadStamp( const QString& _name, const QSize& size, int iconSize )
 {
     const QString name = _name.toLower();
-    QSvgRenderer * r = 0;
-    if ( ( r = s_data->svgStamps() ) && r->elementExists( name ) )
-    {
-        const QRectF stampElemRect = r->boundsOnElement( name );
-        const QRectF stampRect( size.isValid() ? QRectF( QPointF( 0, 0 ), size ) : stampElemRect );
-        QPixmap pixmap( stampRect.size().toSize() );
-        pixmap.fill( Qt::transparent );
-        QPainter p( &pixmap );
-        r->render( &p, name );
-        p.end();
-        return pixmap;
+    const QString stampFile = KStandardDirs::locate( "data", "okular/pics/stamps/" + name + ".png" );
+    if ( !stampFile.isEmpty() ) {
+        return QPixmap(stampFile).scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     }
     QPixmap pixmap;
     const KIconLoader * il = iconLoader();
@@ -186,17 +145,17 @@ QPixmap loadStamp( const QString& _name, const QSize& size, int iconSize )
 
 void addIconLoader( KIconLoader * loader )
 {
-    s_data->il.append( loader );
+    s_data->append( loader );
 }
 
 void removeIconLoader( KIconLoader * loader )
 {
-    s_data->il.removeAll( loader );
+    s_data->removeAll( loader );
 }
 
 KIconLoader* iconLoader()
 {
-    return s_data->il.isEmpty() ? KIconLoader::global() : s_data->il.back();
+    return s_data->isEmpty() ? KIconLoader::global() : s_data->back();
 }
 
 void saveEmbeddedFile( Okular::EmbeddedFile *ef, QWidget *parent )
