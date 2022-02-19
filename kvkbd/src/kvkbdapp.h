@@ -25,8 +25,6 @@
 #include <QSignalMapper>
 #include <QGridLayout>
 
-#include <QtXml/qdom.h>
-
 #include "resizabledragwidget.h"
 #include "mainwidget.h"
 #include "kbdtray.h"

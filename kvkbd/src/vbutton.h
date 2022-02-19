@@ -7,7 +7,6 @@
 #include <QString>
 #include <QtGui/qevent.h>
 #include <QTimer>
-#include <QtXml/qdom.h>
 #include "x11keyboard.h"
 
 class VButton : public QPushButton
