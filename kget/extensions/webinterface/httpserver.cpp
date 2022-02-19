@@ -3,6 +3,7 @@
    Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
    Copyright (C) 2010 Matthias Fuchs <mat69@gmx.net>
    Copyright (C) 2011 Lukas Appelhans <l.appelhans@gmx.de>
+   Copyright (C) 2022 Ivailo Monev <xakepa10@gmail.com>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -26,8 +27,44 @@
 #include <QTcpSocket>
 #include <QFile>
 #include <QDir>
-#include <QtNetwork/qhttp.h>
 #include <QDateTime>
+
+class HttpHeaderParser
+{
+public:
+    void parseHeader(const QByteArray &header);
+
+    QString path() const { return m_path; }
+    QString authorization() const { return m_authorization; }
+
+private:
+    QString m_authorization;
+    QString m_path;
+};
+
+void HttpHeaderParser::parseHeader(const QByteArray &header)
+{
+    bool firstline = true;
+    foreach (const QByteArray &line, header.split('\n')) {
+        if (line.isEmpty()) {
+            firstline = false;
+            continue;
+        }
+        if (firstline) {
+            const QList<QByteArray> splitline = line.split(' ');
+            if (splitline.size() == 3) {
+                m_path = splitline.at(1).trimmed();
+            }
+        } else if (qstrnicmp(line.constData(), "authorization", 13) == 0) {
+            const QList<QByteArray> splitline = line.split(':');
+            if (splitline.size() == 2) {
+                m_authorization = splitline.at(1).trimmed();
+            }
+        }
+        firstline = false;
+    }
+    // qDebug() << Q_FUNC_INFO << m_authorization << m_path;
+}
 
 HttpServer::HttpServer(QWidget *parent)
     : QObject(parent),
@@ -88,12 +125,13 @@ void HttpServer::handleRequest()
     }
 
     QByteArray request(clientConnection->readAll());
-    QHttpRequestHeader header(request);
 
     QByteArray data;
-
     // for HTTP authorization information see: http://www.governmentsecurity.org/articles/OverviewofHTTPAuthentication.php
-    QString auth = header.value("Authorization");
+    HttpHeaderParser header;
+    header.parseHeader(request);
+    QString auth = header.authorization();
+    // qDebug() << Q_FUNC_INFO << request;
     if (auth.length() < 6 || QByteArray::fromBase64(auth.right(auth.length() - 6).toUtf8()) !=
             QString(Settings::webinterfaceUser() + ':' + m_pwd)) {
         responseCode = 401;
@@ -106,137 +144,136 @@ void HttpServer::handleRequest()
                                            "not understand how to supply the credentials required.</body></html>");
         data.append(authRequiredText.toUtf8());
     } else {
-
-    if (header.path().endsWith(QLatin1String("data.json"))) {
-        data.append("{\"downloads\":[");
-        bool needsToBeClosed = false;
-        foreach(TransferHandler *transfer, KGet::allTransfers()) {
-            if (needsToBeClosed)
-                data.append(","); // close the last line
-            data.append(QString("{\"name\":\"" + transfer->source().fileName() +
-                             "\", \"src\":\"" + transfer->source().prettyUrl() +
-                             "\", \"dest\":\"" + transfer->dest().pathOrUrl()  +
-                             "\", \"status\":\"" + transfer->statusText() +
-                             "\", \"size\":\"" + KIO::convertSize(transfer->totalSize()) +
-                             "\", \"progress\":\"" + QString::number(transfer->percent()) + "%"
-                             "\", \"speed\":\"" + i18nc("@item speed of transfer per seconds", "%1/s",
-                                                        KIO::convertSize(transfer->downloadSpeed())) + "\"}").toUtf8());
-            needsToBeClosed = true;
-        }
-        data.append("]}");
-    } else if (header.path().startsWith(QLatin1String("/do"))) {
-        kDebug(5001) << request;
-
-        QString args = header.path().right(header.path().length() - 4);
-
-        if (!args.isEmpty()) {
-            QString action;
-            QString data;
-            QString group;
-            QStringList argList = args.split('&');
-            foreach (const QString &s, argList) {
-                QStringList map = s.split('=');
-                if (map.at(0) == "action")
-                    action = map.at(1);
-                else if (map.at(0) == "data")
-                    data = KUrl::fromPercentEncoding(QByteArray(map.at(1).toUtf8()));
-                // action specific parameters
-                else if (map.at(0) == "group")
-                    group = KUrl::fromPercentEncoding(QByteArray(map.at(1).toUtf8()));
+        if (header.path().endsWith(QLatin1String("data.json"))) {
+            data.append("{\"downloads\":[");
+            bool needsToBeClosed = false;
+            foreach(TransferHandler *transfer, KGet::allTransfers()) {
+                if (needsToBeClosed)
+                    data.append(","); // close the last line
+                data.append(QString("{\"name\":\"" + transfer->source().fileName() +
+                                "\", \"src\":\"" + transfer->source().prettyUrl() +
+                                "\", \"dest\":\"" + transfer->dest().pathOrUrl()  +
+                                "\", \"status\":\"" + transfer->statusText() +
+                                "\", \"size\":\"" + KIO::convertSize(transfer->totalSize()) +
+                                "\", \"progress\":\"" + QString::number(transfer->percent()) + "%"
+                                "\", \"speed\":\"" + i18nc("@item speed of transfer per seconds", "%1/s",
+                                                            KIO::convertSize(transfer->downloadSpeed())) + "\"}").toUtf8());
+                needsToBeClosed = true;
             }
-            kDebug(5001) << action << data << group;
-            if (action == "add") {
-                //find a folder to store the download in 
-                QString defaultFolder;
+            data.append("]}");
+        } else if (header.path().startsWith(QLatin1String("/do"))) {
+            kDebug(5001) << request;
 
-                //prefer the defaultFolder of the selected group
-                TransferGroupHandler *groupHandler = KGet::findGroup(group);
-                if (groupHandler) {
-                    defaultFolder = groupHandler->defaultFolder();
+            QString args = header.path().right(header.path().length() - 4);
+
+            if (!args.isEmpty()) {
+                QString action;
+                QString data;
+                QString group;
+                QStringList argList = args.split('&');
+                foreach (const QString &s, argList) {
+                    QStringList map = s.split('=');
+                    if (map.at(0) == "action")
+                        action = map.at(1);
+                    else if (map.at(0) == "data")
+                        data = KUrl::fromPercentEncoding(QByteArray(map.at(1).toUtf8()));
+                    // action specific parameters
+                    else if (map.at(0) == "group")
+                        group = KUrl::fromPercentEncoding(QByteArray(map.at(1).toUtf8()));
                 }
-                if (defaultFolder.isEmpty()) {
-                    QList<TransferGroupHandler*> groups = KGet::groupsFromExceptions(KUrl(data));
-                    if (groups.isEmpty() || groups.first()->defaultFolder().isEmpty()) {
-                        defaultFolder = KGet::generalDestDir();
-                    } else {
-                        // take first item of default folder list (which should be the best one)
-                        groupHandler = groups.first();
-                        group = groupHandler->name();
+                kDebug(5001) << action << data << group;
+                if (action == "add") {
+                    //find a folder to store the download in 
+                    QString defaultFolder;
+
+                    //prefer the defaultFolder of the selected group
+                    TransferGroupHandler *groupHandler = KGet::findGroup(group);
+                    if (groupHandler) {
                         defaultFolder = groupHandler->defaultFolder();
                     }
+                    if (defaultFolder.isEmpty()) {
+                        QList<TransferGroupHandler*> groups = KGet::groupsFromExceptions(KUrl(data));
+                        if (groups.isEmpty() || groups.first()->defaultFolder().isEmpty()) {
+                            defaultFolder = KGet::generalDestDir();
+                        } else {
+                            // take first item of default folder list (which should be the best one)
+                            groupHandler = groups.first();
+                            group = groupHandler->name();
+                            defaultFolder = groupHandler->defaultFolder();
+                        }
+                    }
+                    KGet::addTransfer(data, defaultFolder, KUrl(data).fileName(), group);
+                    data.append(QString("Ok, %1 added!").arg(data).toUtf8());
+                } else if (action == "start") {
+                    TransferHandler *transfer = KGet::findTransfer(data);
+                    if (transfer)
+                        transfer->start();
+                } else if (action == "stop") {
+                    TransferHandler *transfer = KGet::findTransfer(data);
+                    if (transfer)
+                        transfer->stop();
+                } else if (action == "remove") {
+                    TransferHandler *transfer = KGet::findTransfer(data);
+                    if (transfer)
+                        KGet::delTransfer(transfer);
+                } else {
+                    kWarning(5001) << "not implemented action" << action << data;
                 }
-                KGet::addTransfer(data, defaultFolder, KUrl(data).fileName(), group);
-                data.append(QString("Ok, %1 added!").arg(data).toUtf8());
-            } else if (action == "start") {
-                TransferHandler *transfer = KGet::findTransfer(data);
-                if (transfer)
-                    transfer->start();
-            } else if (action == "stop") {
-                TransferHandler *transfer = KGet::findTransfer(data);
-                if (transfer)
-                    transfer->stop();
-            } else if (action == "remove") {
-                TransferHandler *transfer = KGet::findTransfer(data);
-                if (transfer)
-                    KGet::delTransfer(transfer);
+            }
+        } else { // read it from filesystem
+            QString fileName = header.path().remove(".."); // disallow changing directory
+            if (fileName.endsWith('/'))
+                fileName = "index.htm";
+
+            QString path = KStandardDirs::locate("data", "kget/www/" + fileName);
+            QFile file(path);
+
+            if (path.isEmpty() || !file.open(QIODevice::ReadOnly)) {
+                responseCode = 404;
+                responseText = "Not Found";
+                // DO NOT TRANSLATE THE FOLLOWING MESSAGE! webserver messages are never translated.
+                QString notfoundText = QString("<html><head><title>404 Not Found</title></head><body>"
+                                            "<h1>Not Found</h1>The requested URL <code>%1</code> "
+                                            "was not found on this server.</body></html>")
+                                            .arg(header.path());
+                data.append(notfoundText.toUtf8());
             } else {
-                kWarning(5001) << "not implemented action" << action << data;
+                while (!file.atEnd()) {
+                    data.append(file.readLine());
+                }
+            }
+            if (fileName == "index.htm") { // translations
+                data.replace("#{KGet Webinterface}", i18nc("@label", "KGet Web Interface").toUtf8());
+                data.replace("#{Nr}", i18nc("@label number", "Nr").toUtf8());
+                data.replace("#{File name}", i18nc("@label", "File name").toUtf8());
+                data.replace("#{Finished}", i18nc("@label Progress of transfer", "Finished").toUtf8());
+                data.replace("#{Speed}", i18nc("@label Speed of transfer", "Speed").toUtf8());
+                data.replace("#{Status}", i18nc("@label Status of transfer", "Status").toUtf8());
+                data.replace("#{Start}", i18nc("@action:button start a transfer", "Start").toUtf8());
+                data.replace("#{Stop}", i18nc("@action:button", "Stop").toUtf8());
+                data.replace("#{Remove}", i18nc("@action:button", "Remove").toUtf8());
+                data.replace("#{Source:}", i18nc("@label Download from", "Source:").toUtf8());
+                data.replace("#{Saving to:}", i18nc("@label Save download to", "Saving to:").toUtf8());
+                data.replace("#{Webinterface}", i18nc("@label Title in header", "Web Interface").toUtf8());
+                data.replace("#{Settings}", i18nc("@action", "Settings").toUtf8());
+                data.replace("#{Refresh}", i18nc("@action", "Refresh").toUtf8());
+                data.replace("#{Enter URL: }", i18nc("@action", "Enter URL: ").toUtf8());
+                data.replace("#{OK}", i18nc("@action:button", "OK").toUtf8());
+                data.replace("#{Refresh download list every}",
+                            i18nc("@action Refresh download list every x (seconds)", "Refresh download list every").toUtf8());
+                data.replace("#{seconds}", i18nc("@action (Refresh very x )seconds", "seconds").toUtf8());
+                data.replace("#{Save Settings}", i18nc("@action:button", "Save Settings").toUtf8());
+                data.replace("#{Downloads}", i18nc("@title", "Downloads").toUtf8());
+                data.replace("#{KGet Webinterface | Valid XHTML 1.0 Strict &amp; CSS}",
+                            i18nc("@label text in footer", "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS").toUtf8().replace('&', "&amp;"));
+
+                // delegate group combobox
+                QString groupOptions = "";
+                Q_FOREACH(const QString &group, KGet::transferGroupNames())
+                    groupOptions += QString("<option>%1</option>").arg(group);
+                data.replace("#{groups}", groupOptions.toUtf8());
             }
         }
-    } else { // read it from filesystem
-        QString fileName = header.path().remove(".."); // disallow changing directory
-        if (fileName.endsWith('/'))
-            fileName = "index.htm";
-
-        QString path = KStandardDirs::locate("data", "kget/www/" + fileName);
-        QFile file(path);
-
-        if (path.isEmpty() || !file.open(QIODevice::ReadOnly)) {
-            responseCode = 404;
-            responseText = "Not Found";
-            // DO NOT TRANSLATE THE FOLLOWING MESSAGE! webserver messages are never translated.
-            QString notfoundText = QString("<html><head><title>404 Not Found</title></head><body>"
-                                           "<h1>Not Found</h1>The requested URL <code>%1</code> "
-                                           "was not found on this server.</body></html>")
-                                           .arg(header.path());
-            data.append(notfoundText.toUtf8());
-        } else {
-            while (!file.atEnd()) {
-                data.append(file.readLine());
-            }
-        }
-        if (fileName == "index.htm") { // translations
-            data.replace("#{KGet Webinterface}", i18nc("@label", "KGet Web Interface").toUtf8());
-            data.replace("#{Nr}", i18nc("@label number", "Nr").toUtf8());
-            data.replace("#{File name}", i18nc("@label", "File name").toUtf8());
-            data.replace("#{Finished}", i18nc("@label Progress of transfer", "Finished").toUtf8());
-            data.replace("#{Speed}", i18nc("@label Speed of transfer", "Speed").toUtf8());
-            data.replace("#{Status}", i18nc("@label Status of transfer", "Status").toUtf8());
-            data.replace("#{Start}", i18nc("@action:button start a transfer", "Start").toUtf8());
-            data.replace("#{Stop}", i18nc("@action:button", "Stop").toUtf8());
-            data.replace("#{Remove}", i18nc("@action:button", "Remove").toUtf8());
-            data.replace("#{Source:}", i18nc("@label Download from", "Source:").toUtf8());
-            data.replace("#{Saving to:}", i18nc("@label Save download to", "Saving to:").toUtf8());
-            data.replace("#{Webinterface}", i18nc("@label Title in header", "Web Interface").toUtf8());
-            data.replace("#{Settings}", i18nc("@action", "Settings").toUtf8());
-            data.replace("#{Refresh}", i18nc("@action", "Refresh").toUtf8());
-            data.replace("#{Enter URL: }", i18nc("@action", "Enter URL: ").toUtf8());
-            data.replace("#{OK}", i18nc("@action:button", "OK").toUtf8());
-            data.replace("#{Refresh download list every}",
-                         i18nc("@action Refresh download list every x (seconds)", "Refresh download list every").toUtf8());
-            data.replace("#{seconds}", i18nc("@action (Refresh very x )seconds", "seconds").toUtf8());
-            data.replace("#{Save Settings}", i18nc("@action:button", "Save Settings").toUtf8());
-            data.replace("#{Downloads}", i18nc("@title", "Downloads").toUtf8());
-            data.replace("#{KGet Webinterface | Valid XHTML 1.0 Strict &amp; CSS}",
-                         i18nc("@label text in footer", "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS").toUtf8().replace('&', "&amp;"));
-
-            // delegate group combobox
-            QString groupOptions = "";
-            Q_FOREACH(const QString &group, KGet::transferGroupNames())
-                groupOptions += QString("<option>%1</option>").arg(group);
-            data.replace("#{groups}", groupOptions.toUtf8());
-        }
-    }
     }
 
     // for HTTP information see: http://www.jmarshall.com/easy/http/
