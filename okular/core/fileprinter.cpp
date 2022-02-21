@@ -20,7 +20,6 @@
 #include <QtCore/QFileInfo>
 #include <QtGui/QLabel>
 #include <QtGui/qevent.h>
-#include <QtNetwork/QTcpSocket>
 
 #include <KProcess>
 #include <KShell>
@@ -244,25 +243,6 @@ bool FilePrinter::cupsAvailable()
 #else
     return false;
 #endif
-}
-
-bool FilePrinter::detectCupsService()
-{
-    QTcpSocket qsock;
-    qsock.connectToHost("localhost", 631);
-    bool rtn = qsock.waitForConnected() && qsock.isValid();
-    qsock.abort();
-    return rtn;
-}
-
-bool FilePrinter::detectCupsConfig()
-{
-    if ( QFile::exists("/etc/cups/cupsd.conf") ) return true;
-    if ( QFile::exists("/usr/etc/cups/cupsd.conf") ) return true;
-    if ( QFile::exists("/usr/local/etc/cups/cupsd.conf") ) return true;
-    if ( QFile::exists("/opt/etc/cups/cupsd.conf") ) return true;
-    if ( QFile::exists("/opt/local/etc/cups/cupsd.conf") ) return true;
-    return false;
 }
 
 QSize FilePrinter::psPaperSize( QPrinter &printer )

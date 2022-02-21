@@ -148,10 +148,6 @@ public:
     static Generator::PrintError printError( int c );
 
 protected:
-
-    bool detectCupsService();
-    bool detectCupsConfig();
-
     int doPrintFiles( QPrinter &printer, const QStringList fileList,
                              FileDeletePolicy fileDeletePolicy, PageSelectPolicy pageSelectPolicy,
                              const QString &pageRange,
