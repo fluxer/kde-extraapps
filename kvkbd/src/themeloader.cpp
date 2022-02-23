@@ -124,7 +124,7 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
     QAction *item = new QAction(colors);
     item->setCheckable(true);
     item->setText("standart");
-    item->setData(":/theme/standart.css");
+    item->setData(DEFAULT_CSS);
     colors->addAction(item);
     color_group->addAction(item);
 
