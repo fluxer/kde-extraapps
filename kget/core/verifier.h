@@ -208,9 +208,9 @@ class KGET_EXPORT Verifier : public QObject
         /**
          * Returns a checksum and a type
          * @param strength the strength the checksum-type should have;
-         * weak is md5 > md4 (md5 preferred), strong is sha1 > ripmed160 >
+         * weak is md5 > ... (md5 preferred), strong is sha1 >
          * sha256 > sha384 > sha512 (sha1 preferred), strongest is sha512 >
-         * sha384 > sha256 .... < (sha512 preferred)
+         * sha384 > sha256 ... < (sha512 preferred)
          * If the category does not match then any checksum is taken
          */
         Checksum availableChecksum(ChecksumStrength strength) const;
@@ -223,7 +223,7 @@ class KGET_EXPORT Verifier : public QObject
         /**
          * Returns a PartialChecksum and a type
          * @param strength the strength the checksum-type should have;
-         * weak is md5 > md4 > ... (md5 preferred), strong is sha1 > ripmed160 >
+         * weak is md5 > ... (md5 preferred), strong is sha1 >
          * sha256 > sha384 > sha512 > ... (sha1 preferred), strongest is sha512 >
          * sha384 > sha256 ... (sha512 preferred)
          * If the category does not match then any checksum is taken
