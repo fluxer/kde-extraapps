@@ -47,34 +47,6 @@ void AnnotatorEngine::decodeEvent( const QMouseEvent * mouseEvent, EventType * e
         *button = AnnotatorEngine::Right;
 }
 
-#ifndef QT_NO_TABLET
-void AnnotatorEngine::decodeEvent( const QTabletEvent * tabletEvent, EventType * eventType, Button * button )
-{
-    switch ( tabletEvent->type() )
-    {
-        case QEvent::TabletPress:
-            // Tablet press event is equivalent to pressing the left mouse button
-            *button = AnnotatorEngine::Left;
-            *eventType = AnnotatorEngine::Press;
-            break;
-        case QEvent::TabletRelease:
-            // Tablet release event is equivalent to releasing the left mouse button
-            *button = AnnotatorEngine::Left;
-            *eventType = AnnotatorEngine::Release;
-            break;
-        case QEvent::TabletMove:
-            // Tablet events are only routed if the pen is down so
-            // this is equivalent to the left mouse button being pressed
-            *button = AnnotatorEngine::Left;
-            *eventType = AnnotatorEngine::Move;
-            break;
-        default:
-            Q_ASSERT(false);
-            break;
-    }
-}
-#endif // QT_NO_TABLET
-
 AnnotatorEngine::~AnnotatorEngine()
 {
 }

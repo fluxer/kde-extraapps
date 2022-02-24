@@ -876,41 +876,6 @@ QRect PageViewAnnotator::routeMouseEvent( QMouseEvent * e, PageViewItem * item )
     return performRouteMouseOrTabletEvent( eventType, button, e->posF(), item );
 }
 
-#ifndef QT_NO_TABLET
-QRect PageViewAnnotator::routeTabletEvent( QTabletEvent * e, PageViewItem * item, const QPoint & localOriginInGlobal )
-{
-    // Unlike routeMouseEvent, routeTabletEvent must explicitly ignore events it doesn't care about so that
-    // the corresponding mouse event will later be delivered.
-    if ( !item )
-    {
-        e->ignore();
-        return QRect();
-    }
-
-    // We set all tablet events that take place over the annotations toolbar to ignore so that corresponding mouse
-    // events will be delivered to the toolbar.  However, we still allow the annotations code to handle
-    // TabletMove and TabletRelease events in case the user is drawing an annotation onto the toolbar.
-    const QPoint toolBarPos = m_toolBar->mapFromGlobal( e->globalPos() );
-    const QRect toolBarRect = m_toolBar->rect();
-    if ( toolBarRect.contains( toolBarPos ) )
-    {
-        e->ignore();
-        if (e->type() == QEvent::TabletPress)
-            return QRect();
-    }
-
-    AnnotatorEngine::EventType eventType;
-    AnnotatorEngine::Button button;
-
-    // figure out the event type and button
-    AnnotatorEngine::decodeEvent( e, &eventType, &button );
-
-    const QPointF globalPosF = e->hiResGlobalPos();
-    const QPointF localPosF = globalPosF - localOriginInGlobal;
-    return performRouteMouseOrTabletEvent( eventType, button, localPosF, item );
-}
-#endif // QT_NO_TABLET
-
 bool PageViewAnnotator::routeKeyEvent( QKeyEvent * event )
 {
     if ( event->key() == Qt::Key_Escape )

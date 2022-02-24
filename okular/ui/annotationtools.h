@@ -19,9 +19,6 @@
 
 #include <QMouseEvent>
 #include <QPainter>
-#ifndef QT_NO_TABLET
-#include <QTabletEvent>
-#endif
 
 class PageViewItem;
 namespace Okular {
@@ -54,9 +51,6 @@ class AnnotatorEngine
         void setItem( PageViewItem * item ) { m_item = item; }
 
         static void decodeEvent( const QMouseEvent * mouseEvent, EventType * eventType, Button * button );
-#ifndef QT_NO_TABLET
-        static void decodeEvent( const QTabletEvent * tabletEvent, EventType * eventType, Button * button );
-#endif
 
         virtual QCursor cursor() const;
 

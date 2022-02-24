@@ -1786,46 +1786,6 @@ static QPoint rotateInRect( const QPoint &rotated, Okular::Rotation rotation )
     return ret;
 }
 
-#ifndef QT_NO_TABLET
-void PageView::tabletEvent( QTabletEvent * e )
-{
-    // Ignore tablet events that we don't care about
-    if ( !( e->type() == QEvent::TabletPress ||
-            e->type() == QEvent::TabletRelease ||
-            e->type() == QEvent::TabletMove ) )
-    {
-        e->ignore();
-        return;
-    }
-
-    // Determine pen state
-    bool penReleased = false;
-    if ( e->type() == QEvent::TabletPress )
-    {
-        d->penDown = true;
-    }
-    if ( e->type() == QEvent::TabletRelease )
-    {
-        d->penDown = false;
-        penReleased = true;
-    }
-
-    // If we're editing an annotation and the tablet pen is either down or just released
-    // then dispatch event to annotator
-    if ( d->annotator && d->annotator->active() && ( d->penDown || penReleased ) )
-    {
-        const QPoint eventPos = contentAreaPoint( e->pos() );
-        PageViewItem * pageItem = pickItemOnPoint( eventPos.x(), eventPos.y() );
-        const QPoint localOriginInGlobal = mapToGlobal( QPoint(0,0) );
-
-        // routeTabletEvent will accept or ignore event as appropriate
-        d->annotator->routeTabletEvent( e, pageItem, localOriginInGlobal );
-    } else {
-        e->ignore();
-    }
-}
-#endif // QT_NO_TABLET
-
 void PageView::mouseMoveEvent( QMouseEvent * e )
 {
     // don't perform any mouse action when no document is shown
