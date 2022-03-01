@@ -19,10 +19,8 @@
 #include "gscreator.h"
 
 #include <QImage>
-#include <QFileInfo>
 #include <QProcess>
 #include <kstandarddirs.h>
-#include <ktemporaryfile.h>
 #include <kdebug.h>
 #include <kdemacros.h>
 
