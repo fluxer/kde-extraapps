@@ -1,10 +1,9 @@
-/*  This file is part of the KDE libraries
-    Copyright (C) 2000 Malte Starostik <malte@kde.org>
+/*  This file is part of the KDE project
+    Copyright (C) 2022 Ivailo Monev <xakepa10@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
-    License as published by the Free Software Foundation; either
-    version 2 of the License, or (at your option) any later version.
+    License version 2, as published by the Free Software Foundation.
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -15,28 +14,19 @@
     along with this library; see the file COPYING.LIB.  If not, write to
     the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
     Boston, MA 02110-1301, USA.
-*/
+*/ 
 
 #ifndef _GSCREATOR_H_
 #define _GSCREATOR_H_
 
 #include <kio/thumbcreator.h>
-#include "dscparse_adapter.h"
 
-class GSCreator : public ThumbCreator, public KDSCCommentHandler
+class GSCreator : public ThumbCreator
 {
 public:
     GSCreator() {}
     virtual bool create(const QString &path, int, int, QImage &img);
-    virtual Flags flags() const;
-    void comment(Name name);
-
-private:
-    static bool getEPSIPreview(const QString &path,
-                               long start, long end,
-                               QImage &outimg,
-                               int imgwidth, int imgheight);
-    bool endComments;
+    virtual ThumbCreator::Flags flags() const;
 };
 
 #endif
