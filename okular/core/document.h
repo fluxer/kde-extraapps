@@ -570,11 +570,6 @@ class OKULAR_EXPORT Document : public QObject
         PrintingType printingSupport() const;
 
         /**
-         * Returns whether the document supports printing to both PDF and PS files.
-         */
-        bool supportsPrintToFile() const;
-
-        /**
          * Prints the document to the given @p printer.
          */
         bool print( QPrinter &printer );

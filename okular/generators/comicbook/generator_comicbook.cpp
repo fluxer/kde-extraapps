@@ -42,7 +42,6 @@ ComicBookGenerator::ComicBookGenerator( QObject *parent, const QVariantList &arg
 {
     setFeature( Threaded );
     setFeature( PrintNative );
-    setFeature( PrintToFile );
 }
 
 ComicBookGenerator::~ComicBookGenerator()

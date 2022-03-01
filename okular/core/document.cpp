@@ -13,10 +13,8 @@
 #include "documentcommands_p.h"
 
 #include <limits.h>
-#ifdef Q_OS_WIN
-#define _WIN32_WINNT 0x0500
-#include <windows.h>
-#elif defined(Q_OS_FREEBSD)
+
+#if defined(Q_OS_FREEBSD)
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include <vm/vm_param.h>
@@ -487,12 +485,6 @@ qulonglong DocumentPrivate::getTotalMemory()
     size_t len = sizeof( physmem );
     if ( sysctl( mib, 2, &physmem, &len, NULL, 0 ) == 0 )
         return (cachedValue = physmem);
-#elif defined(Q_OS_WIN)
-    MEMORYSTATUSEX stat;
-    stat.dwLength = sizeof(stat);
-    GlobalMemoryStatusEx (&stat);
-
-    return ( cachedValue = stat.ullTotalPhys );
 #endif
     return (cachedValue = 134217728);
 }
@@ -587,16 +579,6 @@ qulonglong DocumentPrivate::getFreeMemory( qulonglong *freeSwap )
     {
         return 0;
     }
-#elif defined(Q_OS_WIN)
-    MEMORYSTATUSEX stat;
-    stat.dwLength = sizeof(stat);
-    GlobalMemoryStatusEx (&stat);
-
-    lastUpdate = QTime::currentTime();
-
-    if (freeSwap)
-        *freeSwap = ( cachedFreeSwap = stat.ullAvailPageFile );
-    return ( cachedValue = stat.ullAvailPhys );
 #else
     // tell the memory is full.. will act as in LOW profile
     return 0;
@@ -3824,22 +3806,13 @@ Document::PrintingType Document::printingSupport() const
         {
             return NativePrinting;
         }
-
-#ifndef Q_OS_WIN
         if ( d->m_generator->hasFeature( Generator::PrintPostscript ) )
         {
             return PostscriptPrinting;
         }
-#endif
-
     }
 
     return NoPrinting;
-}
-
-bool Document::supportsPrintToFile() const
-{
-    return d->m_generator ? d->m_generator->hasFeature( Generator::PrintToFile ) : false;
 }
 
 bool Document::print( QPrinter &printer )
@@ -4182,11 +4155,7 @@ bool Document::saveDocumentArchive( const QString &fileName )
         return false;
 
     const KUser user;
-#ifndef Q_OS_WIN
     const KUserGroup userGroup( user.gid() );
-#else
-    const KUserGroup userGroup( QString( "" ) );
-#endif
 
     QDomDocument contentDoc( "OkularArchive" );
     QDomProcessingInstruction xmlPi = contentDoc.createProcessingInstruction(

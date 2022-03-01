@@ -58,7 +58,6 @@ GSGenerator::GSGenerator( QObject *parent, const QVariantList &args ) :
     m_request(0)
 {
     setFeature( PrintPostscript );
-    setFeature( PrintToFile );
 
     GSRendererThread *renderer = GSRendererThread::getCreateRenderer();
     if (!renderer->isRunning()) renderer->start();
@@ -114,18 +113,10 @@ bool GSGenerator::print( QPrinter& printer )
                                                document()->currentPage() + 1,
                                                document()->bookmarkedPageList() );
 
-    // Default to Postscript export, but if printing to PDF use that instead
-    SpectreExporterFormat exportFormat = SPECTRE_EXPORTER_FORMAT_PS;
-    if ( printer.outputFileName().right(3) == "pdf" )
-    {
-        exportFormat = SPECTRE_EXPORTER_FORMAT_PDF;
-        tf.setSuffix(".pdf");
-    }
-
     if ( !tf.open() )
         return false;
 
-    SpectreExporter *exporter = spectre_exporter_new( m_internalDocument, exportFormat );
+    SpectreExporter *exporter = spectre_exporter_new( m_internalDocument, SPECTRE_EXPORTER_FORMAT_PS );
     SpectreStatus exportStatus = spectre_exporter_begin( exporter, tf.fileName().toAscii() );
 
     int i = 0;

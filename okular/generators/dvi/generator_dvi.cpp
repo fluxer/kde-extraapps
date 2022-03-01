@@ -69,8 +69,6 @@ DviGenerator::DviGenerator( QObject *parent, const QVariantList &args ) : Okular
     setFeature( TextExtraction );
     setFeature( FontInfo );
     setFeature( PrintPostscript );
-    if ( Okular::FilePrinter::ps2pdfAvailable() )
-        setFeature( PrintToFile );
 }
 
 bool DviGenerator::loadDocument( const QString & fileName, QVector< Okular::Page * > &pagesVector )

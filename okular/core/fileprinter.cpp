@@ -63,79 +63,28 @@ int FilePrinter::doPrintFiles( QPrinter &printer, QStringList fileList, FileDele
     QStringList argList;
     int ret;
 
-    // Print to File if a filename set, assumes there must be only 1 file
-    if ( !printer.outputFileName().isEmpty() ) {
+    //Decide what executable to use to print with, need the CUPS version of lpr if available
+    //Some distros name the CUPS version of lpr as lpr-cups or lpr.cups so try those first 
+    //before default to lpr, or failing that to lp
 
-        if ( QFile::exists( printer.outputFileName() ) ) {
-            QFile::remove( printer.outputFileName() );
-        }
-
-        QFileInfo inputFileInfo = QFileInfo( fileList[0] );
-        QFileInfo outputFileInfo = QFileInfo( printer.outputFileName() );
-
-        bool doDeleteFile = (fileDeletePolicy == FilePrinter::SystemDeletesFiles);
-        if ( inputFileInfo.suffix() == outputFileInfo.suffix() ) {
-            if ( doDeleteFile ) {
-                bool res = QFile::rename( fileList[0], printer.outputFileName() );
-                if ( res ) {
-                    doDeleteFile = false;
-                    ret = 0;
-                } else {
-                    ret = -5;
-                }
-            } else {
-                bool res = QFile::copy( fileList[0], printer.outputFileName() );
-                if ( res ) {
-                    ret = 0;
-                } else {
-                    ret = -5;
-                }
-            }
-        } else if ( inputFileInfo.suffix() == "ps" && printer.outputFormat() == QPrinter::PdfFormat && ps2pdfAvailable() ) {
-            exe = "ps2pdf";
-            argList << fileList[0] << printer.outputFileName();
-            kDebug(OkularDebug) << "Executing" << exe << "with arguments" << argList;
-            ret = KProcess::execute( exe, argList );
-        } else if ( inputFileInfo.suffix() == "pdf" && printer.outputFormat() == QPrinter::PostScriptFormat && pdf2psAvailable() ) {
-            exe = "pdf2ps";
-            argList << fileList[0] << printer.outputFileName();
-            kDebug(OkularDebug) << "Executing" << exe << "with arguments" << argList;
-            ret = KProcess::execute( exe, argList );
-        } else {
-            ret = -5;
-        }
-
-        if ( doDeleteFile ) {
-            QFile::remove( fileList[0] );
-        }
-
-
-    } else {  // Print to a printer via lpr command
-
-        //Decide what executable to use to print with, need the CUPS version of lpr if available
-        //Some distros name the CUPS version of lpr as lpr-cups or lpr.cups so try those first 
-        //before default to lpr, or failing that to lp
-
-        if ( !KStandardDirs::findExe("lpr-cups").isEmpty() ) {
-            exe = "lpr-cups";
-        } else if ( !KStandardDirs::findExe("lpr.cups").isEmpty() ) {
-            exe = "lpr.cups";
-        } else if ( !KStandardDirs::findExe("lpr").isEmpty() ) {
-            exe = "lpr";
-        } else if ( !KStandardDirs::findExe("lp").isEmpty() ) {
-            exe = "lp";
-        } else {
-            return -9;
-        }
-
-        bool useCupsOptions = cupsAvailable();
-        argList = printArguments( printer, fileDeletePolicy, pageSelectPolicy, 
-                                  useCupsOptions, pageRange, exe, documentOrientation ) << fileList;
-        kDebug(OkularDebug) << "Executing" << exe << "with arguments" << argList;
-
-        ret = KProcess::execute( exe, argList );
-
+    if ( !KStandardDirs::findExe("lpr-cups").isEmpty() ) {
+        exe = "lpr-cups";
+    } else if ( !KStandardDirs::findExe("lpr.cups").isEmpty() ) {
+        exe = "lpr.cups";
+    } else if ( !KStandardDirs::findExe("lpr").isEmpty() ) {
+        exe = "lpr";
+    } else if ( !KStandardDirs::findExe("lp").isEmpty() ) {
+        exe = "lp";
+    } else {
+        return -9;
     }
+
+    bool useCupsOptions = cupsAvailable();
+    argList = printArguments( printer, fileDeletePolicy, pageSelectPolicy, 
+                                useCupsOptions, pageRange, exe, documentOrientation ) << fileList;
+    kDebug(OkularDebug) << "Executing" << exe << "with arguments" << argList;
+
+    ret = KProcess::execute( exe, argList );
 
     return ret;
 }

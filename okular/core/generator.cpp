@@ -627,8 +627,6 @@ ExportFormat ExportFormat::standardFormat( StandardExportFormat type )
     {
         case PlainText:
             return ExportFormat( KIcon( "text-x-generic" ), i18n( "Plain &Text..." ), KMimeType::mimeType( "text/plain" ) );
-        case PDF:
-            return ExportFormat( KIcon( "application-pdf" ), i18n( "PDF" ), KMimeType::mimeType( "application/pdf" ) );
         case OpenDocumentText:
             return ExportFormat(
                 KIcon( "application-vnd.oasis.opendocument.text" ),

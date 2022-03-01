@@ -31,6 +31,7 @@
 #include <qtimer.h>
 #include <QtGui/QPrinter>
 #include <QtGui/QPrintDialog>
+#include <QtGui/QPrintPreviewDialog>
 #include <QScrollBar>
 
 #include <kvbox.h>
@@ -59,7 +60,6 @@
 #include <kfilterdev.h>
 #include <kfilterbase.h>
 #include <kdeprintdialog.h>
-#include <kprintpreview.h>
 #include <kbookmarkmenu.h>
 #include <kpassworddialog.h>
 #include <kwallet.h>
@@ -2360,30 +2360,17 @@ void Part::slotPrintPreview()
 
     QPrinter printer;
 
-    // Native printing supports KPrintPreview, Postscript needs to use FilePrinterPreview
+    // Native printing supports QPrintPreviewDialog, Postscript needs to use FilePrinterPreview
     if ( m_document->printingSupport() == Okular::Document::NativePrinting )
     {
-        KPrintPreview previewdlg( &printer, widget() );
+        QPrintPreviewDialog previewdlg( &printer, widget() );
         setupPrint( printer );
         doPrint( printer );
         previewdlg.exec();
     }
     else
     {
-        // Generate a temp filename for Print to File, then release the file so generator can write to it
-        KTemporaryFile tf;
-        tf.setAutoRemove( true );
-        tf.setSuffix( ".ps" );
-        tf.open();
-        printer.setOutputFileName( tf.fileName() );
-        tf.close();
-        setupPrint( printer );
-        doPrint( printer );
-        if ( QFile::exists( printer.outputFileName() ) )
-        {
-            Okular::FilePrinterPreview previewdlg( printer.outputFileName(), widget() );
-            previewdlg.exec();
-        }
+        kWarning() << "non-native printing not supported";
     }
 }
 
@@ -2657,13 +2644,6 @@ void Part::slotPrint()
         if ( !m_document->bookmarkedPageRange().isEmpty() )
         {
             printDialog->addEnabledOption( QAbstractPrintDialog::PrintSelection );
-        }
-
-        // If the Document type doesn't support print to both PS & PDF then disable the Print Dialog option
-        if ( printDialog->isOptionEnabled( QAbstractPrintDialog::PrintToFile ) &&
-             !m_document->supportsPrintToFile() )
-        {
-            printDialog->setEnabledOptions( printDialog->enabledOptions() ^ QAbstractPrintDialog::PrintToFile );
         }
 
         // Enable the Current Page option in the dialog.

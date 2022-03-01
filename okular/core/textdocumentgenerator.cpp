@@ -245,7 +245,6 @@ void TextDocumentGeneratorPrivate::initializeGenerator()
 
     q->setFeature( Generator::TextExtraction );
     q->setFeature( Generator::PrintNative );
-    q->setFeature( Generator::PrintToFile );
 #ifdef OKULAR_TEXTDOCUMENT_THREADED_RENDERING
     if ( QFontDatabase::supportsThreadedFontRendering() )
         q->setFeature( Generator::Threaded );
@@ -481,7 +480,6 @@ Okular::ExportFormat::List TextDocumentGenerator::exportFormats(   ) const
     static Okular::ExportFormat::List formats;
     if ( formats.isEmpty() ) {
         formats.append( Okular::ExportFormat::standardFormat( Okular::ExportFormat::PlainText ) );
-        formats.append( Okular::ExportFormat::standardFormat( Okular::ExportFormat::PDF ) );
         if ( QTextDocumentWriter::supportedDocumentFormats().contains( "ODF" ) ) {
             formats.append( Okular::ExportFormat::standardFormat( Okular::ExportFormat::OpenDocumentText ) );
         }
@@ -499,18 +497,7 @@ bool TextDocumentGenerator::exportTo( const QString &fileName, const Okular::Exp
     if ( !d->mDocument )
         return false;
 
-    if ( format.mimeType()->name() == QLatin1String( "application/pdf" ) ) {
-        QFile file( fileName );
-        if ( !file.open( QIODevice::WriteOnly ) )
-            return false;
-
-        QPrinter printer( QPrinter::HighResolution );
-        printer.setOutputFormat( QPrinter::PdfFormat );
-        printer.setOutputFileName( fileName );
-        d->mDocument->print( &printer );
-
-        return true;
-    } else if ( format.mimeType()->name() == QLatin1String( "text/plain" ) ) {
+    if ( format.mimeType()->name() == QLatin1String( "text/plain" ) ) {
         QFile file( fileName );
         if ( !file.open( QIODevice::WriteOnly ) )
             return false;

@@ -93,7 +93,6 @@ bool CrontabPrinter::start() {
 
 	// initialize the printer using the print dialog
 	QPrintDialog *printDialog = KdePrint::createPrintDialog(d->printer, d->crontabWidget);
-	printDialog->setEnabledOptions(QAbstractPrintDialog::PrintToFile);
 	if (printDialog->exec() == QDialog::Rejected) {
 		logDebug() << "Printing canceled" << endl;
 		delete printDialog;

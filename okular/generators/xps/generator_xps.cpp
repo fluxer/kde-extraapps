@@ -2126,7 +2126,6 @@ XpsGenerator::XpsGenerator( QObject *parent, const QVariantList &args )
 {
     setFeature( TextExtraction );
     setFeature( PrintNative );
-    setFeature( PrintToFile );
     // activate the threaded rendering iif:
     // 1) QFontDatabase says so
     // 2) Qt >= 4.4.0 (see Trolltech task ID: 169502)

@@ -146,7 +146,6 @@ class OKULAR_EXPORT ExportFormat
         enum StandardExportFormat
         {
             PlainText,         ///< Plain text
-            PDF,               ///< PDF, aka Portable Document Format
             OpenDocumentText,  ///< OpenDocument Text format @since 0.8 (KDE 4.2)
             HTML   ///< OpenDocument Text format @since 0.8 (KDE 4.2)
         };
@@ -206,7 +205,6 @@ class OKULAR_EXPORT Generator : public QObject
             PageSizes,         ///< Whether the Generator can change the size of the document pages.
             PrintNative,       ///< Whether the Generator supports native cross-platform printing (QPainter-based).
             PrintPostscript,   ///< Whether the Generator supports postscript-based file printing.
-            PrintToFile,       ///< Whether the Generator supports export to PDF & PS through the Print Dialog
             TiledRendering     ///< Whether the Generator can render tiles @since 0.16 (KDE 4.10)
         };
 

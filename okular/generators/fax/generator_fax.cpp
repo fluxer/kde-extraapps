@@ -43,7 +43,6 @@ FaxGenerator::FaxGenerator( QObject *parent, const QVariantList &args )
 {
     setFeature( Threaded );
     setFeature( PrintNative );
-    setFeature( PrintToFile );
 }
 
 FaxGenerator::~FaxGenerator()
