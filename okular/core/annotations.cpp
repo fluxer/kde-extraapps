@@ -500,8 +500,8 @@ AnnotationPrivate::~AnnotationPrivate()
     if ( m_revisions.isEmpty() )
         return;
 
-    QList< Annotation::Revision >::iterator it = m_revisions.begin(), end = m_revisions.end();
-    for ( ; it != end; ++it )
+    QList< Annotation::Revision >::iterator it = m_revisions.begin();
+    for ( ; it != m_revisions.end(); ++it )
         delete (*it).annotation();
 }
 

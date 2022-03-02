@@ -227,8 +227,7 @@ void TransferTreeModel::delGroup(TransferGroup * group)
 
     QList<Transfer*> transfers;
     JobQueue::iterator it;
-    JobQueue::iterator itEnd = group->end();
-    for (it = group->begin(); it != itEnd; ++it) {
+    for (it = group->begin(); it != group->end(); ++it) {
         transfers << static_cast<Transfer*>(*it);
     }
     delTransfers(transfers);
@@ -291,8 +290,7 @@ void TransferTreeModel::delTransfers(const QList<Transfer*> &t)
     QHash<TransferGroup*, QList<Transfer*> > groupsTransfer;
     {
         QList<Transfer*>::iterator it;
-        QList<Transfer*>::iterator itEnd = transfers.end();
-        for (it = transfers.begin(); it != itEnd; ) { 
+        for (it = transfers.begin(); it != transfers.end(); ) { 
             TransferModelItem *item = itemFromTransferHandler((*it)->handler());
             if (item) {
                 handlers << (*it)->handler();
@@ -310,8 +308,7 @@ void TransferTreeModel::delTransfers(const QList<Transfer*> &t)
     //remove the items from the model
     {
         QHash<TransferGroup*, QList<TransferModelItem*> >::iterator it;
-        QHash<TransferGroup*, QList<TransferModelItem*> >::iterator itEnd = groups.end();
-        for (it = groups.begin(); it != itEnd; ++it) {
+        for (it = groups.begin(); it != groups.end(); ++it) {
             const int numItems = (*it).count();
             QStandardItem *parentItem = (*it).first()->parent();
             QModelIndex parentIndex = parentItem->index();
@@ -350,8 +347,7 @@ void TransferTreeModel::delTransfers(const QList<Transfer*> &t)
 
     {
         QHash<TransferGroup*, QList<Transfer*> >::iterator it;
-        QHash<TransferGroup*, QList<Transfer*> >::iterator itEnd = groupsTransfer.end();
-        for (it = groupsTransfer.begin(); it != itEnd; ++it) {
+        for (it = groupsTransfer.begin(); it != groupsTransfer.end(); ++it) {
             it.key()->remove(it.value());
         }
     }

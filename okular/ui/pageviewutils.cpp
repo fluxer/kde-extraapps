@@ -50,8 +50,8 @@ PageViewItem::PageViewItem( const Okular::Page * page )
 
 PageViewItem::~PageViewItem()
 {
-    QHash<int, FormWidgetIface*>::iterator it = m_formWidgets.begin(), itEnd = m_formWidgets.end();
-    for ( ; it != itEnd; ++it )
+    QHash<int, FormWidgetIface*>::iterator it = m_formWidgets.begin();
+    for ( ; it != m_formWidgets.end(); ++it )
         delete *it;
     qDeleteAll( m_videoWidgets );
 }
@@ -162,8 +162,8 @@ void PageViewItem::moveTo( int x, int y )
     m_croppedGeometry.moveTop( y );
     m_uncroppedGeometry.moveLeft( qRound( x - m_crop.left * m_uncroppedGeometry.width() ) );
     m_uncroppedGeometry.moveTop( qRound( y - m_crop.top * m_uncroppedGeometry.height() ) );
-    QHash<int, FormWidgetIface*>::iterator it = m_formWidgets.begin(), itEnd = m_formWidgets.end();
-    for ( ; it != itEnd; ++it )
+    QHash<int, FormWidgetIface*>::iterator it = m_formWidgets.begin();
+    for ( ; it != m_formWidgets.end(); ++it )
     {
         Okular::NormalizedRect r = (*it)->rect();
         (*it)->moveTo(
@@ -199,8 +199,8 @@ bool PageViewItem::setFormWidgetsVisible( bool visible )
         return false;
 
     bool somehadfocus = false;
-    QHash<int, FormWidgetIface*>::iterator it = m_formWidgets.begin(), itEnd = m_formWidgets.end();
-    for ( ; it != itEnd; ++it )
+    QHash<int, FormWidgetIface*>::iterator it = m_formWidgets.begin();
+    for ( ; it != m_formWidgets.end(); ++it )
     {
         bool hadfocus = (*it)->setVisibility( visible );
         somehadfocus = somehadfocus || hadfocus;
@@ -519,8 +519,8 @@ void PageViewToolBar::setItems( const QList<AnnotationToolItem> &items )
     // delete buttons if already present
     if ( !d->buttons.isEmpty() )
     {
-        QList< ToolBarButton * >::iterator it = d->buttons.begin(), end = d->buttons.end();
-        for ( ; it != end; ++it )
+        QList< ToolBarButton * >::iterator it = d->buttons.begin();
+        for ( ; it != d->buttons.end(); ++it )
             delete *it;
         d->buttons.clear();
     }

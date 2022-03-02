@@ -150,8 +150,7 @@ bool Akregator::Backend::StorageMK4Impl::autoCommit() const
 bool Akregator::Backend::StorageMK4Impl::close()
 {
     QMap<QString, FeedStorageMK4Impl*>::Iterator it;
-    QMap<QString, FeedStorageMK4Impl*>::Iterator end(d->feeds.end() ) ;
-    for (it = d->feeds.begin(); it != end; ++it)
+    for (it = d->feeds.begin(); it != d->feeds.end(); ++it)
     {
         it.value()->close();
         delete it.value();
@@ -172,8 +171,7 @@ bool Akregator::Backend::StorageMK4Impl::close()
 bool Akregator::Backend::StorageMK4Impl::commit()
 {
     QMap<QString, FeedStorageMK4Impl*>::Iterator it;
-    QMap<QString, FeedStorageMK4Impl*>::Iterator end(d->feeds.end() ) ;
-    for ( it = d->feeds.begin(); it != end; ++it )
+    for ( it = d->feeds.begin(); it != d->feeds.end(); ++it )
         it.value()->commit();
 
     if(d->storage)
@@ -188,8 +186,7 @@ bool Akregator::Backend::StorageMK4Impl::commit()
 bool Akregator::Backend::StorageMK4Impl::rollback()
 {
     QMap<QString, FeedStorageMK4Impl*>::Iterator it;
-    QMap<QString, FeedStorageMK4Impl*>::Iterator end(d->feeds.end() ) ;
-    for ( it = d->feeds.begin(); it != end; ++it )
+    for ( it = d->feeds.begin(); it != d->feeds.end(); ++it )
         it.value()->rollback();
 
     if(d->storage)

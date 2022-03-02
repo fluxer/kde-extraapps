@@ -54,8 +54,8 @@ static const double distanceConsideredEqual = 25; // 5px
 
 static void deleteObjectRects( QList< ObjectRect * >& rects, const QSet<ObjectRect::ObjectType>& which )
 {
-    QList< ObjectRect * >::iterator it = rects.begin(), end = rects.end();
-    for ( ; it != end; )
+    QList< ObjectRect * >::iterator it = rects.begin();
+    for ( ; it != rects.end(); )
         if ( which.contains( (*it)->objectType() ) )
         {
             delete *it;
@@ -654,14 +654,14 @@ bool Page::removeAnnotation( Annotation * annotation )
     if ( !d->m_doc->m_parent->canRemovePageAnnotation(annotation) )
         return false;
 
-    QList< Annotation * >::iterator aIt = m_annotations.begin(), aEnd = m_annotations.end();
-    for ( ; aIt != aEnd; ++aIt )
+    QList< Annotation * >::iterator aIt = m_annotations.begin();
+    for ( ; aIt != m_annotations.end(); ++aIt )
     {
         if((*aIt) && (*aIt)->uniqueName()==annotation->uniqueName())
         {
             int rectfound = false;
-            QList< ObjectRect * >::iterator it = m_rects.begin(), end = m_rects.end();
-            for ( ; it != end && !rectfound; ++it )
+            QList< ObjectRect * >::iterator it = m_rects.begin();
+            for ( ; it != m_rects.end() && !rectfound; ++it )
                 if ( ( (*it)->objectType() == ObjectRect::OAnnotation ) && ( (*it)->object() == (*aIt) ) )
                 {
                     delete *it;
@@ -750,8 +750,8 @@ void Page::deleteRects()
 void PagePrivate::deleteHighlights( int s_id )
 {
     // delete highlights by ID
-    QList< HighlightAreaRect* >::iterator it = m_page->m_highlights.begin(), end = m_page->m_highlights.end();
-    while ( it != end )
+    QList< HighlightAreaRect* >::iterator it = m_page->m_highlights.begin();
+    while ( it != m_page->m_highlights.end() )
     {
         HighlightAreaRect* highlight = *it;
         if ( s_id == -1 || highlight->s_id == s_id )

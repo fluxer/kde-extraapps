@@ -181,13 +181,13 @@ void BookmarkManager::Private::_o_changed( const QString & groupAddress, const Q
 
     KUrl referurl;
     // first, try to find the bookmark group whom change notification was just received
-    QHash<KUrl, QString>::iterator it = knownFiles.begin(), itEnd = knownFiles.end();
-    for ( ; it != itEnd; ++it )
+    QHash<KUrl, QString>::iterator it = knownFiles.begin();
+    for ( ; it != knownFiles.end(); ++it )
     {
         if ( it.value() == groupAddress )
         {
             referurl = it.key();
-            knownFiles.erase( it );
+            it = knownFiles.erase( it );
             break;
         }
     }

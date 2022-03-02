@@ -1296,10 +1296,10 @@ QList< QPair<WordsWithCharacters, QRect> > makeAndSortLines(const WordsWithChara
     qSort(words.begin(),words.end(),compareTinyTextEntityY);
 
     // Step 2
-    QList<WordWithCharacters>::Iterator it = words.begin(), itEnd = words.end();
+    QList<WordWithCharacters>::Iterator it = words.begin();
 
     //for every non-space texts(characters/words) in the textList
-    for( ; it != itEnd ; it++)
+    for( ; it != words.end() ; it++)
     {
         const QRect elementArea = (*it).area().roundedGeometry(pageWidth,pageHeight);
         bool found = false;

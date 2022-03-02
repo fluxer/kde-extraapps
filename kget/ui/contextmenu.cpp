@@ -33,9 +33,8 @@ KMenu * ContextMenu::createTransferContextMenu(QList<TransferHandler*> transfers
     //bool sameFactory = true;
 
     /*QList<TransferHandler *>::iterator it = transfers.begin();
-    QList<TransferHandler *>::iterator itEnd = transfers.end();
 
-    for(; (it!=itEnd) && (sameFactory) ; ++it)
+    for(; (it!=transfers.end()) && (sameFactory) ; ++it)
     {
         //sameFactory = ( (*it)->m_transfer->factory() == //Port factory() to transferhandler
          //               transfers.first()->m_transfer->factory() );

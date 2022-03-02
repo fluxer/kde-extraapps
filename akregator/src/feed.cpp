@@ -577,8 +577,7 @@ void Akregator::Feed::fetch(bool followDiscovery)
     // mark all new as unread
     QList<Article> articles = d->articles.values();
     QList<Article>::Iterator it;
-    QList<Article>::Iterator en = articles.end();
-    for (it = articles.begin(); it != en; ++it)
+    for (it = articles.begin(); it != articles.end(); ++it)
     {
         if ((*it).status() == New)
         {

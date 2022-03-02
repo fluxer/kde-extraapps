@@ -705,8 +705,7 @@ void PageView::openAnnotationWindow( Okular::Annotation * annotation, int pageNu
 void PageView::slotAnnotationWindowDestroyed( QObject * window )
 {
     QHash< Okular::Annotation*, AnnotWindow * >::Iterator it = d->m_annowindows.begin();
-    QHash< Okular::Annotation*, AnnotWindow * >::Iterator itEnd = d->m_annowindows.end();
-    while ( it != itEnd )
+    while ( it != d->m_annowindows.end() )
     {
         if ( it.value() == window )
         {

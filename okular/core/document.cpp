@@ -427,13 +427,12 @@ void DocumentPrivate::cleanupPixmapMemory( qulonglong memoryToFree )
 AllocatedPixmap * DocumentPrivate::searchLowestPriorityPixmap( bool unloadableOnly, bool thenRemoveIt, DocumentObserver *observer )
 {
     QList< AllocatedPixmap * >::iterator pIt = m_allocatedPixmaps.begin();
-    QList< AllocatedPixmap * >::iterator pEnd = m_allocatedPixmaps.end();
-    QList< AllocatedPixmap * >::iterator farthestPixmap = pEnd;
+    QList< AllocatedPixmap * >::iterator farthestPixmap = m_allocatedPixmaps.end();
     const int currentViewportPage = (*m_viewportIterator).pageNumber;
 
     /* Find the pixmap that is farthest from the current viewport */
     int maxDistance = -1;
-    while ( pIt != pEnd )
+    while ( pIt != m_allocatedPixmaps.end() )
     {
         const AllocatedPixmap * p = *pIt;
         // Filter by observer
@@ -450,7 +449,7 @@ AllocatedPixmap * DocumentPrivate::searchLowestPriorityPixmap( bool unloadableOn
     }
 
     /* No pixmap to remove */
-    if ( farthestPixmap == pEnd )
+    if ( farthestPixmap == m_allocatedPixmaps.end() )
         return 0;
 
     AllocatedPixmap * selectedPixmap = *farthestPixmap;
@@ -1514,8 +1513,8 @@ void DocumentPrivate::slotGeneratorConfigChanged( const QString& )
 
     // reparse generator config and if something changed clear Pages
     bool configchanged = false;
-    QHash< QString, GeneratorInfo >::iterator it = m_loadedGenerators.begin(), itEnd = m_loadedGenerators.end();
-    for ( ; it != itEnd; ++it )
+    QHash< QString, GeneratorInfo >::iterator it = m_loadedGenerators.begin();
+    for ( ; it != m_loadedGenerators.end(); ++it )
     {
         Okular::ConfigInterface * iface = generatorConfig( it.value() );
         if ( iface )
@@ -2476,8 +2475,7 @@ void Document::removeObserver( DocumentObserver * pObserver )
 
         // [MEM] free observer's allocation descriptors
         QList< AllocatedPixmap * >::iterator aIt = d->m_allocatedPixmaps.begin();
-        QList< AllocatedPixmap * >::iterator aEnd = d->m_allocatedPixmaps.end();
-        while ( aIt != aEnd )
+        while ( aIt != d->m_allocatedPixmaps.end() )
         {
             AllocatedPixmap * p = *aIt;
             if ( p->observer == pObserver )
@@ -2832,8 +2830,8 @@ void Document::requestPixmaps( const QList< PixmapRequest * > & requests, Pixmap
     }
     const bool removeAllPrevious = reqOptions & RemoveAllPrevious;
     d->m_pixmapRequestsMutex.lock();
-    QList< PixmapRequest * >::iterator sIt = d->m_pixmapRequestsStack.begin(), sEnd = d->m_pixmapRequestsStack.end();
-    while ( sIt != sEnd )
+    QList< PixmapRequest * >::iterator sIt = d->m_pixmapRequestsStack.begin();
+    while ( sIt != d->m_pixmapRequestsStack.end() )
     {
         if ( (*sIt)->observer() == requesterObserver
              && ( removeAllPrevious || requestedPages.contains( (*sIt)->pageNumber() ) ) )
@@ -2897,8 +2895,7 @@ void Document::requestPixmaps( const QList< PixmapRequest * > & requests, Pixmap
         {
             // insert in stack sorted by priority
             sIt = d->m_pixmapRequestsStack.begin();
-            sEnd = d->m_pixmapRequestsStack.end();
-            while ( sIt != sEnd && (*sIt)->priority() > request->priority() )
+            while ( sIt != d->m_pixmapRequestsStack.end() && (*sIt)->priority() > request->priority() )
                 ++sIt;
             d->m_pixmapRequestsStack.insert( sIt, request );
         }
@@ -3882,8 +3879,7 @@ void Document::fillConfigDialog( KConfigDialog * dialog )
 
     bool pagesAdded = false;
     QHash< QString, GeneratorInfo >::iterator it = d->m_loadedGenerators.begin();
-    QHash< QString, GeneratorInfo >::iterator itEnd = d->m_loadedGenerators.end();
-    for ( ; it != itEnd; ++it )
+    for ( ; it != d->m_loadedGenerators.end(); ++it )
     {
         Okular::ConfigInterface * iface = d->generatorConfig( it.value() );
         if ( iface )
@@ -4276,8 +4272,7 @@ void DocumentPrivate::requestDone( PixmapRequest * req )
 
     // [MEM] 1.1 find and remove a previous entry for the same page and id
     QList< AllocatedPixmap * >::iterator aIt = m_allocatedPixmaps.begin();
-    QList< AllocatedPixmap * >::iterator aEnd = m_allocatedPixmaps.end();
-    for ( ; aIt != aEnd; ++aIt )
+    for ( ; aIt != m_allocatedPixmaps.end(); ++aIt )
         if ( (*aIt)->page == req->pageNumber() && (*aIt)->observer == req->observer() )
         {
             AllocatedPixmap * p = *aIt;

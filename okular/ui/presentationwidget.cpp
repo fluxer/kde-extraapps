@@ -293,8 +293,8 @@ PresentationWidget::~PresentationWidget()
     delete m_drawingEngine;
 
     // delete frames
-    QVector< PresentationFrame * >::iterator fIt = m_frames.begin(), fEnd = m_frames.end();
-    for ( ; fIt != fEnd; ++fIt )
+    QVector< PresentationFrame * >::iterator fIt = m_frames.begin();
+    for ( ; fIt != m_frames.end(); ++fIt )
         delete *fIt;
 }
 
@@ -307,8 +307,8 @@ void PresentationWidget::notifySetup( const QVector< Okular::Page * > & pageSet,
         return;
 
     // delete previous frames (if any (shouldn't be))
-    QVector< PresentationFrame * >::iterator fIt = m_frames.begin(), fEnd = m_frames.end();
-    for ( ; fIt != fEnd; ++fIt )
+    QVector< PresentationFrame * >::iterator fIt = m_frames.begin();
+    for ( ; fIt != m_frames.end(); ++fIt )
         delete *fIt;
     if ( !m_frames.isEmpty() )
         kWarning() << "Frames setup changed while a Presentation is in progress.";

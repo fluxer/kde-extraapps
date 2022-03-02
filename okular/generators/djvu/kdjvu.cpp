@@ -754,8 +754,8 @@ void KDjVu::closeFile()
     qDeleteAll( d->m_pages );
     d->m_pages.clear();
     // releasing the djvu pages
-    QVector<ddjvu_page_t *>::Iterator it = d->m_pages_cache.begin(), itEnd = d->m_pages_cache.end();
-    for ( ; it != itEnd; ++it )
+    QVector<ddjvu_page_t *>::Iterator it = d->m_pages_cache.begin();
+    for ( ; it != d->m_pages_cache.end(); ++it )
         ddjvu_page_release( *it );
     d->m_pages_cache.clear();
     // clearing the image cache
@@ -910,8 +910,8 @@ QImage KDjVu::image( int page, int width, int height, int rotation )
     if ( d->m_cacheEnabled )
     {
     bool found = false;
-    QList<ImageCacheItem*>::Iterator it = d->mImgCache.begin(), itEnd = d->mImgCache.end();
-    for ( ; ( it != itEnd ) && !found; ++it )
+    QList<ImageCacheItem*>::Iterator it = d->mImgCache.begin();
+    for ( ; ( it != d->mImgCache.end() ) && !found; ++it )
     {
         ImageCacheItem* cur = *it;
         if ( ( cur->page == page ) &&

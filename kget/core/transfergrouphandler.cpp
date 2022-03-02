@@ -54,9 +54,8 @@ void TransferGroupHandler::move(QList<TransferHandler *> transfers, TransferHand
         return;
 
     QList<TransferHandler *>::iterator it = transfers.begin();
-    QList<TransferHandler *>::iterator itEnd = transfers.end();
 
-    for( ; it!=itEnd ; ++it )
+    for( ; it!=transfers.end() ; ++it )
     {
         //Move the transfers in the JobQueue
         if(after)

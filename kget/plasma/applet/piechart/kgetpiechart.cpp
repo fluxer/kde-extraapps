@@ -253,8 +253,7 @@ void KGetPieChart::Private::removeTransfers(const QList<OrgKdeKgetTransferInterf
 {
     // remove the progressbars for the deleted transfers
     QHash<OrgKdeKgetTransferInterface*, Item*>::iterator it;
-    QHash<OrgKdeKgetTransferInterface*, Item*>::iterator itEnd = m_items.end();
-    for (it = m_items.begin(); it != itEnd; ) {
+    for (it = m_items.begin(); it != m_items.end(); ) {
         OrgKdeKgetTransferInterface *transfer = it.key();
         if (transfers.contains(transfer)) {
             Item *item = it.value();
