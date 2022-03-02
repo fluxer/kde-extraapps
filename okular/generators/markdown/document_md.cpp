@@ -46,10 +46,6 @@ MDDocument::MDDocument(const QString &fileName)
     setHtml(codec->toUnicode(m_mddata));
 }
 
-MDDocument::~MDDocument()
-{
-}
-
 void MDDocument::slotMdCallback(const char* data, qlonglong datasize)
 {
     m_mddata.append(data, datasize);

@@ -19,11 +19,11 @@ static KAboutData createAboutData()
     KAboutData aboutData(
          "okular_md",
          "okular_md",
-         ki18n( "Markdown Backend" ),
+         ki18n("Markdown Backend"),
          "0.1",
-         ki18n( "Markdown backend." ),
+         ki18n("Markdown backend."),
          KAboutData::License_GPL,
-         ki18n( "© 2022 Ivailo Monev" )
+         ki18n("© 2022 Ivailo Monev")
     );
     aboutData.addAuthor(ki18n("Ivailo Monev"), KLocalizedString(), "xakepa10@gmail.com");
     return aboutData;

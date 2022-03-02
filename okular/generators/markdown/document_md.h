@@ -15,8 +15,7 @@
 class MDDocument : public QTextDocument
 {
     public:
-        MDDocument( const QString &fileName );
-        ~MDDocument();
+        MDDocument(const QString &fileName);
 
         void slotMdCallback(const char* data, qlonglong datasize);
 
