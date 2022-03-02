@@ -32,4 +32,5 @@ if(EPub_FOUND)
     add_subdirectory(epub)
 endif()
 
+add_subdirectory(markdown)
 add_subdirectory(txt)
