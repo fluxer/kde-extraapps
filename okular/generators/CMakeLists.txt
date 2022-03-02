@@ -33,7 +33,3 @@ if(EPub_FOUND)
 endif()
 
 add_subdirectory(txt)
-
-if(QMobipocket_FOUND)
-    add_subdirectory(mobipocket)
-endif()

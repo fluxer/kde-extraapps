@@ -62,13 +62,6 @@ set_package_properties(EPub PROPERTIES
     PURPOSE "Support for EPub documents in Okular"
 )
 
-macro_optional_find_package(QMobipocket)
-set_package_properties(QMobipocket PROPERTIES
-    DESCRIPTION "A library for reading Mobipocket documents"
-    URL "https://projects.kde.org/projects/kde/kdegraphics/kdegraphics-mobipocket"
-    PURPOSE "Support for Mobipocket documents in Okular"
-)
-
 # v1.5.0+ required for gcry_kdf_derive()
 macro_optional_find_package(LibGcrypt 1.5.0)
 set_package_properties(LibGcrypt PROPERTIES
