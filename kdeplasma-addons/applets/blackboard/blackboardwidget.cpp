@@ -23,6 +23,7 @@
 #include <QtGui/qstyleoption.h>
 #include <QPainter>
 #include <QTimer>
+#include <QImageWriter>
 
 #include <KDebug>
 #include <KIO/DeleteJob>
@@ -31,6 +32,12 @@
 
 #include <Plasma/Applet>
 #include <Plasma/Theme>
+
+#if QT_VERSION >= 0x041200
+static const QByteArray pixmapFormat = QImageWriter::defaultImageFormat();
+#else
+static const QByteArray pixmapFormat = "png";
+#endif
 
 BlackBoardWidget::BlackBoardWidget(Plasma::Applet *parent)
       : QGraphicsWidget(parent)
@@ -60,7 +67,7 @@ void BlackBoardWidget::saveImage()
         if (m_changed){
             KSaveFile imageFile(imagePath());
             imageFile.open();
-            m_pixmap.save(&imageFile, "PNG");
+            m_pixmap.save(&imageFile, pixmapFormat);
             imageFile.finalize();
             imageFile.close();
         }
@@ -70,7 +77,7 @@ void BlackBoardWidget::saveImage()
 void BlackBoardWidget::loadImage()
 {
     m_painter.end();
-    m_pixmap.load(imagePath(), "PNG");
+    m_pixmap.load(imagePath(), pixmapFormat);
     update(contentsRect());
     m_painter.begin(&m_pixmap);
     m_painter.setPen(QPen(m_color, 3));

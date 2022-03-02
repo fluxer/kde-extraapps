@@ -24,10 +24,16 @@
 #include <QtCore/QTimer>
 #include <QtCore/QThreadPool>
 #include <QtGui/QImage>
+#include <QtGui/QImageWriter>
 
-#include <KDebug>
-
+#include <kdebug.h>
 #include <kstandarddirs.h>
+
+#if QT_VERSION >= 0x041200
+static const QByteArray imageFormat = QImageWriter::defaultImageFormat();
+#else
+static const QByteArray imageFormat = "png";
+#endif
 
 LoadImageThread::LoadImageThread(const QString &filePath)
     : m_filePath(filePath)
@@ -37,7 +43,7 @@ LoadImageThread::LoadImageThread(const QString &filePath)
 void LoadImageThread::run()
 {
     QImage image;
-    image.load(m_filePath );
+    image.load(m_filePath, imageFormat);
     emit done(image);
 }
 
@@ -50,7 +56,7 @@ SaveImageThread::SaveImageThread(const QString &identifier, const QImage &image)
 void SaveImageThread::run()
 {
     const QString path = CachedProvider::identifierToPath( m_identifier );
-    m_image.save(path, "PNG");
+    m_image.save(path, imageFormat);
     emit done( m_identifier, path, m_image );
 }
 
