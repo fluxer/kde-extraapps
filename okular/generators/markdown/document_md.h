@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#ifndef MD_DOCUMENT_H
+#define MD_DOCUMENT_H
 
 #include <QtGui/QTextDocument>
 
@@ -21,3 +23,5 @@ class MDDocument : public QTextDocument
     private:
         QByteArray m_mddata;
 };
+
+#endif // MD_DOCUMENT_H

@@ -8,8 +8,8 @@
  ***************************************************************************/
 
 
-#ifndef _MD_GENERATOR_H_
-#define _MD_GENERATOR_H_
+#ifndef MD_GENERATOR_H
+#define MD_GENERATOR_H
 
 
 #include <core/textdocumentgenerator.h>
@@ -23,4 +23,4 @@ class MDGenerator : public Okular::TextDocumentGenerator
         void addPages( KConfigDialog* dlg );
 };
 
-#endif
+#endif // MD_GENERATOR_H
