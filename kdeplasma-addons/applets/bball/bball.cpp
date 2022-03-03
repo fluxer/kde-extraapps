@@ -28,6 +28,7 @@
 #include <KStandardDirs>
 #include <KIO/NetAccess>
 #include <KMessageBox>
+#include <KImageIO>
 
 #include <stdlib.h>
 
@@ -111,6 +112,7 @@ void bballApplet::createConfigurationInterface(KConfigDialog *parent)
     ui.setupUi(widget);
 
     // Appearance
+    ui.imageUrl->setFilter(KImageIO::pattern(KImageIO::Reading));
     ui.imageUrl->setUrl(KUrl::fromPath(m_image_url));
     ui.colourizeEnabled->setChecked(m_overlay_enabled);
     ui.colourizeLabel->setEnabled(m_overlay_enabled);
