@@ -19,13 +19,11 @@
 
 #include "configdialog.h"
 
-#include <QThreadPool>
-
 #include <KLocale>
 #include <KStandardDirs>
+#include <KImageIO>
 
 #include "picture.h"
-#include "imagescaler.h"
 
 ConfigDialog::ConfigDialog(QWidget *parent)
         : QObject(parent)
@@ -55,6 +53,7 @@ ConfigDialog::ConfigDialog(QWidget *parent)
     m_preview->setGeometry(23, 14, 151, 115);
     m_preview->show();
 
+    imageUi.picRequester->setFilter(KImageIO::pattern(KImageIO::Reading));
     connect(imageUi.picRequester, SIGNAL(urlSelected(KUrl)), this, SLOT(changePreview(KUrl)));
     connect(imageUi.picRequester->comboBox(), SIGNAL(activated(QString)), this, SLOT(changePreview(QString)));
 }
@@ -125,14 +124,8 @@ KUrl ConfigDialog::currentUrl() const
 
 void ConfigDialog::previewPicture(const QImage &image)
 {
-    ImageScaler *scaler = new ImageScaler(image, QRect(23, 14, 151, 115).size());
-    connect(scaler, SIGNAL(scaled(QImage)), this, SLOT(previewScaled(QImage)));
-    QThreadPool::globalInstance()->start(scaler);
-}
-
-void ConfigDialog::previewScaled(const QImage &image)
-{
-    m_preview->setPixmap(QPixmap::fromImage(image));
+    QImage scaledimage = image.scaled(QRect(23, 14, 151, 115).size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    m_preview->setPixmap(QPixmap::fromImage(scaledimage));
 }
 
 void ConfigDialog::changePreview(const KUrl &path)

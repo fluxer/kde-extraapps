@@ -4,8 +4,6 @@ set(frame_SRCS
     frame.cpp
     slideshow.cpp
     picture.cpp
-    imagescaler.cpp
-    imageloader.cpp
     configdialog.cpp
     imageSettings.ui
     appearanceSettings.ui

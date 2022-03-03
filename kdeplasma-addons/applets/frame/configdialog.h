@@ -66,8 +66,6 @@ private slots:
     void changePreview(const QString &);
     /// The image is loaded, update the preview
     void pictureLoaded(QImage image);
-    /// The preview is scaled
-    void previewScaled(const QImage &);
 
 private:
     Picture *m_picture;

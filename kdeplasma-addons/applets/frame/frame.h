@@ -76,7 +76,6 @@ private Q_SLOTS:
     void updateButtons();
     void delayedUpdateSize();
     void scalePictureAndUpdate();
-    void imageScaled(const QImage &img);
     void reloadImage();
 
 protected:

@@ -30,7 +30,6 @@
 #include <QCheckBox>
 #include <QFileInfo>
 #include <QStandardItemModel>
-#include <QThreadPool>
 #include <Plasma/Containment>
 #include <Plasma/Wallpaper>
 
@@ -55,7 +54,6 @@
 #include "configdialog.h"
 #include "picture.h"
 #include "slideshow.h"
-#include "imagescaler.h"
 
 Frame::Frame(QObject *parent, const QVariantList &args)
         : Plasma::Applet(parent, args),
@@ -292,15 +290,7 @@ QSizeF Frame::sizeHint(Qt::SizeHint which, const QSizeF &constraint) const
 
 void Frame::scalePictureAndUpdate()
 {
-    QImage img = m_mySlideShow->image();
-    ImageScaler *scaler = new ImageScaler(img, contentSizeHint().toSize());
-    connect(scaler, SIGNAL(scaled(QImage)), this, SLOT(imageScaled(QImage)));
-    QThreadPool::globalInstance()->start(scaler);
-}
-
-void Frame::imageScaled(const QImage &img)
-{
-    m_scaledImage = img;
+    m_scaledImage = m_mySlideShow->image().scaled(contentSizeHint().toSize(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     updatePicture();
 }
 

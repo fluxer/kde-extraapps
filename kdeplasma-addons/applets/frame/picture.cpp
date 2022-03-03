@@ -21,7 +21,6 @@
 #include "picture.h"
 
 #include <QFile>
-#include <QThreadPool>
 
 #include <KDebug>
 #include <KGlobalSettings>
@@ -29,12 +28,21 @@
 #include <KIO/NetAccess>
 #include <KIO/Job>
 #include <KStandardDirs>
+#include <kexiv2.h>
 
 #include <klocalizedstring.h>
 #include <Plasma/Theme>
 #include <Plasma/Svg>
 
-#include "imageloader.h"
+static QImage loadImageAndRotate(const QString &path)
+{
+    QImage image(path);
+    if (!image.isNull()) {
+        KExiv2 exiv(path);
+        exiv.rotateImage(image);
+    }
+    return image;
+}
 
 Picture::Picture(QObject *parent)
         : QObject(parent)
@@ -77,9 +85,8 @@ QImage Picture::defaultPicture(const QString &message)
 {
     // Create a QImage with same axpect ratio of default svg and current pixelSize
     kDebug() << "Default Image:" << m_defaultImage;
-    QImage image = QImage(m_defaultImage);
     m_message = message;
-    return image;
+    return QImage(m_defaultImage);
 }
 
 void Picture::setPicture(const KUrl &currentUrl)
@@ -93,25 +100,19 @@ void Picture::setPicture(const KUrl &currentUrl)
         connect(job, SIGNAL(finished(KJob*)), this, SLOT(slotFinished(KJob*)));
         emit pictureLoaded(defaultPicture(i18n("Loading image...")));
     } else {
-        ImageLoader *loader = 0;
         if (m_checkDir) {
             m_message = i18nc("Info", "Dropped folder is empty. Please drop a folder with image(s)");
             m_checkDir = false;
+            emit checkImageLoaded(loadImageAndRotate(m_defaultImage));
         } else if (currentUrl.isEmpty()) {
             m_message = i18nc("Info", "Put your photo here or drop a folder to start a slideshow");
             kDebug() << "default image ...";
+            emit checkImageLoaded(loadImageAndRotate(m_defaultImage));
         } else {
-            loader = new ImageLoader(m_currentUrl.path());
             setPath(m_currentUrl.path());
             m_message.clear();
+            emit checkImageLoaded(loadImageAndRotate(m_currentUrl.path()));
         }
-
-        if (!loader) {
-            loader = new ImageLoader(m_defaultImage);
-        }
-
-        connect(loader, SIGNAL(loaded(QImage)), this, SLOT(checkImageLoaded(QImage)));
-        QThreadPool::globalInstance()->start(loader);
     }
 }
 
@@ -134,11 +135,11 @@ void Picture::setPath(const QString &path)
 
 void Picture::reload()
 {
-    kDebug() << "Picture reload";
-    setMessage(QString());
-    ImageLoader *loader = new ImageLoader(m_path);
-    connect(loader, SIGNAL(loaded(QImage)), this, SLOT(checkImageLoaded(QImage)));
-    QThreadPool::globalInstance()->start(loader);
+    if (!m_path.isEmpty()) {
+        kDebug() << "Picture reload";
+        setMessage(QString());
+        emit checkImageLoaded(loadImageAndRotate(m_path));
+    }
 }
 
 void Picture::customizeEmptyMessage() 
@@ -146,9 +147,8 @@ void Picture::customizeEmptyMessage()
     m_checkDir = true;
 }
 
-void Picture::slotFinished( KJob *job )
+void Picture::slotFinished(KJob *job)
 {
-    QString filename = m_currentUrl.fileName();
     QString path = KStandardDirs::locateLocal("cache", "plasma-frame/" +  m_currentUrl.fileName());
     QImage image;
 
@@ -163,8 +163,6 @@ void Picture::slotFinished( KJob *job )
         kDebug() << "Saved to" << path;
         setPath(path);
     }
-
-    ImageLoader::correctRotation(image, path);
 
     emit checkImageLoaded(image);
 }
