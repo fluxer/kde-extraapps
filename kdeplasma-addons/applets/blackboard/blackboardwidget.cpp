@@ -157,7 +157,7 @@ void BlackBoardWidget::erase()
 
 QString BlackBoardWidget::imagePath()
 {
-    return KStandardDirs::locateLocal("data", QLatin1String("plasma-desktop-datastorage/blackboard-") + QString::number(m_parentApplet->id()) + QLatin1String(".png")); 
+    return KStandardDirs::locateLocal("data", QLatin1String("plasma-desktop-datastorage/blackboard-") + QString::number(m_parentApplet->id()) + QLatin1Char('.') + pixmapFormat);
 }
 
 #include "moc_blackboardwidget.cpp"
