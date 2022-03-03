@@ -26,6 +26,7 @@
 //KDE
 #include <KConfigDialog>
 #include <KIcon>
+#include <KImageIO>
 
 //Plasma
 #include <Plasma/Theme>
@@ -138,6 +139,7 @@ void FifteenPuzzle::createConfigurationInterface(KConfigDialog *parent)
     } else {
         ui.rb_split->setChecked(true);
     }
+    ui.urlRequester->setFilter(KImageIO::pattern(KImageIO::Reading));
     ui.urlRequester->setUrl(m_imagePath);
     ui.cb_showNumerals->setChecked(m_showNumerals);
     ui.color->setColor(m_board->color());
