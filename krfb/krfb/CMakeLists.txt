@@ -1,41 +1,40 @@
-configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config-krfb.h.cmake
-                ${CMAKE_CURRENT_BINARY_DIR}/config-krfb.h
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/config-krfb.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config-krfb.h
 )
 
 #####################################
 # First target: libkrfbprivate - a library
 # for linking plugins against.
 
-set (krfbprivate_SRCS
-     framebuffer.cpp
-     framebufferplugin.cpp
+set(krfbprivate_SRCS
+    framebuffer.cpp
+    framebufferplugin.cpp
 )
 
-add_library (krfbprivate
-                  SHARED
-                  ${krfbprivate_SRCS}
+add_library(krfbprivate SHARED ${krfbprivate_SRCS})
+
+target_link_libraries(krfbprivate
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${X11_X11_LIB}
+    ${LIBVNCSERVER_LIBRARIES}
 )
 
-target_link_libraries (krfbprivate
-                       ${QT_QTCORE_LIBRARY}
-                       ${QT_QTGUI_LIBRARY}
-                       ${X11_X11_LIB}
-                       ${LIBVNCSERVER_LIBRARIES}
+set_target_properties(krfbprivate PROPERTIES
+    VERSION ${GENERIC_LIB_VERSION}
+    SOVERSION ${GENERIC_LIB_VERSION}
 )
 
-set_target_properties (krfbprivate PROPERTIES
-                       VERSION ${GENERIC_LIB_VERSION}
-                       SOVERSION ${GENERIC_LIB_VERSION}
+install(
+    TARGETS krfbprivate
+    ${INSTALL_TARGETS_DEFAULT_ARGS}
+    LIBRARY NAMELINK_SKIP
 )
 
-install (TARGETS krfbprivate
-         ${INSTALL_TARGETS_DEFAULT_ARGS}
-         LIBRARY NAMELINK_SKIP
-)
-
-install (FILES
-         krfb-framebuffer.desktop
-         DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
+install(
+    FILES krfb-framebuffer.desktop
+    DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
 )
 
 #####################################
@@ -61,40 +60,36 @@ set(krfb_SRCS
     mainwidget.ui
 )
 
-kde4_add_kcfg_files (krfb_SRCS krfbconfig.kcfgc)
+kde4_add_kcfg_files(krfb_SRCS krfbconfig.kcfgc)
 
-add_executable (krfb ${krfb_SRCS})
+add_executable(krfb ${krfb_SRCS})
 
-target_link_libraries (krfb
-                       krfbprivate
-                       vncserver
-                       ${JPEG_LIBRARIES}
-                       ${X11_Xext_LIB}
-                       ${X11_X11_LIB}
-                       ${X11_Xdamage_LIB}
-                       ${QT_QTNETWORK_LIBRARY}
-                       ${KDE4_KDNSSD_LIBS}
-                       ${KDE4_KDEUI_LIBS}
-                       ${LIBVNCSERVER_LIBRARIES}
+target_link_libraries(krfb
+    krfbprivate
+    vncserver
+    ${X11_Xext_LIB}
+    ${X11_X11_LIB}
+    ${X11_Xdamage_LIB}
+    ${X11_XTest_LIB}
+    ${QT_QTNETWORK_LIBRARY}
+    ${KDE4_KDNSSD_LIBS}
+    ${KDE4_KDEUI_LIBS}
+    ${LIBVNCSERVER_LIBRARIES}
 )
 
-if (X11_XTest_FOUND)
-    target_link_libraries (krfb
-                           ${X11_XTest_LIB}
-    )
-endif (X11_XTest_FOUND)
-
-install (TARGETS krfb
-         ${INSTALL_TARGETS_DEFAULT_ARGS}
+install(
+    TARGETS krfb ${INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 ########### install files ###############
 
-install (PROGRAMS krfb.desktop
-         DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
+install(
+    PROGRAMS krfb.desktop
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
 )
 
-install (FILES krfb.notifyrc
-         DESTINATION ${KDE4_DATA_INSTALL_DIR}/krfb
+install(
+    FILES krfb.notifyrc
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/krfb
 )
  
