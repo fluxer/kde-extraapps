@@ -29,6 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KFileDialog>
 #include <KIcon>
 #include <KIconLoader>
+#include <KImageIO>
 #include <KIO/Job>
 #include <KIO/JobUiDelegate>
 #include <KLocale>
@@ -154,7 +155,7 @@ void GVPart::showContextMenu()
 void GVPart::saveAs()
 {
     KUrl srcUrl = url();
-    KUrl dstUrl = KFileDialog::getSaveUrl(srcUrl.fileName(), QString(), widget());
+    KUrl dstUrl = KFileDialog::getSaveUrl(srcUrl.fileName(), KImageIO::pattern(KImageIO::Writing), widget());
     if (!dstUrl.isValid()) {
         return;
     }
