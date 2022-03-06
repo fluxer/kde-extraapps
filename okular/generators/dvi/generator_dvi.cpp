@@ -76,8 +76,6 @@ bool DviGenerator::loadDocument( const QString & fileName, QVector< Okular::Page
     //kDebug(DviDebug) << "file:" << fileName;
     KUrl base( fileName );
 
-    (void)userMutex();
-
     m_dviRenderer = new dviRenderer(documentMetaData("TextHinting", QVariant()).toBool());
     connect( m_dviRenderer, SIGNAL( error(QString,int) ), this, SIGNAL( error(QString,int) ) );
     connect( m_dviRenderer, SIGNAL( warning(QString,int) ), this, SIGNAL( warning(QString,int) ) );
@@ -264,8 +262,6 @@ QImage DviGenerator::image( Okular::PixmapRequest *request )
             }
         }
     }
-
-    lock.unlock();
 
     delete pageInfo;
 

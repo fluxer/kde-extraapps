@@ -128,10 +128,8 @@ bool DjVuGenerator::doCloseDocument()
 
 QImage DjVuGenerator::image( Okular::PixmapRequest *request )
 {
-    userMutex()->lock();
-    QImage img = m_djvu->image( request->pageNumber(), request->width(), request->height(), request->page()->rotation() );
-    userMutex()->unlock();
-    return img;
+    QMutexLocker locker( userMutex() );
+    return m_djvu->image( request->pageNumber(), request->width(), request->height(), request->page()->rotation() );
 }
 
 const Okular::DocumentInfo * DjVuGenerator::generateDocumentInfo()
@@ -190,7 +188,6 @@ const Okular::DocumentSynopsis * DjVuGenerator::generateDocumentSynopsis()
         m_docSyn = new Okular::DocumentSynopsis();
         recurseCreateTOC( *m_docSyn, *doc, *m_docSyn, m_djvu );
     }
-    locker.unlock();
 
     return m_docSyn;
 }

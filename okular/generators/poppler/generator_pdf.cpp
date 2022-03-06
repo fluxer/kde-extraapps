@@ -1041,10 +1041,8 @@ QVariant PDFGenerator::metaData( const QString & key, const QVariant & option ) 
     }
     else if ( key == "DocumentTitle" )
     {
-        userMutex()->lock();
-        QString title = pdfdoc->info( "Title" );
-        userMutex()->unlock();
-        return title;
+        QMutexLocker ml(userMutex());
+        return pdfdoc->info( "Title" );
     }
     else if ( key == "OpenTOC" )
     {
@@ -1692,7 +1690,7 @@ bool PDFGenerator::save( const QString &fileName, SaveOptions options, QString *
     if ( options & SaveChanges )
         pdfConv->setPDFOptions( pdfConv->pdfOptions() | Poppler::PDFConverter::WithChanges );
 
-    QMutexLocker locker( userMutex() );
+    QMutexLocker ml(userMutex());
     bool success = pdfConv->convert();
     if (!success)
     {
