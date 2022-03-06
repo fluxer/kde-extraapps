@@ -24,10 +24,6 @@ if(LIBVNCSERVER_FOUND)
         krdccore
     )
 
-    if(JPEG_FOUND)
-        target_link_libraries(krdc_vncplugin ${JPEG_LIBRARIES})
-    endif(JPEG_FOUND)
-
     set(kcm_krdc_vncplugin_SRCS
         vncpreferences.cpp
     )
