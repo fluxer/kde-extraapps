@@ -43,13 +43,9 @@ public:
 
 	QLabel* lineCountLabel;
 
-	//KSqueezedTextLabel* messageLabel;
-
 	KComboBox* messageList;
 
 	QLabel* lastModificationLabel;
-
-	QPushButton* toggleHistory;
 
 };
 
@@ -68,25 +64,9 @@ StatusBar::StatusBar(QWidget* parent) :
 	*/
 	addPermanentWidget(d->lineCountLabel, 1);
 
-	/*
-	d->toggleHistory = new QPushButton(this);
-	d->toggleHistory->setIcon(KIcon( QLatin1String( "view-history" )));
-	d->toggleHistory->setFlat(true);
-	addPermanentWidget(d->toggleHistory, 0);
-
-	connect(d->toggleHistory, SIGNAL(clicked()), this, SLOT(toggleHistory()));
-	*/
-
-/*
-	d->messageLabel = new KSqueezedTextLabel("", this);
-	d->messageLabel->setAlignment(Qt::AlignLeft);
-	d->messageLabel->setTextElideMode(Qt::ElideRight);
-	addPermanentWidget(d->messageLabel, 4);
-*/
 	d->messageList = new KComboBox(this);
 	d->messageList->setInsertPolicy(QComboBox::InsertAtTop);
 	d->messageList->setMaxVisibleItems(5);
-	connect(d->messageList, SIGNAL(currentIndexChanged(int)), this, SLOT(selectLastHistory()));
 /*
 	//TODO Define a specifical palette (and make it works !)
 	QPalette palette(d->messageList->palette());
@@ -106,7 +86,7 @@ StatusBar::StatusBar(QWidget* parent) :
 }
 
 StatusBar::~StatusBar() {
-	//QLabels are automatically deleted by Qt
+	//QLabels are automatically deleted
 	delete d;
 }
 
@@ -119,23 +99,13 @@ void StatusBar::changeLastModification(const QTime& lastModification) {
 }
 
 void StatusBar::changeMessage(const QString& message) {
-	//d->messageLabel->setText(message);
 	d->messageList->insertItem(0, i18n("%1: %2", KGlobal::locale()->formatTime(QTime::currentTime(), true, false), message));
 
 	//100 log history message max.
 	if (d->messageList->count() > 100) {
 		d->messageList->removeItem(d->messageList->count() -1);
 	}
-
-}
-
-void StatusBar::selectLastHistory() {
-	d->messageList->setCurrentIndex(0);
-}
-
-void StatusBar::toggleHistory() {
-	logDebug() << "Toggling History..." << endl;
-	d->messageList->showPopup();
+        d->messageList->setCurrentIndex(0);
 }
 
 }

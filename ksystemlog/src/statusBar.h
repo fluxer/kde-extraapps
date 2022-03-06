@@ -49,10 +49,6 @@ public:
 	void changeLastModification(const QTime& lastModification);
 	
 	void changeMessage(const QString& message);
-	
-private slots:
-	void toggleHistory();
-	void selectLastHistory();
 private:
 	
 	StatusBarPrivate* const d;
