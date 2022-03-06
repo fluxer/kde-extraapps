@@ -90,7 +90,6 @@ class Skanlite : public KDialog
 
         ImageViewer              m_imageViewer;
         QStringList              m_filterList;
-        QStringList              m_filter16BitList;
         QStringList              m_typeList;
         bool                     m_firstImage;
 };

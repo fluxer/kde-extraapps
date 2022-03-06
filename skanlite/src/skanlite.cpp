@@ -23,14 +23,12 @@
 
 #include "skanlite.h"
 #include "moc_skanlite.cpp"
-
-#include "KSaneImageSaver.h"
 #include "SaveLocation.h"
-
 
 #include <QApplication>
 #include <QScrollArea>
 #include <QStringList>
+#include <QImageWriter>
 
 #include <KAboutApplicationDialog>
 #include <KAction>
@@ -48,6 +46,12 @@
 #include <KLocale>
 
 #include <errno.h>
+
+#if QT_VERSION >= 0x041200
+static const QByteArray imageFormat = QImageWriter::defaultImageFormat();
+#else
+static const QByteArray imageFormat = "png";
+#endif
 
 Skanlite::Skanlite(const QString &device, QWidget *parent)
     : KDialog(parent)
@@ -98,16 +102,6 @@ Skanlite::Skanlite(const QString &device, QWidget *parent)
 
     // add the supported image types
     m_filterList = KImageIO::mimeTypes(KImageIO::Writing);
-    // Put first class citizens at first place
-    m_filterList.removeAll("image/jpeg");
-    m_filterList.removeAll("image/tiff");
-    m_filterList.removeAll("image/png");
-    m_filterList.insert(0, "image/png");
-    m_filterList.insert(1, "image/jpeg");
-    m_filterList.insert(2, "image/tiff");
-
-    m_filter16BitList << "image/png";
-    //m_filter16BitList << "image/tiff";
 
     QStringList type;
     foreach (const QString &mime , m_filterList) {
@@ -224,7 +218,7 @@ void Skanlite::readSettings(void)
     if (m_settingsUi.saveModeCB->currentIndex() != SaveModeAskFirst) m_firstImage = false;
     m_settingsUi.saveDirLEdit->setText(saving.readEntry("Location", QDir::homePath()));
     m_settingsUi.imgPrefix->setText(saving.readEntry("NamePrefix", i18nc("prefix for auto naming", "Image-")));
-    m_settingsUi.imgFormat->setCurrentItem(saving.readEntry("ImgFormat", "png"));
+    m_settingsUi.imgFormat->setCurrentItem(saving.readEntry("ImgFormat", imageFormat));
     m_settingsUi.imgQuality->setValue(saving.readEntry("ImgQuality", 90));
     m_settingsUi.setQuality->setChecked(saving.readEntry("SetQuality", false));
     m_settingsUi.showB4Save->setChecked(saving.readEntry("ShowBeforeSave", true));
@@ -328,17 +322,6 @@ void Skanlite::saveImage()
     QString prefix = m_saveLocation->u_imgPrefix->text();
     QString type = m_saveLocation->u_imgFormat->currentText().toLower();
     int fileNumber = m_saveLocation->u_numStartFrom->value();
-    QStringList filterList = m_filterList;
-    if ((m_format==KSaneIface::KSaneWidget::FormatRGB_16_C) ||
-        (m_format==KSaneIface::KSaneWidget::FormatGrayScale16))
-    {
-        filterList = m_filter16BitList;
-        if (type != "png") {
-            type = "png";
-            KMessageBox::information(this, i18n("The image will be saved in the PNG format, as Skanlite only supports saving 16 bit color images in the PNG format."));
-        }
-    }
-
 
     // find next available file name for name suggestion
     KUrl fileUrl;
@@ -365,8 +348,8 @@ void Skanlite::saveImage()
     if (m_settingsUi.saveModeCB->currentIndex() == SaveModeManual) {
         // ask for a filename if requested.
         m_saveDialog->setSelection(fileUrl.url());
-        m_saveDialog->setMimeFilter(filterList, "image/"+type);
-
+#warning FIXME: bogus default MIME type for some image formats
+        m_saveDialog->setMimeFilter(m_filterList, "image/"+type);
         do {
             if (m_saveDialog->exec() != KFileDialog::Accepted) return;
 
@@ -412,28 +395,15 @@ void Skanlite::saveImage()
     }
 
     // Save
-    if ((m_format==KSaneIface::KSaneWidget::FormatRGB_16_C) ||
-        (m_format==KSaneIface::KSaneWidget::FormatGrayScale16))
-    {
-        KSaneImageSaver saver;
-        if (saver.savePngSync(fname, m_data, m_width, m_height, m_format)) {
-            m_showImgDialog->close(); // closing the window if it is closed should not be a problem.
-        }
-        else {
-            perrorMessageBox(i18n("Failed to save image"));
-        }
+    // create the image if needed.
+    if (m_img.width() < 1) {
+        m_img = m_ksanew->toQImage(m_data, m_width, m_height, m_bytesPerLine, (KSaneIface::KSaneWidget::ImageFormat)m_format);
     }
-    else  {
-        // create the image if needed.
-        if (m_img.width() < 1) {
-            m_img = m_ksanew->toQImage(m_data, m_width, m_height, m_bytesPerLine, (KSaneIface::KSaneWidget::ImageFormat)m_format);
-        }
-        if (m_img.save(fname, 0, quality)) {
-            m_showImgDialog->close(); // calling close() on a closed window does nothing.
-        }
-        else {
-            perrorMessageBox(i18n("Failed to save image"));
-        }
+    if (m_img.save(fname, 0, quality)) {
+        m_showImgDialog->close(); // calling close() on a closed window does nothing.
+    }
+    else {
+        perrorMessageBox(i18n("Failed to save image"));
     }
 
     if (!fileUrl.isLocalFile()) {
