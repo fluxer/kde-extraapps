@@ -41,18 +41,11 @@ set_package_properties(Freetype PROPERTIES
     PURPOSE "Provides freetype font support in the Okular DVI generator"
 )
 
-macro_optional_find_package(JPEG)
-set_package_properties(JPEG PROPERTIES
-    DESCRIPTION "A library for reading and writing JPEG image files"
-    URL "http://www.ijg.org"
-    PURPOSE "Support fof PalmDB documents in Okular"
-)
-
 macro_optional_find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES
     DESCRIPTION "General purpose data compression library"
     URL "http://www.zlib.net"
-    PURPOSE "Support for Plucker files in Okular"
+    PURPOSE "Support for PDF files in Okular"
 )
 
 macro_optional_find_package(EPub)
