@@ -237,7 +237,7 @@ void bballApplet::configurationChanged()
     if (KIO::NetAccess::exists(ui.imageUrl->url(), KIO::NetAccess::SourceSide, NULL)) {
         m_image_url = ui.imageUrl->url().path();
         cg.writeEntry("ImgURL", m_image_url);
-        m_ballSvg.setImagePath(m_image_url);
+        m_ballImage.load(m_image_url);
     } else
         KMessageBox::error(0, i18n("The given image could not be loaded. The image will not be changed."));
     m_overlay_enabled = ui.colourizeEnabled->checkState() == Qt::Checked;
@@ -286,11 +286,11 @@ void bballApplet::configChanged()
     KConfigGroup cg = config ();
 
     // Appearance
-    m_image_url = cg.readEntry("ImgURL", KStandardDirs::locate("data", QLatin1String( "bball/bball.svgz" )));
+    m_image_url = cg.readEntry("ImgURL", KStandardDirs::locate("data", QLatin1String( "bball/bball.png" )));
     m_overlay_enabled = cg.readEntry("OverlayEnabled", false);
     m_overlay_colour = cg.readEntry("OverlayColour", QColor(Qt::white));
     m_overlay_opacity = cg.readEntry("OverlayOpacity", 0);
-    m_ballSvg.setImagePath(m_image_url);
+    m_ballImage.load(m_image_url);
     updateScaledBallImage();
 
     // Physics
@@ -420,8 +420,7 @@ void bballApplet::syncGeometry()
 void bballApplet::updateScaledBallImage()
 {
     // regen m_ballPixmap
-    m_ballSvg.resize(contentSizeHint());
-    m_ballPixmap = m_ballSvg.pixmap();
+    m_ballPixmap = QPixmap::fromImage(m_ballImage.scaled(contentSizeHint().toSize()));
 
     // tint the pixmap if requested
     if (m_overlay_enabled) {

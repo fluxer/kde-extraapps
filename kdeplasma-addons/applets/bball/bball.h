@@ -31,7 +31,6 @@
 
 #include <KConfigDialog>
 #include <Plasma/Applet>
-#include <Plasma/Svg>
 
 #include "ui_bballConfig.h"
 
@@ -100,7 +99,7 @@ private:
     qreal m_angle;
     qreal m_angularVelocity;
 
-    Plasma::Svg m_ballSvg;
+    QImage m_ballImage;
     QPixmap m_ballPixmap;
 
     bool m_mousePressed;

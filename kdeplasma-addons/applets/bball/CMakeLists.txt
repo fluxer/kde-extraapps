@@ -21,7 +21,7 @@ install(
 )
 
 install(
-    FILES bball.svgz football.svgz bounce.ogg
+    FILES bball.png football.png bounce.ogg
     DESTINATION ${KDE4_DATA_INSTALL_DIR}/bball/
 )
 
