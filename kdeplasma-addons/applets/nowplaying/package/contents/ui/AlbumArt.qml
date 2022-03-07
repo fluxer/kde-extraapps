@@ -45,11 +45,12 @@ Item {
     }
 
 
-    PlasmaCore.SvgItem {
+    Image {
         id: noArtItem
         anchors.fill: parent
-        svg: Svg("nowplaying/nocover")
+        fillMode: Image.PreserveAspectFit
         visible: !realArt.visible && !logoArtItem.visible
+        source: "images/nocover.png"
     }
     PlasmaCore.IconItem {
         id: logoArtItem
