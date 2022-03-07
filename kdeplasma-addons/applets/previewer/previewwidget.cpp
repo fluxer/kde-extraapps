@@ -66,7 +66,7 @@ PreviewWidget::PreviewWidget(QGraphicsItem *parent)
     m_panel->setImagePath("widgets/background");
 
     m_logo = new Plasma::Svg(this);
-    m_logo->setImagePath("widgets/previewer-16");
+    m_logo->setImagePath("widgets/previewer");
 
     m_hoverSvg->setImagePath("widgets/viewitem");
     m_hoverSvg->setEnabledBorders(Plasma::FrameSvg::AllBorders);
