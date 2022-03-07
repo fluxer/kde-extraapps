@@ -22,6 +22,7 @@
 #include <KIO/PreviewJob>
 #include <KProgressDialog>
 #include <KStandardDirs>
+#include <KImageIO>
 
 #include <Plasma/Package>
 #include <Plasma/PackageStructure>
@@ -352,8 +353,7 @@ void BackgroundFinder::run()
 {
     //QTime t;
     //t.start();
-    QSet<QString> suffixes;
-    suffixes << "png" << "jpeg" << "jpg" << "svg" << "svgz";
+    QStringList suffixes = KImageIO::types(KImageIO::Reading);
 
     QStringList papersFound;
     //kDebug() << "starting with" << m_paths;

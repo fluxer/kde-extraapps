@@ -19,6 +19,7 @@
 #include <KDirWatch>
 #include <KFileDialog>
 #include <KStandardDirs>
+#include <KImageIO>
 
 #include <Plasma/Theme>
 #include <Plasma/Animator>
@@ -348,7 +349,7 @@ bool Virus::setMetadata(QLabel *label, const QString &text)
 void Virus::showFileDialog()
 {
     if (!m_dialog) {
-        m_dialog = new KFileDialog(KUrl(), QLatin1String( "*.png *.jpeg *.jpg *.xcf *.svg *.svgz *.bmp" ), m_configWidget);
+        m_dialog = new KFileDialog(KUrl(), KImageIO::pattern(KImageIO::Reading), m_configWidget);
         m_dialog->setOperationMode(KFileDialog::Opening);
         m_dialog->setInlinePreviewShown(true);
         m_dialog->setCaption(i18n("Select Wallpaper Image File"));
