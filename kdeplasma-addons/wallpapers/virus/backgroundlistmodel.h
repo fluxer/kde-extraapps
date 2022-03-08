@@ -14,13 +14,13 @@
 #include <QPixmap>
 #include <QRunnable>
 #include <QThread>
+#include <QEventLoop>
 
 #include <KDirWatch>
 #include <KFileItem>
 
 #include <Plasma/Wallpaper>
 
-#include <QEventLoop>
 class KProgressDialog;
 
 namespace Plasma

@@ -12,9 +12,9 @@
 #include <QCoreApplication>
 #include <QFile>
 #include <QDir>
+#include <QImageReader>
 
 #include <KDebug>
-#include <KFileMetaInfo>
 #include <KGlobal>
 #include <KIO/PreviewJob>
 #include <KProgressDialog>
@@ -145,13 +145,11 @@ QSize BackgroundListModel::bestSize(Plasma::Package *package) const
         return QSize();
     }
 
-    KFileMetaInfo info(image, KFileMetaInfo::TechnicalInfo);
-    QSize size(info.item(QLatin1String("http://freedesktop.org/standards/xesam/1.0/core#width")).value().toInt(),
-               info.item(QLatin1String("http://freedesktop.org/standards/xesam/1.0/core#height")).value().toInt());
-
-    //backup solution if strigi does not work
+    QImageReader imagereader(image);
+    QSize size = imagereader.size();
+    // backup solution if image handler does not provide size option
     if (size.width() == 0 || size.height() == 0) {
-        kDebug() << "fall back to QImage, check your strigi";
+        kDebug() << "fall back to QImage";
         size = QImage(image).size();
     }
 
