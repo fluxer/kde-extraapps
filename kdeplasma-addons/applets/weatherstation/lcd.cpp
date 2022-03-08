@@ -25,21 +25,18 @@
 
 #include <QtXml/qdom.h>
 #include <QCursor>
-#include <QSvgRenderer>
 #include <KDebug>
 #include <KFilterDev>
 #include <Plasma/Theme>
+#include <Plasma/Svg>
 
 class LCD::Private
 {
     public:
         LCD* l;
         QString content;
-        // We don't use Plasma::Svg here because it has some accuracy problems.
-        // lcd numbers did not look good with that.
-        QSvgRenderer svg;
+        Plasma::Svg svg;
         bool dirty;
-        bool xmlDirty;
         QPixmap img;
         QStringList items;
         QMap<QString, QStringList> groups;
@@ -139,24 +136,19 @@ class LCD::Private
 
         void paint(QPainter* p, const QString& item)
         {
-            QRectF r = svg.boundsOnElement(item);
-            svg.render(p, item, r);
+            QRectF r = svg.elementRect(item);
+            svg.paint(p, r, item);
         }
 
         QRectF scaledRect(const QString& item)
         {
-            QRectF r = svg.boundsOnElement(item);
+            QRectF r = svg.elementRect(item);
             r.setRect(r.x() * xScale, r.y() * yScale, r.width() * xScale, r.height() * yScale);
             return r;
         }
 
         void checkIfDirty()
         {
-            if (xmlDirty) {
-                //kDebug() << "xml dirty";
-                svg.load(doc.toByteArray(0));
-                xmlDirty = false;
-            }
             if (dirty || (l->size().toSize() != img.size() && l->size().toSize() != QSize(0, 0))) {
                 //kDebug() << "Making bitmap" << l->size();
                 if (l->size().toSize() != img.size()) {
@@ -166,15 +158,15 @@ class LCD::Private
 
                 QPainter p(&img);
 
-                xScale = l->size().width() / svg.defaultSize().width();
-                yScale = l->size().height() / svg.defaultSize().height();
+                xScale = l->size().width() / svg.size().width();
+                yScale = l->size().height() / svg.size().height();
                 p.setRenderHint(QPainter::TextAntialiasing, true);
                 p.setRenderHint(QPainter::Antialiasing, true);
                 p.setRenderHint(QPainter::SmoothPixmapTransform, true);
 
                 p.save();
-                p.scale(l->size().width() / svg.defaultSize().width(),
-                        l->size().height() / svg.defaultSize().height());
+                p.scale(l->size().width() / svg.size().width(),
+                        l->size().height() / svg.size().height());
 
                 foreach (const QString& item, items) {
                     paint(&p, item);
@@ -251,14 +243,10 @@ QString LCD::svg() const
 
 void LCD::setSvg(const QString &svg)
 {
-    if (QDir::isAbsolutePath(svg)) {
-        d->content = svg;
-    } else {
-        d->content = Plasma::Theme::defaultTheme()->imagePath(svg);
-    }
+    d->content = Plasma::Theme::defaultTheme()->imagePath(svg);
+    d->svg.setImagePath(d->content);
     d->parseXml();
     d->dirty = true;
-    d->xmlDirty = true;
     update();
 }
 
@@ -354,7 +342,6 @@ void LCD::setLabel(const QString &name, const QString &text)
 {
     if (d->texts[name].data() != text) {
         d->texts[name].setData(text);
-        d->xmlDirty = true;
     }
 }
 
@@ -403,9 +390,9 @@ QSizeF LCD::sizeHint(Qt::SizeHint which, const QSizeF& constraint) const
     QSizeF s = QGraphicsWidget::sizeHint(which, constraint);
     d->checkIfDirty();
     if (which == Qt::PreferredSize) {
-        s = d->svg.defaultSize();
+        s = d->svg.size();
     } else if (which == Qt::MinimumSize) {
-        s = d->svg.defaultSize() / 2;
+        s = d->svg.size() / 2;
     } else {
         s = QGraphicsWidget::sizeHint(which, constraint);
     }

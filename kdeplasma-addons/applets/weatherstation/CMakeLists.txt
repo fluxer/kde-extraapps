@@ -18,7 +18,6 @@ target_link_libraries(plasma_applet_weatherstation
     ${KDE4_PLASMA_LIBS}
     ${KDE4WORKSPACE_WEATHERION_LIBRARY}
     ${QT_QTDECLARATIVE_LIBRARY}
-    ${QT_QTSVG_LIBRARY}
     plasmaweather
 )
 
