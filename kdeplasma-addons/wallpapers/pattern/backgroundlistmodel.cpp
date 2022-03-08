@@ -19,7 +19,6 @@
 #include <QPainter>
 
 #include <KDebug>
-#include <KFileMetaInfo>
 #include <KGlobal>
 #include <KIO/PreviewJob>
 #include <KProgressDialog>
