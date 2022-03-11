@@ -31,6 +31,7 @@
 #include <KLocalizedString>
 #include <KPushButton>
 #include <KStandardDirs>
+#include <KImageIO>
 #include <Plasma/Animator>
 #include <Plasma/Theme>
 
@@ -447,7 +448,7 @@ bool WeatherWallpaper::setMetadata(QLabel *label, const QString &text)
 void WeatherWallpaper::showFileDialog()
 {
     if (!m_fileDialog) {
-        m_fileDialog = new KFileDialog(KUrl(), QLatin1String("*.png *.jpeg *.jpg *.xcf *.svg *.svgz"), m_advancedDialog);
+        m_fileDialog = new KFileDialog(KUrl(), KImageIO::pattern(KImageIO::Reading), m_advancedDialog);
         m_fileDialog->setOperationMode(KFileDialog::Opening);
         m_fileDialog->setInlinePreviewShown(true);
         m_fileDialog->setCaption(i18n("Select Wallpaper Image File"));
