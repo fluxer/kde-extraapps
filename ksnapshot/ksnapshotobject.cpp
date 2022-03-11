@@ -166,16 +166,10 @@ bool KSnapshotObject::saveImage( QIODevice *device, const QByteArray &format )
     QImageWriter imgWriter( device, format );
 
     if ( !imgWriter.canWrite() ) {
-	kDebug() << "Cannot write format " << format;
-	return false;
+        kDebug() << "Cannot write format " << format;
+        return false;
     }
 
-    // For jpeg use 85% quality not the default
-    if ( 0 == qstricmp(format.constData(), "jpeg") || 0 == qstricmp(format.constData(), "jpg") ) {
-	imgWriter.setQuality( 85 );
-    }
-
-    QImage snap = snapshot.toImage();
-    return imgWriter.write( snap );
+    return imgWriter.write( snapshot.toImage() );
 }
 
