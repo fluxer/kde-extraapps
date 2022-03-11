@@ -171,7 +171,7 @@ void WallpaperQml::changeWallpaper(const QModelIndex& idx)
 
 void WallpaperQml::init(const KConfigGroup& config)
 {
-    setPackageName(config.readEntry("packageName", "org.kde.haenau"));
+    setPackageName(config.readEntry("packageName", "org.kde.hunyango"));
     setBackgroundColor(config.readEntry("color", QColor(Qt::transparent)));
     emit changed(false);
 }
