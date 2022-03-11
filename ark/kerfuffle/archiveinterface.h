@@ -114,6 +114,8 @@ protected:
      */
     void setWaitForFinishedSignal(bool value);
 
+    static QString permissionsString(mode_t perm);
+
 private:
     QString m_filename;
     QString m_password;

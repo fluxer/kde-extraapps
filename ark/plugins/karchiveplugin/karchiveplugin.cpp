@@ -204,7 +204,7 @@ void KArchiveInterface::createEntryFor(const KArchiveEntry *aentry, const QStrin
 
     e[ FileName ]         = fileName;
     e[ InternalID ]       = e[ FileName ];
-    e[ Permissions ]      = permissionsString(aentry->permissions());
+    e[ Permissions ]      = ReadWriteArchiveInterface::permissionsString(aentry->permissions());
     e[ Owner ]            = aentry->user();
     e[ Group ]            = aentry->group();
     e[ IsDirectory ]      = aentry->isDirectory();
@@ -271,63 +271,6 @@ bool KArchiveInterface::deleteFiles(const QList<QVariant> & files)
 {
     Q_UNUSED(files)
     return false;
-}
-
-// Borrowed and adapted from KFileItemPrivate::parsePermissions.
-QString KArchiveInterface::permissionsString(mode_t perm)
-{
-    static char buffer[ 12 ];
-
-    char uxbit,gxbit,oxbit;
-
-    if ( (perm & (S_IXUSR|S_ISUID)) == (S_IXUSR|S_ISUID) )
-        uxbit = 's';
-    else if ( (perm & (S_IXUSR|S_ISUID)) == S_ISUID )
-        uxbit = 'S';
-    else if ( (perm & (S_IXUSR|S_ISUID)) == S_IXUSR )
-        uxbit = 'x';
-    else
-        uxbit = '-';
-
-    if ( (perm & (S_IXGRP|S_ISGID)) == (S_IXGRP|S_ISGID) )
-        gxbit = 's';
-    else if ( (perm & (S_IXGRP|S_ISGID)) == S_ISGID )
-        gxbit = 'S';
-    else if ( (perm & (S_IXGRP|S_ISGID)) == S_IXGRP )
-        gxbit = 'x';
-    else
-        gxbit = '-';
-
-    if ( (perm & (S_IXOTH|S_ISVTX)) == (S_IXOTH|S_ISVTX) )
-        oxbit = 't';
-    else if ( (perm & (S_IXOTH|S_ISVTX)) == S_ISVTX )
-        oxbit = 'T';
-    else if ( (perm & (S_IXOTH|S_ISVTX)) == S_IXOTH )
-        oxbit = 'x';
-    else
-        oxbit = '-';
-
-    // Include the type in the first char like kde3 did; people are more used to seeing it,
-    // even though it's not really part of the permissions per se.
-    if (S_ISDIR(perm))
-        buffer[0] = 'd';
-    else if (S_ISLNK(perm))
-        buffer[0] = 'l';
-    else
-        buffer[0] = '-';
-
-    buffer[1] = ((( perm & S_IRUSR ) == S_IRUSR ) ? 'r' : '-' );
-    buffer[2] = ((( perm & S_IWUSR ) == S_IWUSR ) ? 'w' : '-' );
-    buffer[3] = uxbit;
-    buffer[4] = ((( perm & S_IRGRP ) == S_IRGRP ) ? 'r' : '-' );
-    buffer[5] = ((( perm & S_IWGRP ) == S_IWGRP ) ? 'w' : '-' );
-    buffer[6] = gxbit;
-    buffer[7] = ((( perm & S_IROTH ) == S_IROTH ) ? 'r' : '-' );
-    buffer[8] = ((( perm & S_IWOTH ) == S_IWOTH ) ? 'w' : '-' );
-    buffer[9] = oxbit;
-    buffer[10] = 0;
-
-    return QString::fromLatin1(buffer);
 }
 
 KERFUFFLE_EXPORT_PLUGIN(KArchiveInterface)

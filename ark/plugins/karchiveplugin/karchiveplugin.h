@@ -56,8 +56,6 @@ private:
 
     void createEntryFor(const KArchiveEntry *aentry, const QString& prefix);
 
-    QString permissionsString(mode_t perm);
-
     void getAllEntries(const KArchiveDirectory *dir, const QString &prefix, QList< QVariant > &list);
 
     int handleFileExistsMessage(const QString &dir, const QString &fileName);

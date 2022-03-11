@@ -739,7 +739,9 @@ void LibArchiveInterface::emitEntryFromArchiveEntry(struct archive_entry *aentry
     }
 
     e[Size] = (qlonglong)archive_entry_size(aentry);
-    e[IsDirectory] = S_ISDIR(archive_entry_mode(aentry));
+    const mode_t amode = archive_entry_mode(aentry);
+    e[IsDirectory] = S_ISDIR(amode);
+    e[Permissions] = ReadWriteArchiveInterface::permissionsString(amode);
 #if ARCHIVE_VERSION_NUMBER >= 3002000
     e[IsPasswordProtected] = archive_entry_is_encrypted(aentry);
 #endif
