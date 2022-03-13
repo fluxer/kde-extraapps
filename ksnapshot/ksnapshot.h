@@ -134,7 +134,6 @@ private:
     bool modified;
     QPoint savedPosition;
     bool haveXFixes;
-    bool includeAlpha;
     QPolygon lastFreeRegion;
     QRect lastRegion;
 };

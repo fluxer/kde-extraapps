@@ -31,14 +31,9 @@
 #include <QMenu>
 #include <QDesktopWidget>
 #include <QVarLengthArray>
-#include <QtGui/qevent.h>
 #include <QDrag>
-
 #include <QPainter>
-#include <QXmlStreamReader>
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusConnectionInterface>
-#include <QtDBus/QDBusInterface>
+#include <QtGui/qevent.h>
 
 #include <klocale.h>
 
@@ -186,26 +181,6 @@ KSnapshot::KSnapshot(QWidget *parent,  KSnapshotObject::CaptureMode mode )
 #endif
     setIncludePointer(conf.readEntry("includePointer", false));
     setMode( conf.readEntry("mode", 0) );
-
-    // check if kwin screenshot effect is available
-    includeAlpha = false;
-    if ( QDBusConnection::sessionBus().interface()->isServiceRegistered( "org.kde.kwin" ) ) {
-        QDBusInterface kwinInterface( "org.kde.kwin", "/", "org.freedesktop.DBus.Introspectable" );
-        QDBusReply<QString> reply = kwinInterface.call( "Introspect" );
-        if ( reply.isValid() ) {
-            QXmlStreamReader xml( reply.value() );
-            while ( !xml.atEnd() ) {
-                xml.readNext();
-                if ( xml.tokenType() == QXmlStreamReader::StartElement &&
-                    xml.name().toString() == "node" ) {
-                    if ( xml.attributes().value( "name" ).toString() == "Screenshot" ) {
-                        includeAlpha = true;
-                        break;
-                    }
-                }
-            }
-        }
-    }
 
     kDebug() << "Mode = " << mode;
     if ( mode == KSnapshotObject::FullScreen ) {
@@ -668,40 +643,20 @@ void KSnapshot::performGrab()
         x = offset.x();
         y = offset.y();
         qDebug() << "last window position is" << offset;
-    }
-    else if ( mode() == WindowUnderCursor ) {
-        if ( includeAlpha ) {
-            // use kwin effect
-            QDBusConnection::sessionBus().connect("org.kde.kwin", "/Screenshot",
-                                                  "org.kde.kwin.Screenshot", "screenshotCreated",
-                                                  this, SLOT(slotScreenshotReceived(qulonglong)));
-            QDBusInterface interface( "org.kde.kwin", "/Screenshot", "org.kde.kwin.Screenshot" );
-            int mask = 0;
-            if ( includeDecorations() )
-            {
-                mask |= 1 << 0;
-            }
-            if ( includePointer() )
-            {
-                mask |= 1 << 1;
-            }
-            interface.call( "screenshotWindowUnderCursor", mask );
-        } else {
-            snapshot = WindowGrabber::grabCurrent( includeDecorations() );
+    } else if ( mode() == WindowUnderCursor ) {
+        snapshot = WindowGrabber::grabCurrent( includeDecorations() );
 
-            QPoint offset = WindowGrabber::lastWindowPosition();
-            x = offset.x();
-            y = offset.y();
+        QPoint offset = WindowGrabber::lastWindowPosition();
+        x = offset.x();
+        y = offset.y();
 
-            // If we're showing decorations anyway then we'll add the title and window
-            // class to the output image meta data.
-            if ( includeDecorations() ) {
-                title = WindowGrabber::lastWindowTitle();
-                windowClass = WindowGrabber::lastWindowClass();
-            }
+        // If we're showing decorations anyway then we'll add the title and window
+        // class to the output image meta data.
+        if ( includeDecorations() ) {
+            title = WindowGrabber::lastWindowTitle();
+            windowClass = WindowGrabber::lastWindowClass();
         }
-    }
-    else if ( mode() == CurrentScreen ) {
+    } else if ( mode() == CurrentScreen ) {
         kDebug() << "Desktop Geom2 = " << QApplication::desktop()->geometry();
         QDesktopWidget *desktop = QApplication::desktop();
         int screenId = desktop->screenNumber( QCursor::pos() );
