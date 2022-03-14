@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.kde.ConfigurePrinter
-Exec=@KDE4_LIBEXEC_INSTALL_DIR@/configure-printer
