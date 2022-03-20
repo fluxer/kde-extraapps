@@ -14,7 +14,6 @@
 #include <QFile>
 #include <QDir>
 #include <QThreadPool>
-#include <QUuid>
 #include <QImageReader>
 
 #include <KDebug>
@@ -92,16 +91,8 @@ void BackgroundListModel::reload(const QStringList &selected)
     const QStringList dirs = KGlobal::dirs()->findDirs("wallpaper", "");
     kDebug() << "going looking in" << dirs;
     BackgroundFinder *finder = new BackgroundFinder(m_structureParent, dirs);
-    connect(finder, SIGNAL(backgroundsFound(QStringList,QString)), this, SLOT(backgroundsFound(QStringList,QString)));
-    m_findToken = finder->token();
+    connect(finder, SIGNAL(backgroundsFound(QStringList)), this, SLOT(processPaths(QStringList)));
     finder->start();
-}
-
-void BackgroundListModel::backgroundsFound(const QStringList &paths, const QString &token)
-{
-    if (token == m_findToken) {
-        processPaths(paths);
-    }
 }
 
 void BackgroundListModel::processPaths(const QStringList &paths)
@@ -333,19 +324,13 @@ void BackgroundListModel::setResizeMethod(Plasma::Wallpaper::ResizeMethod resize
 BackgroundFinder::BackgroundFinder(Plasma::Wallpaper *structureParent, const QStringList &paths)
     : QThread(structureParent),
       m_structure(Plasma::Wallpaper::packageStructure(structureParent)),
-      m_paths(paths),
-      m_token(QUuid().toString())
+      m_paths(paths)
 {
 }
 
 BackgroundFinder::~BackgroundFinder()
 {
     wait();
-}
-
-QString BackgroundFinder::token() const
-{
-    return m_token;
 }
 
 void BackgroundFinder::run()
@@ -396,7 +381,7 @@ void BackgroundFinder::run()
     }
 
     //kDebug() << "background found!" << papersFound.size() << "in" << i << "dirs, taking" << t.elapsed() << "ms";
-    emit backgroundsFound(papersFound, m_token);
+    emit backgroundsFound(papersFound);
     deleteLater();
 }
 

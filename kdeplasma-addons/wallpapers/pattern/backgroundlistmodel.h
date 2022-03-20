@@ -67,7 +67,6 @@ private:
     QHash<KUrl, QPersistentModelIndex> m_previewJobs;
     KDirWatch m_dirwatch;
 
-    QString m_findToken;
     QPixmap m_previewUnavailablePix;
     QSize m_size;
 };
