@@ -13,7 +13,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${KDE4_INCLUDES}
-    ${CMAKE_CURRENT_BINARY_DIR}/syndication
 )
 
 macro_optional_add_subdirectory(about-distro)
