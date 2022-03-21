@@ -451,12 +451,6 @@ Okular::Annotation* DjVuGenerator::convertKDjVuAnnotation( int w, int h, KDjVu::
         // setting the common parameters
         newann->style().setColor( ann->color() );
         newann->setContents( ann->comment() );
-        // creating an id as name for the annotation
-        QString uid = QUuid::createUuid().toString();
-        uid.remove( 0, 1 );
-        uid.chop( 1 );
-        uid.remove( QLatin1Char( '-' ) );
-        newann->setUniqueName( uid );
         // is external
         newann->setFlags( newann->flags() | Okular::Annotation::External );
     }
