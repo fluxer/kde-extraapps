@@ -114,6 +114,11 @@ bool LibArchiveInterface::list()
     int result = ARCHIVE_EOF;
 
     while (!m_abortOperation && (result = archive_read_next_header(arch_reader.data(), &aentry)) == ARCHIVE_OK) {
+#warning FIXME: fix double-slash root directory properly
+        if (qstrcmp(archive_entry_pathname(aentry), "//") == 0) {
+            archive_read_data_skip(arch_reader.data());
+            continue;
+        }
         if (!m_emitNoEntries) {
             emitEntryFromArchiveEntry(aentry);
         }
