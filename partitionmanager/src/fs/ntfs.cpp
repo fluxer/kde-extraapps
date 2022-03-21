@@ -30,7 +30,6 @@
 #include <QString>
 #include <QStringList>
 #include <QFile>
-#include <QUuid>
 
 #include <ctime>
 #include <algorithm>
@@ -63,7 +62,7 @@ namespace FS
 		m_Create = findExternal("mkfs.ntfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Copy = findExternal("ntfsclone") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Backup = cmdSupportCore;
-		m_UpdateUUID = findExternal("dd") ? cmdSupportFileSystem : cmdSupportNone;
+		m_UpdateUUID = m_SetLabel;
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_GetUUID = cmdSupportCore;
 	}
@@ -87,7 +86,7 @@ namespace FS
 
 	FileSystem::SupportTool ntfs::supportToolName() const
 	{
-		return SupportTool("ntfsprogs", KUrl("http://www.tuxera.com/community/open-source-ntfs-3g/"));
+		return SupportTool("ntfs-3g", KUrl("https://github.com/tuxera/ntfs-3g"));
 	}
 
 	qint64 ntfs::minCapacity() const
@@ -155,9 +154,9 @@ namespace FS
 
 	bool ntfs::copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const
 	{
- 		ExternalCommand cmd(report, "ntfsclone", QStringList() << "-f" << "--overwrite" << targetDeviceNode << sourceDeviceNode);
+		ExternalCommand cmd(report, "ntfsclone", QStringList() << "-f" << "--overwrite" << targetDeviceNode << sourceDeviceNode);
 
- 		return cmd.run(-1) && cmd.exitCode() == 0;
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ntfs::resize(Report& report, const QString& deviceNode, qint64 length) const
@@ -180,17 +179,9 @@ namespace FS
 
 	bool ntfs::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		QUuid uuid = QUuid::createUuid();
+		ExternalCommand cmd(report, "ntfslabel", QStringList() << "--new-serial" << deviceNode);
 
-		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=8" << "seek=72");
-
-		if (!cmd.start())
-			return false;
-
-		if (cmd.write(reinterpret_cast<char*>(&uuid.data4[0]), 8) != 8)
-			return false;
-
-		return cmd.waitFor(-1);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ntfs::updateBootSector(Report& report, const QString& deviceNode) const
