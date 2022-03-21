@@ -22,7 +22,6 @@
 #include <qmutex.h>
 #include <qpixmap.h>
 #include <qstring.h>
-#include <quuid.h>
 #include <QtGui/QPrinter>
 
 #include <kaboutdata.h>
