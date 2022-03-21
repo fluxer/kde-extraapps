@@ -53,18 +53,18 @@ namespace FS
 	void nilfs2::init()
 	{
 		m_Create = findExternal("mkfs.nilfs2") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("fsck.nilfs2") ? cmdSupportFileSystem : cmdSupportNone;
+		// m_Check = findExternal("fsck.nilfs2") ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetLabel = cmdSupportCore;
 		m_SetLabel = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_Grow = (m_Check != cmdSupportNone && findExternal("nilfs-resize")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Grow = findExternal("nilfs-resize") ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
-		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Copy = cmdSupportCore; // (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Move = cmdSupportCore; // (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 
 		m_GetLabel = cmdSupportCore;
 		m_Backup = cmdSupportCore;
@@ -78,7 +78,7 @@ namespace FS
 			m_GetLabel != cmdSupportNone &&
 			m_SetLabel != cmdSupportNone &&
 			m_Create != cmdSupportNone &&
-			m_Check != cmdSupportNone &&
+			// m_Check != cmdSupportNone &&
 			m_UpdateUUID != cmdSupportNone &&
 			m_Grow != cmdSupportNone &&
 			m_Shrink != cmdSupportNone &&
@@ -90,7 +90,7 @@ namespace FS
 
 	FileSystem::SupportTool nilfs2::supportToolName() const
 	{
-		return SupportTool("nilfs2-utils", KUrl("http://code.google.com/p/nilfs2/"));
+		return SupportTool("nilfs2-utils", KUrl("https://nilfs.osdn.jp/en/"));
 	}
 
 	qint64 nilfs2::minCapacity() const
