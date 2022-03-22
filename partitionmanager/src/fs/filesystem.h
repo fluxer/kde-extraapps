@@ -173,6 +173,7 @@ class FileSystem
 
 	protected:
 		static bool findExternal(const QString& cmdName, const QStringList& args = QStringList(), int exptectedCode = 1);
+		static QString createUUID();
 
 	protected:
 		FileSystem::Type m_Type;

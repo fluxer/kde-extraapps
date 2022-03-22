@@ -25,7 +25,6 @@
 #include <QString>
 #include <QStringList>
 #include <QRegExp>
-#include <QUuid>
 
 namespace FS
 {
@@ -165,8 +164,7 @@ namespace FS
 
 	bool reiserfs::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		const QString uuid = QUuid::createUuid().toString().remove(QRegExp("\\{|\\}"));
-		ExternalCommand cmd(report, "reiserfstune", QStringList() << "-u" << uuid << deviceNode);
+		ExternalCommand cmd(report, "reiserfstune", QStringList() << "-u" << createUUID() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

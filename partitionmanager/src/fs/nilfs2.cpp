@@ -25,7 +25,6 @@
 
 #include <cmath>
 #include <QString>
-#include <QUuid>
 
 #include <KLocale>
 #include <KTempDir>
@@ -177,8 +176,7 @@ namespace FS
 
 	bool nilfs2::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		QUuid uuid = QUuid::createUuid();
-		ExternalCommand cmd(report, "nilfs-tune", QStringList() << "-U" << uuid.toString() << deviceNode);
+		ExternalCommand cmd(report, "nilfs-tune", QStringList() << "-U" << createUUID() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

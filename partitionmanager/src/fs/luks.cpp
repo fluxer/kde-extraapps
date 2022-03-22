@@ -26,7 +26,6 @@
 #include "util/externalcommand.h"
 
 #include <QString>
-#include <QUuid>
 
 #include <KLocale>
 
@@ -135,9 +134,7 @@ namespace FS
 
 	bool luks::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		QUuid uuid = QUuid::createUuid();
-
-		ExternalCommand cmd(report, "cryptsetup", QStringList() << "luksUUID" << deviceNode << "--uuid" << uuid.toString());
+		ExternalCommand cmd(report, "cryptsetup", QStringList() << "luksUUID" << deviceNode << "--uuid" << createUUID());
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 

@@ -28,6 +28,10 @@
 
 #include <config.h>
 
+#if QT_VERSION < 0x041200
+#  include <QUuid>
+#endif
+
 /** Creates a new FileSystem object
 	@param firstsector the first sector used by this FileSystem on the Device
 	@param lastsector the last sector used by this FileSystem on the Device
@@ -386,6 +390,18 @@ bool FileSystem::findExternal(const QString& cmdName, const QStringList& args, i
 		return false;
 
 	return cmd.exitCode() == 0 || cmd.exitCode() == expectedCode;
+}
+
+/**
+	@return UUID in the form: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+*/
+QString FileSystem::createUUID()
+{
+#if QT_VERSION >= 0x041200
+	return QString::fromLatin1(qRandomUuid());
+#else
+	return QUuid::createUuid().toString().remove(QRegExp("\\{|\\}"));
+#endif
 }
 
 FileSystem::Type FileSystem::defaultFileSystem()

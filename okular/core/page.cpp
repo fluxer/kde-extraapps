@@ -14,7 +14,6 @@
 #include <QtCore/QSet>
 #include <QtCore/QString>
 #include <QtCore/QVariant>
-#include <QtCore/QUuid>
 #include <QtGui/QPixmap>
 
 #include <QtXml/qdom.h>
@@ -63,6 +62,15 @@ static void deleteObjectRects( QList< ObjectRect * >& rects, const QSet<ObjectRe
         }
         else
             ++it;
+}
+
+static inline QString createAnnotationID()
+{
+#if QT_VERSION >= 0x041200
+    return QString::fromLatin1(qRandomUuid());
+#else
+    return QString::number(qrand());
+#endif
 }
 
 PagePrivate::PagePrivate( Page *page, uint n, double w, double h, Rotation o )
@@ -631,10 +639,10 @@ QColor Page::textSelectionColor() const
 
 void Page::addAnnotation( Annotation * annotation )
 {
-    // Generate uniqueName: okular-{UUID}
+    // Generate uniqueName: okular-UUID
     if(annotation->uniqueName().isEmpty())
     {
-        QString uniqueName = "okular-" + QUuid::createUuid().toString();
+        QString uniqueName = "okular-" + createAnnotationID();
         annotation->setUniqueName( uniqueName );
     }
     annotation->d_ptr->m_page = d;
