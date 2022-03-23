@@ -28,7 +28,7 @@
 
 #include "kerfuffle/archiveinterface.h"
 
-class LibSingleFileInterface : public Kerfuffle::ReadOnlyArchiveInterface
+class LibSingleFileInterface : public Kerfuffle::ReadWriteArchiveInterface
 {
     Q_OBJECT
 
@@ -38,6 +38,9 @@ public:
 
     virtual bool list();
     virtual bool copyFiles(const QList<QVariant> & files, const QString & destinationDirectory, Kerfuffle::ExtractionOptions options);
+
+    virtual bool addFiles(const QStringList & files, const Kerfuffle::CompressionOptions& options);
+    virtual bool deleteFiles(const QList<QVariant> & files);
 
 protected:
     const QString uncompressedFileName() const;

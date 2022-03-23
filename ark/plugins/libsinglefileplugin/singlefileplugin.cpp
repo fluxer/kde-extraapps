@@ -37,7 +37,7 @@
 #include <KLocale>
 
 LibSingleFileInterface::LibSingleFileInterface(QObject *parent, const QVariantList & args)
-        : Kerfuffle::ReadOnlyArchiveInterface(parent, args)
+        : Kerfuffle::ReadWriteArchiveInterface(parent, args)
 {
 }
 
@@ -155,6 +155,59 @@ const QString LibSingleFileInterface::uncompressedFileName() const
     }
 
     return uncompressedName + QLatin1String( ".uncompressed" );
+}
+
+bool LibSingleFileInterface::addFiles(const QStringList & files, const Kerfuffle::CompressionOptions& options)
+{
+    Q_UNUSED(options);
+
+    if (files.size() == 0) {
+        emit error(i18n("No input files."));
+        return false;
+    } else if (files.size() > 1) {
+        emit error(i18n("The archive format does not support multiple input files."));
+        return false;
+    }
+
+    const QString inputfile = files.first();
+    const QString outputfile = filename();
+
+    QFile inputdevice(inputfile);
+    if (!inputdevice.open(QFile::ReadOnly)) {
+        kDebug() << "Could not create QFile";
+        emit error(i18n("Ark could not open <filename>%1</filename> for reading.", inputfile));
+        return false;
+    }
+
+    QIODevice *device = KFilterDev::deviceForFile(outputfile);
+    if (!device) {
+        kDebug() << "Could not create KFilterDev";
+        emit error(i18n("Ark could create filter."));
+        return false;
+    }
+
+    if (!device->open(QIODevice::WriteOnly)) {
+        kDebug() << "Could not open KFilterDev";
+        emit error(i18n("Ark could not open <filename>%1</filename> for writing.", outputfile));
+        return false;
+    }
+
+    const QByteArray inputdata = inputdevice.readAll();
+    if (device->write(inputdata) != inputdata.size()) {
+        kDebug() << "Could not write output";
+        emit error(i18n("Ark could not write <filename>%1</filename>.", outputfile));
+        QFile::remove(outputfile); // in case of partial write
+        return false;
+    }
+    device->close();
+
+    return true;
+}
+
+bool LibSingleFileInterface::deleteFiles(const QList<QVariant> & files)
+{
+    emit error(i18n("Not implemented."));
+    return false;
 }
 
 #include "moc_singlefileplugin.cpp"
