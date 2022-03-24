@@ -233,7 +233,7 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();;
         tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::String)));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Bool)));
         tablewidget->setFlags(Qt::ItemIsEnabled);
         tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
         m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
