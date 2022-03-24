@@ -173,10 +173,10 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
     int tablerowcount = 0;
     // qDebug() << Q_FUNC_INFO << "string settings";
     for (int i = 0; i < lt::settings_pack::settings_counts_t::num_string_settings; i++) {
-        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
-
         const int settingindex = (lt::settings_pack::string_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_str(settingindex).c_str();
+
+        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();
         tablewidget->setData(tableindexrole, QVariant(settingindex));
@@ -195,10 +195,14 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 
     // qDebug() << Q_FUNC_INFO << "int settings";
     for (int i = 0; i < lt::settings_pack::settings_counts_t::num_int_settings; i++) {
-        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
-
         const int settingindex = (lt::settings_pack::int_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_int(settingindex);
+
+        if (settingindex == lt::settings_pack::alert_mask) {
+            continue;
+        }
+
+        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();
         tablewidget->setData(tableindexrole, QVariant(settingindex));
@@ -221,10 +225,11 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 
     // qDebug() << Q_FUNC_INFO << "bool settings";
     for (int i = 0; i < lt::settings_pack::settings_counts_t::num_bool_settings; i++) {
-        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
 
         const int settingindex = (lt::settings_pack::bool_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_bool(settingindex);
+
+        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();;
         tablewidget->setData(tableindexrole, QVariant(settingindex));

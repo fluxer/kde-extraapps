@@ -734,6 +734,9 @@ void TransferTorrent::applySettings()
     lt::settings_pack ltsettings = lt::default_settings();
     foreach (const QString &key, settingsmap.keys()) {
         const int settingskey = key.toInt();
+        if (settingskey == lt::settings_pack::alert_mask) {
+            continue;
+        }
         const QVariant settingsvalue = settingsmap.value(key);
         switch (settingsvalue.type()) {
             case QVariant::ByteArray:
@@ -761,6 +764,13 @@ void TransferTorrent::applySettings()
             }
         }
     }
+
+    ltsettings.set_int(lt::settings_pack::alert_mask,
+        lt::alert::status_notification
+        | lt::alert::error_notification
+        | lt::alert::progress_notification
+        | lt::alert::stats_notification);
+
     m_ltsession->apply_settings(ltsettings);
 }
 
