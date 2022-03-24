@@ -23,6 +23,7 @@
 
 #include <QFile>
 #include <QJsonDocument>
+#include <QSpinBox>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
@@ -83,7 +84,7 @@ void DlgTorrentSettings::load()
                 break;
             }
             default: {
-                kWarning(5001) << "invalid setting type";
+                kWarning() << "invalid setting type";
                 break;
             }
         }
@@ -97,24 +98,27 @@ void DlgTorrentSettings::save()
 {
     QVariantMap settingsmap;
     for (int i = 0; i < m_ui.settingsTableWidget->rowCount(); i++) {
-        QTableWidgetItem* tablewidget = m_ui.settingsTableWidget->item(i, 1);
-        const int settingsindex = tablewidget->data(tableindexrole).toInt();
-        const int settingstype = tablewidget->data(tabletyperole).toInt();
+        QTableWidgetItem* tablewidget0 = m_ui.settingsTableWidget->item(i, 0);
+        const int settingsindex = tablewidget0->data(tableindexrole).toInt();
+        const int settingstype = tablewidget0->data(tabletyperole).toInt();
         const QString settingskey = QString::number(settingsindex);
         
         // qDebug() << Q_FUNC_INFO << settingsindex << settingstype;
 
         switch (settingstype) {
             case QVariant::String: {
-                settingsmap.insert(settingskey, tablewidget->text());
+                QTableWidgetItem* tablewidget1 = m_ui.settingsTableWidget->item(i, 1);
+                settingsmap.insert(settingskey, tablewidget1->text());
                 break;
             }
             case QVariant::Int: {
-                settingsmap.insert(settingskey, tablewidget->text().toInt());
+                const QSpinBox* tablecellwidget = qobject_cast<QSpinBox*>(m_ui.settingsTableWidget->cellWidget(i, 1));
+                settingsmap.insert(settingskey, tablecellwidget->value());
                 break;
             }
             case QVariant::Bool: {
-                settingsmap.insert(settingskey, tablewidget->checkState() == Qt::Checked ? true : false);
+                QTableWidgetItem* tablewidget1 = m_ui.settingsTableWidget->item(i, 1);
+                settingsmap.insert(settingskey, tablewidget1->checkState() == Qt::Checked ? true : false);
                 break;
             }
             default: {
@@ -158,6 +162,12 @@ void DlgTorrentSettings::slotItemChanged(QTableWidgetItem* tablewidget)
     emit changed(true);
 }
 
+void DlgTorrentSettings::slotSpinBoxChanged(const int value)
+{
+    Q_UNUSED(value);
+    emit changed(true);
+}
+
 void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 {
     int tablerowcount = 0;
@@ -169,13 +179,13 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_str(settingindex).c_str();
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();
+        tablewidget->setData(tableindexrole, QVariant(settingindex));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::String)));
         tablewidget->setFlags(Qt::ItemIsEnabled);
         tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
         m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
 
         tablewidget = new QTableWidgetItem();
-        tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::String)));
         tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable);
         tablewidget->setText(QString::fromStdString(ltsettings.get_str(settingindex)));
         m_ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
@@ -191,16 +201,20 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_int(settingindex);
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();
+        tablewidget->setData(tableindexrole, QVariant(settingindex));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Int)));
         tablewidget->setFlags(Qt::ItemIsEnabled);
         tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
         m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
 
-        tablewidget = new QTableWidgetItem();
-        tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Int)));
-        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable);
-        tablewidget->setText(QString::number(ltsettings.get_int(settingindex)));
-        m_ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
+        QSpinBox* tablecellwidget = new QSpinBox();
+        tablecellwidget->setRange(-INT_MAX, INT_MAX);
+        tablecellwidget->setValue(ltsettings.get_int(settingindex));
+        connect(
+            tablecellwidget, SIGNAL(valueChanged(int)),
+            this, SLOT(slotSpinBoxChanged(int))
+        );
+        m_ui.settingsTableWidget->setCellWidget(tablerowcount, 1, tablecellwidget);
 
         tablerowcount++;
     }
@@ -213,13 +227,13 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_bool(settingindex);
 
         QTableWidgetItem* tablewidget = new QTableWidgetItem();;
+        tablewidget->setData(tableindexrole, QVariant(settingindex));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::String)));
         tablewidget->setFlags(Qt::ItemIsEnabled);
         tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
         m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
 
         tablewidget = new QTableWidgetItem();
-        tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Bool)));
         tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
         tablewidget->setCheckState(ltsettings.get_bool(settingindex) ? Qt::Checked : Qt::Unchecked);
         m_ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);

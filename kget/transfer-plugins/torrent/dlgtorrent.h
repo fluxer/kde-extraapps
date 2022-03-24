@@ -42,6 +42,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void slotItemChanged(QTableWidgetItem* tablewidget);
+    void slotSpinBoxChanged(const int value);
 
 private:
     void loadSettings(const lt::settings_pack &ltsettings);
