@@ -80,7 +80,7 @@ void DlgTorrentSettings::load()
             }
             case QVariant::Bool: {
                 const bool settingsbool = settingsvalue.toBool();
-                ltsettings.set_int(settingskey, settingsbool);
+                ltsettings.set_bool(settingskey, settingsbool);
                 break;
             }
             default: {
@@ -98,7 +98,7 @@ void DlgTorrentSettings::save()
 {
     QVariantMap settingsmap;
     for (int i = 0; i < m_ui.settingsTableWidget->rowCount(); i++) {
-        QTableWidgetItem* tablewidget0 = m_ui.settingsTableWidget->item(i, 0);
+        const QTableWidgetItem* tablewidget0 = m_ui.settingsTableWidget->item(i, 0);
         const int settingsindex = tablewidget0->data(tableindexrole).toInt();
         const int settingstype = tablewidget0->data(tabletyperole).toInt();
         const QString settingskey = QString::number(settingsindex);
@@ -107,7 +107,7 @@ void DlgTorrentSettings::save()
 
         switch (settingstype) {
             case QVariant::String: {
-                QTableWidgetItem* tablewidget1 = m_ui.settingsTableWidget->item(i, 1);
+                const QTableWidgetItem* tablewidget1 = m_ui.settingsTableWidget->item(i, 1);
                 settingsmap.insert(settingskey, tablewidget1->text());
                 break;
             }
@@ -117,7 +117,7 @@ void DlgTorrentSettings::save()
                 break;
             }
             case QVariant::Bool: {
-                QTableWidgetItem* tablewidget1 = m_ui.settingsTableWidget->item(i, 1);
+                const QTableWidgetItem* tablewidget1 = m_ui.settingsTableWidget->item(i, 1);
                 settingsmap.insert(settingskey, tablewidget1->checkState() == Qt::Checked ? true : false);
                 break;
             }

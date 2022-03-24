@@ -752,7 +752,7 @@ void TransferTorrent::applySettings()
             }
             case QVariant::Bool: {
                 const bool settingsbool = settingsvalue.toBool();
-                ltsettings.set_int(settingskey, settingsbool);
+                ltsettings.set_bool(settingskey, settingsbool);
                 break;
             }
             default: {
