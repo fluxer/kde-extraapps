@@ -20,7 +20,10 @@
 #include "transferTorrent.h"
 
 #include <QTimer>
+#include <QFile>
+#include <QJsonDocument>
 #include <klocale.h>
+#include <kstandarddirs.h>
 #include <kdebug.h>
 
 #include <boost/make_shared.hpp>
@@ -380,11 +383,11 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
                                  Scheduler* scheduler, const KUrl &source, const KUrl &dest,
                                  const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
-    m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr)
+    m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr), m_dirwatch(nullptr)
 {
     setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming | Transfer::Cap_MultipleMirrors);
 
-    lt::settings_pack ltsettings;
+    lt::settings_pack ltsettings = lt::default_settings();
     ltsettings.set_int(lt::settings_pack::alert_mask,
         lt::alert::status_notification
         | lt::alert::error_notification
@@ -392,6 +395,12 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
         | lt::alert::stats_notification);
 
     m_ltsession = new lt::session(ltsettings);
+
+    m_dirwatch = new KDirWatch(this);
+    m_dirwatch->addFile(KStandardDirs::locateLocal("appdata", "torrentsettings.json"));
+    connect(m_dirwatch, SIGNAL(dirty(QString)), this, SLOT(slotSettingsDirty(QString)));
+
+    applySettings();
 }
 
 TransferTorrent::~TransferTorrent()
@@ -688,6 +697,71 @@ void TransferTorrent::slotCheckStateChanged()
         }
         counter++;
     }
+}
+
+void TransferTorrent::slotSettingsDirty(const QString &settings)
+{
+    kDebug(5001) << "torrent settings are dirty";
+    Q_UNUSED(settings);
+    applySettings();
+}
+
+void TransferTorrent::applySettings()
+{
+    if (!m_ltsession) {
+        kDebug(5001) << "null torrent session pointer";
+        return;
+    }
+
+    QFile settingsfile(KStandardDirs::locateLocal("appdata", "torrentsettings.json"));
+    if (!settingsfile.exists()) {
+        kDebug(5001) << "settings file does not exist";
+        return;
+    }
+
+    if (!settingsfile.open(QFile::ReadOnly)) {
+        kWarning(5001) << "could not open settings file";
+        return;
+    }
+
+    const QJsonDocument settingsjson = QJsonDocument::fromJson(settingsfile.readAll());
+    if (settingsjson.isNull()) {
+        kWarning(5001) << "could not parse settings file";
+        return;
+    }
+
+    const QVariantMap settingsmap = settingsjson.toVariant().toMap();
+    lt::settings_pack ltsettings = lt::default_settings();
+    foreach (const QString &key, settingsmap.keys()) {
+        const int settingskey = key.toInt();
+        const QVariant settingsvalue = settingsmap.value(key);
+        switch (settingsvalue.type()) {
+            case QVariant::ByteArray:
+            case QVariant::String: {
+                const QString settingsstring = settingsvalue.toString();
+                ltsettings.set_str(settingskey, settingsstring.toStdString());
+                break;
+            }
+            case QVariant::Int:
+            case QVariant::UInt:
+            case QVariant::LongLong:
+            case QVariant::ULongLong: {
+                const int settingsint = settingsvalue.toInt();
+                ltsettings.set_int(settingskey, settingsint);
+                break;
+            }
+            case QVariant::Bool: {
+                const bool settingsbool = settingsvalue.toBool();
+                ltsettings.set_int(settingskey, settingsbool);
+                break;
+            }
+            default: {
+                kWarning(5001) << "invalid setting type";
+                break;
+            }
+        }
+    }
+    m_ltsession->apply_settings(ltsettings);
 }
 
 void TransferTorrent::save(const QDomElement &element)

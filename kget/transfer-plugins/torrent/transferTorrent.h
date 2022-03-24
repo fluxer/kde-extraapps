@@ -24,6 +24,7 @@
 #include "core/filemodel.h"
 
 #include <QTimerEvent>
+#include <kdirwatch.h>
 
 #include <vector>
 #include <libtorrent/session.hpp>
@@ -66,13 +67,17 @@ protected:
 private Q_SLOTS:
     void slotDelayedStart();
     void slotCheckStateChanged();
+    void slotSettingsDirty(const QString &settings);
 
 private:
+    void applySettings();
+
     int m_timerid;
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;
     TorrentFileModel* m_filemodel;
     std::vector<boost::uint8_t> m_priorities;
+    KDirWatch* m_dirwatch;
 };
 
 #endif // TRANSFER_TORRENT_H
