@@ -25,23 +25,28 @@
 #include <KCModule>
 #include <KDialog>
 
+#include <libtorrent/settings_pack.hpp>
+
 class DlgTorrentSettings : public KCModule
 {
     Q_OBJECT
-
+    // KCModule reimplementations
 public:
     explicit DlgTorrentSettings(QWidget *parent = 0, const QVariantList &args = QVariantList());
     ~DlgTorrentSettings();
 
 public Q_SLOTS:
-    void save();
-    void load();
+    void save() final;
+    void load() final;
+    void defaults() final;
 
 private Q_SLOTS:
     void slotItemChanged(QTableWidgetItem* tablewidget);
 
 private:
-    Ui::DlgTorrent ui;
+    void loadSettings(const lt::settings_pack &ltsettings);
+
+    Ui::DlgTorrent m_ui;
 };
 
 #endif // DLGTORRENT_H

@@ -27,8 +27,6 @@
 #include <kstandarddirs.h>
 #include <kdebug.h>
 
-#include <libtorrent/settings_pack.hpp>
-
 KGET_EXPORT_PLUGIN_CONFIG(DlgTorrentSettings)
 
 static const int tableindexrole = 1234;
@@ -37,12 +35,12 @@ static const int tabletyperole = 4321;
 DlgTorrentSettings::DlgTorrentSettings(QWidget *parent, const QVariantList &args)
     : KCModule(KGetFactory::componentData(), parent, args)
 {
-    ui.setupUi(this);
+    m_ui.setupUi(this);
 
     load();
 
     connect(
-        ui.settingsTableWidget, SIGNAL(itemChanged(QTableWidgetItem*)),
+        m_ui.settingsTableWidget, SIGNAL(itemChanged(QTableWidgetItem*)),
         this, SLOT(slotItemChanged(QTableWidgetItem*))
     );
 }
@@ -91,81 +89,15 @@ void DlgTorrentSettings::load()
         }
     }
 
-    int tablerowcount = 0;
-    // qDebug() << Q_FUNC_INFO << "string settings";
-    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_string_settings; i++) {
-        ui.settingsTableWidget->setRowCount(tablerowcount + 1);
-
-        const int settingindex = (lt::settings_pack::string_type_base + i);
-        // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_str(settingindex).c_str();
-
-        QTableWidgetItem* tablewidget = new QTableWidgetItem();
-        tablewidget->setFlags(Qt::ItemIsEnabled);
-        tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
-        ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
-
-        tablewidget = new QTableWidgetItem();
-        tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::String)));
-        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable);
-        tablewidget->setText(QString::fromStdString(ltsettings.get_str(settingindex)));
-        ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
-
-        tablerowcount++;
-    }
-
-    // qDebug() << Q_FUNC_INFO << "int settings";
-    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_int_settings; i++) {
-        ui.settingsTableWidget->setRowCount(tablerowcount + 1);
-
-        const int settingindex = (lt::settings_pack::int_type_base + i);
-        // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_int(settingindex);
-
-        QTableWidgetItem* tablewidget = new QTableWidgetItem();
-        tablewidget->setFlags(Qt::ItemIsEnabled);
-        tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
-        ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
-
-        tablewidget = new QTableWidgetItem();
-        tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Int)));
-        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable);
-        tablewidget->setText(QString::number(ltsettings.get_int(settingindex)));
-        ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
-
-        tablerowcount++;
-    }
-
-    // qDebug() << Q_FUNC_INFO << "bool settings";
-    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_bool_settings; i++) {
-        ui.settingsTableWidget->setRowCount(tablerowcount + 1);
-
-        const int settingindex = (lt::settings_pack::bool_type_base + i);
-        // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_bool(settingindex);
-
-        QTableWidgetItem* tablewidget = new QTableWidgetItem();;
-        tablewidget->setFlags(Qt::ItemIsEnabled);
-        tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
-        ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
-
-        tablewidget = new QTableWidgetItem();
-        tablewidget->setData(tableindexrole, QVariant(settingindex));
-        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Bool)));
-        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-        tablewidget->setCheckState(ltsettings.get_bool(settingindex) ? Qt::Checked : Qt::Unchecked);
-        ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
-
-        tablerowcount++;
-    }
-
+    loadSettings(ltsettings);
     emit changed(false);
 }
 
 void DlgTorrentSettings::save()
 {
     QVariantMap settingsmap;
-    for (int i = 0; i < ui.settingsTableWidget->rowCount(); i++) {
-        QTableWidgetItem* tablewidget = ui.settingsTableWidget->item(i, 1);
+    for (int i = 0; i < m_ui.settingsTableWidget->rowCount(); i++) {
+        QTableWidgetItem* tablewidget = m_ui.settingsTableWidget->item(i, 1);
         const int settingsindex = tablewidget->data(tableindexrole).toInt();
         const int settingstype = tablewidget->data(tabletyperole).toInt();
         const QString settingskey = QString::number(settingsindex);
@@ -213,10 +145,87 @@ void DlgTorrentSettings::save()
     emit changed(false);
 }
 
+void DlgTorrentSettings::defaults()
+{
+    const lt::settings_pack ltsettings = lt::default_settings();
+    loadSettings(ltsettings);
+    emit changed(true);
+}
+
 void DlgTorrentSettings::slotItemChanged(QTableWidgetItem* tablewidget)
 {
     Q_UNUSED(tablewidget);
     emit changed(true);
+}
+
+void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
+{
+    int tablerowcount = 0;
+    // qDebug() << Q_FUNC_INFO << "string settings";
+    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_string_settings; i++) {
+        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
+
+        const int settingindex = (lt::settings_pack::string_type_base + i);
+        // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_str(settingindex).c_str();
+
+        QTableWidgetItem* tablewidget = new QTableWidgetItem();
+        tablewidget->setFlags(Qt::ItemIsEnabled);
+        tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
+        m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
+
+        tablewidget = new QTableWidgetItem();
+        tablewidget->setData(tableindexrole, QVariant(settingindex));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::String)));
+        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable);
+        tablewidget->setText(QString::fromStdString(ltsettings.get_str(settingindex)));
+        m_ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
+
+        tablerowcount++;
+    }
+
+    // qDebug() << Q_FUNC_INFO << "int settings";
+    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_int_settings; i++) {
+        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
+
+        const int settingindex = (lt::settings_pack::int_type_base + i);
+        // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_int(settingindex);
+
+        QTableWidgetItem* tablewidget = new QTableWidgetItem();
+        tablewidget->setFlags(Qt::ItemIsEnabled);
+        tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
+        m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
+
+        tablewidget = new QTableWidgetItem();
+        tablewidget->setData(tableindexrole, QVariant(settingindex));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Int)));
+        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable);
+        tablewidget->setText(QString::number(ltsettings.get_int(settingindex)));
+        m_ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
+
+        tablerowcount++;
+    }
+
+    // qDebug() << Q_FUNC_INFO << "bool settings";
+    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_bool_settings; i++) {
+        m_ui.settingsTableWidget->setRowCount(tablerowcount + 1);
+
+        const int settingindex = (lt::settings_pack::bool_type_base + i);
+        // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_bool(settingindex);
+
+        QTableWidgetItem* tablewidget = new QTableWidgetItem();;
+        tablewidget->setFlags(Qt::ItemIsEnabled);
+        tablewidget->setText(QString::fromStdString(lt::name_for_setting(settingindex)));
+        m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
+
+        tablewidget = new QTableWidgetItem();
+        tablewidget->setData(tableindexrole, QVariant(settingindex));
+        tablewidget->setData(tabletyperole, QVariant(int(QVariant::Bool)));
+        tablewidget->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+        tablewidget->setCheckState(ltsettings.get_bool(settingindex) ? Qt::Checked : Qt::Unchecked);
+        m_ui.settingsTableWidget->setItem(tablerowcount, 1, tablewidget);
+
+        tablerowcount++;
+    }
 }
 
 #include "moc_dlgtorrent.cpp"
