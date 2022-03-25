@@ -1,7 +1,5 @@
 add_subdirectory(kio)
-add_subdirectory(multisegmentkio)
 add_subdirectory(metalink)
-add_subdirectory(mirrorsearch)
 if (LIBMMS_FOUND)
   add_subdirectory(mmsthreads)
 endif (LIBMMS_FOUND)
