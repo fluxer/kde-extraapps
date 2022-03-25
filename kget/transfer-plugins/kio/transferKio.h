@@ -39,25 +39,15 @@ public:
     // --- Transfer virtual functions ---
     void deinit(Transfer::DeleteOptions options) final;
 
-    /**
-    * Move the download to the new destination
-    * @param newDirectory is a directory where the download should be stored
-    * @returns true if newDestination can be used
-    */
-    bool setDirectory(const KUrl &newDirectory) final;
-
     bool repair(const KUrl &file = KUrl()) final;
 
     Verifier *verifier(const KUrl &file = KUrl()) final;
     Signature *signature(const KUrl &file = KUrl()) final;
 
 private:
-    bool setNewDestination(const KUrl &newDestination);
     void createJob();
 
     KIO::FileCopyJob * m_copyjob;
-    bool m_stopped;
-    bool m_movingFile;
 
 private slots:
     void slotResult( KJob * kioJob );
@@ -66,9 +56,7 @@ private slots:
     void slotTotalSize( KJob * kioJob, qulonglong size );
     void slotProcessedSize( KJob * kioJob, qulonglong size );
     void slotSpeed( KJob * kioJob, unsigned long bytes_per_second );
-    void newDestResult(KJob *result);
     void slotVerified(bool isVerified);
-    void slotStatResult(KJob * kioJob);
 
 private:
     Verifier *m_verifier;
