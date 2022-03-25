@@ -714,20 +714,9 @@ void TransferTorrent::applySettings()
     }
 
     QFile settingsfile(KStandardDirs::locateLocal("appdata", "torrentsettings.json"));
-    if (!settingsfile.exists()) {
-        kDebug(5001) << "settings file does not exist";
-        return;
-    }
-
-    if (!settingsfile.open(QFile::ReadOnly)) {
-        kWarning(5001) << "could not open settings file";
-        return;
-    }
-
-    const QJsonDocument settingsjson = QJsonDocument::fromJson(settingsfile.readAll());
-    if (settingsjson.isNull()) {
-        kWarning(5001) << "could not parse settings file";
-        return;
+    QJsonDocument settingsjson;
+    if (settingsfile.open(QFile::ReadOnly)) {
+        settingsjson = QJsonDocument::fromJson(settingsfile.readAll());
     }
 
     const QVariantMap settingsmap = settingsjson.toVariant().toMap();

@@ -212,7 +212,7 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
         m_ui.settingsTableWidget->setItem(tablerowcount, 0, tablewidget);
 
         QSpinBox* tablecellwidget = new QSpinBox();
-        tablecellwidget->setRange(-INT_MAX, INT_MAX);
+        tablecellwidget->setRange(INT_MIN, INT_MAX);
         tablecellwidget->setValue(ltsettings.get_int(settingindex));
         connect(
             tablecellwidget, SIGNAL(valueChanged(int)),
