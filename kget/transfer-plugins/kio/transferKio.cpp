@@ -26,7 +26,6 @@
 #include <KDebug>
 
 #include <QtCore/QFile>
-#include <QtXml/qdom.h>
 
 TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
                          Scheduler * scheduler, const KUrl & source, const KUrl & dest,
@@ -80,12 +79,12 @@ bool TransferKio::setNewDestination(const KUrl &newDestination)
 
 void TransferKio::newDestResult(KJob *result)
 {
-    //TODO: handle errors etc.!
+    // TODO: handle errors etc.!
     Q_UNUSED(result);
 
     m_movingFile = false;
     start();
-    setTransferChange(Transfer::Tc_FileName);
+    setTransferChange(Transfer::Tc_FileName, true);
 }
 
 void TransferKio::start()
@@ -112,7 +111,7 @@ void TransferKio::stop()
 
     if (m_copyjob) {
         m_copyjob->kill(KJob::EmitResult);
-        m_copyjob=0;
+        m_copyjob = nullptr;
     }
 
     kDebug(5001) << "Stop";
@@ -123,12 +122,12 @@ void TransferKio::stop()
 
 void TransferKio::deinit(Transfer::DeleteOptions options)
 {
-    if (options & DeleteFiles)//if the transfer is not finished, we delete the *.part-file
-    {
+    // if the transfer is not finished, we delete the *.part-file
+    if (options & DeleteFiles) {
         KIO::Job *del = KIO::del(QString(m_dest.path() + ".part"), KIO::HideProgressInfo);
         KIO::NetAccess::synchronousRun(del, 0);
     }
-    //TODO: Ask the user if he/she wants to delete the *.part-file? To discuss (boom1992)
+    // TODO: Ask the user if he/she wants to delete the *.part-file? To discuss (boom1992)
 }
 
 bool TransferKio::repair(const KUrl &file)
@@ -140,7 +139,7 @@ bool TransferKio::repair(const KUrl &file)
         m_percent = 0;
         if (m_copyjob) {
             m_copyjob->kill(KJob::Quietly);
-            m_copyjob = 0;
+            m_copyjob = nullptr;
         }
         setTransferChange(Transfer::Tc_DownloadedSize | Transfer::Tc_Percent, true);
 
@@ -175,8 +174,7 @@ Signature *TransferKio::signature(const KUrl &file)
     return m_signature;
 }
 
-//NOTE: INTERNAL METHODS
-
+// NOTE: INTERNAL METHODS
 void TransferKio::createJob()
 {
     if (!m_copyjob) {
@@ -215,18 +213,19 @@ void TransferKio::slotResult( KJob * kioJob )
             kDebug(5001) << "--  E R R O R  (" << kioJob->error() << ")--";
             if (!m_stopped) {
                 setStatus(Job::Aborted);
-                setTransferChange(Transfer::Tc_Status, true);
+                setLog(kioJob->errorString(), Transfer::Log_Error);
+                setTransferChange(Transfer::Tc_Status | Transfer::Tc_Log, true);
             }
             break;
     }
     // when slotResult gets called, the m_copyjob has already been deleted!
-    m_copyjob = 0;
+    m_copyjob = nullptr;
 
     // If it is an ftp file, there's still work to do
     Transfer::ChangesFlags flags = Transfer::Tc_None;
     if (status() == Job::Finished) {
         if (!m_totalSize) {
-            //downloaded elsewhere already, e.g. Konqueror
+            // downloaded elsewhere already, e.g. Konqueror
             if (!m_downloadedSize) {
                 QFile file(m_dest.toLocalFile() + ".part");
                 m_downloadedSize = file.size();
@@ -236,7 +235,7 @@ void TransferKio::slotResult( KJob * kioJob )
                 }
             }
             m_totalSize = m_downloadedSize;
-            flags |= Tc_DownloadedSize;
+            flags |= Transfer::Tc_DownloadedSize;
         }
         if (m_verifier && Settings::checksumAutomaticVerification()) {
             m_verifier->verify();

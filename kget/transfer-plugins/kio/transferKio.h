@@ -37,13 +37,13 @@ public:
     void stop() final;
 
     // --- Transfer virtual functions ---
-    void deinit(Transfer::DeleteOptions options);
+    void deinit(Transfer::DeleteOptions options) final;
 
     /**
-        * Move the download to the new destination
-        * @param newDirectory is a directory where the download should be stored
-        * @returns true if newDestination can be used
-        */
+    * Move the download to the new destination
+    * @param newDirectory is a directory where the download should be stored
+    * @returns true if newDestination can be used
+    */
     bool setDirectory(const KUrl &newDirectory) final;
 
     bool repair(const KUrl &file = KUrl()) final;
