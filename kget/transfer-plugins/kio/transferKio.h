@@ -27,54 +27,52 @@ class Verifier;
 class TransferKio : public Transfer
 {
     Q_OBJECT
+public:
+    TransferKio(TransferGroup * parent, TransferFactory * factory,
+                Scheduler * scheduler, const KUrl & src, const KUrl & dest,
+                const QDomElement * e = 0);
 
-    public:
-        TransferKio(TransferGroup * parent, TransferFactory * factory,
-                    Scheduler * scheduler, const KUrl & src, const KUrl & dest,
-                    const QDomElement * e = 0);
+    // --- Job virtual functions ---
+    void start() final;
+    void stop() final;
 
-        /**
-         * Move the download to the new destination
-         * @param newDirectory is a directory where the download should be stored
-         * @returns true if newDestination can be used
-         */
-        virtual bool setDirectory(const KUrl &newDirectory);
+    // --- Transfer virtual functions ---
+    void deinit(Transfer::DeleteOptions options);
 
-        bool repair(const KUrl &file = KUrl());
+    /**
+        * Move the download to the new destination
+        * @param newDirectory is a directory where the download should be stored
+        * @returns true if newDestination can be used
+        */
+    bool setDirectory(const KUrl &newDirectory) final;
 
-        Verifier *verifier(const KUrl &file = KUrl());
-        Signature *signature(const KUrl &file = KUrl());
+    bool repair(const KUrl &file = KUrl()) final;
 
-    public slots:
-        bool setNewDestination(const KUrl &newDestination);
+    Verifier *verifier(const KUrl &file = KUrl()) final;
+    Signature *signature(const KUrl &file = KUrl()) final;
 
-        // --- Job virtual functions ---
-        void start();
-        void stop();
+private:
+    bool setNewDestination(const KUrl &newDestination);
+    void createJob();
 
-        void deinit(Transfer::DeleteOptions options);
+    KIO::FileCopyJob * m_copyjob;
+    bool m_stopped;
+    bool m_movingFile;
 
-    private:
-        void createJob();
+private slots:
+    void slotResult( KJob * kioJob );
+    void slotInfoMessage( KJob * kioJob, const QString & msg );
+    void slotPercent( KJob * kioJob, unsigned long percent );
+    void slotTotalSize( KJob * kioJob, qulonglong size );
+    void slotProcessedSize( KJob * kioJob, qulonglong size );
+    void slotSpeed( KJob * kioJob, unsigned long bytes_per_second );
+    void newDestResult(KJob *result);
+    void slotVerified(bool isVerified);
+    void slotStatResult(KJob * kioJob);
 
-        KIO::FileCopyJob * m_copyjob;
-        bool m_stopped;
-        bool m_movingFile;
-
-    private slots:
-        void slotResult( KJob * kioJob );
-        void slotInfoMessage( KJob * kioJob, const QString & msg );
-        void slotPercent( KJob * kioJob, unsigned long percent );
-        void slotTotalSize( KJob * kioJob, qulonglong size );
-        void slotProcessedSize( KJob * kioJob, qulonglong size );
-        void slotSpeed( KJob * kioJob, unsigned long bytes_per_second );
-        void newDestResult(KJob *result);
-        void slotVerified(bool isVerified);
-        void slotStatResult(KJob * kioJob);
-
-    private:
-        Verifier *m_verifier;
-        Signature *m_signature;
+private:
+    Verifier *m_verifier;
+    Signature *m_signature;
 };
 
 #endif
