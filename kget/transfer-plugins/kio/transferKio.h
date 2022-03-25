@@ -16,13 +16,11 @@
 #include <kio/job.h>
 
 #include "core/transfer.h"
+#include "core/filemodel.h"
 
 /**
  * This transfer uses the KIO class to download files
  */
- 
-
-class Verifier;
 
 class TransferKio : public Transfer
 {
@@ -44,6 +42,8 @@ public:
     Verifier *verifier(const KUrl &file = KUrl()) final;
     Signature *signature(const KUrl &file = KUrl()) final;
 
+    FileModel *fileModel() final;
+
 private:
     void createJob();
 
@@ -61,6 +61,7 @@ private slots:
 private:
     Verifier *m_verifier;
     Signature *m_signature;
+    FileModel *m_filemodel;
 };
 
 #endif

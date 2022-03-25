@@ -33,7 +33,8 @@ TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
     : Transfer(parent, factory, scheduler, source, dest, e),
       m_copyjob(nullptr),
       m_verifier(nullptr),
-      m_signature(nullptr)
+      m_signature(nullptr),
+      m_filemodel(nullptr)
 {
     // TODO: check if it really can resume
     setCapabilities(Transfer::Cap_Resuming);
@@ -119,6 +120,32 @@ Signature *TransferKio::signature(const KUrl &file)
     }
 
     return m_signature;
+}
+
+FileModel *TransferKio::fileModel()
+{
+    if (!m_filemodel) {
+        m_filemodel = new FileModel(files(), directory(), this);
+    }
+
+    const KUrl fileurl = m_dest;
+
+    QModelIndex fileindex = m_filemodel->index(fileurl, FileItem::File);
+    m_filemodel->setData(fileindex, Qt::Checked, Qt::CheckStateRole);
+
+    QModelIndex statusindex = m_filemodel->index(fileurl, FileItem::Status);
+    m_filemodel->setData(statusindex, status());
+
+    QModelIndex sizeindex = m_filemodel->index(fileurl, FileItem::Size);
+    m_filemodel->setData(sizeindex, m_totalSize);
+
+    QModelIndex checksumindex = m_filemodel->index(fileurl, FileItem::ChecksumVerified);
+    m_filemodel->setData(checksumindex, verifier()->status());
+
+    QModelIndex signatureindex = m_filemodel->index(fileurl, FileItem::SignatureVerified);
+    m_filemodel->setData(signatureindex, signature()->status());
+
+    return m_filemodel;
 }
 
 // NOTE: INTERNAL METHODS
