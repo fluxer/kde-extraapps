@@ -34,7 +34,7 @@ class ChecksumSearch : public QObject
         ~ChecksumSearch();
 
         /**
-         * Used to define in whiche way the url should be changed to try and find
+         * Used to define in which way the url should be changed to try and find
          * Checksums
          */
         enum UrlChangeMode

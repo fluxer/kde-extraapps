@@ -10,22 +10,16 @@
 */
 
 #include "transferKio.h"
-#include "core/verifier.h"
-#include "core/signature.h"
 #include "settings.h"
 
-#include <utime.h>
-
-#include <kiconloader.h>
 #include <kio/scheduler.h>
 #include <KIO/DeleteJob>
 #include <KIO/CopyJob>
 #include <KIO/NetAccess>
 #include <KLocale>
+#include <KProtocolManager>
 #include <KMessageBox>
 #include <KDebug>
-
-#include <QtCore/QFile>
 
 TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
                          Scheduler * scheduler, const KUrl & source, const KUrl & dest,
@@ -36,8 +30,9 @@ TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
       m_signature(nullptr),
       m_filemodel(nullptr)
 {
-    // TODO: check if it really can resume
-    setCapabilities(Transfer::Cap_Resuming);
+    if (KProtocolManager::autoResume()) {
+        setCapabilities(Transfer::Cap_Resuming);
+    }
 }
 
 void TransferKio::start()
@@ -70,7 +65,6 @@ void TransferKio::stop()
 
 void TransferKio::deinit(Transfer::DeleteOptions options)
 {
-    // if the transfer is not finished, we delete the *.part-file
     if (options & Transfer::DeleteFiles) {
         KIO::Job *del = KIO::del(m_dest, KIO::HideProgressInfo);
         KIO::NetAccess::synchronousRun(del, 0);
@@ -208,6 +202,7 @@ void TransferKio::slotResult( KJob * kioJob )
 
 void TransferKio::slotInfoMessage( KJob * kioJob, const QString & msg )
 {
+    kDebug(5001) << "slotInfoMessage";
     Q_UNUSED(kioJob);
 
     setLog(msg, Transfer::Log_Info);

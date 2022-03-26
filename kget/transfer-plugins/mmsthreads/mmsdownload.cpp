@@ -69,7 +69,7 @@ bool MmsDownload::isWorkingUrl()
 
 void MmsDownload::splitTransfer()
 {
-    /** We split the download in similar and each part is asigned to a thread and thi is saved in
+    /** We split the download in similar and each part is asigned to a thread and this is saved in
      * a map named m_mapEndIni. If we resume the download, then the temporal file will exist
      * and we dont have to split the download only use it.
      */

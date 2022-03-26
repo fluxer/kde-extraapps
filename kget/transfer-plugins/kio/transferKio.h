@@ -16,6 +16,8 @@
 #include <kio/job.h>
 
 #include "core/transfer.h"
+#include "core/verifier.h"
+#include "core/signature.h"
 #include "core/filemodel.h"
 
 /**
@@ -44,11 +46,6 @@ public:
 
     FileModel *fileModel() final;
 
-private:
-    void createJob();
-
-    KIO::FileCopyJob * m_copyjob;
-
 private slots:
     void slotResult( KJob * kioJob );
     void slotInfoMessage( KJob * kioJob, const QString & msg );
@@ -59,6 +56,9 @@ private slots:
     void slotVerified(bool isVerified);
 
 private:
+    void createJob();
+
+    KIO::FileCopyJob * m_copyjob;
     Verifier *m_verifier;
     Signature *m_signature;
     FileModel *m_filemodel;
