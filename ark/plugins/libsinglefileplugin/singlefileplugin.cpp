@@ -182,7 +182,7 @@ bool LibSingleFileInterface::addFiles(const QStringList & files, const Kerfuffle
     QIODevice *device = KFilterDev::deviceForFile(outputfile);
     if (!device) {
         kDebug() << "Could not create KFilterDev";
-        emit error(i18n("Ark could create filter."));
+        emit error(i18n("Ark could not create filter."));
         return false;
     }
 
