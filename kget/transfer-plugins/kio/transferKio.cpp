@@ -173,9 +173,8 @@ void TransferKio::slotResult( KJob * kioJob )
         case KIO::ERR_FILE_ALREADY_EXIST: { // The file has already been downloaded.
             setStatus(Job::Finished);
             m_percent = 100;
-            m_downloadSpeed = 0;
-            m_downloadedSize = m_totalSize;
-            setTransferChange(Transfer::Tc_Status | Transfer::Tc_Percent | Transfer::Tc_DownloadSpeed, true);
+            m_downloadedSize = m_totalSize = QFile(m_dest.path()).size();
+            setTransferChange(Transfer::Tc_Status | Transfer::Tc_Percent | Transfer::Tc_DownloadedSize | Transfer::Tc_TotalSize, true);
             break;
         }
         default: {

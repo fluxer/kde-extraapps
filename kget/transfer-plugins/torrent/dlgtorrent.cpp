@@ -225,7 +225,6 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 
     // qDebug() << Q_FUNC_INFO << "bool settings";
     for (int i = 0; i < lt::settings_pack::settings_counts_t::num_bool_settings; i++) {
-
         const int settingindex = (lt::settings_pack::bool_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_bool(settingindex);
 
