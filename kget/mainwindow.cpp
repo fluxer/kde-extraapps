@@ -410,11 +410,6 @@ void MainWindow::init()
     // session management stuff
     connect(kapp, SIGNAL(saveYourself()), SLOT(slotSaveMyself()));
 
-    // set auto-resume in kioslaverc (is there a cleaner way?)
-    KConfig cfg("kioslaverc", KConfig::NoGlobals);
-    cfg.group(QString()).writeEntry("AutoResume", true);
-    cfg.sync();
-
     // DropTarget
     m_drop = new DropTarget(this);
 
