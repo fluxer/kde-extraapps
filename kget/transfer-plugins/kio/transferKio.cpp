@@ -69,7 +69,11 @@ void TransferKio::deinit(Transfer::DeleteOptions options)
         KIO::Job *del = KIO::del(m_dest, KIO::HideProgressInfo);
         KIO::NetAccess::synchronousRun(del, 0);
     }
-    // TODO: Ask the user if he/she wants to delete the *.part-file? To discuss (boom1992)
+
+    if (options & Transfer::DeleteTemporaryFiles) {
+        KIO::Job *del = KIO::del(m_dest.path() + ".part", KIO::HideProgressInfo);
+        KIO::NetAccess::synchronousRun(del, 0);
+    }
 }
 
 bool TransferKio::repair(const KUrl &file)
