@@ -46,7 +46,7 @@ void ChecksumSearchTransferDataSource::start()
     for (int i = 0, k = 0; i < changes.size(); ++i) {
         const ChecksumSearch::UrlChangeMode mode = static_cast<ChecksumSearch::UrlChangeMode>(modes.at(i));
         const KUrl source = ChecksumSearch::createUrl(m_sourceUrl, changes.at(i), mode);
-        KIO::Job* job = KIO::get(source);
+        KIO::Job* job = KIO::get(source, KIO::NoReload, KIO::HideProgressInfo);
         const bool success = KIO::NetAccess::synchronousRun(job, nullptr);
         // qDebug() << Q_FUNC_INFO << "get" << source << success << KIO::NetAccess::lastErrorString();
         if (success) {
