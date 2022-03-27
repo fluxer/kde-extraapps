@@ -54,6 +54,7 @@ private slots:
     void slotProcessedSize( KJob * kioJob, qulonglong size );
     void slotSpeed( KJob * kioJob, unsigned long bytes_per_second );
     void slotVerified(bool isVerified);
+    void slotChecksumFound(QString type, QString checksum);
 
 private:
     void createJob();
