@@ -150,7 +150,7 @@ UrlChecker::UrlError UrlChecker::checkSource(const KUrl &src, bool showNotificat
     if ((error == NoError) && src.protocol().isEmpty()){
         error = NoProtocol;
     }
-    /*if ((error == NoError) && !src.hasHost()) {//FIXME deactivated to allow file://....metalink etc
+    /*if ((error == NoError) && !src.hasHost()) {//FIXME deactivated to allow file://.... etc
         error = NoHost;
     }*/
 

@@ -30,7 +30,7 @@ public:
     enum TransferFlag {
         /**  The transfer supports resuming and seeking  */
         Tf_SupportsSegments    = 0x01,
-        /**  The container includes more than one file, e.g. metalink  */
+        /**  The container includes more than one file, e.g. torrent  */
         Tf_MultipleFiles       = 0x02
     };
 

@@ -85,7 +85,6 @@ private slots:
     void slotShowMenubar();
     void slotTransferGroupSettings();
     void slotTransferSettings();
-    void slotCreateMetalink();
     void slotPriorityTop();
     void slotPriorityBottom();
     void slotPriorityUp();

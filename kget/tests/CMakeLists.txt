@@ -27,17 +27,6 @@ kde4_add_test(kget-schedulertest schedulertest.cpp)
 
 target_link_libraries(kget-schedulertest ${QT_QTTEST_LIBRARY} ${QT_QTGUI_LIBRARY} ${KDE4_KDECORE_LIBS} kgetcore)
 
-
-#===========Metalinker===========
-set(metalinktest_SRCS
-    metalinktest.cpp
-    ../ui/metalinkcreator/metalinker.cpp
-)
-
-kde4_add_test(kget-metalinktest ${metalinktest_SRCS})
-
-target_link_libraries(kget-metalinktest ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} ${QT_QTTEST_LIBRARY})
-
 #===========FileDeleter===========
 set(filedeletertest_SRCS
     filedeletertest.cpp

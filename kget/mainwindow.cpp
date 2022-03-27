@@ -32,7 +32,6 @@
 #include "ui/groupsettingsdialog.h"
 #include "ui/transfersettingsdialog.h"
 #include "ui/linkview/kget_linkview.h"
-#include "ui/metalinkcreator/metalinkcreator.h"
 #include "extensions/webinterface/httpserver.h"
 #ifdef DO_KGET_TEST
 #  include "tests/testkget.h"
@@ -156,12 +155,6 @@ void MainWindow::setupActions()
     exportAction->setShortcuts(KShortcut("Ctrl+E"));
     exportAction->setHelpText(i18n("Exports the current transfers into a file"));
     connect(exportAction, SIGNAL(triggered()), SLOT(slotExportTransfers()));
-
-    KAction *createMetalinkAction = actionCollection()->addAction("create_metalink");
-    createMetalinkAction->setText(i18n("&Create a Metalink..."));
-    createMetalinkAction->setIcon(KIcon("journal-new"));
-    createMetalinkAction->setHelpText(i18n("Creates or modifies a metalink and saves it on disk"));
-    connect(createMetalinkAction, SIGNAL(triggered()), SLOT(slotCreateMetalink()));
 
     KAction *priorityTop = actionCollection()->addAction("priority_top");
     priorityTop->setText(i18n("Top Priority"));
@@ -474,8 +467,8 @@ void MainWindow::slotNewTransfer()
 void MainWindow::slotImportTransfers()
 {
     QString filename = KFileDialog::getOpenFileName(KUrl(),
-                                                    "*.kgt *.metalink *.meta4 *.torrent|" + i18n("All Openable Files") +
-                                                    " (*.kgt *.metalink *.meta4 *.torrent)", this, i18n("Open File"));
+                                                    "*.kgt *.torrent|" + i18n("All Openable Files") +
+                                                    " (*.kgt *.torrent)", this, i18n("Open File"));
 
     if(filename.endsWith(QLatin1String(".kgt")))
     {
@@ -579,13 +572,6 @@ void MainWindow::slotExportTransfers()
         const bool plain = !filename.endsWith("kgt");
         KGet::save(filename, plain);
     }
-}
-
-void MainWindow::slotCreateMetalink()
-{
-    MetalinkCreator *dialog = new MetalinkCreator(this);
-    dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->show();
 }
 
 void MainWindow::slotDeleteGroup()

@@ -119,8 +119,7 @@ class KGET_EXPORT UrlChecker
          * Checks if source is local and exists already
          * @note If both dest and source are the same and local, then false will be returned
          * since it is assumed, that local files are either not handled by any
-         * transfer plugin or are e.g. metalink or torrent files otherwise and thus
-         * can have the same source/dest.
+         * transfer plugin or are e.g. torrent files and thus can have the same source/dest.
          * Also keep in mind that false will be returned if dest is being removed
          * at the moment. Avoid to ask a user twice in worst case.
          */
