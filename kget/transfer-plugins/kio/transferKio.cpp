@@ -44,6 +44,19 @@ void TransferKio::start()
         setStatus(Job::Running);
         setTransferChange(Transfer::Tc_Status, true);
 
+        if (Settings::checksumAutomaticVerification()) {
+            QDomDocument doc;
+            QDomElement element = doc.createElement("TransferDataSource");
+            element.setAttribute("type", "checksumsearch");
+            doc.appendChild(element);
+
+            TransferDataSource *checksumSearch = KGet::createTransferDataSource(m_source, element, this);
+            if (checksumSearch) {
+                connect(checksumSearch, SIGNAL(data(QString,QString)), this, SLOT(slotChecksumFound(QString,QString)));
+                checksumSearch->start();
+            }
+        }
+
         createJob();
     }
 }
@@ -181,19 +194,6 @@ void TransferKio::slotResult( KJob * kioJob )
             m_percent = 100;
             m_downloadedSize = m_totalSize = QFile(m_dest.path()).size();
             setTransferChange(Transfer::Tc_Status | Transfer::Tc_Percent | Transfer::Tc_DownloadedSize | Transfer::Tc_TotalSize, true);
-
-            if (Settings::checksumAutomaticVerification()) {
-                QDomDocument doc;
-                QDomElement element = doc.createElement("TransferDataSource");
-                element.setAttribute("type", "checksumsearch");
-                doc.appendChild(element);
-
-                TransferDataSource *checksumSearch = KGet::createTransferDataSource(m_source, element, this);
-                if (checksumSearch) {
-                    connect(checksumSearch, SIGNAL(data(QString,QString)), this, SLOT(slotChecksumFound(QString,QString)));
-                    checksumSearch->start();
-                }
-            }
             break;
         }
         default: {
