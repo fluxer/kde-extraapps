@@ -184,14 +184,22 @@ KUrl ChecksumSearch::createUrl(const KUrl &src, const QString &change, ChecksumS
     else if (mode == kg_ReplaceEnding)
     {
         QString fileName = src.fileName();
+
         int index = fileName.lastIndexOf('.');
         if (index > -1)
         {
-            fileName = fileName.left(index) + change;
-            KUrl temp = src.upUrl();
-            temp.addPath(fileName);
-            url = temp;
+            fileName = fileName.left(index);
+            index = fileName.lastIndexOf('.');
+            // FIXME: for anything other than *.tar.* this would be wrong as it could be version,
+            // e.g. foo-1.2.3.gz. have to probe for two cases here
+            if (index > -1)
+            {
+                fileName = fileName.left(index);
+            }
         }
+        KUrl temp = src.upUrl();
+        temp.addPath(fileName + change);
+        url = temp;
     }
 
     return url;
