@@ -46,6 +46,9 @@ public:
 
     FileModel *fileModel() final;
 
+    void save(const QDomElement &element) final;
+    void load(const QDomElement *element) final;
+
 private slots:
     void slotResult( KJob * kioJob );
     void slotInfoMessage( KJob * kioJob, const QString & msg );
@@ -63,6 +66,7 @@ private:
     Verifier *m_verifier;
     Signature *m_signature;
     FileModel *m_filemodel;
+    QMap<QString, QString> m_checksums;
 };
 
 #endif

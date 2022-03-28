@@ -787,7 +787,7 @@ void TransferTorrent::load(const QDomElement *element)
     m_priorities.clear();
     if (element) {
         const QStringList priorities = element->attribute("FilePriorities").split(",");
-        foreach (const QString priority, priorities) {
+        foreach (const QString &priority, priorities) {
             m_priorities.push_back(boost::uint8_t(priority.toInt()));
         }
     }

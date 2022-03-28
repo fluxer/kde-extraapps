@@ -121,6 +121,11 @@ Verifier *TransferKio::verifier(const KUrl &file)
         connect(m_verifier, SIGNAL(verified(bool)), this, SLOT(slotVerified(bool)));
     }
 
+    foreach (const QString &checksumtype, m_checksums.keys()) {
+        const QString checksumvalue = m_checksums.value(checksumtype);
+        m_verifier->addChecksum(checksumtype, checksumvalue);
+    }
+
     return m_verifier;
 }
 
@@ -159,6 +164,43 @@ FileModel *TransferKio::fileModel()
     m_filemodel->setData(signatureindex, signature()->status());
 
     return m_filemodel;
+}
+
+void TransferKio::save(const QDomElement &element)
+{
+    QDomElement elementcopy = element;
+    QString checksumsstring;
+    bool firstappend = true;
+    foreach (const QString &checksumtype, m_checksums.keys()) {
+        const QString checksumvalue = m_checksums.value(checksumtype);
+        if (firstappend) {
+            checksumsstring.append(QString::fromLatin1("%1,%2").arg(checksumtype).arg(checksumvalue));
+            firstappend = false;
+        } else {
+            checksumsstring.append(QString::fromLatin1(";%1,%2").arg(checksumtype).arg(checksumvalue));
+        }
+    }
+    elementcopy.setAttribute("Checksums", checksumsstring);
+
+    Transfer::save(elementcopy);
+}
+
+void TransferKio::load(const QDomElement *element)
+{
+    Transfer::load(element);
+
+    m_checksums.clear();
+    if (element) {
+        const QStringList checksums = element->attribute("Checksums").split(";");
+        foreach (const QString &checksum, checksums) {
+            const QStringList splitchecksum = checksum.split(",");
+            if (splitchecksum.size() != 2) {
+                kDebug(5001) << "invalid checksum" << checksum;
+                continue;
+            }
+            m_checksums.insert(splitchecksum.at(0), splitchecksum.at(1));
+        }
+    }
 }
 
 // NOTE: INTERNAL METHODS
@@ -282,6 +324,7 @@ void TransferKio::slotVerified(bool isVerified)
 void TransferKio::slotChecksumFound(QString type, QString checksum)
 {
     verifier()->addChecksum(type, checksum);
+    m_checksums.insert(type, checksum);
 }
 
 #include "moc_transferKio.cpp"
