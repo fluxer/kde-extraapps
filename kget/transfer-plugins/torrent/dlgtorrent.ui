@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
-    <height>439</height>
+    <width>459</width>
+    <height>413</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -39,6 +39,19 @@
        <string>Value</string>
       </property>
      </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;For description of the settings visit:&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.libtorrent.org/reference-Settings.html#settings_pack&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0057ae;&quot;&gt;https://www.libtorrent.org/reference-Settings.html#settings_pack&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="openExternalLinks">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
   </layout>
