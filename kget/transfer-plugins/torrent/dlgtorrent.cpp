@@ -170,6 +170,8 @@ void DlgTorrentSettings::slotSpinBoxChanged(const int value)
 
 void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 {
+    m_ui.settingsTableWidget->clearContents();
+
     int tablerowcount = 0;
     // qDebug() << Q_FUNC_INFO << "string settings";
     for (int i = 0; i < lt::settings_pack::settings_counts_t::num_string_settings; i++) {
@@ -244,6 +246,8 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 
         tablerowcount++;
     }
+
+    m_ui.settingsTableWidget->horizontalHeader()->setResizeMode(0, QHeaderView::Stretch);
 }
 
 #include "moc_dlgtorrent.cpp"
