@@ -14,6 +14,7 @@
 #include "core/transfergroup.h"
 #include "transferKio.h"
 
+#include <kprotocolinfo.h>
 #include <kdebug.h>
 
 KGET_EXPORT_PLUGIN( TransferKioFactory )
@@ -50,6 +51,9 @@ bool TransferKioFactory::isSupported(const KUrl &url) const
 
 QStringList TransferKioFactory::addsProtocols() const
 {
-    static const QStringList protocols = QStringList() << "http" << "https" << "ftp" << "sftp";
+    QStringList protocols = QStringList() << "http" << "https" << "ftp";
+    if (KProtocolInfo::isKnownProtocol("sftp")) {
+        protocols << "sftp";
+    }
     return protocols;
 }
