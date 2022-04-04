@@ -74,6 +74,7 @@ target_link_libraries(krfb
     ${QT_QTNETWORK_LIBRARY}
     ${KDE4_KDNSSD_LIBS}
     ${KDE4_KDEUI_LIBS}
+    ${KDE4_KPASSWDSTORE_LIBS}
     ${LIBVNCSERVER_LIBRARIES}
 )
 

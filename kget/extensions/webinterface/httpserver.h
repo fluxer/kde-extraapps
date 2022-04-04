@@ -12,12 +12,9 @@
 #define HTTPSERVER_H
 
 #include <QWidget>
-
 #include <QTcpServer>
 
-namespace KWallet {
-    class Wallet;
-}
+#include <kpasswdstore.h>
 
 class HttpServer : public QObject
 {
@@ -30,11 +27,10 @@ public:
     void settingsChanged();
 
 private slots:
-    void init(bool);
     void handleRequest();
 
 private:
-    KWallet::Wallet *m_wallet;
+    KPasswdStore *m_passwdstore;
     QTcpServer *m_tcpServer;
     QString m_pwd;
 };

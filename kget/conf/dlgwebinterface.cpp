@@ -14,11 +14,10 @@
 
 #include <KMessageBox>
 #include <KLocale>
-#include <kwallet.h>
 
 DlgWebinterface::DlgWebinterface(KDialog *parent)
     : QWidget(parent),
-      m_wallet(0)
+      m_passwdstore(nullptr)
 {
     setupUi(this);
 
@@ -30,41 +29,28 @@ DlgWebinterface::DlgWebinterface(KDialog *parent)
 
 DlgWebinterface::~DlgWebinterface()
 {
-    delete m_wallet;
 }
 
 void DlgWebinterface::readConfig()
 {
     if (Settings::webinterfaceEnabled()) {
-        m_wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(),
-                                               winId(),///Use MainWindow?
-                                               KWallet::Wallet::Asynchronous);
-        if (m_wallet) {
-            connect(m_wallet, SIGNAL(walletOpened(bool)), SLOT(walletOpened(bool)));
-        } else {
-            KMessageBox::error(0, i18n("Could not open KWallet"));
+        if (!m_passwdstore) {
+            m_passwdstore = new KPasswdStore(this);
+            m_passwdstore->setStoreID("KGet");
         }
-    }
-}
 
-void DlgWebinterface::walletOpened(bool opened)
-{
-    if (opened &&
-        (m_wallet->hasFolder("KGet") ||
-         m_wallet->createFolder("KGet")) &&
-         m_wallet->setFolder("KGet")) {
-        QString pwd;
-        m_wallet->readPassword("Webinterface", pwd);
-        webinterfacePwd->setText(pwd);
-    } else {
-        KMessageBox::error(0, i18n("Could not open KWallet"));
+        if (m_passwdstore->openStore(winId())) {
+            webinterfacePwd->setText(m_passwdstore->getPasswd("Webinterface", winId()));
+        } else {
+            KMessageBox::error(nullptr, i18n("Could not open KPasswdStore"));
+        }
     }
 }
 
 void DlgWebinterface::saveSettings()
 {
-    if (m_wallet) {
-        m_wallet->writePassword("Webinterface", webinterfacePwd->text());
+    if (m_passwdstore && m_passwdstore->openStore(winId())) {
+        m_passwdstore->storePasswd("Webinterface", webinterfacePwd->text(), winId());
     }
     emit saved();
 }

@@ -21,7 +21,6 @@
 #include <KDebug>
 #include <KGlobalSettings>
 #include <KStandardDirs>
-#include <kwallet.h>
 
 #include <QTcpServer>
 #include <QTcpSocket>
@@ -68,46 +67,34 @@ void HttpHeaderParser::parseHeader(const QByteArray &header)
 
 HttpServer::HttpServer(QWidget *parent)
     : QObject(parent),
-      m_wallet(0)
+      m_passwdstore(nullptr)
 {
-    m_wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(),
-                                           parent->winId(),///Use MainWindow?
-                                           KWallet::Wallet::Asynchronous);
-    if (m_wallet) {
-        connect(m_wallet, SIGNAL(walletOpened(bool)), SLOT(init(bool)));
+    m_passwdstore = new KPasswdStore(this);
+    m_passwdstore->setStoreID("KGet");
+
+    if (m_passwdstore && m_passwdstore->openStore(parent->winId())) {
+        m_pwd = m_passwdstore->getPasswd("Webinterface", parent->winId());
+
+        m_tcpServer = new QTcpServer(this);
+        if (!m_tcpServer->listen(QHostAddress::Any, Settings::webinterfacePort())) {
+            KGet::showNotification(parent, "error", i18nc("@info", "Unable to start WebInterface: %1", m_tcpServer->errorString()));
+            return;
+        }
+
+        connect(m_tcpServer, SIGNAL(newConnection()), this, SLOT(handleRequest()));
     } else {
-        KGet::showNotification(parent, "error", i18n("Unable to start WebInterface: Could not open KWallet"));
+        KGet::showNotification(parent, "error", i18n("Unable to start WebInterface: Could not open KPasswdStore"));
     }
 }
 
 HttpServer::~HttpServer()
 {
-    delete m_wallet;
-}
-
-void HttpServer::init(bool opened)
-{
-    if (opened &&
-        m_wallet->hasFolder("KGet") &&
-        m_wallet->setFolder("KGet")) {
-        m_wallet->readPassword("Webinterface", m_pwd);
-    } else {
-        KGet::showNotification(static_cast<QWidget*>(parent()), "error", i18n("Unable to start WebInterface: Could not open KWallet"));
-        return;
-    }
-    m_tcpServer = new QTcpServer(this);
-    if (!m_tcpServer->listen(QHostAddress::Any, Settings::webinterfacePort())) {
-        KGet::showNotification(static_cast<QWidget*>(parent()), "error", i18nc("@info", "Unable to start WebInterface: %1", m_tcpServer->errorString()));
-        return;
-    }
-
-    connect(m_tcpServer, SIGNAL(newConnection()), this, SLOT(handleRequest()));
 }
 
 void HttpServer::settingsChanged()
 {
-    if (m_wallet) {
-        m_wallet->readPassword("Webinterface", m_pwd);
+    if (m_passwdstore && m_passwdstore->openStore(static_cast<QWidget*>(parent())->winId())) {
+        m_pwd = m_passwdstore->getPasswd("Webinterface");
     }
 }
 

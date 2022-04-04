@@ -415,7 +415,7 @@ class OKULAR_EXPORT Generator : public QObject
          * Unless you have very special requirements to where wallet data should be stored you
          * don't need to reimplement this method.
          */
-        virtual void walletDataForFile( const QString &fileName, QString *walletName, QString *walletFolder, QString *walletKey ) const;
+        virtual void walletDataForFile( const QString &fileName, QString *walletName, QString *walletKey ) const;
 
         /**
          * Query for the specified @p feature.

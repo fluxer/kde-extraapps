@@ -22,9 +22,7 @@
 
 #include "rfbserver.h"
 
-namespace KWallet {
-    class Wallet;
-}
+#include <kpasswdstore.h>
 
 namespace DNSSD {
     class PublicService;
@@ -56,15 +54,12 @@ protected:
     virtual ~InvitationsRfbServer();
     virtual PendingRfbClient* newClient(rfbClientPtr client);
 
-private Q_SLOTS:
-    void walletOpened(bool);
-
 private:
     DNSSD::PublicService *m_publicService;
     bool m_allowUnattendedAccess;
     QString m_desktopPassword;
     QString m_unattendedPassword;
-    KWallet::Wallet *m_wallet;
+    KPasswdStore *m_passwdStore;
 
     QString readableRandomString(int);
     Q_DISABLE_COPY(InvitationsRfbServer)

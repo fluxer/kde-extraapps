@@ -4240,12 +4240,12 @@ void Document::setAnnotationEditingEnabled( bool enable )
     foreachObserver( notifySetup( d->m_pagesVector, 0 ) );
 }
 
-void Document::walletDataForFile( const QString &fileName, QString *walletName, QString *walletFolder, QString *walletKey ) const
+void Document::walletDataForFile( const QString &fileName, QString *walletName, QString *walletKey ) const
 {
     if (d->m_generator) {
-        d->m_generator->walletDataForFile( fileName, walletName, walletFolder, walletKey );
+        d->m_generator->walletDataForFile( fileName, walletName, walletKey );
     } else if (d->m_walletGenerator) {
-        d->m_walletGenerator->walletDataForFile( fileName, walletName, walletFolder, walletKey );
+        d->m_walletGenerator->walletDataForFile( fileName, walletName, walletKey );
     }
 }
 

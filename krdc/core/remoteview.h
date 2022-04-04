@@ -31,7 +31,7 @@
     #define KRDCCORE_EXPORT
 #else
     #include <KUrl>
-    #include <KWallet/Wallet>
+    #include <kpasswdstore.h>
     #include "krdccore_export.h"
 #endif
 
@@ -406,7 +406,7 @@ protected:
 #ifndef QTONLY
     QString readWalletPassword(bool fromUserNameOnly = false);
     void saveWalletPassword(const QString &password, bool fromUserNameOnly = false);
-    KWallet::Wallet *m_wallet;
+    KPasswdStore *m_passwdStore;
 #endif
 
     DotCursorState m_dotCursorState;

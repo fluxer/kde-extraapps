@@ -725,7 +725,7 @@ class OKULAR_EXPORT Document : public QObject
          *
          * @since 0.20 (KDE 4.14)
         */
-        void walletDataForFile( const QString &fileName, QString *walletName, QString *walletFolder, QString *walletKey ) const;
+        void walletDataForFile( const QString &fileName, QString *walletName, QString *walletKey ) const;
 
     public Q_SLOTS:
         /**

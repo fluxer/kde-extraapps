@@ -41,7 +41,7 @@ RemoteView::RemoteView(QWidget *parent)
         m_scale(false),
         m_keyboardIsGrabbed(false),
 #ifndef QTONLY
-        m_wallet(0),
+        m_passwdStore(0),
 #endif
         m_dotCursorState(CursorOff)
 {
@@ -50,7 +50,7 @@ RemoteView::RemoteView(QWidget *parent)
 RemoteView::~RemoteView()
 {
 #ifndef QTONLY
-    delete m_wallet;
+    delete m_passwdStore;
 #endif
 }
 
@@ -198,31 +198,25 @@ KUrl RemoteView::url()
 #ifndef QTONLY
 QString RemoteView::readWalletPassword(bool fromUserNameOnly)
 {
-    const QString KRDCFOLDER = "KRDC";
-
     window()->setDisabled(true); // WORKAROUND: disable inputs so users cannot close the current tab (see #181230)
-    m_wallet = KWallet::Wallet::openWallet(KWallet::Wallet::NetworkWallet(), window()->winId());
+    m_passwdStore = new KPasswdStore(this);
+    m_passwdStore->setStoreID("KRDC");
     window()->setDisabled(false);
 
-    if (m_wallet) {
-        bool walletOK = m_wallet->hasFolder(KRDCFOLDER);
-        if (!walletOK) {
-            walletOK = m_wallet->createFolder(KRDCFOLDER);
-            kDebug(5010) << "Wallet folder created";
-        }
+    if (m_passwdStore) {
+        const qlonglong windowId = window()->winId();
+        bool walletOK = m_passwdStore->openStore(windowId);
         if (walletOK) {
             kDebug(5010) << "Wallet OK";
-            m_wallet->setFolder(KRDCFOLDER);
-            QString password;
-            
+
             QString key;
             if (fromUserNameOnly)
                 key = m_url.userName();
             else
                 key = m_url.prettyUrl(KUrl::RemoveTrailingSlash);
 
-            if (m_wallet->hasEntry(key) &&
-                    !m_wallet->readPassword(key, password)) {
+            QString password = m_passwdStore->getPasswd(key.toUtf8(), windowId);
+            if (!password.isEmpty()) {
                 kDebug(5010) << "Password read OK";
 
                 return password;
@@ -240,9 +234,10 @@ void RemoteView::saveWalletPassword(const QString &password, bool fromUserNameOn
     else
         key = m_url.prettyUrl(KUrl::RemoveTrailingSlash);
 
-    if (m_wallet && m_wallet->isOpen()) {
+    const qlonglong windowId = window()->winId();
+    if (m_passwdStore && m_passwdStore->openStore(windowId)) {
         kDebug(5010) << "Write wallet password";
-        m_wallet->writePassword(key, password);
+        m_passwdStore->storePasswd(key.toUtf8(), password, windowId);
     }
 }
 #endif

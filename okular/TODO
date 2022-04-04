@@ -48,7 +48,7 @@ In progress [working on]:
 -> various backends: fill about data information
 -> gui: add config for gfx (yes/no) and text (yes/no/kde) antialias
 -> core: provide a binary compatible okularcore library to extend the format capabilities
--> KPDF -> okular conversion of configuration & datafiles {configuration(done), document data(in progress), kwallet passwords(missing)}
+-> KPDF -> okular conversion of configuration & datafiles {configuration(done), document data(in progress), kpasswdstore passwords(missing)}
 -> inverse search (BR113191)
    find with an usability expert the "best" way to activate such a link
    provide a configuration widget to choose the editor and configure a custom one

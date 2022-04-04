@@ -13,12 +13,9 @@
 
 #include <QWidget>
 #include <KDialog>
+#include <kpasswdstore.h>
 
 #include "ui_dlgwebinterface.h"
-
-namespace KWallet {
-    class Wallet;
-}
 
 class DlgWebinterface : public QWidget, public Ui::DlgWebinterface
 {
@@ -35,10 +32,9 @@ signals:
 private Q_SLOTS:
     void readConfig();
     void saveSettings();
-    void walletOpened(bool);
     
 private:
-    KWallet::Wallet *m_wallet;
+    KPasswdStore *m_passwdstore;
 };
 
 #endif

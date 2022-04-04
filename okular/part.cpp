@@ -62,7 +62,7 @@
 #include <kdeprintdialog.h>
 #include <kbookmarkmenu.h>
 #include <kpassworddialog.h>
-#include <kwallet.h>
+#include <kpasswdstore.h>
 
 // local includes
 #include "aboutdata.h"
@@ -1237,31 +1237,28 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
         }
 
         // if the file didn't open correctly it might be encrypted, so ask for a pass
-        QString walletName, walletFolder, walletKey;
-        m_document->walletDataForFile(fileNameToOpen, &walletName, &walletFolder, &walletKey);
+        QString walletName, walletKey;
+        m_document->walletDataForFile(fileNameToOpen, &walletName, &walletKey);
         bool firstInput = true;
         bool triedWallet = false;
-        KWallet::Wallet * wallet = 0;
         bool keep = true;
         while ( openResult == Document::OpenNeedsPassword )
         {
+            KPasswdStore store;
+            bool storeopened = false;
+            const WId parentwid = widget()->effectiveWinId();
             QString password;
 
-            // 1.A. try to retrieve the first password from the kde wallet system
+            // 1.A. try to retrieve the first password from the kde store system
             if ( !triedWallet && !walletKey.isNull() )
             {
-                const WId parentwid = widget()->effectiveWinId();
-                wallet = KWallet::Wallet::openWallet( walletName, parentwid );
-                if ( wallet )
+                storeopened = store.openStore( parentwid );
+                store.setStoreID(walletName);
+                if ( storeopened )
                 {
-                    // use the KPdf folder (and create if missing)
-                    if ( !wallet->hasFolder( walletFolder ) )
-                        wallet->createFolder( walletFolder );
-                    wallet->setFolder( walletFolder );
-
                     // look for the pass in that folder
-                    QString retrievedPass;
-                    if ( wallet->readPassword( walletKey, retrievedPass ) == 0)
+                    QString retrievedPass = store.getPasswd( walletKey.toUtf8(), parentwid );
+                    if (!retrievedPass.isEmpty())
                         password = retrievedPass;
                 }
                 triedWallet = true;
@@ -1278,13 +1275,13 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
                 firstInput = false;
 
                 // if the user presses cancel, abort opening
-                KPasswordDialog dlg( widget(), wallet ? KPasswordDialog::ShowKeepPassword : KPasswordDialog::KPasswordDialogFlags() );
+                KPasswordDialog dlg( widget(), storeopened ? KPasswordDialog::ShowKeepPassword : KPasswordDialog::KPasswordDialogFlags() );
                 dlg.setCaption( i18n( "Document Password" ) );
                 dlg.setPrompt( prompt );
                 if( !dlg.exec() )
                     break;
                 password = dlg.password();
-                if ( wallet )
+                if ( storeopened )
                     keep = dlg.keepPassword();
             }
 
@@ -1300,9 +1297,9 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
             }
 
             // 3. if the password is correct and the user chose to remember it, store it to the wallet
-            if ( openResult == Document::OpenSuccess && wallet && /*safety check*/ wallet->isOpen() && keep )
+            if ( openResult == Document::OpenSuccess && storeopened && keep )
             {
-                wallet->writePassword( walletKey, password );
+                store.storePasswd( walletKey.toUtf8(), password, parentwid );
             }
         }
     }
