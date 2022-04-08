@@ -69,6 +69,12 @@ add_feature_info(okular_gs
     "PostScript support in Okular"
 )
 
+find_program(KPSEWHICH_EXECUTABLE NAMES kpsewhich)
+add_feature_info(okular_kpsewhich
+    KPSEWHICH_EXECUTABLE
+    "DVI support in Okular"
+)
+
 add_subdirectory( ui )
 add_subdirectory( shell )
 add_subdirectory( generators )
