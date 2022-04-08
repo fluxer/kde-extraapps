@@ -268,7 +268,7 @@ class Manifest
     QMap<QString, ManifestEntry*> mEntries;
     bool m_haveGoodPassword;
     QString m_password;
-#ifdef HAVE_GCRPYT
+#ifdef HAVE_OPENSSL
     bool m_init;
 #endif
 };

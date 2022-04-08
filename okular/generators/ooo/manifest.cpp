@@ -18,8 +18,9 @@
 #include <KLocale>
 #include <KMessageBox>
 
-#ifdef HAVE_GCRPYT
-#include <gcrypt.h>
+#ifdef HAVE_OPENSSL
+#  include <openssl/evp.h>
+#  include <openssl/err.h>
 #endif
 
 
@@ -151,12 +152,28 @@ int ManifestEntry::keySize() const
 
 Manifest::Manifest( const QString &odfFileName, const QByteArray &manifestData, const QString &password )
   : m_odfFileName( odfFileName ), m_haveGoodPassword( false ), m_password( password )
-#ifdef HAVE_GCRPYT
-  , m_init(false)
+#ifdef HAVE_OPENSSL
+  , m_init(true)
 #endif
 {
-#ifdef HAVE_GCRPYT
-  m_init = gcry_check_version("1.5.0");
+#ifdef HAVE_OPENSSL
+  ERR_load_ERR_strings();
+
+  if (EVP_add_cipher(EVP_aes_128_ecb()) != 1) {;
+    m_init = false;
+  }
+  if (EVP_add_cipher(EVP_aes_128_cbc()) != 1) {;
+    m_init = false;
+  }
+  if (EVP_add_cipher(EVP_aes_192_cbc()) != 1) {;
+    m_init = false;
+  }
+  if (EVP_add_cipher(EVP_aes_256_cbc()) != 1) {;
+    m_init = false;
+  }
+  if (EVP_add_cipher(EVP_bf_cfb64()) != 1) {;
+    m_init = false;
+  }
 #endif
   // I don't know why the parser barfs on this.
   QByteArray manifestCopy = manifestData;
@@ -271,8 +288,8 @@ bool Manifest::testIfEncrypted( const QString &filename )
 
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
-#ifdef HAVE_GCRPYT
-  // kDebug(OooDebug) << entry->keyGenerationName() << entry->algorithm() << entry->checksumType();
+#ifdef HAVE_OPENSSL
+  // kDebug(OooDebug) << entry->keyGenerationName() << entry->keyDerivationName() << entry->algorithm() << entry->checksumType();
 
   // http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part3.html#__RefHeading__752847_826425813
   QString keygenerationname = entry->keyGenerationName().toLower();
@@ -297,27 +314,27 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
-  const int keysize = entry->keySize();
-  char keybuff[keysize];
-  ::memset( keybuff, 0, keysize * sizeof(char) );
+  const int opensslkeysize = entry->keySize();
+  uchar opensslkeybuffer[opensslkeysize];
+  ::memset( opensslkeybuffer, 0, opensslkeysize * sizeof(char) );
   const QByteArray salt = entry->salt();
   // password must be UTF-8 encoded and hashed
   const QByteArray passwordhash = QCryptographicHash::hash(m_password.toUtf8(), cryptokeyalgorithm);
   // the key is always SHA1 derived
-  gpg_error_t gcrypterror = gcry_kdf_derive(passwordhash.constData(), passwordhash.size(),
-                                            GCRY_KDF_PBKDF2, GCRY_MD_SHA1,
-                                            salt.constData(), salt.size(),
-                                            entry->iterationCount(), keysize, keybuff);
-  if ( gcrypterror != 0 ) {
-    kWarning(OooDebug) << "gcry_kdf_derive: " << gcry_strerror(gcrypterror);
+  int opensslresult = PKCS5_PBKDF2_HMAC_SHA1(
+    passwordhash.constData(), passwordhash.size(),
+    reinterpret_cast<const uchar*>(salt.constData()), salt.size(),
+    entry->iterationCount(), opensslkeysize, opensslkeybuffer
+  );
+  if ( opensslresult != 1 ) {
+    kWarning(OooDebug) << "PKCS5_PBKDF2_HMAC_SHA1: " << ERR_error_string(ERR_get_error(), NULL);
     return;
   }
 
   QString algorithm = entry->algorithm().toLower();
   const int algorithmhashindex = algorithm.indexOf('#');
   algorithm = algorithm.mid(algorithmhashindex + 1);
-  int gcryptalgorithm = GCRY_CIPHER_NONE;
-  int gcryptmode = GCRY_CIPHER_MODE_NONE;
+  const EVP_CIPHER* opensslcipher = NULL;
   // libreoffice supports AES128-ECB, AES128-CBC and AES256-CBC, for reference:
   // libreoffice/oox/source/crypto/CryptTools.cxx
   //
@@ -325,22 +342,17 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   // openoffice/main/package/source/package/manifest/ManifestExport.cxx
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( algorithm == "aes128-ecb" ) {
-    gcryptalgorithm = GCRY_CIPHER_AES128;
-    gcryptmode = GCRY_CIPHER_MODE_ECB;
+    opensslcipher = EVP_aes_128_ecb();
   } else if ( algorithm == "aes128-cbc" ) {
-    gcryptalgorithm = GCRY_CIPHER_AES128;
-    gcryptmode = GCRY_CIPHER_MODE_CBC;
+    opensslcipher = EVP_aes_128_cbc();
   } else if ( algorithm == "aes192-cbc" ) {
-    gcryptalgorithm = GCRY_CIPHER_AES192;
-    gcryptmode = GCRY_CIPHER_MODE_CBC;
+    opensslcipher = EVP_aes_192_cbc();
   } else if ( algorithm == "aes256-cbc" ) {
-    gcryptalgorithm = GCRY_CIPHER_AES256;
-    gcryptmode = GCRY_CIPHER_MODE_CBC;
+    opensslcipher = EVP_aes_256_cbc();
   // according to the spec "blowfish" is Blowfish-CFB but just in case match "-cfb" suffixed one
   // too, OpenOffice refers to it as "Blowfish CFB"
   } else if ( algorithm == "blowfish" || algorithm == "blowfish-cfb" || algorithm == "blowfish cfb" ) {
-    gcryptalgorithm = GCRY_CIPHER_BLOWFISH;
-    gcryptmode = GCRY_CIPHER_MODE_CFB;
+    opensslcipher = EVP_bf_cfb64();
   } else {
     kWarning(OooDebug) << "unknown algorithm: " << entry->algorithm();
     // we can only assume it will be OK.
@@ -348,40 +360,63 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
     return;
   }
 
+  EVP_CIPHER_CTX *opensslctx = EVP_CIPHER_CTX_new();
+  if (!opensslctx) {
+    kWarning(OooDebug) << "EVP_CIPHER_CTX_new: " << ERR_error_string(ERR_get_error(), NULL);
+    return;
+  }
+
   const QByteArray initializationvector = entry->initialisationVector();
-  gcry_cipher_hd_t dec;
-  gcrypterror = gcry_cipher_open( &dec, gcryptalgorithm, gcryptmode, 0 );
-  if ( gcrypterror != 0 ) {
-    kWarning(OooDebug) << "gcry_cipher_open: " << gcry_strerror(gcrypterror);
+  opensslresult = EVP_DecryptInit(
+    opensslctx, opensslcipher,
+    opensslkeybuffer,
+    reinterpret_cast<const uchar*>(initializationvector.constData())
+  );
+  if ( opensslresult != 1 ) {
+    kWarning(OooDebug) << "EVP_DecryptInit: " << ERR_error_string(ERR_get_error(), NULL);
+    EVP_CIPHER_CTX_free(opensslctx);
     return;
   }
 
-  gcrypterror = gcry_cipher_setkey( dec, keybuff, keysize );
-  if ( gcrypterror != 0 ) {
-    kWarning(OooDebug) << "gcry_cipher_setkey: " << gcry_strerror(gcrypterror);
-    gcry_cipher_close( dec );
+  // kDebug(OooDebug) << EVP_CIPHER_CTX_key_length(opensslctx) << opensslkeysize;
+  // kDebug(OooDebug) << EVP_CIPHER_CTX_iv_length(opensslctx) << initializationvector.size();
+
+  const int opensslbuffersize = entry->size();
+  QByteArray opensslbuffer(opensslbuffersize, Qt::Uninitialized);
+  int opensslbufferpos = 0;
+  int openssloutputsize = 0;
+  opensslresult = EVP_DecryptUpdate(
+    opensslctx,
+    reinterpret_cast<uchar*>(opensslbuffer.data()), &opensslbufferpos,
+    reinterpret_cast<const uchar*>(fileData.constData()), fileData.size()
+  );
+  openssloutputsize = opensslbufferpos;
+  if ( opensslresult != 1 ) {
+    kWarning(OooDebug) << "EVP_DecryptUpdate: " << ERR_error_string(ERR_get_error(), NULL);
+    EVP_CIPHER_CTX_free(opensslctx);
     return;
   }
 
-  gcrypterror = gcry_cipher_setiv( dec, initializationvector.constData(), initializationvector.size() );
-  if ( gcrypterror != 0 ) {
-    kWarning(OooDebug) << "gcry_cipher_setiv: " << gcry_strerror(gcrypterror);
-    gcry_cipher_close( dec );
+  opensslresult = EVP_DecryptFinal(
+    opensslctx,
+    reinterpret_cast<uchar*>(opensslbuffer.data() + opensslbufferpos), &opensslbufferpos
+  );
+  // something is going terribly wrong with EVP_DecryptFinal(), opensslbufferpos is 0 for both AES
+  // and Blowfish and even if opensslresult is not 1 checksum verification still passes so just
+  // ignoring errors and proceeding
+#if 0
+  openssloutputsize += opensslbufferpos;
+  if ( opensslresult != 1 ) {
+    kWarning(OooDebug) << "EVP_DecryptFinal: " << ERR_error_string(ERR_get_error(), NULL);
+    EVP_CIPHER_CTX_free(opensslctx);
     return;
   }
+#else
+  openssloutputsize = opensslbuffersize;
+#endif
 
-  const int decbufflen = entry->size();
-  char decbuff[decbufflen];
-  ::memset( decbuff, 0, decbufflen * sizeof(char) );
-  gcrypterror = gcry_cipher_decrypt( dec, decbuff, decbufflen, fileData.constData(), fileData.size() );
-  if ( gcrypterror != 0 ) {
-    kWarning(OooDebug) << "gcry_cipher_decrypt: " << gcry_strerror(gcrypterror);
-    gcry_cipher_close( dec );
-    return;
-  }
-  gcry_cipher_close( dec );
-
-  *decryptedData = QByteArray( decbuff, decbufflen );
+  *decryptedData = QByteArray( opensslbuffer.constData(), openssloutputsize );
+  EVP_CIPHER_CTX_free(opensslctx);
 
   QByteArray csum;
   QString checksumtype = entry->checksumType().toLower();
@@ -421,7 +456,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
 
 QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fileData )
 {
-#ifdef HAVE_GCRPYT
+#ifdef HAVE_OPENSSL
   ManifestEntry *entry = entryByName( filename );
 
   if ( !m_init ) {

@@ -55,11 +55,11 @@ set_package_properties(EPub PROPERTIES
     PURPOSE "Support for EPub documents in Okular"
 )
 
-# v1.5.0+ required for gcry_kdf_derive()
-macro_optional_find_package(LibGcrypt 1.5.0)
-set_package_properties(LibGcrypt PROPERTIES
-    DESCRIPTION "General purpose cryptographic library based on the code from GnuPG"
-    URL "https://gnupg.org/gcrypt/"
+macro_optional_find_package(OpenSSL)
+set_package_properties(OpenSSL PROPERTIES
+    DESCRIPTION "Robust, commercial-grade, full-featured toolkit for general-purpose cryptography and secure communication"
+    URL "https://www.openssl.org/"
+    TYPE RECOMMENDED
     PURPOSE "Support encrypted Open Document in Okular"
 )
 
