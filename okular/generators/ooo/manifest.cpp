@@ -269,21 +269,6 @@ bool Manifest::testIfEncrypted( const QString &filename )
   return false;
 }
 
-#ifdef HAVE_GCRPYT
-// libgcrypt alternative of QCryptographicHash, produces same results
-static QByteArray gcrypthash(const QByteArray &data, const int algorithm)
-{
-    const int algorithmlength = gcry_md_get_algo_dlen( algorithm );
-    gcry_md_hd_t context;
-    gcry_md_open( &context, algorithm, 0 );
-    gcry_md_write( context, data.constData(), data.size() );
-    unsigned char *md = gcry_md_read( context, algorithm );
-    QByteArray result( reinterpret_cast<char*>(md), algorithmlength);
-    gcry_md_close( context );
-    return result;
-}
-#endif
-
 void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, QByteArray *decryptedData )
 {
 #ifdef HAVE_GCRPYT
@@ -293,18 +278,18 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   QString keygenerationname = entry->keyGenerationName().toLower();
   const int keygenerationhashindex = keygenerationname.indexOf('#');
   keygenerationname = keygenerationname.mid(keygenerationhashindex + 1);
-  int gcryptkeyalgorithm = GCRY_MD_NONE;
+  QCryptographicHash::Algorithm cryptokeyalgorithm = QCryptographicHash::Sha1;
   // libreoffice supports SHA1 and SHA512, for reference:
   // libreoffice/oox/source/crypto/AgileEngine.cxx
   //
   // OpenOffice supports SHA1 and SHA256, for reference:
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( keygenerationname == "sha1" ) {
-    gcryptkeyalgorithm = GCRY_MD_SHA1;
+    cryptokeyalgorithm = QCryptographicHash::Sha1;
   } else if ( keygenerationname == "sha256" ) {
-    gcryptkeyalgorithm = GCRY_MD_SHA256;
+    cryptokeyalgorithm = QCryptographicHash::Sha256;
   } else if ( keygenerationname == "sha512" ) {
-    gcryptkeyalgorithm = GCRY_MD_SHA512;
+    cryptokeyalgorithm = QCryptographicHash::Sha512;
   } else {
     kWarning(OooDebug) << "unknown key generation name: " << entry->keyGenerationName();
     // we can only assume it will be OK.
@@ -317,7 +302,7 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   ::memset( keybuff, 0, keysize * sizeof(char) );
   const QByteArray salt = entry->salt();
   // password must be UTF-8 encoded and hashed
-  const QByteArray passwordhash = gcrypthash(m_password.toUtf8(), gcryptkeyalgorithm);
+  const QByteArray passwordhash = QCryptographicHash::hash(m_password.toUtf8(), cryptokeyalgorithm);
   // the key is always SHA1 derived
   gpg_error_t gcrypterror = gcry_kdf_derive(passwordhash.constData(), passwordhash.size(),
                                             GCRY_KDF_PBKDF2, GCRY_MD_SHA1,
@@ -408,17 +393,17 @@ void Manifest::checkPassword( ManifestEntry *entry, const QByteArray &fileData, 
   // OpenOffice supports SHA1 and SHA256, for reference:
   // openoffice/main/package/source/package/manifest/ManifestDefines.hxx
   if ( checksumtype == "sha1-1k" || checksumtype == "sha1/1k" ) {
-    csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA1 );
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha1 );
   } else if ( checksumtype == "sha1" ) {
-    csum = gcrypthash( *decryptedData, GCRY_MD_SHA1 );
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha1 );
   } else if ( checksumtype == "sha256-1k" || checksumtype == "sha256/1k" ) {
-    csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA256 );
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha256 );
   } else if ( checksumtype == "sha256" ) {
-    csum = gcrypthash( *decryptedData, GCRY_MD_SHA256 );
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha256 );
   } else if ( checksumtype == "sha512-1k" || checksumtype == "sha512/1k" ) {
-    csum = gcrypthash( decryptedData->left(1024), GCRY_MD_SHA512 );
+    csum = QCryptographicHash::hash( decryptedData->left(1024), QCryptographicHash::Sha512 );
   } else if ( checksumtype == "sha512" ) {
-    csum = gcrypthash( *decryptedData, GCRY_MD_SHA512 );
+    csum = QCryptographicHash::hash( *decryptedData, QCryptographicHash::Sha512 );
   } else {
     kWarning(OooDebug) << "unknown checksum type: " << entry->checksumType();
     // we can only assume it will be OK.
