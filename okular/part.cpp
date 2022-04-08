@@ -1252,8 +1252,8 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
             // 1.A. try to retrieve the first password from the kde store system
             if ( !triedWallet && !walletKey.isNull() )
             {
-                storeopened = store.openStore( parentwid );
                 store.setStoreID(walletName);
+                storeopened = store.openStore( parentwid );
                 if ( storeopened )
                 {
                     // look for the pass in that folder
