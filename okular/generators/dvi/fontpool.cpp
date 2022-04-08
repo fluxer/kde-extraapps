@@ -262,7 +262,7 @@ void fontPool::locateFonts(bool makePK, bool locateTFMonly, bool *virtualFontsFo
   // If PK fonts are generated, the kpsewhich command will re-route
   // the output of MetaFont into its stderr. Here we make sure this
   // output is intercepted and parsed.
-  kpsewhich_ = new QProcess();
+  kpsewhich_ = new QProcess(this);
   connect(kpsewhich_, SIGNAL(readyReadStandardError()),
           this, SLOT(mf_output_receiver()));
 
@@ -443,6 +443,8 @@ void fontPool::release_fonts()
 
 void fontPool::mf_output_receiver()
 {
+  if (!kpsewhich_)
+    return;
   const QString output_data =
     QString::fromLocal8Bit(kpsewhich_->readAllStandardError());
 

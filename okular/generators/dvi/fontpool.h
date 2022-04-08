@@ -14,6 +14,7 @@
 #include <QList>
 #include <QObject>
 #include <QProcess>
+#include <QPointer>
 
 #ifdef HAVE_FREETYPE
 #include <ft2build.h>
@@ -194,7 +195,7 @@ private:
   QString extraSearchPath;
 
   // The handle on the external process.
-  QProcess *kpsewhich_;
+  QPointer<QProcess> kpsewhich_;
 
 private slots:
   // This slot is called when MetaFont is run via the kpsewhich program.
