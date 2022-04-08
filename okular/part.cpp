@@ -1248,6 +1248,7 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
             bool storeopened = false;
             const WId parentwid = widget()->effectiveWinId();
             QString password;
+            QByteArray obscuredWalletKey = KPasswdStore::makeKey(walletKey);
 
             // 1.A. try to retrieve the first password from the kde store system
             if ( !triedWallet && !walletKey.isNull() )
@@ -1257,7 +1258,7 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
                 if ( storeopened )
                 {
                     // look for the pass in that folder
-                    QString retrievedPass = store.getPasswd( walletKey.toUtf8(), parentwid );
+                    QString retrievedPass = store.getPasswd( obscuredWalletKey, parentwid );
                     if (!retrievedPass.isEmpty())
                         password = retrievedPass;
                 }
@@ -1299,7 +1300,7 @@ Document::OpenResult Part::doOpenFile( const KMimeType::Ptr &mimeA, const QStrin
             // 3. if the password is correct and the user chose to remember it, store it to the wallet
             if ( openResult == Document::OpenSuccess && storeopened && keep )
             {
-                store.storePasswd( walletKey.toUtf8(), password, parentwid );
+                store.storePasswd( obscuredWalletKey, password, parentwid );
             }
         }
     }
