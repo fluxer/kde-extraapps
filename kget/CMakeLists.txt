@@ -16,13 +16,6 @@ include(CheckTypeSize)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-macro_optional_find_package(QGpgme)
-set_package_properties(QGpgme PROPERTIES
-    DESCRIPTION "The QGpgME library"
-    URL "http://www.kde.org"
-    PURPOSE "QGpgME is required to have signature verifying support in KGet"
-)
-
 macro_optional_find_package(LibMms)
 set_package_properties(LibMms PROPERTIES
     DESCRIPTION "Library to read mms streams"
@@ -64,11 +57,6 @@ set(KGET_TESTING FALSE)
 if(KGET_TESTING)
     add_definitions(-DDO_KGET_TEST)
 endif()
-
-if(QGPGME_FOUND)
-    add_definitions(-DHAVE_QGPGME)
-    include_directories(${QGPGME_INCLUDE_DIR})
-endif(QGPGME_FOUND)
 
 add_subdirectory(conf)
 add_subdirectory(core)
@@ -127,9 +115,6 @@ set(kgetcore_SRCS
    core/verificationthread.cpp
    core/verificationmodel.cpp
    core/verificationdelegate.cpp
-   core/signature.cpp
-   core/signaturethread.cpp
-   core/keydownloader.cpp
    core/urlchecker.cpp
    core/basedialog.cpp
    core/mostlocalurl.cpp
@@ -151,11 +136,6 @@ target_link_libraries(kgetcore
 if (KDE4WORKSPACE_FOUND)
     target_link_libraries(kgetcore ${KDE4WORKSPACE_KWORKSPACE_LIBS})
 endif (KDE4WORKSPACE_FOUND)
-
-if (QGPGME_FOUND)
-    target_link_libraries(kgetcore ${QGPGME_LIBRARIES})
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
-endif(QGPGME_FOUND)
 
 set_target_properties(kgetcore PROPERTIES
     VERSION ${GENERIC_LIB_VERSION}
@@ -196,7 +176,6 @@ set(kget_SRCS ${kget_adaptor_SRCS} ${kget_transfer_adaptor_SRCS}
    ui/mirror/mirrormodel.cpp
    ui/renamefile.cpp
    ui/verificationdialog.cpp
-   ui/signaturedlg.cpp
    mainwindow.cpp
    main.cpp
 
@@ -220,7 +199,6 @@ set(kget_SRCS ${kget_adaptor_SRCS} ${kget_transfer_adaptor_SRCS}
    ui/renamefile.ui
    ui/verificationdialog.ui
    ui/verificationadddlg.ui
-   ui/signaturedlg.ui
 )
 
 qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h DBusKGetWrapper)
@@ -241,10 +219,6 @@ if (KGET_TESTING)
         ${QT_QTTEST_LIBRARY}
     )
 endif()
-
-if (QGPGME_FOUND)
-    target_link_libraries(kget ${QGPGME_LIBRARIES})
-endif(QGPGME_FOUND)
 
 install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
 

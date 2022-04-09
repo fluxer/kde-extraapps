@@ -31,45 +31,12 @@ VerificationPreferences::VerificationPreferences(KConfigDialog *parent, Qt::Wind
 {
     ui.setupUi(this);
 
-    m_tempKeyServers = Settings::signatureKeyServers();
-    ui.keyservers->upButton()->setText(i18n("&Increase Priority"));
-    ui.keyservers->downButton()->setText(i18n("&Decrease Priority"));
-    ui.keyservers->setItems(m_tempKeyServers);
-
-#ifndef HAVE_QGPGME
-    ui.signatureGroup->hide();
-#endif
-
-    connect(ui.keyservers,SIGNAL(changed()),this,SIGNAL(changed()));
     connect(parent, SIGNAL(accepted()), SLOT(slotAccpeted()));
-    connect(parent, SIGNAL(rejected()), SLOT(slotRejected()));
-    connect(parent, SIGNAL(defaultClicked()), SLOT(slotDefaultClicked()));
 }
 
 void VerificationPreferences::slotAccpeted()
 {
-    ui.keyservers->lineEdit()->clear();
-    m_tempKeyServers = ui.keyservers->items();
-    Settings::self()->setSignatureKeyServers(m_tempKeyServers);
     Settings::self()->writeConfig();
-}
-
-void VerificationPreferences::slotRejected()
-{
-    //PreferencesDialog is not recreated, so we have to manually stop the
-    //settings from changing
-    ui.keyservers->setItems(m_tempKeyServers);
-    ui.keyservers->lineEdit()->clear();
-}
-
-void VerificationPreferences::slotDefaultClicked()
-{
-    ui.keyservers->lineEdit()->clear();
-    KConfigSkeletonItem *item = Settings::self()->findItem("SignatureKeyServers");
-    if (item) {
-        item->readDefault(Settings::self()->config());
-        ui.keyservers->setItems(Settings::signatureKeyServers());
-    }
 }
 
 #include "moc_verificationpreferences.cpp"

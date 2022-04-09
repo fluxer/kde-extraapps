@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>438</height>
+    <width>411</width>
+    <height>174</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -72,64 +72,9 @@
      </layout>
     </widget>
    </item>
-   <item>
-    <widget class="QGroupBox" name="signatureGroup">
-     <property name="title">
-      <string>Signature</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <widget class="QCheckBox" name="kcfg_SignatureAutomaticVerification">
-        <property name="text">
-         <string>Automatic verification</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="kcfg_SignatureAutomaticDownloading">
-        <property name="text">
-         <string>Automatic downloading of missing keys</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>5</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Keyservers:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="KEditListWidget" name="keyservers">
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KEditListWidget</class>
-   <extends>QGroupBox</extends>
-   <header>keditlistwidget.h</header>
-  </customwidget>
   <customwidget>
    <class>KButtonGroup</class>
    <extends>QGroupBox</extends>

@@ -17,7 +17,6 @@
 
 #include "core/transfer.h"
 #include "core/verifier.h"
-#include "core/signature.h"
 #include "core/filemodel.h"
 
 /**
@@ -42,7 +41,6 @@ public:
     bool repair(const KUrl &file = KUrl()) final;
 
     Verifier *verifier(const KUrl &file = KUrl()) final;
-    Signature *signature(const KUrl &file = KUrl()) final;
 
     FileModel *fileModel() final;
 
@@ -64,7 +62,6 @@ private:
 
     KIO::FileCopyJob * m_copyjob;
     Verifier *m_verifier;
-    Signature *m_signature;
     FileModel *m_filemodel;
     QMap<QString, QString> m_checksums;
 };

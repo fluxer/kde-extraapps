@@ -29,7 +29,6 @@ TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
     : Transfer(parent, factory, scheduler, source, dest, e),
       m_copyjob(nullptr),
       m_verifier(nullptr),
-      m_signature(nullptr),
       m_filemodel(nullptr)
 {
     if (KProtocolManager::autoResume()) {
@@ -129,17 +128,6 @@ Verifier *TransferKio::verifier(const KUrl &file)
     return m_verifier;
 }
 
-Signature *TransferKio::signature(const KUrl &file)
-{
-    Q_UNUSED(file);
-
-    if (!m_signature) {
-        m_signature = new Signature(m_dest, this);
-    }
-
-    return m_signature;
-}
-
 FileModel *TransferKio::fileModel()
 {
     if (!m_filemodel) {
@@ -159,9 +147,6 @@ FileModel *TransferKio::fileModel()
 
     QModelIndex checksumindex = m_filemodel->index(fileurl, FileItem::ChecksumVerified);
     m_filemodel->setData(checksumindex, verifier()->status());
-
-    QModelIndex signatureindex = m_filemodel->index(fileurl, FileItem::SignatureVerified);
-    m_filemodel->setData(signatureindex, signature()->status());
 
     return m_filemodel;
 }
@@ -253,9 +238,6 @@ void TransferKio::slotResult( KJob * kioJob )
     if (status() == Job::Finished) {
         if (m_verifier && Settings::checksumAutomaticVerification()) {
             m_verifier->verify();
-        }
-        if (m_signature && Settings::signatureAutomaticVerification()) {
-            m_signature->verify();
         }
     }
 }

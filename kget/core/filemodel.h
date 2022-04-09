@@ -45,8 +45,7 @@ class KGET_EXPORT FileItem
             File = 0,
             Status,
             Size,
-            ChecksumVerified,
-            SignatureVerified
+            ChecksumVerified
         };
 
         void appendChild(FileItem *child);
@@ -88,7 +87,6 @@ class KGET_EXPORT FileItem
         Job::Status m_status;
         KIO::fileoffset_t m_totalSize;
         int m_checkusmVerified;
-        int m_signatureVerified;
         FileItem *m_parent;
 
         friend class TorrentFileModel;

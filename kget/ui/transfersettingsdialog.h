@@ -15,8 +15,9 @@
 #include "ui_transfersettingsdialog.h"
 #include "../core/basedialog.h"
 
-class FileModel;
 #include <QSortFilterProxyModel>
+
+class FileModel;
 class RenameFile;
 class TransferHandler;
 
@@ -34,7 +35,6 @@ class TransferSettingsDialog : public KGetSaveSizeDialog
         void slotMirrors();
         void slotRename();
         void slotVerification();
-        void slotSignature();
         void slotSelectionChanged();
         void slotFinished();
         void save();

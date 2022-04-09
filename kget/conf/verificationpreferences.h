@@ -40,13 +40,10 @@ class VerificationPreferences : public QWidget
         void changed();
 
     private slots:
-        void slotDefaultClicked();
         void slotAccpeted();
-        void slotRejected();
 
     private:
         Ui::VerificationPreferences ui;
-        QStringList m_tempKeyServers;
 };
 
 #endif

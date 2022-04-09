@@ -11,7 +11,6 @@
 #include "transfersettingsdialog.h"
 #include "mirror/mirrorsettings.h"
 #include "renamefile.h"
-#include "signaturedlg.h"
 #include "verificationdialog.h"
 #include "settings.h"
 
@@ -43,7 +42,6 @@ TransferSettingsDialog::TransferSettingsDialog(QWidget *parent, TransferHandler 
     ui.destination->lineEdit()->setReadOnly(true);
     ui.rename->setIcon(KIcon("edit-rename"));
     ui.mirrors->setIcon(KIcon("download"));
-    ui.signature->setIcon(KIcon("application-pgp-signature"));
     ui.verification->setIcon(KIcon("document-decrypt"));
 
     if (m_model)
@@ -71,7 +69,6 @@ TransferSettingsDialog::TransferSettingsDialog(QWidget *parent, TransferHandler 
     connect(ui.rename, SIGNAL(clicked(bool)), this, SLOT(slotRename()));
     connect(ui.mirrors, SIGNAL(clicked(bool)), this, SLOT(slotMirrors()));
     connect(ui.verification, SIGNAL(clicked(bool)), this, SLOT(slotVerification()));
-    connect(ui.signature, SIGNAL(clicked(bool)), this, SLOT(slotSignature()));
 }
 
 TransferSettingsDialog::~TransferSettingsDialog()
@@ -129,15 +126,6 @@ void TransferSettingsDialog::slotVerification()
     verification->show();
 }
 
-void TransferSettingsDialog::slotSignature()
-{
-    const QModelIndex index = m_proxy->mapToSource(ui.treeView->selectionModel()->selectedIndexes().first());
-
-    SignatureDlg *signature = new SignatureDlg(m_transfer, m_model->getUrl(index), this);
-    signature->setAttribute(Qt::WA_DeleteOnClose);
-    signature->show();
-}
-
 void TransferSettingsDialog::slotSelectionChanged()
 {
     bool enabled = false;
@@ -153,7 +141,6 @@ void TransferSettingsDialog::slotSelectionChanged()
     ui.mirrors->setEnabled(enabled);
     ui.rename->setEnabled(enabled);
     ui.verification->setEnabled(enabled);
-    ui.signature->setEnabled(enabled);
 }
 
 void TransferSettingsDialog::save()

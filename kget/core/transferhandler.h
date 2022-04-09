@@ -277,12 +277,6 @@ class KGET_EXPORT TransferHandler : public Handler
          */
         virtual Verifier * verifier(const KUrl &file) {return m_transfer->verifier(file);}
 
-        /**
-         * @param file for which to get the signature
-         * @return Signature that allows you to add signatures and verify them
-         */
-        virtual Signature * signature(const KUrl &file) {return m_transfer->signature(file);}
-
     public slots:
         /**
          * These are all Job-related functions

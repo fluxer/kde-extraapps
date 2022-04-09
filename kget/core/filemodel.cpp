@@ -19,7 +19,6 @@
 
 #include "filemodel.h"
 
-#include "signature.h"
 #include "verifier.h"
 
 #include <KIcon>
@@ -32,7 +31,6 @@ FileItem::FileItem(const QString &name, FileItem *parent)
     m_status(Job::Stopped),
     m_totalSize(0),
     m_checkusmVerified(0),
-    m_signatureVerified(0),
     m_parent(parent)
 {
 }
@@ -119,22 +117,6 @@ QVariant FileItem::data(int column, int role) const
                     return KIcon();
             }
         }
-    } else if (column == FileItem::SignatureVerified) {//TODO implement all cases
-        if (role == Qt::DecorationRole) {
-            switch (m_signatureVerified) {
-                case Signature::Verified:
-                    return KIcon("dialog-ok");
-                case Signature::VerifiedInformation:
-                    return KIcon("dialog-information");
-                case Signature::VerifiedWarning:
-                    return KIcon("dialog-warning");
-                case Signature::NotVerified:
-                    return KIcon("dialog-error");
-                case Signature::NoResult:
-                default:
-                    return KIcon();
-            }
-        }
     }
 
     return QVariant();
@@ -192,10 +174,6 @@ bool FileItem::setData(int column, const QVariant &value, FileModel *model, int 
         }
     } else if (column == FileItem::ChecksumVerified) {
         m_checkusmVerified = value.toInt();
-        model->changeData(this->row(), column, this);
-        return true;
-    } else if (column == FileItem::SignatureVerified) {
-        m_signatureVerified = value.toInt();
         model->changeData(this->row(), column, this);
         return true;
     }
@@ -280,7 +258,7 @@ FileModel::FileModel(const QList<KUrl> &files, const KUrl &destDirectory, QObjec
     m_checkStateChanged(false)
 {
     m_rootItem = new FileItem("root");
-    m_header << i18nc("file in a filesystem", "File") << i18nc("status of the download", "Status") << i18nc("size of the download", "Size") << i18nc("checksum of a file", "Checksum") << i18nc("signature of a file", "Signature");
+    m_header << i18nc("file in a filesystem", "File") << i18nc("status of the download", "Status") << i18nc("size of the download", "Size") << i18nc("checksum of a file", "Checksum");
 
     setupModelData(files);
 }

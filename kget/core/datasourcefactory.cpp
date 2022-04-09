@@ -14,7 +14,6 @@
 
 #include "core/filedeleter.h"
 #include "core/kget.h"
-#include "core/signature.h"
 #include "core/verifier.h"
 
 #include <cmath>
@@ -63,8 +62,7 @@ DataSourceFactory::DataSourceFactory(QObject *parent, const KUrl &dest, KIO::fil
     m_speedTimer(0),
     m_status(Job::Stopped),
     m_statusBeforeMove(m_status),
-    m_verifier(0),
-    m_signature(0)
+    m_verifier(0)
 {
     kDebug(5001) << "Initialize DataSourceFactory: Dest: " + m_dest.url() + "Size: " + QString::number(m_size) + "SegSize: " + QString::number(m_segSize);
 
@@ -830,9 +828,6 @@ bool DataSourceFactory::setNewDestination(const KUrl &newDestination)
             if (m_verifier) {
                 verifier()->setDestination(m_dest);
             }
-            if (m_signature) {
-                signature()->setDestination(m_dest);
-            }
 
             return true;
         } else if (QFile::exists(m_dest.pathOrUrl())) {
@@ -870,7 +865,6 @@ void DataSourceFactory::startMove()
 
     m_dest = m_newDest;
     verifier()->setDestination(m_dest);
-    signature()->setDestination(m_dest);
 }
 
 void DataSourceFactory::newDestResult(KJob *job)
@@ -968,7 +962,6 @@ void DataSourceFactory::load(const QDomElement *element)
     }
 
     verifier()->load(e);
-    signature()->load(e);
 
     Transfer::ChangesFlags change = Transfer::Tc_None;
 
@@ -1099,9 +1092,6 @@ void DataSourceFactory::changeStatus(Job::Status status)
             if (Settings::checksumAutomaticVerification() && verifier()->isVerifyable()) {
                 verifier()->verify();
             }
-            if (Settings::signatureAutomaticVerification() && signature()->isVerifyable()) {
-                signature()->verify();
-            }
 
             slotUpdateCapabilities();
             break;
@@ -1146,7 +1136,6 @@ void DataSourceFactory::save(const QDomElement &element)
     factory.setAttribute("sizeFoundOnFinish", m_sizeFoundOnFinish);
 
     verifier()->save(factory);
-    signature()->save(factory);
 
     //set the finished chunks, but only if chunks were actually used
     if (m_finishedChunks && !m_sizeFoundOnFinish) {
@@ -1225,15 +1214,6 @@ Verifier *DataSourceFactory::verifier()
     }
 
     return m_verifier;
-}
-
-Signature *DataSourceFactory::signature()
-{
-    if (!m_signature) {
-        m_signature = new Signature(m_dest, this);
-    }
-
-    return m_signature;
 }
 
 void DataSourceFactory::slotUpdateCapabilities()

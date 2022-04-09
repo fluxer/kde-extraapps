@@ -15,15 +15,13 @@
 #include "job.h"
 #include "../kget_export.h"
 
+#include <QDomElement>
 #include <QPixmap>
 #include <QtCore/qdatetime.h>
 
 #include <kurl.h>
 #include <kio/global.h>
 
-#include <QDomElement>
-
-class Signature;
 class TransferHandler;
 class TransferFactory;
 class TransferGroup;
@@ -279,13 +277,6 @@ class KGET_EXPORT Transfer : public Job
          * @return Verifier that allows you to add checksums manually verify a file etc.
          */
         virtual Verifier * verifier(const KUrl &file) {Q_UNUSED(file) return 0;}
-
-        /**
-         * @param file for which to get the signature
-         * @return Signature that allows you to add signatures and verify them
-         */
-        virtual Signature * signature(const KUrl &file) {Q_UNUSED(file) return 0;}
-
 
         /**
          * Saves this transfer to the given QDomNode
