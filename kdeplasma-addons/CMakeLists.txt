@@ -15,13 +15,6 @@ set_package_properties(KDE4Workspace PROPERTIES
     PURPOSE "Needed for building several Plasma plugins"
 )
 
-macro_optional_find_package(Marble)
-set_package_properties(Marble PROPERTIES
-    DESCRIPTION "Desktop Globe"
-    URL "http://marble.kde.org"
-    PURPOSE "Marble is used to provide a desktop globe wallpaper for Plasma"
-)
-
 macro_optional_find_package(DBusMenuQt)
 set_package_properties(DBusMenuQt PROPERTIES
     DESCRIPTION "Library that provides a Qt implementation of the DBusMenu spec"
