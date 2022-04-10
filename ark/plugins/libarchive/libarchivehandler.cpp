@@ -441,7 +441,10 @@ bool LibArchiveInterface::addFiles(const QStringList& files, const CompressionOp
             ret = archive_write_add_filter_gzip(arch_writer.data());
         }
 
-        if (ret != ARCHIVE_OK) {
+        // lzop filter for example warns if external program is used
+        if (ret == ARCHIVE_WARN) {
+            emit info(QString::fromAscii(archive_error_string(arch_writer.data())));
+        } else if (ret != ARCHIVE_OK) {
             emit error(i18nc("@info", "Setting the compression method failed with the following error: <message>%1</message>",
                        QString::fromAscii(archive_error_string(arch_writer.data()))));
 
