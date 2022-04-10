@@ -131,7 +131,7 @@ public:
 
     virtual bool isReadOnly() const;
 
-    //see archive.h for a list of what the compressionoptions might
+    //see archive.h for a list of what the compression options might
     //contain
     virtual bool addFiles(const QStringList & files, const CompressionOptions& options) = 0;
     virtual bool deleteFiles(const QList<QVariant> & files) = 0;
