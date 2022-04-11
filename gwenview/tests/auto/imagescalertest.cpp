@@ -51,7 +51,7 @@ void ImageScalerTest::testScaleFullImage()
 
     scaler.setDestinationRegion(QRect(QPoint(0, 0), doc->size() * zoom));
 
-    bool ok = QTest::kWaitForSignal(&scaler, SIGNAL(scaledRect(int,int,QImage)), 30);
+    bool ok = QTest::kWaitForSignal(&scaler, SIGNAL(scaledRect(int,int,QImage)), 1000);
     QVERIFY2(ok, "ImageScaler did not emit scaledRect() signal in time");
 
     // Document should be fully loaded by the time image scaler is done

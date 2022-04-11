@@ -72,7 +72,7 @@ void ImporterTest::testContentsAreIdentical()
     file.close();
     data[data.size() / 2] = 255 - data[data.size() / 2];
 
-    file.open(QIODevice::WriteOnly);
+    QVERIFY(file.open(QIODevice::WriteOnly));
     file.write(data);
     file.close();
 

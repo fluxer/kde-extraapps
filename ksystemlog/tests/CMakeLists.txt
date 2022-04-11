@@ -23,6 +23,7 @@ macro(ksystemlog_unit_tests)
             ${KDE4_KDEUI_LIBS}
             ${KDE4_KIO_LIBS}
             ${KDE4_KDECORE_LIBS} 
+            ${KDE4_KFILE_LIBS}
             ksystemlog_library
         )
     endforeach(unitTest)

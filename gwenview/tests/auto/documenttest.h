@@ -57,19 +57,15 @@ class JobWatcher : public QObject
 public:
     JobWatcher(KJob* job)
         : mJob(job)
-        , mDone(false)
         , mError(0) {
+        job->setAutoDelete(false);
         connect(job, SIGNAL(result(KJob*)),
                 SLOT(slotResult(KJob*)));
-        connect(job, SIGNAL(destroyed(QObject*)),
-                SLOT(slotDestroyed()));
     }
 
     void wait()
     {
-        while (!mDone) {
-            QApplication::processEvents();
-        }
+        mJob->exec();
     }
 
     int error() const
@@ -81,19 +77,11 @@ private Q_SLOTS:
     void slotResult(KJob* job)
     {
         mError = job->error();
-        mDone = true;
-    }
-
-    void slotDestroyed()
-    {
-        kWarning() << "Destroyed";
-        mError = -1;
-        mDone = true;
+        job->deleteLater();
     }
 
 private:
     KJob* mJob;
-    bool mDone;
     int mError;
 };
 
@@ -121,7 +109,6 @@ private Q_SLOTS:
     void testLosslessRotate();
     void testModifyAndSaveAs();
     void testMetaInfoJpeg();
-    void testMetaInfoBmp();
     void testForgetModifiedDocument();
     void testModifiedAndSavedSignals();
     void testJobQueue();

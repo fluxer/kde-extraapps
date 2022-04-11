@@ -46,6 +46,19 @@ QTEST_KDEMAIN(DocumentTest, GUI)
 
 using namespace Gwenview;
 
+static QImage generatTestImage()
+{
+    QImage image1(200, 96, QImage::Format_RGB32);
+    {
+        QPainter painter(&image1);
+        QRadialGradient gradient(QPointF(100, 48), 100);
+        gradient.setColorAt(0, Qt::white);
+        gradient.setColorAt(1, Qt::blue);
+        painter.fillRect(image1.rect(), gradient);
+    }
+    return image1;
+}
+
 static void waitUntilMetaInfoLoaded(Document::Ptr doc)
 {
     while (doc->loadingState() < Document::MetaInfoLoaded) {
@@ -426,9 +439,10 @@ void DocumentTest::testLosslessSave()
     KUrl url1 = urlForTestFile("orient6.jpg");
     Document::Ptr doc = DocumentFactory::instance()->load(url1);
     doc->startLoadingFullImage();
+    doc->waitUntilLoaded();
 
-    KUrl url2 = urlForTestOutputFile("orient1.jpg");
-    QVERIFY(waitUntilJobIsDone(doc->save(url2, "jpeg")));
+    KUrl url2 = urlForTestOutputFile("orient1.png");
+    QVERIFY(waitUntilJobIsDone(doc->save(url2, "png")));
 
     QImage image1;
     QVERIFY(image1.load(url1.toLocalFile()));
@@ -442,17 +456,10 @@ void DocumentTest::testLosslessSave()
 void DocumentTest::testLosslessRotate()
 {
     // Generate test image
-    QImage image1(200, 96, QImage::Format_RGB32);
-    {
-        QPainter painter(&image1);
-        QConicalGradient gradient(QPointF(100, 48), 100);
-        gradient.setColorAt(0, Qt::white);
-        gradient.setColorAt(1, Qt::blue);
-        painter.fillRect(image1.rect(), gradient);
-    }
+    QImage image1 = generatTestImage();
 
-    KUrl url1 = urlForTestOutputFile("lossless1.jpg");
-    QVERIFY(image1.save(url1.toLocalFile(), "jpeg"));
+    KUrl url1 = urlForTestOutputFile("lossless1.png");
+    QVERIFY(image1.save(url1.toLocalFile(), "png"));
 
     // Load it as a Gwenview document
     Document::Ptr doc = DocumentFactory::instance()->load(url1);
@@ -464,8 +471,8 @@ void DocumentTest::testLosslessRotate()
     doc->editor()->applyTransformation(ROT_90);
 
     // Save it
-    KUrl url2 = urlForTestOutputFile("lossless2.jpg");
-    waitUntilJobIsDone(doc->save(url2, "jpeg"));
+    KUrl url2 = urlForTestOutputFile("lossless2.png");
+    waitUntilJobIsDone(doc->save(url2, "png"));
 
     // Load the saved image
     doc = DocumentFactory::instance()->load(url2);
@@ -475,7 +482,7 @@ void DocumentTest::testLosslessRotate()
     // Rotate the other way
     QVERIFY(doc->editor());
     doc->editor()->applyTransformation(ROT_270);
-    waitUntilJobIsDone(doc->save(url2, "jpeg"));
+    waitUntilJobIsDone(doc->save(url2, "png"));
 
     // Compare the saved images
     QVERIFY(image1.load(url1.toLocalFile()));
@@ -565,26 +572,6 @@ void DocumentTest::testMetaInfoJpeg()
     QCOMPARE(value, QString::fromUtf8("Canon"));
 }
 
-void DocumentTest::testMetaInfoBmp()
-{
-    KUrl url = urlForTestOutputFile("metadata.bmp");
-    const int width = 200;
-    const int height = 100;
-    QImage image(width, height, QImage::Format_ARGB32);
-    image.fill(Qt::black);
-    image.save(url.toLocalFile(), "BMP");
-
-    Document::Ptr doc = DocumentFactory::instance()->load(url);
-    QSignalSpy metaInfoUpdatedSpy(doc.data(), SIGNAL(metaInfoUpdated()));
-    waitUntilMetaInfoLoaded(doc);
-
-    Q_ASSERT(metaInfoUpdatedSpy.count() >= 1);
-
-    QString value = doc->metaInfo()->getValueForKey("General.ImageSize");
-    QString expectedValue = QString("%1x%2").arg(width).arg(height);
-    QCOMPARE(value, expectedValue);
-}
-
 void DocumentTest::testForgetModifiedDocument()
 {
     QSignalSpy spy(DocumentFactory::instance(), SIGNAL(modifiedDocumentListChanged()));
@@ -592,14 +579,7 @@ void DocumentTest::testForgetModifiedDocument()
     QCOMPARE(spy.count(), 0);
 
     // Generate test image
-    QImage image1(200, 96, QImage::Format_RGB32);
-    {
-        QPainter painter(&image1);
-        QConicalGradient gradient(QPointF(100, 48), 100);
-        gradient.setColorAt(0, Qt::white);
-        gradient.setColorAt(1, Qt::blue);
-        painter.fillRect(image1.rect(), gradient);
-    }
+    QImage image1 = generatTestImage();
 
     KUrl url = urlForTestOutputFile("testForgetModifiedDocument.png");
     QVERIFY(image1.save(url.toLocalFile(), "png"));

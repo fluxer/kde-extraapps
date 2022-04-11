@@ -130,7 +130,7 @@ void ImageScaler::scaleRect(const QRect& rect)
     if (qAbs(d->mZoom - 1.0) < REAL_DELTA) {
         QImage tmp = d->mDocument->image().copy(rect);
         tmp = tmp.convertToFormat(QImage::Format_ARGB32_Premultiplied);
-        scaledRect(rect.left(), rect.top(), tmp);
+        emit scaledRect(rect.left(), rect.top(), tmp);
         return;
     }
 
@@ -208,7 +208,7 @@ void ImageScaler::scaleRect(const QRect& rect)
               );
     }
 
-    scaledRect(destRect.left() + destLeftMargin, destRect.top() + destTopMargin, tmp);
+    emit scaledRect(destRect.left() + destLeftMargin, destRect.top() + destTopMargin, tmp);
 }
 
 } // namespace

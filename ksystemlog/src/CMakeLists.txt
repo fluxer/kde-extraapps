@@ -166,6 +166,7 @@ add_executable(ksystemlog ${ksystemlog_library_sources} ${ksystemlog_sources})
 target_link_libraries(ksystemlog  
     ${KDE4_KIO_LIBS} 
     ${KDE4_KDEUI_LIBS}
+    ${KDE4_KFILE_LIBS}
 )
 
 if(ENABLE_TESTING)
