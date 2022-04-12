@@ -59,7 +59,6 @@ macro_optional_find_package(OpenSSL)
 set_package_properties(OpenSSL PROPERTIES
     DESCRIPTION "Robust, commercial-grade, full-featured toolkit for general-purpose cryptography and secure communication"
     URL "https://www.openssl.org/"
-    TYPE RECOMMENDED
     PURPOSE "Support encrypted Open Document in Okular"
 )
 
