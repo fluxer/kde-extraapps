@@ -41,7 +41,6 @@ class KIcon;
 
 namespace Okular {
 
-class DocumentFonts;
 class DocumentInfo;
 class DocumentObserver;
 class DocumentSynopsis;

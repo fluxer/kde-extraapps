@@ -28,7 +28,6 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
         // Document description and Table of contents
         const Okular::DocumentInfo * generateDocumentInfo();
         const Okular::DocumentSynopsis * generateDocumentSynopsis() { return 0L; }
-        const Okular::DocumentFonts * generateDocumentFonts() { return 0L; }
 
         // page contents generation
         bool canGeneratePixmap() const;
