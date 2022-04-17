@@ -1,6 +1,6 @@
 # let's enable the generators properly configured
 
-if(PopplerQt4_FOUND)
+if(Poppler_FOUND)
     add_subdirectory(poppler)
 endif()
 

@@ -13,10 +13,10 @@ include_directories(
    ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-macro_optional_find_package(PopplerQt4 0.28.0)
-set_package_properties(PopplerQt4 PROPERTIES
+macro_optional_find_package(Poppler)
+set_package_properties(Poppler PROPERTIES
     DESCRIPTION "A PDF rendering library"
-    URL "http://poppler.freedesktop.org"
+    URL "https://poppler.freedesktop.org"
     PURPOSE "Support for PDF files in Okular"
 )
 
@@ -39,13 +39,6 @@ set_package_properties(Freetype PROPERTIES
     DESCRIPTION "A font rendering engine"
     URL "http://www.freetype.org"
     PURPOSE "Provides freetype font support in the Okular DVI generator"
-)
-
-macro_optional_find_package(ZLIB)
-set_package_properties(ZLIB PROPERTIES
-    DESCRIPTION "General purpose data compression library"
-    URL "http://www.zlib.net"
-    PURPOSE "Support for PDF files in Okular"
 )
 
 macro_optional_find_package(EPub)
