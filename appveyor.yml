@@ -27,8 +27,7 @@ build_script:
         libqalculate-dev libspectre-dev libspeechd-dev libswscale-dev \
         libtag1-dev uuid-dev libudev-dev libvncserver-dev freerdp2-dev \
         libffmpegthumbnailer-dev libbz2-dev libtorrent-rasterbar-dev \
-        xsltproc libdbusmenu-katie libpoppler-katie \
-        ccache
+        xsltproc libdbusmenu-katie ccache
 
     export PATH="/usr/lib/ccache/:$PATH"
 
