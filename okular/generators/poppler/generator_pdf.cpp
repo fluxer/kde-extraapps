@@ -99,6 +99,7 @@ PDFGenerator::PDFGenerator(QObject *parent, const QVariantList &args)
     m_documentinfo(nullptr),
     m_documentsynopsis(nullptr)
 {
+    setFeature(Generator::TextExtraction);
 }
 
 PDFGenerator::~PDFGenerator()
@@ -214,26 +215,6 @@ QImage PDFGenerator::image(Okular::PixmapRequest *request)
     }
 
     const poppler::page* popplerpage = m_popplerpages.at(pageindex);
-    // TODO: figure out why it's not working
-#if 0
-    if (!okularpage->hasTextPage()) {
-        Okular::TextPage* okulartextpage = new Okular::TextPage();
-        const std::vector<poppler::text_box> popplertextboxes = popplerpage->text_list();
-        for (int i = 0; i < popplertextboxes.size(); i++) {
-            const poppler::rectf popplertextbbox = popplertextboxes.at(i).bbox();
-            Okular::NormalizedRect* okularrect = new Okular::NormalizedRect(
-                popplertextbbox.left(), popplertextbbox.top(),
-                popplertextbbox.right(), popplertextbbox.bottom()
-            );
-            okulartextpage->append(
-                okularString(popplertextboxes.at(i).text()),
-                okularrect
-            );
-            qDebug() << Q_FUNC_INFO << okularpage->boundingBox() << *okularrect;
-        }
-        okularpage->setTextPage(okulartextpage);
-    }
-#endif
 
     poppler::page_renderer popplerrenderer;
     const bool okularantialias = documentMetaData("GraphicsAntialias", QVariant(true)).toBool();
@@ -267,6 +248,35 @@ QImage PDFGenerator::image(Okular::PixmapRequest *request)
         request->width(), request->height(),
         Qt::IgnoreAspectRatio, Qt::SmoothTransformation
     );
+}
+
+Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
+{
+    const int pageindex = page->number();
+    if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
+        kWarning() << "Page index out of range";
+        return nullptr;
+    }
+
+    const poppler::page* popplerpage = m_popplerpages.at(pageindex);
+
+    Okular::TextPage* okulartextpage = new Okular::TextPage();
+
+    const std::vector<poppler::text_box> popplertextboxes = popplerpage->text_list();
+    for (int i = 0; i < popplertextboxes.size(); i++) {
+        const poppler::rectf popplertextbbox = popplertextboxes.at(i).bbox();
+        Okular::NormalizedRect* okularrect = new Okular::NormalizedRect(
+            popplertextbbox.left(), popplertextbbox.top(),
+            popplertextbbox.right(), popplertextbbox.bottom()
+        );
+        okulartextpage->append(
+            okularString(popplertextboxes.at(i).text()),
+            okularrect
+        );
+        // qDebug() << Q_FUNC_INFO << page->boundingBox() << *okularrect;
+    }
+
+    return okulartextpage;
 }
 
 bool PDFGenerator::doCloseDocument()

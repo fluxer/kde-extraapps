@@ -38,6 +38,7 @@ class PDFGenerator : public Okular::Generator
 
     protected:
         QImage image(Okular::PixmapRequest *request) final;
+        Okular::TextPage* textPage(Okular::Page *page) final;
         bool doCloseDocument() final;
 
     private:
