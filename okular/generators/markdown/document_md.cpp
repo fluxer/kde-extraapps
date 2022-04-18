@@ -13,6 +13,7 @@
 #include <QTextCodec>
 
 #include <kdebug.h>
+#include <KIO/NetAccess>
 
 #include "document_md.h"
 #include "md4c-html.h"
@@ -46,23 +47,34 @@ MDDocument::MDDocument(const QString &fileName)
 
 QVariant MDDocument::loadResource(int type, const QUrl &url)
 {
-    kDebug() << "Resource" << type << url;
-    const QString urlstring = url.toString();
     if (type == QTextDocument::ImageResource) {
-        foreach (const MDResourceData &mdresource, m_kiojobs.values()) {
-            if (mdresource.url == url) {
-                return QVariant();
-            }
+        if (m_resources.contains(url)) {
+            kDebug() << "Resource cached" << url;
+            return m_resources.value(url);
         }
 
+        kDebug() << "Fetching resource" << url;
+        m_resourcedata.clear();
         KIO::TransferJob *kiojob = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
-        MDResourceData resourcedata;
-        resourcedata.type = type;
-        resourcedata.url = url;
-        m_kiojobs.insert(kiojob, resourcedata);
+        kiojob->setAutoDelete(false);
         connect(kiojob, SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotKIOData(KIO::Job*,QByteArray)));
         connect(kiojob, SIGNAL(result(KJob*)), SLOT(slotKIOResult(KJob*)));
-        return QVariant();
+        const bool kioresult = KIO::NetAccess::synchronousRun(kiojob, nullptr);
+        if (kioresult) {
+            QImage resourceimage;
+            if (resourceimage.loadFromData(m_resourcedata.constData(), m_resourcedata.size())) {
+                resourceimage = resourceimage.scaled(pageSize().toSize(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+                QVariant resourcevariant;
+                resourcevariant.setValue(resourceimage);
+                m_resources.insert(url, resourcevariant);
+                kDebug() << "Resource loaded" << url;
+                QTextDocument::addResource(type, url, resourcevariant);
+                return resourcevariant;
+            } else {
+                kWarning() << "Could not load resource" << url;
+            }
+        }
+        return QTextDocument::loadResource(type, url);
     }
     return QTextDocument::loadResource(type, url);
 }
@@ -74,30 +86,18 @@ void MDDocument::slotMdCallback(const char* data, qlonglong datasize)
 
 void MDDocument::slotKIOData(KIO::Job *kiojob, const QByteArray &data)
 {
-    KIO::TransferJob *transferjob = static_cast<KIO::TransferJob*>(kiojob);
-    MDResourceData &mdresource = m_kiojobs[transferjob];
-    mdresource.kiodata.append(data);
+    m_resourcedata.append(data);
 }
 
 void MDDocument::slotKIOResult(KJob *kiojob)
 {
     KIO::TransferJob *transferjob = static_cast<KIO::TransferJob*>(kiojob);
     if (kiojob->error() != 0) {
-        kDebug() << "Could not fetch resource";
+        kWarning() << "Could not fetch resource";
     } else {
         kDebug() << "Resource fetched";
     }
-    const MDResourceData mdresource = m_kiojobs.take(transferjob);
-    QImage mdimage;
-    if (mdimage.loadFromData(mdresource.kiodata.constData(), mdresource.kiodata.size())) {
-        mdimage = mdimage.scaledToHeight(size().height(), Qt::SmoothTransformation);
-        mdimage = mdimage.scaledToWidth(size().width(), Qt::SmoothTransformation);
-        QVariant mdvariant;
-        mdvariant.setValue(mdimage);
-        QTextDocument::addResource(mdresource.type, mdresource.url, mdvariant);
-    } else {
-        kDebug() << "Could not load resource";
-    }
+    kiojob->deleteLater();
 }
 
 #include "moc_document_md.cpp"

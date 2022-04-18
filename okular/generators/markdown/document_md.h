@@ -13,13 +13,6 @@
 #include <QtGui/QTextDocument>
 #include <kio/job.h>
 
-struct MDResourceData
-{
-    int type;
-    QUrl url;
-    QByteArray kiodata;
-};
-
 class MDDocument : public QTextDocument
 {
         Q_OBJECT
@@ -37,7 +30,8 @@ class MDDocument : public QTextDocument
 
     private:
         QByteArray m_mddata;
-        QMap<KIO::TransferJob*, MDResourceData> m_kiojobs;
+        QByteArray m_resourcedata;
+        QMap<QUrl, QVariant> m_resources;
 };
 
 #endif // MD_DOCUMENT_H
