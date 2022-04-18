@@ -90,8 +90,8 @@ void MDDocument::slotKIOResult(KJob *kiojob)
     const MDResourceData mdresource = m_kiojobs.take(transferjob);
     QImage mdimage;
     if (mdimage.loadFromData(mdresource.kiodata.constData(), mdresource.kiodata.size())) {
-        mdimage = mdimage.scaledToHeight(size().height());
-        mdimage = mdimage.scaledToWidth(size().width());
+        mdimage = mdimage.scaledToHeight(size().height(), Qt::SmoothTransformation);
+        mdimage = mdimage.scaledToWidth(size().width(), Qt::SmoothTransformation);
         QVariant mdvariant;
         mdvariant.setValue(mdimage);
         QTextDocument::addResource(mdresource.type, mdresource.url, mdvariant);
