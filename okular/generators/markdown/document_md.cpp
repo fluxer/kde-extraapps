@@ -25,9 +25,7 @@ void okular_md_callback(const MD_CHAR* mddata, MD_SIZE mdsize, void* mdptr)
 
 MDDocument::MDDocument(const QString &fileName)
 {
-#ifdef MD_DEBUG
     kDebug() << "Opening file" << fileName;
-#endif
 
     QFile mdfile(fileName);
     if (!mdfile.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -46,7 +44,60 @@ MDDocument::MDDocument(const QString &fileName)
     setHtml(codec->toUnicode(m_mddata));
 }
 
+QVariant MDDocument::loadResource(int type, const QUrl &url)
+{
+    kDebug() << "Resource" << type << url;
+    const QString urlstring = url.toString();
+    if (type == QTextDocument::ImageResource) {
+        foreach (const MDResourceData &mdresource, m_kiojobs.values()) {
+            if (mdresource.url == url) {
+                return QVariant();
+            }
+        }
+
+        KIO::TransferJob *kiojob = KIO::get(url, KIO::Reload, KIO::HideProgressInfo);
+        MDResourceData resourcedata;
+        resourcedata.type = type;
+        resourcedata.url = url;
+        m_kiojobs.insert(kiojob, resourcedata);
+        connect(kiojob, SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotKIOData(KIO::Job*,QByteArray)));
+        connect(kiojob, SIGNAL(result(KJob*)), SLOT(slotKIOResult(KJob*)));
+        return QVariant();
+    }
+    return QTextDocument::loadResource(type, url);
+}
+
 void MDDocument::slotMdCallback(const char* data, qlonglong datasize)
 {
     m_mddata.append(data, datasize);
 }
+
+void MDDocument::slotKIOData(KIO::Job *kiojob, const QByteArray &data)
+{
+    KIO::TransferJob *transferjob = static_cast<KIO::TransferJob*>(kiojob);
+    MDResourceData &mdresource = m_kiojobs[transferjob];
+    mdresource.kiodata.append(data);
+}
+
+void MDDocument::slotKIOResult(KJob *kiojob)
+{
+    KIO::TransferJob *transferjob = static_cast<KIO::TransferJob*>(kiojob);
+    if (kiojob->error() != 0) {
+        kDebug() << "Could not fetch resource";
+    } else {
+        kDebug() << "Resource fetched";
+    }
+    const MDResourceData mdresource = m_kiojobs.take(transferjob);
+    QImage mdimage;
+    if (mdimage.loadFromData(mdresource.kiodata.constData(), mdresource.kiodata.size())) {
+        mdimage = mdimage.scaledToHeight(size().height());
+        mdimage = mdimage.scaledToWidth(size().width());
+        QVariant mdvariant;
+        mdvariant.setValue(mdimage);
+        QTextDocument::addResource(mdresource.type, mdresource.url, mdvariant);
+    } else {
+        kDebug() << "Could not load resource";
+    }
+}
+
+#include "moc_document_md.cpp"

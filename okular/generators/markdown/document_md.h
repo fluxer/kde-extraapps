@@ -11,16 +11,33 @@
 #define MD_DOCUMENT_H
 
 #include <QtGui/QTextDocument>
+#include <kio/job.h>
+
+struct MDResourceData
+{
+    int type;
+    QUrl url;
+    QByteArray kiodata;
+};
 
 class MDDocument : public QTextDocument
 {
+        Q_OBJECT
     public:
         MDDocument(const QString &fileName);
 
         void slotMdCallback(const char* data, qlonglong datasize);
 
+    protected:
+        QVariant loadResource(int type, const QUrl &url) final;
+
+    private Q_SLOTS:
+        void slotKIOData(KIO::Job *kiojob, const QByteArray &data);
+        void slotKIOResult(KJob *kiojob);
+
     private:
         QByteArray m_mddata;
+        QMap<KIO::TransferJob*, MDResourceData> m_kiojobs;
 };
 
 #endif // MD_DOCUMENT_H
