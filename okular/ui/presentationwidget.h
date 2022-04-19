@@ -14,13 +14,14 @@
 #include <qpixmap.h>
 #include <qstringlist.h>
 #include <qwidget.h>
+#include <qlineedit.h>
+#include <qtoolbar.h>
+#include <qtimer.h>
+
 #include "core/area.h"
 #include "core/observer.h"
 #include "core/pagetransition.h"
 
-#include <QLineEdit>
-#include <QToolBar>
-#include <QTimer>
 class KActionCollection;
 class KSelectAction;
 class SmoothPathEngine;
@@ -108,8 +109,8 @@ class PresentationWidget : public QWidget, public Okular::DocumentObserver
         SmoothPathEngine * m_drawingEngine;
         QRect m_drawingRect;
         int m_screen;
-        int m_screenInhibitCookie;
-        int m_sleepInhibitCookie;
+        uint m_screenInhibitCookie;
+        uint m_sleepInhibitCookie;
 
         // transition related
         QTimer * m_transitionTimer;

@@ -54,11 +54,10 @@
 
 
 #ifdef HAVE_KWORKSPACE
-    #include <QDBusConnection>
-    #include <QDBusInterface>
-    #include <QDBusPendingCall>
-    #include <kworkspace/kworkspace.h>
-    #include <solid/powermanagement.h>
+#  include <QDBusConnection>
+#  include <QDBusInterface>
+#  include <QDBusPendingCall>
+#  include <kworkspace/kworkspace.h>
 #endif
 
 
@@ -1541,7 +1540,7 @@ void GenericObserver::slotAfterFinishAction()
             kDebug(5001) << "Quit Kget.";
             QTimer::singleShot(0, KGet::m_mainWindow, SLOT(slotQuit()));
             break;
-    #ifdef HAVE_KWORKSPACE
+#ifdef HAVE_KWORKSPACE
         case KGet::Shutdown:
             QTimer::singleShot(0, KGet::m_mainWindow, SLOT(slotQuit()));
             KWorkSpace::requestShutDown(KWorkSpace::ShutdownConfirmNo,
@@ -1549,26 +1548,29 @@ void GenericObserver::slotAfterFinishAction()
                         KWorkSpace::ShutdownModeForceNow);
             break;
         case KGet::Hibernate: {
-           QDBusMessage call;
-           call = QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement",
-                                                 "/org/kde/Solid/PowerManagement",
-                                                 "org.kde.Solid.PowerManagement",
-                                                 "suspendToRam");
-           QDBusConnection::sessionBus().asyncCall(call);
+            QDBusMessage call = QDBusMessage::createMethodCall(
+                "org.freedesktop.PowerManagement",
+                "/org/freedesktop/PowerManagement",
+                "org.freedesktop.PowerManagement",
+                "Hibernate"
+            );
+            QDBusConnection::sessionBus().asyncCall(call);
             break;
         }
         case KGet::Suspend: {
-           QDBusMessage call;
-           call = QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement",
-                                                 "/org/kde/Solid/PowerManagement",
-                                                 "org.kde.Solid.PowerManagement",
-                                                 "suspendToDisk");
-           QDBusConnection::sessionBus().asyncCall(call);
+            QDBusMessage call = QDBusMessage::createMethodCall(
+                "org.freedesktop.PowerManagement",
+                "/org/freedesktop/PowerManagement",
+                "org.freedesktop.PowerManagement",
+                "Suspend"
+            );
+            QDBusConnection::sessionBus().asyncCall(call);
             break;
         }
-    #endif
-        default:
+#endif
+        default: {
             break;
+        }
     }
 }
 

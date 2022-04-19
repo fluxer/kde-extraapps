@@ -11,6 +11,7 @@
 
 // qt/kde includes
 #include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusReply>
 
@@ -40,8 +41,6 @@
 #include <kselectaction.h>
 #include <kshortcut.h>
 #include <kdialog.h>
-
-#include <Solid/PowerManagement>
 
 // system includes
 #include <stdlib.h>
@@ -133,6 +132,7 @@ class PresentationToolBar : public QToolBar
 PresentationWidget::PresentationWidget( QWidget * parent, Okular::Document * doc, KActionCollection * collection )
     : QWidget( 0 /* must be null, to have an independent widget */, Qt::FramelessWindowHint ),
     m_pressedLink( 0 ), m_handCursor( false ), m_drawingEngine( 0 ),
+    m_screenInhibitCookie( 0 ), m_sleepInhibitCookie( 0 ),
     m_parentWidget( parent ),
     m_document( doc ), m_frameIndex( -1 ), m_topBar( 0 ), m_pagesEdit( 0 ), m_searchBar( 0 ),
     m_ac( collection ), m_screenSelect( 0 ), m_isSetup( false ), m_blockNotifications( false ), m_inBlackScreenMode( false ),
@@ -1541,15 +1541,43 @@ void PresentationWidget::inhibitPowerManagement()
 
     // Inhibit screen and sleep
     // Note: beginSuppressingScreenPowerManagement inhibits DPMS, automatic brightness change and screensaver
-    m_screenInhibitCookie = Solid::PowerManagement::beginSuppressingScreenPowerManagement(reason);
-    m_sleepInhibitCookie = Solid::PowerManagement::beginSuppressingSleep(reason);
+    QDBusInterface screensaveriface(
+        "org.freedesktop.ScreenSaver",
+        "/ScreenSaver",
+        "org.freedesktop.ScreenSaver",
+        QDBusConnection::sessionBus()
+    );
+    QDBusReply<uint> reply = screensaveriface.call("Inhibit", QString::fromLatin1("okular"), reason);
+    m_screenInhibitCookie = reply.value();
+
+    QDBusInterface powermanageriface(
+        "org.freedesktop.PowerManagement.Inhibit",
+        "/org/freedesktop/PowerManagement/Inhibit",
+        "org.freedesktop.PowerManagement.Inhibit",
+        QDBusConnection::sessionBus()
+    );
+    reply = powermanageriface.call("Inhibit", QString::fromLatin1("okular"), reason);
+    m_sleepInhibitCookie = reply.value();
 }
 
 void PresentationWidget::allowPowerManagement()
 {
     // Remove cookies
-    Solid::PowerManagement::stopSuppressingScreenPowerManagement(m_screenInhibitCookie);
-    Solid::PowerManagement::stopSuppressingSleep(m_sleepInhibitCookie);
+    QDBusInterface screensaveriface(
+        "org.freedesktop.ScreenSaver",
+        "/ScreenSaver",
+        "org.freedesktop.ScreenSaver",
+        QDBusConnection::sessionBus()
+    );
+    screensaveriface.asyncCall("UnInhibit", m_screenInhibitCookie);
+
+    QDBusInterface powermanageriface(
+        "org.freedesktop.PowerManagement.Inhibit",
+        "/org/freedesktop/PowerManagement/Inhibit",
+        "org.freedesktop.PowerManagement.Inhibit",
+        QDBusConnection::sessionBus()
+    );
+    powermanageriface.asyncCall("UnInhibit", m_sleepInhibitCookie);
 }
 
 void PresentationWidget::showTopBar( bool show )
