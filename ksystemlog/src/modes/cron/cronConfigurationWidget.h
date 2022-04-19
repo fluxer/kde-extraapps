@@ -52,7 +52,7 @@ class CronConfigurationWidget : public LogModeConfigurationWidget {
 			QVBoxLayout* layout = new QVBoxLayout();
 			this->setLayout(layout);
 
-			QString description = i18n("<p>These files will be analyzed to show the <b>Cron Logs</b> (i.e. planned tasks logs). <a href='man:/cron'>More information...</a></p>");
+			QString description = i18n("<p>These files will be analyzed to show the <b>Cron Logs</b> (i.e. planned tasks logs). <a href='https://linux.die.net/man/8/cron'>More information...</a></p>");
 
 			fileList = new FileList(this, description);
 
