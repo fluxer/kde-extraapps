@@ -33,6 +33,10 @@ KGET_EXPORT_PLUGIN_CONFIG(DlgTorrentSettings)
 static const int tableindexrole = 1234;
 static const int tabletyperole = 4321;
 
+static const int ltstringsettingscount = lt::settings_pack::num_string_settings;
+static const int ltintsettingscount = lt::settings_pack::num_int_settings;
+static const int ltboolsettingscount = lt::settings_pack::num_bool_settings;
+
 DlgTorrentSettings::DlgTorrentSettings(QWidget *parent, const QVariantList &args)
     : KCModule(KGetFactory::componentData(), parent, args)
 {
@@ -174,7 +178,7 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
 
     int tablerowcount = 0;
     // qDebug() << Q_FUNC_INFO << "string settings";
-    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_string_settings; i++) {
+    for (int i = 0; i < ltstringsettingscount; i++) {
         const int settingindex = (lt::settings_pack::string_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_str(settingindex).c_str();
 
@@ -196,7 +200,7 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
     }
 
     // qDebug() << Q_FUNC_INFO << "int settings";
-    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_int_settings; i++) {
+    for (int i = 0; i < ltintsettingscount; i++) {
         const int settingindex = (lt::settings_pack::int_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_int(settingindex);
 
@@ -226,7 +230,7 @@ void DlgTorrentSettings::loadSettings(const lt::settings_pack &ltsettings)
     }
 
     // qDebug() << Q_FUNC_INFO << "bool settings";
-    for (int i = 0; i < lt::settings_pack::settings_counts_t::num_bool_settings; i++) {
+    for (int i = 0; i < ltboolsettingscount; i++) {
         const int settingindex = (lt::settings_pack::bool_type_base + i);
         // qDebug() << Q_FUNC_INFO << lt::name_for_setting(settingindex) << ltsettings.get_bool(settingindex);
 
