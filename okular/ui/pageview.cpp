@@ -869,6 +869,11 @@ void PageView::selectAll()
     }
 }
 
+void PageView::errorMessage(const QString &message)
+{
+    displayMessage(message, QString(), PageViewMessage::Error);
+}
+
 //BEGIN DocumentObserver inherited methods
 void PageView::notifySetup( const QVector< Okular::Page * > & pageSet, int setupFlags )
 {

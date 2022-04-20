@@ -115,6 +115,7 @@ Q_OBJECT
     public slots:
         void copyTextSelection() const;
         void selectAll();
+        void errorMessage(const QString &message);
 
         void openAnnotationWindow( Okular::Annotation *annotation, int pageNumber );
 
