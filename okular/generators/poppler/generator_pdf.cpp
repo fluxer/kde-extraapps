@@ -23,6 +23,12 @@
 #include <poppler/cpp/poppler-toc.h>
 #include <poppler/cpp/poppler-rectangle.h>
 #include <poppler/cpp/poppler-page-renderer.h>
+#include <poppler/cpp/poppler-embedded-file.h>
+
+static QByteArray okularBytes(const poppler::byte_array &popplerbytes)
+{
+    return QByteArray(popplerbytes.data(), popplerbytes.size());
+}
 
 static QString okularString(const poppler::ustring &popplerstring)
 {
@@ -34,6 +40,11 @@ static QString okularTime(const poppler::time_type &popplertime)
 {
     const KDateTime kdatetime(QDateTime::fromTime_t(popplertime));
     return KGlobal::locale()->formatDateTime(kdatetime, KLocale::FancyLongDate);
+}
+
+static QDateTime okularDateTime(const poppler::time_type &popplertime)
+{
+    return QDateTime::fromTime_t(popplertime);
 }
 
 static Okular::FontInfo okularFontInfo(const poppler::font_info &popplerfont)
@@ -139,6 +150,64 @@ static poppler::rotation_enum popplerRotation(const Okular::Rotation okularorien
     }
     kWarning() << "Unknown orientation";
     return poppler::rotate_0;
+}
+
+class PDFEmbeddedFile : public Okular::EmbeddedFile
+{
+public:
+    PDFEmbeddedFile();
+
+    QString name() const final;
+    QString description() const final;
+    QByteArray data() const final;
+    int size() const final;
+    QDateTime modificationDate() const final;
+    QDateTime creationDate() const final;
+
+private:
+    friend PDFGenerator;
+
+    QString m_name;
+    QString m_description;
+    QByteArray m_data;
+    int m_size;
+    QDateTime m_modificationdate;
+    QDateTime m_creationdate;
+};
+
+PDFEmbeddedFile::PDFEmbeddedFile()
+    : m_size(0)
+{
+}
+
+QString PDFEmbeddedFile::name() const
+{
+    return m_name;
+}
+
+QString PDFEmbeddedFile::description() const
+{
+    return m_description;
+}
+
+QByteArray PDFEmbeddedFile::data() const
+{
+    return m_data;
+}
+
+int PDFEmbeddedFile::size() const
+{
+    return m_size;
+}
+
+QDateTime PDFEmbeddedFile::modificationDate() const
+{
+    return m_modificationdate;
+}
+
+QDateTime PDFEmbeddedFile::creationDate() const
+{
+    return m_creationdate;
 }
 
 static KAboutData createAboutData()
@@ -299,6 +368,31 @@ Okular::FontInfo::List PDFGenerator::fontsForPage(int pageindex)
         delete popplerfontiter;
     }
     return result;
+}
+
+const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
+{
+    QList<Okular::EmbeddedFile*>* okularembeddedfiles = new QList<Okular::EmbeddedFile*>();
+    qDebug() << Q_FUNC_INFO;
+    std::vector<poppler::embedded_file*> popplerembeddedfiles = m_popplerdocument->embedded_files();
+    for (int i = 0; i < popplerembeddedfiles.size(); i++) {
+        const poppler::embedded_file* popplerembeddedfile = popplerembeddedfiles.at(i);
+        if (!popplerembeddedfile->is_valid()) {
+            kWarning() << "Invalid embedded file";
+            continue;
+        }
+
+        PDFEmbeddedFile* pdfembeddedfile = new PDFEmbeddedFile();
+        pdfembeddedfile->m_name = QString::fromStdString(popplerembeddedfile->name());
+        pdfembeddedfile->m_description = okularString(popplerembeddedfile->description());
+        pdfembeddedfile->m_data = okularBytes(popplerembeddedfile->data());
+        pdfembeddedfile->m_size = popplerembeddedfile->size();
+        pdfembeddedfile->m_modificationdate = okularDateTime(popplerembeddedfile->modification_date());
+        pdfembeddedfile->m_creationdate = okularDateTime(popplerembeddedfile->creation_date());
+        // qDebug() << Q_FUNC_INFO << pdfembeddedfile->m_name;
+        okularembeddedfiles->append(pdfembeddedfile);
+    }
+    return okularembeddedfiles;
 }
 
 void PDFGenerator::walletDataForFile(const QString &fileName, QString *walletName, QString *walletKey) const
