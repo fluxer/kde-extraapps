@@ -18,12 +18,14 @@
 #include <kglobal.h>
 
 #include <core/page.h>
+#include <core/pagetransition.h>
 #include <core/utils.h>
 
 #include <poppler/cpp/poppler-toc.h>
 #include <poppler/cpp/poppler-rectangle.h>
 #include <poppler/cpp/poppler-page-renderer.h>
 #include <poppler/cpp/poppler-embedded-file.h>
+#include <poppler/cpp/poppler-page-transition.h>
 
 static QByteArray okularBytes(const poppler::byte_array &popplerbytes)
 {
@@ -60,6 +62,10 @@ static Okular::FontInfo okularFontInfo(const poppler::font_info &popplerfont)
         okularfont.setEmbedType(Okular::FontInfo::NotEmbedded);
     }
     switch (popplerfont.type()) {
+        case poppler::font_info::unknown: {
+            okularfont.setType(Okular::FontInfo::Unknown);
+            break;
+        }
         case poppler::font_info::type1: {
             okularfont.setType(Okular::FontInfo::Type1);
             break;
@@ -105,6 +111,7 @@ static Okular::FontInfo okularFontInfo(const poppler::font_info &popplerfont)
             break;
         }
         default: {
+            kWarning() << "Unknown font info type" << popplerfont.type();
             okularfont.setType(Okular::FontInfo::Unknown);
             break;
         }
@@ -281,6 +288,97 @@ Okular::Document::OpenResult PDFGenerator::loadDocumentWithPassword(const QStrin
                 popplerbbox.right(), popplerbbox.bottom()
             )
         );
+        poppler::page_transition *popplerpagetransition = popplerpage->transition();
+        if (popplerpagetransition) {
+            Okular::PageTransition* okulartransition = new Okular::PageTransition();
+            okulartransition->setDuration(popplerpagetransition->duration());
+            okulartransition->setAngle(popplerpagetransition->angle());
+            okulartransition->setScale(popplerpagetransition->scale());
+            okulartransition->setIsRectangular(popplerpagetransition->is_rectangular());
+            switch (popplerpagetransition->type()) {
+                case poppler::page_transition::replace: {
+                    okulartransition->setType(Okular::PageTransition::Replace);
+                    break;
+                }
+                case poppler::page_transition::split: {
+                    okulartransition->setType(Okular::PageTransition::Split);
+                    break;
+                }
+                case poppler::page_transition::blinds: {
+                    okulartransition->setType(Okular::PageTransition::Blinds);
+                    break;
+                }
+                case poppler::page_transition::box: {
+                    okulartransition->setType(Okular::PageTransition::Box);
+                    break;
+                }
+                case poppler::page_transition::wipe: {
+                    okulartransition->setType(Okular::PageTransition::Wipe);
+                    break;
+                }
+                case poppler::page_transition::dissolve: {
+                    okulartransition->setType(Okular::PageTransition::Dissolve);
+                    break;
+                }
+                case poppler::page_transition::glitter: {
+                    okulartransition->setType(Okular::PageTransition::Glitter);
+                    break;
+                }
+                case poppler::page_transition::fly: {
+                    okulartransition->setType(Okular::PageTransition::Fly);
+                    break;
+                }
+                case poppler::page_transition::push: {
+                    okulartransition->setType(Okular::PageTransition::Push);
+                    break;
+                }
+                case poppler::page_transition::cover: {
+                    okulartransition->setType(Okular::PageTransition::Cover);
+                    break;
+                }
+                case poppler::page_transition::uncover: {
+                    okulartransition->setType(Okular::PageTransition::Uncover);
+                    break;
+                }
+                case poppler::page_transition::fade: {
+                    okulartransition->setType(Okular::PageTransition::Fade);
+                    break;
+                }
+                default: {
+                    kWarning() << "Unknown page transition type" << popplerpagetransition->type();
+                    break;
+                }
+            }
+            switch (popplerpagetransition->alignment()) {
+                case poppler::page_transition::horizontal: {
+                    okulartransition->setAlignment(Okular::PageTransition::Horizontal);
+                    break;
+                }
+                case poppler::page_transition::vertical: {
+                    okulartransition->setAlignment(Okular::PageTransition::Vertical);
+                    break;
+                }
+                default: {
+                    kWarning() << "Unknown page transition alignment" << popplerpagetransition->alignment();
+                    break;
+                }
+            }
+            switch (popplerpagetransition->direction()) {
+                case poppler::page_transition::inward: {
+                    okulartransition->setDirection(Okular::PageTransition::Inward);
+                    break;
+                }
+                case poppler::page_transition::outward: {
+                    okulartransition->setDirection(Okular::PageTransition::Outward);
+                    break;
+                }
+                default: {
+                    kWarning() << "Unknown page transition direction" << popplerpagetransition->direction();
+                    break;
+                }
+            }
+            okularpage->setTransition(okulartransition);
+        }
         pagesVector.append(okularpage);
         m_popplerpages.append(popplerpage);
     }
