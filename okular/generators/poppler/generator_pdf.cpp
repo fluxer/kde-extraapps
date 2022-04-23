@@ -36,6 +36,71 @@ static QString okularTime(const poppler::time_type &popplertime)
     return KGlobal::locale()->formatDateTime(kdatetime, KLocale::FancyLongDate);
 }
 
+static Okular::FontInfo okularFontInfo(const poppler::font_info &popplerfont)
+{
+    Okular::FontInfo okularfont;
+    okularfont.setName(QString::fromStdString(popplerfont.name()));
+    okularfont.setFile(QString::fromStdString(popplerfont.file()));
+    if (popplerfont.is_embedded()) {
+        okularfont.setEmbedType(Okular::FontInfo::FullyEmbedded);
+    } else if (popplerfont.is_subset()) {
+        okularfont.setEmbedType(Okular::FontInfo::EmbeddedSubset);
+    } else {
+        okularfont.setEmbedType(Okular::FontInfo::NotEmbedded);
+    }
+    switch (popplerfont.type()) {
+        case poppler::font_info::type1: {
+            okularfont.setType(Okular::FontInfo::Type1);
+            break;
+        }
+        case poppler::font_info::type1c: {
+            okularfont.setType(Okular::FontInfo::Type1C);
+            break;
+        }
+        case poppler::font_info::type1c_ot: {
+            okularfont.setType(Okular::FontInfo::Type1COT);
+            break;
+        }
+        case poppler::font_info::type3: {
+            okularfont.setType(Okular::FontInfo::Type3);
+            break;
+        }
+        case poppler::font_info::truetype: {
+            okularfont.setType(Okular::FontInfo::TrueType);
+            break;
+        }
+        case poppler::font_info::truetype_ot: {
+            okularfont.setType(Okular::FontInfo::TrueTypeOT);
+            break;
+        }
+        case poppler::font_info::cid_type0: {
+            okularfont.setType(Okular::FontInfo::CIDType0);
+            break;
+        }
+        case poppler::font_info::cid_type0c: {
+            okularfont.setType(Okular::FontInfo::CIDType0C);
+            break;
+        }
+        case poppler::font_info::cid_type0c_ot: {
+            okularfont.setType(Okular::FontInfo::CIDType0COT);
+            break;
+        }
+        case poppler::font_info::cid_truetype: {
+            okularfont.setType(Okular::FontInfo::CIDTrueType);
+            break;
+        }
+        case poppler::font_info::cid_truetype_ot: {
+            okularfont.setType(Okular::FontInfo::CIDTrueTypeOT);
+            break;
+        }
+        default: {
+            okularfont.setType(Okular::FontInfo::Unknown);
+            break;
+        }
+    }
+    return okularfont;
+}
+
 static Okular::Rotation okularRotation(const poppler::page::orientation_enum popplerorientation)
 {
     switch (popplerorientation) {
@@ -100,6 +165,7 @@ PDFGenerator::PDFGenerator(QObject *parent, const QVariantList &args)
     m_documentsynopsis(nullptr)
 {
     setFeature(Generator::TextExtraction);
+    setFeature(Generator::FontInfo);
 }
 
 PDFGenerator::~PDFGenerator()
@@ -199,6 +265,42 @@ const Okular::DocumentSynopsis* PDFGenerator::generateDocumentSynopsis()
     return m_documentsynopsis;
 }
 
+Okular::FontInfo::List PDFGenerator::fontsForPage(int pageindex)
+{
+    Okular::FontInfo::List result;
+    if (pageindex == -1) {
+        // all fonts
+        poppler::font_iterator* popplerfontiter = m_popplerdocument->create_font_iterator();
+        while (popplerfontiter->has_next()) {
+            const std::vector<poppler::font_info> popplerfontinfolist = popplerfontiter->next();
+            // qDebug() << Q_FUNC_INFO << pageindex << popplerfontiter->current_page() << popplerfontinfolist.size();
+            for (int i = 0; i < popplerfontinfolist.size(); i++) {
+                result.append(okularFontInfo(popplerfontinfolist.at(i)));
+            }
+        }
+        delete popplerfontiter;
+    } else {
+        if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
+            kWarning() << "Page index out of range" << pageindex;
+            return result;
+        }
+
+        poppler::font_iterator* popplerfontiter = m_popplerdocument->create_font_iterator(pageindex);
+        while (popplerfontiter->has_next()) {
+            const std::vector<poppler::font_info> popplerfontinfolist = popplerfontiter->next();
+            // qDebug() << Q_FUNC_INFO << pageindex << popplerfontiter->current_page() << popplerfontinfolist.size();
+            if (popplerfontiter->current_page() != pageindex) {
+                continue;
+            }
+            for (int i = 0; i < popplerfontinfolist.size(); i++) {
+                result.append(okularFontInfo(popplerfontinfolist.at(i)));
+            }
+        }
+        delete popplerfontiter;
+    }
+    return result;
+}
+
 void PDFGenerator::walletDataForFile(const QString &fileName, QString *walletName, QString *walletKey) const
 {
     *walletKey = fileName + "/pdf";
@@ -210,7 +312,7 @@ QImage PDFGenerator::image(Okular::PixmapRequest *request)
     Okular::Page* okularpage = request->page();
     const int pageindex = okularpage->number();
     if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
-        kWarning() << "Page index out of range";
+        kWarning() << "Page index out of range" << pageindex;
         return QImage();
     }
 
@@ -254,7 +356,7 @@ Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
 {
     const int pageindex = page->number();
     if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
-        kWarning() << "Page index out of range";
+        kWarning() << "Page index out of range" << pageindex;
         return nullptr;
     }
 

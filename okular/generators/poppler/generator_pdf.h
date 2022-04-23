@@ -34,6 +34,8 @@ class PDFGenerator : public Okular::Generator
         const Okular::DocumentInfo* generateDocumentInfo() final;
         const Okular::DocumentSynopsis* generateDocumentSynopsis() final;
 
+        Okular::FontInfo::List fontsForPage(int pageindex) final;
+
         void walletDataForFile(const QString &fileName, QString *walletName, QString *walletKey) const final;
 
     protected:
