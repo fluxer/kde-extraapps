@@ -10,6 +10,9 @@
 #ifndef _OKULAR_GENERATOR_PDF_H_
 #define _OKULAR_GENERATOR_PDF_H_
 
+#include <qimage.h>
+#include <qprinter.h>
+
 #include <core/document.h>
 #include <core/generator.h>
 
@@ -37,6 +40,8 @@ class PDFGenerator : public Okular::Generator
         Okular::FontInfo::List fontsForPage(int pageindex) final;
         const QList<Okular::EmbeddedFile*>* embeddedFiles() const final;
 
+        bool print(QPrinter &printer) final;
+
         void walletDataForFile(const QString &fileName, QString *walletName, QString *walletKey) const final;
 
     protected:
@@ -45,6 +50,8 @@ class PDFGenerator : public Okular::Generator
         bool doCloseDocument() final;
 
     private:
+        QImage pageImage(const int pageindex, const Okular::Rotation okularorientation) const;
+
         poppler::document *m_popplerdocument;
         QList<poppler::page*> m_popplerpages;
         Okular::DocumentInfo* m_documentinfo;

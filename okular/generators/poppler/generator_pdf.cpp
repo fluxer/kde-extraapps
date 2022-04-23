@@ -9,8 +9,8 @@
 
 #include "generator_pdf.h"
 
-#include <qimage.h>
 #include <qdatetime.h>
+#include <qpainter.h>
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <kdatetime.h>
@@ -19,6 +19,7 @@
 
 #include <core/page.h>
 #include <core/pagetransition.h>
+#include <core/fileprinter.h>
 #include <core/utils.h>
 
 #include <poppler/cpp/poppler-toc.h>
@@ -242,6 +243,7 @@ PDFGenerator::PDFGenerator(QObject *parent, const QVariantList &args)
 {
     setFeature(Generator::TextExtraction);
     setFeature(Generator::FontInfo);
+    setFeature(Generator::PrintNative);
 }
 
 PDFGenerator::~PDFGenerator()
@@ -493,6 +495,48 @@ const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
     return okularembeddedfiles;
 }
 
+bool PDFGenerator::print(QPrinter &printer)
+{
+    QPainter qpainter(&printer);
+
+    QList<int> okularpageslist = Okular::FilePrinter::pageList(
+        printer, document()->pages(),
+        document()->currentPage() + 1,
+        document()->bookmarkedPageList()
+    );
+
+    Okular::Rotation okularorientation = Okular::Rotation0;
+    switch (printer.orientation()) {
+        case QPrinter::Portrait: {
+            okularorientation = Okular::Rotation0;
+            break;
+        }
+        case QPrinter::Landscape: {
+            okularorientation = Okular::Rotation90;
+            break;
+        }
+        default: {
+            kWarning() << "Unknown printer orientation" << printer.orientation();
+            break;
+        }
+    }
+
+    for (int i = 0; i < okularpageslist.size(); i++) {
+        // qDebug() << Q_FUNC_INFO << i << (okularpageslist.at(i) - 1);
+        QImage qimage = pageImage(okularpageslist.at(i) - 1, okularorientation);
+        qimage = qimage.scaled(
+            printer.width(), printer.height(),
+            Qt::KeepAspectRatio, Qt::SmoothTransformation
+        );
+        if (i != 0) {
+            printer.newPage();
+        }
+        qpainter.drawImage(0, 0, qimage);
+    }
+
+    return true;
+}
+
 void PDFGenerator::walletDataForFile(const QString &fileName, QString *walletName, QString *walletKey) const
 {
     *walletKey = fileName + "/pdf";
@@ -502,43 +546,9 @@ void PDFGenerator::walletDataForFile(const QString &fileName, QString *walletNam
 QImage PDFGenerator::image(Okular::PixmapRequest *request)
 {
     Okular::Page* okularpage = request->page();
-    const int pageindex = okularpage->number();
-    if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
-        kWarning() << "Page index out of range" << pageindex;
-        return QImage();
-    }
-
-    const poppler::page* popplerpage = m_popplerpages.at(pageindex);
-
-    poppler::page_renderer popplerrenderer;
-    const bool okularantialias = documentMetaData("GraphicsAntialias", QVariant(true)).toBool();
-    popplerrenderer.set_render_hint(poppler::page_renderer::antialiasing, okularantialias);
-    const bool okulartextantialias = documentMetaData("TextAntialias", QVariant(true)).toBool();
-    popplerrenderer.set_render_hint(poppler::page_renderer::text_antialiasing, okulartextantialias);
-    const bool okulartexthinting = documentMetaData("TextHinting", QVariant(true)).toBool();
-    popplerrenderer.set_render_hint(poppler::page_renderer::text_hinting, okulartexthinting);
-    const QColor okularpapercolor = qvariant_cast<QColor>(documentMetaData("PaperColor", QVariant()));
-    if (okularpapercolor.isValid()) {
-        popplerrenderer.set_paper_color(okularpapercolor.rgba());
-    }
-    popplerrenderer.set_image_format(poppler::image::format_argb32);
-    poppler::image popplerimage = popplerrenderer.render_page(
-        popplerpage,
-        120.0, 120.0,
-        -1, -1, -1, -1,
-        popplerRotation(okularpage->orientation())
-    );
-    if (!popplerimage.is_valid()) {
-        kWarning() << "Page rendering failed";
-        return QImage();
-    }
-    QImage qimage(
-        reinterpret_cast<const uchar*>(popplerimage.const_data()),
-        popplerimage.width(), popplerimage.height(),
-        QImage::Format_ARGB32
-    );
+    QImage qimage = pageImage(okularpage->number(), okularpage->orientation());
     // NOTE: do not update bounding box or Okular will be stuck in infinite loop on rotation
-    return qimage.copy().scaled(
+    return qimage.scaled(
         request->width(), request->height(),
         Qt::IgnoreAspectRatio, Qt::SmoothTransformation
     );
@@ -571,6 +581,44 @@ Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
     }
 
     return okulartextpage;
+}
+
+QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okularorientation) const
+{
+    if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
+        kWarning() << "Page index out of range" << pageindex;
+        return QImage();
+    }
+
+    const poppler::page* popplerpage = m_popplerpages.at(pageindex);
+
+    poppler::page_renderer popplerrenderer;
+    const bool okularantialias = documentMetaData("GraphicsAntialias", QVariant(true)).toBool();
+    popplerrenderer.set_render_hint(poppler::page_renderer::antialiasing, okularantialias);
+    const bool okulartextantialias = documentMetaData("TextAntialias", QVariant(true)).toBool();
+    popplerrenderer.set_render_hint(poppler::page_renderer::text_antialiasing, okulartextantialias);
+    const bool okulartexthinting = documentMetaData("TextHinting", QVariant(true)).toBool();
+    popplerrenderer.set_render_hint(poppler::page_renderer::text_hinting, okulartexthinting);
+    const QColor okularpapercolor = qvariant_cast<QColor>(documentMetaData("PaperColor", QVariant()));
+    if (okularpapercolor.isValid()) {
+        popplerrenderer.set_paper_color(okularpapercolor.rgba());
+    }
+    popplerrenderer.set_image_format(poppler::image::format_argb32);
+    poppler::image popplerimage = popplerrenderer.render_page(
+        popplerpage,
+        120.0, 120.0,
+        -1, -1, -1, -1,
+        popplerRotation(okularorientation)
+    );
+    if (!popplerimage.is_valid()) {
+        kWarning() << "Page rendering failed";
+        return QImage();
+    }
+    return QImage(
+        reinterpret_cast<const uchar*>(popplerimage.const_data()),
+        popplerimage.width(), popplerimage.height(),
+        QImage::Format_ARGB32
+    ).copy();
 }
 
 bool PDFGenerator::doCloseDocument()
