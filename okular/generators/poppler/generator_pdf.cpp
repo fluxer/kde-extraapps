@@ -372,9 +372,13 @@ Okular::FontInfo::List PDFGenerator::fontsForPage(int pageindex)
 
 const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
 {
+    if (!m_popplerdocument->has_embedded_files()) {
+        return nullptr;
+    }
+
     QList<Okular::EmbeddedFile*>* okularembeddedfiles = new QList<Okular::EmbeddedFile*>();
-    qDebug() << Q_FUNC_INFO;
     std::vector<poppler::embedded_file*> popplerembeddedfiles = m_popplerdocument->embedded_files();
+    okularembeddedfiles->reserve(popplerembeddedfiles.size());
     for (int i = 0; i < popplerembeddedfiles.size(); i++) {
         const poppler::embedded_file* popplerembeddedfile = popplerembeddedfiles.at(i);
         if (!popplerembeddedfile->is_valid()) {
