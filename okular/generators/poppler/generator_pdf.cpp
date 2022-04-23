@@ -282,13 +282,14 @@ Okular::Document::OpenResult PDFGenerator::loadDocumentWithPassword(const QStrin
             okularRotation(popplerpage->orientation())
         );
         okularpage->setLabel(okularString(popplerpage->label()));
+        okularpage->setDuration(popplerpage->duration());
         okularpage->setBoundingBox(
             Okular::NormalizedRect(
                 popplerbbox.left(), popplerbbox.top(),
                 popplerbbox.right(), popplerbbox.bottom()
             )
         );
-        poppler::page_transition *popplerpagetransition = popplerpage->transition();
+        const poppler::page_transition *popplerpagetransition = popplerpage->transition();
         if (popplerpagetransition) {
             Okular::PageTransition* okulartransition = new Okular::PageTransition();
             okulartransition->setDuration(popplerpagetransition->duration());
@@ -447,11 +448,6 @@ Okular::FontInfo::List PDFGenerator::fontsForPage(int pageindex)
         }
         delete popplerfontiter;
     } else {
-        if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
-            kWarning() << "Page index out of range" << pageindex;
-            return result;
-        }
-
         poppler::font_iterator* popplerfontiter = m_popplerdocument->create_font_iterator(pageindex);
         while (popplerfontiter->has_next()) {
             const std::vector<poppler::font_info> popplerfontinfolist = popplerfontiter->next();
