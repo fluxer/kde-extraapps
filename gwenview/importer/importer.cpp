@@ -51,7 +51,7 @@ struct ImporterPrivate
 {
     Importer* q;
     QWidget* mAuthWindow;
-    std::auto_ptr<FileNameFormater> mFileNameFormater;
+    std::unique_ptr<FileNameFormater> mFileNameFormater;
     KUrl mTempImportDir;
 
     /* @defgroup reset Should be reset in start()
