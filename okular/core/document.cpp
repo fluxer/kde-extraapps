@@ -1500,10 +1500,11 @@ void DocumentPrivate::fontReadingProgress( int page )
 
 void DocumentPrivate::fontReadingGotFont( const Okular::FontInfo& font )
 {
-    // TODO try to avoid duplicate fonts
-    m_fontsCache.append( font );
+    if (!m_fontsCache.contains( font)) {
+        m_fontsCache.append( font );
 
-    emit m_parent->gotFont( font );
+        emit m_parent->gotFont( font );
+    }
 }
 
 void DocumentPrivate::slotGeneratorConfigChanged( const QString& )
