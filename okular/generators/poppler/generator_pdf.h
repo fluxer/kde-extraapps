@@ -50,7 +50,7 @@ class PDFGenerator : public Okular::Generator
         bool doCloseDocument() final;
 
     private:
-        QImage pageImage(const int pageindex, const Okular::Rotation okularorientation) const;
+        QImage pageImage(const int pageindex, const Okular::Rotation okularorientation);
 
         poppler::document *m_popplerdocument;
         QList<poppler::page*> m_popplerpages;

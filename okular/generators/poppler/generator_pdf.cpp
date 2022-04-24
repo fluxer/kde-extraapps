@@ -497,14 +497,6 @@ const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
 
 bool PDFGenerator::print(QPrinter &printer)
 {
-    QPainter qpainter(&printer);
-
-    QList<int> okularpageslist = Okular::FilePrinter::pageList(
-        printer, document()->pages(),
-        document()->currentPage() + 1,
-        document()->bookmarkedPageList()
-    );
-
     Okular::Rotation okularorientation = Okular::Rotation0;
     switch (printer.orientation()) {
         case QPrinter::Portrait: {
@@ -521,6 +513,12 @@ bool PDFGenerator::print(QPrinter &printer)
         }
     }
 
+    QPainter qpainter(&printer);
+    const QList<int> okularpageslist = Okular::FilePrinter::pageList(
+        printer, document()->pages(),
+        document()->currentPage() + 1,
+        document()->bookmarkedPageList()
+    );
     for (int i = 0; i < okularpageslist.size(); i++) {
         // qDebug() << Q_FUNC_INFO << i << (okularpageslist.at(i) - 1);
         QImage qimage = pageImage(okularpageslist.at(i) - 1, okularorientation);
@@ -583,7 +581,7 @@ Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
     return okulartextpage;
 }
 
-QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okularorientation) const
+QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okularorientation)
 {
     if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
         kWarning() << "Page index out of range" << pageindex;
@@ -612,6 +610,7 @@ QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okula
     );
     if (!popplerimage.is_valid()) {
         kWarning() << "Page rendering failed";
+        emit error(i18n("Page rendering failed"), -1);
         return QImage();
     }
     return QImage(
