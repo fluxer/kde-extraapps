@@ -564,12 +564,13 @@ Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
 
     Okular::TextPage* okulartextpage = new Okular::TextPage();
 
+    const poppler::rectf popplerbbox = popplerpage->page_rect();
     const std::vector<poppler::text_box> popplertextboxes = popplerpage->text_list();
     for (int i = 0; i < popplertextboxes.size(); i++) {
         const poppler::rectf popplertextbbox = popplertextboxes.at(i).bbox();
         Okular::NormalizedRect* okularrect = new Okular::NormalizedRect(
-            popplertextbbox.left(), popplertextbbox.top(),
-            popplertextbbox.right(), popplertextbbox.bottom()
+            popplertextbbox.left() / popplerbbox.width(), popplertextbbox.top() / popplerbbox.height(),
+            popplertextbbox.right() / popplerbbox.width(), popplertextbbox.bottom() / popplerbbox.height()
         );
         okulartextpage->append(
             okularString(popplertextboxes.at(i).text()),
@@ -602,7 +603,7 @@ QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okula
         popplerrenderer.set_paper_color(okularpapercolor.rgba());
     }
     popplerrenderer.set_image_format(poppler::image::format_argb32);
-    poppler::image popplerimage = popplerrenderer.render_page(
+    const poppler::image popplerimage = popplerrenderer.render_page(
         popplerpage,
         120.0, 120.0,
         -1, -1, -1, -1,
