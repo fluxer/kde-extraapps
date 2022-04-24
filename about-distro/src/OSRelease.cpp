@@ -50,6 +50,7 @@ OSRelease::OSRelease()
     //       fallback values are being used or not.
 
     // Set default values for non-optional fields.
+    logo = QLatin1String("start-here-kde");
     struct utsname utsName;
     ::uname(&utsName);
     prettyName = QString::fromLatin1(utsName.sysname);

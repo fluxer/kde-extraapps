@@ -27,7 +27,6 @@
 #include <KDebug>
 #include <KIcon>
 #include <KPluginFactory>
-#include <KMimeType>
 
 #include <solid/device.h>
 #include <solid/processor.h>
@@ -90,20 +89,7 @@ void Module::load()
 {
     OSRelease os;
 
-    QString logoString;
-    if (!os.logo.isEmpty()) {
-        kDebug() << "using logo from OS information" << os.logo;
-        logoString = os.logo;
-    } else if (!os.homeUrl.isEmpty()) {
-        kDebug() << "checking home URL for icon" << os.homeUrl;
-        logoString = KMimeType::favIconForUrl(KUrl(os.homeUrl));
-    }
-
-    if (logoString.isEmpty()) {
-        kDebug() << "fallback to start-here-kde icon";
-        logoString = QLatin1String("start-here-kde");
-    }
-    QPixmap logoPixmap = KIcon(logoString).pixmap(128, 128);
+    QPixmap logoPixmap = KIcon(os.logo).pixmap(128, 128);
     ui->logoLabel->setPixmap(logoPixmap);
 
     ui->nameVersionLabel->setText(os.prettyName);
