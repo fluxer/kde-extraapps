@@ -38,7 +38,7 @@ class RegularAreaRect;
  * But also it can provide information only about positions of every word on the page (not the character).
  * Furthermore it can provide information only about the position of the whole page's text on the page.
  *
- * Also some document types have glyphes - sets of characters rendered as one, so in search they should
+ * Also some document types have glyphs - sets of characters rendered as one, so in search they should
  * appear as a text but are only one character when drawn on screen. We need to allow this.
  */
 class OKULAR_EXPORT TextEntity
