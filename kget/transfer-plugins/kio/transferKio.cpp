@@ -214,6 +214,9 @@ void TransferKio::slotResult( KJob * kioJob )
 {
     kDebug(5001) << "slotResult" << kioJob->error() << kioJob->errorString();
 
+    m_downloadSpeed = 0;
+    setTransferChange(Transfer::Tc_DownloadSpeed, true);
+
     switch (kioJob->error()) {
         case 0:                            // The download has finished
         case KIO::ERR_FILE_ALREADY_EXIST: { // The file has already been downloaded.
