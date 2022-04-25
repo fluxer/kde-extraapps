@@ -441,15 +441,11 @@ Okular::FontInfo::List PDFGenerator::fontsForPage(int pageindex)
     // font iterators created for page index include fonts for other pages too so do not bother to
     // emit results for requests other than the "all pages fonts" request
     if (pageindex == -1) {
-        poppler::font_iterator* popplerfontiter = m_popplerdocument->create_font_iterator();
-        while (popplerfontiter->has_next()) {
-            const std::vector<poppler::font_info> popplerfontinfolist = popplerfontiter->next();
-            // qDebug() << Q_FUNC_INFO << pageindex << popplerfontiter->current_page() << popplerfontinfolist.size();
-            for (int i = 0; i < popplerfontinfolist.size(); i++) {
-                result.append(okularFontInfo(popplerfontinfolist.at(i)));
-            }
+        const std::vector<poppler::font_info> popplerfontinfolist = m_popplerdocument->fonts();
+        // qDebug() << Q_FUNC_INFO << pageindex << popplerfontinfolist.size();
+        for (int i = 0; i < popplerfontinfolist.size(); i++) {
+            result.append(okularFontInfo(popplerfontinfolist.at(i)));
         }
-        delete popplerfontiter;
     }
     return result;
 }
