@@ -591,9 +591,12 @@ QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okula
         popplerrenderer.set_paper_color(okularpapercolor.rgba());
     }
     popplerrenderer.set_image_format(poppler::image::format_argb32);
+    const QSizeF okulardpi = dpi();
+    // qDebug() << Q_FUNC_INFO << okulardpi;
     const poppler::image popplerimage = popplerrenderer.render_page(
         popplerpage,
-        120.0, 120.0,
+        // double the DPI since the image is always scaled
+        okulardpi.width() * 2, okulardpi.height() * 2,
         -1, -1, -1, -1,
         popplerRotation(okularorientation)
     );
