@@ -30,6 +30,13 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(UUID REQUIRED uuid)
 
+find_package(LIBPARTED REQUIRED)
+set_package_properties(LIBPARTED PROPERTIES
+    DESCRIPTION "GNU Parted manipulates partition tables"
+    URL "https://www.gnu.org/software/parted/"
+    PURPOSE "Required for partitions management"
+)
+
 macro_optional_find_package(LibATASmart)
 set_package_properties(LibATASmart PROPERTIES
     DESCRIPTION "ATA S.M.A.R.T. reading and parsing library"

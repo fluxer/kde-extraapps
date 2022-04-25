@@ -15,8 +15,6 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-find_package(LIBPARTED REQUIRED)
-
 if (LIBPARTED_FILESYSTEM_SUPPORT)
 	add_definitions(-DLIBPARTED_FILESYSTEM_SUPPORT)
 endif (LIBPARTED_FILESYSTEM_SUPPORT)
