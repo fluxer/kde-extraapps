@@ -148,6 +148,37 @@ bool GSGenerator::print( QPrinter& printer )
     return result;
 }
 
+Okular::ExportFormat::List GSGenerator::exportFormats() const
+{
+    Okular::ExportFormat::List result;
+    result.append(
+        Okular::ExportFormat(
+            KIcon(QString::fromLatin1("application-pdf")),
+            i18n("PDF Document"),
+            KMimeType::mimeType(QString::fromLatin1("application/pdf"))
+        )
+    );
+    return result;
+}
+
+bool GSGenerator::exportTo( const QString &fileName, const Okular::ExportFormat &format )
+{
+    if (!m_internalDocument) {
+        return false;
+    }
+    if (format.mimeType()->name() == QLatin1String("application/pdf")) {
+        const QByteArray filenamebytes = QFile::encodeName(fileName);
+        spectre_document_save_to_pdf(m_internalDocument, filenamebytes.constData());
+        const SpectreStatus loadStatus = spectre_document_status(m_internalDocument);
+        if (loadStatus != SPECTRE_STATUS_SUCCESS) {
+            kDebug(4711) << "ERR:" << spectre_status_to_string(loadStatus);
+            return false;
+        }
+        return true;
+    }
+    return false;
+}
+
 bool GSGenerator::loadDocument( const QString & fileName, QVector< Okular::Page * > & pagesVector )
 {
     cache_AAtext = documentMetaData("TextAntialias", true).toBool();

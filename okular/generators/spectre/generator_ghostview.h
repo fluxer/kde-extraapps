@@ -21,6 +21,10 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
     Q_INTERFACES( Okular::ConfigInterface )
 
     public:
+        /** constructor **/
+        GSGenerator( QObject *parent, const QVariantList &args );
+        ~GSGenerator();
+
         /** virtual methods to reimplement **/
         // load a document and fill up the pagesVector
         bool loadDocument( const QString & fileName, QVector< Okular::Page * > & pagesVector );
@@ -39,12 +43,12 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
         bool print( QPrinter& /*printer*/ );
         QString fileName() const;
 
+        // export as PDF
+        Okular::ExportFormat::List exportFormats() const;
+        bool exportTo( const QString &fileName, const Okular::ExportFormat &format );
+
         bool reparseConfig();
         void addPages( KConfigDialog* dlg );
-
-        /** constructor **/
-        GSGenerator( QObject *parent, const QVariantList &args );
-        ~GSGenerator();
 
     public slots:
         void slotImageGenerated(QImage *img, Okular::PixmapRequest *request);
