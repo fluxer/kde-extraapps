@@ -41,7 +41,6 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
 
         // print document using already configured kprinter
         bool print( QPrinter& /*printer*/ );
-        QString fileName() const;
 
         // export as PDF
         Okular::ExportFormat::List exportFormats() const;
