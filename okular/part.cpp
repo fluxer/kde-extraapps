@@ -331,8 +331,6 @@ m_cliPresentation(false), m_cliPrint(false), m_embedMode(detectEmbedMode(parentW
 
     // create browser extension (for printing when embedded into browser)
     m_bExtension = new BrowserExtension(this);
-    // create live connect extension (for integrating with browser scripting)
-    new OkularLiveConnectExtension( this );
 
     // we need an instance
     setComponentData( componentData );
