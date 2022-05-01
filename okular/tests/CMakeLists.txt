@@ -27,8 +27,9 @@ target_link_libraries(okular-translateannotationtest ${KDE4_KDECORE_LIBS} ${QT_Q
 kde4_add_test(okular-modifyannotationpropertiestest modifyannotationpropertiestest.cpp testingutils.cpp)
 target_link_libraries(okular-modifyannotationpropertiestest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} ${QT_QTXML_LIBRARY} okularcore )
 
-kde4_add_test(okular-editformstest editformstest.cpp )
-target_link_libraries(okular-editformstest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} ${QT_QTXML_LIBRARY} okularcore )
+# forms are not implemented
+# kde4_add_test(okular-editformstest editformstest.cpp )
+# target_link_libraries(okular-editformstest ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} ${QT_QTXML_LIBRARY} okularcore )
 
 kde4_add_test(okular-mainshelltest mainshelltest.cpp ../shell/okular_main.cpp ../shell/shellutils.cpp ../shell/shell.cpp )
 target_link_libraries(okular-mainshelltest ${KDE4_KPARTS_LIBS} ${QT_QTTEST_LIBRARY} okularpart okularcore )
