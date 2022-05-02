@@ -695,6 +695,7 @@ void TransferTorrent::slotCheckStateChanged()
     int counter = 0;
     m_priorities.clear();
     m_ltresumedata.clear();
+    m_ltresumedata.shrink_to_fit();
     foreach (const KUrl &url, files()) {
         const QModelIndex fileindex = m_filemodel->index(url, FileItem::File);
         const int checkstate = m_filemodel->data(fileindex, Qt::CheckStateRole).toInt();
@@ -804,6 +805,7 @@ void TransferTorrent::load(const QDomElement *element)
 
     m_priorities.clear();
     m_ltresumedata.clear();
+    m_ltresumedata.shrink_to_fit();
     if (element) {
         const QStringList priorities = element->attribute("FilePriorities").split(",");
         foreach (const QString &priority, priorities) {
