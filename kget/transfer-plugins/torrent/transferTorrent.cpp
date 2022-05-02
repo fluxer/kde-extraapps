@@ -28,11 +28,14 @@
 
 #include <boost/make_shared.hpp>
 #include <libtorrent/add_torrent_params.hpp>
-#include <libtorrent/write_resume_data.hpp>
 #include <libtorrent/alert_types.hpp>
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/announce_entry.hpp>
 #include <libtorrent/magnet_uri.hpp>
+
+#if LIBTORRENT_VERSION_MAJOR >= 1 && LIBTORRENT_VERSION_MINOR >= 2
+#  include <libtorrent/write_resume_data.hpp>
+#endif
 
 // NOTE: error_code comparison is bogus and breaks translatelterror() too,
 // possibly silently fixed via:
@@ -897,10 +900,12 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
         } else if (lt::alert_cast<lt::save_resume_data_alert>(ltalert)) {
             kDebug(5001) << "save resume data alert";
 
+#if LIBTORRENT_VERSION_MAJOR >= 1 && LIBTORRENT_VERSION_MINOR >= 2
             const lt::save_resume_data_alert* ltresumealert = lt::alert_cast<lt::save_resume_data_alert>(ltalert);
             if (ltresumealert) {
                 m_ltresumedata = lt::write_resume_data_buf(ltresumealert->params);
             }
+#endif
         } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
             kError(5001) << ltalert->message().c_str();
 
