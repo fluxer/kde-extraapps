@@ -33,7 +33,7 @@
 #include <libtorrent/announce_entry.hpp>
 #include <libtorrent/magnet_uri.hpp>
 
-#if LIBTORRENT_VERSION_MAJOR >= 1 && LIBTORRENT_VERSION_MINOR >= 2
+#if LIBTORRENT_VERSION_NUM >= 10200
 #  include <libtorrent/write_resume_data.hpp>
 #endif
 
@@ -508,10 +508,10 @@ void TransferTorrent::start()
         } else if (sourcestring.endsWith(".torrent")) {
             const QByteArray source = sourceurl.toLocalFile().toLocal8Bit();
 
-#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
-            ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
-#else
+#if LIBTORRENT_VERSION_NUM >= 10200
             ltparams.ti = std::make_shared<lt::torrent_info>(std::string(source.constData()));
+#else
+            ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
 #endif
             if (!ltparams.ti->is_valid()) {
                 kError(5001) << "invalid torrent file";
@@ -535,23 +535,23 @@ void TransferTorrent::start()
         }
 
         ltparams.save_path = destination.constData();
-#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
-        ltparams.file_priorities = m_priorities;
-#else
+#if LIBTORRENT_VERSION_NUM >= 10200
         std::vector<lt::download_priority_t> priorities;
         foreach (const boost::uint8_t priority, m_priorities) {
             priorities.push_back(lt::download_priority_t(priority));
         }
         ltparams.file_priorities = priorities;
+#else
+        ltparams.file_priorities = m_priorities;
 #endif
         ltparams.resume_data = m_ltresumedata;
         ltparams.upload_limit = (m_uploadLimit * 1024);
         ltparams.download_limit = (m_downloadLimit * 1024);
         m_lthandle = m_ltsession->add_torrent(ltparams);
-#if LIBTORRENT_VERSION_MAJOR <= 1 && LIBTORRENT_VERSION_MINOR <= 1
-    } catch(lt::libtorrent_exception &err) {
-#else
+#if LIBTORRENT_VERSION_NUM >= 10200
     } catch(boost::system::system_error &err) {
+#else
+    } catch(lt::libtorrent_exception &err) {
 #endif
         const QString errormesssage = QString::fromStdString(err.what());
         setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -900,7 +900,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
         } else if (lt::alert_cast<lt::save_resume_data_alert>(ltalert)) {
             kDebug(5001) << "save resume data alert";
 
-#if LIBTORRENT_VERSION_MAJOR >= 1 && LIBTORRENT_VERSION_MINOR >= 2
+#if LIBTORRENT_VERSION_NUM >= 10200
             const lt::save_resume_data_alert* ltresumealert = lt::alert_cast<lt::save_resume_data_alert>(ltalert);
             if (ltresumealert) {
                 m_ltresumedata = lt::write_resume_data_buf(ltresumealert->params);
