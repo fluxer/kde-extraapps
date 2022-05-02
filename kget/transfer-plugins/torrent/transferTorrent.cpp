@@ -28,6 +28,7 @@
 
 #include <boost/make_shared.hpp>
 #include <libtorrent/add_torrent_params.hpp>
+#include <libtorrent/write_resume_data.hpp>
 #include <libtorrent/alert_types.hpp>
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/announce_entry.hpp>
@@ -39,6 +40,7 @@
 #define BOOST_ERROR_EQUAL_OPERATOR_IS_BORKED
 
 static const int LTPollInterval = 1000;
+static const int LTResumeInterval = 10000;
 
 enum LTPriorities {
     Disabled = 0,
@@ -383,7 +385,8 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
                                  Scheduler* scheduler, const KUrl &source, const KUrl &dest,
                                  const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
-    m_startonload(false), m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr), m_dirwatch(nullptr)
+    m_startonload(false), m_polltimerid(0), m_resumetimerid(0), m_ltsession(nullptr),
+    m_filemodel(nullptr), m_dirwatch(nullptr)
 {
     setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming | Transfer::Cap_MultipleMirrors);
 
@@ -405,13 +408,13 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
 
 TransferTorrent::~TransferTorrent()
 {
-    if (m_lthandle.is_valid()) {
-        m_lthandle.save_resume_data();
+    if (m_resumetimerid != 0) {
+        killTimer(m_resumetimerid);
+        m_resumetimerid = 0;
     }
-
-    if (m_timerid != 0) {
-        killTimer(m_timerid);
-        m_timerid = 0;
+    if (m_polltimerid != 0) {
+        killTimer(m_polltimerid);
+        m_polltimerid = 0;
     }
 
     delete m_ltsession;
@@ -538,6 +541,7 @@ void TransferTorrent::start()
         }
         ltparams.file_priorities = priorities;
 #endif
+        ltparams.resume_data = m_ltresumedata;
         ltparams.upload_limit = (m_uploadLimit * 1024);
         ltparams.download_limit = (m_downloadLimit * 1024);
         m_lthandle = m_ltsession->add_torrent(ltparams);
@@ -568,8 +572,10 @@ void TransferTorrent::start()
     setStatus(Job::Running);
     setTransferChange(Transfer::Tc_Status, true);
 
-    Q_ASSERT(m_timerid == 0);
-    m_timerid = startTimer(LTPollInterval);
+    Q_ASSERT(m_polltimerid == 0);
+    m_polltimerid = startTimer(LTPollInterval);
+    Q_ASSERT(m_resumetimerid == 0);
+    m_resumetimerid = startTimer(LTResumeInterval);
 }
 
 void TransferTorrent::stop()
@@ -578,9 +584,13 @@ void TransferTorrent::stop()
         return;
     }
 
-    if (m_timerid != 0) {
-        killTimer(m_timerid);
-        m_timerid = 0;
+    if (m_resumetimerid != 0) {
+        killTimer(m_resumetimerid);
+        m_resumetimerid = 0;
+    }
+    if (m_polltimerid != 0) {
+        killTimer(m_polltimerid);
+        m_polltimerid = 0;
     }
 
     m_downloadSpeed = 0;
@@ -613,7 +623,7 @@ bool TransferTorrent::isStalled() const
 
 bool TransferTorrent::isWorking() const
 {
-    return (m_timerid != 0);
+    return (m_polltimerid != 0);
 }
 
 QList<KUrl> TransferTorrent::files() const
@@ -777,6 +787,10 @@ void TransferTorrent::save(const QDomElement &element)
     }
     elementcopy.setAttribute("FilePriorities", prioritiesstring);
 
+    const QByteArray resumedatahex = QByteArray::fromRawData(m_ltresumedata.data(), m_ltresumedata.size()).toHex();
+    const QString resumedata = QString::fromLatin1(resumedatahex.data(), resumedatahex.size());
+    elementcopy.setAttribute("ResumeData", resumedata);
+
     Transfer::save(elementcopy);
 }
 
@@ -785,10 +799,17 @@ void TransferTorrent::load(const QDomElement *element)
     Transfer::load(element);
 
     m_priorities.clear();
+    m_ltresumedata.clear();
     if (element) {
         const QStringList priorities = element->attribute("FilePriorities").split(",");
         foreach (const QString &priority, priorities) {
             m_priorities.push_back(boost::uint8_t(priority.toInt()));
+        }
+
+        const QByteArray resumedatahex = element->attribute("ResumeData").toLatin1();
+        const QByteArray resumedata = QByteArray::fromHex(resumedatahex);
+        if (!resumedata.isEmpty()) {
+            m_ltresumedata = std::vector<char>(resumedata.constData(), resumedata.constData() + resumedata.size());
         }
     }
 
@@ -807,8 +828,17 @@ void TransferTorrent::init()
 
 void TransferTorrent::timerEvent(QTimerEvent *event)
 {
-    if (event->timerId() != m_timerid) {
+    if (event->timerId() != m_polltimerid && event->timerId() != m_resumetimerid) {
         event->ignore();
+        return;
+    }
+
+    if (event->timerId() == m_resumetimerid) {
+        kDebug(5001) << "posting save resume data alert";
+        if (m_lthandle.is_valid()) {
+            m_lthandle.save_resume_data();
+        }
+        event->accept();
         return;
     }
 
@@ -864,13 +894,22 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
 
             setStatus(Job::FinishedKeepAlive);
             setTransferChange(Transfer::Tc_Status, true);
+        } else if (lt::alert_cast<lt::save_resume_data_alert>(ltalert)) {
+            kDebug(5001) << "save resume data alert";
+
+            const lt::save_resume_data_alert* ltresumealert = lt::alert_cast<lt::save_resume_data_alert>(ltalert);
+            if (ltresumealert) {
+                m_ltresumedata = lt::write_resume_data_buf(ltresumealert->params);
+            }
         } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
             kError(5001) << ltalert->message().c_str();
 
             const lt::torrent_error_alert* lterror = lt::alert_cast<lt::torrent_error_alert>(ltalert);
 
-            killTimer(m_timerid);
-            m_timerid = 0;
+            killTimer(m_resumetimerid);
+            m_resumetimerid = 0;
+            killTimer(m_polltimerid);
+            m_polltimerid = 0;
 
             const QString errormesssage = translatelterror(lterror->error);
             setError(errormesssage, SmallIcon("dialog-error"), Job::ManualSolve);

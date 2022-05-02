@@ -72,9 +72,11 @@ private:
     void applySettings();
 
     bool m_startonload;
-    int m_timerid;
+    int m_polltimerid;
+    int m_resumetimerid;
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;
+    std::vector<char> m_ltresumedata;
     TorrentFileModel* m_filemodel;
     std::vector<boost::uint8_t> m_priorities;
     KDirWatch* m_dirwatch;
