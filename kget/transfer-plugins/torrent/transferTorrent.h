@@ -65,13 +65,13 @@ protected:
     void setSpeedLimits(int uploadLimit, int downloadLimit) final;
 
 private Q_SLOTS:
-    void slotDelayedStart();
     void slotCheckStateChanged();
     void slotSettingsDirty(const QString &settings);
 
 private:
     void applySettings();
 
+    bool m_startonload;
     int m_timerid;
     lt::session* m_ltsession;
     lt::torrent_handle m_lthandle;

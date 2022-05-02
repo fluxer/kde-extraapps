@@ -383,7 +383,7 @@ TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory
                                  Scheduler* scheduler, const KUrl &source, const KUrl &dest,
                                  const QDomElement* e)
     : Transfer(parent, factory, scheduler, source, dest, e),
-    m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr), m_dirwatch(nullptr)
+    m_startonload(false), m_timerid(0), m_ltsession(nullptr), m_filemodel(nullptr), m_dirwatch(nullptr)
 {
     setCapabilities(Transfer::Cap_SpeedLimit | Transfer::Cap_Resuming | Transfer::Cap_MultipleMirrors);
 
@@ -791,20 +791,18 @@ void TransferTorrent::load(const QDomElement *element)
             m_priorities.push_back(boost::uint8_t(priority.toInt()));
         }
     }
+
+    if (m_startonload) {
+        start();
+    }
 }
 
 void TransferTorrent::init()
 {
     // start even if transfer is finished so that torrent is seeded
     if (policy() != Job::Stop) {
-        // do it after load(), this is racy
-        QTimer::singleShot(2000, this, SLOT(slotDelayedStart()));
+        m_startonload = true;
     }
-}
-
-void TransferTorrent::slotDelayedStart()
-{
-    start();
 }
 
 void TransferTorrent::timerEvent(QTimerEvent *event)
