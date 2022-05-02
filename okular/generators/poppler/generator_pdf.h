@@ -39,6 +39,7 @@ class PDFGenerator : public Okular::Generator
 
         Okular::FontInfo::List fontsForPage(int pageindex) final;
         const QList<Okular::EmbeddedFile*>* embeddedFiles() const final;
+        bool isAllowed(Okular::Permission action) const final;
 
         bool print(QPrinter &printer) final;
 

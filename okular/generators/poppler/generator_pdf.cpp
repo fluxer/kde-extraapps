@@ -479,6 +479,35 @@ const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
     return okularembeddedfiles;
 }
 
+bool PDFGenerator::isAllowed(Okular::Permission action) const
+{
+    // not implemented in Okular: poppler::perm_accessibility, poppler::perm_assemble
+    switch (action) {
+        case Okular::Permission::AllowModify: {
+            return m_popplerdocument->has_permission(poppler::perm_change);
+        }
+        case Okular::Permission::AllowCopy: {
+            return m_popplerdocument->has_permission(poppler::perm_copy);
+        }
+        case Okular::Permission::AllowPrint: {
+            // TODO: check poppler::perm_print_high_resolution too?
+            return m_popplerdocument->has_permission(poppler::perm_print);
+        }
+        case Okular::Permission::AllowNotes: {
+            return m_popplerdocument->has_permission(poppler::perm_add_notes);
+        }
+        case Okular::Permission::AllowFillForms: {
+            return m_popplerdocument->has_permission(poppler::perm_fill_forms);
+        }
+        default: {
+            kWarning() << "Unknown permission" << action;
+            break;
+        }
+    }
+    Q_ASSERT(false);
+    return false;
+}
+
 bool PDFGenerator::print(QPrinter &printer)
 {
     Okular::Rotation okularorientation = Okular::Rotation0;
