@@ -694,6 +694,7 @@ void TransferTorrent::slotCheckStateChanged()
 
     int counter = 0;
     m_priorities.clear();
+    m_ltresumedata.clear();
     foreach (const KUrl &url, files()) {
         const QModelIndex fileindex = m_filemodel->index(url, FileItem::File);
         const int checkstate = m_filemodel->data(fileindex, Qt::CheckStateRole).toInt();
