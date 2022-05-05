@@ -4,6 +4,7 @@ Type=Application
 Exec=krdc --icon '%i' --caption '%c' %u
 Icon=krdc
 Terminal=false
+MimeType=inode/vnd.kde.service.rfb;
 Name=KRDC
 Name[ar]=KRDC
 Name[ast]=KRDC
