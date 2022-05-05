@@ -41,7 +41,8 @@ VncViewFactory::~VncViewFactory()
 
 bool VncViewFactory::supportsUrl(const KUrl &url) const
 {
-    return (url.scheme().compare("vnc", Qt::CaseInsensitive) == 0);
+    const QString urlscheme = url.scheme();
+    return (urlscheme.compare("vnc", Qt::CaseInsensitive) == 0 || urlscheme.compare("rfb", Qt::CaseInsensitive) == 0);
 }
 
 RemoteView *VncViewFactory::createView(QWidget *parent, const KUrl &url, KConfigGroup configGroup)
