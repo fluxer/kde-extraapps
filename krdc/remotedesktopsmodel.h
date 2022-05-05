@@ -29,7 +29,7 @@
 #include <KDateTime>
 
 #ifdef BUILD_ZEROCONF
-#include <dnssd/servicebrowser.h>
+#include <kdnssd.h>
 #endif
 
 class KBookmarkGroup;
@@ -81,7 +81,7 @@ private:
     KBookmarkManager *m_manager;
 
 #ifdef BUILD_ZEROCONF
-    DNSSD::ServiceBrowser *zeroconfBrowser;
+    KDNSSD *zeroconfBrowser;
     QHash<QString, QString> m_protocols;
 #endif
 

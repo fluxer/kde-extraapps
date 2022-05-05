@@ -23,10 +23,7 @@
 #include "rfbserver.h"
 
 #include <kpasswdstore.h>
-
-namespace DNSSD {
-    class PublicService;
-}
+#include <kdnssd.h>
 
 class InvitationsRfbServer : public RfbServer
 {
@@ -55,7 +52,7 @@ protected:
     virtual PendingRfbClient* newClient(rfbClientPtr client);
 
 private:
-    DNSSD::PublicService *m_publicService;
+    KDNSSD *m_publicService;
     bool m_allowUnattendedAccess;
     QString m_desktopPassword;
     QString m_unattendedPassword;

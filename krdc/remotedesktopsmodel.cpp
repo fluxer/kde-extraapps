@@ -42,9 +42,9 @@ RemoteDesktopsModel::RemoteDesktopsModel(QObject *parent)
     // Add RDP and NX if they start announcing via Zeroconf:
     m_protocols["_rfb._tcp"] = "vnc";
 
-    zeroconfBrowser = new DNSSD::ServiceBrowser("_rfb._tcp", true);
+    zeroconfBrowser = new KDNSSD();
     connect(zeroconfBrowser, SIGNAL(finished()), this, SLOT(servicesChanged()));
-    zeroconfBrowser->startBrowse();
+    zeroconfBrowser->startBrowse("_rfb._tcp");
     kDebug(5010) << "Browsing for zeroconf hosts.";
 #endif
 }
@@ -276,19 +276,18 @@ void RemoteDesktopsModel::buildModelFromBookmarkGroup(const KBookmarkGroup &grou
 void RemoteDesktopsModel::servicesChanged()
 {
     //redo list because it is easier than finding and removing one that disappeared
-    QList<DNSSD::RemoteService::Ptr> services = zeroconfBrowser->services();
     KUrl url;
     removeAllItemsFromSources(RemoteDesktop::Zeroconf);
-    foreach(DNSSD::RemoteService::Ptr service, services) {
-        url.setProtocol(m_protocols[service->type()].toLower());
-        url.setHost(service->hostName());
-        url.setPort(service->port());
+    foreach(const KDNSSDService &service, zeroconfBrowser->services()) {
+        url.setProtocol(m_protocols[service.type].toLower());
+        url.setHost(service.hostname);
+        url.setPort(service.port);
 
         RemoteDesktop item;
         item.url = url.url();
 
         if (!remoteDesktops.contains(item)) {
-            item.title = service->serviceName();
+            item.title = service.name;
             item.source = RemoteDesktop::Zeroconf;
             item.created = KDateTime::currentLocalDateTime();
             item.favorite = false;

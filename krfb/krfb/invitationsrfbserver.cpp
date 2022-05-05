@@ -32,7 +32,6 @@
 #include <KUser>
 #include <KRandom>
 #include <KStringHandler>
-#include <DNSSD/PublicService>
 
 //static
 InvitationsRfbServer *InvitationsRfbServer::instance;
@@ -41,12 +40,7 @@ InvitationsRfbServer *InvitationsRfbServer::instance;
 void InvitationsRfbServer::init()
 {
     instance = new InvitationsRfbServer;
-    instance->m_publicService = new DNSSD::PublicService(
-            i18n("%1@%2 (shared desktop)",
-                KUser().loginName(),
-                QHostInfo::localHostName()),
-            "_rfb._tcp",
-            KrfbConfig::port());
+    instance->m_publicService = new KDNSSD();
     instance->setListeningAddress("0.0.0.0");
     instance->setListeningPort(KrfbConfig::port());
     instance->setPasswordRequired(true);
@@ -114,8 +108,13 @@ bool InvitationsRfbServer::allowUnattendedAccess() const
 bool InvitationsRfbServer::start()
 {
     if(RfbServer::start()) {
-        if(KrfbConfig::publishService())
-            m_publicService->publishAsync();
+        if(KrfbConfig::publishService()) {
+            m_publicService->publishService(
+                "_rfb._tcp",
+                KrfbConfig::port(),
+                i18n("%1@%2 (shared desktop)", KUser().loginName(), QHostInfo::localHostName())
+            );
+        }
         return true;
     }
     return false;
@@ -123,8 +122,8 @@ bool InvitationsRfbServer::start()
 
 void InvitationsRfbServer::stop(bool disconnectClients)
 {
-    if(m_publicService->isPublished())
-        m_publicService->stop();
+    if(m_publicService)
+        m_publicService->unpublishService();
     RfbServer::stop(disconnectClients);
 }
 
