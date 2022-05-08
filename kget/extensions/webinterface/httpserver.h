@@ -12,27 +12,24 @@
 #define HTTPSERVER_H
 
 #include <QWidget>
-#include <QTcpServer>
 
+#include <khttp.h>
 #include <kpasswdstore.h>
 
-class HttpServer : public QObject
+class HttpServer : public KHTTP
 {
     Q_OBJECT
-
 public:
     HttpServer(QWidget *parent = 0);
     ~HttpServer();
     
     void settingsChanged();
 
-private slots:
-    void handleRequest();
+protected:
+    void respond(const QByteArray &url, QByteArray *outdata, ushort *httpstatus, KHTTPHeaders *outheaders) final;
 
 private:
     KPasswdStore *m_passwdstore;
-    QTcpServer *m_tcpServer;
-    QString m_pwd;
 };
 
-#endif
+#endif // HTTPSERVER_H

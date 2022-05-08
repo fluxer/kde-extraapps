@@ -1,4 +1,5 @@
-set(www_data
+install(
+    FILES
     index.htm
     mootools-core-yc.js
     mootools-more.js
@@ -13,6 +14,5 @@ set(www_data
     title-border-bottom-downloads.png
     title-border-bottom-settings.png
     view-refresh.png
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/kget/www
 )
-
-install(FILES ${www_data} DESTINATION ${KDE4_DATA_INSTALL_DIR}/kget/www)
