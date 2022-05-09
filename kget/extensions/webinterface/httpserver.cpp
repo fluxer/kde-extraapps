@@ -81,9 +81,9 @@ void HttpServer::settingsChanged()
     }
 }
 
-void HttpServer::respond(const QByteArray &url, QByteArray *outdata, ushort *httpstatus, KHTTPHeaders *outheaders)
+void HttpServer::respond(const QByteArray &url, QByteArray *outdata, ushort *outhttpstatus, KHTTPHeaders *outheaders)
 {
-    *httpstatus = 200;
+    *outhttpstatus = 200;
 
     QByteArray data;
 
@@ -171,7 +171,7 @@ void HttpServer::respond(const QByteArray &url, QByteArray *outdata, ushort *htt
         QFile file(path);
 
         if (path.isEmpty() || !file.open(QIODevice::ReadOnly)) {
-            *httpstatus = 404;
+            *outhttpstatus = 404;
             // DO NOT TRANSLATE THE FOLLOWING MESSAGE! webserver messages are never translated.
             QString notfoundText = QString("<html><head><title>404 Not Found</title></head><body>"
                                         "<h1>Not Found</h1>The requested URL <code>%1</code> "
@@ -218,22 +218,19 @@ void HttpServer::respond(const QByteArray &url, QByteArray *outdata, ushort *htt
 
     outheaders->insert("Server", "KGet"); //TODO: add KGet version
     // for HTTP information see: http://www.jmarshall.com/easy/http/
-    QByteArray block;
-    if (url.endsWith(".png") && *httpstatus == 200) {
+    if (url.endsWith(".png") && *outhttpstatus == 200) {
         outheaders->insert("Content-Type", "image/png");
-    } else if (url.endsWith(".json") && *httpstatus == 200) {
+    } else if (url.endsWith(".json") && *outhttpstatus == 200) {
         outheaders->insert("Content-Type", "application/x-json");
-    } else if (url.endsWith(".gif") && *httpstatus == 200) {
+    } else if (url.endsWith(".gif") && *outhttpstatus == 200) {
         outheaders->insert("Content-Type", "image/gif");
-    } else if (url.endsWith(".js") && *httpstatus == 200) {
+    } else if (url.endsWith(".js") && *outhttpstatus == 200) {
         outheaders->insert("Content-Type", "text/javascript");
-    } else if (url.endsWith(".htc") && *httpstatus == 200) {
+    } else if (url.endsWith(".htc") && *outhttpstatus == 200) {
         outheaders->insert("Content-Type", "text/x-component");
     } else {
         outheaders->insert("Content-Type", "text/html; charset=UTF-8");
     }
-    block.append(data);
 
-    outdata->clear();
-    outdata->append(block);
+    outdata->append(data);
 }
