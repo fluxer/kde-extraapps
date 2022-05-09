@@ -216,7 +216,6 @@ void HttpServer::respond(const QByteArray &url, QByteArray *outdata, ushort *htt
         }
     }
 
-    // TODO: realm: KGet Webinterface Authorization
     outheaders->insert("Server", "KGet"); //TODO: add KGet version
     // for HTTP information see: http://www.jmarshall.com/easy/http/
     QByteArray block;
