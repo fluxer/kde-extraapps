@@ -81,8 +81,11 @@ void HttpServer::settingsChanged()
     }
 }
 
-void HttpServer::respond(const QByteArray &url, QByteArray *outdata, ushort *outhttpstatus, KHTTPHeaders *outheaders)
+void HttpServer::respond(const QByteArray &url, QByteArray *outdata,
+                         ushort *outhttpstatus, KHTTPHeaders *outheaders,
+                         QString *outfilePath)
 {
+    Q_UNUSED(outfilePath);
     *outhttpstatus = 200;
 
     QByteArray data;

@@ -26,7 +26,10 @@ public:
     void settingsChanged();
 
 protected:
-    void respond(const QByteArray &url, QByteArray *outdata, ushort *httpstatus, KHTTPHeaders *outheaders) final;
+    void respond(
+        const QByteArray &url,
+        QByteArray *outdata, ushort *httpstatus, KHTTPHeaders *outheaders, QString *outfilePath
+    ) final;
 
 private:
     KPasswdStore *m_passwdstore;
