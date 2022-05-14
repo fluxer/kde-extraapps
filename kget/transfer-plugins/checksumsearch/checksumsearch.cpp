@@ -57,7 +57,6 @@ void ChecksumSearch::createDownload()
         m_isEmpty = m_type.isEmpty();
 
         m_copyJob = KIO::get(m_src, KIO::Reload, KIO::HideProgressInfo);
-        m_copyJob->addMetaData("errorPage", "false");
         connect(m_copyJob, SIGNAL(data(KIO::Job*,QByteArray)), SLOT(slotData(KIO::Job*,QByteArray)));
         connect(m_copyJob, SIGNAL(result(KJob*)), SLOT(slotResult(KJob*)));
     }
