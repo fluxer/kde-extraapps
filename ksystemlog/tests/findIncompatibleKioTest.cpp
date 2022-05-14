@@ -87,7 +87,6 @@ void FindIncompatibleKioTest::find() {
 	existingMethods << QLatin1String("void SlaveBase::setModificationTime(KUrl const &, const QDateTime&)");
 	existingMethods << QLatin1String("void SlaveBase::chown(KUrl const &, const QString &, const QString &)");
 	existingMethods << QLatin1String("void SlaveBase::setSubUrl(KUrl const &)");
-	existingMethods << QLatin1String("void SlaveBase::multiGet(const QByteArray &)");
 
 	//logDebug() << existingMethods << endl;
 	
