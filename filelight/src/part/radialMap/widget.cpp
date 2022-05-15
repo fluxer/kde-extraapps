@@ -62,13 +62,22 @@ RadialMap::Widget::~Widget()
 QString
 RadialMap::Widget::path() const
 {
-    return m_tree->fullPath();
+    if (m_tree) {
+        return m_tree->fullPath();
+    }
+    return QString();
 }
 
 KUrl
 RadialMap::Widget::url(File const * const file) const
 {
-    return KUrl(file ? file->fullPath() : m_tree->fullPath());
+    if (file) {
+        return file->fullPath();
+    }
+    if (m_tree) {
+        return m_tree->fullPath();
+    }
+    return KUrl();
 }
 
 void
