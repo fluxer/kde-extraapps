@@ -18,7 +18,7 @@ build_script:
 
     sudo apt-get update -qq
 
-    sudo apt-get install -qq cmake katie-dev katana-baseapps \
+    sudo apt-get install -qq cmake katie-dev katanalibs \
         katana-workspace xorg-dev zlib1g-dev libacl1-dev libattr1-dev \
         libarchive-dev libasound2-dev libatasmart-dev libavcodec-dev \
         libavformat-dev libavutil-dev libblkid-dev libdjvulibre-dev \
