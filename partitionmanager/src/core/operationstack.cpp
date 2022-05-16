@@ -43,9 +43,6 @@
 #include <kdebug.h>
 #include <klocale.h>
 
-#include <QtCore/qreadwritelock.h>
-#include <QtCore/qreadwritelock.h>
-
 /** Constructs a new OperationStack */
 OperationStack::OperationStack(QObject* parent) :
 	QObject(parent),

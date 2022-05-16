@@ -73,7 +73,6 @@
 #include <ktemporaryfile.h>
 
 #include <QtGui/qevent.h>
-#include <QtCore/qreadwritelock.h>
 #include <QPointer>
 #include <QFile>
 #include <QDateTime>
