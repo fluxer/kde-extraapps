@@ -32,9 +32,9 @@ QString DictionaryMatchEngine::lookupWord(const QString &word)
 
 	ThreadData data;
 
-	m_wordLock.lockForWrite();
+	QMutexLocker locker(&m_wordLock);
 	m_lockers.insert(word, &data);
-	m_wordLock.unlock();
+	locker.unlock();
 
 	/* We lock it in this thread. Then we try to lock it again, which we cannot do, until the other thread
 	 * unlocks it for us first. We time-out after 30 seconds. */
@@ -43,9 +43,8 @@ QString DictionaryMatchEngine::lookupWord(const QString &word)
 	if (!data.mutex.tryLock(30 * 1000))
 		kDebug() << "The dictionary data engine timed out.";
 
-	m_wordLock.lockForWrite();
+	locker.relock();
 	m_lockers.remove(word, &data);
-	m_wordLock.unlock();
 
 	return data.definition;
 }
@@ -62,14 +61,13 @@ void DictionaryMatchEngine::dataUpdated(const QString &source, const Plasma::Dat
 
 	QString definition(result[QLatin1String("text")].toString());
 
-	m_wordLock.lockForRead();
+	QMutexLocker locker(&m_wordLock);
 	foreach (ThreadData *data, m_lockers.values(source)) {
 		/* Because of QString's CoW semantics, we don't have to worry about
 		 * the overhead of assigning this to every item. */
 		data->definition = definition;
 		data->mutex.unlock();
 	}
-	m_wordLock.unlock();
 }
 
 #include "moc_dictionarymatchengine.cpp"

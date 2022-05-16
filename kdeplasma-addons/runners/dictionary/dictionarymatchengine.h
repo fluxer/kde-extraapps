@@ -7,7 +7,6 @@
 
 #include <Plasma/DataEngine>
 #include <QHash>
-#include <QReadWriteLock>
 #include <QMutex>
 #include <QtCore/qmap.h>
 
@@ -29,7 +28,7 @@ private:
 		QString definition;
 	};
 	QMultiMap <QString, ThreadData*> m_lockers;
-	QReadWriteLock m_wordLock;
+	QMutex m_wordLock;
 	Plasma::DataEngine *m_dictionaryEngine;
 
 private slots:
