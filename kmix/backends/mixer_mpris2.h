@@ -28,7 +28,6 @@
 #include <QtDBus/qdbuspendingcall.h>
 #include <QMap>
 #include <QMutex>
-#include <QWaitCondition>
 #include <QQueue>
 
 #include "mixer_backend.h"
