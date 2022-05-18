@@ -22,8 +22,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include "moc_saveallhelper.cpp"
 
 // Qt
-#include <QFuture>
-#include <QFutureWatcher>
 #include <QSet>
 #include <QStringList>
 
