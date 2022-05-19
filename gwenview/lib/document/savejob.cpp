@@ -23,6 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Qt
 #include <QScopedPointer>
+#include <QDebug>
 
 // KDE
 #include <KApplication>
@@ -90,13 +91,14 @@ void SaveJob::threadedStart()
 
 void SaveJob::threadedFinish()
 {
+    // qDebug() << Q_FUNC_INFO << error() << d->mTemporaryFile << d->mNewUrl;
+    emitResult(); // nope, this does not sunder the sub-job
     if (!error()) {
         // whether to overwite has already been asked for
         KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
         job->ui()->setWindow(KApplication::kApplication()->activeWindow());
-        addSubjob(job);
+        job->exec();
     }
-    emitResult();
 }
 
 KUrl SaveJob::oldUrl() const
