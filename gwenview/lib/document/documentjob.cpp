@@ -43,7 +43,7 @@ void VoidFuture::run()
         kWarning() << "Invalid future";
         return;
     }
-    qDebug() << Q_FUNC_INFO;
+    // qDebug() << Q_FUNC_INFO;
     try {
         mFuturePtr->get();
     } catch (const std::system_error &err) {
@@ -67,7 +67,7 @@ void BoolFuture::run()
         kWarning() << "Invalid future";
         return;
     }
-    qDebug() << Q_FUNC_INFO;
+    // qDebug() << Q_FUNC_INFO;
     try {
 #if 0
         while (mFuturePtr->valid()) {
