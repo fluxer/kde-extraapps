@@ -39,26 +39,18 @@ namespace Gwenview
 class DocumentLoadedImpl;
 
 struct SaveJobPrivate;
-class GWENVIEWLIB_EXPORT SaveJob : public DocumentJob
+class GWENVIEWLIB_EXPORT SaveJob : public ThreadedDocumentJob
 {
     Q_OBJECT
 public:
     SaveJob(DocumentLoadedImpl* impl, const KUrl& url, const QByteArray& format);
     ~SaveJob();
-    void saveInternal();
 
     KUrl oldUrl() const;
     KUrl newUrl() const;
 
-protected Q_SLOTS:
-    virtual void doStart();
-    virtual void slotResult(KJob*);
-
-protected:
-    virtual bool doKill();
-
-private Q_SLOTS:
-    void finishSave();
+    virtual void threadedStart();
+    virtual void threadedFinish();
 
 private:
     SaveJobPrivate* const d;

@@ -46,9 +46,6 @@ struct SaveJobPrivate
     KUrl mNewUrl;
     QByteArray mFormat;
     QString mTemporaryFile;
-    QScopedPointer<VoidThread> mSaveFuture;
-
-    bool mKillReceived;
 };
 
 SaveJob::SaveJob(DocumentLoadedImpl* impl, const KUrl& url, const QByteArray& format)
@@ -58,8 +55,6 @@ SaveJob::SaveJob(DocumentLoadedImpl* impl, const KUrl& url, const QByteArray& fo
     d->mOldUrl = impl->document()->url();
     d->mNewUrl = url;
     d->mFormat = format;
-    d->mKillReceived = false;
-    setCapabilities(Killable);
 }
 
 SaveJob::~SaveJob()
@@ -67,21 +62,8 @@ SaveJob::~SaveJob()
     delete d;
 }
 
-void SaveJob::saveInternal()
+void SaveJob::threadedStart()
 {
-    if (!d->mImpl->saveInternal(d->mTemporaryFile, d->mFormat)) {
-        QFile::remove(d->mTemporaryFile);
-        setError(UserDefinedError + 2);
-        setErrorText(d->mImpl->document()->errorString());
-    }
-}
-
-void SaveJob::doStart()
-{
-    if (d->mKillReceived) {
-        return;
-    }
-
     {
         QScopedPointer<KTemporaryFile> temporaryFile(new KTemporaryFile());
         temporaryFile->setAutoRemove(true);
@@ -92,41 +74,29 @@ void SaveJob::doStart()
             dirUrl.setFileName(QString());
             setError(UserDefinedError + 1);
             setErrorText(i18nc("@info", "Could not open file for writing, check that you have the necessary rights in <filename>%1</filename>.", dirUrl.pathOrUrl()));
-            emitResult();
             return;
         }
         d->mTemporaryFile = temporaryFile->fileName();
     }
 
-    d->mSaveFuture.reset(new VoidThread(this, std::bind(&SaveJob::saveInternal, this)));
-    connect(d->mSaveFuture.data(), SIGNAL(finished()), SLOT(finishSave()));
-    d->mSaveFuture->start();
+    if (!d->mImpl->saveInternal(d->mTemporaryFile, d->mFormat)) {
+        QFile::remove(d->mTemporaryFile);
+        setError(UserDefinedError + 2);
+        setErrorText(d->mImpl->document()->errorString());
+    }
+
 }
 
-void SaveJob::finishSave()
+void SaveJob::threadedFinish()
 {
-    d->mSaveFuture.reset(nullptr);
-    if (d->mKillReceived) {
-        return;
+    if (!d->mTemporaryFile.isEmpty()) {
+        // whether to overwite has already been asked for
+        KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
+        job->ui()->setWindow(KApplication::kApplication()->activeWindow());
+        addSubjob(job);
     }
-
-    if (error()) {
-        emitResult();
-        return;
-    }
-
-    // whether to overwite has already been asked for
-    KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
-    job->ui()->setWindow(KApplication::kApplication()->activeWindow());
-    addSubjob(job);
-}
-
-void SaveJob::slotResult(KJob* job)
-{
-    DocumentJob::slotResult(job);
-    if (!error()) {
-        emitResult();
-    }
+    setError(NoError);
+    emitResult();
 }
 
 KUrl SaveJob::oldUrl() const
@@ -137,15 +107,6 @@ KUrl SaveJob::oldUrl() const
 KUrl SaveJob::newUrl() const
 {
     return d->mNewUrl;
-}
-
-bool SaveJob::doKill()
-{
-    d->mKillReceived = true;
-    if (d->mSaveFuture) {
-        d->mSaveFuture->wait();
-    }
-    return true;
 }
 
 } // namespace

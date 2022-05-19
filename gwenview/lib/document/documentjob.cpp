@@ -127,9 +127,14 @@ void ThreadedDocumentJob::doStart()
     mThreadedJob->start();
 }
 
-void ThreadedDocumentJob::slotFinished()
+void ThreadedDocumentJob::threadedFinish()
 {
     emitResult();
+}
+
+void ThreadedDocumentJob::slotFinished()
+{
+    threadedFinish();
 }
 
 } // namespace
