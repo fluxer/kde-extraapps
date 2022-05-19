@@ -22,10 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include "savejob.h"
 
 // Qt
-#include <QFuture>
-#include <QFutureWatcher>
 #include <QScopedPointer>
-#include <QtConcurrentRun>
 
 // KDE
 #include <KApplication>
@@ -49,7 +46,8 @@ struct SaveJobPrivate
     KUrl mNewUrl;
     QByteArray mFormat;
     QString mTemporaryFile;
-    QScopedPointer<QFutureWatcher<void> > mInternalSaveWatcher;
+    std::future<void> mFuture;
+    QScopedPointer<VoidFuture> mSaveFuture;
 
     bool mKillReceived;
 };
@@ -61,6 +59,7 @@ SaveJob::SaveJob(DocumentLoadedImpl* impl, const KUrl& url, const QByteArray& fo
     d->mOldUrl = impl->document()->url();
     d->mNewUrl = url;
     d->mFormat = format;
+    d->mFuture = std::async(std::launch::deferred, &SaveJob::saveInternal, this);
     d->mKillReceived = false;
     setCapabilities(Killable);
 }
@@ -101,15 +100,14 @@ void SaveJob::doStart()
         d->mTemporaryFile = temporaryFile->fileName();
     }
 
-    QFuture<void> future = QtConcurrent::run(this, &SaveJob::saveInternal);
-    d->mInternalSaveWatcher.reset(new QFutureWatcher<void>(this));
-    connect(d->mInternalSaveWatcher.data(), SIGNAL(finished()), SLOT(finishSave()));
-    d->mInternalSaveWatcher->setFuture(future);
+    d->mSaveFuture.reset(new VoidFuture(this, &d->mFuture));
+    connect(d->mSaveFuture.data(), SIGNAL(finished()), SLOT(finishSave()));
+    d->mSaveFuture->start();
 }
 
 void SaveJob::finishSave()
 {
-    d->mInternalSaveWatcher.reset(0);
+    d->mSaveFuture.reset(nullptr);
     if (d->mKillReceived) {
         return;
     }
@@ -146,8 +144,8 @@ KUrl SaveJob::newUrl() const
 bool SaveJob::doKill()
 {
     d->mKillReceived = true;
-    if (d->mInternalSaveWatcher) {
-        d->mInternalSaveWatcher->waitForFinished();
+    if (d->mSaveFuture) {
+        d->mSaveFuture->wait();
     }
     return true;
 }

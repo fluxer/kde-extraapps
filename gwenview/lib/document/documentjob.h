@@ -23,6 +23,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 #include <lib/gwenviewlib_export.h>
 
+// Qt
+#include <QThread>
+
 // KDE
 #include <KCompositeJob>
 
@@ -33,6 +36,35 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 namespace Gwenview
 {
+
+class GWENVIEWLIB_EXPORT VoidFuture : public QThread
+{
+    Q_OBJECT
+public:
+    VoidFuture(QObject *parent, std::future<void> *voidfuture);
+
+protected:
+    void run() final;
+
+private:
+    std::future<void> *mFuturePtr;
+};
+
+class GWENVIEWLIB_EXPORT BoolFuture : public QThread
+{
+    Q_OBJECT
+public:
+    BoolFuture(QObject *parent, std::future<bool> *boolfuture);
+
+    bool result() const;
+
+protected:
+    void run() final;
+
+private:
+    std::future<bool> *mFuturePtr;
+    bool mResult;
+};
 
 struct DocumentJobPrivate;
 
@@ -95,7 +127,6 @@ private:
     friend class Document;
 };
 
-class ThreadedJob;
 /**
  * A document job whose action is started in a separate thread
  */
@@ -119,7 +150,7 @@ private Q_SLOTS:
     void slotFinished();
 
 private:
-    ThreadedJob* mThreadedJob;
+    VoidFuture* mThreadedJob;
     std::future<void> mFuture;
 };
 

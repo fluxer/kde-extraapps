@@ -20,18 +20,74 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 */
 // Self
 #include "documentjob.h"
-// Qt
-#include <QThread>
 // KDE
 #include <KApplication>
 #include <KDebug>
 #include <kdialogjobuidelegate.h>
 #include <KLocale>
 
-// Local
+#include <chrono>
 
 namespace Gwenview
 {
+
+VoidFuture::VoidFuture(QObject *parent, std::future<void> *voidfuture)
+    : QThread(parent),
+    mFuturePtr(voidfuture)
+{
+}
+
+void VoidFuture::run()
+{
+    if (!mFuturePtr || !mFuturePtr->valid()) {
+        kWarning() << "Invalid future";
+        return;
+    }
+    qDebug() << Q_FUNC_INFO;
+    try {
+        mFuturePtr->get();
+    } catch (const std::system_error &err) {
+        kWarning() << err.what();
+    } catch (...) {
+        kWarning() << "Exception raised";
+    }
+}
+
+
+BoolFuture::BoolFuture(QObject *parent, std::future<bool> *boolfuture)
+    : QThread(parent),
+    mFuturePtr(boolfuture),
+    mResult(false)
+{
+}
+
+void BoolFuture::run()
+{
+    if (!mFuturePtr || !mFuturePtr->valid()) {
+        kWarning() << "Invalid future";
+        return;
+    }
+    qDebug() << Q_FUNC_INFO;
+    try {
+#if 0
+        while (mFuturePtr->valid()) {
+            qApp->processEvents();
+            mFuturePtr->wait_for(std::chrono::seconds(1));
+            qDebug() << "Waiting";
+        }
+#endif
+        mResult = mFuturePtr->get();
+    } catch (const std::system_error &err) {
+        kWarning() << err.what();
+    } catch (...) {
+        kWarning() << "Exception raised";
+    }
+}
+
+bool BoolFuture::result() const
+{
+    return mResult;
+}
 
 struct DocumentJobPrivate
 {
@@ -78,41 +134,20 @@ bool DocumentJob::checkDocumentEditor()
     return true;
 }
 
-class ThreadedJob : public QThread
-{
-    Q_OBJECT
-public:
-    ThreadedJob(QObject *parent, std::future<void> *jobfuture);
-
-protected:
-    void run() final;
-
-private:
-    std::future<void> *mFuturePtr;
-};
-
-ThreadedJob::ThreadedJob(QObject *parent, std::future<void> *jobfuture)
-    : QThread(parent),
-    mFuturePtr(jobfuture)
-{
-}
-
-void ThreadedJob::run()
-{
-    mFuturePtr->get();
-}
-
 ThreadedDocumentJob::ThreadedDocumentJob()
-    : mThreadedJob(nullptr)
+    : DocumentJob(),
+    mThreadedJob(nullptr)
 {
-    mThreadedJob = new ThreadedJob(this, &mFuture);
-    connect(mThreadedJob, SIGNAL(finished()), this, SLOT(slotFinished()));
     mFuture = std::async(std::launch::deferred, &ThreadedDocumentJob::threadedStart, this);
+    mThreadedJob = new VoidFuture(this, &mFuture);
+    connect(mThreadedJob, SIGNAL(finished()), this, SLOT(slotFinished()));
 }
 
 ThreadedDocumentJob::~ThreadedDocumentJob()
 {
-    mThreadedJob->wait();
+    if (!mThreadedJob->isFinished()) {
+        mThreadedJob->wait();
+    }
 }
 
 void ThreadedDocumentJob::doStart()
@@ -127,4 +162,4 @@ void ThreadedDocumentJob::slotFinished()
 
 } // namespace
 
-#include "documentjob.moc"
+#include "moc_documentjob.cpp"

@@ -28,8 +28,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <QBuffer>
 #include <QByteArray>
 #include <QFile>
-#include <QFuture>
-#include <QFutureWatcher>
 #include <QImage>
 #include <QImageReader>
 #include <QPointer>
@@ -47,6 +45,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // Local
 #include "animateddocumentloadedimpl.h"
 #include "document.h"
+#include "documentjob.h"
 #include "documentloadedimpl.h"
 #include "emptydocumentimpl.h"
 #include "exiv2imageloader.h"
@@ -76,10 +75,10 @@ struct LoadingDocumentImplPrivate
 {
     LoadingDocumentImpl* q;
     QPointer<KIO::TransferJob> mTransferJob;
-    QFuture<bool> mMetaInfoFuture;
-    QFutureWatcher<bool> mMetaInfoFutureWatcher;
-    QFuture<void> mImageDataFuture;
-    QFutureWatcher<void> mImageDataFutureWatcher;
+    std::future<bool> mMetaInfoFuture;
+    QScopedPointer<BoolFuture> mMetaInfoFutureWatcher;
+    std::future<void> mImageDataFuture;
+    QScopedPointer<VoidFuture> mImageDataFutureWatcher;
 
     // If != 0, this means we need to load an image at zoom =
     // 1/mImageDataInvertedZoom
@@ -145,8 +144,13 @@ struct LoadingDocumentImplPrivate
             //
             mFormatHint = q->document()->url().fileName()
                 .section('.', -1).toAscii().toLower();
-            mMetaInfoFuture = QtConcurrent::run(this, &LoadingDocumentImplPrivate::loadMetaInfo);
-            mMetaInfoFutureWatcher.setFuture(mMetaInfoFuture);
+            mMetaInfoFuture = std::async(std::launch::deferred, &LoadingDocumentImplPrivate::loadMetaInfo, this);
+            mMetaInfoFutureWatcher.reset(new BoolFuture(q, &mMetaInfoFuture));
+            q->connect(
+                mMetaInfoFutureWatcher.data(), SIGNAL(finished()),
+                q, SLOT(slotMetaInfoLoaded())
+            );
+            mMetaInfoFutureWatcher->start();
             break;
 
         default:
@@ -160,9 +164,14 @@ struct LoadingDocumentImplPrivate
         LOG("");
         Q_ASSERT(mMetaInfoLoaded);
         Q_ASSERT(mImageDataInvertedZoom != 0);
-        Q_ASSERT(!mImageDataFuture.isRunning());
-        mImageDataFuture = QtConcurrent::run(this, &LoadingDocumentImplPrivate::loadImageData);
-        mImageDataFutureWatcher.setFuture(mImageDataFuture);
+        Q_ASSERT(!mImageDataFutureWatcher->isRunning());
+        mImageDataFuture = std::async(std::launch::deferred, &LoadingDocumentImplPrivate::loadImageData, this);
+        mImageDataFutureWatcher.reset(new VoidFuture(q, &mImageDataFuture));
+        q->connect(
+            mImageDataFutureWatcher.data(), SIGNAL(finished()),
+            q, SLOT(slotImageLoaded())
+        );
+        mImageDataFutureWatcher->start();
     }
 
     bool loadMetaInfo()
@@ -281,23 +290,25 @@ LoadingDocumentImpl::LoadingDocumentImpl(Document* document)
     d->mAnimated = false;
     d->mDownSampledImageLoaded = false;
     d->mImageDataInvertedZoom = 0;
-
-    connect(&d->mMetaInfoFutureWatcher, SIGNAL(finished()),
-            SLOT(slotMetaInfoLoaded()));
-
-    connect(&d->mImageDataFutureWatcher, SIGNAL(finished()),
-            SLOT(slotImageLoaded()));
 }
 
 LoadingDocumentImpl::~LoadingDocumentImpl()
 {
     LOG("");
     // Disconnect watchers to make sure they do not trigger further work
-    d->mMetaInfoFutureWatcher.disconnect();
-    d->mImageDataFutureWatcher.disconnect();
+    if (d->mMetaInfoFutureWatcher) {
+        d->mMetaInfoFutureWatcher->disconnect();
+    }
+    if (d->mImageDataFutureWatcher) {
+        d->mImageDataFutureWatcher->disconnect();
+    }
 
-    d->mMetaInfoFutureWatcher.waitForFinished();
-    d->mImageDataFutureWatcher.waitForFinished();
+    if (d->mMetaInfoFutureWatcher) {
+        d->mMetaInfoFutureWatcher->wait();
+    }
+    if (d->mImageDataFutureWatcher) {
+        d->mImageDataFutureWatcher->wait();
+    }
 
     if (d->mTransferJob) {
         d->mTransferJob->kill();
@@ -345,7 +356,9 @@ void LoadingDocumentImpl::loadImage(int invertedZoom)
         LOG("Ignoring request: we are loading a full image");
         return;
     }
-    d->mImageDataFutureWatcher.waitForFinished();
+    if (d->mImageDataFutureWatcher) {
+        d->mImageDataFutureWatcher->wait();
+    }
     d->mImageDataInvertedZoom = invertedZoom;
 
     if (d->mMetaInfoLoaded) {
@@ -398,8 +411,8 @@ Document::LoadingState LoadingDocumentImpl::loadingState() const
 void LoadingDocumentImpl::slotMetaInfoLoaded()
 {
     LOG("");
-    Q_ASSERT(!d->mMetaInfoFuture.isRunning());
-    if (!d->mMetaInfoFuture.result()) {
+    Q_ASSERT(!d->mMetaInfoFutureWatcher->isRunning());
+    if (!d->mMetaInfoFutureWatcher->result()) {
         setDocumentErrorString(
             i18nc("@info", "Loading meta information failed.")
         );
@@ -418,7 +431,7 @@ void LoadingDocumentImpl::slotMetaInfoLoaded()
     // Start image loading if necessary
     // We test if mImageDataFuture is not already running because code connected to
     // metaInfoLoaded() signal could have called loadImage()
-    if (!d->mImageDataFuture.isRunning() && d->mImageDataInvertedZoom != 0) {
+    if (d->mImageDataFutureWatcher && !d->mImageDataFutureWatcher->isRunning() && d->mImageDataInvertedZoom != 0) {
         d->startImageDataLoading();
     }
 }
