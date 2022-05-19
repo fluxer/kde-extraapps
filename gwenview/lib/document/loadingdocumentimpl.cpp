@@ -417,8 +417,10 @@ void LoadingDocumentImpl::slotMetaInfoLoaded()
         );
         emit loadingFailed();
         switchToImpl(new EmptyDocumentImpl(document()));
+        d->mMetaInfoFutureWatcher.reset(nullptr);
         return;
     }
+    d->mMetaInfoFutureWatcher.reset(nullptr);
 
     setDocumentFormat(d->mFormat);
     setDocumentImageSize(d->mImageSize);
@@ -444,8 +446,10 @@ void LoadingDocumentImpl::slotImageLoaded()
         );
         emit loadingFailed();
         switchToImpl(new EmptyDocumentImpl(document()));
+        d->mImageDataFutureWatcher.reset(nullptr);
         return;
     }
+    d->mImageDataFutureWatcher.reset(nullptr);
 
     if (d->mAnimated) {
         if (d->mImage.size() == d->mImageSize) {
