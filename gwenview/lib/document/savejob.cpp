@@ -64,6 +64,7 @@ SaveJob::~SaveJob()
 
 void SaveJob::threadedStart()
 {
+    setError(NoError);
     {
         QScopedPointer<KTemporaryFile> temporaryFile(new KTemporaryFile());
         temporaryFile->setAutoRemove(true);
@@ -89,13 +90,12 @@ void SaveJob::threadedStart()
 
 void SaveJob::threadedFinish()
 {
-    if (!d->mTemporaryFile.isEmpty()) {
+    if (!error()) {
         // whether to overwite has already been asked for
         KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
         job->ui()->setWindow(KApplication::kApplication()->activeWindow());
         addSubjob(job);
     }
-    setError(NoError);
     emitResult();
 }
 
