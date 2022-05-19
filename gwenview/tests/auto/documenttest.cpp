@@ -289,10 +289,10 @@ void DocumentTest::testLoadAnimated()
     doc->waitUntilLoaded();
     QVERIFY(doc->isAnimated());
 
-    // Test we receive only one imageRectUpdated() until animation is started
+    // Test we do not receive imageRectUpdated() until animation is started
     // (the imageRectUpdated() is triggered by the loading of the first image)
     QTest::qWait(1000);
-    QCOMPARE(spy.count(), 1);
+    QCOMPARE(spy.count(), 0);
 
     // Test we now receive some imageRectUpdated()
     doc->startAnimation();
