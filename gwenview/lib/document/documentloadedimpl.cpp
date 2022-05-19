@@ -79,9 +79,9 @@ Document::LoadingState DocumentLoadedImpl::loadingState() const
     return Document::Loaded;
 }
 
-bool DocumentLoadedImpl::saveInternal(QIODevice* device, const QByteArray& format)
+bool DocumentLoadedImpl::saveInternal(const QString& filePath, const QByteArray& format)
 {
-    QImageWriter writer(device, format);
+    QImageWriter writer(filePath, format);
     bool ok = writer.write(document()->image());
     if (ok) {
         setDocumentFormat(format);

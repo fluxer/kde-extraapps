@@ -48,8 +48,7 @@ struct SaveJobPrivate
     KUrl mOldUrl;
     KUrl mNewUrl;
     QByteArray mFormat;
-    QScopedPointer<KTemporaryFile> mTemporaryFile;
-    QScopedPointer<KSaveFile> mSaveFile;
+    QString mTemporaryFile;
     QScopedPointer<QFutureWatcher<void> > mInternalSaveWatcher;
 
     bool mKillReceived;
@@ -73,8 +72,8 @@ SaveJob::~SaveJob()
 
 void SaveJob::saveInternal()
 {
-    if (!d->mImpl->saveInternal(d->mSaveFile.data(), d->mFormat)) {
-        d->mSaveFile->abort();
+    if (!d->mImpl->saveInternal(d->mTemporaryFile, d->mFormat)) {
+        QFile::remove(d->mTemporaryFile);
         setError(UserDefinedError + 2);
         setErrorText(d->mImpl->document()->errorString());
     }
@@ -85,26 +84,21 @@ void SaveJob::doStart()
     if (d->mKillReceived) {
         return;
     }
-    QString fileName;
 
-    if (d->mNewUrl.isLocalFile()) {
-        fileName = d->mNewUrl.toLocalFile();
-    } else {
-        d->mTemporaryFile.reset(new KTemporaryFile);
-        d->mTemporaryFile->setAutoRemove(true);
-        d->mTemporaryFile->open();
-        fileName = d->mTemporaryFile->fileName();
-    }
+    {
+        QScopedPointer<KTemporaryFile> temporaryFile(new KTemporaryFile());
+        temporaryFile->setAutoRemove(true);
+        temporaryFile->setSuffix(QString::fromLatin1(".%1").arg(d->mFormat.constData()));
 
-    d->mSaveFile.reset(new KSaveFile(fileName));
-
-    if (!d->mSaveFile->open()) {
-        KUrl dirUrl = d->mNewUrl;
-        dirUrl.setFileName(QString());
-        setError(UserDefinedError + 1);
-        setErrorText(i18nc("@info", "Could not open file for writing, check that you have the necessary rights in <filename>%1</filename>.", dirUrl.pathOrUrl()));
-        emitResult();
-        return;
+        if (!temporaryFile->open()) {
+            KUrl dirUrl = d->mNewUrl;
+            dirUrl.setFileName(QString());
+            setError(UserDefinedError + 1);
+            setErrorText(i18nc("@info", "Could not open file for writing, check that you have the necessary rights in <filename>%1</filename>.", dirUrl.pathOrUrl()));
+            emitResult();
+            return;
+        }
+        d->mTemporaryFile = temporaryFile->fileName();
     }
 
     QFuture<void> future = QtConcurrent::run(this, &SaveJob::saveInternal);
@@ -125,19 +119,10 @@ void SaveJob::finishSave()
         return;
     }
 
-    if (!d->mSaveFile->finalize()) {
-        setErrorText(i18nc("@info", "Could not overwrite file, check that you have the necessary rights to write in <filename>%1</filename>.", d->mNewUrl.pathOrUrl()));
-        setError(UserDefinedError + 3);
-        return;
-    }
-
-    if (d->mNewUrl.isLocalFile()) {
-        emitResult();
-    } else {
-        KIO::Job* job = KIO::copy(KUrl::fromPath(d->mTemporaryFile->fileName()), d->mNewUrl);
-        job->ui()->setWindow(KApplication::kApplication()->activeWindow());
-        addSubjob(job);
-    }
+    // whether to overwite has already been asked for
+    KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
+    job->ui()->setWindow(KApplication::kApplication()->activeWindow());
+    addSubjob(job);
 }
 
 void SaveJob::slotResult(KJob* job)

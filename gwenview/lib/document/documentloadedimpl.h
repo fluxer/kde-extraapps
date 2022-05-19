@@ -58,7 +58,7 @@ public:
     //
 
 protected:
-    virtual bool saveInternal(QIODevice* device, const QByteArray& format);
+    virtual bool saveInternal(const QString& filePath, const QByteArray& format);
 
     // AbstractDocumentEditor
     virtual void setImage(const QImage&);
