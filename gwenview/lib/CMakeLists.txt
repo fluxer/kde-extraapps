@@ -94,13 +94,6 @@ set(gwenviewlib_SRCS
     sorteddirmodel.cpp
 )
 
-set_source_files_properties(
-    exiv2imageloader.cpp
-    imagemetainfomodel.cpp
-    timeutils.cpp
-    PROPERTIES
-)
-
 kde4_add_kcfg_files(gwenviewlib_SRCS gwenviewconfig.kcfgc)
 
 add_library(gwenviewlib SHARED ${gwenviewlib_SRCS})
@@ -117,6 +110,7 @@ target_link_libraries(gwenviewlib
     ${QT_QTGUI_LIBRARY}
     ${EXIV2_LIBRARIES}
     ${X11_X11_LIB}
+    ${CMAKE_THREAD_LIBS_INIT}
 )
 
 install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})

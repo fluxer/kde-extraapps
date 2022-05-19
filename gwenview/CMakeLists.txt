@@ -9,6 +9,15 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 ## Dependencies
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+find_package(Threads)
+set_package_properties(Threads PROPERTIES
+    PURPOSE "Required for asynchorouns functions and methods execution"
+    DESCRIPTION "Platform dependent threads implementation"
+    URL ""
+    TYPE REQUIRED
+)
+
 find_package(Exiv2 0.19)
 set_package_properties(Exiv2 PROPERTIES
     DESCRIPTION "Image Tag reader"
