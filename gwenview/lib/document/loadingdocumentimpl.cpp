@@ -428,7 +428,7 @@ void LoadingDocumentImpl::slotMetaInfoLoaded()
     // Start image loading if necessary
     // We test if mImageDataFuture is not already running because code connected to
     // metaInfoLoaded() signal could have called loadImage()
-    if (d->mImageDataFutureWatcher && !d->mImageDataFutureWatcher->isRunning() && d->mImageDataInvertedZoom != 0) {
+    if ((!d->mImageDataFutureWatcher || !d->mImageDataFutureWatcher->isRunning()) && d->mImageDataInvertedZoom != 0) {
         d->startImageDataLoading();
     }
 }
