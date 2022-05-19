@@ -23,13 +23,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 #include <lib/gwenviewlib_export.h>
 
-// Qt
-
 // KDE
 #include <KCompositeJob>
 
 // Local
 #include <lib/document/document.h>
+
+#include <future>
 
 namespace Gwenview
 {
@@ -95,12 +95,17 @@ private:
     friend class Document;
 };
 
+class ThreadedJob;
 /**
  * A document job whose action is started in a separate thread
  */
 class ThreadedDocumentJob : public DocumentJob
 {
+    Q_OBJECT
 public:
+    ThreadedDocumentJob();
+    ~ThreadedDocumentJob();
+
     /**
      * Must be reimplemented to apply the action to the document.
      * This method is never called from the GUI thread.
@@ -109,6 +114,13 @@ public:
 
 protected:
     virtual void doStart();
+
+private Q_SLOTS:
+    void slotFinished();
+
+private:
+    ThreadedJob* mThreadedJob;
+    std::future<void> mFuture;
 };
 
 } // namespace

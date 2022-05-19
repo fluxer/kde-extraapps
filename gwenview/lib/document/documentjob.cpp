@@ -20,12 +20,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 */
 // Self
 #include "documentjob.h"
-
 // Qt
-#include <QFuture>
-#include <QFutureWatcher>
-#include <QtConcurrentRun>
-
+#include <QThread>
 // KDE
 #include <KApplication>
 #include <KDebug>
@@ -82,14 +78,53 @@ bool DocumentJob::checkDocumentEditor()
     return true;
 }
 
+class ThreadedJob : public QThread
+{
+    Q_OBJECT
+public:
+    ThreadedJob(QObject *parent, std::future<void> *jobfuture);
+
+protected:
+    void run() final;
+
+private:
+    std::future<void> *mFuturePtr;
+};
+
+ThreadedJob::ThreadedJob(QObject *parent, std::future<void> *jobfuture)
+    : QThread(parent),
+    mFuturePtr(jobfuture)
+{
+}
+
+void ThreadedJob::run()
+{
+    mFuturePtr->get();
+}
+
+ThreadedDocumentJob::ThreadedDocumentJob()
+    : mThreadedJob(nullptr)
+{
+    mThreadedJob = new ThreadedJob(this, &mFuture);
+    connect(mThreadedJob, SIGNAL(finished()), this, SLOT(slotFinished()));
+    mFuture = std::async(std::launch::deferred, &ThreadedDocumentJob::threadedStart, this);
+}
+
+ThreadedDocumentJob::~ThreadedDocumentJob()
+{
+    mThreadedJob->wait();
+}
+
 void ThreadedDocumentJob::doStart()
 {
-    QFuture<void> future = QtConcurrent::run(this, &ThreadedDocumentJob::threadedStart);
-    QFutureWatcher<void>* watcher = new QFutureWatcher<void>(this);
-    connect(watcher, SIGNAL(finished()), SLOT(emitResult()));
-    watcher->setFuture(future);
+    mThreadedJob->start();
+}
+
+void ThreadedDocumentJob::slotFinished()
+{
+    emitResult();
 }
 
 } // namespace
 
-#include "moc_documentjob.cpp"
+#include "documentjob.moc"
