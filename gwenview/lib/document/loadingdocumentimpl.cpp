@@ -74,10 +74,8 @@ struct LoadingDocumentImplPrivate
 {
     LoadingDocumentImpl* q;
     QPointer<KIO::TransferJob> mTransferJob;
-    std::future<bool> mMetaInfoFuture;
-    QScopedPointer<BoolFuture> mMetaInfoFutureWatcher;
-    std::future<void> mImageDataFuture;
-    QScopedPointer<VoidFuture> mImageDataFutureWatcher;
+    QScopedPointer<BoolThread> mMetaInfoFutureWatcher;
+    QScopedPointer<VoidThread> mImageDataFutureWatcher;
 
     // If != 0, this means we need to load an image at zoom =
     // 1/mImageDataInvertedZoom
@@ -143,8 +141,7 @@ struct LoadingDocumentImplPrivate
             //
             mFormatHint = q->document()->url().fileName()
                 .section('.', -1).toAscii().toLower();
-            mMetaInfoFuture = std::async(std::launch::deferred, &LoadingDocumentImplPrivate::loadMetaInfo, this);
-            mMetaInfoFutureWatcher.reset(new BoolFuture(q, &mMetaInfoFuture));
+            mMetaInfoFutureWatcher.reset(new BoolThread(q, std::bind(&LoadingDocumentImplPrivate::loadMetaInfo, this)));
             q->connect(
                 mMetaInfoFutureWatcher.data(), SIGNAL(finished()),
                 q, SLOT(slotMetaInfoLoaded())
@@ -164,8 +161,7 @@ struct LoadingDocumentImplPrivate
         Q_ASSERT(mMetaInfoLoaded);
         Q_ASSERT(mImageDataInvertedZoom != 0);
         Q_ASSERT(!mImageDataFutureWatcher->isRunning());
-        mImageDataFuture = std::async(std::launch::deferred, &LoadingDocumentImplPrivate::loadImageData, this);
-        mImageDataFutureWatcher.reset(new VoidFuture(q, &mImageDataFuture));
+        mImageDataFutureWatcher.reset(new VoidThread(q, std::bind(&LoadingDocumentImplPrivate::loadImageData, this)));
         q->connect(
             mImageDataFutureWatcher.data(), SIGNAL(finished()),
             q, SLOT(slotImageLoaded())

@@ -46,8 +46,7 @@ struct SaveJobPrivate
     KUrl mNewUrl;
     QByteArray mFormat;
     QString mTemporaryFile;
-    std::future<void> mFuture;
-    QScopedPointer<VoidFuture> mSaveFuture;
+    QScopedPointer<VoidThread> mSaveFuture;
 
     bool mKillReceived;
 };
@@ -59,7 +58,6 @@ SaveJob::SaveJob(DocumentLoadedImpl* impl, const KUrl& url, const QByteArray& fo
     d->mOldUrl = impl->document()->url();
     d->mNewUrl = url;
     d->mFormat = format;
-    d->mFuture = std::async(std::launch::deferred, &SaveJob::saveInternal, this);
     d->mKillReceived = false;
     setCapabilities(Killable);
 }
@@ -100,7 +98,7 @@ void SaveJob::doStart()
         d->mTemporaryFile = temporaryFile->fileName();
     }
 
-    d->mSaveFuture.reset(new VoidFuture(this, &d->mFuture));
+    d->mSaveFuture.reset(new VoidThread(this, std::bind(&SaveJob::saveInternal, this)));
     connect(d->mSaveFuture.data(), SIGNAL(finished()), SLOT(finishSave()));
     d->mSaveFuture->start();
 }

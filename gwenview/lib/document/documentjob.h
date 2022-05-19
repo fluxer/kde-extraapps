@@ -32,29 +32,32 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Local
 #include <lib/document/document.h>
 
-#include <future>
+#include <functional>
 
 namespace Gwenview
 {
 
-class GWENVIEWLIB_EXPORT VoidFuture : public QThread
+typedef std::function<void()> VoidFuncPtr;
+typedef std::function<bool()> BoolFuncPtr;
+
+class GWENVIEWLIB_EXPORT VoidThread : public QThread
 {
     Q_OBJECT
 public:
-    VoidFuture(QObject *parent, std::future<void> *voidfuture);
+    VoidThread(QObject *parent, VoidFuncPtr voidfuncptr);
 
 protected:
     void run() final;
 
 private:
-    std::future<void> *mFuturePtr;
+    VoidFuncPtr mFuncPtr;
 };
 
-class GWENVIEWLIB_EXPORT BoolFuture : public QThread
+class GWENVIEWLIB_EXPORT BoolThread : public QThread
 {
     Q_OBJECT
 public:
-    BoolFuture(QObject *parent, std::future<bool> *boolfuture);
+    BoolThread(QObject *parent, BoolFuncPtr boolfuncptr);
 
     bool result() const;
 
@@ -62,7 +65,7 @@ protected:
     void run() final;
 
 private:
-    std::future<bool> *mFuturePtr;
+    BoolFuncPtr mFuncPtr;
     bool mResult;
 };
 
@@ -150,8 +153,7 @@ private Q_SLOTS:
     void slotFinished();
 
 private:
-    VoidFuture* mThreadedJob;
-    std::future<void> mFuture;
+    VoidThread* mThreadedJob;
 };
 
 } // namespace

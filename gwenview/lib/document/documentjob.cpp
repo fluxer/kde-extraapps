@@ -31,60 +31,33 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 namespace Gwenview
 {
 
-VoidFuture::VoidFuture(QObject *parent, std::future<void> *voidfuture)
+VoidThread::VoidThread(QObject *parent, VoidFuncPtr voidfuncptr)
     : QThread(parent),
-    mFuturePtr(voidfuture)
+    mFuncPtr(voidfuncptr)
 {
 }
 
-void VoidFuture::run()
+void VoidThread::run()
 {
-    if (!mFuturePtr || !mFuturePtr->valid()) {
-        kWarning() << "Invalid future";
-        return;
-    }
     // qDebug() << Q_FUNC_INFO;
-    try {
-        mFuturePtr->get();
-    } catch (const std::system_error &err) {
-        kWarning() << err.what();
-    } catch (...) {
-        kWarning() << "Exception raised";
-    }
+    mFuncPtr();
 }
 
 
-BoolFuture::BoolFuture(QObject *parent, std::future<bool> *boolfuture)
+BoolThread::BoolThread(QObject *parent, BoolFuncPtr boolfuncptr)
     : QThread(parent),
-    mFuturePtr(boolfuture),
+    mFuncPtr(boolfuncptr),
     mResult(false)
 {
 }
 
-void BoolFuture::run()
+void BoolThread::run()
 {
-    if (!mFuturePtr || !mFuturePtr->valid()) {
-        kWarning() << "Invalid future";
-        return;
-    }
     // qDebug() << Q_FUNC_INFO;
-    try {
-#if 0
-        while (mFuturePtr->valid()) {
-            qApp->processEvents();
-            mFuturePtr->wait_for(std::chrono::seconds(1));
-            qDebug() << "Waiting";
-        }
-#endif
-        mResult = mFuturePtr->get();
-    } catch (const std::system_error &err) {
-        kWarning() << err.what();
-    } catch (...) {
-        kWarning() << "Exception raised";
-    }
+    mResult = mFuncPtr();
 }
 
-bool BoolFuture::result() const
+bool BoolThread::result() const
 {
     return mResult;
 }
@@ -138,8 +111,7 @@ ThreadedDocumentJob::ThreadedDocumentJob()
     : DocumentJob(),
     mThreadedJob(nullptr)
 {
-    mFuture = std::async(std::launch::deferred, &ThreadedDocumentJob::threadedStart, this);
-    mThreadedJob = new VoidFuture(this, &mFuture);
+    mThreadedJob = new VoidThread(this, std::bind(&ThreadedDocumentJob::threadedStart, this));
     connect(mThreadedJob, SIGNAL(finished()), this, SLOT(slotFinished()));
 }
 
