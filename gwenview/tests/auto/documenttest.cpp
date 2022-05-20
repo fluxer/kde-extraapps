@@ -695,7 +695,7 @@ public:
     }
 
 protected:
-    virtual void doStart()
+    void doStart() final
     {
         document()->waitUntilLoaded();
         *mHasEditor = checkDocumentEditor() ? 1 : 0;
@@ -716,7 +716,7 @@ public:
         *mShowErrorMessageCalled = false;
     }
 
-    virtual void showErrorMessage()
+    void showErrorMessage() final
     {
         kDebug();
         *mShowErrorMessageCalled = true;
@@ -733,12 +733,12 @@ private:
 void DocumentTest::testCheckDocumentEditor()
 {
     int hasEditor;
-    bool showErrorMessageCalled;
+    bool showErrorMessageCalled = false;
     QEventLoop loop;
     Document::Ptr doc;
     TestCheckDocumentEditorJob* job;
 
-    doc = DocumentFactory::instance()->load(urlForTestFile("orient6.jpg"));
+    doc = DocumentFactory::instance()->load(urlForTestFile("test.png"));
 
     job = new TestCheckDocumentEditorJob(&hasEditor);
     job->setUiDelegate(new TestUiDelegate(&showErrorMessageCalled));
@@ -748,8 +748,9 @@ void DocumentTest::testCheckDocumentEditor()
     QVERIFY(!showErrorMessageCalled);
     QCOMPARE(hasEditor, 1);
 
-    doc = DocumentFactory::instance()->load(urlForTestFile("test.svg"));
+    doc = DocumentFactory::instance()->load(urlForTestFile("doesnotexist.svg"));
 
+    showErrorMessageCalled = false;
     job = new TestCheckDocumentEditorJob(&hasEditor);
     job->setUiDelegate(new TestUiDelegate(&showErrorMessageCalled));
     doc->enqueueJob(job);
