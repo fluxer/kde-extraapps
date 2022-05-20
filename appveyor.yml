@@ -27,7 +27,7 @@ build_script:
         libqalculate-dev libspectre-dev libspeechd-dev libswscale-dev \
         libtag1-dev uuid-dev libudev-dev libvncserver-dev freerdp2-dev \
         libffmpegthumbnailer-dev libbz2-dev libtorrent-rasterbar-dev \
-        libpoppler-cpp-dev xsltproc libdbusmenu-katie ccache
+        libpoppler-cpp-dev xsltproc libdbusmenu-katie dbus-x11 ccache
 
     export PATH="/usr/lib/ccache/:$PATH"
 
@@ -35,6 +35,16 @@ build_script:
 
     cd build
 
-    cmake ../ -Wno-dev
+    cmake ../ -Wno-dev -DENABLE_TESTING=ON
 
     make -j $(nproc || echo 1)
+
+test_script:
+- sh: >-
+    Xvfb :123 &
+
+    export DISPLAY=:123
+
+    cd build
+
+    ctest -V
