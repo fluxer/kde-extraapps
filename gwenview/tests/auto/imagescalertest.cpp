@@ -36,12 +36,16 @@ using namespace Gwenview;
 void ImageScalerTest::testScaleFullImage()
 {
     const qreal zoom = 2;
-    KUrl url = urlForTestFile("test.png");
+    KUrl url = urlForTestFile("test.ppm");
     Document::Ptr doc = DocumentFactory::instance()->load(url);
 
     // Wait for meta info because we need the document size
     while (doc->loadingState() < Document::MetaInfoLoaded) {
         QTest::qWait(500);
+    }
+
+    if (doc->size() == QSize(-1, -1)) {
+        QSKIP("Image handler does not support size option, size is unknown", SkipAll);
     }
 
     ImageScaler scaler;
