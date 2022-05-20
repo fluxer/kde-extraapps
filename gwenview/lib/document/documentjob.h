@@ -146,7 +146,7 @@ public:
      */
     virtual void threadedStart() = 0;
     /**
-     * Reimplemented to do more stuff at the end of the job such
+     * Reimplement to do more stuff at the end of the job such
      * as adding sub-jobs, by default this method will call
      * emitResult().
      */
