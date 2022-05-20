@@ -50,4 +50,4 @@ test_script:
 
     cd build
 
-    ctest -V
+    find -name 'kde4_test_*.sh' -exec sh '{}' \;
