@@ -79,8 +79,7 @@ void DocumentDirFinder::slotItemsAdded(const KUrl& dir, const KFileItemList& lis
             }
             break;
 
-        case MimeTypeUtils::KIND_RASTER_IMAGE:
-        case MimeTypeUtils::KIND_SVG_IMAGE:
+        case MimeTypeUtils::KIND_IMAGE:
             finish(dir, DocumentDirFound);
             return;
 

@@ -111,8 +111,7 @@ struct LoadingDocumentImplPrivate
         q->setDocumentKind(kind);
 
         switch (kind) {
-        case MimeTypeUtils::KIND_RASTER_IMAGE:
-        case MimeTypeUtils::KIND_SVG_IMAGE:
+        case MimeTypeUtils::KIND_IMAGE:
             return false;
 
         default:
@@ -130,8 +129,7 @@ struct LoadingDocumentImplPrivate
         Q_ASSERT(!mMetaInfoLoaded);
 
         switch (q->document()->kind()) {
-        case MimeTypeUtils::KIND_RASTER_IMAGE:
-        case MimeTypeUtils::KIND_SVG_IMAGE:
+        case MimeTypeUtils::KIND_IMAGE:
             // The hint is used to:
             // - Speed up loadMetaInfo(): QImageReader will try to decode the
             //   image using plugins matching this format first.

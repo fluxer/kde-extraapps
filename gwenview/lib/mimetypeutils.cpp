@@ -149,10 +149,10 @@ QString urlMimeTypeByContent(const KUrl& url)
 Kind mimeTypeKind(const QString& mimeType)
 {
     if (rasterImageMimeTypes().contains(mimeType)) {
-        return KIND_RASTER_IMAGE;
+        return KIND_IMAGE;
     }
     if (svgImageMimeTypes().contains(mimeType)) {
-        return KIND_SVG_IMAGE;
+        return KIND_IMAGE;
     }
     if (mimeType.startsWith(QLatin1String("inode/directory"))) {
         return KIND_DIR;

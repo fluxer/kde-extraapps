@@ -526,8 +526,7 @@ struct MainWindow::Private
     {
         mDirModel->setKindFilter(
             MimeTypeUtils::KIND_DIR
-            | MimeTypeUtils::KIND_RASTER_IMAGE
-            | MimeTypeUtils::KIND_SVG_IMAGE);
+            | MimeTypeUtils::KIND_IMAGE);
 
         connect(mDirModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
                 q, SLOT(slotDirModelNewItems()));
@@ -1315,8 +1314,7 @@ void MainWindow::toggleSlideShow()
             KFileItem item = d->mDirModel->itemForIndex(index);
             MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
             switch (kind) {
-            case MimeTypeUtils::KIND_SVG_IMAGE:
-            case MimeTypeUtils::KIND_RASTER_IMAGE:
+            case MimeTypeUtils::KIND_IMAGE:
                 list << item.url();
                 break;
             default:

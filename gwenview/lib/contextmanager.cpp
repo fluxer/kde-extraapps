@@ -268,7 +268,7 @@ void Gwenview::ContextManager::slotRowsAboutToBeRemoved(const QModelIndex& /*par
 
 bool ContextManager::currentUrlIsRasterImage() const
 {
-    return MimeTypeUtils::urlKind(currentUrl()) == MimeTypeUtils::KIND_RASTER_IMAGE;
+    return MimeTypeUtils::urlKind(currentUrl()) == MimeTypeUtils::KIND_IMAGE;
 }
 
 KUrl ContextManager::urlToSelect() const

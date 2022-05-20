@@ -47,7 +47,7 @@ public:
 
     virtual MimeTypeUtils::Kind kind() const
     {
-        return MimeTypeUtils::KIND_RASTER_IMAGE;
+        return MimeTypeUtils::KIND_IMAGE;
     }
 
     virtual bool canZoom() const

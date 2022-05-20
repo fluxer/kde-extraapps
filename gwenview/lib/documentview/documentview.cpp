@@ -351,8 +351,7 @@ void DocumentView::createAdapterForDocument()
     }
     AbstractDocumentViewAdapter* adapter = 0;
     switch (documentKind) {
-    case MimeTypeUtils::KIND_RASTER_IMAGE:
-    case MimeTypeUtils::KIND_SVG_IMAGE:
+    case MimeTypeUtils::KIND_IMAGE:
         adapter = new RasterImageViewAdapter;
         break;
     case MimeTypeUtils::KIND_UNKNOWN:

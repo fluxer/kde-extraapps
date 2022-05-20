@@ -109,7 +109,7 @@ void DocumentTest::testLoad()
     QCOMPARE(doc->kind(), expectedKind);
     QCOMPARE(doc->isAnimated(), expectedIsAnimated);
     QCOMPARE(spy.count(), doc->isAnimated() ? 1 : 0);
-    if (doc->kind() == MimeTypeUtils::KIND_RASTER_IMAGE) {
+    if (doc->kind() == MimeTypeUtils::KIND_IMAGE) {
         QImage image = doc->image();
         if (maxHeight > -1) {
             QRect poiRect(0, 0, image.width(), maxHeight);
@@ -124,7 +124,7 @@ void DocumentTest::testLoad()
 static void testLoad_newRow(
     const char* fileName,
     const QByteArray& format,
-    MimeTypeUtils::Kind kind = MimeTypeUtils::KIND_RASTER_IMAGE,
+    MimeTypeUtils::Kind kind = MimeTypeUtils::KIND_IMAGE,
     bool isAnimated = false,
     int maxHeight = -1
     )
@@ -149,7 +149,7 @@ void DocumentTest::testLoad_data()
 
     testLoad_newRow("test.png", "png");
     testLoad_newRow("160216_no_size_before_decoding.eps", "eps");
-    testLoad_newRow("160382_corrupted.jpeg", "jpeg", MimeTypeUtils::KIND_RASTER_IMAGE, false, 55);
+    testLoad_newRow("160382_corrupted.jpeg", "jpeg", MimeTypeUtils::KIND_IMAGE, false, 55);
     testLoad_newRow("1x10k.png", "png");
     testLoad_newRow("1x10k.jpg", "jpeg");
     testLoad_newRow("test.xcf", "xcf");
@@ -159,18 +159,18 @@ void DocumentTest::testLoad_data()
     testLoad_newRow("jpg-with-gif-extension.gif", "jpeg");
 
     // RAW preview
-    testLoad_newRow("CANON-EOS350D-02.CR2", "cr2", MimeTypeUtils::KIND_RASTER_IMAGE, false);
-    testLoad_newRow("dsc_0093.nef", "nef", MimeTypeUtils::KIND_RASTER_IMAGE, false);
+    testLoad_newRow("CANON-EOS350D-02.CR2", "cr2", MimeTypeUtils::KIND_IMAGE, false);
+    testLoad_newRow("dsc_0093.nef", "nef", MimeTypeUtils::KIND_IMAGE, false);
 
     // SVG
-    testLoad_newRow("test.svg", "", MimeTypeUtils::KIND_SVG_IMAGE);
+    testLoad_newRow("test.svg", "svg", MimeTypeUtils::KIND_IMAGE);
     // FIXME: Test svgz
 
     // Animated
-    testLoad_newRow("4frames.gif", "gif", MimeTypeUtils::KIND_RASTER_IMAGE, true);
-    testLoad_newRow("1frame.gif", "gif", MimeTypeUtils::KIND_RASTER_IMAGE, false);
+    testLoad_newRow("4frames.gif", "gif", MimeTypeUtils::KIND_IMAGE, true);
+    testLoad_newRow("1frame.gif", "gif", MimeTypeUtils::KIND_IMAGE, false);
     testLoad_newRow("185523_1frame_with_graphic_control_extension.gif",
-                    "gif", MimeTypeUtils::KIND_RASTER_IMAGE, false);
+                    "gif", MimeTypeUtils::KIND_IMAGE, false);
 }
 
 void DocumentTest::testLoadTwoPasses()
