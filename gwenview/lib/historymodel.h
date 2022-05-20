@@ -53,6 +53,7 @@ public:
     virtual bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex());
 
 private:
+    Q_DISABLE_COPY(HistoryModel);
     HistoryModelPrivate* const d;
 };
 
