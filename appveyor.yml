@@ -39,6 +39,8 @@ build_script:
 
     make -j $(nproc || echo 1)
 
+    sudo make install/strip
+
 test_script:
 - sh: >-
     Xvfb :123 &
