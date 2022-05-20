@@ -172,7 +172,7 @@ struct HistoryModelPrivate
 
             KUrl itemUrl = item->url();
             if (UrlUtils::urlIsFastLocalFile(itemUrl)) {
-                if (!QFile::exists(itemUrl.path())) {
+                if (!QFileInfo(itemUrl.path()).exists()) {
                     kDebug() << "Removing" << itemUrl.path() << "from recent folders. It does not exist anymore";
                     item->unlink();
                     delete item;
