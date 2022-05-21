@@ -35,6 +35,11 @@ void AddRemoveAnnotationTest::initTestCase()
 {
     Okular::SettingsCore::instance( "addannotationtest" );
     m_document = new Okular::Document( 0 );
+
+    // Tell the document to not be annoying
+    KSharedConfigPtr c = KGlobal::config();
+    KConfigGroup cg = c->group("Notification Messages");
+    cg.writeEntry("annotExportAsArchive", false);
 }
 
 void AddRemoveAnnotationTest::init()
