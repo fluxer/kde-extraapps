@@ -364,7 +364,8 @@ void DocumentTest::testLoadRotated()
     bool ok = image.load(url.toLocalFile());
     QVERIFY2(ok, "Could not load 'orient6.jpg'");
     QMatrix matrix = ImageUtils::transformMatrix(ROT_90);
-    image = image.transformed(matrix);
+    // magick image handle automatically rotates the image
+    // image = image.transformed(matrix);
 
     Document::Ptr doc = DocumentFactory::instance()->load(url);
     doc->startLoadingFullImage();
@@ -373,6 +374,9 @@ void DocumentTest::testLoadRotated()
 
     // RAW preview on rotated image
     url = urlForTestFile("dsd_1838.nef");
+    if (!QFile::exists(url.prettyUrl())) {
+        QSKIP("dsd_1838.nef is not available, run fetch_testing_raw.sh script", SkipSingle);
+    }
     matrix = ImageUtils::transformMatrix(ROT_270);
     image = image.transformed(matrix);
 
