@@ -67,6 +67,11 @@ void TranslateAnnotationTest::initTestCase()
     Okular::SettingsCore::instance( "editannotationcontentstest" );
     m_document = new Okular::Document( 0 );
 
+    // Tell the document to not be annoying
+    KSharedConfigPtr c = KGlobal::config();
+    KConfigGroup cg = c->group("Notification Messages");
+    cg.writeEntry("annotExportAsArchive", false);
+
     // translate m_annot1
     m_deltaA = Okular::NormalizedPoint(0.05, 0.1);
     m_deltaB = Okular::NormalizedPoint(0.1, 0.2);
