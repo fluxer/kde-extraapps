@@ -116,6 +116,9 @@ void DocumentTest::testLoad()
             image = image.copy(poiRect);
             expectedImage = expectedImage.copy(poiRect);
         }
+        if (fileName == QLatin1String("4frames.gif")) {
+            QEXPECT_FAIL("", "Wonky GIF handler", Continue);
+        }
         QCOMPARE(image, expectedImage);
         QCOMPARE(QString(doc->format()), QString(expectedFormat));
     }
