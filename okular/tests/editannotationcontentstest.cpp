@@ -94,6 +94,11 @@ void EditAnnotationContentsTest::initTestCase()
 {
     Okular::SettingsCore::instance( "editannotationcontentstest" );
     m_document = new Okular::Document( 0 );
+
+    // Tell the document to not be annoying
+    KSharedConfigPtr c = KGlobal::config();
+    KConfigGroup cg = c->group("Notification Messages");
+    cg.writeEntry("annotExportAsArchive", false);
 }
 
 void EditAnnotationContentsTest::cleanupTestCase()
