@@ -40,6 +40,12 @@ void AnnotationTest::initTestCase()
 {
     Okular::SettingsCore::instance( "annotationtest" );
     m_document = new Okular::Document( 0 );
+
+    // Tell the document to not be annoying
+    KSharedConfigPtr c = KGlobal::config();
+    KConfigGroup cg = c->group("Notification Messages");
+    cg.writeEntry("annotExportAsArchive", false);
+
     const QString testFile = KDESRCDIR "data/file1.pdf";
     const KMimeType::Ptr mime = KMimeType::findByPath( testFile );
     m_document->openDocument(testFile, KUrl(), mime);
