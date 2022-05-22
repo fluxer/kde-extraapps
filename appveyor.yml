@@ -48,6 +48,8 @@ test_script:
 
     export DISPLAY=:123
 
+    eval $(dbus-launch --sh-syntax)
+
     cd build
 
     find -name 'kde4_test_*.sh' -exec sh '{}' \;
