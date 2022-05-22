@@ -187,10 +187,6 @@ private:
     RemoteView::Quality m_quality;
     ColorDepth m_colorDepth;
     QQueue<ClientEvent* > m_eventQueue;
-#if QT_VERSION < 0x041200
-    //color table for 8bit indexed colors
-    QVector<QRgb> m_colorTable;
-#endif
     QString outputErrorMessageString;
 
     volatile bool m_stopped;

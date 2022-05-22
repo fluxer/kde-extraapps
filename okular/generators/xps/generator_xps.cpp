@@ -1497,24 +1497,7 @@ QFont XpsFile::getFontByName( const QString &fileName, float size )
         kWarning(XpsDebug) << "Requesting uknown font:" << fileName;
         return QFont();
     }
-
-#if QT_VERSION < 0x041200
-    const QStringList fontFamilies = m_fontDatabase.applicationFontFamilies( index );
-    if ( fontFamilies.isEmpty() ) {
-      kWarning(XpsDebug) << "The unexpected has happened. No font family for a known font:" << fileName << index;
-      return QFont();
-    }
-    const QString fontFamily = fontFamilies[0];
-    const QStringList fontStyles = m_fontDatabase.styles( fontFamily );
-    if ( fontStyles.isEmpty() ) {
-      kWarning(XpsDebug) << "The unexpected has happened. No font style for a known font family:" << fileName << index << fontFamily ;
-      return QFont();
-    }
-    const QString fontStyle =  fontStyles[0];
-    return m_fontDatabase.font(fontFamily, fontStyle, qRound(size));
-#else
     return QFont(m_fonts.at(index));
-#endif
 }
 
 int XpsFile::loadFontByName( const QString &fileName )
@@ -1528,38 +1511,6 @@ int XpsFile::loadFontByName( const QString &fileName )
 
     QByteArray fontData = readFileOrDirectoryParts( fontFile ); // once per file, according to the docs
 
-#if QT_VERSION < 0x041200
-    int result = m_fontDatabase.addApplicationFontFromData( fontData );
-    if (-1 == result) {
-        // Try to deobfuscate font
-       // TODO Use deobfuscation depending on font content type, don't do it always when standard loading fails
-
-        const QString baseName = resourceName( fileName );
-
-        unsigned short guid[16];
-        if (!parseGUID(baseName, guid))
-        {
-            kDebug(XpsDebug) << "File to load font - file name isn't a GUID";
-        }
-        else
-        {
-        if (fontData.length() < 32)
-            {
-                kDebug(XpsDebug) << "Font file is too small";
-            } else {
-                // Obfuscation - xor bytes in font binary with bytes from guid (font's filename)
-                const static int mapping[] = {15, 14, 13, 12, 11, 10, 9, 8, 6, 7, 4, 5, 0, 1, 2, 3};
-                for (int i = 0; i < 16; i++) {
-                    fontData[i] = fontData[i] ^ guid[mapping[i]];
-                    fontData[i+16] = fontData[i+16] ^ guid[mapping[i]];
-                }
-                result = m_fontDatabase.addApplicationFontFromData( fontData );
-            }
-        }
-    }
-
-    // kDebug(XpsDebug) << "Loaded font: " << m_fontDatabase.applicationFontFamilies( result );
-#else
     int result = -1;
     KTemporaryFile tempfile;
     tempfile.setSuffix(QFileInfo(fileName).suffix());
@@ -1576,7 +1527,6 @@ int XpsFile::loadFontByName( const QString &fileName )
     result = (m_fonts.size() - 1);
 
     // kDebug(XpsDebug) << "Saved font: " << tempfile.fileName();
-#endif // QT_VERSION
 
     return result; // a font ID
 }
@@ -1925,13 +1875,9 @@ XpsFile::XpsFile() : m_docInfo( 0 )
 XpsFile::~XpsFile()
 {
     m_fontCache.clear();
-#if QT_VERSION < 0x041200
-    m_fontDatabase.removeAllApplicationFonts();
-#else
     foreach (const QString &fontfile, m_fonts) {
         QFile::remove(fontfile);
     }
-#endif
 }
 
 

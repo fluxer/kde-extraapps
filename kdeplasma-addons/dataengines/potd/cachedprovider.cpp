@@ -29,11 +29,7 @@
 #include <kdebug.h>
 #include <kstandarddirs.h>
 
-#if QT_VERSION >= 0x041200
 static const QByteArray imageFormat = QImageWriter::defaultImageFormat();
-#else
-static const QByteArray imageFormat = "png";
-#endif
 
 LoadImageThread::LoadImageThread(const QString &filePath)
     : m_filePath(filePath)

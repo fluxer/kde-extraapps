@@ -64,15 +64,6 @@ static void deleteObjectRects( QList< ObjectRect * >& rects, const QSet<ObjectRe
             ++it;
 }
 
-static inline QString createAnnotationID()
-{
-#if QT_VERSION >= 0x041200
-    return QString::fromLatin1(qRandomUuid());
-#else
-    return QString::number(qrand());
-#endif
-}
-
 PagePrivate::PagePrivate( Page *page, uint n, double w, double h, Rotation o )
     : m_page( page ), m_number( n ), m_orientation( o ),
       m_width( w ), m_height( h ), m_doc( 0 ), m_boundingBox( 0, 0, 1, 1 ),
@@ -642,7 +633,7 @@ void Page::addAnnotation( Annotation * annotation )
     // Generate uniqueName: okular-UUID
     if(annotation->uniqueName().isEmpty())
     {
-        QString uniqueName = "okular-" + createAnnotationID();
+        QString uniqueName = QString::fromLatin1("okular-") + QString::fromLatin1(qRandomUuid());
         annotation->setUniqueName( uniqueName );
     }
     annotation->d_ptr->m_page = d;

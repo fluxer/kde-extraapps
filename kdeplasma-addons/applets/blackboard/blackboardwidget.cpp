@@ -33,11 +33,7 @@
 #include <Plasma/Applet>
 #include <Plasma/Theme>
 
-#if QT_VERSION >= 0x041200
 static const QByteArray pixmapFormat = QImageWriter::defaultImageFormat();
-#else
-static const QByteArray pixmapFormat = "png";
-#endif
 
 BlackBoardWidget::BlackBoardWidget(Plasma::Applet *parent)
       : QGraphicsWidget(parent)

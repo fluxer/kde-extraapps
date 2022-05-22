@@ -94,30 +94,6 @@ void VncClientThread::outputHandlerStatic(const char *format, ...)
 void VncClientThread::setClientColorDepth(rfbClient* cl, VncClientThread::ColorDepth cd)
 {
     switch(cd) {
-#if QT_VERSION < 0x041200
-    case bpp8:
-        if (m_colorTable.isEmpty()) {
-            m_colorTable.resize(256);
-            int r,g,b;
-            for (int i = 0; i < 256; ++i) {
-                //pick out the red (3 bits), green (3 bits) and blue (2 bits) bits and make them maximum significant in 8bits
-                //this gives a colortable for 8bit true colors
-                r= (i & 0x07) << 5;
-                g= (i & 0x38) << 2;
-                b= i & 0xc0;
-                m_colorTable[i] = qRgb(r, g, b);
-            }
-        }
-        cl->format.depth = 8;
-        cl->format.bitsPerPixel = 8;
-        cl->format.redShift = 0;
-        cl->format.greenShift = 3;
-        cl->format.blueShift = 6;
-        cl->format.redMax = 7;
-        cl->format.greenMax = 7;
-        cl->format.blueMax = 3;
-        break;
-#endif // QT_VERSION < 0x041200
     case bpp16:
         cl->format.depth = 16;
         cl->format.bitsPerPixel = 16;
@@ -189,12 +165,6 @@ void VncClientThread::updatefb(int x, int y, int w, int h)
     const int width = cl->width, height = cl->height;
     QImage img;
     switch(colorDepth()) {
-#if QT_VERSION < 0x041200
-    case bpp8:
-        img = QImage(cl->frameBuffer, width, height, QImage::Format_Indexed8);
-        img.setColorTable(m_colorTable);
-        break;
-#endif
     case bpp16:
         img = QImage(cl->frameBuffer, width, height, QImage::Format_RGB16);
         break;

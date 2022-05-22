@@ -455,6 +455,6 @@ void MainShellTest::testUnique2FilesError()
     QVERIFY(!s);
 }
 
-
 QTEST_KDEMAIN( MainShellTest, GUI )
+
 #include "mainshelltest.moc"
