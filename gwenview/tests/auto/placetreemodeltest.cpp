@@ -141,7 +141,7 @@ void PlaceTreeModelTest::testListUrl1()
     while (model.canFetchMore(index)) {
         model.fetchMore(index);
     }
-    QTest::qWait(1000);
+    QTest::qWait(3000);
     QCOMPARE(model.rowCount(index), mUrl1Dirs.length());
 
     QStringList dirs = mUrl1Dirs;
