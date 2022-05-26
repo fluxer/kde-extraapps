@@ -293,7 +293,7 @@ void Document::waitUntilLoaded()
         if (state == Loaded || state == LoadingFailed) {
             return;
         }
-        qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
+        qApp->processEvents();
     }
 }
 

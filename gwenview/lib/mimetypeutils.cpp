@@ -141,7 +141,7 @@ QString urlMimeTypeByContent(const KUrl& url)
     KIO::TransferJob* job = KIO::get(url);
     DataAccumulator accumulator(job);
     while (!accumulator.finished() && accumulator.data().size() < HEADER_SIZE) {
-        qApp->processEvents(QEventLoop::ExcludeUserInputEvents);
+        qApp->processEvents();
     }
     return KMimeType::findByContent(accumulator.data())->name();
 }
