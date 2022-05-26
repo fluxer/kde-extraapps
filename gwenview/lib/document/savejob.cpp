@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // KDE
 #include <KApplication>
 #include <KIO/CopyJob>
-#include <KIO/JobUiDelegate>
+#include <KIO/NetAccess>
 #include <KLocale>
 #include <KSaveFile>
 #include <KTemporaryFile>
@@ -96,8 +96,8 @@ void SaveJob::threadedFinish()
     if (!error()) {
         // whether to overwite has already been asked for
         KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
-        job->ui()->setWindow(KApplication::kApplication()->activeWindow());
-        job->exec();
+        job->setUiDelegate(uiDelegate());
+        KIO::NetAccess::synchronousRun(job, KApplication::kApplication()->activeWindow());
     }
 }
 
