@@ -10,7 +10,9 @@
 #include <qtest_kde.h>
 #include <qprintdialog.h>
 #include <qwidget.h>
+#include <qx11info_x11.h>
 #include <ktabwidget.h>
+#include <netwm.h>
 
 #include "../shell/okular_main.h"
 #include "../shell/shell.h"
@@ -22,6 +24,12 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+
+static bool hasWM()
+{
+    static const QByteArray wmname = NETRootInfo(QX11Info::display(), NET::SupportingWMCheck).wmName();
+    return !wmname.isEmpty();
+}
 
 namespace Okular {
 class PartTest
@@ -198,6 +206,10 @@ void MainShellTest::testShell()
     QFETCH(bool, externalProcessExpectPresentation);
     QFETCH(bool, externalProcessExpectPrintDialog);
 
+    if (!hasWM()) {
+        QSKIP("No window manager", SkipAll);
+    }
+
     QScopedPointer<ClosePrintDialogHelper> helper;
 
     Okular::Settings::self()->setShellOpenFileInTabs(useTabs);
@@ -284,7 +296,7 @@ void MainShellTest::testShell()
         {
             // It is attaching to us, so will eventually stop
             for (int i = 0; p.state() != QProcess::NotRunning && i < 20; ++i) {
-                QTest::qWait(100);
+                QTest::qWait(200);
             }
             QCOMPARE(p.state(), QProcess::NotRunning);
             QCOMPARE(p.exitStatus(), QProcess::NormalExit);
@@ -330,7 +342,7 @@ void MainShellTest::testShell()
 
         // Oh Qt5 i want your QTRY_VERIFY
         for (int i = 0; presentationWidget(part) == 0 && i < 20; ++i) {
-            QTest::qWait(100);
+            QTest::qWait(200);
         }
         QVERIFY(presentationWidget(part) != 0);
     }
@@ -350,7 +362,7 @@ void MainShellTest::testShell()
         }
 
         for (int i = 0; presentationWidget(part) == 0 && i < 20; ++i) {
-            QTest::qWait(100);
+            QTest::qWait(200);
         }
         QVERIFY(presentationWidget(part) != 0);
     }
@@ -387,6 +399,10 @@ void MainShellTest::testFileRemembersPagePosition_data()
 void MainShellTest::testFileRemembersPagePosition()
 {
     QFETCH(int, mode);
+
+    if (!hasWM()) {
+        QSKIP("No window manager", SkipAll);
+    }
 
     const QStringList paths = QStringList(KDESRCDIR "data/contents.epub");
     QString serializedOptions;
@@ -428,7 +444,7 @@ void MainShellTest::testFileRemembersPagePosition()
 
         // It is attaching to us, so will eventually stop
         for (int i = 0; p.state() != QProcess::NotRunning && i < 20; ++i) {
-            QTest::qWait(100);
+            QTest::qWait(200);
         }
         QCOMPARE(p.state(), QProcess::NotRunning);
         QCOMPARE(p.exitStatus(), QProcess::NormalExit);
