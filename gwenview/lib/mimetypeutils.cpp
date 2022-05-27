@@ -154,10 +154,13 @@ Kind mimeTypeKind(const QString& mimeType)
     if (svgImageMimeTypes().contains(mimeType)) {
         return KIND_IMAGE;
     }
-    if (mimeType.startsWith(QLatin1String("inode/directory"))) {
+    // if it is image but it is not one of the static MIME types attempt to open it anyway
+    if (mimeType.startsWith(QLatin1String("image/"))) {
+        return KIND_IMAGE;
+    }
+    if (mimeType == QLatin1String("inode/directory")) {
         return KIND_DIR;
     }
-
     return KIND_FILE;
 }
 
