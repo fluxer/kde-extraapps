@@ -40,7 +40,7 @@ build_script:
 
     make -j $(nproc || echo 1)
 
-    sudo make install/strip
+    sudo make install/strip/fast
 
 test_script:
 - sh: >-
