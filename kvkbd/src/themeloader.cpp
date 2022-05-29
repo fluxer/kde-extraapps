@@ -32,45 +32,35 @@
 #include <KAction>
 #include <KIcon>
 #include <KToggleAction>
-
-#include <iostream>
-using namespace std;
-
+#include <KDebug>
 
 int defaultWidth = 25;
 int defaultHeight = 25;
 
-#define DEFAULT_CSS ":/theme/standart.css"
-
 ThemeLoader::ThemeLoader(QWidget *parent) : QObject(parent)
 {
-
+    defaultcss = KStandardDirs::locate("data", QString::fromLatin1("kvkbd/themes/standart.css"));
+    if (defaultcss.isEmpty()) {
+        kWarning() << "Could not locate standard theme CSS file";
+    }
+    themespath = QFileInfo(defaultcss).path();
+    // qDebug() << Q_FUNC_INFO << defaultcss << themespath;
 }
 
 ThemeLoader::~ThemeLoader()
 {
-
 }
+
 void ThemeLoader::loadTheme(QString& themeName)
 {
-    bool loading = true;
-    while (loading) {
-        int ret = this->loadLayout(themeName, ":/theme/");
+    QString themePath = QString::fromLatin1("%1/%2").arg(themespath).arg(themeName);
+    int ret = loadLayout(themePath);
 
-        if (ret == 0) {
-            break;
-        }
-        //bail out
-        else {
-            if (QString::compare(themeName, "standart")==0) {
-                loading = false;
-                kapp->quit();
-            } else {
-                themeName="standart";
-            }
-        }
+    if (ret != 0) {
+        kapp->quit();
     }
 }
+
 void ThemeLoader::loadColorFile(const QString& fileName)
 {
     lastcolorstyle = fileName;
@@ -124,7 +114,7 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
     QAction *item = new QAction(colors);
     item->setCheckable(true);
     item->setText("standart");
-    item->setData(DEFAULT_CSS);
+    item->setData(defaultcss);
     colors->addAction(item);
     color_group->addAction(item);
 
@@ -163,7 +153,7 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
 
     QString selectedStyle = configSelectedStyle;
     if (selectedStyle.length() < 1) {
-        selectedStyle = DEFAULT_CSS;
+        selectedStyle = defaultcss;
     }
     QAction *selectedAction = 0;
     
@@ -186,7 +176,7 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
 }
 
 
-int ThemeLoader::loadLayout(const QString& themeName, const QString& path)
+int ThemeLoader::loadLayout(const QString& themeName)
 {
 
 //     const KArchiveDirectory * KArchive::directory	(		)	 const
@@ -196,7 +186,7 @@ int ThemeLoader::loadLayout(const QString& themeName, const QString& path)
 
     QDomDocument doc;
 
-    themeFile.setFileName(QString(path + "%1.xml").arg(themeName));
+    themeFile.setFileName(QString::fromLatin1("%1.xml").arg(themeName));
 
     if (!themeFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::information(0, "Error", QString("Unable to open theme xml file: %1").arg(themeFile.fileName()));

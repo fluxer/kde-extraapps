@@ -58,8 +58,8 @@
         <key code="77" width="FKey" height="FKey" label="F11" colorGroup="function"/>
         <key code="78" width="FKey" height="FKey" label="F12" colorGroup="function"/>
         <spacing width="SpecialKeys"/>
-        <key action="toggleExtension" width="FKey" height="FKey" label=" " colorGroup="settings"/>
-        <key action="hide" width="FKey" height="FKey" label=" " colorGroup="hide"/>
+        <key action="toggleExtension" width="FKey" height="FKey" label=" " colorGroup="settings"  tooltip="Toggle Extension"/>
+        <key action="toggleVisibility" width="FKey" height="FKey" label=" " colorGroup="hide"  tooltip="Hide Keyboard"/>
       </row>
 
       <row>

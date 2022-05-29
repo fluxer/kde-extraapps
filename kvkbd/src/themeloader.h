@@ -43,7 +43,7 @@ public:
     
     void loadColorFile(const QString& fileName);
     
-    int loadLayout(const QString& themeName, const QString& path);
+    int loadLayout(const QString& themeName);
 
     void findColorStyles(QMenu *parent, const QString& selectedStyle);
     
@@ -66,6 +66,8 @@ signals:
 
 private:
     QString lastcolorstyle;
+    QString defaultcss;
+    QString themespath;
 };
 
 #endif // THEMELOADER_H

@@ -14,15 +14,13 @@ set(kvkbd_SRCS vkeyboard.cpp
     themeloader.cpp
 )
 
-QT4_ADD_RESOURCES(kvkbd_RESOURCES_RCC resources.qrc)
-
 QT4_ADD_DBUS_ADAPTOR(kvkbd_SRCS org.kde.kvkbd.Kvkbd.xml
                        mainwidget.h MainWidget)
 
 QT4_ADD_DBUS_ADAPTOR(kvkbd_SRCS org.kde.kvkbd.Dock.xml
                        kbddock.h KbdDock)
 
-add_executable(kvkbd ${kvkbd_SRCS} ${kvkbd_RC_SRCS} ${kvkbd_RESOURCES_RCC})
+add_executable(kvkbd ${kvkbd_SRCS})
 
 target_link_libraries(kvkbd
     ${KDE4_KDECORE_LIBS}
