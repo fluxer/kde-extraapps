@@ -108,7 +108,7 @@ void KernelAnalyzerTest::testUbuntuDmesg() {
 	QVERIFY(kernelAnalyzer);
 	QVERIFY(model);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/kernel/ubuntu.dmesg"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/kernel/ubuntu.dmesg"));
 
 	kernelAnalyzer->setLogFiles(logFiles);
 
@@ -148,7 +148,7 @@ void KernelAnalyzerTest::testSuseDmesg() {
 	QVERIFY(kernelAnalyzer);
 	QVERIFY(model);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/kernel/suse.dmesg"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/kernel/suse.dmesg"));
 
 	kernelAnalyzer->setLogFiles(logFiles);
 

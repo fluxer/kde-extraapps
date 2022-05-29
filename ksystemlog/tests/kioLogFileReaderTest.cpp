@@ -56,7 +56,7 @@ void KioLogFileReaderTest::initTestCase() {
 
 void KioLogFileReaderTest::testKioLogFileReader() {
 	/*
-	QList<LogFile> logFiles = testUtil.createLogFiles(":/logs/logFileReader/file.txt");
+	QList<LogFile> logFiles = testUtil.createLogFiles(KDESRCDIR "/logs/logFileReader/file.txt");
 	LogFile logFile = logFiles.first();
 	*/
 	

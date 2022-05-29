@@ -14,8 +14,6 @@ macro(ksystemlog_unit_tests)
             testUtil.cpp
         )
 
-        qt4_add_resources(unitTest_sources testResources.qrc)
-
         kde4_add_test(ksystemlog-${unitTest} ${unitTest_sources})
 
         target_link_libraries(ksystemlog-${unitTest}
@@ -41,8 +39,6 @@ macro(ksystemlog_manual_tests)
             ${unitTest}.cpp
             testUtil.cpp
         )
-
-        qt4_add_resources(unitTest_sources testResources.qrc)
 
         kde4_add_manual_test(ksystemlog-${unitTest} ${unitTest_sources})
 

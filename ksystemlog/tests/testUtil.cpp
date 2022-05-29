@@ -73,14 +73,12 @@ void TestUtil::destroyReader(Analyzer* analyzer) const {
 }
 
 QList<LogFile> TestUtil::createLogFiles(const QString& resourceFileName) const {
-	QTemporaryFile* tempFile = QTemporaryFile::createLocalFile(resourceFileName);
-	logDebug() << "Using log file name " << tempFile << endl;
-	tempFile->setPermissions(QFile::WriteUser | QFile::ReadUser | QFile::ReadOwner | QFile::WriteOwner);
+	logDebug() << "Using log file name " << resourceFileName << endl;
 	
 	LogLevel* informationLogLevel = Globals::instance()->informationLogLevel();
 	
 	QList<LogFile> logFiles;
-	LogFile logFile(KUrl(tempFile->fileName()), informationLogLevel);
+	LogFile logFile(KUrl(resourceFileName), informationLogLevel);
 	logFiles.append(logFile);
 	
 	return logFiles;

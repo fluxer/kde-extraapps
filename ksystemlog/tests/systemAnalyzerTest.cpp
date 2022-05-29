@@ -79,7 +79,7 @@ void SystemAnalyzerTest::testOneLine() {
 	QVERIFY(systemAnalyzer);
 	QVERIFY(model);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/default/one-line.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/default/one-line.log"));
 
 	systemAnalyzer->setLogFiles(logFiles);
 
@@ -111,7 +111,7 @@ void SystemAnalyzerTest::testTwoLines() {
 	//Specifical configuration
 	KSystemLogConfig::setMaxLines(1000);
 	
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/default/two-lines.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/default/two-lines.log"));
 
 	systemAnalyzer->setLogFiles(logFiles);
 
@@ -133,7 +133,7 @@ void SystemAnalyzerTest::testMultipleLines() {
 	//Specifical configuration
 	KSystemLogConfig::setMaxLines(1000);
 	
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/system/system.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/system/system.log"));
 	LogFile logFile = logFiles.at(0);
 
 	systemAnalyzer->setLogFiles(logFiles);
@@ -192,7 +192,7 @@ void SystemAnalyzerTest::testStrangeLines() {
 	KSystemLogConfig::setMaxLines(1000);
 	KSystemLogConfig::setDeleteProcessIdentifier(false);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/system/strange-lines.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/system/strange-lines.log"));
 
 	systemAnalyzer->setLogFiles(logFiles);
 
@@ -255,7 +255,7 @@ void SystemAnalyzerTest::testDeleteProcessIdentifier() {
 	KSystemLogConfig::setMaxLines(1000);
 	KSystemLogConfig::setDeleteProcessIdentifier(true);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/system/delete-process-identifier.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/system/delete-process-identifier.log"));
 
 	systemAnalyzer->setLogFiles(logFiles);
 
@@ -286,7 +286,7 @@ void SystemAnalyzerTest::testMaxLines() {
 	//Specifical configuration
 	KSystemLogConfig::setMaxLines(5);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/system/max-lines.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/system/max-lines.log"));
 	LogFile logFile = logFiles.at(0);
 
 	systemAnalyzer->setLogFiles(logFiles);
@@ -350,7 +350,7 @@ void SystemAnalyzerTest::testRemoveDuplicates() {
 	KSystemLogConfig::setMaxLines(1000);
 	KSystemLogConfig::setDeleteDuplicatedLines(true);
 
-	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(":/testFiles/system/duplicate-lines.log"));
+	QList<LogFile> logFiles = testUtil.createLogFiles(QLatin1String(KDESRCDIR "/testFiles/system/duplicate-lines.log"));
 
 	systemAnalyzer->setLogFiles(logFiles);
 
