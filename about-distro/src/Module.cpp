@@ -27,6 +27,7 @@
 #include <KDebug>
 #include <KIcon>
 #include <KPluginFactory>
+#include <kdeversion.h>
 
 #include <solid/device.h>
 #include <solid/processor.h>

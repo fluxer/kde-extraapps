@@ -14,9 +14,7 @@
 #include <QImage>
 #include <QPixmap>
 #include <QLayout>
-
 #include <QComboBox>
-
 #include <QLabel>
 
 #include <kglobal.h>
@@ -35,6 +33,7 @@
 #include <ktoolbar.h>
 #include <kicon.h>
 #include <kconfiggroup.h>
+#include <kdeversion.h>
 
 #include "kcronIcons.h"
 #include "crontabWidget.h"

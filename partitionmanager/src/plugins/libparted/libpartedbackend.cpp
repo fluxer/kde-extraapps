@@ -48,6 +48,7 @@
 #include <kdiskfreespaceinfo.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
+#include <kdeversion.h>
 
 #include <parted/parted.h>
 #include <unistd.h>

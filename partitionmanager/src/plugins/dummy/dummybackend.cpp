@@ -36,6 +36,7 @@
 #include <klocale.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
+#include <kdeversion.h>
 
 K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
 
