@@ -111,7 +111,7 @@ KAboutData* createPartitionManagerAboutData()
 	KAboutData* about = new KAboutData(
 		"partitionmanager",
 		NULL,
-		ki18nc("@title", "<application>KDE Partition Manager</application>"),
+		ki18nc("@title", "KDE Partition Manager"),
 		KDE_VERSION_STRING,
 		ki18nc("@title", "Manage your disks, partitions and file systems"),
 		KAboutData::License_GPL,
