@@ -90,17 +90,17 @@ OperationStack::~OperationStack()
 */
 bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushedOp)
 {
-	NewOperation* newOp = dynamic_cast<NewOperation*>(currentOp);
+	NewOperation* newOp = qobject_cast<NewOperation*>(currentOp);
 
 	if (newOp == NULL)
 		return false;
 
-	DeleteOperation* pushedDeleteOp = dynamic_cast<DeleteOperation*>(pushedOp);
-	ResizeOperation* pushedResizeOp = dynamic_cast<ResizeOperation*>(pushedOp);
-	CopyOperation* pushedCopyOp = dynamic_cast<CopyOperation*>(pushedOp);
-	SetFileSystemLabelOperation* pushedLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(pushedOp);
-	CreateFileSystemOperation* pushedCreateFileSystemOp = dynamic_cast<CreateFileSystemOperation*>(pushedOp);
-	CheckOperation* pushedCheckOp = dynamic_cast<CheckOperation*>(pushedOp);
+	DeleteOperation* pushedDeleteOp = qobject_cast<DeleteOperation*>(pushedOp);
+	ResizeOperation* pushedResizeOp = qobject_cast<ResizeOperation*>(pushedOp);
+	CopyOperation* pushedCopyOp = qobject_cast<CopyOperation*>(pushedOp);
+	SetFileSystemLabelOperation* pushedLabelOp = qobject_cast<SetFileSystemLabelOperation*>(pushedOp);
+	CreateFileSystemOperation* pushedCreateFileSystemOp = qobject_cast<CreateFileSystemOperation*>(pushedOp);
+	CheckOperation* pushedCheckOp = qobject_cast<CheckOperation*>(pushedOp);
 	
 	// -- 1 --
 	if (pushedDeleteOp && &newOp->newPartition() == &pushedDeleteOp->deletedPartition() && !pushedDeleteOp->deletedPartition().roles().has(PartitionRole::Extended))
@@ -229,13 +229,13 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 */
 bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushedOp)
 {
-	CopyOperation* copyOp = dynamic_cast<CopyOperation*>(currentOp);
+	CopyOperation* copyOp = qobject_cast<CopyOperation*>(currentOp);
 
 	if (copyOp == NULL)
 		return false;
 
-	DeleteOperation* pushedDeleteOp = dynamic_cast<DeleteOperation*>(pushedOp);
-	CopyOperation* pushedCopyOp = dynamic_cast<CopyOperation*>(pushedOp);
+	DeleteOperation* pushedDeleteOp = qobject_cast<DeleteOperation*>(pushedOp);
+	CopyOperation* pushedCopyOp = qobject_cast<CopyOperation*>(pushedOp);
 
 	// -- 1 --
 	if (pushedDeleteOp && &copyOp->copiedPartition() == &pushedDeleteOp->deletedPartition())
@@ -285,12 +285,12 @@ bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushe
 */
 bool OperationStack::mergeRestoreOperation(Operation*& currentOp, Operation*& pushedOp)
 {
-	RestoreOperation* restoreOp = dynamic_cast<RestoreOperation*>(currentOp);
+	RestoreOperation* restoreOp = qobject_cast<RestoreOperation*>(currentOp);
 
 	if (restoreOp == NULL)
 		return false;
 
-	DeleteOperation* pushedDeleteOp = dynamic_cast<DeleteOperation*>(pushedOp);
+	DeleteOperation* pushedDeleteOp = qobject_cast<DeleteOperation*>(pushedOp);
 
 	if (pushedDeleteOp && &restoreOp->restorePartition() == &pushedDeleteOp->deletedPartition())
 	{
@@ -328,12 +328,12 @@ bool OperationStack::mergeRestoreOperation(Operation*& currentOp, Operation*& pu
 */
 bool OperationStack::mergePartFlagsOperation(Operation*& currentOp, Operation*& pushedOp)
 {
-	SetPartFlagsOperation* partFlagsOp = dynamic_cast<SetPartFlagsOperation*>(currentOp);
+	SetPartFlagsOperation* partFlagsOp = qobject_cast<SetPartFlagsOperation*>(currentOp);
 
 	if (partFlagsOp == NULL)
 		return false;
 
-	SetPartFlagsOperation* pushedFlagsOp = dynamic_cast<SetPartFlagsOperation*>(pushedOp);
+	SetPartFlagsOperation* pushedFlagsOp = qobject_cast<SetPartFlagsOperation*>(pushedOp);
 
 	if (pushedFlagsOp && &partFlagsOp->flagPartition() == &pushedFlagsOp->flagPartition())
 	{
@@ -360,12 +360,12 @@ bool OperationStack::mergePartFlagsOperation(Operation*& currentOp, Operation*& 
 */
 bool OperationStack::mergePartLabelOperation(Operation*& currentOp, Operation*& pushedOp)
 {
-	SetFileSystemLabelOperation* partLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(currentOp);
+	SetFileSystemLabelOperation* partLabelOp = qobject_cast<SetFileSystemLabelOperation*>(currentOp);
 
 	if (partLabelOp == NULL)
 		return false;
 
-	SetFileSystemLabelOperation* pushedLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(pushedOp);
+	SetFileSystemLabelOperation* pushedLabelOp = qobject_cast<SetFileSystemLabelOperation*>(pushedOp);
 
 	if (pushedLabelOp && &partLabelOp->labeledPartition() == &pushedLabelOp->labeledPartition())
 	{
@@ -392,13 +392,13 @@ bool OperationStack::mergePartLabelOperation(Operation*& currentOp, Operation*& 
 */
 bool OperationStack::mergeCreatePartitionTableOperation(Operation*& currentOp, Operation*& pushedOp)
 {
-	CreatePartitionTableOperation* pushedCreatePartitionTableOp = dynamic_cast<CreatePartitionTableOperation*>(pushedOp);
+	CreatePartitionTableOperation* pushedCreatePartitionTableOp = qobject_cast<CreatePartitionTableOperation*>(pushedOp);
 
 	if (pushedCreatePartitionTableOp && currentOp->targets(pushedCreatePartitionTableOp->targetDevice()))
 	{
 		Log() << i18nc("@info/plain", "Creating new partition table, discarding previous operation on device.");
 
-		CreatePartitionTableOperation* createPartitionTableOp = dynamic_cast<CreatePartitionTableOperation*>(currentOp);
+		CreatePartitionTableOperation* createPartitionTableOp = qobject_cast<CreatePartitionTableOperation*>(currentOp);
 		if (createPartitionTableOp != NULL)
 			pushedCreatePartitionTableOp->setOldPartitionTable(createPartitionTableOp->oldPartitionTable());
 

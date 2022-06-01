@@ -448,7 +448,7 @@ QList<QAction*> Timer::contextualActions()
 
 void Timer::startTimerFromAction()
 {
-    QAction *action = dynamic_cast<QAction*> (sender());
+    QAction *action = qobject_cast<QAction*> (sender());
     if (!action || action->property("seconds").type() != QVariant::Int) {
         return;
     }

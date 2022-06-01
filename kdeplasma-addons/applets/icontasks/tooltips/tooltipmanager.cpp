@@ -513,7 +513,7 @@ void ToolTipManagerPrivate::toolTipHovered(bool hovered)
 
 bool ToolTipManager::eventFilter(QObject *watched, QEvent *event)
 {
-    QGraphicsWidget * widget = dynamic_cast<QGraphicsWidget *>(watched);
+    QGraphicsWidget * widget = qobject_cast<QGraphicsWidget *>(watched);
     if (d->state != Activated || !widget) {
         return QObject::eventFilter(watched, event);
     }

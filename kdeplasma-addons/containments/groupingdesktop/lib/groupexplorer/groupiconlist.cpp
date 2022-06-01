@@ -122,7 +122,7 @@ GroupIconList::~GroupIconList()
 bool GroupIconList::eventFilter(QObject *obj, QEvent *event)
 {
     if (event->type() == QEvent::GraphicsSceneResize) {
-        QGraphicsWidget *widget = dynamic_cast<QGraphicsWidget *>(obj);
+        QGraphicsWidget *widget = qobject_cast<QGraphicsWidget *>(obj);
 
         if (widget == m_listWidget) {
             //the resize occurred with the list widget

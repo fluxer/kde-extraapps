@@ -628,7 +628,7 @@ KMixWindow::recreateGUI(bool saveConfig, const QString& mixerId,
   QList<GUIProfile*> activeGuiProfiles;
   for (int i = 0; i < m_wsMixers->count(); ++i)
     {
-      KMixerWidget* kmw = dynamic_cast<KMixerWidget*>(m_wsMixers->widget(i));
+      KMixerWidget* kmw = qobject_cast<KMixerWidget*>(m_wsMixers->widget(i));
       if (kmw)
         {
           activeGuiProfiles.append(kmw->getGuiprof());
@@ -981,7 +981,7 @@ KMixWindow::profileExists(QString guiProfileId)
 {
   for (int i = 0; i < m_wsMixers->count(); ++i)
     {
-      KMixerWidget* kmw = dynamic_cast<KMixerWidget*>(m_wsMixers->widget(i));
+      KMixerWidget* kmw = qobject_cast<KMixerWidget*>(m_wsMixers->widget(i));
       if (kmw && kmw->getGuiprof()->getId() == guiProfileId)
         return true;
     }

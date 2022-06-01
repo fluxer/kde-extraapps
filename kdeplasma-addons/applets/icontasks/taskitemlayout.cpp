@@ -247,9 +247,9 @@ int TaskItemLayout::size()
         }
 
         if (item->abstractItem()->itemType() == TaskManager::GroupItemType) {
-            TaskGroupItem *group = static_cast<TaskGroupItem*>(item);
+            TaskGroupItem *group = qobject_cast<TaskGroupItem*>(item);
             if (!group->collapsed()) {
-                TaskItemLayout *layout = dynamic_cast<TaskItemLayout*>(group->tasksLayout());
+                TaskItemLayout *layout = qobject_cast<TaskItemLayout*>(group->tasksLayout());
                 if (!layout) {
                     kDebug() << "Error group has no layout";
                     continue;

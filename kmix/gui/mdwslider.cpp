@@ -862,12 +862,12 @@ MDWSlider::setColors( QColor high, QColor low, QColor back )
 {
 	for( int i=0; i<m_slidersPlayback.count(); ++i ) {
 		QWidget *slider = m_slidersPlayback[i];
-		KSmallSlider *smallSlider = dynamic_cast<KSmallSlider*>(slider);
+		KSmallSlider *smallSlider = qobject_cast<KSmallSlider*>(slider);
 		if ( smallSlider ) smallSlider->setColors( high, low, back );
 	}
 	for( int i=0; i<m_slidersCapture.count(); ++i ) {
 		QWidget *slider = m_slidersCapture[i];
-		KSmallSlider *smallSlider = dynamic_cast<KSmallSlider*>(slider);
+		KSmallSlider *smallSlider = qobject_cast<KSmallSlider*>(slider);
 		if ( smallSlider ) smallSlider->setColors( high, low, back );
 	}
 }
@@ -877,12 +877,12 @@ MDWSlider::setMutedColors( QColor high, QColor low, QColor back )
 {
 	for( int i=0; i<m_slidersPlayback.count(); ++i ) {
 		QWidget *slider = m_slidersPlayback[i];
-		KSmallSlider *smallSlider = dynamic_cast<KSmallSlider*>(slider);
+		KSmallSlider *smallSlider = qobject_cast<KSmallSlider*>(slider);
 		if ( smallSlider ) smallSlider->setGrayColors( high, low, back );
 	}
 	for( int i=0; i<m_slidersCapture.count(); ++i ) {
 		QWidget *slider = m_slidersCapture[i];
-		KSmallSlider *smallSlider = dynamic_cast<KSmallSlider*>(slider);
+		KSmallSlider *smallSlider = qobject_cast<KSmallSlider*>(slider);
 		if ( smallSlider ) smallSlider->setGrayColors( high, low, back );
 	}
 }
@@ -1043,9 +1043,9 @@ void MDWSlider::update()
 	{
 		QLabel *l;
 		VerticalText *v;
-		if ((l = dynamic_cast<QLabel*>(m_label)))
+		if ((l = qobject_cast<QLabel*>(m_label)))
 			l->setText(m_mixdevice->readableName());
-		else if ((v = dynamic_cast<VerticalText*>(m_label)))
+		else if ((v = qobject_cast<VerticalText*>(m_label)))
 			v->setText(m_mixdevice->readableName());
 	}
 }

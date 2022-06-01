@@ -26,6 +26,7 @@
 
 class VerticalText : public QWidget
 {
+   Q_OBJECT
    public:
       VerticalText(QWidget * parent, const QString&, Qt::WFlags f = 0);
       ~VerticalText();

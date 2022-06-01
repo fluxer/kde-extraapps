@@ -755,7 +755,7 @@ void TaskGroupItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                     if (groupable->itemType() == TaskManager::GroupItemType) {
                         //TODO: recurse through sub-groups?
                     } else {
-                        TaskItem * item = dynamic_cast<TaskItem*>(groupable);
+                        TaskItem * item = qobject_cast<TaskItem*>(groupable);
                         if (item && item->task()) {
                             ids << item->task()->info().win();
                         }

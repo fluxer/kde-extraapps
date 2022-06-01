@@ -225,7 +225,7 @@ void MiniBar::changeEvent( QEvent * event )
 {
     if ( event->type() == QEvent::ParentChange )
     {
-        QToolBar *tb = dynamic_cast<QToolBar*>( parent() );
+        QToolBar *tb = qobject_cast<QToolBar*>( parent() );
         if ( tb != m_oldToobarParent )
         {
             if ( m_oldToobarParent )

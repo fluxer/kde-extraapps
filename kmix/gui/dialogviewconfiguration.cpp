@@ -415,7 +415,7 @@ void DialogViewConfiguration::prepareControls(QAbstractItemModel* model, bool is
         // -2- Find the mdw, und update it **************************
         foreach ( QWidget *qw, _view._mdws )
         {
-            MixDeviceWidget *mdw = dynamic_cast<MixDeviceWidget*>(qw);
+            MixDeviceWidget *mdw = qobject_cast<MixDeviceWidget*>(qw);
             if ( !mdw ) {
                 continue;
             }
