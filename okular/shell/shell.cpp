@@ -166,7 +166,7 @@ bool Shell::openDocument( const QString& url, const QString &serializedOptions )
     KParts::ReadWritePart* const part = m_tabs[0].part;
 
     // Return false if we can't open new tabs and the only part is occupied
-    if ( !dynamic_cast<Okular::ViewerInterface*>(part)->openNewFilesInTabs()
+    if ( !qobject_cast<Okular::ViewerInterface*>(part)->openNewFilesInTabs()
          && !part->url().isEmpty()
          && !ShellUtils::unique(serializedOptions))
     {
