@@ -2064,7 +2064,7 @@ void Part::slotRenameBookmark( const DocumentViewport &viewport )
 
 void Part::slotRenameBookmarkFromMenu()
 {
-    QAction *action = dynamic_cast<QAction *>(sender());
+    QAction *action = qobject_cast<QAction *>(sender());
     Q_ASSERT( action );
     if ( action )
     {
@@ -2087,7 +2087,7 @@ void Part::slotAboutToShowContextMenu(KMenu * /*menu*/, QAction *action, QMenu *
         delete a;
     }
 
-    KBookmarkAction *ba = dynamic_cast<KBookmarkAction*>(action);
+    KBookmarkAction *ba = qobject_cast<KBookmarkAction*>(action);
     if (ba != NULL)
     {
         QAction *separatorAction = contextMenu->addSeparator();
@@ -2908,7 +2908,7 @@ void Part::rebuildBookmarkMenu( bool unplugActions )
             QWidget *container = factory()->container("bookmarks", clients[i]);
             if (container && container->actions().contains(m_bookmarkActions.first()))
             {
-                Q_ASSERT(dynamic_cast<KMenu*>(container));
+                Q_ASSERT(qobject_cast<KMenu*>(container));
                 disconnect(container, 0, this, 0);
                 connect(container, SIGNAL(aboutToShowContextMenu(KMenu*,QAction*,QMenu*)), this, SLOT(slotAboutToShowContextMenu(KMenu*,QAction*,QMenu*)));
                 containerFound = true;

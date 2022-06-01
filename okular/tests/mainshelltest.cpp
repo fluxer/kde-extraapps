@@ -240,8 +240,8 @@ void MainShellTest::testShell()
             QSet<QString> openUrls;
             Shell *s = findShell();
             QVERIFY(s);
-            Okular::Part *part = dynamic_cast<Okular::Part*>(s->m_tabs[0].part);
-            Okular::Part *part2 = dynamic_cast<Okular::Part*>(s->m_tabs[1].part);
+            Okular::Part *part = qobject_cast<Okular::Part*>(s->m_tabs[0].part);
+            Okular::Part *part2 = qobject_cast<Okular::Part*>(s->m_tabs[1].part);
             QCOMPARE(s->m_tabs.count(), 2);
             QCOMPARE(part->url().url(), QString("file://%1").arg(paths[0]));
             QCOMPARE(part2->url().url(), QString("file://%1").arg(paths[1]));
@@ -313,7 +313,7 @@ void MainShellTest::testShell()
             {
                 // It is attaching to us so a second tab is there
                 QCOMPARE(s->m_tabs.count(), 2);
-                Okular::Part *part2 = dynamic_cast<Okular::Part*>(s->m_tabs[1].part);
+                Okular::Part *part2 = qobject_cast<Okular::Part*>(s->m_tabs[1].part);
                 QCOMPARE(part2->url().url(), QString("file://%1").arg(externalProcessPath));
                 QCOMPARE(partDocument(part2)->currentPage(), externalProcessExpectedPage);
             }
@@ -353,12 +353,12 @@ void MainShellTest::testShell()
         if (unique)
         {
             QCOMPARE(s->m_tabs.count(), 1);
-            part = dynamic_cast<Okular::Part*>(s->m_tabs[0].part);
+            part = qobject_cast<Okular::Part*>(s->m_tabs[0].part);
         }
         else
         {
             QCOMPARE(s->m_tabs.count(), 2);
-            part = dynamic_cast<Okular::Part*>(s->m_tabs[1].part);
+            part = qobject_cast<Okular::Part*>(s->m_tabs[1].part);
         }
 
         for (int i = 0; presentationWidget(part) == 0 && i < 20; ++i) {
