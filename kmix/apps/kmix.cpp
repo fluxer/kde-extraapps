@@ -260,19 +260,14 @@ KMixWindow::initActionsLate()
     {
       KAction* globalAction = actionCollection()->addAction("increase_volume");
       globalAction->setText(i18n("Increase Volume"));
-      globalAction->setGlobalShortcut(KShortcut(Qt::Key_VolumeUp));
-      connect(globalAction, SIGNAL(triggered(bool)),
-          SLOT(slotIncreaseVolume()));
+      connect(globalAction, SIGNAL(triggered(bool)), SLOT(slotIncreaseVolume()));
 
       globalAction = actionCollection()->addAction("decrease_volume");
       globalAction->setText(i18n("Decrease Volume"));
-      globalAction->setGlobalShortcut(KShortcut(Qt::Key_VolumeDown));
-      connect(globalAction, SIGNAL(triggered(bool)),
-          SLOT(slotDecreaseVolume()));
+      connect(globalAction, SIGNAL(triggered(bool)), SLOT(slotDecreaseVolume()));
 
       globalAction = actionCollection()->addAction("mute");
       globalAction->setText(i18n("Mute"));
-      globalAction->setGlobalShortcut(KShortcut(Qt::Key_VolumeMute));
       connect(globalAction, SIGNAL(triggered(bool)), SLOT(slotMute()));
     }
 }
