@@ -122,7 +122,7 @@ int Mixer_ALSA::open()
     }
 
     // Determine a card name
-    if( m_devnum < -1 || m_devnum > 31 )
+    if( m_devnum <= -1 || m_devnum > 31 )
         devName = "default";
     else
         devName = QString( "hw:%1" ).arg( m_devnum );

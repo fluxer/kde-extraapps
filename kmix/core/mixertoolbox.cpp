@@ -161,7 +161,7 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
       // New: We don't try be that clever anymore. We now blindly scan 20 cards, as the clever
       // approach doesn't work for the one or other user (e.g. hotplugging might create holes in the list of soundcards).
       int devNumMax = 19;
-      for( int dev=0; dev<=devNumMax; dev++ )
+      for( int dev=-1; dev<=devNumMax; dev++ )
       {
          Mixer *mixer = new Mixer( driverName, dev );
          bool mixerAccepted = possiblyAddMixer(mixer);
