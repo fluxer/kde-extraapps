@@ -103,6 +103,7 @@ target_link_libraries(kmix
     ${KDE4_KDEUI_LIBS}
     ${KDE4_PLASMA_LIBS}
     ${QT_QTXML_LIBRARY}
+    ${X11_X11_LIB}
 )
 
 if(ALSA_FOUND)

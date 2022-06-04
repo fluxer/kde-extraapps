@@ -47,6 +47,7 @@
 #include <kglobal.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
+#include <ksystemeventfilter.h>
 #include <KProcess>
 #include <KTabWidget>
 
@@ -69,10 +70,16 @@
 #include "dbus/dbusmixsetwrapper.h"
 #include "gui/osdwidget.h"
 
+#include <X11/Xlib.h>
+#include <X11/XF86keysym.h>
+#include <fixx11h.h>
 
 /* KMixWindow
  * Constructs a mixer window (KMix main window)
  */
+
+static KeyCode s_xf86lowervolume = 0;
+static KeyCode s_xf86raisevolume = 0;
 
 KMixWindow::KMixWindow(bool invisible) :
     KXmlGuiWindow(0, Qt::WindowContextHelpButtonHint),
@@ -129,6 +136,20 @@ KMixWindow::KMixWindow(bool invisible) :
 
 KMixWindow::~KMixWindow()
 {
+  if (m_autouseMultimediaKeys) {
+      XUngrabKey(
+        QX11Info::display(),
+        s_xf86lowervolume,
+        AnyModifier, QX11Info::appRootWindow()
+      );
+
+      XUngrabKey(
+        QX11Info::display(),
+        s_xf86raisevolume,
+        AnyModifier, QX11Info::appRootWindow()
+      );
+  }
+
   ControlManager::instance().removeListener(this);
 
   delete m_dsm;
@@ -165,9 +186,9 @@ void KMixWindow::controlsChange(int changeType)
   ControlChangeType::Type type = ControlChangeType::fromInt(changeType);
   switch (type )
   {
-    case  ControlChangeType::ControlList:
-    case  ControlChangeType::MasterChanged:
-    	updateDocking();
+    case ControlChangeType::ControlList:
+    case ControlChangeType::MasterChanged:
+      updateDocking();
       break;
 
     default:
@@ -269,7 +290,41 @@ KMixWindow::initActionsLate()
       globalAction = actionCollection()->addAction("mute");
       globalAction->setText(i18n("Mute"));
       connect(globalAction, SIGNAL(triggered(bool)), SLOT(slotMute()));
+
+      s_xf86lowervolume = XKeysymToKeycode(QX11Info::display(), XF86XK_AudioLowerVolume);
+      s_xf86raisevolume = XKeysymToKeycode(QX11Info::display(), XF86XK_AudioRaiseVolume);
+
+      XGrabKey(
+        QX11Info::display(),
+        s_xf86lowervolume,
+        AnyModifier, QX11Info::appRootWindow(), False, GrabModeAsync, GrabModeAsync
+      );
+
+      XGrabKey(
+        QX11Info::display(),
+        s_xf86raisevolume,
+        AnyModifier, QX11Info::appRootWindow(), False, GrabModeAsync, GrabModeAsync
+      );
+
+      KSystemEventFilter::installEventFilter(this);
     }
+}
+
+bool KMixWindow::x11Event(XEvent *xevent)
+{
+    if (xevent->type == KeyPress) {
+        // qDebug() << Q_FUNC_INFO << xevent << xevent->xkey.keycode;
+        // qDebug() << Q_FUNC_INFO << XF86XK_AudioLowerVolume << s_xf86lowervolume;
+        // qDebug() << Q_FUNC_INFO << XF86XK_AudioRaiseVolume << s_xf86raisevolume;
+        if (xevent->xkey.keycode == s_xf86lowervolume) {
+            increaseOrDecreaseVolume(false);
+            return true;
+        } else if (xevent->xkey.keycode == s_xf86raisevolume) {
+            increaseOrDecreaseVolume(true);
+            return true;
+        }
+    }
+    return false;
 }
 
 void

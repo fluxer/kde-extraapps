@@ -37,26 +37,24 @@ class KAction;
 
 // KMix
 #include "core/GlobalConfig.h"
+#include "core/mixer.h"
 
 class KMixDockWidget;
 class KMixerWidget;
 class KMixWindow;
 class Mixer;
-#include "core/mixer.h"
-
 class OSDWidget;
 class DialogSelectMaster;
 
-class
-KMixWindow : public KXmlGuiWindow
+class KMixWindow : public KXmlGuiWindow
 {
    Q_OBJECT
 
-  public:
+public:
    KMixWindow(bool invisible);
    ~KMixWindow();
 
-  private:
+private:
    void saveBaseConfig();
    void saveViewConfig();
    void loadConfig();
@@ -74,7 +72,7 @@ KMixWindow : public KXmlGuiWindow
 
    virtual bool queryClose();
 
-  public slots:
+public slots:
    void controlsChange(int changeType);
    void quit();
    void showSettings();
@@ -93,11 +91,11 @@ KMixWindow : public KXmlGuiWindow
    void newMixerShown(int tabIndex);
    void slotSelectMaster();
 
-    private:
-        KMixerWidget* findKMWforTab( const QString& tabId );
+private:
+   KMixerWidget* findKMWforTab( const QString& tabId );
 
-        void forkExec(const QStringList& args);
-        void errorPopup(const QString& msg);
+   void forkExec(const QStringList& args);
+   void errorPopup(const QString& msg);
 
    KAccel *m_keyAccel;
    KAction* _actionShowMenubar;
@@ -132,14 +130,17 @@ private:
    bool addMixerWidget(const QString& mixer_ID, QString guiprofId, int insertPosition);
    void setInitialSize();
 
-    private:
-    static QString getKmixctrlRcFilename(QString postfix);
-	bool profileExists(QString guiProfileId);
-	bool updateDocking();
-	void removeDock();
-	void updateTabsClosable();
+protected:
+   bool x11Event(XEvent *xevent) final;
 
-  private slots:
+private:
+   static QString getKmixctrlRcFilename(QString postfix);
+   bool profileExists(QString guiProfileId);
+   bool updateDocking();
+   void removeDock();
+   void updateTabsClosable();
+
+private slots:
    void slotHWInfo();
    void slotKdeAudioSetupExec();
    void slotConfigureCurrentView();
