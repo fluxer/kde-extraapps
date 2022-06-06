@@ -141,26 +141,22 @@ void UnitConverter::calculate()
     switch (m_pCmbCategory->nativeWidget()->currentIndex()) {
         case 0: {
             KTemperature temp(m_pTxtValue1->text().toDouble(), static_cast<KTemperature::KTempUnit>(fromindex));
-            KTemperature totemp(0.0, static_cast<KTemperature::KTempUnit>(toindex));
-            m_pTxtValue2->setText(QString::number(temp.convertTo(totemp.unitEnum())));
+            m_pTxtValue2->setText(QString::number(temp.convertTo(static_cast<KTemperature::KTempUnit>(toindex))));
             break;
         }
         case 1: {
             KVelocity velo(m_pTxtValue1->text().toDouble(), static_cast<KVelocity::KVeloUnit>(fromindex));
-            KVelocity tovelo(0.0, static_cast<KVelocity::KVeloUnit>(toindex));
-            m_pTxtValue2->setText(QString::number(velo.convertTo(tovelo.unitEnum())));
+            m_pTxtValue2->setText(QString::number(velo.convertTo(static_cast<KVelocity::KVeloUnit>(toindex))));
             break;
         }
         case 2: {
             KPressure pres(m_pTxtValue1->text().toDouble(), static_cast<KPressure::KPresUnit>(fromindex));
-            KPressure topres(0.0, static_cast<KPressure::KPresUnit>(toindex));
-            m_pTxtValue2->setText(QString::number(pres.convertTo(topres.unitEnum())));
+            m_pTxtValue2->setText(QString::number(pres.convertTo(static_cast<KPressure::KPresUnit>(toindex))));
             break;
         }
         case 3: {
             KLength leng(m_pTxtValue1->text().toDouble(), static_cast<KLength::KLengUnit>(fromindex));
-            KLength toleng(0.0, static_cast<KLength::KLengUnit>(toindex));
-            m_pTxtValue2->setText(QString::number(leng.convertTo(toleng.unitEnum())));
+            m_pTxtValue2->setText(QString::number(leng.convertTo(static_cast<KLength::KLengUnit>(toindex))));
             break;
         }
     }
@@ -174,26 +170,22 @@ void UnitConverter::calculateReverse()
     switch (m_pCmbCategory->nativeWidget()->currentIndex()) {
         case 0: {
             KTemperature temp(m_pTxtValue2->text().toDouble(), static_cast<KTemperature::KTempUnit>(fromindex));
-            KTemperature totemp(0.0, static_cast<KTemperature::KTempUnit>(toindex));
-            m_pTxtValue1->setText(QString::number(temp.convertTo(totemp.unitEnum())));
+            m_pTxtValue1->setText(QString::number(temp.convertTo(static_cast<KTemperature::KTempUnit>(toindex))));
             break;
         }
         case 1: {
             KVelocity velo(m_pTxtValue2->text().toDouble(), static_cast<KVelocity::KVeloUnit>(fromindex));
-            KVelocity tovelo(0.0, static_cast<KVelocity::KVeloUnit>(toindex));
-            m_pTxtValue1->setText(QString::number(velo.convertTo(tovelo.unitEnum())));
+            m_pTxtValue1->setText(QString::number(velo.convertTo(static_cast<KVelocity::KVeloUnit>(toindex))));
             break;
         }
         case 2: {
             KPressure pres(m_pTxtValue2->text().toDouble(), static_cast<KPressure::KPresUnit>(fromindex));
-            KPressure topres(0.0, static_cast<KPressure::KPresUnit>(toindex));
-            m_pTxtValue1->setText(QString::number(pres.convertTo(topres.unitEnum())));
+            m_pTxtValue1->setText(QString::number(pres.convertTo(static_cast<KPressure::KPresUnit>(toindex))));
             break;
         }
         case 3: {
             KLength leng(m_pTxtValue2->text().toDouble(), static_cast<KLength::KLengUnit>(fromindex));
-            KLength toleng(0.0, static_cast<KLength::KLengUnit>(toindex));
-            m_pTxtValue1->setText(QString::number(leng.convertTo(toleng.unitEnum())));
+            m_pTxtValue1->setText(QString::number(leng.convertTo(static_cast<KLength::KLengUnit>(toindex))));
             break;
         }
     }
