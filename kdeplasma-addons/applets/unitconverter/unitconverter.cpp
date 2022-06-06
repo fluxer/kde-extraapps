@@ -19,6 +19,7 @@
  *****************************************************************************/
 
 #include "unitconverter.h"
+
 #include <QGraphicsGridLayout>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
@@ -26,7 +27,6 @@
 #include <QRegExp>
 #include <KComboBox>
 #include <KLineEdit>
-#include <Plasma/LineEdit>
 #include <Plasma/Label>
 #include <Plasma/Frame>
 #include <kunitconversion.h>
@@ -71,7 +71,6 @@ void UnitConverter::sltCategoryChanged(int index)
     m_pCmbUnit2->clear();
     switch (index) {
         case 0: {
-            m_pInfo->setText(KTemperature::description());
             for (int i = 0; i < KTemperature::UnitCount; i++) {
                 const QString description = KTemperature::unitDescription(static_cast<KTemperature::KTempUnit>(i));
                 m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
@@ -80,7 +79,6 @@ void UnitConverter::sltCategoryChanged(int index)
             break;
         }
         case 1: {
-            m_pInfo->setText(KVelocity::description());
             for (int i = 0; i < KVelocity::UnitCount; i++) {
                 const QString description = KVelocity::unitDescription(static_cast<KVelocity::KVeloUnit>(i));
                 m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
@@ -89,7 +87,6 @@ void UnitConverter::sltCategoryChanged(int index)
             break;
         }
         case 2: {
-            m_pInfo->setText(KPressure::description());
             for (int i = 0; i < KPressure::UnitCount; i++) {
                 const QString description = KPressure::unitDescription(static_cast<KPressure::KPresUnit>(i));
                 m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
@@ -98,7 +95,6 @@ void UnitConverter::sltCategoryChanged(int index)
             break;
         }
         case 3: {
-            m_pInfo->setText(KLength::description());
             for (int i = 0; i < KLength::UnitCount; i++) {
                 const QString description = KLength::unitDescription(static_cast<KLength::KLengUnit>(i));
                 m_pCmbUnit1->nativeWidget()->addItem(description, QVariant::fromValue(i));
@@ -227,9 +223,6 @@ QGraphicsWidget *UnitConverter::graphicsWidget()
         m_pTxtValue1 = new Plasma::LineEdit(this);
         m_pTxtValue2 = new Plasma::LineEdit(this);
 
-        m_pInfo = new Plasma::Label(m_widget);
-        m_pInfo->nativeWidget()->setOpenExternalLinks(true);
-
         QGraphicsGridLayout *pGridLayout = new QGraphicsGridLayout(m_widget);
         pGridLayout->addItem(pHeader, 0, 0, 1, 2);
         pGridLayout->addItem(pLabel, 1, 0);
@@ -238,8 +231,7 @@ QGraphicsWidget *UnitConverter::graphicsWidget()
         pGridLayout->addItem(m_pCmbUnit2, 2, 1);
         pGridLayout->addItem(m_pTxtValue1, 3, 0);
         pGridLayout->addItem(m_pTxtValue2, 3, 1);
-        pGridLayout->addItem(m_pInfo, 4, 0, 1, 2);
-        pGridLayout->setRowStretchFactor(5, 1);
+        pGridLayout->setRowStretchFactor(4, 1);
 
         m_pCmbCategory->nativeWidget()->addItem(KTemperature::description(), QVariant::fromValue(0));
         m_pCmbCategory->nativeWidget()->addItem(KVelocity::description(), QVariant::fromValue(1));

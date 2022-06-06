@@ -23,12 +23,7 @@
 
 #include <Plasma/PopupApplet>
 #include <Plasma/ComboBox>
-
-namespace Plasma {
-    class ComboBox;
-    class LineEdit;
-    class Label;
-}
+#include <Plasma/LineEdit>
 
 class ComboBox : public Plasma::ComboBox
 {
@@ -75,7 +70,6 @@ class UnitConverter : public Plasma::PopupApplet
         Plasma::ComboBox *m_pCmbUnit2;
         Plasma::LineEdit *m_pTxtValue1;
         Plasma::LineEdit *m_pTxtValue2;
-        Plasma::Label    *m_pInfo;
         bool              m_bCalculateReverse;
 };
 
