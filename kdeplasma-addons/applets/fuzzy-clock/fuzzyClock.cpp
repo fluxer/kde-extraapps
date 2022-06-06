@@ -35,9 +35,9 @@
 Clock::Clock(QObject *parent, const QVariantList &args)
     : ClockApplet(parent, args),
       m_oldContentSize(QSizeF (0,0)),
+      m_configUpdated(false),
       m_adjustToHeight(1),
       m_useCustomFontColor(false),
-      m_configUpdated(false),
       m_fontColor(Qt::white),
       m_fontTimeBold(false),
       m_fontTimeItalic(false),

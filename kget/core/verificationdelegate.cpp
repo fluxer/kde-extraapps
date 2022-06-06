@@ -24,8 +24,9 @@
 #include <KComboBox>
 #include <KLineEdit>
 
-struct VerificationDelegatePrivate
+class VerificationDelegatePrivate
 {
+public:
     VerificationDelegatePrivate()
     {
     }

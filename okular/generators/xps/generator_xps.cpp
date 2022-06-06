@@ -118,32 +118,6 @@ static QRectF stringToRectF( const QString &data )
     return QRectF( origin, size );
 }
 
-static bool parseGUID( const QString &guidString, unsigned short guid[16]) {
-
-    if (guidString.length() <= 35) {
-        return false;
-    }
-
-    // Maps bytes to positions in guidString
-    const static int indexes[] = {6, 4, 2, 0, 11, 9, 16, 14, 19, 21, 24, 26, 28, 30, 32, 34};
-
-    for (int i = 0; i < 16; i++) {
-        int hex1 = hex2int(guidString[indexes[i]].cell());
-        int hex2 = hex2int(guidString[indexes[i]+1].cell());
-
-        if ((hex1 < 0) || (hex2 < 0))
-        {
-            return false;
-        }
-
-        guid[i] = hex1 * 16 + hex2;
-    }
-
-    return true;
-
-}
-
-
 // Read next token of abbreviated path data
 static bool nextAbbPathToken(AbbPathToken *token)
 {
@@ -590,24 +564,6 @@ static const KZipFileEntry* loadFile( KZip *archive, const QString &fileName, Qt
 {
     const KArchiveEntry *entry = loadEntry( archive, fileName, cs );
     return entry->isFile() ? static_cast< const KZipFileEntry * >( entry ) : 0;
-}
-
-/**
-   \return The name of a resource from the \p fileName
-*/
-static QString resourceName( const QString &fileName )
-{
-    QString resource = fileName;
-    const int slashPos = fileName.lastIndexOf( QLatin1Char( '/' ) );
-    const int dotPos = fileName.lastIndexOf( QLatin1Char( '.' ) );
-    if ( slashPos > -1 ) {
-        if ( dotPos > -1 && dotPos > slashPos ) {
-            resource = fileName.mid( slashPos + 1, dotPos - slashPos - 1 );
-        } else {
-            resource = fileName.mid( slashPos + 1 );
-        }
-    }
-    return resource;
 }
 
 static QColor interpolatedColor( const QColor &c1, const QColor &c2 )

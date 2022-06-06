@@ -76,7 +76,6 @@ class UnitConverter : public Plasma::PopupApplet
         Plasma::LineEdit *m_pTxtValue1;
         Plasma::LineEdit *m_pTxtValue2;
         Plasma::Label    *m_pInfo;
-        int               m_iCategory;
         bool              m_bCalculateReverse;
 };
 

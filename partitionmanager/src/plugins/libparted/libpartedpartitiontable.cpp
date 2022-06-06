@@ -165,7 +165,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 	else if (partition.roles().has(PartitionRole::Primary))
 		pedType = PED_PARTITION_NORMAL;
 
-	if (pedType == static_cast<int>(0xffffffff))
+	if (pedType == static_cast<PedPartitionType>(0xffffffff))
 	{
 		report.line() << i18nc("@info/plain", "Unknown partition role for new partition <filename>%1</filename> (roles: %2)", partition.deviceNode(), partition.roles().toString());
 		return "";

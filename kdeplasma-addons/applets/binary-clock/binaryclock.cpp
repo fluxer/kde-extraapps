@@ -271,7 +271,6 @@ void BinaryClock::paintInterface(QPainter *p, const QStyleOptionGraphicsItem *op
         return;
     }
 
-    QSizeF m_size = contentsRect.size();
     int appletHeight = (int) contentsRect.height();
     int appletWidth = (int) contentsRect.width();
     int dots = m_showSeconds ? 6 : 4;

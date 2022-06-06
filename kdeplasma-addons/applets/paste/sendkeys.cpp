@@ -104,7 +104,7 @@ void SendKeys::send(uint k)
 
     if (d->keys.contains(keycode)) {
         keycode = d->keys[keycode];
-    } else if (keycode < Qt::Key_Space && keycode > Qt::Key_ydiaeresis) {
+    } else if (keycode < Qt::Key_Space || keycode > Qt::Key_ydiaeresis) {
         return;
     }
     keycode = XKeysymToKeycode(dsp, keycode);

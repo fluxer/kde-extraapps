@@ -34,7 +34,6 @@ public:
 
 private:
     static const int MARGIN = 5;
-    QObject *m_listener;
     float m_ratio;
 };
 

@@ -76,7 +76,6 @@ class KMixerWidget : public QWidget
    Mixer *_mixer;
    QVBoxLayout *m_topLayout; // contains TabWidget
    QString _guiprofId;
-   ProfTab* _tab;
    std::vector<ViewBase*> _views;
    KActionCollection* _actionCollection;  // -<- applciations wide action collection
    

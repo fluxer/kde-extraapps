@@ -244,7 +244,6 @@ bool KU_UserFiles::savepwd()
 {
   FILE *passwd_fd = NULL;
   FILE *shadow_fd = NULL;
-  uid_t tmp_uid = 0;
   QString s;
   QString s1;
   QString tmp, tmp2;
@@ -321,7 +320,6 @@ bool KU_UserFiles::savepwd()
       usersindex++;
     }
 
-    tmp_uid = user.getUID();
     if ( caps & Cap_Shadow )
       tmp = QLatin1String( "x" );
     else {

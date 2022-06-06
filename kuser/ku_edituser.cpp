@@ -430,7 +430,7 @@ void KU_EditUser::selectuser()
     if ( first ) {
       if ( !shell.isEmpty() ) {
         bool tested = false;
-        for ( int i=0; i<leshell->count(); i++ )
+        for ( int i=0; i<leshell->count(); i++ ) {
           if ( leshell->itemText(i) == shell ) {
             tested = true;
             leshell->setCurrentIndex(i);
@@ -440,6 +440,7 @@ void KU_EditUser::selectuser()
             leshell->insertItem( leshell->count(), shell );
             leshell->setCurrentIndex( leshell->count()-1 );
           }
+        }
       } else
         leshell->setCurrentIndex( 0 );
     } else {

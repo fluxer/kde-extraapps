@@ -34,9 +34,6 @@ protected slots:
     void appClicked();
     void activeWindowChanged(WId id);
     void enableWidgets();
-
-private:
-    WId m_me;
 };
 
 #endif // APPKEY_HEADER

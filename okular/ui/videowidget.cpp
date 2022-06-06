@@ -32,25 +32,6 @@
 #include "core/movie.h"
 #include "snapshottaker.h"
 
-static QAction* createToolBarButtonWithWidgetPopup( QToolBar* toolBar, QWidget *widget, const QIcon &icon )
-{
-    QToolButton *button = new QToolButton( toolBar );
-    QAction *action = toolBar->addWidget( button );
-    button->setAutoRaise( true );
-    button->setIcon( icon );
-    button->setPopupMode( QToolButton::InstantPopup );
-    QMenu *menu = new QMenu( button );
-    button->setMenu( menu );
-    QWidgetAction *widgetAction = new QWidgetAction( menu );
-    QWidget *dummy = new QWidget( menu );
-    widgetAction->setDefaultWidget( dummy );
-    QVBoxLayout *dummyLayout = new QVBoxLayout( dummy );
-    dummyLayout->setMargin( 5 );
-    dummyLayout->addWidget( widget );
-    menu->addAction( widgetAction );
-    return action;
-}
-
 /* Private storage. */
 class VideoWidget::Private
 {

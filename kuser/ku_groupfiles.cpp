@@ -133,7 +133,6 @@ bool KU_GroupFiles::save()
   kDebug() << "KU_GroupFiles::save() ";
   FILE *group_fd = NULL;
   FILE *gshadow_fd = NULL;
-  gid_t tmp_gid = 0;
   QString tmpGe, tmpSe, tmp2;
   QString group_filename, new_group_filename;
   QString gshadow_filename, new_gshadow_filename;
@@ -213,7 +212,6 @@ bool KU_GroupFiles::save()
     tmpGe.replace( QLatin1Char( ':' ), QLatin1String( "_" ) );
     group.setName( tmpGe );
 
-    tmp_gid = group.getGID();
     tmpGe += QLatin1Char( ':' ) +
             group.getPwd() + QLatin1Char( ':' ) +
             QString::number( group.getGID() ) + QLatin1Char( ':' );

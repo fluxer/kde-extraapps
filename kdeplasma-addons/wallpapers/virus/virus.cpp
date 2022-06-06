@@ -32,10 +32,8 @@ K_EXPORT_PLASMA_WALLPAPER(virus, Virus)
 Virus::Virus(QObject *parent, const QVariantList &args)
     : Plasma::Wallpaper(parent, args),
       m_configWidget(0),
-      m_currentSlide(-1),
       m_model(0),
       m_dialog(0),
-      m_randomize(true),
       m_startupResumed(false)
 {
     connect(this, SIGNAL(renderCompleted(QImage)), this, SLOT(updateBackground(QImage)));

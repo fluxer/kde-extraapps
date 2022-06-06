@@ -91,13 +91,13 @@ void MDDocument::slotKIOData(KIO::Job *kiojob, const QByteArray &data)
 
 void MDDocument::slotKIOResult(KJob *kiojob)
 {
-    KIO::TransferJob *transferjob = static_cast<KIO::TransferJob*>(kiojob);
-    if (kiojob->error() != 0) {
+    KIO::TransferJob *transferjob = qobject_cast<KIO::TransferJob*>(kiojob);
+    if (transferjob->error() != 0) {
         kWarning() << "Could not fetch resource";
     } else {
         kDebug() << "Resource fetched";
     }
-    kiojob->deleteLater();
+    transferjob->deleteLater();
 }
 
 #include "moc_document_md.cpp"

@@ -340,7 +340,7 @@ void dvifile::renumber()
   for(int i=1; i<=total_pages; i++) {
     quint8 *ptr = dviData.data() + page_offset[i-1]+1;
     quint8 *num = (quint8 *)&i;
-    for(quint8 j=0; j<4; j++)
+    for(quint8 j=0; j<4; j++) {
 #if Q_BYTE_ORDER == Q_BIG_ENDIAN
       *(ptr++) = num[0];
       *(ptr++) = num[1];
@@ -352,6 +352,7 @@ void dvifile::renumber()
       *(ptr++) = num[1];
       *(ptr++) = num[0];
 #endif
+    }
   }
 }
 

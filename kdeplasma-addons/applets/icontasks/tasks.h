@@ -224,7 +224,6 @@ private:
     MiddleClick m_middleClick;
     int m_spacing;
     int m_iconScale;
-    Plasma::LayoutAnimator *m_animator;
     QGraphicsLinearLayout *layout;
 
     Ui::appearanceconfig m_appUi;
@@ -246,10 +245,7 @@ private:
 
     TaskGroupItem *m_rootGroupItem;
     GroupManager *m_groupManager;
-    TaskManager::GroupManager::TaskGroupingStrategy m_groupingStrategy;
-    bool m_groupWhenFull;
 
-    int m_currentDesktop;
     QWeakPointer<QWidget> m_popupDialog;
     QAction *m_lockAct;
     QAction *m_unlockAct;

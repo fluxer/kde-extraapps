@@ -105,7 +105,7 @@ class SpeakerPrivate
         config(new KConfig(QLatin1String( "kttsdrc" ))),
         q(parent)
     {
-        filterMgr->init();
+        filterMgr->init(config, QLatin1String( "General" ));
     }
 
     ~SpeakerPrivate()
@@ -306,7 +306,7 @@ void Speaker::init()
     kDebug() << "Running: Speaker::init()";
     delete d->filterMgr;
     d->filterMgr = new FilterMgr();
-    d->filterMgr->init();
+    d->filterMgr->init(d->config, QLatin1String( "General" ));
 
     // Reread config setting the top voice if there is one.
     d->readTalkerData();

@@ -323,7 +323,6 @@ void FreeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
     //XXX this code is duplicated in the next function
     QPointF basePoint = m_rect.topLeft() + QPointF(HANDLE_MARGIN, iconMargin);
     QPointF step = QPointF(0, m_iconSize + iconMargin);
-    QPointF separator = step + QPointF(0, iconMargin);
     //end duplicate code
 
     QPointF shiftC;
@@ -408,7 +407,6 @@ Handle::ButtonType FreeHandle::mapToButton(const QPointF &point) const
     //XXX this code is duplicated in the prev. function
     QPointF basePoint = m_rect.topLeft() + QPointF(HANDLE_MARGIN, iconMargin);
     QPointF step = QPointF(0, m_iconSize + iconMargin);
-    QPointF separator = step + QPointF(0, iconMargin);
    //end duplicate code
 
     QRectF activeArea = QRectF(basePoint, QSizeF(m_iconSize, m_iconSize));
@@ -629,9 +627,6 @@ void FreeHandle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         QGraphicsItem::mouseMoveEvent(event);
         return;
     }
-
-    //Track how much the mouse has moved.
-    QPointF deltaScene  = event->scenePos() - event->lastScenePos();
 
     if (m_pressedButton == MoveButton) {
         if (leaveCurrentView(event->screenPos())) {

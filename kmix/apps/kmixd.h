@@ -68,7 +68,6 @@ KMixD : public KDEDModule, protected QDBusContext
    //virtual void applyPrefs( KMixPrefDlg *prefDlg );
 
   private:
-   //KAccel *m_keyAccel;
    //KAction* _actionShowMenubar;
 
    bool m_multiDriverMode;         // Not officially supported.

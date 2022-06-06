@@ -250,19 +250,29 @@ QString QalculateLabels::drawStructure(MathStructure& m, const PrintOptions& po,
         }
         for (size_t i = 0; i < terms.size(); i++) {
             if (!po.short_multiplication && i > 0) {
-                if (do_space[i - 1]) STR_MARKUP_ADD(mstr, " ");
+                if (do_space[i - 1]) {
+                    STR_MARKUP_ADD(mstr, " ");
+                }
                 mstr += mul_str;
-                if (do_space[i]) STR_MARKUP_ADD(mstr, " ");
+                if (do_space[i]) {
+                    STR_MARKUP_ADD(mstr, " ");
+                }
             } else if (i > 0) {
                 switch (nm[i]) {
                 case MULTIPLICATION_SIGN_SPACE: {
-                    if (do_space[i - 1] && do_space[i]) STR_MARKUP_ADD(mstr, " ");
+                    if (do_space[i - 1] && do_space[i]) {
+                        STR_MARKUP_ADD(mstr, " ");
+                    }
                     break;
                 }
                 case MULTIPLICATION_SIGN_OPERATOR: {
-                    if (do_space[i - 1]) STR_MARKUP_ADD(mstr, " ");
+                    if (do_space[i - 1]) {
+                        STR_MARKUP_ADD(mstr, " ");
+                    }
                     mstr += mul_str;
-                    if (do_space[i]) STR_MARKUP_ADD(mstr, " ");
+                    if (do_space[i]) {
+                        STR_MARKUP_ADD(mstr, " ");
+                    }
                     break;
                 }
                 case MULTIPLICATION_SIGN_OPERATOR_SHORT: {
@@ -294,7 +304,9 @@ QString QalculateLabels::drawStructure(MathStructure& m, const PrintOptions& po,
         }
         for (size_t i = 0; i < terms.size(); i++) {
             if (i > 0) {
-                if (do_space[i  - 1]) STR_MARKUP_ADD(mstr, " ");
+                if (do_space[i  - 1]) {
+                    STR_MARKUP_ADD(mstr, " ");
+                }
                 if (m[i].type() == STRUCT_NEGATE) {
                     if (po.use_unicode_signs && (!po.can_display_unicode_string_function || (*po.can_display_unicode_string_function)(SIGN_MINUS, po.can_display_unicode_string_arg))) {
                         STR_MARKUP_ADD(mstr, SIGN_MINUS);
@@ -304,7 +316,9 @@ QString QalculateLabels::drawStructure(MathStructure& m, const PrintOptions& po,
                 } else {
                     STR_MARKUP_ADD(mstr, "+");
                 }
-                if (do_space[i]) STR_MARKUP_ADD(mstr, " ");
+                if (do_space[i]) {
+                    STR_MARKUP_ADD(mstr, " ");
+                }
             }
             mstr += terms[i];
         }

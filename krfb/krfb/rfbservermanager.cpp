@@ -77,8 +77,9 @@ static const char *mask =
     "      xxx          ";
 
 
-struct RfbServerManagerStatic
+class RfbServerManagerStatic
 {
+public:
     RfbServerManager server;
 };
 

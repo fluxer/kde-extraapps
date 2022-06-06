@@ -26,8 +26,9 @@ class Verifier;
 #include "verifier.h"
 #include "verificationthread.h"
 
-struct VerifierPrivate
+class VerifierPrivate
 {
+public:
     VerifierPrivate(Verifier *verifier)
       : q(verifier),
         model(0)

@@ -79,13 +79,11 @@ class Virus : public Plasma::Wallpaper
         QPixmap m_pixmap;
         QPixmap m_oldPixmap;
         QPixmap m_oldFadedPixmap;
-        int m_currentSlide;
         BackgroundListModel *m_model;
         KFileDialog *m_dialog;
         QSize m_size;
         QString m_img;
         QDateTime m_previousModified;
-        bool m_randomize;
         bool m_startupResumed;
 
         QTimer m_timer;

@@ -66,8 +66,6 @@ namespace Gwenview
 #define LOG(x) ;
 #endif
 
-const int MIN_PREV_SIZE = 1000;
-
 const int HEADER_SIZE = 256;
 
 struct LoadingDocumentImplPrivate

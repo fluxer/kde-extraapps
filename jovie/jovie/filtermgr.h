@@ -66,7 +66,7 @@ class FilterMgr : public KttsFilterProc
          * Note: The parameters are for reading from kttsdrc file.  Plugins may wish to maintain
          * separate configuration files of their own.
          */
-        virtual bool init();
+        virtual bool init(KConfig *c, const QString &configGroup);
 
         /** 
          * Synchronously convert text.

@@ -46,7 +46,7 @@ class NotesTextEdit : public KRichTextEdit
     Q_OBJECT
 
     public:
-        NotesTextEdit(Plasma::Applet *applet, QWidget *parent = 0);
+        NotesTextEdit(QWidget *parent = 0);
         ~NotesTextEdit();
 
         void setFormatMenu(QMenu *menu);
@@ -74,7 +74,6 @@ class NotesTextEdit : public KRichTextEdit
         void wheelEvent(QWheelEvent *event);
 
     private:
-        Plasma::Applet *m_applet;
         QMenu *m_formatMenu;
 };
 

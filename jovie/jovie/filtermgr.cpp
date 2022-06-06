@@ -62,7 +62,7 @@ FilterMgr::~FilterMgr()
  * Loads and initializes the filters.
  * @return                False if FilterMgr is not ready to filter.
  */
-bool FilterMgr::init()
+bool FilterMgr::init(KConfig *c, const QString &configGroup)
 {
     // Load each of the filters and initialize.
     KSharedConfig::Ptr pConfig = KSharedConfig::openConfig( QLatin1String( "kttsdrc" ) );

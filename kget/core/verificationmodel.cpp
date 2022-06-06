@@ -26,8 +26,9 @@
 #include <KIcon>
 #include <KLocale>
 
-struct VerificationModelPrivate
+class VerificationModelPrivate
 {
+public:
     VerificationModelPrivate()
     {
     }

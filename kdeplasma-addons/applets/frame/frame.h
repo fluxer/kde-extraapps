@@ -126,7 +126,6 @@ private:
     bool m_doAutoUpdate;
     QTimer* m_autoUpdateTimer;
     /// Day Change for PoTD
-    QTimer *m_dateChangedTimer;
     QDate m_currentDay;
     QList<QAction *> actions;
 

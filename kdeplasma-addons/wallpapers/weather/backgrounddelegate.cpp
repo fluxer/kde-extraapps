@@ -17,9 +17,9 @@
 
 BackgroundDelegate::BackgroundDelegate(QObject *listener, float ratio, QObject *parent)
     : QAbstractItemDelegate(parent),
-      m_listener(listener),
       m_ratio(ratio)
 {
+    Q_UNUSED(listener);
 }
 
 void BackgroundDelegate::paint(QPainter *painter,

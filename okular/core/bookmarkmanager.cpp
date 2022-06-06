@@ -407,6 +407,7 @@ bool BookmarkManager::addBookmark( const KUrl& referurl, const Okular::DocumentV
     KBookmarkGroup thebg;
     QHash<KUrl, QString>::iterator it = d->bookmarkFind( referurl, true, &thebg );
     Q_ASSERT( it != d->knownFiles.end() );
+    Q_UNUSED( it );
 
     int count = 0; // Number of bookmarks in the current page
     bool found = false;
@@ -506,6 +507,7 @@ QString BookmarkManager::titleForUrl( const KUrl& referurl ) const
     KBookmarkGroup thebg;
     QHash<KUrl, QString>::iterator it = d->bookmarkFind( referurl, false, &thebg );
     Q_ASSERT( it != d->knownFiles.end() );
+    Q_UNUSED( it );
 
     return thebg.fullText();
 }
@@ -634,6 +636,7 @@ bool BookmarkManager::setPageBookmark( int page )
     KBookmarkGroup thebg;
     QHash<KUrl, QString>::iterator it = d->bookmarkFind( d->url, true, &thebg );
     Q_ASSERT( it != d->knownFiles.end() );
+    Q_UNUSED( it );
 
     bool found = false;
     bool added = false;

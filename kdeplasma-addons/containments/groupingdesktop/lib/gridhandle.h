@@ -62,7 +62,6 @@ class GridHandle : public Handle
 
         bool m_moving;
         QPointF m_startPos;
-        int m_savedZValue;
         QPointF m_widgetPos;
         QSizeF m_widgetSize;
         Plasma::Svg *m_configureIcons;

@@ -569,9 +569,6 @@ KMixWindow::loadBaseConfig()
 {
   KConfigGroup config(KGlobal::config(), "Global");
 
-//  GlobalConfig& gcfg = GlobalConfig::instance();
-  GlobalConfigData& gcd = GlobalConfig::instance().data;
-
   QList<QString> preferredMixersInSoundMenu;
   preferredMixersInSoundMenu = config.readEntry("Soundmenu.Mixers", preferredMixersInSoundMenu);
   GlobalConfig::instance().setMixersForSoundmenu(preferredMixersInSoundMenu.toSet());

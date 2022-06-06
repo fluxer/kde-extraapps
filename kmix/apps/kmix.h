@@ -97,7 +97,6 @@ private:
    void forkExec(const QStringList& args);
    void errorPopup(const QString& msg);
 
-   KAccel *m_keyAccel;
    KAction* _actionShowMenubar;
 
 private:
@@ -107,7 +106,6 @@ private:
    GlobalConfigData configDataSnapshot;
 
    bool m_startVisible;
-   bool m_visibilityUpdateAllowed;
    bool m_multiDriverMode;         // Not officially supported.
    bool m_autouseMultimediaKeys;   // Due to message freeze, not in config dialog in KDE4.4
 

@@ -123,7 +123,7 @@ Notes::Notes(QObject *parent, const QVariantList &args)
     m_textEdit->setMinimumSize(QSize(60, 60)); //Ensure a minimum size (height) for the textEdit
 
     KTextEdit *w = m_textEdit->nativeWidget();
-    m_noteEditor = new NotesTextEdit(this);
+    m_noteEditor = new NotesTextEdit();
     m_noteEditor->setFrameShape(QFrame::NoFrame);
     m_noteEditor->viewport()->setAutoFillBackground(false);
     m_noteEditor->setWindowFlags(m_noteEditor->windowFlags() | Qt::BypassGraphicsProxyWidget);

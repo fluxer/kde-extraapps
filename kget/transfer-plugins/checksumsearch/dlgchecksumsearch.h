@@ -126,7 +126,6 @@ class DlgChecksumSettingsWidget : public KCModule
 
     private:
         Ui::ChecksumSearch ui;
-        KDialog *m_parent;
         QStandardItemModel *m_model;
         QSortFilterProxyModel *m_proxy;
         QStringList m_modes;

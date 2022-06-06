@@ -37,9 +37,8 @@
 
 #include <Plasma/Applet>
 
-NotesTextEdit::NotesTextEdit(Plasma::Applet *applet, QWidget *parent)
+NotesTextEdit::NotesTextEdit(QWidget *parent)
     : KRichTextEdit(parent),
-      m_applet(applet),
       m_formatMenu(0)
 {
 }

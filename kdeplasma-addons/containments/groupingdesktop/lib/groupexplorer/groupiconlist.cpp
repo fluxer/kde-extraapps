@@ -46,10 +46,6 @@
 #include "abstractgroup.h"
 #include "groupicon.h"
 
-const int ICON_SIZE = 70;
-const int SEARCH_DELAY = 300;
-const int SCROLL_STEP_DURATION = 300;
-
 GroupIconList::GroupIconList(Plasma::Location loc, QGraphicsItem *parent)
     : QGraphicsWidget(parent),
       m_arrowsSvg(new Plasma::Svg(this)),

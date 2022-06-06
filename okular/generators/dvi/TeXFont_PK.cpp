@@ -322,7 +322,7 @@ glyph* TeXFont_PK::getGlyph(quint16 ch, bool generateCharacterPixmap, const QCol
 #define        SUB(a, b)        ((quint32 *) (((char *) a) - b))
 
 
-
+#if Q_BYTE_ORDER == Q_BIG_ENDIAN
 // This table is used for changing the bit order in a byte. The
 // expression bitflp[byte] takes a byte in big endian and gives the
 // little endian equivalent of that.
@@ -344,6 +344,7 @@ static const uchar bitflip[256] = {
   7, 135, 71, 199, 39, 167, 103, 231, 23, 151, 87, 215, 55, 183, 119, 247,
   15, 143, 79, 207, 47, 175, 111, 239, 31, 159, 95, 223, 63, 191, 127, 255
 };
+#endif // Q_BYTE_ORDER
 
 static quint32        bit_masks[33] = {
         0x0,           0x1,            0x3,            0x7,
