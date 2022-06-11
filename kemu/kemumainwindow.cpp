@@ -154,7 +154,7 @@ KEmuMainWindow::~KEmuMainWindow()
         m_settings->setValue("lastselected", lastSelected);
         m_settings->sync();
     }
-    m_settings->deleteLater();
+    delete m_settings;
     m_interface->deleteLater();
     delete m_kemuui;
 }
