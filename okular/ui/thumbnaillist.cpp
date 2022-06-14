@@ -206,8 +206,6 @@ ThumbnailList::ThumbnailList( QWidget *parent, Okular::Document *document )
     setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOn );
     verticalScrollBar()->setEnabled( false );
 
-    setAttribute( Qt::WA_StaticContents );
-
     viewport()->setBackgroundRole( QPalette::Base );
 
     setWidget( d );

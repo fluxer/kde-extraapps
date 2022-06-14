@@ -343,7 +343,6 @@ void VncView::updateImage(int x, int y, int w, int h)
         if (!vncThread.username().isEmpty()) {
             m_url.setUserName(vncThread.username());
         }
-        setAttribute(Qt::WA_StaticContents);
         setAttribute(Qt::WA_OpaquePaintEvent);
         installEventFilter(this);
 

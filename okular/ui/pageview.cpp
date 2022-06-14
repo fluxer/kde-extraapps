@@ -360,8 +360,6 @@ PageView::PageView( QWidget *parent, Okular::Document *document )
 
     setFrameStyle(QFrame::NoFrame);
 
-    setAttribute( Qt::WA_StaticContents );
-
     setObjectName( QLatin1String( "okular::pageView" ) );
 
     // viewport setup: setup focus, and track mouse
