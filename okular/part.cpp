@@ -304,13 +304,6 @@ m_cliPresentation(false), m_cliPrint(false), m_embedMode(detectEmbedMode(parentW
     if ( configFileName.isEmpty() )
     {
         configFileName = KStandardDirs::locateLocal( "config", "okularpartrc" );
-        // first necessary step: copy the configuration from kpdf, if available
-        if ( !QFile::exists( configFileName ) )
-        {
-            QString oldkpdfconffile = KStandardDirs::locateLocal( "config", "kpdfpartrc" );
-            if ( QFile::exists( oldkpdfconffile ) )
-                QFile::copy( oldkpdfconffile, configFileName );
-        }
     }
     Okular::Settings::instance( configFileName );
     
