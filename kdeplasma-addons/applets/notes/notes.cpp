@@ -41,6 +41,7 @@
 #include <KPushButton>
 #include <KStandardAction>
 #include <KAction>
+#include <KColorUtils>
 
 #include <Plasma/Animator>
 #include <Plasma/Animation>
@@ -52,7 +53,7 @@
 QString defaultBackgroundColor()
 {
     // returns a suitable background color according to the plasma theme's TextColor
-    return Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor).lightness() > 100 ? "black" : "yellow";
+    return KColorUtils::luma(Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor)) > qreal(0.4) ? "black" : "yellow";
 }
 
 class TopWidget : public QGraphicsWidget

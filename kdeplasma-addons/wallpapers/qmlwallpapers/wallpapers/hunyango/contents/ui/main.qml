@@ -26,7 +26,7 @@ Rectangle {
     height: 480
 
     function randomColor() {
-        root.color = Qt.hsla(Math.random(), 1,0.5,1)
+        root.color = Qt.hsva(Math.random(), 1,0.5,1)
     }
 
     Component.onCompleted: randomColor()
