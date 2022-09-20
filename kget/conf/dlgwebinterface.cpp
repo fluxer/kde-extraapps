@@ -49,8 +49,15 @@ void DlgWebinterface::readConfig()
 
 void DlgWebinterface::saveSettings()
 {
-    if (m_passwdstore && m_passwdstore->openStore(winId())) {
-        m_passwdstore->storePasswd("Webinterface", webinterfacePwd->text(), winId());
+    if (kcfg_WebinterfaceEnabled->isChecked()) {
+        if (!m_passwdstore) {
+            m_passwdstore = new KPasswdStore(this);
+            m_passwdstore->setStoreID("KGet");
+        }
+
+        if (m_passwdstore->openStore(winId())) {
+            m_passwdstore->storePasswd("Webinterface", webinterfacePwd->text(), winId());
+        }
     }
     emit saved();
 }
