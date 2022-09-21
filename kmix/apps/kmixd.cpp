@@ -85,7 +85,7 @@ KMixD::KMixD(QObject* parent, const QList<QVariant>&) :
     // disable delete-on-close because KMix might just sit in the background waiting for cards to be plugged in
     //setAttribute(Qt::WA_DeleteOnClose, false);
 
-	GlobalConfig::init();
+    GlobalConfig::init();
 
    //initActions(); // init actions first, so we can use them in the loadConfig() already
    loadConfig(); // Load config before initMixer(), e.g. due to "MultiDriver" keyword
@@ -95,7 +95,6 @@ KMixD::KMixD(QObject* parent, const QList<QVariant>&) :
    //initPrefDlg();
    MixerToolBox::instance()->initMixer(m_multiDriverMode, m_backendFilter, m_hwInfoString);
    KMixDeviceManager *theKMixDeviceManager = KMixDeviceManager::instance();
-   fixConfigAfterRead();
    theKMixDeviceManager->initHotplug();
    connect(theKMixDeviceManager, SIGNAL(plugged(const char*,QString,QString&)), SLOT (plugged(const char*,QString,QString&)) );
    connect(theKMixDeviceManager, SIGNAL(unplugged(QString)), SLOT (unplugged(QString)) );
@@ -203,9 +202,6 @@ void KMixD::loadBaseConfig()
 
    m_multiDriverMode = config.readEntry("MultiDriver", false);
    m_defaultCardOnStart = config.readEntry( "DefaultCardOnStart", "" );
-   m_configVersion = config.readEntry( "ConfigVersion", 0 );
-   // WARNING Don't overwrite m_configVersion with the "correct" value, before having it
-   // evaluated. Better only write that in saveBaseConfig()
    m_autouseMultimediaKeys = config.readEntry( "AutoUseMultimediaKeys", true ); // currently not in use in kmixd
    QString mixerMasterCard = config.readEntry( "MasterMixer", "" );
    QString masterDev = config.readEntry( "MasterMixerDevice", "" );
@@ -236,28 +232,6 @@ KMixD::loadVolumes()
     delete cfg;
 }
 */
-
-
-
-
-void KMixD::fixConfigAfterRead()
-{
-   KConfigGroup grp(KGlobal::config(), "Global");
-   unsigned int configVersion = grp.readEntry( "ConfigVersion", 0 );
-   if ( configVersion < 3 ) {
-       // Fix the "double Base" bug, by deleting all groups starting with "View.Base.Base.".
-       // The group has been copied over by KMixToolBox::loadView() for all soundcards, so
-       // we should be fine now
-       const QStringList cfgGroups = KGlobal::config()->groupList();
-       foreach ( const QString &groupName, cfgGroups ) {
-          if ( groupName.indexOf("View.Base.Base" ) == 0 ) {
-               kDebug(67100) << "Fixing group " << groupName;
-               KConfigGroup buggyDevgrpCG = KGlobal::config()->group( groupName );
-               buggyDevgrpCG.deleteGroup();
-          } // remove buggy group
-       } // for all groups
-   } // if config version < 3
-}
 
 void KMixD::plugged( const char* driverName, const QString& /*udi*/, QString& dev)
 {

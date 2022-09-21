@@ -60,8 +60,6 @@ KMixD : public KDEDModule, protected QDBusContext
    void initActions();
    void initActionsLate();
 
-   void fixConfigAfterRead();
-
   public slots:
    //void loadVolumes();
    void saveVolumes();
@@ -76,7 +74,6 @@ KMixD : public KDEDModule, protected QDBusContext
    QString m_hwInfoString;
    QString m_defaultCardOnStart;
    bool m_dontSetDefaultCardOnStart;
-   unsigned int m_configVersion;
    //void increaseOrDecreaseVolume(bool increase);
    QList<QString> m_backendFilter;
 

@@ -112,7 +112,6 @@ KMixWindow::KMixWindow(bool invisible) :
   if (!kapp->isSessionRestored() ) // done by the session manager otherwise
   setInitialSize();
 
-  fixConfigAfterRead();
   theKMixDeviceManager->initHotplug();
   connect(theKMixDeviceManager, SIGNAL(plugged(const char*,QString,QString&)),
       SLOT (plugged(const char*,QString,QString&)));
@@ -576,9 +575,6 @@ KMixWindow::loadBaseConfig()
   m_startVisible = config.readEntry("Visible", false);
   m_multiDriverMode = config.readEntry("MultiDriver", false);
   m_defaultCardOnStart = config.readEntry("DefaultCardOnStart", "");
-  m_configVersion = config.readEntry("ConfigVersion", 0);
-  // WARNING Don't overwrite m_configVersion with the "correct" value, before having it
-  // evaluated. Better only write that in saveBaseConfig()
   m_autouseMultimediaKeys = config.readEntry("AutoUseMultimediaKeys", true);
   QString mixerMasterCard = config.readEntry("MasterMixer", "");
   QString masterDev = config.readEntry("MasterMixerDevice", "");
@@ -895,31 +891,6 @@ KMixWindow::saveAndCloseView(int idx)
     }
   kDebug()
   << "Exit";
-}
-
-
-void
-KMixWindow::fixConfigAfterRead()
-{
-  KConfigGroup grp(KGlobal::config(), "Global");
-  unsigned int configVersion = grp.readEntry("ConfigVersion", 0);
-  if (configVersion < 3)
-    {
-      // Fix the "double Base" bug, by deleting all groups starting with "View.Base.Base.".
-      // The group has been copied over by KMixToolBox::loadView() for all soundcards, so
-      // we should be fine now
-      const QStringList cfgGroups = KGlobal::config()->groupList();
-      foreach (const QString &groupName, cfgGroups)
-        {
-          if (groupName.indexOf("View.Base.Base") == 0)
-            {
-              kDebug(67100)
-              << "Fixing group " << groupName;
-              KConfigGroup buggyDevgrpCG = KGlobal::config()->group(groupName);
-              buggyDevgrpCG.deleteGroup();
-            } // remove buggy group
-        } // for all groups
-    } // if config version < 3
 }
 
 void

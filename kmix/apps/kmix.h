@@ -68,8 +68,6 @@ private:
    void initWidgets();
    //void setErrorMixerWidget();
 
-   void fixConfigAfterRead();
-
    virtual bool queryClose();
 
 public slots:
@@ -119,7 +117,6 @@ private:
    bool m_dontSetDefaultCardOnStart;
    QLabel      *m_errorLabel;
    QList<QString> m_backendFilter;
-   unsigned int m_configVersion;
    void showVolumeDisplay();
    void increaseOrDecreaseVolume(bool increase);
 
