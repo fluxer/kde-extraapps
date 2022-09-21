@@ -86,7 +86,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QVariantList& args)
           m_jobTracker(0)
 {
     Q_UNUSED(args)
-    setComponentData(Factory::componentData(), false);
+    setComponentData(Factory::componentData());
 
     new DndExtractAdaptor(this);
 
