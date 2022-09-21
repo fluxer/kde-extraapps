@@ -248,10 +248,8 @@ void KMixD::fixConfigAfterRead()
        // Fix the "double Base" bug, by deleting all groups starting with "View.Base.Base.".
        // The group has been copied over by KMixToolBox::loadView() for all soundcards, so
        // we should be fine now
-       QStringList cfgGroups = KGlobal::config()->groupList();
-       QStringListIterator it(cfgGroups);
-       while ( it.hasNext() ) {
-          QString groupName = it.next();
+       const QStringList cfgGroups = KGlobal::config()->groupList();
+       foreach ( const QString &groupName, cfgGroups ) {
           if ( groupName.indexOf("View.Base.Base" ) == 0 ) {
                kDebug(67100) << "Fixing group " << groupName;
                KConfigGroup buggyDevgrpCG = KGlobal::config()->group( groupName );
