@@ -32,7 +32,9 @@
 #include <KComboBox>
 
 
-QalculateSettings::QalculateSettings(QalculateApplet* applet): QObject(0), m_applet(applet)
+QalculateSettings::QalculateSettings(QalculateApplet* applet)
+    : QObject(0),
+    m_applet(applet)
 {
 }
 

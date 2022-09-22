@@ -52,7 +52,7 @@ QalculateEngine::QalculateEngine(QalculateSettings* settings, QObject* parent):
 
 void QalculateEngine::updateExchangeRates()
 {
-    KUrl source = KUrl("http://www.ecb.int/stats/eurofxref/eurofxref-daily.xml");
+    KUrl source = KUrl("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
     KUrl dest = KUrl("~/.qalculate/eurofxref-daily.xml");
         
     KIO::Job* getJob = KIO::file_copy(source, dest, -1, KIO::Overwrite | KIO::HideProgressInfo);
