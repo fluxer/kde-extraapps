@@ -25,8 +25,9 @@
 #include "qalculate_applet.h"
 
 #include <QCheckBox>
-class KComboBox;
 #include <QSpinBox>
+
+class KComboBox;
 
 class QalculateSettings : public QObject
 {

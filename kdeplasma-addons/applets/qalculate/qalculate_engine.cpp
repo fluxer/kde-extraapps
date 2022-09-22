@@ -77,7 +77,6 @@ void QalculateEngine::evaluate(const QString& expression)
 
     QString input = expression;
     QByteArray ba = input.replace(QChar(0xA3), "GBP").replace(QChar(0xA5), "JPY").replace('$', "USD").replace(QChar(0x20AC), "EUR").toLatin1();
-    const char *ctext = ba.data();
 
     EvaluationOptions eo;
 
@@ -115,7 +114,7 @@ void QalculateEngine::evaluate(const QString& expression)
         break;
     }
 
-    MathStructure result = CALCULATOR->calculate(ctext, eo);
+    MathStructure result = CALCULATOR->calculate(ba.constData(), eo);
 
     PrintOptions po;
     switch (m_settings->fractionDisplay()) {

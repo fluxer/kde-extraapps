@@ -124,7 +124,7 @@ ConverterRunner::ConverterRunner(QObject* parent, const QVariantList &args)
     setObjectName(QLatin1String( "Converter" ));
 
     m_separators << QString( CONVERSION_CHAR );
-    m_separators << i18nc("list of words that can used as amount of 'unit1' [in|to|as] 'unit2'",
+    m_separators << i18nc("list of words that can be used as amount of 'unit1' [in|to|as] 'unit2'",
                           "in;to;as").split(QLatin1Char( ';' ));
 
     //can not ignore commands: we have things like m4
