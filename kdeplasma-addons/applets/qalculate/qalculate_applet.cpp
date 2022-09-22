@@ -82,10 +82,10 @@ QalculateApplet::~QalculateApplet()
 
 void QalculateApplet::init()
 {
+    m_settings->readSettings();
     if (m_settings->updateExchangeRatesAtStartup()) {
         m_engine->updateExchangeRates();
     }
-    m_settings->readSettings();
     m_history->setHistoryItems(m_settings->historyItems());
 
     graphicsWidget();
