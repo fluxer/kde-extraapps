@@ -133,8 +133,7 @@ void TasksWidget::runTaskNow() const {
 	parameters << QLatin1String( "-e" ) << QLatin1String( "bash" ) << QLatin1String( "-c" );
 	parameters << commandList.join(QLatin1String( ";" ));
 
-	QProcess process;
-	process.startDetached(QLatin1String( "konsole" ), parameters);
+	QProcess::startDetached(QLatin1String( "konsole" ), parameters);
 
 }
 

@@ -115,8 +115,7 @@ ErrorWidget::~ErrorWidget()
 
 void ErrorWidget::launchKGet()
 {
-    QProcess kgetProcess;
-    kgetProcess.startDetached("kget");
+    QProcess::startDetached("kget");
     checkKGetStatus();
 }
 
