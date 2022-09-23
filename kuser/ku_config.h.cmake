@@ -15,9 +15,3 @@
 
 /* Define to 1 if you have the <paths.h> header file. */
 #cmakedefine HAVE_PATHS_H
-
-/* Define to 1 if you have the <unistd.h> header file. */
-#cmakedefine HAVE_UNISTD_H 1
-
-/* Define to 1 if you have the <sys/stat.h> header file. */
-#cmakedefine HAVE_SYS_STAT_H 1

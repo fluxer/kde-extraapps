@@ -35,11 +35,7 @@
 
 #include <kspeech.h>
 
-// KTTSD includes.
-#include <config-jovie.h>
-#if defined(SPEECHD_FOUND)
 #include <libspeechd.h>
-#endif
 
 #include "filtermgr.h"
 #include "appdata.h"

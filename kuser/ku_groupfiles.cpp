@@ -25,16 +25,13 @@
 
 #include <ku_config.h>
 #include <errno.h>
-#ifdef HAVE_UNISTD_H
 #include <unistd.h>
-#endif
 #include <sys/types.h>
 #include <sys/file.h>
 #include <sys/stat.h>
 #include <grp.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 
 #include <kdebug.h>
 #include <kstandarddirs.h>

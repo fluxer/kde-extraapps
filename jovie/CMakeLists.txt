@@ -29,11 +29,6 @@ if(NOT Q_WS_X11)
     message(FATAL_ERROR "Jovie requires a X11-based system.")
 endif()
 
-configure_file(
-    config-jovie.h.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/config-jovie.h
-)
-
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}/libkttsd

@@ -1,2 +1,0 @@
-#cmakedefine SPEECHD_FOUND ${SPEECHD_FOUND}
-
