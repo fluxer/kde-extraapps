@@ -534,18 +534,12 @@ bool Jovie::ready()
     //if (Speaker::Instance())
     //    return true;
     //kDebug() << "Jovie::ready: Starting KTTSD service";
-//    if (!initializeSpeechData()) return false;
     if (!initializeTalkerMgr())
         return false;
     if (!initializeSpeaker())
         return false;
     announceEvent(QLatin1String( "ready" ), QLatin1String( "kttsdStarted" ));
     emit kttsdStarted();
-    return true;
-}
-
-bool Jovie::initializeSpeechData()
-{
     return true;
 }
 

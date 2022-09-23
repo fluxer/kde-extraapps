@@ -599,12 +599,6 @@ private:
     bool initializeConfigData();
 
     /*
-    * Create and initialize the SpeechData object.
-    * Deprecated, remove in KDE 5
-    */
-    bool initializeSpeechData();
-
-    /*
     * Create and initialize the TalkerMgr object.
     */
     bool initializeTalkerMgr();
