@@ -150,9 +150,7 @@ void SidebarDelegate::paint( QPainter *painter, const QStyleOptionViewItem &opti
     }
     QStyle *style = QApplication::style();
     QStyleOptionViewItemV4 opt( option );
-    // KStyle provides an "hover highlight" effect for free;
-    // but we want that for non-KStyle-based styles too
-    if ( !style->inherits( "KStyle" ) && hover )
+    if ( hover )
     {
         Qt::BrushStyle bs = opt.backgroundBrush.style();
         if ( bs > Qt::NoBrush && bs < Qt::TexturePattern )
