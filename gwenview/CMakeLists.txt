@@ -28,7 +28,7 @@ set_package_properties(Exiv2 PROPERTIES
 
 find_package(LibKonq)
 set_package_properties(LibKonq PROPERTIES
-    URL "http://fluxer.github.io/katana/"
+    URL "https://osdn.net/projects/kde/"
     PURPOSE "Standard file management features"
     TYPE REQUIRED
 )

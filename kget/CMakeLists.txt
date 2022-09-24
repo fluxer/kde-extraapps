@@ -33,7 +33,7 @@ set_package_properties(LibTorrent PROPERTIES
 macro_optional_find_package(KDE4Workspace)
 set_package_properties(KDE4Workspace PROPERTIES
     DESCRIPTION "KDE base workspace libraries"
-    URL "http://fluxer.github.io/katana/"
+    URL "https://osdn.net/projects/kde/"
     PURPOSE "Allows 'shutdown after downloads completed' in KGet"
 )
 

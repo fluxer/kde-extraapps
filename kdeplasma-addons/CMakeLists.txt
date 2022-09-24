@@ -11,14 +11,14 @@ endif()
 macro_optional_find_package(KDE4Workspace)
 set_package_properties(KDE4Workspace PROPERTIES
     DESCRIPTION "KDE base workspace libraries"
-    URL "http://fluxer.github.io/katana/"
+    URL "https://osdn.net/projects/kde/"
     PURPOSE "Needed for building several Plasma plugins"
 )
 
 macro_optional_find_package(DBusMenuQt)
 set_package_properties(DBusMenuQt PROPERTIES
     DESCRIPTION "Library that provides a Qt implementation of the DBusMenu spec"
-    URL "https://github.com/fluxer/libdbusmenu-qt"
+    URL "https://osdn.net/projects/kde/"
     PURPOSE "Needed for Unity support in IconTasks"
 )
 
