@@ -34,7 +34,6 @@
 #include <QGraphicsView>
 
 // KDE
-#include <KAuthorized>
 #include <KIconEffect>
 
 #include "tooltips/tooltipmanager.h"
@@ -88,7 +87,7 @@ void AppLauncherItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void AppLauncherItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *e)
 {
-    if (!KAuthorized::authorizeKAction("kwin_rmb") || !m_launcher) {
+    if (!m_launcher) {
         QGraphicsWidget::contextMenuEvent(e);
         return;
     }

@@ -35,7 +35,6 @@
 #include <QVarLengthArray>
 
 // KDE
-#include <KAuthorized>
 #include <KDebug>
 #include <KIcon>
 #include <KIconLoader>
@@ -386,7 +385,7 @@ TaskManager::Task *WindowTaskItem::windowTask() const
 
 void WindowTaskItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *e)
 {
-    if (!KAuthorized::authorizeKAction("kwin_rmb") || !m_task) {
+    if (!m_task) {
         QGraphicsWidget::contextMenuEvent(e);
         return;
     }

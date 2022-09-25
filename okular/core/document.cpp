@@ -35,7 +35,6 @@
 #include <QtGui/qundostack.h>
 
 #include <kaboutdata.h>
-#include <kauthorized.h>
 #include <kcomponentdata.h>
 #include <kconfigdialog.h>
 #include <kdebug.h>
@@ -2682,7 +2681,7 @@ bool Document::isAllowed( Permission action ) const
         return false;
 
 #if !OKULAR_FORCE_DRM
-    if ( KAuthorized::authorize( "skip_drm" ) && !Okular::SettingsCore::obeyDRM() )
+    if ( !Okular::SettingsCore::obeyDRM() )
         return true;
 #endif
 

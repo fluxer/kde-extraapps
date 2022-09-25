@@ -45,7 +45,6 @@
 #endif
 
 // KDE
-#include <KAuthorized>
 #include <KColorUtils>
 #include <KDebug>
 #include <KGlobalSettings>

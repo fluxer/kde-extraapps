@@ -9,8 +9,6 @@
 
 #include "dlggeneral.h"
 
-#include <kauthorized.h>
-
 #include <config-okular.h>
 
 #include "ui_dlggeneralbase.h"
@@ -40,10 +38,7 @@ void DlgGeneral::showEvent( QShowEvent * )
 #if OKULAR_FORCE_DRM
     m_dlg->kcfg_ObeyDRM->hide();
 #else
-    if ( KAuthorized::authorize( "skip_drm" ) )
-        m_dlg->kcfg_ObeyDRM->show();
-    else
-        m_dlg->kcfg_ObeyDRM->hide();
+    m_dlg->kcfg_ObeyDRM->show();
 #endif
 }
 

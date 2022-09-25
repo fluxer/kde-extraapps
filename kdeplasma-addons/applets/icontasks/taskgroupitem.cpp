@@ -35,7 +35,6 @@
 #include <QInputDialog>
 
 // KDE
-#include <KAuthorized>
 #include <KDebug>
 #include <KDesktopFile>
 
@@ -485,7 +484,7 @@ void TaskGroupItem::clearGroup()
 void TaskGroupItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *e)
 {
     //kDebug();
-    if (!KAuthorized::authorizeKAction("kwin_rmb") || !m_group) {
+    if (!m_group) {
         QGraphicsWidget::contextMenuEvent(e);
         return;
     }
