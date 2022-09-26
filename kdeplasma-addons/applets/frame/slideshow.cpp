@@ -24,7 +24,7 @@
 #include <QTimer>
 
 #include <KDebug>
-#include <KRandomSequence>
+#include <KRandom>
 #include <KImageIO>
 
 #include "picture.h"
@@ -77,14 +77,13 @@ void SlideShow::setDirs(const QStringList &slideShowPath, bool recursive)
 
 void SlideShow::setupRandomSequence()
 {
-    KRandomSequence randomSequence;
     m_indexList.clear();
 
     for (int j = 0; j < m_picturePaths.count(); j++) {
         m_indexList.append(j);
     }
 
-    randomSequence.randomize(m_indexList);
+    KRandom::randomize(m_indexList);
 }
 
 void SlideShow::setImage(const QString &imagePath)
