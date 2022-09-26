@@ -27,6 +27,7 @@
 
 #include <KDebug>
 #include <KGlobalSettings>
+#include <KRandom>
 
 #include <Plasma/Animation>
 #include <Plasma/Animator>
@@ -138,7 +139,7 @@ void Fifteen::shuffle()
     qsrand(QTime::currentTime().msec());
     for (int i = m_size * m_size - 1; i > 0; i--) {
         // choose a random number such that 0 <= rand <= i
-        int rand = qrand() % (i + 1);
+        int rand = KRandom::randomMax(i + 1);
         qSwap(m_pieces[i], m_pieces[rand]);
     }
 

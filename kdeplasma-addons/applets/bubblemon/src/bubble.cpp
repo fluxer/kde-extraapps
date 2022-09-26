@@ -33,8 +33,8 @@
 #include <Plasma/ToolTipContent>
 
 #include <KConfigDialog>
-
 #include <KDebug>
+#include <KRandom>
 
 
 K_EXPORT_PLASMA_APPLET(bubblemon, Bubble)
@@ -309,8 +309,8 @@ Bubble::moveBubbles()
         for(i=m_bubbles.begin();i!=m_bubbles.end();++i) {
             (*i).setY((*i).y()-m_bubbleSpeed);
             if ((*i).y()<maxHeight-m_bubbleRect.height()) {
-                (*i).setY(rect.bottom()+(qrand() % (int)( m_bubbleRect.height()*m_bubbleCount ) ) );
-                (*i).setX(qrand() % (int)rect.width());
+                (*i).setY(rect.bottom()+KRandom::randomMax((int)( m_bubbleRect.height()*m_bubbleCount ) ) );
+                (*i).setX(KRandom::randomMax((int)rect.width()));
                 needsUpdate = true;
             }
             if ((*i).y()<rect.bottom() && (*i).y()>maxHeight)

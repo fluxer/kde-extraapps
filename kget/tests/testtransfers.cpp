@@ -25,6 +25,7 @@
 
 #include <KRun>
 #include <KTempDir>
+#include <KRandom>
 #include <qtest_kde.h>
 
 //FIXME not working fine if files or transfers are existing already
@@ -297,7 +298,7 @@ void Commands::timerEvent(QTimerEvent *event)
 {
     Q_UNUSED(event)
 
-    const int value = qrand() % 10;
+    const int value = KRandom::randomMax(10);
     //70% of the cases start, in 30% stop
     if (value > 2) {
         kDebug(5001) << this << "is randomly started.";

@@ -26,6 +26,7 @@
 #include <QXmlStreamReader>
 
 #include <KDebug>
+#include <KRandom>
 #include <kio/job.h>
 
 POTDPROVIDER_EXPORT_PLUGIN( FlickrProvider, "FlickrProvider", "" )
@@ -103,7 +104,7 @@ void FlickrProvider::Private::pageRequestFinished( KJob *_job )
     }
 
     if (m_photoList.begin() != m_photoList.end()) {
-        KUrl url( m_photoList.at(qrand() % m_photoList.size()) );
+        KUrl url( m_photoList.at(KRandom::randomMax(m_photoList.size())) );
             KIO::StoredTransferJob *imageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
             mParent->connect( imageJob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)) );
     } else {

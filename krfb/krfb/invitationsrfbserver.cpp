@@ -167,12 +167,11 @@ PendingRfbClient* InvitationsRfbServer::newClient(rfbClientPtr client)
 }
 
 // a random string that doesn't contain i, I, o, O, 1, l, 0
-// based on KRandom::randomString()
 QString InvitationsRfbServer::readableRandomString(int length)
 {
     QString str;
     while (length) {
-        int r = KRandom::random() % 62;
+        int r = KRandom::randomMax(62);
         r += 48;
         if (r > 57) {
             r += 7;

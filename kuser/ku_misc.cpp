@@ -213,14 +213,7 @@ void addShell(const QString &shell)
 
 QByteArray genSalt( int len )
 {
-  QByteArray salt( len, 0 );
-  const char * set = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./";
-
-  salt[0] = set[getpid() % strlen(set)];
-  for( int i = 1; i < len; i++ ) {
-    salt[i] = set[KRandom::random() % strlen(set)];
-  }
-  return salt;
+  return KRandom::randomString(len).toLatin1();
 }
 
 QString encryptPass( const QString &pass, bool md5 )
