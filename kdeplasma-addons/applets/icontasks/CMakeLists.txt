@@ -40,32 +40,8 @@ qt4_add_dbus_adaptor(tasks_SRCS net.launchpad.DockItem.xml dockitem.h DockItem)
 
 qt4_add_dbus_interface(tasks_SRCS org.mpris.MediaPlayer2.Player.xml playerv2interface)
 
-MACRO(QT4_ADD_DBUS_INTERFACE_EX _sources _interface _basename _extrainclude)
-#   GET_FILENAME_COMPONENT(_infile ${_interface} ABSOLUTE)
-  set(_infile ${CMAKE_CURRENT_SOURCE_DIR}/${_interface})
-
-  SET(_header ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.h)
-  SET(_impl   ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.cpp)
-  SET(_moc    ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.moc)
-
-  # handling more arguments (as in FindQt4.cmake from KDE4) will come soon, then
-  # _params will be used for more than just -m
-  SET(_params -m)
-
-  ADD_CUSTOM_COMMAND(OUTPUT ${_impl} ${_header}
-      COMMAND ${QT_DBUSXML2CPP_EXECUTABLE} ${_params} -i ${_extrainclude}  -p ${_basename} ${_infile}
-      DEPENDS ${_infile})
-
-  SET_SOURCE_FILES_PROPERTIES(${_impl} PROPERTIES SKIP_AUTOMOC TRUE)
-
-  QT4_GENERATE_MOC(${_header} ${_moc})
-
-  SET(${_sources} ${${_sources}} ${_impl} ${_header} ${_moc})
-  MACRO_ADD_FILE_DEPENDENCIES(${_impl} ${_moc})
-
-ENDMACRO(QT4_ADD_DBUS_INTERFACE_EX)
-
-qt4_add_dbus_interface_ex(tasks_SRCS org.freedesktop.MediaPlayer.player.xml playerv1interface dbusstatus.h)
+set_source_files_properties(org.freedesktop.MediaPlayer.player.xml PROPERTIES INCLUDE "dbusstatus.h")
+qt4_add_dbus_interface(tasks_SRCS org.freedesktop.MediaPlayer.player.xml playerv1interface)
 
 kde4_add_plugin(plasma_applet_icontasks ${tasks_SRCS})
 
