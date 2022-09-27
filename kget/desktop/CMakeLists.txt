@@ -1,6 +1,3 @@
-# for dbus_add_activation_service
-include(MacroDBusAddActivationService)
-
 # associate KGet with the correct mimetypes
 configure_file(kget.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kget.desktop)
 
@@ -9,4 +6,4 @@ install(FILES kget_download.desktop DESTINATION
 ${KDE4_SERVICES_INSTALL_DIR}/ServiceMenus)
 
 # For DBus activation:
-dbus_add_activation_service(org.kde.kget.service.in)
+kde4_add_dbus_service(org.kde.kget.service.in)
