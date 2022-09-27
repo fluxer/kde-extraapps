@@ -51,10 +51,10 @@ install(
 if (LibKonq_FOUND)
     include_directories(${LIBKONQ_INCLUDE_DIR})
 
-    set(extracthere_SRCS batchextract.cpp extractHereDndPlugin.cpp)
-    kde4_add_plugin(extracthere WITH_PREFIX ${extracthere_SRCS})
+    set(ark_dndextract_SRCS batchextract.cpp extractHereDndPlugin.cpp)
+    kde4_add_plugin(ark_dndextract ${ark_dndextract_SRCS})
 
-    target_link_libraries(extracthere
+    target_link_libraries(ark_dndextract
         kerfuffle
         ${KDE4_KDECORE_LIBS}
         ${KDE4_KPARTS_LIBS}
@@ -63,7 +63,7 @@ if (LibKonq_FOUND)
     )
 
     install(
-        TARGETS extracthere
+        TARGETS ark_dndextract
         DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
     )
 

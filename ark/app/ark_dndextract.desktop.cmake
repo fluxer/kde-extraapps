@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Service
 X-KDE-ServiceTypes=KonqDndPopupMenu/Plugin
-X-KDE-Library=libextracthere
+X-KDE-Library=ark_dndextract
 Name=Ark Extract Here
 Name[ar]=أرك استخرج هنا
 Name[ast]=Estrayer equí con Ark
