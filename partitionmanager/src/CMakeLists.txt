@@ -193,7 +193,6 @@ target_link_libraries(partitionmanagerprivate
     ${KDE4_SOLID_LIBS}
     ${UUID_LIBRARIES}
     ${BLKID_LIBRARIES}
-    libfatlabel
 )
 
 if(LIBATASMART_FOUND)
