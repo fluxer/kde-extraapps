@@ -17,43 +17,12 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CHARRUNNERCONFIG_H
-#define CHARRUNNERCONFIG_H
-
-//Project-Includes
-#include "ui_charrunner_config.h"
-//KDE-Includes
-#include <KCModule>
+#ifndef CHARRUNNERDEFS_H
+#define CHARRUNNERDEFS_H
 
 //Names of config-entries
 static const char CONFIG_TRIGGERWORD[] = "triggerWord";
 static const char CONFIG_ALIASES[] = "aliases";
 static const char CONFIG_CODES[] = "codes";
 
-class CharacterRunnerConfigForm : public QWidget, public Ui::CharacterRunnerConfigUi
-{
-  Q_OBJECT
-
-  public:
-    explicit CharacterRunnerConfigForm(QWidget* parent);
-};
-
-class CharacterRunnerConfig : public KCModule
-{
-  Q_OBJECT
-
-  public:
-    explicit CharacterRunnerConfig(QWidget* parent = 0, const QVariantList& args = QVariantList());
-
-  public slots:
-    void save();
-    void load();
-    void defaults();
-    void addItem();
-    void deleteItem();
-
-  private:
-    CharacterRunnerConfigForm* m_ui;
-};
-
-#endif // CHARRUNNERCONFIG_H
+#endif // CHARRUNNERDEFS_H

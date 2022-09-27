@@ -21,7 +21,6 @@
 #define CHARRUNNER_H
 
 #include <Plasma/AbstractRunner>
-#include "charrunner_config.h"
 
 class CharacterRunner : public Plasma::AbstractRunner
 {
@@ -32,7 +31,7 @@ class CharacterRunner : public Plasma::AbstractRunner
     ~CharacterRunner();
     void match(Plasma::RunnerContext &context);
     void reloadConfiguration();
-	
+
   private:
     //config-variables
     QString m_triggerWord;
@@ -42,4 +41,4 @@ class CharacterRunner : public Plasma::AbstractRunner
 
 K_EXPORT_PLASMA_RUNNER(charrunner, CharacterRunner)
 
-#endif
+#endif // CHARRUNNER_H

@@ -18,6 +18,7 @@
  */
 
 #include "charrunner.h"
+#include "charrunnerdefs.h"
 
 #include <KIcon>
 
