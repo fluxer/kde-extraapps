@@ -9,8 +9,8 @@ endif()
 
 find_package(LibVNCServer REQUIRED)
 
-macro_bool_to_01(X11_Xdamage_FOUND HAVE_XDAMAGE)
-macro_bool_to_01(X11_XShm_FOUND HAVE_XSHM)
+kde4_bool_to_01(X11_Xdamage_FOUND HAVE_XDAMAGE)
+kde4_bool_to_01(X11_XShm_FOUND HAVE_XSHM)
 
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}/krfb
