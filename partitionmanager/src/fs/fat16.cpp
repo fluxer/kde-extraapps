@@ -87,7 +87,7 @@ namespace FS
 	FileSystem::SupportTool fat16::supportToolName() const
 	{
 		// also, dd for updating the UUID, but let's assume it's there ;-)
-		return SupportTool("dosfstools", KUrl("http://www.daniel-baumann.ch/software/dosfstools/"));
+		return SupportTool("dosfstools", KUrl("https://github.com/dosfstools/dosfstools"));
 	}
 
 
