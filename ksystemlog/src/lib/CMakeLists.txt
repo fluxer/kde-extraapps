@@ -38,24 +38,10 @@ set(ksystemlog_lib_sources
 	levelPrintPage.cpp
 )
 
-# avoid putting the generated files in target specific
-# directory which is the case when automated
-set(CMAKE_AUTOUIC OFF)
-
-qt4_wrap_ui(ksystemlog_lib_sources
-    logViewSearchWidgetBase.ui
-)
-
 add_library(ksystemlog_lib STATIC ${ksystemlog_lib_sources})
-
-add_dependencies(
-	ksystemlog_lib 
-	ksystemlog_config
-)
 
 target_link_libraries(ksystemlog_lib
 	${KDE4_KDEUI_LIBS}
         ${KDE4_KIO_LIBS}
         ${KDE4_KFILE_LIBS}
-	ksystemlog_config
 )
