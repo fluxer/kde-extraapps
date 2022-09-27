@@ -8,8 +8,6 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-include(MacroLibrary)
-
 macro_optional_find_package(LibArchive 3.0.3)
 set_package_properties(LibArchive PROPERTIES
     DESCRIPTION "A library for dealing with a wide variety of archive file formats"
