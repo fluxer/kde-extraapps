@@ -151,12 +151,9 @@ void DocumentTest::testLoad_data()
     QTest::addColumn<int>("maxHeight");
 
     testLoad_newRow("test.png", "png");
-    testLoad_newRow("160216_no_size_before_decoding.eps", "eps");
     testLoad_newRow("160382_corrupted.jpeg", "jpeg", MimeTypeUtils::KIND_IMAGE, false, 55);
     testLoad_newRow("1x10k.png", "png");
     testLoad_newRow("1x10k.jpg", "jpeg");
-    testLoad_newRow("test.xcf", "xcf");
-    testLoad_newRow("188191_does_not_load.tga", "tga");
     testLoad_newRow("289819_does_not_load.png", "png");
     testLoad_newRow("png-with-jpeg-extension.jpg", "png");
     testLoad_newRow("jpg-with-gif-extension.gif", "jpeg");

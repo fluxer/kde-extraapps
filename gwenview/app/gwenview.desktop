@@ -176,7 +176,7 @@ Terminal=false
 Icon=gwenview
 Type=Application
 Categories=Qt;KDE;Graphics;Viewer;Photography;
-MimeType=inode/directory;image/gif;image/png;image/jpeg;image/bmp;image/x-ico;image/x-portable-bitmap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-portable-graymap;image/tiff;image/x-webp;image/webp;image/svg+xml;image/svg+xml-compressed;image/x-dcraw;image/x-dds;image/x-eps;image/x-exr;image/jp2;image/x-pcx;image/x-psd;image/x-xcf;image/katie
+MimeType=inode/directory;image/gif;image/png;image/jpeg;image/bmp;image/x-ico;image/x-portable-bitmap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-portable-graymap;image/x-webp;image/webp;image/svg+xml;image/svg+xml-compressed;image/x-dcraw;image/jp2;image/katie
 X-DocPath=gwenview/index.html
 # InitialPreference should be less than Dolphin so that Gwenview is not the
 # primary applications for folders.
