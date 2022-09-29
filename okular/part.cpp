@@ -63,6 +63,7 @@
 #include <kbookmarkmenu.h>
 #include <kpassworddialog.h>
 #include <kpasswdstore.h>
+#include <kspeech.h>
 
 // local includes
 #include "aboutdata.h"
@@ -506,8 +507,7 @@ m_cliPresentation(false), m_cliPrint(false), m_embedMode(detectEmbedMode(parentW
     connect( Okular::Settings::self(), SIGNAL(configChanged()), this, SLOT(slotNewConfig()) );
 
     // [SPEECH] check for KTTSD presence and usability
-    const KService::Ptr kttsd = KService::serviceByDesktopName("kttsd");
-    Okular::Settings::setUseKTTSD( kttsd );
+    Okular::Settings::setUseKTTSD( KSpeech::isSupported() );
     Okular::Settings::self()->writeConfig();
 
     rebuildBookmarkMenu( false );
