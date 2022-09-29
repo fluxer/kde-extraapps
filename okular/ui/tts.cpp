@@ -9,14 +9,10 @@
 
 #include "tts.h"
 
-#include <qdbusservicewatcher.h>
 #include <qset.h>
 
 #include <klocale.h>
 #include <kspeech.h>
-#include <ktoolinvocation.h>
-
-#include "kspeechinterface.h"
 
 /* Private storage. */
 class OkularTTS::Private
@@ -24,7 +20,6 @@ class OkularTTS::Private
 public:
     Private( OkularTTS *qq )
         : q( qq ), kspeech( 0 )
-        , watcher( "org.kde.kttsd", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForUnregistration )
     {
     }
 
@@ -32,9 +27,8 @@ public:
     void teardownIface();
 
     OkularTTS *q;
-    org::kde::KSpeech* kspeech;
+    KSpeech* kspeech;
     QSet< int > jobs;
-    QDBusServiceWatcher watcher;
 };
 
 void OkularTTS::Private::setupIface()
@@ -42,32 +36,16 @@ void OkularTTS::Private::setupIface()
     if ( kspeech )
         return;
 
-    // If KTTSD not running, start it.
-    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered( "org.kde.kttsd" );
-    bool kttsdactive = false;
-    if ( reply.isValid() )
-        kttsdactive = reply.value();
-    if ( !kttsdactive )
+    if ( !KSpeech::isSupported() )
     {
-        QString error;
-        if ( KToolInvocation::startServiceByDesktopName( "kttsd", QStringList(), &error ) )
-        {
-            emit q->errorMessage( i18n( "Starting Jovie Text-to-Speech service Failed: %1", error ) );
-        }
-        else
-        {
-            kttsdactive = true;
-        }
+        emit q->errorMessage( i18n( "Text-to-Speech not supported" ) );
+        return;
     }
-    if ( kttsdactive )
-    {
-        // creating the connection to the kspeech interface
-        kspeech = new org::kde::KSpeech( "org.kde.kttsd", "/KSpeech", QDBusConnection::sessionBus() );
-        kspeech->setParent( q );
-        kspeech->setApplicationName( "Okular" );
-        connect( kspeech, SIGNAL(jobStateChanged(QString,int,int)),
-                 q, SLOT(slotJobStateChanged(QString,int,int)) );
-    }
+
+    kspeech = new KSpeech(q);
+    kspeech->setSpeechID(QString::fromLatin1("Okular"));
+    connect( kspeech, SIGNAL(jobStateChanged(int,int)),
+             q, SLOT(slotJobStateChanged(int,int)) );
 }
 
 void OkularTTS::Private::teardownIface()
@@ -80,13 +58,11 @@ void OkularTTS::Private::teardownIface()
 OkularTTS::OkularTTS( QObject *parent )
     : QObject( parent ), d( new Private( this ) )
 {
-    connect( &d->watcher, SIGNAL(serviceUnregistered(QString)),
-             this, SLOT(slotServiceUnregistered(QString)) );
 }
 
 OkularTTS::~OkularTTS()
 {
-    disconnect( &d->watcher, 0, this, 0 );
+    d->teardownIface();
 
     delete d;
 }
@@ -99,10 +75,10 @@ void OkularTTS::say( const QString &text )
     d->setupIface();
     if ( d->kspeech )
     {
-        QDBusReply< int > reply = d->kspeech->say( text, KSpeech::soPlainText );
-        if ( reply.isValid() )
+        const int jobId = d->kspeech->say( text );
+        if ( jobId > 0 )
         {
-            d->jobs.insert( reply.value() );
+            d->jobs.insert( jobId );
             emit hasSpeechs( true );
         }
     }
@@ -116,29 +92,22 @@ void OkularTTS::stopAllSpeechs()
     d->kspeech->removeAllJobs();
 }
 
-void OkularTTS::slotServiceUnregistered( const QString &service )
+void OkularTTS::slotJobStateChanged( int jobNum, int state )
 {
-    if ( service == QLatin1String( "org.kde.kttsd" ) )
-    {
-        d->teardownIface();
-    }
-}
-
-void OkularTTS::slotJobStateChanged( const QString &appId, int jobNum, int state )
-{
-    // discard non ours job
-    if ( appId != QDBusConnection::sessionBus().baseService() || !d->kspeech )
+    if ( !d->kspeech )
         return;
 
     switch ( state )
     {
-        case KSpeech::jsDeleted:
+        case KSpeech::JobFinished: {
+            d->kspeech->removeJob( jobNum );
+            break;
+        }
+        case KSpeech::JobCanceled: {
             d->jobs.remove( jobNum );
             emit hasSpeechs( !d->jobs.isEmpty() );
             break;
-        case KSpeech::jsFinished:
-            d->kspeech->removeJob( jobNum );
-            break;
+        }
     }
 }
 

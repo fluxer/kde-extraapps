@@ -27,8 +27,7 @@ class OkularTTS : public QObject
         void errorMessage( const QString &message );
 
     private slots:
-        void slotServiceUnregistered( const QString& );
-        void slotJobStateChanged( const QString &appId, int jobNum, int state );
+        void slotJobStateChanged( int jobNum, int state );
 
     private:
         // private storage
