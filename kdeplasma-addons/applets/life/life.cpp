@@ -28,6 +28,7 @@
 #include <Plasma/Theme>
 #include <KConfigDialog>
 #include <KDebug>
+#include <KRandom>
 
 Life::Life(QObject *parent, const QVariantList &args)
     : Plasma::Applet(parent, args),
@@ -250,7 +251,7 @@ void Life::initGame()
 void Life::resetGame()
 {
     for (int i = 0; i < (m_cellsArrayHeight * m_cellsArrayWidth); i++){
-        m_cells[i] = (rand() % 100) < m_popDensityNumber ? 1 : 0;
+        m_cells[i] = (KRandom::randomMax(100) < m_popDensityNumber ? 1 : 0);
     }
 
     if (m_reflectHorizontal){

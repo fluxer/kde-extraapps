@@ -184,7 +184,7 @@ QString PasteMacroExpander::password(const QString& args)
             rand = KRandom::random();
         } while (rand >= top);
 
-        result += chars[rand % setSize];
+        result += chars[KRandom::randomMax(setSize)];
     }
     //kDebug() << result;
     return result;

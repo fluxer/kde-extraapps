@@ -37,7 +37,6 @@ class FlickrProvider::Private
     Private( FlickrProvider *parent )
       : mParent( parent )
     {
-        qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
     }
 
     void pageRequestFinished( KJob* );
