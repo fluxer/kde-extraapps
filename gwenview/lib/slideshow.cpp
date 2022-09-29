@@ -19,12 +19,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 #include "moc_slideshow.cpp"
 
-// libc
-#include <time.h>
-
-// STL
-#include <algorithm>
-
 // Qt
 #include <QAction>
 #include <QTimer>
@@ -34,6 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <KDebug>
 #include <KIcon>
 #include <KLocale>
+#include <KRandom>
 
 // Local
 #include <lib/gvdebug.h>
@@ -57,34 +52,13 @@ enum State {
     WaitForEndOfUrl
 };
 
-/**
- * This class generate random numbers which are not the same between two runs
- * of Gwenview. See bug #132334
- */
-class RandomNumberGenerator
-{
-public:
-    RandomNumberGenerator()
-    : mSeed(time(0))
-    {
-    }
-
-    int operator()(int n)
-    {
-        return rand_r(&mSeed) % n;
-    }
-
-private:
-    unsigned int mSeed;
-};
-
 struct SlideShowPrivate
 {
     QTimer* mTimer;
     State mState;
-    QVector<KUrl> mUrls;
-    QVector<KUrl> mShuffledUrls;
-    QVector<KUrl>::ConstIterator mStartIt;
+    QList<KUrl> mUrls;
+    QList<KUrl> mShuffledUrls;
+    QList<KUrl>::ConstIterator mStartIt;
     KUrl mCurrentUrl;
     KUrl mLastShuffledUrl;
 
@@ -102,7 +76,7 @@ struct SlideShowPrivate
 
     KUrl findNextOrderedUrl()
     {
-        QVector<KUrl>::ConstIterator it = qFind(mUrls.constBegin(), mUrls.constEnd(), mCurrentUrl);
+        QList<KUrl>::ConstIterator it = qFind(mUrls.constBegin(), mUrls.constEnd(), mCurrentUrl);
         GV_RETURN_VALUE_IF_FAIL2(it != mUrls.constEnd(), KUrl(), "Current url not found in list.");
 
         ++it;
@@ -129,8 +103,7 @@ struct SlideShowPrivate
     void initShuffledUrls()
     {
         mShuffledUrls = mUrls;
-        RandomNumberGenerator generator;
-        std::random_shuffle(mShuffledUrls.begin(), mShuffledUrls.end(), generator);
+        KRandom::randomize(mShuffledUrls);
         // Ensure the first url is different from the previous last one, so that
         // last url does not stay visible twice longer than usual
         if (mLastShuffledUrl == mShuffledUrls.first() && mShuffledUrls.count() > 1) {
@@ -211,8 +184,7 @@ QAction* SlideShow::randomAction() const
 
 void SlideShow::start(const QList<KUrl>& urls)
 {
-    d->mUrls.resize(urls.size());
-    qCopy(urls.begin(), urls.end(), d->mUrls.begin());
+    d->mUrls = urls;
 
     d->mStartIt = qFind(d->mUrls.constBegin(), d->mUrls.constEnd(), d->mCurrentUrl);
     if (d->mStartIt == d->mUrls.constEnd()) {
