@@ -24,7 +24,6 @@
 #include "radialMap.h"   //class Segment
 #include "widget.h"
 
-#include <KCursor>     //::mouseMoveEvent()
 #include <KDebug>
 #include <KIconLoader> //::mousePressEvent()
 #include <KJob>

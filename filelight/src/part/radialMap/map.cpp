@@ -26,7 +26,6 @@
 #include <QtGui/QPainter>
 #include <QtGui/QPen>
 
-#include <KCursor>         //make()
 #include <KDebug>
 #include <KGlobalSettings> //kdeColours
 

@@ -26,7 +26,6 @@
 #include "radialMap.h" //constants
 #include "map.h"
 
-#include <KCursor>        //ctor
 #include <KUrl>
 
 #include <QtGui/QApplication>   //sendEvent
