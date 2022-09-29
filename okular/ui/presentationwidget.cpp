@@ -1446,7 +1446,7 @@ void PresentationWidget::togglePencilMode( bool on )
         annElem.setAttribute( "color", colorstring );
         annElem.setAttribute( "width", "2" );
         m_drawingEngine = new SmoothPathEngine( root );
-        setCursor( KCursor( "pencil", Qt::ArrowCursor ) );
+        setCursor( KCursor::fromName( "pencil", Qt::ArrowCursor ) );
     }
     else
     {
