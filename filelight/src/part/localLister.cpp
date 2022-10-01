@@ -98,32 +98,32 @@ outputError(QByteArray path)
 {
     ///show error message that stat or opendir may give
 
-#define out(s) kError() << s ": " << path; break
+#define LL_ERROR(s) kError() << s ": " << path; break
 
     switch (errno) {
     case EACCES:
-        out("Inadequate access permissions");
+        LL_ERROR("Inadequate access permissions");
     case EMFILE:
-        out("Too many file descriptors in use by Filelight");
+        LL_ERROR("Too many file descriptors in use by Filelight");
     case ENFILE:
-        out("Too many files are currently open in the system");
+        LL_ERROR("Too many files are currently open in the system");
     case ENOENT:
-        out("A component of the path does not exist, or the path is an empty string");
+        LL_ERROR("A component of the path does not exist, or the path is an empty string");
     case ENOMEM:
-        out("Insufficient memory to complete the operation");
+        LL_ERROR("Insufficient memory to complete the operation");
     case ENOTDIR:
-        out("A component of the path is not a folder");
+        LL_ERROR("A component of the path is not a folder");
     case EBADF:
-        out("Bad file descriptor");
+        LL_ERROR("Bad file descriptor");
     case EFAULT:
-        out("Bad address");
+        LL_ERROR("Bad address");
     case ELOOP: //NOTE shouldn't ever happen
-        out("Too many symbolic links encountered while traversing the path");
+        LL_ERROR("Too many symbolic links encountered while traversing the path");
     case ENAMETOOLONG:
-        out("File name too long");
+        LL_ERROR("File name too long");
     }
 
-#undef out
+#undef LL_ERROR
 }
 
 Folder*
