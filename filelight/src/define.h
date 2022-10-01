@@ -25,10 +25,6 @@
 
 #include "part/Config.h"
 
-#undef VERSION
-#undef PACKAGE
-#undef PRETTYNAME
-
 #define APP_NAME "filelight"
 #define APP_VERSION "1.20"
 #define APP_PRETTYNAME "Filelight"
