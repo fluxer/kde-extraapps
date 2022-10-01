@@ -19,7 +19,6 @@
 #include <KLocale>
 #include <KMessageBox>
 #include <KStandardGuiItem>
-#include <KSystemTimeZone>
 #include <KToolInvocation>
 #include <KStandardAction>
 #include <KActionCollection>
