@@ -7,7 +7,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-macro_optional_find_package(ALSA)
+kde4_optional_find_package(ALSA)
 set_package_properties(ALSA PROPERTIES
     DESCRIPTION "Advanced Linux Sound Architecture"
     URL "https://alsa-project.org/wiki/Main_Page"

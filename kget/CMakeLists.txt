@@ -16,21 +16,21 @@ include(CheckTypeSize)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-macro_optional_find_package(LibMms)
+kde4_optional_find_package(LibMms)
 set_package_properties(LibMms PROPERTIES
     DESCRIPTION "Library to read mms streams"
     URL "http://libmms.sourceforge.net"
     PURPOSE "Needed to build KGet mms support"
 )
 
-macro_optional_find_package(LibTorrent)
+kde4_optional_find_package(LibTorrent)
 set_package_properties(LibTorrent PROPERTIES
     DESCRIPTION "Feature complete C++ bittorrent implementation focusing on efficiency and scalability"
     URL "https://libtorrent.org/"
     PURPOSE "Needed to build KGet torrent support"
 )
 
-macro_optional_find_package(KDE4Workspace)
+kde4_optional_find_package(KDE4Workspace)
 set_package_properties(KDE4Workspace PROPERTIES
     DESCRIPTION "KDE base workspace libraries"
     URL "https://osdn.net/projects/kde/"

@@ -37,7 +37,7 @@ set_package_properties(LIBPARTED PROPERTIES
     PURPOSE "Required for partitions management"
 )
 
-macro_optional_find_package(LibATASmart)
+kde4_optional_find_package(LibATASmart)
 set_package_properties(LibATASmart PROPERTIES
     DESCRIPTION "ATA S.M.A.R.T. reading and parsing library"
     URL "http://0pointer.de/blog/projects/being-smart.html"

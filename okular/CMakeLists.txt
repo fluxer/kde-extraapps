@@ -13,42 +13,42 @@ include_directories(
    ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-macro_optional_find_package(Poppler)
+kde4_optional_find_package(Poppler)
 set_package_properties(Poppler PROPERTIES
     DESCRIPTION "A PDF rendering library"
     URL "https://poppler.freedesktop.org"
     PURPOSE "Support for PDF files in Okular"
 )
 
-macro_optional_find_package(LibSpectre 0.2)
+kde4_optional_find_package(LibSpectre 0.2)
 set_package_properties(LibSpectre PROPERTIES
     DESCRIPTION "A PostScript rendering library"
     URL "http://libspectre.freedesktop.org/wiki/"
     PURPOSE "Support for PS files in Okular"
 )
 
-macro_optional_find_package(DjVuLibre 3.5.17)
+kde4_optional_find_package(DjVuLibre 3.5.17)
 set_package_properties(DjVuLibre PROPERTIES
     DESCRIPTION "A library for dealing with DjVu formatted files"
     URL "http://djvulibre.djvuzone.org"
     PURPOSE "Support for DjVu files in Okular"
 )
 
-macro_optional_find_package(Freetype)
+kde4_optional_find_package(Freetype)
 set_package_properties(Freetype PROPERTIES
     DESCRIPTION "A font rendering engine"
     URL "http://www.freetype.org"
     PURPOSE "Provides freetype font support in the Okular DVI generator"
 )
 
-macro_optional_find_package(EPub)
+kde4_optional_find_package(EPub)
 set_package_properties(EPub PROPERTIES
     DESCRIPTION "A library for reading EPub documents"
     URL "http://sourceforge.net/projects/ebook-tools"
     PURPOSE "Support for EPub documents in Okular"
 )
 
-macro_optional_find_package(OpenSSL)
+kde4_optional_find_package(OpenSSL)
 set_package_properties(OpenSSL PROPERTIES
     DESCRIPTION "Robust, commercial-grade, full-featured toolkit for general-purpose cryptography and secure communication"
     URL "https://www.openssl.org/"

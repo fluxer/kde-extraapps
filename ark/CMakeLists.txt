@@ -8,34 +8,34 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-macro_optional_find_package(LibArchive 3.0.3)
+kde4_optional_find_package(LibArchive 3.0.3)
 set_package_properties(LibArchive PROPERTIES
     DESCRIPTION "A library for dealing with a wide variety of archive file formats"
     URL "http://code.google.com/p/libarchive/"
     PURPOSE "Required for among others tar, tar.gz, tar.bz2 formats in Ark"
 )
 
-macro_optional_find_package(LibKonq)
+kde4_optional_find_package(LibKonq)
 set_package_properties(LibKonq PROPERTIES
     DESCRIPTION "libkonq library"
     PURPOSE "Need to integrate in konqueror"
 )
 
-macro_optional_find_package(ZLIB)
+kde4_optional_find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES
     DESCRIPTION "General purpose data compression library"
     URL "http://www.zlib.net"
     PURPOSE "Required for the .gz format support in Ark"
 )
 
-macro_optional_find_package(BZip2)
+kde4_optional_find_package(BZip2)
 set_package_properties(BZip2 PROPERTIES
     DESCRIPTION "A high-quality data compressor"
     URL "http://www.bzip.org"
     PURPOSE "Required for the .bz2 format support in Ark"
 )
 
-macro_optional_find_package(LibLZMA)
+kde4_optional_find_package(LibLZMA)
 set_package_properties(LibLZMA PROPERTIES
     DESCRIPTION "Legacy data compression software with high compression ratio"
     URL "http://tukaani.org/xz/"

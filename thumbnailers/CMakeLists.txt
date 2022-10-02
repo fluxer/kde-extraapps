@@ -7,21 +7,21 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-macro_optional_find_package(GettextPO)
+kde4_optional_find_package(GettextPO)
 set_package_properties(GettextPO PROPERTIES
     DESCRIPTION "A library for processing PO files"
     URL "www.gnu.org/software/gettext"
     PURPOSE "Required to build the PO thumbnailer"
 )
 
-macro_optional_find_package(Taglib 1.4)
+kde4_optional_find_package(Taglib 1.4)
 set_package_properties(Taglib PROPERTIES
     DESCRIPTION "Id3 tag reader"
     URL "https://taglib.org/"
     PURPOSE "Required to build the audio thumbnailer"
 )
 
-macro_optional_find_package(FFmpegThumbnailer)
+kde4_optional_find_package(FFmpegThumbnailer)
 set_package_properties(FFmpegThumbnailer PROPERTIES
     DESCRIPTION "Lightweight video thumbnailer that can be used by file managers to create thumbnails for video files"
     URL "https://github.com/dirkvdb/ffmpegthumbnailer"

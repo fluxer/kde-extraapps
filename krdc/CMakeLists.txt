@@ -8,7 +8,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-macro_optional_find_package(LibVNCServer 0.9.8)
+kde4_optional_find_package(LibVNCServer 0.9.8)
 set_package_properties(LibVNCServer PROPERTIES
     DESCRIPTION "VNC server / client library"
     URL "http://libvncserver.sourceforge.net/"
@@ -16,7 +16,7 @@ set_package_properties(LibVNCServer PROPERTIES
 )
 
 # NX support is not ready for KDE 4.2; disabled (uwolfer)
-# macro_optional_find_package(LibNXCL)
+# kde4_optional_find_package(LibNXCL)
 # macro_log_feature(LIBNXCL_FOUND "libnxcl" "NX X compression client library" "http://svn.berlios.de/svnroot/repos/freenx/trunk/freenx-client/nxcl/" FALSE "1.0" "Needed to build Krdc with NX support")
 
 # v1.0.2 required

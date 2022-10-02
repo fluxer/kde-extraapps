@@ -8,21 +8,21 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-macro_optional_find_package(KDE4Workspace)
+kde4_optional_find_package(KDE4Workspace)
 set_package_properties(KDE4Workspace PROPERTIES
     DESCRIPTION "KDE base workspace libraries"
     URL "https://osdn.net/projects/kde/"
     PURPOSE "Needed for building several Plasma plugins"
 )
 
-macro_optional_find_package(DBusMenuQt)
+kde4_optional_find_package(DBusMenuQt)
 set_package_properties(DBusMenuQt PROPERTIES
     DESCRIPTION "Library that provides a Qt implementation of the DBusMenu spec"
     URL "https://osdn.net/projects/kde/"
     PURPOSE "Needed for Unity support in IconTasks"
 )
 
-macro_optional_find_package(Qalculate)
+kde4_optional_find_package(Qalculate)
 set_package_properties(Qalculate PROPERTIES
     DESCRIPTION "Qalculate Library"
     URL "http://qalculate.sourceforge.net/"
