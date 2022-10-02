@@ -25,7 +25,10 @@
 #include <Plasma/Animator>
 #include "backgroundlistmodel.h"
 #include "backgrounddelegate.h"
-//#include "ksmserver_interface.h"
+
+#if defined(HAVE_KWORKSPACE)
+#  include "ksmserver_interface.h"
+#endif
 
 K_EXPORT_PLASMA_WALLPAPER(virus, Virus)
 
@@ -421,20 +424,22 @@ void Virus::updateBackground(const QImage &img)
 
 void Virus::suspendStartup(bool suspend)
 {
-    Q_UNUSED(suspend);
-    //TODO: find out how to compile with that ksmserver
-    /*if (m_startupResumed) {
+#if defined(HAVE_KWORKSPACE)
+    if (m_startupResumed) {
         return;
     }
 
     org::kde::KSMServerInterface ksmserver("org.kde.ksmserver", "/KSMServer", QDBusConnection::sessionBus());
-    const QString startupID("desktop wallaper");
+    const QString startupID("desktop wallpaper");
     if (suspend) {
         ksmserver.suspendStartup(startupID);
     } else {
         m_startupResumed = true;
         ksmserver.resumeStartup(startupID);
-    }*/
+    }
+#else
+    Q_UNUSED(suspend);
+#endif // HAVE_KWORKSPACE
 }
 
 void Virus::updateScreenshot(QPersistentModelIndex index)

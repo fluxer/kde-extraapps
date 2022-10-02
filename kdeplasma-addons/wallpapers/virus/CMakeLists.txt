@@ -8,11 +8,24 @@ set(virus_SRCS
     itemsview.cpp
 )
 
-set(ksmserver_xml ${KDEBASE_WORKSPACE_SOURCE_DIR}/ksmserver/org.kde.KSMServerInterface.xml)
-qt4_add_dbus_interface(image_SRCS ${ksmserver_xml} ksmserver_interface)
+if(KDE4WORKSPACE_FOUND)
+    add_definitions(-DHAVE_KWORKSPACE)
+    set(ksmserver_xml ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSMServerInterface.xml)
+    qt4_add_dbus_interface(virus_SRCS ${ksmserver_xml} ksmserver_interface)
+endif()
 
 kde4_add_plugin(plasma_wallpaper_virus ${virus_SRCS})
-target_link_libraries(plasma_wallpaper_virus ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KFILE_LIBS})
+target_link_libraries(plasma_wallpaper_virus
+    ${KDE4_PLASMA_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${KDE4_KFILE_LIBS}
+)
 
-install(TARGETS plasma_wallpaper_virus DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
-install(FILES plasma-wallpaper-virus.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
+install(
+    TARGETS plasma_wallpaper_virus
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
+)
+install(
+    FILES plasma-wallpaper-virus.desktop
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
+)
