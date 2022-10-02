@@ -187,13 +187,13 @@ void Alife::executeCell(int id)
         switch(cell->code[codePointer]){
             case 0: //stop
                 stop = true;
-            break;
+                break;
             case 1://random value
                 reg = KRandom::randomMax(4);
-            break;
+                break;
             case 2: //change direction
                 facing = reg & 3;
-            break;
+                break;
             case 3: //move
                 if(moveCell(id, facing)){
                     if(pixelBackup != pixel) {
@@ -208,7 +208,7 @@ void Alife::executeCell(int id)
                         stop = true;
                     }
                 }
-            break;
+                break;
             case 4:{ //eat red
                 int color = qRed(pixel);
                 if(color && cell->energy + color < 255) {
@@ -218,7 +218,8 @@ void Alife::executeCell(int id)
                     better_eat = m_current_eat;
                 }
                 pixel = qRgb(color, qGreen(pixel), qBlue(pixel));
-            }break;
+                break;
+            }
             case 5:{ //eat green
                 int color = qGreen(pixel);
                 if(color && cell->energy + color < 255) {
@@ -228,7 +229,8 @@ void Alife::executeCell(int id)
                     better_eat = m_current_eat;
                 }
                 pixel = qRgb(qRed(pixel), color, qBlue(pixel));
-            }break;
+                break;
+            }
             case 6:{ //eat blue
                 int color = qBlue(pixel);
                 if(color && cell->energy + color < 255) {
@@ -238,26 +240,27 @@ void Alife::executeCell(int id)
                     better_eat = m_current_eat;
                 }
                 pixel = qRgb(qRed(pixel), qGreen(pixel), color);
-            }break;
+                break;
+            }
             case 7: //reproduce
                 reproduce(cell, facing, pixel);
                 special-= 2;
                 if(special <= 0) {
                     stop = true;
                 }
-            break;
+                break;
             case 8: //increment register
                 reg++;
                 if(reg > 255) {
                     reg = 0;
                 }
-            break;
+                break;
             case 9: //decrement register
                 reg--;
                 if(reg < 0) {
                     reg = 255;
                 }
-            break;
+                break;
             case 10: //while(register){
                 if(!reg){
                     while(codePointer < VIRUS_GENOME_SIZE-1 && cell->code[codePointer] != 11 && cell->energy){
@@ -265,7 +268,7 @@ void Alife::executeCell(int id)
                           cell->energy--;
                     }
                 }
-            break;
+                break;
             case 11: //}
                 if(reg){
                     while(codePointer >= 0 && cell->code[codePointer] != 10 && cell->energy){
@@ -273,7 +276,7 @@ void Alife::executeCell(int id)
                           cell->energy--;
                     }
                 }
-            break;
+                break;
             case 12:{ //highest red
                 int best = 0;
                 int bestColor = 0;
@@ -287,7 +290,8 @@ void Alife::executeCell(int id)
                     }
                 }
                 reg = best;
-            }break;
+                break;
+            }
             case 13:{ //highest green
                 int best = 0;
                 int bestColor = 0;
@@ -301,7 +305,8 @@ void Alife::executeCell(int id)
                     }
                 }
                 reg = best;
-            }break;
+                break;
+            }
             case 14:{ //highest blue
                 int best = 0;
                 int bestColor = 0;
@@ -315,20 +320,22 @@ void Alife::executeCell(int id)
                     }
                 }
                 reg = best;
-             }break;
+                break;
+            }
             case 15:{ //empty neighbour
-              int best = 0;
-              for(int i = 0; i < 4; i++){
-                  QPoint neighbour = getNeighbour(cell->x, cell->y, i);
-                  struct cell *temp = &m_cells[neighbour.x()][neighbour.y()];
-                  if(!temp->alive){
-                      best = i;
-                  }
-              }
-              reg = best;
-            }break;
+                int best = 0;
+                for(int i = 0; i < 4; i++){
+                    QPoint neighbour = getNeighbour(cell->x, cell->y, i);
+                    struct cell *temp = &m_cells[neighbour.x()][neighbour.y()];
+                    if(!temp->alive){
+                        best = i;
+                    }
+                }
+                reg = best;
+                break;
+            }
             case 16: // NOP
-            break;
+                break;
             case 17:{ //kill facing
                 QPoint neighbour = getNeighbour(cell->x, cell->y, facing);
                 struct cell *temp = &m_cells[neighbour.x()][neighbour.y()];
@@ -337,20 +344,23 @@ void Alife::executeCell(int id)
                     int enTemp = cell->energy + temp->energy / 2;
                     cell->energy = qMin(255, enTemp);
                 }
-            }break;
+                break;
+            }
             case 18:{ //give
                 QPoint neighbour = getNeighbour(cell->x, cell->y, facing);
                 struct cell *temp = &m_cells[neighbour.x()][neighbour.y()];
                 int enTemp = temp->energy + cell->energy / 2;
                 temp->energy = qMin(255, enTemp);
                 cell->energy /= 2;
-            }break;
+                break;
+            }
             case 19:{ //better eat
                 better_eat = m_current_eat_best;
-            }break;
+                break;
+            }
             default:
-              kDebug() << "wah" << cell->code[codePointer] << codePointer;
-            break;
+                kDebug() << "wah" << cell->code[codePointer] << codePointer;
+                break;
         }
         codePointer++;
         if(codePointer >= VIRUS_GENOME_SIZE) {
@@ -428,29 +438,29 @@ bool Alife::reproduce(struct cell* cell, int direction, QRgb color)
         for(int i = 0; i < VIRUS_GENOME_SIZE; i++) {
             switch(newCell->code[i]) {
                 case 4:
-                  r += 40 * mod;
-                break;
+                    r += 40 * mod;
+                    break;
                 case 5:
-                  g += 40 * mod;
-                break;
+                    g += 40 * mod;
+                    break;
                 case 6:
-                  b += 40 * mod;
-                break;
+                    b += 40 * mod;
+                    break;
                 case 10:
-                  mod = 2;
-                break;
+                    mod = 2;
+                    break;
                 case 11:
-                  mod = 1;
-                break;
+                    mod = 1;
+                    break;
                 case 12:
-                  r += 20 * mod;
-                break;
+                    r += 20 * mod;
+                    break;
                 case 13:
-                  g += 20 * mod;
-                break;
+                    g += 20 * mod;
+                    break;
                 case 14:
-                  b += 20 * mod;
-                break;
+                    b += 20 * mod;
+                    break;
             }
         }
 
