@@ -18,9 +18,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #######################################################################
 
-add_subdirectory(radialMap)
-
 set(filelight_PART_SRCS
+    radialMap/widget.cpp
+    radialMap/builder.cpp
+    radialMap/map.cpp
+    radialMap/widgetEvents.cpp
+    radialMap/labels.cpp
     part.cpp
     scan.cpp
     progressBox.cpp
@@ -35,7 +38,7 @@ set(filelight_PART_SRCS
 
 kde4_add_plugin(filelightpart ${filelight_PART_SRCS})
 
-target_link_libraries(filelightpart radialmap
+target_link_libraries(filelightpart
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KPARTS_LIBS}
     ${KDE4_KDEUI_LIBS}
@@ -44,4 +47,7 @@ target_link_libraries(filelightpart radialmap
     ${KDE4_SOLID_LIBS}
 )
 
-install(TARGETS filelightpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
+install(
+    TARGETS filelightpart
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
+)
