@@ -1,8 +1,10 @@
 project(kde-extraapps)
 
+include(GenerateExportHeader)
+include(FeatureSummary)
+
 find_package(KDE4 4.22.0 REQUIRED)
 include(KDE4Defaults)
-include(GenerateExportHeader)
 
 set(LIBRARY_TYPE SHARED)
 
