@@ -1,9 +1,11 @@
 project(gwenview)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    include(GenerateExportHeader)
+    include(FeatureSummary)
+
     find_package(KDE4 4.22.0 REQUIRED)
     include(KDE4Defaults)
-    include(GenerateExportHeader)
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
@@ -60,3 +62,7 @@ add_subdirectory(icons)
 add_subdirectory(images)
 add_subdirectory(cursors)
 add_subdirectory(color-schemes)
+
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()

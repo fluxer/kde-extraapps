@@ -1,6 +1,8 @@
 project(kuser)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    include(FeatureSummary)
+
     find_package(KDE4 4.22.0 REQUIRED)
     include(KDE4Defaults)
     include_directories(${KDE4_INCLUDES})
@@ -83,3 +85,7 @@ install(TARGETS kuser ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kuser.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 install(FILES kuserui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/kuser)
 install(FILES kuser.kcfg  DESTINATION ${KDE4_KCFG_INSTALL_DIR})
+
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()

@@ -1,6 +1,8 @@
 project(kget)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    include(FeatureSummary)
+
     find_package(KDE4 4.22.0 REQUIRED)
     include(KDE4Defaults)
     include_directories(${KDE4_INCLUDES})
@@ -224,3 +226,7 @@ endif()
 install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES kget.notifyrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/kget)
+
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()

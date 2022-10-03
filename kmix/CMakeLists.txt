@@ -1,6 +1,8 @@
 project(kmix)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    include(FeatureSummary)
+
     find_package(KDE4 4.22.0 REQUIRED)
     include(KDE4Defaults)
     include_directories(${KDE4_INCLUDES})
@@ -217,3 +219,7 @@ install(FILES kmixctrl_restore.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 install(FILES dbus/org.kde.kmix.control.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR})
 install(FILES dbus/org.kde.kmix.mixer.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR})
 install(FILES dbus/org.kde.kmix.mixset.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR})
+
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()

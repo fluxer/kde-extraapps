@@ -1,9 +1,11 @@
 project(okular)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    include(GenerateExportHeader)
+    include(FeatureSummary)
+
     find_package(KDE4 4.22.0 REQUIRED)
     include(KDE4Defaults)
-    include(GenerateExportHeader)
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
@@ -270,3 +272,7 @@ install(TARGETS okularpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 
 install(FILES okular_part.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 install(FILES part.rc part-viewermode.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular)
+
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+    feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()
