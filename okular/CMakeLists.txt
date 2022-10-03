@@ -67,6 +67,18 @@ add_feature_info(okular_kpsewhich
     "DVI support in Okular"
 )
 
+option(
+    OKULAR_FORCE_DRM
+    "Forces okular to check for DRM to decide if you can copy/print protected pdf. (default=no)"
+    OFF
+)
+kde4_bool_to_01(OKULAR_FORCE_DRM _OKULAR_FORCE_DRM)
+
+configure_file(
+   ${CMAKE_CURRENT_SOURCE_DIR}/config-okular.h.cmake
+   ${CMAKE_CURRENT_BINARY_DIR}/config-okular.h
+)
+
 add_subdirectory( ui )
 add_subdirectory( shell )
 add_subdirectory( generators )
@@ -74,8 +86,6 @@ add_subdirectory( generators )
 if(ENABLE_TESTING)
     add_subdirectory( tests )
 endif()
-
-include(OkularConfigureChecks.cmake)
 
 set(MATH_LIB m)
 
