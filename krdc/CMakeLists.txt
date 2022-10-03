@@ -15,10 +15,6 @@ set_package_properties(LibVNCServer PROPERTIES
     PURPOSE "Needed to build VNC client support in KRDC"
 )
 
-# NX support is not ready for KDE 4.2; disabled (uwolfer)
-# kde4_optional_find_package(LibNXCL)
-# macro_log_feature(LIBNXCL_FOUND "libnxcl" "NX X compression client library" "http://svn.berlios.de/svnroot/repos/freenx/trunk/freenx-client/nxcl/" FALSE "1.0" "Needed to build Krdc with NX support")
-
 # v1.0.2 required
 find_program(FREERDP_EXECUTABLE xfreerdp)
 add_feature_info(xfreerdp
@@ -35,7 +31,6 @@ include_directories(
 
 add_subdirectory(core)
 add_subdirectory(vnc)
-add_subdirectory(nx)
 add_subdirectory(rdp)
 add_subdirectory(test)
 
