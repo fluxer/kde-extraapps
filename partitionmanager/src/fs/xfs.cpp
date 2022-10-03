@@ -82,7 +82,7 @@ namespace FS
 
 	FileSystem::SupportTool xfs::supportToolName() const
 	{
-		return SupportTool("xfsprogs", KUrl("http://oss.sgi.com/projects/xfs/"));
+		return SupportTool("xfsprogs", KUrl("https://xfs.wiki.kernel.org/"));
 	}
 
 	qint64 xfs::minCapacity() const

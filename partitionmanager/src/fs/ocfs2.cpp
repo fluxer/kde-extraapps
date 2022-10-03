@@ -87,7 +87,7 @@ namespace FS
 
 	FileSystem::SupportTool ocfs2::supportToolName() const
 	{
-		return SupportTool("ocfs2-tools", KUrl("http://oss.oracle.com/projects/ocfs2-tools/"));
+		return SupportTool("ocfs2-tools", KUrl("https://ocfs2.wiki.kernel.org/"));
 	}
 
 	qint64 ocfs2::minCapacity() const

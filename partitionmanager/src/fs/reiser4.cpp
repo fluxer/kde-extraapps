@@ -69,7 +69,7 @@ namespace FS
 
 	FileSystem::SupportTool reiser4::supportToolName() const
 	{
-		return SupportTool("reiser4progs", KUrl("http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"));
+		return SupportTool("reiser4progs", KUrl("https://reiser4.wiki.kernel.org/"));
 	}
 
 	qint64 reiser4::maxCapacity() const

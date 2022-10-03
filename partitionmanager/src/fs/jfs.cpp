@@ -78,7 +78,7 @@ namespace FS
 
 	FileSystem::SupportTool jfs::supportToolName() const
 	{
-		return SupportTool("jfsutils", KUrl("http://jfs.sourceforge.net/"));
+		return SupportTool("jfsutils", KUrl("https://jfs.sf.net/"));
 	}
 
 	qint64 jfs::minCapacity() const

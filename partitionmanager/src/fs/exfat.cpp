@@ -81,7 +81,7 @@ namespace FS
 
 	FileSystem::SupportTool exfat::supportToolName() const
 	{
-		return SupportTool("exfat-utils", KUrl("http://code.google.com/p/exfat/"));
+		return SupportTool("exfat-utils", KUrl("https://github.com/relan/exfat"));
 	}
 
 	qint64 exfat::maxCapacity() const

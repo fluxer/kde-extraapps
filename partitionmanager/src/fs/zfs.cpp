@@ -76,7 +76,7 @@ namespace FS
 
 	FileSystem::SupportTool zfs::supportToolName() const
 	{
-		return SupportTool("zfs", KUrl("http://zfsonlinux.org/"));
+		return SupportTool("zfs", KUrl("https://zfsonlinux.org/"));
 	}
 
 	qint64 zfs::minCapacity() const
