@@ -29,13 +29,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QtCore/qdatetime.h>
 
 // System
-#ifdef Q_OS_WIN
-#define _WIN32_WINNT 0x0500
-#include <windows.h>
-#elif defined(Q_OS_FREEBSD)
-#include <sys/types.h>
-#include <sys/sysctl.h>
-#include <vm/vm_param.h>
+#if defined(Q_OS_FREEBSD)
+#  include <sys/types.h>
+#  include <sys/sysctl.h>
+#  include <vm/vm_param.h>
 #endif
 
 namespace Gwenview
@@ -71,12 +68,6 @@ qulonglong getTotalMemory()
     size_t len = sizeof( physmem );
     if ( sysctl( mib, 2, &physmem, &len, NULL, 0 ) == 0 )
         return (cachedValue = physmem);
-#elif defined(Q_OS_WIN)
-    MEMORYSTATUSEX stat;
-    stat.dwLength = sizeof(stat);
-    GlobalMemoryStatusEx (&stat);
-
-    return ( cachedValue = stat.ullTotalPhys );
 #endif
     return (cachedValue = 134217728);
 }
@@ -152,14 +143,6 @@ qulonglong getFreeMemory()
     {
         return 0;
     }
-#elif defined(Q_OS_WIN)
-    MEMORYSTATUSEX stat;
-    stat.dwLength = sizeof(stat);
-    GlobalMemoryStatusEx (&stat);
-
-    lastUpdate = QTime::currentTime();
-
-    return ( cachedValue = stat.ullAvailPhys );
 #else
     // tell the memory is full.. will act as in LOW profile
     return 0;
