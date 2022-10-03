@@ -22,17 +22,16 @@
 #ifndef POCREATOR_H
 #define POCREATOR_H
 
-#include <kdeversion.h>
 #include <kio/thumbcreator.h>
 
 class PoCreator : public ThumbCreator
 {
-    public:
-        explicit PoCreator();
-        virtual ~PoCreator();
-        virtual bool create( const QString& path, int width, int height, QImage& img );
-        virtual QWidget* createConfigurationWidget();
-        virtual void writeConfiguration( const QWidget* configurationWidget );
+public:
+    PoCreator();
+
+    bool create( const QString& path, int width, int height, QImage &img) final;
+    QWidget* createConfigurationWidget() final;
+    void writeConfiguration(const QWidget* configurationWidget) final;
 };
 
 #endif // POCREATOR_H

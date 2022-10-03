@@ -14,19 +14,20 @@
     along with this library; see the file COPYING.LIB.  If not, write to
     the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
     Boston, MA 02110-1301, USA.
-*/ 
+*/
 
-#ifndef _GSCREATOR_H_
-#define _GSCREATOR_H_
+#ifndef GSCREATOR_H
+#define GSCREATOR_H
 
 #include <kio/thumbcreator.h>
 
 class GSCreator : public ThumbCreator
 {
 public:
-    GSCreator() {}
-    virtual bool create(const QString &path, int, int, QImage &img);
-    virtual ThumbCreator::Flags flags() const;
+    GSCreator();
+
+    bool create(const QString &path, int, int, QImage &img) final;
+    ThumbCreator::Flags flags() const final;
 };
 
-#endif
+#endif // GSCREATOR_H

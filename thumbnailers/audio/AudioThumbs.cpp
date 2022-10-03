@@ -47,19 +47,13 @@ extern "C"
 {
     KDE_EXPORT ThumbCreator *new_creator()
     {
-        return new ATCreator;
+        return new ATCreator();
     }
 }
 
 
 ATCreator::ATCreator()
 {
-   
-}
-
-ATCreator::~ATCreator()
-{
-
 }
 
 bool ATCreator::create ( const QString &path, int /*w*/, int /*h*/, QImage &img )

@@ -14,7 +14,7 @@
     along with this library; see the file COPYING.LIB.  If not, write to
     the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
     Boston, MA 02110-1301, USA.
-*/ 
+*/
 
 #include "gscreator.h"
 
@@ -30,6 +30,10 @@ extern "C"
     {
         return new GSCreator();
     }
+}
+
+GSCreator::GSCreator()
+{
 }
 
 bool GSCreator::create(const QString &path, int, int, QImage &img)

@@ -106,10 +106,6 @@ PoCreator::PoCreator()
 {
 }
 
-PoCreator::~PoCreator()
-{
-}
-
 bool PoCreator::create( const QString& path, int width, int height, QImage& img )
 {
     int translate = 0;

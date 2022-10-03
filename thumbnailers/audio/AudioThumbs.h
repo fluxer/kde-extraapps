@@ -25,15 +25,13 @@
 #include <QObject>
 #include <kio/thumbcreator.h>
 
-class ATCreator : public QObject, public ThumbCreator
+class ATCreator : public ThumbCreator
 {
-    Q_OBJECT
 public:
     ATCreator();
-    virtual ~ATCreator();
-    virtual bool create(const QString &path, int w, int h, QImage &img);
-    virtual Flags flags() const;
-private:
+
+    bool create(const QString &path, int w, int h, QImage &img) final;
+    Flags flags() const final;
 };
 
 #endif // _AUDIO_THUMBS_H_

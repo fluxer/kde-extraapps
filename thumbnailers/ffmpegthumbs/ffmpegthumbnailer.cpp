@@ -1,23 +1,26 @@
-//    Copyright (C) 2010 Dirk Vanden Boer <dirk.vdb@gmail.com>
-//
-//    This program is free software; you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation; either version 2 of the License, or
-//    (at your option) any later version.
-//
-//    This program is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//
-//    You should have received a copy of the GNU General Public License
-//    along with this program; if not, write to the Free Software
-//    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+/*  This file is part of the KDE project
+    Copyright (C) 2022 Ivailo Monev <xakepa10@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License version 2, as published by the Free Software Foundation.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+    Boston, MA 02110-1301, USA.
+*/
 
 #include "ffmpegthumbnailer.h"
+
+#include <QImage>
 #include <kdebug.h>
 #include <kdemacros.h>
-#include <QImage>
 
 extern "C"
 {
@@ -27,14 +30,9 @@ extern "C"
     }
 }
 
-
 FFMpegThumbnailer::FFMpegThumbnailer()
 {
     m_Thumbnailer.addFilter(&m_FilmStrip);
-}
-
-FFMpegThumbnailer::~FFMpegThumbnailer()
-{
 }
 
 bool FFMpegThumbnailer::create(const QString& path, int width, int /*heigth*/, QImage& img)
@@ -62,6 +60,6 @@ bool FFMpegThumbnailer::create(const QString& path, int width, int /*heigth*/, Q
 
 ThumbCreator::Flags FFMpegThumbnailer::flags() const
 {
-    return (Flags)(DrawFrame);
+    return ThumbCreator::DrawFrame;
 }
 
