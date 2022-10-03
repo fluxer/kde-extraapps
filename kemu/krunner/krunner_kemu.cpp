@@ -58,7 +58,7 @@ void KEmuControlRunner::match(Plasma::RunnerContext &context)
             const bool isrunning = interface.call("isRunning", machine).arguments().at(0).toBool();
             if (!isrunning) {
                 Plasma::QueryMatch match(this);
-                match.setType(Plasma::QueryMatch::PossibleMatch);
+                match.setType(Plasma::QueryMatch::HelperMatch);
                 match.setIcon(KIcon("system-run"));
                 match.setText(i18n("Start %1 virtual machine", machine));
                 match.setData(QStringList() << "start" << machine);
@@ -70,7 +70,7 @@ void KEmuControlRunner::match(Plasma::RunnerContext &context)
             const bool isrunning = interface.call("isRunning", machine).arguments().at(0).toBool();
             if (isrunning) {
                 Plasma::QueryMatch match(this);
-                match.setType(Plasma::QueryMatch::PossibleMatch);
+                match.setType(Plasma::QueryMatch::HelperMatch);
                 match.setIcon(KIcon("system-shutdown"));
                 match.setText(i18n("Stop %1 virtual machine", machine));
                 match.setData(QStringList() << "stop" << machine);
