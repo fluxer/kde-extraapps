@@ -24,7 +24,6 @@
 #include "windowtaskitem.h"
 #include "taskgroupitem.h"
 #include "jobmanager.h"
-#include "dockmanager.h"
 #include "mediabuttons.h"
 #include "unity.h"
 #include "recentdocuments.h"
@@ -154,7 +153,6 @@ Tasks::Tasks(QObject* parent, const QVariantList &arguments)
 Tasks::~Tasks()
 {
     JobManager::self()->setEnabled(false);
-    DockManager::self()->setEnabled(false);
     MediaButtons::self()->setEnabled(false);
     Unity::self()->setEnabled(false);
     RecentDocuments::self()->setEnabled(false);
@@ -334,8 +332,6 @@ void Tasks::configChanged()
             previewSize <= IconTasks::ToolTipManager::MAX_PREVIEW_SIZE) {
         IconTasks::ToolTipManager::self()->setPreviewSize(previewSize);
     }
-
-    DockManager::self()->readConfig(cg);
 
     // If we have not already read the launchers, then try now...
     // ...this is mainly required for plasmoidviewer...
@@ -642,7 +638,6 @@ void Tasks::createConfigurationInterface(KConfigDialog *parent)
     updateShowSeparator();
     toolTipsModified();
     styleModified();
-    DockManager::self()->addConfigWidget(parent);
     m_groupManager->createConfigurationInterface(parent);
     parent->resize(640, 480);
 }
@@ -672,7 +667,6 @@ void Tasks::configAccepted()
     cg.writeEntry("iconScale", m_appUi.iconScale->value());
     cg.writeEntry("toolTips", m_appUi.toolTips->itemData(m_appUi.toolTips->currentIndex()).toInt());
     cg.writeEntry("highlightWindows", m_appUi.highlightWindows->checkState() == Qt::Checked);
-    DockManager::self()->writeConfig(cg);
 
     emit configNeedsSaving();
 }

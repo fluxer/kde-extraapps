@@ -48,7 +48,6 @@
 class Tasks;
 class TaskGroupItem;
 class LayoutWidget;
-class DockItem;
 class UnityItem;
 
 /**
@@ -64,7 +63,6 @@ public:
     enum InfoSource {
         IS_None,
         IS_Job,
-        IS_DockManager,
         IS_Unity
     };
 
@@ -119,7 +117,7 @@ public:
     virtual QString text() const;
 
     /** Returns the current icon for this task. */
-    QIcon icon(bool useDockManager = false) const;
+    QIcon icon() const;
 
     virtual void close() = 0;
 
@@ -165,11 +163,7 @@ public:
     virtual KUrl launcherUrl() const = 0;
     virtual QString windowClass() const = 0;
     void updateProgress(int v, InfoSource source = IS_Job);
-    void dockItemUpdated();
     void unityItemUpdated();
-    void setDockItem(DockItem *i) {
-        m_dockItem = i;
-    }
     void setUnityItem(UnityItem *i) {
         m_unityItem = i;
     }
@@ -213,7 +207,6 @@ protected:
     void drawIndicators(QPainter *painter, const QRectF &rect);
     void drawColoredBackground(QPainter *painter, const QStyleOptionGraphicsItem *option);
     void drawShine(QPainter *painter, const QStyleOptionGraphicsItem *option);
-    void addOverlay(QPixmap &pix);
 
     /** Draws the background for the task item. */
     virtual void drawBackground(QPainter *painter, const QStyleOptionGraphicsItem *option);
@@ -273,7 +266,6 @@ protected:
     qreal m_alpha;
     QString m_oldBackgroundPrefix;
     QString m_backgroundPrefix;
-    DockItem *m_dockItem;
     UnityItem *m_unityItem;
 
 private:

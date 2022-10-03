@@ -6,10 +6,6 @@ set(tasks_SRCS
     taskgroupitem.cpp
     applauncheritem.cpp
     jobmanager.cpp
-    dockmanager.cpp
-    dockitem.cpp
-    dockhelper.cpp
-    dockconfig.cpp
     mediabuttons.cpp
     unity.cpp
     unityitem.cpp 
@@ -23,20 +19,7 @@ set(tasks_SRCS
     tooltips/dialogshadows_p.h
     appearanceconfig.ui
     behaviourconfig.ui
-    dockconfig.ui
 )
-
-# Generate DBUS XML files, would like to use
-# qt4_generate_dbus_interface(${CMAKE_CURRENT_SOURCE_DIR}/dockmanager.h net.launchpad.DockManager.xml)
-# qt4_generate_dbus_interface(${CMAKE_CURRENT_SOURCE_DIR}/dockitem.h net.launchpad.DockItem.xml)
-# ...but this does not work, as we also depend on the xml files in qt4_add_dbus_adaptor :-(
-# So, need to manually create via:
-#
-# qdbuscpp2xml -M -P -S dockmanager.h -o net.launchpad.DockManager.xml
-# qdbuscpp2xml -M -P -S dockitem.h -o net.launchpad.DockItem.xml
-
-qt4_add_dbus_adaptor(tasks_SRCS net.launchpad.DockManager.xml dockmanager.h DockManager)
-qt4_add_dbus_adaptor(tasks_SRCS net.launchpad.DockItem.xml dockitem.h DockItem)
 
 qt4_add_dbus_interface(tasks_SRCS org.mpris.MediaPlayer2.Player.xml playerv2interface)
 

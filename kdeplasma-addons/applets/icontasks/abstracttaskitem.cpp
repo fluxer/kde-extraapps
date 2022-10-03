@@ -21,8 +21,6 @@
 
 // Own
 #include "abstracttaskitem.h"
-#include "dockitem.h"
-#include "dockmanager.h"
 #include "unity.h"
 #include "jobmanager.h"
 #include "mediabuttons.h"
@@ -331,7 +329,6 @@ AbstractTaskItem::AbstractTaskItem(QGraphicsWidget *parent, Tasks *applet)
       m_backgroundFadeAnim(0),
       m_alpha(1),
       m_backgroundPrefix("normal"),
-      m_dockItem(0),
       m_unityItem(0),
       m_activateTimerId(0),
       m_updateGeometryTimerId(0),
@@ -464,12 +461,8 @@ QString AbstractTaskItem::text() const
     return QString();
 }
 
-QIcon AbstractTaskItem::icon(bool useDockManager) const
+QIcon AbstractTaskItem::icon() const
 {
-    if (useDockManager && m_dockItem && !m_dockItem->icon().isNull()) {
-        return m_dockItem->icon();
-    }
-
     if (m_abstractItem) {
         if (m_applet->launcherIcons() && m_icon.isNull()) {
             KUrl launcherUrl(m_abstractItem->launcherUrl());
@@ -967,14 +960,6 @@ void AbstractTaskItem::updateProgress(int v, InfoSource source)
     }
 }
 
-void AbstractTaskItem::dockItemUpdated()
-{
-    if (m_dockItem) {
-        updateProgress(m_dockItem->progress(), IS_DockManager);
-        queueUpdate();
-    }
-}
-
 void AbstractTaskItem::unityItemUpdated()
 {
     if (m_unityItem) {
@@ -1195,22 +1180,6 @@ void AbstractTaskItem::drawShine(QPainter *painter, const QStyleOptionGraphicsIt
     }
 }
 
-void AbstractTaskItem::addOverlay(QPixmap &pix)
-{
-    if (m_dockItem && !m_dockItem->overlayIcon().isNull()) {
-        int overlaySize=(int)(qMin(16.0, qMin(pix.width(), pix.height())/3.0)+0.5);
-        overlaySize=((overlaySize/4)*4)+(overlaySize%4 ? 4 : 0);
-        if(overlaySize>4) {
-            QPixmap overlay = m_dockItem->overlayIcon().pixmap(QSize(overlaySize, overlaySize));
-            if(!overlay.isNull()) {
-                QPainter overlayPainter(&pix);
-                QPoint pos = Qt::RightToLeft == layoutDirection() ? QPoint(pix.width()-overlay.width()+1, 0) : QPoint(0, 0);
-                overlayPainter.drawPixmap(pos, overlay);
-            }
-        }
-    }
-}
-
 void AbstractTaskItem::paint(QPainter *painter,
                              const QStyleOptionGraphicsItem *option,
                              QWidget *)
@@ -1416,7 +1385,7 @@ void AbstractTaskItem::drawTask(QPainter *painter, const QStyleOptionGraphicsIte
     kDebug() << bool(option->state & QStyle::State_MouseOver) << m_backgroundFadeAnim <<
         (m_backgroundFadeAnim ? m_backgroundFadeAnim->state() : QAbstractAnimation::Stopped);*/
     const bool fadingBg = m_backgroundFadeAnim && m_backgroundFadeAnim->state() == QAbstractAnimation::Running;
-    QIcon icn(icon(true));
+    QIcon icn(icon());
     QSize iSize = iconR.toRect().size();
     QPixmap result = icn.pixmap(iSize);
 
@@ -1428,8 +1397,6 @@ void AbstractTaskItem::drawTask(QPainter *painter, const QStyleOptionGraphicsIte
             iconR.adjust(xmod, ymod, -xmod, -ymod);
         }
     }
-
-    addOverlay(result);
 
     if ((!fadingBg && !(option->state & QStyle::State_MouseOver)) ||
             (m_oldBackgroundPrefix != "hover" && m_backgroundPrefix != "hover")) {
@@ -1528,8 +1495,6 @@ void AbstractTaskItem::drawTask(QPainter *painter, const QStyleOptionGraphicsIte
 
     if (m_unityItem && m_unityItem->countVisible()) {
         drawBadge(painter, iconR, QString().setNum(m_unityItem->count()));
-    } else if (m_dockItem && !m_dockItem->badge().isEmpty()) {
-        drawBadge(painter, iconR, m_dockItem->badge());
     }
 
     if (!showText && JobManager::self()->isEnabled() && m_currentProgress >= 0) {
@@ -1614,31 +1579,19 @@ QList<QAction *> AbstractTaskItem::getAppMenu()
         appMenu.append(unityActions);
     }
 
-    if (m_dockItem && !addedUnityItems) {
-        QList<QAction *> dockActions = m_dockItem->menu();
-        if (addedDocs && !dockActions.isEmpty()) {
-            theSepAction.setSeparator(true);
-            appMenu.append(&theSepAction);
-        }
-        appMenu.append(dockActions);
-    }
-
     return appMenu;
 }
 
 void AbstractTaskItem::registerWithHelpers()
 {
     JobManager::self()->registerTask(this);
-    DockManager::self()->registerTask(this);
     Unity::self()->registerTask(this);
 }
 
 void AbstractTaskItem::unregisterFromHelpers()
 {
     JobManager::self()->unregisterTask(this);
-    DockManager::self()->unregisterTask(this);
     Unity::self()->unregisterTask(this);
-    m_dockItem = 0;
     m_unityItem = 0;
 }
 

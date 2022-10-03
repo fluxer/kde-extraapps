@@ -23,8 +23,6 @@
 #include "taskgroupitem.h"
 #include "taskitemlayout.h"
 #include "jobmanager.h"
-#include "dockmanager.h"
-#include "dockitem.h"
 #include "mediabuttons.h"
 #include "unity.h"
 
