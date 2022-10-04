@@ -56,7 +56,7 @@ ATCreator::ATCreator()
 {
 }
 
-bool ATCreator::create ( const QString &path, int /*w*/, int /*h*/, QImage &img )
+bool ATCreator::create(const QString &path, int /*w*/, int /*h*/, QImage &img)
 {
     bool bRet = false;
 
@@ -68,7 +68,7 @@ bool ATCreator::create ( const QString &path, int /*w*/, int /*h*/, QImage &img 
         TagLib::ID3v2::FrameList fList = mp3Tag->frameList("APIC");
         TagLib::ID3v2::AttachedPictureFrame *pic;
         pic = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(fList.front());
-        if (!pic->picture().isEmpty()) {
+        if (pic && !pic->picture().isEmpty()) {
             img.loadFromData(pic->picture().data(),pic->picture().size());
             bRet = true;
         }
