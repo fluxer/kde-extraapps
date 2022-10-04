@@ -69,41 +69,38 @@ bool ATCreator::create(const QString &path, int /*w*/, int /*h*/, QImage &img)
         TagLib::ID3v2::AttachedPictureFrame *pic;
         pic = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(fList.front());
         if (pic && !pic->picture().isEmpty()) {
-            img.loadFromData(pic->picture().data(),pic->picture().size());
+            img.loadFromData(pic->picture().data(), pic->picture().size());
             bRet = true;
         }
-
     } else if (type->is("audio/flac") || type->is("audio/x-flac")) {
         TagLib::FLAC::File ff(path.toUtf8());
-        TagLib::List<TagLib::FLAC::Picture *> coverList;
+        TagLib::List<TagLib::FLAC::Picture *> coverList = ff.pictureList();
 
-        if (!ff.pictureList().isEmpty()) {
-            coverList.append(ff.pictureList().front());
-            TagLib::ByteVector coverData = coverList.front()->data();
-            img.loadFromData(coverData.data(),coverData.size());
+        if (!coverList.isEmpty()) {
+            TagLib::FLAC::Picture *pic = coverList.front();
+            TagLib::ByteVector coverData = pic->data();
+            img.loadFromData(coverData.data(), coverData.size());
             bRet = true;
             return bRet;
         }
-
     } else if (type->is("audio/mp4")) {
         TagLib::MP4::File mp4file(path.toUtf8());
         TagLib::MP4::Tag *tag = mp4file.tag();
-        TagLib::MP4::ItemListMap map=tag->itemListMap();
+        TagLib::MP4::ItemListMap map = tag->itemListMap();
 
         if (!map.isEmpty()) {
             for (TagLib::MP4::ItemListMap::ConstIterator it = map.begin(); it != map.end(); ++it) {
-                TagLib::MP4::CoverArtList coverList=(*it).second.toCoverArtList();
-                    if (!coverList.isEmpty()) {
-                        TagLib::MP4::CoverArt cover=coverList[0];
+                TagLib::MP4::CoverArtList coverList = (*it).second.toCoverArtList();
+                if (!coverList.isEmpty()) {
+                        TagLib::MP4::CoverArt cover = coverList[0];
 
-                        TagLib::ByteVector coverData=cover.data();
-                        img.loadFromData(coverData.data(),coverData.size());
-
+                        TagLib::ByteVector coverData = cover.data();
+                        img.loadFromData(coverData.data(), coverData.size());
                         bRet = true;
                         return bRet;
-                  }
-              }
-         }
+                }
+            }
+        }
     } else if (type->is("audio/x-vorbis+ogg") || type->is("audio/ogg")) {
         TagLib::Ogg::Vorbis::File file(path.toUtf8());
         TagLib::Ogg::XiphComment *tag = file.tag();
