@@ -35,6 +35,22 @@
 
 #include <sys/stat.h>
 
+static void copyEntry(ArchiveEntry *archiveentry, const KArchiveEntry *karchiveentry)
+{
+    archiveentry->insert(FileName, karchiveentry->pathname);
+    archiveentry->insert(InternalID, karchiveentry->pathname);
+    archiveentry->insert(Size, qlonglong(karchiveentry->size));
+    archiveentry->insert(IsDirectory, S_ISDIR(karchiveentry->mode));
+    archiveentry->insert(Permissions, ReadWriteArchiveInterface::permissionsString(karchiveentry->mode));
+    archiveentry->insert(Owner, karchiveentry->username);
+    archiveentry->insert(Group, karchiveentry->groupname);
+    archiveentry->insert(Timestamp, QDateTime::fromTime_t(karchiveentry->mtime));
+    archiveentry->insert(IsPasswordProtected, karchiveentry->encrypted);
+    if (!karchiveentry->symlink.isEmpty()) {
+        archiveentry->insert(Link, karchiveentry->symlink);
+    }
+}
+
 LibArchiveInterface::LibArchiveInterface(QObject *parent, const QVariantList &args)
     : ReadWriteArchiveInterface(parent, args)
 {
@@ -54,22 +70,11 @@ bool LibArchiveInterface::list()
 
     foreach (const KArchiveEntry &karchiveentry, karchive.list()) {
         ArchiveEntry archiveentry;
-        archiveentry[FileName] = karchiveentry.pathname;
-        archiveentry[InternalID] = karchiveentry.pathname;
-        archiveentry[Size] = qlonglong(karchiveentry.size);
-        archiveentry[IsDirectory] = S_ISDIR(karchiveentry.mode);
-        archiveentry[Permissions] = ReadWriteArchiveInterface::permissionsString(karchiveentry.mode);
-        archiveentry[Owner] = karchiveentry.username;
-        archiveentry[Group] = karchiveentry.groupname;
-        archiveentry[Timestamp] = QDateTime::fromTime_t(karchiveentry.mtime);
-        archiveentry[IsPasswordProtected] = karchiveentry.encrypted;
-        if (!karchiveentry.symlink.isEmpty()) {
-            archiveentry[Link] = karchiveentry.symlink;
-        }
+        copyEntry(&archiveentry, &karchiveentry);
         emit entry(archiveentry);
     }
-    emit progress(1.0);
 
+    emit progress(1.0);
     return true;
 }
 
@@ -94,13 +99,13 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString &de
             fileslist.append(variant.toString());
         }
     }
-    if (karchive.extract(fileslist, destinationDirectory, preservePaths)) {
-        emit progress(1.0);
-        return true;
+    if (!karchive.extract(fileslist, destinationDirectory, preservePaths)) {
+        emit error(karchive.errorString());
+        return false;
     }
 
-    emit error(karchive.errorString());
-    return false;
+    emit progress(1.0);
+    return true;
 }
 
 bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOptions &options)
@@ -122,14 +127,23 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
         return false;
     }
 
-    const QString strip = (QDir::cleanPath(globalWorkDir) + QDir::separator());
-    if (karchive.add(files, QFile::encodeName(strip), QFile::encodeName(rootNode))) {
-        emit progress(1.0);
-        return true;
+    const QList<KArchiveEntry> oldEntries = karchive.list();
+    const QString strip(QDir::cleanPath(globalWorkDir) + QDir::separator());
+    if (!karchive.add(files, QFile::encodeName(strip), QFile::encodeName(rootNode))) {
+        emit error(karchive.errorString());
+        return false;
     }
 
-    emit error(karchive.errorString());
-    return false;
+    foreach (const KArchiveEntry &karchiveentry, karchive.list()) {
+        if (!oldEntries.contains(karchiveentry)) {
+            ArchiveEntry archiveentry;
+            copyEntry(&archiveentry, &karchiveentry);
+            emit entry(archiveentry);
+        }
+    }
+
+    emit progress(1.0);
+    return true;
 }
 
 bool LibArchiveInterface::deleteFiles(const QVariantList &files)
@@ -144,16 +158,17 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
     foreach (const QVariant &variant, files) {
         fileslist.append(variant.toString());
     }
-    if (karchive.remove(fileslist)) {
-        foreach (const QString &file, fileslist) {
-            emit entryRemoved(file);
-        }
-        emit progress(1.0);
-        return true;
+    if (!karchive.remove(fileslist)) {
+        emit error(karchive.errorString());
+        return false;
     }
 
-    emit error(karchive.errorString());
-    return false;
+    foreach (const QString &file, fileslist) {
+        emit entryRemoved(file);
+    }
+
+    emit progress(1.0);
+    return true;
 }
 
 KERFUFFLE_EXPORT_PLUGIN(LibArchiveInterface)

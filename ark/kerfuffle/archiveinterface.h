@@ -104,6 +104,9 @@ signals:
     void finished(bool result);
     void userQuery(Query *query);
 
+public:
+    static QString permissionsString(mode_t perm);
+
 protected:
     QString password() const;
     /**
@@ -113,8 +116,6 @@ protected:
      * the operation.
      */
     void setWaitForFinishedSignal(bool value);
-
-    static QString permissionsString(mode_t perm);
 
 private:
     QString m_filename;
