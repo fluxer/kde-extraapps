@@ -36,12 +36,7 @@
 #include <ktemporaryfile.h>
 
 #ifdef DVI_OPEN_BUSYLOOP
-#ifdef Q_OS_UNIX
 #include <ctime>
-#endif
-#ifdef Q_OS_WIN
-#include <windows.h> // for Sleep
-#endif
 #endif
 
 static const int DviDebug = 4713;
@@ -87,12 +82,8 @@ bool DviGenerator::loadDocument( const QString & fileName, QVector< Okular::Page
     for ( ; !m_dviRenderer->isValidFile( fileName ) && iter < s_maxIterations; ++iter )
     {
         kDebug(DviDebug).nospace() << "file not valid after iteration #" << iter << "/" << s_maxIterations << ", waiting for " << s_waitTime;
-#ifdef Q_OS_WIN
-        Sleep( uint( s_waitTime ) );
-#else
         struct timespec ts = { 0, s_waitTime * 1000 * 1000 };
         nanosleep( &ts, NULL );
-#endif
     }
     if ( iter >= s_maxIterations && !m_dviRenderer->isValidFile( fileName ) )
     {
