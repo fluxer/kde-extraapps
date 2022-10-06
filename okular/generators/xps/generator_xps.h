@@ -32,7 +32,7 @@
 #include <QStack>
 #include <QVariant>
 
-#include <kzip.h>
+#include <karchive.h>
 
 typedef enum {abtCommand, abtNumber, abtComma, abtEOF} AbbPathTokenType;
 
@@ -272,7 +272,7 @@ public:
 
     QFont getFontByName( const QString &fontName, float size );
 
-    KZip* xpsArchive();
+    KArchive* xpsArchive();
 
 
 private:
@@ -291,7 +291,7 @@ private:
 
     QString m_signatureOrigin;
 
-    KZip * m_xpsArchive;
+    KArchive * m_xpsArchive;
 
     QMap<QString, int> m_fontCache;
     QStringList m_fonts;

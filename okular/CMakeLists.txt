@@ -173,6 +173,7 @@ add_library(okularcore SHARED ${okularcore_SRCS})
 
 target_link_libraries(okularcore
     ${KDE4_KIO_LIBS}
+    ${KDE4_KARCHIVE_LIBS}
     ${MATH_LIB}
     KDE4::kmediaplayer
 )

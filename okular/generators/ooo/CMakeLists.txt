@@ -25,6 +25,7 @@ kde4_add_plugin(okularGenerator_ooo ${okularGenerator_ooo_PART_SRCS})
 
 target_link_libraries(okularGenerator_ooo
     ${KDE4_KIO_LIBS}
+    ${KDE4_KARCHIVE_LIBS}
     ${MATH_LIB}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}

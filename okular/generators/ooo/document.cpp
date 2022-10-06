@@ -9,8 +9,10 @@
 
 #include "document.h"
 
+#include <QFile>
+
 #include <klocale.h>
-#include <kzip.h>
+#include <karchive.h>
 
 using namespace OOO;
 
@@ -24,85 +26,63 @@ bool Document::open( const QString &password )
   mContent.clear();
   mStyles.clear();
 
-  KZip zip( mFileName );
-  if ( !zip.open( QIODevice::ReadOnly ) ) {
+  KArchive zip( mFileName );
+  if ( !zip.isReadable() ) {
     setError( i18n( "Document is not a valid ZIP archive" ) );
     return false;
   }
 
-  const KArchiveDirectory *directory = zip.directory();
-  if ( !directory ) {
-    setError( i18n( "Invalid document structure (main directory is missing)" ) );
-    return false;
-  }
-
-  const QStringList entries = directory->entries();
-  if ( !entries.contains( "META-INF" ) ) {
-    setError( i18n( "Invalid document structure (META-INF directory is missing)" ) );
-    return false;
-  }
-  const KArchiveDirectory *metaInfDirectory = static_cast<const KArchiveDirectory*>( directory->entry( "META-INF" ) );
-  if ( !(metaInfDirectory->entries().contains( "manifest.xml" ) ) ) {
+  if ( zip.entry( "META-INF/manifest.xml" ).isNull() ) {
     setError( i18n( "Invalid document structure (META-INF/manifest.xml is missing)" ) );
     return false;
   }
 
-  const KArchiveFile *file = static_cast<const KArchiveFile*>( metaInfDirectory->entry( "manifest.xml" ) );
-  mManifest = new Manifest( mFileName, file->data(), password );
+  mManifest = new Manifest( mFileName, zip.data( "META-INF/manifest.xml" ), password );
 
   // we should really get the file names from the manifest, but for now, we only care
   // if the manifest says the files are encrypted.
 
-  if ( !entries.contains( "content.xml" ) ) {
+  if ( zip.entry( "content.xml" ).isNull() ) {
     setError( i18n( "Invalid document structure (content.xml is missing)" ) );
     return false;
   }
 
-  file = static_cast<const KArchiveFile*>( directory->entry( "content.xml" ) );
   if ( mManifest->testIfEncrypted( "content.xml" )  ) {
     mAnyEncrypted = true;
-    mContent = mManifest->decryptFile( "content.xml", file->data() );
+    mContent = mManifest->decryptFile( "content.xml", zip.data( "content.xml" ) );
   } else {
-    mContent = file->data();
+    mContent = zip.data( "content.xml" );
   }
 
-  if ( entries.contains( "styles.xml" ) ) {
-    file = static_cast<const KArchiveFile*>( directory->entry( "styles.xml" ) );
+  if ( !zip.entry( "styles.xml" ).isNull() ) {
     if ( mManifest->testIfEncrypted( "styles.xml" )  ) {
       mAnyEncrypted = true;
-      mStyles = mManifest->decryptFile( "styles.xml", file->data() );
+      mStyles = mManifest->decryptFile( "styles.xml", zip.data( "styles.xml" ) );
     } else {
-      mStyles = file->data();
+      mStyles = zip.data( "styles.xml" );
     }
   }
 
-  if ( entries.contains( "meta.xml" ) ) {
-    file = static_cast<const KArchiveFile*>( directory->entry( "meta.xml" ) );
+  if ( !zip.entry( "meta.xml" ).isNull() ) {
     if ( mManifest->testIfEncrypted( "meta.xml" )  ) {
       mAnyEncrypted = true;
-      mMeta = mManifest->decryptFile( "meta.xml", file->data() );
+      mMeta = mManifest->decryptFile( "meta.xml", zip.data( "meta.xml" ) );
     } else {
-      mMeta = file->data();
+      mMeta = zip.data( "meta.xml" );
     }
   }
 
-  if ( entries.contains( "Pictures" ) ) {
-    const KArchiveDirectory *imagesDirectory = static_cast<const KArchiveDirectory*>( directory->entry( "Pictures" ) );
-
-    const QStringList imagesEntries = imagesDirectory->entries();
-    for ( int i = 0; i < imagesEntries.count(); ++i ) {
-      file = static_cast<const KArchiveFile*>( imagesDirectory->entry( imagesEntries[ i ] ) );
-      QString fullPath = QString( "Pictures/%1" ).arg( imagesEntries[ i ] );
+  foreach (const KArchiveEntry &entry, zip.list()) {
+    if ( entry.pathname.startsWith("Pictures/") ) {
+      QString fullPath = QFile::decodeName( entry.pathname );
       if ( mManifest->testIfEncrypted( fullPath ) ) {
         mAnyEncrypted = true;
-        mImages.insert( fullPath, mManifest->decryptFile( fullPath, file->data() ) );
+        mImages.insert( fullPath, mManifest->decryptFile( fullPath, zip.data( fullPath ) ) );
       } else {
-        mImages.insert( fullPath, file->data() );
+        mImages.insert( fullPath, zip.data( fullPath ) );
       }
     }
   }
-
-  zip.close();
 
   return true;
 }

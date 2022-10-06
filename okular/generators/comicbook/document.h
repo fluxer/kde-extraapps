@@ -10,13 +10,11 @@
 #ifndef COMICBOOK_DOCUMENT_H
 #define COMICBOOK_DOCUMENT_H
 
-#include <QtCore/QStringList>
-
-class KArchiveDirectory;
-class KArchive;
+#include <QStringList>
 #include <QImage>
 #include <QSize>
-class Unrar;
+
+class KArchive;
 class Directory;
 
 namespace Okular {
@@ -46,9 +44,7 @@ class Document
 
         QStringList mPageMap;
         Directory *mDirectory;
-        Unrar *mUnrar;
         KArchive *mArchive;
-        KArchiveDirectory *mArchiveDir;
         QString mLastErrorString;
         QStringList mEntries;
 };

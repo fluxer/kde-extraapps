@@ -29,9 +29,6 @@
 
 #include "kerfuffle/archiveinterface.h"
 
-#include <QDir>
-#include <QList>
-#include <QScopedPointer>
 #include <QStringList>
 
 using namespace Kerfuffle;
@@ -41,35 +38,13 @@ class LibArchiveInterface: public ReadWriteArchiveInterface
     Q_OBJECT
 
 public:
-    explicit LibArchiveInterface(QObject *parent, const QVariantList& args);
+    explicit LibArchiveInterface(QObject *parent, const QVariantList &args);
     ~LibArchiveInterface();
 
-    bool list();
-    bool doKill();
-    bool copyFiles(const QVariantList& files, const QString& destinationDirectory, ExtractionOptions options);
-    bool addFiles(const QStringList& files, const CompressionOptions& options);
-    bool deleteFiles(const QVariantList& files);
-
-private:
-    void emitEntryFromArchiveEntry(struct archive_entry *entry);
-    int extractionFlags() const;
-    void copyData(const QString& filename, struct archive *dest, bool partialprogress = true);
-    void copyData(struct archive *source, struct archive *dest, bool partialprogress = true);
-    bool writeFile(const QString& fileName, struct archive* arch);
-
-    struct ArchiveReadCustomDeleter;
-    struct ArchiveWriteCustomDeleter;
-    typedef QScopedPointer<struct archive, ArchiveReadCustomDeleter> ArchiveRead;
-    typedef QScopedPointer<struct archive, ArchiveWriteCustomDeleter> ArchiveWrite;
-
-    int m_cachedArchiveEntryCount;
-    qlonglong m_currentExtractedFilesSize;
-    bool m_emitNoEntries;
-    qlonglong m_extractedFilesSize;
-    QDir m_workDir;
-    QStringList m_writtenFiles;
-    ArchiveRead m_archiveReadDisk;
-    bool m_abortOperation;
+    bool list() final;
+    bool copyFiles(const QVariantList& files, const QString &destinationDirectory, ExtractionOptions options) final;
+    bool addFiles(const QStringList& files, const CompressionOptions &options) final;
+    bool deleteFiles(const QVariantList& files) final;
 };
 
 #endif // LIBARCHIVEHANDLER_H

@@ -13,6 +13,7 @@
 #include "documentcommands_p.h"
 
 #include <limits.h>
+#include <sys/stat.h>
 
 #if defined(Q_OS_FREEBSD)
 #include <sys/types.h>
@@ -46,9 +47,10 @@
 #include <krun.h>
 #include <kshell.h>
 #include <kstandarddirs.h>
+#include <ktempdir.h>
 #include <ktemporaryfile.h>
 #include <ktoolinvocation.h>
-#include <kzip.h>
+#include <karchive.h>
 
 // local includes
 #include "action.h"
@@ -4044,20 +4046,17 @@ Document::OpenResult Document::openDocumentArchive( const QString & docFile, con
     if ( !mime->is( "application/vnd.kde.okular-archive" ) )
         return OpenError;
 
-    KZip okularArchive( docFile );
-    if ( !okularArchive.open( QIODevice::ReadOnly ) )
+    KArchive okularArchive( docFile );
+    if ( !okularArchive.isReadable() )
         return OpenError;
 
-    const KArchiveDirectory * mainDir = okularArchive.directory();
-    const KArchiveEntry * mainEntry = mainDir->entry( "content.xml" );
-    if ( !mainEntry || !mainEntry->isFile() )
+    const KArchiveEntry mainEntry = okularArchive.entry( "content.xml" );
+    if ( !S_ISREG(mainEntry.mode) )
         return OpenError;
 
-    std::unique_ptr< QIODevice > mainEntryDevice( static_cast< const KZipFileEntry * >( mainEntry )->createDevice() );
     QDomDocument doc;
-    if ( !doc.setContent( mainEntryDevice.get() ) )
+    if ( !doc.setContent( okularArchive.data("content.xml") ) )
         return OpenError;
-    mainEntryDevice.reset();
 
     QDomElement root = doc.documentElement();
     if ( root.tagName() != "OkularArchive" )
@@ -4083,8 +4082,8 @@ Document::OpenResult Document::openDocumentArchive( const QString & docFile, con
     if ( documentFileName.isEmpty() )
         return OpenError;
 
-    const KArchiveEntry * docEntry = mainDir->entry( documentFileName );
-    if ( !docEntry || !docEntry->isFile() )
+    const KArchiveEntry docEntry = okularArchive.entry( documentFileName );
+    if ( !S_ISREG(docEntry.mode) )
         return OpenError;
 
     std::unique_ptr< ArchiveData > archiveData( new ArchiveData() );
@@ -4096,19 +4095,17 @@ Document::OpenResult Document::openDocumentArchive( const QString & docFile, con
 
     QString tempFileName = archiveData->document.fileName();
     {
-        std::unique_ptr< QIODevice > docEntryDevice( static_cast< const KZipFileEntry * >( docEntry )->createDevice() );
-        copyQIODevice( docEntryDevice.get(), &archiveData->document );
+        copyData( okularArchive.data( documentFileName ), &archiveData->document );
         archiveData->document.close();
     }
 
-    const KArchiveEntry * metadataEntry = mainDir->entry( metadataFileName );
-    if ( metadataEntry && metadataEntry->isFile() )
+    const KArchiveEntry metadataEntry = okularArchive.entry( metadataFileName );
+    if ( S_ISREG(metadataEntry.mode) )
     {
-        std::unique_ptr< QIODevice > metadataEntryDevice( static_cast< const KZipFileEntry * >( metadataEntry )->createDevice() );
         archiveData->metadataFile.setSuffix( ".xml" );
         if ( archiveData->metadataFile.open() )
         {
-            copyQIODevice( metadataEntryDevice.get(), &archiveData->metadataFile );
+            copyData( okularArchive.data( metadataFileName ), &archiveData->metadataFile );
             archiveData->metadataFile.close();
         }
     }
@@ -4145,13 +4142,6 @@ bool Document::saveDocumentArchive( const QString &fileName )
     const QFileInfo fi( docPath );
     if ( fi.isSymLink() )
         docPath = fi.readLink();
-
-    KZip okularArchive( fileName );
-    if ( !okularArchive.open( QIODevice::WriteOnly ) )
-        return false;
-
-    const KUser user;
-    const KUserGroup userGroup( user.gid() );
 
     QDomDocument contentDoc( "OkularArchive" );
     QDomProcessingInstruction xmlPi = contentDoc.createProcessingInstruction(
@@ -4200,14 +4190,64 @@ bool Document::saveDocumentArchive( const QString &fileName )
         return false;
 
     const QByteArray contentDocXml = contentDoc.toByteArray();
-    okularArchive.writeFile( "content.xml", user.loginName(), userGroup.name(),
-                             contentDocXml.constData(), contentDocXml.length() );
 
-    okularArchive.addLocalFile( docPath, docFileName );
-    okularArchive.addLocalFile( metadataFile.fileName(), "metadata.xml" );
-
-    if ( !okularArchive.close() )
+    KTempDir tmpDir;
+    if (tmpDir.status() != 0) {
+        kWarning(OkularDebug) << "creating temproary directory failed: " << qt_error_string(tmpDir.status());
         return false;
+    }
+
+    const QString contentCopy = tmpDir.name() + QLatin1String("/content.xml");
+    {
+        QFile tmpFile(contentCopy);
+        if (!tmpFile.open(QFile::WriteOnly)) {
+            kWarning(OkularDebug) << "opening temporary content.xml failed: " << tmpFile.errorString();
+            return false;
+        }
+        tmpFile.write(contentDocXml.constData(), contentDocXml.length());
+    }
+
+    const QString docCopy = tmpDir.name() + QDir::separator() + docFileName;
+    {
+        QFile tmpFile(docPath);
+        if (!tmpFile.copy(docCopy)) {
+            kWarning(OkularDebug) << "copying doc path failed: " << tmpFile.errorString();
+            return false;
+        }
+    }
+
+    const QString metadataCopy = tmpDir.name() + QLatin1String("/metdata.xml");
+    {
+        QFile tmpFile(metadataFile.fileName());
+        if (!tmpFile.copy(metadataCopy)) {
+            kWarning(OkularDebug) << "copying metdata failed: " << tmpFile.errorString();
+            return false;
+        }
+    }
+
+    // KArchive uses the extension to figure out the format when writing
+    QString tmpArchive = fileName;
+    if (!tmpArchive.endsWith(".zip")) {
+        tmpArchive.append(QLatin1String(".zip"));
+    }
+
+    KArchive okularArchive( tmpArchive );
+    if ( !okularArchive.isWritable() ) {
+        return false;
+    }
+
+    if (!okularArchive.add(QStringList() << contentCopy << docCopy << metadataCopy, QFile::encodeName(tmpDir.name()))) {
+        kWarning(OkularDebug) << "adding to archive failed: " << okularArchive.errorString();
+        return false;
+    }
+
+    if (tmpArchive != fileName) {
+        QFile tmpFile(tmpArchive);
+        if (!tmpFile.rename(fileName)) {
+            kWarning(OkularDebug) << "renaming temporary archive failed: " << tmpFile.errorString();
+            return false;
+        }
+    }
 
     return true;
 }

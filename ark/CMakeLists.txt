@@ -12,8 +12,8 @@ endif()
 
 kde4_optional_find_package(LibArchive 3.0.3)
 set_package_properties(LibArchive PROPERTIES
-    DESCRIPTION "A library for dealing with a wide variety of archive file formats"
-    URL "http://code.google.com/p/libarchive/"
+    DESCRIPTION "Multi-format archive and compression library"
+    URL "https://libarchive.org/"
     PURPOSE "Required for among others tar, tar.gz, tar.bz2 formats in Ark"
 )
 
@@ -42,6 +42,12 @@ set_package_properties(LibLZMA PROPERTIES
     DESCRIPTION "Legacy data compression software with high compression ratio"
     URL "http://tukaani.org/xz/"
     PURPOSE "Required for the .xz and .lzma format support in Ark"
+)
+
+find_program(RAR_AND_UNRAR_EXECUTABLE unrar rar)
+add_feature_info(rar_and_unrar
+    RAR_AND_UNRAR_EXECUTABLE
+    "RAR write support in Ark"
 )
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII)

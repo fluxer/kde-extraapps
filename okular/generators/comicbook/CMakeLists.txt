@@ -9,13 +9,12 @@ set(okularGenerator_comicbook_PART_SRCS
     document.cpp
     generator_comicbook.cpp
     directory.cpp
-    unrar.cpp qnatsort.cpp
-    unrarflavours.cpp
+    qnatsort.cpp
 )
 
 kde4_add_plugin(okularGenerator_comicbook ${okularGenerator_comicbook_PART_SRCS})
 
-target_link_libraries(okularGenerator_comicbook  okularcore ${KDE4_KIO_LIBS} )
+target_link_libraries(okularGenerator_comicbook  okularcore ${KDE4_KIO_LIBS} ${KDE4_KARCHIVE_LIBS})
 if (UNIX)
    target_link_libraries(okularGenerator_comicbook ${KDE4_KPTY_LIBS})
 endif (UNIX)

@@ -17,6 +17,8 @@ namespace Okular
 
 void copyQIODevice( QIODevice *from, QIODevice *to );
 
+void copyData( const QByteArray &data, QIODevice *to );
+
 /**
  * Return a rotation matrix corresponding to the @p rotation enumeration.
  */

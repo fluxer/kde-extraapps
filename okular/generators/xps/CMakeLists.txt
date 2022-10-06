@@ -12,7 +12,7 @@ set(okularGenerator_xps_SRCS
 
 kde4_add_plugin(okularGenerator_xps ${okularGenerator_xps_SRCS})
 
-target_link_libraries(okularGenerator_xps okularcore ${KDE4_KIO_LIBS} ${QT_QTXML_LIBRARY})
+target_link_libraries(okularGenerator_xps okularcore ${KDE4_KIO_LIBS} ${KDE4_KARCHIVE_LIBS} ${QT_QTXML_LIBRARY})
 
 install(TARGETS okularGenerator_xps DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 

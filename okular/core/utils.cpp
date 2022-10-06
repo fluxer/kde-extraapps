@@ -216,6 +216,11 @@ void Okular::copyQIODevice( QIODevice *from, QIODevice *to )
     }
 }
 
+void Okular::copyData( const QByteArray &data, QIODevice *to )
+{
+    to->write( data.constData(), data.size() );
+}
+
 QTransform Okular::buildRotationMatrix(Rotation rotation)
 {
     QTransform matrix;

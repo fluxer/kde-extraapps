@@ -10,9 +10,10 @@
 #include "document.h"
 
 #include <QtCore/QFile>
+#include <QtCore/QBuffer>
 
 #include <klocale.h>
-#include <kzip.h>
+#include <karchive.h>
 
 using namespace FictionBook;
 
@@ -26,7 +27,6 @@ bool Document::open()
     QIODevice *device;
 
     QFile file( mFileName );
-    KZip zip( mFileName );
     if ( mFileName.endsWith( ".fb" ) || mFileName.endsWith( ".fb2" ) ) {
         if ( !file.open( QIODevice::ReadOnly ) ) {
             setError( i18n( "Unable to open document: %1", file.errorString() ) );
@@ -35,23 +35,18 @@ bool Document::open()
 
         device = &file;
     } else {
-        if ( !zip.open( QIODevice::ReadOnly ) ) {
+        KArchive zip( mFileName );
+        if ( !zip.isReadable() ) {
             setError( i18n( "Document is not a valid ZIP archive" ) );
             return false;
         }
 
-        const KArchiveDirectory *directory = zip.directory();
-        if ( !directory ) {
-            setError( i18n( "Invalid document structure (main directory is missing)" ) );
-            return false;
-        }
-
-        const QStringList entries = directory->entries();
+        const QList<KArchiveEntry> entries = zip.list();
 
         QString documentFile;
         for ( int i = 0; i < entries.count(); ++i ) {
-            if ( entries[ i ].endsWith( ".fb2" ) ) {
-                documentFile = entries[ i ];
+            if ( entries[ i ].pathname.endsWith( ".fb2" ) ) {
+                documentFile = QFile::decodeName(entries[ i ].pathname);
                 break;
             }
         }
@@ -61,9 +56,9 @@ bool Document::open()
             return false;
         }
 
-        const KArchiveFile *entry = static_cast<const KArchiveFile*>( directory->entry( documentFile ) );
         // FIXME delete 'deviceì somewhen
-        device = entry->createDevice();
+        device = new QBuffer();
+        qobject_cast<QBuffer*>(device)->setData( zip.data( documentFile ) );
     }
 
     QString errorMsg;

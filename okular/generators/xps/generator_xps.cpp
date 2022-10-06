@@ -40,6 +40,8 @@
 #include <core/area.h>
 #include <core/fileprinter.h>
 
+#include <sys/stat.h>
+
 const int XpsDebug = 4712;
 
 static KAboutData createAboutData()
@@ -458,9 +460,9 @@ static QString entryPath( const QString &entry )
 /**
    \return The path of the entry
 */
-static QString entryPath( const KZipFileEntry* entry )
+static QString entryPath( const KArchiveEntry* entry )
 {
-    return entryPath( entry->path() );
+    return entryPath( QFile::decodeName(entry->pathname) );
 }
 
 /**
@@ -498,26 +500,21 @@ static QString absolutePath( const QString &path, const QString &location )
 
    \see XPS specification 10.1.2
 */
-static QByteArray readFileOrDirectoryParts( const KArchiveEntry *entry, QString *pathOfFile = 0 )
+static QByteArray readFileOrDirectoryParts(KArchive *archive, const KArchiveEntry *entry, QString *pathOfFile = 0 )
 {
     QByteArray data;
-    if ( entry->isDirectory() ) {
-        const KArchiveDirectory* relDir = static_cast<const KArchiveDirectory *>( entry );
-        QStringList entries = relDir->entries();
-        qSort( entries );
-        Q_FOREACH ( const QString &entry, entries ) {
-            const KArchiveEntry* relSubEntry = relDir->entry( entry );
-            if ( !relSubEntry->isFile() )
+    if ( S_ISDIR(entry->mode) ) {
+        const QList<KArchiveEntry> entries = archive->list( entry->pathname );
+        Q_FOREACH ( const KArchiveEntry &ee, entries ) {
+            if ( !S_ISREG(ee.mode) )
                 continue;
 
-            const KZipFileEntry* relSubFile = static_cast<const KZipFileEntry *>( relSubEntry );
-            data.append( relSubFile->data() );
+            data.append( archive->data( ee.pathname ) );
         }
     } else {
-        const KZipFileEntry* relFile = static_cast<const KZipFileEntry *>( entry );
-        data.append( relFile->data() );
+        data.append( archive->data( entry->pathname) );
         if ( pathOfFile ) {
-            *pathOfFile = entryPath( relFile );
+            *pathOfFile = entryPath( entry );
         }
     }
     return data;
@@ -526,12 +523,12 @@ static QByteArray readFileOrDirectoryParts( const KArchiveEntry *entry, QString 
 /**
    Load the resource \p fileName from the specified \p archive using the case sensitivity \p cs
 */
-static const KArchiveEntry* loadEntry( KZip *archive, const QString &fileName, Qt::CaseSensitivity cs )
+static const KArchiveEntry loadEntry( KArchive *archive, const QString &fileName, Qt::CaseSensitivity cs )
 {
     // first attempt: loading the entry straight as requested
-    const KArchiveEntry* entry = archive->directory()->entry( fileName );
+    const KArchiveEntry entry = archive->entry( fileName );
     // in case sensitive mode, or if we actually found something, return what we found
-    if ( cs == Qt::CaseSensitive || entry ) {
+    if ( cs == Qt::CaseSensitive || !entry.isNull() ) {
         return entry;
     }
 
@@ -546,24 +543,15 @@ static const KArchiveEntry* loadEntry( KZip *archive, const QString &fileName, Q
         path = '/';
         entryName = fileName;
     }
-    const KArchiveEntry * newEntry = archive->directory()->entry( path );
-    if ( newEntry->isDirectory() ) {
-        const KArchiveDirectory* relDir = static_cast< const KArchiveDirectory * >( newEntry );
-        QStringList relEntries = relDir->entries();
-        qSort( relEntries );
-        Q_FOREACH ( const QString &relEntry, relEntries ) {
-            if ( relEntry.compare( entryName, Qt::CaseInsensitive ) == 0 ) {
-                return relDir->entry( relEntry );
+    const KArchiveEntry newEntry = archive->entry( path );
+    if ( S_ISDIR(newEntry.mode) ) {
+        Q_FOREACH ( const KArchiveEntry &relEntry, archive->list( newEntry.pathname ) ) {
+            if ( QFile::decodeName(relEntry.pathname).compare( entryName, Qt::CaseInsensitive ) == 0 ) {
+                return relEntry;
             }
         }
     }
-    return 0;
-}
-
-static const KZipFileEntry* loadFile( KZip *archive, const QString &fileName, Qt::CaseSensitivity cs )
-{
-    const KArchiveEntry *entry = loadEntry( archive, fileName, cs );
-    return entry->isFile() ? static_cast< const KZipFileEntry * >( entry ) : 0;
+    return KArchiveEntry();
 }
 
 static QColor interpolatedColor( const QColor &c1, const QColor &c2 )
@@ -1366,10 +1354,10 @@ XpsPage::XpsPage(XpsFile *file, const QString &fileName): m_file( file ),
 
     // kDebug(XpsDebug) << "page file name: " << fileName;
 
-    const KZipFileEntry* pageFile = static_cast<const KZipFileEntry *>(m_file->xpsArchive()->directory()->entry( fileName ));
+    const KArchiveEntry pageFile = m_file->xpsArchive()->entry( fileName );
 
     QXmlStreamReader xml;
-    xml.addData( readFileOrDirectoryParts( pageFile ) );
+    xml.addData( readFileOrDirectoryParts( m_file->xpsArchive(), &pageFile ) );
     while ( !xml.atEnd() )
     {
         xml.readNext();
@@ -1424,8 +1412,8 @@ bool XpsPage::renderToPainter( QPainter *painter )
     QXmlSimpleReader parser;
     parser.setContentHandler( &handler );
     parser.setErrorHandler( &handler );
-    const KZipFileEntry* pageFile = static_cast<const KZipFileEntry *>(m_file->xpsArchive()->directory()->entry( m_fileName ));
-    QByteArray data = readFileOrDirectoryParts( pageFile );
+    const KArchiveEntry pageFile = m_file->xpsArchive()->entry( m_fileName );
+    QByteArray data = readFileOrDirectoryParts( m_file->xpsArchive(), &pageFile );
     QBuffer buffer( &data );
     QXmlInputSource source( &buffer );
     bool ok = parser.parse( source );
@@ -1460,12 +1448,12 @@ int XpsFile::loadFontByName( const QString &fileName )
 {
     // kDebug(XpsDebug) << "font file name: " << fileName;
 
-    const KArchiveEntry* fontFile = loadEntry( m_xpsArchive, fileName, Qt::CaseInsensitive );
-    if ( !fontFile ) {
+    const KArchiveEntry fontFile = loadEntry( m_xpsArchive, fileName, Qt::CaseInsensitive );
+    if ( fontFile.isNull() ) {
         return -1;
     }
 
-    QByteArray fontData = readFileOrDirectoryParts( fontFile ); // once per file, according to the docs
+    QByteArray fontData = readFileOrDirectoryParts( m_xpsArchive, &fontFile ); // once per file, according to the docs
 
     int result = -1;
     KTemporaryFile tempfile;
@@ -1487,7 +1475,7 @@ int XpsFile::loadFontByName( const QString &fileName )
     return result; // a font ID
 }
 
-KZip * XpsFile::xpsArchive() {
+KArchive * XpsFile::xpsArchive() {
     return m_xpsArchive;
 }
 
@@ -1502,8 +1490,8 @@ QImage XpsPage::loadImageFromFile( const QString &fileName )
     }
 
     QString absoluteFileName = absolutePath( entryPath( m_fileName ), fileName );
-    const KZipFileEntry* imageFile = loadFile( m_file->xpsArchive(), absoluteFileName, Qt::CaseInsensitive );
-    if ( !imageFile ) {
+    const KArchiveEntry imageFile = loadEntry( m_file->xpsArchive(), absoluteFileName, Qt::CaseInsensitive );
+    if ( imageFile.isNull() ) {
         // image not found
         return QImage();
     }
@@ -1520,7 +1508,7 @@ QImage XpsPage::loadImageFromFile( const QString &fileName )
     */
 
     QImage image;
-    QByteArray data = imageFile->data();
+    QByteArray data = m_file->xpsArchive()->data( imageFile.pathname );
 
     QBuffer buffer(&data);
     buffer.open(QBuffer::ReadOnly);
@@ -1544,9 +1532,9 @@ Okular::TextPage* XpsPage::textPage()
 
     Okular::TextPage* textPage = new Okular::TextPage();
 
-    const KZipFileEntry* pageFile = static_cast<const KZipFileEntry *>(m_file->xpsArchive()->directory()->entry( m_fileName ));
+    const KArchiveEntry pageFile = m_file->xpsArchive()->entry( m_fileName );
     QXmlStreamReader xml;
-    xml.addData( readFileOrDirectoryParts( pageFile ) );
+    xml.addData( readFileOrDirectoryParts( m_file->xpsArchive(), &pageFile ) );
 
     QTransform matrix = QTransform();
     QStack<QTransform> matrices;
@@ -1646,10 +1634,8 @@ void XpsDocument::parseDocumentStructure( const QString &documentStructureFileNa
     kDebug(XpsDebug) << "document structure file name: " << documentStructureFileName;
     m_haveDocumentStructure = false;
 
-    const KZipFileEntry* documentStructureFile = static_cast<const KZipFileEntry *>(m_file->xpsArchive()->directory()->entry( documentStructureFileName ));
-
     QXmlStreamReader xml;
-    xml.addData( documentStructureFile->data() );
+    xml.addData( m_file->xpsArchive()->data( documentStructureFileName ) );
 
     while ( !xml.atEnd() )
     {
@@ -1722,12 +1708,12 @@ XpsDocument::XpsDocument(XpsFile *file, const QString &fileName): m_file(file), 
 {
     kDebug(XpsDebug) << "document file name: " << fileName;
 
-    const KArchiveEntry* documentEntry = file->xpsArchive()->directory()->entry( fileName );
+    const KArchiveEntry documentEntry = file->xpsArchive()->entry( fileName );
     QString documentFilePath = fileName;
     const QString documentEntryPath = entryPath( fileName );
 
     QXmlStreamReader docXml;
-    docXml.addData( readFileOrDirectoryParts( documentEntry, &documentFilePath ) );
+    docXml.addData( readFileOrDirectoryParts( file->xpsArchive(), &documentEntry, &documentFilePath ) );
     while( !docXml.atEnd() ) {
         docXml.readNext();
         if ( docXml.isStartElement() ) {
@@ -1761,12 +1747,12 @@ XpsDocument::XpsDocument(XpsFile *file, const QString &fileName): m_file(file), 
     const int slashPosition = fileName.lastIndexOf( '/' );
     const QString documentRelationshipFile = absolutePath( documentEntryPath, "_rels/" + fileName.mid( slashPosition + 1 ) + ".rels" );
 
-    const KZipFileEntry* relFile = static_cast<const KZipFileEntry *>(file->xpsArchive()->directory()->entry(documentRelationshipFile));
+    const KArchiveEntry relFile = file->xpsArchive()->entry(documentRelationshipFile);
 
     QString documentStructureFile;
-    if ( relFile ) {
+    if ( !relFile.isNull() ) {
         QXmlStreamReader xml;
-        xml.addData( readFileOrDirectoryParts( relFile ) );
+        xml.addData( readFileOrDirectoryParts( file->xpsArchive(), &relFile ) );
         while ( !xml.atEnd() )
         {
             xml.readNext();
@@ -1839,24 +1825,25 @@ XpsFile::~XpsFile()
 
 bool XpsFile::loadDocument(const QString &filename)
 {
-    m_xpsArchive = new KZip( filename );
-    if ( m_xpsArchive->open( QIODevice::ReadOnly ) == true ) {
-        kDebug(XpsDebug) << "Successful open of " << m_xpsArchive->fileName();
+    m_xpsArchive = new KArchive( filename );
+    if ( m_xpsArchive->isReadable() == true ) {
+        kDebug(XpsDebug) << "Successful open of " << filename;
     } else {
-        kDebug(XpsDebug) << "Could not open XPS archive: " << m_xpsArchive->fileName();
+        kDebug(XpsDebug) << "Could not open XPS archive: " << filename;
         delete m_xpsArchive;
         return false;
     }
 
     // The only fixed entry in XPS is /_rels/.rels
-    const KArchiveEntry* relEntry = m_xpsArchive->directory()->entry("_rels/.rels");
-    if ( !relEntry ) {
+    const KArchiveEntry relEntry = m_xpsArchive->entry("_rels/.rels");
+    if ( relEntry.isNull() ) {
         // this might occur if we can't read the zip directory, or it doesn't have the relationships entry
+        kDebug(XpsDebug) << "No relationships found in archive: " << filename;
         return false;
     }
 
     QXmlStreamReader relXml;
-    relXml.addData( readFileOrDirectoryParts( relEntry ) );
+    relXml.addData( readFileOrDirectoryParts( m_xpsArchive, &relEntry ) );
 
     QString fixedRepresentationFileName;
     // We work through the relationships document and pull out each element.
@@ -1894,14 +1881,15 @@ bool XpsFile::loadDocument(const QString &filename)
 
     if ( fixedRepresentationFileName.isEmpty() ) {
         // FixedRepresentation is a required part of the XPS document
+        kDebug(XpsDebug) << "fixedrepresentation not found in document";
         return false;
     }
 
-    const KArchiveEntry* fixedRepEntry = m_xpsArchive->directory()->entry( fixedRepresentationFileName );
+    const KArchiveEntry fixedRepEntry = m_xpsArchive->entry( fixedRepresentationFileName );
     QString fixedRepresentationFilePath = fixedRepresentationFileName;
 
     QXmlStreamReader fixedRepXml;
-    fixedRepXml.addData( readFileOrDirectoryParts( fixedRepEntry, &fixedRepresentationFileName ) );
+    fixedRepXml.addData( readFileOrDirectoryParts( m_xpsArchive, &fixedRepEntry, &fixedRepresentationFileName ) );
 
     while ( !fixedRepXml.atEnd() )
     {
@@ -1940,10 +1928,8 @@ const Okular::DocumentInfo * XpsFile::generateDocumentInfo()
     m_docInfo->set( Okular::DocumentInfo::MimeType, "application/oxps" );
 
     if ( ! m_corePropertiesFileName.isEmpty() ) {
-        const KZipFileEntry* corepropsFile = static_cast<const KZipFileEntry *>(m_xpsArchive->directory()->entry(m_corePropertiesFileName));
-
         QXmlStreamReader xml;
-        xml.addData( corepropsFile->data() );
+        xml.addData( m_xpsArchive->data(m_corePropertiesFileName) );
         while ( !xml.atEnd() )
         {
             xml.readNext();
