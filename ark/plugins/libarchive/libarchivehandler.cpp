@@ -1,7 +1,5 @@
 /*
- * Copyright (c) 2007 Henrique Pinto <henrique.pinto@kdemail.net>
- * Copyright (c) 2008-2009 Harald Hvaal <haraldhv@stud.ntnu.no>
- * Copyright (c) 2010 Raphael Kubo da Costa <rakuco@FreeBSD.org>
+ * Copyright (C) 2022 Ivailo Monev <xakepa10@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -50,7 +48,7 @@ bool LibArchiveInterface::list()
 {
     KArchive karchive(filename());
     if (!karchive.isReadable()) {
-        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>, libarchive cannot handle it.", filename()));
+        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>: %2.", filename(), karchive.errorString()));
         return false;
     }
 
@@ -82,7 +80,7 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString &de
 
     KArchive karchive(filename());
     if (!karchive.isReadable()) {
-        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>, libarchive cannot handle it.", filename()));
+        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>: %2.", filename(), karchive.errorString()));
         return false;
     }
 
@@ -120,8 +118,7 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
 
     KArchive karchive(filename());
     if (!karchive.isWritable()) {
-        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>, libarchive cannot handle it.",
-                   filename()));
+        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>: %2.", filename(), karchive.errorString()));
         return false;
     }
 
@@ -139,7 +136,7 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
 {
     KArchive karchive(filename());
     if (!karchive.isWritable()) {
-        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>, libarchive cannot handle it.", filename()));
+        emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>: %2.", filename(), karchive.errorString()));
         return false;
     }
 
