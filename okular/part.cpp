@@ -1162,13 +1162,7 @@ bool Part::slotImportPSFile()
     KUrl url = KFileDialog::getOpenUrl( KUrl(), "application/postscript", this->widget() );
     if ( url.isLocalFile() )
     {
-        KTemporaryFile tf;
-        tf.setSuffix( ".pdf" );
-        tf.setAutoRemove( false );
-        if ( !tf.open() )
-            return false;
-        m_temporaryLocalFile = tf.fileName();
-        tf.close();
+        m_temporaryLocalFile = KTemporaryFile::filePath("XXXXXXXXXX.pdf");
 
         setLocalFilePath( url.toLocalFile() );
         QStringList args;
