@@ -178,10 +178,6 @@ void ThemeLoader::findColorStyles(QMenu *colors, const QString& configSelectedSt
 
 int ThemeLoader::loadLayout(const QString& themeName)
 {
-
-//     const KArchiveDirectory * KArchive::directory	(		)	 const
-
-
     QFile themeFile;
 
     QDomDocument doc;
