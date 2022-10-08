@@ -21,7 +21,6 @@
 
 #include "testUtil.h"
 #include <QFile>
-#include <QTemporaryFile>
 
 #include <qtest_kde.h>
 #include <kurl.h>
