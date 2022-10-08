@@ -99,13 +99,12 @@ void OkularTTS::slotJobStateChanged( int jobNum, int state )
 
     switch ( state )
     {
-        case KSpeech::JobFinished: {
-            d->kspeech->removeJob( jobNum );
-            break;
-        }
         case KSpeech::JobCanceled: {
             d->jobs.remove( jobNum );
             emit hasSpeechs( !d->jobs.isEmpty() );
+            break;
+        }
+        default: {
             break;
         }
     }
