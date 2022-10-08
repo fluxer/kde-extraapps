@@ -59,10 +59,9 @@
 #include "pageSize.h"
 
 #include <klocale.h>
+#include <ktemporaryfile.h>
 
 #include <QProcess>
-#include <QtCore/qglobal.h>
-#include <QTemporaryFile>
 
 #include <cstdlib>
 
@@ -367,11 +366,7 @@ QString dvifile::convertPDFtoPS(const QString &PDFFilename, QString *converrorms
   }
 
   // Get the name of a temporary file.
-  // Must open the QTemporaryFile to access the name.
-  QTemporaryFile tmpfile;
-  tmpfile.open();
-  const QString convertedFileName = tmpfile.fileName();
-  tmpfile.close();
+  const QString convertedFileName = KTemporaryFile::filePath();
 
   // Use pdf2ps to do the conversion
   QProcess pdf2ps;
@@ -421,7 +416,6 @@ QString dvifile::convertPDFtoPS(const QString &PDFFilename, QString *converrorms
   // deconstructed.
   convertedFiles[PDFFilename] = convertedFileName;
 
-  tmpfile.setAutoRemove(false);
   return convertedFileName;
 }
 

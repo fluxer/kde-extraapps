@@ -317,11 +317,7 @@ void ghostscript_interface::graphics(const PageNumber& page, double dpi, long ma
     return;
   }
 
-  QTemporaryFile gfxFile;
-  gfxFile.open();
-  const QString gfxFileName = gfxFile.fileName();
-  // We are want the filename, not the file.
-  gfxFile.close();
+  const QString gfxFileName = KTemporaryFile::filePath();
 
   gs_generate_graphics_file(page, gfxFileName, magnification);
   
