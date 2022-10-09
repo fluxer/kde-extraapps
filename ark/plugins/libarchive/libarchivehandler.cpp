@@ -68,13 +68,14 @@ bool LibArchiveInterface::list()
         return false;
     }
 
+    emit progress(0.1);
     foreach (const KArchiveEntry &karchiveentry, karchive.list()) {
         ArchiveEntry archiveentry;
         copyEntry(&archiveentry, &karchiveentry);
         emit entry(archiveentry);
     }
-
     emit progress(1.0);
+
     return true;
 }
 
@@ -109,12 +110,12 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString &de
             fileslist.append(variant.toString());
         }
     }
+    connect(&karchive, SIGNAL(progress(qreal)), this, SLOT(emitProgress(qreal)));
     if (!karchive.extract(fileslist, destinationDirectory, preservePaths)) {
         emit error(karchive.errorString());
         return false;
     }
 
-    emit progress(1.0);
     return true;
 }
 
@@ -144,6 +145,7 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
 
     const QList<KArchiveEntry> oldEntries = karchive.list();
     const QString strip(QDir::cleanPath(globalWorkDir) + QDir::separator());
+    connect(&karchive, SIGNAL(progress(qreal)), this, SLOT(emitProgress(qreal)));
     if (!karchive.add(files, QFile::encodeName(strip), QFile::encodeName(rootNode))) {
         emit error(karchive.errorString());
         return false;
@@ -157,7 +159,6 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
         }
     }
 
-    emit progress(1.0);
     return true;
 }
 
@@ -178,6 +179,7 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
     foreach (const QVariant &variant, files) {
         fileslist.append(variant.toString());
     }
+    connect(&karchive, SIGNAL(progress(qreal)), this, SLOT(emitProgress(qreal)));
     if (!karchive.remove(fileslist)) {
         emit error(karchive.errorString());
         return false;
@@ -187,8 +189,12 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
         emit entryRemoved(file);
     }
 
-    emit progress(1.0);
     return true;
+}
+
+void LibArchiveInterface::emitProgress(const qreal value)
+{
+    emit progress(value);
 }
 
 KERFUFFLE_EXPORT_PLUGIN(LibArchiveInterface)

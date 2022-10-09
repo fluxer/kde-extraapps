@@ -44,6 +44,9 @@ public:
     bool copyFiles(const QVariantList& files, const QString &destinationDirectory, ExtractionOptions options) final;
     bool addFiles(const QStringList& files, const CompressionOptions &options) final;
     bool deleteFiles(const QVariantList& files) final;
+
+private Q_SLOTS:
+    void emitProgress(const qreal value);
 };
 
 #endif // LIBARCHIVEHANDLER_H
