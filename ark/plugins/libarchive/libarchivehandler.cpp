@@ -89,6 +89,16 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString &de
         return false;
     }
 
+    if (karchive.requiresPassphrase()) {
+        PasswordNeededQuery passwordquery(filename());
+        emit userQuery(&passwordquery);
+        passwordquery.waitForResponse();
+        if (passwordquery.responseCancelled()) {
+            return false;
+        }
+        karchive.setReadPassphrase(passwordquery.password());
+    }
+
     QStringList fileslist;
     if (extractAll) {
         foreach (const KArchiveEntry &karchiveentry, karchive.list()) {
@@ -127,6 +137,11 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
         return false;
     }
 
+    if (karchive.requiresPassphrase()) {
+        emit error(i18nc("@info", "Writing password-protected archives is not supported."));
+        return false;
+    }
+
     const QList<KArchiveEntry> oldEntries = karchive.list();
     const QString strip(QDir::cleanPath(globalWorkDir) + QDir::separator());
     if (!karchive.add(files, QFile::encodeName(strip), QFile::encodeName(rootNode))) {
@@ -151,6 +166,11 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
     KArchive karchive(filename());
     if (!karchive.isWritable()) {
         emit error(i18nc("@info", "Could not open the archive <filename>%1</filename>: %2.", filename(), karchive.errorString()));
+        return false;
+    }
+
+    if (karchive.requiresPassphrase()) {
+        emit error(i18nc("@info", "Writing password-protected archives is not supported."));
         return false;
     }
 
