@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+    <kcfgfile name="pdfcreatorrc"/>
+    <group name="General">
+      <entry name="antialiasing" type="bool">
+          <label>Antialias</label>
+          <default>true</default>
+      </entry>
+      <entry name="text_antialiasing" type="bool">
+          <label>Text antialias</label>
+          <default>true</default>
+      </entry>
+      <entry name="text_hinting" type="bool">
+          <label>Text hinting</label>
+          <default>true</default>
+      </entry>
+    </group>
+</kcfg>

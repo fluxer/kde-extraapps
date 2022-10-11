@@ -9,13 +9,6 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
-kde4_optional_find_package(GettextPO)
-set_package_properties(GettextPO PROPERTIES
-    DESCRIPTION "A library for processing PO files"
-    URL "www.gnu.org/software/gettext"
-    PURPOSE "Required to build the PO thumbnailer"
-)
-
 kde4_optional_find_package(Taglib 1.4)
 set_package_properties(Taglib PROPERTIES
     DESCRIPTION "Id3 tag reader"
@@ -30,25 +23,43 @@ set_package_properties(FFmpegThumbnailer PROPERTIES
     PURPOSE "Required to build the video thumbnailer"
 )
 
+kde4_optional_find_package(Poppler)
+set_package_properties(Poppler PROPERTIES
+    DESCRIPTION "A PDF rendering library"
+    URL "https://poppler.freedesktop.org"
+    PURPOSE "Required to build the PDF thumbnailer"
+)
+
+kde4_optional_find_package(GettextPO)
+set_package_properties(GettextPO PROPERTIES
+    DESCRIPTION "A library for processing PO files"
+    URL "www.gnu.org/software/gettext"
+    PURPOSE "Required to build the PO thumbnailer"
+)
+
 find_program(GHOSTSCRIPT_EXECUTABLE NAMES gs)
 add_feature_info(thumbnailer_gs
     GHOSTSCRIPT_EXECUTABLE
-    "PostScript, PDF and DvI support in thumbnailer"
+    "PostScript and DvI support in thumbnailer"
 )
-
-add_subdirectory(ps)
 
 if(TAGLIB_FOUND)
     add_subdirectory(audio)
+endif()
+
+if(FFMPEGTHUMBNAILER_FOUND)
+    add_subdirectory(ffmpegthumbs)
+endif()
+
+if(Poppler_FOUND)
+    add_subdirectory(pdf)
 endif()
 
 if(GETTEXTPO_FOUND)
     add_subdirectory(po)
 endif()
 
-if(FFMPEGTHUMBNAILER_FOUND)
-    add_subdirectory(ffmpegthumbs)
-endif()
+add_subdirectory(ps)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -1,0 +1,4 @@
+File=pdfcreatorsettings.kcfg
+ClassName=PDFCreatorSettings
+Singleton=true
+Mutators=true
