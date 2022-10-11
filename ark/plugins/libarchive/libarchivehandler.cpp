@@ -110,6 +110,44 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString &de
             fileslist.append(variant.toString());
         }
     }
+
+    bool autoskip = false;
+    QStringList::iterator it = fileslist.begin();
+    while (it != fileslist.end()) {
+        const QString fullpath = destinationDirectory + QLatin1Char('/') + (*it);
+        if (QFile::exists(fullpath)) {
+            if (autoskip) {
+                it = fileslist.erase(it);
+                it++;
+                continue;
+            }
+
+            Kerfuffle::OverwriteQuery overwritequery(fullpath);
+            overwritequery.setNoRenameMode(true);
+            emit userQuery(&overwritequery);
+            overwritequery.waitForResponse();
+
+            if (overwritequery.responseCancelled()) {
+                return false;
+            } else if (overwritequery.responseOverwriteAll()) {
+                // KArchive will overwrite
+                break;
+            } else if (overwritequery.responseOverwrite()) {
+                it++;
+                continue;
+            } else if (overwritequery.responseRename()) {
+                Q_ASSERT(false);
+            } else if (overwritequery.responseSkip()) {
+                it = fileslist.erase(it);
+                continue;
+            } else if (overwritequery.responseAutoSkip()) {
+                autoskip = true;
+                it = fileslist.erase(it);
+            }
+        }
+        it++;
+    }
+
     connect(&karchive, SIGNAL(progress(qreal)), this, SLOT(emitProgress(qreal)));
     if (!karchive.extract(fileslist, destinationDirectory, preservePaths)) {
         emit error(karchive.errorString());
