@@ -1,5 +1,5 @@
 [Desktop Entry]
-MimeType=application/x-fictionbook+xml;
+MimeType=application/x-fictionbook+xml;application/x-zip-compressed-fb2;
 Terminal=false
 Name=Okular
 Name[ar]=اوكلار
