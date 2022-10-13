@@ -40,7 +40,6 @@ OKULAR_EXPORT_PLUGIN( ComicBookGenerator, createAboutData() )
 ComicBookGenerator::ComicBookGenerator( QObject *parent, const QVariantList &args )
     : Generator( parent, args )
 {
-    setFeature( Threaded );
     setFeature( PrintNative );
 }
 
