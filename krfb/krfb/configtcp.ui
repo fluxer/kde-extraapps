@@ -72,7 +72,6 @@
   <tabstop>kcfg_useDefaultPort</tabstop>
   <tabstop>kcfg_port</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>kcfg_useDefaultPort</sender>

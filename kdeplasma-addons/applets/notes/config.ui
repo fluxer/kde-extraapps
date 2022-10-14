@@ -458,7 +458,6 @@
    <header>kcolorbutton.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>customFont</sender>

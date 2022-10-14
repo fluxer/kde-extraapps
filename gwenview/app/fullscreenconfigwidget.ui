@@ -175,7 +175,6 @@
   <tabstop>mShowThumbnailsCheckBox</tabstop>
   <tabstop>mHeightSlider</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>mShowThumbnailsCheckBox</sender>

@@ -160,6 +160,5 @@ Some file systems need external tools to be installed for them to be supported. 
    <header>kpushbutton.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections/>
 </ui>

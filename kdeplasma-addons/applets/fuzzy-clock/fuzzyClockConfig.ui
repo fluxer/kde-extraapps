@@ -526,7 +526,6 @@
    <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>useCustomFontColor</sender>

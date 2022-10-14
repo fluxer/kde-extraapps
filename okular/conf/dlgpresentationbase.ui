@@ -318,7 +318,6 @@
    <header>knuminput.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>kcfg_SlidesAdvance</sender>

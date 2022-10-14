@@ -276,7 +276,6 @@
   <include location="local">knuminput.h</include>
   <include location="local">kcombobox.h</include>
  </includes>
- <resources/>
  <connections>
   <connection>
    <sender>mScaleTo</sender>

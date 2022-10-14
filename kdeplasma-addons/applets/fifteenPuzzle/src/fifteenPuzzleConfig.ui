@@ -140,7 +140,6 @@
    <header>kcolorcombo.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>rb_split</sender>

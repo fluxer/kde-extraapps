@@ -213,7 +213,6 @@
   <tabstop>kcfg_copySkel</tabstop>
   <tabstop>kcfg_userPrivateGroup</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>kcfg_userPrivateGroup</sender>

@@ -269,6 +269,5 @@
  <includes>
   <include location="global">kiconloader.h</include>
  </includes>
- <resources/>
  <connections/>
 </ui>

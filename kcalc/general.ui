@@ -218,7 +218,6 @@
   <tabstop>kcfg_Fixed</tabstop>
   <tabstop>kcfg_FixedPrecision</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>kcfg_Fixed</sender>

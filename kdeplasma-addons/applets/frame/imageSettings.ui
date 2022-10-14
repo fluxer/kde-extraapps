@@ -402,7 +402,6 @@ Useful if you want a live cam or weather data to be up to date.</string>
    <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>pictureComboBox</sender>

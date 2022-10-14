@@ -499,7 +499,6 @@
   <tabstop>enableUnattendedCheckBox</tabstop>
   <tabstop>unattendedPasswordButton</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>enableSharingCheckBox</sender>

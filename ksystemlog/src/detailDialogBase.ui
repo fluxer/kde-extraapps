@@ -185,6 +185,5 @@
   <include location="local" >kpushbutton.h</include>
   <include location="local" >kpushbutton.h</include>
  </includes>
- <resources/>
  <connections/>
 </ui>

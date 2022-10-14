@@ -401,6 +401,5 @@ For files which were opened before the previous zoom is applied.</string>
  <includes>
   <include location="global">kiconloader.h</include>
  </includes>
- <resources/>
  <connections/>
 </ui>

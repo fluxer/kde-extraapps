@@ -663,6 +663,5 @@
   <tabstop>kcfg_DefaultRdpUserName</tabstop>
   <tabstop>kcfg_RecognizeLdapLogins</tabstop>
  </tabstops>
- <resources/>
  <connections/>
 </ui>

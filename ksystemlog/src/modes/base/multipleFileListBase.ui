@@ -183,6 +183,5 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
- <resources/>
  <connections/>
 </ui>

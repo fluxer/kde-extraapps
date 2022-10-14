@@ -344,6 +344,5 @@
   <include location="local">klineedit.h</include>
   <include location="local">QLabel</include>
  </includes>
- <resources/>
  <connections/>
 </ui>

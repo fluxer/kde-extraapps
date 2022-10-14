@@ -141,7 +141,6 @@
    <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>kcfg_AutoRename</sender>

@@ -285,6 +285,5 @@ Player:Volume=10</string>
    <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections/>
 </ui>

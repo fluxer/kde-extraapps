@@ -439,7 +439,6 @@
   <tabstop>verticalRadioButton</tabstop>
   <tabstop>kcfg_ThumbnailBarRowCount</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>solidColorRadioButton</sender>

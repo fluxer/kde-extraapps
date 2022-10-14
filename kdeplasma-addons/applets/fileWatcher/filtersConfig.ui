@@ -133,7 +133,6 @@
    <header>keditlistwidget.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
  <connections>
   <connection>
    <sender>showOnlyMatchesCheckBox</sender>

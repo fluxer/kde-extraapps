@@ -215,6 +215,5 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
  </widget>
- <resources/>
  <connections/>
 </ui>

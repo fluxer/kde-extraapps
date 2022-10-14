@@ -280,6 +280,5 @@ QLabel[isIcon=true] {
   <tabstop>mConfigureButton</tabstop>
   <tabstop>mButtonBox</tabstop>
  </tabstops>
- <resources/>
  <connections/>
 </ui>

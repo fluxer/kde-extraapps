@@ -381,6 +381,5 @@
  <includes>
   <include location="global">kseparator.h</include>
  </includes>
- <resources/>
  <connections/>
 </ui>
