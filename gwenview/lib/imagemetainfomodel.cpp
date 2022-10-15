@@ -272,12 +272,11 @@ void ImageMetaInfoModel::setUrl(const KUrl& url)
     d->setGroupEntryValue(GeneralGroup, "General.Size", sizeString);
     d->setGroupEntryValue(GeneralGroup, "General.Time", item.timeString());
 
-    KExiv2 kexiv2(url.path());
-    const KExiv2PropertyList kexiv2metadata = kexiv2.metadata();
+    const KExiv2 kexiv2(url.path());
     KExiv2PropertyList exifprops;
     KExiv2PropertyList iptcprops;
     KExiv2PropertyList xmpprops;
-    foreach (const KExiv2Property &kexiv2property, kexiv2metadata) {
+    foreach (const KExiv2Property &kexiv2property, kexiv2.metadata()) {
         if (kexiv2property.name.startsWith("Exif.")) {
             exifprops.append(kexiv2property);
         } else if (kexiv2property.name.startsWith("Xmp.")) {
