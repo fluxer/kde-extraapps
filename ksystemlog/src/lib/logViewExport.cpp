@@ -82,12 +82,11 @@ void LogViewExport::sendMail() {
 	// Parameters list of this method
 	//const QString &   to,
 	//const QString &   cc,
-	//const QString &   bcc,
 	//const QString &   subject,
 	//const QString &   body,
 	//const QStringList &   attachURLs,
 	//const QCString &   startup_id
-	KToolInvocation::invokeMailer(QLatin1String( "" ), QLatin1String( "" ), QLatin1String( "" ), i18n("Log Lines of my problem"), body, QStringList(), kapp->startupId());
+	KToolInvocation::invokeMailer(QLatin1String( "" ), QLatin1String( "" ), i18n("Log Lines of my problem"), body, QStringList(), kapp->startupId());
 }
 
 void LogViewExport::printSelection() {
