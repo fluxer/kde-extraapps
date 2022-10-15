@@ -66,18 +66,20 @@ struct CacheItem
     
         const QString path = url.path();
         KExiv2 kexiv2(path);
-        const KExiv2::DataMap kexiv2datamap = kexiv2.data();
+        const KExiv2PropertyList kexiv2metadata = kexiv2.metadata();
         // Ordered list of keys to try
-        static QList<QByteArray> lst = QList<QByteArray>()
+        static QList<QByteArray> datelst = QList<QByteArray>()
             << QByteArray("Exif.Photo.DateTimeOriginal")
             << QByteArray("Exif.Image.DateTimeOriginal")
             << QByteArray("Exif.Photo.DateTimeDigitized")
             << QByteArray("Exif.Image.DateTime");
         QString exifvalue;
-        foreach (const QByteArray &exifkey, lst) {
-            exifvalue = kexiv2datamap.value(exifkey);
-            if (!exifvalue.isEmpty()) {
-                break;
+        foreach (const KExiv2Property &kexiv2property, kexiv2metadata) {
+            if (datelst.contains(kexiv2property.name)) {
+                exifvalue = kexiv2property.value;
+                if (!exifvalue.isEmpty()) {
+                    break;
+                }
             }
         }
         if (exifvalue.isEmpty()) {

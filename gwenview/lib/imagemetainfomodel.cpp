@@ -273,19 +273,19 @@ void ImageMetaInfoModel::setUrl(const KUrl& url)
     d->setGroupEntryValue(GeneralGroup, "General.Time", item.timeString());
 
     KExiv2 kexiv2(url.path());
-    const KExiv2::DataMap kexiv2datamap = kexiv2.data();
-    QList<QByteArray> exifkeys;
-    QList<QByteArray> iptckeys;
-    QList<QByteArray> xmpkeys;
-    foreach (const QByteArray &kexiv2key, kexiv2datamap.keys()) {
-        if (kexiv2key.startsWith("Exif.")) {
-            exifkeys.append(kexiv2key);
-        } else if (kexiv2key.startsWith("Xmp.")) {
-            iptckeys.append(kexiv2key);
-        } else if (kexiv2key.startsWith("Iptc.")) {
-            xmpkeys.append(kexiv2key);
+    const KExiv2PropertyList kexiv2metadata = kexiv2.metadata();
+    KExiv2PropertyList exifprops;
+    KExiv2PropertyList iptcprops;
+    KExiv2PropertyList xmpprops;
+    foreach (const KExiv2Property &kexiv2property, kexiv2metadata) {
+        if (kexiv2property.name.startsWith("Exif.")) {
+            exifprops.append(kexiv2property);
+        } else if (kexiv2property.name.startsWith("Xmp.")) {
+            iptcprops.append(kexiv2property);
+        } else if (kexiv2property.name.startsWith("Iptc.")) {
+            xmpprops.append(kexiv2property);
         } else {
-            kWarning() << "Unknown Exif2 key" << kexiv2key;
+            kWarning() << "Unknown Exif2 key" << kexiv2property.name;
         }
     }
 
@@ -299,26 +299,26 @@ void ImageMetaInfoModel::setUrl(const KUrl& url)
     d->clearGroup(iptcGroup, iptcIndex);
     d->clearGroup(xmpGroup,  xmpIndex);
 
-    if (!exifkeys.isEmpty()) {
-        beginInsertRows(exifIndex, 0, exifkeys.size() - 1);
-        foreach (const QByteArray &exifkey, exifkeys) {
-            exifGroup->addEntry(exifkey, kexiv2.label(exifkey), kexiv2datamap.value(exifkey));
+    if (!exifprops.isEmpty()) {
+        beginInsertRows(exifIndex, 0, exifprops.size() - 1);
+        foreach (const KExiv2Property &exifprop, exifprops) {
+            exifGroup->addEntry(exifprop.name, exifprop.label, exifprop.value);
         }
         endInsertRows();
     }
 
-    if (!iptckeys.isEmpty()) {
-        beginInsertRows(iptcIndex, 0, iptckeys.size() - 1);
-        foreach (const QByteArray &iptckey, iptckeys) {
-            iptcGroup->addEntry(iptckey, kexiv2.label(iptckey), kexiv2datamap.value(iptckey));
+    if (!iptcprops.isEmpty()) {
+        beginInsertRows(iptcIndex, 0, iptcprops.size() - 1);
+        foreach (const KExiv2Property &iptcprop, iptcprops) {
+            iptcGroup->addEntry(iptcprop.name, iptcprop.label, iptcprop.value);
         }
         endInsertRows();
     }
 
-    if (!xmpkeys.isEmpty()) {
-        beginInsertRows(xmpIndex, 0, xmpkeys.size() - 1);
-        foreach (const QByteArray &xmpkey, xmpkeys) {
-            xmpGroup->addEntry(xmpkey, kexiv2.label(xmpkey), kexiv2datamap.value(xmpkey));
+    if (!xmpprops.isEmpty()) {
+        beginInsertRows(xmpIndex, 0, xmpprops.size() - 1);
+        foreach (const KExiv2Property &xmpprop, xmpprops) {
+            xmpGroup->addEntry(xmpprop.name, xmpprop.label, xmpprop.value);
         }
         endInsertRows();
     }
