@@ -4,7 +4,6 @@ project(gwenviewlib)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${EXIV2_INCLUDE_DIR}
 )
 
 set(gwenviewlib_SRCS
@@ -42,7 +41,6 @@ set(gwenviewlib_SRCS
     eventwatcher.cpp
     historymodel.cpp
     datewidget.cpp
-    exiv2imageloader.cpp
     flowlayout.cpp
     fullscreenbar.cpp
     hud/hudbutton.cpp
@@ -107,8 +105,8 @@ generate_export_header(gwenviewlib)
 target_link_libraries(gwenviewlib
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}
+    ${KDE4_KEXIV2_LIBS}
     ${QT_QTGUI_LIBRARY}
-    ${EXIV2_LIBRARIES}
     ${X11_X11_LIB}
     ${CMAKE_THREAD_LIBS_INIT}
 )

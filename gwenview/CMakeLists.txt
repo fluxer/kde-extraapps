@@ -20,14 +20,6 @@ set_package_properties(Threads PROPERTIES
     TYPE REQUIRED
 )
 
-find_package(Exiv2 0.19)
-set_package_properties(Exiv2 PROPERTIES
-    DESCRIPTION "Image Tag reader"
-    URL "http://www.exiv2.org"
-    PURPOSE "Support for image metadata"
-    TYPE REQUIRED
-)
-
 find_package(LibKonq)
 set_package_properties(LibKonq PROPERTIES
     URL "https://osdn.net/projects/kde/"
@@ -39,15 +31,9 @@ set_package_properties(LibKonq PROPERTIES
 
 include_directories(
     ${QDBUS_INCLUDE_DIRS}
-    ${EXIV2_INCLUDE_DIR}
     # for gwenview_export.h
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}/lib
-)
-
-add_definitions(
-    ${EXIV2_DEFINITIONS}
-    ${KDE4_ENABLE_EXCEPTIONS}
 )
 
 ## dirs to build

@@ -38,8 +38,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "../lib/transformimageoperation.h"
 #include "testutils.h"
 
-#include <exiv2/exif.hpp>
-
 #include "moc_documenttest.cpp"
 
 QTEST_KDEMAIN(DocumentTest, GUI)

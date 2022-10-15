@@ -28,13 +28,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KDateTime>
 #include <KDebug>
 #include <KFileItem>
-
-// Exiv2
-#include <exiv2/exif.hpp>
-#include <exiv2/image.hpp>
+#include <KExiv2>
 
 // Local
-#include <lib/exiv2imageloader.h>
 #include <lib/urlutils.h>
 
 namespace Gwenview
@@ -42,25 +38,6 @@ namespace Gwenview
 
 namespace TimeUtils
 {
-
-static Exiv2::ExifData::const_iterator findDateTimeKey(const Exiv2::ExifData& exifData)
-{
-    // Ordered list of keys to try
-    static QList<Exiv2::ExifKey> lst = QList<Exiv2::ExifKey>()
-        << Exiv2::ExifKey("Exif.Photo.DateTimeOriginal")
-        << Exiv2::ExifKey("Exif.Image.DateTimeOriginal")
-        << Exiv2::ExifKey("Exif.Photo.DateTimeDigitized")
-        << Exiv2::ExifKey("Exif.Image.DateTime");
-
-    Exiv2::ExifData::const_iterator it, end = exifData.end();
-    Q_FOREACH(const Exiv2::ExifKey& key, lst) {
-        it = exifData.findKey(key);
-        if (it != end) {
-            return it;
-        }
-    }
-    return end;
-}
 
 struct CacheItem
 {
@@ -86,49 +63,36 @@ struct CacheItem
         if (!UrlUtils::urlIsFastLocalFile(url)) {
             return false;
         }
-        QString path = url.path();
-        Exiv2ImageLoader loader;
-        QByteArray header;
-        {
-            QFile file(path);
-            if (!file.open(QIODevice::ReadOnly)) {
-                kWarning() << "Could not open" << path << "for reading";
-                return false;
+    
+        const QString path = url.path();
+        KExiv2 kexiv2(path);
+        const KExiv2::DataMap kexiv2datamap = kexiv2.data();
+        // Ordered list of keys to try
+        static QList<QByteArray> lst = QList<QByteArray>()
+            << QByteArray("Exif.Photo.DateTimeOriginal")
+            << QByteArray("Exif.Image.DateTimeOriginal")
+            << QByteArray("Exif.Photo.DateTimeDigitized")
+            << QByteArray("Exif.Image.DateTime");
+        QString exifvalue;
+        foreach (const QByteArray &exifkey, lst) {
+            exifvalue = kexiv2datamap.value(exifkey);
+            if (!exifvalue.isEmpty()) {
+                break;
             }
-            header = file.read(65536); // FIXME: Is this big enough?
         }
-
-        if (!loader.load(header)) {
+        if (exifvalue.isEmpty()) {
+            kWarning() << "No date in exif header of" << path;
             return false;
         }
-        Exiv2::Image::AutoPtr img = loader.popImage();
-        try {
-            Exiv2::ExifData exifData = img->exifData();
-            if (exifData.empty()) {
-                return false;
-            }
-            Exiv2::ExifData::const_iterator it = findDateTimeKey(exifData);
-            if (it == exifData.end()) {
-                kWarning() << "No date in exif header of" << path;
-                return false;
-            }
 
-            std::ostringstream stream;
-            stream << *it;
-            QString value = QString::fromLocal8Bit(stream.str().c_str());
-
-            KDateTime dt = KDateTime::fromString(value, "%Y:%m:%d %H:%M:%S");
-            if (!dt.isValid()) {
-                kWarning() << "Invalid date in exif header of" << path;
-                return false;
-            }
-
-            realTime = dt;
-            return true;
-        } catch (const Exiv2::Error& error) {
-            kWarning() << "Failed to read date from exif header of" << path << ". Error:" << error.what();
+        KDateTime dt = KDateTime::fromString(exifvalue, "%Y:%m:%d %H:%M:%S");
+        if (!dt.isValid()) {
+            kWarning() << "Invalid date in exif header of" << path;
             return false;
         }
+
+        realTime = dt;
+        return true;
     }
 };
 

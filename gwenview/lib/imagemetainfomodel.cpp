@@ -28,9 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <KFileItem>
 #include <KGlobal>
 #include <KLocale>
-
-// Exiv2
-#include <exiv2/exiv2.hpp>
+#include <KExiv2>
 
 // Local
 
@@ -245,53 +243,6 @@ struct ImageMetaInfoModelPrivate
         group->addEntry("General.ImageSize", i18nc("@item:intable", "Image Size"), QString());
         group->addEntry("General.Comment", i18nc("@item:intable", "Comment"), QString());
     }
-
-    template <class Container, class Iterator>
-    void fillExivGroup(const QModelIndex& parent, MetaInfoGroup* group, const Container& container)
-    {
-        // key aren't always unique (for example, "Iptc.Application2.Keywords"
-        // may appear multiple times) so we can't know how many rows we will
-        // insert before going through them. That's why we create a hash
-        // before.
-        typedef QHash<QString, MetaInfoGroup::Entry*> EntryHash;
-        EntryHash hash;
-
-        Iterator
-        it = container.begin(),
-        end = container.end();
-
-        for (; it != end; ++it) {
-            try {
-                // Skip metadatum if its tag is an hex number
-                if (it->tagName().substr(0, 2) == "0x") {
-                    continue;
-                }
-                QString key = QString::fromUtf8(it->key().c_str());
-                QString label = QString::fromLocal8Bit(it->tagLabel().c_str());
-                std::ostringstream stream;
-                stream << *it;
-                QString value = QString::fromLocal8Bit(stream.str().c_str());
-
-                EntryHash::iterator hashIt = hash.find(key);
-                if (hashIt != hash.end()) {
-                    hashIt.value()->appendValue(value);
-                } else {
-                    hash.insert(key, new MetaInfoGroup::Entry(key, label, value));
-                }
-            } catch (const Exiv2::Error& error) {
-                kWarning() << "Failed to read some meta info:" << error.what();
-            }
-        }
-
-        if (hash.isEmpty()) {
-            return;
-        }
-        q->beginInsertRows(parent, 0, hash.size() - 1);
-        Q_FOREACH(MetaInfoGroup::Entry * entry, hash) {
-            group->addEntry(entry);
-        }
-        q->endInsertRows();
-    }
 };
 
 ImageMetaInfoModel::ImageMetaInfoModel()
@@ -320,6 +271,57 @@ void ImageMetaInfoModel::setUrl(const KUrl& url)
     d->setGroupEntryValue(GeneralGroup, "General.Name", item.name());
     d->setGroupEntryValue(GeneralGroup, "General.Size", sizeString);
     d->setGroupEntryValue(GeneralGroup, "General.Time", item.timeString());
+
+    KExiv2 kexiv2(url.path());
+    const KExiv2::DataMap kexiv2datamap = kexiv2.data();
+    QList<QByteArray> exifkeys;
+    QList<QByteArray> iptckeys;
+    QList<QByteArray> xmpkeys;
+    foreach (const QByteArray &kexiv2key, kexiv2datamap.keys()) {
+        if (kexiv2key.startsWith("Exif.")) {
+            exifkeys.append(kexiv2key);
+        } else if (kexiv2key.startsWith("Xmp.")) {
+            iptckeys.append(kexiv2key);
+        } else if (kexiv2key.startsWith("Iptc.")) {
+            xmpkeys.append(kexiv2key);
+        } else {
+            kWarning() << "Unknown Exif2 key" << kexiv2key;
+        }
+    }
+
+    MetaInfoGroup* exifGroup = d->mMetaInfoGroupVector[ExifGroup];
+    MetaInfoGroup* iptcGroup = d->mMetaInfoGroupVector[IptcGroup];
+    MetaInfoGroup* xmpGroup  = d->mMetaInfoGroupVector[XmpGroup];
+    QModelIndex exifIndex = index(ExifGroup, 0);
+    QModelIndex iptcIndex = index(IptcGroup, 0);
+    QModelIndex xmpIndex  = index(XmpGroup, 0);
+    d->clearGroup(exifGroup, exifIndex);
+    d->clearGroup(iptcGroup, iptcIndex);
+    d->clearGroup(xmpGroup,  xmpIndex);
+
+    if (!exifkeys.isEmpty()) {
+        beginInsertRows(exifIndex, 0, exifkeys.size() - 1);
+        foreach (const QByteArray &exifkey, exifkeys) {
+            exifGroup->addEntry(exifkey, kexiv2.label(exifkey), kexiv2datamap.value(exifkey));
+        }
+        endInsertRows();
+    }
+
+    if (!iptckeys.isEmpty()) {
+        beginInsertRows(iptcIndex, 0, iptckeys.size() - 1);
+        foreach (const QByteArray &iptckey, iptckeys) {
+            iptcGroup->addEntry(iptckey, kexiv2.label(iptckey), kexiv2datamap.value(iptckey));
+        }
+        endInsertRows();
+    }
+
+    if (!xmpkeys.isEmpty()) {
+        beginInsertRows(xmpIndex, 0, xmpkeys.size() - 1);
+        foreach (const QByteArray &xmpkey, xmpkeys) {
+            xmpGroup->addEntry(xmpkey, kexiv2.label(xmpkey), kexiv2datamap.value(xmpkey));
+        }
+        endInsertRows();
+    }
 }
 
 void ImageMetaInfoModel::setImageSize(const QSize& size)
@@ -342,40 +344,6 @@ void ImageMetaInfoModel::setImageSize(const QSize& size)
         imageSize = '-';
     }
     d->setGroupEntryValue(GeneralGroup, "General.ImageSize", imageSize);
-}
-
-void ImageMetaInfoModel::setExiv2Image(const Exiv2::Image* image)
-{
-    MetaInfoGroup* exifGroup = d->mMetaInfoGroupVector[ExifGroup];
-    MetaInfoGroup* iptcGroup = d->mMetaInfoGroupVector[IptcGroup];
-    MetaInfoGroup* xmpGroup  = d->mMetaInfoGroupVector[XmpGroup];
-    QModelIndex exifIndex = index(ExifGroup, 0);
-    QModelIndex iptcIndex = index(IptcGroup, 0);
-    QModelIndex xmpIndex  = index(XmpGroup, 0);
-    d->clearGroup(exifGroup, exifIndex);
-    d->clearGroup(iptcGroup, iptcIndex);
-    d->clearGroup(xmpGroup,  xmpIndex);
-
-    if (!image) {
-        return;
-    }
-
-    d->setGroupEntryValue(GeneralGroup, "General.Comment", QString::fromUtf8(image->comment().c_str()));
-
-    if (image->checkMode(Exiv2::mdExif) & Exiv2::amRead) {
-        const Exiv2::ExifData& exifData = image->exifData();
-        d->fillExivGroup<Exiv2::ExifData, Exiv2::ExifData::const_iterator>(exifIndex, exifGroup, exifData);
-    }
-
-    if (image->checkMode(Exiv2::mdIptc) & Exiv2::amRead) {
-        const Exiv2::IptcData& iptcData = image->iptcData();
-        d->fillExivGroup<Exiv2::IptcData, Exiv2::IptcData::const_iterator>(iptcIndex, iptcGroup, iptcData);
-    }
-
-    if (image->checkMode(Exiv2::mdXmp) & Exiv2::amRead) {
-        const Exiv2::XmpData& xmpData = image->xmpData();
-        d->fillExivGroup<Exiv2::XmpData, Exiv2::XmpData::const_iterator>(xmpIndex, xmpGroup, xmpData);
-    }
 }
 
 void ImageMetaInfoModel::getInfoForKey(const QString& key, QString* label, QString* value) const

@@ -47,7 +47,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include "documentjob.h"
 #include "documentloadedimpl.h"
 #include "emptydocumentimpl.h"
-#include "exiv2imageloader.h"
 #include "gvdebug.h"
 #include "imageutils.h"
 #include "orientation.h"
@@ -86,7 +85,6 @@ struct LoadingDocumentImplPrivate
     QByteArray mData;
     QByteArray mFormat;
     QSize mImageSize;
-    Exiv2::Image::AutoPtr mExiv2Image;
     QImage mImage;
 
     /**
@@ -201,11 +199,6 @@ struct LoadingDocumentImplPrivate
 
         LOG("mFormat" << mFormat);
         GV_RETURN_VALUE_IF_FAIL(!mFormat.isEmpty(), false);
-
-        Exiv2ImageLoader loader;
-        if (loader.load(mData)) {
-            mExiv2Image = loader.popImage();
-        }
 
         LOG("mImageSize" << mImageSize);
 
@@ -416,7 +409,6 @@ void LoadingDocumentImpl::slotMetaInfoLoaded()
 
     setDocumentFormat(d->mFormat);
     setDocumentImageSize(d->mImageSize);
-    setDocumentExiv2Image(d->mExiv2Image);
 
     d->mMetaInfoLoaded = true;
     emit metaInfoLoaded();

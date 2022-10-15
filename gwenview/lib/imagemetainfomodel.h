@@ -32,11 +32,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 class KUrl;
 
-namespace Exiv2
-{
-class Image;
-}
-
 namespace Gwenview
 {
 
@@ -50,7 +45,6 @@ public:
 
     void setUrl(const KUrl&);
     void setImageSize(const QSize&);
-    void setExiv2Image(const Exiv2::Image*);
 
     QString keyForIndex(const QModelIndex&) const;
     void getInfoForKey(const QString& key, QString* label, QString* value) const;

@@ -1,6 +1,5 @@
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/..
-    ${EXIV2_INCLUDE_DIR}
     ${LIBKONQ_INCLUDE_DIR}
     # For lib/gwenviewconfig.h
     ${CMAKE_CURRENT_BINARY_DIR}/..

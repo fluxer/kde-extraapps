@@ -176,7 +176,6 @@ void Document::reload()
     d->mSize = QSize();
     d->mImage = QImage();
     d->mDownSampledImageMap.clear();
-    d->mExiv2Image.reset();
     d->mKind = MimeTypeUtils::KIND_UNKNOWN;
     d->mFormat = QByteArray();
     d->mImageMetaInfoModel.setUrl(d->mUrl);
@@ -388,13 +387,6 @@ bool Document::isModified() const
 AbstractDocumentEditor* Document::editor()
 {
     return d->mImpl->editor();
-}
-
-void Document::setExiv2Image(Exiv2::Image::AutoPtr image)
-{
-    d->mExiv2Image = image;
-    d->mImageMetaInfoModel.setExiv2Image(d->mExiv2Image.get());
-    emit metaInfoUpdated();
 }
 
 void Document::setDownSampledImage(const QImage& image, int invertedZoom)

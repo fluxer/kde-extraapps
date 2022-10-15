@@ -77,11 +77,6 @@ void AbstractDocumentImpl::setDocumentKind(MimeTypeUtils::Kind kind)
     d->mDocument->setKind(kind);
 }
 
-void AbstractDocumentImpl::setDocumentExiv2Image(Exiv2::Image::AutoPtr image)
-{
-    d->mDocument->setExiv2Image(image);
-}
-
 void AbstractDocumentImpl::setDocumentDownSampledImage(const QImage& image, int invertedZoom)
 {
     d->mDocument->setDownSampledImage(image, invertedZoom);
