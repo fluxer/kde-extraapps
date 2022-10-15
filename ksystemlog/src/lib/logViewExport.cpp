@@ -85,10 +85,9 @@ void LogViewExport::sendMail() {
 	//const QString &   bcc,
 	//const QString &   subject,
 	//const QString &   body,
-	//const QString &   messageFile,
 	//const QStringList &   attachURLs,
 	//const QCString &   startup_id
-	KToolInvocation::invokeMailer(QLatin1String( "" ), QLatin1String( "" ), QLatin1String( "" ), i18n("Log Lines of my problem"), body, QLatin1String( "" ), QStringList(), kapp->startupId());
+	KToolInvocation::invokeMailer(QLatin1String( "" ), QLatin1String( "" ), QLatin1String( "" ), i18n("Log Lines of my problem"), body, QStringList(), kapp->startupId());
 }
 
 void LogViewExport::printSelection() {
