@@ -175,15 +175,7 @@ QString PasteMacroExpander::password(const QString& args)
     }
 
     const int setSize = chars.count();
-    const int top = (RAND_MAX / setSize) * setSize;
     for (int i = 0; i < charCount; ++i) {
-        // to prevent modulo bias, discard random numbers at the
-        // 'top end' of INT_MAX
-        int rand = -1;
-        do {
-            rand = KRandom::random();
-        } while (rand >= top);
-
         result += chars[KRandom::randomMax(setSize)];
     }
     //kDebug() << result;
