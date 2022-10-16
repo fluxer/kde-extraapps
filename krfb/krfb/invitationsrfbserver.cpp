@@ -33,6 +33,20 @@
 #include <KRandom>
 #include <KStringHandler>
 
+static QString obscurePass(const QString &password)
+{
+    const QByteArray passwordbytes = password.toAscii();
+    const QByteArray resultbytes = passwordbytes.toBase64();
+    return QString::fromLatin1(resultbytes.constData(), resultbytes.size());
+}
+
+static QString unobscurePass(const QString &password)
+{
+    const QByteArray passwordbytes = password.toLatin1();
+    const QByteArray resultbytes = QByteArray::fromBase64(passwordbytes);
+    return QString::fromAscii(resultbytes.constData(), resultbytes.size());
+}
+
 //static
 InvitationsRfbServer *InvitationsRfbServer::instance;
 
@@ -65,15 +79,13 @@ void InvitationsRfbServer::init()
         KSharedConfigPtr config = KGlobal::config();
         KConfigGroup krfbConfig(config,"Security");
 
-        desktopPassword = KStringHandler::obscure(krfbConfig.readEntry(
-                "desktopPassword", QString()));
+        desktopPassword = unobscurePass(krfbConfig.readEntry("desktopPassword", QString()));
         if(!desktopPassword.isEmpty()) {
             instance->m_desktopPassword = desktopPassword;
             emit instance->passwordChanged(instance->m_desktopPassword);
         }
 
-        unattendedPassword = KStringHandler::obscure(krfbConfig.readEntry(
-                "unattendedPassword", QString()));
+        unattendedPassword = unobscurePass(krfbConfig.readEntry("unattendedPassword", QString()));
         if(!unattendedPassword.isEmpty()) {
             instance->m_unattendedPassword = unattendedPassword;
         }
@@ -152,12 +164,9 @@ InvitationsRfbServer::~InvitationsRfbServer()
             m_passwdStore->storePasswd("desktopSharingPassword", m_desktopPassword);
             m_passwdStore->storePasswd("unattendedAccessPassword", m_unattendedPassword);
     } else {
-        krfbConfig.writeEntry("desktopPassword",
-                KStringHandler::obscure(m_desktopPassword));
-        krfbConfig.writeEntry("unattendedPassword",
-                KStringHandler::obscure(m_unattendedPassword));
-        krfbConfig.writeEntry("allowUnattendedAccess",
-                m_allowUnattendedAccess);
+        krfbConfig.writeEntry("desktopPassword", obscurePass(m_desktopPassword));
+        krfbConfig.writeEntry("unattendedPassword", obscurePass(m_unattendedPassword));
+        krfbConfig.writeEntry("allowUnattendedAccess", m_allowUnattendedAccess);
     }
 }
 
