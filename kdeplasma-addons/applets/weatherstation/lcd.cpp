@@ -182,7 +182,6 @@ class LCD::Private
 
             doc.setContent(device);
             QList<QDomNodeList> lists;
-            QRegExp rx("fill:(#[0-9]+)");
             int pos;
             lists << doc.elementsByTagName("g");
             lists << doc.elementsByTagName("path");
