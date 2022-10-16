@@ -64,13 +64,13 @@ void InvitationsRfbServer::init()
     QString desktopPassword;
     QString unattendedPassword;
     if ( !instance->m_passwdStore->openStore() ) {
-        desktopPassword = instance->m_passwdStore->getPasswd("desktopSharingPassword");
+        desktopPassword = instance->m_passwdStore->getPasswd(KPasswdStore::makeKey("desktopSharingPassword"));
         if (!desktopPassword.isEmpty()) {
             instance->m_desktopPassword = desktopPassword;
             emit instance->passwordChanged(instance->m_desktopPassword);
         }
 
-        unattendedPassword = instance->m_passwdStore->getPasswd("unattendedAccessPassword");
+        unattendedPassword = instance->m_passwdStore->getPasswd(KPasswdStore::makeKey("unattendedAccessPassword"));
         if (!unattendedPassword.isEmpty()) {
             instance->m_unattendedPassword = unattendedPassword;
         }
@@ -161,8 +161,8 @@ InvitationsRfbServer::~InvitationsRfbServer()
     KConfigGroup krfbConfig(config,"Security");
     krfbConfig.writeEntry("allowUnattendedAccess",m_allowUnattendedAccess);
     if (m_passwdStore && m_passwdStore->openStore()) {
-            m_passwdStore->storePasswd("desktopSharingPassword", m_desktopPassword);
-            m_passwdStore->storePasswd("unattendedAccessPassword", m_unattendedPassword);
+            m_passwdStore->storePasswd(KPasswdStore::makeKey("desktopSharingPassword"), m_desktopPassword);
+            m_passwdStore->storePasswd(KPasswdStore::makeKey("unattendedAccessPassword"), m_unattendedPassword);
     } else {
         krfbConfig.writeEntry("desktopPassword", obscurePass(m_desktopPassword));
         krfbConfig.writeEntry("unattendedPassword", obscurePass(m_unattendedPassword));
