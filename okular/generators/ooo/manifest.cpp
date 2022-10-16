@@ -462,7 +462,7 @@ QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fil
   if ( !m_init ) {
     KMessageBox::error( 0, i18n("This document is encrypted but decryptor could not be initialized") );
     // in the hope that it wasn't really encrypted...
-    return QByteArray( fileData );
+    return fileData;
   }
 
   QByteArray decryptedData;
@@ -476,7 +476,7 @@ QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fil
   if( !decompresserDevice ) {
     kDebug(OooDebug) << "Couldn't create decompressor";
     // hopefully it isn't compressed then!
-    return QByteArray( fileData );
+    return fileData;
   }
 
   static_cast<KFilterDev*>( decompresserDevice )->setSkipHeaders( );
@@ -489,6 +489,6 @@ QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fil
   // TODO: This should have a proper parent
   KMessageBox::error( 0, i18n("This document is encrypted, but Okular was compiled without crypto support. This document will probably not open.") );
   // this is equivalent to what happened before all this Manifest stuff :-)
-  return QByteArray( fileData );
+  return fileData;
 #endif
 }
