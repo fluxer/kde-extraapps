@@ -56,7 +56,7 @@ class LCD::Private
         qreal xScale;
         qreal yScale;
 
-        Private(LCD* lcd) : l(lcd), dirty(false)
+        Private(LCD* lcd) : l(lcd), dirty(false), xScale(1.0), yScale(1.0)
         {
             // http://en.wikipedia.org/wiki/Seven-segment_display_character_representations
             if (sevenSegmentDigits.isEmpty()) {
