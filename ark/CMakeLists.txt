@@ -23,10 +23,10 @@ set_package_properties(LibKonq PROPERTIES
     PURPOSE "Need to integrate in konqueror"
 )
 
-kde4_optional_find_package(ZLIB)
-set_package_properties(ZLIB PROPERTIES
-    DESCRIPTION "General purpose data compression library"
-    URL "http://www.zlib.net"
+kde4_optional_find_package(LibDeflate)
+set_package_properties(LibDeflate PROPERTIES
+    DESCRIPTION "Heavily optimized library for DEFLATE/zlib/gzip compression and decompression"
+    URL "https://github.com/ebiggers/libdeflate"
     PURPOSE "Required for the .gz format support in Ark"
 )
 

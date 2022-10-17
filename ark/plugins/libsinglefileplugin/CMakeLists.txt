@@ -9,7 +9,7 @@ set(SUPPORTED_LIBSINGLEFILE_MIMETYPES "${SUPPORTED_LIBSINGLEFILE_MIMETYPES}appli
 #
 # GZip files
 #
-if (ZLIB_FOUND)
+if (LIBDEFLATE_FOUND)
     set(SUPPORTED_LIBSINGLEFILE_MIMETYPES "${SUPPORTED_LIBSINGLEFILE_MIMETYPES}application/x-gzip;")
 
     set(kerfuffle_libgz_SRCS gzplugin.cpp ${kerfuffle_singlefile_SRCS})
