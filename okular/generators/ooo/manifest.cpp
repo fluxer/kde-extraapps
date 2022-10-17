@@ -14,7 +14,7 @@
 #include <QCryptographicHash>
 #include <qxmlstream.h>
 
-#include <KFilterDev>
+#include <KDecompressor>
 #include <KLocale>
 #include <KMessageBox>
 
@@ -472,18 +472,15 @@ QByteArray Manifest::decryptFile( const QString &filename, const QByteArray &fil
     return QByteArray();
   }
 
-  QIODevice *decompresserDevice = KFilterDev::device( new QBuffer( &decryptedData, 0 ), "application/x-gzip", true );
-  if( !decompresserDevice ) {
-    kDebug(OooDebug) << "Couldn't create decompressor";
+  KDecompressor kdecompressor;
+  kdecompressor.setType(KDecompressor::TypeDeflate);
+  if( !kdecompressor.process(decryptedData) ) {
+    kDebug(OooDebug) << kdecompressor.errorString();
     // hopefully it isn't compressed then!
     return fileData;
   }
 
-  static_cast<KFilterDev*>( decompresserDevice )->setSkipHeaders( );
-
-  decompresserDevice->open( QIODevice::ReadOnly );
-
-  return decompresserDevice->readAll();
+  return kdecompressor.result();
 
 #else
   // TODO: This should have a proper parent

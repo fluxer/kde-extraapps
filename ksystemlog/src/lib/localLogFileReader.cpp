@@ -22,11 +22,12 @@
 #include "localLogFileReader.h"
 
 #include <QMutex>
+#include <QBuffer>
 #include <QFile>
 
 #include <kdirwatch.h>
 #include <klocale.h>
-#include <kfilterdev.h>
+#include <kdecompressor.h>
 #include <kmimetype.h>
 #include <kurl.h>
 
@@ -143,14 +144,33 @@ QIODevice* LocalLogFileReader::open() {
 	else {
 		logDebug() << "Using KFilterDev input device" << endl;
 
-		inputDevice = KFilterDev::deviceForFile(d->logFile.url().path(), mimeType);
+		const QString logFilePath = d->logFile.url().path();
+		KDecompressor kdecompressor;
+		if (!kdecompressor.setType(KDecompressor::typeForMime(mimeType))
+		    && !kdecompressor.setType(KDecompressor::typeForFile(logFilePath))) {
+			QString message(i18n("Compressed file format is not supported '%1'.", logFilePath));
+			emit errorOccured(i18n("Unable to open Compressed File"), message);
+			emit statusBarChanged(message);
+			return NULL;
+		}
 
-		if (inputDevice == NULL) {
-			QString message(i18n("Unable to uncompress the '%2' format of '%1'.", d->logFile.url().path(), mimeType));
+		QFile logFileDevice(logFilePath);
+		if (!logFileDevice.open(QFile::ReadOnly)) {
+			QString message(i18n("Unable to open compressed file '%1': %2.", logFilePath, logFileDevice.errorString()));
+			emit errorOccured(i18n("Unable to open Compressed File"), message);
+			emit statusBarChanged(message);
+			return NULL;
+		}
+
+		if (kdecompressor.process(logFileDevice.readAll())) {
+			QString message(i18n("Unable to uncompress '%1': '%2'.", logFilePath, kdecompressor.errorString()));
 			emit errorOccured(i18n("Unable to Uncompress File"), message);
 			emit statusBarChanged(message);
 			return NULL;
 		}
+
+		inputDevice = new QBuffer();
+		qobject_cast<QBuffer*>(inputDevice)->setData(kdecompressor.result());
 	}
 
 	if ( ! inputDevice->open( QIODevice::ReadOnly ) ) {

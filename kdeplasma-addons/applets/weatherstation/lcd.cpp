@@ -26,7 +26,7 @@
 #include <QtXml/qdom.h>
 #include <QCursor>
 #include <KDebug>
-#include <KFilterDev>
+#include <KDecompressor>
 #include <Plasma/Theme>
 #include <Plasma/Svg>
 
@@ -178,9 +178,14 @@ class LCD::Private
 
         void parseXml()
         {
-            QIODevice *device = KFilterDev::deviceForFile(content, "application/x-gzip");
+            KDecompressor kdecompressor;
+            if (!kdecompressor.setType(KDecompressor::TypeGZip)
+                || !kdecompressor.process(content.toAscii())) {
+                kWarning() << "Could not decompress content" << kdecompressor.errorString();
+                return;
+            }
 
-            doc.setContent(device);
+            doc.setContent(kdecompressor.result());
             QList<QDomNodeList> lists;
             int pos;
             lists << doc.elementsByTagName("g");
@@ -209,7 +214,6 @@ class LCD::Private
             }
 
             //kDebug() << groups;
-            delete device;
         }
 };
 

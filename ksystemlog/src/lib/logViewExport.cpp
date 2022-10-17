@@ -26,13 +26,13 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPen>
+#include <QFile>
 
 #include <kapplication.h>
 #include <klocale.h>
 #include <ktoolinvocation.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
-#include <kfilterdev.h>
 #include <kdeprintdialog.h>
 
 #include "logging.h"
@@ -238,7 +238,7 @@ void LogViewExport::fileSave() {
 		return;
 	}
 
-	QIODevice* ioDev = KFilterDev::deviceForFile(filename);
+	QFile* ioDev = new QFile(filename);
 	if (ioDev->open(QIODevice::WriteOnly)) {
 		QTextStream stream(ioDev);
 

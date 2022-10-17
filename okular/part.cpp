@@ -57,8 +57,7 @@
 #include <ktogglefullscreenaction.h>
 #include <kio/job.h>
 #include <kicon.h>
-#include <kfilterdev.h>
-#include <kfilterbase.h>
+#include <kdecompressor.h>
 #include <kdeprintdialog.h>
 #include <kbookmarkmenu.h>
 #include <kpassworddialog.h>
@@ -195,11 +194,10 @@ static QString compressedMimeFor( const QString& mime_to_check )
     const QString app_xz( QString::fromLatin1( "application/x-xz" ) );
     if ( compressedMimeMap.isEmpty() )
     {
-        std::unique_ptr< KFilterBase > f;
+        KDecompressor f;
         compressedMimeMap[ QString::fromLatin1( "image/x-gzeps" ) ] = app_gzip;
         // check we can read bzip2-compressed files
-        f.reset( KFilterBase::findFilterByMimeType( app_bzip ) );
-        if ( f.get() )
+        if ( f.setType( KDecompressor::typeForMime( app_bzip ) ) )
         {
             supportBzip = true;
             compressedMimeMap[ QString::fromLatin1( "application/x-bzpdf" ) ] = app_bzip;
@@ -208,8 +206,7 @@ static QString compressedMimeFor( const QString& mime_to_check )
             compressedMimeMap[ QString::fromLatin1( "image/x-bzeps" ) ] = app_bzip;
         }
         // check we can read XZ-compressed files
-        f.reset( KFilterBase::findFilterByMimeType( app_xz ) );
-        if ( f.get() )
+        if ( f.setType( KDecompressor::typeForMime( app_xz ) ) )
         {
             supportXz = true;
         }
@@ -2810,15 +2807,10 @@ bool Part::handleCompressed( QString &destpath, const QString &path, const QStri
         return false;
     }
 
-    // decompression filer
-    QIODevice* filterDev = KFilterDev::deviceForFile( path, compressedMimetype );
-    if (!filterDev)
-    {
-        delete newtempfile;
-        return false;
-    }
-
-    if ( !filterDev->open(QIODevice::ReadOnly) )
+    // decompression file
+    QFile pathfile(path);
+    KDecompressor kdecompressor;
+    if ( !pathfile.open(QFile::ReadOnly) || !kdecompressor.setType(KDecompressor::typeForMime(compressedMimetype)) )
     {
         KMessageBox::detailedError( widget(),
             i18n("<qt><strong>File Error!</strong> Could not open the file "
@@ -2830,22 +2822,11 @@ bool Part::handleCompressed( QString &destpath, const QString &path, const QStri
             "right-click on the file in the Dolphin "
             "file manager and then choose the 'Properties' tab.</qt>"));
 
-        delete filterDev;
         delete newtempfile;
         return false;
     }
 
-    char buf[65536];
-    int read = 0, wrtn = 0;
-
-    while ((read = filterDev->read(buf, sizeof(buf))) > 0)
-    {
-        wrtn = newtempfile->write(buf, read);
-        if ( read != wrtn )
-            break;
-    }
-    delete filterDev;
-    if ((read != 0) || (newtempfile->size() == 0))
+    if (!kdecompressor.process(pathfile.readAll()))
     {
         KMessageBox::detailedError(widget(),
             i18n("<qt><strong>File Error!</strong> Could not uncompress "
@@ -2857,6 +2838,21 @@ bool Part::handleCompressed( QString &destpath, const QString &path, const QStri
         delete newtempfile;
         return false;
     }
+
+    const QByteArray uncompressed = kdecompressor.result();
+    if (newtempfile->write(uncompressed.constData(), uncompressed.size()) != uncompressed.size())
+    {
+        KMessageBox::detailedError(widget(),
+            i18n("<qt><strong>File Error!</strong> Could not write uncompressed data "
+            "the file <nobr><strong>%1</strong></nobr>. "
+            "The file will not be loaded.</qt>", path ),
+            i18n("<qt>This error typically occurs if the file is corrupt. "
+            "If you want to be sure, try to decompress the file manually "
+            "using command-line tools.</qt>"));
+        delete newtempfile;
+        return false;
+    }
+
     m_tempfile = newtempfile;
     destpath = m_tempfile->fileName();
     return true;

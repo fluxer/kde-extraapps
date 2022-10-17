@@ -33,7 +33,8 @@
 #include <QString>
 
 #include <KDebug>
-#include <KFilterDev>
+#include <KCompressor>
+#include <KDecompressor>
 #include <KLocale>
 
 LibSingleFileInterface::LibSingleFileInterface(QObject *parent, const QVariantList & args)
@@ -45,11 +46,12 @@ LibSingleFileInterface::~LibSingleFileInterface()
 {
 }
 
-bool LibSingleFileInterface::copyFiles(const QList<QVariant> & files, const QString & destinationDirectory, Kerfuffle::ExtractionOptions options)
+bool LibSingleFileInterface::copyFiles(const QList<QVariant> &files, const QString &destinationDirectory, Kerfuffle::ExtractionOptions options)
 {
     Q_UNUSED(files)
     Q_UNUSED(options)
 
+    const QString inputfile = filename();
     QString outputFileName = destinationDirectory;
     if (!destinationDirectory.endsWith(QLatin1Char('/'))) {
         outputFileName += QLatin1Char('/');
@@ -63,41 +65,43 @@ bool LibSingleFileInterface::copyFiles(const QList<QVariant> & files, const QStr
 
     kDebug() << "Extracting to" << outputFileName;
 
-    QFile outputFile(outputFileName);
-    if (!outputFile.open(QIODevice::WriteOnly)) {
-        kDebug() << "Failed to open output file" << outputFile.errorString();
-        emit error(i18nc("@info", "Ark could not extract <filename>%1</filename>.", outputFile.fileName()));
-
-        return false;
-    }
-
-    QIODevice *device = KFilterDev::deviceForFile(filename(), m_mimeType, false);
-    if (!device) {
-        kDebug() << "Could not create KFilterDev";
+    KDecompressor kdecompressor;
+    if (!kdecompressor.setType(KDecompressor::typeForMime(m_mimeType))
+        && !kdecompressor.setType(KDecompressor::typeForFile(filename()))) {
+        kDebug() << "Could not set KDecompressor type";
         emit error(i18nc("@info", "Ark could not open <filename>%1</filename> for extraction.", filename()));
 
         return false;
     }
 
-    device->open(QIODevice::ReadOnly);
-
-    qint64 bytesRead;
-    QByteArray dataChunk(1024*16, '\0');   // 16Kb
-
-    while (true) {
-        bytesRead = device->read(dataChunk.data(), dataChunk.size());
-
-        if (bytesRead == -1) {
-            emit error(i18nc("@info", "There was an error while reading <filename>%1</filename> during extraction.", filename()));
-            break;
-        } else if (bytesRead == 0) {
-            break;
-        }
-
-        outputFile.write(dataChunk.data(), bytesRead);
+    QFile inputdevice(inputfile);
+    if (!inputdevice.open(QFile::ReadOnly)) {
+        kDebug() << "Could not open input file";
+        emit error(i18n("Ark could not open <filename>%1</filename> for reading.", inputfile));
+        return false;
     }
 
-    delete device;
+    if (!kdecompressor.process(inputdevice.readAll())) {
+        kDebug() << "Could not process input";
+        emit error(i18n("Ark could not process <filename>%1</filename>.", inputfile));
+        return false;
+    }
+
+    QFile outputdevice(outputFileName);
+    if (!outputdevice.open(QIODevice::WriteOnly)) {
+        kDebug() << "Failed to open output file" << outputdevice.errorString();
+        emit error(i18nc("@info", "Ark could not open <filename>%1</filename> for writing.", outputFileName));
+
+        return false;
+    }
+
+    const QByteArray decompressed = kdecompressor.result();
+    if (outputdevice.write(decompressed.constData(), decompressed.size()) != decompressed.size()) {
+        kDebug() << "Could not write output file";
+        emit error(i18n("Ark could not write <filename>%1</filename>.", outputFileName));
+        QFile::remove(outputFileName); // in case of partial write
+        return false;
+    }
 
     return true;
 }
@@ -172,34 +176,40 @@ bool LibSingleFileInterface::addFiles(const QStringList & files, const Kerfuffle
     const QString inputfile = files.first();
     const QString outputfile = filename();
 
-    QFile inputdevice(inputfile);
-    if (!inputdevice.open(QFile::ReadOnly)) {
-        kDebug() << "Could not create QFile";
-        emit error(i18n("Ark could not open <filename>%1</filename> for reading.", inputfile));
-        return false;
-    }
-
-    QIODevice *device = KFilterDev::deviceForFile(outputfile);
-    if (!device) {
-        kDebug() << "Could not create KFilterDev";
+    KCompressor kcompressor;
+    if (!kcompressor.setType(KCompressor::typeForFile(outputfile))) {
+        kDebug() << "Could not set KCompressor type";
         emit error(i18n("Ark could not create filter."));
         return false;
     }
 
-    if (!device->open(QIODevice::WriteOnly)) {
-        kDebug() << "Could not open KFilterDev";
+    QFile inputdevice(inputfile);
+    if (!inputdevice.open(QFile::ReadOnly)) {
+        kDebug() << "Could not open input file";
+        emit error(i18n("Ark could not open <filename>%1</filename> for reading.", inputfile));
+        return false;
+    }
+
+    if (!kcompressor.process(inputdevice.readAll())) {
+        kDebug() << "Could not process input";
+        emit error(i18n("Ark could not process <filename>%1</filename>.", inputfile));
+        return false;
+    }
+
+    QFile outputdevice(outputfile);
+    if (!outputdevice.open(QFile::WriteOnly)) {
+        kDebug() << "Could not open output file";
         emit error(i18n("Ark could not open <filename>%1</filename> for writing.", outputfile));
         return false;
     }
 
-    const QByteArray inputdata = inputdevice.readAll();
-    if (device->write(inputdata) != inputdata.size()) {
-        kDebug() << "Could not write output";
+    const QByteArray compressed = kcompressor.result();
+    if (outputdevice.write(compressed.constData(), compressed.size()) != compressed.size()) {
+        kDebug() << "Could not write output file";
         emit error(i18n("Ark could not write <filename>%1</filename>.", outputfile));
         QFile::remove(outputfile); // in case of partial write
         return false;
     }
-    device->close();
 
     return true;
 }
