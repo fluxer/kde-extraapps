@@ -75,7 +75,7 @@ AddDialog::AddDialog(const QStringList& itemsToAdd,
     if (itemsToAdd.size() == 1) {
         const QFileInfo fileInfo(itemsToAdd.first());
         const QString fileName =
-            fileInfo.isDir() ? fileInfo.dir().dirName() : fileInfo.baseName();
+            fileInfo.isDir() ? fileInfo.dir().dirName() : fileInfo.fileName();
 
         // #272914: Add an extension when it is present, otherwise KFileDialog
         // will not automatically add it as baseFileName is a file which
