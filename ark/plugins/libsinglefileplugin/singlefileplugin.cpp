@@ -67,9 +67,9 @@ bool LibSingleFileInterface::copyFiles(const QList<QVariant> &files, const QStri
 
     KDecompressor kdecompressor;
     if (!kdecompressor.setType(KDecompressor::typeForMime(m_mimeType))
-        && !kdecompressor.setType(KDecompressor::typeForFile(filename()))) {
+        && !kdecompressor.setType(KDecompressor::typeForFile(inputfile))) {
         kDebug() << "Could not set KDecompressor type";
-        emit error(i18nc("@info", "Ark could not open <filename>%1</filename> for extraction.", filename()));
+        emit error(i18nc("@info", "Ark could not open <filename>%1</filename> for extraction.", inputfile));
 
         return false;
     }
