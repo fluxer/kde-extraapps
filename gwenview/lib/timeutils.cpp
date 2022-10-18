@@ -73,12 +73,15 @@ struct CacheItem
             << QByteArray("Exif.Photo.DateTimeDigitized")
             << QByteArray("Exif.Image.DateTime");
         QString exifvalue;
-        foreach (const KExiv2Property &kexiv2property, kexiv2.metadata()) {
-            if (datelst.contains(kexiv2property.name)) {
-                exifvalue = kexiv2property.value;
-                if (!exifvalue.isEmpty()) {
+        foreach (const QByteArray &date, datelst) {
+            foreach (const KExiv2Property &kexiv2property, kexiv2.metadata()) {
+                if (kexiv2property.name == date) {
+                    exifvalue = kexiv2property.value;
                     break;
                 }
+            }
+            if (!exifvalue.isEmpty()) {
+                break;
             }
         }
         if (exifvalue.isEmpty()) {
