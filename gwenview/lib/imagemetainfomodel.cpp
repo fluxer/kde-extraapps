@@ -277,6 +277,15 @@ void ImageMetaInfoModel::setUrl(const KUrl& url)
     KExiv2PropertyList iptcprops;
     KExiv2PropertyList xmpprops;
     foreach (const KExiv2Property &kexiv2property, kexiv2.metadata()) {
+        // there is vendor specific metadata that is not supposed to be user-visible
+        if (kexiv2property.value.isEmpty() || kexiv2property.label.isEmpty()) {
+            kDebug() << "Empty value or label, skipping" << kexiv2property.name;
+            continue;
+        } else if (kexiv2property.label.startsWith("0x")) {
+            kDebug() << "Hex label, skipping" << kexiv2property.name;
+            continue;
+        }
+
         if (kexiv2property.name.startsWith("Exif.")) {
             exifprops.append(kexiv2property);
         } else if (kexiv2property.name.startsWith("Xmp.")) {
@@ -284,7 +293,7 @@ void ImageMetaInfoModel::setUrl(const KUrl& url)
         } else if (kexiv2property.name.startsWith("Iptc.")) {
             xmpprops.append(kexiv2property);
         } else {
-            kWarning() << "Unknown Exif2 key" << kexiv2property.name;
+            kWarning() << "Unknown key" << kexiv2property.name;
         }
     }
 
