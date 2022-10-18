@@ -18,6 +18,7 @@ if (LIBDEFLATE_FOUND)
 
     target_link_libraries(kerfuffle_libgz
         ${KDE4_KDECORE_LIBS}
+        ${KDE4_KARCHIVE_LIBS}
         kerfuffle
     )
 
@@ -45,6 +46,7 @@ if (BZIP2_FOUND)
 
     target_link_libraries(kerfuffle_libbz2
         ${KDE4_KDECORE_LIBS}
+        ${KDE4_KARCHIVE_LIBS}
         kerfuffle
     )
 
@@ -71,6 +73,7 @@ if (LIBLZMA_FOUND)
 
     target_link_libraries(kerfuffle_libxz
         ${KDE4_KDECORE_LIBS}
+        ${KDE4_KARCHIVE_LIBS}
         kerfuffle
     )
 
