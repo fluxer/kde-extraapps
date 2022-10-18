@@ -121,8 +121,7 @@ void ArkViewer::view(const QString& fileName, QWidget *parent)
                 KGuiItem(i18nc("@action:button", "Preview as Text"), KIcon(QLatin1String("text-plain"))),
                 KStandardGuiItem::cancel(),
                 QString::fromLatin1("PreviewAsText_%1").arg(mimeType->name()));
-        }
-        else {
+        } else {
             // No defined MIME type, or the default application/octet-stream.
             // There is still a possibility that it could be viewable as plain
             // text, so ask the user.  Not the same as the message/question
@@ -138,8 +137,7 @@ void ArkViewer::view(const QString& fileName, QWidget *parent)
 
         if (response == KMessageBox::Cancel) {
             viewInInternalViewer = false;
-        }
-        else {						// set for viewer later
+        } else { // set for viewer later
             mimeType = KMimeType::mimeType(QLatin1String("text/plain"));
         }
     }
@@ -152,8 +150,7 @@ void ArkViewer::view(const QString& fileName, QWidget *parent)
             // remove the temporary file in dialogClosed().  So there
             // is no more to do here.
             return;
-        }
-        else {
+        } else {
             KMessageBox::sorry(parent, i18n("The internal viewer cannot preview this file."));
             delete internalViewer;
         }
@@ -248,18 +245,14 @@ KService::Ptr ArkViewer::getViewer(const KMimeType::Ptr &mimeType)
     }
 
     // Try to get a read-only kpart for the internal viewer
-    KService::List offers = KMimeTypeTrader::self()->query(mimeType->name(), QLatin1String("KParts/ReadOnlyPart"));
+    KService::Ptr offer = KMimeTypeTrader::self()->preferredService(mimeType->name(), QLatin1String("KParts/ReadOnlyPart"));
 
     // If we can't find a kpart, try to get an external application
-    if (offers.size() == 0) {
-        offers = KMimeTypeTrader::self()->query(mimeType->name(), QLatin1String("Application"));
+    if (!offer) {
+        offer = KMimeTypeTrader::self()->preferredService(mimeType->name(), QLatin1String("Application"));
     }
 
-    if (offers.size() > 0) {
-        return offers.first();
-    } else {
-        return KService::Ptr();
-    }
+    return offer;
 }
 
 
