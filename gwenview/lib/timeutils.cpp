@@ -82,7 +82,7 @@ struct CacheItem
             }
         }
         if (exifvalue.isEmpty()) {
-            kWarning() << "No date in exif header of" << path;
+            kDebug() << "No exif date in" << path;
             return false;
         }
 
