@@ -243,7 +243,7 @@ struct LoadingDocumentImplPrivate
                 return;
             }
             /*
-             * QImageReader is not really helpful to detect animated gif:
+             * QImageReader is not really helpful to detect animated images:
              * - QImageReader::imageCount() returns 0
              * - QImageReader::nextImageDelay() may return something > 0 if the
              *   image consists of only one frame but includes a "Graphic
@@ -251,7 +251,7 @@ struct LoadingDocumentImplPrivate
              *   animation) (Bug #185523)
              *
              * Decoding the next frame is the only reliable way I found to
-             * detect an animated gif
+             * detect an animated images
              */
             LOG("May be an animated image. delay:" << reader.nextImageDelay());
             QImage nextImage;

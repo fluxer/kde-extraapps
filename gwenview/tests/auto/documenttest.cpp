@@ -114,9 +114,6 @@ void DocumentTest::testLoad()
             image = image.copy(poiRect);
             expectedImage = expectedImage.copy(poiRect);
         }
-        if (fileName == QLatin1String("4frames.gif")) {
-            QEXPECT_FAIL("", "Wonky GIF handler", Continue);
-        }
         QCOMPARE(image, expectedImage);
         QCOMPARE(QString(doc->format()), QString(expectedFormat));
     }
@@ -165,10 +162,7 @@ void DocumentTest::testLoad_data()
     // FIXME: Test svgz
 
     // Animated
-    testLoad_newRow("4frames.gif", "gif", MimeTypeUtils::KIND_IMAGE, true);
-    testLoad_newRow("1frame.gif", "gif", MimeTypeUtils::KIND_IMAGE, false);
-    testLoad_newRow("185523_1frame_with_graphic_control_extension.gif",
-                    "gif", MimeTypeUtils::KIND_IMAGE, false);
+    testLoad_newRow("butterfly.webp", "webp", MimeTypeUtils::KIND_IMAGE, true);
 }
 
 void DocumentTest::testLoadTwoPasses()
@@ -280,7 +274,7 @@ void DocumentTest::testLoadRemote()
 
 void DocumentTest::testLoadAnimated()
 {
-    KUrl srcUrl = urlForTestFile("40frames.gif");
+    KUrl srcUrl = urlForTestFile("butterfly.webp");
     Document::Ptr doc = DocumentFactory::instance()->load(srcUrl);
     QSignalSpy spy(doc.data(), SIGNAL(imageRectUpdated(QRect)));
     doc->startLoadingFullImage();
@@ -290,7 +284,7 @@ void DocumentTest::testLoadAnimated()
     // Test we do not receive imageRectUpdated() until animation is started
     // (the imageRectUpdated() is triggered by the loading of the first image)
     QTest::qWait(1000);
-    QCOMPARE(spy.count(), 0);
+    QCOMPARE(spy.count(), 1);
 
     // Test we now receive some imageRectUpdated()
     doc->startAnimation();

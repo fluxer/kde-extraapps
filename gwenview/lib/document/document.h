@@ -173,7 +173,7 @@ public:
     bool isEditable() const;
 
     /**
-     * Returns true if the image is animated (eg: gif or mng format)
+     * Returns true if the image is animated (eg: webp format)
      */
     bool isAnimated() const;
 
