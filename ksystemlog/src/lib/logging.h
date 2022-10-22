@@ -71,18 +71,8 @@
 
 #define LOG_PREFIX(logColor)	"" 
 
-#if !defined(KDE_NO_DEBUG_OUTPUT)
-	#define logDebug() kDebug(KSYSTEM_LOG_KDEBUG_ID) << LOG_PREFIX(LOG_DEBUG_COLOR)  
-#else  // KDE_NO_DEBUG_OUTPUT
-	#define logDebug() kDebug(KSYSTEM_LOG_KDEBUG_ID)
-#endif
-
-#if !defined(KDE_NO_WARNING_OUTPUT)
-	#define logWarning() kWarning(KSYSTEM_LOG_KDEBUG_ID) << LOG_PREFIX(LOG_WARNING_COLOR)
-#else  // KDE_NO_WARNING_OUTPUT
-	#define logWarning() kWarning(KSYSTEM_LOG_KDEBUG_ID)
-#endif
-
+#define logDebug() kDebug(KSYSTEM_LOG_KDEBUG_ID) << LOG_PREFIX(LOG_DEBUG_COLOR)
+#define logWarning() kWarning(KSYSTEM_LOG_KDEBUG_ID) << LOG_PREFIX(LOG_WARNING_COLOR)
 #define logError() kError(KSYSTEM_LOG_KDEBUG_ID) << LOG_PREFIX(LOG_ERROR_COLOR)
 #define logFatal() kFatal(KSYSTEM_LOG_KDEBUG_ID) << LOG_PREFIX(LOG_FATAL_COLOR)
 
