@@ -46,7 +46,7 @@
  * 
  */
 
-#define KSYSTEM_LOG_KDEBUG_ID 87400
+#define KSYSTEM_LOG_KDEBUG_ID 87500
 
 /**
  * Colored logging
