@@ -90,18 +90,6 @@ void purgeUserConfiguration()
         bool ok = KIO::NetAccess::del(KUrl::fromPath(confDir), 0);
         QVERIFY(ok);
     }
-
-    QFile kdebugrc(KStandardDirs::locateLocal("config", "kdebugrc"));
-    QVERIFY(kdebugrc.open(QIODevice::WriteOnly));
-    kdebugrc.write(
-        "DisableAll=true\n"
-        "InfoOutput=4\n"
-        "[gwenview]\n"
-        "InfoOutput=2\n"
-        "[gwenview_importer]\n"
-        "InfoOutput=2\n"
-        );
-    kClearDebugConfig();
 }
 
 static QImage simplifyFormats(const QImage& img)
