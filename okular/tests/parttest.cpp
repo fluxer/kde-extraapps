@@ -178,7 +178,6 @@ int main(int argc, char *argv[])
     setenv("KDEHOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test") ), 1);
     setenv("XDG_DATA_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/local") ), 1);
     setenv("XDG_CONFIG_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config") ), 1);
-    unsetenv("KDE_COLOR_DEBUG");
     QFile::remove(QDir::homePath() + QString::fromLatin1("/.kde-unit-test/share/config/qttestrc")); 
     // set to okular so that the part.rc file is found
     KAboutData aboutData( QByteArray("okular"), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") );
