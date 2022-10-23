@@ -14,9 +14,9 @@
 #include <qdir.h>
 #include <qimage.h>
 #include <qstring.h>
-#include <qtemporaryfile.h>
 
 #include <kdebug.h>
+#include <ktemporaryfile.h>
 
 #include "debug_p.h"
 
@@ -29,7 +29,7 @@ class Movie::Private
             : m_url( url ),
               m_rotation( Rotation0 ),
               m_playMode( PlayOnce ),
-              m_tmp( 0 ),
+              m_tmp( nullptr ),
               m_showControls( false ),
               m_autoPlay( false ),
               m_showPosterImage( false )
@@ -40,7 +40,7 @@ class Movie::Private
         QSize m_aspect;
         Rotation m_rotation;
         PlayMode m_playMode;
-        QTemporaryFile *m_tmp;
+        KTemporaryFile *m_tmp;
         QImage m_posterImage;
         bool m_showControls : 1;
         bool m_autoPlay : 1;
@@ -62,7 +62,7 @@ Movie::Movie( const QString& fileName, const QByteArray &data )
      * GStreamer backend). Storing the data in a temporary file works fine
      * though, not to mention, it releases much needed memory. (gamaral)
      */
-    d->m_tmp = new QTemporaryFile( QString( "%1/okrXXXXXX" ).arg( QDir::tempPath() ) );
+    d->m_tmp = new KTemporaryFile();
     if ( d->m_tmp->open() ) {
        d->m_tmp->write( data );
        d->m_tmp->flush();
