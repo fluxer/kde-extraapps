@@ -136,7 +136,6 @@ void Fifteen::startBoard()
 void Fifteen::shuffle()
 {
     // shuffle the array of pieces
-    qsrand(QTime::currentTime().msec());
     for (int i = m_size * m_size - 1; i > 0; i--) {
         // choose a random number such that 0 <= rand <= i
         int rand = KRandom::randomMax(i + 1);

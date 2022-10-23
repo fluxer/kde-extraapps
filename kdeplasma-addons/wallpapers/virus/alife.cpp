@@ -527,13 +527,8 @@ QPoint Alife::getNeighbour(int x, int y, int direction)
 
 void Alife::run(){
     mutex.lock();
-    QTime a = QTime::currentTime();
-    qsrand(a.msec());
-    
+
     virusMove();
-    
-    //QTime b = QTime::currentTime();
-    //qDebug() << "needed" << a.msecsTo(b);
 
     mutex.unlock();
 }
