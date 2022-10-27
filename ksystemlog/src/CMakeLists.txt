@@ -172,6 +172,12 @@ target_link_libraries(ksystemlog
 
 if(ENABLE_TESTING)
     add_library(ksystemlog_library SHARED ${ksystemlog_library_sources})
+    target_link_libraries(ksystemlog_library PUBLIC
+        ${KDE4_KIO_LIBS}
+        ${KDE4_KDEUI_LIBS}
+        ${KDE4_KFILE_LIBS}
+        ${KDE4_KARCHIVE_LIBS}
+    )
 endif()
 
 ########### Installation ###############

@@ -18,10 +18,6 @@ macro(ksystemlog_unit_tests)
 
         target_link_libraries(ksystemlog-${unitTest}
             ${QT_QTTEST_LIBRARY}
-            ${KDE4_KDEUI_LIBS}
-            ${KDE4_KIO_LIBS}
-            ${KDE4_KDECORE_LIBS}
-            ${KDE4_KFILE_LIBS}
             ksystemlog_library
         )
     endforeach(unitTest)
@@ -44,10 +40,6 @@ macro(ksystemlog_manual_tests)
 
         target_link_libraries(ksystemlog-${unitTest}
             ${QT_QTTEST_LIBRARY}
-            ${KDE4_KDEUI_LIBS}
-            ${KDE4_KIO_LIBS}
-            ${KDE4_KDECORE_LIBS}
-            ${KDE4_KFILE_LIBS}
             ksystemlog_library
         )
     endforeach(unitTest)
