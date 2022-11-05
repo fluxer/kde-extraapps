@@ -14,6 +14,7 @@
 
 #include <limits.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
 #if defined(Q_OS_FREEBSD)
 #include <sys/types.h>
@@ -465,28 +466,15 @@ qulonglong DocumentPrivate::getTotalMemory()
     if ( cachedValue )
         return cachedValue;
 
-#if defined(Q_OS_LINUX)
-    // if /proc/meminfo doesn't exist, return 128MB
-    QFile memFile( "/proc/meminfo" );
-    if ( !memFile.open( QIODevice::ReadOnly ) )
-        return (cachedValue = 134217728);
-
-    QTextStream readStream( &memFile );
-    while ( true )
-    {
-        QString entry = readStream.readLine();
-        if ( entry.isNull() ) break;
-        if ( entry.startsWith( "MemTotal:" ) )
-            return (cachedValue = (Q_UINT64_C(1024) * entry.section( ' ', -2, -2 ).toULongLong()));
-    }
-#elif defined(Q_OS_FREEBSD)
-    qulonglong physmem;
-    int mib[] = {CTL_HW, HW_PHYSMEM};
-    size_t len = sizeof( physmem );
-    if ( sysctl( mib, 2, &physmem, &len, NULL, 0 ) == 0 )
-        return (cachedValue = physmem);
+#if defined(_SC_PHYS_PAGES) && defined(_SC_PAGESIZE)
+    cachedValue = sysconf(_SC_PHYS_PAGES);
+    cachedValue *= sysconf(_SC_PAGESIZE);
+#else
+# warning getTotalMemory() not implemented
+    // 128MB
+    cachedValue = 134217728;
 #endif
-    return (cachedValue = 134217728);
+    return cachedValue;
 }
 
 qulonglong DocumentPrivate::getFreeMemory( qulonglong *freeSwap )
