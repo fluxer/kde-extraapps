@@ -642,7 +642,7 @@ void KSnapshot::performGrab()
         QPoint offset = wndGrab.lastWindowPosition();
         x = offset.x();
         y = offset.y();
-        qDebug() << "last window position is" << offset;
+        kDebug() << "last window position is" << offset;
     } else if ( mode() == WindowUnderCursor ) {
         snapshot = WindowGrabber::grabCurrent( includeDecorations() );
 
