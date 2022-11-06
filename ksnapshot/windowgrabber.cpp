@@ -151,6 +151,7 @@ Window windowUnderCursor( bool includeDecorations = true )
     XGrabServer( QX11Info::display() );
     XQueryPointer( QX11Info::display(), QX11Info::appRootWindow(), &root, &child,
            &rootX, &rootY, &winX, &winY, &mask );
+    XUngrabServer( QX11Info::display() );
 
     if( child == None ) {
         child = QX11Info::appRootWindow();
