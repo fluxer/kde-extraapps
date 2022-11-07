@@ -47,8 +47,8 @@
 #include "plasma/popupapplet.h"
 #include "plasma/theme.h"
 #include "plasma/view.h"
+#include "plasma/dialogshadows.h"
 #include "tooltip_p.h"
-#include "dialogshadows_p.h"
 
 using namespace Plasma;
 

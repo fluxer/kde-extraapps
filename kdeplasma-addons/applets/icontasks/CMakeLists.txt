@@ -15,8 +15,6 @@ set(tasks_SRCS
     tooltips/tooltip.cpp
     tooltips/tooltipmanager.cpp
     tooltips/windowpreview.cpp
-    tooltips/dialogshadows.cpp
-    tooltips/dialogshadows_p.h
     appearanceconfig.ui
     behaviourconfig.ui
 )
