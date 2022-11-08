@@ -35,6 +35,7 @@
 #include <QtDBus/QDBusServiceWatcher>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusConnectionInterface>
+#include <QDebug>
 
 K_GLOBAL_STATIC(MediaButtons, mediaBtns)
 
@@ -137,12 +138,9 @@ void MediaButtons::setEnabled(bool en)
             m_watcher->setConnection(QDBusConnection::sessionBus());
             m_watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
             connect(m_watcher, SIGNAL(serviceOwnerChanged(QString, QString, QString)), this, SLOT(serviceOwnerChanged(QString, QString, QString)));
-            connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), SLOT(sycocaChanged(QStringList)));
             readConfig();
-            updateApps();
         } else if (m_watcher) {
             disconnect(m_watcher, SIGNAL(serviceOwnerChanged(QString, QString, QString)), this, SLOT(serviceOwnerChanged(QString, QString, QString)));
-            disconnect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), this, SLOT(sycocaChanged(QStringList)));
 
             foreach (Interface * iface, m_interfaces.values()) {
                 delete iface;
@@ -151,13 +149,6 @@ void MediaButtons::setEnabled(bool en)
 
             delete m_watcher;
         }
-    }
-}
-
-void MediaButtons::sycocaChanged(const QStringList &types)
-{
-    if (types.contains("apps") || types.contains("xdgdata-apps")) {
-        updateApps();
     }
 }
 
@@ -247,50 +238,48 @@ void MediaButtons::readConfig()
 
     QStringList files(KGlobal::dirs()->findAllResources("data", "kdeplasma-addons/mediabuttonsrc"));
 
-    foreach (QString file, files) {
+    foreach (const QString &file, files) {
         KConfig cfg(file);
         KConfigGroup ag(&cfg, "Aliases");
         KConfigGroup gen(&cfg, "General");
 
         m_ignore += gen.readEntry("Ignore", QStringList()).toSet();
-        m_customMediaApps = gen.readEntry("CustomMediaApps", QStringList()).toSet();
-        foreach (const QString & key, ag.keyList()) {
-            foreach (const QString & alias, ag.readEntry(key, QStringList())) {
+        foreach (const QString &key, ag.keyList()) {
+            foreach (const QString &alias, ag.readEntry(key, QStringList())) {
                 m_aliases[alias.toLower()] = key.toLower();
             }
         }
     }
 }
 
-void MediaButtons::updateApps()
+bool MediaButtons::isMediaApp(const QString &desktopEntry)
 {
     if (!m_enabled) {
-        return;
+        return false;
     }
 
-    KService::List services = KServiceTypeTrader::self()->query("Application", QString("exist Exec and (exist Categories and ( ('AudioVideo' ~subin Categories) or ('Music' ~subin Categories) ) )"));
-    QStringList prefixes = QStringList() << constV2Prefix << constV1Prefix;
-
-    m_mediaApps.clear();
-    m_mediaApps = m_aliases.keys().toSet();
-    foreach (const KSharedPtr<KService> srv, services) {
-        QString name = srv->desktopEntryName();
-
-        if (name.startsWith("kde4-")) {
-            name = name.mid(5);
-        }
-
-        if (m_aliases.contains(name)) {
-            name = m_aliases[name];
-        }
-
-        if (m_ignore.contains(name)) {
-            continue;
-        }
-
-        m_mediaApps.insert(name.toLower());
+    QString name = desktopEntry;
+    if (m_aliases.contains(name)) {
+        name = m_aliases[name];
     }
-    m_mediaApps += m_customMediaApps;
+
+    if (m_ignore.contains(name)) {
+        return false;
+    }
+
+    MediaButtons::Interface *i = getV2Interface(name);
+    // qDebug() << Q_FUNC_INFO << desktopEntry << i;
+    if (i) {
+        return true;
+    }
+
+    i = getV1Interface(name);
+    // qDebug() << Q_FUNC_INFO << desktopEntry << i;
+    if (i) {
+        return i;
+    }
+
+    return false;
 }
 
 MediaButtons::Interface * MediaButtons::getInterface(const QString &name, int pid)
@@ -303,20 +292,20 @@ MediaButtons::Interface * MediaButtons::getInterface(const QString &name, int pi
     }
     names << name << name + "." + QString::number(pid) << name + "-" + QString::number(pid);
 
-    foreach (QString n, names) {
+    foreach (const QString &n, names) {
         if (m_interfaces.contains(n)) {
             return m_interfaces[n];
         }
     }
 
-    foreach (QString n, names) {
+    foreach (const QString &n, names) {
         MediaButtons::Interface *i = getV2Interface(n);
         if (i) {
             return i;
         }
     }
 
-    foreach (QString n, names) {
+    foreach (const QString &n, names) {
         MediaButtons::Interface *i = getV1Interface(n);
         if (i) {
             return i;
@@ -338,7 +327,23 @@ MediaButtons::Interface * MediaButtons::getV2Interface(const QString &name)
         }
     }
 
-    return 0;
+    QDBusReply<QStringList> registeredReply = QDBusConnection::sessionBus().interface()->registeredServiceNames();
+    if (!registeredReply.isValid()) {
+        return nullptr;
+    }
+    foreach (const QString &value, registeredReply.value()) {
+        if (value.startsWith(constV2Prefix + name + QLatin1Char('.'))) {
+            serviceOwnerChanged(value, QString(), QLatin1String("X"));
+            // qDebug() << Q_FUNC_INFO << value << m_interfaces;
+            QString unsuffixedName = value.mid(constV2Prefix.size(), value.size() - constV2Prefix.size());
+            if (m_interfaces.contains(unsuffixedName)) {
+                m_watcher->addWatchedService(value);
+                return m_interfaces[unsuffixedName];
+            }
+        }
+    }
+
+    return nullptr;
 }
 
 MediaButtons::Interface * MediaButtons::getV1Interface(const QString &name)

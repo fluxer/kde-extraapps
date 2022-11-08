@@ -69,21 +69,17 @@ public:
     bool isEnabled() const {
         return m_enabled;
     }
-    bool isMediaApp(const QString &desktopEntry) const {
-        return m_mediaApps.contains(desktopEntry);
-    }
+    bool isMediaApp(const QString &desktopEntry);
     void next(const QString &name, int pid = 0);
     void previous(const QString &name, int pid = 0);
     void playPause(const QString &name, int pid = 0);
     QString playbackStatus(const QString &name, int pid = 0);
 
 private Q_SLOTS:
-    void sycocaChanged(const QStringList &types);
     void serviceOwnerChanged(const QString &name, const QString &oldOwner, const QString &newOwner);
 
 private:
     void readConfig();
-    void updateApps();
     Interface * getInterface(const QString &name, int pid);
     Interface * getV2Interface(const QString &name);
     Interface * getV1Interface(const QString &name);
@@ -93,8 +89,6 @@ private:
     QMap<QString, Interface *> m_interfaces;
     QMap<QString, QString> m_aliases;
     QSet<QString> m_ignore;
-    QSet<QString> m_mediaApps;
-    QSet<QString> m_customMediaApps;
     bool m_enabled;
 };
 
