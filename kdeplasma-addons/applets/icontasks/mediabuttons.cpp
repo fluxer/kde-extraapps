@@ -299,9 +299,9 @@ MediaButtons::Interface * MediaButtons::getInterface(const QString &name, int pi
 
     if (m_aliases.contains(name)) {
         QString alias = m_aliases[name];
-        names << alias << alias + "." + QString().setNum(pid) << alias + "-" + QString().setNum(pid);
+        names << alias << alias + "." + QString::number(pid) << alias + "-" + QString::number(pid);
     }
-    names << name << name + "." + QString().setNum(pid) << name + "-" + QString().setNum(pid);
+    names << name << name + "." + QString::number(pid) << name + "-" + QString::number(pid);
 
     foreach (QString n, names) {
         if (m_interfaces.contains(n)) {

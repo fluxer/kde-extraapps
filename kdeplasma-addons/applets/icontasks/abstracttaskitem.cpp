@@ -1494,7 +1494,7 @@ void AbstractTaskItem::drawTask(QPainter *painter, const QStyleOptionGraphicsIte
     }
 
     if (m_unityItem && m_unityItem->countVisible()) {
-        drawBadge(painter, iconR, QString().setNum(m_unityItem->count()));
+        drawBadge(painter, iconR, QString::number(m_unityItem->count()));
     }
 
     if (!showText && JobManager::self()->isEnabled() && m_currentProgress >= 0) {
