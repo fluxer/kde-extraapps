@@ -203,7 +203,6 @@ class OKULAR_EXPORT Generator : public QObject
             FontInfo,          ///< Whether the Generator can provide information about the fonts used in the document
             PageSizes,         ///< Whether the Generator can change the size of the document pages.
             PrintNative,       ///< Whether the Generator supports native cross-platform printing (QPainter-based).
-            PrintPostscript,   ///< Whether the Generator supports postscript-based file printing.
             TiledRendering     ///< Whether the Generator can render tiles @since 0.16 (KDE 4.10)
         };
 
@@ -380,15 +379,7 @@ class OKULAR_EXPORT Generator : public QObject
         {
             NoPrintError,                       ///< There was no print error
             UnknownPrintError,
-            TemporaryFileOpenPrintError,
-            FileConversionPrintError,
-            PrintingProcessCrashPrintError,
-            PrintingProcessStartPrintError,
-            PrintToFilePrintError,
             InvalidPrinterStatePrintError,
-            UnableToFindFilePrintError,
-            NoFileToPrintError,
-            NoBinaryToPrintError,
             InvalidPageSizePrintError ///< @since 0.18.2 (KDE 4.12.2)
         };
         

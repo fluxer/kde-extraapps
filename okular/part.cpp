@@ -80,7 +80,6 @@
 #include "ui/bookmarklist.h"
 #include "ui/findbar.h"
 #include "ui/sidebar.h"
-#include "ui/fileprinterpreview.h"
 #include "ui/guiutils.h"
 #include "conf/preferencesdialog.h"
 #include "settings.h"
@@ -90,7 +89,6 @@
 #include "core/document.h"
 #include "core/generator.h"
 #include "core/page.h"
-#include "core/fileprinter.h"
 
 #include <cstdio>
 #include <memory>
@@ -2340,7 +2338,7 @@ void Part::slotPrintPreview()
 
     QPrinter printer;
 
-    // Native printing supports QPrintPreviewDialog, Postscript needs to use FilePrinterPreview
+    // Native printing supports QPrintPreviewDialog
     if ( m_document->printingSupport() == Okular::Document::NativePrinting )
     {
         QPrintPreviewDialog previewdlg( &printer, widget() );

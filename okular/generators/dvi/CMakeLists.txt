@@ -42,7 +42,6 @@ set(okularGenerator_dvi_SRCS
    fontMap.cpp
    fontpool.cpp
    dvisourcesplitter.cpp
-   dviexport.cpp
 )
 
 

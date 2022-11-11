@@ -16,7 +16,6 @@
 #include <core/page.h>
 #include <core/textpage.h>
 #include <core/utils.h>
-#include <core/fileprinter.h>
 
 #include <qdom.h>
 #include <qmutex.h>
@@ -87,7 +86,6 @@ DjVuGenerator::DjVuGenerator( QObject *parent, const QVariantList &args )
 {
     setFeature( TextExtraction );
     setFeature( Threaded );
-    setFeature( PrintPostscript );
 
     m_djvu = new KDjVu();
     m_djvu->setCacheEnabled( false );
@@ -189,36 +187,6 @@ const Okular::DocumentSynopsis * DjVuGenerator::generateDocumentSynopsis()
     }
 
     return m_docSyn;
-}
-
-bool DjVuGenerator::print( QPrinter& printer )
-{
-    bool result = false;
-
-    // Create tempfile to write to
-    KTemporaryFile tf;
-    tf.setSuffix( ".ps" );
-    if ( !tf.open() )
-        return false;
-
-    QMutexLocker locker( userMutex() );
-    QList<int> pageList = Okular::FilePrinter::pageList( printer, m_djvu->pages().count(),
-                                                         document()->currentPage() + 1,
-                                                         document()->bookmarkedPageList() );
-
-    if ( m_djvu->exportAsPostScript( &tf, pageList ) )
-    {
-        tf.setAutoRemove( false );
-        const QString fileName = tf.fileName();
-        tf.close();
-        int ret = Okular::FilePrinter::printFile( printer, fileName, document()->orientation(),
-                                                  Okular::FilePrinter::SystemDeletesFiles,
-                                                  Okular::FilePrinter::ApplicationSelectsPages,
-                                                  document()->bookmarkedPageRange() );
-        result = ( ret >=0 );
-    }
-
-    return result;
 }
 
 QVariant DjVuGenerator::metaData( const QString &key, const QVariant &option ) const

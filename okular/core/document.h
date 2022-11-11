@@ -559,8 +559,7 @@ class OKULAR_EXPORT Document : public QObject
         enum PrintingType
         {
             NoPrinting,            ///< Printing Not Supported
-            NativePrinting,        ///< Native Cross-Platform Printing
-            PostscriptPrinting     ///< Postscript file printing
+            NativePrinting        ///< Native Cross-Platform Printing
         };
 
         /**

@@ -3793,10 +3793,6 @@ Document::PrintingType Document::printingSupport() const
         {
             return NativePrinting;
         }
-        if ( d->m_generator->hasFeature( Generator::PrintPostscript ) )
-        {
-            return PostscriptPrinting;
-        }
     }
 
     return NoPrinting;
@@ -3817,24 +3813,8 @@ QString Document::printError() const
     Q_ASSERT( err != Generator::NoPrintError );
     switch ( err )
     {
-        case Generator::TemporaryFileOpenPrintError:
-            return i18n( "Could not open a temporary file" );
-        case Generator::FileConversionPrintError:
-            return i18n( "Print conversion failed" );
-        case Generator::PrintingProcessCrashPrintError:
-            return i18n( "Printing process crashed" );
-        case Generator::PrintingProcessStartPrintError:
-            return i18n( "Printing process could not start" );
-        case Generator::PrintToFilePrintError:
-            return i18n( "Printing to file failed" );
         case Generator::InvalidPrinterStatePrintError:
             return i18n( "Printer was in invalid state" );
-        case Generator::UnableToFindFilePrintError:
-            return i18n( "Unable to find file to print" );
-        case Generator::NoFileToPrintError:
-            return i18n( "There was no file to print" );
-        case Generator::NoBinaryToPrintError:
-            return i18n( "Could not find a suitable binary for printing. Make sure CUPS lpr binary is available" );
         case Generator::InvalidPageSizePrintError:
             return i18n( "The page print size is invalid" );
         case Generator::NoPrintError:

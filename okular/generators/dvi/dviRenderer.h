@@ -12,7 +12,6 @@
 
 #include "bigEndianByteReader.h"
 //#include "documentRenderer.h"
-#include "dviexport.h"
 //#include "dvisourceeditor.h"
 #include "fontpool.h"
 #include "dviPageInfo.h"
@@ -140,8 +139,6 @@ public:
   void          html_href_special(const QString& msg);
   void          html_anchor_end();
   void          draw_page();
-  void          export_finished(const DVIExport*);
-//void          editor_finished(const DVISourceEditor*);
 
 
 Q_SIGNALS:
@@ -155,9 +152,6 @@ Q_SIGNALS:
 
 
 public slots:
-  void          exportPS(const QString& fname = QString(), const QStringList& options = QStringList(), QPrinter* printer = 0, QPrinter::Orientation orientation = QPrinter::Portrait);
-  void          exportPDF();
-
   void          handleSRCLink(const QString &linkText, const QPoint& point, DocumentWidget *widget);
 
   void          embedPostScript();
@@ -178,7 +172,6 @@ private slots:
 //  void          showThatSourceInformationIsPresent();
 
 private:
-  friend class DVIExportToPS;
   friend class DVIExport;
 //  friend class DVISourceEditor;
 
@@ -300,7 +293,6 @@ private:
 
   drawinf currinf;
   RenderedDocumentPagePixmap* currentlyDrawnPage;
-  QMap<const DVIExport*, KSharedPtr<DVIExport> > all_exports_;
   //KSharedPtr<DVISourceEditor> editor_;
 
   /** Flag if document is modified

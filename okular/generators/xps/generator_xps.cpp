@@ -38,7 +38,7 @@
 #include <core/document.h>
 #include <core/page.h>
 #include <core/area.h>
-#include <core/fileprinter.h>
+#include <core/utils.h>
 
 #include <sys/stat.h>
 
@@ -2128,9 +2128,9 @@ bool XpsGenerator::exportTo( const QString &fileName, const Okular::ExportFormat
 
 bool XpsGenerator::print( QPrinter &printer )
 {
-    QList<int> pageList = Okular::FilePrinter::pageList( printer, document()->pages(),
-                                                         document()->currentPage() + 1,
-                                                         document()->bookmarkedPageList() );
+    QList<int> pageList = Okular::Utils::pageList( printer, document()->pages(),
+                                                   document()->currentPage() + 1,
+                                                   document()->bookmarkedPageList() );
 
     QPainter painter( &printer );
 

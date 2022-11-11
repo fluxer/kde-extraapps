@@ -203,6 +203,34 @@ got_bottom:
     return bbox;
 }
 
+QList<int> Utils::pageList( QPrinter &printer, int lastPage,
+                             int currentPage, const QList<int> &selectedPageList )
+{
+    if ( printer.printRange() == QPrinter::Selection) {
+        return selectedPageList;
+    }
+
+    int startPage, endPage;
+    QList<int> list;
+
+    if ( printer.printRange() == QPrinter::PageRange ) {
+        startPage = printer.fromPage();
+        endPage = printer.toPage();
+    } else if ( printer.printRange() == QPrinter::CurrentPage) {
+        startPage = currentPage;
+        endPage = currentPage;
+    } else { //AllPages
+        startPage = 1;
+        endPage = lastPage;
+    }
+
+    for (int i = startPage; i <= endPage; i++ ) {
+        list << i;
+    }
+
+    return list;
+}
+
 void Okular::copyQIODevice( QIODevice *from, QIODevice *to )
 {
     QByteArray buffer( 65536, '\0' );

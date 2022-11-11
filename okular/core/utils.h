@@ -16,6 +16,7 @@
 #include <QRect>
 #include <QImage>
 #include <QWidget>
+#include <QPrinter>
 
 namespace Okular
 {
@@ -83,6 +84,18 @@ class OKULAR_EXPORT Utils
      * @since 0.7 (KDE 4.1)
      */
     static NormalizedRect imageBoundingBox( const QImage* image );
+
+    /** Return the list of pages selected by the user in the Print Dialog
+     *
+     * @param printer the print settings to use
+     * @param lastPage the last page number, needed if AllPages option is selected
+     * @param currentPage the current page number, needed if CurrentPage option is selected
+     * @param selectedPageList list of pages to use if Selection option is selected
+     * @returns Returns list of pages to print
+     */
+    static QList<int> pageList( QPrinter &printer, int lastPage,
+                                int currentPage, const QList<int> &selectedPageList );
+    
 };
 
 }

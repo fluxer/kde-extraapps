@@ -19,7 +19,6 @@
 
 #include <core/page.h>
 #include <core/pagetransition.h>
-#include <core/fileprinter.h>
 #include <core/utils.h>
 
 #include <poppler/cpp/poppler-toc.h>
@@ -529,7 +528,7 @@ bool PDFGenerator::print(QPrinter &printer)
     }
 
     QPainter qpainter(&printer);
-    const QList<int> okularpageslist = Okular::FilePrinter::pageList(
+    const QList<int> okularpageslist = Okular::Utils::pageList(
         printer, document()->pages(),
         document()->currentPage() + 1,
         document()->bookmarkedPageList()

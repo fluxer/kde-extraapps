@@ -39,9 +39,6 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
 
         QVariant metaData(const QString &key, const QVariant &option) const;
 
-        // print document using already configured kprinter
-        bool print( QPrinter& /*printer*/ );
-
         // export as PDF
         Okular::ExportFormat::List exportFormats() const;
         bool exportTo( const QString &fileName, const Okular::ExportFormat &format );

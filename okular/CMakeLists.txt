@@ -63,9 +63,27 @@ add_feature_info(okular_gs
     "PostScript support in Okular"
 )
 
+find_program(PS2PDF_EXECUTABLE NAMES ps2pdf)
+add_feature_info(okular_ps2pdf
+    PS2PDF_EXECUTABLE
+    "PostScript support in Okular"
+)
+
+find_program(LATEX_EXECUTABLE NAMES latex)
+add_feature_info(okular_latex
+    LATEX_EXECUTABLE
+    "LaTeX support in Okular"
+)
+
 find_program(KPSEWHICH_EXECUTABLE NAMES kpsewhich)
 add_feature_info(okular_kpsewhich
     KPSEWHICH_EXECUTABLE
+    "DVI support in Okular"
+)
+
+find_program(DVIPNG_EXECUTABLE NAMES dvipng)
+add_feature_info(okular_dvipng
+    DVIPNG_EXECUTABLE
     "DVI support in Okular"
 )
 
@@ -122,7 +140,6 @@ set(okularcore_SRCS
     core/tilesmanager.cpp
     core/utils.cpp
     core/view.cpp
-    core/fileprinter.cpp
     core/chooseenginewidget.ui
     core/textdocumentsettings.ui
 )
@@ -214,7 +231,6 @@ set(okularpart_SRCS
     ui/annotationtools.cpp
     ui/annotationwidgets.cpp
     ui/bookmarklist.cpp
-    ui/fileprinterpreview.cpp
     ui/findbar.cpp
     ui/formwidgets.cpp
     ui/guiutils.cpp

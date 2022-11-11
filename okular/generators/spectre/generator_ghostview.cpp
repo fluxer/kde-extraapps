@@ -25,7 +25,6 @@
 
 #include <core/document.h>
 #include <core/page.h>
-#include <core/fileprinter.h>
 #include <core/utils.h>
 
 #include "ui_gssettingswidget.h"
@@ -57,8 +56,6 @@ GSGenerator::GSGenerator( QObject *parent, const QVariantList &args ) :
     m_docInfo(0),
     m_request(0)
 {
-    setFeature( PrintPostscript );
-
     GSRendererThread *renderer = GSRendererThread::getCreateRenderer();
     if (!renderer->isRunning()) renderer->start();
     connect(renderer, SIGNAL(imageDone(QImage*,Okular::PixmapRequest*)),
@@ -97,55 +94,6 @@ void GSGenerator::addPages( KConfigDialog *dlg )
     QWidget* w = new QWidget(dlg);
     gsw.setupUi(w);
     dlg->addPage(w, GSSettings::self(), i18n("Ghostscript"), "okular-gv", i18n("Ghostscript Backend Configuration") );
-}
-
-bool GSGenerator::print( QPrinter& printer )
-{
-    bool result = false;
-
-    // Create tempfile to write to
-    KTemporaryFile tf;
-    tf.setSuffix( ".ps" );
-
-    // Get list of pages to print
-    QList<int> pageList = Okular::FilePrinter::pageList( printer,
-                                               spectre_document_get_n_pages( m_internalDocument ),
-                                               document()->currentPage() + 1,
-                                               document()->bookmarkedPageList() );
-
-    if ( !tf.open() )
-        return false;
-
-    SpectreExporter *exporter = spectre_exporter_new( m_internalDocument, SPECTRE_EXPORTER_FORMAT_PS );
-    SpectreStatus exportStatus = spectre_exporter_begin( exporter, tf.fileName().toAscii() );
-
-    int i = 0;
-    while ( i < pageList.count() && exportStatus == SPECTRE_STATUS_SUCCESS )
-    {
-        exportStatus = spectre_exporter_do_page( exporter, pageList.at( i ) - 1 );
-        i++;
-    }
-
-    SpectreStatus endStatus = SPECTRE_STATUS_EXPORTER_ERROR;
-    if (exportStatus == SPECTRE_STATUS_SUCCESS)
-        endStatus = spectre_exporter_end( exporter );
-
-    spectre_exporter_free( exporter );
-
-    const QString fileName = tf.fileName();
-    tf.close();
-
-    if ( exportStatus == SPECTRE_STATUS_SUCCESS && endStatus == SPECTRE_STATUS_SUCCESS )
-    {
-        tf.setAutoRemove( false );
-        int ret = Okular::FilePrinter::printFile( printer, fileName, document()->orientation(),
-                                                  Okular::FilePrinter::SystemDeletesFiles,
-                                                  Okular::FilePrinter::ApplicationSelectsPages,
-                                                  document()->bookmarkedPageRange() );
-        if ( ret >= 0 ) result = true;
-    }
-
-    return result;
 }
 
 Okular::ExportFormat::List GSGenerator::exportFormats() const

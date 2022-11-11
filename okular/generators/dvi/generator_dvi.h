@@ -39,8 +39,6 @@ class DviGenerator : public Okular::Generator
         // list of fonts
         Okular::FontInfo::List fontsForPage( int page );
 
-        bool print( QPrinter &printer );
-
         QVariant metaData( const QString & key, const QVariant & option ) const;
 
     protected:

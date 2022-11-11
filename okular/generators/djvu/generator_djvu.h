@@ -33,9 +33,6 @@ class DjVuGenerator : public Okular::Generator
         const Okular::DocumentInfo * generateDocumentInfo();
         const Okular::DocumentSynopsis * generateDocumentSynopsis();
 
-        // printing
-        bool print( QPrinter& printer );
-
         QVariant metaData( const QString & key, const QVariant & option ) const;
 
     protected:

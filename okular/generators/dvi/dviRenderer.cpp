@@ -27,7 +27,6 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kmimetype.h>
-#include <kstandarddirs.h>
 #include <kvbox.h>
 
 #include <QApplication>
@@ -719,39 +718,6 @@ QString dviRenderer::PDFencodingToQString(const QString& _pdfstring)
     pdfstring = pdfstring.replace(pos, 4, QChar(rx.cap(2).toInt(0,8)));
   }
   return pdfstring;
-}
-
-
-void dviRenderer::exportPDF()
-{
-/*
-  KSharedPtr<DVIExport> exporter(new DVIExportToPDF(*this, parentWidget));
-  if (exporter->started())
-    all_exports_[exporter.data()] = exporter;
-*/
-}
-
-
-void dviRenderer::exportPS(const QString& fname, const QStringList& options, QPrinter* printer, QPrinter::Orientation orientation)
-{
-  KSharedPtr<DVIExport> exporter(new DVIExportToPS(*this, fname, options, printer, font_pool.getUseFontHints(), orientation));
-  if (exporter->started())
-    all_exports_[exporter.data()] = exporter;
-}
-
-/*
-void dviRenderer::editor_finished(const DVISourceEditor*)
-{
-  editor_.attach(0);
-}
-*/
-
-void dviRenderer::export_finished(const DVIExport* key)
-{
-  typedef QMap<const DVIExport*, KSharedPtr<DVIExport> > ExportMap;
-  ExportMap::iterator it = all_exports_.find(key);
-  if (it != all_exports_.end())
-    all_exports_.remove(key);
 }
 
 void dviRenderer::setEventLoop(QEventLoop *el) 

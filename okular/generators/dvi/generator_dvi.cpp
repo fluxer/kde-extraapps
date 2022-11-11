@@ -20,7 +20,6 @@
 #include "dviPageInfo.h"
 #include "dviRenderer.h"
 #include "pageSize.h"
-#include "dviexport.h"
 #include "TeXFont.h"
 
 #include <qapplication.h>
@@ -63,7 +62,6 @@ DviGenerator::DviGenerator( QObject *parent, const QVariantList &args ) : Okular
     setFeature( Threaded );
     setFeature( TextExtraction );
     setFeature( FontInfo );
-    setFeature( PrintPostscript );
 }
 
 bool DviGenerator::loadDocument( const QString & fileName, QVector< Okular::Page * > &pagesVector )
@@ -533,38 +531,6 @@ void DviGenerator::loadPages( QVector< Okular::Page * > &pagesVector )
     for ( int i = 0; i < refRects.size(); ++i )
         if ( !refRects.at(i).isEmpty() )
             pagesVector[i]->setSourceReferences( refRects.at(i) );
-}
-
-bool DviGenerator::print( QPrinter& printer )
-{
-    // Create tempfile to write to
-    KTemporaryFile tf;
-    tf.setSuffix( ".ps" );
-    if ( !tf.open() )
-        return false;
-
-    QList<int> pageList = Okular::FilePrinter::pageList( printer, 
-                                 m_dviRenderer->totalPages(),
-                                 document()->currentPage() + 1,
-                                 document()->bookmarkedPageList() );
-    QString pages;
-    QStringList printOptions;
-    // List of pages to print.
-    foreach ( int p, pageList )
-    {
-        pages += QString(",%1").arg(p);
-    }
-    if ( !pages.isEmpty() )
-        printOptions << "-pp" << pages.mid(1);
-
-    QEventLoop el;
-    m_dviRenderer->setEventLoop( &el );
-    m_dviRenderer->exportPS( tf.fileName(), printOptions, &printer, document()->orientation() );
-
-    tf.close();
-
-    // Error messages are handled by the generator - ugly, but it works.
-    return true; 
 }
 
 QVariant DviGenerator::metaData( const QString & key, const QVariant & option ) const
