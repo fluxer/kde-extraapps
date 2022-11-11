@@ -18,6 +18,7 @@
 #include <klocale.h>
 #include <kmimetype.h>
 #include <karchive.h>
+#include <kstringhandler.h>
 
 #include <sys/stat.h>
 #include <memory>
@@ -25,7 +26,6 @@
 #include <core/page.h>
 
 #include "directory.h"
-#include "qnatsort.h"
 
 using namespace ComicBook;
 
@@ -38,6 +38,10 @@ static void imagesInArchive( const KArchive* archive, QStringList *entries )
     }
 }
 
+static bool caseSensitiveNaturalOrderLessThen( const QString &left, const QString &right )
+{
+    return (KStringHandler::naturalCompare( left, right, Qt::CaseSensitive ) < 0);
+}
 
 Document::Document()
     : mDirectory( 0 ), mArchive( 0 )

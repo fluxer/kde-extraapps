@@ -8,7 +8,6 @@ set(okularGenerator_comicbook_PART_SRCS
     document.cpp
     generator_comicbook.cpp
     directory.cpp
-    qnatsort.cpp
 )
 
 kde4_add_plugin(okularGenerator_comicbook ${okularGenerator_comicbook_PART_SRCS})
