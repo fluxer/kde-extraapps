@@ -240,7 +240,7 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
         void setupActions();
 
         void setupPrint( QPrinter &printer );
-        void doPrint( QPrinter &printer );
+        void doPrint(QPrinter &printer);
         bool handleCompressed( QString &destpath, const QString &path, const QString &compressedMimetype );
         void rebuildBookmarkMenu( bool unplugActions = true );
         void updateAboutBackendAction();
@@ -348,6 +348,7 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
         QTimer *m_infoTimer;
 
     private slots:
+        void slotPrintRequested( QPrinter *printer );
         void slotAnnotationPreferences();
         void slotHandleActivatedSourceReference(const QString& absFileName, int line, int col, bool *handled);
 };

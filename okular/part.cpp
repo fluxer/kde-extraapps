@@ -2345,7 +2345,7 @@ void Part::slotPrintPreview()
     {
         QPrintPreviewDialog previewdlg( &printer, widget() );
         setupPrint( printer );
-        doPrint( printer );
+        connect( &previewdlg, SIGNAL(paintRequested(QPrinter*)), this, SLOT(slotPrintRequested(QPrinter*)) );
         previewdlg.exec();
     }
     else
@@ -2655,6 +2655,10 @@ void Part::setupPrint( QPrinter &printer )
     }
 }
 
+void Part::slotPrintRequested(QPrinter *printer)
+{
+    doPrint(*printer);
+}
 
 void Part::doPrint(QPrinter &printer)
 {
