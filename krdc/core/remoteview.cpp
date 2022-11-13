@@ -247,11 +247,12 @@ QCursor RemoteView::localDotCursor() const
 #ifdef QTONLY
     return QCursor(); //TODO
 #else
-    QBitmap cursorBitmap(KGlobal::dirs()->findResource("appdata",
-                                                       "pics/pointcursor.png"));
+    QPixmap cursorPixmap(KGlobal::dirs()->findResource("appdata",
+                                                        "pics/pointcursor.png"));
     QBitmap cursorMask(KGlobal::dirs()->findResource("appdata",
                                                      "pics/pointcursormask.png"));
-    return QCursor(cursorBitmap, cursorMask);
+    cursorPixmap.setMask(cursorMask);
+    return QCursor(cursorPixmap);
 #endif
 }
 
