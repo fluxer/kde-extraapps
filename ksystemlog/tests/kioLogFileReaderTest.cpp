@@ -50,7 +50,7 @@ private:
 
 
 void KioLogFileReaderTest::initTestCase() {
-	logDebug() << "Hello" << endl;
+	logDebug() << "Hello";
 }
 
 
@@ -77,7 +77,7 @@ void KioLogFileReaderTest::testKioLogFileReader() {
 }
 
 void KioLogFileReaderTest::readLine(const QString& line) {
-	logDebug() << "Line " << line << endl;
+	logDebug() << "Line " << line;
 }
 
 QTEST_KDEMAIN(KioLogFileReaderTest, GUI)

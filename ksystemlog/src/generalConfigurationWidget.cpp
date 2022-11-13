@@ -119,7 +119,7 @@ void GeneralConfigurationWidget::readConfig() {
 }
 
 void GeneralConfigurationWidget::saveConfig() const {
-	logDebug() << "Save config from General preferences" << endl;
+	logDebug() << "Save config from General preferences";
 
 	KSystemLogConfig::setStartupLogMode(startupLogMode->itemData(startupLogMode->currentIndex()).toString());
 
@@ -139,11 +139,11 @@ void GeneralConfigurationWidget::defaultConfig() {
 
 bool GeneralConfigurationWidget::isValid() const {
 	if (maxLines->value()>0) {
-		logDebug() << "General configuration valid" << endl;
+		logDebug() << "General configuration valid";
 		return true;
 	}
 
-	logDebug() << "General configuration not valid" << endl;
+	logDebug() << "General configuration not valid";
 	return false;
 }
 

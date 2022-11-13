@@ -202,7 +202,7 @@ void View::dragEnterEvent(QDragEnterEvent* event) {
 	
 	//If URLs have been dropped
 	if (urls.isEmpty() ) {
-		logWarning() << "Empty drag and drop" << endl;
+		logWarning() << "Empty drag and drop";
 		return;
 	}
 	
@@ -212,12 +212,12 @@ void View::dragEnterEvent(QDragEnterEvent* event) {
 		//TODO Add a recognition of binary files (using the Url mimetype) and refuse them
 		
 		if (fileInfo.isReadable() == false) {
-			logWarning() << "The drag and dropped file is not readable " << url.path() << endl;
+			logWarning() << "The drag and dropped file is not readable " << url.path();
 			return;
 		}
 		
 		if (fileInfo.isDir()) {
-			logWarning() << "Tried to drag and drop a directory " << url.path() << endl;
+			logWarning() << "Tried to drag and drop a directory " << url.path();
 			return;
 		}
 	}

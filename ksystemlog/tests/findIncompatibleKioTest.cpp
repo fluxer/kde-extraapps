@@ -88,11 +88,11 @@ void FindIncompatibleKioTest::find() {
 	existingMethods << QLatin1String("void SlaveBase::chown(KUrl const &, const QString &, const QString &)");
 	existingMethods << QLatin1String("void SlaveBase::setSubUrl(KUrl const &)");
 
-	//logDebug() << existingMethods << endl;
+	//logDebug() << existingMethods;
 	
 	QFile file(outputPath);
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-		logError() << "Unable to open the output file" << outputPath << endl;
+		logError() << "Unable to open the output file" << outputPath;
 		return;
 	}
 
@@ -238,7 +238,7 @@ QMap<QString, bool> FindIncompatibleKioTest::findMethods(const QStringList& meth
 
 	}
 
-	logDebug() << endl;
+	logDebug();
 	
 	return foundMethods;
 }
@@ -283,7 +283,7 @@ QStringList FindIncompatibleKioTest::headerContent(const KUrl& url) {
 
 		KIO::NetAccess::removeTempFile(tmpFile );
 	} else {
-		logDebug() << KIO::NetAccess::lastErrorString() << endl;;
+		logDebug() << KIO::NetAccess::lastErrorString();
 	}
 
 	return kioHeaderContent;

@@ -257,7 +257,7 @@ void KSmallSlider::paintEvent( QPaintEvent * )
 	 kDebug(67100) << "KSmallSlider::paintEvent: sliderPos=" << sliderPos
 			<< "height()=" << height()
 			<< "width()=" << width()
-			<< "outer = " << outer << endl;
+			<< "outer = " << outer;
 */
          if ( grayed )
              gradient( p, false, outer,

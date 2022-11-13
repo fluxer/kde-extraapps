@@ -176,7 +176,7 @@ TransferHandler * KGet::addTransfer(KUrl srcUrl, QString destDir, QString sugges
 {
     srcUrl = mostLocalUrl(srcUrl);
     // Note: destDir may actually be a full path to a file :-(
-    kDebug(5001) << "Source:" << srcUrl.url() << ", dest: " << destDir << ", sugg file: " << suggestedFileName << endl;
+    kDebug(5001) << "Source:" << srcUrl.url() << ", dest: " << destDir << ", sugg file: " << suggestedFileName;
 
     KUrl destUrl; // the final destination, including filename
 
@@ -1140,9 +1140,9 @@ void KGet::loadPlugins()
     for ( int i = 0; i < offers.count(); ++i )
     {
         services[ offers[i]->property( "X-KDE-KGet-rank" ).toInt() ] = offers[i];
-        kDebug(5001) << " TransferFactory plugin found:" << endl <<
-         "  rank = " << offers[i]->property( "X-KDE-KGet-rank" ).toInt() << endl <<
-         "  plugintype = " << offers[i]->property( "X-KDE-KGet-plugintype" ) << endl;
+        kDebug(5001) << " TransferFactory plugin found:\n" <<
+         "  rank = " << offers[i]->property( "X-KDE-KGet-rank" ).toInt() << '\n' <<
+         "  plugintype = " << offers[i]->property( "X-KDE-KGet-plugintype" );
     }
 
     //I must fill this pluginList before and my m_transferFactories list after.

@@ -104,7 +104,7 @@ void TeXFontDefinition::fontNameReceiver(const QString& fname)
     QString filename_test(font_pool->getExtraSearchPath() + '/' + filename);
     file = fopen( QFile::encodeName(filename_test), "r");
     if (file == 0) {
-      kError(kvs::dvi) << i18n("Cannot find font %1, file %2.", fontname, filename) << endl;
+      kError(kvs::dvi) << i18n("Cannot find font %1, file %2.", fontname, filename);
       return;
     } else
       filename = filename_test;
@@ -168,7 +168,7 @@ void TeXFontDefinition::fontNameReceiver(const QString& fname)
 #else
   // If we don't have the FreeType library, we should never have
   // reached this point. Complain, and leave this font blank
-  kError(kvs::dvi) << i18n("Cannot recognize format for font file %1", filename) << endl;
+  kError(kvs::dvi) << i18n("Cannot recognize format for font file %1", filename);
 #endif
 }
 

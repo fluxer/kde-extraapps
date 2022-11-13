@@ -36,7 +36,7 @@ fontEncoding::fontEncoding(const QString &encName)
                   QIODevice::ReadOnly|QIODevice::Text);
 
   if (!kpsewhich.waitForStarted()) {
-    kError(kvs::dvi) << "fontEncoding::fontEncoding(...): kpsewhich could not be started." << endl;
+    kError(kvs::dvi) << "fontEncoding::fontEncoding(...): kpsewhich could not be started.";
     return;
   }
 
@@ -45,7 +45,7 @@ fontEncoding::fontEncoding(const QString &encName)
 
   const QString encFileName = QString(kpsewhich.readAll()).trimmed();
   if (encFileName.isEmpty()) {
-    kError(kvs::dvi) << QString("fontEncoding::fontEncoding(...): The file '%1' could not be found by kpsewhich.").arg(encName) << endl;
+    kError(kvs::dvi) << QString("fontEncoding::fontEncoding(...): The file '%1' could not be found by kpsewhich.").arg(encName);
     return;
   }
 
@@ -85,7 +85,7 @@ fontEncoding::fontEncoding(const QString &encName)
     for(; i<256; i++)
       glyphNameVector[i] = ".notdef";
   } else {
-    kError(kvs::dvi) << QString("fontEncoding::fontEncoding(...): The file '%1' could not be opened.").arg(encFileName) << endl;
+    kError(kvs::dvi) << QString("fontEncoding::fontEncoding(...): The file '%1' could not be opened.").arg(encFileName);
     return;
   }
 

@@ -142,7 +142,7 @@ class SambaAnalyzer : public Analyzer {
 				list.append(function);
 				list.append(lineNumber);
 
-				logDebug() << "Creating new line " <<  endl;
+				logDebug() << "Creating new line ";
 
 				LogLine* returnedLogLine = currentLogLine;
 

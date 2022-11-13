@@ -363,7 +363,7 @@ bool GUIProfile::readProfile(const QString& ref_fileName)
     } // Read OK
     else {
         // !! this error message about faulty profiles should probably be surrounded with i18n()
-        kError(67100) << "ERROR: The profile '" << ref_fileName<< "' contains errors, and is not used." << endl;
+        kError(67100) << "ERROR: The profile '" << ref_fileName<< "' contains errors, and is not used.";
     }
     delete gpp;
     delete xmlReader;
@@ -663,7 +663,7 @@ void ProfControl::setSubcontrols(QString sctls)
 
   QStringList qsl = sctls.split( ',',  QString::SkipEmptyParts, Qt::CaseInsensitive);
   foreach (const QString &sctl, qsl) {
-       //kDebug() << "setSubcontrols found: " << sctl.toLocal8Bit().constData() << endl;
+       //kDebug() << "setSubcontrols found: " << sctl.toLocal8Bit().constData();
        if ( sctl == "pvolume" ) _useSubcontrolPlayback = true;
        else if ( sctl == "cvolume" ) _useSubcontrolCapture = true;
        else if ( sctl == "pswitch" ) _useSubcontrolPlaybackSwitch = true;

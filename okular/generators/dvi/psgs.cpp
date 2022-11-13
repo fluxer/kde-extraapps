@@ -150,7 +150,7 @@ void ghostscript_interface::gs_generate_graphics_file(const PageNumber& page, co
 #endif
 
   if (knownDevices.isEmpty()) {
-    kError(kvs::dvi) << "No known devices found" << endl;
+    kError(kvs::dvi) << "No known devices found";
     return;
   }
 
@@ -238,14 +238,14 @@ void ghostscript_interface::gs_generate_graphics_file(const PageNumber& page, co
   if ( res ) {
     // Starting ghostscript did not work. 
     // TODO: Issue error message, switch PS support off.
-    kError(kvs::dvi) << "ghostview could not be started" << endl;
+    kError(kvs::dvi) << "ghostview could not be started";
   } 
 
   PSfile.remove();
 
  // Check if gs has indeed produced a file.
   if (QFile::exists(filename) == false) {
-    kError(kvs::dvi) << "GS did not produce output." << endl;
+    kError(kvs::dvi) << "GS did not produce output.";
 
     // No. Check is the reason is that the device is not compiled into
     // ghostscript. If so, try again with another device.
@@ -255,7 +255,7 @@ void ghostscript_interface::gs_generate_graphics_file(const PageNumber& page, co
       GSoutput = QString::fromLocal8Bit(proc.readLine());
       if (GSoutput.contains("Unknown device")) {
 	kDebug(kvs::dvi) << QString("The version of ghostview installed on this computer does not support "
-                                     "the '%1' ghostview device driver.").arg(*gsDevice) << endl;
+                                     "the '%1' ghostview device driver.").arg(*gsDevice);
 	knownDevices.erase(gsDevice);
 	gsDevice = knownDevices.begin();
 	if (knownDevices.isEmpty())
@@ -298,7 +298,7 @@ void ghostscript_interface::graphics(const PageNumber& page, double dpi, long ma
 #endif
 
   if (paint == 0) {
-    kError(kvs::dvi) << "ghostscript_interface::graphics(PageNumber page, double dpi, long magnification, QPainter *paint) called with paint == 0" << endl;
+    kError(kvs::dvi) << "ghostscript_interface::graphics(PageNumber page, double dpi, long magnification, QPainter *paint) called with paint == 0";
     return;
   }
 

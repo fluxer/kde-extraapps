@@ -325,8 +325,8 @@ void KvkbdApp::buttonLoaded(VButton *btn)
 }
 void KvkbdApp::partLoaded(MainWidget *vPart, int total_rows, int total_cols)
 {
-    //cout << "Col Strech: " << total_cols << endl;
-    // cout << "Row Strech: " << total_rows << endl;
+    // std::cout << "Col Strech: " << total_cols << std::endl;
+    // std::cout << "Row Strech: " << total_rows << std::endl;
 
     QString partName = vPart->property("part").toString();
 
@@ -340,7 +340,7 @@ void KvkbdApp::partLoaded(MainWidget *vPart, int total_rows, int total_cols)
     }
 
     layout->addWidget(vPart,row_pos,col_pos,total_rows,total_cols);
-    //cout << "Insert to layout: " << qPrintable(partName) << " RowStart: " << row_pos << " ColStart: " << col_pos << " RowSpan: " << total_rows << " ColSpan: " << total_cols << endl;
+    // std::cout << "Insert to layout: " << qPrintable(partName) << " RowStart: " << row_pos << " ColStart: " << col_pos << " RowSpan: " << total_rows << " ColSpan: " << total_cols << std::endl;
     parts.insert(partName, vPart);
     layoutPosition.insert(partName, QRect(col_pos,row_pos,total_cols,total_rows));
 

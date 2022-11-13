@@ -232,8 +232,7 @@ QImage DviGenerator::image( Okular::PixmapRequest *request )
 #if 0
         kDebug(DviDebug) << *request
         << ", res:" << pageInfo->resolution << " - (" << pageInfo->width << ","
-        << ps.width().getLength_in_inch() << ")," << ps.width().getLength_in_mm()
-        << endl;
+        << ps.width().getLength_in_inch() << ")," << ps.width().getLength_in_mm();
 #endif
 
         m_dviRenderer->drawPage( pageInfo );
@@ -306,8 +305,7 @@ Okular::TextPage *DviGenerator::extractTextFromPage( dviPageInfo *pageInfo )
         kDebug(DviDebug) << "orientation: " << orientation
                  << ", curTB.box: " << curTB.box
                  << ", tmpRect: " << tmpRect 
-                 << ", ( " << pageWidth << "," << pageHeight << " )" 
-               <<endl;
+                 << ", ( " << pageWidth << "," << pageHeight << " )";
 #endif
         textOfThePage.push_back( new Okular::TextEntity( curTB.text,
               new Okular::NormalizedRect( curTB.box, pageWidth, pageHeight ) ) );

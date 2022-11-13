@@ -13,6 +13,7 @@
 #include "core/transferhistorystore_xml_p.h"
 
 #include <QDateTime>
+#include <QTextStream>
 #include <QtXml/qdom.h>
 #include <QFile>
 #include <QThread>

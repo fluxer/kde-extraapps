@@ -41,7 +41,7 @@ fontMap::fontMap()
                   QIODevice::ReadOnly|QIODevice::Text);
 
   if (!kpsewhich.waitForStarted()) {
-    kError(kvs::dvi) << "fontMap::fontMap(): kpsewhich could not be started." << endl;
+    kError(kvs::dvi) << "fontMap::fontMap(): kpsewhich could not be started.";
     return;
   }
 
@@ -56,7 +56,7 @@ fontMap::fontMap()
                     QStringList() << "--format=dvips config" << "ps2pk.map",
                     QIODevice::ReadOnly|QIODevice::Text);
     if (!kpsewhich.waitForStarted()) {
-      kError(kvs::dvi) << "fontMap::fontMap(): kpsewhich could not be started." << endl;
+      kError(kvs::dvi) << "fontMap::fontMap(): kpsewhich could not be started.";
       return;
     }
 
@@ -65,7 +65,7 @@ fontMap::fontMap()
     map_fileName = QString(kpsewhich.readAll()).trimmed();
     // If both versions fail, then there is nothing left to do.
     if (map_fileName.isEmpty()) {
-      kError(kvs::dvi) << "fontMap::fontMap(): The file 'ps2pk.map' could not be found by kpsewhich." << endl;
+      kError(kvs::dvi) << "fontMap::fontMap(): The file 'ps2pk.map' could not be found by kpsewhich.";
       return;
     }
   }
@@ -109,7 +109,7 @@ fontMap::fontMap()
     }
     file.close();
   } else
-    kError(kvs::dvi) << QString("fontMap::fontMap(): The file '%1' could not be opened.").arg(map_fileName) << endl;
+    kError(kvs::dvi) << QString("fontMap::fontMap(): The file '%1' could not be opened.").arg(map_fileName);
 
 #ifdef DEBUG_FONTMAP
   kDebug(kvs::dvi) << "FontMap file parsed. Results:";
@@ -119,7 +119,7 @@ fontMap::fontMap()
                   << ", FontFileName=" << it.data().fontFileName
                   << ", FullName=" << it.data().fullFontName
                   << ", Encoding=" << it.data().fontEncoding
-                  << "." << endl;;
+                  << ".";
 #endif
 }
 

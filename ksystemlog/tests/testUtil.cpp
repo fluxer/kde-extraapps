@@ -44,7 +44,7 @@ TestUtil::~TestUtil() {
 }
 
 void TestUtil::registerLogModeFactories() const {
-	logDebug() << "Registering existing log mode factories" << endl;
+	logDebug() << "Registering existing log mode factories";
 	Globals::instance()->registerLogModeFactory(new SystemLogModeFactory());
 	Globals::instance()->registerLogModeFactory(new KernelLogModeFactory());
 }
@@ -72,7 +72,7 @@ void TestUtil::destroyReader(Analyzer* analyzer) const {
 }
 
 QList<LogFile> TestUtil::createLogFiles(const QString& resourceFileName) const {
-	logDebug() << "Using log file name " << resourceFileName << endl;
+	logDebug() << "Using log file name " << resourceFileName;
 	
 	LogLevel* informationLogLevel = Globals::instance()->informationLogLevel();
 	
@@ -109,7 +109,7 @@ void TestUtil::addLogLines(const QString& fileName, const QStringList& addedLine
 	
 	QFile data(fileName);
 	if (data.open(QFile::Append | QIODevice::Text)) {
-		logDebug() << "Opening "<< fileName << " for writing " << addedLines.count() << " line(s)."<< endl;
+		logDebug() << "Opening "<< fileName << " for writing " << addedLines.count() << " line(s).";
 		
 		QTextStream out(&data);
 		foreach (const QString &line, addedLines) {

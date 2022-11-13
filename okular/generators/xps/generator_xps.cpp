@@ -1665,7 +1665,7 @@ void XpsDocument::parseDocumentStructure( const QString &documentStructureFileNa
                 synopsisElement.setAttribute( "Viewport",  viewport.toString() );
                 if ( outlineLevel == 1 ) {
                     // kDebug(XpsDebug) << "Description: "
-                    // << outlineEntryElement.attribute( "Description" ) << endl;
+                    // << outlineEntryElement.attribute( "Description" );
                     m_docStructure->appendChild( synopsisElement );
                 } else {
                     // find the last next highest element (so it this is level 3, we need
@@ -1763,14 +1763,14 @@ XpsDocument::XpsDocument(XpsFile *file, const QString &fileName): m_file(file), 
                 } else {
                     kDebug(XpsDebug) << "Unknown document relationships element: "
                                      << attributes.value( "Type" ).toString() << " : "
-                                     << attributes.value( "Target" ).toString() << endl;
+                                     << attributes.value( "Target" ).toString();
                 }
             }
         }
         if ( xml.error() ) {
             kDebug(XpsDebug) << "Could not parse XPS page relationships file ( "
                              << documentRelationshipFile
-                             << " ) - " << xml.errorString() << endl;
+                             << " ) - " << xml.errorString();
         }
     } else { // the page relationship file didn't exist in the zipfile
         // this isn't fatal

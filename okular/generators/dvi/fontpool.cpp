@@ -49,7 +49,7 @@ fontPool::fontPool(bool useFontHinting)
 #ifdef HAVE_FREETYPE
   // Initialize the Freetype Library
   if ( FT_Init_FreeType( &FreeType_library ) != 0 ) {
-    kError(kvs::dvi) << "Cannot load the FreeType library. KDVI proceeds without FreeType support." << endl;
+    kError(kvs::dvi) << "Cannot load the FreeType library. KDVI proceeds without FreeType support.";
     FreeType_could_be_loaded = false;
   } else
     FreeType_could_be_loaded = true;

@@ -32,10 +32,10 @@
 void dviRenderer::printErrorMsgForSpecials(const QString& msg)
 {
   if (dviFile->errorCounter < 25) {
-    kError(kvs::dvi) << msg << endl;
+    kError(kvs::dvi) << msg;
     dviFile->errorCounter++;
     if (dviFile->errorCounter == 25)
-      kError(kvs::dvi) << i18n("That makes 25 errors. Further error messages will not be printed.") << endl;
+      kError(kvs::dvi) << i18n("That makes 25 errors. Further error messages will not be printed.");
   }
 }
 
@@ -303,7 +303,7 @@ void parse_special_argument(const QString& strg, const char* argument_name, int*
       // Maybe we should open a dialog here.
       kError(kvs::dvi) << i18n("Malformed parameter in the epsf special command.\n"
                                    "Expected a float to follow %1 in %2",
-                               argument_name, strg) << endl;
+                               argument_name, strg);
   }
 }
 

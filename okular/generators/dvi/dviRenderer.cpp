@@ -113,12 +113,12 @@ void dviRenderer::drawPage(RenderedDocumentPagePixmap* page)
 
   // Paranoid safety checks
   if (page == 0) {
-    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called with argument == 0" << endl;
+    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called with argument == 0";
     return;
   }
   // Paranoid safety checks
   if (page->pageNumber == 0) {
-    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called for a documentPage with page number 0" << endl;
+    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called for a documentPage with page number 0";
     return;
   }
 
@@ -126,17 +126,17 @@ void dviRenderer::drawPage(RenderedDocumentPagePixmap* page)
 
 
   if ( dviFile == 0 ) {
-    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called, but no dviFile class allocated." << endl;
+    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called, but no dviFile class allocated.";
     page->clear();
     return;
   }
   if (page->pageNumber > dviFile->total_pages) {
     kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called for a documentPage with page number " << page->pageNumber
-                  << " but the current dviFile has only " << dviFile->total_pages << " pages." << endl;
+                  << " but the current dviFile has only " << dviFile->total_pages << " pages.";
     return;
   }
   if ( dviFile->dvi_Data() == 0 ) {
-    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called, but no dviFile is loaded yet." << endl;
+    kError(kvs::dvi) << "dviRenderer::drawPage(documentPage *) called, but no dviFile is loaded yet.";
     page->clear();
     return;
   }
@@ -577,7 +577,7 @@ Anchor dviRenderer::parseReference(const QString &reference)
   QMutexLocker locker(&mutex);
 
 #ifdef DEBUG_DVIRENDERER
-  kError(kvs::dvi) << "dviRenderer::parseReference( " << reference << " ) called" << endl;
+  kError(kvs::dvi) << "dviRenderer::parseReference( " << reference << " ) called";
 #endif
 
   if (dviFile == 0)

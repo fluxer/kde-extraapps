@@ -369,12 +369,12 @@ bool TaskEditorDialog::canReduceMinutesGroup() {
 
 void TaskEditorDialog::emptyMinutesGroup() {
 
-	logDebug() << "Empty minutes layout" << endl;
+	logDebug() << "Empty minutes layout";
 
 	for (int minuteIndex = 0; minuteIndex<=minuteTotal; ++minuteIndex ) {
 		minutesLayout->removeWidget(minuteButtons[minuteIndex]);
 		minuteButtons[minuteIndex]->hide();
-		logDebug() << "Layout count" << minutesLayout->count() << endl;
+		logDebug() << "Layout count" << minutesLayout->count();
 	}
 
 	minutesLayout->removeItem(minutesPreselectionLayout);
@@ -393,7 +393,7 @@ void TaskEditorDialog::increaseMinutesGroup() {
 	*/
 	emptyMinutesGroup();
 
-	logDebug() << "Show all minutes" << endl;
+	logDebug() << "Show all minutes";
 
 	int minuteIndex = 0;
 	for (int row = 0; row < (minuteTotal+1)/minutePerColumn; ++row) {
@@ -411,7 +411,7 @@ void TaskEditorDialog::increaseMinutesGroup() {
 }
 
 void TaskEditorDialog::reduceMinutesGroup() {
-	logDebug() << "Reducing view" << endl;
+	logDebug() << "Reducing view";
 
 	emptyMinutesGroup();
 
@@ -430,7 +430,7 @@ void TaskEditorDialog::reduceMinutesGroup() {
 			}
 		}
 		else {
-			logDebug() << "Reducing id" << minuteIndex << endl;
+			logDebug() << "Reducing id" << minuteIndex;
 			ctTask->minute.setEnabled(minuteIndex, false);
 			minuteButtons[minuteIndex]->setChecked(false);
 
@@ -456,7 +456,7 @@ NumberPushButton* TaskEditorDialog::createMinuteButton(int minuteIndex) {
 }
 
 void TaskEditorDialog::createMinutesGroup(QWidget* main) {
-	logDebug() << "Creating minutes group" << endl;
+	logDebug() << "Creating minutes group";
 
 	minutesGroup = new QGroupBox( i18n("Minutes"), main);
 
@@ -497,7 +497,7 @@ void TaskEditorDialog::createMinutesGroup(QWidget* main) {
 		reduceMinutesGroup();
 	}
 
-	logDebug() << "Minutes group created" << endl;
+	logDebug() << "Minutes group created";
 }
 
 NumberPushButton* TaskEditorDialog::createHourButton(QGroupBox* hoursGroup, int hour) {
@@ -514,7 +514,7 @@ NumberPushButton* TaskEditorDialog::createHourButton(QGroupBox* hoursGroup, int 
 
 QGroupBox* TaskEditorDialog::createHoursGroup(QWidget* main) {
 
-	logDebug() << "Creating hours group" << endl;
+	logDebug() << "Creating hours group";
 	QGroupBox* hoursGroup = new QGroupBox(i18n("Hours"), main);
 
 	QGridLayout* hoursLayout = new QGridLayout(hoursGroup); //5 x 7
@@ -547,7 +547,7 @@ QGroupBox* TaskEditorDialog::createHoursGroup(QWidget* main) {
 	connect(allHours, SIGNAL(clicked()), SLOT(slotAllHours()));
 	connect(allHours, SIGNAL(clicked()), SLOT(slotWizard()));
 
-	logDebug() << "Create hours group" << endl;
+	logDebug() << "Create hours group";
 	return hoursGroup;
 }
 
@@ -725,7 +725,7 @@ bool TaskEditorDialog::checkCommand() {
 	QString path = pathCommand.at(0);
 	QString binaryCommand = pathCommand.at(1);
 
-	logDebug() << "Looking for " << binaryCommand << "in" << path << endl;
+	logDebug() << "Looking for " << binaryCommand << "in" << path;
 
 	bool found = false;
 	bool exec = false;
@@ -977,7 +977,7 @@ void TaskEditorDialog::slotHourChanged() {
 void TaskEditorDialog::slotMinutesPreselection(int index) {
 	QVariant itemData = minutesPreselection->itemData(index);
 	int step = itemData.toInt();
-	logDebug() << "Selected step " << step << endl;
+	logDebug() << "Selected step " << step;
 
 	if (step == -1) {
 		//Unselect everything

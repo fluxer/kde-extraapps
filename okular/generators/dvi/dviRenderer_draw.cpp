@@ -211,7 +211,7 @@ void dviRenderer::set_vf_char(unsigned int cmd, unsigned int ch)
   static unsigned char   c;
   macro *m = &currinf.fontp->macrotable[ch];
   if (m->pos == NULL) {
-    kError(kvs::dvi) << "Character " << ch << " not defined in font " << currinf.fontp->fontname << endl;
+    kError(kvs::dvi) << "Character " << ch << " not defined in font " << currinf.fontp->fontname;
     m->pos = m->end = &c;
     return;
   }

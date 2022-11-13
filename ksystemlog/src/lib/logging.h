@@ -34,7 +34,7 @@
  * - logFatal()
  * 
  * Use it like kDebug() function :
- * logDebug() << "Debug message" << list.size() << endl;
+ * logDebug() << "Debug message" << list.size();
  */
 
 /*

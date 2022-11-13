@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
 			/*KSystemLog::MainWindow* mainWindow;*/
 			new KSystemLog::MainWindow();
 			for (int i = 0; i < args->count(); i++) {
-				logDebug() << "Loading file " << args->url(i) << endl;
+				logDebug() << "Loading file " << args->url(i);
 				//TODO Implement this kind of loading
 				//LogManager* firstLogManager = d->tabs->createTab();
 				//d->tabs->load(Globals::instance()->findLogMode("openLogMode"), firstLogManager);

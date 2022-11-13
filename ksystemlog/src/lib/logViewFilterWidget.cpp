@@ -120,7 +120,7 @@ void LogViewFilterWidget::initSearchListFilter() {
 }
 
 void LogViewFilterWidget::updateFilterColumns(const LogViewColumns& columns) {
-	logDebug() << "Changing columns..." << endl;
+	logDebug() << "Changing columns...";
 
 	//We first delete all items
 	d->filterList->clear();
@@ -140,13 +140,13 @@ void LogViewFilterWidget::updateFilterColumns(const LogViewColumns& columns) {
 void LogViewFilterWidget::changeColumnFilter(int column) {
 	//The user select all columns
 	if (column==0) {
-		logDebug() << "Searching on all columns" << endl;
+		logDebug() << "Searching on all columns";
 
 		d->filterLine->setSearchColumns(QList<int>());
 		return;
 	}
 
-	logDebug() << "Searching on " << d->filterList->currentIndex() << " column" << endl;
+	logDebug() << "Searching on " << d->filterList->currentIndex() << " column";
 
 	QList<int> filterColumns;
 	//currentIndex() - 1 to do not count the "All" columns item

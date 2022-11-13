@@ -77,7 +77,7 @@ CrontabPrinter::~CrontabPrinter() {
 }
 
 bool CrontabPrinter::start() {
-	logDebug() << "Printing selection..." << endl;
+	logDebug() << "Printing selection...";
 
         if (d->printer == NULL) {
             d->printer = new QPrinter();
@@ -94,7 +94,7 @@ bool CrontabPrinter::start() {
 	// initialize the printer using the print dialog
 	QPrintDialog *printDialog = KdePrint::createPrintDialog(d->printer, d->crontabWidget);
 	if (printDialog->exec() == QDialog::Rejected) {
-		logDebug() << "Printing canceled" << endl;
+		logDebug() << "Printing canceled";
 		delete printDialog;
 		return false;
 	}
@@ -264,7 +264,7 @@ void CrontabPrinter::finish() {
 }
 
 void CrontabPrinter::printPageNumber() {
-	logDebug() << "Printing page number..." << endl;
+	logDebug() << "Printing page number...";
 
 	d->painter->translate(0, - d->currentRowPosition);
 	d->printView->moveTo(QPoint(0, d->printView->height()) );
@@ -384,12 +384,12 @@ QList<int> CrontabPrinter::findColumnWidths(const QList<QStringList>& contents, 
 
 	int columnWidthSum = 0;
 	foreach(int width, columnWidths) {
-		logDebug() << "Column : " << width << endl;
+		logDebug() << "Column : " << width;
 		columnWidthSum += width;
 	}
 
 	if (columnWidthSum >= pageWidth) {
-		logDebug() << "The printing could be out of the page" << endl;
+		logDebug() << "The printing could be out of the page";
 		return columnWidths;
 	}
 

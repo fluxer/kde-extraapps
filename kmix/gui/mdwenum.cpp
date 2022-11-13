@@ -114,7 +114,7 @@ void MDWEnum::update()
     _enumCombo->setCurrentIndex( m_mixdevice->enumId() );
   }
   else {
-    kError(67100) << "MDWEnum::update() enumID=" << m_mixdevice->enumId() << " is no Enum ... skipped" << endl;
+    kError(67100) << "MDWEnum::update() enumID=" << m_mixdevice->enumId() << " is no Enum ... skipped";
   }
 }
 

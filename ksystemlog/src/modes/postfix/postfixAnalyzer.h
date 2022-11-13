@@ -56,7 +56,7 @@ class PostfixAnalyzer : public SyslogAnalyzer {
 			
 			items.append(message + "\n" + message);
 			
-			logDebug() << "Coucou" << items.at(items.count()-1) << endl;
+			logDebug() << "Coucou" << items.at(items.count()-1);
 			
 			syslogLine->setLogItems(items);
 			return syslogLine;

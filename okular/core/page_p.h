@@ -17,12 +17,12 @@
 #include <qtransform.h>
 #include <qstring.h>
 #include <qdom.h>
+#include <qcolor.h>
+#include <qpixmap.h>
 
 // local includes
 #include "global.h"
 #include "area.h"
-
-#include <QColor>
 
 namespace Okular {
 

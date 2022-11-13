@@ -36,6 +36,7 @@
 #include <QFont>
 #include <QtGui/qevent.h>
 #include <QFile>
+#include <QTextStream>
 
 #include <kapplication.h>
 #include <kdebug.h>

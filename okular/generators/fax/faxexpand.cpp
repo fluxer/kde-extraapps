@@ -338,7 +338,7 @@ unexpected(const char *what, int LineNum)
 {
     if (verbose)
         kError() << "Line " << LineNum << ": Unexpected state in "
-		<< what << endl;
+		<< what;
 }
 
 /* Expand tiff modified huffman data (g3-1d without EOLs) */

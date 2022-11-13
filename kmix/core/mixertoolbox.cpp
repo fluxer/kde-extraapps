@@ -288,7 +288,7 @@ void MixerToolBox::initMixerInternal(MultiDriverMode multiDriverMode, QList<QStr
        KMixDeviceManager::instance()->setHotpluggingBackends(driverInfoUsed);
    }
 
-   kDebug(67100) << ref_hwInfoString << endl << "Total number of detected Mixers: " << Mixer::mixers().count();
+   kDebug(67100) << ref_hwInfoString << "\nTotal number of detected Mixers: " << Mixer::mixers().count();
    //kDebug(67100) << "OUT MixerToolBox::initMixer()";
 
 }

@@ -87,7 +87,7 @@ TeXFont_PK::TeXFont_PK(TeXFontDefinition *parent)
     characterBitmaps[i] = 0;
   file = fopen(QFile::encodeName(parent->filename), "r");
   if (file == 0)
-    kError(kvs::dvi) << i18n("Cannot open font file %1.", parent->filename) << endl;
+    kError(kvs::dvi) << i18n("Cannot open font file %1.", parent->filename);
 #ifdef DEBUG_PK
   else
     kDebug(kvs::dvi) << "TeXFont_PK::TeXFont_PK(): file opened successfully";
@@ -124,7 +124,7 @@ glyph* TeXFont_PK::getGlyph(quint16 ch, bool generateCharacterPixmap, const QCol
 
   // Paranoia checks
   if (ch >= TeXFontDefinition::max_num_of_chars_in_font) {
-    kError(kvs::dvi) << "TeXFont_PK::getGlyph(): Argument is too big." << endl;
+    kError(kvs::dvi) << "TeXFont_PK::getGlyph(): Argument is too big.";
     return glyphtable;
   }
 
@@ -136,7 +136,7 @@ glyph* TeXFont_PK::getGlyph(quint16 ch, bool generateCharacterPixmap, const QCol
     // If the character is not defined in the PK file, mark the
     // character as missing, and print an error message
     if (g->addr == 0) {
-      kError(kvs::dvi) << i18n("TexFont_PK::operator[]: Character %1 not defined in font %2", ch, parent->filename) << endl;
+      kError(kvs::dvi) << i18n("TexFont_PK::operator[]: Character %1 not defined in font %2", ch, parent->filename);
       g->addr = -1;
       return g;
     }
@@ -720,13 +720,13 @@ void TeXFont_PK::read_PK_index()
 #endif
 
   if (file == 0) {
-    kError(kvs::dvi) << "TeXFont_PK::read_PK_index(): file == 0" << endl;
+    kError(kvs::dvi) << "TeXFont_PK::read_PK_index(): file == 0";
     return;
   }
 
   int magic      = two(file);
   if (magic != PK_MAGIC) {
-    kError(kvs::dvi) << "TeXFont_PK::read_PK_index(): file is not a PK file" << endl;
+    kError(kvs::dvi) << "TeXFont_PK::read_PK_index(): file is not a PK file";
     return;
   }
 

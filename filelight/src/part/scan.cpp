@@ -48,7 +48,7 @@ ScanManager::ScanManager(QObject *parent)
 ScanManager::~ScanManager()
 {
     if (m_thread) {
-        kDebug() << "Attempting to abort scan operation..." << endl;
+        kDebug() << "Attempting to abort scan operation...";
         m_abort = true;
         m_thread->wait();
     }
@@ -69,7 +69,7 @@ bool ScanManager::start(const KUrl &url)
 
     //url is guaranteed clean and safe
 
-    kDebug() << "Scan requested for: " << url.prettyUrl() << endl;
+    kDebug() << "Scan requested for: " << url.prettyUrl();
 
     if (running()) {
         kWarning() << "Tried to launch two concurrent scans, aborting old one...";
@@ -101,7 +101,7 @@ bool ScanManager::start(const KUrl &url)
             {
                 //find a pointer to the requested branch
 
-                kDebug() << "Cache-(a)hit: " << cachePath << endl;
+                kDebug() << "Cache-(a)hit: " << cachePath;
 
                 QStringList split = path.mid(cachePath.length()).split(QLatin1Char( '/' ));
                 Folder *d = *it;
@@ -132,7 +132,7 @@ bool ScanManager::start(const KUrl &url)
                     delete trees;
 
                     //we found a completed tree, thus no need to scan
-                    kDebug() << "Found cache-handle, generating map.." << endl;
+                    kDebug() << "Found cache-handle, generating map..";
 
                     emit branchCacheHit(d);
 
@@ -148,7 +148,7 @@ bool ScanManager::start(const KUrl &url)
             }
             else if (cachePath.startsWith(path)) //then part of the requested tree is already scanned
             {
-                kDebug() << "Cache-(b)hit: " << cachePath << endl;
+                kDebug() << "Cache-(b)hit: " << cachePath;
                 it.transferTo(*trees);
             }
         }

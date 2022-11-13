@@ -86,7 +86,7 @@ QStringList FileListHelper::findPaths(KUrl::List urls) {
 			//If this Url uses a joker (i.e. : "/var/log/apache2/*")
 			if (url.fileName().contains(QLatin1Char( '*' ))) {
 				const QStringList foundPaths = expandJoker(url.path());
-				logDebug() << "Found paths of " << url.path() << ":" << foundPaths << endl;
+				logDebug() << "Found paths of " << url.path() << ":" << foundPaths;
 				foreach(const QString &foundPath, foundPaths) {
 					paths.append(foundPath);
 				}
@@ -144,7 +144,7 @@ KUrl FileListHelper::openUrl(const QString& originPath) {
 QStringList FileListHelper::expandJoker(const KUrl& url) {
 	QDir directory = QDir(url.path().left(url.path().count() - url.fileName().count()));
 
-	logDebug() << "Dir " << directory.path() << endl;
+	logDebug() << "Dir " << directory.path();
 	QString filename = url.fileName();
 
 	if (filename.isEmpty()) {

@@ -71,7 +71,7 @@
 
 void oops(const QString& message)
 {
-  kError(kvs::dvi) << "Fatal Error:" << message << endl;
+  kError(kvs::dvi) << "Fatal Error:" << message;
 
   KMessageBox::error( NULL,
                       i18n("Fatal error.\n\n") +

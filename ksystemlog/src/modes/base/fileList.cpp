@@ -42,7 +42,7 @@ FileList::FileList(QWidget* parent, const QString& descriptionText) :
 	fileListHelper(this)
 	{
 	
-	logDebug() << "Initializing file list..." << endl;
+	logDebug() << "Initializing file list...";
 	
 	setupUi(this);
 
@@ -71,7 +71,7 @@ FileList::FileList(QWidget* parent, const QString& descriptionText) :
 	
 	updateButtons();
 	
-	logDebug() << "File list initialized" << endl;
+	logDebug() << "File list initialized";
 	
 }
 

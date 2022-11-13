@@ -117,7 +117,7 @@ bool pageSize::setPageSize(const QString& name)
   currentSize = defaultPageSize();
   pageWidth.setLength_in_mm(staticList[currentSize].width);
   pageHeight.setLength_in_mm(staticList[currentSize].height);
-  kError(kvs::shell) << "pageSize::setPageSize: could not parse '" << name << "'. Using " << staticList[currentSize].name << " as a default." << endl;
+  kError(kvs::shell) << "pageSize::setPageSize: could not parse '" << name << "'. Using " << staticList[currentSize].name << " as a default.";
   emit(sizeChanged(*this));
   return false;
 }
@@ -146,7 +146,7 @@ void pageSize::setPageSize(const QString& width, const QString& _widthUnits, con
 
   QString widthUnits = _widthUnits;
   if ((widthUnits != "cm") && (widthUnits != "mm") && (widthUnits != "in")) {
-    kError(kvs::shell) << "Unrecognized page width unit '" << widthUnits << "'. Assuming mm" << endl;
+    kError(kvs::shell) << "Unrecognized page width unit '" << widthUnits << "'. Assuming mm";
     widthUnits = "mm";
   }
   pageWidth.setLength_in_mm(w);
@@ -157,7 +157,7 @@ void pageSize::setPageSize(const QString& width, const QString& _widthUnits, con
 
   QString heightUnits = _heightUnits;
   if ((heightUnits != "cm") && (heightUnits != "mm") && (heightUnits != "in")) {
-    kError(kvs::shell) << "Unrecognized page height unit '" << widthUnits << "'. Assuming mm" << endl;
+    kError(kvs::shell) << "Unrecognized page height unit '" << widthUnits << "'. Assuming mm";
     heightUnits = "mm";
   }
   pageHeight.setLength_in_mm(h);
@@ -269,7 +269,7 @@ QString pageSize::formatName() const
 int pageSize::getOrientation() const
 {
   if (currentSize == -1) {
-    kError(kvs::shell) << "pageSize::getOrientation: getOrientation called for page format that does not have a name." << endl;
+    kError(kvs::shell) << "pageSize::getOrientation: getOrientation called for page format that does not have a name.";
     return 0;
   }
 
@@ -283,7 +283,7 @@ int pageSize::getOrientation() const
 void pageSize::setOrientation(int orient)
 {
   if (currentSize == -1) {
-    kError(kvs::shell) << "pageSize::setOrientation: setOrientation called for page format that does not have a name." << endl;
+    kError(kvs::shell) << "pageSize::setOrientation: setOrientation called for page format that does not have a name.";
     return;
   }
 

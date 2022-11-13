@@ -69,7 +69,7 @@ ConfigurationDialog::~ConfigurationDialog() {
 }
 
 void ConfigurationDialog::setupLogModeConfigurations() {
-	logDebug() << "Setup Log Mode Configurations..." << endl;
+	logDebug() << "Setup Log Mode Configurations...";
 
 
 	foreach(LogMode* logMode, Globals::instance()->logModes()) {
@@ -88,7 +88,7 @@ void ConfigurationDialog::setupLogModeConfigurations() {
 
 
 	foreach (LogModeConfigurationWidget* logModeConfigurationWidget, d->logModeConfigurations ) {
-		logDebug() << "Adding " << logModeConfigurationWidget->itemName() << " configuration..." << endl;
+		logDebug() << "Adding " << logModeConfigurationWidget->itemName() << " configuration...";
 
 		addPage(logModeConfigurationWidget, logModeConfigurationWidget->itemName(), logModeConfigurationWidget->iconName(), logModeConfigurationWidget->header(), false);
 
@@ -97,7 +97,7 @@ void ConfigurationDialog::setupLogModeConfigurations() {
 }
 
 void ConfigurationDialog::showConfiguration() {
-	logDebug() << "Showing Configuration dialog..." << endl;
+	logDebug() << "Showing Configuration dialog...";
 
 	show();
 }
@@ -111,7 +111,7 @@ void ConfigurationDialog::setupGeneralConfiguration() {
 }
 
 void ConfigurationDialog::updateSettings() {
-	logDebug() << "Saving configuration..." << endl;
+	logDebug() << "Saving configuration...";
 
 	d->changed = false;
 
@@ -125,16 +125,16 @@ void ConfigurationDialog::updateSettings() {
 
 	emit configurationSaved();
 
-	logDebug() << "Configuration saved" << endl;
+	logDebug() << "Configuration saved";
 }
 
 bool ConfigurationDialog::hasChanged() {
-	logDebug() << "Current change status : " << d->changed << endl;
+	logDebug() << "Current change status : " << d->changed;
 	return d->changed;
 }
 
 void ConfigurationDialog::updateConfiguration() {
-	logDebug() << "Updating configuration..." << endl;
+	logDebug() << "Updating configuration...";
 
 	bool valid = d->generalConfiguration->isValid();
 	if (valid) {
@@ -159,14 +159,14 @@ void ConfigurationDialog::updateConfiguration() {
 }
 
 void ConfigurationDialog::updateButtons() {
-	logDebug() << "Updating configuration buttons..." << endl;
+	logDebug() << "Updating configuration buttons...";
 
 	d->changed = true;
 
 }
 
 void ConfigurationDialog::updateWidgets() {
-	logDebug() << "Reading configuration..." << endl;
+	logDebug() << "Reading configuration...";
 
 	d->generalConfiguration->readConfig();
 	foreach (LogModeConfigurationWidget* logModeConfigurationWidget, d->logModeConfigurations ) {
@@ -177,7 +177,7 @@ void ConfigurationDialog::updateWidgets() {
 }
 
 void ConfigurationDialog::updateWidgetsDefault() {
-	logDebug() << "Loading default configuration..." << endl;
+	logDebug() << "Loading default configuration...";
 
 	d->generalConfiguration->defaultConfig();
 	foreach (LogModeConfigurationWidget* logModeConfigurationWidget, d->logModeConfigurations ) {

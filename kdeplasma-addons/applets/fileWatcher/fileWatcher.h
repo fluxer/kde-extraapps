@@ -28,6 +28,8 @@
 
 #include <QFile>
 #include <QTextDocument>
+#include <QTextStream>
+
 class KDirWatch;
 class FileWatcherTextItem;
 

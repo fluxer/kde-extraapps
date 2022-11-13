@@ -508,7 +508,7 @@ void MainWindow::slotTransfersChanged(QMap<TransferHandler*, Transfer::ChangesFl
             break;
         }
         
-//         kDebug(5001) << it.key() << ": " << it.value() << endl;
+        // kDebug(5001) << it.key() << ": " << it.value();
     }
     
     if (update)

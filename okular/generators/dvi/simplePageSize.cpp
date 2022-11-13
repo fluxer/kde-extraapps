@@ -17,7 +17,7 @@
 double SimplePageSize::zoomForHeight(quint32 height, const QPaintDevice& pd) const
 {
   if (!isValid()) {
-    kError(kvs::shell) << "SimplePageSize::zoomForHeight() called when paper height was invalid" << endl;
+    kError(kvs::shell) << "SimplePageSize::zoomForHeight() called when paper height was invalid";
     return 0.1;
   }
 
@@ -28,7 +28,7 @@ double SimplePageSize::zoomForHeight(quint32 height, const QPaintDevice& pd) con
 double SimplePageSize::zoomForWidth(quint32 width, const QPaintDevice& pd) const
 {
   if (!isValid()) {
-    kError(kvs::shell) << "SimplePageSize::zoomForWidth() called when paper width was invalid" << endl;
+    kError(kvs::shell) << "SimplePageSize::zoomForWidth() called when paper width was invalid";
     return 0.1;
   }
 

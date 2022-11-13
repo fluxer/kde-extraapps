@@ -97,8 +97,7 @@ X11FrameBuffer::X11FrameBuffer(WId id, QObject *parent)
     kDebug() << "Got image. bpp: " << d->framebufferImage->bits_per_pixel
              << ", depth: " << d->framebufferImage->depth
              << ", padded width: " << d->framebufferImage->bytes_per_line
-             << " (sent: " << d->framebufferImage->width * 4 << ")"
-             << endl;
+             << " (sent: " << d->framebufferImage->width * 4 << ")";
 
     fb = d->framebufferImage->data;
 #ifdef HAVE_XDAMAGE

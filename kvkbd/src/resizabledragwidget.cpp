@@ -42,7 +42,7 @@ ResizableDragWidget::~ResizableDragWidget()
 
 void ResizableDragWidget::mousePressEvent(QMouseEvent * ev)
 {
-//     cout << "ResizableDragWidget::mousePressEvent" << endl;
+    // std::cout << "ResizableDragWidget::mousePressEvent" << std::endl;
     
     DragWidget::mousePressEvent(ev);
 
@@ -58,7 +58,7 @@ void ResizableDragWidget::mousePressEvent(QMouseEvent * ev)
 
 void ResizableDragWidget::mouseMoveEvent(QMouseEvent * ev)
 {
-//     cout << "ResizableDragWidget::mouseMoveEvent | Resize: " << doResize << " | Dragged: " << dragged << endl;
+    // std::cout << "ResizableDragWidget::mouseMoveEvent | Resize: " << doResize << " | Dragged: " << dragged << std::endl;
     
     
     DragWidget::mouseMoveEvent(ev);

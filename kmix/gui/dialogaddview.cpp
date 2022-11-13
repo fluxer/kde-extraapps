@@ -228,7 +228,7 @@ void DialogAddView::apply()
     if ( button != 0 ) {
       QString viewName = button->objectName();
       if ( mixer == 0 ) {
-         kError(67100) << "DialogAddView::createPage(): Invalid Mixer (mixer=0)" << endl;
+         kError(67100) << "DialogAddView::createPage(): Invalid Mixer (mixer=0)";
          return; // can not happen
       }
       else {

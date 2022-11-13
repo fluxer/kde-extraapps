@@ -265,7 +265,7 @@ bool Mixer::openIfValid()
         else
         {
             if ( !m_dynamic )
-                kError(67100) << "Mixer::open() no master detected." << endl;
+                kError(67100) << "Mixer::open() no master detected.";
             QString noMaster = "---no-master-detected---";
             setLocalMasterMD(noMaster); // no master
         }

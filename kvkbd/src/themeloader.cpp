@@ -209,7 +209,7 @@ int ThemeLoader::loadLayout(const QString& themeName)
         int width = node.attributes().namedItem("width").toAttr().value().toInt();
         QString hintName = node.attributes().namedItem("name").toAttr().value();
         widthMap.insert(hintName, width);
-        //cout  << "widths[" << qPrintable(hintName) << "]=>"<< width << endl;
+        // std::cout  << "widths[" << qPrintable(hintName) << "]=>"<< width << std::endl;
     }
 
     wList = docElem.elementsByTagName("buttonHeight");
@@ -220,7 +220,7 @@ int ThemeLoader::loadLayout(const QString& themeName)
         int height = node.attributes().namedItem("height").toAttr().value().toInt();
         QString hintName = node.attributes().namedItem("name").toAttr().value();
         heightMap.insert(hintName, height);
-        //cout  << "heights[" << qPrintable(hintName) << "]=>"<< height << endl;
+        // std::cout  << "heights[" << qPrintable(hintName) << "]=>"<< height << std::endl;
     }
 
     wList = docElem.elementsByTagName("spacingHints");
@@ -231,7 +231,7 @@ int ThemeLoader::loadLayout(const QString& themeName)
         int width = node.attributes().namedItem("width").toAttr().value().toInt();
         QString hintName = node.attributes().namedItem("name").toAttr().value();
         spacingMap.insert(hintName, width);
-        //cout  << "spacing[" << qPrintable(hintName) << "]=>"<< width << endl;
+        // std::cout  << "spacing[" << qPrintable(hintName) << "]=>"<< width << std::endl;
     }
 
     wList = docElem.elementsByTagName("part");
@@ -386,7 +386,7 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
                 btn->storeSize();
 
 // 		btn->setNode(node);
-                // cout  << "ColorGroup: " << qPrintable(colorGroup) << endl;
+                // std::cout  << "ColorGroup: " << qPrintable(colorGroup) << std::endl;
 
                 sx+=buttonWidth+rowSpacingX;
 
@@ -413,7 +413,7 @@ void ThemeLoader::loadKeys(MainWidget *vPart, const QDomNode& wNode)
 
             }
 
-            //cout << "X=>"<<sx<<" | Y=>"<<sy<<endl;
+            //std::cout << "X=>"<<sx<<" | Y=>"<<sy<<endl;
             //
         }//row
 

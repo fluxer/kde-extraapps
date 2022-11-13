@@ -83,7 +83,7 @@ dvifile::dvifile(const dvifile *old, fontPool *fp)
   size_of_file = old->size_of_file;
   end_pointer = dvi_Data()+size_of_file;
   if (dvi_Data() == 0) {
-    kError(kvs::dvi) << "Not enough memory to copy the DVI-file." << endl;
+    kError(kvs::dvi) << "Not enough memory to copy the DVI-file.";
     return;
   }
 
@@ -239,7 +239,7 @@ void dvifile::prepare_pages()
 
   page_offset.resize(total_pages+1);
   if (page_offset.size() < (total_pages+1)) {
-    kError(kvs::dvi) << "No memory for page list!" << endl;
+    kError(kvs::dvi) << "No memory for page list!";
     return;
   }
   for(int i=0; i<=total_pages; i++)

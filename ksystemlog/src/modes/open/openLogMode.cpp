@@ -64,7 +64,7 @@ Analyzer* OpenLogMode::createAnalyzer() {
 QList<LogFile> OpenLogMode::createLogFiles() {
 	//Open a standard Filedialog
 	KUrl openingFileName(KFileDialog::getOpenUrl(KUrl(), QString(), parent, i18n("Open Location")));
-	logDebug() << "Opening file : " << openingFileName.url() << endl;
+	logDebug() << "Opening file : " << openingFileName.url();
 
 	if (openingFileName.isEmpty()) {
 		return QList<LogFile>();

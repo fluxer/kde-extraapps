@@ -731,7 +731,7 @@ void MDWSlider::setIcon( QString filename, QWidget* label )
 	}
 	else
 	{
-		kError(67100) << "Pixmap missing. filename=" << filename << endl;
+		kError(67100) << "Pixmap missing. filename=" << filename;
 	}
 }
 

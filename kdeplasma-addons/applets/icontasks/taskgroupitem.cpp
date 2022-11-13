@@ -527,7 +527,7 @@ int TaskGroupItem::count() const
 
 AbstractTaskItem *TaskGroupItem::createAbstractItem(TaskManager::AbstractGroupableItem *groupableItem)
 {
-    //kDebug() << "item to create" << groupableItem << endl;
+    //kDebug() << "item to create" << groupableItem;
     AbstractTaskItem *item = 0;
 
     if (groupableItem->itemType() == TaskManager::GroupItemType) {

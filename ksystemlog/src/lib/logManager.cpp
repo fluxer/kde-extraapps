@@ -73,11 +73,11 @@ View* LogManager::usedView() const {
 
 void LogManager::reload() {
 	if (d->logMode == NULL) {
-		logWarning() << "Log manager is not yet initialized" << endl;
+		logWarning() << "Log manager is not yet initialized";
 		return;
 	}
 
-	logDebug() << "Reloading with log mode " << d->logMode->name() << "..." << endl;
+	logDebug() << "Reloading with log mode " << d->logMode->name() << "...";
 
 	emit statusBarChanged(i18n("Loading log..."));
 
@@ -85,19 +85,19 @@ void LogManager::reload() {
 	emit tabTitleChanged(d->usedView, d->logMode->icon(), d->logMode->name());
 	emit windowTitleChanged(d->logMode->name());
 
-	logDebug() << "Emptying view..." << endl;
+	logDebug() << "Emptying view...";
 
 	// Empty the current list, to better fill it
 	d->usedView->logViewWidget()->model()->clear();
 
-	logDebug() << "Initializing view..." << endl;
+	logDebug() << "Initializing view...";
 
 	// Init the Log View
-	logDebug() << "Initializing columns view..." << endl;
+	logDebug() << "Initializing columns view...";
 
 	d->usedView->logViewWidget()->setColumns(d->analyzer->initColumns());
 
-	logDebug() << "Reading log..." << endl;
+	logDebug() << "Reading log...";
 
 	// Read the log files
 	d->analyzer->watchLogFiles(true);
@@ -107,7 +107,7 @@ void LogManager::reload() {
 	// Log List has been totally reloaded
 	emit reloaded();
 
-	logDebug() << "Log mode " << d->logMode->name() << " reloaded" << endl;
+	logDebug() << "Log mode " << d->logMode->name() << " reloaded";
 
 }
 
@@ -120,7 +120,7 @@ const QTime& LogManager::lastUpdate() const {
 }
 
 void LogManager::updateLog(int lineCount) {
-	logDebug() << "Updating log " << lineCount  << " new lines" << endl;
+	logDebug() << "Updating log " << lineCount  << " new lines";
 
 	if (lineCount==0)
 		return;
@@ -131,7 +131,7 @@ void LogManager::updateLog(int lineCount) {
 }
 
 void LogManager::cleanPreviousLogMode() {
-	logDebug() << "Cleaning previous LogMode..." << endl;
+	logDebug() << "Cleaning previous LogMode...";
 
 	d->logMode = NULL;
 
@@ -144,9 +144,9 @@ void LogManager::initialize(LogMode* mode) {
 }
 
 void LogManager::internalInitialize(LogMode* mode, const QList<LogFile>& logFiles) {
-	logDebug() << "Initializing LogManager..." << endl;
+	logDebug() << "Initializing LogManager...";
 
-	logDebug() << "Using files" << logFiles << endl;
+	logDebug() << "Using files" << logFiles;
 
 	cleanPreviousLogMode();
 
@@ -168,7 +168,7 @@ void LogManager::internalInitialize(LogMode* mode, const QList<LogFile>& logFile
 	//Find the log files used for this kind of mode, and set them to our log manager
 	d->analyzer->setLogFiles(logFiles);
 
-	logDebug() << "LogManager initialized" << endl;
+	logDebug() << "LogManager initialized";
 
 }
 
@@ -183,7 +183,7 @@ void LogManager::showErrorMessage(const QString& title, const QString& message) 
 
 void LogManager::setParsingPaused(bool paused) {
 	if (d->logMode == NULL) {
-		logWarning() << "Log manager is not yet initialized" << endl;
+		logWarning() << "Log manager is not yet initialized";
 		return;
 	}
 
@@ -192,7 +192,7 @@ void LogManager::setParsingPaused(bool paused) {
 
 bool LogManager::isParsingPaused() const {
 	if (d->logMode == NULL) {
-		logWarning() << "Log manager is not yet initialized" << endl;
+		logWarning() << "Log manager is not yet initialized";
 		return false;
 	}
 
@@ -200,7 +200,7 @@ bool LogManager::isParsingPaused() const {
 }
 
 void LogManager::loadDroppedUrls(const KUrl::List& urls) {
-	logDebug() << "Drop " << urls << endl;
+	logDebug() << "Drop " << urls;
 
 	QList<LogFile> logFiles;
 
