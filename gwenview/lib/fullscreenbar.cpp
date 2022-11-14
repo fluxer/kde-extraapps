@@ -70,9 +70,7 @@ struct FullScreenBarPrivate
 
     void hideCursor()
     {
-        QBitmap empty(32, 32);
-        empty.clear();
-        QCursor blankCursor(empty, empty);
+        QCursor blankCursor(Qt::BlankCursor);
         QApplication::setOverrideCursor(blankCursor);
     }
 
