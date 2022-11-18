@@ -102,8 +102,7 @@ public:
 
     enum ColorDepth {
         bpp32,
-        bpp16,
-        bpp8
+        bpp16
     };
 
     explicit VncClientThread(QObject *parent = 0);

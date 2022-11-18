@@ -31,8 +31,6 @@
 #include <QtCore/qmutex.h>
 #include <QTimer>
 
-//for detecting intel AMT KVM vnc server
-static const QString INTEL_AMT_KVM_STRING= "Intel(r) AMT KVM";
 static thread_local VncClientThread ** instances;
 
 // Dispatch from this static callback context to the member context.
@@ -94,36 +92,33 @@ void VncClientThread::outputHandlerStatic(const char *format, ...)
 void VncClientThread::setClientColorDepth(rfbClient* cl, VncClientThread::ColorDepth cd)
 {
     switch(cd) {
-    case bpp16:
-        cl->format.depth = 16;
-        cl->format.bitsPerPixel = 16;
-        cl->format.redShift = 11;
-        cl->format.greenShift = 5;
-        cl->format.blueShift = 0;
-        cl->format.redMax = 0x1f;
-        cl->format.greenMax = 0x3f;
-        cl->format.blueMax = 0x1f;
-        break;
-    case bpp32:
-    default:
-        cl->format.depth = 24;
-        cl->format.bitsPerPixel = 32;
-        cl->format.redShift = 16;
-        cl->format.greenShift = 8;
-        cl->format.blueShift = 0;
-        cl->format.redMax = 0xff;
-        cl->format.greenMax = 0xff;
-        cl->format.blueMax = 0xff;
+        case bpp32: {
+            cl->format.depth = 24;
+            cl->format.bitsPerPixel = 32;
+            cl->format.redShift = 16;
+            cl->format.greenShift = 8;
+            cl->format.blueShift = 0;
+            cl->format.redMax = 0xff;
+            cl->format.greenMax = 0xff;
+            cl->format.blueMax = 0xff;
+        }
+        case bpp16:
+        default: {
+            cl->format.depth = 16;
+            cl->format.bitsPerPixel = 16;
+            cl->format.redShift = 11;
+            cl->format.greenShift = 5;
+            cl->format.blueShift = 0;
+            cl->format.redMax = 0x1f;
+            cl->format.greenMax = 0x3f;
+            cl->format.blueMax = 0x1f;
+            break;
+        }
     }
 }
 
 rfbBool VncClientThread::newclient()
 {
-    //8bit color hack for Intel(r) AMT KVM "classic vnc" = vnc server built in in Intel Vpro chipsets.
-    if (INTEL_AMT_KVM_STRING == cl->desktopName) {
-        kDebug(5011) << "Intel(R) AMT KVM: switching to 8 bit color depth (workaround, recent libvncserver needed)";
-        setColorDepth(bpp8);
-    }
     setClientColorDepth(cl, colorDepth());
 
     const int width = cl->width, height = cl->height, depth = cl->format.bitsPerPixel;
@@ -135,22 +130,25 @@ rfbBool VncClientThread::newclient()
     memset(cl->frameBuffer, '\0', size);
 
     switch (quality()) {
-    case RemoteView::High:
-        cl->appData.encodingsString = "copyrect zlib hextile raw";
-        cl->appData.compressLevel = 0;
-        cl->appData.qualityLevel = 9;
-        break;
-    case RemoteView::Medium:
-        cl->appData.encodingsString = "copyrect tight zrle ultra zlib hextile corre rre raw";
-        cl->appData.compressLevel = 5;
-        cl->appData.qualityLevel = 7;
-        break;
-    case RemoteView::Low:
-    case RemoteView::Unknown:
-    default:
-        cl->appData.encodingsString = "copyrect tight zrle ultra zlib hextile corre rre raw";
-        cl->appData.compressLevel = 9;
-        cl->appData.qualityLevel = 1;
+        case RemoteView::High: {
+            cl->appData.encodingsString = "copyrect zlib hextile raw";
+            cl->appData.compressLevel = 0;
+            cl->appData.qualityLevel = 9;
+            break;
+        }
+        case RemoteView::Medium: {
+            cl->appData.encodingsString = "copyrect tight zrle ultra zlib hextile corre rre raw";
+            cl->appData.compressLevel = 5;
+            cl->appData.qualityLevel = 7;
+            break;
+        }
+        case RemoteView::Low:
+        case RemoteView::Unknown:
+        default: {
+            cl->appData.encodingsString = "copyrect tight zrle ultra zlib hextile corre rre raw";
+            cl->appData.compressLevel = 9;
+            cl->appData.qualityLevel = 1;
+        }
     }
 
     SetFormatAndEncodings(cl);
@@ -362,13 +360,11 @@ void VncClientThread::setQuality(RemoteView::Quality quality)
     m_quality = quality;
     //set color depth dependent on quality
     switch(quality) {
-    case RemoteView::Low:
-        setColorDepth(bpp8);
-        break;
     case RemoteView::High:
         setColorDepth(bpp32);
         break;
     case RemoteView::Medium:
+    case RemoteView::Low:
     default:
         setColorDepth(bpp16);
     }
