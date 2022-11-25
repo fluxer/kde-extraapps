@@ -2015,8 +2015,6 @@ XpsGenerator::XpsGenerator( QObject *parent, const QVariantList &args )
 {
     setFeature( TextExtraction );
     setFeature( PrintNative );
-    if ( QFontDatabase::supportsThreadedFontRendering() )
-        setFeature( Threaded );
 }
 
 XpsGenerator::~XpsGenerator()
