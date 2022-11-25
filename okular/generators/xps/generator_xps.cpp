@@ -445,6 +445,18 @@ static QPainterPath parseRscRefPath( const QString &data )
 }
 
 /**
+   \return The filepath of the entry
+*/
+static QString entryFilePath(const QString &entry )
+{
+    QString ret = entry;
+    if ( ret[ 0 ] == QLatin1Char( '/') ) {
+        ret = ret.mid( 1, ret.size() - 1);
+    }
+    return ret;
+}
+
+/**
    \return The path of the entry
 */
 static QString entryPath(const QString &entry )
@@ -883,7 +895,7 @@ void XpsHandler::processGlyph( XpsRenderNode &node )
     for ( int i = 0; i < stringToDraw.size(); ++i ) {
         QChar thisChar = stringToDraw.at( i );
         m_painter->drawText( origin + originAdvance, QString( thisChar ) );
-	const qreal advanceWidth = advanceWidths.value( i, qreal(-1.0) );
+        const qreal advanceWidth = advanceWidths.value( i, qreal(-1.0) );
         if ( advanceWidth > 0.0 ) {
             originAdvance.rx() += advanceWidth;
         } else {
@@ -1449,7 +1461,7 @@ int XpsFile::loadFontByName( const QString &fileName )
 {
     // kDebug(XpsDebug) << "font file name: " << fileName;
 
-    const KArchiveEntry fontFile = loadEntry( m_xpsArchive, fileName, Qt::CaseInsensitive );
+    const KArchiveEntry fontFile = loadEntry( m_xpsArchive, entryFilePath( fileName ), Qt::CaseInsensitive );
     if ( fontFile.isNull() ) {
         return -1;
     }
