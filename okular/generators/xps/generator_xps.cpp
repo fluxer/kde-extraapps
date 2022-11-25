@@ -447,10 +447,10 @@ static QPainterPath parseRscRefPath( const QString &data )
 /**
    \return The path of the entry
 */
-static QString entryPath( const QString &entry )
+static QString entryPath(const QString &entry )
 {
     const int index = entry.lastIndexOf( QChar::fromLatin1( '/' ) );
-    QString ret = QString::fromLatin1( "/" ) + entry.mid( 0, index );
+    QString ret = entry.mid( 0, index );
     if ( index > 0 ) {
         ret.append( QChar::fromLatin1( '/' ) );
     }
@@ -462,18 +462,19 @@ static QString entryPath( const QString &entry )
 */
 static QString entryPath( const KArchiveEntry* entry )
 {
-    return entryPath( QFile::decodeName(entry->pathname) );
+    return QFile::decodeName(entry->pathname);
 }
 
 /**
    \return The absolute path of the \p location, according to \p path if it's non-absolute
+   \note ZIP paths are not actually absolute, they must not start with slash
 */
 static QString absolutePath( const QString &path, const QString &location )
 {
     QString retPath;
     if ( location.at( 0 ) == QLatin1Char( '/' ) ) {
         // already absolute
-        retPath = location;
+        retPath = location.mid(1, location.size() - 1);
     } else {
         KUrl url = KUrl::fromPath( path );
         url.setFileName( location );
