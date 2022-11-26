@@ -6,3 +6,4 @@ X-KDE-PluginInfo-EnabledByDefault=true
 MimeType=application/x-dvi;application/postscript;image/x-eps;
 X-KDE-Library=gsthumbnail
 CacheThumbnail=true
+InitialPreference=2
