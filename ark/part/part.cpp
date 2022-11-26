@@ -86,6 +86,7 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QVariantList& args)
           m_jobTracker(0)
 {
     Q_UNUSED(args)
+    setObjectName(QString::fromLatin1("ArkPart"));
     setComponentData(Factory::componentData());
 
     new DndExtractAdaptor(this);
