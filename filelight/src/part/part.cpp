@@ -79,6 +79,8 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         , m_map(0)
         , m_started(false)
 {
+    setObjectName(QString::fromLatin1("FilelightPart"));
+
     Config::read();
     setComponentData(filelightPartFactory::componentData());
     setXMLFile(QLatin1String( "filelightpartui.rc" ));

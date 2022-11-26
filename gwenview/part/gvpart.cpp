@@ -59,6 +59,8 @@ namespace Gwenview
 GVPart::GVPart(QWidget* parentWidget, QObject* parent, const QVariantList& /*args*/)
 : KParts::ReadOnlyPart(parent)
 {
+    setObjectName(QString::fromLatin1("GVPart"));
+
     KGlobal::locale()->insertCatalog("gwenview");
     DocumentViewContainer* container = new DocumentViewContainer(parentWidget);
     setWidget(container);
