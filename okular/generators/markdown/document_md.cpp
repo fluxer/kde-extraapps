@@ -41,7 +41,7 @@ MDDocument::MDDocument(const QString &fileName)
         return;
     }
 
-    QTextCodec *codec = QTextCodec::codecForUtfText(m_mddata);
+    QTextCodec *codec = QTextCodec::codecForHtml(m_mddata);
     setHtml(codec->toUnicode(m_mddata));
 }
 
