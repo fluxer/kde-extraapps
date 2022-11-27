@@ -338,7 +338,7 @@ QTextDocument* Converter::convert( const QString &fileName )
         const QImage img(KStandardDirs::locate("data", "okular/pics/okular-epub-sound-icon.png"));
         csr.insertImage(img);
         const int posEnd = csr.position();
-        qDebug() << posStart << posEnd;;
+        kDebug() << "Position start" << posStart << ", position end" << posEnd;
         emit addAction(soundActions[index++],posStart,posEnd);
         csr.movePosition(QTextCursor::NextWord);
       }
@@ -416,7 +416,7 @@ QTextDocument* Converter::convert( const QString &fileName )
                         QString::fromUtf8(label),
                         block);
         } else {
-          kDebug() << "Error: no block found for"<< link;
+          kDebug() << "Error: no block found for" << link;
         }
 
         if (clink)
@@ -447,7 +447,7 @@ QTextDocument* Converter::convert( const QString &fileName )
 
         emit addAction(action, hit.value()[i].first, hit.value()[i].second);
       } else {
-        kDebug() << "Error: no block found for "<< hit.key();
+        kDebug() << "Error: no block found for" << hit.key();
       }
     }
   }
