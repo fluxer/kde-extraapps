@@ -104,7 +104,7 @@ QVariant EpubDocument::loadResource(int type, const QUrl &name)
       break;
     }
     case QTextDocument::StyleSheetResource: {
-      QString css = QString::fromUtf8(data);
+      QString css = QString::fromUtf8(data, size);
       checkCSS(css);
       resource.setValue(css);
       break;
@@ -118,12 +118,11 @@ QVariant EpubDocument::loadResource(int type, const QUrl &name)
       break;
     }
     case EpubDocument::AudioResource: {
-      QByteArray ba(data,size);
-      resource.setValue(ba);
+      resource.setValue(QByteArray(data, size));
       break;
     }
     default:
-      resource.setValue(QString::fromUtf8(data));
+      resource.setValue(QString::fromUtf8(data, size));
       break;
     }
 
