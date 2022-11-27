@@ -3569,8 +3569,8 @@ void Document::processAction( const Action * action )
                 d->m_nextDocumentViewport = DocumentViewport();
                 d->m_nextDocumentDestination = QString();
             }
-
-            } break;
+            break;
+        }
 
         case Action::Execute: {
             const ExecuteAction * exe  = static_cast< const ExecuteAction * >( action );
@@ -3618,8 +3618,11 @@ void Document::processAction( const Action * action )
                 KRun::run( *ptr, lst, 0 );
             }
             else
+            {
                 KMessageBox::information( d->m_widget, i18n( "No application found for opening file of mimetype %1.", mime->name() ) );
-            } break;
+            }
+            break;
+        }
 
         case Action::DocAction: {
             const DocumentAction * docaction = static_cast< const DocumentAction * >( action );
@@ -3664,7 +3667,8 @@ void Document::processAction( const Action * action )
                     emit close();
                     break;
             }
-            } break;
+            break;
+        }
 
         case Action::Browse: {
             const BrowseAction * browse = static_cast< const BrowseAction * >( action );
@@ -3700,16 +3704,19 @@ void Document::processAction( const Action * action )
                 // Albert: this is not a leak!
                 new KRun( realUrl, d->m_widget );
             }
-            } break;
+            break;
+        }
 
         case Action::Sound: {
             const SoundAction * linksound = static_cast< const SoundAction * >( action );
             AudioPlayer::instance()->playSound( linksound->sound(), linksound );
-            } break;
+            break;
+        }
 
-        case Action::Movie:
+        case Action::Movie: {
             emit processMovieAction( static_cast< const MovieAction * >( action ) );
             break;
+        }
     }
 }
 
