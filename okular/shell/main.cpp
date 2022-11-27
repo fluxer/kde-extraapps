@@ -19,6 +19,16 @@
 #include "okular_main.h"
 #include "shellutils.h"
 
+// NOTE: this has to be done before application instance is created and KMediaPlayer requires it,
+// i.e. it is too late to do it from the kmediaplayer library itself if it is dlopen-ed
+#if defined(Q_WS_X11)
+static int okular_x11_init_threads() {
+    QApplication::setAttribute(Qt::AA_X11InitThreads, true);
+    return 1;
+};
+Q_CONSTRUCTOR_FUNCTION(okular_x11_init_threads)
+#endif
+
 int main(int argc, char** argv)
 {
     KAboutData about = okularAboutData( "okular", I18N_NOOP( "Okular" ) );
