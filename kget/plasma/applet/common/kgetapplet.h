@@ -57,6 +57,7 @@ class ProxyWidget : public QGraphicsWidget
     private:
         QGraphicsLinearLayout * m_layout;
         QGraphicsWidget * m_dataWidget;
+        QFont m_font;
         int m_textWidth;
         int m_textHeight;
         static const int MARGIN;

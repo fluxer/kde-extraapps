@@ -72,11 +72,7 @@ void ProxyWidget::paint(QPainter * p, const QStyleOptionGraphicsItem * option, Q
 
     p->setRenderHint(QPainter::SmoothPixmapTransform);
 
-    QFont font = Plasma::Theme::defaultTheme()->font(Plasma::Theme::DefaultFont);
-    font.setBold(true);
-    font.setPointSize(15);
-
-    p->setFont(font);
+    p->setFont(m_font);
     p->setPen(Plasma::Theme::defaultTheme()->color(Plasma::Theme::TextColor));
 
     QRect iconRect(QPoint(rect.x() + SPACING + 10, rect.y() + SPACING + 10), QSize(m_textHeight, m_textHeight));
@@ -92,11 +88,11 @@ void ProxyWidget::paint(QPainter * p, const QStyleOptionGraphicsItem * option, Q
 
 void ProxyWidget::themeChanged()
 {
-    QFont font = Plasma::Theme::defaultTheme()->font(Plasma::Theme::DefaultFont);
-    font.setBold(true);
-    font.setPointSize(15);
+    m_font = Plasma::Theme::defaultTheme()->font(Plasma::Theme::DefaultFont);
+    m_font.setBold(true);
+    m_font.setPointSize(15);
 
-    QFontMetrics metrics(font);
+    QFontMetrics metrics(m_font);
     m_textWidth = metrics.width(i18n("KGet"));
     m_textHeight = metrics.height();
 
