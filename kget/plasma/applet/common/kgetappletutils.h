@@ -22,30 +22,16 @@
 #ifndef KGETAPPLETUTILS_H
 #define KGETAPPLETUTILS_H
 
-#include <QGraphicsProxyWidget>
-
 #include <QDBusConnectionInterface>
+#include <QGraphicsProxyWidget>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsWidget>
-#include <QPainter>
-#include <QRect>
 
 namespace Plasma {
-    class Svg;
     class Label;
     class IconWidget;
     class PushButton;
 }
-
-class KGetAppletUtils
-{
-    public:
-        static void paintTitle(QPainter *p, Plasma::Svg *svg, const QRect &rect);
-        static QGraphicsWidget *createErrorWidget(const QString &message, QGraphicsWidget *parent = 0);
-
-    private:
-        static const int SPACING;
-};
 
 class ErrorWidget : public QGraphicsProxyWidget
 {
