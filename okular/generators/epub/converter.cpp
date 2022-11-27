@@ -251,8 +251,9 @@ QTextDocument* Converter::convert( const QString &fileName )
             QDomNodeList sourceTags = videoTags.at(i).toElement().elementsByTagName("source");
             if(!sourceTags.isEmpty()) {
               QString lnk = sourceTags.at(0).toElement().attribute("src");
+              QUrl url = mTextDocument->loadResource(EpubDocument::MovieResource,QUrl(lnk)).toUrl();
 
-              Okular::Movie *movie = new Okular::Movie(mTextDocument->loadResource(EpubDocument::MovieResource,QUrl(lnk)).toString());
+              Okular::Movie *movie = new Okular::Movie(url.toString());
               movie->setSize(videoSize);
               movie->setShowControls(true);
 
@@ -272,9 +273,14 @@ QTextDocument* Converter::convert( const QString &fileName )
         if(!audioTags.isEmpty()) {
           for (int i = 0; i < audioTags.size(); ++i) {
             QString lnk = audioTags.at(i).toElement().attribute("src");
+            QUrl url = mTextDocument->loadResource(EpubDocument::AudioResource, QUrl(lnk)).toUrl();
+            // the URL is not relative and KUrl::isRelativeUrl() returns true for anything
+            // without scheme
+            if (url.scheme().isEmpty()) {
+              url.setScheme(QString::fromLatin1("file"));
+            }
 
-            Okular::Sound *sound = new Okular::Sound(mTextDocument->loadResource(
-                    EpubDocument::AudioResource, QUrl(lnk)).toByteArray());
+            Okular::Sound *sound = new Okular::Sound(url.toString());
 
             Okular::SoundAction *soundAction = new Okular::SoundAction(1.0,true,true,false,sound);
             soundActions.push_back(soundAction);

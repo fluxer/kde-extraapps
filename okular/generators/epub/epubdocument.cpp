@@ -109,16 +109,13 @@ QVariant EpubDocument::loadResource(int type, const QUrl &name)
       resource.setValue(css);
       break;
     }
-    case EpubDocument::MovieResource: {
+    case EpubDocument::MovieResource:
+    case EpubDocument::AudioResource: {
       QTemporaryFile *tmp = new QTemporaryFile(QString("%1/okrXXXXXX").arg(QDir::tempPath()),this);
       if(!tmp->open()) kWarning() << "EPUB : error creating temporary video file";
       if(tmp->write(data,size) == -1) kWarning() << "EPUB : error writing data" << tmp->errorString();
       tmp->flush();
       resource.setValue(tmp->fileName());
-      break;
-    }
-    case EpubDocument::AudioResource: {
-      resource.setValue(QByteArray(data, size));
       break;
     }
     default:
