@@ -9,38 +9,46 @@
 
 #include "snapshottaker.h"
 
-#include <QtGui/QImage>
+#include <KFileItem>
 
-#include <KUrl>
-
-SnapshotTaker::SnapshotTaker( const QString &url, QObject *parent )
+SnapshotTaker::SnapshotTaker( const KUrl &url, QObject *parent, const QSize &size )
     : QObject( parent )
-    , m_player( new KMediaPlayer )
+    , m_job( nullptr )
 {
-    m_player->setPlayerID("okularpart_snapshot");
-    m_player->load( url );
-    m_player->hide();
+    m_plugins.append(QString::fromLatin1("ffmpegthumbs"));
 
-    connect(m_player, SIGNAL(paused(bool)),
-            this, SLOT(stateChanged(bool)));
-
-    m_player->play();
+    m_job = KIO::filePreview(
+        KFileItemList() << KFileItem(url, QString(), 0),
+        size,
+        &m_plugins
+    );
+    m_job->setScaleType(KIO::PreviewJob::Scaled);
+    connect(
+        m_job, SIGNAL(gotPreview(KFileItem,QPixmap)),
+        this, SLOT(slotPreview(KFileItem,QPixmap))
+    );
+    connect(
+        m_job, SIGNAL(failed(KFileItem)),
+        this, SLOT(slotFailed(KFileItem))
+    );
+    m_job->start();
 }
 
 SnapshotTaker::~SnapshotTaker()
 {
-    m_player->stop();
-    delete m_player;
 }
 
-void SnapshotTaker::stateChanged(bool paused)
+void SnapshotTaker::slotPreview(const KFileItem& item, const QPixmap &preview)
 {
-    if (paused) {
-        QPixmap pixmap = QPixmap::grabWidget(m_player);
-        if (!pixmap.isNull())
-            emit finished( pixmap.toImage() );
-
-        m_player->stop();
-        deleteLater();
+    Q_UNUSED(item);
+    if (!preview.isNull()) {
+        emit finished( preview.toImage() );
     }
+    deleteLater();
+}
+
+void SnapshotTaker::slotFailed(const KFileItem& item)
+{
+    Q_UNUSED(item);
+    deleteLater();
 }

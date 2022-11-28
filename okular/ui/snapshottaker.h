@@ -10,28 +10,30 @@
 #ifndef SNAPSHOTTAKER_H
 #define SNAPSHOTTAKER_H
 
-#include <KMediaPlayer>
+#include <KUrl>
+#include <KIO/PreviewJob>
 
-#include <QtCore/QObject>
-
-#include <QImage>
+#include <QObject>
+#include <QPixmap>
 
 class SnapshotTaker : public QObject
 {
     Q_OBJECT
 
     public:
-        SnapshotTaker( const QString &url, QObject *parent = 0 );
+        SnapshotTaker( const KUrl &url, QObject *parent, const QSize &size );
         ~SnapshotTaker();
 
     Q_SIGNALS:
         void finished( const QImage &image );
 
     private Q_SLOTS:
-        void stateChanged(bool paused);
+        void slotPreview(const KFileItem& item, const QPixmap &preview);
+        void slotFailed(const KFileItem& item);
 
     private:
-        KMediaPlayer *m_player;
+        KIO::PreviewJob *m_job;
+        QStringList m_plugins;
 };
 
-#endif
+#endif // SNAPSHOTTAKER_H

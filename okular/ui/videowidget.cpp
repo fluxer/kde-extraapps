@@ -105,10 +105,7 @@ void VideoWidget::Private::takeSnapshot()
     }
 
     SnapshotTaker *taker = 0;
-    if ( newurl.isLocalFile() )
-        taker = new SnapshotTaker( newurl.toLocalFile(), q );
-    else
-        taker = new SnapshotTaker( newurl.url(), q );
+    taker = new SnapshotTaker( newurl, q, q->size());
 
     q->connect( taker, SIGNAL( finished( const QImage& ) ), q, SLOT( setPosterImage( const QImage& ) ) );
 }

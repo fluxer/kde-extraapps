@@ -62,6 +62,6 @@ Name[zh_CN]=Okular
 Name[zh_TW]=文件檢視_Okular
 X-KDE-ServiceTypes=KParts/ReadOnlyPart,KParts/ReadWritePart
 X-KDE-Library=okularpart
-X-KDE-MediaPlayer=okularpart_audio,okularpart_video,okularpart_snapshot
+X-KDE-MediaPlayer=okularpart_audio,okularpart_video
 Type=Service
 MimeType=application/vnd.kde.okular-archive;

@@ -256,6 +256,7 @@ QTextDocument* Converter::convert( const QString &fileName )
               Okular::Movie *movie = new Okular::Movie(url.toString());
               movie->setSize(videoSize);
               movie->setShowControls(true);
+              movie->setShowPosterImage(false);
 
               Okular::MovieAnnotation *annot = new Okular::MovieAnnotation;
               annot->setMovie(movie);
