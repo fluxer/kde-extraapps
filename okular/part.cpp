@@ -2847,7 +2847,7 @@ bool Part::handleCompressed( QString &destpath, const QString &path, const QStri
     if (newtempfile->write(uncompressed.constData(), uncompressed.size()) != uncompressed.size())
     {
         KMessageBox::detailedError(widget(),
-            i18n("<qt><strong>File Error!</strong> Could not write uncompressed data "
+            i18n("<qt><strong>File Error!</strong> Could not write uncompressed data to"
             "the file <nobr><strong>%1</strong></nobr>. "
             "The file will not be loaded.</qt>", path ),
             i18n("<qt>This error typically occurs if there is not enough space. "
