@@ -30,6 +30,7 @@
 #include "core/area.h"
 #include "core/document.h"
 #include "core/movie.h"
+#include "settings.h"
 #include "snapshottaker.h"
 
 /* Private storage. */
@@ -84,10 +85,9 @@ void VideoWidget::Private::load()
     {
         newurl = url;
     }
-    player->open( newurl.prettyUrl() );
-
     connect( player->player(), SIGNAL( paused( bool ) ),
              q, SLOT( stateChanged( bool ) ) );
+    player->open( newurl.prettyUrl() );
 }
 
 void VideoWidget::Private::takeSnapshot()
@@ -163,7 +163,7 @@ VideoWidget::VideoWidget( const Okular::Annotation *annotation, Okular::Movie *m
     setAttribute( Qt::WA_NoMousePropagation );
 
     // Setup player page
-    QWidget *playerPage = new QWidget;
+    QWidget *playerPage = new QWidget();
 
     QVBoxLayout *mainlay = new QVBoxLayout( playerPage );
     mainlay->setMargin( 0 );
@@ -177,7 +177,7 @@ VideoWidget::VideoWidget( const Okular::Annotation *annotation, Okular::Movie *m
     d->geom = annotation->transformedBoundingRectangle();
 
     // Setup poster image page
-    d->posterImagePage = new QLabel;
+    d->posterImagePage = new QLabel();
     d->posterImagePage->setScaledContents( true );
     d->posterImagePage->installEventFilter( this );
     d->posterImagePage->setCursor( Qt::PointingHandCursor );
@@ -277,12 +277,23 @@ bool VideoWidget::event( QEvent * event )
 {
     switch ( event->type() )
     {
-        case QEvent::ToolTip:
+        case QEvent::ToolTip: {
             // "eat" the help events (= tooltips), avoid parent widgets receiving them
             event->accept();
             return true;
+        }
+        case QEvent::MouseButtonPress: {
+            // switch from poster to player, similar to the condition in PageView::mouseReleaseEvent()
+            if (d->pageLayout->currentIndex() == 1 && Okular::Settings::mouseMode() == Okular::Settings::EnumMouseMode::Browse) {
+                play();
+                event->accept();
+                return true;
+            }
             break;
-        default: ;
+        }
+        default: {
+            break;
+        }
     }
 
     return QWidget::event( event );
