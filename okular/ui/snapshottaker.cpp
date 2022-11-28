@@ -10,6 +10,7 @@
 #include "snapshottaker.h"
 
 #include <KFileItem>
+#include <KDebug>
 
 SnapshotTaker::SnapshotTaker( const KUrl &url, QObject *parent, const QSize &size )
     : QObject( parent )
@@ -17,9 +18,14 @@ SnapshotTaker::SnapshotTaker( const KUrl &url, QObject *parent, const QSize &siz
 {
     m_plugins.append(QString::fromLatin1("ffmpegthumbs"));
 
+    // qDebug() << Q_FUNC_INFO << size;
+    // the video widget size is not set properly yet, doing it on QEvent::Show will force a new
+    // snapshot to be taken after page change so just assuming 4x the size will be big enough
+    const QSize biggersize = (size * 4);
+
     m_job = KIO::filePreview(
         KFileItemList() << KFileItem(url, QString(), 0),
-        size,
+        biggersize,
         &m_plugins
     );
     m_job->setScaleType(KIO::PreviewJob::Scaled);
