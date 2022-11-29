@@ -38,7 +38,7 @@ class VideoWidget::Private
 {
 public:
     Private( Okular::Movie *m, Okular::Document *doc, VideoWidget *qq )
-        : q( qq ), movie( m ), document( doc ), player( 0 ), loaded( false )
+        : q( qq ), movie( m ), document( doc ), player( 0 )
     {
     }
 
@@ -64,16 +64,10 @@ public:
     KMediaWidget *player;
     QStackedLayout *pageLayout;
     QLabel *posterImagePage;
-    bool loaded;
 };
 
 void VideoWidget::Private::load()
 {
-    if ( loaded )
-        return;
-
-    loaded = true;
-
     QString url = movie->url();
     KUrl newurl;
     if ( QDir::isRelativePath( url ) )
@@ -85,8 +79,6 @@ void VideoWidget::Private::load()
     {
         newurl = url;
     }
-    connect( player->player(), SIGNAL( paused( bool ) ),
-             q, SLOT( stateChanged( bool ) ) );
     player->open( newurl.prettyUrl() );
 }
 
@@ -129,7 +121,7 @@ void VideoWidget::Private::finished()
             break;
         case Okular::Movie::PlayRepeat:
             // repeat the playback
-            player->player()->play();
+            load();
             break;
         case Okular::Movie::PlayPalindrome:
             // FIXME we should play backward, but we cannot
@@ -174,6 +166,7 @@ VideoWidget::VideoWidget( const Okular::Annotation *annotation, Okular::Movie *m
     mainlay->addWidget( d->player );
 
     connect( d->player->player(), SIGNAL(finished()), this, SLOT(finished()) );
+    connect( d->player->player(), SIGNAL(paused(bool)), this, SLOT(stateChanged(bool)) );
     d->geom = annotation->transformedBoundingRectangle();
 
     // Setup poster image page
