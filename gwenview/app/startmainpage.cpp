@@ -198,7 +198,7 @@ void StartMainPage::slotListViewActivated(const QModelIndex& index)
         return;
     }
     QVariant data = index.data(KFilePlacesModel::UrlRole);
-    KUrl url = data.toUrl();
+    KUrl url = data.value<KUrl>();
 
     // Prevent dir lister error
     if (!url.isValid()) {
@@ -243,7 +243,7 @@ void StartMainPage::showRecentFoldersViewContextMenu(const QPoint& pos)
     QModelIndex index = view->indexAt(pos);
     if (index.isValid()) {
         QVariant data = index.data(KFilePlacesModel::UrlRole);
-        url = data.toUrl();
+        url = data.value<KUrl>();
     }
 
     // Create menu

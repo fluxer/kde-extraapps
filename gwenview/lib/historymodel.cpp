@@ -136,7 +136,7 @@ private:
         QString iconName = KMimeType::iconNameForUrl(mUrl);
         setIcon(KIcon(iconName));
 
-        setData(QVariant(mUrl), KFilePlacesModel::UrlRole);
+        setData(qVariantFromValue(mUrl), KFilePlacesModel::UrlRole);
 
         KFileItem fileItem(KFileItem::Unknown, KFileItem::Unknown, mUrl);
         setData(QVariant(fileItem), KDirModel::FileItemRole);
