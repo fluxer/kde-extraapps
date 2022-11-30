@@ -9,7 +9,6 @@
 
 #include <core/action.h>
 #include <core/document.h>
-#include <core/fileprinter.h>
 #include <core/page.h>
 #include <core/sourcereference.h>
 #include <core/textpage.h>

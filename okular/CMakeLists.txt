@@ -165,7 +165,6 @@ install(
     core/tile.h
     core/utils.h
     core/version.h
-    core/fileprinter.h
     core/observer.h
     ${CMAKE_CURRENT_BINARY_DIR}/settings_core.h
     ${CMAKE_CURRENT_BINARY_DIR}/okular_export.h
