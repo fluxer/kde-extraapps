@@ -63,12 +63,6 @@ add_feature_info(okular_gs
     "PostScript support in Okular"
 )
 
-find_program(PS2PDF_EXECUTABLE NAMES ps2pdf)
-add_feature_info(okular_ps2pdf
-    PS2PDF_EXECUTABLE
-    "PostScript support in Okular"
-)
-
 find_program(LATEX_EXECUTABLE NAMES latex)
 add_feature_info(okular_latex
     LATEX_EXECUTABLE

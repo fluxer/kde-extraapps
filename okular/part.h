@@ -201,7 +201,6 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
         void slotShowPresentation();
         void slotHidePresentation();
         void slotExportAs(QAction *);
-        bool slotImportPSFile();
         void slotAboutBackend();
         void slotReload();
         void close();

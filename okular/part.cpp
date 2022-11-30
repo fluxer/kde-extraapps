@@ -787,11 +787,6 @@ void Part::setupActions()
     m_showPresentation->setShortcut( QKeySequence( Qt::CTRL + Qt::SHIFT + Qt::Key_P ) );
     m_showPresentation->setEnabled( false );
 
-    QAction * importPS = ac->addAction("import_ps");
-    importPS->setText(i18n("&Import PostScript as PDF..."));
-    importPS->setIcon(KIcon("document-import"));
-    connect(importPS, SIGNAL(triggered()), this, SLOT(slotImportPSFile()));
-
     KToggleAction *blackscreenAction = new KToggleAction( i18n( "Switch Blackscreen Mode" ), ac );
     ac->addAction( "switch_blackscreen_mode", blackscreenAction );
     blackscreenAction->setShortcut( QKeySequence( Qt::Key_B ) );
@@ -1143,36 +1138,6 @@ QString Part::documentMetaData( const QString &metaData ) const
     }
 
     return QString();
-}
-
-
-bool Part::slotImportPSFile()
-{
-    QString app = KStandardDirs::findExe( "ps2pdf" );
-    if ( app.isEmpty() )
-    {
-        // TODO point the user to their distro packages?
-        KMessageBox::error( widget(), i18n( "The program \"ps2pdf\" was not found, so Okular can not import PS files using it." ), i18n("ps2pdf not found") );
-        return false;
-    }
-
-    KUrl url = KFileDialog::getOpenUrl( KUrl(), "application/postscript", this->widget() );
-    if ( url.isLocalFile() )
-    {
-        m_temporaryLocalFile = KTemporaryFile::filePath("XXXXXXXXXX.pdf");
-
-        setLocalFilePath( url.toLocalFile() );
-        QStringList args;
-        QProcess *p = new QProcess();
-        args << url.toLocalFile() << m_temporaryLocalFile;
-        m_pageView->displayMessage(i18n("Importing PS file as PDF (this may take a while)..."));
-        connect(p, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(psTransformEnded(int,QProcess::ExitStatus)));
-        p->start(app, args);
-        return true;
-    }
-
-    m_temporaryLocalFile.clear();
-    return false;
 }
 
 static void addFileToWatcher( KDirWatch *watcher, const QString &filePath)
