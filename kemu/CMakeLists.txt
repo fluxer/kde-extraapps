@@ -3,7 +3,7 @@ project(kemu)
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(FeatureSummary)
 
-    find_package(KDE4 4.22.0 REQUIRED)
+    find_package(KDE4 4.23.0 REQUIRED)
     include(KDE4Defaults)
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
