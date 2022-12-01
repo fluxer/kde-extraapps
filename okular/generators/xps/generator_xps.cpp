@@ -2152,7 +2152,9 @@ bool XpsGenerator::print( QPrinter &printer )
 
         const int page = pageList.at( i ) - 1;
         XpsPage *pageToRender = m_xpsFile->page( page );
-        pageToRender->renderToPainter( &painter );
+        QImage image( pageToRender->size().toSize(), QImage::Format_RGB32 );
+        pageToRender->renderToImage( &image );
+        painter.drawImage(0, 0, image);
     }
 
     return true;
