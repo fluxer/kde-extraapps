@@ -1499,12 +1499,6 @@ bool Part::closeUrl(bool promptToSave)
 
     setModified( false );
 
-    if (!m_temporaryLocalFile.isNull() && m_temporaryLocalFile != localFilePath())
-    {
-        QFile::remove( m_temporaryLocalFile );
-        m_temporaryLocalFile.clear();
-    }
-
     slotHidePresentation();
     emit enableCloseAction( false );
     m_find->setEnabled( false );
@@ -2665,26 +2659,6 @@ void Part::saveDocumentRestoreInfo(KConfigGroup &group)
     group.writePathEntry( "URL", url().url() );
     group.writeEntry( "Viewport", m_document->viewport().toString() );
 }
-
-
-void Part::psTransformEnded(int exit, QProcess::ExitStatus status)
-{
-    Q_UNUSED( exit )
-    if ( status != QProcess::NormalExit )
-        return;
-
-    QProcess *senderobj = sender() ? qobject_cast< QProcess * >( sender() ) : 0;
-    if ( senderobj )
-    {
-        senderobj->close();
-        senderobj->deleteLater();
-    }
-
-    setLocalFilePath( m_temporaryLocalFile );
-    openUrl( m_temporaryLocalFile );
-    m_temporaryLocalFile.clear();
-}
-
 
 void Part::displayInfoMessage( const QString &message, KMessageWidget::MessageType messageType, int duration )
 {

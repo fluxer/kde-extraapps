@@ -22,7 +22,6 @@
 #include <qicon.h>
 #include <qlist.h>
 #include <qpointer.h>
-#include <qprocess.h>
 #include "core/observer.h"
 #include "core/document.h"
 #include "kdocumentviewer.h"
@@ -224,7 +223,6 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
         void saveDocumentRestoreInfo(KConfigGroup &group);
         void slotFileDirty( const QString& );
         void slotDoFileDirty();
-        void psTransformEnded(int, QProcess::ExitStatus);
         KConfigDialog * slotGeneratorPreferences();
 
         void errorMessage( const QString &message, int duration = 0 );
@@ -253,7 +251,6 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
 
         // the document
         Okular::Document * m_document;
-        QString m_temporaryLocalFile;
         bool isDocumentArchive;
 
         // main widgets
