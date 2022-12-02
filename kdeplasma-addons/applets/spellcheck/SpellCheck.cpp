@@ -90,6 +90,7 @@ void SpellCheck::dragLeaveEvent(QGraphicsSceneDragDropEvent *event)
 {
     if (m_dragTimer) {
         killTimer(m_dragTimer);
+        m_dragTimer = 0;
     }
 
     Plasma::Applet::dragLeaveEvent(event);
@@ -99,6 +100,7 @@ void SpellCheck::dropEvent(QGraphicsSceneDragDropEvent *event)
 {
     if (m_dragTimer) {
         killTimer(m_dragTimer);
+        m_dragTimer = 0;
     }
 
     if (!KUrl::List::canDecode(event->mimeData())) {
@@ -166,9 +168,9 @@ void SpellCheck::timerEvent(QTimerEvent *event)
         if (!m_spellingDialog || !m_spellingDialog->isVisible()) {
             toggleDialog(false);
         }
+        killTimer(m_dragTimer);
+        m_dragTimer = 0;
     }
-
-    killTimer(event->timerId());
 }
 
 void SpellCheck::configChanged()
