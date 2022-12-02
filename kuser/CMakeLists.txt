@@ -35,12 +35,9 @@ check_include_files(crypt.h HAVE_CRYPT_H)
 check_include_files(paths.h HAVE_PATHS_H)
 check_library_exists(crypt crypt "" HAVE_CRYPT_LIBRARY)
 
-set(CMAKE_REQUIRED_INCLUDES pwd.h)
-check_function_exists(fgetpwent HAVE_FGETPWENT)
-set(CMAKE_REQUIRED_INCLUDES grp.h)
-check_function_exists(fgetgrent HAVE_FGETGRENT)
-set(CMAKE_REQUIRED_INCLUDES shadow.h)
-check_function_exists(fgetspent HAVE_FGETSPENT)
+check_symbol_exists(fgetpwent "pwd.h" HAVE_FGETPWENT)
+check_symbol_exists(fgetgrent "grp.h" HAVE_FGETGRENT)
+check_symbol_exists(fgetspent "shadow.h" HAVE_FGETSPENT)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ku_config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/ku_config.h)
 
