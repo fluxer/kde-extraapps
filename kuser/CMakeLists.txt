@@ -11,7 +11,7 @@ endif()
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-include(CheckFunctionExists)
+include(CheckSymbolExists)
 include(CheckLibraryExists)
 include(CheckIncludeFiles)
 
