@@ -5,7 +5,6 @@ OnlyShowIn=KDE;
 Type=Application
 MimeType=
 Terminal=false
-X-KDE-autostart-after=panel
 X-KDE-StartupNotify=false
 X-DBUS-StartupType=Unique
 X-KDE-autostart-condition=kmixrc:Global:AutoStart:true
