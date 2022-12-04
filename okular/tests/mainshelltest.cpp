@@ -9,6 +9,7 @@
 
 #include <qtest_kde.h>
 #include <qprintdialog.h>
+#include <qprocess.h>
 #include <qwidget.h>
 #include <qx11info_x11.h>
 #include <ktabwidget.h>
