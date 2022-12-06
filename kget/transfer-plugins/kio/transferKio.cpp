@@ -192,7 +192,6 @@ void TransferKio::load(const QDomElement *element)
 void TransferKio::createJob()
 {
     if (!m_copyjob) {
-        KIO::Scheduler::checkSlaveOnHold(true);
         m_copyjob = KIO::file_copy(m_source, m_dest, -1, KIO::HideProgressInfo);
 
         connect(m_copyjob, SIGNAL(result(KJob*)), 
