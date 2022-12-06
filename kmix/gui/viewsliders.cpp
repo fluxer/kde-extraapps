@@ -23,13 +23,11 @@
 #undef TEST_MIXDEVICE_COMPOSITE
 
 #ifdef TEST_MIXDEVICE_COMPOSITE
-#ifdef __GNUC__
 #warning !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #warning !!! MIXDEVICE COMPOSITE TESTING IS ACTIVATED   !!!
 #warning !!! THIS IS PRE-ALPHA CODE!                    !!!
 #warning !!! DO NOT SHIP KMIX IN THIS STATE             !!!
 #warning !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#endif
 #endif
 
 #include "gui/viewsliders.h"

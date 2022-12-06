@@ -111,9 +111,7 @@ void KMixD::saveConfig()
    kDebug() << "About to save config";
    saveBaseConfig();
    saveVolumes();
-#ifdef __GNUC_
-#warn We must Sync here, or we will lose configuration data. The reson for that is unknown.
-#endif
+#warning We must Sync here, or we will lose configuration data. The reson for that is unknown.
 
    kDebug() << "Saved config ... now syncing explicitly";
    KGlobal::config()->sync();
