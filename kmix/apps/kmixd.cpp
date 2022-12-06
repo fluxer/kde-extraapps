@@ -45,33 +45,8 @@
 #include "core/kmixdevicemanager.h"
 #include "core/version.h"
 
-K_PLUGIN_FACTORY(KMixDFactory,
-                 registerPlugin<KMixD>();
-    )
+K_PLUGIN_FACTORY(KMixDFactory, registerPlugin<KMixD>();)
 K_EXPORT_PLUGIN(KMixDFactory("kmixd"))
-
-
-
-/*
-static const char description[] =
-I18N_NOOP("KMixD - KDE's full featured mini mixer Service");
-
-extern "C" KDE_EXPORT int kdemain(int argc, char *argv[])
-{
-   KAboutData aboutData( "kmixd", 0, ki18n("KMixD"),
-                         APP_VERSION, ki18n(description), KAboutData::License_GPL,
-                         ki18n("(c) 2010 Christian Esken"));
-			 
-			    KCmdLineArgs::init( argc, argv, &aboutData );
-
-// As in the KUniqueApplication example only create a instance AFTER
-// calling KUniqueApplication::start()
-	KUniqueApplication app; 
-  KMixD kmixd;
-  app.exec();
-}
-  
-  */
 
 /* KMixD
  * Constructs a mixer window (KMix main window)

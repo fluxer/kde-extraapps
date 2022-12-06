@@ -10,22 +10,6 @@
 #include <kcmdlineargs.h>
 #include <kglobal.h>
 
-
-extern "C" KDE_EXPORT int kdemain(int argc, char *argv[])
-{
-    KAboutData aboutData( "dialogtest", 0, ki18n("dialogtest"),
-                          "1.0", ki18n("bla"), KAboutData::License_GPL,
-                                             ki18n("(c) 2000 by Christian Esken"));
-
-    KCmdLineArgs::init( argc, argv, &aboutData );
-    KCmdLineArgs::parsedArgs();
-    App *app = new App();
-    int ret = app->exec();
-
-    delete app;
-    return ret;
-}
-
 App::App() :KApplication() {
     DialogTest *dialog = new DialogTest();
     dialog->show();
@@ -66,6 +50,23 @@ DialogTest::DialogTest() : QDialog(  0)
     }
     
     scrollArea->setWidget(vboxForScrollView);
+}
+
+int main(int argc, char *argv[])
+{
+    KAboutData aboutData(
+        "dialogtest", 0, ki18n("dialogtest"),
+        "1.0", ki18n("bla"), KAboutData::License_GPL,
+        ki18n("(c) 2000 by Christian Esken")
+    );
+
+    KCmdLineArgs::init( argc, argv, &aboutData );
+    KCmdLineArgs::parsedArgs();
+    App *app = new App();
+    int ret = app->exec();
+
+    delete app;
+    return ret;
 }
 
 #include "moc_dialogtest.cpp"

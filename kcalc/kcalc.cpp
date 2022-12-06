@@ -2276,7 +2276,7 @@ bool KCalculator::eventFilter(QObject *o, QEvent *e) {
 #include "moc_kcalc.cpp"
 
 //------------------------------------------------------------------------------
-// Name: kdemain
+// Name: main
 // Desc: entry point of the application
 //------------------------------------------------------------------------------
 int main(int argc, char *argv[]) {
