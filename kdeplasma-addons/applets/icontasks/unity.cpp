@@ -29,7 +29,6 @@
 #include <QtDBus/QDBusServiceWatcher>
 #include <KGlobal>
 #include <KSycoca>
-#include <OrgKdeKLauncherInterface>
 #include <KDebug>
 
 static const QString constDbusService = "com.canonical.Unity";
