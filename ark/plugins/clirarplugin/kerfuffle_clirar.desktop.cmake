@@ -9,7 +9,6 @@ X-KDE-PluginInfo-Version=0.0.1
 X-KDE-PluginInfo-Website=http://www.kde.org
 X-KDE-PluginInfo-License=GPLv2+
 X-KDE-Priority=120
-X-KDE-Kerfuffle-APIRevision=1
 X-KDE-Kerfuffle-ReadWrite=true
 Name=RAR archive plugin
 Name[ar]=ملحق أرشيف RAR
