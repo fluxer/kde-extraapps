@@ -124,5 +124,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=image/vnd.djvu;
 X-KDE-Library=okularGenerator_djvu
 X-KDE-Priority=2
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=false

@@ -50,5 +50,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=text/markdown;
 X-KDE-Library=okularGenerator_md
 X-KDE-Priority=2
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=true

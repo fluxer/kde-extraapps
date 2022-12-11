@@ -123,5 +123,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=application/vnd.oasis.opendocument.text;
 X-KDE-Library=okularGenerator_ooo
 X-KDE-Priority=1
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=true

@@ -119,5 +119,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=application/oxps;application/vnd.ms-xpsdocument;
 X-KDE-Library=okularGenerator_xps
 X-KDE-Priority=4
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=false

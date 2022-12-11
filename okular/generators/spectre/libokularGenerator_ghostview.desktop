@@ -123,5 +123,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=application/postscript;image/x-eps;
 X-KDE-Library=okularGenerator_ghostview
 X-KDE-Priority=2
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=true

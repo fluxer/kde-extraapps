@@ -122,5 +122,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=application/x-fictionbook+xml;application/x-zip-compressed-fb2;
 X-KDE-Library=okularGenerator_fb
 X-KDE-Priority=1
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=true

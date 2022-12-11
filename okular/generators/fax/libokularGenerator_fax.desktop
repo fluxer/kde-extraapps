@@ -119,5 +119,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=image/fax-g3;image/g3fax;
 X-KDE-Library=okularGenerator_fax
 X-KDE-Priority=1
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=false

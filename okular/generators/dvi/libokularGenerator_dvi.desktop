@@ -124,5 +124,4 @@ X-KDE-ServiceTypes=okular/Generator
 MimeType=application/x-dvi;
 X-KDE-Library=okularGenerator_dvi
 X-KDE-Priority=2
-X-KDE-okularAPIVersion=1
 X-KDE-okularHasInternalSettings=false

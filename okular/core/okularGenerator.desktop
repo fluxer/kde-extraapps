@@ -62,10 +62,6 @@ Comment[zh_TW]=Okular 檔案格式後端
 [PropertyDef::X-KDE-Priority]
 Type=int
 
-# Version of the API.
-[PropertyDef::X-KDE-okularAPIVersion]
-Type=int
-
 # Has configuration option
 [PropertyDef::X-KDE-okularHasInternalSettings]
 Type=bool
