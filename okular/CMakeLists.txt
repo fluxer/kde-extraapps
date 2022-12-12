@@ -31,8 +31,8 @@ set_package_properties(LibSpectre PROPERTIES
 
 kde4_optional_find_package(DjVuLibre 3.5.17)
 set_package_properties(DjVuLibre PROPERTIES
-    DESCRIPTION "A library for dealing with DjVu formatted files"
-    URL "http://djvulibre.djvuzone.org"
+    DESCRIPTION "Open source DjVu library"
+    URL "https://djvu.sourceforge.net/"
     PURPOSE "Support for DjVu files in Okular"
 )
 
