@@ -169,8 +169,10 @@ void KEmuMainWindow::createHardDisk()
     const QString diskPath = KFileDialog::getSaveFileName(KUrl(), QString(), this, i18n("Hard Disk path"));
     if (!diskPath.isEmpty()) {
         bool ok = false;
-        const int diskSize = KInputDialog::getInteger(i18n("Hard Disk size"),
-            i18n("Hard Disk size in MegaBytes"), 10, 10, INT_MAX, 1, 10, &ok, this);
+        const int diskSize = KInputDialog::getInteger(
+            i18n("Hard Disk size"),
+            i18n("Hard Disk size in MegaBytes"), 10, 10, INT_MAX, 1, 10, &ok, this
+        );
         if (ok) {
             QProcess imageProcess(this);
             imageProcess.setProcessChannelMode(QProcess::MergedChannels);
