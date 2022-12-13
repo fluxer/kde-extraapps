@@ -231,47 +231,42 @@
         <widget class="QComboBox" name="audioComboBox">
          <item>
           <property name="text">
-           <string>sb16</string>
+           <string>alsa</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>es1370</string>
+           <string>dbus</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>ac97</string>
+           <string>jack</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>adlib</string>
+           <string>oss</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>gus</string>
+           <string>pa</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>cs4231a</string>
+           <string>sdl</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>hda</string>
+           <string>spice</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>pcspk</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>all</string>
+           <string>none</string>
           </property>
          </item>
         </widget>

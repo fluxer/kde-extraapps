@@ -63,7 +63,7 @@ bool KEmuModule::start(const QString &machine)
     const QUrl harddisk = settings.value(machine + "/harddisk").toUrl();
     const QString system = settings.value(machine + "/system").toString();
     const QString video = settings.value(machine + "/video", "virtio").toString();
-    const QString audio = settings.value(machine + "/audio", "ac97").toString();
+    const QString audio = settings.value(machine + "/audio", "alsa").toString();
     const int ram = settings.value(machine + "/ram", 512).toInt();
     const int cpu = settings.value(machine + "/cpu", 1).toInt();
     const bool kvm = settings.value(machine + "/kvm", false).toBool();
@@ -85,7 +85,7 @@ bool KEmuModule::start(const QString &machine)
         machineArgs << "-hda" << harddisk.toString();
     }
     machineArgs << "-vga" << video;
-    machineArgs << "-soundhw" << audio;
+    machineArgs << "-audiodev" << QString::fromLatin1("driver=%1,id=none").arg(audio);
     machineArgs << "-m" << QString::number(ram);
     machineArgs << "-smp" << QString::number(cpu);
     if (kvm) {

@@ -265,7 +265,7 @@ void KEmuMainWindow::machineLoad(const QString machine)
     const QString video = m_settings->value(machine + "/video", "virtio").toString();
     const int videoIndex = m_kemuui->videoComboBox->findText(video);
     m_kemuui->videoComboBox->setCurrentIndex(videoIndex);
-    const QString audio = m_settings->value(machine + "/audio", "ac97").toString();
+    const QString audio = m_settings->value(machine + "/audio", "alsa").toString();
     const int audioIndex = m_kemuui->audioComboBox->findText(audio);
     m_kemuui->audioComboBox->setCurrentIndex(audioIndex);
     m_kemuui->RAMInput->setValue(m_settings->value(machine + "/ram", 512).toInt());
