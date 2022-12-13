@@ -205,7 +205,6 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 
 		if (!device.isEmpty())
 		{
-			QString mountPoint = mnt->mnt_dir;
 			mountPoints()[device] = new MountEntry(mnt, type);
 		}
 	}
