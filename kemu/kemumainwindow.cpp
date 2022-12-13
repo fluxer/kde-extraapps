@@ -24,9 +24,9 @@
 #include <KInputDialog>
 #include <KStandardDirs>
 #include <KStatusBar>
+#include <KMessageBox>
 #include <KDebug>
 #include <QApplication>
-#include <QMessageBox>
 #include <QThread>
 
 #include "kemumainwindow.h"
@@ -109,7 +109,7 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
 
     if(!m_installed) {
         m_kemuui->startStopButton->setEnabled(false);
-        QMessageBox::critical(this, i18n("QEMU not available"), i18n("QEMU not available"));
+        KMessageBox::error(this, i18n("QEMU not available"), i18n("QEMU not available"));
         return;
     }
 
@@ -126,7 +126,7 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
         }
 #endif
         if (!kvmDev.exists()) {
-            QMessageBox::warning(this, i18n("KVM not available"), i18n("KVM not available"));
+            KMessageBox::sorry(this, i18n("KVM not available"), i18n("KVM not available"));
         }
     }
 
@@ -163,8 +163,7 @@ void KEmuMainWindow::createHardDisk()
 {
     const QString qemuImg = KStandardDirs::findExe("qemu-img");
     if (qemuImg.isEmpty()) {
-        QMessageBox::warning(this, i18n("Requirements not met"),
-            i18n("qemu-img not found"));
+        KMessageBox::error(this, i18n("qemu-img not found"), i18n("Requirements not met"));
         return;
     }
     const QString diskPath = KFileDialog::getSaveFileName(KUrl(), QString(), this, i18n("Hard Disk path"));
@@ -179,11 +178,9 @@ void KEmuMainWindow::createHardDisk()
                 << diskPath << QString(QString::number(diskSize) + QLatin1String("M")));
             imageProcess.waitForFinished();
             if (imageProcess.exitCode() == 0) {
-                QMessageBox::information(this, i18n("Success"),
-                    i18n("Image successfully created"));
+                KMessageBox::information(this, i18n("Image successfully created"), i18n("Success"));
             } else {
-                QMessageBox::warning(this, i18n("QEMU error"),
-                    i18n("An error occured:\n%1", QString(imageProcess.readAll())));
+                KMessageBox::error(this, i18n("An error occured:\n%1", QString(imageProcess.readAll())), i18n("QEMU error"));
             }
         }
     }
@@ -307,8 +304,7 @@ void KEmuMainWindow::machineStarted(const QString machine)
 void KEmuMainWindow::machineStopped(int exitCode, const QString error)
 {
     if (exitCode != 0) {
-        QMessageBox::warning(this, i18n("QEMU error"),
-            i18n("An error occured:\n%1", error));
+        KMessageBox::error(this, i18n("An error occured:\n%1", error), i18n("QEMU error"));
     }
 
     updateStatus();
@@ -316,8 +312,7 @@ void KEmuMainWindow::machineStopped(int exitCode, const QString error)
 
 void KEmuMainWindow::machineError(const QString error)
 {
-    QMessageBox::warning(this, i18n("KEmu error"),
-        i18n("An error occured:\n%1", error));
+    KMessageBox::error(this, i18n("An error occured:\n%1", error), i18n("QEMU error"));
     updateStatus();
 }
 
