@@ -36,8 +36,8 @@ ExternalCommand::ExternalCommand(const QString& cmd, const QStringList& args) :
 	m_ExitCode(-1),
 	m_Output()
 {
-	m_Command.push_back(cmd);
-	m_Args.push_back(args);
+	m_Command = cmd;
+	m_Args = args;
 	setup();
 }
 
@@ -51,58 +51,22 @@ ExternalCommand::ExternalCommand(Report& report, const QString& cmd, const QStri
 	m_ExitCode(-1),
 	m_Output()
 {
-	m_Command.push_back(cmd);
-	m_Args.push_back(args);
-	setup();
-}
-
-/** Creates a new ExternalCommand instance without Report.
-	@param cmd the vector of the piped commands to run
-	@param args the vector of the arguments to pass to the commands
-*/
-ExternalCommand::ExternalCommand(const std::vector<QString> cmd, const std::vector<QStringList> args) :
-	m_Report(NULL),
-	m_Command(cmd),
-	m_Args(args),
-	m_ExitCode(-1),
-	m_Output()
-{
-	setup();
-}
-
-/** Creates a new ExternalCommand instance with Report.
-	@param report the Report to write output to.
-	@param cmd the vector of the piped commands to run
-	@param args the vector of the arguments to pass to the commands
- */
-ExternalCommand::ExternalCommand(Report& report, const std::vector<QString> cmd, const std::vector<QStringList> args) :
-	m_Report(report.newChild()),
-	m_Command(cmd),
-	m_Args(args),
-	m_ExitCode(-1),
-	m_Output()
-{
+	m_Command = cmd;
+	m_Args = args;
 	setup();
 }
 
 ExternalCommand::~ExternalCommand()
 {
-	delete[] processes;
 }
 
 void ExternalCommand::setup()
 {
 	setEnvironment(QStringList() << "LC_ALL=C" << QString("PATH=") + qgetenv("PATH"));
-	setProcessChannelMode(MergedChannels);
+	setProcessChannelMode(QProcess::MergedChannels);
 
-	processes = new QProcess[command().size()];
-	connect(&processes[command().size()-1], SIGNAL(readyReadStandardOutput()), SLOT(onReadOutput()));
-	connect(&processes[command().size()-1], SIGNAL(finished(int, QProcess::ExitStatus)), SLOT(onFinished(int)));
-
-	for (unsigned int i = 0; i < command().size() - 1; i++)
-	{
-		processes[i].setStandardOutputProcess(&processes[i+1]);
-	}
+	connect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadOutput()));
+	connect(this, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(onFinished(int)));
 }
 
 /** Starts the external commands.
@@ -111,30 +75,20 @@ void ExternalCommand::setup()
 */
 bool ExternalCommand::start(int timeout)
 {
-	for (unsigned int i = 0; i < command().size(); i++)
-		processes[i].start(command()[i], args()[i]);
+	QProcess::start(command(), args());
 
 	if (report())
 	{
-		QString s;
-		for (unsigned int i = 0; i < command().size(); i++)
-		{
-			s += command()[i] + " " + args()[i].join(" ");
-			if (i < command().size()-1)
-				s += " | ";
-		}
+		QString s = command() + " " + args().join(" ");
 		report()->setCommand(i18nc("@info/plain", "Command: %1", s));
 	}
 
-	for (unsigned int i = 0; i < command().size(); i++)
+	if (!waitForStarted(timeout))
 	{
-		if (!processes[i].waitForStarted(timeout))
-		{
-			if  (report())
-				report()->line() << i18nc("@info/plain", "(Command timeout while starting \"%1\")", command()[i] + " " + args()[i].join(" "));
+		if  (report())
+			report()->line() << i18nc("@info/plain", "(Command timeout while starting \"%1\")", command() + " " + args().join(" "));
 
-			return false;
-		}
+		return false;
 	}
 
 	return true;
@@ -146,18 +100,15 @@ bool ExternalCommand::start(int timeout)
 */
 bool ExternalCommand::waitFor(int timeout)
 {
-	for (unsigned int i = 0; i < command().size(); i++)
-	{
-		processes[i].closeWriteChannel();
+	closeWriteChannel();
 
-		if (!processes[i].waitForFinished(timeout))
-		{
-			if  (report())
-				report()->line() << i18nc("@info/plain", "(Command timeout while running \"%1\")", command()[i] + " " + args()[i].join(" "));
-			return false;
-		}
-		onReadOutput();
+	if (!waitForFinished(timeout))
+	{
+		if  (report())
+			report()->line() << i18nc("@info/plain", "(Command timeout while running \"%1\")", command() + " " + args().join(" "));
+		return false;
 	}
+	onReadOutput();
 	return true;
 }
 
@@ -172,7 +123,7 @@ bool ExternalCommand::run(int timeout)
 
 void ExternalCommand::onReadOutput()
 {
-	const QString s = QString(processes[command().size()-1].readAllStandardOutput());
+	const QString s = QString(readAllStandardOutput());
 
 	m_Output += s;
 

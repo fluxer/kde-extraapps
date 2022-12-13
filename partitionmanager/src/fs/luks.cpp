@@ -101,15 +101,14 @@ namespace FS
 
 		if (dlg->exec() == KDialog::Accepted)
 		{
-			std::vector<QString> commands;
-			commands.push_back("echo");
-			commands.push_back("cryptsetup");
-			std::vector<QStringList> args;
-			args.push_back(QStringList() << dlg->luksPassphrase().text());
-			args.push_back(QStringList() << "luksOpen" << deviceNode << dlg->luksName().text());
-			ExternalCommand cmd(commands, args);
+			QString name =  dlg->luksName().text();
+			QByteArray pass = dlg->luksPassphrase().text().toLocal8Bit();
 			delete dlg;
-			return cmd.run(-1) && cmd.exitCode() == 0;
+			ExternalCommand cmd("cryptsetup", QStringList() << "luksOpen"<< deviceNode << name << "--key-file=-");
+			cmd.start();
+			cmd.write(pass);
+			cmd.waitFor(-1);
+			return cmd.exitCode() == 0;
 		}
 
 		delete dlg;
