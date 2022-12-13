@@ -93,7 +93,8 @@ CoreBackendPartitionTable* LibPartedDevice::openPartitionTable()
 
 bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable& ptable)
 {
-	PedDiskType* pedDiskType = ped_disk_type_get(ptable.typeName().toAscii());
+	const QByteArray ptableBytes = ptable.typeName().toAscii();
+	PedDiskType* pedDiskType = ped_disk_type_get(ptableBytes.constData());
 
 	if (pedDiskType == NULL)
 	{
@@ -101,7 +102,8 @@ bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable&
 		return false;
 	}
 
-	PedDevice* dev = ped_device_get(deviceNode().toAscii());
+	const QByteArray nodeBytes = deviceNode().toAscii();
+	PedDevice* dev = ped_device_get(nodeBytes.constData());
 
 	if (dev == NULL)
 	{
