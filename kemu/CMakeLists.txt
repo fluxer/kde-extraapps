@@ -9,6 +9,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5002)
 
 find_program(QEMU_EXECUTABLE NAMES qemu-img qemu-system-i386)
 add_feature_info(kemu_qemu
