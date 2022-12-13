@@ -165,6 +165,7 @@ void KEmuModule::_machineFinished(int exitCode, QProcess::ExitStatus exitStatus)
     emit stopped(exitCode, QString(machineProcess->readAll()));
 
     const QString machine = m_machines.key(machineProcess);
+    kDebug() << "machine finished" << machine << exitCode;
     m_machines.remove(machine);
     machineProcess->deleteLater();
 }
