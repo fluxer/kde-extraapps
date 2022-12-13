@@ -106,7 +106,7 @@ bool PDFCreator::create(const QString &path, int, int, QImage &img)
 
 ThumbCreator::Flags PDFCreator::flags() const
 {
-    return ThumbCreator::None;
+    return ThumbCreator::Flags(ThumbCreator::DrawFrame | ThumbCreator::BlendIcon);
 }
 
 QWidget *PDFCreator::createConfigurationWidget()

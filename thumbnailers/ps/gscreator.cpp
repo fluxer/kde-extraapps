@@ -72,5 +72,5 @@ bool GSCreator::create(const QString &path, int, int, QImage &img)
 
 ThumbCreator::Flags GSCreator::flags() const
 {
-    return ThumbCreator::None;
+    return ThumbCreator::Flags(ThumbCreator::DrawFrame | ThumbCreator::BlendIcon);
 }
