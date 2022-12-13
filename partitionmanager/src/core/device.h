@@ -49,7 +49,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 	friend class CoreBackend;
 
 	public:
-		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname = QString());
+		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, qint64 physicalSize, const QString& iconname = QString());
 		~Device();
 
 	public:

@@ -31,7 +31,7 @@
 
 #include <QList>
 #include <QVariant>
-#include <qglobal.h>
+#include <QString>
 
 class LibPartedDevice;
 class LibPartedPartitionTable;
@@ -40,7 +40,6 @@ class OperationStack;
 
 class Device;
 class KPluginFactory;
-#include <QString>
 
 /** Backend plugin for libparted.
 

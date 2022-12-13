@@ -421,7 +421,7 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 
 	Log(Log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
 
-	Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size);
+	Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size, pedDevice->phys_sector_size);
 
 	PedDisk* pedDisk = ped_disk_new(pedDevice);
 
