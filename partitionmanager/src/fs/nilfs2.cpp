@@ -115,7 +115,7 @@ namespace FS
 
 	bool nilfs2::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.nilfs2", QStringList() << deviceNode);
+		ExternalCommand cmd(report, "mkfs.nilfs2", QStringList() << "-f" << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
