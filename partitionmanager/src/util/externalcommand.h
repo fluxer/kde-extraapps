@@ -42,8 +42,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 	Q_DISABLE_COPY(ExternalCommand)
 
 	public:
-		explicit ExternalCommand(const QString& cmd = QString(), const QStringList& args = QStringList());
-		explicit ExternalCommand(Report& report, const QString& cmd = QString(), const QStringList& args = QStringList());
+		explicit ExternalCommand(const QString& cmd, const QStringList& args = QStringList());
+		explicit ExternalCommand(Report& report, const QString& cmd, const QStringList& args = QStringList());
 		~ExternalCommand();
 
 	public:
