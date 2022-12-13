@@ -43,7 +43,7 @@ void OkularTTS::Private::setupIface()
     }
 
     kspeech = new KSpeech(q);
-    kspeech->setSpeechID(QString::fromLatin1("Okular"));
+    kspeech->setSpeechID(QString::fromLatin1("okular"));
     connect( kspeech, SIGNAL(jobStateChanged(int,int)),
              q, SLOT(slotJobStateChanged(int,int)) );
 }
