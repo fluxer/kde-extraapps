@@ -33,7 +33,6 @@
 */
 ExternalCommand::ExternalCommand(const QString& cmd, const QStringList& args) :
 	m_Report(NULL),
-	m_ExitCode(-1),
 	m_Output()
 {
 	m_Command = cmd;
@@ -48,7 +47,6 @@ ExternalCommand::ExternalCommand(const QString& cmd, const QStringList& args) :
  */
 ExternalCommand::ExternalCommand(Report& report, const QString& cmd, const QStringList& args) :
 	m_Report(report.newChild()),
-	m_ExitCode(-1),
 	m_Output()
 {
 	m_Command = cmd;
@@ -66,7 +64,6 @@ void ExternalCommand::setup()
 	setProcessChannelMode(QProcess::MergedChannels);
 
 	connect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadOutput()));
-	connect(this, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(onFinished(int)));
 }
 
 /** Starts the external commands.
@@ -129,9 +126,4 @@ void ExternalCommand::onReadOutput()
 
 	if (report())
 		*report() << s;
-}
-
-void ExternalCommand::onFinished(int exitCode)
-{
-	setExitCode(exitCode);
 }

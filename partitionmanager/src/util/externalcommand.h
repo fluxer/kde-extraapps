@@ -51,8 +51,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 		bool waitFor(int timeout = 30000);
 		bool run(int timeout = 30000);
 
-		int exitCode() const { return m_ExitCode; } /**< @return the exit code */
-
 		const QString& output() const { return m_Output; } /**< @return the command output */
 
 		Report* report() { return m_Report; } /**< @return pointer to the Report or NULL */
@@ -60,18 +58,15 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 		QStringList args() { return m_Args; } /**< @return the arguments */
 
 	protected:
-		void setExitCode(int i) { m_ExitCode = i; }
 		void setup();
 
 	protected slots:
-		void onFinished(int exitCode);
 		void onReadOutput();
 
 	private:
 		Report *m_Report;
 		QString m_Command;
 		QStringList m_Args;
-		int m_ExitCode;
 		QString m_Output;
 };
 
