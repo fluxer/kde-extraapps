@@ -30,7 +30,6 @@
 #include <QtDBus/qdbuspendingcall.h>
 #include <QtDBus/QDBusMessage>
 
-#include <KMessageBox>
 #include <KDebug>
 #include <KIcon>
 #include <KRun>
@@ -247,9 +246,7 @@ bool AudioPlayerControlRunner::startPlayer()
     }
 
     if (!KRun::run(m_player, KUrl::List(), nullptr)) {
-        // We couldn't start the player
-        KMessageBox::error(nullptr, i18n("%1 not found", m_player),
-            i18n("%1 was not found so the runner is unable to work.", m_player));
+        // NOTE: KRun::run() shows message box in case of error
         return false;
     }
 
