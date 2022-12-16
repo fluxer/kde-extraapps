@@ -11,9 +11,9 @@ endif()
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5002)
 
-find_program(QEMU_EXECUTABLE NAMES qemu-img qemu-system-i386)
-add_feature_info(kemu_qemu
-    QEMU_EXECUTABLE
+find_program(QEMU_IMG_AND_QEMU_SYSTEM_EXECUTABLE qemu-img qemu-system-i386)
+add_feature_info(qemu_img_and_qemu_system
+    QEMU_IMG_AND_QEMU_SYSTEM_EXECUTABLE
     "Virtual machine management"
 )
 
