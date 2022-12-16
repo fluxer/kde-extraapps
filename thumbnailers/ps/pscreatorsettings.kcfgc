@@ -1,0 +1,4 @@
+File=pscreatorsettings.kcfg
+ClassName=PSCreatorSettings
+Singleton=true
+Mutators=true

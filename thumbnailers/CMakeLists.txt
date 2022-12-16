@@ -37,10 +37,11 @@ set_package_properties(GettextPO PROPERTIES
     PURPOSE "Required to build the PO thumbnailer"
 )
 
-find_program(GHOSTSCRIPT_EXECUTABLE NAMES gs)
-add_feature_info(thumbnailer_gs
-    GHOSTSCRIPT_EXECUTABLE
-    "PostScript and DvI support in thumbnailer"
+kde4_optional_find_package(LibSpectre)
+set_package_properties(LibSpectre PROPERTIES
+    DESCRIPTION "Small library for rendering Postscript documents"
+    URL "https://www.freedesktop.org/wiki/Software/libspectre/"
+    PURPOSE "Required to build the Postscript thumbnailer"
 )
 
 if(TAGLIB_FOUND)
@@ -59,7 +60,9 @@ if(GETTEXTPO_FOUND)
     add_subdirectory(po)
 endif()
 
-add_subdirectory(ps)
+if (LIBSPECTRE_FOUND)
+    add_subdirectory(ps)
+endif()
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

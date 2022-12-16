@@ -1,23 +1,29 @@
 ########### next target ###############
 
-set(gsthumbnail_PART_SRCS gscreator.cpp)
+include_directories(
+   ${LIBSPECTRE_INCLUDE_DIR}
+)
 
-kde4_add_plugin(gsthumbnail ${gsthumbnail_PART_SRCS})
+set(psthumbnail_PART_SRCS pscreator.cpp)
 
-target_link_libraries(gsthumbnail
+kde4_add_kcfg_files(psthumbnail_PART_SRCS pscreatorsettings.kcfgc)
+kde4_add_plugin(psthumbnail ${psthumbnail_PART_SRCS})
+
+target_link_libraries(psthumbnail
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KIO_LIBS}
     ${QT_QTGUI_LIBRARY}
+    ${LIBSPECTRE_LIBRARY}
 )
 
 install(
-    TARGETS gsthumbnail
+    TARGETS psthumbnail
     DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 )
 
 ########### install files ###############
 
 install(
-    FILES gsthumbnail.desktop
+    FILES psthumbnail.desktop
     DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )

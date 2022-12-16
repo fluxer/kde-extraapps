@@ -1,9 +1,10 @@
 [Desktop Entry]
 Type=Service
-Name=PostScript and DVI Files
+Name=PostScript Files
 X-KDE-ServiceTypes=ThumbCreator
 X-KDE-PluginInfo-EnabledByDefault=true
-MimeType=application/x-dvi;application/postscript;image/x-eps;
-X-KDE-Library=gsthumbnail
+MimeType=application/postscript;image/x-eps;
+X-KDE-Library=psthumbnail
 CacheThumbnail=true
+Configurable=true
 InitialPreference=2

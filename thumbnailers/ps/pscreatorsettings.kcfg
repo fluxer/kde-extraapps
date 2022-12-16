@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+    <kcfgfile name="pscreatorrc"/>
+    <group name="General">
+      <entry name="graphic_antialiasing" type="bool">
+          <label>Graphic Antialias</label>
+          <default>true</default>
+      </entry>
+      <entry name="text_antialiasing" type="bool">
+          <label>Text antialias</label>
+          <default>true</default>
+      </entry>
+    </group>
+</kcfg>

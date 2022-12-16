@@ -16,18 +16,21 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef GSCREATOR_H
-#define GSCREATOR_H
+#ifndef PSCREATOR_H
+#define PSCREATOR_H
 
 #include <kio/thumbcreator.h>
 
-class GSCreator : public ThumbCreator
+class PSCreator : public ThumbCreator
 {
 public:
-    GSCreator();
+    PSCreator();
 
     bool create(const QString &path, int, int, QImage &img) final;
     ThumbCreator::Flags flags() const final;
+
+    QWidget *createConfigurationWidget() final;
+    void writeConfiguration(const QWidget *configurationWidget) final;
 };
 
-#endif // GSCREATOR_H
+#endif // PSCREATOR_H
