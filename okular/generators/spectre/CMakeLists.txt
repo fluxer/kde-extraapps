@@ -1,10 +1,12 @@
-add_subdirectory( conf ) 
-
 include_directories(
    ${LIBSPECTRE_INCLUDE_DIR}
    ${CMAKE_CURRENT_SOURCE_DIR}/../..
    ${CMAKE_CURRENT_BINARY_DIR}/../..
 )
+
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=4711)
+
+add_subdirectory(conf)
 
 ########### next target ###############
 

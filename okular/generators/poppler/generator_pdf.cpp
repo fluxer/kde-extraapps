@@ -27,8 +27,6 @@
 #include <poppler/cpp/poppler-embedded-file.h>
 #include <poppler/cpp/poppler-page-transition.h>
 
-static const int PdfDebug = 4710;
-
 static QByteArray okularBytes(const poppler::byte_array &popplerbytes)
 {
     return QByteArray(popplerbytes.data(), popplerbytes.size());
@@ -113,7 +111,7 @@ static Okular::FontInfo okularFontInfo(const poppler::font_info &popplerfont)
             break;
         }
         default: {
-            kWarning(PdfDebug) << "Unknown font info type" << popplerfont.type();
+            kWarning() << "Unknown font info type" << popplerfont.type();
             okularfont.setType(Okular::FontInfo::Unknown);
             break;
         }
@@ -137,7 +135,7 @@ static Okular::Rotation okularRotation(const poppler::page::orientation_enum pop
             return Okular::Rotation270;
         }
     }
-    kWarning(PdfDebug) << "Unknown orientation";
+    kWarning() << "Unknown orientation";
     return Okular::Rotation0;
 }
 
@@ -157,7 +155,7 @@ static poppler::rotation_enum popplerRotation(const Okular::Rotation okularorien
             return poppler::rotate_270;
         }
     }
-    kWarning(PdfDebug) << "Unknown orientation";
+    kWarning() << "Unknown orientation";
     return poppler::rotate_0;
 }
 
@@ -349,7 +347,7 @@ Okular::Document::OpenResult PDFGenerator::loadDocumentWithPassword(const QStrin
                     break;
                 }
                 default: {
-                    kWarning(PdfDebug) << "Unknown page transition type" << popplerpagetransition->type();
+                    kWarning() << "Unknown page transition type" << popplerpagetransition->type();
                     break;
                 }
             }
@@ -363,7 +361,7 @@ Okular::Document::OpenResult PDFGenerator::loadDocumentWithPassword(const QStrin
                     break;
                 }
                 default: {
-                    kWarning(PdfDebug) << "Unknown page transition alignment" << popplerpagetransition->alignment();
+                    kWarning() << "Unknown page transition alignment" << popplerpagetransition->alignment();
                     break;
                 }
             }
@@ -377,7 +375,7 @@ Okular::Document::OpenResult PDFGenerator::loadDocumentWithPassword(const QStrin
                     break;
                 }
                 default: {
-                    kWarning(PdfDebug) << "Unknown page transition direction" << popplerpagetransition->direction();
+                    kWarning() << "Unknown page transition direction" << popplerpagetransition->direction();
                     break;
                 }
             }
@@ -463,7 +461,7 @@ const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
     for (int i = 0; i < popplerembeddedfiles.size(); i++) {
         const poppler::embedded_file* popplerembeddedfile = popplerembeddedfiles.at(i);
         if (!popplerembeddedfile->is_valid()) {
-            kWarning(PdfDebug) << "Invalid embedded file";
+            kWarning() << "Invalid embedded file";
             continue;
         }
 
@@ -501,7 +499,7 @@ bool PDFGenerator::isAllowed(Okular::Permission action) const
             return m_popplerdocument->has_permission(poppler::perm_fill_forms);
         }
         default: {
-            kWarning(PdfDebug) << "Unknown permission" << action;
+            kWarning() << "Unknown permission" << action;
             break;
         }
     }
@@ -522,7 +520,7 @@ bool PDFGenerator::print(QPrinter &printer)
             break;
         }
         default: {
-            kWarning(PdfDebug) << "Unknown printer orientation" << printer.orientation();
+            kWarning() << "Unknown printer orientation" << printer.orientation();
             break;
         }
     }
@@ -570,7 +568,7 @@ Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
 {
     const int pageindex = page->number();
     if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
-        kWarning(PdfDebug) << "Page index out of range" << pageindex;
+        kWarning() << "Page index out of range" << pageindex;
         return nullptr;
     }
 
@@ -599,7 +597,7 @@ Okular::TextPage* PDFGenerator::textPage(Okular::Page *page)
 QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okularorientation)
 {
     if (pageindex < 0 || (pageindex + 1) > m_popplerpages.size()) {
-        kWarning(PdfDebug) << "Page index out of range" << pageindex;
+        kWarning() << "Page index out of range" << pageindex;
         return QImage();
     }
 
@@ -627,7 +625,7 @@ QImage PDFGenerator::pageImage(const int pageindex, const Okular::Rotation okula
         popplerRotation(okularorientation)
     );
     if (!popplerimage.is_valid()) {
-        kWarning(PdfDebug) << "Page rendering failed";
+        kWarning() << "Page rendering failed";
         emit error(i18n("Page rendering failed"), -1);
         return QImage();
     }

@@ -4,6 +4,8 @@ include_directories(
    ${POPPLER_INCLUDE_DIR}
 )
 
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=4710)
+
 ########### next target ###############
 
 set(okularGenerator_poppler_PART_SRCS

@@ -4,6 +4,7 @@ include_directories(
    ${CMAKE_BINARY_DIR}/okular
 )
 
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=4712)
 
 ########### next target ###############
 

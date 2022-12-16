@@ -119,7 +119,7 @@ bool GSGenerator::exportTo( const QString &fileName, const Okular::ExportFormat 
         spectre_document_save_to_pdf(m_internalDocument, filenamebytes.constData());
         const SpectreStatus loadStatus = spectre_document_status(m_internalDocument);
         if (loadStatus != SPECTRE_STATUS_SUCCESS) {
-            kDebug(4711) << "ERR:" << spectre_status_to_string(loadStatus);
+            kDebug() << "ERR:" << spectre_status_to_string(loadStatus);
             return false;
         }
         return true;
@@ -137,13 +137,13 @@ bool GSGenerator::loadDocument( const QString & fileName, QVector< Okular::Page 
     const SpectreStatus loadStatus = spectre_document_status(m_internalDocument);
     if (loadStatus != SPECTRE_STATUS_SUCCESS)
     {
-        kDebug(4711) << "ERR:" << spectre_status_to_string(loadStatus);
+        kDebug() << "ERR:" << spectre_status_to_string(loadStatus);
         spectre_document_free(m_internalDocument);
         m_internalDocument = 0;
         return false;
     }
     pagesVector.resize( spectre_document_get_n_pages(m_internalDocument) );
-    kDebug(4711) << "Page count:" << pagesVector.count();
+    kDebug() << "Page count:" << pagesVector.count();
     return loadPages(pagesVector);
 }
 
@@ -183,7 +183,7 @@ bool GSGenerator::loadPages( QVector< Okular::Page * > & pagesVector )
         SpectreOrientation pageOrientation = SPECTRE_ORIENTATION_PORTRAIT;
         page = spectre_document_get_page (m_internalDocument, i);
         if (spectre_document_status (m_internalDocument)) {
-            kDebug(4711) << "Error getting page" << i << spectre_status_to_string(spectre_document_status(m_internalDocument));
+            kDebug() << "Error getting page" << i << spectre_status_to_string(spectre_document_status(m_internalDocument));
         } else {
             spectre_page_get_size(page, &width, &height);
             pageOrientation = spectre_page_get_orientation(page);
@@ -197,7 +197,7 @@ bool GSGenerator::loadPages( QVector< Okular::Page * > & pagesVector )
 
 void GSGenerator::generatePixmap( Okular::PixmapRequest * req )
 {
-    kDebug(4711) << "receiving" << *req;
+    kDebug() << "receiving" << *req;
 
     SpectrePage *page = spectre_document_get_page(m_internalDocument, req->pageNumber());
 

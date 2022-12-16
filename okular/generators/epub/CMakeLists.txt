@@ -1,10 +1,9 @@
+include_directories(
+    ${EPUB_INCLUDE_DIR}
+)
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=4713)
 
 add_subdirectory(data)
-
-include_directories(
-   ${EPUB_INCLUDE_DIR}
-)
-
 
 ########### next target ###############
 
