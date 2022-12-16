@@ -35,6 +35,10 @@ class DjVuGenerator : public Okular::Generator
 
         QVariant metaData( const QString & key, const QVariant & option ) const;
 
+        // export as PostScript
+        Okular::ExportFormat::List exportFormats() const;
+        bool exportTo( const QString &fileName, const Okular::ExportFormat &format );
+
     protected:
         bool doCloseDocument();
         // pixmap generation

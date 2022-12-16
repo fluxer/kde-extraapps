@@ -27,6 +27,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <ktemporaryfile.h>
+#include <kicon.h>
 
 static void recurseCreateTOC( QDomDocument &maindoc, const QDomNode &parent, QDomNode &parentDestination, KDjVu *djvu )
 {
@@ -197,6 +198,33 @@ QVariant DjVuGenerator::metaData( const QString &key, const QVariant &option ) c
         return m_djvu->metaData( "title" );
     }
     return QVariant();
+}
+
+Okular::ExportFormat::List DjVuGenerator::exportFormats() const
+{
+    Okular::ExportFormat::List result;
+    result.append(
+        Okular::ExportFormat(
+            KIcon(QString::fromLatin1("application-postscript")),
+            i18n("PostScript Document"),
+            KMimeType::mimeType(QString::fromLatin1("application/postscript"))
+        )
+    );
+    return result;
+}
+
+bool DjVuGenerator::exportTo( const QString &fileName, const Okular::ExportFormat &format )
+{
+    if (format.mimeType()->name() == QLatin1String("application/postscript")) {
+        QMutexLocker locker( userMutex() );
+        const QVector<KDjVu::Page*> &djvu_pages = m_djvu->pages();
+        QList<int> pageList;
+        for (int i = 0; i < djvu_pages.count(); i++) {
+            pageList.append(i + 1);
+        }
+        return m_djvu->exportAsPostScript(fileName, pageList);
+    }
+    return false;
 }
 
 Okular::TextPage* DjVuGenerator::textPage( Okular::Page *page )
