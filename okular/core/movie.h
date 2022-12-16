@@ -45,11 +45,6 @@ class OKULAR_EXPORT Movie
         explicit Movie( const QString& fileName );
 
         /**
-         * Creates a new movie object with the given movie data.
-         */
-        explicit Movie( const QString& fileName, const QByteArray &data );
-
-        /**
          * Destroys the movie object.
          */
         ~Movie();

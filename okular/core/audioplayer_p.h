@@ -15,7 +15,6 @@
 #include <qsignalmapper.h>
 #include <kurl.h>
 
-#include <QBuffer>
 class PlayData;
 class SoundInfo;
 

@@ -11,7 +11,6 @@
 #include "audioplayer_p.h"
 
 // qt/kde includes
-#include <qbuffer.h>
 #include <qdir.h>
 #include <kdebug.h>
 #include <krandom.h>

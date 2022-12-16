@@ -14,9 +14,7 @@
 #include <qdir.h>
 #include <qimage.h>
 #include <qstring.h>
-
 #include <kdebug.h>
-#include <ktemporaryfile.h>
 
 #include "debug_p.h"
 
@@ -29,7 +27,6 @@ class Movie::Private
             : m_url( url ),
               m_rotation( Rotation0 ),
               m_playMode( PlayOnce ),
-              m_tmp( nullptr ),
               m_showControls( false ),
               m_autoPlay( false ),
               m_showPosterImage( false )
@@ -40,11 +37,10 @@ class Movie::Private
         QSize m_aspect;
         Rotation m_rotation;
         PlayMode m_playMode;
-        KTemporaryFile *m_tmp;
         QImage m_posterImage;
-        bool m_showControls : 1;
-        bool m_autoPlay : 1;
-        bool m_showPosterImage : 1;
+        bool m_showControls;
+        bool m_autoPlay;
+        bool m_showPosterImage;
 };
 
 Movie::Movie( const QString& fileName )
@@ -52,36 +48,14 @@ Movie::Movie( const QString& fileName )
 {
 }
 
-Movie::Movie( const QString& fileName, const QByteArray &data )
-    : d( new Private( fileName ) )
-{
-    /* Store movie data as temporary file.
-     *
-     * Originally loaded movie data directly using a QBuffer, but sadly phonon
-     * fails to play on a few of my test systems (I think it's the Phonon
-     * GStreamer backend). Storing the data in a temporary file works fine
-     * though, not to mention, it releases much needed memory. (gamaral)
-     */
-    d->m_tmp = new KTemporaryFile();
-    if ( d->m_tmp->open() ) {
-       d->m_tmp->write( data );
-       d->m_tmp->flush();
-    }
-    else kDebug(OkularDebug) << "Failed to create temporary file for video data.";
-}
-
 Movie::~Movie()
 {
-    delete d->m_tmp;
     delete d;
 }
 
 QString Movie::url() const
 {
-    if (d->m_tmp)
-        return d->m_tmp->fileName();
-    else
-        return d->m_url;
+    return d->m_url;
 }
 
 void Movie::setSize( const QSize &aspect )
