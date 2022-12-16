@@ -50,35 +50,10 @@ set_package_properties(EPub PROPERTIES
     PURPOSE "Support for EPub documents in Okular"
 )
 
-kde4_optional_find_package(OpenSSL)
-set_package_properties(OpenSSL PROPERTIES
-    DESCRIPTION "Robust, commercial-grade, full-featured toolkit for general-purpose cryptography and secure communication"
-    URL "https://www.openssl.org/"
-    PURPOSE "Support encrypted Open Document in Okular"
-)
-
-find_program(GHOSTSCRIPT_EXECUTABLE NAMES gs)
-add_feature_info(okular_gs
-    GHOSTSCRIPT_EXECUTABLE
-    "PostScript support in Okular"
-)
-
 find_program(LATEX_EXECUTABLE NAMES latex)
 add_feature_info(okular_latex
     LATEX_EXECUTABLE
     "LaTeX support in Okular"
-)
-
-find_program(KPSEWHICH_EXECUTABLE NAMES kpsewhich)
-add_feature_info(okular_kpsewhich
-    KPSEWHICH_EXECUTABLE
-    "DVI support in Okular"
-)
-
-find_program(DVIPNG_EXECUTABLE NAMES dvipng)
-add_feature_info(okular_dvipng
-    DVIPNG_EXECUTABLE
-    "DVI support in Okular"
 )
 
 option(

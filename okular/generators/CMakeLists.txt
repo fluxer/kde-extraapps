@@ -12,21 +12,11 @@ if(DjVuLibre_FOUND)
     add_subdirectory(djvu)
 endif()
 
-add_subdirectory(dvi)
-
-add_subdirectory(xps)
-
-add_subdirectory(ooo)
-
-add_subdirectory(fictionbook)
-
-add_subdirectory(comicbook)
-
-add_subdirectory(fax)
-
 if(EPub_FOUND)
     add_subdirectory(epub)
 endif()
 
+add_subdirectory(comicbook)
+add_subdirectory(fictionbook)
 add_subdirectory(markdown)
 add_subdirectory(txt)
