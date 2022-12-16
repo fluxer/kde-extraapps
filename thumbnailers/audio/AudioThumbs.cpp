@@ -65,12 +65,13 @@ bool ATCreator::create(const QString &path, int /*w*/, int /*h*/, QImage &img)
     if (type->is("audio/mpeg")) {
         TagLib::MPEG::File mp3File(path.toUtf8());
         TagLib::ID3v2::Tag *mp3Tag = mp3File.ID3v2Tag();
-        TagLib::ID3v2::FrameList fList = mp3Tag->frameList("APIC");
-        TagLib::ID3v2::AttachedPictureFrame *pic;
-        pic = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(fList.front());
-        if (pic && !pic->picture().isEmpty()) {
-            img.loadFromData(pic->picture().data(), pic->picture().size());
-            bRet = true;
+        if (mp3Tag) {
+            TagLib::ID3v2::FrameList fList = mp3Tag->frameList("APIC");
+            TagLib::ID3v2::AttachedPictureFrame *pic = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(fList.front());
+            if (pic && !pic->picture().isEmpty()) {
+                img.loadFromData(pic->picture().data(), pic->picture().size());
+                bRet = true;
+            }
         }
     } else if (type->is("audio/flac") || type->is("audio/x-flac")) {
         TagLib::FLAC::File ff(path.toUtf8());
@@ -78,52 +79,52 @@ bool ATCreator::create(const QString &path, int /*w*/, int /*h*/, QImage &img)
 
         if (!coverList.isEmpty()) {
             TagLib::FLAC::Picture *pic = coverList.front();
-            TagLib::ByteVector coverData = pic->data();
-            img.loadFromData(coverData.data(), coverData.size());
-            bRet = true;
-            return bRet;
+            if (pic) {
+                TagLib::ByteVector coverData = pic->data();
+                img.loadFromData(coverData.data(), coverData.size());
+                bRet = true;
+            }
         }
     } else if (type->is("audio/mp4")) {
         TagLib::MP4::File mp4file(path.toUtf8());
         TagLib::MP4::Tag *tag = mp4file.tag();
         TagLib::MP4::ItemListMap map = tag->itemListMap();
 
-        if (!map.isEmpty()) {
-            for (TagLib::MP4::ItemListMap::ConstIterator it = map.begin(); it != map.end(); ++it) {
-                TagLib::MP4::CoverArtList coverList = (*it).second.toCoverArtList();
-                if (!coverList.isEmpty()) {
-                        TagLib::MP4::CoverArt cover = coverList[0];
-
-                        TagLib::ByteVector coverData = cover.data();
-                        img.loadFromData(coverData.data(), coverData.size());
-                        bRet = true;
-                        return bRet;
-                }
+        for (TagLib::MP4::ItemListMap::ConstIterator it = map.begin(); it != map.end(); ++it) {
+            TagLib::MP4::CoverArtList coverList = (*it).second.toCoverArtList();
+            if (!coverList.isEmpty()) {
+                TagLib::MP4::CoverArt cover = coverList.front();
+                TagLib::ByteVector coverData = cover.data();
+                img.loadFromData(coverData.data(), coverData.size());
+                bRet = true;
+                break;
             }
         }
     } else if (type->is("audio/x-vorbis+ogg") || type->is("audio/ogg")) {
         TagLib::Ogg::Vorbis::File file(path.toUtf8());
         TagLib::Ogg::XiphComment *tag = file.tag();
 
-        TagLib::List<TagLib::FLAC::Picture*> picturelist = tag->pictureList();
-        for (int i = 0; i < picturelist.size(); i++) {
-            // qDebug() << Q_FUNC_INFO << picturelist[i]->code();
-            switch (picturelist[i]->code()) {
-                case TagLib::FLAC::Picture::FrontCover:
-                case TagLib::FLAC::Picture::BackCover:
-                case TagLib::FLAC::Picture::Media: {
-                    break;
+        if (tag) {
+            TagLib::List<TagLib::FLAC::Picture*> picturelist = tag->pictureList();
+            for (int i = 0; i < picturelist.size(); i++) {
+                // qDebug() << Q_FUNC_INFO << picturelist[i]->code();
+                switch (picturelist[i]->code()) {
+                    case TagLib::FLAC::Picture::FrontCover:
+                    case TagLib::FLAC::Picture::BackCover:
+                    case TagLib::FLAC::Picture::Media: {
+                        break;
+                    }
+                    default: {
+                        continue;
+                        break;
+                    }
                 }
-                default: {
-                    continue;
-                    break;
-                }
-            }
 
-            img.loadFromData(picturelist[i]->data().data(), picturelist[i]->data().size());
-            if (!img.isNull()) {
-                bRet = true;
-                break;
+                img.loadFromData(picturelist[i]->data().data(), picturelist[i]->data().size());
+                if (!img.isNull()) {
+                    bRet = true;
+                    break;
+                }
             }
         }
     }
