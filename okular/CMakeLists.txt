@@ -50,7 +50,7 @@ set_package_properties(EPub PROPERTIES
     PURPOSE "Support for EPub documents in Okular"
 )
 
-find_program(LATEX_EXECUTABLE NAMES latex)
+find_program(LATEX_EXECUTABLE NAMES latex dvipng)
 add_feature_info(okular_latex
     LATEX_EXECUTABLE
     "LaTeX support in Okular"
