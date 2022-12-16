@@ -236,7 +236,7 @@ void Generator::generatePixmap( PixmapRequest *request )
     Q_D( Generator );
     d->mPixmapReady = false;
 
-    const bool calcBoundingBox = !request->isTile() && !request->page()->isBoundingBoxKnown();
+    const bool calcBoundingBox = !request->page()->isBoundingBoxKnown();
 
     if ( request->asynchronous() && hasFeature( Threaded ) )
     {
@@ -467,7 +467,6 @@ PixmapRequest::PixmapRequest( DocumentObserver *observer, int pageNumber, int wi
     d->mPriority = priority;
     d->mFeatures = features;
     d->mForce = false;
-    d->mTile = false;
     d->mNormalizedRect = NormalizedRect();
 }
 
@@ -516,16 +515,6 @@ Page* PixmapRequest::page() const
     return d->mPage;
 }
 
-void PixmapRequest::setTile( bool tile )
-{
-    d->mTile = tile;
-}
-
-bool PixmapRequest::isTile() const
-{
-    return d->mTile;
-}
-
 void PixmapRequest::setNormalizedRect( const NormalizedRect &rect )
 {
     if ( d->mNormalizedRect == rect )
@@ -537,11 +526,6 @@ void PixmapRequest::setNormalizedRect( const NormalizedRect &rect )
 const NormalizedRect& PixmapRequest::normalizedRect() const
 {
     return d->mNormalizedRect;
-}
-
-Okular::TilesManager* PixmapRequestPrivate::tilesManager() const
-{
-    return mPage->d->tilesManager(mObserver);
 }
 
 void PixmapRequestPrivate::swap()

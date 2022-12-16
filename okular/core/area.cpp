@@ -491,3 +491,53 @@ bool SourceRefObjectRect::contains( double x, double y, double xScale, double yS
 {
     return distanceSqr( x, y, xScale, yScale ) < ( pow( 7.0 / xScale, 2 ) + pow( 7.0 / yScale, 2 ) );
 }
+
+NormalizedRect NormalizedRect::toRotatedRect( const NormalizedRect &rect, Rotation rotation )
+{
+    if ( rotation == Rotation0 )
+        return rect;
+
+    NormalizedRect newRect;
+    switch ( rotation )
+    {
+        case Rotation90:
+            newRect = NormalizedRect( 1 - rect.bottom, rect.left, 1 - rect.top, rect.right );
+            break;
+        case Rotation180:
+            newRect = NormalizedRect( 1 - rect.right, 1 - rect.bottom, 1 - rect.left, 1 - rect.top );
+            break;
+        case Rotation270:
+            newRect = NormalizedRect( rect.top, 1 - rect.right, rect.bottom, 1 - rect.left );
+            break;
+        default:
+            newRect = rect;
+            break;
+    }
+
+    return newRect;
+}
+
+NormalizedRect NormalizedRect::fromRotatedRect( const NormalizedRect &rect, Rotation rotation )
+{
+    if ( rotation == Rotation0 )
+        return rect;
+
+    NormalizedRect newRect;
+    switch ( rotation )
+    {
+        case Rotation90:
+            newRect = NormalizedRect( rect.top, 1 - rect.right, rect.bottom, 1 - rect.left );
+            break;
+        case Rotation180:
+            newRect = NormalizedRect( 1 - rect.right, 1 - rect.bottom, 1 - rect.left, 1 - rect.top );
+            break;
+        case Rotation270:
+            newRect = NormalizedRect( 1 - rect.bottom, rect.left, 1 - rect.top, rect.right );
+            break;
+        default:
+            newRect = rect;
+            break;
+    }
+
+    return newRect;
+}

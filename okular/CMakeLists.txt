@@ -99,7 +99,6 @@ set(okularcore_SRCS
     core/textdocumentgenerator.cpp
     core/textdocumentsettings.cpp
     core/textpage.cpp
-    core/tilesmanager.cpp
     core/utils.cpp
     core/view.cpp
     core/chooseenginewidget.ui
@@ -124,7 +123,6 @@ install(
     core/textdocumentgenerator.h
     core/textdocumentsettings.h
     core/textpage.h
-    core/tile.h
     core/utils.h
     core/version.h
     core/observer.h

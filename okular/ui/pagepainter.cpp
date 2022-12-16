@@ -32,7 +32,6 @@
 #include "guiutils.h"
 #include "settings.h"
 #include "core/observer.h"
-#include "core/tile.h"
 #include "settings_core.h"
 #include "core/document_p.h"
 
@@ -89,33 +88,27 @@ void PagePainter::paintCroppedPageOnPainter( QPainter * destPainter, const Okula
     }
     destPainter->fillRect( limits, backgroundColor );
 
-    const bool hasTilesManager = page->hasTilesManager( observer );
-    const QPixmap *pixmap = 0;
+    /** 1 - RETRIEVE THE 'PAGE+ID' PIXMAP OR A SIMILAR 'PAGE' ONE **/
+    const QPixmap *pixmap = page->_o_nearestPixmap( observer, scaledWidth, scaledHeight );
 
-    if ( !hasTilesManager )
+    /** 1B - IF NO PIXMAP, DRAW EMPTY PAGE **/
+    double pixmapRescaleRatio = pixmap ? scaledWidth / (double)pixmap->width() : -1;
+    long pixmapPixels = pixmap ? (long)pixmap->width() * (long)pixmap->height() : 0;
+    if ( !pixmap || pixmapRescaleRatio > 20.0 || pixmapRescaleRatio < 0.25 ||
+            (scaledWidth != pixmap->width() && pixmapPixels > 6000000L) )
     {
-        /** 1 - RETRIEVE THE 'PAGE+ID' PIXMAP OR A SIMILAR 'PAGE' ONE **/
-        pixmap = page->_o_nearestPixmap( observer, scaledWidth, scaledHeight );
-
-        /** 1B - IF NO PIXMAP, DRAW EMPTY PAGE **/
-        double pixmapRescaleRatio = pixmap ? scaledWidth / (double)pixmap->width() : -1;
-        long pixmapPixels = pixmap ? (long)pixmap->width() * (long)pixmap->height() : 0;
-        if ( !pixmap || pixmapRescaleRatio > 20.0 || pixmapRescaleRatio < 0.25 ||
-             (scaledWidth != pixmap->width() && pixmapPixels > 6000000L) )
+        // draw something on the blank page: the okular icon or a cross (as a fallback)
+        if ( !busyPixmap->isNull() )
         {
-            // draw something on the blank page: the okular icon or a cross (as a fallback)
-            if ( !busyPixmap->isNull() )
-            {
-                destPainter->drawPixmap( QPoint( 10, 10 ), *busyPixmap );
-            }
-            else
-            {
-                destPainter->setPen( Qt::gray );
-                destPainter->drawLine( 0, 0, croppedWidth-1, croppedHeight-1 );
-                destPainter->drawLine( 0, croppedHeight-1, croppedWidth-1, 0 );
-            }
-            return;
+            destPainter->drawPixmap( QPoint( 10, 10 ), *busyPixmap );
         }
+        else
+        {
+            destPainter->setPen( Qt::gray );
+            destPainter->drawLine( 0, 0, croppedWidth-1, croppedHeight-1 );
+            destPainter->drawLine( 0, croppedHeight-1, croppedWidth-1, 0 );
+        }
+        return;
     }
 
     /** 2 - FIND OUT WHAT TO PAINT (Flags + Configuration + Presence) **/
@@ -243,41 +236,17 @@ void PagePainter::paintCroppedPageOnPainter( QPainter * destPainter, const Okula
     /** 4A -- REGULAR FLOW. PAINT PIXMAP NORMAL OR RESCALED USING GIVEN QPAINTER **/
     if ( !useBackBuffer )
     {
-        if ( hasTilesManager )
-        {
-            const Okular::NormalizedRect normalizedLimits( limitsInPixmap, scaledWidth, scaledHeight );
-            const QList<Okular::Tile> tiles = page->tilesAt( observer, normalizedLimits );
-            QList<Okular::Tile>::const_iterator tIt = tiles.constBegin(), tEnd = tiles.constEnd();
-            while ( tIt != tEnd )
-            {
-                const Okular::Tile &tile = *tIt;
-                QRect tileRect = tile.rect().geometry( scaledWidth, scaledHeight ).translated( -scaledCrop.topLeft() );
-                QRect limitsInTile = limits & tileRect;
-                if ( !limitsInTile.isEmpty() )
-                {
-                    if ( tile.pixmap()->width() == tileRect.width() && tile.pixmap()->height() == tileRect.height() )
-                        destPainter->drawPixmap( limitsInTile.topLeft(), *(tile.pixmap()),
-                                limitsInTile.translated( -tileRect.topLeft() ) );
-                    else
-                        destPainter->drawPixmap( tileRect, *(tile.pixmap()) );
-                }
-                tIt++;
-            }
-        }
+        // 4A.1. if size is ok, draw the page pixmap using painter
+        if ( pixmap->width() == scaledWidth && pixmap->height() == scaledHeight )
+            destPainter->drawPixmap( limits.topLeft(), *pixmap, limitsInPixmap );
+
+        // else draw a scaled portion of the magnified pixmap
         else
         {
-            // 4A.1. if size is ok, draw the page pixmap using painter
-            if ( pixmap->width() == scaledWidth && pixmap->height() == scaledHeight )
-                destPainter->drawPixmap( limits.topLeft(), *pixmap, limitsInPixmap );
-
-            // else draw a scaled portion of the magnified pixmap
-            else
-            {
-                QImage destImage;
-                scalePixmapOnImage( destImage, pixmap, scaledWidth, scaledHeight, limitsInPixmap );
-                destPainter->drawImage( limits.left(), limits.top(), destImage, 0, 0,
-                                         limits.width(),limits.height() );
-            }
+            QImage destImage;
+            scalePixmapOnImage( destImage, pixmap, scaledWidth, scaledHeight, limitsInPixmap );
+            destPainter->drawImage( limits.left(), limits.top(), destImage, 0, 0,
+                                    limits.width(),limits.height() );
         }
 
         // 4A.2. active painter is the one passed to this method
@@ -295,50 +264,11 @@ void PagePainter::paintCroppedPageOnPainter( QPainter * destPainter, const Okula
         else
             has_alpha = true;
 
-        if ( hasTilesManager )
-        {
-            backImage = QImage( limits.width(), limits.height(), QImage::Format_ARGB32_Premultiplied );
-            backImage.fill( paperColor.rgb() );
-            QPainter p( &backImage );
-            const Okular::NormalizedRect normalizedLimits( limitsInPixmap, scaledWidth, scaledHeight );
-            const QList<Okular::Tile> tiles = page->tilesAt( observer, normalizedLimits );
-            QList<Okular::Tile>::const_iterator tIt = tiles.constBegin(), tEnd = tiles.constEnd();
-            while ( tIt != tEnd )
-            {
-                const Okular::Tile &tile = *tIt;
-                QRect tileRect = tile.rect().geometry( scaledWidth, scaledHeight ).translated( -scaledCrop.topLeft() );
-                QRect limitsInTile = limits & tileRect;
-                if ( !limitsInTile.isEmpty() )
-                {
-                    if ( !tile.pixmap()->hasAlpha() )
-                        has_alpha = false;
-
-                    if ( tile.pixmap()->width() == tileRect.width() && tile.pixmap()->height() == tileRect.height() )
-                    {
-                        p.drawPixmap( limitsInTile.translated( -limits.topLeft() ).topLeft(), *(tile.pixmap()),
-                                limitsInTile.translated( -tileRect.topLeft() ) );
-                    }
-                    else
-                    {
-                        double xScale = tile.pixmap()->width() / (double)tileRect.width();
-                        double yScale = tile.pixmap()->height() / (double)tileRect.height();
-                        QTransform transform( xScale, 0, 0, yScale, 0, 0 );
-                        p.drawPixmap( limitsInTile.translated( -limits.topLeft() ), *(tile.pixmap()),
-                                transform.mapRect( limitsInTile ).translated( -transform.mapRect( tileRect ).topLeft() ) );
-                    }
-                }
-                ++tIt;
-            }
-            p.end();
-        }
+        // 4B.1. draw the page pixmap: normal or scaled
+        if ( pixmap->width() == scaledWidth && pixmap->height() == scaledHeight )
+            cropPixmapOnImage( backImage, pixmap, limitsInPixmap );
         else
-        {
-            // 4B.1. draw the page pixmap: normal or scaled
-            if ( pixmap->width() == scaledWidth && pixmap->height() == scaledHeight )
-                cropPixmapOnImage( backImage, pixmap, limitsInPixmap );
-            else
-                scalePixmapOnImage( backImage, pixmap, scaledWidth, scaledHeight, limitsInPixmap );
-        }
+            scalePixmapOnImage( backImage, pixmap, scaledWidth, scaledHeight, limitsInPixmap );
 
         // 4B.2. modify pixmap following accessibility settings
         if ( bufferAccessibility )

@@ -80,7 +80,6 @@
 #include "core/movie.h"
 #include "core/audioplayer.h"
 #include "core/sourcereference.h"
-#include "core/tile.h"
 #include "settings.h"
 #include "settings_core.h"
 #include "magnifierview.h"
@@ -1059,8 +1058,11 @@ void PageView::updateActionState( bool haspages, bool documentChanged, bool hasf
         d->aSpeakDoc->setEnabled( enablettsactions );
         d->aSpeakPage->setEnabled( enablettsactions );
     }
-    if (d->aMouseMagnifier)
-        d->aMouseMagnifier->setEnabled(d->document->supportsTiles());
+    if (d->aMouseMagnifier) {
+         // FIXME: works only for some zoom-levels
+        d->aMouseMagnifier->setVisible(false);
+        d->aMouseMagnifier->setEnabled(false);
+    }
 }
 
 bool PageView::areSourceLocationsShownGraphically() const
@@ -1813,7 +1815,7 @@ void PageView::mouseMoveEvent( QMouseEvent * e )
             deltaY = mouseContainer.height() - absDeltaY;
         }
 
-        const float upperZoomLimit = d->document->supportsTiles() ? 15.99 : 3.99;
+        const float upperZoomLimit = 3.99;
         if ( mouseY <= mouseContainer.top() + 4 &&
              d->zoomFactor < upperZoomLimit )
         {
@@ -2421,7 +2423,7 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                 double nX = (double)(selRect.left() + selRect.right()) / (2.0 * (double)contentAreaWidth());
                 double nY = (double)(selRect.top() + selRect.bottom()) / (2.0 * (double)contentAreaHeight());
 
-                const float upperZoomLimit = d->document->supportsTiles() ? 16.0 : 4.0;
+                const float upperZoomLimit = 4.0;
                 if ( d->zoomFactor <= upperZoomLimit || zoom <= 1.0 )
                 {
                     d->zoomFactor *= zoom;
@@ -3637,7 +3639,7 @@ void PageView::updateZoom( ZoomMode newZoomMode )
             d->zoomFactor = -1;
             break;
     }
-    const float upperZoomLimit = d->document->supportsTiles() ? 16.0 : 4.0;
+    const float upperZoomLimit = 4.0;
     if ( newFactor > upperZoomLimit )
         newFactor = upperZoomLimit;
     if ( newFactor < 0.1 )
@@ -3689,8 +3691,6 @@ void PageView::updateZoomText()
     int idx = 0, selIdx = 3;
     bool inserted = false; //use: "d->zoomMode != ZoomFixed" to hide Fit/* zoom ratio
     int zoomValueCount = 11;
-    if ( d->document->supportsTiles() )
-        zoomValueCount = 13;
     while ( idx < zoomValueCount || !inserted )
     {
         float value = idx < zoomValueCount ? kZoomValues[ idx ] : newFactor;
@@ -4208,21 +4208,9 @@ static void slotRequestPreloadPixmap( Okular::DocumentObserver * observer, const
     {
         Okular::PixmapRequest::PixmapRequestFeatures requestFeatures = Okular::PixmapRequest::Preload;
         requestFeatures |= Okular::PixmapRequest::Asynchronous;
-        const bool pageHasTilesManager = i->page()->hasTilesManager( observer );
-        if ( pageHasTilesManager && !preRenderRegion.isNull() )
-        {
-            Okular::PixmapRequest * p = new Okular::PixmapRequest( observer, i->pageNumber(), i->uncroppedWidth(), i->uncroppedHeight(), PAGEVIEW_PRELOAD_PRIO, requestFeatures );
-            requestedPixmaps->push_back( p );
-
-            p->setNormalizedRect( preRenderRegion );
-            p->setTile( true );
-        }
-        else if ( !pageHasTilesManager )
-        {
-            Okular::PixmapRequest * p = new Okular::PixmapRequest( observer, i->pageNumber(), i->uncroppedWidth(), i->uncroppedHeight(), PAGEVIEW_PRELOAD_PRIO, requestFeatures );
-            requestedPixmaps->push_back( p );
-            p->setNormalizedRect( preRenderRegion );
-        }
+        Okular::PixmapRequest * p = new Okular::PixmapRequest( observer, i->pageNumber(), i->uncroppedWidth(), i->uncroppedHeight(), PAGEVIEW_PRELOAD_PRIO, requestFeatures );
+        requestedPixmaps->push_back( p );
+        p->setNormalizedRect( preRenderRegion );
     }
 }
 
@@ -4300,18 +4288,8 @@ void PageView::slotRequestVisiblePixmaps( int newValue )
         kWarning() << "checking for text for page" << i->pageNumber() << "=" << i->page()->hasTextPage();
 #endif
 
-        Okular::NormalizedRect expandedVisibleRect = vItem->rect;
-        if ( i->page()->hasTilesManager( this ) && Okular::Settings::memoryLevel() != Okular::Settings::EnumMemoryLevel::Low )
-        {
-            double rectMargin = pixelsToExpand/(double)i->uncroppedHeight();
-            expandedVisibleRect.left = qMax( 0.0, vItem->rect.left - rectMargin );
-            expandedVisibleRect.top = qMax( 0.0, vItem->rect.top - rectMargin );
-            expandedVisibleRect.right = qMin( 1.0, vItem->rect.right + rectMargin );
-            expandedVisibleRect.bottom = qMin( 1.0, vItem->rect.bottom + rectMargin );
-        }
-
         // if the item has not the right pixmap, add a request for it
-        if ( !i->page()->hasPixmap( this, i->uncroppedWidth(), i->uncroppedHeight(), expandedVisibleRect ) )
+        if ( !i->page()->hasPixmap( this, i->uncroppedWidth(), i->uncroppedHeight(), vItem->rect ) )
         {
 #ifdef PAGEVIEW_DEBUG
             kWarning() << "rerequesting visible pixmaps for page" << i->pageNumber() << "!";
@@ -4319,13 +4297,7 @@ void PageView::slotRequestVisiblePixmaps( int newValue )
             Okular::PixmapRequest * p = new Okular::PixmapRequest( this, i->pageNumber(), i->uncroppedWidth(), i->uncroppedHeight(), PAGEVIEW_PRIO, Okular::PixmapRequest::Asynchronous );
             requestedPixmaps.push_back( p );
 
-            if ( i->page()->hasTilesManager( this ) )
-            {
-                p->setNormalizedRect( expandedVisibleRect );
-                p->setTile( true );
-            }
-            else
-                p->setNormalizedRect( vItem->rect );
+            p->setNormalizedRect( vItem->rect );
         }
 
         // look for the item closest to viewport center and the relative

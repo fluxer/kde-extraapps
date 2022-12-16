@@ -202,8 +202,7 @@ class OKULAR_EXPORT Generator : public QObject
             ReadRawData,       ///< Whether the Generator can read a document directly from its raw data.
             FontInfo,          ///< Whether the Generator can provide information about the fonts used in the document
             PageSizes,         ///< Whether the Generator can change the size of the document pages.
-            PrintNative,       ///< Whether the Generator supports native cross-platform printing (QPainter-based).
-            TiledRendering     ///< Whether the Generator can render tiles @since 0.16 (KDE 4.10)
+            PrintNative        ///< Whether the Generator supports native cross-platform printing (QPainter-based).
         };
 
         /**
@@ -636,22 +635,6 @@ class OKULAR_EXPORT PixmapRequest
          * Returns a pointer to the page where the pixmap shall be generated for.
          */
         Page *page() const;
-
-        /**
-         * Sets whether the generator should render only the given normalized
-         * rect or the entire page
-         *
-         * @since 0.16 (KDE 4.10)
-         */
-        void setTile( bool tile );
-
-        /**
-         * Returns whether the generator should render just the region given by
-         * normalizedRect() or the entire page.
-         *
-         * @since 0.16 (KDE 4.10)
-         */
-        bool isTile() const;
 
         /**
          * Sets the region of the page to request.

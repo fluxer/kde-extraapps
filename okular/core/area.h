@@ -300,6 +300,16 @@ class OKULAR_EXPORT NormalizedRect
         }
 
         /**
+         * Returns a rotated NormalizedRect given a @p rotation
+         */
+        static NormalizedRect toRotatedRect( const NormalizedRect &rect, Rotation rotation );
+
+        /**
+         * Returns a non rotated version of @p rect, which is rotated by @p rotation
+         */
+        static NormalizedRect fromRotatedRect( const NormalizedRect &rect, Rotation rotation );
+
+        /**
          * The normalized left coordinate.
          */
         double left;

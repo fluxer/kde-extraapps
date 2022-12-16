@@ -37,8 +37,6 @@
 #include "rotationjob_p.h"
 #include "textpage.h"
 #include "textpage_p.h"
-#include "tile.h"
-#include "tilesmanager_p.h"
 #include "utils_p.h"
 
 #include <limits>
@@ -92,15 +90,6 @@ PagePrivate::~PagePrivate()
 
 void PagePrivate::imageRotationDone( RotationJob * job )
 {
-    TilesManager *tm = tilesManager( job->observer() );
-    if ( tm )
-    {
-        QPixmap *pixmap = new QPixmap( QPixmap::fromImage( job->image() ) );
-        tm->setPixmap( pixmap, job->rect() );
-        delete pixmap;
-        return;
-    }
-
     QMap< DocumentObserver*, PixmapObject >::iterator it = m_pixmaps.find( job->observer() );
     if ( it != m_pixmaps.end() )
     {
@@ -201,18 +190,6 @@ void Page::setBoundingBox( const NormalizedRect& bbox )
 
 bool Page::hasPixmap( DocumentObserver *observer, int width, int height, const NormalizedRect &rect ) const
 {
-    TilesManager *tm = d->tilesManager( observer );
-    if ( tm )
-    {
-        if ( width != tm->width() || height != tm->height() )
-        {
-            tm->setSize( width, height );
-            return false;
-        }
-
-        return tm->hasPixmap( rect );
-    }
-
     QMap< DocumentObserver*, PagePrivate::PixmapObject >::const_iterator it = d->m_pixmaps.constFind( observer );
     if ( it == d->m_pixmaps.constEnd() )
         return false;
@@ -377,18 +354,6 @@ void PagePrivate::rotateAt( Rotation orientation )
     }
 
     /**
-     * Rotate tiles manager
-     */
-    QMapIterator<const DocumentObserver *, TilesManager *> i(m_tilesManagers);
-    while (i.hasNext()) {
-      i.next();
-
-      TilesManager *tm = i.value();
-      if ( tm )
-        tm->setRotation( m_rotation );
-    }
-
-    /**
      * Rotate the object rects on the page.
      */
     const QTransform matrix = rotationMatrix();
@@ -507,14 +472,6 @@ QList< FormField * > Page::formFields() const
 void Page::setPixmap( DocumentObserver *observer, QPixmap *pixmap, const NormalizedRect &rect )
 {
     if ( d->m_rotation == Rotation0 ) {
-        TilesManager *tm = d->tilesManager( observer );
-        if ( tm )
-        {
-            tm->setPixmap( pixmap, rect );
-            delete pixmap;
-            return;
-        }
-
         QMap< DocumentObserver*, PagePrivate::PixmapObject >::iterator it = d->m_pixmaps.find( observer );
         if ( it != d->m_pixmaps.end() )
         {
@@ -529,7 +486,7 @@ void Page::setPixmap( DocumentObserver *observer, QPixmap *pixmap, const Normali
     } else {
         RotationJob *job = new RotationJob( pixmap->toImage(), Rotation0, d->m_rotation, observer );
         job->setPage( d );
-        job->setRect( TilesManager::toRotatedRect( rect, d->m_rotation ) );
+        job->setRect( NormalizedRect::toRotatedRect( rect, d->m_rotation ) );
         d->m_doc->m_pageController->addRotationJob(job);
 
         delete pixmap;
@@ -711,17 +668,8 @@ void Page::setFormFields( const QList< FormField * >& fields )
 
 void Page::deletePixmap( DocumentObserver *observer )
 {
-    TilesManager *tm = d->tilesManager( observer );
-    if ( tm )
-    {
-        delete tm;
-        d->m_tilesManagers.remove(observer);
-    }
-    else
-    {
-        PagePrivate::PixmapObject object = d->m_pixmaps.take( observer );
-        delete object.m_pixmap;
-    }
+    PagePrivate::PixmapObject object = d->m_pixmaps.take( observer );
+    delete object.m_pixmap;
 }
 
 void Page::deletePixmaps()
@@ -733,9 +681,6 @@ void Page::deletePixmaps()
     }
 
     d->m_pixmaps.clear();
-
-    qDeleteAll(d->m_tilesManagers);
-    d->m_tilesManagers.clear();
 }
 
 void Page::deleteRects()
@@ -988,31 +933,4 @@ const QPixmap * Page::_o_nearestPixmap( DocumentObserver *observer, int w, int h
     }
 
     return pixmap;
-}
-
-bool Page::hasTilesManager( const DocumentObserver *observer ) const
-{
-    return d->tilesManager( observer ) != 0;
-}
-
-QList<Tile> Page::tilesAt( const DocumentObserver *observer, const NormalizedRect &rect ) const
-{
-    TilesManager *tm = d->m_tilesManagers.value( observer );
-    if ( tm )
-        return tm->tilesAt( rect, TilesManager::PixmapTile );
-    else
-        return QList<Tile>();
-}
-
-TilesManager *PagePrivate::tilesManager( const DocumentObserver *observer ) const
-{
-    return m_tilesManagers.value( observer );
-}
-
-void PagePrivate::setTilesManager( const DocumentObserver *observer, TilesManager *tm )
-{
-    TilesManager *old = m_tilesManagers.value( observer );
-    delete old;
-
-    m_tilesManagers.insert(observer, tm);
 }

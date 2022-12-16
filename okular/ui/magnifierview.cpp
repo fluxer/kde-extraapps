@@ -128,10 +128,6 @@ void MagnifierView::requestPixmap()
 
     Okular::PixmapRequest *p = new Okular::PixmapRequest( this, m_current, full_width, full_height, PAGEVIEW_PRIO, Okular::PixmapRequest::Asynchronous );
 
-    if ( m_page->hasTilesManager( this ) ) {
-      p->setTile( true );
-    }
-
     // request a little bit bigger rectangle then currently viewed, but not the full scale page
     const double rect_width = (nrect.right - nrect.left) * 0.5,
                  rect_height = (nrect.bottom - nrect.top) * 0.5;

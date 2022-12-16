@@ -37,7 +37,6 @@ class PageSize;
 class PageTransition;
 class RotationJob;
 class TextPage;
-class TilesManager;
 
 enum PageItem
 {
@@ -104,16 +103,6 @@ class PagePrivate
          */
         void deleteTextSelections();
 
-        /**
-         * Get the tiles manager for the tiled @observer
-         */
-        TilesManager *tilesManager( const DocumentObserver *observer ) const;
-
-        /**
-         * Set the tiles manager for the tiled @observer
-         */
-        void setTilesManager( const DocumentObserver *observer, TilesManager *tm );
-
         class PixmapObject
         {
             public:
@@ -121,7 +110,6 @@ class PagePrivate
                 Rotation m_rotation;
         };
         QMap< DocumentObserver*, PixmapObject > m_pixmaps;
-        QMap< const DocumentObserver*, TilesManager *> m_tilesManagers;
 
         Page *m_page;
         int m_number;
