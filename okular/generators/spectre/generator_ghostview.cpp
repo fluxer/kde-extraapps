@@ -9,14 +9,11 @@
 
 #include "generator_ghostview.h"
 
-#include <math.h>
-
 #include <qfile.h>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qsize.h>
-#include <QtGui/QPrinter>
-
+#include <qpainter.h>
 #include <kaboutdata.h>
 #include <kconfigdialog.h>
 #include <kdebug.h>
@@ -32,46 +29,45 @@
 
 #include "rendererthread.h"
 
+#include <math.h>
+
 static KAboutData createAboutData()
 {
     KAboutData aboutData(
          "okular_ghostview",
          "okular_ghostview",
-         ki18n( "PS Backend" ),
+         ki18n("PS Backend"),
          "0.1.7",
-         ki18n( "A PostScript file renderer." ),
+         ki18n("A PostScript file renderer."),
          KAboutData::License_GPL,
-         ki18n( "© 2007-2008 Albert Astals Cid" ),
-         ki18n( "Based on the Spectre library." )
+         ki18n("© 2007-2008 Albert Astals Cid"),
+         ki18n("Based on the Spectre library.")
     );
-    aboutData.addAuthor( ki18n( "Albert Astals Cid" ), KLocalizedString(), "aacid@kde.org" );
+    aboutData.addAuthor(ki18n("Albert Astals Cid"), KLocalizedString(), "aacid@kde.org");
     return aboutData;
 }
 
 OKULAR_EXPORT_PLUGIN(GSGenerator, createAboutData())
 
-GSGenerator::GSGenerator( QObject *parent, const QVariantList &args ) :
-    Okular::Generator( parent, args ),
+GSGenerator::GSGenerator(QObject *parent, const QVariantList &args)
+    : Okular::Generator(parent, args),
     m_internalDocument(0),
     m_docInfo(0),
     m_request(0)
 {
     GSRendererThread *renderer = GSRendererThread::getCreateRenderer();
     if (!renderer->isRunning()) renderer->start();
-    connect(renderer, SIGNAL(imageDone(QImage*,Okular::PixmapRequest*)),
-                      SLOT(slotImageGenerated(QImage*,Okular::PixmapRequest*)),
-                      Qt::QueuedConnection);
+    connect(
+        renderer, SIGNAL(imageDone(QImage*,Okular::PixmapRequest*)),
+        SLOT(slotImageGenerated(QImage*,Okular::PixmapRequest*)),
+        Qt::QueuedConnection
+    );
 }
 
 GSGenerator::~GSGenerator()
 {
 }
 
-bool GSGenerator::reparseConfig()
-{
-    bool changed = false;
-    if (m_internalDocument)
-    {
 #define SET_HINT(hintname, hintdefvalue, hintvar) \
 { \
     bool newhint = documentMetaData(hintname, hintdefvalue).toBool(); \
@@ -81,19 +77,24 @@ bool GSGenerator::reparseConfig()
         changed = true; \
     } \
 }
-    SET_HINT("GraphicsAntialias", true, AAgfx)
-    SET_HINT("TextAntialias", true, AAtext)
-#undef SET_HINT
+
+bool GSGenerator::reparseConfig()
+{
+    bool changed = false;
+    if (m_internalDocument) {
+        SET_HINT("GraphicsAntialias", true, AAgfx)
+        SET_HINT("TextAntialias", true, AAtext)
     }
     return changed;
 }
+#undef SET_HINT
 
-void GSGenerator::addPages( KConfigDialog *dlg )
+void GSGenerator::addPages(KConfigDialog *dlg)
 {
     Ui_GSSettingsWidget gsw;
     QWidget* w = new QWidget(dlg);
     gsw.setupUi(w);
-    dlg->addPage(w, GSSettings::self(), i18n("Ghostscript"), "okular-gv", i18n("Ghostscript Backend Configuration") );
+    dlg->addPage(w, GSSettings::self(), i18n("Ghostscript"), "okular-gv", i18n("Ghostscript Backend Configuration"));
 }
 
 Okular::ExportFormat::List GSGenerator::exportFormats() const
@@ -127,7 +128,7 @@ bool GSGenerator::exportTo( const QString &fileName, const Okular::ExportFormat 
     return false;
 }
 
-bool GSGenerator::loadDocument( const QString & fileName, QVector< Okular::Page * > & pagesVector )
+bool GSGenerator::loadDocument(const QString &fileName, QVector<Okular::Page*> &pagesVector)
 {
     cache_AAtext = documentMetaData("TextAntialias", true).toBool();
     cache_AAgfx = documentMetaData("GraphicsAntialias", true).toBool();
@@ -135,14 +136,13 @@ bool GSGenerator::loadDocument( const QString & fileName, QVector< Okular::Page 
     m_internalDocument = spectre_document_new();
     spectre_document_load(m_internalDocument, QFile::encodeName(fileName));
     const SpectreStatus loadStatus = spectre_document_status(m_internalDocument);
-    if (loadStatus != SPECTRE_STATUS_SUCCESS)
-    {
+    if (loadStatus != SPECTRE_STATUS_SUCCESS) {
         kDebug() << "ERR:" << spectre_status_to_string(loadStatus);
         spectre_document_free(m_internalDocument);
         m_internalDocument = 0;
         return false;
     }
-    pagesVector.resize( spectre_document_get_n_pages(m_internalDocument) );
+    pagesVector.resize(spectre_document_get_n_pages(m_internalDocument));
     kDebug() << "Page count:" << pagesVector.count();
     return loadPages(pagesVector);
 }
@@ -162,10 +162,13 @@ void GSGenerator::slotImageGenerated(QImage *img, Okular::PixmapRequest *request
 {
     // This can happen as GSInterpreterCMD is a singleton and on creation signals all the slots
     // of all the generators attached to it
-    if (request != m_request) return;
+    if (request != m_request) {
+        return;
+    }
 
-    if ( !request->page()->isBoundingBoxKnown() )
-        updatePageBoundingBox( request->page()->number(), Okular::Utils::imageBoundingBox( img ) );
+    if (!request->page()->isBoundingBoxKnown()) {
+        updatePageBoundingBox(request->page()->number(), Okular::Utils::imageBoundingBox(img));
+    }
 
     m_request = 0;
     QPixmap *pix = new QPixmap(QPixmap::fromImage(*img));
@@ -176,12 +179,11 @@ void GSGenerator::slotImageGenerated(QImage *img, Okular::PixmapRequest *request
 
 bool GSGenerator::loadPages( QVector< Okular::Page * > & pagesVector )
 {
-    for (uint i = 0; i < spectre_document_get_n_pages(m_internalDocument); i++)
-    {
-        SpectrePage     *page;
-        int              width = 0, height = 0;
+    for (uint i = 0; i < spectre_document_get_n_pages(m_internalDocument); i++) {
+        int width = 0;
+        int height = 0;
         SpectreOrientation pageOrientation = SPECTRE_ORIENTATION_PORTRAIT;
-        page = spectre_document_get_page (m_internalDocument, i);
+        SpectrePage *page = spectre_document_get_page (m_internalDocument, i);
         if (spectre_document_status (m_internalDocument)) {
             kDebug() << "Error getting page" << i << spectre_status_to_string(spectre_document_status(m_internalDocument));
         } else {
@@ -189,13 +191,15 @@ bool GSGenerator::loadPages( QVector< Okular::Page * > & pagesVector )
             pageOrientation = spectre_page_get_orientation(page);
         }
         spectre_page_free(page);
-        if (pageOrientation % 2 == 1) qSwap(width, height);
+        if (pageOrientation % 2 == 1) {
+            qSwap(width, height);
+        }
         pagesVector[i] = new Okular::Page(i, width, height, orientation(pageOrientation));
     }
     return pagesVector.count() > 0;
 }
 
-void GSGenerator::generatePixmap( Okular::PixmapRequest * req )
+void GSGenerator::generatePixmap(Okular::PixmapRequest *req)
 {
     kDebug() << "receiving" << *req;
 
@@ -214,16 +218,16 @@ void GSGenerator::generatePixmap( Okular::PixmapRequest * req )
     gsreq.graphicsAAbits = graphicsAA;
 
     gsreq.orientation = req->page()->orientation();
-    if (req->page()->rotation() == Okular::Rotation90 ||
-        req->page()->rotation() == Okular::Rotation270)
-    {
-        gsreq.magnify = qMax( (double)req->height() / req->page()->width(),
-                              (double)req->width() / req->page()->height() );
-    }
-    else
-    {
-        gsreq.magnify = qMax( (double)req->width() / req->page()->width(),
-                              (double)req->height() / req->page()->height() );
+    if (req->page()->rotation() == Okular::Rotation90 || req->page()->rotation() == Okular::Rotation270) {
+        gsreq.magnify = qMax(
+            (double)req->height() / req->page()->width(),
+            (double)req->width() / req->page()->height()
+        );
+    } else {
+        gsreq.magnify = qMax(
+            (double)req->width() / req->page()->width(),
+            (double)req->height() / req->page()->height()
+        );
     }
     gsreq.request = req;
     m_request = req;
@@ -237,32 +241,30 @@ bool GSGenerator::canGeneratePixmap() const
 
 const Okular::DocumentInfo * GSGenerator::generateDocumentInfo()
 {
-    if (!m_docInfo)
-    {
+    if (!m_docInfo) {
         m_docInfo = new Okular::DocumentInfo();
 
-        m_docInfo->set( Okular::DocumentInfo::Title, spectre_document_get_title(m_internalDocument) );
-        m_docInfo->set( Okular::DocumentInfo::Author, spectre_document_get_for(m_internalDocument) );
-        m_docInfo->set( Okular::DocumentInfo::Creator, spectre_document_get_creator(m_internalDocument) );
-        m_docInfo->set( Okular::DocumentInfo::CreationDate, spectre_document_get_creation_date(m_internalDocument) );
-        m_docInfo->set( "dscversion", spectre_document_get_format(m_internalDocument), i18n("Document version") );
+        m_docInfo->set( Okular::DocumentInfo::Title, spectre_document_get_title(m_internalDocument));
+        m_docInfo->set( Okular::DocumentInfo::Author, spectre_document_get_for(m_internalDocument));
+        m_docInfo->set( Okular::DocumentInfo::Creator, spectre_document_get_creator(m_internalDocument));
+        m_docInfo->set( Okular::DocumentInfo::CreationDate, spectre_document_get_creation_date(m_internalDocument));
+        m_docInfo->set( "dscversion", spectre_document_get_format(m_internalDocument), i18n("Document version"));
 
         int languageLevel = spectre_document_get_language_level(m_internalDocument);
-        if (languageLevel > 0) m_docInfo->set( "langlevel", QString::number(languageLevel), i18n("Language Level") );
+        if (languageLevel > 0) m_docInfo->set("langlevel", QString::number(languageLevel), i18n("Language Level"));
         if (spectre_document_is_eps(m_internalDocument))
-            m_docInfo->set( Okular::DocumentInfo::MimeType, "image/x-eps" );
+            m_docInfo->set(Okular::DocumentInfo::MimeType, "image/x-eps");
         else
-            m_docInfo->set( Okular::DocumentInfo::MimeType, "application/postscript" );
+            m_docInfo->set(Okular::DocumentInfo::MimeType, "application/postscript");
 
-        m_docInfo->set( Okular::DocumentInfo::Pages, QString::number(spectre_document_get_n_pages(m_internalDocument)) );
+        m_docInfo->set(Okular::DocumentInfo::Pages, QString::number(spectre_document_get_n_pages(m_internalDocument)));
     }
     return m_docInfo;
 }
 
 Okular::Rotation GSGenerator::orientation(SpectreOrientation pageOrientation) const
 {
-    switch (pageOrientation)
-    {
+    switch (pageOrientation) {
         case SPECTRE_ORIENTATION_PORTRAIT:
             return Okular::Rotation0;
         case SPECTRE_ORIENTATION_LANDSCAPE:
@@ -272,18 +274,18 @@ Okular::Rotation GSGenerator::orientation(SpectreOrientation pageOrientation) co
         case SPECTRE_ORIENTATION_REVERSE_LANDSCAPE:
             return Okular::Rotation270;
     }
-// get rid of warnings, should never happen
+    // get rid of warnings, should never happen
     return Okular::Rotation0;
 }
 
 QVariant GSGenerator::metaData(const QString &key, const QVariant &option) const
 {
     Q_UNUSED(option)
-    if (key == "DocumentTitle")
-    {
+    if (key == "DocumentTitle") {
         const char *title = spectre_document_get_title(m_internalDocument);
-        if (title)
+        if (title) {
             return QString::fromAscii(title);
+        }
     }
     return QVariant();
 }

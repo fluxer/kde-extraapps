@@ -15,15 +15,15 @@
 #include <qsemaphore.h>
 #include <qstring.h>
 #include <qthread.h>
+#include <qimage.h>
 
 #include <libspectre/spectre.h>
 
-#include <QImage>
 class GSGenerator;
 
 namespace Okular
 {
-   class PixmapRequest;
+    class PixmapRequest;
 }
 
 struct GSRendererThreadRequest
@@ -55,29 +55,29 @@ QT_END_NAMESPACE
 
 class GSRendererThread : public QThread
 {
-Q_OBJECT
-    public:
-        static GSRendererThread *getCreateRenderer();
+    Q_OBJECT
+public:
+    static GSRendererThread *getCreateRenderer();
 
-        ~GSRendererThread();
+    ~GSRendererThread();
 
-        void addRequest(const GSRendererThreadRequest &req);
+    void addRequest(const GSRendererThreadRequest &req);
 
-    signals:
-        void imageDone(QImage *image, Okular::PixmapRequest *request);
+signals:
+    void imageDone(QImage *image, Okular::PixmapRequest *request);
 
-    private:
-        GSRendererThread();
+private:
+    GSRendererThread();
 
-        QSemaphore m_semaphore;
+    QSemaphore m_semaphore;
 
-        static GSRendererThread *theRenderer;
+    static GSRendererThread *theRenderer;
 
-        void run();
+    void run();
 
-        SpectreRenderContext *m_renderContext;
-        QQueue<GSRendererThreadRequest> m_queue;
-        QMutex m_queueMutex;
+    SpectreRenderContext *m_renderContext;
+    QQueue<GSRendererThreadRequest> m_queue;
+    QMutex m_queueMutex;
 };
 
 #endif
