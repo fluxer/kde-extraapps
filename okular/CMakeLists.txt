@@ -24,8 +24,8 @@ set_package_properties(Poppler PROPERTIES
 
 kde4_optional_find_package(LibSpectre 0.2)
 set_package_properties(LibSpectre PROPERTIES
-    DESCRIPTION "A PostScript rendering library"
-    URL "http://libspectre.freedesktop.org/wiki/"
+    DESCRIPTION "Small library for rendering Postscript documents"
+    URL "https://www.freedesktop.org/wiki/Software/libspectre/"
     PURPOSE "Support for PS files in Okular"
 )
 
