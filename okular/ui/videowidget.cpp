@@ -275,7 +275,7 @@ bool VideoWidget::event( QEvent * event )
             event->accept();
             return true;
         }
-        case QEvent::MouseButtonPress: {
+        case QEvent::MouseButtonRelease: {
             // switch from poster to player, similar to the condition in PageView::mouseReleaseEvent()
             if (d->pageLayout->currentIndex() == 1 && Okular::Settings::mouseMode() == Okular::Settings::EnumMouseMode::Browse) {
                 play();
