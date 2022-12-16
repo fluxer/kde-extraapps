@@ -36,13 +36,6 @@ set_package_properties(DjVuLibre PROPERTIES
     PURPOSE "Support for DjVu files in Okular"
 )
 
-kde4_optional_find_package(Freetype)
-set_package_properties(Freetype PROPERTIES
-    DESCRIPTION "A font rendering engine"
-    URL "http://www.freetype.org"
-    PURPOSE "Provides freetype font support in the Okular DVI generator"
-)
-
 kde4_optional_find_package(EPub)
 set_package_properties(EPub PROPERTIES
     DESCRIPTION "A library for reading EPub documents"
