@@ -23,13 +23,10 @@
 
 #include <QFontMetrics>
 #include <QPainter>
-#include <QFontInfo>
-
 #include <KColorScheme>
 #include <KConfigDialog>
 #include <KDebug>
 #include <KCalendarSystem>
-
 #include <Plasma/Theme>
 
 Clock::Clock(QObject *parent, const QVariantList &args)
@@ -477,8 +474,7 @@ void Clock::calculateSize()
     if (formFactor() == Plasma::Horizontal) {
         QFont font(m_fontTime);
         font.setPixelSize(size().height()/2);
-        QFontInfo fi(font);
-        minimumWantedSize = fi.pointSize();
+        minimumWantedSize = m_fontDatabase.font(font.family(), font.styleName(), font.pointSize()).pointSize();
     }
 
 

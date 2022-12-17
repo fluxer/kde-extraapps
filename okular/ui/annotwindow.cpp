@@ -14,7 +14,7 @@
 #include <qapplication.h>
 #include <qevent.h>
 #include <qfont.h>
-#include <qfontinfo.h>
+#include <qfontdatabase.h>
 #include <qfontmetrics.h>
 #include <qframe.h>
 #include <qlabel.h>
@@ -78,7 +78,8 @@ public:
         dateLabel = new QLabel( this );
         dateLabel->setAlignment( Qt::AlignTop | Qt::AlignRight );
         f = dateLabel->font();
-        f.setPointSize( QFontInfo( f ).pointSize() - 2 );
+        QFontDatabase fdb;
+        f.setPointSize( fdb.font( f.family(), f.styleName(), f.pointSize() ).pointSize() - 2 );
         dateLabel->setFont( f );
         dateLabel->setCursor( Qt::SizeAllCursor );
         buttonlay->addWidget( dateLabel );

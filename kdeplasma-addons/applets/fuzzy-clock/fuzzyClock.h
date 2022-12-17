@@ -28,6 +28,7 @@
 
 #include <QTime>
 #include <QDate>
+#include <QFontDatabase>
 
 class KLocalizedString;
 
@@ -97,6 +98,8 @@ Qt::Orientations expandingDirections() const;
 
 //         QFontMetrics m_fmTime;
 //         QFontMetrics m_fmDate;
+
+        QFontDatabase m_fontDatabase;
 
         int m_fuzzyness;
         bool m_showTimezone;
