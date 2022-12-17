@@ -32,10 +32,6 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
         // Document description and Table of contents
         const Okular::DocumentInfo *generateDocumentInfo();
 
-        // page contents generation
-        bool canGeneratePixmap() const;
-        void generatePixmap(Okular::PixmapRequest *request);
-
         QVariant metaData(const QString &key, const QVariant &option) const;
 
         // export as PDF
@@ -45,21 +41,17 @@ class GSGenerator : public Okular::Generator, public Okular::ConfigInterface
         bool reparseConfig();
         void addPages(KConfigDialog* dlg);
 
-    public slots:
-        void slotImageGenerated(QImage *img, Okular::PixmapRequest *request);
-
     protected:
+        QImage image(Okular::PixmapRequest *req);
         bool doCloseDocument();
 
     private:
-        bool loadPages(QVector< Okular::Page * > & pagesVector);
         Okular::Rotation orientation(SpectreOrientation orientation) const;
 
         // backendish stuff
         SpectreDocument *m_internalDocument;
+        SpectreRenderContext *m_renderContext;
         Okular::DocumentInfo *m_docInfo;
-
-        Okular::PixmapRequest *m_request;
 
         bool cache_AAtext;
         bool cache_AAgfx;

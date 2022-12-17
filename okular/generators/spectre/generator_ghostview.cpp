@@ -27,8 +27,6 @@
 #include "ui_gssettingswidget.h"
 #include "gssettings.h"
 
-#include "rendererthread.h"
-
 #include <math.h>
 
 static KAboutData createAboutData()
@@ -53,19 +51,16 @@ GSGenerator::GSGenerator(QObject *parent, const QVariantList &args)
     : Okular::Generator(parent, args),
     m_internalDocument(0),
     m_docInfo(0),
-    m_request(0)
+    m_renderContext(0)
 {
-    GSRendererThread *renderer = GSRendererThread::getCreateRenderer();
-    if (!renderer->isRunning()) renderer->start();
-    connect(
-        renderer, SIGNAL(imageDone(QImage*,Okular::PixmapRequest*)),
-        SLOT(slotImageGenerated(QImage*,Okular::PixmapRequest*)),
-        Qt::QueuedConnection
-    );
+    m_renderContext = spectre_render_context_new();
+    
+    setFeature(Generator::Threaded);
 }
 
 GSGenerator::~GSGenerator()
 {
+    spectre_render_context_free(m_renderContext);
 }
 
 #define SET_HINT(hintname, hintdefvalue, hintvar) \
@@ -144,41 +139,6 @@ bool GSGenerator::loadDocument(const QString &fileName, QVector<Okular::Page*> &
     }
     pagesVector.resize(spectre_document_get_n_pages(m_internalDocument));
     kDebug() << "Page count:" << pagesVector.count();
-    return loadPages(pagesVector);
-}
-
-bool GSGenerator::doCloseDocument()
-{
-    spectre_document_free(m_internalDocument);
-    m_internalDocument = 0;
-
-    delete m_docInfo;
-    m_docInfo = 0;
-
-    return true;
-}
-
-void GSGenerator::slotImageGenerated(QImage *img, Okular::PixmapRequest *request)
-{
-    // This can happen as GSInterpreterCMD is a singleton and on creation signals all the slots
-    // of all the generators attached to it
-    if (request != m_request) {
-        return;
-    }
-
-    if (!request->page()->isBoundingBoxKnown()) {
-        updatePageBoundingBox(request->page()->number(), Okular::Utils::imageBoundingBox(img));
-    }
-
-    m_request = 0;
-    QPixmap *pix = new QPixmap(QPixmap::fromImage(*img));
-    delete img;
-    request->page()->setPixmap( request->observer(), pix );
-    signalPixmapRequestDone( request );
-}
-
-bool GSGenerator::loadPages( QVector< Okular::Page * > & pagesVector )
-{
     for (uint i = 0; i < spectre_document_get_n_pages(m_internalDocument); i++) {
         int width = 0;
         int height = 0;
@@ -199,44 +159,118 @@ bool GSGenerator::loadPages( QVector< Okular::Page * > & pagesVector )
     return pagesVector.count() > 0;
 }
 
-void GSGenerator::generatePixmap(Okular::PixmapRequest *req)
+bool GSGenerator::doCloseDocument()
+{
+    spectre_document_free(m_internalDocument);
+    m_internalDocument = 0;
+
+    delete m_docInfo;
+    m_docInfo = 0;
+
+    return true;
+}
+
+QImage GSGenerator::image(Okular::PixmapRequest *req)
 {
     kDebug() << "receiving" << *req;
 
     SpectrePage *page = spectre_document_get_page(m_internalDocument, req->pageNumber());
 
-    GSRendererThread *renderer = GSRendererThread::getCreateRenderer();
-
-    GSRendererThreadRequest gsreq(this);
-    gsreq.spectrePage = page;
-    gsreq.platformFonts = GSSettings::platformFonts();
+    const int platformFonts = GSSettings::platformFonts();
     int graphicsAA = 1;
     int textAA = 1;
-    if (cache_AAgfx) graphicsAA = 4;
-    if (cache_AAtext) textAA = 4;
-    gsreq.textAAbits = textAA;
-    gsreq.graphicsAAbits = graphicsAA;
+    if (cache_AAgfx) {
+        graphicsAA = 4;
+    }
+    if (cache_AAtext) {
+        textAA = 4;
+    }
 
-    gsreq.orientation = req->page()->orientation();
+    const int orientation = req->page()->orientation();
+    double magnify = 0.0;
     if (req->page()->rotation() == Okular::Rotation90 || req->page()->rotation() == Okular::Rotation270) {
-        gsreq.magnify = qMax(
+        magnify = qMax(
             (double)req->height() / req->page()->width(),
             (double)req->width() / req->page()->height()
         );
     } else {
-        gsreq.magnify = qMax(
+        magnify = qMax(
             (double)req->width() / req->page()->width(),
             (double)req->height() / req->page()->height()
         );
     }
-    gsreq.request = req;
-    m_request = req;
-    renderer->addRequest(gsreq);
-}
 
-bool GSGenerator::canGeneratePixmap() const
-{
-    return !m_request;
+    spectre_render_context_set_scale(m_renderContext, magnify, magnify);
+    spectre_render_context_set_use_platform_fonts(m_renderContext, platformFonts);
+    spectre_render_context_set_antialias_bits(m_renderContext, graphicsAA, textAA);
+    // Do not use spectre_render_context_set_rotation makes some files not render correctly, e.g. bug210499.ps
+    // so we basically do the rendering without any rotation and then rotate to the orientation as needed
+    // spectre_render_context_set_rotation(m_renderContext, orientation);
+
+    unsigned char *data = NULL;
+    int row_length = 0;
+    int wantedWidth = req->width();
+    int wantedHeight = req->height();
+
+    if (orientation % 2) {
+        qSwap(wantedWidth, wantedHeight);
+    }
+
+    spectre_page_render(page, m_renderContext, &data, &row_length);
+
+    // Qt needs the missing alpha of QImage::Format_RGB32 to be 0xff
+    if (data && data[3] != 0xff) {
+        for (int i = 3; i < row_length * wantedHeight; i += 4) {
+            data[i] = 0xff;
+        }
+    }
+
+    QImage img;
+    if (row_length == wantedWidth * 4) {
+        img = QImage(data, wantedWidth, wantedHeight, QImage::Format_RGB32);
+    } else {
+        // In case this ends up beign very slow we can try with some memmove
+        QImage aux(data, row_length / 4, wantedHeight, QImage::Format_RGB32);
+        img = QImage(aux.copy(0, 0, wantedWidth, wantedHeight));
+    }
+
+    switch (orientation) {
+        case Okular::Rotation0: {
+            img = img.copy();
+            break;
+        }
+        case Okular::Rotation90: {
+            QTransform m;
+            m.rotate(90);
+            img = img.transformed(m);
+            break;
+        }
+        case Okular::Rotation180: {
+            QTransform m;
+            m.rotate(180);
+            img = img.transformed(m);
+            break;
+        }
+        case Okular::Rotation270: {
+            QTransform m;
+            m.rotate(270);
+            img = img.transformed(m);
+            break;
+        }
+    }
+
+    ::free(data);
+
+    if (img.width() != req->width() || img.height() != req->height()) {
+        kWarning().nospace() << "Generated image does not match wanted size: "
+            << "[" << img.width() << "x" << img.height() << "] vs requested "
+            << "[" << req->width() << "x" << req->height() << "]";
+        img = img.scaled(wantedWidth, wantedHeight);
+    }
+
+    spectre_page_free(page);
+
+    return img;
 }
 
 const Okular::DocumentInfo * GSGenerator::generateDocumentInfo()

@@ -12,11 +12,10 @@ add_subdirectory(conf)
 
 set(okularGenerator_ghostview_SRCS
     generator_ghostview.cpp
-    rendererthread.cpp
     gssettingswidget.ui
 )
 
-kde4_add_kcfg_files(okularGenerator_ghostview_SRCS conf/gssettings.kcfgc )
+kde4_add_kcfg_files(okularGenerator_ghostview_SRCS conf/gssettings.kcfgc)
 
 kde4_add_plugin(okularGenerator_ghostview ${okularGenerator_ghostview_SRCS})
 
