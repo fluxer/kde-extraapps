@@ -52,14 +52,14 @@ LibPartedPartitionTable::~LibPartedPartitionTable()
 
 bool LibPartedPartitionTable::open()
 {
-	m_PedDisk = ped_disk_new(pedDevice());
+	m_PedDisk = ped_disk_new(m_PedDevice);
  
 	return m_PedDisk != NULL;
 }
 
 bool LibPartedPartitionTable::commit(quint32 timeout)
 {
-	return commit(pedDisk(), timeout);
+	return commit(m_PedDisk, timeout);
 }
 
 bool LibPartedPartitionTable::commit(PedDisk* pd, quint32 timeout)
@@ -94,7 +94,7 @@ bool LibPartedPartitionTable::commit(PedDisk* pd, quint32 timeout)
 
 CoreBackendPartition* LibPartedPartitionTable::getExtendedPartition()
 {
-	PedPartition* pedPartition = ped_disk_extended_partition(pedDisk());
+	PedPartition* pedPartition = ped_disk_extended_partition(m_PedDisk);
 
 	if (pedPartition == NULL)
 		return NULL;
@@ -104,7 +104,7 @@ CoreBackendPartition* LibPartedPartitionTable::getExtendedPartition()
 
 CoreBackendPartition* LibPartedPartitionTable::getPartitionBySector(qint64 sector)
 {
-	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), sector);
+	PedPartition* pedPartition = ped_disk_get_partition_by_sector(m_PedDisk, sector);
 
 	if (pedPartition == NULL)
 		return NULL;
@@ -149,7 +149,7 @@ static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 
 QString LibPartedPartitionTable::createPartition(Report& report, const Partition& partition)
 {
-	Q_ASSERT(partition.devicePath() == pedDevice()->path);
+	Q_ASSERT(partition.devicePath() == m_PedDevice->path);
 
 	QString rval = "";
 
@@ -173,7 +173,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 
 	PedFileSystemType* pedFsType = (partition.roles().has(PartitionRole::Extended) || partition.fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition.fileSystem().type());
 
-	PedPartition* pedPartition = ped_partition_new(pedDisk(), pedType, pedFsType, partition.firstSector(), partition.lastSector());
+	PedPartition* pedPartition = ped_partition_new(m_PedDisk, pedType, pedFsType, partition.firstSector(), partition.lastSector());
 
 	if (pedPartition == NULL)
 	{
@@ -182,7 +182,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 	}
 
 	PedConstraint* pedConstraint = NULL;
-	PedGeometry* pedGeometry = ped_geometry_new(pedDevice(), partition.firstSector(), partition.length());
+	PedGeometry* pedGeometry = ped_geometry_new(m_PedDevice, partition.firstSector(), partition.length());
 
 	if (pedGeometry)
 		pedConstraint = ped_constraint_exact(pedGeometry);
@@ -193,10 +193,10 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 		return "";
 	}
 
-	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint))
+	if (ped_disk_add_partition(m_PedDisk, pedPartition, pedConstraint))
 		rval = QString(ped_partition_get_path(pedPartition));
 	else
-		report.line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), pedDisk()->dev->path);
+		report.line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), m_PedDisk->dev->path);
 
 	ped_constraint_destroy(pedConstraint);
 
@@ -205,17 +205,17 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 
 bool LibPartedPartitionTable::deletePartition(Report& report, const Partition& partition)
 {
-	Q_ASSERT(partition.devicePath() == pedDevice()->path);
+	Q_ASSERT(partition.devicePath() == m_PedDevice->path);
 
 	bool rval = false;
 
 	PedPartition* pedPartition = partition.roles().has(PartitionRole::Extended)
-		? ped_disk_extended_partition(pedDisk())
-		: ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector());
+		? ped_disk_extended_partition(m_PedDisk)
+		: ped_disk_get_partition_by_sector(m_PedDisk, partition.firstSector());
 
 	if (pedPartition)
 	{
-		rval = ped_disk_delete_partition(pedDisk(), pedPartition);
+		rval = ped_disk_delete_partition(m_PedDisk, pedPartition);
 
 		if (!rval)
 			report.line() << i18nc("@info/plain", "Could not delete partition <filename>%1</filename>.", partition.deviceNode());
@@ -228,21 +228,21 @@ bool LibPartedPartitionTable::deletePartition(Report& report, const Partition& p
 
 bool LibPartedPartitionTable::updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end)
 {
-	Q_ASSERT(partition.devicePath() == pedDevice()->path);
+	Q_ASSERT(partition.devicePath() == m_PedDevice->path);
 
 	bool rval = false;
 
 	PedPartition* pedPartition = (partition.roles().has(PartitionRole::Extended))
-		? ped_disk_extended_partition(pedDisk())
-		: ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector());
+		? ped_disk_extended_partition(m_PedDisk)
+		: ped_disk_get_partition_by_sector(m_PedDisk, partition.firstSector());
 
 	if (pedPartition)
 	{
-		if (PedGeometry* pedGeometry = ped_geometry_new(pedDevice(), sector_start, sector_end - sector_start + 1))
+		if (PedGeometry* pedGeometry = ped_geometry_new(m_PedDevice, sector_start, sector_end - sector_start + 1))
 		{
 			if (PedConstraint* pedConstraint = ped_constraint_exact(pedGeometry))
 			{
-				if (ped_disk_set_partition_geom(pedDisk(), pedPartition, pedConstraint, sector_start, sector_end))
+				if (ped_disk_set_partition_geom(m_PedDisk, pedPartition, pedConstraint, sector_start, sector_end))
 					rval = true;
 				else
 					report.line() << i18nc("@info/plain", "Could not set geometry for partition <filename>%1</filename> while trying to resize/move it.", partition.deviceNode());
@@ -263,19 +263,19 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 {
 	bool rval = false;
 
-	if (PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector()))
+	if (PedPartition* pedPartition = ped_disk_get_partition_by_sector(m_PedDisk, partition.firstSector()))
 	{
 		if (pedPartition->type == PED_PARTITION_NORMAL || pedPartition->type == PED_PARTITION_LOGICAL)
 		{
-			if (ped_device_open(pedDevice()))
+			if (ped_device_open(m_PedDevice))
 			{
 				//reiser4 stores "ReIsEr4" at sector 128 with a sector size of 512 bytes
-				rval = ped_geometry_write(&pedPartition->geom, "0000000", 65536 / pedDevice()->sector_size, 1);
+				rval = ped_geometry_write(&pedPartition->geom, "0000000", 65536 / m_PedDevice->sector_size, 1);
 
 				if (!rval)
 					report.line() << i18nc("@info/plain", "Failed to erase filesystem signature on partition <filename>%1</filename>.", partition.deviceNode());
 
-				ped_device_close(pedDevice());
+				ped_device_close(m_PedDevice);
 			}
 		}
 		else
@@ -299,11 +299,11 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 	bool rval = false;
 
 #if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
-	if (PedGeometry* originalGeometry = ped_geometry_new(pedDevice(), partition.fileSystem().firstSector(), partition.fileSystem().length()))
+	if (PedGeometry* originalGeometry = ped_geometry_new(m_PedDevice, partition.fileSystem().firstSector(), partition.fileSystem().length()))
 	{
 		if (PedFileSystem* pedFileSystem = ped_file_system_open(originalGeometry))
 		{
-			if (PedGeometry* resizedGeometry = ped_geometry_new(pedDevice(), partition.fileSystem().firstSector(), newLength))
+			if (PedGeometry* resizedGeometry = ped_geometry_new(m_PedDevice, partition.fileSystem().firstSector(), newLength))
 			{
  				PedTimer* pedTimer = ped_timer_new(pedTimerHandler, NULL);
 				rval = ped_file_system_resize(pedFileSystem, resizedGeometry, pedTimer);
@@ -333,7 +333,7 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 
 FileSystem::Type LibPartedPartitionTable::detectFileSystemBySector(Report& report, const Device& device, qint64 sector)
 {
-	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), sector);
+	PedPartition* pedPartition = ped_disk_get_partition_by_sector(m_PedDisk, sector);
 
 	FileSystem::Type rval = FileSystem::Unknown;
 
@@ -349,7 +349,7 @@ bool LibPartedPartitionTable::setPartitionSystemType(Report& report, const Parti
 {
 	PedFileSystemType* pedFsType = (partition.roles().has(PartitionRole::Extended) || partition.fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition.fileSystem().type());
 
-	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector());
+	PedPartition* pedPartition = ped_disk_get_partition_by_sector(m_PedDisk, partition.firstSector());
 	
 	if (pedFsType == NULL || pedPartition == NULL)
 	{

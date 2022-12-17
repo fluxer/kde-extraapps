@@ -57,10 +57,6 @@ class LibPartedPartitionTable : public CoreBackendPartitionTable
 		virtual bool setPartitionSystemType(Report& report, const Partition& partition);
 
 	private:
-		PedDevice* pedDevice() { return m_PedDevice; }
-		PedDisk* pedDisk() { return m_PedDisk; }
-
-	private:
 		PedDevice* m_PedDevice;
 		PedDisk* m_PedDisk;
 };
