@@ -218,7 +218,7 @@ QImage GSGenerator::image(Okular::PixmapRequest *req)
 
     spectre_page_render(page, m_renderContext, &data, &row_length);
 
-    // Qt needs the missing alpha of QImage::Format_RGB32 to be 0xff
+    // Katie needs the missing alpha of QImage::Format_RGB32 to be 0xff
     if (data && data[3] != 0xff) {
         for (int i = 3; i < row_length * wantedHeight; i += 4) {
             data[i] = 0xff;
@@ -273,24 +273,25 @@ QImage GSGenerator::image(Okular::PixmapRequest *req)
     return img;
 }
 
-const Okular::DocumentInfo * GSGenerator::generateDocumentInfo()
+const Okular::DocumentInfo* GSGenerator::generateDocumentInfo()
 {
     if (!m_docInfo) {
         m_docInfo = new Okular::DocumentInfo();
 
-        m_docInfo->set( Okular::DocumentInfo::Title, spectre_document_get_title(m_internalDocument));
-        m_docInfo->set( Okular::DocumentInfo::Author, spectre_document_get_for(m_internalDocument));
-        m_docInfo->set( Okular::DocumentInfo::Creator, spectre_document_get_creator(m_internalDocument));
-        m_docInfo->set( Okular::DocumentInfo::CreationDate, spectre_document_get_creation_date(m_internalDocument));
-        m_docInfo->set( "dscversion", spectre_document_get_format(m_internalDocument), i18n("Document version"));
-
-        int languageLevel = spectre_document_get_language_level(m_internalDocument);
-        if (languageLevel > 0) m_docInfo->set("langlevel", QString::number(languageLevel), i18n("Language Level"));
-        if (spectre_document_is_eps(m_internalDocument))
+        m_docInfo->set(Okular::DocumentInfo::Title, spectre_document_get_title(m_internalDocument));
+        m_docInfo->set(Okular::DocumentInfo::Author, spectre_document_get_for(m_internalDocument));
+        m_docInfo->set(Okular::DocumentInfo::Creator, spectre_document_get_creator(m_internalDocument));
+        m_docInfo->set(Okular::DocumentInfo::CreationDate, spectre_document_get_creation_date(m_internalDocument));
+        m_docInfo->set("dscversion", spectre_document_get_format(m_internalDocument), i18n("Document version"));
+        const int languageLevel = spectre_document_get_language_level(m_internalDocument);
+        if (languageLevel > 0) {
+            m_docInfo->set("langlevel", QString::number(languageLevel), i18n("Language Level"));
+        }
+        if (spectre_document_is_eps(m_internalDocument)) {
             m_docInfo->set(Okular::DocumentInfo::MimeType, "image/x-eps");
-        else
+        } else {
             m_docInfo->set(Okular::DocumentInfo::MimeType, "application/postscript");
-
+        }
         m_docInfo->set(Okular::DocumentInfo::Pages, QString::number(spectre_document_get_n_pages(m_internalDocument)));
     }
     return m_docInfo;
