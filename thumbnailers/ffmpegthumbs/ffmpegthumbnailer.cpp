@@ -47,7 +47,7 @@ bool FFMpegThumbnailer::create(const QString& path, int width, int /*heigth*/, Q
         //Smart frame selection is very slow compared to the fixed detection
         //TODO: Use smart detection if the image is single colored.
         //m_Thumbnailer.setSmartFrameSelection(true);
-        m_Thumbnailer.generateThumbnail(std::string(path.toUtf8()), Png, pixelBuffer);
+        m_Thumbnailer.generateThumbnail(std::string(path.toUtf8()), ThumbnailerImageType::Png, pixelBuffer);
     } catch(std::exception &err) {
         kWarning() << err.what();
         return false;
