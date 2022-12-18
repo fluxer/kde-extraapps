@@ -54,5 +54,4 @@ MimeType=video/*;application/x-flash-video;application/vnd.ms-asf;application/vn
 X-KDE-Library=ffmpegthumbs
 ServiceTypes=ThumbCreator
 CacheThumbnail=true
-ThumbnailerVersion=2
 IgnoreMaximumSize=true
