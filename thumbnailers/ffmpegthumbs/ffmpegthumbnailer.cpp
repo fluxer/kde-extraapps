@@ -16,6 +16,7 @@
     Boston, MA 02110-1301, USA.
 */
 
+#include "config-ffmpegthumbnailer.h"
 #include "ffmpegthumbnailer.h"
 
 #include <QFile>
@@ -67,7 +68,11 @@ bool FFMpegThumbnailer::create(const QString &path, int width, int heigth, QImag
     }
 
     const QByteArray pathbytes = QFile::encodeName(path);
+#if defined(HAVE_VIDEO_THUMBNAILER_SET_SIZE)
+    video_thumbnailer_set_size(ffmpegthumb, width, heigth);
+#else
     ffmpegthumb->thumbnail_size = qMax(width, heigth);
+#endif
     ffmpegthumb->seek_percentage = 20;
     ffmpegthumb->overlay_film_strip = 1;
     ffmpegthumb->thumbnail_image_type = ThumbnailerImageType::Png;
