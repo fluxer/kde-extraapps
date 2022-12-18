@@ -21,20 +21,13 @@
 
 #include <kio/thumbcreator.h>
 
-#include <libffmpegthumbnailer/videothumbnailer.h>
-#include <libffmpegthumbnailer/filmstripfilter.h>
-
 class FFMpegThumbnailer : public ThumbCreator
 {
 public:
     FFMpegThumbnailer();
 
-    bool create(const QString& path, int width, int height, QImage &img) final;
-    Flags flags() const final;
-
-private:
-    ffmpegthumbnailer::VideoThumbnailer m_Thumbnailer;
-    ffmpegthumbnailer::FilmStripFilter m_FilmStrip;
+    bool create(const QString &path, int width, int height, QImage &img) final;
+    ThumbCreator::Flags flags() const final;
 };
 
 #endif // FFMPEGTHUMBNAILER_H

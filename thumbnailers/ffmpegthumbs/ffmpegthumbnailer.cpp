@@ -18,9 +18,24 @@
 
 #include "ffmpegthumbnailer.h"
 
+#include <QFile>
 #include <QImage>
 #include <kdebug.h>
 #include <kdemacros.h>
+
+#include <libffmpegthumbnailer/videothumbnailerc.h>
+
+void ffmpeg_log_callback(ThumbnailerLogLevel ffmpegloglevel, const char* ffmpegmessage)
+{
+    switch (ffmpegloglevel) {
+        case ThumbnailerLogLevel::ThumbnailerLogLevelInfo: {
+            kDebug() << ffmpegmessage;
+        }
+        case ThumbnailerLogLevel::ThumbnailerLogLevelError: {
+            kError() << ffmpegmessage;
+        }
+    }
+}
 
 extern "C"
 {
@@ -32,30 +47,59 @@ extern "C"
 
 FFMpegThumbnailer::FFMpegThumbnailer()
 {
-    m_Thumbnailer.addFilter(&m_FilmStrip);
 }
 
-bool FFMpegThumbnailer::create(const QString& path, int width, int /*heigth*/, QImage& img)
+bool FFMpegThumbnailer::create(const QString &path, int width, int heigth, QImage &img)
 {
-    std::vector<uint8_t> pixelBuffer;
-
-    m_Thumbnailer.setThumbnailSize(width);
-    // 20% seek inside the video to generate the preview
-    m_Thumbnailer.setSeekPercentage(20);
-
-    try {
-        //Smart frame selection is very slow compared to the fixed detection
-        //TODO: Use smart detection if the image is single colored.
-        //m_Thumbnailer.setSmartFrameSelection(true);
-        m_Thumbnailer.generateThumbnail(std::string(path.toUtf8()), ThumbnailerImageType::Png, pixelBuffer);
-    } catch(std::exception &err) {
-        kWarning() << err.what();
-        return false;
-    } catch (...) {
+    video_thumbnailer* ffmpegthumb = video_thumbnailer_create();
+    if (!ffmpegthumb) {
+        kWarning() << "Could not create video thumbnailer";
         return false;
     }
 
-    return img.loadFromData(reinterpret_cast<char*>(&pixelBuffer.front()), pixelBuffer.size(), "PNG");
+    video_thumbnailer_set_log_callback(ffmpegthumb, ffmpeg_log_callback);
+
+    image_data* ffmpegimage = video_thumbnailer_create_image_data();
+    if (!ffmpegimage) {
+        kWarning() << "Could not create video thumbnailer image";
+        video_thumbnailer_destroy(ffmpegthumb);
+        return false;
+    }
+
+    const QByteArray pathbytes = QFile::encodeName(path);
+    ffmpegthumb->thumbnail_size = qMax(width, heigth);
+    ffmpegthumb->seek_percentage = 20;
+    ffmpegthumb->overlay_film_strip = 1;
+    ffmpegthumb->thumbnail_image_type = ThumbnailerImageType::Png;
+
+    const int ffmpegresult = video_thumbnailer_generate_thumbnail_to_buffer(
+        ffmpegthumb,
+        pathbytes.constData(),
+        ffmpegimage
+    );
+    if (ffmpegresult != 0) {
+        kWarning() << "Could not generate video thumbnail";
+        video_thumbnailer_destroy_image_data(ffmpegimage);
+        video_thumbnailer_destroy(ffmpegthumb);
+        return false;
+    }
+
+    img.loadFromData(
+        reinterpret_cast<char*>(ffmpegimage->image_data_ptr),
+        ffmpegimage->image_data_size,
+        "PNG"
+    );
+
+    if (img.isNull()) {
+        kWarning() << "Could not load the video thumbnail";
+        video_thumbnailer_destroy_image_data(ffmpegimage);
+        video_thumbnailer_destroy(ffmpegthumb);
+        return false;
+    }
+
+    video_thumbnailer_destroy_image_data(ffmpegimage);
+    video_thumbnailer_destroy(ffmpegthumb);
+    return true;
 }
 
 ThumbCreator::Flags FFMpegThumbnailer::flags() const
