@@ -68,7 +68,6 @@
 #include "pageviewannotator.h"
 #include "priorities.h"
 #include "toolaction.h"
-#include "tts.h"
 #include "videowidget.h"
 #include "core/action.h"
 #include "core/area.h"
@@ -115,7 +114,6 @@ public:
     PageViewPrivate( PageView *qq );
 
     FormWidgetsController* formWidgetsController();
-    OkularTTS* tts();
     QString selectedText() const;
 
     // the document, pageviewItems and the 'visible cache'
@@ -171,7 +169,6 @@ public:
     PageViewMessage * messageWindow;    // in pageviewutils.h
     bool m_formsVisible;
     FormWidgetsController *formsWidgetController;
-    OkularTTS * m_tts;
     QTimer * refreshTimer;
     int refreshPage;
 
@@ -208,9 +205,6 @@ public:
     KToggleAction * aViewContinuous;
     QAction * aPrevAction;
     KAction * aToggleForms;
-    KAction * aSpeakDoc;
-    KAction * aSpeakPage;
-    KAction * aSpeakStop;
     KActionCollection * actionCollection;
     QActionGroup * mouseModeActionGroup;
 
@@ -238,24 +232,6 @@ FormWidgetsController* PageViewPrivate::formWidgetsController()
 
     return formsWidgetController;
 }
-
-OkularTTS* PageViewPrivate::tts()
-{
-    if ( !m_tts )
-    {
-        m_tts = new OkularTTS( q );
-        if ( aSpeakStop )
-        {
-            QObject::connect( m_tts, SIGNAL(hasSpeechs(bool)),
-                              aSpeakStop, SLOT(setEnabled(bool)) );
-            QObject::connect( m_tts, SIGNAL(errorMessage(QString)),
-                              q, SLOT(errorMessage(QString)) );
-        }
-    }
-
-    return m_tts;
-}
-
 
 /* PageView. What's in this file? -> quick overview.
  * Code weight (in rows) and meaning:
@@ -299,7 +275,6 @@ PageView::PageView( QWidget *parent, Okular::Document *document )
     d->messageWindow = new PageViewMessage(this);
     d->m_formsVisible = false;
     d->formsWidgetController = 0;
-    d->m_tts = 0;
     d->refreshTimer = 0;
     d->refreshPage = -1;
     d->aRotateClockwise = 0;
@@ -318,9 +293,6 @@ PageView::PageView( QWidget *parent, Okular::Document *document )
     d->aViewContinuous = 0;
     d->aPrevAction = 0;
     d->aToggleForms = 0;
-    d->aSpeakDoc = 0;
-    d->aSpeakPage = 0;
-    d->aSpeakStop = 0;
     d->actionCollection = 0;
     d->aPageSizes=0;
     d->setting_viewCols = Okular::Settings::viewColumns();
@@ -397,9 +369,6 @@ PageView::PageView( QWidget *parent, Okular::Document *document )
 
 PageView::~PageView()
 {
-    if ( d->m_tts )
-        d->m_tts->stopAllSpeechs();
-
     // delete the local storage structure
 
     // We need to assign it to a different list otherwise slotAnnotationWindowDestroyed
@@ -597,22 +566,6 @@ void PageView::setupActions( KActionCollection * ac )
     ta->addAction( d->aMouseSelect );
     ta->addAction( d->aMouseTextSelect );
     ta->addAction( d->aMouseTableSelect );
-
-    // speak actions
-    d->aSpeakDoc = new KAction( KIcon( "text-speak" ), i18n( "Speak Whole Document" ), this );
-    ac->addAction( "speak_document", d->aSpeakDoc );
-    d->aSpeakDoc->setEnabled( false );
-    connect( d->aSpeakDoc, SIGNAL(triggered()), SLOT(slotSpeakDocument()) );
-
-    d->aSpeakPage = new KAction( KIcon( "text-speak" ), i18n( "Speak Current Page" ), this );
-    ac->addAction( "speak_current_page", d->aSpeakPage );
-    d->aSpeakPage->setEnabled( false );
-    connect( d->aSpeakPage, SIGNAL(triggered()), SLOT(slotSpeakCurrentPage()) );
-
-    d->aSpeakStop = new KAction( KIcon( "media-playback-stop" ), i18n( "Stop Speaking" ), this );
-    ac->addAction( "speak_stop_all", d->aSpeakStop );
-    d->aSpeakStop->setEnabled( false );
-    connect( d->aSpeakStop, SIGNAL(triggered()), SLOT(slotStopSpeaks()) );
 
     // Other actions
     KAction * su  = new KAction(i18n("Scroll Up"), this);
@@ -1051,12 +1004,6 @@ void PageView::updateActionState( bool haspages, bool documentChanged, bool hasf
             d->aToggleAnnotator->trigger();
         }
         d->aToggleAnnotator->setEnabled( allowAnnotations );
-    }
-    if ( d->aSpeakDoc )
-    {
-        const bool enablettsactions = haspages ? Okular::Settings::useKTTSD() : false;
-        d->aSpeakDoc->setEnabled( enablettsactions );
-        d->aSpeakPage->setEnabled( enablettsactions );
     }
     if (d->aMouseMagnifier) {
          // FIXME: works only for some zoom-levels
@@ -2505,7 +2452,7 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
 
             // popup that ask to copy:text and copy/save:image
             KMenu menu( this );
-            QAction *textToClipboard = 0, *speakText = 0, *imageToClipboard = 0, *imageToFile = 0;
+            QAction *textToClipboard = 0, *imageToClipboard = 0, *imageToFile = 0;
             if ( d->document->supportsSearching() && !selectedText.isEmpty() )
             {
                 menu.addTitle( i18np( "Text (1 character)", "Text (%1 characters)", selectedText.length() ) );
@@ -2516,8 +2463,6 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                     textToClipboard->setEnabled( false );
                     textToClipboard->setText( i18n("Copy forbidden by DRM") );
                 }
-                if ( Okular::Settings::useKTTSD() )
-                    speakText = menu.addAction( KIcon("text-speak"), i18n( "Speak Text" ) );
                 if ( copyAllowed )
                 {
                     addWebShortcutsMenu( &menu, selectedText );
@@ -2579,11 +2524,6 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                     cb->setText( selectedText, QClipboard::Clipboard );
                     if ( cb->supportsSelection() )
                         cb->setText( selectedText, QClipboard::Selection );
-                }
-                else if ( choice == speakText )
-                {
-                    // [2] speech selection using KTTSD
-                    d->tts()->say( selectedText );
                 }
             }
             }
@@ -2765,10 +2705,7 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                     {
                         KMenu menu( this );
                         QAction *textToClipboard = menu.addAction( KIcon( "edit-copy" ), i18n( "Copy Text" ) );
-                        QAction *speakText = 0;
                         QAction *httpLink = 0;
-                        if ( Okular::Settings::useKTTSD() )
-                            speakText = menu.addAction( KIcon( "text-speak" ), i18n( "Speak Text" ) );
                         if ( !d->document->isAllowed( Okular::AllowCopy ) )
                         {
                             textToClipboard->setEnabled( false );
@@ -2790,11 +2727,6 @@ void PageView::mouseReleaseEvent( QMouseEvent * e )
                         {
                             if ( choice == textToClipboard )
                                 copyTextSelection();
-                            else if ( choice == speakText )
-                            {
-                                const QString text = d->selectedText();
-                                d->tts()->say( text );
-                            }
                             else if ( choice == httpLink )
                                 new KRun( url, this );
                         }
@@ -4796,41 +4728,6 @@ void PageView::slotRefreshPage()
     d->refreshPage = -1;
     QMetaObject::invokeMethod( d->document, "refreshPixmaps", Qt::QueuedConnection,
                                Q_ARG( int, req ) );
-}
-
-void PageView::slotSpeakDocument()
-{
-    QString text;
-    QVector< PageViewItem * >::const_iterator it = d->items.constBegin(), itEnd = d->items.constEnd();
-    for ( ; it < itEnd; ++it )
-    {
-        Okular::RegularAreaRect * area = textSelectionForItem( *it );
-        text.append( (*it)->page()->text( area ) );
-        text.append( '\n' );
-        delete area;
-    }
-
-    d->tts()->say( text );
-}
-
-void PageView::slotSpeakCurrentPage()
-{
-    const int currentPage = d->document->viewport().pageNumber;
-
-    PageViewItem *item = d->items.at( currentPage );
-    Okular::RegularAreaRect * area = textSelectionForItem( item );
-    const QString text = item->page()->text( area );
-    delete area;
-
-    d->tts()->say( text );
-}
-
-void PageView::slotStopSpeaks()
-{
-    if ( !d->m_tts )
-        return;
-
-    d->m_tts->stopAllSpeechs();
 }
 
 void PageView::slotAction( Okular::Action *action )

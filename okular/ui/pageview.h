@@ -234,9 +234,6 @@ Q_OBJECT
         void slotToggleForms();
         void slotFormChanged( int pageNumber );
         void slotRefreshPage();
-        void slotSpeakDocument();
-        void slotSpeakCurrentPage();
-        void slotStopSpeaks();
         void slotAction( Okular::Action *action );
         void externalKeyPressEvent( QKeyEvent *e );
         void slotAnnotationWindowDestroyed( QObject *window );

@@ -215,7 +215,6 @@ set(okularpart_SRCS
     ui/toc.cpp
     ui/tocmodel.cpp
     ui/toolaction.cpp
-    ui/tts.cpp
     ui/videowidget.cpp
     conf/dlgaccessibilitybase.ui
     conf/dlgeditorbase.ui
@@ -232,7 +231,6 @@ kde4_add_plugin(okularpart ${okularpart_SRCS})
 target_link_libraries(okularpart
     ${KDE4_KPARTS_LIBS}
     ${KDE4_KPASSWDSTORE_LIBS}
-    ${KDE4_KSPEECH_LIBS}
     ${KDE4_KARCHIVE_LIBS}
     ${QT_QTGUI_LIBRARY}
     ${QT_QTDBUS_LIBRARY}
