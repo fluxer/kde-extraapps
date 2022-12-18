@@ -31,9 +31,11 @@ void ffmpeg_log_callback(ThumbnailerLogLevel ffmpegloglevel, const char* ffmpegm
     switch (ffmpegloglevel) {
         case ThumbnailerLogLevel::ThumbnailerLogLevelInfo: {
             kDebug() << ffmpegmessage;
+            break;
         }
         case ThumbnailerLogLevel::ThumbnailerLogLevelError: {
             kError() << ffmpegmessage;
+            break;
         }
     }
 }
