@@ -161,7 +161,7 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
 {
     const QString globalWorkDir = options.value(QLatin1String("GlobalWorkDir")).toString();
     if (!globalWorkDir.isEmpty()) {
-        kDebug() << "GlobalWorkDir is set, changing dir to " << globalWorkDir;
+        kDebug() << "GlobalWorkDir is set, changing dir to" << globalWorkDir;
         QDir::setCurrent(globalWorkDir);
     }
 
@@ -179,6 +179,12 @@ bool LibArchiveInterface::addFiles(const QStringList &files, const CompressionOp
     if (karchive.requiresPassphrase()) {
         emit error(i18nc("@info", "Writing password-protected archives is not supported."));
         return false;
+    }
+
+    if (!globalWorkDir.isEmpty()) {
+        const QString tempprefix(QDir::cleanPath(globalWorkDir) + QDir::separator() + QLatin1String("ark-"));
+        kDebug() << "GlobalWorkDir is set, setting temporary prefix to" << tempprefix;
+        karchive.setTempPrefix(tempprefix);
     }
 
     const QList<KArchiveEntry> oldEntries = karchive.list();
