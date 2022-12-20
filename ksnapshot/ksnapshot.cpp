@@ -47,7 +47,6 @@
 #include <kio/netaccess.h>
 #include <ksavefile.h>
 #include <kstandardshortcut.h>
-#include <ktemporaryfile.h>
 #include <knotification.h>
 #include <khelpmenu.h>
 #include <kmenu.h>
