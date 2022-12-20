@@ -19,7 +19,7 @@ check_symbol_exists(
 )
 
 check_struct_has_member(
-    "struct video_thumbnailer"
+    "video_thumbnailer"
     "prefer_embedded_metadata"
     "libffmpegthumbnailer/videothumbnailerc.h"
     HAVE_PREFER_EMBEDDED_METADATA
