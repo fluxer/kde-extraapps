@@ -18,7 +18,6 @@
 #include <kconfigdialog.h>
 #include <kdebug.h>
 #include <kmimetype.h>
-#include <ktemporaryfile.h>
 
 #include <core/document.h>
 #include <core/page.h>

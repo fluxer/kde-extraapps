@@ -26,7 +26,6 @@
 #include <kaboutdata.h>
 #include <kdebug.h>
 #include <klocale.h>
-#include <ktemporaryfile.h>
 #include <kicon.h>
 
 static void recurseCreateTOC( QDomDocument &maindoc, const QDomNode &parent, QDomNode &parentDestination, KDjVu *djvu )
