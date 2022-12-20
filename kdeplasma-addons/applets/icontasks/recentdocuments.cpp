@@ -112,18 +112,19 @@ void RecentDocuments::setEnabled(bool enabled)
             }
 
             m_watcher = new KDirWatch(this);
-            m_watcher->addDir(KRecentDocument::recentDocumentDirectory(), KDirWatch::WatchFiles);
+            m_watcher->addDir(KRecentDocument::recentDocumentDirectory());
             foreach (File f, m_files) {
                 m_watcher->addFile(f.path);
             }
+            connect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(modified(QString)));
+#warning FIXME: reload recent files dirty signal
+#if 0
             connect(m_watcher, SIGNAL(created(QString)), this, SLOT(added(QString)));
             connect(m_watcher, SIGNAL(deleted(QString)), this, SLOT(removed(QString)));
-            connect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(modified(QString)));
+#endif
             connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), this, SLOT(sycocaChanged(const QStringList &)));
             readCurrentDocs();
         } else if (m_enabled) {
-            disconnect(m_watcher, SIGNAL(created(QString)), this, SLOT(added(QString)));
-            disconnect(m_watcher, SIGNAL(deleted(QString)), this, SLOT(removed(QString)));
             disconnect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(modified(QString)));
             disconnect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), this, SLOT(sycocaChanged(const QStringList &)));
             delete m_watcher;

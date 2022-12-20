@@ -61,8 +61,6 @@ void FileWatcher::init()
   textDocument = textItem->document();
 
   QObject::connect(watcher, SIGNAL(dirty(QString)), this, SLOT(loadFile(QString)));
-  QObject::connect(watcher, SIGNAL(created(QString)), this, SLOT(loadFile(QString)));
-  QObject::connect(watcher, SIGNAL(deleted(QString)), this, SLOT(fileDeleted(QString)));
 
   configChanged();
 
@@ -121,18 +119,19 @@ void FileWatcher::constraintsEvent(Plasma::Constraints constraints)
     }
 }
 
-void FileWatcher::fileDeleted(const QString &path)
-{
-  delete textStream;
-  textStream = 0;
-  file->close();
-  setConfigurationRequired(true, i18n("Could not open file: %1", path));
-  textDocument->clear();
-}
-
 void FileWatcher::loadFile(const QString& path)
 {
-  if (path.isEmpty()) return;
+  if (path.isEmpty())
+    return;
+
+  if (!QFile::exists(path)) {
+    delete textStream;
+    textStream = 0;
+    file->close();
+    setConfigurationRequired(true, i18n("Could not open file: %1", path));
+    textDocument->clear();
+    return;
+  }
 
   bool newFile = !textStream || m_currentPath != path;
 

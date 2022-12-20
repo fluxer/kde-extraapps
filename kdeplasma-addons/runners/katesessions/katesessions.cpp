@@ -68,8 +68,6 @@ void KateSessions::slotPrepare()
             m_sessionWatch->addDir(dir);
         }
         connect(m_sessionWatch,SIGNAL(dirty(QString)),this,SLOT(loadSessions()));
-        connect(m_sessionWatch,SIGNAL(created(QString)),this,SLOT(loadSessions()));
-        connect(m_sessionWatch,SIGNAL(deleted(QString)),this,SLOT(loadSessions()));
     }
 }
 

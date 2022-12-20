@@ -33,24 +33,12 @@ BackgroundListModel::BackgroundListModel(float ratio, Plasma::Wallpaper *listene
       m_ratio(ratio),
       m_resizeMethod(Plasma::Wallpaper::ScaledResize)
 {
-    connect(&m_dirwatch, SIGNAL(deleted(QString)), this, SLOT(removeBackground(QString)));
+    connect(&m_dirwatch, SIGNAL(dirty(QString)), this, SLOT(reload()));
 }
 
 BackgroundListModel::~BackgroundListModel()
 {
     qDeleteAll(m_packages);
-}
-
-void BackgroundListModel::removeBackground(const QString &path)
-{
-    int index;
-    while ((index = indexOf(path)) != -1) {
-        beginRemoveRows(QModelIndex(), index, index);
-        Plasma::Package *package = m_packages.at(index);
-        m_packages.removeAt(index);
-        delete package;
-        endRemoveRows();
-    }
 }
 
 void BackgroundListModel::reload()
@@ -60,7 +48,13 @@ void BackgroundListModel::reload()
 
 void BackgroundListModel::reload(const QStringList &selected)
 {
-    QStringList dirs = KGlobal::dirs()->findDirs("wallpaper", QLatin1String(""));
+    const QStringList dirs = KGlobal::dirs()->findDirs("wallpaper", QLatin1String(""));
+    
+    // add wallpaper dirs to dirwatch (recursively)
+    foreach (const QString &dir, dirs) {
+        m_dirwatch.addDir(dir);
+    }
+
     QList<Plasma::Package *> tmp;
 
     if (!m_packages.isEmpty()) {
@@ -82,14 +76,6 @@ void BackgroundListModel::reload(const QStringList &selected)
 
         foreach (const QString &dir, dirs) {
             tmp += findAllBackgrounds(m_structureParent, this, dir, m_ratio, &progressDialog);
-        }
-    }
-
-    // add new files to dirwatch
-    foreach (Plasma::Package *b, tmp) {
-        //TODO: packages need to be added to the dir watch as well
-        if (!m_dirwatch.contains(b->path())) {
-            m_dirwatch.addFile(b->path());
         }
     }
 

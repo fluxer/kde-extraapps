@@ -58,7 +58,6 @@ class FileWatcher : public Plasma::Applet
   private slots:
     void newData();
     void loadFile(const QString& path);
-    void fileDeleted(const QString& path);
 
     void createConfigurationInterface(KConfigDialog *parent);
 

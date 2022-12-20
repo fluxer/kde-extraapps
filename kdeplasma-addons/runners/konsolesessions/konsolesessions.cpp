@@ -47,8 +47,6 @@ KonsoleSessions::KonsoleSessions(QObject *parent, const QVariantList& args)
     }
 
     connect(historyWatch, SIGNAL(dirty(QString)), this,SLOT(loadSessions()));
-    connect(historyWatch, SIGNAL(created(QString)), this,SLOT(loadSessions()));
-    connect(historyWatch, SIGNAL(deleted(QString)), this,SLOT(loadSessions()));
 
     Plasma::RunnerSyntax s(QLatin1String( ":q:" ), i18n("Finds Konsole sessions matching :q:."));
     s.addExampleQuery(QLatin1String( "konsole :q:" ));

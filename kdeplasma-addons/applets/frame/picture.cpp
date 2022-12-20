@@ -53,8 +53,6 @@ Picture::Picture(QObject *parent)
     // listen for changes to the file we're displaying
     m_fileWatch = new KDirWatch(this);
     connect(m_fileWatch,SIGNAL(dirty(QString)),this,SLOT(reload()));
-    connect(m_fileWatch,SIGNAL(created(QString)),this,SLOT(reload()));
-    connect(m_fileWatch,SIGNAL(deleted(QString)),this,SLOT(reload()));
 }
 
 Picture::~Picture()

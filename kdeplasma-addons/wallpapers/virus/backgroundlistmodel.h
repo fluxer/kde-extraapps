@@ -54,7 +54,6 @@ public:
     virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     Plasma::Package *package(int index) const;
 
-    void reload();
     void reload(const QStringList &selected);
     void addBackground(const QString &path);
     QModelIndex indexOf(const QString &path) const;
@@ -64,7 +63,7 @@ public:
     void setResizeMethod(Plasma::Wallpaper::ResizeMethod resizeMethod);
 
 protected Q_SLOTS:
-    void removeBackground(const QString &path);
+    void reload();
     void showPreview(const KFileItem &item, const QPixmap &preview);
     void previewFailed(const KFileItem &item);
     void sizeFound(const QString &path, const QSize &s);

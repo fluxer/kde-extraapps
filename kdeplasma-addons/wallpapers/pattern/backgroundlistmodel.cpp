@@ -39,25 +39,13 @@ BackgroundListModel::BackgroundListModel(PatternWallpaper *listener, QObject *pa
     : QAbstractListModel(parent),
       m_structureParent(listener)
 {
-    connect(&m_dirwatch, SIGNAL(deleted(QString)), this, SLOT(removeBackground(QString)));
+    connect(&m_dirwatch, SIGNAL(dirty(QString)), this, SLOT(reload()));
     m_previewUnavailablePix.fill(Qt::transparent);
 }
 
 BackgroundListModel::~BackgroundListModel()
 {
     qDeleteAll(m_kconfigs);
-}
-
-void BackgroundListModel::removeBackground(const QString &path)
-{
-    QModelIndex index;
-    while ((index = indexOf(path)).isValid()) {
-        beginRemoveRows(QModelIndex(), index.row(), index.row());
-        KConfig *config = m_kconfigs.at(index.row());
-        m_kconfigs.removeAt(index.row());
-        delete config;
-        endRemoveRows();
-    }
 }
 
 void BackgroundListModel::reload()
@@ -79,8 +67,13 @@ void BackgroundListModel::reload(const QStringList &selected)
     }
 
     const QStringList dirs = KGlobal::dirs()->findAllResources(PATTERN_RESOURCE_TYPE, QLatin1String("*.desktop"), KStandardDirs::NoDuplicates);
-
     kDebug() << "going looking in" << dirs;
+
+    // add wallpaper dirs to dirwatch (recursively)
+    foreach (const QString &dir, dirs) {
+        m_dirwatch.addDir(dir);
+    }
+
     processPaths(dirs);
 }
 
@@ -90,12 +83,6 @@ void BackgroundListModel::processPaths(const QStringList &paths)
     foreach (const QString &file, paths) {
         if (!contains(file) && QFile::exists(file)) {
             newKConfigs << new KConfig(file);
-        }
-    }
-    // add new files to dirwatch
-    foreach (KConfig *config, newKConfigs) {
-        if (!m_dirwatch.contains(config->name())) {
-            m_dirwatch.addFile(config->name());
         }
     }
 
