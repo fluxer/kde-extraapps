@@ -1,7 +1,8 @@
 project(ffmpegthumbs)
 
-include(CheckSymbolExists)
 include(CMakePushCheckState)
+include(CheckSymbolExists)
+include(CheckStructHasMember)
 
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
@@ -15,6 +16,13 @@ check_symbol_exists(
     video_thumbnailer_set_size
     "libffmpegthumbnailer/videothumbnailerc.h"
     HAVE_VIDEO_THUMBNAILER_SET_SIZE
+)
+
+check_struct_has_member(
+    "struct video_thumbnailer"
+    "prefer_embedded_metadata"
+    "libffmpegthumbnailer/videothumbnailerc.h"
+    HAVE_PREFER_EMBEDDED_METADATA
 )
 cmake_reset_check_state()
 

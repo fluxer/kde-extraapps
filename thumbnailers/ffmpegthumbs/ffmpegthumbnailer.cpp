@@ -90,7 +90,9 @@ bool FFMpegThumbnailer::create(const QString &path, int width, int heigth, QImag
 #endif
     ffmpegthumb->seek_percentage = 20;
     ffmpegthumb->overlay_film_strip = ffmpegthumbssettings->film_strip();
+#if defined(HAVE_PREFER_EMBEDDED_METADATA)
     ffmpegthumb->prefer_embedded_metadata = ffmpegthumbssettings->prefer_embedded_metadata();
+#endif
     ffmpegthumb->workaround_bugs = ffmpegthumbssettings->workaround_bugs();
     ffmpegthumb->thumbnail_image_type = ThumbnailerImageType::Png;
 
@@ -136,6 +138,9 @@ QWidget *FFMpegThumbnailer::createConfigurationWidget()
     ffmpegthumbsformwidget->filmStripCheckBox->setChecked(ffmpegthumbssettings->film_strip());
     ffmpegthumbsformwidget->preferEmbeddedMetadataCheckBox->setChecked(ffmpegthumbssettings->prefer_embedded_metadata());
     ffmpegthumbsformwidget->workaroundBugsCheckBox->setChecked(ffmpegthumbssettings->workaround_bugs());
+#if !defined(HAVE_PREFER_EMBEDDED_METADATA)
+    ffmpegthumbsformwidget->preferEmbeddedMetadataCheckBox->setVisible(false);
+#endif
     return ffmpegthumbsformwidget;
 }
 
