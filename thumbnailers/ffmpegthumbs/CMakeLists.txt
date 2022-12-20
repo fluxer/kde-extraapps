@@ -27,6 +27,7 @@ set(ffmpegthumbs_PART_SRCS
     ffmpegthumbnailer.cpp
 )
 
+kde4_add_kcfg_files(ffmpegthumbs_PART_SRCS ffmpegthumbssettings.kcfgc)
 kde4_add_plugin(ffmpegthumbs ${ffmpegthumbs_PART_SRCS})
 
 target_link_libraries(ffmpegthumbs

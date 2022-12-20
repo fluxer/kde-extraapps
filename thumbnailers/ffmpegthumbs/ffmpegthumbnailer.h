@@ -28,6 +28,9 @@ public:
 
     bool create(const QString &path, int width, int height, QImage &img) final;
     ThumbCreator::Flags flags() const final;
+
+    QWidget *createConfigurationWidget() final;
+    void writeConfiguration(const QWidget *configurationWidget) final;
 };
 
 #endif // FFMPEGTHUMBNAILER_H

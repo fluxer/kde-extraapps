@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+    <kcfgfile name="ffmpegthumbsrc"/>
+    <group name="General">
+      <entry name="film_strip" type="bool">
+          <label>Overlay film strip</label>
+          <default>true</default>
+      </entry>
+      <entry name="prefer_embedded_metadata" type="bool">
+          <label>Prefer embedded metadata</label>
+          <default>false</default>
+      </entry>
+      <entry name="workaround_bugs" type="bool">
+          <label>Workaround bugs</label>
+          <default>false</default>
+      </entry>
+    </group>
+</kcfg>

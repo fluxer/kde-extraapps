@@ -1,0 +1,4 @@
+File=ffmpegthumbssettings.kcfg
+ClassName=FFMpegThumbsSettings
+Singleton=true
+Mutators=true

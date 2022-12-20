@@ -18,6 +18,8 @@
 
 #include "config-ffmpegthumbnailer.h"
 #include "ffmpegthumbnailer.h"
+#include "ffmpegthumbssettings.h"
+#include "ui_ffmpegthumbsform.h"
 
 #include <QFile>
 #include <QImage>
@@ -39,6 +41,14 @@ void ffmpeg_log_callback(ThumbnailerLogLevel ffmpegloglevel, const char* ffmpegm
         }
     }
 }
+
+class FFMpegThumbsFormWidget : public QWidget, public Ui::FFMpegThumbsForm
+{
+    Q_OBJECT
+public:
+    FFMpegThumbsFormWidget() { setupUi(this); }
+};
+
 
 extern "C"
 {
@@ -69,6 +79,9 @@ bool FFMpegThumbnailer::create(const QString &path, int width, int heigth, QImag
         return false;
     }
 
+    FFMpegThumbsSettings* ffmpegthumbssettings = FFMpegThumbsSettings::self();
+    ffmpegthumbssettings->readConfig();
+
     const QByteArray pathbytes = QFile::encodeName(path);
 #if defined(HAVE_VIDEO_THUMBNAILER_SET_SIZE)
     video_thumbnailer_set_size(ffmpegthumb, width, heigth);
@@ -76,7 +89,9 @@ bool FFMpegThumbnailer::create(const QString &path, int width, int heigth, QImag
     ffmpegthumb->thumbnail_size = qMax(width, heigth);
 #endif
     ffmpegthumb->seek_percentage = 20;
-    ffmpegthumb->overlay_film_strip = 1;
+    ffmpegthumb->overlay_film_strip = ffmpegthumbssettings->film_strip();
+    ffmpegthumb->prefer_embedded_metadata = ffmpegthumbssettings->prefer_embedded_metadata();
+    ffmpegthumb->workaround_bugs = ffmpegthumbssettings->workaround_bugs();
     ffmpegthumb->thumbnail_image_type = ThumbnailerImageType::Png;
 
     const int ffmpegresult = video_thumbnailer_generate_thumbnail_to_buffer(
@@ -114,3 +129,25 @@ ThumbCreator::Flags FFMpegThumbnailer::flags() const
     return ThumbCreator::DrawFrame;
 }
 
+QWidget *FFMpegThumbnailer::createConfigurationWidget()
+{
+    FFMpegThumbsSettings* ffmpegthumbssettings = FFMpegThumbsSettings::self();
+    FFMpegThumbsFormWidget* ffmpegthumbsformwidget = new FFMpegThumbsFormWidget();
+    ffmpegthumbsformwidget->filmStripCheckBox->setChecked(ffmpegthumbssettings->film_strip());
+    ffmpegthumbsformwidget->preferEmbeddedMetadataCheckBox->setChecked(ffmpegthumbssettings->prefer_embedded_metadata());
+    ffmpegthumbsformwidget->workaroundBugsCheckBox->setChecked(ffmpegthumbssettings->workaround_bugs());
+    return ffmpegthumbsformwidget;
+}
+
+void FFMpegThumbnailer::writeConfiguration(const QWidget *configurationWidget)
+{
+    const FFMpegThumbsFormWidget *ffmpegthumbsformwidget = qobject_cast<const FFMpegThumbsFormWidget*>(configurationWidget);
+    Q_ASSERT(ffmpegthumbsformwidget);
+    FFMpegThumbsSettings* ffmpegthumbssettings = FFMpegThumbsSettings::self();
+    ffmpegthumbssettings->setFilm_strip(ffmpegthumbsformwidget->filmStripCheckBox->isChecked());
+    ffmpegthumbssettings->setPrefer_embedded_metadata(ffmpegthumbsformwidget->preferEmbeddedMetadataCheckBox->isChecked());
+    ffmpegthumbssettings->setWorkaround_bugs(ffmpegthumbsformwidget->workaroundBugsCheckBox->isChecked());
+    ffmpegthumbssettings->writeConfig();
+}
+
+#include "ffmpegthumbnailer.moc"
