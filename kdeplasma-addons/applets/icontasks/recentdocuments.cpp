@@ -117,7 +117,7 @@ void RecentDocuments::setEnabled(bool enabled)
                 m_watcher->addFile(f.path);
             }
             connect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(modified(QString)));
-#warning FIXME: reload recent files dirty signal
+#warning FIXME: reload recent files on dirty() signal
 #if 0
             connect(m_watcher, SIGNAL(created(QString)), this, SLOT(added(QString)));
             connect(m_watcher, SIGNAL(deleted(QString)), this, SLOT(removed(QString)));

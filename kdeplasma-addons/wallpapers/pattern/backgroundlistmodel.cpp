@@ -69,11 +69,6 @@ void BackgroundListModel::reload(const QStringList &selected)
     const QStringList dirs = KGlobal::dirs()->findAllResources(PATTERN_RESOURCE_TYPE, QLatin1String("*.desktop"), KStandardDirs::NoDuplicates);
     kDebug() << "going looking in" << dirs;
 
-    // add wallpaper dirs to dirwatch (recursively)
-    foreach (const QString &dir, dirs) {
-        m_dirwatch.addDir(dir);
-    }
-
     processPaths(dirs);
 }
 
@@ -83,6 +78,13 @@ void BackgroundListModel::processPaths(const QStringList &paths)
     foreach (const QString &file, paths) {
         if (!contains(file) && QFile::exists(file)) {
             newKConfigs << new KConfig(file);
+        }
+    }
+
+    // add new files to dirwatch
+    foreach (KConfig *config, newKConfigs) {
+        if (!m_dirwatch.contains(config->name())) {
+            m_dirwatch.addFile(config->name());
         }
     }
 

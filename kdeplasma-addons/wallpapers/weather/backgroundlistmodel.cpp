@@ -52,7 +52,7 @@ void BackgroundListModel::reload(const QStringList &selected)
     
     // add wallpaper dirs to dirwatch (recursively)
     foreach (const QString &dir, dirs) {
-        m_dirwatch.addDir(dir);
+        m_dirwatch.addDir(dir, true);
     }
 
     QList<Plasma::Package *> tmp;
