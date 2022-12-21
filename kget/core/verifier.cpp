@@ -361,33 +361,31 @@ void Verifier::brokenPieces() const
 QString Verifier::checksum(const KUrl &dest, const QString &type)
 {
     QStringList supported = supportedVerficationTypes();
-    if (!supported.contains(type))
-    {
+    if (!supported.contains(type)) {
         return QString();
     }
 
     QFile file(dest.pathOrUrl());
-    if (!file.open(QIODevice::ReadOnly))
-    {
+    if (!file.open(QIODevice::ReadOnly)) {
         return QString();
     }
 
     if (type == VerifierPrivate::MD5) {
-        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Md5);
-        file.close();
-        return hash.toHex();
+        QCryptographicHash hasher(QCryptographicHash::Md5);
+        hasher.addData(&file);
+        return hasher.result().toHex();
     } else if (type == VerifierPrivate::SHA1) {
-        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Sha1);
-        file.close();
-        return hash.toHex();
+        QCryptographicHash hasher(QCryptographicHash::Sha1);
+        hasher.addData(&file);
+        return hasher.result().toHex();
     } else if (type == VerifierPrivate::SHA256) {
-        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Sha256);
-        file.close();
-        return hash.toHex();
+        QCryptographicHash hasher(QCryptographicHash::Sha256);
+        hasher.addData(&file);
+        return hasher.result().toHex();
     } else if (type == VerifierPrivate::SHA512) {
-        QByteArray hash = QCryptographicHash::hash(file.readAll(), QCryptographicHash::Sha512);
-        file.close();
-        return hash.toHex();
+        QCryptographicHash hasher(QCryptographicHash::Sha512);
+        hasher.addData(&file);
+        return hasher.result().toHex();
     }
 
     return QString();
