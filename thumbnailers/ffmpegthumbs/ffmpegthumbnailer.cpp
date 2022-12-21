@@ -128,7 +128,7 @@ bool FFMpegThumbnailer::create(const QString &path, int width, int heigth, QImag
 
 ThumbCreator::Flags FFMpegThumbnailer::flags() const
 {
-    return ThumbCreator::DrawFrame;
+    return ThumbCreator::None;
 }
 
 QWidget *FFMpegThumbnailer::createConfigurationWidget()
