@@ -116,16 +116,11 @@ void RecentDocuments::setEnabled(bool enabled)
             foreach (File f, m_files) {
                 m_watcher->addFile(f.path);
             }
-            connect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(modified(QString)));
-#warning FIXME: reload recent files on dirty() signal
-#if 0
-            connect(m_watcher, SIGNAL(created(QString)), this, SLOT(added(QString)));
-            connect(m_watcher, SIGNAL(deleted(QString)), this, SLOT(removed(QString)));
-#endif
+            connect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(readCurrentDocs()));
             connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), this, SLOT(sycocaChanged(const QStringList &)));
             readCurrentDocs();
         } else if (m_enabled) {
-            disconnect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(modified(QString)));
+            disconnect(m_watcher, SIGNAL(dirty(QString)), this, SLOT(readCurrentDocs()));
             disconnect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), this, SLOT(sycocaChanged(const QStringList &)));
             delete m_watcher;
             m_watcher = 0;
@@ -233,18 +228,6 @@ void RecentDocuments::removed(const QString &path)
                 (*it).dirty = true;
                 break;
             }
-        }
-    }
-}
-
-void RecentDocuments::modified(const QString &path)
-{
-    QList<File>::Iterator it(m_files.begin()),
-          end(m_files.end());
-    for (; it != end; ++it) {
-        if ((*it).path == path) {
-            (*it).dirty = true;
-            break;
         }
     }
 }

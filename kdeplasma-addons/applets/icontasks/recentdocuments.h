@@ -70,12 +70,11 @@ public:
 private Q_SLOTS:
     void added(const QString& path);
     void removed(const QString& path);
-    void modified(const QString& path);
     void sycocaChanged(const QStringList &types);
     void loadDoc();
+    void readCurrentDocs();
 
 private:
-    void readCurrentDocs();
     void load();
     App officeAppForMimeType(const QString &mimeType);
     App appForExec(const QString &execString);
