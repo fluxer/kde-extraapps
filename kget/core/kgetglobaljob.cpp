@@ -36,7 +36,7 @@ void KGetGlobalJob::update()
     unsigned long speed = 0;
     unsigned long percent = 0;
     
-    foreach(TransferHandler * transfer, KGet::allTransfers()) {
+    foreach(const TransferHandler * transfer, KGet::allTransfers()) {
         if(transfer->status() == Job::Running) {
             runningTransfers++;
             processedAmount += transfer->downloadedSize();
