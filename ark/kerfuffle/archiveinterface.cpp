@@ -168,10 +168,10 @@ bool ReadWriteArchiveInterface::isReadOnly() const
 {
     QFileInfo fileInfo(filename());
     if (fileInfo.exists()) {
-        return ! fileInfo.isWritable();
-    } else {
-        return !fileInfo.dir().exists(); // TODO: Should also check if we can create a file in that directory
+        return !fileInfo.isWritable();
     }
+    // TODO: Should also check if we can create a file in that directory
+    return !fileInfo.dir().exists();
 }
 
 } // namespace Kerfuffle

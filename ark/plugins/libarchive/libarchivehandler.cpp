@@ -236,6 +236,12 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
     return true;
 }
 
+bool LibArchiveInterface::isReadOnly() const
+{
+    KArchive karchive(filename());
+    return !karchive.isWritable();
+}
+
 void LibArchiveInterface::emitProgress(const qreal value)
 {
     emit progress(value);

@@ -45,6 +45,8 @@ public:
     bool addFiles(const QStringList& files, const CompressionOptions &options) final;
     bool deleteFiles(const QVariantList& files) final;
 
+    bool isReadOnly() const final;
+
 private Q_SLOTS:
     void emitProgress(const qreal value);
 };
