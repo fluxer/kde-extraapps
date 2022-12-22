@@ -80,16 +80,16 @@ MainWindow::MainWindow(bool showMainwindow, bool startWithoutAnimation, bool doT
     // create actions
     setupActions();
 
-    setupGUI(ToolBar | Keys | Save | Create);
+    setupGUI(KXmlGuiWindow::ToolBar | KXmlGuiWindow::Keys | KXmlGuiWindow::Save | KXmlGuiWindow::Create);
 
     setCentralWidget(m_viewsContainer);
 
-    // restore position, size and visibility
-    move( Settings::mainPosition() );
     setWindowTitle(i18n("KGet"));
     
     init();
 
+    // restore position, size and visibility
+    setAutoSaveSettings();
     if ( Settings::showMain() && showMainwindow)
         show();
     else
@@ -98,11 +98,13 @@ MainWindow::MainWindow(bool showMainwindow, bool startWithoutAnimation, bool doT
 
 MainWindow::~MainWindow()
 {
-    //Save the user's transfers
+    // save window state
+    saveAutoSaveSettings();
+
+    // save the user's transfers
     KGet::save();
 
-    slotSaveMyself();
-    // the following call saves options set in above dtors
+    // .. and write config to disk
     Settings::self()->writeConfig();
 
     delete m_drop;
@@ -399,9 +401,6 @@ void MainWindow::init()
 
     // enable hide toolbar
     setStandardToolBarMenuEnabled(true);
-
-    // session management stuff
-    connect(kapp, SIGNAL(saveYourself()), SLOT(slotSaveMyself()));
 
     // DropTarget
     m_drop = new DropTarget(this);
@@ -917,15 +916,6 @@ void MainWindow::slotDeleteFinished()
 void MainWindow::slotConfigureNotifications()
 {
     KNotifyConfigWidget::configure(this);
-}
-
-
-void MainWindow::slotSaveMyself()
-{
-    // save last parameters ..
-    Settings::setMainPosition( pos() );
-    // .. and write config to disk
-    Settings::self()->writeConfig();
 }
 
 void MainWindow::slotNewToolbarConfig()

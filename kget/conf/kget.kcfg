@@ -148,10 +148,6 @@
 
   <group name="Internal">
     <!-- NOT CONFIGURABLE -->
-    <entry name="MainPosition" type="Point"/>
-    <entry name="MainState" type="Int">
-      <default>0</default>
-    </entry>
     <entry name="DropPosition" type="Point">
         <default code="true">QPoint(-1, -1)</default>
     </entry>

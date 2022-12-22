@@ -106,7 +106,6 @@ private slots:
     void slotDeleteFinished();
 
     // misc slots
-    void slotSaveMyself();
     void slotNewToolbarConfig();
     void slotNewConfig();
     void slotCheckClipboard();
