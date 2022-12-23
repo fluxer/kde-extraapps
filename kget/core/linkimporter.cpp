@@ -84,7 +84,7 @@ void LinkImporter::copyRemoteFile()
     KUrl aux(m_tempFile);
     KIO::CopyJob *job = KIO::copy(m_url, aux, KIO::HideProgressInfo);
 
-    QMap<QString, QString> metaData;
+    KIO::MetaData metaData;
     bool ok = KIO::NetAccess::synchronousRun(job, 0, 0, 0, &metaData);
     if(!ok) {
         emit error(ki18n("Error trying to get %1").subs(m_url.url()));
