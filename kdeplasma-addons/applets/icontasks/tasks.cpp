@@ -112,7 +112,7 @@ static const int constMaxIconScale = 100;
 Tasks::Tasks(QObject* parent, const QVariantList &arguments)
     : Plasma::Applet(parent, arguments),
       m_toolTips(TT_Instant),
-      m_highlightWindows(true),
+      m_highlightWindows(false),
       m_launcherIcons(false),
       m_groupClick(GC_PresentWindows),
       m_rotate(false),
@@ -320,7 +320,7 @@ void Tasks::configChanged()
         changed = true;
     }
 
-    const bool highlightWindows = cg.readEntry("highlightWindows", true);
+    const bool highlightWindows = cg.readEntry("highlightWindows", false);
     if (highlightWindows != m_highlightWindows) {
         m_highlightWindows = highlightWindows;
         changed = true;
