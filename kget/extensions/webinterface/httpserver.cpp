@@ -45,8 +45,12 @@ HttpServer::HttpServer(QWidget *parent)
     if (m_passwdstore && m_passwdstore->openStore(parent->winId())) {
         const QString usr = Settings::webinterfaceUser();
         const QString pwd = m_passwdstore->getPasswd("Webinterface", parent->winId());
-        setAuthenticate(usr.toUtf8(), pwd.toUtf8(), s_notauthorized);
-
+        if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8(), s_notauthorized)) {
+            KGet::showNotification(parent,
+                "error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
+            );
+            return;
+        }
         if (!start(QHostAddress::Any, Settings::webinterfacePort())) {
             KGet::showNotification(parent,
                 "error", i18nc("@info", "Unable to start WebInterface: %1", errorString())
@@ -66,14 +70,21 @@ HttpServer::~HttpServer()
 
 void HttpServer::settingsChanged()
 {
-    if (m_passwdstore && m_passwdstore->openStore(static_cast<QWidget*>(parent())->winId())) {
+    QWidget* parentwidget = qobject_cast<QWidget*>(parent());
+    if (m_passwdstore && m_passwdstore->openStore(parentwidget->winId())) {
         const QString usr = Settings::webinterfaceUser();
         const QString pwd = m_passwdstore->getPasswd("Webinterface");
         stop();
-        setAuthenticate(usr.toUtf8(), pwd.toUtf8(), s_notauthorized);
+        if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8(), s_notauthorized)) {
+            KGet::showNotification(
+                parentwidget,
+                "error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
+            );
+            return;
+        }
         if (!start(QHostAddress::Any, Settings::webinterfacePort())) {
             KGet::showNotification(
-                static_cast<QWidget*>(parent()),
+                parentwidget,
                 "error", i18nc("@info", "Unable to restart WebInterface: %1", errorString())
             );
             return;
