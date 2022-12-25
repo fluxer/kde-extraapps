@@ -26,15 +26,6 @@
 #include <QDir>
 #include <QDateTime>
 
-// DO NOT TRANSLATE THE FOLLOWING MESSAGE! webserver messages are never translated.
-static const QString s_notauthorized = QString::fromLatin1(
-    "<html><head><title>Authorization Required</title></head><body>"
-    "<h1>Authorization Required</h1>This server could not verify that you "
-    "are authorized to access the document requested. Either you supplied "
-    "the wrong credentials (e.g., bad password), or your browser does "
-    "not understand how to supply the credentials required.</body></html>"
-);
-
 HttpServer::HttpServer(QWidget *parent)
     : KHTTP(parent),
       m_passwdstore(nullptr)
@@ -45,7 +36,7 @@ HttpServer::HttpServer(QWidget *parent)
     if (m_passwdstore && m_passwdstore->openStore(parent->winId())) {
         const QString usr = Settings::webinterfaceUser();
         const QString pwd = m_passwdstore->getPasswd("Webinterface", parent->winId());
-        if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8(), s_notauthorized)) {
+        if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8())) {
             KGet::showNotification(parent,
                 "error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
             );
@@ -75,7 +66,7 @@ void HttpServer::settingsChanged()
         const QString usr = Settings::webinterfaceUser();
         const QString pwd = m_passwdstore->getPasswd("Webinterface");
         stop();
-        if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8(), s_notauthorized)) {
+        if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8())) {
             KGet::showNotification(
                 parentwidget,
                 "error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
