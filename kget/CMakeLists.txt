@@ -213,7 +213,6 @@ target_link_libraries(kget
     ${KDE4_KCMUTILS_LIBS}
     ${KDE4_KNOTIFYCONFIG_LIBS}
     ${KDE4_KPASSWDSTORE_LIBS}
-    ${KDE4_KHTTP_LIBS}
     kgetcore
 )
 
