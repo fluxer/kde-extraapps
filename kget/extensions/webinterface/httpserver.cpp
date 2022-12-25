@@ -30,6 +30,8 @@ HttpServer::HttpServer(QWidget *parent)
     : KHTTP(parent),
       m_passwdstore(nullptr)
 {
+    setServerID("KGet");
+
     m_passwdstore = new KPasswdStore(this);
     m_passwdstore->setStoreID("KGet");
 
@@ -221,7 +223,6 @@ void HttpServer::respond(const QByteArray &url, QByteArray *outdata,
         }
     }
 
-    outheaders->insert("Server", "KGet"); //TODO: add KGet version
     // for HTTP information see: http://www.jmarshall.com/easy/http/
     if (url.endsWith(".png") && *outhttpstatus == 200) {
         outheaders->insert("Content-Type", "image/png");
