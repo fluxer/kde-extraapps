@@ -26,6 +26,14 @@
 #include <poppler/cpp/poppler-page-renderer.h>
 #include <poppler/cpp/poppler-embedded-file.h>
 #include <poppler/cpp/poppler-page-transition.h>
+#include <poppler/cpp/poppler-version.h>
+#include <sys/types.h>
+
+#if POPPLER_VERSION_MAJOR >= 22 && POPPLER_VERSION_MINOR >= 5
+typedef time_t popplertimetype;
+#else
+typedef poppler::time_type popplertimetype;
+#endif
 
 static QByteArray okularBytes(const poppler::byte_array &popplerbytes)
 {
@@ -38,13 +46,13 @@ static QString okularString(const poppler::ustring &popplerstring)
     return QString::fromUtf8(popplerbytes.data(), popplerbytes.size());
 }
 
-static QString okularTime(const poppler::time_type &popplertime)
+static QString okularTime(const popplertimetype &popplertime)
 {
     const KDateTime kdatetime(QDateTime::fromTime_t(popplertime));
     return KGlobal::locale()->formatDateTime(kdatetime, KLocale::FancyLongDate);
 }
 
-static QDateTime okularDateTime(const poppler::time_type &popplertime)
+static QDateTime okularDateTime(const popplertimetype &popplertime)
 {
     return QDateTime::fromTime_t(popplertime);
 }
@@ -293,7 +301,11 @@ Okular::Document::OpenResult PDFGenerator::loadDocumentWithPassword(const QStrin
         const poppler::page_transition *popplerpagetransition = popplerpage->transition();
         if (popplerpagetransition) {
             Okular::PageTransition* okulartransition = new Okular::PageTransition();
+#if POPPLER_VERSION_MAJOR >= 22 && POPPLER_VERSION_MINOR >= 5
+            okulartransition->setDuration(qRound(popplerpagetransition->durationReal()));
+#else
             okulartransition->setDuration(popplerpagetransition->duration());
+#endif
             okulartransition->setAngle(popplerpagetransition->angle());
             okulartransition->setScale(popplerpagetransition->scale());
             okulartransition->setIsRectangular(popplerpagetransition->is_rectangular());
@@ -403,8 +415,13 @@ const Okular::DocumentInfo* PDFGenerator::generateDocumentInfo()
     m_documentinfo->set(Okular::DocumentInfo::Creator, okularString(m_popplerdocument->get_creator()));
     m_documentinfo->set(Okular::DocumentInfo::Producer, okularString(m_popplerdocument->get_producer()));
     m_documentinfo->set(Okular::DocumentInfo::Keywords, okularString(m_popplerdocument->get_keywords()));
+#if POPPLER_VERSION_MAJOR >= 22 && POPPLER_VERSION_MINOR >= 5
+    m_documentinfo->set(Okular::DocumentInfo::CreationDate, okularTime(m_popplerdocument->get_creation_date_t()));
+    m_documentinfo->set(Okular::DocumentInfo::ModificationDate, okularTime(m_popplerdocument->get_modification_date_t()));
+#else
     m_documentinfo->set(Okular::DocumentInfo::CreationDate, okularTime(m_popplerdocument->get_creation_date()));
     m_documentinfo->set(Okular::DocumentInfo::ModificationDate, okularTime(m_popplerdocument->get_modification_date()));
+#endif
     
     return m_documentinfo;
 }
@@ -470,8 +487,13 @@ const QList<Okular::EmbeddedFile*>* PDFGenerator::embeddedFiles() const
         pdfembeddedfile->m_description = okularString(popplerembeddedfile->description());
         pdfembeddedfile->m_data = okularBytes(popplerembeddedfile->data());
         pdfembeddedfile->m_size = popplerembeddedfile->size();
+#if POPPLER_VERSION_MAJOR >= 22 && POPPLER_VERSION_MINOR >= 5
+        pdfembeddedfile->m_modificationdate = okularDateTime(popplerembeddedfile->modification_date_t());
+        pdfembeddedfile->m_creationdate = okularDateTime(popplerembeddedfile->creation_date_t());
+#else
         pdfembeddedfile->m_modificationdate = okularDateTime(popplerembeddedfile->modification_date());
         pdfembeddedfile->m_creationdate = okularDateTime(popplerembeddedfile->creation_date());
+#endif
         // qDebug() << Q_FUNC_INFO << pdfembeddedfile->m_name;
         okularembeddedfiles->append(pdfembeddedfile);
     }
