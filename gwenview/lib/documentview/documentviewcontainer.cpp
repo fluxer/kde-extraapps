@@ -279,7 +279,8 @@ void DocumentViewContainer::pretendFadeInFinished()
 {
     // Animations are disabled. Pretend all fade ins are finished so that added
     // views are moved to mViews
-    Q_FOREACH(DocumentView* view, d->mAddedViews) {
+    const DocumentViewSet copy = d->mAddedViews;
+    Q_FOREACH(DocumentView* view, copy) {
         slotFadeInFinished(view);
     }
 }
