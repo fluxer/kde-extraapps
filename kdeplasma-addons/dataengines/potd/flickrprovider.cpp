@@ -101,7 +101,7 @@ void FlickrProvider::Private::pageRequestFinished( KJob *_job )
     }
 
     if (xml.error() && xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
-        qWarning() << "XML ERROR:" << xml.lineNumber() << ": " << xml.errorString();
+        kWarning() << "XML error" << xml.lineNumber() << ": " << xml.errorString();
     }
 
     if (m_photoList.begin() != m_photoList.end()) {

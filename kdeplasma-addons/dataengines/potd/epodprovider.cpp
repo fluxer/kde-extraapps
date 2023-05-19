@@ -60,7 +60,8 @@ void EpodProvider::Private::pageRequestFinished(KJob *_job)
 
     int pos = exp.indexIn( data ) + pattern.length();
     const QString sub = data.mid( pos-4, pattern.length()+5);
-    KUrl url( QString(QLatin1String( "https://epod.usra.edu/.a/%1-pi" )) .arg(sub)  );
+    KUrl url( QString::fromLatin1("https://epod.usra.edu/.a/%1-pi" ) .arg(sub) );
+    kDebug() << "url" << url.prettyUrl();
     KIO::StoredTransferJob *imageJob = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
     QObject::connect(imageJob, SIGNAL(finished(KJob*)), mParent, SLOT(imageRequestFinished(KJob*)) );
 }
@@ -73,7 +74,6 @@ void EpodProvider::Private::imageRequestFinished( KJob *_job)
         return;
     }
 
-    // FIXME: this really should be done in a thread as this can block
     mImage = QImage::fromData( job->data() );
     emit mParent->finished( mParent );
 }
