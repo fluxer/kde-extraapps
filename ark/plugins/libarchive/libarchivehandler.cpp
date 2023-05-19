@@ -106,6 +106,7 @@ bool LibArchiveInterface::copyFiles(const QVariantList& files, const QString &de
             fileslist.append(QFile::decodeName(karchiveentry.pathname));
         }
     } else {
+        fileslist.reserve(files.size());
         foreach (const QVariant &variant, files) {
             fileslist.append(variant.toString());
         }
@@ -220,6 +221,7 @@ bool LibArchiveInterface::deleteFiles(const QVariantList &files)
     }
 
     QStringList fileslist;
+    fileslist.reserve(files.size());
     foreach (const QVariant &variant, files) {
         fileslist.append(variant.toString());
     }
