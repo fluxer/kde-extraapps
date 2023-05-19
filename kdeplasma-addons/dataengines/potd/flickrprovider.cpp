@@ -58,7 +58,7 @@ void FlickrProvider::Private::pageRequestFinished( KJob *_job )
     KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob *>( _job );
     if (job->error()) {
         emit mParent->error( mParent );
-        kDebug() << "pageRequestFinished error";
+        kWarning() << "pageRequestFinished error";
         return;
     }
 
@@ -80,19 +80,21 @@ void FlickrProvider::Private::pageRequestFinished( KJob *_job )
                     /* To be sure, decrement the date to two days earlier... @TODO */
                     mActualDate = mActualDate.addDays(-2);
 
-                            KUrl url( QLatin1String( "http://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&method=flickr.interestingness.getList&date=" ) + mActualDate.toString( Qt::ISODate) );
-                            KIO::StoredTransferJob *pageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
-                            mParent->connect( pageJob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
+                    KUrl url( QLatin1String( "https://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&method=flickr.interestingness.getList&date=" ) + mActualDate.toString( Qt::ISODate) );
+                    kDebug() << "stat fail" << url.prettyUrl();
+                    KIO::StoredTransferJob *pageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
+                    mParent->connect( pageJob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
                     return;
                 }
             } else if (xml.name() == QLatin1String( "photo" )) {
                 if (xml.attributes().value ( QLatin1String( "ispublic" ) ).toString() != QLatin1String( "1" ))
-                continue;
+                    continue;
 
-                QString fileUrl = QString(QLatin1String( "http://farm" ) + xml.attributes().value ( QLatin1String( "farm" ) ).toString() + QLatin1String( ".static.flickr.com/" )
-                + xml.attributes().value ( QLatin1String( "server" ) ).toString() + QLatin1Char( '/' ) + xml.attributes().value ( QLatin1String( "id" ) ).toString()
-                                          + QLatin1Char( '_' ) + xml.attributes().value ( QLatin1String( "secret" ) ).toString() + QLatin1String( ".jpg" ));
+                QString fileUrl = QString(QLatin1String( "https://farm" ) + xml.attributes().value ( QLatin1String( "farm" ) ).toString() + QLatin1String( ".static.flickr.com/" )
+                    + xml.attributes().value ( QLatin1String( "server" ) ).toString() + QLatin1Char( '/' ) + xml.attributes().value ( QLatin1String( "id" ) ).toString()
+                    + QLatin1Char( '_' ) + xml.attributes().value ( QLatin1String( "secret" ) ).toString() + QLatin1String( ".jpg" ));
 
+                kDebug() << "photo" << fileUrl;
                 m_photoList.append(fileUrl);
             }
         }
@@ -104,10 +106,11 @@ void FlickrProvider::Private::pageRequestFinished( KJob *_job )
 
     if (m_photoList.begin() != m_photoList.end()) {
         KUrl url( m_photoList.at(KRandom::randomMax(m_photoList.size())) );
-            KIO::StoredTransferJob *imageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
-            mParent->connect( imageJob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)) );
+        kDebug() << "chosen photo" << url.prettyUrl();
+        KIO::StoredTransferJob *imageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
+        mParent->connect( imageJob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)) );
     } else {
-        kDebug() << "empty list";
+        kWarning() << "empty list";
     }
 }
 
@@ -127,9 +130,10 @@ FlickrProvider::FlickrProvider( QObject *parent, const QVariantList &args )
     : PotdProvider( parent, args ), d( new Private( this ) )
 {
     d->mActualDate = date();
-    KUrl url(QLatin1String(
-                "http://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&method=flickr.interestingness.getList&date="
-                ) + date().toString( Qt::ISODate ) );
+    KUrl url(
+        QLatin1String(
+            "https://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&method=flickr.interestingness.getList&date="
+        ) + date().toString( Qt::ISODate ) );
     KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
     connect( job, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
 }
