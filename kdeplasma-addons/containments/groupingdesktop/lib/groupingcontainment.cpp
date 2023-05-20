@@ -623,7 +623,7 @@ void GroupingContainment::addGroup(AbstractGroup *group, const QPointF &pos)
 
     if (!d->loading && !pos.isNull()) {
         d->manageGroup(group, pos);
-        Plasma::Animation *anim = Plasma::Animator::create(Plasma::Animator::AppearAnimation);
+        Plasma::Animation *anim = Plasma::Animator::create(Plasma::Animator::ZoomAnimation);
         if (anim) {
             anim->setTargetWidget(group);
             anim->setDirection(QAbstractAnimation::Backward);
