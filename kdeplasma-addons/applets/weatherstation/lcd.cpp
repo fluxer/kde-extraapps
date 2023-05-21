@@ -178,9 +178,20 @@ class LCD::Private
 
         void parseXml()
         {
+            // kDebug() << content;
             KDecompressor kdecompressor;
-            if (!kdecompressor.setType(KDecompressor::TypeGZip)
-                || !kdecompressor.process(content.toAscii())) {
+            if (!kdecompressor.setType(KDecompressor::TypeGZip)) {
+                kWarning() << "Could not set decompressor type" << kdecompressor.errorString();
+                return;
+            }
+
+            QFile contentFile(content);
+            if (!contentFile.open(QFile::ReadOnly)) {
+                kWarning() << "Could open content file" << content << contentFile.errorString();
+                return;
+            }
+
+            if (!kdecompressor.process(contentFile.readAll())) {
                 kWarning() << "Could not decompress content" << kdecompressor.errorString();
                 return;
             }
@@ -213,7 +224,7 @@ class LCD::Private
                 }
             }
 
-            //kDebug() << groups;
+            // kDebug() << groups;
         }
 };
 
