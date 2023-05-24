@@ -119,12 +119,12 @@ QSizeF Utils::realDpi(QWidget* widgetOnScreen)
 
 double Utils::dpiX()
 {
-    return QDesktopWidget().physicalDpiX();
+    return QDesktopWidget().logicalDpiX();
 }
 
 double Utils::dpiY()
 {
-    return QDesktopWidget().physicalDpiY();
+    return QDesktopWidget().logicalDpiY();
 }
 
 double Utils::realDpiX()
