@@ -22,7 +22,6 @@
 #include "taskgroupitem.h"
 #include "jobmanager.h"
 #include "mediabuttons.h"
-#include "unity.h"
 
 // Qt
 #include <QtGui/qgraphicssceneevent.h>

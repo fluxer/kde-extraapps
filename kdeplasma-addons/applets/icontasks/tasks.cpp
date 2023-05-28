@@ -25,7 +25,6 @@
 #include "taskgroupitem.h"
 #include "jobmanager.h"
 #include "mediabuttons.h"
-#include "unity.h"
 #include "recentdocuments.h"
 
 //Taskmanager
@@ -154,7 +153,6 @@ Tasks::~Tasks()
 {
     JobManager::self()->setEnabled(false);
     MediaButtons::self()->setEnabled(false);
-    Unity::self()->setEnabled(false);
     RecentDocuments::self()->setEnabled(false);
     delete m_rootGroupItem;
     delete m_groupManager;
@@ -270,12 +268,6 @@ void Tasks::configChanged()
         changed = true;
     }
     MediaButtons::self()->setEnabled(mediaButtons);
-
-    const bool unity = cg.readEntry("unity", true);
-    if (unity != Unity::self()->isEnabled()) {
-        changed = true;
-    }
-    Unity::self()->setEnabled(unity);
 
     const bool recentDocuments = cg.readEntry("recentDocuments", true);
     if (recentDocuments != RecentDocuments::self()->isEnabled()) {
@@ -581,7 +573,6 @@ void Tasks::createConfigurationInterface(KConfigDialog *parent)
     setCurrentIndex(m_behaviourUi.middleClick, (int)m_middleClick);
     m_behaviourUi.showProgress->setChecked(JobManager::self()->isEnabled());
     m_behaviourUi.mediaButtons->setChecked(MediaButtons::self()->isEnabled());
-    m_behaviourUi.unity->setChecked(Unity::self()->isEnabled());
     m_behaviourUi.recentDocuments->setChecked(RecentDocuments::self()->isEnabled());
     m_appUi.spacing->setRange(constMinSpacing, constMaxSpacing);
     m_appUi.spacing->setValue(m_spacing);
@@ -612,7 +603,6 @@ void Tasks::createConfigurationInterface(KConfigDialog *parent)
     connect(m_behaviourUi.middleClick, SIGNAL(currentIndexChanged(int)), parent, SLOT(settingsModified()));
     connect(m_behaviourUi.showProgress, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     connect(m_behaviourUi.mediaButtons, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
-    connect(m_behaviourUi.unity, SIGNAL(toggled(bool)), parent, SLOT(settingsModified()));
     connect(m_appUi.spacing, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
     connect(m_appUi.previewSize, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
     connect(m_appUi.iconScale, SIGNAL(valueChanged(int)), parent, SLOT(settingsModified()));
@@ -632,7 +622,6 @@ void Tasks::createConfigurationInterface(KConfigDialog *parent)
     m_appUi.showSeparator_label->setToolTip(m_appUi.showSeparator->toolTip());
     m_behaviourUi.showProgress_label->setToolTip(m_behaviourUi.showProgress->toolTip());
     m_behaviourUi.mediaButtons_label->setToolTip(m_behaviourUi.mediaButtons->toolTip());
-    m_behaviourUi.unity_label->setToolTip(m_behaviourUi.unity->toolTip());
     m_behaviourUi.middleClick_label->setToolTip(m_behaviourUi.middleClick->toolTip());
 
     updateShowSeparator();
@@ -660,7 +649,6 @@ void Tasks::configAccepted()
     cg.writeEntry("middleClick", m_behaviourUi.middleClick->itemData(m_behaviourUi.middleClick->currentIndex()).toInt());
     cg.writeEntry("showProgress", m_behaviourUi.showProgress->checkState() == Qt::Checked);
     cg.writeEntry("mediaButtons", m_behaviourUi.mediaButtons->checkState() == Qt::Checked);
-    cg.writeEntry("unity", m_behaviourUi.unity->checkState() == Qt::Checked);
     cg.writeEntry("recentDocuments", m_behaviourUi.recentDocuments->checkState() == Qt::Checked);
     cg.writeEntry("spacing", m_appUi.spacing->value());
     cg.writeEntry("previewSize", m_appUi.previewSize->value());

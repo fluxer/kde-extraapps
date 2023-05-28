@@ -21,10 +21,8 @@
 
 // Own
 #include "abstracttaskitem.h"
-#include "unity.h"
 #include "jobmanager.h"
 #include "mediabuttons.h"
-#include "unityitem.h"
 #include "recentdocuments.h"
 
 // Qt
@@ -329,7 +327,6 @@ AbstractTaskItem::AbstractTaskItem(QGraphicsWidget *parent, Tasks *applet)
       m_backgroundFadeAnim(0),
       m_alpha(1),
       m_backgroundPrefix("normal"),
-      m_unityItem(0),
       m_activateTimerId(0),
       m_updateGeometryTimerId(0),
       m_updateTimerId(0),
@@ -960,14 +957,6 @@ void AbstractTaskItem::updateProgress(int v, InfoSource source)
     }
 }
 
-void AbstractTaskItem::unityItemUpdated()
-{
-    if (m_unityItem) {
-        updateProgress(m_unityItem->progressVisible() ? m_unityItem->progress() : -1, IS_Unity);
-        queueUpdate();
-    }
-}
-
 void AbstractTaskItem::drawProgress(QPainter *painter, const QRectF &rect)
 {
     if (rect.width() < 12 || rect.height() < 12) {
@@ -1493,10 +1482,6 @@ void AbstractTaskItem::drawTask(QPainter *painter, const QStyleOptionGraphicsIte
         return;
     }
 
-    if (m_unityItem && m_unityItem->countVisible()) {
-        drawBadge(painter, iconR, QString::number(m_unityItem->count()));
-    }
-
     if (!showText && JobManager::self()->isEnabled() && m_currentProgress >= 0) {
         drawProgress(painter, iconR);
     }
@@ -1561,22 +1546,11 @@ QList<QAction *> AbstractTaskItem::getAppMenu()
 {
     QList<QAction*> appMenu;
     bool addedDocs = false;
-    bool addedUnityItems = false;
     KUrl lUrl = launcherUrl();
 
     if (lUrl.isValid()) {
         appMenu = RecentDocuments::self()->get(lUrl.fileName().remove(".desktop"));
         addedDocs = true;
-    }
-
-    if (m_unityItem) {
-        QList<QAction *> unityActions = m_unityItem->menu();
-        addedUnityItems = !unityActions.isEmpty();
-        if (addedDocs && addedUnityItems) {
-            theSepAction.setSeparator(true);
-            appMenu.append(&theSepAction);
-        }
-        appMenu.append(unityActions);
     }
 
     return appMenu;
@@ -1585,14 +1559,11 @@ QList<QAction *> AbstractTaskItem::getAppMenu()
 void AbstractTaskItem::registerWithHelpers()
 {
     JobManager::self()->registerTask(this);
-    Unity::self()->registerTask(this);
 }
 
 void AbstractTaskItem::unregisterFromHelpers()
 {
     JobManager::self()->unregisterTask(this);
-    Unity::self()->unregisterTask(this);
-    m_unityItem = 0;
 }
 
 void AbstractTaskItem::dragEnterEvent(QGraphicsSceneDragDropEvent *event)

@@ -7,8 +7,6 @@ set(tasks_SRCS
     applauncheritem.cpp
     jobmanager.cpp
     mediabuttons.cpp
-    unity.cpp
-    unityitem.cpp 
     dbusstatus.cpp
     recentdocuments.cpp
     tooltips/tooltipcontent.cpp
@@ -30,7 +28,6 @@ target_link_libraries(plasma_applet_icontasks
     ${KDE4_KDEUI_LIBS}
     ${KDE4_PLASMA_LIBS}
     ${KDE4_KIO_LIBS}
-    ${DBUSMENUQT_LIBRARIES}
     ${KDE4WORKSPACE_TASKMANAGER_LIBS}
 )
 
@@ -38,7 +35,7 @@ if(Q_WS_X11)
     target_link_libraries(plasma_applet_icontasks ${X11_X11_LIB})
 endif(Q_WS_X11)
 
-include_directories(${CMAKE_BINARY_DIR} ${DBUSMENUQT_INCLUDE_DIR})
+include_directories(${CMAKE_BINARY_DIR})
 
 install(TARGETS plasma_applet_icontasks DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES plasma-applet-icontasks.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

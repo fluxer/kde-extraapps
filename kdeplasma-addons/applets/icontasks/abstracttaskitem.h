@@ -48,7 +48,6 @@
 class Tasks;
 class TaskGroupItem;
 class LayoutWidget;
-class UnityItem;
 
 /**
  * A baseclass for a task
@@ -62,8 +61,7 @@ class AbstractTaskItem : public QGraphicsWidget
 public:
     enum InfoSource {
         IS_None,
-        IS_Job,
-        IS_Unity
+        IS_Job
     };
 
     enum Cache {
@@ -163,10 +161,6 @@ public:
     virtual KUrl launcherUrl() const = 0;
     virtual QString windowClass() const = 0;
     void updateProgress(int v, InfoSource source = IS_Job);
-    void unityItemUpdated();
-    void setUnityItem(UnityItem *i) {
-        m_unityItem = i;
-    }
     virtual int pid() const {
         return 0;
     }
@@ -266,7 +260,6 @@ protected:
     qreal m_alpha;
     QString m_oldBackgroundPrefix;
     QString m_backgroundPrefix;
-    UnityItem *m_unityItem;
 
 private:
     QRectF m_activeRect;

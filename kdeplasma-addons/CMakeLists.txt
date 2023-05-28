@@ -17,13 +17,6 @@ set_package_properties(KDE4Workspace PROPERTIES
     PURPOSE "Needed for building several Plasma plugins"
 )
 
-kde4_optional_find_package(DBusMenuQt)
-set_package_properties(DBusMenuQt PROPERTIES
-    DESCRIPTION "Library that provides a Qt implementation of the DBusMenu spec"
-    URL "https://osdn.net/projects/kde/"
-    PURPOSE "Needed for Unity support in IconTasks"
-)
-
 kde4_optional_find_package(Qalculate)
 set_package_properties(Qalculate PROPERTIES
     DESCRIPTION "Qalculate Library"

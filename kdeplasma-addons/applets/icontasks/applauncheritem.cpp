@@ -22,7 +22,6 @@
 #include "taskgroupitem.h"
 #include "jobmanager.h"
 #include "mediabuttons.h"
-#include "unity.h"
 
 #include "taskmanager/taskactions.h"
 #include "taskmanager/groupmanager.h"
