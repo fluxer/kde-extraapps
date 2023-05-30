@@ -29,7 +29,6 @@
 #include <QtGui/qgraphicssceneevent.h>
 #include <QtGui/qstyleoption.h>
 #include <QGraphicsView>
-#include <QVarLengthArray>
 
 // KDE
 #include <KDebug>

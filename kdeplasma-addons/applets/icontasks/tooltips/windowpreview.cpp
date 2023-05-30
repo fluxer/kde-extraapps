@@ -23,7 +23,6 @@
 #include "tooltipcontent.h"
 #include "tooltipmanager.h"
 #include <QPainter>
-#include <QVarLengthArray>
 #include <QtGui/qevent.h>
 #include <QFontMetrics>
 

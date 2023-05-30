@@ -33,7 +33,6 @@
 #include <QGraphicsView>
 #include <QtGui/qstyleoption.h>
 #include <QTextLayout>
-#include <QVarLengthArray>
 #include <QPropertyAnimation>
 #include <QCache>
 #ifdef Q_WS_X11
