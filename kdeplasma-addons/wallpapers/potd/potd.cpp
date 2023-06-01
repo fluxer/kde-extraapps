@@ -26,6 +26,7 @@
 #include <KAction>
 #include <KFileDialog>
 #include <KStandardAction>
+#include <KImageIO>
 
 static const QString DEFAULT_PROVIDER("apod");
 
@@ -124,7 +125,11 @@ void PoTD::getSaveFileLocation()
         return;
     }
 
-    KFileDialog *fd = new KFileDialog(KUrl("kfiledialog:///frameplasmoid"), QString(), 0);
+    KFileDialog *fd = new KFileDialog(
+        KUrl("kfiledialog:///frameplasmoid"),
+        KImageIO::pattern(KImageIO::Writing),
+        0
+    );
     fd->setOperationMode(KFileDialog::Saving);
     fd->setMode(KFile::LocalOnly);
     fd->setAttribute(Qt::WA_DeleteOnClose, true);
