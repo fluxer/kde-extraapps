@@ -83,7 +83,7 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
 
         const KUrl queryurl(QString::fromLatin1(flickrapiurl) + mActualDate.toString(Qt::ISODate));
         kDebug() << "stat fail, retrying with" << queryurl.prettyUrl();
-        KIO::StoredTransferJob *kstoredjob = KIO::storedGet(queryurl, KIO::NoReload, KIO::HideProgressInfo);
+        kstoredjob = KIO::storedGet(queryurl, KIO::NoReload, KIO::HideProgressInfo);
         mParent->connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
         return;
     }
@@ -104,14 +104,15 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
         m_photoList.append(photourl);
     }
 
-    if (m_photoList.begin() != m_photoList.end()) {
-        KUrl photourl(m_photoList.at(KRandom::randomMax(m_photoList.size())));
-        kDebug() << "chosen photo" << photourl.prettyUrl();
-        KIO::StoredTransferJob *kstoredjob = KIO::storedGet(photourl, KIO::NoReload, KIO::HideProgressInfo);
-        mParent->connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)));
-    } else {
-        kWarning() << "empty list";
+    if (m_photoList.isEmpty()) {
+        kWarning() << "empty photo list";
+        return;
     }
+
+    const KUrl photourl(m_photoList.at(KRandom::randomMax(m_photoList.size())));
+    kDebug() << "chosen photo" << photourl.prettyUrl();
+    kstoredjob = KIO::storedGet(photourl, KIO::NoReload, KIO::HideProgressInfo);
+    mParent->connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)));
 }
 
 void FlickrProvider::Private::imageRequestFinished(KJob *kjob)
