@@ -84,7 +84,8 @@ void Paste::createConfigurationInterface(KConfigDialog *parent)
     connect(m_autoPasteConfig->editButton, SIGNAL(clicked()), parent, SLOT(settingsModified())); 
     connect(m_autoPasteConfig->removeButton, SIGNAL(clicked(bool)), parent, SLOT(settingsModified()));
     connect(m_autoPasteConfig->pasteKeyButton, SIGNAL(keySequenceChanged(QKeySequence)), parent, SLOT(settingsModified()));
-    connect(m_autoPasteConfig->appsTreeView, SIGNAL(clicked(bool)), parent, SLOT(settingsModified()));
+    connect(m_autoPasteConfig->appsTreeView->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+            parent, SLOT(settingsModified()));
 }
 
 void Paste::configAccepted()
