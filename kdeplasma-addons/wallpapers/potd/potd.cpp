@@ -126,7 +126,7 @@ void PoTD::getSaveFileLocation()
     }
 
     KFileDialog *fd = new KFileDialog(
-        KUrl("kfiledialog:///frameplasmoid"),
+        KUrl("kfiledialog:///potdwallpaper"),
         KImageIO::pattern(KImageIO::Writing),
         0
     );
