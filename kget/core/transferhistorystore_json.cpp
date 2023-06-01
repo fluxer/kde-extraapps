@@ -39,9 +39,7 @@ void JsonStore::load()
     m_items.clear();
     QFile dbFile(m_dbName);
     if (dbFile.open(QFile::ReadOnly)) {
-        const QByteArray dbData = dbFile.readAll();
-
-        m_dbDoc = QJsonDocument::fromJson(dbData);
+        m_dbDoc = QJsonDocument::fromJson(dbFile.readAll());
         if (m_dbDoc.isNull()) {
             kWarning(5001) << m_dbDoc.errorString();
         } else {
@@ -93,9 +91,9 @@ void JsonStore::saveItems(const QList<TransferHistoryItem> &items)
         foreach (const TransferHistoryItem &item, items) {
             QVariantMap itemMap;
             itemMap.insert("dest", item.dest());
-            itemMap.insert("state", QString::number(item.state()));
-            itemMap.insert("time", QString::number(item.dateTime().toTime_t()));
-            itemMap.insert("size", QString::number(item.size()));
+            itemMap.insert("state", item.state());
+            itemMap.insert("time", item.dateTime().toTime_t());
+            itemMap.insert("size", item.size());
 
             dbMap.insert(item.source(), itemMap);
             m_dbDoc = QJsonDocument::fromVariant(dbMap);
