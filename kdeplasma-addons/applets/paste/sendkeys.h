@@ -18,28 +18,13 @@
 #ifndef SENDKEYS_HEADER
 #define SENDKEYS_HEADER
 
-#include <QtGlobal>
-
-#include <QString>
 #include <QKeySequence>
 
 class SendKeys
 {
-    public:
-        static SendKeys &self();
-
-        void send(const QString &string);
-        void send(uint k);
-        void send(const QKeySequence &ks);
-        SendKeys &operator<<(const QString &string);
-        SendKeys &operator<<(uint k);
-        SendKeys &operator<<(const QKeySequence &ks);
-
-    private:
-        SendKeys();
-        ~SendKeys();
-
-        class SendKeysPrivate *const d;
+public:
+    static void send(const QKeySequence &ks);
+    static void send(uint k);
 };
 
 #endif

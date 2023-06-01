@@ -16,7 +16,6 @@
  */
 
 #include "paste.h"
-#include "sendkeys.h"
 #include "list.h"
 #include "snippetconfig.h"
 #include "autopasteconfig.h"

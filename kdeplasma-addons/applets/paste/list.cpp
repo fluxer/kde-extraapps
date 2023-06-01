@@ -128,7 +128,7 @@ void ListForm::clicked(const QModelIndex &index)
 
 void ListForm::paste()
 {
-    SendKeys::self() << m_pasteKey;
+    SendKeys::send(m_pasteKey);
 }
 
 void ListForm::themeChanged()
