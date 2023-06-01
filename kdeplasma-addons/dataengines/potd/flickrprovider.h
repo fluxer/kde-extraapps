@@ -33,35 +33,34 @@
 class FlickrProvider : public PotdProvider
 {
     Q_OBJECT
+public:
+    /**
+        * Creates a new flickr provider.
+        *
+        * @param date The date for which the image shall be fetched.
+        * @param parent The parent object.
+        */
+    FlickrProvider(QObject *parent, const QVariantList &args);
 
-    public:
-        /**
-         * Creates a new flickr provider.
-         *
-         * @param date The date for which the image shall be fetched.
-         * @param parent The parent object.
-         */
-        FlickrProvider( QObject *parent, const QVariantList &args );
+    /**
+        * Destroys the flickr provider.
+        */
+    ~FlickrProvider();
 
-        /**
-         * Destroys the flickr provider.
-         */
-        ~FlickrProvider();
+    /**
+        * Returns the requested image.
+        *
+        * Note: This method returns only a valid image after the
+        *       finished() signal has been emitted.
+        */
+    virtual QImage image() const;
 
-        /**
-         * Returns the requested image.
-         *
-         * Note: This method returns only a valid image after the
-         *       finished() signal has been emitted.
-         */
-        virtual QImage image() const;
+private:
+    class Private;
+    Private* const d;
 
-    private:
-      class Private;
-      Private* const d;
-
-      Q_PRIVATE_SLOT( d, void pageRequestFinished( KJob* ) )
-      Q_PRIVATE_SLOT( d, void imageRequestFinished( KJob* ) )
+    Q_PRIVATE_SLOT(d, void pageRequestFinished(KJob* ))
+    Q_PRIVATE_SLOT(d, void imageRequestFinished(KJob*))
 };
 
 #endif
