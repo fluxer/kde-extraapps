@@ -119,8 +119,8 @@ Item {
 
             function openProfile() {
                 var service = profilesSource.serviceForSource(model["DataEngineSource"])
-                var operation = service.operationDescription("open")
-                var job = service.startOperationCall(operation)
+                var operation = service.operationParameters("open")
+                var job = service.startOperationCall("open", operation)
             }
 
             PlasmaComponents.Label {

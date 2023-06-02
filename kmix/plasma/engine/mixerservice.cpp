@@ -26,7 +26,13 @@ MixerService::MixerService(QObject *parent, OrgKdeKMixControlInterface *iface)
     m_iface = iface;
 
     setName("mixer");
-    setDestination( "mixer" );
+    setOperationNames(
+        QStringList()
+            << "setVolume"
+            << "setMute"
+            << "setRecordSource"
+    );
+    setDestination("mixer");
 }
 
 OrgKdeKMixControlInterface* MixerService::iface()

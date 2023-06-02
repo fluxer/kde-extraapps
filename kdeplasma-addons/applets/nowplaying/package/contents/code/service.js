@@ -9,15 +9,15 @@ function associateItem(item, name)
 
 function callCommand(name)
 {
-    control.startOperationCall(control.operationDescription(name));
+    control.startOperationCall(name, control.operationParameters(name));
 }
 
 function seek(timeMs)
 {
-    var desc = control.operationDescription('SetPosition');
-    desc.microseconds = Math.floor(timeMs * 1000);
+    var desc = control.operationParameters('SetPosition');
+    desc["microseconds"] = Math.floor(timeMs * 1000);
     print("Seeking to " + timeMs + "ms");
-    control.startOperationCall(desc);
+    control.startOperationCall('SetPosition', desc);
 }
 
 // vi:sts=4:sw=4:et
