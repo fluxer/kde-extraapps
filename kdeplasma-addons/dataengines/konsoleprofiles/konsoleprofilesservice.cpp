@@ -29,7 +29,7 @@ KonsoleProfilesService::KonsoleProfilesService(QObject* parent, const QString& p
     setDestination(profileName);
 }
 
-Plasma::ServiceJob* KonsoleProfilesService::createJob(const QString& operation, QMap<QString,QVariant>& parameters)
+Plasma::ServiceJob* KonsoleProfilesService::createJob(const QString& operation, const QMap<QString,QVariant>& parameters)
 {
     return new ProfileJob(this, operation, parameters);
 }

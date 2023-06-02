@@ -21,50 +21,48 @@
 #include "mixerservice.h"
 
 MixerService::MixerService(QObject *parent, OrgKdeKMixControlInterface *iface)
-	: Plasma::Service( parent )
+    : Plasma::Service(parent)
 {
-	m_iface = iface;
+    m_iface = iface;
 
-	setName("mixer");
-	setDestination( "mixer" );
+    setName("mixer");
+    setDestination( "mixer" );
 }
 
 OrgKdeKMixControlInterface* MixerService::iface()
 {
-	return m_iface;
+    return m_iface;
 }
 
 Plasma::ServiceJob* MixerService::createJob(const QString& operation,
-											QMap<QString,QVariant>& parameters)
+                                            const QMap<QString,QVariant>& parameters)
 {
-	return new MixerJob( this, operation, parameters );
+    return new MixerJob(this, operation, parameters);
 }
 
-MixerJob::MixerJob( MixerService* service, const QString &operation,
-				QMap<QString,QVariant>& parameters )
-	: Plasma::ServiceJob(service->destination(), operation, parameters, service)
-	, m_service( service )
+MixerJob::MixerJob(MixerService* service, const QString &operation,
+                   const QMap<QString,QVariant>& parameters)
+    : Plasma::ServiceJob(service->destination(), operation, parameters, service),
+    m_service(service)
 {
 }
 
 void MixerJob::start()
 {
-	QString operation = operationName();
-	if ( operation == "setVolume" )	{
-		bool res = m_service->iface()->setProperty( "volume", parameters().value("level").toInt() );
-		setResult( res );
-		return;
-	} 
-	else if ( operation == "setMute" ) {
-		bool res = m_service->iface()->setProperty( "mute", parameters().value("muted").toBool() );
-		setResult( res );
-		return;
-	}
-	else if ( operation == "setRecordSource" ) {
-		bool res = m_service->iface()->setProperty( "recordSource", parameters().value("recordSource").toBool() );
-		setResult( res );
-		return;
-	}
+    const QString operation = operationName();
+    if (operation == "setVolume") {
+        bool res = m_service->iface()->setProperty("volume", parameters().value("level").toInt());
+        setResult( res );
+        return;
+    } else if (operation == "setMute") {
+        bool res = m_service->iface()->setProperty("mute", parameters().value("muted").toBool());
+        setResult( res );
+        return;
+    } else if (operation == "setRecordSource") {
+        bool res = m_service->iface()->setProperty("recordSource", parameters().value("recordSource").toBool());
+        setResult( res );
+        return;
+    }
 }
 
 #include "moc_mixerservice.cpp"

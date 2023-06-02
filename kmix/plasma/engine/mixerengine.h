@@ -36,68 +36,70 @@ class OrgKdeKMixMixerInterface;
 class OrgKdeKMixControlInterface;
 
 struct ControlInfo {
-	QString mixerId;
-	QString id;
-	QString dbusPath;
-	bool unused;
-	bool updateRequired;
-	OrgKdeKMixControlInterface *iface;
+    QString mixerId;
+    QString id;
+    QString dbusPath;
+    bool unused;
+    bool updateRequired;
+    OrgKdeKMixControlInterface *iface;
 };
 
 struct MixerInfo {
-	QString id;
-	QString dbusPath;
-	bool unused;
-	bool updateRequired;
-	bool connected;
-	OrgKdeKMixMixerInterface *iface;
+    QString id;
+    QString dbusPath;
+    bool unused;
+    bool updateRequired;
+    bool connected;
+    OrgKdeKMixMixerInterface *iface;
 };
 
-class MixerEngine : public Plasma::DataEngine,
-					protected QDBusContext
+class MixerEngine : public Plasma::DataEngine, protected QDBusContext
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	MixerEngine(QObject* parent, const QVariantList& args);
-	~MixerEngine();
+    MixerEngine(QObject* parent, const QVariantList& args);
+    ~MixerEngine();
 
-	QStringList sources() const;
+    QStringList sources() const;
 
-	void init();
-	Plasma::Service* serviceForSource(const QString& source);
+    void init();
+    Plasma::Service* serviceForSource(const QString& source);
+
 protected:
-	bool sourceRequestEvent( const QString &name );
-	bool updateSourceEvent( const QString &name );
+    bool sourceRequestEvent(const QString &name);
+    bool updateSourceEvent(const QString &name);
+
 private:
-	static const QString KMIX_DBUS_SERVICE;
-	static const QString KMIX_DBUS_PATH;
-	QDBusConnectionInterface *interface;
-	QDBusServiceWatcher *watcher;
-	OrgKdeKMixMixSetInterface *m_kmix;
-	// Keys are mixers DBus paths
-	QHash<QString,MixerInfo*> m_mixers;
-	// Keys are mixerIds for control
-	QMultiHash<QString,ControlInfo*> m_controls;
+    static const QString KMIX_DBUS_SERVICE;
+    static const QString KMIX_DBUS_PATH;
+    QDBusConnectionInterface *interface;
+    QDBusServiceWatcher *watcher;
+    OrgKdeKMixMixSetInterface *m_kmix;
+    // Keys are mixers DBus paths
+    QHash<QString,MixerInfo*> m_mixers;
+    // Keys are mixerIds for control
+    QMultiHash<QString,ControlInfo*> m_controls;
 
-	MixerInfo* createMixerInfo( const QString& dbusPath );
-	ControlInfo* createControlInfo( const QString& mixerId, const QString& dbusPath );
+    MixerInfo* createMixerInfo(const QString& dbusPath);
+    ControlInfo* createControlInfo(const QString& mixerId, const QString& dbusPath);
 
-	void clearInternalData(bool removeSources);
-	bool getMixersData();
-	bool getMixerData( const QString& source );
-	bool getControlData( const QString& source );
-	void setControlData( ControlInfo *ci );
+    void clearInternalData(bool removeSources);
+    bool getMixersData();
+    bool getMixerData(const QString& source);
+    bool getControlData(const QString& source);
+    void setControlData(ControlInfo *ci);
+
 private slots:
-	void getInternalData();
-	void updateInternalMixersData();
-	void slotServiceRegistered( const QString &serviceName );
-	void slotServiceUnregistered( const QString &serviceName );
+    void getInternalData();
+    void updateInternalMixersData();
+    void slotServiceRegistered(const QString &serviceName);
+    void slotServiceUnregistered(const QString &serviceName);
 
-	void slotMixersChanged();
-	void slotMasterChanged();
-	void slotControlChanged();
-	void slotControlsReconfigured();
+    void slotMixersChanged();
+    void slotMasterChanged();
+    void slotControlChanged();
+    void slotControlsReconfigured();
 };
 
 #endif /* MIXER_ENGINE_H */

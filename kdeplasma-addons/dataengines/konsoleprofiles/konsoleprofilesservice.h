@@ -30,7 +30,7 @@ public:
     KonsoleProfilesService(QObject* parent, const QString& profileName);
 
 protected:
-    Plasma::ServiceJob* createJob(const QString& operation, QMap<QString,QVariant>& parameters);
+    Plasma::ServiceJob* createJob(const QString& operation, const QMap<QString,QVariant>& parameters);
 };
 
 class ProfileJob : public Plasma::ServiceJob

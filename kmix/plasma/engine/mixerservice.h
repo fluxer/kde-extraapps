@@ -28,26 +28,26 @@
 //
 class MixerService : public Plasma::Service
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	MixerService( QObject *parent, OrgKdeKMixControlInterface *iface );
-	OrgKdeKMixControlInterface* iface();
+    MixerService(QObject *parent, OrgKdeKMixControlInterface *iface);
+    OrgKdeKMixControlInterface* iface();
 protected:
-	Plasma::ServiceJob* createJob(const QString& operation,
-								QMap<QString,QVariant>& parameters);
-	OrgKdeKMixControlInterface* m_iface;
+    Plasma::ServiceJob* createJob(const QString& operation,
+                                  const QMap<QString,QVariant>& parameters);
+    OrgKdeKMixControlInterface* m_iface;
 };
 
 //
 class MixerJob : public Plasma::ServiceJob
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	MixerJob( MixerService *parent, const QString &operation,
-			QMap<QString,QVariant>& parameters );
-	void start();
+    MixerJob(MixerService *parent, const QString &operation,
+             const QMap<QString,QVariant>& parameters);
+    void start();
 private:
-	MixerService *m_service;
+    MixerService *m_service;
 };
 
 #endif /* MIXERSERVICE_H */
