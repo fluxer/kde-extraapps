@@ -8,7 +8,6 @@ set(kerfuffle_SRCS
     adddialog.cpp
     queries.cpp
     addtoarchive.cpp
-    cliinterface.cpp
     extractiondialog.ui
     adddialog.ui
 )

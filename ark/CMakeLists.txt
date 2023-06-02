@@ -44,12 +44,6 @@ set_package_properties(LibLZMA PROPERTIES
     PURPOSE "Required for the .xz and .lzma format support in Ark"
 )
 
-find_program(RAR_AND_UNRAR_EXECUTABLE unrar rar)
-add_feature_info(rar_and_unrar
-    RAR_AND_UNRAR_EXECUTABLE
-    "RAR write support in Ark"
-)
-
 add_definitions(-DQT_NO_CAST_FROM_ASCII)
 include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_BINARY_DIR})
 
