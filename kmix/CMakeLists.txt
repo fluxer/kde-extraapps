@@ -16,6 +16,12 @@ set_package_properties(ALSA PROPERTIES
     PURPOSE "Needed for KMix sound feedback"
 )
 
+configure_file(
+    apps/kmixremote.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/kmixremote
+    @ONLY
+)
+
 # NetBSD
 find_library(LIBOSSAUDIO_LIBRARY NAMES ossaudio)
 
@@ -211,7 +217,7 @@ install(
 )
 
 install(PROGRAMS kmix.desktop DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR})
-install(PROGRAMS apps/kmixremote DESTINATION ${KDE4_BIN_INSTALL_DIR})
+install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/kmixremote DESTINATION ${KDE4_BIN_INSTALL_DIR})
 install(FILES restore_kmix_volumes.desktop DESTINATION ${KDE4_AUTOSTART_INSTALL_DIR})
 install(FILES kmix_autostart.desktop  DESTINATION ${KDE4_AUTOSTART_INSTALL_DIR})
 install(FILES kmixui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/kmix)

@@ -50,8 +50,9 @@ listControls()
 
 command=""
 
-if type qdbus-katie >/dev/null  2>&1 ; then
-  qdbusbin="qdbus-katie"
+qdbuskatie="$(basename @QT_QDBUS_EXECUTABLE@)"
+if type $qdbuskatie >/dev/null  2>&1 ; then
+  qdbusbin="$qdbuskatie"
 elif type qdbus >/dev/null  2>&1 ; then
   qdbusbin="qdbus"
 else
