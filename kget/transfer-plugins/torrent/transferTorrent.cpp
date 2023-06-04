@@ -385,9 +385,8 @@ Qt::ItemFlags TorrentFileModel::flags(const QModelIndex &index) const
 }
 
 TransferTorrent::TransferTorrent(TransferGroup* parent, TransferFactory* factory,
-                                 Scheduler* scheduler, const KUrl &source, const KUrl &dest,
-                                 const QDomElement* e)
-    : Transfer(parent, factory, scheduler, source, dest, e),
+                                 Scheduler* scheduler, const KUrl &source, const KUrl &dest)
+    : Transfer(parent, factory, scheduler, source, dest),
     m_startonload(false), m_polltimerid(0), m_resumetimerid(0), m_ltsession(nullptr),
     m_filemodel(nullptr), m_dirwatch(nullptr)
 {

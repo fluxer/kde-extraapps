@@ -25,14 +25,12 @@ TransferFactory::TransferFactory(QObject *parent, const QVariantList &args)
 
 Transfer * TransferFactory::createTransfer(const KUrl &srcUrl, const KUrl &destUrl,
                                                TransferGroup * parent,
-                                               Scheduler * scheduler,
-                                               const QDomElement * n)
+                                               Scheduler * scheduler)
 {
     Q_UNUSED(srcUrl)
     Q_UNUSED(destUrl)
     Q_UNUSED(parent)
     Q_UNUSED(scheduler)
-    Q_UNUSED(n)
     return 0;
 }
 

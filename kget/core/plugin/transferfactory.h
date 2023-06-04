@@ -57,8 +57,7 @@ class KGET_EXPORT TransferFactory : public KGetPlugin
 
         virtual Transfer * createTransfer( const KUrl &srcUrl, const KUrl &destUrl,
                                            TransferGroup * parent,
-                                           Scheduler * scheduler,
-                                           const QDomElement * n = 0 );
+                                           Scheduler * scheduler);
 
         virtual TransferHandler * createTransferHandler(Transfer * transfer,
                                                         Scheduler * scheduler);

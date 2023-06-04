@@ -38,8 +38,7 @@ class TransferTorrent : public Transfer
     // Transfer reimplementations
 public:
     TransferTorrent(TransferGroup* parent, TransferFactory* factory,
-                    Scheduler* scheduler, const KUrl &src, const KUrl &dest,
-                    const QDomElement* e = 0);
+                    Scheduler* scheduler, const KUrl &src, const KUrl &dest);
     ~TransferTorrent();
 
 public:

@@ -37,12 +37,11 @@ TransferTorrentFactory::~TransferTorrentFactory()
 
 Transfer* TransferTorrentFactory::createTransfer(const KUrl &srcUrl, const KUrl &destUrl,
                                                  TransferGroup* parent,
-                                                 Scheduler* scheduler, 
-                                                 const QDomElement* e)
+                                                 Scheduler* scheduler)
 {
     kDebug(5001) << "TransferTorrentFactory::createTransfer";
     if (isSupported(srcUrl)) {
-        return new TransferTorrent(parent, this, scheduler, srcUrl, destUrl, e);
+        return new TransferTorrent(parent, this, scheduler, srcUrl, destUrl);
     }
     return nullptr;
 }

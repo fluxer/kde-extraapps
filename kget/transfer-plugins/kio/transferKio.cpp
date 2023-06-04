@@ -24,9 +24,8 @@
 #include <KDebug>
 
 TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
-                         Scheduler * scheduler, const KUrl & source, const KUrl & dest,
-                         const QDomElement * e)
-    : Transfer(parent, factory, scheduler, source, dest, e),
+                         Scheduler * scheduler, const KUrl & source, const KUrl & dest)
+    : Transfer(parent, factory, scheduler, source, dest),
       m_copyjob(nullptr),
       m_verifier(nullptr),
       m_filemodel(nullptr)

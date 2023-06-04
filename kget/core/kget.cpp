@@ -858,7 +858,7 @@ QList<TransferHandler*> KGet::createTransfers(const QList<TransferData> &dataIte
         Transfer *newTransfer = 0;
         foreach (TransferFactory *factory, m_transferFactories) {
             kDebug(5001) << "Trying plugin   n.plugins=" << m_transferFactories.size();
-            if ((newTransfer = factory->createTransfer(data.src, data.dest, group, m_scheduler, data.e))) {
+            if ((newTransfer = factory->createTransfer(data.src, data.dest, group, m_scheduler))) {
     //             kDebug(5001) << "KGet::createTransfer   ->   CREATING NEW TRANSFER ON GROUP: _" << group->name() << "_";
                 newTransfer->create();
                 newTransfer->load(data.e);

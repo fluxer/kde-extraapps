@@ -97,8 +97,7 @@ class KGET_EXPORT Transfer : public Job
         Q_DECLARE_FLAGS(DeleteOptions, DeleteOption)
 
         Transfer(TransferGroup * parent, TransferFactory * factory,
-                 Scheduler * scheduler, const KUrl & src, const KUrl & dest,
-                 const QDomElement * e = 0);
+                 Scheduler * scheduler, const KUrl & src, const KUrl & dest);
 
         virtual ~Transfer();
 

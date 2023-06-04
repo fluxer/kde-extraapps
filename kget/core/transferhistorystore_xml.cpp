@@ -106,8 +106,7 @@ void XmlStore::DeleteThread::run()
 
         if(QString::compare(element.attribute("Source"), m_item.source()) == 0) {
             root.removeChild(element);
-        }
-        else {
+        } else {
             TransferHistoryItem item;
             item.setDest(element.attribute("Dest"));
             item.setSource(element.attribute("Source"));

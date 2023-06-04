@@ -21,8 +21,8 @@
 
 MmsTransfer::MmsTransfer(TransferGroup * parent, TransferFactory * factory,
                         Scheduler * scheduler, const KUrl & source, const
-                        KUrl &dest, const QDomElement * e)
-    : Transfer(parent, factory, scheduler, source, dest, e),
+                        KUrl &dest)
+    : Transfer(parent, factory, scheduler, source, dest),
     m_mmsdownload(NULL),
     m_amountThreads(MmsSettings::threads()),
     m_retryDownload(false)

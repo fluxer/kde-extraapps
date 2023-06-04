@@ -42,8 +42,7 @@ const StatusStrings STATUSTEXTS[] = {
 const QStringList STATUSICONS = QStringList() << "media-playback-start" << "view-history" << "process-stop" << "dialog-error" << "dialog-ok" << "media-playback-start" << "media-playback-pause";
 
 Transfer::Transfer(TransferGroup * parent, TransferFactory * factory,
-                   Scheduler * scheduler, const KUrl & source, const KUrl & dest,
-                   const QDomElement * e)
+                   Scheduler * scheduler, const KUrl & source, const KUrl & dest)
     : Job(scheduler, parent),
       m_source(source), m_dest(dest),
       m_totalSize(0), m_downloadedSize(0), m_uploadedSize(0),
@@ -52,7 +51,6 @@ Transfer::Transfer(TransferGroup * parent, TransferFactory * factory,
       m_capabilities(0), m_visibleUploadLimit(0), m_visibleDownloadLimit(0),
       m_ratio(0), m_handler(0), m_factory(factory)
 {
-    Q_UNUSED(e)
 }
 
 Transfer::~Transfer()

@@ -35,8 +35,7 @@ class MmsTransferFactory : public TransferFactory
         ~MmsTransferFactory();
 
         Transfer * createTransfer( const KUrl &srcUrl, const KUrl &destUrl,
-                                   TransferGroup * parent, Scheduler * scheduler,
-                                   const QDomElement * e = 0 );
+                                   TransferGroup * parent, Scheduler * scheduler);
 
         bool isSupported(const KUrl &url) const;
 };

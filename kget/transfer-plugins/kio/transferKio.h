@@ -28,8 +28,7 @@ class TransferKio : public Transfer
     Q_OBJECT
 public:
     TransferKio(TransferGroup * parent, TransferFactory * factory,
-                Scheduler * scheduler, const KUrl & src, const KUrl & dest,
-                const QDomElement * e = 0);
+                Scheduler * scheduler, const KUrl & src, const KUrl & dest);
 
     // --- Job virtual functions ---
     void start() final;

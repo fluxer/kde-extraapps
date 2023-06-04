@@ -34,15 +34,14 @@ MmsTransferFactory::~MmsTransferFactory()
 
 Transfer * MmsTransferFactory::createTransfer( const KUrl &srcUrl, const KUrl &destUrl,
                                                TransferGroup * parent,
-                                               Scheduler * scheduler, 
-                                               const QDomElement * e )
+                                               Scheduler * scheduler)
 {
     kDebug(5001) << "MmsTransferFactory::createTransfer";
 
     QString prot = srcUrl.protocol();
     kDebug(5001) << "Protocol = " << prot;
     if (prot == "mms" || prot == "mmsh") {
-        return new MmsTransfer(parent, this, scheduler, srcUrl, destUrl, e);
+        return new MmsTransfer(parent, this, scheduler, srcUrl, destUrl);
     }
     return 0;
 }

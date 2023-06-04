@@ -30,14 +30,12 @@ TransferKioFactory::~TransferKioFactory()
 
 Transfer * TransferKioFactory::createTransfer( const KUrl &srcUrl, const KUrl &destUrl,
                                                TransferGroup * parent,
-                                               Scheduler * scheduler, 
-                                               const QDomElement * e )
+                                               Scheduler * scheduler)
 {
     kDebug(5001) << "TransferKioFactory::createTransfer";
 
-    if (isSupported(srcUrl))
-    {
-        return new TransferKio(parent, this, scheduler, srcUrl, destUrl, e);
+    if (isSupported(srcUrl)) {
+        return new TransferKio(parent, this, scheduler, srcUrl, destUrl);
     }
     return 0;
 }
