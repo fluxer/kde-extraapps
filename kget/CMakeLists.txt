@@ -203,6 +203,13 @@ set(kget_SRCS ${kget_adaptor_SRCS} ${kget_transfer_adaptor_SRCS}
    ui/verificationadddlg.ui
 )
 
+if(KGET_TESTING)
+    set(kget_SRCS
+        ${kget_SRCS}
+        tests/testkget.cpp
+    )
+endif()
+
 qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h DBusKGetWrapper)
 
 add_executable(kget ${kget_SRCS})
