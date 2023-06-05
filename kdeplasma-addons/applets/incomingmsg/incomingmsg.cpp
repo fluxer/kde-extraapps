@@ -51,15 +51,14 @@
 IncomingMsg::IncomingMsg(QObject *parent, const QVariantList &args)
         : Plasma::Applet(parent, args),
           mEvolutionLabel(0), mEvolutionIconLabel(0),
-          mKMailLabel(0), mKMailIconLabel(0),
           mXChatLabel(0), mXChatIconLabel(0),
           mKopeteLabel(0), mKopeteIconLabel(0),
           mPidginLabel(0), mPidginIconLabel(0),
           mQutIMLabel(0), mQutIMIconLabel(0),
           mErrorLabel(0), mLayout(0),
-          mEvolutionLayout(0), mKMailLayout(0),
-          mXChatLayout(0), mKopeteLayout(0),
-          mPidginLayout(0), mQutIMLayout(0),
+          mEvolutionLayout(0), mXChatLayout(0),
+          mKopeteLayout(0), mPidginLayout(0),
+          mQutIMLayout(0),
           mQutIUnreadCount(0)
 {
     // this will get us the standard applet background, for free!
@@ -69,10 +68,6 @@ IncomingMsg::IncomingMsg(QObject *parent, const QVariantList &args)
 
 IncomingMsg::~IncomingMsg()
 {
-    delete mKMailLayout;
-    delete mKMailIconLabel;
-    delete mKMailLabel;
-
     delete mXChatLayout;
     delete mXChatIconLabel;
     delete mXChatLabel;
@@ -103,7 +98,6 @@ void IncomingMsg::init()
 void IncomingMsg::configChanged()
 {
     KConfigGroup cg = config();
-    mShowKMail = cg.readEntry("showKMail", true);
     mShowXChat = cg.readEntry("showXChat", true);
     mShowKopete = cg.readEntry("showKopete", true);
     mShowPidgin = cg.readEntry("showPidgin", true);
@@ -147,45 +141,6 @@ void IncomingMsg::initEvolutionLayout()
 //            mLayout->addItem(mEvolutionLayout);
 //        }
 //    }
-}
-
-void IncomingMsg::initKMailLayout()
-{
-    /* test for the kmail dbus interface */
-    if (mShowKMail) {
-        QDBusInterface kmailDBusTest("org.kde.kmail", "/KMail", "org.freedesktop.DBus.Introspectable");
-        QDBusReply<QString>kmailReply = kmailDBusTest.call("Introspect");
-        if (!kmailReply.isValid())
-            kDebug() << "KMail DBus interface test error: " << kmailReply.error();
-        else {
-            QDBusConnection mDBus = QDBusConnection::sessionBus();
-
-            if (!mDBus.connect("org.kde.kmail", "/KMail", "org.kde.kmail.kmail",
-                               "unreadCountChanged",
-                               this, SLOT(slotNewKMailMail())))
-                kDebug() << "Could not connect KMail to slot.";
-            else {
-                mKMailLayout = new QGraphicsLinearLayout(Qt::Horizontal);
-                mKMailLabel = new Plasma::Label(this);
-                mKMailLabel->setText(i18n("No new mail."));
-                KIcon icon("kmail");
-                mKMailIconLabel = new Plasma::Label(this);
-                mKMailIconLabel->setMinimumWidth(32);
-                mKMailIconLabel->setMinimumHeight(32);
-                KIconEffect effect;
-                mKMailIconLabel->nativeWidget()->setPixmap(effect.apply(icon.pixmap(32, 32),
-                                                                        KIconEffect::ToGray, 1,
-                                                                        QColor(), QColor(), true)
-                                                           );
-
-                mKMailLayout->addItem(mKMailIconLabel);
-                mKMailLayout->addItem(mKMailLabel);
-                mKMailLayout->setAlignment(mKMailLabel, Qt::AlignLeft);
-
-                mLayout->addItem(mKMailLayout);
-            }
-        }
-    }
 }
 
 void IncomingMsg::initXChatLayout()
@@ -369,13 +324,6 @@ void IncomingMsg::updateQutIMStatus(bool saveIcon)
 
 void IncomingMsg::clearLayout()
 {
-    delete mKMailLayout;
-    mKMailLayout = NULL;
-    delete mKMailIconLabel;
-    mKMailIconLabel = NULL;
-    delete mKMailLabel;
-    mKMailLabel = NULL;
-
     delete mXChatLayout;
     mXChatLayout = NULL;
     delete mXChatIconLabel;
@@ -415,7 +363,6 @@ void IncomingMsg::initLayout()
     mLayout = new QGraphicsLinearLayout(Qt::Vertical);
 
     //initEvolutionLayout();
-    initKMailLayout();
     initXChatLayout();
     initKopeteLayout();
     initPidginLayout();
@@ -423,8 +370,8 @@ void IncomingMsg::initLayout()
 
     if (!mLayout->count()) {
         mErrorLabel = new Plasma::Label();
-        mErrorLabel->setText(i18n("No running messaging apps found. Supported apps are %1, %2, %3, %4, %5.",
-                                  QString("KMail"), QString("XChat"), QString("Kopete"),
+        mErrorLabel->setText(i18n("No running messaging apps found. Supported apps are %1, %2, %3, %4.",
+                                  QString("XChat"), QString("Kopete"),
                                   QString("Pidgin"), QString("qutIM")));
         mLayout->addItem(mErrorLabel);
     }
@@ -438,7 +385,6 @@ void IncomingMsg::createConfigurationInterface(KConfigDialog *dialog)
     ui.setupUi(widget);
 
     KConfigGroup cg = config();
-    ui.showKMail->setChecked(cg.readEntry("showKMail", true));
     ui.showXChat->setChecked(cg.readEntry("showXChat", true));
     ui.showKopete->setChecked(cg.readEntry("showKopete", true));
     ui.showPidgin->setChecked(cg.readEntry("showPidgin", true));
@@ -449,7 +395,6 @@ void IncomingMsg::createConfigurationInterface(KConfigDialog *dialog)
 
     dialog->addPage(widget, i18n("General"), icon());
     
-    connect(ui.showKMail, SIGNAL(toggled(bool)), dialog, SLOT(settingsModified()));
     connect(ui.showKopete, SIGNAL(toggled(bool)), dialog, SLOT(settingsModified()));
     connect(ui.showPidgin, SIGNAL(toggled(bool)), dialog, SLOT(settingsModified()));
     connect(ui.showQutIM, SIGNAL(toggled(bool)), dialog, SLOT(settingsModified()));
@@ -459,14 +404,12 @@ void IncomingMsg::createConfigurationInterface(KConfigDialog *dialog)
 
 void IncomingMsg::configAccepted()
 {
-    mShowKMail = ui.showKMail->isChecked();
     mShowXChat = ui.showXChat->isChecked();
     mShowKopete = ui.showKopete->isChecked();
     mShowPidgin = ui.showPidgin->isChecked();
     mShowQutIM = ui.showQutIM->isChecked();
 
     KConfigGroup cg = config();
-    cg.writeEntry("showKMail", ui.showKMail->isChecked());
     cg.writeEntry("showXChat", ui.showXChat->isChecked());
     cg.writeEntry("showKopete", ui.showKopete->isChecked());
     cg.writeEntry("showPidgin", ui.showPidgin->isChecked());
@@ -482,15 +425,6 @@ void IncomingMsg::slotNewEvolutionMail()
         KIcon icon("evolution");
         mEvolutionIconLabel->nativeWidget()->setPixmap(icon.pixmap(32, 32));
         mEvolutionLabel->setText(i18n("Your Evolution mail count has changed."));
-    }
-}
-
-void IncomingMsg::slotNewKMailMail()
-{
-    if (mKMailIconLabel) {
-        KIcon icon("kmail");
-        mKMailIconLabel->nativeWidget()->setPixmap(icon.pixmap(32, 32));
-        mKMailLabel->setText(i18n("Your KMail mail count has changed."));
     }
 }
 

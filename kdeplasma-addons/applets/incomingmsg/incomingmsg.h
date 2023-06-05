@@ -52,7 +52,6 @@ protected:
     void createConfigurationInterface(KConfigDialog *parent);
 
     void initEvolutionLayout();
-    void initKMailLayout();
     void initXChatLayout();
     void initKopeteLayout();
     void initPidginLayout();
@@ -71,16 +70,16 @@ private:
 
     // text labels
     Plasma::Label *mEvolutionLabel, *mEvolutionIconLabel,
-        *mKMailLabel, *mKMailIconLabel, *mXChatLabel,
+        *mXChatLabel,
         *mXChatIconLabel, *mKopeteLabel, *mKopeteIconLabel,
         *mPidginLabel, *mPidginIconLabel, *mQutIMLabel,
         *mQutIMIconLabel, *mErrorLabel;
 
     QGraphicsLinearLayout *mLayout, *mEvolutionLayout,
-        *mKMailLayout, *mXChatLayout, *mKopeteLayout,
-        *mPidginLayout, *mQutIMLayout;
+        *mXChatLayout, *mKopeteLayout, *mPidginLayout,
+        *mQutIMLayout;
 
-    bool mShowKMail, mShowXChat, mShowKopete, mShowPidgin, mShowQutIM;
+    bool mShowXChat, mShowKopete, mShowPidgin, mShowQutIM;
     
     QHash<QString, int> mQutIMUnread;
     int mQutIUnreadCount;
@@ -89,7 +88,6 @@ private:
 
 private slots:
     void slotNewEvolutionMail();
-    void slotNewKMailMail();
     void slotNewPidginIM();
     void slotNewKopeteIM(const QString&);
     void slotNewXChatIM();
