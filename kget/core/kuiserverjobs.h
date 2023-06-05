@@ -17,7 +17,6 @@
 #include "transfer.h"
 
 #include <kio/job.h>
-#include <kio/filejob.h>
 
 #include <QObject>
 #include <QList>
