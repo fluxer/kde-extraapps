@@ -118,9 +118,7 @@ void MmsDownload::startTransfer()
 
 void MmsDownload::slotSpeedChanged()
 {
-    /** Using the same speed calculating datasourcefactory uses (use all downloaded data 
-     * of the last 10 secs)
-     */
+    /** use all downloaded data of the last 10 secs) */
     qulonglong speed;
     if (m_prevDownloadedSizes.size()) {
         speed = (m_downloadedSize - m_prevDownloadedSizes.first()) / (SPEEDTIMER *
