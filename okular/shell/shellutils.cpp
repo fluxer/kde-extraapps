@@ -55,11 +55,11 @@ KUrl urlFromArg( const QString& _arg, FileExistFunc exist_func, const QString& p
     if ( sharpPos != -1 )
     {
       url = KCmdLineArgs::makeURL( arg.left( sharpPos ).toUtf8() );
-      url.setHTMLRef( arg.mid( sharpPos + 1 ) );
+      url.setFragment( arg.mid( sharpPos + 1 ) );
     }
     else if ( !pageArg.isEmpty() )
     {
-      url.setHTMLRef( pageArg );
+      url.setFragment( pageArg );
     }
     return url;
 }

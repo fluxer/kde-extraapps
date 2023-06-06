@@ -136,7 +136,7 @@ void PartTest::testFowardPDF()
     part.closeUrl();
     
     KUrl u(pdfResult);
-    u.setHTMLRef("src:100" + texDestination);
+    u.setFragment("src:100" + texDestination);
     part.openUrl(u);
     QCOMPARE(part.m_document->currentPage(), 1u);
 #endif

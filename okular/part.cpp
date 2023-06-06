@@ -942,10 +942,10 @@ void Part::openUrlFromDocument(const KUrl &url)
 void Part::openUrlFromBookmarks(const KUrl &_url)
 {
     KUrl url = _url;
-    Okular::DocumentViewport vp( _url.htmlRef() );
+    Okular::DocumentViewport vp( _url.fragment() );
     if ( vp.isValid() )
         m_document->setNextDocumentViewport( vp );
-    url.setHTMLRef( QString() );
+    url.setFragment( QString() );
     if ( m_document->currentDocument() == url )
     {
         if ( vp.isValid() )
@@ -1416,9 +1416,9 @@ bool Part::openUrl(const KUrl &_url)
         return false;
 
     KUrl url( _url );
-    if ( url.hasHTMLRef() )
+    if ( url.hasRef() )
     {
-        const QString dest = url.htmlRef();
+        const QString dest = url.fragment();
         bool ok = true;
         const int page = dest.toInt( &ok );
         if ( ok )
@@ -1434,7 +1434,7 @@ bool Part::openUrl(const KUrl &_url)
         {
             m_document->setNextDocumentDestination( dest );
         }
-        url.setHTMLRef( QString() );
+        url.setFragment( QString() );
     }
 
     // this calls in sequence the 'closeUrl' and 'openFile' methods
@@ -2033,7 +2033,7 @@ void Part::slotPreviousBookmark()
 
     if ( !bookmark.isNull() )
     {
-        DocumentViewport vp( bookmark.url().htmlRef() );
+        DocumentViewport vp( bookmark.url().fragment() );
         m_document->setViewport( vp );
     }
 }
@@ -2045,7 +2045,7 @@ void Part::slotNextBookmark()
 
     if ( !bookmark.isNull() )
     {
-        DocumentViewport vp( bookmark.url().htmlRef() );
+        DocumentViewport vp( bookmark.url().fragment() );
         m_document->setViewport( vp );
     }
 }
