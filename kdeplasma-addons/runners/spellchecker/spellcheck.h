@@ -23,6 +23,7 @@
 
 #include <plasma/abstractrunner.h>
 #include <QSharedPointer>
+#include <QMutex>
 
 /**
  * This checks the spelling of query
