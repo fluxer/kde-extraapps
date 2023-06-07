@@ -164,7 +164,7 @@ void bballApplet::mousePressEvent(QGraphicsSceneMouseEvent * event)
 
     // reset timing
     m_timer.stop();
-    m_time = QTime();
+    m_time.invalidate();
     update();
 
     // reset physics
@@ -310,7 +310,7 @@ void bballApplet::configChanged()
 void bballApplet::updatePhysics()
 {
     // find out the delta-time since the last call
-    if (m_time.isNull())
+    if (!m_time.isValid())
         m_time.start();
     qreal dT = qMin((qreal)m_time.restart() / 1000.0, 0.5);
 

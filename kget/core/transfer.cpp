@@ -23,6 +23,15 @@
 #include <QtXml/qdom.h>
 #include <QtCore/qdatetime.h>
 
+// FIXME: this is jumpy
+static int elapsedSecs(const QTime &time)
+{
+    const int msecs = time.msecsTo(QTime::currentTime());
+    if (msecs <= 0) {
+        return 0;
+    }
+    return (msecs / 1000);
+}
 
 struct StatusStrings
 {
@@ -94,7 +103,7 @@ bool Transfer::setDirectory(const KUrl& newDirectory)
 int Transfer::elapsedTime() const
 {
     if (status() == Job::Running)
-        return m_runningTime.elapsed() / 1000;
+        return elapsedSecs(m_runningTime);
 
     return m_runningSeconds;
 }
@@ -219,7 +228,7 @@ void Transfer::save(const QDomElement &element)
     e.setAttribute("UploadedSize", m_uploadedSize);
     e.setAttribute("DownloadLimit", m_visibleDownloadLimit);
     e.setAttribute("UploadLimit", m_visibleUploadLimit);
-    e.setAttribute("ElapsedTime", status() == Job::Running ? m_runningTime.elapsed() / 1000 : m_runningSeconds);
+    e.setAttribute("ElapsedTime", status() == Job::Running ? elapsedSecs(m_runningTime) : m_runningSeconds);
     e.setAttribute("Policy", policy() == Job::Start ? "Start" : (policy() == Job::Stop ? "Stop" : "None"));
 }
 
@@ -290,11 +299,11 @@ void Transfer::setStatus(Job::Status jobStatus, const QString &text, const QPixm
 
     if (jobStatus == Job::Running && status() != Job::Running)
     {
-        m_runningTime.restart();
+        m_runningTime = QTime::currentTime();
         m_runningTime.addSecs(m_runningSeconds);
     }
     if (jobStatus != Job::Running && status() == Job::Running)
-        m_runningSeconds = m_runningTime.elapsed() / 1000;
+        m_runningSeconds = elapsedSecs(m_runningTime);
     /**
     * It's important to call job::setStatus AFTER having changed the 
     * icon or the text or whatever.

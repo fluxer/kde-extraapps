@@ -30,10 +30,10 @@
 // Own
 #include "taskmanager/taskgroup.h"
 
-// Qt
-#include <QtCore/qdatetime.h>
+// Katie
+#include <QElapsedTimer>
 #include <QIcon>
-#include <QtGui/qevent.h>
+#include <QGraphicsSceneDragDropEvent>
 #include <QGraphicsWidget>
 #include <QPropertyAnimation>
 
@@ -264,8 +264,8 @@ protected:
 private:
     QRectF m_activeRect;
 
-    QTime m_lastGeometryUpdate;
-    QTime m_lastUpdate;
+    QElapsedTimer m_lastGeometryUpdate;
+    QElapsedTimer m_lastUpdate;
     QSize m_lastIconSize;
     int m_activateTimerId;
     int m_updateGeometryTimerId;

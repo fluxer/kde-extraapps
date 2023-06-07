@@ -30,11 +30,11 @@
 #include <KAboutData>
 #include <KDebug>
 
-#include <QtCore/qdatetime.h>
+#include <QElapsedTimer>
 
 int main(int argc, char **argv)
 {
-    QTime startupTimer;
+    QElapsedTimer startupTimer;
     startupTimer.start();
     KAboutData aboutData("krdc", 0, ki18n("KRDC"), KDE_VERSION_STRING,
                          ki18n("KDE Remote Desktop Client"), KAboutData::License_GPL,

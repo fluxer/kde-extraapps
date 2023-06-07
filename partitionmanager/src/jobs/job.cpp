@@ -28,7 +28,7 @@
 #include "util/report.h"
 
 #include <QIcon>
-#include <QtCore/qdatetime.h>
+#include <QElapsedTimer>
 
 #include <kdebug.h>
 #include <klocale.h>
@@ -70,7 +70,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 	void* buffer = malloc(blockSize * source.sectorSize());
 	int percent = 0;
-	QTime t;
+	QElapsedTimer t;
 	t.start();
 
 	while (blocksCopied < blocksToCopy)

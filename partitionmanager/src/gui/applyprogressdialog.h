@@ -24,8 +24,11 @@
 #include <kdialog.h>
 
 #include <QTimer>
-#include <QtCore/qdatetime.h>
+#include <QElapsedTimer>
 #include <QString>
+#include <QTreeWidgetItem>
+#include <QCloseEvent>
+#include <QKeyEvent>
 
 class OperationRunner;
 class Operation;
@@ -33,11 +36,6 @@ class Job;
 class ApplyProgressDialogWidget;
 class ApplyProgressDetailsWidget;
 class Report;
-
-
-#include <QTreeWidgetItem>
-#include <QCloseEvent>
-#include <QKeyEvent>
 
 /** Show progress.
 
@@ -104,7 +102,7 @@ class ApplyProgressDialog : public KDialog
 
 		void allOpsDone(const QString& msg);
 
-		QTime& time() { return m_Time; }
+		QElapsedTimer& time() { return m_Time; }
 
 		QTimer& timer() { return m_Timer; }
 		const QTimer& timer() const { return m_Timer; }
@@ -129,7 +127,7 @@ class ApplyProgressDialog : public KDialog
 		Report* m_Report;
 		QString m_SavedParentTitle;
 		QTimer m_Timer;
-		QTime m_Time;
+		QElapsedTimer m_Time;
 		QTreeWidgetItem* m_CurrentOpItem;
 		QTreeWidgetItem* m_CurrentJobItem;
 		int m_LastReportUpdate;

@@ -25,6 +25,7 @@
 #include <qimage.h>
 #include <qpainter.h>
 #include <qtimer.h>
+#include <qelapsedtimer.h>
 #include <qset.h>
 #include <qscrollbar.h>
 #include <qtooltip.h>
@@ -148,7 +149,7 @@ public:
 
     // viewport move
     bool viewportMoveActive;
-    QTime viewportMoveTime;
+    QElapsedTimer viewportMoveTime;
     QPoint viewportMoveDest;
     int lastSourceLocationViewportPageNumber;
     double lastSourceLocationViewportNormalizedX;

@@ -23,7 +23,6 @@
 
 #include <QtCore/QBasicTimer>
 #include <QtCore/QElapsedTimer>
-#include <QtCore/QDateTime>
 #include <QtGui/QVector2D>
 #include <QGraphicsSceneMouseEvent>
 #include <QtDBus/QDBusInterface>
@@ -88,7 +87,7 @@ private:
 
     // status
     QBasicTimer m_timer;
-    QTime m_time;
+    QElapsedTimer m_time;
 
     QRectF m_screenRect;
 
