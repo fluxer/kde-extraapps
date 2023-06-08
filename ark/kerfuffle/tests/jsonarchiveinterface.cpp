@@ -28,11 +28,6 @@
 #include <kdebug.h>
 #include <qfile.h>
 
-#ifndef QT_KATIE
-#  include <qjson/parser.h>
-#endif
-
-
 JSONArchiveInterface::JSONArchiveInterface(QObject *parent, const QVariantList& args)
     : Kerfuffle::ReadWriteArchiveInterface(parent, args)
 {
