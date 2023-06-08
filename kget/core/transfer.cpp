@@ -86,9 +86,8 @@ void Transfer::destroy(DeleteOptions options)
 
 }
 
-void Transfer::init()//TODO think about e, maybe not have it at all in the constructor?
+void Transfer::init()
 {
-
 }
 
 
