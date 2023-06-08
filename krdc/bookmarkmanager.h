@@ -28,6 +28,7 @@
 
 #include <KBookmarkManager>
 
+class KMenu;
 class KActionCollection;
 class KBookmarkMenu;
 
