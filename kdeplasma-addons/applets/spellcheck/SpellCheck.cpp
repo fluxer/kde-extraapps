@@ -202,12 +202,8 @@ void SpellCheck::toggleDialog(bool pasteText, bool preferSelection)
         m_dictionaryComboBox = new KSpellDictionaryComboBox(m_spellingDialog);
         m_dictionaryComboBox->setToolTip(i18n("Language"));
 
-        KAction *spellingAction = new KAction(KIcon("tools-check-spelling"), i18n("Spell checking"), m_spellingDialog);
         KAction *copyAction = new KAction(KIcon("edit-copy"), i18n("Copy"), m_spellingDialog);
         KAction *closeAction = new KAction(KIcon("dialog-close"), i18n("Close"), m_spellingDialog);
-
-        QToolButton *spellingButton = new QToolButton(m_spellingDialog);
-        spellingButton->setDefaultAction(spellingAction);
 
         QToolButton *copyButton = new QToolButton(m_spellingDialog);
         copyButton->setDefaultAction(copyAction);
@@ -217,7 +213,6 @@ void SpellCheck::toggleDialog(bool pasteText, bool preferSelection)
 
         QHBoxLayout *horizontalLayout = new QHBoxLayout;
         horizontalLayout->addWidget(m_dictionaryComboBox);
-        horizontalLayout->addWidget(spellingButton);
         horizontalLayout->addWidget(copyButton);
         horizontalLayout->addWidget(closeButton);
 
@@ -230,7 +225,6 @@ void SpellCheck::toggleDialog(bool pasteText, bool preferSelection)
         configChanged();
 
         connect(m_spellingDialog, SIGNAL(dialogResized()), this, SLOT(dialogResized()));
-        connect(spellingAction, SIGNAL(triggered()), m_textEdit, SLOT(checkSpelling()));
         connect(copyAction, SIGNAL(triggered()), this, SLOT(copyToClipboard()));
         connect(closeAction, SIGNAL(triggered()), this, SLOT(toggleDialog()));
         connect(m_textEdit, SIGNAL(languageChanged(QString)), this, SLOT(setLanguage(QString)));
