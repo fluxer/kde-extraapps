@@ -19,7 +19,7 @@
 #ifndef SPELLCHECK_H
 #define SPELLCHECK_H
 
-#include <sonnet/speller.h>
+#include <kspeller.h>
 
 #include <plasma/abstractrunner.h>
 #include <QSharedPointer>
@@ -52,7 +52,7 @@ private:
     QString m_triggerWord;
     QMap<QString, QString> m_languages;//key=language name, value=language code
     bool m_requireTriggerWord;
-    QMap<QString, QSharedPointer<Sonnet::Speller> > m_spellers; //spellers
+    QMap<QString, QSharedPointer<KSpeller> > m_spellers; //spellers
     QMutex m_spellLock; //Lock held when constructing a new speller
 };
 

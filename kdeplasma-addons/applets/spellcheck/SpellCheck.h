@@ -29,8 +29,7 @@
 #include <Plasma/Applet>
 #include <Plasma/Dialog>
 
-#include <Sonnet/Highlighter>
-#include <Sonnet/DictionaryComboBox>
+#include <KSpellDictionaryComboBox>
 
 class SpellCheck : public Plasma::Applet
 {
@@ -62,7 +61,7 @@ protected slots:
 private:
     KTextEdit *m_textEdit;
     Plasma::Dialog *m_spellingDialog;
-    Sonnet::DictionaryComboBox *m_dictionaryComboBox;
+    KSpellDictionaryComboBox *m_dictionaryComboBox;
     int m_dragTimer;
 };
 

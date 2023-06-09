@@ -54,12 +54,12 @@ void SpellCheckRunner::loaddata()
 {
     //Load the default speller, with the default language
     if (!m_spellers.contains("")) {
-        m_spellers[""] = QSharedPointer<Sonnet::Speller> (new Sonnet::Speller(""));
+        m_spellers[""] = QSharedPointer<KSpeller> (new KSpeller(KGlobal::config().data()));
     }
     //store all language names, makes it possible to type "spell german TERM" if english locale is set
     //Need to construct a map between natual language names and names the spell-check recognises.
     KLocale *locale = KGlobal::locale();
-    const QStringList avail = m_spellers[""]->availableLanguages();
+    const QStringList avail = m_spellers[""]->dictionaries();
     //We need to filter the available languages so that we associate the natural language
     //name (eg. 'german') with one sub-code.
     QSet<QString> families;
@@ -73,8 +73,8 @@ void SpellCheckRunner::loaddata()
         QString code;
         //If we only have one code, use it.
         //If a string is the default language, use it
-        if (family.contains(m_spellers[""]->language())) {
-            code = m_spellers[""]->language();
+        if (family.contains(m_spellers[""]->dictionary())) {
+            code = m_spellers[""]->dictionary();
         } else if (fcode == QLatin1String("en")) {
             //If the family is english, default to en_US.
             if (family.contains("en_US")) {
@@ -130,7 +130,7 @@ void SpellCheckRunner::reloadConfiguration()
 QString SpellCheckRunner::findlang(const QStringList& terms)
 {
     //If first term is a language code (like en_GB), set it as the spell-check language
-    if (terms.count() >= 1 && m_spellers[""]->availableLanguages().contains(terms[0])) {
+    if (terms.count() >= 1 && m_spellers[""]->dictionaries().contains(terms[0])) {
         return terms[0];
     }
     //If we have two terms and the first is a language name (eg 'french'),
@@ -154,7 +154,7 @@ QString SpellCheckRunner::findlang(const QStringList& terms)
 
         if (!code.isEmpty()) {
             //We found a valid language! Check still available
-            const QStringList avail = m_spellers[""]->availableLanguages();
+            const QStringList avail = m_spellers[""]->dictionaries();
             //Does the spell-checker like it?
             if (avail.contains(code)) {
                 return code;
@@ -183,9 +183,9 @@ void SpellCheckRunner::match(Plasma::RunnerContext &context)
     }
 
     //Pointer to speller object with our chosen language
-    QSharedPointer<Sonnet::Speller> speller = m_spellers[""];
+    QSharedPointer<KSpeller> speller = m_spellers[""];
 
-    if (speller->isValid()) {
+    if (!speller->dictionary().isEmpty()) {
         QStringList terms = query.split(' ', QString::SkipEmptyParts);
         QString lang = findlang(terms);
         //If we found a language, create a new speller object using it.
@@ -197,7 +197,8 @@ void SpellCheckRunner::match(Plasma::RunnerContext &context)
                 QMutexLocker lock (&m_spellLock);
                 //Check nothing happened while we were acquiring the lock
                 if (!m_spellers.contains(lang)) {
-                    m_spellers[lang] = QSharedPointer<Sonnet::Speller>(new Sonnet::Speller(lang));
+                    m_spellers[lang] = QSharedPointer<KSpeller>(new KSpeller(KGlobal::config().data()));
+                    m_spellers[lang]->setDictionary(lang);
                 }
             }
             speller = m_spellers[lang];
@@ -213,13 +214,13 @@ void SpellCheckRunner::match(Plasma::RunnerContext &context)
     Plasma::QueryMatch match(this);
     match.setType(Plasma::QueryMatch::InformationalMatch);
 
-    if (speller->isValid()) {
-        QStringList suggestions;
-        const bool correct = speller->checkAndSuggest(query,suggestions);
+    if (!speller->dictionary().isEmpty()) {
+        const bool correct = speller->check(query);
         if (correct) {
             match.setIcon(KIcon(QLatin1String( "checkbox" )));
             match.setText(i18n("Correct")+QLatin1String(": ")+query);
         } else {
+            QStringList suggestions = speller->suggest(query);
             match.setIcon(KIcon(QLatin1String( "edit-delete" )));
             const QString recommended = i18n("Suggested words: %1", suggestions.join(i18nc("seperator for a list of words", ", ")));
             //TODO: try setting a text and a subtext, with the subtext being the suggestions

@@ -199,7 +199,7 @@ void SpellCheck::toggleDialog(bool pasteText, bool preferSelection)
         m_textEdit->setCheckSpellingEnabled(true);
         m_textEdit->createHighlighter();
 
-        m_dictionaryComboBox = new Sonnet::DictionaryComboBox(m_spellingDialog);
+        m_dictionaryComboBox = new KSpellDictionaryComboBox(m_spellingDialog);
         m_dictionaryComboBox->setToolTip(i18n("Language"));
 
         KAction *spellingAction = new KAction(KIcon("tools-check-spelling"), i18n("Spell checking"), m_spellingDialog);
