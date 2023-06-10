@@ -49,10 +49,6 @@ set(kget_adaptor_SRCS
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5001) 
 
-if(CMAKE_BUILD_TYPE MATCHES Debug)
-     add_definitions(-DDEBUG)
-endif()
-
 # TODO: utterly broken
 set(KGET_TESTING FALSE)
 

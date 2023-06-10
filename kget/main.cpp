@@ -46,7 +46,7 @@ public:
 
         if (!kget)
         {
-#ifdef DEBUG
+#ifndef NDEBUG
             kget = new MainWindow(!args->isSet("showDropTarget"), args->isSet("startWithoutAnimation"), args->isSet("test"));
 #else
             kget = new MainWindow(!args->isSet("showDropTarget"), args->isSet("startWithoutAnimation"), false);
