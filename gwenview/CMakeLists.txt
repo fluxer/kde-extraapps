@@ -20,8 +20,9 @@ set_package_properties(Threads PROPERTIES
     TYPE REQUIRED
 )
 
-find_package(LibKonq)
-set_package_properties(LibKonq PROPERTIES
+find_package(KDE4Workspace)
+set_package_properties(KDE4Workspace PROPERTIES
+    DESCRIPTION "KDE base workspace libraries"
     URL "https://osdn.net/projects/kde/"
     PURPOSE "Standard file management features"
     TYPE REQUIRED

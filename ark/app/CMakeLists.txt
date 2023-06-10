@@ -48,9 +48,7 @@ install(
 
 ########### konqueror ark_extract_here plugin ###############
 
-if (LibKonq_FOUND)
-    include_directories(${LIBKONQ_INCLUDE_DIR})
-
+if (KDE4WORKSPACE_FOUND)
     set(ark_dndextract_SRCS batchextract.cpp extractHereDndPlugin.cpp)
     kde4_add_plugin(ark_dndextract ${ark_dndextract_SRCS})
 
@@ -59,7 +57,7 @@ if (LibKonq_FOUND)
         ${KDE4_KDECORE_LIBS}
         ${KDE4_KPARTS_LIBS}
         ${KDE4_KFILE_LIBS}
-        ${LIBKONQ_LIBRARY}
+        ${KDE4WORKSPACE_KONQ_LIBRARY}
     )
 
     install(

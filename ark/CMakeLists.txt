@@ -17,10 +17,11 @@ set_package_properties(LibArchive PROPERTIES
     PURPOSE "Required for among others tar, tar.gz, tar.bz2 formats in Ark"
 )
 
-kde4_optional_find_package(LibKonq)
-set_package_properties(LibKonq PROPERTIES
-    DESCRIPTION "libkonq library"
-    PURPOSE "Need to integrate in konqueror"
+kde4_optional_find_package(KDE4Workspace)
+set_package_properties(KDE4Workspace PROPERTIES
+    DESCRIPTION "KDE base workspace libraries"
+    URL "https://osdn.net/projects/kde/"
+    PURPOSE "Needed for popup menu plugin"
 )
 
 kde4_optional_find_package(LibDeflate)

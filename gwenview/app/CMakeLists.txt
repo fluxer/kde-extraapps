@@ -1,6 +1,5 @@
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/..
-    ${LIBKONQ_INCLUDE_DIR}
     # For lib/gwenviewconfig.h
     ${CMAKE_CURRENT_BINARY_DIR}/..
 )
@@ -41,7 +40,7 @@ add_executable(gwenview ${gwenview_SRCS})
 target_link_libraries(gwenview
     ${KDE4_KFILE_LIBS}
     ${KDE4_KIO_LIBS}
-    ${LIBKONQ_LIBRARY}
+    ${KDE4WORKSPACE_KONQ_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     gwenviewlib
 )
