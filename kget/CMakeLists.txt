@@ -56,6 +56,8 @@ endif()
 # TODO: utterly broken
 set(KGET_TESTING FALSE)
 
+set(SUPPORTED_KGET_MIMETYPES "application/x-kgetlist;")
+
 if(KGET_TESTING)
     add_definitions(-DDO_KGET_TEST)
 endif()
