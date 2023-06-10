@@ -34,7 +34,10 @@ include_directories(
 add_subdirectory(core)
 add_subdirectory(vnc)
 add_subdirectory(rdp)
-add_subdirectory(test)
+
+if(ENABLE_TESTING)
+    add_subdirectory(test)
+endif()
 
 add_definitions(
     -DKDE_DEFAULT_DEBUG_AREA=5010
