@@ -6,8 +6,6 @@ include(FeatureSummary)
 find_package(KDE4 4.23.0 REQUIRED)
 include(KDE4Defaults)
 
-set(LIBRARY_TYPE SHARED)
-
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 # global include directories
