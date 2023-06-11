@@ -50,7 +50,15 @@ WallpaperQml::WallpaperQml(QObject *parent, const QVariantList &args)
     kdeclarative.setupBindings();
 
     m_component = new QDeclarativeComponent(m_engine);
-    connect(m_component, SIGNAL(statusChanged(QDeclarativeComponent::Status)), SLOT(componentStatusChanged(QDeclarativeComponent::Status)));
+    connect(
+#if QT_VERSION < 0x041300
+        m_component, SIGNAL(statusChanged(QDeclarativeComponent::Status)),
+        this, SLOT(componentStatusChanged(QDeclarativeComponent::Status))
+#else
+        m_component, SIGNAL(statusChanged(QDeclarativeComponent::ComponentStatus)),
+        this, SLOT(componentStatusChanged(QDeclarativeComponent::ComponentStatus))
+#endif
+    );
     connect(this, SIGNAL(renderHintsChanged()), SLOT(resizeWallpaper()));
     connect(m_scene, SIGNAL(changed(QList<QRectF>)), SLOT(shouldRepaint(QList<QRectF>)));
 }
@@ -83,7 +91,11 @@ void WallpaperQml::setPackageName(const QString& packageName)
         kWarning() << "couldn't load the package named" << packageName;
 }
 
+#if QT_VERSION < 0x041300
 void WallpaperQml::componentStatusChanged(QDeclarativeComponent::Status s)
+#else
+void WallpaperQml::componentStatusChanged(QDeclarativeComponent::ComponentStatus s)
+#endif
 {
     if (s==QDeclarativeComponent::Ready) {
         if (m_item) {
@@ -100,7 +112,15 @@ void WallpaperQml::componentStatusChanged(QDeclarativeComponent::Status s)
     } else if (s==QDeclarativeComponent::Error) {
         delete m_component;
         m_component = new QDeclarativeComponent(m_engine);
-        connect(m_component, SIGNAL(statusChanged(QDeclarativeComponent::Status)), SLOT(componentStatusChanged(QDeclarativeComponent::Status)));
+        connect(
+#if QT_VERSION < 0x041300
+            m_component, SIGNAL(statusChanged(QDeclarativeComponent::Status)),
+            this, SLOT(componentStatusChanged(QDeclarativeComponent::Status))
+#else
+            m_component, SIGNAL(statusChanged(QDeclarativeComponent::ComponentStatus)),
+            this, SLOT(componentStatusChanged(QDeclarativeComponent::ComponentStatus))
+#endif
+        );
     }
     if (!m_component->errors().isEmpty())
         kDebug() << "wallpaper errors:" << m_component->errors();

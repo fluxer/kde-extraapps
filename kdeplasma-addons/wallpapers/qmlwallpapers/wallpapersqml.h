@@ -40,7 +40,11 @@ class WallpaperQml : public Plasma::Wallpaper
     private slots:
         void resizeWallpaper();
         void shouldRepaint(const QList< QRectF >& rects);
+#if QT_VERSION < 0x041300
         void componentStatusChanged(QDeclarativeComponent::Status s);
+#else
+        void componentStatusChanged(QDeclarativeComponent::ComponentStatus s);
+#endif
         void setPackageName(const QString& name);
         void changeWallpaper(const QModelIndex& idx);
         void setBackgroundColor(const QColor& color);
