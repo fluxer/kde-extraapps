@@ -36,26 +36,16 @@
 #include <KToggleAction>
 #include <KHelpMenu>
 #include <KFontDialog>
-
 #include <KCmdLineArgs>
 
-
-#include <X11/Xatom.h>
-#include <X11/Xlib.h>
-
-#include <fixx11h.h>
-
-
-
-QList<VButton*> modKeys;
-
 #include <iostream>
-using namespace std;
 
-#define DEFAULT_WIDTH 	640
-#define DEFAULT_HEIGHT 	210
+#define DEFAULT_WIDTH 640
+#define DEFAULT_HEIGHT 210
 
 #include "x11keyboard.h"
+
+QList<VButton*> modKeys;
 
 
 KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelper)
@@ -89,19 +79,13 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     layout->setContentsMargins(0,0,0,0);
     widget->setLayout(layout);
 
-
     xkbd = new X11Keyboard(this);
 
-
     themeLoader = new ThemeLoader(widget);
-
 
     connect(themeLoader, SIGNAL(partLoaded(MainWidget*, int, int)), this, SLOT(partLoaded(MainWidget*, int, int)));
     connect(themeLoader, SIGNAL(buttonLoaded(VButton*)), this, SLOT(buttonLoaded(VButton*)));
 
-
-
-    
     QMenu *cmenu = tray->contextMenu();
 
     KAction *chooseFontAction = new KAction(KIcon("preferences-desktop-font"), i18nc("@action:inmenu", "Choose Font..."), this);
@@ -114,7 +98,6 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     widget->setProperty("autoresfont", autoResizeEnabled);
     cmenu->addAction(autoResizeAction);
     connect(autoResizeAction, SIGNAL(triggered(bool)), this, SLOT(autoResizeFont(bool)));
-
 
     bool blur = cfg.readEntry("blurBackground", QVariant(true)).toBool();
 
@@ -225,12 +208,12 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
         timer->start();
         widget->setWindowTitle("kvkbd.login");
     }
-
 }
+#undef DEFAULT_WIDTH
+#undef DEFAULT_HEIGHT
 
 KvkbdApp::~KvkbdApp()
 {
-
 }
 
 void KvkbdApp::storeConfig()
@@ -406,8 +389,5 @@ void KvkbdApp::toggleExtension()
         prt->show();
     }
 }
-
-
-
 
 #include "moc_kvkbdapp.cpp"

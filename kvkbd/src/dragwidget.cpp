@@ -5,13 +5,8 @@
 #include <QStylePainter>
 #include <QX11Info>
 
-#include <iostream>
-using namespace std;
-
-
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
-
 #include <fixx11h.h>
 
 

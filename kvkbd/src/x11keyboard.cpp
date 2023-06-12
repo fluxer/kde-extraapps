@@ -19,36 +19,22 @@
 
 #include "x11keyboard.h"
 
-
-
 #include <QX11Info>
 #include <QDesktopWidget>
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
 
-
-
 #include <X11/extensions/XTest.h>
-#include <X11/Xlocale.h>
-#include <X11/Xos.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
-#include <X11/Xproto.h>
-
-#include <X11/XKBlib.h>
 
 #include "vbutton.h"
-extern QList<VButton *> modKeys;
 
-#include <iostream>
-using namespace std;
+extern QList<VButton *> modKeys;
 
 X11Keyboard::X11Keyboard(QObject *parent): VKeyboard(parent)
 {
-
-
-
     QString service = "";
     QString path = "/Layouts";
     QString interface = "org.kde.KeyboardLayouts";
@@ -67,14 +53,10 @@ X11Keyboard::X11Keyboard(QObject *parent): VKeyboard(parent)
     groupState.insert("numlock", this->queryModKeyState(XK_Num_Lock));
 
     connect(groupTimer, SIGNAL(timeout()), this, SLOT(queryModState()));
-
-
-
 }
 
 X11Keyboard::~X11Keyboard()
 {
-
 }
 
 void X11Keyboard::start()
@@ -90,19 +72,15 @@ void X11Keyboard::constructLayouts()
 
     QDBusReply<QStringList> reply = iface.call("getLayoutsList");
     if (reply.isValid()) {
-
         QStringList lst = reply.value();
         layouts.clear();
 
         QListIterator<QString> itr(lst);
-
         while (itr.hasNext()) {
             QString layout_name = itr.next();
             layouts << layout_name;
         }
-
     }
-
 }
 
 void X11Keyboard::processKeyPress(unsigned int keyCode)
@@ -139,7 +117,6 @@ void X11Keyboard::sendKey(unsigned int keycode)
             XTestFakeKeyEvent(display, mod->getKeyCode(), false, 2);
         }
     }
-
 
     XFlush(display);
 

@@ -46,6 +46,8 @@ KbdDock::KbdDock(const WId& window)
     resize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
     raise();
 }
+#undef DEFAULT_WIDTH
+#undef DEFAULT_HEIGHT
 
 KbdDock::~KbdDock()
 {
