@@ -389,19 +389,19 @@ void Kolourpicker::installFilter()
 
 void Kolourpicker::addColor(const QColor &color, bool save)
 {
+    ColorIcon colorIcon(color);
+    m_configAndHistory->nativeWidget()->setIcon(colorIcon);
+
     QHash<QColor, QAction *>::ConstIterator it = m_menus.constFind(color);
     if (it != m_menus.constEnd()) {
         return;
     }
-
     KMenu *newmenu = buildMenuForColor(color);
     QAction *act = newmenu->menuAction();
-    ColorIcon colorIcon(color);
     act->setIcon(colorIcon);
     act->setText(QString("%1, %2, %3").arg(color.red()).arg(color.green()).arg(color.blue()));
     connect(newmenu, SIGNAL(triggered(QAction*)), this, SLOT(colorActionTriggered(QAction*)));
     m_configAndHistoryMenu->insertMenu(m_configAndHistoryMenu->actions().at(1), newmenu);
-    m_configAndHistory->nativeWidget()->setIcon(colorIcon);
     m_menus.insert(color, act);
     m_colors.append(color.name());
     m_configAndHistory->setEnabled(true);
