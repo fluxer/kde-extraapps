@@ -9,11 +9,6 @@
 
 #include "framebuffer.h"
 
-#include "config-krfb.h"
-
-#include <X11/Xutil.h>
-
-
 FrameBuffer::FrameBuffer(WId id, QObject *parent)
     : QObject(parent), win(id)
 {
