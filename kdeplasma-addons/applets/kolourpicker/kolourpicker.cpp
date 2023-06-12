@@ -98,7 +98,6 @@ class ColorIconEngine : public QIconEngine
 {
     public:
         ColorIconEngine(const QColor &color);
-        virtual ~ColorIconEngine();
 
         virtual void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state);
         virtual QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state);
@@ -111,10 +110,6 @@ class ColorIconEngine : public QIconEngine
 
 ColorIconEngine::ColorIconEngine(const QColor &color)
     : m_color(color)
-{
-}
-
-ColorIconEngine::~ColorIconEngine()
 {
 }
 
