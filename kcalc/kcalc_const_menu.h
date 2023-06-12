@@ -54,12 +54,14 @@ public:
 signals:
     void triggeredConstant(const science_constant &);
 
-
 private:
     void init_all();
 
 public slots:
     void slotPassSignalThrough(QAction  *chosen_const);
+
+private:
+    static QList<science_constant> constants_;
 };
 
 #endif

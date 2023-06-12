@@ -27,36 +27,32 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <klocale.h>
 #include <kstandarddirs.h>
 
-namespace {
-    QList<science_constant> Constants;
-    
-    ConstantCategory stringToCategory(const QString &s) {
-        if (s == QLatin1String("mathematics")) {
-            return Mathematics;
-        }
-
-        if (s == QLatin1String("electromagnetism")) {
-            return Electromagnetic;
-        }
-
-        if (s == QLatin1String("nuclear")) {
-            return Nuclear;
-        }
-
-        if (s == QLatin1String("thermodynamics")) {
-            return Thermodynamics;
-        }
-
-        if (s == QLatin1String("gravitation")) {
-            return Gravitation;
-        }
-
-        kDebug() << "Invalid Category For Constant: " << s;
+ConstantCategory stringToCategory(const QString &s) {
+    if (s == QLatin1String("mathematics")) {
         return Mathematics;
     }
-    
+
+    if (s == QLatin1String("electromagnetism")) {
+        return Electromagnetic;
+    }
+
+    if (s == QLatin1String("nuclear")) {
+        return Nuclear;
+    }
+
+    if (s == QLatin1String("thermodynamics")) {
+        return Thermodynamics;
+    }
+
+    if (s == QLatin1String("gravitation")) {
+        return Gravitation;
+    }
+
+    kDebug() << "Invalid Category For Constant: " << s;
+    return Mathematics;
 }
 
+QList<science_constant> KCalcConstMenu::constants_;
 
 void KCalcConstMenu::init_consts() {
     QDomDocument doc(QLatin1String("list_of_constants"));
@@ -93,7 +89,7 @@ void KCalcConstMenu::init_consts() {
             tmp_const.category  = stringToCategory(tmp_str_category);
             tmp_const.whatsthis = e.firstChildElement(QLatin1String("description")).text();
 
-            Constants.append(tmp_const);
+            constants_.append(tmp_const);
         }
         n = n.nextSibling();
         i++;
@@ -111,18 +107,18 @@ void KCalcConstMenu::init_all()
     connect(this, SIGNAL(triggered(QAction*)), SLOT(slotPassSignalThrough(QAction*)));
 
 
-    for (int i = 0; i < Constants.size(); i++) {
-        QAction *tmp_action = new QAction(i18n(Constants.at(i).name.toAscii().data()), this);
+    for (int i = 0; i < constants_.size(); i++) {
+        QAction *tmp_action = new QAction(i18n(constants_.at(i).name.toAscii().data()), this);
         tmp_action->setData(QVariant(i));
-        if (Constants.at(i).category  &  Mathematics)
+        if (constants_.at(i).category  &  Mathematics)
             math_menu->addAction(tmp_action);
-        if (Constants.at(i).category  &  Electromagnetic)
+        if (constants_.at(i).category  &  Electromagnetic)
             em_menu->addAction(tmp_action);
-        if (Constants.at(i).category  &  Nuclear)
+        if (constants_.at(i).category  &  Nuclear)
             nuclear_menu->addAction(tmp_action);
-        if (Constants.at(i).category  &  Thermodynamics)
+        if (constants_.at(i).category  &  Thermodynamics)
             thermo_menu->addAction(tmp_action);
-        if (Constants.at(i).category  &  Gravitation)
+        if (constants_.at(i).category  &  Gravitation)
             gravitation_menu->addAction(tmp_action);
     }
 }
@@ -131,7 +127,7 @@ void KCalcConstMenu::slotPassSignalThrough(QAction  *chosen_const)
 {
     bool tmp_bool;
     int chosen_const_idx = (chosen_const->data()).toInt(& tmp_bool);
-    emit triggeredConstant(Constants.at(chosen_const_idx));
+    emit triggeredConstant(constants_.at(chosen_const_idx));
 }
 
 KCalcConstMenu::KCalcConstMenu(const QString &title, QWidget * parent)
