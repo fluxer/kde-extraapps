@@ -23,8 +23,10 @@
 #include "tooltipcontent.h"
 #include "tooltipmanager.h"
 #include <QPainter>
-#include <QtGui/qevent.h>
+#include <QPaintEvent>
 #include <QFontMetrics>
+#include <QX11Info>
+#include <QDesktopWidget>
 
 #include <kwindowsystem.h>
 #include <kdebug.h>
@@ -37,15 +39,6 @@
 #include <plasma/svg.h>
 #include <plasma/windoweffects.h>
 #include <plasma/paintutils.h>
-
-#ifdef Q_WS_X11
-#include <QX11Info>
-#include <QDesktopWidget>
-
-#include <X11/Xlib.h>
-#include <fixx11h.h>
-#endif
-#include <math.h>
 
 namespace IconTasks
 {
