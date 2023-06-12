@@ -58,6 +58,11 @@ protected:
 private Q_SLOTS:
     void onSocketActivated();
 
+protected:
+    static void clientGoneHookNoop(rfbClientPtr cl);
+    friend class PendingInvitationsRfbClient;
+    friend class PendingRfbClient;
+
 private:
     ///called by RfbServerManager to send framebuffer updates
     ///and check for possible disconnection

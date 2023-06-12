@@ -148,6 +148,11 @@ void RfbClient::onSocketActivated()
     }
 }
 
+void RfbClient::clientGoneHookNoop(rfbClientPtr cl)
+{
+    Q_UNUSED(cl);
+}
+
 void RfbClient::update()
 {
     rfbUpdateClient(d->client);
@@ -187,14 +192,12 @@ void PendingRfbClient::accept(RfbClient *newClient)
     deleteLater();
 }
 
-static void clientGoneHookNoop(rfbClientPtr cl) { Q_UNUSED(cl); }
-
 void PendingRfbClient::reject()
 {
     kDebug() << "refused connection";
 
     //override the clientGoneHook that was previously set by RfbServer
-    m_rfbClient->clientGoneHook = clientGoneHookNoop;
+    m_rfbClient->clientGoneHook = RfbClient::clientGoneHookNoop;
     rfbCloseClient(m_rfbClient);
     rfbClientConnectionGone(m_rfbClient);
 
