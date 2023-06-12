@@ -121,7 +121,7 @@ static bool attachExistingInstance(const QStringList &paths, const QString &seri
 
 namespace Okular {
 
-Status main(const QStringList &paths, const QString &serializedOptions)
+OkularStatus main(const QStringList &paths, const QString &serializedOptions)
 {
     if (ShellUtils::unique(serializedOptions) && paths.count() > 1)
     {

@@ -7,6 +7,8 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+#ifndef TXT_DOCUMENT_H
+#define TXT_DOCUMENT_H
 
 #include <QtGui/QTextDocument>
 
@@ -19,3 +21,5 @@ namespace Txt
             ~Document();
     };
 }
+
+#endif // TXT_DOCUMENT_H

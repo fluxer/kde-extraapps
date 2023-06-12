@@ -15,13 +15,18 @@
 #include <QString>
 #include <QStringList>
 
+#ifndef OKULAR_MAIN_H
+#define OKULAR_MAIN_H
+
 namespace Okular
 {
 
-enum Status { Error, AttachedOtherProcess, Success };
+enum OkularStatus { Error, AttachedOtherProcess, Success };
 
-Status main(const QStringList &paths, const QString &serializedOptions);
+OkularStatus main(const QStringList &paths, const QString &serializedOptions);
 
 }
+
+#endif // OKULAR_MAIN_H
 
 /* kate: replace-tabs on; indent-width 4; */

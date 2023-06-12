@@ -58,7 +58,7 @@ int main(int argc, char** argv)
         QStringList paths;
         for ( int i = 0; i < args->count(); ++i )
             paths << args->arg(i);
-        Okular::Status status = Okular::main(paths, ShellUtils::serializeOptions(*args));
+        Okular::OkularStatus status = Okular::main(paths, ShellUtils::serializeOptions(*args));
         switch (status)
         {
             case Okular::Error:
