@@ -8,6 +8,12 @@ set(krfb_framebuffer_x11_SRCS
     x11framebufferplugin.cpp
 )
 
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/x11framebuffer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/x11framebufferplugin.cpp
+    PROPERTIES SKIP_UNITY_BUILD_INCLUSION TRUE
+)
+
 kde4_add_plugin(krfb_framebuffer_x11
     ${krfb_framebuffer_x11_SRCS}
 )

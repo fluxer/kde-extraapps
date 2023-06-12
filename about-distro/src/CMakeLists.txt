@@ -7,6 +7,12 @@ set(kcm_SRCS
     Module.ui
 )
 
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Module.cpp
+    PROPERTIES SKIP_UNITY_BUILD_INCLUSION TRUE
+)
+
 kde4_add_plugin(kcm_about_distro ${kcm_SRCS})
 
 target_link_libraries(kcm_about_distro

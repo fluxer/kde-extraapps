@@ -94,6 +94,14 @@ set(gwenviewlib_SRCS
 
 kde4_add_kcfg_files(gwenviewlib_SRCS gwenviewconfig.kcfgc)
 
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbnailview/thumbnailbarview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbnailview/previewitemdelegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/fullscreenbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/slidecontainer.cpp
+    PROPERTIES SKIP_UNITY_BUILD_INCLUSION TRUE
+)
+
 add_library(gwenviewlib SHARED ${gwenviewlib_SRCS})
 set_target_properties(gwenviewlib PROPERTIES
     VERSION ${GENERIC_LIB_VERSION}

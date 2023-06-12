@@ -62,6 +62,11 @@ set(krfb_SRCS
 
 kde4_add_kcfg_files(krfb_SRCS krfbconfig.kcfgc)
 
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/events.cpp
+    PROPERTIES SKIP_UNITY_BUILD_INCLUSION TRUE
+)
+
 add_executable(krfb ${krfb_SRCS})
 
 target_link_libraries(krfb
