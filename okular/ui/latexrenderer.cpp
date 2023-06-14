@@ -149,7 +149,7 @@ LatexRenderer::Error LatexRenderer::handleLatex( QString& fileName, const QStrin
         return LatexNotFound;
     }
     latexProc << latexExecutable << "-interaction=nonstopmode" << "-halt-on-error" << QString("-output-directory=%1").arg(tempFilePath) << tempFile->fileName();
-    latexProc.setOutputChannelMode( KProcess::MergedChannels );
+    latexProc.setProcessChannelMode( QProcess::MergedChannels );
     latexProc.execute();
     latexOutput = latexProc.readAll();
     tempFile->remove();
@@ -173,7 +173,7 @@ LatexRenderer::Error LatexRenderer::handleLatex( QString& fileName, const QStrin
     }
 
     dvipngProc << dvipngExecutable << QString("-o%1").arg(tempFileNameNS + QString(".png")) << "-Ttight" << "-bgTransparent" << QString("-D %1").arg(resolution) << QString("%1").arg(tempFileNameNS + QString(".dvi"));
-    dvipngProc.setOutputChannelMode( KProcess::MergedChannels );
+    dvipngProc.setProcessChannelMode( QProcess::MergedChannels );
     dvipngProc.execute();
 
     QFile::remove(tempFileNameNS + QString(".dvi"));
