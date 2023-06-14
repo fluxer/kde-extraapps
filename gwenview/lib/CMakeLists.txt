@@ -82,7 +82,6 @@ set(gwenviewlib_SRCS
     thumbnailview/thumbnailbarview.cpp
     thumbnailview/thumbnailslider.cpp
     thumbnailview/thumbnailview.cpp
-    thumbnailview/tooltipwidget.cpp
     timeutils.cpp
     transformimageoperation.cpp
     urlutils.cpp

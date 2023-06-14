@@ -47,7 +47,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include "paintutils.h"
 #include "thumbnailview.h"
 #include "timeutils.h"
-#include "tooltipwidget.h"
 
 // Define this to be able to fine tune the rendering of the selection
 // background through a config file
@@ -125,9 +124,6 @@ struct PreviewItemDelegatePrivate
     PreviewItemDelegate::ContextBarActions mContextBarActions;
     Qt::TextElideMode mTextElideMode;
 
-    QPointer<ToolTipWidget> mToolTip;
-    QScopedPointer<QAbstractAnimation> mToolTipAnimation;
-
     void initSaveButtonPixmap()
     {
         if (!mSaveButtonPixmap.isNull()) {
@@ -154,13 +150,6 @@ struct PreviewItemDelegatePrivate
         const int posY = qMax(CONTEXTBAR_MARGIN, mThumbnailSize.height() - thumbnailPix.height() - mContextBar->height());
         mContextBar->move(rect.topLeft() + QPoint(posX, posY));
         mContextBar->show();
-    }
-
-    void initToolTip()
-    {
-        mToolTip = new ToolTipWidget(mView->viewport());
-        mToolTip->setOpacity(0);
-        mToolTip->show();
     }
 
     bool hoverEventFilter(QHoverEvent* event)
@@ -199,13 +188,11 @@ struct PreviewItemDelegatePrivate
                 mSaveButton->hide();
             }
 
-            showToolTip(index);
             mView->update(mIndexUnderCursor);
 
         } else {
             mContextBar->hide();
             mSaveButton->hide();
-            hideToolTip();
         }
     }
 
@@ -314,128 +301,6 @@ struct PreviewItemDelegatePrivate
         // Draw text
         painter->setPen(fgColor);
         painter->drawText(rect.left() + posX, rect.top() + fm.ascent(), text);
-    }
-
-    bool isTextElided(const QString& text) const
-    {
-        QHash<QString, QString>::const_iterator it = mElidedTextCache.constFind(text);
-        if (it == mElidedTextCache.constEnd()) {
-            return false;
-        }
-        return it.value().length() < text.length();
-    }
-
-    /**
-     * Show a tooltip only if the item has been elided.
-     * This function places the tooltip over the item text.
-     */
-    void showToolTip(const QModelIndex& index)
-    {
-        if (mDetails == 0) {
-            // No text to display
-            return;
-        }
-
-        // Gather tip text
-        QStringList textList;
-        bool elided = false;
-        if (mDetails & PreviewItemDelegate::FileNameDetail) {
-            const QString text = index.data().toString();
-            elided |= isTextElided(text);
-            textList << text;
-        }
-
-        // FIXME: Duplicated from drawText
-        const KFileItem fileItem = fileItemForIndex(index);
-        const bool isDir = fileItem.isDir();
-        if (mDetails & PreviewItemDelegate::DateDetail) {
-            if (!isDir) {
-                const KDateTime dt = TimeUtils::dateTimeForFileItem(fileItem);
-                const QString text = KGlobal::locale()->formatDateTime(dt);
-                elided |= isTextElided(text);
-                textList << text;
-            }
-        }
-
-        if (!isDir && (mDetails & PreviewItemDelegate::ImageSizeDetail)) {
-            QSize fullSize;
-            QPixmap thumbnailPix = mView->thumbnailForIndex(index, &fullSize);
-            if (fullSize.isValid()) {
-                const QString text = QString("%1x%2").arg(fullSize.width()).arg(fullSize.height());
-                elided |= isTextElided(text);
-                textList << text;
-            }
-        }
-
-        if (!isDir && (mDetails & PreviewItemDelegate::FileSizeDetail)) {
-            const KIO::filesize_t size = fileItem.size();
-            if (size > 0) {
-                const QString text = KIO::convertSize(size);
-                elided |= isTextElided(text);
-                textList << text;
-            }
-        }
-
-        if (!elided) {
-            hideToolTip();
-            return;
-        }
-
-        bool newTipLabel = !mToolTip;
-        if (!mToolTip) {
-            initToolTip();
-        }
-        mToolTip->setText(textList.join("\n"));
-        QSize tipSize = mToolTip->sizeHint();
-
-        // Compute tip position
-        QRect rect = mView->visualRect(index);
-        const int textY = ITEM_MARGIN + mThumbnailSize.height() + ITEM_MARGIN;
-        const int spacing = 1;
-        QRect geometry(
-            QPoint(rect.topLeft() + QPoint((rect.width() - tipSize.width()) / 2, textY + spacing)),
-            tipSize
-        );
-        if (geometry.left() < 0) {
-            geometry.moveLeft(0);
-        } else if (geometry.right() > mView->viewport()->width()) {
-            geometry.moveRight(mView->viewport()->width());
-        }
-
-        // Show tip
-        QParallelAnimationGroup* anim = new QParallelAnimationGroup();
-        QPropertyAnimation* fadeIn = new QPropertyAnimation(mToolTip, "opacity");
-        fadeIn->setStartValue(mToolTip->opacity());
-        fadeIn->setEndValue(1.);
-        anim->addAnimation(fadeIn);
-
-        if (newTipLabel) {
-            mToolTip->setGeometry(geometry);
-        } else {
-            QPropertyAnimation* move = new QPropertyAnimation(mToolTip, "geometry");
-            move->setStartValue(mToolTip->geometry());
-            move->setEndValue(geometry);
-            anim->addAnimation(move);
-        }
-
-        mToolTipAnimation.reset(anim);
-        mToolTipAnimation->start();
-    }
-
-    void hideToolTip()
-    {
-        if (!mToolTip) {
-            return;
-        }
-        QSequentialAnimationGroup* anim = new QSequentialAnimationGroup();
-        anim->addPause(500);
-        QPropertyAnimation* fadeOut = new QPropertyAnimation(mToolTip, "opacity");
-        fadeOut->setStartValue(mToolTip->opacity());
-        fadeOut->setEndValue(0.);
-        anim->addAnimation(fadeOut);
-        mToolTipAnimation.reset(anim);
-        mToolTipAnimation->start();
-        QObject::connect(anim, SIGNAL(finished()), mToolTip, SLOT(deleteLater()));
     }
 
     int itemWidth() const
