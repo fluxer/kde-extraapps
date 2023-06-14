@@ -19,7 +19,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
 #include "mimetypeutils.h"
-#include "moc_mimetypeutils_p.cpp"
 
 // Qt
 #include <QApplication>
@@ -131,21 +130,6 @@ QString urlMimeType(const KUrl& url)
     return mimeType;
 }
 
-QString urlMimeTypeByContent(const KUrl& url)
-{
-    const int HEADER_SIZE = 30;
-    if (url.isLocalFile()) {
-        return KMimeType::findByFileContent(url.toLocalFile())->name();
-    }
-
-    KIO::TransferJob* job = KIO::get(url);
-    DataAccumulator accumulator(job);
-    while (!accumulator.finished() && accumulator.data().size() < HEADER_SIZE) {
-        qApp->processEvents();
-    }
-    return KMimeType::findByContent(accumulator.data())->name();
-}
-
 Kind mimeTypeKind(const QString& mimeType)
 {
     if (rasterImageMimeTypes().contains(mimeType)) {
@@ -173,26 +157,6 @@ Kind fileItemKind(const KFileItem& item)
 Kind urlKind(const KUrl& url)
 {
     return mimeTypeKind(urlMimeType(url));
-}
-
-DataAccumulator::DataAccumulator(KIO::TransferJob* job)
-: QObject()
-, mFinished(false)
-{
-    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
-            SLOT(slotDataReceived(KIO::Job*,QByteArray)));
-    connect(job, SIGNAL(result(KJob*)),
-            SLOT(slotFinished()));
-}
-
-void DataAccumulator::slotDataReceived(KIO::Job*, const QByteArray& data)
-{
-    mData += data;
-}
-
-void DataAccumulator::slotFinished()
-{
-    mFinished = true;
 }
 
 } // namespace MimeTypeUtils
