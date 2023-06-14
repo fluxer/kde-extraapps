@@ -48,7 +48,6 @@ endif()
 add_subdirectory(icons)
 add_subdirectory(images)
 add_subdirectory(cursors)
-add_subdirectory(color-schemes)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

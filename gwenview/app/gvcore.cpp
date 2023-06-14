@@ -120,20 +120,7 @@ struct GvCorePrivate
         mPalettes[GvCore::NormalViewPalette] = pal;
 
         // Fullscreen
-        KSharedConfigPtr config;
-        QString name = GwenviewConfig::fullScreenColorScheme();
-        if (name.isEmpty()) {
-            // Default color scheme
-            QString path = KStandardDirs::locate("data", "gwenview/color-schemes/fullscreen.colors");
-            config = KSharedConfig::openConfig(path);
-        } else if (name.contains('/')) {
-            // Full path to a .colors file
-            config = KSharedConfig::openConfig(name);
-        } else {
-            // Standard KDE color scheme
-            config = KSharedConfig::openConfig(QString("color-schemes/%1.colors").arg(name), KConfig::FullConfig, "data");
-        }
-        mPalettes[GvCore::FullScreenPalette] = KGlobalSettings::createApplicationPalette(config);
+        mPalettes[GvCore::FullScreenPalette] = mPalettes[GvCore::NormalPalette];
 
         pal = mPalettes[GvCore::FullScreenPalette];
         QString path = KStandardDirs::locate("data", "gwenview/images/background.png");

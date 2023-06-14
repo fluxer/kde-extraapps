@@ -74,9 +74,6 @@
         <entry name="FullScreenPreferredMetaInfoKeyList" type="StringList">
             <default>General.Name,Exif.Image.DateTime</default>
         </entry>
-        <entry name="FullScreenColorScheme" type="String">
-            <default></default>
-        </entry>
         <entry name="FullScreenBarHeight" type="Int">
             <default>75</default>
         </entry>
