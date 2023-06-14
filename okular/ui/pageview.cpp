@@ -4557,7 +4557,7 @@ void PageView::slotToggleAnnotator( bool on )
     {
         // get default username from the kdelibs/kdecore/KUser
         KUser currentUser;
-        QString userName = currentUser.property( KUser::FullName ).toString();
+        QString userName = currentUser.property( KUser::FullName );
         // ask the user for confirmation/change
         if ( userName.isEmpty() )
         {
