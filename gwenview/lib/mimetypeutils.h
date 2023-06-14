@@ -35,9 +35,6 @@ namespace Gwenview
 namespace MimeTypeUtils
 {
 
-GWENVIEWLIB_EXPORT const QStringList& rawImageMimeTypes();
-GWENVIEWLIB_EXPORT const QStringList& rasterImageMimeTypes();
-GWENVIEWLIB_EXPORT const QStringList& svgImageMimeTypes();
 GWENVIEWLIB_EXPORT const QStringList& imageMimeTypes();
 
 GWENVIEWLIB_EXPORT QString urlMimeType(const KUrl&);

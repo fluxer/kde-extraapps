@@ -61,11 +61,15 @@ static void resolveAliasInList(QStringList* list)
     }
 }
 
-const QStringList& rawImageMimeTypes()
+const QStringList& imageMimeTypes()
 {
-    // need to invent more intelligent way to whitelist raws
     static QStringList list;
     if (list.isEmpty()) {
+        list = KImageIO::mimeTypes(KImageIO::Reading);
+
+        list << "image/svg+xml" << "image/svg+xml-compressed";
+
+        // need to invent more intelligent way to whitelist raws
         list << "image/x-nikon-nef" << "image/x-nikon-nrw"
              << "image/x-canon-cr2" << "image/x-canon-crw"
              << "image/x-pentax-pef" << "image/x-adobe-dng"
@@ -75,40 +79,8 @@ const QStringList& rawImageMimeTypes()
              << "image/x-fuji-raf" << "image/x-kodak-dcr"
              << "image/x-kodak-kdc" << "image/x-kodak-k25"
              << "image/x-sigma-x3f";
-        resolveAliasInList(&list);
-    }
-    return list;
-}
 
-const QStringList& rasterImageMimeTypes()
-{
-    static QStringList list;
-    if (list.isEmpty()) {
-        list = KImageIO::mimeTypes(KImageIO::Reading);
         resolveAliasInList(&list);
-        // We want svg images to be considered as raster images
-        list += svgImageMimeTypes();
-        list += rawImageMimeTypes();
-    }
-    return list;
-}
-
-const QStringList& svgImageMimeTypes()
-{
-    static QStringList list;
-    if (list.isEmpty()) {
-        list << "image/svg+xml" << "image/svg+xml-compressed";
-        resolveAliasInList(&list);
-    }
-    return list;
-}
-
-const QStringList& imageMimeTypes()
-{
-    static QStringList list;
-    if (list.isEmpty()) {
-        list = rasterImageMimeTypes();
-        list += svgImageMimeTypes();
     }
 
     return list;
@@ -132,10 +104,7 @@ QString urlMimeType(const KUrl& url)
 
 Kind mimeTypeKind(const QString& mimeType)
 {
-    if (rasterImageMimeTypes().contains(mimeType)) {
-        return KIND_IMAGE;
-    }
-    if (svgImageMimeTypes().contains(mimeType)) {
+    if (imageMimeTypes().contains(mimeType)) {
         return KIND_IMAGE;
     }
     // if it is image but it is not one of the static MIME types attempt to open it anyway
