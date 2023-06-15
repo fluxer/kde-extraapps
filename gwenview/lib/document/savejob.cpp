@@ -46,7 +46,6 @@ struct SaveJobPrivate
     KUrl mOldUrl;
     KUrl mNewUrl;
     QByteArray mFormat;
-    QString mTemporaryFile;
 };
 
 SaveJob::SaveJob(DocumentLoadedImpl* impl, const KUrl& url, const QByteArray& format)
@@ -65,36 +64,22 @@ SaveJob::~SaveJob()
 
 void SaveJob::doStart()
 {
-    setError(NoError);
-    {
-        QScopedPointer<KTemporaryFile> temporaryFile(new KTemporaryFile());
-        temporaryFile->setAutoRemove(true);
-        temporaryFile->setSuffix(QString::fromLatin1(".%1").arg(d->mFormat.constData()));
-
-        if (!temporaryFile->open()) {
-            KUrl dirUrl = d->mNewUrl;
-            dirUrl.setFileName(QString());
-            setError(UserDefinedError + 1);
-            setErrorText(i18nc("@info", "Could not open file for writing, check that you have the necessary rights in <filename>%1</filename>.", dirUrl.pathOrUrl()));
-            return;
-        }
-        d->mTemporaryFile = temporaryFile->fileName();
-    }
-
-    if (!d->mImpl->saveInternal(d->mTemporaryFile, d->mFormat)) {
-        QFile::remove(d->mTemporaryFile);
+    const QString temporaryFileTemplate = QString::fromLatin1("XXXXXXXXXX.%1").arg(d->mFormat.constData());
+    const QString temporaryFile = KTemporaryFile::filePath(temporaryFileTemplate);
+    if (!d->mImpl->saveInternal(temporaryFile, d->mFormat)) {
+        QFile::remove(temporaryFile);
         setError(UserDefinedError + 2);
         setErrorText(d->mImpl->document()->errorString());
+        emitResult();
+        return;
     }
 
-    // qDebug() << Q_FUNC_INFO << error() << d->mTemporaryFile << d->mNewUrl;
+    // qDebug() << Q_FUNC_INFO << error() << temporaryFile << d->mNewUrl;
     emitResult(); // nope, this does not sunder the sub-job
-    if (!error()) {
-        // whether to overwite has already been asked for
-        KIO::Job* job = KIO::move(KUrl::fromPath(d->mTemporaryFile), d->mNewUrl, KIO::Overwrite);
-        job->setUiDelegate(uiDelegate());
-        KIO::NetAccess::synchronousRun(job, KApplication::kApplication()->activeWindow());
-    }
+    // whether to overwite has already been asked for
+    KIO::Job* job = KIO::move(KUrl::fromPath(temporaryFile), d->mNewUrl, KIO::Overwrite);
+    job->setUiDelegate(uiDelegate());
+    KIO::NetAccess::synchronousRun(job, KApplication::kApplication()->activeWindow());
 }
 
 KUrl SaveJob::oldUrl() const
