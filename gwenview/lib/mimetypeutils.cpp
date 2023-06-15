@@ -45,44 +45,15 @@ namespace Gwenview
 namespace MimeTypeUtils
 {
 
-static inline QString resolveAlias(const QString& name)
-{
-    KMimeType::Ptr ptr = KMimeType::mimeType(name, KMimeType::ResolveAliases);
-    return ptr.isNull() ? name : ptr->name();
-}
-
-static void resolveAliasInList(QStringList* list)
-{
-    QStringList::Iterator
-    it = list->begin(),
-    end = list->end();
-    for (; it != end; ++it) {
-        *it = resolveAlias(*it);
-    }
-}
-
 const QStringList& imageMimeTypes()
 {
     static QStringList list;
     if (list.isEmpty()) {
-        list = KImageIO::mimeTypes(KImageIO::Reading);
-
-        list << "image/svg+xml" << "image/svg+xml-compressed";
-
-        // need to invent more intelligent way to whitelist raws
-        list << "image/x-nikon-nef" << "image/x-nikon-nrw"
-             << "image/x-canon-cr2" << "image/x-canon-crw"
-             << "image/x-pentax-pef" << "image/x-adobe-dng"
-             << "image/x-sony-arw" << "image/x-minolta-mrw"
-             << "image/x-panasonic-raw" << "image/x-panasonic-raw2"
-             << "image/x-samsung-srw" << "image/x-olympus-orf"
-             << "image/x-fuji-raf" << "image/x-kodak-dcr"
-             << "image/x-kodak-kdc" << "image/x-kodak-k25"
-             << "image/x-sigma-x3f";
-
-        resolveAliasInList(&list);
+        foreach (const QString &name, KImageIO::mimeTypes(KImageIO::Reading)) {
+            KMimeType::Ptr ptr = KMimeType::mimeType(name, KMimeType::ResolveAliases);
+            list.append(ptr.isNull() ? name : ptr->name());
+        }
     }
-
     return list;
 }
 
