@@ -146,12 +146,12 @@ void DocumentTest::testLoad_data()
     QTest::addColumn<int>("maxHeight");
 
     testLoad_newRow("test.png", "png");
-    testLoad_newRow("160382_corrupted.jpeg", "jpeg", MimeTypeUtils::KIND_IMAGE, false, 55);
+    testLoad_newRow("160382_corrupted.jpeg", "jpg", MimeTypeUtils::KIND_IMAGE, false, 55);
     testLoad_newRow("1x10k.png", "png");
-    testLoad_newRow("1x10k.jpg", "jpeg");
+    testLoad_newRow("1x10k.jpg", "jpg");
     testLoad_newRow("289819_does_not_load.png", "png");
     testLoad_newRow("png-with-jpeg-extension.jpg", "png");
-    testLoad_newRow("jpg-with-gif-extension.gif", "jpeg");
+    testLoad_newRow("jpg-with-gif-extension.gif", "jpg");
 
     // RAW preview
     testLoad_newRow("CANON-EOS350D-02.CR2", "cr2", MimeTypeUtils::KIND_IMAGE, false);

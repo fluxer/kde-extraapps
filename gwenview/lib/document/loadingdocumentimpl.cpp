@@ -191,12 +191,6 @@ struct LoadingDocumentImplPrivate
 
         mFormat = reader.format();
 
-        if (mFormat == "jpg") {
-            // if mFormatHint was "jpg", then mFormat is "jpg", but the rest of
-            // Gwenview code assumes JPEG images have "jpeg" format.
-            mFormat = "jpeg";
-        }
-
         LOG("mFormat" << mFormat);
         GV_RETURN_VALUE_IF_FAIL(!mFormat.isEmpty(), false);
 
