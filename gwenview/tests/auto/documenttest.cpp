@@ -154,8 +154,8 @@ void DocumentTest::testLoad_data()
     testLoad_newRow("jpg-with-gif-extension.gif", "jpg");
 
     // RAW preview
-    testLoad_newRow("CANON-EOS350D-02.CR2", "cr2", MimeTypeUtils::KIND_IMAGE, false);
-    testLoad_newRow("dsc_0093.nef", "nef", MimeTypeUtils::KIND_IMAGE, false);
+    testLoad_newRow("CANON-EOS350D-02.CR2", "tiff", MimeTypeUtils::KIND_IMAGE, false);
+    testLoad_newRow("dsc_0093.nef", "raw", MimeTypeUtils::KIND_IMAGE, false);
 
     // SVG
     testLoad_newRow("test.svg", "svg", MimeTypeUtils::KIND_IMAGE);
@@ -356,7 +356,7 @@ void DocumentTest::testLoadRotated()
     bool ok = image.load(url.toLocalFile());
     QVERIFY2(ok, "Could not load 'orient6.jpg'");
     QMatrix matrix = ImageUtils::transformMatrix(ROT_90);
-    // magick image handle automatically rotates the image
+    // jpg image handle automatically rotates the image
     // image = image.transformed(matrix);
 
     Document::Ptr doc = DocumentFactory::instance()->load(url);
@@ -366,7 +366,7 @@ void DocumentTest::testLoadRotated()
 
     // RAW preview on rotated image
     url = urlForTestFile("dsd_1838.nef");
-    if (!QFile::exists(url.prettyUrl())) {
+    if (!QFile::exists(url.toLocalFile())) {
         QSKIP("dsd_1838.nef is not available, run fetch_testing_raw.sh script", SkipSingle);
     }
     matrix = ImageUtils::transformMatrix(ROT_270);
