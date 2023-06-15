@@ -44,13 +44,14 @@ TransformJob::TransformJob(Orientation orientation)
 
 }
 
-void TransformJob::threadedStart()
+void TransformJob::doStart()
 {
     if (!checkDocumentEditor()) {
         return;
     }
     document()->editor()->applyTransformation(mOrientation);
     setError(NoError);
+    emitResult();
 }
 
 TransformImageOperation::TransformImageOperation(Orientation orientation)

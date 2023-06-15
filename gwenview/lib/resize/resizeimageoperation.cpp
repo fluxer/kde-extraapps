@@ -42,22 +42,22 @@ struct ResizeImageOperationPrivate
     QImage mOriginalImage;
 };
 
-class ResizeJob : public ThreadedDocumentJob
+class ResizeJob : public DocumentJob
 {
 public:
     ResizeJob(const QSize& size)
         : mSize(size)
     {}
 
-    virtual void threadedStart()
+    virtual void doStart()
     {
         if (!checkDocumentEditor()) {
             return;
         }
-        QImage image = document()->image();
-        image = image.scaled(mSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        QImage image = document()->image().scaled(mSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         document()->editor()->setImage(image);
         setError(NoError);
+        emitResult();
     }
 
 private:

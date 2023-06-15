@@ -36,12 +36,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 namespace Gwenview
 {
 
-class TransformJob : public ThreadedDocumentJob
+class TransformJob : public DocumentJob
 {
     Q_OBJECT
 public:
     TransformJob(Orientation orientation);
-    void threadedStart(); // reimp
+    void doStart(); // reimp
 
 private:
     Orientation mOrientation;

@@ -36,14 +36,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 namespace Gwenview
 {
 
-class CropJob : public ThreadedDocumentJob
+class CropJob : public DocumentJob
 {
 public:
     CropJob(const QRect& rect)
         : mRect(rect)
     {}
 
-    virtual void threadedStart()
+    virtual void doStart()
     {
         if (!checkDocumentEditor()) {
             return;
@@ -52,6 +52,7 @@ public:
         const QImage dst = src.copy(mRect);
         document()->editor()->setImage(dst);
         setError(NoError);
+        emitResult();
     }
 
 private:

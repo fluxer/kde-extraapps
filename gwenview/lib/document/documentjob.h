@@ -130,38 +130,6 @@ private:
     friend class Document;
 };
 
-/**
- * A document job whose action is started in a separate thread
- */
-class ThreadedDocumentJob : public DocumentJob
-{
-    Q_OBJECT
-public:
-    ThreadedDocumentJob();
-    ~ThreadedDocumentJob();
-
-    /**
-     * Must be reimplemented to apply the action to the document.
-     * This method is never called from the GUI thread.
-     */
-    virtual void threadedStart() = 0;
-    /**
-     * Reimplement to do more stuff at the end of the job such
-     * as adding sub-jobs, by default this method will call
-     * emitResult().
-     */
-    virtual void threadedFinish();
-
-protected:
-    virtual void doStart();
-
-private Q_SLOTS:
-    void slotFinished();
-
-private:
-    VoidThread* mThreadedJob;
-};
-
 } // namespace
 
 #endif /* DOCUMENTJOB_H */

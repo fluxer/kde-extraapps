@@ -63,7 +63,7 @@ SaveJob::~SaveJob()
     delete d;
 }
 
-void SaveJob::threadedStart()
+void SaveJob::doStart()
 {
     setError(NoError);
     {
@@ -87,10 +87,6 @@ void SaveJob::threadedStart()
         setErrorText(d->mImpl->document()->errorString());
     }
 
-}
-
-void SaveJob::threadedFinish()
-{
     // qDebug() << Q_FUNC_INFO << error() << d->mTemporaryFile << d->mNewUrl;
     emitResult(); // nope, this does not sunder the sub-job
     if (!error()) {

@@ -42,14 +42,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 namespace Gwenview
 {
 
-class RedEyeReductionJob : public ThreadedDocumentJob
+class RedEyeReductionJob : public DocumentJob
 {
 public:
     RedEyeReductionJob(const QRectF& rectF)
         : mRectF(rectF)
     {}
 
-    void threadedStart()
+    void doStart()
     {
         if (!checkDocumentEditor()) {
             return;
@@ -58,6 +58,7 @@ public:
         RedEyeReductionImageOperation::apply(&img, mRectF);
         document()->editor()->setImage(img);
         setError(NoError);
+        emitResult();
     }
 
 private:

@@ -105,36 +105,6 @@ bool DocumentJob::checkDocumentEditor()
     return true;
 }
 
-ThreadedDocumentJob::ThreadedDocumentJob()
-    : DocumentJob(),
-    mThreadedJob(nullptr)
-{
-    mThreadedJob = new VoidThread(this, std::bind(&ThreadedDocumentJob::threadedStart, this));
-    connect(mThreadedJob, SIGNAL(finished()), this, SLOT(slotFinished()));
-}
-
-ThreadedDocumentJob::~ThreadedDocumentJob()
-{
-    if (!mThreadedJob->isFinished()) {
-        mThreadedJob->wait();
-    }
-}
-
-void ThreadedDocumentJob::doStart()
-{
-    mThreadedJob->start();
-}
-
-void ThreadedDocumentJob::threadedFinish()
-{
-    emitResult();
-}
-
-void ThreadedDocumentJob::slotFinished()
-{
-    threadedFinish();
-}
-
 } // namespace
 
 #include "moc_documentjob.cpp"

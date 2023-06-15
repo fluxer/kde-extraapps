@@ -39,7 +39,7 @@ namespace Gwenview
 class DocumentLoadedImpl;
 
 struct SaveJobPrivate;
-class GWENVIEWLIB_EXPORT SaveJob : public ThreadedDocumentJob
+class GWENVIEWLIB_EXPORT SaveJob : public DocumentJob
 {
     Q_OBJECT
 public:
@@ -49,8 +49,7 @@ public:
     KUrl oldUrl() const;
     KUrl newUrl() const;
 
-    virtual void threadedStart();
-    virtual void threadedFinish();
+    virtual void doStart();
 
 private:
     SaveJobPrivate* const d;
