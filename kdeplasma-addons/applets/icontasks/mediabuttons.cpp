@@ -276,7 +276,7 @@ bool MediaButtons::isMediaApp(const QString &desktopEntry)
     i = getV1Interface(name);
     // qDebug() << Q_FUNC_INFO << desktopEntry << i;
     if (i) {
-        return i;
+        return true;
     }
 
     return false;
@@ -312,7 +312,7 @@ MediaButtons::Interface * MediaButtons::getInterface(const QString &name, int pi
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 MediaButtons::Interface * MediaButtons::getV2Interface(const QString &name)
