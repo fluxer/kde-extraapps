@@ -221,7 +221,7 @@ void MainShellTest::testShell()
         QTimer::singleShot(0, helper.data(), SLOT(closePrintDialog()));
     }
 
-    Okular::Status status = Okular::main(paths, serializedOptions);
+    Okular::OkularStatus status = Okular::main(paths, serializedOptions);
     QCOMPARE(status, Okular::Success);
     Shell *s = findShell();
     QVERIFY(s);
@@ -414,7 +414,7 @@ void MainShellTest::testFileRemembersPagePosition()
 
     Okular::Settings::self()->setShellOpenFileInTabs(mode == 3);
 
-    Okular::Status status = Okular::main(paths, serializedOptions);
+    Okular::OkularStatus status = Okular::main(paths, serializedOptions);
     QCOMPARE(status, Okular::Success);
     Shell *s = findShell();
     QVERIFY(s);
@@ -464,7 +464,7 @@ void MainShellTest::testUnique2FilesError()
     QStringList paths;
     QString serializedOptions = ShellUtils::serializeOptions(false, false, true, false, QString());
     paths << KDESRCDIR "data/file1.pdf" << KDESRCDIR "data/tocreload.pdf";
-    Okular::Status status = Okular::main(paths, serializedOptions);
+    Okular::OkularStatus status = Okular::main(paths, serializedOptions);
     QCOMPARE(status, Okular::Error);
 
     QSet<QString> openUrls;
