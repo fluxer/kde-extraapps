@@ -362,15 +362,6 @@ KNumber::KNumber(qint64 num, quint64 den) : value_(new detail::knumber_fraction(
 KNumber::KNumber(quint64 num, quint64 den) : value_(new detail::knumber_fraction(num, den)) {
 }
 
-#ifdef HAVE_LONG_DOUBLE
-//------------------------------------------------------------------------------
-// Name: KNumber
-//------------------------------------------------------------------------------
-KNumber::KNumber(long double value) : value_(new detail::knumber_float(value)) {
-    simplify();
-}
-#endif
-
 //------------------------------------------------------------------------------
 // Name: KNumber
 //------------------------------------------------------------------------------

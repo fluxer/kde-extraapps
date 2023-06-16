@@ -85,19 +85,6 @@ knumber_float::knumber_float(double value) {
     mpf_init_set_d(mpf_, value);
 }
 
-#ifdef HAVE_LONG_DOUBLE
-//------------------------------------------------------------------------------
-// Name:
-//------------------------------------------------------------------------------
-knumber_float::knumber_float(long double value) {
-
-    Q_ASSERT(!isinf(value));
-    Q_ASSERT(!isnan(value));
-
-    mpf_init_set_d(mpf_, value);
-}
-#endif
-
 //------------------------------------------------------------------------------
 // Name:
 //------------------------------------------------------------------------------

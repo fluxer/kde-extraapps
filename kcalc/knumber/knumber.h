@@ -69,9 +69,6 @@ public:
     KNumber(qint64 num, quint64 den);
     KNumber(quint64 num, quint64 den);
 
-#ifdef HAVE_LONG_DOUBLE
-    explicit KNumber(long double value);
-#endif
     explicit KNumber(double value);
 
     KNumber(const KNumber &other);

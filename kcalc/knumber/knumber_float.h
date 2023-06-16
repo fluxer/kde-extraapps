@@ -40,9 +40,6 @@ private:
 public:
     explicit knumber_float(const QString &s);
     explicit knumber_float(double value);
-#ifdef HAVE_LONG_DOUBLE
-    explicit knumber_float(long double value);
-#endif
 
     explicit knumber_float(mpf_t mpf);
     virtual ~knumber_float();
