@@ -25,7 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <mpfr.h>
 #endif
 
-#include <QtGlobal>
 #include <QString>
 
 #define KNUMBER_BUFFER(buffername, buffersize) \
