@@ -31,6 +31,12 @@ target_link_libraries(kvkbd
     ${X11_XTest_LIB}
 )
 
-install(TARGETS kvkbd ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS kvkbd
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
 
-install(FILES kvkbd.desktop  DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(
+    FILES kvkbd.desktop
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
+)

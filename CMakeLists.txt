@@ -3,8 +3,7 @@ project(kde-extraapps)
 include(GenerateExportHeader)
 include(FeatureSummary)
 
-find_package(KDE4 4.23.0 REQUIRED)
-include(KDE4Defaults)
+find_package(KDELibs4 4.23.0 REQUIRED)
 
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 

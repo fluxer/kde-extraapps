@@ -3,8 +3,8 @@ project(ksnapshot)
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(FeatureSummary)
 
-    find_package(KDE4 4.23.0 REQUIRED)
-    include(KDE4Defaults)
+    find_package(KDELibs4 4.23.0 REQUIRED)
+
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
@@ -59,7 +59,10 @@ if (X11_Xfixes_FOUND)
     target_link_libraries(ksnapshot ${X11_Xfixes_LIB})
 endif (X11_Xfixes_FOUND)
 
-install(TARGETS ksnapshot ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS ksnapshot
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
 
 ########### next target ###############
 
@@ -69,15 +72,26 @@ set(kbackgroundsnapshot_SRCS
 )
 
 add_executable(kbackgroundsnapshot ${kbackgroundsnapshot_SRCS})
+target_link_libraries(kbackgroundsnapshot
+    ${KDE4_KIO_LIBS}
+    ${X11_LIBRARIES}
+)
 
-target_link_libraries(kbackgroundsnapshot ${KDE4_KIO_LIBS} ${X11_LIBRARIES})
-
-install(TARGETS kbackgroundsnapshot ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS kbackgroundsnapshot
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
 
 ########### install files ###############
 
-install(PROGRAMS ksnapshot.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
-install(FILES org.kde.ksnapshot.xml DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR} )
+install(
+    PROGRAMS ksnapshot.desktop
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
+)
+install(
+    FILES org.kde.ksnapshot.xml
+    DESTINATION ${KDE4_DBUS_INTERFACES_INSTALL_DIR}
+)
 kde4_install_icons(${KDE4_ICON_INSTALL_DIR} )
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})

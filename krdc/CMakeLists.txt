@@ -4,8 +4,8 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(GenerateExportHeader)
     include(FeatureSummary)
 
-    find_package(KDE4 4.23.0 REQUIRED)
-    include(KDE4Defaults)
+    find_package(KDELibs4 4.23.0 REQUIRED)
+
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
@@ -69,7 +69,7 @@ target_link_libraries(krdc
 
 target_link_libraries(krdc ${KDE4_KDNSSD_LIBS})
 
-install(TARGETS krdc ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS krdc DESTINATION ${KDE4_BIN_INSTALL_DIR})
 install(FILES krdcui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc)
 install(PROGRAMS krdc.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
 install(FILES pointcursor.png pointcursormask.png DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc/pics)

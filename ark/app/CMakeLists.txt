@@ -29,7 +29,10 @@ configure_file(
     ${CMAKE_CURRENT_BINARY_DIR}/ark_servicemenu.desktop
 )
 
-install(TARGETS ark ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS ark
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
 
 install(
     FILES ark_addtoservicemenu.desktop ${CMAKE_CURRENT_BINARY_DIR}/ark_servicemenu.desktop

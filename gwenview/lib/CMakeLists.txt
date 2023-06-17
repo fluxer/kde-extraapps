@@ -102,6 +102,7 @@ set_source_files_properties(
 )
 
 add_library(gwenviewlib SHARED ${gwenviewlib_SRCS})
+
 set_target_properties(gwenviewlib PROPERTIES
     VERSION ${GENERIC_LIB_VERSION}
     SOVERSION ${GENERIC_LIB_SOVERSION}
@@ -118,4 +119,7 @@ target_link_libraries(gwenviewlib
     ${CMAKE_THREAD_LIBS_INIT}
 )
 
-install(TARGETS gwenviewlib ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS gwenviewlib
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)

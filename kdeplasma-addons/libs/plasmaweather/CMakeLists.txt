@@ -16,7 +16,6 @@ set(plasmaweather_HEADERS
 )
 
 add_library(plasmaweather SHARED ${plasmaweather_LIB_SRCS})
-
 target_link_libraries(plasmaweather
     ${KDE4_PLASMA_LIBS}
     ${KDE4_KDEUI_LIBS}
@@ -30,6 +29,9 @@ set_target_properties(plasmaweather PROPERTIES
 
 generate_export_header(plasmaweather)
 
-install(TARGETS plasmaweather ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS plasmaweather
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)
 # nothing outside of kdeplasma-addons uses this library, and the API is not stable -> do not install headers!
-#install(FILES ${plasmaweather_HEADERS} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/plasmaweather COMPONENT Devel)
+# install(FILES ${plasmaweather_HEADERS} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/plasmaweather)

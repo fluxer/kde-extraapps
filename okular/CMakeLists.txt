@@ -4,8 +4,8 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(GenerateExportHeader)
     include(FeatureSummary)
 
-    find_package(KDE4 4.23.0 REQUIRED)
-    include(KDE4Defaults)
+    find_package(KDELibs4 4.23.0 REQUIRED)
+
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
@@ -129,7 +129,6 @@ install(
     ${CMAKE_CURRENT_BINARY_DIR}/settings_core.h
     ${CMAKE_CURRENT_BINARY_DIR}/okular_export.h
     DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/okular/core
-    COMPONENT Devel
 )
 
 install(
@@ -140,13 +139,11 @@ install(
     interfaces/saveinterface.h
     interfaces/viewerinterface.h
     DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/okular/interfaces
-    COMPONENT Devel
 )
 
 kde4_add_kcfg_files(okularcore_SRCS ${PROJECT_SOURCE_DIR}/conf/settings_core.kcfgc )
 
 add_library(okularcore SHARED ${okularcore_SRCS})
-
 target_link_libraries(okularcore
     ${KDE4_KIO_LIBS}
     ${KDE4_KARCHIVE_LIBS}
@@ -161,11 +158,23 @@ set_target_properties(okularcore PROPERTIES
 
 generate_export_header(okularcore BASE_NAME okular)
 
-install(TARGETS okularcore ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(
+    TARGETS okularcore
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)
 
-install(FILES conf/okular.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
-install(FILES conf/okular_core.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
-install(FILES core/okularGenerator.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR})
+install(
+    FILES conf/okular.kcfg
+    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
+)
+install(
+    FILES conf/okular_core.kcfg
+    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
+)
+install(
+    FILES core/okularGenerator.desktop
+    DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
+)
 
 # okularpart
 
@@ -240,13 +249,21 @@ target_link_libraries(okularpart
 
 generate_export_header(okularpart)
 
-install(TARGETS okularpart DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
-
+install(
+    TARGETS okularpart
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
+)
 
 ########### install files ###############
 
-install(FILES okular_part.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
-install(FILES part.rc part-viewermode.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular)
+install(
+    FILES okular_part.desktop
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
+)
+install(
+    FILES part.rc part-viewermode.rc
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular
+)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

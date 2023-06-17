@@ -3,8 +3,8 @@ project(kget)
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     include(FeatureSummary)
 
-    find_package(KDE4 4.23.0 REQUIRED)
-    include(KDE4Defaults)
+    find_package(KDELibs4 4.23.0 REQUIRED)
+
     include_directories(${KDE4_INCLUDES})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
@@ -141,7 +141,10 @@ set_target_properties(kgetcore PROPERTIES
     SOVERSION ${GENERIC_LIB_SOVERSION}
 )
 
-install(TARGETS kgetcore ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS kgetcore
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)
 
 # kget
 
@@ -226,9 +229,15 @@ if (KGET_TESTING)
     )
 endif()
 
-install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS kget
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
 
-install(FILES kget.notifyrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/kget)
+install(
+    FILES kget.notifyrc
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/kget
+)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

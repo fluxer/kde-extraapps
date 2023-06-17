@@ -13,7 +13,6 @@ set(krfbprivate_SRCS
 )
 
 add_library(krfbprivate SHARED ${krfbprivate_SRCS})
-
 target_link_libraries(krfbprivate
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
@@ -28,7 +27,7 @@ set_target_properties(krfbprivate PROPERTIES
 
 install(
     TARGETS krfbprivate
-    ${INSTALL_TARGETS_DEFAULT_ARGS}
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
     LIBRARY NAMELINK_SKIP
 )
 
@@ -84,7 +83,8 @@ target_link_libraries(krfb
 )
 
 install(
-    TARGETS krfb ${INSTALL_TARGETS_DEFAULT_ARGS}
+    TARGETS krfb
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
 )
 
 ########### install files ###############

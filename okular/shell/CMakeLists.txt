@@ -4,7 +4,6 @@ include_directories(
 )
 
 # okular
-
 set(okular_SRCS
    main.cpp
    okular_main.cpp
@@ -13,14 +12,19 @@ set(okular_SRCS
 )
 
 add_executable(okular ${okular_SRCS})
-
 target_link_libraries(okular ${KDE4_KPARTS_LIBS})
 
-install(TARGETS okular ${INSTALL_TARGETS_DEFAULT_ARGS})
-
+install(
+    TARGETS okular
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
 
 # okular shell data files
-
-install( PROGRAMS okular.desktop  DESTINATION  ${KDE4_XDG_APPS_INSTALL_DIR} )
-install( FILES shell.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular )
-
+install(
+    PROGRAMS okular.desktop
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
+)
+install(
+    FILES shell.rc
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/okular
+)

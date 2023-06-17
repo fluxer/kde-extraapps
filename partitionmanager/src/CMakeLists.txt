@@ -184,7 +184,6 @@ qt4_wrap_ui(partitionmanagerprivate_SRCS
 kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
 add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
-
 target_link_libraries(partitionmanagerprivate
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KFILE_LIBS}
@@ -201,17 +200,32 @@ if(LIBATASMART_FOUND)
     )
 endif()
 
-install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS partitionmanagerprivate
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)
 
 ############################################
 
 add_executable(partitionmanager main.cpp)
+target_link_libraries(partitionmanager
+    ${KDE4_KDECORE_LIBS}
+    ${KDE4_KDEUI_LIBS}
+    partitionmanagerprivate
+)
 
-target_link_libraries(partitionmanager partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
-
-install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES gui/partitionmanagerui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/partitionmanager)
-install(PROGRAMS partitionmanager.desktop DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR})
+install(
+    TARGETS partitionmanager
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
+)
+install(
+    FILES gui/partitionmanagerui.rc
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/partitionmanager
+)
+install(
+    PROGRAMS partitionmanager.desktop
+    DESTINATION ${KDE4_XDG_APPS_INSTALL_DIR}
+)
 
 ############################################
 

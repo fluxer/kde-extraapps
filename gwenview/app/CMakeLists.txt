@@ -45,7 +45,7 @@ target_link_libraries(gwenview
     gwenviewlib
 )
 
-install(TARGETS gwenview ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS gwenview DESTINATION ${KDE4_BIN_INSTALL_DIR})
 
 install(FILES gwenviewui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/gwenview)
 

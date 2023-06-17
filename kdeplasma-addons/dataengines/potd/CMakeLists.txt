@@ -21,14 +21,14 @@ target_link_libraries(plasmapotdprovidercore ${KDE4_KDEUI_LIBS})
 
 generate_export_header(plasmapotdprovidercore BASE_NAME plasma_potd)
 
-install( TARGETS plasmapotdprovidercore ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install( TARGETS plasmapotdprovidercore DESTINATION ${KDE4_LIB_INSTALL_DIR})
 install( FILES plasma_potdprovider.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR} )
 
 
 ########### plugins ###############
 
 set( potd_flickr_provider_SRCS
-	flickrprovider.cpp
+    flickrprovider.cpp
 )
 
 kde4_add_plugin( plasma_potd_flickrprovider ${potd_flickr_provider_SRCS} )
@@ -38,7 +38,7 @@ install( FILES flickrprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 
 
 set( potd_apod_provider_SRCS
-	apodprovider.cpp
+    apodprovider.cpp
 )
 
 kde4_add_plugin( plasma_potd_apodprovider ${potd_apod_provider_SRCS} )
@@ -47,7 +47,7 @@ install( TARGETS plasma_potd_apodprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
 install( FILES apodprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 
 set( potd_epod_provider_SRCS
-	epodprovider.cpp
+    epodprovider.cpp
 )
 
 kde4_add_plugin( plasma_potd_epodprovider ${potd_epod_provider_SRCS} )

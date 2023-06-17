@@ -23,7 +23,10 @@ set_target_properties(krdccore PROPERTIES
 
 generate_export_header(krdccore)
 
-install(TARGETS krdccore ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS krdccore
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)
 
 # Install headers
 set(krdccore_HDRS
@@ -32,6 +35,15 @@ set(krdccore_HDRS
     hostpreferences.h
 )
 
-install(FILES ${krdccore_HDRS} DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/krdc COMPONENT Devel)
-install(FILES krdc_plugin.desktop DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR})
-install(FILES krdc.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
+install(
+    FILES ${krdccore_HDRS}
+    DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/krdc
+)
+install(
+    FILES krdc_plugin.desktop
+    DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
+)
+install(
+    FILES krdc.kcfg
+    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
+)

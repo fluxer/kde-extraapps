@@ -26,22 +26,18 @@ set(importer_SRCS
 kde4_add_kcfg_files(importer_SRCS importerconfig.kcfgc)
 
 add_executable(gwenview_importer ${importer_SRCS})
-
-target_link_libraries(gwenview_importer PRIVATE
+target_link_libraries(gwenview_importer
     ${KDE4_KFILE_LIBS}
+    ${KDE4_KIO_LIBS}
+    ${KDE4_SOLID_LIBS}
+    ${QT_QTCORE_LIBRARY}
     gwenviewlib
-    ${KDE4_KIO_LIBS}
-    ${KDE4_SOLID_LIBS}
-    ${QT_QTCORE_LIBRARY}
 )
 
-target_link_libraries(gwenview_importer PUBLIC
-    ${KDE4_KIO_LIBS}
-    ${KDE4_SOLID_LIBS}
-    ${QT_QTCORE_LIBRARY}
+install(
+    TARGETS gwenview_importer
+    DESTINATION ${KDE4_BIN_INSTALL_DIR}
 )
-
-install(TARGETS gwenview_importer ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES gwenview_importer.desktop
     gwenview_importer_camera.desktop

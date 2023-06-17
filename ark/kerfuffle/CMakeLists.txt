@@ -15,7 +15,6 @@ set(kerfuffle_SRCS
 kde4_add_kcfg_files(kerfuffle_SRCS settings.kcfgc)
 
 add_library(kerfuffle SHARED ${kerfuffle_SRCS})
-
 target_link_libraries(kerfuffle
     ${KDE4_KFILE_LIBS}
     ${KDE4_KPARTS_LIBS}
@@ -29,7 +28,10 @@ set_target_properties(kerfuffle PROPERTIES
 
 generate_export_header(kerfuffle)
 
-install(TARGETS kerfuffle ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS kerfuffle
+    DESTINATION ${KDE4_LIB_INSTALL_DIR}
+)
 
 install(
     FILES kerfufflePlugin.desktop
