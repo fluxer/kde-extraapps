@@ -10,9 +10,9 @@ set(weatherapplet_SRCS
 
 kde4_add_plugin(plasma_applet_weather ${weatherapplet_SRCS})
 target_link_libraries(plasma_applet_weather
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KDEUI_LIBS}
+    KDE4::plasma
+    KDE4::kio
+    KDE4::kdeui
     ${KDE4WORKSPACE_WEATHERION_LIBRARY}
     ${QT_QTDECLARATIVE_LIBRARY}
     plasmaweather

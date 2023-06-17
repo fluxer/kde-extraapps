@@ -6,8 +6,8 @@ set(dict_SRCS
 
 kde4_add_plugin(plasma_applet_dict ${dict_SRCS})
 target_link_libraries(plasma_applet_dict
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KDEUI_LIBS}
+    KDE4::plasma
+    KDE4::kdeui
 )
 
 install(

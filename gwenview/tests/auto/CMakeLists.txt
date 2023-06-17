@@ -1,9 +1,9 @@
 macro(gv_add_unit_test _test)
     kde4_add_test(${_test} ${_test}.cpp ${ARGN})
     target_link_libraries(${_test}
-        ${KDE4_KIO_LIBS}
-        ${KDE4_KDEUI_LIBS}
-        ${KDE4_KDECORE_LIBS}
+        KDE4::kio
+        KDE4::kdeui
+        KDE4::kdecore
         ${QT_QTTEST_LIBRARY}
         ${QT_QTCORE_LIBRARY}
         ${QT_QTGUI_LIBRARY}

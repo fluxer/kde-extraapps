@@ -24,7 +24,7 @@ add_executable(profiletest ${profiletest_SRCS}
     ${kmix_adaptor_SRCS}
 )
 
-target_link_libraries(profiletest ${KDE4_KDECORE_LIBS} ${KDE4_SOLID_LIBS} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY})
+target_link_libraries(profiletest KDE4::kdecore KDE4::solid ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY})
 
 if (ALSA_FOUND)
     target_link_libraries(profiletest ${ALSA_LIBRARIES})
@@ -35,4 +35,4 @@ set(dialogtest_SRCS dialogtest.cpp)
 
 add_executable(dialogtest ${dialogtest_SRCS})
     
-target_link_libraries(dialogtest ${KDE4_KDEUI_LIBS})
+target_link_libraries(dialogtest KDE4::kdeui)

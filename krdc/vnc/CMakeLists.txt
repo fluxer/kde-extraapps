@@ -18,8 +18,8 @@ if(LIBVNCSERVER_FOUND)
     kde4_add_plugin(krdc_vncplugin ${vncplugin_SRCS})
 
     target_link_libraries(krdc_vncplugin 
-        ${KDE4_KDECORE_LIBS}
-        ${KDE4_KDEUI_LIBS}
+        KDE4::kdecore
+        KDE4::kdeui
         ${LIBVNCCLIENT_LIBRARIES}
         krdccore
     )
@@ -31,7 +31,7 @@ if(LIBVNCSERVER_FOUND)
     kde4_add_plugin(kcm_krdc_vncplugin ${kcm_krdc_vncplugin_SRCS})
 
     target_link_libraries(kcm_krdc_vncplugin
-        ${KDE4_KDEUI_LIBS}
+        KDE4::kdeui
         krdccore
     )
 

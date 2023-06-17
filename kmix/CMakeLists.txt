@@ -107,9 +107,9 @@ set(kmix_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
 add_executable(kmix ${kmix_SRCS})
 
 target_link_libraries(kmix
-    ${KDE4_SOLID_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_PLASMA_LIBS}
+    KDE4::solid
+    KDE4::kdeui
+    KDE4::plasma
     ${QT_QTXML_LIBRARY}
     ${X11_X11_LIB}
 )
@@ -150,8 +150,8 @@ kde4_add_plugin(kded_kmixd ${kded_kmixd_SRCS})
 
 
 target_link_libraries(kded_kmixd
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kdeui
+    KDE4::solid
     ${QT_QTXML_LIBRARY}
 )
 
@@ -193,8 +193,8 @@ set(kmixctrl_SRCS ${kmix_adaptor_SRCS} ${kmix_backend_SRCS}
 add_executable(kmixctrl ${kmixctrl_SRCS})
 
 target_link_libraries(kmixctrl
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kdeui
+    KDE4::solid
     ${QT_QTXML_LIBRARY}
 )
 

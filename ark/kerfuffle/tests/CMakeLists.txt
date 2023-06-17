@@ -12,7 +12,7 @@ macro(KERFUFFLE_UNIT_TESTS)
         target_link_libraries(kerfuffle-${_testname}
             jsoninterface
             kerfuffle
-            ${KDE4_KDEUI_LIBS}
+            KDE4::kdeui
             ${QT_QTTEST_LIBRARY}
         )
     endforeach(_testname)

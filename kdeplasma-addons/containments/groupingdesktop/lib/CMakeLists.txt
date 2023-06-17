@@ -24,7 +24,7 @@ set(groupingcontainment_SRCS
     groups/tabbinggroup_config.ui
 )
 add_library(plasma_groupingcontainment SHARED ${groupingcontainment_SRCS})
-target_link_libraries(plasma_groupingcontainment ${KDE4_PLASMA_LIBS})
+target_link_libraries(plasma_groupingcontainment KDE4::plasma)
 
 generate_export_header(plasma_groupingcontainment)
 

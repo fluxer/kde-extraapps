@@ -14,7 +14,7 @@ kde4_add_plugin (krfb_framebuffer_qt
 target_link_libraries (krfb_framebuffer_qt
                        ${QT_QTCORE_LIBRARY}
                        ${QT_QTGUI_LIBRARY}
-                       ${KDE4_KDEUI_LIBS}
+                       KDE4::kdeui
                        krfbprivate
 )
 

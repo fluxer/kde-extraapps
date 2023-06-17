@@ -19,7 +19,7 @@ kde4_add_plugin(krfb_framebuffer_x11
 )
 
 target_link_libraries(krfb_framebuffer_x11
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdeui
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     ${X11_X11_LIB}

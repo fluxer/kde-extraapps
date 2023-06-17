@@ -9,7 +9,7 @@ set(pattern_SRCS
 )
 
 kde4_add_plugin(plasma_wallpaper_pattern ${pattern_SRCS})
-target_link_libraries(plasma_wallpaper_pattern ${KDE4_PLASMA_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS})
+target_link_libraries(plasma_wallpaper_pattern KDE4::plasma KDE4::kdecore KDE4::kfile)
 
 install(TARGETS plasma_wallpaper_pattern DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES plasma-wallpaper-pattern.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

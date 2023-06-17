@@ -8,7 +8,7 @@ kde4_add_plugin(krunner_kget
     ${krunner_kget_SRCS}
 )
 target_link_libraries(krunner_kget
-    ${KDE4_PLASMA_LIBS}
+    KDE4::plasma
 )
 
 install(TARGETS

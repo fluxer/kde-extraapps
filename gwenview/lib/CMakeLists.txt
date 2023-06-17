@@ -111,9 +111,9 @@ set_target_properties(gwenviewlib PROPERTIES
 generate_export_header(gwenviewlib)
 
 target_link_libraries(gwenviewlib
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KEXIV2_LIBS}
+    KDE4::kfile
+    KDE4::kio
+    KDE4::kexiv2
     ${QT_QTGUI_LIBRARY}
     ${X11_X11_LIB}
     ${CMAKE_THREAD_LIBS_INIT}

@@ -3,7 +3,7 @@ project(luna)
 set(luna_SRCS luna.cpp lunaConfig.ui)
 kde4_add_plugin(plasma_applet_luna ${luna_SRCS})
 target_link_libraries(plasma_applet_luna
-                      ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS})
+                      KDE4::plasma KDE4::kdeui)
  
 install(TARGETS plasma_applet_luna
         DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

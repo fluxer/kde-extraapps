@@ -27,9 +27,9 @@ kde4_add_kcfg_files(importer_SRCS importerconfig.kcfgc)
 
 add_executable(gwenview_importer ${importer_SRCS})
 target_link_libraries(gwenview_importer
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kfile
+    KDE4::kio
+    KDE4::solid
     ${QT_QTCORE_LIBRARY}
     gwenviewlib
 )

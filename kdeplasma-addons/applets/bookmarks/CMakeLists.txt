@@ -9,9 +9,9 @@ set( bookmarks_SRCS
 kde4_add_plugin( plasma_applet_bookmarks  ${bookmarks_SRCS})
 
 target_link_libraries( plasma_applet_bookmarks
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::plasma
+    KDE4::kdeui
+    KDE4::kio
 )
 
 install( TARGETS plasma_applet_bookmarks  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

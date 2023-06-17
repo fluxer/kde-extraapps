@@ -60,14 +60,14 @@ set(krdc_SRCS
 add_executable(krdc ${krdc_SRCS})
 
 target_link_libraries(krdc
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KNOTIFYCONFIG_LIBS}
-    ${KDE4_KCMUTILS_LIBS}
+    KDE4::kfile
+    KDE4::kio
+    KDE4::knotifyconfig
+    KDE4::kcmutils
     krdccore
 )
 
-target_link_libraries(krdc ${KDE4_KDNSSD_LIBS})
+target_link_libraries(krdc KDE4::kdnssd)
 
 install(TARGETS krdc DESTINATION ${KDE4_BIN_INSTALL_DIR})
 install(FILES krdcui.rc DESTINATION ${KDE4_DATA_INSTALL_DIR}/krdc)

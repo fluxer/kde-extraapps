@@ -11,7 +11,7 @@ qt4_add_dbus_adaptor(arkpart_PART_SRCS dnddbusinterface.xml part.h Ark::Part)
 
 kde4_add_plugin(arkpart ${arkpart_PART_SRCS})
 
-target_link_libraries(arkpart kerfuffle ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDEUI_LIBS})
+target_link_libraries(arkpart kerfuffle KDE4::kfile KDE4::kparts KDE4::kdeui)
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/ark_part.desktop.cmake

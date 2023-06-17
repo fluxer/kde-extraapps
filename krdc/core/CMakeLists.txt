@@ -11,9 +11,9 @@ kde4_add_kcfg_files(krdccore_SRCS settings.kcfgc)
 add_library(krdccore SHARED ${krdccore_SRCS})
 
 target_link_libraries(krdccore
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KPASSWDSTORE_LIBS}
+    KDE4::kdecore
+    KDE4::kdeui
+    KDE4::kpasswdstore
 )
 
 set_target_properties(krdccore PROPERTIES

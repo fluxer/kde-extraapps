@@ -20,7 +20,7 @@ kde4_add_kcfg_files(okularGenerator_ghostview_SRCS conf/gssettings.kcfgc)
 kde4_add_plugin(okularGenerator_ghostview ${okularGenerator_ghostview_SRCS})
 
 target_link_libraries(okularGenerator_ghostview
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdeui
     ${QT_QTXML_LIBRARY}
     ${LIBSPECTRE_LIBRARY}
     okularcore

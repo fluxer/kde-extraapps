@@ -10,7 +10,7 @@ set(kget_kiofactory_PART_SRCS
 
 kde4_add_plugin(kget_kiofactory ${kget_kiofactory_PART_SRCS})
 
-target_link_libraries(kget_kiofactory ${KDE4_KIO_LIBS} kgetcore)
+target_link_libraries(kget_kiofactory KDE4::kio kgetcore)
 
 install(TARGETS kget_kiofactory DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES kget_kiofactory.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

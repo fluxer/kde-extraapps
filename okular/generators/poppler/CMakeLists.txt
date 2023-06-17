@@ -15,7 +15,7 @@ set(okularGenerator_poppler_PART_SRCS
 kde4_add_plugin(okularGenerator_poppler ${okularGenerator_poppler_PART_SRCS})
 
 target_link_libraries(okularGenerator_poppler
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdeui
     ${POPPLER_LIBRARIES}
     okularcore
 )

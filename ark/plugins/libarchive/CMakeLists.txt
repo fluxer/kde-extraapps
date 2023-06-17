@@ -32,7 +32,7 @@ set(kerfuffle_libarchive_SRCS libarchivehandler.cpp)
 
 kde4_add_plugin(kerfuffle_libarchive ${kerfuffle_libarchive_SRCS})
 
-target_link_libraries(kerfuffle_libarchive ${KDE4_KDECORE_LIBS} ${KDE4_KARCHIVE_LIBS} kerfuffle)
+target_link_libraries(kerfuffle_libarchive KDE4::kdecore KDE4::karchive kerfuffle)
 
 install(TARGETS kerfuffle_libarchive  DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 

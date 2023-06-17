@@ -11,7 +11,7 @@ set(notes_SRCS notes.cpp textedit.cpp config.ui)
 
 kde4_add_plugin(plasma_applet_notes ${notes_SRCS})
 target_link_libraries(plasma_applet_notes
-            ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS}
+            KDE4::plasma KDE4::kio
             )
 install(
     TARGETS plasma_applet_notes

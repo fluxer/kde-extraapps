@@ -18,7 +18,7 @@ set(AudioThumbs_SRCS AudioThumbs.cpp)
 kde4_add_plugin(AudioThumbs ${AudioThumbs_SRCS})
 
 target_link_libraries(AudioThumbs
-    ${KDE4_KIO_LIBS}
+    KDE4::kio
     ${TAGLIB_LIBRARIES}
 )
 

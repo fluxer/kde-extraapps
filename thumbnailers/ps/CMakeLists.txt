@@ -10,8 +10,8 @@ kde4_add_kcfg_files(psthumbnail_PART_SRCS pscreatorsettings.kcfgc)
 kde4_add_plugin(psthumbnail ${psthumbnail_PART_SRCS})
 
 target_link_libraries(psthumbnail
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::kdecore
+    KDE4::kio
     ${QT_QTGUI_LIBRARY}
     ${LIBSPECTRE_LIBRARY}
 )

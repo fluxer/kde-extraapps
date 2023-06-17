@@ -4,7 +4,7 @@ set(potd_engine_SRCS
 )
 
 kde4_add_plugin(plasma_engine_potd ${potd_engine_SRCS} )
-target_link_libraries(plasma_engine_potd plasmapotdprovidercore ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS} )
+target_link_libraries(plasma_engine_potd plasmapotdprovidercore KDE4::kdeui KDE4::plasma )
 
 install(TARGETS plasma_engine_potd DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 install(FILES plasma-dataengine-potd.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
@@ -17,7 +17,7 @@ set(potd_provider_core_SRCS
 )
 
 add_library(plasmapotdprovidercore SHARED ${potd_provider_core_SRCS})
-target_link_libraries(plasmapotdprovidercore ${KDE4_KDEUI_LIBS})
+target_link_libraries(plasmapotdprovidercore KDE4::kdeui)
 
 generate_export_header(plasmapotdprovidercore BASE_NAME plasma_potd)
 
@@ -32,7 +32,7 @@ set( potd_flickr_provider_SRCS
 )
 
 kde4_add_plugin( plasma_potd_flickrprovider ${potd_flickr_provider_SRCS} )
-target_link_libraries( plasma_potd_flickrprovider plasmapotdprovidercore ${KDE4_KIO_LIBS}  ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY})
+target_link_libraries( plasma_potd_flickrprovider plasmapotdprovidercore KDE4::kio  KDE4::kdecore ${QT_QTGUI_LIBRARY})
 install( TARGETS plasma_potd_flickrprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 install( FILES flickrprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 
@@ -42,7 +42,7 @@ set( potd_apod_provider_SRCS
 )
 
 kde4_add_plugin( plasma_potd_apodprovider ${potd_apod_provider_SRCS} )
-target_link_libraries( plasma_potd_apodprovider plasmapotdprovidercore ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY} ${KDE4_KDECORE_LIBS})
+target_link_libraries( plasma_potd_apodprovider plasmapotdprovidercore KDE4::kio ${QT_QTGUI_LIBRARY} KDE4::kdecore)
 install( TARGETS plasma_potd_apodprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 install( FILES apodprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
 
@@ -51,6 +51,6 @@ set( potd_epod_provider_SRCS
 )
 
 kde4_add_plugin( plasma_potd_epodprovider ${potd_epod_provider_SRCS} )
-target_link_libraries( plasma_potd_epodprovider plasmapotdprovidercore ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY})
+target_link_libraries( plasma_potd_epodprovider plasmapotdprovidercore KDE4::kio KDE4::kdecore ${QT_QTGUI_LIBRARY})
 install( TARGETS plasma_potd_epodprovider DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 install( FILES epodprovider.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )

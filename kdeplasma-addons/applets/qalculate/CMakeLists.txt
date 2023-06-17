@@ -18,10 +18,10 @@ set(qalculate_SRCS
 # Now make sure all files get to the right place
 kde4_add_plugin(plasma_applet_qalculate ${qalculate_SRCS})
 target_link_libraries(plasma_applet_qalculate 
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_SOLID_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::plasma
+    KDE4::kdeui
+    KDE4::solid
+    KDE4::kio
     ${QALCULATE_LIBRARIES}
 )
  

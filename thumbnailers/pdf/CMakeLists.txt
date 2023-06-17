@@ -10,8 +10,8 @@ kde4_add_kcfg_files(pdfthumbnail_PART_SRCS pdfcreatorsettings.kcfgc)
 kde4_add_plugin(pdfthumbnail ${pdfthumbnail_PART_SRCS})
 
 target_link_libraries(pdfthumbnail
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::kdecore
+    KDE4::kio
     ${QT_QTGUI_LIBRARY}
     ${POPPLER_LIBRARIES}
 )

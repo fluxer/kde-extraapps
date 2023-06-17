@@ -6,7 +6,7 @@ set(kded_kemu_SRCS
 qt4_generate_dbus_interface(kded_kemu.h org.kde.kemu.xml)
 
 kde4_add_plugin(kded_kemu ${kded_kemu_SRCS})
-target_link_libraries(kded_kemu ${KDE4_KDECORE_LIBS})
+target_link_libraries(kded_kemu KDE4::kdecore)
 
 install(
     TARGETS kded_kemu

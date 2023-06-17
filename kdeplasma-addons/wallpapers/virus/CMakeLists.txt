@@ -16,9 +16,9 @@ endif()
 
 kde4_add_plugin(plasma_wallpaper_virus ${virus_SRCS})
 target_link_libraries(plasma_wallpaper_virus
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KFILE_LIBS}
+    KDE4::plasma
+    KDE4::kio
+    KDE4::kfile
 )
 
 install(

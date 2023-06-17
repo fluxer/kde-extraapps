@@ -15,7 +15,7 @@ set(okularGenerator_fb_PART_SRCS
 
 kde4_add_plugin(okularGenerator_fb ${okularGenerator_fb_PART_SRCS})
 
-target_link_libraries(okularGenerator_fb okularcore ${KDE4_KIO_LIBS} ${KDE4_KARCHIVE_LIBS} ${QT_QTXML_LIBRARY})
+target_link_libraries(okularGenerator_fb okularcore KDE4::kio KDE4::karchive ${QT_QTXML_LIBRARY})
 
 install(TARGETS okularGenerator_fb DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 

@@ -145,8 +145,8 @@ kde4_add_kcfg_files(okularcore_SRCS ${PROJECT_SOURCE_DIR}/conf/settings_core.kcf
 
 add_library(okularcore SHARED ${okularcore_SRCS})
 target_link_libraries(okularcore
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KARCHIVE_LIBS}
+    KDE4::kio
+    KDE4::karchive
     ${MATH_LIB}
     KDE4::kmediaplayer
 )
@@ -238,9 +238,9 @@ kde4_add_kcfg_files(okularpart_SRCS ${PROJECT_SOURCE_DIR}/conf/settings.kcfgc )
 kde4_add_plugin(okularpart ${okularpart_SRCS})
 
 target_link_libraries(okularpart
-    ${KDE4_KPARTS_LIBS}
-    ${KDE4_KPASSWDSTORE_LIBS}
-    ${KDE4_KARCHIVE_LIBS}
+    KDE4::kparts
+    KDE4::kpasswdstore
+    KDE4::karchive
     ${QT_QTGUI_LIBRARY}
     ${QT_QTDBUS_LIBRARY}
     ${MATH_LIB}

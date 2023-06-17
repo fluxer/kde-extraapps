@@ -39,7 +39,7 @@ kde4_add_kcfg_files(ffmpegthumbs_PART_SRCS ffmpegthumbssettings.kcfgc)
 kde4_add_plugin(ffmpegthumbs ${ffmpegthumbs_PART_SRCS})
 
 target_link_libraries(ffmpegthumbs
-    ${KDE4_KIO_LIBS}
+    KDE4::kio
     ${FFMPEGTHUMBNAILER_LIBRARIES}
 )
 

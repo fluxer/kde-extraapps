@@ -185,11 +185,11 @@ kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
 add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 target_link_libraries(partitionmanagerprivate
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kdecore
+    KDE4::kfile
+    KDE4::kio
+    KDE4::kdeui
+    KDE4::solid
     ${UUID_LIBRARIES}
     ${BLKID_LIBRARIES}
 )
@@ -209,8 +209,8 @@ install(
 
 add_executable(partitionmanager main.cpp)
 target_link_libraries(partitionmanager
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdecore
+    KDE4::kdeui
     partitionmanagerprivate
 )
 

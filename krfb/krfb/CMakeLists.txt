@@ -76,9 +76,9 @@ target_link_libraries(krfb
     ${X11_Xdamage_LIB}
     ${X11_XTest_LIB}
     ${QT_QTNETWORK_LIBRARY}
-    ${KDE4_KDNSSD_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KPASSWDSTORE_LIBS}
+    KDE4::kdnssd
+    KDE4::kdeui
+    KDE4::kpasswdstore
     ${LIBVNCSERVER_LIBRARIES}
 )
 

@@ -15,7 +15,7 @@ set(kget_torrentfactory_PART_SRCS
 kde4_add_plugin(kget_torrentfactory ${kget_torrentfactory_PART_SRCS})
 
 target_link_libraries(kget_torrentfactory
-    ${KDE4_KDECORE_LIBS}
+    KDE4::kdecore
     ${LIBTORRENT_LIBRARIES}
     kgetcore
 )
@@ -41,7 +41,7 @@ set(kcm_kget_torrentfactory_PART_SRCS
 
 kde4_add_plugin(kcm_kget_torrentfactory ${kcm_kget_torrentfactory_PART_SRCS})
 target_link_libraries(kcm_kget_torrentfactory
-    ${KDE4_KDEUI_LIBS} 
+    KDE4::kdeui 
     ${LIBTORRENT_LIBRARIES}
 )
 

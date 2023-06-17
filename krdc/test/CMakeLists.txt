@@ -10,8 +10,8 @@ set(testplugin_SRCS
 kde4_add_plugin(krdc_testplugin ${testplugin_SRCS})
 
 target_link_libraries(krdc_testplugin
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdecore
+    KDE4::kdeui
     krdccore
 )
 install(TARGETS krdc_testplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

@@ -5,9 +5,9 @@ set(bball_SRCS bball.cpp bballConfig.ui)
 kde4_add_plugin(plasma_applet_bball ${bball_SRCS})
 
 target_link_libraries(plasma_applet_bball
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::plasma
+    KDE4::kdeui
+    KDE4::kio
 )
 
 install(

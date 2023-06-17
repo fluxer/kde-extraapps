@@ -39,12 +39,12 @@ set(filelight_PART_SRCS
 kde4_add_plugin(filelightpart ${filelight_PART_SRCS})
 
 target_link_libraries(filelightpart
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KPARTS_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kdecore
+    KDE4::kparts
+    KDE4::kdeui
+    KDE4::kio
+    KDE4::kfile
+    KDE4::solid
 )
 
 install(

@@ -12,7 +12,7 @@ set(okular_SRCS
 )
 
 add_executable(okular ${okular_SRCS})
-target_link_libraries(okular ${KDE4_KPARTS_LIBS})
+target_link_libraries(okular KDE4::kparts)
 
 install(
     TARGETS okular

@@ -9,7 +9,7 @@ set(gvpart_SRCS
 
 kde4_add_plugin(gvpart ${gvpart_SRCS})
 
-target_link_libraries(gvpart ${KDE4_KPARTS_LIBS} gwenviewlib)
+target_link_libraries(gvpart KDE4::kparts gwenviewlib)
 
 install(
     TARGETS gvpart

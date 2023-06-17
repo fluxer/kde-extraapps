@@ -12,7 +12,7 @@ endif()
 set(ktimer_SRCS main.cpp ktimer.cpp prefwidget.ui)
 
 add_executable(ktimer ${ktimer_SRCS})
-target_link_libraries(ktimer  ${KDE4_KIO_LIBS})
+target_link_libraries(ktimer  KDE4::kio)
 
 install(
     TARGETS ktimer

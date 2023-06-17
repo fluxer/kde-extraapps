@@ -13,8 +13,8 @@ set(okularGenerator_comicbook_PART_SRCS
 kde4_add_plugin(okularGenerator_comicbook ${okularGenerator_comicbook_PART_SRCS})
 
 target_link_libraries(okularGenerator_comicbook
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KARCHIVE_LIBS}
+    KDE4::kio
+    KDE4::karchive
     okularcore
 )
 

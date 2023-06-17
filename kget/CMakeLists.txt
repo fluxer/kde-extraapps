@@ -128,8 +128,8 @@ qt4_add_dbus_adaptor(kgetcore_SRCS dbus/org.kde.kget.verifier.xml dbus/dbusverif
 add_library(kgetcore SHARED ${kgetcore_SRCS})
 
 target_link_libraries(kgetcore
-    ${KDE4_KIO_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kio
+    KDE4::solid
 )
 
 if (KDE4WORKSPACE_FOUND)
@@ -215,11 +215,11 @@ qt4_add_dbus_adaptor(kget_SRCS dbus/org.kde.kget.main.xml dbus/dbuskgetwrapper.h
 add_executable(kget ${kget_SRCS})
 
 target_link_libraries(kget
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KCMUTILS_LIBS}
-    ${KDE4_KNOTIFYCONFIG_LIBS}
-    ${KDE4_KPASSWDSTORE_LIBS}
+    KDE4::kdeui
+    KDE4::kio
+    KDE4::kcmutils
+    KDE4::knotifyconfig
+    KDE4::kpasswdstore
     kgetcore
 )
 

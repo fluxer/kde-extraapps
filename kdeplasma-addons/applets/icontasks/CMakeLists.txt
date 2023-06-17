@@ -25,9 +25,9 @@ qt4_add_dbus_interface(tasks_SRCS org.freedesktop.MediaPlayer.player.xml playerv
 kde4_add_plugin(plasma_applet_icontasks ${tasks_SRCS})
 
 target_link_libraries(plasma_applet_icontasks
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::kdeui
+    KDE4::plasma
+    KDE4::kio
     ${KDE4WORKSPACE_TASKMANAGER_LIBS}
 )
 

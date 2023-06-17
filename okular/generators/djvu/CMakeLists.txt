@@ -16,7 +16,7 @@ set(okularGenerator_djvu_SRCS
 
 kde4_add_plugin(okularGenerator_djvu ${okularGenerator_djvu_SRCS})
 
-target_link_libraries(okularGenerator_djvu okularcore ${DJVULIBRE_LIBRARY} ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY})
+target_link_libraries(okularGenerator_djvu okularcore ${DJVULIBRE_LIBRARY} KDE4::kdeui ${QT_QTXML_LIBRARY})
 
 install(TARGETS okularGenerator_djvu DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 

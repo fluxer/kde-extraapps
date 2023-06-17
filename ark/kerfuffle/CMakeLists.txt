@@ -16,9 +16,9 @@ kde4_add_kcfg_files(kerfuffle_SRCS settings.kcfgc)
 
 add_library(kerfuffle SHARED ${kerfuffle_SRCS})
 target_link_libraries(kerfuffle
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KPARTS_LIBS}
-    ${KDE4_KPTY_LIBS}
+    KDE4::kfile
+    KDE4::kparts
+    KDE4::kpty
 )
 
 set_target_properties(kerfuffle PROPERTIES

@@ -13,8 +13,8 @@ qt4_add_dbus_interface(mixer_engine_SRCS ../../dbus/org.kde.kmix.control.xml
 	control_interface)
 
 kde4_add_plugin(plasma_engine_mixer ${mixer_engine_SRCS})
-target_link_libraries(plasma_engine_mixer ${KDE4_KDECORE_LIBS}
-	${KDE4_PLASMA_LIBS})
+target_link_libraries(plasma_engine_mixer KDE4::kdecore
+	KDE4::plasma)
 
 install(TARGETS plasma_engine_mixer DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES plasma-engine-mixer.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

@@ -16,9 +16,9 @@ set_source_files_properties(
 kde4_add_plugin(kcm_about_distro ${kcm_SRCS})
 
 target_link_libraries(kcm_about_distro
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KDE4::kdeui
+    KDE4::kio
+    KDE4::solid
 )
 
 install(

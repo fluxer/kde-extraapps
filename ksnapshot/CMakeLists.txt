@@ -53,7 +53,7 @@ qt4_add_dbus_adaptor(ksnapshot_SRCS org.kde.ksnapshot.xml ksnapshot.h KSnapshot)
 
 add_executable(ksnapshot ${ksnapshot_SRCS})
 
-target_link_libraries(ksnapshot ${KDE4_KIO_LIBS} ${X11_LIBRARIES})
+target_link_libraries(ksnapshot KDE4::kio ${X11_LIBRARIES})
 
 if (X11_Xfixes_FOUND)
     target_link_libraries(ksnapshot ${X11_Xfixes_LIB})
@@ -73,7 +73,7 @@ set(kbackgroundsnapshot_SRCS
 
 add_executable(kbackgroundsnapshot ${kbackgroundsnapshot_SRCS})
 target_link_libraries(kbackgroundsnapshot
-    ${KDE4_KIO_LIBS}
+    KDE4::kio
     ${X11_LIBRARIES}
 )
 

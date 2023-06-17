@@ -10,7 +10,7 @@ kde4_add_kcfg_files(pothumbnail_SRCS pocreatorsettings.kcfgc)
 
 kde4_add_plugin(pothumbnail ${pothumbnail_SRCS})
 target_link_libraries(pothumbnail
-    ${KDE4_KIO_LIBS}
+    KDE4::kio
     ${GETTEXTPO_LIBRARY}
 )
 

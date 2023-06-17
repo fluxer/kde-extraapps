@@ -7,7 +7,7 @@ set(magnifique_SRCS magnifique.cpp)
 # Now make sure all files get to the right place
 kde4_add_plugin(plasma_applet_magnifique ${magnifique_SRCS})
 target_link_libraries(plasma_applet_magnifique 
-                      ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS})
+                      KDE4::plasma KDE4::kdeui)
  
 install(TARGETS plasma_applet_magnifique
         DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

@@ -18,9 +18,9 @@ set(okularGenerator_markdown_SRCS
 kde4_add_plugin(okularGenerator_md ${okularGenerator_markdown_SRCS})
 
 target_link_libraries(okularGenerator_md okularcore
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
+    KDE4::kdecore
+    KDE4::kdeui
+    KDE4::kio
     ${QT_QTGUI_LIBRARY}
 )
 

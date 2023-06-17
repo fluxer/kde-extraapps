@@ -9,9 +9,9 @@ if(BUILD_KONSOLE)
     kde4_add_plugin(krdc_konsoleplugin ${konsoleplugin_SRCS})
 
     target_link_libraries(krdc_konsoleplugin 
-        ${KDE4_KDECORE_LIBS}
-        ${KDE4_KDEUI_LIBS}
-        ${KDE4_KPARTS_LIBS}
+        KDE4::kdecore
+        KDE4::kdeui
+        KDE4::kparts
         krdccore
     )
     install(TARGETS krdc_konsoleplugin DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

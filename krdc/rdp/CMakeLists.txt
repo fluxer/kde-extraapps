@@ -20,8 +20,8 @@ if(HAVE_XFREERDP)
     kde4_add_plugin(krdc_rdpplugin ${rdpplugin_SRCS})
 
     target_link_libraries(krdc_rdpplugin 
-        ${KDE4_KDECORE_LIBS}
-        ${KDE4_KDEUI_LIBS}
+        KDE4::kdecore
+        KDE4::kdeui
         krdccore
     )
 
@@ -32,7 +32,7 @@ if(HAVE_XFREERDP)
     kde4_add_plugin(kcm_krdc_rdpplugin ${kcm_krdc_rdpplugin_SRCS})
 
     target_link_libraries(kcm_krdc_rdpplugin
-        ${KDE4_KDEUI_LIBS}
+        KDE4::kdeui
         krdccore
     )
 

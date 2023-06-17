@@ -9,8 +9,8 @@ set(ark_SRCS
 add_executable(ark ${ark_SRCS})
 
 target_link_libraries(ark
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KPARTS_LIBS}
+    KDE4::kfile
+    KDE4::kparts
     kerfuffle
 )
 
@@ -57,9 +57,9 @@ if (KDE4WORKSPACE_FOUND)
 
     target_link_libraries(ark_dndextract
         kerfuffle
-        ${KDE4_KDECORE_LIBS}
-        ${KDE4_KPARTS_LIBS}
-        ${KDE4_KFILE_LIBS}
+        KDE4::kdecore
+        KDE4::kparts
+        KDE4::kfile
         ${KDE4WORKSPACE_KONQ_LIBRARY}
     )
 

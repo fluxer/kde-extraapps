@@ -3,7 +3,7 @@ set(krunner_katesessions_SRCS
 )
 
 kde4_add_plugin(krunner_katesessions ${krunner_katesessions_SRCS})
-target_link_libraries(krunner_katesessions ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(krunner_katesessions KDE4::plasma KDE4::kio)
 
 install(TARGETS krunner_katesessions DESTINATION ${KDE4_PLUGIN_INSTALL_DIR} )
 

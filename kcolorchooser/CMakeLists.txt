@@ -19,7 +19,7 @@ set(kcolorchooser_SRCS kcolorchooser.cpp)
 
 add_executable(kcolorchooser ${kcolorchooser_SRCS})
 
-target_link_libraries(kcolorchooser ${KDE4_KDEUI_LIBS})
+target_link_libraries(kcolorchooser KDE4::kdeui)
 
 install(
     TARGETS kcolorchooser

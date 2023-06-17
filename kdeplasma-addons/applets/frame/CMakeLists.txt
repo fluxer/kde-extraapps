@@ -13,10 +13,10 @@ kde4_add_plugin(plasma_applet_frame ${frame_SRCS})
 
 include_directories(${KEXIV2_INCLUDE_DIR})
 target_link_libraries(plasma_applet_frame
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KIO_LIBS}
-    ${KDE4_KFILE_LIBS}
-    ${KDE4_KEXIV2_LIBS}
+    KDE4::plasma
+    KDE4::kio
+    KDE4::kfile
+    KDE4::kexiv2
 )
 
 install(TARGETS plasma_applet_frame DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})

@@ -17,8 +17,8 @@ set(plasmaweather_HEADERS
 
 add_library(plasmaweather SHARED ${plasmaweather_LIB_SRCS})
 target_link_libraries(plasmaweather
-    ${KDE4_PLASMA_LIBS}
-    ${KDE4_KDEUI_LIBS}
+    KDE4::plasma
+    KDE4::kdeui
     ${KDE4WORKSPACE_WEATHERION_LIBRARY}
 )
 

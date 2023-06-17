@@ -23,8 +23,8 @@ QT4_ADD_DBUS_ADAPTOR(kvkbd_SRCS org.kde.kvkbd.Dock.xml
 add_executable(kvkbd ${kvkbd_SRCS})
 
 target_link_libraries(kvkbd
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdecore
+    KDE4::kdeui
     ${QT_QTDBUS_LIBRARY}
     ${QT_QTXML_LIBRARY}
     ${X11_X11_LIB}

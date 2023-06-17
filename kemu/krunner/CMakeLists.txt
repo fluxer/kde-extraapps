@@ -4,8 +4,8 @@ set(krunner_kemu_SRCS
 
 kde4_add_plugin(krunner_kemu ${krunner_kemu_SRCS})
 target_link_libraries(krunner_kemu
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_PLASMA_LIBS}
+    KDE4::kdeui
+    KDE4::plasma
 )
 
 install(

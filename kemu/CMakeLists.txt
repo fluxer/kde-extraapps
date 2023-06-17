@@ -24,8 +24,8 @@ set(kemu_sources
 
 add_executable(kemu ${kemu_sources})
 target_link_libraries(kemu
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KFILE_LIBS}
+    KDE4::kdeui
+    KDE4::kfile
     ${QT_QTDBUS_LIBRARY}
 )
 

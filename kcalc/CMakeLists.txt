@@ -72,7 +72,7 @@ kde4_add_kcfg_files(kcalc_SRCS kcalc_settings.kcfgc)
 add_executable(kcalc ${kcalc_SRCS})
 
 target_link_libraries(kcalc
-    ${KDE4_KDEUI_LIBS}
+    KDE4::kdeui
     ${QT_QTXML_LIBRARY}
     ${GMP_LIBRARIES}
 )

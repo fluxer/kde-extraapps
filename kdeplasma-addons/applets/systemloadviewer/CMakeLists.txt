@@ -8,7 +8,7 @@ set(systemloadviewer_SRCS
 
 kde4_add_plugin(plasma-applet_systemloadviewer ${systemloadviewer_SRCS})
 target_link_libraries(plasma-applet_systemloadviewer
-                      ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS})
+                      KDE4::plasma KDE4::kdeui)
 
 install(TARGETS plasma-applet_systemloadviewer
         DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
