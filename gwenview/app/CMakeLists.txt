@@ -40,7 +40,7 @@ add_executable(gwenview ${gwenview_SRCS})
 target_link_libraries(gwenview
     KDE4::kfile
     KDE4::kio
-    ${KDE4WORKSPACE_KONQ_LIBRARY}
+    KDE4Workspace::konq
     ${QT_QTCORE_LIBRARY}
     gwenviewlib
 )

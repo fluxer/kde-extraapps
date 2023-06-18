@@ -60,7 +60,7 @@ if (KDE4WORKSPACE_FOUND)
         KDE4::kdecore
         KDE4::kparts
         KDE4::kfile
-        ${KDE4WORKSPACE_KONQ_LIBRARY}
+        KDE4Workspace::konq
     )
 
     install(

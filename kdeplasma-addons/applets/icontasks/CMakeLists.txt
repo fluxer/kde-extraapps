@@ -28,16 +28,25 @@ target_link_libraries(plasma_applet_icontasks
     KDE4::kdeui
     KDE4::plasma
     KDE4::kio
-    ${KDE4WORKSPACE_TASKMANAGER_LIBS}
+    KDE4Workspace::taskmanager
+    ${X11_X11_LIB}
 )
-
-if(Q_WS_X11)
-    target_link_libraries(plasma_applet_icontasks ${X11_X11_LIB})
-endif(Q_WS_X11)
 
 include_directories(${CMAKE_BINARY_DIR})
 
-install(TARGETS plasma_applet_icontasks DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
-install(FILES plasma-applet-icontasks.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
-install(FILES badge.svgz launcherseparator.svgz progress.svgz indicators.svgz dropindicators.svgz DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/icontasks/)
-install(FILES mediabuttonsrc DESTINATION ${KDE4_DATA_INSTALL_DIR}/kdeplasma-addons)
+install(
+    TARGETS plasma_applet_icontasks
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
+)
+install(
+    FILES plasma-applet-icontasks.desktop
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
+)
+install(
+    FILES badge.svgz launcherseparator.svgz progress.svgz indicators.svgz dropindicators.svgz
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/icontasks/
+)
+install(
+    FILES mediabuttonsrc
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/kdeplasma-addons
+)

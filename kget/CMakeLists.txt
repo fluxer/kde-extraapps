@@ -71,7 +71,7 @@ endif()
 
 if(KDE4WORKSPACE_FOUND)
     add_definitions(-DHAVE_KWORKSPACE)
-endif(KDE4WORKSPACE_FOUND)
+endif()
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -133,7 +133,7 @@ target_link_libraries(kgetcore
 )
 
 if (KDE4WORKSPACE_FOUND)
-    target_link_libraries(kgetcore ${KDE4WORKSPACE_KWORKSPACE_LIBS})
+    target_link_libraries(kgetcore KDE4Workspace::kworkspace)
 endif (KDE4WORKSPACE_FOUND)
 
 set_target_properties(kgetcore PROPERTIES
