@@ -30,15 +30,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <lib/document/document.h>
 #include <lib/paintutils.h>
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 namespace Gwenview
 {
 
@@ -92,7 +83,7 @@ void ImageScaler::setTransformationMode(Qt::TransformationMode mode)
 
 void ImageScaler::setDestinationRegion(const QRegion& region)
 {
-    LOG(region);
+    kDebug() << region;
     d->mRegion = region;
     if (d->mRegion.isEmpty()) {
         return;
@@ -107,21 +98,21 @@ void ImageScaler::doScale()
 {
     if (d->mZoom < Document::maxDownSampledZoom()) {
         if (!d->mDocument->prepareDownSampledImageForZoom(d->mZoom)) {
-            LOG("Asked for a down sampled image");
+            kDebug() << "Asked for a down sampled image";
             return;
         }
     } else if (d->mDocument->image().isNull()) {
-        LOG("Asked for the full image");
+        kDebug() << "Asked for the full image";
         d->mDocument->startLoadingFullImage();
         return;
     }
 
-    LOG("Starting");
+    kDebug() << "Starting";
     Q_FOREACH(const QRect & rect, d->mRegion.rects()) {
-        LOG(rect);
+        kDebug() << rect;
         scaleRect(rect);
     }
-    LOG("Done");
+    kDebug() << "Done";
 }
 
 void ImageScaler::scaleRect(const QRect& rect)

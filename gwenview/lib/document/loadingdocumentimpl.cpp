@@ -56,15 +56,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 const int HEADER_SIZE = 256;
 
 struct LoadingDocumentImplPrivate
@@ -102,8 +93,7 @@ struct LoadingDocumentImplPrivate
             mimeType = KMimeType::findByContent(mData)->name();
         }
         MimeTypeUtils::Kind kind = MimeTypeUtils::mimeTypeKind(mimeType);
-        LOG("mimeType:" << mimeType);
-        LOG("kind:" << kind);
+        kDebug() << "mimeType:" << mimeType << ", kind:" << kind;
         q->setDocumentKind(kind);
 
         switch (kind) {
@@ -151,7 +141,7 @@ struct LoadingDocumentImplPrivate
 
     void startImageDataLoading()
     {
-        LOG("");
+        kDebug() << "Starting image loading";
         Q_ASSERT(mMetaInfoLoaded);
         Q_ASSERT(mImageDataInvertedZoom != 0);
         Q_ASSERT(!mImageDataFutureWatcher->isRunning());
@@ -165,7 +155,7 @@ struct LoadingDocumentImplPrivate
 
     bool loadMetaInfo()
     {
-        LOG("mFormatHint" << mFormatHint);
+        kDebug() << "mFormatHint" << mFormatHint;
         QBuffer buffer;
         buffer.setBuffer(&mData);
         buffer.open(QIODevice::ReadOnly);
@@ -191,10 +181,10 @@ struct LoadingDocumentImplPrivate
 
         mFormat = reader.format();
 
-        LOG("mFormat" << mFormat);
+        kDebug() << "mFormat" << mFormat;
         GV_RETURN_VALUE_IF_FAIL(!mFormat.isEmpty(), false);
 
-        LOG("mImageSize" << mImageSize);
+        kDebug() << "mImageSize" << mImageSize;
 
         return true;
     }
@@ -206,7 +196,7 @@ struct LoadingDocumentImplPrivate
         buffer.open(QIODevice::ReadOnly);
         QImageReader reader(&buffer, mFormat);
 
-        LOG("mImageDataInvertedZoom=" << mImageDataInvertedZoom);
+        kDebug() << "mImageDataInvertedZoom=" << mImageDataInvertedZoom;
         if (mImageSize.isValid()
                 && mImageDataInvertedZoom != 1
                 && reader.supportsOption(QImageIOHandler::ScaledSize)
@@ -215,16 +205,16 @@ struct LoadingDocumentImplPrivate
             // image size
             QSize size = reader.size() / mImageDataInvertedZoom;
             if (!size.isEmpty()) {
-                LOG("Setting scaled size to" << size);
+                kDebug() << "Setting scaled size to" << size;
                 reader.setScaledSize(size);
             } else {
-                LOG("Not setting scaled size as it is empty" << size);
+                kDebug() << "Not setting scaled size as it is empty" << size;
             }
         }
 
         bool ok = reader.read(&mImage);
         if (!ok) {
-            LOG("QImageReader::read() failed");
+            kDebug() << "QImageReader::read() failed";
             return;
         }
 
@@ -232,7 +222,7 @@ struct LoadingDocumentImplPrivate
                 && reader.nextImageDelay() > 0 // Assume delay == 0 <=> only one frame
            ) {
             if (reader.imageCount() > 0) {
-                LOG("Really an animated image");
+                kDebug() << "Really an animated image";
                 mAnimated = true;
                 return;
             }
@@ -247,10 +237,10 @@ struct LoadingDocumentImplPrivate
              * Decoding the next frame is the only reliable way I found to
              * detect an animated images
              */
-            LOG("May be an animated image. delay:" << reader.nextImageDelay());
+            kDebug() << "May be an animated image. delay:" << reader.nextImageDelay();
             QImage nextImage;
             if (reader.read(&nextImage)) {
-                LOG("Really an animated image (more than one frame)");
+                kDebug() << "Really an animated image (more than one frame)";
                 mAnimated = true;
             } else {
                 kWarning() << q->document()->url() << "is not really an animated image (only one frame)";
@@ -272,7 +262,6 @@ LoadingDocumentImpl::LoadingDocumentImpl(Document* document)
 
 LoadingDocumentImpl::~LoadingDocumentImpl()
 {
-    LOG("");
     // Disconnect watchers to make sure they do not trigger further work
     if (d->mMetaInfoFutureWatcher) {
         d->mMetaInfoFutureWatcher->disconnect();
@@ -327,11 +316,11 @@ void LoadingDocumentImpl::init()
 void LoadingDocumentImpl::loadImage(int invertedZoom)
 {
     if (d->mImageDataInvertedZoom == invertedZoom) {
-        LOG("Already loading an image at invertedZoom=" << invertedZoom);
+        kDebug() << "Already loading an image at invertedZoom=" << invertedZoom;
         return;
     }
     if (d->mImageDataInvertedZoom == 1) {
-        LOG("Ignoring request: we are loading a full image");
+        kDebug() << "Ignoring request: we are loading a full image";
         return;
     }
     if (d->mImageDataFutureWatcher) {
@@ -388,7 +377,7 @@ Document::LoadingState LoadingDocumentImpl::loadingState() const
 
 void LoadingDocumentImpl::slotMetaInfoLoaded()
 {
-    LOG("");
+    kDebug() << "Meta information loaded";
     Q_ASSERT(!d->mMetaInfoFutureWatcher->isRunning());
     if (!d->mMetaInfoFutureWatcher->result()) {
         setDocumentErrorString(
@@ -417,7 +406,7 @@ void LoadingDocumentImpl::slotMetaInfoLoaded()
 
 void LoadingDocumentImpl::slotImageLoaded()
 {
-    LOG("");
+    kDebug() << "Image loaded";
     if (d->mImage.isNull()) {
         setDocumentErrorString(
             i18nc("@info", "Loading image failed.")
@@ -444,14 +433,14 @@ void LoadingDocumentImpl::slotImageLoaded()
     }
 
     if (d->mImageDataInvertedZoom != 1 && d->mImage.size() != d->mImageSize) {
-        LOG("Loaded a down sampled image");
+        kDebug() << "Loaded a down sampled image";
         d->mDownSampledImageLoaded = true;
         // We loaded a down sampled image
         setDocumentDownSampledImage(d->mImage, d->mImageDataInvertedZoom);
         return;
     }
 
-    LOG("Loaded a full image");
+    kDebug() << "Loaded a full image";
     setDocumentImage(d->mImage);
     DocumentLoadedImpl* impl;
     impl = new DocumentLoadedImpl(

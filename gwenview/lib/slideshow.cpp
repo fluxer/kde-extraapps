@@ -37,15 +37,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 enum State {
     Stopped,
     Started,
@@ -135,7 +126,7 @@ struct SlideShowPrivate
 
     void doStart()
     {
-        LOG("mState = Started");
+        kDebug() << "mState = Started";
         mTimer->start();
         mState = Started;
     }
@@ -210,7 +201,7 @@ void SlideShow::setInterval(int intervalInSeconds)
 
 void SlideShow::stop()
 {
-    LOG("Stopping timer");
+    kDebug() << "Stopping timer";
     d->mTimer->stop();
     d->mState = Stopped;
     stateChanged(false);
@@ -218,7 +209,6 @@ void SlideShow::stop()
 
 void SlideShow::resumeAndGoToNextUrl()
 {
-    LOG("");
     if (d->mState == WaitForEndOfUrl) {
         goToNextUrl();
     }
@@ -226,9 +216,8 @@ void SlideShow::resumeAndGoToNextUrl()
 
 void SlideShow::goToNextUrl()
 {
-    LOG("");
     KUrl url = d->findNextUrl();
-    LOG("url:" << url);
+    kDebug() << "Next url:" << url;
     if (!url.isValid()) {
         stop();
         return;
@@ -238,7 +227,7 @@ void SlideShow::goToNextUrl()
 
 void SlideShow::setCurrentUrl(const KUrl& url)
 {
-    LOG(url);
+    kDebug() << "Current url" << url;
     if (d->mCurrentUrl == url) {
         return;
     }

@@ -51,15 +51,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 /**
  * This widget is capable of showing multiple lines of key/value pairs.
  */
@@ -284,12 +275,12 @@ InfoContextManagerItem::~InfoContextManagerItem()
 
 void InfoContextManagerItem::updateSideBarContent()
 {
-    LOG("updateSideBarContent");
+    kDebug() << "updateSideBarContent";
     if (!d->mGroup->isVisible()) {
-        LOG("updateSideBarContent: not visible, not updating");
+        kDebug() << "updateSideBarContent: not visible, not updating";
         return;
     }
-    LOG("updateSideBarContent: really updating");
+    kDebug() << "updateSideBarContent: really updating";
 
     KFileItemList itemList = contextManager()->selectedFileItemList();
     if (itemList.count() == 0) {

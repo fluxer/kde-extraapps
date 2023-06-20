@@ -62,15 +62,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 static const qreal REAL_DELTA = 0.001;
 static const qreal MAXIMUM_ZOOM_VALUE = qreal(DocumentView::MaximumZoom);
 
@@ -346,7 +337,7 @@ void DocumentView::createAdapterForDocument()
     const MimeTypeUtils::Kind documentKind = d->mDocument->kind();
     if (d->mAdapter && documentKind == d->mAdapter->kind() && documentKind != MimeTypeUtils::KIND_UNKNOWN) {
         // Do not reuse for KIND_UNKNOWN: we may need to change the message
-        LOG("Reusing current adapter");
+        kDebug() << "Reusing current adapter";
         return;
     }
     AbstractDocumentViewAdapter* adapter = 0;

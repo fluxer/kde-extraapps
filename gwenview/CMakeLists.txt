@@ -10,6 +10,8 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5003)
+
 ## Dependencies
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 find_package(Threads)

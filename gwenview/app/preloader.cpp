@@ -32,15 +32,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 struct PreloaderPrivate
 {
     Preloader* q;
@@ -70,7 +61,7 @@ Preloader::~Preloader()
 
 void Preloader::preload(const KUrl& url, const QSize& size)
 {
-    LOG("url=" << url);
+    kDebug() << "url=" << url;
     if (d->mDocument) {
         disconnect(d->mDocument.data(), 0, this, 0);
     }
@@ -81,7 +72,7 @@ void Preloader::preload(const KUrl& url, const QSize& size)
             SLOT(doPreload()));
 
     if (d->mDocument->size().isValid()) {
-        LOG("size is already available");
+        kDebug() << "size is already available";
         doPreload();
     }
 }
@@ -93,13 +84,13 @@ void Preloader::doPreload()
     }
 
     if (d->mDocument->loadingState() == Document::LoadingFailed) {
-        LOG("loading failed");
+        kDebug() << "loading failed";
         d->forgetDocument();
         return;
     }
 
     if (!d->mDocument->size().isValid()) {
-        LOG("size not available yet");
+        kDebug() << "size not available yet";
         return;
     }
 
@@ -109,10 +100,10 @@ void Preloader::doPreload()
                  );
 
     if (zoom < Document::maxDownSampledZoom()) {
-        LOG("preloading down sampled, zoom=" << zoom);
+        kDebug() << "preloading down sampled, zoom=" << zoom;
         d->mDocument->prepareDownSampledImageForZoom(zoom);
     } else {
-        LOG("preloading full image");
+        kDebug() << "preloading full image";
         d->mDocument->startLoadingFullImage();
     }
     d->forgetDocument();

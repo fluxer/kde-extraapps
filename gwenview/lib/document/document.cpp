@@ -45,17 +45,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
-#ifdef ENABLE_LOG
-
 static void logQueue(DocumentPrivate* d)
 {
 #define PREFIX "  QUEUE: "
@@ -78,14 +67,8 @@ static void logQueue(DocumentPrivate* d)
 }
 
 #define LOG_QUEUE(msg, d) \
-    LOG(msg); \
+    kDebug() << msg; \
     logQueue(d)
-
-#else
-
-#define LOG_QUEUE(msg, d)
-
-#endif
 
 //- DocumentPrivate ---------------------------------------
 void DocumentPrivate::scheduleImageLoading(int invertedZoom)
@@ -97,10 +80,10 @@ void DocumentPrivate::scheduleImageLoading(int invertedZoom)
 
 void DocumentPrivate::scheduleImageDownSampling(int invertedZoom)
 {
-    LOG("invertedZoom=" << invertedZoom);
+    kDebug() << "invertedZoom=" << invertedZoom;
     DownSamplingJob* job = qobject_cast<DownSamplingJob*>(mCurrentJob.data());
     if (job && job->mInvertedZoom == invertedZoom) {
-        LOG("Current job is already doing it");
+        kDebug() << "Current job is already doing it";
         return;
     }
 
@@ -113,10 +96,10 @@ void DocumentPrivate::scheduleImageDownSampling(int invertedZoom)
         }
         if (job->mInvertedZoom == invertedZoom) {
             // Already scheduled, nothing to do
-            LOG("Already scheduled");
+            kDebug() << "Already scheduled";
             return;
         } else {
-            LOG("Removing downsampling job");
+            kDebug() << "Removing downsampling job";
             mJobQueue.erase(it);
             delete job;
         }
@@ -235,7 +218,7 @@ Document::LoadingState Document::loadingState() const
 void Document::switchToImpl(AbstractDocumentImpl* impl)
 {
     Q_ASSERT(impl);
-    LOG("old impl:" << d->mImpl << "new impl:" << impl);
+    kDebug() << "old impl:" << d->mImpl << "new impl:" << impl;
     if (d->mImpl) {
         d->mImpl->deleteLater();
     }
@@ -437,11 +420,11 @@ bool Document::prepareDownSampledImageForZoom(qreal zoom)
 
     int invertedZoom = invertedZoomForZoom(zoom);
     if (d->mDownSampledImageMap.contains(invertedZoom)) {
-        LOG("downSampledImageForZoom=" << zoom << "invertedZoom=" << invertedZoom << "ready");
+        kDebug() << "downSampledImageForZoom=" << zoom << "invertedZoom=" << invertedZoom << "ready";
         return true;
     }
 
-    LOG("downSampledImageForZoom=" << zoom << "invertedZoom=" << invertedZoom << "not ready");
+    kDebug() << "downSampledImageForZoom=" << zoom << "invertedZoom=" << invertedZoom << "not ready";
     if (loadingState() == LoadingFailed) {
         kWarning() << "Image has failed to load, not doing anything";
         return false;
@@ -510,7 +493,7 @@ void Document::stopAnimation()
 
 void Document::enqueueJob(DocumentJob* job)
 {
-    LOG("job=" << job);
+    kDebug() << "job=" << job;
     job->setDocument(Ptr(this));
     connect(job, SIGNAL(finished(KJob*)),
             SLOT(slotJobFinished(KJob*)));
@@ -518,7 +501,7 @@ void Document::enqueueJob(DocumentJob* job)
         d->mJobQueue.enqueue(job);
     } else {
         d->mCurrentJob = job;
-        LOG("Starting first job");
+        kDebug() << "Starting first job";
         job->start();
         busyChanged(d->mUrl, true);
     }
@@ -527,16 +510,16 @@ void Document::enqueueJob(DocumentJob* job)
 
 void Document::slotJobFinished(KJob* job)
 {
-    LOG("job=" << job);
+    kDebug() << "job=" << job;
     GV_RETURN_IF_FAIL(job == d->mCurrentJob.data());
 
     if (d->mJobQueue.isEmpty()) {
-        LOG("All done");
+        kDebug() << "All done";
         d->mCurrentJob.clear();
         busyChanged(d->mUrl, false);
         allTasksDone();
     } else {
-        LOG("Starting next job");
+        kDebug() << "Starting next job";
         d->mCurrentJob = d->mJobQueue.dequeue();
         GV_RETURN_IF_FAIL(d->mCurrentJob);
         d->mCurrentJob.data()->start();

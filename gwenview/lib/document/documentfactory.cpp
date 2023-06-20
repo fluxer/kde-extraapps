@@ -35,15 +35,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 inline int getMaxUnreferencedImages()
 {
     int defaultValue = 3;
@@ -109,16 +100,14 @@ struct DocumentFactoryPrivate
             unreferencedIt = unreferencedImages.erase(unreferencedIt))
         {
             KUrl url = unreferencedIt.value();
-            LOG("Collecting" << url);
+            kDebug() << "Collecting" << url;
             it = map.find(url);
             Q_ASSERT(it != map.end());
             delete it.value();
             map.erase(it);
         }
 
-#ifdef ENABLE_LOG
         logDocumentMap(map);
-#endif
     }
 
     void logDocumentMap(const DocumentMap& map)
@@ -168,7 +157,7 @@ Document::Ptr DocumentFactory::load(const KUrl& url)
     DocumentMap::Iterator it = d->mDocumentMap.find(url);
 
     if (it != d->mDocumentMap.end()) {
-        LOG(url.fileName() << "url in mDocumentMap");
+        kDebug() << url.fileName() << "url in mDocumentMap";
         info = it.value();
         info->mLastAccess = QDateTime::currentDateTime();
         return info->mDocument;
@@ -177,7 +166,7 @@ Document::Ptr DocumentFactory::load(const KUrl& url)
     // At this point we couldn't find the document in the map
 
     // Start loading the document
-    LOG(url.fileName() << "loading");
+    kDebug() << url.fileName() << "loading";
     Document* doc = new Document(url);
     connect(doc, SIGNAL(loaded(KUrl)),
             SLOT(slotLoaded(KUrl)));

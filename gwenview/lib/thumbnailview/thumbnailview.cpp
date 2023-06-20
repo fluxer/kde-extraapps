@@ -54,15 +54,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 namespace Gwenview
 {
 
-#undef ENABLE_LOG
-#undef LOG
-//#define ENABLE_LOG
-#ifdef ENABLE_LOG
-#define LOG(x) kDebug() << x
-#else
-#define LOG(x) ;
-#endif
-
 /** How many msec to wait before starting to smooth thumbnails */
 static const int THUMBNAIL_DELAY = 500;
 
@@ -73,7 +64,7 @@ static const QSize maxThumbSize(ThumbnailView::MaxThumbnailSize, ThumbnailView::
 static KFileItem fileItemForIndex(const QModelIndex& index)
 {
     if (!index.isValid()) {
-        LOG("Invalid index");
+        kDebug() << "Invalid index";
         return KFileItem();
     }
     QVariant data = index.data(KDirModel::FileItemRole);
@@ -562,7 +553,7 @@ QPixmap ThumbnailView::thumbnailForIndex(const QModelIndex& index, QSize* fullSi
 {
     KFileItem item = fileItemForIndex(index);
     if (item.isNull()) {
-        LOG("Invalid item");
+        kDebug() << "Invalid item";
         if (fullSize) {
             *fullSize = QSize();
         }
