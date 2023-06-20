@@ -803,6 +803,7 @@ Part::~Part()
 {
     GuiUtils::removeIconLoader( iconLoader() );
     m_document->removeObserver( this );
+    m_document->removeObserver( m_toc );
 
     if ( m_document->isOpened() )
         Part::closeUrl( false );
