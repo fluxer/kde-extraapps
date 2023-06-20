@@ -646,9 +646,9 @@ void PagePainter::paintCroppedPageOnPainter( QPainter * destPainter, const Okula
                 {
                 // get pixmap, colorize and alpha-blend it
                     QString path;
-                    QPixmap pixmap = GuiUtils::iconLoader()->loadIcon( text->textIcon().toLower(), KIconLoader::User, 32, KIconLoader::DefaultState, QStringList(), &path, true );
+                    QPixmap pixmap = KIconLoader::global()->loadIcon( text->textIcon().toLower(), KIconLoader::User, 32, KIconLoader::DefaultState, QStringList(), &path, true );
                     if ( path.isEmpty() )
-                        pixmap = GuiUtils::iconLoader()->loadIcon( text->textIcon().toLower(), KIconLoader::NoGroup, 32 );
+                        pixmap = KIconLoader::global()->loadIcon( text->textIcon().toLower(), KIconLoader::NoGroup, 32 );
                     QImage scaledImage;
                     QRect annotBoundary2 = QRect( annotBoundary.topLeft(), QSize( TEXTANNOTATION_ICONSIZE, TEXTANNOTATION_ICONSIZE ) );
                     QRect annotRect2 = annotBoundary2.intersected( limits );

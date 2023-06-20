@@ -40,10 +40,6 @@ namespace GuiUtils
 
     QPixmap loadStamp( const QString& name, const QSize& size, int iconSize = 0 );
 
-    void addIconLoader( KIconLoader * loader );
-    void removeIconLoader( KIconLoader * loader );
-    KIconLoader* iconLoader();
-
     void saveEmbeddedFile( Okular::EmbeddedFile *ef, QWidget *parent );
 
     // colorize a gray image to the given color

@@ -23,8 +23,6 @@
 #include "core/annotations.h"
 #include "core/document.h"
 
-K_GLOBAL_STATIC( QList<KIconLoader *>, s_data )
-
 namespace GuiUtils {
 
 QString captionForAnnotation( const Okular::Annotation * ann )
@@ -134,28 +132,13 @@ QPixmap loadStamp( const QString& _name, const QSize& size, int iconSize )
         return QPixmap(stampFile).scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     }
     QPixmap pixmap;
-    const KIconLoader * il = iconLoader();
+    const KIconLoader * il = KIconLoader::global();
     QString path;
     const int minSize = iconSize > 0 ? iconSize : qMin( size.width(), size.height() );
     pixmap = il->loadIcon( name, KIconLoader::User, minSize, KIconLoader::DefaultState, QStringList(), &path, true );
     if ( path.isEmpty() )
         pixmap = il->loadIcon( name, KIconLoader::NoGroup, minSize );
     return pixmap;
-}
-
-void addIconLoader( KIconLoader * loader )
-{
-    s_data->append( loader );
-}
-
-void removeIconLoader( KIconLoader * loader )
-{
-    s_data->removeAll( loader );
-}
-
-KIconLoader* iconLoader()
-{
-    return s_data->isEmpty() ? KIconLoader::global() : s_data->back();
 }
 
 void saveEmbeddedFile( Okular::EmbeddedFile *ef, QWidget *parent )

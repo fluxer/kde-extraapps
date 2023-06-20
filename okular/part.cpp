@@ -316,8 +316,6 @@ m_cliPresentation(false), m_cliPrint(false), m_embedMode(detectEmbedMode(parentW
     // we need an instance
     setComponentData( componentData );
 
-    GuiUtils::addIconLoader( iconLoader() );
-
     m_sidebar = new Sidebar( parentWidget );
     setWidget( m_sidebar );
     connect( m_sidebar, SIGNAL(urlsDropped(KUrl::List)), SLOT(handleDroppedUrls(KUrl::List)) );
@@ -801,7 +799,6 @@ void Part::setupActions()
 
 Part::~Part()
 {
-    GuiUtils::removeIconLoader( iconLoader() );
     m_document->removeObserver( this );
     m_document->removeObserver( m_toc );
 
