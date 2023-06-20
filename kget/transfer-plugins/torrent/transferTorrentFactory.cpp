@@ -39,7 +39,7 @@ Transfer* TransferTorrentFactory::createTransfer(const KUrl &srcUrl, const KUrl 
                                                  TransferGroup* parent,
                                                  Scheduler* scheduler)
 {
-    kDebug(5001) << "TransferTorrentFactory::createTransfer";
+    kDebug() << "TransferTorrentFactory::createTransfer";
     if (isSupported(srcUrl)) {
         return new TransferTorrent(parent, this, scheduler, srcUrl, destUrl);
     }

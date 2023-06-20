@@ -120,7 +120,7 @@ int TransferHandler::uploadSpeed() const
 
 QVariant TransferHandler::data(int column)
 {
-//     kDebug(5001) << "TransferHandler::data(" << column << ")";
+    // kDebug() << "TransferHandler::data(" << column << ")";
 
     switch(column)
     {
@@ -136,7 +136,7 @@ QVariant TransferHandler::data(int column)
             else
                 return i18nc("not available", "n/a");
         case 3:
-//             return QString::number(percent())+'%'; // display progressbar instead
+            // return QString::number(percent())+'%'; // display progressbar instead
             return QVariant();
         case 4:
             if (downloadSpeed() == 0)
@@ -184,9 +184,7 @@ void TransferHandler::resetChangesFlags()
 
 void TransferHandler::destroy()
 {
-    kDebug(5001) << "TransferHandler::destroy() ENTERING";
-
-    kDebug(5001) << "TransferHandler::destroy() LEAVING";
+    kDebug() << "TransferHandler::destroy()";
 }
 
 void TransferHandler::setTransferChange(ChangesFlags change, bool notifyModel)

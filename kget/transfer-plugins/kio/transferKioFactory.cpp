@@ -32,7 +32,7 @@ Transfer * TransferKioFactory::createTransfer( const KUrl &srcUrl, const KUrl &d
                                                TransferGroup * parent,
                                                Scheduler * scheduler)
 {
-    kDebug(5001) << "TransferKioFactory::createTransfer";
+    kDebug() << "TransferKioFactory::createTransfer";
 
     if (isSupported(srcUrl)) {
         return new TransferKio(parent, this, scheduler, srcUrl, destUrl);
@@ -43,7 +43,7 @@ Transfer * TransferKioFactory::createTransfer( const KUrl &srcUrl, const KUrl &d
 bool TransferKioFactory::isSupported(const KUrl &url) const
 {
     QString prot = url.protocol();
-    kDebug(5001) << "Protocol = " << prot;
+    kDebug() << "Protocol = " << prot;
     return addsProtocols().contains(prot);
 }
 

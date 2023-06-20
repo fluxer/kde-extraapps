@@ -90,7 +90,7 @@ void XmlStore::DeleteThread::run()
 
     if (!doc.setContent(&file, &error, &line, &column)) 
     {
-        kDebug(5001) << "Error1" << error << line << column;
+        kDebug() << "Error1" << error << line << column;
         return;
     }
     file.close();
@@ -143,7 +143,7 @@ void XmlStore::LoadThread::run()
 
     if (!doc.setContent(&file, &error, &line, &column)) 
     {
-        kDebug(5001) << "Error1" << error << line << column;
+        kDebug() << "Error1" << error << line << column;
         file.close();
         return;
     }

@@ -169,7 +169,7 @@ void Scheduler::jobQueueRemovedJobsEvent(JobQueue *queue, const QList<Job*> jobs
 
 void Scheduler::jobChangedEvent(Job * job, Job::Status status)
 {
-    kDebug(5001) << "Scheduler::jobChangedEvent  (job=" << job << " status=" << status <<  ")";
+    kDebug() << "Scheduler::jobChangedEvent  (job=" << job << " status=" << status <<  ")";
 
     if (!m_failureCheckTimer)
         m_failureCheckTimer = startTimer(1000);
@@ -190,25 +190,25 @@ void Scheduler::jobChangedEvent(Job * job, JobFailure failure)
     switch(failure.status)
     {
         case None:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = None ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = None ";
             break;
         case AboutToStall:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = AboutToStall ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = AboutToStall ";
             break;
         case Stall:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = Stall ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = Stall ";
             break;
         case StallTimeout:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = StallTimeout ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = StallTimeout ";
             break;
         case Abort:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = Abort ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = Abort ";
             break;
         case AbortTimeout:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = AbortTimeout ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = AbortTimeout ";
             break;
         case Error:
-            kDebug(5001) << "job = " << job << " failure (#" << failure.count << ") = Error ";
+            kDebug() << "job = " << job << " failure (#" << failure.count << ") = Error ";
             break;
     }
     
@@ -276,8 +276,8 @@ void Scheduler::updateQueue( JobQueue * queue )
 
     for( int job=0 ; it!=itEnd ; ++it, ++job)
     {
-        //kDebug(5001) << "MaxSimJobs " << queue->maxSimultaneousJobs();
-        kDebug(5001) << "Scheduler: Evaluating job " << job;
+        // kDebug() << "MaxSimJobs " << queue->maxSimultaneousJobs();
+        kDebug() << "Scheduler: Evaluating job " << job;
         
         JobFailure failure = m_failedJobs.value(*it);
         
@@ -287,7 +287,7 @@ void Scheduler::updateQueue( JobQueue * queue )
             {
                 if( !shouldBeRunning(*it) )
                 {
-                    kDebug(5001) << "Scheduler:    stopping job";
+                    kDebug() << "Scheduler:    stopping job";
                     (*it)->stop();
                 }
                 else if(failure.status == None || failure.status == AboutToStall)
@@ -299,7 +299,7 @@ void Scheduler::updateQueue( JobQueue * queue )
             {
                 if( shouldBeRunning(*it) )
                 {
-                    kDebug(5001) << "Scheduler:    starting job";
+                    kDebug() << "Scheduler:    starting job";
                     (*it)->start();
                     if((failure.status == None || failure.status == AboutToStall) && (*it)->status() != Job::FinishedKeepAlive)
                         runningJobs++;
@@ -310,8 +310,8 @@ void Scheduler::updateQueue( JobQueue * queue )
         }
         else
         {
-            //Stop all the other running downloads
-            kDebug(5001) << "Scheduler:    stopping job over maxSimJobs limit";
+            // Stop all the other running downloads
+            kDebug() << "Scheduler:    stopping job over maxSimJobs limit";
             (*it)->stop();
         }
     }
@@ -348,8 +348,6 @@ bool Scheduler::shouldBeRunning( Job * job )
 void Scheduler::timerEvent( QTimerEvent * event )
 {
     Q_UNUSED(event)
-//     kDebug(5001);
-
     if (!shouldUpdate()) {
         return;
     }
@@ -428,8 +426,8 @@ void Scheduler::timerEvent( QTimerEvent * event )
             else                                                    // No failure detected, remove it
                 m_failedJobs.remove(*it);
 
-//             if(failure.isValid() || prevFailure.isValid())
-//                 kDebug(5001) << "failure = " << failure.status << " T=" << failure.time << " prevFailure = " << prevFailure.status;
+            // if(failure.isValid() || prevFailure.isValid())
+            //     kDebug() << "failure = " << failure.status << " T=" << failure.time << " prevFailure = " << prevFailure.status;
             
             if(failure.status != prevFailure.status)
                 jobChangedEvent(*it, failure);                      // Notify the scheduler

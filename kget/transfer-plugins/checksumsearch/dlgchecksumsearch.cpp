@@ -265,7 +265,6 @@ void DlgChecksumSettingsWidget::load()
 
 void DlgChecksumSettingsWidget::save()
 {
-    kDebug(5001);
     QStringList changes;
     QList<int> modes;
     QStringList types;

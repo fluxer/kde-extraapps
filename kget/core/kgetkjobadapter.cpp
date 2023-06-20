@@ -54,7 +54,7 @@ void KGetKJobAdapter::slotUpdateDescription()
 
 bool KGetKJobAdapter::doKill()
 {
-    kDebug(5001) << "Kill of job adapter called:" << this << m_transferHandler->dest();
+    kDebug() << "Kill of job adapter called:" << this << m_transferHandler->dest();
     emit requestStop(this, m_transferHandler);
     return KJob::doKill();
 }

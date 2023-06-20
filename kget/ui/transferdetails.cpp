@@ -57,7 +57,7 @@ QWidget *TransferDetails::detailsWidget(TransferHandler *handler)
 
 void TransferDetails::slotTransferChanged(TransferHandler * transfer, TransferHandler::ChangesFlags flags)
 {
-    kDebug(5001) << "TransferDetails::slotTransferChanged";
+    kDebug() << "TransferDetails::slotTransferChanged";
 
     Q_UNUSED(transfer)
 

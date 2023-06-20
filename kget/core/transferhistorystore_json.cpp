@@ -41,7 +41,7 @@ void JsonStore::load()
     if (dbFile.open(QFile::ReadOnly)) {
         m_dbDoc = QJsonDocument::fromJson(dbFile.readAll());
         if (m_dbDoc.isNull()) {
-            kWarning(5001) << m_dbDoc.errorString();
+            kWarning() << m_dbDoc.errorString();
         } else {
             const QVariantMap dbMap = m_dbDoc.toVariant().toMap();
             const QStringList dbKeys = dbMap.keys();
@@ -66,7 +66,7 @@ void JsonStore::load()
         dbFile.close();
     } else {
         // may not exist yet
-        kDebug(5001) << "could not open" << m_dbName;
+        kDebug() << "could not open" << m_dbName;
     }
 
     emit loadFinished();
@@ -103,12 +103,12 @@ void JsonStore::saveItems(const QList<TransferHistoryItem> &items)
 
         const QByteArray dbData = m_dbDoc.toJson();
         if (dbFile.write(dbData.constData(), dbData.size()) != dbData.size()) {
-            kWarning(5001) << "could not write data to" << m_dbName;;
+            kWarning() << "could not write data to" << m_dbName;;
         }
 
         dbFile.close();
     } else {
-        kWarning(5001) << "could not open" << m_dbName;
+        kWarning() << "could not open" << m_dbName;
     }
 
     emit saveFinished();
@@ -127,12 +127,12 @@ void JsonStore::deleteItem(const TransferHistoryItem &item)
 
         const QByteArray dbData = m_dbDoc.toJson();
         if (dbFile.write(dbData.constData(), dbData.size()) != dbData.size()) {
-            kWarning(5001) << "could not write data to" << m_dbName;;
+            kWarning() << "could not write data to" << m_dbName;;
         }
 
         dbFile.close();
     } else {
-        kWarning(5001) << "could not open" << m_dbName;
+        kWarning() << "could not open" << m_dbName;
     }
 
     emit deleteFinished();

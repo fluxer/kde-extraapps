@@ -130,7 +130,7 @@ void HttpServer::respond(const QByteArray &url, QByteArray *outdata,
                 else if (map.at(0) == "group")
                     group = KUrl::fromPercentEncoding(QByteArray(map.at(1).toUtf8()));
             }
-            kDebug(5001) << action << data << group;
+            kDebug() << action << data << group;
             if (action == "add") {
                 //find a folder to store the download in 
                 QString defaultFolder;
@@ -166,7 +166,7 @@ void HttpServer::respond(const QByteArray &url, QByteArray *outdata,
                 if (transfer)
                     KGet::delTransfer(transfer);
             } else {
-                kWarning(5001) << "not implemented action" << action << data;
+                kWarning() << "not implemented action" << action << data;
             }
         }
     } else { // read it from filesystem

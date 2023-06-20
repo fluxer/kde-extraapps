@@ -164,7 +164,7 @@ void NewTransferDialog::setSource(const KUrl::List &sources)
     } else {
         foreach (const KUrl &sourceUrl, sources) {
             if (sourceUrl.url() != KUrl(sourceUrl.url()).fileName()) {//TODO simplify, whatfor is this check anyway, shouldn't the sources be checked already and if not add this to UrlChecker
-                kDebug(5001) << "Insert" << sourceUrl;
+                kDebug() << "Insert" << sourceUrl;
                 QListWidgetItem *newItem = new QListWidgetItem(sourceUrl.pathOrUrl(), ui.listWidget);
                 newItem->setCheckState(Qt::Checked);
             }
@@ -217,7 +217,7 @@ void NewTransferDialog::showDialog(KUrl::List list, const QString &suggestedFile
     m_sources << list;
     UrlChecker::removeDuplicates(m_sources);
     const int size = m_sources.size();
-    kDebug(5001) << "SET SOURCES " << m_sources << " MULTIPLE " << (size > 1);
+    kDebug() << "SET SOURCES " << m_sources << " MULTIPLE " << (size > 1);
     setMultiple(size > 1);
 
     if (size) {
@@ -254,7 +254,7 @@ void NewTransferDialog::prepareDialog()
         KWindowSystem::forceActiveWindow(m_window->winId());
     }
 
-    kDebug(5001) << "Show the dialog!";
+    kDebug() << "Show the dialog!";
     show();
 }
 
@@ -379,7 +379,7 @@ void NewTransferDialog::checkInput()
         enableButtonOk((folderValid || destinationValid) && sourceValid);
     }
 
-    kDebug(5001) << source << source.fileName() << dest << dest.fileName();
+    kDebug() << source << source.fileName() << dest << dest.fileName();
 }
 
 void NewTransferDialog::slotFinished(int resultCode)
@@ -392,11 +392,11 @@ void NewTransferDialog::slotFinished(int resultCode)
 
 void NewTransferDialog::dialogAccepted()
 {
-    kDebug(5001) << "Dialog accepted.";
+    kDebug() << "Dialog accepted.";
 
     //an existing transfer has been specified and since ok was clicked, it was chosen to be overwritten
     if (m_existingTransfer) {
-        kDebug(5001) << "Removing existing transfer:" << m_existingTransfer;
+        kDebug() << "Removing existing transfer:" << m_existingTransfer;
         KGet::delTransfer(m_existingTransfer);
     }
 
@@ -414,7 +414,7 @@ void NewTransferDialog::dialogAccepted()
     QList<KGet::TransferData> data;
     if (!m_multiple) {
         if (m_overWriteSingle) {
-            kDebug(5001) << "Removing existing file:" << m_destination;
+            kDebug() << "Removing existing file:" << m_destination;
             //removes m_destination if it exists, do that here so that it is removed no matter if a transfer could be created or not
             //as the user decided to throw the file away
             FileDeleter::deleteFile(m_destination);
@@ -422,7 +422,7 @@ void NewTransferDialog::dialogAccepted()
 
         //sourceUrl is valid, has been checked before
         const KUrl sourceUrl = KUrl(ui.urlRequester->text().trimmed());
-        kDebug(5001) << "Downloading" << sourceUrl << "to" << m_destination;
+        kDebug() << "Downloading" << sourceUrl << "to" << m_destination;
         data << KGet::TransferData(sourceUrl, m_destination, group, true);
     } else {
         KUrl::List list;
@@ -434,11 +434,11 @@ void NewTransferDialog::dialogAccepted()
                 //both sourceUrl and destUrl are valid, they have been tested in checkInput
                 const KUrl sourceUrl = KUrl(item->text().trimmed());
                 const KUrl destUrl = UrlChecker::destUrl(m_destination, sourceUrl);
-                kDebug(5001) << "Downloading" << sourceUrl << "to" << destUrl;
+                kDebug() << "Downloading" << sourceUrl << "to" << destUrl;
 
                 //file exists already, remove it
                 if (item->background() == m_existingFileBackground) {
-                    kDebug(5001) << "Removing existing file:" << destUrl;
+                    kDebug() << "Removing existing file:" << destUrl;
                     //removes destUrl if it exists, do that here so that it is removed no matter if a transfer could be created or not
                     //as the user decided to throw the file away
                     FileDeleter::deleteFile(destUrl);
@@ -577,7 +577,7 @@ void NewTransferDialogHandler::slotMostLocalUrlResult(KJob *j)
     const int jobId = job->property("jobId").toInt();
 
     if (job->error()) {
-        kWarning(5001) << "An error happened for" << job->url();
+        kWarning() << "An error happened for" << job->url();
     } else {
         m_urls[jobId].urls << job->mostLocalUrl();
     }
@@ -592,7 +592,7 @@ void NewTransferDialogHandler::handleUrls(const int jobId)
 {
     QHash<int, UrlData>::iterator itUrls = m_urls.find(jobId);
     if (itUrls == m_urls.end()) {
-        kWarning(5001) << "JobId" << jobId << "was not defined, could not handle urls for it.";
+        kWarning() << "JobId" << jobId << "was not defined, could not handle urls for it.";
         return;
     }
 
@@ -690,9 +690,9 @@ void NewTransferDialogHandler::handleUrls(const int jobId)
     }
 
     ///Now handle default folders/groups
-    kDebug(5001) << "DIRECTORIES AS SUGGESTION" << Settings::directoriesAsSuggestion();
+    kDebug() << "DIRECTORIES AS SUGGESTION" << Settings::directoriesAsSuggestion();
     if (!Settings::directoriesAsSuggestion() && !urls.isEmpty()) {
-        kDebug(5001) << "No, Directories not as suggestion";
+        kDebug() << "No, Directories not as suggestion";
 
         //find the associated groups first, we just need the first matching group though
         const QList<TransferGroupHandler*> groups = KGet::allTransferGroups();

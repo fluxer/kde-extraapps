@@ -50,7 +50,7 @@ GroupStatusButton::GroupStatusButton(const QModelIndex & index, QWidget * parent
 
 void GroupStatusButton::checkStateSet()
 {
-//     kDebug(5001) << "GroupStatusButton::checkStateSet";
+    // kDebug() << "GroupStatusButton::checkStateSet";
 
     QToolButton::checkStateSet();
 
@@ -407,7 +407,7 @@ void TransfersViewDelegate::paint(QPainter * painter, const QStyleOptionViewItem
 
 ///    These lines are just for testing purposes. Uncomment them to show on the view the repaint events.
 //     static int i=0;
-//     kDebug(5001) << "paint!!! " << i++ << " " << index.internalPointer() << " " << index.column();
+//     kDebug() << "paint!!! " << i++ << " " << index.internalPointer() << " " << index.column();
 //
 //     painter->drawRect(option.rect);
 //     painter->drawText(option.rect.topLeft(), QString::number(i));
@@ -429,7 +429,7 @@ QSize TransfersViewDelegate::sizeHint(const QStyleOptionViewItem & option, const
     ModelItem *item = transferTreeModel->itemFromIndex(index);
 
     if (!item) {
-        kWarning(5001) << "Sizehint for non-existing item.";
+        kWarning() << "Sizehint for non-existing item.";
         return QSize();
     }
 
@@ -454,7 +454,7 @@ bool TransfersViewDelegate::editorEvent(QEvent * event, QAbstractItemModel * mod
         QMouseEvent * mouseEvent = static_cast<QMouseEvent *>(event);
         if (mouseEvent->button() == Qt::RightButton)
         {
-//             kDebug(5001) << "TransfersViewDelegate::editorEvent() -> rightClick";
+            // kDebug() << "TransfersViewDelegate::editorEvent() -> rightClick";
 
             KMenu *popup = 0;
 
@@ -463,14 +463,14 @@ bool TransfersViewDelegate::editorEvent(QEvent * event, QAbstractItemModel * mod
             ModelItem * item = transferTreeModel->itemFromIndex(index);
             if (item->isGroup())
             {
-//                 kDebug(5001) << "isTransferGroup = true";
+                // kDebug() << "isTransferGroup = true";
                 TransferGroupHandler * transferGroupHandler = item->asGroup()->groupHandler();
 
                 popup = ContextMenu::createTransferGroupContextMenu(transferGroupHandler, qobject_cast<QWidget*>(this));
             }
             else
             {
-//                 kDebug(5001) << "isTransferGroup = false";
+                // kDebug() << "isTransferGroup = false";
 
                 TransferHandler * transferHandler = item->asTransfer()->transferHandler();
 

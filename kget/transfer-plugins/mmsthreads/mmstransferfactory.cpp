@@ -27,19 +27,21 @@ KGET_EXPORT_PLUGIN( MmsTransferFactory )
 
 MmsTransferFactory::MmsTransferFactory(QObject *parent, const QVariantList &args)
   : TransferFactory(parent, args)
-{}
+{
+}
 
 MmsTransferFactory::~MmsTransferFactory()
-{}
+{
+}
 
 Transfer * MmsTransferFactory::createTransfer( const KUrl &srcUrl, const KUrl &destUrl,
                                                TransferGroup * parent,
                                                Scheduler * scheduler)
 {
-    kDebug(5001) << "MmsTransferFactory::createTransfer";
+    kDebug() << "MmsTransferFactory::createTransfer";
 
     QString prot = srcUrl.protocol();
-    kDebug(5001) << "Protocol = " << prot;
+    kDebug() << "Protocol = " << prot;
     if (prot == "mms" || prot == "mmsh") {
         return new MmsTransfer(parent, this, scheduler, srcUrl, destUrl);
     }
@@ -49,6 +51,6 @@ Transfer * MmsTransferFactory::createTransfer( const KUrl &srcUrl, const KUrl &d
 bool MmsTransferFactory::isSupported(const KUrl &url) const
 {
     QString prot = url.protocol();
-    kDebug(5001) << "Protocol = " << prot;
+    kDebug() << "Protocol = " << prot;
     return (prot == "mms" || prot == "mmsh");
 }

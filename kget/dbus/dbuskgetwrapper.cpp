@@ -69,7 +69,7 @@ QStringList DBusKGetWrapper::addTransfer(const QString& src, const QString& dest
 
 bool DBusKGetWrapper::delTransfer(const QString& dbusObjectPath)
 {
-    kDebug(5001) << "deleting Transfer";
+    kDebug() << "deleting Transfer";
 
     Transfer *transfer = KGet::model()->findTransferByDBusObjectPath(dbusObjectPath);
 

@@ -26,7 +26,6 @@
 
 KUrl mostLocalUrl(const KUrl &url)
 {
-    kDebug(5001);
     const QString protocol = url.protocol();
     foreach (TransferFactory *factory, KGet::factories()) {
         if (factory->addsProtocols().contains(protocol)) {
@@ -34,7 +33,7 @@ KUrl mostLocalUrl(const KUrl &url)
         }
     }
 
-    kDebug(5001) << "Starting KIO::NetAccess::mostLocalUrl for:" << url;
+    kDebug() << "Starting KIO::NetAccess::mostLocalUrl for:" << url;
     return KIO::NetAccess::mostLocalUrl(url, 0);
 }
 
@@ -71,7 +70,7 @@ void MostLocalUrlJob::start()
     }
 
     if (startJob) {
-        kDebug(5001) << "Starting KIO::mostLocalUrl for:" << m_url;
+        kDebug() << "Starting KIO::mostLocalUrl for:" << m_url;
         KIO::Job *job = KIO::mostLocalUrl(m_url, KIO::HideProgressInfo);
         addSubjob(job);
     } else {
@@ -83,11 +82,11 @@ void MostLocalUrlJob::start()
 void MostLocalUrlJob::slotResult(KJob* job)
 {
     if (job->error()) {
-        kWarning(5001) << "Error" << job->error() << "happened for:" << m_url;
+        kWarning() << "Error" << job->error() << "happened for:" << m_url;
         m_mostLocalUrl = m_url;
     } else {
         m_mostLocalUrl = static_cast<KIO::StatJob*>(job)->mostLocalUrl();
     }
-    kDebug(5001) << "Setting mostLocalUrl to" << m_mostLocalUrl;
+    kDebug() << "Setting mostLocalUrl to" << m_mostLocalUrl;
     emitResult();
 }

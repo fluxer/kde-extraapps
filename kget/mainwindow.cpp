@@ -507,7 +507,7 @@ void MainWindow::slotTransfersChanged(QMap<TransferHandler*, Transfer::ChangesFl
             break;
         }
         
-        // kDebug(5001) << it.key() << ": " << it.value();
+        // kDebug() << it.key() << ": " << it.value();
     }
     
     if (update)
@@ -1028,8 +1028,6 @@ void MainWindow::slotShowMenubar()
 
 void MainWindow::setSystemTrayDownloading(bool running)
 {
-    kDebug(5001);
-
     if (m_dock)
         m_dock->setDownloading(running);
 }
@@ -1042,7 +1040,6 @@ void MainWindow::slotTransferHistory()
 
 void MainWindow::slotTransferGroupSettings()
 {
-    kDebug(5001);
     QList<TransferGroupHandler*> list = KGet::selectedTransferGroups();
     foreach(TransferGroupHandler* group, list)
     {
@@ -1054,7 +1051,6 @@ void MainWindow::slotTransferGroupSettings()
 
 void MainWindow::slotTransferSettings()
 {
-    kDebug(5001);
     QList<TransferHandler*> list = KGet::selectedTransfers();
     foreach(TransferHandler* transfer, list)
     {

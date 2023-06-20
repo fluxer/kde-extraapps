@@ -37,13 +37,13 @@ TransferGroupHandler::~TransferGroupHandler()
 
 void TransferGroupHandler::start()
 {
-    kDebug(5001) << "TransferGroupHandler::start()";
+    kDebug() << "TransferGroupHandler::start()";
     m_group->setStatus( JobQueue::Running );
 }
 
 void TransferGroupHandler::stop()
 {
-    kDebug(5001) << "TransferGroupHandler::stop()";
+    kDebug() << "TransferGroupHandler::stop()";
     m_group->setStatus( JobQueue::Stopped );
 }
 
@@ -69,7 +69,7 @@ void TransferGroupHandler::move(QList<TransferHandler *> transfers, TransferHand
 
 TransferHandler * TransferGroupHandler::operator[] (int i)
 {
-//     kDebug(5001) << "TransferGroupHandler::operator[" << i << "]";
+    // kDebug() << "TransferGroupHandler::operator[" << i << "]";
 
     return (*m_group)[i]->handler();
 }
@@ -81,7 +81,7 @@ void TransferGroupHandler::setName(const QString &name)
 
 QVariant TransferGroupHandler::data(int column)
 {
-//     kDebug(5001) << "TransferGroupHandler::data(" << column << ")";
+    // kDebug() << "TransferGroupHandler::data(" << column << ")";
 
     switch(column)
     {

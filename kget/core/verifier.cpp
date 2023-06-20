@@ -318,7 +318,7 @@ QPair<QString, PartialChecksums*> Verifier::availablePartialChecksum(Verifier::C
 
 void Verifier::changeStatus(const QString &type, bool isVerified)
 {
-    kDebug(5001) << "Verified:" << isVerified;
+    kDebug() << "Verified:" << isVerified;
     d->status = isVerified ? Verifier::Verified : Verifier::NotVerified;
     d->model->setVerificationStatus(type, d->status);
     emit verified(isVerified);

@@ -185,7 +185,7 @@ void KGetLinkView::showLinks(const QStringList &links, bool urlRequestVisible)
             mt = KMimeType::findByUrl(linkitem, 0, true, true);
         }
 
-        kDebug(5001) << "Adding:" << linkitem;
+        kDebug() << "Adding:" << linkitem;
         
         QString file = url.fileName();
         if (file.isEmpty())

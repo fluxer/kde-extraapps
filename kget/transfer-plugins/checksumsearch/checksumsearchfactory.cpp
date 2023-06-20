@@ -21,7 +21,7 @@
 KGET_EXPORT_PLUGIN( ChecksumSearchFactory )
 
 ChecksumSearchFactory::ChecksumSearchFactory(QObject *parent, const QVariantList &args)
-  : TransferFactory(parent, args)
+    : TransferFactory(parent, args)
 {
 }
 
@@ -31,8 +31,6 @@ ChecksumSearchFactory::~ChecksumSearchFactory()
 
 TransferDataSource *ChecksumSearchFactory::createTransferDataSource(const KUrl &srcUrl, const QDomElement &type, QObject *parent)
 {
-    kDebug(5001);
-
     if (type.attribute("type") == "checksumsearch") {
         return new ChecksumSearchTransferDataSource(srcUrl, parent);
     }

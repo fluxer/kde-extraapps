@@ -428,7 +428,7 @@ void TransferTorrent::setSpeedLimits(int uploadLimit, int downloadLimit)
         m_lthandle.set_upload_limit(uploadLimit * 1024);
         m_lthandle.set_download_limit(downloadLimit * 1024);
     } else {
-        kDebug(5001) << "torrent handle is not valid";
+        kDebug() << "torrent handle is not valid";
     }
 }
 
@@ -444,7 +444,7 @@ QHash<KUrl, QPair<bool, int> > TransferTorrent::availableMirrors(const KUrl &fil
             result.insert(KUrl(lttracker.url.c_str()), QPair<bool,int>(true, 1));
         }
     } else {
-        kDebug(5001) << "torrent handle is not valid";
+        kDebug() << "torrent handle is not valid";
     }
 
     return result;
@@ -466,7 +466,7 @@ void TransferTorrent::setAvailableMirrors(const KUrl &file, const QHash<KUrl, QP
     if (m_lthandle.is_valid()) {
         m_lthandle.replace_trackers(lttrackers);
     } else {
-        kDebug(5001) << "torrent handle is not valid";
+        kDebug() << "torrent handle is not valid";
     }
 }
 
@@ -480,8 +480,7 @@ void TransferTorrent::start()
     const QString sourcestring = sourceurl.url();
     const QByteArray destination = directory().toLocalFile().toLocal8Bit();
 
-    kDebug(5001) << "source" << sourceurl;
-    kDebug(5001) << "destination" << destination;
+    kDebug() << "source" << sourceurl << "destination" << destination;
 
     try {
         lt::add_torrent_params ltparams;
@@ -496,7 +495,7 @@ void TransferTorrent::start()
 #else
             if (lterror != lt::errors::no_error) {
 #endif
-                kError(5001) << lterror.message().c_str();
+                kError() << lterror.message().c_str();
 
                 const QString errormesssage = translatelterror(lterror);
                 setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -513,7 +512,7 @@ void TransferTorrent::start()
             ltparams.ti = boost::make_shared<lt::torrent_info>(source.constData());
 #endif
             if (!ltparams.ti->is_valid()) {
-                kError(5001) << "invalid torrent file";
+                kError() << "invalid torrent file";
 
                 const QString errormesssage = i18n("Invalid torrent file");
                 setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -524,7 +523,7 @@ void TransferTorrent::start()
             m_totalSize = ltparams.ti->total_size();
             setTransferChange(Transfer::Tc_TotalSize, true);
         } else {
-            kError(5001) << "invalid source" << sourceurl;
+            kError() << "invalid source" << sourceurl;
 
             const QString errormesssage = i18n("Invalid source URL");
             setError(errormesssage, SmallIcon("dialog-error"), Job::NotSolveable);
@@ -616,7 +615,7 @@ void TransferTorrent::deinit(Transfer::DeleteOptions options)
 bool TransferTorrent::isStalled() const
 {
     if (!m_lthandle.is_valid()) {
-        kDebug(5001) << "torrent handle is not valid";
+        kDebug() << "torrent handle is not valid";
         return true;
     }
     const lt::torrent_status ltstatus = m_lthandle.status();
@@ -699,12 +698,12 @@ void TransferTorrent::slotCheckStateChanged()
         const QModelIndex fileindex = m_filemodel->index(url, FileItem::File);
         const int checkstate = m_filemodel->data(fileindex, Qt::CheckStateRole).toInt();
         if (checkstate != int(Qt::Unchecked)) {
-            kDebug(5001) << "will downloand" << url;
+            kDebug() << "will downloand" << url;
 
             m_priorities.push_back(LTPriorities::NormalPriority);
             m_lthandle.file_priority(counter, LTPriorities::NormalPriority);
         } else {
-            kDebug(5001) << "will not downloand" << url;
+            kDebug() << "will not downloand" << url;
 
             m_lthandle.file_priority(counter, LTPriorities::Disabled);
             m_priorities.push_back(LTPriorities::Disabled);
@@ -715,7 +714,7 @@ void TransferTorrent::slotCheckStateChanged()
 
 void TransferTorrent::slotSettingsDirty(const QString &settings)
 {
-    kDebug(5001) << "torrent settings are dirty";
+    kDebug() << "torrent settings are dirty";
     Q_UNUSED(settings);
     applySettings();
 }
@@ -723,7 +722,7 @@ void TransferTorrent::slotSettingsDirty(const QString &settings)
 void TransferTorrent::applySettings()
 {
     if (!m_ltsession) {
-        kDebug(5001) << "null torrent session pointer";
+        kDebug() << "null torrent session pointer";
         return;
     }
 
@@ -762,7 +761,7 @@ void TransferTorrent::applySettings()
                 break;
             }
             default: {
-                kWarning(5001) << "invalid setting type";
+                kWarning() << "invalid setting type";
                 break;
             }
         }
@@ -839,7 +838,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
     }
 
     if (event->timerId() == m_resumetimerid) {
-        kDebug(5001) << "posting save resume data alert";
+        kDebug() << "posting save resume data alert";
         if (m_lthandle.is_valid()) {
             m_lthandle.save_resume_data();
         }
@@ -900,7 +899,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
             setStatus(Job::FinishedKeepAlive);
             setTransferChange(Transfer::Tc_Status, true);
         } else if (lt::alert_cast<lt::save_resume_data_alert>(ltalert)) {
-            kDebug(5001) << "save resume data alert";
+            kDebug() << "save resume data alert";
 
 #if LIBTORRENT_VERSION_NUM >= 10200
             const lt::save_resume_data_alert* ltresumealert = lt::alert_cast<lt::save_resume_data_alert>(ltalert);
@@ -909,7 +908,7 @@ void TransferTorrent::timerEvent(QTimerEvent *event)
             }
 #endif
         } else if (lt::alert_cast<lt::torrent_error_alert>(ltalert)) {
-            kError(5001) << ltalert->message().c_str();
+            kError() << ltalert->message().c_str();
 
             const lt::torrent_error_alert* lterror = lt::alert_cast<lt::torrent_error_alert>(ltalert);
 

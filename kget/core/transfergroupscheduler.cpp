@@ -74,7 +74,7 @@ void TransferGroupScheduler::calculateDownloadLimit()
 void TransferGroupScheduler::calculateUploadLimit()
 {
     int n = KGet::allTransferGroups().count();
-    kDebug(5001) << n;
+    kDebug() << n;
     int pool = 0;//We create a pool where we have some KiB/s to go to other groups...
     QList<TransferGroupHandler*> transfergroupsNeedSpeed;
     foreach (TransferGroupHandler *handler, KGet::allTransferGroups())

@@ -55,8 +55,6 @@ void KUiServerJobs::settingsChanged()
 
 void KUiServerJobs::slotTransfersAdded(QList<TransferHandler*> transfers)
 {
-    kDebug(5001);
-
     foreach (TransferHandler *transfer, transfers) {
         if(shouldBeShown(transfer))
         registerJob(transfer->kJobAdapter(), transfer);
@@ -72,8 +70,6 @@ void KUiServerJobs::slotTransfersAdded(QList<TransferHandler*> transfers)
 
 void KUiServerJobs::slotTransfersAboutToBeRemoved(const QList<TransferHandler*> &transfers)
 {
-    kDebug(5001);
-
     m_invalidTransfers << transfers;
     foreach (TransferHandler *transfer, transfers) {
         unregisterJob(transfer->kJobAdapter(), transfer);
@@ -89,15 +85,13 @@ void KUiServerJobs::slotTransfersAboutToBeRemoved(const QList<TransferHandler*> 
 
 void KUiServerJobs::slotTransfersChanged(QMap<TransferHandler *, Transfer::ChangesFlags> transfers)
 {
-    kDebug(5001);
-    
     if(!Settings::enableKUIServerIntegration())
         return;
-    
+
     QMapIterator<TransferHandler *, Transfer::ChangesFlags> i(transfers);
     while (i.hasNext()) {
         i.next();
-//         if(!m_invalidTransfers.contains(i.key()))
+        // if(!m_invalidTransfers.contains(i.key()))
         {
             TransferHandler * transfer = i.key();
             if (shouldBeShown(transfer)) {

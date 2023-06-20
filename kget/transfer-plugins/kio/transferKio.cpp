@@ -38,7 +38,7 @@ TransferKio::TransferKio(TransferGroup * parent, TransferFactory * factory,
 void TransferKio::start()
 {
     if (status() != Job::Finished) {
-        kDebug(5001) << "TransferKio::start";
+        kDebug() << "TransferKio::start";
         setStatus(Job::Running);
         setTransferChange(Transfer::Tc_Status, true);
 
@@ -70,7 +70,7 @@ void TransferKio::stop()
         m_copyjob = nullptr;
     }
 
-    kDebug(5001) << "Stop";
+    kDebug() << "Stop";
     setStatus(Job::Stopped);
     m_downloadSpeed = 0;
     setTransferChange(Transfer::Tc_Status | Transfer::Tc_DownloadSpeed, true);
@@ -179,7 +179,7 @@ void TransferKio::load(const QDomElement *element)
         foreach (const QString &checksum, checksums) {
             const QStringList splitchecksum = checksum.split(",");
             if (splitchecksum.size() != 2) {
-                kDebug(5001) << "invalid checksum" << checksum;
+                kDebug() << "invalid checksum" << checksum;
                 continue;
             }
             m_checksums.insert(splitchecksum.at(0), splitchecksum.at(1));
@@ -210,7 +210,7 @@ void TransferKio::createJob()
 
 void TransferKio::slotResult( KJob * kioJob )
 {
-    kDebug(5001) << "slotResult" << kioJob->error() << kioJob->errorString();
+    kDebug() << "slotResult" << kioJob->error() << kioJob->errorString();
 
     m_downloadSpeed = 0;
     setTransferChange(Transfer::Tc_DownloadSpeed, true);
@@ -245,7 +245,7 @@ void TransferKio::slotResult( KJob * kioJob )
 
 void TransferKio::slotInfoMessage( KJob * kioJob, const QString & msg )
 {
-    kDebug(5001) << "slotInfoMessage";
+    kDebug() << "slotInfoMessage";
     Q_UNUSED(kioJob);
 
     setLog(msg, Transfer::Log_Info);
@@ -254,7 +254,7 @@ void TransferKio::slotInfoMessage( KJob * kioJob, const QString & msg )
 
 void TransferKio::slotPercent( KJob * kioJob, unsigned long percent )
 {
-    kDebug(5001) << "slotPercent";
+    kDebug() << "slotPercent";
     Q_UNUSED(kioJob);
 
     m_percent = percent;
@@ -263,7 +263,7 @@ void TransferKio::slotPercent( KJob * kioJob, unsigned long percent )
 
 void TransferKio::slotTotalSize( KJob * kioJob, qulonglong size )
 {
-    kDebug(5001) << "slotTotalSize";
+    kDebug() << "slotTotalSize";
     Q_UNUSED(kioJob);
 
     m_totalSize = size;
@@ -272,7 +272,7 @@ void TransferKio::slotTotalSize( KJob * kioJob, qulonglong size )
 
 void TransferKio::slotProcessedSize( KJob * kioJob, qulonglong size )
 {
-    kDebug(5001) << "slotProcessedSize";
+    kDebug() << "slotProcessedSize";
     Q_UNUSED(kioJob);
 
     m_downloadedSize = size;
@@ -281,7 +281,7 @@ void TransferKio::slotProcessedSize( KJob * kioJob, qulonglong size )
 
 void TransferKio::slotSpeed( KJob * kioJob, unsigned long bytes_per_second )
 {
-    kDebug(5001) << "slotSpeed";
+    kDebug() << "slotSpeed";
     Q_UNUSED(kioJob)
 
     m_downloadSpeed = bytes_per_second;

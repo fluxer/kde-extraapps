@@ -21,12 +21,10 @@ TransferDataSource::TransferDataSource(const KUrl &srcUrl, QObject *parent)
     m_currentSegments(0),
     m_capabilities(0)
 {
-    kDebug(5001) ;
 }
 
 TransferDataSource::~TransferDataSource()
 {
-    kDebug(5001) ;
 }
 
 Transfer::Capabilities TransferDataSource::capabilities() const

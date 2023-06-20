@@ -81,7 +81,7 @@ void TransfersGroupTree::setModel(QAbstractItemModel *model)
 
     int nGroups = model->rowCount(QModelIndex());
     for (int i = 0; i < nGroups; i++) {
-        kDebug(5001) << "openEditor for row " << i;
+        kDebug() << "openEditor for row " << i;
         openPersistentEditor(model->index(i, TransferTreeModel::Status, QModelIndex()));
     }
 
@@ -92,7 +92,7 @@ void TransfersGroupTree::rowsInserted(const QModelIndex &parent, int start, int 
 {
     if (!parent.isValid()) {
         for (int i = start; i <= end; ++i) {
-            kDebug(5001) << "openEditor for row " << i;
+            kDebug() << "openEditor for row " << i;
             openPersistentEditor(model()->index(i, TransferTreeModel::Status, parent));
         }
     }
@@ -135,7 +135,6 @@ void TransfersGroupTree::renameSelectedGroup()
 
 void TransfersGroupTree::changeIcon(const QString &icon)
 {
-    kDebug(5001);
     TransferTreeSelectionModel *selModel = KGet::selectionModel();
 
     QModelIndexList indexList = selModel->selectedRows();

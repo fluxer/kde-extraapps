@@ -25,7 +25,7 @@
 #include <KIO/NetAccess>
 
 ChecksumSearchTransferDataSource::ChecksumSearchTransferDataSource(const KUrl &srcUrl, QObject *parent)
-  : TransferDataSource(srcUrl, parent)
+    : TransferDataSource(srcUrl, parent)
 {
 }
 
@@ -35,8 +35,6 @@ ChecksumSearchTransferDataSource::~ChecksumSearchTransferDataSource()
 
 void ChecksumSearchTransferDataSource::start()
 {
-    kDebug(5001);
-
     QStringList changes = ChecksumSearchSettings::self()->searchStrings();
     QList<int> modes = ChecksumSearchSettings::self()->urlChangeModeList();
     QStringList types = ChecksumSearchSettings::self()->checksumTypeList();
@@ -57,7 +55,7 @@ void ChecksumSearchTransferDataSource::start()
         }
     }
 
-    kDebug(5001) << "Creating Checksumsearch for" << urls.count() << "urls.";
+    kDebug() << "Creating Checksumsearch for" << urls.count() << "urls.";
 
     if (urls.count() && types.count()) {
         ChecksumSearch *search = new ChecksumSearch(urls, m_sourceUrl.fileName(), types);
@@ -68,14 +66,12 @@ void ChecksumSearchTransferDataSource::start()
 
 void ChecksumSearchTransferDataSource::stop()
 {
-    kDebug(5001);
 }
 
 void ChecksumSearchTransferDataSource::addSegments(const QPair<KIO::fileoffset_t, KIO::fileoffset_t> &segmentSize, const QPair<int, int> &segmentRange)
 {
     Q_UNUSED(segmentSize)
     Q_UNUSED(segmentRange)
-    kDebug(5001);
 }
 
 #include "moc_checksumsearchtransferdatasource.cpp"

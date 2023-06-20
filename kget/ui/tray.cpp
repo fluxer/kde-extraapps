@@ -66,7 +66,7 @@ void Tray::slotActivated()
 // switch between Active or Passive state
 void Tray::setDownloading( bool downloading )
 {
-    kDebug(5001) << "Tray::setDownloading";
+    kDebug() << "Tray::setDownloading";
 
     if (downloading)
     {
@@ -81,7 +81,7 @@ void Tray::setDownloading( bool downloading )
             return;
         setStatus(KStatusNotifierItem::Passive);
         setOverlayIconByName(QString());
-    } 	
+    }
 }
 
 bool Tray::isDownloading()

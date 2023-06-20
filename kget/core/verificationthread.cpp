@@ -112,7 +112,7 @@ void VerificationThread::doVerify()
         }
 
         const QString hash = Verifier::checksum(url, type);
-        kDebug(5001) << "Type:" << type << "Calculated checksum:" << hash << "Entered checksum:" << checksum;
+        kDebug() << "Type:" << type << "Calculated checksum:" << hash << "Entered checksum:" << checksum;
         const bool fileVerified = (hash == checksum);
 
         m_mutex.lock();
@@ -154,7 +154,7 @@ void VerificationThread::doBrokenPieces()
         const QStringList fileChecksums = Verifier::partialChecksums(url, type, length).checksums();
         if (fileChecksums.size() != checksums.size())
         {
-            kDebug(5001) << "Number of checksums differs!";
+            kDebug() << "Number of checksums differs!";
             emit brokenPieces(broken, length);
             return;
         }
@@ -164,7 +164,7 @@ void VerificationThread::doBrokenPieces()
             if (fileChecksums.at(i) != checksums.at(i))
             {
                 const int brokenStart = length * i;
-                kDebug(5001) << url << "broken segment" << i << "start" << brokenStart << "length" << length;
+                kDebug() << url << "broken segment" << i << "start" << brokenStart << "length" << length;
                 broken.append(brokenStart);
             }
         }

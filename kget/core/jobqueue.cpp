@@ -122,7 +122,7 @@ void JobQueue::remove(const QList<Job*> jobs)
 
 void JobQueue::move(Job * job, Job * after)
 {
-    kDebug(5001) << "JobQueue::move";
+    kDebug() << "JobQueue::move";
 
     if( (m_jobs.removeAll(job) == 0) || (job == after)  ||
         ((after) && (after->jobQueue() != this)) )
