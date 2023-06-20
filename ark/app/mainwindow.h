@@ -32,13 +32,13 @@ class MainWindow: public KParts::MainWindow
 {
     Q_OBJECT
 public:
-    MainWindow(QWidget *parent = 0);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     bool loadPart();
 
-    void dragEnterEvent(class QDragEnterEvent * event);
-    void dropEvent(class QDropEvent * event);
-    void dragMoveEvent(class QDragMoveEvent * event);
+    void dragEnterEvent(class QDragEnterEvent *event);
+    void dropEvent(class QDropEvent *event);
+    void dragMoveEvent(class QDragMoveEvent *event);
 
 public slots:
     void openUrl(const KUrl& url);
@@ -52,6 +52,11 @@ private slots:
 
     void editKeyBindings();
     void editToolbars();
+
+protected:
+    // KMainWindow reimplementations
+    void saveProperties(KConfigGroup &group) final;
+    void readProperties(const KConfigGroup &group) final;
 
 private:
     void setupActions();

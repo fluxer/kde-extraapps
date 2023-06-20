@@ -50,7 +50,8 @@ static bool isValidArchiveDrag(const QMimeData *data)
 }
 
 MainWindow::MainWindow(QWidget *)
-        : KParts::MainWindow()
+    : KParts::MainWindow(),
+    m_part(nullptr)
 {
     setXMLFile(QLatin1String( "arkui.rc" ));
 
@@ -72,7 +73,7 @@ MainWindow::~MainWindow()
     }
     guiFactory()->removeClient(m_part);
     delete m_part;
-    m_part = 0;
+    m_part = nullptr;
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent * event)
@@ -260,4 +261,16 @@ void MainWindow::newArchive()
 
     m_openArgs.metaData().remove(QLatin1String( "showExtractDialog" ));
     m_openArgs.metaData().remove(QLatin1String( "createNewArchive" ));
+}
+
+void MainWindow::saveProperties(KConfigGroup &group)
+{
+    if (m_part) {
+        group.writePathEntry("URL", m_part->url().url());
+    }
+}
+
+void MainWindow::readProperties(const KConfigGroup &group)
+{
+    openUrl(group.readPathEntry("URL", QString()));
 }

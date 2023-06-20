@@ -29,7 +29,10 @@
 #include <KParts/StatusBarExtension>
 #include <KTempDir>
 
-#include <QtCore/qabstractitemmodel.h>
+#include <QModelIndex>
+#include <QAction>
+#include <QSplitter>
+#include <QTreeView>
 
 class ArchiveModel;
 class InfoPanel;
@@ -38,10 +41,6 @@ class KAbstractWidgetJobTracker;
 class KAboutData;
 class KAction;
 class KJob;
-
-#include <QAction>
-#include <QSplitter>
-#include <QTreeView>
 
 namespace Ark
 {

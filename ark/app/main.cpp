@@ -124,12 +124,12 @@ int main(int argc, char **argv)
             return -1;
         }
 
-        MainWindow* window = new MainWindow;
-        window->restore(1);
+        MainWindow* window = new MainWindow();
         if (!window->loadPart()) {
             delete window;
             return -1;
         }
+        window->restore(1);
     } else { //new ark window (no restored session)
         // open any given URLs
         KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
@@ -194,7 +194,7 @@ int main(int argc, char **argv)
 
             batchJob->start();
         } else {
-            MainWindow *window = new MainWindow;
+            MainWindow *window = new MainWindow();
             if (!window->loadPart()) { // if loading the part fails
                 delete window;
                 return -1;
