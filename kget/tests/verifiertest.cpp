@@ -28,8 +28,7 @@ VerfierTest::VerfierTest(QObject *parent)
      path.append("test.txt");
      QFile file(path);
      if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-         kError() << "Creating file failed:" << path;
-         abort();
+         kFatal() << "Creating file failed:" << path;
      }
      m_file = KUrl(path);
 
@@ -37,8 +36,7 @@ VerfierTest::VerfierTest(QObject *parent)
     const qint64 size = data.size();
     for (int i = 0; i < 50000; ++i) {
         if (file.write(data) != size) {
-            kError() << "Creating file failed:" << path;
-            abort();
+            kFatal() << "Creating file failed:" << path;
         }
     }
 
