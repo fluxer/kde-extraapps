@@ -10,6 +10,8 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 endif()
 
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5004)
+
 kde4_optional_find_package(LibArchive 3.0.3)
 set_package_properties(LibArchive PROPERTIES
     DESCRIPTION "Multi-format archive and compression library"
