@@ -11,6 +11,8 @@ endif()
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
+add_definitions(-DKDE_DEFAULT_DEBUG_AREA=5005)
+
 set(HAVE_X11_EXTENSIONS_SHAPE_H ${X11_Xshape_FOUND})
 add_feature_info(
     "Support for capturing border"
