@@ -10,6 +10,9 @@
 
 #include "dlgwebinterface.h"
 
+#include "core/kget.h"
+#include "mainwindow.h"
+#include "extensions/webinterface/httpserver.h"
 #include "settings.h"
 
 #include <KMessageBox>
@@ -44,6 +47,16 @@ void DlgWebinterface::readConfig()
         } else {
             KMessageBox::error(nullptr, i18n("Could not open KPasswdStore"));
         }
+    }
+
+    QString webaddress;
+    if (KGet::m_mainWindow && KGet::m_mainWindow->m_webinterface) {
+        webaddress = KGet::m_mainWindow->m_webinterface->address();
+    }
+    if (!webaddress.isEmpty()) {
+        serverLabel->setText(i18n("<html>The server can be accessed at <a href=\"%1\">%1</a>.</html>", webaddress));
+    } else {
+        serverLabel->setText(QString());
     }
 }
 

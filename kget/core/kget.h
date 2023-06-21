@@ -69,6 +69,8 @@ class KGET_EXPORT KGet
     friend class GenericObserver;
     friend class TransferTreeModel;
     friend class UrlChecker;
+    friend class DlgWebinterface;
+
     public:
         enum AfterFinishAction {
             Quit = 0,

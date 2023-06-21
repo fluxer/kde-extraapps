@@ -39,6 +39,7 @@ class KGet;
 class MainWindow : public KXmlGuiWindow
 {
     friend class DBusKGetWrapper;
+    friend class DlgWebinterface;
 
 Q_OBJECT
 public:
