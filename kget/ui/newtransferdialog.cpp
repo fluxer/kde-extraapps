@@ -561,7 +561,7 @@ void NewTransferDialogHandler::showNewTransferDialog(KUrl::List urls)
 
     newTransferDialogHandler->m_numJobs[newTransferDialogHandler->m_nextJobId] = urls.count();
     foreach (const KUrl &url, urls) {
-        //needed to avoid when protocols like the desktop protocol is used, see bko:185283
+        // see bko:185283
         KIO::Job *job = mostLocalUrlJob(url);
         job->setProperty("jobId", (newTransferDialogHandler->m_nextJobId));
         connect(job, SIGNAL(result(KJob*)), newTransferDialogHandler, SLOT(slotMostLocalUrlResult(KJob*)));
