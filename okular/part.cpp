@@ -1414,7 +1414,7 @@ bool Part::openUrl(const KUrl &_url)
         return false;
 
     KUrl url( _url );
-    if ( url.hasRef() )
+    if ( url.hasFragment() )
     {
         const QString dest = url.fragment();
         bool ok = true;

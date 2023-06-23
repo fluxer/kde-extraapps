@@ -38,7 +38,7 @@ static const char* VALUE_SUFFIX = "value";
 static KUrl stripPass(const KUrl &url_)
 {
     KUrl url = url_;
-    url.setPass(QString());
+    url.setPassword(QString());
     return url;
 }
 
@@ -94,10 +94,10 @@ void SerializedUrlMap::setConfigGroup(const KConfigGroup& group)
 
 KUrl SerializedUrlMap::value(const KUrl& key_) const
 {
-    QString pass = key_.pass();
+    QString pass = key_.password();
     KUrl key = stripPass(key_);
     KUrl url = d->mMap.value(key);
-    url.setPass(pass);
+    url.setPassword(pass);
     return url;
 }
 

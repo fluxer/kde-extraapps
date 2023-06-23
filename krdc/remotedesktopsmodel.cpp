@@ -279,7 +279,7 @@ void RemoteDesktopsModel::servicesChanged()
     KUrl url;
     removeAllItemsFromSources(RemoteDesktop::Zeroconf);
     foreach(const KDNSSDService &service, zeroconfBrowser->services()) {
-        url.setProtocol(m_protocols[service.type].toLower());
+        url.setScheme(m_protocols[service.type].toLower());
         url.setHost(service.hostname);
         url.setPort(service.port);
 
