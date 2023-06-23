@@ -110,8 +110,7 @@ struct ImporterPrivate
 
     void renameImportedUrl(const KUrl& src)
     {
-        KUrl dst = src;
-        dst.cd("..");
+        KUrl dst = src.upUrl();
         QString fileName;
         if (mFileNameFormater.get()) {
             KFileItem item(KFileItem::Unknown, KFileItem::Unknown, src, true /* delayedMimeTypes */);

@@ -156,7 +156,7 @@ Part::openUrl(const KUrl &u)
 #define KMSG(s) KMessageBox::information(widget(), s)
 
     KUrl uri = u;
-    uri.cleanPath(KUrl::SimplifyDirSeparators);
+    uri.cleanPath();
     const QString path = uri.path(KUrl::AddTrailingSlash);
     const QByteArray path8bit = QFile::encodeName(path);
     const bool isLocal = uri.protocol() == QLatin1String( "file" );
