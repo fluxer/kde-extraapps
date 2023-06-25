@@ -164,7 +164,7 @@ KFileItemList ContextManager::selectedFileItemList() const
 
 void ContextManager::setCurrentDirUrl(const KUrl& url)
 {
-    if (url.equals(d->mCurrentDirUrl, KUrl::CompareWithoutTrailingSlash)) {
+    if (url.equals(d->mCurrentDirUrl, KUrl::RemoveTrailingSlash)) {
         return;
     }
     d->mCurrentDirUrl = url;

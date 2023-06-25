@@ -970,7 +970,7 @@ void MainWindow::openDirUrl(const KUrl& url)
 {
     const KUrl currentUrl = d->mContextManager->currentDirUrl();
 
-    if (url.equals(currentUrl, KUrl::CompareWithoutTrailingSlash)) {
+    if (url.equals(currentUrl, KUrl::RemoveTrailingSlash)) {
         return;
     }
 
@@ -1039,7 +1039,7 @@ void MainWindow::slotPartCompleted()
 
     KUrl dirUrl = url;
     dirUrl.setFileName(QString());
-    if (dirUrl.equals(d->mContextManager->currentDirUrl(), KUrl::CompareWithoutTrailingSlash)) {
+    if (dirUrl.equals(d->mContextManager->currentDirUrl(), KUrl::RemoveTrailingSlash)) {
         QModelIndex index = d->mDirModel->indexForUrl(url);
         QItemSelectionModel* selectionModel = d->mThumbnailView->selectionModel();
         if (index.isValid() && !selectionModel->isSelected(index)) {
@@ -1145,7 +1145,7 @@ void MainWindow::goToUrl(const KUrl& url)
     }
     KUrl dirUrl = url;
     dirUrl.setFileName("");
-    if (!dirUrl.equals(d->mContextManager->currentDirUrl(), KUrl::CompareWithoutTrailingSlash)) {
+    if (!dirUrl.equals(d->mContextManager->currentDirUrl(), KUrl::RemoveTrailingSlash)) {
         d->mContextManager->setCurrentDirUrl(dirUrl);
         d->mGvCore->addUrlToRecentFolders(dirUrl);
     }

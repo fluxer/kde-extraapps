@@ -362,7 +362,7 @@ public:
         }
         QModelIndex index = sourceModel()->index(sourceRow, 0);
         KFileItem item = itemForIndex(index);
-        return item.url().equals(mUrl, KUrl::CompareWithoutTrailingSlash);
+        return item.url().equals(mUrl, KUrl::RemoveTrailingSlash);
     }
 
     QVariant data(const QModelIndex& index, int role) const // reimp
