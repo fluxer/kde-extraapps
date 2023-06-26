@@ -173,7 +173,7 @@ QWidget* WallpaperQml::createConfigurationInterface(QWidget* parent)
     v.m_view->setItemDelegate(new BackgroundDelegate(v.m_view));
     if (m_package) {
         v.m_view->setCurrentIndex(m->indexForPackagePath(m_package->path()));
-        m_packageName = KUrl(m_package->path()).fileName(KUrl::IgnoreTrailingSlash);
+        m_packageName = KUrl(m_package->path()).fileName(KUrl::LeaveTrailingSlash);
     }
     v.m_color->setColor(m_scene->backgroundBrush().color());
 

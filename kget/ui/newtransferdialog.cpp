@@ -519,13 +519,13 @@ void NewTransferDialogHandler::showNewTransferDialog(KUrl::List urls)
                     folder = lastUrl.path(KUrl::AddTrailingSlash);
                 } else {
                     //second url is a file path, use this one
-                    folder = lastUrl.directory(KUrl::AppendTrailingSlash);
+                    folder = lastUrl.directory(KUrl::AddTrailingSlash);
                     suggestedFileName = lastUrl.fileName();
                 }
                 urls.removeLast();
             } else {
                 //second url is just a file name
-                suggestedFileName = lastUrl.fileName(KUrl::ObeyTrailingSlash);
+                suggestedFileName = lastUrl.fileName(KUrl::LeaveTrailingSlash);
                 urls.removeLast();
             }
         } else if (!lastUrl.isValid() || (lastUrl.scheme().isEmpty() && lastUrl.directory().isEmpty())) {
@@ -544,7 +544,7 @@ void NewTransferDialogHandler::showNewTransferDialog(KUrl::List urls)
      * and giving them the possibility to improve their mistake
      */
 //         if (!QFileInfo(urls.last().toLocalFile()).isDir()) {
-//             folder = urls.last().directory(KUrl::AppendTrailingSlash);
+//             folder = urls.last().directory(KUrl::AddTrailingSlash);
 //         } else {
             folder = urls.last().path(KUrl::AddTrailingSlash);//checks if that folder is correct happen later
 //         }

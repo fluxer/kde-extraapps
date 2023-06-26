@@ -1953,7 +1953,7 @@ Document::OpenResult Document::openDocument( const QString & docFile, const KUrl
     KMimeType::Ptr mime = _mime;
     QByteArray filedata;
     qint64 document_size = -1;
-    bool isstdin = url.fileName( KUrl::ObeyTrailingSlash ) == QLatin1String( "-" );
+    bool isstdin = url.fileName( KUrl::LeaveTrailingSlash ) == QLatin1String( "-" );
     bool triedMimeFromFileContent = false;
     if ( !isstdin )
     {

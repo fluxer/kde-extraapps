@@ -21,7 +21,7 @@ namespace {
 
 QString resourceUrl(const KUrl &baseUrl, const QString &u)
 {
-  KUrl newUrl(KUrl(baseUrl.directory(KUrl::AppendTrailingSlash)), u);
+  KUrl newUrl(KUrl(baseUrl.directory(KUrl::AddTrailingSlash)), u);
   QString newDir = newUrl.toLocalFile();
   newDir.remove(0, 1);
   return newDir;

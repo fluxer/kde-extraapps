@@ -204,8 +204,8 @@ TransferHandler * KGet::addTransfer(KUrl srcUrl, QString destDir, QString sugges
     } else {
         // check whether destDir is actually already the path to a file
         KUrl targetUrl = KUrl(destDir);
-        QString directory = targetUrl.directory(KUrl::ObeyTrailingSlash);
-        QString fileName = targetUrl.fileName(KUrl::ObeyTrailingSlash);
+        QString directory = targetUrl.directory(KUrl::LeaveTrailingSlash);
+        QString fileName = targetUrl.fileName(KUrl::LeaveTrailingSlash);
         if (QFileInfo(directory).isDir() && !fileName.isEmpty()) {
             destDir = directory;
             suggestedFileName = fileName;
@@ -215,7 +215,7 @@ TransferHandler * KGet::addTransfer(KUrl srcUrl, QString destDir, QString sugges
     if (suggestedFileName.isEmpty())
     {
 	    confirmDestination = true;
-        suggestedFileName = srcUrl.fileName(KUrl::ObeyTrailingSlash);
+        suggestedFileName = srcUrl.fileName(KUrl::LeaveTrailingSlash);
         if (suggestedFileName.isEmpty())
         {
             // simply use the full url as filename
@@ -232,7 +232,7 @@ TransferHandler * KGet::addTransfer(KUrl srcUrl, QString destDir, QString sugges
             if (destUrl.isEmpty())
                 return 0;
 
-            destDir = destUrl.directory(KUrl::ObeyTrailingSlash);
+            destDir = destUrl.directory(KUrl::LeaveTrailingSlash);
         } while (!isValidDestDirectory(destDir));
     } else {
         destUrl = KUrl();
@@ -972,7 +972,7 @@ KUrl KGet::destFileInputDialog(QString destDir, const QString& suggestedFileName
 
     KUrl destUrl = KFileDialog::getSaveUrl(startLocation, QString(), m_mainWindow, i18n("Save As"));
     if (!destUrl.isEmpty()) {
-        Settings::setLastDirectory(destUrl.directory(KUrl::ObeyTrailingSlash));
+        Settings::setLastDirectory(destUrl.directory(KUrl::LeaveTrailingSlash));
     }
 
     return destUrl;

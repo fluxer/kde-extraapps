@@ -83,7 +83,7 @@ QVariant WallpapersModel::data(const QModelIndex& index, int role) const
     Plasma::Package* p = m_packages[index.row()];
     switch (role) {
         case PackageNameRole:
-            return KUrl(p->path()).fileName(KUrl::IgnoreTrailingSlash);
+            return KUrl(p->path()).fileName(KUrl::LeaveTrailingSlash);
         case Qt::DisplayRole:
             return p->metadata().name();
         case Qt::ToolTipRole:

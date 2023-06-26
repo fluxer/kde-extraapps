@@ -1243,7 +1243,7 @@ bool Part::openFile()
 {
     QList<KMimeType::Ptr> mimes;
     QString fileNameToOpen = localFilePath();
-    const bool isstdin = url().isLocalFile() && url().fileName( KUrl::ObeyTrailingSlash ) == QLatin1String( "-" );
+    const bool isstdin = url().isLocalFile() && url().fileName( KUrl::LeaveTrailingSlash ) == QLatin1String( "-" );
     const QFileInfo fileInfo( fileNameToOpen );
     if ( !isstdin && !fileInfo.exists() )
         return false;

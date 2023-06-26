@@ -62,7 +62,7 @@ bool urlIsFastLocalFile(const KUrl& url)
 
 bool urlIsDirectory(const KUrl& url)
 {
-    if (url.fileName(KUrl::ObeyTrailingSlash).isEmpty()) {
+    if (url.fileName(KUrl::LeaveTrailingSlash).isEmpty()) {
         return true; // file:/somewhere/<nothing here>
     }
 
