@@ -61,7 +61,7 @@ KonsoleView::KonsoleView(QWidget *parent, const KUrl &url, KConfigGroup configGr
         mainLayout->addWidget(m_terminalWidget);
         m_terminal = qobject_cast<TerminalInterface *>(part);
         m_terminal->showShellInDir(QDir::homePath());
-        m_terminal->sendInput("echo " + url.user() + '@' + url.host()/* + ':' + url.port()*/ + '\n');
+        m_terminal->sendInput("echo " + url.userName() + '@' + url.host()/* + ':' + url.port()*/ + '\n');
 //         m_terminal->sendInput("clear\n");
         m_terminalWidget->resize(size);
     }

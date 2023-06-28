@@ -32,6 +32,7 @@ include_directories(
 )
 
 add_subdirectory(core)
+# add_subdirectory(konsole)
 add_subdirectory(vnc)
 add_subdirectory(rdp)
 
