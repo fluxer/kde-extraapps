@@ -42,6 +42,8 @@
 #include <KStandardAction>
 #include <KAction>
 #include <KColorUtils>
+#include <KStandardDirs>
+#include <KIconEffect>
 
 #include <Plasma/Animator>
 #include <Plasma/Animation>
@@ -61,11 +63,9 @@ class TopWidget : public QGraphicsWidget
 public:
     TopWidget(QGraphicsWidget *parent)
         : QGraphicsWidget(parent),
-          m_notesTheme(new Plasma::Svg(this)),
-          m_color(defaultBackgroundColor() + "-notes")
+          m_notesImage(KGlobal::dirs()->findResource("data", "desktoptheme/default/widgets/notes.kat")),
+          m_color(defaultBackgroundColor())
     {
-        m_notesTheme->setImagePath("widgets/notes");
-        m_notesTheme->setContainsMultipleImages(false);
     }
 
     void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -73,30 +73,31 @@ public:
         Q_UNUSED(option)
         Q_UNUSED(widget)
 
-        m_notesTheme->resize(geometry().size());
-        m_notesTheme->paint(p, contentsRect(), m_color);
+        QImage tmp = m_notesImage.scaled(geometry().size().toSize(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        tmp = KIconEffect::apply(tmp, KIconEffect::Colorize, 1.0, QColor(m_color), true);
+        p->drawImage(contentsRect(), tmp);
     }
 
     bool hasColor(const QString &color) const
     {
-        return m_notesTheme->hasElement(color + "-notes");
+        // qDebug() << Q_FUNC_INFO << color;
+        return QColor::colorNames().contains(color);
     }
 
     QString color() const
     {
-        return QString(m_color).remove("-notes");
+        return QString(m_color);
     }
 
     void setColor(QString color)
     {
-        color.remove("-notes");
         if (hasColor(color)) {
-            m_color = color + "-notes";
+            m_color = color;
         }
     }
 
 private:
-    Plasma::Svg *m_notesTheme;
+    QImage m_notesImage;
     QString m_color;
 };
 

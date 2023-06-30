@@ -24,5 +24,6 @@ install(
     )
 
 install(
-    FILES notes.svgz
-    DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
+    FILES notes.svgz notes.kat
+    DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/
+)
