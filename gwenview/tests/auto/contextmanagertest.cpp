@@ -65,7 +65,7 @@ void ContextManagerTest::testRemove()
 
     // Remove "b", `manager` should select "c"
     sandBox.remove("b");
-    dirModel.dirLister()->updateDirectory(dirUrl);
+    dirModel.dirLister()->updateDirectory();
     while (dirModel.rowCount() == 3) {
         QTest::qWait(100);
     }
@@ -76,7 +76,7 @@ void ContextManagerTest::testRemove()
 
     // Remove "c", `manager` should select "a"
     sandBox.remove("c");
-    dirModel.dirLister()->updateDirectory(dirUrl);
+    dirModel.dirLister()->updateDirectory();
     while (dirModel.rowCount() == 2) {
         QTest::qWait(100);
     }

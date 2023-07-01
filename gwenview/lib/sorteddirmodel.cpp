@@ -119,7 +119,7 @@ KDirLister* SortedDirModel::dirLister() const
 
 void SortedDirModel::reload()
 {
-    dirLister()->updateDirectory(dirLister()->url());
+    dirLister()->updateDirectory();
 }
 
 void SortedDirModel::setBlackListedExtensions(const QStringList& list)

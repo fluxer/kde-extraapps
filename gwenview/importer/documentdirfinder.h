@@ -64,7 +64,7 @@ Q_SIGNALS:
     void done(const KUrl&, DocumentDirFinder::Status);
 
 private Q_SLOTS:
-    void slotItemsAdded(const KUrl&, const KFileItemList&);
+    void slotItemsAdded(const KFileItemList&);
     void slotCompleted();
 
 private:

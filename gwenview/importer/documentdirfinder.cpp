@@ -46,8 +46,8 @@ DocumentDirFinder::DocumentDirFinder(const KUrl& rootUrl)
 {
     d->mRootUrl = rootUrl;
     d->mDirLister = new KDirLister(this);
-    connect(d->mDirLister, SIGNAL(itemsAdded(KUrl,KFileItemList)),
-            SLOT(slotItemsAdded(KUrl,KFileItemList)));
+    connect(d->mDirLister, SIGNAL(itemsAdded(KFileItemList)),
+            SLOT(slotItemsAdded(KFileItemList)));
     connect(d->mDirLister, SIGNAL(completed()),
             SLOT(slotCompleted()));
     d->mDirLister->openUrl(rootUrl);
@@ -63,8 +63,9 @@ void DocumentDirFinder::start()
     d->mDirLister->openUrl(d->mRootUrl);
 }
 
-void DocumentDirFinder::slotItemsAdded(const KUrl& dir, const KFileItemList& list)
+void DocumentDirFinder::slotItemsAdded(const KFileItemList& list)
 {
+    const KUrl dir = d->mDirLister->url();
     Q_FOREACH(const KFileItem & item, list) {
         MimeTypeUtils::Kind kind = MimeTypeUtils::fileItemKind(item);
         switch (kind) {

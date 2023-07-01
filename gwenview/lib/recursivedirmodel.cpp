@@ -85,16 +85,14 @@ RecursiveDirModel::RecursiveDirModel(QObject* parent)
 , d(new RecursiveDirModelPrivate)
 {
     d->mDirLister = new KDirLister(this);
-    connect(d->mDirLister, SIGNAL(itemsAdded(KUrl, KFileItemList)),
-        SLOT(slotItemsAdded(KUrl, KFileItemList)));
+    connect(d->mDirLister, SIGNAL(itemsAdded(KFileItemList)),
+        SLOT(slotItemsAdded(KFileItemList)));
     connect(d->mDirLister, SIGNAL(itemsDeleted(KFileItemList)),
         SLOT(slotItemsDeleted(KFileItemList)));
     connect(d->mDirLister, SIGNAL(completed()),
         SIGNAL(completed()));
     connect(d->mDirLister, SIGNAL(clear()),
         SLOT(slotCleared()));
-    connect(d->mDirLister, SIGNAL(clear(KUrl)),
-        SLOT(slotDirCleared(KUrl)));
 }
 
 RecursiveDirModel::~RecursiveDirModel()
@@ -148,7 +146,7 @@ QVariant RecursiveDirModel::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void RecursiveDirModel::slotItemsAdded(const KUrl&, const KFileItemList& newList)
+void RecursiveDirModel::slotItemsAdded(const KFileItemList& newList)
 {
     QList<KUrl> dirUrls;
     KFileItemList fileList;
@@ -201,19 +199,6 @@ void RecursiveDirModel::slotCleared()
     beginResetModel();
     d->clear();
     endResetModel();
-}
-
-void RecursiveDirModel::slotDirCleared(const KUrl& dirUrl)
-{
-    int row;
-    for (row = d->list().count() - 1; row >= 0; --row) {
-        const KUrl url = d->list().at(row).url();
-        if (dirUrl.isParentOf(url)) {
-            beginRemoveRows(QModelIndex(), row, row);
-            d->removeAt(row);
-            endRemoveRows();
-        }
-    }
 }
 
 } // namespace
