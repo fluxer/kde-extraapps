@@ -289,7 +289,7 @@ void PlaceTreeModel::fetchMore(const QModelIndex& parent)
     if (!node.model->dirLister()->url().isValid()) {
         QModelIndex placeIndex = d->mPlacesModel->index(parent.row(), parent.column());
         KUrl url = d->mPlacesModel->url(placeIndex);
-        node.model->dirLister()->openUrl(url, KDirLister::Keep);
+        node.model->dirLister()->openUrl(url);
         return;
     }
     const QModelIndex dirIndex = d->dirIndexForNode(node, parent);

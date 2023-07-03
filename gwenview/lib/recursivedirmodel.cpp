@@ -169,7 +169,7 @@ void RecursiveDirModel::slotItemsAdded(const KFileItemList& newList)
     }
 
     Q_FOREACH(const KUrl& url, dirUrls) {
-        d->mDirLister->openUrl(url, KDirLister::Keep);
+        d->mDirLister->openUrl(url);
     }
 }
 
