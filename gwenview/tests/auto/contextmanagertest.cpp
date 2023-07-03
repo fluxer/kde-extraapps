@@ -97,10 +97,10 @@ void ContextManagerTest::testInvalidDirUrl()
             setAutoErrorHandlingEnabled(false, 0);
         }
 
-        bool openUrl(const KUrl& url, OpenUrlFlags flags = NoFlags)
+        bool openUrl(const KUrl& url)
         {
             mOpenUrlCalled = true;
-            return KDirLister::openUrl(url, flags);
+            return KDirLister::openUrl(url);
         }
 
         bool mOpenUrlCalled;

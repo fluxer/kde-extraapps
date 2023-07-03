@@ -34,8 +34,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 namespace Gwenview
 {
 
-struct RecursiveDirModelPrivate {
-    KDirLister* mDirLister;
+struct RecursiveDirModelPrivate
+{
+    KUrl mUrl;
+    QList<KDirLister*> mDirListers;
 
     int rowForUrl(const KUrl &url) const
     {
@@ -75,24 +77,36 @@ struct RecursiveDirModelPrivate {
         return mList;
     }
 
+    void listDir(RecursiveDirModel* parent, const KUrl &url);
+
 private:
     KFileItemList mList;
     QHash<KUrl, int> mRowForUrl;
 };
 
-RecursiveDirModel::RecursiveDirModel(QObject* parent)
-: QAbstractListModel(parent)
-, d(new RecursiveDirModelPrivate)
+void RecursiveDirModelPrivate::listDir(RecursiveDirModel* parent, const KUrl &url)
 {
-    d->mDirLister = new KDirLister(this);
-    connect(d->mDirLister, SIGNAL(itemsAdded(KFileItemList)),
-        SLOT(slotItemsAdded(KFileItemList)));
-    connect(d->mDirLister, SIGNAL(itemsDeleted(KFileItemList)),
-        SLOT(slotItemsDeleted(KFileItemList)));
-    connect(d->mDirLister, SIGNAL(completed()),
-        SIGNAL(completed()));
-    connect(d->mDirLister, SIGNAL(clear()),
-        SLOT(slotCleared()));
+    KDirLister* dirLister = new KDirLister(parent);
+    parent->connect(
+        dirLister, SIGNAL(itemsAdded(KFileItemList)),
+        parent, SLOT(slotItemsAdded(KFileItemList))
+    );
+    parent->connect(
+        dirLister, SIGNAL(itemsDeleted(KFileItemList)),
+        parent, SLOT(slotItemsDeleted(KFileItemList))
+    );
+    parent->connect(
+        dirLister, SIGNAL(completed()),
+        parent, SLOT(slotCompleted())
+    );
+    mDirListers.append(dirLister);
+    dirLister->openUrl(url);
+}
+
+RecursiveDirModel::RecursiveDirModel(QObject* parent)
+    : QAbstractListModel(parent)
+    , d(new RecursiveDirModelPrivate)
+{
 }
 
 RecursiveDirModel::~RecursiveDirModel()
@@ -102,15 +116,20 @@ RecursiveDirModel::~RecursiveDirModel()
 
 KUrl RecursiveDirModel::url() const
 {
-    return d->mDirLister->url();
+    return d->mUrl;
 }
 
 void RecursiveDirModel::setUrl(const KUrl& url)
 {
+    foreach (KDirLister* lister, d->mDirListers) {
+        lister->stop();
+    }
+    qDeleteAll(d->mDirListers);
     beginResetModel();
     d->clear();
     endResetModel();
-    d->mDirLister->openUrl(url);
+    d->mUrl = url;
+    d->listDir(this, url);
 }
 
 int RecursiveDirModel::rowCount(const QModelIndex& parent) const
@@ -169,7 +188,7 @@ void RecursiveDirModel::slotItemsAdded(const KFileItemList& newList)
     }
 
     Q_FOREACH(const KUrl& url, dirUrls) {
-        d->mDirLister->openUrl(url);
+        d->listDir(this, url);
     }
 }
 
@@ -191,14 +210,14 @@ void RecursiveDirModel::slotItemsDeleted(const KFileItemList& list)
     }
 }
 
-void RecursiveDirModel::slotCleared()
+void RecursiveDirModel::slotCompleted()
 {
-    if (d->list().isEmpty()) {
-        return;
+    foreach (const KDirLister* lister, d->mDirListers) {
+        if (!lister->isFinished()) {
+            return;
+        }
     }
-    beginResetModel();
-    d->clear();
-    endResetModel();
+    emit completed();
 }
 
 } // namespace
