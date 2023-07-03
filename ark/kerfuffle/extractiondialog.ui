@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy" >
-   <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+   <sizepolicy vsizetype="Preferred" hsizetype="MinimumExpanding" >
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -22,34 +22,6 @@
   <layout class="QVBoxLayout" name="verticalLayout_2" >
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" >
-     <item>
-      <widget class="QLabel" name="iconLabel" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Minimum" hsizetype="Fixed" >
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>256</width>
-         <height>256</height>
-        </size>
-       </property>
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="pixmap" >
-        <pixmap>../../../../../kde-devel/ark-trunk/pics/ox32-action-ark_extract.png</pixmap>
-       </property>
-       <property name="scaledContents" >
-        <bool>false</bool>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QLabel" name="extractAllLabel" >
        <property name="sizePolicy" >

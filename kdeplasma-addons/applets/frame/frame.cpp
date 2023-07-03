@@ -38,7 +38,7 @@
 #include <KSharedConfig>
 #include <KRun>
 #include <KUrl>
-#include <KDirSelectDialog>
+#include <KFileDialog>
 #include <KServiceTypeTrader>
 #include <kglobalsettings.h>
 
@@ -502,15 +502,13 @@ void Frame::previousPicture()
 
 void Frame::addDir()
 {
-    QPointer<KDirSelectDialog> dialog = new KDirSelectDialog(KUrl(), true);
-    if (dialog->exec()) {
-        QString path = dialog->url().url();
+    const QString path = KFileDialog::getExistingDirectory();
+    if (!path.isEmpty()) {
         if (!m_slideShowPaths.contains(path)) {
             m_configDialog->imageUi.slideShowDirList->addItem(path);
         }
         updateButtons();
     }
-    delete dialog;
 }
 
 void Frame::removeDir()

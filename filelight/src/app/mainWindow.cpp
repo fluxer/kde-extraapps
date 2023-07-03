@@ -29,11 +29,10 @@
 #include <KHistoryComboBox>
 #include <KRecentFilesAction>
 #include <KConfig>
-#include <KDirSelectDialog> //slotScanFolder
+#include <KFileDialog> //slotScanFolder
 #include <KEditToolBar>     //for editToolbar dialog
 #include <QLineEdit>
 #include <KStandardShortcut>
-#include <KFileDialog>
 #include <KLocale>
 #include <KMessageBox>
 #include <KShell>

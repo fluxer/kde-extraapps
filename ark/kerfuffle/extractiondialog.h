@@ -31,13 +31,13 @@
 
 #include "kerfuffle_export.h"
 
-#include <KDirSelectDialog>
+#include <KFileDialog>
 
 #include <KDialog>
 
 namespace Kerfuffle
 {
-class KERFUFFLE_EXPORT ExtractionDialog : public KDirSelectDialog
+class KERFUFFLE_EXPORT ExtractionDialog : public KFileDialog
 {
     Q_OBJECT
 public:

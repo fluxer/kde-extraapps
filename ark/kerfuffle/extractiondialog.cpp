@@ -34,6 +34,7 @@
 #include <KStandardDirs>
 #include <KDebug>
 #include <KIO/NetAccess>
+#include <kabstractfilewidget.h>
 
 #include <QDir>
 
@@ -46,19 +47,22 @@ class ExtractionDialogUI: public QFrame, public Ui::ExtractionDialog
 {
 public:
     ExtractionDialogUI(QWidget *parent = 0)
-            : QFrame(parent) {
+        : QFrame(parent)
+    {
         setupUi(this);
     }
 };
 
 ExtractionDialog::ExtractionDialog(QWidget *parent)
-        : KDirSelectDialog(KUrl(), false, parent)
+    : KFileDialog(KUrl(), QString(), parent)
 {
-    m_ui = new ExtractionDialogUI(this);
+    setOperationMode(KFileDialog::Opening);
+    setMode(KFile::Directory | KFile::ExistingOnly);
 
-    mainWidget()->layout()->addWidget(m_ui);
+    m_ui = new ExtractionDialogUI(this);
+    fileWidget()->setCustomWidget(m_ui);
+
     setCaption(i18nc("@title:window", "Extract"));
-    m_ui->iconLabel->setPixmap(DesktopIcon(QLatin1String( "archive-extract" )));
 
     m_ui->filesToExtractGroupBox->hide();
     m_ui->allFilesButton->setChecked(true);
@@ -101,7 +105,7 @@ void ExtractionDialog::accept()
             return;
         }
 
-        const QString pathWithSubfolder = url().pathOrUrl(KUrl::AddTrailingSlash) + subfolder();
+        const QString pathWithSubfolder = selectedUrl().pathOrUrl(KUrl::AddTrailingSlash) + subfolder();
 
         while (1) {
             if (KIO::NetAccess::exists(pathWithSubfolder, KIO::NetAccess::SourceSide, 0)) {
@@ -130,7 +134,7 @@ void ExtractionDialog::accept()
         }
     }
 
-    KDirSelectDialog::accept();
+    KFileDialog::accept();
 }
 
 void ExtractionDialog::setSubfolder(const QString& subfolder)
@@ -214,11 +218,11 @@ bool ExtractionDialog::closeAfterExtraction() const
 
 KUrl ExtractionDialog::destinationDirectory() const
 {
+    const KUrl selected = selectedUrl();
     if (extractToSubfolder()) {
-        return QString(url().pathOrUrl(KUrl::AddTrailingSlash) + subfolder() + QLatin1Char( '/' ));
-    } else {
-        return url().pathOrUrl(KUrl::AddTrailingSlash);
+        return QString(selected.pathOrUrl(KUrl::AddTrailingSlash) + subfolder() + QLatin1Char( '/' ));
     }
+    return selected.pathOrUrl(KUrl::AddTrailingSlash);
 }
 
 void ExtractionDialog::writeSettings()

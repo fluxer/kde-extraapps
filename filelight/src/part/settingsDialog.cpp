@@ -22,7 +22,7 @@
 #include "settingsDialog.h"
 #include "Config.h"
 
-#include <KDirSelectDialog>
+#include <KFileDialog>
 #include <KLocale>
 #include <KMessageBox>
 
@@ -152,7 +152,12 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    const KUrl url = KDirSelectDialog::selectDirectory(KUrl(QDir::rootPath()), false, this, i18n( "Select Folder to Scan" ));
+    KFileDialog dlg(KUrl(QDir::rootPath()), QString(), this);
+    dlg.setOperationMode(KFileDialog::Opening);
+    dlg.setMode(KFile::Directory | KFile::ExistingOnly);
+    dlg.setCaption(i18n( "Select Folder to Scan" ));
+    dlg.exec();
+    const KUrl url = dlg.selectedUrl();
 
     //TODO error handling!
     //TODO wrong protocol handling!

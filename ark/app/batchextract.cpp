@@ -264,7 +264,7 @@ bool BatchExtract::showExtractDialog()
     }
 
     dialog.data()->setAutoSubfolder(autoSubfolder());
-    dialog.data()->setCurrentUrl(destinationFolder());
+    dialog.data()->setUrl(destinationFolder());
     dialog.data()->setPreservePaths(preservePaths());
 
     if (m_inputs.size() == 1) {
