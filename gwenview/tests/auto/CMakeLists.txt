@@ -21,7 +21,6 @@ gv_add_unit_test(paintutilstest)
 gv_add_unit_test(documenttest testutils.cpp)
 gv_add_unit_test(transformimageoperationtest)
 gv_add_unit_test(timeutilstest)
-gv_add_unit_test(placetreemodeltest testutils.cpp)
 gv_add_unit_test(urlutilstest)
 gv_add_unit_test(historymodeltest)
 gv_add_unit_test(importertest

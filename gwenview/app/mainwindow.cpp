@@ -66,7 +66,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "documentinfoprovider.h"
 #include "viewmainpage.h"
 #include "fileopscontextmanageritem.h"
-#include "folderviewcontextmanageritem.h"
 #include "fullscreencontent.h"
 #include "gvcore.h"
 #include "imageopscontextmanageritem.h"
@@ -480,10 +479,6 @@ struct MainWindow::Private
         KActionCollection* actionCollection = q->actionCollection();
 
         // Create context manager items
-        FolderViewContextManagerItem* folderViewItem = new FolderViewContextManagerItem(mContextManager);
-        connect(folderViewItem, SIGNAL(urlChanged(KUrl)),
-                q, SLOT(openDirUrl(KUrl)));
-
         InfoContextManagerItem* infoItem = new InfoContextManagerItem(mContextManager);
 
 
@@ -494,12 +489,6 @@ struct MainWindow::Private
 
         // Fill sidebar
         SideBarPage* page;
-        page = new SideBarPage(i18n("Folders"));
-        page->setObjectName(QLatin1String("folders"));
-        page->addWidget(folderViewItem->widget());
-        page->layout()->setMargin(0);
-        mSideBar->addPage(page);
-
         page = new SideBarPage(i18n("Information"));
         page->setObjectName(QLatin1String("information"));
         page->addWidget(infoItem->widget());
