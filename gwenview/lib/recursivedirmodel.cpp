@@ -125,6 +125,7 @@ void RecursiveDirModel::setUrl(const KUrl& url)
         lister->stop();
     }
     qDeleteAll(d->mDirListers);
+    d->mDirListers.clear();
     beginResetModel();
     d->clear();
     endResetModel();
