@@ -101,26 +101,6 @@ QLabel[isIcon=true] {
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <widget class="QTreeView" name="mSrcUrlTreeView">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>1</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-         <property name="showDropIndicator" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="headerHidden">
-          <bool>true</bool>
-         </property>
-        </widget>
         <widget class="Gwenview::ThumbnailView" name="mThumbnailView">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -220,12 +200,12 @@ QLabel[isIcon=true] {
          <string>Listing content of:</string>
         </property>
         <property name="buddy">
-         <cstring>mSrcUrlButton</cstring>
+         <cstring>mSrcUrlLabel</cstring>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="KPushButton" name="mSrcUrlButton"/>
+       <widget class="QLabel" name="mSrcUrlLabel"/>
       </item>
       <item>
        <spacer name="horizontalSpacer_2">
@@ -274,7 +254,6 @@ QLabel[isIcon=true] {
  </customwidgets>
  <tabstops>
   <tabstop>mSrcUrlButton</tabstop>
-  <tabstop>mSrcUrlTreeView</tabstop>
   <tabstop>mThumbnailView</tabstop>
   <tabstop>mDstUrlRequester</tabstop>
   <tabstop>mConfigureButton</tabstop>

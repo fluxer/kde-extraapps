@@ -32,7 +32,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <KDirModel>
 #include <KIconLoader>
 #include <KIO/NetAccess>
-#include <kmodelindexproxymapper.h>
 #include <KLocale>
 
 // Local
@@ -86,7 +85,6 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
     QString mSrcBaseName;
     KUrl mSrcBaseUrl;
     KUrl mSrcUrl;
-    KModelIndexProxyMapper* mSrcUrlModelProxyMapper;
 
     RecursiveDirModel* mRecursiveDirModel;
     QAbstractItemModel* mFinalModel;
@@ -131,11 +129,7 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
 
     void setupSrcUrlWidgets()
     {
-        mSrcUrlModelProxyMapper = 0;
-        QObject::connect(mSrcUrlButton, SIGNAL(clicked()), q, SLOT(setupSrcUrlTreeView()));
-        QObject::connect(mSrcUrlButton, SIGNAL(clicked()), q, SLOT(toggleSrcUrlTreeView()));
-        mSrcUrlTreeView->hide();
-        KAcceleratorManager::setNoAccel(mSrcUrlButton);
+        KAcceleratorManager::setNoAccel(mSrcUrlLabel);
     }
 
     void setupDstUrlRequester()
@@ -281,7 +275,7 @@ void ThumbnailPage::openUrl(const KUrl& url)
         path.replace("/", QString::fromUtf8(" › "));
         text = QString::fromUtf8("%1 › %2").arg(d->mSrcBaseName).arg(path);
     }
-    d->mSrcUrlButton->setText(text);
+    d->mSrcUrlLabel->setText(text);
     d->mRecursiveDirModel->setUrl(url);
 }
 
@@ -387,62 +381,5 @@ private:
     KIcon mIcon;
     QString mName;
 };
-
-void ThumbnailPage::setupSrcUrlTreeView()
-{
-    if (d->mSrcUrlTreeView->model()) {
-        // Already initialized
-        return;
-    }
-    KDirModel* dirModel = new KDirModel(this);
-    dirModel->dirLister()->setDirOnlyMode(true);
-    dirModel->dirLister()->openUrl(d->mSrcBaseUrl.upUrl());
-
-    OnlyBaseUrlProxyModel* onlyBaseUrlModel = new OnlyBaseUrlProxyModel(d->mSrcBaseUrl, d->mSrcBaseIcon, d->mSrcBaseName, this);
-    onlyBaseUrlModel->setSourceModel(dirModel);
-
-    QSortFilterProxyModel* sortModel = new QSortFilterProxyModel(this);
-    sortModel->setDynamicSortFilter(true);
-    sortModel->setSourceModel(onlyBaseUrlModel);
-    sortModel->sort(0);
-
-    d->mSrcUrlModelProxyMapper = new KModelIndexProxyMapper(dirModel, sortModel, this);
-
-    d->mSrcUrlTreeView->setModel(sortModel);
-    for(int i = 1; i < dirModel->columnCount(); ++i) {
-        d->mSrcUrlTreeView->hideColumn(i);
-    }
-    connect(d->mSrcUrlTreeView, SIGNAL(activated(QModelIndex)), SLOT(openUrlFromIndex(QModelIndex)));
-    connect(d->mSrcUrlTreeView, SIGNAL(clicked(QModelIndex)), SLOT(openUrlFromIndex(QModelIndex)));
-
-    dirModel->expandToUrl(d->mSrcUrl);
-    connect(dirModel, SIGNAL(expand(QModelIndex)), SLOT(slotSrcUrlModelExpand(QModelIndex)));
-}
-
-void ThumbnailPage::slotSrcUrlModelExpand(const QModelIndex& index)
-{
-    QModelIndex viewIndex = d->mSrcUrlModelProxyMapper->mapLeftToRight(index);
-    d->mSrcUrlTreeView->expand(viewIndex);
-    KFileItem item = itemForIndex(index);
-    if (item.url() == d->mSrcUrl) {
-        d->mSrcUrlTreeView->selectionModel()->select(viewIndex, QItemSelectionModel::ClearAndSelect);
-    }
-}
-
-void ThumbnailPage::toggleSrcUrlTreeView()
-{
-    d->mSrcUrlTreeView->setVisible(!d->mSrcUrlTreeView->isVisible());
-}
-
-void ThumbnailPage::openUrlFromIndex(const QModelIndex& index)
-{
-    KFileItem item = itemForIndex(index);
-    if (item.isNull()) {
-        return;
-    }
-    KUrl url = item.url();
-    d->rememberUrl(url);
-    openUrl(url);
-}
 
 } // namespace
