@@ -58,7 +58,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void slotItemsAdded(const KFileItemList&);
     void slotItemsDeleted(const KFileItemList&);
-    void slotCompleted();
+    void slotClear();
 private:
     RecursiveDirModelPrivate* const d;
 };
