@@ -155,6 +155,7 @@ void SandBoxDir::fill(const QStringList& filePaths)
     Q_FOREACH(const QString& filePath, filePaths) {
         QFileInfo info(*this, filePath);
         mkpath(info.absolutePath());
+        // qDebug() << Q_FUNC_INFO << info.absoluteFilePath();
         createEmptyFile(info.absoluteFilePath());
     }
 }

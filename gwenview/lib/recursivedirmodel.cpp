@@ -119,6 +119,11 @@ void RecursiveDirModel::setUrl(const KUrl& url)
     d->mDirLister->openUrl(url, true);
 }
 
+void RecursiveDirModel::updateDirectory()
+{
+    d->mDirLister->updateDirectory();
+}
+
 int RecursiveDirModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid()) {
@@ -153,6 +158,7 @@ QVariant RecursiveDirModel::data(const QModelIndex& index, int role) const
 
 void RecursiveDirModel::slotItemsAdded(const KFileItemList& newList)
 {
+    // qDebug() << Q_FUNC_INFO << newList;
     KFileItemList fileList;
     Q_FOREACH(const KFileItem& item, newList) {
         if (item.isFile()) {
@@ -173,6 +179,7 @@ void RecursiveDirModel::slotItemsAdded(const KFileItemList& newList)
 
 void RecursiveDirModel::slotItemsDeleted(const KFileItemList& list)
 {
+    // qDebug() << Q_FUNC_INFO << list;
     Q_FOREACH(const KFileItem& item, list) {
         if (item.isDir()) {
             continue;

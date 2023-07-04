@@ -138,17 +138,12 @@ void RecursiveDirModelTest::testBasic()
 
     // Test adding new files
     sandBoxDir.fill(addedFiles);
+    model.updateDirectory();
     loop.exec();
 
     out = listModelUrls(&model);
     expected = listExpectedUrls(sandBoxDir, initialFiles + addedFiles);
     QCOMPARE(out, expected);
-
-# if 0
-    /* FIXME: This part of the test is not reliable :/ Sometimes some tests pass,
-     * sometimes they don't. It feels like KDirLister::itemsDeleted() is not
-     * always emitted.
-     */
 
     // Test removing files
     Q_FOREACH(const QString &name, removedFiles) {
@@ -156,21 +151,11 @@ void RecursiveDirModelTest::testBasic()
         Q_ASSERT(ok);
         expected.removeOne(KUrl(sandBoxDir.absoluteFilePath(name)));
     }
-    QTime chrono;
-    chrono.start();
-    while (chrono.elapsed() < 2000) {
-        waitForDeferredDeletes();
-    }
+    model.updateDirectory();
+    loop.exec();
 
     out = listModelUrls(&model);
-    if (out != expected) {
-        kWarning() << "out:";
-        logLst(out);
-        kWarning() << "expected:";
-        logLst(expected);
-    }
     QCOMPARE(out, expected);
-#endif
 }
 
 void RecursiveDirModelTest::testSetNewUrl()

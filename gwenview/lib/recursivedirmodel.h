@@ -48,6 +48,7 @@ public:
 
     KUrl url() const;
     void setUrl(const KUrl&);
+    void updateDirectory();
 
     int rowCount(const QModelIndex&) const; // reimp
     QVariant data(const QModelIndex&, int role = Qt::DisplayRole) const; // reimp
