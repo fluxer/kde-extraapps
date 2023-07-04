@@ -37,7 +37,6 @@ class KUrl;
 namespace Gwenview
 {
 
-class AbstractSemanticInfoBackEnd;
 class MainWindow;
 class SortedDirModel;
 
@@ -59,7 +58,6 @@ public:
     QAbstractItemModel* recentFoldersModel() const;
     QAbstractItemModel* recentUrlsModel() const;
     SortedDirModel* sortedDirModel() const;
-    AbstractSemanticInfoBackEnd* semanticInfoBackEnd() const;
 
     void addUrlToRecentFolders(KUrl);
     void addUrlToRecentUrls(const KUrl& url);

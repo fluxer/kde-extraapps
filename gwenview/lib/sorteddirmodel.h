@@ -37,7 +37,6 @@ class KUrl;
 namespace Gwenview
 {
 
-class AbstractSemanticInfoBackEnd;
 struct SortedDirModelPrivate;
 
 
@@ -52,7 +51,6 @@ public:
         return mModel;
     }
 
-    virtual bool needsSemanticInfo() const = 0;
     /**
      * Returns true if index should be accepted.
      * Warning: index is a source index of SortedDirModel
@@ -99,9 +97,6 @@ public:
     void removeFilter(AbstractSortedDirModelFilter*);
 
     void reload();
-
-    AbstractSemanticInfoBackEnd* semanticInfoBackEnd() const;
-
 
     bool hasDocuments() const;
 

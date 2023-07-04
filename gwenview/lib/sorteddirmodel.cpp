@@ -198,12 +198,6 @@ bool SortedDirModel::filterAcceptsRow(int row, const QModelIndex& parent) const
     return KDirSortFilterProxyModel::filterAcceptsRow(row, parent);
 }
 
-AbstractSemanticInfoBackEnd* SortedDirModel::semanticInfoBackEnd() const
-{
-    return 0;
-}
-
-
 void SortedDirModel::applyFilters()
 {
     d->mDelayedApplyFiltersTimer.start();

@@ -65,11 +65,7 @@ public:
         : AbstractSortedDirModelFilter(model)
         , mText()
         , mMode(Contains)
-    {}
-
-    virtual bool needsSemanticInfo() const
     {
-        return false;
     }
 
     virtual bool acceptsIndex(const QModelIndex& index) const
@@ -167,11 +163,7 @@ public:
     DateFilter(SortedDirModel* model)
         : AbstractSortedDirModelFilter(model)
         , mMode(GreaterOrEqual)
-    {}
-
-    virtual bool needsSemanticInfo() const
     {
-        return false;
     }
 
     virtual bool acceptsIndex(const QModelIndex& index) const

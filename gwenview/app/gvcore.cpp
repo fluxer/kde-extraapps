@@ -167,11 +167,6 @@ QAbstractItemModel* GvCore::recentUrlsModel() const
     return d->mRecentUrlsModel;
 }
 
-AbstractSemanticInfoBackEnd* GvCore::semanticInfoBackEnd() const
-{
-    return d->mDirModel->semanticInfoBackEnd();
-}
-
 SortedDirModel* GvCore::sortedDirModel() const
 {
     return d->mDirModel;
