@@ -175,7 +175,7 @@ void RecursiveDirModel::slotItemsAdded(const KFileItemList& newList)
             if (d->rowForUrl(item.url()) == -1) {
                 fileList << item;
             }
-        } else {
+        } else if (item.isReadable()) {
             dirUrls << item.url();
         }
     }
