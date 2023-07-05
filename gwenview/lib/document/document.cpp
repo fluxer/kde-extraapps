@@ -50,18 +50,18 @@ static void logQueue(DocumentPrivate* d)
 #define PREFIX "  QUEUE: "
     if (!d->mCurrentJob) {
         Q_ASSERT(d->mJobQueue.isEmpty());
-        qDebug(PREFIX "No current job, no pending jobs");
+        kDebug() << PREFIX "No current job, no pending jobs";
         return;
     }
-    qDebug() << PREFIX "Current job:" << d->mCurrentJob.data();
+    kDebug() << PREFIX "Current job:" << d->mCurrentJob.data();
     if (d->mJobQueue.isEmpty()) {
-        qDebug(PREFIX "No pending jobs");
+        kDebug() << PREFIX "No pending jobs";
         return;
     }
-    qDebug(PREFIX "%d pending job(s):", d->mJobQueue.size());
+    kDebug() << PREFIX "%d pending job(s):", d->mJobQueue.size();
     Q_FOREACH(DocumentJob* job, d->mJobQueue) {
         Q_ASSERT(job);
-        qDebug() << PREFIX "-" << job;
+        kDebug() << PREFIX "-" << job;
     }
 #undef PREFIX
 }
