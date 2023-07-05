@@ -369,8 +369,11 @@ void DocumentTest::testLoadRotated()
     if (!QFile::exists(url.toLocalFile())) {
         QSKIP("dsd_1838.nef is not available, run fetch_testing_raw.sh script", SkipSingle);
     }
+    ok = image.load(url.toLocalFile());
+    QVERIFY2(ok, "Could not load 'dsd_1838.nef'");
     matrix = ImageUtils::transformMatrix(ROT_270);
-    image = image.transformed(matrix);
+    // raw image handle automatically rotates the image
+    // image = image.transformed(matrix);
 
     doc = DocumentFactory::instance()->load(url);
     doc->startLoadingFullImage();
