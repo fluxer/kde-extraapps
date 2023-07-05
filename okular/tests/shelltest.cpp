@@ -28,7 +28,7 @@ static const KUrl makeUrlFromCwd( const QString& u, const QString& ref = QString
 {
     KUrl url( KUrl( QDir::currentPath() + '/' ), u );
     if ( !ref.isEmpty() )
-        url.setRef( ref );
+        url.setFragment( ref );
     url.cleanPath();
     return url;
 }
