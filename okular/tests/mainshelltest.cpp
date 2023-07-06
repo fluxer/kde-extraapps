@@ -231,7 +231,7 @@ void MainShellTest::testShell()
         QCOMPARE(s->m_tabs.count(), 1);
         Okular::Part *part = s->findChild<Okular::Part*>();
         QVERIFY(part);
-        QCOMPARE(part->url().url(), QString("file://%1").arg(paths[0]));
+        QCOMPARE(part->url().url(), paths[0]);
         QCOMPARE(partDocument(part)->currentPage(), expectedPage);
     }
     else if (paths.count() == 2)
@@ -244,8 +244,8 @@ void MainShellTest::testShell()
             Okular::Part *part = qobject_cast<Okular::Part*>(s->m_tabs[0].part);
             Okular::Part *part2 = qobject_cast<Okular::Part*>(s->m_tabs[1].part);
             QCOMPARE(s->m_tabs.count(), 2);
-            QCOMPARE(part->url().url(), QString("file://%1").arg(paths[0]));
-            QCOMPARE(part2->url().url(), QString("file://%1").arg(paths[1]));
+            QCOMPARE(part->url().url(), paths[0]);
+            QCOMPARE(part2->url().url(), paths[1]);
             QCOMPARE(partDocument(part)->currentPage(), expectedPage);
             QCOMPARE(partDocument(part2)->currentPage(), expectedPage);
         }
@@ -270,7 +270,7 @@ void MainShellTest::testShell()
 
             foreach(const QString &path, paths)
             {
-                QVERIFY(openUrls.contains(QString("file://%1").arg(path)));
+                QVERIFY(openUrls.contains(path));
             }
         }
     }
@@ -307,7 +307,7 @@ void MainShellTest::testShell()
             {
                 // It is unique so part got "overriten"
                 QCOMPARE(s->m_tabs.count(), 1);
-                QCOMPARE(part->url().url(), QString("file://%1").arg(externalProcessPath));
+                QCOMPARE(part->url().url(), externalProcessPath);
                 QCOMPARE(partDocument(part)->currentPage(), externalProcessExpectedPage);
             }
             else
@@ -315,7 +315,7 @@ void MainShellTest::testShell()
                 // It is attaching to us so a second tab is there
                 QCOMPARE(s->m_tabs.count(), 2);
                 Okular::Part *part2 = qobject_cast<Okular::Part*>(s->m_tabs[1].part);
-                QCOMPARE(part2->url().url(), QString("file://%1").arg(externalProcessPath));
+                QCOMPARE(part2->url().url(), externalProcessPath);
                 QCOMPARE(partDocument(part2)->currentPage(), externalProcessExpectedPage);
             }
         }
@@ -331,7 +331,7 @@ void MainShellTest::testShell()
 
             // It opened on a new process, so no change for us
             QCOMPARE(s->m_tabs.count(), 1);
-            QCOMPARE(part->url().url(), QString("file://%1").arg(paths[0]));
+            QCOMPARE(part->url().url(), paths[0]);
             QCOMPARE(partDocument(part)->currentPage(), externalProcessExpectedPage);
         }
     }
@@ -420,7 +420,7 @@ void MainShellTest::testFileRemembersPagePosition()
     QVERIFY(s);
     Okular::Part *part = s->findChild<Okular::Part*>();
     QVERIFY(part);
-    QCOMPARE(part->url().url(), QString("file://%1").arg(paths[0]));
+    QCOMPARE(part->url().url(), paths[0]);
     QCOMPARE(partDocument(part)->currentPage(), 0u);
     partDocument(part)->setViewportPage(3);
     QCOMPARE(partDocument(part)->currentPage(), 3u);
@@ -455,7 +455,7 @@ void MainShellTest::testFileRemembersPagePosition()
     QVERIFY(s);
     part = s->findChild<Okular::Part*>();
     QVERIFY(part);
-    QCOMPARE(part->url().url(), QString("file://%1").arg(paths[0]));
+    QCOMPARE(part->url().url(), paths[0]);
     QCOMPARE(partDocument(part)->currentPage(), 3u);
 }
 

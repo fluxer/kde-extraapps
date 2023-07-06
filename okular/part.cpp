@@ -1414,6 +1414,15 @@ bool Part::openUrl(const KUrl &_url)
         return false;
 
     KUrl url( _url );
+    // More or less the same hack as in ShellUtils::urlFromArg()
+    if ( url.isLocalFile() && !QFile::exists(url.toLocalFile()) ) {
+        const QString localFile = url.toLocalFile();
+        const int sharpPos = localFile.lastIndexOf( QLatin1Char('#') );
+        if (sharpPos != -1) {
+            url.setPath( localFile.left(sharpPos) );
+            url.setFragment( localFile.mid(sharpPos + 1) );
+        }
+    }
     if ( url.hasFragment() )
     {
         const QString dest = url.fragment();
