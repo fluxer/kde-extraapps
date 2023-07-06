@@ -152,16 +152,10 @@ void SettingsDialog::toggleDontScanRemovableMedia(bool b)
 
 void SettingsDialog::addFolder()
 {
-    KFileDialog dlg(KUrl(QDir::rootPath()), QString(), this);
-    dlg.setOperationMode(KFileDialog::Opening);
-    dlg.setMode(KFile::Directory | KFile::ExistingOnly);
-    dlg.setCaption(i18n( "Select Folder to Scan" ));
-    dlg.exec();
-    const KUrl url = dlg.selectedUrl();
-
-    //TODO error handling!
-    //TODO wrong protocol handling!
-
+    const KUrl url = KFileDialog::getExistingDirectoryUrl(
+        KUrl(QDir::rootPath()), this,
+        i18n("Select Folder to Scan")
+    );
     if (!url.isEmpty())
     {
         const QString path = url.path(KUrl::AddTrailingSlash);
