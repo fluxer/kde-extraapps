@@ -69,7 +69,7 @@ ImporterConfigDialog::ImporterConfigDialog(QWidget* parent)
 , d(new ImporterConfigDialogPrivate)
 {
     d->q = this;
-    QWidget* widget = new QWidget;
+    QWidget* widget = new QWidget();
     d->setupUi(widget);
     setFaceType(KPageDialog::Plain);
     // Hide help button until there is actual documentation to show

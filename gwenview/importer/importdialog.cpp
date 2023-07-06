@@ -193,7 +193,7 @@ ImportDialog::ImportDialog()
 
     d->mDialogPage = new DialogPage;
 
-    d->mCentralWidget = new QStackedWidget;
+    d->mCentralWidget = new QStackedWidget();
     setCentralWidget(d->mCentralWidget);
     d->mCentralWidget->addWidget(d->mThumbnailPage);
     d->mCentralWidget->addWidget(d->mProgressPage);

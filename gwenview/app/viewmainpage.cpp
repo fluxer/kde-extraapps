@@ -153,7 +153,7 @@ struct ViewMainPagePrivate
 
     void setupThumbnailBar()
     {
-        mThumbnailBar = new ThumbnailBarView;
+        mThumbnailBar = new ThumbnailBarView();
         ThumbnailBarItemDelegate* delegate = new ThumbnailBarItemDelegate(mThumbnailBar);
         mThumbnailBar->setItemDelegate(delegate);
         mThumbnailBar->setVisible(GwenviewConfig::thumbnailBarIsVisible());
@@ -206,12 +206,12 @@ struct ViewMainPagePrivate
 
     void setupAdapterContainer()
     {
-        mAdapterContainer = new QWidget;
+        mAdapterContainer = new QWidget();
 
         QVBoxLayout* layout = new QVBoxLayout(mAdapterContainer);
         layout->setMargin(0);
         layout->setSpacing(0);
-        mDocumentViewContainer = new DocumentViewContainer;
+        mDocumentViewContainer = new DocumentViewContainer();
         mDocumentViewContainer->setAutoFillBackground(true);
         mDocumentViewContainer->setBackgroundRole(QPalette::Base);
         layout->addWidget(mDocumentViewContainer);
