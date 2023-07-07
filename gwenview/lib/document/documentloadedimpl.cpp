@@ -104,15 +104,13 @@ AbstractDocumentEditor* DocumentLoadedImpl::editor()
 void DocumentLoadedImpl::setImage(const QImage& image)
 {
     setDocumentImage(image);
-    imageRectUpdated(image.rect());
+    emit imageRectUpdated(image.rect());
 }
 
 void DocumentLoadedImpl::applyTransformation(Orientation orientation)
 {
-    QMatrix matrix = ImageUtils::transformMatrix(orientation);
-    QImage image = document()->image().transformed(matrix);
-    setDocumentImage(image);
-    imageRectUpdated(image.rect());
+    const QMatrix matrix = ImageUtils::transformMatrix(orientation);
+    setImage(document()->image().transformed(matrix));
 }
 
 QByteArray DocumentLoadedImpl::rawData() const
