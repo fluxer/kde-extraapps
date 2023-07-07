@@ -23,10 +23,14 @@
 #include <QtXml/qdom.h>
 #include <QtCore/qdatetime.h>
 
-// FIXME: this is jumpy
+static QTime currentUtcTime()
+{
+    return QDateTime::currentDateTimeUtc().time();
+}
+
 static int elapsedSecs(const QTime &time)
 {
-    const int msecs = time.msecsTo(QTime::currentTime());
+    const int msecs = time.msecsTo(currentUtcTime());
     if (msecs <= 0) {
         return 0;
     }
@@ -298,7 +302,7 @@ void Transfer::setStatus(Job::Status jobStatus, const QString &text, const QPixm
 
     if (jobStatus == Job::Running && status() != Job::Running)
     {
-        m_runningTime = QTime::currentTime();
+        m_runningTime = currentUtcTime();
         m_runningTime.addSecs(m_runningSeconds);
     }
     if (jobStatus != Job::Running && status() == Job::Running)
