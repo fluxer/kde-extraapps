@@ -119,10 +119,6 @@ struct LoadingDocumentImplPrivate
             // The hint is used to:
             // - Speed up loadMetaInfo(): QImageReader will try to decode the
             //   image using plugins matching this format first.
-            // - Avoid breakage: Because of a bug in Qt TGA image plugin, some
-            //   PNG were incorrectly identified as PCX! See:
-            //   https://bugs.kde.org/show_bug.cgi?id=289819
-            //
             mFormatHint = q->document()->url().fileName()
                 .section('.', -1).toAscii().toLower();
             mMetaInfoFutureWatcher.reset(new BoolThread(q, std::bind(&LoadingDocumentImplPrivate::loadMetaInfo, this)));
