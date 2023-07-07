@@ -1304,16 +1304,8 @@ bool Part::openFile()
     if ( m_showEmbeddedFiles ) m_showEmbeddedFiles->setEnabled( hasEmbeddedFiles );
     m_topMessage->setVisible( hasEmbeddedFiles && Okular::Settings::showOSD() );
 
-    // Warn the user that XFA forms are not supported yet (NOTE: poppler generator only)
-    if ( ok && m_document->metaData( "HasUnsupportedXfaForm" ).toBool() == true )
-    {
-        m_formsMessage->setText( i18n( "This document has XFA forms, which are currently <b>unsupported</b>." ) );
-        m_formsMessage->setIcon( KIcon( "dialog-warning" ) );
-        m_formsMessage->setMessageType( KMessageWidget::Warning );
-        m_formsMessage->setVisible( true );
-    }
     // m_pageView->toggleFormsAction() may be null on dummy mode
-    else if ( ok && m_pageView->toggleFormsAction() && m_pageView->toggleFormsAction()->isEnabled() )
+    if ( ok && m_pageView->toggleFormsAction() && m_pageView->toggleFormsAction()->isEnabled() )
     {
         m_formsMessage->setText( i18n( "This document has forms. Click on the button to interact with them, or use View -> Show Forms." ) );
         m_formsMessage->setMessageType( KMessageWidget::Information );
