@@ -2709,7 +2709,7 @@ void Part::unsetDummyMode()
 
     // attach the actions of the children widgets too
     m_formsMessage->addAction( m_pageView->toggleFormsAction() );
-    m_formsMessage->setVisible( m_pageView->toggleFormsAction() != 0 );
+    m_formsMessage->setVisible( m_pageView->toggleFormsAction() != 0 && m_pageView->toggleFormsAction()->isEnabled() );
 
     // ensure history actions are in the correct state
     updateViewActions();
