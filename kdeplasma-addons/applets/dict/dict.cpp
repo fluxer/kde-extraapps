@@ -110,7 +110,7 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     m_defBrowser->nativeWidget()->setOpenLinks(true);
     connect(m_defBrowser->nativeWidget(),SIGNAL(anchorClicked(QUrl)),this,SLOT(linkDefine(QUrl)));
     syncTheme();
-    connect(Plasma::Theme::defaultTheme(), SIGNAL(themeChanged()), SLOT(updateColors()));
+    connect(Plasma::Theme::defaultTheme(), SIGNAL(themeChanged()), SLOT(syncTheme()));
     m_defBrowser->hide();
 
 //  Icon in upper-left corner
