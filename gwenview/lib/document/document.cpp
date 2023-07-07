@@ -300,11 +300,15 @@ void Document::slotSaveResult(KJob* job)
     if (job->error()) {
         setErrorString(job->errorString());
     } else {
+        const bool undoStackWasClean = d->mUndoStack.isClean();
         d->mUndoStack.setClean();
         SaveJob* saveJob = static_cast<SaveJob*>(job);
         d->mUrl = saveJob->newUrl();
         d->mImageMetaInfoModel.setUrl(d->mUrl);
-        saved(saveJob->oldUrl(), d->mUrl);
+        if (undoStackWasClean) {
+            // if the undo stack changes saved() will be emitted
+            emit saved(saveJob->oldUrl(), d->mUrl);
+        }
     }
 }
 
@@ -465,7 +469,7 @@ void Document::slotUndoIndexChanged()
         // If user just undid all his changes this does not really correspond
         // to a save, but it's similar enough as far as Document users are
         // concerned
-        saved(d->mUrl, d->mUrl);
+        emit saved(d->mUrl, d->mUrl);
     } else {
         modified(d->mUrl);
     }
