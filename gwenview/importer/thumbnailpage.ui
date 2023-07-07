@@ -143,8 +143,10 @@
      <property name="text">
       <string>Select the documents to import</string>
      </property>
-     <property name="isTitle" stdset="0">
-      <bool>true</bool>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
      </property>
     </widget>
    </item>
@@ -174,8 +176,10 @@
      <property name="buddy">
       <cstring>mDstUrlRequester</cstring>
      </property>
-     <property name="isTitle" stdset="0">
-      <bool>true</bool>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
      </property>
     </widget>
    </item>

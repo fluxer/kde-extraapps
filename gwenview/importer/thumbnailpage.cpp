@@ -123,7 +123,6 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
     {
         q->setStyleSheet(
             QString::fromLatin1(
-                "QLabel[isTitle=true] { font-weight: bold }"
                 "QLabel[isIcon=true] {"
                 "    border: 1px solid palette(mid);"
                 "    background-color: palette(base);"
