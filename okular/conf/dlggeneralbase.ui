@@ -74,9 +74,6 @@
         </item>
         <item>
          <widget class="KButtonGroup" name="kcfg_DisplayDocumentNameOrPath">
-          <property name="styleSheet">
-           <string notr="true">KButtonGroup {border:0; }</string>
-          </property>
           <property name="flat">
            <bool>true</bool>
           </property>
