@@ -119,11 +119,11 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
             q, SLOT(updateImportButtons()));
     }
 
-    void setupStyleSheet()
+    void setupStyleSheet(QWidget *widget)
     {
-        q->setStyleSheet(
+        widget->setStyleSheet(
             QString::fromLatin1(
-                "QLabel[isIcon=true] {"
+                "QLabel {"
                 "    border: 1px solid palette(mid);"
                 "    background-color: palette(base);"
                 "    padding: 12px;"
@@ -137,7 +137,9 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
         const KIconLoader::Group group = KIconLoader::NoGroup;
         const int size = KIconLoader::SizeHuge;
         mSrcIconLabel->setPixmap(KIconLoader::global()->loadIcon("camera-photo", group, size));
+        setupStyleSheet(mSrcIconLabel);
         mDstIconLabel->setPixmap(KIconLoader::global()->loadIcon("computer", group, size));
+        setupStyleSheet(mDstIconLabel);
     }
 
     void setupSrcUrlWidgets()
@@ -147,6 +149,7 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
 
     void setupDstUrlRequester()
     {
+        mDstUrlRequester->setStyle(QApplication::style());
         mDstUrlRequester->setMode(KFile::Directory | KFile::LocalOnly);
     }
 
@@ -234,7 +237,6 @@ ThumbnailPage::ThumbnailPage()
     d->q = this;
     d->mUrlMap.setConfigGroup(KConfigGroup(KGlobal::config(), URL_FOR_BASE_URL_GROUP));
     d->setupUi(this);
-    d->setupStyleSheet();
     d->setupIcons();
     d->setupDirModel();
     d->setupSrcUrlWidgets();
