@@ -534,7 +534,6 @@ void ToolTip::updateTheme()
     plasmaPalette.setColor(QPalette::WindowText, textColor);
     setAutoFillBackground(true);
     setPalette(plasmaPalette);
-    d->text->setStyleSheet(QString("p { color: %1; }").arg(textColor.name()));
     update();
 }
 
