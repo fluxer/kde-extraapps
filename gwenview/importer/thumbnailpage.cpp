@@ -119,6 +119,20 @@ struct ThumbnailPagePrivate : public Ui_ThumbnailPage
             q, SLOT(updateImportButtons()));
     }
 
+    void setupStyleSheet()
+    {
+        q->setStyleSheet(
+            QString::fromLatin1(
+                "QLabel[isTitle=true] { font-weight: bold }"
+                "QLabel[isIcon=true] {"
+                "    border: 1px solid palette(mid);"
+                "    background-color: palette(base);"
+                "    padding: 12px;"
+                "}"
+            )
+        );
+    }
+
     void setupIcons()
     {
         const KIconLoader::Group group = KIconLoader::NoGroup;
@@ -221,6 +235,7 @@ ThumbnailPage::ThumbnailPage()
     d->q = this;
     d->mUrlMap.setConfigGroup(KConfigGroup(KGlobal::config(), URL_FOR_BASE_URL_GROUP));
     d->setupUi(this);
+    d->setupStyleSheet();
     d->setupIcons();
     d->setupDirModel();
     d->setupSrcUrlWidgets();

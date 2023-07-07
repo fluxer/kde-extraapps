@@ -10,15 +10,6 @@
     <height>487</height>
    </rect>
   </property>
-  <property name="styleSheet">
-   <string notr="true">QLabel[isTitle=true] { font-weight: bold }
-
-QLabel[isIcon=true] {
-	border: 1px solid palette(mid);
-	background-color: palette(base);
-	padding: 12px;
-}</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="5">
     <layout class="QVBoxLayout" name="verticalLayout_2">
