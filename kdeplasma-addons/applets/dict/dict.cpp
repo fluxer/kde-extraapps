@@ -44,16 +44,6 @@
 
 #define AUTO_DEFINE_TIMEOUT 500
 
-using namespace Plasma;
-
-
-
-// Style sheet format
-const char* translationCSS =
-    "dl {color: %1;}\n"
-    "a{color: %2}\n"
-    "a:visited{color: %3}\n";
-
 DictApplet::DictApplet(QObject *parent, const QVariantList &args)
     : Plasma::PopupApplet(parent, args)
     , m_graphicsWidget(0)
@@ -101,7 +91,7 @@ QGraphicsWidget *DictApplet::graphicsWidget()
         return m_graphicsWidget;
     }
 
-    m_wordEdit = new LineEdit(this);
+    m_wordEdit = new Plasma::LineEdit(this);
     m_wordEdit->nativeWidget()->setClearButtonShown( true );
     m_wordEdit->nativeWidget()->setClickMessage(i18n("Enter word to define here"));
     m_wordEdit->show();
@@ -109,8 +99,6 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     m_defBrowser = new Plasma::TextBrowser();
     m_defBrowser->nativeWidget()->setOpenLinks(true);
     connect(m_defBrowser->nativeWidget(),SIGNAL(anchorClicked(QUrl)),this,SLOT(linkDefine(QUrl)));
-    syncTheme();
-    connect(Plasma::Theme::defaultTheme(), SIGNAL(themeChanged()), SLOT(syncTheme()));
     m_defBrowser->hide();
 
 //  Icon in upper-left corner
@@ -165,25 +153,13 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     m_graphicsWidget->setLayout(m_layout);
     m_graphicsWidget->setPreferredSize(500, 200);
 
-    Animation *zoomAnim =
-        Plasma::Animator::create(Plasma::Animator::ZoomAnimation);
+    Plasma::Animation *zoomAnim = Plasma::Animator::create(Plasma::Animator::ZoomAnimation);
     zoomAnim->setTargetWidget(m_wordEdit);
     zoomAnim->setProperty("zoom", 1.0);
     zoomAnim->setProperty("duration", 350);
     zoomAnim->start(QAbstractAnimation::DeleteWhenStopped);
 
     return m_graphicsWidget;
-}
-
-void DictApplet::syncTheme()
-{
-    // Gets the color scheme from default theme
-    KColorScheme colorScheme(QPalette::Active, KColorScheme::View, Plasma::Theme::defaultTheme()->colorScheme());
-
-    m_defBrowser->nativeWidget()->document()->setDefaultStyleSheet(QString(QLatin1String( translationCSS ))
-                                                .arg(colorScheme.foreground().color().name())
-                                                .arg(colorScheme.foreground(KColorScheme::LinkText).color().name())
-                                                .arg(colorScheme.foreground(KColorScheme::VisitedText).color().name()));
 }
 
 void DictApplet::configChanged()
