@@ -149,9 +149,10 @@ class LCD::Private
 
         void checkIfDirty()
         {
-            const QSize lsize = l->size().toSize();
+            const QSizeF lsizef = l->size();
+            const QSize lsize = lsizef.toSize();
             if ((dirty || lsize != img.size()) && lsize != QSize(0, 0)) {
-                // kDebug() << "Making bitmap" << l->size();
+                // kDebug() << "Making bitmap" << lsizef;
                 if (lsize != img.size()) {
                     img = QPixmap(lsize);
                 }
@@ -159,15 +160,17 @@ class LCD::Private
 
                 QPainter p(&img);
 
-                xScale = l->size().width() / svg.size().width();
-                yScale = l->size().height() / svg.size().height();
+                xScale = lsizef.width() / svg.size().width();
+                yScale = lsizef.height() / svg.size().height();
                 p.setRenderHint(QPainter::TextAntialiasing, true);
                 p.setRenderHint(QPainter::Antialiasing, true);
                 p.setRenderHint(QPainter::SmoothPixmapTransform, true);
 
                 p.save();
-                p.scale(l->size().width() / svg.size().width(),
-                        l->size().height() / svg.size().height());
+                p.scale(
+                    lsizef.width() / svg.size().width(),
+                    lsizef.height() / svg.size().height()
+                );
 
                 foreach (const QString& item, items) {
                     paint(&p, item);
