@@ -149,10 +149,11 @@ class LCD::Private
 
         void checkIfDirty()
         {
-            if (dirty || (l->size().toSize() != img.size() && l->size().toSize() != QSize(0, 0))) {
-                //kDebug() << "Making bitmap" << l->size();
-                if (l->size().toSize() != img.size()) {
-                    img = QPixmap(l->size().toSize());
+            const QSize lsize = l->size().toSize();
+            if ((dirty || lsize != img.size()) && lsize != QSize(0, 0)) {
+                // kDebug() << "Making bitmap" << l->size();
+                if (lsize != img.size()) {
+                    img = QPixmap(lsize);
                 }
                 img.fill(Qt::transparent);
 
@@ -282,7 +283,7 @@ void LCD::setDigit(const QString &name, QChar digit, bool dot)
 {
     QStringList segments;
 
-    //kDebug() << name << digit << dot;
+    // kDebug() << name << digit << dot;
     if (d->sevenSegmentDigits.keys().contains(digit)) {
         segments = d->sevenSegmentDigits[digit];
     }
@@ -298,7 +299,7 @@ void LCD::setNumber(const QString &name, const QString& number)
     int digits = d->digits(name);
     bool dot = false;
 
-    //kDebug() << name << number << digits;
+    // kDebug() << name << number << digits;
     for (int i = number.length() - 1; i >= 0; --i) {
         if (number[i] == '.') {
             dot = true;
@@ -335,7 +336,7 @@ void LCD::clear()
 void LCD::setItemOn(const QString &name)
 {
     if (!d->items.contains(name)) {
-        //kDebug() << "++++++++++" << name;
+        // kDebug() << "++++++++++" << name;
         d->items << name;
         d->dirty = true;
         update();
@@ -345,7 +346,7 @@ void LCD::setItemOn(const QString &name)
 void LCD::setItemOff(const QString &name)
 {
     if (d->items.contains(name)) {
-        //kDebug() << "----------" << name;
+        // kDebug() << "----------" << name;
         d->items.removeAll(name);
         d->dirty = true;
         update();
