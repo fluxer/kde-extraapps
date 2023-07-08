@@ -788,12 +788,13 @@ TransferGroupScheduler * KGet::m_scheduler = 0;
 MainWindow * KGet::m_mainWindow = 0;
 KUiServerJobs * KGet::m_jobManager = 0;
 TransferHistoryStore * KGet::m_store = 0;
+KNetworkManager * KGet::m_networkManager = 0;
 bool KGet::m_hasConnection = true;
 
 // ------ PRIVATE FUNCTIONS ------
 KGet::KGet()
 {
-
+    m_networkManager = new KNetworkManager();
     m_scheduler = new TransferGroupScheduler();
     m_transferTreeModel = new TransferTreeModel(m_scheduler);
     m_selectionModel = new TransferTreeSelectionModel(m_transferTreeModel);
@@ -806,8 +807,8 @@ KGet::KGet()
                      m_jobManager,        SLOT(slotTransfersChanged(QMap<TransferHandler*,Transfer::ChangesFlags>)));
 
     //check if there is a connection
-    const Solid::Networking::Status status = Solid::Networking::status();
-    KGet::setHasNetworkConnection((status == Solid::Networking::Connected) || (status == Solid::Networking::Unknown));
+    const KNetworkManager::KNetworkStatus status = m_networkManager->status();
+    KGet::setHasNetworkConnection((status == KNetworkManager::ConnectedStatus) || (status == KNetworkManager::UnknownStatus));
             
     //Load all the available plugins
     loadPlugins();
@@ -816,6 +817,7 @@ KGet::KGet()
 KGet::~KGet()
 {
     kDebug();
+    delete m_networkManager;
     delete m_transferTreeModel;
     delete m_jobManager;  //This one must always be before the scheduler otherwise the job manager can't remove the notifications when deleting.
     delete m_scheduler;
@@ -1272,8 +1274,8 @@ GenericObserver::GenericObserver(QObject *parent)
                            SLOT(groupsChangedEvent(QMap<TransferGroupHandler*,TransferGroup::ChangesFlags>)));
     connect(KGet::model(), SIGNAL(transferMovedEvent(TransferHandler*,TransferGroupHandler*)),
                            SLOT(transferMovedEvent(TransferHandler*,TransferGroupHandler*)));
-    connect(Solid::Networking::notifier(), SIGNAL(statusChanged(Solid::Networking::Status)),
-                         this, SLOT(slotNetworkStatusChanged(Solid::Networking::Status)));
+    connect(KGet::m_networkManager, SIGNAL(statusChanged(KNetworkManager::KNetworkStatus)),
+                         this, SLOT(slotNetworkStatusChanged(KNetworkManager::KNetworkStatus)));
 
 }
 
@@ -1471,9 +1473,9 @@ void GenericObserver::slotNotificationClosed()
         m_notifications.remove(notification);
 }
 
-void GenericObserver::slotNetworkStatusChanged(const Solid::Networking::Status &status)
+void GenericObserver::slotNetworkStatusChanged(const KNetworkManager::KNetworkStatus status)
 {
-    KGet::setHasNetworkConnection((status == Solid::Networking::Connected) || (status == Solid::Networking::Unknown));
+    KGet::setHasNetworkConnection((status == KNetworkManager::ConnectedStatus) || (status == KNetworkManager::UnknownStatus));
 }
 
 void GenericObserver::groupsChangedEvent(QMap<TransferGroupHandler*, TransferGroup::ChangesFlags> groups)

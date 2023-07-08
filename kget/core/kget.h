@@ -22,9 +22,9 @@
 #include <kurl.h>
 #include <kactioncollection.h>
 #include <KNotification>
+#include <KNetworkManager>
 #include <ktabwidget.h>
 
-#include <Solid/Networking>
 #include <QtXml/qdom.h>
 
 #include "kuiserverjobs.h"
@@ -208,7 +208,7 @@ class KGET_EXPORT KGet
          * @returns a pointer to the TransferTreeModel object
          */
         static TransferTreeModel * model();
-        
+
         /**
          * @returns a pointer to the QItemSelectionModel object
          */
@@ -441,6 +441,7 @@ class KGET_EXPORT KGet
         //pointer to the used TransferHistoryStore
         static TransferHistoryStore *m_store;
 
+        static KNetworkManager *m_networkManager;
         static bool m_hasConnection;
 
 };
@@ -479,7 +480,7 @@ class GenericObserver : public QObject
         void slotAbortAfterFinishAction();
         void slotResolveTransferError();
         void slotNotificationClosed();
-        void slotNetworkStatusChanged(const Solid::Networking::Status &status);
+        void slotNetworkStatusChanged(const KNetworkManager::KNetworkStatus status);
 
     private:
         bool allTransfersFinished();
