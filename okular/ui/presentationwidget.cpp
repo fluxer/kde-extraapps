@@ -9,12 +9,7 @@
 
 #include "presentationwidget.h"
 
-// qt/kde includes
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusReply>
-
+// Katie/kde includes
 #include <qevent.h>
 #include <qfontmetrics.h>
 #include <kicon.h>
@@ -29,9 +24,9 @@
 #include <qvalidator.h>
 #include <qapplication.h>
 #include <qdesktopwidget.h>
+#include <qtoolbar.h>
 #include <kcursor.h>
 #include <krandom.h>
-#include <qtoolbar.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <klineedit.h>
@@ -41,6 +36,7 @@
 #include <kselectaction.h>
 #include <kshortcut.h>
 #include <kdialog.h>
+#include <solid/powermanagement.h>
 
 // system includes
 #include <stdlib.h>
@@ -1541,43 +1537,21 @@ void PresentationWidget::inhibitPowerManagement()
 
     // Inhibit screen and sleep
     // Note: beginSuppressingScreenPowerManagement inhibits DPMS, automatic brightness change and screensaver
-    QDBusInterface screensaveriface(
-        "org.freedesktop.ScreenSaver",
-        "/ScreenSaver",
-        "org.freedesktop.ScreenSaver",
-        QDBusConnection::sessionBus()
-    );
-    QDBusReply<uint> reply = screensaveriface.call("Inhibit", QString::fromLatin1("okular"), reason);
-    m_screenInhibitCookie = reply.value();
+    m_screenInhibitCookie = Solid::PowerManagement::beginSuppressingScreenPowerManagement(reason);
 
-    QDBusInterface powermanageriface(
-        "org.freedesktop.PowerManagement.Inhibit",
-        "/org/freedesktop/PowerManagement/Inhibit",
-        "org.freedesktop.PowerManagement.Inhibit",
-        QDBusConnection::sessionBus()
-    );
-    reply = powermanageriface.call("Inhibit", QString::fromLatin1("okular"), reason);
-    m_sleepInhibitCookie = reply.value();
+    m_sleepInhibitCookie = Solid::PowerManagement::beginSuppressingSleep(reason);
 }
 
 void PresentationWidget::allowPowerManagement()
 {
     // Remove cookies
-    QDBusInterface screensaveriface(
-        "org.freedesktop.ScreenSaver",
-        "/ScreenSaver",
-        "org.freedesktop.ScreenSaver",
-        QDBusConnection::sessionBus()
-    );
-    screensaveriface.asyncCall("UnInhibit", m_screenInhibitCookie);
+    if (m_screenInhibitCookie) {
+        Solid::PowerManagement::stopSuppressingScreenPowerManagement(m_screenInhibitCookie);
+    }
 
-    QDBusInterface powermanageriface(
-        "org.freedesktop.PowerManagement.Inhibit",
-        "/org/freedesktop/PowerManagement/Inhibit",
-        "org.freedesktop.PowerManagement.Inhibit",
-        QDBusConnection::sessionBus()
-    );
-    powermanageriface.asyncCall("UnInhibit", m_sleepInhibitCookie);
+    if (m_sleepInhibitCookie) {
+        Solid::PowerManagement::stopSuppressingSleep(m_sleepInhibitCookie);
+    }
 }
 
 void PresentationWidget::showTopBar( bool show )

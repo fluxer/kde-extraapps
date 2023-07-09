@@ -44,9 +44,10 @@
 #include <KConfigDialog>
 #include <KSaveFile>
 #include <KWindowSystem>
+#include <Solid/PowerManagement>
 
 #include <QTextStream>
-#include <QtXml/qdom.h>
+#include <QDomElement>
 #include <QApplication>
 #include <QClipboard>
 #include <QAbstractItemView>
@@ -54,9 +55,6 @@
 
 
 #ifdef HAVE_KWORKSPACE
-#  include <QDBusConnection>
-#  include <QDBusInterface>
-#  include <QDBusPendingCall>
 #  include <kworkspace/kworkspace.h>
 #endif
 
@@ -1426,13 +1424,13 @@ void GenericObserver::transfersChangedEvent(QMap<TransferHandler*, Transfer::Cha
             case KGet::Shutdown:
                 notification = KGet::showNotification(KGet::m_mainWindow, "notification", i18n("The computer will now turn off, as all downloads have completed."), "system-shutdown", i18nc("Shutting down computer", "Shutdown"), KNotification::Persistent | KNotification::CloseWhenWidgetActivated);
                 break;
+#endif
             case KGet::Hibernate:
                 notification = KGet::showNotification(KGet::m_mainWindow, "notification", i18n("The computer will now suspend to disk, as all downloads have completed."), "system-suspend-hibernate", i18nc("Hibernating computer", "Hibernating"), KNotification::Persistent | KNotification::CloseWhenWidgetActivated);
                 break;
             case KGet::Suspend:
                 notification = KGet::showNotification(KGet::m_mainWindow, "notification", i18n("The computer will now suspend to RAM, as all downloads have completed."), "system-suspend", i18nc("Suspending computer", "Suspending"), KNotification::Persistent | KNotification::CloseWhenWidgetActivated);
                 break;
-#endif
             default:
                 break;
         }
@@ -1529,38 +1527,28 @@ bool GenericObserver::allTransfersFinished()
 void GenericObserver::slotAfterFinishAction()
 {
     switch (Settings::afterFinishAction()) {
-        case KGet::Quit:
+        case KGet::Quit: {
             kDebug() << "Quit Kget.";
             QTimer::singleShot(0, KGet::m_mainWindow, SLOT(slotQuit()));
             break;
+        }
 #ifdef HAVE_KWORKSPACE
-        case KGet::Shutdown:
+        case KGet::Shutdown: {
             QTimer::singleShot(0, KGet::m_mainWindow, SLOT(slotQuit()));
             KWorkSpace::requestShutDown(KWorkSpace::ShutdownConfirmNo,
                         KWorkSpace::ShutdownTypeHalt,
                         KWorkSpace::ShutdownModeForceNow);
             break;
+        }
+#endif
         case KGet::Hibernate: {
-            QDBusMessage call = QDBusMessage::createMethodCall(
-                "org.freedesktop.PowerManagement",
-                "/org/freedesktop/PowerManagement",
-                "org.freedesktop.PowerManagement",
-                "Hibernate"
-            );
-            QDBusConnection::sessionBus().asyncCall(call);
+            Solid::PowerManagement::requestSleep(Solid::PowerManagement::HibernateState);
             break;
         }
         case KGet::Suspend: {
-            QDBusMessage call = QDBusMessage::createMethodCall(
-                "org.freedesktop.PowerManagement",
-                "/org/freedesktop/PowerManagement",
-                "org.freedesktop.PowerManagement",
-                "Suspend"
-            );
-            QDBusConnection::sessionBus().asyncCall(call);
+            Solid::PowerManagement::requestSleep(Solid::PowerManagement::SuspendState);
             break;
         }
-#endif
         default: {
             break;
         }

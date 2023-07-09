@@ -129,6 +129,7 @@ add_library(kgetcore SHARED ${kgetcore_SRCS})
 target_link_libraries(kgetcore
     KDE4::kio
     KDE4::knetworkmanager
+    KDE4::solid
 )
 
 if (KDE4WORKSPACE_FOUND)
