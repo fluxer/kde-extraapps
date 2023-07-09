@@ -37,10 +37,6 @@ install(
     FILES kerfufflePlugin.desktop
     DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
 )
-install(
-    FILES ark.kcfg
-    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
-)
 
 if (ENABLE_TESTING)
     add_subdirectory(tests)

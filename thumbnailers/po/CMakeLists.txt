@@ -15,5 +15,4 @@ target_link_libraries(pothumbnail
 )
 
 install(TARGETS pothumbnail DESTINATION ${KDE4_PLUGIN_INSTALL_DIR})
-install(FILES pocreatorsettings.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
 install(FILES pothumbnail.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})

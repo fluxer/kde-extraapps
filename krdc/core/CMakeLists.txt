@@ -39,11 +39,8 @@ install(
     FILES ${krdccore_HDRS}
     DESTINATION ${KDE4_INCLUDE_INSTALL_DIR}/krdc
 )
+
 install(
     FILES krdc_plugin.desktop
     DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
-)
-install(
-    FILES krdc.kcfg
-    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
 )

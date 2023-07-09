@@ -16,7 +16,6 @@ target_link_libraries(kget_checksumsearchfactory KDE4::kio kgetcore)
 
 install(TARGETS kget_checksumsearchfactory DESTINATION  ${KDE4_PLUGIN_INSTALL_DIR})
 install(FILES kget_checksumsearchfactory.desktop DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
-install(FILES kget_checksumsearchfactory.kcfg DESTINATION ${KDE4_KCFG_INSTALL_DIR})
 
 ###Build KCM-Module
 set(kcm_kget_checksumsearchfactory_PART_SRCS

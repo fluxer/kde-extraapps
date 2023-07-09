@@ -6,8 +6,6 @@ include_directories(
 
 add_definitions(-DKDE_DEFAULT_DEBUG_AREA=4711)
 
-add_subdirectory(conf)
-
 ########### next target ###############
 
 set(okularGenerator_ghostview_SRCS

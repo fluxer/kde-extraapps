@@ -90,11 +90,6 @@ install(
 )
 
 install(
-    FILES kcalc.kcfg
-    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
-)
-
-install(
     FILES kcalcui.rc
     DESTINATION ${KDE4_DATA_INSTALL_DIR}/kcalc
 )

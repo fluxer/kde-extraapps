@@ -58,7 +58,6 @@ if(KGET_TESTING)
     add_definitions(-DDO_KGET_TEST)
 endif()
 
-add_subdirectory(conf)
 add_subdirectory(core)
 add_subdirectory(ui)
 add_subdirectory(transfer-plugins)

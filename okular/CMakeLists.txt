@@ -164,14 +164,6 @@ install(
 )
 
 install(
-    FILES conf/okular.kcfg
-    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
-)
-install(
-    FILES conf/okular_core.kcfg
-    DESTINATION ${KDE4_KCFG_INSTALL_DIR}
-)
-install(
     FILES core/okularGenerator.desktop
     DESTINATION ${KDE4_SERVICETYPES_INSTALL_DIR}
 )
