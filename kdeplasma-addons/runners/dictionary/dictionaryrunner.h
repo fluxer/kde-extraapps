@@ -6,24 +6,24 @@
 #define DICTIONARYRUNNER_H
 
 #include <Plasma/AbstractRunner>
-#include "dictionarymatchengine.h"
+#include <Plasma/DataEngine>
 
 class DictionaryRunner : public Plasma::AbstractRunner
 {
-	Q_OBJECT
-
+    Q_OBJECT
 public:
-	DictionaryRunner(QObject *parent, const QVariantList &args);
-	void match(Plasma::RunnerContext &context);
-	void reloadConfiguration();
+    DictionaryRunner(QObject *parent, const QVariantList &args);
+
+    void match(Plasma::RunnerContext &context);
+    void run(const Plasma::RunnerContext &context, const Plasma::QueryMatch &match);
+    void reloadConfiguration();
 
 private:
-	QString m_triggerWord;
-	DictionaryMatchEngine *m_engine;
+    QString m_triggerWord;
+    Plasma::DataEngine *m_engine;
 
 protected slots:
-	void init();
-
+    void init();
 };
 
-#endif
+#endif // DICTIONARYRUNNER_H
