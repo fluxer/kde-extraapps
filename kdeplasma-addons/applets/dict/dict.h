@@ -25,8 +25,6 @@
 #include <Plasma/DataEngine>
 
 #include <QTimer>
-class CheckableStringListModel;
-
 #include <QGraphicsLinearLayout>
 
 namespace Plasma
@@ -39,47 +37,36 @@ namespace Plasma
 class DictApplet: public Plasma::PopupApplet
 {
     Q_OBJECT
-    public:
-        DictApplet(QObject *parent, const QVariantList &args);
-        ~DictApplet();
-        void init();
+public:
+    DictApplet(QObject *parent, const QVariantList &args);
+    ~DictApplet();
+    void init();
 
-        QGraphicsWidget *graphicsWidget();
-        void setPath(const QString&);
+    QGraphicsWidget *graphicsWidget();
+    void setPath(const QString&);
 
-    public slots:
-        void dataUpdated(const QString &name, const Plasma::DataEngine::Data &data);
-        void autoDefine(const QString &word);
-        void linkDefine(const QUrl &url);
-        void configChanged();
+public slots:
+    void dataUpdated(const QString &name, const Plasma::DataEngine::Data &data);
+    void autoDefine(const QString &word);
+    void linkDefine(const QUrl &url);
 
-    protected slots:
-        void define();
-        void configAccepted();
-        void focusEditor();
+protected slots:
+    void define();
+    void focusEditor();
 
-    protected:
-        void createConfigurationInterface(KConfigDialog *parent);
-        void popupEvent(bool shown);
+protected:
+    void popupEvent(bool shown);
 
-    private:
-        QString m_source;
-        QTimer* m_timer;
-        QString m_dataEngine;
-        //QGraphicsPixmapItem *m_graphicsIcon;
-        QGraphicsWidget *m_graphicsWidget;
-        QGraphicsLinearLayout *m_layout;
-        QGraphicsLinearLayout *m_horLayout;
-        Plasma::LineEdit *m_wordEdit;
-        //Plasma::Flash *m_flash;
-//         QTextBrowser* m_defBrowser;
-        Plasma::TextBrowser* m_defBrowser;
-        Plasma::IconWidget *m_icon;
-
-//         QList< QPair<QString, bool> > m_dicts;
-        QWeakPointer<CheckableStringListModel> m_dictsModel;
-        QStringList m_dicts;
-        QHash<QString,bool> m_activeDicts;
+private:
+    QString m_source;
+    QTimer* m_timer;
+    QString m_dataEngine;
+    QGraphicsWidget *m_graphicsWidget;
+    QGraphicsLinearLayout *m_layout;
+    QGraphicsLinearLayout *m_horLayout;
+    Plasma::LineEdit *m_wordEdit;
+    Plasma::TextBrowser* m_defBrowser;
+    Plasma::IconWidget *m_icon;
 };
 
 K_EXPORT_PLASMA_APPLET(qstardict, DictApplet)

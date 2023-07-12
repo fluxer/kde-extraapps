@@ -55,16 +55,13 @@ DictApplet::DictApplet(QObject *parent, const QVariantList &args)
 
 void DictApplet::init()
 {
-    const char* dataEngines[]={"dict","qstardict"};
-    bool engineChoice = dataEngine(QString( QLatin1String( dataEngines[1] ) ) )->isValid();
-//     bool engineChoice = false; //for testing
-    m_dataEngine = QLatin1String( dataEngines[int(engineChoice)] );
+    m_dataEngine = QLatin1String("dict");
 
     // tooltip stuff
     Plasma::ToolTipContent toolTipData;
     toolTipData.setAutohide(true);
     toolTipData.setMainText(name());
-    toolTipData.setImage(KIcon(QLatin1String( "accessories-dictionary" )));
+    toolTipData.setImage(KIcon(QLatin1String("accessories-dictionary")));
 
     Plasma::ToolTipManager::self()->setContent(this, toolTipData);
 
@@ -101,18 +98,14 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     connect(m_defBrowser->nativeWidget(),SIGNAL(anchorClicked(QUrl)),this,SLOT(linkDefine(QUrl)));
     m_defBrowser->hide();
 
-//  Icon in upper-left corner
+    //  Icon in upper-left corner
     m_icon = new Plasma::IconWidget(this);
-    m_icon->setIcon(QLatin1String( "accessories-dictionary" ));
+    m_icon->setIcon(QLatin1String("accessories-dictionary"));
 
-//  Position lineedits
-    //const int wordEditOffset = 40;
+    //  Position lineedits
     m_icon->setPos(12,3);
-    //m_wordProxyWidget->setPos(15 + wordEditOffset,7);
-    //m_wordProxyWidget->show();
-    // TODO m_wordEdit->setDefaultTextColor(Plasma::Theme::self()->color(Plasma::Theme::TextColor));
 
-//  Timer for auto-define
+    //  Timer for auto-define
     m_timer = new QTimer(this);
     m_timer->setInterval(AUTO_DEFINE_TIMEOUT);
     m_timer->setSingleShot(true);
@@ -130,24 +123,7 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     connect(m_wordEdit, SIGNAL(editingFinished()), this, SLOT(define()));
     connect(m_wordEdit->nativeWidget(), SIGNAL(textChanged(QString)), this, SLOT(autoDefine(QString)));
 
-    dataEngine(m_dataEngine)->connectSource(QLatin1String( "list-dictionaries" ), this);
-
-    //connect(m_defEdit, SIGNAL(anchorClicked(QUrl)), this, SLOT(linkDefine(QUrl)));
-
-//  This is the fix for links/selecting text
-    //QGraphicsItem::GraphicsItemFlags flags = m_defEdit->flags();
-    //flags ^= QGraphicsItem::ItemIsMovable;
-   // m_defEdit->setFlags(flags);
-
-    /*m_flash = new Plasma::Flash(this);
-    m_flash->setColor(Qt::gray);
-    QFont fnt = qApp->font();
-    fnt.setBold(true);
-    m_flash->setFont(fnt);
-    m_flash->setPos(25,-10);
-    m_flash->resize(QSize(200,20));*/
-
-    configChanged();
+    dataEngine(m_dataEngine)->connectSource(QLatin1String("list-dictionaries"), this);
 
     m_graphicsWidget = new QGraphicsWidget(this);
     m_graphicsWidget->setLayout(m_layout);
@@ -162,16 +138,6 @@ QGraphicsWidget *DictApplet::graphicsWidget()
     return m_graphicsWidget;
 }
 
-void DictApplet::configChanged()
-{
-    KConfigGroup cg = config();
-    m_dicts = cg.readEntry("KnownDictionaries", QStringList());
-    QStringList activeDictNames = cg.readEntry("ActiveDictionaries", QStringList());
-    for (QStringList::const_iterator i = m_dicts.constBegin(); i != m_dicts.constEnd(); ++i) {
-        m_activeDicts[*i]=activeDictNames.contains(*i);
-    }
-}
-
 void DictApplet::linkDefine(const QUrl &url)
 {
     //kDebug() <<"ACTIVATED";
@@ -181,37 +147,15 @@ void DictApplet::linkDefine(const QUrl &url)
 
 void DictApplet::dataUpdated(const QString& source, const Plasma::DataEngine::Data &data)
 {
-    if (source==QLatin1String( "list-dictionaries" )) {
-        QStringList newDicts = data[QLatin1String( "dictionaries" )].toStringList();
-        bool changed = false;
-        for (QStringList::const_iterator i = newDicts.constBegin(); i != newDicts.constEnd(); ++i) {
-            if (!m_dicts.contains(*i)) {
-                m_dicts << *i;
-                m_activeDicts[*i] = true;
-                changed = true;
-            }
-        }
-
-        QStringList::iterator it = m_dicts.begin();
-        while (it != m_dicts.end()) {
-            if (!newDicts.contains(*it)) {
-                it = m_dicts.erase(it);
-                changed = true;
-            } else {
-                ++it;
-            }
-        }
-
-        if (changed) {
-            configAccepted();
-        }
+    if (source == QLatin1String("list-dictionaries")) {
+        define();
     }
 
     if (!m_source.isEmpty()) {
         m_defBrowser->show();
     }
 
-    if (data.contains(QLatin1String( "text" ))) {
+    if (data.contains(QLatin1String("text"))) {
         m_defBrowser->nativeWidget()->setHtml(data[QLatin1String("text")].toString());
     }
 
@@ -225,18 +169,6 @@ void DictApplet::define()
     }
 
     QString newSource = m_wordEdit->text();
-    QStringList dictsList;
-
-    for (QStringList::const_iterator i = m_dicts.constBegin(); i != m_dicts.constEnd(); ++i) {
-        if (m_activeDicts.contains(*i) && m_activeDicts.value(*i)) {
-            dictsList << *i;
-        }
-    }
-
-    if (!newSource.isEmpty() && !dictsList.isEmpty()) {
-        newSource.prepend(dictsList.join(QLatin1String( "," ) )+QLatin1Char( ':' ));
-    }
-
     if (newSource == m_source) {
         return;
     }
@@ -244,12 +176,10 @@ void DictApplet::define()
     dataEngine(m_dataEngine)->disconnectSource(m_source, this);
 
     if (!newSource.isEmpty()) {
-        //get new definition
-        //m_flash->flash(i18n("Looking up ") + m_word);
         m_source = newSource;
         dataEngine(m_dataEngine)->connectSource(m_source, this);
     } else {
-        //make the definition box disappear
+        // make the definition box disappear
         m_defBrowser->hide();
     }
 
@@ -262,107 +192,12 @@ void DictApplet::autoDefine(const QString &word)
     m_timer->start();
 }
 
-
-class CheckableStringListModel: public QStringListModel
-{
-public:
-    CheckableStringListModel(QObject* parent, const QStringList& dicts, const QHash<QString,bool>& activeDicts_)
-        : QStringListModel(parent)
-        , activeDicts(activeDicts_)
-    {
-        setStringList(dicts);
-    }
-    QVariant headerData( int section, Qt::Orientation orientation, int role = Qt::DisplayRole ) const
-    {
-        Q_UNUSED(section)
-        Q_UNUSED(orientation)
-
-        if (role!=Qt::DisplayRole)
-            return QVariant();
-        return i18n("Dictionary");
-    }
-    Qt::DropActions supportedDropActions() const {return Qt::MoveAction;}
-    Qt::ItemFlags flags(const QModelIndex& index) const
-    {
-        if (!index.isValid())
-            return Qt::ItemIsEnabled | Qt::ItemIsDropEnabled;
-        return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsDragEnabled;
-    }
-    bool setData (const QModelIndex& index, const QVariant& value, int role=Qt::EditRole)
-    {
-        if (role==Qt::CheckStateRole)
-        {
-            activeDicts[stringList().at(index.row())]=value.toInt()==Qt::Checked;
-            return true;
-        }
-        else
-            return QStringListModel::setData(index,value,role);
-    }
-    QVariant data(const QModelIndex& index, int role=Qt::EditRole) const
-    {
-        if (!index.isValid())
-            return QVariant();
-
-        if (role==Qt::CheckStateRole)
-            return (  activeDicts.contains(stringList().at(index.row()))&&activeDicts.value(stringList().at(index.row()))  )?Qt::Checked:Qt::Unchecked;
-        return QStringListModel::data(index,role);
-    }
-
-public:
-    QHash<QString,bool> activeDicts;
-};
-
-
-void DictApplet::createConfigurationInterface(KConfigDialog *parent)
-{
-    if (dataEngine(QLatin1String( "qstardict" ))->isValid()) {
-        QTreeView* widget=new QTreeView(parent);
-        widget->setDragEnabled(true);
-        widget->setAcceptDrops(true);
-        widget->setDragDropMode(QAbstractItemView::InternalMove);
-        widget->setDropIndicatorShown(true);
-        widget->setItemsExpandable(false);
-        widget->setAllColumnsShowFocus(true);
-        widget->setRootIsDecorated(false);
-
-        delete m_dictsModel.data();
-        CheckableStringListModel *model = new CheckableStringListModel(parent,m_dicts,m_activeDicts);
-        m_dictsModel = model;
-        widget->setModel(model);
-
-        parent->addPage(widget, parent->windowTitle(), Applet::icon());
-        connect(parent, SIGNAL(applyClicked()), this, SLOT(configAccepted()));
-        connect(parent, SIGNAL(okClicked()), this, SLOT(configAccepted()));
-    }
-}
-
 void DictApplet::popupEvent(bool shown)
 {
-    //kDebug() << shown;
+    // kDebug() << shown;
     if (shown && m_wordEdit) {
         focusEditor();
     }
-}
-
-void DictApplet::configAccepted()
-{
-    if (m_dictsModel) {
-        CheckableStringListModel *model = m_dictsModel.data();
-        m_dicts = model->stringList();
-        m_activeDicts = model->activeDicts;
-    }
-    KConfigGroup cg = config();
-    cg.writeEntry("KnownDictionaries", m_dicts);
-
-    QStringList activeDictNames;
-    for (QStringList::const_iterator i = m_dicts.constBegin(); i != m_dicts.constEnd(); ++i)
-        if (m_activeDicts.contains(*i) && m_activeDicts.value(*i))
-            activeDictNames<<*i;
-
-    cg.writeEntry("ActiveDictionaries", activeDictNames);
-
-    define();
-    emit configNeedsSaving();
 }
 
 void DictApplet::focusEditor()
