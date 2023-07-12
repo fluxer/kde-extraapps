@@ -78,8 +78,8 @@ public:
             q->setConfigurationRequired(false);
         } else {
             busyTimer->stop();
-            q->showMessage(QIcon(), QString(), Plasma::ButtonNone);
             q->setBusy(false);
+            q->showMessage(QIcon(), QString(), Plasma::ButtonNone);
             q->setConfigurationRequired(true);
         }
 
@@ -205,15 +205,16 @@ void WeatherPopupApplet::connectToEngine()
             connect(d->location, SIGNAL(finished(QString)), this, SLOT(locationReady(QString)));
         }
 
+        d->busyTimer->stop();
+        setBusy(false);
         d->location->setDataEngines(dataEngine(QLatin1String( "geolocation" )), d->weatherEngine);
         d->location->getDefault();
-        setBusy(false);
     } else {
         delete d->location;
         d->location = 0;
-        d->weatherEngine->connectSource(d->source, this, d->updateInterval * 60 * 1000);
-        setBusy(true);
         d->busyTimer->start();
+        setBusy(true);
+        d->weatherEngine->connectSource(d->source, this, d->updateInterval * 60 * 1000);
     }
 }
 
@@ -303,8 +304,8 @@ void WeatherPopupApplet::dataUpdated(const QString& source,
     setAssociatedApplicationUrls(KUrl(data.value(QLatin1String( "Credit Url" )).toString()));
 
     d->busyTimer->stop();
-    showMessage(QIcon(), QString(), Plasma::ButtonNone);
     setBusy(false);
+    showMessage(QIcon(), QString(), Plasma::ButtonNone);
 }
 
 QString WeatherPopupApplet::pressureUnit()
