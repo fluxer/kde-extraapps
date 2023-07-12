@@ -159,10 +159,6 @@ WeatherConfig::~WeatherConfig()
     delete d;
 }
 
-void WeatherConfig::getNewStuff()
-{
-}
-
 void WeatherConfig::setDataEngine(Plasma::DataEngine* dataengine)
 {
     d->dataengine = dataengine;

@@ -129,9 +129,6 @@ public Q_SLOTS:
      **/
     void setUpdateInterval(int interval);
 
-protected Q_SLOTS:
-    void getNewStuff();
-
 private:
     class Private;
     Private * const d;
