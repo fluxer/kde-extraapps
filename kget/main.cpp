@@ -133,8 +133,6 @@ int main(int argc, char *argv[])
     option.add("+[URL(s)]", ki18n("URL(s) to download"));
     KCmdLineArgs::addCmdLineOptions(option);
 
-    KGetApp::addCmdLineOptions();
-
     if (!KGetApp::start())
     {
         fprintf(stderr, "kget is already running!\n");

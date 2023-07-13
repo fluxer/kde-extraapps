@@ -59,7 +59,6 @@ int main(int argc, char *argv[])
    KCmdLineOptions options;
    options.add("keepvisibility", ki18n("Inhibits the unhiding of the KMix main window, if KMix is already running."));
    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
-   KUniqueApplication::addCmdLineOptions();
 
    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
    bool hasArgKeepvisibility = args->isSet("keepvisibility");
