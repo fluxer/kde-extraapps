@@ -114,7 +114,6 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(ki18n("Matthias Fuchs"), ki18n("Core Developer"), "mat69@gmx.net");
     aboutData.addAuthor(ki18n("Javier Goday"), ki18n("Developer"), "jgoday@gmail.com");
     aboutData.addAuthor(ki18n("Aish Raj Dahal"), ki18n("Google Summer of Code Student"));
-    aboutData.addAuthor(ki18n("Ernesto Rodriguez Ortiz"), ki18n("Mms Plugin Author"), "eortiz@uci.cu");
     aboutData.addAuthor(ki18n("Patrick Charbonnier"), ki18n("Former Developer"), "pch@freeshell.org");
     aboutData.addAuthor(ki18n("Carsten Pfeiffer"), ki18n("Former Developer"), "pfeiffer@kde.org");
     aboutData.addAuthor(ki18n("Matej Koss"), ki18n("Former Developer"));

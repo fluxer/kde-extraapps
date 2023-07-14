@@ -18,13 +18,6 @@ include(CheckTypeSize)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-kde4_optional_find_package(LibMms)
-set_package_properties(LibMms PROPERTIES
-    DESCRIPTION "Library to read mms streams"
-    URL "http://libmms.sourceforge.net"
-    PURPOSE "Needed to build KGet mms support"
-)
-
 kde4_optional_find_package(LibTorrent)
 set_package_properties(LibTorrent PROPERTIES
     DESCRIPTION "Feature complete C++ bittorrent implementation focusing on efficiency and scalability"
