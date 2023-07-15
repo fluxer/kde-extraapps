@@ -29,7 +29,8 @@ public:
     Private(WeatherLocation *location)
         : q(location),
           locationEngine(nullptr),
-          weatherEngine(nullptr)
+          weatherEngine(nullptr),
+          foundsource(false)
     {
     }
 
@@ -42,10 +43,11 @@ public:
         }
 
         validators.remove(validator);
-        if (!source.isEmpty()) {
+        if (!source.isEmpty() && !foundsource) {
+            foundsource = true;
             emit q->finished(source);
         }
-        if (validators.isEmpty()) {
+        if (!foundsource && validators.isEmpty()) {
             emit q->finished(QString());
         }
     }
@@ -53,6 +55,7 @@ public:
     WeatherLocation *q;
     Plasma::DataEngine *locationEngine;
     Plasma::DataEngine *weatherEngine;
+    bool foundsource;
     QMap<WeatherValidator*,QString> validators;
 };
 
