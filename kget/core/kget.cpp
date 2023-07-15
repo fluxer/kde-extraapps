@@ -806,7 +806,7 @@ KGet::KGet()
 
     //check if there is a connection
     const KNetworkManager::KNetworkStatus status = m_networkManager->status();
-    KGet::setHasNetworkConnection((status == KNetworkManager::ConnectedStatus) || (status == KNetworkManager::UnknownStatus));
+    KGet::setHasNetworkConnection(status == KNetworkManager::ConnectedStatus);
             
     //Load all the available plugins
     loadPlugins();
@@ -1473,7 +1473,7 @@ void GenericObserver::slotNotificationClosed()
 
 void GenericObserver::slotNetworkStatusChanged(const KNetworkManager::KNetworkStatus status)
 {
-    KGet::setHasNetworkConnection((status == KNetworkManager::ConnectedStatus) || (status == KNetworkManager::UnknownStatus));
+    KGet::setHasNetworkConnection(status == KNetworkManager::ConnectedStatus);
 }
 
 void GenericObserver::groupsChangedEvent(QMap<TransferGroupHandler*, TransferGroup::ChangesFlags> groups)
