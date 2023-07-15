@@ -94,8 +94,16 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
     }
 
     d->locationEngine->disconnectSource(source, this);
+    // sort the data by accuracy, the lower the accuracy number the higher the accuracy is
+    QMap<int, QVariant> accuratedata;
     foreach (const QString &datakey, data.keys()) {
-        const QVariantHash datahash = data[datakey].toHash();
+        const QVariant datavariant = data[datakey];
+        const int dataaccuracy = datavariant.toHash()["accuracy"].toInt();
+        accuratedata.insert(dataaccuracy, datavariant);
+    }
+    // qDebug() << Q_FUNC_INFO << accuratedata;
+    foreach (const int intdatakey, accuratedata.keys()) {
+        const QVariantHash datahash = accuratedata.value(intdatakey).toHash();
         QString city = datahash[QLatin1String("city")].toString();
         if (city.contains(QLatin1Char(','))) {
             city.truncate(city.indexOf(QLatin1Char(',')) - 1);
