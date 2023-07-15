@@ -119,6 +119,11 @@ public:
      **/
     void setHeadersVisible(bool visible);
 
+    /**
+     * Sets the ion
+     **/
+    void setIon(const QString &ion);
+
   signals:
     void settingsChanged();
     void configValueChanged();

@@ -48,6 +48,7 @@ WeatherApplet::WeatherApplet(QObject *parent, const QVariantList &args)
 {
     setAspectRatioMode(Plasma::IgnoreAspectRatio);
     setPopupIcon("weather-none-available");
+    setDefaultIon("wettercom");
 }
 
 void WeatherApplet::init()

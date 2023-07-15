@@ -30,7 +30,8 @@ public:
         : q(location),
           locationEngine(nullptr),
           weatherEngine(nullptr),
-          foundSource(false)
+          foundSource(false),
+          ion("wettercom")
     {
     }
 
@@ -56,6 +57,7 @@ public:
     Plasma::DataEngine *locationEngine;
     Plasma::DataEngine *weatherEngine;
     bool foundSource;
+    QString ion;
     QMap<WeatherValidator*,QString> validators;
 };
 
@@ -78,8 +80,9 @@ void WeatherLocation::setDataEngines(Plasma::DataEngine* location, Plasma::DataE
     d->weatherEngine = weather;
 }
 
-void WeatherLocation::getDefault()
+void WeatherLocation::getDefault(const QString &ion)
 {
+    d->ion = ion;
     if (d->locationEngine && d->locationEngine->isValid()) {
         d->locationEngine->connectSource(QLatin1String("location"), this);
     } else {
@@ -113,6 +116,7 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
         if (!city.isEmpty()) {
             WeatherValidator* validator = new WeatherValidator(this);
             validator->setDataEngine(d->weatherEngine);
+            validator->setIon(d->ion);
             connect(
                 validator, SIGNAL(finished(QMap<QString,QString>)),
                 this, SLOT(validatorFinished(QMap<QString,QString>))
@@ -126,7 +130,7 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
         emit finished(QString());
     } else {
         foreach (WeatherValidator* validator, d->validators.keys()) {
-            validator->validate(QLatin1String("wettercom"), d->validators.value(validator), true);
+            validator->validate(d->validators.value(validator), true);
         }
     }
 }

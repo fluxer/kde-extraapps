@@ -37,15 +37,6 @@ public:
     virtual ~WeatherValidator();
 
     /**
-     * Validate location 
-     *
-     * @param plugin the name of the ion
-     * @param location the name of the location to find
-     * @param silent if true don't show any dialogs
-     **/
-    void validate(const QString& plugin, const QString& location, bool silent = true);
-
-    /**
      * Validate location; plugin must already have been set
      *
      * @param location the name of the location to find

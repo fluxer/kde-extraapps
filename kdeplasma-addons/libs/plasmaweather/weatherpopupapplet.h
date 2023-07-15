@@ -108,6 +108,12 @@ class PLASMAWEATHER_EXPORT WeatherPopupApplet : public Plasma::PopupApplet
          */
         virtual void connectToEngine();
 
+        /**
+         * Sets the ion used for getting the default location
+         *
+         */
+        void setDefaultIon(const QString &ion);
+
     private:
         class Private;
         Private * const d;

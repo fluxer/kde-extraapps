@@ -522,7 +522,7 @@ void WeatherWallpaper::connectWeatherSource()
         connect(m_weatherLocation, SIGNAL(finished(QString)),
                 this, SLOT(locationReady(QString)));
         m_weatherLocation->setDataEngines(dataEngine(QLatin1String("geolocation")), weatherEngine);
-        m_weatherLocation->getDefault();
+        m_weatherLocation->getDefault("wettercom");
     } else {
         weatherEngine->connectSource(m_source, this, m_weatherUpdateTime * 60 * 1000);
     }

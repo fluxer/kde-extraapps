@@ -58,6 +58,7 @@ public:
     int updateInterval;
     QString source;
     WeatherLocation *location;
+    QString defaultIon;
 
     QString conditionIcon;
     QString tend;
@@ -206,8 +207,8 @@ void WeatherPopupApplet::connectToEngine()
 
         d->busyTimer->stop();
         setBusy(false);
-        d->location->setDataEngines(dataEngine(QLatin1String( "geolocation" )), d->weatherEngine);
-        d->location->getDefault();
+        d->location->setDataEngines(dataEngine(QLatin1String("geolocation")), d->weatherEngine);
+        d->location->getDefault(d->defaultIon);
     } else {
         delete d->location;
         d->location = 0;
@@ -217,11 +218,17 @@ void WeatherPopupApplet::connectToEngine()
     }
 }
 
+void WeatherPopupApplet::setDefaultIon(const QString &ion)
+{
+    d->defaultIon = ion;
+}
+
 void WeatherPopupApplet::createConfigurationInterface(KConfigDialog *parent)
 {
     d->weatherConfig = new WeatherConfig(parent);
     d->weatherConfig->setDataEngine(d->weatherEngine);
     d->weatherConfig->setSource(d->source);
+    d->weatherConfig->setIon(d->defaultIon);
     d->weatherConfig->setUpdateInterval(d->updateInterval);
     d->weatherConfig->setTemperatureUnit(d->temperatureUnit);
     d->weatherConfig->setSpeedUnit(d->speedUnit);

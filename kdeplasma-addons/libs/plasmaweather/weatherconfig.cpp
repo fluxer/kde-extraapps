@@ -38,11 +38,11 @@ class WeatherConfig::Private
 public:
     Private(WeatherConfig *weatherconfig)
         : q(weatherconfig),
+          validator(nullptr),
           dataengine(nullptr),
+          ion("wettercom"),
           dlg(nullptr),
-          busyWidget(nullptr),
-          checkedInCount(0),
-          searching(false)
+          busyWidget(nullptr)
     {
     }
 
@@ -57,58 +57,14 @@ public:
         }
     }
 
-    void getDefault()
-    {
-        Plasma::DataEngine* locationEngine = Plasma::DataEngineManager::self()->loadEngine("geolocation");
-        if (!locationEngine || !locationEngine->isValid()) {
-            return;
-        }
-
-        // FIXME: this will not validate until the location data is available (which will not
-        // happen until after the first query)
-        searching = false;
-        const Plasma::DataEngine::Data locationData = locationEngine->query(QLatin1String("location"));
-        // qDebug() << Q_FUNC_INFO << locationData;
-
-        QStringList citiesToValidate;
-        foreach (const QString &datakey, locationData.keys()) {
-            const QVariantHash datahash = locationData.value(datakey).toHash();
-            QString city = datahash[QLatin1String("city")].toString();
-            if (city.contains(QLatin1Char(','))) {
-                city.truncate(city.indexOf(QLatin1Char(',')) - 1);
-            }
-            if (!city.isEmpty()) {
-                citiesToValidate.append(city);
-            }
-        }
-        if (citiesToValidate.isEmpty()) {
-            return;
-        }
-
-        if (!busyWidget) {
-            busyWidget = new KPixmapSequenceWidget(q);
-            KPixmapSequence seq(QLatin1String("process-working"), 22);
-            busyWidget->setSequence(seq);
-            ui.locationSearchLayout->insertWidget(1, busyWidget);
-        }
-
-        foreach (const QString &city, citiesToValidate) {
-            foreach (WeatherValidator *validator, validators) {
-                validator->validate(city, true);
-            }
-        }
-    }
-
     void changePressed()
     {
-        checkedInCount = 0;
         QString text = ui.locationCombo->currentText();
 
         if (text.isEmpty()) {
             return;
         }
 
-        searching = true;
         ui.locationCombo->clear();
         ui.locationCombo->lineEdit()->setText(text);
 
@@ -119,9 +75,7 @@ public:
             ui.locationSearchLayout->insertWidget(1, busyWidget);
         }
 
-        foreach (WeatherValidator *validator, validators) {
-            validator->validate(text, true);
-        }
+        validator->validate(text, true);
     }
 
     void enableOK()
@@ -134,15 +88,14 @@ public:
     void addSources(const QMap<QString, QString> &sources);
     void validatorError(const QString &error);
 
-    WeatherConfig *q;
-    QList<WeatherValidator *> validators;
-    Plasma::DataEngine *dataengine;
+    WeatherConfig* q;
+    WeatherValidator* validator;
+    Plasma::DataEngine* dataengine;
+    QString ion;
     QString source;
     Ui::WeatherConfig ui;
     KDialog *dlg;
     KPixmapSequenceWidget *busyWidget;
-    int checkedInCount;
-    bool searching;
 };
 
 WeatherConfig::WeatherConfig(QWidget *parent)
@@ -206,22 +159,14 @@ WeatherConfig::~WeatherConfig()
 void WeatherConfig::setDataEngine(Plasma::DataEngine* dataengine)
 {
     d->dataengine = dataengine;
-    qDeleteAll(d->validators);
-    d->validators.clear();
+    delete d->validator;
+    d->validator = nullptr;
     if (d->dataengine) {
-        const QVariantList plugins = d->dataengine->query(QLatin1String("ions")).values();
-        foreach (const QVariant& plugin, plugins) {
-            const QStringList pluginInfo = plugin.toString().split(QLatin1Char('|'));
-            if (pluginInfo.count() > 1) {
-                // kDebug() << "ion: " << pluginInfo[0] << pluginInfo[1];
-                WeatherValidator *validator = new WeatherValidator(this);
-                connect(validator, SIGNAL(error(QString)), this, SLOT(validatorError(QString)));
-                connect(validator, SIGNAL(finished(QMap<QString,QString>)), this, SLOT(addSources(QMap<QString,QString>)));
-                validator->setDataEngine(dataengine);
-                validator->setIon(pluginInfo[1]);
-                d->validators.append(validator);
-            }
-        }
+        d->validator = new WeatherValidator(this);
+        connect(d->validator, SIGNAL(error(QString)), this, SLOT(validatorError(QString)));
+        connect(d->validator, SIGNAL(finished(QMap<QString,QString>)), this, SLOT(addSources(QMap<QString,QString>)));
+        d->validator->setDataEngine(dataengine);
+        d->validator->setIon(d->ion);
     }
 }
 
@@ -245,20 +190,16 @@ void WeatherConfig::Private::addSources(const QMap<QString, QString> &sources)
         }
     }
 
-    ++checkedInCount;
-    if (checkedInCount >= validators.count()) {
-        delete busyWidget;
-        busyWidget = 0;
-        kDebug() << ui.locationCombo->count();
-        if (ui.locationCombo->count() == 0 && ui.locationCombo->itemText(0).isEmpty()) {
-            const QString current = ui.locationCombo->currentText();
-            ui.locationCombo->addItem(i18n("No weather stations found for '%1'", current));
-            ui.locationCombo->lineEdit()->setText(current);
-        }
-        if (searching) {
-            ui.locationCombo->showPopup();
-        }
+
+    delete busyWidget;
+    busyWidget = 0;
+    kDebug() << ui.locationCombo->count();
+    if (ui.locationCombo->count() == 0 && ui.locationCombo->itemText(0).isEmpty()) {
+        const QString current = ui.locationCombo->currentText();
+        ui.locationCombo->addItem(i18n("No weather stations found for '%1'", current));
+        ui.locationCombo->lineEdit()->setText(current);
     }
+    ui.locationCombo->showPopup();
 }
 
 void WeatherConfig::setUpdateInterval(int interval)
@@ -309,8 +250,6 @@ void WeatherConfig::setSource(const QString &source)
         d->ui.locationCombo->lineEdit()->setText(result);
     }
     d->source = source;
-
-    d->getDefault();
 }
 
 QString WeatherConfig::source() const
@@ -364,6 +303,14 @@ void WeatherConfig::setHeadersVisible(bool visible)
 {
     d->ui.locationLabel->setVisible(visible);
     d->ui.unitsLabel->setVisible(visible);
+}
+
+void WeatherConfig::setIon(const QString &ion)
+{
+    d->ion = ion;
+    if (d->validator) {
+        d->validator->setIon(ion);
+    }
 }
 
 #include "moc_weatherconfig.cpp"

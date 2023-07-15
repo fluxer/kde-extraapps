@@ -44,6 +44,7 @@ WeatherStation::WeatherStation(QObject *parent, const QVariantList &args)
     , m_lcdPanel(0)
 {
     resize(250, 350);
+    setDefaultIon("noaa");
 }
 
 WeatherStation::~WeatherStation()

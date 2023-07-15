@@ -74,12 +74,6 @@ void WeatherValidator::validate(const QString& location, bool silent)
     d->dataengine->connectSource(validation, this);
 }
 
-void WeatherValidator::validate(const QString& ion, const QString& location, bool silent)
-{
-    d->ion = ion;
-    validate(location, silent);
-}
-
 void WeatherValidator::setDataEngine(Plasma::DataEngine* dataengine)
 {
     d->dataengine = dataengine;

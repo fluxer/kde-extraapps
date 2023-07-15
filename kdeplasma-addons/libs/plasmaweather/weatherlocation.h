@@ -39,7 +39,7 @@ public:
     /**
      * Get default source
      **/
-    void getDefault();
+    void getDefault(const QString &ion);
     
     /**
      * Sets dataengines to use
