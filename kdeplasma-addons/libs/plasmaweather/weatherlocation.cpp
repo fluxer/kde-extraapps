@@ -28,7 +28,8 @@ class WeatherLocation::Private
 public:
     Private(WeatherLocation *location)
         : q(location),
-          locationEngine(nullptr)
+          locationEngine(nullptr),
+          weatherEngine(nullptr)
     {
     }
 
@@ -64,8 +65,7 @@ WeatherLocation::WeatherLocation(QObject *parent)
 
 WeatherLocation::~WeatherLocation()
 {
-    qDeleteAll(d->validators.keys());
-    d->validators.clear();
+    Q_ASSERT(d->validators.size() == 0);
     delete d;
 }
 
@@ -98,7 +98,7 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
             city.truncate(city.indexOf(QLatin1Char(',')) - 1);
         }
         if (!city.isEmpty()) {
-            WeatherValidator* validator = new WeatherValidator();
+            WeatherValidator* validator = new WeatherValidator(this);
             validator->setDataEngine(d->weatherEngine);
             connect(
                 validator, SIGNAL(finished(QMap<QString,QString>)),

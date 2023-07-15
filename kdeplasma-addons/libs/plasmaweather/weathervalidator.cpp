@@ -26,7 +26,7 @@ class WeatherValidator::Private
 {
 public:
     Private()
-        : dataengine(0),
+        : dataengine(nullptr),
           ion(QLatin1String( "wettercom" ))
     {}
 
@@ -36,7 +36,7 @@ public:
     bool silent;
 };
 
-WeatherValidator::WeatherValidator(QWidget *parent)
+WeatherValidator::WeatherValidator(QObject *parent)
     : QObject(parent)
     , d(new Private())
 {
