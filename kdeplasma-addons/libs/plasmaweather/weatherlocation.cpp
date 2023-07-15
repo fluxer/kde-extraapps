@@ -21,27 +21,38 @@
 #include "weathervalidator.h"
 #include "weatheri18ncatalog.h"
 
+#include <kdebug.h>
+
 class WeatherLocation::Private
 {
 public:
     Private(WeatherLocation *location)
         : q(location),
-          locationEngine(0)
-    {}
+          locationEngine(nullptr)
+    {
+    }
 
     void validatorFinished(const QMap<QString, QString> &results)
     {
+        WeatherValidator* validator = qobject_cast<WeatherValidator*>(q->sender());
         QString source;
         if (!results.isEmpty()) {
             source = results.begin().value();
         }
 
-        emit q->finished(source);
+        validators.remove(validator);
+        if (!source.isEmpty()) {
+            emit q->finished(source);
+        }
+        if (validators.isEmpty()) {
+            emit q->finished(QString());
+        }
     }
 
     WeatherLocation *q;
     Plasma::DataEngine *locationEngine;
-    WeatherValidator validator;
+    Plasma::DataEngine *weatherEngine;
+    QMap<WeatherValidator*,QString> validators;
 };
 
 WeatherLocation::WeatherLocation(QObject *parent)
@@ -49,25 +60,25 @@ WeatherLocation::WeatherLocation(QObject *parent)
     , d(new Private(this))
 {
     Weatheri18nCatalog::loadCatalog();
-    QObject::connect(&d->validator, SIGNAL(finished(QMap<QString,QString>)),
-                     this, SLOT(validatorFinished(QMap<QString,QString>)));
 }
 
 WeatherLocation::~WeatherLocation()
 {
+    qDeleteAll(d->validators.keys());
+    d->validators.clear();
     delete d;
 }
 
 void WeatherLocation::setDataEngines(Plasma::DataEngine* location, Plasma::DataEngine* weather)
 {
     d->locationEngine = location;
-    d->validator.setDataEngine(weather);
+    d->weatherEngine = weather;
 }
 
 void WeatherLocation::getDefault()
 {
     if (d->locationEngine && d->locationEngine->isValid()) {
-        d->locationEngine->connectSource(QLatin1String( "location" ), this);
+        d->locationEngine->connectSource(QLatin1String("location"), this);
     } else {
         emit finished(QString());
     }
@@ -80,18 +91,31 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
     }
 
     d->locationEngine->disconnectSource(source, this);
-
-    QString city = data[QLatin1String( "city" )].toString();
-
-    if (city.contains(QLatin1Char( ',' )))
-        city.truncate(city.indexOf(QLatin1Char( ',' )) - 1);
-
-    if (!city.isEmpty()) {
-        d->validator.validate(QLatin1String( "wettercom" ), city, true);
-        return;
+    foreach (const QString &datakey, data.keys()) {
+        const QVariantHash datahash = data[datakey].toHash();
+        QString city = datahash[QLatin1String("city")].toString();
+        if (city.contains(QLatin1Char(','))) {
+            city.truncate(city.indexOf(QLatin1Char(',')) - 1);
+        }
+        if (!city.isEmpty()) {
+            WeatherValidator* validator = new WeatherValidator();
+            validator->setDataEngine(d->weatherEngine);
+            connect(
+                validator, SIGNAL(finished(QMap<QString,QString>)),
+                this, SLOT(validatorFinished(QMap<QString,QString>))
+            );
+            d->validators.insert(validator, city);
+            kDebug() <<  "validating" << city;
+        }
     }
 
-    emit finished(QString());
+    if (d->validators.isEmpty()) {
+        emit finished(QString());
+    } else {
+        foreach (WeatherValidator* validator, d->validators.keys()) {
+            validator->validate(QLatin1String("wettercom"), d->validators.value(validator), true);
+        }
+    }
 }
 
 #include "moc_weatherlocation.cpp"

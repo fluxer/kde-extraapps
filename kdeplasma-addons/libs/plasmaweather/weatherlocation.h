@@ -55,7 +55,7 @@ Q_SIGNALS:
      **/
     void finished(const QString& source);
     
-public Q_SLOTS:
+private Q_SLOTS:
     void dataUpdated(const QString &source, const Plasma::DataEngine::Data &data);
 
 private:

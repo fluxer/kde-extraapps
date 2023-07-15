@@ -81,10 +81,9 @@ public:
             q->setBusy(false);
             q->showMessage(QIcon(), QString(), Plasma::ButtonNone);
             q->setConfigurationRequired(true);
+            location->deleteLater();
+            location = 0;
         }
-
-        location->deleteLater();
-        location = 0;
     }
 
     void giveUpBeingBusy()
