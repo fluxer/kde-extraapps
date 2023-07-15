@@ -47,13 +47,13 @@ public:
      * @param location location dataengine
      * @param weather weather dataengine
      **/
-    void setDataEngines(Plasma::DataEngine* location, Plasma::DataEngine* weather);
+    void setDataEngines(Plasma::DataEngine *location, Plasma::DataEngine *weather);
 
 Q_SIGNALS:
     /**
      * Emitted when validation is done
      **/
-    void finished(const QString& source);
+    void finished(const QString &source);
     
 private Q_SLOTS:
     void dataUpdated(const QString &source, const Plasma::DataEngine::Data &data);

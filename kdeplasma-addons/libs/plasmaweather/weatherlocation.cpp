@@ -30,7 +30,7 @@ public:
         : q(location),
           locationEngine(nullptr),
           weatherEngine(nullptr),
-          foundsource(false)
+          foundSource(false)
     {
     }
 
@@ -43,11 +43,11 @@ public:
         }
 
         validators.remove(validator);
-        if (!source.isEmpty() && !foundsource) {
-            foundsource = true;
+        if (!source.isEmpty() && !foundSource) {
+            foundSource = true;
             emit q->finished(source);
         }
-        if (!foundsource && validators.isEmpty()) {
+        if (!foundSource && validators.isEmpty()) {
             emit q->finished(QString());
         }
     }
@@ -55,7 +55,7 @@ public:
     WeatherLocation *q;
     Plasma::DataEngine *locationEngine;
     Plasma::DataEngine *weatherEngine;
-    bool foundsource;
+    bool foundSource;
     QMap<WeatherValidator*,QString> validators;
 };
 
@@ -93,6 +93,8 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
         return;
     }
 
+    Q_ASSERT(d->validators.size() == 0);
+    d->foundSource = false;
     d->locationEngine->disconnectSource(source, this);
     // sort the data by accuracy, the lower the accuracy number the higher the accuracy is
     QMap<int, QVariant> accuratedata;
