@@ -170,6 +170,7 @@ WeatherConfig::WeatherConfig(QWidget *parent)
         d->ui.visibilityComboBox->addItem(KLength::unitDescription(unit), unit);
     }
 
+    connect(d->ui.locationCombo, SIGNAL(returnPressed()), this, SLOT(changePressed()));
     connect(d->ui.changeButton, SIGNAL(clicked()), this, SLOT(changePressed()));
 
     connect(d->ui.updateIntervalSpinBox, SIGNAL(valueChanged(int)),
