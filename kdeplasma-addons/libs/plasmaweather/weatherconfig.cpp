@@ -27,7 +27,6 @@
 #include <KPixmapSequence>
 #include <kpixmapsequencewidget.h>
 #include <kunitconversion.h>
-#include <Plasma/DataEngineManager>
 
 #include "weathervalidator.h"
 #include "weatheri18ncatalog.h"

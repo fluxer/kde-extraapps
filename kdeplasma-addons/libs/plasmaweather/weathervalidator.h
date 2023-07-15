@@ -33,7 +33,7 @@ class PLASMAWEATHER_EXPORT WeatherValidator : public QObject
 {
     Q_OBJECT
 public:
-    WeatherValidator(QObject *parent = 0);
+    WeatherValidator(QObject *parent = nullptr);
     virtual ~WeatherValidator();
 
     /**
@@ -42,7 +42,7 @@ public:
      * @param location the name of the location to find
      * @param silent if true don't show any dialogs
      */
-    void validate(const QString& location, bool silent = false);
+    void validate(const QString &location, bool silent = false);
 
     /**
      * Sets the ion to use
@@ -60,13 +60,13 @@ public:
      *
      * @param dataengine use this dataengine
      **/
-    void setDataEngine(Plasma::DataEngine* dataengine);
+    void setDataEngine(Plasma::DataEngine *dataengine);
 
 Q_SIGNALS:
     /**
      * Emitted when an error in validation occurs
      **/
-    void error(const QString& message);
+    void error(const QString &message);
 
     /**
      * Emitted when validation is done

@@ -39,7 +39,7 @@ public:
         , weatherEngine(0)
         , timeEngine(0)
         , updateInterval(0)
-        , location(0)
+        , location(nullptr)
     {
         busyTimer = new QTimer(q);
         busyTimer->setInterval(2*60*1000);
@@ -70,21 +70,27 @@ public:
 
     void locationReady(const QString &src)
     {
-        if (!src.isEmpty()) {
+        // set the location to the first valid one (the most accurate one)
+        if (source.isEmpty()) {
             source = src;
             KConfigGroup cfg = q->config();
             cfg.writeEntry("source", source);
             emit q->configNeedsSaving();
             q->connectToEngine();
             q->setConfigurationRequired(false);
-        } else {
-            busyTimer->stop();
-            q->setBusy(false);
+        }
+    }
+
+    void locationFinished()
+    {
+        busyTimer->stop();
+        q->setBusy(false);
+        if (source.isEmpty()) {
             q->showMessage(QIcon(), QString(), Plasma::ButtonNone);
             q->setConfigurationRequired(true);
         }
         delete location;
-        location = 0;
+        location = nullptr;
     }
 
     void giveUpBeingBusy()
@@ -202,7 +208,8 @@ void WeatherPopupApplet::connectToEngine()
     if (missingLocation) {
         if (!d->location) {
             d->location = new WeatherLocation(this);
-            connect(d->location, SIGNAL(finished(QString)), this, SLOT(locationReady(QString)));
+            connect(d->location, SIGNAL(valid(QString)), this, SLOT(locationReady(QString)));
+            connect(d->location, SIGNAL(finished()), this, SLOT(locationFinished()));
         }
 
         d->busyTimer->stop();
@@ -210,8 +217,6 @@ void WeatherPopupApplet::connectToEngine()
         d->location->setDataEngines(dataEngine(QLatin1String("geolocation")), d->weatherEngine);
         d->location->getDefault(d->defaultIon);
     } else {
-        delete d->location;
-        d->location = 0;
         d->busyTimer->start();
         setBusy(true);
         d->weatherEngine->connectSource(d->source, this, d->updateInterval * 60 * 1000);

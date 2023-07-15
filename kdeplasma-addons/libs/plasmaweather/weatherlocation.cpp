@@ -30,7 +30,6 @@ public:
         : q(location),
           locationEngine(nullptr),
           weatherEngine(nullptr),
-          foundSource(false),
           ion("wettercom")
     {
     }
@@ -38,25 +37,23 @@ public:
     void validatorFinished(const QMap<QString, QString> &results)
     {
         WeatherValidator* validator = qobject_cast<WeatherValidator*>(q->sender());
-        QString source;
-        if (!results.isEmpty()) {
-            source = results.begin().value();
+        foreach (const QString &source, results.values()) {
+            if (source.isEmpty()) {
+                continue;
+            }
+            // qDebug() << Q_FUNC_INFO << source;
+            emit q->valid(source);
         }
 
         validators.remove(validator);
-        if (!source.isEmpty() && !foundSource) {
-            foundSource = true;
-            emit q->finished(source);
-        }
-        if (!foundSource && validators.isEmpty()) {
-            emit q->finished(QString());
+        if (validators.isEmpty()) {
+            emit q->finished();
         }
     }
 
     WeatherLocation *q;
     Plasma::DataEngine *locationEngine;
     Plasma::DataEngine *weatherEngine;
-    bool foundSource;
     QString ion;
     QMap<WeatherValidator*,QString> validators;
 };
@@ -86,7 +83,7 @@ void WeatherLocation::getDefault(const QString &ion)
     if (d->locationEngine && d->locationEngine->isValid()) {
         d->locationEngine->connectSource(QLatin1String("location"), this);
     } else {
-        emit finished(QString());
+        emit finished();
     }
 }
 
@@ -97,7 +94,6 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
     }
 
     Q_ASSERT(d->validators.size() == 0);
-    d->foundSource = false;
     d->locationEngine->disconnectSource(source, this);
     // sort the data by accuracy, the lower the accuracy number the higher the accuracy is
     QMap<int, QVariant> accuratedata;
@@ -127,7 +123,7 @@ void WeatherLocation::dataUpdated(const QString &source, const Plasma::DataEngin
     }
 
     if (d->validators.isEmpty()) {
-        emit finished(QString());
+        emit finished();
     } else {
         foreach (WeatherValidator* validator, d->validators.keys()) {
             validator->validate(d->validators.value(validator), true);

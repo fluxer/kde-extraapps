@@ -51,9 +51,14 @@ public:
 
 Q_SIGNALS:
     /**
+     * Emitted when valid source is found
+     **/
+    void valid(const QString &source);
+
+    /**
      * Emitted when validation is done
      **/
-    void finished(const QString &source);
+    void finished();
     
 private Q_SLOTS:
     void dataUpdated(const QString &source, const Plasma::DataEngine::Data &data);
