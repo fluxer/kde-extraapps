@@ -203,7 +203,9 @@ void WeatherConfig::Private::locationFinished()
 {
     if (!preLocationText.isEmpty()) {
         const int preLocationIndex = ui.locationCombo->findText(preLocationText);
-        ui.locationCombo->setCurrentIndex(preLocationIndex);
+        if (preLocationIndex >= 0) {
+            ui.locationCombo->setCurrentIndex(preLocationIndex);
+        }
     }
 }
 
