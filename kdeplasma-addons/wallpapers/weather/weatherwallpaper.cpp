@@ -170,6 +170,7 @@ QWidget * WeatherWallpaper::createConfigurationInterface(QWidget * parent)
     connect(m_configWidget, SIGNAL(destroyed(QObject*)), this, SLOT(configWidgetDestroyed()));
     m_configWidget->setDataEngines(locationEngine, weatherEngine);
     m_configWidget->setSource(m_source);
+    m_configWidget->setIon("wettercom");
     m_configWidget->setUpdateInterval(m_weatherUpdateTime);
     m_configWidget->setConfigurableUnits(WeatherConfig::None);
     m_configWidget->setHeadersVisible(false);
@@ -520,7 +521,7 @@ void WeatherWallpaper::connectWeatherSource()
         loadImage();
         // We can see if we can be nice and figure out where the user is
         m_weatherLocation = new WeatherLocation(this);
-        connect(m_weatherLocation, SIGNAL(finished(QString)),
+        connect(m_weatherLocation, SIGNAL(valid(QString)),
                 this, SLOT(locationReady(QString)));
         m_weatherLocation->setDataEngines(locationEngine, weatherEngine);
         m_weatherLocation->getDefault("wettercom");
