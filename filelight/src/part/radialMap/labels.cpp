@@ -27,7 +27,6 @@
 #include "part/Config.h"
 #include "part/fileTree.h"
 #include "radialMap.h"
-#include "sincos.h"
 #include "widget.h"
 
 
@@ -230,8 +229,8 @@ RadialMap::Widget::paintExplodedLabels(QPainter &paint) const
             rightSide = ((*it)->angle < 1440 || (*it)->angle > 4320);
 
             ra = M_PI/2880 * (*it)->angle; //convert to radians
-            sincos(ra, &sinra, &cosra);
-
+            sinra = qSin(ra);
+            cosra = qCos(ra);
 
             spacer = preSpacer + m_map.m_ringBreadth * (*it)->lvl;
 

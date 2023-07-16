@@ -32,8 +32,6 @@
 #include "builder.h"
 #include "part/Config.h"
 #include "part/fileTree.h"
-#define SINCOS_H_IMPLEMENTATION (1)
-#include "sincos.h"
 #include "widget.h"
 
 RadialMap::Map::Map(bool summary)
@@ -330,7 +328,8 @@ void RadialMap::Map::paint(bool antialias)
 
                     if (i == 2)
                         radius += 5;
-                    sincos(ra, &sinra, &cosra);
+                    sinra = qSin(ra);
+                    cosra = qCos(ra);
                     pos.rx() = cpos.x() + static_cast<int>(cosra * radius);
                     pos.ry() = cpos.y() - static_cast<int>(sinra * radius);
                     pts.setPoint(i, pos);
