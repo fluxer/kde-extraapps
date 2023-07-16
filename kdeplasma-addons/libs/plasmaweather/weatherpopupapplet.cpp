@@ -35,9 +35,10 @@ class WeatherPopupApplet::Private
 public:
     Private(WeatherPopupApplet *weatherapplet)
         : q(weatherapplet)
-        , weatherConfig(0)
-        , weatherEngine(0)
-        , timeEngine(0)
+        , weatherConfig(nullptr)
+        , locationEngine(nullptr)
+        , weatherEngine(nullptr)
+        , timeEngine(nullptr)
         , updateInterval(0)
         , location(nullptr)
     {
@@ -49,6 +50,7 @@ public:
 
     WeatherPopupApplet *q;
     WeatherConfig *weatherConfig;
+    Plasma::DataEngine *locationEngine;
     Plasma::DataEngine *weatherEngine;
     Plasma::DataEngine *timeEngine;
     QString temperatureUnit;
@@ -214,7 +216,7 @@ void WeatherPopupApplet::connectToEngine()
 
         d->busyTimer->stop();
         setBusy(false);
-        d->location->setDataEngines(dataEngine(QLatin1String("geolocation")), d->weatherEngine);
+        d->location->setDataEngines(d->locationEngine, d->weatherEngine);
         d->location->getDefault(d->defaultIon);
     } else {
         d->busyTimer->start();
@@ -231,7 +233,7 @@ void WeatherPopupApplet::setDefaultIon(const QString &ion)
 void WeatherPopupApplet::createConfigurationInterface(KConfigDialog *parent)
 {
     d->weatherConfig = new WeatherConfig(parent);
-    d->weatherConfig->setDataEngine(d->weatherEngine);
+    d->weatherConfig->setDataEngines(d->locationEngine, d->weatherEngine);
     d->weatherConfig->setSource(d->source);
     d->weatherConfig->setIon(d->defaultIon);
     d->weatherConfig->setUpdateInterval(d->updateInterval);
@@ -287,6 +289,7 @@ void WeatherPopupApplet::configChanged()
     d->updateInterval = cfg.readEntry("updateInterval", 30);
     d->source = cfg.readEntry("source", "");
     setConfigurationRequired(d->source.isEmpty());
+    d->locationEngine = dataEngine(QLatin1String("geolocation"));
     d->weatherEngine = dataEngine(QLatin1String( "weather" ));
     d->timeEngine = dataEngine(QLatin1String( "time" ));
 

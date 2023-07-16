@@ -28,6 +28,7 @@
 #include <kpixmapsequencewidget.h>
 #include <kunitconversion.h>
 
+#include "weatherlocation.h"
 #include "weathervalidator.h"
 #include "weatheri18ncatalog.h"
 #include "ui_weatherconfig.h"
@@ -37,11 +38,11 @@ class WeatherConfig::Private
 public:
     Private(WeatherConfig *weatherconfig)
         : q(weatherconfig),
-          validator(nullptr),
-          dataengine(nullptr),
-          ion("wettercom"),
-          dlg(nullptr),
-          busyWidget(nullptr)
+        location(nullptr),
+        validator(nullptr),
+        ion("wettercom"),
+        dlg(nullptr),
+        busyWidget(nullptr)
     {
     }
 
@@ -64,6 +65,11 @@ public:
             return;
         }
 
+        if (location) {
+            delete location;
+            location = nullptr;
+        }
+
         ui.locationCombo->clear();
         ui.locationCombo->lineEdit()->setText(text);
 
@@ -84,12 +90,15 @@ public:
         }
     }
 
+    void addSource(const QString &sources);
+    void locationFinished();
     void addSources(const QMap<QString, QString> &sources);
     void validatorError(const QString &error);
 
     WeatherConfig* q;
+    QString preLocationText;
+    WeatherLocation* location;
     WeatherValidator* validator;
-    Plasma::DataEngine* dataengine;
     QString ion;
     QString source;
     Ui::WeatherConfig ui;
@@ -155,23 +164,47 @@ WeatherConfig::~WeatherConfig()
     delete d;
 }
 
-void WeatherConfig::setDataEngine(Plasma::DataEngine* dataengine)
+void WeatherConfig::setDataEngines(Plasma::DataEngine *location, Plasma::DataEngine *weather)
 {
-    d->dataengine = dataengine;
     delete d->validator;
     d->validator = nullptr;
-    if (d->dataengine) {
+    if (weather) {
         d->validator = new WeatherValidator(this);
         connect(d->validator, SIGNAL(error(QString)), this, SLOT(validatorError(QString)));
         connect(d->validator, SIGNAL(finished(QMap<QString,QString>)), this, SLOT(addSources(QMap<QString,QString>)));
-        d->validator->setDataEngine(dataengine);
+        d->validator->setDataEngine(weather);
         d->validator->setIon(d->ion);
+    }
+    if (location && weather) {
+        d->location = new WeatherLocation(this);
+        connect(d->location, SIGNAL(valid(QString)), this, SLOT(addSource(QString)));
+        connect(d->location, SIGNAL(finished()), this, SLOT(locationFinished()));
+        d->location->setDataEngines(location, weather);
     }
 }
 
 void WeatherConfig::Private::validatorError(const QString &error)
 {
     kDebug() << error;
+}
+
+void WeatherConfig::Private::addSource(const QString &source)
+{
+    QStringList list = source.split(QLatin1Char('|'), QString::SkipEmptyParts);
+    if (list.count() > 2) {
+        // kDebug() << list;
+        QString result = i18nc("A weather station location and the weather service it comes from",
+                                "%1 (%2)", list[2], list[0]); // the names are too looong ions.value(list[0]));
+        ui.locationCombo->addItem(result, source);
+    }
+}
+
+void WeatherConfig::Private::locationFinished()
+{
+    if (!preLocationText.isEmpty()) {
+        const int preLocationIndex = ui.locationCombo->findText(preLocationText);
+        ui.locationCombo->setCurrentIndex(preLocationIndex);
+    }
 }
 
 void WeatherConfig::Private::addSources(const QMap<QString, QString> &sources)
@@ -189,9 +222,8 @@ void WeatherConfig::Private::addSources(const QMap<QString, QString> &sources)
         }
     }
 
-
     delete busyWidget;
-    busyWidget = 0;
+    busyWidget = nullptr;
     kDebug() << ui.locationCombo->count();
     if (ui.locationCombo->count() == 0 && ui.locationCombo->itemText(0).isEmpty()) {
         const QString current = ui.locationCombo->currentText();
@@ -241,7 +273,7 @@ void WeatherConfig::setVisibilityUnit(const QString &unit)
 
 void WeatherConfig::setSource(const QString &source)
 {
-    //kDebug() << "source set to" << source;
+    // kDebug() << "source set to" << source;
     const QStringList list = source.split(QLatin1Char('|'));
     if (list.count() > 2) {
         QString result = i18nc("A weather station location and the weather service it comes from",
@@ -309,6 +341,10 @@ void WeatherConfig::setIon(const QString &ion)
     d->ion = ion;
     if (d->validator) {
         d->validator->setIon(ion);
+    }
+    if (d->location) {
+        d->preLocationText = d->ui.locationCombo->currentText();
+        d->location->getDefault(ion);
     }
 }
 

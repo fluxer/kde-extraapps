@@ -66,6 +66,7 @@ WeatherWallpaper::~WeatherWallpaper()
 
 void WeatherWallpaper::init(const KConfigGroup & config)
 {
+    locationEngine = dataEngine(QLatin1String("geolocation"));
     // Connect to weather engine.
     weatherEngine = dataEngine(QLatin1String("weather"));
 
@@ -167,7 +168,7 @@ QWidget * WeatherWallpaper::createConfigurationInterface(QWidget * parent)
     layout->setMargin(0);
     m_configWidget = new WeatherConfig(top);
     connect(m_configWidget, SIGNAL(destroyed(QObject*)), this, SLOT(configWidgetDestroyed()));
-    m_configWidget->setDataEngine(weatherEngine);
+    m_configWidget->setDataEngines(locationEngine, weatherEngine);
     m_configWidget->setSource(m_source);
     m_configWidget->setUpdateInterval(m_weatherUpdateTime);
     m_configWidget->setConfigurableUnits(WeatherConfig::None);
@@ -521,7 +522,7 @@ void WeatherWallpaper::connectWeatherSource()
         m_weatherLocation = new WeatherLocation(this);
         connect(m_weatherLocation, SIGNAL(finished(QString)),
                 this, SLOT(locationReady(QString)));
-        m_weatherLocation->setDataEngines(dataEngine(QLatin1String("geolocation")), weatherEngine);
+        m_weatherLocation->setDataEngines(locationEngine, weatherEngine);
         m_weatherLocation->getDefault("wettercom");
     } else {
         weatherEngine->connectSource(m_source, this, m_weatherUpdateTime * 60 * 1000);

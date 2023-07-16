@@ -101,6 +101,7 @@ private:
 
     QHash<QString,QString> m_weatherMap;
 
+    Plasma::DataEngine *locationEngine;
     Plasma::DataEngine *weatherEngine;
     Plasma::DataEngine::Data m_ionPlugins;
 

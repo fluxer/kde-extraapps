@@ -55,9 +55,7 @@ public:
     /**
      * Sets dataengine to use
      **/
-    void setDataEngine(Plasma::DataEngine* dataengine);
-
-    Plasma::DataEngine *engine();
+    void setDataEngines(Plasma::DataEngine *location, Plasma::DataEngine *weather);
 
     /**
      * Sets ion source
@@ -140,6 +138,8 @@ private:
 
     Q_PRIVATE_SLOT(d, void changePressed())
     Q_PRIVATE_SLOT(d, void setSource(int))
+    Q_PRIVATE_SLOT(d, void addSource(const QString &source))
+    Q_PRIVATE_SLOT(d, void locationFinished())
     Q_PRIVATE_SLOT(d, void addSources(const QMap<QString, QString> &sources))
     Q_PRIVATE_SLOT(d, void validatorError(const QString &error))
 };
