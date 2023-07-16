@@ -91,7 +91,6 @@ private:
     WeatherLocation* m_weatherLocation;
     KDialog *m_advancedDialog;
     Ui::weatherAdvanced m_advancedUi;
-    QString m_dir;
     QStringList m_usersWallpapers;
 
     QString m_source; // Current source

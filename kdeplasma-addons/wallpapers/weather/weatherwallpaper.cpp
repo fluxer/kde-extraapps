@@ -75,7 +75,6 @@ void WeatherWallpaper::init(const KConfigGroup & config)
     m_weatherUpdateTime = config.readEntry("updateWeather", 30);
 
     m_color = config.readEntry("wallpapercolor", QColor(56, 111, 150));
-    m_dir = KStandardDirs::installPath("wallpaper");
     m_usersWallpapers = config.readEntry("userswallpapers", QStringList());
     m_resizeMethod = (ResizeMethod)config.readEntry("wallpaperposition", (int)ScaledResize);
 
@@ -85,24 +84,25 @@ void WeatherWallpaper::init(const KConfigGroup & config)
     m_animation->setProperty("startValue", 0.0);
     m_animation->setProperty("endValue", 1.0);
 
-    m_weatherMap[QLatin1String("weather-clear")] = config.readEntry("clearPaper", QString(m_dir + QLatin1String("Fields_of_Peace/")));
-    m_weatherMap[QLatin1String("weather-few-clouds")] = config.readEntry("partlyCloudyPaper", QString(m_dir + QLatin1String("Evening/")));
-    m_weatherMap[QLatin1String("weather-clouds")] = config.readEntry("cloudyPaper", QString(m_dir + QLatin1String("Colorado_Farm/")));
-    m_weatherMap[QLatin1String("weather-many-clouds")] = config.readEntry("manyCloudsPaper", QString(m_dir + QLatin1String("Beach_Reflecting_Clouds/")));
-    m_weatherMap[QLatin1String("weather-showers")] = config.readEntry("showersPaper", QString(m_dir + QLatin1String("There_is_Rain_on_the_Table/")));
-    m_weatherMap[QLatin1String("weather-showers-scattered")] = config.readEntry("showersScatteredPaper", QString(m_dir + QLatin1String("There_is_Rain_on_the_Table/")));
-    m_weatherMap[QLatin1String("weather-rain")] = config.readEntry("rainPaper", QString(m_dir + QLatin1String("There_is_Rain_on_the_Table/")));
-    m_weatherMap[QLatin1String("weather-mist")] = config.readEntry("mistPaper", QString(m_dir + QLatin1String("Fresh_Morning/")));
-    m_weatherMap[QLatin1String("weather-storm")] = config.readEntry("stormPaper", QString(m_dir + QLatin1String("Storm/")));
+    const QString defaultWallpaper = Plasma::Theme::defaultTheme()->wallpaperPath();
+    m_weatherMap[QLatin1String("weather-clear")] = config.readEntry("clearPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-few-clouds")] = config.readEntry("partlyCloudyPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-clouds")] = config.readEntry("cloudyPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-many-clouds")] = config.readEntry("manyCloudsPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-showers")] = config.readEntry("showersPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-showers-scattered")] = config.readEntry("showersScatteredPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-rain")] = config.readEntry("rainPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-mist")] = config.readEntry("mistPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-storm")] = config.readEntry("stormPaper", defaultWallpaper);
     m_weatherMap[QLatin1String("weather-scattered-storms")] = m_weatherMap[QLatin1String("weather-storm")];
-    m_weatherMap[QLatin1String("weather-hail")] = config.readEntry("hailPaper", QString(m_dir + QLatin1String("Storm/")));
-    m_weatherMap[QLatin1String("weather-snow")] = config.readEntry("snowPaper", QString(m_dir + QLatin1String("Winter_Track/")));
-    m_weatherMap[QLatin1String("weather-snow-scattered")] = config.readEntry("snowScatteredPaper", QString(m_dir + QLatin1String("Winter_Track/")));
-    m_weatherMap[QLatin1String("weather-few-clouds-night")] = config.readEntry("partlyCloudyNightPaper", QString(m_dir + QLatin1String("JK_Bridge_at_Night/")));
-    m_weatherMap[QLatin1String("weather-clouds-night")] = config.readEntry("cloudyNightPaper", QString(m_dir + QLatin1String("JK_Bridge_at_Night/")));
-    m_weatherMap[QLatin1String("weather-clear-night")] = config.readEntry("clearNightPaper", QString(m_dir + QLatin1String("City_at_Night/")));
-    m_weatherMap[QLatin1String("weather-freezing-rain")] = config.readEntry("freezingRainPaper", QString(m_dir + QLatin1String("Icy_Tree/")));
-    m_weatherMap[QLatin1String("weather-snow-rain")] = config.readEntry("snowRainPaper", QString(m_dir + QLatin1String("Icy_Tree/")));
+    m_weatherMap[QLatin1String("weather-hail")] = config.readEntry("hailPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-snow")] = config.readEntry("snowPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-snow-scattered")] = config.readEntry("snowScatteredPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-few-clouds-night")] = config.readEntry("partlyCloudyNightPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-clouds-night")] = config.readEntry("cloudyNightPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-clear-night")] = config.readEntry("clearNightPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-freezing-rain")] = config.readEntry("freezingRainPaper", defaultWallpaper);
+    m_weatherMap[QLatin1String("weather-snow-rain")] = config.readEntry("snowRainPaper", defaultWallpaper);
 
     calculateGeometry();
     connectWeatherSource();
@@ -251,10 +251,8 @@ void WeatherWallpaper::loadImage()
         m_wallpaper = Plasma::Theme::defaultTheme()->wallpaperPath();
     }
 
-    QString img;
     Plasma::Package b(m_wallpaper, packageStructure(this));
-
-    img = b.filePath("preferred");
+    QString img = b.filePath("preferred");
 
     if (img.isEmpty()) {
         img = m_wallpaper;
