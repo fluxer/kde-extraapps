@@ -19,14 +19,13 @@
 
 #include "weatherconfig.h"
 
-#include <QLineEdit>
-
 #include <KDebug>
 #include <KDialog>
 #include <KInputDialog>
 #include <KPixmapSequence>
-#include <kpixmapsequencewidget.h>
-#include <kunitconversion.h>
+#include <KPixmapSequenceWidget>
+#include <KUnitConversion>
+#include <KMessageBox>
 
 #include "weatherlocation.h"
 #include "weathervalidator.h"
@@ -49,9 +48,7 @@ public:
     void setSource(int index)
     {
         QString text = ui.locationCombo->itemData(index).toString();
-        if (text.isEmpty()) {
-            ui.locationCombo->lineEdit()->setText(QString());
-        } else {
+        if (!text.isEmpty()) {
             source = text;
             emit q->settingsChanged();
         }
@@ -70,8 +67,8 @@ public:
             location = nullptr;
         }
 
+        searchLocation = text;
         ui.locationCombo->clear();
-        ui.locationCombo->lineEdit()->setText(text);
 
         if (!busyWidget) {
             busyWidget = new KPixmapSequenceWidget(q);
@@ -91,12 +88,11 @@ public:
     }
 
     void addSource(const QString &sources);
-    void locationFinished();
     void addSources(const QMap<QString, QString> &sources);
     void validatorError(const QString &error);
 
     WeatherConfig* q;
-    QString preLocationText;
+    QString searchLocation;
     WeatherLocation* location;
     WeatherValidator* validator;
     QString ion;
@@ -178,7 +174,6 @@ void WeatherConfig::setDataEngines(Plasma::DataEngine *location, Plasma::DataEng
     if (location && weather) {
         d->location = new WeatherLocation(this);
         connect(d->location, SIGNAL(valid(QString)), this, SLOT(addSource(QString)));
-        connect(d->location, SIGNAL(finished()), this, SLOT(locationFinished()));
         d->location->setDataEngines(location, weather);
     }
 }
@@ -195,16 +190,9 @@ void WeatherConfig::Private::addSource(const QString &source)
         // kDebug() << list;
         QString result = i18nc("A weather station location and the weather service it comes from",
                                 "%1 (%2)", list[2], list[0]); // the names are too looong ions.value(list[0]));
-        ui.locationCombo->addItem(result, source);
-    }
-}
-
-void WeatherConfig::Private::locationFinished()
-{
-    if (!preLocationText.isEmpty()) {
-        const int preLocationIndex = ui.locationCombo->findText(preLocationText);
-        if (preLocationIndex >= 0) {
-            ui.locationCombo->setCurrentIndex(preLocationIndex);
+        const int resultIndex = ui.locationCombo->findText(result);
+        if (resultIndex < 0) {
+            ui.locationCombo->addItem(result, source);
         }
     }
 }
@@ -215,24 +203,22 @@ void WeatherConfig::Private::addSources(const QMap<QString, QString> &sources)
 
     while (it.hasNext()) {
         it.next();
-        QStringList list = it.value().split(QLatin1Char('|'), QString::SkipEmptyParts);
-        if (list.count() > 2) {
-            // kDebug() << list;
-            QString result = i18nc("A weather station location and the weather service it comes from",
-                                   "%1 (%2)", list[2], list[0]); // the names are too looong ions.value(list[0]));
-            ui.locationCombo->addItem(result, it.value());
-        }
+        addSource(it.value());
     }
 
     delete busyWidget;
     busyWidget = nullptr;
     kDebug() << ui.locationCombo->count();
-    if (ui.locationCombo->count() == 0 && ui.locationCombo->itemText(0).isEmpty()) {
-        const QString current = ui.locationCombo->currentText();
-        ui.locationCombo->addItem(i18n("No weather stations found for '%1'", current));
-        ui.locationCombo->lineEdit()->setText(current);
+    if (ui.locationCombo->count() == 0) {
+        KMessageBox::information(
+            q,
+            i18n("No weather stations found for '%1'", searchLocation),
+            i18n("No weather stations found"),
+            QString::fromLatin1("WeatherConfig")
+        );
+    } else {
+        ui.locationCombo->showPopup();
     }
-    ui.locationCombo->showPopup();
 }
 
 void WeatherConfig::setUpdateInterval(int interval)
@@ -276,12 +262,7 @@ void WeatherConfig::setVisibilityUnit(const QString &unit)
 void WeatherConfig::setSource(const QString &source)
 {
     // kDebug() << "source set to" << source;
-    const QStringList list = source.split(QLatin1Char('|'));
-    if (list.count() > 2) {
-        QString result = i18nc("A weather station location and the weather service it comes from",
-                               "%1 (%2)", list[2], list[0]);
-        d->ui.locationCombo->lineEdit()->setText(result);
-    }
+    d->addSource(source);
     d->source = source;
 }
 
@@ -345,7 +326,6 @@ void WeatherConfig::setIon(const QString &ion)
         d->validator->setIon(ion);
     }
     if (d->location) {
-        d->preLocationText = d->ui.locationCombo->currentText();
         d->location->getDefault(ion);
     }
 }
