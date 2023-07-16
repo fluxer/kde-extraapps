@@ -1962,7 +1962,7 @@ void KCalculator::showLogicButtons(bool toggled) {
         }
 
         for (int i = 10; i < 16; ++i) {
-            (num_button_group_->button(i))->show();
+            num_button_group_->button(i)->show();
         }
     } else {
         mBitset->setEnabled(false);
@@ -1984,7 +1984,7 @@ void KCalculator::showLogicButtons(bool toggled) {
         statusBar()->setItemFixed(BaseField, 0);
         calc_display->setStatusText(BaseField, QString());
         for (int i = 10; i < 16; ++i) {
-            (num_button_group_->button(i))->hide();
+            num_button_group_->button(i)->hide();
         }
     }
 }
@@ -2113,36 +2113,34 @@ void KCalculator::setColors() {
         return;
     }
 
-    const QString sheet = QLatin1String("KPushButton { background-color: %1 }");
-
-    const QColor numPal(KCalcSettings::numberButtonsColor());
+    const QPalette numPal(KCalcSettings::numberButtonsColor());
     for (int i = 0; i < 10; ++i) {
-        (num_button_group_->button(i))->setStyleSheet(sheet.arg(numPal.name()));
+        num_button_group_->button(i)->setPalette(numPal);
     }
 
-    const QColor funcPal(KCalcSettings::functionButtonsColor());
+    const QPalette funcPal(KCalcSettings::functionButtonsColor());
     foreach(QAbstractButton *btn, function_button_list_) {
-        btn->setStyleSheet(sheet.arg(funcPal.name()));
+        btn->setPalette(funcPal);
     }
 
-    const QColor statPal(KCalcSettings::statButtonsColor());
+    const QPalette statPal(KCalcSettings::statButtonsColor());
     foreach(QAbstractButton *btn, stat_buttons_) {
-    btn->setStyleSheet(sheet.arg(statPal.name()));
+        btn->setPalette(statPal);
     }
 
-    const QColor hexPal(KCalcSettings::hexButtonsColor());
+    const QPalette hexPal(KCalcSettings::hexButtonsColor());
     for (int i = 10; i < 16; ++i) {
-        (num_button_group_->button(i))->setStyleSheet(sheet.arg(hexPal.name()));
+        num_button_group_->button(i)->setPalette(hexPal);
     }
 
-    const QColor memPal(KCalcSettings::memoryButtonsColor());
+    const QPalette memPal(KCalcSettings::memoryButtonsColor());
     foreach(QAbstractButton *btn, mem_button_list_) {
-        btn->setStyleSheet(sheet.arg(memPal.name()));
+        btn->setPalette(memPal);
     }
 
-    const QColor opPal(KCalcSettings::operationButtonsColor());
+    const QPalette opPal(KCalcSettings::operationButtonsColor());
     foreach(QAbstractButton *btn, operation_button_list_) {
-        btn->setStyleSheet(sheet.arg(opPal.name()));
+        btn->setPalette(opPal);
     }
 }
 
@@ -2219,6 +2217,7 @@ bool KCalculator::eventFilter(QObject *o, QEvent *e) {
     case QEvent::DragLeave: {
         return true;
     }
+    // FIXME: color is not saved and restored (the color does not persist trough kcalc restart)
     case QEvent::Drop: {
         KCalcButton *const calcButton = qobject_cast<KCalcButton *>(o);
         if (!calcButton) {
@@ -2238,11 +2237,11 @@ bool KCalculator::eventFilter(QObject *o, QEvent *e) {
                 // Was it hex-button or normal digit??
                 if (num_but < 10) {
                     for (int i = 0; i < 10; ++i) {
-                        (num_button_group_->buttons()[i])->setStyleSheet(sheet.arg(cn));
+                        num_button_group_->button(i)->setStyleSheet(sheet.arg(cn));
                     }
                 } else {
                     for (int i = 10; i < 16; ++i) {
-                        (num_button_group_->buttons()[i])->setStyleSheet(sheet.arg(cn));
+                        num_button_group_->button(i)->setStyleSheet(sheet.arg(cn));
                     }
                 }
                 return true;
