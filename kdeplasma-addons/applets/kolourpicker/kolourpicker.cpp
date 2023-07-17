@@ -258,7 +258,7 @@ Kolourpicker::Kolourpicker(QObject *parent, const QVariantList &args)
     mainlay->addItem(m_configAndHistory);
 
     m_configAndHistory->nativeWidget()->setIcon(ColorIcon(Qt::gray));
-    m_configAndHistory->nativeWidget()->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    m_configAndHistory->nativeWidget()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     connect(m_configAndHistory, SIGNAL(clicked()), this, SLOT(historyClicked()));
 
     KMenu *menu = new KMenu();
