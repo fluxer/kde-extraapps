@@ -152,6 +152,7 @@ public:
     ColorButton(QGraphicsWidget *parent);
 
 protected:
+    void resizeEvent(QGraphicsSceneResizeEvent *event) final;
     void dragEnterEvent(QGraphicsSceneDragDropEvent *event) final;
     void dragMoveEvent(QGraphicsSceneDragDropEvent *event) final;
     void dropEvent(QGraphicsSceneDragDropEvent *event) final;
@@ -190,6 +191,15 @@ void ColorButton::dropEvent(QGraphicsSceneDragDropEvent *event)
     kDebug() << event << color << picker;
     picker->addColor(color);
 }
+
+void ColorButton::resizeEvent(QGraphicsSceneResizeEvent *event)
+{
+    const QSizeF sizef = size();
+    const int minsize = qRound(qMin(sizef.width(), sizef.height())) - 4;
+    nativeWidget()->setIconSize(QSize(minsize, minsize));
+    Plasma::ToolButton::resizeEvent(event);
+}
+
 
 Kolourpicker::Kolourpicker(QObject *parent, const QVariantList &args)
     : Plasma::Applet(parent, args),
