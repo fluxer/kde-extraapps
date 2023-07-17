@@ -123,6 +123,11 @@
        <property name="text">
         <string>&amp;Search</string>
        </property>
+       <property name="icon">
+        <iconset theme="edit-find">
+        <normaloff/>
+        </iconset>
+       </property>
       </widget>
      </item>
     </layout>
