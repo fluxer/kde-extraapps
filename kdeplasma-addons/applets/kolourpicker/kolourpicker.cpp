@@ -151,17 +151,38 @@ class ColorButton : public Plasma::ToolButton
 public:
     ColorButton(QGraphicsWidget *parent);
 
+    void setColor(const QColor &color);
+
 protected:
     void resizeEvent(QGraphicsSceneResizeEvent *event) final;
     void dragEnterEvent(QGraphicsSceneDragDropEvent *event) final;
     void dragMoveEvent(QGraphicsSceneDragDropEvent *event) final;
     void dropEvent(QGraphicsSceneDragDropEvent *event) final;
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) final;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event) final;
+
+private:
+    QColor m_color;
+    QPointF m_dragstartpos;
 };
 
 ColorButton::ColorButton(QGraphicsWidget *parent)
     : Plasma::ToolButton(parent)
 {
     setAcceptDrops(true);
+}
+
+void ColorButton::setColor(const QColor &color)
+{
+    m_color = color;
+}
+
+void ColorButton::resizeEvent(QGraphicsSceneResizeEvent *event)
+{
+    const QSizeF sizef = size();
+    const int minsize = qRound(qMin(sizef.width(), sizef.height())) - 4;
+    nativeWidget()->setIconSize(QSize(minsize, minsize));
+    Plasma::ToolButton::resizeEvent(event);
 }
 
 void ColorButton::dragEnterEvent(QGraphicsSceneDragDropEvent *event)
@@ -192,12 +213,21 @@ void ColorButton::dropEvent(QGraphicsSceneDragDropEvent *event)
     picker->addColor(color);
 }
 
-void ColorButton::resizeEvent(QGraphicsSceneResizeEvent *event)
+void ColorButton::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    const QSizeF sizef = size();
-    const int minsize = qRound(qMin(sizef.width(), sizef.height())) - 4;
-    nativeWidget()->setIconSize(QSize(minsize, minsize));
-    Plasma::ToolButton::resizeEvent(event);
+    m_dragstartpos = event->pos();
+    Plasma::ToolButton::mousePressEvent(event);
+}
+
+void ColorButton::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (event->buttons() & Qt::LeftButton &&
+        (event->pos() - m_dragstartpos).manhattanLength() > KGlobalSettings::dndEventDelay())
+    {
+        QDrag* drag = KColorMimeData::createDrag(m_color, nativeWidget());
+        drag->start();
+        setDown(false);
+    }
 }
 
 
@@ -415,6 +445,7 @@ void Kolourpicker::colorActionTriggered(QAction *act)
 void Kolourpicker::clearHistory(bool save)
 {
     m_configAndHistory->nativeWidget()->setIcon(ColorIcon(Qt::gray));
+    m_configAndHistory->setColor(Qt::gray);
     QHash<QColor, QAction *>::ConstIterator it = m_menus.constBegin(), itEnd = m_menus.constEnd();
     for (; it != itEnd; ++it ) {
         m_configAndHistoryMenu->removeAction(*it);
@@ -438,6 +469,7 @@ void Kolourpicker::addColor(const QColor &color, bool save)
 {
     ColorIcon colorIcon(color);
     m_configAndHistory->nativeWidget()->setIcon(colorIcon);
+    m_configAndHistory->setColor(color);
 
     QHash<QColor, QAction *>::ConstIterator it = m_menus.constFind(color);
     if (it != m_menus.constEnd()) {
