@@ -25,7 +25,6 @@
 #include <KPixmapSequence>
 #include <KPixmapSequenceWidget>
 #include <KUnitConversion>
-#include <KMessageBox>
 
 #include "weatherlocation.h"
 #include "weathervalidator.h"
@@ -47,15 +46,26 @@ public:
 
     void setSource(int index)
     {
+        // do not emit the signals when searching, valid source may not even be found
+        if (!searchLocation.isEmpty()) {
+            return;
+        }
+
         QString text = ui.locationCombo->itemData(index).toString();
         if (!text.isEmpty()) {
             source = text;
             emit q->settingsChanged();
+            emit q->configValueChanged();
         }
     }
 
     void changePressed()
     {
+        if (!validator) {
+            kWarning() << "No validator";
+            return;
+        }
+
         QString text = ui.locationCombo->currentText();
 
         if (text.isEmpty()) {
@@ -127,6 +137,9 @@ WeatherConfig::WeatherConfig(QWidget *parent)
         d->ui.visibilityComboBox->addItem(KLength::unitDescription(unit), unit);
     }
 
+    d->ui.locationMessage->hide();
+    d->ui.locationMessage->setMessageType(KMessageWidget::Error);
+
     connect(d->ui.locationCombo, SIGNAL(returnPressed()), this, SLOT(changePressed()));
     connect(d->ui.changeButton, SIGNAL(clicked()), this, SLOT(changePressed()));
 
@@ -145,8 +158,7 @@ WeatherConfig::WeatherConfig(QWidget *parent)
             this, SIGNAL(settingsChanged()));
     connect(d->ui.locationCombo, SIGNAL(currentIndexChanged(int)),
             this, SLOT(setSource(int)));
-    
-    connect(d->ui.locationCombo, SIGNAL(currentIndexChanged(int)) , this , SIGNAL(configValueChanged()));
+
     connect(d->ui.pressureComboBox, SIGNAL(currentIndexChanged(int)) , this , SIGNAL(configValueChanged()));
     connect(d->ui.updateIntervalSpinBox, SIGNAL(valueChanged(int)) , this , SIGNAL(configValueChanged()));
     connect(d->ui.temperatureComboBox, SIGNAL(currentIndexChanged(int)) , this , SIGNAL(configValueChanged()));
@@ -210,15 +222,12 @@ void WeatherConfig::Private::addSources(const QMap<QString, QString> &sources)
     busyWidget = nullptr;
     kDebug() << ui.locationCombo->count();
     if (ui.locationCombo->count() == 0) {
-        KMessageBox::information(
-            q,
-            i18n("No weather stations found for '%1'", searchLocation),
-            i18n("No weather stations found"),
-            QString::fromLatin1("WeatherConfig")
-        );
+        ui.locationMessage->setText(i18n("No weather stations found for '%1'", searchLocation));
+        ui.locationMessage->animatedShow();
     } else {
         ui.locationCombo->showPopup();
     }
+    searchLocation.clear();
 }
 
 void WeatherConfig::setUpdateInterval(int interval)

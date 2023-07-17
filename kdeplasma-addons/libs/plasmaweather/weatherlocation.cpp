@@ -28,9 +28,9 @@ class WeatherLocation::Private
 public:
     Private(WeatherLocation *location)
         : q(location),
-          locationEngine(nullptr),
-          weatherEngine(nullptr),
-          ion("wettercom")
+        locationEngine(nullptr),
+        weatherEngine(nullptr),
+        ion("wettercom")
     {
     }
 

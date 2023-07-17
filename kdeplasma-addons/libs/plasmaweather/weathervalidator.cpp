@@ -39,8 +39,8 @@ public:
 };
 
 WeatherValidator::WeatherValidator(QObject *parent)
-    : QObject(parent)
-    , d(new Private())
+    : QObject(parent),
+    d(new Private())
 {
     Weatheri18nCatalog::loadCatalog();
 }
