@@ -31,12 +31,11 @@
 
 #include <plasma/widgets/toolbutton.h>
 
-#include <config-kolourpicker.h>
-
-#if defined(KOLOURPICKER_X11_LIB)
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
-#include <QX11Info>
+#if defined(Q_WS_X11)
+#  include <X11/Xlib.h>
+#  include <X11/Xutil.h>
+#  include <fixx11h.h>
+#  include <QX11Info>
 #endif
 
 static KMenu* buildMenuForColor(const QColor &color)
@@ -71,12 +70,8 @@ static KMenu* buildMenuForColor(const QColor &color)
 
 static QColor pickColor(const QPoint &point)
 {
-#if defined(KOLOURPICKER_X11_LIB)
-/*
-  It seems the Qt4 stuff returns a null grabbed pixmap when the Display
-  has ARGB visuals.
-  Then, access directly to the screen pixels using the X API.
-*/
+#if defined(Q_WS_X11)
+    // use the X11 API directly for performance reasons
     Window root = RootWindow(QX11Info::display(), QX11Info::appScreen());
     XImage *ximg = XGetImage(QX11Info::display(), root, point.x(), point.y(), 1, 1, -1, ZPixmap);
     unsigned long xpixel = XGetPixel(ximg, 0, 0);
@@ -96,16 +91,16 @@ static QColor pickColor(const QPoint &point)
 
 class ColorIconEngine : public QIconEngine
 {
-    public:
-        ColorIconEngine(const QColor &color);
+public:
+    ColorIconEngine(const QColor &color);
 
-        virtual void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state);
-        virtual QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state);
+    virtual void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state);
+    virtual QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state);
 
-        virtual QIconEngine *clone() const;
+    virtual QIconEngine *clone() const;
 
-    public:
-        QColor m_color;
+public:
+    QColor m_color;
 };
 
 ColorIconEngine::ColorIconEngine(const QColor &color)

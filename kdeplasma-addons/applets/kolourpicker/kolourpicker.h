@@ -14,11 +14,10 @@
 
 #include <qcolor.h>
 #include <qhash.h>
-#include <QString>
-#include <QColor>
-
-#include <QMenu>
-#include <QWidget>
+#include <qstring.h>
+#include <qcolor.h>
+#include <qmenu.h>
+#include <qwidget.h>
 
 namespace Plasma
 {
