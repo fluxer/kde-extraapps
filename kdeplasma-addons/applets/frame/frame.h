@@ -29,12 +29,12 @@
 #include <QGraphicsItem>
 #include <QColor>
 #include <QTimer>
+#include <QGraphicsSceneDragDropEvent>
 
 #include <plasma/applet.h>
 #include <plasma/animator.h>
 
 class ConfigDialog;
-#include <QGraphicsSceneDragDropEvent>
 class SlideShow;
 
 namespace Plasma

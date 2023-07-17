@@ -24,43 +24,47 @@ namespace Plasma
     class ToolButton;
 } // namespace Plasma
 
+class ColorButton;
+
 class Kolourpicker : public Plasma::Applet
 {
     Q_OBJECT
-    public:
-        Kolourpicker(QObject *parent, const QVariantList &args);
-        ~Kolourpicker();
+public:
+    Kolourpicker(QObject *parent, const QVariantList &args);
+    ~Kolourpicker();
 
-    public Q_SLOTS:
-        virtual void init();
-        void configChanged();
+public Q_SLOTS:
+    virtual void init();
+    void configChanged();
 
-    protected:
-        virtual bool eventFilter(QObject *watched, QEvent *event);
-        virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-        void constraintsEvent(Plasma::Constraints constraints);
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) final;
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+    void constraintsEvent(Plasma::Constraints constraints);
 
-    private slots:
-        void grabClicked();
-        void historyClicked();
-        void colorActionTriggered(QAction *act);
-        void colorActionTriggered(const QColor& color);
-        void clearHistory(bool save = true);
-        void installFilter();
-        void setDefaultColorFormat(QAction* act);
+private slots:
+    void grabClicked();
+    void historyClicked();
+    void colorActionTriggered(QAction *act);
+    void colorActionTriggered(const QColor& color);
+    void clearHistory(bool save = true);
+    void installFilter();
+    void setDefaultColorFormat(QAction* act);
 
-    private:
-        void addColor(const QColor &color, bool save = true);
-        void saveData(KConfigGroup &cg);
-        QString toLatex(const QColor& color);
-        Plasma::ToolButton *m_grabButton;
-        Plasma::ToolButton *m_configAndHistory;
-        QMenu *m_configAndHistoryMenu;
-        QHash<QColor, QAction *> m_menus;
-        QStringList m_colors;
-        QStringList m_colors_format;
-        QWidget *m_grabWidget;
-        QString m_color_format;
+private:
+    friend ColorButton;
+
+    void addColor(const QColor &color, bool save = true);
+    void saveData(KConfigGroup &cg);
+    QString toLatex(const QColor& color);
+    Plasma::ToolButton *m_grabButton;
+    ColorButton *m_configAndHistory;
+    QMenu *m_configAndHistoryMenu;
+    QHash<QColor, QAction *> m_menus;
+    QStringList m_colors;
+    QStringList m_colors_format;
+    QWidget *m_grabWidget;
+    QString m_color_format;
 };
 
 QT_BEGIN_NAMESPACE

@@ -28,6 +28,7 @@
 #include <kicon.h>
 #include <klocale.h>
 #include <kmenu.h>
+#include <kcolormimedata.h>
 
 #include <plasma/widgets/toolbutton.h>
 
@@ -144,6 +145,52 @@ ColorIcon::ColorIcon(const QColor &color)
 {
 }
 
+class ColorButton : public Plasma::ToolButton
+{
+    Q_OBJECT
+public:
+    ColorButton(QGraphicsWidget *parent);
+
+protected:
+    void dragEnterEvent(QGraphicsSceneDragDropEvent *event) final;
+    void dragMoveEvent(QGraphicsSceneDragDropEvent *event) final;
+    void dropEvent(QGraphicsSceneDragDropEvent *event) final;
+};
+
+ColorButton::ColorButton(QGraphicsWidget *parent)
+    : Plasma::ToolButton(parent)
+{
+    setAcceptDrops(true);
+}
+
+void ColorButton::dragEnterEvent(QGraphicsSceneDragDropEvent *event)
+{
+    kDebug() << event << KColorMimeData::canDecode(event->mimeData());
+    if (KColorMimeData::canDecode(event->mimeData())) {
+        event->acceptProposedAction();
+    }
+}
+
+void ColorButton::dragMoveEvent(QGraphicsSceneDragDropEvent *event)
+{
+    if (KColorMimeData::canDecode(event->mimeData())) {
+        event->acceptProposedAction();
+    }
+}
+
+void ColorButton::dropEvent(QGraphicsSceneDragDropEvent *event)
+{
+    // just in case
+    if (!KColorMimeData::canDecode(event->mimeData())) {
+        event->ignore();
+        return;
+    }
+    const QColor color = KColorMimeData::fromMimeData(event->mimeData());
+    Kolourpicker* picker = qobject_cast<Kolourpicker*>(parentWidget());
+    kDebug() << event << color << picker;
+    picker->addColor(color);
+}
+
 Kolourpicker::Kolourpicker(QObject *parent, const QVariantList &args)
     : Plasma::Applet(parent, args),
       m_grabWidget(0)
@@ -166,7 +213,7 @@ Kolourpicker::Kolourpicker(QObject *parent, const QVariantList &args)
     m_grabButton->nativeWidget()->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     connect(m_grabButton, SIGNAL(clicked()), this, SLOT(grabClicked()));
 
-    m_configAndHistory = new Plasma::ToolButton(this);
+    m_configAndHistory = new ColorButton(this);
     m_configAndHistory->setMinimumSize(20, 20);
     mainlay->addItem(m_configAndHistory);
 
@@ -261,7 +308,7 @@ bool Kolourpicker::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == m_grabWidget && event->type() == QEvent::MouseButtonRelease) {
         m_grabWidget->removeEventFilter(this);
-	m_grabWidget->hide();
+        m_grabWidget->hide();
         m_grabWidget->releaseMouse();
         QMouseEvent *me = static_cast<QMouseEvent *>(event);
         const QColor color = pickColor(me->globalPos());
@@ -283,8 +330,8 @@ QVariant Kolourpicker::itemChange(GraphicsItemChange change, const QVariant &val
 void Kolourpicker::grabClicked()
 {
     if (m_grabWidget) {
-	m_grabWidget->show();
-	m_grabWidget->installEventFilter( this );
+        m_grabWidget->show();
+        m_grabWidget->installEventFilter( this );
         m_grabWidget->grabMouse(Qt::CrossCursor);
     }
 }
@@ -294,7 +341,7 @@ void Kolourpicker::historyClicked()
     m_configAndHistoryMenu->popup(QCursor::pos());
 }
 
-void Kolourpicker::colorActionTriggered(const QColor& color)
+void Kolourpicker::colorActionTriggered(const QColor &color)
 {
     if (!color.isValid()) {
         return;
@@ -409,3 +456,4 @@ void Kolourpicker::saveData(KConfigGroup &cg)
 }
 
 #include "moc_kolourpicker.cpp"
+#include "kolourpicker.moc"
