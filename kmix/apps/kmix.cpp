@@ -29,6 +29,7 @@
 #include <QCursor>
 #include <QString>
 #include <QMenuBar>
+#include <QProcess>
 
 // include files for KDE
 #include <KConfigSkeleton>
@@ -48,7 +49,6 @@
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <ksystemeventfilter.h>
-#include <KProcess>
 #include <KTabWidget>
 
 // KMix
@@ -1270,27 +1270,11 @@ KMixWindow::slotHWInfo()
 void
 KMixWindow::slotKdeAudioSetupExec()
 {
-  QStringList args;
-  args << "kcmshell4" << "kcmplayer";
-  forkExec(args);
-}
-
-void
-KMixWindow::forkExec(const QStringList& args)
-{
-  int pid = KProcess::startDetached(args);
-  if (pid == 0)
-    {
-      static const QString startErrorMessage(
-          i18n("The helper application is either not installed or not working."));
-      QString msg;
-      msg += startErrorMessage;
-      msg += "\n(";
-      msg += args.join(QLatin1String(" "));
-      msg += ')';
-      errorPopup(msg);
-    }
-
+  static const QString kcmshell4 = QString::fromLatin1("kcmshell4");
+  static const QStringList kcmshell4args = QStringList() << QString::fromLatin1("kcmplayer");
+  if (!QProcess::startDetached(kcmshell4, kcmshell4args)) {
+    errorPopup(i18n("The kcmshell4 application is either not installed or not working."));
+  }
 }
 
 void

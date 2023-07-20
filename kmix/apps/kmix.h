@@ -92,7 +92,6 @@ public slots:
 private:
    KMixerWidget* findKMWforTab( const QString& tabId );
 
-   void forkExec(const QStringList& args);
    void errorPopup(const QString& msg);
 
    KAction* _actionShowMenubar;
