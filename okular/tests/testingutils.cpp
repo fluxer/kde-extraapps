@@ -10,6 +10,7 @@
 #include "testingutils.h"
 #include "core/annotations.h"
 #include <qtest_kde.h>
+#include <QTextStream>
 
 namespace TestingUtils
 {
