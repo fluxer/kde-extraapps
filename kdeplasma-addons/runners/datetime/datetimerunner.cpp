@@ -81,7 +81,7 @@ QDateTime DateTimeRunner::datetime(const QString &term, bool date, QString &tzNa
 
     if (tz.compare(QLatin1String( "UTC" ), Qt::CaseInsensitive) == 0) {
         tzName = QLatin1String( "UTC" );
-        dt = KDateTime::currentDateTime(KTimeZone::utc()).dateTime();
+        dt = KDateTime::currentDateTime(KTimeZone::utc());
         return dt;
     }
 
@@ -92,18 +92,18 @@ QDateTime DateTimeRunner::datetime(const QString &term, bool date, QString &tzNa
         if (it.key().compare(tz, Qt::CaseInsensitive) == 0 ||
             it.value().name().compare(tz, Qt::CaseInsensitive) == 0) {
             tzName = it.value().name();
-            dt = KDateTime::currentDateTime(it.value()).dateTime();
+            dt = KDateTime::currentDateTime(it.value());
             break;
         } else if (!dt.isValid()) {
             if (it.key().contains(tz, Qt::CaseInsensitive) ||
                 it.value().name().contains(tz, Qt::CaseInsensitive)) {
                 tzName = it.value().name();
-                dt = KDateTime::currentDateTime(it.value()).dateTime();
+                dt = KDateTime::currentDateTime(it.value());
             } else {
                 foreach (const QByteArray &abbrev, it.value().abbreviations()) {
                     if (QString( abbrev ).contains(tz, Qt::CaseInsensitive)) {
                         tzName = abbrev;
-                        dt = KDateTime::currentDateTime(it.value()).dateTime();
+                        dt = KDateTime::currentDateTime(it.value());
                     }
                 }
             }

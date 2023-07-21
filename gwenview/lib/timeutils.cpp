@@ -89,9 +89,9 @@ struct CacheItem
             return false;
         }
 
-        KDateTime dt = KDateTime::fromString(exifvalue, "%Y:%m:%d %H:%M:%S");
+        KDateTime dt = KDateTime::fromString(exifvalue, "yyyy:MM:dd hh:mm:ss");
         if (!dt.isValid()) {
-            kWarning() << "Invalid date in exif header of" << path;
+            kWarning() << "Invalid date in exif header of" << path << exifvalue;
             return false;
         }
 

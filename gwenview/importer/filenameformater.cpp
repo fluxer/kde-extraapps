@@ -58,8 +58,8 @@ QString FileNameFormater::format(const KUrl& url, const KDateTime& dateTime)
 
     // Keep in sync with helpMap()
     Dict dict;
-    dict["date"]       = dateTime.toString("%Y-%m-%d");
-    dict["time"]       = dateTime.toString("%H-%M-%S");
+    dict["date"]       = dateTime.toString("yyyy-MM-dd");
+    dict["time"]       = dateTime.toString("hh-mm-ss");
     dict["ext"]        = info.suffix();
     dict["ext.lower"]  = info.suffix().toLower();
     dict["name"]       = info.completeBaseName();

@@ -107,12 +107,12 @@ QVariant RemoteDesktopsModel::data(const QModelIndex &index, int role) const
         case RemoteDesktopsModel::Title:
             return item.title;
         case RemoteDesktopsModel::LastConnected:
-            return QVariant(item.lastConnected.dateTime());
+            return QVariant(QDateTime(item.lastConnected));
         case RemoteDesktopsModel::VisitCount:
             return item.visits;
         case RemoteDesktopsModel::Created:
             if (item.created.isNull()) return QVariant();
-            return KGlobal::locale()->formatDateTime(item.created.toLocalZone(), KLocale::ShortDate);
+            return KGlobal::locale()->formatDateTime(item.created.toLocalTime(), KLocale::ShortDate);
         case RemoteDesktopsModel::Source:
             switch (item.source) {
             case RemoteDesktop::Bookmarks:
@@ -143,12 +143,12 @@ QVariant RemoteDesktopsModel::data(const QModelIndex &index, int role) const
             }
         case RemoteDesktopsModel::LastConnected:
             if (!item.lastConnected.isNull()) {
-                return KGlobal::locale()->formatDateTime(item.lastConnected.toLocalZone(), KLocale::FancyLongDate);
+                return KGlobal::locale()->formatDateTime(item.lastConnected.toLocalTime(), KLocale::FancyLongDate);
             }
             break; // else show default tooltip
         case RemoteDesktopsModel::Created:
             if (!item.created.isNull()) {
-                return KGlobal::locale()->formatDateTime(item.created.toLocalZone(), KLocale::FancyLongDate);
+                return KGlobal::locale()->formatDateTime(item.created.toLocalTime(), KLocale::FancyLongDate);
             }
             break; // else show default tooltip
         default:
