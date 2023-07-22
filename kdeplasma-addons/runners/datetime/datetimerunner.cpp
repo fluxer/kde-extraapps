@@ -85,25 +85,21 @@ QDateTime DateTimeRunner::datetime(const QString &term, bool date, QString &tzNa
         return dt;
     }
 
-    KTimeZones::ZoneMap zones = KSystemTimeZones::zones();
-    QMapIterator<QString, KTimeZone> it(zones);
-    while (it.hasNext()) {
-        it.next();
-        if (it.key().compare(tz, Qt::CaseInsensitive) == 0 ||
-            it.value().name().compare(tz, Qt::CaseInsensitive) == 0) {
-            tzName = it.value().name();
-            dt = KDateTime::currentDateTime(it.value());
+    foreach (const KTimeZone &zone, KSystemTimeZones::zones()) {
+        const QString zoneName = zone.name();
+        if (zoneName.compare(tz, Qt::CaseInsensitive) == 0) {
+            tzName = zoneName;
+            dt = KDateTime::currentDateTime(zone);
             break;
         } else if (!dt.isValid()) {
-            if (it.key().contains(tz, Qt::CaseInsensitive) ||
-                it.value().name().contains(tz, Qt::CaseInsensitive)) {
-                tzName = it.value().name();
-                dt = KDateTime::currentDateTime(it.value());
+            if (zoneName.contains(tz, Qt::CaseInsensitive)) {
+                tzName = zoneName;
+                dt = KDateTime::currentDateTime(zone);
             } else {
-                foreach (const QByteArray &abbrev, it.value().abbreviations()) {
+                foreach (const QByteArray &abbrev, zone.abbreviations()) {
                     if (QString( abbrev ).contains(tz, Qt::CaseInsensitive)) {
                         tzName = abbrev;
-                        dt = KDateTime::currentDateTime(it.value());
+                        dt = KDateTime::currentDateTime(zone);
                     }
                 }
             }
