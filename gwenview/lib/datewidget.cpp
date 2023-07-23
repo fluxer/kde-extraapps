@@ -22,11 +22,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include "moc_datewidget.cpp"
 
 // Qt
-#include <QtCore/qdatetime.h>
+#include <QDateTime>
 #include <QHBoxLayout>
+#include <QFrame>
 
 // KDE
-#include <KDatePicker>
+#include <KCalendarWidget>
 #include <KDebug>
 #include <KIconLoader>
 #include <KLocale>
@@ -42,23 +43,25 @@ struct DateWidgetPrivate
     DateWidget* q;
 
     QDate mDate;
-    KDatePicker* mDatePicker;
+    QFrame* mCalendarFrame;
+    KCalendarWidget* mCalendarWidget;
     StatusBarToolButton* mPreviousButton;
     StatusBarToolButton* mDateButton;
     StatusBarToolButton* mNextButton;
 
     void setupDatePicker()
     {
-        mDatePicker = new KDatePicker;
+        mCalendarFrame = new QFrame();
+        mCalendarWidget = new KCalendarWidget(mCalendarFrame);
         /* Use Qt::Tool instead of Qt::Window so that the bubble does not appear in the task bar */
-        //mDatePicker->setWindowFlags(Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
-        mDatePicker->setWindowFlags(Qt::Popup);
-        mDatePicker->hide();
-        mDatePicker->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
+        //mCalendarFrame->setWindowFlags(Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+        mCalendarFrame->setWindowFlags(Qt::Popup);
+        mCalendarFrame->hide();
+        mCalendarFrame->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-        QObject::connect(mDatePicker, SIGNAL(dateEntered(QDate)),
+        QObject::connect(mCalendarWidget, SIGNAL(clicked(QDate)),
                          q, SLOT(slotDatePickerModified(QDate)));
-        QObject::connect(mDatePicker, SIGNAL(dateSelected(QDate)),
+        QObject::connect(mCalendarWidget, SIGNAL(activated(QDate)),
                          q, SLOT(slotDatePickerModified(QDate)));
     }
 
@@ -108,7 +111,7 @@ DateWidget::DateWidget(QWidget* parent)
 
 DateWidget::~DateWidget()
 {
-    delete d->mDatePicker;
+    delete d->mCalendarFrame;
     delete d;
 }
 
@@ -119,16 +122,17 @@ QDate DateWidget::date() const
 
 void DateWidget::showDatePicker()
 {
-    d->mDatePicker->setDate(d->mDate);
-    d->mDatePicker->adjustSize();
-    const QPoint pos = mapToGlobal(QPoint(0, -d->mDatePicker->height()));
-    d->mDatePicker->move(pos);
-    d->mDatePicker->show();
+    d->mCalendarWidget->setSelectedDate(d->mDate);
+    d->mCalendarWidget->adjustSize();
+    d->mCalendarFrame->adjustSize();
+    const QPoint pos = mapToGlobal(QPoint(0, -d->mCalendarFrame->height()));
+    d->mCalendarFrame->move(pos);
+    d->mCalendarFrame->show();
 }
 
 void DateWidget::slotDatePickerModified(const QDate& date)
 {
-    d->mDatePicker->hide();
+    d->mCalendarFrame->hide();
     d->mDate = date;
     emit dateChanged(date);
 
