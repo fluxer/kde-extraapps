@@ -67,7 +67,7 @@ struct DateWidgetPrivate
 
     void updateButton()
     {
-        mDateButton->setText(KGlobal::locale()->formatDate(mDate, KLocale::ShortDate));
+        mDateButton->setText(KGlobal::locale()->formatDate(mDate));
     }
 
     void adjustDate(int delta)

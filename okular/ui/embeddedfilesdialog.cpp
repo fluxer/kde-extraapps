@@ -31,7 +31,7 @@ static const int EmbeddedFileRole = Qt::UserRole + 100;
 static QString dateToString( const QDateTime & date )
 {
 	return date.isValid()
-		? KGlobal::locale()->formatDateTime( date, KLocale::LongDate, true )
+		? KGlobal::locale()->formatDateTime( date, QLocale::NarrowFormat )
 		: i18nc( "Unknown date", "Unknown" );
 }
 

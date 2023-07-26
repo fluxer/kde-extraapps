@@ -26,7 +26,7 @@
 #include <KColorScheme>
 #include <KConfigDialog>
 #include <KDebug>
-#include <KCalendarSystem>
+#include <KLocale>
 #include <Plasma/Theme>
 
 Clock::Clock(QObject *parent, const QVariantList &args)
@@ -292,12 +292,13 @@ void Clock::changeEngineTimezone(const QString &oldTimezone, const QString &newT
 void Clock::calculateDateString()
 {
     if (!m_date.isValid() || ( m_showTimezone == false && m_showDate == false) ) {
-            return;
-        }
+        return;
+    }
 
-    QString day = KGlobal::locale()->calendar()->formatDate(m_date, KLocale::Day, KLocale::ShortNumber);
-    QString month = KGlobal::locale()->calendar()->formatDate(m_date, KLocale::Month, KLocale::ShortName);
-    QString year = KGlobal::locale()->calendar()->formatDate(m_date, KLocale::Year, KLocale::LongNumber);
+    const QLocale locale = KGlobal::locale()->toLocale();
+    QString day = QString::number(m_date.day());
+    QString month = locale.monthName(m_date.month(), QLocale::ShortFormat);
+    QString year = QString::number(m_date.year());
 
     //Copied from the digital-clock
     if (m_showDate) {
@@ -312,7 +313,7 @@ void Clock::calculateDateString()
                                 "%1 %2", day, month);
         }
         if (m_showDay) {
-            QString weekday = KGlobal::locale()->calendar()->formatDate(m_date, KLocale::DayOfWeek, KLocale::ShortName);
+            QString weekday = locale.dayName(m_date.dayOfWeek(), QLocale::ShortFormat);
             m_dateString = i18nc("@label Day of the week with date: "
                                 "%1 short day name, %2 short date",
                                 "%1, %2", weekday, m_dateString);

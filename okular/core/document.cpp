@@ -275,7 +275,7 @@ QString DocumentPrivate::localizedSize(const QSizeF &size) const
         case Generator::None:
         break;
     }
-    if (KGlobal::locale()->measureSystem() == KLocale::Imperial)
+    if (KGlobal::locale()->measureSystem() == QLocale::ImperialSystem)
     {
         return i18nc("%1 is width, %2 is height, %3 is paper size name", "%1 x %2 in (%3)", inchesWidth, inchesHeight, namePaperSize(inchesWidth, inchesHeight));
     }

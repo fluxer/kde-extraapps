@@ -213,7 +213,7 @@ void QalculateApplet::evalNoHist()
         return;
     }
 
-    m_engine->evaluate(m_input->text().replace(KGlobal::locale()->decimalSymbol(), "."));
+    m_engine->evaluate(m_input->text().replace(KGlobal::locale()->toLocale().decimalPoint(), "."));
 }
 
 void QalculateApplet::displayResult(const QString& result)

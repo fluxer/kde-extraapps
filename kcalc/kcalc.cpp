@@ -393,14 +393,15 @@ void KCalculator::setupNumericKeypad() {
     connect(pbPlus, SIGNAL(clicked()), SLOT(slotPlusclicked()));
     connect(this, SIGNAL(switchShowAccels(bool)), pbPlus, SLOT(slotSetAccelDisplayMode(bool)));
 
-    pbPeriod->setText(KGlobal::locale()->decimalSymbol());
-    pbPeriod->setShortcut(KGlobal::locale()->decimalSymbol());
+    const QString decimalPoint = KGlobal::locale()->toLocale().decimalPoint();
+    pbPeriod->setText(decimalPoint);
+    pbPeriod->setShortcut(decimalPoint);
 
     // TODO: is this needed? the above line look slike it should do the right thing?
     /*
-    if (KGlobal::locale()->decimalSymbol() == QLatin1String(".")) {
+    if (decimalPoint == QLatin1String(".")) {
         new QShortcut(Qt::Key_Comma, pbPeriod, SLOT(animateClick()));
-    } else if (KGlobal::locale()->decimalSymbol() == QLatin1String(",")) {
+    } else if (decimalPoint == QLatin1String(",")) {
         new QShortcut(Qt::Key_Period, pbPeriod, SLOT(animateClick()));
     }
     */
@@ -1408,7 +1409,7 @@ void KCalculator::slotPeriodclicked() {
 
     // i know this isn't locale friendly, should be converted to appropriate
     // value at lower levels
-    calc_display->newCharacter(KGlobal::locale()->decimalSymbol()[0]);
+    calc_display->newCharacter(KGlobal::locale()->toLocale().decimalPoint());
 }
 
 //------------------------------------------------------------------------------
@@ -2316,8 +2317,9 @@ int main(int argc, char *argv[]) {
     // force system locale to "C" internally [bug 159168]
     setlocale(LC_NUMERIC, "C");
 
-    KNumber::setGroupSeparator(KGlobal::locale()->thousandsSeparator());
-    KNumber::setDecimalSeparator(KGlobal::locale()->decimalSymbol());
+    const QLocale locale = KGlobal::locale()->toLocale();
+    KNumber::setGroupSeparator(locale.groupSeparator());
+    KNumber::setDecimalSeparator(locale.decimalPoint());
 
     KCalculator *calc = new KCalculator(0);
     app.setTopWidget(calc);

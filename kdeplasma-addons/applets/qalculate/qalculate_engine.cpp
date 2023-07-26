@@ -137,7 +137,7 @@ void QalculateEngine::evaluate(const QString& expression)
     po.negative_exponents = m_settings->negativeExponents();
     po.lower_case_e = true;
     po.base = m_settings->baseDisplay();
-    po.decimalpoint_sign = KGlobal::locale()->decimalSymbol().toLocal8Bit().data();
+    po.decimalpoint_sign = KGlobal::locale()->toLocale().decimalPoint().unicode();
 
     switch (m_settings->minExp()) {
     case 0:

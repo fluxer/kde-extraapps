@@ -38,7 +38,6 @@ I18N_NOOP("kmixctrl - kmix volume save/restore utility");
 
 int main(int argc, char *argv[])
 {
-   KLocale::setMainCatalog("kmix");
    KAboutData aboutData( "kmixctrl", 0, ki18n("KMixCtrl"),
 			 APP_VERSION, ki18n(description), KAboutData::License_GPL,
 			 ki18n("(c) 2000 by Stefan Schimanski"));
@@ -46,6 +45,8 @@ int main(int argc, char *argv[])
    aboutData.addAuthor(ki18n("Stefan Schimanski"), KLocalizedString(), "1Stein@gmx.de");
 
    KCmdLineArgs::init( argc, argv, &aboutData );
+
+   KGlobal::locale()->insertCatalog("kmix");
 
    KCmdLineOptions options;
    options.add("s");

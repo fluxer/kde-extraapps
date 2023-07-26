@@ -3637,9 +3637,10 @@ void PageView::updateZoomText()
             selIdx++;
         // we do not need to display 2-digit precision
         QString localValue( KGlobal::locale()->formatNumber( value * 100.0, 1 ) );
-        localValue.remove( KGlobal::locale()->decimalSymbol() + single_oh );
+        const QChar decimalPoint = KGlobal::locale()->toLocale().decimalPoint();
+        localValue.remove( decimalPoint + single_oh );
         // remove a trailing zero in numbers like 66.70
-        if ( localValue.right( 1 ) == QLatin1String( "0" ) && localValue.indexOf( KGlobal::locale()->decimalSymbol() ) > -1 )
+        if ( localValue.right( 1 ) == QLatin1String( "0" ) && localValue.indexOf( decimalPoint ) > -1 )
             localValue.chop( 1 );
         translated << QString( "%1%" ).arg( localValue );
     }

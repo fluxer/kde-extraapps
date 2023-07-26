@@ -141,7 +141,7 @@ private:
         KFileItem fileItem(KFileItem::Unknown, KFileItem::Unknown, mUrl);
         setData(QVariant(fileItem), KDirModel::FileItemRole);
 
-        QString date = KGlobal::locale()->formatDateTime(mDateTime, KLocale::FancyLongDate);
+        QString date = KGlobal::locale()->formatDateTime(mDateTime, QLocale::NarrowFormat);
         setData(QVariant(i18n("Last visited: %1", date)), Qt::ToolTipRole);
     }
 

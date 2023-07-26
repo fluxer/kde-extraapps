@@ -301,7 +301,7 @@ void WeatherStation::setToolTip(const QString& place)
     emit weatherLabelChanged(place.toUpper());
 
     QString t = KGlobal::locale()->formatDateTime(QDateTime::currentDateTime(),
-                                                  KLocale::FancyLongDate);
+                                                  QLocale::NarrowFormat);
     Plasma::ToolTipContent ttc(place, i18n("Last updated: %1", t));
     Plasma::ToolTipManager::self()->setContent(this, ttc);
 }

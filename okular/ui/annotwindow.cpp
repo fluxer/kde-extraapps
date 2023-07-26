@@ -157,7 +157,7 @@ public:
 
     void setDate( const QDateTime& dt )
     {
-        dateLabel->setText( KGlobal::locale()->formatDateTime( dt, KLocale::ShortDate, true ) + ' ' );
+        dateLabel->setText( KGlobal::locale()->formatDateTime( dt, QLocale::NarrowFormat ) + ' ' );
     }
 
     void setAuthor( const QString& author )

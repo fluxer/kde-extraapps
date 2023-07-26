@@ -275,7 +275,7 @@ void WeatherPopupApplet::configChanged()
 
     KConfigGroup cfg = config();
 
-    if (KGlobal::locale()->measureSystem() == KLocale::Metric) {
+    if (KGlobal::locale()->measureSystem() == QLocale::MetricSystem) {
         d->temperatureUnit = cfg.readEntry("temperatureUnit", "C");
         d->speedUnit = cfg.readEntry("speedUnit", "m/s");
         d->pressureUnit = cfg.readEntry("pressureUnit", "hPa");

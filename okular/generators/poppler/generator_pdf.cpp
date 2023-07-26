@@ -49,7 +49,7 @@ static QString okularString(const poppler::ustring &popplerstring)
 static QString okularTime(const popplertimetype &popplertime)
 {
     const KDateTime kdatetime(QDateTime::fromTime_t(popplertime));
-    return KGlobal::locale()->formatDateTime(kdatetime, KLocale::FancyLongDate);
+    return KGlobal::locale()->formatDateTime(kdatetime, QLocale::NarrowFormat);
 }
 
 static QDateTime okularDateTime(const popplertimetype &popplertime)

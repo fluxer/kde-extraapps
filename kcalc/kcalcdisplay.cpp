@@ -287,7 +287,7 @@ void KCalcDisplay::slotPaste(bool bClipboard) {
     tmp_str = tmp_str.trimmed();
     
     if (groupdigits_) {
-        tmp_str.remove(KGlobal::locale()->thousandsSeparator());
+        tmp_str.remove(KGlobal::locale()->toLocale().groupSeparator());
     }
     
     tmp_str = tmp_str.toLower();
@@ -495,7 +495,7 @@ bool KCalcDisplay::setAmount(const KNumber &new_amount) {
             
             display_str = QString::number(tmp_workaround, num_base_).toUpper();
             if (neg) {
-                display_str.prepend(KGlobal::locale()->negativeSign());
+                display_str.prepend(KGlobal::locale()->toLocale().negativeSign());
             }
         }
     } else {
@@ -531,7 +531,7 @@ void KCalcDisplay::setText(const QString &string)
                 text_.chop(1);
                 // Note: rounding happened already above!
                 text_ = KGlobal::locale()->formatNumber(text_, false, 0);
-                text_.append(KGlobal::locale()->decimalSymbol());
+                text_.append(KGlobal::locale()->toLocale().decimalPoint());
             } else {
                 // Note: rounding happened already above!
                 text_ = KGlobal::locale()->formatNumber(text_, false, 0);
@@ -712,7 +712,7 @@ void KCalcDisplay::updateDisplay() {
 // Desc: 
 //------------------------------------------------------------------------------
 void KCalcDisplay::newCharacter(const QChar new_char) {
-
+    const QChar decimalPoint = KGlobal::locale()->toLocale().decimalPoint();
     // test if character is valid
     switch (new_char.toLatin1()) {
     case 'e':
@@ -766,7 +766,7 @@ void KCalcDisplay::newCharacter(const QChar new_char) {
         break;
 
     default:
-        if(new_char == KGlobal::locale()->decimalSymbol()[0]) {
+        if(new_char == decimalPoint) {
             // Period can be set only once and only in decimal
             // mode, also not in EE-mode
             if (num_base_ != NB_DECIMAL || period_ || eestate_) {
@@ -787,7 +787,7 @@ void KCalcDisplay::newCharacter(const QChar new_char) {
     // change exponent or mantissa
     if (eestate_) {
         // ignore '.' before 'e'. turn e.g. '123.e' into '123e'
-        if (new_char == QLatin1Char('e') && str_int_.endsWith(KGlobal::locale()->decimalSymbol())) {
+        if (new_char == QLatin1Char('e') && str_int_.endsWith(decimalPoint)) {
             str_int_.chop(1);
             period_ = false;
         }
@@ -807,7 +807,7 @@ void KCalcDisplay::newCharacter(const QChar new_char) {
                 str_int_.append(new_char);
                 break;
             default:
-                if(new_char == KGlobal::locale()->decimalSymbol()[0]) {
+                if(new_char == decimalPoint) {
                     // display "0." not just "."
                     str_int_.append(new_char);
                 } else {
@@ -844,7 +844,7 @@ void KCalcDisplay::deleteLastDigit() {
     } else {
         const int length = str_int_.length();
         if (length > 1) {
-            if (str_int_[length-1] == KGlobal::locale()->decimalSymbol()[0]) {
+            if (str_int_[length-1] == KGlobal::locale()->toLocale().decimalPoint()) {
                 period_ = false;
             }
             str_int_.chop(1);
