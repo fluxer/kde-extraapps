@@ -30,14 +30,12 @@
 #include <QShortcut>
 #include <QMenu>
 #include <QDesktopWidget>
-#include <QVarLengthArray>
 #include <QDrag>
 #include <QPainter>
-#include <QtGui/qevent.h>
+#include <QResizeEvent>
 
 #include <klocale.h>
-
-#include <KDebug>
+#include <kdebug.h>
 #include <kglobal.h>
 #include <kicon.h>
 #include <kimageio.h>
@@ -56,7 +54,6 @@
 #include <kstandarddirs.h>
 #include <kstartupinfo.h>
 #include <kvbox.h>
-#include <qdebug.h>
 
 #include "regiongrabber.h"
 #include "freeregiongrabber.h"
@@ -65,10 +62,12 @@
 #include "ui_ksnapshotwidget.h"
 
 #ifdef HAVE_X11_EXTENSIONS_XFIXES_H
-#include <X11/extensions/Xfixes.h>
-#include <X11/Xatom.h>
-#include <QX11Info>
+#  include <X11/extensions/Xfixes.h>
+#  include <X11/Xatom.h>
+#  include <QX11Info>
 #endif
+
+#include <vector>
 
 class KSnapshotWidget : public QWidget, public Ui::KSnapshotWidget
 {
@@ -697,7 +696,7 @@ void KSnapshot::grabPointerImage(int offsetx, int offsety)
     //Annoyingly, xfixes specifies the data to be 32bit, but places it in an unsigned long *
     //which can be 64 bit.  So we need to iterate over a 64bit structure to put it in a 32bit
     //structure.
-    QVarLengthArray< quint32 > pixels( xcursorimg->width * xcursorimg->height );
+    std::vector< quint32 > pixels( xcursorimg->width * xcursorimg->height );
     for (int i = 0; i < xcursorimg->width * xcursorimg->height; ++i)
         pixels[i] = xcursorimg->pixels[i] & 0xffffffff;
 

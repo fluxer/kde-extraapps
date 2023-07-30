@@ -19,9 +19,9 @@
 #include "page_p.h"
 
 #include <cstring>
+#include <vector>
 
 #include <QtCore/qalgorithms.h>
-#include <QVarLengthArray>
 
 using namespace Okular;
 
@@ -1563,8 +1563,8 @@ static RegionTextList XYCutForBoundingBoxes(const QList<WordWithCharacters> &wor
         int size_proj_y = node.area().height();
         int size_proj_x = node.area().width();
         //dynamic memory allocation
-        QVarLengthArray<int> proj_on_xaxis(size_proj_x);
-        QVarLengthArray<int> proj_on_yaxis(size_proj_y);
+        std::vector<int> proj_on_xaxis(size_proj_x);
+        std::vector<int> proj_on_yaxis(size_proj_y);
 
         for( int j = 0 ; j < size_proj_y ; ++j ) proj_on_yaxis[j] = 0;
         for( int j = 0 ; j < size_proj_x ; ++j ) proj_on_xaxis[j] = 0;

@@ -14,7 +14,6 @@
 #include <qpainter.h>
 #include <qpalette.h>
 #include <qpixmap.h>
-#include <qvarlengtharray.h>
 #include <kiconloader.h>
 #include <kdebug.h>
 #include <QApplication>
@@ -22,6 +21,7 @@
 
 // system includes
 #include <math.h>
+#include <vector>
 
 // local includes
 #include "core/area.h"
@@ -825,7 +825,7 @@ void PagePainter::scalePixmapOnImage ( QImage & dest, const QPixmap * src,
     unsigned int * srcData = (unsigned int *)srcImage.bits();
 
     // precalc the x correspondancy conversion in a lookup table
-    QVarLengthArray<unsigned int> xOffset( destWidth );
+    std::vector<unsigned int> xOffset( destWidth );
     for ( int x = 0; x < destWidth; x++ )
         xOffset[ x ] = ((x + destLeft) * srcWidth) / scaledWidth;
 
