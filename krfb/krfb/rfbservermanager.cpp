@@ -23,7 +23,6 @@
 #include "framebuffer.h"
 #include "framebuffermanager.h"
 #include "sockethelpers.h"
-#include "krfbconfig.h"
 #include <QtCore/QTimer>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
