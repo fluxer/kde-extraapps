@@ -13,7 +13,6 @@
 #include <qpainter.h>
 #include <kaboutdata.h>
 #include <klocale.h>
-#include <kdatetime.h>
 #include <kdebug.h>
 #include <kglobal.h>
 
@@ -48,8 +47,12 @@ static QString okularString(const poppler::ustring &popplerstring)
 
 static QString okularTime(const popplertimetype &popplertime)
 {
-    const KDateTime kdatetime(QDateTime::fromTime_t(popplertime));
-    return KGlobal::locale()->formatDateTime(kdatetime, QLocale::NarrowFormat);
+    if (popplertime <= 0) {
+        // -1, i.e. not set
+        return QString();
+    }
+    const QDateTime qdatetime(QDateTime::fromTime_t(popplertime));
+    return KGlobal::locale()->formatDateTime(qdatetime, QLocale::NarrowFormat);
 }
 
 static QDateTime okularDateTime(const popplertimetype &popplertime)
