@@ -12,6 +12,7 @@ kde4_add_plugin(pdfthumbnail ${pdfthumbnail_PART_SRCS})
 target_link_libraries(pdfthumbnail
     KDE4::kdecore
     KDE4::kio
+    KDE4::karchive
     ${QT_QTGUI_LIBRARY}
     ${POPPLER_LIBRARIES}
 )

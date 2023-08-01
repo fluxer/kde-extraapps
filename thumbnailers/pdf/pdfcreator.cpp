@@ -24,6 +24,7 @@
 #include <QX11Info>
 #include <QImage>
 #include <klocale.h>
+#include <kdecompressor.h>
 #include <kdebug.h>
 #include <kdemacros.h>
 
@@ -53,8 +54,28 @@ PDFCreator::PDFCreator()
 
 bool PDFCreator::create(const QString &path, int, int, QImage &img)
 {
-    const QByteArray pathbytes = QFile::encodeName(path);
-    poppler::document *popplerdocument = poppler::document::load_from_file(std::string(pathbytes.constData(), pathbytes.size()));
+    poppler::document *popplerdocument = nullptr;
+    // NOTE: data has be kept for as long as the document is open
+    QByteArray popplerbytes;
+    KDecompressor::KDecompressorType pathtype = KDecompressor::typeForFile(path);
+    if (pathtype != KDecompressor::TypeUnknown) {
+        QFile pathfile(path);
+        if (!pathfile.open(QFile::ReadOnly)) {
+            kWarning() << "Could not open" << path;
+            return false;
+        }
+        KDecompressor kdecompressor;
+        kdecompressor.setType(pathtype);
+        if (!kdecompressor.process(pathfile.readAll())) {
+            kWarning() << "Could not decompress" << path;
+            return false;
+        }
+        popplerbytes = kdecompressor.result();
+        popplerdocument = poppler::document::load_from_raw_data(popplerbytes.constData(), popplerbytes.size());
+    } else {
+        const QByteArray pathbytes = QFile::encodeName(path);
+        popplerdocument = poppler::document::load_from_file(std::string(pathbytes.constData(), pathbytes.size()));
+    }
     if (!popplerdocument) {
         kWarning() << "Could not open" << path;
         return false;
