@@ -18,7 +18,8 @@
  ***************************************************************************/
 
 #include "customtimeeditor.h"
-#include <QtGui/qdatetimeedit.h>
+
+#include <ktimeedit.h>
 #include <klineedit.h>
 #include <klocale.h>
 
@@ -27,7 +28,7 @@ const QString CustomTimeEditor::TIME_FORMAT("hh:mm:ss");
 CustomTimeEditor::CustomTimeEditor()
     : QObject()
 {
-    timeEdit=new QTimeEdit();
+    timeEdit=new KTimeEdit();
     editor=new KLineEdit();
     customEditor=new KEditListWidget::CustomEditor(timeEdit, editor);
     connect(timeEdit, SIGNAL(timeChanged(QTime)), this, SLOT(setEdit(QTime)));

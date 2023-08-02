@@ -21,13 +21,10 @@
 #define CUSTOMTIMEEDITOR_H
 
 #include <keditlistwidget.h>
-#include <QtCore/qdatetime.h>
 
-#include <QTimeEdit>
+class KTimeEdit;
 class KLineEdit;
-/**
-	@author
-*/
+
 class CustomTimeEditor : public QObject
 {
 Q_OBJECT
@@ -41,7 +38,7 @@ public:
     static QString fromLocalizedTimer(const QString &timer);
     static const QString TIME_FORMAT;
 private:
-    QTimeEdit* timeEdit;
+    KTimeEdit* timeEdit;
     KLineEdit* editor;
     KEditListWidget::CustomEditor *customEditor;
 protected slots:

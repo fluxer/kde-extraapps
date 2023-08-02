@@ -39,10 +39,7 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 
     imageUi.addDirButton->setIcon(KIcon("list-add"));
     imageUi.removeDirButton->setIcon(KIcon("list-remove"));
-    imageUi.slideShowDelay->setTimeRange(
-        QTime(0, 0, 1), // minimum to 1 second
-        imageUi.slideShowDelay->maximumTime()
-    );
+    imageUi.slideShowDelay->setMinimumTime(QTime(0, 0, 1)); // minimum to 1 second
 
     QString monitorPath = KStandardDirs::locate("data",  "kcontrol/pics/monitor.png");
     // Size of monitor image: 200x186

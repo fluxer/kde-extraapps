@@ -136,7 +136,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QTimeEdit" name="autoUpdateTime">
+          <widget class="KTimeEdit" name="autoUpdateTime">
            <property name="toolTip">
             <string>Updates the picture from the source in the given time.
 Useful if you want a live cam or weather data to be up to date.</string>
@@ -293,17 +293,7 @@ Useful if you want a live cam or weather data to be up to date.</string>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QTimeEdit" name="slideShowDelay">
-           <property name="dateTime">
-            <datetime>
-             <hour>0</hour>
-             <minute>0</minute>
-             <second>0</second>
-             <year>2000</year>
-             <month>1</month>
-             <day>1</day>
-            </datetime>
-           </property>
+          <widget class="KTimeEdit" name="slideShowDelay">
            <property name="time">
             <time>
              <hour>0</hour>
@@ -385,6 +375,11 @@ Useful if you want a live cam or weather data to be up to date.</string>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KTimeEdit</class>
+   <extends>QWidget</extends>
+   <header>ktimeedit.h</header>
   </customwidget>
  </customwidgets>
  <connections>
