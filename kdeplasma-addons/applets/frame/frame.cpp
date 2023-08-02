@@ -585,7 +585,7 @@ void Frame::createConfigurationInterface(KConfigDialog *parent)
     m_configDialog->imageUi.removeDirButton->setEnabled(!m_slideShowPaths.isEmpty());
     m_configDialog->imageUi.slideShowDelay->setTime(QTime(m_slideshowTime / 3600, (m_slideshowTime / 60) % 60, m_slideshowTime % 60));
     m_configDialog->previewPicture(m_mySlideShow->image());
-    m_configDialog->imageUi.autoUpdateTime->setTime(QTime(m_autoUpdateIntervall / 3600, (m_autoUpdateIntervall / 60) % 60));
+    m_configDialog->imageUi.autoUpdateTime->setTime(QTime(m_autoUpdateIntervall / 3600, (m_autoUpdateIntervall / 60) % 60, m_autoUpdateIntervall % 60));
     
     connect(m_configDialog->imageUi.slideShowDelay, SIGNAL(timeChanged(QTime)), 
                    parent, SLOT(settingsModified()));
@@ -663,7 +663,7 @@ void Frame::configAccepted()
     m_autoUpdateTimer->stop();
 
     QTime AutoUpdateTimer = m_configDialog->imageUi.autoUpdateTime->time();
-    m_autoUpdateIntervall = AutoUpdateTimer.minute() * 60 + AutoUpdateTimer.hour() * 3600;
+    m_autoUpdateIntervall = AutoUpdateTimer.second() + AutoUpdateTimer.minute() * 60 + AutoUpdateTimer.hour() * 3600;
     cg.writeEntry("autoupdate time", m_autoUpdateIntervall);
 
     QString potdProvider = m_configDialog->imageUi.potdComboBox->itemData(m_configDialog->imageUi.potdComboBox->currentIndex()).toString();

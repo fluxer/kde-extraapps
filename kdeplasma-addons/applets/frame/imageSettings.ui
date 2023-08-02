@@ -141,12 +141,6 @@
             <string>Updates the picture from the source in the given time.
 Useful if you want a live cam or weather data to be up to date.</string>
            </property>
-           <property name="specialValueText">
-            <string>never</string>
-           </property>
-           <property name="displayFormat">
-            <string>hh'h' mm'min'</string>
-           </property>
           </widget>
          </item>
          <item>
@@ -309,12 +303,6 @@ Useful if you want a live cam or weather data to be up to date.</string>
              <month>1</month>
              <day>1</day>
             </datetime>
-           </property>
-           <property name="currentSection">
-            <enum>QDateTimeEdit::HourSection</enum>
-           </property>
-           <property name="displayFormat">
-            <string comment="(qtdt-format) Please do not change the quotes (') and translate only the content of the quotes.">hh 'Hours' mm 'Mins' ss 'Secs'</string>
            </property>
            <property name="time">
             <time>

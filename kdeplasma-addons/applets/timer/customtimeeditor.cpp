@@ -28,7 +28,6 @@ CustomTimeEditor::CustomTimeEditor()
     : QObject()
 {
     timeEdit=new QTimeEdit();
-    timeEdit->setDisplayFormat(toLocalizedTimer(TIME_FORMAT));
     editor=new KLineEdit();
     customEditor=new KEditListWidget::CustomEditor(timeEdit, editor);
     connect(timeEdit, SIGNAL(timeChanged(QTime)), this, SLOT(setEdit(QTime)));

@@ -23,4 +23,4 @@ install(FILES plasma-applet-timer.desktop
         DESTINATION ${KDE4_SERVICES_INSTALL_DIR})
 
 install(FILES timer.svgz
-	DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
+        DESTINATION ${KDE4_DATA_INSTALL_DIR}/desktoptheme/default/widgets/)
