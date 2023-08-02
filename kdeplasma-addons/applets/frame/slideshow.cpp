@@ -26,13 +26,20 @@
 #include <KDebug>
 #include <KRandom>
 #include <KImageIO>
+#include <KMimeType>
 
 #include "picture.h"
 
 SlideShow::SlideShow(QObject *parent)
         : QObject(parent)
 {
-    m_filters << KImageIO::pattern(KImageIO::Reading);
+    foreach(const QString &mimeType, KImageIO::mimeTypes(KImageIO::Reading)) {
+        KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
+        if (mime) {
+            m_filters << mime->patterns();
+        }
+    }
+
     m_slideNumber = 0;
     m_useRandom = false;
 
