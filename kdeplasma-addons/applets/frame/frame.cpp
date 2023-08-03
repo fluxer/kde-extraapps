@@ -583,6 +583,7 @@ void Frame::createConfigurationInterface(KConfigDialog *parent)
     m_configDialog->imageUi.slideShowDirList->clear();
     m_configDialog->imageUi.slideShowDirList->addItems(m_slideShowPaths);
     m_configDialog->imageUi.removeDirButton->setEnabled(!m_slideShowPaths.isEmpty());
+    m_configDialog->imageUi.slideShowDelay->setMinimumTime(QTime(0, 0, 1));
     m_configDialog->imageUi.slideShowDelay->setTime(QTime(m_slideshowTime / 3600, (m_slideshowTime / 60) % 60, m_slideshowTime % 60));
     m_configDialog->previewPicture(m_mySlideShow->image());
     m_configDialog->imageUi.autoUpdateTime->setTime(QTime(m_autoUpdateIntervall / 3600, (m_autoUpdateIntervall / 60) % 60, m_autoUpdateIntervall % 60));
