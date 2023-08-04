@@ -73,7 +73,7 @@ public:
         if (ch.isNumber()) {
             return true;
         }
-        if (QString(QLatin1String( ".,-+" )).contains( ch )) {
+        if (QString(QLatin1String(".,-+" )).contains(ch)) {
             return true;
         }
         return false;
@@ -121,11 +121,12 @@ ConverterRunner::ConverterRunner(QObject* parent, const QVariantList &args)
     : Plasma::AbstractRunner(parent, args)
 {
     Q_UNUSED(args)
-    setObjectName(QLatin1String( "Converter" ));
+    setObjectName(QLatin1String("Converter"));
 
-    m_separators << QString( CONVERSION_CHAR );
+#warning TODO: untranslated keywords match
+    m_separators << QString(CONVERSION_CHAR);
     m_separators << i18nc("list of words that can be used as amount of 'unit1' [in|to|as] 'unit2'",
-                          "in;to;as").split(QLatin1Char( ';' ));
+                          "in;to;as").split(QLatin1Char(';'));
 
     //can not ignore commands: we have things like m4
     setIgnoredTypes(Plasma::RunnerContext::Directory | Plasma::RunnerContext::File |

@@ -30,8 +30,10 @@
 
 #include <Plasma/Applet>
 
-static const QString dateWord = i18nc("Note this is a KRunner keyword", "date");
-static const QString timeWord = i18nc("Note this is a KRunner keyword", "time");
+static const char* dateWordChars = "date";
+static const QString dateWord = i18nc("Note this is a KRunner keyword", dateWordChars);
+static const char* timeWordChars = "time";
+static const QString timeWord = i18nc("Note this is a KRunner keyword", timeWordChars);
 
 DateTimeRunner::DateTimeRunner(QObject *parent, const QVariantList &args)
     : Plasma::AbstractRunner(parent, args)
@@ -51,22 +53,27 @@ DateTimeRunner::~DateTimeRunner()
 void DateTimeRunner::match(Plasma::RunnerContext &context)
 {
     const QString term = context.query();
-    if (term.compare(dateWord, Qt::CaseInsensitive) == 0) {
+    if (term.compare(dateWord, Qt::CaseInsensitive) == 0 ||
+        term.compare(QLatin1String(dateWordChars), Qt::CaseInsensitive) == 0) {
         const QString date = KGlobal::locale()->formatDate(QDate::currentDate());
         addMatch(i18n("Today's date is %1", date), date, context);
-    } else if (term.startsWith(dateWord + QLatin1Char( ' ' ), Qt::CaseInsensitive)) {
+    } else if (term.startsWith(dateWord + QLatin1Char(' '), Qt::CaseInsensitive)) {
         QString tzName;
-        QDateTime dt = datetime(term, true, tzName);
+        const QString tz = term.right(term.length() - term.indexOf(QLatin1Char(' ')) - 1);
+        QDateTime dt = datetime(tz, tzName);
         if (dt.isValid()) {
             const QString date = KGlobal::locale()->formatDate(dt.date());
             addMatch(i18n("The date in %1 is %2", tzName, date), date, context);
         }
-    } else if (term.compare(timeWord, Qt::CaseInsensitive) == 0) {
+    } else if (term.compare(timeWord, Qt::CaseInsensitive) == 0 ||
+        term.compare(QLatin1String(timeWordChars), Qt::CaseInsensitive) == 0) {
         const QString time = KGlobal::locale()->formatTime(QTime::currentTime());
         addMatch(i18n("The current time is %1", time), time, context);
-    } else if (term.startsWith(timeWord + QLatin1Char( ' ' ), Qt::CaseInsensitive)) {
+    } else if (term.startsWith(timeWord + QLatin1Char(' '), Qt::CaseInsensitive) ||
+        term.startsWith(QLatin1String(timeWordChars) + QLatin1Char(' '), Qt::CaseInsensitive)) {
         QString tzName;
-        QDateTime dt = datetime(term, true, tzName);
+        const QString tz = term.right(term.length() - term.indexOf(QLatin1Char(' ')) - 1);
+        QDateTime dt = datetime(tz, tzName);
         if (dt.isValid()) {
             const QString time = KGlobal::locale()->formatTime(dt.time());
             addMatch(i18n("The current time in %1 is %2", tzName, time), time, context);
@@ -74,12 +81,11 @@ void DateTimeRunner::match(Plasma::RunnerContext &context)
     }
 }
 
-QDateTime DateTimeRunner::datetime(const QString &term, bool date, QString &tzName)
+QDateTime DateTimeRunner::datetime(const QString &tz, QString &tzName)
 {
     QDateTime dt;
-    const QString tz = term.right(term.length() - (date ? dateWord.length() : timeWord.length()) - 1);
 
-    if (tz.compare(QLatin1String( "UTC" ), Qt::CaseInsensitive) == 0) {
+    if (tz.compare(QLatin1String("UTC"), Qt::CaseInsensitive) == 0) {
         tzName = QLatin1String( "UTC" );
         dt = KDateTime::currentDateTime(KTimeZone::utc());
         return dt;
@@ -97,7 +103,7 @@ QDateTime DateTimeRunner::datetime(const QString &term, bool date, QString &tzNa
                 dt = KDateTime::currentDateTime(zone);
             } else {
                 foreach (const QByteArray &abbrev, zone.abbreviations()) {
-                    if (QString( abbrev ).contains(tz, Qt::CaseInsensitive)) {
+                    if (QString(abbrev).contains(tz, Qt::CaseInsensitive)) {
                         tzName = abbrev;
                         dt = KDateTime::currentDateTime(zone);
                     }
@@ -115,7 +121,7 @@ void DateTimeRunner::addMatch(const QString &text, const QString &clipboardText,
     match.setText(text);
     match.setData(clipboardText);
     match.setType(Plasma::QueryMatch::InformationalMatch);
-    match.setIcon(KIcon(QLatin1String( "clock" )));
+    match.setIcon(KIcon(QLatin1String("clock")));
 
     QList<Plasma::QueryMatch> matches;
     matches << match;

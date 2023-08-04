@@ -41,7 +41,7 @@ KonsoleSessions::KonsoleSessions(QObject *parent, const QVariantList& args)
     loadSessions();
 
     KDirWatch *historyWatch = new KDirWatch(this);
-    const QStringList sessiondirs = KGlobal::dirs()->findDirs("data", QLatin1String( "konsole/" ));
+    const QStringList sessiondirs = KGlobal::dirs()->findDirs("data", QLatin1String("konsole/"));
     foreach (const QString &dir, sessiondirs) {
         historyWatch->addDir(dir);
     }
@@ -49,10 +49,10 @@ KonsoleSessions::KonsoleSessions(QObject *parent, const QVariantList& args)
     connect(historyWatch, SIGNAL(dirty(QString)), this,SLOT(loadSessions()));
 
     Plasma::RunnerSyntax s(QLatin1String( ":q:" ), i18n("Finds Konsole sessions matching :q:."));
-    s.addExampleQuery(QLatin1String( "konsole :q:" ));
+    s.addExampleQuery(QLatin1String("konsole :q:"));
     addSyntax(s);
 
-    addSyntax(Plasma::RunnerSyntax(QLatin1String( "konsole" ), i18n("Lists all the Konsole sessions in your account.")));
+    addSyntax(Plasma::RunnerSyntax(QLatin1String("konsole"), i18n("Lists all the Konsole sessions in your account.")));
 }
 
 KonsoleSessions::~KonsoleSessions()
@@ -61,7 +61,9 @@ KonsoleSessions::~KonsoleSessions()
 
 void KonsoleSessions::loadSessions()
 {
-    const QStringList list = KGlobal::dirs()->findAllResources("data", QLatin1String( "konsole/*.profile" ), KStandardDirs::NoDuplicates);
+    const QStringList list = KGlobal::dirs()->findAllResources(
+        "data", QLatin1String("konsole/*.profile"), KStandardDirs::NoDuplicates
+    );
     QStringList::ConstIterator end = list.constEnd();
     for (QStringList::ConstIterator it = list.constBegin(); it != end; ++it) {
         QFileInfo info(*it);
@@ -94,7 +96,7 @@ void KonsoleSessions::match(Plasma::RunnerContext &context)
         return;
     }
 
-    if (term.compare(QLatin1String( "konsole" ), Qt::CaseInsensitive) == 0) {
+    if (term.compare(QLatin1String("konsole"), Qt::CaseInsensitive) == 0) {
         QHashIterator<QString, QString> i(m_sessions);
         while (i.hasNext()) {
             i.next();
@@ -103,7 +105,7 @@ void KonsoleSessions::match(Plasma::RunnerContext &context)
             match.setRelevance(1.0);
             match.setIcon(m_icon);
             match.setData(i.key());
-            match.setText(QLatin1String( "Konsole: " ) + i.value());
+            match.setText(QLatin1String("Konsole: ") + i.value());
             context.addMatch(term, match);
         }
     } else {
@@ -123,7 +125,7 @@ void KonsoleSessions::match(Plasma::RunnerContext &context)
                 match.setType(Plasma::QueryMatch::PossibleMatch);
                 match.setIcon(m_icon);
                 match.setData(i.key());
-                match.setText(QLatin1String( "Konsole: " ) + i.value());
+                match.setText(QLatin1String("Konsole: ") + i.value());
 
                 if (i.value().compare(term, Qt::CaseInsensitive) == 0) {
                     match.setRelevance(1.0);
@@ -148,7 +150,7 @@ void KonsoleSessions::run(const Plasma::RunnerContext &context, const Plasma::Qu
         args << QLatin1String( "--profile" );
         args << session;
         kDebug() << "=== START: konsole" << args;
-        KToolInvocation::kdeinitExec(QLatin1String( "konsole" ), args);
+        KToolInvocation::kdeinitExec(QLatin1String("konsole"), args);
     }
 }
 

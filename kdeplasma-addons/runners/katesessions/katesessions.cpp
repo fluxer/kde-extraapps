@@ -83,7 +83,9 @@ void KateSessions::loadSessions()
     // Switch kate session: -u
     // Should we add a match for this option or would that clutter the matches too much?
     QStringList sessions = QStringList();
-    const QStringList list = KGlobal::dirs()->findAllResources( "data", QLatin1String("kate/sessions/*.katesession"), KStandardDirs::NoDuplicates );
+    const QStringList list = KGlobal::dirs()->findAllResources(
+        "data", QLatin1String("kate/sessions/*.katesession"), KStandardDirs::NoDuplicates
+    );
     KUrl url;
     for (QStringList::ConstIterator it = list.constBegin(); it != list.constEnd(); ++it)
     {
@@ -168,7 +170,7 @@ void KateSessions::run(const Plasma::RunnerContext &context, const Plasma::Query
 
     if (!session.isEmpty()) {
         QStringList args;
-       	args << QLatin1String("--start") << session << QLatin1String("-n");
+        args << QLatin1String("--start") << session << QLatin1String("-n");
         KToolInvocation::kdeinitExec(QLatin1String("kate"), args);
     }
 }

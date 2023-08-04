@@ -201,6 +201,7 @@ void AudioPlayerControlRunner::run(const Plasma::RunnerContext &context, const P
 
 void AudioPlayerControlRunner::reloadConfiguration()
 {
+#warning TODO: untranslated keywords match
     KConfigGroup grp = config();
     m_player = grp.readEntry(CONFIG_PLAYER, "vlc");
     m_comPlay = grp.readEntry(CONFIG_PLAY, i18n("play"));

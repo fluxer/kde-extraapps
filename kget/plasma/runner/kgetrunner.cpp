@@ -76,9 +76,14 @@ void KGetRunner::run(const Plasma::RunnerContext& /*context*/, const Plasma::Que
     //  KGet is not running. Ask DBus to start it.
     connection->startService(KGET_DBUS_SERVICE);
     if(connection->lastError().type() != QDBusError::NoError) {
-        KNotification::event(KNotification::Error,
-                i18n("<p>KGet Runner could not communicate with KGet.</p><p style=\"font-size: small;\">Response from DBus:<br/>%1</p>", connection->lastError().message()),
-                KIcon("dialog-warning").pixmap(KIconLoader::SizeSmall)/*, 0, KNotification::Persistent*/);
+        KNotification::event(
+            KNotification::Error,
+            i18n(
+                "<p>KGet Runner could not communicate with KGet.</p><p style=\"font-size: small;\">Response from DBus:<br/>%1</p>",
+                connection->lastError().message()
+            ),
+            KIcon("dialog-warning").pixmap(KIconLoader::SizeSmall)
+        );
         return;
     }
     

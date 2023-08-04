@@ -30,8 +30,8 @@ SpellCheckRunner::SpellCheckRunner(QObject* parent, const QVariantList &args)
     : Plasma::AbstractRunner(parent, args)
 {
     Q_UNUSED(args)
-    KGlobal::locale()->insertCatalog(QLatin1String( "krunner_spellcheckrunner" ));
-    setObjectName(QLatin1String( "Spell Checker" ));
+    KGlobal::locale()->insertCatalog(QLatin1String("krunner_spellcheckrunner"));
+    setObjectName(QLatin1String("Spell Checker"));
     setIgnoredTypes(Plasma::RunnerContext::FileSystem | Plasma::RunnerContext::NetworkLocation);
     setSpeed(AbstractRunner::SlowSpeed);
 }
@@ -106,6 +106,7 @@ void SpellCheckRunner::destroydata()
 
 void SpellCheckRunner::reloadConfiguration()
 {
+#warning TODO: untranslated keyword match
     m_triggerWord = config().readEntry("trigger", i18n("spell"));
     //Processing will be triggered by "keyword "
     m_triggerWord += QLatin1Char( ' ' );
