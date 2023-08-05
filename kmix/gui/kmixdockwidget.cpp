@@ -230,7 +230,7 @@ void KMixDockWidget::updatePixmap()
 }
 
 /**
- * Called whenever the icon gets "activated". Unusally whn its clicked.
+ * Called whenever the icon gets "activated". Usually when its clicked.
  * @overload
  * @param pos
  */
