@@ -95,14 +95,14 @@ KEmuMainWindow::KEmuMainWindow(QWidget *parent, Qt::WindowFlags flags)
             continue;
         }
         addedMachines.append(machine);
-        if (m_settings->value(machine + "/enable").toBool() == true) {
+        if (m_settings->boolean(machine + "/enable") == true) {
             m_kemuui->machinesList->insertItem(machine);
             machineLoad(machine);
         } else {
             kDebug() << "garbage machine" << machine;
         }
     }
-    const QString lastSelected = m_settings->value("lastselected").toString();
+    const QString lastSelected = m_settings->string("lastselected");
     if (!lastSelected.isEmpty()) {
         m_kemuui->machinesList->listView()->keyboardSearch(lastSelected);
     }
@@ -151,7 +151,7 @@ KEmuMainWindow::~KEmuMainWindow()
     saveAutoSaveSettings();
     const QString lastSelected = m_kemuui->machinesList->currentText();
     if (!lastSelected.isEmpty()) {
-        m_settings->setValue("lastselected", lastSelected);
+        m_settings->setString("lastselected", lastSelected);
         m_settings->sync();
     }
     delete m_settings;
@@ -234,16 +234,16 @@ void KEmuMainWindow::machineSave(const QString ignored)
     }
     const QString machine = m_kemuui->machinesList->currentText();
     kDebug() << "saving machine" << machine;
-    m_settings->setValue(machine + "/cdrom", m_kemuui->CDROMInput->url().prettyUrl());
-    m_settings->setValue(machine + "/harddisk", m_kemuui->HardDiskInput->url().prettyUrl());
-    m_settings->setValue(machine + "/system", m_kemuui->systemComboBox->currentText());
-    m_settings->setValue(machine + "/video", m_kemuui->videoComboBox->currentText());
-    m_settings->setValue(machine + "/audio", m_kemuui->audioComboBox->currentText());
-    m_settings->setValue(machine + "/ram", m_kemuui->RAMInput->value());
-    m_settings->setValue(machine + "/cpu", m_kemuui->CPUInput->value());
-    m_settings->setValue(machine + "/kvm", m_kemuui->KVMCheckBox->isChecked());
-    m_settings->setValue(machine + "/acpi", m_kemuui->ACPICheckBox->isChecked());
-    m_settings->setValue(machine + "/args", m_kemuui->argumentsLineEdit->text());
+    m_settings->setString(machine + "/cdrom", m_kemuui->CDROMInput->url().prettyUrl());
+    m_settings->setString(machine + "/harddisk", m_kemuui->HardDiskInput->url().prettyUrl());
+    m_settings->setString(machine + "/system", m_kemuui->systemComboBox->currentText());
+    m_settings->setString(machine + "/video", m_kemuui->videoComboBox->currentText());
+    m_settings->setString(machine + "/audio", m_kemuui->audioComboBox->currentText());
+    m_settings->setInteger(machine + "/ram", m_kemuui->RAMInput->value());
+    m_settings->setInteger(machine + "/cpu", m_kemuui->CPUInput->value());
+    m_settings->setBoolean(machine + "/kvm", m_kemuui->KVMCheckBox->isChecked());
+    m_settings->setBoolean(machine + "/acpi", m_kemuui->ACPICheckBox->isChecked());
+    m_settings->setString(machine + "/args", m_kemuui->argumentsLineEdit->text());
     m_settings->sync();
 }
 
@@ -257,22 +257,22 @@ void KEmuMainWindow::machineLoad(const QString machine)
 {
     m_loading = true;
     kDebug() << "loading machine" << machine;
-    m_kemuui->CDROMInput->setUrl(m_settings->value(machine + "/cdrom").toUrl());
-    m_kemuui->HardDiskInput->setUrl(m_settings->value(machine + "/harddisk").toUrl());
-    const QString system = m_settings->value(machine + "/system").toString();
+    m_kemuui->CDROMInput->setUrl(QUrl(m_settings->string(machine + "/cdrom")));
+    m_kemuui->HardDiskInput->setUrl(QUrl(m_settings->string(machine + "/harddisk")));
+    const QString system = m_settings->string(machine + "/system");
     const int systemIndex = m_kemuui->systemComboBox->findText(system);
     m_kemuui->systemComboBox->setCurrentIndex(systemIndex);
-    const QString video = m_settings->value(machine + "/video", "virtio").toString();
+    const QString video = m_settings->string(machine + "/video", "virtio");
     const int videoIndex = m_kemuui->videoComboBox->findText(video);
     m_kemuui->videoComboBox->setCurrentIndex(videoIndex);
-    const QString audio = m_settings->value(machine + "/audio", "alsa").toString();
+    const QString audio = m_settings->string(machine + "/audio", "alsa");
     const int audioIndex = m_kemuui->audioComboBox->findText(audio);
     m_kemuui->audioComboBox->setCurrentIndex(audioIndex);
-    m_kemuui->RAMInput->setValue(m_settings->value(machine + "/ram", 512).toInt());
-    m_kemuui->CPUInput->setValue(m_settings->value(machine + "/cpu", 1).toInt());
-    m_kemuui->KVMCheckBox->setChecked(m_settings->value(machine + "/kvm", false).toBool());
-    m_kemuui->ACPICheckBox->setChecked(m_settings->value(machine + "/acpi", false).toBool());
-    m_kemuui->argumentsLineEdit->setText(m_settings->value(machine + "/args").toString());
+    m_kemuui->RAMInput->setValue(m_settings->integer(machine + "/ram", 512));
+    m_kemuui->CPUInput->setValue(m_settings->integer(machine + "/cpu", 1));
+    m_kemuui->KVMCheckBox->setChecked(m_settings->boolean(machine + "/kvm", false));
+    m_kemuui->ACPICheckBox->setChecked(m_settings->boolean(machine + "/acpi", false));
+    m_kemuui->argumentsLineEdit->setText(m_settings->string(machine + "/args"));
     m_loading = false;
 
     updateStatus();
@@ -320,7 +320,7 @@ void KEmuMainWindow::machineError(const QString error)
 
 void KEmuMainWindow::addMachine(const QString machine)
 {
-    m_settings->setValue(machine + "/enable", true);
+    m_settings->setBoolean(machine + "/enable", true);
     // TODO: set defaults?
     m_settings->sync();
 }
@@ -348,7 +348,7 @@ void KEmuMainWindow::removeMachine(const QString machine)
         m_interface->call("stop", machine);
     }
     kDebug() << "removing machine" << machine;
-    m_settings->setValue(machine + "/enable", false);
+    m_settings->setBoolean(machine + "/enable", false);
     m_settings->sync();
 
     updateStatus();

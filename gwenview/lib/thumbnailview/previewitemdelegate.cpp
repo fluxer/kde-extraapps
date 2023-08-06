@@ -221,14 +221,14 @@ struct PreviewItemDelegatePrivate
         int bgH, bgS, bgV;
         int borderH, borderS, borderV, borderMargin;
 #ifdef FINETUNE_SELECTION_BACKGROUND
-        QSettings settings(QDir::homePath() + "/colors.ini", QSettings::IniFormat);
-        bgH = settings.value("bg/h").toInt();
-        bgS = settings.value("bg/s").toInt();
-        bgV = settings.value("bg/v").toInt();
-        borderH = settings.value("border/h").toInt();
-        borderS = settings.value("border/s").toInt();
-        borderV = settings.value("border/v").toInt();
-        borderMargin = settings.value("border/margin").toInt();
+        QSettings settings(QDir::homePath() + "/colors.ini");
+        bgH = settings.integer("bg/h");
+        bgS = settings.integer("bg/s");
+        bgV = settings.integer("bg/v");
+        borderH = settings.integer("border/h");
+        borderS = settings.integer("border/s");
+        borderV = settings.integer("border/v");
+        borderMargin = settings.integer("border/margin");
 #else
         bgH = 0;
         bgS = -20;

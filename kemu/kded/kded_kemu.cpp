@@ -52,23 +52,23 @@ bool KEmuModule::start(const QString &machine)
     }
 
     KSettings settings("kemu", KSettings::SimpleConfig);
-    const bool enable = settings.value(machine + "/enable").toBool();
+    const bool enable = settings.boolean(machine + "/enable");
     if (!enable) {
         emit error(i18n("Machine is not enabled: %1", machine));
         return false;
     }
 
     kDebug() << "loading machine settings" << machine;
-    const QUrl cdrom = settings.value(machine + "/cdrom").toUrl();
-    const QUrl harddisk = settings.value(machine + "/harddisk").toUrl();
-    const QString system = settings.value(machine + "/system").toString();
-    const QString video = settings.value(machine + "/video", "virtio").toString();
-    const QString audio = settings.value(machine + "/audio", "alsa").toString();
-    const int ram = settings.value(machine + "/ram", 512).toInt();
-    const int cpu = settings.value(machine + "/cpu", 1).toInt();
-    const bool kvm = settings.value(machine + "/kvm", false).toBool();
-    const bool acpi = settings.value(machine + "/acpi", false).toBool();
-    const QString args = settings.value(machine + "/args").toString();
+    const QUrl cdrom = QUrl(settings.string(machine + "/cdrom"));
+    const QUrl harddisk = QUrl(settings.string(machine + "/harddisk"));
+    const QString system = settings.string(machine + "/system");
+    const QString video = settings.string(machine + "/video", "virtio");
+    const QString audio = settings.string(machine + "/audio", "alsa");
+    const int ram = settings.integer(machine + "/ram", 512);
+    const int cpu = settings.integer(machine + "/cpu", 1);
+    const bool kvm = settings.boolean(machine + "/kvm", false);
+    const bool acpi = settings.boolean(machine + "/acpi", false);
+    const QString args = settings.string(machine + "/args");
 
     if (cdrom.isEmpty() && harddisk.isEmpty()) {
         emit error(i18n("Either CD-ROM or Hard Disk image must be set"));
@@ -148,7 +148,7 @@ QStringList KEmuModule::machines() const
         if (addedMachines.contains(machine)) {
             continue;
         }
-        if (settings.value(machine + "/enable").toBool() == true) {
+        if (settings.boolean(machine + "/enable") == true) {
             addedMachines.append(machine);
         } else {
             kDebug() << "garbage machine" << machine;
