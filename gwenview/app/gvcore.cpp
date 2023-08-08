@@ -83,21 +83,19 @@ struct GvCorePrivate
             if (mimeType.isEmpty()) {
                 KMessageBox::sorry(
                     mMainWindow,
-                    i18nc("@info",
-                          "No image format selected.")
+                    i18nc("@info", "No image format selected.")
                 );
                 continue;
             }
 
-            const QStringList typeList = KImageIO::typeForMime(mimeType);
-            if (typeList.count() > 0) {
-                *format = typeList[0].toAscii();
+            const QString formatType = KImageIO::typeForMime(mimeType, KImageIO::Writing);
+            if (!formatType.isEmpty()) {
+                *format = formatType.toAscii();
                 break;
             }
             KMessageBox::sorry(
                 mMainWindow,
-                i18nc("@info",
-                      "Gwenview cannot save images as %1.", mimeType)
+                i18nc("@info", "Gwenview cannot save images as %1.", mimeType)
             );
         } while (true);
 

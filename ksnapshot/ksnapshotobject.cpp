@@ -129,9 +129,9 @@ bool KSnapshotObject::saveEqual( const KUrl& url,QWidget *widget )
 {
     QByteArray type = "PNG";
     QString mime = KMimeType::findByUrl( url.fileName(), 0, url.isLocalFile(), true )->name();
-    const QStringList types = KImageIO::typeForMime(mime);
-    if ( !types.isEmpty() )
-        type = types.first().toLatin1();
+    const QString formatType = KImageIO::typeForMime(mime, KImageIO::Writing);
+    if ( !formatType.isEmpty() )
+        type = formatType.toLatin1();
 
     bool ok = false;
 
