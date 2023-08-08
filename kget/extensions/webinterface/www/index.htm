@@ -29,6 +29,7 @@ window.addEvent('domready', function() {
     var slide = new Fx.Slide('settings-container').hide();
     function refreshList() {
         var request = new Request.JSON({url: 'data.json',
+            method: "GET",
             secure: false,
             onComplete: function(jsonObj) {
                 $(document.body).getElements('div.tool-tip').each(function(elm) { // remove old tooltips
@@ -52,6 +53,7 @@ window.addEvent('domready', function() {
         parameters['action'] = action;
 
         var addRequest = new Request.HTML({url: 'do',
+            method: "GET",
             update: log,
             onComplete: function() {
                 log.removeClass('ajax-loading');
@@ -368,7 +370,7 @@ if (navigator.userAgent.toLowerCase().indexOf('msie') >= 1) {
         </div>
     </div>
     <div id="new-download">
-        <form id="new-download-form" action="do" method="post">
+        <form id="new-download-form" action="do" method="get">
             <p><label for="url">#{Enter URL: }</label><input type="text" name="url" id="url" value="" />&nbsp;<select name="group" id="group">#{groups}</select>&nbsp;<input type="submit" value="#{OK}" class="input-button" /></p>
         </form>
         <div id="log">
@@ -378,7 +380,7 @@ if (navigator.userAgent.toLowerCase().indexOf('msie') >= 1) {
     <div id="download-list">
         <div id="settings-container">
         <h2 id="h2-settings">#{Settings}</h2>
-            <form id="settings-form" action="#" method="post">
+            <form id="settings-form" action="#" method="get">
                 <div id="settings-form-box">
                         <input type="checkbox" name="enable-refresh" id="enable-refresh" checked="checked" class="input-checkox" />
                         <label for="enable-refresh"> #{Refresh download list every} </label>
