@@ -65,6 +65,7 @@ class KGET_EXPORT UrlChecker
             //Source only
             NoProtocol,
             NoHost,
+            NoFileName,
 
             //Destination and Folder only
             NotWriteable

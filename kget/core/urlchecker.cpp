@@ -144,22 +144,30 @@ UrlChecker::UrlError UrlChecker::checkSource(const KUrl &src, bool showNotificat
     if (src.isEmpty()) {
         return Empty;
     }
-    if ((error == NoError) && !src.isValid()) {
+    if (error == NoError && !src.isValid()) {
         error = Invalid;
     }
-    if ((error == NoError) && src.protocol().isEmpty()){
+    if (error == NoError && src.protocol().isEmpty()){
         error = NoProtocol;
     }
-    /*if ((error == NoError) && !src.hasHost()) {//FIXME deactivated to allow file://.... etc
+#if 0
+    if (error == NoError && !src.hasHost()) {
+        //FIXME deactivated to allow file://.... etc
         error = NoHost;
-    }*/
+    }
+#endif
+
+    if (error == NoError && src.fileName().isEmpty()) {
+        // URLs without a filename (e.g. https://foobar.com/) are not supported
+        error = NoFileName;
+    }
+
+    //TODO also check sourceUrl.url() != KUrl(sourceUrl.url()).fileName() as in NewTransferDialog::setSource?
 
     if (showNotification && (error != NoError)) {
         kDebug() << "Source:" << src << "has error:" << error;
         KGet::showNotification(KGet::m_mainWindow, "error", message(src, Source, error));
     }
-
-    //TODO also check sourceUrl.url() != KUrl(sourceUrl.url()).fileName() as in NewTransferDialog::setSource?
 
     return error;
 }
@@ -179,7 +187,7 @@ UrlChecker::UrlError UrlChecker::checkDestination(const KUrl &destination, bool 
             error = Invalid;
         }
 
-        if ((error == NoError) && !QFileInfo(destination.directory()).isWritable()) {
+        if (error == NoError && !QFileInfo(destination.directory()).isWritable()) {
             error = NotWriteable;
         }
     }
@@ -210,7 +218,7 @@ UrlChecker::UrlError UrlChecker::checkFolder(const KUrl &folder, bool showNotifi
         }
 
         //has to be writeable
-        if ((error == NoError) && !fileInfo.isWritable()) {
+        if (error == NoError && !fileInfo.isWritable()) {
             error = NotWriteable;
         }
     }
@@ -325,6 +333,8 @@ QString UrlChecker::message(const KUrl &url, const UrlChecker::UrlType type, con
                     return i18n("Malformed URL, protocol missing.");
                 case NoHost:
                     return i18n("Malformed URL, host missing.");
+                case NoFileName:
+                    return i18n("Malformed URL, filename missing.");
                 default:
                     return QString();
             }
@@ -365,6 +375,8 @@ QString UrlChecker::message(const KUrl &url, const UrlChecker::UrlType type, con
                     return i18n("Malformed URL, protocol missing:\n%1", urlString);
                 case NoHost:
                     return i18n("Malformed URL, host missing:\n%1", urlString);
+                case NoFileName:
+                    return i18n("Malformed URL, filename missing:\n%1", urlString);
                 default:
                     return QString();
             }
@@ -455,6 +467,8 @@ QString UrlChecker::message(const KUrl::List &urls, const UrlChecker::UrlType ty
                     return i18n("Malformed URLs, protocol missing.");
                 case NoHost:
                     return i18n("Malformed URLs, host missing.");
+                case NoFileName:
+                    return i18n("Malformed URLs, filename missing.");
                 default:
                     return QString();
             }
@@ -469,6 +483,8 @@ QString UrlChecker::message(const KUrl::List &urls, const UrlChecker::UrlType ty
                 return i18n("Malformed URLs, protocol missing:\n%1", urlsString);
             case NoHost:
                 return i18n("Malformed URLs, host missing:\n%1", urlsString);
+            case NoFileName:
+                return i18n("Malformed URLs, filename missing:\n%1", urlsString);
             case NotWriteable:
                 return i18n("Destinations are not writable:\n%1", urlsString);
             default:
