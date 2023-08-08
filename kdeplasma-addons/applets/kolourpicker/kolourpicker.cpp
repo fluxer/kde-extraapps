@@ -17,7 +17,6 @@
 #include <qgraphicssceneevent.h>
 #include <qgraphicslinearlayout.h>
 #include <qicon.h>
-#include <qiconengine.h>
 #include <qimage.h>
 #include <qmimedata.h>
 #include <qpainter.h>
@@ -90,61 +89,6 @@ static QColor pickColor(const QPoint &point)
 #endif
 }
 
-class ColorIconEngine : public QIconEngine
-{
-public:
-    ColorIconEngine(const QColor &color);
-
-    virtual void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state);
-    virtual QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state);
-
-    virtual QIconEngine *clone() const;
-
-public:
-    QColor m_color;
-};
-
-ColorIconEngine::ColorIconEngine(const QColor &color)
-    : m_color(color)
-{
-}
-
-void ColorIconEngine::paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state)
-{
-    Q_UNUSED(mode)
-    Q_UNUSED(state)
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(m_color);
-    painter->drawEllipse(rect);
-}
-
-QPixmap ColorIconEngine::pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state)
-{
-    QPixmap pix(size);
-    pix.fill(QColor(0,0,0,0));
-    QPainter p(&pix);
-    p.setRenderHint(QPainter::Antialiasing, true);
-    paint(&p, pix.rect(), mode, state);
-    p.end();
-    return pix;
-}
-
-QIconEngine* ColorIconEngine::clone() const
-{
-    return new ColorIconEngine(m_color);
-}
-
-class ColorIcon : public QIcon
-{
-    public:
-        ColorIcon(const QColor &color);
-};
-
-ColorIcon::ColorIcon(const QColor &color)
-    : QIcon(new ColorIconEngine(color))
-{
-}
-
 class ColorButton : public Plasma::ToolButton
 {
     Q_OBJECT
@@ -152,6 +96,7 @@ public:
     ColorButton(QGraphicsWidget *parent);
 
     void setColor(const QColor &color);
+    QIcon colorIcon() const;
 
 protected:
     void resizeEvent(QGraphicsSceneResizeEvent *event) final;
@@ -162,27 +107,51 @@ protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) final;
 
 private:
+    void updateColorPixmap();
+
     QColor m_color;
+    QPixmap m_colorpix;
     QPointF m_dragstartpos;
 };
 
 ColorButton::ColorButton(QGraphicsWidget *parent)
     : Plasma::ToolButton(parent)
 {
-    setAcceptDrops(true);
+    Plasma::ToolButton::setAcceptDrops(true);
 }
 
 void ColorButton::setColor(const QColor &color)
 {
     m_color = color;
+    updateColorPixmap();
+    Plasma::ToolButton::setIcon(colorIcon());
+}
+
+QIcon ColorButton::colorIcon() const
+{
+    return QIcon(m_colorpix);
+}
+
+void ColorButton::updateColorPixmap()
+{
+    const QSizeF sizef = Plasma::ToolButton::size();
+    const int minsize = qRound(qMin(sizef.width(), sizef.height())) - 4;
+    m_colorpix = QPixmap(QSize(minsize, minsize));
+    m_colorpix.fill(QColor(Qt::transparent));
+    QPainter p(&m_colorpix);
+    p.setRenderHint(QPainter::Antialiasing, true);
+    p.setPen(Qt::NoPen);
+    p.setBrush(m_color);
+    p.drawEllipse(m_colorpix.rect());
+    p.end();
 }
 
 void ColorButton::resizeEvent(QGraphicsSceneResizeEvent *event)
 {
-    const QSizeF sizef = size();
-    const int minsize = qRound(qMin(sizef.width(), sizef.height())) - 4;
-    nativeWidget()->setIconSize(QSize(minsize, minsize));
     Plasma::ToolButton::resizeEvent(event);
+    updateColorPixmap();
+    Plasma::ToolButton::nativeWidget()->setIconSize(m_colorpix.size());
+    Plasma::ToolButton::setIcon(colorIcon());
 }
 
 void ColorButton::dragEnterEvent(QGraphicsSceneDragDropEvent *event)
@@ -257,7 +226,7 @@ Kolourpicker::Kolourpicker(QObject *parent, const QVariantList &args)
     m_configAndHistory->setMinimumSize(20, 20);
     mainlay->addItem(m_configAndHistory);
 
-    m_configAndHistory->nativeWidget()->setIcon(ColorIcon(Qt::gray));
+    m_configAndHistory->setColor(QColor(Qt::gray));
     m_configAndHistory->nativeWidget()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     connect(m_configAndHistory, SIGNAL(clicked()), this, SLOT(historyClicked()));
 
@@ -444,8 +413,7 @@ void Kolourpicker::colorActionTriggered(QAction *act)
 
 void Kolourpicker::clearHistory(bool save)
 {
-    m_configAndHistory->nativeWidget()->setIcon(ColorIcon(Qt::gray));
-    m_configAndHistory->setColor(Qt::gray);
+    m_configAndHistory->setColor(QColor(Qt::gray));
     QHash<QColor, QAction *>::ConstIterator it = m_menus.constBegin(), itEnd = m_menus.constEnd();
     for (; it != itEnd; ++it ) {
         m_configAndHistoryMenu->removeAction(*it);
@@ -467,8 +435,6 @@ void Kolourpicker::installFilter()
 
 void Kolourpicker::addColor(const QColor &color, bool save)
 {
-    ColorIcon colorIcon(color);
-    m_configAndHistory->nativeWidget()->setIcon(colorIcon);
     m_configAndHistory->setColor(color);
 
     QHash<QColor, QAction *>::ConstIterator it = m_menus.constFind(color);
@@ -477,7 +443,7 @@ void Kolourpicker::addColor(const QColor &color, bool save)
     }
     KMenu *newmenu = buildMenuForColor(color);
     QAction *act = newmenu->menuAction();
-    act->setIcon(colorIcon);
+    act->setIcon(m_configAndHistory->colorIcon());
     act->setText(QString("%1, %2, %3").arg(color.red()).arg(color.green()).arg(color.blue()));
     connect(newmenu, SIGNAL(triggered(QAction*)), this, SLOT(colorActionTriggered(QAction*)));
     m_configAndHistoryMenu->insertMenu(m_configAndHistoryMenu->actions().at(1), newmenu);
