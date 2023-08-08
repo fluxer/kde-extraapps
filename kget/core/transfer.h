@@ -151,7 +151,7 @@ class KGET_EXPORT Transfer : public Job
         /**
          * @returns the directory the Transfer will be stored to
          */
-        virtual KUrl directory() const {return m_dest.upUrl();}
+        virtual KUrl directory() const {return m_dest.directory();}
 
         /**
          * Move the download to the new destination
