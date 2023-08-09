@@ -21,12 +21,14 @@
 #include <qsortfilterproxymodel.h>
 #include <qtreeview.h>
 #include <qtimer.h>
+#include <qapplication.h>
+#include <qdesktopwidget.h>
+
 #include <kfiledialog.h>
 #include <kicon.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <ksqueezedtextlabel.h>
-#include <kglobalsettings.h>
 #include <kurl.h>
 
 // local includes
@@ -182,7 +184,7 @@ PropertiesDialog::PropertiesDialog(QWidget *parent, Okular::Document *doc)
   if ( page2Layout )
     width = qMax( width, page2Layout->sizeHint().width() + marginHint() + spacingHint() + 31 );
   // stay inside the 2/3 of the screen width
-  QRect screenContainer = KGlobalSettings::desktopGeometry( this );
+  QRect screenContainer = QApplication::desktop()->screenGeometry( this );
   width = qMin( width, 2*screenContainer.width()/3 );
   resize(width, 1);
 
