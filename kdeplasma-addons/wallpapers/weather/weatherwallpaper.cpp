@@ -411,7 +411,7 @@ void WeatherWallpaper::fillMetaInfo(Plasma::Package *b)
     //QString license = b->license();
     /*
     KAboutLicense knownLicense = KAboutLicense::byKeyword(license);
-    if (knownLicense.key() != KAboutData::License_Custom) {
+    if (knownLicense.key() != KAboutData::License_Unknown) {
         license = knownLicense.name(KAboutData::ShortName);
     }
     */
