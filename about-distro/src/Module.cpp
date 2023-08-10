@@ -60,9 +60,7 @@ Module::Module(QWidget *parent, const QVariantList &args) :
                                        "1.2.0",
                                        KLocalizedString(),
                                        KAboutData::License_GPL_V3,
-                                       ki18n("Copyright 2012-2014 Harald Sitter\nCopyright 2021 Ivailo Monev"),
-                                       KLocalizedString(), QByteArray(),
-                                       "xakepa10@gmail.com");
+                                       ki18n("Copyright 2012-2014 Harald Sitter\nCopyright 2021 Ivailo Monev"));
 
     about->addAuthor(ki18n("Harald Sitter"), ki18n("Author"), "apachelogger@ubuntu.com");
     about->addAuthor(ki18n("Ivailo Monev"), ki18n("Current maintainer"), "xakepa10@gmail.com");

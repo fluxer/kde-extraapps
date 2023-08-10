@@ -104,8 +104,7 @@ int main(int argc, char *argv[])
                          ki18n("(C) 2005 - 2012, The KGet developers\n"
                          "(C) 2001 - 2002, Patrick Charbonnier\n"
                          "(C) 2002, Carsten Pfeiffer\n"
-                         "(C) 1998 - 2000, Matej Koss"),
-                         ki18n("<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"));
+                         "(C) 1998 - 2000, Matej Koss"));
 
     aboutData.addAuthor(ki18n("Lukas Appelhans"), ki18n("Maintainer, Core Developer, Torrent Plugin Author"), "l.appelhans@gmx.de");
     aboutData.addAuthor(ki18n("Dario Massarin"), ki18n("Core Developer"), "nekkar@libero.it");
