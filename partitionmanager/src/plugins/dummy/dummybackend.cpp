@@ -52,7 +52,6 @@ static KAboutData createPluginAboutData()
 		ki18n("Copyright 2010 Volker Lanz"));
 
 	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"));
-	about.setHomepage("http://www.partitionmanager.org");
 
 	return about;
 }

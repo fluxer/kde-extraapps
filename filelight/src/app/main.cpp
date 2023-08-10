@@ -36,9 +36,8 @@ static KAboutData about(
     ki18n("Graphical disk-usage information"),
     KAboutData::License_GPL,
     ki18n("(C) 2006 Max Howell\n\
-        (C) 2008-2013 Martin Sandsmark"),
-    KLocalizedString(),
-    "http://utils.kde.org/projects/filelight");
+        (C) 2008-2013 Martin Sandsmark")
+);
 
 
 int main(int argc, char *argv[])

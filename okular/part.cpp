@@ -2617,11 +2617,11 @@ void Part::doPrint(QPrinter &printer)
         const QString error = m_document->printError();
         if (error.isEmpty())
         {
-            KMessageBox::error(widget(), i18n("Could not print the document. Unknown error. Please report to bugs.kde.org"));
+            KMessageBox::error(widget(), i18n("Could not print the document. Unknown error. Please report to %1", QLatin1String(KDE_BUG_REPORT_URL)));
         }
         else
         {
-            KMessageBox::error(widget(), i18n("Could not print the document. Detailed error is \"%1\". Please report to bugs.kde.org", error));
+            KMessageBox::error(widget(), i18n("Could not print the document. Detailed error is \"%1\". Please report to %2", error, QLatin1String(KDE_BUG_REPORT_URL)));
         }
     }
 }

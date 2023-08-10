@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmix-controls-de\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"Report-Msgid-Bugs-To: xakepa10@gmail.com\n"
 "POT-Creation-Date: 2009-08-18 19:09+0200\n"
 "PO-Revision-Date: 2009-08-18 21:52+0200\n"
 "Last-Translator: Christian Esken <esken@kde.org>\n"

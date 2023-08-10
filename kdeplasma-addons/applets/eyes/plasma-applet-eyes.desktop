@@ -121,7 +121,7 @@ X-KDE-PluginInfo-Author=Olivier Goffart
 X-KDE-PluginInfo-Email=ogoffart@kde.org
 X-KDE-PluginInfo-Name=eyes
 X-KDE-PluginInfo-Version=1.0
-X-KDE-PluginInfo-Website=http://plasma.kde.org/
+X-KDE-PluginInfo-Website=
 X-KDE-PluginInfo-License=GPL
 
 X-Plasma-Requires-FileDialog=Unused

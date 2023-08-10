@@ -6,7 +6,6 @@ X-KDE-PluginInfo-Author=Henrique Pinto
 X-KDE-PluginInfo-Email=henrique.pinto@kdemail.net
 X-KDE-PluginInfo-Name=kerfuffle_libarchive
 X-KDE-PluginInfo-Version=0.0.1
-X-KDE-PluginInfo-Website=http://www.kde.org
 X-KDE-PluginInfo-License=BSD
 X-KDE-Priority=110
 X-KDE-Kerfuffle-ReadWrite=false

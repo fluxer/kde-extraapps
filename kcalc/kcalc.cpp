@@ -2291,9 +2291,7 @@ int main(int argc, char *argv[]) {
             "&copy; 2008-2013, Evan Teran\n"
             "&copy; 2000-2008, The KDE Team\n"
             "&copy; 2003-2005, Klaus Niederkr" "\xc3\xbc" "ger\n"
-            "&copy; 1996-2000, Bernd Johannes Wuebben"),
-        KLocalizedString(),
-        "http://utils.kde.org/projects/kcalc");
+            "&copy; 1996-2000, Bernd Johannes Wuebben"));
 
     // Klaus Niederkrueger
     aboutData.addAuthor(ki18n("Klaus Niederkr" "\xc3\xbc" "ger"), KLocalizedString(), "kniederk@math.uni-koeln.de");
