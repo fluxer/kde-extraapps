@@ -78,6 +78,6 @@ private:
     QImage m_image;
 };
 
-K_EXPORT_PLASMA_WALLPAPER(color, PoTD)
+K_EXPORT_PLASMA_WALLPAPER(potd, PoTD)
 
 #endif
