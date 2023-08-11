@@ -28,20 +28,6 @@ namespace Plasma
     class Package;
 } // namespace Plasma
 
-class ImageSizeFinder : public QObject, public QRunnable
-{
-    Q_OBJECT
-    public:
-        ImageSizeFinder(const QString &path, QObject *parent = 0);
-        void run();
-
-    Q_SIGNALS:
-        void sizeFound(const QString &path, const QSize &size);
-
-    private:
-        QString m_path;
-};
-
 class BackgroundListModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -66,7 +52,6 @@ protected Q_SLOTS:
     void reload();
     void showPreview(const KFileItem &item, const QPixmap &preview);
     void previewFailed(const KFileItem &item);
-    void sizeFound(const QString &path, const QSize &s);
     void processPaths(const QStringList &paths);
 
 private:
@@ -74,7 +59,7 @@ private:
 
     Plasma::Wallpaper *m_structureParent;
     QList<Plasma::Package *> m_packages;
-    QHash<Plasma::Package *, QSize> m_sizeCache;
+    mutable QHash<Plasma::Package *, QSize> m_sizeCache;
     QHash<Plasma::Package *, QPixmap> m_previews;
     QHash<KUrl, QPersistentModelIndex> m_previewJobs;
     KDirWatch m_dirwatch;
