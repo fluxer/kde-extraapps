@@ -20,15 +20,14 @@
 #include "weatherpopupapplet.h"
 #include "weatheri18ncatalog.h"
 
-#include <QTimer>
-
-#include <KConfigGroup>
-#include <KConfigDialog>
-
-#include <kunitconversion.h>
-
 #include "weatherconfig.h"
 #include "weatherlocation.h"
+
+#include <QTimer>
+#include <KConfigGroup>
+#include <KConfigDialog>
+#include <KUnitConversion>
+#include <Plasma/DataEngineManager>
 
 class WeatherPopupApplet::Private
 {
@@ -125,10 +124,10 @@ public:
 
     QString conditionFromPressure()
     {
-        QString result;
         if (KPressure(0.0, pressureUnit).unitEnum() == KPressure::Invalid) {
             return QLatin1String( "weather-none-available" );
         }
+
         qreal temp = KTemperature(temperature, temperatureUnit).convertTo(KTemperature::Celsius);
         qreal p = KPressure(pressure, pressureUnit).convertTo(KPressure::Kilopascal);
         qreal t = tendency(pressure, tend);
@@ -139,7 +138,7 @@ public:
         Plasma::DataEngine::Data data = timeEngine->query(
                 QString(QLatin1String( "Local|Solar|Latitude=%1|Longitude=%2" )).arg(latitude).arg(longitude));
         bool day = (data[QLatin1String( "Corrected Elevation" )].toDouble() > 0.0);
-
+        QString result;
         if (p > 103.0) {
             if (day) {
                 result = QLatin1String( "weather-clear" );
@@ -194,6 +193,18 @@ WeatherPopupApplet::WeatherPopupApplet(QObject *parent, const QVariantList &args
 
 WeatherPopupApplet::~WeatherPopupApplet()
 {
+    if (d->locationEngine) {
+        Plasma::DataEngineManager::self()->unloadEngine(QLatin1String("geolocation"));
+        d->locationEngine = nullptr;
+    }
+    if (d->weatherEngine) {
+        Plasma::DataEngineManager::self()->unloadEngine(QLatin1String("weather"));
+        d->weatherEngine = nullptr;
+    }
+    if (d->timeEngine) {
+        Plasma::DataEngineManager::self()->unloadEngine(QLatin1String("time"));
+        d->timeEngine = nullptr;
+    }
     delete d;
 }
 

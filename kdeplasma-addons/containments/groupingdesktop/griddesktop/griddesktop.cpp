@@ -26,7 +26,7 @@
 K_EXPORT_PLASMA_APPLET(griddesktop, GridDesktop)
 
 GridDesktop::GridDesktop(QObject* parent, const QVariantList& args)
-               : GroupingContainment(parent, args)
+    : GroupingContainment(parent, args)
 {
     setHasConfigurationInterface(true);
     KGlobal::locale()->insertCatalog("libplasma_groupingcontainment");

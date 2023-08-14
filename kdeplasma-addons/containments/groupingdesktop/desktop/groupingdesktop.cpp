@@ -23,7 +23,7 @@
 K_EXPORT_PLASMA_APPLET(groupingdesktop, GroupingDesktop)
 
 GroupingDesktop::GroupingDesktop(QObject* parent, const QVariantList& args)
-               : GroupingContainment(parent, args)
+    : GroupingContainment(parent, args)
 {
     setHasConfigurationInterface(true);
     KGlobal::locale()->insertCatalog("libplasma_groupingcontainment");
