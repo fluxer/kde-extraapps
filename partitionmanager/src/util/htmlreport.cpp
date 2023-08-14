@@ -24,7 +24,6 @@
 
 #include <kglobal.h>
 #include <kaboutdata.h>
-#include <kdatetime.h>
 #include <klocale.h>
 #include <kglobalsettings.h>
 #include <kcomponentdata.h>
@@ -32,6 +31,7 @@
 #include <QString>
 #include <QTextStream>
 #include <QTextDocument>
+#include <QDateTime>
 
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -77,7 +77,7 @@ QString HtmlReport::header()
 	const QString unameString = QString(info.sysname) + ' ' + info.nodename + ' ' + info.release + ' ' + info.version + ' ' + info.machine;
 
 	s << "<table>\n"
-		<< tableLine(i18n("Date:"), KGlobal::locale()->formatDateTime(KDateTime::currentLocalDateTime()))
+		<< tableLine(i18n("Date:"), KGlobal::locale()->formatDateTime(QDateTime::currentDateTime()))
 		<< tableLine(i18n("Program version:"), KGlobal::mainComponent().aboutData()->version())
 		<< tableLine(i18n("Backend:"), QString("%1 (%2)").arg(CoreBackendManager::self()->backend()->about().programName()).arg(CoreBackendManager::self()->backend()->about().version()))
 		<< tableLine(i18n("KDE version:"), KDE_VERSION_STRING)

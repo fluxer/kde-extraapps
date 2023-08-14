@@ -23,9 +23,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Qt
 #include <QTextDocument>
+#include <QDateTime>
 
 // KDE
-#include <KDateTime>
 #include <KLocale>
 
 // Local
@@ -37,7 +37,7 @@ namespace Gwenview
 {
 
 static const QString PREVIEW_FILENAME = "PICT0012.JPG";
-static const KDateTime PREVIEW_DATETIME = KDateTime(QDate(2009, 10, 25), QTime(17, 51, 18));
+static const QDateTime PREVIEW_DATETIME = QDateTime(QDate(2009, 10, 25), QTime(17, 51, 18));
 
 struct ImporterConfigDialogPrivate : public Ui_ImporterConfigDialog
 {

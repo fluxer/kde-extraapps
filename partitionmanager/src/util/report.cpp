@@ -26,7 +26,6 @@
 #include <QTextDocument>
 
 #include <kdeversion.h>
-#include <kdatetime.h>
 #include <kglobal.h>
 #include <kaboutdata.h>
 #include <klocale.h>

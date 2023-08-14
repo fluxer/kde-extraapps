@@ -21,11 +21,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #ifndef TIMEUTILS_H
 #define TIMEUTILS_H
 
+#include <QDateTime>
+
 // Local
 #include <lib/gwenviewlib_export.h>
 
 class KFileItem;
-class KDateTime;
 
 namespace Gwenview
 {
@@ -39,7 +40,7 @@ enum CachePolicy
     UseCache
 };
 
-GWENVIEWLIB_EXPORT KDateTime dateTimeForFileItem(const KFileItem&, CachePolicy cachePolicy = UseCache);
+GWENVIEWLIB_EXPORT QDateTime dateTimeForFileItem(const KFileItem&, CachePolicy cachePolicy = UseCache);
 
 } // namespace
 

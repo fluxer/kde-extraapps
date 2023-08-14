@@ -24,7 +24,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 // Qt
 
 // KDE
-#include <KDateTime>
 #include <KDebug>
 #include <KFileItem>
 #include <KLocale>
@@ -118,7 +117,7 @@ struct ImporterPrivate
             // 'src' url is temporary: if we import "foo/image.jpg" and
             // "bar/image.jpg", both images will be temporarily saved in the
             // 'src' url.
-            KDateTime dateTime = TimeUtils::dateTimeForFileItem(item, TimeUtils::SkipCache);
+            QDateTime dateTime = TimeUtils::dateTimeForFileItem(item, TimeUtils::SkipCache);
             fileName = mFileNameFormater->format(src, dateTime);
         } else {
             fileName = src.fileName();

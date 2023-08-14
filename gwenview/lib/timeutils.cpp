@@ -25,7 +25,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QFile>
 
 // KDE
-#include <KDateTime>
 #include <KDebug>
 #include <KFileItem>
 #include <KExiv2>
@@ -41,12 +40,12 @@ namespace TimeUtils
 
 struct CacheItem
 {
-    KDateTime fileMTime;
-    KDateTime realTime;
+    QDateTime fileMTime;
+    QDateTime realTime;
 
     void update(const KFileItem& fileItem)
     {
-        KDateTime time = fileItem.time(KFileItem::ModificationTime);
+        QDateTime time = fileItem.time(KFileItem::ModificationTime);
         if (fileMTime == time) {
             return;
         }
@@ -89,7 +88,7 @@ struct CacheItem
             return false;
         }
 
-        KDateTime dt = KDateTime::fromString(exifvalue, "yyyy:MM:dd hh:mm:ss");
+        QDateTime dt = QDateTime::fromString(exifvalue, "yyyy:MM:dd hh:mm:ss");
         if (!dt.isValid()) {
             kWarning() << "Invalid date in exif header of" << path << exifvalue;
             return false;
@@ -102,7 +101,7 @@ struct CacheItem
 
 typedef QHash<KUrl, CacheItem> Cache;
 
-KDateTime dateTimeForFileItem(const KFileItem& fileItem, CachePolicy cachePolicy)
+QDateTime dateTimeForFileItem(const KFileItem& fileItem, CachePolicy cachePolicy)
 {
     if (cachePolicy == SkipCache) {
         CacheItem item;

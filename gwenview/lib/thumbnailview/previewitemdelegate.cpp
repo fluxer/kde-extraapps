@@ -591,7 +591,7 @@ void PreviewItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem &
     }
 
     if (!isDir && (d->mDetails & PreviewItemDelegate::DateDetail)) {
-        const KDateTime dt = TimeUtils::dateTimeForFileItem(fileItem);
+        const QDateTime dt = TimeUtils::dateTimeForFileItem(fileItem);
         d->drawText(painter, textRect, fgColor, KGlobal::locale()->formatDateTime(dt));
         textRect.moveTop(textRect.bottom());
     }

@@ -24,9 +24,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Qt
 #include <QSignalSpy>
+#include <QDateTime>
 
 // KDE
-#include <KDateTime>
 #include <KDebug>
 #include <qtest_kde.h>
 
@@ -183,7 +183,7 @@ void ImporterTest::testFileNameFormater()
 
     KUrl url = KUrl("file://foo/bar/" + fileName);
     FileNameFormater fileNameFormater(format);
-    QCOMPARE(fileNameFormater.format(url, KDateTime::fromString(dateTime, Qt::ISODate)), expected);
+    QCOMPARE(fileNameFormater.format(url, QDateTime::fromString(dateTime, Qt::ISODate)), expected);
 }
 
 #define NEW_ROW(fileName, dateTime, format, expected) QTest::newRow(fileName) << fileName << dateTime << format << expected

@@ -21,10 +21,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // Qt
 #include <QTimer>
+#include <QDateTime>
 
 // KDE
 #include <KDebug>
-#include <KDateTime>
 #include <KDirLister>
 
 // Local
@@ -224,9 +224,8 @@ bool SortedDirModel::lessThan(const QModelIndex& left, const QModelIndex& right)
         return KDirSortFilterProxyModel::lessThan(left, right);
     }
 
-    const KDateTime leftDate = TimeUtils::dateTimeForFileItem(leftItem);
-    const KDateTime rightDate = TimeUtils::dateTimeForFileItem(rightItem);
-
+    const QDateTime leftDate = TimeUtils::dateTimeForFileItem(leftItem);
+    const QDateTime rightDate = TimeUtils::dateTimeForFileItem(rightItem);
     return leftDate < rightDate;
 }
 

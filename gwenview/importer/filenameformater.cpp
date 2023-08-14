@@ -25,7 +25,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 #include <QFileInfo>
 
 // KDE
-#include <KDateTime>
 #include <KLocale>
 #include <KUrl>
 
@@ -52,7 +51,7 @@ FileNameFormater::~FileNameFormater()
     delete d;
 }
 
-QString FileNameFormater::format(const KUrl& url, const KDateTime& dateTime)
+QString FileNameFormater::format(const KUrl& url, const QDateTime& dateTime)
 {
     QFileInfo info(url.fileName());
 

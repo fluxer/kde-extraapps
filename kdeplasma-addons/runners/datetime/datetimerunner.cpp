@@ -21,7 +21,7 @@
 
 #include <KIcon>
 
-#include <KDateTime>
+#include <QDateTime>
 #include <KDebug>
 #include <KGlobal>
 #include <KLocale>
@@ -87,25 +87,26 @@ QDateTime DateTimeRunner::datetime(const QString &tz, QString &tzName)
 
     if (tz.compare(QLatin1String("UTC"), Qt::CaseInsensitive) == 0) {
         tzName = QLatin1String( "UTC" );
-        dt = KDateTime::currentDateTime(KTimeZone::utc());
+        dt = KTimeZone::utc().toZoneTime(QDateTime::currentDateTimeUtc());
         return dt;
     }
 
     foreach (const KTimeZone &zone, KSystemTimeZones::zones()) {
         const QString zoneName = zone.name();
+        const QDateTime zoneDateTime = zone.toZoneTime(QDateTime::currentDateTimeUtc());
         if (zoneName.compare(tz, Qt::CaseInsensitive) == 0) {
             tzName = zoneName;
-            dt = KDateTime::currentDateTime(zone);
+            dt = zoneDateTime;
             break;
         } else if (!dt.isValid()) {
             if (zoneName.contains(tz, Qt::CaseInsensitive)) {
                 tzName = zoneName;
-                dt = KDateTime::currentDateTime(zone);
+                dt = zoneDateTime;
             } else {
                 foreach (const QByteArray &abbrev, zone.abbreviations()) {
                     if (QString(abbrev).contains(tz, Qt::CaseInsensitive)) {
                         tzName = abbrev;
-                        dt = KDateTime::currentDateTime(zone);
+                        dt = zoneDateTime;
                     }
                 }
             }

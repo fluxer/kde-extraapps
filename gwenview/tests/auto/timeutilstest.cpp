@@ -46,10 +46,10 @@ static void touchFile(const QString& path)
 void TimeUtilsTest::testBasic_data()
 {
     QTest::addColumn<QString>("fileName");
-    QTest::addColumn<KDateTime>("expectedDateTime");
+    QTest::addColumn<QDateTime>("expectedDateTime");
 
-    NEW_ROW("date/exif-datetimeoriginal.jpg", KDateTime(KDateTime::fromString("2003-03-10T17:45:21", Qt::ISODate)));
-    NEW_ROW("date/exif-datetime-only.jpg", KDateTime(KDateTime::fromString("2003-03-25T02:02:21", Qt::ISODate)));
+    NEW_ROW("date/exif-datetimeoriginal.jpg", QDateTime::fromString("2003-03-10T17:45:21", Qt::ISODate));
+    NEW_ROW("date/exif-datetime-only.jpg", QDateTime::fromString("2003-03-25T02:02:21", Qt::ISODate));
 
     KUrl url = urlForTestFile("test.png");
     KFileItem item(KFileItem::Unknown, KFileItem::Unknown, url);
@@ -59,8 +59,8 @@ void TimeUtilsTest::testBasic_data()
 void TimeUtilsTest::testBasic()
 {
     QFETCH(QString, fileName);
-    QFETCH(KDateTime, expectedDateTime);
-    KDateTime dateTime;
+    QFETCH(QDateTime, expectedDateTime);
+    QDateTime dateTime;
     KUrl url = urlForTestFile(fileName);
     KFileItem item(KFileItem::Unknown, KFileItem::Unknown, url);
 
@@ -77,14 +77,14 @@ void TimeUtilsTest::testCache()
     QVERIFY(tempFile.open());
     KUrl url = KUrl::fromLocalFile(tempFile.fileName());
     KFileItem item1(KFileItem::Unknown, KFileItem::Unknown, url);
-    KDateTime dateTime1 = TimeUtils::dateTimeForFileItem(item1);
+    QDateTime dateTime1 = TimeUtils::dateTimeForFileItem(item1);
     QCOMPARE(dateTime1, item1.time(KFileItem::ModificationTime));
 
     QTest::qWait(1200);
     touchFile(url.toLocalFile());
 
     KFileItem item2(KFileItem::Unknown, KFileItem::Unknown, url);
-    KDateTime dateTime2 = TimeUtils::dateTimeForFileItem(item2);
+    QDateTime dateTime2 = TimeUtils::dateTimeForFileItem(item2);
 
     QVERIFY(dateTime1 != dateTime2);
 

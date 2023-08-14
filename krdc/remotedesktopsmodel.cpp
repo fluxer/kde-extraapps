@@ -235,8 +235,8 @@ void RemoteDesktopsModel::buildModelFromBookmarkGroup(const KBookmarkGroup &grou
                 item.favorite = false;
 
                 // since we are in the history folder collect statitics and add them
-                KDateTime connected = KDateTime();
-                KDateTime created = KDateTime();
+                QDateTime connected = QDateTime();
+                QDateTime created = QDateTime();
                 bool ok = false;
                 // first the created datetime
                 created.setTime_t(bm.metaDataItem("time_added").toLongLong(&ok));
@@ -252,8 +252,8 @@ void RemoteDesktopsModel::buildModelFromBookmarkGroup(const KBookmarkGroup &grou
             } else {
                 if (newItem) {
                     // if this is a new item, just add the rest of the required data
-                    item.lastConnected = KDateTime();
-                    item.created = KDateTime();
+                    item.lastConnected = QDateTime();
+                    item.created = QDateTime();
                     item.visits = 0;
                     item.favorite = true;
                     item.source = RemoteDesktop::Bookmarks;
@@ -289,7 +289,7 @@ void RemoteDesktopsModel::servicesChanged()
         if (!remoteDesktops.contains(item)) {
             item.title = service.name;
             item.source = RemoteDesktop::Zeroconf;
-            item.created = KDateTime::currentLocalDateTime();
+            item.created = QDateTime::currentDateTime();
             item.favorite = false;
             item.visits = 0;
             remoteDesktops.append(item);

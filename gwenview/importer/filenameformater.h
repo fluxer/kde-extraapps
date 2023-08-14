@@ -23,14 +23,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Cambridge, MA 02110-1301, USA
 
 // Qt
 #include <QMap>
+#include <QString>
+#include <QDateTime>
 
 // KDE
 
 // Local
 
-#include <QString>
-
-class KDateTime;
 class KUrl;
 
 namespace Gwenview
@@ -49,7 +48,7 @@ public:
      * Given an url and its dateTime, returns a filename according to the
      * format passed to the constructor
      */
-    QString format(const KUrl& url, const KDateTime& dateTime);
+    QString format(const KUrl& url, const QDateTime& dateTime);
 
     /**
      * Returns a map whose keys are the available keywords and values are the

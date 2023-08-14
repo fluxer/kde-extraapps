@@ -25,8 +25,8 @@
 #ifndef REMOTEDESKTOPSMODEL_H
 #define REMOTEDESKTOPSMODEL_H
 
-#include <QtCore/qabstractitemmodel.h>
-#include <KDateTime>
+#include <QAbstractTableModel>
+#include <QDateTime>
 
 #ifdef BUILD_ZEROCONF
 #include <kdnssd.h>
@@ -41,8 +41,8 @@ public:
     Q_DECLARE_FLAGS(Sources, Source)
     QString title;
     QString url;
-    KDateTime lastConnected;
-    KDateTime created;
+    QDateTime lastConnected;
+    QDateTime created;
     int visits;
     RemoteDesktop::Source source;
     bool favorite;
@@ -75,7 +75,7 @@ public:
 
 private:
     QList<RemoteDesktop> remoteDesktops;
-    QString getLastConnectedString(KDateTime lastConnected, bool fuzzy = false) const;
+    QString getLastConnectedString(QDateTime lastConnected, bool fuzzy = false) const;
     void removeAllItemsFromSources(RemoteDesktop::Sources sources);
     void buildModelFromBookmarkGroup(const KBookmarkGroup &group);
     KBookmarkManager *m_manager;

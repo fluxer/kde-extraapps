@@ -79,7 +79,7 @@ static KUrl urlForIndex(const QModelIndex& index)
 
 struct Thumbnail
 {
-    Thumbnail(const QPersistentModelIndex& index_, const KDateTime& mtime)
+    Thumbnail(const QPersistentModelIndex& index_, const QDateTime& mtime)
         : mIndex(index_)
         , mModificationTime(mtime)
         , mRough(true)
@@ -117,7 +117,7 @@ struct Thumbnail
         return groupSize == qMax(mFullSize.width(), mFullSize.height());
     }
 
-    void prepareForRefresh(const KDateTime& mtime)
+    void prepareForRefresh(const QDateTime& mtime)
     {
         mModificationTime = mtime;
         mGroupPix = QPixmap();
@@ -129,7 +129,7 @@ struct Thumbnail
     }
 
     QPersistentModelIndex mIndex;
-    KDateTime mModificationTime;
+    QDateTime mModificationTime;
     /// The pix loaded from .thumbnails/{large,normal}
     QPixmap mGroupPix;
     /// Scaled version of mGroupPix, adjusted to ThumbnailView::thumbnailSize
@@ -208,7 +208,7 @@ struct ThumbnailViewPrivate
         QPixmap pix;
         QSize fullSize;
         mDocumentInfoProvider->thumbnailForDocument(url, group, &pix, &fullSize);
-        mThumbnailForUrl[url] = Thumbnail(QPersistentModelIndex(index), KDateTime::currentLocalDateTime());
+        mThumbnailForUrl[url] = Thumbnail(QPersistentModelIndex(index), QDateTime::currentDateTime());
         q->setThumbnail(item, pix);
     }
 
@@ -485,7 +485,7 @@ void ThumbnailView::dataChanged(const QModelIndex& topLeft, const QModelIndex& b
             // result this method will also be called for views which are not
             // currently visible, and do not yet have a thumbnail for the
             // modified url.
-            KDateTime mtime = item.time(KFileItem::ModificationTime);
+            QDateTime mtime = item.time(KFileItem::ModificationTime);
             if (it->mModificationTime != mtime) {
                 // dataChanged() is called when the file changes but also when
                 // the model fetched additional data such as semantic info. To

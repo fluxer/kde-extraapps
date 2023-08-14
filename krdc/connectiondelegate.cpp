@@ -24,7 +24,7 @@
 #include "connectiondelegate.h"
 #include "remotedesktopsmodel.h"
 
-#include <KDateTime>
+#include <QDateTime>
 #include <KDebug>
 #include <KIcon>
 #include <KIconLoader>
@@ -38,8 +38,8 @@ ConnectionDelegate::ConnectionDelegate(QObject *parent) :
 QString ConnectionDelegate::displayText(const QVariant &value, const QLocale& locale) const
 {
     if (value.type() == QVariant::DateTime) {
-        KDateTime lastConnected = KDateTime(value.toDateTime());
-        KDateTime currentTime = KDateTime::currentUtcDateTime();
+        QDateTime lastConnected = value.toDateTime();
+        QDateTime currentTime = QDateTime::currentDateTimeUtc();
 
         int daysAgo = lastConnected.daysTo(currentTime);
         if (daysAgo <= 1 && lastConnected.secsTo(currentTime) < 86400) {
