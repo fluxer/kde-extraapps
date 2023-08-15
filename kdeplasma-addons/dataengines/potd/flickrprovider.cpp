@@ -36,7 +36,7 @@ static const QString s_flickrapiurl = QString::fromLatin1(
     "https://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&format=json&method=flickr.interestingness.getList&date="
 );
 static const QString s_flickrimageurl = QString::fromLatin1(
-    "https://live.staticflickr.com/%1/%2_%3_b.png"
+    "https://live.staticflickr.com/%1/%2_%3_b.jpg"
 );
 
 POTDPROVIDER_EXPORT_PLUGIN(FlickrProvider, "FlickrProvider", "")
