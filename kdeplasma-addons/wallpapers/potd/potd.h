@@ -75,6 +75,8 @@ private:
     Plasma::DataEngine::Data m_providers;
     QString m_provider;
     QString m_configProvider;
+    int m_resizeMethod;
+    int m_configResizeMethod;
     QImage m_image;
 };
 

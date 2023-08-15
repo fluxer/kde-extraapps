@@ -29,6 +29,7 @@
 #include <KImageIO>
 
 static const QString DEFAULT_PROVIDER("apod");
+static const int DEFAULT_RESIZE_METHOD = Plasma::Wallpaper::ScaledResize;
 
 SaveRunnable::SaveRunnable(Plasma::DataEngine *dataEngine, const QString &provider, const QString &path)
     : m_dataEngine(dataEngine),
@@ -65,6 +66,8 @@ void SaveRunnable::dataUpdated(const QString &source, const Plasma::DataEngine::
 PoTD::PoTD(QObject *parent, const QVariantList &args)
     : Plasma::Wallpaper(parent, args)
 {
+    m_resizeMethod = DEFAULT_RESIZE_METHOD;
+    m_configResizeMethod = -1;
     connect(this, SIGNAL(renderCompleted(QImage)), this, SLOT(wallpaperRendered(QImage)));
     dataEngine(QLatin1String("potd"))->connectSource(QLatin1String("Providers"), this);
     setUsingRenderingCache(false);
@@ -78,16 +81,18 @@ PoTD::PoTD(QObject *parent, const QVariantList &args)
 void PoTD::init(const KConfigGroup &config)
 {
     QString provider = config.readEntry(QLatin1String("provider"), DEFAULT_PROVIDER);
+    int resizeMethod = config.readEntry("wallpaperposition", DEFAULT_RESIZE_METHOD);
     if (provider.isEmpty() || (!m_providers.isEmpty() && !m_providers.contains(provider))) {
         provider = DEFAULT_PROVIDER;
     }
 
-    if (provider != m_provider) {
+    if (provider != m_provider || m_resizeMethod != resizeMethod) {
         if (!m_provider.isEmpty()) {
             dataEngine(QLatin1String("potd"))->disconnectSource(m_provider, this);
         }
 
         m_provider = provider;
+        m_resizeMethod = resizeMethod;
 
         if (!isPreviewing()) {
             dataEngine(QLatin1String("potd"))->connectSource(m_provider, this);
@@ -113,7 +118,7 @@ void PoTD::dataUpdated(const QString &source, const Plasma::DataEngine::Data &da
         }
     } else if (source == m_provider) {
         QImage image = data["Image"].value<QImage>();
-        render(image, boundingRect().size().toSize(), MaxpectResize);
+        render(image, boundingRect().size().toSize(), (ResizeMethod)m_resizeMethod);
     } else {
         dataEngine(QLatin1String("potd"))->disconnectSource(source, this);
     }
@@ -176,6 +181,7 @@ QWidget* PoTD::createConfigurationInterface(QWidget* parent)
     QWidget *widget = new QWidget(parent);
     m_ui.setupUi(widget);
     m_configProvider.clear();
+    m_configResizeMethod = -1;
 
     Plasma::DataEngine::DataIterator it(m_providers);
     while (it.hasNext()) {
@@ -188,6 +194,20 @@ QWidget* PoTD::createConfigurationInterface(QWidget* parent)
     connect(m_ui.providers, SIGNAL(currentIndexChanged(int)), this, SLOT(settingsModified()));
     connect(this, SIGNAL(settingsChanged(bool)), parent, SLOT(settingsChanged(bool)));
 
+    m_ui.resizeMethod->addItem(i18n("Scaled & Cropped"), ScaledAndCroppedResize);
+    m_ui.resizeMethod->addItem(i18n("Scaled"), ScaledResize);
+    m_ui.resizeMethod->addItem(i18n("Scaled, keep proportions"), MaxpectResize);
+    m_ui.resizeMethod->addItem(i18n("Centered"), CenteredResize);
+    m_ui.resizeMethod->addItem(i18n("Tiled"), TiledResize);
+    m_ui.resizeMethod->addItem(i18n("Center Tiled"), CenterTiledResize);
+    for (int i = 0; i < m_ui.resizeMethod->count(); ++i) {
+        if (m_resizeMethod == m_ui.resizeMethod->itemData(i).value<int>()) {
+            m_ui.resizeMethod->setCurrentIndex(i);
+            break;
+        }
+    }
+    connect(m_ui.resizeMethod, SIGNAL(currentIndexChanged(int)), this, SLOT(settingsModified()));
+
     return widget;
 }
 
@@ -199,11 +219,18 @@ void PoTD::save(KConfigGroup &config)
         config.writeEntry("provider", m_configProvider);
         m_configProvider.clear();
     }
+    if (m_configResizeMethod == -1) {
+        config.writeEntry("wallpaperposition", m_resizeMethod);
+    } else {
+        config.writeEntry("wallpaperposition", m_configResizeMethod);
+        m_configResizeMethod = -1;
+    }
 }
 
 void PoTD::settingsModified()
 {
     m_configProvider = m_ui.providers->itemData(m_ui.providers->currentIndex()).toString();
+    m_configResizeMethod = m_ui.resizeMethod->itemData(m_ui.resizeMethod->currentIndex()).value<int>();
     emit settingsChanged(true);
 }
 
