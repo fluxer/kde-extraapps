@@ -28,7 +28,16 @@
 #include <KRandom>
 #include <kio/job.h>
 
-static const char* flickrapiurl = "https://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&format=json&method=flickr.interestingness.getList&date=";
+// for reference:
+// https://www.flickr.com/services/api/misc.urls.html
+// https://www.flickr.com/services/api/explore/flickr.interestingness.getList
+
+static const QString s_flickrapiurl = QString::fromLatin1(
+    "https://api.flickr.com/services/rest/?api_key=31f4917c363e2f76b9fc944790dcc338&format=json&method=flickr.interestingness.getList&date="
+);
+static const QString s_flickrimageurl = QString::fromLatin1(
+    "https://live.staticflickr.com/%1/%2_%3_b.png"
+);
 
 POTDPROVIDER_EXPORT_PLUGIN(FlickrProvider, "FlickrProvider", "")
 
@@ -81,7 +90,7 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
         // No pictures available for the specified parameters, decrement the date to two days earlier...
         mActualDate = mActualDate.addDays(-2);
 
-        const KUrl queryurl(QString::fromLatin1(flickrapiurl) + mActualDate.toString(Qt::ISODate));
+        const KUrl queryurl(s_flickrapiurl + mActualDate.toString(Qt::ISODate));
         kDebug() << "stat fail, retrying with" << queryurl.prettyUrl();
         kstoredjob = KIO::storedGet(queryurl, KIO::NoReload, KIO::HideProgressInfo);
         mParent->connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
@@ -95,11 +104,10 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
             kDebug() << "skipping non-public photo";
             continue;
         }
-        const QString photofarm = photomap["farm"].toString();
         const QString photoserver = photomap["server"].toString();
         const QString photoid = photomap["id"].toString();
         const QString photosecret = photomap["secret"].toString();
-        const QString photourl = QString::fromLatin1("https://farm%1.static.flickr.com/%2/%3_%4.jpg").arg(photofarm).arg(photoserver).arg(photoid).arg(photosecret);
+        const QString photourl = s_flickrimageurl.arg(photoserver, photoid, photosecret);
         kDebug() << "photo" << photourl;
         m_photoList.append(photourl);
     }
@@ -124,6 +132,9 @@ void FlickrProvider::Private::imageRequestFinished(KJob *kjob)
     }
 
     mImage = QImage::fromData(kstoredjob->data());
+    if (mImage.isNull()) {
+        kWarning() << "null image for" << kstoredjob->url();
+    }
     emit mParent->finished(mParent);
 }
 
@@ -132,7 +143,8 @@ FlickrProvider::FlickrProvider(QObject *parent, const QVariantList &args)
     d(new Private(this))
 {
     d->mActualDate = date();
-    const KUrl queryurl(QString::fromLatin1(flickrapiurl) + date().toString(Qt::ISODate));
+    const KUrl queryurl(s_flickrapiurl + d->mActualDate.toString(Qt::ISODate));
+    kDebug() << "starting job for" << queryurl.prettyUrl();
     KIO::StoredTransferJob *kstoredjob = KIO::storedGet(queryurl, KIO::NoReload, KIO::HideProgressInfo);
     connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
 }
