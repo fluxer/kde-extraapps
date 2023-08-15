@@ -295,7 +295,7 @@ void WeatherPopupApplet::configChanged()
         d->temperatureUnit = cfg.readEntry("temperatureUnit", "F");
         d->speedUnit = cfg.readEntry("speedUnit", "mph");
         d->pressureUnit = cfg.readEntry("pressureUnit", "inHg");
-        d->visibilityUnit = cfg.readEntry("visibilityUnit", "ml");
+        d->visibilityUnit = cfg.readEntry("visibilityUnit", "mi");
     }
     d->updateInterval = cfg.readEntry("updateInterval", 30);
     d->source = cfg.readEntry("source", "");
