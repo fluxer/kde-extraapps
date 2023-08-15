@@ -63,10 +63,11 @@ class FlickrProvider::Private
 
 void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
 {
-    KIO::StoredTransferJob *kstoredjob = static_cast<KIO::StoredTransferJob*>(kjob);
+    KIO::StoredTransferJob* kstoredjob = qobject_cast<KIO::StoredTransferJob*>(kjob);
     if (kstoredjob->error()) {
+        kWarning() << "request error" << kstoredjob->url();
+        kstoredjob->deleteLater();
         emit mParent->error(mParent);
-        kWarning() << "pageRequestFinished error";
         return;
     }
 
@@ -77,6 +78,7 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
     if (jsondata.startsWith("jsonFlickrApi(") && jsondata.endsWith(')')) {
         jsondata = jsondata.mid(14, jsondata.size() - 15);
     }
+    kstoredjob->deleteLater();
 
     const QJsonDocument jsondoc = QJsonDocument::fromJson(jsondata);
     if (jsondoc.isNull()) {
@@ -92,7 +94,9 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
 
         const KUrl queryurl(s_flickrapiurl + mActualDate.toString(Qt::ISODate));
         kDebug() << "stat fail, retrying with" << queryurl.prettyUrl();
+        kstoredjob->deleteLater();
         kstoredjob = KIO::storedGet(queryurl, KIO::NoReload, KIO::HideProgressInfo);
+        kstoredjob->setAutoDelete(false);
         mParent->connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
         return;
     }
@@ -120,13 +124,16 @@ void FlickrProvider::Private::pageRequestFinished(KJob *kjob)
     const KUrl photourl(m_photoList.at(KRandom::randomMax(m_photoList.size())));
     kDebug() << "chosen photo" << photourl.prettyUrl();
     kstoredjob = KIO::storedGet(photourl, KIO::NoReload, KIO::HideProgressInfo);
+    kstoredjob->setAutoDelete(false);
     mParent->connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)));
 }
 
 void FlickrProvider::Private::imageRequestFinished(KJob *kjob)
 {
-    KIO::StoredTransferJob *kstoredjob = static_cast<KIO::StoredTransferJob*>(kjob);
+    KIO::StoredTransferJob* kstoredjob = qobject_cast<KIO::StoredTransferJob*>(kjob);
     if (kstoredjob->error()) {
+        kWarning() << "image job error" << kstoredjob->url();
+        kstoredjob->deleteLater();
         emit mParent->error(mParent);
         return;
     }
@@ -135,6 +142,7 @@ void FlickrProvider::Private::imageRequestFinished(KJob *kjob)
     if (mImage.isNull()) {
         kWarning() << "null image for" << kstoredjob->url();
     }
+    kstoredjob->deleteLater();
     emit mParent->finished(mParent);
 }
 
@@ -146,6 +154,7 @@ FlickrProvider::FlickrProvider(QObject *parent, const QVariantList &args)
     const KUrl queryurl(s_flickrapiurl + d->mActualDate.toString(Qt::ISODate));
     kDebug() << "starting job for" << queryurl.prettyUrl();
     KIO::StoredTransferJob *kstoredjob = KIO::storedGet(queryurl, KIO::NoReload, KIO::HideProgressInfo);
+    kstoredjob->setAutoDelete(false);
     connect(kstoredjob, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
 }
 
