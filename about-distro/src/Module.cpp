@@ -110,7 +110,7 @@ void Module::load()
 
     const int bits = (QT_POINTER_SIZE == 8 ? 64 : 32);
     ui->bitsLabel->setText(i18nc("@label %1 is the CPU bit width (e.g. 32 or 64)",
-                                 "<numid>%1</numid>-bit", bits));
+                                 "%1-bit", QString::number(bits)));
 
     const QList<Solid::Device> list = Solid::Device::listFromType(Solid::DeviceInterface::Processor);
     ui->processor->setText(i18np("Processor:", "Processors:", list.count()));
