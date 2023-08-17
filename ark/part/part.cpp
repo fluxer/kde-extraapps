@@ -446,16 +446,17 @@ bool Part::openFile()
         QString item;
 
         if (creatingNewArchive) {
-            item = KInputDialog::getItem(i18nc("@title:window", "Invalid Archive Type"),
-                                         i18nc("@info", "Ark cannot create archives of the type you have chosen.<nl/><nl/>Please choose another archive type below."),
-                                         mimeComments, 0, false, &ok);
+            item = KInputDialog::getItem(
+                i18nc("@title:window", "Invalid Archive Type"),
+                i18nc("@info", "Ark cannot create archives of the type you have chosen.<br/><br/>Please choose another archive type below."),
+                mimeComments, 0, false, &ok
+            );
         } else {
-            item = KInputDialog::getItem(i18nc("@title:window", "Unable to Determine Archive Type"),
-                                         i18nc("@info", "Ark was unable to determine the archive type of the filename.<nl/><nl/>Please choose the correct archive type below."),
-                                         mimeComments,
-                                         0,
-                                         false,
-                                         &ok);
+            item = KInputDialog::getItem(
+                i18nc("@title:window", "Unable to Determine Archive Type"),
+                i18nc("@info", "Ark was unable to determine the archive type of the filename.<br/><br/>Please choose the correct archive type below."),
+                mimeComments, 0, false, &ok
+            );
         }
 
         if ((!ok) || (item.isEmpty())) {

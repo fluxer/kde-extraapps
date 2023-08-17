@@ -116,7 +116,7 @@ void ArkViewer::view(const QString& fileName, QWidget *parent)
             // application/octet-stream.  So it could be viewable as
             // plain text, ask the user.
             response = KMessageBox::warningContinueCancel(parent,
-                i18n("The internal viewer cannot preview this type of file<nl/>(%1).<nl/><nl/>Do you want to try to view it as plain text?", mimeType->name()),
+                i18n("The internal viewer cannot preview this type of file<br/>(%1).<br/><br/>Do you want to try to view it as plain text?", mimeType->name()),
                 i18nc("@title:window", "Cannot Preview File"),
                 KGuiItem(i18nc("@action:button", "Preview as Text"), KIcon(QLatin1String("text-plain"))),
                 KStandardGuiItem::cancel(),
@@ -127,7 +127,7 @@ void ArkViewer::view(const QString& fileName, QWidget *parent)
             // text, so ask the user.  Not the same as the message/question
             // above, because the wording and default are different.
             response = KMessageBox::warningContinueCancel(parent,
-                i18n("The internal viewer cannot preview this unknown type of file.<nl/><nl/>Do you want to try to view it as plain text?"),
+                i18n("The internal viewer cannot preview this unknown type of file.<br/><br/>Do you want to try to view it as plain text?"),
                 i18nc("@title:window", "Cannot Preview File"),
                 KGuiItem(i18nc("@action:button", "Preview as Text"), KIcon(QLatin1String("text-plain"))),
                 KStandardGuiItem::cancel(),
