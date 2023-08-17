@@ -148,8 +148,8 @@ void ConfigureOptionsDialog::onComboBackendActivated(int)
 
 	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
 			i18nc("@info",
-				"<para>Do you really want to change the backend?</para>"
-				"<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
+				"<p>Do you really want to change the backend?</p>"
+				"<p><warning>This will also rescan devices and thus clear the list of pending operations.</warning></p>"),
 			i18nc("@title:window", "Really Change Backend?"),
 			KGuiItem(i18nc("@action:button", "Change the Backend"), "arrow-right"),
 			KGuiItem(i18nc("@action:button", "Do Not Change the Backend"), "dialog-cancel"), "reallyChangeBackend") == KMessageBox::Continue)

@@ -449,10 +449,10 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
 	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable()->numPrimaries() >= d.partitionTable()->maxPrimaries() && !p.roles().has(PartitionRole::Logical))
 	{
 		KMessageBox::sorry(parent, i18ncp("@info",
-			"<para>There is already one primary partition on this device. This is the maximum number its partition table type can handle.</para>"
-			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
-		   "<para>There are already %1 primary partitions on this device. This is the maximum number its partition table type can handle.</para>"
-			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
+			"<p>There is already one primary partition on this device. This is the maximum number its partition table type can handle.</p>"
+			"<p>You cannot create, paste or restore a primary partition on it before you delete an existing one.</p>",
+		   "<p>There are already %1 primary partitions on this device. This is the maximum number its partition table type can handle.</p>"
+			"<p>You cannot create, paste or restore a primary partition on it before you delete an existing one.</p>",
 			d.partitionTable()->numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
 		return true;
 	}
@@ -518,8 +518,8 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 		{
 			KMessageBox::sorry(this,
 				i18nc("@info",
-					"<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
-					"<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
+					"<p>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</p>"
+					"<p>Please unmount all partitions with higher logical numbers than %2 first.</p>",
 				selectedPartition()->deviceNode(), selectedPartition()->number()),
 				i18nc("@title:window", "Cannot Delete Partition."));
 
@@ -679,13 +679,13 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 			return false;
 	}
 	else if (KMessageBox::warningContinueCancel(this,
-			i18nc("@info", "<para><warning>You are about to lose all data on partition "
-				"<filename>%1</filename>.</warning></para>"
-				"<para>Overwriting one partition with another (or with an image file) will "
-				"destroy all data on this target partition.</para>"
-				"<para>If you continue now and apply the resulting operation in the main "
+			i18nc("@info", "<p><warning>You are about to lose all data on partition "
+				"<filename>%1</filename>.</warning></p>"
+				"<p>Overwriting one partition with another (or with an image file) will "
+				"destroy all data on this target partition.</p>"
+				"<p>If you continue now and apply the resulting operation in the main "
 				"window, all data currently stored on <filename>%1</filename> will "
-				"unrecoverably be overwritten.</para>",
+				"unrecoverably be overwritten.</p>",
 				selectedPartition()->deviceNode()),
 			i18nc("@title:window", "Really Overwrite Existing Partition?"),
 			KGuiItem(i18nc("@action:button", "Overwrite Partition"), "arrow-right"),
@@ -697,13 +697,13 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 	{
 		if (overwrite)
 			KMessageBox::error(this, i18nc("@info",
-				"<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
-				"<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target Not Large Enough"));
+				"<p>The selected partition is not large enough to hold the source partition or the backup file.</p>"
+				"<p>Pick another target or resize this partition so it is as large as the source.</p>"), i18nc("@title:window", "Target Not Large Enough"));
 		else
 			KMessageBox::sorry(this, i18nc("@info",
-				"<para>It is not possible to create the target partition large enough to hold the source.</para>"
-				"<para>This may happen if not all partitions on a device are correctly aligned "
-				"or when copying a primary partition into an extended partition.</para>"),
+				"<p>It is not possible to create the target partition large enough to hold the source.</p>"
+				"<p>This may happen if not all partitions on a device are correctly aligned "
+				"or when copying a primary partition into an extended partition.</p>"),
 				i18nc("@title:window", "Cannot Create Target Partition."));
 		return false;
 	}

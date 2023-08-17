@@ -49,8 +49,8 @@ EditMountPointDialog::~EditMountPointDialog()
 void EditMountPointDialog::accept()
 {
 	if (KMessageBox::warningContinueCancel(this,
-			i18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
-			"<para><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></para>"),
+			i18nc("@info", "<p>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</p>"
+			"<p><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></p>"),
 			i18nc("@title:window", "Really save changes?"),
 			KGuiItem(i18nc("@action:button", "Save changes"), "arrow-right"),
 			KStandardGuiItem::cancel(),

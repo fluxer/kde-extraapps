@@ -141,8 +141,8 @@ void MainWindow::closeEvent(QCloseEvent* event)
 	if (operationStack().size() > 0)
 	{
 		if (KMessageBox::warningContinueCancel(this,
-			i18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
-    		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", operationStack().size()),
+			i18ncp("@info", "<p>Do you really want to quit the application?</p><p>There is still an operation pending.</p>",
+    		"<p>Do you really want to quit the application?</p><p>There are still %1 operations pending.</p>", operationStack().size()),
 			i18nc("@title:window", "Discard Pending Operations and Quit?"),
 			KGuiItem(i18nc("@action:button", "Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName()), "arrow-right"),
 			KStandardGuiItem::cancel(), "reallyQuit") == KMessageBox::Cancel)
@@ -642,8 +642,8 @@ void MainWindow::onRefreshDevices()
 {
 	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
 		i18nc("@info",
-			"<para>Do you really want to rescan the devices?</para>"
-			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
+			"<p>Do you really want to rescan the devices?</p>"
+			"<p><warning>This will also clear the list of pending operations.</warning></p>"),
 		i18nc("@title:window", "Really Rescan the Devices?"),
 		KGuiItem(i18nc("@action:button", "Rescan Devices"), "arrow-right"),
 		KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
@@ -661,8 +661,8 @@ void MainWindow::onApplyAllOperations()
 
 	if (KMessageBox::warningContinueCancelList(this,
 		i18nc("@info",
-			"<para>Do you really want to apply the pending operations listed below?</para>"
-			"<para><warning>This will permanently modify your disks.</warning></para>"),
+			"<p>Do you really want to apply the pending operations listed below?</p>"
+			"<p><warning>This will permanently modify your disks.</warning></p>"),
 		opList, i18nc("@title:window", "Apply Pending Operations?"),
 		KGuiItem(i18nc("@action:button", "Apply Pending Operations"), "arrow-right"),
 		KStandardGuiItem::cancel()) == KMessageBox::Continue)
@@ -1067,7 +1067,7 @@ void MainWindow::checkFileSystemSupport()
 	if (!supportList.isEmpty())
 		KMessageBox::information(this,
 				i18nc("@info",
-					"<para>No support tools were found for file systems currently present on hard disks in this computer:</para>"
+					"<p>No support tools were found for file systems currently present on hard disks in this computer:</p>"
 					"<table style='margin-top:12px'>"
 					"<tr>"
 					"<td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</td>"
@@ -1077,8 +1077,8 @@ void MainWindow::checkFileSystemSupport()
 					"</tr>"
 					"%1"
 					"</table>"
-					"<para>As long as the support tools for these file systems are not installed you will not be able to modify them.</para>"
-					"<para>You should find packages with these support tools in your distribution's package manager.</para>",
+					"<p>As long as the support tools for these file systems are not installed you will not be able to modify them.</p>"
+					"<p>You should find packages with these support tools in your distribution's package manager.</p>",
 				supportList.join("\n")),
 				i18nc("@title:window", "Missing File System Support Packages"),
 				"showInformationOnMissingFileSystemSupport", KMessageBox::Notify | KMessageBox::AllowLink);

@@ -92,10 +92,10 @@ bool checkPermissions()
 		}
 
 		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
-				"<para><warning>You do not have administrative privileges.</warning></para>"
-				"<para>It is possible to run <application>%1</application> without these privileges. "
-				"You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
-				"<para>Do you want to continue running <application>%1</application>?</para>",
+				"<p><warning>You do not have administrative privileges.</warning></p>"
+				"<p>It is possible to run <application>%1</application> without these privileges. "
+				"You will, however, <emphasis>not</emphasis> be allowed to apply operations.</p>"
+				"<p>Do you want to continue running <application>%1</application>?</p>",
 				KGlobal::mainComponent().aboutData()->programName()),
 	 		i18nc("@title:window", "No administrative privileges"),
 			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), "arrow-right"),
@@ -186,8 +186,8 @@ bool loadBackend()
 		if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName()))
 		{
 			KMessageBox::sorry(NULL,
-				i18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
-					"<para>Loading the default backend plugin \"%2\" instead.</para>",
+				i18nc("@info", "<p>The configured backend plugin \"%1\" could not be loaded.</p>"
+					"<p>Loading the default backend plugin \"%2\" instead.</p>",
 				Config::backend(), CoreBackendManager::defaultBackendName()),
 				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
 			Config::setBackend(CoreBackendManager::defaultBackendName());
@@ -195,8 +195,8 @@ bool loadBackend()
 		else
 		{
 			KMessageBox::error(NULL,
-				i18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
-					"plugin could be loaded.</para><para>Please check your installation.</para>",
+				i18nc("@info", "<p>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+					"plugin could be loaded.</p><p>Please check your installation.</p>",
 				Config::backend(), CoreBackendManager::defaultBackendName()),
 				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
 			return false;
