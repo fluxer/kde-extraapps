@@ -38,7 +38,7 @@ Item {
     property bool hasResult: false;
     property bool showingInput: true;
     property bool showingResult: false;
-    property string operator: undefined;
+    property string operator: "";
     property real operand: 0;
     property bool commaPressed: false;
     property int decimals: 0;
@@ -134,8 +134,7 @@ Item {
             return;
         }
 
-        display.text = algarismCount(result * Math.pow(10, decimals)) > maxInputLength?
-            "E" : result;
+        display.text = algarismCount(result * Math.pow(10, decimals)) > maxInputLength ? "E" : result;
         showingInput = false;
     }
 
@@ -179,8 +178,7 @@ Item {
     }
 
     function algarismCount(number) {
-        return number == 0? 1 :
-                            Math.floor(Math.log(Math.abs(number))/Math.log(10)) + 1;
+        return number == 0 ? 1 : Math.floor(Math.log(Math.abs(number))/Math.log(10)) + 1;
     }
 
     Locale.Locale {
@@ -360,7 +358,7 @@ Item {
             PlasmaComponents.Button {
                 width: buttonWidth;
                 height: buttonHeight;
-                text: locale.decimalSymbol;
+                text: locale.toLocale().decimalPoint;
                 onClicked: decimalClicked();
             }
 
