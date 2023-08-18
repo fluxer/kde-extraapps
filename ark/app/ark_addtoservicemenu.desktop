@@ -2,6 +2,7 @@
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 MimeType=all/all;
+StartupNotify=false
 Actions=compressHere;compressAsZip;compressAsTar;compressTo;
 X-KDE-Submenu=Compress
 X-KDE-Submenu[ar]=اضغط
@@ -61,7 +62,6 @@ X-KDE-Submenu[wa]=Rastrinde
 X-KDE-Submenu[x-test]=xxCompressxx
 X-KDE-Submenu[zh_CN]=压缩
 X-KDE-Submenu[zh_TW]=壓縮
-X-KDE-StartupNotify=false
 X-KDE-Priority=TopLevel
 
 [Desktop Action compressHere]

@@ -152,7 +152,5 @@ Comment[zh_TW]=管理磁碟、分割區與檔案系統
 Exec=partitionmanager --icon '%i' --caption '%c'
 Icon=partitionmanager
 Categories=System;Filesystem;KDE;Qt;
-
+StartupNotify=true
 X-KDE-SubstituteUID=true
-X-KDE-StartupNotify=true
-

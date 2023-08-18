@@ -2,10 +2,9 @@
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin
 MimeType=@SUPPORTED_ARK_MIMETYPES@
+StartupNotify=false
 Actions=arkAutoExtractHere;arkExtractTo;arkExtractHere;
 X-KDE-Priority=TopLevel
-X-KDE-StartupNotify=false
-#StartupNotify=false
 X-KDE-Submenu=Extract
 X-KDE-Submenu[ar]=استخرِج
 X-KDE-Submenu[bg]=Извличане
