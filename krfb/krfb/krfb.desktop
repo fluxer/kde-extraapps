@@ -3,8 +3,7 @@
 Type=Application
 Exec=krfb --icon '%i' --caption '%c'
 Icon=krfb
-X-DBUS-ServiceName=org.kde.krfb
-X-DBUS-StartupType=Unique
+StartupNotify=true
 X-DocPath=krfb/index.html
 Terminal=false
 Name=Krfb

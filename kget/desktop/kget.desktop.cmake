@@ -158,6 +158,5 @@ GenericName[zh_CN]=下载管理器
 GenericName[zh_HK]=下載管理員
 GenericName[zh_TW]=下載管理員
 Categories=Qt;KDE;Network;FileTransfer;
-X-DBUS-ServiceName=org.kde.kget
-X-DBUS-StartupType=Unique
+StartupNotify=false
 X-DocPath=kget/index.html

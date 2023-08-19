@@ -98,10 +98,8 @@ Comment[uk]=Служба мікшування KMixD
 Comment[x-test]=xxKMixD Mixer Servicexx
 Comment[zh_CN]=KMixD 混音器服务
 Comment[zh_TW]=KMixD 混音器服務
-#StartupNotify=false
+StartupNotify=false
 #X-KDE-autostart-phase=1
-#X-DBUS-ServiceName=org.kde.kmix
-#X-DBUS-StartupType=Unique
 #X-KDE-ServiceTypes=
 
 # KDED registration
