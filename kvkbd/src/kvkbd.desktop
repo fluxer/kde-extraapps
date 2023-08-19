@@ -43,4 +43,4 @@ GenericName[uk]=Віртуальна клавіатура
 GenericName[x-test]=xxVirtual Keyboardxx
 Categories=Qt;KDE;Utility;Accessibility;
 Terminal=false
-
+StartupNotify=true

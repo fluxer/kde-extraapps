@@ -7,3 +7,4 @@ Exec=kemu --icon '%i' --caption '%c' %U
 Terminal=false
 Type=Application
 Categories=Qt;KDE;System;
+StartupNotify=true

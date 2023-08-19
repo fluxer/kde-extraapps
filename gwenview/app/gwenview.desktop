@@ -181,3 +181,4 @@ X-DocPath=gwenview/index.html
 # InitialPreference should be less than Dolphin so that Gwenview is not the
 # primary applications for folders.
 InitialPreference=8
+StartupNotify=true
