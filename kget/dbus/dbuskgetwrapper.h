@@ -45,7 +45,6 @@ class DBusKGetWrapper : public QObject
         void setOfflineMode(bool online);
         bool offlineMode() const;
         QVariantMap transfers() const;
-        int transfersSpeed() const;
         void importLinks(const QList <QString> &links);
         bool isSupported(const QString &url) const;
 

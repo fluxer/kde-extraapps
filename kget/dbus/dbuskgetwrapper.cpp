@@ -146,12 +146,6 @@ void DBusKGetWrapper::slotTransfersRemoved(const QList<TransferHandler*> &transf
     emit transfersRemoved(urls, objectPaths);
 }
 
-int DBusKGetWrapper::transfersSpeed() const
-{
-    return 0;//FIXME
-    //return m_dbusModelObserver->transfersSpeed();
-}
-
 void DBusKGetWrapper::importLinks(const QList <QString> &links)
 {
     KGetLinkView *link_view = new KGetLinkView(m_mainWindow);
