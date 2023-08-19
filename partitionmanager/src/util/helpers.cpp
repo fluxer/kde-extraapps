@@ -94,7 +94,7 @@ bool checkPermissions()
 		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
 				"<p><warning>You do not have administrative privileges.</warning></p>"
 				"<p>It is possible to run %1 without these privileges. "
-				"You will, however, <emphasis>not</emphasis> be allowed to apply operations.</p>"
+				"You will, however, <i>not</i> be allowed to apply operations.</p>"
 				"<p>Do you want to continue running %1?</p>",
 				KGlobal::mainComponent().aboutData()->programName()),
 	 		i18nc("@title:window", "No administrative privileges"),
