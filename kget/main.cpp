@@ -67,6 +67,7 @@ public:
 #endif
             //END
 
+            kget->show();
         }
 
         if (args->isSet("showDropTarget"))
