@@ -37,6 +37,7 @@
 #include <KHelpMenu>
 #include <KFontDialog>
 #include <KCmdLineArgs>
+#include <KMenu>
 
 #include <iostream>
 
@@ -86,7 +87,7 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
     connect(themeLoader, SIGNAL(partLoaded(MainWidget*, int, int)), this, SLOT(partLoaded(MainWidget*, int, int)));
     connect(themeLoader, SIGNAL(buttonLoaded(VButton*)), this, SLOT(buttonLoaded(VButton*)));
 
-    QMenu *cmenu = tray->contextMenu();
+    KMenu *cmenu = tray->contextMenu();
 
     KAction *chooseFontAction = new KAction(KIcon("preferences-desktop-font"), i18nc("@action:inmenu", "Choose Font..."), this);
     connect(chooseFontAction, SIGNAL(triggered(bool)), this, SLOT(chooseFont()) );
@@ -200,7 +201,7 @@ KvkbdApp::KvkbdApp(bool loginhelper) : KUniqueApplication(), is_login(loginhelpe
             widget->showMinimized();
         }
         widget->setWindowTitle("kvkbd");
-        tray->show();
+        tray->setStatus(KStatusNotifierItem::Active);
     } else {
         QTimer *timer = new QTimer(this);
         timer->setInterval(1000);

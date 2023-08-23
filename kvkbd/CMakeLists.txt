@@ -10,7 +10,6 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 add_subdirectory( src )
-add_subdirectory( pics )
 add_subdirectory( colors )
 add_subdirectory( themes )
 

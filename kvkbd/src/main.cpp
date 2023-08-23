@@ -66,6 +66,7 @@ void findLoginWindow()
 
 int main(int argc, char **argv)
 {
+    setenv("KSNI_NO_DBUSMENU", "1", 1);
 
     KAboutData about("kvkbd", 0, ki18n("Kvkbd"), version, ki18n(description),
                      KAboutData::License_LGPL_V3, ki18n("(C) 2007-2014 The Kvkbd Developers"));
