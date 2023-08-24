@@ -13,14 +13,13 @@
 #define TRANSFERHANDLER_H
 
 #include <QVariant>
+#include <QAction>
 
 #include "handler.h"
 #include "transfer.h"
 #include "transfergroup.h"
 #include "../kget_export.h"
 
-#include <QAction>
-class KPassivePopup;
 
 class KGetKJobAdapter;
 
