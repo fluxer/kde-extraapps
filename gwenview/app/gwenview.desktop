@@ -182,3 +182,4 @@ X-DocPath=gwenview/index.html
 # primary applications for folders.
 InitialPreference=8
 StartupNotify=true
+X-KDE-HasTrayOption=true

@@ -154,5 +154,6 @@ Type=Application
 Terminal=false
 StartupNotify=true
 X-KDE-HasTempFileOption=true
+X-KDE-HasTrayOption=true
 Categories=Qt;KDE;Utility;Archiving;Compression;X-KDE-Utilities-File;
 InitialPreference=3

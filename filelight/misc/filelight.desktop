@@ -159,3 +159,4 @@ MimeType=inode/directory;
 X-DocPath=filelight/index.html
 Categories=Qt;KDE;Utility;
 StartupNotify=true
+X-KDE-HasTrayOption=true

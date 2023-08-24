@@ -8,3 +8,4 @@ Terminal=false
 Type=Application
 Categories=Qt;KDE;System;
 StartupNotify=true
+X-KDE-HasTrayOption=true
