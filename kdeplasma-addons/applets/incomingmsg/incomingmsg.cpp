@@ -49,17 +49,15 @@
 #include <KLocale>
 
 IncomingMsg::IncomingMsg(QObject *parent, const QVariantList &args)
-        : Plasma::Applet(parent, args),
-          mEvolutionLabel(0), mEvolutionIconLabel(0),
-          mXChatLabel(0), mXChatIconLabel(0),
-          mKopeteLabel(0), mKopeteIconLabel(0),
-          mPidginLabel(0), mPidginIconLabel(0),
-          mQutIMLabel(0), mQutIMIconLabel(0),
-          mErrorLabel(0), mLayout(0),
-          mEvolutionLayout(0), mXChatLayout(0),
-          mKopeteLayout(0), mPidginLayout(0),
-          mQutIMLayout(0),
-          mQutIUnreadCount(0)
+    : Plasma::Applet(parent, args),
+    mXChatLabel(0), mXChatIconLabel(0),
+    mKopeteLabel(0), mKopeteIconLabel(0),
+    mPidginLabel(0), mPidginIconLabel(0),
+    mQutIMLabel(0), mQutIMIconLabel(0),
+    mErrorLabel(0), mLayout(0),
+    mXChatLayout(0), mKopeteLayout(0),
+    mPidginLayout(0), mQutIMLayout(0),
+    mQutIUnreadCount(0)
 {
     // this will get us the standard applet background, for free!
     setBackgroundHints(DefaultBackground);
@@ -102,45 +100,6 @@ void IncomingMsg::configChanged()
     mShowKopete = cg.readEntry("showKopete", true);
     mShowPidgin = cg.readEntry("showPidgin", true);
     mShowQutIM = cg.readEntry("showQutIM", true);
-}
-
-void IncomingMsg::initEvolutionLayout()
-{
-    /* test for the evolution dbus interface */
-    // TODO find out why evolution does not expose dbus on a kde session here
-//    QDBusInterface evolutionDBusTest( "org.freedesktop.Notification",
-//                                      "‘/org/freedesktop/Notifications",
-//                                      "org.freedesktop.Notifications" );
-//    QDBusReply<QString>evolutionReply = evolutionDBusTest.call( "New Email" );
-//    if(/*!evolutionReply.isValid()*/false)
-//        kDebug() << "Evolution DBus interface test error: " << evolutionReply.error();
-//    else{
-//        QDBusConnection mDBus = QDBusConnection::sessionBus();
-//
-//        if( !mDBus.connect ( "org.gnome.evolution", "/Evolution", "org.gnome.evolution.mail.dbus.Signal",
-//                         "Newmail",
-//                         this, SLOT(slotNewMail()) ) )
-//            kDebug() << "Could not connect Evolution to slot.";
-//        else{
-//            mEvolutionLayout = new QGraphicsLinearLayout(Qt::Horizontal);
-//            mEvolutionLabel = new Plasma::Label(this);
-//            mEvolutionLabel->setText( i18n("No new mail."));
-//            KIcon icon( "evolution" );
-//            mEvolutionIconLabel = new Plasma::Label(this);
-//            mEvolutionIconLabel->setMinimumWidth(32);
-//            mEvolutionIconLabel->setMinimumHeight(32);
-//            KIconEffect effect;
-//            mEvolutionIconLabel->nativeWidget()->setPixmap(
-//                effect.apply( icon.pixmap(32,32), KIconEffect::ToGray, 1, QColor(),QColor(), true )
-//                                                );
-//
-//            mEvolutionLayout->addItem(mEvolutionIconLabel);
-//            mEvolutionLayout->addItem(mEvolutionLabel);
-//            mEvolutionLayout->setAlignment(mEvolutionLabel, Qt::AlignLeft);
-//
-//            mLayout->addItem(mEvolutionLayout);
-//        }
-//    }
 }
 
 void IncomingMsg::initXChatLayout()
@@ -362,7 +321,6 @@ void IncomingMsg::initLayout()
 {
     mLayout = new QGraphicsLinearLayout(Qt::Vertical);
 
-    //initEvolutionLayout();
     initXChatLayout();
     initKopeteLayout();
     initPidginLayout();
@@ -417,15 +375,6 @@ void IncomingMsg::configAccepted()
 
     clearLayout();
     initLayout();
-}
-
-void IncomingMsg::slotNewEvolutionMail()
-{
-    if (mEvolutionIconLabel) {
-        KIcon icon("evolution");
-        mEvolutionIconLabel->nativeWidget()->setPixmap(icon.pixmap(32, 32));
-        mEvolutionLabel->setText(i18n("Your Evolution mail count has changed."));
-    }
 }
 
 void IncomingMsg::slotNewXChatIM()

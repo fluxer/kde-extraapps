@@ -51,7 +51,6 @@ public:
 protected:
     void createConfigurationInterface(KConfigDialog *parent);
 
-    void initEvolutionLayout();
     void initXChatLayout();
     void initKopeteLayout();
     void initPidginLayout();
@@ -69,13 +68,12 @@ private:
     void updateQutIMStatus(bool saveIcon);
 
     // text labels
-    Plasma::Label *mEvolutionLabel, *mEvolutionIconLabel,
-        *mXChatLabel,
+    Plasma::Label *mXChatLabel,
         *mXChatIconLabel, *mKopeteLabel, *mKopeteIconLabel,
         *mPidginLabel, *mPidginIconLabel, *mQutIMLabel,
         *mQutIMIconLabel, *mErrorLabel;
 
-    QGraphicsLinearLayout *mLayout, *mEvolutionLayout,
+    QGraphicsLinearLayout *mLayout,
         *mXChatLayout, *mKopeteLayout, *mPidginLayout,
         *mQutIMLayout;
 
@@ -87,7 +85,6 @@ private:
     Ui::incomingmsgConfig ui;
 
 private slots:
-    void slotNewEvolutionMail();
     void slotNewPidginIM();
     void slotNewKopeteIM(const QString&);
     void slotNewXChatIM();
