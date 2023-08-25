@@ -42,7 +42,7 @@
 #include <kstandarddirs.h>
 #include <KInputDialog>
 #include <kmessagebox.h>
-#include <knotifyconfigwidget.h>
+#include <knotificationconfigwidget.h>
 #include <kfiledialog.h>
 #include <ktoolinvocation.h>
 #include <kiconloader.h>
@@ -915,7 +915,7 @@ void MainWindow::slotDeleteFinished()
 
 void MainWindow::slotConfigureNotifications()
 {
-    KNotifyConfigWidget::configure(this);
+    KNotificationConfigWidget::configure("kget", this);
 }
 
 void MainWindow::slotNewToolbarConfig()

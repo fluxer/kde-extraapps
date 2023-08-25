@@ -63,15 +63,20 @@ void PendingInvitationsRfbClient::processNewClient()
 
     if (d->askOnConnect == false) {
 
-        KNotification::event("NewConnectionAutoAccepted",
-                             i18n("Accepted connection from %1", host));
+        KNotification::event(
+            "krfb/NewConnectionAutoAccepted",
+            QString(),
+            i18n("Accepted connection from %1", host)
+        );
         accept(new InvitationsRfbClient(m_rfbClient, parent()));
 
     } else {
 
-        KNotification::event("NewConnectionOnHold",
-                            i18n("Received connection from %1, on hold (waiting for confirmation)",
-                                host));
+        KNotification::event(
+            "krfb/NewConnectionOnHold",
+            QString(),
+            i18n("Received connection from %1, on hold (waiting for confirmation)", host)
+        );
 
         InvitationsConnectionDialog *dialog = new InvitationsConnectionDialog(0);
         dialog->setRemoteHost(host);

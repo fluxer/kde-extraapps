@@ -212,8 +212,11 @@ void RfbServerManager::addClient(RfbClient* cc)
     }
     d->clients.insert(cc);
 
-    KNotification::event("UserAcceptsConnection",
-                         i18n("The remote user %1 is now connected.", cc->name()));
+    KNotification::event(
+        "krfb/UserAcceptsConnection",
+        QString(),
+        i18n("The remote user %1 is now connected.", cc->name())
+    );
 
     Q_EMIT clientConnected(cc);
 }
@@ -227,7 +230,11 @@ void RfbServerManager::removeClient(RfbClient* cc)
         d->rfbUpdateTimer.stop();
     }
 
-    KNotification::event("ConnectionClosed", i18n("The remote user %1 disconnected.", cc->name()));
+    KNotification::event(
+        "krfb/ConnectionClosed",
+        QString(),
+        i18n("The remote user %1 disconnected.", cc->name())
+    );
 
     Q_EMIT clientDisconnected(cc);
 }

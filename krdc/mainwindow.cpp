@@ -45,7 +45,7 @@
 #include <KLocale>
 #include <KMenu>
 #include <KMessageBox>
-#include <KNotifyConfigWidget>
+#include <KNotificationConfigWidget>
 #include <KPluginInfo>
 #include <KPushButton>
 #include <KStatusBar>
@@ -940,7 +940,7 @@ void MainWindow::quit(bool systemEvent)
 
 void MainWindow::configureNotifications()
 {
-    KNotifyConfigWidget::configure(this);
+    KNotificationConfigWidget::configure("krdc", this);
 }
 
 void MainWindow::showMenubar()

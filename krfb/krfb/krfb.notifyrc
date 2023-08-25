@@ -1,4 +1,4 @@
-[Global]
+[krfb]
 IconName=krfb
 Comment=Desktop Sharing
 Comment[af]=Werkskerm Deeling
@@ -72,7 +72,7 @@ Comment[zh_CN]=桌面共享
 Comment[zh_HK]=桌面分享
 Comment[zh_TW]=桌面分享
 
-[Event/UserAcceptsConnection]
+[krfb/UserAcceptsConnection]
 Name=User Accepts Connection
 Name[ar]=المستخدم يقبل الاتصال
 Name[ast]=L'usuariu aceuta la conexón
@@ -203,9 +203,9 @@ Comment[x-test]=xxUser accepts connectionxx
 Comment[zh_CN]=用户接受连接
 Comment[zh_HK]=用戶接受連線
 Comment[zh_TW]=使用者接受連線
-Action=Popup
+Actions=Popup
 
-[Event/UserRefusesConnection]
+[krfb/UserRefusesConnection]
 Name=User Refuses Connection
 Name[ar]=المستخدم يرفض الاتصال
 Name[ast]=L'usuariu refuga la conexón
@@ -336,9 +336,9 @@ Comment[x-test]=xxUser refuses connectionxx
 Comment[zh_CN]=用户拒绝连接
 Comment[zh_HK]=用戶拒絕連線
 Comment[zh_TW]=使用者拒絕連線使用者
-Action=Popup
+Actions=Popup
 
-[Event/ConnectionClosed]
+[krfb/ConnectionClosed]
 Name=Connection Closed
 Name[ar]=الاتصال أغلق
 Name[ast]=Conexón zarrada
@@ -475,9 +475,9 @@ Comment[x-test]=xxConnection closedxx
 Comment[zh_CN]=连接关闭
 Comment[zh_HK]=連線已關閉
 Comment[zh_TW]=連線已關閉
-Action=Popup
+Actions=Popup
 
-[Event/InvalidPassword]
+[krfb/InvalidPassword]
 Name=Invalid Password
 Name[ar]=كلمة المرور غير صحيحة
 Name[ast]=Contraseña incorreuta
@@ -617,9 +617,9 @@ Comment[x-test]=xxInvalid passwordxx
 Comment[zh_CN]=无效密码
 Comment[zh_HK]=無效的密碼
 Comment[zh_TW]=不正確的密碼
-Action=Popup
+Actions=Popup
 
-[Event/InvalidPasswordInvitations]
+[krfb/InvalidPasswordInvitations]
 Name=Invalid Password Invitations
 Name[ar]=كلمة المرور الدعوات غير صحيحة
 Name[ast]=Contraseñas d'invitaciones incorreutes
@@ -748,9 +748,9 @@ Comment[x-test]=xxThe invited party sent an invalid password. Connection refused
 Comment[zh_CN]=受邀请方发送的密码不对。连接被拒绝。
 Comment[zh_HK]=被邀請的一方送出無效的密碼。已拒絕連線。
 Comment[zh_TW]=邀請的人送出了不合法的密碼邀請。連線已拒絕。
-Action=Popup
+Actions=Popup
 
-[Event/NewConnectionOnHold]
+[krfb/NewConnectionOnHold]
 Name=New Connection on Hold
 Name[ar]=اتصال جديد  على التوقف
 Name[ast]=Conexón nueva a la espera
@@ -879,9 +879,9 @@ Comment[x-test]=xxConnection requested, user must acceptxx
 Comment[zh_CN]=连接已请求，用户必须接受
 Comment[zh_HK]=已請求連線，用戶必須接受
 Comment[zh_TW]=連線已要求，必須等使用者接受
-Action=Popup
+Actions=Popup
 
-[Event/NewConnectionAutoAccepted]
+[krfb/NewConnectionAutoAccepted]
 Name=New Connection Auto Accepted
 Name[ar]=اتصال جديد مقبول تلقائيا
 Name[ast]=Conexón nueva aceutada automáticamente
@@ -1010,9 +1010,9 @@ Comment[x-test]=xxNew connection automatically establishedxx
 Comment[zh_CN]=自动建立新连接
 Comment[zh_HK]=已自動建立新連線
 Comment[zh_TW]=新連線自動建立
-Action=Popup
+Actions=Popup
 
-[Event/TooManyConnections]
+[krfb/TooManyConnections]
 Name=Too Many Connections
 Name[ar]=اتصالات عديدة
 Name[ast]=Abondes conexones
@@ -1144,9 +1144,9 @@ Comment[x-test]=xxBusy, connection refusedxx
 Comment[zh_CN]=对方处于忙碌状态，连接被拒绝
 Comment[zh_HK]=忙碌，已拒絕連線
 Comment[zh_TW]=忙碌，連線被拒
-Action=Popup
+Actions=Popup
 
-[Event/UnexpectedConnection]
+[krfb/UnexpectedConnection]
 Name=Unexpected Connection
 Name[ar]=الاتصال غير متوقّع
 Name[ast]=Conexón inesperada
@@ -1275,4 +1275,4 @@ Comment[x-test]=xxReceived unexpected connection, abortxx
 Comment[zh_CN]=收到意外连接，已中止
 Comment[zh_HK]=接收到非預期的連線，中止
 Comment[zh_TW]=已接收到未知的連線，中止。
-Action=Popup
+Actions=Popup

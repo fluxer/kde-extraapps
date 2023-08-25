@@ -27,7 +27,6 @@
 #include <KDebug>
 #include <KLocale>
 #include <KMessageBox>
-#include <KNotification>
 #include <kdeversion.h>
 
 #include <QtGui/QPixmap>

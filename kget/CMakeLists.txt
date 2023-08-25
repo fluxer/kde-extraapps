@@ -210,7 +210,6 @@ target_link_libraries(kget
     KDE4::kdeui
     KDE4::kio
     KDE4::kcmutils
-    KDE4::knotifyconfig
     KDE4::kpasswdstore
     kgetcore
 )
@@ -228,7 +227,7 @@ install(
 
 install(
     FILES kget.notifyrc
-    DESTINATION ${KDE4_DATA_INSTALL_DIR}/kget
+    DESTINATION ${KDE4_CONFIG_INSTALL_DIR}/notifications
 )
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})

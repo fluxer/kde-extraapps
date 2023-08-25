@@ -77,12 +77,10 @@ void KGetRunner::run(const Plasma::RunnerContext& /*context*/, const Plasma::Que
     connection->startService(KGET_DBUS_SERVICE);
     if(connection->lastError().type() != QDBusError::NoError) {
         KNotification::event(
-            KNotification::Error,
-            i18n(
-                "<p>KGet Runner could not communicate with KGet.</p><p style=\"font-size: small;\">Response from DBus:<br/>%1</p>",
-                connection->lastError().message()
-            ),
-            KIcon("dialog-warning").pixmap(KIconLoader::SizeSmall)
+            "kget/error",
+            i18n("KGet Runner"),
+            i18n("Could not communicate with KGet, response from DBus:<br/><p style=\"font-size: small;\">%1</p>", connection->lastError().message()),
+            "dialog-warning"
         );
         return;
     }
@@ -109,9 +107,12 @@ void KGetRunner::callFinished(QDBusPendingCallWatcher* call)
     //  TODO Remove the check for QDBusError::NoReply when NewTransferDialog is fixed to show asynchronously.
     if(!reply.isValid() && (reply.error().type() != QDBusError::NoReply)) {
         //  Send a notification about the error to the user.
-        KNotification::event(KNotification::Error,
-                i18n("<p>KGet Runner could not communicate with KGet.</p><p style=\"font-size: small;\">Response from DBus:<br/>%1</p>", reply.error().message()),
-                KIcon("dialog-warning").pixmap(KIconLoader::SizeSmall)/*, 0, KNotification::Persistent*/);
+        KNotification::event(
+            "kget/error",
+            i18n("KGet Runner"),
+            i18n("Could not communicate with KGet, response from DBus:<br/><p style=\"font-size: small;\">%1</p>", reply.error().message()),
+            "dialog-warning"
+        );
     }
 }
 

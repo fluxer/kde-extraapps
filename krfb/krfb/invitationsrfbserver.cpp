@@ -26,7 +26,6 @@
 #include <QtCore/QTimer>
 #include <QtGui/QApplication>
 #include <QtNetwork/QHostInfo>
-#include <KNotification>
 #include <KLocale>
 #include <KMessageBox>
 #include <KUser>

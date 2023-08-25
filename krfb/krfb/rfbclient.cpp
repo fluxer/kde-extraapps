@@ -24,7 +24,6 @@
 #include "events.h"
 #include <QtCore/QSocketNotifier>
 #include <KDebug>
-#include <KNotification>
 #include <poll.h>
 #include <strings.h> //for bzero()
 

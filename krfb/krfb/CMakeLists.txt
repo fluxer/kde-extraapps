@@ -96,6 +96,6 @@ install(
 
 install(
     FILES krfb.notifyrc
-    DESTINATION ${KDE4_DATA_INSTALL_DIR}/krfb
+    DESTINATION ${KDE4_CONFIG_INSTALL_DIR}/notifications
 )
  

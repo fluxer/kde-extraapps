@@ -63,7 +63,7 @@ add_executable(krdc ${krdc_SRCS})
 target_link_libraries(krdc
     KDE4::kfile
     KDE4::kio
-    KDE4::knotifyconfig
+    KDE4::kdeui
     KDE4::kcmutils
     krdccore
 )

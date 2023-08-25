@@ -40,19 +40,19 @@ HttpServer::HttpServer(QWidget *parent)
         const QString pwd = m_passwdstore->getPasswd("Webinterface", parent->winId());
         if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8())) {
             KGet::showNotification(parent,
-                "error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
+                "kget/error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
             );
             return;
         }
         if (!start(QHostAddress::Any, Settings::webinterfacePort())) {
             KGet::showNotification(parent,
-                "error", i18nc("@info", "Unable to start WebInterface: %1", errorString())
+                "kget/error", i18nc("@info", "Unable to start WebInterface: %1", errorString())
             );
             return;
         }
     } else {
         KGet::showNotification(parent,
-            "error", i18n("Unable to start WebInterface: Could not open KPasswdStore")
+            "kget/error", i18n("Unable to start WebInterface: Could not open KPasswdStore")
         );
     }
 }
@@ -71,14 +71,14 @@ void HttpServer::settingsChanged()
         if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8())) {
             KGet::showNotification(
                 parentwidget,
-                "error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
+                "kget/error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
             );
             return;
         }
         if (!start(QHostAddress::Any, Settings::webinterfacePort())) {
             KGet::showNotification(
                 parentwidget,
-                "error", i18nc("@info", "Unable to restart WebInterface: %1", errorString())
+                "kget/error", i18nc("@info", "Unable to restart WebInterface: %1", errorString())
             );
             return;
         }

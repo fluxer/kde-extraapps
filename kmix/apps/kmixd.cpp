@@ -228,7 +228,7 @@ void KMixD::unplugged( const QString& udi)
 //         kDebug(67100) << "Try Match with:" << mixer->udi() << "\n";
         if (mixer->udi() == udi ) {
             kDebug(67100) << "Unplugged Match: Removing udi=" <<udi << "\n";
-            //KMixToolBox::notification("MasterFallback", "aaa");
+            //KMixToolBox::notification("kmix/MasterFallback", "aaa");
             bool globalMasterMixerDestroyed = ( mixer == Mixer::getGlobalMasterMixer() );
 
             MixerToolBox::instance()->removeMixer(mixer);
@@ -248,14 +248,14 @@ void KMixD::unplugged( const QString& udi)
                                 master->readableName(),
                                 ((Mixer::mixers())[0])->readableName()
                         );
-//                        KMixToolBox::notification("MasterFallback", text);
+//                        KMixToolBox::notification("kmix/MasterFallback", text);
                     }
                 }
             }
             if ( Mixer::mixers().count() == 0 ) {
                 QString text;
                 text = i18n("The last soundcard was unplugged.");
-//                KMixToolBox::notification("MasterFallback", text);
+//                KMixToolBox::notification("kmix/MasterFallback", text);
             }
             break;
         }

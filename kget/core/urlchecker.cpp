@@ -166,7 +166,7 @@ UrlChecker::UrlError UrlChecker::checkSource(const KUrl &src, bool showNotificat
 
     if (showNotification && (error != NoError)) {
         kDebug() << "Source:" << src << "has error:" << error;
-        KGet::showNotification(KGet::m_mainWindow, "error", message(src, Source, error));
+        KGet::showNotification(KGet::m_mainWindow, "kget/error", message(src, Source, error));
     }
 
     return error;
@@ -194,7 +194,7 @@ UrlChecker::UrlError UrlChecker::checkDestination(const KUrl &destination, bool 
 
     if (showNotification && (error != NoError)) {
         kDebug() << "Destination:" << destination << "has error:" << error;
-        KGet::showNotification(KGet::m_mainWindow, "error", message(destination, Destination, error));
+        KGet::showNotification(KGet::m_mainWindow, "kget/error", message(destination, Destination, error));
     }
 
     return error;
@@ -225,7 +225,7 @@ UrlChecker::UrlError UrlChecker::checkFolder(const KUrl &folder, bool showNotifi
 
     if (showNotification && (error != NoError)) {
         kDebug() << "Folder:" << folder << "has error:" << error;
-        KGet::showNotification(KGet::m_mainWindow, "error", message(folder, Folder, error));
+        KGet::showNotification(KGet::m_mainWindow, "kget/error", message(folder, Folder, error));
     }
 
     return error;
@@ -847,7 +847,7 @@ void UrlChecker::displayErrorMessages()
         }
 
         if (!m.isEmpty()) {
-            KGet::showNotification(KGet::m_mainWindow, "error", m);
+            KGet::showNotification(KGet::m_mainWindow, "kget/error", m);
         }
     }
 }

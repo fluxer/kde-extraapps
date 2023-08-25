@@ -1,4 +1,4 @@
-[Global]
+[kmix]
 IconName=kmix
 Comment=Sound Mixer
 Comment[bg]=Звуков смесител
@@ -52,7 +52,7 @@ Comment[x-test]=xxSound Mixerxx
 Comment[zh_CN]=混音器
 Comment[zh_TW]=音效混音器
 
-[Event/MasterFallback]
+[kmix/MasterFallback]
 Name=Audio Device Fallback
 Name[bg]=Резервно звуково устройство
 Name[bs]=Rezervni zvučni uređaj
@@ -152,5 +152,4 @@ Comment[uk]=Сповіщення про автоматичне повернен�
 Comment[x-test]=xxNotification on automatic fallback if the preferred device is unavailablexx
 Comment[zh_CN]=如果首选设备不可用，在自动使用备用设备时进行通知
 Comment[zh_TW]=若是選用的裝置無法使用時，通知會自動使用預設的裝置
-Contexts=Application
-Action=Popup
+Actions=Popup

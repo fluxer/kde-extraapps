@@ -923,7 +923,7 @@ KMixWindow::unplugged(const QString& udi)
       if (mixer->udi() == udi)
         {
           kDebug() << "Unplugged Match: Removing udi=" << udi << "\n";
-          //KMixToolBox::notification("MasterFallback", "aaa");
+          //KMixToolBox::notification("kmix/MasterFallback", "aaa");
           bool globalMasterMixerDestroyed = (mixer == Mixer::getGlobalMasterMixer());
           // Part 1) Remove Tab
           for (int i = 0; i < m_wsMixers->count(); ++i)
@@ -958,7 +958,7 @@ KMixWindow::unplugged(const QString& udi)
                               "The soundcard containing the master device was unplugged. Changing to control %1 on card %2.",
                               master->readableName(),
                               ((Mixer::mixers())[0])->readableName());
-                      KMixToolBox::notification("MasterFallback", text);
+                      KMixToolBox::notification("kmix/MasterFallback", text);
                     }
                 }
             }
@@ -966,7 +966,7 @@ KMixWindow::unplugged(const QString& udi)
             {
               QString text;
               text = i18n("The last soundcard was unplugged.");
-              KMixToolBox::notification("MasterFallback", text);
+              KMixToolBox::notification("kmix/MasterFallback", text);
             }
           recreateGUI(true);
           break;

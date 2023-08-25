@@ -78,14 +78,12 @@ void KMixToolBox::notification(const char *notificationName, const QString &text
                                 const QStringList &actions, QObject *receiver,
                                 const char *actionSlot)
 {
-    KNotification *notification = new KNotification(notificationName);
-    //notification->setComponentData(componentData());
+    KNotification *notification = new KNotification();
+    notification->setEventID(notificationName);
     notification->setText(text);
-    //notification->setPixmap(...);
-    notification->addContext(QLatin1String("Application"), KGlobal::mainComponent().componentName());
     if (!actions.isEmpty() && receiver && actionSlot) {
         notification->setActions(actions);
         QObject::connect(notification, SIGNAL(activated(uint)), receiver, actionSlot);
     }
-    notification->sendEvent();
+    notification->send();
 }
