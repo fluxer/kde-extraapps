@@ -39,21 +39,27 @@ HttpServer::HttpServer(QWidget *parent)
         const QString usr = Settings::webinterfaceUser();
         const QString pwd = m_passwdstore->getPasswd("Webinterface", parent->winId());
         if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8())) {
-            KGet::showNotification(parent,
+            KNotification* notification = KGet::showNotification(
+                parent,
                 "kget/error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
             );
+            notification->send();
             return;
         }
         if (!start(QHostAddress::Any, Settings::webinterfacePort())) {
-            KGet::showNotification(parent,
+            KNotification* notification = KGet::showNotification(
+                parent,
                 "kget/error", i18nc("@info", "Unable to start WebInterface: %1", errorString())
             );
+            notification->send();
             return;
         }
     } else {
-        KGet::showNotification(parent,
+        KNotification* notification = KGet::showNotification(
+            parent,
             "kget/error", i18n("Unable to start WebInterface: Could not open KPasswdStore")
         );
+        notification->send();
     }
 }
 
@@ -69,17 +75,21 @@ void HttpServer::settingsChanged()
         const QString pwd = m_passwdstore->getPasswd("Webinterface");
         stop();
         if (!setAuthenticate(usr.toUtf8(), pwd.toUtf8())) {
-            KGet::showNotification(
+            KNotification* notification = KGet::showNotification(
                 parentwidget,
-                "kget/error", i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
+                "kget/error",
+                i18nc("@info", "Unable to set the WebInterface authorization: %1", errorString())
             );
+            notification->send();
             return;
         }
         if (!start(QHostAddress::Any, Settings::webinterfacePort())) {
-            KGet::showNotification(
+            KNotification* notification = KGet::showNotification(
                 parentwidget,
-                "kget/error", i18nc("@info", "Unable to restart WebInterface: %1", errorString())
+                "kget/error",
+                i18nc("@info", "Unable to restart WebInterface: %1", errorString())
             );
+            notification->send();
             return;
         }
     }
