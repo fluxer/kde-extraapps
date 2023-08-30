@@ -9,7 +9,7 @@
 
 #include "propertiesdialog.h"
 
-// qt/kde includes
+// Katie/KDE includes
 #include <qfile.h>
 #include <qlayout.h>
 #include <qformlayout.h>
@@ -30,6 +30,7 @@
 #include <kmessagebox.h>
 #include <ksqueezedtextlabel.h>
 #include <kurl.h>
+#include <kpixmapwidget.h>
 
 // local includes
 #include "core/document.h"
@@ -118,9 +119,9 @@ PropertiesDialog::PropertiesDialog(QWidget *parent, Okular::Document *doc)
             KSqueezedTextLabel *squeezed;
             if (!mimeType.isNull()) {
                 /// retrieve icon and place it in a QLabel
-                QLabel *pixmapLabel = new QLabel( value );
-                hboxLayout->addWidget( pixmapLabel, 0 );
-                pixmapLabel->setPixmap( KIconLoader::global()->loadMimeTypeIcon( mimeType->iconName(), KIconLoader::Small ) );
+                KPixmapWidget *pixmapWidget = new KPixmapWidget( value );
+                hboxLayout->addWidget( pixmapWidget, 0 );
+                pixmapWidget->setPixmap( KIconLoader::global()->loadMimeTypeIcon( mimeType->iconName(), KIconLoader::Small ) );
                 /// mime type's name and label
                 squeezed = new KSqueezedTextLabel( i18nc( "mimetype information, example: \"PDF Document (application/pdf)\"", "%1 (%2)", mimeType->comment(), valueString ), value );
             } else {

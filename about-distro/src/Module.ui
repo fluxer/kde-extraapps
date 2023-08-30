@@ -289,9 +289,24 @@
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="logoLabel">
-        <property name="text">
-         <string notr="true">{LogoLabel}</string>
+       <widget class="KPixmapWidget" name="logoWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>128</width>
+          <height>128</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>128</width>
+          <height>128</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -316,5 +331,12 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KPixmapWidget</class>
+   <extends>QWidget</extends>
+   <header>kpixmapwidget.h</header>
+  </customwidget>
+  </customwidgets>
  <connections/>
 </ui>

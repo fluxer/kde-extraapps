@@ -26,26 +26,25 @@
 #include <QBitmap>
 #include <QGridLayout>
 #include <QLabel>
-#include <QtGui/qevent.h>
+#include <QPaintEvent>
 #include <QPainter>
 #include <QPalette>
 #include <QTextDocument>
 #include <QPropertyAnimation>
-#include <QtGui/qtextobject.h>
 #include <QToolButton>
 #ifdef Q_WS_X11
 #include <QX11Info>
 #include <netwm.h>
 #endif
 
-#include <kdebug.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
-#include <kwindowsystem.h>
+#include <KDebug>
+#include <KGlobal>
+#include <KGlobalSettings>
+#include <KWindowSystem>
 #include <KIcon>
 #include <KIconLoader>
 #include <KIconEffect>
-
+#include <KPixmapWidget>
 #include <plasma/plasma.h>
 #include <plasma/paintutils.h>
 #include <plasma/theme.h>
@@ -213,7 +212,7 @@ class ToolTipPrivate
 public:
     ToolTipPrivate()
         : text(0),
-          imageLabel(0),
+          imageWidget(0),
           preview(0),
           direction(Plasma::Up),
           autohide(true),
@@ -221,7 +220,7 @@ public:
     { }
 
     TipTextWidget *text;
-    QLabel *imageLabel;
+    KPixmapWidget *imageWidget;
     WindowPreview *preview;
     FrameSvg *background;
     QWeakPointer<QObject> source;
@@ -246,8 +245,8 @@ ToolTip::ToolTip(QWidget *parent)
     setWindowFlags(Qt::ToolTip);
     d->preview = new WindowPreview(this);
     d->text = new TipTextWidget(this);
-    d->imageLabel = new QLabel(this);
-    d->imageLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    d->imageWidget = new KPixmapWidget(this);
+    d->imageWidget->setAlignment(Qt::AlignTop | Qt::AlignLeft);
 
     d->animation = new QPropertyAnimation(this, "pos", this);
     d->animation->setEasingCurve(QEasingCurve::InOutQuad);
@@ -266,8 +265,8 @@ ToolTip::ToolTip(QWidget *parent)
     previewHBoxLayout->addWidget(d->preview);
 
     QHBoxLayout *iconTextHBoxLayout = new QHBoxLayout;
-    iconTextHBoxLayout->addWidget(d->imageLabel);
-    iconTextHBoxLayout->setAlignment(d->imageLabel, Qt::AlignCenter);
+    iconTextHBoxLayout->addWidget(d->imageWidget);
+    iconTextHBoxLayout->setAlignment(d->imageWidget, Qt::AlignCenter);
     iconTextHBoxLayout->addWidget(d->text);
     iconTextHBoxLayout->setAlignment(d->text, Qt::AlignLeft | Qt::AlignVCenter);
     iconTextHBoxLayout->setStretchFactor(d->text, 1);
@@ -394,12 +393,12 @@ void ToolTip::setContent(QObject *tipper, const ToolTipContent &data)
 
     if (data.windowsToPreview().size()) {
         d->text->setVisible(false);
-        d->imageLabel->setVisible(false);
+        d->imageWidget->setVisible(false);
     } else {
         d->text->setVisible(true);
-        d->imageLabel->setVisible(true);
+        d->imageWidget->setVisible(true);
         d->text->setContent(data);
-        d->imageLabel->setPixmap(data.image());
+        d->imageWidget->setPixmap(data.image());
     }
 
     if (!data.playState().isEmpty()) {

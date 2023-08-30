@@ -52,6 +52,7 @@
 #include <KToggleAction>
 #include <KToggleFullScreenAction>
 #include <KServiceTypeTrader>
+#include <KPixmapWidget>
 
 #include <QClipboard>
 #include <QDockWidget>
@@ -1036,12 +1037,12 @@ QWidget* MainWindow::newConnectionWidget()
     QLabel *headerLabel = new QLabel(m_newConnectionWidget);
     headerLabel->setText(i18n("<h1>KDE Remote Desktop Client</h1><br />Enter or select the address of the desktop you would like to connect to."));
 
-    QLabel *headerIconLabel = new QLabel(m_newConnectionWidget);
-    headerIconLabel->setPixmap(KIcon("krdc").pixmap(80));
+    KPixmapWidget *headerIconWidget = new KPixmapWidget(m_newConnectionWidget);
+    headerIconWidget->setPixmap(KIcon("krdc").pixmap(80));
 
     QHBoxLayout *headerLayout = new QHBoxLayout;
     headerLayout->addWidget(headerLabel, 1, Qt::AlignTop);
-    headerLayout->addWidget(headerIconLabel);
+    headerLayout->addWidget(headerIconWidget);
     startLayout->addLayout(headerLayout);
 
     QSortFilterProxyModel *remoteDesktopsModelProxy = new QSortFilterProxyModel(this);

@@ -11,7 +11,7 @@
   </property>
   <layout class="QHBoxLayout" >
    <item>
-    <widget class="QLabel" name="pixmapLabel" >
+    <widget class="KPixmapWidget" name="pixmapWidget" >
      <property name="sizePolicy" >
       <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
        <horstretch>0</horstretch>
@@ -144,5 +144,12 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KPixmapWidget</class>
+   <extends>QWidget</extends>
+   <header>kpixmapwidget.h</header>
+  </customwidget>
+  </customwidgets>
  <connections/>
 </ui>

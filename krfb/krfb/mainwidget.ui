@@ -30,7 +30,7 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QLabel" name="krfbIconLabel">
+    <widget class="KPixmapWidget" name="krfbIconWidget">
      <property name="minimumSize">
       <size>
        <width>128</width>
@@ -42,9 +42,6 @@
        <width>128</width>
        <height>128</height>
       </size>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </item>
@@ -490,6 +487,11 @@
    <class>KPushButton</class>
    <extends>QPushButton</extends>
    <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPixmapWidget</class>
+   <extends>QWidget</extends>
+   <header>kpixmapwidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

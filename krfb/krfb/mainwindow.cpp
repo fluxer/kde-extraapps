@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QWidget *mainWidget = new QWidget;
     m_ui.setupUi(mainWidget);
-    m_ui.krfbIconLabel->setPixmap(KIcon("krfb").pixmap(128));
+    m_ui.krfbIconWidget->setPixmap(KIcon("krfb").pixmap(128));
     m_ui.enableUnattendedCheckBox->setChecked(
             InvitationsRfbServer::instance->allowUnattendedAccess());
 

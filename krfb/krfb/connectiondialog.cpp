@@ -42,7 +42,7 @@ ConnectionDialog<UI>::ConnectionDialog(QWidget *parent)
     m_connectWidget = new QWidget(this);
     m_ui.setupUi(m_connectWidget);
 
-    m_ui.pixmapLabel->setPixmap(KIcon("krfb").pixmap(128));
+    m_ui.pixmapWidget->setPixmap(KIcon("krfb").pixmap(128));
 
     KGuiItem accept = KStandardGuiItem::ok();
     accept.setText(i18n("Accept Connection"));

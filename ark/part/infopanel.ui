@@ -21,10 +21,7 @@
   </property>
   <layout class="QVBoxLayout" >
    <item>
-    <widget class="QLabel" name="iconLabel" >
-     <property name="text" >
-      <string/>
-     </property>
+    <widget class="KPixmapWidget" name="iconWidget" >
      <property name="alignment" >
       <set>Qt::AlignCenter</set>
      </property>
@@ -119,6 +116,11 @@
    <class>KSqueezedTextLabel</class>
    <extends>QLabel</extends>
    <header>ksqueezedtextlabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPixmapWidget</class>
+   <extends>QWidget</extends>
+   <header>kpixmapwidget.h</header>
   </customwidget>
  </customwidgets>
  <connections/>

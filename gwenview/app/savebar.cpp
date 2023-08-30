@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // Self
 #include "moc_savebar.cpp"
 
-// Qt
+// Katie
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
@@ -35,6 +35,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <KIconLoader>
 #include <KLocale>
 #include <KUrl>
+#include <KPixmapWidget>
 
 // Local
 #include "lib/document/documentfactory.h"
@@ -73,13 +74,13 @@ struct SaveBarPrivate
 
     void createTooManyChangesFrame()
     {
-        mTooManyChangesFrame = new QFrame;
+        mTooManyChangesFrame = new QFrame();
 
         // Icon
-        QLabel* iconLabel = new QLabel;
+        KPixmapWidget* iconWidget = new KPixmapWidget();
         QPixmap pix = KIconLoader::global()->loadIcon(
                           "dialog-warning", KIconLoader::Dialog, KIconLoader::SizeSmall);
-        iconLabel->setPixmap(pix);
+        iconWidget->setPixmap(pix);
 
         // Text label
         QLabel* textLabel = new QLabel;
@@ -92,7 +93,7 @@ struct SaveBarPrivate
         // Layout
         QHBoxLayout* layout = new QHBoxLayout(mTooManyChangesFrame);
         layout->setMargin(0);
-        layout->addWidget(iconLabel);
+        layout->addWidget(iconWidget);
         layout->addWidget(textLabel);
         layout->addWidget(mSaveAllFullScreenButton);
         mTooManyChangesFrame->hide();
@@ -237,7 +238,7 @@ SaveBar::SaveBar(QWidget* parent, KActionCollection* actionCollection)
     d->mSaveBarWidget->setObjectName(QLatin1String("saveBarWidget"));
     d->applyNormalStyleSheet();
 
-    d->mMessageLabel = new QLabel;
+    d->mMessageLabel = new QLabel();
     d->mMessageLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
     d->mUndoButton = createToolButton();
@@ -246,14 +247,14 @@ SaveBar::SaveBar(QWidget* parent, KActionCollection* actionCollection)
     d->mSaveAsButton = createToolButton();
     d->mSaveAllButton = createToolButton();
 
-    d->mActionsLabel = new QLabel;
+    d->mActionsLabel = new QLabel();
     d->mActionsLabel->setAlignment(Qt::AlignCenter);
     d->mActionsLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
     d->createTooManyChangesFrame();
 
     // Setup top row
-    d->mTopRowWidget = new QWidget;
+    d->mTopRowWidget = new QWidget();
     QHBoxLayout* rowLayout = new QHBoxLayout(d->mTopRowWidget);
     rowLayout->addWidget(d->mMessageLabel);
     rowLayout->addWidget(d->mUndoButton);
@@ -265,7 +266,7 @@ SaveBar::SaveBar(QWidget* parent, KActionCollection* actionCollection)
     rowLayout->setMargin(0);
 
     // Setup bottom row
-    QHBoxLayout* bottomRowLayout = new QHBoxLayout;
+    QHBoxLayout* bottomRowLayout = new QHBoxLayout();
     bottomRowLayout->addStretch();
     bottomRowLayout->addWidget(d->mTooManyChangesFrame);
     bottomRowLayout->addStretch();

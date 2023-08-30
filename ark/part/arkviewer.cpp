@@ -34,6 +34,7 @@
 #include <KPushButton>
 #include <KRun>
 #include <KIO/NetAccess>
+#include <KPixmapWidget>
 
 #include <QHBoxLayout>
 #include <QFile>
@@ -193,10 +194,10 @@ bool ArkViewer::viewInInternalViewer(const QString& fileName, const KMimeType::P
     QFrame *header = new QFrame(m_widget);
     QHBoxLayout *headerLayout = new QHBoxLayout(header);
 
-    QLabel *iconLabel = new QLabel(header);
-    headerLayout->addWidget(iconLabel);
-    iconLabel->setPixmap(KIconLoader::global()->loadMimeTypeIcon(mimeType->iconName(), KIconLoader::Desktop));
-    iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum);
+    KPixmapWidget *iconWidget = new KPixmapWidget(header);
+    headerLayout->addWidget(iconWidget);
+    iconWidget->setPixmap(KIconLoader::global()->loadMimeTypeIcon(mimeType->iconName(), KIconLoader::Desktop));
+    iconWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum);
 
     KVBox *headerRight = new KVBox(header);
     headerLayout->addWidget(headerRight);

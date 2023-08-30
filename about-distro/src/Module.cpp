@@ -55,12 +55,14 @@ Module::Module(QWidget *parent, const QVariantList &args) :
     KCModule(KcmAboutDistroFactory::componentData(), parent, args),
     ui(new Ui_Module)
 {
-    KAboutData *about = new KAboutData("kcm-about-distro", 0,
-                                       ki18n("About Distribution"),
-                                       "1.2.0",
-                                       KLocalizedString(),
-                                       KAboutData::License_GPL_V3,
-                                       ki18n("Copyright 2012-2014 Harald Sitter\nCopyright 2021 Ivailo Monev"));
+    KAboutData *about = new KAboutData(
+        "kcm-about-distro", 0,
+        ki18n("About Distribution"),
+        "1.2.0",
+        KLocalizedString(),
+        KAboutData::License_GPL_V3,
+        ki18n("Copyright 2012-2014 Harald Sitter\nCopyright 2021 Ivailo Monev")
+    );
 
     about->addAuthor(ki18n("Harald Sitter"), ki18n("Author"), "apachelogger@ubuntu.com");
     about->addAuthor(ki18n("Ivailo Monev"), ki18n("Current maintainer"), "xakepa10@gmail.com");
@@ -89,7 +91,7 @@ void Module::load()
     OSRelease os;
 
     QPixmap logoPixmap = KIcon(os.logo).pixmap(128, 128);
-    ui->logoLabel->setPixmap(logoPixmap);
+    ui->logoWidget->setPixmap(logoPixmap);
 
     ui->nameVersionLabel->setText(os.prettyName);
 

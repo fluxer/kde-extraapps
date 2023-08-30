@@ -60,7 +60,7 @@ InfoPanel::~InfoPanel()
 
 void InfoPanel::updateWithDefaults()
 {
-    iconLabel->setPixmap(KIconLoader::global()->loadIcon(QLatin1String( "utilities-file-archiver" ), KIconLoader::Desktop, KIconLoader::SizeHuge));
+    iconWidget->setPixmap(KIconLoader::global()->loadIcon(QLatin1String( "utilities-file-archiver" ), KIconLoader::Desktop, KIconLoader::SizeHuge));
 
     const QString currentFileName = prettyFileName();
 
@@ -107,7 +107,7 @@ void InfoPanel::setIndex(const QModelIndex& index)
             mimeType = KMimeType::findByPath(entry[ FileName ].toString(), 0, true);
         }
 
-        iconLabel->setPixmap(getMimeIcon(mimeType->iconName()));
+        iconWidget->setPixmap(getMimeIcon(mimeType->iconName()));
         if (entry[ IsDirectory ].toBool()) {
             int dirs;
             int files;
@@ -140,7 +140,7 @@ void InfoPanel::setIndexes(const QModelIndexList &list)
     } else if (list.size() == 1) {
         setIndex(list[ 0 ]);
     } else {
-        iconLabel->setPixmap(KIconLoader::global()->loadIcon(QLatin1String( "utilities-file-archiver" ), KIconLoader::Desktop, KIconLoader::SizeHuge));
+        iconWidget->setPixmap(KIconLoader::global()->loadIcon(QLatin1String( "utilities-file-archiver" ), KIconLoader::Desktop, KIconLoader::SizeHuge));
         fileName->setText(i18np("One file selected", "%1 files selected", list.size()));
         quint64 totalSize = 0;
         foreach(const QModelIndex& index, list) {

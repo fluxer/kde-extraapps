@@ -63,7 +63,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QLabel" name="cpuLabel">
+           <widget class="KPixmapWidget" name="cpuWidget">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -162,7 +162,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QLabel" name="memoryLabel">
+           <widget class="KPixmapWidget" name="memoryWidget">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -264,6 +264,11 @@
    <extends>QGroupBox</extends>
    <header>kbuttongroup.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KPixmapWidget</class>
+   <extends>QWidget</extends>
+   <header>kpixmapwidget.h</header>
   </customwidget>
  </customwidgets>
  <includes>
