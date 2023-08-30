@@ -347,7 +347,13 @@ void KSnapshot::slotDragSnapshot()
     drag->setMimeData(new QMimeData);
     drag->mimeData()->setImageData(snapshot);
     drag->mimeData()->setData("application/x-kde-suggestedfilename", filename.fileName().toUtf8());
-    drag->setPixmap(preview());
+    const QPixmap previewPixmap = preview();
+    if (!previewPixmap.isNull()) {
+        // NOTE: keep in sync with:
+        // kdelibs/kdeui/widgets/kpixmapwidget.cpp
+        drag->setPixmap(previewPixmap.scaled(QSize(96, 96), Qt::KeepAspectRatio));
+        drag->setHotSpot(QPoint(-5,-7));
+    }
     QList<QUrl> urls;
     urls << urlToOpen();
     drag->mimeData()->setUrls(urls);
