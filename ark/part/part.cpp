@@ -264,7 +264,7 @@ void Part::setupActions()
     m_extractFilesAction->setText(i18n("E&xtract"));
     m_extractFilesAction->setIcon(KIcon( QLatin1String( "archive-extract" )));
     m_extractFilesAction->setStatusTip(i18n("Click to open an extraction dialog, where you can choose to extract either all files or just the selected ones"));
-    m_extractFilesAction->setShortcut(QKeySequence( QLatin1String( "Ctrl+E" ) ));
+    m_extractFilesAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_E));
     connect(m_extractFilesAction, SIGNAL(triggered(bool)),
             this, SLOT(slotExtractFiles()));
 

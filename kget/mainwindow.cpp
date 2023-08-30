@@ -140,49 +140,49 @@ void MainWindow::setupActions()
     KAction *newDownloadAction = actionCollection()->addAction("new_download");
     newDownloadAction->setText(i18n("&New Download..."));
     newDownloadAction->setIcon(KIcon("document-new"));
-    newDownloadAction->setShortcuts(KShortcut("Ctrl+N"));
+    newDownloadAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_N));
     newDownloadAction->setHelpText(i18n("Opens a dialog to add a transfer to the list"));
     connect(newDownloadAction, SIGNAL(triggered()), SLOT(slotNewTransfer()));
 
     KAction *openAction = actionCollection()->addAction("import_transfers");
     openAction->setText(i18n("&Import Transfers..."));
     openAction->setIcon(KIcon("document-open"));
-    openAction->setShortcuts(KShortcut("Ctrl+I"));
+    openAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_I));
     openAction->setHelpText(i18n("Imports a list of transfers"));
     connect(openAction, SIGNAL(triggered()), SLOT(slotImportTransfers()));
 
     KAction *exportAction = actionCollection()->addAction("export_transfers");
     exportAction->setText(i18n("&Export Transfers List..."));
     exportAction->setIcon(KIcon("document-export"));
-    exportAction->setShortcuts(KShortcut("Ctrl+E"));
+    exportAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_E));
     exportAction->setHelpText(i18n("Exports the current transfers into a file"));
     connect(exportAction, SIGNAL(triggered()), SLOT(slotExportTransfers()));
 
     KAction *priorityTop = actionCollection()->addAction("priority_top");
     priorityTop->setText(i18n("Top Priority"));
     priorityTop->setIcon(KIcon("arrow-up-double"));
-    priorityTop->setShortcuts(KShortcut("Ctrl+PgUp"));
+    priorityTop->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_PageUp));
     priorityTop->setHelpText(i18n("Download selected transfer first"));
     connect(priorityTop, SIGNAL(triggered()), this, SLOT(slotPriorityTop()));
 
     KAction *priorityBottom = actionCollection()->addAction("priority_bottom");
     priorityBottom->setText(i18n("Least Priority"));
     priorityBottom->setIcon(KIcon("arrow-down-double"));
-    priorityBottom->setShortcuts(KShortcut("Ctrl+PgDown"));
+    priorityBottom->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_PageDown));
     priorityBottom->setHelpText(i18n("Download selected transfer last"));
     connect(priorityBottom, SIGNAL(triggered()), this, SLOT(slotPriorityBottom()));
 
     KAction *priorityUp = actionCollection()->addAction("priority_up");
     priorityUp->setText(i18n("Increase Priority"));
     priorityUp->setIcon(KIcon("arrow-up"));
-    priorityUp->setShortcuts(KShortcut("Ctrl+Up"));
+    priorityUp->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_Up));
     priorityUp->setHelpText(i18n("Increase priority for selected transfer"));
     connect(priorityUp, SIGNAL(triggered()), this, SLOT(slotPriorityUp()));
 
     KAction *priorityDown = actionCollection()->addAction("priority_down");
     priorityDown->setText(i18n("Decrease Priority"));
     priorityDown->setIcon(KIcon("arrow-down"));
-    priorityDown->setShortcuts(KShortcut("Ctrl+Down"));
+    priorityDown->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_Down));
     priorityDown->setHelpText(i18n("Decrease priority for selected transfer"));
     connect(priorityDown, SIGNAL(triggered()), this, SLOT(slotPriorityDown()));
 
@@ -228,7 +228,7 @@ void MainWindow::setupActions()
     KAction *deleteSelectedAction = actionCollection()->addAction("delete_selected_download");
     deleteSelectedAction->setText(i18nc("delete selected transfer item", "Remove Selected"));
     deleteSelectedAction->setIcon(KIcon("edit-delete"));
-    deleteSelectedAction->setShortcuts(KShortcut("Del"));
+    deleteSelectedAction->setShortcuts(KShortcut(Qt::Key_Delete));
     deleteSelectedAction->setHelpText(i18n("Removes selected transfer and deletes files from disk if it's not finished"));
     connect(deleteSelectedAction, SIGNAL(triggered()), SLOT(slotDeleteSelected()));
 
@@ -252,7 +252,7 @@ void MainWindow::setupActions()
     KAction *startAllAction = actionCollection()->addAction("start_all_download");
     startAllAction->setText(i18n("Start All"));
     startAllAction->setIcon(KIcon("media-seek-forward"));
-    startAllAction->setShortcuts(KShortcut("Ctrl+R"));
+    startAllAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_R));
     startAllAction->setHelpText(i18n("Starts / resumes all transfers"));
     connect(startAllAction, SIGNAL(triggered()), SLOT(slotStartAllDownload()));
 
@@ -265,7 +265,7 @@ void MainWindow::setupActions()
     KAction *stopAllAction = actionCollection()->addAction("stop_all_download");
     stopAllAction->setText(i18n("Pause All"));
     stopAllAction->setIcon(KIcon("media-playback-pause"));
-    stopAllAction->setShortcuts(KShortcut("Ctrl+P"));
+    stopAllAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_P));
     stopAllAction->setHelpText(i18n("Pauses all transfers"));
     connect(stopAllAction, SIGNAL(triggered()), SLOT(slotStopAllDownload()));
 
@@ -313,25 +313,25 @@ void MainWindow::setupActions()
     KAction *transferHistoryAction = actionCollection()->addAction("transfer_history");
     transferHistoryAction->setText(i18n("&Transfer History"));
     transferHistoryAction->setIcon(KIcon("view-history"));
-    transferHistoryAction->setShortcuts(KShortcut("Ctrl+H"));
+    transferHistoryAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_H));
     connect(transferHistoryAction, SIGNAL(triggered()), SLOT(slotTransferHistory()));
 
     KAction *transferGroupSettingsAction = actionCollection()->addAction("transfer_group_settings");
     transferGroupSettingsAction->setText(i18n("&Group Settings"));
     transferGroupSettingsAction->setIcon(KIcon("preferences-system"));
-    transferGroupSettingsAction->setShortcuts(KShortcut("Ctrl+G"));
+    transferGroupSettingsAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_G));
     connect(transferGroupSettingsAction, SIGNAL(triggered()), SLOT(slotTransferGroupSettings()));
 
     KAction *transferSettingsAction = actionCollection()->addAction("transfer_settings");
     transferSettingsAction->setText(i18n("&Transfer Settings"));
     transferSettingsAction->setIcon(KIcon("preferences-system"));
-    transferSettingsAction->setShortcuts(KShortcut("Ctrl+T"));
+    transferSettingsAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_T));
     connect(transferSettingsAction, SIGNAL(triggered()), SLOT(slotTransferSettings()));
 
     KAction *listLinksAction = actionCollection()->addAction("import_links");
     listLinksAction->setText(i18n("Import &Links..."));
     listLinksAction->setIcon(KIcon("view-list-text"));
-    listLinksAction->setShortcuts(KShortcut("Ctrl+L"));
+    listLinksAction->setShortcuts(KShortcut(Qt::CTRL + Qt::Key_L));
     connect(listLinksAction, SIGNAL(triggered()), SLOT(slotShowListLinks()));
 
     //create the download finished actions which can be displayed in the toolbar
