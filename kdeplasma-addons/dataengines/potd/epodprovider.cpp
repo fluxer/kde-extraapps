@@ -26,13 +26,13 @@
 #include <KDebug>
 #include <kio/job.h>
 
-POTDPROVIDER_EXPORT_PLUGIN( EpodProvider, "EpodProvider", "" )
+POTDPROVIDER_EXPORT_PLUGIN(EpodProvider, "EpodProvider", "")
 
 class EpodProvider::Private
 {
-  public:
-    Private( EpodProvider *parent )
-        : mParent( parent )
+public:
+    Private(EpodProvider *parent)
+        : mParent(parent)
     {
     }
 
@@ -46,45 +46,47 @@ class EpodProvider::Private
 
 void EpodProvider::Private::pageRequestFinished(KJob *_job)
 {
-    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob *>(_job);
-    if ( job->error() ) {
-	emit mParent->error( mParent );
-	return;
+    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob*>(_job);
+    if (job->error()) {
+        emit mParent->error(mParent);
+        return;
     }
 
-    const QString data = QString::fromUtf8( job->data() );
+    const QByteArray jobdata = job->data();
+    const QString data = QString::fromUtf8(jobdata.constData(), jobdata.size());
 
-    const QString pattern( QLatin1String( "https://epod.usra.edu/.a/*-pi" ) );
+    const QString pattern( QLatin1String("https://epod.usra.edu/.a/*-pi"));
     QRegExp exp( pattern );
     exp.setPatternSyntax(QRegExp::Wildcard);
 
     int pos = exp.indexIn( data ) + pattern.length();
-    const QString sub = data.mid( pos-4, pattern.length()+5);
-    KUrl url( QString::fromLatin1("https://epod.usra.edu/.a/%1-pi" ) .arg(sub) );
+    const QString sub = data.mid(pos - 4, pattern.length() + 5);
+    KUrl url(QString::fromLatin1("https://epod.usra.edu/.a/%1-pi").arg(sub));
     kDebug() << "url" << url.prettyUrl();
-    KIO::StoredTransferJob *imageJob = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
+    KIO::StoredTransferJob *imageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo );
     QObject::connect(imageJob, SIGNAL(finished(KJob*)), mParent, SLOT(imageRequestFinished(KJob*)) );
 }
 
 void EpodProvider::Private::imageRequestFinished( KJob *_job)
 {
-    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob *>(_job);
-    if ( job->error() ) {
-        emit mParent->error( mParent );
+    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob*>(_job);
+    if (job->error()) {
+        emit mParent->error(mParent);
         return;
     }
 
-    mImage = QImage::fromData( job->data() );
-    emit mParent->finished( mParent );
+    mImage = QImage::fromData(job->data());
+    emit mParent->finished(mParent);
 }
 
-EpodProvider::EpodProvider( QObject *parent, const QVariantList &args )
-    : PotdProvider( parent, args ), d( new Private( this ) )
+EpodProvider::EpodProvider(QObject *parent, const QVariantList &args)
+    : PotdProvider(parent, args),
+    d(new Private(this))
 {
-    KUrl url( QLatin1String( "https://epod.usra.edu/blog/" ) );
-    KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
+    KUrl url(QLatin1String("https://epod.usra.edu/blog/"));
+    KIO::StoredTransferJob *job = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
 
-    connect( job, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
+    connect(job, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
 }
 
 EpodProvider::~EpodProvider()

@@ -26,65 +26,67 @@
 #include <KDebug>
 #include <kio/job.h>
 
-POTDPROVIDER_EXPORT_PLUGIN( ApodProvider, "ApodProvider", "" )
+POTDPROVIDER_EXPORT_PLUGIN(ApodProvider, "ApodProvider", "")
 
 class ApodProvider::Private
 {
-  public:
-    Private( ApodProvider *parent )
-      : mParent( parent )
+public:
+    Private(ApodProvider *parent)
+      : mParent(parent)
     {
     }
 
-    void pageRequestFinished( KJob* );
-    void imageRequestFinished( KJob* );
+    void pageRequestFinished(KJob*);
+    void imageRequestFinished(KJob*);
     void parsePage();
 
     ApodProvider *mParent;
     QImage mImage;
 };
 
-void ApodProvider::Private::pageRequestFinished( KJob *_job )
+void ApodProvider::Private::pageRequestFinished(KJob *_job)
 {
-    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob *>( _job );
-    if ( job->error() ) {
-        emit mParent->error( mParent );
+    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob*>(_job);
+    if (job->error()) {
+        emit mParent->error(mParent);
         return;
     }
 
-    const QString data = QString::fromUtf8( job->data() );
+    const QByteArray jobdata = job->data();
+    const QString data = QString::fromUtf8(jobdata.constData(), jobdata.size());
 
-    const QString pattern( QLatin1String( "<a href=\"(image/.*)\"" ) );
+    const QString pattern(QLatin1String("<a href=\"(image/.*)\""));
     QRegExp exp( pattern );
-    exp.setMinimal( true );
-    if ( exp.indexIn( data ) != -1 ) {
+    exp.setMinimal(true);
+    if (exp.indexIn(data) != -1) {
         const QString sub = exp.cap(1);
-        KUrl url( QString( QLatin1String( "https://antwrp.gsfc.nasa.gov/apod/%1" ) ).arg( sub ) );
-        KIO::StoredTransferJob *imageJob = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
-        mParent->connect( imageJob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)) );
+        KUrl url(QString::fromLatin1("https://antwrp.gsfc.nasa.gov/apod/%1").arg(sub));
+        KIO::StoredTransferJob *imageJob = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
+        mParent->connect(imageJob, SIGNAL(finished(KJob*)), SLOT(imageRequestFinished(KJob*)));
     } else {
-        emit mParent->error( mParent );
+        emit mParent->error(mParent);
     }
 }
 
-void ApodProvider::Private::imageRequestFinished( KJob *_job )
+void ApodProvider::Private::imageRequestFinished(KJob *_job )
 {
-    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob *>( _job );
-    if ( job->error() ) {
-	emit mParent->error( mParent );
-	return;
+    KIO::StoredTransferJob *job = static_cast<KIO::StoredTransferJob*>(_job);
+    if (job->error()) {
+        emit mParent->error(mParent);
+        return;
     }
 
-    mImage = QImage::fromData( job->data() );
+    mImage = QImage::fromData(job->data());
     emit mParent->finished( mParent );
 }
 
-ApodProvider::ApodProvider( QObject *parent, const QVariantList &args )
-    : PotdProvider( parent, args ), d( new Private( this ) )
+ApodProvider::ApodProvider(QObject *parent, const QVariantList &args)
+    : PotdProvider(parent, args),
+    d(new Private(this))
 {
-    KUrl url( QLatin1String( "https://antwrp.gsfc.nasa.gov/apod/" ) );
-    KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::NoReload, KIO::HideProgressInfo );
-    connect( job, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)) );
+    KUrl url(QString::fromLatin1("https://antwrp.gsfc.nasa.gov/apod/"));
+    KIO::StoredTransferJob *job = KIO::storedGet(url, KIO::NoReload, KIO::HideProgressInfo);
+    connect(job, SIGNAL(finished(KJob*)), SLOT(pageRequestFinished(KJob*)));
 }
 
 ApodProvider::~ApodProvider()
