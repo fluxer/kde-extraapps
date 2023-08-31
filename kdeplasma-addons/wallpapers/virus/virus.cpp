@@ -26,18 +26,13 @@
 #include "backgroundlistmodel.h"
 #include "backgrounddelegate.h"
 
-#if defined(HAVE_KWORKSPACE)
-#  include "ksmserver_interface.h"
-#endif
-
 K_EXPORT_PLASMA_WALLPAPER(virus, Virus)
 
 Virus::Virus(QObject *parent, const QVariantList &args)
     : Plasma::Wallpaper(parent, args),
       m_configWidget(0),
       m_model(0),
-      m_dialog(0),
-      m_startupResumed(false)
+      m_dialog(0)
 {
     connect(this, SIGNAL(renderCompleted(QImage)), this, SLOT(updateBackground(QImage)));
     connect(&alife, SIGNAL(finished()), this, SLOT(virusUpdated()));
@@ -405,7 +400,6 @@ void Virus::renderWallpaper(const QString& image)
     }
 
     render(m_img, m_size, m_resizeMethod, m_color);
-    suspendStartup(true); // during KDE startup, make ksmserver until the wallpaper is ready
 }
 
 QString Virus::cacheId() const
@@ -420,26 +414,6 @@ void Virus::updateBackground(const QImage &img)
     alife.setImage(m_pixmap.toImage());
     m_timer.start(alife.getUpdateInterval());
     emit update(boundingRect());
-}
-
-void Virus::suspendStartup(bool suspend)
-{
-#if defined(HAVE_KWORKSPACE)
-    if (m_startupResumed) {
-        return;
-    }
-
-    org::kde::KSMServerInterface ksmserver("org.kde.ksmserver", "/KSMServer", QDBusConnection::sessionBus());
-    const QString startupID("desktop wallpaper");
-    if (suspend) {
-        ksmserver.suspendStartup(startupID);
-    } else {
-        m_startupResumed = true;
-        ksmserver.resumeStartup(startupID);
-    }
-#else
-    Q_UNUSED(suspend);
-#endif // HAVE_KWORKSPACE
 }
 
 void Virus::updateScreenshot(QPersistentModelIndex index)

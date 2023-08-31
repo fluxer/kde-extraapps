@@ -61,7 +61,6 @@ class Virus : public Plasma::Wallpaper
         void fillMetaInfo(Plasma::Package *b);
         bool setMetadata(QLabel *label, const QString &text);
         void renderWallpaper(const QString& image = QString());
-        void suspendStartup(bool suspend); // for ksmserver
         void calculateGeometry();
         void setSingleImage();
         QString cacheId() const;
@@ -84,7 +83,6 @@ class Virus : public Plasma::Wallpaper
         QSize m_size;
         QString m_img;
         QDateTime m_previousModified;
-        bool m_startupResumed;
 
         QTimer m_timer;
         

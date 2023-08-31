@@ -8,12 +8,6 @@ set(virus_SRCS
     itemsview.cpp
 )
 
-if(KDE4WORKSPACE_FOUND)
-    add_definitions(-DHAVE_KWORKSPACE)
-    set(ksmserver_xml ${KDE4_DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSMServerInterface.xml)
-    qt4_add_dbus_interface(virus_SRCS ${ksmserver_xml} ksmserver_interface)
-endif()
-
 kde4_add_plugin(plasma_wallpaper_virus ${virus_SRCS})
 target_link_libraries(plasma_wallpaper_virus
     KDE4::plasma
