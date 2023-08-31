@@ -216,26 +216,9 @@ bool ArkViewer::viewInInternalViewer(const QString& fileName, const KMimeType::P
         return false;
     }
 
-    if (m_part.data()->browserExtension()) {
-        connect(m_part.data()->browserExtension(),
-                SIGNAL(openUrlRequestDelayed(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
-                SLOT(slotOpenUrlRequestDelayed(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
-    }
-
     m_part.data()->openUrl(fileUrl);
 
     return true;
-}
-
-void ArkViewer::slotOpenUrlRequestDelayed(const KUrl& url, const KParts::OpenUrlArguments& arguments, const KParts::BrowserArguments& browserArguments)
-{
-    kDebug() << "Opening URL: " << url;
-
-    Q_UNUSED(arguments)
-    Q_UNUSED(browserArguments)
-
-    KRun *runner = new KRun(url, 0, 0, false);
-    runner->setRunExecutables(false);
 }
 
 KService::Ptr ArkViewer::getViewer(const KMimeType::Ptr &mimeType)

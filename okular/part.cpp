@@ -65,7 +65,6 @@
 
 // local includes
 #include "aboutdata.h"
-#include "extensions.h"
 #include "ui/pageview.h"
 #include "ui/toc.h"
 #include "ui/searchwidget.h"
@@ -309,9 +308,6 @@ m_cliPresentation(false), m_cliPrint(false), m_embedMode(detectEmbedMode(parentW
     // connect the completed signal so we can put the window caption when loading remote files
     connect(this, SIGNAL(completed()), this, SLOT(setWindowTitleFromDocument()));
     connect(this, SIGNAL(canceled(QString)), this, SLOT(loadCancelled(QString)));
-
-    // create browser extension (for printing when embedded into browser)
-    m_bExtension = new BrowserExtension(this);
 
     // we need an instance
     setComponentData( componentData );
@@ -929,8 +925,6 @@ void Part::openUrlFromDocument(const KUrl &url)
 
     if (KIO::NetAccess::exists(url, KIO::NetAccess::SourceSide, widget()))
     {
-        m_bExtension->openUrlNotify();
-        m_bExtension->setLocationBarUrl(url.prettyUrl());
         openUrl(url);
     } else {
         KMessageBox::error( widget(), i18n("Could not open '%1'. File does not exist", url.pathOrUrl() ) );

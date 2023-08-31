@@ -63,15 +63,9 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
                setProgramIconName(QLatin1String(APP_NAME)).
                setCatalogName(APP_NAME)))
 
-BrowserExtension::BrowserExtension(Part *parent)
-        : KParts::BrowserExtension(parent)
-{}
-
-
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         : ReadOnlyPart(parent)
         , m_summary(0)
-        , m_ext(new BrowserExtension(this))
         , m_statusbar(new StatusBarExtension(this))
         , m_map(0)
         , m_started(false)
@@ -210,10 +204,6 @@ Part::closeUrl()
 void
 Part::updateURL(const KUrl &u)
 {
-    //the map has changed internally, update the interface to reflect this
-    emit m_ext->openUrlNotify(); //must be done first
-    emit m_ext->setLocationBarUrl(u.prettyUrl());
-
     if (m_manager->running())
         m_manager->abort();
 

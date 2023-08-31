@@ -68,7 +68,6 @@ class BookmarkList;
 namespace Okular
 {
 
-class BrowserExtension;
 class ExportFormat;
 
 /**
@@ -217,7 +216,7 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
         void slotRebuildBookmarkMenu();
 
     public slots:
-        // connected to Shell action (and browserExtension), not local one
+        // connected to Shell action, not local one
         void slotPrint();
         void restoreDocument(const KConfigGroup &group);
         void saveDocumentRestoreInfo(KConfigGroup &group);
@@ -324,7 +323,6 @@ class OKULARPART_EXPORT Part : public KParts::ReadWritePart, public Okular::Docu
         KAction *m_closeFindBar;
 
         bool m_actionsSearched;
-        BrowserExtension *m_bExtension;
 
         QList<Okular::ExportFormat> m_exportFormats;
         QList<QAction*> m_bookmarkActions;

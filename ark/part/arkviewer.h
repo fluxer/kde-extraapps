@@ -24,7 +24,6 @@
 
 #include <KDialog>
 #include <KMimeType>
-#include <KParts/BrowserExtension>
 #include <KParts/ReadOnlyPart>
 #include <KService>
 
@@ -42,9 +41,6 @@ public:
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event);
-
-protected slots:
-    void slotOpenUrlRequestDelayed(const KUrl& url, const KParts::OpenUrlArguments& arguments, const KParts::BrowserArguments& browserArguments);
 
 private slots:
     void dialogClosed();

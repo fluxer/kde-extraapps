@@ -79,7 +79,7 @@ MainWindow::MainWindow() : KParts::MainWindow(), m_part(0)
         connect(m_part, SIGNAL(canceled(QString)), SLOT(scanFailed()));
 
         connect(m_part, SIGNAL(canceled(QString)), m_histories, SLOT(stop()));
-        connect(BrowserExtension::childObject(m_part), SIGNAL(openUrlNotify()), SLOT(urlAboutToChange()));
+        connect(m_part, SIGNAL(urlAboutToChange()), SLOT(urlAboutToChange()));
 
         const KConfigGroup config = KGlobal::config()->group("general");
         m_combo->setHistoryItems(config.readPathEntry("comboHistory", QStringList()));

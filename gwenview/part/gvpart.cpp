@@ -47,7 +47,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "../lib/documentview/documentviewcontroller.h"
 #include "../lib/urlutils.h"
 #include "../lib/zoomwidget.h"
-#include "gvbrowserextension.h"
 
 //Factory Code
 K_PLUGIN_FACTORY(GVPartFactory, registerPlugin<Gwenview::GVPart>();)
@@ -84,8 +83,6 @@ GVPart::GVPart(QWidget* parentWidget, QObject* parent, const QVariantList& /*arg
     actionCollection()->addAction("file_show_properties", action);
 
     KStandardAction::saveAs(this, SLOT(saveAs()), actionCollection());
-
-    new GVBrowserExtension(this);
 
     setXMLFile("gvpart/gvpart.rc");
 }

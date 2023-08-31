@@ -173,7 +173,6 @@ install(
 
 set(okularpart_SRCS
     part.cpp
-    extensions.cpp
     conf/preferencesdialog.cpp
     conf/dlgaccessibility.cpp
     conf/dlgdebug.cpp

@@ -22,7 +22,6 @@
 #ifndef FILELIGHTPART_H
 #define FILELIGHTPART_H
 
-#include <KParts/BrowserExtension>
 #include <KParts/StatusBarExtension>
 #include <KParts/Part>
 #include <KUrl>
@@ -39,13 +38,6 @@ class Folder;
 namespace Filelight
 {
 class Part;
-
-class BrowserExtension : public KParts::BrowserExtension
-{
-public:
-    explicit BrowserExtension(Part*);
-};
-
 
 class Part : public KParts::ReadOnlyPart
 {
@@ -81,7 +73,6 @@ private:
 
     QLayout            *m_layout;
     QWidget            *m_summary;
-    BrowserExtension   *m_ext;
     StatusBarExtension *m_statusbar;
     RadialMap::Widget  *m_map;
     QWidget            *m_stateWidget;
