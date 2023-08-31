@@ -26,7 +26,6 @@ set(filelight_PART_SRCS
     radialMap/labels.cpp
     part.cpp
     scan.cpp
-    progressBox.cpp
     Config.cpp
     settingsDialog.cpp
     fileTree.cpp

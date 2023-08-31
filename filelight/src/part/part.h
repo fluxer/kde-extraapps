@@ -22,13 +22,11 @@
 #ifndef FILELIGHTPART_H
 #define FILELIGHTPART_H
 
-#include <KParts/StatusBarExtension>
 #include <KParts/Part>
 #include <KUrl>
 
 #include <QtGui/QLabel>
 
-using KParts::StatusBarExtension;
 namespace RadialMap {
 class Widget;
 }
@@ -64,20 +62,15 @@ private slots:
     void postInit();
     void scanCompleted(Folder*);
     void mapChanged(const Folder*);
+    void clearStatusBarMessage();
 
 private:
-    KStatusBar *statusBar() {
-        return m_statusbar->statusBar();
-    }
     void showSummary();
 
     QLayout            *m_layout;
     QWidget            *m_summary;
-    StatusBarExtension *m_statusbar;
     RadialMap::Widget  *m_map;
-    QWidget            *m_stateWidget;
     class ScanManager  *m_manager;
-    QLabel             *m_numberOfFiles;
 
     bool m_started;
 

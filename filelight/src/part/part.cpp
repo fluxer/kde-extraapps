@@ -24,7 +24,6 @@
 #include "Config.h"
 #include "define.h"
 #include "fileTree.h"
-#include "progressBox.h"
 #include "radialMap/widget.h"
 #include "scan.h"
 #include "settingsDialog.h"
@@ -66,7 +65,6 @@ K_EXPORT_PLUGIN(filelightPartFactory(KAboutData(
 Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
         : ReadOnlyPart(parent)
         , m_summary(0)
-        , m_statusbar(new StatusBarExtension(this))
         , m_map(0)
         , m_started(false)
 {
@@ -93,13 +91,6 @@ Part::Part(QWidget *parentWidget, QObject *parent, const QList<QVariant>&)
 
     m_map = new RadialMap::Widget(partWidget);
     m_layout->addWidget(m_map);
-
-    m_stateWidget = new ProgressBox(statusBar(), this, m_manager);
-    m_layout->addWidget(m_stateWidget);
-    m_stateWidget->hide();
-
-    m_numberOfFiles = new QLabel();
-    m_statusbar->addStatusBarItem(m_numberOfFiles, 0, true);
 
     KStandardAction::zoomIn(m_map, SLOT(zoomIn()), actionCollection());
     KStandardAction::zoomOut(m_map, SLOT(zoomOut()), actionCollection());
@@ -178,9 +169,6 @@ Part::openUrl(const KUrl &u)
         if (m_summary != 0)
             m_summary->hide();
 
-        m_stateWidget->show();
-        m_layout->addWidget(m_stateWidget);
-
         return start(uri);
     }
 
@@ -191,10 +179,9 @@ bool
 Part::closeUrl()
 {
     if (m_manager->abort())
-        statusBar()->showMessage(i18n("Aborting Scan..."));
+        emit setStatusBarText(i18n("Aborting Scan..."));
 
     m_map->hide();
-    m_stateWidget->hide();
 
     showSummary();
 
@@ -229,15 +216,15 @@ bool
 Part::start(const KUrl &url)
 {
     if (!m_started) {
-        connect(m_map, SIGNAL(mouseHover(QString)), statusBar(), SLOT(showMessage(QString)));
-        connect(m_map, SIGNAL(created(const Folder*)), statusBar(), SLOT(clearMessage()));
+        connect(m_map, SIGNAL(mouseHover(QString)), this, SIGNAL(setStatusBarText(QString)));
+        connect(m_map, SIGNAL(created(const Folder*)), this, SLOT(clearStatusBarMessage()));
         m_started = true;
     }
 
     if (m_manager->running())
         m_manager->abort();
 
-    m_numberOfFiles->setText(QString());
+    emit setStatusBarText(QString());
 
     if (m_manager->start(url)) {
         setUrl(url);
@@ -246,7 +233,7 @@ Part::start(const KUrl &url)
         stateChanged(QLatin1String( "scan_started" ));
         emit started(0); //as a Part, we have to do this
         emit setWindowCaption(s);
-        statusBar()->showMessage(s);
+        emit setStatusBarText(s);
         m_map->hide();
         m_map->invalidate(); //to maintain ui consistency
 
@@ -270,7 +257,6 @@ Part::rescan()
     //FIXME we have to empty the cache because otherwise rescan picks up the old tree..
     m_manager->emptyCache(); //causes canvas to invalidate
     m_map->hide();
-    m_stateWidget->show();
     start(url());
 }
 
@@ -278,9 +264,8 @@ void
 Part::scanCompleted(Folder *tree)
 {
     if (tree) {
-        statusBar()->showMessage(i18n("Scan completed, generating map..."));
+        emit setStatusBarText(i18n("Scan completed, generating map..."));
 
-        m_stateWidget->hide();
         m_map->show();
         m_map->create(tree);
 
@@ -291,7 +276,7 @@ Part::scanCompleted(Folder *tree)
         emit canceled(i18n("Scan failed: %1", prettyUrl()));
         emit setWindowCaption(QString());
 
-        statusBar()->clearMessage();
+        emit setStatusBarText(QString());
 
         setUrl(KUrl());
     }
@@ -309,7 +294,13 @@ Part::mapChanged(const Folder *tree)
         i18n("No files.") :
         i18np("1 file", "%1 files",fileCount);
 
-    m_numberOfFiles->setText(text);
+    emit setStatusBarText(text);
+}
+
+void
+Part::clearStatusBarMessage()
+{
+    emit setStatusBarText(QString());
 }
 
 void

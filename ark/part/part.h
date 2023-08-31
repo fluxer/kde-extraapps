@@ -25,18 +25,16 @@
 
 #include "interface.h"
 
-#include <KParts/Part>
-#include <KParts/StatusBarExtension>
-#include <KTempDir>
-
 #include <QModelIndex>
 #include <QAction>
 #include <QSplitter>
 #include <QTreeView>
 
+#include <KParts/Part>
+#include <KTempDir>
+
 class ArchiveModel;
 class InfoPanel;
-
 class KAbstractWidgetJobTracker;
 class KAboutData;
 class KAction;
@@ -126,7 +124,6 @@ private:
     PreviewMode           m_previewMode;
 
     KAbstractWidgetJobTracker  *m_jobTracker;
-    KParts::StatusBarExtension *m_statusBarExtension;
 };
 
 } // namespace Ark
