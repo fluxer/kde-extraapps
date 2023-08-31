@@ -8,4 +8,3 @@ X-KDE-Library=kemu
 X-KDE-DBus-ModuleName=kemu
 X-KDE-Kded-autoload=false
 X-KDE-Kded-load-on-demand=true
-OnlyShowIn=KDE;
