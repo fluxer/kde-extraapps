@@ -54,7 +54,6 @@ public:
 protected Q_SLOTS:
     void showPreview(const KFileItem &item, const QPixmap &preview);
     void previewFailed(const KFileItem &item);
-    void removeBackground(const QString &path);
 
 private:
     QSize bestSize(Plasma::Package *package) const;
