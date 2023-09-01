@@ -51,22 +51,6 @@
 #include <Plasma/Theme>
 #include <Plasma/WindowEffects>
 
-static void renameConfig()
-{
-    // Rename pre0.9 taskmanagerrc to taskmanagerrulesrc
-    QString oldName = KStandardDirs::locateLocal("config", "taskmanagerrc");
-
-    if (QFile::exists(oldName)) {
-        QString newName = KStandardDirs::locateLocal("config", "taskmanagerrulesrc");
-
-        if (QFile::exists(newName)) {
-            QFile::remove(oldName);
-        } else {
-            QFile::rename(oldName, newName);
-        }
-    }
-}
-
 static void setCurrentIndex(QComboBox *combo, int val)
 {
     for (int i = 0; i < combo->count(); ++i) {
@@ -139,7 +123,6 @@ Tasks::Tasks(QObject* parent, const QVariantList &arguments)
       m_refreshAct(0)
 {
     KGlobal::locale()->insertCatalog("icontasks");
-    renameConfig();
     setHasConfigurationInterface(true);
     setAspectRatioMode(Plasma::IgnoreAspectRatio);
     m_screenTimer.setSingleShot(true);
