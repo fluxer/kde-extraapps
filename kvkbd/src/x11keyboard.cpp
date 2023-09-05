@@ -21,9 +21,7 @@
 
 #include <QX11Info>
 #include <QDesktopWidget>
-#include <QDBusConnection>
-#include <QDBusInterface>
-#include <QDBusReply>
+#include <QVariant>
 
 #include <X11/extensions/XTest.h>
 #include <X11/Xlib.h>
@@ -33,18 +31,13 @@
 
 extern QList<VButton *> modKeys;
 
-X11Keyboard::X11Keyboard(QObject *parent): VKeyboard(parent)
+X11Keyboard::X11Keyboard(QObject *parent)
+    : VKeyboard(parent),
+    kkeyboardlayout(this),
+    layout_index(0)
 {
-    QString service = "";
-    QString path = "/Layouts";
-    QString interface = "org.kde.KeyboardLayouts";
+    connect(&kkeyboardlayout, SIGNAL(layoutChanged()), this, SLOT(layoutChanged()));
 
-    QDBusConnection session = QDBusConnection::sessionBus();
-
-    session.connect(service, path, interface, "currentLayoutChanged", this, SLOT(layoutChanged()));
-    session.connect(service, path, interface, "layoutListChanged", this, SLOT(constructLayouts()));
-
-    constructLayouts();
     groupTimer = new QTimer(parent);
     groupTimer->setInterval(250);
 
@@ -64,23 +57,6 @@ void X11Keyboard::start()
     layoutChanged();
     emit groupStateChanged(groupState);
     groupTimer->start();
-}
-
-void X11Keyboard::constructLayouts()
-{
-    QDBusInterface iface("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts", QDBusConnection::sessionBus());
-
-    QDBusReply<QStringList> reply = iface.call("getLayoutsList");
-    if (reply.isValid()) {
-        QStringList lst = reply.value();
-        layouts.clear();
-
-        QListIterator<QString> itr(lst);
-        while (itr.hasNext()) {
-            QString layout_name = itr.next();
-            layouts << layout_name;
-        }
-    }
 }
 
 void X11Keyboard::processKeyPress(unsigned int keyCode)
@@ -169,23 +145,8 @@ void X11Keyboard::layoutChanged()
 
     //std::cerr << "LayoutChanged" << std::endl;
 
-    QDBusInterface iface("org.kde.keyboard", "/Layouts", "org.kde.KeyboardLayouts", QDBusConnection::sessionBus());
-
-    QDBusReply<QString> reply = iface.call("getCurrentLayout");
-
-    if (reply.isValid()) {
-
-        QString current_layout = reply.value();
-
-        layout_index = layouts.indexOf(current_layout);
-	
-	emit layoutUpdated(layout_index, layouts.at(layout_index));
-    }
-    else {
-	layout_index = 0;
-	
-	emit layoutUpdated(0, "us");
-    }
+    QString current_layout = kkeyboardlayout.layouts().first().layout;
+    emit layoutUpdated(layout_index, current_layout);
 
 }
 void X11Keyboard::textForKeyCode(unsigned int keyCode,  ButtonText& text)

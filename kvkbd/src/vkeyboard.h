@@ -45,7 +45,6 @@ public:
 public slots:
     virtual void processKeyPress(unsigned int)=0;
     virtual void queryModState()=0;
-    virtual void constructLayouts()=0;
     virtual void layoutChanged()=0;
     virtual void start()=0;
     

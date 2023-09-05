@@ -30,8 +30,7 @@
 #include <QStringList>
 #include <QChar>
 #include <QMap>
-
-
+#include <KKeyboardLayout>
 
 class X11Keyboard : public VKeyboard
 {
@@ -45,7 +44,6 @@ public:
 public slots:
     virtual void processKeyPress(unsigned int);
     virtual void queryModState();
-    virtual void constructLayouts();
     virtual void layoutChanged();
     virtual void start();
 
@@ -53,11 +51,10 @@ protected:
 
     void sendKey(unsigned int keycode);
 
-    QStringList layouts;
     int layout_index;
+    KKeyboardLayout kkeyboardlayout;
 
     KeySymConvert kconvert;
-
 
     bool queryModKeyState(KeySym keyCode);
     ModifierGroupStateMap groupState;
