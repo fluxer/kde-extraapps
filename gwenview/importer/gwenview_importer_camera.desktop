@@ -1,5 +1,6 @@
 [Desktop Entry]
 X-KDE-Solid-Predicate=Camera.supportedDrivers == 'gphoto'
+X-KDE-Solid-When=Add,Search
 Type=Service
 Actions=open;
 
