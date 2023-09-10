@@ -33,7 +33,6 @@ namespace Plasma
     class Containment;
     class Corona;
     class FrameSvg;
-    class WidgetExplorer;
 }
 
 class GroupExplorer;
