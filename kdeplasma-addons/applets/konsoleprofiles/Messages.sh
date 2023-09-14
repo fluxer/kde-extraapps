@@ -1,5 +1,4 @@
-#! /usr/bin/env bash
-# only need to change the name of the applet
-$XGETTEXT `find . -name \*.qml` -L Java -o $podir/konsoleprofiles.pot
+#!/bin/bash
+$EXTRACTRC `find . -name \*.rc -o -name \*.ui -o -name \*.kcfg` >> rc.cpp
+$XGETTEXT `find . -name \*.js -o -name \*.qml -o -name \*.cpp` -o $podir/konsoleprofiles.pot
 rm -f rc.cpp
-

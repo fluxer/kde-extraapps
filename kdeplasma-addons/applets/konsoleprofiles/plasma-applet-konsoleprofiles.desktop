@@ -113,13 +113,12 @@ Comment[zh_TW]=列出並啟動 Konsole 設定檔
 Icon=utilities-terminal
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
+X-KDE-Library=plasma_applet_konsoleprofiles
 
-X-Plasma-API=declarativeappletscript
-X-Plasma-MainScript=ui/konsoleprofiles.qml
 X-Plasma-DefaultSize=290,340
 
-X-KDE-PluginInfo-Author=Shaun Reich
-X-KDE-PluginInfo-Email=shaun.reich@kdemail.net
+X-KDE-PluginInfo-Author=Ivailo Monev
+X-KDE-PluginInfo-Email=xakepa10@gmail.com
 X-KDE-PluginInfo-Name=konsoleprofiles
 X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-Website=
