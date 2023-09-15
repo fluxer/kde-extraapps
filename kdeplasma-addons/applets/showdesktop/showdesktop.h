@@ -21,8 +21,6 @@
 //#define MINIMIZE_ONLY
 
 #include <Plasma/Applet>
-#include <QTimer>
-#include <QtGui/qgraphicssceneevent.h>
 
 class ShowDesktop : public Plasma::Applet
 {
@@ -40,8 +38,6 @@ public slots:
 #endif
 
 protected:
-    void dragEnterEvent(QGraphicsSceneDragDropEvent *event);
-    void dragLeaveEvent(QGraphicsSceneDragDropEvent *event);
     QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF()) const;
     
 private slots:
@@ -53,7 +49,6 @@ private:
     bool m_down;
     bool m_goingDown;
 #endif
-    QTimer m_timer;
 };
 
 K_EXPORT_PLASMA_APPLET(showdesktop, ShowDesktop)
