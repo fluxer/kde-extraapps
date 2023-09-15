@@ -41,10 +41,6 @@ ShowDesktop::ShowDesktop(QObject *parent, const QVariantList &args)
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(minimizeAll()));
 }
 
-ShowDesktop::~ShowDesktop()
-{
-}
-
 void ShowDesktop::init()
 {
     connect(this, SIGNAL(activate()), this, SLOT(minimizeAll()));
@@ -68,12 +64,17 @@ void ShowDesktop::init()
 
 #ifndef MINIMIZE_ONLY
     if (m_wm2ShowingDesktop) {
-        connect(KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)), this, SLOT(reset()));
+        connect(
+            KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)),
+            this, SLOT(reset())
+        );
     }
 #endif
 
-    connect(KGlobalSettings::self(), SIGNAL(iconChanged(int)),
-        this, SLOT(iconSizeChanged(int)));
+    connect(
+        KGlobalSettings::self(), SIGNAL(iconChanged(int)),
+        this, SLOT(iconSizeChanged(int))
+    );
 }
 
 void ShowDesktop::minimizeAll()
@@ -103,8 +104,8 @@ void ShowDesktop::dragLeaveEvent(QGraphicsSceneDragDropEvent *event)
 {
     m_timer.stop();
 }
-#ifndef MINIMIZE_ONLY
 
+#ifndef MINIMIZE_ONLY
 void ShowDesktop::delay()
 {
     m_goingDown = false;
@@ -120,23 +121,21 @@ void ShowDesktop::reset()
 QSizeF ShowDesktop::sizeHint(Qt::SizeHint which, const QSizeF & constraint) const
 {
     if (which == Qt::PreferredSize) {
-        int iconSize;
-
+        int iconSize = 0;
         switch (formFactor()) {
             case Plasma::Planar:
-            case Plasma::MediaCenter:
+            case Plasma::MediaCenter: {
                 iconSize = IconSize(KIconLoader::Desktop);
                 break;
-
+            }
             case Plasma::Horizontal:
-            case Plasma::Vertical:
+            case Plasma::Vertical: {
                 iconSize = IconSize(KIconLoader::Panel);
                 break;
+            }
         }
-
         return QSizeF(iconSize, iconSize);
     }
-
     return Plasma::Applet::sizeHint(which, constraint);
 }
 
@@ -146,7 +145,6 @@ void ShowDesktop::iconSizeChanged(int group)
         updateGeometry();
     }
 }
-
-#endif
+#endif // MINIMIZE_ONLY
 
 #include "moc_showdesktop.cpp"

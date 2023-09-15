@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SHOWDESKTOP_HEADER
-#define SHOWDESKTOP_HEADER
+#ifndef SHOWDESKTOP_H
+#define SHOWDESKTOP_H
 
 //#define MINIMIZE_ONLY
 
@@ -27,37 +27,35 @@
 class ShowDesktop : public Plasma::Applet
 {
     Q_OBJECT
-    public:
-        ShowDesktop(QObject *parent, const QVariantList &args);
-        ~ShowDesktop();
+public:
+    ShowDesktop(QObject *parent, const QVariantList &args);
 
-        virtual void init();
+    void init() final;
 
-    public slots:
-        void minimizeAll();
+public slots:
+    void minimizeAll();
 #ifndef MINIMIZE_ONLY
-        void reset();
-        void delay();
+    void reset();
+    void delay();
 #endif
 
-    protected:
-        void dragEnterEvent(QGraphicsSceneDragDropEvent *event);
-        void dragLeaveEvent(QGraphicsSceneDragDropEvent *event);
-        QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF()) const;
-        
-    private slots:
-        void iconSizeChanged(int group);
+protected:
+    void dragEnterEvent(QGraphicsSceneDragDropEvent *event);
+    void dragLeaveEvent(QGraphicsSceneDragDropEvent *event);
+    QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint = QSizeF()) const;
+    
+private slots:
+    void iconSizeChanged(int group);
 
-    private:
-        bool m_wm2ShowingDesktop;
-
+private:
+    bool m_wm2ShowingDesktop;
 #ifndef MINIMIZE_ONLY
-        bool m_down;
-        bool m_goingDown;
+    bool m_down;
+    bool m_goingDown;
 #endif
-        QTimer m_timer;
+    QTimer m_timer;
 };
 
 K_EXPORT_PLASMA_APPLET(showdesktop, ShowDesktop)
 
-#endif
+#endif // SHOWDESKTOP_H
