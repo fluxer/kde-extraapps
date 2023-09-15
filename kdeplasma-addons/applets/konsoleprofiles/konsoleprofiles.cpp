@@ -28,10 +28,12 @@
 #include <KStandardDirs>
 #include <KIcon>
 #include <KToolInvocation>
+#include <KIconLoader>
 #include <KDebug>
 
 // standard issue margin/spacing
 static const int s_spacing = 4;
+static const QSizeF s_preferredsize = QSizeF(290, 340);
 
 class KonsoleProfilesWidget : public QGraphicsWidget
 {
@@ -171,7 +173,7 @@ KonsoleProfilesApplet::KonsoleProfilesApplet(QObject *parent, const QVariantList
     KGlobal::locale()->insertCatalog("konsoleprofiles");
     setAspectRatioMode(Plasma::AspectRatioMode::IgnoreAspectRatio);
     setPopupIcon("utilities-terminal");
-    setPreferredSize(290, 340);
+    setPreferredSize(s_preferredsize);
     m_konsoleprofileswidget = new KonsoleProfilesWidget(this);
 }
 
@@ -188,6 +190,24 @@ void KonsoleProfilesApplet::init()
 QGraphicsWidget* KonsoleProfilesApplet::graphicsWidget()
 {
     return m_konsoleprofileswidget;
+}
+
+void KonsoleProfilesApplet::constraintsEvent(Plasma::Constraints constraints)
+{
+    if (constraints & Plasma::FormFactorConstraint) {
+        switch (formFactor()) {
+            case Plasma::FormFactor::Horizontal:
+            case Plasma::FormFactor::Vertical: {
+                const int paneliconsize = KIconLoader::global()->currentSize(KIconLoader::Panel);
+                setPreferredSize(QSizeF(paneliconsize, paneliconsize));
+                break;
+            }
+            default: {
+                setPreferredSize(s_preferredsize);
+                break;
+            }
+        }
+    }
 }
 
 #include "moc_konsoleprofiles.cpp"

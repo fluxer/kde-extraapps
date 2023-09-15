@@ -35,6 +35,10 @@ public:
     // Plasma::PopupApplet reimplementation
     QGraphicsWidget* graphicsWidget() final;
 
+protected:
+    // Plasma::Applet reimplementation
+    void constraintsEvent(Plasma::Constraints constraints) final;
+
 private:
     friend KonsoleProfilesWidget;
     KonsoleProfilesWidget *m_konsoleprofileswidget;
