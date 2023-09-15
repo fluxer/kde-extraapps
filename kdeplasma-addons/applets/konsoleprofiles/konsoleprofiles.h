@@ -32,12 +32,11 @@ public:
 
     // Plasma::Applet reimplementation
     void init() final;
-    // Plasma::PopupApplet reimplementation
+    // Plasma::PopupApplet reimplementations
     QGraphicsWidget* graphicsWidget() final;
 
 protected:
-    // Plasma::Applet reimplementation
-    void constraintsEvent(Plasma::Constraints constraints) final;
+    QSizeF sizeHint(Qt::SizeHint which, const QSizeF &constraint) const final;
 
 private:
     friend KonsoleProfilesWidget;

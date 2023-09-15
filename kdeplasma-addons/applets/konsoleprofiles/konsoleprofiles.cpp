@@ -192,22 +192,12 @@ QGraphicsWidget* KonsoleProfilesApplet::graphicsWidget()
     return m_konsoleprofileswidget;
 }
 
-void KonsoleProfilesApplet::constraintsEvent(Plasma::Constraints constraints)
+QSizeF KonsoleProfilesApplet::sizeHint(Qt::SizeHint which, const QSizeF &constraint) const
 {
-    if (constraints & Plasma::FormFactorConstraint) {
-        switch (formFactor()) {
-            case Plasma::FormFactor::Horizontal:
-            case Plasma::FormFactor::Vertical: {
-                const int paneliconsize = KIconLoader::global()->currentSize(KIconLoader::Panel);
-                setPreferredSize(QSizeF(paneliconsize, paneliconsize));
-                break;
-            }
-            default: {
-                setPreferredSize(s_preferredsize);
-                break;
-            }
-        }
+    if (m_konsoleprofileswidget && which == Qt::PreferredSize) {
+        return m_konsoleprofileswidget->preferredSize();
     }
+    return Plasma::PopupApplet::sizeHint(which, constraint);
 }
 
 #include "moc_konsoleprofiles.cpp"
