@@ -111,6 +111,7 @@ QSizeF ShowDesktop::sizeHint(Qt::SizeHint which, const QSizeF & constraint) cons
     if (which == Qt::PreferredSize) {
         int iconSize = 0;
         switch (formFactor()) {
+            case Plasma::Application:
             case Plasma::Planar:
             case Plasma::MediaCenter: {
                 iconSize = IconSize(KIconLoader::Desktop);
