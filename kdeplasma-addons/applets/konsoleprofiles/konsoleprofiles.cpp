@@ -161,8 +161,8 @@ void KonsoleProfilesWidget::slotProfileClicked()
     Plasma::ToolButton* profilebutton = qobject_cast<Plasma::ToolButton*>(sender());
     const QString profilename = profilebutton->property("_k_profile").toString();
     Q_ASSERT(!profilename.isEmpty());
-    QStringList konsoleargs;
-    konsoleargs << "--profile" << profilename;
+    const QStringList konsoleargs = QStringList()
+        << "--profile" << profilename;
     QString invocationerror;
     const int invocationresult = KToolInvocation::kdeinitExec("konsole", konsoleargs, &invocationerror);
     if (invocationresult != 0) {
