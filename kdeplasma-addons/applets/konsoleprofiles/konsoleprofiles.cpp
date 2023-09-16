@@ -23,6 +23,7 @@
 #include <QGraphicsLinearLayout>
 #include <Plasma/IconWidget>
 #include <Plasma/Separator>
+#include <Plasma/Label>
 #include <Plasma/ToolButton>
 #include <KDirWatch>
 #include <KStandardDirs>
@@ -33,7 +34,6 @@
 
 // standard issue margin/spacing
 static const int s_spacing = 4;
-static const QSizeF s_preferredsize = QSizeF(290, 340);
 
 class KonsoleProfilesWidget : public QGraphicsWidget
 {
@@ -46,12 +46,11 @@ private Q_SLOTS:
     void slotProfileClicked();
 
 private:
-    void addSpacer();
-
     KonsoleProfilesApplet* m_konsoleprofiles;
     QGraphicsLinearLayout* m_layout;
     Plasma::IconWidget* m_iconwidget;
     Plasma::Separator* m_separator;
+    Plasma::Label* m_label;
     QGraphicsWidget* m_spacer;
     QList<Plasma::ToolButton*> m_profilebuttons;
     KDirWatch* m_dirwatch;
@@ -63,6 +62,7 @@ KonsoleProfilesWidget::KonsoleProfilesWidget(KonsoleProfilesApplet* konsoleprofi
     m_layout(nullptr),
     m_iconwidget(nullptr),
     m_separator(nullptr),
+    m_label(nullptr),
     m_spacer(nullptr),
     m_dirwatch(nullptr)
 {
@@ -81,7 +81,11 @@ KonsoleProfilesWidget::KonsoleProfilesWidget(KonsoleProfilesApplet* konsoleprofi
     m_separator = new Plasma::Separator(this);
     m_layout->addItem(m_separator);
 
-    addSpacer();
+    m_label = new Plasma::Label(this);
+    m_label->setText(i18n("No profiles available"));
+    m_label->setAlignment(Qt::AlignCenter);
+    m_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_layout->addItem(m_label);
 
     setLayout(m_layout);
 
@@ -139,17 +143,17 @@ void KonsoleProfilesWidget::slotUpdateLayout()
         m_layout->addItem(profilebutton);
     }
 
-    addSpacer();
-    adjustSize();
-}
+    if (hasprofiles) {
+        m_label->hide();
+        m_spacer = new QGraphicsWidget(this);
+        m_spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        m_spacer->setMinimumSize(1, 1);
+        m_layout->addItem(m_spacer);
+    } else {
+        m_label->show();
+    }
 
-void KonsoleProfilesWidget::addSpacer()
-{
-    Q_ASSERT(!m_spacer);
-    m_spacer = new QGraphicsWidget(this);
-    m_spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_spacer->setMinimumSize(1, 1);
-    m_layout->addItem(m_spacer);
+    adjustSize();
 }
 
 void KonsoleProfilesWidget::slotProfileClicked()
@@ -173,7 +177,6 @@ KonsoleProfilesApplet::KonsoleProfilesApplet(QObject *parent, const QVariantList
     KGlobal::locale()->insertCatalog("konsoleprofiles");
     setAspectRatioMode(Plasma::AspectRatioMode::IgnoreAspectRatio);
     setPopupIcon("utilities-terminal");
-    setPreferredSize(s_preferredsize);
     m_konsoleprofileswidget = new KonsoleProfilesWidget(this);
 }
 
@@ -190,14 +193,6 @@ void KonsoleProfilesApplet::init()
 QGraphicsWidget* KonsoleProfilesApplet::graphicsWidget()
 {
     return m_konsoleprofileswidget;
-}
-
-QSizeF KonsoleProfilesApplet::sizeHint(Qt::SizeHint which, const QSizeF &constraint) const
-{
-    if (m_konsoleprofileswidget && which == Qt::PreferredSize) {
-        return m_konsoleprofileswidget->preferredSize();
-    }
-    return Plasma::PopupApplet::sizeHint(which, constraint);
 }
 
 #include "moc_konsoleprofiles.cpp"

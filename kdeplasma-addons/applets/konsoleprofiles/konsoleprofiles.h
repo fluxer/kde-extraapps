@@ -35,9 +35,6 @@ public:
     // Plasma::PopupApplet reimplementations
     QGraphicsWidget* graphicsWidget() final;
 
-protected:
-    QSizeF sizeHint(Qt::SizeHint which, const QSizeF &constraint) const final;
-
 private:
     friend KonsoleProfilesWidget;
     KonsoleProfilesWidget *m_konsoleprofileswidget;
