@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=PlasmaPoTD/Plugin
+X-KDE-Library=plasma_potd_pexelsprovider
+X-KDE-PlasmaPoTDProvider-Identifier=pexels
+Icon=
+
+Name=Pexels Picture of the Day
+Comment=Pexels Provider

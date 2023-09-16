@@ -81,3 +81,24 @@ install(
     FILES apodprovider.desktop
     DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
 )
+
+
+set(potd_pexels_provider_SRCS
+    pexelsprovider.cpp
+)
+
+kde4_add_plugin(plasma_potd_pexelsprovider ${potd_pexels_provider_SRCS})
+target_link_libraries(plasma_potd_pexelsprovider
+    KDE4::kio
+    KDE4::kdecore
+    ${QT_QTGUI_LIBRARY}
+    plasmapotdprovidercore 
+)
+install(
+    TARGETS plasma_potd_pexelsprovider
+    DESTINATION ${KDE4_PLUGIN_INSTALL_DIR}
+)
+install(
+    FILES pexelsprovider.desktop
+    DESTINATION ${KDE4_SERVICES_INSTALL_DIR}
+)
