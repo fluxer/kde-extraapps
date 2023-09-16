@@ -1,4 +1,3 @@
-add_subdirectory(audioplayercontrol)
 add_subdirectory(converter)
 add_subdirectory(datetime)
 add_subdirectory(katesessions)
