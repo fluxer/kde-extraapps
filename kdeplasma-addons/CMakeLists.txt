@@ -33,7 +33,6 @@ add_subdirectory(applets)
 add_subdirectory(dataengines)
 add_subdirectory(runners)
 add_subdirectory(wallpapers)
-add_subdirectory(containments)
 
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
