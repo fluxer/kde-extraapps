@@ -17,13 +17,6 @@ set_package_properties(KDE4Workspace PROPERTIES
     PURPOSE "Needed for building several Plasma plugins"
 )
 
-kde4_optional_find_package(Qalculate)
-set_package_properties(Qalculate PROPERTIES
-    DESCRIPTION "Qalculate Library"
-    URL "http://qalculate.sourceforge.net/"
-    PURPOSE "Needed for building the Qalculate plasma applet"
-)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/libs
 )
