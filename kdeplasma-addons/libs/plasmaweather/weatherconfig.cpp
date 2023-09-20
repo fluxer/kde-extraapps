@@ -159,7 +159,6 @@ WeatherConfig::WeatherConfig(QWidget *parent)
     connect(d->ui.locationCombo, SIGNAL(currentIndexChanged(int)),
             this, SLOT(setSource(int)));
 
-    connect(d->ui.pressureComboBox, SIGNAL(currentIndexChanged(int)) , this , SIGNAL(configValueChanged()));
     connect(d->ui.updateIntervalSpinBox, SIGNAL(valueChanged(int)) , this , SIGNAL(configValueChanged()));
     connect(d->ui.temperatureComboBox, SIGNAL(currentIndexChanged(int)) , this , SIGNAL(configValueChanged()));
     connect(d->ui.pressureComboBox, SIGNAL(currentIndexChanged(int)) , this , SIGNAL(configValueChanged()));
@@ -256,7 +255,7 @@ void WeatherConfig::setSpeedUnit(const QString &unit)
 {
     KVelocity velo(0.0, unit);
     if (velo.unitEnum() != KVelocity::Invalid) {
-        d->ui.pressureComboBox->setCurrentIndex(static_cast<int>(velo.unitEnum()));
+        d->ui.speedComboBox->setCurrentIndex(static_cast<int>(velo.unitEnum()));
     }
 }
 
@@ -264,7 +263,7 @@ void WeatherConfig::setVisibilityUnit(const QString &unit)
 {
     KLength leng(0.0, unit);
     if (leng.unitEnum() != KLength::Invalid) {
-        d->ui.pressureComboBox->setCurrentIndex(static_cast<int>(leng.unitEnum()));
+        d->ui.visibilityComboBox->setCurrentIndex(static_cast<int>(leng.unitEnum()));
     }
 }
 
