@@ -1,5 +1,3 @@
-
-# this works also for the weatherutils include dir, but should be done properly, Alex
 include_directories(${PLASMACLOCK_INCLUDE_DIR})
 
 add_subdirectory(bball)
@@ -19,7 +17,6 @@ add_subdirectory(spellcheck)
 add_subdirectory(timer)
 add_subdirectory(eyes)
 add_subdirectory(unitconverter)
-add_subdirectory(weatherstation)
 add_subdirectory(dict)
 add_subdirectory(incomingmsg)
 add_subdirectory(showdesktop)
@@ -29,6 +26,5 @@ add_subdirectory(systemloadviewer)
 if(KDE4WORKSPACE_FOUND)
     add_subdirectory(binary-clock)
     add_subdirectory(fuzzy-clock)
-    add_subdirectory(weather)
     add_subdirectory(icontasks)
 endif()
