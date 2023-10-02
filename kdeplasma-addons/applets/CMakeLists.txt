@@ -19,7 +19,6 @@ add_subdirectory(eyes)
 add_subdirectory(unitconverter)
 add_subdirectory(dict)
 add_subdirectory(incomingmsg)
-add_subdirectory(showdesktop)
 add_subdirectory(paste)
 add_subdirectory(systemloadviewer)
 
